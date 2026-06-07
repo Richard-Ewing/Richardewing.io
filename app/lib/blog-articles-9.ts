@@ -454,7 +454,7 @@ export const articlesBatch9: Record<string, ArticleData> = {
 <li><strong>Record-keeping</strong> — Automatic logging of system operations for traceability</li>
 <li><strong>Transparency</strong> — Clear information about the system's capabilities, limitations, and intended use</li>
 <li><strong>Human oversight</strong> — Systems must be designed to allow effective human oversight</li>
-<li><strong>Accuracy, robustness, and cybersecurity</strong> — Systems must meet appropriate levels of all three</li>
+<li><strong>Accuracy, resilience, and cybersecurity</strong> — Systems must meet appropriate levels of all three</li>
 </ol>
 
 <p>Most organizations will discover that zero of their AI systems meet all seven requirements. This is normal. The goal in Phase 2 is to quantify the gap and build a remediation plan — not to achieve compliance.</p>

@@ -8,6 +8,7 @@ import BlurIn from '@/components/magicui/blur-in';
 import { BorderBeam } from '@/components/magicui/border-beam';
 import Meteors from '@/components/magicui/meteors';
 import { InteractiveExogramSim } from '../components/visualizations/InteractiveExogramSim';
+import { ShieldAlert, Brain, Activity, Scale, AlertTriangle, ArrowRight, Clock, DollarSign, Bug, TrendingDown, Users, Building2 } from 'lucide-react';
 
 
 export default function ExogramPage() {
@@ -15,7 +16,9 @@ export default function ExogramPage() {
         <main className="pt-20">
             <div className="page-container">
 
-                {/* Hero */}
+                {/* ═══════════════════════════════════════════════════════
+                    HERO — Call Bullshit Hook (Scar Tissue Step 1)
+                ═══════════════════════════════════════════════════════ */}
                 <section className="section-lg text-center relative overflow-hidden">
                     <Meteors count={20} />
 
@@ -26,19 +29,29 @@ export default function ExogramPage() {
                             <Image src="/images/exogram/logo-main.png" alt="Exogram Logo" fill className="object-contain" sizes="96px" />
                         </div>
 
-                        <BlurIn word="Exogram" className="text-4xl md:text-5xl font-bold text-zinc-950 mb-4" />
-                        <p className="text-xl text-purple-900 font-extrabold font-semibold mb-4">
-                            Persistent Infrastructure for Autonomous Intelligence
-                        </p>
-                        <p className="text-zinc-900 max-w-2xl mx-auto mb-4">
-                            Frontier models are miracles of cognition. Exogram does not replace model intelligence. It preserves operational continuity, governance, and trust across it.
-                        </p>
-                        <p className="text-lg text-zinc-950 font-bold max-w-xl mx-auto mb-8">
-                            We are building the SSL certificate for agentic execution.
+                        <p className="text-[11px] font-bold font-mono text-red-700 uppercase tracking-[0.25em] mb-4">Deterministic AI Governance Runtime</p>
+
+                        <BlurIn word="Your AI Is Making Decisions Nobody Can Verify" className="text-3xl md:text-5xl font-bold text-zinc-950 mb-6 leading-tight" />
+
+                        <p className="text-lg md:text-xl text-zinc-800 max-w-2xl mx-auto mb-8 leading-relaxed">
+                            <span className="font-bold text-zinc-950">45% of AI-generated code contains security vulnerabilities.</span> Your agents hallucinate after turn 12. Your team spends 4.3 hours/week checking outputs. Exogram stops it.
                         </p>
 
-                        {/* Hero Actions */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto items-center mt-8 mb-12">
+                        {/* Hero CTAs */}
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+                            <Link href="/tools/hallucination-tax" className="relative overflow-hidden inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-red-600 text-white font-bold hover:bg-red-700 transition-all shadow-[0_0_20px_rgba(220,38,38,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.5)] text-sm">
+                                <DollarSign className="w-4 h-4" />
+                                Calculate Your Hallucination Tax
+                                <ArrowRight className="w-4 h-4" />
+                            </Link>
+                            <Link href="/advisory" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 border border-zinc-400 text-zinc-950 font-semibold hover:bg-white/10 transition-colors text-sm">
+                                Book an Assessment
+                                <ArrowRight className="w-4 h-4" />
+                            </Link>
+                        </div>
+
+                        {/* Founder badge + Visit Exogram */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto items-center mt-4 mb-8">
                             <div className="flex justify-center md:justify-end w-full">
                                 <div className="inline-flex items-center gap-3 px-5 h-[52px] w-[260px] rounded-xl bg-white/5 border border-zinc-400 hover:bg-white/10 transition-colors">
                                     { }
@@ -63,15 +76,232 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
-                {/* Mission Statement */}
-                <section className="py-12 border-b border-zinc-200 bg-white">
-                    <div className="max-w-3xl mx-auto text-center px-4">
-                        <p className="text-[11px] font-bold font-mono text-zinc-900 font-medium uppercase tracking-[0.2em] mb-6">The Mission</p>
-                        <p className="text-2xl md:text-3xl font-bold text-zinc-950 leading-relaxed">
-                            To make autonomous intelligence <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-500">persistent and verifiable.</span>
+
+                {/* ═══════════════════════════════════════════════════════
+                    THE PROBLEM — Scar Tissue Step 2 (Pain with Numbers)
+                ═══════════════════════════════════════════════════════ */}
+                <section className="py-16 border-b border-zinc-200 bg-zinc-100">
+                    <div className="max-w-5xl mx-auto px-4 md:px-0">
+                        <p className="text-[11px] font-bold font-mono text-red-700 uppercase tracking-[0.25em] mb-4 text-center">The Numbers Nobody Wants to See</p>
+                        <h2 className="text-3xl md:text-4xl font-bold text-zinc-950 mb-4 text-center">Your AI Is Bleeding Money in Production</h2>
+                        <p className="text-zinc-700 max-w-2xl mx-auto text-center mb-12">
+                            These are not hypothetical risks. This is what&apos;s happening right now across the industry.
                         </p>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                            {/* Stat 1 */}
+                            <div className="p-6 rounded-xl border border-red-200 bg-white relative overflow-hidden group hover:border-red-400 transition-colors">
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-red-500/5 blur-2xl rounded-full"></div>
+                                <DollarSign className="w-8 h-8 text-red-600 mb-3" />
+                                <p className="text-3xl font-bold text-zinc-950 mb-1">$67.4B</p>
+                                <p className="text-xs font-mono font-bold text-red-700 uppercase tracking-widest mb-2">Per Year</p>
+                                <p className="text-sm text-zinc-700 font-medium">Global business losses from AI hallucinations. Not theoretical. Measured.</p>
+                            </div>
+
+                            {/* Stat 2 */}
+                            <div className="p-6 rounded-xl border border-red-200 bg-white relative overflow-hidden group hover:border-red-400 transition-colors">
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-red-500/5 blur-2xl rounded-full"></div>
+                                <AlertTriangle className="w-8 h-8 text-red-600 mb-3" />
+                                <p className="text-3xl font-bold text-zinc-950 mb-1">88%</p>
+                                <p className="text-xs font-mono font-bold text-red-700 uppercase tracking-widest mb-2">Failure Rate</p>
+                                <p className="text-sm text-zinc-700 font-medium">AI agent projects fail in production. Traditional monitoring is blind to semantic failures — HTTP 200 while the agent hallucinates.</p>
+                            </div>
+
+                            {/* Stat 3 */}
+                            <div className="p-6 rounded-xl border border-red-200 bg-white relative overflow-hidden group hover:border-red-400 transition-colors">
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-red-500/5 blur-2xl rounded-full"></div>
+                                <Clock className="w-8 h-8 text-red-600 mb-3" />
+                                <p className="text-3xl font-bold text-zinc-950 mb-1">4.3 hrs/wk</p>
+                                <p className="text-xs font-mono font-bold text-red-700 uppercase tracking-widest mb-2">Per Employee</p>
+                                <p className="text-sm text-zinc-700 font-medium">Verifying AI outputs. That&apos;s $14,200/year per person spent babysitting a system that was supposed to save time.</p>
+                            </div>
+
+                            {/* Stat 4 */}
+                            <div className="p-6 rounded-xl border border-red-200 bg-white relative overflow-hidden group hover:border-red-400 transition-colors">
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-red-500/5 blur-2xl rounded-full"></div>
+                                <TrendingDown className="w-8 h-8 text-red-600 mb-3" />
+                                <p className="text-3xl font-bold text-zinc-950 mb-1">19% Slower</p>
+                                <p className="text-xs font-mono font-bold text-red-700 uppercase tracking-widest mb-2">METR Study</p>
+                                <p className="text-sm text-zinc-700 font-medium">Experienced devs take 19% longer with AI tools. But they <em>feel</em> 24% faster. The productivity illusion is costing you real money.</p>
+                            </div>
+
+                            {/* Stat 5 */}
+                            <div className="p-6 rounded-xl border border-red-200 bg-white relative overflow-hidden group hover:border-red-400 transition-colors">
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-red-500/5 blur-2xl rounded-full"></div>
+                                <Bug className="w-8 h-8 text-red-600 mb-3" />
+                                <p className="text-3xl font-bold text-zinc-950 mb-1">45%</p>
+                                <p className="text-xs font-mono font-bold text-red-700 uppercase tracking-widest mb-2">Vulnerability Rate</p>
+                                <p className="text-sm text-zinc-700 font-medium">AI-generated code contains security vulnerabilities (GitClear). Nearly half of everything your copilot writes is a liability.</p>
+                            </div>
+
+                            {/* Stat 6 */}
+                            <div className="p-6 rounded-xl border border-red-200 bg-white relative overflow-hidden group hover:border-red-400 transition-colors">
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-red-500/5 blur-2xl rounded-full"></div>
+                                <Scale className="w-8 h-8 text-red-600 mb-3" />
+                                <p className="text-3xl font-bold text-zinc-950 mb-1">Aug 2026</p>
+                                <p className="text-xs font-mono font-bold text-red-700 uppercase tracking-widest mb-2">EU AI Act</p>
+                                <p className="text-sm text-zinc-700 font-medium">Full enforcement. Fines up to 7% of global turnover. If you can&apos;t prove governance, you can&apos;t operate.</p>
+                            </div>
+                        </div>
+
+                        {/* The mic-drop callout */}
+                        <div className="max-w-3xl mx-auto border-l-4 border-red-500 bg-white p-6 rounded-r-xl shadow-sm">
+                            <p className="text-xl font-bold text-zinc-950 leading-relaxed">
+                                The industry is using one unpredictable AI to babysit another unpredictable AI and calling it &quot;governance.&quot;
+                            </p>
+                            <p className="text-zinc-700 mt-2 font-medium">That is stacked uncertainty. It works for chatbots. It is a disaster for production systems running enterprise software, financial infrastructure, or real-world operations.</p>
+                        </div>
                     </div>
                 </section>
+
+
+                {/* ═══════════════════════════════════════════════════════
+                    WHAT EXOGRAM IS — Mechanism Reveal (Scar Tissue Step 3)
+                ═══════════════════════════════════════════════════════ */}
+                <section className="py-16 border-b border-zinc-200 bg-white">
+                    <div className="max-w-4xl mx-auto px-4 md:px-0">
+                        <p className="text-[11px] font-bold font-mono text-purple-700 uppercase tracking-[0.25em] mb-4 text-center">The Mechanism</p>
+                        <h2 className="text-3xl md:text-4xl font-bold text-zinc-950 mb-4 text-center">Exogram Is a Deterministic AI Governance Runtime</h2>
+                        <p className="text-zinc-700 max-w-2xl mx-auto text-center mb-12">
+                            Not another monitoring dashboard. Not just prompts and guardrails. A verification layer that enforces correctness <em>before</em> output reaches production.
+                        </p>
+
+                        {/* What it's NOT / What it IS */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                            <div className="p-6 rounded-xl border border-red-200 bg-red-50/50">
+                                <p className="text-xs font-mono font-bold text-red-700 uppercase tracking-widest mb-4">What Exogram Is Not</p>
+                                <ul className="space-y-3">
+                                    <li className="flex items-start gap-3 text-zinc-800">
+                                        <span className="text-red-500 font-bold mt-0.5 shrink-0">✕</span>
+                                        <span className="font-medium">Another observability dashboard that shows you failures <em>after</em> they happen</span>
+                                    </li>
+                                    <li className="flex items-start gap-3 text-zinc-800">
+                                        <span className="text-red-500 font-bold mt-0.5 shrink-0">✕</span>
+                                        <span className="font-medium">A prompt-engineering wrapper that hopes the model behaves</span>
+                                    </li>
+                                    <li className="flex items-start gap-3 text-zinc-800">
+                                        <span className="text-red-500 font-bold mt-0.5 shrink-0">✕</span>
+                                        <span className="font-medium">An LLM-as-a-judge approach — stacking uncertainty on uncertainty</span>
+                                    </li>
+                                    <li className="flex items-start gap-3 text-zinc-800">
+                                        <span className="text-red-500 font-bold mt-0.5 shrink-0">✕</span>
+                                        <span className="font-medium">A &quot;guardrail&quot; that only catches the failures you already predicted</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="p-6 rounded-xl border border-emerald-200 bg-emerald-50/50">
+                                <p className="text-xs font-mono font-bold text-emerald-700 uppercase tracking-widest mb-4">What Exogram Is</p>
+                                <ul className="space-y-3">
+                                    <li className="flex items-start gap-3 text-zinc-800">
+                                        <span className="text-emerald-500 font-bold mt-0.5 shrink-0">→</span>
+                                        <span className="font-medium">A <strong>verification layer</strong> that sits between AI reasoning and production execution</span>
+                                    </li>
+                                    <li className="flex items-start gap-3 text-zinc-800">
+                                        <span className="text-emerald-500 font-bold mt-0.5 shrink-0">→</span>
+                                        <span className="font-medium"><strong>Deterministic policy enforcement</strong> — binary go/no-go decisions, not probabilistic guesses</span>
+                                    </li>
+                                    <li className="flex items-start gap-3 text-zinc-800">
+                                        <span className="text-emerald-500 font-bold mt-0.5 shrink-0">→</span>
+                                        <span className="font-medium">An <strong>auditable execution ledger</strong> that proves why every action was permitted or blocked</span>
+                                    </li>
+                                    <li className="flex items-start gap-3 text-zinc-800">
+                                        <span className="text-emerald-500 font-bold mt-0.5 shrink-0">→</span>
+                                        <span className="font-medium">Like how a <strong>compiler catches errors before runtime</strong> — Exogram catches AI failures before they reach users</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {/* Analogy callout */}
+                        <div className="max-w-3xl mx-auto bg-purple-50 border border-purple-200 p-8 rounded-xl relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 blur-2xl rounded-full"></div>
+                            <p className="text-xl font-bold text-purple-950 relative z-10">
+                                When the early internet started handling real money, we had to invent SSL. AI is at that exact tipping point. Exogram is the SSL certificate for agentic execution.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+
+                {/* ═══════════════════════════════════════════════════════
+                    WHO NEEDS IT — Target Audience (Scar Tissue Step 4)
+                ═══════════════════════════════════════════════════════ */}
+                <section className="py-16 border-b border-zinc-200 bg-zinc-100">
+                    <div className="max-w-5xl mx-auto px-4 md:px-0">
+                        <p className="text-[11px] font-bold font-mono text-purple-700 uppercase tracking-[0.25em] mb-4 text-center">Who Needs This</p>
+                        <h2 className="text-3xl font-bold text-zinc-950 mb-12 text-center">Built for Teams Where AI Failure Has Real Consequences</h2>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="p-6 rounded-xl border border-zinc-300 bg-white hover:border-purple-400 transition-colors group">
+                                <Users className="w-6 h-6 text-purple-600 mb-3" />
+                                <h3 className="text-lg font-bold text-zinc-950 mb-2">VP/Directors of Engineering</h3>
+                                <p className="text-sm text-zinc-700 font-medium">Running AI-augmented teams and can&apos;t prove to the CFO that agent output is reliable. Your team spends more time verifying AI than the AI saves.</p>
+                            </div>
+                            <div className="p-6 rounded-xl border border-zinc-300 bg-white hover:border-purple-400 transition-colors group">
+                                <Activity className="w-6 h-6 text-purple-600 mb-3" />
+                                <h3 className="text-lg font-bold text-zinc-950 mb-2">Platform Engineers</h3>
+                                <p className="text-sm text-zinc-700 font-medium">Deploying AI agents to production and discovering that traditional monitoring is blind to semantic failures. The HTTP returns 200 while the agent hallucinates.</p>
+                            </div>
+                            <div className="p-6 rounded-xl border border-zinc-300 bg-white hover:border-purple-400 transition-colors group">
+                                <ShieldAlert className="w-6 h-6 text-purple-600 mb-3" />
+                                <h3 className="text-lg font-bold text-zinc-950 mb-2">CISOs</h3>
+                                <p className="text-sm text-zinc-700 font-medium">45% of AI-generated code contains vulnerabilities. 67% of your employees use AI tools. Only 18% of orgs have policies. You need enforcement, not policies.</p>
+                            </div>
+                            <div className="p-6 rounded-xl border border-zinc-300 bg-white hover:border-purple-400 transition-colors group">
+                                <Building2 className="w-6 h-6 text-purple-600 mb-3" />
+                                <h3 className="text-lg font-bold text-zinc-950 mb-2">CTOs Facing EU AI Act</h3>
+                                <p className="text-sm text-zinc-700 font-medium">Full enforcement August 2026. Fines up to 7% of global turnover. Exogram provides the auditable execution ledger that proves governance to regulators.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                {/* ═══════════════════════════════════════════════════════
+                    CTAs — The Hard Truth Pivot (Scar Tissue Step 4/5)
+                ═══════════════════════════════════════════════════════ */}
+                <section className="py-16 border-b border-zinc-200 bg-white">
+                    <div className="max-w-4xl mx-auto px-4 md:px-0 text-center">
+                        <p className="text-[11px] font-bold font-mono text-purple-700 uppercase tracking-[0.25em] mb-4">Quantify the Damage</p>
+                        <h2 className="text-3xl font-bold text-zinc-950 mb-4">Stop Guessing. Start Measuring.</h2>
+                        <p className="text-zinc-700 max-w-xl mx-auto mb-12">
+                            If you can&apos;t quantify the cost, you can&apos;t govern the system. These tools expose the hidden economics.
+                        </p>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <Link href="/tools/hallucination-tax" className="group p-6 rounded-xl border border-red-200 bg-red-50/50 hover:border-red-400 transition-all text-left">
+                                <DollarSign className="w-6 h-6 text-red-600 mb-3" />
+                                <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-red-700 transition-colors">Hallucination Tax Calculator</h3>
+                                <p className="text-sm text-zinc-700 font-medium mb-4">Calculate exactly how much your org bleeds per year on AI verification, correction, and failure recovery.</p>
+                                <span className="text-sm font-bold text-red-700 flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    Calculate Your Tax <ArrowRight className="w-4 h-4" />
+                                </span>
+                            </Link>
+                            <Link href="/tools/aueb" className="group p-6 rounded-xl border border-purple-200 bg-purple-50/50 hover:border-purple-400 transition-all text-left">
+                                <Brain className="w-6 h-6 text-purple-600 mb-3" />
+                                <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-purple-700 transition-colors">AI Economics Audit</h3>
+                                <p className="text-sm text-zinc-700 font-medium mb-4">Full diagnostic on your AI unit economics. Find out if your AI tools are assets or liabilities.</p>
+                                <span className="text-sm font-bold text-purple-700 flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    Run Free Audit <ArrowRight className="w-4 h-4" />
+                                </span>
+                            </Link>
+                            <a href="/api/buy/gut_check" className="group p-6 rounded-xl border border-cyan-200 bg-cyan-50/50 hover:border-cyan-400 transition-all text-left">
+                                <Activity className="w-6 h-6 text-cyan-600 mb-3" />
+                                <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-700 transition-colors">Gut-Check Call</h3>
+                                <p className="text-sm text-zinc-700 font-medium mb-4">30-minute call with Richard Ewing. Bring your AI governance questions. Leave with specific answers.</p>
+                                <span className="text-sm font-bold text-cyan-700 flex items-center gap-1 group-hover:gap-2 transition-all">
+                                    Book a Call <ArrowRight className="w-4 h-4" />
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+
+                {/* ═══════════════════════════════════════════════════════════
+                    BELOW: All original technical content, preserved in order
+                ═══════════════════════════════════════════════════════════ */}
+
 
                 {/* Ecosystem Presence */}
                 <section className="py-10 border-b border-zinc-200 bg-white">
@@ -95,33 +325,6 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
-                {/* The Core Insight */}
-                <section className="section bg-zinc-100">
-                    <div className="max-w-4xl mx-auto">
-                        <div className="font-mono text-xs font-bold text-cyan-900 font-extrabold font-semibold uppercase tracking-[0.2em] mb-4 text-center">The Core Insight</div>
-                        <h2 className="text-3xl font-bold text-zinc-950 mb-8 text-center">The Core Vulnerability</h2>
-                        <div className="text-zinc-900 text-lg leading-relaxed space-y-6 max-w-3xl mx-auto px-6 sm:px-8 border-l-4 border-purple-500 py-2">
-                            <p className="text-xl text-zinc-950 font-bold border-b border-zinc-300 pb-4 mb-6">
-                                The intelligence of the models improves constantly, but the continuity of the context never does.
-                            </p>
-                            <p>
-                                We are entering a world where users live across multiple language models, autonomous agents, and execution environments. Yet every AI product still starts from zero.
-                            </p>
-                            <p>
-                                Today, operational context is trapped inside vendor silos. Every new tool or agent requires the user to repeatedly reconstruct their identity, goals, constraints, workflows, and operational boundaries. The user is forced to adapt themselves to the AI system because the systems are fundamentally incapable of adapting to persistent human context.
-                            </p>
-                            <p>
-                                The industry currently treats context as a user convenience. <span className="font-bold text-zinc-950">That is a critical miscalculation.</span> Models are incredible cognition engines, but reasoning is not infrastructure. As agents move from being passive chatbots to persistent, autonomous operators, passive memory ceases to be sufficient. It must become foundational, verifiable infrastructure.
-                            </p>
-                            <p>
-                                What the industry calls &quot;memory&quot; is fundamentally inadequate for autonomous systems. Autonomous execution requires an <span className="font-bold text-zinc-950">auditable ledger</span>. If a system forgets its constraints, loses its operational history, or drops its permission boundaries as it moves between environments, it stops being reliable infrastructure. It becomes an operational hazard.
-                            </p>
-                            <p className="text-xl text-zinc-950 font-bold border-t border-zinc-300 pt-4 mt-6">
-                                Probabilistic systems cannot scale into the autonomous era safely without a deterministic, auditable record of state.
-                            </p>
-                        </div>
-                    </div>
-                </section>
 
                 {/* The Four-Layer Substrate */}
                 <section className="section bg-white border-y border-zinc-200">
@@ -130,7 +333,7 @@ export default function ExogramPage() {
                             <span className="text-xs font-mono font-bold uppercase tracking-widest text-purple-700 mb-2 block">Architecture</span>
                             <h2 className="text-3xl font-bold text-zinc-950 mb-4">The Four-Layer Substrate</h2>
                             <p className="text-zinc-700 max-w-2xl mx-auto">
-                                Exogram is a comprehensive infrastructure stack designed to sit beneath the models and govern autonomous execution.
+                                Exogram sits beneath the model layer. Four deterministic layers that enforce governance where probabilistic systems cannot.
                             </p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -173,6 +376,7 @@ export default function ExogramPage() {
                         </div>
                     </div>
                 </section>
+
 
                 {/* The Execution Loop */}
                 <section className="section bg-[#F5F0EB]">
@@ -221,6 +425,7 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
+
                 {/* Technical Schema — Admissibility Request */}
                 <section className="section bg-zinc-100">
                     <div className="max-w-4xl mx-auto px-4 md:px-0">
@@ -250,6 +455,7 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
+
                 {/* Exogram Simulation Layer */}
                 <section className="section bg-white border border-zinc-200 py-16 relative overflow-hidden border-y border-zinc-200">
                     <div className="max-w-5xl mx-auto px-4 md:px-0">
@@ -260,6 +466,7 @@ export default function ExogramPage() {
                         <InteractiveExogramSim />
                     </div>
                 </section>
+
 
                 {/* Why I Built Exogram — Founder Narrative */}
                 <section className="section bg-white border-y border-zinc-200 relative overflow-hidden">
@@ -351,6 +558,7 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
+
                 {/* Why This Matters Now */}
                 <section className="section bg-white border-y border-zinc-200 relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-purple-500"></div>
@@ -405,6 +613,7 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
+
                 {/* Open RFCs */}
                 <section className="section bg-zinc-100">
                     <div className="max-w-4xl mx-auto px-4 md:px-0">
@@ -444,6 +653,7 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
+
                 {/* The Stack — simplified position view */}
                 <section className="section bg-white border-y border-zinc-200 pt-0">
                     <div className="max-w-3xl mx-auto text-center">
@@ -480,6 +690,7 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
+
                 {/* Subpage Navigation */}
                 <section className="section">
                     <div className="max-w-4xl mx-auto">
@@ -504,13 +715,17 @@ export default function ExogramPage() {
                     </div>
                 </section>
 
-                {/* Connection */}
+
+                {/* Connection — Mic Drop (Scar Tissue Step 5) */}
                 <section className="section">
                     <div className="max-w-3xl mx-auto">
                         <div className="card p-10 flex flex-col items-center text-center space-y-8">
                             <p className="text-xl md:text-2xl text-zinc-950 leading-relaxed max-w-2xl">
                                 &quot;I write about why AI systems fail economically through my AI Economist work.<br />
                                 <span className="text-purple-900 font-extrabold font-semibold">Exogram is the persistent intelligence substrate I&apos;m building to fix it.&quot;</span>
+                            </p>
+                            <p className="text-lg font-bold text-zinc-950 border-t border-zinc-300 pt-6 max-w-xl">
+                                Amateurs deploy AI. Professionals govern it.
                             </p>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full border-t border-zinc-400 pt-8 mt-4 items-center">
                                 <div className="flex items-center justify-center md:justify-end gap-4 h-12">

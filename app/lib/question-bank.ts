@@ -543,7 +543,7 @@ jobs:
                     chart_type: "text_only",
                     grading: {
                         l3_example: "We shipped the features but they take time to impact metrics.",
-                        l6_example: "I'd own it directly: 'We shipped features that addressed symptoms, not root causes. Our NRR is flat because our churn drivers are onboarding friction and time-to-value, not missing features. I've now identified the 3 highest-churn moments in the user journey and am re-prioritizing the next quarter around reducing each by 50%. I should have run this analysis in month 1, not month 6.'",
+                        l6_example: "I'd own it directly: 'We shipped features that addressed symptoms, not root causes. Our NRR is flat because our churn drivers are onboarding friction and time-to-value, not missing features. I've now identified the 3 highest-churn moments in the user flow and am re-prioritizing the next quarter around reducing each by 50%. I should have run this analysis in month 1, not month 6.'",
                         rubric: "Does the candidate take ownership? Do they identify the real churn drivers vs feature shipping? Do they show they learned and adjusted their approach?"
                     }
                 },

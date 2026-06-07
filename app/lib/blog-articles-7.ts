@@ -80,7 +80,7 @@ The most dangerous AI costs aren't the ones you plan for; they are the ones you 
 
 <h2>The Turing Tax and the Boardroom Mandate</h2>
 
-Every company building AI is currently paying what I call the **Turing Tax**. It is the premium you pay for using cutting-edge, general-purpose intelligence to solve narrow, specific business problems. 
+Every company building AI is currently paying what I call the **Turing Tax**. It is the premium you pay for using frontier, general-purpose intelligence to solve narrow, specific business problems. 
 
 Right now, boards of directors and CFOs are looking at their cloud bills in sheer panic. The AI hype cycle of 2024 got the budget approved. The AI reality of 2026 is that the CFO is demanding to see the ROI.
 

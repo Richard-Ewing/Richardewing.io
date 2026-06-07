@@ -54,7 +54,7 @@ const AGENT_CONFIG: Record<string, { icon: any; label: string; description: stri
         icon: TrendingUp,
         label: 'Lead Scorer',
         description: 'Scores diagnostic users → pipeline tiers',
-        schedule: 'Every 6 hours'
+        schedule: 'Daily 10am UTC'
     },
     'content-expander': {
         icon: FileText,
@@ -67,6 +67,12 @@ const AGENT_CONFIG: Record<string, { icon: any; label: string; description: stri
         label: 'Daily Ops Email',
         description: 'Sends morning briefing to richardewing@exogram.ai',
         schedule: 'Daily 7am UTC'
+    },
+    'seo-optimizer': {
+        icon: BarChart3,
+        label: 'SEO Optimizer',
+        description: 'Pulls GSC data, analyzes starving crowd alignment, emails performance digest',
+        schedule: 'Daily 9am UTC'
     }
 };
 

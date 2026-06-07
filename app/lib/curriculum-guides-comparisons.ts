@@ -86,7 +86,7 @@ export const guidesComparisonsModules: Record<string, CurriculumModule> = {
             },
             {
                 title: 'Autonomous Code Review Bots',
-                content: 'Integrate agents into the CI/CD pipeline. PRs are initially reviewed by fine-tuned LLMs strictly checking against organizational style paradigms, unit tests, and security heuristics before human intervention.',
+                content: 'Integrate agents into the CI/CD pipeline. PRs are initially reviewed by fine-tuned LLMs strictly checking against organizational style standards, unit tests, and security heuristics before human intervention.',
                 details: [d('Review Cycle Time', 'The elapsed time between PR open and first valid review.', '≤ 5 mins')],
                 exercise: 'Deploy a Claude-3.5 hook onto your staging repository.'
             }

@@ -184,7 +184,7 @@ export const CAREER_PATHS: CareerPath[] = [
         iconName: 'Milestone',
         color: 'amber',
         domain: 'Product & Economics',
-        description: 'Orchestrate the PMO-style migration of legacy, deterministic Fortune 500 systems into probabilistic, autonomous AI ecosystems.',
+        description: 'Orchestrate the PMO-style migration of legacy, deterministic Fortune 500 systems into probabilistic, autonomous AI architectures.',
         manifesto: [
             'Adopting AI at the enterprise level is not installing a Copilot plugin. It is the systemic ripping out of legacy code and replacing it with Neural-Symbolic systems.',
             'The AI Implementation Leader manages the blast radius of this transition. You orchestrate cross-functional teams combining Data Engineers, Security CISOs, and Economists.',
@@ -192,7 +192,7 @@ export const CAREER_PATHS: CareerPath[] = [
         ],
         glossaryTerms: ['technical-debt', 'maintenance-load', 'cost-of-delay', 'ai-assisted-development'],
         curriculumKeywords: ['leadership', 'strategy', 'management', 'roi', 'pm'],
-        seoMeta: 'Transition into an AI Implementation Leader. Manage the enterprise PMO migration from legacy tech stacks to autonomous Agentic ecosystems.',
+        seoMeta: 'Transition into an AI Implementation Leader. Manage the enterprise PMO migration from legacy tech stacks to autonomous Agentic architectures.',
         seoKeywords: ['AI Implementation', 'Enterprise AI Migration', 'AI PMO', 'Legacy Tech Migration', 'Agentic Workflows', 'Change Management AI'],
         primaryMetrics: [
             { name: "SaaS Decommission Velocity", description: "The rate at which legacy vendor contracts are eliminated by internal Agentic execution." },
@@ -238,7 +238,7 @@ export const CAREER_PATHS: CareerPath[] = [
         description: 'Transition from human-orchestrated microservices to autonomous Agentic Process Automation (APA). Master Neural-Symbolic reasoning architectures, tool-use logic limits, and deterministic boundaries.',
         manifesto: [
             'The feature factory is dead. In 2026, the velocity of writing syntax is irrelevant. The competitive moat is orchestrating autonomous AI agents that can reason, plan, and execute across secure boundaries.',
-            'As an Agentic Solutions Architect, your mandate is to build ecosystems where SLMs and LLMs interact deterministically. You govern the translation layer between stochastic reasoning (LLMs) and deterministic execution (APIs, Databases, Cloud Infrastructure).',
+            'As an Agentic Solutions Architect, your mandate is to build architectures where SLMs and LLMs interact deterministically. You govern the translation layer between stochastic reasoning (LLMs) and deterministic execution (APIs, Databases, Cloud Infrastructure).',
             'Your engineering value shifts from writing code to building kill-switches, hallucination sandboxes, and evaluating Agentic Process Automation loops for infinite recursion risks.'
         ],
         glossaryTerms: ['agentic-workflow', 'orchestration-debt', 'cost-of-predictivity', 'rag', 'technical-debt', 'large-language-model', 'ai-inference'],
@@ -534,7 +534,7 @@ export const CAREER_PATHS: CareerPath[] = [
         description: 'Legacy unit testing is broken by non-deterministic models. Build dynamic Evaluation (Evals) test suites using frontier LLM-as-a-Judge architectures to verify agent behavior at scale.',
         manifesto: [
             'You cannot write a "True/False" unit test for an LLM that might output 100 different valid variations of a paragraph. Traditional QA is dead.',
-            'The Post-QA Verification Engineer builds robust "Eval" frameworks. You use massive frontier models to judge and score the outputs of your smaller production models in real time.',
+            'The Post-QA Verification Engineer builds automated "Eval" frameworks. You use massive frontier models to judge and score the outputs of your smaller production models in real time.',
             'You verify not just code functionality, but "Vibe," tone, brand safety, and hallucination containment. Your test suites run on GPUs, not just CPUs.'
         ],
         glossaryTerms: ['cost-of-predictivity', 'orchestration-debt', 'rag', 'technical-debt'],
@@ -559,7 +559,7 @@ export const CAREER_PATHS: CareerPath[] = [
         marketEconomics: {
         "salary": "$160,000 - $250,000",
         "growth": "+150% YoY",
-        "gap": "Manual unit testing is defunct for LLMs. Engineering dynamic LLM-as-a-Judge Eval harnesses is the new verification paradigm."
+        "gap": "Manual unit testing is defunct for LLMs. Engineering dynamic LLM-as-a-Judge Eval harnesses is the new verification standard."
 },
         faqs: [
         {
