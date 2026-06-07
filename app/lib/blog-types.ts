@@ -33,4 +33,5 @@ export const categoryColors: Record<string, string> = {
     'Board Governance': 'text-indigo-900 font-extrabold font-semibold bg-indigo-500/10 border-indigo-500/20',
     'Team Building': 'text-yellow-900 font-extrabold font-semibold bg-yellow-500/10 border-yellow-500/20',
     'Architecture': 'text-purple-900 font-extrabold font-semibold bg-purple-500/10 border-purple-500/20',
+    'AI Governance': 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
 };

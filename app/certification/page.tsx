@@ -6,7 +6,7 @@ import { Shield, CheckCircle, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Prove You Understand AI Costs — Not Just AI Hype | Governance Certification',
-    description: 'Earn the AI Governance Maturity certification. Demonstrate mastery of AI economics, risk frameworks, and enterprise audit methodology.',
+    description: '95% of AI pilots fail ROI. EU AI Act fines hit 7% of revenue. Earn the certification that proves you can govern AI economics, not just deploy AI features.',
     keywords: ['AI governance certification', 'runtime governance maturity', 'AI governance assessment', 'agentic engineering certification', 'MCP governance certified', 'AI governance training', 'runtime maturity model'],
     openGraph: {
         title: 'Runtime Governance Maturity — Certification & Assessment',
