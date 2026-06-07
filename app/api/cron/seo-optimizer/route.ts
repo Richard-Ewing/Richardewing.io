@@ -246,17 +246,19 @@ export async function GET(request: Request) {
         });
 
         // 6. Store performance snapshot for trending
-        await supabase.from('seo_snapshots').insert({
-            snapshot_date: new Date().toISOString().split('T')[0],
-            total_impressions: gscData.summary?.totalImpressions || 0,
-            total_clicks: gscData.summary?.totalClicks || 0,
-            glossary_impressions: gscData.categories?.['glossary']?.impressions || 0,
-            tools_impressions: gscData.categories?.['tools']?.impressions || 0,
-            advisory_impressions: gscData.categories?.['advisory']?.impressions || 0,
-            curriculum_impressions: gscData.categories?.['curriculum']?.impressions || 0,
-            low_ctr_pages: actions.filter(a => a.type === 'meta_rewrite_needed').length,
-            categories: gscData.categories,
-        }).catch(() => { /* table may not exist yet */ });
+        try {
+            await supabase.from('seo_snapshots').insert({
+                snapshot_date: new Date().toISOString().split('T')[0],
+                total_impressions: gscData.summary?.totalImpressions || 0,
+                total_clicks: gscData.summary?.totalClicks || 0,
+                glossary_impressions: gscData.categories?.['glossary']?.impressions || 0,
+                tools_impressions: gscData.categories?.['tools']?.impressions || 0,
+                advisory_impressions: gscData.categories?.['advisory']?.impressions || 0,
+                curriculum_impressions: gscData.categories?.['curriculum']?.impressions || 0,
+                low_ctr_pages: actions.filter(a => a.type === 'meta_rewrite_needed').length,
+                categories: gscData.categories,
+            });
+        } catch { /* table may not exist yet */ }
 
         return NextResponse.json({
             success: true,
