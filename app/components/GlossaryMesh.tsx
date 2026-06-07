@@ -88,7 +88,7 @@ export default function GlossaryMesh({ termSlug, termTitle, termCategory, relate
     return (
         <section className="mb-12 mt-8 pt-8 border-t border-zinc-200">
             <h2 className="text-xl font-bold text-zinc-900 mb-6 font-grotesk">
-                🌐 Explore the Governance Ecosystem
+                🌐 Explore the Governance Knowledge Graph
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

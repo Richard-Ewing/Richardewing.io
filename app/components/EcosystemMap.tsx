@@ -12,7 +12,7 @@ export default function EcosystemMap() {
             <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
                 <div className="text-center mb-8">
                     <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase tracking-[0.2em] bg-cyan-50 border border-cyan-200 px-3 py-1 rounded-full">Ontology Mesh Map</span>
-                    <h3 className="text-xl font-bold font-grotesk text-zinc-950 mt-3">The Production AI Governance Ecosystem</h3>
+                    <h3 className="text-xl font-bold font-grotesk text-zinc-950 mt-3">The Production AI Governance Architecture</h3>
                     <p className="text-xs text-zinc-900 mt-1 max-w-md mx-auto">Every resource on this site is a node in a single multi-year research program exploring AI operational limits.</p>
                 </div>
 

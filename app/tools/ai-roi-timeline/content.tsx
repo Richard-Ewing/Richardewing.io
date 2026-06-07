@@ -295,6 +295,24 @@ export default function AIRoiTimelineContent() {
                                         { id: 'TRACK-04', title: 'AI Unit Economics & Margin Collapse', desc: 'Identify AI insolvency triggers and restructure inference costs.' }
                                     ]} 
                                 />
+
+                                {/* Advisory Upsell */}
+                                <div className="mt-8 p-6 bg-gradient-to-r from-purple-500/5 to-indigo-500/5 border border-purple-500/20 rounded-2xl">
+                                  <div className="flex items-start gap-4">
+                                    <div className="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                      <span className="text-2xl">🎯</span>
+                                    </div>
+                                    <div>
+                                      <p className="text-xs font-bold font-mono text-purple-600 uppercase tracking-wider mb-1">Want an Expert to Run This?</p>
+                                      <h4 className="text-lg font-bold text-zinc-950 mb-2">Get a realistic AI ROI timeline for your organization</h4>
+                                      <p className="text-sm text-zinc-600 mb-4">The timeline shows the gap. A $500 Strategy Session builds a board-ready AI investment case with specific milestones, risk-adjusted returns, and a kill criteria framework.</p>
+                                      <div className="flex flex-wrap gap-3">
+                                        <a href="/advisory" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">Book Advisory Session →</a>
+                                        <a href="/api/buy/gut_check" className="inline-flex items-center gap-2 px-5 py-2.5 border border-purple-500/30 text-purple-700 text-sm font-bold rounded-lg hover:bg-purple-50 transition-colors">$450 Gut-Check Call →</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                             </div>
                         </div>
                             </div>

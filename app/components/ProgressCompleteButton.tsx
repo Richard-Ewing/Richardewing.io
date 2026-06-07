@@ -71,7 +71,7 @@ export default function ProgressCompleteButton({ moduleId, nextHref }: { moduleI
                                     </div>
                                     <div>
                                         <div className="text-xs font-bold font-mono text-cyan-900 font-extrabold font-semibold uppercase tracking-widest mb-1">Track Completed</div>
-                                        <h3 className="text-2xl font-grotesk font-bold text-zinc-950 mb-2">Unlock Private Office Hours</h3>
+                                        <h3 className="text-2xl font-grotesk font-bold text-zinc-950 mb-2">Book Private Office Hours</h3>
                                         <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-6">
                                             You've mastered the theory. Now let's map it to your specific stack. Book a 1-on-1 strategic synthesis call to apply this exact framework to your firm's architecture, team layout, and board commitments.
                                         </p>

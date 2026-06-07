@@ -387,6 +387,24 @@ export default function FTEContent() {
                             ]} 
                         />
 
+                        {/* Advisory Upsell */}
+                        <div className="mt-8 p-6 bg-gradient-to-r from-purple-500/5 to-indigo-500/5 border border-purple-500/20 rounded-2xl">
+                          <div className="flex items-start gap-4">
+                            <div className="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                              <span className="text-2xl">🎯</span>
+                            </div>
+                            <div>
+                              <p className="text-xs font-bold font-mono text-purple-600 uppercase tracking-wider mb-1">Want an Expert to Run This?</p>
+                              <h4 className="text-lg font-bold text-zinc-950 mb-2">Get AI workforce economics that survive an HR review</h4>
+                              <p className="text-sm text-zinc-600 mb-4">This calculator shows the displacement math. A $5,000 AI Cost Governance engagement models the real impact: retraining costs, transition timelines, and net savings after change management.</p>
+                              <div className="flex flex-wrap gap-3">
+                                <a href="/advisory" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">Book Advisory Session →</a>
+                                <a href="/api/buy/gut_check" className="inline-flex items-center gap-2 px-5 py-2.5 border border-purple-500/30 text-purple-700 text-sm font-bold rounded-lg hover:bg-purple-50 transition-colors">$450 Gut-Check Call →</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
                         {/* Action Footer */}
                         <ScrollReveal delay={250}>
                             <div className="flex justify-center flex-wrap gap-6 mt-6" data-html2canvas-ignore>
