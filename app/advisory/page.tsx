@@ -160,6 +160,24 @@ export default function AdvisoryPage() {
                             <p className="text-sm text-zinc-600 mb-4">Not sure if you have a problem? A 30-minute rapid-fire session. You describe your AWS bill and velocity, I tell you if your building is on fire.</p>
                             <a href="/api/buy/gut_check" className="text-xs font-bold font-mono text-amber-600 uppercase tracking-widest hover:text-amber-700">Schedule Evaluation →</a>
                         </div>
+
+                        <div className="bg-white border border-zinc-200 p-6 rounded-2xl shadow-sm hover:border-rose-500/30 transition-all">
+                            <div className="flex justify-between items-start mb-2">
+                                <h3 className="text-lg font-bold text-zinc-900">Hallucination Tax Audit</h3>
+                                <span className="font-mono text-rose-600 font-extrabold">$5,000</span>
+                            </div>
+                            <p className="text-sm text-zinc-600 mb-4">Your team spends 4.3 hours/week checking AI outputs. That is $14,200/employee/year in invisible verification labor. We quantify the total hallucination cost and build the guardrail plan.</p>
+                            <a href="/api/buy/hallucination_tax_audit" className="text-xs font-bold font-mono text-rose-600 uppercase tracking-widest hover:text-rose-800">Book Audit →</a>
+                        </div>
+
+                        <div className="bg-white border border-zinc-200 p-6 rounded-2xl shadow-sm hover:border-violet-500/30 transition-all">
+                            <div className="flex justify-between items-start mb-2">
+                                <h3 className="text-lg font-bold text-zinc-900">AI Policy Readiness</h3>
+                                <span className="font-mono text-violet-600 font-extrabold">$2,500</span>
+                            </div>
+                            <p className="text-sm text-zinc-600 mb-4">67% of employees use AI. 18% of orgs have policies. EU AI Act fines hit 7% of global turnover in August 2026. We audit your governance posture and deliver a 90-day compliance roadmap.</p>
+                            <a href="/api/buy/ai_policy_readiness" className="text-xs font-bold font-mono text-violet-600 uppercase tracking-widest hover:text-violet-800">Start Assessment →</a>
+                        </div>
                     </div>
                 </section>
 

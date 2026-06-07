@@ -50,7 +50,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                 <div className="mx-auto max-w-2xl rounded-2xl border-2 border-violet-300 bg-white p-8 shadow-2xl">
                     <div className="text-center">
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-50 border border-violet-200 text-violet-900 font-extrabold font-mono text-xs font-bold uppercase tracking-widest mb-4">
-                            <ShieldCheck className="w-4 h-4" /> Unlock Full Access
+                            <ShieldCheck className="w-4 h-4" /> Get Full Access
                         </div>
                         <h3 className="text-2xl font-grotesk font-bold text-zinc-900 mb-2">
                             Continue Learning: {trackName}
@@ -81,7 +81,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                                 <CheckoutButton 
                                     productId="full_curriculum" 
                                     moduleId={moduleId}
-                                    label="Unlock Everything" 
+                                    label="Get Everything" 
                                     icon="key" 
                                     variant="secondary" 
                                 />

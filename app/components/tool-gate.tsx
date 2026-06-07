@@ -152,7 +152,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                         You have exceeded the maximum number of free generic diagnostic scans. To continue evaluating systems via {toolName}, please join the Vault.
                     </p>
                     <a href="/vault/join" className="block w-full py-4 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all shadow-[0_0_20px_rgba(225,29,72,0.4)] hover:shadow-[0_0_30px_rgba(225,29,72,0.6)]">
-                        Upgrade & Unlock Vault →
+                        Upgrade & Access Vault →
                     </a>
                 </motion.div>
             </div>
@@ -229,7 +229,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                                 <Loader2 className="w-5 h-5 animate-spin" />
                             ) : (
                                 <>
-                                    Unlock Results <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                    Get Results <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </>
                             )}
                         </button>

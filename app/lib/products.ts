@@ -230,6 +230,34 @@ export const PRODUCTS: Record<string, Product> = {
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/7sY14g76ScTM7tH2BG2B202',
     },
+    hallucination_tax_audit: {
+        name: 'Hallucination Tax Audit',
+        description: 'Quantify your organization\'s verification burden: hours spent checking AI outputs, incident costs from hallucinated content, and total hidden productivity drain. Board-ready report with remediation plan.',
+        price: 500000,
+        mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204', // Placeholder — create Stripe link
+    },
+    ai_policy_readiness: {
+        name: 'AI Policy Readiness Assessment',
+        description: '67% of your employees use AI tools. Only 18% of orgs have policies. EU AI Act fines hit 7% of global turnover. We audit your AI governance posture and deliver a 90-day compliance roadmap.',
+        price: 250000,
+        mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204', // Placeholder — create Stripe link
+    },
+    agent_production_readiness: {
+        name: 'Agent Production Readiness Assessment',
+        description: '88% of AI agent projects fail in production. We score your agent fleet across 12 dimensions: drift risk, token budget controls, semantic monitoring, ownership model, and kill switch architecture.',
+        price: 500000,
+        mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204', // Placeholder — create Stripe link
+    },
+    shadow_ai_remediation: {
+        name: 'Shadow AI Remediation Program',
+        description: 'Full-stack shadow AI cleanup: discovery scan, policy creation, employee training, tool consolidation, and ongoing governance monitoring. From chaos to controlled in 90 days.',
+        price: 1000000,
+        mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204', // Placeholder — create Stripe link
+    },
     retainer: {
         name: 'Independent Oversight — Monthly',
         description: 'Board-level economic sanity checks: 4 hours/month, quarterly board report, continuous PDI monitoring, async access.',

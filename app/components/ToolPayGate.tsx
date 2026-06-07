@@ -31,10 +31,10 @@ export default function ToolPayGate({ toolName, hasAccess = false, children }: T
                             <Lock className="w-4 h-4" /> Premium Analytics Locked
                         </div>
                         <h3 className="text-2xl font-grotesk font-bold text-zinc-900 mb-3">
-                            Unlock the Full {toolName} Report
+                            Access the Full {toolName} Report
                         </h3>
                         <p className="text-zinc-600 text-sm font-medium mb-8">
-                            Your top-line score is calculating. To view your complete mathematical breakdown, peer benchmark percentiles, and generate board-ready PDF exports, unlock the Diagnostic Library.
+                            Your top-line score is calculating. To view your complete mathematical breakdown, peer benchmark percentiles, and generate board-ready PDF exports, access the Diagnostic Library.
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 text-left">
@@ -47,7 +47,7 @@ export default function ToolPayGate({ toolName, hasAccess = false, children }: T
                                 <div className="text-xs font-semibold text-zinc-600 mb-4 h-8">All Diagnostics · Lifetime Exports</div>
                                 <CheckoutButton 
                                     productId="tools_library_unlock" 
-                                    label="Unlock Tools" 
+                                    label="Get Tools" 
                                     icon="file" 
                                     variant="primary" 
                                 />

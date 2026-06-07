@@ -163,7 +163,7 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                                 <div className="flex-grow">
                                     <h3 className="text-xl font-grotesk font-bold text-emerald-900 font-extrabold mb-2">Track Mastered</h3>
                                     <p className="text-sm font-semibold text-zinc-950">
-                                        You have successfully completed every module in this architecture. To help you implement these exact systems in your organization, you've unlocked a complimentary 30-minute implementation audit with Richard Ewing, or you can roll this out to your engineering managers with a Team License.
+                                        You have successfully completed every module in this architecture. To help you implement these exact systems in your organization, you've earned a complimentary 30-minute implementation audit with Richard Ewing, or you can roll this out to your engineering managers with a Team License.
                                     </p>
                                 </div>
                                 <div className="flex flex-col gap-3 flex-shrink-0 w-full sm:w-auto">

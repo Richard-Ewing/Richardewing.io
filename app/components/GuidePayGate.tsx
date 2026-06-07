@@ -46,10 +46,10 @@ export default function GuidePayGate({ guideTitle, productId, hasAccess = false,
                     </div>
                     <h3 className="text-2xl font-grotesk font-bold text-zinc-950 mb-2">Premium Guide Protected</h3>
                     <p className="text-zinc-900 text-sm font-semibold mb-6">
-                        Unlock full access to the {guideTitle} playbook, including frameworks, economic models, and due diligence checks.
+                        Get full access to the {guideTitle} playbook, including frameworks, economic models, and due diligence checks.
                     </p>
 
-                    <CheckoutButton productId={productId} label={`Unlock Guide — $${PRODUCTS[productId]?.price ? PRODUCTS[productId].price / 100 : 29}`} icon="file" variant="primary" />
+                    <CheckoutButton productId={productId} label={`Get Guide — $${PRODUCTS[productId]?.price ? PRODUCTS[productId].price / 100 : 29}`} icon="file" variant="primary" />
                     
                     <div className="mt-4 pt-4 border-t border-zinc-400">
                         <CheckoutButton productId="full_curriculum" label="Or get all 10 Guides + 60 Modules for $199/yr" variant="outline" />

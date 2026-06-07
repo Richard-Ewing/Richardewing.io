@@ -75,7 +75,7 @@ export function VaultUpsell({ recommendedTracks, urgencyLevel = 'critical' }: Va
                         : 'from-emerald-600 to-cyan-600 hover:from-white hover:to-white shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.5)]'
                     }`}
                 >
-                    <Lock className="w-5 h-5" /> Unlock Full Enterprise Framework Now
+                    <Lock className="w-5 h-5" /> Get Full Enterprise Framework Now
                 </a>
                 <p className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold mt-4 uppercase tracking-widest">Instant access to all 29 tracks • 290+ technical modules</p>
             </div>

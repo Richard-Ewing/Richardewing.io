@@ -47,7 +47,7 @@ export default function CheckoutButton({ productId, label, icon = 'file', varian
     else if (variant === 'secondary') baseClass += "bg-emerald-500 text-zinc-950 font-semibold hover:bg-emerald-400";
     else baseClass += "border border-zinc-500 text-zinc-950 font-bold hover:bg-zinc-50";
 
-    const defaultLabel = `Unlock — $${PRODUCTS[productId]?.price ? PRODUCTS[productId].price / 100 : 29}`;
+    const defaultLabel = `Get Access — $${PRODUCTS[productId]?.price ? PRODUCTS[productId].price / 100 : 29}`;
 
     return (
         <button

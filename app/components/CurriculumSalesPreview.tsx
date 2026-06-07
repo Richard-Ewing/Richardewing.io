@@ -23,7 +23,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                     <ShieldCheck className="w-4 h-4" /> End of Free Sequence
                 </div>
                 <h2 className="text-3xl md:text-5xl font-grotesk font-bold text-zinc-900 mb-6">
-                    Unlock <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-blue-400 to-purple-500">Execution Fidelity</span>.
+                    Access <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-blue-400 to-purple-500">Execution Fidelity</span>.
                 </h2>
                 <p className="text-lg text-zinc-950 font-bold max-w-2xl mx-auto mb-10">
                     You've seen the theory. The Vault contains the exact board-ready financial models, autonomous AI orchestration codes, and executive action playbooks that drive 8-figure valuation impacts.
@@ -94,7 +94,7 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                                 </div>
                                 <h4 className="text-2xl font-bold text-zinc-900 mb-4 relative z-10 tracking-tight">Vault Terminal Locked</h4>
                                 <p className="text-xs font-bold text-zinc-900 font-bold font-mono uppercase tracking-widest leading-relaxed relative z-10 bg-white/50 p-4 rounded-xl border border-zinc-400">
-                                    Awaiting authorization clearance. Unlock the module to decrypt architectural playbooks, P&L models, and deterministic diagnostic utilities.
+                                    Awaiting authorization clearance. Access the module to decrypt architectural playbooks, P&L models, and deterministic diagnostic utilities.
                                 </p>
                             </div>
                         </div>

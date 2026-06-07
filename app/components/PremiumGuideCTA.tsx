@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import BundlePopup, { PREMIUM_GUIDES } from './BundlePopup';
@@ -22,7 +22,7 @@ export default function PremiumGuideCTA({ guideSlug, guideName }: PremiumGuideCT
                 </div>
                 <h3 className="text-2xl font-grotesk font-bold text-zinc-950 mb-2">{guideName}</h3>
                 <p className="text-zinc-900 text-sm font-semibold mb-6 max-w-md mx-auto">
-                    Unlock full access to this guide including frameworks, templates, and actionable worksheets.
+                    Get full access to this guide including frameworks, templates, and actionable worksheets.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -30,7 +30,7 @@ export default function PremiumGuideCTA({ guideSlug, guideName }: PremiumGuideCT
                         onClick={() => setShowBundle(true)}
                         className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-sm font-semibold rounded-xl hover:opacity-90 transition-opacity"
                     >
-                        Unlock for ${guidePrice} <ArrowRight className="w-4 h-4" />
+                        Get access for ${guidePrice} <ArrowRight className="w-4 h-4" />
                     </button>
                     <button
                         onClick={() => setShowBundle(true)}
