@@ -45,7 +45,7 @@ tracks27Modules['synthetic-data/27-2'] = m('27-2', 'Model Collapse Dynamics', 'T
                 question: 'What is "Model Collapse" in the context of Synthetic Data generation?',
                 options: ['When the AI model becomes too smart for humans to understand', 'A catastrophic statistical implosion where training AI exclusively on previous AI outputs causes the model to entirely forget the nuances of human reality, degenerating into meaningless repetitive noise', 'When the cloud provider runs out of hard drive space', 'When the database crashes'],
                 correctIndex: 1,
-                explanation: 'An AI trained on human data learns the vast tapestry of human variance. An AI trained on AI data learns to compress and average. Over multiple generations, it compresses the variance completely down to zero.'
+                explanation: 'An AI trained on human data learns the full spectrum of human variance. An AI trained on AI data learns to compress and average. Over multiple generations, it compresses the variance completely down to zero.'
             }
         )
     ], '/vault/curriculum/tracks/synthetic-data/27-10', undefined, 'live'

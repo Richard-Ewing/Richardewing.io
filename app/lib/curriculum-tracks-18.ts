@@ -228,7 +228,7 @@ tracks18Modules['fullstack-career/18-10'] = m('18-10', 'Fullstack Capstone Econo
                 'You now hold the framework to evaluate software not by syntactic sweetness, but by its pure, undeniable impact on the corporate P&L.'
             ],
             [
-                d('End-to-End TCO', 'The holistic ownership cost spanning network transit, DB compute, and client lifecycle.', 'Always optimized for Margin'),
+                d('End-to-End TCO', 'The end-to-end ownership cost spanning network transit, DB compute, and client lifecycle.', 'Always optimized for Margin'),
                 d('Product Debt Index (PDI)', 'The overarching metric for forecasting when an application will financially collapse.', 'Maintained consistently')
             ], 
             'Draw a comprehensive architectural map applying explicit latency budgets and dollar costs to every node.', 

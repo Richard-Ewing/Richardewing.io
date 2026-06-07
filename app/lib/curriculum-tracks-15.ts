@@ -81,7 +81,7 @@ tracks15Modules['free-guides/15-5'] = m('15-5', 'Enterprise AI Team Scaling Guid
         l('The Fallacy of the 10x ML Researcher', 
             [
                 'When traditional enterprises attempt to adopt AI, they often make the mistake of attempting to hire specialized AI/ML PhDs from Google or Stanford for $500k/year to build algorithms from scratch.',
-                'Enterprise AI is not about building algorithms. It is about securely piping proprietary data into existing Cloud APIs (OpenAI, Anthropic). You need "AI Application Engineers"—standard senior developers who understand how to build robust RAG pipelines and prompt-routing logic.',
+                'Enterprise AI is not about building algorithms. It is about securely piping proprietary data into existing Cloud APIs (OpenAI, Anthropic). You need "AI Application Engineers"—standard senior developers who understand how to build production-grade RAG pipelines and prompt-routing logic.',
                 'The ideal AI Pod consists of: 1 Data Engineer (for pipeline), 2 AI App Engineers (for API integration/RAG), and 1 Subject Matter Expert (for writing the Golden Dataset ground-truth evaluations).'
             ],
             [

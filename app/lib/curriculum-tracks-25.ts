@@ -32,8 +32,8 @@ tracks25Modules['model-routing/25-2'] = m('25-2', 'Semantic Fallback Networks', 
         l('The Fragility of the Singular Vendor', 
             [
                 'For decades, developers built "Vendor Lock-In" into their databases. In 2026, developers built catastrophic vendor lock-in into their intelligence. If an organization routes 100% of its traffic to Anthropic, and Anthropic suffers a catastrophic 4-hour US-East outage, the entire multi-million dollar software application fails instantly.', 
-                'Model Routing enforces "Semantic Fallback Networks." The routing gateway is instructed via cascading logic: Attempt primary route (Claude 3.5 Sonnet). If the request hits a 503 HTTP timeout, instantly intercept the failure and seamlessly reroute the exact payload mathematically to a secondary provider (GPT-4o or a local vLLM node).',
-                'The user never experiences an error screen. The user only experiences a slight 500ms delay while the intelligent orchestrator seamlessly hedges the failure across competing geopolitical infrastructure layers.'
+                'Model Routing enforces "Semantic Fallback Networks." The routing gateway is instructed via cascading logic: Attempt primary route (Claude 3.5 Sonnet). If the request hits a 503 HTTP timeout, instantly intercept the failure and instantly reroute the exact payload mathematically to a secondary provider (GPT-4o or a local vLLM node).',
+                'The user never experiences an error screen. The user only experiences a slight 500ms delay while the intelligent orchestrator automatically hedges the failure across competing geopolitical infrastructure layers.'
             ],
             [
                 d('Single-Vendor Downtime Risk', 'The probability of a massive corporate failure directly linked to a third-party API outage.', 'Must structurally hedge'),
@@ -43,7 +43,7 @@ tracks25Modules['model-routing/25-2'] = m('25-2', 'Semantic Fallback Networks', 
             ['Block the DNS resolution for the primary LLM API within the staging environment.', 'Trigger the primary autonomous agent workflow.', 'Verify visually that the system automatically recovers and utilizes the secondary fallback provider cleanly.'], 
             {
                 question: 'Why must enterprise Model Routers natively support "Cascading Failovers"?',
-                options: ['To lower the cost of the cloud', 'Because the reliability of centralized LLM APIs is notoriously fragile. A failover seamlessly re-routes a blocked request to a competitor’s model, achieving zero user-facing downtime despite a massive infrastructural collapse', 'To make the response more creative', 'Because it is required by the Linux Foundation'],
+                options: ['To lower the cost of the cloud', 'Because the reliability of centralized LLM APIs is notoriously fragile. A failover automatically re-routes a blocked request to a competitor’s model, achieving zero user-facing downtime despite a massive infrastructural collapse', 'To make the response more creative', 'Because it is required by the Linux Foundation'],
                 correctIndex: 1,
                 explanation: 'No single generative API has 5 Nines (99.999%) of reliability. You cannot allow a fragile third party to take your proprietary application completely offline.'
             }

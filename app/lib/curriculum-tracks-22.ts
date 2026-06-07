@@ -93,7 +93,7 @@ tracks22Modules['culture/22-4'] = m('22-4', 'Continuous Deployment Confidence', 
                 question: 'What does a "Never deploy on a Friday" policy actually reveal about an engineering organization?',
                 options: ['That they value work-life balance perfectly', 'That their CI/CD pipeline is fundamentally fragile, lacks automated testing, and relies on manual human panic to reverse outages', 'That they use AWS properly', 'That they are highly agile'],
                 correctIndex: 1,
-                explanation: 'A robust, modern deployment pipeline isolates changes with feature flags and rolls back instantly if errors spike. Fear of shipping implies a complete lack of technical guardrails.'
+                explanation: 'A battle-tested deployment pipeline isolates changes with feature flags and rolls back instantly if errors spike. Fear of shipping implies a complete lack of technical guardrails.'
             }
         )
     ], '/vault/curriculum/tracks/culture/22-5', undefined, 'live'
@@ -105,14 +105,14 @@ tracks22Modules['culture/22-5'] = m('22-5', 'The 10x Developer Illusion', 'Syste
             [
                 'The Silicon Valley myth of the "10x Developer" incorrectly glorifies the individual who types 10 times faster or writes highly obscure, overly clever algorithmic hacks. These developers actively create crushing technical debt that takes massive teams years to unravel.', 
                 'A true 10x engineer operates strictly as an organizational multiplier. They achieve extreme velocity by establishing frictionless CI/CD pipelines, automating brutal database migrations, and mentoring junior developers—effectively turning five 1x engineers into 2x engineers.',
-                'Scaling a software company requires optimizing the environment, not worshipping the isolated coder. By heavily investing in profound Developer Experience (DX), you systemically elevate the entire floor of the organization.'
+                'Scaling a software company requires optimizing the environment, not worshipping the isolated coder. By heavily investing in profound Developer Experience (DX), you systemically raise the entire floor of the organization.'
             ],
             [
                 d('Organizational Multiplier Effect', 'The degree to which a single senior engineer actively unblocks the broader team.', 'The true 10x metric'),
                 d('Cleverness Penalty', 'The extensive future maintenance cost of writing deeply obscure, non-standard code.', 'Massively negative ROI')
             ], 
             'Redefine criteria for Senior and Staff engineering promotions entirely around systemic organizational multiplication.', 
-            ['Penalize code reviews that favor obscure, "clever" one-liners over incredibly dense, highly readable robustness.', 'Promote the engineer who spent 3 days setting up an automated staging environment that saves every other developer 20 minutes a day.', 'Track leverage, not raw syntax volume.'], 
+            ['Penalize code reviews that favor obscure, "clever" one-liners over incredibly dense, highly readable resilience.', 'Promote the engineer who spent 3 days setting up an automated staging environment that saves every other developer 20 minutes a day.', 'Track leverage, not raw syntax volume.'], 
             {
                 question: 'How does a true "10x Engineer" operate in an elite enterprise environment?',
                 options: ['By writing all the complex code themselves over the weekend', 'By acting as an organizational multiplier—automating bottlenecks, writing pristine documentation, and elevating the velocity of the developers around them', 'By learning the newest, highly experimental Javascript framework', 'By avoiding all meetings'],

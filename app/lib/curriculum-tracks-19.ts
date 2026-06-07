@@ -136,7 +136,7 @@ tracks19Modules['agile-economics/19-6'] = m('19-6', 'JIRA Misalignment Tax', 'Ti
                 d('Information Asymmetry Delay', 'Hours lost waiting for PM specification responses.', 'Tracked via ticket dwell time')
             ], 
             'Implement an aggressively strict Definition of Ready (DoR) gate on all incoming user stories.', 
-            ['Create a mandatory Jira Template requiring exact UX mockups and API bounds.', 'Empower the engineering lead to outright reject non-compliant tickets during grooming.', 'Measure the subsequent drop in mid-sprint Slack clarifications.'], 
+            ['Create a mandatory Jira Template requiring exact UX mockups and API bounds.', 'Authorize the engineering lead to outright reject non-compliant tickets during grooming.', 'Measure the subsequent drop in mid-sprint Slack clarifications.'], 
             {
                 question: 'What is the purpose of enforcing a Definition of Ready (DoR)?',
                 options: ['To give engineers an excuse to write less code', 'To ensure no ticket enters an active sprint without complete, unambiguous requirements, preventing flow-state destruction', 'To force PMs to write the code themselves', 'To track employee hours more strictly'],

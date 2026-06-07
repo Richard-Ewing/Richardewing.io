@@ -105,7 +105,7 @@ tracks20Modules['system-design/20-5'] = m('20-5', 'Architecture Defensibility', 
             [
                 'Rapid adoption of heavy proprietary cloud primitives (e.g., DynamoDB, AWS Cognito, Google Spanner, SQS) permanently binds your application architecture to a single vendor. This completely obliterates your leverage during contract negotiations.', 
                 'Architectural defensibility requires constructing strict Hexagonal Architecture boundaries. Your core business logic must never import massive cloud SDKs directly. You must build thin Interface Repositories that wrap the cloud logic safely.',
-                'By abstracting data storage and identity verification behind strict interfaces, you gain the operational leverage to seamlessly threaten a massive migration to a competitor if your cloud invoice spirals out of control.'
+                'By abstracting data storage and identity verification behind strict interfaces, you gain the operational leverage to credibly threaten a massive migration to a competitor if your cloud invoice spirals out of control.'
             ],
             [
                 d('Cloud Portability Window', 'The theoretical amount of time required to lift-and-shift to Azure or GCP.', '< 3 Months Target'),

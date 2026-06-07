@@ -24,7 +24,7 @@ tracks9Modules['engineering-leadership/9-1'] = m('9-1', 'CTO Economics', 'The di
                 question: 'What is the primary operational distinction between a CTO and a VP of Engineering in a mid-to-large technology organization?',
                 options: ['The CTO writes code, the VP fires people', 'The CTO looks outward (3-year architecture, M&A strategy, board reporting) while the VP of Engineering looks inward (team velocity, metrics, daily execution)', 'The VP of Engineering handles all security and the CTO handles marketing', 'The CTO focuses on databases and the VP focuses on front-end infrastructure'],
                 correctIndex: 1,
-                explanation: 'A company scaling past the startup phase requires dedicated strategic leadership looking outward at the competitive technical landscape, while a highly capable operational leader executes internally to hit current revenue targets. Fusing both leads to catastrophic burnout.'
+                explanation: 'A company scaling past the startup phase requires dedicated strategic leadership looking outward at the competitive technical market, while a highly capable operational leader executes internally to hit current revenue targets. Fusing both leads to catastrophic burnout.'
             }
         )
     ], '/vault/curriculum/tracks/engineering-leadership/9-2', undefined, 'live'

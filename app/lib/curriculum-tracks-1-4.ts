@@ -155,7 +155,7 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
                 l('Lesson 3: Governing the Adoption Curve', 'Transitioning from Shadow AI to Governed AI requires cultural engineering. You must prove to employees that the secure internal tools are just as capable as the public tools they were using illicitly.', [
                     d('Adoption Metrics', 'Tracking the usage of internal governed AI tools vs. blocked attempts to external tools.', 'Target: > 90% internal adoption'),
                     d('Amnesty Programs', 'Allowing employees to report their Shadow AI usage without penalty.', 'Crucial for discovering hidden workflows'),
-                    d('Continuous Monitoring', 'Regularly scanning the network for new, unauthorized AI endpoints.', 'The AI landscape changes weekly')
+                    d('Continuous Monitoring', 'Regularly scanning the network for new, unauthorized AI endpoints.', 'The AI market shifts weekly')
                 ], 'Draft a company-wide communication announcing an Amnesty Program for Shadow AI usage and introducing the new Governed AI portal.')
             ]
         ],
@@ -347,7 +347,7 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
                 ], 'Write a hardened system prompt using XML delimiters that successfully passes a simulated prompt injection attack.'),
                 l('Lesson 2: Outbound Data Loss Prevention (DLP)', 'Before any packet leaves the perimeter for third-party inference, it must pass through an outbound DLP gateway. Implement Named Entity Recognition (NER) models to anonymize data BEFORE transit.', [
                     d('PII Scrubbing Latency', 'The time cost of sanitizing a prompt using local NER.', 'Target: < 30ms via Microsoft Presidio'),
-                    d('Re-hydration Architecture', 'Mapping scrubbed tokens back to real names on the response.', 'Ensures seamless UX while protecting data'),
+                    d('Re-hydration Architecture', 'Mapping scrubbed tokens back to real names on the response.', 'Ensures invisible UX continuity while protecting data'),
                     d('Compliance Auditing', 'Logging every scrubbed outbound payload.', 'Proves compliance to ISO auditors')
                 ], 'Design a DLP pipeline that intercepts an outbound LLM request, sanitizes PII, hits the API, and rehydrates the response.'),
                 l('Lesson 3: Agentic Sandboxing', 'When you give an AI Agent tools to execute code, run database queries, or send emails, you are opening a massive threat vector. Zero-Trust requires sandboxed execution environments.', [

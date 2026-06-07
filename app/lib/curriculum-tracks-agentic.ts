@@ -72,7 +72,7 @@ agenticGovernanceModules['agentic-governance/58-2'] = {
     lessons: [
         l(
             'Lesson 1: The Failure of Human RBAC for Agents',
-            'Traditional Role-Based Access Control (RBAC) assumes a human user navigating a UI, where interface friction naturally limits the speed and scope of actions. When you assign human RBAC profiles to an autonomous agent, you weaponize its efficiency. An agent doesn\'t click through menus; it enumerates API endpoints concurrently. Giving an agent your "Admin" token means giving it the ability to delete 10,000 users in 4 seconds if its prompt is hijacked. Agentic RBAC requires a fundamentally different paradigm: Scoped Ephemeral Tokens.',
+            'Traditional Role-Based Access Control (RBAC) assumes a human user navigating a UI, where interface friction naturally limits the speed and scope of actions. When you assign human RBAC profiles to an autonomous agent, you weaponize its efficiency. An agent doesn\'t click through menus; it enumerates API endpoints concurrently. Giving an agent your "Admin" token means giving it the ability to delete 10,000 users in 4 seconds if its prompt is hijacked. Agentic RBAC requires a fundamentally different architecture: Scoped Ephemeral Tokens.',
             [
                 d('Token Ephemerality', 'Agent tokens should expire within minutes, not days. Unlike a human session cookie, an agent completes its task instantly.', 'Target: 5-minute maximum TTL for agent tokens.'),
                 d('Action-Level Scoping', 'Agents should rarely have wildcards (`*`). Give an agent `users:read`, never `users:*`.', 'Benchmark: 0% wildcard permissions for autonomous actors.'),
@@ -138,7 +138,7 @@ agenticGovernanceModules['agentic-governance/58-3'] = {
         ),
         l(
             'Lesson 3: Graceful Degradation (The Fallback Pattern)',
-            'When the kill switch is tripped, or when the LLM provider goes down (e.g., OpenAI outage), your application must not crash. Graceful degradation is the engineering practice of falling back to a deterministic, non-AI experience. If the AI customer support agent is killed, the chat widget should seamlessly route the user to a static FAQ or open a human support ticket. The user experience degrades safely rather than throwing a 500 Internal Server Error or a timeout blank screen.',
+            'When the kill switch is tripped, or when the LLM provider goes down (e.g., OpenAI outage), your application must not crash. Graceful degradation is the engineering practice of falling back to a deterministic, non-AI experience. If the AI customer support agent is killed, the chat widget should automatically route the user to a static FAQ or open a human support ticket. The user experience degrades safely rather than throwing a 500 Internal Server Error or a timeout blank screen.',
             [
                 d('Fallback Latency', 'The time it takes to serve the non-AI fallback when the primary AI path fails.', 'Target: < 1 second. Hide the failure from the user.'),
                 d('State Preservation', 'Ensuring that whatever context the user provided is saved so the fallback (or a human) can pick it up.', 'Benchmark: 100% of chat logs persisted before failure.'),

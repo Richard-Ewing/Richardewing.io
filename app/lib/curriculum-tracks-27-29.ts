@@ -67,7 +67,7 @@ tracks27to29Modules['27-7'] = m('27-7', 'Local Vector Embeddings', 'Executing RA
 tracks27to29Modules['27-8'] = m('27-8', 'Peer-to-Peer LLM Networking', 'Gossip Protocols for Decentralization.', t27, 
     ['Shard inference across local networks', 'Cluster local laptops into supercomputers'], [
         l('Swarm Inferencing', 
-            ['If you have 10 engineers with MacBooks in an office, their combined VRAM is over 320GB. Using distributed frameworks (e.g. Petals), you can load a 70B parameter model across the office LAN seamlessly.'],
+            ['If you have 10 engineers with MacBooks in an office, their combined VRAM is over 320GB. Using distributed frameworks (e.g. Petals), you can load a 70B parameter model across the office LAN with zero configuration overhead.'],
             [d('Distributed Latency Penalty', 'Time lost hopping between Macs via WiFi.', 'Low enough for Chat')], 'Test connecting two local machines via llama.cpp RPC server.', undefined, undefined)
     ], '/vault/curriculum/tracks/27/27-9', undefined, 'live'
 );

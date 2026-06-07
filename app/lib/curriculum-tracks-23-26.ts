@@ -248,7 +248,7 @@ tracks23to26Modules['25-9'] = m('25-9', 'AI Pathology & Radiology', 'Computer Vi
 tracks23to26Modules['25-10'] = m('25-10', 'Precision Medicine Capitalization', 'Synthesizing N of 1 Treatment Economics.', t25, 
     ['Calculate personalized medicine unit costs', 'Understand neoantigen targeting'], [
         l('The N of 1 Trial', 
-            ['Traditionally, drugs are built for millions. AI allows drugs (like custom mRNA cancer vaccines) to be designed for exactly one person. This requires an entirely new regulatory and economic paradigm.'],
+            ['Traditionally, drugs are built for millions. AI allows drugs (like custom mRNA cancer vaccines) to be designed for exactly one person. This requires an entirely new regulatory and economic model.'],
             [d('Unit Cost of N=1', 'Cost to synthesize one custom therapy.', 'Rapidly dropping')], 'Map the supply chain logic required to produce a therapy in 30 days.', undefined, undefined)
     ], undefined, undefined, 'live'
 );

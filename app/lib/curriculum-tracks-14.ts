@@ -196,7 +196,7 @@ tracks7Modules['cloud-finops/7-11'] = m('7-11', 'AI FinOps Specialization', 'Map
         l('Token Tracing and Margin Compression', 
             [
                 'AI completely breaks traditional FinOps. You no longer pay for server runtime; you pay for non-deterministic token lengths. A user typing a highly complex prompt forces a massive context recall, single-handedly ruining the margin on their $10/month SaaS subscription.',
-                'AI FinOps requires establishing "Token Budgets" per user segment. If a freemium user exceeds their daily token cost allowance, the UI must dynamically degrade from GPT-4o to a cheaper, smaller model (like Haiku) seamlessly.',
+                'AI FinOps requires establishing "Token Budgets" per user segment. If a freemium user exceeds their daily token cost allowance, the UI must dynamically degrade from GPT-4o to a cheaper, smaller model (like Haiku) without user disruption.',
                 'You must trace every single API call back to the originating user ID. A centralized "Token Gateway" proxy is mandatory to intercept, record, and cap spend before it hits the Cloud.'
             ],
             [

@@ -218,7 +218,7 @@ tracks13Modules['ai-agent-economics/13-12'] = m('13-12', 'Open Weights Engineeri
             ],
             [
                 d('Self-Hosted VRAM Cost', 'The monthly AWS/GCP bill for renting A100/H100 GPU instances.', 'Expensive idle costs'),
-                d('Air-Gapped Data Premium', 'The business value unlocked by proving to customers their data never leaves your VPC network.', 'Massive enterprise sales accelerator')
+                d('Air-Gapped Data Premium', 'The business value gained by proving to customers their data never leaves your VPC network.', 'Massive enterprise sales accelerator')
             ],
             'Calculate the TCO of bringing inferences entirely into your VPC.',
             ['Look at your monthly Anthropic or OpenAI bill.', 'Estimate the number of tokens processed.', 'Calculate the cost of running two `g5.2xlarge` instances on AWS 24/7. Determine if self-hosting is actually cheaper or just a security play.']

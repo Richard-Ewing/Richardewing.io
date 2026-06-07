@@ -74,7 +74,7 @@ tracks16to17ExpansionModules['guides/16-6'] = m('16-6', 'Tech Debt Forgiveness P
             ['Calculate the current quantitative Innovation Tax of the underlying system.', 'Estimate the capital expenditure required to fund an isolated 6-month Tiger Team rebuild.', 'Present the operational break-even ROI timeline to the Board (usually ~18 months).'],
             {
                 question: 'Why do most large-scale system rewrites fail politically?',
-                options: ['The new language chosen is too complex', 'Leadership attempts to build the new system while constantly shipping new features on the old system', 'Developers refuse to learn modern paradigms', 'Cloud costs spike temporarily during the rebuild'],
+                options: ['The new language chosen is too complex', 'Leadership attempts to build the new system while constantly shipping new features on the old system', 'Developers refuse to learn modern architectures', 'Cloud costs spike temporarily during the rebuild'],
                 correctIndex: 1,
                 explanation: 'Attempting to ride two horses at once splits focus. Legacy systems continue to mutate while the new system chases a constantly moving target requirement.'
             }
@@ -99,7 +99,7 @@ tracks16to17ExpansionModules['guides/16-7'] = m('16-7', 'Vendor Lock-In Negotiat
             ['Review the preceding month’s Amazon Web Services (AWS) or Google Cloud (GCP) invoice.', 'Isolate and total the raw external bandwidth/transit charges.', 'Simulate the exact egress cost of moving your massive primary database to a Bare Metal provider.'],
             {
                 question: 'What is the most effective negotiating leverage during an AWS or GCP Enterprise renewal?',
-                options: ['Threatening to hire more internal DevOps engineers', 'Proving via containerized architecture that you can seamlessly migrate to a competitor', 'Complaining about small compute spot instance price fluctuations', 'Purchasing more internal on-premise hardware'],
+                options: ['Threatening to hire more internal DevOps engineers', 'Proving via containerized architecture that you can fully migrate to a competitor', 'Complaining about small compute spot instance price fluctuations', 'Purchasing more internal on-premise hardware'],
                 correctIndex: 1,
                 explanation: 'Cloud providers only act creatively on pricing when there is a tangible, architectural threat of total account abandonment to a rival network.'
             }
@@ -126,7 +126,7 @@ tracks16to17ExpansionModules['guides/16-8'] = m('16-8', 'Incident Response Comma
                 question: 'In a Blameless Post-Mortem, what is the correct focus of the investigation?',
                 options: ['Terminating the engineer who deployed the faulty code', 'Finding who approved the PR', 'Examining the systemic architectural failures and permission gaps that allowed the error to reach production', 'Reducing the frequency of PagerDuty alerts'],
                 correctIndex: 2,
-                explanation: 'Human errors are inevitable. A robust system assumes developers will make mistakes and relies on automated guardrails rather than fear of punishment.'
+                explanation: 'Human errors are inevitable. A well-engineered system assumes developers will make mistakes and relies on automated guardrails rather than fear of punishment.'
             }
         )
     ], '/vault/curriculum/tracks/guides/16-9', undefined, 'live'
@@ -194,7 +194,7 @@ tracks16to17ExpansionModules['comparisons/17-6'] = m('17-6', 'Kafka vs AWS Event
                 'Selecting an incorrect messaging broker leads to binary financial consequences: either massive infrastructure idle costs via unutilized Kafka clusters, or catastrophic hyperscaler cloud billing surprises driven by out-of-control EventBridge throughput.'
             ],
             [
-                d('Kafka Baseline Operations TCO', 'The strict minimum cost of running MSK/Confluent with 3 robust instances.', '~$1,500/mo bare minimum'),
+                d('Kafka Baseline Operations TCO', 'The strict minimum cost of running MSK/Confluent with 3 dedicated instances.', '~$1,500/mo bare minimum'),
                 d('Serverless EventBridge Tax', 'The completely variable, usage-based cost of event routing.', '$1.00 per 1M events')
             ],
             'Execute an ingestion volume mapping analysis. Choose between massive-throughput or per-event pricing.',

@@ -31,7 +31,7 @@ tracks21Modules['product-management/21-2'] = m('21-2', 'Roadmap Bankruptcy', 'Ov
     ['Eliminate the massive Gantt chart', 'Stop lying to Sales'], [
         l('The Fallacy of the 12-Month Gantt Chart', 
             [
-                'A 12-month Product Roadmap delivered in Q1 is an enormous artifact of fiction. The specific competitive landscape, the internal technical debt burden, and actual user requirements will mutate aggressively within 90 days, rendering the latter 9 months of the chart completely meaningless.', 
+                'A 12-month Product Roadmap delivered in Q1 is an enormous artifact of fiction. The specific competitive reality, the internal technical debt burden, and actual user requirements will mutate aggressively within 90 days, rendering the latter 9 months of the chart completely meaningless.', 
                 'When Sales teams promise features off a 12-month roadmap to close an enterprise prospect, they lock Engineering into delivering legacy logic that may no longer be viable.',
                 'The elite Enterprise Product Roadmap is simply three columns: "Now, Next, Later." It commits absolutely zero hard dates to anything beyond the active 6-week development cycle, providing maximum maneuvering agility.'
             ],

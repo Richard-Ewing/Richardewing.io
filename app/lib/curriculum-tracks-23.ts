@@ -9,7 +9,7 @@ tracks23Modules['agentic-automation/23-1'] = m('23-1', 'The End of Robotic Proce
             [
                 'For the last decade, enterprises spent billions on UI-driven Robotic Process Automation (RPA) tools like UiPath. These systems rely on explicit screen-scraping and DOM coordinate binding. Consequently, if a SaaS vendor changes the CSS class of a single "Submit" button, the entire million-dollar RPA workflow violently collapses.', 
                 'Agentic Process Automation (APA) completely bypasses UI fragility. Agents interact purely via underlying semantic API schemas and multimodal reasoning. They don\'t look for a red button; they look for the endpoint required to submit the payload, understanding the intent rather than the layout.',
-                'Transitioning from RPA to APA drops maintenance engineering costs by upwards of 90%, transitioning from a paradigm of "Fragile Configuration" to "Durable Intelligence."'
+                'Transitioning from RPA to APA drops maintenance engineering costs by upwards of 90%, transitioning from a model of "Fragile Configuration" to "Durable Intelligence."'
             ],
             [
                 d('RPA Breakage Rate', 'The percentage of legacy bots that fail due to minor frontend UI updates.', 'Historically massive (> 30%)'),
@@ -223,7 +223,7 @@ tracks23Modules['agentic-automation/23-10'] = m('23-10', 'APA Capstone Metrics',
     ['Calculate final TCO of agent deployment', 'Verify architecture'], [
         l('The Automation Inflection Point', 
             [
-                'You have fully traversed the paradigm of Agentic Process Automation (APA). Understanding that the transition from fragile RPA screen-scraping to durable, semantic API reasoning represents the largest margin expansion capability in modern enterprise history.', 
+                'You have fully traversed the full scope of Agentic Process Automation (APA). Understanding that the transition from fragile RPA screen-scraping to durable, semantic API reasoning represents the largest margin expansion capability in modern enterprise history.', 
                 'However, that expansion is entirely contingent on adhering to the bounds of execution capability: enforcing strict Agentic Taxes, terminating infinite hallucination loops, and protecting database state with deterministic boundaries.',
                 'A single, well-architected Agent executing semantic API workflows with a highly optimized vector RAG context will fundamentally outperform a heavily staffed tier-1 operations team at a tiny fraction of the cost, securely and flawlessly.'
             ],
