@@ -1,23 +1,21 @@
 import { NextResponse } from 'next/server';
+import { auth } from '@clerk/nextjs/server';
 import { supabaseAdmin } from '@/lib/supabase';
 
 /**
- * Agent Operations Dashboard API
+ * Agent Status API — powers the /admin/agents dashboard.
  * 
- * GET /api/cron/status — Returns the status of all autonomous agents.
- * Protected by CRON_SECRET for security.
- * 
- * This is your operational control plane — a single endpoint to see
- * what every agent did, when, and whether it succeeded.
+ * Protected by Clerk auth — only logged-in users can access.
+ * Returns the same data shape as /api/cron/status but without CRON_SECRET.
  */
-export async function GET(req: Request) {
+export async function GET() {
     try {
-        const authHeader = req.headers.get('authorization');
-        if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
-            return NextResponse.json({ error: 'Unauthorized.' }, { status: 401 });
+        // Authenticate via Clerk
+        const { userId } = await auth();
+        if (!userId) {
+            return NextResponse.json({ error: 'Unauthorized. Please sign in.' }, { status: 401 });
         }
 
-        // Fetch the last 5 runs per agent
         const agents = [
             'intelligence-digest',
             'benchmark-aggregator',
@@ -45,28 +43,27 @@ export async function GET(req: Request) {
             };
         }
 
-        // Also fetch lead score summary
-        const { data: leadSummary } = await supabaseAdmin
+        // Pipeline summary
+        const { data: leadData } = await supabaseAdmin
             .from('lead_scores')
-            .select('tier')
-            .order('scored_at', { ascending: false });
+            .select('tier');
 
-        const tierCounts = {
-            HOT: leadSummary?.filter((l: any) => l.tier === 'HOT').length || 0,
-            WARM: leadSummary?.filter((l: any) => l.tier === 'WARM').length || 0,
-            COLD: leadSummary?.filter((l: any) => l.tier === 'COLD').length || 0,
-            NURTURE: leadSummary?.filter((l: any) => l.tier === 'NURTURE').length || 0,
-        };
+        const pipeline = { HOT: 0, WARM: 0, COLD: 0, NURTURE: 0 };
+        if (leadData) {
+            leadData.forEach((l: any) => {
+                if (l.tier in pipeline) pipeline[l.tier as keyof typeof pipeline]++;
+            });
+        }
 
         return NextResponse.json({
             status: 'operational',
             timestamp: new Date().toISOString(),
             agents: dashboard,
-            pipeline: tierCounts,
+            pipeline,
         });
 
     } catch (error) {
-        console.error('[AGENT:STATUS] Error:', error);
+        console.error('[ADMIN:AGENT-STATUS] Error:', error);
         return NextResponse.json({ error: 'Failed to fetch agent status.' }, { status: 500 });
     }
 }

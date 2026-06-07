@@ -1,5 +1,12 @@
 import Link from 'next/link';
 import { Search, TrendingDown, Shield, AlertTriangle, ArrowRight, BookOpen } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Page Not Found | Richard Ewing',
+    description: 'The page you are looking for does not exist. Explore Production AI Governance tools, frameworks, and diagnostics at richardewing.io.',
+    robots: 'noindex, follow',
+};
 
 export default function NotFound() {
     return (
