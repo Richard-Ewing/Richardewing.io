@@ -4,11 +4,11 @@ export function populateTrack24(modules: Record<string, CurriculumModule>) {
     modules['ai-economics/24-1'] = m(
         '24-1',
         '24.1 The End of Zero Marginal Cost Software',
-        'Understand the fundamental shift from fixed-cost software architectures to variable-cost intelligent systems, and how this paradigm permanently breaks traditional SaaS valuation and pricing models.',
+        'Understand the fundamental shift from fixed-cost software architectures to variable-cost intelligent systems, and how this structural shift permanently breaks traditional SaaS valuation and pricing models.',
         'AI Economics & Margin Engineering',
         [
             'Traditional SaaS Economics: High fixed development cost, near-zero marginal cost per additional user.',
-            'The AI Paradigm Shift: Intelligence is a consumable resource. Every user interaction drives direct, variable infrastructure costs.',
+            'The AI Structural Shift: Intelligence is a consumable resource. Every user interaction drives direct, variable infrastructure costs.',
             'Why traditional SaaS metrics (DAU/MAU) become toxic when uncoupled from exact inference cost analysis.',
             'The structural differences between shipping deterministic code (fixed) and shipping raw compute (variable).',
             'How venture capital and public markets are mispricing AI startups by using outdated SaaS multiples.'
@@ -123,7 +123,7 @@ export function populateTrack24(modules: Record<string, CurriculumModule>) {
                 'If your underlying API provider released your exact feature tomorrow, would your customers stay? If the answer is no, you are in the Reseller Trap. You must immediately pivot to incorporating siloed organizational data that foundation models cannot scrape.',
                 [
                     d('Compute Reseller Trap', 'Operating a business with no proprietary value beyond the LLM API.', 'Highly vulnerable to platform risk'),
-                    d('Platform Absorption', 'When a foundation model native update obsoletes a startup ecosystem.', 'E.g., "Chat with PDF" wrappers'),
+                    d('Platform Absorption', 'When a foundation model native update obsoletes a startup product category.', 'E.g., "Chat with PDF" wrappers'),
                     d('Proprietary Value Layer', 'The specific workflow or data integration that makes your application unique.', 'The source of your economic moat')
                 ],
                 'Perform a Defensibility Audit on your core product. List three capabilities that rely entirely on your proprietary architecture rather than the underlying LLM.'

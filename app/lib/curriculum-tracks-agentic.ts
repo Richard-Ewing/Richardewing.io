@@ -199,7 +199,7 @@ agenticGovernanceModules['agentic-governance/58-4'] = {
 agenticGovernanceModules['agentic-governance/58-5'] = {
     moduleId: '58-5',
     title: 'ROI of Deterministic Execution',
-    description: 'Calculate the hard financial metrics proving why investing in robust AI governance yields higher returns than raw AI capability expansion.',
+    description: 'Calculate the hard financial metrics proving why investing in production-grade AI governance yields higher returns than raw AI capability expansion.',
     trackName: t58,
     productId: singleProduct,
     takeaways: [
@@ -230,7 +230,7 @@ agenticGovernanceModules['agentic-governance/58-5'] = {
         ),
         l(
             'Lesson 3: Pitching Governance as an Accelerator',
-            'Business leadership naturally views "Governance" as red tape that slows down innovation. This is profoundly false in the era of AI. Without governance, developers spend 80% of their time playing whack-a-mole with edge cases, prompt regressions, and security alerts. Implementing a robust Agentic Governance framework—standardized RBAC, kill switches, and strict data schemas—creates a "Paved Road" for engineering. Teams can provision new AI features 5x faster because they don\'t have to reinvent the safety guardrails from scratch every time.',
+            'Business leadership naturally views "Governance" as red tape that slows down innovation. This is profoundly false in the era of AI. Without governance, developers spend 80% of their time playing whack-a-mole with edge cases, prompt regressions, and security alerts. Implementing a production-grade Agentic Governance framework—standardized RBAC, kill switches, and strict data schemas—creates a "Paved Road" for engineering. Teams can provision new AI features 5x faster because they don\'t have to reinvent the safety guardrails from scratch every time.',
             [
                 d('Time-to-Market (TTM)', 'The duration from concept to production deployment for an AI feature.', 'Target: Reduce AI feature TTM from 6 weeks to 1 week.'),
                 d('Infrastructure Reuse', 'The percentage of AI security code that is written once and reused globally across all features.', 'Benchmark: >90% code reuse via a centralized Threat Prevention Layer.'),

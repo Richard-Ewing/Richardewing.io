@@ -405,7 +405,7 @@ tracks18to22Modules['engineering-culture/22-8'] = m('22-8', 'Meeting Attrition M
 tracks18to22Modules['engineering-culture/22-9'] = m('22-9', 'Seniority Balance Pricing', 'Junior vs Senior Ratios, Mentoring Overhead, Delivery Certainty.', t22, 
     ['Avoid top-heavy stagnation', 'Measure mentoring tax'], [
         l('The Mentoring Tax', 
-            ['A squad of 1 Senior and 4 Juniors will output far less than just 1 Senior alone. A healthy ecosystem pairs 1 Senior to 1.5 Mid/Juniors. Too many juniors bankrupts the system in mentoring overhead.'],
+            ['A squad of 1 Senior and 4 Juniors will output far less than just 1 Senior alone. A healthy team pairs 1 Senior to 1.5 Mid/Juniors. Too many juniors bankrupts the system in mentoring overhead.'],
             [d('Seniority Ratio', 'Optimum ratio of L5+ to L2/L3.', '1:2 Max')], 'Audit the squad leveling matrix across all engineering pods.', undefined, undefined)
     ], '/vault/curriculum/tracks/engineering-culture/22-10', undefined, 'live'
 );

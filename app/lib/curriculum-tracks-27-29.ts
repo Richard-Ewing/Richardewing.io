@@ -8,7 +8,7 @@ const t29 = 'Track 29 — AI Supply Chain & GPU FinOps';
 
 // ═══════════════════ TRACK 27: SLMs & EDGE INTELLIGENCE (10 Modules) ═══════════════════
 
-tracks27to29Modules['27-1'] = m('27-1', 'The SLM Paradigm Shift', 'Parameters vs. Performance and Edge Scaling.', t27, 
+tracks27to29Modules['27-1'] = m('27-1', 'The SLM Structural Shift', 'Parameters vs. Performance and Edge Scaling.', t27, 
     ['Map out parameter utility', 'Calculate API cost avoidance'], [
         l('The Decline of the Hyperscalers', 
             ['Using GPT-4.5 to parse an email is like using a supercomputer to calculate a tip. Narrower, heavily optimized 8B parameter Local Models (SLMs) perform specific tasks with 99% accuracy at 1% of the API cost.'],
@@ -174,7 +174,7 @@ tracks27to29Modules['28-10'] = m('28-10', 'Zero-Shot Agent Workloads', 'Handling
 
 tracks27to29Modules['29-1'] = m('29-1', 'Hardware Monopolies & Moats', 'NVIDIA Dominance and Custom Silicon.', t29, 
     ['Analyze the CUDA Moat', 'Understand TPU/Inferentia capabilities'], [
-        l('The Ecosystem Monopoly', 
+        l('The Platform Monopoly', 
             ['NVIDIA’s dominance is not strictly in silicon; it is in the CUDA software layer that 95% of AI researchers use. Competing hardware (AMD MI300X, AWS Inferentia) works, but suffers from massive software compatibility friction.'],
             [d('Silicon Lock-In Margin', 'The extra cost paid specifically for NVIDIA brand.', 'Massive Premium')], 'Evaluate AWS Trainium instances—are your PyTorch models compatible with minor tweaks?', undefined, undefined)
     ], '/vault/curriculum/tracks/29/29-2', undefined, 'live'

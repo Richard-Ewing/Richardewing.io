@@ -184,7 +184,7 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
             d('Error Cost Reduction', 'Reduction in error-related costs after verification deployment', '80-95% for factual accuracy errors'),
         ], 'Audit your current AI deployments for trust gaps. Identify the top 3 areas where verification infrastructure would have the highest ROI.'),
         l('Verification vs Validation: The Agent Governance Distinction', [
-            'Validation asks "did we build the right thing?" — an upfront, design-time activity. Verification asks "is this specific output correct?" — a runtime, continuous activity. For agents, verification is the economic game-changer.',
+            'Validation asks "did we build the right thing?" — an upfront, design-time activity. Verification asks "is this specific output correct?" — a runtime, continuous activity. For agents, verification is the economic differentiator.',
             'Traditional AI governance focuses on validation: testing models before deployment, benchmarking accuracy, running evaluations. This is necessary but insufficient for agents that operate autonomously. An agent that passed all validation tests can still produce harmful outputs in production when it encounters edge cases not covered by the test suite.',
             'Runtime verification — checking each agent output against ground truth sources, business rules, and safety constraints before allowing it to take effect — is the governance pattern that makes enterprise agent deployment economically viable. The cost is real (5-15% of operating budget), but the alternative — unverified autonomous actions — is economically untenable.',
         ], [

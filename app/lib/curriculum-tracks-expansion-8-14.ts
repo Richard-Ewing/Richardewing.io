@@ -69,19 +69,19 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
             ['Design platform pricing tiers', 'Balance marketplace economics', 'Calculate platform take rates', 'Manage cross-subsidization'],
             [
                 l('Lesson 1: Multi-Sided Pricing Architecture', 'AI platforms serve multiple customer types: developers (who build on the platform), enterprises (who buy solutions), and end-users (who consume the product). Each side has different willingness-to-pay and cost-to-serve. The art is pricing each side to maximize total platform value, not individual transaction profit.', [
-                    d('Developer Side', 'Price to attract: low/free tier for adoption, usage-based for scale.', 'Developers are the supply side — subsidize them to build ecosystem'),
+                    d('Developer Side', 'Price to attract: low/free tier for adoption, usage-based for scale.', 'Developers are the supply side — subsidize them to build the platform'),
                     d('Enterprise Side', 'Price for value: outcome-based or committed-use contracts.', 'Enterprises are the demand side — charge for business impact'),
-                    d('Cross-Subsidization', 'Enterprise revenue subsidizes developer ecosystem costs.', 'Platform economics: one side pays more so the other side grows faster')
+                    d('Cross-Subsidization', 'Enterprise revenue subsidizes developer platform costs.', 'Platform economics: one side pays more so the other side grows faster')
                 ], 'Map your platform\'s customer types. For each, define the pricing strategy and how cross-subsidization flows between sides.'),
                 l('Lesson 2: Platform Take Rate Economics', 'Your take rate (the percentage of transactions flowing through the platform) must balance growth vs revenue. Too high (>30%) and developers leave. Too low (<10%) and you can\'t sustain the platform. The optimal take rate decreases as transaction volume increases — reward scale.', [
                     d('Optimal Take Rate', 'Start at 20-30% for low volume. Decrease to 10-15% at scale.', 'App Store model: 30% is the ceiling, not the target'),
                     d('Volume Tiers', 'First $100K/year: 25% take rate. $100K-1M: 15%. $1M+: 10%.', 'Rewards developers who scale on your platform'),
                     d('Minimum Fee', 'A per-transaction minimum fee ($0.01-0.05) to prevent micro-transaction abuse.', 'Ensures every transaction contributes to platform costs')
                 ], 'Design a tiered take rate structure for your platform. Verify that the take rate covers platform costs at each volume tier.'),
-                l('Lesson 3: Marketplace Pricing Governance', 'In a marketplace, you must govern how sellers/developers price their AI products. Without governance, a race to the bottom destroys ecosystem quality. Implement: minimum pricing (no free agents that set pricing expectations too low), price transparency (buyers see comparable pricing), and anti-dumping policies (no predatory below-cost pricing).', [
-                    d('Minimum Pricing', 'Set floors to prevent ecosystem devaluation. "No AI agent may be priced below $X/month."', 'Maintains perceived value for the entire ecosystem'),
+                l('Lesson 3: Marketplace Pricing Governance', 'In a marketplace, you must govern how sellers/developers price their AI products. Without governance, a race to the bottom destroys marketplace quality. Implement: minimum pricing (no free agents that set pricing expectations too low), price transparency (buyers see comparable pricing), and anti-dumping policies (no predatory below-cost pricing).', [
+                    d('Minimum Pricing', 'Set floors to prevent marketplace devaluation. "No AI agent may be priced below $X/month."', 'Maintains perceived value for the entire marketplace'),
                     d('Price Transparency', 'Buyers can compare agents/solutions by price, capability, and quality rating.', 'Transparency drives quality competition, not price competition'),
-                    d('Anti-Dumping', 'Prohibit persistent below-cost pricing designed to eliminate competitors.', 'Protects long-term ecosystem health')
+                    d('Anti-Dumping', 'Prohibit persistent below-cost pricing designed to eliminate competitors.', 'Protects long-term marketplace health')
                 ], 'Draft a marketplace pricing governance policy: minimum pricing rules, transparency requirements, and anti-dumping protections.')
             ]
         ],
@@ -291,7 +291,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                     d('Output Ownership', 'Some API providers claim rights to outputs generated through their APIs.', 'Review ToS for OpenAI, Anthropic, etc. — terms vary significantly'),
                     d('Customer Data IP', 'Models trained on customer data may trigger data processing agreement restrictions.', 'Customer may have rights to models trained on their data')
                 ], 'Audit your AI IP ownership: training data rights, model weight ownership, output rights, and contractor IP assignments.'),
-                l('Lesson 2: Regulatory Risk Mapping', 'Map your AI product against the emerging regulatory landscape: EU AI Act (risk classification), US state-level AI laws (bias audits), sector-specific regulations (financial, healthcare, employment), and international data sovereignty requirements. Each regulation creates compliance costs and potential liability.', [
+                l('Lesson 2: Regulatory Risk Mapping', 'Map your AI product against the emerging regulatory environment: EU AI Act (risk classification), US state-level AI laws (bias audits), sector-specific regulations (financial, healthcare, employment), and international data sovereignty requirements. Each regulation creates compliance costs and potential liability.', [
                     d('EU AI Act Classification', 'Classify your AI as minimal, limited, high, or unacceptable risk under the EU AI Act.', 'High-risk classification triggers mandatory auditing and documentation'),
                     d('Bias Audit Requirements', 'NYC Local Law 144 and similar laws require bias audits for employment AI.', 'Non-compliance penalties: $500-1,500 per violation per day'),
                     d('Cross-Border Data', 'Training on EU data and serving US customers (or vice versa) triggers sovereignty issues.', 'May require separate models or data localization')
@@ -381,7 +381,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                     d('Switching Cost', 'Total cost to replace the vendor with an alternative.', 'This determines your negotiating leverage')
                 ], 'Calculate the total cost of your most expensive vendor relationship. Include all hidden costs beyond the license fee.'),
                 l('Lesson 2: Vendor Viability Assessment', 'Before committing to a vendor, assess their viability: (1) Burn rate vs revenue (how many months of runway?), (2) Customer concentration (are >30% of revenues from one customer?), (3) Team stability (has the engineering team churned?), (4) Product roadmap credibility (are they shipping what they promise?).', [
-                    d('Runway Assessment', 'Last funding round date, amount raised, estimated burn rate.', 'If they have <18 months runway, migration risk is elevated'),
+                    d('Runway Assessment', 'Last funding round date, amount raised, estimated burn rate.', 'If they have <18 months runway, migration risk is critical'),
                     d('Customer Concentration', '>30% of revenue from one customer = dangerous dependency.', 'If that customer leaves, the vendor may not survive'),
                     d('Roadmap Credibility', 'Compare last year\'s promised roadmap to what actually shipped.', '<50% delivery = roadmap is aspirational, not reliable')
                 ], 'Perform a viability assessment on your 3 most critical vendors. Grade each Red/Yellow/Green.'),

@@ -48,8 +48,8 @@ leadershipModules['leadership-double-diamond'] = m(
         l('The Leadership Reset',
             [
                 'The Double Diamond illustrates a fundamental truth: when you are promoted from Senior IC to Manager, you do not keep climbing. You reset. You start at the narrow bottom of a completely new diamond.',
-                'Diamond 1 (The IC Journey): Starts narrow, widens as you gain functional proficiency, and narrows at the top as you plateau as a senior executor.',
-                'Diamond 2 (The Leadership Journey): Starts narrow (you have zero leadership skills), widens through trials, tribulations, and coaching, until you master scaling people and hit the next executive plateau.',
+                'Diamond 1 (The IC Track): Starts narrow, widens as you gain functional proficiency, and narrows at the top as you plateau as a senior executor.',
+                'Diamond 2 (The Leadership Track): Starts narrow (you have zero leadership skills), widens through trials, tribulations, and coaching, until you master scaling people and hit the next executive plateau.',
                 'Failing to recognize the "Leadership Reset" is why elite individual contributors often become terrible, burned-out managers.'
             ],
             [

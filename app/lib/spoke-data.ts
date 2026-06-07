@@ -80,7 +80,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                                 </div>
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
                                     <div class="text-zinc-950 font-semibold text-lg font-bold mb-1">Local & Remote</div>
-                                    <div class="text-xs text-zinc-900 font-bold">Works seamlessly across local dev environments and cloud VPCs.</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Works directly across local dev environments and cloud VPCs.</div>
                                 </div>
                                 <div class="bg-emerald-500/10 p-4 rounded-xl border border-emerald-500/30">
                                     <div class="text-zinc-950 font-semibold text-lg font-bold mb-1">Model Agnostic</div>
@@ -100,7 +100,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionHeadline: 'How do you define and escape dependency hell in enterprise architecture?',
                     answerHtml: `<p>Dependency hell occurs when software packages rely on specific, mutually exclusive, or deeply nested versions of other software packages, creating an unresolvable gridlock that prevents updates or deployments.</p>
         <h3 class="text-xl font-bold mt-8 mb-4">The Architectural Root Cause</h3>
-        <p>Dependency hell is almost always a symptom of <strong>tight coupling</strong> and a lack of boundary enforcement. When microservices share common libraries instead of communicating via versioned APIs, or when monoliths import hundreds of external un-pinned packages, you create a fragile ecosystem where one upgrade breaks ten other things.</p>
+        <p>Dependency hell is almost always a symptom of <strong>tight coupling</strong> and a lack of boundary enforcement. When microservices share common libraries instead of communicating via versioned APIs, or when monoliths import hundreds of external un-pinned packages, you create a fragile dependency graph where one upgrade breaks ten other things.</p>
         <h3 class="text-xl font-bold mt-8 mb-4">The Escape Route</h3>
         <ul class="list-disc pl-6 space-y-2 mb-6">
             <li><strong>Containerization:</strong> Use Docker to isolate application environments so dependencies do not bleed across system boundaries.</li>
@@ -134,7 +134,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionSlug: 'roi-of-monolith-to-microservices',
                     questionHeadline: 'How to calculate the financial ROI of migrating from a monolith to microservices?',
                     answerHtml: `
-                        <p>Most Platform Engineers fail to secure budget for massive microservice migrations because they present technical arguments to financial executives. Pitching "massive scalability" or "domain decoupling" to a CFO will not unlock Capital Expenditure (CapEx). The true financial ROI of a microservices migration is derived entirely from the reduction of the <strong>Coordination Tax</strong>.</p>
+                        <p>Most Platform Engineers fail to secure budget for massive microservice migrations because they present technical arguments to financial executives. Pitching "massive scalability" or "domain decoupling" to a CFO will not secure Capital Expenditure (CapEx). The true financial ROI of a microservices migration is derived entirely from the reduction of the <strong>Coordination Tax</strong>.</p>
                         
                         <h3 class="text-xl font-bold mt-8 mb-4">The Monolith Penalty</h3>
                         <p>In a tightly coupled monolith, scaling your engineering headcount actually slows down your delivery velocity. If 50 engineers share the exact same deployment pipeline, regression suite, and release manifest, organizational friction spikes exponentially. If a flawed commit breaks the CI/CD pipeline for 2 hours, all 50 engineers are functionally grounded. At an average fully-loaded salary of $180,000, a twice-weekly pipeline blockage costs the enterprise upwards of <strong>$1.5M/year in idle wages</strong>.</p>
@@ -185,7 +185,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <p>Do not present microservices as a technical upgrade. Present it as an operational necessity to stop bleeding capitalized OpEx. By proving that the upfront architectural investment pays for itself within 18 months via reclaimed developer velocity, you shift the conversation from "engineering want" to "business imperative."</p>
                     `,
                     recommendedProductId: 'module_engineering',
-                    upsellHeadline: 'Unlock the Complete Engineering Economics Formulas.'
+                    upsellHeadline: 'Access the Complete Engineering Economics Formulas.'
                 },
                 {
                     questionSlug: 'serverless-vs-containers-cost',
@@ -351,7 +351,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         </div>
 
                         <h3 class="text-xl font-bold mt-8 mb-4">The Remediation Strategy</h3>
-                        <p>CTOs must reframe AI from a replacement for engineers to a <strong>force multiplier for Systems Governors</strong>. Instead of firing the team, elevate your senior engineers. Their job is no longer to write code, but to audit, architect, and strictly govern the massive volume of code generated by the AI. If you remove the human governor, the system will collapse under its own entropy.</p>
+                        <p>CTOs must reframe AI from a replacement for engineers to a <strong>force multiplier for Systems Governors</strong>. Instead of firing the team, promote your senior engineers. Their job is no longer to write code, but to audit, architect, and strictly govern the massive volume of code generated by the AI. If you remove the human governor, the system will collapse under its own entropy.</p>
                     `,
                     recommendedProductId: 'module_cto',
                     upsellHeadline: 'Audit Your Autonomous AI Strategy.'
@@ -907,7 +907,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         </div>
 
                         <h3 class="text-xl font-bold mt-8 mb-4">The Hybrid Remediation Strategy</h3>
-                        <p>Do not rip out your deterministic pipelines. The most robust architectures use <strong>Agentic Wrappers around Deterministic Cores</strong>. Use an LLM agent strictly to ingest messy human input, structure it into pristine JSON, and then hand that JSON off to a highly reliable, rule-based Zapier workflow for execution. This minimizes LLM API costs while maximizing system reliability.</p>
+                        <p>Do not rip out your deterministic pipelines. The most resilient architectures use <strong>Agentic Wrappers around Deterministic Cores</strong>. Use an LLM agent strictly to ingest messy human input, structure it into pristine JSON, and then hand that JSON off to a highly reliable, rule-based Zapier workflow for execution. This minimizes LLM API costs while maximizing system reliability.</p>
                     `,
                     recommendedProductId: 'module_ai_enterprise',
                     upsellHeadline: 'Design Hybrid Agentic Workflows.'
@@ -1066,7 +1066,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionSlug: 'anthropic-ai-architect-path',
                     questionHeadline: 'What is the Anthropic AI Architect Path and is it free?',
                     answerHtml: `
-                        <p>The role of an "AI Architect" is rapidly superseding the traditional "Cloud Architect." The <strong>Anthropic AI Architect Path</strong> refers to the emerging operational frameworks necessary to natively orchestrate Claude's suite of models (Sonnet, Opus, Haiku) inside enterprise software environments without creating systemic architectural debt. The base intelligence and APIs are strictly pay-per-use, but the <em>architectural methodology</em> itself is an open, free paradigm shift.</p>
+                        <p>The role of an "AI Architect" is rapidly superseding the traditional "Cloud Architect." The <strong>Anthropic AI Architect Path</strong> refers to the emerging operational frameworks necessary to natively orchestrate Claude's suite of models (Sonnet, Opus, Haiku) inside enterprise software environments without creating systemic architectural debt. The base intelligence and APIs are strictly pay-per-use, but the <em>architectural methodology</em> itself is an open, free architectural shift.</p>
                         
                         <h3 class="text-xl font-bold mt-8 mb-4">The Anthropic Architecture Distinctive</h3>
                         <p>Unlike standard LLM orchestration, an Anthropic-centric architecture explicitly optimizes for extreme Context Windows (up to 200,000 tokens) and complex tool-use (function calling) with mathematical precision. Platform engineers must build specific telemetry to handle massive prompt caching and payload streaming to avoid astronomical latency.</p>
@@ -1307,7 +1307,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         </div>
 
                         <h3 class="text-xl font-bold mt-8 mb-4">The Executive Case Study</h3>
-                        <p>A B2B SaaS startup scaling to 150 engineers utilized raw "Points Completed" to measure productivity. Developers realized that writing massive, copy-pasted monolithic files allowed them to burn down points quickly. The codebase crystallized. When the CTO eventually implemented DORA tracking, they discovered their "Lead Time to Change" had ballooned to 28 days because the architecture was so brittle. By shifting executive compensation strictly to DORA and SPACE thresholds, they forced managers to aggressively pay down tech debt. Within two quarters, Lead Time dropped to 4 days, effectively unlocking millions in trapped feature capital.</p>
+                        <p>A B2B SaaS startup scaling to 150 engineers utilized raw "Points Completed" to measure productivity. Developers realized that writing massive, copy-pasted monolithic files allowed them to burn down points quickly. The codebase crystallized. When the CTO eventually implemented DORA tracking, they discovered their "Lead Time to Change" had ballooned to 28 days because the architecture was so brittle. By shifting executive compensation strictly to DORA and SPACE thresholds, they forced managers to aggressively pay down tech debt. Within two quarters, Lead Time dropped to 4 days, effectively freeing millions in trapped feature capital.</p>
 
                         <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
                         <ul class="list-disc pl-6 space-y-2 mb-6">
@@ -1320,7 +1320,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <p>High deployment frequency is irrelevant if developers are burning out or building the wrong product. The SPACE framework (Satisfaction, Performance, Activity, Communication, Efficiency) introduces the critical qualitative layer. It forces leadership to evaluate developer satisfaction, the clarity of product requirements, and the amount of systemic interruption destroying deep-work blocks.</p>
                         
                         <h3 class="text-xl font-bold mt-8 mb-4">The Ultimate Boardroom Metric</h3>
-                        <p>While DORA and SPACE execute at the ground level, the only metric the Board cares about is the <strong>Feature Delivery Ratio</strong>. This calculates the percentage of total engineering capital spent on net-new, revenue-generating features versus the capital wasted "keeping the lights on" (technical debt, pipeline failures, and refactoring). If you can prove DORA improvements lead to a higher Feature Delivery Ratio, you will instantly unlock executive trust and CapEx budget.</p>
+                        <p>While DORA and SPACE execute at the ground level, the only metric the Board cares about is the <strong>Feature Delivery Ratio</strong>. This calculates the percentage of total engineering capital spent on net-new, revenue-generating features versus the capital wasted "keeping the lights on" (technical debt, pipeline failures, and refactoring). If you can prove DORA improvements lead to a higher Feature Delivery Ratio, you will instantly earn executive trust and CapEx budget.</p>
                     `,
                     recommendedProductId: 'module_leadership',
                     upsellHeadline: 'Download the Frictionless Leadership Playbooks.'
@@ -1538,7 +1538,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-white/5 border border-white/10 rounded-lg p-5">
                                     <div class="text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest mb-2 border-b border-white/10 pb-2">The CTO (External)</div>
-                                    <div class="text-sm font-medium text-zinc-800">Evangelizes architecture, runs M&A technical diligence, leads forward-looking 36-month R&D, identifies paradigm shifts.</div>
+                                    <div class="text-sm font-medium text-zinc-800">Evangelizes architecture, runs M&A technical diligence, leads forward-looking 36-month R&D, identifies industry-defining shifts.</div>
                                 </div>
                                 <div class="bg-white/5 border border-white/10 rounded-lg p-5">
                                     <div class="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest mb-2 border-b border-white/10 pb-2">The VP of Eng (Internal)</div>
@@ -1604,7 +1604,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     answerHtml: `
                         <p>Traditional Cloud FinOps focuses on right-sizing EC2 instances, purchasing Reserved Instances (RIs), and deleting unused S3 buckets. When CFOs attempt to apply these exact same strategies to Generative AI infrastructure, they fail completely. Generative AI costs are not driven by idle infrastructure; they are driven by <strong>Token Economics</strong> and <strong>Model Utilization Rates</strong>.</p>
                         
-                        <h3 class="text-xl font-bold mt-8 mb-4">The AI FinOps Paradigm Shift</h3>
+                        <h3 class="text-xl font-bold mt-8 mb-4">The AI FinOps Structural Shift</h3>
                         <p>In traditional cloud computing, you pay for time (uptime). In API-driven AI, you pay for intellect (tokens). Optimizing an AWS bill does nothing to stop an inefficient RAG architecture from stuffing 50,000 irrelevant tokens into a Claude 3 Opus prompt 10,000 times a day.</p>
                         
                         <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
@@ -1664,7 +1664,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <p><strong>Data Debt</strong> is the accumulated financial liability that occurs when an enterprise acquires, stores, and pipelines data without rigid ontological governance or immediate monetization pathways. For CFOs, Data Debt is far more insidious than Software Technical Debt because cloud storage costs (S3, Snowflake, BigQuery) compound perpetually, attacking EBITDA every single month.</p>
                         
                         <h3 class="text-xl font-bold mt-8 mb-4">The Data Hoarding Fallacy</h3>
-                        <p>During the "Big Data" era, organizations were taught to "store everything; analyze it later." This heuristic is financially catastrophic in the modern cloud landscape. A massive, unstructured data lake that cannot be queried efficiently by business intelligence tools is not an asset; it is a liability. You are paying premium cloud egress and storage fees for "dark data" that provides absolutely zero top-line revenue lift.</p>
+                        <p>During the "Big Data" era, organizations were taught to "store everything; analyze it later." This heuristic is financially catastrophic in the modern cloud market. A massive, unstructured data lake that cannot be queried efficiently by business intelligence tools is not an asset; it is a liability. You are paying premium cloud egress and storage fees for "dark data" that provides absolutely zero top-line revenue lift.</p>
                         
                         <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
                             <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
@@ -1780,8 +1780,8 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                             <li><strong>Day 61-90:</strong> Run the retroactive audit. Work with your auditors to mathematically re-categorize the last 12 months of development using the new rigid tagging structure, driving an immediate positive adjustment to your current balance sheet.</li>
                         </ul>
 
-                        <h3 class="text-xl font-bold mt-8 mb-4">Unlocking Enterprise Value</h3>
-                        <p>CFOs and Controllers lose millions in enterprise value because they fail to force Jira or Agile story points to map back to these capitalization stages. If an engineer making $200,000/year spends 60% of their sprints building net-new functionality in the Application Development Stage, $120,000 of their salary can be capitalized onto the balance sheet. By establishing rigorous, automated engineering time-tracking linked to specific feature development phases, CFOs can dramatically elevate reported net income, directly multiplying enterprise valuation.</p>
+                        <h3 class="text-xl font-bold mt-8 mb-4">Capturing Enterprise Value</h3>
+                        <p>CFOs and Controllers lose millions in enterprise value because they fail to force Jira or Agile story points to map back to these capitalization stages. If an engineer making $200,000/year spends 60% of their sprints building net-new functionality in the Application Development Stage, $120,000 of their salary can be capitalized onto the balance sheet. By establishing rigorous, automated engineering time-tracking linked to specific feature development phases, CFOs can dramatically increase reported net income, directly multiplying enterprise valuation.</p>
                     `,
                     recommendedProductId: 'module_rd_capital',
                     upsellHeadline: 'Download the R&D Capital Accounting Model.'
@@ -2039,7 +2039,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                                 </div>
                                 <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm text-center">
                                     <div class="text-xs font-mono font-bold text-purple-500 uppercase tracking-widest mb-1">2. Viral Loops</div>
-                                    <div class="text-sm text-zinc-900 font-medium">Core features must intrinsically require inviting teammates to unlock full value.</div>
+                                    <div class="text-sm text-zinc-900 font-medium">Core features must intrinsically require inviting teammates to access full value.</div>
                                 </div>
                                 <div class="bg-white p-4 rounded-xl border border-zinc-200 shadow-sm text-center">
                                     <div class="text-xs font-mono font-bold text-emerald-500 uppercase tracking-widest mb-1">3. Shadow IT</div>
