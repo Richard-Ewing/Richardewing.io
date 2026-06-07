@@ -120,6 +120,26 @@ export async function GET(request: Request) {
             position: row.position || 0,
         }));
 
+        // Query 3: Page + Query pairs (for auto-rewriter — which queries drive which pages)
+        let pageQueries: Record<string, string[]> = {};
+        try {
+            const pageQueryPerformance = await searchconsole.searchanalytics.query({
+                siteUrl: SITE_URL,
+                requestBody: {
+                    startDate: formatDate(startDate),
+                    endDate: formatDate(endDate),
+                    dimensions: ['page', 'query'],
+                    rowLimit: 1000,
+                },
+            });
+            for (const row of pageQueryPerformance.data.rows || []) {
+                const pageUrl = (row.keys?.[0] || '').replace(SITE_URL, '');
+                const query = row.keys?.[1] || '';
+                if (!pageQueries[pageUrl]) pageQueries[pageUrl] = [];
+                pageQueries[pageUrl].push(query);
+            }
+        } catch { /* page+query dimension may not be available */ }
+
         return NextResponse.json({
             success: true,
             period: { startDate: formatDate(startDate), endDate: formatDate(endDate), days },
@@ -138,6 +158,7 @@ export async function GET(request: Request) {
             lowCtrPages: lowCtrPages.slice(0, 20),
             topPages: pages.sort((a, b) => b.impressions - a.impressions).slice(0, 30),
             topQueries: queries.slice(0, 50),
+            pageQueries,
         });
     } catch (error) {
         const message = error instanceof Error ? error.message : 'Unknown error';

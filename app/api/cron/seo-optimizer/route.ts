@@ -93,7 +93,7 @@ function identifyActions(data: PerformanceData) {
     return actions;
 }
 
-async function sendDigestEmail(data: PerformanceData, alignment: ReturnType<typeof analyzeStarvingCrowdAlignment>, actions: ReturnType<typeof identifyActions>) {
+async function sendDigestEmail(data: PerformanceData, alignment: ReturnType<typeof analyzeStarvingCrowdAlignment>, actions: ReturnType<typeof identifyActions>, rewrites: Array<{ url: string; oldTitle: string; newTitle: string; reasoning: string }> = []) {
     const resendKey = process.env.RESEND_API_KEY;
     if (!resendKey) return { sent: false, error: 'No RESEND_API_KEY' };
 
@@ -166,8 +166,20 @@ async function sendDigestEmail(data: PerformanceData, alignment: ReturnType<type
             <h2 style="font-size:16px;margin:24px 0 12px;border-bottom:2px solid #dc2626;padding-bottom:8px">⚠️ Action Items</h2>
             <ul style="padding-left:20px">${actionItems}</ul>
 
+            ${rewrites.length > 0 ? `
+            <h2 style="font-size:16px;margin:24px 0 12px;border-bottom:2px solid #16a34a;padding-bottom:8px">🤖 Autonomous Changes Deployed</h2>
+            <p style="font-size:13px;color:#71717a;margin-bottom:12px">The following meta titles were automatically rewritten and committed to production:</p>
+            ${rewrites.map(r => `
+            <div style="margin-bottom:12px;padding:12px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px">
+                <div style="font-size:12px;font-weight:700;color:#16a34a;margin-bottom:4px">${r.url}</div>
+                <div style="font-size:12px;color:#dc2626;text-decoration:line-through;margin-bottom:2px">OLD: ${r.oldTitle}</div>
+                <div style="font-size:12px;color:#16a34a;font-weight:600;margin-bottom:4px">NEW: ${r.newTitle}</div>
+                <div style="font-size:11px;color:#71717a">💡 ${r.reasoning}</div>
+            </div>`).join('')}
+            ` : ''}
+
             <div style="margin-top:24px;padding:16px;background:#f4f4f5;border-radius:8px;text-align:center">
-                <a href="${SITE_URL}/admin/seo-performance" style="color:#7c3aed;font-weight:700;text-decoration:none">View Full Dashboard →</a>
+                <a href="${SITE_URL}/admin/command-center" style="color:#7c3aed;font-weight:700;text-decoration:none">View Command Center →</a>
             </div>
         </div>
 
@@ -176,13 +188,14 @@ async function sendDigestEmail(data: PerformanceData, alignment: ReturnType<type
         </div>
     </div>`;
 
+    const subjectSuffix = rewrites.length > 0 ? ` [${rewrites.length} auto-deployed]` : '';
     const response = await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${resendKey}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            from: 'SEO Agent <seo@updates.exogram.ai>',
+            from: 'SEO Agent <seo@updates.richardewing.io>',
             to: ['richardewing@exogram.ai'],
-            subject: `[richardewing.io] Daily SEO Performance — ${today}`,
+            subject: `[richardewing.io] Daily SEO Performance — ${today}${subjectSuffix}`,
             html,
         }),
     });
@@ -226,10 +239,46 @@ export async function GET(request: Request) {
         // 3. Identify actions needed
         const actions = identifyActions(gscData);
 
-        // 4. Send email digest
-        const emailResult = await sendDigestEmail(gscData, alignment, actions);
+        // 4. AUTONOMOUS REWRITE — if low-CTR pages found, rewrite meta automatically
+        let rewriteResults: Array<{ url: string; oldTitle: string; newTitle: string; reasoning: string }> = [];
+        const lowCtrForRewrite = (gscData.lowCtrPages || [])
+            .filter(p => ['tools', 'advisory', 'framework'].includes(p.category))
+            .filter(p => p.impressions > 100) // Only rewrite pages with meaningful traffic
+            .slice(0, 5);
 
-        // 5. Log to Supabase
+        if (lowCtrForRewrite.length > 0 && process.env.GITHUB_TOKEN) {
+            try {
+                const pageQueries: Record<string, string[]> = (gscData as Record<string, unknown>).pageQueries as Record<string, string[]> || {};
+                const rewritePayload = lowCtrForRewrite.map(p => ({
+                    url: p.url,
+                    currentTitle: '', // Will be read from file by auto-rewriter
+                    currentDescription: '',
+                    impressions: p.impressions,
+                    clicks: p.clicks,
+                    ctr: p.ctr,
+                    position: p.position,
+                    topQueries: (pageQueries[p.url] || []).slice(0, 10),
+                }));
+
+                const rewriteRes = await fetch(`${SITE_URL}/api/cron/auto-rewriter`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${process.env.CRON_SECRET}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ pages: rewritePayload }),
+                });
+                const rewriteData = await rewriteRes.json();
+                if (rewriteData.results) {
+                    rewriteResults = rewriteData.results;
+                }
+            } catch { /* auto-rewriter failed — non-fatal */ }
+        }
+
+        // 5. Send email digest (now includes rewrite results)
+        const emailResult = await sendDigestEmail(gscData, alignment, actions, rewriteResults);
+
+        // 6. Log to Supabase
         await supabase.from('agent_runs').insert({
             agent_name: 'seo-optimizer',
             status: 'success',
@@ -242,10 +291,11 @@ export async function GET(request: Request) {
                 highPriorityActions: actions.filter(a => a.priority === 'high').length,
                 emailSent: emailResult.sent,
                 starvingCrowdAlignment: alignment,
+                autonomousRewrites: rewriteResults.length,
             },
         });
 
-        // 6. Store performance snapshot for trending
+        // 7. Store performance snapshot for trending
         try {
             await supabase.from('seo_snapshots').insert({
                 snapshot_date: new Date().toISOString().split('T')[0],
@@ -265,6 +315,7 @@ export async function GET(request: Request) {
             summary: gscData.summary,
             starvingCrowdAlignment: alignment,
             actions,
+            autonomousRewrites: rewriteResults,
             email: emailResult,
             duration: Date.now() - startTime,
         });
