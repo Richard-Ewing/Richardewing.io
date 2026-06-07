@@ -248,7 +248,7 @@ export async function GET(request: Request) {
 
         if (lowCtrForRewrite.length > 0 && process.env.GITHUB_TOKEN) {
             try {
-                const pageQueries: Record<string, string[]> = (gscData as Record<string, unknown>).pageQueries as Record<string, string[]> || {};
+                const pageQueries: Record<string, string[]> = ((gscData as unknown) as Record<string, unknown>).pageQueries as Record<string, string[]> || {};
                 const rewritePayload = lowCtrForRewrite.map(p => ({
                     url: p.url,
                     currentTitle: '', // Will be read from file by auto-rewriter
