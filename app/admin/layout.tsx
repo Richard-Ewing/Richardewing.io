@@ -1,4 +1,4 @@
-import { auth } from '@clerk/nextjs/server';
+import { auth, currentUser } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
 
 // Admin-only email allowlist
@@ -16,24 +16,16 @@ export default async function AdminLayout({
 
     // Not logged in → redirect to sign-in
     if (!userId) {
-        redirect('/sign-in?redirect_url=/admin/command-center');
+        redirect('/sign-in');
     }
 
-    // Verify admin access via Clerk
-    // The ClerkProvider in root layout makes this work
-    // For extra security, we check against an email allowlist
-    try {
-        const { clerkClient } = await import('@clerk/nextjs/server');
-        const client = await clerkClient();
-        const user = await client.users.getUser(userId);
-        const userEmail = user.emailAddresses?.[0]?.emailAddress;
+    // Check email against allowlist
+    const user = await currentUser();
+    const userEmail = user?.emailAddresses?.[0]?.emailAddress?.toLowerCase();
 
-        if (!userEmail || !ADMIN_EMAILS.includes(userEmail.toLowerCase())) {
-            redirect('/?error=unauthorized');
-        }
-    } catch {
-        // If Clerk is unavailable, allow access for authenticated users
-        // The API routes still enforce their own auth
+    if (!userEmail || !ADMIN_EMAILS.includes(userEmail)) {
+        // Not an admin — send to home page, NOT back to sign-in
+        redirect('/');
     }
 
     return (
