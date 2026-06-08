@@ -16,5 +16,5 @@ export const model = genAI.getGenerativeModel({
         thinkingConfig: {
             thinkingBudget: 0
         }
-    }
+    } as any
 });

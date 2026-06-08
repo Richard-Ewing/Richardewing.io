@@ -25,7 +25,7 @@ export async function POST(req: Request) {
                 thinkingConfig: {
                     thinkingBudget: 0
                 }
-            }
+            } as any
         });
 
         const prompt = `You are Richard Ewing's AI Integration Advisor. Generate a comprehensive, actionable AI Integration Roadmap for this business.

@@ -198,7 +198,7 @@ Rules:
                 thinkingConfig: {
                     thinkingBudget: 0
                 }
-            }
+            } as any
         });
 
         // Build chat history for Gemini
