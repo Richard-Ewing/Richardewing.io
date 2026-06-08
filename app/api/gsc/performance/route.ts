@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
-import { auth } from '@clerk/nextjs/server';
+import { auth as clerkAuth } from '@clerk/nextjs/server';
 
 // GSC Performance Data API
 // Pulls impressions, clicks, CTR, position from Google Search Console
@@ -8,7 +8,7 @@ import { auth } from '@clerk/nextjs/server';
 
 const SITE_URL = 'https://www.richardewing.io';
 
-function getAuth() {
+function getGoogleAuth() {
     const credentials = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
     if (!credentials) {
         throw new Error('GOOGLE_SERVICE_ACCOUNT_JSON environment variable not set');
@@ -30,15 +30,15 @@ export async function GET(request: Request) {
     const hasCronAuth = authHeader === `Bearer ${cronSecret}`;
 
     if (!hasCronAuth) {
-        const { userId } = await auth();
+        const { userId } = await clerkAuth();
         if (!userId) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
     }
 
     try {
-        const auth = getAuth();
-        const searchconsole = google.searchconsole({ version: 'v1', auth });
+        const googleAuth = getGoogleAuth();
+        const searchconsole = google.searchconsole({ version: 'v1', auth: googleAuth });
 
         const days = parseInt(searchParams.get('days') || '28');
         const endDate = new Date();
