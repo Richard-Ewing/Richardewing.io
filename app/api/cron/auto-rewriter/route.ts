@@ -120,7 +120,7 @@ function urlToFilePath(url: string): string | null {
     // Static pages with metadata exports
     const staticMappings: Record<string, string> = {
         '/tools': 'app/tools/page.tsx',
-        '/advisory': 'app/advisory/page.tsx',
+        '/advisory': 'app/advisory/layout.tsx',
         '/exogram': 'app/exogram/layout.tsx',
         '/pricing': 'app/pricing/page.tsx',
         '/about': 'app/about/page.tsx',
