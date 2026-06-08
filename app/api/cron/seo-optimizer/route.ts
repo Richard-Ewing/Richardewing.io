@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { generateActionUrl } from '@/app/api/actions/trigger/route';
 
 // Daily SEO Optimizer Agent
 // Runs daily: pulls GSC data, identifies underperformers, logs changes, emails digest
@@ -67,7 +68,8 @@ function analyzeStarvingCrowdAlignment(data: PerformanceData) {
 }
 
 function identifyActions(data: PerformanceData) {
-    const actions: Array<{ type: string; page: string; reason: string; priority: 'high' | 'medium' | 'low' }> = [];
+    const pageQueries: Record<string, string[]> = ((data as unknown) as Record<string, unknown>).pageQueries as Record<string, string[]> || {};
+    const actions: Array<{ type: string; page: string; reason: string; priority: 'high' | 'medium' | 'low'; impressions?: number; clicks?: number; ctr?: number; position?: number; topQueries?: string[] }> = [];
 
     // Low CTR pages that need meta rewrites
     for (const page of data.lowCtrPages || []) {
@@ -76,6 +78,11 @@ function identifyActions(data: PerformanceData) {
             page: page.url,
             reason: `CTR ${(page.ctr * 100).toFixed(1)}% on ${page.impressions} impressions — below 2% threshold`,
             priority: page.impressions > 200 ? 'high' : 'medium',
+            impressions: page.impressions,
+            clicks: page.clicks,
+            ctr: page.ctr,
+            position: page.position,
+            topQueries: (pageQueries[page.url] || []).slice(0, 10),
         });
     }
 
@@ -115,9 +122,33 @@ async function sendDigestEmail(data: PerformanceData, alignment: ReturnType<type
         `<tr><td style="padding:6px;border-bottom:1px solid #f4f4f5;font-size:13px;font-weight:600">${a.crowd}</td><td style="padding:6px;border-bottom:1px solid #f4f4f5;text-align:right">${a.totalImpressions.toLocaleString()}</td><td style="padding:6px;border-bottom:1px solid #f4f4f5;text-align:right">${a.matchingQueries}</td><td style="padding:6px;border-bottom:1px solid #f4f4f5;font-size:12px">${a.topQuery}</td></tr>`
     ).join('');
 
+    // Build actionable items with one-click buttons
     const actionItems = actions.length > 0
-        ? actions.map(a => `<li style="margin-bottom:8px"><strong style="color:${a.priority === 'high' ? '#dc2626' : '#d97706'}">[${a.priority.toUpperCase()}]</strong> <code style="background:#f4f4f5;padding:2px 6px;border-radius:4px">${a.page}</code> — ${a.reason}</li>`).join('')
-        : '<li style="color:#16a34a">No critical actions needed today ✓</li>';
+        ? actions.map(a => {
+            const approveUrl = generateActionUrl('approve-rewrite', {
+                url: a.page,
+                impressions: String(a.impressions || 0),
+                clicks: String(a.clicks || 0),
+                ctr: String(a.ctr || 0),
+                position: String(a.position || 0),
+                queries: (a.topQueries || []).join(','),
+            });
+            const skipUrl = generateActionUrl('skip', { url: a.page });
+            const priorityColor = a.priority === 'high' ? '#dc2626' : '#d97706';
+            return `
+            <div style="margin-bottom:16px;padding:16px;background:#fafafa;border:1px solid #e4e4e7;border-left:4px solid ${priorityColor};border-radius:8px">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+                    <strong style="color:${priorityColor};font-size:11px;text-transform:uppercase">${a.priority}</strong>
+                    <code style="background:#f4f4f5;padding:2px 6px;border-radius:4px;font-size:13px">${a.page}</code>
+                </div>
+                <p style="color:#52525b;font-size:13px;margin:4px 0 12px">${a.reason}</p>
+                <div>
+                    <a href="${approveUrl}" style="display:inline-block;padding:8px 18px;background:#16a34a;color:white;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;margin-right:8px">✅ Approve & Deploy</a>
+                    <a href="${skipUrl}" style="display:inline-block;padding:8px 18px;background:#e4e4e7;color:#52525b;border-radius:6px;font-size:13px;font-weight:500;text-decoration:none">Skip</a>
+                </div>
+            </div>`;
+        }).join('')
+        : '<div style="padding:16px;background:#f0fdf4;border-radius:8px;text-align:center;color:#16a34a;font-weight:600">✓ No critical actions needed today</div>';
 
     const glossaryRatio = summary?.glossaryVsPaidFunnel;
     const ratioColor = glossaryRatio && parseFloat(glossaryRatio.ratio) >= 1 ? '#16a34a' : '#dc2626';
@@ -163,8 +194,8 @@ async function sendDigestEmail(data: PerformanceData, alignment: ReturnType<type
                 <tbody>${topPagesRows}</tbody>
             </table>
 
-            <h2 style="font-size:16px;margin:24px 0 12px;border-bottom:2px solid #dc2626;padding-bottom:8px">⚠️ Action Items</h2>
-            <ul style="padding-left:20px">${actionItems}</ul>
+            <h2 style="font-size:16px;margin:24px 0 12px;border-bottom:2px solid #dc2626;padding-bottom:8px">⚠️ Action Items — Click to Deploy</h2>
+            ${actionItems}
 
             ${rewrites.length > 0 ? `
             <h2 style="font-size:16px;margin:24px 0 12px;border-bottom:2px solid #16a34a;padding-bottom:8px">🤖 Autonomous Changes Deployed</h2>

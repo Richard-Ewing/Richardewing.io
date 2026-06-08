@@ -155,15 +155,15 @@ function fmtNumber(n: number): string {
 
 function StatusBadge({ status }: { status: string }) {
     const config: Record<string, { bg: string; text: string; icon: typeof CheckCircle }> = {
-        'completed': { bg: 'bg-emerald-500/10 border-emerald-500/20', text: 'text-emerald-400', icon: CheckCircle },
-        'success': { bg: 'bg-emerald-500/10 border-emerald-500/20', text: 'text-emerald-400', icon: CheckCircle },
-        'failed': { bg: 'bg-red-500/10 border-red-500/20', text: 'text-red-400', icon: XCircle },
-        'error': { bg: 'bg-red-500/10 border-red-500/20', text: 'text-red-400', icon: XCircle },
-        'skipped': { bg: 'bg-amber-500/10 border-amber-500/20', text: 'text-amber-400', icon: Clock },
-        'warning': { bg: 'bg-amber-500/10 border-amber-500/20', text: 'text-amber-400', icon: AlertTriangle },
-        'started': { bg: 'bg-blue-500/10 border-blue-500/20', text: 'text-blue-400', icon: RefreshCw },
-        'running': { bg: 'bg-blue-500/10 border-blue-500/20', text: 'text-blue-400', icon: RefreshCw },
-        'never-run': { bg: 'bg-zinc-500/10 border-zinc-500/20', text: 'text-zinc-500', icon: Clock },
+        'completed': { bg: 'bg-emerald-50 border-emerald-200', text: 'text-emerald-600', icon: CheckCircle },
+        'success': { bg: 'bg-emerald-50 border-emerald-200', text: 'text-emerald-600', icon: CheckCircle },
+        'failed': { bg: 'bg-red-50 border-red-200', text: 'text-red-600', icon: XCircle },
+        'error': { bg: 'bg-red-50 border-red-200', text: 'text-red-600', icon: XCircle },
+        'skipped': { bg: 'bg-amber-50 border-amber-200', text: 'text-amber-600', icon: Clock },
+        'warning': { bg: 'bg-amber-50 border-amber-200', text: 'text-amber-600', icon: AlertTriangle },
+        'started': { bg: 'bg-blue-50 border-blue-200', text: 'text-blue-600', icon: RefreshCw },
+        'running': { bg: 'bg-blue-50 border-blue-200', text: 'text-blue-600', icon: RefreshCw },
+        'never-run': { bg: 'bg-gray-50 border-gray-200', text: 'text-[#6B6B6B]', icon: Clock },
     };
     const c = config[status] || config['never-run'];
     const Icon = c.icon;
@@ -175,19 +175,19 @@ function StatusBadge({ status }: { status: string }) {
     );
 }
 
-function KpiCard({ label, value, icon: Icon, color = 'text-white', subtitle }: {
+function KpiCard({ label, value, icon: Icon, color = 'text-[#1A1A1A]', subtitle }: {
     label: string; value: string; icon: typeof DollarSign; color?: string; subtitle?: string;
 }) {
     return (
-        <div className="bg-zinc-950 border border-zinc-800/50 rounded-xl p-5 hover:border-zinc-700/60 transition-all duration-300 group">
+        <div className="bg-white border border-black/8 rounded-xl p-5 hover:border-black/15 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-all duration-300 group">
             <div className="flex items-center justify-between mb-3">
-                <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-zinc-500">{label}</p>
-                <span className="p-1.5 bg-zinc-800/50 rounded-lg group-hover:bg-zinc-800 transition-colors">
+                <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-[#6B6B6B]">{label}</p>
+                <span className="p-1.5 bg-[#F5F0EB] rounded-lg group-hover:bg-[#EDE7E0] transition-colors">
                     <Icon className={`w-4 h-4 ${color}`} />
                 </span>
             </div>
             <p className={`text-3xl font-bold tracking-tight ${color}`}>{value}</p>
-            {subtitle && <p className="text-[11px] text-zinc-600 mt-1.5 font-mono">{subtitle}</p>}
+            {subtitle && <p className="text-[11px] text-[#6B6B6B] mt-1.5 font-mono">{subtitle}</p>}
         </div>
     );
 }
@@ -198,10 +198,10 @@ function SectionHeader({ icon: Icon, title, children }: {
     return (
         <div className="flex items-center justify-between mb-5">
             <div className="flex items-center gap-3">
-                <span className="p-2 bg-indigo-500/10 border border-indigo-500/20 rounded-lg">
-                    <Icon className="w-4 h-4 text-indigo-400" />
+                <span className="p-2 bg-purple-50 border border-purple-200 rounded-lg">
+                    <Icon className="w-4 h-4 text-[#7C3AED]" />
                 </span>
-                <h2 className="text-lg font-bold bg-gradient-to-r from-zinc-200 to-zinc-400 bg-clip-text text-transparent">
+                <h2 className="text-lg font-bold bg-gradient-to-r from-[#1A1A1A] to-[#4A3A6B] bg-clip-text text-transparent">
                     {title}
                 </h2>
             </div>
@@ -212,9 +212,9 @@ function SectionHeader({ icon: Icon, title, children }: {
 
 function NotConnected({ label }: { label: string }) {
     return (
-        <div className="bg-zinc-950 border border-zinc-800/50 rounded-xl p-8 flex flex-col items-center justify-center gap-3">
-            <AlertTriangle className="w-6 h-6 text-amber-500/60" />
-            <p className="text-sm text-zinc-500 font-mono">{label} — Not connected</p>
+        <div className="bg-white border border-black/8 rounded-xl p-8 flex flex-col items-center justify-center gap-3 shadow-sm">
+            <AlertTriangle className="w-6 h-6 text-amber-500" />
+            <p className="text-sm text-[#6B6B6B] font-mono">{label} — Not connected</p>
         </div>
     );
 }
@@ -338,17 +338,17 @@ export default function CommandCenter() {
             <div className="space-y-6">
                 {!condensed && <SectionHeader icon={DollarSign} title="Revenue" />}
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                    <KpiCard label={`Revenue (${days}d)`} value={fmtCurrency(revenue.totalRevenue || 0)} icon={DollarSign} color="text-emerald-400" />
-                    <KpiCard label="MRR" value={fmtCurrency(revenue.mrr || 0)} icon={TrendingUp} color="text-indigo-400" subtitle="Active subscriptions" />
-                    <KpiCard label="Transactions" value={fmtNumber(revenue.transactionCount || 0)} icon={CreditCard} color="text-purple-400" />
-                    <KpiCard label="Avg Order Value" value={fmtCurrency(revenue.avgOrderValue || 0)} icon={ArrowUpRight} color="text-amber-400" />
+                    <KpiCard label={`Revenue (${days}d)`} value={fmtCurrency(revenue.totalRevenue || 0)} icon={DollarSign} color="text-emerald-600" />
+                    <KpiCard label="MRR" value={fmtCurrency(revenue.mrr || 0)} icon={TrendingUp} color="text-[#7C3AED]" subtitle="Active subscriptions" />
+                    <KpiCard label="Transactions" value={fmtNumber(revenue.transactionCount || 0)} icon={CreditCard} color="text-[#7C3AED]" />
+                    <KpiCard label="Avg Order Value" value={fmtCurrency(revenue.avgOrderValue || 0)} icon={ArrowUpRight} color="text-amber-600" />
                 </div>
 
                 {/* Revenue by Category */}
                 {revenue.revenueByCategory && (
-                    <div className="bg-zinc-950 border border-zinc-800/50 rounded-xl p-6">
-                        <h3 className="text-sm font-semibold text-zinc-300 mb-4 flex items-center gap-2">
-                            <Layers className="w-4 h-4 text-purple-400" />
+                    <div className="bg-white border border-black/8 rounded-xl p-6 shadow-sm">
+                        <h3 className="text-sm font-semibold text-[#1A1A1A] mb-4 flex items-center gap-2">
+                            <Layers className="w-4 h-4 text-[#7C3AED]" />
                             Revenue by Product Category
                         </h3>
                         <div className="space-y-3">
@@ -362,17 +362,17 @@ export default function CommandCenter() {
                                         <div key={cat} className="flex items-center gap-4">
                                             <div className="w-28 flex items-center gap-2 shrink-0">
                                                 <div className={`w-2.5 h-2.5 rounded-full ${CATEGORY_COLORS[cat] || 'bg-zinc-500'}`} />
-                                                <span className="text-sm font-semibold text-zinc-400 capitalize">{cat}</span>
+                                                <span className="text-sm font-semibold text-[#3A3A3A] capitalize">{cat}</span>
                                             </div>
                                             <div className="flex-1">
-                                                <div className="w-full h-5 bg-zinc-800/50 rounded-full overflow-hidden">
+                                                <div className="w-full h-5 bg-[#F5F0EB] rounded-full overflow-hidden">
                                                     <div
                                                         className={`h-full rounded-full ${CATEGORY_COLORS[cat] || 'bg-zinc-500'} transition-all duration-700`}
                                                         style={{ width: `${pct}%` }}
                                                     />
                                                 </div>
                                             </div>
-                                            <div className="w-24 text-right text-sm font-mono font-bold text-zinc-300">
+                                            <div className="w-24 text-right text-sm font-mono font-bold text-[#1A1A1A]">
                                                 {fmtCurrency(amount)}
                                             </div>
                                         </div>
@@ -384,28 +384,28 @@ export default function CommandCenter() {
 
                 {/* Recent Transactions */}
                 {!condensed && revenue.recentTransactions && revenue.recentTransactions.length > 0 && (
-                    <div className="bg-zinc-950 border border-zinc-800/50 rounded-xl overflow-hidden">
-                        <div className="px-6 py-4 border-b border-zinc-800/50">
-                            <h3 className="text-sm font-semibold text-zinc-300 flex items-center gap-2">
-                                <Clock className="w-4 h-4 text-indigo-400" />
+                    <div className="bg-white border border-black/8 rounded-xl overflow-hidden shadow-sm">
+                        <div className="px-6 py-4 border-b border-black/8">
+                            <h3 className="text-sm font-semibold text-[#1A1A1A] flex items-center gap-2">
+                                <Clock className="w-4 h-4 text-[#7C3AED]" />
                                 Recent Transactions
                             </h3>
                         </div>
                         <div className="overflow-x-auto">
                             <table className="w-full text-sm">
                                 <thead>
-                                    <tr className="border-b border-zinc-800/50 bg-zinc-900/30">
-                                        <th className="text-left p-3 text-[11px] font-mono uppercase tracking-[0.15em] text-zinc-600">Product</th>
-                                        <th className="text-right p-3 text-[11px] font-mono uppercase tracking-[0.15em] text-zinc-600">Amount</th>
-                                        <th className="text-right p-3 text-[11px] font-mono uppercase tracking-[0.15em] text-zinc-600">Time</th>
+                                    <tr className="border-b border-black/8 bg-[#FAFAFA]">
+                                        <th className="text-left p-3 text-[11px] font-mono uppercase tracking-[0.15em] text-[#6B6B6B]">Product</th>
+                                        <th className="text-right p-3 text-[11px] font-mono uppercase tracking-[0.15em] text-[#6B6B6B]">Amount</th>
+                                        <th className="text-right p-3 text-[11px] font-mono uppercase tracking-[0.15em] text-[#6B6B6B]">Time</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {revenue.recentTransactions.map(t => (
-                                        <tr key={t.id} className="border-b border-zinc-800/30 hover:bg-zinc-800/10 transition-colors">
-                                            <td className="p-3 text-zinc-300 font-medium">{t.productName}</td>
-                                            <td className="p-3 text-right text-emerald-400 font-mono font-bold">{fmtCurrency(t.amount)}</td>
-                                            <td className="p-3 text-right text-zinc-500 font-mono text-xs">{timeAgo(t.date)}</td>
+                                        <tr key={t.id} className="border-b border-black/5 hover:bg-[#F5F0EB] transition-colors">
+                                            <td className="p-3 text-[#1A1A1A] font-medium">{t.productName}</td>
+                                            <td className="p-3 text-right text-emerald-600 font-mono font-bold">{fmtCurrency(t.amount)}</td>
+                                            <td className="p-3 text-right text-[#6B6B6B] font-mono text-xs">{timeAgo(t.date)}</td>
                                         </tr>
                                     ))}
                                 </tbody>
@@ -426,22 +426,22 @@ export default function CommandCenter() {
 
                 {/* KPI Cards */}
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                    <KpiCard label="Total Impressions" value={fmtNumber(seoSummary?.totalImpressions || 0)} icon={Eye} color="text-indigo-400" />
-                    <KpiCard label="Total Clicks" value={fmtNumber(seoSummary?.totalClicks || 0)} icon={MousePointerClick} color="text-emerald-400" />
+                    <KpiCard label="Total Impressions" value={fmtNumber(seoSummary?.totalImpressions || 0)} icon={Eye} color="text-[#7C3AED]" />
+                    <KpiCard label="Total Clicks" value={fmtNumber(seoSummary?.totalClicks || 0)} icon={MousePointerClick} color="text-emerald-600" />
                     <KpiCard
                         label="Paid / Glossary Ratio"
                         value={`${seoSummary?.glossaryVsPaidFunnel.ratio || '—'}x`}
                         icon={glossaryRatio >= 1 ? TrendingUp : TrendingDown}
-                        color={glossaryRatio >= 1 ? 'text-emerald-400' : 'text-red-400'}
+                        color={glossaryRatio >= 1 ? 'text-emerald-600' : 'text-red-600'}
                         subtitle="Goal: > 1.0x"
                     />
-                    <KpiCard label="Indexed Pages" value={fmtNumber(seoSummary?.totalPages || 0)} icon={Search} color="text-purple-400" />
+                    <KpiCard label="Indexed Pages" value={fmtNumber(seoSummary?.totalPages || 0)} icon={Search} color="text-[#7C3AED]" />
                 </div>
 
                 {/* Category Breakdown Bars */}
-                <div className="bg-zinc-950 border border-zinc-800/50 rounded-xl p-6">
-                    <h3 className="text-sm font-semibold text-zinc-300 mb-4 flex items-center gap-2">
-                        <Target className="w-4 h-4 text-purple-400" />
+                <div className="bg-white border border-black/8 rounded-xl p-6 shadow-sm">
+                    <h3 className="text-sm font-semibold text-[#1A1A1A] mb-4 flex items-center gap-2">
+                        <Target className="w-4 h-4 text-[#7C3AED]" />
                         Performance by Category
                     </h3>
                     <div className="space-y-3">
@@ -455,23 +455,23 @@ export default function CommandCenter() {
                                     <div key={cat} className="flex items-center gap-4">
                                         <div className="w-24 flex items-center gap-2 shrink-0">
                                             <div className={`w-2.5 h-2.5 rounded-full ${CATEGORY_COLORS[cat] || 'bg-zinc-500'}`} />
-                                            <span className="text-sm font-semibold text-zinc-400 capitalize">{cat}</span>
+                                            <span className="text-sm font-semibold text-[#3A3A3A] capitalize">{cat}</span>
                                         </div>
                                         <div className="flex-1">
-                                            <div className="w-full h-5 bg-zinc-800/50 rounded-full overflow-hidden">
+                                            <div className="w-full h-5 bg-[#F5F0EB] rounded-full overflow-hidden">
                                                 <div
                                                     className={`h-full rounded-full ${CATEGORY_COLORS[cat] || 'bg-zinc-500'} transition-all duration-700`}
                                                     style={{ width: `${pct}%` }}
                                                 />
                                             </div>
                                         </div>
-                                        <div className="w-20 text-right text-sm font-mono font-bold text-zinc-300">
+                                        <div className="w-20 text-right text-sm font-mono font-bold text-[#1A1A1A]">
                                             {fmtNumber(stats.impressions)}
                                         </div>
-                                        <div className="w-16 text-right text-xs font-mono text-zinc-500">
+                                        <div className="w-16 text-right text-xs font-mono text-[#6B6B6B]">
                                             {stats.clicks} clicks
                                         </div>
-                                        <div className={`w-14 text-right text-xs font-mono font-bold ${avgCtr > 0.03 ? 'text-emerald-400' : avgCtr > 0.01 ? 'text-amber-400' : 'text-red-400'}`}>
+                                        <div className={`w-14 text-right text-xs font-mono font-bold ${avgCtr > 0.03 ? 'text-emerald-600' : avgCtr > 0.01 ? 'text-amber-600' : 'text-red-600'}`}>
                                             {(avgCtr * 100).toFixed(1)}%
                                         </div>
                                     </div>
@@ -482,27 +482,27 @@ export default function CommandCenter() {
 
                 {/* Glossary vs Paid Funnel */}
                 {seoSummary && (
-                    <div className={`border rounded-xl p-6 ${glossaryRatio >= 1 ? 'bg-emerald-500/5 border-emerald-500/20' : 'bg-red-500/5 border-red-500/20'}`}>
-                        <h3 className="text-sm font-semibold text-zinc-300 mb-4 flex items-center gap-2">
-                            <ArrowUpRight className={`w-4 h-4 ${glossaryRatio >= 1 ? 'text-emerald-400' : 'text-red-400'}`} />
+                    <div className={`border rounded-xl p-6 ${glossaryRatio >= 1 ? 'bg-emerald-50 border-emerald-200' : 'bg-red-50 border-red-200'}`}>
+                        <h3 className="text-sm font-semibold text-[#1A1A1A] mb-4 flex items-center gap-2">
+                            <ArrowUpRight className={`w-4 h-4 ${glossaryRatio >= 1 ? 'text-emerald-600' : 'text-red-600'}`} />
                             Glossary vs Paid Funnel
                         </h3>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <div className="bg-zinc-900/60 rounded-lg p-4 text-center">
-                                <div className="text-[11px] font-mono uppercase text-amber-500 mb-1">Glossary (Top)</div>
-                                <div className="text-2xl font-bold text-white">{fmtNumber(seoCategories['glossary']?.impressions || 0)}</div>
+                            <div className="bg-[#F5F0EB] rounded-lg p-4 text-center">
+                                <div className="text-[11px] font-mono uppercase text-amber-600 mb-1">Glossary (Top)</div>
+                                <div className="text-2xl font-bold text-[#1A1A1A]">{fmtNumber(seoCategories['glossary']?.impressions || 0)}</div>
                             </div>
-                            <div className="bg-zinc-900/60 rounded-lg p-4 text-center">
-                                <div className="text-[11px] font-mono uppercase text-purple-400 mb-1">Tools (Mid)</div>
-                                <div className="text-2xl font-bold text-white">{fmtNumber(seoCategories['tools']?.impressions || 0)}</div>
+                            <div className="bg-[#F5F0EB] rounded-lg p-4 text-center">
+                                <div className="text-[11px] font-mono uppercase text-[#7C3AED] mb-1">Tools (Mid)</div>
+                                <div className="text-2xl font-bold text-[#1A1A1A]">{fmtNumber(seoCategories['tools']?.impressions || 0)}</div>
                             </div>
-                            <div className="bg-zinc-900/60 rounded-lg p-4 text-center">
-                                <div className="text-[11px] font-mono uppercase text-emerald-400 mb-1">Advisory (Bot)</div>
-                                <div className="text-2xl font-bold text-white">{fmtNumber(seoCategories['advisory']?.impressions || 0)}</div>
+                            <div className="bg-[#F5F0EB] rounded-lg p-4 text-center">
+                                <div className="text-[11px] font-mono uppercase text-emerald-600 mb-1">Advisory (Bot)</div>
+                                <div className="text-2xl font-bold text-[#1A1A1A]">{fmtNumber(seoCategories['advisory']?.impressions || 0)}</div>
                             </div>
-                            <div className="bg-zinc-900/60 rounded-lg p-4 text-center">
-                                <div className="text-[11px] font-mono uppercase text-blue-400 mb-1">Curriculum</div>
-                                <div className="text-2xl font-bold text-white">{fmtNumber(seoCategories['curriculum']?.impressions || 0)}</div>
+                            <div className="bg-[#F5F0EB] rounded-lg p-4 text-center">
+                                <div className="text-[11px] font-mono uppercase text-blue-600 mb-1">Curriculum</div>
+                                <div className="text-2xl font-bold text-[#1A1A1A]">{fmtNumber(seoCategories['curriculum']?.impressions || 0)}</div>
                             </div>
                         </div>
                     </div>
@@ -511,36 +511,36 @@ export default function CommandCenter() {
                 {/* Top Pages & Queries (full view only) */}
                 {!condensed && (
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        <div className="bg-zinc-950 border border-zinc-800/50 rounded-xl p-6">
-                            <h3 className="text-sm font-semibold text-zinc-300 mb-4 flex items-center gap-2">
-                                <TrendingUp className="w-4 h-4 text-emerald-400" /> Top Pages
+                        <div className="bg-white border border-black/8 rounded-xl p-6 shadow-sm">
+                            <h3 className="text-sm font-semibold text-[#1A1A1A] mb-4 flex items-center gap-2">
+                                <TrendingUp className="w-4 h-4 text-emerald-600" /> Top Pages
                             </h3>
                             <div className="space-y-1.5 max-h-[400px] overflow-y-auto">
                                 {(seo.topPages || []).slice(0, 15).map((page, i) => (
-                                    <div key={i} className="flex items-center gap-3 p-2 rounded-lg hover:bg-zinc-800/30 transition-colors">
-                                        <span className="text-[11px] font-mono text-zinc-600 w-5">{i + 1}</span>
+                                    <div key={i} className="flex items-center gap-3 p-2 rounded-lg hover:bg-[#F5F0EB] transition-colors">
+                                        <span className="text-[11px] font-mono text-[#6B6B6B] w-5">{i + 1}</span>
                                         <div className={`w-2 h-2 rounded-full shrink-0 ${CATEGORY_COLORS[page.category] || 'bg-zinc-500'}`} />
-                                        <div className="flex-1 min-w-0 text-sm text-zinc-300 truncate">{page.url}</div>
-                                        <div className="text-xs font-mono text-zinc-500">{fmtNumber(page.impressions)}</div>
-                                        <div className={`text-xs font-mono font-bold ${page.ctr > 0.03 ? 'text-emerald-400' : page.ctr > 0.01 ? 'text-amber-400' : 'text-red-400'}`}>
+                                        <div className="flex-1 min-w-0 text-sm text-[#1A1A1A] truncate">{page.url}</div>
+                                        <div className="text-xs font-mono text-[#6B6B6B]">{fmtNumber(page.impressions)}</div>
+                                        <div className={`text-xs font-mono font-bold ${page.ctr > 0.03 ? 'text-emerald-600' : page.ctr > 0.01 ? 'text-amber-600' : 'text-red-600'}`}>
                                             {(page.ctr * 100).toFixed(1)}%
                                         </div>
                                     </div>
                                 ))}
                             </div>
                         </div>
-                        <div className="bg-zinc-950 border border-zinc-800/50 rounded-xl p-6">
-                            <h3 className="text-sm font-semibold text-zinc-300 mb-4 flex items-center gap-2">
-                                <Search className="w-4 h-4 text-indigo-400" /> Top Queries
+                        <div className="bg-white border border-black/8 rounded-xl p-6 shadow-sm">
+                            <h3 className="text-sm font-semibold text-[#1A1A1A] mb-4 flex items-center gap-2">
+                                <Search className="w-4 h-4 text-[#7C3AED]" /> Top Queries
                             </h3>
                             <div className="space-y-1.5 max-h-[400px] overflow-y-auto">
                                 {(seo.topQueries || []).slice(0, 15).map((q, i) => (
-                                    <div key={i} className="flex items-center gap-3 p-2 rounded-lg hover:bg-zinc-800/30 transition-colors">
-                                        <span className="text-[11px] font-mono text-zinc-600 w-5">{i + 1}</span>
-                                        <div className="flex-1 min-w-0 text-sm text-zinc-300 truncate">{q.query}</div>
-                                        <div className="text-xs font-mono text-zinc-500">{fmtNumber(q.impressions)}</div>
-                                        <div className="text-xs font-mono text-zinc-600">{q.clicks}c</div>
-                                        <div className="text-xs font-mono text-purple-400">#{q.position.toFixed(0)}</div>
+                                    <div key={i} className="flex items-center gap-3 p-2 rounded-lg hover:bg-[#F5F0EB] transition-colors">
+                                        <span className="text-[11px] font-mono text-[#6B6B6B] w-5">{i + 1}</span>
+                                        <div className="flex-1 min-w-0 text-sm text-[#1A1A1A] truncate">{q.query}</div>
+                                        <div className="text-xs font-mono text-[#6B6B6B]">{fmtNumber(q.impressions)}</div>
+                                        <div className="text-xs font-mono text-[#6B6B6B]">{q.clicks}c</div>
+                                        <div className="text-xs font-mono text-[#7C3AED]">#{q.position.toFixed(0)}</div>
                                     </div>
                                 ))}
                             </div>
@@ -565,44 +565,44 @@ export default function CommandCenter() {
                         const Icon = config.icon;
                         const lastRun = agentData?.last_runs?.[0];
                         return (
-                            <div key={key} className="bg-zinc-950 border border-zinc-800/50 rounded-xl p-5 hover:border-indigo-500/30 transition-all duration-300">
+                            <div key={key} className="bg-white border border-black/8 rounded-xl p-5 hover:border-[#7C3AED]/30 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-all duration-300 shadow-sm">
                                 <div className="flex items-start justify-between mb-3">
                                     <div className="flex items-center gap-2.5">
-                                        <span className="p-1.5 bg-indigo-500/10 rounded-md">
-                                            <Icon className="w-4 h-4 text-indigo-400" />
+                                        <span className="p-1.5 bg-purple-50 rounded-md">
+                                            <Icon className="w-4 h-4 text-[#7C3AED]" />
                                         </span>
-                                        <h4 className="font-semibold text-zinc-200 text-sm">{config.label}</h4>
+                                        <h4 className="font-semibold text-[#1A1A1A] text-sm">{config.label}</h4>
                                     </div>
                                     <StatusBadge status={agentData?.last_status || 'never-run'} />
                                 </div>
                                 {!condensed && (
                                     <>
-                                        <p className="text-xs text-zinc-500 mb-3">{config.description}</p>
+                                        <p className="text-xs text-[#6B6B6B] mb-3">{config.description}</p>
                                         <div className="space-y-1.5 text-xs">
                                             <div className="flex justify-between">
-                                                <span className="text-zinc-600">Schedule</span>
-                                                <span className="text-zinc-400 font-mono">{config.schedule}</span>
+                                                <span className="text-[#6B6B6B]">Schedule</span>
+                                                <span className="text-[#3A3A3A] font-mono">{config.schedule}</span>
                                             </div>
                                             <div className="flex justify-between">
-                                                <span className="text-zinc-600">Last Run</span>
-                                                <span className="text-zinc-400">{timeAgo(agentData?.last_run_at || null)}</span>
+                                                <span className="text-[#6B6B6B]">Last Run</span>
+                                                <span className="text-[#3A3A3A]">{timeAgo(agentData?.last_run_at || null)}</span>
                                             </div>
                                             {lastRun && (
                                                 <>
                                                     <div className="flex justify-between">
-                                                        <span className="text-zinc-600">Duration</span>
-                                                        <span className="text-zinc-400 font-mono">{lastRun.duration_ms}ms</span>
+                                                        <span className="text-[#6B6B6B]">Duration</span>
+                                                        <span className="text-[#3A3A3A] font-mono">{lastRun.duration_ms}ms</span>
                                                     </div>
                                                     <div className="flex justify-between">
-                                                        <span className="text-zinc-600">Items</span>
-                                                        <span className="text-zinc-400 font-mono">{lastRun.items_processed}</span>
+                                                        <span className="text-[#6B6B6B]">Items</span>
+                                                        <span className="text-[#3A3A3A] font-mono">{lastRun.items_processed}</span>
                                                     </div>
                                                 </>
                                             )}
                                         </div>
                                         {lastRun?.summary && (
-                                            <div className="mt-3 pt-3 border-t border-zinc-800/50">
-                                                <p className="text-xs text-zinc-500 line-clamp-2">{lastRun.summary}</p>
+                                            <div className="mt-3 pt-3 border-t border-black/8">
+                                                <p className="text-xs text-[#6B6B6B] line-clamp-2">{lastRun.summary}</p>
                                             </div>
                                         )}
                                     </>
@@ -614,10 +614,10 @@ export default function CommandCenter() {
 
                 {/* Autonomous Rewrites Log */}
                 {!condensed && (
-                    <div className="bg-zinc-950 border border-zinc-800/50 rounded-xl overflow-hidden">
-                        <div className="px-6 py-4 border-b border-zinc-800/50 flex items-center gap-2">
-                            <Sparkles className="w-4 h-4 text-amber-400" />
-                            <h3 className="text-sm font-semibold text-zinc-300">Autonomous Rewrites Log</h3>
+                    <div className="bg-white border border-black/8 rounded-xl overflow-hidden shadow-sm">
+                        <div className="px-6 py-4 border-b border-black/8 flex items-center gap-2">
+                            <Sparkles className="w-4 h-4 text-amber-600" />
+                            <h3 className="text-sm font-semibold text-[#1A1A1A]">Autonomous Rewrites Log</h3>
                         </div>
                         <div className="p-6">
                             {(() => {
@@ -642,9 +642,9 @@ export default function CommandCenter() {
                                 if (rewriteEntries.length === 0) {
                                     return (
                                         <div className="text-center py-8">
-                                            <Bot className="w-8 h-8 text-zinc-700 mx-auto mb-3" />
-                                            <p className="text-sm text-zinc-600">No autonomous rewrites recorded yet.</p>
-                                            <p className="text-xs text-zinc-700 mt-1">The SEO Optimizer triggers auto-rewrites when low-CTR pages are detected.</p>
+                                            <Bot className="w-8 h-8 text-black/15 mx-auto mb-3" />
+                                            <p className="text-sm text-[#6B6B6B]">No autonomous rewrites recorded yet.</p>
+                                            <p className="text-xs text-[#6B6B6B]/70 mt-1">The SEO Optimizer triggers auto-rewrites when low-CTR pages are detected.</p>
                                         </div>
                                     );
                                 }
@@ -652,18 +652,18 @@ export default function CommandCenter() {
                                 return (
                                     <div className="space-y-4">
                                         {rewriteEntries.map((rw, i) => (
-                                            <div key={i} className="bg-zinc-900/50 border border-zinc-800/30 rounded-lg p-4">
+                                            <div key={i} className="bg-[#F5F0EB] border border-black/5 rounded-lg p-4">
                                                 <div className="flex items-center justify-between mb-2">
-                                                    <span className="text-xs font-mono text-indigo-400">{rw.url}</span>
-                                                    <span className="text-[11px] text-zinc-600">{timeAgo(rw.date)}</span>
+                                                    <span className="text-xs font-mono text-[#7C3AED]">{rw.url}</span>
+                                                    <span className="text-[11px] text-[#6B6B6B]">{timeAgo(rw.date)}</span>
                                                 </div>
                                                 <div className="flex items-start gap-3 mb-2">
                                                     <div className="flex-1">
-                                                        <div className="text-xs text-red-400/70 line-through mb-1">{rw.oldTitle}</div>
-                                                        <div className="text-xs text-emerald-400 font-semibold">{rw.newTitle}</div>
+                                                        <div className="text-xs text-red-500/70 line-through mb-1">{rw.oldTitle}</div>
+                                                        <div className="text-xs text-emerald-600 font-semibold">{rw.newTitle}</div>
                                                     </div>
                                                 </div>
-                                                <p className="text-[11px] text-zinc-600 flex items-start gap-1.5">
+                                                <p className="text-[11px] text-[#6B6B6B] flex items-start gap-1.5">
                                                     <Sparkles className="w-3 h-3 text-amber-500 shrink-0 mt-0.5" />
                                                     {rw.reasoning}
                                                 </p>
@@ -678,39 +678,39 @@ export default function CommandCenter() {
 
                 {/* Recent Agent Runs table (full view only) */}
                 {!condensed && (
-                    <div className="bg-zinc-950 border border-zinc-800/50 rounded-xl overflow-hidden">
-                        <div className="px-6 py-4 border-b border-zinc-800/50">
-                            <h3 className="text-sm font-semibold text-zinc-300 flex items-center gap-2">
-                                <Clock className="w-4 h-4 text-indigo-400" />
+                    <div className="bg-white border border-black/8 rounded-xl overflow-hidden shadow-sm">
+                        <div className="px-6 py-4 border-b border-black/8">
+                            <h3 className="text-sm font-semibold text-[#1A1A1A] flex items-center gap-2">
+                                <Clock className="w-4 h-4 text-[#7C3AED]" />
                                 Recent Agent Runs
                             </h3>
                         </div>
                         <div className="overflow-x-auto">
                             <table className="w-full text-sm">
                                 <thead>
-                                    <tr className="border-b border-zinc-800/50 bg-zinc-900/30">
-                                        <th className="text-left p-3 text-[11px] font-mono uppercase tracking-[0.15em] text-zinc-600">Agent</th>
-                                        <th className="text-left p-3 text-[11px] font-mono uppercase tracking-[0.15em] text-zinc-600">Status</th>
-                                        <th className="text-left p-3 text-[11px] font-mono uppercase tracking-[0.15em] text-zinc-600">Time</th>
-                                        <th className="text-left p-3 text-[11px] font-mono uppercase tracking-[0.15em] text-zinc-600">Duration</th>
-                                        <th className="text-left p-3 text-[11px] font-mono uppercase tracking-[0.15em] text-zinc-600">Summary</th>
+                                    <tr className="border-b border-black/8 bg-[#FAFAFA]">
+                                        <th className="text-left p-3 text-[11px] font-mono uppercase tracking-[0.15em] text-[#6B6B6B]">Agent</th>
+                                        <th className="text-left p-3 text-[11px] font-mono uppercase tracking-[0.15em] text-[#6B6B6B]">Status</th>
+                                        <th className="text-left p-3 text-[11px] font-mono uppercase tracking-[0.15em] text-[#6B6B6B]">Time</th>
+                                        <th className="text-left p-3 text-[11px] font-mono uppercase tracking-[0.15em] text-[#6B6B6B]">Duration</th>
+                                        <th className="text-left p-3 text-[11px] font-mono uppercase tracking-[0.15em] text-[#6B6B6B]">Summary</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {agents && Object.entries(agents.agents || {}).flatMap(([agent, info]) =>
                                         info.last_runs.map((run: AgentRun) => (
-                                            <tr key={run.id} className="border-b border-zinc-800/30 hover:bg-zinc-800/10 transition-colors">
-                                                <td className="p-3 font-medium text-zinc-300">{AGENT_CONFIG[agent]?.label || agent}</td>
+                                            <tr key={run.id} className="border-b border-black/5 hover:bg-[#F5F0EB] transition-colors">
+                                                <td className="p-3 font-medium text-[#1A1A1A]">{AGENT_CONFIG[agent]?.label || agent}</td>
                                                 <td className="p-3"><StatusBadge status={run.status} /></td>
-                                                <td className="p-3 text-zinc-500 font-mono text-xs">{timeAgo(run.created_at)}</td>
-                                                <td className="p-3 text-zinc-500 font-mono text-xs">{run.duration_ms}ms</td>
-                                                <td className="p-3 text-zinc-500 text-xs max-w-xs truncate">{run.summary}</td>
+                                                <td className="p-3 text-[#6B6B6B] font-mono text-xs">{timeAgo(run.created_at)}</td>
+                                                <td className="p-3 text-[#6B6B6B] font-mono text-xs">{run.duration_ms}ms</td>
+                                                <td className="p-3 text-[#6B6B6B] text-xs max-w-xs truncate">{run.summary}</td>
                                             </tr>
                                         ))
                                     )}
                                     {(!agents || Object.values(agents.agents || {}).every(a => a.last_runs.length === 0)) && (
                                         <tr>
-                                            <td colSpan={5} className="p-8 text-center text-zinc-600">
+                                            <td colSpan={5} className="p-8 text-center text-[#6B6B6B]">
                                                 No agent runs recorded yet.
                                             </td>
                                         </tr>
@@ -729,44 +729,44 @@ export default function CommandCenter() {
         if (!agents) return <NotConnected label="Pipeline (Agent Status)" />;
         return (
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className="bg-zinc-950 border border-zinc-800/50 rounded-xl p-5 hover:border-red-500/30 transition-all duration-300">
+                <div className="bg-white border border-black/8 rounded-xl p-5 hover:border-red-300 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-all duration-300 shadow-sm">
                     <div className="flex items-center justify-between mb-3">
-                        <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-zinc-500">Hot Leads</p>
-                        <Flame className="w-4 h-4 text-red-400" />
+                        <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-[#6B6B6B]">Hot Leads</p>
+                        <Flame className="w-4 h-4 text-red-600" />
                     </div>
-                    <p className="text-4xl font-bold text-red-400">{pipeline.HOT || '—'}</p>
-                    <div className="mt-2 h-1 bg-zinc-800 rounded-full overflow-hidden">
+                    <p className="text-4xl font-bold text-red-600">{pipeline.HOT || '—'}</p>
+                    <div className="mt-2 h-1 bg-[#F5F0EB] rounded-full overflow-hidden">
                         <div className="h-full bg-red-500 rounded-full transition-all duration-700" style={{ width: `${totalPipeline > 0 ? (pipeline.HOT / totalPipeline) * 100 : 0}%` }} />
                     </div>
                 </div>
-                <div className="bg-zinc-950 border border-zinc-800/50 rounded-xl p-5 hover:border-amber-500/30 transition-all duration-300">
+                <div className="bg-white border border-black/8 rounded-xl p-5 hover:border-amber-300 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-all duration-300 shadow-sm">
                     <div className="flex items-center justify-between mb-3">
-                        <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-zinc-500">Warm Leads</p>
-                        <TrendingUp className="w-4 h-4 text-amber-400" />
+                        <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-[#6B6B6B]">Warm Leads</p>
+                        <TrendingUp className="w-4 h-4 text-amber-600" />
                     </div>
-                    <p className="text-4xl font-bold text-amber-400">{pipeline.WARM || '—'}</p>
-                    <div className="mt-2 h-1 bg-zinc-800 rounded-full overflow-hidden">
+                    <p className="text-4xl font-bold text-amber-600">{pipeline.WARM || '—'}</p>
+                    <div className="mt-2 h-1 bg-[#F5F0EB] rounded-full overflow-hidden">
                         <div className="h-full bg-amber-500 rounded-full transition-all duration-700" style={{ width: `${totalPipeline > 0 ? (pipeline.WARM / totalPipeline) * 100 : 0}%` }} />
                     </div>
                 </div>
-                <div className="bg-zinc-950 border border-zinc-800/50 rounded-xl p-5 hover:border-blue-500/30 transition-all duration-300">
+                <div className="bg-white border border-black/8 rounded-xl p-5 hover:border-blue-300 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-all duration-300 shadow-sm">
                     <div className="flex items-center justify-between mb-3">
-                        <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-zinc-500">Cold Leads</p>
-                        <Shield className="w-4 h-4 text-blue-400" />
+                        <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-[#6B6B6B]">Cold Leads</p>
+                        <Shield className="w-4 h-4 text-blue-600" />
                     </div>
-                    <p className="text-4xl font-bold text-blue-400">{pipeline.COLD || '—'}</p>
-                    <div className="mt-2 h-1 bg-zinc-800 rounded-full overflow-hidden">
+                    <p className="text-4xl font-bold text-blue-600">{pipeline.COLD || '—'}</p>
+                    <div className="mt-2 h-1 bg-[#F5F0EB] rounded-full overflow-hidden">
                         <div className="h-full bg-blue-500 rounded-full transition-all duration-700" style={{ width: `${totalPipeline > 0 ? (pipeline.COLD / totalPipeline) * 100 : 0}%` }} />
                     </div>
                 </div>
-                <div className="bg-zinc-950 border border-zinc-800/50 rounded-xl p-5 hover:border-zinc-600/30 transition-all duration-300">
+                <div className="bg-white border border-black/8 rounded-xl p-5 hover:border-black/15 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-all duration-300 shadow-sm">
                     <div className="flex items-center justify-between mb-3">
-                        <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-zinc-500">Nurture</p>
-                        <Users className="w-4 h-4 text-zinc-400" />
+                        <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-[#6B6B6B]">Nurture</p>
+                        <Users className="w-4 h-4 text-[#6B6B6B]" />
                     </div>
-                    <p className="text-4xl font-bold text-zinc-400">{pipeline.NURTURE || '—'}</p>
-                    <div className="mt-2 h-1 bg-zinc-800 rounded-full overflow-hidden">
-                        <div className="h-full bg-zinc-500 rounded-full transition-all duration-700" style={{ width: `${totalPipeline > 0 ? (pipeline.NURTURE / totalPipeline) * 100 : 0}%` }} />
+                    <p className="text-4xl font-bold text-[#3A3A3A]">{pipeline.NURTURE || '—'}</p>
+                    <div className="mt-2 h-1 bg-[#F5F0EB] rounded-full overflow-hidden">
+                        <div className="h-full bg-zinc-400 rounded-full transition-all duration-700" style={{ width: `${totalPipeline > 0 ? (pipeline.NURTURE / totalPipeline) * 100 : 0}%` }} />
                     </div>
                 </div>
             </div>
@@ -775,23 +775,23 @@ export default function CommandCenter() {
 
     /* ── STARVING CROWDS SECTION ──────────────────────────────────────── */
     const StarvingCrowdsSection = () => (
-        <div className="bg-zinc-950 border border-zinc-800/50 rounded-xl p-6">
-            <h3 className="text-sm font-semibold text-zinc-300 mb-4 flex items-center gap-2">
-                <Target className="w-4 h-4 text-amber-400" />
+        <div className="bg-white border border-black/8 rounded-xl p-6 shadow-sm">
+            <h3 className="text-sm font-semibold text-[#1A1A1A] mb-4 flex items-center gap-2">
+                <Target className="w-4 h-4 text-amber-600" />
                 Starving Crowd Alignment
             </h3>
             {crowdAlignment.length === 0 ? (
-                <p className="text-sm text-zinc-600 text-center py-4">SEO data required for crowd alignment analysis.</p>
+                <p className="text-sm text-[#6B6B6B] text-center py-4">SEO data required for crowd alignment analysis.</p>
             ) : (
                 <div className="space-y-3">
                     {crowdAlignment.map((crowd, i) => {
                         const hasMatch = crowd.matchingQueries > 0;
                         return (
-                            <div key={i} className={`flex items-center gap-4 p-3 rounded-lg border ${hasMatch ? 'border-emerald-500/20 bg-emerald-500/5' : 'border-red-500/20 bg-red-500/5'}`}>
+                            <div key={i} className={`flex items-center gap-4 p-3 rounded-lg border ${hasMatch ? 'border-emerald-200 bg-emerald-50' : 'border-red-200 bg-red-50'}`}>
                                 <div className={`w-2.5 h-2.5 rounded-full shrink-0 ${hasMatch ? 'bg-emerald-500' : 'bg-red-500'}`} />
                                 <div className="flex-1 min-w-0">
-                                    <div className="text-sm font-semibold text-zinc-300">{crowd.crowd}</div>
-                                    <div className="text-xs text-zinc-500 mt-0.5">
+                                    <div className="text-sm font-semibold text-[#1A1A1A]">{crowd.crowd}</div>
+                                    <div className="text-xs text-[#6B6B6B] mt-0.5">
                                         {hasMatch
                                             ? `${crowd.matchingQueries} matching queries · Top: "${crowd.topQuery}"`
                                             : 'No matching queries found — content gap'
@@ -799,10 +799,10 @@ export default function CommandCenter() {
                                     </div>
                                 </div>
                                 <div className="text-right shrink-0">
-                                    <div className={`text-sm font-bold font-mono ${hasMatch ? 'text-emerald-400' : 'text-red-400'}`}>
+                                    <div className={`text-sm font-bold font-mono ${hasMatch ? 'text-emerald-600' : 'text-red-600'}`}>
                                         {fmtNumber(crowd.totalImpressions)}
                                     </div>
-                                    <div className="text-[11px] text-zinc-600">impressions</div>
+                                    <div className="text-[11px] text-[#6B6B6B]">impressions</div>
                                 </div>
                             </div>
                         );
@@ -824,50 +824,50 @@ export default function CommandCenter() {
     ];
 
     return (
-        <div className="min-h-screen bg-[#0a0a0f] text-zinc-100 pt-24 pb-20">
+        <div className="min-h-screen text-[#1A1A1A] pt-24 pb-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* ── Header ─────────────────────────────────────────────── */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
                     <div>
                         <div className="flex items-center gap-3 mb-2">
-                            <span className="p-2 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 rounded-xl">
-                                <Activity className="w-5 h-5 text-indigo-400" />
+                            <span className="p-2 bg-gradient-to-br from-purple-100 to-purple-50 border border-purple-200 rounded-xl">
+                                <Activity className="w-5 h-5 text-[#7C3AED]" />
                             </span>
-                            <span className="text-xs font-bold font-mono uppercase tracking-[0.2em] text-indigo-400">
+                            <span className="text-xs font-bold font-mono uppercase tracking-[0.2em] text-[#7C3AED]">
                                 Command Center
                             </span>
                         </div>
-                        <h1 className="text-3xl font-bold bg-gradient-to-r from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
+                        <h1 className="text-3xl font-bold bg-gradient-to-r from-[#1A1A1A] to-[#4A3A6B] bg-clip-text text-transparent" style={{ fontFamily: 'var(--font-grotesk), Space Grotesk, sans-serif' }}>
                             Operations Dashboard
                         </h1>
-                        <p className="text-zinc-500 mt-1 text-sm">
+                        <p className="text-[#6B6B6B] mt-1 text-sm">
                             Revenue · SEO · Agents · Pipeline — auto-refreshes every 60s
                         </p>
                     </div>
                     <div className="flex items-center gap-3 flex-wrap">
                         {/* Day toggle */}
-                        <div className="flex items-center bg-zinc-900/80 border border-zinc-800/50 rounded-lg p-1 gap-1">
+                        <div className="flex items-center bg-white border border-black/8 rounded-lg p-1 gap-1 shadow-sm">
                             {[7, 14, 28].map(d => (
                                 <button
                                     key={d}
                                     onClick={() => setDays(d)}
                                     className={`px-3 py-1.5 text-xs font-bold font-mono rounded-md transition-all duration-200 ${days === d
-                                        ? 'bg-indigo-500/20 text-indigo-400 border border-indigo-500/30'
-                                        : 'text-zinc-500 hover:text-zinc-300'
+                                        ? 'bg-[#7C3AED] text-white shadow-sm'
+                                        : 'text-[#6B6B6B] hover:text-[#1A1A1A] hover:bg-[#F5F0EB]'
                                         }`}
                                 >
                                     {d}d
                                 </button>
                             ))}
                         </div>
-                        <span className="text-[11px] text-zinc-600 hidden md:inline">
+                        <span className="text-[11px] text-[#6B6B6B] hidden md:inline">
                             {lastRefresh.toLocaleTimeString()}
                         </span>
                         <button
                             onClick={refreshAll}
                             disabled={loading}
-                            className="flex items-center gap-2 px-4 py-2 bg-indigo-500/10 border border-indigo-500/20 rounded-lg text-indigo-400 text-sm font-medium hover:bg-indigo-500/20 transition-colors disabled:opacity-50"
+                            className="flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-200 rounded-lg text-[#7C3AED] text-sm font-medium hover:bg-purple-100 transition-colors disabled:opacity-50"
                         >
                             <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
                             Refresh
@@ -876,7 +876,7 @@ export default function CommandCenter() {
                 </div>
 
                 {/* ── Navigation Tabs ────────────────────────────────────── */}
-                <div className="flex items-center gap-1 mb-8 bg-zinc-900/60 border border-zinc-800/50 rounded-xl p-1.5 w-fit">
+                <div className="flex items-center gap-1 mb-8 bg-white border border-black/8 rounded-xl p-1.5 w-fit shadow-sm">
                     {tabs.map(t => {
                         const Icon = t.icon;
                         const active = tab === t.id;
@@ -885,8 +885,8 @@ export default function CommandCenter() {
                                 key={t.id}
                                 onClick={() => setTab(t.id)}
                                 className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${active
-                                    ? 'bg-indigo-500/15 text-indigo-400 border border-indigo-500/25 shadow-lg shadow-indigo-500/5'
-                                    : 'text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800/30'
+                                    ? 'bg-[#7C3AED] text-white shadow-sm'
+                                    : 'text-[#6B6B6B] hover:text-[#1A1A1A] hover:bg-[#F5F0EB]'
                                     }`}
                             >
                                 <Icon className="w-4 h-4" />
@@ -899,8 +899,8 @@ export default function CommandCenter() {
                 {/* ── Loading overlay ────────────────────────────────────── */}
                 {loading && (
                     <div className="flex items-center justify-center gap-3 py-12 mb-8">
-                        <RefreshCw className="w-5 h-5 animate-spin text-indigo-400" />
-                        <span className="text-zinc-500 font-mono text-sm">Loading command center data...</span>
+                        <RefreshCw className="w-5 h-5 animate-spin text-[#7C3AED]" />
+                        <span className="text-[#6B6B6B] font-mono text-sm">Loading command center data...</span>
                     </div>
                 )}
 
@@ -913,7 +913,7 @@ export default function CommandCenter() {
                         {/* Revenue (condensed) */}
                         <section>
                             <SectionHeader icon={DollarSign} title="Revenue">
-                                <button onClick={() => setTab('revenue')} className="text-xs text-indigo-400 hover:text-indigo-300 font-mono flex items-center gap-1">
+                                <button onClick={() => setTab('revenue')} className="text-xs text-[#7C3AED] hover:text-[#6D28D9] font-mono flex items-center gap-1">
                                     View Full <ExternalLink className="w-3 h-3" />
                                 </button>
                             </SectionHeader>
@@ -923,7 +923,7 @@ export default function CommandCenter() {
                         {/* SEO (condensed) */}
                         <section>
                             <SectionHeader icon={Globe} title="SEO Performance">
-                                <button onClick={() => setTab('seo')} className="text-xs text-indigo-400 hover:text-indigo-300 font-mono flex items-center gap-1">
+                                <button onClick={() => setTab('seo')} className="text-xs text-[#7C3AED] hover:text-[#6D28D9] font-mono flex items-center gap-1">
                                     View Full <ExternalLink className="w-3 h-3" />
                                 </button>
                             </SectionHeader>
@@ -939,7 +939,7 @@ export default function CommandCenter() {
                         {/* Agents (condensed) */}
                         <section>
                             <SectionHeader icon={Bot} title="Agent Activity">
-                                <button onClick={() => setTab('agents')} className="text-xs text-indigo-400 hover:text-indigo-300 font-mono flex items-center gap-1">
+                                <button onClick={() => setTab('agents')} className="text-xs text-[#7C3AED] hover:text-[#6D28D9] font-mono flex items-center gap-1">
                                     View Full <ExternalLink className="w-3 h-3" />
                                 </button>
                             </SectionHeader>
