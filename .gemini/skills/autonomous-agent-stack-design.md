@@ -9,90 +9,6 @@ description: "ACTIVATE this skill when designing, auditing, deploying, or mainta
 
 This skill ensures Richard Ewing's hours go ONLY to high-leverage work that re-energizes him. Every recurring task must be categorized, and anything automatable must be built as an autonomous agent with zero manual triggering.
 
-## Task Discovery Protocol
-
-### Where to Find Recurring Tasks
-
-1. **API Routes** (`app/api/`) — Every route is a potential automation candidate
-2. **Content Pipelines** — Blog, glossary, curriculum, PSEO pages
-3. **SEO Infrastructure** — Sitemap, IndexNow, canonical checking, GSC monitoring
-4. **Payment Processing** — Stripe webhooks, checkout flows
-5. **Newsletter** — Beehiiv integrations, subscriber management
-6. **Database** — Supabase operations, data cleanup, analytics aggregation
-7. **Monitoring** — Uptime, performance, error tracking
-8. **Intelligence** — Market scanning, competitor monitoring, trend detection
-9. **Email** — Client communications, daily reports, lead nurturing
-10. **Scripts** — Any manual scripts in root, `scripts/`, or `package.json`
-11. **Scheduled Tasks** — Existing cron jobs, calendar-driven tasks
-12. **Client Deliverables** — Reports, audits, diagnostic results
-
-### Categorization Framework
-
-| Category | Definition | Action |
-|---|---|---|
-| **ALREADY AUTOMATED** | Agent exists and runs on schedule | Monitor only |
-| **CAN AUTOMATE NOW** | Code exists, just needs cron/trigger | Wire it up |
-| **NEEDS CODE** | Automation possible but code must be written | Build it |
-| **CANNOT AUTOMATE** | Requires human judgment, creativity, or relationship | Mark as high-leverage |
-
-## Agent Architecture Standards
-
-### Every Agent MUST Have
-
-1. **Vercel Cron trigger** — No manual triggering. Ever.
-2. **CRON_SECRET auth** — Verify `Authorization: Bearer ${CRON_SECRET}` header
-3. **Supabase logging** — Write every run to `agent_runs` table with status, duration, metadata
-4. **Error handling** — Try/catch with detailed error logging. Never silently fail.
-5. **Execution time tracking** — Log start time, end time, duration
-6. **Status endpoint** — Report health at `/api/cron/status`
-
-### Agent Route Pattern
-
-```
-app/api/cron/{agent-name}/route.ts
-```
-
-### Standard Agent Template
-
-```typescript
-import { NextResponse } from 'next/server';
-import { logAgentRun } from '@/lib/agents/logger';
-
-export async function GET(request: Request) {
-    const authHeader = request.headers.get('authorization');
-    if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
-        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-
-    const startTime = Date.now();
-    try {
-        // === AGENT LOGIC HERE ===
-
-        const duration = Date.now() - startTime;
-        await logAgentRun('agent-name', 'success', duration, { /* metadata */ });
-        return NextResponse.json({ success: true, duration });
-    } catch (error) {
-        const duration = Date.now() - startTime;
-        await logAgentRun('agent-name', 'error', duration, { error: String(error) });
-        return NextResponse.json({ error: String(error) }, { status: 500 });
-    }
-}
-```
-
-### Cron Schedule Registration
-
-Add to `vercel.json`:
-```json
-{
-    "crons": [
-        {
-            "path": "/api/cron/{agent-name}",
-            "schedule": "0 7 * * *"
-        }
-    ]
-}
-```
-
 ## Currently Deployed Agents
 
 | # | Agent | Path | Schedule | What It Does |
@@ -103,15 +19,111 @@ Add to `vercel.json`:
 | 4 | Lead Scorer | `/api/cron/lead-scorer` | Every 6 hours | Scores and prioritizes leads |
 | 5 | Content Expander | `/api/cron/content-expander` | Daily 9am UTC | Generates content expansion drafts |
 | 6 | Daily Ops Email | `/api/cron/daily-ops-email` | Daily 7am UTC | Sends daily briefing to Richard |
+| 7 | **SEO Optimizer** | `/api/cron/seo-optimizer` | Daily 9am UTC | Pulls GSC data, identifies low-CTR pages, triggers auto-rewriter, emails actionable digest |
+| 8 | **Auto Rewriter** | `/api/cron/auto-rewriter` | Triggered by SEO Optimizer | Gemini-powered meta title/description rewriter, commits to GitHub, auto-deploys via Vercel |
+
+## The Autonomous SEO Loop
+
+```
+Daily @ 9am UTC:
+  SEO Optimizer → GSC API (page+query data)
+       ↓
+  Starving Crowd Alignment scoring
+       ↓
+  Identify low-CTR pages (<2%, 100+ impressions)
+       ↓
+  Auto-Rewriter → Gemini generates new meta titles
+       ↓
+  GitHub commit → Vercel auto-deploy
+       ↓
+  IndexNow submission
+       ↓
+  Email digest with one-click action buttons
+       ↓
+  Richard clicks "Approve & Deploy" or "Skip"
+       ↓
+  Action API triggers rewriter → confirmation email
+```
+
+### Safety Guardrails
+- Max 5 autonomous rewrites per day
+- Only rewrites pages with 100+ impressions
+- Only rewrites tools/advisory/framework pages (never blog/glossary)
+- All changes logged to Supabase with old/new titles
+- Email shows exactly what was changed with reasoning
+- Action buttons expire after 72 hours (HMAC-signed tokens)
+
+## Action System (One-Click Email Buttons)
+
+- **Endpoint**: `/api/actions/trigger?token=...`
+- **Actions**: `approve-rewrite`, `skip`
+- **Security**: HMAC-SHA256 signed tokens using CRON_SECRET
+- **Expiry**: 72 hours
+- **Flow**: Email → Click button → API triggers auto-rewriter → Confirmation email sent
+- **Confirmation**: After action completes, sends "[Action Complete]" email with results
+
+## Admin Dashboard (Command Center)
+
+- **URL**: `/admin/command-center`
+- **Auth**: Clerk login + email allowlist (richardewing1@gmail.com, richardewing@exogram.ai)
+- **Tabs**: Overview | SEO | Revenue | Agents
+- **Data Sources**:
+  - Revenue: `/api/admin/revenue` (Stripe)
+  - SEO: `/api/gsc/performance` (Google Search Console)
+  - Agents: `/api/admin/agent-status` (Supabase)
+- **Auto-refresh**: Every 60 seconds
+- **Period toggle**: 7d / 14d / 28d
+
+## Agent Architecture Standards
+
+### Every Agent MUST Have
+
+1. **Vercel Cron trigger** — No manual triggering. Ever.
+2. **CRON_SECRET auth** — Verify `Authorization: Bearer ${CRON_SECRET}` header
+3. **Supabase logging** — Write every run to `agent_runs` table with status, duration, metadata
+4. **Error handling** — Try/catch with detailed error logging. Never silently fail.
+5. **Execution time tracking** — Log start time, end time, duration
+6. **Status endpoint** — Report health at `/api/admin/agent-status`
+
+### Agent Route Pattern
+
+```
+app/api/cron/{agent-name}/route.ts
+```
+
+### API Auth Pattern (Dual Auth)
+
+All admin/dashboard-facing APIs accept BOTH:
+1. `Bearer CRON_SECRET` header (for cron jobs and server-to-server)
+2. Clerk session cookies (for browser dashboard access)
+
+```typescript
+const hasCronAuth = authHeader === `Bearer ${process.env.CRON_SECRET}`;
+if (!hasCronAuth) {
+    const { userId } = await auth();
+    if (!userId) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+}
+```
 
 ## Environment Variables Required
 
 | Variable | Purpose | Set In |
 |---|---|---|
-| `CRON_SECRET` | Auth for all cron endpoints | Vercel env (production) |
-| `RESEND_API_KEY` | Email delivery for daily ops | Vercel env (production) |
+| `CRON_SECRET` | Auth for all cron endpoints + action token signing | Vercel env (production) |
+| `RESEND_API_KEY` | Email delivery (Resend) | Vercel env (production) |
 | `SUPABASE_URL` | Database for agent logging | Vercel env (production) |
 | `SUPABASE_SERVICE_ROLE_KEY` | Admin DB access | Vercel env (production) |
+| `GOOGLE_SERVICE_ACCOUNT_JSON` | GSC API access | Vercel env (production) |
+| `STRIPE_SECRET_KEY` | Revenue tracking | Vercel env (production) |
+| `GITHUB_TOKEN` | Auto-rewriter commits to GitHub | Vercel env (production) |
+| `GEMINI_API_KEY` | AI-powered meta title generation | Vercel env (production) |
+
+## Email Infrastructure
+
+- **Sending domain**: `updates.richardewing.io` (verified in Resend)
+- **From**: `seo@updates.richardewing.io`
+- **DNS records**: DKIM, SPF, MX on IONOS
+- **Recipient**: `richardewing@exogram.ai`
 
 ## What AI CANNOT Automate
 
@@ -122,45 +134,15 @@ These tasks require Richard's human judgment, relationships, and creativity:
 | **Client advisory sessions** | Requires empathy, reading the room, relationship trust |
 | **Keynote presentations** | Public speaking, audience adaptation, charisma |
 | **Strategic pricing decisions** | Market positioning requires intuition + data |
-| **Hiring / team building** | Culture fit, character judgment |
-| **Partnership negotiations** | Trust-building, reading intent, relationship capital |
 | **Content final approval** | Brand voice authenticity, strategic alignment |
-| **Investment decisions** | Risk tolerance is personal |
-| **Crisis communication** | Stakeholder management requires human judgment |
-| **Board relationship management** | Trust, influence, political navigation |
 | **Framework invention** | Creating new frameworks (PAIG, Exogram) requires original thinking |
-
-## Agent Monitoring
-
-### Dashboard
-- Located at `/admin/agents`
-- Auto-refreshes every 30 seconds
-- Shows last run status, duration, next scheduled run for each agent
-- Clerk-authenticated (admin only)
-
-### API Endpoint
-- `GET /api/admin/agent-status` — Returns JSON of all agent statuses
-- Requires Clerk authentication
-
-### Daily Email Report
-- Sent daily at 7am UTC to richardewing@exogram.ai
-- Includes: all agent statuses, site metrics, action items
-- Uses Resend for delivery
-
-## When to Add New Agents
-
-Add a new agent when:
-1. A task happens on a regular schedule (daily, weekly, hourly)
-2. The task can be fully defined with deterministic logic
-3. The task doesn't require real-time human input
-4. The cost of a missed execution is recoverable
-5. The output can be validated programmatically
 
 ## Files This Skill Touches
 
 - `app/api/cron/` — All agent route files
-- `lib/agents/` — Shared agent utilities (logger, email, dispatcher)
+- `app/api/actions/trigger/` — One-click action system
+- `app/api/admin/` — Agent status, revenue APIs
+- `app/api/gsc/` — Google Search Console API
+- `app/admin/` — Dashboard (command-center, seo-performance, agents)
 - `vercel.json` — Cron schedule registration
-- `app/admin/agents/` — Agent monitoring dashboard
-- `app/api/admin/agent-status/` — Agent status API
-- Supabase tables: `agent_runs`, `lead_scores`, `content_drafts`
+- Supabase tables: `agent_runs`, `lead_scores`, `seo_snapshots`
