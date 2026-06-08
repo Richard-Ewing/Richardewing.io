@@ -115,7 +115,10 @@ export async function GET(request: Request) {
     if (!token) {
         return new Response(renderHTML('❌ Error', 'No action token provided.', false), {
             status: 400,
-            headers: { 'Content-Type': 'text/html' },
+            headers: {
+                'Content-Type': 'text/html',
+                'Cache-Control': 'no-store, max-age=0, must-revalidate',
+            },
         });
     }
 
@@ -123,7 +126,10 @@ export async function GET(request: Request) {
     if (!verified) {
         return new Response(renderHTML('❌ Expired or Invalid', 'This action link has expired or is invalid. Actions expire after 72 hours.', false), {
             status: 403,
-            headers: { 'Content-Type': 'text/html' },
+            headers: {
+                'Content-Type': 'text/html',
+                'Cache-Control': 'no-store, max-age=0, must-revalidate',
+            },
         });
     }
 
