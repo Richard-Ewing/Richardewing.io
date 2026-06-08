@@ -192,7 +192,14 @@ Rules:
 - Do not repeat questions they've already answered
 - If they give short answers, gently probe deeper`;
 
-        const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+        const model = genAI.getGenerativeModel({
+            model: 'gemini-2.5-flash',
+            generationConfig: {
+                thinkingConfig: {
+                    thinkingBudget: 0
+                }
+            }
+        });
 
         // Build chat history for Gemini
         const chatHistory = conversationHistory.map(

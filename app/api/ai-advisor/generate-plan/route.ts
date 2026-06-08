@@ -19,7 +19,14 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: 'Session ID required' }, { status: 400 });
         }
 
-        const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+        const model = genAI.getGenerativeModel({
+            model: 'gemini-2.5-flash',
+            generationConfig: {
+                thinkingConfig: {
+                    thinkingBudget: 0
+                }
+            }
+        });
 
         const prompt = `You are Richard Ewing's AI Integration Advisor. Generate a comprehensive, actionable AI Integration Roadmap for this business.
 

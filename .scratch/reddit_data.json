@@ -1,0 +1,570 @@
+[
+  {
+    "subreddit": "ProductManagement",
+    "query": "AI ROI OR unit economics",
+    "title": "Steal my product updates to my leadership, I've been told they are great! (example deck included.)",
+    "score": 405,
+    "num_comments": 59,
+    "selftext": "By request, first here's the update I give (6 slides + some stats for details) to the SaaS Group Board leaders I report to. I share this with my \"boss\" on a bi-weekly basis. Would love to hear your ideas to make it even better.\n\n**I think senior leaders care about 3 things essentially:**\n\n1. **People:** state of our staff and their productivity or bottlenecks.\n2. **Product:** discovery learnings, roadmap progress, and recent impacts (leading).\n3. **Pay-offs:** business outcomes we see (lagging).\n\nIn the conversation part, I share things I need from the leaders, and we make plans together.\n\n# Here's what the outline of my deck looks like:\n\n1. **Agenda:** exec summary of the content in 1 sentence per slide.\n2. **People:** exec summary of how my folks are doing both in delivery and in happiness.\n3. **Product:** exec summary of **now**, **last**, **next** order to show what's ready to release, recent results, &amp; next steps. I prefer to use TARS to show impact in my stats.\n4. **Pay-offs:"
+  },
+  {
+    "subreddit": "ProductManagement",
+    "query": "AI ROI OR unit economics",
+    "title": "Coinbase fires 2000 people experimenting with 1-person product teams",
+    "score": 316,
+    "num_comments": 201,
+    "selftext": "\n\nCopy pasting so people don't have to go to x\n\n&gt; Team,\n&gt; \n&gt; Today I\u2019ve made the difficult decision to reduce the size of Coinbase by ~14%. I want to walk you through why we're doing this now, what it means for those affected, and how this positions us for the future.\n&gt; \n&gt; Why now\n&gt; Two forces are converging at the same time. We need to be front footed to respond to both.\n&gt; \n&gt; First, the market. Coinbase is well-capitalized, has diversified revenue streams, and is well-positioned to weather any storm. Crypto is also on the verge of the next wave of adoption, with stablecoins, prediction markets, tokenization, and more taking off. However, our business is still volatile from quarter to quarter. While we've managed through that cyclicality many times before and come out stronger on the other side, we\u2019re currently in a down market and need to adjust our cost structure now so that we emerge from this period leaner, faster, and more efficient for our next phase of gr"
+  },
+  {
+    "subreddit": "ProductManagement",
+    "query": "AI ROI OR unit economics",
+    "title": "Stop Building AI Agents Just Because You Can",
+    "score": 140,
+    "num_comments": 57,
+    "selftext": "Big deal, so you learned n8n, your team understands LangChain, and you've automated PRD-slop. Cool. But what economic opportunities are you exploiting or improving? If you can't answer that in under 5 words, then all you're doing is agentic tool tourism.\n\nApologies for going full curmudgeon mode this morning, but I'm getting a bit worn out by product management influencers peddling various RPA+AI tools and then pimping them as strategic agent building for product managers.\n\nNope, not against building agents. Nope, not against getting real PM sh!t done with Ai tools. But that's not product management. Value delivery is.\n\nSo let me throw this challenge down: which business model or operational model levers are you pulling when you prioritize which opportunity to exploit, and which to leave in the dustbin of 'good but not great ideas?'\n\nPut another way, when you explain to your executive sponsor why to invest in an agent, are you able to explain the how your agent helps you compete by inc"
+  },
+  {
+    "subreddit": "ProductManagement",
+    "query": "AI ROI OR unit economics",
+    "title": "Staying plugged in",
+    "score": 96,
+    "num_comments": 34,
+    "selftext": "Another jaded post incoming\u2026currently working as a director of product and been working as a pm in software for 10 years. First off, I recognize that I\u2019m lucky to have a good paying job in this economy but feeling very turned off by where product and tech have been going the last few years. \n\nI enjoy much of the day-to-day and variety that comes with working in product but a big part of the job is keeping current in software, tech, the respective industry and general economic trends. LinkedIn used to be helpful, now I can\u2019t spend more than two minutes without wanting to throw my phone across the room\u2026 depressing posts, self congratulatory drivel, giant AI circle jerk. Even my Google alerts bum me out. \n\nMy question is how do you stay tuned in to what matters/stay relevant without wrecking yourself mentally?"
+  },
+  {
+    "subreddit": "ProductManagement",
+    "query": "AI ROI OR unit economics",
+    "title": "Does anyone else feel like these AI tools could use some non-technical PMs?",
+    "score": 55,
+    "num_comments": 40,
+    "selftext": "I'm mostly talking about stuff like ChatGPT, Gemini and others of this kind.\n\nSo much money poured into these tools, but feels like they only focus on the technical side and not so much on the consumer-facing interface, considering that the majority of the usage is there. So many features that I'd consider basic are missing.\n\nFor example:\n\n1. Folders (ChatGPT has them, Gemini not) and subfolders\n2. Forking a conversation\n3. Adding notes\n4. Collaborative comments\n\netc. etc. these are just the most basic ones I could come up now. I know there are some workarounds or external tools for some of these, but having to work around is not a good sign.\n\nOf course, it's not only about having a specific type of PM, but putting focus on an area and allocating resources. Designating some PMs would be an indication of priority.\n\nEdit: just noticed ChatGPT recently added forking/branching. Haven't been using it this month.\n\nEdit: stats for ChatGPT usage\n\n[https://cdn.openai.com/pdf/a253471f-8260-40c6-"
+  },
+  {
+    "subreddit": "ProductManagement",
+    "query": "AI ROI OR unit economics",
+    "title": "AI Prompt to jump-start Market Requirements (MRDs)",
+    "score": 14,
+    "num_comments": 17,
+    "selftext": "It can be a chore to pull together Market Requirements / MRDs, but without knowing the Market, its dynamics, and unmet needs / problems, kinda impossible to get the Product right.\n\nFor years I had my own template that I'd reference, but just decided to adapt that into an AI prompt - it's not gonna give perfect results in one-shot, but it's a better starting point than a template. Should work as Markdown with your favorite AI, I got decent results from Deep Research on Perplexity and ChatGPT\n\nHope this saves some of you out there some time!  \n\\_\\_\\_\n\n# AI-Powered Market Requirements Document (MRD) Generation Prompt\n\n# Instructions for Use\n\nReplace the placeholders in brackets with your specific information:\n\n* **\\[TARGET MARKET\\]**: The specific market you're analyzing (e.g., \"enterprise cybersecurity software,\" \"consumer fitness wearables\")\n* **\\[PROBLEM STATEMENT\\]**: The core problem or unmet need you're investigating\n* **\\[TARGET AUDIENCE\\]**: Who experiences this problem (e.g., \"mi"
+  },
+  {
+    "subreddit": "ProductManagement",
+    "query": "AI ROI OR unit economics",
+    "title": "Question on Artificial Intelligence and the Environment",
+    "score": 8,
+    "num_comments": 6,
+    "selftext": "Admittedly, this post is not specific to product managers but given the massive biases I see on r/technology, r/futurology, etc and given that most of us work in technical jobs where AI tools have become prevalent and, in many cases, required, this seems a good place to raise a few questions.\n\n  \nAI is massively funded and its rapid build-out is unlike anything I have seen in 25 years of working in software development. Many (most?) leaders, including my own, have mandated AI use in software development (or risk the company being left behind). In this subreddit, I see compelling suggestions for best uses of ChatGPT, Gemini, Claude to name just the most mainstream tools. From my experience there is real utility to be found with AI. I used it this week to model out pricing tests and the back and forth with the AI undoubtedly improved my work. All this to say, my questions do not come from a \"LLMs are all BS\" point of view.\n\n  \nThat said, man do I have some concerns.\n\n  \n1. Environmental "
+  },
+  {
+    "subreddit": "ProductManagement",
+    "query": "AI ROI OR unit economics",
+    "title": "Dealing with Eliminating Features or Limiting Usage as a PM",
+    "score": 3,
+    "num_comments": 3,
+    "selftext": "I've been thinking a lot about product \"rug pulls\" lately, those moments when a company has to dramatically change pricing, sunset features, or restrict previously generous offerings. Recent examples are everywhere: OpenAI killing models without warning, Anthropic's usage limits causing Claude Code complaints. \n\nThere are other examples over the years as well. The pattern is familiar: \n1. It starts with generous terms to gain market share\n2. Then the CFO tells you we can't afford to keep doing this\n3. They/We ask Engineering to try and do things more efficiently (cheaper)\n4. Ultimately PMs have to kill, cut, or limit the terms that got you market share\n\nHere's two such experiences, where I was asked to lead product teams moving an entrenched on-prem product to SaaS.\n\n*Success case:* Took a full year of what I call \"**feature hostage negotiations**\" with key customers. Painful? Yes. Slow? Absolutely. But we retained 90%+ of revenue and actually strengthened relationships because custome"
+  },
+  {
+    "subreddit": "ProductManagement",
+    "query": "agile transformation failed OR SAFE",
+    "title": "Struggling as junior pm for database",
+    "score": 16,
+    "num_comments": 29,
+    "selftext": "I was hired 8-9 months ago to work as a junior product manager for a data engineering team in a large (c. 5000 employees), international\n\nconsultancy. My product, so to speak, is our data platform.\n\nI am looking for advice from this wonderful community, as I have been struggling to understand and unpack the following:\n\n1. What does success look like for a product manager in data products?\n2. Are there any product managers for data platforms out here? Would love to connect!\n3. How do I identify and approach what is within my area of responsibility and control?\n4. How do I best mitigate the effects of what is outside of my control?\n5. Practically, is this role even product management from what I am describing?\n6. Are there any red flags in my behaviour I should be aware of and work on?\n\nThis will be a wall of text. Please read at your own discretion! I always appreciate honesty, but please be kind in your answers as I am really struggling with my mental health and imposter syndrome at th"
+  },
+  {
+    "subreddit": "ProductManagement",
+    "query": "agile transformation failed OR SAFE",
+    "title": "Product Owner in legacy org \u2014 is there any hope?",
+    "score": 2,
+    "num_comments": 3,
+    "selftext": "Hey all,\n\nI joined a 500-person company in the health/finance space 3 months ago as a PO. The company\u2019s been around for 30 years, close to a monopoly, but now a competitor is slowly creeping in.\n\nThey\u2019re doing an \u201cAgile Transformation,\u201d which sounded cool. I\u2019ve worked in proper product orgs before\u2014metrics, discovery, customer impact\u2014so I thought I could help drive that change. But now I\u2019m not so sure.\n\n**Agile Transformation**  \nLots of talk from leadership, no real change. There\u2019s a transformation coach running super theoretical meetings about how testers or handovers *should* work. Every department has to go through that, then later he wants to \u201cconnect the dots.\u201d Feels completely disconnected from reality.\n\n**No team ownership**  \nI was promised a team as part of the transformation (kickoff was in early June). Still no teams. Right now it\u2019s 3 POs working all over the teams. Eventually I\u2019ll have two teams (finance ops + user management), but for now? Nothing.\n\n**Reporting lines**  \nI"
+  },
+  {
+    "subreddit": "ProductManagement",
+    "query": "agile transformation failed OR SAFE",
+    "title": "Help",
+    "score": 1,
+    "num_comments": 8,
+    "selftext": "Hey there,\nSo I\u2019m playing both a PM and PO role at my company but don\u2019t really have any authority to drive the product in any direction. The company I work with is undergoing a SAFE agile transformation so we still do things in a waterfall way. Basically for one of the projects assigned to me the majority of the work falls to another team and the proposed solution and approach is not favorable from the business side. (They wanted something that wasn\u2019t very feasible) basically I have to try and convince them that this approach we are taking is the right approach where I don\u2019t even think it is and I\u2019m stressed that I\u2019m going to be taking the hit when it really is a decision I didn\u2019t make (technology leader and architecture). How would you guys handle this situation. "
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI replacing developers OR vibe coding",
+    "title": "Junior devs not interested in software engineering",
+    "score": 1799,
+    "num_comments": 856,
+    "selftext": "My team currently has two junior devs both with 1 year old experience. Unlike all of the juniors I have met and mentored in my career, these two juniors startled me by their lack of interest in software engineering.\n\nThe first junior who just joined our company-\n\n\u2022\t\u2060When I talked with him about clean coding and modularizing the code (he wrote 2000+ lines in one single function), he merely responded, \u201cClean coding is not a real thing.\u201d\n\u2022\t\u2060When I tried to tell him I think AI is a great tool, but it\u2019s not there yet to replace real engineers and AI generated codes need to be reviewed to avoid hallucinations. He responded, \u201cthat\u2019s just what you think.\u201d\n\u2022\t\u2060His feedback to our daily stand up was, \u201cSorry, but I really don\u2019t care about what other people are doing.\u201d\n\nThe second junior who has been with the company for a year-\n\n\u2022\t\u2060When I told him that he should prioritize his own growth and take courses to acquire new skills, he just blanked out. I asked him if he knew any learning website such a"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI replacing developers OR vibe coding",
+    "title": "Has anyone actually seen a real-world, production-grade product built almost entirely (90\u2013100%) by AI agents \u2014 no humans coding or testing?",
+    "score": 890,
+    "num_comments": 653,
+    "selftext": "Our CTO is now convinced we should replace our entire dev and QA team (~100 people) with AI agents. Inspired by SoftBank\u2019s \u201cthousand-agent per employee\u201d vision and hyped tools like Devin, AutoDev, etc. \nFirstly he will terminate contract with all outsource vendor, who is providing us most dev/tests\nWhat he said us\"Why pay salaries when agents can build, test, deploy, and learn faster?\u201d\n\nThis isn\u2019t some struggling startup \u2014 we\u2019ve shipped real products, we have clients, revenue, and complex requirements.\nIf you\u2019ve seen success stories \u2014 or trainwrecks \u2014 please share. I need ammo before we fire ourselves.\n----Update----\nAfter getting feedback from businesses units on the delay of urgent developments, my CTO seem to be stepback since he allow we hire outstaffs again with a limited tool.\nThat was a nightmare for biz."
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI replacing developers OR vibe coding",
+    "title": "So I tried vibe coding a new system today...",
+    "score": 556,
+    "num_comments": 247,
+    "selftext": "And it was kind of a relief. With all the doom sayers, including myself, fearful AI will take our jobs, I have realized that it is still far away. The system I'm tasked with building is a synchronization mechanism to keep two data sources in sync. It requires interacting with two first party systems and four AWS services. I gave it a paragraph of what I wanted and it was not even functional. Three paragraphs of prompts still not even close. 6 hours later I've written two pages of basically unreadable text trying to get it to do exactly what I want (if/else and try/catch don't translate well to English, especially when nested). It is pretty much just pseudocode right now.\n\nSo what did I learn from this? AI is great at helping you solve a specific _discrete_ task (e.g. write some code that will send an email, generate unit tests/documentation), but by the time you're trying to stitch together half a dozen services with error handling, logging, metrics, memoization, partial batch failure "
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI replacing developers OR vibe coding",
+    "title": "Anyone have a colleague that's been fired for being too obsessed with AI?",
+    "score": 491,
+    "num_comments": 154,
+    "selftext": "For context, we work for a scale up that's been working hard to fight off the new competition that's come onto the scene. We've got a good product that solves a real need for our customers but it's not groundbreaking impressive tech. \n\nI have a colleague who has always been distracted by shiny new things. He comes up with a solution which is always a brand new tool, framework etc for a problem we don't have, and it is exhausting having to deal with it, especially given he's in his 50s with 30 years of experience. The thing is, he was good at writing code. He was competent at design systems. He could be relied upon. But he's gone off the deep end. \n\nHis latest, and admittedly longest obsession has been for AI. He thinks that it's going to replace us all in 2 years, and since he is going to retire soon, he says he wants to train AI to be able to do that for our company. We as a company adopted github copilot ages ago, to amazing success. We also have other uses for AI that I won't go int"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI replacing developers OR vibe coding",
+    "title": "Can we trade our 'vibe-coding' PMs for some common-sense engineers?",
+    "score": 288,
+    "num_comments": 118,
+    "selftext": "I hear every day in different companies that product managers want now to vibe code, but let's be honest most of the time they try to go further than a local MVP the ecosystem constraints requires further knowledge. Until the abstraction layer is so high that the underlying stack (code, UI, frameworks) becomes invisible, AI remains a tool for devs more than a substitute for them. We aren't at the \"one prompt to rule them all\" stage yet. We are still in the era of traditional building, just on steroids.\n\nEveryone talks about PMs replacing devs with AI. But what if it goes the other way? Now that AI lets us code at light speed, developers have the bandwidth to master product design. I don't want to be offensive but in my opinion PM work is **mostly** common sense and clear communication, devs might be the ones making PMs redundant."
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI replacing developers OR vibe coding",
+    "title": "Why I think AI won't replace engineers",
+    "score": 262,
+    "num_comments": 267,
+    "selftext": "I was just reading a thread where one of the top comments was alluding to after AI replaces all engineers that \"managers and people who can't code can take over\". Before you downvote just know I'm also sick of AI posts about everything, but I'm really interested in hearing other experienced devs perspective on this.\n\nI just don't see engineers being completely replaced actually happening (other than maybe the bottom 15%-20%), I have 11 years of experience working as a data engineer across most verticals like DOD, finance, logistics, media companies, etc.. I keep seeing nonstop doom and gloom about how software engineering is over, but there's so much more to engineering than just coding. Like architecture, networking, security, having an awareness of all of those systems, awareness of every single public interface of every single application that runs your business, preserving all of the business logic that has kept companies afloat for 30 years etc. Giving AI full superuser access to "
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI replacing developers OR vibe coding",
+    "title": "AI doom and gloom vs. actual developer experience",
+    "score": 232,
+    "num_comments": 187,
+    "selftext": "Saw a [NY Times Headline](https://www.nytimes.com/2025/05/15/opinion/artifical-intelligence-2027.html) this morning that prompted this post and its something I've been thinking about a lot lately. Sorry in advance for the paywall, it is another article with an AI researcher scared at the rate of progress in AI, its going to replace developers by 2027/2028, etc. \n\nPersonally, I've gone through a range of emotions since 2022 when ChatGPT came out, from total doom and gloom, to currently, being quite sceptical of the tools, and I say this as someone who uses them daily. I've come to the conclusion that LLMs are effectively just the next iteration of the search engine and better autocomplete. They often allow me to retrieve the information I am looking for faster than Googling, they are a great rubber duck, having them inside of the IDE is convenient etc. Maybe I'm naive, but I fail to see how LLMs will get much better from here, having consumed all of the publically available data on the "
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI replacing developers OR vibe coding",
+    "title": "Is it CRUD all the way down? How to break out of it?",
+    "score": 214,
+    "num_comments": 119,
+    "selftext": "Hey all,\n\nAbout 17 years total experience, started off as a self-taught goofball writing scripts to make my job easier to working at big tech and startups, picking up my masters along the way.\n\nWhat really got me into tech/software was that I could solve a lot of business problems writing code and gain efficiencies. My love for it increased as I went back to school and worked with C and all its thorniness. I remember writing my own (shitty) web server for a class and load tested it on a potato computer, watching it serve tens of thousands of requests per second without fail. Or writing and managing my own (shitty) message broker.\n\nThen over time, a lot of things changed. You no longer write and host your own web servers; you have AWS for that. Okay, fine, I thought. There's still a lot of value in managing your provisioned resources, trying to figure out what your tech stack looks like, etc.\n\nA few years later, everything now is either server-less or otherwise managed. Why spin up your"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI replacing developers OR vibe coding",
+    "title": "Is there still room/place for AI skepticism at your organizations?",
+    "score": 192,
+    "num_comments": 288,
+    "selftext": "This is kind of vibe-posty, but It feels like the questions around AI in the broader space went from things like:\n\n\"In what areas can AI be beneficial? Just testing, or actual production code?\"\n\n\"Where should we be cautious about inserting generative AI?\"\n\n\"How much should we invest in AI? Should we dedicate teams to this?\"\n\n\n\nTo now:\n\n\"What AI model should we use in this space?\"\n\n\"How can we shoehorn AI to solve any problem?\"\n\n\"What positions can we firmly eliminate and replace with AI?\"\n\n  \nLike, we do know that Silicon Valley is famous for getting people addicted to something and then jacking the prices up, see UberEats/DoorDash. OpenAI lost $13 billion last year. Something feels unsustainable (in more ways than just financially). Is there space for skepticism at your organizations?"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI replacing developers OR vibe coding",
+    "title": "Recovering the joy and critical thinking in our craft?",
+    "score": 166,
+    "num_comments": 87,
+    "selftext": "\nWhile the money in our profession is great, I originally fell into it for love of the self-taught craft. The problem-solving, critical thinking, and excitement of building something has always brought me joy.\n\nReflecting on the past several months; I feel like the joy in software engineering work has all but vanished for me. Worse, half the time I feel like I can\u2019t focus or think through a problem deeply without delaying or just chucking it to an LLM. Broadly, I think it falls between overuse of LLM tooling and a bad work environment, but I can\u2019t be the only one feeling like this.\n\nChatGPT the past 3 years has been amazing and useful. The beauty of the attention mechanism has made it so easy to debug esoteric issues and explore niche topics and plan out new features or proofs of concept of interesting ideas. If anything, using it in this capacity has accelerated my learning. I felt extremely competent in my career 7 years in; 10 years in with the last 3 years of learning feels like th"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI replacing developers OR vibe coding",
+    "title": "What is the basis for the widespread belief that software is now \"zero-cost\", and that it can be autonomously developed from beginning to end with zero human involvement?",
+    "score": 147,
+    "num_comments": 174,
+    "selftext": "I see so many people talking about how software as a business is dead because anyone can use AI to copy full software products or develop new ones. I see takes like:\n\n&gt;AI is now more brilliant than any human and can develop better algorithms and solutions than any human. An AI interacting with your software can write a detailed specification, every important behavior including any of your trade secrets can be inferred from interactions and observations of outward behavior. Then AI can build an improved recreation of your software without looking at the source code, because it has access to all of the knowledge you had when writing the initial code, plus all of the knowledge of every human who has ever lived, and its own inferred improvements.\n\nor:\n\n&gt;Product managers and architects are obsolete, since requirements are developed implicitly by making iterative improvements to AI-product prototypes until the desired user experience is achieved. System design is now organically discov"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI replacing developers OR vibe coding",
+    "title": "Gamified micromanagement at Mercado Libre (MELI): This \"GenAI Dashboard\" is tracking every time we use an AI tool. Is this the future?",
+    "score": 143,
+    "num_comments": 82,
+    "selftext": "  \n  \nJust saw my end-of-year summary at MELI and honestly, it feels like a Black Mirror episode. They\u2019ve turned AI adoption into a racing game to \"encourage\" us, but it\u2019s realy just deep surveillance disguised as fun.\n\nLook at the image... they're tracking exactly how many days I used MELI GPT (175 days) and Cursor (115 days). I even got badges like \"Daily Heavy User\" and \"Top 10% Performer.\" The most cringe part is the text at the top: *\"There is no room for complacency.\"* Like, wtf?\n\nI've been a dev for a long time and this is the first time I'm being measured by *how* I use a tool instead of the actual value or quality of my code. They even have a \"Daily Use\" percentage (97% for me) based on my working days. Does anyone else feel like this is a massive red flag? It feels like they're prepping to replace us or at least treat us like prompt-monkeys. Is this happening in other big tech companies too or is MELI just going full dystopia mode?\n\nSorry for te rant, just had to share this b"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI replacing developers OR vibe coding",
+    "title": "frontend devs - are your companies trying to replace with AI too?",
+    "score": 140,
+    "num_comments": 98,
+    "selftext": "question is the title. my company is... unstable to say the least. we have been fighting tech debt for the past four years. but now that the debt is written by claude, it is suddenly okay. \n\nwhat this looks like - entire projects are handed over to claude to write frontend code, and the frontend team is not included in the 'prompt meetings'. these projects are not going through the standard PR review process, no PRs are submitted for any of the code written. lead developer has limited, if not zero, knowledge on front end architecture. \n\nany other FE focused devs going through something similar?"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI replacing developers OR vibe coding",
+    "title": "Mandated AI usage",
+    "score": 130,
+    "num_comments": 201,
+    "selftext": "Hi all,\n\nWanted to discuss something I\u2019ve been seeing in interviews that I\u2019m personally considering to be a red flag: forced AI usage. \n\nI had one interview with a big tech company (MSFT) though I won\u2019t specify which team and another with a small but matured startup company in ad technology where they emphasized heavy GenAI usage. \n\nThe big tech team had mentioned that they have repositories where pretty much all of the code is AI generated. They also had said that some of their systems (one in particular for audio transcription and analysis) are being replaced from rule based to GenAI systems all while having to keep the same performance benchmarks, which seems impossible. A rule based system will always be running faster than a GenAI system given GenAI\u2019s overhead when analyzing a prompt. \n\nWith all that being said, this seems like it\u2019s being forced from the top down, I can\u2019t see why anyone would expect a GenAI system to somehow run in the same time as a rules based one. Is this all s"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI replacing developers OR vibe coding",
+    "title": "I'm conflicted with expectations and my career",
+    "score": 71,
+    "num_comments": 79,
+    "selftext": "Hello, first time poster here.\n\nA few days ago we got into a discussion with my coworkers about AI and the future of the dev career. For the context, I'm a back end dev with 8 years of experience in PHP, I learned programming at that time without AI and I'm not using it that often at work. \n\nThe discussion got into how the dev career was being reshaped by AI with coworkers working a lot with it like Claude and ChatGPT using Codex and OpenCode. Our CTO made a PR with opencode with Claude Opus and asked us to review it as just an exercise of what AI could produce. That was because they try to push any devs in the company to follow this trend for the sake of productivity and efficiency. \n\nThat's where I felt like I was the black sheep. I expressed that working that way would make us lose ownership of the code, lose our capacity of thinking by ourselves and solve problems just to follow the AI trend. \n\nOn the other hand, one of my coworker, who is a senior dev already working with codex an"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI tech debt OR maintainability",
+    "title": "Junior devs not interested in software engineering",
+    "score": 1798,
+    "num_comments": 856,
+    "selftext": "My team currently has two junior devs both with 1 year old experience. Unlike all of the juniors I have met and mentored in my career, these two juniors startled me by their lack of interest in software engineering.\n\nThe first junior who just joined our company-\n\n\u2022\t\u2060When I talked with him about clean coding and modularizing the code (he wrote 2000+ lines in one single function), he merely responded, \u201cClean coding is not a real thing.\u201d\n\u2022\t\u2060When I tried to tell him I think AI is a great tool, but it\u2019s not there yet to replace real engineers and AI generated codes need to be reviewed to avoid hallucinations. He responded, \u201cthat\u2019s just what you think.\u201d\n\u2022\t\u2060His feedback to our daily stand up was, \u201cSorry, but I really don\u2019t care about what other people are doing.\u201d\n\nThe second junior who has been with the company for a year-\n\n\u2022\t\u2060When I told him that he should prioritize his own growth and take courses to acquire new skills, he just blanked out. I asked him if he knew any learning website such a"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI tech debt OR maintainability",
+    "title": "I'm giving up; Becoming a yes man.",
+    "score": 1656,
+    "num_comments": 330,
+    "selftext": "I'm so tired of fighting for good engineering practices. Clean code, high quality tests, pragmatic use of AI, code de-duplication, extensible design, and so on. Yes all these things are good - but they have never once rewarded me.\n\nThe only thing I *ever* see get rewarded are\n\n1. High volume &amp; high quality engagement in meetings\n2. Ability to attach metrics to your work and then make those metrics look good\n3. Creating brand new features / tools (improving existing stuff is no-value)\n\nIt doesn't matter how clean we get the code. It doesn't matter how many defects we prevent. It doesn't matter that spending 20% more now means every quarter for the next 3 years we spend 10% less. It doesn't matter if you convince your tech lead or EM or PM to go a different way. It doesn't matter if you have high quality &amp; actionable metrics, you just need numbers that look good. 200% increase in usage sounds better than \"we have 2 new users\". None of it ever matters.\n\n99% of doing well in this i"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI tech debt OR maintainability",
+    "title": "What\u2019s the mood at your company?",
+    "score": 1327,
+    "num_comments": 517,
+    "selftext": "Im mid-level at a standard non-tech Fortune 500 and the overall mood seems mildly checked out. Most devs are offloading a lot of their work onto Claude. It\u2019s not slop. It\u2019s reviewed, refined, and tested, but it is still reducing intimacy and familiarity with the repos.\n\nPeople are mostly camera off. A lot of people are ignoring the in office mandates. I\u2019ve noticed more gaps in slack response times which leads me to belief people are off doing things during work hours (and to be clear, I\u2019m fully fine with this. In an ideal world that is the what AI is supposed to enable).\n\nRegardless, the work is getting done, the stock is doing well, the company is in good shape financially. But the general mood and enthusiasm is just mildly resigned, at least on the Dev side.\n\nWondering if this is common."
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI tech debt OR maintainability",
+    "title": "I don't want to command AI agents",
+    "score": 1088,
+    "num_comments": 473,
+    "selftext": "Every sprint, we'll get news of some team somewhere else in the company that's leveraged AI to do one thing or another, and everyone always sounds exceptionally impressed. The latest news is that management wants to start introducing full AI coding agents which can just be handed a PRD and they go out and do whatever it is that's required. They'll write code, open PRs, create additional stories in Jira if they must, the full vibe-coding package.\n\nI need to get the fuck out of this company as soon as possible, and I have no idea what sector to look at for job opportunities. The job market is still dogshit, and though I don't mind using AI at all, if my job turns into commanding AI agents to do shit for me, I think I'd rather wash dishes for a living. I'm being hyperbolic, obviously, but the thought of having to write prompts instead of writing code depresses me, actually.\n\nI guess I'm looking for a reality check. This isn't the career I signed up for, and I cannot imagine myself going a"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI tech debt OR maintainability",
+    "title": "AI is working great for my team, and y'all are making me feel crazy",
+    "score": 1019,
+    "num_comments": 819,
+    "selftext": "EM with 10+ years of experience as both an IC/senior engineer and a team lead. This and the other programming and AI subs are making me feel like _either_ the rest of the world is losing its grip on reality, or I already have. Please help me figure out which.\n\nMy team fully adopted Claude Code last year, after some unstructured experimenting with Claude, Cursor, and Copilot. We all agreed having a single \"target environment\" for any \"agent instructions\" we might want to share team wide. We've set about building a shared repo of standalone skills (i.e., skills that aren't coupled to implementation details in our repos), as well as committing skills and \"always-on\" context for our production repositories. We've had Claude generate skills based on our existing runbooks in Confluence, which has also produced some nice scripted solutions to manual runbooks that we probably wouldn't have had time to address in our day-to-day. We've also built, through a combination of AI-generated and human-"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI tech debt OR maintainability",
+    "title": "It took me a long time to recognize what makes a senior-level different from a mid-level",
+    "score": 948,
+    "num_comments": 140,
+    "selftext": "A few years back I got into a job that was fully remote, California-based and paid more than I had ever made up until that point. The product was over 20 years old and the stack was highly mature. I was asked right away to dive into tech that was difficult for me to grasp. AI was in it\u2019s infancy. I was expected to be an IC with minimal help needed. I thought I could do it but I couldn\u2019t. I struggled and I floundered in so many ways. I let projects slip, I bothered my seniors too much, etc. etc. It eventually lead to me being fired after a year.\n\nI then went to a company as a contractor. Stack wasn\u2019t as mature and there was more of a cooperative sentiment among the group. IC was an expectation but no one gave me crap for asking questions. I not only did well in this environment, but I lead a lot of initiatives.\n\nAnd I learned two things about myself: 1) \u201csenior\u201d is a sort of flexible concept depending on the organization you\u2019re in and 2) my way of being a senior was valuable to some org"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI tech debt OR maintainability",
+    "title": "Had an existential crisis Friday afternoon at work\u2026",
+    "score": 865,
+    "num_comments": 396,
+    "selftext": "Team lead with 10+ YOE here, been working for a small startup for the last 18 months or so. I lead a team of 3 other engineers, plus 4 contractors we picked up while we\u2019re interviewing other potential candidates.\n\nLast week, it dawned on me just how much AI is impacting our standards of quality as engineers. I\u2019m starting to see a drastic decline in critical thinking skills all over the place - it\u2019s like folks no longer care to challenge themselves. Instead of using AI to help them understand a problem and get to a solution, they\u2019re letting the tool do their thinking for them. And it\u2019s completely obvious.\n\nHere\u2019s an example: the other day I was interviewing a potential candidate who looked very promising on paper. Ex-FAANG employee, strong background in python/java, plus some tangential experience to our industry. Our tech stack is mostly node/typescript, so to show his technical prowess in an unfamiliar stack, he demo\u2019d an app he made for a client using a React frontend and express for"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI tech debt OR maintainability",
+    "title": "Am I suffering from a serious case of copium or is tech journalism seriously out of touch with reality when it comes to AI?",
+    "score": 781,
+    "num_comments": 353,
+    "selftext": "Whenever I read a tech journalist's article about AI and programming, it almost always mentions that AI is amazing at writing code and it\u2019s being used to write the majority of code these days.\n\n&gt; Example from Casey Newton of Platformer: \"AI is better at coding tasks than basically anything else.... I talk to a lot of software engineers and what they will say is that it used to be that we would write code, and then it moved to we write half the code and it gets autocompleted, and now we just supervise the code and we type in the box what kind of code we want the machine to write\" ([video](https://youtu.be/QorIMPH8nUw?si=m8YVZkc5Sfnxo4Mv&amp;t=2941))\n\nThis seems insane to me. I use AI as a tool to help me, but in no way do I trust it or use it to this level. Not even remotely close.\n\nI feel like tech journalists are listening to what the founders and heads of the AI companies are saying, but no one is actually asking us what it's like. The companies want to justify the obscene amount "
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI tech debt OR maintainability",
+    "title": "What explains the dramatic shift in dev culture from the relaxed wlb-focused 2010s to what we have today?",
+    "score": 776,
+    "num_comments": 365,
+    "selftext": "The 2010s tech culture conjures up images of a relaxed office space with bean bag chairs, ping pong tables, and a snack bar. That whole chill Silicon Valley vibe. But now? It\u2019s quite a stark contrast, almost polar opposite... Even before AI, the tech space has just felt like a constant anxiety trip with fears of being laid off, stacked ranking+forced attrition, expected to work nights, weekends and holidays. Everyone in tech pushing the whole GaryV + Goggins grindset. It has become increasingly toxic.\n\nWhat the hell happened?"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI tech debt OR maintainability",
+    "title": "The gap between LLM functionality and social media/marketing seems absolutely massive",
+    "score": 757,
+    "num_comments": 688,
+    "selftext": "Am I completely missing something?\n\nI use LLMs daily to some context. They\u2019re generally helpful with generating CLI commands for tools I\u2019m not familiar with, small SQL queries, or code snippets for languages I\u2019m less familiar with. I\u2019ve even found them to be pretty helpful with generating simpler one file scripts (pulling data from S3, decoding, doing some basic filtering, etc) that have been pretty helpful and maybe saved 2-3 hours of time for a single use case. Even when generating basic web front ends, it\u2019s pretty decent for handling inputs, adding some basic functionality, and doing some output formatting. Basic stuff that maybe saves me a day for generating a really small and basic internal tool that won\u2019t be further worked on.\n\nBut agentic work for anything complicated? Unless it\u2019s an incredibly small and well focused prompt, I don\u2019t see it working that well. Even then, it\u2019s normally faster to just make the change myself.\n\nFor design documents it\u2019s helpful with catching grammatic"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI tech debt OR maintainability",
+    "title": "What happened in the last few months (1 to 3) that suddenly people are having their come to Jesus moment with AI and Agentic Coding?",
+    "score": 673,
+    "num_comments": 510,
+    "selftext": "I been lurking and observing posts around here for a while now, but suddenly I have seen what I would call a whiplash shift of sentiment in the last few months where the usage of AI and Agentic Coding (More specifically Agentic Coding, IE the user is just prompting and letting the AI write the code) becoming not just accepted but actively pushed, a stark contrast compared to even earlier this year where the majority conclusion was it's not going to lead you to anywhere being productive.\n\n  \nSomehow I am now seeing people throwing claims of being multiples? more productive than before and that the models are really really good now? This is in contrast to studies published earlier this year where it was found developers were actually less productive but think they were more productive, an independent study by some guy that found himself not as productive with Agentic Coding, and a pre-published paper that shows models overfitting to SWE-Bench but not actually generalizing to the problems"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI tech debt OR maintainability",
+    "title": "Getting Laid Off Without Warning Taught Me Everything I Need to Know About Workplace Loyalty",
+    "score": 651,
+    "num_comments": 223,
+    "selftext": "Got laid off under the label of \u201cbusiness restructuring,\u201d and the way it was handled says a lot about how some companies operate.\n\nI understand layoffs happen. Markets change. Businesses make decisions.\n\nBut what is increasingly frustrating is seeing profitable mid-sized companies hide behind the broader tech-layoff narrative created by giants like Oracle and others\u2014using \u201crestructuring\u201d as a blanket justification while continuing executive spending and operating from positions of financial strength.\n\nIn my case:\n\n\\- I was in my regular stand-up call minutes before being informed.\n\n\\- No prior indication that my role was at risk.\n\n\\- Within 10 minutes, all access was revoked.\n\n\\- Decision appeared to be driven remotely by leadership with little to no understanding of the team, product, or the work being delivered.\n\nWhat makes it worse is when capable engineers doing meaningful work\u2014especially in fast-moving areas like AI\u2014are reduced to spreadsheet entries in decisions made oceans away "
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI tech debt OR maintainability",
+    "title": "After spending a long time as a dev, I\u2019m starting to think the hardest part of the job isn\u2019t the tech anymore",
+    "score": 587,
+    "num_comments": 190,
+    "selftext": "I\u2019ve been doing this long enough to remember when half the job was wrestling with browsers, and the other half was pretending jQuery wasn\u2019t holding the whole company together. Things weren\u2019t better, but at least the complexity felt earned.\n\nNow, I keep noticing something weird: the tech keeps getting more powerful, but somehow the day to day work feels more fragile.\nOne team I\u2019m on is obsessed with \"faster iteration,\" but every attempt to move faster seems to add three new tools, two new layers, and a build system that breaks if you look at it the wrong way. Another team wants to go \"AI-first,\" but half the time we end up deleting the generated code and rewriting it anyway. You save 10 minutes on boilerplate and spend two hours figuring out why the AI invented an abstraction that shouldn\u2019t exist.\n\nAnd then there\u2019s the hiring thing. Companies have budgets, they have plans, they have a backlog taller than I am, but the limiting factor isn\u2019t money or ambition anymore. It\u2019s just time. Time"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI tech debt OR maintainability",
+    "title": "Another \"AI-washed\" layoff, now stuck with 4x more work",
+    "score": 574,
+    "num_comments": 164,
+    "selftext": "So our company \u2014 a pretty famous Human Resources Management SaaS which went all in on \"AI\" a while ago \u2014 did a 2nd round of layoffs recently. The first round was arguably necessary because many people just didn't perform well, but last week we got another surprise invite with hidden invitee list and I immediately knew another round was about to happen. I was not disappointed, 30% of the engineers gone. I was sure I would be included as well as I am one of the more expensive engineers they have, but I was not.\n\nInstead, they opted to just flood me with more work. Currently I am working on 1 frontend project with 1 other full stack engineer, a mobile dev, and a manager. The amount of work is pretty doable.\n\nThey fired the fullstack guy, no idea why as he was pretty good at his job and never caused issues. They also fired the mobile guy, and now expect the Web to replace the app entirely, adding even more stress on the Web app.\n\nThen they fired most of 3 other projects and then bundled th"
+  },
+  {
+    "subreddit": "ExperiencedDevs",
+    "query": "AI tech debt OR maintainability",
+    "title": "AI has made me realize that I\u2019m not a mature engineer.  An I\u2019m ok with that",
+    "score": 552,
+    "num_comments": 127,
+    "selftext": " \nI\u2019m a senior level engineer that does a lot of architecture work.  But I\u2019m not going to lie I\u2019m driven by engineering challenges not delivery challenge.\n\nI\u2019ve been in ExperiencedDev for years.  And the thing I\u2019ve taken away is that good and grown up engineers align with business.  They remove friction to that impedes delivery.  And they don\u2019t pontificate in code quality.  \n\nI have come to realize I\u2019m just not a mature engineer.  I think delegating all my work to AI is insanely boring. I know how to create AI workflows but it\u2019s not the same as performance engineering, fighting a GC, or saving allocations through code design.\n\nI have realize I don\u2019t care about output. I just care about challenge . That is what motivates me.  If I\u2019m being honest I don\u2019t care about delivery.  I only care because if I don\u2019t deliver I can\u2019t keep my job\n\n\nBut I really just like building cool shit. And AI robs me of that satisfaction. And yes I do know \u201chow to use AI\u201d.  I know good AI usage guidelines as wel"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI product market fit",
+    "title": "My biggest competitor reached out to acquire me. The conversation taught me more about my business than 3 years of running it.",
+    "score": 1323,
+    "num_comments": 195,
+    "selftext": "Got an email a few months ago. The CEO of my biggest competitor wanted to chat. Assumed it was a trick or a scouting mission. Took the call anyway out of curiosity. They wanted to buy me. Real offer. Real number. Not life-changing money but meaningful. I didn't take it. But the process of considering it taught me a ton. They asked questions I'd never asked myself. What percentage of customers actually use the core feature? What's the real competitive moat? How replaceable am I personally to the business? What would break if I disappeared? What assets transfer versus what's just me? Had to actually find the answers. Some were uncomfortable. The moat I thought existed basically didn't. Turns out competitors could rebuild my product in 3-4 months. The thing I thought was defensible was just a head start. My personal involvement was more central than I'd admitted. Relationships I had with key customers, knowledge in my head, reputation I'd built. The business without me was worth a lot les"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI product market fit",
+    "title": "How I used Claude to validate my idea in 10 minutes (Now at $2.3k MRR)",
+    "score": 1226,
+    "num_comments": 220,
+    "selftext": "A few months back I had like 12 different SaaS ideas scattered across Notion docs and honestly no clue which one people actually gave a shit about\n\nYou know the drill - everyone says \"talk to your users\" and \"validate first\" but like... where exactly are these mystical users hanging out? And what am I supposed to ask them without sounding like a weirdo with a survey\n\nDid what any rational developer would do - ignored the advice completely and just started building stuff\n\nBuilt two different projects. First one got exactly 3 signups. Second one never even made it past my localhost because I lost steam halfway through\n\nClassic mistake: I was building solutions to problems I had, not problems other people were willing to pay to solve\n\nThen I got curious about using AI differently. Not for idea generation (because that usually spits out generic nonsense) but for actual market research\n\n**Here's what I did:**\n\nOn Claude, I activated the research option and then prompt it to scrape through r"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI product market fit",
+    "title": "Sold 340 lifetime deals for $149 each. 18 months later I regret every one.",
+    "score": 1192,
+    "num_comments": 368,
+    "selftext": "Needed cash to fund development. Ran a lifetime deal on AppSumo. $149 for lifetime access to a product I was charging $39/month for.Sold 340 deals in 2 weeks. $50,660 in revenue. Felt like winning the lottery.18 months later, here's the math:If those 340 customers paid monthly at even 50% of normal price ($19.50), with average 14-month retention, that's $92,820 in revenue.I left $42,000 on the table. And counting, because lifetime means forever.But the money isn't the worst part.LTD customers are my highest-support users. They submit 3x more tickets than monthly subscribers. They request features constantly. They leave 1-star reviews when I don't build what they want.They have zero incentive to churn, so they stick around complaining instead of quietly leaving.My NPS among LTD customers: 12. Among monthly subscribers: 54.And I can never raise prices on them. They're grandfathered at $0/month for life.What I'd do differently:If you need cash, offer annual plans at a discount. You get mo"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI product market fit",
+    "title": "I raised $130M for my last startup, then walked away to build Base44 solo. In 6 months: $3.5M ARR, 300K+ users, no employees, fully bootstrapped. Then acquired by Wix for $80M. AMA. (Also giving away $3K in subscriptions.)",
+    "score": 1018,
+    "num_comments": 899,
+    "selftext": "# Edit:\n\nHey everyone, thank you SO MUCH for your kind words and support!  \nIt was awesome hanging out with y\u2019all.  \nThe AMA is over. I tried to answer as many questions as I could :)\n\nI\u2019ll announce the winners ASAP!\n\n\u2013 Maor\n\n\n\n# Edit II: Giveaway winners\n\n1. I left a comment under your comment.   \n2. I'll dm you your personal coupon code.   \nPlease don't dm me, my inbox is already a mess right now, and I won't be able to respond.  \n3. The winners are final, and I can't change them no matter what.\n\nThank you again for participating, asking smart questions, and sharing your knowledge, I really appreciate you!\n\n# Most Upvotes (at the time I checked)\n\n1. u/winter-m00n\n2. u/BakerTheOptionMaker\n3. u/andupotorac\n4. u/hustlewithai\n5. u/Ok-War-9040\n6. u/InternationalLeg2121\n7. u/Batteryman212\n8. u/MixPuzzleheaded5003\n9. u/hedi455\n10. u/Moceannl\n\n# Zero upvotes/downvotes (at the time I checked)\n\n1. u/ethenhunt65\n2. u/zgdunn\n3. u/SuitableEdge618\n4. u/veeeti_\n5. u/Equivalent_Tea_2516\n6. u/klehfeh"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI product market fit",
+    "title": "I'm 3 years old and just sold my SaaS for $1.2B (here's what I learned)",
+    "score": 1011,
+    "num_comments": 178,
+    "selftext": "Hey everyone. Tommy here. I'm 3.\n\nFour days ago I was watching cocomelon on my iPad when YouTube autoplay threw on a Dan Martell video. Something about \"buy back your time\" resonated with me - mostly because nap time was cutting into my block-stacking sessions.\n\nDan said something like \"find a problem, build a solution, scale it.\" I looked around my daycare and noticed a clear market gap: nobody was monitoring the structural integrity of our block towers. Silent failures everywhere. Millions in imaginary revenue at risk.\n\nSo I opened up Bubble (my fine motor skills aren't great yet, but I can drag and drop). Built \"BlockGuard\" - real-time monitoring for block tower stability with AI-powered collapse predictions. Integrated Stripe because that's what Dan said to do.\n\nLaunched on Product Hunt Tuesday morning (right after Paw Patrol). By Wednesday we hit $30M MRR. Thursday morning a16z called during snack time and offered $1.2B. I accepted because I wanted to get back to my blocks.\n\n**Her"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI product market fit",
+    "title": "I HATE working with FAANG engineers in the early days of startups",
+    "score": 973,
+    "num_comments": 275,
+    "selftext": "Over the past years, I have managed 100+ engineers. Some of them came from Google, Facebook, Microsoft. Others came from failed startups, 3-person teams, and garage companies.\n\n**FAANG engineers think in terms of optimization.**  \n**Startup engineers think in terms of survival.**\n\nThese are completely different skill sets.\n\nA FAANG-style engineer thinks: **we should add proper caching, set up monitoring, and plan for horizontal scaling.**\n\nA startup-style engineer thinks: **let\u2019s ship the feature today and see if anyone even wants it.**\n\nLet's say the client needed a simple login system for their MVP.\n\nThe FAANG engineer will spend **two weeks** building OAuth integration, password encryption, session management, and rate limiting.\n\nThe startup engineer used Firebase Auth and finished in **two hours.**\n\nBoth solutions work.  \n**One helps you raise funding.**  \n**The other might burn your runway.**\n\nFAANG engineers focus on **tomorrow\u2019s challenges.** \n\n* What if we get a million users? "
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI product market fit",
+    "title": "Launched my first SaaS yesterday. Woke up to 3 paying users and broo I\u2019m actually shaking \ud83d\ude2d \ud83d\ude2d \ud83d\ude2d \ud83d\ude2d",
+    "score": 956,
+    "num_comments": 912,
+    "selftext": "I\u2019ve spent months second-guessing if [ScreenSorts](https://screensorts.app/) was even worth building. Being a solo dev, you constantly hear that the \"AI space is too crowded\" or \"nobody pays for desktop utilities anymore.\"\n\nYesterday, I finally hit launch. I didn't have a marketing budget or a big following. I just shared my story on a couple of subreddits, like genuinely, no spamming and then went to sleep.\n\nI woke up to 3 DODO payment notifications... It\u2019s not \"quit my job\" money yet, but seeing that three total strangers found enough value in my local-AI screenshot tool to actually pay for it? It\u2019s the most insane feeling in the world \ud83e\udd79\n\nNow reality is hitting me. I\u2019ve proved people want this, but I have no idea how to actually \"scale\" a business. I'm a dev, not a marketer. I\u2019ve done the Reddit thing, but I know I can't rely on that forever.\n\nTo the veterans here, How do you go from those first 3 users to the first 100? Where should I be looking next to grow this without losing that"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI product market fit",
+    "title": "Building SaaS in 2025? My best advice",
+    "score": 824,
+    "num_comments": 203,
+    "selftext": "* Offer Google login. Most users won\u2019t bother creating an account otherwise.\n* Forget free trials, charge from day one. Paid users = serious users.\n* Post-launch is 80% marketing, 20% product. Launching isn\u2019t the end.\n* Market shamelessly. Talk about your product everywhere, not just where it's \u201csafe.\u201d\n* Respect the unsubscribers. They\u2019re giving you honest feedback.\n* Use your own product often. That\u2019s how you catch real problems.\n* Retention &gt; acquisition. 70% of revenue often comes from existing users.\n* Your MVP should only have the must-haves. Stick to MoSCoW.\n* Don\u2019t settle for $10k/month if you could do $100k. Think bigger.\n* f it\u2019s not making money, it might be time to move on.\n* Your landing page should feel Clean. Fast. Convincing.\n* Talk to your users. DM them. Email them. Call them.\n* Price based on value, not competition.  \n\nMost SaaS founders don\u2019t fail because of bad ideas.  \n\nThey fail because they give up too early. 90% are gone in 2 years.  \n\nStay in the game!"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI product market fit",
+    "title": "I raised $2.5M ten years ago. Here's what I learned after burning through it all.",
+    "score": 812,
+    "num_comments": 138,
+    "selftext": "Back in 2015, I was part of a team that raised $2.5M to build a home decoration community app in China. We were ex-Tencent/Baidu folks (think Google/Facebook equivalents) riding high on the government's \"Mass Entrepreneurship\" wave. That money felt like validation that we were the next big thing.\n\nSpoiler alert: we weren't.\n\n# We built a content machine that users loved but wouldn't pay for\n\nOur strategy seemed bulletproof: create amazing home renovation content to capture users early in their journey. We executed flawlessly too - tens of thousands of followers on Zhihu (Chinese Quora), hundreds of thousands on WeChat, and one article hit 2 million reads during Beijing's smog crisis.\n\nUsers were sending us product samples daily for reviews. Our community was buzzing with requests for buying guides. Everything looked perfect.\n\n**Then we discovered the cruel truth: the more expert our users became, the less they wanted to buy anything.**\n\nThese weren't customers - they were students. The"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI product market fit",
+    "title": "10 Dead Simple SaaS Features That Users Go Crazy For",
+    "score": 784,
+    "num_comments": 94,
+    "selftext": "After 6+ years building SaaS products as a freelancer, here are the stupidly simple features that always get the best user feedback. Nothing fancy, just stuff that works.\n\n-  One click templates - Add a \"Copy this example\" button that pre-fills workspaces. Users hate empty dashboards. Takes 30 minutes to code, doubles engagement.\n\n\n-  Progress animations - Little checkmarks and loading spins so users know their stuff saved. Cuts support tickets by 20% because people can see it worked.\n\n\n-  Smart welcome messages - \"Hey [Name], welcome back to [Company]\" on login. Users call it premium. Takes an hour, feels personal.\n\n\n-  Google/Apple login - Skip the long signup forms. Email + social login bumps conversions 30-40%. Less friction equals more users.\n\n\n-  Quick win onboarding - \"Set up your first project in 60 seconds\" flows with templates. Gets users to success fast instead of staring at blank screens.\n\n\n-  Undo buttons everywhere - Let users reverse mistakes without calling support. \"Re"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI product market fit",
+    "title": "My app makes $14k/mo and I haven\u2019t told my family",
+    "score": 735,
+    "num_comments": 391,
+    "selftext": "Hi guys, 1 year ago I launched [this app](https://buildpad.io) focused on product development that I had been working really hard on.\n\nIt started out with me just being annoyed by trying to build stuff with ChatGPT so I created a solution I thought was better.\n\nIt got some traction but nothing huge, around 3 months in it was doing $1k/mo. I talked to my family about it and they were supportive of course but as you can imagine not super impressed. You know how it is.\n\nAnyway, I\u2019ve been grinding for another 8 months now and have made some good product decisions, gotten feedback from customers, and shaped up my marketing. I don\u2019t know what happened this summer but I got busy as heck and now I just closed August at $14k/mo. It\u2019s kinda hitting me now that I\u2019m actually making really good money and I haven\u2019t told my family or anyone.\n\nI was waiting for this moment for months and now that it\u2019s finally here I don\u2019t know if it\u2019s even time yet\u2026\n\nShould I tell them? How much do you share with your"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI product market fit",
+    "title": "Sold my SaaS for $6M. After talking to 30 buyers, here's what actually mattered in the sale.",
+    "score": 719,
+    "num_comments": 182,
+    "selftext": "Eight months ago I started the process of selling my B2B SaaS. $1.2M ARR, 85% gross margin, 95% net retention.\n\nTalked to 30 potential acquirers. Here's what I learned about what actually matters versus what I thought mattered.\n\nWhat I thought mattered: growth rate, market size, team strength.\n\nWhat actually mattered: customer concentration, competitive defensibility, founder dependency.\n\nThe first question every serious buyer asked: \"\"What percentage of revenue comes from your top 5 customers?\"\" My answer (42%) made several buyers walk away immediately.\n\nThe second question: \"\"What happens if \\[big tech company or AI\\] enters your space?\"\" I had good answers but several buyers had already decided we weren't defensible enough.\n\nThe third question: \"\"What happens when you leave?\"\" The more the business depended on me personally, the lower the offer. Buyers discount heavily for founder dependency.\n\nThe deal that closed was with a strategic buyer who wanted our customer relationships more"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI product market fit",
+    "title": "I quit my job to build an AI SaaS. It flopped. The \u201cboring\u201d backup idea is now making me more in a month than I used to make in a year.",
+    "score": 673,
+    "num_comments": 340,
+    "selftext": "I was working at a performance marketing company as a developer and designer. Decent job, stable income, but I hated it. So I started experimenting on the side with two ideas before making any moves.\n\nFirst idea was an AI tool that generates product photoshoots and thumbnails. Felt like the smart bet. AI was everywhere, seemed scalable, seemed like the future.\n\nSecond idea was just building simple business websites at a fixed price, delivered in 7 days. No complex tech stack. I used wireframes and AI tools to speed up the build. Nothing revolutionary. Honestly felt almost embarrassing to call it a \u201cstartup idea.\u201d\n\nI quit my job without knowing which one would work. Went all in on both.\n\nThe AI tool died quietly. No traction, no real differentiation, nobody cared enough to pay.\n\nThe website thing started picking up. Slowly at first, then faster than I expected.\n\nHere is the part I think actually made it work: I built a simple form where business owners fill in their details, I build the"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI product market fit",
+    "title": "5 years in, we reached $5M ARR, fully bootstrapped",
+    "score": 656,
+    "num_comments": 313,
+    "selftext": "Our form builder Tally just crossed $5M ARR, and as the tradition goes, I wrote a summary of what happened since our last update.\n\n[https://blog.tally.so/the-road-from-4m-to-5m-arr/](https://blog.tally.so/the-road-from-4m-to-5m-arr/)\n\n* We're still bootstrapped \n* Still a tiny team \n* Still growing organically  \n* Still obsessively listening to users\n\nWhat changed  \n  \n\u2192 We dropped revenue targets, instead we\u2019re optimizing for product quality  \n\u2192 AI search is our #1 acquisition channel  \n\u2192 A trusted community is becoming our moat  \n  \nWe're chasing a feeling: that every time you open Tally, it just works, and it's a little bit better than the last time you used it.  \n  \nTo our community: thanks for being part of this journey. Whether you've been here since the Product Hunt launch in 2021 or you just signed up last week, you're the reason we get to do this \ud83e\udef0"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI product market fit",
+    "title": "I Launched 39 Startups Until One Made Me Millions. This Is What I Wish I Knew.",
+    "score": 643,
+    "num_comments": 332,
+    "selftext": "**Most \u201cfounders\u201d never launch anything.**\u00a0\n\nThey build a project for months, never complete it and eventually scrap the product. Or launch it and get no customers.\n\n**Startups are truthfully a numbers game.**\u00a0Even the best founders have hit rates under 10%. Just look at founders like Peter Levels.\n\nSo how do you maximize your chances of success?\n\nThe honest answer is to increase the number of startups you launch.\n\nI\u2019m going to get hate for this: but you should NOT spend hundreds of hours building a product\u2026 until you know for certain that there is demand.\n\nYou should launch with just a landing page.\n\nWrite a one pager on what you will build, and use a completely free UI library like Magic UI to build a landing page.\n\nIt should take you under a day.\n\nThen what do you do?\n\nAdd a stripe checkout button and/or a book a demo button.\n\nAnd then launch. Post everywhere about it(Reddit, X, LinkedIn, etc) and message anyone\u00a0 on the internet who has ever mentioned having the problem you are solv"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI operational costs OR LLM cost",
+    "title": "Guide: I use this prompt stack to kill weak SaaS ideas in under 30 minutes",
+    "score": 70,
+    "num_comments": 17,
+    "selftext": "What\u2019s good guys. I\u2019ve worked inside a Fortune 100 marketing function, led startups, and sat through enough $50k top-tier ad agency strategy workshops to know there\u2019s a pretty robust (and simple) way to understand any market. Bit of research, bit of grit, bit of classic marketing principles.\n\nI\u2019ve been trying to replicate it to figure out the right angle for my own SaaS, as I\u2019m basically terrified of being another victim to sunk cost fallacy. I\u2019ve rushed ahead before doing the build first so I\u2019m TRYING to be a bit wiser before investing in the build (as I can\u2019t code very well).\u00a0\n\nOver the last year I\u2019ve run it with friends and colleagues who reach out and I\u2019ve refined the process w AI. It\u2019s been pretty brutal actually, but it helps give a reality check on market, competitor wedges etc. As a marketer we know THIS is the difference. Like, it\u2019s literally 100x harder marketing a mid product the masses dont want.\u00a0\n\nTry it out, I used to run it with o3, but 5 (thinking) will do. It helps but"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI operational costs OR LLM cost",
+    "title": "SaaS Architecture That Won't Kill Your Startup",
+    "score": 64,
+    "num_comments": 49,
+    "selftext": "Had too many late-night calls with founders whose servers crashed right when TechCrunch picked them up. The difference between startups that scale smoothly and those that burn out? Getting the architecture foundation right from day one.\n\n## The 3 Things That Make Architecture Non-Negotiable in 2025\n\n**Growth hits different now.** Notion went from 1M to 4M users in one year. Your user base can literally double overnight thanks to social virality. If your architecture can't handle that, you're done.\n\n**Enterprise customers won't even look at you** without proper security. Average data breach costs $4.88M now - for a startup, that's game over.\n\n**Technical debt compounds fast.** Every shortcut you take today becomes tomorrow's expensive rewrite. Ask anyone who's had to rebuild their entire system because they cut corners early.\n\n## Multi-Tenancy: The Sweet Spot Most Founders Miss\n\nStop overthinking this. You don't need full isolation (too expensive) or full sharing (too risky). Here's wha"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI operational costs OR LLM cost",
+    "title": "Stop making stupid SaaS and start solving real niche problems",
+    "score": 55,
+    "num_comments": 89,
+    "selftext": "It's always SaaS Groundhog Day on this community...\n\nAnother post, another AI copywriting tool that requires a PhD to figure out. Or, I am being invited to the 12th Product Hunt clone that\u2019s gone live this month.\n\nYou all are fighting for scraps in oversaturated markets while actual businesses with money are BEGGING for solutions to real problems.\n\nThe gold mine isn't in your generic tracker app, nobody will pay for. It's in those unsexy niches where companies are desperate enough to throw cash at anyone who understands their actual pain points.\n\nStop chasing the SaaS hype train and start solving problems people actually have. Your bank account will thank you.\n\nHere are ten ideas for niche SaaS products that one of you should start building today.\n\n# Regulated Industries\n\n* Idea: HIPAA-compliant messaging platform for small medical clinics.\n* Why it's smart: Healthcare providers require secure communication tools that comply with strict regulations. Offering a HIPAA-compliant messaging"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI operational costs OR LLM cost",
+    "title": "The only B2B SaaS marketing strategy you need in 2026",
+    "score": 45,
+    "num_comments": 36,
+    "selftext": "to those of you struggling with marketing for your B2B SaaS, heres what\u2019s been working for my clients in 2026 so far.\n\nStep one.\n\nmake a simple landing page for a webinar. Just a thumbnail image, webinar title, and a working optin form. Ask for multiple data points like company name, job title, etc. Use some recaptcha solution to prevent spam submissions. After successful optin, just show a screen like \u201cwebinar ended, we\u2019ll send a replay when available!\u201d\n\nStep two.\n\nMake 15-50 variations of this with various webinar topics and titles. You never know what resonates most with people in your industry until you test, and you\u2019ll waste countless hours &amp; resources filming and producing webinars nobody will ever watch. So test titles first then thumbnails second. Even the wording of the webinar headline can result in either $16.00 or $2.50 per qualified optin. The worst and dumbest thing you can do is burn ad spend forcing people to watch something they have no interest in.\n\nStep three.\n\nR"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI operational costs OR LLM cost",
+    "title": "AI is Killing B2B SaaS",
+    "score": 35,
+    "num_comments": 56,
+    "selftext": "SaaS is the most profitable business model on Earth.\n\nIt\u2019s easy to understand why: *build once, sell the same thing again ad infinitum, and don\u2019t suffer any marginal costs on more sales.*\n\n**I have been writing software for more than half my life.**\n\nIn the last year itself, I\u2019ve talked to hundreds of founders and operators in SF, from preseed to Series E companies.\n\nAnd everyone is constantly talking about the threat looming over the industry, that has changed how our entire industry thinks an operates: agentic AI \n\n(a.k.a. your very own overzealous intern that always listens to you, available almost as cheaply as drinking water from a tap.)\n\nThis isn\u2019t just talk \u2013 the market is pricing it in. **Morgan Stanley\u2019s SaaS basket has lagged the Nasdaq by 40 points since December.** HubSpot and Klaviyo are down \\~30%. Analysts are writing notes titled \u201cNo Reasons to Own\u201d software stocks.\n\nThis is bringing an existential threat to a lot of B2B SaaS executives: How to keep asking customers for"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI operational costs OR LLM cost",
+    "title": "We're getting paying users from faceless AI-generated slideshows on TikTok. Here's what's actually working.",
+    "score": 26,
+    "num_comments": 13,
+    "selftext": "Hey r/SaaS! I'm the founder of [Lifestack](https://lifestack.ai/), a smart daily planner app that uses wearable health data to help people plan their days around their energy levels.\n\nWe have a few hundred paying users, and these days TikTok has become the most effective marketing channel for us.\n\nI know UGC videos are kind of the standard playbook now, so we tried that first for a few months. Hired creators, tested hooks, iterated. Never really clicked for us. I almost wrote TikTok off entirely.\n\nWhat actually started working: faceless AI slideshow carousels, specifically on an account focused on ADHD tips ([this](https://www.tiktok.com/@lifestack.adhd.ti) is our actual account). Not viral in the millions of views sense, but we sometimes hit 10k+ views per post, and more importantly, those views are converting into actual signups and paying users. The quality of the audience is solid.\n\nAnd what I like most about this format is how low-effort it is once you have a system. No face on ca"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI operational costs OR LLM cost",
+    "title": "Top 5 AI Agents for SaaS Customer Support in 2026",
+    "score": 22,
+    "num_comments": 33,
+    "selftext": "I did some research to start the year because customer support in SaaS feels very different in 2026 than it did even a year ago. Ticket volume still matters, but what really creates drag now is context switching, onboarding friction, billing edge cases, and users expecting answers that reflect their actual account state.\n\nGoing in, I assumed adding any AI agent would immediately reduce ticket volume. That assumption was wrong. What I learned pretty quickly is that some tools create more work if they escalate too early or answer with too much confidence. That forced me to get more precise about what actually helps day to day.\n\nWhen I say \u201cAI agents,\u201d I am not talking about basic chatbots. I mean systems that can handle real questions, collect structured inputs, qualify intent, and hand off to humans cleanly when it matters. After testing a handful of commonly discussed platforms, here is what stood out.\n\n# 1. ChatSupportBot\n\n**Best for qualifying inbound and removing noise without hurti"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI operational costs OR LLM cost",
+    "title": "Scammed by Saudi Owner who stole company",
+    "score": 19,
+    "num_comments": 30,
+    "selftext": "Hi Im 24 M and writing here to share my story. I ran digital agency in Riyadh Saudi Arabia. In Saudi at that time foreigners were not allowed to own company as sole owners. I worked in partnership with Saudi and all they had and did was just provide me company on paper to work. \n\nThey ofc baited me with lines like you're just like my son I want to support you to make money etc. She was in her 70's an old woman.\n\n\n Well three years later we had big contracts and partnerships with a Healthcare SaaS company and QA/Cybersecurity services client. She stole business when she found revenue was in millions. \n\nIt was unlucky time as she stole near end of month and I had just invested a lot of money in establishing a logistics company with another Saudi who also just closed company once I lost my company. \n\nNow Im in Pakistan as Im Pakistani national. I was born and raised in Saudi and my entire family is there. I am working in an IT company as BDR for 1$ an hour. They promised they will give co"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI operational costs OR LLM cost",
+    "title": "Revenue orchestration platform options all wanted 50k+ annually, here's what we did instead",
+    "score": 17,
+    "num_comments": 6,
+    "selftext": "Mid market saas company trying to unify our revenue motion across marketing, sales, and customer success. I looked at all the big platforms like 6sense, demandbase, hubspot operations hub.\n\nEvery single one wanted minimum 50k annually, most were quoting us 80-100k once you added in the features we actually needed. For a company doing 8m arr that's a massive chunk of budget for one platform.\n\nThe sales pitch was always the same, we'll unify your data and orchestrate your entire gtm motion but then you get into implementation and it requires 6 months of services, a dedicated ops person, and constant maintenance and the total cost of ownership was way higher than the licensing\n\nWe ended up going a different direction, found newer platforms that are built for companies our size instead of enterprises with unlimited budgets, got similar functionality for about a quarter of the cost and way faster implementation.\n\nThe key was being honest about what we actually needed vs what fancy demos sho"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI operational costs OR LLM cost",
+    "title": "What Are the Best AI Search Visibility Tracking Tools for 2025? My Research and Experience",
+    "score": 11,
+    "num_comments": 102,
+    "selftext": "With the explosion of AI-powered search engines and chatbots like ChatGPT, Gemini, Claude, Perplexity, and Google AI Overviews, tracking your brand\u2019s visibility now requires more than traditional SEO tools. I recently compared 21 different AI search rank tracking platforms and wanted to share my findings for those trying to monitor their brand or client presence in this rapidly changing space.\n\nAI search visibility tracking is all about understanding how your brand or content shows up in responses from AI chatbots, meta answers, and vertical AI engines. Since these AI responses can vary with each prompt, having consistent, multi-platform tracking is essential.\n\n**Here are the top tools I found most effective:**\n\n**Vaylis**: Vaylis monitors all major AI search platforms in real time, provides competitor benchmarking, and offers actionable optimization guidance. It stands out for its user-friendly analytics dashboard and the ability to track businesses with multiple locations, so you can"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI operational costs OR LLM cost",
+    "title": "AI security risk and liabilities of using AI for business",
+    "score": 11,
+    "num_comments": 3,
+    "selftext": "We recently spoke with some small business owners who have been experimenting with AI tools across their operations for the past year. The productivity gains are there, but it\u2019s also clear that some AI business risks don't get talked about enough.\n\nThe data leak issue is probably the biggest one we want to flag. A lot of businesses are feeding sensitive information into these AI tools without thinking about it too much. This sensitive information includes customer data, financial projections, proprietary code, internal strategy docs, etc.\n\nOnce you put that into ChatGPT, Claude, Perplexity, or similar AI tools, you've essentially made it public. Your prompts and outputs could become searchable or accessible to others. Even if the AI provider claims your data is private, or you\u2019re using an incognito window, for example, there's always the possibility of a breach on their end. We all know they are doing this to make their AI chatbots more useful but less private.\n\nMy rule of thumb is: If"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI operational costs OR LLM cost",
+    "title": "The \"Agency-to-SaaS\" pivot is a psychological nightmare. I\u2019m 9 months and $44k into building a complex AI platform, and the context-switching is destroying me.",
+    "score": 9,
+    "num_comments": 18,
+    "selftext": "Hey guys. I need to vent a bit about the reality of the \"Agency-to-SaaS\" pipeline, because no one talks about the actual psychological toll of doing this.\n\nRight now, the meta is raising $2M for a thin AI wrapper and burning it in a year. I went the opposite route. I started with exactly $10,000.\n\nOver the last 9 months, I built a 5-person offshore product studio in the Philippines (total burn rate is $4k CAD/month). I flew out there to put us in an Airbnb for a 1-week sprint to solidify the culture. Because to me, they're founding members, not just output machines. Together, we engineered a multi-module AI startup platform called [Embarkist.com](https://embarkist.com). Total cost over 9 months: $44,000.\n\nTo keep the lights on and protect the team's payroll, I doubled my agency client workload. I also took $20k from friends &amp; family on friendly SAFEs, meaning we still own over 97% of the company.\n\nThe toll this takes isn't physical fatigue. It's a crushing, constant emotional weigh"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI operational costs OR LLM cost",
+    "title": "12 Best AI Workflow Automation Tools for Developers in 2025 (Comparison + Free Tiers)",
+    "score": 9,
+    "num_comments": 12,
+    "selftext": "Spent 3 months testing every major AI automation platform after our team wasted 15+ hours/week on repetitive tasks. Found tools that cut deployment time by 60% and eliminated context-switching hell.\n\n**Results:** Reduced manual task time from 15hrs to 6hrs weekly, improved deployment frequency by 3x, saved $2,400/month in engineering hours. **Cost:** $0-500/month depending on scale. **Timeline:** 2-4 weeks to full implementation. **Stack:** Tested 12 platforms from no-code to developer-first. **Risk:** Poor tool fit can increase complexity\u2014mitigation guide below.\n\n# Method: Evaluating AI Automation Platforms\n\n**1. Define your automation profile** Start by categorizing your needs. Are you connecting APIs? Automating UI tasks on legacy systems? Building AI-powered workflows? Match your technical expertise: no-code user vs. developer who wants custom code access.\n\n**2. Map critical integrations first** List the 10 tools you absolutely need to connect: CRM, databases, communication platfor"
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI operational costs OR LLM cost",
+    "title": "I've Automated 50+ Tasks, Here's what Everyone Gets Wrong.",
+    "score": 9,
+    "num_comments": 8,
+    "selftext": "Everyone's was talking about automation these days, and I was feeling left out. Seriously, my Twitter feed was full of people showing off their fancy workflows while I was still using almost no automation.  \nTherefore I started to learn &amp; automate small tasks.\n\n**My First Attempts Were Messy**\n\nI was using coding tools like\u00a0[V0\u00a0](https://v0.app/)and\u00a0[Claude Code](https://www.anthropic.com/claude-code). They're cool for building stuff, but they didn't solve my daily grunt work. I was still drowning in emails, forgetting meetings, and spending hours on boring tasks.\n\nThen I tried\u00a0[n8n](https://n8n.io/)\u00a0. Everyone said it was amazing. And yeah, if you know how to code, you can figure it out. But man, it felt like building a rocket ship just to make toast. Every simple thing needed multiple steps, connections, and constant tweaking when something broke.\n\nI spent more time fixing my automations than actually working.\n\n# What Actually Worked\n\nThat's when I discovered prompt-based tools. "
+  },
+  {
+    "subreddit": "SaaS",
+    "query": "AI operational costs OR LLM cost",
+    "title": "$497,432 by building sports bet prediction platform",
+    "score": 9,
+    "num_comments": 7,
+    "selftext": "Hey, I'm Deins from\u00a0[yes\\_operator](https://yesoperator.io/), I interview successful online business founders to figure out the strategies they used to grow their user base and MRR. The Goal is to shine a light on strategies that actually work without huge audiences and following.\n\nThis one is a interesting one - Sam scaled Numbers Game to $30k a month and generated more than $497k in total revenue mostly using organic Tiktok.\n\n**Who are you, what do you do, and how did you get into business?**\n\nI\u2019m Sam, based in the UK in Manchester, in the northwest of England.\n\nI started in 2021, post-COVID. I\u2019d always had an interest in entrepreneurship-I followed a lot of content, read books, that kind of thing. One of my close friends was the same. We\u2019re both obsessed with football.\n\nPeople say no good idea is found on a whiteboard, but that\u2019s exactly where this one came from. We were sitting in a shared office space trying little projects that never really got off the ground. People talk a lot a"
+  }
+]

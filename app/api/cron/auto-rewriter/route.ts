@@ -83,12 +83,18 @@ Respond in this exact JSON format:
 {"title": "new title here", "description": "new description here", "reasoning": "why this will improve CTR"}`;
 
     try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 contents: [{ parts: [{ text: prompt }] }],
-                generationConfig: { temperature: 0.3, maxOutputTokens: 500 }
+                generationConfig: {
+                    temperature: 0.3,
+                    maxOutputTokens: 1000,
+                    thinkingConfig: {
+                        thinkingBudget: 0
+                    }
+                }
             })
         });
 
