@@ -106,7 +106,7 @@ export async function GET(request: Request) {
         // Categorize pages
         const pages = (pagePerformance.data.rows || []).map(row => {
             const url = row.keys?.[0] || '';
-            const path = url.replace(SITE_URL, '');
+            const path = new URL(url, 'https://richardewing.io').pathname;
             let category = 'other';
 
             if (path.startsWith('/glossary')) category = 'glossary';
@@ -172,7 +172,7 @@ export async function GET(request: Request) {
                 },
             });
             for (const row of pageQueryPerformance.data.rows || []) {
-                const pageUrl = (row.keys?.[0] || '').replace(SITE_URL, '');
+                const pageUrl = new URL(row.keys?.[0] || '/', 'https://richardewing.io').pathname;
                 const query = row.keys?.[1] || '';
                 if (!pageQueries[pageUrl]) pageQueries[pageUrl] = [];
                 pageQueries[pageUrl].push(query);
