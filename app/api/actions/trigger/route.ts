@@ -148,7 +148,13 @@ export async function GET(request: Request) {
             result.message,
             result.success
         ),
-        { status: 200, headers: { 'Content-Type': 'text/html' } }
+        {
+            status: 200,
+            headers: {
+                'Content-Type': 'text/html',
+                'Cache-Control': 'no-store, max-age=0, must-revalidate',
+            }
+        }
     );
 }
 
