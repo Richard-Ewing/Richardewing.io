@@ -17,9 +17,16 @@ const SITE_URL_CANDIDATES = [
 ];
 
 function getGoogleAuth() {
-    const credentials = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
+    let credentials = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
     if (!credentials) {
         throw new Error('GOOGLE_SERVICE_ACCOUNT_JSON environment variable not set');
+    }
+
+    // Clean up raw newlines in the private key if present (common when dotenv loads multiline strings from .env files)
+    if (credentials.includes('-----BEGIN PRIVATE KEY-----')) {
+        credentials = credentials.replace(/("private_key"\s*:\s*")([\s\S]*?)(")/, (match, p1, p2, p3) => {
+            return p1 + p2.replace(/\r?\n/g, '\\n') + p3;
+        });
     }
 
     try {
@@ -46,6 +53,62 @@ export async function GET(request: Request) {
         if (!userId) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
+    }
+
+    // Query IndexNow details from agent_runs first, so it is available even if GSC fails
+    let indexNowStats = {
+        totalSubmitted: 0,
+        lastStatus: 'No submissions',
+        lastSubmittedAt: null as string | null,
+        history: [] as Array<{ date: string; agent: string; submitted: number; status: string; summary: string }>
+    };
+
+    try {
+        const { data: runs } = await supabaseAdmin
+            .from('agent_runs')
+            .select('created_at, agent, status, summary, metadata')
+            .in('agent', ['seo-health', 'auto-rewriter'])
+            .order('created_at', { ascending: false })
+            .limit(50);
+
+        if (runs && runs.length > 0) {
+            let total = 0;
+            let lastSubAt: string | null = null;
+            let lastStat = 'No submissions';
+            const historyList: typeof indexNowStats.history = [];
+
+            for (const run of runs) {
+                const meta = run.metadata as Record<string, any> | null;
+                const indexNow = meta?.indexNow;
+                if (indexNow && typeof indexNow.submitted === 'number') {
+                    const subCount = indexNow.submitted;
+                    total += subCount;
+
+                    if (subCount > 0) {
+                        if (!lastSubAt) {
+                            lastSubAt = run.created_at;
+                            lastStat = indexNow.error ? `Error: ${indexNow.error}` : 'Success';
+                        }
+                        historyList.push({
+                            date: run.created_at,
+                            agent: run.agent,
+                            submitted: subCount,
+                            status: indexNow.error ? 'failed' : 'completed',
+                            summary: run.summary
+                        });
+                    }
+                }
+            }
+
+            indexNowStats = {
+                totalSubmitted: total,
+                lastStatus: lastStat,
+                lastSubmittedAt: lastSubAt,
+                history: historyList.slice(0, 10) // show top 10
+            };
+        }
+    } catch (dbErr) {
+        console.error('[API:GSC-PERFORMANCE] Failed to query IndexNow runs:', dbErr);
     }
 
     try {
@@ -83,6 +146,7 @@ export async function GET(request: Request) {
             return NextResponse.json({
                 success: false,
                 error: 'Service account does not have access to any richardewing.io property in GSC. Tried: ' + SITE_URL_CANDIDATES.join(', '),
+                indexNow: indexNowStats,
             }, { status: 403 });
         }
 
@@ -202,62 +266,6 @@ export async function GET(request: Request) {
             queries: aiQueries.slice(0, 15),
         };
 
-        // Query IndexNow details from agent_runs
-        let indexNowStats = {
-            totalSubmitted: 0,
-            lastStatus: 'No submissions',
-            lastSubmittedAt: null as string | null,
-            history: [] as Array<{ date: string; agent: string; submitted: number; status: string; summary: string }>
-        };
-
-        try {
-            const { data: runs } = await supabaseAdmin
-                .from('agent_runs')
-                .select('created_at, agent, status, summary, metadata')
-                .in('agent', ['seo-health', 'auto-rewriter'])
-                .order('created_at', { ascending: false })
-                .limit(50);
-
-            if (runs && runs.length > 0) {
-                let total = 0;
-                let lastSubAt: string | null = null;
-                let lastStat = 'No submissions';
-                const historyList: typeof indexNowStats.history = [];
-
-                for (const run of runs) {
-                    const meta = run.metadata as Record<string, any> | null;
-                    const indexNow = meta?.indexNow;
-                    if (indexNow && typeof indexNow.submitted === 'number') {
-                        const subCount = indexNow.submitted;
-                        total += subCount;
-
-                        if (subCount > 0) {
-                            if (!lastSubAt) {
-                                lastSubAt = run.created_at;
-                                lastStat = indexNow.error ? `Error: ${indexNow.error}` : 'Success';
-                            }
-                            historyList.push({
-                                date: run.created_at,
-                                agent: run.agent,
-                                submitted: subCount,
-                                status: indexNow.error ? 'failed' : 'completed',
-                                summary: run.summary
-                            });
-                        }
-                    }
-                }
-
-                indexNowStats = {
-                    totalSubmitted: total,
-                    lastStatus: lastStat,
-                    lastSubmittedAt: lastSubAt,
-                    history: historyList.slice(0, 10) // show top 10
-                };
-            }
-        } catch (dbErr) {
-            console.error('[API:GSC-PERFORMANCE] Failed to query IndexNow runs:', dbErr);
-        }
-
         return NextResponse.json({
             success: true,
             period: { startDate: formatDate(startDate), endDate: formatDate(endDate), days },
@@ -295,9 +303,14 @@ export async function GET(request: Request) {
                     step4: 'Add the service account email as a user in Search Console',
                     step5: 'Set GOOGLE_SERVICE_ACCOUNT_JSON as the full JSON key in Vercel env vars',
                 },
+                indexNow: indexNowStats,
             }, { status: 503 });
         }
 
-        return NextResponse.json({ success: false, error: message }, { status: 500 });
+        return NextResponse.json({
+            success: false,
+            error: message,
+            indexNow: indexNowStats,
+        }, { status: 500 });
     }
 }

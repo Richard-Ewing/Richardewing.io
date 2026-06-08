@@ -255,7 +255,6 @@ export default function CommandCenter() {
     const fetchRevenue = useCallback(async (d: number) => {
         try {
             const res = await fetch(`/api/admin/revenue?days=${d}`);
-            if (!res.ok) throw new Error(`HTTP ${res.status}`);
             return await res.json();
         } catch { return null; }
     }, []);
@@ -263,7 +262,6 @@ export default function CommandCenter() {
     const fetchSeo = useCallback(async (d: number) => {
         try {
             const res = await fetch(`/api/gsc/performance?days=${d}`);
-            if (!res.ok) throw new Error(`HTTP ${res.status}`);
             return await res.json();
         } catch { return null; }
     }, []);
@@ -444,7 +442,63 @@ export default function CommandCenter() {
 
     /* ── SEO SECTION ──────────────────────────────────────────────────── */
     const SeoSection = ({ condensed = false }: { condensed?: boolean }) => {
-        if (!seo?.success) return <NotConnected label="SEO (Google Search Console)" />;
+        if (!seo?.success) {
+            return (
+                <div className="space-y-6">
+                    {!condensed && <SectionHeader icon={Globe} title="SEO Performance" />}
+                    
+                    <div className="bg-amber-50/60 border border-amber-200/80 rounded-xl p-6 shadow-sm">
+                        <h3 className="text-sm font-semibold text-amber-900 mb-2 flex items-center gap-2">
+                            <AlertTriangle className="w-4 h-4 text-amber-600" />
+                            Google Search Console Not Connected
+                        </h3>
+                        <p className="text-xs text-amber-800 mb-4">
+                            {seo?.error || 'To see live performance data, connect a Google Service Account.'}
+                        </p>
+                        {seo?.setup && (
+                            <ol className="space-y-2 text-xs text-amber-900 font-mono">
+                                {Object.entries(seo.setup).map(([key, value]) => (
+                                    <li key={key} className="flex items-start gap-2">
+                                        <span className="bg-amber-200 text-amber-900 font-bold px-1.5 py-0.5 rounded text-[10px] shrink-0 mt-0.5">
+                                            {key.replace('step', '')}
+                                        </span>
+                                        <span>{value}</span>
+                                    </li>
+                                ))}
+                            </ol>
+                        )}
+                    </div>
+
+                    {/* Render IndexNow submission history even if GSC is not connected */}
+                    {!condensed && (
+                        <div className="bg-white border border-black/8 rounded-xl p-6 shadow-sm">
+                            <h3 className="text-sm font-semibold text-[#1A1A1A] mb-4 flex items-center gap-2">
+                                <Activity className="w-4 h-4 text-indigo-600" /> Bing IndexNow Submission Log
+                            </h3>
+                            <div className="space-y-2 max-h-[350px] overflow-y-auto">
+                                {seo?.indexNow?.history && seo.indexNow.history.length > 0 ? (
+                                    seo.indexNow.history.map((run, i) => (
+                                        <div key={i} className="flex items-center justify-between p-3 bg-[#F5F0EB]/40 rounded-lg border border-black/5">
+                                            <div className="min-w-0">
+                                                <div className="text-[10px] font-mono text-[#6B6B6B] capitalize">{run.agent} • {timeAgo(run.date)}</div>
+                                                <div className="text-xs font-semibold text-[#1A1A1A] truncate">{run.summary}</div>
+                                            </div>
+                                            <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold ${run.status === 'completed' ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-red-50 text-red-700 border border-red-200'}`}>
+                                                {run.submitted} URL{run.submitted !== 1 && 's'}
+                                            </span>
+                                        </div>
+                                    ))
+                                ) : (
+                                    <div className="text-center py-12 text-[#6B6B6B]/80 text-xs font-mono">
+                                        No IndexNow submission history found.
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        }
         return (
             <div className="space-y-6">
                 {!condensed && <SectionHeader icon={Globe} title="SEO Performance" />}
