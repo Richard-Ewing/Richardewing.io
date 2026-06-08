@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { advisoryKeywords } from '../lib/keywords';
 
 export const metadata: Metadata = {
-    title: 'Stop Shadow AI Fines: 90-Day AI Audit for $15k',
+    title: 'AI Costs Soaring? Get a Shadow AI Audit for $10k',
     description: 'CISO\'s nightmare: Shadow AI everywhere. Richard Ewing stops EU AI Act fines & budget leaks. Get a boardroom-ready AI audit in 90 days. richardewing.io',
     keywords: [...advisoryKeywords, 'AI consulting services', 'AI implementation strategy', 'Pilot extraction', 'Shadow AI audit', 'enterprise AI governance', 'AI for SMBs', 'AI project rescue'],
     alternates: {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: 'AI Consulting Services & Implementation Strategy | Richard Ewing',
-        description: 'Specialized AI consulting for enterprise and SMBs. We solve Pilot Purgatory, Shadow AI data leaks, and provide 48-hour AI implementation roadmaps.',
+        description: 'Stop billing shock & EU AI Act fines. Richard Ewing\'s audit finds hidden AI, cuts costs by 30%+. Regain control over your AI spend & governance.',
         url: 'https://www.richardewing.io/advisory',
         type: 'website',
     },
