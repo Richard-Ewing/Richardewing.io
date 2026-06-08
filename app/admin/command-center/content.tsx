@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useCallback } from 'react';
+import { useSearchParams } from 'next/navigation';
 import {
     Activity, AlertTriangle, ArrowUpRight, BarChart3, Bot, CheckCircle, Clock,
     CreditCard, DollarSign, ExternalLink, Eye, Flame, Globe, Layers, LineChart,
@@ -237,6 +238,7 @@ function NotConnected({ label }: { label: string }) {
    ═══════════════════════════════════════════════════════════════════════════ */
 
 export default function CommandCenter() {
+    const searchParams = useSearchParams();
     const [tab, setTab] = useState<Tab>('overview');
     const [days, setDays] = useState(28);
     const [lastRefresh, setLastRefresh] = useState<Date>(new Date());
@@ -315,14 +317,13 @@ export default function CommandCenter() {
     }, [refreshAll]);
 
     useEffect(() => {
-        if (typeof window !== 'undefined') {
-            const params = new URLSearchParams(window.location.search);
-            const tabParam = params.get('tab') as Tab;
-            if (['overview', 'seo', 'revenue', 'agents'].includes(tabParam)) {
-                setTab(tabParam);
-            }
+        const tabParam = searchParams.get('tab') as Tab;
+        if (['overview', 'seo', 'revenue', 'agents'].includes(tabParam)) {
+            setTab(tabParam);
+        } else {
+            setTab('overview');
         }
-    }, []);
+    }, [searchParams]);
 
 
     /* ── Derived data ────────────────────────────────────────────────── */
