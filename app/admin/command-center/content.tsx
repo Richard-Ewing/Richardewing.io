@@ -314,6 +314,17 @@ export default function CommandCenter() {
         return () => clearInterval(interval);
     }, [refreshAll]);
 
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const params = new URLSearchParams(window.location.search);
+            const tabParam = params.get('tab') as Tab;
+            if (['overview', 'seo', 'revenue', 'agents'].includes(tabParam)) {
+                setTab(tabParam);
+            }
+        }
+    }, []);
+
+
     /* ── Derived data ────────────────────────────────────────────────── */
 
     const pipeline = agents?.pipeline || { HOT: 0, WARM: 0, COLD: 0, NURTURE: 0 };
@@ -531,6 +542,32 @@ export default function CommandCenter() {
                                 <div className="text-[11px] font-mono uppercase text-blue-600 mb-1">Curriculum</div>
                                 <div className="text-2xl font-bold text-[#1A1A1A]">{fmtNumber(seoCategories['curriculum']?.impressions || 0)}</div>
                             </div>
+                        </div>
+                    </div>
+                )}
+
+                {/* Low CTR Alert */}
+                {!condensed && seo.lowCtrPages && seo.lowCtrPages.length > 0 && (
+                    <div className="bg-red-50 border border-red-200 rounded-xl p-6">
+                        <h3 className="text-sm font-semibold text-red-900 mb-4 flex items-center gap-2">
+                            <AlertTriangle className="w-4 h-4 text-red-600" />
+                            Low CTR Pages (Below 2% — Need Meta Rewrite)
+                        </h3>
+                        <div className="space-y-2">
+                            {seo.lowCtrPages.map((page, i) => (
+                                <div key={i} className="flex items-center gap-3 p-3 bg-white rounded-lg border border-red-100 shadow-sm">
+                                    <div className="flex-1 min-w-0">
+                                        <div className="text-sm font-semibold text-zinc-900 truncate">{page.url}</div>
+                                        <div className="text-xs text-zinc-500 capitalize">{page.category}</div>
+                                    </div>
+                                    <div className="text-xs font-mono text-zinc-600">{fmtNumber(page.impressions)} imp</div>
+                                    <div className="text-xs font-mono font-bold text-red-600">{(page.ctr * 100).toFixed(1)}% CTR</div>
+                                    <a href={`https://www.richardewing.io${page.url}`} target="_blank" rel="noopener noreferrer"
+                                        className="p-1 rounded hover:bg-red-50 transition-colors">
+                                        <ExternalLink className="w-4 h-4 text-red-400" />
+                                    </a>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 )}

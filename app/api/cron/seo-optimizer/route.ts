@@ -165,7 +165,7 @@ async function sendDigestEmail(data: PerformanceData, alignment: ReturnType<type
                     <a href="${approveUrl}" style="display:inline-block;padding:8px 18px;background:#16a34a;color:white;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;margin-right:8px">✅ Approve & Deploy</a>
                     <a href="${skipUrl}" style="display:inline-block;padding:8px 18px;background:#e4e4e7;color:#52525b;border-radius:6px;font-size:13px;font-weight:500;text-decoration:none">Skip</a>
                     ` : `
-                    <a href="${SITE_URL}/admin/seo-performance" style="display:inline-block;padding:8px 18px;background:#7c3aed;color:white;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none">📊 View SEO Dashboard</a>
+                    <a href="${SITE_URL}/admin/command-center?tab=seo" style="display:inline-block;padding:8px 18px;background:#7c3aed;color:white;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none">📊 View SEO Dashboard</a>
                     `}
                 </div>
             </div>`;

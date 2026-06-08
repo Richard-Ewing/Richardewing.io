@@ -143,6 +143,6 @@ These tasks require Richard's human judgment, relationships, and creativity:
 - `app/api/actions/trigger/` — One-click action system
 - `app/api/admin/` — Agent status, revenue APIs
 - `app/api/gsc/` — Google Search Console API
-- `app/admin/` — Dashboard (command-center, seo-performance, agents)
+- `app/admin/` — Dashboard (command-center, agents)
 - `vercel.json` — Cron schedule registration
 - Supabase tables: `agent_runs`, `lead_scores`, `seo_snapshots`

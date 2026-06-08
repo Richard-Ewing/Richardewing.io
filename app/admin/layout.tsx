@@ -36,10 +36,10 @@ export default async function AdminLayout({
                     <a href="/admin/command-center" className="px-3 py-1.5 text-xs font-medium text-[#6B6B6B] hover:text-[#1A1A1A] hover:bg-white rounded-md transition-colors">
                         Command Center
                     </a>
-                    <a href="/admin/seo-performance" className="px-3 py-1.5 text-xs font-medium text-[#6B6B6B] hover:text-[#1A1A1A] hover:bg-white rounded-md transition-colors">
+                    <a href="/admin/command-center?tab=seo" className="px-3 py-1.5 text-xs font-medium text-[#6B6B6B] hover:text-[#1A1A1A] hover:bg-white rounded-md transition-colors">
                         SEO
                     </a>
-                    <a href="/admin/agents" className="px-3 py-1.5 text-xs font-medium text-[#6B6B6B] hover:text-[#1A1A1A] hover:bg-white rounded-md transition-colors">
+                    <a href="/admin/command-center?tab=agents" className="px-3 py-1.5 text-xs font-medium text-[#6B6B6B] hover:text-[#1A1A1A] hover:bg-white rounded-md transition-colors">
                         Agents
                     </a>
                 </div>
