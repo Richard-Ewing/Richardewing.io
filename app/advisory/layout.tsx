@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: 'AI Consulting Services & Implementation Strategy | Richard Ewing',
-        description: 'Worried about EU AI Act fines from shadow AI? Get a comprehensive 90-day AI audit for $15k. Richard Ewing helps CISOs stop ungoverned AI risks.'s audit finds hidden AI, cuts costs by 30%+. Regain control over your AI spend & governance.',
+        description: 'Worried about EU AI Act fines from shadow AI? Get a comprehensive 90-day AI audit for $15k. Richard Ewing helps CISOs stop ungoverned AI risks.',
         url: 'https://www.richardewing.io/advisory',
         type: 'website',
     },

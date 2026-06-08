@@ -252,17 +252,33 @@ function applyMetaRewrite(fileContent: string, newTitle: string, newDescription:
     let modified = fileContent;
     let changed = false;
 
-    // Pattern 1: Static metadata export — title: '...'
-    const titleMatch = modified.match(/title:\s*['"`]([^'"`]+)['"`]/);
+    // Pattern 1: title: '...' or "..." or `...`
+    const titleRegex = /title:\s*(['"`])(((?!\1)[^\\]|\\.)*)\1/;
+    const titleMatch = modified.match(titleRegex);
     if (titleMatch) {
-        modified = modified.replace(titleMatch[0], `title: '${newTitle.replace(/'/g, "\\'")}'`);
+        const fullMatch = titleMatch[0];
+        const quoteChar = titleMatch[1];
+        let escapedTitle = newTitle;
+        if (quoteChar === "'") escapedTitle = newTitle.replace(/'/g, "\\'");
+        else if (quoteChar === '"') escapedTitle = newTitle.replace(/"/g, '\\"');
+        else if (quoteChar === '`') escapedTitle = newTitle.replace(/`/g, '\\`');
+
+        modified = modified.replace(fullMatch, `title: ${quoteChar}${escapedTitle}${quoteChar}`);
         changed = true;
     }
 
-    // Pattern 2: description: '...'
-    const descMatch = modified.match(/description:\s*['"`]([^'"`]{20,})['"`]/);
+    // Pattern 2: description: '...' or "..." or `...`
+    const descRegex = /description:\s*(['"`])(((?!\1)[^\\]|\\.)*)\1/;
+    const descMatch = modified.match(descRegex);
     if (descMatch) {
-        modified = modified.replace(descMatch[0], `description: '${newDescription.replace(/'/g, "\\'")}'`);
+        const fullMatch = descMatch[0];
+        const quoteChar = descMatch[1];
+        let escapedDesc = newDescription;
+        if (quoteChar === "'") escapedDesc = newDescription.replace(/'/g, "\\'");
+        else if (quoteChar === '"') escapedDesc = newDescription.replace(/"/g, '\\"');
+        else if (quoteChar === '`') escapedDesc = newDescription.replace(/`/g, '\\`');
+
+        modified = modified.replace(fullMatch, `description: ${quoteChar}${escapedDesc}${quoteChar}`);
         changed = true;
     }
 
