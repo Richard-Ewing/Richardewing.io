@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
+import { auth } from '@clerk/nextjs/server';
 
 // GSC Performance Data API
 // Pulls impressions, clicks, CTR, position from Google Search Console
-// Used by: /api/cron/seo-optimizer agent + /admin/seo-performance dashboard
+// Used by: /api/cron/seo-optimizer agent + /admin/command-center dashboard
 
 const SITE_URL = 'https://www.richardewing.io';
 
@@ -21,14 +22,18 @@ function getAuth() {
 }
 
 export async function GET(request: Request) {
-    // Auth check
+    // Auth check — accept CRON_SECRET bearer OR Clerk session
     const authHeader = request.headers.get('authorization');
     const cronSecret = process.env.CRON_SECRET;
     const { searchParams } = new URL(request.url);
 
-    // Allow both cron auth and admin auth
-    if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
-        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    const hasCronAuth = authHeader === `Bearer ${cronSecret}`;
+
+    if (!hasCronAuth) {
+        const { userId } = await auth();
+        if (!userId) {
+            return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+        }
     }
 
     try {
