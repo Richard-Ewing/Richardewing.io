@@ -6,7 +6,14 @@ import { auth as clerkAuth } from '@clerk/nextjs/server';
 // Pulls impressions, clicks, CTR, position from Google Search Console
 // Used by: /api/cron/seo-optimizer agent + /admin/command-center dashboard
 
-const SITE_URL = 'https://www.richardewing.io';
+// Try multiple GSC property formats — domain, www, non-www
+const SITE_URL_CANDIDATES = [
+    'sc-domain:richardewing.io',
+    'https://www.richardewing.io/',
+    'https://richardewing.io/',
+    'https://www.richardewing.io',
+    'https://richardewing.io',
+];
 
 function getGoogleAuth() {
     const credentials = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
@@ -47,9 +54,36 @@ export async function GET(request: Request) {
 
         const formatDate = (d: Date) => d.toISOString().split('T')[0];
 
+        // Find which site URL format works
+        let siteUrl = '';
+        for (const candidate of SITE_URL_CANDIDATES) {
+            try {
+                await searchconsole.searchanalytics.query({
+                    siteUrl: candidate,
+                    requestBody: {
+                        startDate: formatDate(startDate),
+                        endDate: formatDate(endDate),
+                        dimensions: ['page'],
+                        rowLimit: 1,
+                    },
+                });
+                siteUrl = candidate;
+                break;
+            } catch {
+                continue;
+            }
+        }
+
+        if (!siteUrl) {
+            return NextResponse.json({
+                success: false,
+                error: 'Service account does not have access to any richardewing.io property in GSC. Tried: ' + SITE_URL_CANDIDATES.join(', '),
+            }, { status: 403 });
+        }
+
         // Query 1: Overall page performance
         const pagePerformance = await searchconsole.searchanalytics.query({
-            siteUrl: SITE_URL,
+            siteUrl,
             requestBody: {
                 startDate: formatDate(startDate),
                 endDate: formatDate(endDate),
@@ -60,7 +94,7 @@ export async function GET(request: Request) {
 
         // Query 2: Query-level performance for top pages
         const queryPerformance = await searchconsole.searchanalytics.query({
-            siteUrl: SITE_URL,
+            siteUrl: siteUrl,
             requestBody: {
                 startDate: formatDate(startDate),
                 endDate: formatDate(endDate),
@@ -129,7 +163,7 @@ export async function GET(request: Request) {
         let pageQueries: Record<string, string[]> = {};
         try {
             const pageQueryPerformance = await searchconsole.searchanalytics.query({
-                siteUrl: SITE_URL,
+                siteUrl: siteUrl,
                 requestBody: {
                     startDate: formatDate(startDate),
                     endDate: formatDate(endDate),
