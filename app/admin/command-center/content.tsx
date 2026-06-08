@@ -53,6 +53,19 @@ interface SeoData {
     starvingCrowdAlignment?: CrowdAlignment[];
     error?: string;
     setup?: Record<string, string>;
+    indexNow?: {
+        totalSubmitted: number;
+        lastStatus: string;
+        lastSubmittedAt: string | null;
+        history: Array<{ date: string; agent: string; submitted: number; status: string; summary: string }>;
+    };
+    aiPerformance?: {
+        totalImpressions: number;
+        totalClicks: number;
+        ctr: number;
+        position: number;
+        queries: Array<{ query: string; clicks: number; impressions: number; ctr: number; position: number }>;
+    };
 }
 
 interface CrowdAlignment {
@@ -425,7 +438,7 @@ export default function CommandCenter() {
                 {!condensed && <SectionHeader icon={Globe} title="SEO Performance" />}
 
                 {/* KPI Cards */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
                     <KpiCard label="Total Impressions" value={fmtNumber(seoSummary?.totalImpressions || 0)} icon={Eye} color="text-[#7C3AED]" />
                     <KpiCard label="Total Clicks" value={fmtNumber(seoSummary?.totalClicks || 0)} icon={MousePointerClick} color="text-emerald-600" />
                     <KpiCard
@@ -436,6 +449,20 @@ export default function CommandCenter() {
                         subtitle="Goal: > 1.0x"
                     />
                     <KpiCard label="Indexed Pages" value={fmtNumber(seoSummary?.totalPages || 0)} icon={Search} color="text-[#7C3AED]" />
+                    <KpiCard
+                        label="IndexNow Status"
+                        value={fmtNumber(seo.indexNow?.totalSubmitted || 0)}
+                        icon={Activity}
+                        color="text-[#7C3AED]"
+                        subtitle={seo.indexNow?.lastSubmittedAt ? `Last: ${timeAgo(seo.indexNow.lastSubmittedAt)}` : 'No submissions'}
+                    />
+                    <KpiCard
+                        label="AI Overview Imp"
+                        value={fmtNumber(seo.aiPerformance?.totalImpressions || 0)}
+                        icon={Sparkles}
+                        color="text-cyan-600"
+                        subtitle={seo.aiPerformance ? `${seo.aiPerformance.totalClicks} clicks • ${((seo.aiPerformance.ctr || 0) * 100).toFixed(1)}% CTR` : 'No AI traffic'}
+                    />
                 </div>
 
                 {/* Category Breakdown Bars */}
@@ -543,6 +570,63 @@ export default function CommandCenter() {
                                         <div className="text-xs font-mono text-[#7C3AED]">#{q.position.toFixed(0)}</div>
                                     </div>
                                 ))}
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {/* IndexNow & AI Search Queries (full view only) */}
+                {!condensed && (
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+                        {/* IndexNow Logs */}
+                        <div className="bg-white border border-black/8 rounded-xl p-6 shadow-sm">
+                            <h3 className="text-sm font-semibold text-[#1A1A1A] mb-4 flex items-center gap-2">
+                                <Activity className="w-4 h-4 text-indigo-600" /> Bing IndexNow Submission Log
+                            </h3>
+                            <div className="space-y-2 max-h-[350px] overflow-y-auto">
+                                {seo.indexNow?.history && seo.indexNow.history.length > 0 ? (
+                                    seo.indexNow.history.map((run, i) => (
+                                        <div key={i} className="flex items-center justify-between p-3 bg-[#F5F0EB]/40 rounded-lg border border-black/5">
+                                            <div className="min-w-0">
+                                                <div className="text-[10px] font-mono text-[#6B6B6B] capitalize">{run.agent} • {timeAgo(run.date)}</div>
+                                                <div className="text-xs font-semibold text-[#1A1A1A] truncate">{run.summary}</div>
+                                            </div>
+                                            <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold ${run.status === 'completed' ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-red-50 text-red-700 border border-red-200'}`}>
+                                                {run.submitted} URL{run.submitted !== 1 && 's'}
+                                            </span>
+                                        </div>
+                                    ))
+                                ) : (
+                                    <div className="text-center py-12 text-[#6B6B6B]/80 text-xs font-mono">
+                                        No IndexNow submission history found.
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+
+                        {/* AI performance queries */}
+                        <div className="bg-white border border-black/8 rounded-xl p-6 shadow-sm">
+                            <h3 className="text-sm font-semibold text-[#1A1A1A] mb-4 flex items-center gap-2">
+                                <Sparkles className="w-4 h-4 text-cyan-600" /> AI-Intent Search Queries
+                            </h3>
+                            <div className="space-y-1.5 max-h-[350px] overflow-y-auto">
+                                {seo.aiPerformance?.queries && seo.aiPerformance.queries.length > 0 ? (
+                                    seo.aiPerformance.queries.map((q, i) => (
+                                        <div key={i} className="flex items-center gap-3 p-2 rounded-lg hover:bg-[#F5F0EB] transition-colors">
+                                            <span className="text-[11px] font-mono text-[#6B6B6B] w-5">{i + 1}</span>
+                                            <div className="flex-1 min-w-0 text-sm text-[#1A1A1A] font-semibold truncate">{q.query}</div>
+                                            <div className="text-xs font-mono text-[#6B6B6B]">{fmtNumber(q.impressions)} imp</div>
+                                            <div className="text-xs font-mono text-[#6B6B6B]">{q.clicks} clicks</div>
+                                            <div className={`text-xs font-mono font-bold ${q.ctr > 0.03 ? 'text-emerald-600' : q.ctr > 0.01 ? 'text-amber-600' : 'text-red-600'}`}>
+                                                {(q.ctr * 100).toFixed(1)}%
+                                            </div>
+                                        </div>
+                                    ))
+                                ) : (
+                                    <div className="text-center py-12 text-[#6B6B6B]/80 text-xs font-mono">
+                                        No AI-intent search queries detected.
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>

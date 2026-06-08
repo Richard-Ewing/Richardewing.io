@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { generateActionUrl } from '@/app/api/actions/trigger/route';
+import { logAgentRun, createAgentTimer } from '@/lib/agents/logger';
 
 // Daily SEO Optimizer Agent
 // Runs daily: pulls GSC data, identifies underperformers, logs changes, emails digest
@@ -95,6 +96,23 @@ function identifyActions(data: PerformanceData) {
             reason: `Paid funnel impressions (${summary.paidFunnelImpressions}) still below glossary (${summary.glossaryImpressions}). Ratio: ${summary.ratio}`,
             priority: 'high',
         });
+    }
+
+    // Check AI query performance
+    const aiPerf = (data as any).aiPerformance;
+    if (aiPerf && aiPerf.queries) {
+        const lowCtrAiQueries = aiPerf.queries
+            .filter((q: any) => q.impressions > 40 && q.ctr < 0.02)
+            .slice(0, 3);
+        
+        for (const q of lowCtrAiQueries) {
+            actions.push({
+                type: 'ai_intent_optimization',
+                page: 'site-wide',
+                reason: `AI-intent search query "${q.query}" has ${q.impressions.toLocaleString()} impressions with low CTR (${(q.ctr * 100).toFixed(1)}%). Needs target page content optimization.`,
+                priority: 'medium',
+            });
+        }
     }
 
     return actions;
@@ -237,7 +255,6 @@ async function sendDigestEmail(data: PerformanceData, alignment: ReturnType<type
 
     return { sent: response.ok, status: response.status };
 }
-
 export async function GET(request: Request) {
     const authHeader = request.headers.get('authorization');
     const cronSecret = process.env.CRON_SECRET;
@@ -246,7 +263,7 @@ export async function GET(request: Request) {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const startTime = Date.now();
+    const timer = createAgentTimer();
 
     try {
         // 1. Pull GSC data
@@ -254,11 +271,13 @@ export async function GET(request: Request) {
 
         if (!gscData.success) {
             // GSC not connected — log and email setup instructions
-            await supabase.from('agent_runs').insert({
-                agent_name: 'seo-optimizer',
-                status: 'warning',
-                duration_ms: Date.now() - startTime,
-                metadata: { error: gscData.error, setup: gscData.setup },
+            await logAgentRun({
+                agent: 'seo-optimizer',
+                status: 'failed',
+                duration_ms: timer.elapsed(),
+                items_processed: 0,
+                summary: 'Failed to run: Google Search Console is not connected.',
+                metadata: { error: gscData.error, setup: gscData.setup }
             });
 
             return NextResponse.json({
@@ -314,10 +333,12 @@ export async function GET(request: Request) {
         const emailResult = await sendDigestEmail(gscData, alignment, actions, rewriteResults);
 
         // 6. Log to Supabase
-        await supabase.from('agent_runs').insert({
-            agent_name: 'seo-optimizer',
-            status: 'success',
-            duration_ms: Date.now() - startTime,
+        await logAgentRun({
+            agent: 'seo-optimizer',
+            status: 'completed',
+            duration_ms: timer.elapsed(),
+            items_processed: actions.length,
+            summary: `SEO optimizer completed successfully. Identified ${actions.length} actions (${actions.filter(a => a.priority === 'high').length} high priority). Email sent: ${emailResult.sent}. Autonomous rewrites: ${rewriteResults.length}.`,
             metadata: {
                 totalImpressions: gscData.summary?.totalImpressions,
                 totalClicks: gscData.summary?.totalClicks,
@@ -327,7 +348,8 @@ export async function GET(request: Request) {
                 emailSent: emailResult.sent,
                 starvingCrowdAlignment: alignment,
                 autonomousRewrites: rewriteResults.length,
-            },
+                aiPerformance: (gscData as any).aiPerformance
+            }
         });
 
         // 7. Store performance snapshot for trending
@@ -352,16 +374,18 @@ export async function GET(request: Request) {
             actions,
             autonomousRewrites: rewriteResults,
             email: emailResult,
-            duration: Date.now() - startTime,
+            duration: timer.elapsed(),
         });
     } catch (error) {
         const message = error instanceof Error ? error.message : 'Unknown error';
 
-        await supabase.from('agent_runs').insert({
-            agent_name: 'seo-optimizer',
-            status: 'error',
-            duration_ms: Date.now() - startTime,
-            metadata: { error: message },
+        await logAgentRun({
+            agent: 'seo-optimizer',
+            status: 'failed',
+            duration_ms: timer.elapsed(),
+            items_processed: 0,
+            summary: `Fatal error: ${message}`,
+            metadata: { error: message }
         });
 
         return NextResponse.json({ success: false, error: message }, { status: 500 });

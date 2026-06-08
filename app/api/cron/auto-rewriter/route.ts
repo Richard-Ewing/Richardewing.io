@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { logAgentRun, createAgentTimer } from '@/lib/agents/logger';
 
 // Autonomous Meta Rewriter Agent
 // Called by the SEO Optimizer when low-CTR pages are detected
@@ -285,12 +286,12 @@ function applyMetaRewrite(fileContent: string, newTitle: string, newDescription:
     return changed ? modified : null;
 }
 
-async function submitToIndexNow(urls: string[]): Promise<void> {
-    const indexNowKey = process.env.INDEXNOW_KEY;
-    if (!indexNowKey || urls.length === 0) return;
+async function submitToIndexNow(urls: string[]): Promise<{ submitted: number; error?: string }> {
+    const indexNowKey = process.env.INDEXNOW_KEY || '3340d267ae86446787754f0e60a3edc5';
+    if (!indexNowKey || urls.length === 0) return { submitted: 0 };
 
     try {
-        await fetch('https://api.indexnow.org/IndexNow', {
+        const response = await fetch('https://api.indexnow.org/IndexNow', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -300,7 +301,13 @@ async function submitToIndexNow(urls: string[]): Promise<void> {
                 urlList: urls,
             })
         });
-    } catch { /* best effort */ }
+        if (response.ok || response.status === 202) {
+            return { submitted: urls.length };
+        }
+        return { submitted: 0, error: `IndexNow returned ${response.status}` };
+    } catch (error) {
+        return { submitted: 0, error: error instanceof Error ? error.message : 'Unknown' };
+    }
 }
 
 export async function POST(request: Request) {
@@ -311,77 +318,121 @@ export async function POST(request: Request) {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const body = await request.json();
-    const pages: RewriteRequest[] = body.pages || [];
+    const timer = createAgentTimer();
 
-    if (pages.length === 0) {
-        return NextResponse.json({ success: true, message: 'No pages to rewrite' });
-    }
+    try {
+        const body = await request.json();
+        const pages: RewriteRequest[] = body.pages || [];
 
-    // Cap at 5 rewrites per day to prevent runaway changes
-    const toRewrite = pages.slice(0, 5);
-    const results: RewriteResult[] = [];
-    const fileChanges: Array<{ path: string; content: string }> = [];
+        if (pages.length === 0) {
+            await logAgentRun({
+                agent: 'auto-rewriter',
+                status: 'skipped',
+                duration_ms: timer.elapsed(),
+                items_processed: 0,
+                summary: 'No pages specified for rewrite.',
+            });
+            return NextResponse.json({ success: true, message: 'No pages to rewrite' });
+        }
 
-    for (const page of toRewrite) {
-        // 1. Map URL to file
-        const filePath = urlToFilePath(page.url);
-        if (!filePath) continue;
+        // Cap at 5 rewrites per day to prevent runaway changes
+        const toRewrite = pages.slice(0, 5);
+        const results: RewriteResult[] = [];
+        const fileChanges: Array<{ path: string; content: string }> = [];
 
-        // 2. Generate new title/description
-        const rewrite = await generateRewrite(page);
-        if (!rewrite) continue;
+        for (const page of toRewrite) {
+            // 1. Map URL to file
+            const filePath = urlToFilePath(page.url);
+            if (!filePath) continue;
 
-        // 3. Get current file content
-        const content = await getFileContent(filePath);
-        if (!content) continue;
+            // 2. Generate new title/description
+            const rewrite = await generateRewrite(page);
+            if (!rewrite) continue;
 
-        // 4. Apply rewrite
-        const modified = applyMetaRewrite(content, rewrite.title, rewrite.description);
-        if (!modified) continue;
+            // 3. Get current file content
+            const content = await getFileContent(filePath);
+            if (!content) continue;
 
-        results.push({
-            url: page.url,
-            oldTitle: page.currentTitle,
-            newTitle: rewrite.title,
-            oldDescription: page.currentDescription,
-            newDescription: rewrite.description,
-            reasoning: rewrite.reasoning,
-            filePath,
+            // 4. Apply rewrite
+            const modified = applyMetaRewrite(content, rewrite.title, rewrite.description);
+            if (!modified) continue;
+
+            results.push({
+                url: page.url,
+                oldTitle: page.currentTitle,
+                newTitle: rewrite.title,
+                oldDescription: page.currentDescription,
+                newDescription: rewrite.description,
+                reasoning: rewrite.reasoning,
+                filePath,
+            });
+
+            fileChanges.push({ path: filePath, content: modified });
+        }
+
+        if (fileChanges.length === 0) {
+            await logAgentRun({
+                agent: 'auto-rewriter',
+                status: 'skipped',
+                duration_ms: timer.elapsed(),
+                items_processed: 0,
+                summary: 'Checked pages for meta tag rewrites. No viable improvements generated.',
+            });
+            return NextResponse.json({ success: true, message: 'No viable rewrites generated', results: [] });
+        }
+
+        // 5. Commit all changes to GitHub
+        const commitResult = await commitToGitHub(fileChanges);
+
+        // 6. Submit changed URLs to IndexNow
+        const indexNowResult = await submitToIndexNow(results.map(r => `https://www.richardewing.io${r.url}`));
+
+        // 7. Log to Supabase (seo_rewrites table)
+        try {
+            await supabase.from('seo_rewrites').insert(results.map(r => ({
+                url: r.url,
+                old_title: r.oldTitle,
+                new_title: r.newTitle,
+                old_description: r.oldDescription,
+                new_description: r.newDescription,
+                reasoning: r.reasoning,
+                file_path: r.filePath,
+                commit_sha: commitResult.commitSha || null,
+                created_at: new Date().toISOString(),
+            })));
+        } catch { /* table may not exist yet */ }
+
+        // 8. Log the agent run
+        await logAgentRun({
+            agent: 'auto-rewriter',
+            status: commitResult.success ? 'completed' : 'failed',
+            duration_ms: timer.elapsed(),
+            items_processed: results.length,
+            summary: `Autonomously rewrote meta tags for ${results.length} pages. IndexNow: ${indexNowResult.submitted} submitted.`,
+            metadata: {
+                commit: commitResult,
+                results,
+                indexNow: indexNowResult
+            }
         });
 
-        fileChanges.push({ path: filePath, content: modified });
+        return NextResponse.json({
+            success: commitResult.success,
+            rewrites: results.length,
+            commit: commitResult,
+            results,
+        });
+
+    } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unknown error';
+        await logAgentRun({
+            agent: 'auto-rewriter',
+            status: 'failed',
+            duration_ms: timer.elapsed(),
+            items_processed: 0,
+            summary: `Failed: ${message}`,
+            metadata: { error: message }
+        });
+        return NextResponse.json({ error: message }, { status: 500 });
     }
-
-    if (fileChanges.length === 0) {
-        return NextResponse.json({ success: true, message: 'No viable rewrites generated', results: [] });
-    }
-
-    // 5. Commit all changes to GitHub
-    const commitResult = await commitToGitHub(fileChanges);
-
-    // 6. Submit changed URLs to IndexNow
-    await submitToIndexNow(results.map(r => `https://www.richardewing.io${r.url}`));
-
-    // 7. Log to Supabase
-    try {
-        await supabase.from('seo_rewrites').insert(results.map(r => ({
-            url: r.url,
-            old_title: r.oldTitle,
-            new_title: r.newTitle,
-            old_description: r.oldDescription,
-            new_description: r.newDescription,
-            reasoning: r.reasoning,
-            file_path: r.filePath,
-            commit_sha: commitResult.commitSha || null,
-            created_at: new Date().toISOString(),
-        })));
-    } catch { /* table may not exist yet */ }
-
-    return NextResponse.json({
-        success: commitResult.success,
-        rewrites: results.length,
-        commit: commitResult,
-        results,
-    });
 }

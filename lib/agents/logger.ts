@@ -12,7 +12,10 @@ export type AgentName =
     | 'benchmark-aggregator'
     | 'seo-health'
     | 'lead-scorer'
-    | 'content-expander';
+    | 'content-expander'
+    | 'daily-ops-email'
+    | 'seo-optimizer'
+    | 'auto-rewriter';
 
 export type AgentStatus = 'started' | 'completed' | 'failed' | 'skipped';
 

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
 import { auth as clerkAuth } from '@clerk/nextjs/server';
+import { supabaseAdmin } from '@/lib/supabase';
 
 // GSC Performance Data API
 // Pulls impressions, clicks, CTR, position from Google Search Console
@@ -21,11 +22,15 @@ function getGoogleAuth() {
         throw new Error('GOOGLE_SERVICE_ACCOUNT_JSON environment variable not set');
     }
 
-    const parsed = JSON.parse(credentials);
-    return new google.auth.GoogleAuth({
-        credentials: parsed,
-        scopes: ['https://www.googleapis.com/auth/webmasters.readonly'],
-    });
+    try {
+        const parsed = JSON.parse(credentials);
+        return new google.auth.GoogleAuth({
+            credentials: parsed,
+            scopes: ['https://www.googleapis.com/auth/webmasters.readonly'],
+        });
+    } catch (err) {
+        throw new Error(`GOOGLE_SERVICE_ACCOUNT_JSON parsing failed: ${err instanceof Error ? err.message : 'Invalid JSON'}`);
+    }
 }
 
 export async function GET(request: Request) {
@@ -179,6 +184,80 @@ export async function GET(request: Request) {
             }
         } catch { /* page+query dimension may not be available */ }
 
+        // Compute AI performance from GSC queries
+        const AI_KEYWORDS = ['ai', 'gpt', 'llm', 'copilot', 'gemini', 'claude', 'chatgpt', 'openai', 'agent', 'vibe coding', 'technical debt', 'hallucination'];
+        const aiQueries = queries.filter(q =>
+            AI_KEYWORDS.some(k => q.query.toLowerCase().includes(k))
+        );
+        const totalAiImpressions = aiQueries.reduce((sum, q) => sum + q.impressions, 0);
+        const totalAiClicks = aiQueries.reduce((sum, q) => sum + q.clicks, 0);
+        const avgAiCtr = totalAiImpressions > 0 ? (totalAiClicks / totalAiImpressions) : 0;
+        const avgAiPosition = aiQueries.length > 0 ? (aiQueries.reduce((sum, q) => sum + q.position, 0) / aiQueries.length) : 0;
+
+        const aiPerformance = {
+            totalImpressions: totalAiImpressions,
+            totalClicks: totalAiClicks,
+            ctr: avgAiCtr,
+            position: avgAiPosition,
+            queries: aiQueries.slice(0, 15),
+        };
+
+        // Query IndexNow details from agent_runs
+        let indexNowStats = {
+            totalSubmitted: 0,
+            lastStatus: 'No submissions',
+            lastSubmittedAt: null as string | null,
+            history: [] as Array<{ date: string; agent: string; submitted: number; status: string; summary: string }>
+        };
+
+        try {
+            const { data: runs } = await supabaseAdmin
+                .from('agent_runs')
+                .select('created_at, agent, status, summary, metadata')
+                .in('agent', ['seo-health', 'auto-rewriter'])
+                .order('created_at', { ascending: false })
+                .limit(50);
+
+            if (runs && runs.length > 0) {
+                let total = 0;
+                let lastSubAt: string | null = null;
+                let lastStat = 'No submissions';
+                const historyList: typeof indexNowStats.history = [];
+
+                for (const run of runs) {
+                    const meta = run.metadata as Record<string, any> | null;
+                    const indexNow = meta?.indexNow;
+                    if (indexNow && typeof indexNow.submitted === 'number') {
+                        const subCount = indexNow.submitted;
+                        total += subCount;
+
+                        if (subCount > 0) {
+                            if (!lastSubAt) {
+                                lastSubAt = run.created_at;
+                                lastStat = indexNow.error ? `Error: ${indexNow.error}` : 'Success';
+                            }
+                            historyList.push({
+                                date: run.created_at,
+                                agent: run.agent,
+                                submitted: subCount,
+                                status: indexNow.error ? 'failed' : 'completed',
+                                summary: run.summary
+                            });
+                        }
+                    }
+                }
+
+                indexNowStats = {
+                    totalSubmitted: total,
+                    lastStatus: lastStat,
+                    lastSubmittedAt: lastSubAt,
+                    history: historyList.slice(0, 10) // show top 10
+                };
+            }
+        } catch (dbErr) {
+            console.error('[API:GSC-PERFORMANCE] Failed to query IndexNow runs:', dbErr);
+        }
+
         return NextResponse.json({
             success: true,
             period: { startDate: formatDate(startDate), endDate: formatDate(endDate), days },
@@ -198,6 +277,8 @@ export async function GET(request: Request) {
             topPages: pages.sort((a, b) => b.impressions - a.impressions).slice(0, 30),
             topQueries: queries.slice(0, 50),
             pageQueries,
+            aiPerformance,
+            indexNow: indexNowStats,
         });
     } catch (error) {
         const message = error instanceof Error ? error.message : 'Unknown error';

@@ -23,7 +23,8 @@ export async function GET() {
             'lead-scorer',
             'content-expander',
             'daily-ops-email',
-            'seo-optimizer'
+            'seo-optimizer',
+            'auto-rewriter'
         ];
 
         const dashboard: Record<string, any> = {};

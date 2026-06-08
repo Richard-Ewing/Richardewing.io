@@ -19,7 +19,7 @@ import { logAgentRun, createAgentTimer } from '@/lib/agents/logger';
  */
 
 const SITE_URL = 'https://www.richardewing.io';
-const INDEXNOW_KEY = process.env.INDEXNOW_KEY || '';
+const INDEXNOW_KEY = process.env.INDEXNOW_KEY || '3340d267ae86446787754f0e60a3edc5';
 
 interface HealthCheckResult {
     url: string;

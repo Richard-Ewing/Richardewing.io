@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { BarChart3, TrendingUp, TrendingDown, AlertTriangle, RefreshCw, ExternalLink, ArrowUpRight, Target } from 'lucide-react';
+import { BarChart3, TrendingUp, TrendingDown, AlertTriangle, RefreshCw, ExternalLink, ArrowUpRight, Target, Activity, Sparkles } from 'lucide-react';
 
 interface PageData {
     url: string;
@@ -34,6 +34,27 @@ interface ActionItem {
     priority: 'high' | 'medium' | 'low';
 }
 
+interface IndexNowStats {
+    totalSubmitted: number;
+    lastStatus: string;
+    lastSubmittedAt: string | null;
+    history: Array<{
+        date: string;
+        agent: string;
+        submitted: number;
+        status: string;
+        summary: string;
+    }>;
+}
+
+interface AiPerformanceStats {
+    totalImpressions: number;
+    totalClicks: number;
+    ctr: number;
+    position: number;
+    queries: QueryData[];
+}
+
 interface PerformanceData {
     success: boolean;
     summary?: {
@@ -54,6 +75,20 @@ interface PerformanceData {
     actions?: ActionItem[];
     error?: string;
     setup?: Record<string, string>;
+    indexNow?: IndexNowStats;
+    aiPerformance?: AiPerformanceStats;
+}
+
+function timeAgo(dateStr: string | null): string {
+    if (!dateStr) return 'Never';
+    const diff = Date.now() - new Date(dateStr).getTime();
+    const mins = Math.floor(diff / 60000);
+    if (mins < 1) return 'Just now';
+    if (mins < 60) return `${mins}m ago`;
+    const hours = Math.floor(mins / 60);
+    if (hours < 24) return `${hours}h ago`;
+    const days = Math.floor(hours / 24);
+    return `${days}d ago`;
 }
 
 export default function SeoPerformanceDashboard() {
@@ -151,7 +186,7 @@ export default function SeoPerformanceDashboard() {
             </div>
 
             {/* KPI Cards */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 mb-8">
                 <div className="bg-white border border-zinc-200 rounded-2xl p-6">
                     <div className="text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">Total Impressions</div>
                     <div className="text-3xl font-bold text-zinc-950">{summary.totalImpressions.toLocaleString()}</div>
@@ -171,6 +206,31 @@ export default function SeoPerformanceDashboard() {
                 <div className="bg-white border border-zinc-200 rounded-2xl p-6">
                     <div className="text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">Total Pages</div>
                     <div className="text-3xl font-bold text-zinc-950">{summary.totalPages}</div>
+                </div>
+                <div className="bg-white border border-zinc-200 rounded-2xl p-6">
+                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">IndexNow Status</div>
+                    <div className="text-3xl font-bold text-indigo-600">
+                        {data.indexNow?.totalSubmitted.toLocaleString() || '0'}
+                    </div>
+                    <div className="text-xs text-zinc-500 mt-1 font-mono truncate">
+                        {data.indexNow?.lastStatus === 'Success' ? (
+                            <span className="text-emerald-600 font-bold">✓ Active</span>
+                        ) : data.indexNow?.lastSubmittedAt ? (
+                            <span className="text-amber-600 font-medium">⚠️ Error</span>
+                        ) : (
+                            <span className="text-zinc-400">Idle</span>
+                        )}
+                        {data.indexNow?.lastSubmittedAt && ` • ${timeAgo(data.indexNow.lastSubmittedAt)}`}
+                    </div>
+                </div>
+                <div className="bg-white border border-zinc-200 rounded-2xl p-6">
+                    <div className="text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">AI Overview Imp</div>
+                    <div className="text-3xl font-bold text-cyan-600">
+                        {data.aiPerformance?.totalImpressions.toLocaleString() || '0'}
+                    </div>
+                    <div className="text-xs text-zinc-500 mt-1 font-mono">
+                        {data.aiPerformance?.totalClicks || '0'} clicks • {((data.aiPerformance?.ctr || 0) * 100).toFixed(1)}% CTR
+                    </div>
                 </div>
             </div>
 
@@ -277,6 +337,63 @@ export default function SeoPerformanceDashboard() {
                     </div>
                 </div>
             )}
+
+            {/* IndexNow and AI Queries Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                {/* IndexNow Telemetry */}
+                <div className="bg-white border border-zinc-200 rounded-2xl p-6">
+                    <h2 className="text-lg font-bold text-zinc-950 mb-4 flex items-center gap-2">
+                        <Activity className="w-5 h-5 text-indigo-600" /> Bing IndexNow Log
+                    </h2>
+                    <div className="space-y-3 max-h-[350px] overflow-y-auto pr-1">
+                        {data.indexNow?.history && data.indexNow.history.length > 0 ? (
+                            data.indexNow.history.map((run, i) => (
+                                <div key={i} className="flex items-center justify-between p-3 bg-zinc-50 rounded-xl border border-zinc-100">
+                                    <div className="min-w-0">
+                                        <div className="text-xs font-mono text-zinc-400 capitalize">{run.agent} • {timeAgo(run.date)}</div>
+                                        <div className="text-sm font-semibold text-zinc-800 truncate">{run.summary}</div>
+                                    </div>
+                                    <span className={`px-2 py-0.5 rounded text-xs font-mono font-bold ${run.status === 'completed' ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800'}`}>
+                                        {run.submitted} URL{run.submitted !== 1 && 's'}
+                                    </span>
+                                </div>
+                            ))
+                        ) : (
+                            <div className="text-center py-12 text-zinc-500 font-mono text-sm">
+                                No IndexNow submission history found.
+                            </div>
+                        )}
+                    </div>
+                </div>
+
+                {/* AI-Intent Queries */}
+                <div className="bg-white border border-zinc-200 rounded-2xl p-6">
+                    <h2 className="text-lg font-bold text-zinc-950 mb-4 flex items-center gap-2">
+                        <Sparkles className="w-5 h-5 text-cyan-600" /> AI-Intent Search Queries
+                    </h2>
+                    <div className="space-y-2 max-h-[350px] overflow-y-auto pr-1">
+                        {data.aiPerformance?.queries && data.aiPerformance.queries.length > 0 ? (
+                            data.aiPerformance.queries.map((q, i) => (
+                                <div key={i} className="flex items-center gap-3 p-2 rounded-lg hover:bg-zinc-50 transition-colors">
+                                    <span className="text-xs font-mono text-zinc-400 w-5">{i + 1}</span>
+                                    <div className="flex-1 min-w-0">
+                                        <div className="text-sm text-zinc-900 truncate font-semibold">{q.query}</div>
+                                    </div>
+                                    <div className="text-xs font-mono text-zinc-600">{q.impressions.toLocaleString()} imp</div>
+                                    <div className="text-xs font-mono text-zinc-500">{q.clicks} clicks</div>
+                                    <div className={`text-xs font-mono font-bold ${q.ctr > 0.03 ? 'text-emerald-600' : q.ctr > 0.01 ? 'text-amber-600' : 'text-red-600'}`}>
+                                        {(q.ctr * 100).toFixed(1)}%
+                                    </div>
+                                </div>
+                            ))
+                        ) : (
+                            <div className="text-center py-12 text-zinc-500 font-mono text-sm">
+                                No AI-intent search traffic detected.
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </div>
 
             {/* Funnel Health */}
             <div className="bg-gradient-to-r from-purple-50 to-indigo-50 border border-purple-200 rounded-2xl p-6">
