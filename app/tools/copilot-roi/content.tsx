@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Bot, LineChart, Code, ShieldAlert, Target, Users, Cpu, DollarSign, Download, ArrowRight, Zap, AlertTriangle, Building2, Skull } from 'lucide-react';
 import ToolGate from '@/app/components/tool-gate';
 import { ExportToPDFButton } from '@/app/components/ExportToPDFButton';
+import DiagnosticCTA from '@/app/components/DiagnosticCTA';
 
 // --- NATIVE CHARTING COMPONENT ---
 // Reuses the identical standard native React component style applied in EV-SE for deterministic local compilation
@@ -221,6 +222,8 @@ export default function CopilotROITool() {
                         Vendors sell "Lines of Code Generated". You buy "Net Revenue Retention". Calculate how raw generative AI velocity is violently degraded by code review bottlenecks and Vibe Coding Debt.
                     </p>
                 </div>
+                
+                <DiagnosticCTA />
 
                 <ToolGate toolSlug="copilot-roi" toolName="Copilot ROI Forecaster">
                     {/* --- MAIN DASHBOARD LAYOUT --- */}

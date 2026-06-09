@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 
+export const dynamic = 'force-dynamic';
+
 // Action Trigger API — one-click actions from email digest
 // Each action link in the email contains a signed token to prevent unauthorized access
 // Actions: approve-rewrite, skip, create-content

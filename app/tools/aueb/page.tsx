@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
+import DiagnosticCTA from '@/app/components/DiagnosticCTA';
 import AUEBTool from './content';
 
 export const metadata: Metadata = {
-    title: 'Is Your AI Feature Burning Cash? | AI Cost Collapse Calculator | Free',
-    description: 'Every AI API call costs money. At what usage volume does your AI feature start destroying margin? Calculate your collapse point before the CFO finds it. Free tool from $7,500 audits.',
+    title: 'CFO Alert: Calculate Your AI Unit Economics Collapse Point',
+    description: 'LLM costs scale non-linearly. Find the exact usage volume where your AI features start destroying margin and creating billing shock. 3-Minute Audit.',
     keywords: [
         'AI unit economics',
         'LLM cost calculator',
@@ -52,8 +52,12 @@ export default function Page() {
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
             <AUEBTool />
-                    <div className="page-container max-w-4xl mx-auto">
-                <AdvisoryCTA variant="tool-result" />
+            <div className="page-container max-w-4xl mx-auto px-6">
+                <DiagnosticCTA 
+                    title="Is your runway burning faster than your MRR?"
+                    subtitle="Compute costs are the new cloud tax. Take the AI Economics Diagnostic Audit to find your hidden margin leaks before your next board meeting."
+                    metrics={["$100K+ API Bills", "Token Sprawl", "Negative Margin"]}
+                />
             </div>
         </>
     );

@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
+import DiagnosticCTA from '@/app/components/DiagnosticCTA';
 import PDITool from './content';
 
 export const metadata: Metadata = {
-    title: 'When Will Tech Debt Kill Your Velocity? | Free Insolvency Calculator',
-    description: 'Your engineers are spending 60% of their time on maintenance instead of features. Calculate the exact quarter your tech debt becomes unrecoverable — and what it costs you per month. Free tool from $7,500 R&D audits.',
+    title: 'Director Alert: Calculate Your Technical Insolvency Date',
+    description: '45% of AI code introduces vulnerabilities. Vibe coding creates massive technical debt. Find the exact quarter your maintenance load exceeds your engineering capacity.',
     keywords: [
         'product debt index',
         'technical debt calculator',
@@ -50,8 +50,12 @@ export default function Page() {
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
             <PDITool />
-                    <div className="page-container max-w-4xl mx-auto">
-                <AdvisoryCTA variant="tool-result" />
+            <div className="page-container max-w-4xl mx-auto px-6">
+                <DiagnosticCTA 
+                    title="Is your team drowning in AI-generated Technical Debt?"
+                    subtitle="Vibe coding gets you to MVP fast, but creates a maintenance nightmare. Take the AI Economics Diagnostic to map your debt liability before velocity drops to zero."
+                    metrics={["45% Vulnerable", "0% Velocity", "High Attrition"]}
+                />
             </div>
         </>
     );

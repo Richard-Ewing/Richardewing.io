@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import CopilotROITool from './content';
 
 export const metadata: Metadata = {
-    title: 'Copilot ROI Negative? Stop 40% Code Review Waste',
-    description: 'VP Eng: AI tool costs out of control? GitHub Copilot can cost $19/dev/month but add 40% more review time. Calculate your true ROI & stop billing shock with richardewing.io.',
+    title: 'VP Eng: Is Copilot Costing You $58K/Dev in Vibe Coding Debt?',
+    description: 'Stop the AI billing shock. Calculate how raw generative AI velocity is violently degraded by code review bottlenecks and hidden technical debt.',
     keywords: [
         'GitHub Copilot ROI',
         'Cursor ROI calculator',
