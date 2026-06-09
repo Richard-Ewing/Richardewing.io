@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { advisoryKeywords } from '../lib/keywords';
 
 export const metadata: Metadata = {
-    title: 'Shadow AI Fines? 90-Day Audit, $15k. Richard Ewing',
-    description: 'CISO\'s nightmare: Shadow AI everywhere. Richard Ewing stops EU AI Act fines & budget leaks. Get a boardroom-ready AI audit in 90 days. richardewing.io',
+    title: 'Stop AI Billing Shock: 1-Hour PainPoint Pilot for $499',
+    description: 'VP Eng: AI tool costs out of control? Get a PainPoint Pilot audit from Richard Ewing. Identify 3+ areas to cut AI spend by 20% in 60 minutes.',
     keywords: [...advisoryKeywords, 'AI consulting services', 'AI implementation strategy', 'Pilot extraction', 'Shadow AI audit', 'enterprise AI governance', 'AI for SMBs', 'AI project rescue'],
     alternates: {
         canonical: 'https://www.richardewing.io/advisory',
