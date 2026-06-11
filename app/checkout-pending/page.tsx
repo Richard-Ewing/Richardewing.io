@@ -18,13 +18,13 @@ export default function CheckoutPending() {
                     <Lock className="w-8 h-8 text-violet-400" />
                 </div>
                 <h1 className="text-3xl font-bold font-grotesk text-zinc-950 mb-4">Enterprise Checkout Pending</h1>
-                <p className="text-zinc-900 mb-8 leading-relaxed">
+                <p className="text-zinc-700 mb-8 leading-relaxed">
                     This premium licensing tier is currently being securely integrated with Stripe. 
                     Please return shortly or contact your account representative to manually process this transaction.
                 </p>
                 <Link 
                     href="/vault/curriculum/tracks"
-                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white/5 border border-zinc-400 text-zinc-950 font-bold hover:bg-white/10 hover:border-violet-500/30 transition-all font-mono tracking-widest text-sm font-semibold uppercase"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg border-2 border-zinc-400 text-zinc-950 font-bold hover:border-violet-400 hover:bg-violet-50/30 transition-all font-mono tracking-widest text-sm uppercase"
                 >
                     ← Return to Curriculum
                 </Link>

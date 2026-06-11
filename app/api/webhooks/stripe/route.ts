@@ -39,15 +39,14 @@ export async function POST(req: Request) {
                 // Determine what was purchased to set the right metadata grants
                 // If it's a subscription mode checkout, grant universal access
                 const isSubscription = session.mode === 'subscription';
-                
-                // Fetch the line items to determine the precise quantity purchased for B2B Team Licensing
-                const lineItems = await stripe.checkout.sessions.listLineItems(session.id);
-                const quantity = lineItems.data.reduce((total, item) => total + (item.quantity || 1), 0);
-                const isTeamPurchase = quantity > 1;
 
                 const client = await clerkClient();
                 
                 if (isSubscription) {
+                    // Fetch the line items to determine the precise quantity purchased for B2B Team Licensing
+                    const lineItems = await stripe.checkout.sessions.listLineItems(session.id);
+                    const quantity = lineItems.data.reduce((total, item) => total + (item.quantity || 1), 0);
+                    const isTeamPurchase = quantity > 1;
                     // Update Stripe Subscription to persistently store the Clerk User ID for downstream revocation hooks
                     if (session.subscription) {
                         try {
@@ -160,7 +159,7 @@ export async function POST(req: Request) {
                         }
                     }
                 }
-                console.log(`Successfully provisioned access for Clerk User: ${userId} (Quantity: ${quantity}, Item: ${specificItemId || 'None'})`);
+                console.log(`Successfully provisioned access for Clerk User: ${userId} (Item: ${specificItemId || 'Subscription'})`);
             } catch (error) {
                 console.error('Failed to update Clerk user metadata:', error);
                 return new NextResponse('Error updating user metadata', { status: 500 });

@@ -94,7 +94,7 @@ const NewsletterSection = () => {
                                     <button
                                         type="submit"
                                         disabled={state.submitting || isValidating}
-                                        className="px-8 py-4 rounded-lg bg-purple-700 text-zinc-950 font-semibold font-bold hover:bg-purple-600 transition-colors whitespace-nowrap disabled:opacity-70 flex items-center justify-center gap-2"
+                                        className="px-8 py-4 rounded-lg bg-purple-700 text-white font-bold hover:bg-purple-600 transition-colors whitespace-nowrap disabled:opacity-70 flex items-center justify-center gap-2"
                                     >
                                         {(state.submitting || isValidating) ? <Loader2 className="w-4 h-4 animate-spin" /> : <>Get Checklist <ArrowRight className="w-3 h-3" /></>}
                                     </button>
