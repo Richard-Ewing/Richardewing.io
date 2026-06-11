@@ -13,7 +13,7 @@ import {
    TYPES
    ═══════════════════════════════════════════════════════════════════════════ */
 
-type Tab = 'overview' | 'seo' | 'revenue' | 'agents';
+type Tab = 'overview' | 'seo' | 'revenue' | 'agents' | 'intelligence';
 
 // Revenue
 interface RevenueData {
@@ -115,6 +115,10 @@ interface SeoRewrite {
    ═══════════════════════════════════════════════════════════════════════════ */
 
 const AGENT_CONFIG: Record<string, { icon: typeof Activity; label: string; description: string; schedule: string }> = {
+    'ceo-agent': { icon: Target, label: 'CEO Agent', description: 'Business strategy & sanity preserver clustering', schedule: 'Weekly 9am UTC' },
+    'marketer-agent': { icon: TrendingUp, label: 'Marketer Agent', description: 'AutoResearch ratchet loops (SEO/Email)', schedule: 'Daily 6am UTC' },
+    'qa-agent': { icon: Shield, label: 'QA Engineer', description: 'Checkout and API stability monitoring', schedule: 'Continuous' },
+    'designer-agent': { icon: Sparkles, label: 'Designer Agent', description: 'UI/UX friction analysis', schedule: 'Weekly 10am UTC' },
     'intelligence-digest': { icon: Zap, label: 'Intelligence Digest', description: 'Synthesizes governance trends → newsletter draft', schedule: 'Mon 8am / Monthly / Quarterly' },
     'benchmark-aggregator': { icon: BarChart3, label: 'Benchmark Aggregator', description: 'Recalculates industry percentile distributions', schedule: 'Sunday 3am UTC' },
     'seo-health': { icon: Search, label: 'SEO Health Monitor', description: 'Crawls sitemap, checks links, submits IndexNow', schedule: 'Daily 4am UTC' },
@@ -249,6 +253,7 @@ export default function CommandCenter() {
     const [seo, setSeo] = useState<SeoData | null>(null);
     const [agents, setAgents] = useState<AgentData | null>(null);
     const [rewrites, setRewrites] = useState<SeoRewrite[]>([]);
+    const [intelligence, setIntelligence] = useState<any | null>(null);
 
     /* ── Fetchers ────────────────────────────────────────────────────── */
 
@@ -292,21 +297,31 @@ export default function CommandCenter() {
         } catch { return []; }
     }, []);
 
+    const fetchIntelligence = useCallback(async () => {
+        try {
+            const res = await fetch('/api/admin/intelligence');
+            if (!res.ok) return null;
+            return await res.json();
+        } catch { return null; }
+    }, []);
+
     const refreshAll = useCallback(async () => {
         setLoading(true);
-        const [revData, seoData, agentData, rewriteData] = await Promise.all([
+        const [revData, seoData, agentData, rewriteData, intlData] = await Promise.all([
             fetchRevenue(days),
             fetchSeo(days),
             fetchAgents(),
             fetchRewrites(),
+            fetchIntelligence(),
         ]);
         setRevenue(revData);
         setSeo(seoData);
         setAgents(agentData);
         setRewrites(rewriteData);
+        setIntelligence(intlData);
         setLastRefresh(new Date());
         setLoading(false);
-    }, [days, fetchRevenue, fetchSeo, fetchAgents, fetchRewrites]);
+    }, [days, fetchRevenue, fetchSeo, fetchAgents, fetchRewrites, fetchIntelligence]);
 
     useEffect(() => {
         refreshAll();
@@ -316,7 +331,7 @@ export default function CommandCenter() {
 
     useEffect(() => {
         const tabParam = searchParams.get('tab') as Tab;
-        if (['overview', 'seo', 'revenue', 'agents'].includes(tabParam)) {
+        if (['overview', 'seo', 'revenue', 'agents', 'intelligence'].includes(tabParam)) {
             setTab(tabParam);
         } else {
             setTab('overview');
@@ -988,12 +1003,131 @@ export default function CommandCenter() {
         </div>
     );
 
+    /* ── INTELLIGENCE SECTION ─────────────────────────────────────────── */
+    const IntelligenceSection = () => {
+        if (!intelligence) return <NotConnected label="Intelligence API" />;
+        
+        const approveRecommendation = async (id: string) => {
+            await fetch('/api/admin/intelligence', {
+                method: 'POST',
+                body: JSON.stringify({ action: 'approve', recommendationId: id })
+            });
+            refreshAll();
+        };
+
+        return (
+            <div className="space-y-8">
+                {/* Pending Recommendations */}
+                <div className="bg-white border border-[#7C3AED]/30 rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(124,58,237,0.08)]">
+                    <div className="px-6 py-4 border-b border-black/8 bg-purple-50/50">
+                        <h3 className="text-sm font-semibold text-[#1A1A1A] flex items-center gap-2">
+                            <Sparkles className="w-4 h-4 text-[#7C3AED]" />
+                            Pending Agent Recommendations
+                        </h3>
+                    </div>
+                    <div className="p-6 space-y-4">
+                        {intelligence.pendingRecommendations?.map((rec: any) => (
+                            <div key={rec.id} className="p-4 border border-black/10 rounded-lg bg-[#FAFAFA]">
+                                <div className="flex items-start justify-between mb-2">
+                                    <div className="flex items-center gap-2">
+                                        <span className="px-2 py-0.5 bg-purple-100 text-[#7C3AED] text-[10px] font-mono font-bold uppercase rounded">{rec.agent}</span>
+                                        <span className="text-sm font-bold text-[#1A1A1A]">{rec.target}</span>
+                                    </div>
+                                    <span className="text-xs font-mono font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                                        {rec.estimatedImpact}
+                                    </span>
+                                </div>
+                                <p className="text-sm text-[#3A3A3A] mb-3">{rec.description}</p>
+                                <div className="bg-white p-3 rounded border border-black/5 text-xs text-[#6B6B6B] mb-4">
+                                    <strong className="text-[#3A3A3A]">Rationale:</strong> {rec.rationale}
+                                </div>
+                                <div className="flex gap-2">
+                                    <button onClick={() => approveRecommendation(rec.id)} className="px-4 py-2 bg-[#7C3AED] text-white text-xs font-bold rounded hover:bg-[#6D28D9] transition-colors">
+                                        Approve & Deploy
+                                    </button>
+                                    <button className="px-4 py-2 bg-white border border-black/10 text-[#6B6B6B] text-xs font-bold rounded hover:bg-[#F5F0EB] transition-colors">
+                                        Reject
+                                    </button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {/* Market Research */}
+                    <div className="bg-white border border-black/8 rounded-xl shadow-sm">
+                        <div className="px-6 py-4 border-b border-black/8">
+                            <h3 className="text-sm font-semibold text-[#1A1A1A] flex items-center gap-2">
+                                <Search className="w-4 h-4 text-blue-600" />
+                                Market Research Clusters (CEO)
+                            </h3>
+                        </div>
+                        <div className="p-6 space-y-4">
+                            {intelligence.marketResearch?.map((mr: any) => (
+                                <div key={mr.id} className="p-4 border border-blue-100 rounded-lg bg-blue-50/30">
+                                    <div className="flex justify-between items-start mb-2">
+                                        <h4 className="font-bold text-sm text-[#1A1A1A]">{mr.theme}</h4>
+                                        <span className="text-xs font-mono font-bold text-blue-700">{mr.confidence}% Conf.</span>
+                                    </div>
+                                    <p className="text-xs text-[#3A3A3A] mb-3">{mr.summary}</p>
+                                    <div className="space-y-1">
+                                        <div className="text-[10px] font-mono text-[#6B6B6B] uppercase mb-1">Sources</div>
+                                        {mr.sources.map((s: string, i: number) => (
+                                            <div key={i} className="text-[11px] text-[#6B6B6B] flex items-start gap-2">
+                                                <div className="w-1 h-1 bg-blue-400 rounded-full mt-1.5 shrink-0" /> 
+                                                <span>{s}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Implemented Changes */}
+                    <div className="bg-white border border-black/8 rounded-xl shadow-sm">
+                        <div className="px-6 py-4 border-b border-black/8">
+                            <h3 className="text-sm font-semibold text-[#1A1A1A] flex items-center gap-2">
+                                <CheckCircle className="w-4 h-4 text-emerald-600" />
+                                Autonomously Implemented (Ratchet)
+                            </h3>
+                        </div>
+                        <div className="p-6 space-y-4">
+                            {intelligence.implementedChanges?.map((imp: any) => (
+                                <div key={imp.id} className="p-4 border border-emerald-100 rounded-lg bg-emerald-50/30">
+                                    <div className="flex justify-between items-start mb-2">
+                                        <span className="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-[10px] font-mono font-bold uppercase rounded">{imp.agent}</span>
+                                        <span className="text-xs text-[#6B6B6B] font-mono">{timeAgo(imp.deployedAt)}</span>
+                                    </div>
+                                    <h4 className="font-semibold text-sm text-[#1A1A1A] mb-1">{imp.target}</h4>
+                                    <p className="text-xs text-[#3A3A3A] mb-3">{imp.description}</p>
+                                    <div className="flex items-center gap-4 bg-white p-2 rounded border border-black/5">
+                                        <div className="flex-1">
+                                            <div className="text-[10px] font-mono text-[#6B6B6B] uppercase">Before</div>
+                                            <div className="text-sm font-bold text-[#6B6B6B] line-through">{imp.metricBefore}</div>
+                                        </div>
+                                        <div className="flex-1">
+                                            <div className="text-[10px] font-mono text-emerald-600 uppercase">After</div>
+                                            <div className="text-sm font-bold text-emerald-600">{imp.metricAfter}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
     /* ═════════════════════════════════════════════════════════════════
        RENDER
        ═════════════════════════════════════════════════════════════════ */
 
     const tabs: Array<{ id: Tab; label: string; icon: typeof Activity }> = [
         { id: 'overview', label: 'Overview', icon: Layers },
+        { id: 'intelligence', label: 'Intelligence', icon: Sparkles },
         { id: 'seo', label: 'SEO', icon: Globe },
         { id: 'revenue', label: 'Revenue', icon: DollarSign },
         { id: 'agents', label: 'Agents', icon: Bot },
@@ -1146,6 +1280,10 @@ export default function CommandCenter() {
                         <PipelineSection />
                         <AgentsSection />
                     </div>
+                )}
+
+                {!loading && tab === 'intelligence' && (
+                    <IntelligenceSection />
                 )}
 
             </div>

@@ -97,11 +97,11 @@ async function sendConfirmationEmail(subject: string, body: string) {
             html: `
             <div style="font-family:system-ui;max-width:600px;margin:0 auto;padding:24px">
                 <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:24px">
-                    <h2 style="color:#16a34a;margin:0 0 12px">✅ Action Completed</h2>
+                    <h2 style="color:#16a34a;margin:0 0 12px">Action Completed</h2>
                     <p style="color:#374151;font-size:14px;line-height:1.6;white-space:pre-line">${body}</p>
                 </div>
                 <div style="text-align:center;margin-top:16px">
-                    <a href="${SITE_URL}/admin/command-center" style="color:#7c3aed;font-size:13px">View Command Center →</a>
+                    <a href="${SITE_URL}/admin/command-center" style="color:#7c3aed;font-size:13px">View Command Center &rarr;</a>
                 </div>
             </div>`,
         }),
@@ -115,10 +115,10 @@ export async function GET(request: Request) {
     const token = searchParams.get('token');
 
     if (!token) {
-        return new Response(renderHTML('❌ Error', 'No action token provided.', false), {
+        return new Response(renderHTML('Error', 'No action token provided.', false), {
             status: 400,
             headers: {
-                'Content-Type': 'text/html',
+                'Content-Type': 'text/html; charset=utf-8',
                 'Cache-Control': 'no-store, max-age=0, must-revalidate',
             },
         });
@@ -126,10 +126,10 @@ export async function GET(request: Request) {
 
     const verified = verifyToken(token);
     if (!verified) {
-        return new Response(renderHTML('❌ Expired or Invalid', 'This action link has expired or is invalid. Actions expire after 72 hours.', false), {
+        return new Response(renderHTML('Expired or Invalid', 'This action link has expired or is invalid. Actions expire after 72 hours.', false), {
             status: 403,
             headers: {
-                'Content-Type': 'text/html',
+                'Content-Type': 'text/html; charset=utf-8',
                 'Cache-Control': 'no-store, max-age=0, must-revalidate',
             },
         });
@@ -152,14 +152,14 @@ export async function GET(request: Request) {
 
     return new Response(
         renderHTML(
-            result.success ? '✅ Done' : '⚠️ Issue',
+            result.success ? 'Done' : 'Issue',
             result.message,
             result.success
         ),
         {
             status: 200,
             headers: {
-                'Content-Type': 'text/html',
+                'Content-Type': 'text/html; charset=utf-8',
                 'Cache-Control': 'no-store, max-age=0, must-revalidate',
             }
         }
@@ -172,7 +172,7 @@ function renderHTML(title: string, message: string, success: boolean): string {
     const textColor = success ? '#16a34a' : '#dc2626';
 
     return `<!DOCTYPE html>
-<html><head><title>${title} | richardewing.io</title>
+<html><head><meta charset="utf-8"><title>${title} | richardewing.io</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>body{font-family:system-ui,-apple-system,sans-serif;background:#0a0a0f;color:#fff;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0}
 .card{background:${bgColor};border:2px solid ${borderColor};border-radius:16px;padding:40px;max-width:500px;text-align:center}
@@ -183,6 +183,6 @@ a{display:inline-block;margin-top:20px;padding:12px 24px;background:#7c3aed;colo
 <body><div class="card">
 <h1>${title}</h1>
 <p>${message}</p>
-<a href="${SITE_URL}/admin/command-center">View Command Center →</a>
+<a href="${SITE_URL}/admin/command-center">View Command Center &rarr;</a>
 </div></body></html>`;
 }
