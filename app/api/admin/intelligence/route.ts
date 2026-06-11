@@ -36,7 +36,7 @@ export async function GET() {
             {
                 id: 'rec-1',
                 type: 'ui_change',
-                agent: 'designer-agent',
+                agent: 'ux-ui-agent',
                 target: '/checkout',
                 description: 'Add a "Compliance & Security" badge near the credit card input.',
                 rationale: 'Bounce rate on checkout is 42% for enterprise IPs. Based on Market Research cluster #mr-2, adding security trust signals will reduce friction.',
@@ -46,6 +46,17 @@ export async function GET() {
             },
             {
                 id: 'rec-2',
+                type: 'cx_initiative',
+                agent: 'cx-agent',
+                target: 'Post-Churn Nurture',
+                description: 'Send automated "Price-Sensitivity" survey to users churning from Pro tier.',
+                rationale: '4 recent cancellations cited "Too Expensive". We need to map this to the "AI Billing Shock" fear to see if they prefer a strict usage cap.',
+                estimatedImpact: '10% Churn Recovery',
+                status: 'pending_approval',
+                createdAt: new Date(Date.now() - 3600000).toISOString(),
+            },
+            {
+                id: 'rec-3',
                 type: 'pricing_tweak',
                 agent: 'ceo-agent',
                 target: '/pricing',
