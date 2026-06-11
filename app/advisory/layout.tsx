@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { advisoryKeywords } from '../lib/keywords';
 
 export const metadata: Metadata = {
-    title: 'Stop AI Billing Shock: 1-Hour PainPoint Pilot for $199',
-    description: 'VP Eng? AI costs out of control? Get a 1-hour PainPoint Pilot with Richard Ewing to pinpoint hidden spend & boost Copilot ROI. Avoid future billing shock.',
+    title: 'Stop AI Billing Shock: PainPoint Pilot for VPs Eng. $5k',
+    description: 'AI tool costs out of control? PainPoint Pilot helps VPs Eng cut Copilot ROI losses & avoid billing shock. Get control with Richard Ewing\'s advisory.',
     keywords: [...advisoryKeywords, 'AI consulting services', 'AI implementation strategy', 'Pilot extraction', 'Shadow AI audit', 'enterprise AI governance', 'AI for SMBs', 'AI project rescue'],
     alternates: {
         canonical: 'https://www.richardewing.io/advisory',
