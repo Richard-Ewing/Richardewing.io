@@ -1102,7 +1102,13 @@ export default function CommandCenter() {
                                         <span className="text-xs text-[#6B6B6B] font-mono">{timeAgo(imp.deployedAt)}</span>
                                     </div>
                                     <h4 className="font-semibold text-sm text-[#1A1A1A] mb-1">{imp.target}</h4>
-                                    <p className="text-xs text-[#3A3A3A] mb-3">{imp.description}</p>
+                                    <p className="text-xs text-[#3A3A3A] mb-2">{imp.description}</p>
+                                    {imp.themeTested && (
+                                        <div className="bg-white/60 p-2 rounded border border-emerald-200/50 text-[11px] text-emerald-800 mb-3 flex items-start gap-1.5">
+                                            <Search className="w-3 h-3 shrink-0 mt-0.5" />
+                                            <span><strong>Market Hypothesis:</strong> {imp.themeTested}</span>
+                                        </div>
+                                    )}
                                     <div className="flex items-center gap-4 bg-white p-2 rounded border border-black/5">
                                         <div className="flex-1">
                                             <div className="text-[10px] font-mono text-[#6B6B6B] uppercase">Before</div>
