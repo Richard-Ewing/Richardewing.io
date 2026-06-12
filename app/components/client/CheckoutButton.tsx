@@ -8,8 +8,8 @@ import { PRODUCTS } from '@/lib/products';
 interface CheckoutButtonProps {
     productId: string;
     label?: string;
-    icon?: 'file' | 'key' | 'lock';
-    variant?: 'primary' | 'secondary' | 'outline';
+    icon?: 'file' | 'key' | 'lock' | 'none';
+    variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
     moduleId?: string; // used for single_module routing
 }
 
@@ -19,17 +19,13 @@ export default function CheckoutButton({ productId, label, icon = 'file', varian
     const { openSignIn } = useClerk();
 
     const handleCheckout = () => {
-        if (!isSignedIn) {
-            openSignIn();
-            return;
-        }
-        
+
         setLoading(true);
         const product = PRODUCTS[productId];
         if (product?.paymentLink) {
             const url = new URL(product.paymentLink);
             if (user?.id) {
-                const referenceId = productId === 'single_module' && moduleId ? `${user.id}::module_${moduleId}` : user.id;
+                const referenceId = productId === 'single_module' && moduleId ? `${user.id}::module_${moduleId}` : `${user.id}::${productId}`;
                 url.searchParams.append('client_reference_id', referenceId);
             }
             if (user?.primaryEmailAddress?.emailAddress) {
@@ -45,6 +41,7 @@ export default function CheckoutButton({ productId, label, icon = 'file', varian
     let baseClass = "flex items-center justify-center gap-2 w-full py-4 rounded-xl font-bold text-sm font-semibold transition-opacity ";
     if (variant === 'primary') baseClass += "bg-gradient-to-r from-violet-600 to-purple-600 text-zinc-950 font-semibold hover:opacity-90 shadow-lg";
     else if (variant === 'secondary') baseClass += "bg-emerald-500 text-zinc-950 font-semibold hover:bg-emerald-400";
+    else if (variant === 'ghost') baseClass = "block w-full py-3 mt-4 text-center text-xs font-bold font-mono uppercase tracking-widest rounded bg-zinc-100 text-zinc-900 hover:bg-zinc-200 transition-colors";
     else baseClass += "border border-zinc-500 text-zinc-950 font-bold hover:bg-zinc-50";
 
     const defaultLabel = `Get Access — $${PRODUCTS[productId]?.price ? PRODUCTS[productId].price / 100 : 29}`;
@@ -55,7 +52,7 @@ export default function CheckoutButton({ productId, label, icon = 'file', varian
             disabled={loading}
             className={baseClass}
         >
-            <IconComponent className="w-4 h-4" />
+            {icon !== 'none' && <IconComponent className="w-4 h-4 inline-block mr-2" />}
             {loading ? 'Redirecting...' : (label || defaultLabel)}
         </button>
     );

@@ -23,10 +23,10 @@ export default function CheckoutPending() {
                     Please return shortly or contact your account representative to manually process this transaction.
                 </p>
                 <Link 
-                    href="/vault/curriculum/tracks"
+                    href="/advisory"
                     className="inline-flex items-center justify-center px-6 py-3 rounded-lg border-2 border-zinc-400 text-zinc-950 font-bold hover:border-violet-400 hover:bg-violet-50/30 transition-all font-mono tracking-widest text-sm uppercase"
                 >
-                    ← Return to Curriculum
+                    ← Return to Advisory Services
                 </Link>
             </div>
         </div>

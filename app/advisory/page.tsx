@@ -1,10 +1,9 @@
-"use client";
-
 import React from 'react';
 import BlurIn from '@/components/magicui/blur-in';
 import ShineBorder from '@/components/magicui/shine-border';
 import { BorderBeam } from '@/components/magicui/border-beam';
 import Link from 'next/link';
+import CheckoutButton from '@/app/components/client/CheckoutButton';
 
 
 export default function AdvisoryPage() {
@@ -19,9 +18,9 @@ export default function AdvisoryPage() {
                         <span className="w-2 h-2 rounded bg-purple-500 animate-pulse"></span>
                         AI Consulting & Implementation Strategy
                     </div>
-                    <BlurIn word="What is your AI friction point?" className="text-5xl md:text-7xl font-bold font-grotesk tracking-tighter text-zinc-950 mb-6" />
+                    <BlurIn word="Eliminate AI Billing Shock & Shadow AI Risks." className="text-5xl md:text-7xl font-bold font-grotesk tracking-tighter text-zinc-950 mb-6" />
                     <p className="text-zinc-950 font-bold text-lg sm:text-xl max-w-3xl mx-auto mb-6 leading-relaxed">
-                        I do not sell $50,000 PowerPoint decks. I run specialized engineering taskforces to rescue failed pilots, lock down Shadow AI data leaks, and deploy deterministic, production-ready AI pipelines.
+                        I do not sell $50,000 PowerPoint decks. I deploy specialized engineering taskforces to guarantee Strict Cost Caps, install Audit-Ready Governance, and ensure Zero Shadow AI liabilities.
                     </p>
 
                     <div className="inline-flex items-center gap-6 px-8 py-3 rounded-full bg-white/5 border border-zinc-400 text-xs font-mono tracking-widest text-zinc-950 font-bold">
@@ -67,20 +66,20 @@ export default function AdvisoryPage() {
                             <BorderBeam size={300} duration={12} delay={9} borderWidth={2} colorFrom="#3b82f6" colorTo="#1d4ed8" />
                             <div className="p-8 relative z-10 flex flex-col h-full">
                                 <div>
-                                    <div className="text-xs font-bold font-mono text-blue-600 uppercase tracking-widest mb-4">Pain Point: Pilot Purgatory</div>
-                                    <h3 className="text-2xl font-bold text-zinc-950 mb-2">"Our AI pilot is failing in production."</h3>
+                                    <div className="text-xs font-bold font-mono text-blue-600 uppercase tracking-widest mb-4">Pain Point: Unpredictable AI Billing</div>
+                                    <h3 className="text-2xl font-bold text-zinc-950 mb-2">"Our AI token costs are spiraling out of control."</h3>
                                     <p className="text-zinc-600 text-sm leading-relaxed mb-6">
-                                        You built a LangChain demo, but it hallucinates, loops, or fails unpredictably when exposed to real users. You need to bridge the MLOps gap immediately.
+                                        Your pilot works, but scaling it exposes you to 'AI Billing Shock' due to unpredictable token and inference costs. You need strict architectural cost caps without degrading performance.
                                     </p>
                                     <div className="p-4 bg-blue-50 border border-blue-100 rounded-lg mb-6">
-                                        <div className="text-sm font-bold text-blue-900 mb-1">The Solution: Pilot Extraction Sprint</div>
-                                        <div className="text-xs text-blue-700">We replace probabilistic APIs with deterministic runtime governance and deploy proper telemetry.</div>
-                                        <div className="mt-2 text-sm font-bold text-zinc-900">$10,000 / mo</div>
+                                        <div className="text-sm font-bold text-blue-900 mb-1">The Solution: Inference Optimization Sprint</div>
+                                        <div className="text-xs text-blue-700">We replace probabilistic, expensive APIs with deterministic runtime governance and hard cost ceilings.</div>
                                     </div>
                                 </div>
                                 <div className="mt-auto">
-                                    <a href="mailto:richard@richardewing.io?subject=Inquiry: Pilot Extraction" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-blue-600 text-white hover:bg-blue-500 transition-all uppercase shadow-[0_0_20px_rgba(59,130,246,0.3)]">
-                                        Request Extraction
+                                    <div className="mb-4 text-lg font-bold text-zinc-950 text-center">$10,000 / mo</div>
+                                    <a href="mailto:richard@richardewing.io?subject=Inquiry: Cost Caps & Optimization" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-blue-600 text-white hover:bg-blue-500 transition-all uppercase shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+                                        Enforce Cost Caps
                                     </a>
                                 </div>
                             </div>
@@ -90,20 +89,20 @@ export default function AdvisoryPage() {
                         <div className="card bg-white border border-zinc-200 shadow-sm relative overflow-hidden group hover:border-purple-500/50 transition-all">
                             <div className="p-8 h-full flex flex-col">
                                 <div>
-                                    <div className="text-xs font-bold font-mono text-purple-600 uppercase tracking-widest mb-4">Pain Point: Data Leaks</div>
-                                    <h3 className="text-2xl font-bold text-zinc-950 mb-2">"Employees are using Shadow AI."</h3>
+                                    <div className="text-xs font-bold font-mono text-purple-600 uppercase tracking-widest mb-4">Pain Point: Unregulated Shadow AI</div>
+                                    <h3 className="text-2xl font-bold text-zinc-950 mb-2">"Unregulated API integrations are bypassing security."</h3>
                                     <p className="text-zinc-600 text-sm leading-relaxed mb-6">
-                                        You are terrified of IP leaks into public LLMs. You need to lock down rogue AI usage and install secure, sovereign models within your VPC to ensure SOC2 compliance.
+                                        Employees are leveraging unauthorized tools. You need to lock down rogue AI usage, audit existing API leaks, and install Audit-Ready Governance within your VPC to ensure zero liabilities.
                                     </p>
                                     <div className="p-4 bg-purple-50 border border-purple-100 rounded-lg mb-6">
-                                        <div className="text-sm font-bold text-purple-900 mb-1">The Solution: Shadow AI Governance Audit</div>
-                                        <div className="text-xs text-purple-700">We identify leaks, cut API taxes, and repatriate your models securely.</div>
-                                        <div className="mt-2 text-sm font-bold text-zinc-900">$10,000 / mo</div>
+                                        <div className="text-sm font-bold text-purple-900 mb-1">The Solution: Audit-Ready Governance Integration</div>
+                                        <div className="text-xs text-purple-700">We identify leaks, eliminate unvetted integrations, and repatriate your models securely.</div>
                                     </div>
                                 </div>
                                 <div className="mt-auto">
-                                    <a href="mailto:richard@richardewing.io?subject=Inquiry: Shadow AI Governance" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100 transition-all uppercase">
-                                        Secure Your Data
+                                    <div className="mb-4 text-lg font-bold text-zinc-950 text-center">$10,000 / mo</div>
+                                    <a href="mailto:richard@richardewing.io?subject=Inquiry: Shadow AI Audit" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100 transition-all uppercase">
+                                        Audit Your Shadow AI
                                     </a>
                                 </div>
                             </div>
@@ -149,16 +148,16 @@ export default function AdvisoryPage() {
                                 <span className="font-mono text-cyan-700 font-extrabold font-semibold">$2,500</span>
                             </div>
                             <p className="text-sm text-zinc-600 mb-4">You run the PDI tool, you don't like the number. We sit down for 60 minutes, locate the exact capital leak, and formulate an immediate reduction strategy.</p>
-                            <a href="/api/buy/insolvency_diagnostic" className="text-xs font-bold font-mono text-cyan-600 uppercase tracking-widest hover:text-cyan-800">Book Session →</a>
+                            <CheckoutButton productId="insolvency_diagnostic" label="Book Session →" variant="ghost" icon="none" />
                         </div>
 
                         <div className="bg-white border border-zinc-200 p-6 rounded-2xl shadow-sm hover:border-amber-500/30 transition-all">
                             <div className="flex justify-between items-start mb-2">
                                 <h3 className="text-lg font-bold text-zinc-900">Gut-Check Evaluation</h3>
-                                <span className="font-mono text-amber-600">$450</span>
+                                <span className="font-mono font-extrabold text-amber-700">$450</span>
                             </div>
                             <p className="text-sm text-zinc-600 mb-4">Not sure if you have a problem? A 30-minute rapid-fire session. You describe your AWS bill and velocity, I tell you if your building is on fire.</p>
-                            <a href="/api/buy/gut_check" className="text-xs font-bold font-mono text-amber-600 uppercase tracking-widest hover:text-amber-700">Schedule Evaluation →</a>
+                            <CheckoutButton productId="gut_check" label="Schedule Evaluation →" variant="ghost" icon="none" />
                         </div>
 
                         <div className="bg-white border border-zinc-200 p-6 rounded-2xl shadow-sm hover:border-rose-500/30 transition-all">
@@ -167,7 +166,7 @@ export default function AdvisoryPage() {
                                 <span className="font-mono text-rose-600 font-extrabold">$5,000</span>
                             </div>
                             <p className="text-sm text-zinc-600 mb-4">Your team spends 4.3 hours/week checking AI outputs. That is $14,200/employee/year in invisible verification labor. We quantify the total hallucination cost and build the guardrail plan.</p>
-                            <a href="/api/buy/hallucination_tax_audit" className="text-xs font-bold font-mono text-rose-600 uppercase tracking-widest hover:text-rose-800">Book Audit →</a>
+                            <CheckoutButton productId="hallucination_tax_audit" label="Book Audit →" variant="ghost" icon="none" />
                         </div>
 
                         <div className="bg-white border border-zinc-200 p-6 rounded-2xl shadow-sm hover:border-violet-500/30 transition-all">
@@ -176,7 +175,7 @@ export default function AdvisoryPage() {
                                 <span className="font-mono text-violet-600 font-extrabold">$2,500</span>
                             </div>
                             <p className="text-sm text-zinc-600 mb-4">67% of employees use AI. 18% of orgs have policies. EU AI Act fines hit 7% of global turnover in August 2026. We audit your governance posture and deliver a 90-day compliance roadmap.</p>
-                            <a href="/api/buy/ai_policy_readiness" className="text-xs font-bold font-mono text-violet-600 uppercase tracking-widest hover:text-violet-800">Start Assessment →</a>
+                            <CheckoutButton productId="ai_policy_readiness" label="Start Assessment →" variant="ghost" icon="none" />
                         </div>
                     </div>
                 </section>

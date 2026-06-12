@@ -9,12 +9,7 @@ export async function GET(
     const { productId } = await params;
     
     // Server-side Auth Check
-    const { userId, redirectToSignIn } = await auth();
-
-    // Force sign-in loop if anonymous
-    if (!userId) {
-        return redirectToSignIn({ returnBackUrl: request.url });
-    }
+    const { userId } = await auth();
 
     const product = PRODUCTS[productId];
 
@@ -22,15 +17,17 @@ export async function GET(
         return NextResponse.redirect(new URL('/checkout-pending', request.url));
     }
 
-    // Construct precise Stripe Payload with guaranteed Clerk Identity Identity Mapping
+    // Construct precise Stripe Payload with guaranteed Clerk Identity Mapping
     const stripeUrl = new URL(product.paymentLink);
-    const searchParams = new URL(request.url).searchParams;
-    const moduleId = searchParams.get('moduleId');
     
-    // Support dual-referencing for granular module purchases
-    // Format: userId::productId or userId::module_X for legacy module purchases
-    const referenceId = moduleId ? `${userId}::module_${moduleId}` : `${userId}::${productId}`;
-    stripeUrl.searchParams.append('client_reference_id', referenceId);
+    if (userId) {
+        const searchParams = new URL(request.url).searchParams;
+        const moduleId = searchParams.get('moduleId');
+        
+        // Support dual-referencing for granular module purchases
+        const referenceId = moduleId ? `${userId}::module_${moduleId}` : `${userId}::${productId}`;
+        stripeUrl.searchParams.append('client_reference_id', referenceId);
+    }
 
     return NextResponse.redirect(stripeUrl);
 }
