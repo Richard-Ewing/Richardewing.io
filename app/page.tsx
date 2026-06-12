@@ -13,8 +13,8 @@ import PricingPreview from './components/sections/PricingPreview';
 import NewsletterSection from './components/sections/NewsletterSection';
 
 export const metadata: Metadata = {
-  title: 'Stop Funding Failed AI Pilots & R&D Waste | Richard Ewing',
-  description: 'Most enterprise AI integrations fail at the operational level, not the model level. I audit R&D capital, locate silent cash leaks, and install deterministic margins.',
+  title: 'Measure LLM ROI & Prevent Rogue Agents | Richard Ewing',
+  description: 'Why do AI pilots fail? Because of unpredictable abstraction layers. I help enterprises measure LLM ROI, deploy deterministic guardrails, and reduce LangChain token costs.',
   alternates: {
     canonical: 'https://www.richardewing.io',
   },
@@ -41,6 +41,35 @@ export default function Home() {
               'name': 'Richard Ewing',
               'url': 'https://www.richardewing.io/',
               'logo': 'https://www.richardewing.io/favicon.png'
+            },
+            {
+              '@type': 'FAQPage',
+              'mainEntity': [
+                {
+                  '@type': 'Question',
+                  'name': 'Why do enterprise AI pilots fail?',
+                  'acceptedAnswer': {
+                    '@type': 'Answer',
+                    'text': 'Enterprise AI pilots fail because of unpredictable token costs, brittle abstraction layers like LangChain, and a lack of measurable LLM ROI. We deploy deterministic guardrails to solve this.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  'name': 'How do you prevent an LLM agent from going rogue?',
+                  'acceptedAnswer': {
+                    '@type': 'Answer',
+                    'text': 'We implement deterministic guardrails and runtime observability to intercept tool calls before they execute, preventing non-deterministic agents from causing massive data leaks or infrastructure damage.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  'name': 'How to migrate away from LangChain in production?',
+                  'acceptedAnswer': {
+                    '@type': 'Answer',
+                    'text': 'LangChain abstraction often leads to latency spikes and excessive OpenAI token costs. We audit your AI architecture and replace it with lean, deterministic orchestration designed for production scale.'
+                  }
+                }
+              ]
             }
           ]
         }) }}
