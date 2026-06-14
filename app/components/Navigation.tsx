@@ -40,12 +40,12 @@ const Navigation = () => {
                             </div>
                             <div>
                                 <div className="font-semibold text-zinc-900 group-hover:text-[var(--accent-purple)] transition-colors">Richard Ewing</div>
-                                <div className="text-xs font-bold text-zinc-900 font-bold">AI Economist</div>
+                                <div className="text-xs font-bold text-zinc-900">AI Economist</div>
                             </div>
                         </Link>
 
                         {/* Desktop Nav — Reorganized for Framework and Research Integration */}
-                        <div className="hidden xl:flex items-center gap-5 lg:gap-6">
+                        <div className="hidden lg:flex items-center gap-4">
 
                             {/* Start Here / Member Dashboard */}
                             <Link href={isSignedIn ? "/vault" : "/start-here"} className="text-emerald-900 font-extrabold hover:text-emerald-500 transition-colors relative group font-semibold">
@@ -78,20 +78,25 @@ const Navigation = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/exogram" className="text-purple-900 font-extrabold hover:text-zinc-900 transition-colors relative group font-medium">
+                            <Link href="/exogram" className="text-purple-700 font-bold hover:text-purple-500 transition-colors relative group">
                                 Exogram
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full" />
+                            </Link>
+
+                            <Link href="/about" className="text-zinc-700 hover:text-zinc-900 transition-colors relative group font-medium">
+                                About
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/about" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
-                                About
+                            <Link href="/pricing" className="text-zinc-700 hover:text-zinc-900 transition-colors relative group font-medium">
+                                Pricing
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
                             {/* Primary CTA */}
                             <Link
                                 href="/advisory"
-                                className="bg-[var(--accent-crimson)] px-4 py-2 rounded-lg font-semibold text-zinc-950 hover:bg-opacity-90 transition-all shadow-[0_0_15px_rgba(255,68,68,0.2)] hover:shadow-[0_0_20px_rgba(255,68,68,0.4)] transform hover:-translate-y-0.5 text-xs uppercase tracking-wider font-bold"
+                                className="bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-2 rounded-lg font-bold text-white hover:opacity-90 transition-all shadow-lg shadow-violet-500/20 hover:shadow-xl hover:shadow-violet-500/30 transform hover:-translate-y-0.5 text-xs uppercase tracking-wider"
                             >
                                 Book Audit →
                             </Link>
@@ -116,7 +121,7 @@ const Navigation = () => {
 
                         {/* Mobile Hamburger */}
                         <button
-                            className="md:hidden text-zinc-900 p-2"
+                            className="lg:hidden text-zinc-900 p-2"
                             onClick={() => setMobileMenuOpen(true)}
                             aria-label="Open Menu"
                         >
@@ -177,10 +182,10 @@ const DropdownItem = ({ href, children, description }: { href: string, children:
     return (
         <Link
             href={href}
-            className="block px-4 py-3 text-sm font-semibold text-zinc-900 font-medium hover:text-zinc-900 hover:bg-zinc-50 transition-colors border-l-2 border-transparent hover:border-[var(--accent-purple)]"
+            className="block px-4 py-3 text-sm font-medium text-zinc-900 hover:text-zinc-900 hover:bg-zinc-50 transition-colors border-l-2 border-transparent hover:border-[var(--accent-purple)]"
         >
             <span className="block">{children}</span>
-            {description && <span className="block text-xs font-bold font-medium text-zinc-900 mt-0.5">{description}</span>}
+            {description && <span className="block text-xs font-medium text-zinc-600 mt-0.5">{description}</span>}
         </Link>
     );
 };
@@ -210,7 +215,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                     <Link
                         href={isSignedIn ? "/vault" : "/start-here"}
                         onClick={onClose}
-                        className="block w-full bg-gradient-to-r from-emerald-600 to-cyan-600 text-zinc-950 font-semibold text-center font-bold py-4 rounded-xl text-lg hover:opacity-90 transition-opacity"
+                        className="block w-full bg-gradient-to-r from-emerald-600 to-cyan-600 text-white font-bold text-center py-4 rounded-xl text-lg hover:opacity-90 transition-opacity"
                     >
                         ✦ {isSignedIn ? "ACCESS VAULT" : "START HERE"}
                     </Link>
@@ -223,7 +228,8 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <MobileLink href="/articles" onClick={onClose} className="text-lg font-bold">Articles</MobileLink>
                         <MobileLink href="/tools" onClick={onClose} className="text-lg font-bold">Tools</MobileLink>
                         <MobileLink href="/curriculum" onClick={onClose} className="text-lg font-bold">Curriculum</MobileLink>
-                        <MobileLink href="/exogram" onClick={onClose} className="text-lg font-bold text-purple-900 font-extrabold">Exogram</MobileLink>
+                        <MobileLink href="/exogram" onClick={onClose} className="text-lg font-bold text-purple-700">Exogram</MobileLink>
+                        <MobileLink href="/pricing" onClick={onClose} className="text-lg font-bold">Pricing</MobileLink>
                         <MobileLink href="/about" onClick={onClose} className="text-lg font-bold">About</MobileLink>
                     </div>
 
@@ -232,7 +238,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                     <Link
                         href="/advisory"
                         onClick={onClose}
-                        className="block w-full bg-[var(--accent-crimson)] text-zinc-950 font-semibold text-center font-bold py-4 rounded-xl text-lg hover:opacity-90 transition-opacity mb-4"
+                        className="block w-full bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-center py-4 rounded-xl text-lg hover:opacity-90 transition-opacity mb-4"
                     >
                         BOOK AN AUDIT
                     </Link>
@@ -294,19 +300,19 @@ const UserDropdown = () => {
 
     return (
         <Dropdown label={
-            <div className="w-8 h-8 rounded-full bg-violet-600 text-zinc-950 font-semibold flex items-center justify-center font-bold text-sm font-semibold border border-violet-400/50 hover:border-violet-400 transition-colors shadow-[0_0_10px_rgba(139,92,246,0.3)]">
+            <div className="w-8 h-8 rounded-full bg-violet-600 text-white font-bold flex items-center justify-center text-sm border border-violet-400/50 hover:border-violet-400 transition-colors">
                 {initials}
             </div>
         }>
             <div className="px-4 py-3 border-b border-zinc-400 mb-2">
-                <p className="text-sm font-semibold font-medium text-zinc-900">{user.fullName || 'User'}</p>
-                <p className="text-xs font-bold text-zinc-950 truncate">{user.primaryEmailAddress?.emailAddress}</p>
+                <p className="text-sm font-semibold text-zinc-900">{user.fullName || 'User'}</p>
+                <p className="text-xs text-zinc-600 truncate">{user.primaryEmailAddress?.emailAddress}</p>
             </div>
             <DropdownItem href="/vault" description="Your intelligence dashboard">My Vault</DropdownItem>
             <DropdownItem href="/system" description="All enterprise tools">Tools Library</DropdownItem>
             <button 
                 onClick={() => signOut()} 
-                className="w-full text-left block px-4 py-3 text-sm font-semibold text-zinc-900 font-medium hover:text-red-900 font-extrabold hover:bg-zinc-50 transition-colors mt-2 border-t border-zinc-400"
+                className="w-full text-left block px-4 py-3 text-sm font-medium text-zinc-700 hover:text-red-600 hover:bg-zinc-50 transition-colors mt-2 border-t border-zinc-200"
             >
                 Sign Out
             </button>

@@ -15,39 +15,39 @@ const ToolsPreview = () => {
                 <div className="grid-3 max-w-5xl mx-auto">
 
                     <Link href="/tools/pdi" className="card hover:border-purple-300 group block">
-                        <div className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-2">01</div>
-                        <h3 className="font-semibold text-zinc-900 mb-2 group-hover:text-purple-900 font-extrabold">Product Debt Index</h3>
-                        <p className="text-zinc-950 text-sm">Quantify hidden technical debt</p>
+                        <div className="text-xs font-bold text-zinc-500 uppercase tracking-wide mb-2">01</div>
+                        <h3 className="font-bold text-zinc-900 mb-2 group-hover:text-purple-700">Product Debt Index</h3>
+                        <p className="text-zinc-600 text-sm">Quantify hidden technical debt</p>
                     </Link>
 
                     <Link href="/tools/ev-se" className="card hover:border-purple-300 group block">
-                        <div className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-2">02</div>
-                        <h3 className="font-semibold text-zinc-900 mb-2 group-hover:text-purple-900 font-extrabold">Valuation Scenario Engine</h3>
-                        <p className="text-zinc-950 text-sm">Model enterprise value impact</p>
+                        <div className="text-xs font-bold text-zinc-500 uppercase tracking-wide mb-2">02</div>
+                        <h3 className="font-bold text-zinc-900 mb-2 group-hover:text-purple-700">Valuation Scenario Engine</h3>
+                        <p className="text-zinc-600 text-sm">Model enterprise value impact</p>
                     </Link>
 
                     <Link href="/tools/aueb" className="card hover:border-purple-300 group block">
-                        <div className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-2">03</div>
-                        <h3 className="font-semibold text-zinc-900 mb-2 group-hover:text-purple-900 font-extrabold">AI Unit Economics</h3>
-                        <p className="text-zinc-950 text-sm">Find your AI collapse point</p>
+                        <div className="text-xs font-bold text-zinc-500 uppercase tracking-wide mb-2">03</div>
+                        <h3 className="font-bold text-zinc-900 mb-2 group-hover:text-purple-700">AI Unit Economics</h3>
+                        <p className="text-zinc-600 text-sm">Find your AI collapse point</p>
                     </Link>
 
                     <Link href="/tools/aper" className="card hover:border-purple-300 group block">
-                        <div className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-2">04</div>
-                        <h3 className="font-semibold text-zinc-900 mb-2 group-hover:text-purple-900 font-extrabold">Engineering Ratio</h3>
-                        <p className="text-zinc-950 text-sm">Assess staffing efficiency</p>
+                        <div className="text-xs font-bold text-zinc-500 uppercase tracking-wide mb-2">04</div>
+                        <h3 className="font-bold text-zinc-900 mb-2 group-hover:text-purple-700">Engineering Ratio</h3>
+                        <p className="text-zinc-600 text-sm">Assess staffing efficiency</p>
                     </Link>
 
                     <Link href="/tools/audit-interview" className="card hover:border-purple-300 group block">
-                        <div className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-2">05</div>
-                        <h3 className="font-semibold text-zinc-900 mb-2 group-hover:text-purple-900 font-extrabold">Audit Interview</h3>
-                        <p className="text-zinc-950 text-sm">Test hiring judgment</p>
+                        <div className="text-xs font-bold text-zinc-500 uppercase tracking-wide mb-2">05</div>
+                        <h3 className="font-bold text-zinc-900 mb-2 group-hover:text-purple-700">Audit Interview</h3>
+                        <p className="text-zinc-600 text-sm">Test hiring judgment</p>
                     </Link>
 
                     <Link href="/tools" className="card border-dashed hover:border-zinc-500 group block">
-                        <div className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-2">ALL TOOLS</div>
+                        <div className="text-xs font-bold text-zinc-500 uppercase tracking-wide mb-2">ALL TOOLS</div>
                         <h3 className="font-semibold text-zinc-900 mb-2 group-hover:text-zinc-900">View All Tools →</h3>
-                        <p className="text-zinc-950 text-sm">See the complete toolkit</p>
+                        <p className="text-zinc-600 text-sm">See the complete toolkit</p>
                     </Link>
 
                 </div>

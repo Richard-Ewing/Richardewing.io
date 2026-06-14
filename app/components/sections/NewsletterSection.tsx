@@ -70,7 +70,7 @@ const NewsletterSection = () => {
                         {state.succeeded ? (
                             <div className="py-4">
                                 <div className="w-16 h-16 bg-emerald-50 border border-emerald-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                                    <CheckCircle className="w-8 h-8 text-emerald-900 font-extrabold" />
+                                    <CheckCircle className="w-8 h-8 text-emerald-600" />
                                 </div>
                                 <h3 className="text-2xl font-bold text-zinc-900 mb-2">Redirecting to Checklist ✓</h3>
                                 <p className="text-zinc-900">Loading your R&D Audit Checklist...</p>
@@ -94,14 +94,14 @@ const NewsletterSection = () => {
                                     <button
                                         type="submit"
                                         disabled={state.submitting || isValidating}
-                                        className="px-8 py-4 rounded-lg bg-purple-700 text-zinc-900 font-bold hover:bg-purple-600 transition-colors whitespace-nowrap disabled:opacity-70 flex items-center justify-center gap-2"
+                                        className="px-8 py-4 rounded-lg bg-violet-600 text-white font-bold hover:bg-violet-500 transition-colors whitespace-nowrap disabled:opacity-70 flex items-center justify-center gap-2"
                                     >
                                         {(state.submitting || isValidating) ? <Loader2 className="w-4 h-4 animate-spin" /> : <>Get Checklist <ArrowRight className="w-3 h-3" /></>}
                                     </button>
                                 </form>
 
                                 {validationError && (
-                                    <div className="max-w-md mx-auto mt-3 flex items-center gap-2 p-2 bg-red-50 border border-red-200 rounded-lg text-red-900 font-extrabold text-xs">
+                                    <div className="max-w-md mx-auto mt-3 flex items-center gap-2 p-2 bg-red-50 border border-red-200 rounded-lg text-red-700 text-xs">
                                         <AlertCircle className="w-3 h-3" /><span>{validationError}</span>
                                     </div>
                                 )}

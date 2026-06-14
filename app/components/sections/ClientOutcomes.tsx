@@ -1,7 +1,8 @@
 "use client";
 
 import NumberTicker from '@/components/magicui/number-ticker';
-import { TrendingUp, ArrowDown, ArrowUp } from 'lucide-react';
+import Link from 'next/link';
+import { TrendingUp, ArrowDown, ArrowUp, ArrowRight } from 'lucide-react';
 
 const ClientOutcomes = () => {
     return (
@@ -75,6 +76,17 @@ const ClientOutcomes = () => {
                         </div>
                     </div>
 
+                </div>
+
+                {/* CTA after social proof */}
+                <div className="text-center mt-10">
+                    <p className="text-zinc-600 text-sm mb-4 font-medium">
+                        Results from anonymized R&D Capital Audit engagements.
+                    </p>
+                    <Link href="/advisory" className="inline-flex items-center gap-2 text-violet-700 font-bold hover:text-violet-500 transition-colors group">
+                        See how an audit works for your organization
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                    </Link>
                 </div>
 
             </div>
