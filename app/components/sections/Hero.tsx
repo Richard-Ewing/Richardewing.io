@@ -1,114 +1,78 @@
 "use client";
 
 import Link from 'next/link';
-import WordRotate from '@/components/magicui/word-rotate';
 import { AsSeenIn } from '@/components/AsSeenIn';
-import { ArrowRight, Shield, AlertTriangle, Search } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section className="min-h-[75vh] flex items-center justify-center py-16">
+        <section className="relative min-h-[80vh] flex items-center justify-center py-20 overflow-hidden">
+            {/* Animated gradient mesh background */}
+            <div className="absolute inset-0 -z-10 overflow-hidden">
+                <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-gradient-to-br from-rose-200/40 via-violet-200/30 to-transparent blur-3xl animate-drift-slow" />
+                <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-gradient-to-tl from-purple-200/30 via-indigo-200/20 to-transparent blur-3xl animate-drift-slow-reverse" />
+                <div className="absolute top-[30%] right-[20%] w-[30%] h-[30%] rounded-full bg-gradient-to-bl from-amber-100/20 via-rose-100/15 to-transparent blur-3xl animate-drift-subtle" />
+            </div>
+
             <div className="page-container text-center">
 
-                {/* Eyebrow pill — operational authority */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-50 border border-rose-200 mb-6">
-                    <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
-                    <span className="text-sm font-semibold text-zinc-950">Production AI Governance Research Program</span>
+                {/* Eyebrow — Identity first */}
+                <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/70 backdrop-blur-sm border border-zinc-200/80 shadow-sm mb-8">
+                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-sm font-semibold text-zinc-800 tracking-wide">Richard Ewing — AI Economist</span>
                 </div>
 
-                {/* H1 — Static dominant thesis */}
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 mb-4 leading-tight max-w-4xl mx-auto">
-                    Most AI Failures Are Not Model Failures.{' '}
+                {/* H1 — Clear value proposition */}
+                <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-zinc-900 mb-6 leading-[1.15] max-w-3xl mx-auto tracking-tight">
+                    I Help Enterprises Stop{' '}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-violet-500 to-purple-600">
-                        They Are Operational Failures.
-                    </span>
+                        Losing Money
+                    </span>{' '}
+                    on AI.
                 </h1>
 
-                {/* Constrained pain rotator — subordinated beneath thesis */}
-                <div className="flex justify-center items-center gap-2 mb-4 text-lg md:text-xl text-zinc-700 font-medium">
-                    <AlertTriangle className="w-4 h-4 text-rose-500 flex-shrink-0" />
-                    <WordRotate
-                        className="text-zinc-900 font-bold"
-                        words={[
-                            "Context rot degrades every session.",
-                            "Retry inflation burns budget overnight.",
-                            "Repository drift rewrites production code.",
-                            "Verification collapse ships hallucinations.",
-                            "Cascading permissions breach containment.",
-                        ]}
-                    />
-                </div>
-
-                {/* Operational specificity subheadline */}
-                <p className="text-lg text-zinc-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-                    I audit R&D capital, diagnose AI unit economics, and deploy the deterministic 
+                {/* Subheadline — What you actually do */}
+                <p className="text-lg md:text-xl text-zinc-600 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
+                    R&D capital audits, AI unit economics diagnostics, and the deterministic 
                     governance frameworks that turn volatile models into predictable enterprise assets.
                 </p>
 
                 {/* Dual CTA */}
-                <div className="flex flex-wrap justify-center gap-4 mb-10">
-                    <Link href="/tools/pdi" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-zinc-900 font-bold text-lg hover:opacity-90 transition-opacity shadow-lg shadow-rose-500/20">
-                        Run a Free Diagnosis <ArrowRight className="w-5 h-5" />
-                    </Link>
-                    <Link href="/advisory" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border-2 border-zinc-400 text-zinc-950 font-bold text-lg hover:border-violet-400 hover:bg-violet-50/30 transition-all">
+                <div className="flex flex-wrap justify-center gap-4 mb-12">
+                    <Link 
+                        href="/advisory" 
+                        className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-zinc-900 text-white font-semibold text-base hover:bg-zinc-800 transition-all shadow-lg shadow-zinc-900/20 hover:shadow-xl hover:shadow-zinc-900/30 hover:-translate-y-0.5"
+                    >
                         Book a Strategic Advisory Call
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                    </Link>
+                    <Link 
+                        href="/tools/pdi" 
+                        className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border-2 border-zinc-300 text-zinc-800 font-semibold text-base hover:border-violet-400 hover:bg-violet-50/40 transition-all"
+                    >
+                        Run a Free Diagnosis
                     </Link>
                 </div>
 
                 {/* Credibility line */}
-                <p className="text-zinc-800 mb-6 text-sm font-semibold">
-                    Richard Ewing, AI Economist · Creator of the <Link href="/framework" className="text-indigo-900 font-extrabold hover:text-indigo-500 transition">Production AI Governance Framework</Link> · Founder of <a href="/exogram" className="text-purple-900 font-extrabold hover:text-purple-500 transition">Exogram</a>
-                </p>
+                <div className="mb-8">
+                    <p className="text-zinc-600 text-sm font-medium leading-relaxed">
+                        Creator of the{' '}
+                        <Link href="/framework" className="text-violet-700 font-bold hover:text-violet-500 transition-colors underline decoration-violet-300 underline-offset-2">
+                            Production AI Governance Framework
+                        </Link>
+                        {' '}·{' '}Founder of{' '}
+                        <Link href="/exogram" className="text-purple-700 font-bold hover:text-purple-500 transition-colors underline decoration-purple-300 underline-offset-2">
+                            Exogram
+                        </Link>
+                    </p>
+                    <p className="text-zinc-500 text-xs mt-2 font-medium tracking-wide">
+                        Published in CIO.com · BuiltIn · HackerNoon · MindTheProduct · Amazon Author
+                    </p>
+                </div>
 
                 {/* As Seen In */}
                 <AsSeenIn />
-
-                {/* 3-Step Engine — DIAGNOSE → CONTAIN → ENFORCE */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-12">
-
-                    <Link href="/tools/pdi" className="card text-left hover:border-rose-300 group block relative overflow-hidden">
-                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-rose-400 to-rose-500"></div>
-                        <div className="pt-4">
-                            <div className="flex items-center gap-3 mb-3">
-                                <div className="w-10 h-10 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-center">
-                                    <Search className="w-5 h-5 text-rose-600" />
-                                </div>
-                                <div className="text-xs font-bold text-rose-600 uppercase tracking-widest font-mono">Step 01</div>
-                            </div>
-                            <h3 className="font-bold text-zinc-900 mb-2 group-hover:text-rose-700 text-lg transition-colors">Diagnose</h3>
-                            <p className="text-sm font-medium text-zinc-800">Quantify your hidden technical debt in dollar terms. Calculate your Technical Insolvency Date.</p>
-                        </div>
-                    </Link>
-
-                    <Link href="/runtime-failure-index" className="card text-left hover:border-violet-300 group block relative overflow-hidden">
-                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-400 to-violet-500"></div>
-                        <div className="pt-4">
-                            <div className="flex items-center gap-3 mb-3">
-                                <div className="w-10 h-10 rounded-lg bg-violet-50 border border-violet-200 flex items-center justify-center">
-                                    <AlertTriangle className="w-5 h-5 text-violet-600" />
-                                </div>
-                                <div className="text-xs font-bold text-violet-600 uppercase tracking-widest font-mono">Step 02</div>
-                            </div>
-                            <h3 className="font-bold text-zinc-900 mb-2 group-hover:text-violet-700 text-lg transition-colors">Contain</h3>
-                            <p className="text-sm font-medium text-zinc-800">Map the failure modes destroying your margins. Context rot, retry inflation, verification collapse — with root cause analysis.</p>
-                        </div>
-                    </Link>
-
-                    <Link href="/exogram" className="card text-left hover:border-purple-300 group block relative overflow-hidden">
-                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-400 to-purple-600"></div>
-                        <div className="pt-4">
-                            <div className="flex items-center gap-3 mb-3">
-                                <div className="w-10 h-10 rounded-lg bg-purple-50 border border-purple-200 flex items-center justify-center">
-                                    <Shield className="w-5 h-5 text-purple-600" />
-                                </div>
-                                <div className="text-xs font-bold text-purple-600 uppercase tracking-widest font-mono">Step 03</div>
-                            </div>
-                            <h3 className="font-bold text-zinc-900 mb-2 group-hover:text-purple-700 text-lg transition-colors">Enforce</h3>
-                            <p className="text-sm font-medium text-zinc-800">Deploy deterministic verification infrastructure. Once agents gain execution authority, runtime governance becomes mandatory.</p>
-                        </div>
-                    </Link>
-
-                </div>
 
             </div>
         </section>

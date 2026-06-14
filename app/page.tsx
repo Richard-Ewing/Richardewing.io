@@ -1,14 +1,11 @@
 import type { Metadata } from 'next';
 import Hero from './components/sections/Hero';
 import NarrativeCompression from './components/sections/NarrativeCompression';
-import EcosystemMap from './components/EcosystemMap';
 import ProofRail from './components/ProofRail';
 import ClientOutcomes from './components/sections/ClientOutcomes';
 import FourHorsemen from './components/sections/FourHorsemen';
 import ToolsPreview from './components/sections/ToolsPreview';
 import RuntimeEscalationSimulator from './components/RuntimeEscalationSimulator';
-import GovernanceDashboard from './components/GovernanceDashboard';
-import ExogramSection from './components/sections/ExogramSection';
 import PricingPreview from './components/sections/PricingPreview';
 import NewsletterSection from './components/sections/NewsletterSection';
 
@@ -74,39 +71,23 @@ export default function Home() {
           ]
         }) }}
       />
-      {/* Layer 1: Executive Diagnosis — static thesis + pain recognition */}
+      {/* Layer 1: Identity-first hero — who you are, what you do, what you offer */}
       <Hero />
-      {/* 15-second comprehension layer — What Breaks → Costs → Why → Fix → Engine */}
-      <NarrativeCompression />
-      
-      {/* The Ecosystem Mesh — How All Work Connects */}
-      <section className="py-12 border-t border-b border-zinc-200 bg-[#FCFAF7]/40">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold font-grotesk text-zinc-950">How All My Work Connects</h2>
-            <p className="text-xs text-zinc-900 mt-1 max-w-lg mx-auto">Every article, calculator, curriculum course, and software proxy mapped to one research program.</p>
-          </div>
-          <EcosystemMap />
-        </div>
-      </section>
-
-      {/* Persistent proof-of-authority bar */}
+      {/* Layer 2: Persistent proof-of-authority bar */}
       <ProofRail />
-      {/* Layer 2: Proof of outcomes */}
-      <ClientOutcomes />
-      {/* Layer 3: Why enterprise AI fails — operational specificity */}
+      {/* Layer 3: 15-second comprehension layer — What Breaks → Costs → Why → Fix → Engine */}
+      <NarrativeCompression />
+      {/* Layer 4: Why enterprise AI fails — the pain points */}
       <FourHorsemen />
-      {/* Layer 4: FEEL the escalation — operational inevitability simulator */}
+      {/* Layer 5: FEEL the escalation — interactive failure cascade */}
       <RuntimeEscalationSimulator />
-      {/* Layer 5: Frameworks & Diagnostics */}
+      {/* Layer 6: Proof of outcomes */}
+      <ClientOutcomes />
+      {/* Layer 7: Free tools — lead generation */}
       <ToolsPreview />
-      {/* Layer 6: SHOW the governance control plane — visible runtime mechanics */}
-      <GovernanceDashboard />
-      {/* Layer 7: Exogram — the enforcement infrastructure */}
-      <ExogramSection />
-      {/* Layer 6: Advisory escalation */}
+      {/* Layer 8: Advisory escalation — conversion */}
       <PricingPreview />
-      {/* Layer 7: Newsletter */}
+      {/* Layer 9: Newsletter — capture */}
       <NewsletterSection />
     </main>
   );
