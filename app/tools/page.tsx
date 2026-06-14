@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import ToolsContent from './tools-content';
 
 export const metadata: Metadata = {
-    title: 'Executive Diagnostics Hub | Find R&D Capital Leakage',
-    description: 'Forensic diagnostic instruments to identify where your engineering budget is leaking. Calculate your technical insolvency horizon, AI margin collapse point, and operational risk.',
+    title: 'Free AI Cost Attribution & Token Audit Calculators',
+    description: 'Stop API margin collapse. Use our free forensic tools for CTOs to measure software entropy, calculate AUEB (AI Unit Economics), and spot shadow AI.',
     keywords: [
         'technical debt calculator', 'product debt index', 'free engineering tools',
         'AI unit economics calculator', 'SaaS valuation tool', 'revenue per engineer calculator',

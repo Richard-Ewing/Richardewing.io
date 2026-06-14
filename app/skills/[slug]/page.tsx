@@ -115,8 +115,8 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
 
                         {/* CTA Box */}
                         <div className="flex-shrink-0 w-full md:w-auto min-w-[280px]">
-                            <div className="p-6 rounded-2xl bg-[#1A1A1A] text-white shadow-xl">
-                                <div className="text-xs font-bold font-mono text-zinc-400 uppercase tracking-widest mb-1">Commercial License</div>
+                            <div className="p-6 rounded-2xl bg-[#1A1A1A] text-zinc-900 shadow-xl">
+                                <div className="text-xs font-bold font-mono text-zinc-600 uppercase tracking-widest mb-1">Commercial License</div>
                                 <div className="text-3xl font-grotesk font-bold mb-4">${skill.price}<span className="text-sm font-semibold text-zinc-500 line-through ml-2 font-normal">$299</span></div>
                                 <a 
                                     href={skill.checkoutUrl}
@@ -124,7 +124,7 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
                                 >
                                     {skill.ctaText || 'Deploy Infrastructure'}
                                 </a>
-                                <div className="text-[10px] text-zinc-400 font-bold font-mono text-center mt-3 uppercase tracking-widest bg-zinc-800/50 py-2 rounded border border-zinc-700 leading-relaxed">
+                                <div className="text-[10px] text-zinc-600 font-bold font-mono text-center mt-3 uppercase tracking-widest bg-zinc-100/50 py-2 rounded border border-zinc-300 leading-relaxed">
                                     You are buying deployable governance infrastructure<br/>not AI education.
                                 </div>
                             </div>
@@ -232,26 +232,26 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
                                 <ul className="space-y-2">
                                     {skill.economicDamage && skill.economicDamage.map((damage, i) => (
                                         <li key={i} className="flex items-center gap-2 text-zinc-800 font-bold bg-white px-4 py-3 border border-[rgba(0,0,0,0.08)] rounded-lg shadow-sm">
-                                            <span className="text-zinc-400">×</span> {damage}
+                                            <span className="text-zinc-600">×</span> {damage}
                                         </li>
                                     ))}
                                 </ul>
                             </div>
 
-                            <div className="p-6 bg-zinc-950 text-white rounded-2xl shadow-xl relative overflow-hidden">
+                            <div className="p-6 bg-[#FCFAF7] text-zinc-900 rounded-2xl shadow-xl relative overflow-hidden">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/20 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
                                 <h3 className="text-xl font-grotesk font-bold mb-4 flex items-center gap-2 relative z-10">
                                     <ShieldCheck className="w-6 h-6 text-cyan-400" />
                                     What This System Actually Does
                                 </h3>
-                                <p className="text-zinc-300 font-medium mb-6 relative z-10 leading-relaxed text-sm">
-                                    This is <strong className="text-white">not a prompt pack</strong> or an educational course. This system installs deterministic runtime middleware to mathematically contain the failure.
+                                <p className="text-zinc-700 font-medium mb-6 relative z-10 leading-relaxed text-sm">
+                                    This is <strong className="text-zinc-900">not a prompt pack</strong> or an educational course. This system installs deterministic runtime middleware to mathematically contain the failure.
                                 </p>
                                 
                                 <h4 className="text-xs font-bold font-mono text-cyan-400 uppercase tracking-widest mb-3 relative z-10">Installs the following infrastructure:</h4>
                                 <ul className="space-y-2 relative z-10">
                                     {skill.whatSystemInstalls && skill.whatSystemInstalls.map((install, i) => (
-                                        <li key={i} className="flex items-center gap-2 text-sm font-mono font-semibold text-zinc-100">
+                                        <li key={i} className="flex items-center gap-2 text-sm font-mono font-semibold text-zinc-900">
                                             <span className="text-cyan-500">+</span> {install}
                                         </li>
                                     ))}

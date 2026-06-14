@@ -208,7 +208,7 @@ export default function CertificationPage() {
                         Each governance module moves you one level up the maturity model.
                         Deploy any module. Measure the delta. Build toward institutional governance.
                     </p>
-                    <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors inline-block">
+                    <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors inline-block">
                         View All 15 Runtime Modules →
                     </Link>
                 </div>

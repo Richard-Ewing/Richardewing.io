@@ -20,7 +20,7 @@ export function LeadMagnetCTA({ variant = 'full' }: LeadMagnetCTAProps) {
                 <form action={beehiivUrl} method="GET" target="_blank" className="flex items-center gap-2 w-full sm:w-auto">
                     <button
                         type="submit"
-                        className="w-full sm:w-auto px-5 py-2 rounded-lg bg-white border border-zinc-200 text-zinc-950 font-semibold font-semibold text-sm hover:bg-zinc-800 transition-colors font-grotesk flex items-center justify-center gap-2 whitespace-nowrap"
+                        className="w-full sm:w-auto px-5 py-2 rounded-lg bg-white border border-zinc-200 text-zinc-950 font-semibold font-semibold text-sm hover:bg-zinc-100 transition-colors font-grotesk flex items-center justify-center gap-2 whitespace-nowrap"
                     >
                         <Download className="w-4 h-4" /> Download Free
                     </button>

@@ -322,7 +322,7 @@ export default function DiagramsPage() {
                         YAML policy manifests, and operational tooling.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors">
+                        <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
                             View All 15 Runtime Modules →
                         </Link>
                         <Link href="/runtime-architecture" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">

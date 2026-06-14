@@ -100,10 +100,10 @@ function MetricBar({ label, value, percentage, color }: { label: string; value: 
     return (
         <div className="space-y-1">
             <div className="flex justify-between items-baseline">
-                <span className="text-xs font-mono text-zinc-400 uppercase tracking-wider">{label}</span>
-                <span className="text-sm font-bold text-zinc-100 font-mono">{value}</span>
+                <span className="text-xs font-mono text-zinc-600 uppercase tracking-wider">{label}</span>
+                <span className="text-sm font-bold text-zinc-900 font-mono">{value}</span>
             </div>
-            <div className="h-2 bg-zinc-800 rounded-full overflow-hidden">
+            <div className="h-2 bg-zinc-100 rounded-full overflow-hidden">
                 <div
                     className={`h-full rounded-full transition-all duration-700 ease-out ${color}`}
                     style={{ width: `${percentage}%` }}
@@ -156,7 +156,7 @@ export default function RuntimeEscalationSimulator() {
     const costPct = Math.min(100, (activeStage / 4) * 100);
 
     return (
-        <section ref={sectionRef} className="py-16 md:py-24 bg-zinc-950 text-white">
+        <section ref={sectionRef} className="py-16 md:py-24 bg-[#FCFAF7] text-zinc-900">
             <div className="max-w-5xl mx-auto px-6">
 
                 {/* Header */}
@@ -164,11 +164,11 @@ export default function RuntimeEscalationSimulator() {
                     <span className="inline-block px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-mono uppercase tracking-wider mb-4">
                         Runtime Failure Simulation
                     </span>
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+                    <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-3">
                         How a Single Governance Gap{' '}
                         <span className="text-rose-400">Destroys Margins</span>
                     </h2>
-                    <p className="text-zinc-400 max-w-2xl mx-auto text-sm">
+                    <p className="text-zinc-600 max-w-2xl mx-auto text-sm">
                         Watch an uncontained AI agent escalate from nominal operation to margin collapse.
                         Each stage is preventable with deterministic governance.
                     </p>
@@ -182,10 +182,10 @@ export default function RuntimeEscalationSimulator() {
                             onClick={() => { setActiveStage(i); setIsAutoPlaying(false); }}
                             className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all text-sm font-medium whitespace-nowrap ${
                                 i === activeStage
-                                    ? `${s.color} bg-white/10 border border-white/10`
+                                    ? `${s.color} bg-white shadow-sm border-zinc-200 border `
                                     : i < activeStage
                                     ? `${s.color} opacity-60`
-                                    : 'text-zinc-400'
+                                    : 'text-zinc-600'
                             }`}
                         >
                             {s.icon}
@@ -215,7 +215,7 @@ export default function RuntimeEscalationSimulator() {
                                 </p>
                             </div>
                         </div>
-                        <p className="text-sm text-zinc-300 leading-relaxed mb-6">
+                        <p className="text-sm text-zinc-700 leading-relaxed mb-6">
                             {stage.description}
                         </p>
 
@@ -267,7 +267,7 @@ export default function RuntimeEscalationSimulator() {
                         {/* Governance interception */}
                         <div className="rounded-xl border border-violet-500/20 bg-violet-500/5 p-4">
                             <p className="text-xs font-mono text-violet-400 uppercase tracking-wider mb-2">Governance Interception Point</p>
-                            <p className="text-sm text-zinc-300">
+                            <p className="text-sm text-zinc-700">
                                 {activeStage <= 1
                                     ? 'Admissibility gate blocks unapproved operations. Context budget enforced.'
                                     : activeStage === 2
@@ -294,13 +294,13 @@ export default function RuntimeEscalationSimulator() {
                     <div className="flex flex-wrap justify-center gap-4">
                         <Link
                             href="/diagnose"
-                            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-white font-bold text-sm hover:opacity-90 transition-opacity"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-zinc-900 font-bold text-sm hover:opacity-90 transition-opacity"
                         >
                             Diagnose Your Risk Exposure →
                         </Link>
                         <Link
                             href="/runtime-failure-index"
-                            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-zinc-700 text-zinc-300 font-bold text-sm hover:border-violet-500 hover:text-white transition-all"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-zinc-300 text-zinc-700 font-bold text-sm hover:border-violet-500 hover:text-zinc-900 transition-all"
                         >
                             Browse the Failure Database
                         </Link>

@@ -13,7 +13,7 @@ export default function FailuresIndexPage() {
   return (
     <div className="min-h-screen bg-[#FAFAFA] pt-24">
       {/* Header */}
-      <section className="bg-[#111827] text-white py-24 px-6 border-b border-[#374151]">
+      <section className="bg-[#111827] text-zinc-900 py-24 px-6 border-b border-[#374151]">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 font-serif">
             Operational Failure Database

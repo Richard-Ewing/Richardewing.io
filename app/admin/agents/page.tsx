@@ -138,7 +138,7 @@ export default function AgentDashboard() {
     const totalLeads = data ? data.pipeline.HOT + data.pipeline.WARM + data.pipeline.COLD + data.pipeline.NURTURE : 0;
 
     return (
-        <div className="min-h-screen bg-[#0a0a0f] text-zinc-100 pt-24 pb-20">
+        <div className="min-h-screen bg-[#0a0a0f] text-zinc-900 pt-24 pb-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Header */}
@@ -179,26 +179,26 @@ export default function AgentDashboard() {
 
                 {/* Pipeline Cards */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                    <div className="bg-[#12121f] border border-zinc-800/50 rounded-xl p-5">
+                    <div className="bg-[#12121f] border border-zinc-200/50 rounded-xl p-5">
                         <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">Hot Leads</p>
                         <p className="text-4xl font-bold text-red-400">{data?.pipeline.HOT ?? '—'}</p>
                     </div>
-                    <div className="bg-[#12121f] border border-zinc-800/50 rounded-xl p-5">
+                    <div className="bg-[#12121f] border border-zinc-200/50 rounded-xl p-5">
                         <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">Warm Leads</p>
                         <p className="text-4xl font-bold text-amber-400">{data?.pipeline.WARM ?? '—'}</p>
                     </div>
-                    <div className="bg-[#12121f] border border-zinc-800/50 rounded-xl p-5">
+                    <div className="bg-[#12121f] border border-zinc-200/50 rounded-xl p-5">
                         <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">Total Pipeline</p>
                         <p className="text-4xl font-bold text-indigo-400">{totalLeads || '—'}</p>
                     </div>
-                    <div className="bg-[#12121f] border border-zinc-800/50 rounded-xl p-5">
+                    <div className="bg-[#12121f] border border-zinc-200/50 rounded-xl p-5">
                         <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">Nurture</p>
                         <p className="text-4xl font-bold text-zinc-500">{data?.pipeline.NURTURE ?? '—'}</p>
                     </div>
                 </div>
 
                 {/* Agent Cards */}
-                <h2 className="text-lg font-bold text-zinc-300 mb-4 flex items-center gap-2">
+                <h2 className="text-lg font-bold text-zinc-700 mb-4 flex items-center gap-2">
                     <Zap className="w-4 h-4 text-indigo-400" />
                     Active Agents
                 </h2>
@@ -209,7 +209,7 @@ export default function AgentDashboard() {
                         const lastRun = agentData?.last_runs?.[0];
 
                         return (
-                            <div key={key} className="bg-[#12121f] border border-zinc-800/50 rounded-xl p-5 hover:border-indigo-500/30 transition-colors">
+                            <div key={key} className="bg-[#12121f] border border-zinc-200/50 rounded-xl p-5 hover:border-indigo-500/30 transition-colors">
                                 <div className="flex items-start justify-between mb-3">
                                     <div className="flex items-center gap-2.5">
                                         <span className="p-1.5 bg-indigo-500/10 rounded-md">
@@ -223,27 +223,27 @@ export default function AgentDashboard() {
                                 <div className="space-y-1.5 text-xs">
                                     <div className="flex justify-between">
                                         <span className="text-zinc-600">Schedule</span>
-                                        <span className="text-zinc-400 font-mono">{config.schedule}</span>
+                                        <span className="text-zinc-600 font-mono">{config.schedule}</span>
                                     </div>
                                     <div className="flex justify-between">
                                         <span className="text-zinc-600">Last Run</span>
-                                        <span className="text-zinc-400">{timeAgo(agentData?.last_run_at || null)}</span>
+                                        <span className="text-zinc-600">{timeAgo(agentData?.last_run_at || null)}</span>
                                     </div>
                                     {lastRun && (
                                         <>
                                             <div className="flex justify-between">
                                                 <span className="text-zinc-600">Duration</span>
-                                                <span className="text-zinc-400 font-mono">{lastRun.duration_ms}ms</span>
+                                                <span className="text-zinc-600 font-mono">{lastRun.duration_ms}ms</span>
                                             </div>
                                             <div className="flex justify-between">
                                                 <span className="text-zinc-600">Items</span>
-                                                <span className="text-zinc-400 font-mono">{lastRun.items_processed}</span>
+                                                <span className="text-zinc-600 font-mono">{lastRun.items_processed}</span>
                                             </div>
                                         </>
                                     )}
                                 </div>
                                 {lastRun?.summary && (
-                                    <div className="mt-3 pt-3 border-t border-zinc-800/50">
+                                    <div className="mt-3 pt-3 border-t border-zinc-200/50">
                                         <p className="text-xs text-zinc-500 line-clamp-2">{lastRun.summary}</p>
                                     </div>
                                 )}
@@ -253,15 +253,15 @@ export default function AgentDashboard() {
                 </div>
 
                 {/* Run History */}
-                <h2 className="text-lg font-bold text-zinc-300 mb-4 flex items-center gap-2">
+                <h2 className="text-lg font-bold text-zinc-700 mb-4 flex items-center gap-2">
                     <Clock className="w-4 h-4 text-indigo-400" />
                     Recent Agent Runs
                 </h2>
-                <div className="bg-[#12121f] border border-zinc-800/50 rounded-xl overflow-hidden">
+                <div className="bg-[#12121f] border border-zinc-200/50 rounded-xl overflow-hidden">
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm">
                             <thead>
-                                <tr className="border-b border-zinc-800/50 bg-zinc-900/30">
+                                <tr className="border-b border-zinc-200/50 bg-white/30">
                                     <th className="text-left p-3 text-xs font-mono uppercase tracking-widest text-zinc-600">Agent</th>
                                     <th className="text-left p-3 text-xs font-mono uppercase tracking-widest text-zinc-600">Status</th>
                                     <th className="text-left p-3 text-xs font-mono uppercase tracking-widest text-zinc-600">Time</th>
@@ -273,12 +273,12 @@ export default function AgentDashboard() {
                             <tbody>
                                 {data && Object.entries(data.agents).flatMap(([agent, info]) =>
                                     info.last_runs.map((run: AgentRun) => (
-                                        <tr key={run.id} className="border-b border-zinc-800/30 hover:bg-zinc-800/10 transition-colors">
-                                            <td className="p-3 font-medium text-zinc-300">{AGENT_CONFIG[agent]?.label || agent}</td>
+                                        <tr key={run.id} className="border-b border-zinc-200/30 hover:bg-zinc-100/10 transition-colors">
+                                            <td className="p-3 font-medium text-zinc-700">{AGENT_CONFIG[agent]?.label || agent}</td>
                                             <td className="p-3"><StatusBadge status={run.status} /></td>
                                             <td className="p-3 text-zinc-500 font-mono text-xs">{timeAgo(run.created_at)}</td>
                                             <td className="p-3 text-zinc-500 font-mono text-xs">{run.duration_ms}ms</td>
-                                            <td className="p-3 text-zinc-400 font-mono">{run.items_processed}</td>
+                                            <td className="p-3 text-zinc-600 font-mono">{run.items_processed}</td>
                                             <td className="p-3 text-zinc-500 text-xs max-w-xs truncate">{run.summary}</td>
                                         </tr>
                                     ))

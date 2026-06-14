@@ -16,8 +16,8 @@ const NarrativeCompression = () => {
                 <div className="rounded-2xl border border-zinc-200 bg-white overflow-hidden shadow-sm">
 
                     {/* Header */}
-                    <div className="px-6 py-4 bg-zinc-950 text-white">
-                        <p className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-400">The Bottom Line — 15 Seconds</p>
+                    <div className="px-6 py-4 bg-[#FCFAF7] text-zinc-900">
+                        <p className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-600">The Bottom Line — 15 Seconds</p>
                     </div>
 
                     {/* Compression Grid */}

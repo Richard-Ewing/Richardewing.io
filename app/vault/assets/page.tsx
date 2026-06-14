@@ -70,7 +70,7 @@ export default async function AssetsPage() {
                                     <div className="flex-shrink-0">
                                         <a 
                                             href={`/api/assets/download?slug=${slug}`}
-                                            className="inline-flex items-center justify-center px-6 py-3 bg-[#1A1A1A] text-white font-bold text-sm rounded shadow-md hover:bg-black transition-colors"
+                                            className="inline-flex items-center justify-center px-6 py-3 bg-[#1A1A1A] text-zinc-900 font-bold text-sm rounded shadow-md hover:bg-[#FCFAF7] transition-colors"
                                             download
                                         >
                                             <Download className="w-4 h-4 mr-2" />
@@ -83,13 +83,13 @@ export default async function AssetsPage() {
                     ) : (
                         <div className="p-12 rounded-2xl border border-[rgba(0,0,0,0.08)] bg-white text-center flex flex-col items-center">
                             <div className="w-16 h-16 rounded-full bg-zinc-100 flex items-center justify-center mb-6">
-                                <Lock className="w-6 h-6 text-zinc-400" />
+                                <Lock className="w-6 h-6 text-zinc-600" />
                             </div>
                             <h2 className="text-2xl font-bold text-[#1A1A1A] mb-3">No Infrastructure Licensed</h2>
                             <p className="text-[#4A4A4A] max-w-md mx-auto mb-8">
                                 You do not currently hold an active license for any deterministic governance assets. Browse the marketplace to deploy operational infrastructure.
                             </p>
-                            <Link href="/skills" className="inline-flex items-center justify-center px-8 py-3 bg-[#1A1A1A] text-white font-bold rounded hover:bg-black transition-colors">
+                            <Link href="/skills" className="inline-flex items-center justify-center px-8 py-3 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-[#FCFAF7] transition-colors">
                                 View Marketplace
                             </Link>
                         </div>

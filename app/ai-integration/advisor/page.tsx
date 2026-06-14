@@ -94,7 +94,7 @@ export default async function AdvisorPage() {
                             <div className="rounded-xl border border-zinc-200 p-5 text-center">
                                 <div className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">Monthly</div>
                                 <div className="text-3xl font-bold text-[#1A1A1A] mb-1">$249<span className="text-sm font-normal text-zinc-500">/mo</span></div>
-                                <p className="text-[10px] text-zinc-400 mb-4">Cancel anytime</p>
+                                <p className="text-[10px] text-zinc-600 mb-4">Cancel anytime</p>
                                 <a
                                     href="/api/buy/ai_advisor_monthly"
                                     className="block w-full text-center py-3 border-2 border-cyan-600 text-cyan-700 font-bold rounded-xl text-sm hover:bg-cyan-50 transition-colors"
@@ -105,13 +105,13 @@ export default async function AdvisorPage() {
 
                             {/* Annual — Best Value */}
                             <div className="rounded-xl border-2 border-cyan-500 p-5 text-center relative bg-cyan-50/30">
-                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-cyan-600 text-white text-[10px] font-bold font-mono uppercase tracking-widest rounded-full">Save 33%</div>
+                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-cyan-600 text-zinc-900 text-[10px] font-bold font-mono uppercase tracking-widest rounded-full">Save 33%</div>
                                 <div className="text-xs font-mono text-cyan-700 uppercase tracking-widest mb-2">Annual</div>
                                 <div className="text-3xl font-bold text-[#1A1A1A] mb-1">$1,997<span className="text-sm font-normal text-zinc-500">/yr</span></div>
-                                <p className="text-[10px] text-zinc-400 mb-4">$166/mo · Billed annually</p>
+                                <p className="text-[10px] text-zinc-600 mb-4">$166/mo · Billed annually</p>
                                 <a
                                     href="/api/buy/ai_advisor_yearly"
-                                    className="block w-full text-center py-3 bg-cyan-600 text-white font-bold rounded-xl text-sm hover:bg-cyan-500 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.15)]"
+                                    className="block w-full text-center py-3 bg-cyan-600 text-zinc-900 font-bold rounded-xl text-sm hover:bg-cyan-500 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.15)]"
                                 >
                                     Start Annual →
                                 </a>

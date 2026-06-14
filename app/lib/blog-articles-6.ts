@@ -272,7 +272,7 @@ If the feature is just a thin, programmatic wrapper around the OpenAI or Anthrop
 <h3>Next Steps for Engineering Leaders</h3>
 <p>If you are currently evaluating your AI infrastructure or preparing for a board-level review of your R&D margins, you must move from theory to deterministic execution. Here is how you can operationalize these frameworks today:</p>
 <ol>
-<li><strong>Audit Your Architecture:</strong> Enroll in <a href="/vault/curriculum/tracks/ai-economics/24-1">Track 24: AI Economics & Margin Engineering</a>. This 10-module curriculum is designed specifically for technical executives to learn how to build Deterministic Control Layers and eliminate the Turing Tax.</li>
+<li><strong>Audit Your Architecture:</strong> Enroll in <a href="/vault/curriculum/tracks">Track 24: AI Economics & Margin Engineering</a>. This 10-module curriculum is designed specifically for technical executives to learn how to build Deterministic Control Layers and eliminate the Turing Tax.</li>
 <li><strong>Calculate Your Exposure:</strong> Stop guessing at your variable costs. Use our <a href="/tools/aueb">AI Unit Economics Benchmark (AUEB) Calculator</a> to map your exact Synthetic COGS down to the fraction of a cent.</li>
 <li><strong>Engage Direct Advisory:</strong> If your startup or enterprise is actively facing a margin squeeze due to runaway inference costs, <a href="/advisory">book a private advisory session</a> to design a custom intervention protocol.</li>
 </ol>`

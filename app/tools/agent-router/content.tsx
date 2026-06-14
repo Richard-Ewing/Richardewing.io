@@ -179,7 +179,7 @@ export default function AgentRouterContent() {
                                     </h4>
                                     <p className="text-xs font-bold text-zinc-900 font-bold">Deploy a 8B-parameter local model at the edge to natively solve or reject 60% of requests at zero API cost.</p>
                                 </div>
-                                <div className={`w-12 h-6 rounded-full p-1 transition-colors ${useEdgeRouter ? 'bg-blue-500' : 'bg-zinc-800'}`}>
+                                <div className={`w-12 h-6 rounded-full p-1 transition-colors ${useEdgeRouter ? 'bg-blue-500' : 'bg-zinc-100'}`}>
                                     <div className={`w-4 h-4 rounded-full bg-white transition-transform ${useEdgeRouter ? 'translate-x-6' : 'translate-x-0'}`} />
                                 </div>
                             </div>

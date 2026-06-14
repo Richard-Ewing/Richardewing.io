@@ -47,7 +47,7 @@ const Hero = () => {
 
                 {/* Dual CTA */}
                 <div className="flex flex-wrap justify-center gap-4 mb-10">
-                    <Link href="/tools/pdi" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-white font-bold text-lg hover:opacity-90 transition-opacity shadow-lg shadow-rose-500/20">
+                    <Link href="/tools/pdi" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-zinc-900 font-bold text-lg hover:opacity-90 transition-opacity shadow-lg shadow-rose-500/20">
                         Run a Free Diagnosis <ArrowRight className="w-5 h-5" />
                     </Link>
                     <Link href="/advisory" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border-2 border-zinc-400 text-zinc-950 font-bold text-lg hover:border-violet-400 hover:bg-violet-50/30 transition-all">

@@ -101,7 +101,7 @@ export default function DeterministicControlLayerPage() {
                             <ShineBorder className="w-full sm:w-auto p-1 rounded-xl bg-white" borderColor="#10b981" duration={3}>
                                 <a 
                                     href="/downloads/deterministic-control-layer-board.pdf" 
-                                    className="flex items-center justify-center gap-3 px-8 py-4 bg-white border border-zinc-200 hover:bg-zinc-800 text-zinc-950 font-semibold font-black uppercase tracking-widest rounded-lg transition-all"
+                                    className="flex items-center justify-center gap-3 px-8 py-4 bg-white border border-zinc-200 hover:bg-zinc-100 text-zinc-950 font-semibold font-black uppercase tracking-widest rounded-lg transition-all"
                                 >
                                     <Download size={18} />
                                     Download Miro Board

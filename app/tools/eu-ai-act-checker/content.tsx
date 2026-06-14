@@ -107,15 +107,15 @@ export default function EUAIActChecker() {
                 </div>
 
                 {/* Countdown Banner */}
-                <div className="mb-8 bg-gradient-to-r from-red-950 to-zinc-900 rounded-2xl p-6 text-white flex items-center justify-between">
+                <div className="mb-8 bg-gradient-to-r from-red-950 to-zinc-900 rounded-2xl p-6 text-zinc-900 flex items-center justify-between">
                     <div>
                         <p className="text-xs font-mono uppercase tracking-widest text-red-400 mb-1">Enforcement Countdown</p>
                         <p className="text-3xl font-grotesk font-bold">{daysLeft} Days</p>
                     </div>
                     <div className="text-right">
-                        <p className="text-xs text-zinc-400">67% of employees use AI tools</p>
-                        <p className="text-xs text-zinc-400">Only 18% of orgs have formal policies</p>
-                        <p className="text-xs text-zinc-400">12% of AI apps visible to security</p>
+                        <p className="text-xs text-zinc-600">67% of employees use AI tools</p>
+                        <p className="text-xs text-zinc-600">Only 18% of orgs have formal policies</p>
+                        <p className="text-xs text-zinc-600">12% of AI apps visible to security</p>
                     </div>
                 </div>
 
@@ -196,7 +196,7 @@ export default function EUAIActChecker() {
                         )}
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/tools/shadow-ai" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-xl hover:from-purple-500 hover:to-indigo-500 transition-all">
+                            <Link href="/tools/shadow-ai" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-zinc-900 font-bold rounded-xl hover:from-purple-500 hover:to-indigo-500 transition-all">
                                 <Shield className="w-4 h-4" />
                                 Run Shadow AI Scan
                             </Link>

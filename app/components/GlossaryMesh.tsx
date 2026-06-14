@@ -109,7 +109,7 @@ export default function GlossaryMesh({ termSlug, termTitle, termCategory, relate
                                 <span className="text-sm font-semibold text-zinc-800 group-hover:text-violet-700 transition-colors">
                                     {item.title}
                                 </span>
-                                <ArrowRight className="w-3 h-3 text-zinc-400 group-hover:text-violet-500 inline ml-1 transition-colors" />
+                                <ArrowRight className="w-3 h-3 text-zinc-600 group-hover:text-violet-500 inline ml-1 transition-colors" />
                             </Link>
                         ))}
                     </div>
@@ -131,7 +131,7 @@ export default function GlossaryMesh({ termSlug, termTitle, termCategory, relate
                                 <span className="text-sm font-semibold text-zinc-800 group-hover:text-rose-700 transition-colors">
                                     {item.title}
                                 </span>
-                                <ArrowRight className="w-3 h-3 text-zinc-400 group-hover:text-rose-500 inline ml-1 transition-colors" />
+                                <ArrowRight className="w-3 h-3 text-zinc-600 group-hover:text-rose-500 inline ml-1 transition-colors" />
                             </Link>
                         ))}
                     </div>
@@ -155,7 +155,7 @@ export default function GlossaryMesh({ termSlug, termTitle, termCategory, relate
                                 <span className="text-sm font-semibold text-zinc-800 group-hover:text-emerald-700 transition-colors">
                                     {article.title}
                                 </span>
-                                <ArrowRight className="w-3 h-3 text-zinc-400 group-hover:text-emerald-500 inline ml-1 transition-colors" />
+                                <ArrowRight className="w-3 h-3 text-zinc-600 group-hover:text-emerald-500 inline ml-1 transition-colors" />
                             </a>
                         ))}
                     </div>
@@ -177,7 +177,7 @@ export default function GlossaryMesh({ termSlug, termTitle, termCategory, relate
                                 <span className="text-sm font-semibold text-zinc-800 group-hover:text-blue-700 transition-colors">
                                     {item.name}
                                 </span>
-                                <ArrowRight className="w-3 h-3 text-zinc-400 group-hover:text-blue-500 inline ml-1 transition-colors" />
+                                <ArrowRight className="w-3 h-3 text-zinc-600 group-hover:text-blue-500 inline ml-1 transition-colors" />
                             </Link>
                         ))}
                     </div>

@@ -49,7 +49,7 @@ export default function AIIntegrationPage() {
                     <p className="text-base text-[#6A6A6A] max-w-2xl mx-auto mb-6">
                         A 2-hour audit of your business. A strategic roadmap with the top 10 actions ranked by bottom-line impact. A 30-day kickstart plan to begin implementation immediately. <strong>Delivered in 48 hours — not 8 weeks.</strong>
                     </p>
-                    <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[#1A1A1A] text-white text-xs font-mono font-bold tracking-widest uppercase">
+                    <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[#1A1A1A] text-zinc-900 text-xs font-mono font-bold tracking-widest uppercase">
                         <Zap size={12} className="text-emerald-400" /> 48-Hour Delivery · Not 4-8 Weeks
                     </div>
                 </div>
@@ -66,7 +66,7 @@ export default function AIIntegrationPage() {
                             Answer 5 questions about your business and get a personalized AI integration roadmap in minutes — complete with specific tool recommendations, ROI estimates, and a step-by-step implementation plan. Downloadable as a PDF.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                            <Link href="/ai-integration/advisor" className="px-8 py-3 bg-cyan-600 text-white font-bold rounded-xl text-sm hover:bg-cyan-500 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+                            <Link href="/ai-integration/advisor" className="px-8 py-3 bg-cyan-600 text-zinc-900 font-bold rounded-xl text-sm hover:bg-cyan-500 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.2)]">
                                 Start Your AI Roadmap →
                             </Link>
                             <span className="text-xs text-zinc-500 font-mono">$249/month · Unlimited Consultations</span>
@@ -128,12 +128,12 @@ export default function AIIntegrationPage() {
                                     </li>
                                 ))}
                             </ul>
-                            <a href="/api/buy/full_audit" className="block text-center py-3 bg-[#1A1A1A] text-white font-bold rounded-lg text-sm hover:bg-zinc-800 transition-colors">Book Your Audit →</a>
+                            <a href="/api/buy/full_audit" className="block text-center py-3 bg-[#1A1A1A] text-zinc-900 font-bold rounded-lg text-sm hover:bg-zinc-100 transition-colors">Book Your Audit →</a>
                         </div>
 
                         {/* Tier 2: Monthly Advisor (Featured) */}
                         <div className="bg-white rounded-2xl border-2 border-emerald-400 p-6 flex flex-col shadow-lg relative">
-                            <div className="absolute -top-3 right-4 px-3 py-1 bg-emerald-500 text-white text-[10px] font-bold font-mono uppercase tracking-widest rounded-full">Most Popular</div>
+                            <div className="absolute -top-3 right-4 px-3 py-1 bg-emerald-500 text-zinc-900 text-[10px] font-bold font-mono uppercase tracking-widest rounded-full">Most Popular</div>
                             <div className="text-xs font-mono font-bold text-emerald-600 uppercase tracking-widest mb-3">Tier 2: Stay Guided</div>
                             <h3 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-1">Monthly AI Advisor</h3>
                             <div className="text-3xl font-bold text-[#1A1A1A] mb-1">$5K–$15K<span className="text-sm font-normal text-zinc-500"> / month</span></div>
@@ -150,7 +150,7 @@ export default function AIIntegrationPage() {
                                     </li>
                                 ))}
                             </ul>
-                            <a href="mailto:richard@richardewing.io?subject=Inquiry: Monthly AI Advisor" className="block text-center py-3 bg-emerald-600 text-white font-bold rounded-lg text-sm hover:bg-emerald-500 transition-colors">Start the Conversation →</a>
+                            <a href="mailto:richard@richardewing.io?subject=Inquiry: Monthly AI Advisor" className="block text-center py-3 bg-emerald-600 text-zinc-900 font-bold rounded-lg text-sm hover:bg-emerald-500 transition-colors">Start the Conversation →</a>
                         </div>
 
                         {/* Tier 3: The System */}
@@ -166,32 +166,32 @@ export default function AIIntegrationPage() {
                                     </li>
                                 ))}
                             </ul>
-                            <Link href="/ai-integration/system" className="block text-center py-3 bg-violet-600 text-white font-bold rounded-lg text-sm hover:bg-violet-500 transition-colors">View Full System →</Link>
+                            <Link href="/ai-integration/system" className="block text-center py-3 bg-violet-600 text-zinc-900 font-bold rounded-lg text-sm hover:bg-violet-500 transition-colors">View Full System →</Link>
                         </div>
                     </div>
                 </div>
 
                 {/* What You're Really Paying For */}
-                <div className="bg-[#1A1A1A] rounded-2xl p-8 mb-16 text-white">
+                <div className="bg-[#1A1A1A] rounded-2xl p-8 mb-16 text-zinc-900">
                     <h2 className="text-xl font-grotesk font-bold mb-4 text-center">What You're Really Paying For</h2>
-                    <p className="text-zinc-400 text-center max-w-2xl mx-auto mb-6">
-                        You're not paying for an AI plan. You're paying so you <strong className="text-white">stop being stressed</strong> about not having AI in your business. By the end of our first session, you'll know exactly what to do, in what order, and why.
+                    <p className="text-zinc-600 text-center max-w-2xl mx-auto mb-6">
+                        You're not paying for an AI plan. You're paying so you <strong className="text-zinc-900">stop being stressed</strong> about not having AI in your business. By the end of our first session, you'll know exactly what to do, in what order, and why.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
                             <Zap className="w-6 h-6 text-emerald-400 mx-auto mb-2" />
                             <div className="text-sm font-bold mb-1">Clarity</div>
-                            <div className="text-xs text-zinc-400">From "I don't know where to start" to "I know exactly what to do next"</div>
+                            <div className="text-xs text-zinc-600">From "I don't know where to start" to "I know exactly what to do next"</div>
                         </div>
                         <div className="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
                             <Target className="w-6 h-6 text-blue-400 mx-auto mb-2" />
                             <div className="text-sm font-bold mb-1">Focus</div>
-                            <div className="text-xs text-zinc-400">From 10,000 AI tools to the 3 that actually impact your bottom line</div>
+                            <div className="text-xs text-zinc-600">From 10,000 AI tools to the 3 that actually impact your bottom line</div>
                         </div>
                         <div className="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
                             <Calendar className="w-6 h-6 text-violet-400 mx-auto mb-2" />
                             <div className="text-sm font-bold mb-1">Momentum</div>
-                            <div className="text-xs text-zinc-400">From paralysis to a 30-day plan with daily actions and measurable outcomes</div>
+                            <div className="text-xs text-zinc-600">From paralysis to a 30-day plan with daily actions and measurable outcomes</div>
                         </div>
                     </div>
                 </div>
@@ -270,12 +270,12 @@ export default function AIIntegrationPage() {
                 </div>
 
                 {/* CTA */}
-                <div className="bg-emerald-600 rounded-2xl p-8 text-white text-center">
+                <div className="bg-emerald-600 rounded-2xl p-8 text-zinc-900 text-center">
                     <h2 className="text-2xl font-grotesk font-bold mb-3">Ready to Stop Guessing?</h2>
                     <p className="text-emerald-100 mb-6 max-w-xl mx-auto">One conversation. Ten priorities. A 30-day plan. You'll know exactly what to do with AI by the end of the first session.</p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <a href="/api/buy/full_audit" className="px-8 py-4 bg-white text-emerald-800 font-bold rounded-lg hover:bg-emerald-50 transition-colors">Book Your First Audit →</a>
-                        <Link href="/ai-integration/system" className="px-8 py-4 text-white font-bold rounded-lg border border-white/30 hover:border-white/60 transition-colors">View the DIY System →</Link>
+                        <Link href="/ai-integration/system" className="px-8 py-4 text-zinc-900 font-bold rounded-lg border border-white/30 hover:border-white/60 transition-colors">View the DIY System →</Link>
                     </div>
                 </div>
 

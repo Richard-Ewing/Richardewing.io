@@ -115,7 +115,7 @@ export default function AIGuardrailsPlatformsPage() {
                         <thead>
                             <tr className="border-b border-zinc-100">
                                 <th className="text-left p-3 text-xs uppercase font-bold text-zinc-700">Capability</th>
-                                <th className="p-3 text-center text-xs uppercase font-bold text-zinc-700">Enterprise Platforms<br /><span className="font-normal text-zinc-400">(Lakera, Galileo, etc.)</span></th>
+                                <th className="p-3 text-center text-xs uppercase font-bold text-zinc-700">Enterprise Platforms<br /><span className="font-normal text-zinc-600">(Lakera, Galileo, etc.)</span></th>
                                 <th className="p-3 text-center text-xs uppercase font-bold text-violet-700">Practitioner Governance<br /><span className="font-normal text-violet-400">($99/module)</span></th>
                             </tr>
                         </thead>
@@ -168,19 +168,19 @@ export default function AIGuardrailsPlatformsPage() {
                 </div>
 
                 {/* Pricing Anchor */}
-                <div className="bg-[#1A1A1A] rounded-2xl p-8 mb-8 text-white">
+                <div className="bg-[#1A1A1A] rounded-2xl p-8 mb-8 text-zinc-900">
                     <h2 className="text-xl font-grotesk font-bold mb-4 flex items-center gap-2">
                         <DollarSign className="w-5 h-5" /> The Pricing Gap
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                         <div className="p-4 bg-white/10 rounded-xl text-center">
                             <div className="text-2xl font-bold">$10K+</div>
-                            <div className="text-xs text-zinc-400 font-mono uppercase">Enterprise guardrails / year</div>
+                            <div className="text-xs text-zinc-600 font-mono uppercase">Enterprise guardrails / year</div>
                             <div className="text-[10px] text-zinc-500 mt-1">Quote-gated, 3-6 month deploy</div>
                         </div>
                         <div className="p-4 bg-white/10 rounded-xl text-center">
                             <div className="text-2xl font-bold">$0</div>
-                            <div className="text-xs text-zinc-400 font-mono uppercase">NeMo Guardrails (OSS)</div>
+                            <div className="text-xs text-zinc-600 font-mono uppercase">NeMo Guardrails (OSS)</div>
                             <div className="text-[10px] text-zinc-500 mt-1">Prompt-level only, no agent governance</div>
                         </div>
                         <div className="p-4 bg-emerald-500/20 border border-emerald-500/30 rounded-xl text-center">
@@ -189,14 +189,14 @@ export default function AIGuardrailsPlatformsPage() {
                             <div className="text-[10px] text-emerald-200 mt-1">Deploy in 15 minutes, any agent</div>
                         </div>
                     </div>
-                    <p className="text-sm text-zinc-400">
+                    <p className="text-sm text-zinc-600">
                         Enterprise guardrails are quote-gated. Open source is prompt-level only. Practitioner governance modules are $99 one-time and deploy in 15 minutes. There is nothing else in the market at this layer.
                     </p>
                 </div>
 
                 {/* CTA */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                    <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors">
+                    <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
                         View All 15 Governance Modules →
                     </Link>
                     <Link href="/compare/ai-coding-agents" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">

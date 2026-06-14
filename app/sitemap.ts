@@ -125,6 +125,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
     comparePages.forEach(slug => add(`${baseUrl}/compare/${slug}`, 'monthly', 0.8));
 
+    // Dynamic compare pages from programmatic matrix
+    (pseoMatrixData as any[]).forEach(item => 
+        add(`${baseUrl}/compare/${item.slug}`, 'weekly', 0.8)
+    );
+
     // === DYNAMICALLY GENERATED PAGES ===
 
     // Challenges

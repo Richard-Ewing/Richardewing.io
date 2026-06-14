@@ -39,7 +39,7 @@ export default function ExogramPage() {
 
                         {/* Hero CTAs */}
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-                            <Link href="/tools/hallucination-tax" className="relative overflow-hidden inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-red-600 text-white font-bold hover:bg-red-700 transition-all shadow-[0_0_20px_rgba(220,38,38,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.5)] text-sm">
+                            <Link href="/tools/hallucination-tax" className="relative overflow-hidden inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-red-600 text-zinc-900 font-bold hover:bg-red-700 transition-all shadow-[0_0_20px_rgba(220,38,38,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.5)] text-sm">
                                 <DollarSign className="w-4 h-4" />
                                 Calculate Your Hallucination Tax
                                 <ArrowRight className="w-4 h-4" />

@@ -138,6 +138,8 @@ function urlToFilePath(url: string): string | null {
         '/ai-economics-crisis': 'app/ai-economics-crisis/page.tsx',
     };
 
+    if (path.startsWith('/compare/')) return 'app/lib/pseo-matrix.json';
+
     if (staticMappings[path]) return staticMappings[path];
 
     // Tool pages
@@ -354,7 +356,23 @@ export async function POST(request: Request) {
             if (!content) continue;
 
             // 4. Apply rewrite
-            const modified = applyMetaRewrite(content, rewrite.title, rewrite.description);
+            let modified: string | null = null;
+            if (filePath.endsWith('.json')) {
+                try {
+                    const parsed = JSON.parse(content);
+                    const slug = page.url.split('/').pop();
+                    const entryIndex = parsed.findIndex((e: any) => e.slug === slug);
+                    if (entryIndex !== -1) {
+                        parsed[entryIndex].title = rewrite.title;
+                        parsed[entryIndex].metaDescription = rewrite.description;
+                        modified = JSON.stringify(parsed, null, 4);
+                    }
+                } catch {
+                    // Ignore JSON parse errors
+                }
+            } else {
+                modified = applyMetaRewrite(content, rewrite.title, rewrite.description);
+            }
             if (!modified) continue;
 
             results.push({

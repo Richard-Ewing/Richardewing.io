@@ -184,24 +184,24 @@ export default function DiagnosePage() {
                 <div className="max-w-5xl mx-auto">
 
                     {/* Escalation */}
-                    <div className="rounded-2xl bg-zinc-950 p-8 md:p-12 text-center mb-16">
+                    <div className="rounded-2xl bg-[#FCFAF7] p-8 md:p-12 text-center mb-16">
                         <div className="flex items-center justify-center gap-2 mb-4">
                             <Shield className="w-5 h-5 text-violet-400" />
                             <span className="text-xs font-mono uppercase tracking-[0.2em] text-violet-400">Want a Professional Interpretation?</span>
                         </div>
-                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                        <h2 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-4">
                             These tools give you the numbers.<br />
                             <span className="text-violet-400">An R&D Capital Audit gives you the strategy.</span>
                         </h2>
-                        <p className="text-zinc-400 max-w-2xl mx-auto mb-8 text-sm leading-relaxed">
+                        <p className="text-zinc-600 max-w-2xl mx-auto mb-8 text-sm leading-relaxed">
                             A $450 Gut-Check Session reviews your diagnostic results with Richard Ewing and delivers a prioritized action plan.
                             For comprehensive analysis, the $7,500 R&D Capital Audit includes full financial modeling, board-ready deliverables, and 90-day implementation roadmap.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <Link href="/advisory" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-white font-bold hover:opacity-90 transition-opacity">
+                            <Link href="/advisory" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-zinc-900 font-bold hover:opacity-90 transition-opacity">
                                 Book a $450 Gut-Check <ArrowRight className="w-5 h-5" />
                             </Link>
-                            <Link href="/pricing" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border border-zinc-600 text-zinc-300 font-bold hover:border-violet-400 hover:text-white transition-all">
+                            <Link href="/pricing" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border border-zinc-600 text-zinc-700 font-bold hover:border-violet-400 hover:text-zinc-900 transition-all">
                                 See All Pricing
                             </Link>
                         </div>
@@ -212,7 +212,7 @@ export default function DiagnosePage() {
                         <p className="text-sm text-zinc-500 font-medium">
                             Published in <span className="font-bold text-zinc-700">Built In</span> · <span className="font-bold text-zinc-700">CIO.com</span> · <span className="font-bold text-zinc-700">HackerNoon</span> · <span className="font-bold text-zinc-700">Mind the Product</span>
                         </p>
-                        <p className="text-xs text-zinc-400 mt-2">
+                        <p className="text-xs text-zinc-600 mt-2">
                             436+ governance terms defined · 6 free diagnostic tools · Used in enterprise R&D Capital Audits
                         </p>
                     </div>

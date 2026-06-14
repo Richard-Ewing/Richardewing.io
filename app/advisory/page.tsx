@@ -54,7 +54,7 @@ export default function AdvisoryPage() {
                                     </div>
                                 </div>
                                 <div className="mt-auto">
-                                    <Link href="/ai-integration" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-emerald-600 text-white hover:bg-emerald-500 transition-all uppercase shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                                    <Link href="/ai-integration" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-emerald-600 text-zinc-900 hover:bg-emerald-500 transition-all uppercase shadow-[0_0_20px_rgba(16,185,129,0.2)]">
                                         View Advisory Details
                                     </Link>
                                 </div>
@@ -78,7 +78,7 @@ export default function AdvisoryPage() {
                                 </div>
                                 <div className="mt-auto">
                                     <div className="mb-4 text-lg font-bold text-zinc-950 text-center">$10,000 / mo</div>
-                                    <a href="mailto:richard@richardewing.io?subject=Inquiry: Cost Caps & Optimization" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-blue-600 text-white hover:bg-blue-500 transition-all uppercase shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+                                    <a href="mailto:richard@richardewing.io?subject=Inquiry: Cost Caps & Optimization" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-blue-600 text-zinc-900 hover:bg-blue-500 transition-all uppercase shadow-[0_0_20px_rgba(59,130,246,0.3)]">
                                         Enforce Cost Caps
                                     </a>
                                 </div>
@@ -109,17 +109,17 @@ export default function AdvisoryPage() {
                         </div>
 
                         {/* PATH 4: Tech Due Diligence */}
-                        <div className="card bg-zinc-900 border border-zinc-800 shadow-sm relative overflow-hidden group hover:border-cyan-500/50 transition-all">
+                        <div className="card bg-white border border-zinc-200 shadow-sm relative overflow-hidden group hover:border-cyan-500/50 transition-all">
                             <div className="p-8 h-full flex flex-col">
                                 <div>
                                     <div className="text-xs font-bold font-mono text-cyan-400 uppercase tracking-widest mb-4">Pain Point: M&A Blindspots</div>
-                                    <h3 className="text-2xl font-bold text-white mb-2">"Is this SaaS acquisition full of tech debt?"</h3>
-                                    <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                                    <h3 className="text-2xl font-bold text-zinc-900 mb-2">"Is this SaaS acquisition full of tech debt?"</h3>
+                                    <p className="text-zinc-600 text-sm leading-relaxed mb-6">
                                         Private Equity & Search Funds: Before you sign the term sheet, you need to know the exact Product Debt Index (PDI) and blast radius of their architecture.
                                     </p>
                                     <div className="p-4 bg-white/5 border border-white/10 rounded-lg mb-6">
-                                        <div className="text-sm font-bold text-white mb-1">The Solution: Technical Due Diligence</div>
-                                        <div className="text-xs text-zinc-400">Intensive 2-week forensic code audit and investment thesis generation.</div>
+                                        <div className="text-sm font-bold text-zinc-900 mb-1">The Solution: Technical Due Diligence</div>
+                                        <div className="text-xs text-zinc-600">Intensive 2-week forensic code audit and investment thesis generation.</div>
                                         <div className="mt-2 text-sm font-bold text-cyan-400">$15,000 / deal</div>
                                     </div>
                                 </div>

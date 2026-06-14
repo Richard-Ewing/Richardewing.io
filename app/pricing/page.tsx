@@ -144,8 +144,8 @@ export default function PricingPage() {
                                 rel={tier.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                                 className={`block text-center py-3 px-6 rounded-lg font-semibold text-sm transition-all ${
                                     tier.highlight
-                                        ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold hover:opacity-90 shadow-lg'
-                                        : 'bg-black/5 border border-zinc-400 text-zinc-950 hover:bg-black/10 hover:border-zinc-500'
+                                        ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-zinc-900 font-bold hover:opacity-90 shadow-lg'
+                                        : 'bg-[#FCFAF7]/5 border border-zinc-400 text-zinc-950 hover:bg-[#FCFAF7]/10 hover:border-zinc-500'
                                 }`}
                             >
                                 {tier.cta} →

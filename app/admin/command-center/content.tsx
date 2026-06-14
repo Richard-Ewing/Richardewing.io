@@ -1043,7 +1043,7 @@ export default function CommandCenter() {
                                     <strong className="text-[#3A3A3A]">Rationale:</strong> {rec.rationale}
                                 </div>
                                 <div className="flex gap-2">
-                                    <button onClick={() => approveRecommendation(rec.id)} className="px-4 py-2 bg-[#7C3AED] text-white text-xs font-bold rounded hover:bg-[#6D28D9] transition-colors">
+                                    <button onClick={() => approveRecommendation(rec.id)} className="px-4 py-2 bg-[#7C3AED] text-zinc-900 text-xs font-bold rounded hover:bg-[#6D28D9] transition-colors">
                                         Approve & Deploy
                                     </button>
                                     <button className="px-4 py-2 bg-white border border-black/10 text-[#6B6B6B] text-xs font-bold rounded hover:bg-[#F5F0EB] transition-colors">
@@ -1170,7 +1170,7 @@ export default function CommandCenter() {
                                     key={d}
                                     onClick={() => setDays(d)}
                                     className={`px-3 py-1.5 text-xs font-bold font-mono rounded-md transition-all duration-200 ${days === d
-                                        ? 'bg-[#7C3AED] text-white shadow-sm'
+                                        ? 'bg-[#7C3AED] text-zinc-900 shadow-sm'
                                         : 'text-[#6B6B6B] hover:text-[#1A1A1A] hover:bg-[#F5F0EB]'
                                         }`}
                                 >
@@ -1202,7 +1202,7 @@ export default function CommandCenter() {
                                 key={t.id}
                                 onClick={() => setTab(t.id)}
                                 className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${active
-                                    ? 'bg-[#7C3AED] text-white shadow-sm'
+                                    ? 'bg-[#7C3AED] text-zinc-900 shadow-sm'
                                     : 'text-[#6B6B6B] hover:text-[#1A1A1A] hover:bg-[#F5F0EB]'
                                     }`}
                             >

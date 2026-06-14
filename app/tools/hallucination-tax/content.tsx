@@ -611,7 +611,7 @@ export default function HallucinationTaxTool() {
                                   <h4 className="text-lg font-bold text-zinc-950 mb-2">Eliminate your hallucination tax permanently</h4>
                                   <p className="text-sm text-zinc-600 mb-4">This calculator quantified the cost. A $5,000 Hallucination Tax Audit deploys retrieval-augmented verification across your AI stack and builds the feedback loops that kill fabrication at the source.</p>
                                   <div className="flex flex-wrap gap-3">
-                                    <a href="/advisory" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">Book Advisory Session →</a>
+                                    <a href="/advisory" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-zinc-900 text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">Book Advisory Session →</a>
                                     <a href="/api/buy/gut_check" className="inline-flex items-center gap-2 px-5 py-2.5 border border-purple-500/30 text-purple-700 text-sm font-bold rounded-lg hover:bg-purple-50 transition-colors">$450 Gut-Check Call →</a>
                                   </div>
                                 </div>
@@ -628,7 +628,7 @@ export default function HallucinationTaxTool() {
                                     <div className="grid sm:grid-cols-2 gap-4">
                                         <Link
                                             href="/advisory"
-                                            className="group flex items-center justify-between gap-4 p-5 rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:from-purple-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl"
+                                            className="group flex items-center justify-between gap-4 p-5 rounded-2xl bg-gradient-to-r from-purple-600 to-indigo-600 text-zinc-900 hover:from-purple-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl"
                                         >
                                             <div>
                                                 <div className="font-bold text-base mb-1">

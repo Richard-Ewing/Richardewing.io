@@ -41,7 +41,7 @@ export default function CurriculumPage() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
                     <Link
                         href="/vault/curriculum/tracks"
-                        className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-xl hover:opacity-90 transition-opacity shadow-lg"
+                        className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-zinc-900 font-bold rounded-xl hover:opacity-90 transition-opacity shadow-lg"
                     >
                         Browse All 25 Tracks →
                     </Link>

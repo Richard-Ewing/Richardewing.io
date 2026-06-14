@@ -55,7 +55,7 @@ function StatusCell({ status }: { status: string }) {
     if (status === 'partial') return <span className="text-amber-600 font-bold text-xs">Partial</span>;
     if (status === 'manual') return <span className="text-amber-600 font-bold text-xs">Manual</span>;
     if (status === 'basic') return <span className="text-amber-600 font-bold text-xs">Basic</span>;
-    return <span className="text-zinc-400 font-bold text-xs">{status}</span>;
+    return <span className="text-zinc-600 font-bold text-xs">{status}</span>;
 }
 
 export default function AgentComparisonPage() {
@@ -81,7 +81,7 @@ export default function AgentComparisonPage() {
                         <div key={a.name} className="bg-white rounded-xl p-4 border border-[rgba(0,0,0,0.08)] text-center">
                             <div className="font-bold text-[#1A1A1A] text-sm">{a.name}</div>
                             <div className="text-[10px] font-mono text-zinc-500 uppercase mt-1">{a.type}</div>
-                            <div className="text-[10px] text-zinc-400 mt-0.5">{a.maker}</div>
+                            <div className="text-[10px] text-zinc-600 mt-0.5">{a.maker}</div>
                         </div>
                     ))}
                 </div>
@@ -241,14 +241,14 @@ export default function AgentComparisonPage() {
                 </div>
 
                 {/* CTA */}
-                <div className="p-10 bg-[#1A1A1A] rounded-2xl text-white text-center">
+                <div className="p-10 bg-[#1A1A1A] rounded-2xl text-zinc-900 text-center">
                     <h2 className="text-2xl font-grotesk font-bold mb-4">Deploy the governance layer these tools are missing.</h2>
-                    <p className="text-zinc-400 mb-6">15 runtime infrastructure modules. Works with every agent. $99 each, one-time.</p>
+                    <p className="text-zinc-600 mb-6">15 runtime infrastructure modules. Works with every agent. $99 each, one-time.</p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link href="/skills" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded hover:bg-zinc-100 transition-colors">
                             View All 15 Modules →
                         </Link>
-                        <Link href="/runtime-architecture" className="px-8 py-4 text-white font-bold rounded border border-zinc-700 hover:border-zinc-500 transition-colors">
+                        <Link href="/runtime-architecture" className="px-8 py-4 text-zinc-900 font-bold rounded border border-zinc-300 hover:border-zinc-500 transition-colors">
                             Read the Architecture
                         </Link>
                     </div>

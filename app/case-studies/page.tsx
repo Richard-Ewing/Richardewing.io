@@ -28,7 +28,7 @@ export default function CaseStudiesPage() {
                     <p className="text-zinc-600 mb-8">
                         Our database of catastrophic failures and deterministic remediations is currently being mapped into the ontology graph.
                     </p>
-                    <Link href="/skills" className="px-6 py-3 bg-zinc-950 text-white font-bold rounded hover:bg-zinc-800 transition-colors">
+                    <Link href="/skills" className="px-6 py-3 bg-[#FCFAF7] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
                         View Remediation Infrastructure
                     </Link>
                 </div>

@@ -93,7 +93,7 @@ export default function ReportsPage() {
                                     className={`w-full md:w-auto px-6 py-3 rounded-lg font-bold text-sm uppercase tracking-widest flex items-center justify-center gap-2 transition-colors ${
                                         report.isGated 
                                         ? 'bg-zinc-100 text-zinc-900 font-medium cursor-not-allowed border border-zinc-200' 
-                                        : 'bg-zinc-50 border border-zinc-200 text-zinc-950 font-semibold hover:bg-zinc-800'
+                                        : 'bg-zinc-50 border border-zinc-200 text-zinc-950 font-semibold hover:bg-zinc-100'
                                     }`}
                                     disabled={report.isGated}
                                 >

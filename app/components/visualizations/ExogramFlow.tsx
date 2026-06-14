@@ -34,7 +34,7 @@ export function ExogramFlow() {
             <div className="relative">
                 <div className="absolute top-0 left-0 text-[10px] uppercase tracking-widest text-cyan-500 font-bold">Exogram Deterministic Control Plane</div>
                 <div className="flex flex-col md:flex-row items-center gap-4 mt-6">
-                    <div className="p-4 border border-zinc-700 rounded bg-zinc-50 border border-zinc-200 flex flex-col items-center flex-1 w-full">
+                    <div className="p-4 border border-zinc-300 rounded bg-zinc-50 border border-zinc-200 flex flex-col items-center flex-1 w-full">
                         <Database className="w-6 h-6 mb-2 text-zinc-800" />
                         <span className="text-xs">User Prompt</span>
                     </div>
@@ -45,7 +45,7 @@ export function ExogramFlow() {
                         <span className="text-xs text-zinc-900 font-bold text-center font-bold relative z-10">Policy-as-Code<br/>Interceptor</span>
                     </div>
                     <ArrowRight className="w-5 h-5 text-cyan-500 hidden md:block" />
-                    <div className="p-4 border border-zinc-700 rounded bg-zinc-50 border border-zinc-200 flex flex-col items-center flex-1 w-full">
+                    <div className="p-4 border border-zinc-300 rounded bg-zinc-50 border border-zinc-200 flex flex-col items-center flex-1 w-full">
                         <Cpu className="w-6 h-6 mb-2 text-purple-400" />
                         <span className="text-xs text-center">Constrained<br/>Inference</span>
                     </div>

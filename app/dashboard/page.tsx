@@ -58,7 +58,7 @@ export default function ExecutiveDashboard() {
                             <button className="px-4 py-2 bg-white border border-zinc-300 rounded-lg text-sm font-bold text-zinc-700 hover:bg-zinc-50 flex items-center gap-2">
                                 <Settings className="w-4 h-4" /> Preferences
                             </button>
-                            <Link href="/tools" className="px-4 py-2 bg-zinc-50 border border-zinc-200 text-zinc-950 font-semibold rounded-lg text-sm font-bold hover:bg-zinc-800 flex items-center gap-2">
+                            <Link href="/tools" className="px-4 py-2 bg-zinc-50 border border-zinc-200 text-zinc-950 font-semibold rounded-lg text-sm font-bold hover:bg-zinc-100 flex items-center gap-2">
                                 <Activity className="w-4 h-4" /> New Assessment
                             </Link>
                         </div>

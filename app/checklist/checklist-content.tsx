@@ -77,7 +77,7 @@ export default function ChecklistPageContent() {
                     <span className="text-sm font-mono font-bold text-zinc-500 uppercase tracking-widest">Your Score</span>
                     <div className="flex items-center gap-2">
                         <span className={`text-3xl font-grotesk font-bold ${scoreColor}`}>{score}</span>
-                        <span className="text-zinc-400 font-bold">/12</span>
+                        <span className="text-zinc-600 font-bold">/12</span>
                     </div>
                 </div>
 
@@ -100,7 +100,7 @@ export default function ChecklistPageContent() {
                                 {isLocked && (
                                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-zinc-100/90 rounded-xl z-10 flex items-center justify-center">
                                         {i === GATE_AFTER && (
-                                            <Lock className="w-5 h-5 text-zinc-400" />
+                                            <Lock className="w-5 h-5 text-zinc-600" />
                                         )}
                                     </div>
                                 )}
@@ -114,14 +114,14 @@ export default function ChecklistPageContent() {
                                             ? 'bg-emerald-500 border-emerald-500' 
                                             : 'border-zinc-300'
                                     }`}>
-                                        {checked[q.id] && <CheckCircle2 className="w-4 h-4 text-white" />}
+                                        {checked[q.id] && <CheckCircle2 className="w-4 h-4 text-zinc-900" />}
                                     </div>
                                     <div>
-                                        <span className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest">
+                                        <span className="text-xs font-mono font-bold text-zinc-600 uppercase tracking-widest">
                                             Question {q.id}
                                         </span>
                                         <p className={`text-sm font-semibold mt-1 ${
-                                            isLocked ? 'text-zinc-400 blur-[2px]' : 'text-[#1A1A1A]'
+                                            isLocked ? 'text-zinc-600 blur-[2px]' : 'text-[#1A1A1A]'
                                         }`}>
                                             {q.text}
                                         </p>
@@ -148,17 +148,17 @@ export default function ChecklistPageContent() {
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="your@email.com"
                                 required
-                                className="flex-1 px-4 py-3 rounded-lg border border-zinc-300 bg-white text-[#1A1A1A] placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-violet-400"
+                                className="flex-1 px-4 py-3 rounded-lg border border-zinc-300 bg-white text-[#1A1A1A] placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-violet-400"
                             />
                             <button
                                 type="submit"
                                 disabled={submitting}
-                                className="px-6 py-3 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-white font-bold text-sm hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center gap-2 justify-center"
+                                className="px-6 py-3 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-zinc-900 font-bold text-sm hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center gap-2 justify-center"
                             >
                                 {submitting ? 'Unlocking...' : 'Unlock All 12'} <ArrowRight className="w-4 h-4" />
                             </button>
                         </form>
-                        <p className="text-xs text-zinc-400 mt-3">No spam. One weekly briefing. Unsubscribe anytime.</p>
+                        <p className="text-xs text-zinc-600 mt-3">No spam. One weekly briefing. Unsubscribe anytime.</p>
                     </div>
                 )}
 

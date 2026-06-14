@@ -107,9 +107,9 @@ export default function RuntimeArchitecturePage() {
                 />
 
                 {/* THE FORMULA */}
-                <div className="mb-20 p-8 bg-[#1A1A1A] rounded-2xl text-white shadow-xl">
+                <div className="mb-20 p-8 bg-[#1A1A1A] rounded-2xl text-zinc-900 shadow-xl">
                     <h2 className="text-2xl font-grotesk font-bold mb-6 text-center">The Runtime Cognition Formula</h2>
-                    <div className="font-mono text-sm sm:text-base leading-relaxed text-center text-zinc-300 space-y-1">
+                    <div className="font-mono text-sm sm:text-base leading-relaxed text-center text-zinc-700 space-y-1">
                         <p className="text-cyan-400 font-bold">Agent Runtime Intelligence =</p>
                         <p>( Identity Layer × Skill Layer × Tool Layer × Environment Layer )</p>
                         <p>→ <span className="text-violet-400 font-bold">Runtime Compiler</span></p>
@@ -229,10 +229,10 @@ export default function RuntimeArchitecturePage() {
                             { step: '4', title: 'Context Assembly', desc: 'Inject identity + active state + environment slice + episodic memory. NOT the entire environment.', color: 'bg-emerald-50 text-emerald-700' },
                             { step: '5', title: 'Runtime Compilation', desc: 'Assemble immutable, constrained payload.', color: 'bg-violet-50 text-violet-700' },
                             { step: '6', title: 'Constrained Execution', desc: 'LLM performs bounded reasoning within deterministic guardrails.', color: 'bg-amber-50 text-amber-700' },
-                            { step: '7', title: 'State Mutation', desc: 'Update memory, environment, and active state. This creates continuity safely.', color: 'bg-zinc-900 text-white' },
+                            { step: '7', title: 'State Mutation', desc: 'Update memory, environment, and active state. This creates continuity safely.', color: 'bg-white text-zinc-900' },
                         ].map((item, i) => (
                             <div key={i} className={`flex items-start gap-4 p-4 rounded-xl ${item.color}`}>
-                                <div className="w-8 h-8 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center text-sm font-bold flex-shrink-0">
+                                <div className="w-8 h-8 rounded-full bg-[#1A1A1A] text-zinc-900 flex items-center justify-center text-sm font-bold flex-shrink-0">
                                     {item.step}
                                 </div>
                                 <div>
@@ -259,9 +259,9 @@ export default function RuntimeArchitecturePage() {
                 </div>
 
                 {/* CTA - DEPLOY */}
-                <div className="mb-16 p-10 bg-[#1A1A1A] rounded-2xl text-white text-center shadow-xl">
+                <div className="mb-16 p-10 bg-[#1A1A1A] rounded-2xl text-zinc-900 text-center shadow-xl">
                     <h2 className="text-3xl font-grotesk font-bold mb-4">Deploy Runtime Governance Infrastructure</h2>
-                    <p className="text-zinc-400 mb-8 max-w-2xl mx-auto">
+                    <p className="text-zinc-600 mb-8 max-w-2xl mx-auto">
                         15 deployable runtime infrastructure modules across all 4 governance layers. 
                         Each contains deterministic TypeScript middleware, YAML policy manifests, Mermaid architecture diagrams, 
                         financial models, and operational playbooks.
@@ -275,7 +275,7 @@ export default function RuntimeArchitecturePage() {
                         </Link>
                         <Link 
                             href="/exogram" 
-                            className="px-8 py-4 bg-transparent text-white font-bold rounded border border-zinc-700 hover:border-zinc-500 transition-colors"
+                            className="px-8 py-4 bg-transparent text-zinc-900 font-bold rounded border border-zinc-300 hover:border-zinc-500 transition-colors"
                         >
                             Explore Exogram Runtime OS
                         </Link>

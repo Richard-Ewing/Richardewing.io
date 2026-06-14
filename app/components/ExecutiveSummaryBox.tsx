@@ -49,7 +49,7 @@ const ExecutiveSummaryBox = ({
                 </div>
             </div>
 
-            <Link href={ctaHref} className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-white font-bold text-sm hover:opacity-90 transition-opacity shadow-md shadow-rose-500/20">
+            <Link href={ctaHref} className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-zinc-900 font-bold text-sm hover:opacity-90 transition-opacity shadow-md shadow-rose-500/20">
                 {ctaLabel} <ArrowRight className="w-4 h-4" />
             </Link>
         </div>

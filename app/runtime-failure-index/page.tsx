@@ -100,7 +100,7 @@ export default function RuntimeFailureIndexPage() {
                             <tbody>
                                 {failureIndex.map((f) => (
                                     <tr key={f.rank} className="border-b border-zinc-100 hover:bg-zinc-50 transition-colors">
-                                        <td className="px-4 py-3 text-sm font-bold text-zinc-400">{f.rank}</td>
+                                        <td className="px-4 py-3 text-sm font-bold text-zinc-600">{f.rank}</td>
                                         <td className="px-4 py-3">
                                             <div className="text-sm font-bold text-[#1A1A1A]">{f.name}</div>
                                             <div className="text-[10px] text-zinc-500">{f.agents}</div>
@@ -228,7 +228,7 @@ export default function RuntimeFailureIndexPage() {
                         Every failure in this index maps to a deployable runtime infrastructure module with TypeScript middleware, YAML policy manifests, and operational tooling.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors">
+                        <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
                             View All 15 Runtime Modules →
                         </Link>
                         <Link href="/diagrams" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">

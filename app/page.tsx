@@ -13,8 +13,8 @@ import PricingPreview from './components/sections/PricingPreview';
 import NewsletterSection from './components/sections/NewsletterSection';
 
 export const metadata: Metadata = {
-  title: 'Measure LLM ROI & Prevent Rogue Agents | Richard Ewing',
-  description: 'Why do AI pilots fail? Because of unpredictable abstraction layers. I help enterprises measure LLM ROI, deploy deterministic guardrails, and reduce LangChain token costs.',
+  title: 'Stop AI Billing Shock & Vibe Coding Debt | Richard Ewing',
+  description: 'Enterprise AI integrations fail operationally. Extract failed AI pilots, stop shadow AI risk, and install deterministic runtime governance infrastructure.',
   alternates: {
     canonical: 'https://www.richardewing.io',
   },

@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { exogramKeywords } from '../lib/keywords';
 
 export const metadata: Metadata = {
-    title: 'Your AI Is Hallucinating in Production and Nobody Notices | Exogram Runtime',
-    description: '88% of AI agent projects fail. 45% of AI-generated code has vulnerabilities. Exogram is deterministic AI governance — the kill switch your production AI doesn\'t have.',
+    title: 'Block Shadow AI Exfiltration & Hallucination Costs | Exogram',
+    description: '45% of AI code has vulnerabilities. Exogram is the deterministic governance kill-switch your CISO needs to stop prompt-based data egress and API bloat.',
     keywords: exogramKeywords,
     alternates: {
         canonical: 'https://www.richardewing.io/exogram',

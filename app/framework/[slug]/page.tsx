@@ -95,7 +95,7 @@ export default async function SubFrameworkPage({ params }: { params: Promise<{ s
                     {fw.concepts.map((concept) => (
                         <div key={concept.id} className="p-6 sm:p-8 bg-white border border-zinc-300 rounded-3xl shadow-sm relative overflow-hidden group">
                             {/* Subtle Frame ID Tag */}
-                            <div className="absolute top-0 right-0 px-3 py-1 bg-zinc-50 border-b border-l border-zinc-300 text-[10px] font-mono text-zinc-400 font-bold uppercase tracking-widest rounded-bl-xl">
+                            <div className="absolute top-0 right-0 px-3 py-1 bg-zinc-50 border-b border-l border-zinc-300 text-[10px] font-mono text-zinc-600 font-bold uppercase tracking-widest rounded-bl-xl">
                                 {concept.id}
                             </div>
 

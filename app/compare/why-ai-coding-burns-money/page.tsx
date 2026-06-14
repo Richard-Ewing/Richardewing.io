@@ -98,7 +98,7 @@ export default function WhyAICodingBurnsMoneyPage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                    <Link href="/skills/ai-cost-containment" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors">
+                    <Link href="/skills/ai-cost-containment" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
                         Deploy Cost Containment →
                     </Link>
                     <Link href="/telemetry" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">

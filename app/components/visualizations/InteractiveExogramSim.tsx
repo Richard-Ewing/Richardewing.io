@@ -64,7 +64,7 @@ export function InteractiveExogramSim() {
                                 key={p.id}
                                 onClick={() => runSimulation(idx)}
                                 disabled={isSimulating}
-                                className={`w-full text-left p-4 rounded-xl border transition-all ${activePrompt === idx && isSimulating ? 'border-cyan-500 bg-cyan-950/20' : 'border-zinc-200 bg-zinc-50 border border-zinc-200 hover:border-zinc-700 hover:bg-zinc-800/80'} ${isSimulating ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+                                className={`w-full text-left p-4 rounded-xl border transition-all ${activePrompt === idx && isSimulating ? 'border-cyan-500 bg-cyan-950/20' : 'border-zinc-200 bg-zinc-50 border border-zinc-200 hover:border-zinc-300 hover:bg-zinc-100/80'} ${isSimulating ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
                             >
                                 <div className="flex items-start justify-between">
                                     <p className="text-sm text-zinc-900 font-medium leading-relaxed pr-4">"{p.text}"</p>

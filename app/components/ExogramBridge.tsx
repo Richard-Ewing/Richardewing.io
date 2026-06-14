@@ -28,7 +28,7 @@ const ExogramBridge = ({
                 <div className="flex flex-wrap items-center gap-3">
                     <Link
                         href="/exogram/architecture"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-950 text-white font-bold text-sm hover:bg-zinc-800 transition-colors"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#FCFAF7] text-zinc-900 font-bold text-sm hover:bg-zinc-100 transition-colors"
                     >
                         See the Architecture <ArrowRight className="w-4 h-4" />
                     </Link>

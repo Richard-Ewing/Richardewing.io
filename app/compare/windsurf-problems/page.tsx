@@ -96,12 +96,12 @@ export default function WindsurfProblemsPage() {
                         <div className="p-4 bg-zinc-50 rounded-xl text-center">
                             <div className="text-2xl font-bold text-[#1A1A1A]">$20</div>
                             <div className="text-xs text-zinc-500 font-mono uppercase">Pro / month</div>
-                            <div className="text-xs text-zinc-400 mt-1">Daily/weekly quotas</div>
+                            <div className="text-xs text-zinc-600 mt-1">Daily/weekly quotas</div>
                         </div>
                         <div className="p-4 bg-zinc-50 rounded-xl text-center">
                             <div className="text-2xl font-bold text-[#1A1A1A]">$60</div>
                             <div className="text-xs text-zinc-500 font-mono uppercase">Enterprise / user / month</div>
-                            <div className="text-xs text-zinc-400 mt-1">SSO + ZDR + 1000 credits</div>
+                            <div className="text-xs text-zinc-600 mt-1">SSO + ZDR + 1000 credits</div>
                         </div>
                         <div className="p-4 bg-cyan-50 rounded-xl border border-cyan-200 text-center">
                             <div className="text-2xl font-bold text-cyan-700">$720</div>
@@ -135,19 +135,19 @@ export default function WindsurfProblemsPage() {
                 </div>
 
                 {/* Pricing Anchor */}
-                <div className="bg-[#1A1A1A] rounded-2xl p-8 mb-8 text-white">
+                <div className="bg-[#1A1A1A] rounded-2xl p-8 mb-8 text-zinc-900">
                     <h2 className="text-xl font-grotesk font-bold mb-4 flex items-center gap-2">
                         <Shield className="w-5 h-5" /> The Pricing Reality
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                         <div className="p-4 bg-white/10 rounded-xl text-center">
                             <div className="text-2xl font-bold">$720</div>
-                            <div className="text-xs text-zinc-400 font-mono uppercase">Windsurf Enterprise / year</div>
+                            <div className="text-xs text-zinc-600 font-mono uppercase">Windsurf Enterprise / year</div>
                             <div className="text-[10px] text-zinc-500 mt-1">per user, no governance</div>
                         </div>
                         <div className="p-4 bg-white/10 rounded-xl text-center">
                             <div className="text-2xl font-bold">$10K+</div>
-                            <div className="text-xs text-zinc-400 font-mono uppercase">Enterprise guardrails / year</div>
+                            <div className="text-xs text-zinc-600 font-mono uppercase">Enterprise guardrails / year</div>
                             <div className="text-[10px] text-zinc-500 mt-1">quote-gated, 6-month deploy</div>
                         </div>
                         <div className="p-4 bg-emerald-500/20 border border-emerald-500/30 rounded-xl text-center">
@@ -156,14 +156,14 @@ export default function WindsurfProblemsPage() {
                             <div className="text-[10px] text-emerald-200 mt-1">deploy in 15 minutes</div>
                         </div>
                     </div>
-                    <p className="text-sm text-zinc-400">
+                    <p className="text-sm text-zinc-600">
                         Each governance module costs less than 2 months of Windsurf Pro — and it works with every agent, not just one vendor.
                     </p>
                 </div>
 
                 {/* CTA */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                    <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors">
+                    <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
                         View All 15 Governance Modules →
                     </Link>
                     <Link href="/compare/ai-coding-agents" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">

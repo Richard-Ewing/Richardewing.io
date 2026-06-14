@@ -5,12 +5,11 @@ import Navigation from './components/Navigation';
 import { Footer } from './components/footer';
 import { personSchema, professionalServiceSchema } from './lib/schemas';
 import { homepageKeywords } from './lib/keywords';
-import ExitIntentPopup from './components/ExitIntentPopup';
-import StickyBottomCTA from './components/StickyBottomCTA';
-import SocialProofTicker from './components/SocialProofTicker';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { ClerkProvider } from '@clerk/nextjs';
 import { PHProvider } from '@/lib/telemetry/posthog';
+import Scene from './components/canvas/Scene';
+import NeuralSubstrate from './components/canvas/NeuralSubstrate';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-grotesk' });
@@ -203,15 +202,17 @@ export default function RootLayout({
           >
           <Navigation />
 
+          {/* Global WebGL Orchestrator */}
+          <Scene>
+            <NeuralSubstrate />
+          </Scene>
+
           {/* Main content with top padding for fixed nav */}
-          <main className="flex-grow pt-24 relative">
+          <main className="flex-grow pt-24 relative z-10">
             {children}
           </main>
 
           <Footer />
-          <ExitIntentPopup />
-          <StickyBottomCTA />
-          <SocialProofTicker />
 
           {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
             <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />

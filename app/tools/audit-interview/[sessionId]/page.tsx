@@ -552,8 +552,8 @@ export default function SessionCommandCenter() {
                             return (
                                 <div key={p} className={`relative pl-6 transition-all duration-500 ${isCurrent ? 'opacity-100' : 'opacity-40'}`}>
                                     <div className={`absolute left-0 top-1.5 w-2 h-2 rounded-full border ${isCurrent ? `${theme.bg} ${theme.primary} border-current shadow-[0_0_10px_currentColor]` :
-                                        isPast ? 'bg-zinc-700 border-zinc-700' :
-                                            'border-zinc-700'
+                                        isPast ? 'bg-zinc-700 border-zinc-300' :
+                                            'border-zinc-300'
                                         }`}></div>
 
                                     <h3 className={`text-sm font-bold uppercase tracking-wider ${isCurrent ? 'text-zinc-900' : 'text-zinc-900'}`}>

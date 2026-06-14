@@ -313,14 +313,14 @@ export default function RuntimeIncidentsPage() {
                     })}
                 </div>
 
-                <div className="mt-16 p-10 bg-[#1A1A1A] rounded-2xl text-white text-center">
+                <div className="mt-16 p-10 bg-[#1A1A1A] rounded-2xl text-zinc-900 text-center">
                     <h2 className="text-2xl font-grotesk font-bold mb-4">Every incident above was preventable.</h2>
-                    <p className="text-zinc-400 mb-6">Deploy runtime governance infrastructure to contain these failures before they occur.</p>
+                    <p className="text-zinc-600 mb-6">Deploy runtime governance infrastructure to contain these failures before they occur.</p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link href="/skills" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded hover:bg-zinc-100 transition-colors">
                             View All 15 Runtime Modules →
                         </Link>
-                        <Link href="/runtime-architecture" className="px-8 py-4 text-white font-bold rounded border border-zinc-700 hover:border-zinc-500 transition-colors">
+                        <Link href="/runtime-architecture" className="px-8 py-4 text-zinc-900 font-bold rounded border border-zinc-300 hover:border-zinc-500 transition-colors">
                             Read the Architecture Doctrine
                         </Link>
                     </div>

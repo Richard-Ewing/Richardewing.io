@@ -126,7 +126,7 @@ export default function ClaudeMdIsNotGovernancePage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                    <Link href="/skills/runtime-governance" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors">
+                    <Link href="/skills/runtime-governance" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
                         Deploy Runtime Governance →
                     </Link>
                     <Link href="/runtime-architecture" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">

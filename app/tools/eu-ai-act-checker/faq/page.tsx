@@ -69,7 +69,7 @@ export default function EUAIActFAQ() {
                     ))}
                 </div>
 
-                <div className="mt-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-8 text-center text-white">
+                <div className="mt-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-8 text-center text-zinc-900">
                     <h2 className="text-2xl font-grotesk font-bold mb-3">Check Your Compliance Score</h2>
                     <p className="text-purple-100 mb-6">Score your EU AI Act readiness across 8 critical areas in 3 minutes.</p>
                     <Link href="/tools/eu-ai-act-checker" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-purple-700 font-bold rounded-xl hover:bg-purple-50 transition-colors">

@@ -84,7 +84,7 @@ export default function GovernanceDashboard() {
     const totalTokensSaved = sampleEvents.filter(e => e.decision === 'BLOCK').reduce((acc) => acc + 4200, 0); // avg tokens prevented
 
     return (
-        <section ref={sectionRef} className="py-16 md:py-24 bg-zinc-950 text-white overflow-hidden">
+        <section ref={sectionRef} className="py-16 md:py-24 bg-[#FCFAF7] text-zinc-900 overflow-hidden">
             <div className="max-w-6xl mx-auto px-6">
 
                 {/* Header */}
@@ -97,7 +97,7 @@ export default function GovernanceDashboard() {
                         What Governance{' '}
                         <span className="text-violet-400">Looks Like in Operation</span>
                     </h2>
-                    <p className="text-zinc-400 max-w-2xl mx-auto text-sm">
+                    <p className="text-zinc-600 max-w-2xl mx-auto text-sm">
                         Every agent action is evaluated against deterministic policy gates in real time.
                         Not confidence scores. Not probabilistic filters. Binary policy enforcement.
                     </p>
@@ -105,31 +105,31 @@ export default function GovernanceDashboard() {
 
                 {/* Summary Metrics */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                    <div className="rounded-xl bg-white/5 border border-white/10 p-4 text-center">
+                    <div className="rounded-xl bg-white/5 border  p-4 text-center">
                         <p className="text-2xl font-bold text-emerald-400 font-mono">{allowed}</p>
                         <p className="text-xs text-zinc-500 font-mono uppercase mt-1">Allowed</p>
                     </div>
-                    <div className="rounded-xl bg-white/5 border border-white/10 p-4 text-center">
+                    <div className="rounded-xl bg-white/5 border  p-4 text-center">
                         <p className="text-2xl font-bold text-amber-400 font-mono">{modified}</p>
                         <p className="text-xs text-zinc-500 font-mono uppercase mt-1">Modified</p>
                     </div>
-                    <div className="rounded-xl bg-white/5 border border-white/10 p-4 text-center">
+                    <div className="rounded-xl bg-white/5 border  p-4 text-center">
                         <p className="text-2xl font-bold text-violet-400 font-mono">{escalated}</p>
                         <p className="text-xs text-zinc-500 font-mono uppercase mt-1">Escalated</p>
                     </div>
-                    <div className="rounded-xl bg-white/5 border border-white/10 p-4 text-center">
+                    <div className="rounded-xl bg-white/5 border  p-4 text-center">
                         <p className="text-2xl font-bold text-rose-400 font-mono">{blocked}</p>
                         <p className="text-xs text-zinc-500 font-mono uppercase mt-1">Blocked</p>
                     </div>
                 </div>
 
                 {/* Policy Evaluation Feed */}
-                <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 overflow-hidden">
+                <div className="rounded-2xl border border-zinc-200 bg-white/50 overflow-hidden">
                     {/* Feed header */}
-                    <div className="flex items-center justify-between px-6 py-3 border-b border-zinc-800 bg-zinc-900">
+                    <div className="flex items-center justify-between px-6 py-3 border-b border-zinc-200 bg-white">
                         <div className="flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                            <span className="text-xs font-mono text-zinc-400 uppercase tracking-wider">Live Policy Evaluation Feed</span>
+                            <span className="text-xs font-mono text-zinc-600 uppercase tracking-wider">Live Policy Evaluation Feed</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <Lock className="w-3 h-3 text-zinc-600" />
@@ -160,7 +160,7 @@ export default function GovernanceDashboard() {
                                                 <span className="text-xs font-mono text-zinc-600">{event.timestamp}</span>
                                                 <span className="text-xs font-mono text-zinc-500">{event.agent}</span>
                                             </div>
-                                            <p className="text-sm text-zinc-300 font-mono truncate">{event.action}</p>
+                                            <p className="text-sm text-zinc-700 font-mono truncate">{event.action}</p>
                                             <p className="text-xs text-zinc-500 mt-1">{event.reason}</p>
                                         </div>
 
@@ -184,9 +184,9 @@ export default function GovernanceDashboard() {
                     </div>
 
                     {/* Footer */}
-                    <div className="px-6 py-3 border-t border-zinc-800 bg-zinc-900 flex items-center justify-between">
+                    <div className="px-6 py-3 border-t border-zinc-200 bg-white flex items-center justify-between">
                         <div className="flex items-center gap-4 text-xs text-zinc-500">
-                            <span>Avg evaluation latency: <span className="text-zinc-300 font-mono">2.1ms</span></span>
+                            <span>Avg evaluation latency: <span className="text-zinc-700 font-mono">2.1ms</span></span>
                             <span>Tokens saved by blocking: <span className="text-emerald-400 font-mono">~{totalTokensSaved.toLocaleString()}</span></span>
                         </div>
                         <span className="text-xs font-mono text-zinc-600">
@@ -201,7 +201,7 @@ export default function GovernanceDashboard() {
                     <p className="text-zinc-500 text-sm mb-1">
                         This is what deterministic governance looks like at runtime.
                     </p>
-                    <p className="text-zinc-400 text-xs">
+                    <p className="text-zinc-600 text-xs">
                         Not confidence scores. Not probabilistic filters. <span className="text-violet-400 font-semibold">Binary policy enforcement in under 3ms.</span>
                     </p>
                 </div>

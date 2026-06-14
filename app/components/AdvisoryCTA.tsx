@@ -68,8 +68,8 @@ export default function AdvisoryCTA({ variant, termTitle }: AdvisoryCTAProps) {
   return (
     <section className={`mt-12 mb-12 rounded-2xl ${v.accentBorder} border bg-gradient-to-br ${v.accentFrom} to-transparent p-8`}>
       <div className="flex items-start gap-4 mb-4">
-        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-zinc-950 flex items-center justify-center">
-          <span className="text-white text-lg">⚡</span>
+        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#FCFAF7] flex items-center justify-center">
+          <span className="text-zinc-900 text-lg">⚡</span>
         </div>
         <div>
           <h2 className="text-xl font-grotesk font-bold text-zinc-950">
@@ -85,7 +85,7 @@ export default function AdvisoryCTA({ variant, termTitle }: AdvisoryCTAProps) {
         {isInternalPrimary ? (
           <Link
             href={v.primaryHref}
-            className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${v.btnGradient} text-white font-bold text-sm rounded-lg hover:opacity-90 transition-opacity shadow-lg`}
+            className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${v.btnGradient} text-zinc-900 font-bold text-sm rounded-lg hover:opacity-90 transition-opacity shadow-lg`}
           >
             {v.primaryLabel} {v.primaryPrice && <span className="opacity-80 font-mono text-xs">({v.primaryPrice})</span>}
             <span aria-hidden="true">→</span>
@@ -93,7 +93,7 @@ export default function AdvisoryCTA({ variant, termTitle }: AdvisoryCTAProps) {
         ) : (
           <a
             href={v.primaryHref}
-            className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${v.btnGradient} text-white font-bold text-sm rounded-lg hover:opacity-90 transition-opacity shadow-lg`}
+            className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${v.btnGradient} text-zinc-900 font-bold text-sm rounded-lg hover:opacity-90 transition-opacity shadow-lg`}
           >
             {v.primaryLabel} {v.primaryPrice && <span className="opacity-80 font-mono text-xs">({v.primaryPrice})</span>}
             <span aria-hidden="true">→</span>

@@ -36,31 +36,31 @@ export default function AIEconomicsCrisis() {
     return (
         <main className="pt-20">
             {/* HERO */}
-            <section className="relative bg-zinc-950 py-24 overflow-hidden">
+            <section className="relative bg-[#FCFAF7] py-24 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-red-950/20 via-zinc-950 to-purple-950/20" />
                 <div className="relative max-w-5xl mx-auto px-6 text-center">
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-red-500/10 border border-red-500/20 rounded-full text-red-400 text-xs font-mono uppercase tracking-widest mb-8">
                         <AlertTriangle className="w-3.5 h-3.5" />
                         Market Alert — June 2026
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-grotesk font-bold text-white leading-tight mb-6">
+                    <h1 className="text-4xl md:text-6xl font-grotesk font-bold text-zinc-900 leading-tight mb-6">
                         Your AI Tools Cost More
                         <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-amber-400">
                             Than Your Engineers Think
                         </span>
                     </h1>
-                    <p className="text-xl text-zinc-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-                        GitHub Copilot just went usage-based. METR proved experienced devs take <strong className="text-white">19% longer</strong> with AI.
+                    <p className="text-xl text-zinc-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+                        GitHub Copilot just went usage-based. METR proved experienced devs take <strong className="text-zinc-900">19% longer</strong> with AI.
                         The hidden cost is <strong className="text-red-400">$58K per engineer per year</strong>.
                         Your CFO is about to ask you to prove ROI. Here&apos;s the math.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/tools/aueb" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-red-600 to-amber-600 text-white font-bold rounded-xl hover:from-red-500 hover:to-amber-500 transition-all text-lg shadow-lg shadow-red-500/20">
+                        <Link href="/tools/aueb" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-red-600 to-amber-600 text-zinc-900 font-bold rounded-xl hover:from-red-500 hover:to-amber-500 transition-all text-lg shadow-lg shadow-red-500/20">
                             Run Your Free AI Economics Audit
                             <ArrowRight className="w-5 h-5" />
                         </Link>
-                        <Link href="/advisory" className="inline-flex items-center gap-2 px-8 py-4 border border-zinc-700 text-zinc-300 font-medium rounded-xl hover:bg-zinc-800 transition-colors">
+                        <Link href="/advisory" className="inline-flex items-center gap-2 px-8 py-4 border border-zinc-300 text-zinc-700 font-medium rounded-xl hover:bg-zinc-100 transition-colors">
                             Book an Advisory Session
                         </Link>
                     </div>
@@ -68,7 +68,7 @@ export default function AIEconomicsCrisis() {
             </section>
 
             {/* STATS GRID */}
-            <section className="bg-zinc-950 border-t border-zinc-800/50 py-20">
+            <section className="bg-[#FCFAF7] border-t border-zinc-200/50 py-20">
                 <div className="max-w-6xl mx-auto px-6">
                     <h2 className="text-center text-sm font-mono uppercase tracking-widest text-zinc-500 mb-12">
                         The Numbers Nobody Wants to See
@@ -77,14 +77,14 @@ export default function AIEconomicsCrisis() {
                         {STATS.map((stat, i) => {
                             const Icon = stat.icon;
                             return (
-                                <div key={i} className="bg-zinc-900/50 border border-zinc-800/50 rounded-2xl p-6 hover:border-red-500/20 transition-colors">
+                                <div key={i} className="bg-white border border-zinc-200/50 rounded-2xl p-6 hover:border-red-500/20 transition-colors">
                                     <div className="flex items-center gap-3 mb-4">
                                         <span className="p-2 bg-red-500/10 rounded-lg">
                                             <Icon className="w-5 h-5 text-red-400" />
                                         </span>
                                     </div>
-                                    <p className="text-4xl font-grotesk font-bold text-white mb-1">{stat.value}</p>
-                                    <p className="text-zinc-300 font-medium text-sm">{stat.label}</p>
+                                    <p className="text-4xl font-grotesk font-bold text-zinc-900 mb-1">{stat.value}</p>
+                                    <p className="text-zinc-700 font-medium text-sm">{stat.label}</p>
                                     <p className="text-zinc-600 text-xs mt-1">{stat.sublabel}</p>
                                 </div>
                             );
@@ -143,9 +143,9 @@ export default function AIEconomicsCrisis() {
             </section>
 
             {/* WHO THIS IS FOR */}
-            <section className="bg-zinc-950 py-20">
+            <section className="bg-[#FCFAF7] py-20">
                 <div className="max-w-4xl mx-auto px-6">
-                    <h2 className="text-2xl font-grotesk font-bold text-white mb-8 text-center">Who This Is For</h2>
+                    <h2 className="text-2xl font-grotesk font-bold text-zinc-900 mb-8 text-center">Who This Is For</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {[
                             { title: 'VP/Director of Engineering', desc: 'You championed AI tools. Now the CFO wants ROI proof. We give you the math.' },
@@ -153,12 +153,12 @@ export default function AIEconomicsCrisis() {
                             { title: 'Engineering Leaders Scaling 50-500 Devs', desc: 'AI costs compound with headcount. Your hidden costs are growing faster than your team.' },
                             { title: 'PE/VC Portfolio Companies', desc: 'Your portfolio companies are burning capital on AI tools with negative ROI. We quantify it.' },
                         ].map((persona, i) => (
-                            <div key={i} className="bg-zinc-900/50 border border-zinc-800/50 rounded-xl p-6">
-                                <h3 className="font-bold text-white mb-2 flex items-center gap-2">
+                            <div key={i} className="bg-white border border-zinc-200/50 rounded-xl p-6">
+                                <h3 className="font-bold text-zinc-900 mb-2 flex items-center gap-2">
                                     <Users className="w-4 h-4 text-purple-400" />
                                     {persona.title}
                                 </h3>
-                                <p className="text-sm text-zinc-400">{persona.desc}</p>
+                                <p className="text-sm text-zinc-600">{persona.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -168,7 +168,7 @@ export default function AIEconomicsCrisis() {
             {/* FINAL CTA */}
             <section className="bg-gradient-to-r from-purple-950 to-indigo-950 py-20">
                 <div className="max-w-3xl mx-auto px-6 text-center">
-                    <h2 className="text-3xl font-grotesk font-bold text-white mb-4">
+                    <h2 className="text-3xl font-grotesk font-bold text-zinc-900 mb-4">
                         Stop Guessing. Start Measuring.
                     </h2>
                     <p className="text-lg text-purple-200 mb-8">

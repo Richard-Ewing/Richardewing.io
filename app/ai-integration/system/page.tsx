@@ -61,11 +61,11 @@ export default function AIIntegrationSystemPage() {
                                 </li>
                             ))}
                         </ul>
-                        <a href="/api/buy/ai_integration_starter" className="block text-center py-3 bg-violet-600 text-white font-bold rounded-lg text-sm hover:bg-violet-500 transition-colors">Get Starter System →</a>
+                        <a href="/api/buy/ai_integration_starter" className="block text-center py-3 bg-violet-600 text-zinc-900 font-bold rounded-lg text-sm hover:bg-violet-500 transition-colors">Get Starter System →</a>
                     </div>
 
                     <div className="bg-white rounded-2xl border-2 border-emerald-400 p-6 shadow-lg relative">
-                        <div className="absolute -top-3 right-4 px-3 py-1 bg-emerald-500 text-white text-[10px] font-bold font-mono uppercase tracking-widest rounded-full">Best Value</div>
+                        <div className="absolute -top-3 right-4 px-3 py-1 bg-emerald-500 text-zinc-900 text-[10px] font-bold font-mono uppercase tracking-widest rounded-full">Best Value</div>
                         <div className="text-xs font-mono font-bold text-emerald-600 uppercase tracking-widest mb-2">Complete</div>
                         <div className="text-4xl font-bold text-[#1A1A1A] mb-2">$1,997<span className="text-sm font-normal text-zinc-500"> one-time</span></div>
                         <p className="text-sm text-[#4A4A4A] mb-4">Full system — all 10 modules, 50+ prompts, tool selection guide, quarterly framework, and 100-point checklist.</p>
@@ -76,21 +76,21 @@ export default function AIIntegrationSystemPage() {
                                 </li>
                             ))}
                         </ul>
-                        <a href="/api/buy/ai_integration_complete" className="block text-center py-3 bg-emerald-600 text-white font-bold rounded-lg text-sm hover:bg-emerald-500 transition-colors">Get Complete System →</a>
+                        <a href="/api/buy/ai_integration_complete" className="block text-center py-3 bg-emerald-600 text-zinc-900 font-bold rounded-lg text-sm hover:bg-emerald-500 transition-colors">Get Complete System →</a>
                     </div>
                 </div>
 
                 {/* Value Anchor */}
-                <div className="bg-[#1A1A1A] rounded-2xl p-6 mb-12 text-white text-center">
+                <div className="bg-[#1A1A1A] rounded-2xl p-6 mb-12 text-zinc-900 text-center">
                     <h2 className="text-lg font-grotesk font-bold mb-3">The Math</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="p-4 bg-white/5 rounded-xl border border-white/10">
                             <div className="text-2xl font-bold">$5,000</div>
-                            <div className="text-xs text-zinc-400">Quarterly audit (my time)</div>
+                            <div className="text-xs text-zinc-600">Quarterly audit (my time)</div>
                         </div>
                         <div className="p-4 bg-white/5 rounded-xl border border-white/10">
                             <div className="text-2xl font-bold">$8,000-$25,000</div>
-                            <div className="text-xs text-zinc-400">Typical AI readiness assessment (4-8 weeks)</div>
+                            <div className="text-xs text-zinc-600">Typical AI readiness assessment (4-8 weeks)</div>
                         </div>
                         <div className="p-4 bg-emerald-500/20 border border-emerald-500/30 rounded-xl">
                             <div className="text-2xl font-bold text-emerald-400">$997-$1,997</div>
@@ -166,12 +166,12 @@ export default function AIIntegrationSystemPage() {
                 </div>
 
                 {/* CTA */}
-                <div className="bg-violet-600 rounded-2xl p-8 text-white text-center mb-12">
+                <div className="bg-violet-600 rounded-2xl p-8 text-zinc-900 text-center mb-12">
                     <h2 className="text-2xl font-grotesk font-bold mb-3">Stop Guessing. Start Implementing.</h2>
                     <p className="text-violet-100 mb-6">The same system from $5,000 audits. Self-serve. Immediate access.</p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <a href="/api/buy/ai_integration_complete" className="px-8 py-4 bg-white text-violet-800 font-bold rounded-lg hover:bg-violet-50 transition-colors">Get Complete System ($1,997) →</a>
-                        <a href="/api/buy/ai_integration_starter" className="px-8 py-4 text-white font-bold rounded-lg border border-white/30 hover:border-white/60 transition-colors">Get Starter ($997) →</a>
+                        <a href="/api/buy/ai_integration_starter" className="px-8 py-4 text-zinc-900 font-bold rounded-lg border border-white/30 hover:border-white/60 transition-colors">Get Starter ($997) →</a>
                     </div>
                 </div>
 

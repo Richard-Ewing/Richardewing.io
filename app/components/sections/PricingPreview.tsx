@@ -24,7 +24,7 @@ const PricingPreview = () => {
                             </p>
 
                             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-                                <Link href="/tools/pdi" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-white font-bold text-lg hover:opacity-90 transition-opacity shadow-lg shadow-rose-500/20">
+                                <Link href="/tools/pdi" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-zinc-900 font-bold text-lg hover:opacity-90 transition-opacity shadow-lg shadow-rose-500/20">
                                     Run a Free Diagnosis <ArrowRight className="w-5 h-5" />
                                 </Link>
                                 <Link href="/advisory" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border-2 border-zinc-400 text-zinc-950 font-bold text-lg hover:border-violet-400 hover:bg-violet-50/30 transition-all">
@@ -34,9 +34,9 @@ const PricingPreview = () => {
 
                             <div className="flex flex-wrap justify-center gap-6 text-xs font-bold text-zinc-600 uppercase tracking-widest font-mono">
                                 <span>Free Tools Available</span>
-                                <span className="text-zinc-300">·</span>
+                                <span className="text-zinc-700">·</span>
                                 <span>Engagements from $450</span>
-                                <span className="text-zinc-300">·</span>
+                                <span className="text-zinc-700">·</span>
                                 <Link href="/pricing" className="text-violet-600 hover:text-violet-500 transition-colors">See All Pricing →</Link>
                             </div>
                         </div>

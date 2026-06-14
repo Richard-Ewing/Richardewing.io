@@ -101,7 +101,7 @@ export default async function DownloadPage() {
                             ) : (
                                 <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200 mb-6">
                                     <div className="flex items-center gap-3">
-                                        <Lock className="w-5 h-5 text-zinc-400" />
+                                        <Lock className="w-5 h-5 text-zinc-600" />
                                         <div>
                                             <div className="font-bold text-[#1A1A1A]">Complete System (Modules 7-10)</div>
                                             <div className="text-xs text-[#6A6A6A]">ROI Calculator, AI Tool Selection Guide, Quarterly Review Framework, 100-Point Checklist</div>
@@ -129,13 +129,13 @@ export default async function DownloadPage() {
                                         { num: '09', title: 'Quarterly Review Framework', included: hasComplete },
                                         { num: '10', title: 'Implementation Checklist', included: hasComplete },
                                     ].map((m) => (
-                                        <div key={m.num} className={`flex items-center gap-2 text-sm ${m.included ? 'text-[#1A1A1A]' : 'text-zinc-400'}`}>
+                                        <div key={m.num} className={`flex items-center gap-2 text-sm ${m.included ? 'text-[#1A1A1A]' : 'text-zinc-600'}`}>
                                             {m.included ? (
                                                 <CheckCircle size={14} className="text-emerald-500 flex-shrink-0" />
                                             ) : (
-                                                <Lock size={14} className="text-zinc-300 flex-shrink-0" />
+                                                <Lock size={14} className="text-zinc-700 flex-shrink-0" />
                                             )}
-                                            <span className="font-mono text-xs text-zinc-400 mr-1">{m.num}</span>
+                                            <span className="font-mono text-xs text-zinc-600 mr-1">{m.num}</span>
                                             {m.title}
                                         </div>
                                     ))}
@@ -165,13 +165,13 @@ export default async function DownloadPage() {
                 ) : (
                     /* Not Purchased State */
                     <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-8 shadow-sm text-center">
-                        <Lock className="w-12 h-12 text-zinc-300 mx-auto mb-4" />
+                        <Lock className="w-12 h-12 text-zinc-700 mx-auto mb-4" />
                         <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-2">No Purchase Found</h2>
                         <p className="text-sm text-[#4A4A4A] mb-6 max-w-md mx-auto">
                             It looks like you haven&apos;t purchased the AI Integration System yet. If you recently purchased, it may take a moment to process.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <Link href="/ai-integration/system" className="px-6 py-3 bg-violet-600 text-white font-bold rounded-lg text-sm hover:bg-violet-500 transition-colors">
+                            <Link href="/ai-integration/system" className="px-6 py-3 bg-violet-600 text-zinc-900 font-bold rounded-lg text-sm hover:bg-violet-500 transition-colors">
                                 View System Details →
                             </Link>
                             <button
@@ -181,7 +181,7 @@ export default async function DownloadPage() {
                                 Refresh Page
                             </button>
                         </div>
-                        <p className="text-xs text-zinc-400 mt-6">
+                        <p className="text-xs text-zinc-600 mt-6">
                             Already purchased? Try refreshing or contact richard@richardewing.io for support.
                         </p>
                     </div>

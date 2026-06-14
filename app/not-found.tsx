@@ -98,7 +98,7 @@ export default function NotFound() {
                     ].map(item => (
                         <Link key={item.href} href={item.href} className="p-4 rounded-xl bg-white border border-zinc-200 hover:border-violet-300 transition-colors text-center group shadow-sm">
                             <p className="text-sm font-bold text-zinc-900 group-hover:text-violet-700 transition-colors">{item.label}</p>
-                            <p className="text-xs text-zinc-400 mt-0.5">{item.count}</p>
+                            <p className="text-xs text-zinc-600 mt-0.5">{item.count}</p>
                         </Link>
                     ))}
                 </div>

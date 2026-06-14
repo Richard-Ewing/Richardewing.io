@@ -124,7 +124,7 @@ export default function GettingStartedPage() {
                                 </div>
                                 <p className="text-[#4A4A4A] mb-4">{step.description}</p>
                                 <p className="text-sm text-[#5A5A5A] mb-3">{step.content}</p>
-                                <pre className="bg-zinc-900 text-zinc-100 rounded-xl p-4 overflow-x-auto text-sm font-mono leading-relaxed">
+                                <pre className="bg-white text-zinc-900 rounded-xl p-4 overflow-x-auto text-sm font-mono leading-relaxed">
                                     {step.code}
                                 </pre>
                             </div>
@@ -226,14 +226,14 @@ export default function GettingStartedPage() {
                 </div>
 
                 {/* CTA */}
-                <div className="p-10 bg-[#1A1A1A] rounded-2xl text-white text-center">
+                <div className="p-10 bg-[#1A1A1A] rounded-2xl text-zinc-900 text-center">
                     <h2 className="text-2xl font-grotesk font-bold mb-4">Ready to deploy?</h2>
-                    <p className="text-zinc-400 mb-6">Choose your governance system and start protecting your codebase in under 10 minutes.</p>
+                    <p className="text-zinc-600 mb-6">Choose your governance system and start protecting your codebase in under 10 minutes.</p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link href="/skills" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded hover:bg-zinc-100 transition-colors">
                             Browse All 15 Systems →
                         </Link>
-                        <Link href="/runtime-architecture" className="px-8 py-4 text-white font-bold rounded border border-zinc-700 hover:border-zinc-500 transition-colors">
+                        <Link href="/runtime-architecture" className="px-8 py-4 text-zinc-900 font-bold rounded border border-zinc-300 hover:border-zinc-500 transition-colors">
                             Read the Architecture
                         </Link>
                     </div>
