@@ -2,11 +2,27 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
+import SyllabusPreview from '@/app/components/client/SyllabusPreview';
+import { tracks } from '@/app/lib/curriculum-tracks-ui';
+import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-    alternates: { canonical: 'https://www.richardewing.io/curriculum' },
     title: 'Executive AI Curriculum | 25 Tracks, 303 Modules | Richard Ewing',
     description: 'Master AI economics through 25 structured authority tracks: financial modeling, governance, M&A diligence, agent economics, and executive strategy. $149/track or $999 all-access.',
+    alternates: { canonical: 'https://www.richardewing.io/curriculum' },
+    openGraph: {
+        title: 'Executive AI Curriculum | 25 Tracks, 303 Modules | Richard Ewing',
+        description: 'Master AI economics through 25 structured authority tracks: financial modeling, governance, M&A diligence, agent economics, and executive strategy. $149/track or $999 all-access.',
+        url: 'https://www.richardewing.io/curriculum',
+        type: 'website',
+        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Executive AI Curriculum | 25 Tracks, 303 Modules | Richard Ewing',
+        description: 'Master AI economics through 25 structured authority tracks: financial modeling, governance, M&A diligence, agent economics, and executive strategy.',
+        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+    },
 };
 
 export default function CurriculumPage() {
@@ -67,6 +83,51 @@ export default function CurriculumPage() {
                         </div>
                     ))}
                 </div>
+
+                {/* Syllabus Preview Accordion Section */}
+                <section className="mb-20 pt-4">
+                    <SyllabusPreview tracks={tracks} />
+                </section>
+
+                {/* FAQ Section */}
+                <section className="mb-16 border-t border-zinc-300 pt-12 text-left">
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                            '@context': 'https://schema.org',
+                            '@type': 'FAQPage',
+                            'mainEntity': [
+                                {
+                                    '@type': 'Question',
+                                    'name': 'What is the AI Economics Academy curriculum?',
+                                    'acceptedAnswer': {
+                                        '@type': 'Answer',
+                                        'text': 'The academy features 25 tracks and 303 deep modules covering AI economics, unit economics modeling, cloud FinOps, agentic security, M&A due diligence, and remote engineering management.'
+                                    }
+                                },
+                                {
+                                    '@type': 'Question',
+                                    'name': 'How much does the curriculum cost?',
+                                    'acceptedAnswer': {
+                                        '@type': 'Answer',
+                                        'text': 'Individual authority tracks cost $149 each, or you can purchase all-access to the entire academy for a one-time price of $999.'
+                                    }
+                                }
+                            ]
+                        }) }}
+                    />
+                    <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-6 text-center">Frequently Asked Questions</h2>
+                    <div className="space-y-4 max-w-2xl mx-auto">
+                        <FAQItem 
+                            question="What is the AI Economics Academy curriculum?" 
+                            answer="The academy features 25 tracks and 303 deep modules covering AI economics, unit economics modeling, cloud FinOps, agentic security, M&A due diligence, and remote engineering management."
+                        />
+                        <FAQItem 
+                            question="How much does the curriculum cost?" 
+                            answer="Individual authority tracks cost $149 each, or you can purchase all-access to the entire academy for a one-time price of $999."
+                        />
+                    </div>
+                </section>
 
                 <AdvisoryCTA variant="educational" />
             </div>

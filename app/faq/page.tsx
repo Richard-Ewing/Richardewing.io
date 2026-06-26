@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
     title: 'FAQ | AI Economist Richard Ewing | Common Questions',
@@ -77,24 +78,18 @@ export default function FaqPage() {
                     </h2>
                     <div className="space-y-4">
                         {category.questions.map((faq) => (
-                            <details key={faq.q} className="card p-6 group cursor-pointer">
-                                <summary className="text-zinc-950 font-bold cursor-pointer list-none flex items-center justify-between">
-                                    <span>{faq.q}</span>
-                                    <span className="text-cyan-900 font-extrabold font-semibold text-xl font-mono group-open:rotate-45 transition-transform">+</span>
-                                </summary>
-                                <p className="text-zinc-900 mt-4 leading-relaxed">{faq.a}</p>
-                            </details>
+                            <FAQItem key={faq.q} question={faq.q} answer={faq.a} />
                         ))}
                     </div>
                 </div>
             ))}
-
+ 
             {/* CTA */}
             <div className="text-center py-12 border-t border-zinc-400">
                 <h2 className="text-2xl font-bold text-zinc-950 mb-4">Still Have Questions?</h2>
                 <p className="text-zinc-900 mb-8">Book a free 15-minute call or explore the tools.</p>
                 <div className="flex flex-wrap justify-center gap-4">
-                    <Link href="/advisory" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs font-bold rounded-xl hover:bg-cyan-400 transition-colors">
+                    <Link href="/services" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs font-bold rounded-xl hover:bg-cyan-400 transition-colors">
                         Book a Call →
                     </Link>
                     <Link href="/tools" className="px-8 py-4 border border-zinc-500 text-zinc-950 font-bold uppercase tracking-widest text-xs font-bold rounded-xl hover:border-cyan-500 transition-all">

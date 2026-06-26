@@ -149,10 +149,11 @@ export default function PrincipalContent() {
                                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-950 mb-2">Richard Ewing</h1>
                                 <div className="font-mono text-sm font-semibold text-zinc-900 font-medium uppercase tracking-widest mb-4">AI Economist</div>
                                 <p className="text-zinc-950 leading-relaxed text-base sm:text-lg">
-                                    I operate as <span className="text-zinc-950 font-bold">The AI Economist</span>. The AI Economist is how I apply that system to AI.
-                                    <br/><br/>
-                                    I do not manage backlogs. I manage P&Ls. I sit at the exact intersection of CPO thinking, CFO rigor, and CTO reality.
+                                    I operate as <span className="text-zinc-950 font-bold">The AI Economist</span>. I align AI model performance directly with gross margins.
                                 </p>
+                                <blockquote className="border-l-4 border-cyan-500 pl-4 py-2 italic font-semibold text-base text-zinc-900 my-4 bg-cyan-500/5 rounded-r-xl pr-4">
+                                    "I do not manage backlogs. I manage P&Ls. I sit at the exact intersection of CPO thinking, CFO rigor, and CTO reality."
+                                </blockquote>
                             </div>
                         </div>
 
@@ -223,12 +224,18 @@ export default function PrincipalContent() {
                         "Most executives have two disconnected languages: Tech and Finance."
                     </p>
                     <div className="text-zinc-900 text-base leading-relaxed space-y-4">
-                        <p>
-                            <span className="font-bold text-zinc-950">The Tech Language:</span> velocity, backlog, debt, sprints, architecture.<br/>
-                            <span className="font-bold text-zinc-950">The Finance Language:</span> ROI, EBITDA, cash flow, payback, risk.
-                        </p>
-                        <p>
-                            Few people translate cleanly between them. <span className="text-zinc-950 font-bold">That translation layer is where real influence lives.</span> I build the category where product management meets corporate finance and technical reality. My frameworks aren't theoretical—they are <span className="italic">financial wrappers around technical problems.</span>
+                        <div className="grid grid-cols-2 gap-4 my-4 bg-zinc-900/5 p-4 rounded-xl border border-zinc-300">
+                            <div>
+                                <span className="font-bold text-xs uppercase tracking-wider text-cyan-900 font-mono">Tech Focus</span>
+                                <p className="text-xs font-semibold mt-1">velocity, backlog, debt, sprints, architecture</p>
+                            </div>
+                            <div>
+                                <span className="font-bold text-xs uppercase tracking-wider text-purple-900 font-mono">Finance Focus</span>
+                                <p className="text-xs font-semibold mt-1">ROI, EBITDA, cash flow, payback, risk</p>
+                            </div>
+                        </div>
+                        <p className="text-sm font-medium">
+                            Few people translate cleanly between them. <span className="text-zinc-950 font-bold">That translation layer is where real influence lives.</span> I build the category where product management meets corporate finance and technical reality. My frameworks aren't theoretical—they are <span className="italic font-bold">financial wrappers around technical problems.</span>
                         </p>
                     </div>
                 </div>
@@ -242,12 +249,16 @@ export default function PrincipalContent() {
                         "You cannot build an autonomous AI being on a foundation that hallucinates and forgets."
                     </p>
                     <div className="text-zinc-900 text-base leading-relaxed space-y-4">
-                        <p>
+                        <p className="text-sm font-semibold">
                             Everyone is trying to build AGI on top of stochastic text predictors. As we move from basic chat wrappers to autonomous systems taking actions in the real world over the next decade, <span className="font-bold text-zinc-950">admissibility and accountability become existential requirements.</span>
                         </p>
-                        <p>
-                            I founded <span className="text-zinc-950 font-bold">Exogram AI</span> to be the deterministic control plane for the AGI era. We capture immediate value today by injecting persistent memory and structured inference (Layers 1 and 2). We enforce strict cryptographic guardrails (Layers 3 and 4) to act as the regulatory and operational baseline that makes AGI safe to deploy.
-                        </p>
+                        <div className="my-4 space-y-2 bg-purple-500/5 p-4 rounded-xl border border-purple-200">
+                            <p className="text-xs font-bold text-purple-950">Exogram's Deterministic Approach:</p>
+                            <ul className="text-xs font-semibold space-y-1 list-disc pl-4 text-zinc-900">
+                                <li><span className="font-bold">Layers 1-2 (Structured Inference):</span> Inject persistent memory to capture immediate value.</li>
+                                <li><span className="font-bold">Layers 3-4 (Cryptographic Guardrails):</span> Enforce deterministic execution limits at runtime.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </ScrollReveal>

@@ -28,7 +28,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         title: `${article.title} | Richard Ewing`,
         description: article.excerpt,
         alternates: { canonical: canonicalURL },
-        openGraph: { title: article.title, description: article.excerpt, url: canonicalURL, type: 'article' },
+        openGraph: {
+            title: article.title,
+            description: article.excerpt,
+            url: canonicalURL,
+            type: 'article',
+            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: article.title,
+            description: article.excerpt,
+            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+        }
     };
 }
 

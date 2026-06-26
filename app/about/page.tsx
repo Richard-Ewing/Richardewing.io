@@ -5,20 +5,27 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import EcosystemMap from '@/app/components/EcosystemMap';
 import PrincipalContent from '../components/principal-content';
 import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
+import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-    title: 'About | Richard Ewing | AI Economist & Exogram Founder',
-    description: 'Researching the economics, governance, security, and operational challenges of enterprise AI. Creator of the PAIG framework and founder of Exogram.',
+    title: 'About Richard Ewing | AI Economist & Exogram Founder',
+    description: 'Enterprise AI governance & product economics for PE-backed SaaS companies. Founder of Exogram, researching economics and security of production AI.',
     alternates: {
         canonical: 'https://www.richardewing.io/about',
     },
     openGraph: {
         title: 'About Richard Ewing | AI Economist & Exogram Founder',
-        description: 'I identify AI margin collapse, R&D capitalization leaks, and agent liabilities before they hit the P&L.',
+        description: 'Enterprise AI governance & product economics for PE-backed SaaS companies. Founder of Exogram, researching economics and security of production AI.',
         url: 'https://www.richardewing.io/about',
         type: 'profile',
         images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'About Richard Ewing | AI Economist & Exogram Founder',
+        description: 'Enterprise AI governance & product economics for PE-backed SaaS companies. Founder of Exogram, researching economics and security of production AI.',
+        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+    }
 };
 
 export default function AboutPage() {
@@ -27,7 +34,7 @@ export default function AboutPage() {
             <div className="page-container max-w-4xl mx-auto">
                 
                 {/* Breadcrumb */}
-                <div className="mb-6 flex items-center gap-2 text-xs font-mono font-bold text-zinc-950 uppercase tracking-widest">
+                <div className="mb-10 flex items-center gap-2 text-xs font-mono font-bold text-zinc-950 uppercase tracking-widest">
                     <span>Executive</span><span>/</span><span className="text-cyan-900 font-extrabold">About The Principal</span>
                 </div>
 
@@ -97,6 +104,46 @@ export default function AboutPage() {
                         />
                     </div>
                     <PrincipalContent />
+                </section>
+
+                {/* FAQ Section */}
+                <section className="mb-16 border-t border-zinc-300 pt-12">
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                            '@context': 'https://schema.org',
+                            '@type': 'FAQPage',
+                            'mainEntity': [
+                                {
+                                    '@type': 'Question',
+                                    'name': 'What is AI governance?',
+                                    'acceptedAnswer': {
+                                        '@type': 'Answer',
+                                        'text': 'AI governance is the system of constraints, cost caps, and verification policies that prevent probabilistic models from causing margin erosion, security breaches, or regulatory liabilities. It turns volatile models into predictable enterprise assets operating under strict runtime control.'
+                                    }
+                                },
+                                {
+                                    '@type': 'Question',
+                                    'name': 'What is an AI Economist?',
+                                    'acceptedAnswer': {
+                                        '@type': 'Answer',
+                                        'text': 'An AI Economist serves as the translation layer between engineering output and CFO-level financial outcomes, auditing R&D spend and optimizing unit economics.'
+                                    }
+                                }
+                            ]
+                        }) }}
+                    />
+                    <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-6">Frequently Asked Questions</h2>
+                    <div className="space-y-4">
+                        <FAQItem 
+                            question="What is AI governance?" 
+                            answer="AI governance is the system of constraints, cost caps, and verification policies that prevent probabilistic models from causing margin erosion, security breaches, or regulatory liabilities. It turns volatile models into predictable enterprise assets operating under strict runtime control."
+                        />
+                        <FAQItem 
+                            question="What is an AI Economist?" 
+                            answer="An AI Economist serves as the translation layer between engineering output and CFO-level financial outcomes, auditing R&D spend and optimizing unit economics."
+                        />
+                    </div>
                 </section>
 
                 <AdvisoryCTA variant="educational" />

@@ -17,17 +17,26 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const skill = getSkillBySlug(slug);
     if (!skill) return {};
 
+    const descriptionText = skill.description.slice(0, 155).replace(/\n/g, ' ');
+
     return {
         title: `Deploy ${skill.title} | AI Governance Infrastructure`,
         description: `Install deterministic controls to prevent AI failures: ` + skill.description.slice(0, 100).replace(/\n/g, ' ') + '... Learn more.',
         alternates: { canonical: `https://www.richardewing.io/skills/${slug}` },
         openGraph: {
             title: `${skill.title} | Governance System`,
-            description: skill.description.slice(0, 155).replace(/\n/g, ' '),
+            description: descriptionText,
             url: `https://www.richardewing.io/skills/${slug}`,
             siteName: 'Richard Ewing',
             type: 'article',
+            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
         },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${skill.title} | Governance System`,
+            description: descriptionText,
+            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+        }
     };
 }
 

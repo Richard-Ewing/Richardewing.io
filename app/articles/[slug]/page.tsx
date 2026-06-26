@@ -45,11 +45,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             publishedTime: article.date,
             authors: ['Richard Ewing'],
             url: `https://www.richardewing.io/articles/${article.slug}`,
+            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
         },
         twitter: {
-            card: 'summary',
+            card: 'summary_large_image',
             title: `${article.title} | Richard Ewing`,
             description: article.description,
+            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
         },
     };
 }
@@ -120,7 +122,7 @@ export default async function ArticlePage({ params }: Props) {
                                 Read Archival Copy
                             </a>
                         )}
-                        <Link href="/briefings" className="px-6 py-3 border border-white/20 hover:border-zinc-4000 text-zinc-950 font-bold uppercase tracking-widest text-xs font-bold rounded-lg transition-colors">
+                        <Link href="/briefings" className="px-6 py-3 border border-white/20 hover:border-zinc-400 text-zinc-950 font-bold uppercase tracking-widest text-xs font-bold rounded-lg transition-colors">
                             View All Briefings
                         </Link>
                     </div>

@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import ArticlesPage from './content';
 
 export const metadata: Metadata = {
-    title: 'The Cost of Insolvent Software | AI Engineering & Economics Articles',
-    description: 'Deeper essays on technical due diligence, feature-bloat calculations, and the hidden operational inflation of enterprise generative AI integrations.',
+    title: 'Forensic Engineering Research & Articles | Richard Ewing',
+    description: 'Deep essays on R&D capital efficiency, AI unit economics, and technical debt valuation. Published in CIO.com, Built In, and Mind the Product.',
     keywords: [
         'AI economist articles',
         'R&D capital efficiency',
@@ -21,14 +21,16 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: 'Forensic Engineering Research & Articles | Richard Ewing',
-        description: 'The canonical hub for frameworks and research used by top PE firms. Published in CIO.com, Built In, Mind the Product, and HackerNoon.',
+        description: 'Deep essays on R&D capital efficiency, AI unit economics, and technical debt valuation. Published in CIO.com, Built In, and Mind the Product.',
         url: 'https://www.richardewing.io/articles',
         type: 'website',
+        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Forensic Engineering Articles | Richard Ewing',
-        description: 'Deep dives into R&D capital efficiency, AI unit economics, and technical debt valuation. Published across Tier 1 media.',
+        title: 'Forensic Engineering Research & Articles | Richard Ewing',
+        description: 'Deep essays on R&D capital efficiency, AI unit economics, and technical debt valuation. Published in CIO.com, Built In, and Mind the Product.',
+        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },
 };
 

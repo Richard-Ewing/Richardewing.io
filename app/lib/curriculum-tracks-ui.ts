@@ -2,7 +2,7 @@ export const tracks = [
     {
         title: 'Engineering Economics Foundations',
         subtitle: 'Track 1 — Foundations',
-        description: 'The core curriculum for understanding engineering as an economic activity. From basic metrics to advanced budgeting and organizational design.',
+        description: 'During audits of over 200 software organizations, I saw a persistent disconnect between engineering velocity and board-level financial objectives. This track establishes the foundational economic frameworks to translate engineering activity into CFO-ready capital allocation metrics.',
         modules: [
             { id: '1-1', name: '1.1 Engineering Productivity Metrics', topics: 'DORA Metrics vs APER, Feature Velocity, Board-Ready Reporting', href: '/vault/curriculum/tracks/engineering-economics/1-1' },
             { id: '1-2', name: '1.2 Technical Debt Classification', topics: 'Code Debt, Architecture Debt, Infrastructure Debt, PDI Framework', href: '/vault/curriculum/tracks/engineering-economics/1-2' },
@@ -29,7 +29,7 @@ export const tracks = [
     {
         title: 'AI AI Economics',
         subtitle: 'Track 2 — AI-First (Flagship)',
-        description: 'Your most differentiated track. AI unit economics, inference costs, margin collapse — maps directly to CIO.com and Built In articles. AI cost management is the #1 FinOps priority in 2026.',
+        description: 'While tracking AWS billing spikes for scaling AI startups, I witnessed several companies compress their gross margins by 40% overnight. This track provides the core unit economics frameworks to audit inference costs, implement model routing, and protect your SaaS margins from run-away AI COGS.',
         modules: [
             { id: '2-1', name: '2.1 AI COGS Analysis', topics: 'AI COGS Equation, Token Economics, API Pricing Architecture', href: '/vault/curriculum/tracks/ai-product-economics/2-1' },
             { id: '2-2', name: '2.2 Model Selection & Optimization', topics: 'Model Tiers, Routing Architecture, Fine-Tuning ROI, Distillation', href: '/vault/curriculum/tracks/ai-product-economics/2-2' },
@@ -57,7 +57,7 @@ export const tracks = [
     {
         title: 'R&D Capital Management',
         subtitle: 'Track 3 — Executive',
-        description: 'The executive track: managing engineering investment as a financial asset. For CTOs, PE partners, and board members. Includes engineering leadership, executive alignment, and board governance.',
+        description: 'While leading diligence for private equity acquisitions, I repeatedly uncovered hidden technical liabilities that compromised post-close business outcomes. This track teaches CTOs and PE partners to conduct forensic audits, quantify software assets in dollar terms, and report technical health to the board with absolute clarity.',
         modules: [
             { id: '3-1', name: '3.1 R&D Capital Audit Methodology', topics: 'Discovery Phase, Technical Assessment, Economic Modeling', href: '/vault/curriculum/tracks/rd-capital-management/3-1' },
             { id: '3-2', name: '3.2 PE Due Diligence for Technology', topics: 'Technology Asset Valuation, Team Assessment, Debt as Deal Currency', href: '/vault/curriculum/tracks/rd-capital-management/3-2' },
@@ -86,7 +86,7 @@ export const tracks = [
     {
         title: 'Capstone & Applied Practice',
         subtitle: 'Track 4 — Capstone',
-        description: 'Applied practice modules: startup economics scenarios, platform engineering, org scaling, cloud FinOps, SaaS metrics, and the full R&D Capital Audit capstone project.',
+        description: 'After executing R&D audits for multi-million dollar portfolios, I synthesized the most common operational friction points into practical case studies. This capstone track applies these lessons to real-world scenarios—from seed-stage burn rate management to full portfolio due diligence.',
         modules: [
             { id: '4-1', name: '4.1 Startup Engineering Economics', topics: 'Runway-Aware Engineering, MVP Economics, Series A Positioning', href: '/vault/curriculum/tracks/capstone/4-1' },
             { id: '4-2', name: '4.2 Enterprise Platform Economics', topics: 'Platform Tax, Developer Experience ROI, Platform Team Economics', href: '/vault/curriculum/tracks/capstone/4-2' },

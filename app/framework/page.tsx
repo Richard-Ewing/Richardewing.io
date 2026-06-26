@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 import EcosystemMap from '@/app/components/EcosystemMap';
+import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
     title: 'The Production AI Governance Framework | AI Sustainability',
@@ -14,11 +15,13 @@ export const metadata: Metadata = {
         description: 'Explore the 6-pillar framework (Economics, Product, Engineering, Security, Operations, and Runtime Governance) to control production AI systems sustainably.',
         url: 'https://www.richardewing.io/framework',
         type: 'website',
+        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'The Production AI Governance Framework',
         description: 'Explore the 6-pillar framework (Economics, Product, Engineering, Security, Operations, and Runtime Governance) to control production AI systems sustainably.',
+        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },
 };
 
@@ -127,6 +130,46 @@ export default function FrameworkLandingPage() {
                         <p className="text-sm text-zinc-900 mt-1">Explore how research, diagnostics, academy courses, and software controls interact.</p>
                     </div>
                     <EcosystemMap />
+                </section>
+
+                {/* FAQ Section */}
+                <section className="mb-16 border-t border-zinc-300 pt-12">
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                            '@context': 'https://schema.org',
+                            '@type': 'FAQPage',
+                            'mainEntity': [
+                                {
+                                    '@type': 'Question',
+                                    'name': 'What is the Production AI Governance Framework?',
+                                    'acceptedAnswer': {
+                                        '@type': 'Answer',
+                                        'text': 'It is a 6-pillar operational system coordinating Economics, Product, Engineering, Security, Operations, and Runtime Governance. It is designed to prevent cost spiral, code volatility, security gaps, and compliance failures in deployed AI systems.'
+                                    }
+                                },
+                                {
+                                    '@type': 'Question',
+                                    'name': 'What is the main objective of Runtime Governance?',
+                                    'acceptedAnswer': {
+                                        '@type': 'Answer',
+                                        'text': 'Runtime Governance is the final convergence point. It implements deterministic network-layer interception (using Exogram) to enforce cost ceilings, security rules, and action admissibility policies before model execution.'
+                                    }
+                                }
+                            ]
+                        }) }}
+                    />
+                    <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-6">Frequently Asked Questions</h2>
+                    <div className="space-y-4">
+                        <FAQItem
+                            question="What is the Production AI Governance Framework?"
+                            answer="It is a 6-pillar operational system coordinating Economics, Product, Engineering, Security, Operations, and Runtime Governance. It is designed to prevent cost spiral, code volatility, security gaps, and compliance failures in deployed AI systems."
+                        />
+                        <FAQItem
+                            question="What is the main objective of Runtime Governance?"
+                            answer="Runtime Governance is the final convergence point. It implements deterministic network-layer interception (using Exogram) to enforce cost ceilings, security rules, and action admissibility policies before model execution."
+                        />
+                    </div>
                 </section>
 
                 <AdvisoryCTA variant="educational" />

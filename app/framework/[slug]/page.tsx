@@ -32,6 +32,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             description: fw.overview,
             url: `https://www.richardewing.io/framework/${slug}`,
             type: 'website',
+            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${fw.name} | Production AI Governance Framework`,
+            description: fw.overview,
+            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
         }
     };
 }
@@ -74,14 +81,13 @@ export default async function SubFrameworkPage({ params }: { params: Promise<{ s
                     </p>
                 </section>
 
-                {/* Why This Exists Section (Worldview Compression Component) */}
-                <section className="mb-12 bg-white border border-zinc-300 rounded-3xl p-6 shadow-sm">
-                    <h3 className="text-sm font-bold font-mono text-zinc-500 uppercase tracking-widest mb-2">Contextual Boundary</h3>
-                    <h4 className="text-base font-bold font-grotesk text-zinc-950 mb-2">Why This Exists</h4>
-                    <p className="text-sm text-zinc-900 leading-relaxed font-semibold">
-                        Most AI discussions focus on model capabilities. My work focuses on what happens after deployment. 
-                        As AI systems become embedded in products, organizations face a new class of problems involving economics, governance, security, reliability, and operational control. 
-                        The Production AI Governance Framework exists to help organizations understand, measure, and manage those challenges.
+                {/* Why This Exists Section (Evidence-First Context) */}
+                <section className="mb-12 bg-white border border-zinc-300 rounded-3xl p-6 shadow-sm relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-indigo-500 to-purple-500" />
+                    <h3 className="text-sm font-bold font-mono text-zinc-500 uppercase tracking-widest mb-2">Observed Evidence</h3>
+                    <h4 className="text-base font-bold font-grotesk text-zinc-950 mb-2">The Direct Experience</h4>
+                    <p className="text-sm text-zinc-900 leading-relaxed font-semibold italic">
+                        "{fw.livedExperience}"
                     </p>
                 </section>
 

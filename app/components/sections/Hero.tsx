@@ -13,6 +13,10 @@ const Hero = () => {
                 <div className="absolute top-[-15%] left-[-5%] w-[55%] h-[55%] rounded-full bg-gradient-to-br from-rose-300/50 via-violet-200/40 to-transparent blur-3xl animate-drift-slow" />
                 <div className="absolute bottom-[-15%] right-[-5%] w-[50%] h-[50%] rounded-full bg-gradient-to-tl from-purple-300/40 via-indigo-200/30 to-transparent blur-3xl animate-drift-slow-reverse" />
                 <div className="absolute top-[20%] right-[15%] w-[35%] h-[35%] rounded-full bg-gradient-to-bl from-amber-200/30 via-rose-100/25 to-transparent blur-3xl animate-drift-subtle" />
+                {/* Subtle premium grid pattern overlay */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-70 pointer-events-none" />
+                {/* Soft center highlight gradient */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.45)_0%,transparent_75%)] pointer-events-none" />
             </div>
 
             <div className="page-container">
@@ -29,33 +33,31 @@ const Hero = () => {
 
                         {/* H1 — Clear value proposition */}
                         <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-zinc-900 mb-6 leading-[1.12] max-w-2xl tracking-tight">
-                            I Help Enterprises Stop{' '}
+                            I Stop AI Investments From{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-violet-500 to-purple-600">
-                                Losing Money
-                            </span>{' '}
-                            on AI.
+                                Bleeding Money
+                            </span>.
                         </h1>
 
                         {/* Subheadline — What you actually do */}
-                        <p className="text-lg text-zinc-600 mb-10 max-w-xl leading-relaxed font-medium">
-                            R&D capital audits, AI unit economics diagnostics, and the deterministic 
-                            governance frameworks that turn volatile models into predictable enterprise assets.
+                        <p className="text-lg text-zinc-600 mb-10 max-w-xl leading-relaxed font-semibold">
+                            Enterprise AI governance & product economics for PE-backed SaaS companies.
                         </p>
 
                         {/* Dual CTA */}
                         <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
                             <Link 
-                                href="/advisory" 
+                                href="/services" 
                                 className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-base hover:opacity-90 transition-all shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/35 hover:-translate-y-0.5"
                             >
-                                Book a Strategic Advisory Call
+                                Book a Free Diagnostic
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                             </Link>
                             <Link 
-                                href="/tools/pdi" 
+                                href="/framework" 
                                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border-2 border-zinc-300 text-zinc-800 font-semibold text-base hover:border-violet-400 hover:bg-violet-50/40 transition-all"
                             >
-                                Run a Free Diagnosis
+                                Read the Framework
                             </Link>
                         </div>
 
@@ -71,8 +73,8 @@ const Hero = () => {
                                     Exogram
                                 </Link>
                             </p>
-                            <p className="text-zinc-500 text-xs mt-2 font-medium tracking-wide">
-                                Published in CIO.com · BuiltIn · HackerNoon · MindTheProduct
+                            <p className="text-zinc-500 text-xs mt-2 font-bold tracking-wider uppercase">
+                                Published in CIO.com · Built In · MindTheProduct · HackerNoon
                             </p>
                         </div>
                     </div>

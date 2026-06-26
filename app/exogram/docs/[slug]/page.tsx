@@ -17,7 +17,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: `${doc.title} — Exogram Docs`,
         description: doc.description,
-        alternates: { canonical: `https://www.richardewing.io/exogram/docs/${doc.slug}` }
+        alternates: { canonical: `https://www.richardewing.io/exogram/docs/${doc.slug}` },
+        openGraph: {
+            title: `${doc.title} — Exogram Docs`,
+            description: doc.description,
+            url: `https://www.richardewing.io/exogram/docs/${doc.slug}`,
+            siteName: 'Richard Ewing',
+            type: 'article',
+            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${doc.title} — Exogram Docs`,
+            description: doc.description,
+            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+        }
     };
 }
 

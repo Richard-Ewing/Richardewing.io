@@ -20,11 +20,13 @@ export const metadata: Metadata = {
         description: 'Master the lexicon of AI governance. Clear executive definitions for hallucination debt, technical insolvency, retry inflation, and 427 more terms.',
         url: 'https://www.richardewing.io/glossary',
         type: 'website',
+        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Technology & AI Glossary — 400+ Definitions',
         description: 'The most comprehensive technology leadership glossary. By Richard Ewing, AI Economist.',
+        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },
 };
 

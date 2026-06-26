@@ -23,14 +23,18 @@ const PricingPreview = () => {
                                 Every enterprise has capital leaks. Most just haven't been measured yet. Start with a free tool or go straight to a strategic advisory call.
                             </p>
 
-                            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-4">
                                 <Link href="/tools/pdi" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-lg hover:opacity-90 transition-opacity shadow-lg shadow-violet-500/20">
                                     Run a Free Diagnosis <ArrowRight className="w-5 h-5" />
                                 </Link>
-                                <Link href="/advisory" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-zinc-300 text-zinc-800 font-bold text-lg hover:border-violet-400 hover:bg-violet-50/30 transition-all">
-                                    Book Strategic Advisory Call
+                                <Link href="/services" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-zinc-300 text-zinc-800 font-bold text-lg hover:border-violet-400 hover:bg-violet-50/30 transition-all">
+                                    Book a Free Diagnostic
                                 </Link>
                             </div>
+
+                            <p className="text-zinc-600 text-xs font-semibold mb-8">
+                                How it works: 15-min call → Free diagnostic report → Remediation plan if needed.
+                            </p>
 
                             <div className="flex flex-wrap justify-center gap-6 text-xs font-bold text-zinc-600 uppercase tracking-widest font-mono">
                                 <span>Free Tools Available</span>

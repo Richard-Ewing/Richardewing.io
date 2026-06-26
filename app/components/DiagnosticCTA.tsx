@@ -105,7 +105,7 @@ export default function DiagnosticCTA({
                             {buttonText}
                         </a>
                         <a 
-                            href="/advisory" 
+                            href="/services" 
                             className={`text-sm font-semibold hover:underline ${colors.buttonSubtext}`}
                         >
                             View Advisory Retainers

@@ -1,12 +1,71 @@
-"use client";
-
 import React from 'react';
+import type { Metadata } from 'next';
 import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
+import FAQItem from '../components/FAQItem';
 
+export const metadata: Metadata = {
+    title: 'The Doctrine of Sovereignty | AI Economics Laws | Ewing',
+    description: 'Explore the immutable laws of software solvency: Capital Allocation > Agile Theater, and how to monitor your Technical Insolvency Date.',
+    alternates: { canonical: 'https://www.richardewing.io/doctrine' },
+    openGraph: {
+        title: 'The Doctrine of Sovereignty | Richard Ewing',
+        description: 'Explore the immutable laws of software solvency: Capital Allocation > Agile Theater.',
+        url: 'https://www.richardewing.io/doctrine',
+        type: 'website',
+        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'The Doctrine of Sovereignty | Richard Ewing',
+        description: 'Explore the immutable laws of software solvency: Capital Allocation > Agile Theater.',
+        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+    },
+};
 
 export default function DoctrinePage() {
     return (
         <main className="pt-20">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'FAQPage',
+                    'mainEntity': [
+                        {
+                            '@type': 'Question',
+                            'name': 'What is the Doctrine of Sovereignty?',
+                            'acceptedAnswer': {
+                                '@type': 'Answer',
+                                'text': 'It is a set of core principles defining the methodology of the AI Economist, emphasizing capital yield and deterministic execution over agile processes.'
+                            }
+                        },
+                        {
+                            '@type': 'Question',
+                            'name': 'What is the Technical Insolvency Date?',
+                            'acceptedAnswer': {
+                                '@type': 'Answer',
+                                'text': 'The Technical Insolvency Date is the specific future quarter when an organization\'s accumulated technical debt maintenance consumes 100% of engineering capacity, leaving zero time for product innovation.'
+                            }
+                        },
+                        {
+                            '@type': 'Question',
+                            'name': 'What is the Innovation Tax?',
+                            'acceptedAnswer': {
+                                '@type': 'Answer',
+                                'text': 'The Innovation Tax is the hidden operational cost of software maintenance that is misreported as new innovation investment in financial and board reporting.'
+                            }
+                        },
+                        {
+                            '@type': 'Question',
+                            'name': 'How does the doctrine prevent margin collapse?',
+                            'acceptedAnswer': {
+                                '@type': 'Answer',
+                                'text': 'By establishing strict gross margin cost ceilings and implementing deterministic runtime security boundaries before probabilistic models execute actions.'
+                            }
+                        }
+                    ]
+                }) }}
+            />
             <div className="page-container">
 
                 {/* Hero */}
@@ -149,10 +208,33 @@ export default function DoctrinePage() {
                     </div>
                 </section>
 
+                {/* FAQ Section */}
+                <section className="mb-16 border-t border-zinc-300 pt-12">
+                    <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-6">Frequently Asked Questions</h2>
+                    <div className="space-y-4 max-w-3xl">
+                        <FAQItem 
+                            question="What is the Doctrine of Sovereignty?" 
+                            answer="It is a set of core principles defining the methodology of the AI Economist, emphasizing capital yield and deterministic execution over agile processes."
+                        />
+                        <FAQItem 
+                            question="What is the Technical Insolvency Date?" 
+                            answer="The Technical Insolvency Date is the specific future quarter when an organization's accumulated technical debt maintenance consumes 100% of engineering capacity, leaving zero time for product innovation."
+                        />
+                        <FAQItem 
+                            question="What is the Innovation Tax?" 
+                            answer="The Innovation Tax is the hidden operational cost of software maintenance that is misreported as new innovation investment in financial and board reporting."
+                        />
+                        <FAQItem 
+                            question="How does the doctrine prevent margin collapse?" 
+                            answer="By establishing strict gross margin cost ceilings and implementing deterministic runtime security boundaries before probabilistic models execute actions."
+                        />
+                    </div>
+                </section>
+
                 {/* CTA */}
                 <section className="section-sm text-center">
                     <p className="text-zinc-950 font-bold mb-6">Apply these principles to your organization.</p>
-                    <a href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-zinc-950 font-semibold hover:bg-purple-500">
+                    <a href="/services" className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-zinc-950 font-semibold hover:bg-purple-500">
                         Book an Intervention →
                     </a>
                 </section>
@@ -161,3 +243,4 @@ export default function DoctrinePage() {
         </main>
     );
 }
+

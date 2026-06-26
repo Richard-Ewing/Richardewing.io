@@ -2,19 +2,34 @@ import type { Metadata } from 'next';
 import Hero from './components/sections/Hero';
 import NarrativeCompression from './components/sections/NarrativeCompression';
 import ProofRail from './components/ProofRail';
+import WhatWhyHow from './components/sections/WhatWhyHow';
 import ClientOutcomes from './components/sections/ClientOutcomes';
 import FourHorsemen from './components/sections/FourHorsemen';
 import ToolsPreview from './components/sections/ToolsPreview';
 import RuntimeEscalationSimulator from './components/RuntimeEscalationSimulator';
 import PricingPreview from './components/sections/PricingPreview';
 import NewsletterSection from './components/sections/NewsletterSection';
+import FAQItem from './components/FAQItem';
 
 export const metadata: Metadata = {
-  title: 'Stop AI Billing Shock & Vibe Coding Debt | Richard Ewing',
-  description: 'Enterprise AI integrations fail operationally. Extract failed AI pilots, stop shadow AI risk, and install deterministic runtime governance infrastructure.',
+  title: 'Richard Ewing — AI Economist & Capital Auditor',
+  description: 'I stop AI investments from bleeding money. Enterprise AI governance & product economics for PE-backed SaaS companies.',
   alternates: {
     canonical: 'https://www.richardewing.io',
   },
+  openGraph: {
+    title: 'Richard Ewing — AI Economist & Capital Auditor',
+    description: 'I stop AI investments from bleeding money. Enterprise AI governance & product economics for PE-backed SaaS companies.',
+    url: 'https://www.richardewing.io',
+    type: 'website',
+    images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Richard Ewing — AI Economist & Capital Auditor',
+    description: 'I stop AI investments from bleeding money. Enterprise AI governance & product economics for PE-backed SaaS companies.',
+    images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+  }
 };
 
 export default function Home() {
@@ -44,26 +59,26 @@ export default function Home() {
               'mainEntity': [
                 {
                   '@type': 'Question',
-                  'name': 'Why do enterprise AI pilots fail?',
+                  'name': 'What is an AI Economist?',
                   'acceptedAnswer': {
                     '@type': 'Answer',
-                    'text': 'Enterprise AI pilots fail because of unpredictable token costs, brittle abstraction layers like LangChain, and a lack of measurable LLM ROI. We deploy deterministic guardrails to solve this.'
+                    'text': 'An AI Economist is the translation layer between engineering output and CFO-level financial outcomes. They audit R&D spend, analyze AI unit economics, and construct deterministic governance systems to prevent margin collapse.'
                   }
                 },
                 {
                   '@type': 'Question',
-                  'name': 'How do you prevent an LLM agent from going rogue?',
+                  'name': 'What is AI governance?',
                   'acceptedAnswer': {
                     '@type': 'Answer',
-                    'text': 'We implement deterministic guardrails and runtime observability to intercept tool calls before they execute, preventing non-deterministic agents from causing massive data leaks or infrastructure damage.'
+                    'text': 'AI governance is the system of constraints, cost caps, and verification policies that prevent probabilistic models from causing margin erosion, security breaches, or regulatory liabilities. It turns volatile models into predictable enterprise assets.'
                   }
                 },
                 {
                   '@type': 'Question',
-                  'name': 'How to migrate away from LangChain in production?',
+                  'name': 'How much does a fractional CPO cost?',
                   'acceptedAnswer': {
                     '@type': 'Answer',
-                    'text': 'LangChain abstraction often leads to latency spikes and excessive OpenAI token costs. We audit your AI architecture and replace it with lean, deterministic orchestration designed for production scale.'
+                    'text': 'Fractional CPO / CTO advisory services typically range from $7,500 to $10,000 per month, depending on team size and scope. This provides senior technology leadership, cost-cap architecture reviews, and board-ready reporting.'
                   }
                 }
               ]
@@ -75,6 +90,8 @@ export default function Home() {
       <Hero />
       {/* Layer 2: Persistent proof-of-authority bar */}
       <ProofRail />
+      {/* Layer 2.5: What Is / Why You Need / How It Works */}
+      <WhatWhyHow />
       {/* Layer 3: 15-second comprehension layer — What Breaks → Costs → Why → Fix → Engine */}
       <NarrativeCompression />
       {/* Layer 4: Why enterprise AI fails — the pain points */}
@@ -87,6 +104,31 @@ export default function Home() {
       <ToolsPreview />
       {/* Layer 8: Advisory escalation — conversion */}
       <PricingPreview />
+
+      {/* Visual FAQ Section */}
+      <section className="py-20 bg-[#FCFAF7] border-t border-zinc-200">
+        <div className="page-container max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-zinc-950 font-grotesk">Frequently Asked Questions</h2>
+            <p className="text-zinc-600 mt-2 font-medium">Direct answers to core technology governance and economic questions.</p>
+          </div>
+          <div className="space-y-4">
+            <FAQItem 
+              question="What is an AI Economist?" 
+              answer="An AI Economist serves as the translation layer between engineering output and CFO-level financial outcomes. By auditing R&D capital, diagnosing AI unit economics, and building deterministic governance infrastructure, they align model scaling costs directly with enterprise profitability."
+            />
+            <FAQItem 
+              question="What is AI governance?" 
+              answer="AI governance is the system of constraints, cost caps, and verification policies that prevent probabilistic models from causing margin erosion, security breaches, or regulatory liabilities. It locks down verified code states at the network layer to turn volatile models into predictable enterprise assets."
+            />
+            <FAQItem 
+              question="How much does a fractional CPO / CTO cost?" 
+              answer="Advisory packages start at $7,500/month for Fractional CTO support, providing senior technical leadership, strict token cost-cap enforcement, and board meeting representation. Board-level advisory retainers for PE/VC portfolios are priced at $15,000/month."
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Layer 9: Newsletter — capture */}
       <NewsletterSection />
     </main>

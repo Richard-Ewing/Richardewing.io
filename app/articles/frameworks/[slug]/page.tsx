@@ -34,11 +34,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             description: framework.definition.replace(/\n/g, ' ').slice(0, 155),
             url: `https://www.richardewing.io/articles/frameworks/${framework.slug}`,
             type: 'article',
+            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
         },
         twitter: {
-            card: 'summary',
+            card: 'summary_large_image',
             title: `${framework.name} | Richard Ewing`,
             description: framework.definition.replace(/\n/g, ' ').slice(0, 155),
+            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
         },
     };
 }

@@ -14,7 +14,19 @@ export const metadata: Metadata = {
     description: 'The "boilerplate hangover" is here. Train your senior engineers to extract bloated prompt-chains and build deterministic architectures.',
     keywords: ['AI economics academy', 'AI economics curriculum', 'AI economics training', 'R&D capital management', 'technical debt quantification', 'engineering leadership course', 'cloud finops', 'AI pricing strategy', 'career economics', 'CTO training', 'M&A integration', 'vendor economics', 'developer experience', 'remote team economics', 'ai agent economics', 'leadership training'],
     alternates: { canonical: 'https://www.richardewing.io/vault/curriculum/tracks' },
-    openGraph: { title: 'The AI Economics Academy', description: 'Master the business of building across eighteen authority tracks.', url: 'https://www.richardewing.io/vault/curriculum/tracks', type: 'website' },
+    openGraph: {
+        title: 'The AI Economics Academy',
+        description: 'Master the business of building across eighteen authority tracks.',
+        url: 'https://www.richardewing.io/vault/curriculum/tracks',
+        type: 'website',
+        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'The AI Economics Academy',
+        description: 'Master the business of building across eighteen authority tracks.',
+        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+    },
 };
 const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', violet: 'border-violet-500/30 bg-violet-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', amber: 'border-amber-500/30 bg-amber-500/5', orange: 'border-orange-500/30 bg-orange-500/5', pink: 'border-pink-500/30 bg-pink-500/5', red: 'border-red-500/30 bg-red-500/5', sky: 'border-sky-500/30 bg-sky-500/5', indigo: 'border-indigo-500/30 bg-indigo-500/5', rose: 'border-rose-500/30 bg-rose-500/5', teal: 'border-teal-500/30 bg-teal-500/5', lime: 'border-lime-500/30 bg-lime-500/5', fuchsia: 'border-fuchsia-500/30 bg-fuchsia-500/5', blue: 'border-blue-500/30 bg-blue-500/5' };
 const textMap: Record<string, string> = { cyan: 'text-cyan-900 font-extrabold font-semibold', violet: 'text-violet-400', emerald: 'text-emerald-900 font-extrabold font-semibold', amber: 'text-amber-400', orange: 'text-orange-900 font-extrabold font-semibold', pink: 'text-pink-400', red: 'text-red-900 font-extrabold font-semibold', sky: 'text-sky-400', indigo: 'text-indigo-900 font-extrabold font-semibold', rose: 'text-rose-400', teal: 'text-teal-400', lime: 'text-lime-400', fuchsia: 'text-zinc-950 font-semibolduchsia-400', blue: 'text-blue-900 font-extrabold font-semibold' };

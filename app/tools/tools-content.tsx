@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import ShineBorder from '@/components/magicui/shine-border';
+import FAQItem from '@/app/components/FAQItem';
 
 export default function ToolsContent() {
   return (
@@ -126,7 +127,9 @@ export default function ToolsContent() {
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
                         <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Measures: Runtime Governance</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold">Deterministic Execution Sandbox</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold flex items-center gap-1.5">
+                          Deterministic Execution Sandbox <span className="text-xs text-zinc-400 group-hover:text-emerald-950 transition-colors">↗</span>
+                        </h3>
                         <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Fire adversarial payloads at Exogram's 8-rule deterministic policy engine. Zero LLM.</p>
                         <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Try Live Sandbox ↗</span>
                       </div>
@@ -137,7 +140,9 @@ export default function ToolsContent() {
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
                         <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Measures: Runtime Governance</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold">Agentic Telemetry Analyzer</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold flex items-center gap-1.5">
+                          Agentic Telemetry Analyzer <span className="text-xs text-zinc-400 group-hover:text-emerald-950 transition-colors">↗</span>
+                        </h3>
                         <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Enforce a deterministic execution boundary for your autonomous AI agents.</p>
                         <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Analyze Architecture ↗</span>
                       </div>
@@ -248,6 +253,29 @@ export default function ToolsContent() {
           </div>
         </section>
 
+        {/* FAQ Section */}
+        <section className="section max-w-3xl mx-auto border-t border-zinc-300 pt-16">
+          <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-8 text-center">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <FAQItem 
+              question="Are these diagnostic tools free to use?" 
+              answer="Yes, they are 100% free, self-service tools designed to help engineering and product leaders quickly identify operational leakage."
+            />
+            <FAQItem 
+              question="Is my data safe when using these calculators?" 
+              answer="Yes, all calculations are performed locally in your browser. No proprietary data, code details, or financial metrics are ever sent to our servers."
+            />
+            <FAQItem 
+              question="What is the Product Debt Index (PDI)?" 
+              answer="The PDI is a quantitative scale (0-100) evaluating the exit valuation risk of accumulated technical debt and unmanaged production AI complexity."
+            />
+            <FAQItem 
+              question="How do I remediate a high risk score?" 
+              answer="If your results show critical leakage or high debt, you can book a free diagnostic call to discuss remediation plans."
+            />
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="section-sm text-center">
           <p className="text-zinc-950 font-bold mb-3 text-lg">
@@ -267,3 +295,4 @@ export default function ToolsContent() {
     </main>
   );
 }
+

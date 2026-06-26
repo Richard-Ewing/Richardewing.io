@@ -18,6 +18,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             description: mod.description,
             url: `https://www.richardewing.io/vault/curriculum/tracks/${slug.join('/')}`,
             type: 'article',
+            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${mod.moduleId}: ${mod.title} | Curriculum | Richard Ewing`,
+            description: mod.description,
+            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
         }
     };
 }
@@ -167,7 +174,7 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                                             )}
 
                                             {lesson.checklist && lesson.checklist.length > 0 && (
-                                                <ActionChecklist items={lesson.checklist} />
+                                                <ActionChecklist id={`${mod.moduleId}-lesson-${i}`} items={lesson.checklist} />
                                             )}
 
                                             {lesson.quiz && (

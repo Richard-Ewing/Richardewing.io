@@ -96,7 +96,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             url: `https://www.richardewing.io/compare/${slug}`,
             siteName: 'Richard Ewing',
             type: 'article',
+            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
         },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${comparison.title} | Enterprise Comparison`,
+            description: comparison.description,
+            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+        }
     };
 }
 

@@ -20,6 +20,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: '/frameworks', destination: '/framework', permanent: true },
+      { source: '/advisory', destination: '/services', permanent: true },
       { source: '/principal', destination: '/about', permanent: true },
       { source: '/vault/curriculum/tracks/product-economics/6-:id', destination: '/vault/curriculum/tracks/product-economics/5-:id', permanent: true },
       { source: '/vault/curriculum/tracks/ai-operations/11-:id', destination: '/vault/curriculum/tracks/ai-operations/6-:id', permanent: true },

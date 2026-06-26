@@ -88,14 +88,19 @@ const Navigation = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/pricing" className="text-zinc-700 hover:text-zinc-900 transition-colors relative group font-medium">
-                                Pricing
+                            <Link href="/services" className="text-zinc-700 hover:text-zinc-900 transition-colors relative group font-medium">
+                                Services
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
+                            </Link>
+
+                            <Link href="/contact" className="text-zinc-700 hover:text-zinc-900 transition-colors relative group font-medium">
+                                Contact
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
                             {/* Primary CTA */}
                             <Link
-                                href="/advisory"
+                                href="/services"
                                 className="bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-2 rounded-lg font-bold text-white hover:opacity-90 transition-all shadow-lg shadow-violet-500/20 hover:shadow-xl hover:shadow-violet-500/30 transform hover:-translate-y-0.5 text-xs uppercase tracking-wider"
                             >
                                 Book Audit →
@@ -229,14 +234,15 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         <MobileLink href="/tools" onClick={onClose} className="text-lg font-bold">Tools</MobileLink>
                         <MobileLink href="/curriculum" onClick={onClose} className="text-lg font-bold">Curriculum</MobileLink>
                         <MobileLink href="/exogram" onClick={onClose} className="text-lg font-bold text-purple-700">Exogram</MobileLink>
-                        <MobileLink href="/pricing" onClick={onClose} className="text-lg font-bold">Pricing</MobileLink>
+                        <MobileLink href="/services" onClick={onClose} className="text-lg font-bold">Services</MobileLink>
                         <MobileLink href="/about" onClick={onClose} className="text-lg font-bold">About</MobileLink>
+                        <MobileLink href="/contact" onClick={onClose} className="text-lg font-bold">Contact</MobileLink>
                     </div>
 
                     <div className="w-full h-px bg-zinc-200 my-4" />
 
                     <Link
-                        href="/advisory"
+                        href="/services"
                         onClick={onClose}
                         className="block w-full bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-center py-4 rounded-xl text-lg hover:opacity-90 transition-opacity mb-4"
                     >

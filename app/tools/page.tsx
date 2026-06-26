@@ -20,14 +20,62 @@ export const metadata: Metadata = {
         description: 'Boardroom-ready diagnostic instruments used in audits. Try them free: PDI, EV-SE, AUEB, and SLM Arbitrage.',
         url: 'https://www.richardewing.io/tools',
         type: 'website',
+        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Executive Diagnostics Hub | Production AI Governance',
         description: 'Forensic instruments to measure technical debt, AI costs, and operational risk.',
+        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },
 };
 
 export default function ToolsPage() {
-    return <ToolsContent />;
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'FAQPage',
+                    'mainEntity': [
+                        {
+                            '@type': 'Question',
+                            'name': 'Are these diagnostic tools free to use?',
+                            'acceptedAnswer': {
+                                '@type': 'Answer',
+                                'text': 'Yes, they are 100% free, self-service tools designed to help engineering and product leaders quickly identify operational leakage.'
+                            }
+                        },
+                        {
+                            '@type': 'Question',
+                            'name': 'Is my data safe when using these calculators?',
+                            'acceptedAnswer': {
+                                '@type': 'Answer',
+                                'text': 'Yes, all calculations are performed locally in your browser. No proprietary data, code details, or financial metrics are ever sent to our servers.'
+                            }
+                        },
+                        {
+                            '@type': 'Question',
+                            'name': 'What is the Product Debt Index (PDI)?',
+                            'acceptedAnswer': {
+                                '@type': 'Answer',
+                                'text': 'The PDI is a quantitative scale (0-100) evaluating the exit valuation risk of accumulated technical debt and unmanaged production AI complexity.'
+                            }
+                        },
+                        {
+                            '@type': 'Question',
+                            'name': 'How do I remediate a high risk score?',
+                            'acceptedAnswer': {
+                                '@type': 'Answer',
+                                'text': 'If your results show critical leakage or high debt, you can book a free diagnostic call to discuss remediation plans.'
+                            }
+                        }
+                    ]
+                }) }}
+            />
+            <ToolsContent />
+        </>
+    );
 }
+

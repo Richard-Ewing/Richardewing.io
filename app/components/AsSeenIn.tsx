@@ -44,26 +44,52 @@ export const AsSeenIn = () => {
                     As Seen In
                 </p>
 
-                {/* Logos */}
-                <div className="flex items-center justify-center gap-8 md:gap-12 flex-wrap">
-                    {publications.map((pub) => (
-                        <a
-                            key={pub.name}
-                            href={pub.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="opacity-50 hover:opacity-100 transition-opacity"
-                            title={`${pub.relationship} at ${pub.name}`}
-                        >
-                            <Image
-                                src={pub.logo}
-                                alt={pub.name}
-                                width={pub.width}
-                                height={pub.height}
-                                className="h-6 md:h-8 w-auto object-contain"
-                            />
-                        </a>
-                    ))}
+                {/* Infinite Scrolling Logos */}
+                <div className="relative w-full overflow-hidden py-4">
+                    {/* Shadow gradients on the edges for a premium fade effect */}
+                    <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#F5F0EB] to-transparent z-10 pointer-events-none" />
+                    <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#F5F0EB] to-transparent z-10 pointer-events-none" />
+                    
+                    <div className="animate-marquee flex gap-12 md:gap-20 items-center whitespace-nowrap">
+                        {/* Set 1 */}
+                        {publications.map((pub) => (
+                            <a
+                                key={`${pub.name}-1`}
+                                href={pub.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="opacity-50 hover:opacity-100 transition-opacity inline-block shrink-0 px-4"
+                                title={`${pub.relationship} at ${pub.name}`}
+                            >
+                                <Image
+                                    src={pub.logo}
+                                    alt={pub.name}
+                                    width={pub.width}
+                                    height={pub.height}
+                                    className="h-6 md:h-8 w-auto object-contain select-none"
+                                />
+                            </a>
+                        ))}
+                        {/* Set 2 (for seamless loop) */}
+                        {publications.map((pub) => (
+                            <a
+                                key={`${pub.name}-2`}
+                                href={pub.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="opacity-50 hover:opacity-100 transition-opacity inline-block shrink-0 px-4"
+                                title={`${pub.relationship} at ${pub.name}`}
+                            >
+                                <Image
+                                    src={pub.logo}
+                                    alt={pub.name}
+                                    width={pub.width}
+                                    height={pub.height}
+                                    className="h-6 md:h-8 w-auto object-contain select-none"
+                                />
+                            </a>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

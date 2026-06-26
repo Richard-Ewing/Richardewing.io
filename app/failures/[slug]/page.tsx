@@ -26,7 +26,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             url: `https://www.richardewing.io/failures/${slug}`,
             siteName: 'Richard Ewing',
             type: 'article',
+            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
         },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${failure.title} | Operational Failure Signature`,
+            description: failure.definition.slice(0, 155).replace(/\n/g, ' '),
+            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+        }
     };
 }
 

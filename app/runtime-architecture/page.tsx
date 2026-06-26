@@ -3,6 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { ShieldCheck, Cpu, Wrench, Globe, Layers, ArrowRight, Zap, Target, AlertTriangle } from 'lucide-react';
 import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
+import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
     title: 'Agentic Runtime Architecture | 4-Layer Formula',
@@ -20,6 +21,13 @@ export const metadata: Metadata = {
         title: 'The 4-Layer Agent Runtime Architecture',
         description: 'Identity × Skill × Tool × Environment — the canonical runtime model for deterministic agentic execution.',
         url: 'https://www.richardewing.io/runtime-architecture',
+        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'The 4-Layer Agent Runtime Architecture',
+        description: 'Identity × Skill × Tool × Environment — the canonical runtime model for deterministic agentic execution.',
+        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },
     alternates: {
         canonical: 'https://www.richardewing.io/runtime-architecture',
@@ -79,6 +87,47 @@ const colorMap: Record<string, { bg: string; text: string; border: string; accen
 export default function RuntimeArchitecturePage() {
     return (
         <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'FAQPage',
+                    'mainEntity': [
+                        {
+                            '@type': 'Question',
+                            'name': 'What is a 4-layer agent runtime?',
+                            'acceptedAnswer': {
+                                '@type': 'Answer',
+                                'text': 'It is a constrained execution model that separates agentic execution into four distinct boundaries: Identity (cognition), Skill (workflows), Tool (permissions), and Environment (semantic state).'
+                            }
+                        },
+                        {
+                            '@type': 'Question',
+                            'name': 'How does this differ from traditional AI guardrails?',
+                            'acceptedAnswer': {
+                                '@type': 'Answer',
+                                'text': 'Guardrails are typically probabilistic wrapper prompts. This runtime architecture is a deterministic compilation and proxy layer (such as Exogram) that intercepts actions at the network/system layer before they execute.'
+                            }
+                        },
+                        {
+                            '@type': 'Question',
+                            'name': 'Why are traditional system prompts insufficient?',
+                            'acceptedAnswer': {
+                                '@type': 'Answer',
+                                'text': 'System prompts are easily bypassed via jailbreaks, base64 encoding, or roleplay prompt injection. They do not enforce physical security or cost bounds at the runtime network layer.'
+                            }
+                        },
+                        {
+                            '@type': 'Question',
+                            'name': 'How does it prevent token retry inflation?',
+                            'acceptedAnswer': {
+                                '@type': 'Answer',
+                                'text': 'By establishing clear execution contracts and semantic boundaries, preventing agents from entering infinite loop cycles when a tool or state fails.'
+                            }
+                        }
+                    ]
+                }) }}
+            />
             <div className="max-w-5xl mx-auto px-6">
 
                 {/* HERO */}
@@ -294,15 +343,38 @@ export default function RuntimeArchitecturePage() {
                     Roo Code governance, Codex runtime, agentic engineering infrastructure
                 </div>
 
+                {/* FAQ Section */}
+                <section className="mb-16 border-t border-zinc-300 pt-12">
+                    <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-6 text-center">Frequently Asked Questions</h2>
+                    <div className="space-y-4 max-w-3xl mx-auto">
+                        <FAQItem
+                            question="What is a 4-layer agent runtime?"
+                            answer="It is a constrained execution model that separates agentic execution into four distinct boundaries: Identity (cognition), Skill (workflows), Tool (permissions), and Environment (semantic state)."
+                        />
+                        <FAQItem
+                            question="How does this differ from traditional AI guardrails?"
+                            answer="Guardrails are typically probabilistic wrapper prompts. This runtime architecture is a deterministic compilation and proxy layer (such as Exogram) that intercepts actions at the network/system layer before they execute."
+                        />
+                        <FAQItem
+                            question="Why are traditional system prompts insufficient?"
+                            answer="System prompts are easily bypassed via jailbreaks, base64 encoding, or roleplay prompt injection. They do not enforce physical security or cost bounds at the runtime network layer."
+                        />
+                        <FAQItem
+                            question="How does it prevent token retry inflation?"
+                            answer="By establishing clear execution contracts and semantic boundaries, preventing agents from entering infinite loop cycles when a tool or state fails."
+                        />
+                    </div>
+                </section>
+
                 {/* BACK LINK */}
-                <div className="text-center">
+                <div className="text-center mb-8">
                     <Link href="/skills" className="inline-flex items-center text-sm font-semibold text-zinc-600 hover:text-zinc-950 transition-colors font-bold uppercase tracking-widest">
                         ← Return to Infrastructure Catalog
                     </Link>
                 </div>
             
-                    <AdvisoryCTA variant="compare" />
-                </div>
+                <AdvisoryCTA variant="compare" />
+            </div>
         </main>
     );
 }

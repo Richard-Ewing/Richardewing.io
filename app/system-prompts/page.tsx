@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/system-prompts' },
@@ -10,6 +11,13 @@ export const metadata: Metadata = {
         description: 'System prompts and operational frameworks for CTOs to audit technical debt and R&D capital.',
         url: 'https://www.richardewing.io/system-prompts',
         type: 'website',
+        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Executive AI System Prompts | Richard Ewing',
+        description: 'System prompts and operational frameworks for CTOs to audit technical debt and R&D capital.',
+        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },
 };
 
@@ -73,6 +81,47 @@ Here are the details on the feature we are killing:
 export default function SystemPromptsPage() {
     return (
         <div className="max-w-5xl mx-auto px-6 py-12">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'FAQPage',
+                    'mainEntity': [
+                        {
+                            '@type': 'Question',
+                            'name': 'How do I use these system prompts?',
+                            'acceptedAnswer': {
+                                '@type': 'Answer',
+                                'text': 'Copy and paste the prompt templates directly into the developer sandbox or system instructions area of platforms like ChatGPT, Claude Projects, or Perplexity.'
+                            }
+                        },
+                        {
+                            '@type': 'Question',
+                            'name': 'Are these prompts compatible with all LLMs?',
+                            'acceptedAnswer': {
+                                '@type': 'Answer',
+                                'text': 'They are optimized for advanced models (Claude 3.5 Sonnet, GPT-4o) that excel at financial modeling and architectural reasoning.'
+                            }
+                        },
+                        {
+                            '@type': 'Question',
+                            'name': 'Why are prompts alone insufficient for AI governance?',
+                            'acceptedAnswer': {
+                                '@type': 'Answer',
+                                'text': 'Prompts are instructions. Probabilistic models can bypass prompts due to context limits or jailbreaks. True governance requires a deterministic interception proxy like Exogram.'
+                            }
+                        },
+                        {
+                            '@type': 'Question',
+                            'name': 'Can I customize these templates for my team?',
+                            'acceptedAnswer': {
+                                '@type': 'Answer',
+                                'text': 'Yes. Fill in your team\'s specific Jira logs, API parameters, or billing metrics inside the placeholders to contextualize the analysis.'
+                            }
+                        }
+                    ]
+                }) }}
+            />
             <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
                 <Link href="/" className="hover:text-cyan-900 font-extrabold font-semibold">Home</Link>
                 <span>/</span>
@@ -111,12 +160,35 @@ export default function SystemPromptsPage() {
                 ))}
             </div>
 
+            {/* FAQ Section */}
+            <section className="mt-16 border-t border-zinc-300 pt-12">
+                <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-6 text-center">Frequently Asked Questions</h2>
+                <div className="space-y-4 max-w-3xl mx-auto text-left">
+                    <FAQItem
+                        question="How do I use these system prompts?"
+                        answer="Copy and paste the prompt templates directly into the developer sandbox or system instructions area of platforms like ChatGPT, Claude Projects, or Perplexity."
+                    />
+                    <FAQItem
+                        question="Are these prompts compatible with all LLMs?"
+                        answer="They are optimized for advanced models (Claude 3.5 Sonnet, GPT-4o) that excel at financial modeling and architectural reasoning."
+                    />
+                    <FAQItem
+                        question="Why are prompts alone insufficient for AI governance?"
+                        answer="Prompts are instructions. Probabilistic models can bypass prompts due to context limits or jailbreaks. True governance requires a deterministic interception proxy like Exogram."
+                    />
+                    <FAQItem
+                        question="Can I customize these templates for my team?"
+                        answer="Yes. Fill in your team's specific Jira logs, API parameters, or billing metrics inside the placeholders to contextualize the analysis."
+                    />
+                </div>
+            </section>
+
             <div className="mt-16 card p-8 border-violet-500/30 bg-gradient-to-br from-violet-500/10 to-transparent text-center">
                 <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Stop Prompting. Start Executing.</h2>
                 <p className="text-zinc-900 mb-8 max-w-xl mx-auto">
                     Prompts give you frameworks. Audits give you board-ready financial models. If your R&D margin is collapsing, book a diagnostic.
                 </p>
-                <Link href="/advisory" className="inline-flex px-8 py-4 bg-gradient-to-r from-violet-600 to-cyan-600 text-zinc-950 font-semibold font-bold rounded-lg hover:opacity-90 transition-all">
+                <Link href="/services" className="inline-flex px-8 py-4 bg-gradient-to-r from-violet-600 to-cyan-600 text-zinc-950 font-semibold font-bold rounded-lg hover:opacity-90 transition-all">
                     Book R&D Capital Audit →
                 </Link>
             </div>

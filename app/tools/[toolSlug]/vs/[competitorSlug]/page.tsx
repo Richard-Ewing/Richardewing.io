@@ -46,6 +46,13 @@ export async function generateMetadata(
             description: `Why enterprise leaders choose deterministic architecture over ${competitor.name}. Calculate literal Cost of Doing Nothing (CODN) and Board-Level Liability.`,
             url: `https://www.richardewing.io/tools/${tool.toolSlug}/vs/${competitor.slug}`,
             type: 'article',
+            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${tool.toolName} vs. ${competitor.name} (2026 Comparison)`,
+            description: `Why enterprise leaders choose deterministic architecture over ${competitor.name}. Calculate literal Cost of Doing Nothing (CODN) and Board-Level Liability.`,
+            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
         }
     };
 }
