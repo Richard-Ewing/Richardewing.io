@@ -23,7 +23,11 @@ const nextConfig: NextConfig = {
       { source: '/advisory', destination: '/services', permanent: true },
       { source: '/principal', destination: '/about', permanent: true },
       { source: '/vault/curriculum/tracks/product-economics/6-:id', destination: '/vault/curriculum/tracks/product-economics/5-:id', permanent: true },
+      { source: '/curriculum/tracks/product-economics/6-:id', destination: '/vault/curriculum/tracks/product-economics/5-:id', permanent: true },
       { source: '/vault/curriculum/tracks/ai-operations/11-:id', destination: '/vault/curriculum/tracks/ai-operations/6-:id', permanent: true },
+      { source: '/curriculum/tracks/ai-operations/11-:id', destination: '/vault/curriculum/tracks/ai-operations/6-:id', permanent: true },
+      { source: '/curriculum/tracks/startup-economics/10-:id', destination: '/vault/curriculum/tracks/startup-economics/26-:id', permanent: true },
+      { source: '/vault/curriculum/tracks/startup-economics/10-:id', destination: '/vault/curriculum/tracks/startup-economics/26-:id', permanent: true },
       // ═══════════════════ PAIN-FORWARD URL ALIASES ═══════════════════
       // Research-validated searchable URLs → existing tool pages.
       // VALIDATED: competitors exist for these exact terms (TechDebtCalculator.com, Red Eagle, etc.)
@@ -183,12 +187,12 @@ const nextConfig: NextConfig = {
       },
       // Redirect all deprecated named tracks directly to /vault/curriculum/tracks to prevent redirect chains
       {
-        source: '/vault/curriculum/tracks/:category(b2b-saas-economics|fintech-economics|logistics-ecommerce|healthtech-economics|traditional-pm|breaking-into-tech|junior-to-senior|agentic-governance|erp-enterprise-integration|outsourcing-economics|corporate-it-cost-centers|mainframe-legacy-systems|career-mobility-technical-economics|classic-qa-quality|monolith-classic-database|executive-alignment-governance|fullstack-career|system-design|devops-economics|security-economics|data-economics|engineering-leadership|guides|comparisons|fractional-engineering)/:slug*',
+        source: '/vault/curriculum/tracks/:category(b2b-saas-economics|fintech-economics|logistics-ecommerce|healthtech-economics|traditional-pm|breaking-into-tech|junior-to-senior|agentic-governance|erp-enterprise-integration|outsourcing-economics|corporate-it-cost-centers|mainframe-legacy-systems|career-mobility-technical-economics|classic-qa-quality|monolith-classic-database|executive-alignment-governance|fullstack-career|system-design|devops-economics|security-economics|data-economics|engineering-leadership|guides|comparisons|fractional-engineering|ai-agent-economics|synthetic-data|sovereign-ai)/:slug*',
         destination: '/vault/curriculum/tracks',
         permanent: true,
       },
       {
-        source: '/curriculum/tracks/:category(b2b-saas-economics|fintech-economics|logistics-ecommerce|healthtech-economics|traditional-pm|breaking-into-tech|junior-to-senior|agentic-governance|erp-enterprise-integration|outsourcing-economics|corporate-it-cost-centers|mainframe-legacy-systems|career-mobility-technical-economics|classic-qa-quality|monolith-classic-database|executive-alignment-governance|fullstack-career|system-design|devops-economics|security-economics|data-economics|engineering-leadership|guides|comparisons|fractional-engineering)/:slug*',
+        source: '/curriculum/tracks/:category(b2b-saas-economics|fintech-economics|logistics-ecommerce|healthtech-economics|traditional-pm|breaking-into-tech|junior-to-senior|agentic-governance|erp-enterprise-integration|outsourcing-economics|corporate-it-cost-centers|mainframe-legacy-systems|career-mobility-technical-economics|classic-qa-quality|monolith-classic-database|executive-alignment-governance|fullstack-career|system-design|devops-economics|security-economics|data-economics|engineering-leadership|guides|comparisons|fractional-engineering|ai-agent-economics|synthetic-data|sovereign-ai)/:slug*',
         destination: '/vault/curriculum/tracks',
         permanent: true,
       },
@@ -360,6 +364,11 @@ const nextConfig: NextConfig = {
         destination: '/compare',
         permanent: true as const,
       })),
+      {
+        source: '/comparisons/:slug*',
+        destination: '/compare/:slug*',
+        permanent: true,
+      },
     ];
   },
 };

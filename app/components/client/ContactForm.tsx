@@ -17,7 +17,7 @@ export default function ContactForm() {
 
         // Simple fetch submit to Formspree if needed, otherwise fallback to local success state
         try {
-            const response = await fetch('https://formspree.io/f/xpzvbjyp', {
+            const response = await fetch('/api/lead-capture', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

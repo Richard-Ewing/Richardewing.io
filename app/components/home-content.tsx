@@ -54,15 +54,7 @@ export default function HomeContent() {
                 </div>
 
                 {/* Authority Stats Bar */}
-                <StatsBar
-                    stats={[
-                        { value: <><NumberTicker value={25} prefix="$" suffix="M" className="text-cyan-900 font-extrabold" /></>, label: "ARR Scaled" },
-                        { value: <><NumberTicker value={15} suffix="+" className="text-cyan-900 font-extrabold" /></>, label: "Years Exp." },
-                        { value: <><NumberTicker value={7} suffix="M+" className="text-cyan-900 font-extrabold" /></>, label: "Users Impacted" },
-                        { value: <span className="text-gold"><NumberTicker value={100} suffix="%" className="text-cyan-900 font-extrabold" /></span>, label: "Independence" }
-                    ]}
-                    className="mb-8"
-                />
+                {/* <!-- RESTORE WITH VERIFIED NUMBER --> */}
 
                 {/* Social Proof */}
                 <div className="pt-8">

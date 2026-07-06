@@ -51,3 +51,16 @@ export const generateSoftwareApplicationSchema = (name: string, description: str
         priceCurrency: 'USD'
     }
 });
+
+export const generateFaqSchema = (questions: { question: string; answer: string }[]) => ({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: questions.map(q => ({
+        '@type': 'Question',
+        name: q.question,
+        acceptedAnswer: {
+            '@type': 'Answer',
+            text: q.answer
+        }
+    }))
+});

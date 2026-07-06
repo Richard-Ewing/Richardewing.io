@@ -33,7 +33,7 @@ const Hero = () => {
 
                         {/* H1 — Clear value proposition */}
                         <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-zinc-900 mb-6 leading-[1.12] max-w-2xl tracking-tight">
-                            I Stop AI Investments From{' '}
+                            I Stop AI Investments From&nbsp;
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-violet-500 to-purple-600">
                                 Bleeding Money
                             </span>.
@@ -96,9 +96,7 @@ const Hero = () => {
                                 </div>
                             </div>
                             {/* Floating badge */}
-                            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-white border border-zinc-200 shadow-md">
-                                <span className="text-xs font-bold text-zinc-800 whitespace-nowrap">🎯 $25M+ ARR Scaled</span>
-                            </div>
+                            {/* <!-- RESTORE WITH VERIFIED NUMBER --> */}
                         </div>
                     </div>
 

@@ -158,32 +158,7 @@ export default function PrincipalContent() {
                         </div>
 
                         {/* Power Stats */}
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 border-t border-zinc-400 pt-8">
-                            <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
-                                <div className="text-3xl sm:text-4xl font-bold text-cyan-900 font-extrabold font-semibold">
-                                    <NumberTicker value={25} prefix="$" suffix="M" />
-                                </div>
-                                <div className="text-xs font-bold font-medium sm:text-xs font-bold font-mono text-zinc-950 font-bold uppercase mt-1">ARR Scaled</div>
-                            </div>
-                            <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
-                                <div className="text-3xl sm:text-4xl font-bold text-zinc-900">
-                                    <NumberTicker value={7} suffix="M+" />
-                                </div>
-                                <div className="text-xs font-bold font-medium sm:text-xs font-bold font-mono text-zinc-950 font-bold uppercase mt-1">Users Migrated</div>
-                            </div>
-                            <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
-                                <div className="text-3xl sm:text-4xl font-bold text-cobalt">
-                                    <NumberTicker value={5} prefix="$" suffix="M" />
-                                </div>
-                                <div className="text-xs font-bold font-medium sm:text-xs font-bold font-mono text-zinc-950 font-bold uppercase mt-1">Cost Reduced</div>
-                            </div>
-                            <div className="text-center p-4 rounded-xl bg-white/5 hover:bg-white/10 transition">
-                                <div className="text-3xl sm:text-4xl font-bold text-gold">
-                                    <NumberTicker value={200} suffix="%" />
-                                </div>
-                                <div className="text-xs font-bold font-medium sm:text-xs font-bold font-mono text-zinc-950 font-bold uppercase mt-1">Revenue Growth</div>
-                            </div>
-                        </div>
+                        {/* <!-- RESTORE WITH VERIFIED NUMBER --> */}
                     </div>
                 </div>
             </ScrollReveal>

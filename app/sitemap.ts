@@ -144,8 +144,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         )
     );
 
-    // Glossary
-    glossaryTerms.forEach(term => add(`${baseUrl}/glossary/${term.slug}`, 'monthly', 0.6));
+    // Glossary (Only index Richard Ewing Frameworks to avoid thin content drag)
+    glossaryTerms
+        .filter(term => term.category === 'Richard Ewing Frameworks')
+        .forEach(term => add(`${baseUrl}/glossary/${term.slug}`, 'monthly', 0.6));
 
     // Frameworks
     frameworks.forEach(f => add(`${baseUrl}/articles/frameworks/${f.slug}`, 'monthly', 0.7));
@@ -170,11 +172,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'legaltech', 'agritech', 'cleantech', 'mediatech'
     ];
     industrySlugs.forEach(slug => add(`${baseUrl}/industries/${slug}`, 'monthly', 0.7));
-
-    // Vault Curriculum Modules
-    getAllModuleSlugs().forEach(slug =>
-        add(`${baseUrl}/vault/curriculum/tracks/${slug}`, 'monthly', 0.6)
-    );
 
     // Exogram Docs
     exogramDocs.forEach(doc => add(`${baseUrl}/exogram/docs/${doc.slug}`, 'monthly', 0.8));

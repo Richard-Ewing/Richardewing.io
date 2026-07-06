@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { glossaryTerms, glossaryCategories } from './terms';
+import { glossaryTerms } from './terms';
+import { PILLARS, CATEGORY_MAP, KEEP_TERMS } from './pillarsMapping';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { ChevronDown, ChevronUp, Search, X } from 'lucide-react';
 
@@ -16,10 +17,15 @@ export default function GlossaryContent() {
         term.category.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    const termsByCategory = glossaryCategories.map(cat => ({
-        category: cat,
-        terms: filteredTerms.filter(t => t.category === cat),
-    })).filter(g => g.terms.length > 0);
+    const termsByCategory = PILLARS.map(pillar => {
+        return {
+            category: pillar.name,
+            terms: filteredTerms.filter(t => {
+                const mappedSlug = CATEGORY_MAP[t.category] || 'cloud-infrastructure-finops';
+                return mappedSlug === pillar.slug;
+            }),
+        };
+    }).filter(g => g.terms.length > 0);
 
     // Initialize first category as open if we haven't touched it and search is empty
     const isCategoryOpen = (cat: string) => {
@@ -115,15 +121,21 @@ export default function GlossaryContent() {
                                 <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                                     <div className="overflow-hidden">
                                         <div className="p-6 sm:p-8 pt-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                            {group.terms.map(term => (
+                                            {group.terms.map(term => {
+                                                const isKeep = KEEP_TERMS.includes(term.slug);
+                                                const pillarSlug = CATEGORY_MAP[term.category] || 'cloud-infrastructure-finops';
+                                                const href = isKeep ? `/glossary/${term.slug}` : `/glossary/pillars/${pillarSlug}#${term.slug}`;
+                                                
+                                                return (
                                                 <Link
                                                     key={term.slug}
-                                                    href={`/glossary/${term.slug}`}
+                                                    href={href}
                                                     className="group block"
                                                 >
                                                     <div className="card p-5 h-full bg-white border border-zinc-400 hover:border-cyan-400 hover:bg-cyan-50/30 transition-all rounded-xl">
-                                                        <h3 className="text-sm font-semibold font-bold text-zinc-900 mb-2 group-hover:text-cyan-900 font-extrabold transition-colors font-grotesk">
+                                                        <h3 className="text-sm font-semibold font-bold text-zinc-900 mb-2 group-hover:text-cyan-900 font-extrabold transition-colors font-grotesk flex justify-between items-center">
                                                             {term.title}
+                                                            {isKeep && <span className="text-[10px] bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded font-mono">Deep Dive</span>}
                                                         </h3>
                                                         <p className="text-xs font-bold text-zinc-950 line-clamp-2 leading-relaxed">
                                                             {term.definition.slice(0, 160)}...
@@ -133,7 +145,8 @@ export default function GlossaryContent() {
                                                         </div>
                                                     </div>
                                                 </Link>
-                                            ))}
+                                                );
+                                            })}
                                         </div>
                                     </div>
                                 </div>

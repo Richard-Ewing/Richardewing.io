@@ -6,7 +6,7 @@ import WhatWhyHow from './components/sections/WhatWhyHow';
 import ClientOutcomes from './components/sections/ClientOutcomes';
 import FourHorsemen from './components/sections/FourHorsemen';
 import ToolsPreview from './components/sections/ToolsPreview';
-import RuntimeEscalationSimulator from './components/RuntimeEscalationSimulator';
+import HighIntentConversionBlock from './components/sections/HighIntentConversionBlock';
 import PricingPreview from './components/sections/PricingPreview';
 import NewsletterSection from './components/sections/NewsletterSection';
 import FAQItem from './components/FAQItem';
@@ -96,8 +96,8 @@ export default function Home() {
       <NarrativeCompression />
       {/* Layer 4: Why enterprise AI fails — the pain points */}
       <FourHorsemen />
-      {/* Layer 5: FEEL the escalation — interactive failure cascade */}
-      <RuntimeEscalationSimulator />
+      {/* Layer 5: High-Intent Conversion Block */}
+      <HighIntentConversionBlock />
       {/* Layer 6: Proof of outcomes */}
       <ClientOutcomes />
       {/* Layer 7: Free tools — lead generation */}

@@ -2,6 +2,7 @@ import { notFound, permanentRedirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { glossaryTerms } from '../terms';
+import { CATEGORY_MAP, KEEP_TERMS } from '../pillarsMapping';
 import GovernancePathways from '@/components/semantic/GovernancePathways';
 import { autoKeyMetrics, autoMaturityLevels, autoComparisons, autoQuiz, autoDiagram, autoCommonMistakes, autoBestPractices, autoIndustryBenchmarks, autoSpokes, autoCurriculum, autoGuides, autoPremiumTool, autoWhereIsItUsed, autoWhoUsesIt, autoBridge } from '../auto-enrich';
 import RelatedContent from '../../components/RelatedContent';
@@ -24,12 +25,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
     const term = glossaryTerms.find(t => t.slug === slug);
     if (!term) return {};
+
+    // If it's not a KEEP term, it will redirect, so no metadata needed
+    if (!KEEP_TERMS.includes(term.slug)) {
+        return { robots: { index: false, follow: true } };
+    }
+
     const ogTitle = `What is ${term.title}? | Richard Ewing`;
     const safeOgTitle = ogTitle.substring(0, 55) + (ogTitle.length > 55 ? '...' : '');
+
+    const isEwingFramework = term.category === 'Richard Ewing Frameworks';
 
     return {
         title: safeOgTitle,
         description: term.definition.slice(0, 155).replace(/\n/g, ' ') + '...',
+        robots: {
+            index: isEwingFramework,
+            follow: true
+        },
         keywords: [
             term.title.toLowerCase(), `what is ${term.title.toLowerCase()}`,
             `${term.title.toLowerCase()} definition`, `${term.title.toLowerCase()} explained`,
@@ -124,6 +137,12 @@ export default async function GlossaryTermPage({ params }: Props) {
     const { slug } = await params;
     const term = glossaryTerms.find(t => t.slug === slug);
     if (!term) permanentRedirect('/glossary');
+
+    // Consolidate thin and eval pages into pillar pages
+    if (!KEEP_TERMS.includes(term.slug)) {
+        const pillarSlug = CATEGORY_MAP[term.category] || 'cloud-infrastructure-finops';
+        permanentRedirect(`/glossary/pillars/${pillarSlug}#${term.slug}`);
+    }
 
     const relatedTermObjects = term.relatedTerms
         .map(r => glossaryTerms.find(t => t.slug === r))

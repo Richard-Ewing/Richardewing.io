@@ -5,6 +5,8 @@ import { notFound, permanentRedirect } from 'next/navigation';
 import { ArrowRight, Activity, ShieldAlert } from 'lucide-react';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 import pseoMatrixData from '@/app/lib/pseo-matrix.json';
+import FAQItem from '@/app/components/FAQItem';
+import StructuredData, { generateFaqSchema } from '@/app/components/seo/StructuredData';
 
 // INDEXED_SLUGS removed to allow dynamic indexation of programmatic SEO pages
 
@@ -43,17 +45,22 @@ interface Comparison {
     theirFocus?: string;
     ourAdvantage?: string;
     technicalDistinction?: string;
+    toolA?: string;
+    toolB?: string;
 }
 
 function getComparison(slug: string): Comparison | undefined {
     // 1. Check hardcoded comparisons first
     const hardcoded = COMPARISONS.find(c => c.slug === slug);
     if (hardcoded) {
+        const parts = hardcoded.title.split(' vs ');
         return {
             slug: hardcoded.slug,
             title: hardcoded.title,
             description: hardcoded.description,
             keywords: hardcoded.keywords,
+            toolA: parts[0] || 'Tool A',
+            toolB: parts[1] || 'Tool B'
         };
     }
 
@@ -67,7 +74,9 @@ function getComparison(slug: string): Comparison | undefined {
             keywords: [matrixItem.toolA, matrixItem.toolB, `${matrixItem.toolA} vs ${matrixItem.toolB}`],
             theirFocus: matrixItem.theirFocus,
             ourAdvantage: matrixItem.ourAdvantage,
-            technicalDistinction: matrixItem.technicalDistinction
+            technicalDistinction: matrixItem.technicalDistinction,
+            toolA: matrixItem.toolA,
+            toolB: matrixItem.toolB
         };
     }
 
@@ -77,22 +86,48 @@ function getComparison(slug: string): Comparison | undefined {
 export async function generateStaticParams() {
     const hardcodedSlugs = COMPARISONS.map(c => ({ slug: c.slug }));
     const matrixSlugs = (pseoMatrixData as any[]).map(item => ({ slug: item.slug }));
-    return [...hardcodedSlugs, ...matrixSlugs];
+    return [...hardcodedSlugs, ...matrixSlugs, { slug: 'anthropic-claude-vs-gitlab-ci' }];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
     const comparison = getComparison(slug);
-    if (!comparison) return {};
+    
+    if (!comparison) {
+        if (slug === 'anthropic-claude-vs-gitlab-ci') {
+            return {
+                title: 'Anthropic Claude vs GitLab CI: Product Economics',
+                description: 'Compare execution risks and cost inefficiencies of Anthropic Claude vs GitLab CI. Measure the ROI of AI coding assistants against traditional CI/CD pipelines.',
+                alternates: { canonical: `https://www.richardewing.io/compare/${slug}` },
+                robots: { index: true, follow: true }
+            };
+        }
+        
+        // Marginal redirects, so no metadata needed, but Next.js will use this before redirecting.
+        // Junk pages need noindex, follow
+        return {
+            title: 'Comparison Deprecated',
+            robots: { index: false, follow: true }
+        };
+    }
+
+    let desc = comparison.description;
+    if (!desc || desc.length < 50) {
+        const tA = comparison.toolA || 'Tool A';
+        const tB = comparison.toolB || 'Tool B';
+        desc = `Compare execution risks, cost inefficiencies, and R&D capital leakage of ${tA} vs ${tB}. Audit your engineering margins.`;
+    }
 
     return {
-        title: `${comparison.title} | Enterprise Comparison`,
-        description: comparison.description,
+        title: {
+            absolute: comparison.title
+        },
+        description: desc,
         alternates: { canonical: `https://www.richardewing.io/compare/${slug}` },
         robots: { index: true, follow: true },
         openGraph: {
-            title: `${comparison.title} | Enterprise Comparison`,
-            description: comparison.description,
+            title: comparison.title,
+            description: desc,
             url: `https://www.richardewing.io/compare/${slug}`,
             siteName: 'Richard Ewing',
             type: 'article',
@@ -100,8 +135,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${comparison.title} | Enterprise Comparison`,
-            description: comparison.description,
+            title: comparison.title,
+            description: desc,
             images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
         }
     };
@@ -112,11 +147,95 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
     const comparison = getComparison(slug);
 
     if (!comparison) {
-        permanentRedirect('/compare');
+        const marginalSlugs = [
+            'openai-vs-ansible', 'openai-vs-bootstrap', 'openai-vs-nuxt', 'postgresql-vs-langchain',
+            'google-gemini-vs-tailwindcss', 'openai-vs-anthropic', 'openai-vs-datadog', 'openai-vs-firebase',
+            'why-claude-loses-context', 'ai-coding-agents', 'cursor-problems', 'feature-flags-vs-branching',
+            'ai-guardrails-platforms', 'linear-vs-stripe', 'cloudflare-pages-vs-terraform', 'linear-vs-terraform',
+            'linear-vs-langchain'
+        ];
+
+        if (marginalSlugs.includes(slug)) {
+            permanentRedirect('/vault/curriculum/tracks/choosing-ai-platforms');
+        }
+
+        if (slug === 'anthropic-claude-vs-gitlab-ci') {
+            return (
+                <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
+                    <div className="page-container max-w-4xl mx-auto">
+                        <div className="mb-8 flex items-center gap-2 text-xs font-bold font-mono text-zinc-950 uppercase tracking-widest">
+                            <Link href="/compare" className="hover:text-amber-900 transition-colors">Comparisons</Link>
+                            <span>/</span>
+                            <span className="text-amber-900">Detail</span>
+                        </div>
+                        <div className="text-center mb-16">
+                            <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
+                                Anthropic Claude vs GitLab CI: Product Economics
+                            </h1>
+                            <p className="text-xl text-zinc-700 max-w-2xl mx-auto font-medium">
+                                Measure the ROI of AI coding assistants against traditional CI/CD pipelines. Understand how Anthropic Claude changes the economics of software delivery.
+                            </p>
+                        </div>
+                        <div className="p-8 bg-white border border-zinc-400 rounded-2xl mb-16">
+                            <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-4">Economic Analysis</h3>
+                            <div className="text-zinc-800 font-semibold leading-relaxed text-[15px] space-y-4">
+                                <p>GitLab CI represents the traditional cost center of deterministic software verification. Its unit economics are tied to compute minutes and storage.</p>
+                                <p>Anthropic Claude introduces a non-deterministic acceleration layer. While it reduces human capital cost per line of code, it introduces probabilistic failure modes that GitLab CI must ultimately catch.</p>
+                                <p>The Product Economics angle requires evaluating the marginal cost of hallucination remediation against the marginal benefit of accelerated drafting.</p>
+                            </div>
+                        </div>
+                        <AdvisoryCTA variant="compare" />
+                    </div>
+                </main>
+            );
+        }
+
+        // JUNK pages: 410 after 60 days. Next.js doesn't support 410 easily without a custom server or route handlers.
+        // For now, render a deprecated message (since robots is noindex,follow).
+        return (
+            <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24 text-center">
+                <div className="page-container max-w-4xl mx-auto">
+                    <h1 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Comparison Deprecated</h1>
+                    <p className="text-zinc-700 font-medium">
+                        This comparison is no longer maintained due to lack of human intent or changing technical landscapes. 
+                        Please visit our <Link href="/compare" className="text-amber-700 underline font-bold">Comparisons</Link> for active topics.
+                    </p>
+                </div>
+            </main>
+        );
     }
+
+    const tA = comparison.toolA || 'Tool A';
+    const tB = comparison.toolB || 'Tool B';
+
+    const faqs = [];
+    if (comparison.theirFocus && comparison.ourAdvantage) {
+        faqs.push({
+            question: `What is the main difference between ${tA} and ${tB}?`,
+            answer: `The competitor focus of ${tB} is: ${comparison.theirFocus} In contrast, ${tA}'s advantage is: ${comparison.ourAdvantage}`
+        });
+    } else {
+        faqs.push({
+            question: `What is the main difference between ${tA} and ${tB}?`,
+            answer: `Traditional evaluations of ${tA} and ${tB} focus on superficial developer experience. An economic evaluation focuses on their execution boundaries: probabilistic prompt enforcement vs deterministic runtime gating.`
+        });
+    }
+
+    if (comparison.technicalDistinction) {
+        faqs.push({
+            question: `How does the technical architecture of ${tA} compare to ${tB}?`,
+            answer: comparison.technicalDistinction
+        });
+    }
+
+    faqs.push({
+        question: `Why is deterministic runtime governance necessary for ${tA} and ${tB}?`,
+        answer: `Deploying AI integrations without deterministic gating introduces non-deterministic execution paths, escalating token burn and security risks. Managing this requires enforcing limits at the execution layer (runtime middleware) rather than hoping models adhere to system prompt instructions.`
+    });
 
     return (
         <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
+            <StructuredData data={generateFaqSchema(faqs)} />
             <div className="page-container max-w-4xl mx-auto">
                 <div className="mb-8 flex items-center gap-2 text-xs font-bold font-mono text-zinc-950 uppercase tracking-widest">
                     <Link href="/compare" className="hover:text-amber-900 transition-colors">Comparisons</Link>
@@ -208,6 +327,21 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
                         </div>
                     </div>
                 )}
+
+                <div className="mt-16 pt-12 border-t border-zinc-400">
+                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-8 text-center animate-fade-in">
+                        Frequently Asked Questions
+                    </h2>
+                    <div className="space-y-4 max-w-3xl mx-auto">
+                        {faqs.map((faq, index) => (
+                            <FAQItem 
+                                key={index}
+                                question={faq.question}
+                                answer={faq.answer}
+                            />
+                        ))}
+                    </div>
+                </div>
 
                 <div className="sr-only" aria-hidden="true">
                     Keywords: {(comparison.keywords || []).join(', ')}
