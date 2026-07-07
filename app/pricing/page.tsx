@@ -94,6 +94,50 @@ export default function PricingPage() {
 
                     <hr className="border-zinc-300 my-16" />
 
+                    <div className="mb-16">
+                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-8 border-b border-zinc-200 pb-4">Software & Curriculum Access</h2>
+                        <p className="text-zinc-800 font-semibold mb-8">
+                            For teams that want to execute the frameworks internally. Get immediate access to the <strong>Enterprise Vault</strong> — 218 technical modules, 18 curriculum tracks, and 4 proprietary diagnostic calculators.
+                        </p>
+                        
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            {/* Single User */}
+                            <div className="bg-white border border-zinc-300 p-8 rounded-xl shadow-sm hover:border-violet-500/50 transition-colors">
+                                <h3 className="text-xl font-grotesk font-bold text-zinc-950 mb-2 mt-0">Single Practitioner</h3>
+                                <div className="text-2xl font-mono font-bold text-zinc-900 mb-4">$999 <span className="text-sm text-zinc-500 font-medium">lifetime</span></div>
+                                <ul className="list-disc pl-5 space-y-2 mb-8 text-zinc-800 text-sm">
+                                    <li>1 User License</li>
+                                    <li>Full Curriculum Access (18 Tracks)</li>
+                                    <li>3 Diagnostic Tool Runs per month</li>
+                                    <li>Private Community Access</li>
+                                </ul>
+                                <a href="/api/buy/full_curriculum" className="block w-full text-center py-3 bg-zinc-100 hover:bg-violet-600 hover:text-white text-zinc-950 font-bold font-mono text-sm uppercase tracking-widest transition-colors rounded-lg">
+                                    Get Started
+                                </a>
+                            </div>
+
+                            {/* Team */}
+                            <div className="bg-gradient-to-br from-cyan-50 to-emerald-50 border border-cyan-200 p-8 rounded-xl shadow-md hover:border-cyan-400 transition-colors relative">
+                                <div className="absolute -top-3 right-6 bg-cyan-900 text-cyan-50 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                                    Enterprise
+                                </div>
+                                <h3 className="text-xl font-grotesk font-bold text-zinc-950 mb-2 mt-0">Team Access</h3>
+                                <div className="text-2xl font-mono font-bold text-zinc-900 mb-4">$1,500 <span className="text-sm text-zinc-500 font-medium">/ 10 seats</span></div>
+                                <ul className="list-disc pl-5 space-y-2 mb-8 text-zinc-800 text-sm">
+                                    <li>10-Seat Team License</li>
+                                    <li>Team Admin Dashboard</li>
+                                    <li>Unlimited Diagnostic Tool Runs</li>
+                                    <li>Centralized Billing & Reporting</li>
+                                </ul>
+                                <a href="/api/buy/enterprise/enterprise_curriculum_license" className="block w-full text-center py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-bold font-mono text-sm uppercase tracking-widest transition-colors rounded-lg shadow-sm">
+                                    Team - Get Started
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr className="border-zinc-300 my-16" />
+
                     <h2>Why this model works</h2>
                     <p>
                         When an engineering team builds a new feature, they focus on functionality. When I audit that same feature, I focus on the structural cost to maintain it over the next three years. 

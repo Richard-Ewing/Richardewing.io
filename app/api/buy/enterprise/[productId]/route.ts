@@ -9,12 +9,7 @@ export async function GET(
     const { productId } = await params;
     
     // Server-side Auth Check
-    const { userId, redirectToSignIn } = await auth();
-
-    // Force sign-in loop if anonymous
-    if (!userId) {
-        return redirectToSignIn({ returnBackUrl: request.url });
-    }
+    const { userId } = await auth();
 
     const product = PRODUCTS[productId];
 
@@ -25,9 +20,11 @@ export async function GET(
     // Construct precise Stripe Payload with guaranteed Clerk Identity Mapping
     const stripeUrl = new URL(product.paymentLink);
     
-    // Tag this strongly as an enterprise B2B transaction
-    const referenceId = `${userId}::enterprise_${productId}`;
-    stripeUrl.searchParams.append('client_reference_id', referenceId);
+    if (userId) {
+        // Tag this strongly as an enterprise B2B transaction
+        const referenceId = `${userId}::enterprise_${productId}`;
+        stripeUrl.searchParams.append('client_reference_id', referenceId);
+    }
 
     return NextResponse.redirect(stripeUrl);
 }
