@@ -45,44 +45,46 @@
   --glass-border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-/* Base Styles */
-body {
-  background: var(--bg-primary);
-  color: var(--text-secondary);
-  font-family: var(--font-sans);
-  line-height: 1.7;
-  overflow-x: hidden;
-}
+@layer base {
+  /* Base Styles */
+  body {
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
 
-/* Responsive Typography - 18px Base */
-html {
-  font-size: 18px;
-}
+  /* Responsive Typography - 18px Base */
+  html {
+    font-size: 18px;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-grotesk);
-  color: var(--text-primary);
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-grotesk);
+    color: var(--text-primary);
+  }
 
-h1 {
-  font-size: clamp(42px, 6vw, 72px);
-  font-weight: 700;
-  line-height: 1.1;
-}
+  h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 700;
+    line-height: 1.1;
+  }
 
-h2 {
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 600;
-}
+  h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 600;
+  }
 
-h3 {
-  font-size: clamp(24px, 3vw, 32px);
-  font-weight: 600;
+  h3 {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 600;
+  }
 }
 
 /* Utilities */
@@ -250,8 +252,8 @@ html {
 }
 
 ::selection {
-  background: rgba(124, 58, 237, 0.15);
-  color: #1A1A1A;
+  background: rgba(124, 58, 237, 0.4);
+  color: inherit;
 }
 
 @keyframes shine {
