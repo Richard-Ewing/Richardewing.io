@@ -12,6 +12,18 @@ export interface CompetitorMapping {
 
 export const COMBAT_SEO_MATRIX: CompetitorMapping[] = [
     {
+        toolSlug: 'ai-margin-analyzer',
+        toolName: 'AI Margin Collapse Analyzer',
+        competitors: [
+            {
+                slug: 'cloudzero',
+                name: 'CloudZero',
+                theirFocus: 'Unit economics and COGS tracking for deterministic cloud infrastructure.',
+                ourAdvantage: 'Exogram automatically calculates the probabilistic variance of LLM token burn, isolating generative AI costs from standard cloud compute.'
+            }
+        ]
+    },
+    {
         toolSlug: 'shadow-ai',
         toolName: 'Shadow AI Endpoint Scanner',
         competitors: [

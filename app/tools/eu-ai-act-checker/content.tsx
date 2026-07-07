@@ -71,6 +71,7 @@ export default function EUAIActChecker() {
     useEffect(() => {
         const enforcement = new Date('2026-08-02');
         const now = new Date();
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setDaysLeft(Math.max(0, Math.ceil((enforcement.getTime() - now.getTime()) / (1000 * 60 * 60 * 24))));
     }, []);
 

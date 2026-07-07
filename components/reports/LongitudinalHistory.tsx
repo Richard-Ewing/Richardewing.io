@@ -15,6 +15,7 @@ export function LongitudinalHistory({ tool, scoreKey }: LongitudinalHistoryProps
 
     useEffect(() => {
         const records = loadDiagnosticHistory(tool);
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setHistory(records);
     }, [tool]);
 

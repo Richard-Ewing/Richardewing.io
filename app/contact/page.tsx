@@ -46,8 +46,16 @@ export default function ContactPage() {
                 </section>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                    {/* Left: Contact Form */}
-                    <ContactForm />
+                    {/* Left: Calendly Embed */}
+                    <div className="bg-white border border-zinc-300 rounded-3xl p-2 sm:p-4 shadow-sm min-h-[600px] flex flex-col relative overflow-hidden">
+                        <iframe 
+                            src="https://calendly.com/richard-richardewing/30min?hide_gdpr_banner=1" 
+                            width="100%" 
+                            height="100%" 
+                            frameBorder="0" 
+                            className="min-h-[600px] w-full"
+                        ></iframe>
+                    </div>
 
                     {/* Right: Contact details and Secure NDA Seal */}
                     <div className="space-y-6 flex flex-col justify-between">

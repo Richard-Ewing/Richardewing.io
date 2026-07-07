@@ -493,19 +493,11 @@ export default function AUEBTool() {
                                         </div>
                                         <div className="flex flex-col sm:flex-row gap-4 mt-8">
                                             <button onClick={() => setStep(2)} className="px-6 py-4 bg-zinc-200 hover:bg-zinc-700 text-zinc-950 rounded-xl transition-all">← Back</button>
-                                            <button onClick={() => setShowGate(true)} disabled={loading} className="flex-1 py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2">
+                                            <button onClick={() => calculate()} disabled={loading} className="flex-1 py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2">
                                                 {loading ? <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Calculating Collapse Point...</> : 'Calculate My Collapse Point →'}
                                             </button>
                                         </div>
                                     </motion.div>
-                                )}
-
-                                {showGate && (
-                                    <div className="mt-6">
-                                        <ToolGate toolName="the AI Unit Economics Benchmark" toolSlug="aueb" mappedCurriculumId="21-1" onUnlock={() => { setShowGate(false); calculate(); }}>
-                                            <></>
-                                        </ToolGate>
-                                    </div>
                                 )}
                             </div>
                         </motion.div>
@@ -515,19 +507,23 @@ export default function AUEBTool() {
                             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8 relative">
 
                                 {/* ACTION HEADER & PDF EXPORT */}
-                                <div className="flex flex-col sm:flex-row items-center justify-between bg-white/60 border border-zinc-400 rounded-2xl p-6 mb-8 backdrop-blur-md">
-                                    <div>
+                                <div className="flex flex-col items-start bg-white/60 border border-zinc-400 rounded-2xl p-6 mb-8 backdrop-blur-md">
+                                    <div className="mb-6">
                                         <div className="flex items-center gap-2 mb-2">
                                             <span className="bg-rose-500/20 text-rose-400 border border-rose-500/50 px-2 py-0.5 rounded text-xs font-bold font-medium font-mono tracking-widest uppercase flex items-center gap-1"><Lock size={10} /> CONFIDENTIAL EXECUTIVE AUDIT</span>
                                         </div>
                                         <h2 className="text-xl font-bold text-zinc-950 mb-1">Board-Ready Deliverable Generated</h2>
                                         <p className="text-sm font-semibold text-zinc-900 font-medium">Export this assessment to a verified Executive PDF.</p>
                                     </div>
-                                    <ExportToPDFButton 
-                                        targetId="aueb-pdf-export-zone" 
-                                        fileName={`AUEB_Assessment_${persona}.pdf`} 
-                                        onBeforeExport={handleSaveToVault} 
-                                    />
+                                    <div className="w-full">
+                                        <ToolGate toolName="Executive PDF Export" toolSlug="aueb" mappedCurriculumId="21-1">
+                                            <ExportToPDFButton 
+                                                targetId="aueb-pdf-export-zone" 
+                                                fileName={`AUEB_Assessment_${persona}.pdf`} 
+                                                onBeforeExport={handleSaveToVault} 
+                                            />
+                                        </ToolGate>
+                                    </div>
                                 </div>
 
                                 {/* -------- PDF CAPTURE ZONE START -------- */}
@@ -647,7 +643,7 @@ export default function AUEBTool() {
                                 </div>
 
                                 {/* COST FORENSICS */}
-                                <ToolPayGate toolName="AI Unit Economics Benchmark">
+
                                 <motion.div
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -1001,7 +997,7 @@ export default function AUEBTool() {
 
                                 {/* Q-PEP Remediation Block — captured into PDF */}
                                 <QPEPRemediation toolId="AUEB" metrics={results!} />
-                                </ToolPayGate>
+
 
                                 </div>
                                 {/* -------- PDF CAPTURE ZONE END -------- */}

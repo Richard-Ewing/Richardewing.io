@@ -46,7 +46,7 @@ export class ContextCompressionEngine {
      * @returns The compressed array of PromptMessages safe for inference.
      */
     public compressContext(messages: PromptMessage[], currentTurn: number): PromptMessage[] {
-        let compressed: PromptMessage[] = [];
+        const compressed: PromptMessage[] = [];
         let tokenCount = 0;
         const limits = this.policy.spec.token_ceilings;
 

@@ -5,6 +5,7 @@ import { useForm, ValidationError } from '@formspree/react';
 import { Mail, ArrowRight, Loader2, Lock, AlertCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useUser } from '@clerk/nextjs';
+import { useUTMs } from '../hooks/useUTMs';
 
 interface ToolGateProps {
     children: React.ReactNode;
@@ -22,6 +23,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
     const [email, setEmail] = useState('');
     const [usesCounter, setUsesCounter] = useState(0);
     const formRef = useRef<HTMLFormElement>(null);
+    const utms = useUTMs();
 
     // Using the same form ID as the newsletter form for consistent tracking
     const formId = "xzddbpwy";
@@ -115,10 +117,12 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
         }
         setIsValidating(false);
 
-        // Step 2: Submit to Formspree using FormData (tracks every tool use for funnel analytics)
         const formData = new FormData();
         formData.append('email', email);
         formData.append('source', `${toolName} Gate`);
+        Object.entries(utms).forEach(([key, value]) => {
+            formData.append(key, value);
+        });
         handleFormspreeSubmit(formData);
 
         // Step 3: Await Beehiiv to guarantee the request leaves the browser before the component unmounts
@@ -186,6 +190,9 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                 <div className="bg-white/5 border border-zinc-400 p-6 md:p-8 rounded-3xl backdrop-blur-md">
                     <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4">
                         <input type="hidden" name="source" value={`${toolName} Gate`} />
+                        {Object.entries(utms).map(([key, value]) => (
+                            <input key={key} type="hidden" name={key} value={value} />
+                        ))}
 
                         <div className="relative">
                             <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-900" />

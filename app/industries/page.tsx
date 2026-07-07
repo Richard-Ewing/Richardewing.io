@@ -129,6 +129,14 @@ const verticals = [
         color: 'purple',
         icon: '🎥',
     },
+    {
+        title: 'Manufacturing & Robotics',
+        subtitle: 'Industrial AI Systems',
+        description: 'Edge computing constraints, IoT data ingestion latency, and robotic process automation create high-stakes AI unit economics where inference speed equals physical yield.',
+        href: '/industries/manufacturing',
+        color: 'stone',
+        icon: '🏭',
+    },
 ];
 
 const colorMap: Record<string, string> = {

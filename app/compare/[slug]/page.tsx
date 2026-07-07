@@ -147,42 +147,70 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
     const comparison = getComparison(slug);
 
     if (!comparison) {
-        const marginalSlugs = [
-            'openai-vs-ansible', 'openai-vs-bootstrap', 'openai-vs-nuxt', 'postgresql-vs-langchain',
-            'google-gemini-vs-tailwindcss', 'openai-vs-anthropic', 'openai-vs-datadog', 'openai-vs-firebase',
-            'why-claude-loses-context', 'ai-coding-agents', 'cursor-problems', 'feature-flags-vs-branching',
-            'ai-guardrails-platforms', 'linear-vs-stripe', 'cloudflare-pages-vs-terraform', 'linear-vs-terraform',
-            'linear-vs-langchain'
+        const devPlatformSlugs = [
+            'postgresql-vs-langchain', 'openai-vs-anthropic', 'why-claude-loses-context',
+            'ai-coding-agents', 'cursor-problems', 'feature-flags-vs-branching',
+            'ai-guardrails-platforms', 'linear-vs-langchain', 'google-gemini-vs-tailwindcss'
         ];
 
-        if (marginalSlugs.includes(slug)) {
-            permanentRedirect('/vault/curriculum/tracks/choosing-ai-platforms');
+        const infraSlugs = [
+            'openai-vs-ansible', 'openai-vs-bootstrap', 'openai-vs-nuxt',
+            'openai-vs-datadog', 'openai-vs-firebase', 'linear-vs-stripe',
+            'cloudflare-pages-vs-terraform', 'linear-vs-terraform'
+        ];
+
+        if (devPlatformSlugs.includes(slug)) {
+            permanentRedirect('/decisions/choosing-ai-development-platforms');
+        }
+        
+        if (infraSlugs.includes(slug)) {
+            permanentRedirect('/decisions/choosing-enterprise-ai-infrastructure');
         }
 
         if (slug === 'anthropic-claude-vs-gitlab-ci') {
             return (
                 <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
-                    <div className="page-container max-w-4xl mx-auto">
+                    <div className="page-container max-w-4xl mx-auto px-6">
                         <div className="mb-8 flex items-center gap-2 text-xs font-bold font-mono text-zinc-950 uppercase tracking-widest">
                             <Link href="/compare" className="hover:text-amber-900 transition-colors">Comparisons</Link>
                             <span>/</span>
-                            <span className="text-amber-900">Detail</span>
+                            <span className="text-amber-900">Cost Attribution</span>
                         </div>
-                        <div className="text-center mb-16">
-                            <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                                Anthropic Claude vs GitLab CI: Product Economics
+                        <div className="text-center mb-16 border-b border-zinc-400 pb-12">
+                            <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6 leading-tight">
+                                Anthropic Claude vs GitLab CI: <br className="hidden sm:block"/><span className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-indigo-700">The Cost of Probabilistic Drafts</span>
                             </h1>
-                            <p className="text-xl text-zinc-700 max-w-2xl mx-auto font-medium">
-                                Measure the ROI of AI coding assistants against traditional CI/CD pipelines. Understand how Anthropic Claude changes the economics of software delivery.
+                            <p className="text-xl text-zinc-900 font-semibold max-w-3xl mx-auto">
+                                Evaluating AI coding assistants against traditional CI/CD pipelines requires a shift from capability benchmarking to margin analysis. A probabilistic generator relies on a deterministic verifier.
                             </p>
                         </div>
-                        <div className="p-8 bg-white border border-zinc-400 rounded-2xl mb-16">
-                            <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-4">Economic Analysis</h3>
-                            <div className="text-zinc-800 font-semibold leading-relaxed text-[15px] space-y-4">
-                                <p>GitLab CI represents the traditional cost center of deterministic software verification. Its unit economics are tied to compute minutes and storage.</p>
-                                <p>Anthropic Claude introduces a non-deterministic acceleration layer. While it reduces human capital cost per line of code, it introduces probabilistic failure modes that GitLab CI must ultimately catch.</p>
-                                <p>The Product Economics angle requires evaluating the marginal cost of hallucination remediation against the marginal benefit of accelerated drafting.</p>
+                        
+                        <div className="prose prose-lg prose-zinc max-w-none prose-h3:font-grotesk prose-h3:text-2xl prose-h3:font-bold prose-strong:text-zinc-950 mb-16">
+                            <h3>The Structural Misallocation of R&D Capital</h3>
+                            <p>
+                                Engineering teams justify Anthropic Claude by measuring the speed of initial code generation. This metric is fundamentally flawed. Generating code is cheap; maintaining it is expensive.
+                            </p>
+                            <p>
+                                When an engineer uses Claude to draft a new service, they inject non-deterministic code into the repository. GitLab CI, the deterministic verifier, must now consume compute cycles to catch the hallucinations, regressions, and ghost dependencies introduced by the LLM. 
+                            </p>
+                            <p>
+                                We frequently observe Series B architectures where AI acceleration has caused CI/CD pipeline costs to spike by 300%. The company is effectively subsidizing the output of a language model by burning hyperscaler compute on verification loops.
+                            </p>
+
+                            <div className="my-8 bg-zinc-50 border-l-4 border-indigo-600 p-6 shadow-sm">
+                                <h4 className="text-lg font-bold font-grotesk text-zinc-950 mb-2">The Unit Economics of a Pull Request</h4>
+                                <p className="text-zinc-800 text-sm font-medium m-0">
+                                    If an AI coding assistant saves a developer 45 minutes of drafting time ($75 in human capital), but introduces a subtle regression that requires 12 automated pipeline retries ($18 in cloud compute) and blocks deployment for a day (opportunity cost), the net margin on that feature is severely eroded.
+                                </p>
                             </div>
+
+                            <h3>Attributing Cost to Intent</h3>
+                            <p>
+                                To fix this, engineering leadership must implement cost-attribution frameworks. You cannot treat GitLab CI costs as a monolithic infrastructure expense when the volume is being driven by AI-generated noise. By tagging CI pipeline runs triggered by AI-authored commits, CFOs can isolate the true cost of generative development.
+                            </p>
+                            <p>
+                                Stop measuring velocity. Start measuring the cost of deterministic verification per AI-generated commit.
+                            </p>
                         </div>
                         <AdvisoryCTA variant="compare" />
                     </div>

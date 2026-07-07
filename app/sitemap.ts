@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { exogramDocs } from '@/lib/exogram-docs';
 import { glossaryTerms } from './glossary/terms';
+import { PILLARS, KEEP_TERMS } from './glossary/pillarsMapping';
 import { frameworks, articles } from '@/lib/data';
 import { tracks } from '@/app/lib/curriculum-tracks-ui';
 import { getAllModuleSlugs } from '@/app/lib/curriculum-data';
@@ -144,10 +145,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
         )
     );
 
-    // Glossary (Only index Richard Ewing Frameworks to avoid thin content drag)
+    // Glossary
+    // Add the definitive Pillar pages (Clarity Layer)
+    PILLARS.forEach(pillar => add(`${baseUrl}/glossary/pillars/${pillar.slug}`, 'weekly', 0.9));
+
+    // Only index KEEP_TERMS to avoid thin content drag
     glossaryTerms
-        .filter(term => term.category === 'Richard Ewing Frameworks')
-        .forEach(term => add(`${baseUrl}/glossary/${term.slug}`, 'monthly', 0.6));
+        .filter(term => KEEP_TERMS.includes(term.slug))
+        .forEach(term => add(`${baseUrl}/glossary/${term.slug}`, 'monthly', 0.8));
 
     // Frameworks
     frameworks.forEach(f => add(`${baseUrl}/articles/frameworks/${f.slug}`, 'monthly', 0.7));

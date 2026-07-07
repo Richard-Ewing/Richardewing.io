@@ -100,8 +100,8 @@ export async function POST(req: Request) {
                     const existingUnlockedItems = (userObj.publicMetadata.unlocked_items as string[]) || [];
                     const existingUnlockedAssets = (userObj.publicMetadata.unlocked_assets as string[]) || [];
                     
-                    let updatedUnlockedItems = [...existingUnlockedItems];
-                    let updatedUnlockedAssets = [...existingUnlockedAssets];
+                    const updatedUnlockedItems = [...existingUnlockedItems];
+                    const updatedUnlockedAssets = [...existingUnlockedAssets];
 
                     if (specificItemId) {
                         if (specificItemId.startsWith('skill_')) {

@@ -18,11 +18,13 @@ export function LeadCaptureGate({ toolName, extraData, children }: LeadCaptureGa
     useEffect(() => {
         // Automatically grant access if they are signed in via Clerk
         if (isSignedIn) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setHasAccess(true);
         } else {
             // Check session storage to see if they unlocked this gate recently
             const unlocked = sessionStorage.getItem(`lead_gate_${toolName}`);
             if (unlocked === 'true') {
+                // eslint-disable-next-line react-hooks/set-state-in-effect
                 setHasAccess(true);
             }
         }

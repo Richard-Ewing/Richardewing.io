@@ -1,206 +1,112 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Advisory Pricing | R&D Audits from $7,500 | Ewing',
-    description: 'Transparent advisory pricing: R&D capital audits from $7,500, enterprise diagnostics, and ongoing retainer options for AI economics advisory.',
-    keywords: ['advisory pricing', 'fractional CTO cost', 'technology advisory', 'CTO advisory pricing', 'Richard Ewing pricing', 'AI economist'],
+    title: 'Advisory Pricing | R&D Audits & Retainers | Richard Ewing',
+    description: 'Plain-language pricing for engineering economics advisory. The $2,500 R&D capital diagnostic and the $7,500 monthly fractional CTO retainer.',
+    keywords: ['advisory pricing', 'fractional CTO cost', 'technology advisory', 'Richard Ewing pricing', 'AI economist'],
     alternates: { canonical: 'https://www.richardewing.io/pricing' },
     openGraph: { title: 'Advisory Pricing | Richard Ewing', description: 'Transparent pricing for technology advisory services.', url: 'https://www.richardewing.io/pricing', type: 'website' },
 };
 
-const tiers = [
-    {
-        name: 'Diagnostic',
-        price: '$2,500',
-        period: 'one-time',
-        description: 'Quantify your engineering ROI with data-driven analysis',
-        features: [
-            'Product Debt Index (PDI) audit of your codebase',
-            'AI Unit Economics Benchmark (AUEB) assessment',
-            'Revenue Per Engineer (APER) diagnostic',
-            '1-hour strategy call with findings presentation',
-            'Written executive summary with recommendations',
-            'Benchmark comparison against industry peers',
-        ],
-        cta: 'Book Diagnostic',
-        href: '/api/buy/insolvency_diagnostic',
-        highlight: false,
-        badge: null,
-        external: true,
-    },
-    {
-        name: 'Fractional CTO',
-        price: '$7,500',
-        period: '/month',
-        description: 'Senior technology leadership with a strict, guaranteed token cap',
-        features: [
-            'Everything in Diagnostic, ongoing',
-            '10 hours/week of dedicated advisory',
-            'Strict Cost Cap: No overage fees',
-            'Zero Shadow AI inference liabilities',
-            'Board meeting preparation & attendance',
-            'Vendor evaluation & technology selection',
-            'Due diligence support for investors',
-            'Monthly executive dashboard & reporting',
-        ],
-        cta: 'Start Conversation',
-        href: '/api/buy/full_audit',
-        highlight: true,
-        badge: 'Most Popular',
-        external: true,
-    },
-    {
-        name: 'Board Advisor',
-        price: '$15,000',
-        period: '/month',
-        description: 'Board-level technology governance for PE/VC portfolios',
-        features: [
-            'Everything in Fractional CTO',
-            'Board-level technology due diligence',
-            'M&A technical assessment & integration planning',
-            'Portfolio-wide technology benchmarking',
-            'PE/VC deal flow technical evaluation',
-            'AI governance framework implementation',
-            'Technical Insolvency Date monitoring',
-            'Quarterly portfolio technology reviews',
-            'Direct board communication & reporting',
-        ],
-        cta: 'Discuss Engagement',
-        href: 'mailto:richardewing@exogram.ai?subject=Board%20Advisor%20Inquiry',
-        highlight: false,
-        badge: 'Enterprise',
-        external: true,
-    },
-];
-
-const faqs = [
-    { q: 'What industries do you work with?', a: 'Primarily B2B SaaS, AI/ML companies, and PE/VC-backed technology portfolios. Industries include fintech, healthtech, edtech, and enterprise software.' },
-    { q: 'What is a typical engagement length?', a: 'Diagnostic is a one-time engagement (2-3 weeks). Fractional CTO engagements typically run 6-12 months. Board Advisory is ongoing with quarterly renewal.' },
-    { q: 'Can I start with a Diagnostic before committing to advisory?', a: 'Absolutely — most clients start with a Diagnostic to quantify their engineering ROI, then upgrade to ongoing advisory based on the findings.' },
-    { q: 'Do you work with early-stage startups?', a: 'Yes, but the engagement model differs. Pre-Series A companies typically start with a Diagnostic. Post-Series A companies benefit most from Fractional CTO engagement.' },
-    { q: 'What is the ROI of advisory services?', a: 'Diagnostic clients typically identify 20-40% of engineering spend that can be reallocated to higher-value work. Fractional CTO clients see measurable improvements in DORA metrics within 90 days.' },
-    { q: 'How do I get started?', a: 'Book an introductory call through the advisory page. No commitment required — we\'ll discuss your situation and recommend the right engagement model.' },
-];
-
 export default function PricingPage() {
     return (
-        <main className="pt-24 pb-20">
-            <div className="page-container">
-
-                <section className="text-center mb-20">
-                    <p className="text-xs font-bold font-mono text-cyan-500 uppercase tracking-widest mb-4">Advisory Services</p>
-                    <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Transparent Pricing.<br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Measurable Results.</span>
+        <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
+            <div className="page-container max-w-3xl mx-auto px-6">
+                
+                <header className="mb-16 border-b border-zinc-400 pb-12 text-center">
+                    <span className="text-cyan-900 font-extrabold font-mono text-xs uppercase tracking-widest mb-4 block">Engagement Terms</span>
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6 leading-tight">
+                        Advisory Economics.
                     </h1>
-                    <p className="text-lg text-zinc-950 font-bold max-w-2xl mx-auto">
-                        Every engagement is designed to deliver quantifiable ROI. No black-box consulting — every recommendation is backed by data from our proprietary diagnostic tools.
+                    <p className="text-xl text-zinc-900 font-semibold leading-relaxed">
+                        I do not sell billable hours. I sell financial visibility into your engineering organization.
                     </p>
-                </section>
+                </header>
 
-                <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 max-w-6xl mx-auto">
-                    {tiers.map((tier) => (
-                        <div
-                            key={tier.name}
-                            className={`relative rounded-2xl p-8 flex flex-col ${
-                                tier.highlight
-                                    ? 'bg-gradient-to-b from-cyan-500/10 to-purple-500/10 border-2 border-cyan-500/40 shadow-[0_0_40px_rgba(6,182,212,0.15)]'
-                                    : 'bg-[var(--bg-secondary)] border border-zinc-400'
-                            }`}
-                        >
-                            {tier.badge && (
-                                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                                    <span className={`px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full ${
-                                        tier.badge === 'Most Popular'
-                                            ? 'bg-cyan-500 text-black'
-                                            : 'bg-purple-500/20 text-purple-900 font-extrabold font-semibold border border-purple-500/30'
-                                    }`}>
-                                        {tier.badge}
-                                    </span>
-                                </div>
-                            )}
+                <article className="prose prose-lg prose-zinc max-w-none prose-h2:font-grotesk prose-h2:text-3xl prose-h2:font-bold prose-h3:font-grotesk prose-h3:text-xl prose-h3:font-bold prose-strong:text-zinc-950 text-zinc-800 font-semibold leading-relaxed">
+                    
+                    <p>
+                        Consulting models built on hourly billing are structurally misaligned. They incentivize the consultant to expand scope, prolong discovery, and withhold the actual mechanism of value. I operate differently.
+                    </p>
+                    <p>
+                        I offer two distinct engagement paths. They are priced flat, scoped strictly, and designed to generate a return on investment that board members can measure.
+                    </p>
 
-                            <h3 className="text-xl font-bold text-zinc-950 mb-2">{tier.name}</h3>
-                            <p className="text-zinc-950 font-bold text-sm font-semibold mb-6">{tier.description}</p>
+                    <div className="my-16 bg-white border border-zinc-400 p-8 sm:p-12 shadow-sm rounded-xl">
+                        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-8 border-b border-zinc-200 pb-6">
+                            <h2 className="text-3xl font-grotesk font-bold text-zinc-950 m-0">The Diagnostic</h2>
+                            <div className="text-3xl font-mono font-bold text-zinc-900 mt-2 sm:mt-0">$2,500 <span className="text-lg text-zinc-600 font-medium">flat</span></div>
+                        </div>
+                        
+                        <p className="text-zinc-800 font-semibold">
+                            You suspect your engineering organization is burning capital, but you lack the data to prove it. The Diagnostic is a one-time, surgical audit of your software architecture, unit economics, and team structure.
+                        </p>
+                        
+                        <h3 className="mt-8 mb-4">What happens:</h3>
+                        <ul className="list-disc pl-5 space-y-2 mb-8">
+                            <li>We run your current architecture through the <strong>Product Debt Index (PDI)</strong> and the <strong>AI Unit Economics Benchmark (AUEB)</strong>.</li>
+                            <li>We isolate the specific features, models, or legacy systems that are eroding your gross margin.</li>
+                            <li>We calculate your Technical Insolvency Date—the quarter where maintenance costs will outpace your ability to ship new features.</li>
+                            <li>I deliver a written executive brief and lead a 60-minute presentation with your leadership team.</li>
+                        </ul>
 
-                            <div className="mb-6">
-                                <span className="text-4xl font-bold text-zinc-900">{tier.price}</span>
-                                <span className="text-zinc-950 ml-1">{tier.period}</span>
-                            </div>
+                        <div className="bg-zinc-50 border border-zinc-200 p-6 rounded-lg text-sm">
+                            <strong>The Outcome:</strong> You walk away with absolute financial clarity. You will know exactly which engineering initiatives are generating value and which are quietly destroying capital.
+                        </div>
 
-                            <ul className="space-y-3 mb-8 flex-grow">
-                                {tier.features.map((feature, i) => (
-                                    <li key={i} className="flex items-start gap-2 text-sm font-semibold text-zinc-950">
-                                        <span className="text-cyan-500 mt-0.5 flex-shrink-0">✓</span>
-                                        {feature}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <a
-                                href={tier.href}
-                                target={tier.href.startsWith('mailto:') ? undefined : '_blank'}
-                                rel={tier.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
-                                className={`block text-center py-3 px-6 rounded-lg font-semibold text-sm transition-all ${
-                                    tier.highlight
-                                        ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-zinc-900 font-bold hover:opacity-90 shadow-lg'
-                                        : 'bg-[#FCFAF7]/5 border border-zinc-400 text-zinc-950 hover:bg-[#FCFAF7]/10 hover:border-zinc-500'
-                                }`}
-                            >
-                                {tier.cta} →
+                        <div className="mt-8">
+                            <a href="/api/buy/insolvency_diagnostic" className="inline-block px-8 py-4 bg-zinc-950 text-white font-bold font-mono text-sm uppercase tracking-widest hover:bg-zinc-800 transition-colors">
+                                Book The Diagnostic
                             </a>
                         </div>
-                    ))}
-                </section>
+                    </div>
 
-                {/* ROI Section */}
-                <section className="max-w-4xl mx-auto mb-20">
-                    <div className="card p-10 text-center border-emerald-500/20">
-                        <h2 className="text-2xl font-bold text-zinc-950 mb-4">The ROI Promise</h2>
-                        <p className="text-zinc-950 font-bold mb-8 max-w-2xl mx-auto">
-                            Every advisory engagement uses our proprietary diagnostic tools to deliver quantifiable results — not opinions.
+                    <div className="my-16 bg-zinc-950 border border-zinc-800 p-8 sm:p-12 shadow-xl rounded-xl text-zinc-300">
+                        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-8 border-b border-zinc-800 pb-6">
+                            <h2 className="text-3xl font-grotesk font-bold text-white m-0">Fractional Advisory</h2>
+                            <div className="text-3xl font-mono font-bold text-zinc-100 mt-2 sm:mt-0">$7,500 <span className="text-lg text-zinc-500 font-medium">/ month</span></div>
+                        </div>
+                        
+                        <p className="font-semibold">
+                            For Series B+ organizations and Private Equity portfolios that require ongoing structural repair. I integrate directly with your executive team to operationalize the findings of the Diagnostic and prevent margin collapse at scale.
                         </p>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <div className="text-center">
-                                <div className="text-3xl font-bold text-cyan-900 font-extrabold font-semibold mb-2">20-40%</div>
-                                <div className="text-sm font-semibold text-zinc-950">Engineering spend reallocation identified</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-3xl font-bold text-emerald-900 font-extrabold font-semibold mb-2">90 days</div>
-                                <div className="text-sm font-semibold text-zinc-950">To measurable DORA metric improvement</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-3xl font-bold text-purple-900 font-extrabold font-semibold mb-2">10-50x</div>
-                                <div className="text-sm font-semibold text-zinc-950">Typical ROI on Diagnostic investment</div>
-                            </div>
+                        
+                        <h3 className="mt-8 mb-4 text-white">What it includes:</h3>
+                        <ul className="list-disc pl-5 space-y-2 mb-8 text-zinc-400">
+                            <li><strong>Architectural Veto Power:</strong> I review major technical decisions to prevent catastrophic long-term technical debt.</li>
+                            <li><strong>Board Defense:</strong> I prepare the engineering reporting for your board, translating technical progress into financial outcomes.</li>
+                            <li><strong>Vendor Extraction:</strong> I guide the negotiations and architectural transitions required to exit hostile cloud or AI vendor lock-in.</li>
+                            <li><strong>Direct Access:</strong> Dedicated asynchronous channels and weekly syncs with your CTO and CFO.</li>
+                        </ul>
+
+                        <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-lg text-sm text-zinc-400">
+                            <strong>The Constraint:</strong> I strictly cap my advisory engagements to 4 active clients per quarter. This ensures I can provide the deep, structural attention required to actually fix the architecture.
+                        </div>
+
+                        <div className="mt-8">
+                            <a href="mailto:richardewing@exogram.ai?subject=Fractional%20Advisory%20Inquiry" className="inline-block px-8 py-4 bg-white text-zinc-950 font-bold font-mono text-sm uppercase tracking-widest hover:bg-zinc-200 transition-colors">
+                                Inquire About Availability
+                            </a>
                         </div>
                     </div>
-                </section>
 
-                {/* FAQ */}
-                <section className="max-w-3xl mx-auto mb-20">
-                    <h2 className="text-2xl font-bold text-zinc-950 mb-8 text-center">Frequently Asked Questions</h2>
-                    <div className="space-y-4">
-                        {faqs.map((faq, i) => (
-                            <div key={i} className="card p-6">
-                                <h3 className="text-lg font-bold text-zinc-950 mb-2">{faq.q}</h3>
-                                <p className="text-zinc-950 font-bold text-sm">{faq.a}</p>
-                            </div>
-                        ))}
-                    </div>
-                </section>
+                    <hr className="border-zinc-300 my-16" />
 
-                {/* Final CTA */}
-                <section className="text-center">
-                    <div className="card p-10 border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 max-w-2xl mx-auto">
-                        <h2 className="text-2xl font-bold text-zinc-950 mb-4">Ready to quantify your engineering ROI?</h2>
-                        <p className="text-zinc-950 font-bold mb-6">Book a free introductory call. No commitment — let&apos;s discuss your situation.</p>
-                        <Link href="/advisory" className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-cyan-500 to-cobalt text-zinc-950 font-semibold font-bold rounded-lg hover:opacity-90 transition-opacity shadow-lg">
-                            Book Introductory Call →
-                        </Link>
-                    </div>
-                </section>
+                    <h2>Why this model works</h2>
+                    <p>
+                        When an engineering team builds a new feature, they focus on functionality. When I audit that same feature, I focus on the structural cost to maintain it over the next three years. 
+                    </p>
+                    <p>
+                        The $2,500 Diagnostic forces us to align on reality immediately. If the Diagnostic reveals that your architecture is sound and your unit economics are healthy, our engagement ends there, and you have validated your engineering strategy. If it reveals severe margin erosion, you now have the exact blueprint required to fix it, whether you hire me for the ongoing retainer or execute it internally.
+                    </p>
+
+                </article>
+
+                <div className="mt-20">
+                    <AdvisoryCTA variant="educational" />
+                </div>
 
             </div>
         </main>

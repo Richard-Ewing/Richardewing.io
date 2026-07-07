@@ -33,7 +33,7 @@ const Hero = () => {
 
                         {/* H1 — Clear value proposition */}
                         <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-zinc-900 mb-6 leading-[1.12] max-w-2xl tracking-tight">
-                            I Stop AI Investments From&nbsp;
+                            I Stop AI Investments From{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-violet-500 to-purple-600">
                                 Bleeding Money
                             </span>.
@@ -47,17 +47,17 @@ const Hero = () => {
                         {/* Dual CTA */}
                         <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
                             <Link 
-                                href="/services" 
+                                href="/contact" 
                                 className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-base hover:opacity-90 transition-all shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/35 hover:-translate-y-0.5"
                             >
-                                Book a Free Diagnostic
+                                Book a $2,500 Diagnostic
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                             </Link>
                             <Link 
-                                href="/framework" 
+                                href="/tools/aueb" 
                                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border-2 border-zinc-300 text-zinc-800 font-semibold text-base hover:border-violet-400 hover:bg-violet-50/40 transition-all"
                             >
-                                Read the Framework
+                                Calculate Your AI Margin Collapse Point
                             </Link>
                         </div>
 

@@ -309,7 +309,7 @@ export default function ExogramPage() {
                         <p className="text-[11px] font-bold font-mono text-zinc-900 font-medium uppercase tracking-[0.2em] mb-6">Ecosystem Presence</p>
                         <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-700">
                             <a href="https://www.producthunt.com/products/exogram-ai?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-exogram-ai" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity block">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                { }
                                 <img alt="Exogram.ai - The zero-trust verification layer for enterprise AI | Product Hunt" width="220" height="48" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1142627&theme=light" className="w-[220px] h-auto" />
                             </a>
                             <a href="https://theresanaiforthat.com/ai/exogram/" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity block">

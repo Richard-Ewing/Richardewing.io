@@ -95,6 +95,7 @@ export default function APERTool() {
     useEffect(() => {
         trackDiagnosticEvent('diagnostic_started', 'aper');
         const saved = loadDiagnosticSession('aper');
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         if (saved) setResults(saved);
     }, []);
 

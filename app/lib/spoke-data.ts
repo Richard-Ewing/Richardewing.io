@@ -1575,6 +1575,21 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
         personas: {
             'cfo-investor': [
                 {
+                    questionSlug: 'ai-hallucination-remediation-cost',
+                    questionHeadline: 'How do we quantify the true financial liability of AI hallucinations in production?',
+                    answerHtml: `
+                        <p>Most organizations treat AI hallucinations as a technical bug. CFOs must treat them as a continuous, compounding financial liability. Every time an LLM hallucinates in a production environment, it triggers a chain reaction of deterministic remediation costs.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Remediation Cost Multiplier</h3>
+                        <p>When an LLM generates invalid code or data, the system must detect the error, run a retry loop, and execute additional compute. We call this the <strong>Remediation Cost Multiplier</strong>. If your base inference cost is $0.01 per query, but a hallucination requires 5 retries, database rollbacks, and secondary validation passes, the true cost of that query just spiked by 500% to 1,000%.</p>
+                        
+                        <h3 class="text-xl font-bold mt-8 mb-4">The Solution: Deterministic Boundaries</h3>
+                        <p>Stop trying to make probabilistic models perfect. Instead, invest your R&D capital in building strict deterministic boundaries around the models. By calculating the Cost of Doing Nothing (CODN) for hallucination remediation, you can instantly justify the ROI of localized SLMs and Hardened Context XML over open-ended API calls.</p>
+                    `,
+                    recommendedProductId: 'module_economics',
+                    upsellHeadline: 'Calculate Your Hallucination Liability.'
+                },
+                {
                     questionSlug: 'hard-vs-soft-ai-roi',
                     questionHeadline: 'Hard vs Soft AI ROI: Why Developer Productivity is a Trap',
                     answerHtml: `

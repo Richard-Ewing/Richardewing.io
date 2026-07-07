@@ -229,7 +229,7 @@ export async function GET(request: Request) {
         }));
 
         // Query 3: Page + Query pairs (for auto-rewriter — which queries drive which pages)
-        let pageQueries: Record<string, string[]> = {};
+        const pageQueries: Record<string, string[]> = {};
         try {
             const pageQueryPerformance = await searchconsole.searchanalytics.query({
                 siteUrl: siteUrl,

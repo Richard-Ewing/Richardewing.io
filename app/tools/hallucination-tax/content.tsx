@@ -256,7 +256,7 @@ export default function HallucinationTaxTool() {
             benchmarkTotal,
             vsIndustry,
         };
-    }, [teamSize, avgSalary, verificationHours, hallucinationRate, incidentCount, costPerIncident]);
+    }, [teamSize, avgSalary, verificationHours, incidentCount, costPerIncident]);
 
     const formatCurrency = (v: number) => {
         if (v >= 1_000_000) return `$${(v / 1_000_000).toFixed(2)}M`;

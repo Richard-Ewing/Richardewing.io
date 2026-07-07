@@ -109,14 +109,6 @@ export default function WhatWhyHow() {
                     })}
                 </div>
 
-                <div className="text-center">
-                    <Link 
-                        href="/services" 
-                        className="inline-flex items-center gap-2 text-sm font-extrabold text-zinc-950 uppercase tracking-widest group border-b-2 border-zinc-900 pb-1 hover:border-violet-600 hover:text-violet-700 transition-colors"
-                    >
-                        Explore the advisory packages <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                </div>
             </div>
         </section>
     );

@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useForm, ValidationError } from '@formspree/react';
 import { Mail, ArrowRight, CheckCircle, Loader2 } from 'lucide-react';
 import { useUser } from '@clerk/nextjs';
+import { useUTMs } from '../hooks/useUTMs';
 
 interface NewsletterFormProps {
     id?: string;
@@ -29,6 +30,7 @@ export function NewsletterForm({
     const lastSubmittedEmailRef = useRef<string>('');
     const router = useRouter();
     const { user } = useUser();
+    const utms = useUTMs();
     
     const defaultEmail = user?.primaryEmailAddress?.emailAddress || "";
 
@@ -59,6 +61,14 @@ export function NewsletterForm({
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         const formData = new FormData(e.currentTarget);
         lastSubmittedEmailRef.current = formData.get('email') as string || '';
+        
+        // Append UTMs to form data
+        Object.entries(utms).forEach(([key, value]) => {
+            if (!formData.has(key)) {
+                formData.append(key, value);
+            }
+        });
+        
         handleSubmit(e);
     };
 
@@ -76,6 +86,9 @@ export function NewsletterForm({
         <form onSubmit={handleFormSubmit} className={`flex flex-col sm:flex-row gap-3 ${className}`}>
             {extraData && Object.entries(extraData).map(([key, value]) => (
                 value !== undefined && <input key={key} type="hidden" name={key} value={value} />
+            ))}
+            {Object.entries(utms).map(([key, value]) => (
+                <input key={`utm_${key}`} type="hidden" name={key} value={value} />
             ))}
             <div className="relative flex-1">
                 <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-900" />

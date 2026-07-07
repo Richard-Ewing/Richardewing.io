@@ -10,13 +10,13 @@
  * - 6 free diagnostic tools
  * - Published across 4 major platforms
  */
-import { BookOpen, Wrench, FileText, Building2 } from 'lucide-react';
+import { Award, TrendingUp, Target, Shield } from 'lucide-react';
 
 const proofs = [
-    { icon: Building2, label: '$7,500+ R&D Audits', sublabel: 'Enterprise engagements' },
-    { icon: BookOpen, label: '436+ Terms Defined', sublabel: 'Governance glossary' },
-    { icon: Wrench, label: '6 Free Diagnostics', sublabel: 'Board-ready instruments' },
-    { icon: FileText, label: '4 Publications', sublabel: 'BuiltIn · CIO · HN · MtP' },
+    { icon: Award, label: '15+ Years Experience', sublabel: 'Enterprise product leadership' },
+    { icon: TrendingUp, label: '0-to-1 $25M ARR', sublabel: 'Tyler Technologies' },
+    { icon: Target, label: '[ANONYMIZED_RESULT_1]', sublabel: 'Enterprise client outcome' },
+    { icon: Shield, label: '[ANONYMIZED_RESULT_2]', sublabel: 'Margin recovery result' },
 ];
 
 const ProofRail = () => {
