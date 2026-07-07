@@ -21,7 +21,7 @@ export default function HighIntentConversionBlock() {
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-grotesk font-black text-white mb-6 leading-tight">
                             Stop AI Margin Erosion Before <br className="hidden md:block" /> Your Next Board Meeting.
                         </h2>
-                        <p className="text-xl text-zinc-400 font-medium max-w-3xl mx-auto">
+                        <p className="text-xl text-zinc-200 font-medium max-w-3xl mx-auto">
                             The difference between a successful AI rollout and a margin-destroying liability is deterministic governance. I provide the translation layer between engineering output and CFO-level financial outcomes.
                         </p>
                     </div>
@@ -35,24 +35,24 @@ export default function HighIntentConversionBlock() {
                             
                             <div className="text-amber-500 font-mono font-bold text-sm uppercase tracking-widest mb-2">Step 1: Audit</div>
                             <h3 className="text-3xl font-grotesk font-bold text-white mb-4">R&D Capital Diagnostic</h3>
-                            <div className="text-2xl font-bold text-zinc-300 font-mono mb-6 pb-6 border-b border-zinc-800">$2,500 <span className="text-sm text-zinc-500">Fixed-Fee</span></div>
+                            <div className="text-2xl font-bold text-white font-mono mb-6 pb-6 border-b border-zinc-800">$2,500 <span className="text-sm text-zinc-500">Fixed-Fee</span></div>
                             
-                            <p className="text-zinc-400 mb-8 font-medium leading-relaxed">
+                            <p className="text-zinc-200 mb-8 font-medium leading-relaxed">
                                 A surgical 7-day audit of your AI infrastructure, identifying where R&D capital is leaking and how to mathematically constrain execution costs.
                             </p>
                             
                             <ul className="space-y-4 mb-10 flex-1">
                                 <li className="flex items-start gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
-                                    <span className="text-zinc-300 font-semibold">Unit Economics Audit & Margin Analysis</span>
+                                    <span className="text-white font-semibold">Unit Economics Audit & Margin Analysis</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
-                                    <span className="text-zinc-300 font-semibold">Shadow AI & Security Risk Report</span>
+                                    <span className="text-white font-semibold">Shadow AI & Security Risk Report</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
-                                    <span className="text-zinc-300 font-semibold">Technical Debt Liability Matrix</span>
+                                    <span className="text-white font-semibold">Technical Debt Liability Matrix</span>
                                 </li>
                             </ul>
                             
@@ -67,28 +67,28 @@ export default function HighIntentConversionBlock() {
                         <div className="h-full rounded-2xl bg-zinc-900 border border-zinc-800 p-8 md:p-10 flex flex-col relative overflow-hidden opacity-90 hover:opacity-100 transition-opacity">
                             <div className="text-zinc-500 font-mono font-bold text-sm uppercase tracking-widest mb-2">Step 2: Execute</div>
                             <h3 className="text-3xl font-grotesk font-bold text-white mb-4">Advisory Retainer</h3>
-                            <div className="text-2xl font-bold text-zinc-300 font-mono mb-6 pb-6 border-b border-zinc-800">$7,500<span className="text-sm text-zinc-500">/month</span></div>
+                            <div className="text-2xl font-bold text-white font-mono mb-6 pb-6 border-b border-zinc-800">$7,500<span className="text-sm text-zinc-500">/month</span></div>
                             
-                            <p className="text-zinc-400 mb-8 font-medium leading-relaxed">
+                            <p className="text-zinc-200 mb-8 font-medium leading-relaxed">
                                 Following the diagnostic, we move into execution. I operate as a fractional AI Economist, implementing deterministic governance and board-ready reporting.
                             </p>
                             
                             <ul className="space-y-4 mb-10 flex-1">
                                 <li className="flex items-start gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
-                                    <span className="text-zinc-300 font-semibold">Strict Cost-Cap Architecture Reviews</span>
+                                    <span className="text-white font-semibold">Strict Cost-Cap Architecture Reviews</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
-                                    <span className="text-zinc-300 font-semibold">CFO-Level ROI Dashboards</span>
+                                    <span className="text-white font-semibold">CFO-Level ROI Dashboards</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <CheckCircle2 className="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
-                                    <span className="text-zinc-300 font-semibold">Board Meeting Representation</span>
+                                    <span className="text-white font-semibold">Board Meeting Representation</span>
                                 </li>
                             </ul>
                             
-                            <div className="w-full py-4 border border-zinc-700 text-zinc-400 text-center font-bold font-grotesk rounded-xl bg-zinc-900/50 cursor-default">
+                            <div className="w-full py-4 border border-zinc-700 text-zinc-200 text-center font-bold font-grotesk rounded-xl bg-zinc-900/50 cursor-default">
                                 Unlocked after Diagnostic
                             </div>
                         </div>
