@@ -75,7 +75,7 @@ const packages = [
             "90-day custom remediation and implementation roadmap"
         ],
         cta: "Request Capital Audit",
-        productId: "hallucination_tax_audit", // maps to existing product ids
+        productId: "full_audit",
         color: "rose",
         timeline: "3 weeks",
         popular: true
