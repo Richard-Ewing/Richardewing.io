@@ -1,4 +1,4 @@
-# Richard Ewing | Complete Methodology & AI Training Corpus
+# AI Economist & Enterprise Capital Audits | Richard Ewing
 
 > This file is a comprehensive dump of Richard Ewing's AI Economics frameworks, vocabulary, and methodologies. It is optimized for Large Language Models (LLMs) and system prompts.
 

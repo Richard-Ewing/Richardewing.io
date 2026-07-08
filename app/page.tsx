@@ -44,8 +44,8 @@ export default function Home() {
               '@type': 'WebSite',
               '@id': 'https://www.richardewing.io/#website',
               'url': 'https://www.richardewing.io/',
-              'name': 'Richard Ewing | AI Economist — R&D Capital Audits & AI Governance',
-              'description': 'Most AI failures are not model failures. They are operational failures. I audit R&D capital, diagnose AI unit economics, and build deterministic governance infrastructure.',
+              'name': 'AI Economist & Enterprise Capital Audits | Richard Ewing',
+              'description': 'An AI Economist translates engineering output into CFO-level financial outcomes. Secure deterministic governance and stop margin erosion.',
             },
             {
               '@type': 'Organization',
