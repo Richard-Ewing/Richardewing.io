@@ -8,22 +8,22 @@ import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-    title: 'About Richard Ewing | AI Economist & Exogram Founder',
-    description: 'Enterprise AI governance & product economics for PE-backed SaaS companies. Founder of Exogram, researching economics and security of production AI.',
+    title: 'Richard Ewing Biography & Exogram Origin | Richard Ewing',
+    description: 'Richard Ewing is an enterprise AI Economist and the founder of Exogram. Audit production AI security and build PE-backed product economics.',
     alternates: {
         canonical: 'https://www.richardewing.io/about',
     },
     openGraph: {
-        title: 'About Richard Ewing | AI Economist & Exogram Founder',
-        description: 'Enterprise AI governance & product economics for PE-backed SaaS companies. Founder of Exogram, researching economics and security of production AI.',
+        title: 'Richard Ewing Biography & Exogram Origin | Richard Ewing',
+        description: 'Richard Ewing is an enterprise AI Economist and the founder of Exogram. Audit production AI security and build PE-backed product economics.',
         url: 'https://www.richardewing.io/about',
         type: 'profile',
         images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'About Richard Ewing | AI Economist & Exogram Founder',
-        description: 'Enterprise AI governance & product economics for PE-backed SaaS companies. Founder of Exogram, researching economics and security of production AI.',
+        title: 'Richard Ewing Biography & Exogram Origin | Richard Ewing',
+        description: 'Richard Ewing is an enterprise AI Economist and the founder of Exogram. Audit production AI security and build PE-backed product economics.',
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     }
 };

@@ -3,11 +3,11 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Advisory Pricing | R&D Audits & Retainers | Richard Ewing',
-    description: 'Plain-language pricing for engineering economics advisory. The $2,500 R&D capital diagnostic and the $7,500 monthly fractional CTO retainer.',
+    title: 'AI Audit Pricing & Fractional Advisory Tiers | Richard Ewing',
+    description: 'Pricing for the AI Capital Diagnostic starts at a $2,500 fixed-fee. Contract fractional advisory services to mathematically constrain costs.',
     keywords: ['advisory pricing', 'fractional CTO cost', 'technology advisory', 'Richard Ewing pricing', 'AI economist'],
     alternates: { canonical: 'https://www.richardewing.io/pricing' },
-    openGraph: { title: 'Advisory Pricing | Richard Ewing', description: 'Transparent pricing for technology advisory services.', url: 'https://www.richardewing.io/pricing', type: 'website' },
+    openGraph: { title: 'AI Audit Pricing & Fractional Advisory Tiers | Richard Ewing', description: 'Pricing for the AI Capital Diagnostic starts at a $2,500 fixed-fee. Contract fractional advisory services to mathematically constrain costs.', url: 'https://www.richardewing.io/pricing', type: 'website' },
 };
 
 export default function PricingPage() {

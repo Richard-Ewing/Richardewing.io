@@ -12,22 +12,22 @@ import NewsletterSection from './components/sections/NewsletterSection';
 import FAQItem from './components/FAQItem';
 
 export const metadata: Metadata = {
-  title: 'Richard Ewing — AI Economist & Capital Auditor',
-  description: 'I stop AI investments from bleeding money. Enterprise AI governance & product economics for PE-backed SaaS companies.',
+  title: 'AI Economist & Enterprise Capital Audits | Richard Ewing',
+  description: 'An AI Economist translates engineering output into CFO-level financial outcomes. Secure deterministic governance and stop margin erosion.',
   alternates: {
     canonical: 'https://www.richardewing.io',
   },
   openGraph: {
-    title: 'Richard Ewing — AI Economist & Capital Auditor',
-    description: 'I stop AI investments from bleeding money. Enterprise AI governance & product economics for PE-backed SaaS companies.',
+    title: 'AI Economist & Enterprise Capital Audits | Richard Ewing',
+    description: 'An AI Economist translates engineering output into CFO-level financial outcomes. Secure deterministic governance and stop margin erosion.',
     url: 'https://www.richardewing.io',
     type: 'website',
     images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Richard Ewing — AI Economist & Capital Auditor',
-    description: 'I stop AI investments from bleeding money. Enterprise AI governance & product economics for PE-backed SaaS companies.',
+    title: 'AI Economist & Enterprise Capital Audits | Richard Ewing',
+    description: 'An AI Economist translates engineering output into CFO-level financial outcomes. Secure deterministic governance and stop margin erosion.',
     images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
   }
 };

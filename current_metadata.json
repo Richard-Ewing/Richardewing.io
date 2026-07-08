@@ -1,0 +1,842 @@
+[
+  {
+    "file": "\\app\\about\\page.tsx",
+    "title": "About Richard Ewing | AI Economist & Exogram Founder",
+    "description": "Enterprise AI governance & product economics for PE-backed SaaS companies. Founder of Exogram, researching economics and security of production AI."
+  },
+  {
+    "file": "\\app\\admin\\agents\\layout.tsx",
+    "title": "Agent Operations Dashboard | Richard Ewing",
+    "description": "Real-time autonomous agent monitoring dashboard. View agent run history, lead pipeline, SEO health, and content draft status."
+  },
+  {
+    "file": "\\app\\admin\\command-center\\page.tsx",
+    "title": "Command Center | Admin",
+    "description": "Full operations dashboard — revenue, SEO, agents, pipeline."
+  },
+  {
+    "file": "\\app\\advisory\\layout.tsx",
+    "title": "Stop Runaway Agentic Loops: Forensic AI Audits for $10k",
+    "description": "CFOs & CTOs: Is an agentic loop draining your API budget? Get a forensic AI audit to block shadow AI exfiltration and halt AI billing shock in 48 hours."
+  },
+  {
+    "file": "\\app\\advisory\\licensing\\page.tsx",
+    "title": "AI Integration System Licensing | Richard Ewing",
+    "description": "License the AI Integration System for your enterprise. White-label governance frameworks, diagnostic tools, and audit protocols."
+  },
+  {
+    "file": "\\app\\ai-economics-crisis\\page.tsx",
+    "title": "AI Tools Cost $58K/Engineer in Hidden Waste | Free AI Economics Audit",
+    "description": "Copilot went usage-based. METR proved devs are 19% slower with AI. 95% of AI pilots fail to show ROI. Run a free diagnostic to quantify your real AI costs."
+  },
+  {
+    "file": "\\app\\ai-integration\\advisor\\page.tsx",
+    "title": "AI Integration Advisor | How to Integrate AI Into Your Business — Free Roadmap Tool",
+    "description": "Not sure how to integrate AI into your business? Our AI-powered advisor asks 5 questions about your company and generates a personalized AI integration roadmap in minutes — with specific tool recommendations, ROI estimates, costs, and a 30-day action plan. No consultants. No guesswork. Download your custom PDF report instantly."
+  },
+  {
+    "file": "\\app\\ai-integration\\page.tsx",
+    "title": "AI Integration System | Enterprise Governance Kit",
+    "description": "The complete AI governance operating system: 18 diagnostic tools, audit frameworks, and executive playbooks in one deployable package."
+  },
+  {
+    "file": "\\app\\ai-integration\\system\\download\\page.tsx",
+    "title": "Download AI Integration System | Richard Ewing",
+    "description": "Access your purchased AI Integration System modules. Instant deployment of governance frameworks, audit tools, and diagnostic engines."
+  },
+  {
+    "file": "\\app\\ai-integration\\system\\page.tsx",
+    "title": "AI Integration System Details | Richard Ewing",
+    "description": "Full breakdown of the AI Integration System: modules, pricing tiers, and deployment options for enterprise AI governance."
+  },
+  {
+    "file": "\\app\\answers\\page.tsx",
+    "title": "Answers to Enterprise AI Costs & Governance Questions | Q&A Hub",
+    "description": "Instant answers to high-priority C-Suite questions regarding R&D efficiency, model routing optimization, and vector database economics."
+  },
+  {
+    "file": "\\app\\architecture\\deterministic-control-layer\\page.tsx",
+    "title": "Deterministic Control Layer | AI Architecture",
+    "description": "Why probabilistic AI needs deterministic boundaries. The 4-layer architecture that prevents AI agent drift, hallucination, and cost overruns."
+  },
+  {
+    "file": "\\app\\articles\\page.tsx",
+    "title": "Forensic Engineering Research & Articles | Richard Ewing",
+    "description": "Deep essays on R&D capital efficiency, AI unit economics, and technical debt valuation. Published in CIO.com, Built In, and Mind the Product."
+  },
+  {
+    "file": "\\app\\articles\\recap\\built-in\\page.tsx",
+    "title": "Built In Articles | Engineering Economics by Ewing",
+    "description": "Richard Ewing on Built In: developer productivity metrics, engineering ROI calculation, and the true cost of scaling tech teams."
+  },
+  {
+    "file": "\\app\\articles\\recap\\cio-com\\page.tsx",
+    "title": "CIO.com Articles on R&D Capital | Richard Ewing",
+    "description": "Published on CIO.com: R&D capital efficiency strategies, technical debt economics, and AI adoption ROI frameworks for enterprise leaders."
+  },
+  {
+    "file": "\\app\\articles\\recap\\hackernoon\\page.tsx",
+    "title": "HackerNoon Articles | AI Economics by Richard Ewing",
+    "description": "Richard Ewing on HackerNoon: deep dives into AI agent economics, prompt engineering costs, and the hidden expenses of generative AI adoption."
+  },
+  {
+    "file": "\\app\\benchmark\\ai-capital-2026\\page.tsx",
+    "title": "AI Capital Benchmark 2026 | 500+ Enterprise Data",
+    "description": "Proprietary data: LLM CapEx vs OpEx thresholds, open-source wrapper economics, and FTE displacement timelines across 500+ enterprises."
+  },
+  {
+    "file": "\\app\\benchmark\\page.tsx",
+    "title": "AI Engineering Benchmarks | Industry Data 2026",
+    "description": "Benchmark your AI economics against 500+ enterprises. Compare LLM costs, FTE displacement rates, and R&D capital efficiency metrics."
+  },
+  {
+    "file": "\\app\\benchmarks\\layout.tsx",
+    "title": "Is Your Engineering Team Underperforming? | R&D Benchmarks",
+    "description": "Benchmark your revenue per engineer, technical debt insolvency timeline, and R&D capital waste against elite SaaS, fintech, and healthtech peers."
+  },
+  {
+    "file": "\\app\\blog\\page.tsx",
+    "title": "How to Identify & Kill R&D Capital Waste | The AI Economics Blog",
+    "description": "Forensic guides and data-driven post-mortems on why software solvency fails, how to audit your R&D portfolio, and methods to stop generative compute leaks."
+  },
+  {
+    "file": "\\app\\book\\layout.tsx",
+    "title": "The AI Economist — Book by Richard Ewing | Coming Soon",
+    "description": "The definitive guide to R&D capital allocation and technical debt valuation. Pre-order the book by Richard Ewing, AI Economist and Founder of Exogram."
+  },
+  {
+    "file": "\\app\\book\\page.tsx",
+    "title": "Stop Losing Money on AI | The AI Economist Book | 2026",
+    "description": "The definitive book on AI economics: why 73% of AI projects destroy margins, and the frameworks to prevent it. Pre-order now."
+  },
+  {
+    "file": "\\app\\briefings\\page.tsx",
+    "title": "Executive AI Briefings | Board-Ready Intel | Ewing",
+    "description": "Concise executive briefings on AI economics, R&D risk, and competitive positioning. Designed for board presentations and C-suite strategy."
+  },
+  {
+    "file": "\\app\\careers\\layout.tsx",
+    "title": "Careers at Richard Ewing | AI Economics Practice",
+    "description": "Join the engineering economics practice. Open roles in AI product economics, generative UI architecture, and technical due diligence."
+  },
+  {
+    "file": "\\app\\case-studies\\page.tsx",
+    "title": "AI Economics Case Studies | Real Results | Ewing",
+    "description": "How enterprises saved millions using R&D capital audits, technical debt quantification, and AI unit economics diagnostics. Real client outcomes."
+  },
+  {
+    "file": "\\app\\case-studies\\runtime-incidents\\page.tsx",
+    "title": "AI Runtime Incident Case Studies | Richard Ewing",
+    "description": "Real-world AI failures analyzed: cost breakdowns, root causes, and the governance controls that would have prevented each incident."
+  },
+  {
+    "file": "\\app\\certification\\page.tsx",
+    "title": "Prove You Understand AI Costs — Not Just AI Hype | Governance Certification",
+    "description": "95% of AI pilots fail ROI. EU AI Act fines hit 7% of revenue. Earn the certification that proves you can govern AI economics, not just deploy AI features."
+  },
+  {
+    "file": "\\app\\challenges\\page.tsx",
+    "title": "Enterprise AI Challenges | Solve Hidden Cost Traps",
+    "description": "Identify and solve the operational challenges destroying AI ROI: governance drift, hallucination debt, shadow AI risk, and agent chaos."
+  },
+  {
+    "file": "\\app\\checklist\\page.tsx",
+    "title": "12 Questions to Expose AI Governance Gaps | Free Audit Checklist",
+    "description": "The 12 diagnostic questions from $7,500 R&D audits, free. Score your AI governance maturity and find hidden cost leaks in under 10 minutes."
+  },
+  {
+    "file": "\\app\\checkout-pending\\page.tsx",
+    "title": "Securing Your Advisory Session | Richard Ewing",
+    "description": "Your transaction is pending secure verification. Connect with your advisor to finalize your R&D capital audit or diagnostic call."
+  },
+  {
+    "file": "\\app\\compare\\ai-coding-agents\\page.tsx",
+    "title": "Claude Code vs Cursor vs Windsurf 2026 | Ewing",
+    "description": "Unbiased comparison of AI coding agents: Claude Code, Cursor, and Windsurf. Economics, failure modes, and which one destroys the least code."
+  },
+  {
+    "file": "\\app\\compare\\ai-guardrails-platforms\\page.tsx",
+    "title": "AI Guardrails: Lakera vs Galileo | Richard Ewing",
+    "description": "Compare AI guardrail platforms head-to-head. Which stops hallucinations, prompt injection, and data leakage without killing inference speed?"
+  },
+  {
+    "file": "\\app\\compare\\aper-vs-jellyfish\\page.tsx",
+    "title": "APER vs Jellyfish | Engineering Metrics Compared",
+    "description": "APER measures economic output per engineer. Jellyfish tracks activity. See why revenue-per-engineer beats time-tracking for engineering leaders."
+  },
+  {
+    "file": "\\app\\compare\\aper-vs-linearb\\page.tsx",
+    "title": "APER vs LinearB | Judgment vs Activity Metrics",
+    "description": "APER quantifies engineering economic yield. LinearB tracks PRs and cycle time. Which metric actually predicts R&D capital efficiency?"
+  },
+  {
+    "file": "\\app\\compare\\audit-interview-vs-hackerrank\\page.tsx",
+    "title": "Audit Interview vs HackerRank | Judgment vs Speed",
+    "description": "HackerRank tests speed on algorithmic puzzles. The Audit Interview tests senior engineering judgment. Which predicts real-world performance?"
+  },
+  {
+    "file": "\\app\\compare\\audit-interview-vs-leetcode\\page.tsx",
+    "title": "Audit Interview vs LeetCode | Judgment vs Puzzles",
+    "description": "LeetCode rewards memorized patterns. The Audit Interview measures the judgment skills that actually matter in production engineering."
+  },
+  {
+    "file": "\\app\\compare\\audit-interview-vs-traditional\\page.tsx",
+    "title": "Audit Interview vs Traditional Hiring | Ewing",
+    "description": "Traditional interviews cost $2K per loop and vary by interviewer mood. The Audit Interview is standardized, AI-scored, and legally defensible."
+  },
+  {
+    "file": "\\app\\compare\\aueb-vs-aws-cost-explorer\\page.tsx",
+    "title": "AUEB vs AWS Cost Explorer | AI Economics vs Cloud",
+    "description": "AWS Cost Explorer shows cloud bills. AUEB calculates when your AI feature destroys margin. One tracks spend, the other predicts collapse."
+  },
+  {
+    "file": "\\app\\compare\\claude-md-is-not-governance\\page.tsx",
+    "title": "CLAUDE.md Is Not Governance | Why Agents Ignore It",
+    "description": "Markdown files are suggestions, not enforcement. Why CLAUDE.md fails as governance and what deterministic controls actually prevent AI drift."
+  },
+  {
+    "file": "\\app\\compare\\copilot-roi-vs-gitclear\\page.tsx",
+    "title": "Copilot ROI vs GitClear | EBITDA vs LOC Metrics",
+    "description": "GitClear counts lines of code. Copilot ROI Forecaster calculates the actual EBITDA drag of AI-assisted code review bottlenecks."
+  },
+  {
+    "file": "\\app\\compare\\cursor-problems\\page.tsx",
+    "title": "Why Does Cursor Keep Rewriting My Files? | Cursor AI Problems 2026",
+    "description": "Cursor rewrites unrelated files, loses context mid-session, and creates technical debt. The known failure modes and governance fixes."
+  },
+  {
+    "file": "\\app\\compare\\dora-metrics-vs-aper\\page.tsx",
+    "title": "DORA Metrics vs APER | Speed vs Economic Yield",
+    "description": "DORA measures deployment frequency. APER measures revenue per engineer. Why operational speed without economic yield is a vanity metric."
+  },
+  {
+    "file": "\\app\\compare\\ev-se-vs-jellyfish\\page.tsx",
+    "title": "EV/SE vs Jellyfish | Valuation vs Activity Data",
+    "description": "Jellyfish tracks engineering activity. EV/SE quantifies how execution risk destroys enterprise value. One reports, the other prevents losses."
+  },
+  {
+    "file": "\\app\\compare\\github-copilot-problems\\page.tsx",
+    "title": "GitHub Copilot Is Costing You More Than /Month | Hidden Costs 2026",
+    "description": "GitHub Copilot generates code 55% faster but increases review burden 3x. The hidden costs, IP risks, and governance controls for enterprise."
+  },
+  {
+    "file": "\\app\\compare\\page.tsx",
+    "title": "Tool Comparisons | PDI vs SonarQube & More | Ewing",
+    "description": "Side-by-side comparisons of R&D diagnostic tools vs mainstream alternatives. See why economic metrics outperform vanity code quality scores."
+  },
+  {
+    "file": "\\app\\compare\\pdi-vs-codeclimate\\page.tsx",
+    "title": "PDI vs CodeClimate | Economic Debt vs Code Metrics",
+    "description": "CodeClimate grades code quality. PDI calculates your Technical Insolvency Date in dollars. See why financial framing changes executive behavior."
+  },
+  {
+    "file": "\\app\\compare\\pdi-vs-sonarqube\\page.tsx",
+    "title": "PDI vs SonarQube | Economic Debt vs Quality Scans",
+    "description": "SonarQube finds bugs. PDI calculates when technical debt bankrupts your engineering capacity. Different problems, different solutions."
+  },
+  {
+    "file": "\\app\\compare\\pdi-vs-waydev\\page.tsx",
+    "title": "PDI vs Waydev | Economic Intelligence Comparison",
+    "description": "Waydev tracks developer metrics. PDI predicts technical insolvency. Compare engineering intelligence platforms for R&D capital decisions."
+  },
+  {
+    "file": "\\app\\compare\\shadow-ai-vs-shadow-it\\page.tsx",
+    "title": "Shadow AI vs Shadow IT | IP Liability vs SaaS Waste",
+    "description": "Shadow IT wastes subscription dollars. Shadow AI leaks proprietary IP into third-party models. One costs money, the other costs everything."
+  },
+  {
+    "file": "\\app\\compare\\technical-debt-vs-technical-insolvency\\page.tsx",
+    "title": "Technical Debt vs Insolvency | Decay vs Bankruptcy",
+    "description": "Technical debt is manageable. Technical insolvency is when maintenance exceeds engineering capacity. Learn the difference before it hits."
+  },
+  {
+    "file": "\\app\\compare\\vibe-coding-vs-agile\\page.tsx",
+    "title": "Vibe Coding vs Agile | Why AI Debt Beats Sprints",
+    "description": "Vibe coding generates 10x faster but accumulates 50x the technical debt. Why the Agile playbook fails when AI writes most of your code."
+  },
+  {
+    "file": "\\app\\compare\\why-ai-coding-burns-money\\page.tsx",
+    "title": "Why AI Coding Burns Money | Hidden Cost Analysis",
+    "description": "Enterprise AI coding tools cost 10-50x more in production than prototypes. The variable compute economics your CFO needs to see before renewal."
+  },
+  {
+    "file": "\\app\\compare\\why-claude-loses-context\\page.tsx",
+    "title": "Why Claude Loses Context | Context Rot Explained",
+    "description": "Claude degrades over long sessions as context windows fill with stale tokens. The technical cause, the economic cost, and the governance fix."
+  },
+  {
+    "file": "\\app\\compare\\why-cursor-rewrites-files\\page.tsx",
+    "title": "Why Cursor Rewrites Files | Root Cause & Fix",
+    "description": "Cursor overwrites unrelated code because it lacks deterministic file boundaries. The root cause analysis and the governance control to stop it."
+  },
+  {
+    "file": "\\app\\compare\\why-mcp-is-dangerous\\page.tsx",
+    "title": "Why MCP Is a Security Risk | Agent Governance",
+    "description": "Model Context Protocol gives AI agents unrestricted tool access. The security implications, attack vectors, and governance controls you need."
+  },
+  {
+    "file": "\\app\\compare\\why-retry-loops-happen\\page.tsx",
+    "title": "Why AI Retry Loops Cost Thousands | Fix & Prevent",
+    "description": "Your AI agent retried 47 times overnight. Each retry costs tokens. How retry inflation silently destroys API budgets and the governance fix."
+  },
+  {
+    "file": "\\app\\compare\\windsurf-problems\\page.tsx",
+    "title": "Windsurf Problems & Fixes 2026 | Richard Ewing",
+    "description": "Windsurf editor loses project context, creates duplicate code, and lacks governance controls. The known issues and enterprise alternatives."
+  },
+  {
+    "file": "\\app\\contact\\page.tsx",
+    "title": "Contact Richard Ewing | AI Economist & Capital Auditor",
+    "description": "Book a free diagnostic or schedule an R&D capital audit. Get in touch with Richard Ewing."
+  },
+  {
+    "file": "\\app\\curriculum\\page.tsx",
+    "title": "Executive AI Curriculum | 25 Tracks, 303 Modules | Richard Ewing",
+    "description": "Master AI economics through 25 structured authority tracks: financial modeling, governance, M&A diligence, agent economics, and executive strategy. $149/track or $999 all-access."
+  },
+  {
+    "file": "\\app\\dashboard\\enterprise\\layout.tsx",
+    "title": "Enterprise Team Governance Dashboard | Cross-Division AI Risk | Richard Ewing",
+    "description": "Cross-departmental governance observability and hallucination debt tracking. Monitor Product Debt Index and AI Gross Margins across all organizational divisions."
+  },
+  {
+    "file": "\\app\\dashboard\\layout.tsx",
+    "title": "Enterprise R&D Command Center | Richard Ewing",
+    "description": "Track engineering economics, unit margins, and calculate your Technical Insolvency Date from your central command dashboard."
+  },
+  {
+    "file": "\\app\\decisions\\choosing-ai-development-platforms\\page.tsx",
+    "title": "Choosing AI Development Platforms: Cost vs. Predictability",
+    "description": "An architectural analysis of AI development platforms for enterprise SaaS. Compare frameworks based on unit economics and margin stability rather than theoretical capabilities."
+  },
+  {
+    "file": "\\app\\decisions\\choosing-enterprise-ai-infrastructure\\page.tsx",
+    "title": "Choosing Enterprise AI Infrastructure: Governance & Architecture",
+    "description": "A structural guide for CFOs and CTOs evaluating AI infrastructure for enterprise SaaS. Move beyond theoretical scaling and focus on cost caps, security boundaries, and deterministic execution."
+  },
+  {
+    "file": "\\app\\diagnose\\page.tsx",
+    "title": "Free AI & Engineering Diagnostics | Richard Ewing",
+    "description": "Run free diagnostics on your AI costs, engineering efficiency, and technical debt exposure. The same tools used in $7,500 R&D capital audits."
+  },
+  {
+    "file": "\\app\\diagrams\\page.tsx",
+    "title": "AI Governance Architecture Diagrams | Free | Ewing",
+    "description": "Visual architecture diagrams: deterministic control layers, agentic governance flows, and AI cost structure maps. Free to download."
+  },
+  {
+    "file": "\\app\\doctrine\\layout.tsx",
+    "title": "Why Your R&D Budget Is Disappearing | AI Economics Doctrine",
+    "description": "Agile theater is killing your runway. Read the core principles of AI economics, why software solvency matters, and how to stop funding zombie features."
+  },
+  {
+    "file": "\\app\\doctrine\\page.tsx",
+    "title": "The Doctrine of Sovereignty | AI Economics Laws | Ewing",
+    "description": "Explore the immutable laws of software solvency: Capital Allocation > Agile Theater, and how to monitor your Technical Insolvency Date."
+  },
+  {
+    "file": "\\app\\executive-briefing\\page.tsx",
+    "title": "Executive AI Briefing | Board-Ready Intelligence",
+    "description": "One-page AI economics briefings designed for board presentations. Translate technical debt and AI costs into language executives act on."
+  },
+  {
+    "file": "\\app\\exogram\\architecture\\page.tsx",
+    "title": "Exogram Architecture | AI Threat Gating Design",
+    "description": "Deep dive into the 4-layer verification architecture: input validation, execution boundaries, output verification, and cost circuit breakers."
+  },
+  {
+    "file": "\\app\\exogram\\docs\\layout.tsx",
+    "title": "Exogram Documentation — Technical Deep Dive",
+    "description": "Technical specifications for Exogram Verification Architecture, State Hashing, Action Admissibility, and SDK integration."
+  },
+  {
+    "file": "\\app\\exogram\\docs\\page.tsx",
+    "title": "Exogram Docs | API & Integration Guide | Ewing",
+    "description": "Technical documentation for Exogram: APIs, protocols, and integration patterns for deploying deterministic AI validation in your stack."
+  },
+  {
+    "file": "\\app\\exogram\\layout.tsx",
+    "title": "Block Shadow AI Exfiltration & Hallucination Costs | Exogram",
+    "description": "45% of AI code has vulnerabilities. Exogram is the deterministic governance kill-switch your CISO needs to stop prompt-based data egress and API bloat."
+  },
+  {
+    "file": "\\app\\exogram\\roadmap\\page.tsx",
+    "title": "Exogram Product Roadmap 2026 | AI Verification",
+    "description": "What we are building next: expanded verification protocols, enterprise integrations, and the infrastructure roadmap for deterministic AI control."
+  },
+  {
+    "file": "\\app\\exogram\\use-cases\\page.tsx",
+    "title": "Exogram Use Cases | AI Verification by Industry",
+    "description": "How enterprises deploy Exogram to prevent AI hallucination, enforce cost ceilings, and maintain deterministic control across agentic workflows."
+  },
+  {
+    "file": "\\app\\failures\\page.tsx",
+    "title": "AI Failure Database | 15+ Incident Analyses | Ewing",
+    "description": "Documented AI failures with cost analysis and root causes: hallucination debt, retry inflation, context rot, and agentic drift incidents."
+  },
+  {
+    "file": "\\app\\faq\\page.tsx",
+    "title": "FAQ | AI Economist Richard Ewing | Common Questions",
+    "description": "Answers to the most common questions about R&D capital audits, AI unit economics, technical debt quantification, and advisory engagements."
+  },
+  {
+    "file": "\\app\\for-boards\\page.tsx",
+    "title": "For Board Members | AI Risk & R&D Oversight Tools",
+    "description": "Board-level AI risk dashboards and R&D capital oversight tools. Translate engineering complexity into fiduciary-grade reporting."
+  },
+  {
+    "file": "\\app\\for-ctos\\page.tsx",
+    "title": "CTO Toolkit | Free AI & Engineering Diagnostics",
+    "description": "Free diagnostic tools for CTOs: Product Debt Index, APER calculator, AI unit economics, and engineering efficiency benchmarks."
+  },
+  {
+    "file": "\\app\\for-investors\\page.tsx",
+    "title": "For PE & VC | Technical Due Diligence Tools | Ewing",
+    "description": "Investor-grade technical due diligence: scan acquisition targets for hidden technical debt, AI dependency risks, and engineering insolvency."
+  },
+  {
+    "file": "\\app\\framework\\page.tsx",
+    "title": "The Production AI Governance Framework | AI Sustainability",
+    "description": "Explore the 6-pillar framework (Economics, Product, Engineering, Security, Operations, and Runtime Governance) to control production AI systems sustainably."
+  },
+  {
+    "file": "\\app\\frameworks\\page.tsx",
+    "title": "AI Diagnostic Frameworks | Free Downloads | Ewing",
+    "description": "Operational frameworks for AI economics: Innovation Tax, Technical Insolvency Date, APER ratio, and 16 more diagnostic models. Free access."
+  },
+  {
+    "file": "\\app\\glossary\\layout.tsx",
+    "title": "Glossary of Technology, AI & Product Terms | Richard Ewing",
+    "description": "Comprehensive glossary of 50+ technology and AI terms: Technical debt, AI, SaaS metrics, and engineering management."
+  },
+  {
+    "file": "\\app\\glossary\\page.tsx",
+    "title": "AI & Engineering Glossary | 430+ Terms | Ewing",
+    "description": "The most comprehensive AI economics glossary: 430+ terms covering technical debt, AI governance, R&D capital, and engineering metrics."
+  },
+  {
+    "file": "\\app\\industries\\agritech\\page.tsx",
+    "title": "IoT Data Debt Is Burying Your AgriTech Budget | Economics Audit",
+    "description": "AgriTech-specific R&D audits: IoT sensor economics, precision agriculture AI costs, and legacy irrigation system modernization strategies."
+  },
+  {
+    "file": "\\app\\industries\\ai-first\\page.tsx",
+    "title": "Your AI-First Company Has AI-Last Unit Economics | Margin Defense",
+    "description": "AI-native companies face unique margin pressure: inference COGS that scale with users. How to defend gross margins before Series B."
+  },
+  {
+    "file": "\\app\\industries\\cleantech\\page.tsx",
+    "title": "Grid Integration Debt Is Drowning Your CleanTech Budget | AI Audit",
+    "description": "CleanTech R&D capital audits: renewable energy AI optimization costs, carbon tracking system debt, and regulatory compliance economics."
+  },
+  {
+    "file": "\\app\\industries\\cybersecurity\\page.tsx",
+    "title": "Security Tech Debt Is Your Biggest Vulnerability | Cybersecurity Audit",
+    "description": "Quantify your security debt: threat detection AI costs, compliance overhead, and the hidden economics of cybersecurity engineering teams."
+  },
+  {
+    "file": "\\app\\industries\\ecommerce\\page.tsx",
+    "title": "Platform Complexity Is Crushing Your eCommerce Margins | AI Audit",
+    "description": "E-commerce platform debt audits: recommendation engine costs, checkout optimization AI, and the economics of scaling personalization."
+  },
+  {
+    "file": "\\app\\industries\\edtech\\page.tsx",
+    "title": "EdTech AI Costs Are Outpacing Revenue | Learning Platform Audit",
+    "description": "EdTech R&D audits: AI tutor governance costs, content delivery optimization, LMS technical debt, and adaptive learning model economics."
+  },
+  {
+    "file": "\\app\\industries\\fintech\\page.tsx",
+    "title": "Why Your FinTech R&D Is Bleeding Capital | AI Economics Audit",
+    "description": "FinTech-specific audits: AI underwriting costs, regulatory compliance debt, fraud detection model drift, and payment system modernization."
+  },
+  {
+    "file": "\\app\\industries\\govtech\\page.tsx",
+    "title": "Legacy Systems Are Consuming Your GovTech Budget | R&D Audit",
+    "description": "Public sector AI economics: FedRAMP compliance costs, legacy mainframe replacement strategies, and AI procurement governance frameworks."
+  },
+  {
+    "file": "\\app\\industries\\healthtech\\page.tsx",
+    "title": "HIPAA Compliance Is Eating Your HealthTech Budget | AI Economics Audit",
+    "description": "HealthTech R&D audits: HIPAA compliance costs, clinical AI validation expenses, EHR integration debt, and FDA submission economics."
+  },
+  {
+    "file": "\\app\\industries\\insurtech\\page.tsx",
+    "title": "Actuarial AI Is Burning Cash Faster Than Claims | InsurTech Audit",
+    "description": "InsurTech R&D audits: legacy core system modernization, AI underwriting unit costs, state regulatory compliance debt, and claims system economics."
+  },
+  {
+    "file": "\\app\\industries\\legaltech\\page.tsx",
+    "title": "AI Contract Review Costs Are Destroying LegalTech Margins | Audit",
+    "description": "LegalTech R&D audits: document processing AI costs, multi-jurisdiction compliance data, contract analytics drift, and legal data security."
+  },
+  {
+    "file": "\\app\\industries\\logistics\\page.tsx",
+    "title": "Route Optimization Debt Is Eating Logistics Margins | AI Audit",
+    "description": "Logistics R&D audits: real-time tracking latency debt, IoT sensor infrastructure costs, and AI demand forecasting optimization strategies."
+  },
+  {
+    "file": "\\app\\industries\\manufacturing\\page.tsx",
+    "title": "Manufacturing & Robotics AI Economics | Richard Ewing",
+    "description": "Industrial AI and robotics economics: edge computing constraints, IoT data ingestion latency, and robotic process automation costs."
+  },
+  {
+    "file": "\\app\\industries\\mediatech\\page.tsx",
+    "title": "Content Pipeline Debt Is Destroying MediaTech Margins | AI Audit",
+    "description": "MediaTech R&D audits: CDN delivery costs, AI recommendation engine economics, DRM system debt, and ad tech integration overhead."
+  },
+  {
+    "file": "\\app\\industries\\page.tsx",
+    "title": "Industry AI Economics & R&D Audits | Richard Ewing",
+    "description": "Vertical-specific AI economics: how technical debt, AI costs, and R&D capital allocation differ across 15 industries from FinTech to GovTech."
+  },
+  {
+    "file": "\\app\\industries\\proptech\\page.tsx",
+    "title": "MLS Integration Debt Is Killing PropTech ROI | AI Audit",
+    "description": "PropTech R&D audits: MLS data integration costs, automated valuation model margins, IoT building management debt, and property AI economics."
+  },
+  {
+    "file": "\\app\\industries\\saas\\page.tsx",
+    "title": "Your SaaS Maintenance Burden Is Destroying Margins | R&D Economics",
+    "description": "SaaS R&D audits: AI feature COGS that erode gross margins, ARR growth vs technical debt tradeoffs, and infrastructure cost optimization."
+  },
+  {
+    "file": "\\app\\layout.tsx",
+    "title": "Richard Ewing | R&D Capital Audits & AI Governance",
+    "description": "The AI Economist: R&D capital audits, AI unit economics, and technical debt quantification for enterprises. Free diagnostic tools and frameworks."
+  },
+  {
+    "file": "\\app\\legal\\layout.tsx",
+    "title": "Legal & Terms of Use | Richard Ewing Advisory",
+    "description": "Terms of service, privacy policy, intellectual property rights, and advisory engagement disclaimers for richardewing.io."
+  },
+  {
+    "file": "\\app\\manifesto\\layout.tsx",
+    "title": "Stop Building AI Features That Lose Money | AI Economist Manifesto",
+    "description": "The era of ZIRP-fueled building is dead. Read the manifesto on why innovation without solvency is philanthropy and how product leaders survive the AI margin crash."
+  },
+  {
+    "file": "\\app\\methodology\\page.tsx",
+    "title": "Audit Methodology | How R&D Audits Work | Ewing",
+    "description": "The 4-phase R&D capital audit methodology: discovery, diagnostics, quantification, and executive presentation. How $7,500 audits deliver ROI."
+  },
+  {
+    "file": "\\app\\not-found.tsx",
+    "title": "Page Not Found | Richard Ewing",
+    "description": "The page you are looking for does not exist. Explore Production AI Governance tools, frameworks, and diagnostics at richardewing.io."
+  },
+  {
+    "file": "\\app\\page.tsx",
+    "title": "Richard Ewing — AI Economist & Capital Auditor",
+    "description": "I stop AI investments from bleeding money. Enterprise AI governance & product economics for PE-backed SaaS companies."
+  },
+  {
+    "file": "\\app\\partnerships\\page.tsx",
+    "title": "Partnerships | Advisory & Licensing | Richard Ewing",
+    "description": "Partner with Richard Ewing: advisory referrals, diagnostic tool licensing, and enterprise integration partnerships for AI economics."
+  },
+  {
+    "file": "\\app\\pricing\\page.tsx",
+    "title": "Advisory Pricing | R&D Audits & Retainers | Richard Ewing",
+    "description": "Plain-language pricing for engineering economics advisory. The $2,500 R&D capital diagnostic and the $7,500 monthly fractional CTO retainer."
+  },
+  {
+    "file": "\\app\\principal\\page.tsx",
+    "title": "Richard Ewing | AI Economist & Exogram Founder",
+    "description": "Richard Ewing: The AI Economist. Published in CIO.com and Built In. Creator of R&D capital audit methodology and 18 diagnostic tools."
+  },
+  {
+    "file": "\\app\\profiles\\page.tsx",
+    "title": "Media & Publications | Richard Ewing AI Economist",
+    "description": "Published profiles across CIO.com, Built In, Mind the Product, and HackerNoon. Richard Ewing on AI unit economics and R&D capital strategy."
+  },
+  {
+    "file": "\\app\\reports\\layout.tsx",
+    "title": "Data-Driven Reports on AI Waste & R&D Bleed | Richard Ewing",
+    "description": "Original research and analysis on AI engineering failure rates, unit economics traps, and R&D capital inefficiencies. Insights for tech executives."
+  },
+  {
+    "file": "\\app\\reports\\state-of-ai-engineering\\page.tsx",
+    "title": "State of AI Engineering 2026 | Richard Ewing Report",
+    "description": "The definitive executive playbook: FTE displacement data, CapEx vs OpEx of LLMs, and strategies for surviving the AI capability chasm."
+  },
+  {
+    "file": "\\app\\research\\page.tsx",
+    "title": "Research Evolution Timeline | Production AI Governance",
+    "description": "Explore the multi-year chronological progression of the Production AI Governance research program across 6 distinct intellectual phases from 2024 to 2026+."
+  },
+  {
+    "file": "\\app\\resources\\ai-courses\\page.tsx",
+    "title": "AI Learning Hub | 50+ Curated Courses & Tools",
+    "description": "Curated collection of 50+ AI courses, tools, and learning resources across machine learning, prompt engineering, and AI economics."
+  },
+  {
+    "file": "\\app\\resources\\page.tsx",
+    "title": "Resources Hub | Free AI Economics Tools | Ewing",
+    "description": "Free resources: diagnostic frameworks, executive templates, research reports, and curated AI economics learning paths. All open access."
+  },
+  {
+    "file": "\\app\\roi\\page.tsx",
+    "title": "R&D Audit ROI Calculator | Prove the Payback",
+    "description": "Calculate the exact ROI of an R&D capital audit. Most clients recapture 10-40x the engagement cost through identified savings and efficiency gains."
+  },
+  {
+    "file": "\\app\\runtime-architecture\\page.tsx",
+    "title": "Agentic Runtime Architecture | 4-Layer Formula",
+    "description": "The 4-layer agentic runtime: input validation, execution boundaries, output verification, and cost circuit breakers. Stop AI agent chaos."
+  },
+  {
+    "file": "\\app\\runtime-failure-index\\page.tsx",
+    "title": "AI Runtime Failure Database | Incident Analysis",
+    "description": "Searchable database of AI runtime failures: hallucination events, retry inflation, context rot incidents, and their economic impact analysis."
+  },
+  {
+    "file": "\\app\\services\\page.tsx",
+    "title": "AI Advisory Services & Packages | Richard Ewing",
+    "description": "R&D Capital Audits, Inference Cost Optimization Sprints, and Board Advisor packages starting from $7,500. View our services and packages."
+  },
+  {
+    "file": "\\app\\sign-in\\layout.tsx",
+    "title": "Sign In to Command Center | Richard Ewing",
+    "description": "Authenticate securely to access your R&D Command Center, run diagnostic tools, and view historical snapshots."
+  },
+  {
+    "file": "\\app\\sign-up\\layout.tsx",
+    "title": "Register for command center access | Richard Ewing",
+    "description": "Create an account to track your Product Debt, run AI cost diagnostics, and manage enterprise seat configurations."
+  },
+  {
+    "file": "\\app\\skills\\getting-started\\page.tsx",
+    "title": "Governance Skills Setup Guide | Install in 5 Min",
+    "description": "Step-by-step installation guide for AI governance skills. Deploy runtime controls for Claude Code in under 5 minutes. Free and open source."
+  },
+  {
+    "file": "\\app\\skills\\page.tsx",
+    "title": "Governance Skills for Claude Code | Runtime Rules",
+    "description": "Installable governance skills for Claude Code: deterministic runtime controls, cost limits, and quality gates that prevent AI agent drift."
+  },
+  {
+    "file": "\\app\\start-here\\page.tsx",
+    "title": "Start Here | Guided Sequence | Production AI Governance",
+    "description": "New to AI economics and governance? Start here. A guided, 5-step sequence from understanding the scale problem to enforcing runtime AI governance."
+  },
+  {
+    "file": "\\app\\system\\layout.tsx",
+    "title": "The AI Economics Operating System | Stop R&D Capital Leakage",
+    "description": "Force financial transparency in your engineering org. Access the full suite of diagnostic tools, audit protocols, and governance frameworks by Richard Ewing."
+  },
+  {
+    "file": "\\app\\system-prompts\\page.tsx",
+    "title": "Executive AI System Prompts | Free | Richard Ewing",
+    "description": "Production-tested system prompts for enterprise AI deployment. Copy-paste prompts for governance, analysis, and executive communication."
+  },
+  {
+    "file": "\\app\\telemetry\\page.tsx",
+    "title": "AI Governance Telemetry & Cost Dashboards | Ewing",
+    "description": "Real-time telemetry for agentic AI: token costs, governance violations, drift detection, and cost anomaly alerts across your AI fleet."
+  },
+  {
+    "file": "\\app\\testimonials\\page.tsx",
+    "title": "Client Testimonials | R&D Audit Results | Ewing",
+    "description": "What enterprise clients say about R&D capital audits, AI economics advisory, and diagnostic tool deployments. Real outcomes from real engagements."
+  },
+  {
+    "file": "\\app\\toolkit-success\\page.tsx",
+    "title": "Toolkit Downloaded | Next Steps | Richard Ewing",
+    "description": "Your Executive Diagnostic Toolkit is ready. Follow the guided setup to run your first R&D audit diagnostic in under 15 minutes."
+  },
+  {
+    "file": "\\app\\tools\\agent-router\\page.tsx",
+    "title": "Multi-Agent Token Burn Calculator | Prevent Cloud Bankruptcy",
+    "description": "Brute-forcing GPT-4 across an enterprise swarm leads to immediate token bankruptcy. Calculate compound token decay and model the break-even for edge routing."
+  },
+  {
+    "file": "\\app\\tools\\agentic-drift-matrix\\page.tsx",
+    "title": "Stop AI Swarms From Hallucinating After Turn 12 | Agentic Drift Matrix",
+    "description": "AI agents lose coherence over time. Download the diagnostic matrix to measure the exact conversation turn where your LLM context window degrades."
+  },
+  {
+    "file": "\\app\\tools\\ai-roi-timeline\\page.tsx",
+    "title": "When Will Your AI Investment Actually Break Even? | ROI Timeline",
+    "description": "Stop burning cash on vague productivity promises. Calculate the exact quarter your AI features break even against human labor costs and model retraining taxes."
+  },
+  {
+    "file": "\\app\\tools\\ai-unit-economics-audit\\page.tsx",
+    "title": "Stop Pricing AI Like SaaS or Burn Margins | Unit Economics Audit",
+    "description": "Variable token usage eats margins. Calculate your exact Technical Insolvency Date — when API costs exceed subscription pricing. Download free XLSX matrix."
+  },
+  {
+    "file": "\\app\\tools\\aper\\faq\\page.tsx",
+    "title": "APER Calculator FAQ | How It Works | Richard Ewing",
+    "description": "How to benchmark engineering efficiency with APER: methodology, scoring interpretation, and comparison against top-performing SaaS companies."
+  },
+  {
+    "file": "\\app\\tools\\aper\\page.tsx",
+    "title": "Are You Overstaffed or Underperforming? | Revenue Per Engineer Benchmark",
+    "description": "Stripe generates $1.4M per engineer. Where does your team rank? Benchmark your R&D efficiency against elite SaaS companies and find the organizational bloat killing your margins."
+  },
+  {
+    "file": "\\app\\tools\\audit-interview\\faq\\page.tsx",
+    "title": "Audit Interview FAQ | Hiring Protocol | Ewing",
+    "description": "How the Audit Interview tests senior engineering judgment instead of memorized syntax. Methodology, scoring rubric, and assessment tracks."
+  },
+  {
+    "file": "\\app\\tools\\audit-interview\\page.tsx",
+    "title": "Does This Engineer Actually Think, or Just Code? | Judgment Test",
+    "description": "LeetCode tests syntax. This tests judgment. The Audit Interview evaluates whether engineers can verify, reason architecturally, and make tradeoff decisions — not just write code."
+  },
+  {
+    "file": "\\app\\tools\\aueb\\faq\\page.tsx",
+    "title": "AUEB FAQ | AI Unit Economics Benchmark | Ewing",
+    "description": "How to measure AI feature profitability, inference costs, and model ROI using the AI Unit Economics Benchmark. Methodology and FAQ."
+  },
+  {
+    "file": "\\app\\tools\\aueb\\page.tsx",
+    "title": "CFO Alert: Calculate Your AI Unit Economics Collapse Point",
+    "description": "LLM costs scale non-linearly. Find the exact usage volume where your AI features start destroying margin and creating billing shock. 3-Minute Audit."
+  },
+  {
+    "file": "\\app\\tools\\board-room\\layout.tsx",
+    "title": "Spot Execution Risk & Margin Erosion | C-Suite Board Room",
+    "description": "Stop relying on vanity metrics. Aggregate your Product Debt Index, AI unit economics collapse points, and R&D capital waste in a single executive view."
+  },
+  {
+    "file": "\\app\\tools\\career-pathing\\page.tsx",
+    "title": "Just Got Laid Off From Tech? | Career Recovery Diagnostic",
+    "description": "Identify your exact career bottleneck in 3 steps. Are you stuck because of skills, positioning, or market timing? Get a personalized recovery plan, not generic LinkedIn advice."
+  },
+  {
+    "file": "\\app\\tools\\cloud-repatriation\\page.tsx",
+    "title": "Is AWS Eating Your EBITDA? | Cloud Repatriation Savings Calculator",
+    "description": "Your AWS bill grows 20% per year. Calculate the exact EBITDA you recapture by moving workloads off-cloud. Model the breakeven point for bare-metal vs. renting."
+  },
+  {
+    "file": "\\app\\tools\\copilot-roi\\page.tsx",
+    "title": "VP Eng: Is Copilot Costing You $58K/Dev in Vibe Coding Debt?",
+    "description": "Stop the AI billing shock. Calculate how raw generative AI velocity is violently degraded by code review bottlenecks and hidden technical debt."
+  },
+  {
+    "file": "\\app\\tools\\dashboard\\layout.tsx",
+    "title": "Intelligence Dashboard | Historical Metrics | Ewing",
+    "description": "Track Product Debt, AI costs, and valuation gaps over time. Your secure historical metric repository for longitudinal R&D analysis."
+  },
+  {
+    "file": "\\app\\tools\\due-diligence\\faq\\page.tsx",
+    "title": "Technical Due Diligence FAQ | M&A Audit Guide",
+    "description": "FAQ on technical due diligence for M&A: what we scan, how risks are quantified, and how PE/VC firms use results to negotiate valuations."
+  },
+  {
+    "file": "\\app\\tools\\due-diligence\\page.tsx",
+    "title": "Is This Acquisition Full of Hidden Tech Debt? | M&A Due Diligence Scanner",
+    "description": "Before you sign the term sheet: scan for hidden technical debt, AI dependency risks, and inflated engineering metrics. The same diligence protocol used in $15K PE deal evaluations."
+  },
+  {
+    "file": "\\app\\tools\\eu-ai-act-checker\\faq\\page.tsx",
+    "title": "EU AI Act Compliance FAQ | Everything Engineering Leaders Need to Know",
+    "description": "Answers to the most urgent EU AI Act questions: enforcement dates, fine structure, risk classification, shadow AI exposure, and compliance timelines for CTOs and CISOs."
+  },
+  {
+    "file": "\\app\\tools\\eu-ai-act-checker\\page.tsx",
+    "title": "EU AI Act Starts August 2026 — Are You Ready? | Free Compliance Checker",
+    "description": "Fines up to 7% of global turnover. 67% of employees use AI tools with no policies. Score your EU AI Act readiness in 3 minutes before enforcement starts."
+  },
+  {
+    "file": "\\app\\tools\\ev-se\\faq\\page.tsx",
+    "title": "EV/SE Calculator FAQ | Valuation Methodology | Ewing",
+    "description": "How PE and VC firms model execution risk, churn, and developer metrics in SaaS valuations. The methodology behind the EV/SE engine."
+  },
+  {
+    "file": "\\app\\tools\\ev-se\\page.tsx",
+    "title": "What Is Your SaaS Actually Worth? | Execution Risk Valuation Calculator",
+    "description": "Stop guessing your SaaS valuation. Model how churn, tech debt, and execution risk destroy your enterprise value multiple — and what to fix first. Used by PE firms in due diligence."
+  },
+  {
+    "file": "\\app\\tools\\fte-displacement\\page.tsx",
+    "title": "Should You Replace That Role With AI? | FTE Displacement Calculator",
+    "description": "Calculate the true EBITDA impact of replacing human roles with AI agents. Model error rates, retraining costs, and the breakeven point. Not every role should be automated."
+  },
+  {
+    "file": "\\app\\tools\\hallucination-tax\\page.tsx",
+    "title": "$67B Lost to AI Hallucinations Globally | Calculate Your Hallucination Tax",
+    "description": "Your team spends 4.3 hours/week verifying AI outputs — that is $14,200/employee/year in invisible labor. Calculate your organization\\"
+  },
+  {
+    "file": "\\app\\tools\\innovation-tax-calculator\\page.tsx",
+    "title": "How Much of Your R&D Budget Is Wasted on Maintenance? | Innovation Tax Calculator",
+    "description": "Most companies label maintenance work as "
+  },
+  {
+    "file": "\\app\\tools\\page.tsx",
+    "title": "Free AI Cost Attribution & Token Audit Calculators",
+    "description": "Stop API margin collapse. Use our free forensic tools for CTOs to measure software entropy, calculate AUEB (AI Unit Economics), and spot shadow AI."
+  },
+  {
+    "file": "\\app\\tools\\pdi\\faq\\page.tsx",
+    "title": "Product Debt Index FAQ | How PDI Works | Ewing",
+    "description": "How PDI quantifies technical debt in dollar terms, calculates insolvency dates, and translates engineering risk into executive-grade metrics."
+  },
+  {
+    "file": "\\app\\tools\\pdi\\page.tsx",
+    "title": "Director Alert: Calculate Your Technical Insolvency Date",
+    "description": "45% of AI code introduces vulnerabilities. Vibe coding creates massive technical debt. Find the exact quarter your maintenance load exceeds your engineering capacity."
+  },
+  {
+    "file": "\\app\\tools\\prompt-injection-sandbox\\page.tsx",
+    "title": "Can Your AI Be Jailbroken? | Prompt Injection Red Team Sandbox",
+    "description": "Test your AI system prompts against real-world jailbreaks, Base64 encoding attacks, and roleplay bypasses. Find vulnerabilities before attackers do. Free red-teaming tool."
+  },
+  {
+    "file": "\\app\\tools\\rag-chunking-visualizer\\page.tsx",
+    "title": "Why Is Your RAG Returning Wrong Answers? | Chunking Visualizer",
+    "description": "Bad chunking is the #1 reason RAG pipelines hallucinate. Visualize how your text splits into vector embeddings and optimize chunk boundaries before they poison your retrieval."
+  },
+  {
+    "file": "\\app\\tools\\scoring\\page.tsx",
+    "title": "Stop Hiring Engineers Who Can",
+    "description": "Score senior engineering candidates on judgment, not memorized LeetCode. Generate board-ready hiring verdicts using the same protocol from $7,500 R&D Capital Audits."
+  },
+  {
+    "file": "\\app\\tools\\shadow-ai\\page.tsx",
+    "title": "Are Employees Leaking Data to ChatGPT? | Shadow AI Risk Scanner",
+    "description": "73% of employees use unauthorized AI tools at work. Calculate your SOC2 exposure, data leak blast radius, and compliance liability from Shadow AI usage before auditors find it."
+  },
+  {
+    "file": "\\app\\tools\\slm-vs-api\\page.tsx",
+    "title": "Should You Self-Host AI or Keep Paying OpenAI? | Build vs Buy Calculator",
+    "description": "Your OpenAI bill is $50K/month and climbing. At what volume does self-hosting on H100s become cheaper? Calculate the exact breakeven between renting API tokens and owning inference."
+  },
+  {
+    "file": "\\app\\tools\\vta\\page.tsx",
+    "title": "How Much Does AI Hallucination Verification Actually Cost? | Free Calculator",
+    "description": "Every AI output needs a human to verify it. That hidden verification cost — the Volatility Tax — can consume 30-60% of your AI savings. Calculate exactly how much you"
+  },
+  {
+    "file": "\\app\\vault\\assets\\page.tsx",
+    "title": "Governance Assets | Client Vault | Richard Ewing",
+    "description": "Access your purchased governance systems, audit frameworks, and diagnostic tool licenses. Secure download portal for advisory clients."
+  },
+  {
+    "file": "\\app\\vault\\curriculum\\tracks\\page.tsx",
+    "title": "Fix AI Vibe Coding Debt | Training for Eng Managers",
+    "description": "The "
+  },
+  {
+    "file": "\\app\\vault\\join\\layout.tsx",
+    "title": "Claim Your Enterprise Seat | The AI Economics Vault",
+    "description": "Claim your enterprise seat to unlock full technology economics curriculum, custom calculators, and M&A due diligence tools."
+  },
+  {
+    "file": "\\app\\vault\\page.tsx",
+    "title": "Client Vault | Premium Advisory Assets | Ewing",
+    "description": "Secure access to your premium advisory assets: governance systems, diagnostic tools, executive templates, and curriculum tracks."
+  },
+  {
+    "file": "\\app\\vault\\team\\page.tsx",
+    "title": "Enterprise Team Portal | Manage Seats | Ewing",
+    "description": "Manage your enterprise team seats, active members, and access permissions for the Client Vault advisory platform."
+  },
+  {
+    "file": "\\app\\workshops\\page.tsx",
+    "title": "AI Economics Keynotes & Workshops | The Talk Your Leadership Team Needs",
+    "description": "Your leadership team is spending more on AI with no measurable return. Book the keynote that reframes AI as an economics problem. Published in CIO.com and Built In."
+  }
+]

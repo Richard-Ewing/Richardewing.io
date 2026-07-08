@@ -12,6 +12,8 @@ To elevate Web Applications into premium, executive-level products (particularly
 1. **Curated Color Palettes**:
    - Avoid generic browser-default colors (plain red, green, blue).
    - Use tailwind tones combined with premium background colors (e.g., `#F5F0EB` linen, dark slate, deep indigo/cyan radial glows).
+4. **Dark Mode Text Contrast**:
+   - When using dark backgrounds (`bg-zinc-900`, `bg-black`, `#18181b`), you MUST use ultra-high contrast text utilities (`text-white`, `text-zinc-100`, `text-zinc-200`) instead of mid-tier greys like `text-zinc-400` which become unreadable.
 2. **Developer-Aesthetic Grids**:
    - Overlay clean developer graticule line meshes and radial background glows to create futuristic layout depth.
 3. **Smooth Shading and Gradients**:

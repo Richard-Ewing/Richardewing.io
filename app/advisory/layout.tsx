@@ -2,15 +2,15 @@ import type { Metadata } from 'next';
 import { advisoryKeywords } from '../lib/keywords';
 
 export const metadata: Metadata = {
-    title: 'Stop Runaway Agentic Loops: Forensic AI Audits for $10k',
-    description: 'CFOs & CTOs: Is an agentic loop draining your API budget? Get a forensic AI audit to block shadow AI exfiltration and halt AI billing shock in 48 hours.',
+    title: 'Forensic AI Audits Block Runaway Agent Loops | Richard Ewing',
+    description: 'A forensic AI audit identifies and blocks shadow exfiltration from agentic loops. Halt AI billing shock and secure deterministic execution.',
     keywords: [...advisoryKeywords, 'AI consulting services', 'AI implementation strategy', 'Pilot extraction', 'Shadow AI audit', 'enterprise AI governance', 'AI for SMBs', 'AI project rescue'],
     alternates: {
         canonical: 'https://www.richardewing.io/advisory',
     },
     openGraph: {
-        title: 'AI Consulting Services & Implementation Strategy | Richard Ewing',
-        description: 'Worried about EU AI Act fines from shadow AI? Get a comprehensive 90-day AI audit for $15k. Richard Ewing helps CISOs stop ungoverned AI risks.',
+        title: 'Forensic AI Audits Block Runaway Agent Loops | Richard Ewing',
+        description: 'A forensic AI audit identifies and blocks shadow exfiltration from agentic loops. Halt AI billing shock and secure deterministic execution.',
         url: 'https://www.richardewing.io/advisory',
         type: 'website',
     },
