@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Your AI-First Company Has AI-Last Unit Economics | Margin Defense',
-    description: 'AI-native companies face unique margin pressure: inference COGS that scale with users. How to defend gross margins before Series B.',
+    title: 'Your AI & Strategy Diagnostics | Richard Ewing',
+    description: 'Your AI provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['AI company technical debt', 'AI margin erosion', 'LLM cost optimization', 'AI-first AI economics', 'AI governance advisory', 'LLM unit economics', 'exogram integration'],
     alternates: { canonical: 'https://www.richardewing.io/industries/ai-first' },
     openGraph: { title: 'AI Economics for AI-First Companies', description: 'Margin defense, cost modelinng, and AI governance for companies building on LLMs.', url: 'https://www.richardewing.io/industries/ai-first', type: 'website' },

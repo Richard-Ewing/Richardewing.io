@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'APER Calculator FAQ | How It Works | Richard Ewing',
-    description: 'How to benchmark engineering efficiency with APER: methodology, scoring interpretation, and comparison against top-performing SaaS companies.',
+    title: 'APER Calculator FAQ & Strategy Diagnostics | Richard Ewing',
+    description: 'APER Calculator FAQ provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['APER calculator', 'engineering efficiency', 'revenue per engineer', 'engineering productivity metrics'],
     alternates: { canonical: 'https://www.richardewing.io/tools/aper/faq' },
     openGraph: { title: 'APER Calculator FAQ', description: 'How to benchmark engineering efficiency with APER.', url: 'https://www.richardewing.io/tools/aper/faq', type: 'article' },

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Security Tech Debt Is Your Biggest Vulnerability | Cybersecurity Audit',
-    description: 'Quantify your security debt: threat detection AI costs, compliance overhead, and the hidden economics of cybersecurity engineering teams.',
+    title: 'Security Tech Debt Is Your Big & Strategy Diagnostics | Richard Ewing',
+    description: 'Security Tech Debt Is Your Big provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['cybersecurity technical debt', 'security debt', 'AI threat detection cost', 'cybersecurity CTO advisor', 'security engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/cybersecurity' },
     openGraph: { title: 'AI Economics for Cybersecurity', description: 'Security debt compounds faster than any other form of technical debt.', url: 'https://www.richardewing.io/industries/cybersecurity', type: 'website' },

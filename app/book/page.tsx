@@ -4,8 +4,8 @@ import { NewsletterForm } from '../components/newsletter-form';
 import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-    title: 'Stop Losing Money on AI | The AI Economist Book | 2026',
-    description: 'The definitive book on AI economics: why 73% of AI projects destroy margins, and the frameworks to prevent it. Pre-order now.',
+    title: 'Stop Losing Money on AI & Strategy Diagnostics | Richard Ewing',
+    description: 'Stop Losing Money on AI provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['AI economist book', 'technical debt book', 'R&D capital allocation', 'engineering economics', 'Richard Ewing book'],
     alternates: { canonical: 'https://www.richardewing.io/book' },
     openGraph: {

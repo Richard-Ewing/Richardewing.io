@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import ToolsContent from './tools-content';
 
 export const metadata: Metadata = {
-    title: 'Free AI Cost Attribution & Token Audit Calculators',
-    description: 'Stop API margin collapse. Use our free forensic tools for CTOs to measure software entropy, calculate AUEB (AI Unit Economics), and spot shadow AI.',
+    title: 'Free AI Cost Attribution & Tok & Strategy Diagnostics | Richard Ewing',
+    description: 'Free AI Cost Attribution & Tok provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'technical debt calculator', 'product debt index', 'free engineering tools',
         'AI unit economics calculator', 'SaaS valuation tool', 'revenue per engineer calculator',

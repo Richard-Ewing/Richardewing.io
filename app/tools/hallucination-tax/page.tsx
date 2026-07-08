@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import HallucinationTaxTool from './content';
 
 export const metadata: Metadata = {
-    title: '$67B Lost to AI Hallucinations Globally | Calculate Your Hallucination Tax',
-    description: 'Your team spends 4.3 hours/week verifying AI outputs — that is $14,200/employee/year in invisible labor. Calculate your organization\'s total Hallucination Tax.',
+    title: '$67B Lost to AI Hallucinations & Strategy Diagnostics | Richard Ewing',
+    description: '$67B Lost to AI Hallucinations provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'AI hallucination cost',
         'hallucination tax calculator',

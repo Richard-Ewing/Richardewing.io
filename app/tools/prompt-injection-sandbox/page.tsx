@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import PromptInjectionContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Can Your AI Be Jailbroken? | Prompt Injection Red Team Sandbox',
-    description: 'Test your AI system prompts against real-world jailbreaks, Base64 encoding attacks, and roleplay bypasses. Find vulnerabilities before attackers do. Free red-teaming tool.',
+    title: 'Can Your AI Be Jailbroken? & Strategy Diagnostics | Richard Ewing',
+    description: 'Can Your AI Be Jailbroken? provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'Prompt Injection Scanner',
         'LLM Red Teaming',

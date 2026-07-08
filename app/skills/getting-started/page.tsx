@@ -4,8 +4,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { BookOpen, Terminal, FolderOpen, Settings, Wrench, Shield, Layers, CheckCircle, ArrowRight, AlertTriangle, HelpCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Governance Skills Setup Guide | Install in 5 Min',
-    description: 'Step-by-step installation guide for AI governance skills. Deploy runtime controls for Claude Code in under 5 minutes. Free and open source.',
+    title: 'Governance Skills Setup Guide & Strategy Diagnostics | Richard Ewing',
+    description: 'Governance Skills Setup Guide provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['how to use Claude skills', 'install Claude Code skills', 'CLAUDE.md tutorial', 'Cursor rules setup', 'AI coding agent governance', 'deploy runtime governance'],
     openGraph: {
         title: 'Getting Started — Deploy Governance Skills in 10 Minutes',

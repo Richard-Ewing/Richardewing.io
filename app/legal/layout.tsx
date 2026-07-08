@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Legal & Terms of Use | Richard Ewing Advisory',
-    description: 'Terms of service, privacy policy, intellectual property rights, and advisory engagement disclaimers for richardewing.io.',
+    title: 'Legal & Terms of Use & Strategy Diagnostics | Richard Ewing',
+    description: 'Legal & Terms of Use provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     alternates: {
         canonical: 'https://www.richardewing.io/legal',
     },

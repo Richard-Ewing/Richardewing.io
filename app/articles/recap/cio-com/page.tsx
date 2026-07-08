@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'CIO.com Articles on R&D Capital | Richard Ewing',
-    description: 'Published on CIO.com: R&D capital efficiency strategies, technical debt economics, and AI adoption ROI frameworks for enterprise leaders.',
+    title: 'CIO.com Articles on R&D Capita & Strategy Diagnostics | Richard Ewing',
+    description: 'CIO.com Articles on R&D Capita provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['Richard Ewing CIO.com', 'CIO articles technical debt', 'R&D capital efficiency CIO', 'CTO thought leadership', 'AI economist CIO.com'],
     alternates: { canonical: 'https://www.richardewing.io/articles/recap/cio-com' },
     openGraph: { title: 'Richard Ewing on CIO.com', description: 'Published articles on R&D capital efficiency, technical debt economics, and AI adoption for CIOs.', url: 'https://www.richardewing.io/articles/recap/cio-com', type: 'article' },

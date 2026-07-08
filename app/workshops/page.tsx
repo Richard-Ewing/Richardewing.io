@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import { Mic, Users, Lightbulb, Clock, ArrowRight, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'AI Economics Keynotes & Workshops | The Talk Your Leadership Team Needs',
-    description: 'Your leadership team is spending more on AI with no measurable return. Book the keynote that reframes AI as an economics problem. Published in CIO.com and Built In.',
+    title: 'AI Economics Keynotes & Worksh & Strategy Diagnostics | Richard Ewing',
+    description: 'AI Economics Keynotes & Worksh provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'technical debt keynote speaker', 'AI economics speaker', 'AI economics workshop',
         'engineering leadership speaker', 'CTO conference speaker', 'R&D audit workshop',

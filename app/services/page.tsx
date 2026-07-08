@@ -7,8 +7,8 @@ import CheckoutButton from '@/app/components/client/CheckoutButton';
 import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-    title: 'AI Advisory Services & Packages | Richard Ewing',
-    description: 'R&D Capital Audits, Inference Cost Optimization Sprints, and Board Advisor packages starting from $7,500. View our services and packages.',
+    title: 'AI Advisory Services & Package & Strategy Diagnostics | Richard Ewing',
+    description: 'AI Advisory Services & Package provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     alternates: {
         canonical: 'https://www.richardewing.io/services',
     },

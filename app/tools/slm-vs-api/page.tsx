@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import SLMTool from './content';
 
 export const metadata: Metadata = {
-    title: 'Should You Self-Host AI or Keep Paying OpenAI? | Build vs Buy Calculator',
-    description: 'Your OpenAI bill is $50K/month and climbing. At what volume does self-hosting on H100s become cheaper? Calculate the exact breakeven between renting API tokens and owning inference.',
+    title: 'Should You Self & Strategy Diagnostics | Richard Ewing',
+    description: 'Should You Self provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'SLM vs LLM',
         'OpenAI API cost calculator',

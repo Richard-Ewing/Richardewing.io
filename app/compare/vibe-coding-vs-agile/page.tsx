@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Vibe Coding vs Agile | Why AI Debt Beats Sprints',
-    description: 'Vibe coding generates 10x faster but accumulates 50x the technical debt. Why the Agile playbook fails when AI writes most of your code.',
+    title: 'Vibe Coding vs Agile & Strategy Diagnostics | Richard Ewing',
+    description: 'Vibe Coding vs Agile provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['vibe coding', 'agile development', 'generative ai debt', 'vibe coding vs agile', 'engineering velocity', 'shadow ai'],
     alternates: { canonical: 'https://www.richardewing.io/compare/vibe-coding-vs-agile' },
     openGraph: { title: 'Vibe Coding vs Agile: Debt Acceleration vs Iteration', description: 'Vibe Coding feels fast, but it generates hidden technical debt that breaks Agile sprint planning.', url: 'https://www.richardewing.io/compare/vibe-coding-vs-agile', type: 'article' },

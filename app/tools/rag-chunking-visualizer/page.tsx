@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import RagChunkingContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Why Is Your RAG Returning Wrong Answers? | Chunking Visualizer',
-    description: 'Bad chunking is the #1 reason RAG pipelines hallucinate. Visualize how your text splits into vector embeddings and optimize chunk boundaries before they poison your retrieval.',
+    title: 'Why Is Your RAG Returning Wron & Strategy Diagnostics | Richard Ewing',
+    description: 'Why Is Your RAG Returning Wron provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'RAG chunking strategy',
         'Semantic search visualizer',

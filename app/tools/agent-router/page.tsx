@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import AgentRouterContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Multi-Agent Token Burn Calculator | Prevent Cloud Bankruptcy',
-    description: 'Brute-forcing GPT-4 across an enterprise swarm leads to immediate token bankruptcy. Calculate compound token decay and model the break-even for edge routing.',
+    title: 'Multi & Strategy Diagnostics | Richard Ewing',
+    description: 'Multi provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'Agentic Workflow Simulator',
         'LLM Token Burn Rate Calculator',

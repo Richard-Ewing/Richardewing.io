@@ -6,8 +6,8 @@ import { ShieldAlert, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/challenges' },
-    title: 'Enterprise AI Challenges | Solve Hidden Cost Traps',
-    description: 'Identify and solve the operational challenges destroying AI ROI: governance drift, hallucination debt, shadow AI risk, and agent chaos.',
+    title: 'Enterprise AI Challenges & Strategy Diagnostics | Richard Ewing',
+    description: 'Enterprise AI Challenges provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
 };
 
 export default function ChallengesIndexPage() {

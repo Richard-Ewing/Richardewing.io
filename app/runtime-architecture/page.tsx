@@ -6,8 +6,8 @@ import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-    title: 'Agentic Runtime Architecture | 4-Layer Formula',
-    description: 'The 4-layer agentic runtime: input validation, execution boundaries, output verification, and cost circuit breakers. Stop AI agent chaos.',
+    title: 'Agentic Runtime Architecture & Strategy Diagnostics | Richard Ewing',
+    description: 'Agentic Runtime Architecture provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'agent runtime architecture', 'Claude Code runtime', 'agentic runtime infrastructure',
         'runtime cognition architecture', 'constrained execution', 'bounded cognition',

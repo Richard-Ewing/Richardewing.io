@@ -6,8 +6,8 @@ import ResearchTimeline from '@/app/components/client/ResearchTimeline';
 import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-    title: 'Research Evolution Timeline | Production AI Governance',
-    description: 'Explore the multi-year chronological progression of the Production AI Governance research program across 6 distinct intellectual phases from 2024 to 2026+.',
+    title: 'Research Evolution Timeline & Strategy Diagnostics | Richard Ewing',
+    description: 'Research Evolution Timeline provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     alternates: {
         canonical: 'https://www.richardewing.io/research',
     },

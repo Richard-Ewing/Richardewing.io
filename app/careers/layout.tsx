@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Careers at Richard Ewing | AI Economics Practice',
-    description: 'Join the engineering economics practice. Open roles in AI product economics, generative UI architecture, and technical due diligence.',
+    title: 'Careers at Richard Ewing & Strategy Diagnostics | Richard Ewing',
+    description: 'Careers at Richard Ewing provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     alternates: { canonical: 'https://www.richardewing.io/careers' },
     openGraph: {
         title: 'Careers — Join the Engineering Economics Practice',

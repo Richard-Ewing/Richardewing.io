@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Audit Interview vs Traditional Hiring | Ewing',
-    description: 'Traditional interviews cost $2K per loop and vary by interviewer mood. The Audit Interview is standardized, AI-scored, and legally defensible.',
+    title: 'Audit Interview vs Traditional & Strategy Diagnostics | Richard Ewing',
+    description: 'Audit Interview vs Traditional provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['audit interview vs traditional interview', 'AI hiring assessment', 'engineering interview comparison', 'bias-free interviewing', 'structured interview'],
     alternates: { canonical: 'https://www.richardewing.io/compare/audit-interview-vs-traditional' },
     openGraph: { title: 'Audit Interview vs Traditional Interview', description: 'Why AI-standardized assessments outperform gut-feel hiring.', url: 'https://www.richardewing.io/compare/audit-interview-vs-traditional', type: 'article' },

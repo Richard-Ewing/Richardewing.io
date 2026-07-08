@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'CTO Toolkit | Free AI & Engineering Diagnostics',
-    description: 'Free diagnostic tools for CTOs: Product Debt Index, APER calculator, AI unit economics, and engineering efficiency benchmarks.',
+    title: 'CTO Toolkit & Strategy Diagnostics | Richard Ewing',
+    description: 'CTO Toolkit provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['CTO tools', 'engineering benchmarks', 'technical debt calculator CTO', 'CTO advisory', 'engineering productivity metrics', 'R&D capital efficiency CTO'],
     alternates: { canonical: 'https://www.richardewing.io/for-ctos' },
     openGraph: { title: 'For CTOs — Engineering Economics Toolkit', description: 'Free tools and benchmarks for engineering leaders.', url: 'https://www.richardewing.io/for-ctos', type: 'website' },

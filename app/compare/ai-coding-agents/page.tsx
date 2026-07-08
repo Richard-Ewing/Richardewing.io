@@ -4,8 +4,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { ShieldCheck, AlertTriangle, Check, X, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Claude Code vs Cursor vs Windsurf 2026 | Ewing',
-    description: 'Unbiased comparison of AI coding agents: Claude Code, Cursor, and Windsurf. Economics, failure modes, and which one destroys the least code.',
+    title: 'Claude Code vs Cursor vs Winds & Strategy Diagnostics | Richard Ewing',
+    description: 'Claude Code vs Cursor vs Winds provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['Claude Code vs Cursor', 'Cursor vs Windsurf', 'Claude Code vs Windsurf', 'GitHub Copilot vs Cursor', 'AI coding agent comparison', 'AI coding agent pricing 2026', 'best AI coding agent 2026', 'Cursor problems', 'Copilot problems', 'Windsurf problems', 'AI coding agent complaints', 'Claude Code governance', 'Cursor governance', 'Windsurf safety', 'Cline vs Roo Code', 'deterministic vs probabilistic coding', 'AI agent runtime governance comparison', 'Tabnine vs Copilot'],
     openGraph: {
         title: 'Claude Code vs Cursor vs Windsurf 2026 — Pricing, Problems & Governance',

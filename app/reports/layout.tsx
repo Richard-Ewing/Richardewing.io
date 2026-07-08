@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Data-Driven Reports on AI Waste & R&D Bleed | Richard Ewing',
-    description: 'Original research and analysis on AI engineering failure rates, unit economics traps, and R&D capital inefficiencies. Insights for tech executives.',
+    title: 'Data & Strategy Diagnostics | Richard Ewing',
+    description: 'Data provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     alternates: { canonical: 'https://www.richardewing.io/reports' },
     openGraph: {
         title: 'Reports — Engineering Economics Research',

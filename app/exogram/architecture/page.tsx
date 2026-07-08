@@ -4,8 +4,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import GovernanceDashboard from '../../components/GovernanceDashboard';
 
 export const metadata: Metadata = {
-    title: 'Exogram Architecture | AI Threat Gating Design',
-    description: 'Deep dive into the 4-layer verification architecture: input validation, execution boundaries, output verification, and cost circuit breakers.',
+    title: 'Exogram Architecture & Strategy Diagnostics | Richard Ewing',
+    description: 'Exogram Architecture provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     alternates: { canonical: 'https://www.richardewing.io/exogram/architecture' },
 };
 

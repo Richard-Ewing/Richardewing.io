@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Product Debt Index FAQ | How PDI Works | Ewing',
-    description: 'How PDI quantifies technical debt in dollar terms, calculates insolvency dates, and translates engineering risk into executive-grade metrics.',
+    title: 'Product Debt Index FAQ & Strategy Diagnostics | Richard Ewing',
+    description: 'Product Debt Index FAQ provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['product debt index', 'PDI calculator', 'technical debt measurement', 'PDI vs DORA', 'PDI score meaning'],
     alternates: { canonical: 'https://www.richardewing.io/tools/pdi/faq' },
     openGraph: { title: 'Product Debt Index (PDI) FAQ', description: 'Everything you need to know about the PDI framework.', url: 'https://www.richardewing.io/tools/pdi/faq', type: 'article' },

@@ -6,8 +6,8 @@ import ExogramBridge from '@/components/ExogramBridge';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Why Cursor Rewrites Files | Root Cause & Fix',
-    description: 'Cursor overwrites unrelated code because it lacks deterministic file boundaries. The root cause analysis and the governance control to stop it.',
+    title: 'Why Cursor Rewrites Files & Strategy Diagnostics | Richard Ewing',
+    description: 'Why Cursor Rewrites Files provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['Cursor rewrites files', 'Cursor rewriting files', 'Cursor modifying wrong files', 'AI agent scope creep', 'AI unintended edits', 'AI changing everything', 'AI touched something it shouldn\'t', 'AI refactoring code I didn\'t ask', 'Windsurf file access', 'AI coding agent file mutation', 'repository drift', 'AI agent changing my code'],
     openGraph: {
         title: 'Why Cursor Rewrites Files — AI Agent Scope Creep Explained',

@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import FTEContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Should You Replace That Role With AI? | FTE Displacement Calculator',
-    description: 'Calculate the true EBITDA impact of replacing human roles with AI agents. Model error rates, retraining costs, and the breakeven point. Not every role should be automated.',
+    title: 'Should You Replace That Role W & Strategy Diagnostics | Richard Ewing',
+    description: 'Should You Replace That Role W provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'AI agent ROI calculator',
         'Customer support automation cost',

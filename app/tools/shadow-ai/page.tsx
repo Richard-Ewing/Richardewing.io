@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import ShadowContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Are Employees Leaking Data to ChatGPT? | Shadow AI Risk Scanner',
-    description: '73% of employees use unauthorized AI tools at work. Calculate your SOC2 exposure, data leak blast radius, and compliance liability from Shadow AI usage before auditors find it.',
+    title: 'Are Employees Leaking Data to & Strategy Diagnostics | Richard Ewing',
+    description: 'Are Employees Leaking Data to provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'Shadow AI risk calculator',
         'LLM data leakage tool',

@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import APERTool from './content';
 
 export const metadata: Metadata = {
-    title: 'Are You Overstaffed or Underperforming? | Revenue Per Engineer Benchmark',
-    description: 'Stripe generates $1.4M per engineer. Where does your team rank? Benchmark your R&D efficiency against elite SaaS companies and find the organizational bloat killing your margins.',
+    title: 'Are You Overstaffed or Underpe & Strategy Diagnostics | Richard Ewing',
+    description: 'Are You Overstaffed or Underpe provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'revenue per engineer',
         'engineering efficiency calculator',

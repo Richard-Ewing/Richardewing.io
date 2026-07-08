@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'AI Learning Hub | 50+ Curated Courses & Tools',
-    description: 'Curated collection of 50+ AI courses, tools, and learning resources across machine learning, prompt engineering, and AI economics.',
+    title: 'AI Learning Hub & Strategy Diagnostics | Richard Ewing',
+    description: 'AI Learning Hub provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'free AI courses 2026', 'Anthropic courses', 'Claude courses', 'Anthropic Academy',
         'AI fluency course', 'MCP course', 'Claude API course', 'free AI training',

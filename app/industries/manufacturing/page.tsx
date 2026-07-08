@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Manufacturing & Robotics AI Economics | Richard Ewing',
-    description: 'Industrial AI and robotics economics: edge computing constraints, IoT data ingestion latency, and robotic process automation costs.',
+    title: 'Manufacturing & Robotics AI Ec & Strategy Diagnostics | Richard Ewing',
+    description: 'Manufacturing & Robotics AI Ec provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['manufacturing technical debt', 'robotics CTO advisor', 'industrial AI governance', 'edge AI economics', 'manufacturing software debt'],
     alternates: { canonical: 'https://www.richardewing.io/industries/manufacturing' },
     openGraph: { title: 'AI Economics for Manufacturing & Robotics', description: 'R&D audit and AI governance for industrial systems.', url: 'https://www.richardewing.io/industries/manufacturing', type: 'website' },

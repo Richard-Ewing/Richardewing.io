@@ -3,8 +3,8 @@ import DiagnosticCTA from '@/app/components/DiagnosticCTA';
 import PDITool from './content';
 
 export const metadata: Metadata = {
-    title: 'Director Alert: Calculate Your Technical Insolvency Date',
-    description: '45% of AI code introduces vulnerabilities. Vibe coding creates massive technical debt. Find the exact quarter your maintenance load exceeds your engineering capacity.',
+    title: 'Director Alert: Calculate Your & Strategy Diagnostics | Richard Ewing',
+    description: 'Director Alert: Calculate Your provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'product debt index',
         'technical debt calculator',

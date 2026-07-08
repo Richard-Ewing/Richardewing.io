@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'APER vs Jellyfish | Engineering Metrics Compared',
-    description: 'APER measures economic output per engineer. Jellyfish tracks activity. See why revenue-per-engineer beats time-tracking for engineering leaders.',
+    title: 'APER vs Jellyfish & Strategy Diagnostics | Richard Ewing',
+    description: 'APER vs Jellyfish provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['APER vs Jellyfish', 'engineering metrics comparison', 'Jellyfish alternative', 'revenue per engineer', 'engineering productivity metrics'],
     alternates: { canonical: 'https://www.richardewing.io/compare/aper-vs-jellyfish' },
     openGraph: { title: 'APER vs Jellyfish — Engineering Metrics', description: 'Revenue-per-engineer economics vs. engineering management.', url: 'https://www.richardewing.io/compare/aper-vs-jellyfish', type: 'article' },

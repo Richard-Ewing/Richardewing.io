@@ -6,8 +6,8 @@ import ExogramBridge from '@/components/ExogramBridge';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Why Claude Loses Context | Context Rot Explained',
-    description: 'Claude degrades over long sessions as context windows fill with stale tokens. The technical cause, the economic cost, and the governance fix.',
+    title: 'Why Claude Loses Context & Strategy Diagnostics | Richard Ewing',
+    description: 'Why Claude Loses Context provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['Claude Code losing context', 'Claude Code context loss', 'Claude Code session amnesia', 'Claude context rot', 'Claude context bleeding', 'Claude context drowning', 'Claude context decay', 'why Claude forgets instructions', 'Claude contradicts itself', 'Claude loses track', 'Claude Code getting worse', 'Claude Code context window', 'Claude Code long sessions'],
     openGraph: {
         title: 'Why Claude Loses Context — The Technical Explanation',

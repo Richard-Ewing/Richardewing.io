@@ -5,8 +5,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { Shield, AlertTriangle, DollarSign, ArrowRight, Lock, Check, X } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'AI Guardrails: Lakera vs Galileo | Richard Ewing',
-    description: 'Compare AI guardrail platforms head-to-head. Which stops hallucinations, prompt injection, and data leakage without killing inference speed?',
+    title: 'AI Guardrails: Lakera vs Galil & Strategy Diagnostics | Richard Ewing',
+    description: 'AI Guardrails: Lakera vs Galil provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['AI guardrails comparison', 'Lakera Guard review', 'Galileo AI pricing', 'Invariant Labs review', 'AI governance platform', 'best AI guardrails 2026', 'Lakera vs Galileo', 'AI agent security platform', 'AI guardrails pricing', 'NeMo Guardrails alternative', 'Zenity AI review', 'Endor Labs AI review', 'AI coding governance', 'runtime governance vs guardrails'],
     openGraph: {
         title: 'AI Guardrails Platform Comparison 2026 — Enterprise vs Practitioner Governance',

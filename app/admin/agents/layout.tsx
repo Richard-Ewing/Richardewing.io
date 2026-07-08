@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Agent Operations Dashboard | Richard Ewing',
-    description: 'Real-time autonomous agent monitoring dashboard. View agent run history, lead pipeline, SEO health, and content draft status.',
+    title: 'Agent Operations Dashboard & Strategy Diagnostics | Richard Ewing',
+    description: 'Agent Operations Dashboard provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     robots: 'noindex, nofollow',
 };
 

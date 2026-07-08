@@ -6,8 +6,8 @@ import ContactForm from '@/app/components/client/ContactForm';
 import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-    title: 'Contact Richard Ewing | AI Economist & Capital Auditor',
-    description: 'Book a free diagnostic or schedule an R&D capital audit. Get in touch with Richard Ewing.',
+    title: 'Contact Richard Ewing & Strategy Diagnostics | Richard Ewing',
+    description: 'Contact Richard Ewing provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     alternates: {
         canonical: 'https://www.richardewing.io/contact',
     },

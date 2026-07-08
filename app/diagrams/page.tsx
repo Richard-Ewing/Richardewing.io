@@ -4,8 +4,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'AI Governance Architecture Diagrams | Free | Ewing',
-    description: 'Visual architecture diagrams: deterministic control layers, agentic governance flows, and AI cost structure maps. Free to download.',
+    title: 'AI Governance Architecture Dia & Strategy Diagnostics | Richard Ewing',
+    description: 'AI Governance Architecture Dia provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['runtime architecture diagrams', 'AI agent governance diagrams', 'bounded cognition diagram', 'retry inflation flow', 'MCP containment architecture', 'orchestration collapse pattern'],
     openGraph: {
         title: 'Runtime Architecture Diagrams — Governance Visual Library',

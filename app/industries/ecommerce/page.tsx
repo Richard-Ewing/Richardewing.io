@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Platform Complexity Is Crushing Your eCommerce Margins | AI Audit',
-    description: 'E-commerce platform debt audits: recommendation engine costs, checkout optimization AI, and the economics of scaling personalization.',
+    title: 'Platform Complexity Is Crushin & Strategy Diagnostics | Richard Ewing',
+    description: 'Platform Complexity Is Crushin provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['ecommerce technical debt', 'ecommerce platform engineering', 'AI recommendation cost', 'checkout optimization', 'ecommerce CTO advisor', 'peak traffic scaling'],
     alternates: { canonical: 'https://www.richardewing.io/industries/ecommerce' },
     openGraph: { title: 'AI Economics for E-Commerce', description: 'Platform debt, AI personalization economics, and peak traffic scaling for e-commerce.', url: 'https://www.richardewing.io/industries/ecommerce', type: 'website' },

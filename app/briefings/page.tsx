@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import BriefingsPage from './content';
 
 export const metadata: Metadata = {
-    title: 'Executive AI Briefings | Board-Ready Intel | Ewing',
-    description: 'Concise executive briefings on AI economics, R&D risk, and competitive positioning. Designed for board presentations and C-suite strategy.',
+    title: 'Executive AI Briefings & Strategy Diagnostics | Richard Ewing',
+    description: 'Executive AI Briefings provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'executive briefings',
         'war-time leadership',

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { ArrowLeft, Shield } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'EU AI Act Compliance FAQ | Everything Engineering Leaders Need to Know',
-    description: 'Answers to the most urgent EU AI Act questions: enforcement dates, fine structure, risk classification, shadow AI exposure, and compliance timelines for CTOs and CISOs.',
+    title: 'EU AI Act Compliance FAQ & Strategy Diagnostics | Richard Ewing',
+    description: 'EU AI Act Compliance FAQ provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
 };
 
 const FAQS = [

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'The AI Economist — Book by Richard Ewing | Coming Soon',
-    description: 'The definitive guide to R&D capital allocation and technical debt valuation. Pre-order the book by Richard Ewing, AI Economist and Founder of Exogram.',
+    title: 'The AI Economist & Strategy Diagnostics | Richard Ewing',
+    description: 'The AI Economist provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'AI economist book',
         'R&D capital allocation',

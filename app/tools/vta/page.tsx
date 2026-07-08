@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import VTATool from './content';
 
 export const metadata: Metadata = {
-    title: 'How Much Does AI Hallucination Verification Actually Cost? | Free Calculator',
-    description: `Every AI output needs a human to verify it. That hidden verification cost — the Volatility Tax — can consume 30-60% of your AI savings. Calculate exactly how much you're losing.`,
+    title: 'How Much Does AI Hallucination & Strategy Diagnostics | Richard Ewing',
+    description: `How Much Does AI Hallucination provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.'re losing.`,
     keywords: [
         'AI Volatility Tax',
         'human-in-the-loop cost',

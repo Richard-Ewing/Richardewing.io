@@ -6,8 +6,8 @@ import RuntimeEscalationSimulator from '../components/RuntimeEscalationSimulator
 import GovernanceMaturityAssessment from '../components/GovernanceMaturityAssessment';
 
 export const metadata: Metadata = {
-    title: 'Free AI & Engineering Diagnostics | Richard Ewing',
-    description: 'Run free diagnostics on your AI costs, engineering efficiency, and technical debt exposure. The same tools used in $7,500 R&D capital audits.',
+    title: 'Free AI & Engineering Diagnost & Strategy Diagnostics | Richard Ewing',
+    description: 'Free AI & Engineering Diagnost provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     alternates: { canonical: 'https://www.richardewing.io/diagnose' },
     openGraph: {
         title: 'Diagnose Your AI & Engineering Risk',

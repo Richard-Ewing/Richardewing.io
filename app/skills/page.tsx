@@ -11,8 +11,8 @@ import EcosystemPainSignals from '@/components/skills/EcosystemPainSignals';
 import ExogramBridge from '@/components/skills/ExogramBridge';
 
 export const metadata: Metadata = {
-  title: 'Governance Skills for Claude Code | Runtime Rules',
-  description: 'Installable governance skills for Claude Code: deterministic runtime controls, cost limits, and quality gates that prevent AI agent drift.',
+  title: 'Governance Skills for Claude C & Strategy Diagnostics | Richard Ewing',
+  description: 'Governance Skills for Claude C provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
   openGraph: {
     title: 'Deterministic Runtime Infrastructure for Claude Code & Agentic Engineering',
     description: 'Deployable runtime governance modules across 4 architectural layers: Identity, Skill, Tool, and Environment governance for deterministic AI execution.',

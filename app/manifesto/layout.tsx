@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Stop Building AI Features That Lose Money | AI Economist Manifesto',
-    description: 'The era of ZIRP-fueled building is dead. Read the manifesto on why innovation without solvency is philanthropy and how product leaders survive the AI margin crash.',
+    title: 'Stop Building AI Features That & Strategy Diagnostics | Richard Ewing',
+    description: 'Stop Building AI Features That provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'AI economist manifesto',
         'innovation without solvency',

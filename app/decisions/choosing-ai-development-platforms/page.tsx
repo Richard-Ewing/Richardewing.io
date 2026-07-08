@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { ArrowRight, BookOpen, AlertTriangle, CheckCircle, Database } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Choosing AI Development Platforms: Cost vs. Predictability',
-    description: 'An architectural analysis of AI development platforms for enterprise SaaS. Compare frameworks based on unit economics and margin stability rather than theoretical capabilities.',
+    title: 'Choosing AI Development Platfo & Strategy Diagnostics | Richard Ewing',
+    description: 'Choosing AI Development Platfo provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     alternates: {
         canonical: 'https://www.richardewing.io/decisions/choosing-ai-development-platforms',
     },

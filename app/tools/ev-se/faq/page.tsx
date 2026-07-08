@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'EV/SE Calculator FAQ | Valuation Methodology | Ewing',
-    description: 'How PE and VC firms model execution risk, churn, and developer metrics in SaaS valuations. The methodology behind the EV/SE engine.',
+    title: 'EV/SE Calculator FAQ & Strategy Diagnostics | Richard Ewing',
+    description: 'EV/SE Calculator FAQ provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['enterprise value per engineer', 'EV/SE calculator', 'engineering team valuation', 'M&A engineering assessment'],
     alternates: { canonical: 'https://www.richardewing.io/tools/ev-se/faq' },
     openGraph: { title: 'EV/SE Calculator FAQ', description: 'How to value engineering teams with EV/SE.', url: 'https://www.richardewing.io/tools/ev-se/faq', type: 'article' },

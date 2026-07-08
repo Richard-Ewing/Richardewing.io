@@ -5,8 +5,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/case-studies' },
-    title: 'AI Economics Case Studies | Real Results | Ewing',
-    description: 'How enterprises saved millions using R&D capital audits, technical debt quantification, and AI unit economics diagnostics. Real client outcomes.',
+    title: 'AI Economics Case Studies & Strategy Diagnostics | Richard Ewing',
+    description: 'AI Economics Case Studies provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
 };
 
 export default function CaseStudiesPage() {

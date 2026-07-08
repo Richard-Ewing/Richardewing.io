@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import CloudContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Is AWS Eating Your EBITDA? | Cloud Repatriation Savings Calculator',
-    description: 'Your AWS bill grows 20% per year. Calculate the exact EBITDA you recapture by moving workloads off-cloud. Model the breakeven point for bare-metal vs. renting.',
+    title: 'Is AWS Eating Your EBITDA? & Strategy Diagnostics | Richard Ewing',
+    description: 'Is AWS Eating Your EBITDA? provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'Cloud repatriation calculator',
         'AWS vs Bare Metal',

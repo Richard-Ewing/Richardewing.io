@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Audit Interview FAQ | Hiring Protocol | Ewing',
-    description: 'How the Audit Interview tests senior engineering judgment instead of memorized syntax. Methodology, scoring rubric, and assessment tracks.',
+    title: 'Audit Interview FAQ & Strategy Diagnostics | Richard Ewing',
+    description: 'Audit Interview FAQ provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['audit interview tool', 'AI technical interview', 'engineering assessment', 'judgment-based interview'],
     alternates: { canonical: 'https://www.richardewing.io/tools/audit-interview/faq' },
     openGraph: { title: 'Audit Interview FAQ', description: 'AI-powered engineering assessment that tests judgment.', url: 'https://www.richardewing.io/tools/audit-interview/faq', type: 'article' },

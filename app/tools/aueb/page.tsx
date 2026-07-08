@@ -3,8 +3,8 @@ import DiagnosticCTA from '@/app/components/DiagnosticCTA';
 import AUEBTool from './content';
 
 export const metadata: Metadata = {
-    title: 'CFO Alert: Calculate Your AI Unit Economics Collapse Point',
-    description: 'LLM costs scale non-linearly. Find the exact usage volume where your AI features start destroying margin and creating billing shock. 3-Minute Audit.',
+    title: 'CFO Alert: Calculate Your AI U & Strategy Diagnostics | Richard Ewing',
+    description: 'CFO Alert: Calculate Your AI U provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'AI unit economics',
         'LLM cost calculator',

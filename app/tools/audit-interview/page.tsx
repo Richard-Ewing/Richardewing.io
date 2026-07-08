@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import AuditInterviewLanding from './content';
 
 export const metadata: Metadata = {
-    title: 'Does This Engineer Actually Think, or Just Code? | Judgment Test',
-    description: 'LeetCode tests syntax. This tests judgment. The Audit Interview evaluates whether engineers can verify, reason architecturally, and make tradeoff decisions — not just write code.',
+    title: 'Does This Engineer Actually Th & Strategy Diagnostics | Richard Ewing',
+    description: 'Does This Engineer Actually Th provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     alternates: {
         canonical: 'https://www.richardewing.io/tools/audit-interview',
     },

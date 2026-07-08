@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import DueDiligenceTool from './content';
 
 export const metadata: Metadata = {
-    title: 'Is This Acquisition Full of Hidden Tech Debt? | M&A Due Diligence Scanner',
-    description: 'Before you sign the term sheet: scan for hidden technical debt, AI dependency risks, and inflated engineering metrics. The same diligence protocol used in $15K PE deal evaluations.',
+    title: 'Is This Acquisition Full of Hi & Strategy Diagnostics | Richard Ewing',
+    description: 'Is This Acquisition Full of Hi provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'engineering due diligence',
         'technical due diligence',

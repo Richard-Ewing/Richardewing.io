@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'The AI Economics Operating System | Stop R&D Capital Leakage',
-    description: 'Force financial transparency in your engineering org. Access the full suite of diagnostic tools, audit protocols, and governance frameworks by Richard Ewing.',
+    title: 'The AI Economics Operating Sys & Strategy Diagnostics | Richard Ewing',
+    description: 'The AI Economics Operating Sys provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'AI economist tools',
         'algorithmic solvency',

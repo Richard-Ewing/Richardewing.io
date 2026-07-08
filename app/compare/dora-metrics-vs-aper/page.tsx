@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'DORA Metrics vs APER | Speed vs Economic Yield',
-    description: 'DORA measures deployment frequency. APER measures revenue per engineer. Why operational speed without economic yield is a vanity metric.',
+    title: 'DORA Metrics vs APER & Strategy Diagnostics | Richard Ewing',
+    description: 'DORA Metrics vs APER provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['dora metrics', 'aper', 'revenue per engineer', 'engineering productivity', 'dora metrics vs aper', 'engineering metrics'],
     alternates: { canonical: 'https://www.richardewing.io/compare/dora-metrics-vs-aper' },
     openGraph: { title: 'DORA Metrics vs APER — Velocity vs Value', description: 'Why high DORA metrics don\'t guarantee business success, and why CFOs are shifting to APER.', url: 'https://www.richardewing.io/compare/dora-metrics-vs-aper', type: 'article' },

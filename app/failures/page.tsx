@@ -5,8 +5,8 @@ import { failures } from '@/lib/content/failures';
 
 export const metadata = {
     alternates: { canonical: 'https://www.richardewing.io/failures' },
-  title: 'AI Failure Database | 15+ Incident Analyses | Ewing',
-  description: 'Documented AI failures with cost analysis and root causes: hallucination debt, retry inflation, context rot, and agentic drift incidents.',
+  title: 'AI Failure Database & Strategy Diagnostics | Richard Ewing',
+  description: 'AI Failure Database provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
 };
 
 export default function FailuresIndexPage() {

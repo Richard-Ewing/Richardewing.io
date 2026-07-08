@@ -6,8 +6,8 @@ import ExogramBridge from '@/components/ExogramBridge';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Windsurf Problems & Fixes 2026 | Richard Ewing',
-    description: 'Windsurf editor loses project context, creates duplicate code, and lacks governance controls. The known issues and enterprise alternatives.',
+    title: 'Windsurf Problems & Fixes 2026 & Strategy Diagnostics | Richard Ewing',
+    description: 'Windsurf Problems & Fixes 2026 provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['Windsurf problems', 'Windsurf problems 2026', 'Windsurf AI complaints', 'Windsurf pricing', 'Windsurf credit burn', 'Windsurf alternative', 'Windsurf rug pull', 'left Windsurf', 'switched from Windsurf', 'Windsurf credits expensive', 'Windsurf hallucinations', 'Windsurf Cascade problems'],
     openGraph: {
         title: 'Windsurf Problems 2026 — Real User Complaints & Governance Solutions',

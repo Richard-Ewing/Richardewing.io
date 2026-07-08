@@ -5,8 +5,8 @@ import { ShieldCheck, Users, Copy, CheckCircle, ChevronLeft } from 'lucide-react
 import { CopyButton } from './CopyButton';
 
 export const metadata = {
-    title: 'Enterprise Team Portal | Manage Seats | Ewing',
-    description: 'Manage your enterprise team seats, active members, and access permissions for the Client Vault advisory platform.',
+    title: 'Enterprise Team Portal & Strategy Diagnostics | Richard Ewing',
+    description: 'Enterprise Team Portal provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
 };
 
 export default async function TeamAdminPage() {

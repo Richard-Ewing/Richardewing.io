@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Media & Publications | Richard Ewing AI Economist',
-    description: 'Published profiles across CIO.com, Built In, Mind the Product, and HackerNoon. Richard Ewing on AI unit economics and R&D capital strategy.',
+    title: 'Media & Publications & Strategy Diagnostics | Richard Ewing',
+    description: 'Media & Publications provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'Richard Ewing publications',
         'CIO.com contributor',

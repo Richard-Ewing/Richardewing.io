@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'EdTech AI Costs Are Outpacing Revenue | Learning Platform Audit',
-    description: 'EdTech R&D audits: AI tutor governance costs, content delivery optimization, LMS technical debt, and adaptive learning model economics.',
+    title: 'EdTech AI Costs Are Outpacing & Strategy Diagnostics | Richard Ewing',
+    description: 'EdTech AI Costs Are Outpacing provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['edtech technical debt', 'learning platform engineering', 'AI tutor governance', 'edtech CTO advisor', 'FERPA compliance', 'educational AI'],
     alternates: { canonical: 'https://www.richardewing.io/industries/edtech' },
     openGraph: { title: 'AI Economics for EdTech', description: 'Learning platform debt, AI tutor governance, and accessibility compliance for education technology.', url: 'https://www.richardewing.io/industries/edtech', type: 'website' },

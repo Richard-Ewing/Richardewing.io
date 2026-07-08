@@ -7,8 +7,8 @@ import ShineBorder from '@/components/magicui/shine-border';
 import { BorderBeam } from '@/components/magicui/border-beam';
 
 export const metadata: Metadata = {
-    title: 'Deterministic Control Layer | AI Architecture',
-    description: 'Why probabilistic AI needs deterministic boundaries. The 4-layer architecture that prevents AI agent drift, hallucination, and cost overruns.',
+    title: 'Deterministic Control Layer & Strategy Diagnostics | Richard Ewing',
+    description: 'Deterministic Control Layer provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'Deterministic Control Layer',
         'Synthetic COGS',

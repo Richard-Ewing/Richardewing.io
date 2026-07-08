@@ -7,8 +7,8 @@ import FAQItem from '@/app/components/FAQItem';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Audit Methodology | How R&D Audits Work | Ewing',
-    description: 'The 4-phase R&D capital audit methodology: discovery, diagnostics, quantification, and executive presentation. How $7,500 audits deliver ROI.',
+    title: 'Audit Methodology & Strategy Diagnostics | Richard Ewing',
+    description: 'Audit Methodology provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     alternates: { canonical: 'https://www.richardewing.io/methodology' },
     openGraph: {
         title: 'Audit Methodology | Richard Ewing',

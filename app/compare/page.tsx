@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Tool Comparisons | PDI vs SonarQube & More | Ewing',
-    description: 'Side-by-side comparisons of R&D diagnostic tools vs mainstream alternatives. See why economic metrics outperform vanity code quality scores.',
+    title: 'Tool Comparisons & Strategy Diagnostics | Richard Ewing',
+    description: 'Tool Comparisons provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['tool comparison', 'sonarqube alternative', 'leetcode alternative', 'product debt index', 'audit interview protocol'],
     alternates: { canonical: 'https://www.richardewing.io/compare' },
 };

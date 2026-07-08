@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import EVSETool from './content';
 
 export const metadata: Metadata = {
-    title: 'What Is Your SaaS Actually Worth? | Execution Risk Valuation Calculator',
-    description: 'Stop guessing your SaaS valuation. Model how churn, tech debt, and execution risk destroy your enterprise value multiple — and what to fix first. Used by PE firms in due diligence.',
+    title: 'What Is Your SaaS Actually Wor & Strategy Diagnostics | Richard Ewing',
+    description: 'What Is Your SaaS Actually Wor provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'enterprise value calculator',
         'SaaS valuation tool',

@@ -4,8 +4,8 @@ import GlossaryContent from './glossary-content';
 import { glossaryTerms } from './terms';
 
 export const metadata: Metadata = {
-    title: 'AI & Engineering Glossary | 430+ Terms | Ewing',
-    description: 'The most comprehensive AI economics glossary: 430+ terms covering technical debt, AI governance, R&D capital, and engineering metrics.',
+    title: 'AI & Engineering Glossary & Strategy Diagnostics | Richard Ewing',
+    description: 'AI & Engineering Glossary provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'technology glossary', 'technical debt definition', 'AI glossary', 'SaaS metrics glossary',
         'engineering management terms', 'product management glossary', 'CTO glossary',

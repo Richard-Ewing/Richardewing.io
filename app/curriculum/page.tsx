@@ -7,8 +7,8 @@ import { tracks } from '@/app/lib/curriculum-tracks-ui';
 import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-    title: 'Executive AI Curriculum | 25 Tracks, 303 Modules | Richard Ewing',
-    description: 'Master AI economics through 25 structured authority tracks: financial modeling, governance, M&A diligence, agent economics, and executive strategy. $149/track or $999 all-access.',
+    title: 'Executive AI Curriculum & Strategy Diagnostics | Richard Ewing',
+    description: 'Executive AI Curriculum provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     alternates: { canonical: 'https://www.richardewing.io/curriculum' },
     openGraph: {
         title: 'Executive AI Curriculum | 25 Tracks, 303 Modules | Richard Ewing',

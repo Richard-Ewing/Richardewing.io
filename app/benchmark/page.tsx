@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { BarChart3, Download, TrendingDown, ArrowRight, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'AI Engineering Benchmarks | Industry Data 2026',
-    description: 'Benchmark your AI economics against 500+ enterprises. Compare LLM costs, FTE displacement rates, and R&D capital efficiency metrics.',
+    title: 'AI Engineering Benchmarks & Strategy Diagnostics | Richard Ewing',
+    description: 'AI Engineering Benchmarks provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'technical debt benchmark', 'engineering productivity benchmark 2026', 'product debt report',
         'state of technical debt', 'R&D efficiency report', 'AI cost benchmark', 'engineering metrics report',

@@ -4,8 +4,8 @@ import Navigation from '../components/Navigation';
 import { Footer } from '../components/footer';
 
 export const metadata = {
-    title: 'Toolkit Downloaded | Next Steps | Richard Ewing',
-    description: 'Your Executive Diagnostic Toolkit is ready. Follow the guided setup to run your first R&D audit diagnostic in under 15 minutes.',
+    title: 'Toolkit Downloaded & Strategy Diagnostics | Richard Ewing',
+    description: 'Toolkit Downloaded provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     robots: 'noindex, nofollow' // Keep this hidden from Google so only subscribers get it
 };
 

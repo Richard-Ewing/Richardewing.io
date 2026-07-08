@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Intelligence Dashboard | Historical Metrics | Ewing',
-    description: 'Track Product Debt, AI costs, and valuation gaps over time. Your secure historical metric repository for longitudinal R&D analysis.',
+    title: 'Intelligence Dashboard & Strategy Diagnostics | Richard Ewing',
+    description: 'Intelligence Dashboard provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['Longitudinal intelligence Dashboard', 'Historical Metric Repository', 'Product Debt tracking', 'Margin Erosion Tracker'],
     openGraph: {
         title: 'Intelligence Dashboard | Longitudinal Data',

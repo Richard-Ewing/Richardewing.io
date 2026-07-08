@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Is Your Engineering Team Underperforming? | R&D Benchmarks',
-    description: 'Benchmark your revenue per engineer, technical debt insolvency timeline, and R&D capital waste against elite SaaS, fintech, and healthtech peers.',
+    title: 'Is Your Engineering Team Under & Strategy Diagnostics | Richard Ewing',
+    description: 'Is Your Engineering Team Under provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     alternates: { canonical: 'https://www.richardewing.io/benchmarks' },
     openGraph: {
         title: 'Engineering Benchmarks — Industry Comparison Data',

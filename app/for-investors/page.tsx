@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'For PE & VC | Technical Due Diligence Tools | Ewing',
-    description: 'Investor-grade technical due diligence: scan acquisition targets for hidden technical debt, AI dependency risks, and engineering insolvency.',
+    title: 'For PE & VC & Strategy Diagnostics | Richard Ewing',
+    description: 'For PE & VC provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['R&D due diligence', 'technical due diligence PE', 'VC technology assessment', 'portfolio company audit', 'technical debt valuation', 'Product Debt Index', 'Richard Ewing'],
     alternates: { canonical: 'https://www.richardewing.io/for-investors' },
     openGraph: { title: 'For Investors — R&D Capital Due Diligence', description: 'Quantify technical debt in dollars before you invest.', url: 'https://www.richardewing.io/for-investors', type: 'website' },

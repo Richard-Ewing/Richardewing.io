@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'PDI vs CodeClimate | Economic Debt vs Code Metrics',
-    description: 'CodeClimate grades code quality. PDI calculates your Technical Insolvency Date in dollars. See why financial framing changes executive behavior.',
+    title: 'PDI vs CodeClimate & Strategy Diagnostics | Richard Ewing',
+    description: 'PDI vs CodeClimate provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['codeclimate alternative', 'technical debt measurement', 'pdi vs codeclimate', 'economic technical debt', 'code quality vs economics'],
     alternates: { canonical: 'https://www.richardewing.io/compare/pdi-vs-codeclimate' },
     openGraph: { title: 'PDI vs CodeClimate — Economics vs Code Quality', description: 'Code quality metrics tell you the symptoms. PDI tells you the prognosis.', url: 'https://www.richardewing.io/compare/pdi-vs-codeclimate', type: 'article' },

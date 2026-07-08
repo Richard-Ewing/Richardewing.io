@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Enterprise R&D Command Center | Richard Ewing',
-    description: 'Track engineering economics, unit margins, and calculate your Technical Insolvency Date from your central command dashboard.',
+    title: 'Enterprise R&D Command Center & Strategy Diagnostics | Richard Ewing',
+    description: 'Enterprise R&D Command Center provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     alternates: {
         canonical: 'https://www.richardewing.io/dashboard',
     },

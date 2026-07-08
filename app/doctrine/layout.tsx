@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { doctrineKeywords } from '../lib/keywords';
 
 export const metadata: Metadata = {
-    title: 'Why Your R&D Budget Is Disappearing | AI Economics Doctrine',
-    description: 'Agile theater is killing your runway. Read the core principles of AI economics, why software solvency matters, and how to stop funding zombie features.',
+    title: 'Why Your R&D Budget Is Disappe & Strategy Diagnostics | Richard Ewing',
+    description: 'Why Your R&D Budget Is Disappe provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: doctrineKeywords,
     alternates: { canonical: 'https://www.richardewing.io/doctrine' },
     openGraph: {

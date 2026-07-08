@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import EUAIActChecker from './content';
 
 export const metadata: Metadata = {
-    title: 'EU AI Act Starts August 2026 — Are You Ready? | Free Compliance Checker',
-    description: 'Fines up to 7% of global turnover. 67% of employees use AI tools with no policies. Score your EU AI Act readiness in 3 minutes before enforcement starts.',
+    title: 'EU AI Act Starts August 2026 & Strategy Diagnostics | Richard Ewing',
+    description: 'EU AI Act Starts August 2026 provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'EU AI Act compliance',
         'AI governance audit',

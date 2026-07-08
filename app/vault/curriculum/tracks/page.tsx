@@ -10,8 +10,8 @@ import BlurIn from '@/app/components/magicui/blur-in';
 import { BorderBeam } from '@/app/components/magicui/border-beam';
 
 export const metadata: Metadata = {
-    title: 'Fix AI Vibe Coding Debt | Training for Eng Managers',
-    description: 'The "boilerplate hangover" is here. Train your senior engineers to extract bloated prompt-chains and build deterministic architectures.',
+    title: 'Fix AI Vibe Coding Debt & Strategy Diagnostics | Richard Ewing',
+    description: 'Fix AI Vibe Coding Debt provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration."boilerplate hangover" is here. Train your senior engineers to extract bloated prompt-chains and build deterministic architectures.',
     keywords: ['AI economics academy', 'AI economics curriculum', 'AI economics training', 'R&D capital management', 'technical debt quantification', 'engineering leadership course', 'cloud finops', 'AI pricing strategy', 'career economics', 'CTO training', 'M&A integration', 'vendor economics', 'developer experience', 'remote team economics', 'ai agent economics', 'leadership training'],
     alternates: { canonical: 'https://www.richardewing.io/vault/curriculum/tracks' },
     openGraph: {

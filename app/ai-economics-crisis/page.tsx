@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { TrendingDown, DollarSign, AlertTriangle, ArrowRight, BarChart3, Calculator, Shield, Zap, Users, Target, Clock, ChevronRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'AI Tools Cost $58K/Engineer in Hidden Waste | Free AI Economics Audit',
-    description: 'Copilot went usage-based. METR proved devs are 19% slower with AI. 95% of AI pilots fail to show ROI. Run a free diagnostic to quantify your real AI costs.',
+    title: 'AI Tools Cost $58K/Engineer in & Strategy Diagnostics | Richard Ewing',
+    description: 'AI Tools Cost $58K/Engineer in provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     alternates: { canonical: 'https://www.richardewing.io/ai-economics-crisis' },
     openGraph: {
         title: 'The AI Economics Crisis: Your Coding Tools Cost More Than You Think',

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-    title: 'FAQ | AI Economist Richard Ewing | Common Questions',
-    description: 'Answers to the most common questions about R&D capital audits, AI unit economics, technical debt quantification, and advisory engagements.',
+    title: 'FAQ & Strategy Diagnostics | Richard Ewing',
+    description: 'FAQ provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['AI economist FAQ', 'richard ewing FAQ', 'advisory FAQ', 'exogram FAQ', 'technical debt FAQ'],
 };
 

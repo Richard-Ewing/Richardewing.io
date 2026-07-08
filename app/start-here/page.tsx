@@ -4,8 +4,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import EcosystemMap from '@/app/components/EcosystemMap';
 
 export const metadata: Metadata = {
-    title: 'Start Here | Guided Sequence | Production AI Governance',
-    description: 'New to AI economics and governance? Start here. A guided, 5-step sequence from understanding the scale problem to enforcing runtime AI governance.',
+    title: 'Start Here & Strategy Diagnostics | Richard Ewing',
+    description: 'Start Here provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     alternates: { canonical: 'https://www.richardewing.io/start-here' },
     openGraph: {
         title: 'Start Here — Guided Onboarding Flow',

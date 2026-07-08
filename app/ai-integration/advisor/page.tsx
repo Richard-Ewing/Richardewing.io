@@ -7,8 +7,8 @@ import { Brain, Shield, Lock } from 'lucide-react';
 import AdvisorChat from '@/components/AdvisorChat';
 
 export const metadata: Metadata = {
-    title: 'AI Integration Advisor | How to Integrate AI Into Your Business — Free Roadmap Tool',
-    description: 'Not sure how to integrate AI into your business? Our AI-powered advisor asks 5 questions about your company and generates a personalized AI integration roadmap in minutes — with specific tool recommendations, ROI estimates, costs, and a 30-day action plan. No consultants. No guesswork. Download your custom PDF report instantly.',
+    title: 'AI Integration Advisor & Strategy Diagnostics | Richard Ewing',
+    description: 'AI Integration Advisor provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'how to integrate AI into my business', 'AI for small business', 'AI for my business',
         'AI integration plan', 'AI readiness assessment', 'AI business consultant',

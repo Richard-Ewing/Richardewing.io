@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import CopilotROITool from './content';
 
 export const metadata: Metadata = {
-    title: 'VP Eng: Is Copilot Costing You $58K/Dev in Vibe Coding Debt?',
-    description: 'Stop the AI billing shock. Calculate how raw generative AI velocity is violently degraded by code review bottlenecks and hidden technical debt.',
+    title: 'VP Eng: Is Copilot Costing You & Strategy Diagnostics | Richard Ewing',
+    description: 'VP Eng: Is Copilot Costing You provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'GitHub Copilot ROI',
         'Cursor ROI calculator',

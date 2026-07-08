@@ -3,8 +3,8 @@ import { Search, TrendingDown, Shield, AlertTriangle, ArrowRight, BookOpen } fro
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Page Not Found | Richard Ewing',
-    description: 'The page you are looking for does not exist. Explore Production AI Governance tools, frameworks, and diagnostics at richardewing.io.',
+    title: 'Page Not Found & Strategy Diagnostics | Richard Ewing',
+    description: 'Page Not Found provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     robots: 'noindex, follow',
 };
 

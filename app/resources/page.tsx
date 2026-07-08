@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Resources Hub | Free AI Economics Tools | Ewing',
-    description: 'Free resources: diagnostic frameworks, executive templates, research reports, and curated AI economics learning paths. All open access.',
+    title: 'Resources Hub & Strategy Diagnostics | Richard Ewing',
+    description: 'Resources Hub provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['technology resources', 'CTO tools', 'engineering metrics', 'product management resources', 'Richard Ewing tools', 'free SaaS tools'],
     alternates: { canonical: 'https://www.richardewing.io/resources' },
     openGraph: { title: 'Resources Hub | Richard Ewing', description: 'Access free tools, a 2026 tech glossary, curriculum tracks, deep-dive articles, and strategic frameworks for engineering economics.', url: 'https://www.richardewing.io/resources', type: 'website' },

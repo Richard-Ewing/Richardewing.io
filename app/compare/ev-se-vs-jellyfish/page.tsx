@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'EV/SE vs Jellyfish | Valuation vs Activity Data',
-    description: 'Jellyfish tracks engineering activity. EV/SE quantifies how execution risk destroys enterprise value. One reports, the other prevents losses.',
+    title: 'EV/SE vs Jellyfish & Strategy Diagnostics | Richard Ewing',
+    description: 'EV/SE vs Jellyfish provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['jellyfish alternative', 'engineering metrics tool', 'evergreen ratio', 'engineering sustainability', 'engineering economics vs metrics'],
     alternates: { canonical: 'https://www.richardewing.io/compare/ev-se-vs-jellyfish' },
     openGraph: { title: 'EV-SE vs Jellyfish — Economics vs Metrics', description: 'Jellyfish tracks what engineers did. EV-SE tells you if it matters economically.', url: 'https://www.richardewing.io/compare/ev-se-vs-jellyfish', type: 'article' },

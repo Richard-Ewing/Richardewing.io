@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Why Your FinTech R&D Is Bleeding Capital | AI Economics Audit',
-    description: 'FinTech-specific audits: AI underwriting costs, regulatory compliance debt, fraud detection model drift, and payment system modernization.',
+    title: 'Why Your FinTech R&D Is Bleedi & Strategy Diagnostics | Richard Ewing',
+    description: 'Why Your FinTech R&D Is Bleedi provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['fintech technical debt', 'fintech CTO advisor', 'banking AI governance', 'financial services engineering audit', 'fintech AI economics', 'regulated software debt'],
     alternates: { canonical: 'https://www.richardewing.io/industries/fintech' },
     openGraph: { title: 'AI Economics for FinTech', description: 'R&D audit and AI governance for regulated financial services.', url: 'https://www.richardewing.io/industries/fintech', type: 'website' },

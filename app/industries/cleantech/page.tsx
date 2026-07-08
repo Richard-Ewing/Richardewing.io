@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Grid Integration Debt Is Drowning Your CleanTech Budget | AI Audit',
-    description: 'CleanTech R&D capital audits: renewable energy AI optimization costs, carbon tracking system debt, and regulatory compliance economics.',
+    title: 'Grid Integration Debt Is Drown & Strategy Diagnostics | Richard Ewing',
+    description: 'Grid Integration Debt Is Drown provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['cleantech technical debt', 'clean energy technology', 'carbon accounting systems', 'climate tech engineering', 'cleantech AI economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/cleantech' },
     openGraph: { title: 'CleanTech AI Economics', description: 'R&D capital challenges in clean energy technology.', url: 'https://www.richardewing.io/industries/cleantech', type: 'article' },

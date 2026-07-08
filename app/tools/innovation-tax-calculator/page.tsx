@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import PDITool from '../pdi/content';
 
 export const metadata: Metadata = {
-    title: 'How Much of Your R&D Budget Is Wasted on Maintenance? | Innovation Tax Calculator',
-    description: `Most companies label maintenance work as "innovation." This calculator reveals the real split — how much of your engineering budget is disguised OpEx vs. genuine new product development.`,
+    title: 'How Much of Your R&D Budget Is & Strategy Diagnostics | Richard Ewing',
+    description: `How Much of Your R&D Budget Is provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration."innovation." This calculator reveals the real split — how much of your engineering budget is disguised OpEx vs. genuine new product development.`,
     keywords: [
         'innovation tax calculator',
         'innovation tax',

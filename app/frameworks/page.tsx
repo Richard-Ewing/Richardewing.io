@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import FrameworksPage from './content';
 
 export const metadata: Metadata = {
-    title: 'AI Diagnostic Frameworks | Free Downloads | Ewing',
-    description: 'Operational frameworks for AI economics: Innovation Tax, Technical Insolvency Date, APER ratio, and 16 more diagnostic models. Free access.',
+    title: 'AI Diagnostic Frameworks & Strategy Diagnostics | Richard Ewing',
+    description: 'AI Diagnostic Frameworks provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'AI governance frameworks',
         'technical debt frameworks',

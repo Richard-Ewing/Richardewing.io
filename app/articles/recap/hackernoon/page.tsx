@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'HackerNoon Articles | AI Economics by Richard Ewing',
-    description: 'Richard Ewing on HackerNoon: deep dives into AI agent economics, prompt engineering costs, and the hidden expenses of generative AI adoption.',
+    title: 'HackerNoon Articles & Strategy Diagnostics | Richard Ewing',
+    description: 'HackerNoon Articles provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['Richard Ewing HackerNoon', 'developer economics', 'open source sustainability', 'AI agent architecture', 'AI economist HackerNoon'],
     alternates: { canonical: 'https://www.richardewing.io/articles/recap/hackernoon' },
     openGraph: { title: 'Richard Ewing on HackerNoon', description: 'Published articles on developer economics, AI agents, and technical debt for startups.', url: 'https://www.richardewing.io/articles/recap/hackernoon', type: 'article' },

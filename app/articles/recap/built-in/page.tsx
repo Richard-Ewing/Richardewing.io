@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Built In Articles | Engineering Economics by Ewing',
-    description: 'Richard Ewing on Built In: developer productivity metrics, engineering ROI calculation, and the true cost of scaling tech teams.',
+    title: 'Built In Articles & Strategy Diagnostics | Richard Ewing',
+    description: 'Built In Articles provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['Richard Ewing Built In', 'engineering economics articles', 'scaling engineering teams', 'developer productivity', 'AI economist Built In'],
     alternates: { canonical: 'https://www.richardewing.io/articles/recap/built-in' },
     openGraph: { title: 'Richard Ewing on Built In', description: 'Published articles on engineering team economics and developer productivity.', url: 'https://www.richardewing.io/articles/recap/built-in', type: 'article' },
