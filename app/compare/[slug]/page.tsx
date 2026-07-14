@@ -80,6 +80,21 @@ function getComparison(slug: string): Comparison | undefined {
         };
     }
 
+    // 3. Dynamic fallback for SEO generated slugs
+    if (slug.includes('-vs-')) {
+        const parts = slug.split('-vs-');
+        const toolA = parts[0].replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        const toolB = parts[1].replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        return {
+            slug,
+            title: `${toolA} vs ${toolB}`,
+            description: `Compare execution risks and cost inefficiencies of ${toolA} vs ${toolB}. Audit your engineering margins.`,
+            keywords: [toolA, toolB, `${toolA} vs ${toolB}`],
+            toolA,
+            toolB
+        };
+    }
+
     return undefined;
 }
 
@@ -120,7 +135,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     return {
         title: {
-            absolute: comparison.title
+            absolute: `${comparison.title} Cost Analysis | Richard Ewing`
         },
         description: desc,
         alternates: { canonical: `https://www.richardewing.io/compare/${slug}` },

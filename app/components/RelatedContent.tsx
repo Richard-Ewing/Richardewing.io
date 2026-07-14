@@ -6,7 +6,7 @@ import { allSeoLinks, SeoLink } from '@/lib/seo-links';
 
 interface RelatedContentProps {
     currentSlug: string;
-    type: 'guide' | 'comparison';
+    type: 'guide' | 'comparison' | 'blog' | 'glossary';
     count?: number;
 }
 

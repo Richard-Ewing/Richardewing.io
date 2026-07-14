@@ -6,13 +6,13 @@ const nextConfig: NextConfig = {
       {
         source: '/api/:path*',
         headers: [
-          { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+          { key: 'X-Robots-Tag', value: 'noindex, follow' },
         ],
       },
       {
         source: '/.well-known/:path*',
         headers: [
-          { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+          { key: 'X-Robots-Tag', value: 'noindex, follow' },
         ],
       },
     ];
@@ -20,6 +20,12 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: '/frameworks', destination: '/framework', permanent: true },
+      { source: '/frameworks/innovation-tax', destination: '/glossary/pillars/product-economics#innovation-tax', permanent: true },
+      { source: '/frameworks/product-debt-index', destination: '/glossary/pillars/product-economics#product-debt-index', permanent: true },
+      { source: '/frameworks/technical-insolvency-date', destination: '/glossary/pillars/product-economics#technical-insolvency-date', permanent: true },
+      { source: '/frameworks/synthetic-cogs', destination: '/glossary/pillars/saas-metrics-due-diligence#synthetic-cogs', permanent: true },
+      { source: '/frameworks/:slug*', destination: '/framework/:slug*', permanent: true },
+      { source: '/curriculum/ai-economics/:slug*', destination: '/vault/curriculum/tracks', permanent: true },
       { source: '/advisory', destination: '/services', permanent: true },
       { source: '/principal', destination: '/about', permanent: true },
       { source: '/vault/curriculum/tracks/product-economics/6-:id', destination: '/vault/curriculum/tracks/product-economics/5-:id', permanent: true },
@@ -187,12 +193,12 @@ const nextConfig: NextConfig = {
       },
       // Redirect all deprecated named tracks directly to /vault/curriculum/tracks to prevent redirect chains
       {
-        source: '/vault/curriculum/tracks/:category(b2b-saas-economics|fintech-economics|logistics-ecommerce|healthtech-economics|traditional-pm|breaking-into-tech|junior-to-senior|agentic-governance|erp-enterprise-integration|outsourcing-economics|corporate-it-cost-centers|mainframe-legacy-systems|career-mobility-technical-economics|classic-qa-quality|monolith-classic-database|executive-alignment-governance|fullstack-career|system-design|devops-economics|security-economics|data-economics|engineering-leadership|guides|comparisons|fractional-engineering|ai-agent-economics|synthetic-data|sovereign-ai)/:slug*',
+        source: '/vault/curriculum/tracks/:category(b2b-saas-economics|fintech-economics|logistics-ecommerce|healthtech-economics|traditional-pm|breaking-into-tech|junior-to-senior|agentic-governance|erp-enterprise-integration|outsourcing-economics|corporate-it-cost-centers|mainframe-legacy-systems|career-mobility-technical-economics|classic-qa-quality|monolith-classic-database|executive-alignment-governance|fullstack-career|system-design|devops-economics|security-economics|data-economics|engineering-leadership|guides|comparisons|fractional-engineering|ai-agent-economics|synthetic-data|sovereign-ai|rd-capital-management|strategic-leadership|product-economics|agentic-automation|tech-debt-liability|engineering-economics|capstone|dx-economics|startup-economics|ai-due-diligence|vendor-economics|exec-economics|enterprise-architecture|ma-integration|agent-governance|career-capital|ai-pricing|agile-economics|ai-agent-architecture)/:slug*',
         destination: '/vault/curriculum/tracks',
         permanent: true,
       },
       {
-        source: '/curriculum/tracks/:category(b2b-saas-economics|fintech-economics|logistics-ecommerce|healthtech-economics|traditional-pm|breaking-into-tech|junior-to-senior|agentic-governance|erp-enterprise-integration|outsourcing-economics|corporate-it-cost-centers|mainframe-legacy-systems|career-mobility-technical-economics|classic-qa-quality|monolith-classic-database|executive-alignment-governance|fullstack-career|system-design|devops-economics|security-economics|data-economics|engineering-leadership|guides|comparisons|fractional-engineering|ai-agent-economics|synthetic-data|sovereign-ai)/:slug*',
+        source: '/curriculum/tracks/:category(b2b-saas-economics|fintech-economics|logistics-ecommerce|healthtech-economics|traditional-pm|breaking-into-tech|junior-to-senior|agentic-governance|erp-enterprise-integration|outsourcing-economics|corporate-it-cost-centers|mainframe-legacy-systems|career-mobility-technical-economics|classic-qa-quality|monolith-classic-database|executive-alignment-governance|fullstack-career|system-design|devops-economics|security-economics|data-economics|engineering-leadership|guides|comparisons|fractional-engineering|ai-agent-economics|synthetic-data|sovereign-ai|rd-capital-management|strategic-leadership|product-economics|agentic-automation|tech-debt-liability|engineering-economics|capstone|dx-economics|startup-economics|ai-due-diligence|vendor-economics|exec-economics|enterprise-architecture|ma-integration|agent-governance|career-capital|ai-pricing|agile-economics|ai-agent-architecture)/:slug*',
         destination: '/vault/curriculum/tracks',
         permanent: true,
       },
@@ -358,7 +364,9 @@ const nextConfig: NextConfig = {
         'langchain-vs-scale-ai',
         'mem0-vs-humanloop',
         'exogram-vs-cloudflare-ai-gateway',
-        'openai-vs-tailwindcss'
+        'openai-vs-tailwindcss',
+        'dora-vs-space',
+        'openai-vs-anthropic'
       ].map(slug => ({
         source: `/compare/${slug}`,
         destination: '/compare',

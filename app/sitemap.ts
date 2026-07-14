@@ -107,6 +107,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // === VAULT CURRICULUM ===
     add(`${baseUrl}/vault/curriculum/tracks`, 'monthly', 0.7);
 
+    // Add individual curriculum modules
+    getAllModuleSlugs().forEach(slug => {
+        add(`${baseUrl}/vault/curriculum/tracks/${slug}`, 'monthly', 0.8);
+    });
+
     // === CANONICAL ARTICLES ===
     articles
         .filter(article => !article.externalUrl)

@@ -31,16 +31,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         return { robots: { index: false, follow: true } };
     }
 
-    const ogTitle = `What is ${term.title}? | Richard Ewing`;
+    const ogTitle = `What is ${term.title}? Definition & Economics | Richard Ewing`;
     const safeOgTitle = ogTitle.substring(0, 55) + (ogTitle.length > 55 ? '...' : '');
-
-    const isEwingFramework = term.category === 'Richard Ewing Frameworks';
 
     return {
         title: safeOgTitle,
         description: term.definition.slice(0, 155).replace(/\n/g, ' ') + '...',
         robots: {
-            index: isEwingFramework,
+            index: true,
             follow: true
         },
         keywords: [

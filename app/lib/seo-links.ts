@@ -1,7 +1,7 @@
 export interface SeoLink {
     slug: string;
     title: string;
-    type: 'guide' | 'comparison';
+    type: 'guide' | 'comparison' | 'blog' | 'glossary';
 }
 
 export const allSeoLinks: SeoLink[] = [
@@ -112,5 +112,36 @@ export const allSeoLinks: SeoLink[] = [
     { slug: "technical-debt", title: "The Complete Guide to Technical Debt — Economic Framework", type: "guide" },
     { slug: "technical-interview-redesign", title: "Technical Interview Redesign \u2014 Test Judgment Not Syntax", type: "guide" },
     { slug: "vc-technology-assessment", title: "VC Technology Assessment Framework", type: "guide" },
-    { slug: "vendor-management", title: "Vendor Management & Contract Negotiation \u2014 Save 20-40% on Software Spend", type: "guide" }
+    { slug: "vendor-management", title: "Vendor Management & Contract Negotiation \u2014 Save 20-40% on Software Spend", type: "guide" },
+
+    // === REMEDIATED ORPHANED BLOG POSTS ===
+    { slug: "microservices-cost-truth", title: "Microservices Cost Truth", type: "blog" },
+    { slug: "real-time-vs-batch-economics", title: "Real Time Vs Batch Economics", type: "blog" },
+    { slug: "compliance-automation-roi", title: "Compliance Automation Roi", type: "blog" },
+    { slug: "gpu-infrastructure-economics", title: "Gpu Infrastructure Economics", type: "blog" },
+    { slug: "api-design-economics", title: "Api Design Economics", type: "blog" },
+    { slug: "feature-factory-escape", title: "Feature Factory Escape", type: "blog" },
+    { slug: "infrastructure-as-code-roi", title: "Infrastructure As Code Roi", type: "blog" },
+    { slug: "pe-due-diligence-red-flags", title: "Pe Due Diligence Red Flags", type: "blog" },
+    { slug: "geo-why-traditional-seo-is-dead-for-b2b-saas", title: "Geo Why Traditional Seo Is Dead For B2b Saas", type: "blog" },
+    { slug: "the-rise-of-shadow-agents-why-your-next-data-breach-will-be-automated", title: "The Rise Of Shadow Agents Why Your Next Data Breach Will Be Automated", type: "blog" },
+    { slug: "technical-insolvency-date", title: "Technical Insolvency Date", type: "blog" },
+    { slug: "engineering-culture-economics", title: "Engineering Culture Economics", type: "blog" },
+    { slug: "fine-tuning-roi-analysis", title: "Fine Tuning Roi Analysis", type: "blog" },
+    { slug: "engineering-management-span", title: "Engineering Management Span", type: "blog" },
+    { slug: "outsourcing-contractor-economics", title: "Outsourcing Contractor Economics", type: "blog" },
+    { slug: "technical-migration-economics", title: "Technical Migration Economics", type: "blog" },
+    { slug: "sre-team-economics", title: "Sre Team Economics", type: "blog" },
+    { slug: "equity-compensation-engineering", title: "Equity Compensation Engineering", type: "blog" },
+    { slug: "ai-governance-board-primer", title: "Ai Governance Board Primer", type: "blog" },
+    { slug: "vibe-coding-debt-the-silent-killer-of-ai-native-startups", title: "Vibe Coding Debt The Silent Killer Of Ai Native Startups", type: "blog" },
+    { slug: "technology-carveout-economics", title: "Technology Carveout Economics", type: "blog" },
+    { slug: "soc2-compliance-cost", title: "Soc2 Compliance Cost", type: "blog" },
+    { slug: "ai-feature-profitability", title: "Ai Feature Profitability", type: "blog" },
+    { slug: "event-driven-architecture-roi", title: "Event Driven Architecture Roi", type: "blog" },
+    { slug: "technical-debt-cfo-guide", title: "Technical Debt Cfo Guide", type: "blog" },
+    { slug: "data-pipeline-cost-optimization", title: "Data Pipeline Cost Optimization", type: "blog" },
+    { slug: "rd-tax-credit-engineering", title: "Rd Tax Credit Engineering", type: "blog" },
+    { slug: "board-technology-oversight", title: "Board Technology Oversight", type: "blog" },
+    { slug: "conways-law-economic-impact", title: "Conways Law Economic Impact", type: "blog" },
 ];

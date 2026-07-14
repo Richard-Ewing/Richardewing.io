@@ -7,6 +7,7 @@ import { allArticles, getSortedArticles } from '@/lib/blog-data';
 import { categoryColors } from '@/lib/blog-types';
 import { frameworks } from '@/app/lib/data';
 import GovernancePathways from '@/components/semantic/GovernancePathways';
+import RelatedContent from '@/components/RelatedContent';
 
 export async function generateStaticParams() {
     return Object.keys(allArticles).map(slug => ({ slug }));
@@ -175,6 +176,8 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                 </div>
 
                 <div className="mt-12">
+                    <RelatedContent currentSlug={slug} type="blog" count={3} />
+                    <div className="h-8"></div>
                     <Link href="/blog" className="text-sm font-semibold text-zinc-900 font-medium hover:underline">← Back to Blog</Link>
                 </div>
             
