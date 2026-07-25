@@ -109,6 +109,10 @@ const Hero = () => {
                                     Production AI Governance Framework
                                 </Link>
                                 {' '}· Founder of{' '}
+                                <a href="https://careerwin.ai/" target="_blank" rel="noopener" className="text-purple-700 font-bold hover:text-purple-500 transition-colors underline decoration-purple-300 underline-offset-2">
+                                    CareerWin.ai
+                                </a>
+                                {' '}·{' '}
                                 <Link href="/exogram" className="text-purple-700 font-bold hover:text-purple-500 transition-colors underline decoration-purple-300 underline-offset-2">
                                     Exogram
                                 </Link>

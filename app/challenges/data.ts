@@ -9,6 +9,7 @@ export interface Challenge {
     frameworkSlug: string;
     exogramRisk: string;
     exogramDescription: string;
+    category: 'ai-economics' | 'engineering-governance' | 'operational-risk';
 }
 
 export const challenges: Challenge[] = [
@@ -22,7 +23,8 @@ export const challenges: Challenge[] = [
         frameworkName: 'Probabilistic Tech Debt',
         frameworkSlug: 'probabilistic-tech-debt',
         exogramRisk: 'Execution Variance',
-        exogramDescription: 'Exogram provides a deterministic control plane that halts autonomous agent hallucination cascades before they reach production.'
+        exogramDescription: 'Exogram provides a deterministic control plane that halts autonomous agent hallucination cascades before they reach production.',
+        category: 'operational-risk'
     },
     {
         slug: 'hallucination-debt',
@@ -34,7 +36,8 @@ export const challenges: Challenge[] = [
         frameworkName: 'Hallucination Entropy',
         frameworkSlug: 'hallucination-entropy',
         exogramRisk: 'Semantic Drift',
-        exogramDescription: 'Exogram intercepts LLM outputs at runtime, using policy-as-code to verify deterministic alignment before the payload is delivered to the user.'
+        exogramDescription: 'Exogram intercepts LLM outputs at runtime, using policy-as-code to verify deterministic alignment before the payload is delivered to the user.',
+        category: 'operational-risk'
     },
     {
         slug: 'governance-drift',
@@ -46,7 +49,8 @@ export const challenges: Challenge[] = [
         frameworkName: 'Technical Insolvency',
         frameworkSlug: 'technical-insolvency',
         exogramRisk: 'Architecture Violation',
-        exogramDescription: 'Exogram physically prevents governance drift by executing compliance rules at compile-time and runtime, blocking non-compliant code from entering the main branch.'
+        exogramDescription: 'Exogram physically prevents governance drift by executing compliance rules at compile-time and runtime, blocking non-compliant code from entering the main branch.',
+        category: 'engineering-governance'
     },
     {
         slug: 'ai-margin-collapse',
@@ -58,7 +62,8 @@ export const challenges: Challenge[] = [
         frameworkName: 'Synthetic COGS',
         frameworkSlug: 'synthetic-cogs',
         exogramRisk: 'Margin Collapse',
-        exogramDescription: 'Exogram enforces dynamic model routing, automatically degrading to cheaper models or cached responses when high-compute inference is economically unjustified.'
+        exogramDescription: 'Exogram enforces dynamic model routing, automatically degrading to cheaper models or cached responses when high-compute inference is economically unjustified.',
+        category: 'ai-economics'
     },
     {
         slug: 'product-entropy',
@@ -70,7 +75,8 @@ export const challenges: Challenge[] = [
         frameworkName: 'Kill Switch Protocol',
         frameworkSlug: 'kill-switch-protocol',
         exogramRisk: 'System Bloat',
-        exogramDescription: 'Exogram monitors unused code paths and actively flags Zombie Assets for deprecation, automating the Sunset Committee process.'
+        exogramDescription: 'Exogram monitors unused code paths and actively flags Zombie Assets for deprecation, automating the Sunset Committee process.',
+        category: 'engineering-governance'
     },
     {
         slug: 'runtime-governance',
@@ -82,6 +88,46 @@ export const challenges: Challenge[] = [
         frameworkName: 'Deterministic Control Plane',
         frameworkSlug: 'deterministic-control-plane',
         exogramRisk: 'Policy Violation',
-        exogramDescription: 'Exogram translates your Confluence documents into executable policy-as-code, physically enforcing governance at runtime with zero human intervention.'
+        exogramDescription: 'Exogram translates your Confluence documents into executable policy-as-code, physically enforcing governance at runtime with zero human intervention.',
+        category: 'engineering-governance'
+    },
+    {
+        slug: 'ai-cost-visibility',
+        title: 'AI Cost Visibility',
+        category: 'ai-economics',
+        description: 'The inability to attribute AI infrastructure costs to specific product features, business units, or customer cohorts. Most organizations track aggregate cloud spend but cannot answer the question: what does a single AI interaction cost us?',
+        painPoint: 'Your CFO asks how much your AI features cost per customer. Nobody can answer. API bills arrive as a lump sum. Engineering says it is complicated. Finance sees a line item growing 40% quarter over quarter with no unit economics attached.',
+        diagnosticName: 'AI Unit Economics Benchmark (AUEB)',
+        diagnosticSlug: 'aueb',
+        frameworkName: 'AI Unit Economics',
+        frameworkSlug: 'ai-unit-economics',
+        exogramRisk: 'Cost Blindness',
+        exogramDescription: 'Without per-feature cost attribution, organizations cannot make rational build-vs-buy decisions, set pricing accurately, or identify which AI capabilities are destroying margins.'
+    },
+    {
+        slug: 'ai-workforce-economics',
+        title: 'AI Workforce Economics',
+        category: 'ai-economics',
+        description: 'The organizational failure to measure whether AI tools are actually increasing engineering productivity or merely increasing output volume without improving business outcomes.',
+        painPoint: 'You bought 500 Copilot licenses at $19/seat/month. Lines of code went up 40%. Revenue per engineer stayed flat. Pull request volume increased but deployment frequency did not. You are paying for activity, not productivity.',
+        diagnosticName: 'Revenue Per Engineer (APER)',
+        diagnosticSlug: 'aper',
+        frameworkName: 'Engineering Leverage',
+        frameworkSlug: 'engineering-leverage',
+        exogramRisk: 'Productivity Theater',
+        exogramDescription: 'Measuring AI tool ROI by output volume rather than business outcomes creates a false sense of improvement while masking declining engineering leverage ratios.'
+    },
+    {
+        slug: 'ai-governance-compliance',
+        title: 'AI Governance Compliance',
+        category: 'ai-economics',
+        description: 'The regulatory and financial exposure created when organizations deploy AI systems without formal governance frameworks, usage policies, or audit trails.',
+        painPoint: 'EU AI Act fines reach 7% of global turnover. Your employees use 12 different AI tools. You have no centralized policy, no access controls, and no audit trail showing which models processed which data. The board has not been briefed.',
+        diagnosticName: 'AI Economics Assessment',
+        diagnosticSlug: 'assessment',
+        frameworkName: 'AI Governance',
+        frameworkSlug: 'ai-governance',
+        exogramRisk: 'Regulatory Exposure',
+        exogramDescription: 'Organizations without formal AI governance frameworks face compounding regulatory risk as compliance requirements accelerate across jurisdictions.'
     }
 ];
