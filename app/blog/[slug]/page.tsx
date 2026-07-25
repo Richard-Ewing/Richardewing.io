@@ -26,7 +26,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const canonicalURL = article.canonicalUrl || `https://www.richardewing.io/blog/${slug}`;
     
     return {
-        title: `${article.title} | Richard Ewing`,
+        title: {
+            absolute: `${article.title} | Richard Ewing`
+        },
         description: article.excerpt,
         alternates: { canonical: canonicalURL },
         openGraph: {

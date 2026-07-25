@@ -8,9 +8,9 @@ import { getAllModuleSlugs } from '@/app/lib/curriculum-data';
 import { getSortedArticles } from '@/app/lib/blog-data';
 import { COMBAT_SEO_MATRIX } from '@/app/lib/combat-seo';
 import { CAREER_PATHS } from '@/app/lib/career-paths';
-import pseoMatrixData from '@/app/lib/pseo-matrix.json';
 import { getAllSpokeRoutes } from '@/app/lib/spoke-data';
 import { challenges } from './challenges/data';
+import compareCategorized from './lib/compare-categorized.json';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.richardewing.io';
@@ -119,8 +119,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         .forEach(article => add(`${baseUrl}/articles/${article.slug}`, 'monthly', 0.8));
 
     // === COMPARE PAGES (Tier A Indexed Only) ===
-    const compareCategorized = require('@/app/lib/compare-categorized.json');
-    const tierASlugs: string[] = compareCategorized.tierA_indexed || [];
+    const tierASlugs: string[] = (compareCategorized.tierA_indexed as string[]) || [];
     tierASlugs.forEach(slug => add(`${baseUrl}/compare/${slug}`, 'monthly', 0.8));
 
     // === DYNAMICALLY GENERATED PAGES ===
@@ -136,7 +135,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     );
 
     // Glossary
-    // Add the definitive Pillar pages (Clarity Layer)
     PILLARS.forEach(pillar => add(`${baseUrl}/glossary/pillars/${pillar.slug}`, 'weekly', 0.9));
 
     // Only index KEEP_TERMS to avoid thin content drag
@@ -170,8 +168,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Exogram Docs
     exogramDocs.forEach(doc => add(`${baseUrl}/exogram/docs/${doc.slug}`, 'monthly', 0.8));
-
-
 
     return Array.from(entries.values());
 }
