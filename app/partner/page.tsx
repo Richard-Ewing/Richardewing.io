@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     }
 };
 
+const audienceSegments = [
+    "Product Managers and Product Leaders",
+    "Engineering Leaders and Chief Technology Officers",
+    "Software Engineers and AI Practitioners",
+    "Founders and Technology Executives",
+    "Recruiters and HR Leaders"
+];
+
 export default function PartnerPage() {
     return (
         <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
@@ -47,24 +55,40 @@ export default function PartnerPage() {
                 {/* Section 2: Audience & Metrics */}
                 <section className="mb-16">
                     <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-6">Audience Profile & Reach</h2>
-                    <p className="text-sm text-zinc-900 leading-relaxed font-semibold mb-8">
-                        The content on this platform speaks directly to decision makers who control engineering budgets and system designs: VPs of Engineering, Chief Technology Officers, Private Equity Operating Partners, and Chief Financial Officers. These readers value structural analysis and clear trade-offs.
+                    <p className="text-sm text-zinc-900 leading-relaxed font-semibold mb-6">
+                        Rather than chasing traditional influence or surface-level views, this platform focuses on high-intent engagement from professionals who actively govern technology systems and allocate engineering capital.
                     </p>
 
+                    <div className="bg-white border border-zinc-300 rounded-3xl p-8 mb-8 shadow-sm">
+                        <h3 className="text-base font-bold text-zinc-950 mb-4 font-mono uppercase tracking-wide">Primary Audience Composition</h3>
+                        <ul className="space-y-3">
+                            {audienceSegments.map((segment, index) => (
+                                <li key={index} className="flex items-center gap-3 text-sm font-semibold text-zinc-900">
+                                    <span className="text-emerald-600 font-bold">✓</span>
+                                    {segment}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-                        <div className="bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
-                            <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest mb-2">LinkedIn Reach</div>
-                            <div className="text-3xl font-bold text-zinc-950 mb-2">5,000+ Followers</div>
-                            <p className="text-xs text-zinc-500 font-semibold">
-                                Source: LinkedIn Analytics, July 2026. Verified professional network of engineering directors, staff architects, and technology executives.
+                        <div className="bg-white border border-zinc-300 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest mb-2">LinkedIn Reach</div>
+                                <div className="text-2xl font-bold text-zinc-950 mb-2">10,845 Followers</div>
+                            </div>
+                            <p className="text-[10px] text-zinc-500 font-semibold mt-4 leading-normal">
+                                Source: LinkedIn Analytics, July 2026. Verified network of engineering directors, staff architects, and tech executives.
                             </p>
                         </div>
 
-                        <div className="bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
-                            <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest mb-2">Newsletter Circulation</div>
-                            <div className="text-3xl font-bold text-zinc-950 mb-2">2,400+ Subscribers</div>
-                            <p className="text-xs text-zinc-500 font-semibold">
-                                Source: Beehiiv Analytics, July 2026. Weekly readers of The AI Economist, representing technical leaders and executive management.
+                        <div className="bg-white border border-zinc-300 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest mb-2">Newsletter Column</div>
+                                <div className="text-2xl font-bold text-zinc-950 mb-2">1,362 Subscribers</div>
+                            </div>
+                            <p className="text-[10px] text-zinc-500 font-semibold mt-4 leading-normal">
+                                Source: LinkedIn Newsletter Dashboard, July 2026. Professional readers subscribed to The AI Economist column.
                             </p>
                         </div>
                     </div>
@@ -78,7 +102,7 @@ export default function PartnerPage() {
                         
                         {/* Format 1 */}
                         <div className="bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
-                            <h3 className="text-lg font-bold text-zinc-950 mb-2">Newsletter Sponsorships</h3>
+                            <h3 className="text-lg font-bold text-zinc-950 mb-2">Newsletter sponsorships</h3>
                             <p className="text-sm text-zinc-700 leading-relaxed mb-4">
                                 Place your product or tool directly in front of active decision makers. Every sponsorship includes a dedicated slot analyzing a specific system challenge, explaining how your product addresses that constraint.
                             </p>
@@ -148,7 +172,7 @@ export default function PartnerPage() {
                             <div className="bg-zinc-100 border border-zinc-300 rounded-2xl p-6">
                                 <h4 className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest mb-2">Direct Coordination</h4>
                                 <p className="text-xs text-zinc-700 leading-relaxed font-semibold">
-                                    Inquiries can also be sent directly to <a href="mailto:richard@richardewing.io" className="text-indigo-600 hover:underline">richard@richardewing.io</a> with the subject line "Partnership Inquiry".
+                                    Inquiries can also be sent directly to <a href="mailto:richardewing@exogram.ai" className="text-indigo-600 hover:underline">richardewing@exogram.ai</a> with the subject line "Partnership Inquiry".
                                 </p>
                             </div>
                         </div>

@@ -18,7 +18,7 @@ export async function POST(request: Request) {
 
         const emailResponse = await resend.emails.send({
             from: 'Lead Capture <leads@updates.richardewing.io>',
-            to: ['richard@richardewing.io'],
+            to: ['richardewing@exogram.ai'],
             subject: `New Lead: ${name || email} ${company ? `from ${company}` : ''}`,
             text: `
 Name: ${name || 'N/A'}

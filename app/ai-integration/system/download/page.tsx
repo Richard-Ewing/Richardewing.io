@@ -182,7 +182,7 @@ export default async function DownloadPage() {
                             </button>
                         </div>
                         <p className="text-xs text-zinc-600 mt-6">
-                            Already purchased? Try refreshing or contact richard@richardewing.io for support.
+                            Already purchased? Try refreshing or contact richardewing@exogram.ai for support.
                         </p>
                     </div>
                 )}

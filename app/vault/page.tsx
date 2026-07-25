@@ -515,7 +515,7 @@ export default async function VaultPage() {
                                     </div>
                                 </div>
                                 <p className="text-xs font-bold text-zinc-900 font-bold mb-3">Need help with an asset or looking for custom advisory?</p>
-                                <a href="mailto:richard@richardewing.io" className="text-cyan-900 font-extrabold font-semibold hover:text-cyan-900 font-extrabold font-semibold text-xs font-bold">
+                                <a href="mailto:richardewing@exogram.ai" className="text-cyan-900 font-extrabold font-semibold hover:text-cyan-900 font-extrabold font-semibold text-xs font-bold">
                                     Contact Richard →
                                 </a>
                             </div>

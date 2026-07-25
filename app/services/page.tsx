@@ -93,7 +93,7 @@ const packages = [
             "Board meeting representation and preparation"
         ],
         cta: "Discuss Retainer",
-        href: "mailto:richard@richardewing.io?subject=Inquiry: Fractional CTO Retainer",
+        href: "mailto:richardewing@exogram.ai?subject=Inquiry: Fractional CTO Retainer",
         color: "indigo",
         timeline: "6-12 months"
     }

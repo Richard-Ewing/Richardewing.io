@@ -78,7 +78,7 @@ export default function AdvisoryPage() {
                                 </div>
                                 <div className="mt-auto">
                                     <div className="mb-4 text-lg font-bold text-zinc-950 text-center">$10,000 / mo</div>
-                                    <a href="mailto:richard@richardewing.io?subject=Inquiry: Cost Caps & Optimization" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-blue-600 text-zinc-900 hover:bg-blue-500 transition-all uppercase shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+                                    <a href="mailto:richardewing@exogram.ai?subject=Inquiry: Cost Caps & Optimization" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-blue-600 text-zinc-900 hover:bg-blue-500 transition-all uppercase shadow-[0_0_20px_rgba(59,130,246,0.3)]">
                                         Enforce Cost Caps
                                     </a>
                                 </div>
@@ -101,7 +101,7 @@ export default function AdvisoryPage() {
                                 </div>
                                 <div className="mt-auto">
                                     <div className="mb-4 text-lg font-bold text-zinc-950 text-center">$10,000 / mo</div>
-                                    <a href="mailto:richard@richardewing.io?subject=Inquiry: Shadow AI Audit" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100 transition-all uppercase">
+                                    <a href="mailto:richardewing@exogram.ai?subject=Inquiry: Shadow AI Audit" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100 transition-all uppercase">
                                         Audit Your Shadow AI
                                     </a>
                                 </div>
@@ -124,7 +124,7 @@ export default function AdvisoryPage() {
                                     </div>
                                 </div>
                                 <div className="mt-auto">
-                                    <a href="mailto:richard@richardewing.io?subject=Inquiry: Tech Due Diligence" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 hover:bg-cyan-500/20 transition-all uppercase">
+                                    <a href="mailto:richardewing@exogram.ai?subject=Inquiry: Tech Due Diligence" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 hover:bg-cyan-500/20 transition-all uppercase">
                                         Inquire Availability
                                     </a>
                                 </div>

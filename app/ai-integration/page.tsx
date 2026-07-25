@@ -150,7 +150,7 @@ export default function AIIntegrationPage() {
                                     </li>
                                 ))}
                             </ul>
-                            <a href="mailto:richard@richardewing.io?subject=Inquiry: Monthly AI Advisor" className="block text-center py-3 bg-emerald-600 text-zinc-900 font-bold rounded-lg text-sm hover:bg-emerald-500 transition-colors">Start the Conversation →</a>
+                            <a href="mailto:richardewing@exogram.ai?subject=Inquiry: Monthly AI Advisor" className="block text-center py-3 bg-emerald-600 text-zinc-900 font-bold rounded-lg text-sm hover:bg-emerald-500 transition-colors">Start the Conversation →</a>
                         </div>
 
                         {/* Tier 3: The System */}

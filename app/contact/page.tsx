@@ -68,13 +68,13 @@ export default function ContactPage() {
                                 
                                 <div className="space-y-4">
                                     <a 
-                                        href="mailto:richard@richardewing.io" 
+                                        href="mailto:richardewing@exogram.ai" 
                                         className="flex items-center gap-3 p-4 bg-zinc-50 border border-zinc-200 rounded-2xl hover:border-indigo-500 hover:bg-indigo-50/10 transition-all group"
                                     >
                                         <Mail className="w-5 h-5 text-indigo-600 group-hover:scale-110 transition-transform" />
                                         <div>
                                             <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest">Email Address</div>
-                                            <div className="text-sm font-bold text-zinc-950">richard@richardewing.io</div>
+                                            <div className="text-sm font-bold text-zinc-950">richardewing@exogram.ai</div>
                                         </div>
                                     </a>
 
