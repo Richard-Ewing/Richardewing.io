@@ -475,6 +475,15 @@ export const PRODUCTS: Record<string, Product> = {
         paymentLink: 'https://buy.stripe.com/5kQ5kw62O9HAeW90ty2B20C',
     },
 
+    // --- ASSESSMENT ---
+    executive_report: {
+        name: 'AI Economics Executive Report',
+        description: 'Detailed PDF report with AI Economics Score, dimension-by-dimension analysis, industry benchmarks, board-ready summary, and personalized remediation priorities.',
+        price: 9700, // $97.00
+        mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/dRm28k76Sf1U8xL9042B21b',
+    },
+
     // --- AI INTEGRATION ADVISOR ---
     ai_advisor_monthly: {
         name: 'AI Integration Advisor — Monthly',

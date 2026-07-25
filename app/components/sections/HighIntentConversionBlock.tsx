@@ -34,13 +34,18 @@ export default function HighIntentConversionBlock() {
                         <div className="text-emerald-400 font-grotesk font-black text-2xl uppercase tracking-wider mb-1">Find Your Margin Leakage</div>
                         <h3 className="text-sm font-mono font-bold text-zinc-400 mb-2">Free AI Unit Economics Benchmark</h3>
                         <p className="text-zinc-300 text-sm mb-5 max-w-lg mx-auto">Answer 10 questions about your AI infrastructure. Get an immediate economics score with estimated margin leakage and top risks. Free, no login required.</p>
-                        <div className="flex flex-wrap items-center justify-center gap-4">
-                            <Link href="/tools/aueb" className="inline-flex items-center gap-2 px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_25px_rgba(16,185,129,0.4)] group/btn">
-                                Run Free Benchmark <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                            </Link>
-                            <span className="text-zinc-500 text-sm">or</span>
-                            <Link href="/services" className="text-amber-400 hover:text-amber-300 font-bold text-sm transition-colors underline underline-offset-2 decoration-amber-500/40">
-                                Book a $450 Gut-Check Session →
+                        <div className="flex flex-col items-center justify-center gap-4">
+                            <div className="flex flex-wrap items-center justify-center gap-4">
+                                <Link href="/assessment" className="inline-flex items-center gap-2 px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_25px_rgba(16,185,129,0.4)] group/btn">
+                                    Take the Assessment <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                                </Link>
+                                <span className="text-zinc-500 text-sm">or</span>
+                                <Link href="/services" className="text-amber-400 hover:text-amber-300 font-bold text-sm transition-colors underline underline-offset-2 decoration-amber-500/40">
+                                    Book a $450 Gut-Check Session →
+                                </Link>
+                            </div>
+                            <Link href="/tools/aueb" className="text-zinc-500 hover:text-zinc-400 text-xs transition-colors underline underline-offset-2">
+                                Run Detailed AUEB Benchmark
                             </Link>
                         </div>
                     </div>
