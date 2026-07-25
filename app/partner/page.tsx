@@ -166,6 +166,27 @@ export default function PartnerPage() {
                         </div>
 
                     </div>
+
+                    {/* Passionfroot Booking */}
+                    <div className="mt-8 bg-gradient-to-br from-zinc-900 to-zinc-950 border border-zinc-800 rounded-3xl p-8 shadow-xl text-white">
+                        <div className="md:flex items-center justify-between gap-8">
+                            <div className="mb-6 md:mb-0">
+                                <h3 className="text-xl font-grotesk font-semibold mb-2">Book directly through Passionfroot</h3>
+                                <p className="text-zinc-400 text-sm max-w-lg leading-relaxed">
+                                    Browse available sponsorship slots, speaking formats, and collaboration options. Select a package, pay securely, and coordinate logistics in one place.
+                                </p>
+                            </div>
+                            <a
+                                href="https://www.passionfroot.me/richard-ewing"
+                                target="_blank"
+                                rel="noopener"
+                                className="inline-flex items-center gap-2 px-8 py-3 bg-white text-zinc-950 hover:bg-zinc-100 font-bold rounded-xl transition-all whitespace-nowrap shadow-sm"
+                            >
+                                View Storefront
+                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+                            </a>
+                        </div>
+                    </div>
                 </section>
 
                 {/* Section 4: Contact Form */}
@@ -181,8 +202,11 @@ export default function PartnerPage() {
                             </p>
                             <div className="bg-zinc-100 border border-zinc-300 rounded-2xl p-6">
                                 <h4 className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest mb-2">Direct Coordination</h4>
-                                <p className="text-xs text-zinc-700 leading-relaxed font-semibold">
+                                <p className="text-xs text-zinc-700 leading-relaxed font-semibold mb-3">
                                     Inquiries can also be sent directly to <a href="mailto:richardewing@exogram.ai" className="text-indigo-600 hover:underline">richardewing@exogram.ai</a> with the subject line "Partnership Inquiry".
+                                </p>
+                                <p className="text-xs text-zinc-700 leading-relaxed font-semibold">
+                                    Or browse and book available slots on <a href="https://www.passionfroot.me/richard-ewing" target="_blank" rel="noopener" className="text-indigo-600 hover:underline">Passionfroot</a>.
                                 </p>
                             </div>
                         </div>
