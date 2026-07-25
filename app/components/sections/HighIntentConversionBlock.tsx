@@ -27,14 +27,67 @@ export default function HighIntentConversionBlock() {
                     </div>
                 </ScrollReveal>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-                    {/* Diagnostic Block */}
+
+                {/* Funnel entry - zero-risk starting point */}
+                <ScrollReveal>
+                    <div className="mb-10 rounded-2xl bg-zinc-900/50 border border-zinc-800 p-6 md:p-8 text-center">
+                        <div className="text-emerald-400 font-mono font-bold text-xs uppercase tracking-widest mb-3">Start Here</div>
+                        <h3 className="text-xl font-grotesk font-bold text-white mb-2">AI Unit Economics Benchmark</h3>
+                        <p className="text-zinc-300 text-sm mb-5 max-w-lg mx-auto">Answer 10 questions about your AI infrastructure. Get an immediate economics score with estimated margin leakage and top risks. Free, no login required.</p>
+                        <div className="flex flex-wrap items-center justify-center gap-4">
+                            <Link href="/tools/aueb" className="inline-flex items-center gap-2 px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_25px_rgba(16,185,129,0.4)] group/btn">
+                                Run Free Benchmark <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                            </Link>
+                            <span className="text-zinc-500 text-sm">or</span>
+                            <Link href="/services" className="text-amber-400 hover:text-amber-300 font-bold text-sm transition-colors underline underline-offset-2 decoration-amber-500/40">
+                                Book a $450 Gut-Check Session →
+                            </Link>
+                        </div>
+                    </div>
+                </ScrollReveal>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+                    {/* Step 1: $450 Gut-Check */}
+                    <ScrollReveal delay={50}>
+                        <div className="h-full rounded-2xl bg-zinc-900 border border-zinc-800 p-6 md:p-8 flex flex-col relative overflow-hidden group hover:border-emerald-500/50 transition-colors">
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-[30px] translate-x-1/2 -translate-y-1/2 group-hover:bg-emerald-500/20 transition-colors" />
+                            
+                            <div className="text-emerald-400 font-mono font-bold text-xs uppercase tracking-widest mb-2">Step 1: Rapid Scan</div>
+                            <h3 className="text-2xl font-grotesk font-bold text-white mb-3">Gut-Check Evaluation</h3>
+                            <div className="text-2xl font-bold text-white font-mono mb-4 pb-4 border-b border-zinc-800">$450 <span className="text-sm text-zinc-500">30 min</span></div>
+                            
+                            <p className="text-zinc-300 mb-6 font-medium leading-relaxed text-sm">
+                                A 30-minute rapid scan of your AWS, API, and AI billing. You get a written summary of the three largest cost risks and whether a full audit is warranted.
+                            </p>
+                            
+                            <ul className="space-y-3 mb-8 flex-1">
+                                <li className="flex items-start gap-2">
+                                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                                    <span className="text-white font-medium text-sm">Top 3 cost risks identified</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                                    <span className="text-white font-medium text-sm">Go/no-go on full audit</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                                    <span className="text-white font-medium text-sm">Written findings summary</span>
+                                </li>
+                            </ul>
+                            
+                            <Link href="/services" className="w-full py-3 border border-emerald-500/60 text-emerald-400 hover:bg-emerald-500/10 text-center font-bold font-grotesk rounded-xl transition-all flex items-center justify-center gap-2 group/btn text-sm">
+                                Book Gut-Check <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                            </Link>
+                        </div>
+                    </ScrollReveal>
+
+                    {/* Step 2: $2,500 Diagnostic */}
                     <ScrollReveal delay={100}>
-                        <div className="h-full rounded-2xl bg-zinc-900 border border-zinc-800 p-8 md:p-10 flex flex-col relative overflow-hidden group hover:border-amber-500/50 transition-colors">
+                        <div className="h-full rounded-2xl bg-zinc-900 border border-zinc-800 p-6 md:p-8 flex flex-col relative overflow-hidden group hover:border-amber-500/50 transition-colors">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-[40px] translate-x-1/2 -translate-y-1/2 group-hover:bg-amber-500/20 transition-colors" />
                             
-                            <div className="text-amber-500 font-mono font-bold text-sm uppercase tracking-widest mb-2">Step 1: Audit</div>
-                            <h3 className="text-3xl font-grotesk font-bold text-white mb-4">R&D Capital Diagnostic</h3>
+                            <div className="text-amber-500 font-mono font-bold text-xs uppercase tracking-widest mb-2">Step 2: Deep Audit</div>
+                            <h3 className="text-2xl font-grotesk font-bold text-white mb-3">R&D Capital Diagnostic</h3>
                             <div className="text-2xl font-bold text-white font-mono mb-6 pb-6 border-b border-zinc-800">$2,500 <span className="text-sm text-zinc-500">Fixed-Fee</span></div>
                             
                             <p className="text-zinc-200 mb-8 font-medium leading-relaxed">
@@ -64,9 +117,9 @@ export default function HighIntentConversionBlock() {
 
                     {/* Retainer Block */}
                     <ScrollReveal delay={200}>
-                        <div className="h-full rounded-2xl bg-zinc-900 border border-zinc-800 p-8 md:p-10 flex flex-col relative overflow-hidden opacity-90 hover:opacity-100 transition-opacity">
-                            <div className="text-zinc-500 font-mono font-bold text-sm uppercase tracking-widest mb-2">Step 2: Execute</div>
-                            <h3 className="text-3xl font-grotesk font-bold text-white mb-4">Advisory Retainer</h3>
+                        <div className="h-full rounded-2xl bg-zinc-900 border border-zinc-800 p-6 md:p-8 flex flex-col relative overflow-hidden opacity-90 hover:opacity-100 transition-opacity">
+                            <div className="text-zinc-500 font-mono font-bold text-xs uppercase tracking-widest mb-2">Step 3: Ongoing Advisory</div>
+                            <h3 className="text-2xl font-grotesk font-bold text-white mb-3">Advisory Retainer</h3>
                             <div className="text-2xl font-bold text-white font-mono mb-6 pb-6 border-b border-zinc-800">$7,500<span className="text-sm text-zinc-500">/month</span></div>
                             
                             <p className="text-zinc-200 mb-8 font-medium leading-relaxed">

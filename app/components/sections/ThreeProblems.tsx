@@ -7,6 +7,7 @@ const problems = [
     {
         icon: DollarSign,
         label: "AI BILLING SHOCK",
+        businessImpact: "Unpredictable AI spending is eroding your margins.",
         headline: "Your AI costs are unpredictable because nobody is measuring them.",
         description: "Runaway inference loops. Unmonitored API calls. Token waste compounding at 3x your projected budget. The CFO sees a growing line item with no unit economics attached.",
         metric: "$14,200/mo",
@@ -23,6 +24,7 @@ const problems = [
     {
         icon: ShieldOff,
         label: "SHADOW AI LIABILITY",
+        businessImpact: "Unmanaged AI use creates governance and compliance risk.",
         headline: "Employees are pasting proprietary data into public LLMs. Your DLP tools are blind to it.",
         description: "Every unsanctioned ChatGPT session is a potential data exfiltration event. OAuth tokens proliferate. Nobody tracks which models have access to which internal systems.",
         metric: "73%",
@@ -39,6 +41,7 @@ const problems = [
     {
         icon: Bug,
         label: "VIBE CODING DEBT",
+        businessImpact: "AI-assisted development increases long-term maintenance costs.",
         headline: "AI-generated code looks structurally sound. It is architecturally bankrupt.",
         description: "3,000-line Copilot PRs that compile perfectly and fail in production. Junior developers shipping code they cannot explain. Context rot compounding every sprint.",
         metric: "42%",
@@ -92,7 +95,10 @@ export default function ThreeProblems() {
                                     </div>
 
                                     {/* Label */}
-                                    <h3 className="text-xs font-bold font-mono text-zinc-500 uppercase tracking-widest mb-3">{problem.label}</h3>
+                                    <h3 className="text-xs font-bold font-mono text-zinc-500 uppercase tracking-widest mb-1">{problem.label}</h3>
+
+                                    {/* Business impact - plain English for any executive */}
+                                    <p className="text-sm font-semibold text-zinc-800 mb-3">{problem.businessImpact}</p>
 
                                     {/* Headline */}
                                     <h4 className="text-lg font-bold text-zinc-900 mb-4 leading-snug font-grotesk">{problem.headline}</h4>

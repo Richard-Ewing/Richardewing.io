@@ -39,37 +39,54 @@ const Hero = () => {
                             </span>.
                         </h1>
 
-                        {/* Subheadline - answers "What is AI Economics?" and "Who you help" */}
-                        <p className="text-lg text-zinc-600 mb-4 max-w-xl leading-relaxed font-semibold">
-                            AI Economics is the discipline of translating engineering output into financial outcomes.
+                        {/* Clarifying sentence - removes ambiguity about what you deliver */}
+                        <p className="text-lg text-zinc-700 mb-3 max-w-xl leading-relaxed font-semibold">
+                            Advisory services, diagnostic assessments, and practical frameworks that measure, govern, and improve the economics of enterprise AI systems.
                         </p>
+
+                        {/* Who you help */}
                         <p className="text-base text-zinc-500 mb-10 max-w-xl leading-relaxed">
-                            I work with CTOs, CFOs, and PE operating partners to diagnose R&D capital waste, enforce runtime cost-caps, and turn volatile AI systems into predictable enterprise assets.
+                            I work with CTOs, CFOs, and PE operating partners who need to know where their AI spend is going, what it is producing, and how to constrain it.
                         </p>
 
                         {/* Dual CTA */}
-                        <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
+                        <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-4">
                             <Link
-                                href="/services"
+                                href="/tools/aueb"
                                 className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-base hover:opacity-90 transition-all shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/35 hover:-translate-y-0.5"
                             >
-                                Book a $450 Gut-Check Evaluation
+                                Run the Free AI Benchmark
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                             </Link>
                             <Link
-                                href="/tools/aueb"
+                                href="/services"
                                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border-2 border-zinc-300 text-zinc-800 font-semibold text-base hover:border-violet-400 hover:bg-violet-50/40 transition-all"
                             >
-                                Run the Free AI Benchmark
+                                Book a $450 Gut-Check Evaluation
                             </Link>
                         </div>
 
-                        {/* Credibility line with proof numbers */}
+                        {/* Funnel progression - shows the clear path */}
+                        <div className="flex flex-wrap justify-center lg:justify-start items-center gap-2 text-xs font-mono text-zinc-400 mb-10">
+                            <span className="text-violet-600 font-bold">Free Benchmark</span>
+                            <span>→</span>
+                            <span>$450 Diagnostic</span>
+                            <span>→</span>
+                            <span>R&D Audit</span>
+                            <span>→</span>
+                            <span>Advisory Retainer</span>
+                        </div>
+
+                        {/* Credibility - audience reach */}
                         <div className="mb-6">
                             <p className="text-zinc-600 text-sm font-medium leading-relaxed">
                                 <span className="font-bold text-zinc-800">10,845</span> LinkedIn followers · <span className="font-bold text-zinc-800">778</span> AI search citations · <span className="font-bold text-zinc-800">1,362</span> newsletter subscribers
                             </p>
-                            <p className="text-zinc-500 text-xs mt-2 font-bold tracking-wider uppercase">
+                            {/* Content depth - reinforces authority beyond vanity metrics */}
+                            <p className="text-zinc-500 text-sm mt-2 font-medium leading-relaxed">
+                                <span className="font-bold text-zinc-700">19</span> original frameworks · <span className="font-bold text-zinc-700">25</span> diagnostic tools · <span className="font-bold text-zinc-700">136</span> research articles
+                            </p>
+                            <p className="text-zinc-500 text-xs mt-3 font-bold tracking-wider uppercase">
                                 Published in CIO.com · Built In · MindTheProduct · HackerNoon
                             </p>
                             <p className="text-zinc-500 text-sm mt-2 font-medium">
