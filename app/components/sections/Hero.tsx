@@ -39,9 +39,14 @@ const Hero = () => {
                             </span>.
                         </h1>
 
-                        {/* Clarifying sentence - removes ambiguity about what you deliver */}
+                        {/* Positioning sentence */}
+                        <p className="text-xl md:text-2xl text-zinc-800 italic mb-6 max-w-xl font-medium">
+                            The question is not whether AI works. The question is whether AI pays.
+                        </p>
+
+                        {/* Positioning statement - the one repeatable sentence */}
                         <p className="text-lg text-zinc-700 mb-3 max-w-xl leading-relaxed font-semibold">
-                            Advisory services, diagnostic assessments, and practical frameworks that measure, govern, and improve the economics of enterprise AI systems.
+                            I help organizations measure, govern, and improve the economics of enterprise AI through advisory services, diagnostic assessments, and practical frameworks.
                         </p>
 
                         {/* Who you help */}
@@ -77,16 +82,25 @@ const Hero = () => {
                             <span>Advisory Retainer</span>
                         </div>
 
-                        {/* Credibility - audience reach */}
-                        <div className="mb-6">
-                            <p className="text-zinc-600 text-sm font-medium leading-relaxed">
-                                <span className="font-bold text-zinc-800">10,845</span> LinkedIn followers · <span className="font-bold text-zinc-800">778</span> AI search citations · <span className="font-bold text-zinc-800">1,362</span> newsletter subscribers
-                            </p>
-                            {/* Content depth - reinforces authority beyond vanity metrics */}
-                            <p className="text-zinc-500 text-sm mt-2 font-medium leading-relaxed">
-                                <span className="font-bold text-zinc-700">19</span> original frameworks · <span className="font-bold text-zinc-700">25</span> diagnostic tools · <span className="font-bold text-zinc-700">136</span> research articles
-                            </p>
-                            <p className="text-zinc-500 text-xs mt-3 font-bold tracking-wider uppercase">
+                        {/* Credibility - Knowledge Platform */}
+                        <div className="mb-6 space-y-4">
+                            {/* REACH */}
+                            <div>
+                                <span className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest block mb-1">Reach</span>
+                                <p className="text-zinc-600 text-sm font-medium leading-relaxed">
+                                    <span className="font-bold text-zinc-800">10,845</span> LinkedIn followers · <span className="font-bold text-zinc-800">1,362</span> newsletter subscribers · <span className="font-bold text-zinc-800">778</span> AI search citations
+                                </p>
+                            </div>
+                            
+                            {/* KNOWLEDGE PLATFORM */}
+                            <div>
+                                <span className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest block mb-1">Knowledge Platform</span>
+                                <p className="text-zinc-600 text-sm font-medium leading-relaxed">
+                                    <span className="font-bold text-zinc-800">19</span> frameworks · <span className="font-bold text-zinc-800">56</span> glossary definitions · <span className="font-bold text-zinc-800">136</span> research articles · <span className="font-bold text-zinc-800">25</span> interactive tools
+                                </p>
+                            </div>
+
+                            <p className="text-zinc-500 text-xs mt-4 font-bold tracking-wider uppercase">
                                 Published in CIO.com · Built In · MindTheProduct · HackerNoon
                             </p>
                             <p className="text-zinc-500 text-sm mt-2 font-medium">

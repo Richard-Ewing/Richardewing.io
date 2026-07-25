@@ -19,10 +19,10 @@ export default function HighIntentConversionBlock() {
                             <span>Executive Intervention Required</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-grotesk font-black text-white mb-6 leading-tight">
-                            Stop AI Margin Erosion Before <br className="hidden md:block" /> Your Next Board Meeting.
+                            From unknown to governed.
                         </h2>
                         <p className="text-xl text-zinc-200 font-medium max-w-3xl mx-auto">
-                            The difference between a successful AI rollout and a margin-destroying liability is deterministic governance. I provide the translation layer between engineering output and CFO-level financial outcomes.
+                            Every engagement produces a concrete deliverable. Each step builds on the last.
                         </p>
                     </div>
                 </ScrollReveal>
@@ -31,8 +31,8 @@ export default function HighIntentConversionBlock() {
                 {/* Funnel entry - zero-risk starting point */}
                 <ScrollReveal>
                     <div className="mb-10 rounded-2xl bg-zinc-900/50 border border-zinc-800 p-6 md:p-8 text-center">
-                        <div className="text-emerald-400 font-mono font-bold text-xs uppercase tracking-widest mb-3">Start Here</div>
-                        <h3 className="text-xl font-grotesk font-bold text-white mb-2">AI Unit Economics Benchmark</h3>
+                        <div className="text-emerald-400 font-grotesk font-black text-2xl uppercase tracking-wider mb-1">Find Your Margin Leakage</div>
+                        <h3 className="text-sm font-mono font-bold text-zinc-400 mb-2">Free AI Unit Economics Benchmark</h3>
                         <p className="text-zinc-300 text-sm mb-5 max-w-lg mx-auto">Answer 10 questions about your AI infrastructure. Get an immediate economics score with estimated margin leakage and top risks. Free, no login required.</p>
                         <div className="flex flex-wrap items-center justify-center gap-4">
                             <Link href="/tools/aueb" className="inline-flex items-center gap-2 px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_25px_rgba(16,185,129,0.4)] group/btn">
@@ -52,8 +52,8 @@ export default function HighIntentConversionBlock() {
                         <div className="h-full rounded-2xl bg-zinc-900 border border-zinc-800 p-6 md:p-8 flex flex-col relative overflow-hidden group hover:border-emerald-500/50 transition-colors">
                             <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-[30px] translate-x-1/2 -translate-y-1/2 group-hover:bg-emerald-500/20 transition-colors" />
                             
-                            <div className="text-emerald-400 font-mono font-bold text-xs uppercase tracking-widest mb-2">Step 1: Rapid Scan</div>
-                            <h3 className="text-2xl font-grotesk font-bold text-white mb-3">Gut-Check Evaluation</h3>
+                            <div className="text-emerald-400 font-grotesk font-black text-2xl uppercase tracking-wider mb-1">Validate the Findings</div>
+                            <h3 className="text-sm font-mono font-bold text-zinc-400 mb-3">Executive Diagnostic</h3>
                             <div className="text-2xl font-bold text-white font-mono mb-4 pb-4 border-b border-zinc-800">$450 <span className="text-sm text-zinc-500">30 min</span></div>
                             
                             <p className="text-zinc-300 mb-6 font-medium leading-relaxed text-sm">
@@ -86,8 +86,8 @@ export default function HighIntentConversionBlock() {
                         <div className="h-full rounded-2xl bg-zinc-900 border border-zinc-800 p-6 md:p-8 flex flex-col relative overflow-hidden group hover:border-amber-500/50 transition-colors">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-[40px] translate-x-1/2 -translate-y-1/2 group-hover:bg-amber-500/20 transition-colors" />
                             
-                            <div className="text-amber-500 font-mono font-bold text-xs uppercase tracking-widest mb-2">Step 2: Deep Audit</div>
-                            <h3 className="text-2xl font-grotesk font-bold text-white mb-3">R&D Capital Diagnostic</h3>
+                            <div className="text-amber-500 font-grotesk font-black text-2xl uppercase tracking-wider mb-1">Quantify the Losses</div>
+                            <h3 className="text-sm font-mono font-bold text-zinc-400 mb-3">R&D Capital Audit</h3>
                             <div className="text-2xl font-bold text-white font-mono mb-6 pb-6 border-b border-zinc-800">$2,500 <span className="text-sm text-zinc-500">Fixed-Fee</span></div>
                             
                             <p className="text-zinc-200 mb-8 font-medium leading-relaxed">
@@ -118,8 +118,8 @@ export default function HighIntentConversionBlock() {
                     {/* Retainer Block */}
                     <ScrollReveal delay={200}>
                         <div className="h-full rounded-2xl bg-zinc-900 border border-zinc-800 p-6 md:p-8 flex flex-col relative overflow-hidden opacity-90 hover:opacity-100 transition-opacity">
-                            <div className="text-zinc-500 font-mono font-bold text-xs uppercase tracking-widest mb-2">Step 3: Ongoing Advisory</div>
-                            <h3 className="text-2xl font-grotesk font-bold text-white mb-3">Advisory Retainer</h3>
+                            <div className="text-zinc-200 font-grotesk font-black text-2xl uppercase tracking-wider mb-1">Fix the System</div>
+                            <h3 className="text-sm font-mono font-bold text-zinc-500 mb-3">Advisory Retainer</h3>
                             <div className="text-2xl font-bold text-white font-mono mb-6 pb-6 border-b border-zinc-800">$7,500<span className="text-sm text-zinc-500">/month</span></div>
                             
                             <p className="text-zinc-200 mb-8 font-medium leading-relaxed">
@@ -142,7 +142,7 @@ export default function HighIntentConversionBlock() {
                             </ul>
                             
                             <div className="w-full py-4 border border-zinc-700 text-zinc-200 text-center font-bold font-grotesk rounded-xl bg-zinc-900/50 cursor-default">
-                                Unlocked after Diagnostic
+                                Available after Diagnostic
                             </div>
                         </div>
                     </ScrollReveal>
@@ -150,7 +150,7 @@ export default function HighIntentConversionBlock() {
                 
                 <div className="mt-16 text-center">
                     <p className="text-zinc-500 font-mono text-sm font-semibold max-w-2xl mx-auto">
-                        Designed for PE-backed SaaS companies and Series B+ organizations struggling to translate AI hype into deterministic gross margin.
+                        Built for CTOs who answer to boards and CFOs who answer to investors.
                     </p>
                 </div>
             </div>

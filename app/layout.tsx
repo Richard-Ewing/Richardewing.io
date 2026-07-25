@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     default: 'Richard Ewing | AI Economist & R&D Capital Audits',
     template: '%s | Richard Ewing'
   },
-  description: 'Richard Ewing provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+  description: 'Richard Ewing helps organizations measure, govern, and improve the economics of enterprise AI. Advisory services, diagnostic assessments, and practical frameworks for CTOs, CFOs, and PE operating partners.',
   keywords: homepageKeywords,
   authors: [{ name: 'Richard Ewing', url: 'https://www.richardewing.io' }],
   creator: 'Richard Ewing',
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
 
   // Open Graph
   openGraph: {
-    title: 'Richard Ewing & Strategy Diagnostics | Richard Ewing',
-    description: 'Most AI failures are not model failures. They are operational failures. I audit R&D capital, diagnose AI unit economics, and build deterministic governance infrastructure that protects your margins.',
+    title: 'Richard Ewing | AI Economist - Enterprise AI Audits & Cost Governance',
+    description: 'Richard Ewing helps organizations measure, govern, and improve the economics of enterprise AI. 19 frameworks, 25 diagnostic tools, and advisory services for CTOs, CFOs, and PE operating partners.',
     url: 'https://www.richardewing.io',
     siteName: 'Richard Ewing',
     type: 'website',
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
   // Twitter
   twitter: {
     card: 'summary_large_image',
-    title: 'Richard Ewing — AI Economist | R&D Capital Audits & AI Governance',
-    description: 'Most AI failures are not model failures. They are operational failures. I audit R&D capital, diagnose AI unit economics, and build deterministic governance infrastructure that protects your margins.',
+    title: 'Richard Ewing | AI Economist - Enterprise AI Audits & Cost Governance',
+    description: 'Richard Ewing helps organizations measure, govern, and improve the economics of enterprise AI. 19 frameworks, 25 diagnostic tools, and advisory services for CTOs, CFOs, and PE operating partners.',
     images: ['https://www.richardewing.io/og-image-home.png'],
   },
 

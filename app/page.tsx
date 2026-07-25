@@ -3,19 +3,20 @@ import Hero from './components/sections/Hero';
 import ProofRail from './components/ProofRail';
 import ThreeProblems from './components/sections/ThreeProblems';
 import HowItWorks from './components/sections/HowItWorks';
+import TransformationStory from './components/sections/TransformationStory';
 import ClientOutcomes from './components/sections/ClientOutcomes';
 import HighIntentConversionBlock from './components/sections/HighIntentConversionBlock';
 import NewsletterSection from './components/sections/NewsletterSection';
 
 export const metadata: Metadata = {
   title: 'AI Economist - Enterprise AI Audits & Cost Governance | Richard Ewing',
-  description: 'AI Economics translates engineering output into CFO-level financial outcomes. R&D capital audits, runtime cost-caps, and AI governance for PE-backed SaaS companies.',
+  description: 'Richard Ewing helps organizations measure, govern, and improve the economics of enterprise AI. 19 frameworks, 25 diagnostic tools, and advisory services for CTOs, CFOs, and PE operating partners.',
   alternates: {
     canonical: 'https://www.richardewing.io',
   },
   openGraph: {
     title: 'AI Economist - Enterprise AI Audits & Cost Governance | Richard Ewing',
-    description: 'AI Economics translates engineering output into CFO-level financial outcomes. R&D capital audits, runtime cost-caps, and AI governance for PE-backed SaaS companies.',
+    description: 'Richard Ewing helps organizations measure, govern, and improve the economics of enterprise AI. 19 frameworks, 25 diagnostic tools, and advisory services for CTOs, CFOs, and PE operating partners.',
     url: 'https://www.richardewing.io',
     type: 'website',
     images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'AI Economist - Enterprise AI Audits & Cost Governance | Richard Ewing',
-    description: 'AI Economics translates engineering output into CFO-level financial outcomes. R&D capital audits, runtime cost-caps, and AI governance for PE-backed SaaS companies.',
+    description: 'Richard Ewing helps organizations measure, govern, and improve the economics of enterprise AI. 19 frameworks, 25 diagnostic tools, and advisory services for CTOs, CFOs, and PE operating partners.',
     images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
   }
 };
@@ -98,7 +99,9 @@ export default function Home() {
       <ThreeProblems />
       {/* Layer 4: How It Works - Diagnose, Audit, Govern */}
       <HowItWorks />
-      {/* Layer 5: Proof of outcomes - Before & After audit results */}
+      {/* Layer 5: Transformation Story - Before & After */}
+      <TransformationStory />
+      {/* Layer 6: Proof of outcomes - Before & After audit results */}
       <ClientOutcomes />
       {/* Layer 6: High-Intent Conversion - Pricing and service packages */}
       <HighIntentConversionBlock />

@@ -1,14 +1,15 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, ShieldCheck, Clock, Zap, TrendingUp, DollarSign, Calculator, HelpCircle } from 'lucide-react';
+import { ArrowRight, ShieldCheck, AlertTriangle, CheckCircle2, ArrowDown } from 'lucide-react';
 import ProofRail from '@/app/components/ProofRail';
 import CheckoutButton from '@/app/components/client/CheckoutButton';
 import FAQItem from '@/app/components/FAQItem';
+import { ScrollReveal } from '@/components/magicui/scroll-reveal';
 
 export const metadata: Metadata = {
-    title: 'AI Advisory Services & Package & Strategy Diagnostics | Richard Ewing',
-    description: 'AI Advisory Services & Package provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'AI Advisory Services - Diagnostics, Audits & Cost Governance | Richard Ewing',
+    description: 'Your AI budget is growing. Your AI returns are not. Advisory services that measure, govern, and improve the economics of enterprise AI. From $450 diagnostics to fractional CPO retainers.',
     alternates: {
         canonical: 'https://www.richardewing.io/services',
     },
@@ -109,217 +110,293 @@ const colorMap: Record<string, { bg: string; border: string; text: string; pill:
 export default function ServicesPage() {
     return (
         <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
-            <div className="page-container max-w-6xl mx-auto">
+            <div className="page-container max-w-4xl mx-auto px-6">
                 
                 {/* Breadcrumb */}
-                <div className="mb-6 flex items-center gap-2 text-xs font-mono font-bold text-zinc-950 uppercase tracking-widest">
-                    <span>Advisory</span><span>/</span><span className="text-cyan-900 font-extrabold">Services & Packages</span>
+                <div className="mb-12 flex items-center gap-2 text-xs font-mono font-bold text-zinc-950 uppercase tracking-widest">
+                    <span>Advisory</span><span>/</span><span className="text-indigo-700 font-extrabold">Services & Packages</span>
                 </div>
 
-                {/* Hero Header */}
-                <section className="mb-16 border-b border-zinc-400 pb-16 text-center lg:text-left">
-                    <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6 tracking-tight leading-none">
-                        Advisory Services Built for <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-indigo-700">Financial Predictability.</span>
-                    </h1>
-                    <p className="text-xl text-zinc-900 leading-relaxed font-semibold max-w-3xl">
-                        I do not write academic reports or sell slide decks. I deploy forensic evaluations to stop shadow AI cash bleed, eliminate token cost inflation, and install verified runtime cost-caps.
-                    </p>
-                </section>
+                {/* Section 1: Problem */}
+                <ScrollReveal>
+                    <section className="mb-24 text-left">
+                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-8 tracking-tight leading-[1.1]">
+                            Your AI budget is growing. <br className="hidden sm:block" />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-indigo-700">Your AI returns are not.</span>
+                        </h1>
+                        <p className="text-xl text-zinc-800 leading-relaxed font-medium max-w-3xl mb-8">
+                            Companies are spending more on AI but cannot prove it produces financial returns. The CFO sees a growing line item. The CTO promises future value. Neither has the data to resolve the disagreement.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <CheckoutButton 
+                                productId="gut_check" 
+                                label="Book $450 Gut-Check" 
+                                variant="primary"
+                            />
+                            <a href="mailto:richardewing@exogram.ai?subject=Inquiry: Free Benchmark" className="flex items-center justify-center px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-bold transition-all bg-white border border-zinc-300 text-zinc-950 hover:bg-zinc-50">
+                                Run Free Benchmark
+                            </a>
+                        </div>
+                    </section>
+                </ScrollReveal>
 
-                {/* Packages Grid */}
-                <section className="mb-20">
-                    <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-8 text-center sm:text-left">Engagement Packages</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {packages.map((pkg, idx) => {
-                            const c = colorMap[pkg.color];
-                            return (
-                                <div 
-                                    key={idx} 
-                                    className={`relative rounded-3xl border ${pkg.popular ? 'border-2 border-indigo-500 md:scale-[1.03] bg-gradient-to-br from-indigo-50/40 via-white to-white shadow-xl shadow-indigo-500/15' : 'border-zinc-300 bg-white'} p-8 flex flex-col justify-between hover:shadow-lg transition-all duration-300`}
-                                >
-                                    {pkg.popular && (
-                                        <span className="absolute top-4 right-4 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-indigo-600 text-white">
-                                            Most Popular
-                                        </span>
-                                    )}
+                <div className="mb-24">
+                    <ProofRail />
+                </div>
 
-                                    <div>
-                                        <div className="flex items-center gap-3 mb-4">
-                                            <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-widest ${c.pill}`}>
-                                                {pkg.badge}
-                                            </span>
-                                            <span className="text-xs text-zinc-500 font-bold font-mono">
-                                                Timeline: {pkg.timeline}
-                                            </span>
-                                        </div>
-
-                                        <h3 className="text-2xl font-bold text-zinc-950 mb-2 font-grotesk">{pkg.name}</h3>
-                                        <p className="text-sm text-zinc-600 font-semibold mb-6">{pkg.description}</p>
-
-                                        <div className="mb-6 flex items-baseline gap-1">
-                                            <span className="text-4xl font-extrabold text-zinc-950 font-grotesk">{pkg.price}</span>
-                                            <span className="text-xs text-zinc-500 font-bold font-mono">{pkg.period}</span>
-                                        </div>
-
-                                        <div className="border-t border-zinc-200 pt-6 mb-8">
-                                            <h4 className="text-xs font-bold text-zinc-800 uppercase tracking-widest mb-4">What's Included:</h4>
-                                            <ul className="space-y-3">
-                                                {pkg.deliverables.map((del, dIdx) => (
-                                                    <li key={dIdx} className="flex items-start gap-2.5 text-xs text-zinc-900 font-semibold">
-                                                        <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                                                        <span>{del}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        {pkg.productId ? (
-                                            <CheckoutButton 
-                                                productId={pkg.productId} 
-                                                label={`${pkg.cta} →`} 
-                                                variant={pkg.popular ? "primary" : "ghost"}
-                                                icon="none"
-                                            />
-                                        ) : (
-                                            <a 
-                                                href={pkg.href} 
-                                                className={`flex items-center justify-center w-full py-4 rounded-xl text-xs uppercase tracking-widest font-bold transition-all ${c.btn}`}
-                                            >
-                                                {pkg.cta} →
-                                            </a>
-                                        )}
-                                    </div>
+                {/* Section 2: Cost of doing nothing */}
+                <ScrollReveal>
+                    <section className="mb-24">
+                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-8">The cost of doing nothing</h2>
+                        <div className="space-y-4">
+                            <div className="bg-white border border-zinc-300 rounded-2xl p-6 shadow-sm flex gap-4 items-start">
+                                <div className="mt-1 bg-red-100 p-2 rounded-full text-red-700 shrink-0">
+                                    <AlertTriangle className="w-5 h-5" />
                                 </div>
-                            );
-                        })}
-                    </div>
-                </section>
-
-                {/* Timeline / Process Section */}
-                <section className="mb-20 bg-white border border-zinc-300 rounded-3xl p-8 md:p-12 shadow-sm">
-                    <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-10 text-center">Our Engagement Protocol</h2>
-                    
-                    {/* SVG Connector Flowchart Layout */}
-                    <div className="flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-4 relative">
-                        {/* Step 1 */}
-                        <div className="flex-1 text-center flex flex-col items-center bg-zinc-50 p-6 rounded-2xl border border-zinc-200 shadow-sm relative">
-                            <div className="w-12 h-12 bg-indigo-600 border border-indigo-400 rounded-full flex items-center justify-center mb-4 font-mono font-bold text-white text-lg shadow-sm">1</div>
-                            <h3 className="text-lg font-bold text-zinc-950 mb-2 font-grotesk">15-Min Discovery</h3>
-                            <p className="text-xs text-zinc-600 leading-relaxed font-semibold max-w-xs">We hold a brief diagnostic call to align on your current engineering bottlenecks, billing patterns, and code velocity.</p>
-                        </div>
-
-                        {/* Connection Arrow 1 */}
-                        <div className="hidden lg:flex items-center justify-center text-zinc-400">
-                            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                        </div>
-
-                        {/* Step 2 */}
-                        <div className="flex-1 text-center flex flex-col items-center bg-zinc-50 p-6 rounded-2xl border border-zinc-200 shadow-sm relative">
-                            <div className="w-12 h-12 bg-indigo-600 border border-indigo-400 rounded-full flex items-center justify-center mb-4 font-mono font-bold text-white text-lg shadow-sm">2</div>
-                            <h3 className="text-lg font-bold text-zinc-950 mb-2 font-grotesk">Forensic Diagnostic</h3>
-                            <p className="text-xs text-zinc-600 leading-relaxed font-semibold max-w-xs">We audit the code using the Product Debt Index (PDI) framework, exposing zombie assets, leakages, and cost collapse thresholds.</p>
-                        </div>
-
-                        {/* Connection Arrow 2 */}
-                        <div className="hidden lg:flex items-center justify-center text-zinc-400">
-                            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                        </div>
-
-                        {/* Step 3 */}
-                        <div className="flex-1 text-center flex flex-col items-center bg-zinc-50 p-6 rounded-2xl border border-zinc-200 shadow-sm relative">
-                            <div className="w-12 h-12 bg-indigo-600 border border-indigo-400 rounded-full flex items-center justify-center mb-4 font-mono font-bold text-white text-lg shadow-sm">3</div>
-                            <h3 className="text-lg font-bold text-zinc-950 mb-2 font-grotesk">Remediation Delivery</h3>
-                            <p className="text-xs text-zinc-600 leading-relaxed font-semibold max-w-xs">We present a board-ready report and deploy deterministic cost-caps at the network layer to secure your unit margins permanently.</p>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Testimonials */}
-                <section className="mb-20">
-                    <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-8 text-center">Client Testimonials</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="bg-white border border-zinc-200 p-8 rounded-3xl shadow-sm">
-                            <p className="text-sm text-zinc-800 leading-relaxed italic mb-6 font-medium">
-                                "Richard's audit revealed that 43% of our engineering sprints were being spent maintaining deprecated AI integrations that we thought were core features. The remediation plan saved us over $180,000 in monthly OpEx within 45 days."
-                            </p>
-                            <div>
-                                <h4 className="text-sm font-bold text-zinc-950 font-grotesk">Principal Operating Partner</h4>
-                                <p className="text-xs text-zinc-500 font-bold font-mono">PE-Backed B2B SaaS Portfolio</p>
+                                <div>
+                                    <h3 className="font-bold text-zinc-950 text-lg mb-2">Compound waste</h3>
+                                    <p className="text-zinc-700">Every quarter without measurement compounds the waste. We estimate 15-30% of AI inference spend produces no business value.</p>
+                                </div>
+                            </div>
+                            <div className="bg-white border border-zinc-300 rounded-2xl p-6 shadow-sm flex gap-4 items-start">
+                                <div className="mt-1 bg-red-100 p-2 rounded-full text-red-700 shrink-0">
+                                    <AlertTriangle className="w-5 h-5" />
+                                </div>
+                                <div>
+                                    <h3 className="font-bold text-zinc-950 text-lg mb-2">Hidden liabilities</h3>
+                                    <p className="text-zinc-700">Shadow AI creates liability that only surfaces during due diligence or a security breach.</p>
+                                </div>
+                            </div>
+                            <div className="bg-white border border-zinc-300 rounded-2xl p-6 shadow-sm flex gap-4 items-start">
+                                <div className="mt-1 bg-red-100 p-2 rounded-full text-red-700 shrink-0">
+                                    <AlertTriangle className="w-5 h-5" />
+                                </div>
+                                <div>
+                                    <h3 className="font-bold text-zinc-950 text-lg mb-2">Features without profit</h3>
+                                    <p className="text-zinc-700">Engineering teams build features faster but cannot explain whether those features make money.</p>
+                                </div>
                             </div>
                         </div>
-                        <div className="bg-white border border-zinc-200 p-8 rounded-3xl shadow-sm">
-                            <p className="text-sm text-zinc-800 leading-relaxed italic mb-6 font-medium">
-                                "The inference cost Optimization sprint capped our API billing volatility before our product scaled to 50k users. We avoided a margin collapse that would have crushed our Series A metrics."
-                            </p>
+                    </section>
+                </ScrollReveal>
+
+                {/* Section 3: Symptoms you recognize */}
+                <ScrollReveal>
+                    <section className="mb-24">
+                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-8">Symptoms you recognize</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            {[
+                                "Our AI bill tripled but nobody can explain why.",
+                                "The CFO keeps asking where AI ROI went.",
+                                "Engineers are using AI tools we did not approve.",
+                                "We are deploying models faster than we can govern them.",
+                                "Board wants AI metrics we cannot produce.",
+                                "Technical debt is accelerating, not shrinking."
+                            ].map((symptom, idx) => (
+                                <div key={idx} className="bg-white border border-zinc-200 rounded-xl p-5 shadow-sm">
+                                    <p className="text-zinc-800 font-medium italic">"{symptom}"</p>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                </ScrollReveal>
+
+                {/* Section 4: How we diagnose */}
+                <ScrollReveal>
+                    <section className="mb-24 bg-zinc-950 text-zinc-50 rounded-3xl p-8 sm:p-12">
+                        <h2 className="text-3xl font-grotesk font-bold text-white mb-8">How we diagnose</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                             <div>
-                                <h4 className="text-sm font-bold text-zinc-950 font-grotesk">VP of Engineering</h4>
-                                <p className="text-xs text-zinc-500 font-bold font-mono">AI-First Legaltech SaaS</p>
+                                <h3 className="font-bold text-lg mb-2 text-indigo-300">Unit economics analysis</h3>
+                                <p className="text-zinc-400 text-sm">We calculate your exact cost per inference and cost per useful output to establish baseline margins.</p>
+                            </div>
+                            <div>
+                                <h3 className="font-bold text-lg mb-2 text-indigo-300">Shadow AI discovery</h3>
+                                <p className="text-zinc-400 text-sm">We map unsanctioned model and API usage across your engineering team to quantify risk exposure.</p>
+                            </div>
+                            <div>
+                                <h3 className="font-bold text-lg mb-2 text-indigo-300">Capital allocation mapping</h3>
+                                <p className="text-zinc-400 text-sm">We determine exactly what percentage of your R&D budget produces tangible business value.</p>
+                            </div>
+                            <div>
+                                <h3 className="font-bold text-lg mb-2 text-indigo-300">Governance gap analysis</h3>
+                                <p className="text-zinc-400 text-sm">We audit what controls exist versus what controls are required for your specific regulatory environment.</p>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                </ScrollReveal>
 
-                {/* FAQ Section */}
-                <section className="border-t border-zinc-300 pt-16">
-                    <script
-                        type="application/ld+json"
-                        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-                            '@context': 'https://schema.org',
-                            '@type': 'FAQPage',
-                            'mainEntity': [
-                                {
-                                    '@type': 'Question',
-                                    'name': 'How much does a fractional CPO cost?',
-                                    'acceptedAnswer': {
-                                        '@type': 'Answer',
-                                        'text': 'Fractional CPO / CTO retainer packages are $10,000/month. This provides hands-on technology direction, cost-cap architecture setup, and monthly board-level reporting.'
-                                    }
-                                },
-                                {
-                                    '@type': 'Question',
-                                    'name': 'What is the difference between a Diagnostic and a full Audit?',
-                                    'acceptedAnswer': {
-                                        '@type': 'Answer',
-                                        'text': 'A Diagnostic ($2,500) evaluates code and identifies leaks over a 60-minute session. A full R&D Capital Audit ($7,500) is a 3-week engagement that includes comprehensive financial modeling, team productivity audits, and a 90-day custom remediation plan.'
-                                    }
-                                },
-                                {
-                                    '@type': 'Question',
-                                    'name': 'Who qualifies for the $450 Gut-Check Session?',
-                                    'acceptedAnswer': {
-                                        '@type': 'Answer',
-                                        'text': 'The Gut-Check Session is designed for founders, CTOs, and PE operating partners who need a rapid, objective evaluation of their current AI cost and velocity exposure without committing to a larger audit.'
-                                    }
-                                }
-                            ]
-                        }) }}
-                    />
-                    <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-8 text-center sm:text-left">Frequently Asked Questions</h2>
-                    <div className="space-y-4 max-w-4xl">
-                        <FAQItem 
-                            question="How much does a fractional CPO / CTO cost?" 
-                            answer="Fractional CPO / CTO retainer packages are $10,000/month. This provides hands-on technology direction, cost-cap architecture setup, and monthly board-level reporting."
-                        />
-                        <FAQItem 
-                            question="What is the difference between a Diagnostic and a full Audit?" 
-                            answer="A Diagnostic ($2,500) evaluates code and identifies leaks over a 60-minute session. A full R&D Capital Audit ($7,500) is a 3-week engagement that includes comprehensive financial modeling, team productivity audits, and a 90-day custom remediation plan."
-                        />
-                        <FAQItem 
-                            question="Who qualifies for the $450 Gut-Check Session?" 
-                            answer="The Gut-Check Session is designed for founders, CTOs, and PE operating partners who need a rapid, objective evaluation of their current AI cost and velocity exposure without committing to a larger audit."
-                        />
-                    </div>
-                </section>
+                {/* Section 5: Engagement packages */}
+                <ScrollReveal>
+                    <section className="mb-24">
+                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4 text-center">The Progression</h2>
+                        <p className="text-zinc-600 text-center mb-12 max-w-2xl mx-auto">We do not sell a menu of services. We follow a strict diagnostic progression to ensure you only pay for the intervention you need.</p>
+                        
+                        <div className="flex flex-col gap-6 relative">
+                            {packages.map((pkg, idx) => {
+                                const c = colorMap[pkg.color];
+                                return (
+                                    <React.Fragment key={idx}>
+                                        <div 
+                                            className={`relative rounded-3xl border ${pkg.popular ? 'border-2 border-indigo-500 bg-gradient-to-br from-indigo-50/40 via-white to-white shadow-xl shadow-indigo-500/15' : 'border-zinc-300 bg-white'} p-8 flex flex-col md:flex-row gap-8 justify-between hover:shadow-lg transition-all duration-300`}
+                                        >
+                                            {pkg.popular && (
+                                                <span className="absolute top-0 right-8 -translate-y-1/2 px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest bg-indigo-600 text-white shadow-sm">
+                                                    Most Popular
+                                                </span>
+                                            )}
 
-                <div className="mt-16 text-center border-t border-zinc-300 pt-12">
-                    <Link href="/" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors flex items-center gap-2 text-sm font-semibold font-mono uppercase tracking-widest justify-center">
+                                            <div className="flex-1">
+                                                <div className="flex items-center gap-3 mb-4">
+                                                    <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-widest ${c.pill}`}>
+                                                        {pkg.badge}
+                                                    </span>
+                                                    <span className="text-xs text-zinc-500 font-bold font-mono">
+                                                        Timeline: {pkg.timeline}
+                                                    </span>
+                                                </div>
+
+                                                <h3 className="text-2xl font-bold text-zinc-950 mb-2 font-grotesk">{pkg.name}</h3>
+                                                <p className="text-sm text-zinc-600 font-semibold mb-6 max-w-xl">{pkg.description}</p>
+
+                                                <div className="mb-6 flex items-baseline gap-1">
+                                                    <span className="text-4xl font-extrabold text-zinc-950 font-grotesk">{pkg.price}</span>
+                                                    <span className="text-xs text-zinc-500 font-bold font-mono">{pkg.period}</span>
+                                                </div>
+                                            </div>
+
+                                            <div className="w-full md:w-64 flex flex-col justify-end">
+                                                {pkg.productId ? (
+                                                    <CheckoutButton 
+                                                        productId={pkg.productId} 
+                                                        label={`${pkg.cta} →`} 
+                                                        variant={pkg.popular ? "primary" : "ghost"}
+                                                        icon="none"
+                                                    />
+                                                ) : (
+                                                    <a 
+                                                        href={pkg.href} 
+                                                        className={`flex items-center justify-center w-full py-4 rounded-xl text-xs uppercase tracking-widest font-bold transition-all ${c.btn}`}
+                                                    >
+                                                        {pkg.cta} →
+                                                    </a>
+                                                )}
+                                            </div>
+                                        </div>
+                                        {idx < packages.length - 1 && (
+                                            <div className="flex justify-center -my-2 z-10 relative">
+                                                <div className="bg-zinc-200 p-2 rounded-full border-4 border-[#F5F0EB] text-zinc-500">
+                                                    <ArrowDown className="w-4 h-4" />
+                                                </div>
+                                            </div>
+                                        )}
+                                    </React.Fragment>
+                                );
+                            })}
+                        </div>
+                    </section>
+                </ScrollReveal>
+
+                {/* Section 6: What you get */}
+                <ScrollReveal>
+                    <section className="mb-24 bg-indigo-50 border border-indigo-100 rounded-3xl p-8 sm:p-12">
+                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-8">What every engagement produces</h2>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <li className="flex gap-3">
+                                <CheckCircle2 className="w-6 h-6 text-indigo-600 shrink-0" />
+                                <span className="font-semibold text-zinc-800">Written risk report with dollar-denominated findings</span>
+                            </li>
+                            <li className="flex gap-3">
+                                <CheckCircle2 className="w-6 h-6 text-indigo-600 shrink-0" />
+                                <span className="font-semibold text-zinc-800">Board-ready executive summary</span>
+                            </li>
+                            <li className="flex gap-3">
+                                <CheckCircle2 className="w-6 h-6 text-indigo-600 shrink-0" />
+                                <span className="font-semibold text-zinc-800">90-day remediation roadmap</span>
+                            </li>
+                            <li className="flex gap-3">
+                                <CheckCircle2 className="w-6 h-6 text-indigo-600 shrink-0" />
+                                <span className="font-semibold text-zinc-800">Ongoing measurement framework</span>
+                            </li>
+                        </ul>
+                    </section>
+                </ScrollReveal>
+
+                {/* Section 7: FAQ */}
+                <ScrollReveal>
+                    <section className="mb-24 border-t border-zinc-300 pt-16">
+                        <script
+                            type="application/ld+json"
+                            dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                                '@context': 'https://schema.org',
+                                '@type': 'FAQPage',
+                                'mainEntity': [
+                                    {
+                                        '@type': 'Question',
+                                        'name': 'How much does a fractional CPO cost?',
+                                        'acceptedAnswer': {
+                                            '@type': 'Answer',
+                                            'text': 'Fractional CPO / CTO retainer packages are $10,000/month. This provides hands-on technology direction, cost-cap architecture setup, and monthly board-level reporting.'
+                                        }
+                                    },
+                                    {
+                                        '@type': 'Question',
+                                        'name': 'What is the difference between a Diagnostic and a full Audit?',
+                                        'acceptedAnswer': {
+                                            '@type': 'Answer',
+                                            'text': 'A Diagnostic ($2,500) evaluates code and identifies leaks over a 60-minute session. A full R&D Capital Audit ($7,500) is a 3-week engagement that includes comprehensive financial modeling, team productivity audits, and a 90-day custom remediation plan.'
+                                        }
+                                    },
+                                    {
+                                        '@type': 'Question',
+                                        'name': 'Who qualifies for the $450 Gut-Check Session?',
+                                        'acceptedAnswer': {
+                                            '@type': 'Answer',
+                                            'text': 'The Gut-Check Session is designed for founders, CTOs, and PE operating partners who need a rapid, objective evaluation of their current AI cost and velocity exposure without committing to a larger audit.'
+                                        }
+                                    }
+                                ]
+                            }) }}
+                        />
+                        <h2 className="text-3xl font-bold font-grotesk text-zinc-950 mb-8">Frequently Asked Questions</h2>
+                        <div className="space-y-4">
+                            <FAQItem 
+                                question="How much does a fractional CPO / CTO cost?" 
+                                answer="Fractional CPO / CTO retainer packages are $10,000/month. This provides hands-on technology direction, cost-cap architecture setup, and monthly board-level reporting."
+                            />
+                            <FAQItem 
+                                question="What is the difference between a Diagnostic and a full Audit?" 
+                                answer="A Diagnostic ($2,500) evaluates code and identifies leaks over a 60-minute session. A full R&D Capital Audit ($7,500) is a 3-week engagement that includes comprehensive financial modeling, team productivity audits, and a 90-day custom remediation plan."
+                            />
+                            <FAQItem 
+                                question="Who qualifies for the $450 Gut-Check Session?" 
+                                answer="The Gut-Check Session is designed for founders, CTOs, and PE operating partners who need a rapid, objective evaluation of their current AI cost and velocity exposure without committing to a larger audit."
+                            />
+                        </div>
+                    </section>
+                </ScrollReveal>
+
+                {/* Section 8: Final CTA */}
+                <ScrollReveal>
+                    <section className="text-center bg-zinc-950 rounded-3xl p-12">
+                        <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-white mb-8">
+                            Start with the question: Is AI actually making your company money?
+                        </h2>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="mailto:richardewing@exogram.ai?subject=Inquiry: Free Benchmark" className="flex items-center justify-center px-8 py-4 rounded-xl text-sm uppercase tracking-widest font-bold transition-all bg-white text-zinc-950 hover:bg-zinc-200">
+                                Run Free Benchmark
+                            </a>
+                            <CheckoutButton 
+                                productId="gut_check" 
+                                label="Book $450 Gut-Check" 
+                                variant="primary"
+                            />
+                        </div>
+                    </section>
+                </ScrollReveal>
+
+                <div className="mt-16 text-center pt-12">
+                    <Link href="/" className="text-zinc-600 hover:text-zinc-950 transition-colors flex items-center gap-2 text-sm font-semibold font-mono uppercase tracking-widest justify-center">
                         ← Back to Homepage
                     </Link>
                 </div>
