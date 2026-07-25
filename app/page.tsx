@@ -80,10 +80,10 @@ export default function Home() {
                 },
                 {
                   '@type': 'Question',
-                  'name': 'How much does a fractional CPO cost?',
+                  'name': 'How much does a fractional CPO / CTO cost?',
                   'acceptedAnswer': {
                     '@type': 'Answer',
-                    'text': 'Fractional CPO / CTO advisory services typically range from $7,500 to $10,000 per month, depending on team size and scope. This provides senior technology leadership, cost-cap architecture reviews, and board-ready reporting.'
+                    'text': 'Fractional CPO / CTO advisory retainer is $10,000 per month. This provides senior technology leadership, cost-cap architecture reviews, and board-ready reporting.'
                   }
                 }
               ]
@@ -91,21 +91,21 @@ export default function Home() {
           ]
         }) }}
       />
-      {/* Layer 1: Identity-first hero - who you are, what you do, who you help, what to do next */}
+      {/* Layer 1: Identity-first hero */}
       <Hero />
       {/* Layer 2: Persistent proof-of-authority bar */}
       <ProofRail />
-      {/* Layer 3: Three measurable problems your buyers feel */}
+      {/* Layer 3: Three measurable problems */}
       <ThreeProblems />
-      {/* Layer 4: How It Works - Diagnose, Audit, Govern */}
+      {/* Layer 4: How It Works */}
       <HowItWorks />
-      {/* Layer 5: Transformation Story - Before & After */}
+      {/* Layer 5: Before vs After Transformation */}
       <TransformationStory />
-      {/* Layer 6: Proof of outcomes - Before & After audit results */}
+      {/* Layer 6: Client Outcomes & Stats */}
       <ClientOutcomes />
-      {/* Layer 6: High-Intent Conversion - Pricing and service packages */}
+      {/* Layer 7: High Intent Diagnostic & Advisory Conversion */}
       <HighIntentConversionBlock />
-      {/* Layer 7: Newsletter capture + final CTA */}
+      {/* Layer 8: Newsletter Capture */}
       <NewsletterSection />
     </main>
   );

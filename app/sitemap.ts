@@ -118,26 +118,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         .filter(article => !article.externalUrl)
         .forEach(article => add(`${baseUrl}/articles/${article.slug}`, 'monthly', 0.8));
 
-    // === COMPARE PAGES (static) ===
-    const comparePages = [
-        'claude-code-vs-cursor-governance', 'claude-code-retry-loop-prevention',
-        'claude-context-rot-mitigation', 'cursor-repository-drift-prevention',
-        'ai-coding-agents', 'ai-guardrails-platforms',
-        'github-copilot-problems', 'cursor-problems', 'windsurf-problems',
-        'why-claude-loses-context', 'why-retry-loops-happen', 'why-cursor-rewrites-files',
-        'why-ai-coding-burns-money', 'why-mcp-is-dangerous', 'claude-md-is-not-governance',
-        'pdi-vs-sonarqube', 'pdi-vs-codeclimate', 'pdi-vs-waydev',
-        'audit-interview-vs-leetcode', 'audit-interview-vs-hackerrank', 'audit-interview-vs-traditional',
-        'aueb-vs-aws-cost-explorer', 'ev-se-vs-jellyfish', 'aper-vs-jellyfish', 'aper-vs-linearb',
-        'copilot-roi-vs-gitclear', 'dora-metrics-vs-aper',
-        'shadow-ai-vs-shadow-it', 'technical-debt-vs-technical-insolvency', 'vibe-coding-vs-agile',
-    ];
-    comparePages.forEach(slug => add(`${baseUrl}/compare/${slug}`, 'monthly', 0.8));
-
-    // Dynamic compare pages from programmatic matrix
-    (pseoMatrixData as any[]).forEach(item => 
-        add(`${baseUrl}/compare/${item.slug}`, 'weekly', 0.8)
-    );
+    // === COMPARE PAGES (Tier A Indexed Only) ===
+    const compareCategorized = require('@/app/lib/compare-categorized.json');
+    const tierASlugs: string[] = compareCategorized.tierA_indexed || [];
+    tierASlugs.forEach(slug => add(`${baseUrl}/compare/${slug}`, 'monthly', 0.8));
 
     // === DYNAMICALLY GENERATED PAGES ===
 

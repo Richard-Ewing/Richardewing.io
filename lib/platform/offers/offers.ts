@@ -27,7 +27,7 @@ export interface CommercialOffer {
   highlighted?: boolean;
 }
 
-export const COMMERCIAL_OFFERS: Record<string, CommercialOffer> = {
+const baseOffers: Record<string, CommercialOffer> = {
   free_assessment: {
     id: 'free_assessment',
     name: 'AI Economics Assessment & Benchmark',
@@ -103,11 +103,11 @@ export const COMMERCIAL_OFFERS: Record<string, CommercialOffer> = {
   },
   hallucination_tax_audit: {
     id: 'hallucination_tax_audit',
-    name: 'Hallucination Tax & Efficiency Audit',
+    name: 'R&D Capital & Hallucination Audit',
     badge: 'Specialized Audit',
-    tagline: 'Quantify Invisible Verification Labor & Guardrail Costs',
+    tagline: 'Full 3-Week Forensic Codebase & Cost Audit',
     description: 'Engineers spend an average of 4.3 hrs/week manually validating non-deterministic model outputs. We measure total verification overhead and design runtime cost caps.',
-    price: 5000,
+    price: 7500,
     currency: 'USD',
     billingPeriod: 'one_time',
     stage: 'capital_audit',
@@ -115,11 +115,11 @@ export const COMMERCIAL_OFFERS: Record<string, CommercialOffer> = {
     objective: 'Eliminate wasted manual verification labor and enforce deterministic bounds.',
     deliverables: [
       'Full codebase & workflow verification analysis',
-      'Dollar quantification of manual review labor',
-      'Deterministic runtime guardrail architecture design'
+      '40-Page Written Executive Audit Package',
+      'Board-Ready Remediation Plan'
     ],
     primaryCTA: {
-      label: 'Book Hallucination Audit →',
+      label: 'Book R&D Capital Audit →',
       productId: 'hallucination_tax_audit',
       action: 'checkout'
     },
@@ -173,4 +173,10 @@ export const COMMERCIAL_OFFERS: Record<string, CommercialOffer> = {
     },
     highlighted: true
   }
+};
+
+export const COMMERCIAL_OFFERS: Record<string, CommercialOffer> = {
+  ...baseOffers,
+  hallucination_audit: baseOffers.hallucination_tax_audit,
+  rd_capital_audit: baseOffers.hallucination_tax_audit,
 };

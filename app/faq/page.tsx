@@ -5,6 +5,7 @@ import FAQItem from '@/app/components/FAQItem';
 export const metadata: Metadata = {
     title: 'FAQ & Strategy Diagnostics | Richard Ewing',
     description: 'FAQ provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    alternates: { canonical: 'https://www.richardewing.io/faq' },
     keywords: ['AI economist FAQ', 'richard ewing FAQ', 'advisory FAQ', 'exogram FAQ', 'technical debt FAQ'],
 };
 
@@ -12,9 +13,9 @@ const faqs = [
     {
         category: 'Advisory Services',
         questions: [
-            { q: 'What does a AI Economist do?', a: 'A AI Economist treats product decisions as economic decisions. I audit R&D spend, surface capital risks, and identify hidden technical debt in B2B SaaS environments. I translate between engineering and the C-Suite — quantifying the financial impact of technical decisions.' },
+            { q: 'What does an AI Economist do?', a: 'An AI Economist treats product and technology decisions as economic decisions. I audit R&D spend, surface capital risks, and identify hidden technical debt in B2B SaaS environments. I translate between engineering and the C-Suite — quantifying the financial impact of technical decisions.' },
             { q: 'How does the Diagnostic engagement work?', a: 'The $2,500 Diagnostic includes a PDI audit, AUEB assessment, APER diagnostic, a 1-hour strategy call, and a written executive summary. It typically takes 2-3 weeks and produces a quantified assessment of your engineering economics.' },
-            { q: 'What is the difference between Fractional CTO and Board Advisor?', a: 'The Fractional CTO tier ($7,500/month) provides 10 hours/week of hands-on advisory: architecture reviews, team coaching, board prep. The Board Advisor tier ($15,000/month) provides portfolio-level oversight: M&A due diligence, multi-company benchmarking, and AI governance framework implementation.' },
+            { q: 'What is the difference between Fractional CTO and Board Advisor?', a: 'The Fractional CTO retainer ($10,000/month) provides dedicated hands-on advisory: architecture reviews, cost-cap setups, team coaching, and board prep. The Board Advisor tier provides portfolio-level oversight: M&A due diligence, multi-company benchmarking, and AI governance framework implementation.' },
             { q: 'Do you work with startups or only enterprises?', a: 'Both. Startups benefit from the Diagnostic to identify problems early. Growth-stage companies benefit from Fractional CTO support. Enterprise and PE/VC portfolios benefit from Board Advisory.' },
         ],
     },
@@ -38,65 +39,58 @@ const faqs = [
     {
         category: 'Content & Glossary',
         questions: [
-            { q: 'Can I cite the glossary definitions?', a: 'Yes. The glossary is designed to be the canonical source for AI Economics terminology. Please attribute to richardewing.io.' },
-            { q: 'How are the frameworks different from the articles?', a: 'Frameworks are canonical definitions — permanent reference documents. Articles are time-stamped publications in external outlets (Built In, Mind the Product, CIO.com, HackerNoon). The frameworks are cited; the articles are promotional.' },
-            { q: 'How do I get the R&D Audit Checklist?', a: 'Subscribe via any form on the site — exit intent popup, newsletter section, or tool gate. You\'ll be redirected immediately to the full 15-question checklist.' },
+            { q: 'Where should I start?', a: 'Start with the Production AI Governance Framework or the $450 Gut-Check diagnostic. If you want to understand the worldview, read the essays on CIO.com or Built In.' },
+            { q: 'How often is content published?', a: 'Articles are published weekly. The newsletter goes out twice a month with original research, diagnostic case studies, and framework updates.' },
         ],
     },
 ];
 
-export default function FaqPage() {
-    // FAQPage JSON-LD schema
-    const faqSchema = {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: faqs.flatMap(cat => cat.questions.map(q => ({
-            '@type': 'Question',
-            name: q.q,
-            acceptedAnswer: { '@type': 'Answer', text: q.a },
-        }))),
-    };
-
+export default function FAQPage() {
     return (
-        <div className="max-w-4xl w-full relative z-10 mx-auto">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-
-            <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
-                <span>Help</span><span>/</span><span className="text-cyan-900 font-extrabold font-semibold font-bold">FAQ</span>
-            </div>
-
-            <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cobalt">Questions</span>
-            </h1>
-            <p className="text-lg text-zinc-900 mb-12">Answers about advisory services, frameworks, tools, Exogram, and the glossary.</p>
-
-            {faqs.map((category) => (
-                <div key={category.category} className="mb-12">
-                    <h2 className="text-xl font-bold text-zinc-950 mb-6 flex items-center gap-3">
-                        <span className="w-6 h-0.5 bg-gradient-to-r from-cyan-400 to-cobalt" />
-                        {category.category}
-                    </h2>
-                    <div className="space-y-4">
-                        {category.questions.map((faq) => (
-                            <FAQItem key={faq.q} question={faq.q} answer={faq.a} />
-                        ))}
+        <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
+            <div className="page-container max-w-4xl mx-auto px-6">
+                
+                {/* Header */}
+                <div className="mb-12 border-b border-zinc-300 pb-8">
+                    <div className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest mb-3">
+                        Knowledge Base
                     </div>
+                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
+                        Frequently Asked Questions
+                    </h1>
+                    <p className="text-xl text-zinc-800 leading-relaxed font-semibold max-w-2xl">
+                        Common questions about AI Economics, advisory services, diagnostic tools, and the Exogram platform.
+                    </p>
                 </div>
-            ))}
- 
-            {/* CTA */}
-            <div className="text-center py-12 border-t border-zinc-400">
-                <h2 className="text-2xl font-bold text-zinc-950 mb-4">Still Have Questions?</h2>
-                <p className="text-zinc-900 mb-8">Book a free 15-minute call or explore the tools.</p>
-                <div className="flex flex-wrap justify-center gap-4">
-                    <Link href="/services" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs font-bold rounded-xl hover:bg-cyan-400 transition-colors">
-                        Book a Call →
-                    </Link>
-                    <Link href="/tools" className="px-8 py-4 border border-zinc-500 text-zinc-950 font-bold uppercase tracking-widest text-xs font-bold rounded-xl hover:border-cyan-500 transition-all">
-                        Explore Free Tools →
+
+                {/* FAQ Categories */}
+                <div className="space-y-12">
+                    {faqs.map((cat, idx) => (
+                        <div key={idx} className="bg-white border border-zinc-300 rounded-2xl p-6 sm:p-8 shadow-sm">
+                            <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6 border-b border-zinc-200 pb-3">
+                                {cat.category}
+                            </h2>
+                            <div className="space-y-4">
+                                {cat.questions.map((q, qIdx) => (
+                                    <FAQItem key={qIdx} question={q.q} answer={q.a} />
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Bottom CTA */}
+                <div className="mt-16 bg-zinc-950 text-white rounded-3xl p-8 sm:p-12 text-center">
+                    <h2 className="text-3xl font-grotesk font-bold mb-4">Have a specific question?</h2>
+                    <p className="text-zinc-400 max-w-lg mx-auto mb-8 text-sm font-medium">
+                        Schedule a $450 Gut-Check Evaluation to discuss your specific infrastructure, AI costs, and engineering velocity.
+                    </p>
+                    <Link href="/services" className="inline-block px-8 py-4 bg-white text-zinc-950 font-bold font-mono text-xs uppercase tracking-widest rounded-xl hover:bg-zinc-200 transition-colors">
+                        Book Diagnostic Session →
                     </Link>
                 </div>
+
             </div>
-        </div>
+        </main>
     );
 }

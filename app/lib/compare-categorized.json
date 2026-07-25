@@ -1,5 +1,36 @@
 {
-  "tierA_indexed": [],
+  "tierA_indexed": [
+    "claude-code-vs-cursor-governance",
+    "claude-code-retry-loop-prevention",
+    "claude-context-rot-mitigation",
+    "cursor-repository-drift-prevention",
+    "ai-coding-agents",
+    "ai-guardrails-platforms",
+    "github-copilot-problems",
+    "cursor-problems",
+    "windsurf-problems",
+    "why-claude-loses-context",
+    "why-retry-loops-happen",
+    "why-cursor-rewrites-files",
+    "why-ai-coding-burns-money",
+    "why-mcp-is-dangerous",
+    "claude-md-is-not-governance",
+    "pdi-vs-sonarqube",
+    "pdi-vs-codeclimate",
+    "pdi-vs-waydev",
+    "audit-interview-vs-leetcode",
+    "audit-interview-vs-hackerrank",
+    "audit-interview-vs-traditional",
+    "aueb-vs-aws-cost-explorer",
+    "ev-se-vs-jellyfish",
+    "aper-vs-jellyfish",
+    "aper-vs-linearb",
+    "copilot-roi-vs-gitclear",
+    "dora-metrics-vs-aper",
+    "shadow-ai-vs-shadow-it",
+    "technical-debt-vs-technical-insolvency",
+    "vibe-coding-vs-agile"
+  ],
   "tierB_noindexed": [],
   "tierC_redirected": [
     "chakra-ui-vs-terraform",
@@ -22,7 +53,9 @@
     "datadog-vs-gitlab-ci",
     "ansible-vs-nuxt",
     "supabase-vs-vue",
-    "new-relic-vs-tailwindcss"
+    "new-relic-vs-tailwindcss",
+    "docker-vs-langchain",
+    "astro-vs-llamaindex"
   ],
   "junk": [
     "chakra-ui-vs-terraform",
@@ -45,7 +78,9 @@
     "datadog-vs-gitlab-ci",
     "ansible-vs-nuxt",
     "supabase-vs-vue",
-    "new-relic-vs-tailwindcss"
+    "new-relic-vs-tailwindcss",
+    "docker-vs-langchain",
+    "astro-vs-llamaindex"
   ],
-  "updatedAt": "2026-07-25T22:18:03.912Z"
+  "updatedAt": "2026-07-25T22:39:22.552Z"
 }

@@ -1,162 +1,137 @@
-'use client';
+"use client";
 
+import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, ShieldAlert } from 'lucide-react';
-import { ScrollReveal } from '../magicui/scroll-reveal';
+import { ScrollReveal } from '@/components/magicui/scroll-reveal';
+import { COMMERCIAL_OFFERS } from '@/lib/platform/offers/offers';
 
 export default function HighIntentConversionBlock() {
     return (
-        <section className="py-24 bg-zinc-950 relative overflow-hidden border-t-4 border-amber-500">
-            {/* Background elements */}
-            <div className="absolute inset-0 bg-[url('/assets/images/noise.png')] opacity-10 mix-blend-overlay pointer-events-none" />
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
-            
-            <div className="page-container max-w-5xl mx-auto relative z-10">
+        <section className="py-24 bg-black relative overflow-hidden">
+            {/* Background Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-cyan-500/10 via-amber-500/5 to-purple-500/10 rounded-full blur-[140px] pointer-events-none" />
+
+            <div className="max-w-6xl mx-auto px-6 relative z-10">
                 <ScrollReveal>
-                    <div className="text-center mb-16">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 font-mono text-xs font-bold uppercase tracking-widest mb-6">
-                            <ShieldAlert className="w-4 h-4" />
-                            <span>Executive Intervention Required</span>
+                    <div className="text-center max-w-3xl mx-auto mb-16">
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 font-mono text-xs uppercase tracking-widest mb-6">
+                            <span>Diagnostic & Advisory Engagements</span>
                         </div>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-grotesk font-black text-white mb-6 leading-tight">
-                            From unknown to governed.
+                        <h2 className="text-4xl md:text-5xl font-grotesk font-black text-white tracking-tight leading-tight mb-6">
+                            Stop Guessing Your AI ROI. <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-cyan-400 to-indigo-400">
+                                Inspect the Math.
+                            </span>
                         </h2>
-                        <p className="text-xl text-zinc-200 font-medium max-w-3xl mx-auto">
-                            Every engagement produces a concrete deliverable. Each step builds on the last.
+                        <p className="text-zinc-400 text-lg leading-relaxed font-medium">
+                            Whether you need an immediate rapid evaluation or an enterprise governance implementation, we follow a strict diagnostic progression to eliminate wasted spend.
                         </p>
                     </div>
                 </ScrollReveal>
 
-
-                {/* Funnel entry - zero-risk starting point */}
-                <ScrollReveal>
-                    <div className="mb-10 rounded-2xl bg-zinc-900/50 border border-zinc-800 p-6 md:p-8 text-center">
-                        <div className="text-emerald-400 font-grotesk font-black text-2xl uppercase tracking-wider mb-1">Find Your Margin Leakage</div>
-                        <h3 className="text-sm font-mono font-bold text-zinc-400 mb-2">Free AI Unit Economics Benchmark</h3>
-                        <p className="text-zinc-300 text-sm mb-5 max-w-lg mx-auto">Answer 10 questions about your AI infrastructure. Get an immediate economics score with estimated margin leakage and top risks. Free, no login required.</p>
-                        <div className="flex flex-col items-center justify-center gap-4">
-                            <div className="flex flex-wrap items-center justify-center gap-4">
-                                <Link href="/assessment" className="inline-flex items-center gap-2 px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_25px_rgba(16,185,129,0.4)] group/btn">
-                                    Take the Assessment <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                                </Link>
-                                <span className="text-zinc-500 text-sm">or</span>
-                                <Link href="/services" className="text-amber-400 hover:text-amber-300 font-bold text-sm transition-colors underline underline-offset-2 decoration-amber-500/40">
-                                    Book a $450 Gut-Check Session →
-                                </Link>
-                            </div>
-                            <Link href="/tools/aueb" className="text-zinc-500 hover:text-zinc-400 text-xs transition-colors underline underline-offset-2">
-                                Run Detailed AUEB Benchmark
-                            </Link>
-                        </div>
-                    </div>
-                </ScrollReveal>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-                    {/* Step 1: $450 Gut-Check */}
-                    <ScrollReveal delay={50}>
-                        <div className="h-full rounded-2xl bg-zinc-900 border border-zinc-800 p-6 md:p-8 flex flex-col relative overflow-hidden group hover:border-emerald-500/50 transition-colors">
-                            <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-full blur-[30px] translate-x-1/2 -translate-y-1/2 group-hover:bg-emerald-500/20 transition-colors" />
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                    
+                    {/* Free Assessment / Entry */}
+                    <ScrollReveal delay={0}>
+                        <div className="h-full rounded-2xl bg-zinc-900 border border-zinc-800 p-6 md:p-8 flex flex-col relative overflow-hidden group hover:border-zinc-700 transition-colors">
+                            <div className="text-zinc-400 font-grotesk font-bold text-xs uppercase tracking-widest mb-1">Self-Service Benchmark</div>
+                            <h3 className="text-xl font-grotesk font-bold text-white mb-3">AI Economics Score</h3>
+                            <div className="text-3xl font-bold text-emerald-400 font-mono mb-6 pb-6 border-b border-zinc-800">Free</div>
                             
-                            <div className="text-emerald-400 font-grotesk font-black text-2xl uppercase tracking-wider mb-1">Validate the Findings</div>
-                            <h3 className="text-sm font-mono font-bold text-zinc-400 mb-3">Executive Diagnostic</h3>
-                            <div className="text-2xl font-bold text-white font-mono mb-4 pb-4 border-b border-zinc-800">$450 <span className="text-sm text-zinc-500">30 min</span></div>
-                            
-                            <p className="text-zinc-300 mb-6 font-medium leading-relaxed text-sm">
-                                A 30-minute rapid scan of your AWS, API, and AI billing. You get a written summary of the three largest cost risks and whether a full audit is warranted.
+                            <p className="text-zinc-300 mb-8 text-sm leading-relaxed font-medium">
+                                Answer 15 quantitative questions to measure your AI unit economics, cost visibility, and governance maturity.
                             </p>
                             
-                            <ul className="space-y-3 mb-8 flex-1">
-                                <li className="flex items-start gap-2">
-                                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                                    <span className="text-white font-medium text-sm">Top 3 cost risks identified</span>
+                            <ul className="space-y-3 mb-10 flex-1 text-sm">
+                                <li className="flex items-start gap-2 text-zinc-300">
+                                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                                    <span>Immediate 0-100 score</span>
                                 </li>
-                                <li className="flex items-start gap-2">
-                                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                                    <span className="text-white font-medium text-sm">Go/no-go on full audit</span>
+                                <li className="flex items-start gap-2 text-zinc-300">
+                                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                                    <span>Estimated margin leakage %</span>
                                 </li>
-                                <li className="flex items-start gap-2">
-                                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                                    <span className="text-white font-medium text-sm">Written findings summary</span>
+                                <li className="flex items-start gap-2 text-zinc-300">
+                                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                                    <span>Printable PDF report export</span>
                                 </li>
                             </ul>
                             
-                            <Link href="/services" className="w-full py-3 border border-emerald-500/60 text-emerald-400 hover:bg-emerald-500/10 text-center font-bold font-grotesk rounded-xl transition-all flex items-center justify-center gap-2 group/btn text-sm">
-                                Book Gut-Check <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                            <Link href="/assessment" className="w-full py-3.5 bg-zinc-800 hover:bg-zinc-700 text-white text-center font-bold text-xs uppercase tracking-widest rounded-xl transition-all border border-zinc-700 flex items-center justify-center gap-2">
+                                Take Free Assessment <ArrowRight className="w-4 h-4" />
                             </Link>
                         </div>
                     </ScrollReveal>
 
-                    {/* Step 2: $2,500 Diagnostic */}
+                    {/* Rapid Diagnostic ($450) */}
                     <ScrollReveal delay={100}>
-                        <div className="h-full rounded-2xl bg-zinc-900 border border-zinc-800 p-6 md:p-8 flex flex-col relative overflow-hidden group hover:border-amber-500/50 transition-colors">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-[40px] translate-x-1/2 -translate-y-1/2 group-hover:bg-amber-500/20 transition-colors" />
+                        <div className="h-full rounded-2xl bg-gradient-to-b from-zinc-900 to-zinc-950 border-2 border-amber-500/50 p-6 md:p-8 flex flex-col relative overflow-hidden shadow-[0_0_40px_rgba(245,158,11,0.15)]">
+                            <span className="absolute top-0 right-0 px-3 py-1 bg-amber-500 text-black text-[10px] font-mono font-extrabold uppercase tracking-widest rounded-bl-xl">
+                                Recommended Entry
+                            </span>
                             
-                            <div className="text-amber-500 font-grotesk font-black text-2xl uppercase tracking-wider mb-1">Quantify the Losses</div>
-                            <h3 className="text-sm font-mono font-bold text-zinc-400 mb-3">R&D Capital Audit</h3>
-                            <div className="text-2xl font-bold text-white font-mono mb-6 pb-6 border-b border-zinc-800">$2,500 <span className="text-sm text-zinc-500">Fixed-Fee</span></div>
+                            <div className="text-amber-400 font-grotesk font-bold text-xs uppercase tracking-widest mb-1">Rapid Diagnostic</div>
+                            <h3 className="text-xl font-grotesk font-bold text-white mb-3">Rapid Gut-Check</h3>
+                            <div className="text-3xl font-bold text-white font-mono mb-6 pb-6 border-b border-zinc-800">${COMMERCIAL_OFFERS.gut_check.price}<span className="text-xs text-zinc-400">/session</span></div>
                             
-                            <p className="text-zinc-200 mb-8 font-medium leading-relaxed">
-                                A surgical 7-day audit of your AI infrastructure, identifying where R&D capital is leaking and how to mathematically constrain execution costs.
+                            <p className="text-zinc-300 mb-8 text-sm leading-relaxed font-medium">
+                                A 30-minute rapid-fire session to review your AWS/API bill, unit economics, and velocity. Immediate verdict on whether your setup is at risk.
                             </p>
                             
-                            <ul className="space-y-4 mb-10 flex-1">
-                                <li className="flex items-start gap-3">
-                                    <CheckCircle2 className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
-                                    <span className="text-white font-semibold">Unit Economics Audit & Margin Analysis</span>
+                            <ul className="space-y-3 mb-10 flex-1 text-sm">
+                                <li className="flex items-start gap-2 text-zinc-300">
+                                    <CheckCircle2 className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                                    <span>30-min 1-on-1 with Richard Ewing</span>
                                 </li>
-                                <li className="flex items-start gap-3">
-                                    <CheckCircle2 className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
-                                    <span className="text-white font-semibold">Shadow AI & Security Risk Report</span>
+                                <li className="flex items-start gap-2 text-zinc-300">
+                                    <CheckCircle2 className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                                    <span>AWS / API billing leak scan</span>
                                 </li>
-                                <li className="flex items-start gap-3">
-                                    <CheckCircle2 className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
-                                    <span className="text-white font-semibold">Technical Debt Liability Matrix</span>
+                                <li className="flex items-start gap-2 text-zinc-300">
+                                    <CheckCircle2 className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                                    <span>1-click Stripe checkout</span>
                                 </li>
                             </ul>
                             
-                            <Link href="/contact" className="w-full py-4 bg-amber-500 hover:bg-amber-400 text-black text-center font-bold font-grotesk rounded-xl transition-all shadow-[0_0_20px_rgba(245,158,11,0.2)] hover:shadow-[0_0_25px_rgba(245,158,11,0.4)] flex items-center justify-center gap-2 group/btn">
-                                Book a $2,500 Diagnostic <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                            <Link href="/services" className="w-full py-3.5 bg-amber-500 hover:bg-amber-400 text-black text-center font-bold text-xs uppercase tracking-widest rounded-xl transition-all shadow-[0_0_20px_rgba(245,158,11,0.2)] flex items-center justify-center gap-2">
+                                Book $450 Gut-Check <ArrowRight className="w-4 h-4" />
                             </Link>
                         </div>
                     </ScrollReveal>
 
-                    {/* Retainer Block */}
+                    {/* Enterprise Advisory Retainer */}
                     <ScrollReveal delay={200}>
-                        <div className="h-full rounded-2xl bg-zinc-900 border border-zinc-800 p-6 md:p-8 flex flex-col relative overflow-hidden opacity-90 hover:opacity-100 transition-opacity">
-                            <div className="text-zinc-200 font-grotesk font-black text-2xl uppercase tracking-wider mb-1">Fix the System</div>
-                            <h3 className="text-sm font-mono font-bold text-zinc-500 mb-3">Advisory Retainer</h3>
-                            <div className="text-2xl font-bold text-white font-mono mb-6 pb-6 border-b border-zinc-800">$7,500<span className="text-sm text-zinc-500">/month</span></div>
+                        <div className="h-full rounded-2xl bg-zinc-900 border border-zinc-800 p-6 md:p-8 flex flex-col relative overflow-hidden group hover:border-zinc-700 transition-colors">
+                            <div className="text-indigo-400 font-grotesk font-bold text-xs uppercase tracking-widest mb-1">Advisory Retainer</div>
+                            <h3 className="text-xl font-grotesk font-bold text-white mb-3">Fractional CTO / Retainer</h3>
+                            <div className="text-3xl font-bold text-white font-mono mb-6 pb-6 border-b border-zinc-800">${COMMERCIAL_OFFERS.advisory_retainer.price.toLocaleString()}<span className="text-xs text-zinc-400">/month</span></div>
                             
-                            <p className="text-zinc-200 mb-8 font-medium leading-relaxed">
-                                Following the diagnostic, we move into execution. I operate as a fractional AI Economist, implementing deterministic governance and board-ready reporting.
+                            <p className="text-zinc-300 mb-8 text-sm leading-relaxed font-medium">
+                                Dedicated fractional technology direction, installing deterministic runtime controls, cost ceilings, and board-ready reporting.
                             </p>
                             
-                            <ul className="space-y-4 mb-10 flex-1">
-                                <li className="flex items-start gap-3">
-                                    <CheckCircle2 className="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
-                                    <span className="text-white font-semibold">Strict Cost-Cap Architecture Reviews</span>
+                            <ul className="space-y-3 mb-10 flex-1 text-sm">
+                                <li className="flex items-start gap-2 text-zinc-300">
+                                    <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
+                                    <span>Strict Cost-Cap Architecture Reviews</span>
                                 </li>
-                                <li className="flex items-start gap-3">
-                                    <CheckCircle2 className="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
-                                    <span className="text-white font-semibold">CFO-Level ROI Dashboards</span>
+                                <li className="flex items-start gap-2 text-zinc-300">
+                                    <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
+                                    <span>Zero Shadow AI Governance</span>
                                 </li>
-                                <li className="flex items-start gap-3">
-                                    <CheckCircle2 className="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
-                                    <span className="text-white font-semibold">Board Meeting Representation</span>
+                                <li className="flex items-start gap-2 text-zinc-300">
+                                    <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
+                                    <span>Board Meeting Representation</span>
                                 </li>
                             </ul>
                             
-                            <div className="w-full py-4 border border-zinc-700 text-zinc-200 text-center font-bold font-grotesk rounded-xl bg-zinc-900/50 cursor-default">
-                                Available after Diagnostic
-                            </div>
+                            <a href="mailto:richardewing@exogram.ai?subject=Inquiry: Enterprise Retainer" className="w-full py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold text-xs uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2">
+                                Inquire Retainer <ArrowRight className="w-4 h-4" />
+                            </a>
                         </div>
                     </ScrollReveal>
-                </div>
-                
-                <div className="mt-16 text-center">
-                    <p className="text-zinc-500 font-mono text-sm font-semibold max-w-2xl mx-auto">
-                        Built for CTOs who answer to boards and CFOs who answer to investors.
-                    </p>
+
                 </div>
             </div>
         </section>
