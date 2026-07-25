@@ -66,6 +66,7 @@ export function Footer() {
                             <li><Link href="/articles" className="text-zinc-950 hover:text-zinc-900 transition-colors">Articles</Link></li>
                             <li><Link href="/curriculum" className="text-zinc-950 hover:text-zinc-900 transition-colors">Curriculum</Link></li>
                             <li><Link href="/contact" className="text-zinc-950 hover:text-zinc-900 transition-colors">Contact</Link></li>
+                            <li><Link href="/partner" className="text-zinc-950 hover:text-zinc-900 transition-colors">Partner</Link></li>
                             <li><Link href="/services" className="text-[var(--accent-crimson)] font-bold hover:opacity-80 transition-colors">Book an Audit</Link></li>
                         </ul>
                     </div>

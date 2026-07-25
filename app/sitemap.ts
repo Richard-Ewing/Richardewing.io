@@ -90,6 +90,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/reports/state-of-ai-engineering`, 'monthly', 0.9);
     add(`${baseUrl}/testimonials`, 'monthly', 0.7);
     add(`${baseUrl}/partnerships`, 'monthly', 0.7);
+    add(`${baseUrl}/partner`, 'monthly', 0.7);
 
     // === AI INTEGRATION ===
     add(`${baseUrl}/ai-integration`, 'weekly', 0.95);
