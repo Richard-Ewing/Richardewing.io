@@ -34,7 +34,6 @@ const Navigation = () => {
 
                         {/* Logo/Identity */}
                         <Link href="/" className="flex items-center gap-3 group">
-                            {/* Using a placeholder avatar if image not available, or the actual image path */}
                             <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[var(--accent-purple)] relative">
                                 <Image src="/assets/headshot.jpg" alt="Richard Ewing" width={40} height={40} className="w-full h-full object-cover" priority />
                             </div>
@@ -44,7 +43,7 @@ const Navigation = () => {
                             </div>
                         </Link>
 
-                        {/* Desktop Nav — Reorganized for Framework and Research Integration */}
+                        {/* Desktop Nav */}
                         <div className="hidden lg:flex items-center gap-4">
 
                             {/* Start Here / Member Dashboard */}
@@ -53,9 +52,9 @@ const Navigation = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/challenges" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
-                                Problems
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
+                            <Link href="/assessment" className="text-purple-700 font-bold hover:text-purple-900 transition-colors relative group font-semibold">
+                                AI Economics Score
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full" />
                             </Link>
 
                             <Link href="/framework" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
@@ -68,8 +67,8 @@ const Navigation = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/services" className="text-zinc-700 hover:text-zinc-900 transition-colors relative group font-medium">
-                                Services
+                            <Link href="/advisory" className="text-zinc-700 hover:text-zinc-900 transition-colors relative group font-medium">
+                                Advisory & Services
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
@@ -80,10 +79,10 @@ const Navigation = () => {
 
                             {/* Primary CTA */}
                             <Link
-                                href="/services"
+                                href="/assessment"
                                 className="bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-2 rounded-lg font-bold text-white hover:opacity-90 transition-all shadow-lg shadow-violet-500/20 hover:shadow-xl hover:shadow-violet-500/30 transform hover:-translate-y-0.5 text-xs uppercase tracking-wider"
                             >
-                                Book a Diagnostic →
+                                Take Assessment →
                             </Link>
 
                             <div className="h-6 w-px bg-zinc-200 mx-1 flex-shrink-0" />
@@ -96,209 +95,72 @@ const Navigation = () => {
                                     </button>
                                 </SignInButton>
                             )}
-                            {isLoaded && isSignedIn && (
-                                <div className="flex items-center justify-center -ml-2">
-                                    <UserDropdown />
-                                </div>
-                            )}
-
                         </div>
 
-                        {/* Mobile Hamburger */}
-                        <button
-                            className="lg:hidden text-zinc-900 p-2"
-                            onClick={() => setMobileMenuOpen(true)}
-                            aria-label="Open Menu"
-                        >
-                            <Menu className="w-6 h-6" />
-                        </button>
+                        {/* Mobile Menu Button */}
+                        <div className="lg:hidden flex items-center gap-3">
+                            <button
+                                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                                className="p-2 text-zinc-800 hover:text-zinc-900 focus:outline-none"
+                                aria-label="Toggle Menu"
+                            >
+                                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                            </button>
+                        </div>
 
                     </div>
                 </div>
             </nav>
 
-            {/* Mobile Menu Overlay */}
+            {/* Mobile Drawer */}
             <AnimatePresence>
                 {mobileMenuOpen && (
-                    <MobileMenu onClose={() => setMobileMenuOpen(false)} />
-                )}
-            </AnimatePresence>
-        </>
-    );
-};
-
-// Dropdown Component
-const Dropdown = ({ label, children }: { label: React.ReactNode, children: React.ReactNode }) => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    return (
-        <div
-            className="relative group"
-            onMouseEnter={() => setIsOpen(true)}
-            onMouseLeave={() => setIsOpen(false)}
-        >
-            <button className="flex items-center gap-1 text-zinc-900 hover:text-zinc-900 py-2 group-hover:text-[var(--accent-purple)] transition-colors">
-                {label}
-                <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-            </button>
-
-            <AnimatePresence>
-                {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: 10 }}
+                        initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 w-64 pt-2"
+                        exit={{ opacity: 0, y: -20 }}
+                        className="fixed inset-x-0 top-16 z-40 bg-white/95 backdrop-blur-xl border-b border-zinc-300 p-6 lg:hidden shadow-xl"
                     >
-                        <div className="bg-white border border-zinc-400 rounded-xl overflow-hidden shadow-xl shrink-0">
-                            <div className="py-2">
-                                {children}
+                        <div className="flex flex-col gap-4">
+                            <Link href="/start-here" onClick={() => setMobileMenuOpen(false)} className="text-emerald-700 font-bold text-base">
+                                ✦ Start Here
+                            </Link>
+                            <Link href="/assessment" onClick={() => setMobileMenuOpen(false)} className="text-purple-700 font-bold text-base">
+                                AI Economics Score (15-Q)
+                            </Link>
+                            <Link href="/framework" onClick={() => setMobileMenuOpen(false)} className="text-zinc-900 font-medium text-base">
+                                Framework
+                            </Link>
+                            <Link href="/tools" onClick={() => setMobileMenuOpen(false)} className="text-zinc-900 font-medium text-base">
+                                Tools & Benchmarks
+                            </Link>
+                            <Link href="/advisory" onClick={() => setMobileMenuOpen(false)} className="text-zinc-900 font-medium text-base">
+                                Advisory & Services
+                            </Link>
+                            <Link href="/exogram" onClick={() => setMobileMenuOpen(false)} className="text-purple-700 font-medium text-base">
+                                Exogram Platform
+                            </Link>
+                            <a href="https://careerwin.ai/" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="text-indigo-700 font-medium text-base">
+                                CareerWin.ai Platform
+                            </a>
+                            <Link href="/principal" onClick={() => setMobileMenuOpen(false)} className="text-zinc-700 font-medium text-base">
+                                About Richard Ewing
+                            </Link>
+
+                            <div className="pt-4 border-t border-zinc-200 flex flex-col gap-3">
+                                <Link
+                                    href="/assessment"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="w-full py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-center rounded-xl text-xs uppercase tracking-wider shadow-md"
+                                >
+                                    Take 15-Q Assessment
+                                </Link>
                             </div>
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
-        </div>
-    );
-};
-
-const DropdownItem = ({ href, children, description }: { href: string, children: React.ReactNode, description?: string }) => {
-    return (
-        <Link
-            href={href}
-            className="block px-4 py-3 text-sm font-medium text-zinc-900 hover:text-zinc-900 hover:bg-zinc-50 transition-colors border-l-2 border-transparent hover:border-[var(--accent-purple)]"
-        >
-            <span className="block">{children}</span>
-            {description && <span className="block text-xs font-medium text-zinc-600 mt-0.5">{description}</span>}
-        </Link>
-    );
-};
-
-// Mobile Menu Component
-const MobileMenu = ({ onClose }: { onClose: () => void }) => {
-    const { isSignedIn, isLoaded } = useUser();
-    
-    return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-[var(--bg-primary)]/98 backdrop-blur-xl"
-        >
-            <div className="flex flex-col h-full overflow-y-auto">
-                <div className="flex items-center justify-between p-6 border-b border-zinc-400">
-                    <div className="font-semibold text-zinc-900">Menu</div>
-                    <button onClick={onClose} className="p-2 text-zinc-900 hover:text-[var(--accent-crimson)]" aria-label="Close menu">
-                        <X className="w-6 h-6" />
-                    </button>
-                </div>
-
-                <div className="p-6 space-y-8 pb-20">
-
-                    {/* Start Here - Hero CTA */}
-                    <Link
-                        href={isSignedIn ? "/vault" : "/start-here"}
-                        onClick={onClose}
-                        className="block w-full bg-gradient-to-r from-emerald-600 to-cyan-600 text-white font-bold text-center py-4 rounded-xl text-lg hover:opacity-90 transition-opacity"
-                    >
-                        ✦ {isSignedIn ? "ACCESS VAULT" : "START HERE"}
-                    </Link>
-
-                    <div className="w-full h-px bg-zinc-200" />
-
-                    <div className="space-y-4">
-                        <MobileLink href="/challenges" onClick={onClose} className="text-lg font-bold">Problems</MobileLink>
-                        <MobileLink href="/framework" onClick={onClose} className="text-lg font-bold">Framework</MobileLink>
-                        <MobileLink href="/tools" onClick={onClose} className="text-lg font-bold">Tools</MobileLink>
-                        <MobileLink href="/services" onClick={onClose} className="text-lg font-bold">Services</MobileLink>
-                        <MobileLink href="/principal" onClick={onClose} className="text-lg font-bold">About</MobileLink>
-                    </div>
-
-                    <div className="w-full h-px bg-zinc-200 my-4" />
-
-                    <Link
-                        href="/services"
-                        onClick={onClose}
-                        className="block w-full bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-center py-4 rounded-xl text-lg hover:opacity-90 transition-opacity mb-4"
-                    >
-                        BOOK A DIAGNOSTIC
-                    </Link>
-
-                    {isLoaded && !isSignedIn && (
-                        <SignInButton mode="modal" fallbackRedirectUrl="/vault" signUpFallbackRedirectUrl="/vault">
-                            <button onClick={onClose} className="block w-full bg-zinc-100 border border-zinc-400 text-zinc-900 text-center font-bold py-4 rounded-xl text-lg hover:bg-zinc-200 transition-colors">
-                                SIGN IN
-                            </button>
-                        </SignInButton>
-                    )}
-                    
-                    {isLoaded && isSignedIn && (
-                        <Link 
-                            href="/vault"
-                            onClick={onClose}
-                            className="block w-full bg-cyan-50 border border-cyan-200 text-cyan-900 font-extrabold text-center font-bold py-4 rounded-xl text-lg hover:bg-cyan-100 transition-colors"
-                        >
-                            ACCESS VAULT
-                        </Link>
-                    )}
-
-                </div>
-            </div>
-        </motion.div>
-    );
-};
-
-const MobileSection = ({ title, href, children, onClick }: { title: string, href: string, children: React.ReactNode, onClick: () => void }) => {
-    return (
-        <Link href={href} onClick={onClick} className="block group">
-            <h2 className="text-2xl font-bold text-zinc-900 group-hover:text-[var(--accent-purple)] transition-colors mb-1">{title}</h2>
-            {children}
-        </Link>
-    );
-};
-
-const MobileLink = ({ href, children, onClick, className = "" }: { href: string, children: React.ReactNode, onClick: () => void, className?: string }) => {
-    return (
-        <Link
-            href={href}
-            onClick={onClick}
-            className={`block px-4 py-3 rounded-lg bg-white text-zinc-900 hover:text-zinc-900 hover:bg-zinc-50 transition-colors ${className}`}
-        >
-            {children}
-        </Link>
-    );
-};
-
-const UserDropdown = () => {
-    const { user } = useUser();
-    const { signOut } = useClerk();
-    
-    if (!user) return null;
-
-    const initials = user.firstName && user.lastName 
-        ? `${user.firstName[0]}${user.lastName[0]}` 
-        : user.primaryEmailAddress?.emailAddress?.substring(0, 1).toUpperCase() || 'U';
-
-    return (
-        <Dropdown label={
-            <div className="w-8 h-8 rounded-full bg-violet-600 text-white font-bold flex items-center justify-center text-sm border border-violet-400/50 hover:border-violet-400 transition-colors">
-                {initials}
-            </div>
-        }>
-            <div className="px-4 py-3 border-b border-zinc-400 mb-2">
-                <p className="text-sm font-semibold text-zinc-900">{user.fullName || 'User'}</p>
-                <p className="text-xs text-zinc-600 truncate">{user.primaryEmailAddress?.emailAddress}</p>
-            </div>
-            <DropdownItem href="/vault" description="Your intelligence dashboard">My Vault</DropdownItem>
-            <DropdownItem href="/system" description="All enterprise tools">Tools Library</DropdownItem>
-            <button 
-                onClick={() => signOut()} 
-                className="w-full text-left block px-4 py-3 text-sm font-medium text-zinc-700 hover:text-red-600 hover:bg-zinc-50 transition-colors mt-2 border-t border-zinc-200"
-            >
-                Sign Out
-            </button>
-        </Dropdown>
+        </>
     );
 };
 

@@ -15,7 +15,23 @@ export const metadata: Metadata = {
     },
 };
 
-const steps = [
+interface StepLink {
+    label: string;
+    href: string;
+    primary?: boolean;
+    external?: boolean;
+}
+
+interface StepItem {
+    number: string;
+    title: string;
+    subtitle: string;
+    description: string;
+    links: StepLink[];
+    color: string;
+}
+
+const steps: StepItem[] = [
     {
         number: '01',
         title: 'Understand The Problem',
@@ -38,11 +54,11 @@ const steps = [
     },
     {
         number: '03',
-        title: 'Run Diagnostics',
-        subtitle: 'Quantify operational entropy',
-        description: 'You cannot manage what you do not measure. Run a diagnostic assessment to generate an objective baseline of your current Product Debt, AI Margins, or Developer Productivity.',
+        title: 'Run Diagnostics & Assessment',
+        subtitle: 'Quantify operational entropy & AI maturity',
+        description: 'You cannot manage what you do not measure. Take the 15-question AI Economics Assessment to generate an objective baseline of your cost visibility and governance maturity.',
         links: [
-            { label: 'Access Diagnostics', href: '/tools', primary: true },
+            { label: 'Take 15-Q Assessment', href: '/assessment', primary: true },
             { label: 'Product Debt Index (PDI)', href: '/tools/pdi' },
             { label: 'AI Unit Economics (AUEB)', href: '/tools/aueb' },
         ],
@@ -61,7 +77,7 @@ const steps = [
     },
     {
         number: '05',
-        title: 'Explore Exogram',
+        title: 'Explore Exogram (B2B Governance Platform)',
         subtitle: 'Runtime enforcement of policy-as-code',
         description: 'Frameworks are meaningless if they are not enforced at runtime. Exogram physically intercepts AI payloads, guaranteeing deterministic, verified output before it reaches production environments.',
         links: [
@@ -69,14 +85,25 @@ const steps = [
         ],
         color: 'emerald',
     },
+    {
+        number: '06',
+        title: 'Career Intelligence (CareerWin.ai)',
+        subtitle: 'Individual career acceleration & revenue engine',
+        description: 'For engineers, architects, and product leaders seeking role benchmarks, leveling intelligence, and compensation strategy powered by the AI Economics Knowledge Engine.',
+        links: [
+            { label: 'Explore CareerWin.ai Platform', href: 'https://careerwin.ai/', primary: true, external: true }
+        ],
+        color: 'blue',
+    },
 ];
 
 const colorMap: Record<string, { border: string; bg: string; text: string; dot: string; primaryBg: string }> = {
-    red: { border: 'border-red-500/30', bg: 'bg-red-500/5', text: 'text-red-900 font-extrabold', dot: 'bg-red-400', primaryBg: 'bg-gradient-to-r from-red-500 to-orange-600 text-zinc-950 font-semibold' },
-    indigo: { border: 'border-indigo-500/30', bg: 'bg-indigo-500/5', text: 'text-indigo-900 font-extrabold', dot: 'bg-indigo-400', primaryBg: 'bg-gradient-to-r from-indigo-500 to-blue-600 text-zinc-950 font-semibold' },
-    cyan: { border: 'border-cyan-500/30', bg: 'bg-cyan-500/5', text: 'text-cyan-900 font-extrabold', dot: 'bg-cyan-400', primaryBg: 'bg-gradient-to-r from-cyan-500 to-blue-600 text-zinc-950 font-semibold' },
-    purple: { border: 'border-purple-500/30', bg: 'bg-purple-500/5', text: 'text-purple-900 font-extrabold', dot: 'bg-purple-400', primaryBg: 'bg-gradient-to-r from-purple-500 to-pink-600 text-zinc-950 font-semibold' },
-    emerald: { border: 'border-emerald-500/30', bg: 'bg-emerald-500/5', text: 'text-emerald-900 font-extrabold', dot: 'bg-emerald-400', primaryBg: 'bg-gradient-to-r from-emerald-500 to-teal-600 text-zinc-950 font-semibold' },
+    red: { border: 'border-red-500/30', bg: 'bg-red-500/5', text: 'text-red-900 font-extrabold', dot: 'bg-red-400', primaryBg: 'bg-gradient-to-r from-red-500 to-orange-600 text-white font-semibold' },
+    indigo: { border: 'border-indigo-500/30', bg: 'bg-indigo-500/5', text: 'text-indigo-900 font-extrabold', dot: 'bg-indigo-400', primaryBg: 'bg-gradient-to-r from-indigo-500 to-blue-600 text-white font-semibold' },
+    cyan: { border: 'border-cyan-500/30', bg: 'bg-cyan-500/5', text: 'text-cyan-900 font-extrabold', dot: 'bg-cyan-400', primaryBg: 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold' },
+    purple: { border: 'border-purple-500/30', bg: 'bg-purple-500/5', text: 'text-purple-900 font-extrabold', dot: 'bg-purple-400', primaryBg: 'bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold' },
+    emerald: { border: 'border-emerald-500/30', bg: 'bg-emerald-500/5', text: 'text-emerald-900 font-extrabold', dot: 'bg-emerald-400', primaryBg: 'bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold' },
+    blue: { border: 'border-blue-500/30', bg: 'bg-blue-500/5', text: 'text-blue-900 font-extrabold', dot: 'bg-blue-400', primaryBg: 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold' },
 };
 
 export default function StartHerePage() {
@@ -95,11 +122,11 @@ export default function StartHerePage() {
                         The Operational Sequence
                     </h1>
                     <p className="text-xl text-zinc-900 leading-relaxed font-semibold max-w-2xl">
-                        A five-step, linear onboarding sequence from identifying unquantified risk to enforcing runtime AI governance. Skip nothing.
+                        A six-step onboarding sequence from identifying unquantified risk to enforcing runtime AI governance and accessing career intelligence.
                     </p>
                 </div>
 
-                {/* Why This Exists Section (Worldview Compression Component) */}
+                {/* Why This Exists Section */}
                 <section className="mb-16 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
                     <h3 className="text-lg font-bold font-grotesk text-zinc-950 mb-4">Why This Exists</h3>
                     <p className="text-zinc-900 leading-relaxed font-semibold text-sm sm:text-base">
@@ -127,18 +154,30 @@ export default function StartHerePage() {
                                 <div className="px-8 py-6 bg-white/80">
                                     <p className="text-zinc-900 font-semibold mb-6 leading-relaxed text-sm sm:text-base">{step.description}</p>
                                     <div className="flex flex-wrap gap-3">
-                                        {step.links.map(link => (
-                                            <Link
-                                                key={link.href}
-                                                href={link.href}
-                                                className={
-                                                    link.primary
-                                                        ? `px-6 py-3 ${colors.primaryBg} rounded-xl font-bold text-xs uppercase tracking-widest shadow-sm hover:opacity-90 transition-opacity`
-                                                        : `px-6 py-3 border border-zinc-300 rounded-xl text-zinc-950 text-xs font-bold uppercase tracking-widest bg-zinc-50 hover:bg-zinc-100 transition-colors`
-                                                }
-                                            >
-                                                {link.label} &rarr;
-                                            </Link>
+                                        {step.links.map((link: StepLink) => (
+                                            link.external ? (
+                                                <a
+                                                    key={link.href}
+                                                    href={link.href}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className={`px-6 py-3 ${colors.primaryBg} rounded-xl font-bold text-xs uppercase tracking-widest shadow-sm hover:opacity-90 transition-opacity`}
+                                                >
+                                                    {link.label} &rarr;
+                                                </a>
+                                            ) : (
+                                                <Link
+                                                    key={link.href}
+                                                    href={link.href}
+                                                    className={
+                                                        link.primary
+                                                            ? `px-6 py-3 ${colors.primaryBg} rounded-xl font-bold text-xs uppercase tracking-widest shadow-sm hover:opacity-90 transition-opacity`
+                                                            : `px-6 py-3 border border-zinc-300 rounded-xl text-zinc-950 text-xs font-bold uppercase tracking-widest bg-zinc-50 hover:bg-zinc-100 transition-colors`
+                                                    }
+                                                >
+                                                    {link.label} &rarr;
+                                                </Link>
+                                            )
                                         ))}
                                     </div>
                                 </div>

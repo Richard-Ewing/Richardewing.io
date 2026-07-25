@@ -4,7 +4,7 @@ import ShineBorder from '@/components/magicui/shine-border';
 import { BorderBeam } from '@/components/magicui/border-beam';
 import Link from 'next/link';
 import CheckoutButton from '@/app/components/client/CheckoutButton';
-
+import { COMMERCIAL_OFFERS } from '@/lib/platform/offers/offers';
 
 export default function AdvisoryPage() {
     return (
@@ -14,7 +14,7 @@ export default function AdvisoryPage() {
                 <div className="absolute inset-0 bg-[url('/img/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-[0.05] pointer-events-none" />
 
                 <section className="section-lg text-center relative z-10">
-                    <div className="text-xs font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest mb-4 flex items-center justify-center gap-2">
+                    <div className="text-xs font-mono text-purple-900 font-extrabold uppercase tracking-widest mb-4 flex items-center justify-center gap-2">
                         <span className="w-2 h-2 rounded bg-purple-500 animate-pulse"></span>
                         AI Consulting & Implementation Strategy
                     </div>
@@ -54,8 +54,8 @@ export default function AdvisoryPage() {
                                     </div>
                                 </div>
                                 <div className="mt-auto">
-                                    <Link href="/ai-integration" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-emerald-600 text-zinc-900 hover:bg-emerald-500 transition-all uppercase shadow-[0_0_20px_rgba(16,185,129,0.2)]">
-                                        View Advisory Details
+                                    <Link href="/assessment" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-emerald-600 text-zinc-900 hover:bg-emerald-500 transition-all uppercase shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                                        Take Free Assessment
                                     </Link>
                                 </div>
                             </div>
@@ -72,13 +72,13 @@ export default function AdvisoryPage() {
                                         Your pilot works, but scaling it exposes you to 'AI Billing Shock' due to unpredictable token and inference costs. You need strict architectural cost caps without degrading performance.
                                     </p>
                                     <div className="p-4 bg-blue-50 border border-blue-100 rounded-lg mb-6">
-                                        <div className="text-sm font-bold text-blue-900 mb-1">The Solution: Inference Optimization Sprint</div>
+                                        <div className="text-sm font-bold text-blue-900 mb-1">The Solution: Enterprise Advisory Retainer</div>
                                         <div className="text-xs text-blue-700">We replace probabilistic, expensive APIs with deterministic runtime governance and hard cost ceilings.</div>
                                     </div>
                                 </div>
                                 <div className="mt-auto">
-                                    <div className="mb-4 text-lg font-bold text-zinc-950 text-center">$10,000 / mo</div>
-                                    <a href="mailto:richardewing@exogram.ai?subject=Inquiry: Cost Caps & Optimization" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-blue-600 text-zinc-900 hover:bg-blue-500 transition-all uppercase shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+                                    <div className="mb-4 text-lg font-bold text-zinc-950 text-center">${COMMERCIAL_OFFERS.advisory_retainer.price.toLocaleString()} / mo</div>
+                                    <a href="mailto:richardewing@exogram.ai?subject=Inquiry: Cost Caps & Optimization" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-blue-600 text-white hover:bg-blue-500 transition-all uppercase shadow-[0_0_20px_rgba(59,130,246,0.3)]">
                                         Enforce Cost Caps
                                     </a>
                                 </div>
@@ -100,7 +100,7 @@ export default function AdvisoryPage() {
                                     </div>
                                 </div>
                                 <div className="mt-auto">
-                                    <div className="mb-4 text-lg font-bold text-zinc-950 text-center">$10,000 / mo</div>
+                                    <div className="mb-4 text-lg font-bold text-zinc-950 text-center">${COMMERCIAL_OFFERS.advisory_retainer.price.toLocaleString()} / mo</div>
                                     <a href="mailto:richardewing@exogram.ai?subject=Inquiry: Shadow AI Audit" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100 transition-all uppercase">
                                         Audit Your Shadow AI
                                     </a>
@@ -112,19 +112,19 @@ export default function AdvisoryPage() {
                         <div className="card bg-white border border-zinc-200 shadow-sm relative overflow-hidden group hover:border-cyan-500/50 transition-all">
                             <div className="p-8 h-full flex flex-col">
                                 <div>
-                                    <div className="text-xs font-bold font-mono text-cyan-400 uppercase tracking-widest mb-4">Pain Point: M&A Blindspots</div>
+                                    <div className="text-xs font-bold font-mono text-cyan-600 uppercase tracking-widest mb-4">Pain Point: M&A Blindspots</div>
                                     <h3 className="text-2xl font-bold text-zinc-900 mb-2">"Is this SaaS acquisition full of tech debt?"</h3>
                                     <p className="text-zinc-600 text-sm leading-relaxed mb-6">
                                         Private Equity & Search Funds: Before you sign the term sheet, you need to know the exact Product Debt Index (PDI) and blast radius of their architecture.
                                     </p>
-                                    <div className="p-4 bg-white/5 border border-white/10 rounded-lg mb-6">
+                                    <div className="p-4 bg-zinc-50 border border-zinc-200 rounded-lg mb-6">
                                         <div className="text-sm font-bold text-zinc-900 mb-1">The Solution: Technical Due Diligence</div>
                                         <div className="text-xs text-zinc-600">Intensive 2-week forensic code audit and investment thesis generation.</div>
-                                        <div className="mt-2 text-sm font-bold text-cyan-400">$15,000 / deal</div>
+                                        <div className="mt-2 text-sm font-bold text-cyan-700">${COMMERCIAL_OFFERS.tech_due_diligence.price.toLocaleString()} / deal</div>
                                     </div>
                                 </div>
                                 <div className="mt-auto">
-                                    <a href="mailto:richardewing@exogram.ai?subject=Inquiry: Tech Due Diligence" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 hover:bg-cyan-500/20 transition-all uppercase">
+                                    <a href="mailto:richardewing@exogram.ai?subject=Inquiry: Tech Due Diligence" className="flex items-center justify-center w-full py-4 text-xs font-bold font-mono tracking-widest rounded bg-cyan-50 text-cyan-700 border border-cyan-200 hover:bg-cyan-100 transition-all uppercase">
                                         Inquire Availability
                                     </a>
                                 </div>
@@ -144,38 +144,40 @@ export default function AdvisoryPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="bg-white border border-zinc-200 p-6 rounded-2xl shadow-sm hover:border-cyan-500/30 transition-all">
                             <div className="flex justify-between items-start mb-2">
-                                <h3 className="text-lg font-bold text-zinc-900">The 60-Min Insolvency Audit</h3>
-                                <span className="font-mono text-cyan-700 font-extrabold font-semibold">$2,500</span>
+                                <h3 className="text-lg font-bold text-zinc-900">{COMMERCIAL_OFFERS.insolvency_diagnostic.name}</h3>
+                                <span className="font-mono text-cyan-700 font-extrabold font-semibold">${COMMERCIAL_OFFERS.insolvency_diagnostic.price.toLocaleString()}</span>
                             </div>
-                            <p className="text-sm text-zinc-600 mb-4">You run the PDI tool, you don't like the number. We sit down for 60 minutes, locate the exact capital leak, and formulate an immediate reduction strategy.</p>
+                            <p className="text-sm text-zinc-600 mb-4">{COMMERCIAL_OFFERS.insolvency_diagnostic.description}</p>
                             <CheckoutButton productId="insolvency_diagnostic" label="Book Session →" variant="ghost" icon="none" />
                         </div>
 
                         <div className="bg-white border border-zinc-200 p-6 rounded-2xl shadow-sm hover:border-amber-500/30 transition-all">
                             <div className="flex justify-between items-start mb-2">
-                                <h3 className="text-lg font-bold text-zinc-900">Gut-Check Evaluation</h3>
-                                <span className="font-mono font-extrabold text-amber-700">$450</span>
+                                <h3 className="text-lg font-bold text-zinc-900">{COMMERCIAL_OFFERS.gut_check.name}</h3>
+                                <span className="font-mono font-extrabold text-amber-700">${COMMERCIAL_OFFERS.gut_check.price.toLocaleString()}</span>
                             </div>
-                            <p className="text-sm text-zinc-600 mb-4">Not sure if you have a problem? A 30-minute rapid-fire session. You describe your AWS bill and velocity, I tell you if your building is on fire.</p>
+                            <p className="text-sm text-zinc-600 mb-4">{COMMERCIAL_OFFERS.gut_check.description}</p>
                             <CheckoutButton productId="gut_check" label="Schedule Evaluation →" variant="ghost" icon="none" />
                         </div>
 
                         <div className="bg-white border border-zinc-200 p-6 rounded-2xl shadow-sm hover:border-rose-500/30 transition-all">
                             <div className="flex justify-between items-start mb-2">
-                                <h3 className="text-lg font-bold text-zinc-900">Hallucination Tax Audit</h3>
-                                <span className="font-mono text-rose-600 font-extrabold">$5,000</span>
+                                <h3 className="text-lg font-bold text-zinc-900">{COMMERCIAL_OFFERS.hallucination_tax_audit.name}</h3>
+                                <span className="font-mono text-rose-600 font-extrabold">${COMMERCIAL_OFFERS.hallucination_tax_audit.price.toLocaleString()}</span>
                             </div>
-                            <p className="text-sm text-zinc-600 mb-4">Your team spends 4.3 hours/week checking AI outputs. That is $14,200/employee/year in invisible verification labor. We quantify the total hallucination cost and build the guardrail plan.</p>
+                            <p className="text-sm text-zinc-600 mb-4">{COMMERCIAL_OFFERS.hallucination_tax_audit.description}</p>
                             <CheckoutButton productId="hallucination_tax_audit" label="Book Audit →" variant="ghost" icon="none" />
                         </div>
 
                         <div className="bg-white border border-zinc-200 p-6 rounded-2xl shadow-sm hover:border-violet-500/30 transition-all">
                             <div className="flex justify-between items-start mb-2">
-                                <h3 className="text-lg font-bold text-zinc-900">AI Policy Readiness</h3>
-                                <span className="font-mono text-violet-600 font-extrabold">$2,500</span>
+                                <h3 className="text-lg font-bold text-zinc-900">{COMMERCIAL_OFFERS.free_assessment.name}</h3>
+                                <span className="font-mono text-violet-600 font-extrabold">Free</span>
                             </div>
-                            <p className="text-sm text-zinc-600 mb-4">67% of employees use AI. 18% of orgs have policies. EU AI Act fines hit 7% of global turnover in August 2026. We audit your governance posture and deliver a 90-day compliance roadmap.</p>
-                            <CheckoutButton productId="ai_policy_readiness" label="Start Assessment →" variant="ghost" icon="none" />
+                            <p className="text-sm text-zinc-600 mb-4">{COMMERCIAL_OFFERS.free_assessment.description}</p>
+                            <Link href="/assessment" className="inline-block py-2 px-4 text-xs font-bold font-mono tracking-widest text-violet-700 bg-violet-50 hover:bg-violet-100 rounded-lg transition-all uppercase border border-violet-200">
+                                Start Assessment →
+                            </Link>
                         </div>
                     </div>
                 </section>

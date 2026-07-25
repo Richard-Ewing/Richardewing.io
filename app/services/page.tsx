@@ -6,6 +6,7 @@ import ProofRail from '@/app/components/ProofRail';
 import CheckoutButton from '@/app/components/client/CheckoutButton';
 import FAQItem from '@/app/components/FAQItem';
 import { ScrollReveal } from '@/components/magicui/scroll-reveal';
+import { COMMERCIAL_OFFERS } from '@/lib/platform/offers/offers';
 
 export const metadata: Metadata = {
     title: 'AI Advisory Services - Diagnostics, Audits & Cost Governance | Richard Ewing',
@@ -28,83 +29,13 @@ export const metadata: Metadata = {
     }
 };
 
-const packages = [
-    {
-        name: "Gut-Check Evaluation",
-        price: "$450",
-        period: "one-time",
-        badge: "Entry",
-        description: "Not sure if you have a cost or engineering velocity problem? A 30-minute rapid-fire session to assess your status.",
-        deliverables: [
-            "30-min live review with Richard Ewing",
-            "Rapid scan of AWS / API billing metrics",
-            "Immediate verdict on whether your setup is at risk",
-            "1 actionable cost-saving remediation recommendation"
-        ],
-        cta: "Schedule Gut-Check",
-        productId: "gut_check",
-        color: "amber",
-        timeline: "Same week"
-    },
-    {
-        name: "60-Min Insolvency Audit",
-        price: "$2,500",
-        period: "one-time",
-        badge: "Diagnostic",
-        description: "We review your Product Debt Index (PDI) results and locate the exact engineering or model cost leaks.",
-        deliverables: [
-            "60-min strategic consultation",
-            "Codebase PDI results analysis",
-            "Written Risk Exposure Report (Red/Yellow/Green flags)",
-            "Step-by-step roadmap to reduce capital waste"
-        ],
-        cta: "Book Insolvency Audit",
-        productId: "insolvency_diagnostic",
-        color: "cyan",
-        timeline: "2-3 weeks"
-    },
-    {
-        name: "R&D Capital Audit",
-        price: "$7,500",
-        period: "one-time",
-        badge: "Forensic Audit",
-        description: "A comprehensive 3-week forensic review of R&D capital allocation, AI inference spend, and team productivity.",
-        deliverables: [
-            "Comprehensive codebase and architectural audit",
-            "Detailed AI Unit Economics modeling",
-            "Board-ready financial and operational deliverables",
-            "90-day custom remediation and implementation roadmap"
-        ],
-        cta: "Request Capital Audit",
-        productId: "full_audit",
-        color: "rose",
-        timeline: "3 weeks",
-        popular: true
-    },
-    {
-        name: "Fractional CPO / CTO Retainer",
-        price: "$10,000",
-        period: "/month",
-        badge: "Retainer",
-        description: "Senior product & tech leadership with a strict, guaranteed cost ceiling. We build cost-caps directly into your systems.",
-        deliverables: [
-            "10-15 hours/week of dedicated advisory",
-            "Implementation of strict API token caps",
-            "Zero Shadow AI compliance auditing",
-            "Board meeting representation and preparation"
-        ],
-        cta: "Discuss Retainer",
-        href: "mailto:richardewing@exogram.ai?subject=Inquiry: Fractional CTO Retainer",
-        color: "indigo",
-        timeline: "6-12 months"
-    }
-];
+const servicePackageKeys = ['gut_check', 'insolvency_diagnostic', 'hallucination_tax_audit', 'advisory_retainer'];
 
 const colorMap: Record<string, { bg: string; border: string; text: string; pill: string; btn: string }> = {
-    amber: { bg: 'bg-amber-50/50', border: 'border-amber-200', text: 'text-amber-700', pill: 'bg-amber-100 text-amber-800', btn: 'bg-amber-600 hover:bg-amber-700 text-zinc-950 font-bold' },
-    cyan: { bg: 'bg-cyan-50/50', border: 'border-cyan-200', text: 'text-cyan-700', pill: 'bg-cyan-100 text-cyan-800', btn: 'bg-cyan-600 hover:bg-cyan-700 text-zinc-950 font-bold' },
-    rose: { bg: 'bg-rose-50/50', border: 'border-rose-200', text: 'text-rose-700', pill: 'bg-rose-100 text-rose-800', btn: 'bg-rose-600 hover:bg-rose-700 text-zinc-950 font-bold' },
-    indigo: { bg: 'bg-indigo-50/50', border: 'border-indigo-200', text: 'text-indigo-700', pill: 'bg-indigo-100 text-indigo-800', btn: 'bg-indigo-600 hover:bg-indigo-700 text-white font-bold' }
+    gut_check: { bg: 'bg-amber-50/50', border: 'border-amber-200', text: 'text-amber-700', pill: 'bg-amber-100 text-amber-800', btn: 'bg-amber-600 hover:bg-amber-700 text-zinc-950 font-bold' },
+    insolvency_diagnostic: { bg: 'bg-cyan-50/50', border: 'border-cyan-200', text: 'text-cyan-700', pill: 'bg-cyan-100 text-cyan-800', btn: 'bg-cyan-600 hover:bg-cyan-700 text-zinc-950 font-bold' },
+    hallucination_tax_audit: { bg: 'bg-rose-50/50', border: 'border-rose-200', text: 'text-rose-700', pill: 'bg-rose-100 text-rose-800', btn: 'bg-rose-600 hover:bg-rose-700 text-zinc-950 font-bold' },
+    advisory_retainer: { bg: 'bg-indigo-50/50', border: 'border-indigo-200', text: 'text-indigo-700', pill: 'bg-indigo-100 text-indigo-800', btn: 'bg-indigo-600 hover:bg-indigo-700 text-white font-bold' }
 };
 
 export default function ServicesPage() {
@@ -130,12 +61,12 @@ export default function ServicesPage() {
                         <div className="flex flex-col sm:flex-row gap-4">
                             <CheckoutButton 
                                 productId="gut_check" 
-                                label="Book $450 Gut-Check" 
+                                label={`Book $${COMMERCIAL_OFFERS.gut_check.price} Gut-Check`} 
                                 variant="primary"
                             />
-                            <a href="mailto:richardewing@exogram.ai?subject=Inquiry: Free Benchmark" className="flex items-center justify-center px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-bold transition-all bg-white border border-zinc-300 text-zinc-950 hover:bg-zinc-50">
+                            <Link href="/assessment" className="flex items-center justify-center px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-bold transition-all bg-white border border-zinc-300 text-zinc-950 hover:bg-zinc-50">
                                 Run Free Benchmark
-                            </a>
+                            </Link>
                         </div>
                     </section>
                 </ScrollReveal>
@@ -233,14 +164,17 @@ export default function ServicesPage() {
                         <p className="text-zinc-600 text-center mb-12 max-w-2xl mx-auto">We do not sell a menu of services. We follow a strict diagnostic progression to ensure you only pay for the intervention you need.</p>
                         
                         <div className="flex flex-col gap-6 relative">
-                            {packages.map((pkg, idx) => {
-                                const c = colorMap[pkg.color];
+                            {servicePackageKeys.map((key, idx) => {
+                                const pkg = COMMERCIAL_OFFERS[key];
+                                const c = colorMap[key] || colorMap.indigo;
+                                const isPopular = pkg.highlighted;
+
                                 return (
                                     <React.Fragment key={idx}>
                                         <div 
-                                            className={`relative rounded-3xl border ${pkg.popular ? 'border-2 border-indigo-500 bg-gradient-to-br from-indigo-50/40 via-white to-white shadow-xl shadow-indigo-500/15' : 'border-zinc-300 bg-white'} p-8 flex flex-col md:flex-row gap-8 justify-between hover:shadow-lg transition-all duration-300`}
+                                            className={`relative rounded-3xl border ${isPopular ? 'border-2 border-indigo-500 bg-gradient-to-br from-indigo-50/40 via-white to-white shadow-xl shadow-indigo-500/15' : 'border-zinc-300 bg-white'} p-8 flex flex-col md:flex-row gap-8 justify-between hover:shadow-lg transition-all duration-300`}
                                         >
-                                            {pkg.popular && (
+                                            {isPopular && (
                                                 <span className="absolute top-0 right-8 -translate-y-1/2 px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest bg-indigo-600 text-white shadow-sm">
                                                     Most Popular
                                                 </span>
@@ -252,7 +186,7 @@ export default function ServicesPage() {
                                                         {pkg.badge}
                                                     </span>
                                                     <span className="text-xs text-zinc-500 font-bold font-mono">
-                                                        Timeline: {pkg.timeline}
+                                                        Stage: {pkg.stage.replace('_', ' ')}
                                                     </span>
                                                 </div>
 
@@ -260,30 +194,30 @@ export default function ServicesPage() {
                                                 <p className="text-sm text-zinc-600 font-semibold mb-6 max-w-xl">{pkg.description}</p>
 
                                                 <div className="mb-6 flex items-baseline gap-1">
-                                                    <span className="text-4xl font-extrabold text-zinc-950 font-grotesk">{pkg.price}</span>
-                                                    <span className="text-xs text-zinc-500 font-bold font-mono">{pkg.period}</span>
+                                                    <span className="text-4xl font-extrabold text-zinc-950 font-grotesk">${pkg.price.toLocaleString()}</span>
+                                                    <span className="text-xs text-zinc-500 font-bold font-mono">{pkg.billingPeriod === 'monthly' ? '/month' : 'one-time'}</span>
                                                 </div>
                                             </div>
 
                                             <div className="w-full md:w-64 flex flex-col justify-end">
-                                                {pkg.productId ? (
+                                                {pkg.primaryCTA.action === 'checkout' && pkg.primaryCTA.productId ? (
                                                     <CheckoutButton 
-                                                        productId={pkg.productId} 
-                                                        label={`${pkg.cta} →`} 
-                                                        variant={pkg.popular ? "primary" : "ghost"}
+                                                        productId={pkg.primaryCTA.productId} 
+                                                        label={pkg.primaryCTA.label} 
+                                                        variant={isPopular ? "primary" : "ghost"}
                                                         icon="none"
                                                     />
                                                 ) : (
                                                     <a 
-                                                        href={pkg.href} 
+                                                        href={pkg.primaryCTA.href || `mailto:richardewing@exogram.ai?subject=Inquiry: ${pkg.name}`} 
                                                         className={`flex items-center justify-center w-full py-4 rounded-xl text-xs uppercase tracking-widest font-bold transition-all ${c.btn}`}
                                                     >
-                                                        {pkg.cta} →
+                                                        {pkg.primaryCTA.label}
                                                     </a>
                                                 )}
                                             </div>
                                         </div>
-                                        {idx < packages.length - 1 && (
+                                        {idx < servicePackageKeys.length - 1 && (
                                             <div className="flex justify-center -my-2 z-10 relative">
                                                 <div className="bg-zinc-200 p-2 rounded-full border-4 border-[#F5F0EB] text-zinc-500">
                                                     <ArrowDown className="w-4 h-4" />
@@ -383,12 +317,12 @@ export default function ServicesPage() {
                             Start with the question: Is AI actually making your company money?
                         </h2>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="mailto:richardewing@exogram.ai?subject=Inquiry: Free Benchmark" className="flex items-center justify-center px-8 py-4 rounded-xl text-sm uppercase tracking-widest font-bold transition-all bg-white text-zinc-950 hover:bg-zinc-200">
+                            <Link href="/assessment" className="flex items-center justify-center px-8 py-4 rounded-xl text-sm uppercase tracking-widest font-bold transition-all bg-white text-zinc-950 hover:bg-zinc-200">
                                 Run Free Benchmark
-                            </a>
+                            </Link>
                             <CheckoutButton 
                                 productId="gut_check" 
-                                label="Book $450 Gut-Check" 
+                                label={`Book $${COMMERCIAL_OFFERS.gut_check.price} Gut-Check`} 
                                 variant="primary"
                             />
                         </div>

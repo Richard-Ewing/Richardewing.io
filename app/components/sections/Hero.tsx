@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { AsSeenIn } from '@/components/AsSeenIn';
 import { ArrowRight } from 'lucide-react';
+import { COMMERCIAL_OFFERS } from '@/lib/platform/offers/offers';
 
 const Hero = () => {
     return (
@@ -28,7 +29,7 @@ const Hero = () => {
                         {/* Eyebrow */}
                         <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/80 backdrop-blur-sm border border-zinc-200/80 shadow-sm mb-8">
                             <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                            <span className="text-sm font-semibold text-zinc-700 tracking-wide">Richard Ewing - AI Economist</span>
+                            <span className="text-sm font-semibold text-zinc-700 tracking-wide">Richard Ewing - AI Economist & Platform Architect</span>
                         </div>
 
                         {/* H1 */}
@@ -44,40 +45,43 @@ const Hero = () => {
                             The question is not whether AI works. The question is whether AI pays.
                         </p>
 
-                        {/* Positioning statement - the one repeatable sentence */}
-                        <p className="text-lg text-zinc-700 mb-3 max-w-xl leading-relaxed font-semibold">
-                            I help organizations measure, govern, and improve the economics of enterprise AI through advisory services, diagnostic assessments, and practical frameworks.
+                        {/* Positioning statement - 4-Sentence Positioning Pass */}
+                        <p className="text-lg text-zinc-800 mb-3 max-w-xl leading-relaxed font-semibold">
+                            Richard Ewing is an AI Economist and Founder of <Link href="/exogram" className="text-purple-700 underline font-bold hover:text-purple-900">Exogram</Link> (enterprise AI governance) and <a href="https://careerwin.ai/" target="_blank" rel="noopener noreferrer" className="text-indigo-700 underline font-bold hover:text-indigo-900">CareerWin.ai</a> (career intelligence).
                         </p>
 
-                        {/* Who you help */}
-                        <p className="text-base text-zinc-500 mb-10 max-w-xl leading-relaxed">
-                            I work with CTOs, CFOs, and PE operating partners who need to know where their AI spend is going, what it is producing, and how to constrain it.
+                        <p className="text-base text-zinc-700 mb-3 max-w-xl leading-relaxed">
+                            He audits R&D capital, measures unit economics, and installs deterministic runtime controls to eliminate AI billing shock and shadow AI risks.
+                        </p>
+
+                        <p className="text-base text-zinc-600 mb-8 max-w-xl leading-relaxed font-medium">
+                            Built for CTOs, CFOs, VPs of Engineering, and PE Operating Partners.
                         </p>
 
                         {/* Dual CTA */}
                         <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-4">
                             <Link
-                                href="/tools/aueb"
+                                href="/assessment"
                                 className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-base hover:opacity-90 transition-all shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/35 hover:-translate-y-0.5"
                             >
-                                Run the Free AI Benchmark
+                                Take 15-Q AI Economics Assessment
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                             </Link>
                             <Link
                                 href="/services"
                                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border-2 border-zinc-300 text-zinc-800 font-semibold text-base hover:border-violet-400 hover:bg-violet-50/40 transition-all"
                             >
-                                Book a $450 Gut-Check Evaluation
+                                Book a ${COMMERCIAL_OFFERS.gut_check.price} Rapid Diagnostic
                             </Link>
                         </div>
 
                         {/* Funnel progression - shows the clear path */}
                         <div className="flex flex-wrap justify-center lg:justify-start items-center gap-2 text-xs font-mono text-zinc-400 mb-10">
-                            <span className="text-violet-600 font-bold">Free Benchmark</span>
+                            <span className="text-violet-600 font-bold">15-Q Assessment</span>
                             <span>→</span>
-                            <span>$450 Diagnostic</span>
+                            <span>$450 Rapid Diagnostic</span>
                             <span>→</span>
-                            <span>R&D Audit</span>
+                            <span>Strategic Audit</span>
                             <span>→</span>
                             <span>Advisory Retainer</span>
                         </div>
@@ -92,9 +96,9 @@ const Hero = () => {
                                 </p>
                             </div>
                             
-                            {/* KNOWLEDGE PLATFORM */}
+                            {/* KNOWLEDGE ENGINE */}
                             <div>
-                                <span className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest block mb-1">Knowledge Platform</span>
+                                <span className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest block mb-1">AI Economics Knowledge Engine</span>
                                 <p className="text-zinc-600 text-sm font-medium leading-relaxed">
                                     <span className="font-bold text-zinc-800">19</span> frameworks · <span className="font-bold text-zinc-800">56</span> glossary definitions · <span className="font-bold text-zinc-800">136</span> research articles · <span className="font-bold text-zinc-800">25</span> interactive tools
                                 </p>
@@ -102,20 +106,6 @@ const Hero = () => {
 
                             <p className="text-zinc-500 text-xs mt-4 font-bold tracking-wider uppercase">
                                 Published in CIO.com · Built In · MindTheProduct · HackerNoon
-                            </p>
-                            <p className="text-zinc-500 text-sm mt-2 font-medium">
-                                Creator of the{' '}
-                                <Link href="/framework" className="text-violet-700 font-bold hover:text-violet-500 transition-colors underline decoration-violet-300 underline-offset-2">
-                                    Production AI Governance Framework
-                                </Link>
-                                {' '}· Founder of{' '}
-                                <a href="https://careerwin.ai/" target="_blank" rel="noopener" className="text-purple-700 font-bold hover:text-purple-500 transition-colors underline decoration-purple-300 underline-offset-2">
-                                    CareerWin.ai
-                                </a>
-                                {' '}·{' '}
-                                <Link href="/exogram" className="text-purple-700 font-bold hover:text-purple-500 transition-colors underline decoration-purple-300 underline-offset-2">
-                                    Exogram
-                                </Link>
                             </p>
                         </div>
                     </div>
