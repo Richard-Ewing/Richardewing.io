@@ -5,6 +5,7 @@ import { notFound, permanentRedirect } from 'next/navigation';
 import { ArrowRight, Activity, ShieldAlert } from 'lucide-react';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 import pseoMatrixData from '@/app/lib/pseo-matrix.json';
+import compareCategorized from '@/app/lib/compare-categorized.json';
 import FAQItem from '@/app/components/FAQItem';
 import StructuredData, { generateFaqSchema } from '@/app/components/seo/StructuredData';
 
@@ -133,13 +134,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         desc = `Compare execution risks, cost inefficiencies, and R&D capital leakage of ${tA} vs ${tB}. Audit your engineering margins.`;
     }
 
+    // Noindex junk comparisons (nonsensical cross-category tool pairings)
+    const isJunk = (compareCategorized.junk as string[]).includes(slug);
+
     return {
         title: {
             absolute: `${comparison.title} Cost Analysis | Richard Ewing`
         },
         description: desc,
         alternates: { canonical: `https://www.richardewing.io/compare/${slug}` },
-        robots: { index: true, follow: true },
+        robots: isJunk ? { index: false, follow: true } : { index: true, follow: true },
         openGraph: {
             title: comparison.title,
             description: desc,

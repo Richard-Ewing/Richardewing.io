@@ -1,33 +1,29 @@
 import type { Metadata } from 'next';
 import Hero from './components/sections/Hero';
-import NarrativeCompression from './components/sections/NarrativeCompression';
 import ProofRail from './components/ProofRail';
-import WhatWhyHow from './components/sections/WhatWhyHow';
+import ThreeProblems from './components/sections/ThreeProblems';
+import HowItWorks from './components/sections/HowItWorks';
 import ClientOutcomes from './components/sections/ClientOutcomes';
-import FourHorsemen from './components/sections/FourHorsemen';
-import ToolsPreview from './components/sections/ToolsPreview';
 import HighIntentConversionBlock from './components/sections/HighIntentConversionBlock';
-import PricingPreview from './components/sections/PricingPreview';
 import NewsletterSection from './components/sections/NewsletterSection';
-import FAQItem from './components/FAQItem';
 
 export const metadata: Metadata = {
-  title: 'AI Economist & Enterprise Capital Audits | Richard Ewing',
-  description: 'An AI Economist translates engineering output into CFO-level financial outcomes. Secure deterministic governance and stop margin erosion.',
+  title: 'AI Economist - Enterprise AI Audits & Cost Governance | Richard Ewing',
+  description: 'AI Economics translates engineering output into CFO-level financial outcomes. R&D capital audits, runtime cost-caps, and AI governance for PE-backed SaaS companies.',
   alternates: {
     canonical: 'https://www.richardewing.io',
   },
   openGraph: {
-    title: 'AI Economist & Enterprise Capital Audits | Richard Ewing',
-    description: 'An AI Economist translates engineering output into CFO-level financial outcomes. Secure deterministic governance and stop margin erosion.',
+    title: 'AI Economist - Enterprise AI Audits & Cost Governance | Richard Ewing',
+    description: 'AI Economics translates engineering output into CFO-level financial outcomes. R&D capital audits, runtime cost-caps, and AI governance for PE-backed SaaS companies.',
     url: 'https://www.richardewing.io',
     type: 'website',
     images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Economist & Enterprise Capital Audits | Richard Ewing',
-    description: 'An AI Economist translates engineering output into CFO-level financial outcomes. Secure deterministic governance and stop margin erosion.',
+    title: 'AI Economist - Enterprise AI Audits & Cost Governance | Richard Ewing',
+    description: 'AI Economics translates engineering output into CFO-level financial outcomes. R&D capital audits, runtime cost-caps, and AI governance for PE-backed SaaS companies.',
     images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
   }
 };
@@ -44,8 +40,8 @@ export default function Home() {
               '@type': 'WebSite',
               '@id': 'https://www.richardewing.io/#website',
               'url': 'https://www.richardewing.io/',
-              'name': 'AI Economist & Enterprise Capital Audits | Richard Ewing',
-              'description': 'An AI Economist translates engineering output into CFO-level financial outcomes. Secure deterministic governance and stop margin erosion.',
+              'name': 'AI Economist - Enterprise AI Audits & Cost Governance | Richard Ewing',
+              'description': 'AI Economics translates engineering output into CFO-level financial outcomes. R&D capital audits, runtime cost-caps, and AI governance for PE-backed SaaS companies.',
             },
             {
               '@type': 'Organization',
@@ -63,6 +59,14 @@ export default function Home() {
                   'acceptedAnswer': {
                     '@type': 'Answer',
                     'text': 'An AI Economist is the translation layer between engineering output and CFO-level financial outcomes. They audit R&D spend, analyze AI unit economics, and construct deterministic governance systems to prevent margin collapse.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  'name': 'What is AI Economics?',
+                  'acceptedAnswer': {
+                    '@type': 'Answer',
+                    'text': 'AI Economics is the discipline of measuring, modeling, and governing the financial impact of AI systems on enterprise profitability. It combines unit economics analysis, R&D capital auditing, and runtime cost governance to turn volatile AI investments into predictable business assets.'
                   }
                 },
                 {
@@ -86,50 +90,19 @@ export default function Home() {
           ]
         }) }}
       />
-      {/* Layer 1: Identity-first hero — who you are, what you do, what you offer */}
+      {/* Layer 1: Identity-first hero - who you are, what you do, who you help, what to do next */}
       <Hero />
       {/* Layer 2: Persistent proof-of-authority bar */}
       <ProofRail />
-      {/* Layer 2.5: What Is / Why You Need / How It Works */}
-      <WhatWhyHow />
-      {/* Layer 3: 15-second comprehension layer — What Breaks → Costs → Why → Fix → Engine */}
-      <NarrativeCompression />
-      {/* Layer 4: Why enterprise AI fails — the pain points */}
-      <FourHorsemen />
-      {/* Layer 5: High-Intent Conversion Block */}
-      <HighIntentConversionBlock />
-      {/* Layer 6: Proof of outcomes */}
+      {/* Layer 3: Three measurable problems your buyers feel */}
+      <ThreeProblems />
+      {/* Layer 4: How It Works - Diagnose, Audit, Govern */}
+      <HowItWorks />
+      {/* Layer 5: Proof of outcomes - Before & After audit results */}
       <ClientOutcomes />
-      {/* Layer 7: Free tools — lead generation */}
-      <ToolsPreview />
-      {/* Layer 8: Advisory escalation — conversion */}
-      <PricingPreview />
-
-      {/* Visual FAQ Section */}
-      <section className="py-20 bg-[#FCFAF7] border-t border-zinc-200">
-        <div className="page-container max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-extrabold text-zinc-950 font-grotesk">Frequently Asked Questions</h2>
-            <p className="text-zinc-600 mt-2 font-medium">Direct answers to core technology governance and economic questions.</p>
-          </div>
-          <div className="space-y-4">
-            <FAQItem 
-              question="What is an AI Economist?" 
-              answer="An AI Economist serves as the translation layer between engineering output and CFO-level financial outcomes. By auditing R&D capital, diagnosing AI unit economics, and building deterministic governance infrastructure, they align model scaling costs directly with enterprise profitability."
-            />
-            <FAQItem 
-              question="What is AI governance?" 
-              answer="AI governance is the system of constraints, cost caps, and verification policies that prevent probabilistic models from causing margin erosion, security breaches, or regulatory liabilities. It locks down verified code states at the network layer to turn volatile models into predictable enterprise assets."
-            />
-            <FAQItem 
-              question="How much does a fractional CPO / CTO cost?" 
-              answer="Advisory packages start at $7,500/month for Fractional CTO support, providing senior technical leadership, strict token cost-cap enforcement, and board meeting representation. Board-level advisory retainers for PE/VC portfolios are priced at $15,000/month."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Layer 9: Newsletter — capture */}
+      {/* Layer 6: High-Intent Conversion - Pricing and service packages */}
+      <HighIntentConversionBlock />
+      {/* Layer 7: Newsletter capture + final CTA */}
       <NewsletterSection />
     </main>
   );

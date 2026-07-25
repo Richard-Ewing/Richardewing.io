@@ -25,56 +25,62 @@ const Hero = () => {
                     {/* Left: Text content */}
                     <div className="flex-1 text-center lg:text-left">
 
-                        {/* Eyebrow — Identity first */}
+                        {/* Eyebrow */}
                         <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/80 backdrop-blur-sm border border-zinc-200/80 shadow-sm mb-8">
                             <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                            <span className="text-sm font-semibold text-zinc-700 tracking-wide">Richard Ewing — AI Economist</span>
+                            <span className="text-sm font-semibold text-zinc-700 tracking-wide">Richard Ewing - AI Economist</span>
                         </div>
 
-                        {/* H1 — Clear value proposition */}
+                        {/* H1 */}
                         <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-zinc-900 mb-6 leading-[1.12] max-w-2xl tracking-tight">
-                            I Stop AI Investments From{' '}
+                            I audit AI investments so companies stop{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-violet-500 to-purple-600">
-                                Bleeding Money
+                                bleeding margin
                             </span>.
                         </h1>
 
-                        {/* Subheadline — What you actually do */}
-                        <p className="text-lg text-zinc-600 mb-10 max-w-xl leading-relaxed font-semibold">
-                            Enterprise AI governance & product economics for PE-backed SaaS companies.
+                        {/* Subheadline - answers "What is AI Economics?" and "Who you help" */}
+                        <p className="text-lg text-zinc-600 mb-4 max-w-xl leading-relaxed font-semibold">
+                            AI Economics is the discipline of translating engineering output into financial outcomes.
+                        </p>
+                        <p className="text-base text-zinc-500 mb-10 max-w-xl leading-relaxed">
+                            I work with CTOs, CFOs, and PE operating partners to diagnose R&D capital waste, enforce runtime cost-caps, and turn volatile AI systems into predictable enterprise assets.
                         </p>
 
                         {/* Dual CTA */}
                         <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
-                            <Link 
-                                href="/contact" 
+                            <Link
+                                href="/services"
                                 className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-base hover:opacity-90 transition-all shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/35 hover:-translate-y-0.5"
                             >
-                                Book a $2,500 Diagnostic
+                                Book a $450 Gut-Check Evaluation
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                             </Link>
-                            <Link 
-                                href="/tools/aueb" 
+                            <Link
+                                href="/tools/aueb"
                                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border-2 border-zinc-300 text-zinc-800 font-semibold text-base hover:border-violet-400 hover:bg-violet-50/40 transition-all"
                             >
-                                Calculate Your AI Margin Collapse Point
+                                Run the Free AI Benchmark
                             </Link>
                         </div>
 
-                        {/* Credibility line */}
+                        {/* Credibility line with proof numbers */}
                         <div className="mb-6">
                             <p className="text-zinc-600 text-sm font-medium leading-relaxed">
+                                <span className="font-bold text-zinc-800">10,845</span> LinkedIn followers · <span className="font-bold text-zinc-800">778</span> AI search citations · <span className="font-bold text-zinc-800">1,362</span> newsletter subscribers
+                            </p>
+                            <p className="text-zinc-500 text-xs mt-2 font-bold tracking-wider uppercase">
+                                Published in CIO.com · Built In · MindTheProduct · HackerNoon
+                            </p>
+                            <p className="text-zinc-500 text-sm mt-2 font-medium">
                                 Creator of the{' '}
                                 <Link href="/framework" className="text-violet-700 font-bold hover:text-violet-500 transition-colors underline decoration-violet-300 underline-offset-2">
                                     Production AI Governance Framework
                                 </Link>
-                                {' '}·{' '}Founder of{' '}
+                                {' '}· Founder of{' '}
                                 <Link href="/exogram" className="text-purple-700 font-bold hover:text-purple-500 transition-colors underline decoration-purple-300 underline-offset-2">
                                     Exogram
                                 </Link>
-                            </p>
-                            <p className="text-zinc-500 text-xs mt-2 font-bold tracking-wider uppercase">
-                                Published in CIO.com · Built In · MindTheProduct · HackerNoon
                             </p>
                         </div>
                     </div>
@@ -85,24 +91,22 @@ const Hero = () => {
                             {/* Gradient ring */}
                             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-violet-400 via-purple-400 to-rose-400 p-[3px]">
                                 <div className="w-full h-full rounded-full overflow-hidden bg-[#F5F0EB]">
-                                    <Image 
-                                        src="/assets/headshot.jpg" 
-                                        alt="Richard Ewing — AI Economist" 
-                                        fill 
-                                        className="object-cover rounded-full" 
+                                    <Image
+                                        src="/assets/headshot.jpg"
+                                        alt="Richard Ewing - AI Economist"
+                                        fill
+                                        className="object-cover rounded-full"
                                         sizes="(max-width: 768px) 256px, (max-width: 1024px) 288px, 320px"
                                         priority
                                     />
                                 </div>
                             </div>
-                            {/* Floating badge */}
-                            {/* <!-- RESTORE WITH VERIFIED NUMBER --> */}
                         </div>
                     </div>
 
                 </div>
 
-                {/* As Seen In — full width below */}
+                {/* As Seen In */}
                 <div className="mt-16">
                     <AsSeenIn />
                 </div>

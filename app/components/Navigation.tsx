@@ -53,18 +53,13 @@ const Navigation = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full" />
                             </Link>
 
+                            <Link href="/challenges" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
+                                Problems
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
+                            </Link>
+
                             <Link href="/framework" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
                                 Framework
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
-                            </Link>
-
-                            <Link href="/research" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
-                                Research
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
-                            </Link>
-
-                            <Link href="/articles" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
-                                Articles
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
@@ -73,28 +68,13 @@ const Navigation = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/curriculum" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
-                                Curriculum
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
-                            </Link>
-
-                            <Link href="/exogram" className="text-purple-700 font-bold hover:text-purple-500 transition-colors relative group">
-                                Exogram
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full" />
-                            </Link>
-
-                            <Link href="/about" className="text-zinc-700 hover:text-zinc-900 transition-colors relative group font-medium">
-                                About
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
-                            </Link>
-
                             <Link href="/services" className="text-zinc-700 hover:text-zinc-900 transition-colors relative group font-medium">
                                 Services
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/contact" className="text-zinc-700 hover:text-zinc-900 transition-colors relative group font-medium">
-                                Contact
+                            <Link href="/principal" className="text-zinc-700 hover:text-zinc-900 transition-colors relative group font-medium">
+                                About
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
@@ -103,7 +83,7 @@ const Navigation = () => {
                                 href="/services"
                                 className="bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-2 rounded-lg font-bold text-white hover:opacity-90 transition-all shadow-lg shadow-violet-500/20 hover:shadow-xl hover:shadow-violet-500/30 transform hover:-translate-y-0.5 text-xs uppercase tracking-wider"
                             >
-                                Book Audit →
+                                Book a Diagnostic →
                             </Link>
 
                             <div className="h-6 w-px bg-zinc-200 mx-1 flex-shrink-0" />
@@ -228,15 +208,11 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                     <div className="w-full h-px bg-zinc-200" />
 
                     <div className="space-y-4">
+                        <MobileLink href="/challenges" onClick={onClose} className="text-lg font-bold">Problems</MobileLink>
                         <MobileLink href="/framework" onClick={onClose} className="text-lg font-bold">Framework</MobileLink>
-                        <MobileLink href="/research" onClick={onClose} className="text-lg font-bold">Research</MobileLink>
-                        <MobileLink href="/articles" onClick={onClose} className="text-lg font-bold">Articles</MobileLink>
                         <MobileLink href="/tools" onClick={onClose} className="text-lg font-bold">Tools</MobileLink>
-                        <MobileLink href="/curriculum" onClick={onClose} className="text-lg font-bold">Curriculum</MobileLink>
-                        <MobileLink href="/exogram" onClick={onClose} className="text-lg font-bold text-purple-700">Exogram</MobileLink>
                         <MobileLink href="/services" onClick={onClose} className="text-lg font-bold">Services</MobileLink>
-                        <MobileLink href="/about" onClick={onClose} className="text-lg font-bold">About</MobileLink>
-                        <MobileLink href="/contact" onClick={onClose} className="text-lg font-bold">Contact</MobileLink>
+                        <MobileLink href="/principal" onClick={onClose} className="text-lg font-bold">About</MobileLink>
                     </div>
 
                     <div className="w-full h-px bg-zinc-200 my-4" />
@@ -246,7 +222,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
                         onClick={onClose}
                         className="block w-full bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-center py-4 rounded-xl text-lg hover:opacity-90 transition-opacity mb-4"
                     >
-                        BOOK AN AUDIT
+                        BOOK A DIAGNOSTIC
                     </Link>
 
                     {isLoaded && !isSignedIn && (

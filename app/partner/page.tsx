@@ -71,7 +71,7 @@ export default function PartnerPage() {
                         </ul>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
                         <div className="bg-white border border-zinc-300 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
                             <div>
                                 <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest mb-2">LinkedIn Reach</div>
@@ -89,6 +89,16 @@ export default function PartnerPage() {
                             </div>
                             <p className="text-[10px] text-zinc-500 font-semibold mt-4 leading-normal">
                                 Source: LinkedIn Newsletter Dashboard, July 2026. Professional readers subscribed to The AI Economist column.
+                            </p>
+                        </div>
+
+                        <div className="bg-white border border-zinc-300 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest mb-2">AI SEARCH AUTHORITY</div>
+                                <div className="text-2xl font-bold text-zinc-950 mb-2">778 Citations</div>
+                            </div>
+                            <p className="text-[10px] text-zinc-500 font-semibold mt-4 leading-normal">
+                                Source: Bing Webmaster AI Performance, 3-month rolling. Content cited as primary source in AI-generated answers across enterprise technology topics.
                             </p>
                         </div>
                     </div>
