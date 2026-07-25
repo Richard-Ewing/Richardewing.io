@@ -49,6 +49,12 @@ interface Comparison {
 }
 
 function getComparison(slug: string): Comparison | undefined {
+    const tierCList: string[] = (compareCategorized.tierC_redirected as string[]) || [];
+    const junkList: string[] = (compareCategorized.junk as string[]) || [];
+    if (tierCList.includes(slug) || junkList.includes(slug)) {
+        return undefined;
+    }
+
     const hardcoded = COMPARISONS.find(c => c.slug === slug);
     if (hardcoded) {
         const parts = hardcoded.title.split(' vs ');
@@ -77,7 +83,8 @@ function getComparison(slug: string): Comparison | undefined {
         };
     }
 
-    if (slug.includes('-vs-')) {
+    const tierAList: string[] = (compareCategorized.tierA_indexed as string[]) || [];
+    if (slug.includes('-vs-') && tierAList.includes(slug)) {
         const parts = slug.split('-vs-');
         const toolA = parts[0].replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
         const toolB = parts[1].replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
@@ -102,20 +109,10 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
-    
-    // Tier C comparison pages issue 301 redirect to /tools
-    const tierCList: string[] = (compareCategorized.tierC_redirected as string[]) || [];
-    if (tierCList.includes(slug)) {
-        permanentRedirect('/tools');
-    }
-
     const comparison = getComparison(slug);
     
     if (!comparison) {
-        return {
-            title: 'Comparison Deprecated',
-            robots: { index: false, follow: true }
-        };
+        permanentRedirect('/tools');
     }
 
     let desc = comparison.description;
@@ -125,15 +122,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         desc = `Compare execution risks, cost inefficiencies, and R&D capital leakage of ${tA} vs ${tB}. Audit your engineering margins.`;
     }
 
-    const isJunk = (compareCategorized.junk as string[]).includes(slug);
-
     return {
         title: {
             absolute: `${comparison.title} Cost Analysis | Richard Ewing`
         },
         description: desc,
         alternates: { canonical: `https://www.richardewing.io/compare/${slug}` },
-        robots: isJunk ? { index: false, follow: true } : { index: true, follow: true },
+        robots: { index: true, follow: true },
         openGraph: {
             title: comparison.title,
             description: desc,
@@ -153,13 +148,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function ComparisonPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-
-    // Enforce HTTP 301 Permanent Redirect for Tier C comparison URLs
-    const tierCList: string[] = (compareCategorized.tierC_redirected as string[]) || [];
-    if (tierCList.includes(slug)) {
-        permanentRedirect('/tools');
-    }
-
     const comparison = getComparison(slug);
 
     if (!comparison) {
