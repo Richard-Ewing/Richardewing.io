@@ -3,8 +3,8 @@ import Link from 'next/link';
 import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-    title: 'FAQ & Strategy Diagnostics | Richard Ewing',
-    description: 'FAQ provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'FAQ — AI Advisory, Exogram & Frameworks',
+    description: 'Frequently asked questions about AI Economics, advisory services, diagnostic tools, and the Exogram platform.',
     alternates: { canonical: 'https://www.richardewing.io/faq' },
     keywords: ['AI economist FAQ', 'richard ewing FAQ', 'advisory FAQ', 'exogram FAQ', 'technical debt FAQ'],
 };

@@ -1,145 +1,141 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
-
-export const metadata: Metadata = {
-    title: 'Tool Comparisons & Strategy Diagnostics | Richard Ewing',
-    description: 'Tool Comparisons provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
-    keywords: ['tool comparison', 'sonarqube alternative', 'leetcode alternative', 'product debt index', 'audit interview protocol'],
-    alternates: { canonical: 'https://www.richardewing.io/compare' },
-};
-
-const comparisons = [
-    {
-        title: 'Shadow AI Scanner vs Wiz.io',
-        subtitle: 'Liability vs Infrastructure',
-        description: 'Wiz scans cloud infrastructure. The Shadow AI Endpoint Scanner calculates the exact Cost of Doing Nothing (CODN) for every localized shadow endpoint.',
-        href: '/tools/shadow-ai/vs/wiz',
-        color: 'rose',
-    },
-    {
-        title: 'Prompt Defensibility vs Promptfoo',
-        subtitle: 'Extrapolation vs CLI Testing',
-        description: 'Promptfoo handles CLI testing. The Intrusion Sandbox generates C-Suite executable Confidential Audits detailing the dollar liability of payload extrusion.',
-        href: '/tools/prompt-injection-sandbox/vs/promptfoo',
-        color: 'orange',
-    },
-    {
-        title: 'Agent FinOps vs Datadog LLM',
-        subtitle: 'Unit Economics vs Observability',
-        description: 'Datadog traces deployment latency. The Agentic FinOps Emulator models the $100k+ API bankruptcy before multi-agent logic is universally shipped.',
-        href: '/tools/agent-router/vs/datadog-llm',
-        color: 'indigo',
-    },
-    {
-        title: 'Volatility Auditor vs Scale AI',
-        subtitle: 'EBITDA vs Fine-Tuning',
-        description: 'Scale handles data. The Volatility Tax Auditor (VTA) acts as a Board-level actuary, forecasting unpredictable human-AI fallback support costs.',
-        href: '/tools/vta',
-        color: 'fuchsia',
-    },
-    {
-        title: 'PDI vs SonarQube',
-        subtitle: 'Economic Debt vs Code Quality',
-        description: 'SonarQube measures code smells. PDI calculates when Technical Debt will mathematically bankrupt your engineering capacity.',
-        href: '/compare/pdi-vs-sonarqube',
-        color: 'cyan',
-    },
-    {
-        title: 'Vendor Defensibility vs Gartner',
-        subtitle: 'Surgical Math vs Subjective Grid',
-        description: 'Gartner measures subjective positioning. Due Diligence Engine executes mathematical SLM CODN extraction for strict contract leverage.',
-        href: '/tools/due-diligence/vs/gartner-magic-quadrant',
-        color: 'amber',
-    },
-    {
-        title: 'AUEB vs AWS Explorer',
-        subtitle: 'AI Margin vs Cloud Spend',
-        description: 'AWS tracks basic server spend. AUEB tells you whether your Generative AI features suffer from structural margin collapse.',
-        href: '/compare/aueb-vs-aws-cost-explorer',
-        color: 'emerald',
-    },
-    {
-        title: 'Copilot ROI vs GitClear',
-        subtitle: 'EBITDA vs LOC Generation',
-        description: 'GitClear tracks code output volume. Copilot ROI Forecaster calculates the exact EBITDA destruction caused by downstream Vibe Coding Debt & review drag.',
-        href: '/compare/copilot-roi-vs-gitclear',
-        color: 'fuchsia',
-    },
-];
-
+import compareCategorized from '../lib/compare-categorized.json';
 import pseoMatrix from '../lib/pseo-matrix.json';
 
-export default function ComparePage() {
+export const metadata: Metadata = {
+    title: 'Architectural & Platform Comparisons | Richard Ewing',
+    description: 'Compare AI coding platforms, runtime governance architectures, and engineering metrics. Objective cost, risk, and ROI evaluations.',
+    alternates: { canonical: 'https://www.richardewing.io/compare' },
+    openGraph: {
+        title: 'Architectural & Platform Comparisons | Richard Ewing',
+        description: 'Compare AI coding platforms, runtime governance architectures, and engineering metrics.',
+        url: 'https://www.richardewing.io/compare',
+        type: 'website',
+    },
+};
+
+const curattedComparisons = [
+    {
+        title: 'Claude Code vs Cursor Governance',
+        subtitle: 'Runtime Gating vs Prompt Boundaries',
+        description: 'Why deterministic runtime gating outperforms probabilistic prompt boundaries for enterprise AI development.',
+        href: '/compare/claude-code-vs-cursor-governance',
+        color: 'amber'
+    },
+    {
+        title: 'Claude Code Retry Loop Prevention',
+        subtitle: 'Token Burn & Patch Loops',
+        description: 'How to stop Claude Code from getting caught in recursive patch loops that burn API compute.',
+        href: '/compare/claude-code-retry-loop-prevention',
+        color: 'cyan'
+    },
+    {
+        title: 'Claude Context Rot Mitigation',
+        subtitle: 'Bounded Cognition Engines',
+        description: 'Prevent Claude from forgetting core architecture in long sessions using semantic reset checkpoints.',
+        href: '/compare/claude-context-rot-mitigation',
+        color: 'indigo'
+    },
+    {
+        title: 'Cursor Repository Drift Prevention',
+        subtitle: 'Ghost Dependencies & Scope Creep',
+        description: 'Stop Cursor from rewriting unrelated files and creating ghost dependencies.',
+        href: '/compare/cursor-repository-drift-prevention',
+        color: 'purple'
+    },
+    {
+        title: 'Product Debt Index vs SonarQube',
+        subtitle: 'Financial vs Technical Debt',
+        description: 'Comparing code quality tools against dollar-denominated financial debt models.',
+        href: '/compare/pdi-vs-sonarqube',
+        color: 'emerald'
+    },
+    {
+        title: 'AI Unit Economics vs AWS Cost Explorer',
+        subtitle: 'Inference Unit Margins',
+        description: 'Why raw cloud billing fails to measure AI feature gross margin erosion.',
+        href: '/compare/aueb-vs-aws-cost-explorer',
+        color: 'cyan'
+    }
+];
+
+const colorMap: Record<string, { border: string; text: string; hover: string }> = {
+    amber: { border: 'border-amber-500/30', text: 'text-amber-900', hover: 'hover:border-amber-500/60' },
+    cyan: { border: 'border-cyan-500/30', text: 'text-cyan-900', hover: 'hover:border-cyan-500/60' },
+    indigo: { border: 'border-indigo-500/30', text: 'text-indigo-900', hover: 'hover:border-indigo-500/60' },
+    purple: { border: 'border-purple-500/30', text: 'text-purple-900', hover: 'hover:border-purple-500/60' },
+    emerald: { border: 'border-emerald-500/30', text: 'text-emerald-900', hover: 'hover:border-emerald-500/60' },
+};
+
+export default function CompareIndexPage() {
+    // Filter directory links to ONLY Tier A indexed comparison pages
+    const tierASlugs = new Set((compareCategorized.tierA_indexed as string[]) || []);
+    const filteredMatrix = (pseoMatrix as { slug: string; title: string; toolA: string; toolB: string }[])
+        .filter(item => tierASlugs.has(item.slug));
+
     return (
-        <main className="pt-20">
-            <div className="page-container">
-                <div className="max-w-4xl mx-auto">
+        <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
+            <div className="page-container max-w-4xl mx-auto px-6">
+                
+                {/* Header */}
+                <div className="mb-12 border-b border-zinc-400 pb-8">
+                    <div className="text-xs font-mono font-bold text-amber-900 uppercase tracking-widest mb-3">
+                        Evaluations & Benchmarks
+                    </div>
                     <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Targeted Diagnostic Engines vs <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-orange-400">Mainstream SaaS</span>
+                        Architectural & Platform Comparisons
                     </h1>
-                    <p className="text-lg text-zinc-900 mb-12 max-w-2xl">
-                        Mainstream tools measure engineering activity, code syntax, and server usage. Our specialized forensic engines calculate the exact EBITDA hemorrhage caused by Technical Debt, AI Volatility, and Shadow Architecture.
+                    <p className="text-xl text-zinc-900 leading-relaxed font-semibold max-w-2xl">
+                        Objective cost, risk, and ROI evaluations of AI coding assistants, guardrails, and engineering metrics platforms.
                     </p>
+                </div>
 
-                    <div className="space-y-6">
-                        {comparisons.map((c) => {
-                            const colorMap: Record<string, { border: string, hover: string, text: string }> = {
-                                cyan: { border: 'border-cyan-500/20', hover: 'hover:border-cyan-500/50', text: 'text-cyan-900 font-extrabold font-semibold' },
-                                purple: { border: 'border-purple-500/20', hover: 'hover:border-purple-500/50', text: 'text-purple-900 font-extrabold font-semibold' },
-                                orange: { border: 'border-orange-500/20', hover: 'hover:border-orange-500/50', text: 'text-orange-900 font-extrabold font-semibold' },
-                                emerald: { border: 'border-emerald-500/20', hover: 'hover:border-emerald-500/50', text: 'text-emerald-900 font-extrabold font-semibold' },
-                                rose: { border: 'border-rose-500/20', hover: 'hover:border-rose-500/50', text: 'text-rose-400' },
-                                indigo: { border: 'border-indigo-500/20', hover: 'hover:border-indigo-500/50', text: 'text-indigo-900 font-extrabold font-semibold' },
-                                fuchsia: { border: 'border-fuchsia-500/20', hover: 'hover:border-fuchsia-500/50', text: 'text-zinc-950 font-semibolduchsia-400' },
-                                amber: { border: 'border-amber-500/20', hover: 'hover:border-amber-500/50', text: 'text-amber-400' }
-                            };
-                            const theme = colorMap[c.color] || colorMap.cyan;
+                {/* Featured Comparisons */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+                    {curattedComparisons.map((c) => {
+                        const theme = colorMap[c.color] || colorMap.amber;
+                        return (
+                            <Link key={c.href} href={c.href} className="group block">
+                                <div className={`rounded-2xl border ${theme.border} ${theme.hover} p-8 transition-all bg-white hover:bg-zinc-50 shadow-sm`}>
+                                    <div className={`text-xs font-bold font-mono uppercase tracking-widest mb-2 ${theme.text}`}>{c.subtitle}</div>
+                                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-3 group-hover:text-zinc-900">{c.title}</h2>
+                                    <p className="text-zinc-900 font-semibold mb-4 text-sm">{c.description}</p>
+                                    <span className={`text-xs font-bold uppercase tracking-widest ${theme.text}`}>Read Comparison &rarr;</span>
+                                </div>
+                            </Link>
+                        );
+                    })}
+                </div>
 
-                            return (
-                                <Link key={c.href} href={c.href} className="group block">
-                                    <div className={`rounded-2xl border ${theme.border} ${theme.hover} p-8 transition-all hover:bg-zinc-50`}>
-                                        <div className={`text-xs font-bold font-mono uppercase tracking-widest mb-2 ${theme.text}`}>{c.subtitle}</div>
-                                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-3 group-hover:text-zinc-900">{c.title}</h2>
-                                        <p className="text-zinc-900 mb-4">{c.description}</p>
-                                        <span className={`text-sm font-semibold font-bold uppercase tracking-widest ${theme.text}`}>Read Comparison →</span>
-                                    </div>
+                {/* Tier A Comparison Directory */}
+                {filteredMatrix.length > 0 && (
+                    <div className="mt-16 pt-12 border-t border-zinc-400">
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-8">
+                            High-Intent Strategic Comparisons
+                        </h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {filteredMatrix.map((page) => (
+                                <Link 
+                                    key={page.slug} 
+                                    href={`/compare/${page.slug}`}
+                                    className="text-sm font-bold text-zinc-900 hover:text-cyan-900 transition-colors bg-white/70 border border-zinc-300 rounded-lg p-3 hover:bg-white truncate block"
+                                    title={page.title}
+                                >
+                                    {page.toolA} vs {page.toolB}
                                 </Link>
-                            );
-                        })}
-                    </div>
-
-                    {/* Programmatic SEO Directory (Resolves Ahrefs Orphan Errors) */}
-                    {(pseoMatrix as any[]).length > 0 && (
-                        <div className="mt-20 pt-16 border-t border-zinc-400">
-                            <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-8">
-                                Complete Comparison Directory
-                            </h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                {(pseoMatrix as {slug: string, title: string, toolA: string, toolB: string}[]).map((page) => (
-                                    <Link 
-                                        key={page.slug} 
-                                        href={`/compare/${page.slug}`}
-                                        className="text-sm font-bold text-zinc-900 hover:text-cyan-900 transition-colors bg-white/50 border border-zinc-400/50 rounded-lg p-3 hover:bg-white truncate block"
-                                        title={page.title}
-                                    >
-                                        {page.toolA} vs {page.toolB}
-                                    </Link>
-                                ))}
-                            </div>
+                            ))}
                         </div>
-                    )}
-
-                    <div className="text-center py-16 border-t border-zinc-400 mt-16">
-                        <p className="text-zinc-900 mb-4">Try all tools free</p>
-                        <Link href="/tools" className="text-cyan-900 font-extrabold font-semibold hover:text-cyan-900 font-extrabold font-semibold font-bold uppercase tracking-widest text-sm">
-                            View All Diagnostic Tools →
-                        </Link>
                     </div>
+                )}
+
+                <div className="text-center py-12 border-t border-zinc-400 mt-16">
+                    <p className="text-zinc-900 font-semibold mb-4 text-sm">Explore diagnostic calculators</p>
+                    <Link href="/tools" className="text-cyan-900 font-extrabold hover:text-cyan-900 uppercase tracking-widest text-xs">
+                        View All Diagnostic Tools &rarr;
+                    </Link>
                 </div>
-            
-                    <AdvisoryCTA variant="compare" />
-                </div>
+            </div>
         </main>
     );
 }
