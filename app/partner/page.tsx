@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import PartnerContactForm from '@/app/components/client/PartnerContactForm';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
     title: 'Partner with Richard: Newsletter & Speaking | Richard Ewing',
     description: 'Sponsor or collaborate with Richard Ewing on AI advisory, speaking, or newsletter placements. Connect directly with technology leaders.',
