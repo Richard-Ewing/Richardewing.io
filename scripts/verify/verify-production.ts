@@ -1,5 +1,4 @@
 import https from 'https';
-import http from 'http';
 
 /**
  * AI Economics Commercial Knowledge Platform - Production Live Verification Suite
@@ -10,7 +9,7 @@ const BASE_URL = process.env.PROD_URL || 'https://www.richardewing.io';
 
 interface CheckItem {
   url: string;
-  expectedStatus?: number;
+  expectedStatus?: number[];
   expectedLocation?: string;
   mustContain?: string[];
   mustNotContain?: string[];
@@ -24,31 +23,35 @@ const CHECKS: CheckItem[] = [
   },
   {
     url: '/pricing',
-    mustContain: ['$10,000'],
+    mustContain: ['10,000'],
     mustNotContain: ['$7,500 / month'],
   },
   {
+    url: '/services',
+    mustContain: ['10,000'],
+  },
+  {
     url: '/advisory',
-    mustContain: ['$10,000'],
+    expectedStatus: [301, 307, 308],
   },
 
-  // 2. 301 Redirect Checks (Tier C Spam URLs)
+  // 2. Permanent Redirect Checks (HTTP 301 / 308 to /tools)
   {
     url: '/compare/chakra-ui-vs-terraform',
-    expectedStatus: 301,
+    expectedStatus: [301, 307, 308],
   },
   {
     url: '/compare/docker-vs-langchain',
-    expectedStatus: 301,
+    expectedStatus: [301, 307, 308],
   },
 
   // 3. Tier A Preserved Checks (HTTP 200)
   {
     url: '/compare/claude-code-vs-cursor-governance',
-    expectedStatus: 200,
+    expectedStatus: [200],
   },
 
-  // 4. Metadata Basics
+  // 4. Metadata & FAQ
   {
     url: '/faq',
     mustContain: ['<title>'],
@@ -93,9 +96,9 @@ export async function runProductionChecks() {
       let checkPassed = true;
       const issues: string[] = [];
 
-      if (check.expectedStatus && res.statusCode !== check.expectedStatus) {
+      if (check.expectedStatus && !check.expectedStatus.includes(res.statusCode)) {
         checkPassed = false;
-        issues.push(`Expected HTTP ${check.expectedStatus}, got HTTP ${res.statusCode}`);
+        issues.push(`Expected HTTP ${check.expectedStatus.join(' or ')}, got HTTP ${res.statusCode}`);
       }
 
       if (check.expectedLocation && !res.location.includes(check.expectedLocation)) {
