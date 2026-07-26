@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-    title: 'FAQ — AI Advisory, Exogram & Frameworks',
+    title: {
+        absolute: 'FAQ — AI Advisory, Exogram & Frameworks | Richard Ewing'
+    },
     description: 'Frequently asked questions about AI Economics, advisory services, diagnostic tools, and the Exogram platform.',
     alternates: { canonical: 'https://www.richardewing.io/faq' },
     keywords: ['AI economist FAQ', 'richard ewing FAQ', 'advisory FAQ', 'exogram FAQ', 'technical debt FAQ'],

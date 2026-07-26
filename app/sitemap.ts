@@ -26,7 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // === CORE PAGES ===
     add(`${baseUrl}/`, 'weekly', 1.0);
-    add(`${baseUrl}/advisory/licensing`, 'monthly', 0.6);
     add(`${baseUrl}/doctrine`, 'monthly', 0.8);
     add(`${baseUrl}/runtime-architecture`, 'weekly', 0.95);
     add(`${baseUrl}/tools`, 'monthly', 0.8);
@@ -144,9 +143,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     getSortedArticles()
         .filter(article => !article.canonicalUrl || article.canonicalUrl === `${baseUrl}/blog/${article.slug}`)
         .forEach(article => add(`${baseUrl}/blog/${article.slug}`, 'monthly', 0.8));
-
-    // Careers
-    CAREER_PATHS.forEach(path => add(`${baseUrl}/careers/${path.slug}`, 'monthly', 0.8));
 
     // Answers (hub & spoke)
     getAllSpokeRoutes().forEach(r =>
