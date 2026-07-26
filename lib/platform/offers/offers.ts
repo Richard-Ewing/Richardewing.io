@@ -120,7 +120,7 @@ const baseOffers: Record<string, CommercialOffer> = {
     ],
     primaryCTA: {
       label: 'Book R&D Capital Audit →',
-      productId: 'hallucination_tax_audit',
+      productId: 'full_audit',
       action: 'checkout'
     },
     followUpOfferId: 'advisory_retainer'
