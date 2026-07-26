@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
-    title: 'Exogram — Deterministic AI Governance Runtime | Richard Ewing',
+    title: 'Exogram — Deterministic AI Governance Runtime',
     description: 'Exogram is the execution control plane for autonomous AI agents — intercepting non-deterministic LLM output and enforcing policy-as-code before execution.',
     alternates: { canonical: 'https://www.richardewing.io/exogram' },
     openGraph: {

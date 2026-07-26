@@ -137,12 +137,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     );
 
     // Glossary
-    PILLARS.forEach(pillar => add(`${baseUrl}/glossary/pillars/${pillar.slug}`, 'weekly', 0.9));
+    PILLARS.forEach(pillar => add(`${baseUrl}/glossary/pillars/${pillar.slug}`, 'weekly', 0.6));
 
     // Only index KEEP_TERMS to avoid thin content drag
     glossaryTerms
         .filter(term => KEEP_TERMS.includes(term.slug))
-        .forEach(term => add(`${baseUrl}/glossary/${term.slug}`, 'monthly', 0.8));
+        .forEach(term => add(`${baseUrl}/glossary/${term.slug}`, 'monthly', 0.5));
 
     // Frameworks
     frameworks.forEach(f => add(`${baseUrl}/articles/frameworks/${f.slug}`, 'monthly', 0.7));
