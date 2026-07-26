@@ -67,6 +67,11 @@ const Navigation = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
                             </Link>
 
+                            <Link href="/careerwin" className="text-zinc-700 hover:text-zinc-900 transition-colors relative group font-medium">
+                                CareerWin
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
+                            </Link>
+
                             <Link href="/advisory" className="text-zinc-700 hover:text-zinc-900 transition-colors relative group font-medium">
                                 Advisory & Services
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
