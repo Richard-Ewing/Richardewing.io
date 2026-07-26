@@ -10,6 +10,7 @@ import progressStyles from '../styles/progress.module.css';
 export const metadata = {
     title: 'Client Vault & Strategy Diagnostics | Richard Ewing',
     description: 'Client Vault provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    robots: { index: false, follow: false },
 };
 
 export default async function VaultPage() {
