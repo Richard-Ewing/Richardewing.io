@@ -34,7 +34,7 @@ const profiles = [
         publication: 'HackerNoon',
         role: 'Published Author',
         description: 'Tech publication with 4M+ monthly readers.',
-        url: 'https://hackernoon.com/u/richardewing',
+        url: 'https://hackernoon.com/u/richardewing1',
         logo: '/logos/hackernoon-logo.svg',
         width: 100,
         articleCount: 6,

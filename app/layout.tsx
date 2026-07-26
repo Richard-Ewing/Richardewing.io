@@ -162,7 +162,7 @@ export default function RootLayout({
               'https://linkedin.com/in/richard-ewing-mba',
               'https://www.cio.com/author/richard-ewing/',
               'https://builtin.com/authors/richard-ewing',
-              'https://hackernoon.com/u/richardewing',
+              'https://hackernoon.com/u/richardewing1',
               'https://www.mindtheproduct.com/author/richard-ewing/',
               'https://www.mindtheproduct.com/profile/richard-ewing',
               'https://github.com/Richard-Ewing',

@@ -28,7 +28,7 @@ const publications = [
     {
         name: 'HackerNoon',
         logo: '/logos/hackernoon-logo.svg',
-        url: 'https://hackernoon.com/u/richardewing',
+        url: 'https://hackernoon.com/u/richardewing1',
         relationship: 'Published',
         width: 100,
         height: 20
