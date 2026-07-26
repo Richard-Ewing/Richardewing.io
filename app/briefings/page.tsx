@@ -3,7 +3,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import BriefingsPage from './content';
 
 export const metadata: Metadata = {
-    title: 'Executive AI Briefings & Strategy Diagnostics | Richard Ewing',
+    title: 'Executive AI Briefings & Strategy Diagnostics',
     description: 'Executive AI Briefings provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'executive briefings',
@@ -36,9 +36,8 @@ export default function Page() {
         <main className="pt-20">
             <div className="page-container">
                 <BriefingsPage />
-            
-                    <AdvisoryCTA variant="educational" />
-                </div>
+                <AdvisoryCTA variant="educational" />
+            </div>
         </main>
     );
 }

@@ -31,6 +31,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/tools`, 'monthly', 0.8);
     add(`${baseUrl}/system-prompts`, 'monthly', 0.9);
     add(`${baseUrl}/about`, 'monthly', 0.8);
+    add(`${baseUrl}/speaking`, 'monthly', 0.9);
+    add(`${baseUrl}/case-studies`, 'weekly', 0.95);
+    add(`${baseUrl}/roi`, 'monthly', 0.9);
+    add(`${baseUrl}/roi-calculator`, 'monthly', 0.9);
+    add(`${baseUrl}/security`, 'monthly', 0.8);
+    add(`${baseUrl}/faq`, 'monthly', 0.8);
     add(`${baseUrl}/manifesto`, 'yearly', 0.6);
     add(`${baseUrl}/book`, 'monthly', 0.5);
     add(`${baseUrl}/profiles`, 'monthly', 0.5);
@@ -54,7 +60,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // === CONTENT PAGES ===
     add(`${baseUrl}/articles`, 'weekly', 0.8);
     add(`${baseUrl}/briefings`, 'monthly', 0.7);
+    add(`${baseUrl}/newsletter`, 'weekly', 0.8);
     add(`${baseUrl}/exogram`, 'monthly', 0.8);
+    add(`${baseUrl}/exogram/demo`, 'monthly', 0.9);
     add(`${baseUrl}/blog`, 'weekly', 0.9);
     add(`${baseUrl}/resources`, 'weekly', 0.8);
 

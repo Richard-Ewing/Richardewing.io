@@ -49,6 +49,7 @@ interface Comparison {
 }
 
 function getComparison(slug: string): Comparison | undefined {
+    const tierAList: string[] = (compareCategorized.tierA_indexed as string[]) || [];
     const tierCList: string[] = (compareCategorized.tierC_redirected as string[]) || [];
     const junkList: string[] = (compareCategorized.junk as string[]) || [];
     if (tierCList.includes(slug) || junkList.includes(slug)) {
@@ -69,7 +70,7 @@ function getComparison(slug: string): Comparison | undefined {
     }
 
     const matrixItem = (pseoMatrixData as any[]).find(item => item.slug === slug);
-    if (matrixItem) {
+    if (matrixItem && tierAList.includes(slug)) {
         return {
             slug: matrixItem.slug,
             title: matrixItem.title,
@@ -83,7 +84,6 @@ function getComparison(slug: string): Comparison | undefined {
         };
     }
 
-    const tierAList: string[] = (compareCategorized.tierA_indexed as string[]) || [];
     if (slug.includes('-vs-') && tierAList.includes(slug)) {
         const parts = slug.split('-vs-');
         const toolA = parts[0].replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());

@@ -15,6 +15,12 @@ const nextConfig: NextConfig = {
           { key: 'X-Robots-Tag', value: 'noindex, follow' },
         ],
       },
+      {
+        source: '/vault/:path*',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, follow' },
+        ],
+      },
     ];
   },
   async redirects() {
@@ -28,6 +34,7 @@ const nextConfig: NextConfig = {
       { source: '/curriculum/ai-economics/:slug*', destination: '/vault/curriculum/tracks', permanent: true },
       { source: '/advisory', destination: '/services', permanent: true },
       { source: '/principal', destination: '/about', permanent: true },
+      { source: '/trust', destination: '/security', permanent: true },
       { source: '/vault/curriculum/tracks/product-economics/6-:id', destination: '/vault/curriculum/tracks/product-economics/5-:id', permanent: true },
       { source: '/curriculum/tracks/product-economics/6-:id', destination: '/vault/curriculum/tracks/product-economics/5-:id', permanent: true },
       { source: '/vault/curriculum/tracks/ai-operations/11-:id', destination: '/vault/curriculum/tracks/ai-operations/6-:id', permanent: true },

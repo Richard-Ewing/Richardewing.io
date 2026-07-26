@@ -40,14 +40,13 @@ export default function ExogramPage() {
 
                         {/* Hero CTAs */}
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-                            <Link href="/tools/hallucination-tax" className="relative overflow-hidden inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-red-600 text-zinc-900 font-bold hover:bg-red-700 transition-all shadow-[0_0_20px_rgba(220,38,38,0.3)] hover:shadow-[0_0_30px_rgba(220,38,38,0.5)] text-sm">
-                                <DollarSign className="w-4 h-4" />
-                                Calculate Your Hallucination Tax
+                            <Link href="/exogram/demo" className="relative overflow-hidden inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-cyan-600 text-white font-bold hover:bg-cyan-500 transition-all shadow-[0_0_20px_rgba(8,145,178,0.3)] hover:shadow-[0_0_30px_rgba(8,145,178,0.5)] text-sm">
+                                Request Live Exogram Demo
                                 <ArrowRight className="w-4 h-4" />
                             </Link>
-                            <Link href="/advisory" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 border border-zinc-400 text-zinc-950 font-semibold hover:bg-white/10 transition-colors text-sm">
-                                Book an Assessment
-                                <ArrowRight className="w-4 h-4" />
+                            <Link href="/tools/hallucination-tax" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white border border-zinc-400 text-zinc-950 font-semibold hover:bg-zinc-100 transition-colors text-sm">
+                                <DollarSign className="w-4 h-4 text-emerald-600" />
+                                Calculate Your Hallucination Tax
                             </Link>
                         </div>
 

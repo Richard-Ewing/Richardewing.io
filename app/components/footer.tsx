@@ -45,6 +45,8 @@ export function Footer() {
                         <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Operations</h4>
                         <ul className="space-y-2 text-sm font-semibold font-grotesk">
                             <li><Link href="/tools" className="text-zinc-950 hover:text-zinc-900 transition-colors">Diagnostics</Link></li>
+                            <li><Link href="/roi" className="text-zinc-950 hover:text-zinc-900 transition-colors">ROI Calculator</Link></li>
+                            <li><Link href="/case-studies" className="text-amber-900 font-extrabold hover:text-zinc-900 transition-colors">Case Studies</Link></li>
                             <li><Link href="/framework" className="text-zinc-950 hover:text-zinc-900 transition-colors">Framework</Link></li>
                             <li><Link href="/research" className="text-zinc-950 hover:text-zinc-900 transition-colors">Research</Link></li>
                         </ul>
@@ -55,7 +57,8 @@ export function Footer() {
                         <ul className="space-y-2 text-sm font-semibold font-grotesk">
                             <li><Link href="/start-here" className="text-cyan-900 font-extrabold hover:text-zinc-900 transition-colors">Start Here</Link></li>
                             <li><Link href="/exogram" className="text-purple-900 font-extrabold hover:text-zinc-900 transition-colors">Exogram Platform</Link></li>
-                            <li><Link href="/framework/runtime-governance" className="text-zinc-950 hover:text-zinc-900 transition-colors">Runtime Governance</Link></li>
+                            <li><Link href="/exogram/demo" className="text-cyan-900 font-extrabold hover:text-zinc-900 transition-colors">Exogram Demo</Link></li>
+                            <li><Link href="/security" className="text-zinc-950 hover:text-zinc-900 transition-colors">Security & Trust</Link></li>
                         </ul>
                     </div>
 
@@ -63,10 +66,10 @@ export function Footer() {
                         <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Advisory & Info</h4>
                         <ul className="space-y-2 text-sm font-semibold font-grotesk">
                             <li><Link href="/about" className="text-zinc-950 hover:text-zinc-900 transition-colors">About</Link></li>
-                            <li><Link href="/articles" className="text-zinc-950 hover:text-zinc-900 transition-colors">Articles</Link></li>
-                            <li><Link href="/curriculum" className="text-zinc-950 hover:text-zinc-900 transition-colors">Curriculum</Link></li>
+                            <li><Link href="/speaking" className="text-amber-900 font-extrabold hover:text-zinc-900 transition-colors">Keynotes & Speaking</Link></li>
+                            <li><Link href="/newsletter" className="text-zinc-950 hover:text-zinc-900 transition-colors">Newsletter Archive</Link></li>
+                            <li><Link href="/faq" className="text-zinc-950 hover:text-zinc-900 transition-colors">FAQ</Link></li>
                             <li><Link href="/contact" className="text-zinc-950 hover:text-zinc-900 transition-colors">Contact</Link></li>
-                            <li><Link href="/partner" className="text-zinc-950 hover:text-zinc-900 transition-colors">Partner</Link></li>
                             <li><Link href="/services" className="text-[var(--accent-crimson)] font-bold hover:opacity-80 transition-colors">Book an Audit</Link></li>
                         </ul>
                     </div>

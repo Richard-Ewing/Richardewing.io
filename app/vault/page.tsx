@@ -7,12 +7,22 @@ import { supabaseAdmin } from '@/lib/supabase';
 import VaultProgressFlywheel from '@/components/VaultProgressFlywheel';
 import progressStyles from '../styles/progress.module.css';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
-    title: {
-        absolute: 'Vault — Executive Diagnostic Toolkit | Richard Ewing'
-    },
+    title: 'Vault — Executive Diagnostic Toolkit | Richard Ewing',
     description: 'Client Vault provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     robots: { index: false, follow: false },
+    openGraph: {
+        title: 'Vault — Executive Diagnostic Toolkit | Richard Ewing',
+        description: 'Client Vault provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+        url: 'https://www.richardewing.io/vault',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Vault — Executive Diagnostic Toolkit | Richard Ewing',
+        description: 'Client Vault provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    },
 };
 
 export default async function VaultPage() {

@@ -123,22 +123,27 @@ const Navigation = () => {
                                 </AnimatePresence>
                             </div>
 
+                            <Link href="/case-studies" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
+                                Case Studies
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
+                            </Link>
+
                             <Link href="/framework" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
                                 Framework
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/tools" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
-                                Tools
+                            <Link href="/roi" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
+                                ROI
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/advisory" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
+                            <Link href="/services" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
                                 Services
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/principal" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
+                            <Link href="/about" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
                                 About
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
                             </Link>
