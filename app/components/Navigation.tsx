@@ -27,35 +27,33 @@ const Navigation = () => {
             <nav
                 className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
                     ? 'bg-white/90 backdrop-blur-lg border-b border-zinc-400 py-3 shadow-sm'
-                    : 'bg-transparent py-5'
+                    : 'bg-transparent py-4'
                     }`}
             >
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex items-center justify-between">
 
                         {/* Logo/Identity */}
-                        <Link href="/" className="flex items-center gap-3 group">
-                            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[var(--accent-purple)] relative">
+                        <Link href="/" className="flex items-center gap-3 group shrink-0">
+                            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[var(--accent-purple)] relative shrink-0">
                                 <Image src="/assets/headshot.jpg" alt="Richard Ewing" width={40} height={40} className="w-full h-full object-cover" priority />
                             </div>
-                            <div>
-                                <div className="font-semibold text-zinc-900 group-hover:text-[var(--accent-purple)] transition-colors">Richard Ewing</div>
-                                <div className="text-xs font-bold text-zinc-900">AI Economist</div>
+                            <div className="whitespace-nowrap">
+                                <div className="font-semibold text-zinc-900 group-hover:text-[var(--accent-purple)] transition-colors text-sm">Richard Ewing</div>
+                                <div className="text-[11px] font-bold text-zinc-800">AI Economist</div>
                             </div>
                         </Link>
 
                         {/* Desktop Nav */}
-                        <div className="hidden lg:flex items-center gap-4">
+                        <div className="hidden lg:flex items-center gap-5 font-medium text-sm">
 
                             {/* Start Here / Member Dashboard */}
-                            <Link href={isSignedIn ? "/vault" : "/start-here"} className="text-emerald-900 font-extrabold hover:text-emerald-500 transition-colors relative group font-semibold">
+                            <Link 
+                                href={isSignedIn ? "/vault" : "/start-here"} 
+                                className="text-emerald-800 font-bold hover:text-emerald-600 transition-colors whitespace-nowrap relative group"
+                            >
                                 ✦ {isSignedIn ? "Member Dashboard" : "Start Here"}
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all group-hover:w-full" />
-                            </Link>
-
-                            <Link href="/assessment" className="text-purple-700 font-bold hover:text-purple-900 transition-colors relative group font-semibold">
-                                AI Economics Score
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full" />
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover:w-full" />
                             </Link>
 
                             {/* Platforms & Products Dropdown */}
@@ -65,7 +63,7 @@ const Navigation = () => {
                                 onMouseLeave={() => setProductsDropdownOpen(false)}
                             >
                                 <button 
-                                    className="text-zinc-900 hover:text-purple-900 transition-colors font-semibold inline-flex items-center gap-1.5 py-1 cursor-pointer"
+                                    className="text-zinc-900 hover:text-purple-900 transition-colors font-semibold inline-flex items-center gap-1 py-1 cursor-pointer whitespace-nowrap"
                                     onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
                                 >
                                     <span>Platforms & Products</span>
@@ -125,40 +123,40 @@ const Navigation = () => {
                                 </AnimatePresence>
                             </div>
 
-                            <Link href="/framework" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
+                            <Link href="/framework" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
                                 Framework
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/tools" className="text-zinc-900 hover:text-zinc-900 transition-colors relative group font-medium">
+                            <Link href="/tools" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
                                 Tools
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/advisory" className="text-zinc-700 hover:text-zinc-900 transition-colors relative group font-medium">
-                                Advisory & Services
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
+                            <Link href="/advisory" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
+                                Services
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/principal" className="text-zinc-700 hover:text-zinc-900 transition-colors relative group font-medium">
+                            <Link href="/principal" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
                                 About
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-purple)] transition-all group-hover:w-full" />
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
                             </Link>
 
-                            {/* Primary CTA */}
+                            {/* Single Primary Assessment CTA */}
                             <Link
                                 href="/assessment"
-                                className="bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-2 rounded-lg font-bold text-white hover:opacity-90 transition-all shadow-lg shadow-violet-500/20 hover:shadow-xl hover:shadow-violet-500/30 transform hover:-translate-y-0.5 text-xs uppercase tracking-wider"
+                                className="bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-2 rounded-lg font-bold text-white hover:opacity-90 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-xs uppercase tracking-wider whitespace-nowrap shrink-0"
                             >
                                 Take Assessment →
                             </Link>
 
-                            <div className="h-6 w-px bg-zinc-200 mx-1 flex-shrink-0" />
+                            <div className="h-5 w-px bg-zinc-300 mx-1 flex-shrink-0" />
 
                             {/* Authentication */}
                             {isLoaded && !isSignedIn && (
                                 <SignInButton mode="modal" fallbackRedirectUrl="/vault" signUpFallbackRedirectUrl="/vault">
-                                    <button className="text-zinc-900 hover:text-zinc-900 transition-colors text-sm font-semibold whitespace-nowrap cursor-pointer">
+                                    <button className="text-zinc-900 hover:text-purple-700 transition-colors text-xs font-bold uppercase tracking-wider whitespace-nowrap cursor-pointer">
                                         Sign In
                                     </button>
                                 </SignInButton>
@@ -192,9 +190,6 @@ const Navigation = () => {
                         <div className="flex flex-col gap-4">
                             <Link href="/start-here" onClick={() => setMobileMenuOpen(false)} className="text-emerald-700 font-bold text-base">
                                 ✦ Start Here
-                            </Link>
-                            <Link href="/assessment" onClick={() => setMobileMenuOpen(false)} className="text-purple-700 font-bold text-base">
-                                AI Economics Score (15-Q)
                             </Link>
                             
                             {/* Mobile Platforms & Products Group */}

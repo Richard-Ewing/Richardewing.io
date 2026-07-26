@@ -111,18 +111,18 @@ export default function AssessmentTool() {
         </div>
 
         {/* Output PDF Thumbnail Preview Card */}
-        <div className="mb-8 p-4 bg-zinc-950 text-white rounded-2xl border border-zinc-800 max-w-sm mx-auto text-left shadow-md">
-          <div className="flex items-center justify-between border-b border-zinc-800 pb-2 mb-2 text-[10px] font-mono text-zinc-400">
+        <div className="mb-8 p-4 bg-zinc-950 text-white rounded-2xl border border-zinc-700 max-w-sm mx-auto text-left shadow-md">
+          <div className="flex items-center justify-between border-b border-zinc-800 pb-2 mb-2 text-[10px] font-mono text-zinc-200 font-bold">
             <span>YOUR PERSONALIZED PDF OUTPUT</span>
-            <span className="text-purple-400 font-bold">5-DIMENSION REPORT</span>
+            <span className="text-purple-300 font-bold">5-DIMENSION REPORT</span>
           </div>
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-purple-600/20 text-purple-400 border border-purple-500/30 flex items-center justify-center font-bold text-xs shrink-0">
+            <div className="w-10 h-10 rounded-lg bg-purple-600/30 text-purple-200 border border-purple-400/50 flex items-center justify-center font-bold text-xs shrink-0">
               PDF
             </div>
             <div>
               <div className="text-xs font-bold text-white">AI Economics Score & Margin Audit</div>
-              <div className="text-[10px] text-zinc-400 font-mono">Includes estimated margin leak % & board brief</div>
+              <div className="text-[10px] text-zinc-200 font-mono font-medium">Includes estimated margin leak % & board brief</div>
             </div>
           </div>
         </div>
@@ -337,23 +337,23 @@ export default function AssessmentTool() {
           </div>
 
           {/* Top Executive Key Levers (Self-Serve Plan) */}
-          <div className="bg-zinc-900 text-white rounded-3xl p-8 shadow-lg page-break-avoid">
+          <div className="bg-zinc-950 text-white border border-zinc-800 rounded-3xl p-8 shadow-xl page-break-avoid">
             <div className="flex items-center gap-3 mb-4">
-              <Lightbulb className="w-5 h-5 text-amber-400" />
-              <h3 className="text-lg font-grotesk font-bold">
+              <Lightbulb className="w-6 h-6 text-amber-400 shrink-0" />
+              <h3 className="text-xl font-grotesk font-extrabold text-white">
                 Top Priority Self-Serve Remediation Plan
               </h3>
             </div>
-            <p className="text-xs text-zinc-400 mb-6 font-mono uppercase tracking-widest">
+            <p className="text-xs font-mono font-bold text-purple-300 mb-6 uppercase tracking-wider">
               Immediate action items to increase your AI Economics Score & preserve gross margin:
             </p>
             <div className="space-y-4">
               {result.executiveActionPlan.map((actionStr, idx) => (
-                <div key={idx} className="flex items-start gap-3 bg-zinc-800/80 p-4 rounded-xl border border-zinc-700">
-                  <div className="w-6 h-6 rounded-full bg-purple-600 text-white flex items-center justify-center text-xs font-mono font-bold shrink-0 mt-0.5">
+                <div key={idx} className="flex items-start gap-3 bg-zinc-900 p-4 rounded-xl border border-zinc-700">
+                  <div className="w-6 h-6 rounded-full bg-purple-600 text-white flex items-center justify-center text-xs font-mono font-bold shrink-0 mt-0.5 shadow-sm">
                     {idx + 1}
                   </div>
-                  <p className="text-sm font-semibold text-zinc-200 leading-snug">
+                  <p className="text-sm font-semibold text-zinc-100 leading-snug">
                     {actionStr}
                   </p>
                 </div>
