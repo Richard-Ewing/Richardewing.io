@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { QUESTIONS, DIMENSIONS } from './questions';
 import { calculateScore, type AssessmentResult } from './scoring';
 import CheckoutButton from '@/app/components/client/CheckoutButton';
-import { ChevronRight, ChevronLeft, AlertTriangle, Download, Mail, CheckCircle } from 'lucide-react';
+import { ChevronRight, ChevronLeft, AlertTriangle, Download, Mail, CheckCircle, ShieldAlert, CheckSquare, Lightbulb, FileText } from 'lucide-react';
 import { trackAssessmentStart, trackAssessmentComplete } from '@/lib/platform/analytics/telemetry';
 import { COMMERCIAL_OFFERS } from '@/lib/platform/offers/offers';
 
@@ -64,7 +64,6 @@ export default function AssessmentTool() {
     if (!email || !email.includes('@')) return;
     
     setEmailSubmitted(true);
-    // Send lead email to API
     fetch('/api/leads', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -93,13 +92,13 @@ export default function AssessmentTool() {
           AI Economics Assessment
         </h2>
         <p className="text-base sm:text-lg text-zinc-700 font-medium mb-8 leading-relaxed">
-          Answer 15 questions about your AI infrastructure. Get an immediate 0-100 AI Economics Score with estimated margin leakage, governance gaps, and recommended next steps.
+          Answer 15 questions about your AI infrastructure. Get an immediate 0-100 AI Economics Score with detailed dimension findings, estimated margin leakage, and actionable self-serve remediation steps.
         </p>
         
         <div className="flex flex-col gap-3 text-left max-w-sm mx-auto mb-8 bg-zinc-50 p-6 rounded-2xl border border-zinc-200">
           <div className="flex items-center gap-3 text-zinc-800 text-sm font-medium">
             <div className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span>15 questions across 5 core dimensions</span>
+            <span>15 operational questions across 5 core dimensions</span>
           </div>
           <div className="flex items-center gap-3 text-zinc-800 text-sm font-medium">
             <div className="w-2 h-2 rounded-full bg-emerald-500" />
@@ -107,7 +106,7 @@ export default function AssessmentTool() {
           </div>
           <div className="flex items-center gap-3 text-zinc-800 text-sm font-medium">
             <div className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span>Immediate inline score + PDF report option</span>
+            <span>Detailed diagnosis + Actionable self-serve playbooks</span>
           </div>
         </div>
 
@@ -205,139 +204,265 @@ export default function AssessmentTool() {
       return 'bg-rose-500';
     };
 
+    const getStatusBadge = (status: string) => {
+      switch (status) {
+        case 'Governed':
+          return <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">Governed</span>;
+        case 'Maturing':
+          return <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-cyan-100 text-cyan-800 border border-cyan-300">Maturing</span>;
+        case 'Reactive':
+          return <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-amber-100 text-amber-800 border border-amber-300">Reactive</span>;
+        default:
+          return <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-rose-100 text-rose-800 border border-rose-300">Exposed</span>;
+      }
+    };
+
     return (
-      <div className="max-w-3xl mx-auto space-y-8 print:p-0">
-        {/* Score Box */}
-        <div className="bg-zinc-950 text-white rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden shadow-xl">
-          <div className="relative z-10">
-            <h2 className="text-zinc-400 font-mono text-xs tracking-widest uppercase mb-4">
-              Your AI Economics Score
-            </h2>
-            <div className={`text-7xl sm:text-8xl font-grotesk font-bold tracking-tight mb-3 ${getScoreColor(result.overallScore)}`}>
-              {result.overallScore}
-            </div>
-            <div className="text-xl sm:text-2xl font-bold text-white mb-3">
-              {result.rating}
-            </div>
-            <p className="text-zinc-400 text-sm max-w-lg mx-auto leading-relaxed">
-              Based on your responses across 15 operational metrics. Here is your AI unit economics and infrastructure health breakdown.
-            </p>
-          </div>
-        </div>
+      <>
+        {/* Inject Print-Specific Styles to fix overlap bugs in PDF Export */}
+        <style jsx global>{`
+          @media print {
+            body {
+              background: #ffffff !important;
+              color: #000000 !important;
+            }
+            nav, footer, .no-print, button, form {
+              display: none !important;
+            }
+            .print-container {
+              max-width: 100% !important;
+              margin: 0 !important;
+              padding: 0 !important;
+              box-shadow: none !important;
+            }
+            .page-break-avoid {
+              page-break-inside: avoid !important;
+              break-inside: avoid !important;
+            }
+            .print-header {
+              display: block !important;
+              margin-bottom: 20px !important;
+              border-b: 2px solid #000000 !important;
+              padding-bottom: 12px !important;
+            }
+          }
+          @media screen {
+            .print-header {
+              display: none;
+            }
+          }
+        `}</style>
 
-        {/* Dimension Breakdown & Recommendations */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Dimensions */}
-          <div className="bg-white border border-zinc-300 rounded-3xl p-6 sm:p-8 shadow-sm">
-            <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-6">
-              Dimension Breakdown
-            </h3>
-            <div className="space-y-5">
-              {result.dimensions.map((dim) => (
-                <div key={dim.key}>
-                  <div className="flex justify-between text-xs font-mono font-bold mb-2">
-                    <span className="text-zinc-700">{dim.name}</span>
-                    <span className="text-zinc-950">{dim.score}/100</span>
-                  </div>
-                  <div className="w-full bg-zinc-100 h-2.5 rounded-full overflow-hidden">
-                    <div 
-                      className={`${getScoreBgColor(dim.score)} h-full rounded-full transition-all duration-500`}
-                      style={{ width: `${dim.score}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
+        <div className="max-w-4xl mx-auto space-y-8 print-container">
+          
+          {/* Printable Report Header */}
+          <div className="print-header">
+            <div className="flex justify-between items-center">
+              <div>
+                <h1 className="text-xl font-bold font-grotesk text-black">Richard Ewing | AI Economist</h1>
+                <p className="text-xs text-zinc-600 font-mono">Executive AI Economics Assessment & Diagnostic Report</p>
+              </div>
+              <div className="text-right text-xs font-mono text-zinc-500">
+                Date: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+              </div>
             </div>
           </div>
 
-          {/* Margin Leakage & Action */}
-          <div className="space-y-6">
-            <div className="bg-amber-50 border border-amber-300 rounded-3xl p-6 shadow-sm">
-              <div className="flex items-start gap-3">
-                <AlertTriangle className="w-6 h-6 text-amber-600 shrink-0 mt-1" />
+          {/* Overall Score Box */}
+          <div className="bg-zinc-950 text-white rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden shadow-xl page-break-avoid">
+            <div className="relative z-10">
+              <h2 className="text-zinc-400 font-mono text-xs tracking-widest uppercase mb-3">
+                Your AI Economics Score
+              </h2>
+              <div className={`text-7xl sm:text-8xl font-grotesk font-bold tracking-tight mb-3 ${getScoreColor(result.overallScore)}`}>
+                {result.overallScore}
+              </div>
+              <div className="text-xl sm:text-2xl font-bold text-white mb-3">
+                {result.rating} Status
+              </div>
+              <p className="text-zinc-300 text-sm max-w-xl mx-auto leading-relaxed font-medium">
+                {result.ratingDescription}
+              </p>
+            </div>
+          </div>
+
+          {/* Margin Leakage Summary & Recommended Action */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 page-break-avoid">
+            <div className="md:col-span-2 bg-amber-50 border border-amber-300 rounded-3xl p-6 sm:p-8 shadow-sm">
+              <div className="flex items-start gap-4">
+                <AlertTriangle className="w-7 h-7 text-amber-600 shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-bold text-zinc-950 text-base mb-1">
+                  <h3 className="font-grotesk font-bold text-zinc-950 text-lg mb-2">
                     Estimated AI Margin Leakage: {result.leakageRange.min}-{result.leakageRange.max}%
-                  </h4>
-                  <p className="text-xs text-zinc-700 leading-relaxed font-semibold">
-                    Estimated percentage of your AI infrastructure spend wasted through inefficient routing, unconstrained prompt loops, or zero cost visibility.
+                  </h3>
+                  <p className="text-xs text-zinc-800 leading-relaxed font-medium">
+                    Based on your responses, an estimated <strong>{result.leakageRange.min}-{result.leakageRange.max}% of your AI cloud and API token expenditure</strong> is wasted through unconstrained prompt loops, missing context boundaries, and zero per-feature cost attribution.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white border border-zinc-300 rounded-3xl p-6 shadow-sm">
-              <h4 className="font-grotesk font-bold text-zinc-950 mb-3">
-                Recommended Action
-              </h4>
-              <p className="text-xs text-zinc-600 mb-6 font-semibold leading-relaxed">
-                Review your results with Richard Ewing in a 30-minute rapid diagnostic session to locate exact capital leaks.
-              </p>
+            <div className="bg-white border border-zinc-300 rounded-3xl p-6 shadow-sm flex flex-col justify-between no-print">
+              <div>
+                <h4 className="font-grotesk font-bold text-zinc-950 mb-2 text-sm">
+                  Executive Consultation Option
+                </h4>
+                <p className="text-xs text-zinc-600 mb-4 font-medium leading-relaxed">
+                  Review these findings directly with Richard Ewing in a 30-minute rapid diagnostic session.
+                </p>
+              </div>
               <CheckoutButton 
                 productId="gut_check" 
-                label={`Book $${COMMERCIAL_OFFERS.gut_check.price} Rapid Diagnostic`} 
+                label={`Book $${COMMERCIAL_OFFERS.gut_check.price} Diagnostic`} 
                 variant="primary" 
               />
             </div>
           </div>
-        </div>
 
-        {/* Email Lead & PDF Export */}
-        <div className="bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <h3 className="text-xl font-grotesk font-bold text-zinc-950 mb-2">
-                Download Benchmark PDF Report
+          {/* Top Executive Key Levers (Self-Serve Plan) */}
+          <div className="bg-zinc-900 text-white rounded-3xl p-8 shadow-lg page-break-avoid">
+            <div className="flex items-center gap-3 mb-4">
+              <Lightbulb className="w-5 h-5 text-amber-400" />
+              <h3 className="text-lg font-grotesk font-bold">
+                Top Priority Self-Serve Remediation Plan
               </h3>
-              <p className="text-xs text-zinc-600 font-semibold max-w-md">
-                Get a clean printable PDF report with your 5-dimension score breakdown to share with your board or executive team.
-              </p>
             </div>
-            
-            <div className="w-full md:w-auto flex flex-col sm:flex-row gap-3">
-              {!emailSubmitted ? (
-                <form onSubmit={handleEmailSubmit} className="flex gap-2 w-full sm:w-auto">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="enter your email..."
-                    required
-                    className="px-4 py-3 rounded-xl border border-zinc-300 text-xs font-mono font-medium text-zinc-950 focus:outline-none focus:border-purple-600 flex-1 sm:w-48"
-                  />
-                  <button
-                    type="submit"
-                    className="px-4 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-xl text-xs font-bold font-mono uppercase tracking-widest shrink-0 transition-colors"
-                  >
-                    Unlock Report
-                  </button>
-                </form>
-              ) : (
-                <div className="flex items-center gap-2 text-xs font-bold text-emerald-700 bg-emerald-50 px-4 py-3 rounded-xl border border-emerald-200">
-                  <CheckCircle className="w-4 h-4" /> Report Unlocked!
+            <p className="text-xs text-zinc-400 mb-6 font-mono uppercase tracking-widest">
+              Immediate action items to increase your AI Economics Score & preserve gross margin:
+            </p>
+            <div className="space-y-4">
+              {result.executiveActionPlan.map((actionStr, idx) => (
+                <div key={idx} className="flex items-start gap-3 bg-zinc-800/80 p-4 rounded-xl border border-zinc-700">
+                  <div className="w-6 h-6 rounded-full bg-purple-600 text-white flex items-center justify-center text-xs font-mono font-bold shrink-0 mt-0.5">
+                    {idx + 1}
+                  </div>
+                  <p className="text-sm font-semibold text-zinc-200 leading-snug">
+                    {actionStr}
+                  </p>
                 </div>
-              )}
-
-              <button
-                onClick={handlePrintPDF}
-                className="px-6 py-3 bg-zinc-900 hover:bg-zinc-800 text-white rounded-xl text-xs font-bold font-mono uppercase tracking-widest flex items-center justify-center gap-2 transition-colors cursor-pointer"
-              >
-                <Download className="w-4 h-4" /> Export PDF
-              </button>
+              ))}
             </div>
           </div>
-        </div>
 
-        {/* Retake Button */}
-        <div className="text-center pt-4">
-          <button
-            onClick={() => setPhase('intro')}
-            className="text-xs font-mono font-bold text-zinc-500 hover:text-zinc-950 uppercase tracking-widest transition-colors cursor-pointer"
-          >
-            ← Retake Assessment
-          </button>
+          {/* Detailed Dimension Diagnostics & Remediation Matrix */}
+          <div className="space-y-6">
+            <div className="border-b border-zinc-300 pb-3">
+              <h3 className="text-2xl font-grotesk font-bold text-zinc-950">
+                Detailed 5-Dimension Diagnostic Breakdown
+              </h3>
+              <p className="text-xs text-zinc-600 font-medium">
+                Surgical diagnosis and actionable self-serve playbooks for each operational pillar.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {result.dimensions.map((dim) => (
+                <div key={dim.key} className="bg-white border border-zinc-300 rounded-3xl p-6 sm:p-8 shadow-sm page-break-avoid">
+                  {/* Dimension Header */}
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 pb-4 border-b border-zinc-200">
+                    <div>
+                      <div className="flex items-center gap-3 mb-1">
+                        <h4 className="text-xl font-grotesk font-bold text-zinc-950">{dim.name}</h4>
+                        {getStatusBadge(dim.status)}
+                      </div>
+                      <p className="text-xs font-mono text-zinc-500">Score: {dim.score}/100 points ({dim.rawPoints}/{dim.maxPoints} raw)</p>
+                    </div>
+
+                    <div className="w-full sm:w-48">
+                      <div className="w-full bg-zinc-100 h-3 rounded-full overflow-hidden border border-zinc-200">
+                        <div className={`${getScoreBgColor(dim.score)} h-full rounded-full transition-all duration-500`} style={{ width: `${dim.score}%` }} />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Diagnosis Finding */}
+                  <div className="mb-6 bg-zinc-50 p-4 rounded-2xl border border-zinc-200">
+                    <div className="text-xs font-mono font-bold text-purple-900 uppercase tracking-widest mb-1 flex items-center gap-1.5">
+                      <ShieldAlert className="w-3.5 h-3.5" /> Operational Finding & Diagnosis:
+                    </div>
+                    <p className="text-sm font-semibold text-zinc-900 leading-relaxed">
+                      {dim.finding}
+                    </p>
+                  </div>
+
+                  {/* Actionable Self-Serve Remediation Steps */}
+                  <div>
+                    <div className="text-xs font-mono font-bold text-emerald-800 uppercase tracking-widest mb-3 flex items-center gap-1.5">
+                      <CheckSquare className="w-3.5 h-3.5" /> Actionable Self-Serve Remediation Steps:
+                    </div>
+                    <div className="space-y-2.5">
+                      {dim.actionableSteps.map((step, stepIdx) => (
+                        <div key={stepIdx} className="flex items-start gap-2.5 text-xs font-medium text-zinc-800 leading-relaxed bg-emerald-50/50 p-3 rounded-xl border border-emerald-200/60">
+                          <span className="text-emerald-700 font-bold font-mono shrink-0">Step {stepIdx + 1}:</span>
+                          <span>{step}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Email Lead & PDF Export Footer Bar */}
+          <div className="bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm no-print">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h3 className="text-xl font-grotesk font-bold text-zinc-950 mb-2 flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-purple-600" /> Print or Export Executive Report
+                </h3>
+                <p className="text-xs text-zinc-600 font-semibold max-w-md">
+                  Export a clean printable PDF report with your 5-dimension diagnostic analysis and self-serve playbooks to share with your board or executive team.
+                </p>
+              </div>
+              
+              <div className="w-full md:w-auto flex flex-col sm:flex-row gap-3">
+                {!emailSubmitted ? (
+                  <form onSubmit={handleEmailSubmit} className="flex gap-2 w-full sm:w-auto">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="enter your work email..."
+                      required
+                      className="px-4 py-3 rounded-xl border border-zinc-300 text-xs font-mono font-medium text-zinc-950 focus:outline-none focus:border-purple-600 flex-1 sm:w-52"
+                    />
+                    <button
+                      type="submit"
+                      className="px-4 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-xl text-xs font-bold font-mono uppercase tracking-widest shrink-0 transition-colors cursor-pointer"
+                    >
+                      Unlock Full PDF
+                    </button>
+                  </form>
+                ) : (
+                  <div className="flex items-center gap-2 text-xs font-bold text-emerald-700 bg-emerald-50 px-4 py-3 rounded-xl border border-emerald-200">
+                    <CheckCircle className="w-4 h-4" /> Full Report Unlocked!
+                  </div>
+                )}
+
+                <button
+                  onClick={handlePrintPDF}
+                  className="px-6 py-3 bg-zinc-950 hover:bg-zinc-800 text-white rounded-xl text-xs font-bold font-mono uppercase tracking-widest flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                >
+                  <Download className="w-4 h-4" /> Export PDF
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Retake Button */}
+          <div className="text-center pt-4 no-print">
+            <button
+              onClick={() => setPhase('intro')}
+              className="text-xs font-mono font-bold text-zinc-500 hover:text-zinc-950 uppercase tracking-widest transition-colors cursor-pointer"
+            >
+              ← Retake Assessment
+            </button>
+          </div>
+
         </div>
-      </div>
+      </>
     );
   }
 
