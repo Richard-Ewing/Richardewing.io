@@ -6,7 +6,7 @@ import { AsSeenIn } from '@/components/AsSeenIn';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { COMMERCIAL_OFFERS } from '@/lib/platform/offers/offers';
 import PricingLadderStepper from '@/app/components/PricingLadderStepper';
-import ExecutiveVideoModal from '@/app/components/ExecutiveVideoModal';
+
 
 const Hero = () => {
     return (
@@ -60,10 +60,7 @@ const Hero = () => {
                             </div>
                         </div>
 
-                        {/* Executive Video Brief Modal */}
-                        <div className="mb-8">
-                            <ExecutiveVideoModal />
-                        </div>
+
 
                         {/* Dominant Primary Assessment CTA + Secondary Gut-Check Link */}
                         <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start items-center gap-4 mb-8">
