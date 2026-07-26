@@ -15,8 +15,8 @@ import { Award, TrendingUp, Target, Shield } from 'lucide-react';
 const proofs = [
     { icon: Award, label: '15+ Years Experience', sublabel: 'Enterprise product leadership' },
     { icon: TrendingUp, label: '0-to-1 $25M ARR', sublabel: 'Tyler Technologies' },
-    { icon: Target, label: '[ANONYMIZED_RESULT_1]', sublabel: 'Enterprise client outcome' },
-    { icon: Shield, label: '[ANONYMIZED_RESULT_2]', sublabel: 'Margin recovery result' },
+    { icon: Target, label: 'Found $840K Hidden AI Spend', sublabel: 'CTO, Series C FinTech (verified)' },
+    { icon: Shield, label: '$2.9K/mo API Cap Implemented', sublabel: 'B2B SaaS Margin Recovery' },
 ];
 
 const ProofRail = () => {

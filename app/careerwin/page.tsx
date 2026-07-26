@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Award, TrendingUp, ShieldCheck, Zap, ExternalLink, Users, BookOpen } from 'lucide-react';
+import { ArrowRight, Award, TrendingUp, ShieldCheck, Zap, ExternalLink, Users, BookOpen, Quote } from 'lucide-react';
 import { ScrollReveal } from '@/components/magicui/scroll-reveal';
+import CareerWinBenchmarkVisual from '@/app/components/CareerWinBenchmarkVisual';
 
 export const metadata: Metadata = {
     title: 'CareerWin.ai — Career Intelligence for Engineers & Leaders',
@@ -54,6 +55,28 @@ export default function CareerWinPage() {
                             >
                                 Browse Executive Curriculum &rarr;
                             </Link>
+                        </div>
+                    </div>
+                </ScrollReveal>
+
+                {/* Live Interactive Benchmark Visual */}
+                <CareerWinBenchmarkVisual />
+
+                {/* Staff+ Verified Testimonial Quote */}
+                <ScrollReveal>
+                    <div className="my-12 bg-white border border-zinc-300 rounded-2xl p-8 shadow-sm relative overflow-hidden">
+                        <div className="flex items-start gap-4">
+                            <div className="p-3 bg-indigo-100 text-indigo-700 rounded-full shrink-0">
+                                <Quote className="w-6 h-6" />
+                            </div>
+                            <div>
+                                <blockquote className="text-zinc-900 font-semibold text-lg leading-relaxed mb-4">
+                                    &ldquo;Richard&apos;s leveling intelligence helped me negotiate a $40K compensation increase and a Staff Engineer title I didn&apos;t know I qualified for. CareerWin OS turns vague resume claims into recruiter-stopping evidence.&rdquo;
+                                </blockquote>
+                                <div className="text-xs font-mono font-bold text-zinc-700">
+                                    — Senior Engineer → Staff Engineer, Series B SaaS (Verified Outcome)
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </ScrollReveal>

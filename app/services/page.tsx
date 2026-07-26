@@ -1,8 +1,9 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, ShieldCheck, AlertTriangle, CheckCircle2, ArrowDown } from 'lucide-react';
+import { ArrowRight, ShieldCheck, AlertTriangle, CheckCircle2, ArrowDown, UserCheck, Briefcase, BarChart3 } from 'lucide-react';
 import ProofRail from '@/app/components/ProofRail';
+import DeliverablePreview from '@/app/components/DeliverablePreview';
 import CheckoutButton from '@/app/components/client/CheckoutButton';
 import FAQItem from '@/app/components/FAQItem';
 import { ScrollReveal } from '@/components/magicui/scroll-reveal';
@@ -48,9 +49,9 @@ export default function ServicesPage() {
                     <span>Advisory</span><span>/</span><span className="text-indigo-700 font-extrabold">Services & Packages</span>
                 </div>
 
-                {/* Section 1: Problem */}
+                {/* Section 1: Hero Problem */}
                 <ScrollReveal>
-                    <section className="mb-24 text-left">
+                    <section className="mb-16 text-left">
                         <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-8 tracking-tight leading-[1.1]">
                             Your AI budget is growing. <br className="hidden sm:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-indigo-700">Your AI returns are not.</span>
@@ -58,7 +59,8 @@ export default function ServicesPage() {
                         <p className="text-xl text-zinc-800 leading-relaxed font-medium max-w-3xl mb-8">
                             Companies are spending more on AI but cannot prove it produces financial returns. The CFO sees a growing line item. The CTO promises future value. Neither has the data to resolve the disagreement.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4">
+
+                        <div className="flex flex-col sm:flex-row gap-4 mb-12">
                             <CheckoutButton 
                                 productId="gut_check" 
                                 label={`Book $${COMMERCIAL_OFFERS.gut_check.price} Gut-Check`} 
@@ -68,6 +70,48 @@ export default function ServicesPage() {
                                 Run Free Benchmark
                             </Link>
                         </div>
+
+                        {/* Role-Specific Segmentation Cards */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-zinc-300">
+                            <div className="bg-white border border-zinc-300 p-5 rounded-2xl shadow-sm">
+                                <div className="flex items-center gap-2 text-purple-700 font-bold text-sm mb-2">
+                                    <UserCheck className="w-4 h-4" />
+                                    <span>For CTOs & VPs of Eng</span>
+                                </div>
+                                <p className="text-zinc-800 text-xs font-semibold leading-relaxed mb-3">
+                                    Prove engineering ROI to the board and install hard cost caps before API overruns wreck your roadmap.
+                                </p>
+                                <Link href="/for-ctos" className="text-[11px] font-mono font-bold text-purple-700 hover:text-purple-900 flex items-center gap-1">
+                                    CTO Diagnostic Guide →
+                                </Link>
+                            </div>
+
+                            <div className="bg-white border border-zinc-300 p-5 rounded-2xl shadow-sm">
+                                <div className="flex items-center gap-2 text-indigo-700 font-bold text-sm mb-2">
+                                    <BarChart3 className="w-4 h-4" />
+                                    <span>For CFOs & Finance Leads</span>
+                                </div>
+                                <p className="text-zinc-800 text-xs font-semibold leading-relaxed mb-3">
+                                    Turn the black-box AI line item into a predictable P&L asset with unit economics clarity.
+                                </p>
+                                <Link href="/for-boards" className="text-[11px] font-mono font-bold text-indigo-700 hover:text-indigo-900 flex items-center gap-1">
+                                    CFO Board Framework →
+                                </Link>
+                            </div>
+
+                            <div className="bg-white border border-zinc-300 p-5 rounded-2xl shadow-sm">
+                                <div className="flex items-center gap-2 text-rose-700 font-bold text-sm mb-2">
+                                    <Briefcase className="w-4 h-4" />
+                                    <span>For PE Operating Partners</span>
+                                </div>
+                                <p className="text-zinc-800 text-xs font-semibold leading-relaxed mb-3">
+                                    Forensic technical due diligence to uncover hidden AI liabilities before term sheet execution.
+                                </p>
+                                <Link href="/pricing" className="text-[11px] font-mono font-bold text-rose-700 hover:text-rose-900 flex items-center gap-1">
+                                    M&A Tech Diligence →
+                                </Link>
+                            </div>
+                        </div>
                     </section>
                 </ScrollReveal>
 
@@ -75,7 +119,10 @@ export default function ServicesPage() {
                     <ProofRail />
                 </div>
 
-                {/* Section 2: Cost of doing nothing */}
+                {/* Section 2: Deliverable Output Preview */}
+                <DeliverablePreview />
+
+                {/* Section 3: Cost of doing nothing */}
                 <ScrollReveal>
                     <section className="mb-24">
                         <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-8">The cost of doing nothing</h2>
@@ -111,7 +158,7 @@ export default function ServicesPage() {
                     </section>
                 </ScrollReveal>
 
-                {/* Section 3: Symptoms you recognize */}
+                {/* Section 4: Symptoms you recognize */}
                 <ScrollReveal>
                     <section className="mb-24">
                         <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-8">Symptoms you recognize</h2>
@@ -132,7 +179,7 @@ export default function ServicesPage() {
                     </section>
                 </ScrollReveal>
 
-                {/* Section 4: How we diagnose */}
+                {/* Section 5: How we diagnose */}
                 <ScrollReveal>
                     <section className="mb-24 bg-zinc-950 text-zinc-50 rounded-3xl p-8 sm:p-12">
                         <h2 className="text-3xl font-grotesk font-bold text-white mb-8">How we diagnose</h2>
@@ -157,7 +204,7 @@ export default function ServicesPage() {
                     </section>
                 </ScrollReveal>
 
-                {/* Section 5: Engagement packages */}
+                {/* Section 6: Engagement packages */}
                 <ScrollReveal>
                     <section className="mb-24">
                         <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4 text-center">The Progression</h2>
@@ -172,6 +219,7 @@ export default function ServicesPage() {
                                 return (
                                     <React.Fragment key={idx}>
                                         <div 
+                                            id={key}
                                             className={`relative rounded-3xl border ${isPopular ? 'border-2 border-indigo-500 bg-gradient-to-br from-indigo-50/40 via-white to-white shadow-xl shadow-indigo-500/15' : 'border-zinc-300 bg-white'} p-8 flex flex-col md:flex-row gap-8 justify-between hover:shadow-lg transition-all duration-300`}
                                         >
                                             {isPopular && (
@@ -231,7 +279,7 @@ export default function ServicesPage() {
                     </section>
                 </ScrollReveal>
 
-                {/* Section 6: What you get */}
+                {/* Section 7: What every engagement produces */}
                 <ScrollReveal>
                     <section className="mb-24 bg-indigo-50 border border-indigo-100 rounded-3xl p-8 sm:p-12">
                         <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-8">What every engagement produces</h2>
@@ -256,42 +304,9 @@ export default function ServicesPage() {
                     </section>
                 </ScrollReveal>
 
-                {/* Section 7: FAQ */}
+                {/* Section 8: FAQ */}
                 <ScrollReveal>
                     <section className="mb-24 border-t border-zinc-300 pt-16">
-                        <script
-                            type="application/ld+json"
-                            dangerouslySetInnerHTML={{ __html: JSON.stringify({
-                                '@context': 'https://schema.org',
-                                '@type': 'FAQPage',
-                                'mainEntity': [
-                                    {
-                                        '@type': 'Question',
-                                        'name': 'How much does a fractional CPO cost?',
-                                        'acceptedAnswer': {
-                                            '@type': 'Answer',
-                                            'text': 'Fractional CPO / CTO retainer packages are $10,000/month. This provides hands-on technology direction, cost-cap architecture setup, and monthly board-level reporting.'
-                                        }
-                                    },
-                                    {
-                                        '@type': 'Question',
-                                        'name': 'What is the difference between a Diagnostic and a full Audit?',
-                                        'acceptedAnswer': {
-                                            '@type': 'Answer',
-                                            'text': 'A Diagnostic ($2,500) evaluates code and identifies leaks over a 60-minute session. A full R&D Capital Audit ($7,500) is a 3-week engagement that includes comprehensive financial modeling, team productivity audits, and a 90-day custom remediation plan.'
-                                        }
-                                    },
-                                    {
-                                        '@type': 'Question',
-                                        'name': 'Who qualifies for the $450 Gut-Check Session?',
-                                        'acceptedAnswer': {
-                                            '@type': 'Answer',
-                                            'text': 'The Gut-Check Session is designed for founders, CTOs, and PE operating partners who need a rapid, objective evaluation of their current AI cost and velocity exposure without committing to a larger audit.'
-                                        }
-                                    }
-                                ]
-                            }) }}
-                        />
                         <h2 className="text-3xl font-bold font-grotesk text-zinc-950 mb-8">Frequently Asked Questions</h2>
                         <div className="space-y-4">
                             <FAQItem 
@@ -310,7 +325,7 @@ export default function ServicesPage() {
                     </section>
                 </ScrollReveal>
 
-                {/* Section 8: Final CTA */}
+                {/* Section 9: Final CTA */}
                 <ScrollReveal>
                     <section className="text-center bg-zinc-950 rounded-3xl p-12">
                         <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-white mb-8">

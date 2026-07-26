@@ -110,6 +110,23 @@ export default function AssessmentTool() {
           </div>
         </div>
 
+        {/* Output PDF Thumbnail Preview Card */}
+        <div className="mb-8 p-4 bg-zinc-950 text-white rounded-2xl border border-zinc-800 max-w-sm mx-auto text-left shadow-md">
+          <div className="flex items-center justify-between border-b border-zinc-800 pb-2 mb-2 text-[10px] font-mono text-zinc-400">
+            <span>YOUR PERSONALIZED PDF OUTPUT</span>
+            <span className="text-purple-400 font-bold">5-DIMENSION REPORT</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-lg bg-purple-600/20 text-purple-400 border border-purple-500/30 flex items-center justify-center font-bold text-xs shrink-0">
+              PDF
+            </div>
+            <div>
+              <div className="text-xs font-bold text-white">AI Economics Score & Margin Audit</div>
+              <div className="text-[10px] text-zinc-400 font-mono">Includes estimated margin leak % & board brief</div>
+            </div>
+          </div>
+        </div>
+
         <button
           onClick={handleStart}
           className="bg-gradient-to-r from-violet-600 to-purple-600 hover:opacity-90 text-white font-bold py-4 px-10 rounded-xl transition-all inline-flex items-center gap-2 shadow-lg shadow-purple-500/25 uppercase text-xs tracking-widest cursor-pointer"

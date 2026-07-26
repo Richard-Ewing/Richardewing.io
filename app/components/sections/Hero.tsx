@@ -3,12 +3,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { AsSeenIn } from '@/components/AsSeenIn';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import { COMMERCIAL_OFFERS } from '@/lib/platform/offers/offers';
+import PricingLadderStepper from '@/app/components/PricingLadderStepper';
+import ExecutiveVideoModal from '@/app/components/ExecutiveVideoModal';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-[85vh] flex items-center justify-center py-24 overflow-hidden">
+        <section className="relative min-h-[85vh] flex items-center justify-center py-20 overflow-hidden">
             {/* Animated gradient mesh background */}
             <div className="absolute inset-0 -z-10 overflow-hidden">
                 <div className="absolute top-[-15%] left-[-5%] w-[55%] h-[55%] rounded-full bg-gradient-to-br from-rose-300/50 via-violet-200/40 to-transparent blur-3xl animate-drift-slow" />
@@ -27,86 +29,73 @@ const Hero = () => {
                     <div className="flex-1 text-center lg:text-left">
 
                         {/* Eyebrow */}
-                        <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/80 backdrop-blur-sm border border-zinc-200/80 shadow-sm mb-8">
+                        <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/80 backdrop-blur-sm border border-zinc-200/80 shadow-sm mb-6">
                             <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                            <span className="text-sm font-semibold text-zinc-700 tracking-wide">Richard Ewing - AI Economist & Platform Architect</span>
+                            <span className="text-sm font-semibold text-zinc-700 tracking-wide">Richard Ewing — AI Economist & Platform Architect</span>
                         </div>
 
-                        {/* H1 */}
-                        <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-zinc-900 mb-6 leading-[1.12] max-w-2xl tracking-tight">
-                            I audit AI investments so companies stop{' '}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-violet-500 to-purple-600">
-                                bleeding margin
-                            </span>.
+                        {/* Direct Positioning Byline */}
+                        <p className="text-base text-zinc-900 mb-6 max-w-xl leading-relaxed font-bold">
+                            Richard Ewing is an AI Economist and Founder of <Link href="/exogram" className="text-purple-700 underline font-extrabold hover:text-purple-900">Exogram</Link> (enterprise AI governance) and <a href="https://careerwin.ai/" target="_blank" rel="noopener noreferrer" className="text-indigo-700 underline font-extrabold hover:text-indigo-900">CareerWin.ai</a> (career intelligence).
+                        </p>
+
+                        {/* H1 Headline */}
+                        <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-zinc-950 mb-6 leading-[1.15] max-w-2xl tracking-tight font-grotesk">
+                            I help CTOs and CFOs answer three questions:
                         </h1>
 
-                        {/* Positioning sentence */}
-                        <p className="text-xl md:text-2xl text-zinc-800 italic mb-6 max-w-xl font-medium">
-                            The question is not whether AI works. The question is whether AI pays.
-                        </p>
+                        {/* 3-Question Bullet Framework */}
+                        <div className="space-y-3 mb-8 text-left bg-white/60 backdrop-blur-sm border border-zinc-300 p-5 rounded-2xl max-w-xl shadow-sm">
+                            <div className="flex items-start gap-3">
+                                <span className="w-6 h-6 rounded-full bg-violet-100 text-violet-800 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+                                <p className="text-sm text-zinc-900 font-semibold">Where is our AI spend actually going?</p>
+                            </div>
+                            <div className="flex items-start gap-3">
+                                <span className="w-6 h-6 rounded-full bg-indigo-100 text-indigo-800 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+                                <p className="text-sm text-zinc-900 font-semibold">Which engineering initiatives produce revenue vs. burn?</p>
+                            </div>
+                            <div className="flex items-start gap-3">
+                                <span className="w-6 h-6 rounded-full bg-purple-100 text-purple-800 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+                                <p className="text-sm text-zinc-900 font-semibold">How do we enforce governance before regulatory fines hit?</p>
+                            </div>
+                        </div>
 
-                        {/* Positioning statement - 4-Sentence Positioning Pass */}
-                        <p className="text-lg text-zinc-800 mb-3 max-w-xl leading-relaxed font-semibold">
-                            Richard Ewing is an AI Economist and Founder of <Link href="/exogram" className="text-purple-700 underline font-bold hover:text-purple-900">Exogram</Link> (enterprise AI governance) and <a href="https://careerwin.ai/" target="_blank" rel="noopener noreferrer" className="text-indigo-700 underline font-bold hover:text-indigo-900">CareerWin.ai</a> (career intelligence).
-                        </p>
+                        {/* Executive Video Brief Modal */}
+                        <div className="mb-8">
+                            <ExecutiveVideoModal />
+                        </div>
 
-                        <p className="text-base text-zinc-700 mb-3 max-w-xl leading-relaxed">
-                            He audits R&D capital, measures unit economics, and installs deterministic runtime controls to eliminate AI billing shock and shadow AI risks.
-                        </p>
-
-                        <p className="text-base text-zinc-600 mb-8 max-w-xl leading-relaxed font-medium">
-                            Built for CTOs, CFOs, VPs of Engineering, and PE Operating Partners.
-                        </p>
-
-                        {/* Dual CTA */}
-                        <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-4">
+                        {/* Dominant Primary Assessment CTA + Secondary Gut-Check Link */}
+                        <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start items-center gap-4 mb-8">
                             <Link
                                 href="/assessment"
-                                className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-base hover:opacity-90 transition-all shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/35 hover:-translate-y-0.5"
+                                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-base hover:opacity-90 transition-all shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/35 hover:-translate-y-0.5 uppercase tracking-wider text-xs"
                             >
-                                Take 15-Q AI Economics Assessment
+                                Take Free 15-Q AI Economics Assessment
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                             </Link>
                             <Link
-                                href="/services"
-                                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border-2 border-zinc-300 text-zinc-800 font-semibold text-base hover:border-violet-400 hover:bg-violet-50/40 transition-all"
+                                href="/services#gut_check"
+                                className="text-xs font-mono font-bold text-zinc-700 hover:text-purple-700 underline transition-colors"
                             >
-                                Book a ${COMMERCIAL_OFFERS.gut_check.price} Rapid Diagnostic
+                                Or book a ${COMMERCIAL_OFFERS.gut_check.price} Gut-Check Diagnostic directly →
                             </Link>
                         </div>
 
-                        {/* Funnel progression - shows the clear path */}
-                        <div className="flex flex-wrap justify-center lg:justify-start items-center gap-2 text-xs font-mono text-zinc-400 mb-10">
-                            <span className="text-violet-600 font-bold">15-Q Assessment</span>
-                            <span>→</span>
-                            <span>$450 Rapid Diagnostic</span>
-                            <span>→</span>
-                            <span>Strategic Audit</span>
-                            <span>→</span>
-                            <span>Advisory Retainer</span>
-                        </div>
-
                         {/* Credibility - Knowledge Platform */}
-                        <div className="mb-6 space-y-4">
-                            {/* REACH */}
+                        <div className="mb-6 space-y-3">
                             <div>
-                                <span className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest block mb-1">Reach</span>
-                                <p className="text-zinc-600 text-sm font-medium leading-relaxed">
-                                    <span className="font-bold text-zinc-800">10,845</span> LinkedIn followers · <span className="font-bold text-zinc-800">1,362</span> newsletter subscribers · <span className="font-bold text-zinc-800">778</span> AI search citations
+                                <span className="text-[10px] font-mono font-bold text-zinc-400 uppercase tracking-widest block mb-1">Audience Reach</span>
+                                <p className="text-zinc-600 text-xs font-medium leading-relaxed">
+                                    <span className="font-bold text-zinc-900">10,845</span> LinkedIn followers · <span className="font-bold text-zinc-900">1,362</span> newsletter subscribers · <span className="font-bold text-zinc-900">778</span> AI search citations
                                 </p>
                             </div>
-                            
-                            {/* KNOWLEDGE ENGINE */}
                             <div>
-                                <span className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-widest block mb-1">AI Economics Knowledge Engine</span>
-                                <p className="text-zinc-600 text-sm font-medium leading-relaxed">
-                                    <span className="font-bold text-zinc-800">19</span> frameworks · <span className="font-bold text-zinc-800">56</span> glossary definitions · <span className="font-bold text-zinc-800">136</span> research articles · <span className="font-bold text-zinc-800">25</span> interactive tools
+                                <span className="text-[10px] font-mono font-bold text-zinc-400 uppercase tracking-widest block mb-1">Knowledge Engine</span>
+                                <p className="text-zinc-600 text-xs font-medium leading-relaxed">
+                                    <span className="font-bold text-zinc-900">19</span> frameworks · <span className="font-bold text-zinc-900">56</span> definitions · <span className="font-bold text-zinc-900">136</span> articles · <span className="font-bold text-zinc-900">25</span> diagnostic tools
                                 </p>
                             </div>
-
-                            <p className="text-zinc-500 text-xs mt-4 font-bold tracking-wider uppercase">
-                                Published in CIO.com · Built In · MindTheProduct · HackerNoon
-                            </p>
                         </div>
                     </div>
 
@@ -131,8 +120,13 @@ const Hero = () => {
 
                 </div>
 
+                {/* Horizontal Pricing Progression Ladder */}
+                <div className="mt-12">
+                    <PricingLadderStepper />
+                </div>
+
                 {/* As Seen In */}
-                <div className="mt-16">
+                <div className="mt-12">
                     <AsSeenIn />
                 </div>
 

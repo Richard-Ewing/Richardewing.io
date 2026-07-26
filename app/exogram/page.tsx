@@ -8,6 +8,7 @@ import BlurIn from '@/components/magicui/blur-in';
 import { BorderBeam } from '@/components/magicui/border-beam';
 import Meteors from '@/components/magicui/meteors';
 import { InteractiveExogramSim } from '../components/visualizations/InteractiveExogramSim';
+import AdmissibilityGatewaySimulator from '@/app/components/AdmissibilityGatewaySimulator';
 import { ShieldAlert, Brain, Activity, Scale, AlertTriangle, ArrowRight, Clock, DollarSign, Bug, TrendingDown, Users, Building2 } from 'lucide-react';
 
 
@@ -463,6 +464,7 @@ export default function ExogramPage() {
                             <h2 className="text-2xl font-bold text-zinc-950 font-semibold mb-2">Admissibility in Action</h2>
                             <p className="text-zinc-900 font-medium font-medium">Intercepting probabilistic execution before it reaches production environments.</p>
                         </div>
+                        <AdmissibilityGatewaySimulator />
                         <InteractiveExogramSim />
                     </div>
                 </section>
