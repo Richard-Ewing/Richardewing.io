@@ -231,11 +231,11 @@ export const PRODUCTS: Record<string, Product> = {
         paymentLink: 'https://buy.stripe.com/7sY14g76ScTM7tH2BG2B202',
     },
     hallucination_tax_audit: {
-        name: 'Hallucination Tax Audit',
+        name: 'R&D Capital & Hallucination Audit',
         description: 'Quantify your organization\'s verification burden: hours spent checking AI outputs, incident costs from hallucinated content, and total hidden productivity drain. Board-ready report with remediation plan.',
-        price: 500000,
+        price: 750000,
         mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/14A4gs76S9HAdS5fos2B213',
+        paymentLink: 'https://buy.stripe.com/7sY14g76ScTM7tH2BG2B202',
     },
     ai_policy_readiness: {
         name: 'AI Policy Readiness Assessment',
