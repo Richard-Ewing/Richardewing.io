@@ -26,7 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // === CORE PAGES ===
     add(`${baseUrl}/`, 'weekly', 1.0);
-    add(`${baseUrl}/advisory`, 'monthly', 0.9);
     add(`${baseUrl}/advisory/licensing`, 'monthly', 0.6);
     add(`${baseUrl}/doctrine`, 'monthly', 0.8);
     add(`${baseUrl}/runtime-architecture`, 'weekly', 0.95);
@@ -108,11 +107,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // === VAULT CURRICULUM ===
     add(`${baseUrl}/vault/curriculum/tracks`, 'monthly', 0.7);
-
-    // Add individual curriculum modules
-    getAllModuleSlugs().forEach(slug => {
-        add(`${baseUrl}/vault/curriculum/tracks/${slug}`, 'monthly', 0.8);
-    });
 
     // === CANONICAL ARTICLES ===
     articles
