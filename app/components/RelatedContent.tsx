@@ -47,7 +47,12 @@ export default function RelatedContent({ currentSlug, type, count = 3 }: Related
                 {related.map(item => (
                     <Link 
                         key={item.slug} 
-                        href={item.type === 'comparison' ? `/compare/${item.slug}` : `/guides/${item.slug}`}
+                        href={
+                            item.type === 'comparison' ? `/compare/${item.slug}` :
+                            item.type === 'blog' ? `/blog/${item.slug}` :
+                            item.type === 'glossary' ? `/glossary/${item.slug}` :
+                            '/vault/curriculum/tracks'
+                        }
                         className="group p-5 rounded-xl border border-zinc-400 bg-white hover:bg-white/5 transition-all"
                     >
                         <span className="text-xs font-bold font-medium font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest mb-2 block">

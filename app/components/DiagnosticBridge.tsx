@@ -45,7 +45,7 @@ export function DiagnosticBridge({
                             <p className="text-sm font-semibold text-zinc-900 leading-relaxed mb-4">
                                 {frameworkDescription}
                             </p>
-                            <Link href={`/frameworks/${frameworkSlug}`} className="inline-flex items-center gap-2 text-cyan-900 font-extrabold text-sm uppercase tracking-widest hover:text-zinc-900 transition-colors">
+                            <Link href={`/articles/frameworks/${frameworkSlug}`} className="inline-flex items-center gap-2 text-cyan-900 font-extrabold text-sm uppercase tracking-widest hover:text-zinc-900 transition-colors">
                                 Read The Framework <ArrowRight className="w-4 h-4" />
                             </Link>
                         </div>
