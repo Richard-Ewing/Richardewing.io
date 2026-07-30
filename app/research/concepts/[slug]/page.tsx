@@ -202,6 +202,77 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
           )}
         </div>
 
+        {/* Citation Graph (Forward Citations) */}
+        {concept.citationGraph && (
+          <section className="bg-white border border-zinc-300 rounded-3xl p-6 shadow-sm space-y-3">
+            <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider block">
+              Academic &amp; Industry Citation Graph
+            </span>
+            <div className="grid grid-cols-2 sm:grid-cols-6 gap-2 font-mono text-center text-xs font-bold pt-1">
+              <div className="bg-zinc-50 border border-zinc-200 p-3 rounded-xl">
+                <span className="text-[10px] text-zinc-500 block">Publications</span>
+                <span className="text-lg font-black text-cyan-900">{concept.citationGraph.publicationsCount}</span>
+              </div>
+              <div className="bg-zinc-50 border border-zinc-200 p-3 rounded-xl">
+                <span className="text-[10px] text-zinc-500 block">Newsletters</span>
+                <span className="text-lg font-black text-emerald-900">{concept.citationGraph.newslettersCount}</span>
+              </div>
+              <div className="bg-zinc-50 border border-zinc-200 p-3 rounded-xl">
+                <span className="text-[10px] text-zinc-500 block">Calculators</span>
+                <span className="text-lg font-black text-amber-900">{concept.citationGraph.calculatorsCount}</span>
+              </div>
+              <div className="bg-zinc-50 border border-zinc-200 p-3 rounded-xl">
+                <span className="text-[10px] text-zinc-500 block">Book Chapters</span>
+                <span className="text-lg font-black text-indigo-900">{concept.citationGraph.bookChaptersCount}</span>
+              </div>
+              <div className="bg-zinc-50 border border-zinc-200 p-3 rounded-xl">
+                <span className="text-[10px] text-zinc-500 block">Keynotes</span>
+                <span className="text-lg font-black text-rose-900">{concept.citationGraph.keynoteTalksCount}</span>
+              </div>
+              <div className="bg-zinc-50 border border-zinc-200 p-3 rounded-xl">
+                <span className="text-[10px] text-zinc-500 block">GitHub Repos</span>
+                <span className="text-lg font-black text-zinc-900">{concept.citationGraph.gitHubReposCount}</span>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Reverse Citations Matrix ("Used & Implemented By") */}
+        {concept.reverseCitations && concept.reverseCitations.length > 0 && (
+          <section className="bg-white border border-zinc-300 rounded-3xl p-8 space-y-6 shadow-sm">
+            <div className="space-y-1">
+              <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
+                Ecosystem Recursion &amp; Cross-Pollination
+              </span>
+              <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
+                Reverse Citations: Implemented &amp; Audited Across Platform
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-1">
+              {concept.reverseCitations.map((rc, rcIdx) => (
+                <Link
+                  key={rcIdx}
+                  href={rc.url}
+                  className="bg-zinc-50 border border-zinc-200 rounded-2xl p-4 hover:border-cyan-600 transition flex flex-col justify-between space-y-2 group"
+                >
+                  <div className="space-y-1">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-cyan-100 text-cyan-900 border border-cyan-200 inline-block">
+                      {rc.targetType}
+                    </span>
+                    <h3 className="text-xs font-bold text-zinc-950 group-hover:text-cyan-800 transition">
+                      {rc.title}
+                    </h3>
+                  </div>
+                  <span className="text-[10px] font-mono font-bold text-zinc-600 uppercase">
+                    [{rc.relationship}] →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Elevated Canonical Research Position Stance */}
         {concept.positionStatement && (
           <section className="bg-gradient-to-r from-zinc-950 via-cyan-950 to-zinc-950 text-white border-2 border-cyan-700 rounded-3xl p-8 space-y-4 shadow-md">
@@ -462,7 +533,7 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
           </section>
         )}
 
-        {/* Inspectable Evidence Ledger (Reference Layer) */}
+        {/* Inspectable Evidence Ledger */}
         <section className="space-y-6">
           <div className="space-y-1">
             <h2 className="text-2xl font-bold font-grotesk text-zinc-950">Inspectable Evidence Ledger</h2>

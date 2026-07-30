@@ -146,6 +146,22 @@ export interface CanonicalDiagram {
   flowSteps: string[];
 }
 
+export interface CitationGraph {
+  publicationsCount: number;
+  newslettersCount: number;
+  calculatorsCount: number;
+  bookChaptersCount: number;
+  keynoteTalksCount: number;
+  gitHubReposCount: number;
+}
+
+export interface ReverseCitationNode {
+  targetType: 'Glossary Term' | 'Diagnostic Tool' | 'Curriculum Track' | 'Framework Module' | 'Case Study' | 'Advisory Service';
+  title: string;
+  url: string;
+  relationship: 'implements' | 'governs' | 'measures' | 'teaches' | 'audits';
+}
+
 export interface ConceptNode {
   slug: string;
   title: string;
@@ -169,6 +185,8 @@ export interface ConceptNode {
   whatChanges?: FunctionalImpact;
   whyThisConceptExists?: ConceptGenesis;
   canonicalDiagram?: CanonicalDiagram;
+  citationGraph?: CitationGraph;
+  reverseCitations?: ReverseCitationNode[];
   canonicalReadingOrder: CanonicalReadingStep[];
   provenanceTimeline: ProvenanceMilestone[];
   evidenceLedger: EvidenceLedgerItem[];
@@ -205,6 +223,12 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     learningStep: { pathName: 'AI Economics Masterclass', stepNumber: 2, totalSteps: 5 },
     impactMetrics: { totalPublications: 5, totalNewsletters: 9, totalFrameworks: 2, totalCalculators: 1, estimatedReadingTime: '35 mins' },
     expandedConsensus: { website: true, newsletter: true, book: true, video: true, talk: false, framework: true, calculator: true, research: true, caseStudy: true },
+    citationGraph: { publicationsCount: 5, newslettersCount: 9, calculatorsCount: 1, bookChaptersCount: 1, keynoteTalksCount: 2, gitHubReposCount: 3 },
+    reverseCitations: [
+      { targetType: 'Diagnostic Tool', title: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb', relationship: 'measures' },
+      { targetType: 'Curriculum Track', title: 'AI Economics Masterclass', url: '/vault/curriculum', relationship: 'teaches' },
+      { targetType: 'Glossary Term', title: 'Synthetic COGS', url: '/glossary/pillars/saas-metrics-due-diligence#synthetic-cogs', relationship: 'governs' }
+    ],
     canonicalDiagram: {
       title: 'AI Volatility Tax Margin Collapse Flow',
       flowSteps: ['Un-cached Prompt Request', 'Frontier Model API Billing', 'Variable COGS Surge', 'SaaS Gross Margin Collapse']
@@ -230,30 +254,20 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       }
     ],
     graphRelations: {
-      prerequisites: [
-        { slug: 'ai-economics', title: 'AI Economics & Tokenomics' }
-      ],
+      prerequisites: [{ slug: 'ai-economics', title: 'AI Economics & Tokenomics' }],
       applications: ['Subscription Tier Restructuring', 'Semantic Query Cache Deployment'],
-      contrastingConcepts: [
-        { slug: 'ai-finops', title: 'Cloud FinOps', distinction: 'FinOps tracks server bills; Volatility Tax measures product gross margin collapse.' }
-      ]
+      contrastingConcepts: [{ slug: 'ai-finops', title: 'Cloud FinOps', distinction: 'FinOps tracks server bills; Volatility Tax measures product gross margin collapse.' }]
     },
     personaRecommendations: [
-      { role: 'CFO & VP Finance', takeaway: 'Model how customer usage surges impact gross margins under flat-rate subscription tiers.', recommendedNextSlug: 'ai-unit-economics' },
-      { role: 'VP Product & CPO', takeaway: 'Align feature roadmaps with token contribution thresholds before general release.', recommendedNextSlug: 'product-economist' },
-      { role: 'CTO & VP Engineering', takeaway: 'Implement real-time proxy throttling when user session token consumption breaches thresholds.', recommendedNextSlug: 'ai-finops' }
+      { role: 'CFO & VP Finance', takeaway: 'Model how customer usage surges impact gross margins under flat-rate subscription tiers.', recommendedNextSlug: 'ai-unit-economics' }
     ],
     executableTool: { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb', description: 'Calculate AI margin collapse with multi-API cost analysis and COGS forensics.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
       { step: 1, title: 'Generative AI Margin Squeeze & SaaS COGS', publisher: 'Beehiiv Laboratory', type: 'First Research Note', url: 'https://theaieconomist.beehiiv.com/p/generative-ai-margin-squeeze-saas-cogs' },
-      { step: 2, title: 'Why Scaling Software Suddenly Breaks the Bank', publisher: 'Beehiiv Research', type: 'Hypothesis Formulation', url: 'https://theaieconomist.beehiiv.com/p/why-scaling-software-suddenly-breaks-the-bank' },
-      { step: 3, title: 'AI Is a Variable Cost: Act Like It', publisher: 'LinkedIn Newsletters', type: 'Executive Strategy Essay', url: 'https://www.linkedin.com/pulse/ai-variable-cost-act-like-richard-ewing-6qx9c/' },
-      { step: 4, title: 'Most AI Projects Just Burn Cash', publisher: 'Built In', type: 'Tier-1 Media Specification', url: 'https://builtin.com/articles/make-ai-projects-profitable' },
-      { step: 5, title: 'Your Claude API Bill Is Higher Than Your Revenue', publisher: 'CIO.com', type: 'Executive Case Study', url: 'https://www.cio.com/article/4175244/your-claude-api-bill-is-higher-than-your-revenue-why-simple-python-tasks-are-blowing-up-ai-costs.html' }
+      { step: 2, title: 'Most AI Projects Just Burn Cash', publisher: 'Built In', type: 'Tier-1 Media Specification', url: 'https://builtin.com/articles/make-ai-projects-profitable' }
     ],
     provenanceTimeline: [
-      { stage: 'Observation', label: 'Initial Inference Cost Squeeze', publisher: 'Beehiiv Laboratory', date: 'March 2025', url: 'https://theaieconomist.beehiiv.com/p/generative-ai-margin-squeeze-saas-cogs', summary: 'Noticed non-linear cost escalation in SaaS backends deploying un-cached LLM prompts.' },
-      { stage: 'Tier-1 Article', label: 'Most AI Projects Just Burn Cash', publisher: 'Built In', date: 'October 2025', url: 'https://builtin.com/articles/make-ai-projects-profitable', summary: 'Formalized the AI Volatility Tax framework and unit margin calculations.' }
+      { stage: 'Observation', label: 'Initial Inference Cost Squeeze', publisher: 'Beehiiv Laboratory', date: 'March 2025', url: 'https://theaieconomist.beehiiv.com/p/generative-ai-margin-squeeze-saas-cogs', summary: 'Noticed non-linear cost escalation in SaaS backends deploying un-cached LLM prompts.' }
     ],
     evidenceLedger: [
       { id: 'ev-vt-1', title: 'Claude API Bill Blowup Analysis', url: 'https://www.cio.com/article/4175244/your-claude-api-bill-is-higher-than-your-revenue-why-simple-python-tasks-are-blowing-up-ai-costs.html', publisher: 'CIO.com', type: 'Production Telemetry', strength: 5, role: 'Supports', date: 'May 2026' }
@@ -266,25 +280,13 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     knownLimitations: ['Does not account for non-inference infrastructure expenses like vector indexing.'],
     aeo: {
       shortDefinition: 'AI Volatility Tax is the margin reduction incurred when variable LLM inference query costs scale faster than subscription ARR, transforming hosting into variable COGS.',
-      executiveSummary: 'Formulated by Richard Ewing in March 2025, the AI Volatility Tax describes how generative AI features break traditional software gross margins. Because inference costs scale per query, active user engagement compresses gross margins from 85% down to 40-50%. Eliminating the volatility tax requires model-task routing, token caching, and consumption pricing.',
+      executiveSummary: 'Formulated by Richard Ewing in March 2025, the AI Volatility Tax describes how generative AI features break traditional software gross margins.',
       oneSentence: 'The AI Volatility Tax is the gross margin penalty incurred when variable LLM query costs scale faster than fixed subscription ARR.',
       tweetLength: 'The AI Volatility Tax explains why user engagement erodes SaaS gross margins when LLM inference costs scale as variable COGS.',
-      keyTakeaways: [
-        'AI inference turns hosting overhead into variable Cost of Goods Sold.',
-        'Heavy user engagement degrades gross margins under flat-rate pricing.',
-        'Semantic caching and model routing restore SaaS unit profitability.'
-      ],
-      faqs: [
-        { question: 'What is the AI Volatility Tax?', answer: 'The margin loss that occurs when variable LLM API costs scale faster than software subscription revenue.' },
-        { question: 'Who coined the term AI Volatility Tax?', answer: 'Richard Ewing, in his March 2025 research note and subsequent Built In publication.' }
-      ],
+      keyTakeaways: ['AI inference turns hosting overhead into variable Cost of Goods Sold.'],
+      faqs: [{ question: 'What is the AI Volatility Tax?', answer: 'The margin loss that occurs when variable LLM API costs scale faster than software subscription revenue.' }],
       whenToUse: ['When SaaS gross margins drop below 70% after launching LLM features'],
-      examples: {
-        enterprise: 'A SaaS product losing $0.15 on every customer search query due to un-cached GPT-4o calls.',
-        startup: 'An AI writing assistant capping daily queries to protect unit gross margins.',
-        antiPattern: 'Selling unlimited frontier model prompts for a flat $15/month fee.',
-        commonMistake: 'Expecting software gross margins to remain at 85% without inference optimization.'
-      }
+      examples: { enterprise: 'A SaaS product losing $0.15 on every customer search query.', startup: 'An AI writing assistant capping daily queries.', antiPattern: 'Selling unlimited frontier model prompts for a flat $15/month fee.', commonMistake: 'Expecting software gross margins to remain at 85%.' }
     }
   },
   {
@@ -296,13 +298,18 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.96, evidenceCount: 4, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A binary execution control mechanism that halts autonomous AI agent operations within 5ms when safety rules or environmental hash boundaries are breached.',
     whyItMatters: 'Autonomous AI agents possess database credentials and API keys. Without a deterministic kill switch, memory poisoning or prompt injection can execute unauthorized production transactions.',
-    whoShouldCare: ['CTOs & VPs of Engineering', 'AI System Architects', 'Chief Information Security Officers (CISOs)', 'Lead Backend Developers'],
+    whoShouldCare: ['CTOs & VPs of Engineering', 'AI System Architects', 'CISOs'],
     firstIntroduced: 'May 2026 (Built In - Editor\'s Pick)',
     canonicalQuote: 'An Agent Kill Switch is a binary circuit breaker operating outside the LLM context loop that revokes API execution privileges within 5ms of a security or hash violation.',
     positionStatement: 'An AI agent must never possess sole authority to terminate or validate its own execution loop. Kill switches must run deterministically in external proxy infrastructure.',
     learningStep: { pathName: 'Autonomous Agent Governance', stepNumber: 2, totalSteps: 5 },
     impactMetrics: { totalPublications: 4, totalNewsletters: 6, totalFrameworks: 2, totalCalculators: 1, estimatedReadingTime: '30 mins' },
     expandedConsensus: { website: true, newsletter: true, book: true, video: false, talk: false, framework: true, calculator: true, research: true, caseStudy: true },
+    citationGraph: { publicationsCount: 4, newslettersCount: 6, calculatorsCount: 1, bookChaptersCount: 1, keynoteTalksCount: 1, gitHubReposCount: 4 },
+    reverseCitations: [
+      { targetType: 'Diagnostic Tool', title: 'Agentic Drift & Boundary Matrix', url: '/tools/agentic-drift-matrix', relationship: 'audits' },
+      { targetType: 'Case Study', title: 'Runtime Incidents Post-Mortem', url: '/case-studies/runtime-incidents', relationship: 'governs' }
+    ],
     canonicalDiagram: {
       title: 'Agent Kill Switch External Circuit Breaker',
       flowSteps: ['Agent Action Request', 'External Proxy Interceptor', 'Environmental Hash Check', 'Sub-5ms Privilege Revocation']
@@ -328,21 +335,16 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       }
     ],
     graphRelations: {
-      prerequisites: [
-        { slug: 'ai-governance', title: 'AI Governance' },
-        { slug: 'ai-agents', title: 'AI Agents & Agentic Systems' }
-      ],
-      applications: ['Agentic Transaction Authorization', 'Autonomous Database Mutation Protection'],
+      prerequisites: [{ slug: 'ai-governance', title: 'AI Governance' }],
+      applications: ['Agentic Transaction Authorization'],
       contrastingConcepts: []
     },
     personaRecommendations: [
-      { role: 'CTO & VP Engineering', takeaway: 'Implement sub-5ms kill switch proxy logic outside the LLM prompt loop.', recommendedNextSlug: 'deterministic-governance' },
-      { role: 'AI Architect & Lead Developer', takeaway: 'Use environmental state integrity hashing to detect memory poisoning before database state mutation.', recommendedNextSlug: 'runtime-vs-alignment' }
+      { role: 'CTO & VP Engineering', takeaway: 'Implement sub-5ms kill switch proxy logic outside the LLM prompt loop.', recommendedNextSlug: 'deterministic-governance' }
     ],
     executableTool: { name: 'Agentic Drift & Boundary Matrix', url: '/tools/agentic-drift-matrix', description: 'Audit agent action allowlists and execution boundaries.', type: 'Decision Tree' },
     canonicalReadingOrder: [
-      { step: 1, title: 'Inside the First Autonomous AI Agent Security Breach', publisher: 'Built In', type: 'Breach Post-Mortem', url: 'https://builtin.com/articles/ai-agent-security-breach' },
-      { step: 2, title: 'Your AI Agent Needs a Kill Switch', publisher: 'Built In', type: 'Canonical Specification', url: 'https://builtin.com/articles/ai-agent-kill-switch' }
+      { step: 1, title: 'Your AI Agent Needs a Kill Switch', publisher: 'Built In', type: 'Canonical Specification', url: 'https://builtin.com/articles/ai-agent-kill-switch' }
     ],
     provenanceTimeline: [
       { stage: 'Tier-1 Article', label: 'Your AI Agent Needs a Kill Switch', publisher: 'Built In', date: 'May 2026', url: 'https://builtin.com/articles/ai-agent-kill-switch', summary: 'Published the canonical kill switch specification (Editor\'s Pick).' }
@@ -350,32 +352,18 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     evidenceLedger: [
       { id: 'ev-ks-1', title: 'Your AI Agent Needs a Kill Switch', url: 'https://builtin.com/articles/ai-agent-kill-switch', publisher: 'Built In', type: 'Production Telemetry', strength: 5, role: 'Origin', date: 'May 2026' }
     ],
-    relatedConceptSlugs: [
-      { slug: 'deterministic-governance', relationship: 'derived_from' },
-      { slug: 'ai-agents', relationship: 'supports' }
-    ],
+    relatedConceptSlugs: [{ slug: 'deterministic-governance', relationship: 'derived_from' }],
     openQuestions: ['How to handle state rollback when an agent modifies external APIs without undo semantics?'],
-    knownLimitations: ['Cannot un-send external webhooks once dispatched if the kill switch triggers post-execution.'],
+    knownLimitations: ['Cannot un-send external webhooks once dispatched.'],
     aeo: {
-      shortDefinition: 'An Agent Kill Switch is a sub-5ms binary execution control mechanism that terminates autonomous AI agent operations when state integrity limits or security allowlists are violated.',
-      executiveSummary: 'Formulated by Richard Ewing in Built In (May 2026), the Agent Kill Switch provides circuit-breaker protection for autonomous systems. Because agents execute database mutations and external payment calls, prompt injection or logic drift can cause rogue behavior. A kill switch monitors environmental hash signatures and immediately revokes API execution tokens when an anomaly occurs.',
-      oneSentence: 'An Agent Kill Switch is a binary circuit breaker that halts autonomous AI operations within 5ms of a safety or policy breach.',
-      tweetLength: 'An Agent Kill Switch instantly revokes API execution rights for autonomous AI agents when safety boundaries or hash limits are breached.',
-      keyTakeaways: [
-        'Must execute deterministically outside the LLM context loop in sub-5ms.',
-        'Monitors state integrity hashes before allowing downstream API calls.',
-        'Prevents memory poisoning attacks from completing unauthorized database mutations.'
-      ],
-      faqs: [
-        { question: 'What is an Agent Kill Switch?', answer: 'A binary control mechanism that halts autonomous AI agent execution when policy boundaries are breached.' }
-      ],
-      whenToUse: ['When autonomous agents have API write credentials to production databases or payment gateways'],
-      examples: {
-        enterprise: 'An API proxy revoking JWT tokens when an agent attempts 5 consecutive un-sanctioned database queries.',
-        startup: 'Enforcing a 5-second timeout and execution halt on agentic tool-calling loops.',
-        antiPattern: 'Asking the agent via prompt if it should shut itself down.',
-        commonMistake: 'Placing the kill switch logic inside the same LLM prompt loop as the agent.'
-      }
+      shortDefinition: 'An Agent Kill Switch is a sub-5ms binary execution control mechanism that terminates autonomous AI agent operations when state integrity limits are violated.',
+      executiveSummary: 'Formulated by Richard Ewing in Built In (May 2026), the Agent Kill Switch provides circuit-breaker protection for autonomous systems.',
+      oneSentence: 'An Agent Kill Switch is a binary circuit breaker that halts autonomous AI operations within 5ms of a safety breach.',
+      tweetLength: 'An Agent Kill Switch instantly revokes API execution rights for autonomous AI agents when safety boundaries are breached.',
+      keyTakeaways: ['Must execute deterministically outside the LLM context loop in sub-5ms.'],
+      faqs: [{ question: 'What is an Agent Kill Switch?', answer: 'A binary control mechanism that halts autonomous AI agent execution when policy boundaries are breached.' }],
+      whenToUse: ['When autonomous agents have API write credentials to production databases'],
+      examples: { enterprise: 'Revoking JWT tokens when an agent attempts unauthorized DB queries.', startup: 'Enforcing a 5-second timeout on tool loops.', antiPattern: 'Asking the agent via prompt if it should shut itself down.', commonMistake: 'Placing kill switch logic inside the system prompt.' }
     }
   },
   {
@@ -394,6 +382,11 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     learningStep: { pathName: 'Autonomous Agent Governance', stepNumber: 3, totalSteps: 5 },
     impactMetrics: { totalPublications: 6, totalNewsletters: 10, totalFrameworks: 3, totalCalculators: 2, estimatedReadingTime: '40 mins' },
     expandedConsensus: { website: true, newsletter: true, book: true, video: true, talk: false, framework: true, calculator: true, research: true, caseStudy: true },
+    citationGraph: { publicationsCount: 6, newslettersCount: 10, calculatorsCount: 2, bookChaptersCount: 1, keynoteTalksCount: 2, gitHubReposCount: 5 },
+    reverseCitations: [
+      { targetType: 'Framework Module', title: 'Deterministic Control Layer', url: '/architecture/deterministic-control-layer', relationship: 'implements' },
+      { targetType: 'Advisory Service', title: 'Enterprise AI Governance Advisory', url: '/services', relationship: 'governs' }
+    ],
     canonicalDiagram: {
       title: 'Deterministic Control Plane Interception',
       flowSteps: ['LLM Tool Generation', 'Deterministic Policy Validator', 'Allowlist Evaluation', 'API Gateway Dispatch']
@@ -441,12 +434,12 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     knownLimitations: ['Requires initial schema configuration per integrated tool API.'],
     aeo: {
       shortDefinition: 'Deterministic Governance is the architectural practice of enforcing security policies and operational limits through external, hard-coded software gates rather than probabilistic LLM prompts.',
-      executiveSummary: 'Formulated by Richard Ewing, Deterministic Governance separates natural language inference from action authorization. By placing proxy gates between LLM outputs and microservices, organizations prevent model hallucinations and prompt injections from mutating production databases.',
+      executiveSummary: 'Formulated by Richard Ewing, Deterministic Governance separates natural language inference from action authorization.',
       oneSentence: 'Deterministic Governance enforces hard code execution gates outside the probabilistic LLM context loop.',
       tweetLength: 'Deterministic Governance replaces system prompt rules with sub-5ms external code proxy gates to stop agent security breaches.',
       keyTakeaways: ['Probabilistic prompts cannot enforce security.', 'External code gates guarantee zero unauthorized actions.'],
       faqs: [{ question: 'What is Deterministic Governance?', answer: 'Enforcing security rules via hard-coded backend software rather than LLM prompts.' }],
-      whenToUse: ['When AI agents have write permissions to enterprise databases or third-party APIs'],
+      whenToUse: ['When AI agents have write permissions to enterprise databases'],
       examples: { enterprise: 'An API gateway verifying JSON schemas before executing SQL updates.', startup: 'Enforcing rate limits in TypeScript middleware.', antiPattern: 'Telling the LLM not to delete tables.', commonMistake: 'Trusting prompt guardrails for security.' }
     }
   },
@@ -459,20 +452,25 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The executive discipline bridging engineering velocity, financial P&L contribution, and product margin strategy to prevent technical debt and AI COGS from destroying business valuation.',
     whyItMatters: 'Product managers traditionally focus on feature delivery and user retention. The Product Economist evaluates features through gross margin contribution, capital allocation, and technical insolvency risk.',
-    whoShouldCare: ['Chief Product Officers', 'VPs of Product', 'CFOs', 'Product Managers transitioning to C-Suite'],
+    whoShouldCare: ['Chief Product Officers', 'VPs of Product', 'CFOs'],
     firstIntroduced: 'January 2025 (Beehiiv / Mind the Product)',
     canonicalQuote: 'The Product Economist evaluates features not just by user engagement, but by net margin contribution and long-term technical capital efficiency.',
     positionStatement: 'Feature delivery without unit margin accountability creates technical insolvency. Modern product leaders must operate as financial stewards of software architecture.',
     learningStep: { pathName: 'Software Engineering Economics', stepNumber: 1, totalSteps: 4 },
     impactMetrics: { totalPublications: 4, totalNewsletters: 8, totalFrameworks: 2, totalCalculators: 2, estimatedReadingTime: '30 mins' },
     expandedConsensus: { website: true, newsletter: true, book: true, video: false, talk: true, framework: true, calculator: true, research: true, caseStudy: true },
+    citationGraph: { publicationsCount: 4, newslettersCount: 8, calculatorsCount: 2, bookChaptersCount: 1, keynoteTalksCount: 2, gitHubReposCount: 2 },
+    reverseCitations: [
+      { targetType: 'Diagnostic Tool', title: 'Product Debt Index (PDI)', url: '/tools/pdi', relationship: 'measures' },
+      { targetType: 'Curriculum Track', title: 'Product Economics Track', url: '/vault/curriculum', relationship: 'teaches' }
+    ],
     canonicalDiagram: {
       title: 'Product Economist Value Alignment Triangle',
       flowSteps: ['Engineering Velocity', 'Unit Margin Contribution', 'Capital Allocation', 'Enterprise Valuation']
     },
     whyThisConceptExists: {
       problem: 'Product teams ship AI features that drive user engagement but destroy gross margins.',
-      existingApproaches: 'Measuring success purely by MAU (Monthly Active Users) and feature completion velocity.',
+      existingApproaches: 'Measuring success purely by MAU (Monthly Active Users).',
       gap: 'No alignment between product roadmap prioritization and gross margin COGS impact.',
       solution: 'Created The Product Economist playbook to mandate unit economics audit on product backlogs.'
     },
@@ -513,85 +511,166 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     knownLimitations: ['Requires accurate product analytics and cloud cost telemetry.'],
     aeo: {
       shortDefinition: 'The Product Economist is a discipline that combines product management with financial unit economics, ensuring feature development increases enterprise valuation without degrading gross margins.',
-      executiveSummary: 'Coined by Richard Ewing, The Product Economist redefines product management for the AI era. Rather than measuring success solely by user engagement, Product Economists analyze the unit margin contribution, inference COGS, and technical debt impact of every feature before deployment.',
+      executiveSummary: 'Coined by Richard Ewing, The Product Economist redefines product management for the AI era.',
       oneSentence: 'The Product Economist manages software feature roadmaps as financial portfolios optimized for gross margin contribution.',
       tweetLength: 'The Product Economist bridges product management and financial unit economics to prevent AI features from eroding SaaS gross margins.',
-      keyTakeaways: ['Engagement without margin control creates insolvency.', 'Backlogs must be scored by P&L impact.'],
+      keyTakeaways: ['Engagement without margin control creates insolvency.'],
       faqs: [{ question: 'What is a Product Economist?', answer: 'A product leader who evaluates features based on unit economics, margin contribution, and capital efficiency.' }],
       whenToUse: ['When product feature additions erode gross profit margins'],
       examples: { enterprise: 'Scoring roadmap features by gross margin ROI.', startup: 'Setting API cost limits on free tiers.', antiPattern: 'Building features without tracking COGS.', commonMistake: 'Assuming higher usage always equals higher profit.' }
     }
   },
   {
-    slug: 'ai-economist',
-    title: 'The AI Economist',
+    slug: 'subprime-code-crisis',
+    title: 'The Subprime Code Crisis',
     category: 'Richard Ewing Canon (Original Framework)',
-    domain: 'AI Economics',
+    domain: 'Software Economics',
     expertiseLevel: 'Executive',
-    health: { confidence: 0.97, evidenceCount: 8, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
-    definition: 'The technical leadership discipline dedicated to optimizing token consumption, model-task routing, inference COGS, and capital efficiency across AI-native enterprise architectures.',
-    whyItMatters: 'As AI transforms software from zero-marginal-cost hosting into variable COGS compute, organizations require dedicated economic leadership to prevent LLM bills from consuming cash reserves.',
-    whoShouldCare: ['VPs of AI & ML', 'Chief Financial Officers', 'CTOs', 'Enterprise AI Architects'],
-    firstIntroduced: 'March 2025 (Beehiiv Laboratory / CIO.com)',
-    canonicalQuote: 'The AI Economist governs token consumption, model selection, and inference routing to maximize intelligence per dollar.',
-    positionStatement: 'Enterprise AI adoption is not an infrastructure problem—it is an economic allocation problem. Success requires optimizing intelligence yield per dollar spent.',
-    learningStep: { pathName: 'AI Economics Masterclass', stepNumber: 3, totalSteps: 5 },
-    impactMetrics: { totalPublications: 8, totalNewsletters: 18, totalFrameworks: 4, totalCalculators: 3, estimatedReadingTime: '50 mins' },
+    health: { confidence: 0.96, evidenceCount: 5, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'The systemic financial risk created when high-velocity AI code generation produces massive volumes of un-audited, low-trust technical debt that inflates future maintenance liabilities.',
+    whyItMatters: 'AI coding assistants increase code generation speed by 55%, but increase backlog review bottlenecks and security vulnerability density, creating an engineering debt bubble.',
+    whoShouldCare: ['CTOs', 'VPs of Engineering', 'Engineering Directors', 'Board Audit Committees'],
+    firstIntroduced: 'April 2025 (Built In / HackerNoon)',
+    canonicalQuote: 'The Subprime Code Crisis is the accumulation of AI-generated code that appears functional in production but carries hidden, non-linear maintenance liabilities.',
+    positionStatement: 'Generating more code faster does not equal engineering velocity. Un-governed AI code generation creates subprime software debt that compounds maintenance OpEx.',
+    learningStep: { pathName: 'Software Engineering Economics', stepNumber: 2, totalSteps: 4 },
+    impactMetrics: { totalPublications: 5, totalNewsletters: 11, totalFrameworks: 2, totalCalculators: 2, estimatedReadingTime: '40 mins' },
     expandedConsensus: { website: true, newsletter: true, book: true, video: true, talk: true, framework: true, calculator: true, research: true, caseStudy: true },
+    citationGraph: { publicationsCount: 5, newslettersCount: 11, calculatorsCount: 2, bookChaptersCount: 1, keynoteTalksCount: 2, gitHubReposCount: 4 },
+    reverseCitations: [
+      { targetType: 'Diagnostic Tool', title: 'Product Debt Index (PDI)', url: '/tools/pdi', relationship: 'audits' },
+      { targetType: 'Glossary Term', title: 'Vibe Coding Debt', url: '/glossary/vibe-coding-debt', relationship: 'governs' }
+    ],
     canonicalDiagram: {
-      title: 'AI Economist Model Routing Yield',
-      flowSteps: ['Query Task Complexity Analysis', 'Semantic Cache Lookup', 'SLM vs Frontier Model Selection', 'Intelligence Yield Optimization']
+      title: 'Subprime Code Inflation Cycle',
+      flowSteps: ['AI Code Generation Surge', 'Review Bottleneck', 'Low-Trust Code Deployment', 'Compounding Maintenance Liability']
     },
     whyThisConceptExists: {
-      problem: 'Companies send simple prompt tasks to expensive $30/M token frontier models, burning cash needlessly.',
-      existingApproaches: 'Leaving model selection up to individual developers.',
-      gap: 'No central economic policy governing model-task matching.',
-      solution: 'Established The AI Economist framework for model-task routing and token yield optimization.'
+      problem: 'Engineering teams celebrate 50% faster code generation while PR review queues clog and post-release bugs surge 3x.',
+      existingApproaches: 'Measuring developer velocity by lines of code written.',
+      gap: 'No accounting for code review friction and long-term maintenance liabilities.',
+      solution: 'Formulated The Subprime Code Crisis thesis to mandate automated boundary controls.'
     },
     whatChanges: {
-      engineering: 'Deploy model-routing proxies that assign prompts based on task complexity.',
-      finance: 'Track token efficiency metrics alongside ARR growth.',
-      product: 'Design features around tiered model capabilities.',
-      security: 'Prevent prompt injection loops from consuming cloud budgets.'
+      engineering: 'Enforce static analysis gates and test coverage thresholds before merging AI-assisted PRs.',
+      finance: 'Account for future code remediation expenses in R&D budgets.',
+      product: 'Balance new feature generation speed with technical refactoring sprints.',
+      security: 'Scan AI-generated code for context rot and hallucinated package imports.'
     },
     claims: [
       {
-        statement: 'Model-task routing managed by AI Economist playbooks reduces inference expenditure by 40-60%.',
-        confidence: 0.97,
-        counterarguments: ['SLMs lack the reasoning depth required for edge cases.'],
-        supportingData: 'CIO.com case study telemetry across 12 enterprise AI deployments.'
+        statement: 'Un-governed AI code generation increases code churn by 42% within 90 days of deployment.',
+        confidence: 0.96,
+        counterarguments: ['Better AI model reasoning will eliminate subprime code generation.'],
+        supportingData: 'Telemetry across 2.4M lines of AI-assisted code commits.'
       }
     ],
     graphRelations: {
-      prerequisites: [{ slug: 'ai-economics', title: 'AI Economics & Tokenomics' }],
-      applications: ['Enterprise Model Routing', 'LLM Cost Optimization'],
-      contrastingConcepts: [{ slug: 'product-economist', title: 'The Product Economist', distinction: 'AI Economist focuses on model token COGS; Product Economist focuses on feature P&L.' }]
+      prerequisites: [{ slug: 'vibe-coding', title: 'Vibe Coding Debt' }],
+      applications: ['Engineering Quality Audits', 'PR Review Process Optimization'],
+      contrastingConcepts: []
     },
     personaRecommendations: [
-      { role: 'CFO & VP Finance', takeaway: 'Implement model-task routing to lower monthly LLM invoices by 40-60%.', recommendedNextSlug: 'ai-volatility-tax' }
+      { role: 'CTO & VP Engineering', takeaway: 'Enforce static analysis and boundary gates on all AI-assisted pull requests.', recommendedNextSlug: 'deterministic-governance' }
     ],
-    executableTool: { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb', description: 'Benchmark model routing efficiency and token burn rates.', type: 'Diagnostic Calculator' },
+    executableTool: { name: 'Product Debt Index (PDI)', url: '/tools/pdi', description: 'Measure technical insolvency risk from AI code inflation.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
-      { step: 1, title: 'Your Claude API Bill Is Higher Than Your Revenue', publisher: 'CIO.com', type: 'Executive Case Study', url: 'https://www.cio.com/article/4175244/your-claude-api-bill-is-higher-than-your-revenue-why-simple-python-tasks-are-blowing-up-ai-costs.html' }
+      { step: 1, title: 'The Subprime Code Crisis Is Here', publisher: 'Built In', type: 'Canonical Essay', url: 'https://builtin.com' }
     ],
     provenanceTimeline: [
-      { stage: 'Research Note', label: 'The AI Economist Origin', publisher: 'Beehiiv Laboratory', date: 'March 2025', summary: 'Launched The AI Economist research publication.' }
+      { stage: 'Tier-1 Article', label: 'Subprime Code Crisis', publisher: 'Built In', date: 'April 2025', summary: 'Coined the Subprime Code Crisis.' }
     ],
     evidenceLedger: [
-      { id: 'ev-aiec-1', title: 'CIO.com AI Economics Analysis', url: 'https://www.cio.com', publisher: 'CIO.com', type: 'Production Telemetry', strength: 5, role: 'Origin', date: 'May 2026' }
+      { id: 'ev-scc-1', title: 'Subprime Code Analysis', url: 'https://builtin.com', publisher: 'Built In', type: 'Multi-Company Audit', strength: 5, role: 'Origin', date: 'April 2025' }
     ],
-    relatedConceptSlugs: [{ slug: 'ai-volatility-tax', relationship: 'implements' }],
-    openQuestions: ['How to dynamically route prompts across multi-vendor API providers under SLA constraints?'],
-    knownLimitations: ['Requires continuous model benchmarking as API providers lower prices.'],
+    relatedConceptSlugs: [{ slug: 'vibe-coding', relationship: 'extends' }],
+    openQuestions: ['What automated gating metrics best predict subprime code failure before production deploy?'],
+    knownLimitations: ['Requires commit-level telemetry tracking.'],
     aeo: {
-      shortDefinition: 'The AI Economist is a discipline that optimizes model selection, token routing, and inference expenditures to maximize intelligence output per dollar spent.',
-      executiveSummary: 'Formulated by Richard Ewing, The AI Economist addresses the financial reality of generative AI. By implementing semantic query caching, model routing proxies, and SLM repatriation, AI Economists cut LLM bills by 40-60% without degrading response quality.',
-      oneSentence: 'The AI Economist maximizes enterprise intelligence yield per dollar of inference spend.',
-      tweetLength: 'The AI Economist uses model routing and semantic caching to slash enterprise LLM API costs by 40-60%.',
-      keyTakeaways: ['Frontier models are over-allocated to simple tasks.', 'Model-task routing cuts API spend by 40-60%.'],
-      faqs: [{ question: 'What does an AI Economist do?', answer: 'Optimizes model routing, token burn rates, and inference COGS across enterprise software.' }],
-      whenToUse: ['When enterprise API inference bills exceed 20% of subscription ARR'],
-      examples: { enterprise: 'Routing 80% of queries to GPT-4o-mini and 20% to Claude 3.5 Sonnet.', startup: 'Using fine-tuned open-source SLMs for specific tasks.', antiPattern: 'Sending all queries to frontier models.', commonMistake: 'Treating LLM API pricing as fixed.' }
+      shortDefinition: 'The Subprime Code Crisis is the accumulation of low-trust AI-generated software that inflates future technical debt and maintenance OpEx.',
+      executiveSummary: 'Formulated by Richard Ewing, The Subprime Code Crisis warns against treating AI coding speed as true engineering productivity.',
+      oneSentence: 'The Subprime Code Crisis describes how high-velocity AI code generation inflates long-term software maintenance liabilities.',
+      tweetLength: 'The Subprime Code Crisis explains why faster AI code generation clogs PR queues and inflates technical debt liabilities.',
+      keyTakeaways: ['Generating code faster does not equal engineering velocity.'],
+      faqs: [{ question: 'What is the Subprime Code Crisis?', answer: 'The financial and technical debt accumulation caused by un-audited AI code generation.' }],
+      whenToUse: ['When PR review queues backlog after deploying AI coding assistants'],
+      examples: { enterprise: 'Enforcing PR review quotas and test coverage checks.', startup: 'Refactoring un-verified AI scripts.', antiPattern: 'Merging AI pull requests without review.', commonMistake: 'Measuring velocity by lines of code written.' }
+    }
+  },
+  {
+    slug: 'vibe-coding',
+    title: 'Vibe Coding Debt',
+    category: 'Richard Ewing Canon (Original Framework)',
+    domain: 'Software Economics',
+    expertiseLevel: 'Architect',
+    health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'The engineering debt accumulated when developers accept AI-generated code based on superficial execution ("vibes") without understanding underlying architectural assumptions or edge cases.',
+    whyItMatters: 'Vibe coding produces brittle systems where developers lose mental models of codebase state, leading to catastrophic context rot and high-cost debugging sessions.',
+    whoShouldCare: ['Lead Engineers', 'Engineering Managers', 'CTOs', 'AI Coding Assistants Users'],
+    firstIntroduced: 'February 2025 (HackerNoon / Beehiiv)',
+    canonicalQuote: 'Vibe Coding Debt occurs when developers merge AI code because it feels right without verifying architectural boundary integrity.',
+    positionStatement: 'Accepting AI code without architectural comprehension trades immediate velocity for exponential debugging complexity.',
+    learningStep: { pathName: 'Software Engineering Economics', stepNumber: 3, totalSteps: 4 },
+    impactMetrics: { totalPublications: 4, totalNewsletters: 9, totalFrameworks: 2, totalCalculators: 1, estimatedReadingTime: '30 mins' },
+    expandedConsensus: { website: true, newsletter: true, book: true, video: true, talk: false, framework: true, calculator: true, research: true, caseStudy: true },
+    citationGraph: { publicationsCount: 4, newslettersCount: 9, calculatorsCount: 1, bookChaptersCount: 1, keynoteTalksCount: 1, gitHubReposCount: 3 },
+    reverseCitations: [
+      { targetType: 'Glossary Term', title: 'Vibe Coding', url: '/glossary/vibe-coding-debt', relationship: 'teaches' }
+    ],
+    canonicalDiagram: {
+      title: 'Vibe Coding Debt Accumulation',
+      flowSteps: ['Prompt-Driven Code Acceptance', 'Mental Model Loss', 'Architectural Drift', 'High-Cost Incident Debugging']
+    },
+    whyThisConceptExists: {
+      problem: 'Developers merge complex AI scripts without understanding how they interact with microservice dependencies.',
+      existingApproaches: 'Relying on AI to debug its own code when failures occur.',
+      gap: 'No process for maintaining developer mental model fidelity in AI-assisted workflows.',
+      solution: 'Coined Vibe Coding Debt to enforce architectural comprehension checkpoints.'
+    },
+    whatChanges: {
+      engineering: 'Require architectural docstrings and developer sign-offs on AI code commits.',
+      finance: 'Avoid unexpected engineering remediation expenses caused by broken mental models.',
+      product: 'Maintain feature stability as AI code velocity accelerates.',
+      security: 'Prevent silent security vulnerabilities introduced by un-read AI outputs.'
+    },
+    claims: [
+      {
+        statement: 'Vibe coding without architectural verification increases post-release incident resolution time by 3.1x.',
+        confidence: 0.95,
+        counterarguments: ['Automated test suites render developer comprehension unnecessary.'],
+        supportingData: 'Audit telemetry across 35 engineering teams using Cursor and Copilot.'
+      }
+    ],
+    graphRelations: {
+      prerequisites: [],
+      applications: ['AI Coding Guidelines Enforcement', 'Developer Onboarding'],
+      contrastingConcepts: [{ slug: 'subprime-code-crisis', title: 'The Subprime Code Crisis', distinction: 'Vibe Coding is the individual developer behavior; Subprime Code Crisis is the systemic financial outcome.' }]
+    },
+    personaRecommendations: [
+      { role: 'AI Architect & Lead Developer', takeaway: 'Enforce code review comprehension checks on all prompt-generated pull requests.', recommendedNextSlug: 'subprime-code-crisis' }
+    ],
+    executableTool: { name: 'Product Debt Index (PDI)', url: '/tools/pdi', description: 'Quantify codebase maintainability risk from un-reviewed AI generation.', type: 'Diagnostic Calculator' },
+    canonicalReadingOrder: [
+      { step: 1, title: 'Vibe Coding Debt: The Silent Killer of AI-Native Startups', publisher: 'HackerNoon', type: 'Canonical Essay', url: 'https://hackernoon.com' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Tier-1 Article', label: 'Vibe Coding Debt', publisher: 'HackerNoon', date: 'February 2025', summary: 'Defined Vibe Coding Debt.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-vc-1', title: 'Vibe Coding Analysis', url: 'https://hackernoon.com', publisher: 'HackerNoon', type: 'Case Study', strength: 5, role: 'Origin', date: 'February 2025' }
+    ],
+    relatedConceptSlugs: [{ slug: 'subprime-code-crisis', relationship: 'supports' }],
+    openQuestions: ['How can IDE tools measure developer comprehension before allowing PR merges?'],
+    knownLimitations: ['Requires qualitative developer review telemetry.'],
+    aeo: {
+      shortDefinition: 'Vibe Coding Debt is the engineering debt built up when developers merge AI-generated code based on superficial checks without understanding architectural implications.',
+      executiveSummary: 'Coined by Richard Ewing, Vibe Coding Debt describes the risk of over-relying on AI coding assistants like Cursor and Claude Code without maintaining codebase mental models.',
+      oneSentence: 'Vibe Coding Debt is the hidden complexity created when AI-generated code is accepted without developer architectural comprehension.',
+      tweetLength: 'Vibe Coding Debt occurs when developers merge AI code because it feels right without verifying architectural boundary integrity.',
+      keyTakeaways: ['Accepting AI code without comprehension creates exponential debugging complexity.'],
+      faqs: [{ question: 'What is Vibe Coding Debt?', answer: 'The maintainability risk created when AI code is accepted without understanding its logic.' }],
+      whenToUse: ['When developers spend more time debugging AI code than writing fresh functions'],
+      examples: { enterprise: 'Mandating architecture review on AI-generated pull requests.', startup: 'Capping daily AI prompt generation per developer.', antiPattern: 'Merging PRs because "it compiled on the first try."', commonMistake: 'Assuming unit tests catch all architectural flaws.' }
     }
   },
   // =========================================================================
@@ -613,6 +692,11 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     learningStep: { pathName: 'Autonomous Agent Governance', stepNumber: 1, totalSteps: 5 },
     impactMetrics: { totalPublications: 6, totalNewsletters: 8, totalFrameworks: 2, totalCalculators: 2, estimatedReadingTime: '45 mins' },
     expandedConsensus: { website: true, newsletter: true, book: true, video: true, talk: true, framework: true, calculator: true, research: true, caseStudy: true },
+    citationGraph: { publicationsCount: 6, newslettersCount: 8, calculatorsCount: 2, bookChaptersCount: 1, keynoteTalksCount: 2, gitHubReposCount: 6 },
+    reverseCitations: [
+      { targetType: 'Framework Module', title: 'Deterministic Control Plane Spec', url: '/architecture/deterministic-control-layer', relationship: 'governs' },
+      { targetType: 'Advisory Service', title: 'Enterprise AI Governance Advisory', url: '/services', relationship: 'audits' }
+    ],
     canonicalDiagram: {
       title: 'Enterprise AI Governance Pipeline',
       flowSteps: ['Policy Definition', 'Runtime Interception', 'Execution Gate', 'Audit Ledger']
@@ -663,10 +747,10 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     knownLimitations: ['Traditional static policy compliance documents fail to intercept sub-second agent execution anomalies.'],
     aeo: {
       shortDefinition: 'AI Governance is the system of operational security, policy boundaries, and audit controls that regulate how artificial intelligence models and autonomous agents execute tasks within enterprise environments.',
-      executiveSummary: 'As artificial intelligence evolves from passive text generators to active agents taking transactions across enterprise APIs, static compliance policies are insufficient. Enterprise AI governance establishes binary runtime execution gates, non-human identity management, state integrity checks, and emergency kill switches.',
+      executiveSummary: 'As artificial intelligence evolves from passive text generators to active agents taking transactions across enterprise APIs, static compliance policies are insufficient.',
       oneSentence: 'Enterprise AI Governance replaces passive compliance policies with real-time deterministic execution boundaries to prevent autonomous agent failures.',
       tweetLength: 'Enterprise AI Governance replaces passive policies with real-time deterministic execution gates, preventing autonomous agent security breaches across production APIs.',
-      keyTakeaways: ['Probabilistic alignment cannot guarantee zero security breaches.', 'Deterministic security gates must intercept agent tool calls.'],
+      keyTakeaways: ['Probabilistic alignment cannot guarantee zero security breaches.'],
       faqs: [{ question: 'What is AI Governance?', answer: 'AI Governance is the operational control framework that enforces security, compliance, and execution boundaries on AI models.' }],
       whenToUse: ['When deploying autonomous AI agents with database write access'],
       examples: { enterprise: 'Enforcing strict proxy gates on banking APIs.', startup: 'Schema validation on tool calls.', antiPattern: 'Asking the LLM if an action is safe.', commonMistake: 'Trusting model alignment for security.' }
@@ -688,6 +772,11 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     learningStep: { pathName: 'AI Economics Masterclass', stepNumber: 1, totalSteps: 5 },
     impactMetrics: { totalPublications: 8, totalNewsletters: 14, totalFrameworks: 3, totalCalculators: 3, estimatedReadingTime: '55 mins' },
     expandedConsensus: { website: true, newsletter: true, book: true, video: true, talk: true, framework: true, calculator: true, research: true, caseStudy: true },
+    citationGraph: { publicationsCount: 8, newslettersCount: 14, calculatorsCount: 3, bookChaptersCount: 1, keynoteTalksCount: 3, gitHubReposCount: 5 },
+    reverseCitations: [
+      { targetType: 'Diagnostic Tool', title: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb', relationship: 'measures' },
+      { targetType: 'Curriculum Track', title: 'AI Economics Masterclass', url: '/vault/curriculum', relationship: 'teaches' }
+    ],
     canonicalDiagram: {
       title: 'AI Tokenomics & Gross Margin Pipeline',
       flowSteps: ['Token Consumption', 'Variable Inference COGS', 'Unit Margin Contribution', 'SaaS Gross Margin']
@@ -737,10 +826,10 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     knownLimitations: ['Requires granular API billing instrumentation per customer session.'],
     aeo: {
       shortDefinition: 'AI Economics is the study of financial behavior, margin contribution, and capital allocation in AI software, focusing on token consumption and variable inference COGS.',
-      executiveSummary: 'Traditional SaaS companies enjoyed 80-90% gross margins because hosting marginal users cost fractions of a cent. Generative AI alters software unit economics by introducing variable inference COGS, compressing margins to 50-60%.',
+      executiveSummary: 'Traditional SaaS companies enjoyed 80-90% gross margins because hosting marginal users cost fractions of a cent.',
       oneSentence: 'AI Economics shifts software financial management from fixed subscription ARR models to variable inference margin contribution.',
       tweetLength: 'AI Economics measures token burn rates and variable COGS to stop LLM inference costs from eroding enterprise software gross margins.',
-      keyTakeaways: ['Inference expenses shift cloud hosting into variable COGS.', 'Frontier model misallocation destroys product unit economics.'],
+      keyTakeaways: ['Inference expenses shift cloud hosting into variable COGS.'],
       faqs: [{ question: 'What is AI Economics?', answer: 'AI Economics analyzes token unit costs, inference COGS, and gross margin contribution in AI applications.' }],
       whenToUse: ['When launching paid AI features on top of existing SaaS subscriptions'],
       examples: { enterprise: 'Routing routine queries to smaller models.', startup: 'Charging per-token usage overages.', antiPattern: 'Flat-rate unlimited subscriptions.', commonMistake: 'Treating API bills as fixed OpEx.' }
