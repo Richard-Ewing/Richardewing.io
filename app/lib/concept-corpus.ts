@@ -82,6 +82,18 @@ export interface ConceptAEO {
   decisionTree?: DecisionNode[];
 }
 
+export interface PersonaRecommendation {
+  role: 'CTO & VP Engineering' | 'CFO & VP Finance' | 'VP Product & CPO' | 'AI Architect & Lead Developer';
+  takeaway: string;
+  recommendedNextSlug: string;
+}
+
+export interface LearningStepRef {
+  pathName: 'AI Economics Masterclass' | 'Autonomous Agent Governance' | 'Software Engineering Economics';
+  stepNumber: number;
+  totalSteps: number;
+}
+
 export interface ConceptNode {
   slug: string;
   title: string;
@@ -91,6 +103,9 @@ export interface ConceptNode {
   definition: string;
   whyItMatters: string;
   firstIntroduced: string;
+  canonicalQuote?: string;
+  learningStep?: LearningStepRef;
+  personaRecommendations?: PersonaRecommendation[];
   executableTool?: ExecutableToolRef;
   canonicalReadingOrder: CanonicalReadingStep[];
   provenanceTimeline: ProvenanceMilestone[];
@@ -121,6 +136,14 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'The enterprise control framework governing security, compliance, operational boundaries, and audit trails for autonomous AI models and multi-agent workflows.',
     whyItMatters: 'As AI agents gain direct write permissions to databases and payment APIs, enterprise governance must transition from policy documents to real-time runtime enforcement.',
     firstIntroduced: 'Industry Term (Bridged by Richard Ewing)',
+    canonicalQuote: 'Enterprise AI Governance replaces passive compliance PDF policy documents with real-time deterministic execution boundaries to prevent autonomous agent security failures.',
+    learningStep: { pathName: 'Autonomous Agent Governance', stepNumber: 1, totalSteps: 5 },
+    personaRecommendations: [
+      { role: 'CTO & VP Engineering', takeaway: 'Enforce proxy admissibility gates before agents mutate production database states.', recommendedNextSlug: 'deterministic-governance' },
+      { role: 'CFO & VP Finance', takeaway: 'Mitigate financial liabilities caused by un-monitored agentic payment tool calls.', recommendedNextSlug: 'ai-volatility-tax' },
+      { role: 'VP Product & CPO', takeaway: 'Ensure AI features comply with enterprise compliance without degrading user workflow speed.', recommendedNextSlug: 'product-economist' },
+      { role: 'AI Architect & Lead Developer', takeaway: 'Implement Non-Human IAM OAuth scoping per agent execution session.', recommendedNextSlug: 'runtime-vs-alignment' }
+    ],
     executableTool: { name: 'Exogram Proving Ground', url: 'https://exogram.ai/proving-ground', description: 'Test deterministic security gates and state integrity checks.', type: 'Proving Ground' },
     canonicalReadingOrder: [
       { step: 1, title: 'Architecting Security Gates for AI Agents', publisher: 'Built In', type: 'Security Gate Specification', url: 'https://builtin.com/articles/ai-agent-security-gates' },
@@ -189,6 +212,14 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'The financial discipline analyzing variable inference cost scaling, token consumption metrics, gross margin compression (50-60% AI margins vs 80-90% SaaS), and capital allocation in AI-native software.',
     whyItMatters: 'Replaces vanity usage growth metrics with token unit margin contribution analysis to ensure AI software products remain financially solvent.',
     firstIntroduced: 'Industry Term (Bridged by Richard Ewing)',
+    canonicalQuote: 'AI Economics replaces vanity user growth metrics with token unit margin contribution analysis, preventing variable inference COGS from destroying SaaS gross margins.',
+    learningStep: { pathName: 'AI Economics Masterclass', stepNumber: 1, totalSteps: 5 },
+    personaRecommendations: [
+      { role: 'CFO & VP Finance', takeaway: 'Track token inference expenses as variable Cost of Goods Sold (COGS) to preserve gross margin targets.', recommendedNextSlug: 'ai-volatility-tax' },
+      { role: 'VP Product & CPO', takeaway: 'Design consumption-based pricing tiers to keep feature-level unit contribution positive.', recommendedNextSlug: 'saas-growth-paradox' },
+      { role: 'CTO & VP Engineering', takeaway: 'Deploy model-task routing and semantic query caching to cut inference bills by 40-60%.', recommendedNextSlug: 'ai-finops' },
+      { role: 'AI Architect & Lead Developer', takeaway: 'Migrate high-frequency prompt tasks from frontier APIs to fine-tuned local SLMs.', recommendedNextSlug: 'ai-economist' }
+    ],
     executableTool: { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb', description: 'Calculate AI margin collapse with multi-API cost analysis.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
       { step: 1, title: 'Generative AI Margin Squeeze & SaaS COGS', publisher: 'Beehiiv Laboratory', type: 'First Research Note', url: 'https://theaieconomist.beehiiv.com/p/generative-ai-margin-squeeze-saas-cogs' },
@@ -249,260 +280,6 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     }
   },
   {
-    slug: 'runtime-vs-alignment',
-    title: 'Runtime Governance vs. Model Alignment',
-    category: 'Industry Concept (Discovery On-Ramp)',
-    domain: 'AI Governance',
-    health: { confidence: 0.97, evidenceCount: 5, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
-    definition: 'The architectural distinction proving that training-level model alignment cannot solve enterprise compliance, requiring external runtime guardrails and Non-Human IAM to govern machine-to-machine agents.',
-    whyItMatters: 'RLHF alignment conditions probabilistic weights, but cannot guarantee zero unauthorized database writes or payment transfers during production agent execution.',
-    firstIntroduced: 'November 2025 (Beehiiv / Built In)',
-    executableTool: { name: 'Exogram Proving Ground', url: 'https://exogram.ai/proving-ground', description: 'Test runtime proxy interceptors and non-human IAM gates.', type: 'Proving Ground' },
-    canonicalReadingOrder: [
-      { step: 1, title: 'Why I Built Exogram: AI Agents Need Deterministic Governance', publisher: 'Beehiiv Laboratory', type: 'Problem Identification', url: 'https://theaieconomist.beehiiv.com/p/why-i-built-exogram-ai-agents-need-deterministic-governance' },
-      { step: 2, title: 'Architecting Security Gates for AI Agents', publisher: 'Built In', type: 'Security Gate Specification', url: 'https://builtin.com/articles/ai-agent-security-gates' }
-    ],
-    provenanceTimeline: [
-      { stage: 'Research Note', label: 'Why I Built Exogram', publisher: 'Beehiiv Laboratory', date: 'November 2025', url: 'https://theaieconomist.beehiiv.com/p/why-i-built-exogram-ai-agents-need-deterministic-governance', summary: 'Demonstrated why training-time alignment fails to secure enterprise API calls.' }
-    ],
-    evidenceLedger: [
-      { id: 'ev-rva-1', title: 'Why I Built Exogram', url: 'https://theaieconomist.beehiiv.com/p/why-i-built-exogram-ai-agents-need-deterministic-governance', publisher: 'Beehiiv', type: 'Origin', strength: 5, role: 'Origin', date: 'November 2025' }
-    ],
-    relatedConceptSlugs: [
-      { slug: 'deterministic-governance', relationship: 'implements' },
-      { slug: 'agent-kill-switch', relationship: 'requires' }
-    ],
-    openQuestions: ['How to enforce Non-Human IAM credentials across ephemeral sub-agent chains?'],
-    knownLimitations: ['Requires proxy latency budgets under 2ms for high-frequency trading or real-time APIs.'],
-    aeo: {
-      shortDefinition: 'Runtime Governance vs. Alignment contrasts training-time model safety tuning (RLHF) with external, deterministic runtime proxy gates that enforce API execution boundaries.',
-      executiveSummary: 'Relying solely on model alignment (such as OpenAI or Anthropic RLHF) to prevent enterprise security failures is an architectural anti-pattern. Alignment modifies probabilistic output distributions but cannot guarantee 100% adherence to business logic or access rules. Runtime governance places deterministic proxy gates and Non-Human IAM credentials between LLM output parsers and production APIs, ensuring zero unauthorized database state mutations.',
-      oneSentence: 'Model alignment attempts to make LLMs safe by training; Runtime Governance makes agents safe by intercepting their API calls at execution time.',
-      tweetLength: 'Model alignment conditions LLM weights, but Runtime Governance enforces hard deterministic code boundaries on production API calls.',
-      keyTakeaways: [
-        'Model alignment is probabilistic; enterprise compliance requires deterministic guarantees.',
-        'Prompt injection bypasses fine-tuned model instructions in runtime environments.',
-        'External proxy gates evaluate API payloads in sub-5ms before execution.',
-        'Non-Human IAM scopes agent database rights based on user session token boundaries.'
-      ],
-      faqs: [
-        { question: 'Why isn’t model alignment enough for AI agent security?', answer: 'Because fine-tuned models can still hallucinate invalid parameters or succumb to adversarial prompt injections during execution.' },
-        { question: 'What is Runtime Governance?', answer: 'An external proxy layer that validates agent tool calls against hard security rules before forwarding them to production APIs.' },
-        { question: 'What is Non-Human IAM?', answer: 'Identity & Access Management protocols designed for autonomous machine agents rather than human user logins.' }
-      ],
-      comparisons: [
-        {
-          vsConceptSlug: 'ai-governance',
-          vsTitle: 'Model Alignment vs. Runtime Governance',
-          keyDifferences: ['Model Alignment is embedded inside LLM weights during training', 'Runtime Governance is an external proxy code gate operating at execution time'],
-          whenToUseWhich: 'Rely on Alignment for general conversational tone; rely on Runtime Governance for enterprise database write actions.'
-        }
-      ],
-      whenToUse: [
-        'When agents execute SQL queries, financial payouts, or user account changes',
-        'When connecting LLMs to third-party tools via MCP'
-      ],
-      examples: {
-        enterprise: 'An enterprise deploying an API proxy that checks if an agent-generated SQL query contains a DROP TABLE statement before sending it to PostgreSQL.',
-        startup: 'An AI assistant using OAuth token scoping to prevent sub-agents from accessing admin APIs.',
-        antiPattern: 'Relying on system prompts ("Do not delete files") to prevent data destruction.',
-        commonMistake: 'Believing that buying a frontier model subscription satisfies enterprise SOC2 compliance.'
-      },
-      decisionTree: [
-        { step: 1, question: 'Does your AI system perform state mutations on production data?', yesTarget: 'Deploy Runtime Proxy Gate', noTarget: 'Standard Alignment Suffices' }
-      ]
-    }
-  },
-  {
-    slug: 'induced-demand-code',
-    title: 'Induced Demand in Software Delivery',
-    category: 'Industry Concept (Discovery On-Ramp)',
-    domain: 'Engineering Leadership',
-    health: { confidence: 0.96, evidenceCount: 4, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
-    definition: 'The operational phenomenon where AI coding assistants catalyze exponential code generation volume, causing senior engineer review bottlenecks and increasing backlog consumption rather than reducing R&D spending.',
-    whyItMatters: 'Generating code 10x faster creates an audit crunch when senior engineering verification capacity fails to scale, accumulating subprime technical debt.',
-    firstIntroduced: 'January 2026 (CIO.com / Built In)',
-    executableTool: { name: 'Audit Interview Scorecard Engine', url: '/tools/audit-interview', description: 'Audit review capacity vs code generation throughput.', type: 'Audit Scorecard' },
-    canonicalReadingOrder: [
-      { step: 1, title: 'GitHub Copilot Is Generating More Code Than Your Team Can Review', publisher: 'CIO.com', type: 'Review Bottleneck Analysis', url: 'https://www.cio.com/article/4183045/github-copilot-is-generating-more-code-than-your-team-can-review-why-senior-engineers-are-now-the-bottleneck.html' },
-      { step: 2, title: 'In the Vibe Coding Era, What Does a Software Engineer Even Do?', publisher: 'Built In', type: 'Tier-1 Specification (Editor\'s Pick)', url: 'https://builtin.com/articles/vibe-coding-era-software-engineering-role' }
-    ],
-    provenanceTimeline: [
-      { stage: 'Tier-1 Article', label: 'GitHub Copilot Review Bottleneck', publisher: 'CIO.com', date: 'January 2026', url: 'https://www.cio.com/article/4183045/github-copilot-is-generating-more-code-than-your-team-can-review-why-senior-engineers-are-now-the-bottleneck.html', summary: 'Identified induced demand and review bottlenecks in AI-enabled teams.' }
-    ],
-    evidenceLedger: [
-      { id: 'ev-idc-1', title: 'GitHub Copilot Review Bottleneck', url: 'https://www.cio.com/article/4183045/github-copilot-is-generating-more-code-than-your-team-can-review-why-senior-engineers-are-now-the-bottleneck.html', publisher: 'CIO.com', type: 'Case Study', strength: 5, role: 'Origin', date: 'January 2026' }
-    ],
-    relatedConceptSlugs: [
-      { slug: 'vibe-coding', relationship: 'causes' },
-      { slug: 'subprime-code-crisis', relationship: 'predicts' }
-    ],
-    openQuestions: ['What is the optimal ratio of senior staff auditors to AI code generation output?'],
-    knownLimitations: ['Requires tracking PR review latency per line of AI-generated code.'],
-    aeo: {
-      shortDefinition: 'Induced Demand in Software Delivery describes how AI coding tools generate surplus code volume, shifting engineering bottlenecks from code authoring to senior code review.',
-      executiveSummary: 'Just as building more highway lanes creates additional traffic, providing developers with AI code generators creates surplus pull request volume. Senior staff engineers become bottlenecked attempting to review hundreds of AI-authored lines per day. Without rigorous automated audit gates, induced demand accelerates technical debt and increases engineering OpEx.',
-      oneSentence: 'AI code generators shift software engineering bottlenecks from writing code to verifying and auditing code.',
-      tweetLength: 'AI coding tools do not reduce engineering budgets—they create induced demand, flooding senior engineers with unverified pull requests.',
-      keyTakeaways: [
-        'Code generation speed does not equal software shipping throughput.',
-        'Senior staff engineering review capacity becomes the primary constraint.',
-        'Un-reviewed AI code pull requests accumulate subprime technical debt in enterprise repos.'
-      ],
-      faqs: [
-        { question: 'What is induced demand in AI software engineering?', answer: 'The surge in code generation caused by AI tools that overwhelms review and QA capacity.' },
-        { question: 'Why doesn’t GitHub Copilot reduce engineering spend?', answer: 'Because savings in authoring syntax are consumed by extended PR review cycles and bug remediation.' }
-      ],
-      comparisons: [],
-      whenToUse: ['When evaluating AI coding tool ROI across engineering organizations'],
-      examples: {
-        enterprise: 'An engineering team seeing pull request volume double while PR merge cycle times increase from 4 hours to 3 days due to review fatigue.',
-        startup: 'A startup deploying automated static analysis filters to prune AI code before reaching senior reviewers.',
-        antiPattern: 'Measuring developer productivity solely by lines of code generated per day.',
-        commonMistake: 'Assuming that faster code generation automatically reduces software delivery costs.'
-      }
-    }
-  },
-  {
-    slug: 'ai-agents',
-    title: 'AI Agents & Agentic Systems',
-    category: 'Industry Concept (Discovery On-Ramp)',
-    domain: 'AI Governance',
-    health: { confidence: 0.96, evidenceCount: 5, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 1 },
-    definition: 'Autonomous software systems leveraging large language models to reason, plan, select tools, and execute multi-step operations with minimal human intervention.',
-    whyItMatters: 'Autonomous agent execution creates unbounded tool-calling vulnerabilities unless constrained by deterministic control planes.',
-    firstIntroduced: 'Industry Term (Bridged by Richard Ewing)',
-    executableTool: { name: 'Agentic Drift & Boundary Matrix', url: '/tools/agentic-drift-matrix', description: 'Audit agent action allowlists and execution boundaries.', type: 'Decision Tree' },
-    canonicalReadingOrder: [
-      { step: 1, title: 'Inside the First Autonomous AI Agent Security Breach', publisher: 'Built In', type: 'Breach Post-Mortem', url: 'https://builtin.com/articles/ai-agent-security-breach' },
-      { step: 2, title: 'Your AI Agent Needs a Kill Switch', publisher: 'Built In', type: 'Tier-1 Executive Guide', url: 'https://builtin.com/articles/ai-agent-kill-switch' }
-    ],
-    provenanceTimeline: [
-      { stage: 'Tier-1 Article', label: 'First AI Agent Security Breach', publisher: 'Built In', date: 'February 2026', url: 'https://builtin.com/articles/ai-agent-security-breach', summary: 'Documented production vulnerabilities in autonomous tool-calling agents.' }
-    ],
-    evidenceLedger: [
-      { id: 'ev-aia-1', title: 'First AI Agent Security Breach', url: 'https://builtin.com/articles/ai-agent-security-breach', publisher: 'Built In', type: 'Case Study', strength: 5, role: 'Supports', date: 'February 2026' }
-    ],
-    relatedConceptSlugs: [
-      { slug: 'agent-kill-switch', relationship: 'requires' },
-      { slug: 'deterministic-governance', relationship: 'implements' }
-    ],
-    openQuestions: ['How to handle state rollback when an agent modifies external SaaS APIs without transactional rollback support?'],
-    knownLimitations: ['Agentic loops can trigger retry cascades if tool outputs fail schema validation.'],
-    aeo: {
-      shortDefinition: 'AI Agents are autonomous software loops that combine LLM reasoning with tool access to execute complex, multi-step tasks across enterprise systems.',
-      executiveSummary: 'Unlike passive chatbots that only return text, AI agents execute transactions, query databases, and call external APIs autonomously. While agents provide high automation leverage, un-governed tool calling creates vulnerability vectors such as prompt injection and execution drift. Enterprise agent deployment requires binary execution control layers and state integrity checking.',
-      oneSentence: 'AI agents are autonomous software loops that turn model reasoning into direct API tool calls across enterprise infrastructure.',
-      tweetLength: 'AI agents combine LLM reasoning with direct tool execution, creating high automation leverage but requiring deterministic runtime governance.',
-      keyTakeaways: [
-        'Agents transition software from user-driven GUIs to autonomous API tool execution.',
-        'Memory poisoning and prompt injection can hijack agent tool parameters.',
-        'Execution boundaries and kill switches are required to protect production databases.'
-      ],
-      faqs: [
-        { question: 'What is an AI Agent?', answer: 'An autonomous program using LLMs to plan, select tools, and execute multi-step workflows.' },
-        { question: 'How is an AI Agent different from a Chatbot?', answer: 'A chatbot returns text responses to a user; an AI agent calls APIs to perform actions in external systems.' }
-      ],
-      comparisons: [],
-      whenToUse: ['When automating complex multi-system administrative tasks'],
-      examples: {
-        enterprise: 'An agent that automatically ingests customer support tickets, queries internal databases, and issues refund transactions.',
-        startup: 'A developer agent that reads GitHub issues, authors PRs, and triggers CI/CD builds.',
-        antiPattern: 'Giving an agent unrestricted root database access without execution allowlists.',
-        commonMistake: 'Treating agent tool execution as risk-free background automation.'
-      }
-    }
-  },
-  {
-    slug: 'technical-debt',
-    title: 'Technical Debt & Code Debt',
-    category: 'Industry Concept (Discovery On-Ramp)',
-    domain: 'Software Economics',
-    health: { confidence: 0.97, evidenceCount: 5, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
-    definition: 'The implied cost of additional refactoring caused by choosing an expedient code solution now instead of using a well-architected approach.',
-    whyItMatters: 'AI code generators accelerate technical debt creation by 5-10x, turning static code debt into systemic Technical Insolvency.',
-    firstIntroduced: 'Industry Term (Bridged by Richard Ewing)',
-    executableTool: { name: 'Product Debt Index Engine (PDI)', url: '/tools/pdi', description: 'Quantify unverified code debt and calculate burn-down ROI.', type: 'Diagnostic Calculator' },
-    canonicalReadingOrder: [
-      { step: 1, title: 'Why Your CFO Hates Your Agile Transformation', publisher: 'CIO.com', type: 'Velocity Analysis', url: 'https://www.cio.com/article/4143737/why-your-cfo-hates-your-agile-transformation.html' },
-      { step: 2, title: 'The Subprime Code Crisis', publisher: 'Beehiiv Research', type: 'Derivative Analogy', url: 'https://theaieconomist.beehiiv.com/p/the-subprime-code-crisis' }
-    ],
-    provenanceTimeline: [
-      { stage: 'Tier-1 Article', label: 'Why CFOs Hate Agile Transformation', publisher: 'CIO.com', date: 'November 2024', url: 'https://www.cio.com/article/4143737/why-your-cfo-hates-your-agile-transformation.html', summary: 'Analyzed how high story point velocity masks technical debt accumulation.' }
-    ],
-    evidenceLedger: [
-      { id: 'ev-td-1', title: 'Why CFOs Hate Agile', url: 'https://www.cio.com/article/4143737/why-your-cfo-hates-your-agile-transformation.html', publisher: 'CIO.com', type: 'Multi-Company Audit', strength: 5, role: 'Supports', date: 'November 2024' }
-    ],
-    relatedConceptSlugs: [
-      { slug: 'subprime-code-crisis', relationship: 'extends' },
-      { slug: 'technical-insolvency', relationship: 'predicts' }
-    ],
-    openQuestions: ['What automated refactoring heuristics safely clean AI-generated debt?'],
-    knownLimitations: ['Often ignored by executive teams until maintenance OpEx consumes 60%+ of engineering capacity.'],
-    aeo: {
-      shortDefinition: 'Technical Debt is the accumulated cost of expedited design choices in software repositories that increase future maintenance OpEx and slow innovation velocity.',
-      executiveSummary: 'Choosing temporary workarounds over clean software architecture incurs interest in the form of elevated maintenance costs. In the era of AI code generation, unverified code velocity compounds technical debt exponentially into Technical Insolvency.',
-      oneSentence: 'Technical Debt represents the compounding financial liability incurred by expedient software architecture choices.',
-      tweetLength: 'Technical Debt is the financial liability created by quick-fix code—accelerated 5x by AI coding assistants.',
-      keyTakeaways: ['High story point velocity often masks accelerating technical debt.'],
-      faqs: [{ question: 'What is Technical Debt?', answer: 'The implied future cost of refactoring software caused by choosing quick code solutions over clean architecture.' }],
-      comparisons: [],
-      whenToUse: ['When balancing feature shipping speed against codebase maintainability'],
-      examples: {
-        enterprise: 'Legacy microservices consuming 70% of engineering bandwidth on maintenance.',
-        startup: 'Rapid prototyping codebase needing refactoring post Series A.',
-        antiPattern: 'Ignoring code quality metrics to hit arbitrary sprint deadlines.',
-        commonMistake: 'Treating technical debt as purely an engineering problem rather than a financial liability.'
-      }
-    }
-  },
-  {
-    slug: 'ai-finops',
-    title: 'AI FinOps & Inference Cost Optimization',
-    category: 'Industry Concept (Discovery On-Ramp)',
-    domain: 'AI Economics',
-    health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
-    definition: 'The operational practice of managing, monitoring, and optimizing cloud inference expenses, model routing, and token budgets across enterprise applications.',
-    whyItMatters: 'Without real-time inference FinOps, single un-optimized prompts can generate five-figure cloud billing spikes overnight.',
-    firstIntroduced: 'Industry Term (Bridged by Richard Ewing)',
-    executableTool: { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb', description: 'Audit token consumption and model-task routing efficiency.', type: 'Diagnostic Calculator' },
-    canonicalReadingOrder: [
-      { step: 1, title: 'Your Claude API Bill Is Higher Than Your Revenue', publisher: 'CIO.com', type: 'API Cost Audit', url: 'https://www.cio.com/article/4175244/your-claude-api-bill-is-higher-than-your-revenue-why-simple-python-tasks-are-blowing-up-ai-costs.html' }
-    ],
-    provenanceTimeline: [
-      { stage: 'Tier-1 Article', label: 'Claude API Bill Blowup', publisher: 'CIO.com', date: 'May 2026', url: 'https://www.cio.com/article/4175244/your-claude-api-bill-is-higher-than-your-revenue-why-simple-python-tasks-are-blowing-up-ai-costs.html', summary: 'Published executive guide on model-task mismatch and inference cost spikes.' }
-    ],
-    evidenceLedger: [
-      { id: 'ev-af-1', title: 'Claude API Bill Blowup', url: 'https://www.cio.com/article/4175244/your-claude-api-bill-is-higher-than-your-revenue-why-simple-python-tasks-are-blowing-up-ai-costs.html', publisher: 'CIO.com', type: 'Production Telemetry', strength: 5, role: 'Supports', date: 'May 2026' }
-    ],
-    relatedConceptSlugs: [
-      { slug: 'ai-volatility-tax', relationship: 'extends' },
-      { slug: 'ai-unit-economics', relationship: 'implements' }
-    ],
-    openQuestions: ['What are optimal cache TTL heuristics for dynamic prompt parameters?'],
-    knownLimitations: ['Requires real-time telemetry proxies between model endpoints and backend services.'],
-    aeo: {
-      shortDefinition: 'AI FinOps is the management discipline of monitoring, attributing, and optimizing token inference costs across enterprise cloud operations.',
-      executiveSummary: 'AI FinOps applies cloud financial management to LLM API consumption. By enforcing model-task routing, token caching, and budget alerts, organizations protect software gross margins.',
-      oneSentence: 'AI FinOps brings financial discipline to variable model inference costs and cloud compute bills.',
-      tweetLength: 'AI FinOps monitors and optimizes token inference bills to prevent unexpected cloud billing spikes.',
-      keyTakeaways: ['Model-task routing optimizes token spend per query.'],
-      faqs: [{ question: 'What is AI FinOps?', answer: 'The operational practice of monitoring and optimizing AI model inference costs.' }],
-      comparisons: [],
-      whenToUse: ['When API billing exceeds monthly cloud hosting budgets'],
-      examples: {
-        enterprise: 'Automated telemetry dashboards tracking token consumption per customer tenant.',
-        startup: 'Setting strict token limits per session.',
-        antiPattern: 'Sending all tasks to frontier models without model-task evaluation.',
-        commonMistake: 'Treating AI API costs like static server hosting.'
-      }
-    }
-  },
-
-  // =========================================================================
-  // LAYER 2: RICHARD EWING ORIGINAL CANON (High Differentiation)
-  // =========================================================================
-  {
     slug: 'ai-volatility-tax',
     title: 'AI Volatility Tax',
     category: 'Richard Ewing Canon (Original Framework)',
@@ -511,6 +288,13 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'The compounding margin penalty incurred when variable LLM inference query costs scale faster than subscription revenue, shifting hosting infrastructure into variable Cost of Goods Sold (COGS).',
     whyItMatters: 'Traditional SaaS enjoyed 80%+ gross margins because marginal serving cost was near zero. AI inference breaks this assumption, eroding gross margins by 20-40% unless model-task routing and semantic caching are enforced.',
     firstIntroduced: 'March 2025 (Beehiiv / Built In)',
+    canonicalQuote: 'The AI Volatility Tax is the gross margin erosion caused when variable LLM inference query costs scale faster than subscription ARR.',
+    learningStep: { pathName: 'AI Economics Masterclass', stepNumber: 2, totalSteps: 5 },
+    personaRecommendations: [
+      { role: 'CFO & VP Finance', takeaway: 'Model how customer usage surges impact gross margins under flat-rate subscription tiers.', recommendedNextSlug: 'saas-growth-paradox' },
+      { role: 'VP Product & CPO', takeaway: 'Align feature roadmaps with token contribution thresholds before general release.', recommendedNextSlug: 'product-economist' },
+      { role: 'CTO & VP Engineering', takeaway: 'Implement real-time proxy throttling when user session token consumption breaches thresholds.', recommendedNextSlug: 'ai-finops' }
+    ],
     executableTool: { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb', description: 'Calculate AI margin collapse with multi-API cost analysis and COGS forensics.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
       { step: 1, title: 'Generative AI Margin Squeeze & SaaS COGS', publisher: 'Beehiiv Laboratory', type: 'First Research Note', url: 'https://theaieconomist.beehiiv.com/p/generative-ai-margin-squeeze-saas-cogs' },
@@ -574,6 +358,12 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'A binary execution control mechanism that halts autonomous AI agent operations within 5ms when safety rules or environmental hash boundaries are breached.',
     whyItMatters: 'Autonomous AI agents possess database credentials and API keys. Without a deterministic kill switch, memory poisoning or prompt injection can execute unauthorized production transactions.',
     firstIntroduced: 'May 2026 (Built In - Editor\'s Pick)',
+    canonicalQuote: 'An Agent Kill Switch is a binary circuit breaker operating outside the LLM context loop that revokes API execution privileges within 5ms of a security or hash violation.',
+    learningStep: { pathName: 'Autonomous Agent Governance', stepNumber: 2, totalSteps: 5 },
+    personaRecommendations: [
+      { role: 'CTO & VP Engineering', takeaway: 'Implement sub-5ms kill switch proxy logic outside the LLM prompt loop.', recommendedNextSlug: 'deterministic-governance' },
+      { role: 'AI Architect & Lead Developer', takeaway: 'Use environmental state integrity hashing to detect memory poisoning before database state mutation.', recommendedNextSlug: 'runtime-vs-alignment' }
+    ],
     executableTool: { name: 'Agentic Drift & Boundary Matrix', url: '/tools/agentic-drift-matrix', description: 'Audit agent action allowlists and execution boundaries.', type: 'Decision Tree' },
     canonicalReadingOrder: [
       { step: 1, title: 'Inside the First Autonomous AI Agent Security Breach', publisher: 'Built In', type: 'Breach Post-Mortem', url: 'https://builtin.com/articles/ai-agent-security-breach' },

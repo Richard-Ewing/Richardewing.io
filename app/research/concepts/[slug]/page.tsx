@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
+import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 interface ConceptPageProps {
   params: Promise<{ slug: string }>;
@@ -47,6 +48,11 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
       targetTitle: target ? target.title : rel.slug,
     };
   });
+
+  // Filter latest research activity matching domain or related concept IDs
+  const domainArticles = RESEARCH_CORPUS.filter(
+    (art) => art.domain === concept.domain || art.relatedConceptIds?.includes(concept.slug)
+  ).slice(0, 3);
 
   // Schema.org DefinedTerm JSON-LD
   const definedTermJsonLd = {
@@ -102,6 +108,21 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
           <span className="text-cyan-900 font-extrabold">{concept.title}</span>
         </div>
 
+        {/* Learning Path Banner */}
+        {concept.learningStep && (
+          <div className="bg-cyan-900 text-white px-6 py-3.5 rounded-2xl flex items-center justify-between gap-4 font-mono text-xs">
+            <div className="flex items-center gap-3">
+              <span className="px-2 py-0.5 rounded bg-cyan-400 text-zinc-950 font-bold">
+                Learning Path
+              </span>
+              <span className="font-bold">{concept.learningStep.pathName}</span>
+            </div>
+            <span className="font-bold text-cyan-200">
+              Step {concept.learningStep.stepNumber} of {concept.learningStep.totalSteps}
+            </span>
+          </div>
+        )}
+
         {/* Concept Header */}
         <div className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
           <div className="flex flex-wrap items-center justify-between gap-4">
@@ -120,7 +141,49 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
           <p className="text-xl text-zinc-900 leading-relaxed font-semibold">
             {concept.definition}
           </p>
+
+          {/* Canonical Signature Quote */}
+          {concept.canonicalQuote && (
+            <blockquote className="border-l-4 border-cyan-800 pl-4 py-2 my-4 bg-cyan-50/50 rounded-r-2xl text-base italic font-serif text-cyan-950 font-semibold">
+              &ldquo;{concept.canonicalQuote}&rdquo;
+            </blockquote>
+          )}
         </div>
+
+        {/* Audience-Specific Recommendations ("Recommended by Richard Ewing") */}
+        {concept.personaRecommendations && concept.personaRecommendations.length > 0 && (
+          <section className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
+            <div className="space-y-1">
+              <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
+                Audience-Specific Executive Guidance
+              </span>
+              <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
+                Recommended Action by Role
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              {concept.personaRecommendations.map((rec, idx) => (
+                <div key={idx} className="bg-zinc-50 border border-zinc-200 rounded-2xl p-5 space-y-3 flex flex-col justify-between">
+                  <div className="space-y-2">
+                    <span className="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold bg-cyan-100 text-cyan-900 border border-cyan-300">
+                      {rec.role}
+                    </span>
+                    <p className="text-xs text-zinc-900 font-medium leading-relaxed">
+                      {rec.takeaway}
+                    </p>
+                  </div>
+                  <Link
+                    href={`/concepts/${rec.recommendedNextSlug}`}
+                    className="text-xs font-mono font-bold text-cyan-900 hover:underline flex items-center gap-1 pt-2 border-t border-zinc-200"
+                  >
+                    Recommended Next Step →
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* AEO Multi-Length Answer Engine Block */}
         {concept.aeo && (
@@ -227,7 +290,45 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
           </section>
         )}
 
-        {/* Concept FAQs Section (AEO Question Answering) */}
+        {/* Latest Research Activity Feed */}
+        {domainArticles.length > 0 && (
+          <section className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
+            <div className="space-y-1">
+              <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
+                Freshness &amp; Research Updates
+              </span>
+              <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
+                Latest Publications &amp; Research Activity
+              </h2>
+            </div>
+
+            <div className="space-y-3 pt-2">
+              {domainArticles.map((art) => (
+                <div key={art.id} className="bg-zinc-50 border border-zinc-200 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2 text-[10px] font-mono font-bold">
+                      <span className="text-cyan-900 uppercase">{art.publisher}</span>
+                      {art.date && <span className="text-zinc-500">• {art.date}</span>}
+                    </div>
+                    <h3 className="text-sm font-bold text-zinc-950">
+                      {art.title}
+                    </h3>
+                  </div>
+                  <a
+                    href={art.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 bg-cyan-900 text-white text-xs font-mono font-bold rounded-xl whitespace-nowrap self-start sm:self-center hover:bg-cyan-800"
+                  >
+                    Read Work ↗
+                  </a>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Concept FAQs Section */}
         {concept.aeo?.faqs && concept.aeo.faqs.length > 0 && (
           <section className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
             <div className="space-y-1">
@@ -291,75 +392,6 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
                   </div>
                 </div>
               ))}
-            </div>
-          </section>
-        )}
-
-        {/* When Should You Use... Guidance */}
-        {concept.aeo?.whenToUse && concept.aeo.whenToUse.length > 0 && (
-          <section className="space-y-4 bg-white border border-zinc-300 rounded-3xl p-6 shadow-sm">
-            <h2 className="text-lg font-bold font-grotesk text-zinc-950">
-              When Should You Implement {concept.title}?
-            </h2>
-            <ul className="space-y-2.5">
-              {concept.aeo.whenToUse.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-sm text-zinc-800 font-medium">
-                  <span className="text-emerald-800 font-bold font-mono">→</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        {/* Real-World Examples & Anti-Patterns */}
-        {concept.aeo?.examples && (
-          <section className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
-            <div className="space-y-1">
-              <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
-                Implementation Scenarios
-              </span>
-              <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
-                Real-World Examples &amp; Anti-Patterns
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5 space-y-2">
-                <span className="text-[10px] font-mono font-bold text-emerald-900 uppercase tracking-wider block">
-                  Enterprise Implementation Example
-                </span>
-                <p className="text-xs text-emerald-950 leading-relaxed font-medium">
-                  {concept.aeo.examples.enterprise}
-                </p>
-              </div>
-
-              <div className="bg-cyan-50 border border-cyan-200 rounded-2xl p-5 space-y-2">
-                <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase tracking-wider block">
-                  Startup / Growth Example
-                </span>
-                <p className="text-xs text-cyan-950 leading-relaxed font-medium">
-                  {concept.aeo.examples.startup}
-                </p>
-              </div>
-
-              <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 space-y-2">
-                <span className="text-[10px] font-mono font-bold text-amber-900 uppercase tracking-wider block">
-                  Anti-Pattern to Avoid
-                </span>
-                <p className="text-xs text-amber-950 leading-relaxed font-medium">
-                  {concept.aeo.examples.antiPattern}
-                </p>
-              </div>
-
-              <div className="bg-red-50 border border-red-200 rounded-2xl p-5 space-y-2">
-                <span className="text-[10px] font-mono font-bold text-red-900 uppercase tracking-wider block">
-                  Common Misconception
-                </span>
-                <p className="text-xs text-red-950 leading-relaxed font-medium">
-                  {concept.aeo.examples.commonMistake}
-                </p>
-              </div>
             </div>
           </section>
         )}
