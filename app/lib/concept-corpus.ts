@@ -89,7 +89,7 @@ export interface PersonaRecommendation {
 }
 
 export interface LearningStepRef {
-  pathName: 'AI Economics Masterclass' | 'Autonomous Agent Governance' | 'Software Engineering Economics';
+  pathName: string;
   stepNumber: number;
   totalSteps: number;
 }
