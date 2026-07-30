@@ -7,6 +7,14 @@ export interface ProvenanceMilestone {
   summary: string;
 }
 
+export interface CanonicalReadingStep {
+  step: number;
+  title: string;
+  publisher: string;
+  type: string;
+  url?: string;
+}
+
 export interface EvidenceLedgerItem {
   id: string;
   title: string;
@@ -19,9 +27,9 @@ export interface EvidenceLedgerItem {
 }
 
 export interface ConceptHealth {
-  confidence: number; // 0.0 to 1.0
+  confidence: number;
   evidenceCount: number;
-  lastVerified: string; // e.g. "July 2026"
+  lastVerified: string;
   status: 'Active' | 'Evolving' | 'Superseded';
   openQuestionsCount: number;
   knownLimitationsCount: number;
@@ -36,6 +44,7 @@ export interface ConceptNode {
   definition: string;
   whyItMatters: string;
   firstIntroduced: string;
+  canonicalReadingOrder: CanonicalReadingStep[];
   provenanceTimeline: ProvenanceMilestone[];
   evidenceLedger: EvidenceLedgerItem[];
   relatedConceptSlugs: Array<{
@@ -62,6 +71,50 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'The compounding margin penalty incurred when variable LLM inference query costs scale faster than subscription revenue, shifting hosting infrastructure into variable Cost of Goods Sold (COGS).',
     whyItMatters: 'Traditional SaaS enjoyed 80%+ gross margins because marginal serving cost was near zero. AI inference breaks this assumption, eroding gross margins by 20-40% unless model-task routing and semantic caching are enforced.',
     firstIntroduced: 'March 2025 (Beehiiv / Built In)',
+    canonicalReadingOrder: [
+      {
+        step: 1,
+        title: 'Generative AI Margin Squeeze & SaaS COGS',
+        publisher: 'Beehiiv Laboratory',
+        type: 'First Research Note',
+        url: 'https://theaieconomist.beehiiv.com/p/generative-ai-margin-squeeze-saas-cogs'
+      },
+      {
+        step: 2,
+        title: 'Why Scaling Software Suddenly Breaks the Bank',
+        publisher: 'Beehiiv Research',
+        type: 'Hypothesis Formulation',
+        url: 'https://theaieconomist.beehiiv.com/p/why-scaling-software-suddenly-breaks-the-bank'
+      },
+      {
+        step: 3,
+        title: 'AI Is a Variable Cost: Act Like It',
+        publisher: 'LinkedIn Newsletters',
+        type: 'Executive Strategy Essay',
+        url: 'https://www.linkedin.com/pulse/ai-variable-cost-act-like-richard-ewing-6qx9c/'
+      },
+      {
+        step: 4,
+        title: 'Most AI Projects Just Burn Cash. Here’s How to Make Them Profitable.',
+        publisher: 'Built In',
+        type: 'Tier-1 Media Specification',
+        url: 'https://builtin.com/articles/make-ai-projects-profitable'
+      },
+      {
+        step: 5,
+        title: 'Your Claude API Bill Is Higher Than Your Revenue',
+        publisher: 'CIO.com',
+        type: 'Executive Case Study',
+        url: 'https://www.cio.com/article/4175244/your-claude-api-bill-is-higher-than-your-revenue-why-simple-python-tasks-are-blowing-up-ai-costs.html'
+      },
+      {
+        step: 6,
+        title: 'AI Volatility Tax Unit Margin Calculator (AUEB Engine)',
+        publisher: 'richardewing.io',
+        type: 'Executable Diagnostic Tool',
+        url: 'https://www.richardewing.io/tools/aueb'
+      }
+    ],
     provenanceTimeline: [
       {
         stage: 'Observation',
@@ -174,6 +227,29 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'The quantitative framework measuring feature-level gross margin contribution, token burn rates, and cloud repatriation breakeven points for AI-native software.',
     whyItMatters: 'Prevents enterprise software teams from mistaking high user activity for financial success when individual query costs destroy unit margins.',
     firstIntroduced: 'January 2025 (CIO.com / Beehiiv)',
+    canonicalReadingOrder: [
+      {
+        step: 1,
+        title: '3 Financial Metrics Every PM Needs on Their Scorecard',
+        publisher: 'Mind the Product',
+        type: 'P&L Scorecard Introduction',
+        url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/'
+      },
+      {
+        step: 2,
+        title: 'AI Unit Economics: Burn Rate and Technical Insolvency',
+        publisher: 'Beehiiv Research',
+        type: 'Research Formulation',
+        url: 'https://theaieconomist.beehiiv.com/p/ai-unit-economics-burn-rate-technical-insolvency'
+      },
+      {
+        step: 3,
+        title: 'The AI Product Business Test: 5 Questions Before You Ship',
+        publisher: 'Built In',
+        type: 'Tier-1 Executive Framework',
+        url: 'https://builtin.com/articles/ai-product-business-test'
+      }
+    ],
     provenanceTimeline: [
       {
         stage: 'Observation',
@@ -258,6 +334,36 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'An execution architecture that enforces binary admissibility gates, state integrity hashing, and cryptographic audit ledgers between probabilistic AI models and production systems.',
     whyItMatters: 'Probabilistic guardrails (confidence scores, LLM-as-a-judge) fail because they use guessing systems to police guessing systems. Deterministic governance enforces rule-based boundaries.',
     firstIntroduced: 'November 2025 (Beehiiv / Built In)',
+    canonicalReadingOrder: [
+      {
+        step: 1,
+        title: 'Why I Built Exogram: AI Agents Need Deterministic Governance',
+        publisher: 'Beehiiv Laboratory',
+        type: 'Problem Identification',
+        url: 'https://theaieconomist.beehiiv.com/p/why-i-built-exogram-ai-agents-need-deterministic-governance'
+      },
+      {
+        step: 2,
+        title: 'Autonomous AI Agent Deterministic Control Plane',
+        publisher: 'Beehiiv Research',
+        type: 'Control Plane Architecture',
+        url: 'https://theaieconomist.beehiiv.com/p/autonomous-ai-agent-deterministic-control-plane'
+      },
+      {
+        step: 3,
+        title: 'Architecting Security Gates for AI Agents',
+        publisher: 'Built In',
+        type: 'Security Gate Specification',
+        url: 'https://builtin.com/articles/ai-agent-security-gates'
+      },
+      {
+        step: 4,
+        title: 'Your AI Agent Needs a Kill Switch',
+        publisher: 'Built In',
+        type: 'Tier-1 Executive Guide',
+        url: 'https://builtin.com/articles/ai-agent-kill-switch'
+      }
+    ],
     provenanceTimeline: [
       {
         stage: 'Observation',
@@ -361,6 +467,29 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'A binary execution control mechanism that halts autonomous AI agent operations within 5ms when safety rules or environmental hash boundaries are breached.',
     whyItMatters: 'Autonomous AI agents possess database credentials and API keys. Without a deterministic kill switch, memory poisoning or prompt injection can execute unauthorized production transactions.',
     firstIntroduced: 'May 2026 (Built In - Editor\'s Pick)',
+    canonicalReadingOrder: [
+      {
+        step: 1,
+        title: 'Inside the First Autonomous AI Agent Security Breach',
+        publisher: 'Built In',
+        type: 'Breach Post-Mortem',
+        url: 'https://builtin.com/articles/ai-agent-security-breach'
+      },
+      {
+        step: 2,
+        title: 'The Architecture of Runtime Governance',
+        publisher: 'Beehiiv Research',
+        type: 'Execution Interception Specs',
+        url: 'https://theaieconomist.beehiiv.com/p/the-architecture-of-runtime-governance'
+      },
+      {
+        step: 3,
+        title: 'Your AI Agent Needs a Kill Switch',
+        publisher: 'Built In',
+        type: 'Canonical Specification',
+        url: 'https://builtin.com/articles/ai-agent-kill-switch'
+      }
+    ],
     provenanceTimeline: [
       {
         stage: 'Observation',
@@ -445,6 +574,29 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'The operational shift in software development where AI generates code volume and software engineers transition from syntax authoring to system verification and error auditing.',
     whyItMatters: 'High code generation velocity creates a review bottleneck if senior engineering verification capacity does not scale proportionally.',
     firstIntroduced: 'May 2026 (Built In - Editor\'s Pick)',
+    canonicalReadingOrder: [
+      {
+        step: 1,
+        title: 'GitHub Copilot Is Generating More Code Than Your Team Can Review',
+        publisher: 'CIO.com',
+        type: 'Review Bottleneck Analysis',
+        url: 'https://www.cio.com/article/4183045/github-copilot-is-generating-more-code-than-your-team-can-review-why-senior-engineers-are-now-the-bottleneck.html'
+      },
+      {
+        step: 2,
+        title: 'The Subprime Code Crisis',
+        publisher: 'Beehiiv Research',
+        type: '4 Laws of Probabilistic Development',
+        url: 'https://theaieconomist.beehiiv.com/p/the-subprime-code-crisis'
+      },
+      {
+        step: 3,
+        title: 'In the Vibe Coding Era, What Does a Software Engineer Even Do?',
+        publisher: 'Built In',
+        type: 'Tier-1 Specification (Editor\'s Pick)',
+        url: 'https://builtin.com/articles/vibe-coding-era-software-engineering-role'
+      }
+    ],
     provenanceTimeline: [
       {
         stage: 'Observation',
@@ -529,6 +681,29 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'The systemic accumulation of unverified, AI-generated code in enterprise repositories, creating hidden technical debt analogous to 2008 mortgage derivatives.',
     whyItMatters: 'Unverified code velocity inflates short-term output metrics while creating catastrophic long-term maintenance OpEx and security liabilities.',
     firstIntroduced: 'February 2026 (Beehiiv / LinkedIn)',
+    canonicalReadingOrder: [
+      {
+        step: 1,
+        title: 'Why Your CFO Hates Your Agile Transformation',
+        publisher: 'CIO.com',
+        type: 'Velocity vs Capitalization Analysis',
+        url: 'https://www.cio.com/article/4143737/why-your-cfo-hates-your-agile-transformation.html'
+      },
+      {
+        step: 2,
+        title: 'The Subprime Code Crisis',
+        publisher: 'Beehiiv Research',
+        type: 'Financial Derivative Analogy',
+        url: 'https://theaieconomist.beehiiv.com/p/the-subprime-code-crisis'
+      },
+      {
+        step: 3,
+        title: 'The R&D Ponzi Scheme: The $891,000 Lie on Your Dashboard',
+        publisher: 'LinkedIn Newsletters',
+        type: 'Dashboard Audit Strategy',
+        url: 'https://www.linkedin.com/pulse/rd-ponzi-scheme-891000-lie-your-engineering-dashboard-richard-ewing-bkwdc/'
+      }
+    ],
     provenanceTimeline: [
       {
         stage: 'Observation',
@@ -613,6 +788,36 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'A product management discipline focused on unit economics, R&D capital allocation, margin contribution, and technical debt valuation over vanity feature output.',
     whyItMatters: 'Bridges the gap between engineering story points and CFO-level balance sheet valuation.',
     firstIntroduced: 'October 2024 (Mind the Product / Beehiiv)',
+    canonicalReadingOrder: [
+      {
+        step: 1,
+        title: '3 Financial Metrics Every PM Needs on Their Scorecard',
+        publisher: 'Mind the Product',
+        type: 'Financial Scorecard Framework',
+        url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/'
+      },
+      {
+        step: 2,
+        title: 'From Clarity to Compass: Why I Walked Away and What You’ll Get Here',
+        publisher: 'Beehiiv Laboratory',
+        type: 'Foundational Manifesto',
+        url: 'https://theaieconomist.beehiiv.com/p/from-clarity-to-compass-why-i-walked-away-and-what-you-ll-get-here'
+      },
+      {
+        step: 3,
+        title: 'The Product Economist: A Structural Shift',
+        publisher: 'LinkedIn Newsletters',
+        type: 'Strategic Discipline Specification',
+        url: 'https://www.linkedin.com/pulse/product-economist-structural-shift-richard-ewing-jrlhc/'
+      },
+      {
+        step: 4,
+        title: 'Hey, Senior PMs: Shipping Faster Won’t Get You Promoted',
+        publisher: 'CIO.com',
+        type: 'Tier-1 Executive Strategy Guide',
+        url: 'https://www.cio.com/article/4128139/hey-senior-pms-shipping-faster-wont-get-you-promoted.html'
+      }
+    ],
     provenanceTimeline: [
       {
         stage: 'Observation',
@@ -715,6 +920,29 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'The financial penalty paid when routine maintenance and technical debt remediation are misclassified as strategic R&D investment under ASC 350-40 accounting rules.',
     whyItMatters: 'Misclassifying maintenance OpEx overstates enterprise innovation spend by 30-40%, misleading boards and creating tax compliance liabilities.',
     firstIntroduced: 'December 2024 (CIO.com)',
+    canonicalReadingOrder: [
+      {
+        step: 1,
+        title: 'Why Your CFO Hates Your Agile Transformation',
+        publisher: 'CIO.com',
+        type: 'ASC 350-40 Rule Analysis',
+        url: 'https://www.cio.com/article/4143737/why-your-cfo-hates-your-agile-transformation.html'
+      },
+      {
+        step: 2,
+        title: 'The Innovation Tax Audit: Is Your R&D Actually Just OpEx?',
+        publisher: 'CIO.com',
+        type: 'Tier-1 Canonical Audit Framework',
+        url: 'https://www.cio.com/article/4158459/the-innovation-tax-audit-is-your-rd-actually-just-opex.html'
+      },
+      {
+        step: 3,
+        title: 'Innovation Tax Audit: Why R&D Requires Deleting Code',
+        publisher: 'LinkedIn Newsletters',
+        type: 'Executive Strategy Essay',
+        url: 'https://www.linkedin.com/pulse/innovation-tax-audit-why-rd-requires-deleting-code-protect-ewing-jv2mc/'
+      }
+    ],
     provenanceTimeline: [
       {
         stage: 'Observation',

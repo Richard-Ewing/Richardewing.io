@@ -99,7 +99,7 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
           </p>
         </div>
 
-        {/* Concept Health & Research Metadata Dashboard */}
+        {/* Concept Health & Verification Metrics */}
         <section className="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 space-y-4">
           <h2 className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">
             Concept Health & Verification Metrics
@@ -135,6 +135,66 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
             </div>
           </div>
         </section>
+
+        {/* Canonical Reading Order Section */}
+        {concept.canonicalReadingOrder && concept.canonicalReadingOrder.length > 0 && (
+          <section className="space-y-6 bg-zinc-900/90 border border-cyan-900/40 rounded-3xl p-8 shadow-xl">
+            <div className="space-y-1">
+              <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">
+                Authoritative Curriculum
+              </span>
+              <h2 className="text-2xl font-bold font-grotesk text-white">Canonical Reading Path</h2>
+              <p className="text-sm text-zinc-400">
+                The recommended sequence to master this concept—from initial research notes to formal enterprise frameworks.
+              </p>
+            </div>
+
+            <div className="space-y-3 pt-2">
+              {concept.canonicalReadingOrder.map((step) => (
+                <div
+                  key={step.step}
+                  className="bg-zinc-950/80 border border-zinc-800/80 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-cyan-500/40 transition group"
+                >
+                  <div className="flex items-start gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-xl bg-cyan-950 text-cyan-400 font-mono font-bold text-sm flex items-center justify-center border border-cyan-800/50">
+                      #{step.step}
+                    </span>
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] font-mono text-zinc-400 uppercase">
+                          {step.publisher}
+                        </span>
+                        <span className="text-[10px] font-mono text-cyan-400 font-semibold">
+                          [{step.type}]
+                        </span>
+                      </div>
+                      <h3 className="text-sm font-bold text-white group-hover:text-cyan-300 transition">
+                        {step.url ? (
+                          <a href={step.url} target="_blank" rel="noopener noreferrer">
+                            {step.title}
+                          </a>
+                        ) : (
+                          step.title
+                        )}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {step.url && (
+                    <a
+                      href={step.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3.5 py-1.5 bg-zinc-900 hover:bg-cyan-950 text-cyan-400 hover:text-cyan-300 font-mono font-bold text-xs rounded-xl whitespace-nowrap self-start sm:self-center transition border border-zinc-800"
+                    >
+                      Read Step #{step.step} ↗
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Operational Significance */}
         <section className="space-y-4 bg-zinc-900/40 border border-zinc-800 rounded-2xl p-6">
