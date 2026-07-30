@@ -40,14 +40,14 @@ export default function AICapitalBenchmark() {
                         <span className="text-cyan-500">Engineering Index</span>
                     </h1>
                     <p className="text-xl text-zinc-900 max-w-3xl leading-relaxed">
-                        An irrefutable empirical analysis of LLM operating costs, architectural latency, workforce displacement mathematics, and the true threshold where renting AI APIs becomes a hostile M&A liability. 
+                        Structured as a reference benchmark for enterprise AI economics, analyzing LLM operating costs, architectural latency, workforce displacement mathematics, and the CapEx/OpEx threshold of generative AI infrastructure.
                     </p>
-                    <div className="flex gap-4 items-center">
+                    <div className="flex flex-wrap gap-4 items-center">
                         <p className="text-sm font-semibold font-mono text-cyan-900 font-bold border border-cyan-500/20 px-3 py-1 bg-cyan-50/30 rounded-md">
-                            Computed: Q2 2026
+                            Computed: Q2 2026 Baseline
                         </p>
                         <p className="text-sm font-semibold font-mono text-zinc-950 border border-zinc-400 px-3 py-1 rounded-md">
-                            Sample Size: 512 Enterprise Repositories
+                            Scope: Diagnostic Telemetry & Open Data
                         </p>
                     </div>
                 </div>
@@ -230,6 +230,53 @@ export default function AICapitalBenchmark() {
                     </div>
                 </div>
 
+
+                {/* Formal Methodology & Limitations Section */}
+                <div className="mt-24 bg-zinc-50 border border-zinc-300 rounded-3xl p-8 space-y-6">
+                    <div className="space-y-2">
+                        <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest block">
+                            Benchmark Specification &amp; Governance
+                        </span>
+                        <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
+                            Methodology, Scope &amp; Limitations
+                        </h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-zinc-900">
+                        <div className="space-y-3">
+                            <h3 className="font-bold text-zinc-950 flex items-center gap-2">
+                                <Activity size={16} className="text-cyan-900" /> 1. Data Collection &amp; Scope
+                            </h3>
+                            <p className="leading-relaxed">
+                                Benchmarks are computed using aggregated, anonymized telemetry derived from user-submitted diagnostic tools (including the AI Unit Economics Benchmark, Product Debt Index, and APER calculator) alongside open engineering dataset sampling.
+                            </p>
+                        </div>
+                        <div className="space-y-3">
+                            <h3 className="font-bold text-zinc-950 flex items-center gap-2">
+                                <Scale size={16} className="text-cyan-900" /> 2. Versioning &amp; Cadence
+                            </h3>
+                            <p className="leading-relaxed">
+                                Index metrics are re-calculated quarterly. Version 1.0 (Q2 2026 Baseline) reflects early enterprise adoption patterns and is updated continuously as new diagnostic audit logs are processed.
+                            </p>
+                        </div>
+                        <div className="space-y-3">
+                            <h3 className="font-bold text-zinc-950 flex items-center gap-2">
+                                <ShieldCheck size={16} className="text-cyan-900" /> 3. Inclusion Criteria
+                            </h3>
+                            <p className="leading-relaxed">
+                                Data entries are filtered to include software engineering organizations spending &gt;$2,500/month on cloud infrastructure or foundation model APIs, ensuring metrics reflect production enterprise conditions.
+                            </p>
+                        </div>
+                        <div className="space-y-3">
+                            <h3 className="font-bold text-zinc-950 flex items-center gap-2">
+                                <ShieldAlert size={16} className="text-cyan-900" /> 4. Known Limitations
+                            </h3>
+                            <p className="leading-relaxed">
+                                Model pricing, API latency, and vector database benchmarks fluctuate rapidly based on cloud provider updates. Figures represent baseline diagnostic models and should be evaluated alongside bespoke organizational audits.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
                 {/* Final Conversion Spoke */}
                 <div className="mt-24 pt-16 border-t border-zinc-400 text-center">
