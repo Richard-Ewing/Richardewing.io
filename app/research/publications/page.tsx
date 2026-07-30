@@ -3,73 +3,61 @@ import Link from 'next/link';
 import ResearchCorpusExplorer from '@/app/components/ResearchCorpusExplorer';
 
 export const metadata: Metadata = {
-  title: 'Research & Publications Catalog | Richard Ewing',
-  description: 'Master index of 100+ research publications across Tier-1 media (CIO.com, Built In, Mind the Product, HackerNoon), Beehiiv research laboratory, and LinkedIn newsletters.',
+  title: 'Research Publications Catalog (100+ Published Works) | Richard Ewing',
+  description: 'Complete research catalog of 100+ published articles, essays, and notes across CIO.com, Built In, Beehiiv, LinkedIn, Mind the Product, and HackerNoon by Richard Ewing.',
   alternates: {
     canonical: 'https://www.richardewing.io/research/publications',
   },
-  openGraph: {
-    title: 'Research & Publications Catalog | Richard Ewing',
-    description: 'Master index of 100+ research publications organized by Knowledge Domain, publisher, and executable framework.',
-    url: 'https://www.richardewing.io/research/publications',
-    type: 'website',
-  },
 };
 
-export default function ResearchPublicationsPage() {
+export default function PublicationsPage() {
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto space-y-12">
-        {/* Header Breadcrumbs & Intro */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-2 text-xs font-mono text-cyan-400">
-            <Link href="/" className="hover:underline">Home</Link>
-            <span>/</span>
-            <Link href="/research" className="hover:underline">Research</Link>
-            <span>/</span>
-            <span className="text-zinc-400">Publications</span>
+    <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24 text-zinc-950">
+      <div className="page-container max-w-6xl mx-auto space-y-12 px-4 sm:px-6 lg:px-8">
+        {/* Navigation Breadcrumb */}
+        <div className="flex items-center gap-2 text-xs font-mono font-bold text-zinc-950 uppercase tracking-widest">
+          <Link href="/" className="hover:underline">Home</Link>
+          <span>/</span>
+          <Link href="/research" className="hover:underline">Research</Link>
+          <span>/</span>
+          <span className="text-cyan-900 font-extrabold">Publications Catalog</span>
+        </div>
+
+        {/* Header Section */}
+        <div className="space-y-4 border-b border-zinc-400 pb-8">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold bg-cyan-100 text-cyan-900 border border-cyan-300">
+            Research Corpus • 100+ Published Works
           </div>
 
-          <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight font-grotesk">
-            Research & Publications Catalog
+          <h1 className="text-4xl sm:text-6xl font-black text-zinc-950 tracking-tight font-grotesk">
+            Research Publications Catalog
           </h1>
 
-          <p className="text-lg text-zinc-400 max-w-3xl leading-relaxed">
-            A comprehensive corpus of over 100+ published works across Tier-1 media (CIO.com, Built In, Mind the Product, HackerNoon), the Beehiiv research laboratory, and LinkedIn newsletters—organized into 6 core Knowledge Domains.
+          <p className="text-xl text-zinc-900 leading-relaxed font-semibold max-w-3xl">
+            A comprehensive catalog of over 100 published works across CIO.com, Built In, Beehiiv, LinkedIn Newsletters, Mind the Product, and HackerNoon. Explore by knowledge domain, publisher, or research type.
           </p>
 
-          {/* Nav Pills for Research Hub */}
           <div className="flex flex-wrap gap-3 pt-2">
             <Link
-              href="/research"
-              className="px-3.5 py-1.5 rounded-lg text-xs font-mono font-semibold bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-700 transition"
+              href="/concepts"
+              className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-cyan-900 text-white hover:bg-cyan-800 transition shadow-sm"
             >
-              ← Research Timeline
+              Canonical Concepts Directory →
             </Link>
-            <Link
-              href="/research/publications"
-              className="px-3.5 py-1.5 rounded-lg text-xs font-mono font-semibold bg-cyan-500/10 border border-cyan-500/50 text-cyan-300"
+            <a
+              href="/api/csp/v1/export"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-emerald-900 text-white hover:bg-emerald-800 transition shadow-sm"
             >
-              Publications Catalog
-            </Link>
-            <Link
-              href="/glossary"
-              className="px-3.5 py-1.5 rounded-lg text-xs font-mono font-semibold bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-700 transition"
-            >
-              Canonical Glossary
-            </Link>
-            <Link
-              href="/tools"
-              className="px-3.5 py-1.5 rounded-lg text-xs font-mono font-semibold bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-700 transition"
-            >
-              Diagnostic Tools
-            </Link>
+              CSP Machine API ↗
+            </a>
           </div>
         </div>
 
-        {/* Interactive Explorer Component */}
+        {/* Interactive Filterable Corpus Explorer Component */}
         <ResearchCorpusExplorer />
       </div>
-    </div>
+    </main>
   );
 }

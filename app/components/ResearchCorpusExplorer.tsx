@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { RESEARCH_CORPUS, RESEARCH_DOMAINS, CorpusArticle } from '@/app/lib/research-corpus';
+import { RESEARCH_CORPUS, RESEARCH_DOMAINS } from '@/app/lib/research-corpus';
 
 export default function ResearchCorpusExplorer() {
   const [selectedDomain, setSelectedDomain] = useState<string>('All');
@@ -32,12 +32,14 @@ export default function ResearchCorpusExplorer() {
 
   return (
     <div className="w-full space-y-8">
-      {/* Search & Filters Controls */}
-      <div className="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-6 shadow-xl space-y-6">
+      {/* Search & Filters Controls Container */}
+      <div className="bg-white border border-zinc-300 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <h2 className="text-xl font-bold text-white tracking-tight">Research Corpus Explorer</h2>
-            <p className="text-sm text-zinc-400">
+            <h2 className="text-xl font-bold font-grotesk text-zinc-950 tracking-tight">
+              Research Corpus Explorer
+            </h2>
+            <p className="text-sm text-zinc-600 font-medium">
               Filtering {filteredArticles.length} of {RESEARCH_CORPUS.length} published works across 6 Knowledge Domains
             </p>
           </div>
@@ -48,12 +50,12 @@ export default function ResearchCorpusExplorer() {
               placeholder="Search by topic, thesis, or keyword..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-4 py-2.5 bg-zinc-950 border border-zinc-800 rounded-xl text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-500 transition"
+              className="w-full px-4 py-2.5 bg-zinc-50 border border-zinc-300 rounded-xl text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-cyan-600 transition"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-2.5 text-zinc-500 hover:text-white text-xs"
+                className="absolute right-3 top-2.5 text-zinc-400 hover:text-zinc-700 text-xs font-mono font-bold"
               >
                 Clear
               </button>
@@ -63,16 +65,16 @@ export default function ResearchCorpusExplorer() {
 
         {/* Knowledge Domains Filter */}
         <div className="space-y-2">
-          <label className="text-xs font-mono font-semibold text-cyan-400 uppercase tracking-wider">
+          <label className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
             Knowledge Domain
           </label>
           <div className="flex flex-wrap gap-2">
             <button
               onClick={() => setSelectedDomain('All')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition ${
                 selectedDomain === 'All'
-                  ? 'bg-cyan-500 text-zinc-950 font-bold'
-                  : 'bg-zinc-800 text-zinc-300 hover:bg-zinc-700'
+                  ? 'bg-cyan-900 text-white font-bold shadow-sm'
+                  : 'bg-zinc-100 text-zinc-700 hover:bg-zinc-200 border border-zinc-200'
               }`}
             >
               All Domains ({RESEARCH_CORPUS.length})
@@ -83,10 +85,10 @@ export default function ResearchCorpusExplorer() {
                 <button
                   key={domain}
                   onClick={() => setSelectedDomain(domain)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
+                  className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition ${
                     selectedDomain === domain
-                      ? 'bg-cyan-500 text-zinc-950 font-bold'
-                      : 'bg-zinc-800 text-zinc-300 hover:bg-zinc-700'
+                      ? 'bg-cyan-900 text-white font-bold shadow-sm'
+                      : 'bg-zinc-100 text-zinc-700 hover:bg-zinc-200 border border-zinc-200'
                   }`}
                 >
                   {domain} ({count})
@@ -97,20 +99,21 @@ export default function ResearchCorpusExplorer() {
         </div>
 
         {/* Secondary Filters: Publisher & Knowledge Type */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2 border-t border-zinc-800/80">
-          <div className="space-y-2">
-            <label className="text-xs font-mono font-semibold text-zinc-400 uppercase tracking-wider">
-              Publisher / Source
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-zinc-200">
+          {/* Publisher */}
+          <div className="space-y-1.5">
+            <label className="text-xs font-mono font-bold text-zinc-600 uppercase tracking-wider">
+              Publisher
             </label>
             <div className="flex flex-wrap gap-1.5">
               {publishers.map((pub) => (
                 <button
                   key={pub}
                   onClick={() => setSelectedPublisher(pub)}
-                  className={`px-2.5 py-1 rounded-md text-xs transition ${
+                  className={`px-2.5 py-1 rounded-lg text-xs font-medium transition ${
                     selectedPublisher === pub
-                      ? 'bg-zinc-200 text-zinc-950 font-bold'
-                      : 'bg-zinc-950 text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'
+                      ? 'bg-zinc-900 text-white font-bold'
+                      : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
                   }`}
                 >
                   {pub}
@@ -119,22 +122,23 @@ export default function ResearchCorpusExplorer() {
             </div>
           </div>
 
-          <div className="space-y-2">
-            <label className="text-xs font-mono font-semibold text-zinc-400 uppercase tracking-wider">
+          {/* Knowledge Type */}
+          <div className="space-y-1.5">
+            <label className="text-xs font-mono font-bold text-zinc-600 uppercase tracking-wider">
               Knowledge Type
             </label>
             <div className="flex flex-wrap gap-1.5">
-              {types.map((type) => (
+              {types.map((t) => (
                 <button
-                  key={type}
-                  onClick={() => setSelectedType(type)}
-                  className={`px-2.5 py-1 rounded-md text-xs transition ${
-                    selectedType === type
-                      ? 'bg-zinc-200 text-zinc-950 font-bold'
-                      : 'bg-zinc-950 text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'
+                  key={t}
+                  onClick={() => setSelectedType(t)}
+                  className={`px-2.5 py-1 rounded-lg text-xs font-medium transition ${
+                    selectedType === t
+                      ? 'bg-emerald-900 text-white font-bold'
+                      : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200'
                   }`}
                 >
-                  {type}
+                  {t}
                 </button>
               ))}
             </div>
@@ -142,83 +146,76 @@ export default function ResearchCorpusExplorer() {
         </div>
       </div>
 
-      {/* Article Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {filteredArticles.length === 0 ? (
-          <div className="col-span-full p-12 text-center bg-zinc-900/50 border border-zinc-800 rounded-2xl">
-            <p className="text-zinc-400 text-sm">No research entries match your selected filter criteria.</p>
-            <button
-              onClick={() => {
-                setSelectedDomain('All');
-                setSelectedPublisher('All');
-                setSelectedType('All');
-                setSearchQuery('');
-              }}
-              className="mt-4 px-4 py-2 bg-cyan-500 text-zinc-950 rounded-lg text-xs font-bold hover:bg-cyan-400 transition"
-            >
-              Reset Filters
-            </button>
-          </div>
-        ) : (
-          filteredArticles.map((article) => (
-            <div
-              key={article.id}
-              className="bg-zinc-900/60 border border-zinc-800 hover:border-cyan-500/50 rounded-2xl p-6 transition-all duration-200 flex flex-col justify-between space-y-4 group"
-            >
-              <div className="space-y-3">
-                {/* Badges Bar */}
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-cyan-950 text-cyan-400 border border-cyan-800/50">
-                    {article.domain}
-                  </span>
-                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-zinc-800 text-zinc-300">
-                    {article.publisher}
-                  </span>
-                  <span
-                    className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold ${
-                      article.type === 'Executable'
-                        ? 'bg-amber-950 text-amber-400 border border-amber-800/40'
-                        : article.type === 'Evergreen'
-                        ? 'bg-emerald-950 text-emerald-400 border border-emerald-800/40'
-                        : 'bg-zinc-800 text-zinc-400'
-                    }`}
-                  >
-                    {article.type}
-                  </span>
-                  {article.editorsPick && (
-                    <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-purple-950 text-purple-300 border border-purple-800/50">
-                      ★ Editor&apos;s Pick
+      {/* Results Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {filteredArticles.map((art) => (
+          <div
+            key={art.id}
+            className="bg-white border border-zinc-300 hover:border-cyan-600 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-4 group"
+          >
+            <div className="space-y-3">
+              {/* Header Badges */}
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-100 text-cyan-900 border border-cyan-200">
+                  {art.domain}
+                </span>
+                <div className="flex items-center gap-2">
+                  {art.editorPick && (
+                    <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-100 text-amber-900 border border-amber-300">
+                      Editor's Pick
                     </span>
                   )}
+                  <span className="text-xs font-mono font-bold text-zinc-500">
+                    {art.publisher}
+                  </span>
                 </div>
-
-                {/* Title */}
-                <h3 className="text-base font-bold text-white group-hover:text-cyan-400 transition-colors leading-snug">
-                  <a href={article.url} target="_blank" rel="noopener noreferrer">
-                    {article.title}
-                  </a>
-                </h3>
-
-                {/* Executive Thesis */}
-                <p className="text-sm text-zinc-400 leading-relaxed">{article.thesis}</p>
               </div>
 
-              {/* Link Footer */}
-              <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-between">
-                <span className="text-xs text-zinc-500 font-mono">Source: {article.publisher}</span>
-                <a
-                  href={article.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs font-bold text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
-                >
-                  Read Publication ↗
+              {/* Title */}
+              <h3 className="text-lg font-bold font-grotesk text-zinc-950 group-hover:text-cyan-800 transition-colors leading-snug">
+                <a href={art.url} target="_blank" rel="noopener noreferrer">
+                  {art.title} ↗
                 </a>
-              </div>
+              </h3>
+
+              {/* Thesis */}
+              <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed font-medium">
+                {art.thesis}
+              </p>
             </div>
-          ))
-        )}
+
+            {/* Footer Metadata */}
+            <div className="pt-4 border-t border-zinc-100 flex items-center justify-between text-xs font-mono text-zinc-500">
+              <span>Published: {art.publishDate}</span>
+              <a
+                href={art.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-cyan-800 hover:text-cyan-900 hover:underline"
+              >
+                Read Article ↗
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
+
+      {filteredArticles.length === 0 && (
+        <div className="text-center py-16 bg-white border border-zinc-300 rounded-3xl">
+          <p className="text-base text-zinc-600 font-semibold">No publications match your selected filter criteria.</p>
+          <button
+            onClick={() => {
+              setSelectedDomain('All');
+              setSelectedPublisher('All');
+              setSelectedType('All');
+              setSearchQuery('');
+            }}
+            className="mt-4 px-4 py-2 bg-cyan-900 text-white font-mono font-bold text-xs rounded-xl hover:bg-cyan-800 transition"
+          >
+            Reset Filters
+          </button>
+        </div>
+      )}
     </div>
   );
 }
