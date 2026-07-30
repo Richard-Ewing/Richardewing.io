@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: ConceptPageProps): Promise<Me
   const description = concept.aeo?.shortDefinition || concept.definition;
 
   return {
-    title: `${concept.title} — Answer & Concept Specification | Richard Ewing`,
+    title: `${concept.title} — Canonical Concept Specification | Richard Ewing`,
     description,
     alternates: {
       canonical: `https://www.richardewing.io/concepts/${slug}`,
@@ -49,7 +49,6 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
     };
   });
 
-  // Filter latest research activity matching domain or related concept IDs
   const domainArticles = RESEARCH_CORPUS.filter(
     (art) => art.domain === concept.domain || art.relatedConceptIds?.includes(concept.slug)
   ).slice(0, 3);
@@ -69,7 +68,7 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
     },
   };
 
-  // Schema.org FAQPage JSON-LD (AEO Acceleration)
+  // Schema.org FAQPage JSON-LD
   const faqJsonLd = concept.aeo?.faqs && concept.aeo.faqs.length > 0 ? {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -110,7 +109,7 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
 
         {/* Learning Path Banner */}
         {concept.learningStep && (
-          <div className="bg-cyan-900 text-white px-6 py-3.5 rounded-2xl flex items-center justify-between gap-4 font-mono text-xs">
+          <div className="bg-cyan-900 text-white px-6 py-3.5 rounded-2xl flex items-center justify-between gap-4 font-mono text-xs shadow-sm">
             <div className="flex items-center gap-3">
               <span className="px-2 py-0.5 rounded bg-cyan-400 text-zinc-950 font-bold">
                 Learning Path
@@ -150,6 +149,141 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
           )}
         </div>
 
+        {/* Position Statement / Thesis Stance */}
+        {concept.positionStatement && (
+          <section className="bg-gradient-to-r from-zinc-900 via-cyan-950 to-zinc-900 text-white border border-cyan-800 rounded-3xl p-8 space-y-4 shadow-sm">
+            <div className="flex items-center gap-2 font-mono text-xs font-bold text-cyan-300 uppercase tracking-widest">
+              <span>★ Authoritative Position Statement</span>
+            </div>
+            <h2 className="text-2xl font-bold font-grotesk text-white">
+              Richard Ewing’s Research Stance
+            </h2>
+            <p className="text-base text-zinc-200 leading-relaxed font-medium">
+              {concept.positionStatement}
+            </p>
+          </section>
+        )}
+
+        {/* Impact Metrics Summary */}
+        {concept.impactMetrics && (
+          <section className="bg-white border border-zinc-300 rounded-3xl p-6 shadow-sm space-y-3">
+            <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider block">
+              Concept Impact &amp; Corpus Scale
+            </span>
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-1 font-mono text-center">
+              <div className="bg-zinc-50 border border-zinc-200 p-3 rounded-2xl">
+                <div className="text-xs text-zinc-600 font-bold">Publications</div>
+                <div className="text-xl font-black text-cyan-900 mt-1">{concept.impactMetrics.totalPublications}</div>
+              </div>
+              <div className="bg-zinc-50 border border-zinc-200 p-3 rounded-2xl">
+                <div className="text-xs text-zinc-600 font-bold">Newsletters</div>
+                <div className="text-xl font-black text-emerald-900 mt-1">{concept.impactMetrics.totalNewsletters}</div>
+              </div>
+              <div className="bg-zinc-50 border border-zinc-200 p-3 rounded-2xl">
+                <div className="text-xs text-zinc-600 font-bold">Frameworks</div>
+                <div className="text-xl font-black text-indigo-900 mt-1">{concept.impactMetrics.totalFrameworks}</div>
+              </div>
+              <div className="bg-zinc-50 border border-zinc-200 p-3 rounded-2xl">
+                <div className="text-xs text-zinc-600 font-bold">Calculators</div>
+                <div className="text-xl font-black text-amber-900 mt-1">{concept.impactMetrics.totalCalculators}</div>
+              </div>
+              <div className="bg-zinc-50 border border-zinc-200 p-3 rounded-2xl col-span-2 sm:col-span-1">
+                <div className="text-xs text-zinc-600 font-bold">Est. Depth</div>
+                <div className="text-sm font-bold text-zinc-950 mt-2">{concept.impactMetrics.estimatedReadingTime}</div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Claims & Evidence Graph Section */}
+        {concept.claims && concept.claims.length > 0 && (
+          <section className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
+            <div className="space-y-1">
+              <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
+                Empirical Research Claims
+              </span>
+              <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
+                Core Hypotheses &amp; Testable Claims
+              </h2>
+            </div>
+
+            <div className="space-y-4 pt-2">
+              {concept.claims.map((claim, idx) => (
+                <div key={idx} className="bg-zinc-50 border border-zinc-200 rounded-2xl p-6 space-y-4">
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="text-base font-bold text-zinc-950 font-grotesk">
+                      Claim #{idx + 1}: &ldquo;{claim.statement}&rdquo;
+                    </h3>
+                    <span className="flex-shrink-0 px-2.5 py-1 rounded text-xs font-mono font-bold bg-cyan-100 text-cyan-900 border border-cyan-300">
+                      {(claim.confidence * 100).toFixed(0)}% Confidence
+                    </span>
+                  </div>
+
+                  <div className="bg-white border border-zinc-200 p-4 rounded-xl text-xs text-zinc-800 space-y-1">
+                    <strong className="font-bold font-mono text-cyan-950 block uppercase">Supporting Telemetry / Evidence:</strong>
+                    <p className="font-medium leading-relaxed">{claim.supportingData}</p>
+                  </div>
+
+                  {claim.counterarguments && claim.counterarguments.length > 0 && (
+                    <div className="space-y-1 text-xs text-zinc-700">
+                      <strong className="font-bold font-mono text-zinc-900 uppercase block">Addressed Counterarguments:</strong>
+                      <ul className="list-disc pl-4 space-y-1 font-medium">
+                        {claim.counterarguments.map((ca, cIdx) => (
+                          <li key={cIdx}>{ca}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Ecosystem Consensus Coverage Score Dashboard */}
+        {concept.consensusCoverage && (
+          <section className="bg-white border border-zinc-300 rounded-3xl p-6 shadow-sm space-y-4">
+            <div className="space-y-1">
+              <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
+                Ecosystem Propagation &amp; Consensus Tracker
+              </span>
+              <h2 className="text-xl font-bold font-grotesk text-zinc-950">
+                Cross-Platform Canonical Consensus Index
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-3 sm:grid-cols-9 gap-2 pt-2 font-mono text-[11px] text-center font-bold">
+              <div className={`p-2.5 rounded-xl border ${concept.consensusCoverage.website ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
+                Website {concept.consensusCoverage.website ? '✓' : '—'}
+              </div>
+              <div className={`p-2.5 rounded-xl border ${concept.consensusCoverage.linkedIn ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
+                LinkedIn {concept.consensusCoverage.linkedIn ? '✓' : '—'}
+              </div>
+              <div className={`p-2.5 rounded-xl border ${concept.consensusCoverage.beehiiv ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
+                Beehiiv {concept.consensusCoverage.beehiiv ? '✓' : '—'}
+              </div>
+              <div className={`p-2.5 rounded-xl border ${concept.consensusCoverage.builtIn ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
+                Built In {concept.consensusCoverage.builtIn ? '✓' : '—'}
+              </div>
+              <div className={`p-2.5 rounded-xl border ${concept.consensusCoverage.cio ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
+                CIO {concept.consensusCoverage.cio ? '✓' : '—'}
+              </div>
+              <div className={`p-2.5 rounded-xl border ${concept.consensusCoverage.book ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
+                Book {concept.consensusCoverage.book ? '✓' : '—'}
+              </div>
+              <div className={`p-2.5 rounded-xl border ${concept.consensusCoverage.gitHub ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
+                GitHub {concept.consensusCoverage.gitHub ? '✓' : '—'}
+              </div>
+              <div className={`p-2.5 rounded-xl border ${concept.consensusCoverage.youtube ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
+                YouTube {concept.consensusCoverage.youtube ? '✓' : '—'}
+              </div>
+              <div className={`p-2.5 rounded-xl border ${concept.consensusCoverage.talks ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
+                Keynote {concept.consensusCoverage.talks ? '✓' : '—'}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Audience-Specific Recommendations ("Recommended by Richard Ewing") */}
         {concept.personaRecommendations && concept.personaRecommendations.length > 0 && (
           <section className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
@@ -185,6 +319,78 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
           </section>
         )}
 
+        {/* Relational Graph (Prerequisites, Applications & Contrasting Concepts) */}
+        {concept.graphRelations && (
+          <section className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
+            <div className="space-y-1">
+              <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
+                Extended Knowledge Graph
+              </span>
+              <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
+                Prerequisites, Applications &amp; Contrasts
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+              {/* Prerequisites */}
+              {concept.graphRelations.prerequisites.length > 0 && (
+                <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-5 space-y-2">
+                  <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase tracking-wider block">
+                    Prerequisite Knowledge Nodes
+                  </span>
+                  <div className="space-y-1.5 pt-1">
+                    {concept.graphRelations.prerequisites.map((pre) => (
+                      <Link
+                        key={pre.slug}
+                        href={`/concepts/${pre.slug}`}
+                        className="block text-xs font-bold text-zinc-950 hover:text-cyan-800 hover:underline"
+                      >
+                        ← {pre.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Industry Applications */}
+              {concept.graphRelations.applications.length > 0 && (
+                <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-5 space-y-2">
+                  <span className="text-[10px] font-mono font-bold text-emerald-900 uppercase tracking-wider block">
+                    Target Enterprise Applications
+                  </span>
+                  <ul className="space-y-1 text-xs text-zinc-800 font-medium">
+                    {concept.graphRelations.applications.map((app, aIdx) => (
+                      <li key={aIdx} className="flex items-start gap-2">
+                        <span className="text-emerald-800 font-bold">•</span>
+                        <span>{app}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Contrasting Concepts */}
+              {concept.graphRelations.contrastingConcepts.length > 0 && (
+                <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-5 space-y-2 sm:col-span-2">
+                  <span className="text-[10px] font-mono font-bold text-amber-900 uppercase tracking-wider block">
+                    Contrasting &amp; Opposing Concepts
+                  </span>
+                  <div className="space-y-3 pt-1">
+                    {concept.graphRelations.contrastingConcepts.map((cc) => (
+                      <div key={cc.slug} className="bg-white border border-zinc-200 p-3 rounded-xl space-y-1">
+                        <Link href={`/concepts/${cc.slug}`} className="text-xs font-bold text-zinc-950 hover:underline">
+                          vs. {cc.title}
+                        </Link>
+                        <p className="text-xs text-zinc-700 font-medium">{cc.distinction}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
+
         {/* AEO Multi-Length Answer Engine Block */}
         {concept.aeo && (
           <section className="bg-white border border-cyan-800/40 rounded-3xl p-8 space-y-8 shadow-sm">
@@ -195,13 +401,9 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
               <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
                 Authoritative Answer Formats
               </h2>
-              <p className="text-xs text-zinc-600 font-mono">
-                Multi-length atomic responses structured for AI Answer Engines (ChatGPT, Claude, Perplexity, Google AI Overviews).
-              </p>
             </div>
 
             <div className="grid grid-cols-1 gap-6">
-              {/* 50-Word Short Definition */}
               <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-5 space-y-2">
                 <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase tracking-widest block">
                   Short Definition (50 Words)
@@ -211,7 +413,6 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
                 </p>
               </div>
 
-              {/* 150-Word Executive Summary */}
               <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-5 space-y-2">
                 <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase tracking-widest block">
                   Executive Summary (150 Words)
@@ -220,45 +421,7 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
                   {concept.aeo.executiveSummary}
                 </p>
               </div>
-
-              {/* One-Sentence & Tweet Format */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-cyan-50 border border-cyan-200 rounded-2xl p-4 space-y-1">
-                  <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase tracking-widest block">
-                    One-Sentence Pitch
-                  </span>
-                  <p className="text-xs font-bold text-cyan-950">
-                    {concept.aeo.oneSentence}
-                  </p>
-                </div>
-
-                <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-4 space-y-1">
-                  <span className="text-[10px] font-mono font-bold text-emerald-900 uppercase tracking-widest block">
-                    Tweet / Social Snippet
-                  </span>
-                  <p className="text-xs font-medium text-emerald-950">
-                    {concept.aeo.tweetLength}
-                  </p>
-                </div>
-              </div>
             </div>
-
-            {/* Key Takeaways */}
-            {concept.aeo.keyTakeaways && concept.aeo.keyTakeaways.length > 0 && (
-              <div className="pt-4 border-t border-zinc-200 space-y-3">
-                <h3 className="text-xs font-mono font-bold text-zinc-950 uppercase tracking-wider">
-                  Key Executive Takeaways
-                </h3>
-                <ul className="space-y-2">
-                  {concept.aeo.keyTakeaways.map((takeaway, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-zinc-800 font-medium">
-                      <span className="text-cyan-800 font-bold font-mono">✓</span>
-                      <span>{takeaway}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
           </section>
         )}
 
@@ -350,83 +513,6 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
                   <p className="text-sm text-zinc-800 leading-relaxed font-medium pl-6">
                     {faq.answer}
                   </p>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* X vs Y Comparisons Section */}
-        {concept.aeo?.comparisons && concept.aeo.comparisons.length > 0 && (
-          <section className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
-            <div className="space-y-1">
-              <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
-                Topical Distinction &amp; Comparisons
-              </span>
-              <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
-                Conceptual Comparisons (X vs Y)
-              </h2>
-            </div>
-
-            <div className="space-y-4 pt-2">
-              {concept.aeo.comparisons.map((comp, idx) => (
-                <div key={idx} className="bg-zinc-50 border border-zinc-200 rounded-2xl p-6 space-y-4">
-                  <h3 className="text-lg font-bold text-zinc-950 font-grotesk">
-                    {comp.vsTitle}
-                  </h3>
-                  <div className="space-y-2">
-                    <span className="text-[10px] font-mono font-bold text-zinc-600 uppercase tracking-wider block">
-                      Key Structural Differences
-                    </span>
-                    <ul className="space-y-1 text-sm text-zinc-800 font-medium">
-                      {comp.keyDifferences.map((diff, dIdx) => (
-                        <li key={dIdx} className="flex items-start gap-2">
-                          <span className="text-cyan-800 font-bold">•</span>
-                          <span>{diff}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="bg-cyan-50 border border-cyan-200 p-3.5 rounded-xl text-xs text-cyan-950 font-medium">
-                    <strong className="font-bold">When to use which:</strong> {comp.whenToUseWhich}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* Decision Tree Section */}
-        {concept.aeo?.decisionTree && concept.aeo.decisionTree.length > 0 && (
-          <section className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
-            <div className="space-y-1">
-              <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
-                Execution Heuristics
-              </span>
-              <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
-                Decision Tree Heuristic
-              </h2>
-            </div>
-
-            <div className="space-y-3 pt-2">
-              {concept.aeo.decisionTree.map((step) => (
-                <div key={step.step} className="bg-zinc-50 border border-zinc-200 rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono font-bold text-cyan-900">
-                      Step #{step.step}
-                    </span>
-                    <h3 className="text-sm font-bold text-zinc-950">
-                      {step.question}
-                    </h3>
-                  </div>
-                  <div className="flex items-center gap-3 text-xs font-mono font-bold">
-                    <span className="px-3 py-1 bg-emerald-100 text-emerald-900 border border-emerald-300 rounded-lg">
-                      Yes: {step.yesTarget}
-                    </span>
-                    <span className="px-3 py-1 bg-zinc-200 text-zinc-800 rounded-lg">
-                      No: {step.noTarget}
-                    </span>
-                  </div>
                 </div>
               ))}
             </div>
@@ -617,32 +703,6 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
             </table>
           </div>
         </section>
-
-        {/* Weighted Semantic Relationship Graph */}
-        {relatedConcepts.length > 0 && (
-          <section className="space-y-4 bg-white border border-zinc-300 rounded-3xl p-6 shadow-sm">
-            <h2 className="text-lg font-bold font-grotesk text-zinc-950">Weighted Semantic Relationship Graph</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {relatedConcepts.map((rel) => (
-                <Link
-                  key={rel.slug}
-                  href={`/concepts/${rel.slug}`}
-                  className="p-3.5 bg-zinc-50 border border-zinc-200 rounded-2xl hover:border-cyan-600 transition flex items-center justify-between group"
-                >
-                  <div className="space-y-1">
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-cyan-900 font-bold">
-                      [{rel.relationship}]
-                    </span>
-                    <div className="text-xs font-bold text-zinc-950 group-hover:text-cyan-800">
-                      {rel.targetTitle}
-                    </div>
-                  </div>
-                  <span className="text-zinc-400 group-hover:text-cyan-800 text-xs font-bold">→</span>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
 
         {/* Back Link */}
         <div className="pt-8 border-t border-zinc-300 text-center">

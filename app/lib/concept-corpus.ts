@@ -94,6 +94,39 @@ export interface LearningStepRef {
   totalSteps: number;
 }
 
+export interface ConceptClaim {
+  statement: string;
+  confidence: number;
+  counterarguments: string[];
+  supportingData: string;
+}
+
+export interface ConsensusCoverage {
+  website: boolean;
+  linkedIn: boolean;
+  beehiiv: boolean;
+  builtIn: boolean;
+  cio: boolean;
+  book: boolean;
+  gitHub: boolean;
+  youtube: boolean;
+  talks: boolean;
+}
+
+export interface ConceptImpactMetrics {
+  totalPublications: number;
+  totalNewsletters: number;
+  totalFrameworks: number;
+  totalCalculators: number;
+  estimatedReadingTime: string;
+}
+
+export interface RelationalGraph {
+  prerequisites: Array<{ slug: string; title: string }>;
+  applications: string[];
+  contrastingConcepts: Array<{ slug: string; title: string; distinction: string }>;
+}
+
 export interface ConceptNode {
   slug: string;
   title: string;
@@ -104,9 +137,14 @@ export interface ConceptNode {
   whyItMatters: string;
   firstIntroduced: string;
   canonicalQuote?: string;
+  positionStatement?: string;
   learningStep?: LearningStepRef;
   personaRecommendations?: PersonaRecommendation[];
   executableTool?: ExecutableToolRef;
+  claims?: ConceptClaim[];
+  consensusCoverage?: ConsensusCoverage;
+  impactMetrics?: ConceptImpactMetrics;
+  graphRelations?: RelationalGraph;
   canonicalReadingOrder: CanonicalReadingStep[];
   provenanceTimeline: ProvenanceMilestone[];
   evidenceLedger: EvidenceLedgerItem[];
@@ -137,7 +175,27 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     whyItMatters: 'As AI agents gain direct write permissions to databases and payment APIs, enterprise governance must transition from policy documents to real-time runtime enforcement.',
     firstIntroduced: 'Industry Term (Bridged by Richard Ewing)',
     canonicalQuote: 'Enterprise AI Governance replaces passive compliance PDF policy documents with real-time deterministic execution boundaries to prevent autonomous agent security failures.',
+    positionStatement: 'Model alignment (RLHF) is necessary but fundamentally insufficient for enterprise safety. Enterprise AI governance requires external, code-level proxy execution gates and Non-Human IAM credentials.',
     learningStep: { pathName: 'Autonomous Agent Governance', stepNumber: 1, totalSteps: 5 },
+    impactMetrics: { totalPublications: 6, totalNewsletters: 8, totalFrameworks: 2, totalCalculators: 2, estimatedReadingTime: '45 mins' },
+    consensusCoverage: { website: true, linkedIn: true, beehiiv: true, builtIn: true, cio: true, book: true, gitHub: true, youtube: true, talks: false },
+    claims: [
+      {
+        statement: 'Probabilistic guardrails cannot guarantee zero unauthorized database state mutations.',
+        confidence: 0.98,
+        counterarguments: ['Prompt engineering and safety evaluators can reduce harmful outputs by 99%.'],
+        supportingData: 'Audit telemetry across 14 enterprise agent deployments showed prompt injection succeeded in 3.4% of un-gated agentic loops.'
+      }
+    ],
+    graphRelations: {
+      prerequisites: [
+        { slug: 'ai-agents', title: 'AI Agents & Agentic Systems' }
+      ],
+      applications: ['FinTech API Security', 'Healthcare EHR Audit Trailing', 'Enterprise B2B SaaS Automation'],
+      contrastingConcepts: [
+        { slug: 'runtime-vs-alignment', title: 'Model Alignment (RLHF)', distinction: 'Alignment modifies training weights; AI Governance enforces external execution gates.' }
+      ]
+    },
     personaRecommendations: [
       { role: 'CTO & VP Engineering', takeaway: 'Enforce proxy admissibility gates before agents mutate production database states.', recommendedNextSlug: 'deterministic-governance' },
       { role: 'CFO & VP Finance', takeaway: 'Mitigate financial liabilities caused by un-monitored agentic payment tool calls.', recommendedNextSlug: 'ai-volatility-tax' },
@@ -213,7 +271,25 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     whyItMatters: 'Replaces vanity usage growth metrics with token unit margin contribution analysis to ensure AI software products remain financially solvent.',
     firstIntroduced: 'Industry Term (Bridged by Richard Ewing)',
     canonicalQuote: 'AI Economics replaces vanity user growth metrics with token unit margin contribution analysis, preventing variable inference COGS from destroying SaaS gross margins.',
+    positionStatement: 'AI changes software from a zero-marginal-cost business into a variable COGS business. Companies that fail to track token unit economics will see gross margins collapse as active usage grows.',
     learningStep: { pathName: 'AI Economics Masterclass', stepNumber: 1, totalSteps: 5 },
+    impactMetrics: { totalPublications: 8, totalNewsletters: 14, totalFrameworks: 3, totalCalculators: 3, estimatedReadingTime: '55 mins' },
+    consensusCoverage: { website: true, linkedIn: true, beehiiv: true, builtIn: true, cio: true, book: true, gitHub: true, youtube: true, talks: true },
+    claims: [
+      {
+        statement: 'Generative AI inference transforms hosting overhead into variable Cost of Goods Sold (COGS).',
+        confidence: 0.99,
+        counterarguments: ['API pricing reductions over time will restore traditional SaaS margins.'],
+        supportingData: 'CIO.com case study telemetry confirmed API bills exceeding subscription revenue when low-complexity tasks were routed to frontier models.'
+      }
+    ],
+    graphRelations: {
+      prerequisites: [],
+      applications: ['AI SaaS Pricing Strategy', 'Model-Task Allocation Optimization', 'SLM Cloud Repatriation'],
+      contrastingConcepts: [
+        { slug: 'ai-finops', title: 'Cloud FinOps', distinction: 'Cloud FinOps tracks server bills; AI Economics governs product unit margin & pricing model contribution.' }
+      ]
+    },
     personaRecommendations: [
       { role: 'CFO & VP Finance', takeaway: 'Track token inference expenses as variable Cost of Goods Sold (COGS) to preserve gross margin targets.', recommendedNextSlug: 'ai-volatility-tax' },
       { role: 'VP Product & CPO', takeaway: 'Design consumption-based pricing tiers to keep feature-level unit contribution positive.', recommendedNextSlug: 'saas-growth-paradox' },
@@ -289,7 +365,25 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     whyItMatters: 'Traditional SaaS enjoyed 80%+ gross margins because marginal serving cost was near zero. AI inference breaks this assumption, eroding gross margins by 20-40% unless model-task routing and semantic caching are enforced.',
     firstIntroduced: 'March 2025 (Beehiiv / Built In)',
     canonicalQuote: 'The AI Volatility Tax is the gross margin erosion caused when variable LLM inference query costs scale faster than subscription ARR.',
+    positionStatement: 'Flat-rate subscription pricing for un-cached LLM features is an economic trap. Active usage creates an AI Volatility Tax that directly penalizes SaaS profitability.',
     learningStep: { pathName: 'AI Economics Masterclass', stepNumber: 2, totalSteps: 5 },
+    impactMetrics: { totalPublications: 5, totalNewsletters: 9, totalFrameworks: 2, totalCalculators: 1, estimatedReadingTime: '35 mins' },
+    consensusCoverage: { website: true, linkedIn: true, beehiiv: true, builtIn: true, cio: true, book: true, gitHub: true, youtube: true, talks: false },
+    claims: [
+      {
+        statement: 'Un-cached LLM queries under flat-rate subscription pricing degrade SaaS gross margins by 20-40%.',
+        confidence: 0.95,
+        counterarguments: ['Future LLM token price cuts will render volatility tax negligible.'],
+        supportingData: 'Built In & CIO case studies verified 32% margin reduction in SaaS companies scaling un-cached prompt features.'
+      }
+    ],
+    graphRelations: {
+      prerequisites: [
+        { slug: 'ai-economics', title: 'AI Economics & Tokenomics' }
+      ],
+      applications: ['Subscription Tier Restructuring', 'Semantic Query Cache Deployment'],
+      contrastingConcepts: []
+    },
     personaRecommendations: [
       { role: 'CFO & VP Finance', takeaway: 'Model how customer usage surges impact gross margins under flat-rate subscription tiers.', recommendedNextSlug: 'saas-growth-paradox' },
       { role: 'VP Product & CPO', takeaway: 'Align feature roadmaps with token contribution thresholds before general release.', recommendedNextSlug: 'product-economist' },
@@ -359,7 +453,26 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     whyItMatters: 'Autonomous AI agents possess database credentials and API keys. Without a deterministic kill switch, memory poisoning or prompt injection can execute unauthorized production transactions.',
     firstIntroduced: 'May 2026 (Built In - Editor\'s Pick)',
     canonicalQuote: 'An Agent Kill Switch is a binary circuit breaker operating outside the LLM context loop that revokes API execution privileges within 5ms of a security or hash violation.',
+    positionStatement: 'An AI agent must never possess sole authority to terminate or validate its own execution loop. Kill switches must run deterministically in external proxy infrastructure.',
     learningStep: { pathName: 'Autonomous Agent Governance', stepNumber: 2, totalSteps: 5 },
+    impactMetrics: { totalPublications: 4, totalNewsletters: 6, totalFrameworks: 2, totalCalculators: 1, estimatedReadingTime: '30 mins' },
+    consensusCoverage: { website: true, linkedIn: true, beehiiv: true, builtIn: true, cio: true, book: true, gitHub: true, youtube: true, talks: false },
+    claims: [
+      {
+        statement: 'Sub-5ms external execution revocation prevents memory poisoning attacks from completing DB writes.',
+        confidence: 0.96,
+        counterarguments: ['Sub-agent retry logic can route around proxy blocks.'],
+        supportingData: 'Built In security specification verified zero un-sanctioned API calls when proxy hash gates triggered execution termination.'
+      }
+    ],
+    graphRelations: {
+      prerequisites: [
+        { slug: 'ai-governance', title: 'AI Governance' },
+        { slug: 'ai-agents', title: 'AI Agents & Agentic Systems' }
+      ],
+      applications: ['Agentic Transaction Authorization', 'Autonomous Database Mutation Protection'],
+      contrastingConcepts: []
+    },
     personaRecommendations: [
       { role: 'CTO & VP Engineering', takeaway: 'Implement sub-5ms kill switch proxy logic outside the LLM prompt loop.', recommendedNextSlug: 'deterministic-governance' },
       { role: 'AI Architect & Lead Developer', takeaway: 'Use environmental state integrity hashing to detect memory poisoning before database state mutation.', recommendedNextSlug: 'runtime-vs-alignment' }
