@@ -21,6 +21,19 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
+  // New LinkedIn Newsletter — July 30, 2026
+  {
+    id: 'linkedin-ai-taking-actions',
+    title: 'The Moment Your AI Starts Taking Actions, the Rules Change',
+    url: 'https://www.linkedin.com/pulse/moment-your-ai-starts-taking-actions-rules-change-richard-ewing-zapmc/',
+    publisher: 'LinkedIn',
+    domain: 'AI Governance',
+    type: 'Executable',
+    editorsPick: true,
+    date: 'July 30, 2026',
+    thesis: 'When AI models transition from read-only text generation to taking autonomous actions across enterprise APIs, probabilistic guardrails fail and real-time execution boundaries are required.',
+    relatedConceptIds: ['agent-kill-switch', 'deterministic-governance', 'ai-governance', 'ai-agents']
+  },
   // Tier 1 Media — CIO.com (7 Articles)
   {
     id: 'cio-shipping-faster',

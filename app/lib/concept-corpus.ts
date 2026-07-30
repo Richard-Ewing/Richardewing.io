@@ -330,20 +330,23 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     title: 'Agent Kill Switch',
     category: 'Richard Ewing Canon (Original Framework)',
     domain: 'AI Governance',
-    health: { confidence: 0.93, evidenceCount: 3, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
+    health: { confidence: 0.96, evidenceCount: 4, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A binary execution control mechanism that halts autonomous AI agent operations within 5ms when safety rules or environmental hash boundaries are breached.',
     whyItMatters: 'Autonomous AI agents possess database credentials and API keys. Without a deterministic kill switch, memory poisoning or prompt injection can execute unauthorized production transactions.',
     firstIntroduced: 'May 2026 (Built In - Editor\'s Pick)',
     executableTool: { name: 'Agentic Drift & Boundary Matrix', url: '/tools/agentic-drift-matrix', description: 'Audit agent action allowlists and execution boundaries.', type: 'Decision Tree' },
     canonicalReadingOrder: [
       { step: 1, title: 'Inside the First Autonomous AI Agent Security Breach', publisher: 'Built In', type: 'Breach Post-Mortem', url: 'https://builtin.com/articles/ai-agent-security-breach' },
-      { step: 2, title: 'Your AI Agent Needs a Kill Switch', publisher: 'Built In', type: 'Canonical Specification', url: 'https://builtin.com/articles/ai-agent-kill-switch' }
+      { step: 2, title: 'Your AI Agent Needs a Kill Switch', publisher: 'Built In', type: 'Canonical Specification', url: 'https://builtin.com/articles/ai-agent-kill-switch' },
+      { step: 3, title: 'The Moment Your AI Starts Taking Actions, the Rules Change', publisher: 'LinkedIn Newsletters', type: 'Executive Action Boundary Essay', url: 'https://www.linkedin.com/pulse/moment-your-ai-starts-taking-actions-rules-change-richard-ewing-zapmc/' }
     ],
     provenanceTimeline: [
-      { stage: 'Tier-1 Article', label: 'Your AI Agent Needs a Kill Switch', publisher: 'Built In', date: 'May 2026', url: 'https://builtin.com/articles/ai-agent-kill-switch', summary: 'Published the canonical kill switch specification (Editor\'s Pick).' }
+      { stage: 'Tier-1 Article', label: 'Your AI Agent Needs a Kill Switch', publisher: 'Built In', date: 'May 2026', url: 'https://builtin.com/articles/ai-agent-kill-switch', summary: 'Published the canonical kill switch specification (Editor\'s Pick).' },
+      { stage: 'LinkedIn Essay', label: 'The Moment Your AI Starts Taking Actions', publisher: 'LinkedIn Newsletters', date: 'July 30, 2026', url: 'https://www.linkedin.com/pulse/moment-your-ai-starts-taking-actions-rules-change-richard-ewing-zapmc/', summary: 'Demonstrated why action-taking AI agents break probabilistic guardrail models.' }
     ],
     evidenceLedger: [
-      { id: 'ev-ks-1', title: 'Your AI Agent Needs a Kill Switch', url: 'https://builtin.com/articles/ai-agent-kill-switch', publisher: 'Built In', type: 'Production Telemetry', strength: 5, role: 'Origin', date: 'May 2026' }
+      { id: 'ev-ks-1', title: 'Your AI Agent Needs a Kill Switch', url: 'https://builtin.com/articles/ai-agent-kill-switch', publisher: 'Built In', type: 'Production Telemetry', strength: 5, role: 'Origin', date: 'May 2026' },
+      { id: 'ev-ks-2', title: 'The Moment Your AI Starts Taking Actions', url: 'https://www.linkedin.com/pulse/moment-your-ai-starts-taking-actions-rules-change-richard-ewing-zapmc/', publisher: 'LinkedIn', type: 'Case Study', strength: 5, role: 'Extends', date: 'July 30, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'deterministic-governance', relationship: 'derived_from' },
