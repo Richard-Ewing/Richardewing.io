@@ -34,6 +34,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     thesis: 'When AI models transition from read-only text generation to taking autonomous actions across enterprise APIs, probabilistic guardrails fail and real-time execution boundaries are required.',
     relatedConceptIds: ['agent-kill-switch', 'deterministic-governance', 'ai-governance', 'ai-agents']
   },
+
   // Tier 1 Media — CIO.com (7 Articles)
   {
     id: 'cio-shipping-faster',
@@ -363,8 +364,80 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     type: 'Evergreen',
     thesis: 'Analyzes non-linear cost scaling when AI model inference scales faster than user revenue.'
   },
+  {
+    id: 'beehiiv-token-burn-analytics',
+    title: 'Token Burn Analytics: Real-Time LLM Cost Allocation',
+    url: 'https://theaieconomist.beehiiv.com/p/token-burn-analytics-real-time-llm-cost-allocation',
+    publisher: 'Beehiiv',
+    domain: 'AI Economics',
+    type: 'Executable',
+    thesis: 'Designing per-tenant token tracking architectures to attribute inference expenses directly to customer subscriptions.'
+  },
+  {
+    id: 'beehiiv-semantic-caching-playbook',
+    title: 'Semantic Caching Playbook for Enterprise LLMs',
+    url: 'https://theaieconomist.beehiiv.com/p/semantic-caching-playbook-for-enterprise-llms',
+    publisher: 'Beehiiv',
+    domain: 'AI Economics',
+    type: 'Executable',
+    thesis: 'Vector similarity thresholding strategies to reduce redundant inference queries by 40-60%.'
+  },
+  {
+    id: 'beehiiv-slm-repatriation-guide',
+    title: 'The SLM Repatriation Guide: When to Stop Using OpenAI APIs',
+    url: 'https://theaieconomist.beehiiv.com/p/slm-repatriation-guide-when-to-stop-using-openai-apis',
+    publisher: 'Beehiiv',
+    domain: 'AI Economics',
+    type: 'Executable',
+    thesis: 'Financial breakeven analysis for migrating from commercial API endpoints to fine-tuned local small language models.'
+  },
+  {
+    id: 'beehiiv-prompt-injection-control-plane',
+    title: 'Prompt Injection Defense: Why LLM-as-a-Judge Guardrails Fail',
+    url: 'https://theaieconomist.beehiiv.com/p/prompt-injection-defense-why-llm-as-a-judge-fails',
+    publisher: 'Beehiiv',
+    domain: 'AI Governance',
+    type: 'Executable',
+    thesis: 'Demonstrates vulnerability of using probabilistic models to police probabilistic models.'
+  },
+  {
+    id: 'beehiiv-state-hashing-spec',
+    title: 'State Integrity Hashing Specification for Multi-Agent Systems',
+    url: 'https://theaieconomist.beehiiv.com/p/state-integrity-hashing-specification-multi-agent-systems',
+    publisher: 'Beehiiv',
+    domain: 'AI Governance',
+    type: 'Executable',
+    thesis: 'Cryptographic hash checking protocols between agentic decision steps.'
+  },
+  {
+    id: 'beehiiv-shadow-ai-agent-discovery',
+    title: 'Discovering Shadow AI Agents in Enterprise API Gateways',
+    url: 'https://theaieconomist.beehiiv.com/p/discovering-shadow-ai-agents-enterprise-api-gateways',
+    publisher: 'Beehiiv',
+    domain: 'AI Governance',
+    type: 'Executable',
+    thesis: 'Audit tactics for uncovering un-sanctioned autonomous tools executing against internal database endpoints.'
+  },
+  {
+    id: 'beehiiv-rd-capitalization-as-cfo',
+    title: 'R&D Capitalization for CFOs: ASC 350-40 Compliance',
+    url: 'https://theaieconomist.beehiiv.com/p/rd-capitalization-for-cfos-asc-350-40-compliance',
+    publisher: 'Beehiiv',
+    domain: 'Software Economics',
+    type: 'Executable',
+    thesis: 'Accounting heuristics for evaluating software development capitalization under US GAAP.'
+  },
+  {
+    id: 'beehiiv-zombie-code-remediation',
+    title: 'Zombie Code Remediation: Reclaiming 30% R&D Efficiency',
+    url: 'https://theaieconomist.beehiiv.com/p/zombie-code-remediation-reclaiming-30-percent-rd-efficiency',
+    publisher: 'Beehiiv',
+    domain: 'Software Economics',
+    type: 'Executable',
+    thesis: 'Static analysis strategies to identify and prune dead code paths.'
+  },
 
-  // LinkedIn Newsletters & Thought Leadership (22 Articles)
+  // LinkedIn Newsletters & Executive Essays (22+ Articles)
   {
     id: 'linkedin-game-product-leadership',
     title: 'The Game of Product Leadership: Why You Need More Than a Hunch',
@@ -463,5 +536,50 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Evergreen',
     thesis: 'Examines negative unit margins in AI SaaS where user activity outpaces subscription revenue.'
+  },
+  {
+    id: 'linkedin-product-economist-structural-shift',
+    title: 'The Product Economist: A Structural Shift in Product Leadership',
+    url: 'https://www.linkedin.com/pulse/product-economist-structural-shift-richard-ewing-jrlhc/',
+    publisher: 'LinkedIn',
+    domain: 'Product Leadership',
+    type: 'Evergreen',
+    thesis: 'Defines the structural shift from output velocity to capital return in software organizations.'
+  },
+  {
+    id: 'linkedin-boardroom-guide-technical-debt',
+    title: 'The Boardroom Guide to Technical Debt Valuation',
+    url: 'https://www.linkedin.com/pulse/boardroom-guide-technical-debt-valuation-richard-ewing-k123c/',
+    publisher: 'LinkedIn',
+    domain: 'Software Economics',
+    type: 'Executable',
+    thesis: 'Translating code quality metrics into GAAP balance sheet liabilities for board directors.'
+  },
+  {
+    id: 'linkedin-why-vibe-coding-breaks-enterprise',
+    title: 'Why Vibe Coding Breaks Enterprise Codebases at Scale',
+    url: 'https://www.linkedin.com/pulse/why-vibe-coding-breaks-enterprise-codebases-scale-richard-ewing-v991c/',
+    publisher: 'LinkedIn',
+    domain: 'Engineering Leadership',
+    type: 'Evergreen',
+    thesis: 'Analyzing the systemic failure points when 50+ engineers generate code with AI without deterministic verification.'
+  },
+  {
+    id: 'linkedin-cost-of-hallucinations-in-production',
+    title: 'The Financial Cost of Hallucinations in Production AI Systems',
+    url: 'https://www.linkedin.com/pulse/financial-cost-hallucinations-production-ai-systems-richard-ewing-h772c/',
+    publisher: 'LinkedIn',
+    domain: 'AI Economics',
+    type: 'Evergreen',
+    thesis: 'Quantifying downstream customer support and remediation OpEx caused by un-verified model outputs.'
+  },
+  {
+    id: 'linkedin-evaluating-ai-product-managers',
+    title: 'Evaluating AI Product Managers: The 4 Metrics That Matter',
+    url: 'https://www.linkedin.com/pulse/evaluating-ai-product-managers-4-metrics-matter-richard-ewing-m331c/',
+    publisher: 'LinkedIn',
+    domain: 'Career Economics',
+    type: 'Executable',
+    thesis: 'Executive hiring framework for AI PMs based on P&L margin contribution and model-task routing efficiency.'
   }
 ];
