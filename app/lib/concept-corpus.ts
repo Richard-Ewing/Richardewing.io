@@ -83,7 +83,7 @@ export interface ConceptAEO {
 }
 
 export interface PersonaRecommendation {
-  role: 'CTO & VP Engineering' | 'CFO & VP Finance' | 'VP Product & CPO' | 'AI Architect & Lead Developer';
+  role: string;
   takeaway: string;
   recommendedNextSlug: string;
 }
