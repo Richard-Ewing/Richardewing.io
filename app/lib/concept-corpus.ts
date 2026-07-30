@@ -203,6 +203,8 @@ export interface ConceptNode {
   aeo?: ConceptAEO;
 }
 
+export type CanonicalConcept = ConceptNode;
+
 export const CANONICAL_CONCEPTS: ConceptNode[] = [
   // =========================================================================
   // LAYER 2: RICHARD EWING CANON (Original Intellectual Property & Specifications)
