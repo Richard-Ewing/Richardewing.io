@@ -1,4 +1,4 @@
-import { NextResponse } from 'next';
+import { NextResponse } from 'next/server';
 import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
