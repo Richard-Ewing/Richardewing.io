@@ -160,7 +160,7 @@ export default function ResearchCorpusExplorer() {
                   {art.domain}
                 </span>
                 <div className="flex items-center gap-2">
-                  {art.editorPick && (
+                  {art.editorsPick && (
                     <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-100 text-amber-900 border border-amber-300">
                       Editor's Pick
                     </span>
