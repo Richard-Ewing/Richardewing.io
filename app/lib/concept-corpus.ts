@@ -57,7 +57,11 @@ export interface ConceptNode {
   evidenceLedger: EvidenceLedgerItem[];
   relatedConceptSlugs: Array<{
     slug: string;
-    relationship: 'supports' | 'extends' | 'derived_from' | 'implements' | 'depends_on' | 'refines' | 'predicts' | 'causes';
+    relationship: 
+      | 'supports' | 'extends' | 'derived_from' | 'implements'
+      | 'measures' | 'predicts' | 'contradicts' | 'depends_on'
+      | 'refines' | 'simplifies' | 'generalizes' | 'explains'
+      | 'formalizes' | 'causes' | 'correlates_with' | 'requires';
   }>;
   openQuestions: string[];
   knownLimitations: string[];
