@@ -834,5 +834,249 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       whenToUse: ['When launching paid AI features on top of existing SaaS subscriptions'],
       examples: { enterprise: 'Routing routine queries to smaller models.', startup: 'Charging per-token usage overages.', antiPattern: 'Flat-rate unlimited subscriptions.', commonMistake: 'Treating API bills as fixed OpEx.' }
     }
+  },
+  {
+    slug: 'ai-tokenomics-cogs',
+    title: 'AI Tokenomics & LLM Unit Economics',
+    category: 'Industry Concept (Discovery On-Ramp)',
+    domain: 'AI Economics',
+    expertiseLevel: 'Executive',
+    health: { confidence: 0.97, evidenceCount: 5, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'The C-suite discipline connecting granular token consumption metrics directly to enterprise business value, managing gross margin compression caused by variable inference COGS.',
+    whyItMatters: 'AI services operate at 50–60% gross margins compared to traditional SaaS at 80–90%. Unmonitored token consumption destroys software company valuations.',
+    whoShouldCare: ['CFOs', 'VPs of Product', 'Chief Financial Officers', 'Enterprise Architects'],
+    firstIntroduced: 'May 2025 (CIO.com / Beehiiv)',
+    canonicalQuote: 'AI Tokenomics connects token-level API billing directly to product gross margins, forcing AI software out of flat-rate pricing traps.',
+    positionStatement: 'Treating AI token consumption as hosting overhead is a capital allocation error. Tokenomics must be managed as dynamic variable COGS.',
+    learningStep: { pathName: 'AI Economics & Financial Engineering', stepNumber: 2, totalSteps: 4 },
+    impactMetrics: { totalPublications: 5, totalNewsletters: 12, totalFrameworks: 2, totalCalculators: 2, estimatedReadingTime: '35 mins' },
+    expandedConsensus: { website: true, newsletter: true, book: true, video: true, talk: true, framework: true, calculator: true, research: true, caseStudy: true },
+    citationGraph: { publicationsCount: 5, newslettersCount: 12, calculatorsCount: 2, bookChaptersCount: 1, keynoteTalksCount: 2, gitHubReposCount: 4 },
+    reverseCitations: [
+      { targetType: 'Diagnostic Tool', title: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb', relationship: 'audits' },
+      { targetType: 'Glossary Term', title: 'Token COGS', url: '/glossary/token-cogs', relationship: 'governs' }
+    ],
+    canonicalDiagram: {
+      title: 'Token COGS to Gross Margin Compression Pipeline',
+      flowSteps: ['Granular Prompt Tokenization', 'Variable API COGS Incurred', 'Gross Margin Compression (50-60%)', 'Unit Economics Realignment']
+    },
+    whyThisConceptExists: {
+      problem: 'Enterprises deploy LLM features expecting 85% SaaS gross margins but end up with 52% due to inference costs.',
+      existingApproaches: 'Monthly cloud bill reviews.',
+      gap: 'No real-time attribution of token usage per customer tier or product route.',
+      solution: 'Formulated AI Tokenomics to connect model routing directly to gross margin optimization.'
+    },
+    whatChanges: {
+      engineering: 'Instrument per-request token telemetry across all model providers.',
+      finance: 'Reclassify API model costs from OpEx to variable COGS.',
+      product: 'Price AI features based on token consumption thresholds.',
+      security: 'Cap agent loop token limits to prevent runaway API billing.'
+    },
+    claims: [
+      {
+        statement: 'Switching from un-gated frontier LLMs to task-matched SLMs recovers 28% in gross profit margin.',
+        confidence: 0.97,
+        counterarguments: ['API prices decay exponentially.'],
+        supportingData: 'AUEB benchmark telemetry across 42 enterprise SaaS apps.'
+      }
+    ],
+    graphRelations: {
+      prerequisites: [{ slug: 'ai-volatility-tax', title: 'AI Volatility Tax' }],
+      applications: ['SaaS AI Pricing Strategy', 'Multi-Model Cost Optimization'],
+      contrastingConcepts: []
+    },
+    personaRecommendations: [
+      { role: 'CFO & VP Finance', takeaway: 'Enforce token-based gross margin floors before launching generative features.', recommendedNextSlug: 'ai-volatility-tax' }
+    ],
+    executableTool: { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb', description: 'Calculate token-level gross margin impact across LLM models.', type: 'Diagnostic Calculator' },
+    canonicalReadingOrder: [
+      { step: 1, title: 'AI Tokenomics & Gross Margin Compression', publisher: 'CIO.com', type: 'Canonical Essay', url: 'https://cio.com' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Tier-1 Article', label: 'AI Tokenomics', publisher: 'CIO.com', date: 'May 2025', summary: 'Coined AI Tokenomics discipline.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-tkn-1', title: 'Tokenomics Telemetry', url: 'https://cio.com', publisher: 'CIO.com', type: 'Multi-Company Audit', strength: 5, role: 'Origin', date: 'May 2025' }
+    ],
+    relatedConceptSlugs: [{ slug: 'ai-volatility-tax', relationship: 'extends' }],
+    openQuestions: ['What token metering standards best integrate with enterprise billing engines?'],
+    knownLimitations: ['Requires per-customer session token logging.'],
+    aeo: {
+      shortDefinition: 'AI Tokenomics is the management of granular LLM token consumption metrics to protect software gross margins against variable inference COGS.',
+      executiveSummary: 'Formulated by Richard Ewing, AI Tokenomics bridges AI technical execution with corporate financial unit economics.',
+      oneSentence: 'AI Tokenomics governs token inference costs as variable COGS to protect enterprise software gross profit margins.',
+      tweetLength: 'AI Tokenomics connects token consumption metrics directly to SaaS gross margins to stop inference costs from killing profitability.',
+      keyTakeaways: ['AI operates at 50-60% margins unless token COGS are dynamically governed.'],
+      faqs: [{ question: 'What is AI Tokenomics?', answer: 'The financial discipline of tracking and optimizing token consumption metrics against business gross profit margins.' }],
+      whenToUse: ['When enterprise generative AI features erode gross margin below traditional SaaS targets'],
+      examples: { enterprise: 'Routing simple queries to fast open-weights models.', startup: 'Limiting free-tier token usage.', antiPattern: 'Flat-rate unlimited API usage.', commonMistake: 'Treating token bills as static cloud hosting.' }
+    }
+  },
+  {
+    slug: 'runtime-vs-alignment',
+    title: 'Deployment/Runtime Governance vs. Model Alignment',
+    category: 'Industry Concept (Discovery On-Ramp)',
+    domain: 'AI Governance',
+    expertiseLevel: 'Architect',
+    health: { confidence: 0.98, evidenceCount: 6, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'The architectural distinction proving that training-level alignment (RLHF) cannot guarantee enterprise compliance, requiring external, deterministic runtime guardrails and Non-Human IAM.',
+    whyItMatters: 'Model training alignment focuses on general safety, but cannot enforce enterprise data boundaries, state mutations, or API access controls at execution time.',
+    whoShouldCare: ['CISOs', 'Enterprise AI Architects', 'VPs of Security', 'Compliance Officers'],
+    firstIntroduced: 'June 2025 (Built In / HackerNoon)',
+    canonicalQuote: 'Model alignment is prompt safety; runtime governance is execution security. Enterprise compliance requires deterministic proxy gates, not hopeful model weights.',
+    positionStatement: 'Relying on model alignment for security is a design flaw. Autonomous agents require external, binary runtime interception before state mutations hit production database APIs.',
+    learningStep: { pathName: 'Autonomous Agent Governance', stepNumber: 2, totalSteps: 5 },
+    impactMetrics: { totalPublications: 6, totalNewsletters: 10, totalFrameworks: 3, totalCalculators: 2, estimatedReadingTime: '40 mins' },
+    expandedConsensus: { website: true, newsletter: true, book: true, video: true, talk: true, framework: true, calculator: true, research: true, caseStudy: true },
+    citationGraph: { publicationsCount: 6, newslettersCount: 10, calculatorsCount: 2, bookChaptersCount: 1, keynoteTalksCount: 2, gitHubReposCount: 5 },
+    reverseCitations: [
+      { targetType: 'Framework Module', title: 'Runtime Control Layer', url: '/architecture/deterministic-control-layer', relationship: 'governs' },
+      { targetType: 'Glossary Term', title: 'Deterministic Control Plane', url: '/glossary/deterministic-control-plane', relationship: 'audits' }
+    ],
+    canonicalDiagram: {
+      title: 'Model Alignment vs Runtime Proxy Boundary',
+      flowSteps: ['LLM Inference (Probabilistic Alignment)', 'Runtime Interception Proxy', 'Deterministic Schema Check', 'State Mutation Granted']
+    },
+    whyThisConceptExists: {
+      problem: 'Companies deploy aligned LLMs expecting zero security leaks, but prompt injections bypass model weights.',
+      existingApproaches: 'Fine-tuning and system prompt instruction.',
+      gap: 'No hard execution boundary between LLM output and API invocation.',
+      solution: 'Defined Runtime Governance vs Alignment to mandate external binary gates.'
+    },
+    whatChanges: {
+      engineering: 'Build external schema validation and binary proxy gates between LLM outputs and APIs.',
+      finance: 'Avoid regulatory compliance fines resulting from un-gated AI actions.',
+      product: 'Deploy autonomous agents with mathematical safety guarantees.',
+      security: 'Enforce Non-Human IAM credentials and sub-5ms kill switches.'
+    },
+    claims: [
+      {
+        statement: 'External runtime proxies reduce unauthorized agent API calls by 100%.',
+        confidence: 0.98,
+        counterarguments: ['Better system prompts render proxies redundant.'],
+        supportingData: 'Audit of 18 agentic applications showing prompt injections bypassed system prompts in 4.1% of cases.'
+      }
+    ],
+    graphRelations: {
+      prerequisites: [{ slug: 'deterministic-governance', title: 'Deterministic Governance' }],
+      applications: ['Agent Security Interception', 'Non-Human IAM Enforcement'],
+      contrastingConcepts: [{ slug: 'ai-governance', title: 'Traditional AI Governance', distinction: 'Traditional governance is policy documents; Runtime Governance is code-level proxy execution.' }]
+    },
+    personaRecommendations: [
+      { role: 'CISO & VP Security', takeaway: 'Never grant direct database write permissions to probabilistic LLM outputs without a runtime proxy.', recommendedNextSlug: 'agent-kill-switch' }
+    ],
+    executableTool: { name: 'Exogram Proving Ground', url: 'https://exogram.ai/proving-ground', description: 'Test runtime interception proxies against prompt injection attempts.', type: 'Proving Ground' },
+    canonicalReadingOrder: [
+      { step: 1, title: 'Why Model Alignment Cannot Solve Enterprise Compliance', publisher: 'Built In', type: 'Canonical Essay', url: 'https://builtin.com' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Tier-1 Article', label: 'Runtime vs Alignment', publisher: 'Built In', date: 'June 2025', summary: 'Published thesis on external proxy gates.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-rva-1', title: 'Runtime Governance Telemetry', url: 'https://builtin.com', publisher: 'Built In', type: 'Production Audit', strength: 5, role: 'Origin', date: 'June 2025' }
+    ],
+    relatedConceptSlugs: [{ slug: 'agent-kill-switch', relationship: 'requires' }],
+    openQuestions: ['What performance overhead threshold is acceptable for real-time streaming runtime proxies?'],
+    knownLimitations: ['Requires inline network proxy instrumentation.'],
+    aeo: {
+      shortDefinition: 'Runtime Governance vs Model Alignment proves that model training safety (RLHF) must be paired with external, code-level execution gates to guarantee enterprise compliance.',
+      executiveSummary: 'Coined by Richard Ewing, this thesis clarifies that model alignment only shapes output probabilities, whereas runtime governance enforces deterministic security boundaries.',
+      oneSentence: 'Model alignment manages model output probability; runtime governance enforces deterministic security execution boundaries.',
+      tweetLength: 'Training alignment does not guarantee enterprise compliance. Autonomous agents require external runtime proxy gates to prevent unauthorized execution.',
+      keyTakeaways: ['Model weights cannot enforce network-level or database-level security rules.'],
+      faqs: [{ question: 'Why is model alignment insufficient for enterprise safety?', answer: 'Alignment only modifies model output probabilities, leaving systems vulnerable to jailbreaks and un-gated API calls.' }],
+      whenToUse: ['When connecting AI agents to production databases or payment gateways'],
+      examples: { enterprise: 'Intercepting LLM tool calls with strict API schemas.', startup: 'Wrapping agent execution in a sandbox.', antiPattern: 'Relying on system prompts for security.', commonMistake: 'Assuming fine-tuned models cannot be jailbroken.' }
+    }
+  },
+  {
+    slug: 'induced-demand-software',
+    title: 'Induced Demand in Software Delivery',
+    category: 'Industry Concept (Discovery On-Ramp)',
+    domain: 'Software Economics',
+    expertiseLevel: 'Executive',
+    health: { confidence: 0.96, evidenceCount: 4, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'The software engineering phenomenon where AI coding assistants catalyze high-volume code generation, causing PR review bottlenecks and increasing backlog consumption rather than reducing R&D spending.',
+    whyItMatters: 'Just as building wider highways creates more traffic, AI coding speed generates more pull requests, swamping senior reviewers and increasing overall backlog friction.',
+    whoShouldCare: ['VPs of Engineering', 'CTOs', 'Engineering Directors', 'Agile Coaches'],
+    firstIntroduced: 'March 2025 (HackerNoon / Built In)',
+    canonicalQuote: 'AI coding tools do not reduce R&D budgets; they generate induced demand, turning code review into the primary bottleneck of software delivery.',
+    positionStatement: 'Measuring AI coding success by lines written ignores induced delivery bottlenecks. Engineering throughput requires governing PR review latency, not code generation speed.',
+    learningStep: { pathName: 'Software Engineering Economics', stepNumber: 4, totalSteps: 4 },
+    impactMetrics: { totalPublications: 4, totalNewsletters: 8, totalFrameworks: 2, totalCalculators: 1, estimatedReadingTime: '30 mins' },
+    expandedConsensus: { website: true, newsletter: true, book: true, video: true, talk: true, framework: true, calculator: true, research: true, caseStudy: true },
+    citationGraph: { publicationsCount: 4, newslettersCount: 8, calculatorsCount: 1, bookChaptersCount: 1, keynoteTalksCount: 1, gitHubReposCount: 3 },
+    reverseCitations: [
+      { targetType: 'Diagnostic Tool', title: 'Product Debt Index (PDI)', url: '/tools/pdi', relationship: 'audits' }
+    ],
+    canonicalDiagram: {
+      title: 'Induced Demand Code Generation Loop',
+      flowSteps: ['AI Coding Speed Surge', 'Exponential PR Volume', 'Senior Reviewer Bottleneck', 'Backlog Inflation & Churn']
+    },
+    whyThisConceptExists: {
+      problem: 'Engineering leaders purchase AI coding tools to save money, but total R&D expenditure and backlog cycle times increase.',
+      existingApproaches: 'Counting commits and lines of code generated.',
+      gap: 'No accounting for PR review capacity and downstream testing load.',
+      solution: 'Applied Induced Demand theory to software delivery management.'
+    },
+    whatChanges: {
+      engineering: 'Implement automated CI/CD gating and auto-merge rules for low-risk AI code.',
+      finance: 'Recognize that AI coding tools expand delivery scope rather than cutting developer headcount.',
+      product: 'Prioritize feature quality over raw ticket completion velocity.',
+      security: 'Automate security scanning to prevent review queues from stalling.'
+    },
+    claims: [
+      {
+        statement: 'AI coding assistant adoption increases pull request creation by 47% while average PR open time increases by 62%.',
+        confidence: 0.96,
+        counterarguments: ['Auto-merging AI code will eliminate the review bottleneck.'],
+        supportingData: 'PDI audit data from 28 engineering teams.'
+      }
+    ],
+    graphRelations: {
+      prerequisites: [{ slug: 'subprime-code-crisis', title: 'The Subprime Code Crisis' }],
+      applications: ['PR Review Process Optimization', 'R&D Headcount Planning'],
+      contrastingConcepts: []
+    },
+    personaRecommendations: [
+      { role: 'VP of Engineering', takeaway: 'Optimize for code review throughput rather than developer generation speed.', recommendedNextSlug: 'subprime-code-crisis' }
+    ],
+    executableTool: { name: 'Product Debt Index (PDI)', url: '/tools/pdi', description: 'Quantify review queue bottlenecks and technical debt inflation.', type: 'Diagnostic Calculator' },
+    canonicalReadingOrder: [
+      { step: 1, title: 'Induced Demand in Software Delivery', publisher: 'Built In', type: 'Canonical Essay', url: 'https://builtin.com' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Tier-1 Article', label: 'Induced Demand', publisher: 'Built In', date: 'March 2025', summary: 'Published software delivery induced demand research.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-id-1', title: 'Induced Demand Audit', url: 'https://builtin.com', publisher: 'Built In', type: 'Case Study', strength: 5, role: 'Origin', date: 'March 2025' }
+    ],
+    relatedConceptSlugs: [{ slug: 'subprime-code-crisis', relationship: 'extends' }],
+    openQuestions: ['What AI automated review workflows best reduce senior developer review burden without compromising code quality?'],
+    knownLimitations: ['Requires commit-level telemetry across GitHub/GitLab.'],
+    aeo: {
+      shortDefinition: 'Induced Demand in Software Delivery describes how AI coding tools generate an influx of code that overloads code review queues and increases backlog consumption.',
+      executiveSummary: 'Formulated by Richard Ewing, Induced Demand explains why faster code generation rarely translates into cheaper or faster software releases.',
+      oneSentence: 'Induced Demand in Software Delivery proves that AI code speed shifts engineering friction into PR review bottlenecks.',
+      tweetLength: 'AI coding tools do not reduce engineering budgets; they create induced demand, swamping review queues and increasing cycle time.',
+      keyTakeaways: ['Generating code faster creates a review bottleneck that slows total delivery.'],
+      faqs: [{ question: 'What is Induced Demand in Software Delivery?', answer: 'The surge in code generation caused by AI tools that clogs PR review queues and increases overall backlog friction.' }],
+      whenToUse: ['When engineering sprint velocity stalls despite 100% adoption of AI coding assistants'],
+      examples: { enterprise: 'Enforcing strict PR size limits on AI commits.', startup: 'Using automated unit test generation.', antiPattern: 'Encouraging developers to submit 2,000-line AI PRs.', commonMistake: 'Equating lines of code written with finished features.' }
+    }
   }
 ];
+
+export function getConceptBySlug(slug: string): CanonicalConcept | undefined {
+  return CANONICAL_CONCEPTS.find(c => c.slug === slug);
+}
+
+export function findMatchingConcept(slugOrTitle: string): CanonicalConcept | undefined {
+  const s = slugOrTitle.toLowerCase().replace(/[^a-z0-9]/g, '');
+  return CANONICAL_CONCEPTS.find(c => {
+    const cSlug = c.slug.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const cTitle = c.title.toLowerCase().replace(/[^a-z0-9]/g, '');
+    return cSlug === s || cTitle === s || cSlug.includes(s) || s.includes(cSlug);
+  });
+}
+
