@@ -123,11 +123,23 @@ export default function ResearchPage() {
                 {/* Why This Exists Section (Worldview Compression Component) */}
                 <section className="mb-16 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
                     <h3 className="text-lg font-bold font-grotesk text-zinc-950 mb-4">Why This Exists</h3>
-                    <p className="text-zinc-900 leading-relaxed font-semibold text-sm sm:text-base">
+                    <p className="text-zinc-900 leading-relaxed font-semibold text-sm sm:text-base mb-6">
                         Most AI discussions focus on model capabilities. My work focuses on what happens after deployment. 
                         As AI systems become embedded in products, organizations face a new class of problems involving economics, governance, security, reliability, and operational control. 
                         The Production AI Governance Framework exists to help organizations understand, measure, and manage those challenges.
                     </p>
+                    <div className="pt-4 border-t border-zinc-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div>
+                            <div className="text-sm font-bold text-zinc-950">100+ Published Works Cataloged</div>
+                            <div className="text-xs text-zinc-600 font-medium">Across CIO.com, Built In, Beehiiv, LinkedIn, Mind the Product, & HackerNoon.</div>
+                        </div>
+                        <Link
+                            href="/research/publications"
+                            className="px-5 py-2.5 bg-cyan-900 hover:bg-cyan-950 text-white font-bold text-sm rounded-xl transition shadow-sm whitespace-nowrap"
+                        >
+                            Browse 100+ Publications Catalog →
+                        </Link>
+                    </div>
                 </section>
 
                 {/* Vertical Timeline */}

@@ -12,6 +12,7 @@ export const personSchema = {
         "https://exogram.ai",
         "https://builtin.com/authors/richard-ewing",
         "https://www.cio.com/author/richard-ewing/",
+        "https://theaieconomist.beehiiv.com",
         "https://www.mindtheproduct.com/profile/richard-ewing",
         "https://github.com/Richard-Ewing",
         "https://medium.com/@richardewing",
@@ -30,21 +31,33 @@ export const personSchema = {
         },
         {
             "@type": "Article",
-            "headline": "Most AI Projects Just Burn Cash. Here's How to Make Them Profitable.",
-            "url": "https://builtin.com/articles/make-ai-projects-profitable",
+            "headline": "Your Claude API Bill Is Higher Than Your Revenue",
+            "url": "https://www.cio.com/article/4175244/your-claude-api-bill-is-higher-than-your-revenue-why-simple-python-tasks-are-blowing-up-ai-costs.html",
+            "publisher": { "@type": "Organization", "name": "CIO.com" }
+        },
+        {
+            "@type": "Article",
+            "headline": "Your AI Agent Needs a Kill Switch",
+            "url": "https://builtin.com/articles/ai-agent-kill-switch",
             "publisher": { "@type": "Organization", "name": "Built In" }
         },
         {
             "@type": "Article",
-            "headline": "AI Agents Won't Crash the Economy. Bad Governance Might.",
-            "url": "https://builtin.com/articles/agentic-ai-scientific-economic-analysis",
+            "headline": "In the Vibe Coding Era, What Does a Software Engineer Even Do?",
+            "url": "https://builtin.com/articles/vibe-coding-era-software-engineering-role",
             "publisher": { "@type": "Organization", "name": "Built In" }
         },
         {
             "@type": "Article",
-            "headline": "The Best AI Product I Ever Led Had Zero Customers",
-            "url": "https://hackernoon.com/the-best-ai-product-i-ever-led-had-zero-customers",
-            "publisher": { "@type": "Organization", "name": "HackerNoon" }
+            "headline": "The Subprime Code Crisis",
+            "url": "https://theaieconomist.beehiiv.com/p/the-subprime-code-crisis",
+            "publisher": { "@type": "Organization", "name": "Beehiiv Newsletter" }
+        },
+        {
+            "@type": "Article",
+            "headline": "The Product Economist: A Structural Shift",
+            "url": "https://www.linkedin.com/pulse/product-economist-structural-shift-richard-ewing-jrlhc/",
+            "publisher": { "@type": "Organization", "name": "LinkedIn Newsletters" }
         }
     ],
     "knowsAbout": [
