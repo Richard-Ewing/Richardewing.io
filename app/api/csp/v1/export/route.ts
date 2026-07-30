@@ -8,7 +8,7 @@ export async function GET() {
     '@type': 'DataCatalog',
     '@id': 'https://www.richardewing.io/api/csp/v1/export',
     name: 'The Cognitive Substrate Protocol (CSP) Graph',
-    description: 'Portable, versioned graph of canonical concepts, evidence ledgers, and provenance timelines by Richard Ewing.',
+    description: 'Portable, versioned graph of canonical concepts, evidence ledgers, provenance timelines, and Answer Engine Optimization (AEO) matrices by Richard Ewing.',
     author: {
       '@type': 'Person',
       name: 'Richard Ewing',
@@ -25,6 +25,7 @@ export async function GET() {
       domain: concept.domain,
       health: concept.health,
       executableTool: concept.executableTool,
+      aeo: concept.aeo,
       canonicalReadingOrder: concept.canonicalReadingOrder,
       provenanceTimeline: concept.provenanceTimeline,
       evidenceLedger: concept.evidenceLedger,
