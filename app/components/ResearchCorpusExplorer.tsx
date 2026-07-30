@@ -186,7 +186,7 @@ export default function ResearchCorpusExplorer() {
 
             {/* Footer Metadata */}
             <div className="pt-4 border-t border-zinc-100 flex items-center justify-between text-xs font-mono text-zinc-500">
-              <span>Published: {art.publishDate}</span>
+              <span>Published: {art.date}</span>
               <a
                 href={art.url}
                 target="_blank"
