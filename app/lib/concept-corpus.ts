@@ -36,6 +36,13 @@ export interface ConceptHealth {
   supersededBy?: string;
 }
 
+export interface ExecutableToolRef {
+  name: string;
+  url: string;
+  description: string;
+  type: 'Diagnostic Calculator' | 'Decision Tree' | 'Audit Scorecard' | 'Proving Ground';
+}
+
 export interface ConceptNode {
   slug: string;
   title: string;
@@ -44,6 +51,7 @@ export interface ConceptNode {
   definition: string;
   whyItMatters: string;
   firstIntroduced: string;
+  executableTool?: ExecutableToolRef;
   canonicalReadingOrder: CanonicalReadingStep[];
   provenanceTimeline: ProvenanceMilestone[];
   evidenceLedger: EvidenceLedgerItem[];
@@ -71,6 +79,12 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'The compounding margin penalty incurred when variable LLM inference query costs scale faster than subscription revenue, shifting hosting infrastructure into variable Cost of Goods Sold (COGS).',
     whyItMatters: 'Traditional SaaS enjoyed 80%+ gross margins because marginal serving cost was near zero. AI inference breaks this assumption, eroding gross margins by 20-40% unless model-task routing and semantic caching are enforced.',
     firstIntroduced: 'March 2025 (Beehiiv / Built In)',
+    executableTool: {
+      name: 'AI Unit Economics Benchmark (AUEB)',
+      url: '/tools/aueb',
+      description: 'Calculate AI margin collapse with multi-API cost analysis and COGS forensics.',
+      type: 'Diagnostic Calculator'
+    },
     canonicalReadingOrder: [
       {
         step: 1,
@@ -109,10 +123,10 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       },
       {
         step: 6,
-        title: 'AI Volatility Tax Unit Margin Calculator (AUEB Engine)',
+        title: 'AI Unit Economics Benchmark (AUEB Engine)',
         publisher: 'richardewing.io',
         type: 'Executable Diagnostic Tool',
-        url: 'https://www.richardewing.io/tools/aueb'
+        url: '/tools/aueb'
       }
     ],
     provenanceTimeline: [
@@ -227,6 +241,12 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'The quantitative framework measuring feature-level gross margin contribution, token burn rates, and cloud repatriation breakeven points for AI-native software.',
     whyItMatters: 'Prevents enterprise software teams from mistaking high user activity for financial success when individual query costs destroy unit margins.',
     firstIntroduced: 'January 2025 (CIO.com / Beehiiv)',
+    executableTool: {
+      name: 'AI Unit Economics Audit Framework',
+      url: '/tools/aueb',
+      description: 'Audit AI margin contribution and calculate gross margin contribution.',
+      type: 'Diagnostic Calculator'
+    },
     canonicalReadingOrder: [
       {
         step: 1,
@@ -334,6 +354,12 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'An execution architecture that enforces binary admissibility gates, state integrity hashing, and cryptographic audit ledgers between probabilistic AI models and production systems.',
     whyItMatters: 'Probabilistic guardrails (confidence scores, LLM-as-a-judge) fail because they use guessing systems to police guessing systems. Deterministic governance enforces rule-based boundaries.',
     firstIntroduced: 'November 2025 (Beehiiv / Built In)',
+    executableTool: {
+      name: 'Exogram Proving Ground',
+      url: 'https://exogram.ai/proving-ground',
+      description: 'Test deterministic security gates and state integrity checks.',
+      type: 'Proving Ground'
+    },
     canonicalReadingOrder: [
       {
         step: 1,
@@ -467,6 +493,12 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'A binary execution control mechanism that halts autonomous AI agent operations within 5ms when safety rules or environmental hash boundaries are breached.',
     whyItMatters: 'Autonomous AI agents possess database credentials and API keys. Without a deterministic kill switch, memory poisoning or prompt injection can execute unauthorized production transactions.',
     firstIntroduced: 'May 2026 (Built In - Editor\'s Pick)',
+    executableTool: {
+      name: 'Agentic Drift & Boundary Matrix',
+      url: '/tools/agentic-drift-matrix',
+      description: 'Audit agent action allowlists and execution boundaries.',
+      type: 'Decision Tree'
+    },
     canonicalReadingOrder: [
       {
         step: 1,
@@ -574,6 +606,12 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'The operational shift in software development where AI generates code volume and software engineers transition from syntax authoring to system verification and error auditing.',
     whyItMatters: 'High code generation velocity creates a review bottleneck if senior engineering verification capacity does not scale proportionally.',
     firstIntroduced: 'May 2026 (Built In - Editor\'s Pick)',
+    executableTool: {
+      name: 'Audit Interview Scorecard Engine',
+      url: '/tools/audit-interview',
+      description: 'Evaluate engineering candidates on error detection capacity rather than syntax authoring.',
+      type: 'Audit Scorecard'
+    },
     canonicalReadingOrder: [
       {
         step: 1,
@@ -681,6 +719,12 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'The systemic accumulation of unverified, AI-generated code in enterprise repositories, creating hidden technical debt analogous to 2008 mortgage derivatives.',
     whyItMatters: 'Unverified code velocity inflates short-term output metrics while creating catastrophic long-term maintenance OpEx and security liabilities.',
     firstIntroduced: 'February 2026 (Beehiiv / LinkedIn)',
+    executableTool: {
+      name: 'Product Debt Index Engine (PDI)',
+      url: '/tools/pdi',
+      description: 'Quantify unverified code debt and calculate burn-down ROI projections.',
+      type: 'Diagnostic Calculator'
+    },
     canonicalReadingOrder: [
       {
         step: 1,
@@ -788,6 +832,12 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'A product management discipline focused on unit economics, R&D capital allocation, margin contribution, and technical debt valuation over vanity feature output.',
     whyItMatters: 'Bridges the gap between engineering story points and CFO-level balance sheet valuation.',
     firstIntroduced: 'October 2024 (Mind the Product / Beehiiv)',
+    executableTool: {
+      name: 'APER Engineering ROI Calculator',
+      url: '/tools/aper',
+      description: 'Calculate Revenue Per Engineer and team health metrics.',
+      type: 'Diagnostic Calculator'
+    },
     canonicalReadingOrder: [
       {
         step: 1,
@@ -920,6 +970,12 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     definition: 'The financial penalty paid when routine maintenance and technical debt remediation are misclassified as strategic R&D investment under ASC 350-40 accounting rules.',
     whyItMatters: 'Misclassifying maintenance OpEx overstates enterprise innovation spend by 30-40%, misleading boards and creating tax compliance liabilities.',
     firstIntroduced: 'December 2024 (CIO.com)',
+    executableTool: {
+      name: 'Innovation Tax Calculator',
+      url: '/tools/innovation-tax-calculator',
+      description: 'Audit R&D spend vs ASC 350-40 OpEx rules.',
+      type: 'Diagnostic Calculator'
+    },
     canonicalReadingOrder: [
       {
         step: 1,

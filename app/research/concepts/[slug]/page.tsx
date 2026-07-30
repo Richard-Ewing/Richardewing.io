@@ -99,6 +99,34 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
           </p>
         </div>
 
+        {/* Phase 4: Executable Diagnostic Tool Banner */}
+        {concept.executableTool && (
+          <section className="bg-gradient-to-r from-cyan-950/80 via-zinc-900 to-indigo-950/80 border border-cyan-500/40 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-cyan-500 text-zinc-950">
+                  Executable Tool
+                </span>
+                <span className="text-xs font-mono text-cyan-300 font-semibold">
+                  [{concept.executableTool.type}]
+                </span>
+              </div>
+              <h3 className="text-xl font-bold font-grotesk text-white">
+                {concept.executableTool.name}
+              </h3>
+              <p className="text-xs sm:text-sm text-zinc-300 max-w-xl">
+                {concept.executableTool.description}
+              </p>
+            </div>
+            <Link
+              href={concept.executableTool.url}
+              className="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-zinc-950 font-bold text-sm rounded-xl transition shadow-lg whitespace-nowrap self-start sm:self-center"
+            >
+              Launch Tool ↗
+            </Link>
+          </section>
+        )}
+
         {/* Concept Health & Verification Metrics */}
         <section className="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 space-y-4">
           <h2 className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">
