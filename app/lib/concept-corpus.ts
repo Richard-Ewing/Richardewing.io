@@ -101,12 +101,12 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
   },
   {
     slug: 'ai-economics',
-    title: 'AI Economics',
+    title: 'AI Economics & Tokenomics',
     category: 'Industry Concept (Discovery On-Ramp)',
     domain: 'AI Economics',
     health: { confidence: 0.99, evidenceCount: 8, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 1 },
-    definition: 'The financial discipline analyzing variable inference cost scaling, gross margin compression, token unit economics, and capital allocation in AI-native software.',
-    whyItMatters: 'Replaces vanity usage growth metrics with unit margin contribution analysis to ensure AI software products remain financially solvent.',
+    definition: 'The financial discipline analyzing variable inference cost scaling, token consumption metrics, gross margin compression (50-60% AI margins vs 80-90% SaaS), and capital allocation in AI-native software.',
+    whyItMatters: 'Replaces vanity usage growth metrics with token unit margin contribution analysis to ensure AI software products remain financially solvent.',
     firstIntroduced: 'Industry Term (Bridged by Richard Ewing)',
     executableTool: { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb', description: 'Calculate AI margin collapse with multi-API cost analysis.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
@@ -125,6 +125,60 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     ],
     openQuestions: ['What are standard benchmark ratio thresholds for AI COGS as a percentage of ARR in Series B SaaS?'],
     knownLimitations: ['Requires granular API billing instrumentation per customer session.']
+  },
+  {
+    slug: 'runtime-vs-alignment',
+    title: 'Runtime Governance vs. Model Alignment',
+    category: 'Industry Concept (Discovery On-Ramp)',
+    domain: 'AI Governance',
+    health: { confidence: 0.97, evidenceCount: 5, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'The architectural distinction proving that training-level model alignment cannot solve enterprise compliance, requiring external runtime guardrails and Non-Human IAM to govern machine-to-machine agents.',
+    whyItMatters: 'RLHF alignment conditions probabilistic weights, but cannot guarantee zero unauthorized database writes or payment transfers during production agent execution.',
+    firstIntroduced: 'November 2025 (Beehiiv / Built In)',
+    executableTool: { name: 'Exogram Proving Ground', url: 'https://exogram.ai/proving-ground', description: 'Test runtime proxy interceptors and non-human IAM gates.', type: 'Proving Ground' },
+    canonicalReadingOrder: [
+      { step: 1, title: 'Why I Built Exogram: AI Agents Need Deterministic Governance', publisher: 'Beehiiv Laboratory', type: 'Problem Identification', url: 'https://theaieconomist.beehiiv.com/p/why-i-built-exogram-ai-agents-need-deterministic-governance' },
+      { step: 2, title: 'Architecting Security Gates for AI Agents', publisher: 'Built In', type: 'Security Gate Specification', url: 'https://builtin.com/articles/ai-agent-security-gates' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Research Note', label: 'Why I Built Exogram', publisher: 'Beehiiv Laboratory', date: 'November 2025', url: 'https://theaieconomist.beehiiv.com/p/why-i-built-exogram-ai-agents-need-deterministic-governance', summary: 'Demonstrated why training-time alignment fails to secure enterprise API calls.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-rva-1', title: 'Why I Built Exogram', url: 'https://theaieconomist.beehiiv.com/p/why-i-built-exogram-ai-agents-need-deterministic-governance', publisher: 'Beehiiv', type: 'Origin', strength: 5, role: 'Origin', date: 'November 2025' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'deterministic-governance', relationship: 'implements' },
+      { slug: 'agent-kill-switch', relationship: 'requires' }
+    ],
+    openQuestions: ['How to enforce Non-Human IAM credentials across ephemeral sub-agent chains?'],
+    knownLimitations: ['Requires proxy latency budgets under 2ms for high-frequency trading or real-time APIs.']
+  },
+  {
+    slug: 'induced-demand-code',
+    title: 'Induced Demand in Software Delivery',
+    category: 'Industry Concept (Discovery On-Ramp)',
+    domain: 'Engineering Leadership',
+    health: { confidence: 0.96, evidenceCount: 4, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'The operational phenomenon where AI coding assistants catalyze exponential code generation volume, causing senior engineer review bottlenecks and increasing backlog consumption rather than reducing R&D spending.',
+    whyItMatters: 'Generating code 10x faster creates an audit crunch when senior engineering verification capacity fails to scale, accumulating subprime technical debt.',
+    firstIntroduced: 'January 2026 (CIO.com / Built In)',
+    executableTool: { name: 'Audit Interview Scorecard Engine', url: '/tools/audit-interview', description: 'Audit review capacity vs code generation throughput.', type: 'Audit Scorecard' },
+    canonicalReadingOrder: [
+      { step: 1, title: 'GitHub Copilot Is Generating More Code Than Your Team Can Review', publisher: 'CIO.com', type: 'Review Bottleneck Analysis', url: 'https://www.cio.com/article/4183045/github-copilot-is-generating-more-code-than-your-team-can-review-why-senior-engineers-are-now-the-bottleneck.html' },
+      { step: 2, title: 'In the Vibe Coding Era, What Does a Software Engineer Even Do?', publisher: 'Built In', type: 'Tier-1 Specification (Editor\'s Pick)', url: 'https://builtin.com/articles/vibe-coding-era-software-engineering-role' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Tier-1 Article', label: 'GitHub Copilot Review Bottleneck', publisher: 'CIO.com', date: 'January 2026', url: 'https://www.cio.com/article/4183045/github-copilot-is-generating-more-code-than-your-team-can-review-why-senior-engineers-are-now-the-bottleneck.html', summary: 'Identified induced demand and review bottlenecks in AI-enabled teams.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-idc-1', title: 'GitHub Copilot Review Bottleneck', url: 'https://www.cio.com/article/4183045/github-copilot-is-generating-more-code-than-your-team-can-review-why-senior-engineers-are-now-the-bottleneck.html', publisher: 'CIO.com', type: 'Case Study', strength: 5, role: 'Origin', date: 'January 2026' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'vibe-coding', relationship: 'causes' },
+      { slug: 'subprime-code-crisis', relationship: 'predicts' }
+    ],
+    openQuestions: ['What is the optimal ratio of senior staff auditors to AI code generation output?'],
+    knownLimitations: ['Requires tracking PR review latency per line of AI-generated code.']
   },
   {
     slug: 'ai-agents',
@@ -446,7 +500,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     firstIntroduced: 'April 2026 (LinkedIn Newsletters)',
     executableTool: { name: 'Product Debt Index Engine (PDI)', url: '/tools/pdi', description: 'Audit dashboard velocity vs hidden maintenance liabilities.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
-      { step: 1, title: 'The R&D Ponzi Scheme: The $891,000 Lie on Your Dashboard', publisher: 'LinkedIn Newsletters', type: 'Dashboard Audit Strategy', url: 'https://www.linkedin.com/pulse/rd-ponzi-scheme-891000-lie-your-engineering-dashboard-richard-ewing-bkwdc/' }
+      { step: 1, title: 'The R&D Ponzi Scheme: The $891,000 Lie on Your Engineering Dashboard', publisher: 'LinkedIn Newsletters', type: 'Dashboard Audit Strategy', url: 'https://www.linkedin.com/pulse/rd-ponzi-scheme-891000-lie-your-engineering-dashboard-richard-ewing-bkwdc/' }
     ],
     provenanceTimeline: [
       { stage: 'LinkedIn Essay', label: 'The R&D Ponzi Scheme', publisher: 'LinkedIn Newsletters', date: 'April 2026', url: 'https://www.linkedin.com/pulse/rd-ponzi-scheme-891000-lie-your-engineering-dashboard-richard-ewing-bkwdc/', summary: 'Quantified the $891k average maintenance liability on engineering dashboards.' }
