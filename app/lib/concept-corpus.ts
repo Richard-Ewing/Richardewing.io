@@ -20,7 +20,7 @@ export interface EvidenceLedgerItem {
   title: string;
   url: string;
   publisher: string;
-  type: 'Production Telemetry' | 'Multi-Company Audit' | 'Case Study' | 'Simulation' | 'Qualitative Observation' | 'Origin';
+  type: string;
   strength: 1 | 2 | 3 | 4 | 5;
   role: 'Origin' | 'Supports' | 'Extends' | 'Refines' | 'Challenges';
   date: string;
