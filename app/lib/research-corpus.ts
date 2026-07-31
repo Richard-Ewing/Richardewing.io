@@ -21,7 +21,20 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
-  // New LinkedIn Newsletter — July 30, 2026
+  // New Beehiiv Laboratory Newsletter — July 31, 2026
+  {
+    id: 'beehiiv-stop-unauthorized-db-actions',
+    title: 'How to Stop Unauthorized AI Agent Database Actions',
+    url: 'https://theaieconomist.beehiiv.com/p/how-to-protect-production-databases-from-unauthorized-ai-agent-actions',
+    publisher: 'Beehiiv',
+    domain: 'AI Governance',
+    type: 'Executable',
+    editorsPick: true,
+    date: 'July 31, 2026',
+    thesis: 'Why probabilistic system prompts fail when AI agents execute direct database operations, and how to install sub-5ms binary proxy gates to prevent unauthorized state mutations.',
+    relatedConceptIds: ['agent-kill-switch', 'deterministic-governance', 'runtime-vs-alignment', 'ai-governance']
+  },
+  // LinkedIn Newsletter — July 30, 2026
   {
     id: 'linkedin-ai-taking-actions',
     title: 'The Moment Your AI Starts Taking Actions, the Rules Change',
