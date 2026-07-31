@@ -8,6 +8,9 @@ import { categoryColors } from '@/lib/blog-types';
 import { frameworks } from '@/app/lib/data';
 import GovernancePathways from '@/components/semantic/GovernancePathways';
 import RelatedContent from '@/components/RelatedContent';
+import CiteThisPage from '@/components/seo/CiteThisPage';
+import { articleSchemaTemplate } from '@/app/lib/schemas';
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 
 export async function generateStaticParams() {
     return Object.keys(allArticles).map(slug => ({ slug }));
@@ -65,8 +68,15 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
         recommendedFrameworks.push(...frameworks.slice(0, 2 - recommendedFrameworks.length));
     }
 
+    const articleSchema = articleSchemaTemplate(article.title, article.excerpt, `https://www.richardewing.io/blog/${slug}`, article.date);
+
     return (
         <main className="pt-24 pb-20">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+            <BreadcrumbSchema items={[
+                { name: 'Blog', url: 'https://www.richardewing.io/blog' },
+                { name: article.title, url: `https://www.richardewing.io/blog/${slug}` }
+            ]} />
             <div className="page-container max-w-3xl mx-auto">
                 <div className="flex items-center gap-2 text-xs font-bold text-zinc-900 font-bold mb-8">
                     <Link href="/blog" className="hover:text-zinc-900 transition-colors">Blog</Link>
@@ -158,6 +168,13 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                         exogramMapping={article.relatedControls?.[0]} 
                     />
                 ) : null}
+
+                <CiteThisPage 
+                    title={article.title}
+                    author="Richard Ewing"
+                    date={article.date}
+                    url={article.canonicalUrl || `https://www.richardewing.io/blog/${slug}`}
+                />
 
                 {/* Author Box */}
                 <div className="mt-12 p-8 rounded-2xl border border-zinc-400 bg-white/[0.03]">

@@ -5,22 +5,22 @@ import EcosystemMap from '@/app/components/EcosystemMap';
 import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-    title: 'The Production AI Governance F & Strategy Diagnostics | Richard Ewing',
-    description: 'The Production AI Governance F provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Production AI Governance Framework Audits | Richard Ewing',
+    description: 'The Production AI Governance Framework provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     alternates: {
         canonical: 'https://www.richardewing.io/framework',
     },
     openGraph: {
-        title: 'The Production AI Governance Framework | Richard Ewing',
-        description: 'Explore the 6-pillar framework (Economics, Product, Engineering, Security, Operations, and Runtime Governance) to control production AI systems sustainably.',
+        title: 'Production AI Governance Framework Audits | Richard Ewing',
+        description: 'The Production AI Governance Framework provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
         url: 'https://www.richardewing.io/framework',
         type: 'website',
         images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'The Production AI Governance Framework',
-        description: 'Explore the 6-pillar framework (Economics, Product, Engineering, Security, Operations, and Runtime Governance) to control production AI systems sustainably.',
+        title: 'Production AI Governance Framework Audits | Richard Ewing',
+        description: 'The Production AI Governance Framework provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },
 };

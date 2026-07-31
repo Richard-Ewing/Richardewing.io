@@ -148,6 +148,14 @@ const Navigation = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
                             </Link>
 
+                            {/* Book a Call CTA */}
+                            <Link
+                                href="/services"
+                                className="bg-amber-500 text-zinc-950 px-4 py-2 rounded-lg font-bold hover:opacity-90 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-xs uppercase tracking-wider whitespace-nowrap shrink-0"
+                            >
+                                Book a Call
+                            </Link>
+
                             {/* Single Primary Assessment CTA */}
                             <Link
                                 href="/assessment"
@@ -226,6 +234,13 @@ const Navigation = () => {
                             </Link>
 
                             <div className="pt-4 border-t border-zinc-200 flex flex-col gap-3">
+                                <Link
+                                    href="/services"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="w-full py-3 bg-amber-500 text-zinc-950 font-bold text-center rounded-xl text-xs uppercase tracking-wider shadow-md"
+                                >
+                                    Book a Call
+                                </Link>
                                 <Link
                                     href="/assessment"
                                     onClick={() => setMobileMenuOpen(false)}

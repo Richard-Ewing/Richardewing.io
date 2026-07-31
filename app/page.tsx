@@ -7,6 +7,7 @@ import TransformationStory from './components/sections/TransformationStory';
 import ClientOutcomes from './components/sections/ClientOutcomes';
 import HighIntentConversionBlock from './components/sections/HighIntentConversionBlock';
 import NewsletterSection from './components/sections/NewsletterSection';
+import AsSeenInBar from '@/components/social-proof/AsSeenInBar';
 
 export const metadata: Metadata = {
   title: 'AI Economist - Enterprise AI Audits & Cost Governance | Richard Ewing',
@@ -95,6 +96,7 @@ export default function Home() {
       <Hero />
       {/* Layer 2: Persistent proof-of-authority bar */}
       <ProofRail />
+      <AsSeenInBar />
       {/* Layer 3: Three measurable problems */}
       <ThreeProblems />
       {/* Layer 4: How It Works */}

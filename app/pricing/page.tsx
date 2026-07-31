@@ -9,16 +9,23 @@ import { COMMERCIAL_OFFERS } from '@/lib/platform/offers/offers';
 
 export const metadata: Metadata = {
     title: 'Advisory & Diagnostic Pricing | Richard Ewing',
-    description: 'Transparent pricing for AI Economics diagnostics, R&D capital audits, and fractional executive retainers. Fixed scope, clear deliverables, guaranteed financial impact.',
+    description: 'Transparent pricing for AI Economics diagnostics and R&D capital audits. Secure fixed scope deliverables and guarantee financial impact.',
     alternates: {
         canonical: 'https://www.richardewing.io/pricing',
     },
     openGraph: {
         title: 'Advisory & Diagnostic Pricing | Richard Ewing',
-        description: 'Transparent pricing for AI Economics diagnostics, R&D capital audits, and fractional executive retainers.',
+        description: 'Transparent pricing for AI Economics diagnostics and R&D capital audits. Secure fixed scope deliverables and guarantee financial impact.',
         url: 'https://www.richardewing.io/pricing',
         type: 'website',
+        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Advisory & Diagnostic Pricing | Richard Ewing',
+        description: 'Transparent pricing for AI Economics diagnostics and R&D capital audits. Secure fixed scope deliverables and guarantee financial impact.',
+        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+    }
 };
 
 export default function PricingPage() {

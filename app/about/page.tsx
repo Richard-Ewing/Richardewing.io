@@ -6,15 +6,16 @@ import EcosystemMap from '@/app/components/EcosystemMap';
 import PrincipalContent from '../components/principal-content';
 import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 import FAQItem from '@/app/components/FAQItem';
+import AsSeenInBar from '@/components/social-proof/AsSeenInBar';
 
 export const metadata: Metadata = {
-    title: 'Richard Ewing Biography & Exogram Origin | Richard Ewing',
+    title: 'Richard Ewing Biography Exogram Founder | Richard Ewing',
     description: 'Richard Ewing is an enterprise AI Economist and the founder of Exogram. Audit production AI security and build PE-backed product economics.',
     alternates: {
         canonical: 'https://www.richardewing.io/about',
     },
     openGraph: {
-        title: 'Richard Ewing Biography & Exogram Origin | Richard Ewing',
+        title: 'Richard Ewing Biography Exogram Founder | Richard Ewing',
         description: 'Richard Ewing is an enterprise AI Economist and the founder of Exogram. Audit production AI security and build PE-backed product economics.',
         url: 'https://www.richardewing.io/about',
         type: 'profile',
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Richard Ewing Biography & Exogram Origin | Richard Ewing',
+        title: 'Richard Ewing Biography Exogram Founder | Richard Ewing',
         description: 'Richard Ewing is an enterprise AI Economist and the founder of Exogram. Audit production AI security and build PE-backed product economics.',
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     }
@@ -48,6 +49,10 @@ export default function AboutPage() {
                         For the past several years I&apos;ve been researching the economics, governance, security, and operational challenges that emerge after AI reaches production scale.
                     </p>
                 </section>
+
+                <div className="mb-16">
+                    <AsSeenInBar />
+                </div>
 
                 {/* Why This Exists Section (Worldview Compression Component) */}
                 <section className="mb-16 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">

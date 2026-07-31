@@ -1,4 +1,25 @@
-"use client";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Exogram AI Governance Deterministic Runtime | Richard Ewing',
+    description: 'Exogram is a deterministic AI governance runtime. Block shadow AI and enforce strict security boundaries before model execution.',
+    alternates: {
+        canonical: 'https://www.richardewing.io/exogram',
+    },
+    openGraph: {
+        title: 'Exogram AI Governance Deterministic Runtime | Richard Ewing',
+        description: 'Exogram is a deterministic AI governance runtime. Block shadow AI and enforce strict security boundaries before model execution.',
+        url: 'https://www.richardewing.io/exogram',
+        type: 'website',
+        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Exogram AI Governance Deterministic Runtime | Richard Ewing',
+        description: 'Exogram is a deterministic AI governance runtime. Block shadow AI and enforce strict security boundaries before model execution.',
+        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+    }
+};
 
 import React from 'react';
 import Link from 'next/link';

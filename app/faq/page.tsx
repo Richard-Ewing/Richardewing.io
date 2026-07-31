@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 
 export const dynamic = 'force-dynamic';
 
@@ -58,8 +59,25 @@ const faqs = [
 ];
 
 export default function FAQPage() {
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+            }
+        }))
+    };
+
     return (
         <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+            <BreadcrumbSchema items={[
+                { name: 'FAQ', url: 'https://www.richardewing.io/faq' }
+            ]} />
             <div className="page-container max-w-4xl mx-auto px-6">
                 
                 {/* Header */}

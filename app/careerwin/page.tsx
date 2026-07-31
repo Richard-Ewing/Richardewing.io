@@ -5,15 +5,22 @@ import { ScrollReveal } from '@/components/magicui/scroll-reveal';
 import CareerWinBenchmarkVisual from '@/app/components/CareerWinBenchmarkVisual';
 
 export const metadata: Metadata = {
-    title: 'CareerWin.ai — Career Intelligence for Engineers & Leaders',
-    description: 'Role benchmarks, leveling intelligence, and compensation strategy powered by the AI Economics Knowledge Engine. Built for senior engineers, architects, and product leaders.',
+    title: 'CareerWin Platform Career Intelligence | Richard Ewing',
+    description: 'CareerWin is a career intelligence platform for engineers and product leaders. Access role benchmarks and build a data-backed compensation strategy.',
     alternates: { canonical: 'https://www.richardewing.io/careerwin' },
     openGraph: {
-        title: 'CareerWin.ai — Career Intelligence for Engineers & Leaders',
-        description: 'Role benchmarks, leveling intelligence, and compensation strategy powered by the AI Economics Knowledge Engine.',
+        title: 'CareerWin Platform Career Intelligence | Richard Ewing',
+        description: 'CareerWin is a career intelligence platform for engineers and product leaders. Access role benchmarks and build a data-backed compensation strategy.',
         url: 'https://www.richardewing.io/careerwin',
         type: 'website',
+        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'CareerWin Platform Career Intelligence | Richard Ewing',
+        description: 'CareerWin is a career intelligence platform for engineers and product leaders. Access role benchmarks and build a data-backed compensation strategy.',
+        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+    }
 };
 
 export default function CareerWinPage() {

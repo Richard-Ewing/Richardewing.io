@@ -3,10 +3,23 @@ import Link from 'next/link';
 import ResearchCorpusExplorer from '@/app/components/ResearchCorpusExplorer';
 
 export const metadata: Metadata = {
-  title: 'Research Publications Catalog (100+ Published Works) | Richard Ewing',
-  description: 'Complete research catalog of 100+ published articles, essays, and notes across CIO.com, Built In, Beehiiv, LinkedIn, Mind the Product, and HackerNoon by Richard Ewing.',
+  title: 'Research Publications Catalog Published Works | Richard Ewing',
+  description: 'Explore a complete research catalog of over 100 published works. Read articles on engineering economics and AI capital management.',
   alternates: {
     canonical: 'https://www.richardewing.io/research/publications',
+  },
+  openGraph: {
+    title: 'Research Publications Catalog Published Works | Richard Ewing',
+    description: 'Explore a complete research catalog of over 100 published works. Read articles on engineering economics and AI capital management.',
+    url: 'https://www.richardewing.io/research/publications',
+    type: 'website',
+    images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Research Publications Catalog Published Works | Richard Ewing',
+    description: 'Explore a complete research catalog of over 100 published works. Read articles on engineering economics and AI capital management.',
+    images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
   },
 };
 

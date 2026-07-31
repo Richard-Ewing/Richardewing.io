@@ -8,6 +8,8 @@ import CheckoutButton from '@/app/components/client/CheckoutButton';
 import FAQItem from '@/app/components/FAQItem';
 import { ScrollReveal } from '@/components/magicui/scroll-reveal';
 import { COMMERCIAL_OFFERS } from '@/lib/platform/offers/offers';
+import AsSeenInBar from '@/components/social-proof/AsSeenInBar';
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 
 export const metadata: Metadata = {
     title: 'AI Advisory Services - Diagnostics, Audits & Cost Governance | Richard Ewing',
@@ -42,6 +44,9 @@ const colorMap: Record<string, { bg: string; border: string; text: string; pill:
 export default function ServicesPage() {
     return (
         <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
+            <BreadcrumbSchema items={[
+                { name: 'Services', url: 'https://www.richardewing.io/services' }
+            ]} />
             <div className="page-container max-w-4xl mx-auto px-6">
                 
                 {/* Breadcrumb */}
@@ -117,6 +122,7 @@ export default function ServicesPage() {
 
                 <div className="mb-24">
                     <ProofRail />
+                    <AsSeenInBar />
                 </div>
 
                 {/* Section 2: Deliverable Output Preview */}

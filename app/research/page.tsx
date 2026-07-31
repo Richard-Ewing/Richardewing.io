@@ -6,22 +6,22 @@ import ResearchTimeline from '@/app/components/client/ResearchTimeline';
 import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-    title: 'Research Evolution Timeline & Strategy Diagnostics | Richard Ewing',
+    title: 'Research Evolution Timeline AI Governance | Richard Ewing',
     description: 'Research Evolution Timeline provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     alternates: {
         canonical: 'https://www.richardewing.io/research',
     },
     openGraph: {
-        title: 'Research Evolution Timeline | Richard Ewing',
-        description: 'Mapping the body of evidence: how AI unit economics, product debt, agentic security, and control mechanics evolved into Exogram.',
+        title: 'Research Evolution Timeline AI Governance | Richard Ewing',
+        description: 'Research Evolution Timeline provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
         url: 'https://www.richardewing.io/research',
         type: 'website',
         images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Research Evolution Timeline | Richard Ewing',
-        description: 'Chronological intellectual evolution of the Production AI Governance framework.',
+        title: 'Research Evolution Timeline AI Governance | Richard Ewing',
+        description: 'Research Evolution Timeline provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },
 };
