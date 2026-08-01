@@ -3,10 +3,23 @@ import Link from 'next/link';
 import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 
 export const metadata: Metadata = {
-  title: 'Canonical Concepts Directory & Research Graph | Richard Ewing',
-  description: 'Authoritative index of Layer 1 Industry Discovery Concepts and Layer 2 Richard Ewing Original Frameworks across AI Economics, AI Governance, Software Economics, and Product Leadership.',
+  title: 'Canonical Concepts Directory | Richard Ewing',
+  description: 'Index of canonical definitions across AI Economics, AI Governance, and Software Economics. Each concept includes provenance, evidence ratings, and citation data.',
   alternates: {
     canonical: 'https://www.richardewing.io/concepts',
+  },
+  openGraph: {
+    title: 'Canonical Concepts Directory | Richard Ewing',
+    description: 'Index of canonical definitions across AI Economics, AI Governance, and Software Economics. Each concept includes provenance, evidence ratings, and citation data.',
+    url: 'https://www.richardewing.io/concepts',
+    type: 'website',
+    images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Canonical Concepts Directory | Richard Ewing',
+    description: 'Index of canonical definitions across AI Economics, AI Governance, and Software Economics. Each concept includes provenance, evidence ratings, and citation data.',
+    images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
   },
 };
 
