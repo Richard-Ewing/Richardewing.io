@@ -20,6 +20,28 @@ export default clerkMiddleware(async (auth, req) => {
     const slug = pathname.replace('/research/concepts/', '');
     return NextResponse.redirect(new URL(`/concepts/${slug}`, req.url), 308);
   }
+
+  // Edge-level 308 Permanent Redirect for Tier C and non-indexed compare pages -> /tools
+  if (pathname.startsWith('/compare/')) {
+    const slug = pathname.replace('/compare/', '').split('/')[0];
+    const tierA = [
+      'claude-code-vs-cursor-governance', 'claude-code-retry-loop-prevention',
+      'claude-context-rot-mitigation', 'cursor-repository-drift-prevention',
+      'ai-coding-agents', 'ai-guardrails-platforms', 'github-copilot-problems',
+      'cursor-problems', 'windsurf-problems', 'why-claude-loses-context',
+      'why-retry-loops-happen', 'why-cursor-rewrites-files', 'why-ai-coding-burns-money',
+      'why-mcp-is-dangerous', 'claude-md-is-not-governance', 'pdi-vs-sonarqube',
+      'pdi-vs-codeclimate', 'pdi-vs-waydev', 'audit-interview-vs-leetcode',
+      'audit-interview-vs-hackerrank', 'audit-interview-vs-traditional',
+      'aueb-vs-aws-cost-explorer', 'ev-se-vs-jellyfish', 'aper-vs-jellyfish',
+      'aper-vs-linearb', 'copilot-roi-vs-gitclear', 'dora-metrics-vs-aper',
+      'shadow-ai-vs-shadow-it', 'technical-debt-vs-technical-insolvency',
+      'vibe-coding-vs-agile'
+    ];
+    if (slug && !tierA.includes(slug)) {
+      return NextResponse.redirect(new URL('/tools', req.url), 308);
+    }
+  }
 });
 
 export const config = {
