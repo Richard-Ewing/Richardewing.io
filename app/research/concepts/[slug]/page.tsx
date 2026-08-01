@@ -585,6 +585,53 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
           </div>
         </section>
 
+        {/* Recommended Citation & Attribution Matrix */}
+        <section className="space-y-4 bg-zinc-50 border border-zinc-300 rounded-3xl p-8 shadow-sm">
+          <div className="space-y-1">
+            <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
+              Academic &amp; Industry Attribution Standard
+            </span>
+            <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
+              Recommended Citation
+            </h2>
+          </div>
+
+          <div className="space-y-4 font-mono text-xs text-zinc-900">
+            <div className="bg-white border border-zinc-300 rounded-2xl p-4 space-y-2">
+              <span className="text-[11px] text-zinc-600 font-bold uppercase block">Canonical Reference String</span>
+              <p className="font-sans text-sm font-bold text-zinc-950 select-all">
+                Ewing, R. ({new Date().getFullYear()}). "{concept.title}." <em>Richard Ewing Research Canon</em>. Available at: https://www.richardewing.io/concepts/{concept.slug}
+              </p>
+            </div>
+
+            <div className="bg-zinc-900 text-zinc-100 border border-zinc-800 rounded-2xl p-4 space-y-2">
+              <span className="text-[11px] text-zinc-400 font-bold uppercase block">BibTeX Citation</span>
+              <pre className="text-[11px] leading-relaxed overflow-x-auto text-emerald-400 select-all">
+{`@article{ewing_${concept.slug.replace(/-/g, '_')},
+  author = {Ewing, Richard},
+  title = {${concept.title}},
+  journal = {Richard Ewing Research Canon},
+  year = {2026},
+  url = {https://www.richardewing.io/concepts/${concept.slug}}
+}`}
+              </pre>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[11px] pt-2">
+              <div className="p-3 bg-white border border-zinc-200 rounded-xl">
+                <span className="text-zinc-600 font-bold block">First Origin &amp; Provenance:</span>
+                <span className="font-bold text-zinc-950">
+                  {concept.provenanceTimeline[0]?.publisher || 'LinkedIn'} ({concept.provenanceTimeline[0]?.date || '2026'})
+                </span>
+              </div>
+              <div className="p-3 bg-white border border-zinc-200 rounded-xl">
+                <span className="text-zinc-600 font-bold block">Current Specification Version:</span>
+                <span className="font-bold text-zinc-950">Version 1.0 (Q2 2026 Baseline)</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Back Link */}
         <div className="pt-8 border-t border-zinc-300 text-center">
           <Link
