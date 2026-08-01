@@ -107,7 +107,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/architecture/deterministic-control-layer`, 'monthly', 0.8);
     add(`${baseUrl}/benchmark/ai-capital-2026`, 'monthly', 0.9);
     add(`${baseUrl}/concepts`, 'weekly', 0.95);
-    add(`${baseUrl}/research/concepts`, 'weekly', 0.95);
 
     // === CANONICAL CONCEPTS SPECIFICATIONS ===
     const conceptSlugs = [
@@ -118,7 +117,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
     conceptSlugs.forEach(slug => {
         add(`${baseUrl}/concepts/${slug}`, 'weekly', 0.95);
-        add(`${baseUrl}/research/concepts/${slug}`, 'weekly', 0.95);
     });
 
     // === ARTICLE RECAPS ===
