@@ -66,7 +66,7 @@ export async function GET(req: Request) {
       liveFeedStatus: 'Active',
       feedsPolled: [
         { name: 'Beehiiv Laboratory', url: 'https://theaieconomist.beehiiv.com/', type: 'HTML Scraper & Feed' },
-        { name: 'LinkedIn Newsletters', url: 'https://www.linkedin.com/in/richard-ewing-zapmc', type: 'Bio Feed' },
+        { name: 'LinkedIn Newsletters & Posts', url: 'https://www.linkedin.com/in/richard-ewing-mba/', type: 'Activity Stream' },
         { name: 'Built In', url: 'https://builtin.com/authors/richard-ewing', type: 'Author Index' },
         { name: 'CIO.com', url: 'https://www.cio.com/author/richard-ewing', type: 'Author Index' }
       ],
