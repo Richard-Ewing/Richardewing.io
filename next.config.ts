@@ -140,7 +140,8 @@ const nextConfig: NextConfig = {
       { source: '/compare/new-relic-vs-tailwindcss', destination: '/tools', permanent: true },
       { source: '/compare/docker-vs-langchain', destination: '/tools', permanent: true },
       { source: '/compare/astro-vs-llamaindex', destination: '/tools', permanent: true },
-      { source: '/compare/:slug*', destination: '/tools', permanent: true },
+      // NOTE: Tier C compare redirects are handled by middleware.ts with Tier A allowlist.
+      // Do NOT add a blanket /compare/:slug* redirect here — it overrides Tier A page rendering.
       { source: '/vault/curriculum/tracks/strategic-leadership/N22-5', destination: '/vault/curriculum/tracks', permanent: true },
       { source: '/vault/curriculum/tracks/model-routing/25-3', destination: '/vault/curriculum/tracks', permanent: true },
       { source: '/vault/curriculum/tracks/25/25-9', destination: '/vault/curriculum/tracks', permanent: true },
