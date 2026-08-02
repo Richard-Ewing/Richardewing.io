@@ -11,7 +11,7 @@ import { TrendCard } from '../components/dashboard/TrendCard';
 import { BenchmarkCard } from '../components/dashboard/BenchmarkCard';
 import { RiskCard } from '../components/dashboard/RiskCard';
 import { LongitudinalTrendChart } from '../components/LongitudinalTrendChart';
-import { Activity, LayoutDashboard, Settings } from 'lucide-react';
+import { Activity, LayoutDashboard, Settings, DollarSign, Cpu, Shield, PieChart, ArrowUpRight, HelpCircle } from 'lucide-react';
 
 export default function ExecutiveDashboard() {
     const [history, setHistory] = useState<DiagnosticResult[]>([]);
@@ -43,27 +43,96 @@ export default function ExecutiveDashboard() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 {/* Header */}
-                <header className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-zinc-200 pb-8">
+                <header className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-zinc-200 pb-6">
                     <div>
                         <div className="flex items-center gap-3 mb-3">
                             <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
                                 <LayoutDashboard className="w-5 h-5 text-cyan-700" />
                             </div>
-                            <span className="text-sm font-mono text-zinc-800 uppercase tracking-widest font-bold">Enterprise Operating Console</span>
+                            <span className="text-sm font-mono text-zinc-800 uppercase tracking-widest font-bold">Enterprise Operating System</span>
                         </div>
-                        <h1 className="text-4xl font-grotesk font-bold text-zinc-900">Governance Command Center</h1>
+                        <h1 className="text-4xl font-grotesk font-bold text-zinc-900">Executive AI Command Center</h1>
                     </div>
-                    {hasData && (
-                        <div className="flex gap-3">
-                            <button className="px-4 py-2 bg-white border border-zinc-300 rounded-lg text-sm font-bold text-zinc-700 hover:bg-zinc-50 flex items-center gap-2">
-                                <Settings className="w-4 h-4" /> Preferences
-                            </button>
-                            <Link href="/tools" className="px-4 py-2 bg-zinc-50 border border-zinc-200 text-zinc-950 font-semibold rounded-lg text-sm font-bold hover:bg-zinc-100 flex items-center gap-2">
-                                <Activity className="w-4 h-4" /> New Assessment
-                            </Link>
-                        </div>
-                    )}
+                    <div className="flex gap-3">
+                        <Link href="/tools" className="px-4 py-2 bg-cyan-600 border border-cyan-500 text-zinc-950 font-semibold rounded-lg text-sm font-bold hover:bg-cyan-700 transition-colors flex items-center gap-2">
+                            <Activity className="w-4 h-4" /> New Diagnostic Run
+                        </Link>
+                    </div>
                 </header>
+
+                {/* 5-Product Module Quick Navigation Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+                    <Link href="/dashboard/capital" className="p-4 bg-white rounded-xl border border-zinc-200 shadow-sm hover:border-cyan-500 transition-all group">
+                        <div className="flex items-center justify-between mb-2">
+                            <span className="text-xs font-mono text-cyan-700 font-bold uppercase">Product 1</span>
+                            <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-cyan-600 transition-colors" />
+                        </div>
+                        <h3 className="font-grotesk font-bold text-zinc-900 flex items-center gap-2">
+                            <DollarSign className="w-4 h-4 text-cyan-700" /> AI Capital Ledger
+                        </h3>
+                        <p className="text-xs text-zinc-800 mt-1">CFO spend & unit economics</p>
+                    </Link>
+
+                    <Link href="/dashboard/engineering" className="p-4 bg-white rounded-xl border border-zinc-200 shadow-sm hover:border-violet-500 transition-all group">
+                        <div className="flex items-center justify-between mb-2">
+                            <span className="text-xs font-mono text-violet-700 font-bold uppercase">Product 2</span>
+                            <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-violet-600 transition-colors" />
+                        </div>
+                        <h3 className="font-grotesk font-bold text-zinc-900 flex items-center gap-2">
+                            <Cpu className="w-4 h-4 text-violet-700" /> Engineering Capital
+                        </h3>
+                        <p className="text-xs text-zinc-800 mt-1">CTO technical insolvency date</p>
+                    </Link>
+
+                    <Link href="/dashboard/governance" className="p-4 bg-white rounded-xl border border-zinc-200 shadow-sm hover:border-emerald-500 transition-all group">
+                        <div className="flex items-center justify-between mb-2">
+                            <span className="text-xs font-mono text-emerald-700 font-bold uppercase">Product 3</span>
+                            <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-emerald-600 transition-colors" />
+                        </div>
+                        <h3 className="font-grotesk font-bold text-zinc-900 flex items-center gap-2">
+                            <Shield className="w-4 h-4 text-emerald-700" /> Runtime Governance
+                        </h3>
+                        <p className="text-xs text-zinc-800 mt-1">CISO shadow AI & kill switch</p>
+                    </Link>
+
+                    <Link href="/dashboard/product-economics" className="p-4 bg-white rounded-xl border border-zinc-200 shadow-sm hover:border-amber-500 transition-all group">
+                        <div className="flex items-center justify-between mb-2">
+                            <span className="text-xs font-mono text-amber-700 font-bold uppercase">Product 4</span>
+                            <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-amber-600 transition-colors" />
+                        </div>
+                        <h3 className="font-grotesk font-bold text-zinc-900 flex items-center gap-2">
+                            <PieChart className="w-4 h-4 text-amber-700" /> Product Economics
+                        </h3>
+                        <p className="text-xs text-zinc-800 mt-1">CPO roadmap capital score</p>
+                    </Link>
+                </div>
+
+                {/* Question-Driven Executive Entrypoints */}
+                <div className="mb-10 bg-white rounded-2xl border border-zinc-200 p-6 shadow-sm">
+                    <h2 className="text-lg font-grotesk font-bold text-zinc-900 mb-4 flex items-center gap-2 border-b border-zinc-100 pb-3">
+                        <HelpCircle className="w-5 h-5 text-cyan-700" /> Executive Questions Navigation
+                    </h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <Link href="/dashboard/capital" className="p-4 rounded-xl bg-zinc-50 border border-zinc-200 hover:bg-cyan-50/50 hover:border-cyan-300 transition-all">
+                            <span className="text-xs font-mono text-cyan-700 font-bold">1. Financial Visibility</span>
+                            <h4 className="font-bold text-zinc-900 mt-1">"Where is our AI spend actually going?"</h4>
+                            <p className="text-xs text-zinc-800 mt-1">View cost per inference, useful output margins, and AI Volatility Tax ($/yr).</p>
+                        </Link>
+
+                        <Link href="/dashboard/engineering" className="p-4 rounded-xl bg-zinc-50 border border-zinc-200 hover:bg-violet-50/50 hover:border-violet-300 transition-all">
+                            <span className="text-xs font-mono text-violet-700 font-bold">2. Capital Allocation</span>
+                            <h4 className="font-bold text-zinc-900 mt-1">"Which engineering initiatives produce revenue vs burn?"</h4>
+                            <p className="text-xs text-zinc-800 mt-1">Evaluate Product Debt Index, verification drag, and insolvency trajectory.</p>
+                        </Link>
+
+                        <Link href="/dashboard/governance" className="p-4 rounded-xl bg-zinc-50 border border-zinc-200 hover:bg-emerald-50/50 hover:border-emerald-300 transition-all">
+                            <span className="text-xs font-mono text-emerald-700 font-bold">3. Risk Enforcement</span>
+                            <h4 className="font-bold text-zinc-900 mt-1">"How do we enforce governance before regulatory fines hit?"</h4>
+                            <p className="text-xs text-zinc-800 mt-1">Audit shadow AI API keys, agent permissions, and kill-switch endpoints.</p>
+                        </Link>
+                    </div>
+                </div>
 
                 {!hasData ? (
                     <div className="text-center py-20 bg-white rounded-2xl border border-zinc-200 shadow-sm">
@@ -179,3 +248,4 @@ export default function ExecutiveDashboard() {
         </div>
     );
 }
+
