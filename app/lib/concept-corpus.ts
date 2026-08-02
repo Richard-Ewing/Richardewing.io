@@ -205,6 +205,10 @@ export interface ConceptNode {
 
 export type CanonicalConcept = ConceptNode;
 
+import { TIER1_CONCEPTS } from './concept-corpus-tier1';
+import { TIER2_CONCEPTS } from './concept-corpus-tier2';
+import { TIER3_CONCEPTS } from './concept-corpus-tier3';
+
 export const CANONICAL_CONCEPTS: ConceptNode[] = [
   // =========================================================================
   // LAYER 2: RICHARD EWING CANON (Original Intellectual Property & Specifications)
@@ -1066,7 +1070,13 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       whenToUse: ['When engineering sprint velocity stalls despite 100% adoption of AI coding assistants'],
       examples: { enterprise: 'Enforcing strict PR size limits on AI commits.', startup: 'Using automated unit test generation.', antiPattern: 'Encouraging developers to submit 2,000-line AI PRs.', commonMistake: 'Equating lines of code written with finished features.' }
     }
-  }
+  },
+  // =========================================================================
+  // EXPANDED CONCEPTS: Tier 1 (Industry), Tier 2 (Canon), Tier 3 (Technical)
+  // =========================================================================
+  ...TIER1_CONCEPTS,
+  ...TIER2_CONCEPTS,
+  ...TIER3_CONCEPTS,
 ];
 
 export function getConceptBySlug(slug: string): CanonicalConcept | undefined {

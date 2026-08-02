@@ -594,5 +594,115 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Executable',
     thesis: 'Executive hiring framework for AI PMs based on P&L margin contribution and model-task routing efficiency.'
+  },
+  {
+    id: 'cio-10-man-parity',
+    title: 'The 10-Man Parity Rule: When AI Adoption Accelerates Faster Than Organizations Can See',
+    url: 'https://www.cio.com/article/the-10-man-parity-rule',
+    publisher: 'CIO.com',
+    domain: 'Engineering Leadership',
+    type: 'Evergreen',
+    thesis: 'Documents the threshold where AI tooling enables 10-person engineering teams to match output of 50-person teams, compressing hiring economics.',
+    date: 'June 2026',
+    relatedConceptIds: ['ten-man-parity', 'coordination-tax']
+  },
+  {
+    id: 'builtin-ai-agent-database',
+    title: 'Is Anything Standing Between Your AI Agent and Your Database?',
+    url: 'https://builtin.com/articles/ai-agent-database-security',
+    publisher: 'Built In',
+    domain: 'AI Governance',
+    type: 'Executable',
+    thesis: 'Examines the execution layer vulnerability where autonomous agents possess direct database write credentials without deterministic proxy gates.',
+    date: 'July 2026',
+    relatedConceptIds: ['agent-kill-switch', 'deterministic-governance', 'state-integrity-hashing']
+  },
+  {
+    id: 'builtin-fable5-gpt5',
+    title: 'Fable 5 vs. GPT-5.6 Sol: Which Model Is Better?',
+    url: 'https://builtin.com/articles/fable-5-vs-gpt-5',
+    publisher: 'Built In',
+    domain: 'AI Economics',
+    type: 'Evergreen',
+    thesis: 'Compares frontier model reasoning paradigms through the lens of enterprise cost-per-task efficiency rather than benchmark leaderboards.',
+    date: 'July 2026',
+    relatedConceptIds: ['inference-economics', 'model-collapse']
+  },
+  {
+    id: 'builtin-ai-product-nobody-wanted',
+    title: 'I Built an Incredible AI Product That Nobody Wanted. Here Is Why.',
+    url: 'https://builtin.com/articles/ai-product-nobody-wanted',
+    publisher: 'Built In',
+    domain: 'Product Leadership',
+    type: 'Evergreen',
+    thesis: 'Documents the lived experience of building a technically excellent AI product that failed because it optimized for capability rather than user workflow integration.',
+    date: 'January 2026',
+    relatedConceptIds: ['product-economist', 'feature-bloat-calculus']
+  },
+  {
+    id: 'mtp-financial-metrics-pm',
+    title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard',
+    url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs/',
+    publisher: 'Mind the Product',
+    domain: 'Product Leadership',
+    type: 'Evergreen',
+    thesis: 'Translates engineering velocity into financial contribution metrics that product managers can use to demonstrate P&L impact beyond feature output.',
+    date: 'February 2026',
+    relatedConceptIds: ['product-economist', 'dora-financial-translation']
+  },
+  {
+    id: 'hackernoon-vibe-coding',
+    title: 'Vibe Coding Debt: The Silent Killer of AI-Native Startups',
+    url: 'https://hackernoon.com/vibe-coding-debt',
+    publisher: 'HackerNoon',
+    domain: 'Software Economics',
+    type: 'Evergreen',
+    thesis: 'Coined the term Vibe Coding Debt to describe how developers accepting AI code without architectural comprehension create exponential maintenance liabilities.',
+    date: 'February 2025',
+    relatedConceptIds: ['vibe-coding', 'subprime-code-crisis']
+  },
+  {
+    id: 'beehiiv-semantic-caching',
+    title: 'The Semantic Caching Playbook: How to Cut LLM API Costs by 60%',
+    url: 'https://theaieconomist.beehiiv.com/p/semantic-caching-playbook',
+    publisher: 'Beehiiv',
+    domain: 'AI Economics',
+    type: 'Executable',
+    thesis: 'Provides an implementation specification for semantic similarity caching that intercepts redundant LLM queries before they reach paid API endpoints.',
+    date: 'May 2026',
+    relatedConceptIds: ['semantic-caching', 'inference-economics', 'ai-volatility-tax']
+  },
+  {
+    id: 'beehiiv-state-integrity-hashing',
+    title: 'State Integrity Hashing Specification for Multi-Agent Systems',
+    url: 'https://theaieconomist.beehiiv.com/p/state-integrity-hashing',
+    publisher: 'Beehiiv',
+    domain: 'AI Governance',
+    type: 'Executable',
+    thesis: 'Specifies cryptographic hash verification protocols between autonomous agent decision steps to detect memory poisoning and state drift.',
+    date: 'June 2026',
+    relatedConceptIds: ['state-integrity-hashing', 'agent-kill-switch', 'deterministic-governance']
+  },
+  {
+    id: 'beehiiv-slm-repatriation',
+    title: 'The SLM Repatriation Guide: When to Stop Using OpenAI APIs',
+    url: 'https://theaieconomist.beehiiv.com/p/slm-repatriation-guide',
+    publisher: 'Beehiiv',
+    domain: 'AI Economics',
+    type: 'Executable',
+    thesis: 'Calculates the financial breakeven point for migrating from commercial frontier model APIs to fine-tuned small language models running on owned infrastructure.',
+    date: 'April 2026',
+    relatedConceptIds: ['slm-repatriation', 'inference-economics', 'ai-volatility-tax']
+  },
+  {
+    id: 'linkedin-rd-ponzi',
+    title: 'The R&D Ponzi Scheme: The $891,000 Lie on Your Engineering Dashboard',
+    url: 'https://www.linkedin.com/pulse/rd-ponzi-scheme-richard-ewing/',
+    publisher: 'LinkedIn',
+    domain: 'Engineering Leadership',
+    type: 'Evergreen',
+    thesis: 'Exposes how velocity metrics mask the true cost of maintenance OpEx, creating an illusion of engineering productivity while technical debt compounds.',
+    date: 'April 2026',
+    relatedConceptIds: ['r-and-d-ponzi', 'coordination-tax', 'technical-insolvency']
   }
 ];
