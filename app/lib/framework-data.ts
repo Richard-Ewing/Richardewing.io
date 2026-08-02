@@ -11,6 +11,7 @@ export interface FrameworkConcept {
         education: string[];
         enforcement: string;
     };
+    conceptSlug?: string;
 }
 
 export interface SubFramework {
@@ -46,7 +47,8 @@ export const subFrameworks: Record<string, SubFramework> = {
                     diagnostics: ['AI Unit Economics Benchmark (AUEB)', 'AI Unit Economics Audit'],
                     education: ['Track 2: AI AI Economics', 'Track 24: AI Economics & Margin Engineering'],
                     enforcement: 'Exogram API Token Budget Enforcer'
-                }
+                },
+                conceptSlug: 'ai-volatility-tax'
             },
             {
                 id: 'PAIG-ECON-002',
@@ -60,7 +62,8 @@ export const subFrameworks: Record<string, SubFramework> = {
                     diagnostics: ['AI Unit Economics Benchmark (AUEB)', 'SLM vs API Arbitrage'],
                     education: ['Track 2: AI AI Economics', 'Track 7: Cloud FinOps & AI Cost Management'],
                     enforcement: 'Exogram Route optimizer & Caching Engine'
-                }
+                },
+                conceptSlug: 'inference-economics'
             },
             {
                 id: 'PAIG-ECON-003',
@@ -74,7 +77,8 @@ export const subFrameworks: Record<string, SubFramework> = {
                     diagnostics: ['Product Debt Index (PDI)', 'Innovation Tax Calculator'],
                     education: ['Track 3: R&D Capital Management', 'Track 9: Technical Debt as Financial Liability'],
                     enforcement: 'Exogram Audit Ledger & Subtraction Rules'
-                }
+                },
+                conceptSlug: 'ai-margin-squeeze'
             },
             {
                 id: 'PAIG-ECON-004',
@@ -166,7 +170,8 @@ export const subFrameworks: Record<string, SubFramework> = {
                     diagnostics: ['Product Debt Index (PDI)', 'Valuation Scenario Engine (EV-SE)'],
                     education: ['Track 1: Engineering Economics Foundations', 'Track 9: Technical Debt as Financial Liability'],
                     enforcement: 'Exogram Refactoring Track Controls'
-                }
+                },
+                conceptSlug: 'vibe-coding'
             },
             {
                 id: 'PAIG-ENG-002',
@@ -180,7 +185,8 @@ export const subFrameworks: Record<string, SubFramework> = {
                     diagnostics: ['Audit Interview Protocol'],
                     education: ['Track 1: Engineering Economics Foundations', 'Track 17: Developer Experience (DX) Economics'],
                     enforcement: 'Exogram SECS Code Quality Boundary Gates'
-                }
+                },
+                conceptSlug: 'subprime-code-crisis'
             },
             {
                 id: 'PAIG-ENG-003',
@@ -194,7 +200,8 @@ export const subFrameworks: Record<string, SubFramework> = {
                     diagnostics: ['SLM vs API Arbitrage', 'AI Unit Economics Benchmark (AUEB)'],
                     education: ['Track 11: Economics of Build vs. Buy for AI'],
                     enforcement: 'Exogram Semantic Model Router & Fallback Gate'
-                }
+                },
+                conceptSlug: 'innovation-tax'
             }
         ]
     },
@@ -219,7 +226,8 @@ export const subFrameworks: Record<string, SubFramework> = {
                     diagnostics: ['Prompt Injection Sandbox', 'Deterministic Execution Sandbox'],
                     education: ['Track 19: AI Agent Architecture & Economics', 'Track 21: AI Agent Governance & Trust Infrastructure'],
                     enforcement: 'Exogram Physical Execution Interceptor (Kill Switch)'
-                }
+                },
+                conceptSlug: 'agent-kill-switch'
             },
             {
                 id: 'PAIG-SEC-002',
@@ -233,7 +241,8 @@ export const subFrameworks: Record<string, SubFramework> = {
                     diagnostics: ['Prompt Injection Sandbox'],
                     education: ['Track 21: AI Agent Governance & Trust Infrastructure'],
                     enforcement: 'Exogram Input State Hash Verifier'
-                }
+                },
+                conceptSlug: 'deterministic-governance'
             },
             {
                 id: 'PAIG-SEC-003',
@@ -247,7 +256,8 @@ export const subFrameworks: Record<string, SubFramework> = {
                     diagnostics: ['Shadow AI Security Audit'],
                     education: ['Track 17: Developer Experience (DX) Economics', 'Track 3: R&D Capital Management'],
                     enforcement: 'Exogram Enterprise Proxy Filter'
-                }
+                },
+                conceptSlug: 'prompt-injection'
             }
         ]
     },
@@ -325,7 +335,8 @@ export const subFrameworks: Record<string, SubFramework> = {
                     diagnostics: ['Deterministic Execution Sandbox', 'Prompt Injection Sandbox'],
                     education: ['Track 21: AI Agent Governance & Trust Infrastructure'],
                     enforcement: 'Exogram Proving Ground Sandbox Engine'
-                }
+                },
+                conceptSlug: 'ai-governance'
             },
             {
                 id: 'PAIG-GOV-002',
@@ -339,7 +350,8 @@ export const subFrameworks: Record<string, SubFramework> = {
                     diagnostics: ['Agentic Telemetry Analyzer'],
                     education: ['Track 28: The AI Economist Masterclass'],
                     enforcement: 'Exogram Cryptographic State Ledger Engine'
-                }
+                },
+                conceptSlug: 'shadow-ai'
             },
             {
                 id: 'PAIG-GOV-003',

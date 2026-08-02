@@ -10,6 +10,7 @@ export interface Challenge {
     exogramRisk: string;
     exogramDescription: string;
     category: 'ai-economics' | 'engineering-governance' | 'operational-risk';
+    relatedConcepts?: string[];
 }
 
 export const challenges: Challenge[] = [
@@ -24,7 +25,8 @@ export const challenges: Challenge[] = [
         frameworkSlug: 'probabilistic-tech-debt',
         exogramRisk: 'Execution Variance',
         exogramDescription: 'Exogram provides a deterministic control plane that halts autonomous agent hallucination cascades before they reach production.',
-        category: 'operational-risk'
+        category: 'operational-risk',
+        relatedConcepts: ['vibe-coding', 'agent-kill-switch']
     },
     {
         slug: 'hallucination-debt',
@@ -37,7 +39,8 @@ export const challenges: Challenge[] = [
         frameworkSlug: 'hallucination-entropy',
         exogramRisk: 'Semantic Drift',
         exogramDescription: 'Exogram intercepts LLM outputs at runtime, using policy-as-code to verify deterministic alignment before the payload is delivered to the user.',
-        category: 'operational-risk'
+        category: 'operational-risk',
+        relatedConcepts: ['prompt-injection', 'deterministic-governance']
     },
     {
         slug: 'governance-drift',
@@ -50,7 +53,8 @@ export const challenges: Challenge[] = [
         frameworkSlug: 'technical-insolvency',
         exogramRisk: 'Architecture Violation',
         exogramDescription: 'Exogram physically prevents governance drift by executing compliance rules at compile-time and runtime, blocking non-compliant code from entering the main branch.',
-        category: 'engineering-governance'
+        category: 'engineering-governance',
+        relatedConcepts: ['innovation-tax', 'technical-insolvency']
     },
     {
         slug: 'ai-margin-collapse',
@@ -63,7 +67,8 @@ export const challenges: Challenge[] = [
         frameworkSlug: 'synthetic-cogs',
         exogramRisk: 'Margin Collapse',
         exogramDescription: 'Exogram enforces dynamic model routing, automatically degrading to cheaper models or cached responses when high-compute inference is economically unjustified.',
-        category: 'ai-economics'
+        category: 'ai-economics',
+        relatedConcepts: ['ai-margin-squeeze', 'ai-volatility-tax']
     },
     {
         slug: 'product-entropy',
@@ -76,7 +81,8 @@ export const challenges: Challenge[] = [
         frameworkSlug: 'kill-switch-protocol',
         exogramRisk: 'System Bloat',
         exogramDescription: 'Exogram monitors unused code paths and actively flags Zombie Assets for deprecation, automating the Sunset Committee process.',
-        category: 'engineering-governance'
+        category: 'engineering-governance',
+        relatedConcepts: ['zombie-code', 'subprime-code-crisis']
     },
     {
         slug: 'runtime-governance',
@@ -89,7 +95,8 @@ export const challenges: Challenge[] = [
         frameworkSlug: 'deterministic-control-plane',
         exogramRisk: 'Policy Violation',
         exogramDescription: 'Exogram translates your Confluence documents into executable policy-as-code, physically enforcing governance at runtime with zero human intervention.',
-        category: 'engineering-governance'
+        category: 'engineering-governance',
+        relatedConcepts: ['deterministic-governance', 'ai-governance']
     },
     {
         slug: 'ai-cost-visibility',
@@ -102,7 +109,8 @@ export const challenges: Challenge[] = [
         frameworkName: 'AI Unit Economics',
         frameworkSlug: 'ai-unit-economics',
         exogramRisk: 'Cost Blindness',
-        exogramDescription: 'Without per-feature cost attribution, organizations cannot make rational build-vs-buy decisions, set pricing accurately, or identify which AI capabilities are destroying margins.'
+        exogramDescription: 'Without per-feature cost attribution, organizations cannot make rational build-vs-buy decisions, set pricing accurately, or identify which AI capabilities are destroying margins.',
+        relatedConcepts: ['inference-economics', 'ai-volatility-tax']
     },
     {
         slug: 'ai-workforce-economics',
@@ -115,7 +123,8 @@ export const challenges: Challenge[] = [
         frameworkName: 'Engineering Leverage',
         frameworkSlug: 'engineering-leverage',
         exogramRisk: 'Productivity Theater',
-        exogramDescription: 'Measuring AI tool ROI by output volume rather than business outcomes creates a false sense of improvement while masking declining engineering leverage ratios.'
+        exogramDescription: 'Measuring AI tool ROI by output volume rather than business outcomes creates a false sense of improvement while masking declining engineering leverage ratios.',
+        relatedConcepts: ['r-and-d-ponzi', 'dora-financial-translation']
     },
     {
         slug: 'ai-governance-compliance',
@@ -128,6 +137,7 @@ export const challenges: Challenge[] = [
         frameworkName: 'AI Governance',
         frameworkSlug: 'ai-governance',
         exogramRisk: 'Regulatory Exposure',
-        exogramDescription: 'Organizations without formal AI governance frameworks face compounding regulatory risk as compliance requirements accelerate across jurisdictions.'
+        exogramDescription: 'Organizations without formal AI governance frameworks face compounding regulatory risk as compliance requirements accelerate across jurisdictions.',
+        relatedConcepts: ['shadow-ai', 'ai-governance']
     }
 ];

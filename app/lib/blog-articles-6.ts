@@ -6,8 +6,7 @@ export const articlesBatch6: Record<string, ArticleData> = {
     excerpt: "Because AI makes generating code free, we are seeing a massive inflation in the volume of code pushed to repositories. But AI-generated code carries hidden debt.",
     date: "2026-05-01",
     readTime: "8 min read",
-    category: "Technical Debt",
-    content: `<h2>The Subprime Code Crisis: Why AI is Inflating Your Technical Debt</h2>
+    category: "Technical Debt", relatedConcepts: ['vibe-coding', 'subprime-code-crisis', 'zombie-code', 'technical-insolvency', 'dora-financial-translation'], content: `<h2>The Subprime Code Crisis: Why AI is Inflating Your Technical Debt</h2>
 <p>Because Artificial Intelligence makes generating code functionally free, the software industry is currently witnessing a massive, unchecked inflation in the volume of code being pushed to production repositories. In the short term, this looks like a miracle of productivity. Burn down charts look incredible. Story points are completed at record speeds. But underneath the surface, a toxic asset bubble is forming. We are entering the era of the <strong>Subprime Code Crisis</strong>.</p>
 
 <h3>The Illusion of Velocity</h3>
@@ -32,8 +31,7 @@ export const articlesBatch6: Record<string, ArticleData> = {
     excerpt: "Every feature you ship carries an invisible, perpetual tax. Learn why your most profitable move this quarter might be deleting 20 percent of your codebase.",
     date: "2026-05-01",
     readTime: "9 min read",
-    category: "R&D Capital",
-    content: `<h2>Why Real Innovation Requires Deleting Code: The OpEx Trap</h2>
+    category: "R&D Capital", relatedConcepts: ['ai-volatility-tax', 'inference-economics', 'ai-margin-squeeze', 'vibe-coding', 'subprime-code-crisis', 'zombie-code', 'coordination-tax', 'ten-man-parity', 'r-and-d-ponzi', 'technical-insolvency', 'dora-financial-translation'], content: `<h2>Why Real Innovation Requires Deleting Code: The OpEx Trap</h2>
 <p>Most product teams today operate as glorified feature factories. They measure their success by story points burned, velocity metrics, and the sheer, overwhelming volume of code pushed to the production environment. But velocity is just speed. And speed without financial direction is just a highly efficient way to burn through your operating capital.</p>
 
 <h3>The Unit Economics of Software</h3>
@@ -65,8 +63,7 @@ export const articlesBatch6: Record<string, ArticleData> = {
     excerpt: "Leadership is demanding AI features, product teams are shipping them, and no one is calculating the unit economics until the cloud bill arrives.",
     date: "2026-05-01",
     readTime: "10 min read",
-    category: "AI Economics",
-    content: `<h2>The Generative AI Margin Squeeze: Why Power Users Destroy SaaS Economics</h2>
+    category: "AI Economics", relatedConcepts: ['ai-volatility-tax', 'inference-economics', 'ai-margin-squeeze', 'vibe-coding', 'subprime-code-crisis', 'zombie-code', 'agent-kill-switch', 'deterministic-governance', 'prompt-injection', 'ai-governance', 'shadow-ai', 'ai-agent-sprawl', 'coordination-tax', 'ten-man-parity', 'r-and-d-ponzi', 'product-economist', 'feature-bloat-calculus', 'innovation-tax', 'technical-insolvency', 'dora-financial-translation'], content: `<h2>The Generative AI Margin Squeeze: Why Power Users Destroy SaaS Economics</h2>
 <p>Across the enterprise software market, executive leadership is frantically demanding AI features, product teams are dutifully shipping them, and absolutely no one is calculating the underlying unit economics until the cloud infrastructure bill arrives. Venture capitalists and public markets are currently valuing generative AI startups exactly like traditional software-as-a-service (SaaS) businesses. In almost every case, this is a massive category error.</p>
 
 <h3>The Illusion of Infinite SaaS Margins</h3>
@@ -97,8 +94,7 @@ export const articlesBatch6: Record<string, ArticleData> = {
     excerpt: "Billions are pouring into autonomous agents, but they fail in production because they lack deterministic boundaries. Learn why you need a control plane.",
     date: "2026-05-01",
     readTime: "11 min read",
-    category: "Architecture",
-    content: `<h2>Why Autonomous AI Agents Need a Deterministic Control Plane</h2>
+    category: "Architecture", relatedConcepts: ['ai-volatility-tax', 'inference-economics', 'ai-margin-squeeze', 'agent-kill-switch', 'deterministic-governance', 'prompt-injection', 'ai-governance', 'shadow-ai', 'ai-agent-sprawl', 'coordination-tax', 'ten-man-parity', 'r-and-d-ponzi', 'product-economist', 'feature-bloat-calculus', 'innovation-tax', 'model-collapse', 'slm-repatriation', 'semantic-caching'], content: `<h2>Why Autonomous AI Agents Need a Deterministic Control Plane</h2>
 <p>The technology industry is currently engaged in a massive, hyper-capital-intensive race to build autonomous agents, with the ultimate goal of achieving Artificial General Intelligence (AGI). Billions of dollars are being poured into foundation models with the explicit expectation that these systems will soon operate independently within our enterprise infrastructures—managing supply chains, executing financial trades, and deploying code. There is, however, a fatal, structural flaw in this roadmap.</p>
 
 <h3>The Probability Problem: LLMs are not Cognitive Engines</h3>
@@ -134,8 +130,7 @@ export const articlesBatch6: Record<string, ArticleData> = {
     excerpt: "We mask operational friction with cheap capital, answering every missed deadline by hiring more developers. Here is why that fails.",
     date: "2026-05-01",
     readTime: "9 min read",
-    category: "PE/VC",
-    content: `<h2>The Coordination Tax: The R&D Ponzi Scheme</h2>
+    category: "PE/VC", relatedConcepts: ['ai-volatility-tax', 'inference-economics', 'ai-margin-squeeze', 'agent-kill-switch', 'deterministic-governance', 'prompt-injection', 'ai-governance', 'shadow-ai', 'ai-agent-sprawl', 'coordination-tax', 'ten-man-parity', 'r-and-d-ponzi', 'model-collapse', 'slm-repatriation', 'semantic-caching'], content: `<h2>The Coordination Tax: The R&D Ponzi Scheme</h2>
 <p>There is a fundamental, almost willful misunderstanding of physics at the heart of the modern software industry. For the last decade, fueled by zero-interest-rate policies, we have treated software engineering like a Victorian assembly line: add more workers to the factory floor, and you will naturally get more widgets out the door. We masked deep operational friction with cheap capital, answering every missed deadline, every critical bug, and every stalled roadmap with a single, reflexive command: hire more developers.</p>
 <p>That era is violently over. Yet, when I audit product architectures for Private Equity firms, I watch the exact same fight play out in the boardroom: The CTO demands more headcount to ship the massive backlog. The CFO demands a hiring freeze to protect the gross margins. The CTO usually wins the headcount argument. And then, magically, delivery gets even slower. They are scaling a Ponzi scheme of technical debt.</p>
 
@@ -158,8 +153,7 @@ export const articlesBatch6: Record<string, ArticleData> = {
     excerpt: "Before you let your team spend six months building a Generative AI feature, force yourself to pass the Product P&L Test.",
     date: "2026-05-01",
     readTime: "8 min read",
-    category: "AI Economics",
-    content: `<h2>The Product P&L Test: Stopping the AI Cash Bleed</h2>
+    category: "AI Economics", relatedConcepts: ['ai-volatility-tax', 'inference-economics', 'ai-margin-squeeze', 'vibe-coding', 'subprime-code-crisis', 'zombie-code', 'agent-kill-switch', 'deterministic-governance', 'prompt-injection', 'ai-governance', 'shadow-ai', 'ai-agent-sprawl', 'coordination-tax', 'ten-man-parity', 'r-and-d-ponzi', 'product-economist', 'feature-bloat-calculus', 'innovation-tax', 'technical-insolvency', 'dora-financial-translation'], content: `<h2>The Product P&L Test: Stopping the AI Cash Bleed</h2>
 <p>In the current macroeconomic environment, capital is exceedingly expensive. As Product Leaders, Chief Technology Officers, and Founders, we must immediately stop being starry-eyed about technical possibility and become ruthless, uncompromising guardians of business viability. Before you allow your engineering team to spend six months building and deploying a Generative AI feature into your core product, you must force yourself to pass the Product P&L Test.</p>
 
 <h3>The Danger of "AI for AI's Sake"</h3>
@@ -188,8 +182,7 @@ If the feature is just a thin, programmatic wrapper around the OpenAI or Anthrop
     excerpt: "The modern tech stack has a massive translation gap. Here is how the AI Economist bridges the divide between engineering and finance.",
     date: "2026-05-01",
     readTime: "7 min read",
-    category: "Leadership",
-    content: `<h2>What a AI Economist Actually Does: Bridging the Divide</h2>
+    category: "Leadership", relatedConcepts: ['ai-volatility-tax', 'inference-economics', 'ai-margin-squeeze', 'product-economist', 'feature-bloat-calculus', 'innovation-tax', 'model-collapse', 'slm-repatriation', 'semantic-caching'], content: `<h2>What a AI Economist Actually Does: Bridging the Divide</h2>
 <p>The modern technology stack suffers from a massive, structural translation gap. Engineering speaks in velocity metrics, story points, sprint capacity, and technical debt. Finance speaks in EBITDA, Gross Margins, Capital Expenditures (CapEx), Operating Expenses (OpEx), and Annual Recurring Revenue (ARR). And traditional Product Management is caught hopelessly in the middle, managing feature roadmaps instead of managing capital allocation.</p>
 <p>When the Chief Technology Officer says, "We need to pause feature development for six months to refactor the monolith," the Board of Directors hears, "We are going to stop delivering value to customers and burn cash for half a year."</p>
 
@@ -213,8 +206,7 @@ If the feature is just a thin, programmatic wrapper around the OpenAI or Anthrop
     excerpt: "The shift from zero-marginal-cost software to variable-cost AI is destroying margins. Learn how to govern the Turing Tax and scale profitability.",
     date: "2026-05-02",
     readTime: "36 min read",
-    category: "AI Economics",
-    content: `<h2>AI Economics: How Intelligent Systems Make and Lose Money</h2>
+    category: "AI Economics", relatedConcepts: ['ai-volatility-tax', 'inference-economics', 'ai-margin-squeeze', 'vibe-coding', 'subprime-code-crisis', 'zombie-code', 'coordination-tax', 'ten-man-parity', 'r-and-d-ponzi', 'product-economist', 'feature-bloat-calculus', 'innovation-tax', 'technical-insolvency', 'dora-financial-translation'], content: `<h2>AI Economics: How Intelligent Systems Make and Lose Money</h2>
 <p>For two decades, the software industry operated under a singular, beautiful financial truth: code was expensive to write but nearly free to run. This zero-marginal-cost assumption became the bedrock of modern technology businesses, dictating how we price products, how venture capitalists value startups, and how engineering teams prioritize their roadmaps. A SaaS company might spend $5 million in research and development to build a platform, but adding the ten-thousandth user requires fractions of a cent in server costs. Growth was rewarded because scale inherently and effortlessly improved gross margins. The financial model was predictable, defensible, and highly profitable.</p>
 <p>Artificial intelligence fundamentally, violently breaks this economic model.</p>
 <p>We are no longer just shipping code; we are shipping raw, dynamic compute. When we embed generative AI into our products, we are introducing a variable cost structure that behaves more like a heavy manufacturing supply chain than a traditional software business. The executives and engineering leaders who fail to understand this structural shift will watch their gross margins collapse, even as their user adoption metrics hit all-time highs.</p>

@@ -13,7 +13,7 @@
  * Deploy at bottom of every glossary page, AFTER the existing Related Terms section.
  */
 import Link from 'next/link';
-import { ArrowRight, AlertTriangle, Scale, FileText, Wrench } from 'lucide-react';
+import { ArrowRight, AlertTriangle, Scale, FileText, Wrench, BookOpen } from 'lucide-react';
 
 // Static mapping: compare page slugs → keywords that trigger them
 const comparePages = [
@@ -46,6 +46,42 @@ const toolPages = [
     { slug: '/diagnose', name: 'Full Diagnostics Hub', keywords: ['diagnose', 'assess', 'audit', 'measure', 'calculate'] },
 ];
 
+const conceptPages = [
+    { slug: 'shadow-ai', keywords: ['shadow ai', 'shadow-ai', 'unsanctioned ai', 'unmonitored ai'] },
+    { slug: 'ai-agent-sprawl', keywords: ['agent sprawl', 'ai sprawl', 'agent proliferation'] },
+    { slug: 'prompt-injection', keywords: ['prompt injection', 'injection attack', 'adversarial prompt'] },
+    { slug: 'model-collapse', keywords: ['model collapse', 'ai inflation', 'synthetic data'] },
+    { slug: 'inference-economics', keywords: ['inference cost', 'inference economics', 'token cost', 'api cost'] },
+    { slug: 'technical-insolvency', keywords: ['technical insolvency', 'insolvency date', 'maintenance exceeds'] },
+    { slug: 'agentic-engineering', keywords: ['agentic engineering', 'multi-agent', 'agent architecture'] },
+    { slug: 'context-rot', keywords: ['context rot', 'context degradation', 'reasoning decay'] },
+    { slug: 'innovation-tax', keywords: ['innovation tax', 'maintenance burden', 'innovation overhead'] },
+    { slug: 'coordination-tax', keywords: ['coordination tax', 'coordination cost', 'team scaling cost'] },
+    { slug: 'r-and-d-ponzi', keywords: ['r&d ponzi', 'ponzi scheme', 'velocity metrics', 'engineering dashboard'] },
+    { slug: 'feature-bloat-calculus', keywords: ['feature bloat', 'bloat calculus', 'feature maintenance'] },
+    { slug: 'cost-of-predictivity', keywords: ['cost of predictivity', 'deterministic cost', 'predictivity'] },
+    { slug: 'ai-margin-squeeze', keywords: ['margin squeeze', 'ai margin', 'gross margin erosion'] },
+    { slug: 'ten-man-parity', keywords: ['10-man parity', 'ten-man parity', 'small team'] },
+    { slug: 'semantic-caching', keywords: ['semantic caching', 'semantic cache', 'query caching'] },
+    { slug: 'capitalization-matrix', keywords: ['capitalization matrix', 'asc 350', 'r&d capitalization'] },
+    { slug: 'systems-governor', keywords: ['systems governor', 'software engineer role'] },
+    { slug: 'zombie-code', keywords: ['zombie code', 'sunset protocol', 'dead features', 'dead code'] },
+    { slug: 'slm-repatriation', keywords: ['slm repatriation', 'small language model', 'model repatriation'] },
+    { slug: 'state-integrity-hashing', keywords: ['state integrity', 'integrity hashing', 'hash verification'] },
+    { slug: 'dora-financial-translation', keywords: ['dora metrics', 'dora financial', 'financial translation'] },
+    { slug: 'ai-volatility-tax', keywords: ['ai volatility tax', 'volatility tax', 'cogs'] },
+    { slug: 'agent-kill-switch', keywords: ['kill switch', 'circuit breaker', 'execution control'] },
+    { slug: 'deterministic-governance', keywords: ['deterministic governance', 'code gates'] },
+    { slug: 'product-economist', keywords: ['product economist', 'p&l', 'margin contribution'] },
+    { slug: 'subprime-code-crisis', keywords: ['subprime code', 'code inflation', 'debt bubble'] },
+    { slug: 'vibe-coding', keywords: ['vibe coding', 'vibe code', 'superficial'] },
+    { slug: 'ai-governance', keywords: ['ai governance', 'enterprise governance', 'governance'] },
+    { slug: 'ai-economics', keywords: ['ai economics', 'tokenomics', 'unit economics'] },
+    { slug: 'ai-tokenomics-cogs', keywords: ['tokenomics', 'ai cogs', 'inference cogs'] },
+    { slug: 'runtime-vs-alignment', keywords: ['runtime governance', 'model alignment', 'rlhf'] },
+    { slug: 'induced-demand-software', keywords: ['induced demand', 'software demand'] }
+];
+
 function matchByKeywords(items: { slug: string; title?: string; name?: string; keywords: string[] }[], termSlug: string, termTitle: string, termCategory: string, limit: number) {
     const searchText = `${termSlug} ${termTitle} ${termCategory}`.toLowerCase();
     return items
@@ -70,6 +106,7 @@ export default function GlossaryMesh({ termSlug, termTitle, termCategory, relate
     const matchedCompare = matchByKeywords(comparePages, termSlug, termTitle, termCategory, 3);
     const matchedFailures = matchByKeywords(failurePages, termSlug, termTitle, termCategory, 2);
     const matchedTools = matchByKeywords(toolPages, termSlug, termTitle, termCategory, 2);
+    const matchedConcepts = matchByKeywords(conceptPages, termSlug, termTitle, termCategory, 3);
 
     // Merge explicit relatedFailures with keyword-matched ones
     const explicitFailureSlugs = relatedFailures || [];
@@ -82,7 +119,7 @@ export default function GlossaryMesh({ termSlug, termTitle, termCategory, relate
         return found || { slug, title: slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()), keywords: [] };
     });
 
-    const hasContent = matchedCompare.length > 0 || failureItems.length > 0 || matchedTools.length > 0 || (relatedArticles && relatedArticles.length > 0);
+    const hasContent = matchedCompare.length > 0 || failureItems.length > 0 || matchedTools.length > 0 || (relatedArticles && relatedArticles.length > 0) || matchedConcepts.length > 0;
     if (!hasContent) return null;
 
     return (
@@ -180,6 +217,31 @@ export default function GlossaryMesh({ termSlug, termTitle, termCategory, relate
                                 <ArrowRight className="w-3 h-3 text-zinc-600 group-hover:text-blue-500 inline ml-1 transition-colors" />
                             </Link>
                         ))}
+                    </div>
+                )}
+
+                {/* Canonical Concepts */}
+                {matchedConcepts.length > 0 && (
+                    <div className="space-y-2">
+                        <div className="flex items-center gap-2 mb-2">
+                            <BookOpen className="w-4 h-4 text-amber-500" />
+                            <span className="text-xs font-mono font-bold text-amber-600 uppercase tracking-wider">Canonical Concept Specification</span>
+                        </div>
+                        {matchedConcepts.map(item => {
+                            const displayTitle = item.title || item.name || item.slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+                            return (
+                                <Link
+                                    key={item.slug}
+                                    href={`/concepts/${item.slug}`}
+                                    className="block p-3 rounded-lg border border-zinc-100 hover:border-amber-200 hover:bg-amber-50/30 transition-all group"
+                                >
+                                    <span className="text-sm font-semibold text-zinc-800 group-hover:text-amber-700 transition-colors">
+                                        {displayTitle}
+                                    </span>
+                                    <ArrowRight className="w-3 h-3 text-zinc-600 group-hover:text-amber-500 inline ml-1 transition-colors" />
+                                </Link>
+                            );
+                        })}
                     </div>
                 )}
 

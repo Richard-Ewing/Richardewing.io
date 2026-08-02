@@ -6,8 +6,7 @@ export const articlesBatch7: Record<string, ArticleData> = {
         excerpt: 'Traditional software has zero marginal cost. AI features carry massive, compounding variable costs. If product managers don\'t learn to engineer margins, they will bankrupt their companies.',
         date: '2026-05-08',
         category: 'AI Economics',
-        readTime: '8 min read',
-        content: `
+        readTime: '8 min read', relatedConcepts: ['ai-volatility-tax', 'inference-economics', 'ai-margin-squeeze', 'product-economist', 'feature-bloat-calculus', 'innovation-tax'], content: `
 <h2>The End of Zero Marginal Cost Software</h2>
 
 For the last twenty years, product managers have operated under a financial delusion disguised as a business model: zero marginal cost. 

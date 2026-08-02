@@ -133,6 +133,11 @@ const Navigation = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
                             </Link>
 
+                            <Link href="/concepts" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
+                                Concepts
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
+                            </Link>
+
                             <Link href="/roi" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
                                 ROI
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
@@ -222,6 +227,9 @@ const Navigation = () => {
 
                             <Link href="/framework" onClick={() => setMobileMenuOpen(false)} className="text-zinc-900 font-medium text-base">
                                 Framework
+                            </Link>
+                            <Link href="/concepts" onClick={() => setMobileMenuOpen(false)} className="text-zinc-900 font-medium text-base">
+                                Concepts
                             </Link>
                             <Link href="/tools" onClick={() => setMobileMenuOpen(false)} className="text-zinc-900 font-medium text-base">
                                 Tools & Benchmarks

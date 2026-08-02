@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { CheckCircle2 } from 'lucide-react';
 import { ScrollReveal } from '@/components/magicui/scroll-reveal';
 import { professionalServiceSchema } from '@/app/lib/schemas';
+import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 
 export const metadata: Metadata = {
     title: 'AI Cost Attribution & Margin Protection Audit | Richard Ewing',
@@ -116,6 +117,25 @@ export default function AICostAuditPage() {
                                 </div>
                             </li>
                         </ul>
+                    </section>
+                </ScrollReveal>
+
+                <ScrollReveal>
+                    <section className="mb-24 pt-16 border-t border-zinc-300">
+                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-8">Research & Methodology Foundations</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            {['ai-volatility-tax', 'inference-economics', 'semantic-caching', 'ai-margin-squeeze'].map(slug => {
+                                const concept = CANONICAL_CONCEPTS.find(c => c.slug === slug);
+                                if (!concept) return null;
+                                return (
+                                    <Link key={slug} href={`/concepts/${slug}`} className="block p-6 bg-white border border-zinc-300 rounded-2xl hover:border-amber-500 hover:shadow-md transition-all group">
+                                        <div className="text-xs font-mono font-bold text-amber-700 uppercase tracking-widest mb-2">{concept.slug}</div>
+                                        <h3 className="text-xl font-bold text-zinc-950 mb-2 group-hover:text-amber-900">{concept.title}</h3>
+                                        <p className="text-sm text-zinc-700 font-semibold">{concept.aeo?.shortDefinition || concept.definition}</p>
+                                    </Link>
+                                );
+                            })}
+                        </div>
                     </section>
                 </ScrollReveal>
             </div>

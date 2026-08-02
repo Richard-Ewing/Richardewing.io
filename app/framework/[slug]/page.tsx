@@ -106,9 +106,16 @@ export default async function SubFrameworkPage({ params }: { params: Promise<{ s
                             </div>
 
                             {/* Concept Title */}
-                            <h3 className="text-xl sm:text-2xl font-bold font-grotesk text-zinc-950 mb-4 group-hover:text-indigo-900 transition-colors">
-                                {concept.name}
-                            </h3>
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                                <h3 className="text-xl sm:text-2xl font-bold font-grotesk text-zinc-950 group-hover:text-indigo-900 transition-colors">
+                                    {concept.name}
+                                </h3>
+                                {concept.conceptSlug && (
+                                    <Link href={`/concepts/${concept.conceptSlug}`} className="text-xs font-mono font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 px-3 py-1.5 rounded-full hover:bg-indigo-100 hover:border-indigo-300 transition-colors whitespace-nowrap shrink-0">
+                                        Deep Dive Specification →
+                                    </Link>
+                                )}
+                            </div>
 
                             {/* Definition, Problem, Importance */}
                             <div className="space-y-4 mb-6">

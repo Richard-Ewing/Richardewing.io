@@ -11,6 +11,7 @@ import RelatedContent from '@/components/RelatedContent';
 import CiteThisPage from '@/components/seo/CiteThisPage';
 import { articleSchemaTemplate } from '@/app/lib/schemas';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
+import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 
 export async function generateStaticParams() {
     return Object.keys(allArticles).map(slug => ({ slug }));
@@ -143,6 +144,22 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                             ))}
                         </div>
                     </section>
+                )}
+
+                {/* Related Canonical Concepts */}
+                {article.relatedConcepts && article.relatedConcepts.length > 0 && (
+                    <div className="mb-12">
+                        <h2 className="text-xs font-bold font-mono text-emerald-900 font-extrabold font-semibold uppercase tracking-widest mb-6">Related Canonical Concepts</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {CANONICAL_CONCEPTS.filter(c => article.relatedConcepts?.includes(c.slug)).map(concept => (
+                                <Link key={concept.slug} href={`/concepts/${concept.slug}`} className="p-6 rounded-xl border border-emerald-500/20 bg-emerald-500/5 hover:border-emerald-500/40 transition-colors group">
+                                    <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold font-semibold transition-colors">{concept.title}</h3>
+                                    <p className="text-sm font-semibold text-zinc-900 font-medium line-clamp-2">{concept.definition}</p>
+                                    <span className="text-xs font-bold font-medium text-emerald-900 font-extrabold font-semibold mt-4 block">Read Concept →</span>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
                 )}
 
                 {/* Cross-link to Published Articles & Frameworks */}

@@ -49,6 +49,7 @@ export function Footer() {
                             <li><Link href="/case-studies" className="text-amber-900 font-extrabold hover:text-zinc-900 transition-colors">Case Studies</Link></li>
                             <li><Link href="/framework" className="text-zinc-950 hover:text-zinc-900 transition-colors">Framework</Link></li>
                             <li><Link href="/research" className="text-zinc-950 hover:text-zinc-900 transition-colors">Research</Link></li>
+                            <li><Link href="/concepts" className="text-zinc-950 hover:text-zinc-900 transition-colors">Canonical Concepts</Link></li>
                         </ul>
                     </div>
 

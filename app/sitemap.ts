@@ -8,6 +8,7 @@ import { getAllModuleSlugs } from '@/app/lib/curriculum-data';
 import { getSortedArticles } from '@/app/lib/blog-data';
 import { COMBAT_SEO_MATRIX } from '@/app/lib/combat-seo';
 import { CAREER_PATHS } from '@/app/lib/career-paths';
+import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 import { getAllSpokeRoutes } from '@/app/lib/spoke-data';
 import { challenges } from './challenges/data';
 import compareCategorized from './lib/compare-categorized.json';
@@ -109,15 +110,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/concepts`, 'weekly', 0.95);
 
     // === CANONICAL CONCEPTS SPECIFICATIONS ===
-    const conceptSlugs = [
-        'ai-volatility-tax', 'agent-kill-switch', 'deterministic-governance',
-        'product-economist', 'subprime-code-crisis', 'vibe-coding',
-        'ai-governance', 'ai-economics', 'ai-tokenomics-cogs',
-        'runtime-vs-alignment', 'induced-demand-software'
-    ];
-    conceptSlugs.forEach(slug => {
-        add(`${baseUrl}/concepts/${slug}`, 'weekly', 0.95);
-    });
+    CANONICAL_CONCEPTS.forEach(concept => add(`${baseUrl}/concepts/${concept.slug}`, 'weekly', 0.95));
 
     // === ARTICLE RECAPS ===
     add(`${baseUrl}/articles/recap/cio-com`, 'monthly', 0.7);

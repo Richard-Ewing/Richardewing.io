@@ -4,6 +4,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { challenges } from '../data';
 import { DiagnosticBridge } from '../../components/DiagnosticBridge';
+import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -87,6 +88,25 @@ export default async function ChallengePage({ params }: Props) {
                     exogramRisk={challenge.exogramRisk}
                     exogramDescription={challenge.exogramDescription}
                 />
+
+                {challenge.relatedConcepts && challenge.relatedConcepts.length > 0 && (
+                    <section className="mt-16 pt-12 border-t border-zinc-300">
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">Related Canonical Specifications</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            {challenge.relatedConcepts.map(conceptSlug => {
+                                const concept = CANONICAL_CONCEPTS.find(c => c.slug === conceptSlug);
+                                if (!concept) return null;
+                                return (
+                                    <Link key={conceptSlug} href={`/concepts/${conceptSlug}`} className="block p-5 bg-white border border-zinc-300 rounded-xl hover:border-cyan-500 hover:shadow-md transition-all group">
+                                        <div className="text-xs font-mono font-bold text-cyan-700 uppercase tracking-widest mb-2">{concept.slug}</div>
+                                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-900">{concept.title}</h3>
+                                        <p className="text-sm text-zinc-700 font-semibold line-clamp-2">{concept.aeo?.shortDefinition || concept.definition}</p>
+                                    </Link>
+                                );
+                            })}
+                        </div>
+                    </section>
+                )}
             </article>
         </div>
     );

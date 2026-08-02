@@ -14,6 +14,7 @@ export interface ArticleData {
     relatedSkills?: string[];
     relatedDiagnostics?: string[];
     relatedControls?: string[];
+    relatedConcepts?: string[];
 }
 
 export const categoryColors: Record<string, string> = {
