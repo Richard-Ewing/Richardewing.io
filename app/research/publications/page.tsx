@@ -3,22 +3,22 @@ import Link from 'next/link';
 import ResearchCorpusExplorer from '@/app/components/ResearchCorpusExplorer';
 
 export const metadata: Metadata = {
-  title: 'Research Publications Catalog Published Works | Richard Ewing',
-  description: 'Explore a complete research catalog of over 100 published works. Read articles on engineering economics and AI capital management.',
+  title: 'Research Publications & Published Works | Richard Ewing',
+  description: 'Over 100 published works on engineering economics, AI capital management, and runtime governance. Sourced from CIO.com, HackerNoon, and Built In.',
   alternates: {
     canonical: 'https://www.richardewing.io/research/publications',
   },
   openGraph: {
-    title: 'Research Publications Catalog Published Works | Richard Ewing',
-    description: 'Explore a complete research catalog of over 100 published works. Read articles on engineering economics and AI capital management.',
+    title: 'Research Publications & Published Works | Richard Ewing',
+    description: 'Over 100 published works on engineering economics, AI capital management, and runtime governance. Sourced from CIO.com, HackerNoon, and Built In.',
     url: 'https://www.richardewing.io/research/publications',
     type: 'website',
     images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Research Publications Catalog Published Works | Richard Ewing',
-    description: 'Explore a complete research catalog of over 100 published works. Read articles on engineering economics and AI capital management.',
+    title: 'Research Publications & Published Works | Richard Ewing',
+    description: 'Over 100 published works on engineering economics, AI capital management, and runtime governance. Sourced from CIO.com, HackerNoon, and Built In.',
     images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
   },
 };

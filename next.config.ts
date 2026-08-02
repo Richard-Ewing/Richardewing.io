@@ -170,7 +170,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/advisory.html',
-        destination: '/advisory',
+        destination: '/services',
         permanent: true,
       },
       {
@@ -211,7 +211,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/studio.html',
-        destination: '/advisory',
+        destination: '/services',
         permanent: true,
       },
       // Legacy 404s reported by GSC
