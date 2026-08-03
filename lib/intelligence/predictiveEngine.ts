@@ -1,39 +1,40 @@
-import { IntelligenceAsset, IntelligenceAssetGraph } from '../ontology/asset';
+import { Asset, AssetGraph } from '../ontology/asset';
 
 export interface InsolvencyPrediction {
-    monthsToDefault: number;
-    projectedMaintenanceCost12Mo: number;
+    estimatedMonthsToInsolvencyHorizon: number;
+    projectedMaintenanceCost12MoUSD: number;
     primaryRiskFactors: string[];
     confidenceLevel: 'High' | 'Medium' | 'Low';
     recommendedActions: string[];
 }
 
 export interface BudgetOverrunPrediction {
-    predicted30DaySpend: number;
-    predicted90DaySpend: number;
+    predicted30DaySpendUSD: number;
+    predicted90DaySpendUSD: number;
     overrunProbabilityPct: number;
     topWasteDrivers: string[];
 }
 
 /**
- * Predicts the exact timeframe and cost trajectory for Technical Insolvency across an asset graph.
+ * Estimates the Technical Insolvency Horizon trajectory across an asset graph.
  */
-export function predictTechnicalInsolvency(graph: IntelligenceAssetGraph): InsolvencyPrediction {
-    const assetsWithDebt = graph.assets.filter(a => a.productDebtScore < 70);
-    const avgDebtScore = graph.avgProductDebtScore;
+export function estimateTechnicalInsolvencyHorizon(graph: AssetGraph): InsolvencyPrediction {
+    const assetsWithDebt = graph.assets.filter(a => a.productDebtIndexScore < 70);
+    const avgDebtScore = graph.assets.length > 0
+        ? graph.assets.reduce((acc, a) => acc + a.productDebtIndexScore, 0) / graph.assets.length
+        : 100;
     
-    // Calculate velocity of decay
-    let monthsToDefault = 36;
+    let estimatedMonthsToInsolvencyHorizon = 36;
     if (avgDebtScore < 40) {
-        monthsToDefault = 6;
+        estimatedMonthsToInsolvencyHorizon = 6;
     } else if (avgDebtScore < 60) {
-        monthsToDefault = 14;
+        estimatedMonthsToInsolvencyHorizon = 14;
     } else if (avgDebtScore < 80) {
-        monthsToDefault = 24;
+        estimatedMonthsToInsolvencyHorizon = 24;
     }
 
-    const currentMonthlyMaintenance = graph.assets.reduce((acc, a) => acc + (a.monthlyCost * (1 - a.productDebtScore / 100)), 0);
-    const projectedMaintenanceCost12Mo = Math.round(currentMonthlyMaintenance * 12 * 1.45);
+    const currentMonthlyMaintenance = graph.assets.reduce((acc, a) => acc + (a.monthlyCostUSD * (1 - a.productDebtIndexScore / 100)), 0);
+    const projectedMaintenanceCost12MoUSD = Math.round(currentMonthlyMaintenance * 12 * 1.45);
 
     const primaryRiskFactors: string[] = [];
     if (assetsWithDebt.some(a => a.verificationTaxHoursPerWeek > 5)) {
@@ -47,8 +48,8 @@ export function predictTechnicalInsolvency(graph: IntelligenceAssetGraph): Insol
     }
 
     return {
-        monthsToDefault,
-        projectedMaintenanceCost12Mo,
+        estimatedMonthsToInsolvencyHorizon,
+        projectedMaintenanceCost12MoUSD,
         primaryRiskFactors,
         confidenceLevel: graph.assets.length > 5 ? 'High' : 'Medium',
         recommendedActions: [
@@ -62,18 +63,18 @@ export function predictTechnicalInsolvency(graph: IntelligenceAssetGraph): Insol
 /**
  * Predicts 30-day and 90-day AI infrastructure spend overruns based on token telemetry.
  */
-export function predictBudgetOverrun(graph: IntelligenceAssetGraph): BudgetOverrunPrediction {
-    const currentMonthlySpend = graph.totalMonthlyCost;
-    const volatilityTax = graph.totalAnnualVolatilityTax / 12;
+export function predictBudgetOverrun(graph: AssetGraph): BudgetOverrunPrediction {
+    const currentMonthlySpend = graph.totalMonthlyCostUSD;
+    const volatilityTax = graph.totalAnnualVolatilityTaxUSD / 12;
     
-    const predicted30DaySpend = Math.round(currentMonthlySpend + (volatilityTax * 0.4));
-    const predicted90DaySpend = Math.round((currentMonthlySpend * 3) + (volatilityTax * 1.5));
+    const predicted30DaySpendUSD = Math.round(currentMonthlySpend + (volatilityTax * 0.4));
+    const predicted90DaySpendUSD = Math.round((currentMonthlySpend * 3) + (volatilityTax * 1.5));
     
     const overrunProbabilityPct = Math.min(95, Math.max(10, Math.round((volatilityTax / Math.max(1, currentMonthlySpend)) * 100)));
 
     return {
-        predicted30DaySpend,
-        predicted90DaySpend,
+        predicted30DaySpendUSD,
+        predicted90DaySpendUSD,
         overrunProbabilityPct,
         topWasteDrivers: [
             'Unarbitrated 80B/Frontier LLM calls for deterministic formatting tasks',
