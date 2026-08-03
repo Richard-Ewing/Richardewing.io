@@ -105,7 +105,7 @@ export default function ExecutiveDashboard() {
                     </div>
 
                     {/* Multi-Combination Architecture Optimization Engine View */}
-                    <div className="bg-zinc-900/90 rounded-xl p-5 border border-zinc-800">
+                    <div className="bg-zinc-900/90 rounded-xl p-5 border border-zinc-800 mb-6">
                         <div className="flex items-center justify-between mb-3 border-b border-zinc-800 pb-2">
                             <span className="text-xs font-mono text-cyan-400 font-bold uppercase">Architecture Optimization Engine • Permutation Simulation</span>
                             <span className="text-xs font-mono text-emerald-400 font-bold">Highest Yield: Option C (-71% Spend)</span>
@@ -130,6 +130,31 @@ export default function ExecutiveDashboard() {
                                 <span className="text-emerald-300 font-bold block">Option C (Recommended)</span>
                                 <strong className="text-white block mt-1">Intent Router + Token Saver</strong>
                                 <span className="text-emerald-300 font-bold block mt-1">Save $319,500/yr (-71%)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Universal Investment Portfolio Command Grid */}
+                    <div className="bg-zinc-900/90 rounded-xl p-5 border border-zinc-800">
+                        <div className="flex items-center justify-between mb-3 border-b border-zinc-800 pb-2">
+                            <span className="text-xs font-mono text-cyan-400 font-bold uppercase">Universal Investment Portfolio • 32 Active Tech Initiatives</span>
+                            <span className="text-xs font-mono text-emerald-400 font-bold">Decision Accuracy: 91% (14 Verified Interventions)</span>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-mono">
+                            <div className="p-3 bg-zinc-950 rounded border border-zinc-800">
+                                <span className="text-zinc-400 block">Total Portfolio Capital</span>
+                                <strong className="text-white text-lg block mt-1">$6,450,000</strong>
+                                <span className="text-emerald-400 block mt-1">Actual Return: $14,200,000 (+120% ROI)</span>
+                            </div>
+                            <div className="p-3 bg-zinc-950 rounded border border-zinc-800">
+                                <span className="text-rose-400 block">Capital at Risk / Value Destroyers</span>
+                                <strong className="text-rose-300 text-lg block mt-1">$1,180,000</strong>
+                                <span className="text-rose-400 block mt-1">5 Initiatives Dragging Margins</span>
+                            </div>
+                            <div className="p-3 bg-zinc-950 rounded border border-zinc-800">
+                                <span className="text-emerald-400 block">Recommended Re-Allocations</span>
+                                <strong className="text-emerald-300 text-lg block mt-1">$612,000/yr</strong>
+                                <span className="text-emerald-400 block mt-1">Action: Sunset 3 Negative-Margin Features</span>
                             </div>
                         </div>
                     </div>
