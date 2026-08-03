@@ -1,5 +1,38 @@
 import { SKILLS, FAILURES } from '../content/skills';
 
+export type SemanticRelationshipType = 
+    | 'supports'
+    | 'blocks'
+    | 'depends_on'
+    | 'conflicts_with'
+    | 'improves'
+    | 'reduces'
+    | 'accelerates'
+    | 'validates'
+    | 'invalidates'
+    | 'supersedes'
+    | 'caused_by'
+    | 'causes'
+    | 'requires'
+    | 'enables'
+    | 'deprecates'
+    | 'mitigates'
+    | 'transfers'
+    | 'owns'
+    | 'approves'
+    | 'funds'
+    | 'measures'
+    | 'predicts'
+    | 'verifies'
+    | 'learns_from';
+
+export interface TypedSemanticEdge {
+    sourceNodeId: string;
+    targetNodeId: string;
+    relationshipType: SemanticRelationshipType;
+    strengthWeight: number; // 0.0 - 1.0
+}
+
 export interface SemanticNode {
     id: string;
     type: 'Glossary' | 'Diagnostic' | 'Framework' | 'ExogramRisk' | 'Skill' | 'Failure' | 'Report' | 'Control';
@@ -41,28 +74,25 @@ export const ontologyGraph: SemanticNode[] = [
         id: `failure_${f.slug}`,
         type: 'Failure' as const,
         name: f.title,
-        relatedNodeIds: [] // Will be mapped dynamically below or manually injected
+        relatedNodeIds: []
     })),
     ...SKILLS.map(s => ({
         id: `skill_${s.slug}`,
         type: 'Skill' as const,
         name: s.title,
-        relatedNodeIds: [] // Will be mapped dynamically below
+        relatedNodeIds: []
     }))
 ];
 
 // --- Automatic Cross-Wiring for Skills & Failures ---
-// To maintain a truly dense graph, we auto-link Skills to the Failures they solve.
 ontologyGraph.forEach(node => {
     if (node.type === 'Skill') {
         const skillSlug = node.id.replace('skill_', '');
         const skillDef = SKILLS.find(s => s.slug === skillSlug);
         if (skillDef) {
-            // Find failure by matching title to failureSolved (basic heuristic)
             const matchedFailure = FAILURES.find(f => skillDef.failureSolved.includes(f.title) || f.title.includes(skillDef.failureSolved));
             if (matchedFailure) {
                 node.relatedNodeIds.push(`failure_${matchedFailure.slug}`);
-                // Reciprocally link the failure back to this skill
                 const failureNode = ontologyGraph.find(n => n.id === `failure_${matchedFailure.slug}`);
                 if (failureNode && !failureNode.relatedNodeIds.includes(node.id)) {
                     failureNode.relatedNodeIds.push(node.id);
@@ -72,9 +102,6 @@ ontologyGraph.forEach(node => {
     }
 });
 
-/**
- * Retrieves a semantic cluster based on a central node ID.
- */
 export function getSemanticCluster(nodeId: string): SemanticNode[] {
     const root = ontologyGraph.find(n => n.id === nodeId);
     if (!root) return [];
@@ -82,9 +109,6 @@ export function getSemanticCluster(nodeId: string): SemanticNode[] {
     return ontologyGraph.filter(n => root.relatedNodeIds.includes(n.id));
 }
 
-/**
- * Maps a diagnostic risk score directly to the required structural remediation framework.
- */
 export function getRemediationFramework(diagnosticId: string, isHighRisk: boolean): SemanticNode | null {
     if (!isHighRisk) return null;
 
