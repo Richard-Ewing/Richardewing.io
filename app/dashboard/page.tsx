@@ -60,6 +60,39 @@ export default function ExecutiveDashboard() {
                     </div>
                 </header>
 
+                {/* Executive Morning Briefing & Causal Root Cause Diagnostics */}
+                <div className="mb-10 bg-gradient-to-br from-zinc-900 via-zinc-950 to-cyan-950 text-white rounded-2xl p-8 shadow-xl border border-zinc-800">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-800 pb-6 mb-6">
+                        <div>
+                            <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Executive Morning Briefing • Mon, Aug 3</span>
+                            <h2 className="text-2xl font-grotesk font-bold text-white mt-1">What Changed & Priority Action Items</h2>
+                        </div>
+                        <div className="px-3 py-1 bg-cyan-500/20 border border-cyan-400/30 rounded-full text-xs font-mono text-cyan-300 font-bold">
+                            Causal Confidence: 84%
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <div className="space-y-3 bg-zinc-900/80 p-5 rounded-xl border border-zinc-800">
+                            <span className="text-xs font-mono text-rose-400 font-bold">1. Spend Trajectory</span>
+                            <h3 className="text-lg font-bold text-white">AI Spend Increased +18% MoM</h3>
+                            <p className="text-xs text-zinc-300">Annualized waste rate rose by <strong className="text-rose-400">$318,000/yr</strong> driven by un-cached PDF context dumps in engineering.</p>
+                        </div>
+
+                        <div className="space-y-3 bg-zinc-900/80 p-5 rounded-xl border border-zinc-800">
+                            <span className="text-xs font-mono text-amber-400 font-bold">2. Causal Chain</span>
+                            <h3 className="text-lg font-bold text-white">Verification Drag Rose +11%</h3>
+                            <p className="text-xs text-zinc-300">Generated PR volume rose +42% after Cursor expansion while code review capacity remained fixed.</p>
+                        </div>
+
+                        <div className="space-y-3 bg-zinc-900/80 p-5 rounded-xl border border-zinc-800">
+                            <span className="text-xs font-mono text-emerald-400 font-bold">3. Highest Yield Action</span>
+                            <h3 className="text-lg font-bold text-white">Deploy Token Saver Sidecars</h3>
+                            <p className="text-xs text-zinc-300">Expected savings: <strong className="text-emerald-400">$84,000/yr</strong>. High confidence based on local hybrid RAG benchmark.</p>
+                        </div>
+                    </div>
+                </div>
+
                 {/* 5-Product Module Quick Navigation Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
                     <Link href="/dashboard/capital" className="p-4 bg-white rounded-xl border border-zinc-200 shadow-sm hover:border-cyan-500 transition-all group">
