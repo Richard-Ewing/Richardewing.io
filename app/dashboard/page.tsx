@@ -64,31 +64,73 @@ export default function ExecutiveDashboard() {
                 <div className="mb-10 bg-gradient-to-br from-zinc-900 via-zinc-950 to-cyan-950 text-white rounded-2xl p-8 shadow-xl border border-zinc-800">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-800 pb-6 mb-6">
                         <div>
-                            <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Executive Morning Briefing • Mon, Aug 3</span>
-                            <h2 className="text-2xl font-grotesk font-bold text-white mt-1">What Changed & Priority Action Items</h2>
+                            <div className="flex items-center gap-2 mb-1">
+                                <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Executive Morning Briefing • Mon, Aug 3</span>
+                                <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[10px] font-mono font-bold border border-emerald-500/30">Proactive Prevention Active</span>
+                            </div>
+                            <h2 className="text-2xl font-grotesk font-bold text-white">What Changed, Why, & Priority Decision Directives</h2>
                         </div>
                         <div className="px-3 py-1 bg-cyan-500/20 border border-cyan-400/30 rounded-full text-xs font-mono text-cyan-300 font-bold">
                             Causal Confidence: 84%
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
                         <div className="space-y-3 bg-zinc-900/80 p-5 rounded-xl border border-zinc-800">
-                            <span className="text-xs font-mono text-rose-400 font-bold">1. Spend Trajectory</span>
+                            <div className="flex items-center justify-between">
+                                <span className="text-xs font-mono text-rose-400 font-bold">1. Spend Trajectory</span>
+                                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30">Requires CFO Approval</span>
+                            </div>
                             <h3 className="text-lg font-bold text-white">AI Spend Increased +18% MoM</h3>
                             <p className="text-xs text-zinc-300">Annualized waste rate rose by <strong className="text-rose-400">$318,000/yr</strong> driven by un-cached PDF context dumps in engineering.</p>
                         </div>
 
                         <div className="space-y-3 bg-zinc-900/80 p-5 rounded-xl border border-zinc-800">
-                            <span className="text-xs font-mono text-amber-400 font-bold">2. Causal Chain</span>
+                            <div className="flex items-center justify-between">
+                                <span className="text-xs font-mono text-amber-400 font-bold">2. Causal Chain</span>
+                                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">Requires VP Eng Approval</span>
+                            </div>
                             <h3 className="text-lg font-bold text-white">Verification Drag Rose +11%</h3>
                             <p className="text-xs text-zinc-300">Generated PR volume rose +42% after Cursor expansion while code review capacity remained fixed.</p>
                         </div>
 
                         <div className="space-y-3 bg-zinc-900/80 p-5 rounded-xl border border-zinc-800">
-                            <span className="text-xs font-mono text-emerald-400 font-bold">3. Highest Yield Action</span>
-                            <h3 className="text-lg font-bold text-white">Deploy Token Saver Sidecars</h3>
-                            <p className="text-xs text-zinc-300">Expected savings: <strong className="text-emerald-400">$84,000/yr</strong>. High confidence based on local hybrid RAG benchmark.</p>
+                            <div className="flex items-center justify-between">
+                                <span className="text-xs font-mono text-emerald-400 font-bold">3. Proactive Prevention</span>
+                                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Pre-Launch Intervention</span>
+                            </div>
+                            <h3 className="text-lg font-bold text-white">Prevent Agent X Verification Cost</h3>
+                            <p className="text-xs text-zinc-300">Engineering plans to deploy Agent X next sprint. Deploying Token Saver prior to launch avoids <strong className="text-emerald-400">$118,000/yr</strong> in context rot.</p>
+                        </div>
+                    </div>
+
+                    {/* Multi-Combination Architecture Optimization Engine View */}
+                    <div className="bg-zinc-900/90 rounded-xl p-5 border border-zinc-800">
+                        <div className="flex items-center justify-between mb-3 border-b border-zinc-800 pb-2">
+                            <span className="text-xs font-mono text-cyan-400 font-bold uppercase">Architecture Optimization Engine • Permutation Simulation</span>
+                            <span className="text-xs font-mono text-emerald-400 font-bold">Highest Yield: Option C (-71% Spend)</span>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-3 text-xs font-mono">
+                            <div className="p-3 bg-zinc-950 rounded border border-zinc-800">
+                                <span className="text-zinc-400 block">Baseline</span>
+                                <strong className="text-white block mt-1">100% Frontier APIs</strong>
+                                <span className="text-zinc-400 block mt-1">$450,000/yr • CPUO $0.41</span>
+                            </div>
+                            <div className="p-3 bg-zinc-950 rounded border border-zinc-800">
+                                <span className="text-cyan-400 block">Option A</span>
+                                <strong className="text-white block mt-1">Sonnet + Caching</strong>
+                                <span className="text-emerald-400 block mt-1">Save $216,000/yr (-48%)</span>
+                            </div>
+                            <div className="p-3 bg-zinc-950 rounded border border-zinc-800">
+                                <span className="text-violet-400 block">Option B</span>
+                                <strong className="text-white block mt-1">Local 8B SLM Cluster</strong>
+                                <span className="text-emerald-400 block mt-1">Save $283,500/yr (-63%)</span>
+                            </div>
+                            <div className="p-3 bg-cyan-950/60 rounded border border-cyan-500/50">
+                                <span className="text-emerald-300 font-bold block">Option C (Recommended)</span>
+                                <strong className="text-white block mt-1">Intent Router + Token Saver</strong>
+                                <span className="text-emerald-300 font-bold block mt-1">Save $319,500/yr (-71%)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
