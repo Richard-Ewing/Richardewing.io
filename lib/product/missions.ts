@@ -1,9 +1,9 @@
-import { AssessmentDefinition } from './assessments';
+import { ExecutiveRole } from '../kernel/decisionPackageSchema';
 
 export interface ExecutiveMissionDefinition {
     id: string;
     title: string;
-    targetRole: 'CEO' | 'CFO' | 'CTO' | 'CIO' | 'CISO' | 'CPO' | 'VP Engineering';
+    targetRole: ExecutiveRole;
     commercialGoalUSD: number;
     underlyingAssessmentId: string;
     executionSteps: string[];

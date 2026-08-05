@@ -1,14 +1,15 @@
-import { CanonicalDecisionPackage } from '../kernel/decisionPackageSchema';
+import { CanonicalDecisionPackage, ExecutiveRole } from '../kernel/decisionPackageSchema';
 import { ExecutiveArtifact, ArtifactCompiler } from '../compiler/artifactCompiler';
 import { ExecutionTicket, ExecutionConnectorRegistry } from '../connectors/executionRegistry';
 import { CompiledPresentation, PresentationCompiler } from '../compiler/presentationCompiler';
-import { DecisionVersionRecord, VersionedDecisionMemory } from '../memory/versionedDecisionMemory';
+import { VersionedDecisionMemory } from '../memory/versionedDecisionMemory';
 import { ConnectorRegistry } from '../connectors/connectorRegistry';
+import { CustomerWorkspaceStore } from '../workspace/customerWorkspace';
 
 export interface WizardState {
     step: number; // 1 to 10
     selectedObjective: string;
-    targetRole: 'CEO' | 'CFO' | 'CTO' | 'CIO' | 'CISO';
+    targetRole: ExecutiveRole;
     connectedProviders: string[];
     businessContext: {
         industry: string;
@@ -80,6 +81,8 @@ export class WizardPipeline {
         VersionedDecisionMemory.logDecisionVersion(decisionPackage, 'v1.0-Proposal', [
             `Completed 10-step mission wizard execution for ${state.selectedObjective}`
         ]);
+
+        CustomerWorkspaceStore.recordCompletedMission(319500, artifacts);
 
         return {
             ...state,
