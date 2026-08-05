@@ -1,6 +1,19 @@
+export type ExecutiveRole = 'CEO' | 'CFO' | 'CTO' | 'CIO' | 'CISO' | 'CPO' | 'VP Engineering';
+
+export type CanonicalEvidenceSourceType = 
+    | 'AWSBilling' 
+    | 'GitHubTelemetry' 
+    | 'TokenSaverMCP' 
+    | 'ExogramLedger'
+    | 'AnthropicTelemetry'
+    | 'OpenAITelemetry'
+    | 'JiraTelemetry'
+    | 'DatadogTelemetry'
+    | 'ServiceNowTelemetry';
+
 export interface CanonicalEvidenceSource {
     sourceId: string;
-    sourceType: 'AWSBilling' | 'GitHubTelemetry' | 'TokenSaverMCP' | 'ExogramLedger';
+    sourceType: CanonicalEvidenceSourceType;
     sampleSize: number;
     evidenceFreshnessTimestamp: string;
     trustScorePct: number;
