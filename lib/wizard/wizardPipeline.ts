@@ -2,15 +2,20 @@ import { CanonicalDecisionPackage, ExecutiveRole } from '../kernel/decisionPacka
 import { ExecutiveArtifact, ArtifactCompiler } from '../compiler/artifactCompiler';
 import { ExecutionTicket, ExecutionConnectorRegistry } from '../connectors/executionRegistry';
 import { CompiledPresentation, PresentationCompiler } from '../compiler/presentationCompiler';
+import { DeliverableCompiler, MissionOutput } from '../compiler/deliverableCompiler';
+import { ExecutionIntelligence, TrackedExecutionItem } from '../execution/executionIntelligence';
 import { VersionedDecisionMemory } from '../memory/versionedDecisionMemory';
 import { ConnectorRegistry } from '../connectors/connectorRegistry';
 import { CustomerWorkspaceStore } from '../workspace/customerWorkspace';
+import { TelemetryProvider } from '../evidence/universalEvidenceSchema';
 
 export interface WizardState {
     step: number; // 1 to 10
+    missionId?: string;
+    templateId?: 'costReduction' | 'board' | 'vendor' | 'governance' | 'strategy';
     selectedObjective: string;
     targetRole: ExecutiveRole;
-    connectedProviders: string[];
+    connectedProviders: TelemetryProvider[];
     businessContext: {
         industry: string;
         employeeCount: number;
@@ -21,6 +26,8 @@ export interface WizardState {
     artifacts?: ExecutiveArtifact[];
     presentationDeck?: CompiledPresentation;
     executionTickets?: ExecutionTicket[];
+    trackedExecutionItems?: TrackedExecutionItem[];
+    missionOutput?: MissionOutput;
     monitoringDays?: number;
     verifiedSavingsUSD?: number;
 }
@@ -78,6 +85,9 @@ export class WizardPipeline {
         const presentationDeck = PresentationCompiler.compilePresentation(decisionPackage, 'BoardDeck');
         const executionTickets = await ExecutionConnectorRegistry.executeDecisionPackageActions(decisionPackage.recommendedActions);
 
+        const trackedItems = executionTickets.map(tkt => ExecutionIntelligence.trackTicket(tkt));
+        const missionOutput = DeliverableCompiler.compileMissionOutput(decisionPackage, executionTickets);
+
         VersionedDecisionMemory.logDecisionVersion(decisionPackage, 'v1.0-Proposal', [
             `Completed 10-step mission wizard execution for ${state.selectedObjective}`
         ]);
@@ -91,6 +101,8 @@ export class WizardPipeline {
             artifacts,
             presentationDeck,
             executionTickets,
+            trackedExecutionItems: trackedItems,
+            missionOutput,
             monitoringDays: 30,
             verifiedSavingsUSD: 319500
         };
