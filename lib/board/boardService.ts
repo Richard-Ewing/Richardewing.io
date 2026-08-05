@@ -1,9 +1,9 @@
-import { CanonicalDecisionPackage } from '../kernel/decisionPackageSchema';
+import { CanonicalDecisionPackage, ExecutiveRole } from '../kernel/decisionPackageSchema';
 
 export interface BoardMeetingRequest {
     organizationId: string;
     meetingDate: string;
-    executiveOwnerRole: string;
+    executiveOwnerRole: ExecutiveRole;
     objectiveIds: string[];
 }
 

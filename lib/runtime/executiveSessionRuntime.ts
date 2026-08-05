@@ -1,4 +1,4 @@
-import { CanonicalDecisionPackage } from '../kernel/decisionPackageSchema';
+import { CanonicalDecisionPackage, ExecutiveRole } from '../kernel/decisionPackageSchema';
 
 export type ExecutiveSessionType = 
     | 'BoardMeeting' 
@@ -13,7 +13,7 @@ export interface ExecutiveSession {
     organizationId: string;
     sessionType: ExecutiveSessionType;
     scheduledDate: string;
-    executiveOwnerRole: string;
+    executiveOwnerRole: ExecutiveRole;
     participatingRoles: string[];
     readinessScorePct: number;
     decisionPackage: CanonicalDecisionPackage;
@@ -24,7 +24,7 @@ export class ExecutiveSessionRuntime {
     static async createSession(
         orgId: string, 
         sessionType: ExecutiveSessionType, 
-        ownerRole: string
+        ownerRole: ExecutiveRole = 'CEO'
     ): Promise<ExecutiveSession> {
         const canonicalPackage: CanonicalDecisionPackage = {
             id: `dp_sess_${Date.now()}`,
