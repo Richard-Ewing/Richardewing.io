@@ -88,16 +88,43 @@ export function saveUnifiedDiagnosticResult(result: DiagnosticResult) {
     }
 }
 
+export function getDefaultEnterpriseBaselineHistory(): DiagnosticResult[] {
+    const now = new Date();
+    const d1 = new Date(now.getTime() - 30 * 86400000).toISOString();
+    const d2 = new Date(now.getTime() - 15 * 86400000).toISOString();
+    const d3 = now.toISOString();
+
+    return [
+        { diagnosticId: 'pdi', score: 64, band: 'Moderate Risk', industry: 'SaaS / Software', companySize: '100-500', timestamp: d1 },
+        { diagnosticId: 'aueb', score: 54, band: 'Margin At Risk', industry: 'SaaS / Software', companySize: '100-500', timestamp: d1 },
+        { diagnosticId: 'aper', score: 280000, band: 'Average', industry: 'SaaS / Software', companySize: '100-500', timestamp: d1 },
+        { diagnosticId: 'pdi', score: 58, band: 'Moderate Risk', industry: 'SaaS / Software', companySize: '100-500', timestamp: d2 },
+        { diagnosticId: 'aueb', score: 61, band: 'Healthy', industry: 'SaaS / Software', companySize: '100-500', timestamp: d2 },
+        { diagnosticId: 'aper', score: 310000, band: 'Above Average', industry: 'SaaS / Software', companySize: '100-500', timestamp: d2 },
+        { diagnosticId: 'pdi', score: 52, band: 'Healthy', industry: 'SaaS / Software', companySize: '100-500', timestamp: d3 },
+        { diagnosticId: 'aueb', score: 68, band: 'Healthy', industry: 'SaaS / Software', companySize: '100-500', timestamp: d3 },
+        { diagnosticId: 'aper', score: 345000, band: 'Top Quartile', industry: 'SaaS / Software', companySize: '100-500', timestamp: d3 },
+    ];
+}
+
 export function loadUnifiedDiagnosticHistory(): DiagnosticResult[] {
     if (typeof window !== 'undefined') {
         try {
             const data = localStorage.getItem(UNIFIED_HISTORY_KEY);
-            return data ? JSON.parse(data) : [];
+            if (data) {
+                const parsed = JSON.parse(data);
+                if (Array.isArray(parsed) && parsed.length > 0) {
+                    return parsed;
+                }
+            }
+            const defaultHistory = getDefaultEnterpriseBaselineHistory();
+            localStorage.setItem(UNIFIED_HISTORY_KEY, JSON.stringify(defaultHistory));
+            return defaultHistory;
         } catch (e) {
             console.error('Failed to load unified diagnostic history', e);
-            return [];
+            return getDefaultEnterpriseBaselineHistory();
         }
     }
-    return [];
+    return getDefaultEnterpriseBaselineHistory();
 }
 

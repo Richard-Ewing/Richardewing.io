@@ -54,6 +54,17 @@ export default function ExecutiveDashboard() {
                         <h1 className="text-4xl font-grotesk font-bold text-zinc-900">Executive AI Command Center</h1>
                     </div>
                     <div className="flex gap-3">
+                        <button 
+                            onClick={() => {
+                                const { getDefaultEnterpriseBaselineHistory } = require('../../lib/storage/session');
+                                const defaultData = getDefaultEnterpriseBaselineHistory();
+                                localStorage.setItem('unified_diagnostic_history', JSON.stringify(defaultData));
+                                setHistory(defaultData);
+                            }}
+                            className="px-4 py-2 bg-zinc-900 border border-zinc-700 text-white font-semibold rounded-lg text-sm hover:bg-zinc-800 transition-colors flex items-center gap-2"
+                        >
+                            <Settings className="w-4 h-4 text-cyan-400" /> Reset Enterprise Demo
+                        </button>
                         <Link href="/tools" className="px-4 py-2 bg-cyan-600 border border-cyan-500 text-zinc-950 font-semibold rounded-lg text-sm font-bold hover:bg-cyan-700 transition-colors flex items-center gap-2">
                             <Activity className="w-4 h-4" /> New Diagnostic Run
                         </Link>
@@ -236,14 +247,27 @@ export default function ExecutiveDashboard() {
 
                 {!hasData ? (
                     <div className="text-center py-20 bg-white rounded-2xl border border-zinc-200 shadow-sm">
-                        <Activity className="w-12 h-12 text-zinc-800 mx-auto mb-4" />
-                        <h2 className="text-2xl font-grotesk font-bold text-zinc-900 mb-2">No Diagnostic Intelligence Found</h2>
+                        <Activity className="w-12 h-12 text-cyan-600 mx-auto mb-4" />
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-900 mb-2">Initialize Your Enterprise AI Command Center</h2>
                         <p className="text-zinc-800 mb-8 max-w-md mx-auto">
-                            Complete your first governance assessment to establish a baseline and generate your enterprise command center.
+                            Load our pre-configured enterprise baseline or complete your first governance assessment to activate live command center metrics.
                         </p>
-                        <Link href="/start-here" className="inline-flex px-6 py-3 bg-cyan-600 text-zinc-950 font-semibold font-bold rounded-lg hover:bg-cyan-700 transition-colors">
-                            Initialize Governance Baseline
-                        </Link>
+                        <div className="flex flex-col sm:flex-row justify-center gap-4">
+                            <button 
+                                onClick={() => {
+                                    const { getDefaultEnterpriseBaselineHistory } = require('../../lib/storage/session');
+                                    const defaultData = getDefaultEnterpriseBaselineHistory();
+                                    localStorage.setItem('unified_diagnostic_history', JSON.stringify(defaultData));
+                                    setHistory(defaultData);
+                                }}
+                                className="px-6 py-3 bg-cyan-600 text-zinc-950 font-bold rounded-lg hover:bg-cyan-700 transition-colors shadow-sm"
+                            >
+                                Initialize Live Workspace
+                            </button>
+                            <Link href="/start-here" className="px-6 py-3 bg-zinc-900 text-white font-semibold font-bold rounded-lg hover:bg-zinc-800 transition-colors border border-zinc-700">
+                                Run Guided Assessment
+                            </Link>
+                        </div>
                     </div>
                 ) : (
                     <div className="space-y-8">
