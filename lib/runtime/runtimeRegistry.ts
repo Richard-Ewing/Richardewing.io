@@ -8,6 +8,11 @@ import { ExecutionIntelligence } from '../execution/executionIntelligence';
 import { VersionedDecisionMemory } from '../memory/versionedDecisionMemory';
 import { CentralMissionRegistry } from '../product/missionRegistry';
 import { DynamicWizardEngine } from '../wizard/dynamicWizardEngine';
+import { EnterpriseRuntime } from './enterpriseRuntime';
+import { KnowledgeGraphEngine } from '../graph/knowledgeGraphEngine';
+import { EnterpriseTimeline } from '../timeline/enterpriseTimeline';
+import { RealityEngine } from '../reality/realityEngine';
+import { EnterpriseSearch } from '../search/enterpriseSearch';
 
 export class RuntimeRegistry {
     static missionRuntime = MissionRuntime;
@@ -20,4 +25,9 @@ export class RuntimeRegistry {
     static memoryRuntime = VersionedDecisionMemory;
     static missionRegistry = CentralMissionRegistry;
     static dynamicWizardEngine = DynamicWizardEngine;
+    static enterpriseRuntime = EnterpriseRuntime;
+    static knowledgeGraph = KnowledgeGraphEngine;
+    static timeline = EnterpriseTimeline;
+    static realityEngine = RealityEngine;
+    static searchEngine = EnterpriseSearch;
 }
