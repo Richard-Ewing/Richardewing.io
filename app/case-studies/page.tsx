@@ -149,7 +149,62 @@ export default function CaseStudiesPage() {
                 </div>
 
                 {/* Secondary Deep-Dive Post-Mortems Section */}
-                <div className="bg-zinc-900 text-white rounded-3xl p-8 sm:p-12 mb-16">
+                {/* Dynamic Research & Newsletter Briefings Integration */}
+                <div className="mb-16 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
+                    <div className="flex items-center justify-between mb-6">
+                        <div>
+                            <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest block mb-1">
+                                Empirical Research &amp; Newsletter Briefings
+                            </span>
+                            <h2 className="text-2xl font-grotesk font-bold text-zinc-950">
+                                Underlying Research &amp; Execution Briefings
+                            </h2>
+                        </div>
+                        <Link href="/newsletter" className="text-xs font-mono font-bold text-cyan-900 hover:underline">
+                            View Newsletter Archive →
+                        </Link>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <Link href="/blog/how-to-prevent-context-loss-in-ai-applications" className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 hover:border-cyan-500/40 transition-all flex flex-col justify-between group">
+                            <div>
+                                <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase block mb-1">Beehiiv Laboratory • August 7, 2026</span>
+                                <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-800 transition-colors mb-2 leading-snug">How to Prevent Memory Loss in AI Applications</h3>
+                                <p className="text-xs text-zinc-700 font-medium line-clamp-3">Stop AI context decay and errors using a 3-tier memory structure, organized state summaries, and database state separation.</p>
+                            </div>
+                            <span className="text-xs font-mono font-bold text-cyan-900 mt-4 block">Read Briefing →</span>
+                        </Link>
+
+                        <Link href="/blog/giving-ai-bigger-memory-window-confused-worker-inbox" className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 hover:border-cyan-500/40 transition-all flex flex-col justify-between group">
+                            <div>
+                                <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase block mb-1">LinkedIn Newsletter • August 6, 2026</span>
+                                <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-800 transition-colors mb-2 leading-snug">Giving an AI a bigger memory window is like giving a confused worker a bigger inbox.</h3>
+                                <p className="text-xs text-zinc-700 font-medium line-clamp-3">Why raw context window expansion degrades inference economics and attention accuracy.</p>
+                            </div>
+                            <span className="text-xs font-mono font-bold text-cyan-900 mt-4 block">Read Briefing →</span>
+                        </Link>
+
+                        <Link href="/blog/claude-search-tool-zero-adoption" className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 hover:border-cyan-500/40 transition-all flex flex-col justify-between group">
+                            <div>
+                                <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase block mb-1">Beehiiv Laboratory • August 6, 2026</span>
+                                <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-800 transition-colors mb-2 leading-snug">Claude Search Fails: Prompting Kills Adoption</h3>
+                                <p className="text-xs text-zinc-700 font-medium line-clamp-3">Prompt engineering creates workflow friction. Learn how AI features become operational liabilities.</p>
+                            </div>
+                            <span className="text-xs font-mono font-bold text-cyan-900 mt-4 block">Read Briefing →</span>
+                        </Link>
+
+                        <Link href="/blog/how-to-protect-production-databases-from-unauthorized-ai-agent-actions" className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 hover:border-cyan-500/40 transition-all flex flex-col justify-between group">
+                            <div>
+                                <span className="text-[10px] font-mono font-bold text-emerald-900 uppercase block mb-1">Beehiiv Laboratory • July 31, 2026</span>
+                                <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-800 transition-colors mb-2 leading-snug">How to Stop Unauthorized AI Agent Database Actions</h3>
+                                <p className="text-xs text-zinc-700 font-medium line-clamp-3">Why probabilistic system prompts fail when AI agents execute direct database operations, and how binary proxy gates enforce zero-trust security.</p>
+                            </div>
+                            <span className="text-xs font-mono font-bold text-cyan-900 mt-4 block">Read Briefing →</span>
+                        </Link>
+                    </div>
+                </div>
+
+                <div className="bg-zinc-950 text-white rounded-3xl p-8 sm:p-12 text-center mb-16">
                     <div className="max-w-2xl">
                         <span className="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest mb-3 block">
                             Runtime Incident Files

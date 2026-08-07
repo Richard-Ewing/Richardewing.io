@@ -3,10 +3,11 @@ import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 /**
- * AGENT: Daily Auto-Publication & RSS Knowledge Graph Ingester
+ * AGENT: Daily Auto-Publication & Multi-Channel Knowledge Graph Ingester
  * 
  * Schedule: Daily at 10am PST (18:00 UTC)
  * Vercel Cron: `0 18 * * *` -> GET /api/cron/rss-ingest
+ * Channels: Beehiiv Laboratory & LinkedIn Pulse / Activity Streams
  */
 
 export async function GET(req: Request) {
@@ -18,7 +19,7 @@ export async function GET(req: Request) {
       }
     }
 
-    const detectedNewPosts: Array<{ title: string; url: string; date?: string }> = [];
+    const detectedNewPosts: Array<{ title: string; url: string; publisher: string; date?: string }> = [];
     const knownUrls = new Set(RESEARCH_CORPUS.map(c => c.url.toLowerCase()));
 
     // 1. Live Scrape & Parse Beehiiv Laboratory Feed
@@ -44,6 +45,7 @@ export async function GET(req: Request) {
                 const titleMatch = pPage.match(/<title>(.*?)<\/title>/);
                 const rawTitle = titleMatch ? titleMatch[1].replace(' - The AI Economist', '').trim() : 'Beehiiv Post';
                 detectedNewPosts.push({
+                  publisher: 'Beehiiv',
                   title: rawTitle,
                   url: fullUrl,
                   date: new Date().toISOString().split('T')[0]
@@ -59,16 +61,44 @@ export async function GET(req: Request) {
       console.error('Error scraping Beehiiv homepage:', err);
     }
 
+    // 2. Poll LinkedIn Feed Bridge / RSS (if LINKEDIN_RSS_FEED_URL configured)
+    const linkedinRssUrl = process.env.LINKEDIN_RSS_FEED_URL;
+    if (linkedinRssUrl) {
+      try {
+        const lRes = await fetch(linkedinRssUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } });
+        if (lRes.ok) {
+          const xml = await lRes.text();
+          const items = xml.match(/<item>[\s\S]*?<\/item>/gi) || [];
+          for (const itemXml of items) {
+            const linkMatch = itemXml.match(/<link>(.*?)<\/link>/);
+            const titleMatch = itemXml.match(/<title>(.*?)<\/title>/);
+            if (linkMatch && titleMatch) {
+              const url = linkMatch[1].trim();
+              const title = titleMatch[1].replace(/<!\[CDATA\[(.*?)\]\]>/g, '$1').trim();
+              if (!knownUrls.has(url.toLowerCase())) {
+                detectedNewPosts.push({
+                  publisher: 'LinkedIn',
+                  title,
+                  url,
+                  date: new Date().toISOString().split('T')[0]
+                });
+              }
+            }
+          }
+        }
+      } catch (err) {
+        console.error('Error polling LinkedIn RSS feed bridge:', err);
+      }
+    }
+
     return NextResponse.json({
       status: 'success',
       schedule: 'Daily at 10:00 AM PST (18:00 UTC)',
       timestamp: new Date().toISOString(),
       liveFeedStatus: 'Active',
       feedsPolled: [
-        { name: 'Beehiiv Laboratory', url: 'https://theaieconomist.beehiiv.com/', type: 'HTML Scraper & Feed' },
-        { name: 'LinkedIn Newsletters & Posts', url: 'https://www.linkedin.com/in/richard-ewing-mba/', type: 'Activity Stream' },
-        { name: 'Built In', url: 'https://builtin.com/authors/richard-ewing', type: 'Author Index' },
-        { name: 'CIO.com', url: 'https://www.cio.com/author/richard-ewing', type: 'Author Index' }
+        { name: 'Beehiiv Laboratory', url: 'https://theaieconomist.beehiiv.com/', type: 'HTML Scraper & Feed', active: true },
+        { name: 'LinkedIn Newsletters & Pulse', url: 'https://www.linkedin.com/in/richard-ewing-mba/', type: linkedinRssUrl ? 'RSS Bridge' : 'Webhook & Scraper (Requires LINKEDIN_RSS_FEED_URL or Webhook)', active: true }
       ],
       summary: {
         activeCanonicalSpecifications: CANONICAL_CONCEPTS.length,

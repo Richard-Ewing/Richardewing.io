@@ -196,6 +196,10 @@ export function getModule(slug: string): CurriculumModule | undefined {
 
         // Explicitly inject migrated Enterprise Frameworks (Beehiiv Articles) into core curriculum
         const frameworkArticles: Record<string, string[]> = {
+            'how-to-prevent-context-loss-in-ai-applications': ['19-1', '19-2', '21-1', '21-2'],
+            'giving-ai-bigger-memory-window-confused-worker-inbox': ['19-1', '21-1', '1-1'],
+            'claude-search-tool-zero-adoption': ['5-1', '11-4', '1-1'],
+            'how-to-protect-production-databases-from-unauthorized-ai-agent-actions': ['19-2', '21-2', '21-3'],
             'subprime-code-crisis': ['9-1', '9-2', '9-3'],
             'the-innovation-tax-audit-is-your-rd-actually-just-opex': ['9-1', '14-1'],
             'generative-ai-margin-squeeze-saas-cogs': ['11-1', '14-3'],

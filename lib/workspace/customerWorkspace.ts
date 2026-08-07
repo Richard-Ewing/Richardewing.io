@@ -1,5 +1,8 @@
 import { CanonicalDecisionPackage } from '../kernel/decisionPackageSchema';
 import { ExecutiveArtifact } from '../compiler/artifactCompiler';
+import { ExecutiveInboxItem } from './executiveInbox';
+import { EnterpriseProgram } from '../execution/programExecutionRuntime';
+import { DecisionApprovalRecord } from '../governance/approvalGovernanceRuntime';
 
 export interface CustomerOrganizationWorkspace {
     organizationId: string;
@@ -12,6 +15,9 @@ export interface CustomerOrganizationWorkspace {
     historicalBoardDecksCount: number;
     latestDecisionPackage?: CanonicalDecisionPackage;
     storedArtifacts: ExecutiveArtifact[];
+    inboxItems?: ExecutiveInboxItem[];
+    pendingApprovals?: DecisionApprovalRecord[];
+    activePrograms?: EnterpriseProgram[];
 }
 
 export class CustomerWorkspaceStore {

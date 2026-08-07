@@ -10,6 +10,20 @@ export interface ExecutionTicket {
     createdAt: string;
 }
 
+export function mapTicketStatusToTaskStatus(ticketStatus: string): 'Todo' | 'InProgress' | 'Completed' | 'Blocked' {
+    switch (ticketStatus) {
+        case 'Staged':
+        case 'Created':
+            return 'Todo';
+        case 'InExecution':
+            return 'InProgress';
+        case 'Completed':
+            return 'Completed';
+        default:
+            return 'Blocked';
+    }
+}
+
 export class ExecutionConnectorRegistry {
     static async stageExecutionTask(target: ExecutionTarget, title: string, description: string): Promise<ExecutionTicket> {
         const ticketId = `tkt_${target.toLowerCase()}_${Date.now()}`;

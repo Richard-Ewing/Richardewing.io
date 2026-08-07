@@ -4,6 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import EcosystemMap from '@/app/components/EcosystemMap';
 import ResearchTimeline from '@/app/components/client/ResearchTimeline';
 import FAQItem from '@/app/components/FAQItem';
+import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 export const metadata: Metadata = {
     title: 'Research Evolution Timeline AI Governance | Richard Ewing',
@@ -118,6 +119,58 @@ export default function ResearchPage() {
                     <p className="text-xl text-zinc-900 leading-relaxed font-semibold max-w-2xl">
                         The intellectual evolution mapping the progression from foundational AI unit economics up to deterministic runtime enforcement.
                     </p>
+
+                    <div className="mt-8 flex flex-wrap gap-4">
+                        <Link href="/research/publications" className="px-5 py-3 rounded-xl bg-cyan-900 text-white font-mono font-bold text-xs hover:bg-cyan-800 transition shadow-sm">
+                            Browse Publications Catalog (80+ Works) →
+                        </Link>
+                        <Link href="/concepts" className="px-5 py-3 rounded-xl bg-zinc-900 text-white font-mono font-bold text-xs hover:bg-zinc-800 transition shadow-sm">
+                            Explore Canonical Concepts →
+                        </Link>
+                    </div>
+                </section>
+
+                {/* Live Multi-Channel Publications Grid */}
+                <section className="mb-16 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
+                    <div className="flex items-center justify-between mb-6">
+                        <div>
+                            <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest block mb-1">
+                                Real-Time Feed • Multi-Channel Research
+                            </span>
+                            <h2 className="text-2xl font-grotesk font-bold text-zinc-950">
+                                Recent Published Works &amp; Laboratory Briefings
+                            </h2>
+                        </div>
+                        <Link href="/research/publications" className="text-xs font-mono font-bold text-cyan-900 hover:underline">
+                            View All 80+ Works →
+                        </Link>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {RESEARCH_CORPUS.slice(0, 4).map(work => (
+                            <a
+                                key={work.id}
+                                href={work.url}
+                                target={work.url.startsWith('http') ? '_blank' : '_self'}
+                                rel="noopener noreferrer"
+                                className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 hover:border-cyan-500/40 transition-all flex flex-col justify-between group"
+                            >
+                                <div>
+                                    <div className="flex items-center justify-between text-[10px] font-mono font-bold text-cyan-900 uppercase mb-2">
+                                        <span>{work.publisher}</span>
+                                        {work.date && <span>{work.date}</span>}
+                                    </div>
+                                    <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-800 transition-colors mb-2 leading-snug">
+                                        {work.title} ↗
+                                    </h3>
+                                    <p className="text-xs text-zinc-700 font-medium line-clamp-3">
+                                        {work.thesis}
+                                    </p>
+                                </div>
+                                <span className="text-xs font-mono font-bold text-cyan-900 mt-4 block">Read Work ↗</span>
+                            </a>
+                        ))}
+                    </div>
                 </section>
 
                 {/* Why This Exists Section (Worldview Compression Component) */}

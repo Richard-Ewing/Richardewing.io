@@ -1,9 +1,14 @@
 export type EnterpriseEventType = 
     | 'MissionStarted' 
+    | 'MissionCompleted'
     | 'EvidenceCollected' 
     | 'DecisionPackageCompiled' 
+    | 'ApprovalRequested'
     | 'ApprovalGranted' 
+    | 'ExecutionTicketStaged'
+    | 'ExecutionTicketUpdated'
     | 'TaskCompleted' 
+    | 'BoardRehearsalCompleted'
     | 'VerificationFinished';
 
 export interface EnterpriseEvent {

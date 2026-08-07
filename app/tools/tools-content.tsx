@@ -276,6 +276,66 @@ export default function ToolsContent() {
           </div>
         </section>
 
+        {/* Empirical Research & Publication Foundations */}
+        <section className="section max-w-5xl mx-auto">
+          <div className="bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm space-y-6">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-200 pb-6">
+              <div>
+                <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest block mb-1">
+                  Empirical Foundations &amp; Research Attribution
+                </span>
+                <h2 className="text-2xl font-grotesk font-bold text-zinc-950">
+                  Research Publications Underlying These Diagnostics
+                </h2>
+              </div>
+              <Link href="/research/publications" className="text-xs font-mono font-bold text-cyan-900 hover:underline">
+                Full Research Catalog →
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <Link href="/blog/giving-ai-bigger-memory-window-confused-worker-inbox" className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 hover:border-cyan-500/40 transition-all flex flex-col justify-between group">
+                <div>
+                  <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase block mb-1">LinkedIn Newsletter • August 6, 2026</span>
+                  <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-800 transition-colors mb-2 leading-snug">
+                    Giving an AI a bigger memory window is like giving a confused worker a bigger inbox.
+                  </h3>
+                  <p className="text-xs text-zinc-700 font-medium line-clamp-3">
+                    Underlying methodology for Agentic Drift &amp; Memory Loss Diagnostics.
+                  </p>
+                </div>
+                <span className="text-xs font-mono font-bold text-cyan-900 mt-4 block">Read Publication →</span>
+              </Link>
+
+              <Link href="/blog/how-to-prevent-context-loss-in-ai-applications" className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 hover:border-cyan-500/40 transition-all flex flex-col justify-between group">
+                <div>
+                  <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase block mb-1">Beehiiv Laboratory • August 7, 2026</span>
+                  <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-800 transition-colors mb-2 leading-snug">
+                    How to Prevent Memory Loss in AI Applications
+                  </h3>
+                  <p className="text-xs text-zinc-700 font-medium line-clamp-3">
+                    Architecture and state separation schemas powering the 3-tier memory engine.
+                  </p>
+                </div>
+                <span className="text-xs font-mono font-bold text-cyan-900 mt-4 block">Read Publication →</span>
+              </Link>
+
+              <a href="https://builtin.com/articles/innovation-requires-deleting-code" target="_blank" rel="noopener noreferrer" className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 hover:border-cyan-500/40 transition-all flex flex-col justify-between group">
+                <div>
+                  <span className="text-[10px] font-mono font-bold text-emerald-900 uppercase block mb-1">Built In • Editor's Pick</span>
+                  <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-800 transition-colors mb-2 leading-snug">
+                    Real Innovation Requires Deleting Code ↗
+                  </h3>
+                  <p className="text-xs text-zinc-700 font-medium line-clamp-3">
+                    Foundational research establishing the Product Debt Index (PDI) calculation model.
+                  </p>
+                </div>
+                <span className="text-xs font-mono font-bold text-cyan-900 mt-4 block">Read Article ↗</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="section-sm text-center">
           <p className="text-zinc-950 font-bold mb-3 text-lg">

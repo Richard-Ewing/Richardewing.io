@@ -32,7 +32,7 @@ export interface CanonicalDecisionPackage {
     version: '1.0.0';
     questionText: string;
     organizationId: string;
-    executiveOwnerRole: string;
+    executiveOwnerRole: ExecutiveRole;
     summary: string;
     evidenceSources: CanonicalEvidenceSource[];
     rootCauseChain: string[];
@@ -42,6 +42,7 @@ export interface CanonicalDecisionPackage {
     tradeoffsAcknowledged: string[];
     executionPlanDays: number;
     expectedOutcomeUSD: number;
+    actualOutcomeUSD?: number;
     verificationScheduleDays: number;
     overallConfidencePct: number;
     createdAt: string;

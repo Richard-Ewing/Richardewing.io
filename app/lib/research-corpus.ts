@@ -9,6 +9,11 @@ export interface CorpusArticle {
   thesis: string;
   date?: string;
   relatedConceptIds?: string[];
+  relatedGlossarySlugs?: string[];
+  relatedFrameworkSlugs?: string[];
+  relatedToolIds?: string[];
+  relatedCaseStudyIds?: string[];
+  relatedCurriculumTrackIds?: string[];
 }
 
 export const RESEARCH_DOMAINS = [
@@ -21,6 +26,58 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
+  // Today's Beehiiv Laboratory Newsletter — August 7, 2026
+  {
+    id: 'beehiiv-prevent-context-loss',
+    title: 'How to Prevent Memory Loss in AI Applications',
+    url: 'https://theaieconomist.beehiiv.com/p/how-to-prevent-context-loss-in-ai-applications',
+    publisher: 'Beehiiv',
+    domain: 'AI Governance',
+    type: 'Executable',
+    editorsPick: true,
+    date: 'August 7, 2026',
+    thesis: 'Stop AI context decay and errors using a 3-tier memory structure, organized state summaries, and database state separation rather than expanding raw prompt context.',
+    relatedConceptIds: ['deterministic-governance', 'ai-governance', 'context-rot', 'inference-economics']
+  },
+  // Today's LinkedIn Newsletter — August 6, 2026
+  {
+    id: 'linkedin-bigger-memory-window-confused-worker-inbox',
+    title: 'Giving an AI a bigger memory window is like giving a confused worker a bigger inbox.',
+    url: 'https://www.linkedin.com/in/richard-ewing-mba/',
+    publisher: 'LinkedIn',
+    domain: 'AI Governance',
+    type: 'Executable',
+    editorsPick: true,
+    date: 'August 6, 2026',
+    thesis: 'Expanding an AI agent’s context window without structured indexing creates cognitive clutter rather than intelligence. True operational velocity requires deterministic context filtering over raw token expansion.',
+    relatedConceptIds: ['deterministic-governance', 'ai-governance', 'context-rot', 'ai-volatility-tax']
+  },
+  // Today's Beehiiv Laboratory Newsletter — August 6, 2026
+  {
+    id: 'beehiiv-claude-search-tool-zero-adoption',
+    title: 'Claude Search Fails: Prompting Kills Adoption',
+    url: 'https://theaieconomist.beehiiv.com/p/claude-search-tool-zero-adoption',
+    publisher: 'Beehiiv',
+    domain: 'AI Governance',
+    type: 'Executable',
+    editorsPick: true,
+    date: 'August 6, 2026',
+    thesis: 'Why relying purely on prompt instructions for search tools causes enterprise adoption to plummet, and how deterministic tool-execution boundaries solve user friction.',
+    relatedConceptIds: ['deterministic-governance', 'ai-governance', 'ai-volatility-tax']
+  },
+  // LinkedIn Post — August 3, 2026
+  {
+    id: 'linkedin-context-window-clutter',
+    title: 'More Memory Creates Clutter: Why 1M-Token Context Windows Break AI Agents',
+    url: 'https://www.linkedin.com/in/richard-ewing-mba/',
+    publisher: 'LinkedIn',
+    domain: 'AI Governance',
+    type: 'Executable',
+    editorsPick: true,
+    date: 'August 3, 2026',
+    thesis: 'Giving an AI agent a massive unformatted context window creates informational clutter rather than intelligence; performance requires database-managed structured filing over raw memory capacity.',
+    relatedConceptIds: ['deterministic-governance', 'ai-governance', 'ai-agents']
+  },
   // New Beehiiv Laboratory Newsletter — July 31, 2026
   {
     id: 'beehiiv-stop-unauthorized-db-actions',
@@ -56,7 +113,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'CIO.com',
     domain: 'Product Leadership',
     type: 'Evergreen',
-    thesis: 'Shifts product management focus from feature output to margin contribution and P&L ownership.'
+    thesis: 'Shifts product management focus from feature output to margin contribution and P&L ownership.',
+    relatedConceptIds: ["product-economist","feature-bloat-calculus","coordination-tax"],
+    relatedGlossarySlugs: ["product-debt-index","feature-bloat"],
+    relatedToolIds: ["pdi"]
   },
   {
     id: 'cio-cfo-agile',
@@ -65,7 +125,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'CIO.com',
     domain: 'Software Economics',
     type: 'Evergreen',
-    thesis: 'Details the hidden financial costs of velocity-centric Agile and their impact on CFO-level capital allocation.'
+    thesis: 'Details the hidden financial costs of velocity-centric Agile and their impact on CFO-level capital allocation.',
+    relatedConceptIds: ["r-and-d-ponzi","coordination-tax","technical-insolvency"],
+    relatedGlossarySlugs: ["technical-debt","technical-insolvency-date"],
+    relatedToolIds: ["pdi","ev-se"]
   },
   {
     id: 'cio-model-collapse',
@@ -74,7 +137,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'CIO.com',
     domain: 'AI Economics',
     type: 'Evergreen',
-    thesis: 'Examines degrading economics and operational risks of recursive AI model training on enterprise margin.'
+    thesis: 'Examines degrading economics and operational risks of recursive AI model training on enterprise margin.',
+    relatedConceptIds: ["model-collapse","inference-economics","ai-volatility-tax"],
+    relatedGlossarySlugs: ["model-collapse","synthetic-cogs"],
+    relatedToolIds: ["aueb"]
   },
   {
     id: 'cio-innovation-tax-audit',
@@ -83,7 +149,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'CIO.com',
     domain: 'Software Economics',
     type: 'Executable',
-    thesis: 'Provides a framework for auditing R&D spend under ASC 350-40 to distinguish genuine innovation from maintenance OpEx.'
+    thesis: 'Provides a framework for auditing R&D spend under ASC 350-40 to distinguish genuine innovation from maintenance OpEx.',
+    relatedConceptIds: ["r-and-d-ponzi","technical-insolvency","coordination-tax"],
+    relatedGlossarySlugs: ["innovation-tax","technical-debt"],
+    relatedToolIds: ["innovation-tax-calculator","pdi"]
   },
   {
     id: 'cio-claude-api-bill',
@@ -92,7 +161,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'CIO.com',
     domain: 'AI Economics',
     type: 'Executable',
-    thesis: 'Analyzes model-task mismatch where frontier LLMs are misallocated to low-complexity tasks, destroying SaaS unit economics.'
+    thesis: 'Analyzes model-task mismatch where frontier LLMs are misallocated to low-complexity tasks, destroying SaaS unit economics.',
+    relatedConceptIds: ["inference-economics","ai-volatility-tax","ai-margin-squeeze","cost-of-predictivity"],
+    relatedGlossarySlugs: ["synthetic-cogs","ai-volatility-tax"],
+    relatedToolIds: ["aueb","slm-vs-api"]
   },
   {
     id: 'cio-copilot-bottleneck',
@@ -101,7 +173,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'CIO.com',
     domain: 'Engineering Leadership',
     type: 'Evergreen',
-    thesis: 'Identifies the review capacity crunch created when AI code generation outpaces senior engineering verification velocity.'
+    thesis: 'Identifies the review capacity crunch created when AI code generation outpaces senior engineering verification velocity.',
+    relatedConceptIds: ["vibe-coding","subprime-code-crisis","ten-man-parity"],
+    relatedGlossarySlugs: ["vibe-coding-debt","subprime-code-crisis"],
+    relatedToolIds: ["copilot-roi","audit-interview"]
   },
   {
     id: 'cio-redundant-requests',
@@ -110,7 +185,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'CIO.com',
     domain: 'AI Economics',
     type: 'Executable',
-    thesis: 'Details the cost impact of un-cached duplicate inference requests and introduces semantic caching mechanisms.'
+    thesis: 'Details the cost impact of un-cached duplicate inference requests and introduces semantic caching mechanisms.',
+    relatedConceptIds: ["semantic-caching","inference-economics","ai-volatility-tax"],
+    relatedGlossarySlugs: ["semantic-caching","synthetic-cogs"],
+    relatedToolIds: ["aueb"]
   },
 
   // Tier 1 Media — Built In (11 Articles)
@@ -122,7 +200,9 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Governance',
     type: 'Evergreen',
     editorsPick: true,
-    thesis: 'Compares deterministic versus probabilistic reasoning architectures for enterprise execution.'
+    thesis: 'Compares deterministic versus probabilistic reasoning architectures for enterprise execution.',
+    relatedConceptIds: ["model-collapse","cost-of-predictivity","inference-economics"],
+    relatedGlossarySlugs: ["model-collapse","frontier-model"]
   },
   {
     id: 'builtin-ai-security-gates',
@@ -131,7 +211,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Built In',
     domain: 'AI Governance',
     type: 'Executable',
-    thesis: 'Provides implementation specifications for binary admissibility gates in autonomous agent execution pipelines.'
+    thesis: 'Provides implementation specifications for binary admissibility gates in autonomous agent execution pipelines.',
+    relatedConceptIds: ["deterministic-governance","agent-kill-switch","runtime-vs-alignment","ai-governance"],
+    relatedGlossarySlugs: ["deterministic-governance","agent-kill-switch"],
+    relatedToolIds: ["prompt-injection-sandbox","agentic-drift-matrix"]
   },
   {
     id: 'builtin-ai-security-breach',
@@ -141,7 +224,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Governance',
     type: 'Time-Sensitive',
     editorsPick: true,
-    thesis: 'A post-mortem analysis of memory poisoning and unauthorized tool execution in production AI agents.'
+    thesis: 'A post-mortem analysis of memory poisoning and unauthorized tool execution in production AI agents.',
+    relatedConceptIds: ["agent-kill-switch","shadow-ai","ai-governance","deterministic-governance"],
+    relatedGlossarySlugs: ["agent-kill-switch","shadow-ai"],
+    relatedToolIds: ["shadow-ai","agentic-drift-matrix"]
   },
   {
     id: 'builtin-kill-switch',
@@ -151,7 +237,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Governance',
     type: 'Executable',
     editorsPick: true,
-    thesis: 'Introduces binary execution control layers and state integrity hashing to contain rogue agent behavior.'
+    thesis: 'Introduces binary execution control layers and state integrity hashing to contain rogue agent behavior.',
+    relatedConceptIds: ["agent-kill-switch","deterministic-governance","runtime-vs-alignment","ai-governance"],
+    relatedGlossarySlugs: ["agent-kill-switch","deterministic-governance"],
+    relatedToolIds: ["agentic-drift-matrix"]
   },
   {
     id: 'builtin-make-ai-profitable',
@@ -160,7 +249,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Built In',
     domain: 'AI Economics',
     type: 'Executable',
-    thesis: 'Calculates the AI Volatility Tax and provides formulas for establishing positive inference unit economics.'
+    thesis: 'Calculates the AI Volatility Tax and provides formulas for establishing positive inference unit economics.',
+    relatedConceptIds: ["ai-volatility-tax","inference-economics","ai-margin-squeeze","cost-of-predictivity"],
+    relatedGlossarySlugs: ["ai-volatility-tax","synthetic-cogs"],
+    relatedToolIds: ["aueb","slm-vs-api"]
   },
   {
     id: 'builtin-vibe-coding-era',
@@ -170,7 +262,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Engineering Leadership',
     type: 'Evergreen',
     editorsPick: true,
-    thesis: 'Defines the 4 Laws of Probabilistic Software Development and the shift from code authoring to system verification.'
+    thesis: 'Defines the 4 Laws of Probabilistic Software Development and the shift from code authoring to system verification.',
+    relatedConceptIds: ["vibe-coding","subprime-code-crisis","ten-man-parity"],
+    relatedGlossarySlugs: ["vibe-coding-debt"],
+    relatedToolIds: ["audit-interview","copilot-roi"]
   },
   {
     id: 'builtin-agentic-ai-analysis',
@@ -179,7 +274,9 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Built In',
     domain: 'AI Governance',
     type: 'Evergreen',
-    thesis: 'Analytic review of agentic macro-economics, systemic risk, and the necessity of deterministic governance.'
+    thesis: 'Analytic review of agentic macro-economics, systemic risk, and the necessity of deterministic governance.',
+    relatedConceptIds: ["ai-governance","deterministic-governance","agent-kill-switch","ai-agents"],
+    relatedGlossarySlugs: ["deterministic-governance","ai-agent-sprawl"]
   },
   {
     id: 'builtin-deleting-code',
@@ -188,7 +285,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Built In',
     domain: 'Software Economics',
     type: 'Evergreen',
-    thesis: 'Advocates for negative code velocity (deleting zombie features) to reclaim R&D capital efficiency.'
+    thesis: 'Advocates for negative code velocity (deleting zombie features) to reclaim R&D capital efficiency.',
+    relatedConceptIds: ["r-and-d-ponzi","feature-bloat-calculus","technical-insolvency"],
+    relatedGlossarySlugs: ["zombie-code","product-debt-index"],
+    relatedToolIds: ["pdi"]
   },
   {
     id: 'builtin-audit-interview',
@@ -198,7 +298,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Engineering Leadership',
     type: 'Executable',
     editorsPick: true,
-    thesis: 'Presents the 4 Dimensions of Engineering Judgment scorecard for evaluating software engineers in the AI era.'
+    thesis: 'Presents the 4 Dimensions of Engineering Judgment scorecard for evaluating software engineers in the AI era.',
+    relatedConceptIds: ["vibe-coding","ten-man-parity","subprime-code-crisis"],
+    relatedGlossarySlugs: ["vibe-coding-debt","audit-interview"],
+    relatedToolIds: ["audit-interview"]
   },
   {
     id: 'builtin-reimagining-interview',
@@ -208,7 +311,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Engineering Leadership',
     type: 'Time-Sensitive',
     editorsPick: true,
-    thesis: 'Replaces traditional leetcode interviews with the Audit Interview framework to test error detection capacity.'
+    thesis: 'Replaces traditional leetcode interviews with the Audit Interview framework to test error detection capacity.',
+    relatedConceptIds: ["vibe-coding","ten-man-parity"],
+    relatedGlossarySlugs: ["audit-interview","vibe-coding-debt"],
+    relatedToolIds: ["audit-interview"]
   },
   {
     id: 'builtin-business-test',
@@ -218,7 +324,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Executable',
     editorsPick: true,
-    thesis: 'Diagnostic evaluation to audit whether an AI feature has viable gross margin potential before deployment.'
+    thesis: 'Diagnostic evaluation to audit whether an AI feature has viable gross margin potential before deployment.',
+    relatedConceptIds: ["cost-of-predictivity","product-economist","ai-margin-squeeze"],
+    relatedGlossarySlugs: ["product-debt-index","ai-volatility-tax"],
+    relatedToolIds: ["pdi","aueb"]
   },
 
   // Mind the Product & HackerNoon (2 Articles)
@@ -229,7 +338,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Mind the Product',
     domain: 'Product Leadership',
     type: 'Executable',
-    thesis: 'Deep dive into product P&L ownership, margin contribution, and capital efficiency metrics for PMs.'
+    thesis: 'Deep dive into product P&L ownership, margin contribution, and capital efficiency metrics for PMs.',
+    relatedConceptIds: ["product-economist","feature-bloat-calculus","coordination-tax"],
+    relatedGlossarySlugs: ["product-debt-index"],
+    relatedToolIds: ["pdi"]
   },
   {
     id: 'hackernoon-zero-customers',
@@ -238,7 +350,9 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'HackerNoon',
     domain: 'Product Leadership',
     type: 'Time-Sensitive',
-    thesis: 'Forensic breakdown of technical excellence versus product-market fit failures in AI startups.'
+    thesis: 'Forensic breakdown of technical excellence versus product-market fit failures in AI startups.',
+    relatedConceptIds: ["product-economist","cost-of-predictivity","feature-bloat-calculus"],
+    relatedGlossarySlugs: ["product-debt-index"]
   },
 
   // Beehiiv Research Notes & Laboratory Incubator (~60 Articles)
@@ -249,7 +363,8 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'Product Leadership',
     type: 'Time-Sensitive',
-    thesis: 'Foundational manifesto introducing the Product Economist framework and research agenda.'
+    thesis: 'Foundational manifesto introducing the Product Economist framework and research agenda.',
+    relatedConceptIds: ["product-economist","ai-economics"]
   },
   {
     id: 'beehiiv-10-brutal-lessons',
@@ -258,7 +373,8 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'Product Leadership',
     type: 'Evergreen',
-    thesis: 'Hard-earned operational rules on feature bloat, roadmap fantasy, and revenue accountability.'
+    thesis: 'Hard-earned operational rules on feature bloat, roadmap fantasy, and revenue accountability.',
+    relatedConceptIds: ["product-economist","feature-bloat-calculus","coordination-tax"]
   },
   {
     id: 'beehiiv-roadmap-killing-team',
@@ -267,7 +383,9 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'Product Leadership',
     type: 'Executable',
-    thesis: 'Replaces feature timeline roadmaps with outcome-based commitment horizons.'
+    thesis: 'Replaces feature timeline roadmaps with outcome-based commitment horizons.',
+    relatedConceptIds: ["coordination-tax","product-economist","feature-bloat-calculus"],
+    relatedToolIds: ["pdi"]
   },
   {
     id: 'beehiiv-permission-slips',
@@ -276,7 +394,8 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'Product Leadership',
     type: 'Evergreen',
-    thesis: 'Deconstructs governance bureaucracy and establishes autonomous execution parameters.'
+    thesis: 'Deconstructs governance bureaucracy and establishes autonomous execution parameters.',
+    relatedConceptIds: ["coordination-tax","product-economist"]
   },
   {
     id: 'beehiiv-product-vision-wallpaper',
@@ -285,7 +404,8 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'Product Leadership',
     type: 'Evergreen',
-    thesis: 'Translates abstract vision statements into testable economic hypotheses.'
+    thesis: 'Translates abstract vision statements into testable economic hypotheses.',
+    relatedConceptIds: ["product-economist","feature-bloat-calculus"]
   },
   {
     id: 'beehiiv-subprime-code-crisis',
@@ -294,7 +414,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'Software Economics',
     type: 'Evergreen',
-    thesis: 'Draws parallels between 2008 financial derivatives and unverified AI-generated code accumulating in enterprise repositories.'
+    thesis: 'Draws parallels between 2008 financial derivatives and unverified AI-generated code accumulating in enterprise repositories.',
+    relatedConceptIds: ["subprime-code-crisis","vibe-coding","technical-insolvency"],
+    relatedGlossarySlugs: ["subprime-code-crisis","vibe-coding-debt"],
+    relatedToolIds: ["pdi","copilot-roi"]
   },
   {
     id: 'beehiiv-ai-unit-economics-burn-rate',
@@ -303,7 +426,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'AI Economics',
     type: 'Executable',
-    thesis: 'Formulas for modeling when API costs cross gross margin contribution thresholds into technical insolvency.'
+    thesis: 'Formulas for modeling when API costs cross gross margin contribution thresholds into technical insolvency.',
+    relatedConceptIds: ["inference-economics","ai-volatility-tax","ai-margin-squeeze","cost-of-predictivity"],
+    relatedGlossarySlugs: ["synthetic-cogs","ai-volatility-tax"],
+    relatedToolIds: ["aueb"]
   },
   {
     id: 'beehiiv-why-built-exogram',
@@ -312,7 +438,9 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'AI Governance',
     type: 'Evergreen',
-    thesis: 'Architectural rationale for building deterministic verification layers between frontier LLMs and production databases.'
+    thesis: 'Architectural rationale for building deterministic verification layers between frontier LLMs and production databases.',
+    relatedConceptIds: ["deterministic-governance","agent-kill-switch","ai-governance","runtime-vs-alignment"],
+    relatedGlossarySlugs: ["deterministic-governance","agent-kill-switch"]
   },
   {
     id: 'beehiiv-runtime-governance-architecture',
@@ -321,7 +449,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'AI Governance',
     type: 'Executable',
-    thesis: 'Technical specification for state integrity checks, admissibility gates, and cryptographic audit ledgers.'
+    thesis: 'Technical specification for state integrity checks, admissibility gates, and cryptographic audit ledgers.',
+    relatedConceptIds: ["deterministic-governance","runtime-vs-alignment","agent-kill-switch","ai-governance"],
+    relatedGlossarySlugs: ["deterministic-governance"],
+    relatedToolIds: ["agentic-drift-matrix"]
   },
   {
     id: 'beehiiv-product-p-and-l-test',
@@ -330,7 +461,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'AI Economics',
     type: 'Executable',
-    thesis: 'Practical diagnostic audit for calculating feature-level gross margin contribution.'
+    thesis: 'Practical diagnostic audit for calculating feature-level gross margin contribution.',
+    relatedConceptIds: ["cost-of-predictivity","product-economist","ai-margin-squeeze","inference-economics"],
+    relatedGlossarySlugs: ["product-debt-index","ai-volatility-tax"],
+    relatedToolIds: ["pdi","aueb"]
   },
   {
     id: 'beehiiv-coordination-tax',
@@ -339,7 +473,9 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'Software Economics',
     type: 'Evergreen',
-    thesis: 'Quantifies organizational friction overhead that erodes engineering gross margins at scale.'
+    thesis: 'Quantifies organizational friction overhead that erodes engineering gross margins at scale.',
+    relatedConceptIds: ["coordination-tax","r-and-d-ponzi","ten-man-parity"],
+    relatedGlossarySlugs: ["coordination-tax"]
   },
   {
     id: 'beehiiv-generative-ai-margin-squeeze',
@@ -348,7 +484,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'AI Economics',
     type: 'Evergreen',
-    thesis: 'Examines how shifting hosting infrastructure into variable COGS compresses SaaS gross margins.'
+    thesis: 'Examines how shifting hosting infrastructure into variable COGS compresses SaaS gross margins.',
+    relatedConceptIds: ["ai-margin-squeeze","inference-economics","ai-volatility-tax","cost-of-predictivity"],
+    relatedGlossarySlugs: ["synthetic-cogs","ai-volatility-tax"],
+    relatedToolIds: ["aueb","slm-vs-api"]
   },
   {
     id: 'beehiiv-deterministic-control-plane',
@@ -357,7 +496,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'AI Governance',
     type: 'Executable',
-    thesis: 'Blueprint for separating probabilistic inference from deterministic action execution.'
+    thesis: 'Blueprint for separating probabilistic inference from deterministic action execution.',
+    relatedConceptIds: ["deterministic-governance","agent-kill-switch","runtime-vs-alignment","ai-governance"],
+    relatedGlossarySlugs: ["deterministic-governance"],
+    relatedToolIds: ["agentic-drift-matrix"]
   },
   {
     id: 'beehiiv-operational-debt-crisis',
@@ -366,7 +508,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'Software Economics',
     type: 'Evergreen',
-    thesis: 'Identifies accumulating maintenance costs of un-governed AI integrations across enterprise stacks.'
+    thesis: 'Identifies accumulating maintenance costs of un-governed AI integrations across enterprise stacks.',
+    relatedConceptIds: ["technical-insolvency","r-and-d-ponzi","ai-volatility-tax","subprime-code-crisis"],
+    relatedGlossarySlugs: ["technical-debt","technical-insolvency-date"],
+    relatedToolIds: ["pdi","ev-se"]
   },
   {
     id: 'beehiiv-why-scaling-breaks-bank',
@@ -375,7 +520,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'AI Economics',
     type: 'Evergreen',
-    thesis: 'Analyzes non-linear cost scaling when AI model inference scales faster than user revenue.'
+    thesis: 'Analyzes non-linear cost scaling when AI model inference scales faster than user revenue.',
+    relatedConceptIds: ["ai-margin-squeeze","inference-economics","ai-volatility-tax"],
+    relatedGlossarySlugs: ["synthetic-cogs"],
+    relatedToolIds: ["aueb"]
   },
   {
     id: 'beehiiv-token-burn-analytics',
@@ -384,7 +532,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'AI Economics',
     type: 'Executable',
-    thesis: 'Designing per-tenant token tracking architectures to attribute inference expenses directly to customer subscriptions.'
+    thesis: 'Designing per-tenant token tracking architectures to attribute inference expenses directly to customer subscriptions.',
+    relatedConceptIds: ["inference-economics","ai-volatility-tax","semantic-caching"],
+    relatedGlossarySlugs: ["synthetic-cogs","ai-tokenomics-cogs"],
+    relatedToolIds: ["aueb"]
   },
   {
     id: 'beehiiv-semantic-caching-playbook',
@@ -393,7 +544,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'AI Economics',
     type: 'Executable',
-    thesis: 'Vector similarity thresholding strategies to reduce redundant inference queries by 40-60%.'
+    thesis: 'Vector similarity thresholding strategies to reduce redundant inference queries by 40-60%.',
+    relatedConceptIds: ["semantic-caching","inference-economics","ai-volatility-tax"],
+    relatedGlossarySlugs: ["semantic-caching"],
+    relatedToolIds: ["aueb"]
   },
   {
     id: 'beehiiv-slm-repatriation-guide',
@@ -402,7 +556,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'AI Economics',
     type: 'Executable',
-    thesis: 'Financial breakeven analysis for migrating from commercial API endpoints to fine-tuned local small language models.'
+    thesis: 'Financial breakeven analysis for migrating from commercial API endpoints to fine-tuned local small language models.',
+    relatedConceptIds: ["inference-economics","ai-margin-squeeze","cost-of-predictivity"],
+    relatedGlossarySlugs: ["small-language-model"],
+    relatedToolIds: ["slm-vs-api","cloud-repatriation"]
   },
   {
     id: 'beehiiv-prompt-injection-control-plane',
@@ -411,7 +568,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'AI Governance',
     type: 'Executable',
-    thesis: 'Demonstrates vulnerability of using probabilistic models to police probabilistic models.'
+    thesis: 'Demonstrates vulnerability of using probabilistic models to police probabilistic models.',
+    relatedConceptIds: ["deterministic-governance","agent-kill-switch","ai-governance"],
+    relatedGlossarySlugs: ["prompt-injection"],
+    relatedToolIds: ["prompt-injection-sandbox"]
   },
   {
     id: 'beehiiv-state-hashing-spec',
@@ -420,7 +580,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'AI Governance',
     type: 'Executable',
-    thesis: 'Cryptographic hash checking protocols between agentic decision steps.'
+    thesis: 'Cryptographic hash checking protocols between agentic decision steps.',
+    relatedConceptIds: ["deterministic-governance","runtime-vs-alignment","agent-kill-switch"],
+    relatedGlossarySlugs: ["state-integrity-hashing"],
+    relatedToolIds: ["agentic-drift-matrix"]
   },
   {
     id: 'beehiiv-shadow-ai-agent-discovery',
@@ -429,7 +592,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'AI Governance',
     type: 'Executable',
-    thesis: 'Audit tactics for uncovering un-sanctioned autonomous tools executing against internal database endpoints.'
+    thesis: 'Audit tactics for uncovering un-sanctioned autonomous tools executing against internal database endpoints.',
+    relatedConceptIds: ["shadow-ai","ai-agent-sprawl","agent-kill-switch","ai-governance"],
+    relatedGlossarySlugs: ["shadow-ai","ai-agent-sprawl"],
+    relatedToolIds: ["shadow-ai"]
   },
   {
     id: 'beehiiv-rd-capitalization-as-cfo',
@@ -438,7 +604,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'Software Economics',
     type: 'Executable',
-    thesis: 'Accounting heuristics for evaluating software development capitalization under US GAAP.'
+    thesis: 'Accounting heuristics for evaluating software development capitalization under US GAAP.',
+    relatedConceptIds: ["r-and-d-ponzi","technical-insolvency","coordination-tax"],
+    relatedGlossarySlugs: ["innovation-tax","technical-debt"],
+    relatedToolIds: ["innovation-tax-calculator"]
   },
   {
     id: 'beehiiv-zombie-code-remediation',
@@ -447,7 +616,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'Software Economics',
     type: 'Executable',
-    thesis: 'Static analysis strategies to identify and prune dead code paths.'
+    thesis: 'Static analysis strategies to identify and prune dead code paths.',
+    relatedConceptIds: ["subprime-code-crisis","technical-insolvency","r-and-d-ponzi"],
+    relatedGlossarySlugs: ["zombie-code","technical-debt"],
+    relatedToolIds: ["pdi"]
   },
 
   // LinkedIn Newsletters & Executive Essays (22+ Articles)
@@ -458,7 +630,8 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'Product Leadership',
     type: 'Evergreen',
-    thesis: 'Replaces intuitive product management with empirical data models and financial metrics.'
+    thesis: 'Replaces intuitive product management with empirical data models and financial metrics.',
+    relatedConceptIds: ["product-economist","feature-bloat-calculus"]
   },
   {
     id: 'linkedin-genesis-starting-unfiltered',
@@ -467,7 +640,8 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'Product Leadership',
     type: 'Time-Sensitive',
-    thesis: 'Personal manifesto on bringing intellectual rigor and financial literacy to product management.'
+    thesis: 'Personal manifesto on bringing intellectual rigor and financial literacy to product management.',
+    relatedConceptIds: ["product-economist","ai-economics"]
   },
   {
     id: 'linkedin-hardest-truth-clarity',
@@ -476,7 +650,8 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'Career Economics',
     type: 'Evergreen',
-    thesis: 'Why execution clarity and analytical discipline outperform charismatic product vision.'
+    thesis: 'Why execution clarity and analytical discipline outperform charismatic product vision.',
+    relatedConceptIds: ["product-economist","coordination-tax"]
   },
   {
     id: 'linkedin-real-ai-opportunity',
@@ -485,7 +660,9 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'AI Economics',
     type: 'Evergreen',
-    thesis: 'Shifts executive AI strategy from conversational UI novelties to core operational cost reduction.'
+    thesis: 'Shifts executive AI strategy from conversational UI novelties to core operational cost reduction.',
+    relatedConceptIds: ["ai-economics","inference-economics","cost-of-predictivity"],
+    relatedToolIds: ["aueb"]
   },
   {
     id: 'linkedin-product-leaders-secret',
@@ -494,7 +671,8 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'Career Economics',
     type: 'Evergreen',
-    thesis: 'Defines the skill evolution required for product managers transitioning into AI and financial governance.'
+    thesis: 'Defines the skill evolution required for product managers transitioning into AI and financial governance.',
+    relatedConceptIds: ["product-economist","feature-bloat-calculus"]
   },
   {
     id: 'linkedin-innovation-tax-deleting-code',
@@ -503,7 +681,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'Software Economics',
     type: 'Executable',
-    thesis: 'Audit guide for eliminating zombie code to protect R&D capital efficiency.'
+    thesis: 'Audit guide for eliminating zombie code to protect R&D capital efficiency.',
+    relatedConceptIds: ["r-and-d-ponzi","technical-insolvency","subprime-code-crisis"],
+    relatedGlossarySlugs: ["innovation-tax","zombie-code"],
+    relatedToolIds: ["innovation-tax-calculator","pdi"]
   },
   {
     id: 'linkedin-rd-ponzi-scheme',
@@ -512,7 +693,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'Software Economics',
     type: 'Evergreen',
-    thesis: 'Exposes how velocity metrics mask maintenance OpEx misclassified as strategic R&D investment.'
+    thesis: 'Exposes how velocity metrics mask maintenance OpEx misclassified as strategic R&D investment.',
+    relatedConceptIds: ["r-and-d-ponzi","technical-insolvency","coordination-tax"],
+    relatedGlossarySlugs: ["r-and-d-ponzi","technical-debt"],
+    relatedToolIds: ["pdi","ev-se"]
   },
   {
     id: 'linkedin-ai-variable-cost',
@@ -521,7 +705,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'AI Economics',
     type: 'Evergreen',
-    thesis: 'Explains how inference shifts software from zero-marginal-cost economics to variable COGS.'
+    thesis: 'Explains how inference shifts software from zero-marginal-cost economics to variable COGS.',
+    relatedConceptIds: ["inference-economics","ai-volatility-tax","ai-margin-squeeze"],
+    relatedGlossarySlugs: ["synthetic-cogs","ai-volatility-tax"],
+    relatedToolIds: ["aueb"]
   },
   {
     id: 'linkedin-claude-search-zero-adoption',
@@ -530,7 +717,9 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'AI Governance',
     type: 'Time-Sensitive',
-    thesis: 'Case study on why AI features fail when user workflow integration is ignored in favor of model complexity.'
+    thesis: 'Case study on why AI features fail when user workflow integration is ignored in favor of model complexity.',
+    relatedConceptIds: ["deterministic-governance","ai-governance","cost-of-predictivity"],
+    relatedGlossarySlugs: ["deterministic-governance"]
   },
   {
     id: 'linkedin-real-problem-ai-agents',
@@ -539,7 +728,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'AI Governance',
     type: 'Evergreen',
-    thesis: 'Argues that agent deployment is blocked by execution safety boundaries rather than model reasoning capacity.'
+    thesis: 'Argues that agent deployment is blocked by execution safety boundaries rather than model reasoning capacity.',
+    relatedConceptIds: ["ai-governance","deterministic-governance","agent-kill-switch","ai-agents"],
+    relatedGlossarySlugs: ["deterministic-governance","agent-kill-switch"],
+    relatedToolIds: ["agentic-drift-matrix"]
   },
   {
     id: 'linkedin-growth-paradox',
@@ -548,7 +740,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'AI Economics',
     type: 'Evergreen',
-    thesis: 'Examines negative unit margins in AI SaaS where user activity outpaces subscription revenue.'
+    thesis: 'Examines negative unit margins in AI SaaS where user activity outpaces subscription revenue.',
+    relatedConceptIds: ["ai-margin-squeeze","inference-economics","ai-volatility-tax"],
+    relatedGlossarySlugs: ["synthetic-cogs","ai-volatility-tax"],
+    relatedToolIds: ["aueb"]
   },
   {
     id: 'linkedin-product-economist-structural-shift',
@@ -557,7 +752,8 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'Product Leadership',
     type: 'Evergreen',
-    thesis: 'Defines the structural shift from output velocity to capital return in software organizations.'
+    thesis: 'Defines the structural shift from output velocity to capital return in software organizations.',
+    relatedConceptIds: ["product-economist","feature-bloat-calculus","coordination-tax"]
   },
   {
     id: 'linkedin-boardroom-guide-technical-debt',
@@ -566,7 +762,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'Software Economics',
     type: 'Executable',
-    thesis: 'Translating code quality metrics into GAAP balance sheet liabilities for board directors.'
+    thesis: 'Translating code quality metrics into GAAP balance sheet liabilities for board directors.',
+    relatedConceptIds: ["technical-insolvency","r-and-d-ponzi","subprime-code-crisis"],
+    relatedGlossarySlugs: ["technical-debt","technical-insolvency-date"],
+    relatedToolIds: ["ev-se","pdi"]
   },
   {
     id: 'linkedin-why-vibe-coding-breaks-enterprise',
@@ -575,7 +774,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'Engineering Leadership',
     type: 'Evergreen',
-    thesis: 'Analyzing the systemic failure points when 50+ engineers generate code with AI without deterministic verification.'
+    thesis: 'Analyzing the systemic failure points when 50+ engineers generate code with AI without deterministic verification.',
+    relatedConceptIds: ["vibe-coding","subprime-code-crisis","ten-man-parity"],
+    relatedGlossarySlugs: ["vibe-coding-debt","subprime-code-crisis"],
+    relatedToolIds: ["copilot-roi","audit-interview"]
   },
   {
     id: 'linkedin-cost-of-hallucinations-in-production',
@@ -584,7 +786,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'AI Economics',
     type: 'Evergreen',
-    thesis: 'Quantifying downstream customer support and remediation OpEx caused by un-verified model outputs.'
+    thesis: 'Quantifying downstream customer support and remediation OpEx caused by un-verified model outputs.',
+    relatedConceptIds: ["ai-volatility-tax","context-rot","inference-economics"],
+    relatedGlossarySlugs: ["ai-hallucination","context-rot"],
+    relatedToolIds: ["hallucination-tax"]
   },
   {
     id: 'linkedin-evaluating-ai-product-managers',
@@ -593,7 +798,8 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'Career Economics',
     type: 'Executable',
-    thesis: 'Executive hiring framework for AI PMs based on P&L margin contribution and model-task routing efficiency.'
+    thesis: 'Executive hiring framework for AI PMs based on P&L margin contribution and model-task routing efficiency.',
+    relatedConceptIds: ["product-economist","ai-economics","feature-bloat-calculus"]
   },
   {
     id: 'cio-10-man-parity',

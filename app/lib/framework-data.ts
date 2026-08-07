@@ -41,9 +41,9 @@ export const subFrameworks: Record<string, SubFramework> = {
                 definition: 'The marginal cost structures of running generative inference models per user activity.',
                 problem: 'Organizations scale AI features assuming standard SaaS gross margins (80%+), only to experience margin collapse as AI costs scale dynamically with usage.',
                 whyItMatters: 'Calculating cost-per-interaction allows organizations to adjust pricing tiers or model routing before running at a loss.',
-                provenance: ['CIO.com articles', 'Built In publications', 'AI Unit Economics Benchmark (AUEB)', 'Curriculum Track 2', 'Exogram Platform'],
+                provenance: ['CIO.com articles', 'Built In publications', 'Beehiiv Laboratory', 'LinkedIn Newsletters', 'AI Unit Economics Benchmark (AUEB)', 'Curriculum Track 2', 'Exogram Platform'],
                 implementation: {
-                    research: ['Most AI Projects Burn Cash', 'Your Claude API Bill is Higher Than Your Revenue'],
+                    research: ['How to Prevent Memory Loss in AI Applications', 'Giving an AI a bigger memory window is like giving a confused worker a bigger inbox', 'Most AI Projects Burn Cash', 'Your Claude API Bill is Higher Than Your Revenue'],
                     diagnostics: ['AI Unit Economics Benchmark (AUEB)', 'AI Unit Economics Audit'],
                     education: ['Track 2: AI AI Economics', 'Track 24: AI Economics & Margin Engineering'],
                     enforcement: 'Exogram API Token Budget Enforcer'

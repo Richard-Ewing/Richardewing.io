@@ -14,6 +14,7 @@ import GlossaryQuiz from '../../components/GlossaryQuiz';
 import GlossaryMesh from '../../components/GlossaryMesh';
 import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated';
 import { NewsletterForm } from '../../components/newsletter-form';
+import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -794,6 +795,62 @@ export default async function GlossaryTermPage({ params }: Props) {
                         </div>
                     </div>
                 </section>
+
+                {/* Foundational Multi-Channel Research & Briefings for this Term */}
+                {(() => {
+                    const relatedWorks = RESEARCH_CORPUS.filter(work => 
+                        work.relatedConceptIds?.includes(slug) ||
+                        work.relatedGlossarySlugs?.includes(slug) ||
+                        work.title.toLowerCase().includes(term.title.toLowerCase()) ||
+                        term.definition.toLowerCase().includes(work.title.toLowerCase())
+                    ).slice(0, 3);
+
+                    if (relatedWorks.length === 0) return null;
+
+                    return (
+                        <section className="my-12 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
+                            <div className="flex items-center justify-between mb-6">
+                                <div>
+                                    <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest block mb-1">
+                                        Empirical Research &amp; Multi-Channel Briefings
+                                    </span>
+                                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950">
+                                        Foundational Research for {term.title}
+                                    </h2>
+                                </div>
+                                <Link href="/research/publications" className="text-xs font-mono font-bold text-cyan-900 hover:underline">
+                                    Full Catalog →
+                                </Link>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                {relatedWorks.map(work => (
+                                    <a 
+                                        key={work.id}
+                                        href={work.url}
+                                        target={work.url.startsWith('http') ? '_blank' : '_self'}
+                                        rel="noopener noreferrer"
+                                        className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 hover:border-cyan-500/40 transition-all flex flex-col justify-between group"
+                                    >
+                                        <div>
+                                            <div className="flex items-center justify-between text-[10px] font-mono font-bold text-cyan-900 uppercase mb-2">
+                                                <span>{work.publisher}</span>
+                                                {work.date && <span>{work.date}</span>}
+                                            </div>
+                                            <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-800 transition-colors mb-2 leading-snug">
+                                                {work.title} ↗
+                                            </h3>
+                                            <p className="text-xs text-zinc-700 font-medium line-clamp-3">
+                                                {work.thesis}
+                                            </p>
+                                        </div>
+                                        <span className="text-xs font-mono font-bold text-cyan-900 mt-4 block">Read Work ↗</span>
+                                    </a>
+                                ))}
+                            </div>
+                        </section>
+                    );
+                })()}
 
                 <ProgrammaticAnswersRelated seed={slug} maxCount={2} />
 
