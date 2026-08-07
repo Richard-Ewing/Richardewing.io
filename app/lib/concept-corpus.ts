@@ -208,11 +208,84 @@ export type CanonicalConcept = ConceptNode;
 import { TIER1_CONCEPTS } from './concept-corpus-tier1';
 import { TIER2_CONCEPTS } from './concept-corpus-tier2';
 import { TIER3_CONCEPTS } from './concept-corpus-tier3';
+import { TIER4_CONCEPTS } from './concept-corpus-tier4';
 
 export const CANONICAL_CONCEPTS: ConceptNode[] = [
   // =========================================================================
   // LAYER 2: RICHARD EWING CANON (Original Intellectual Property & Specifications)
   // =========================================================================
+  {
+    slug: 'hallucination-tax',
+    title: 'The Hallucination Tax',
+    category: 'Richard Ewing Canon (Original Framework)',
+    domain: 'AI Economics',
+    expertiseLevel: 'Executive',
+    health: { confidence: 0.94, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'The compounding operational and financial cost incurred when engineering teams must design elaborate validation loops and deterministic guardrails to prevent AI models from generating plausible but incorrect outputs.',
+    whyItMatters: 'Relying on probabilistic models for deterministic enterprise tasks requires expensive verification. The Hallucination Tax destroys AI ROI by forcing teams to spend more time and money verifying the AI output than it would have cost to write traditional code.',
+    whoShouldCare: ['AI System Architects', 'CFOs', 'VPs of Engineering', 'Product Managers'],
+    firstIntroduced: 'May 2026 (Beehiiv)',
+    canonicalReadingOrder: [
+      { step: 1, title: 'The Cost of AI Hallucinations', publisher: 'Beehiiv', type: 'Framework' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Observation', label: 'Validation Overhead', publisher: 'Beehiiv', date: '2026', summary: 'Observation of the hidden costs in AI validation.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-ht-1', title: 'The Hallucination Tax', url: 'https://theaieconomist.beehiiv.com', publisher: 'Beehiiv', type: 'Editorial', strength: 5, role: 'Origin', date: '2026' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'cost-of-predictivity', relationship: 'correlates_with' }
+    ],
+    openQuestions: ['How can we quantify the Hallucination Tax in legacy codebases?'],
+    knownLimitations: ['Difficult to separate standard QA costs from AI-specific validation overhead.'],
+    aeo: {
+      shortDefinition: 'The Hallucination Tax is the financial and operational cost of building validation loops to catch AI errors.',
+      executiveSummary: 'The Hallucination Tax reveals the hidden cost of generative AI. While generating text is cheap, verifying its accuracy is expensive. When enterprises rely on LLMs for deterministic tasks, they incur massive architectural overhead to ensure reliability, often negating the initial cost savings.',
+      oneSentence: 'The Hallucination Tax is the hidden cost of forcing probabilistic AI models to operate in deterministic enterprise environments.',
+      tweetLength: 'Generating AI output is cheap; verifying it is expensive. The Hallucination Tax is the compounding cost of the validation loops required to make LLMs safe for the enterprise.',
+      keyTakeaways: ['Probabilistic models require deterministic guardrails.', 'Validation loops destroy AI unit economics.', 'Use standard code for strict logic to avoid the tax.', 'Hallucinations are an economic problem, not just a technical one.'],
+      faqs: [{ question: 'What is the Hallucination Tax?', answer: 'The extra money and time spent building systems to check and correct AI mistakes.' }],
+      whenToUse: ['When assessing the true ROI of a proposed AI feature'],
+      examples: { enterprise: 'Building a parallel deterministic rules engine to double-check AI decisions.', startup: 'Hiring human reviewers to verify AI-generated summaries.', antiPattern: 'Trusting the LLM to self-correct its own hallucinations.', commonMistake: 'Ignoring validation costs when calculating AI ROI.' }
+    }
+  },
+  {
+    slug: 'audit-interview',
+    title: 'The Audit Interview Protocol',
+    category: 'Richard Ewing Canon (Original Framework)',
+    domain: 'Engineering Leadership',
+    expertiseLevel: 'Executive',
+    health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'A structured leadership mechanism for diagnosing systemic technical insolvency by conducting deep-dive, non-punitive technical audits with frontline engineers to uncover the hidden architecture decay that velocity metrics obscure.',
+    whyItMatters: 'Velocity metrics often lie, masking the R&D Ponzi Scheme. The Audit Interview Protocol bypasses middle management dashboards, allowing technical executives to discover the ground truth of architectural friction and compounding technical debt directly from the engineers doing the work.',
+    whoShouldCare: ['CTOs', 'VPs of Engineering', 'Founders', 'Principal Engineers'],
+    firstIntroduced: 'February 2026 (CIO.com)',
+    canonicalReadingOrder: [
+      { step: 1, title: 'Bypassing the Dashboard', publisher: 'CIO.com', type: 'Framework' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Observation', label: 'Dashboard Disconnect', publisher: 'CIO.com', date: '2026', summary: 'Observation that Agile metrics hide architectural rot.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-ai-1', title: 'The Audit Interview Protocol', url: 'https://www.cio.com', publisher: 'CIO.com', type: 'Framework', strength: 5, role: 'Origin', date: '2026' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'r-and-d-ponzi', relationship: 'mitigates' as any }
+    ],
+    openQuestions: ['How can we scale the Audit Interview Protocol across a massive, globally distributed engineering organization?'],
+    knownLimitations: ['Requires high psychological safety; engineers will not share ground truth if they fear retribution.'],
+    aeo: {
+      shortDefinition: 'The Audit Interview Protocol is a leadership method for uncovering hidden technical debt by interviewing frontline engineers directly.',
+      executiveSummary: 'The Audit Interview Protocol cuts through the illusion of Agile dashboards. It provides a structured way for technical leaders to discover the hidden maintenance burdens and architectural flaws that are secretly destroying engineering capacity, enabling them to address the R&D Ponzi Scheme before insolvency hits.',
+      oneSentence: 'The Audit Interview Protocol is a diagnostic tool for executives to uncover hidden technical debt directly from frontline engineers.',
+      tweetLength: 'Your Jira dashboards are lying to you. The Audit Interview Protocol bypasses middle management metrics to discover the true state of your architecture directly from the engineers who are suffering through it.',
+      keyTakeaways: ['Velocity metrics mask architectural decay.', 'Ground truth lives with frontline engineers.', 'Requires non-punitive, blameless investigation.', 'Exposes the R&D Ponzi Scheme.'],
+      faqs: [{ question: 'What is the Audit Interview Protocol?', answer: 'A structured way for technical executives to interview developers to find the real problems slowing them down.' }],
+      whenToUse: ['When sprint velocity is high but system reliability and feature delivery are plummeting'],
+      examples: { enterprise: 'A CTO holding skip-level architecture reviews to find hidden bottlenecks.', startup: 'A founder asking engineers what part of the codebase they fear most.', antiPattern: 'Using the interview to punish developers for slow delivery.', commonMistake: 'Relying solely on DORA metrics instead of talking to engineers.' }
+    }
+  },
   {
     slug: 'ai-volatility-tax',
     title: 'AI Volatility Tax',
@@ -1077,6 +1150,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
   ...TIER1_CONCEPTS,
   ...TIER2_CONCEPTS,
   ...TIER3_CONCEPTS,
+  ...TIER4_CONCEPTS,
 ];
 
 export function getConceptBySlug(slug: string): CanonicalConcept | undefined {
