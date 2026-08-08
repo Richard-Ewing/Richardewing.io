@@ -350,3 +350,68 @@ export const softwareApplicationSchema = (name: string, description: string, url
     ],
     "url": url
 });
+
+export const careerwinSoftwareSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CareerWin",
+    "url": "https://careerwin.ai",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, Chrome Extension",
+    "author": {
+        "@type": "Person",
+        "@id": "https://www.richardewing.io/#person",
+        "name": "Richard Ewing",
+        "url": "https://www.richardewing.io",
+        "sameAs": [
+            "https://www.richardewing.io/careerwin",
+            "https://www.richardewing.io/tools/audit-interview",
+            "https://linkedin.com/in/richard-ewing-mba"
+        ]
+    },
+    "creator": {
+        "@type": "Organization",
+        "name": "CareerWin AI LLC",
+        "url": "https://careerwin.ai"
+    },
+    "sameAs": [
+        "https://www.richardewing.io/careerwin",
+        "https://careerwin.ai"
+    ],
+    "description": "The Enterprise Career Operating System and Narrative Base engine."
+};
+
+export const exogramSoftwareSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Exogram",
+    "url": "https://exogram.ai",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "Linux, Cloud, Kubernetes, Web",
+    "author": {
+        "@type": "Person",
+        "@id": "https://www.richardewing.io/#person",
+        "name": "Richard Ewing",
+        "url": "https://www.richardewing.io",
+        "sameAs": [
+            "https://www.richardewing.io/exogram",
+            "https://www.richardewing.io/tools/shadow-ai",
+            "https://linkedin.com/in/richard-ewing-mba"
+        ]
+    },
+    "creator": {
+        "@type": "Organization",
+        "name": "Exogram AI Inc.",
+        "url": "https://exogram.ai",
+        "sameAs": [
+            "https://www.linkedin.com/company/exogram-ai/",
+            "https://www.richardewing.io/exogram"
+        ]
+    },
+    "sameAs": [
+        "https://www.richardewing.io/exogram",
+        "https://exogram.ai"
+    ],
+    "description": "Deterministic AI Agent Execution Control Plane and B2B Security Governance Infrastructure."
+};
+

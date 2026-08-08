@@ -34,9 +34,15 @@ import { ShieldAlert, Brain, Activity, Scale, AlertTriangle, ArrowRight, Clock, 
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 
+import { exogramSoftwareSchema } from '@/app/lib/schemas';
+
 export default function ExogramPage() {
     return (
         <main className="pt-20">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(exogramSoftwareSchema) }}
+            />
             <div className="page-container">
 
                 {/* ═══════════════════════════════════════════════════════

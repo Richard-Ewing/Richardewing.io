@@ -24,9 +24,15 @@ export const metadata: Metadata = {
     }
 };
 
+import { careerwinSoftwareSchema } from '@/app/lib/schemas';
+
 export default function CareerWinPage() {
     return (
         <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(careerwinSoftwareSchema) }}
+            />
             <div className="page-container max-w-4xl mx-auto px-6">
                 
                 {/* Header / Hero */}
