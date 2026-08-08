@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, Award, TrendingUp, ShieldCheck, Zap, ExternalLink, Users, BookOpen, Quote } from 'lucide-react';
 import { ScrollReveal } from '@/components/magicui/scroll-reveal';
 import CareerWinBenchmarkVisual from '@/app/components/CareerWinBenchmarkVisual';
+import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 export const metadata: Metadata = {
     title: 'CareerWin Platform Career Intelligence | Richard Ewing',
@@ -172,6 +173,47 @@ export default function CareerWinPage() {
                 </ScrollReveal>
 
             </div>
+
+            {/* Research Foundations */}
+            <section className="max-w-5xl mx-auto px-6 py-16">
+                <div className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
+                    <div className="space-y-1">
+                        <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
+                            Empirical Foundations
+                        </span>
+                        <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
+                            Career Economics Research
+                        </h2>
+                    </div>
+
+                    <div className="space-y-3 pt-2">
+                        {RESEARCH_CORPUS.filter(
+                            (art) => art.domain === 'Career Economics' || art.domain === 'Product Leadership'
+                        ).slice(0, 6).map((art) => (
+                            <div key={art.id} className="bg-zinc-50 border border-zinc-200 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                <div className="space-y-1">
+                                    <div className="flex items-center gap-2 text-[10px] font-mono font-bold">
+                                        <span className="text-cyan-900 uppercase">{art.publisher}</span>
+                                        {art.date && <span className="text-zinc-500">• {art.date}</span>}
+                                    </div>
+                                    <h3 className="text-sm font-bold text-zinc-950">
+                                        {art.title}
+                                    </h3>
+                                </div>
+                                <a
+                                    href={art.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-3 py-1.5 bg-cyan-900 text-white text-xs font-mono font-bold rounded-xl whitespace-nowrap self-start sm:self-center hover:bg-cyan-800"
+                                >
+                                    Read Work ↗
+                                </a>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
         </main>
     );
 }

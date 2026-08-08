@@ -31,6 +31,7 @@ import Meteors from '@/components/magicui/meteors';
 import { InteractiveExogramSim } from '../components/visualizations/InteractiveExogramSim';
 import AdmissibilityGatewaySimulator from '@/app/components/AdmissibilityGatewaySimulator';
 import { ShieldAlert, Brain, Activity, Scale, AlertTriangle, ArrowRight, Clock, DollarSign, Bug, TrendingDown, Users, Building2 } from 'lucide-react';
+import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 
 export default function ExogramPage() {
@@ -766,6 +767,48 @@ export default function ExogramPage() {
                                         Visit Exogram.ai →
                                     </a>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Research Foundations */}
+                <section className="section">
+                    <div className="max-w-5xl mx-auto px-4 md:px-0">
+                        <div className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
+                            <div className="space-y-1">
+                                <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
+                                    Empirical Foundations
+                                </span>
+                                <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
+                                    Research Foundations
+                                </h2>
+                            </div>
+
+                            <div className="space-y-3 pt-2">
+                                {RESEARCH_CORPUS.filter(
+                                    (art) => art.domain === 'AI Governance' || art.relatedConceptIds?.includes('deterministic-governance') || art.relatedConceptIds?.includes('agent-kill-switch')
+                                ).slice(0, 6).map((art) => (
+                                    <div key={art.id} className="bg-zinc-50 border border-zinc-200 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                        <div className="space-y-1">
+                                            <div className="flex items-center gap-2 text-[10px] font-mono font-bold">
+                                                <span className="text-cyan-900 uppercase">{art.publisher}</span>
+                                                {art.date && <span className="text-zinc-500">• {art.date}</span>}
+                                            </div>
+                                            <h3 className="text-sm font-bold text-zinc-950">
+                                                {art.title}
+                                            </h3>
+                                        </div>
+                                        <a
+                                            href={art.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="px-3 py-1.5 bg-cyan-900 text-white text-xs font-mono font-bold rounded-xl whitespace-nowrap self-start sm:self-center hover:bg-cyan-800"
+                                        >
+                                            Read Work ↗
+                                        </a>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

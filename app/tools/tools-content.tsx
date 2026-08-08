@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import ShineBorder from '@/components/magicui/shine-border';
 import FAQItem from '@/app/components/FAQItem';
+import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 export default function ToolsContent() {
   return (
@@ -278,62 +279,50 @@ export default function ToolsContent() {
 
         {/* Empirical Research & Publication Foundations */}
         <section className="section max-w-5xl mx-auto">
-          <div className="bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm space-y-6">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-200 pb-6">
-              <div>
-                <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest block mb-1">
-                  Empirical Foundations &amp; Research Attribution
-                </span>
-                <h2 className="text-2xl font-grotesk font-bold text-zinc-950">
-                  Research Publications Underlying These Diagnostics
-                </h2>
+          {(() => {
+            const domainArticles = RESEARCH_CORPUS.filter(
+              (art) => art.domain === 'AI Economics' || art.domain === 'AI Governance'
+            ).slice(0, 6);
+
+            if (domainArticles.length === 0) return null;
+
+            return (
+              <div className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
+                <div className="space-y-1">
+                  <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
+                    Empirical Foundations
+                  </span>
+                  <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
+                    Research Foundations
+                  </h2>
+                </div>
+
+                <div className="space-y-3 pt-2">
+                  {domainArticles.map((art) => (
+                    <div key={art.id} className="bg-zinc-50 border border-zinc-200 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-2 text-[10px] font-mono font-bold">
+                          <span className="text-cyan-900 uppercase">{art.publisher}</span>
+                          {art.date && <span className="text-zinc-500">• {art.date}</span>}
+                        </div>
+                        <h3 className="text-sm font-bold text-zinc-950">
+                          {art.title}
+                        </h3>
+                      </div>
+                      <a
+                        href={art.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3 py-1.5 bg-cyan-900 text-white text-xs font-mono font-bold rounded-xl whitespace-nowrap self-start sm:self-center hover:bg-cyan-800"
+                      >
+                        Read Work ↗
+                      </a>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <Link href="/research/publications" className="text-xs font-mono font-bold text-cyan-900 hover:underline">
-                Full Research Catalog →
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Link href="/blog/giving-ai-bigger-memory-window-confused-worker-inbox" className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 hover:border-cyan-500/40 transition-all flex flex-col justify-between group">
-                <div>
-                  <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase block mb-1">LinkedIn Newsletter • August 6, 2026</span>
-                  <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-800 transition-colors mb-2 leading-snug">
-                    Giving an AI a bigger memory window is like giving a confused worker a bigger inbox.
-                  </h3>
-                  <p className="text-xs text-zinc-700 font-medium line-clamp-3">
-                    Underlying methodology for Agentic Drift &amp; Memory Loss Diagnostics.
-                  </p>
-                </div>
-                <span className="text-xs font-mono font-bold text-cyan-900 mt-4 block">Read Publication →</span>
-              </Link>
-
-              <Link href="/blog/how-to-prevent-context-loss-in-ai-applications" className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 hover:border-cyan-500/40 transition-all flex flex-col justify-between group">
-                <div>
-                  <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase block mb-1">Beehiiv Laboratory • August 7, 2026</span>
-                  <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-800 transition-colors mb-2 leading-snug">
-                    How to Prevent Memory Loss in AI Applications
-                  </h3>
-                  <p className="text-xs text-zinc-700 font-medium line-clamp-3">
-                    Architecture and state separation schemas powering the 3-tier memory engine.
-                  </p>
-                </div>
-                <span className="text-xs font-mono font-bold text-cyan-900 mt-4 block">Read Publication →</span>
-              </Link>
-
-              <a href="https://builtin.com/articles/innovation-requires-deleting-code" target="_blank" rel="noopener noreferrer" className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 hover:border-cyan-500/40 transition-all flex flex-col justify-between group">
-                <div>
-                  <span className="text-[10px] font-mono font-bold text-emerald-900 uppercase block mb-1">Built In • Editor's Pick</span>
-                  <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-800 transition-colors mb-2 leading-snug">
-                    Real Innovation Requires Deleting Code ↗
-                  </h3>
-                  <p className="text-xs text-zinc-700 font-medium line-clamp-3">
-                    Foundational research establishing the Product Debt Index (PDI) calculation model.
-                  </p>
-                </div>
-                <span className="text-xs font-mono font-bold text-cyan-900 mt-4 block">Read Article ↗</span>
-              </a>
-            </div>
-          </div>
+            );
+          })()}
         </section>
 
         {/* CTA */}
