@@ -269,14 +269,14 @@ const nextConfig: NextConfig = {
         destination: '/vault/curriculum/tracks',
         permanent: true,
       },
-      // Redirect all deprecated named tracks directly to /vault/curriculum/tracks to prevent redirect chains
+      // Redirect only truly deprecated legacy tracks directly to /vault/curriculum/tracks to prevent redirect chains
       {
-        source: '/vault/curriculum/tracks/:category(b2b-saas-economics|fintech-economics|logistics-ecommerce|healthtech-economics|traditional-pm|breaking-into-tech|junior-to-senior|agentic-governance|erp-enterprise-integration|outsourcing-economics|corporate-it-cost-centers|mainframe-legacy-systems|career-mobility-technical-economics|classic-qa-quality|monolith-classic-database|executive-alignment-governance|fullstack-career|system-design|devops-economics|security-economics|data-economics|engineering-leadership|guides|comparisons|fractional-engineering|ai-agent-economics|synthetic-data|sovereign-ai|rd-capital-management|strategic-leadership|product-economics|agentic-automation|tech-debt-liability|engineering-economics|capstone|dx-economics|startup-economics|ai-due-diligence|vendor-economics|exec-economics|enterprise-architecture|ma-integration|agent-governance|career-capital|ai-pricing|agile-economics|ai-agent-architecture)/:slug*',
+        source: '/vault/curriculum/tracks/:category(b2b-saas-economics|fintech-economics|logistics-ecommerce|healthtech-economics|traditional-pm|breaking-into-tech|junior-to-senior|erp-enterprise-integration|outsourcing-economics|corporate-it-cost-centers|mainframe-legacy-systems|career-mobility-technical-economics|classic-qa-quality|monolith-classic-database|executive-alignment-governance|fullstack-career|system-design|devops-economics|security-economics|data-economics|engineering-leadership|fractional-engineering|ai-agent-economics|synthetic-data)/:slug*',
         destination: '/vault/curriculum/tracks',
         permanent: true,
       },
       {
-        source: '/curriculum/tracks/:category(b2b-saas-economics|fintech-economics|logistics-ecommerce|healthtech-economics|traditional-pm|breaking-into-tech|junior-to-senior|agentic-governance|erp-enterprise-integration|outsourcing-economics|corporate-it-cost-centers|mainframe-legacy-systems|career-mobility-technical-economics|classic-qa-quality|monolith-classic-database|executive-alignment-governance|fullstack-career|system-design|devops-economics|security-economics|data-economics|engineering-leadership|guides|comparisons|fractional-engineering|ai-agent-economics|synthetic-data|sovereign-ai|rd-capital-management|strategic-leadership|product-economics|agentic-automation|tech-debt-liability|engineering-economics|capstone|dx-economics|startup-economics|ai-due-diligence|vendor-economics|exec-economics|enterprise-architecture|ma-integration|agent-governance|career-capital|ai-pricing|agile-economics|ai-agent-architecture)/:slug*',
+        source: '/curriculum/tracks/:category(b2b-saas-economics|fintech-economics|logistics-ecommerce|healthtech-economics|traditional-pm|breaking-into-tech|junior-to-senior|erp-enterprise-integration|outsourcing-economics|corporate-it-cost-centers|mainframe-legacy-systems|career-mobility-technical-economics|classic-qa-quality|monolith-classic-database|executive-alignment-governance|fullstack-career|system-design|devops-economics|security-economics|data-economics|engineering-leadership|fractional-engineering|ai-agent-economics|synthetic-data)/:slug*',
         destination: '/vault/curriculum/tracks',
         permanent: true,
       },

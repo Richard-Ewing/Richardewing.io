@@ -87,7 +87,7 @@ export default async function CurriculumTracksPage() {
 
                     {/* ADVISORY UPSELL */}
                     <div className="mb-16 relative group cursor-pointer">
-                        <Link href="/advisory">
+                        <Link href="/services">
                             <ShineBorder className="bg-white p-0 overflow-hidden shadow-lg" color={["#7c3aed", "#8b5cf6"]}>
                                 <BorderBeam size={200} duration={12} delay={9} borderWidth={1.5} colorFrom="#7c3aed" colorTo="#ec4899" />
                                 <div className="p-8 relative z-10 flex flex-col md:flex-row items-center gap-8">
@@ -213,7 +213,7 @@ export default async function CurriculumTracksPage() {
                                 Every module teaches you to connect work to business outcomes. $149 per track. $999 for everything. Lifetime access.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
-                                <Link href="/advisory" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs font-bold bg-purple-700 text-zinc-950 font-semibold hover:bg-purple-600 transition-colors shadow-lg">
+                                <Link href="/services" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs font-bold bg-purple-700 text-zinc-950 font-semibold hover:bg-purple-600 transition-colors shadow-lg">
                                     Explore Advisory
                                 </Link>
                                 <Link href="/vault" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs font-bold bg-white border border-zinc-400 text-zinc-950 hover:text-zinc-900 hover:border-zinc-500 transition-colors shadow-sm">

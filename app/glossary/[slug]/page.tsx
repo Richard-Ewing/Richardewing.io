@@ -204,7 +204,7 @@ export default async function GlossaryTermPage({ params }: Props) {
         '@type': 'Article',
         headline: `What is ${term.title}?`,
         description: term.definition.slice(0, 155).replace(/\n/g, ' '),
-        author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/principal', jobTitle: 'AI Economist', sameAs: ['https://linkedin.com/in/richard-ewing-mba', 'https://www.cio.com/author/richard-ewing/'] },
+        author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/about', jobTitle: 'AI Economist', sameAs: ['https://linkedin.com/in/richard-ewing-mba', 'https://www.cio.com/author/richard-ewing/'] },
         publisher: { '@type': 'Person', name: 'Richard Ewing' },
         url: `https://www.richardewing.io/glossary/${slug}`,
         mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.richardewing.io/glossary/${slug}` },
@@ -785,10 +785,10 @@ export default async function GlossaryTermPage({ params }: Props) {
                                 Richard Ewing is the creator of the AI Economics framework and founder of Exogram. His research on R&D capital audits, technical insolvency, and software economics is featured across Tier 1 publications including <strong>CIO.com</strong>, <strong>Built In</strong> (Editor's Pick), and <strong>HackerNoon</strong>.
                             </p>
                             <div className="flex flex-wrap gap-4 items-center">
-                                <Link href="/advisory" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cyan-600 to-violet-600 text-zinc-950 font-semibold font-bold text-sm font-semibold rounded-lg hover:opacity-90 transition-opacity">
+                                <Link href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cyan-600 to-violet-600 text-zinc-950 font-semibold font-bold text-sm font-semibold rounded-lg hover:opacity-90 transition-opacity">
                                     Book Advisory Call →
                                 </Link>
-                                <Link href="/principal" className="text-xs font-bold text-zinc-900 font-bold hover:underline font-mono uppercase tracking-wider">
+                                <Link href="/about" className="text-xs font-bold text-zinc-900 font-bold hover:underline font-mono uppercase tracking-wider">
                                     About Richard Ewing →
                                 </Link>
                             </div>

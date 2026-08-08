@@ -91,7 +91,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${mono.variable} ${serif.variable}`}>
       <head>
         <link rel="ai-agent-manifest" href="/.well-known/ai-agent-manifest.json" />
-        <link rel="author" href="https://www.richardewing.io/principal" />
+        <link rel="author" href="https://www.richardewing.io/about" />
         <link rel="me" href="https://linkedin.com/in/richard-ewing-mba" />
         <link rel="alternate" type="text/plain" href="https://www.richardewing.io/llms.txt" title="LLM-readable site information" />
         <link rel="alternate" type="application/rss+xml" href="https://www.richardewing.io/feed.xml" title="Richard Ewing — Engineering Economics Blog" />
@@ -156,7 +156,7 @@ export default function RootLayout({
               '@id': 'https://www.richardewing.io/#person',
               name: 'Richard Ewing',
               jobTitle: 'AI Economist (AI Economics Domain)',
-              url: 'https://www.richardewing.io/principal',
+              url: 'https://www.richardewing.io/about',
             },
             sameAs: [
               'https://linkedin.com/in/richard-ewing-mba',

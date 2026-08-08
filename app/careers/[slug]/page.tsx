@@ -233,7 +233,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                                 <PhoneCall className="mx-auto text-cyan-900 font-extrabold font-semibold mb-4" size={24} />
                                 <h4 className="text-zinc-950 font-bold mb-2">Need a tailored 90-Day Architecture?</h4>
                                 <p className="text-zinc-950 font-bold text-sm font-semibold mb-6 max-w-sm mx-auto">Book a 1-on-1 strategy audit to map this protocol directly to your unique enterprise constraints.</p>
-                                <Link href="/advisory" className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500/10 border border-cyan-500/50 text-cyan-900 font-extrabold font-semibold text-xs font-bold font-mono font-bold tracking-widest uppercase rounded-lg hover:bg-cyan-500 hover:text-zinc-900 transition-all">
+                                <Link href="/services" className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500/10 border border-cyan-500/50 text-cyan-900 font-extrabold font-semibold text-xs font-bold font-mono font-bold tracking-widest uppercase rounded-lg hover:bg-cyan-500 hover:text-zinc-900 transition-all">
                                     Book Strategy Audit <ArrowRight size={14} />
                                 </Link>
                             </div>

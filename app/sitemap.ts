@@ -117,8 +117,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/articles/recap/built-in`, 'monthly', 0.7);
     add(`${baseUrl}/articles/recap/hackernoon`, 'monthly', 0.7);
 
-    // === VAULT CURRICULUM ===
-    add(`${baseUrl}/vault/curriculum/tracks`, 'monthly', 0.7);
+    // === VAULT CURRICULUM & MODULES ===
+    add(`${baseUrl}/vault/curriculum/tracks`, 'monthly', 0.8);
+    getAllModuleSlugs().forEach(slug => add(`${baseUrl}/vault/curriculum/tracks/${slug}`, 'monthly', 0.7));
+
+    // === CAREER PATHWAYS ===
+    add(`${baseUrl}/careers`, 'monthly', 0.85);
+    CAREER_PATHS.forEach(path => add(`${baseUrl}/careers/${path.slug}`, 'monthly', 0.85));
 
     // === CANONICAL ARTICLES ===
     articles

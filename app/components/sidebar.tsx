@@ -29,12 +29,12 @@ export function Sidebar() {
             label: 'Identity', items: [
                 { href: '/', label: 'Home' },
                 { href: '/manifesto', label: '01. Manifesto' },
-                { href: '/principal', label: '02. The Principal' },
+                { href: '/about', label: '02. The Principal' },
             ]
         },
         {
             label: 'Intervention', labelClass: 'text-danger', items: [
-                { href: '/advisory', label: '03. ADVISORY', highlight: true },
+                { href: '/services', label: '03. ADVISORY', highlight: true },
                 { href: '/ai-integration', label: '04. AI INTEGRATION', highlight: true },
             ]
         },

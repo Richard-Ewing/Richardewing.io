@@ -47,7 +47,7 @@ export default function ForInvestorsPage() {
                             Technical debt is the #1 hidden cost in technology acquisitions. R&D Capital Audits translate engineering complexity into dollar-denominated risk that LPs, boards, and deal teams understand.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <Link href="/advisory" className="px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Request Due Diligence Proposal →</Link>
+                            <Link href="/services" className="px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Request Due Diligence Proposal →</Link>
                             <Link href="/tools/pdi" className="px-8 py-4 rounded-lg border border-zinc-500 text-zinc-950 font-bold hover:bg-white/5 transition-colors">Try PDI Calculator Free →</Link>
                         </div>
                     </div>
@@ -81,7 +81,7 @@ export default function ForInvestorsPage() {
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-10 text-center">
                         <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Trusted by Top PE Firms</h2>
                         <p className="text-zinc-900 mb-8 max-w-xl mx-auto">R&D Capital Audits have been used in 100+ due diligence engagements. Published frameworks in CIO.com and Built In. Board-ready deliverables.</p>
-                        <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-zinc-950 font-semibold text-lg font-bold hover:opacity-90 transition-opacity">Schedule a 30-Minute Briefing →</Link>
+                        <Link href="/services" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-zinc-950 font-semibold text-lg font-bold hover:opacity-90 transition-opacity">Schedule a 30-Minute Briefing →</Link>
                     </div>
                 </div>
             </div>

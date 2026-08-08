@@ -234,10 +234,10 @@ const Navigation = () => {
                             <Link href="/tools" onClick={() => setMobileMenuOpen(false)} className="text-zinc-900 font-medium text-base">
                                 Tools & Benchmarks
                             </Link>
-                            <Link href="/advisory" onClick={() => setMobileMenuOpen(false)} className="text-zinc-900 font-medium text-base">
+                            <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="text-zinc-900 font-medium text-base">
                                 Advisory & Services
                             </Link>
-                            <Link href="/principal" onClick={() => setMobileMenuOpen(false)} className="text-zinc-700 font-medium text-base">
+                            <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="text-zinc-700 font-medium text-base">
                                 About Richard Ewing
                             </Link>
 

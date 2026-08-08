@@ -39,7 +39,7 @@ export default function ForBoardsPage() {
                         <p className="text-xl text-zinc-900 max-w-2xl mx-auto mb-8">
                             R&D Capital Audits translate technical complexity into board-ready financial metrics. Know the real cost of your technology investment — not the optimistic narrative.
                         </p>
-                        <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Request Board Briefing →</Link>
+                        <Link href="/services" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Request Board Briefing →</Link>
                     </div>
 
                     <div className="mb-16">
@@ -75,7 +75,7 @@ export default function ForBoardsPage() {
                     <div className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-10 text-center">
                         <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Board-Ready in 2 Weeks</h2>
                         <p className="text-zinc-900 mb-8 max-w-xl mx-auto">Full R&D Capital Audit with executive summary, risk assessment, and remediation roadmap. Delivered as a board presentation, not a technical document.</p>
-                        <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-zinc-950 font-semibold text-lg font-bold hover:opacity-90 transition-opacity">Schedule Board Briefing →</Link>
+                        <Link href="/services" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-zinc-950 font-semibold text-lg font-bold hover:opacity-90 transition-opacity">Schedule Board Briefing →</Link>
                     </div>
                 </div>
             </div>
