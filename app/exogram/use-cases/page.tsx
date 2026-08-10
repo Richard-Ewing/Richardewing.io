@@ -115,7 +115,7 @@ export default function ExogramUseCasesPage() {
                             <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-zinc-950 font-semibold font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm">
                                 Visit Exogram.ai →
                             </a>
-                            <Link href="/advisory" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
+                            <Link href="/services" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
                                 Discuss Your Use Case →
                             </Link>
                         </div>

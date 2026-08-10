@@ -585,7 +585,7 @@ export const articlesBatch9: Record<string, ArticleData> = {
 <li><strong>Board liability</strong> — Directors have fiduciary duties to ensure regulatory compliance. Documented awareness without action creates personal liability.</li>
 </ul>
 
-<p><strong>Start today.</strong> Run the <a href="/tools/shadow-ai">Shadow AI Assessment</a> to discover your actual AI footprint. <a href="/advisory">Schedule an advisory session</a> to build your 90-day compliance roadmap with expert guidance.</p>
+<p><strong>Start today.</strong> Run the <a href="/tools/shadow-ai">Shadow AI Assessment</a> to discover your actual AI footprint. <a href="/services">Schedule an advisory session</a> to build your 90-day compliance roadmap with expert guidance.</p>
 
 <p>The regulation does not care whether you knew about the AI system — it cares whether you governed it.</p>
         `

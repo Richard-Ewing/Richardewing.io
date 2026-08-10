@@ -75,7 +75,7 @@ export default function EcosystemMap() {
                         </Link>
 
                         {/* Node 5: Curriculum */}
-                        <Link href="/curriculum" className="group">
+                        <Link href="/vault/curriculum/tracks" className="group">
                             <div className="p-4 rounded-xl border border-zinc-400 bg-white hover:border-cyan-500 transition-all text-center relative h-full shadow-sm">
                                 <div className="text-[10px] font-mono font-bold text-zinc-500 uppercase tracking-widest mb-1">EDUCATION</div>
                                 <div className="font-bold text-sm text-zinc-950 group-hover:text-cyan-900 transition-colors">Academy Curriculum</div>

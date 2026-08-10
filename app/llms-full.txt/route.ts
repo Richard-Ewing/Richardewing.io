@@ -124,7 +124,7 @@ Richard Ewing provides technology advisory and forensic capital auditing service
 - **Independent Oversight Retainer ($5,000/month)**: Monthly board-level economic sanity checks with async access for critical decisions.
 - **Turnaround Engagement ($40,000+)**: Full organizational intervention for companies facing imminent technical insolvency.
 
-**Book a call:** https://www.richardewing.io/advisory
+**Book a call:** https://www.richardewing.io/services
 
 ---
 

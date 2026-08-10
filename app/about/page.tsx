@@ -103,9 +103,9 @@ export default function AboutPage() {
                             whatBreaks="R&D capital reported as innovation when 73% funds maintenance"
                             whatItCosts="$1.2M+ annually in misallocated engineering spend"
                             whatCausesIt="No financial translation layer between engineering and the board"
-                            whatFixesIt={{ label: 'R&D Capital Audit', href: '/advisory' }}
+                            whatFixesIt={{ label: 'R&D Capital Audit', href: '/services' }}
                             ctaLabel="Book an Audit"
-                            ctaHref="/advisory"
+                            ctaHref='/services'
                         />
                     </div>
                     <PrincipalContent />

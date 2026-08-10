@@ -130,7 +130,7 @@ export const professionalServiceSchema = {
     "@type": "ProfessionalService",
     "name": "Richard Ewing - AI Economics & AI Capital Advisory",
     "description": "Independent oversight and forensic audits for product, engineering, and AI economics. Specializing in AI hallucination debt, zombie infrastructure, and the subprime code crisis. Governance-level advisory, not consulting.",
-    "url": "https://www.richardewing.io/advisory",
+    "url": "https://www.richardewing.io/services",
     "provider": {
         "@type": "Person",
         "@id": "https://www.richardewing.io/#person",

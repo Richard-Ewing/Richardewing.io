@@ -12,7 +12,7 @@ const paths = [
         icon: User,
         label: 'Founder / CEO',
         description: 'Stop the cash bleed. Fix the product.',
-        href: '/advisory',
+        href: '/services',
         color: 'text-crimson',
         border: 'group-hover:border-crimson',
         bg: 'group-hover:bg-crimson/5'
@@ -22,7 +22,7 @@ const paths = [
         icon: TrendingUp,
         label: 'VC / PE',
         description: 'Audit your portfolio. Protect capital.',
-        href: '/advisory', // Could go to a specific section
+        href: '/services', // Could go to a specific section
         color: 'text-gold',
         border: 'group-hover:border-gold',
         bg: 'group-hover:bg-gold/5'

@@ -286,7 +286,7 @@ export default function AUEBTool() {
                         <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse shadow-[0_0_10px_#dc2626]" />
                         <span className="font-bold tracking-tight text-lg">AUEB™ <span className="text-zinc-950 font-bold font-normal">| AI Margin Audit</span></span>
                     </div>
-                    <Link href="/advisory" className="flex items-center gap-2 text-xs font-bold font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest">
+                    <Link href="/services" className="flex items-center gap-2 text-xs font-bold font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest">
                         <Lock size={12} />
                         Get Expert Help
                     </Link>
@@ -635,7 +635,7 @@ export default function AUEBTool() {
                                       <h4 className="text-lg font-bold text-zinc-950 mb-2">Get unit economics that survive a board meeting</h4>
                                       <p className="text-sm text-zinc-600 mb-4">This benchmark gives you the ratio. A $5,000 AI Cost Governance engagement models your collapse point and builds the margin protection plan.</p>
                                       <div className="flex flex-wrap gap-3">
-                                        <a href="/advisory" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-zinc-900 text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">Book Advisory Session →</a>
+                                        <a href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-zinc-900 text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">Book Advisory Session →</a>
                                         <a href="/api/buy/gut_check" className="inline-flex items-center gap-2 px-5 py-2.5 border border-purple-500/30 text-purple-700 text-sm font-bold rounded-lg hover:bg-purple-50 transition-colors">$450 Gut-Check Call →</a>
                                       </div>
                                     </div>

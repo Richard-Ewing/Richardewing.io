@@ -110,7 +110,7 @@ export default function BenchmarkPage() {
                         <Link href="/tools/pdi" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-bold text-sm font-semibold rounded-lg hover:bg-white/10 transition-all">
                             Run Free PDI Calculator
                         </Link>
-                        <Link href="/advisory" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 text-zinc-950 font-semibold font-bold text-sm font-semibold rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2">
+                        <Link href="/services" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 text-zinc-950 font-semibold font-bold text-sm font-semibold rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2">
                             Book Diagnostic Call <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>

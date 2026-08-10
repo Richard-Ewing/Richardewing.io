@@ -198,7 +198,7 @@ export default function DiagnosePage() {
                             For comprehensive analysis, the $7,500 R&D Capital Audit includes full financial modeling, board-ready deliverables, and 90-day implementation roadmap.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <Link href="/advisory" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-zinc-900 font-bold hover:opacity-90 transition-opacity">
+                            <Link href="/services" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-zinc-900 font-bold hover:opacity-90 transition-opacity">
                                 Book a $450 Gut-Check <ArrowRight className="w-5 h-5" />
                             </Link>
                             <Link href="/pricing" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border border-zinc-600 text-zinc-700 font-bold hover:border-violet-400 hover:text-zinc-900 transition-all">

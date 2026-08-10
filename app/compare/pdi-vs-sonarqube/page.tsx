@@ -112,7 +112,7 @@ export default function PDIvsSonarQubePage() {
                     {/* CTA */}
                     <div className="text-center py-12 border-t border-zinc-400">
                         <p className="text-zinc-900 mb-4">Need the full picture?</p>
-                        <Link href="/advisory" className="text-cyan-900 font-extrabold font-semibold hover:text-cyan-900 font-extrabold font-semibold font-bold uppercase tracking-widest text-sm">
+                        <Link href="/services" className="text-cyan-900 font-extrabold font-semibold hover:text-cyan-900 font-extrabold font-semibold font-bold uppercase tracking-widest text-sm">
                             Book a $2,500 Insolvency Diagnostic →
                         </Link>
                     

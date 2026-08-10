@@ -43,7 +43,7 @@ export const subFrameworks: Record<string, SubFramework> = {
                 whyItMatters: 'Calculating cost-per-interaction allows organizations to adjust pricing tiers or model routing before running at a loss.',
                 provenance: ['CIO.com articles', 'Built In publications', 'Beehiiv Laboratory', 'LinkedIn Newsletters', 'AI Unit Economics Benchmark (AUEB)', 'Curriculum Track 2', 'Exogram Platform'],
                 implementation: {
-                    research: ['How to Prevent Memory Loss in AI Applications', 'Giving an AI a bigger memory window is like giving a confused worker a bigger inbox', 'Most AI Projects Burn Cash', 'Your Claude API Bill is Higher Than Your Revenue'],
+                    research: ['Growth Is Not Your Cost Problem — Your Architecture Is', 'How to Prevent Memory Loss in AI Applications', 'Giving an AI a bigger memory window is like giving a confused worker a bigger inbox', 'Most AI Projects Burn Cash', 'Your Claude API Bill is Higher Than Your Revenue'],
                     diagnostics: ['AI Unit Economics Benchmark (AUEB)', 'AI Unit Economics Audit'],
                     education: ['Track 2: AI AI Economics', 'Track 24: AI Economics & Margin Engineering'],
                     enforcement: 'Exogram API Token Budget Enforcer'
@@ -56,9 +56,9 @@ export const subFrameworks: Record<string, SubFramework> = {
                 definition: 'Attribute-based variable costs (GPU cycles, embeddings, vector search) that replace traditional static server opex.',
                 problem: 'Variable AI inferencing is incorrectly capitalized as fixed server hosting, masking structural gross margin erosion.',
                 whyItMatters: 'Correctly identifying Synthetic COGS ensures accurate gross profit reporting and models true product contribution margins.',
-                provenance: ['CIO.com articles', 'Manning Book Proposal', 'Curriculum Track 2'],
+                provenance: ['CIO.com articles', 'Manning Book Proposal', 'Curriculum Track 2', 'LinkedIn Publications'],
                 implementation: {
-                    research: ['The Hidden Inflation of AI: Why Model Collapse is a Business Risk'],
+                    research: ['Growth Is Not Your Cost Problem — Your Architecture Is', 'The Hidden Inflation of AI: Why Model Collapse is a Business Risk'],
                     diagnostics: ['AI Unit Economics Benchmark (AUEB)', 'SLM vs API Arbitrage'],
                     education: ['Track 2: AI AI Economics', 'Track 7: Cloud FinOps & AI Cost Management'],
                     enforcement: 'Exogram Route optimizer & Caching Engine'

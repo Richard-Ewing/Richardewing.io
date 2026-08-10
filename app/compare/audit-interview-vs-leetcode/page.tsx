@@ -77,7 +77,7 @@ export default function AuditInterviewVsLeetCodePage() {
                     {/* CTA */}
                     <div className="text-center py-12 border-t border-zinc-400">
                         <p className="text-zinc-900 mb-4">Need help redesigning your hiring process?</p>
-                        <Link href="/advisory" className="text-purple-900 font-extrabold font-semibold hover:text-purple-900 font-extrabold font-semibold font-bold uppercase tracking-widest text-sm">
+                        <Link href="/services" className="text-purple-900 font-extrabold font-semibold hover:text-purple-900 font-extrabold font-semibold font-bold uppercase tracking-widest text-sm">
                             Book Advisory Consultation →
                         </Link>
                     

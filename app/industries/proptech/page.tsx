@@ -47,7 +47,7 @@ export default function PropTechPage() {
                     <div className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-8 text-center">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">PropTech R&D Audit</h2>
                         <p className="text-zinc-950 mb-6">Quantify your data integration debt, valuation model economics, and IoT infrastructure costs.</p>
-                        <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Book PropTech Audit →</Link>
+                        <Link href="/services" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Book PropTech Audit →</Link>
                     
                     <AdvisoryCTA variant="industry" />
 </div>

@@ -60,7 +60,7 @@ export default function AIEconomicsCrisis() {
                             Run Your Free AI Economics Audit
                             <ArrowRight className="w-5 h-5" />
                         </Link>
-                        <Link href="/advisory" className="inline-flex items-center gap-2 px-8 py-4 border border-zinc-300 text-zinc-700 font-medium rounded-xl hover:bg-zinc-100 transition-colors">
+                        <Link href="/services" className="inline-flex items-center gap-2 px-8 py-4 border border-zinc-300 text-zinc-700 font-medium rounded-xl hover:bg-zinc-100 transition-colors">
                             Book an Advisory Session
                         </Link>
                     </div>
@@ -179,7 +179,7 @@ export default function AIEconomicsCrisis() {
                             <Zap className="w-5 h-5" />
                             Start Free Audit
                         </Link>
-                        <Link href="/advisory" className="inline-flex items-center gap-2 px-8 py-4 border border-purple-400/30 text-purple-200 font-medium rounded-xl hover:bg-purple-900/50 transition-colors">
+                        <Link href="/services" className="inline-flex items-center gap-2 px-8 py-4 border border-purple-400/30 text-purple-200 font-medium rounded-xl hover:bg-purple-900/50 transition-colors">
                             Book Advisory Session
                         </Link>
                     </div>

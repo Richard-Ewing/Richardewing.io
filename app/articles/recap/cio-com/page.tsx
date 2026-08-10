@@ -124,7 +124,7 @@ export default function CIORecapPage() {
                     <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-8">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Work With Richard</h2>
                         <p className="text-zinc-950 mb-6">The frameworks published on CIO.com are available as proprietary advisory engagements. R&amp;D Capital Audits translate technical complexity into board-ready financial clarity.</p>
-                        <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Book Advisory →</Link>
+                        <Link href="/services" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Book Advisory →</Link>
                     </div>
                 </div>
             </div>

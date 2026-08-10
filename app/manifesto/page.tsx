@@ -82,7 +82,7 @@ export default function ManifestoPage() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <ShineBorder borderColor="rgba(212, 175, 55, 0.6)" duration={2}>
                             <Link
-                                href="/advisory"
+                                href="/services"
                                 className="inline-block bg-white text-black font-bold uppercase text-sm font-semibold px-8 py-4 tracking-widest hover:bg-gold transition-colors"
                             >
                                 Work With Me →

@@ -180,7 +180,7 @@ export async function GET(request: Request) {
 
             if (path.startsWith('/glossary')) category = 'glossary';
             else if (path.startsWith('/tools')) category = 'tools';
-            else if (path.startsWith('/advisory') || path.startsWith('/for-') || path.startsWith('/roi') || path.startsWith('/pricing')) category = 'advisory';
+            else if (path.startsWith('/services') || path.startsWith('/for-') || path.startsWith('/roi') || path.startsWith('/pricing')) category = 'advisory';
             else if (path.startsWith('/vault') || path.startsWith('/curriculum') || path.startsWith('/certification') || path.startsWith('/workshops') || path.startsWith('/skills')) category = 'curriculum';
             else if (path.startsWith('/blog')) category = 'blog';
             else if (path.startsWith('/exogram') || path.startsWith('/doctrine') || path.startsWith('/methodology')) category = 'framework';

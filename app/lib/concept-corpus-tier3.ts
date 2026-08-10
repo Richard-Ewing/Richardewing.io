@@ -22,45 +22,48 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
       { targetType: 'Diagnostic Tool', title: 'Exogram Economic Optimizer', url: 'https://exogram.ai/optimizer', relationship: 'measures' }
     ],
     canonicalDiagram: {
-      title: 'Semantic Cache Execution Loop',
-      flowSteps: ['User Prompt Input', 'Vector Embedding Generation', 'Similarity Search Threshold', 'Cache Hit Resolution']
+      title: 'Semantic Cache & Edge Filter Execution Loop',
+      flowSteps: ['User Prompt Input', 'Edge Code Filter (Sub-ms Routing & Dedupe)', 'Vector Semantic Cache (Near-Zero Cost Hit)', 'Frontier Model Inference (High-Cost Fallback)']
     },
     whyThisConceptExists: {
       problem: 'AI application gross margins degrade because every user interaction triggers an expensive API call to OpenAI or Anthropic.',
       existingApproaches: 'Relying on exact string matching for caching, which fails on minor prompt variations.',
       gap: 'Standard caching cannot handle natural language permutations.',
-      solution: 'Implemented vector based similarity checks to intercept queries before they reach expensive models.'
+      solution: 'Implemented vector-based similarity checks and sub-millisecond edge code filters to intercept queries before they reach expensive models.'
     },
     whatChanges: {
-      engineering: 'Deploy vector databases at the edge to evaluate prompt embeddings before API dispatch.',
-      finance: 'Reclaim 20-40% of gross margin previously lost to API inference billing.',
+      engineering: 'Place semantic caching and edge filtering middleware in front of frontier models to route, dedupe, and solve routine logic with code rather than tokens.',
+      finance: 'Cut runtime API spend by 50%+ without degrading response quality, halting software margin erosion as user base scales.',
       product: 'Offer higher usage tiers by lowering the unit cost of redundant interactions.',
       security: 'Isolate sensitive query responses within local infrastructure boundaries.'
     },
     claims: [
       {
-        statement: 'Semantic caching implementations reduce inference API billing by 35% in high engagement B2B workflows.',
-        confidence: 0.94,
+        statement: 'Placing semantic caching and edge filtering in front of frontier models cuts runtime API spend by over 50% without degrading response quality.',
+        confidence: 0.96,
         counterarguments: ['Embedding calculation latency degrades user experience.'],
-        supportingData: 'Telemetry across Exogram.ai deployments verified latency reductions on cache hits.'
+        supportingData: 'Empirical telemetry across Exogram execution loops confirmed >50% API cost reduction with zero quality loss.'
       }
     ],
     graphRelations: {
       prerequisites: [{ slug: 'ai-volatility-tax', title: 'AI Volatility Tax' }],
-      applications: ['Inference Cost Reduction', 'API Gateway Proxying'],
+      applications: ['Inference Cost Reduction', 'API Gateway Proxying', 'Edge Code Filtering'],
       contrastingConcepts: []
     },
     personaRecommendations: [
-      { role: 'AI Architect', takeaway: 'Insert semantic caching middleware ahead of all frontier model API calls.', recommendedNextSlug: 'inference-economics' }
+      { role: 'AI Architect', takeaway: 'Place semantic caching and edge filtering in front of models; never pay a generative model to handle a task traditional code or caching can solve.', recommendedNextSlug: 'inference-economics' }
     ],
     executableTool: { name: 'Exogram Margin Calculator', url: 'https://exogram.ai/tools/margin', description: 'Calculate gross margin recovery through semantic caching.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
-      { step: 1, title: 'Semantic Caching Playbook', publisher: 'Beehiiv', type: 'Canonical Article', url: 'https://theaieconomist.beehiiv.com' }
+      { step: 1, title: 'Growth Is Not Your Cost Problem — Your Architecture Is', publisher: 'LinkedIn', type: 'Executable Article', url: 'https://www.linkedin.com/feed/update/urn:li:share:7487606608009814016/' },
+      { step: 2, title: 'Semantic Caching Playbook', publisher: 'Beehiiv', type: 'Canonical Article', url: 'https://theaieconomist.beehiiv.com' }
     ],
     provenanceTimeline: [
-      { stage: 'Observation', label: 'Semantic Caching Economics', publisher: 'Beehiiv', date: 'June 2025', summary: 'Outlined the financial necessity of vector-based caching.' }
+      { stage: 'Observation', label: 'Semantic Caching Economics', publisher: 'Beehiiv', date: 'June 2025', summary: 'Outlined the financial necessity of vector-based caching.' },
+      { stage: 'LinkedIn Essay', label: 'Growth Is Not Your Cost Problem — Your Architecture Is', publisher: 'LinkedIn', date: 'August 10, 2026', summary: 'Proved 50%+ API spend reduction using semantic caching + edge filtering in front of Exogram execution loops.' }
     ],
     evidenceLedger: [
+      { id: 'ev-sc-2', title: 'Growth Is Not Your Cost Problem — Your Architecture Is', url: 'https://www.linkedin.com/feed/update/urn:li:share:7487606608009814016/', publisher: 'LinkedIn', type: 'Executable', strength: 5, role: 'Extends', date: 'August 10, 2026' },
       { id: 'ev-sc-1', title: 'Semantic Caching Playbook', url: 'https://theaieconomist.beehiiv.com', publisher: 'Beehiiv', type: 'Framework Module', strength: 4, role: 'Origin', date: 'June 2025' }
     ],
     relatedConceptSlugs: [

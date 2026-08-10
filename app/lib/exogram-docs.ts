@@ -80,6 +80,23 @@ export const exogramDocs: ExogramDoc[] = [
             { type: 'p', text: 'Every agentic action must supply a valid cryptographic trace linking the action directly back to an authorized, human-approved session. Unverified programmatic requests are instantly quarantined.' }
         ]
     },
+    {
+        id: 'semantic-caching-edge-filtering',
+        slug: 'semantic-caching-edge-filtering',
+        title: 'Semantic Caching & Edge Filtering Engine',
+        category: 'Architecture',
+        description: 'Slash runtime API spend by 50%+ using sub-millisecond edge code filters and vector similarity caches.',
+        content: [
+            { type: 'p', text: 'When running automated execution loops inside Exogram, token spend can scale rapidly if frontier models process routine logic that does not require complex reasoning. The Semantic Caching & Edge Filtering Engine places deterministic code filters and vector similarity matching in front of LLM endpoints.' },
+            { type: 'h2', text: 'Sub-Millisecond Edge Filtering' },
+            { type: 'p', text: 'Sub-millisecond edge filters evaluate incoming requests for deduplication, static rules, and simple code-based routing. Routine interactions are answered directly with traditional code without calling generative model APIs.' },
+            { type: 'h2', text: 'Vector Semantic Caching' },
+            { type: 'p', text: 'Requests passing the edge filter are checked against a high-performance vector similarity cache. Prompts matching historical intent thresholds (e.g. 0.92+ cosine similarity) are served instantly from local storage at near-zero cost. Only true cache misses escalate to frontier LLM inference.' },
+            { type: 'code', language: 'typescript', text: 'import { ExogramEdgeFilter } from "@exogram/sdk";\n\nconst response = await ExogramEdgeFilter.execute({\n  prompt,\n  cacheThreshold: 0.92,\n  fallbackModel: "gpt-4o"\n});\n// Cut runtime API spend by 50%+ with zero quality loss' },
+            { type: 'h2', text: 'Economic Impact' },
+            { type: 'ul', items: ['Runtime API Spend Cut: >50%', 'Cache Hit Latency: <15ms', 'Response Quality Loss: 0%'] }
+        ]
+    },
 
     // --- CORE CONCEPTS ---
     {

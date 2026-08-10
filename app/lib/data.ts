@@ -14,6 +14,17 @@ export interface Article {
 
 export const articles: Article[] = [
     {
+        slug: "growth-is-not-your-cost-problem-architecture-is",
+        title: "Growth Is Not Your Cost Problem — Your Architecture Is",
+        description: "If your software margins shrink as your user base grows, you likely have an underlying architecture issue rather than a growth problem. Placing semantic caching and edge filtering in front of models cuts API spend by over 50% without degrading quality.",
+        date: "August 2026",
+        readTime: "5 min read",
+        source: "LinkedIn",
+        category: "Economics",
+        externalUrl: "https://www.linkedin.com/feed/update/urn:li:share:7487606608009814016/",
+        editorsPick: true
+    },
+    {
         slug: "ai-agent-kill-switch",
         title: "Your AI Agent Needs a Kill Switch",
         description: "Current AI agent security is based on guardrails, which boil down to a guess. A working security program must be based on objective rules.",

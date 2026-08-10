@@ -976,6 +976,22 @@ Quantifying these optimization windows is a key capability of the **AI Unit Econ
         ],
         relatedTerms: ['hallucination-debt', 'operational-entropy', 'admissibility-instability'],
         relatedDiagnostics: ['aper'],
+    },
+    {
+        slug: 'semantic-caching',
+        title: 'Semantic Caching',
+        category: 'AI Economics',
+        tier: 'pillar',
+        definition: `Semantic Caching is an architectural pattern that intercepts incoming LLM prompt queries using vector similarity embeddings and sub-millisecond edge code filters, serving known responses from local storage at near-zero cost whenever incoming queries match high-confidence intent thresholds.\n\nTraditional web caching relies on exact key string matching. In generative AI applications, however, users rarely submit identical text strings. Two distinct prompts — such as "How do I optimize my LLM API bill?" and "What is the best way to cut runtime inference spend?" — carry identical semantic intent but fail traditional string match tests. Semantic Caching generates vector embeddings for incoming prompts and compares them against historical query vectors in a high-speed vector store.\n\nBy placing semantic caching and edge filtering in front of frontier models, production architectures eliminate the unforced error of paying commercial API tolls for routine or repeated logic. Telemetry across Exogram execution loops demonstrates that combining edge filtering with vector semantic caching cuts runtime API spend by over 50% with zero quality degradation, protecting software gross margins as user engagement scales.`,
+        whyItMatters: `Shrinking software gross margins during user base growth stem from underlying LLM architecture flaws, not growth itself. Without a semantic cache and edge filter layer, every single interaction invokes full model inference on expensive commercial APIs. As active users increase, variable API spend scales faster than subscription revenue, dragging SaaS contribution margins into negative territory. Semantic caching restores software margin physics by solving routine logic with traditional code and vector hits rather than generative tokens.`,
+        howToApply: `Place a sub-millisecond edge filter in front of your LLM gateway to handle routing, deduplication, and code-based logic. Route remaining queries through a vector similarity cache configured with strict cosine similarity thresholds (e.g. 0.92+). Serve cache hits instantly at near-zero cost, and only dispatch cache misses to frontier models, capturing the output to continuously populate the cache.`,
+        faqs: [
+            { question: 'What is Semantic Caching in AI architecture?', answer: 'Semantic Caching is the practice of storing LLM query-response pairs in a vector database and serving future semantically similar prompts locally without making expensive third-party API inference calls.' },
+            { question: 'How much can Semantic Caching cut AI API costs?', answer: 'Combining sub-millisecond edge filtering with semantic vector caching cuts runtime API spend by over 50% in production execution loops without degrading output quality.' },
+            { question: 'Why does traditional exact-match caching fail for LLMs?', answer: 'Natural language queries vary in syntax, punctuation, and phrasing even when asking for identical information. Vector similarity thresholds catch these semantic permutations where string matching fails.' }
+        ],
+        relatedTerms: ['synthetic-cogs', 'ai-volatility-tax', 'total-compute-cost', 'inference-economics'],
+        relatedDiagnostics: ['aueb', 'slm-vs-api'],
     }
 ];
 

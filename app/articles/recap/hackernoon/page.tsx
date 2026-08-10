@@ -106,7 +106,7 @@ export default function HackerNoonRecapPage() {
                     <div className="rounded-2xl border border-orange-500/30 bg-orange-500/5 p-8">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Work With Richard</h2>
                         <p className="text-zinc-950 mb-6">From AI agent cost modeling to technical debt quantification — get the frameworks used by PE firms and Fortune 500 companies.</p>
-                        <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-orange-500 to-yellow-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Book Advisory →</Link>
+                        <Link href="/services" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-orange-500 to-yellow-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Book Advisory →</Link>
                     </div>
                 </div>
             </div>

@@ -285,7 +285,7 @@ export default function AIIntegrationPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {[
                             { title: 'The AI Integration System', href: '/ai-integration/system' },
-                            { title: 'Advisory Services', href: '/advisory' },
+                            { title: 'Advisory Services', href: '/services' },
                             { title: 'Runtime Governance Skills', href: '/skills' },
                             { title: 'Executive Briefing', href: '/executive-briefing' },
                             { title: 'AI Coding Agent Comparison', href: '/compare/ai-coding-agents' },

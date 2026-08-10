@@ -160,7 +160,7 @@ export default function SystemPage() {
                     <p className="text-zinc-900 mb-6">Ready to install financial transparency?</p>
                     <ShineBorder borderColor="rgba(0, 240, 255, 0.6)" duration={2}>
                         <Link
-                            href="/advisory"
+                            href="/services"
                             className="inline-block bg-white text-black font-bold uppercase text-sm font-semibold px-10 py-4 tracking-widest hover:bg-cyan-400 transition-colors"
                         >
                             Book an Intervention →

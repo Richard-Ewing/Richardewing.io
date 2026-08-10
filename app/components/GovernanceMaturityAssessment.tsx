@@ -251,7 +251,7 @@ export default function GovernanceMaturityAssessment() {
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link
-                                href="/advisory"
+                                href="/services"
                                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-rose-500 text-zinc-900 font-bold text-sm hover:opacity-90 transition-opacity"
                             >
                                 Book a $450 Gut-Check <ChevronRight className="w-4 h-4" />

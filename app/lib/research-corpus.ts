@@ -26,6 +26,23 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
+  // Today's LinkedIn Post — August 10, 2026
+  {
+    id: 'linkedin-growth-cost-architecture',
+    title: 'Growth Is Not Your Cost Problem — Your Architecture Is',
+    url: 'https://www.linkedin.com/feed/update/urn:li:share:7487606608009814016/',
+    publisher: 'LinkedIn',
+    domain: 'AI Economics',
+    type: 'Executable',
+    editorsPick: true,
+    date: 'August 10, 2026',
+    thesis: 'Shrinking software margins during user base growth stem from underlying LLM architecture flaws, not growth itself. Placing semantic caching and sub-millisecond edge filtering in front of frontier models slashes runtime API spend by over 50% without quality degradation.',
+    relatedConceptIds: ['semantic-caching', 'inference-economics', 'ai-volatility-tax', 'ai-margin-squeeze', 'cost-of-predictivity', 'ai-cost-optimization'],
+    relatedGlossarySlugs: ['semantic-caching', 'synthetic-cogs', 'ai-volatility-tax'],
+    relatedToolIds: ['aueb', 'slm-vs-api'],
+    relatedCaseStudyIds: ['saas-cost-collapse', 'semantic-caching-edge-filtering'],
+    relatedFrameworkSlugs: ['inference-optimizer-matrix', 'semantic-cache-edge-filter']
+  },
   // Today's Beehiiv Laboratory Newsletter — August 7, 2026
   {
     id: 'beehiiv-prevent-context-loss',

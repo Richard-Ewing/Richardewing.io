@@ -77,7 +77,7 @@ export default function CopilotROIvsGitClearPage() {
                     {/* CTA */}
                     <div className="text-center py-12 border-t border-zinc-400">
                         <p className="text-zinc-900 mb-4">Want the board-level readout on your AI investment?</p>
-                        <Link href="/advisory" className="text-zinc-950 font-semibolduchsia-400 hover:text-zinc-950 font-semibolduchsia-300 font-bold uppercase tracking-widest text-sm">
+                        <Link href="/services" className="text-zinc-950 font-semibolduchsia-400 hover:text-zinc-950 font-semibolduchsia-300 font-bold uppercase tracking-widest text-sm">
                             Book an R&D Capital Audit →
                         </Link>
                     

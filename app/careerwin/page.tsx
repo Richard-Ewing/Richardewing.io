@@ -64,7 +64,7 @@ export default function CareerWinPage() {
                                 Explore CareerWin.ai Platform <ExternalLink className="w-4 h-4" />
                             </a>
                             <Link 
-                                href="/curriculum"
+                                href="/vault/curriculum/tracks"
                                 className="inline-flex items-center justify-center px-8 py-4 bg-white border border-zinc-300 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-zinc-50 transition-colors"
                             >
                                 Browse Executive Curriculum &rarr;

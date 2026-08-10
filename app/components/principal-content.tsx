@@ -350,7 +350,7 @@ export default function PrincipalContent() {
                     <p className="text-zinc-900 mb-4">Ready to work with a AI Economist?</p>
                     <ShineBorder borderColor="rgba(0, 240, 255, 0.6)" duration={2}>
                         <Link
-                            href="/advisory"
+                            href="/services"
                             className="inline-block bg-white text-black font-bold uppercase text-sm font-semibold px-10 py-4 tracking-widest hover:bg-cyan-400 transition-colors"
                         >
                             View Intervention Protocols →

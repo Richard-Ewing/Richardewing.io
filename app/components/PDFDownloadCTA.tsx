@@ -23,7 +23,7 @@ export default function PDFDownloadCTA({ toolName, score }: PDFDownloadCTAProps)
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
                         <Link
-                            href="/advisory"
+                            href="/services"
                             className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-black text-sm font-semibold font-bold rounded-lg transition-all"
                         >
                             <FileDown className="w-4 h-4" />

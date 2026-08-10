@@ -9,7 +9,7 @@ export async function POST() {
     return NextResponse.json(
         {
             error: 'This checkout endpoint has been deprecated. All payments now use direct Stripe Payment Links.',
-            redirect: 'https://www.richardewing.io/advisory',
+            redirect: 'https://www.richardewing.io/services',
         },
         { status: 410 }
     );

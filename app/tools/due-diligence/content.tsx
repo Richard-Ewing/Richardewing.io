@@ -558,7 +558,7 @@ export default function DueDiligenceTool() {
                         <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse shadow-[0_0_10px_#dc2626]" />
                         <span className="font-bold tracking-tight text-lg">M&A DILIGENCE <span className="text-zinc-950 font-bold font-normal">| Enterprise Scanner</span></span>
                     </div>
-                    <Link href="/advisory" className="flex items-center gap-2 text-xs font-bold font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest">
+                    <Link href="/services" className="flex items-center gap-2 text-xs font-bold font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest">
                         <ShieldAlert size={12} />
                         Request Deep Audit
                     </Link>

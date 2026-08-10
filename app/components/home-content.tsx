@@ -221,7 +221,7 @@ export default function HomeContent() {
                             </div>
                             <div className="flex items-center gap-6">
                                 <div className="text-xl font-mono text-cyan-900 font-extrabold">{tier.price}</div>
-                                <Link href="/advisory" className="text-sm font-semibold font-bold text-zinc-900 uppercase tracking-wider hover:text-cyan-900 font-extrabold transition-colors">Book Now</Link>
+                                <Link href="/services" className="text-sm font-semibold font-bold text-zinc-900 uppercase tracking-wider hover:text-cyan-900 font-extrabold transition-colors">Book Now</Link>
                             </div>
                         </div>
                     ))}

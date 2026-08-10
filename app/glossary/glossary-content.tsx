@@ -171,7 +171,7 @@ export default function GlossaryContent() {
                         Run Free PDI Assessment
                     </Link>
                     <Link
-                        href="/advisory"
+                        href="/services"
                         className="px-8 py-4 bg-white border border-zinc-500 rounded-xl text-zinc-950 font-bold uppercase tracking-widest text-xs font-bold hover:bg-zinc-50 transition-colors"
                     >
                         Book Advisory Session →

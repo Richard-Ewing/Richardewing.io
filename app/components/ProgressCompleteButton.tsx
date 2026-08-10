@@ -79,7 +79,7 @@ export default function ProgressCompleteButton({ moduleId, nextHref }: { moduleI
                                 </div>
                                 <div className="border-t border-zinc-400 bg-zinc-50 p-6 flex items-center justify-between">
                                     <div className="text-xs font-bold text-zinc-950 max-w-[200px]">Enterprise Advisory Intake Questionnaire required pre-call.</div>
-                                    <button onClick={() => window.location.href='/advisory'} className="px-6 py-3 bg-white hover:bg-zinc-200 text-black font-bold uppercase tracking-widest rounded-xl transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] text-xs">
+                                    <button onClick={() => window.location.href='/services'} className="px-6 py-3 bg-white hover:bg-zinc-200 text-black font-bold uppercase tracking-widest rounded-xl transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] text-xs">
                                         Apply for Advisory →
                                     </button>
                                 </div>

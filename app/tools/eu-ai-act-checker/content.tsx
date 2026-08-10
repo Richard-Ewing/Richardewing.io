@@ -201,7 +201,7 @@ export default function EUAIActChecker() {
                                 <Shield className="w-4 h-4" />
                                 Run Shadow AI Scan
                             </Link>
-                            <Link href="/advisory" className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-zinc-200 text-zinc-700 font-medium rounded-xl hover:bg-zinc-50 transition-colors">
+                            <Link href="/services" className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-zinc-200 text-zinc-700 font-medium rounded-xl hover:bg-zinc-50 transition-colors">
                                 Book Governance Audit
                                 <ArrowRight className="w-4 h-4" />
                             </Link>

@@ -3,25 +3,26 @@ import { CurriculumModule, l, d, m } from './curriculum-data';
 export const tracks25Modules: Record<string, CurriculumModule> = {};
 const t25 = 'Track 25 — Model Routing Arbitrage';
 
-tracks25Modules['model-routing/25-1'] = m('25-1', 'The Architecture of AI Unit Economics', 'The cost of predictivity vs latency tradeoff.', t25, 
-    ['Optimize AI Gross Margins', 'Establish a routing gateway'], [
+tracks25Modules['model-routing/25-1'] = m('25-1', 'The Architecture of AI Unit Economics', 'The cost of predictivity vs latency tradeoff & Semantic Cache / Edge Filter architecture.', t25, 
+    ['Optimize AI Gross Margins', 'Establish a routing gateway', 'Deploy Semantic Caching & Edge Filtering'], [
         l('The Eradication of the Static Endpoint', 
             [
                 'During the initial AI boom, companies simply hardcoded their product to call the most expensive frontier model (e.g. GPT-4o) for every single user interaction. This resulted in the "Cost of Predictivity," where summarizing a two-sentence email cost $0.05. Multiplied by millions of requests, gross margins collapsed instantaneously.', 
-                'Elite architectural scale demands Model Routing Arbitrage. This entails deploying a highly intelligent Gateway Layer that intercepts every incoming request. If the user asks for a simple formatting change, the gateway routes it to a blazingly fast, nearly-free 8-Billion parameter local model. If the user asks for high-level mathematical reasoning, it routes to a massive frontier model.',
-                'Model routing mathematically solves the negative gross margin crisis of the AI space, replacing rigid endpoint dependency with dynamic, cost-aware algorithmic intent matching.'
+                'As Richard Ewing established in his August 2026 publication ("Growth Is Not Your Cost Problem — Your Architecture Is"), shrinking software margins as user engagement grows indicate an underlying architecture failure. When running execution loops, paying top-tier models for routine or repeated logic burns token capital rapidly.',
+                'Elite architectural scale demands placing sub-millisecond edge filters and vector semantic caching layers directly in front of LLM endpoints. Edge code filters route and dedupe routine logic in code; semantic caches serve historical query intent hits at near-zero cost. Telemetry confirms this architecture slashes runtime API spend by over 50% with zero quality loss.'
             ],
             [
                 d('Inference Margin Bleed', 'The lost revenue directly attributable to utilizing a massive frontier model for trivially simple tasks.', 'Eliminated cleanly'),
-                d('Dynamic Gateway Latency', 'The absolute microsecond lag induced by the routing layer assessing the prompt before forwarding it.', '< 15ms Required boundary')
+                d('Dynamic Gateway Latency', 'The absolute microsecond lag induced by the routing layer assessing the prompt before forwarding it.', '< 15ms Required boundary'),
+                d('Runtime API Cost Reduction', 'The verified spend reduction achieved by placing semantic caching and edge filtering in front of models.', '50%+ Cost Cut')
             ], 
-            'Audit the central LLM call functions within the primary codebase.', 
-            ['Identify any instance where the codebase directly hardcodes a specific provider API (e.g. `openai.chat.completions`).', 'Abstract that call entirely behind an internal `RouteInference()` wrapper function.', 'Programmatic logic must dictate the target model based on user intent, not developer hardcoding.'], 
+            'Audit the central LLM call functions within the primary codebase and insert a semantic cache & edge filtering layer.', 
+            ['Identify any instance where the codebase directly hardcodes a specific provider API (e.g. `openai.chat.completions`).', 'Abstract that call entirely behind an internal `RouteInference()` wrapper function incorporating vector similarity checks.', 'Programmatic logic and edge filters must dictate the target model or cache hit based on user intent.'], 
             {
-                question: 'What is the massive financial danger of hardcoding an application entirely onto a single Frontier model (like GPT-4)?',
-                options: ['The model will become sentient', 'You systematically destroy your software gross margins by massively over-paying to process trivial, simple tasks that a model 1/100th of the size could accomplish for fractions of a penny', 'The API will eventually get deprecated', 'Users do not like interacting with OpenAI'],
+                question: 'What architectural decision allows high-growth AI SaaS platforms to cut runtime API spend by >50% without quality loss?',
+                options: ['Raising subscription pricing', 'Placing vector semantic caching and sub-millisecond edge code filtering in front of models to solve routine logic with code and cache hits rather than generative tokens', 'Disabling logging', 'Switching from TypeScript to C++'],
                 correctIndex: 1,
-                explanation: 'A frontier model is brilliant, but excessively expensive and slow. Using it to process a simple "Yes/No" intent extraction is financially catastrophic padding at hyper-scale.'
+                explanation: 'Never pay a generative model to handle a task that traditional code or a vector cache hit can solve. Edge filtering and semantic caching intercept redundant and routine queries before they reach expensive models.'
             }
         )
     ], '/vault/curriculum/tracks/model-routing/25-2', undefined, 'live'

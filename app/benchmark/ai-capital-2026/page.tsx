@@ -104,7 +104,7 @@ export default function AICapitalBenchmark() {
                                 </p>
                             </div>
                             <div className="flex justify-end">
-                                <Link href="/advisory" className="w-full text-center px-6 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all shadow-[0_0_20px_-5px_rgba(6,182,212,0.8)]">
+                                <Link href="/services" className="w-full text-center px-6 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all shadow-[0_0_20px_-5px_rgba(6,182,212,0.8)]">
                                     Book The Audit →
                                 </Link>
                             </div>
@@ -285,7 +285,7 @@ export default function AICapitalBenchmark() {
                         Don't let your CFO read this report before you do. Get a bespoke Exogram capability map generated specifically around your team's pull-request velocity, architectural latency, and AWS spend.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                        <Link href="/advisory" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-sm font-semibold rounded-lg hover:bg-zinc-200 transition-all flex items-center gap-2 shadow-[0_0_30px_-5px_rgba(255,255,255,0.4)]">
+                        <Link href="/services" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-sm font-semibold rounded-lg hover:bg-zinc-200 transition-all flex items-center gap-2 shadow-[0_0_30px_-5px_rgba(255,255,255,0.4)]">
                             Secure A Strategic Audit <ArrowRight size={16} />
                         </Link>
                         <Link href="/tools" className="px-8 py-4 bg-transparent border border-zinc-600 text-zinc-950 font-bold uppercase tracking-widest text-sm font-semibold rounded-lg hover:bg-zinc-50 transition-all">

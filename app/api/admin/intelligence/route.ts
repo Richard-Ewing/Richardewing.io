@@ -72,7 +72,7 @@ export async function GET() {
                 id: 'imp-1',
                 type: 'seo_ratchet',
                 agent: 'marketer-agent',
-                target: '/advisory',
+                target: '/services',
                 description: 'Ratchet A/B Test Won: Replaced meta title "AI Advisory Services" with "Enterprise AI Governance & Advisory".',
                 themeTested: 'Shadow AI & Compliance Fears (#mr-2)',
                 metricBefore: '1.2% CTR',

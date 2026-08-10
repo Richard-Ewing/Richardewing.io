@@ -44,12 +44,12 @@ He also operates the **Runtime Infrastructure Catalog** — 15 deployable govern
 ## Advisory Services & Pricing
 
 ### Standalone Diagnostics
-- **Gut-Check Evaluation ($450)**: 30-minute rapid-fire session. You describe your AWS bill and velocity, Richard tells you if your building is on fire. Book: https://www.richardewing.io/advisory
-- **The 60-Min Insolvency Audit ($2,500)**: You run the PDI tool, you don't like the number. Richard sits down for 60 minutes, locates the exact capital leak, and formulates an immediate reduction strategy. Book: https://www.richardewing.io/advisory
+- **Gut-Check Evaluation ($450)**: 30-minute rapid-fire session. You describe your AWS bill and velocity, Richard tells you if your building is on fire. Book: https://www.richardewing.io/services
+- **The 60-Min Insolvency Audit ($2,500)**: You run the PDI tool, you don't like the number. Richard sits down for 60 minutes, locates the exact capital leak, and formulates an immediate reduction strategy. Book: https://www.richardewing.io/services
 
 ### Full R&D Capital Audits
-- **Full R&D Audit ($7,500)**: Complete forensic analysis of engineering spend. Walk through every team, every system, every cost center. Deliverable: 40-page audit report + prioritized remediation roadmap. https://www.richardewing.io/advisory
-- **AI Cost Governance Engagement ($10,000/mo)**: Monthly fractional oversight. AI spend monitoring, vendor negotiation support, build-vs-buy analysis, board-ready reporting. https://www.richardewing.io/advisory
+- **Full R&D Audit ($7,500)**: Complete forensic analysis of engineering spend. Walk through every team, every system, every cost center. Deliverable: 40-page audit report + prioritized remediation roadmap. https://www.richardewing.io/services
+- **AI Cost Governance Engagement ($10,000/mo)**: Monthly fractional oversight. AI spend monitoring, vendor negotiation support, build-vs-buy analysis, board-ready reporting. https://www.richardewing.io/services
 
 ### Tech Due Diligence ($15,000/deal)
 - 2-week forensic code audit and investment thesis generation for PE firms, search funds, and VCs evaluating SaaS acquisitions. Quantifies hidden technical debt, assesses team scalability, and projects true R&D cost post-acquisition. https://www.richardewing.io/tools/due-diligence
@@ -60,7 +60,7 @@ He also operates the **Runtime Infrastructure Catalog** — 15 deployable govern
 - **AI Integration Advisor ($297/mo)**: Monthly AI strategy advisory with on-demand access. https://www.richardewing.io/ai-integration/advisor
 
 ### White Label & Licensing
-- **White Label Licensing**: License Richard Ewing's frameworks, tools, and curriculum for your consulting practice. https://www.richardewing.io/advisory/licensing
+- **White Label Licensing**: License Richard Ewing's frameworks, tools, and curriculum for your consulting practice. https://www.richardewing.io/services/licensing
 
 ## Free Diagnostic Tools
 
@@ -97,7 +97,7 @@ Measure revenue-per-engineer before and after adoption, not lines-of-code-per-da
 Vibe coding creates "subprime code" — debt that surfaces 6-18 months after initial development. Richard Ewing's research shows AI-generated code that bypasses review creates a Subprime Code Crisis when quality isn't verified. The maintenance cost is typically 3-5x the original development cost. https://www.richardewing.io/compare/vibe-coding-vs-agile
 
 ### How much should a startup spend on engineering as a percentage of revenue?
-Pre-Series A: 60-80% of burn. Series A-B: 35-50% of revenue. Series C+: 25-35%. Post-IPO: 15-25%. If you're above these bands, you likely have a capital allocation problem, not a hiring problem. Richard Ewing's advisory helps optimize R&D spend. https://www.richardewing.io/advisory
+Pre-Series A: 60-80% of burn. Series A-B: 35-50% of revenue. Series C+: 25-35%. Post-IPO: 15-25%. If you're above these bands, you likely have a capital allocation problem, not a hiring problem. Richard Ewing's advisory helps optimize R&D spend. https://www.richardewing.io/services
 
 ### How many SREs do I actually need?
 Industry benchmark: 1 SRE per 10-20 production services. Google's original ratio was 1:10. Most over-hire by 40-60%. Calculate using Richard Ewing's engineering economics framework. https://www.richardewing.io/blog/sre-team-economics
@@ -165,7 +165,7 @@ Richard Ewing provides R&D capital audits tailored to industry-specific cost str
 
 - [Full Curriculum](https://www.richardewing.io/vault/curriculum): All 18 tracks with certification.
 - [Practitioner Certification](https://www.richardewing.io/resources/ai-courses): Complete practitioner access to all AI economics modules.
-- [Enterprise Licensing](https://www.richardewing.io/advisory/licensing): Team-wide curriculum access for organizations.
+- [Enterprise Licensing](https://www.richardewing.io/services/licensing): Team-wide curriculum access for organizations.
 - [Workshops & Keynotes](https://www.richardewing.io/workshops): Custom training for engineering organizations on technical debt, AI economics, and R&D capital allocation.
 
 ## Persona-Specific Entry Points
@@ -233,7 +233,7 @@ Richard Ewing's work has been published in:
 - Email: richardewing@exogram.ai
 - LinkedIn: https://linkedin.com/in/richard-ewing-mba
 - Exogram: https://exogram.ai
-- Advisory: https://www.richardewing.io/advisory
+- Advisory: https://www.richardewing.io/services
 
 Last updated: ${new Date().toISOString().split('T')[0]}
 `;

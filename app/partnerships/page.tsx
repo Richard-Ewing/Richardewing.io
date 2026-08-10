@@ -113,7 +113,7 @@ export default function PartnershipsPage() {
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-10 text-center">
                         <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Become a Partner</h2>
                         <p className="text-zinc-900 mb-8 max-w-xl mx-auto">Whether you&apos;re a consulting firm, PE fund, platform, or recruiter — there&apos;s a partnership model that works.</p>
-                        <Link href="/advisory" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-zinc-950 font-semibold text-lg font-bold hover:opacity-90 transition-opacity">Discuss Partnership →</Link>
+                        <Link href="/services" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-zinc-950 font-semibold text-lg font-bold hover:opacity-90 transition-opacity">Discuss Partnership →</Link>
                     </div>
                 </div>
             </div>

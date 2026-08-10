@@ -94,7 +94,7 @@ export default function NotFound() {
                         { label: 'Glossary', count: '430+ terms', href: '/glossary', icon: BookOpen },
                         { label: 'Blog', count: '130+ posts', href: '/blog', icon: BookOpen },
                         { label: 'Comparisons', count: '25+ pages', href: '/compare', icon: TrendingDown },
-                        { label: 'Advisory', count: 'From $450', href: '/advisory', icon: Shield },
+                        { label: 'Advisory', count: 'From $450', href: '/services', icon: Shield },
                     ].map(item => (
                         <Link key={item.href} href={item.href} className="p-4 rounded-xl bg-white border border-zinc-200 hover:border-violet-300 transition-colors text-center group shadow-sm">
                             <p className="text-sm font-bold text-zinc-900 group-hover:text-violet-700 transition-colors">{item.label}</p>

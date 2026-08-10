@@ -147,7 +147,7 @@ export default function ResourcesPage() {
                             <Link href="/pricing" className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-cobalt text-zinc-950 font-semibold font-bold rounded-lg hover:opacity-90 transition-opacity text-sm">
                                 View Pricing →
                             </Link>
-                            <Link href="/advisory" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
+                            <Link href="/services" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
                                 Book Free Call →
                             </Link>
                         </div>

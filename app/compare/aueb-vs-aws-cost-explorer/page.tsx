@@ -108,7 +108,7 @@ export default function AUEBvsAWSPage() {
 
                     <div className="text-center py-12 border-t border-zinc-400">
                         <p className="text-zinc-900 mb-4">Need AI economics advisory?</p>
-                        <Link href="/advisory" className="text-orange-900 font-extrabold font-semibold hover:text-orange-900 font-extrabold font-semibold font-bold uppercase tracking-widest text-sm">
+                        <Link href="/services" className="text-orange-900 font-extrabold font-semibold hover:text-orange-900 font-extrabold font-semibold font-bold uppercase tracking-widest text-sm">
                             Book a $2,500 AI Economics Diagnostic →
                         </Link>
                     

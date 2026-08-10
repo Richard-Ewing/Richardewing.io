@@ -512,7 +512,7 @@ export default async function VaultPage() {
                                     <Lock className="w-3 h-3 text-zinc-950 font-bold group-hover:text-amber-400" />
                                 </div>
                                 <p className="text-xs font-bold text-zinc-900 font-bold mb-4">Book a fractional CTO engagement or deep-dive R&D capital audit.</p>
-                                <Link href="/advisory" className="block text-center w-full py-2 border border-zinc-400 hover:border-amber-500 text-zinc-900 hover:text-amber-400 text-xs font-bold font-medium font-bold uppercase tracking-widest rounded transition-colors">
+                                <Link href="/services" className="block text-center w-full py-2 border border-zinc-400 hover:border-amber-500 text-zinc-900 hover:text-amber-400 text-xs font-bold font-medium font-bold uppercase tracking-widest rounded transition-colors">
                                     View Engagements
                                 </Link>
                             </div>

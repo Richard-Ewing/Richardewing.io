@@ -54,7 +54,7 @@ export default function ManufacturingPage() {
                         </ul>
                         <div className="flex flex-wrap gap-4">
                             <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-stone-500 to-cyan-600 text-zinc-950 font-semibold font-bold hover:opacity-90">Free PDI Assessment →</Link>
-                            <Link href="/advisory" className="px-6 py-3 rounded-lg border border-zinc-500 text-zinc-950 font-bold hover:bg-white/5">Book Advisory →</Link>
+                            <Link href="/services" className="px-6 py-3 rounded-lg border border-zinc-500 text-zinc-950 font-bold hover:bg-white/5">Book Advisory →</Link>
                         </div>
                     
                         <AdvisoryCTA variant="industry" />

@@ -69,7 +69,7 @@ export default function InsurTechPage() {
                     <div className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">InsurTech Advisory</h2>
                         <p className="text-zinc-950 mb-6">Richard Ewing advises InsurTech companies on legacy modernization economics, AI underwriting unit costs, and regulatory compliance debt. R&D Capital Audits for insurance technology.</p>
-                        <Link href="/advisory" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Book InsurTech Advisory →</Link>
+                        <Link href="/services" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Book InsurTech Advisory →</Link>
                     
                     <AdvisoryCTA variant="industry" />
 </div>

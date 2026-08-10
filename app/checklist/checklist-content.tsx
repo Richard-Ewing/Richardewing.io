@@ -194,7 +194,7 @@ export default function ChecklistPageContent() {
                         <h3 className="text-lg font-grotesk font-bold text-[#1A1A1A] group-hover:text-rose-700 transition-colors">Product Debt Index Calculator</h3>
                         <p className="text-sm text-zinc-500 mt-1">Calculate your Technical Insolvency Date →</p>
                     </Link>
-                    <Link href="/advisory" className="p-6 rounded-2xl bg-white border border-violet-200 hover:border-violet-400 transition-colors group">
+                    <Link href="/services" className="p-6 rounded-2xl bg-white border border-violet-200 hover:border-violet-400 transition-colors group">
                         <div className="text-xs font-mono font-bold text-violet-600 uppercase tracking-widest mb-2">Advisory</div>
                         <h3 className="text-lg font-grotesk font-bold text-[#1A1A1A] group-hover:text-violet-700 transition-colors">R&D Capital Audit</h3>
                         <p className="text-sm text-zinc-500 mt-1">From $450 gut-check to $7,500 full audit →</p>

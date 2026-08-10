@@ -48,6 +48,18 @@ const caseStudies = [
         tags: ['Exogram Governance', 'AUEB Benchmark', 'Cost Cap'],
     },
     {
+        id: 'semantic-caching-edge-filtering',
+        badge: 'Exogram Execution Loops',
+        title: 'Semantic Caching & Edge Filtering Architecture Optimization',
+        metric: '50%+',
+        metricLabel: 'Runtime API Spend Cut',
+        problem: 'Running automated execution loops inside Exogram caused token spend to scale rapidly because top-tier frontier models were processing routine logic that did not require complex reasoning.',
+        diagnosis: 'Audited model invocation patterns, discovering full inference calls were executed for duplicate or simple queries that could be handled deterministically without model tokens.',
+        action: 'Placed vector semantic caching and sub-millisecond edge code filtering in front of models to route, dedupe, and resolve routine logic via code rather than generative inference.',
+        result: 'Cut runtime API spend by over 50% with zero response quality degradation and near-zero latency on cache hits.',
+        tags: ['Semantic Caching', 'Edge Filtering', 'Exogram Governance', 'Margin Protection'],
+    },
+    {
         id: 'pe-due-diligence',
         badge: 'PE Portfolio Acquisition',
         title: 'Pre-Close Technical Due Diligence & Purchase Price Realignment',

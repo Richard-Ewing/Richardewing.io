@@ -307,7 +307,7 @@ export default function AIRoiTimelineContent() {
                                       <h4 className="text-lg font-bold text-zinc-950 mb-2">Get a realistic AI ROI timeline for your organization</h4>
                                       <p className="text-sm text-zinc-600 mb-4">The timeline shows the gap. A $500 Strategy Session builds a board-ready AI investment case with specific milestones, risk-adjusted returns, and a kill criteria framework.</p>
                                       <div className="flex flex-wrap gap-3">
-                                        <a href="/advisory" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-zinc-900 text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">Book Advisory Session →</a>
+                                        <a href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-zinc-900 text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">Book Advisory Session →</a>
                                         <a href="/api/buy/gut_check" className="inline-flex items-center gap-2 px-5 py-2.5 border border-purple-500/30 text-purple-700 text-sm font-bold rounded-lg hover:bg-purple-50 transition-colors">$450 Gut-Check Call →</a>
                                       </div>
                                     </div>

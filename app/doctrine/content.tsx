@@ -194,7 +194,7 @@ export default function DoctrineContent() {
                     <p className="text-zinc-900 mb-6">Apply these principles to your organization.</p>
                     <ShineBorder borderColor="rgba(16, 185, 129, 0.6)" duration={2}>
                         <Link
-                            href="/advisory"
+                            href="/services"
                             className="inline-block bg-white text-black font-bold uppercase text-sm font-semibold px-10 py-4 tracking-widest hover:bg-emerald-400 transition-colors"
                         >
                             Book an Intervention →
