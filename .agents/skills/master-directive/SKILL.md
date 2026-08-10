@@ -78,5 +78,5 @@ If an error or failure occurs at any stage:
 
 ## 7. Production Deployment & Repository Hygiene
 
-1. **Live Production Validation**: Validate live production deployments (`npm run build`, live pings) and confirm 100% operational status.
+1. **Mandatory Live Production Deployment**: Validate builds (`npm run build`). EVERY task modifying code or content MUST automatically execute `git add -A`, `git commit -m "..."`, and `git push origin main` to deploy to live production. The user should NEVER have to remind or prompt the agent to deploy. Always verify `git status` is clean before ending the turn.
 2. **Workspace Hygiene Standard**: Keep the repository root immaculate. All temporary scripts, intermediate JSON outputs, and diagnostic logs MUST be routed to `.scratch/` or `<appDataDir>\brain\<conversation-id>/scratch/`. Never commit `tmp_*.js` or debug `.txt` files to the root directory.

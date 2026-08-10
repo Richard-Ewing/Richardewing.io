@@ -33,6 +33,6 @@ Refer to the official skill definition at [.agents/skills/master-directive/SKILL
 3. **Domain Synthesis Engines**: Dynamically activate specialized quality engines (REWS v1.0, Next.js Architecture, UI/UX Polish, SEO & Growth, Strategic Artifacts).
 4. **War Room Research Swarms**: Deploy concurrent subagent swarms (`invoke_subagent`) in isolated git worktrees (`branch` mode) to audit gaps and remediate before feature construction.
 5. **4-Pass QA & Self-Healing Protocol**: Execute 4-tier closed-loop QA (Unit, Integration, Domain Rules, Build/Runtime). Fix root causes empirically; never mask symptoms.
-6. **Live Production Validation & Hygiene**: Validate live deployments (`npm run build`, live pings) and maintain zero root clutter by routing temporary outputs to `.scratch/`.
+6. **Live Production Validation, Auto-Push & Hygiene**: Validate live deployments (`npm run build`). AUTOMATICALLY execute `git add -A`, `git commit`, and `git push origin main` for every code/content change without requiring user prompting. Verify `git status` is clean before declaring task completion, and maintain zero root clutter by routing temporary outputs to `.scratch/`.
 
 
