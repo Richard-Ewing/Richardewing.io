@@ -41,6 +41,12 @@ He is the founder of [Exogram](https://exogram.ai), the execution control plane 
 
 He also operates the **Runtime Infrastructure Catalog** — 15 deployable governance modules for Claude Code, Cursor, Windsurf, and agentic engineering systems.
 
+## Creator Partnerships & Audience Reach
+
+- **LinkedIn Creator Network (11,141 Followers)**: Verified network of 11,141 technology leaders, software engineers, and enterprise executives (+49% YoY growth). Generates 47,800+ annual impressions across senior decision-makers (67% Senior/Director/CXO) in tech hubs like Seattle (25%), SF Bay Area (8%), and NYC (5%). Top company followers include Amazon (2%), Microsoft (2%), Google (1%), AWS (1%), and Meta (1%). https://www.richardewing.io/partner
+- **The AI Economist Newsletter Column (1,366 Subscribers)**: High-intent executive column focused on product economics, AI inference unit economics, and R&D capital allocation. Read by Product Managers (7%), Recruiters (6%), Founders (4%), and PM Directors (2%).
+- **Booking & Sponsorship Storefront**: Browse slots and book directly on Passionfroot: https://www.passionfroot.me/richard-ewing
+
 ## Advisory Services & Pricing
 
 ### Standalone Diagnostics

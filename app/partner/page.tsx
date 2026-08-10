@@ -33,8 +33,92 @@ const audienceSegments = [
 ];
 
 export default function PartnerPage() {
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@graph': [
+            {
+                '@type': 'WebPage',
+                '@id': 'https://www.richardewing.io/partner#webpage',
+                'url': 'https://www.richardewing.io/partner',
+                'name': 'Partner with Richard Ewing: Newsletter, Sponsored Creator Posts & Speaking',
+                'description': 'Sponsor or collaborate with Richard Ewing on AI advisory, speaking, or newsletter placements. Verified reach of 11,141+ LinkedIn followers and 1,366 newsletter subscribers.',
+                'breadcrumb': {
+                    '@type': 'BreadcrumbList',
+                    'itemListElement': [
+                        { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.richardewing.io' },
+                        { '@type': 'ListItem', 'position': 2, 'name': 'Partnerships & Speaking', 'item': 'https://www.richardewing.io/partner' }
+                    ]
+                }
+            },
+            {
+                '@type': 'Person',
+                '@id': 'https://www.richardewing.io/#person',
+                'name': 'Richard Ewing',
+                'jobTitle': 'AI Economist & Founder',
+                'worksFor': { '@type': 'Organization', 'name': 'Exogram', 'url': 'https://exogram.ai' },
+                'url': 'https://www.richardewing.io',
+                'sameAs': [
+                    'https://www.linkedin.com/in/richard-ewing-mba',
+                    'https://www.passionfroot.me/richard-ewing'
+                ],
+                'knowsAbout': [
+                    'AI Economics',
+                    'R&D Capital Allocation',
+                    'Technical Debt Quantification',
+                    'Product Debt Index',
+                    'AI Agent Governance',
+                    'Developer Advocacy',
+                    'Enterprise Software Architecture'
+                ]
+            },
+            {
+                '@type': 'OfferCatalog',
+                '@id': 'https://www.richardewing.io/partner#catalog',
+                'name': 'Richard Ewing Creator & Advisory Partnerships',
+                'itemListElement': [
+                    {
+                        '@type': 'Offer',
+                        'itemOffered': {
+                            '@type': 'Service',
+                            'name': 'Sponsored LinkedIn Creator Posts',
+                            'description': 'Native sponsored posts and carousel deep-dives reaching 11,141+ technology leaders across Amazon, Microsoft, Meta, Google, and AWS.'
+                        }
+                    },
+                    {
+                        '@type': 'Offer',
+                        'itemOffered': {
+                            '@type': 'Service',
+                            'name': 'The AI Economist Newsletter Sponsorship',
+                            'description': 'Dedicated column placement in The AI Economist newsletter column with 1,366 verified executive and technical subscribers.'
+                        }
+                    },
+                    {
+                        '@type': 'Offer',
+                        'itemOffered': {
+                            '@type': 'Service',
+                            'name': 'Keynote Speaking & Panel Moderation',
+                            'description': 'Executive keynote talks and moderation on engineering economics, R&D capital allocation, and technical insolvency.'
+                        }
+                    },
+                    {
+                        '@type': 'Offer',
+                        'itemOffered': {
+                            '@type': 'Service',
+                            'name': 'Product & Developer Tool Technical Reviews',
+                            'description': 'System-level technical audits and written evaluations of developer platforms, AI tools, and runtime infrastructure.'
+                        }
+                    }
+                ]
+            }
+        ]
+    };
+
     return (
         <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <div className="page-container max-w-4xl mx-auto">
                 
                 {/* Breadcrumb */}
