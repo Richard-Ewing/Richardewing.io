@@ -84,7 +84,7 @@ const Hero = () => {
                             <div>
                                 <span className="text-[10px] font-mono font-bold text-zinc-400 uppercase tracking-widest block mb-1">Audience Reach</span>
                                 <p className="text-zinc-600 text-xs font-medium leading-relaxed">
-                                    <span className="font-bold text-zinc-900">10,845</span> LinkedIn followers · <span className="font-bold text-zinc-900">1,362</span> newsletter subscribers · <span className="font-bold text-zinc-900">778</span> AI search citations
+                                    <span className="font-bold text-zinc-900">11,141</span> LinkedIn followers · <span className="font-bold text-zinc-900">1,366</span> newsletter subscribers · <span className="font-bold text-zinc-900">778</span> AI search citations
                                 </p>
                             </div>
                             <div>

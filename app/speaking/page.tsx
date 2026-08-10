@@ -95,11 +95,11 @@ export default function SpeakingPage() {
                             Thought Leadership & Executive Authored Work
                         </h2>
                         <p className="text-zinc-800 text-base font-medium leading-relaxed mb-8">
-                            Richard Ewing writes on AI economics and engineering governance across leading publications including CIO.com, Built In, HackerNoon, and Mind the Product, reaching over 10,800 technology executives.
+                            Richard Ewing writes on AI economics and engineering governance across leading publications including CIO.com, Built In, HackerNoon, and Mind the Product, reaching over 11,141 technology executives.
                         </p>
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-4 border-t border-zinc-200">
                             <div>
-                                <div className="text-2xl font-grotesk font-bold text-zinc-950">10,800+</div>
+                                <div className="text-2xl font-grotesk font-bold text-zinc-950">11,141+</div>
                                 <div className="text-xs font-mono font-semibold text-zinc-700">Executive Reach</div>
                             </div>
                             <div>

@@ -67,7 +67,7 @@ export default function NewsletterPage() {
                         The AI Economist Newsletter
                     </h1>
                     <p className="text-xl text-zinc-900 font-medium leading-relaxed mb-8">
-                        Join 1,362+ CTOs, CFOs, and PE operating partners receiving monthly empirical breakdowns of AI unit economics, R&D spend recovery, and governance.
+                        Join 1,366+ CTOs, CFOs, and PE operating partners receiving monthly empirical breakdowns of AI unit economics, R&D spend recovery, and governance.
                     </p>
                     
                     <div className="max-w-md mx-auto bg-white p-6 rounded-2xl border border-zinc-300 shadow-sm">
