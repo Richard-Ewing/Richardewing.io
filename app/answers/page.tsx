@@ -10,8 +10,26 @@ export const metadata: Metadata = {
 };
 
 export default function AnswersHubPage() {
+    const faqSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: SPOKE_MATRIX.flatMap((topic) =>
+            Object.values(topic.personas).flatMap((queries) =>
+                queries ? queries.map((q) => ({
+                    '@type': 'Question',
+                    name: q.questionHeadline,
+                    acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: `Detailed answer and analytical breakdown available on the Richard Ewing AI Economics Knowledge Base for ${q.questionHeadline}.`,
+                    },
+                })) : []
+            )
+        ).slice(0, 30),
+    };
+
     return (
         <div className="max-w-4xl mx-auto pt-12 pb-24 px-6 relative z-10">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
             <header className="mb-16 border-b border-zinc-400 pb-12">
                 <span className="text-cyan-900 font-extrabold font-mono text-xs uppercase tracking-widest mb-4 block">Knowledge Base</span>
                 <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6 leading-tight">

@@ -7,6 +7,7 @@ import PrincipalContent from '../components/principal-content';
 import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 import FAQItem from '@/app/components/FAQItem';
 import AsSeenInBar from '@/components/social-proof/AsSeenInBar';
+import ProductBridgeCard from '@/app/components/ProductBridgeCard';
 
 export const metadata: Metadata = {
     title: 'Richard Ewing Biography Exogram Founder | Richard Ewing',
@@ -93,6 +94,11 @@ export default function AboutPage() {
                             View Chronological Research Timeline &rarr;
                         </Link>
                     </div>
+                </section>
+
+                {/* Section 3.5: Companies Founded by Richard Ewing */}
+                <section className="mb-16 border-b border-zinc-300 pb-12">
+                    <ProductBridgeCard />
                 </section>
 
                 {/* Section 4: Background (Biographical Details) */}

@@ -296,10 +296,12 @@ export const articleSchemaTemplate = (title: string, description: string, url: s
     },
     "publisher": {
         "@type": "Organization",
-        "name": "Richard Ewing - AI Economist",
+        "@id": "https://www.richardewing.io/#organization",
+        "name": "Richard Ewing Advisory",
+        "url": "https://www.richardewing.io",
         "logo": {
             "@type": "ImageObject",
-            "url": "https://www.richardewing.io/images/logo.png"
+            "url": "https://www.richardewing.io/assets/headshot.jpg"
         }
     }
 });

@@ -68,13 +68,16 @@ export default function ExogramPage() {
 
                         {/* Hero CTAs */}
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-                            <Link href="/exogram/demo" className="relative overflow-hidden inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-cyan-600 text-white font-bold hover:bg-cyan-500 transition-all shadow-[0_0_20px_rgba(8,145,178,0.3)] hover:shadow-[0_0_30px_rgba(8,145,178,0.5)] text-sm">
+                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="relative overflow-hidden inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold transition-all shadow-[0_0_25px_rgba(168,85,247,0.4)] hover:shadow-[0_0_35px_rgba(168,85,247,0.6)] text-sm uppercase tracking-wider">
+                                Launch Exogram.ai Platform ↗
+                            </a>
+                            <Link href="/exogram/demo" className="relative overflow-hidden inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-cyan-600 text-white font-bold hover:bg-cyan-500 transition-all text-sm uppercase tracking-wider">
                                 Request Live Exogram Demo
                                 <ArrowRight className="w-4 h-4" />
                             </Link>
-                            <Link href="/tools/hallucination-tax" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white border border-zinc-400 text-zinc-950 font-semibold hover:bg-zinc-100 transition-colors text-sm">
+                            <Link href="/tools/hallucination-tax" className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white border border-zinc-400 text-zinc-950 font-semibold hover:bg-zinc-100 transition-colors text-sm uppercase tracking-wider">
                                 <DollarSign className="w-4 h-4 text-emerald-600" />
-                                Calculate Your Hallucination Tax
+                                Calculate Hallucination Tax
                             </Link>
                         </div>
 
