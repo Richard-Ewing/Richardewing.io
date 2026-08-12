@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
 import AuditInterviewLanding from './content';
 
 export const metadata: Metadata = {
-    title: 'Does This Engineer Actually Th & Strategy Diagnostics | Richard Ewing',
-    description: 'Does This Engineer Actually Th provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Audit Interview Hiring Assessment',
+    description: 'Interactive hiring assessment for the AI age. Test engineering candidate judgment, trade-offs, and system architecture thinking.',
     alternates: {
         canonical: 'https://www.richardewing.io/tools/audit-interview',
     },

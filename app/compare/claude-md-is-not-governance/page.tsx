@@ -5,8 +5,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { Shield, AlertTriangle, Layers } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'CLAUDE.md Is Not Governance & Strategy Diagnostics | Richard Ewing',
-    description: 'CLAUDE.md Is Not Governance provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'CLAUDE.md Is Not Governance',
+    description: 'Why markdown instruction files fail as AI governance. Compare static prompt hints vs deterministic runtime enforcement.',
     keywords: ['CLAUDE.md not working', 'CLAUDE.md ignored', 'CLAUDE.md bypassed', '.cursorrules ignored', '.cursorrules not working', 'system prompt bypass', 'AI agent ignores rules', 'AI agent ignores instructions', 'AI governance vs system prompts', 'Claude Code ignoring instructions', 'AI coding agent disobeys', 'AI rules suggestions not constraints'],
     openGraph: {
         title: 'CLAUDE.md Is Not Governance — Why System Prompts Fail',

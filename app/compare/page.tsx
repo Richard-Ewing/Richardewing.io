@@ -4,8 +4,8 @@ import compareCategorized from '../lib/compare-categorized.json';
 import pseoMatrix from '../lib/pseo-matrix.json';
 
 export const metadata: Metadata = {
-    title: 'Architectural & Platform Comparisons | Richard Ewing',
-    description: 'Compare AI coding platforms, runtime governance architectures, and engineering metrics. Objective cost, risk, and ROI evaluations.',
+    title: 'Engineering Tool & Metric Comparisons',
+    description: 'Head-to-head architectural comparisons of AI tools, engineering metrics, and governance platforms. Objective cost, risk, and ROI evaluations.',
     alternates: { canonical: 'https://www.richardewing.io/compare' },
     openGraph: {
         title: 'Architectural & Platform Comparisons | Richard Ewing',

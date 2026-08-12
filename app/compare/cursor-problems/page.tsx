@@ -6,8 +6,8 @@ import ExogramBridge from '@/components/ExogramBridge';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Why Does Cursor Keep Rewriting & Strategy Diagnostics | Richard Ewing',
-    description: 'Why Does Cursor Keep Rewriting provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Cursor IDE Problems & Fixes (2026)',
+    description: 'Analysis of Cursor repository drift, file rewrites, and context loss issues — and how to fix them.',
     keywords: ['Cursor problems', 'Cursor problems 2026', 'Cursor AI complaints', 'Cursor credits expensive', 'Cursor rewriting files', 'Cursor alternative', 'Cursor crashes', 'Cursor ignores rules', '.cursorrules not working Cursor', 'Cursor AI review', 'Cursor vs governance', 'left Cursor', 'switched from Cursor'],
     openGraph: {
         title: 'Cursor Problems 2026 — Real User Complaints & Governance Solutions',

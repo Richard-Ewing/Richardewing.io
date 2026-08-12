@@ -33,17 +33,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const query = queries.find(q => q.questionSlug === p.questionSlug);
     if (!query) return {};
 
-    const ogTitle = `${query.questionHeadline} | ${p.persona.replace('-', ' ').toUpperCase()} Guide`;
-    const safeOgTitle = ogTitle.substring(0, 55) + (ogTitle.length > 55 ? '...' : '');
+    const headlineTrimmed = query.questionHeadline.length > 38 ? query.questionHeadline.slice(0, 37) + '…' : query.questionHeadline;
 
     return {
-        title: safeOgTitle,
+        title: headlineTrimmed,
         description: `Forensic R&D analysis on: ${query.questionHeadline.slice(0, 80)}. Spot margin leaks and engineering execution risks.`,
         alternates: {
             canonical: `https://www.richardewing.io/answers/${p.topic}/${p.persona}/${p.questionSlug}`,
         },
         openGraph: {
-            title: safeOgTitle,
+            title: headlineTrimmed,
             description: `Executive breakdown and financial execution models for: ${query.questionHeadline}`,
             url: `https://www.richardewing.io/answers/${p.topic}/${p.persona}/${p.questionSlug}`,
             siteName: 'Richard Ewing',
@@ -53,13 +52,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                     url: 'https://www.richardewing.io/assets/images/headshot.jpg',
                     width: 1200,
                     height: 630,
-                    alt: safeOgTitle,
+                    alt: headlineTrimmed,
                 }
             ],
         },
         twitter: {
             card: 'summary_large_image',
-            title: safeOgTitle,
+            title: headlineTrimmed,
             description: `Executive breakdown and financial execution models for: ${query.questionHeadline}`,
             images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
         }

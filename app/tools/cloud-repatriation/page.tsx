@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
 import CloudContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Is AWS Eating Your EBITDA? & Strategy Diagnostics | Richard Ewing',
-    description: 'Is AWS Eating Your EBITDA? provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Cloud Repatriation Calculator',
+    description: 'Calculate bare-metal repatriation ROI, egress savings, and EBITDA margin recovery from cloud providers.',
     keywords: [
         'Cloud repatriation calculator',
         'AWS vs Bare Metal',

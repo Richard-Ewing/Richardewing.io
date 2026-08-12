@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
 import RagChunkingContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Why Is Your RAG Returning Wron & Strategy Diagnostics | Richard Ewing',
-    description: 'Why Is Your RAG Returning Wron provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'RAG Architecture Chunking Engine',
+    description: 'Visualize vector embedding strategies, optimize text chunking parameters, and prevent semantic context loss.',
     keywords: [
         'RAG chunking strategy',
         'Semantic search visualizer',

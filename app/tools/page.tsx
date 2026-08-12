@@ -3,7 +3,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import ToolsContent from './tools-content';
 
 export const metadata: Metadata = {
-    title: 'Free AI Cost Attribution & Tok & Strategy Diagnostics | Richard Ewing',
+    title: 'Free AI Cost & Token Diagnostics',
     description: 'Free AI Cost Attribution & Tok provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: [
         'technical debt calculator', 'product debt index', 'free engineering tools',

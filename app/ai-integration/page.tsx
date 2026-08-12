@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { Brain, TrendingUp, Shield, Clock, CheckCircle, ArrowRight, AlertTriangle, DollarSign, Zap, Target, Calendar, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'AI Integration System & Enterprise Framework | Richard Ewing',
-    description: 'The AI Integration System is a complete enterprise governance operating system. Deploy 18 diagnostic tools and audit frameworks instantly.',
+    title: 'Enterprise AI Integration System',
+    description: 'The AI Integration System is a complete enterprise governance operating system. Deploy diagnostic tools and audit frameworks.',
     keywords: ['AI integration consulting', 'AI for small business', 'AI for my business', 'how to implement AI', 'AI strategy consulting', 'AI roadmap for business', 'AI consultant small business', 'AI readiness assessment', 'where to start with AI', 'AI advisor', 'fractional AI officer', 'AI audit for business', 'AI implementation help', 'overwhelmed by AI', 'falling behind on AI', 'AI anxiety business', 'don\'t know where to start with AI', 'AI maturity assessment', 'AI integration help', 'do I need AI for my business', 'which AI tools should I use', 'AI project failed', 'wasted money on AI', 'AI consulting too slow', 'AI consultant just PowerPoint', 'AI consulting not worth it', 'AI consulting too expensive', 'fast AI strategy', 'AI roadmap 48 hours'],
     openGraph: {
         title: 'AI Integration System & Enterprise Framework | Richard Ewing',

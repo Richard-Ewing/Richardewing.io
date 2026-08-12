@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import ArticlesPage from './content';
 
 export const metadata: Metadata = {
-    title: 'Forensic Engineering Research & Strategy Diagnostics | Richard Ewing',
-    description: 'Forensic Engineering Research provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Forensic AI & Engineering Research',
+    description: 'Published research, essays, and articles on AI unit economics, R&D capital efficiency, and technical debt.',
     keywords: [
         'AI economist articles',
         'R&D capital efficiency',

@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
 import EVSETool from './content';
 
 export const metadata: Metadata = {
-    title: 'What Is Your SaaS Actually Wor & Strategy Diagnostics | Richard Ewing',
-    description: 'What Is Your SaaS Actually Wor provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'SaaS Valuation Engine (EV-SE)',
+    description: 'Model how technical debt, execution risk, and unmanaged AI complexity impact SaaS enterprise valuation.',
     keywords: [
         'enterprise value calculator',
         'SaaS valuation tool',

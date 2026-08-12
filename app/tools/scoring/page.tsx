@@ -1,11 +1,10 @@
 import { Metadata } from 'next';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
 import AuditInterview from './content';
 
 export const metadata: Metadata = {
+    title: 'AI Engineering Audit Dashboard',
+    description: 'Score engineering candidate performance, evaluate architectural trade-offs, and generate hiring decision reports.',
     alternates: { canonical: 'https://www.richardewing.io/tools/scoring' },
-    title: `Stop Hiring Engineers Who Can & Strategy Diagnostics | Richard Ewing't Think | Audit Scoring Dashboard`,
-    description: 'Stop Hiring Engineers Who Can provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
 };
 
 export default function Page() {

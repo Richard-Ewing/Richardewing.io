@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Spot Execution Risk & Margin E & Strategy Diagnostics | Richard Ewing',
-    description: 'Spot Execution Risk & Margin E provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Boardroom Risk Matrix',
+    description: 'Aggregate software execution risk, technical debt, and AI valuation impact into an executive dashboard.',
     keywords: ['C-Suite Board Room', 'Executive Dashboard', 'CTO Dashboard', 'CFO FinOps Dashboard', 'Enterprise Valuation Metrics'],
     openGraph: {
         title: 'C-Suite Board Room | Executive Dashboards',

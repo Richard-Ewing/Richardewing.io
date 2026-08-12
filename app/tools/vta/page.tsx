@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
 import VTATool from './content';
 
 export const metadata: Metadata = {
-    title: 'How Much Does AI Hallucination & Strategy Diagnostics | Richard Ewing',
-    description: `How Much Does AI Hallucination provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.'re losing.`,
+    title: 'AI Volatility Tax (VTA) Calculator',
+    description: 'Quantify the hidden human-in-the-loop validation costs destroying your AI feature margins.',
     keywords: [
         'AI Volatility Tax',
         'human-in-the-loop cost',

@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
 import DueDiligenceTool from './content';
 
 export const metadata: Metadata = {
-    title: 'Is This Acquisition Full of Hi & Strategy Diagnostics | Richard Ewing',
-    description: 'Is This Acquisition Full of Hi provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'AI Tech Due Diligence Engine',
+    description: 'Forensic technical due diligence engine for private equity, VCs, and acquirers evaluating software & AI targets.',
     keywords: [
         'engineering due diligence',
         'technical due diligence',
@@ -22,11 +21,6 @@ export const metadata: Metadata = {
         description: 'Instantly scan acquisition targets for critical technical debt before you write the check.',
         url: 'https://www.richardewing.io/tools/due-diligence',
         type: 'website',
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Due Diligence Scanner | Richard Ewing',
-        description: 'Evaluate technical debt, architecture, and team structure before M&A execution.',
     },
 };
 

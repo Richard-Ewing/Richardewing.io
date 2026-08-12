@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
 import ShadowContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Are Employees Leaking Data to & Strategy Diagnostics | Richard Ewing',
-    description: 'Are Employees Leaking Data to provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Shadow AI Risk Scanner',
+    description: 'Scan employee AI app usage, identify unauthorized LLM endpoints, and prevent IP data leakage.',
     keywords: [
         'Shadow AI risk calculator',
         'LLM data leakage tool',

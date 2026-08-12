@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'APER vs LinearB & Strategy Diagnostics | Richard Ewing',
-    description: 'APER vs LinearB provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'APER vs LinearB Engineering Metrics',
+    description: 'Compare APER financial translation vs LinearB DORA & cycle-time analytics for engineering leadership.',
     keywords: ['linearb alternative', 'engineering metrics tool', 'engineering judgment assessment', 'aper vs linearb', 'developer productivity measurement'],
     alternates: { canonical: 'https://www.richardewing.io/compare/aper-vs-linearb' },
     openGraph: { title: 'APER vs LinearB — Judgment vs Activity', description: 'LinearB tracks what engineers did. APER evaluates whether they made economically sound decisions.', url: 'https://www.richardewing.io/compare/aper-vs-linearb', type: 'article' },

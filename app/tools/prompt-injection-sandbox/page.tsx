@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
 import PromptInjectionContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Can Your AI Be Jailbroken? & Strategy Diagnostics | Richard Ewing',
-    description: 'Can Your AI Be Jailbroken? provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Prompt Injection Intrusion Sandbox',
+    description: 'Evaluate system prompt defensibility, test RAG security boundaries, and sandbox prompt injection attacks.',
     keywords: [
         'Prompt Injection Scanner',
         'LLM Red Teaming',

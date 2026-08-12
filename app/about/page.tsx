@@ -10,7 +10,7 @@ import AsSeenInBar from '@/components/social-proof/AsSeenInBar';
 import ProductBridgeCard from '@/app/components/ProductBridgeCard';
 
 export const metadata: Metadata = {
-    title: 'Richard Ewing Biography Exogram Founder | Richard Ewing',
+    title: 'About Richard Ewing — AI Economist',
     description: 'Richard Ewing is an enterprise AI Economist and the founder of Exogram. Audit production AI security and build PE-backed product economics.',
     alternates: {
         canonical: 'https://www.richardewing.io/about',

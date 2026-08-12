@@ -5,8 +5,8 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import ProductBridgeCard from '@/app/components/ProductBridgeCard';
 
 export const metadata: Metadata = {
-  title: 'Exogram vs LangChain Guardrails — Deterministic AI Governance | Richard Ewing',
-  description: 'Compare Exogram deterministic AI governance runtime vs LangChain guardrails. See why pre-execution admissibility beats prompt wrappers for enterprise safety.',
+  title: 'Exogram vs LangChain Governance',
+  description: 'Compare enterprise runtime governance vs agentic orchestration frameworks.',
   alternates: { canonical: 'https://www.richardewing.io/compare/exogram-vs-langchain' },
   openGraph: {
     title: 'Exogram vs LangChain Guardrails Comparison',

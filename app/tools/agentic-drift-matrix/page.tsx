@@ -7,8 +7,8 @@ import ShineBorder from '@/components/magicui/shine-border';
 import { BorderBeam } from '@/components/magicui/border-beam';
 
 export const metadata: Metadata = {
-    title: 'Stop AI Swarms From Hallucinat & Strategy Diagnostics | Richard Ewing',
-    description: 'Stop AI Swarms From Hallucinat provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Agentic Drift Risk Matrix',
+    description: 'Measure the exact turn-limit where AI agent state degrades, context rots, and hallucination rates increase.',
     keywords: [
         'Agentic Drift',
         'AI Reliability',

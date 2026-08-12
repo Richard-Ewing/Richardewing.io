@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
 import FTEContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Should You Replace That Role W & Strategy Diagnostics | Richard Ewing',
-    description: 'Should You Replace That Role W provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'AI FTE Displacement Simulator',
+    description: 'Calculate the cost-benefit, risk profile, and margin expansion of automating operational roles with AI agents.',
     keywords: [
         'AI agent ROI calculator',
         'Customer support automation cost',

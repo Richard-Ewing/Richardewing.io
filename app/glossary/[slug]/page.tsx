@@ -32,12 +32,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         return { robots: { index: false, follow: true } };
     }
 
-    const ogTitle = `What is ${term.title}? Definition & Economics | Richard Ewing`;
-    const safeOgTitle = ogTitle.substring(0, 55) + (ogTitle.length > 55 ? '...' : '');
+    const shortTermTitle = term.title.length > 25 ? term.title.slice(0, 24) + '…' : term.title;
+    const titleStr = `${shortTermTitle} — Definition`;
 
     return {
-        title: safeOgTitle,
-        description: term.definition.slice(0, 155).replace(/\n/g, ' ') + '...',
+        title: titleStr,
+        description: term.definition.slice(0, 150).replace(/\n/g, ' ') + '...',
         robots: {
             index: true,
             follow: true
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ],
         alternates: { canonical: `https://www.richardewing.io/glossary/${slug}` },
         openGraph: {
-            title: safeOgTitle,
+            title: titleStr,
             description: term.definition.slice(0, 155).replace(/\n/g, ' '),
             url: `https://www.richardewing.io/glossary/${slug}`,
             siteName: 'Richard Ewing',
@@ -61,13 +61,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                     url: 'https://www.richardewing.io/assets/images/headshot.jpg',
                     width: 1200,
                     height: 630,
-                    alt: safeOgTitle,
+                    alt: titleStr,
                 }
             ],
         },
         twitter: {
             card: 'summary_large_image',
-            title: safeOgTitle,
+            title: titleStr,
             description: term.definition.slice(0, 155).replace(/\n/g, ' '),
             images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
         }

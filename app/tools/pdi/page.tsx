@@ -3,8 +3,8 @@ import DiagnosticCTA from '@/app/components/DiagnosticCTA';
 import PDITool from './content';
 
 export const metadata: Metadata = {
-    title: 'Director Alert: Calculate Your & Strategy Diagnostics | Richard Ewing',
-    description: 'Director Alert: Calculate Your provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Product Debt Index (PDI) Calculator',
+    description: 'Quantify software technical debt in dollar terms, calculate your Technical Insolvency Date, and report EBITDA impact to the board.',
     keywords: [
         'product debt index',
         'technical debt calculator',

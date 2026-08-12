@@ -3,8 +3,8 @@ import DiagnosticCTA from '@/app/components/DiagnosticCTA';
 import AUEBTool from './content';
 
 export const metadata: Metadata = {
-    title: 'CFO Alert: Calculate Your AI U & Strategy Diagnostics | Richard Ewing',
-    description: 'CFO Alert: Calculate Your AI U provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'AI Unit Economics Benchmark (AUEB)',
+    description: 'Calculate AI feature profitability per interaction, audit inference token costs, and prevent SaaS gross margin collapse.',
     keywords: [
         'AI unit economics',
         'LLM cost calculator',

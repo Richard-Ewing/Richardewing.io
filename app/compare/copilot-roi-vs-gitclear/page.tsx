@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Copilot ROI vs GitClear & Strategy Diagnostics | Richard Ewing',
-    description: 'Copilot ROI vs GitClear provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Copilot ROI vs GitClear Analytics',
+    description: 'Compare code churn and financial ROI metrics for GitHub Copilot across engineering teams.',
     keywords: ['gitclear alternative', 'jellyfish alternative', 'ai coding roi', 'vibe coding debt', 'copilot roi calculator', 'engineering intelligence vs economic impact'],
     alternates: { canonical: 'https://www.richardewing.io/compare/copilot-roi-vs-gitclear' },
     openGraph: { title: 'Copilot ROI vs GitClear — EBITDA vs LOC Generation', description: 'Why measuring code line output volume is a fatal metric for generative AI tools.', url: 'https://www.richardewing.io/compare/copilot-roi-vs-gitclear', type: 'article' },

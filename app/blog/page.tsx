@@ -3,21 +3,21 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import BlogContent from './blog-content';
 
 export const metadata: Metadata = {
-    title: 'Engineering Economics Blog R&D Capital Audit | Richard Ewing',
-    description: 'The engineering economics blog provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'AI & Engineering Economics Blog',
+    description: 'Forensic insights, case studies, and research breakdowns on AI unit economics, R&D capital allocation, and technical debt.',
     keywords: ['engineering economics blog', 'technical debt articles', 'AI cost analysis', 'R&D capital management', 'AI economics insights', 'CTO blog'],
     alternates: { canonical: 'https://www.richardewing.io/blog' },
     openGraph: {
-        title: 'Engineering Economics Blog R&D Capital Audit | Richard Ewing',
-        description: 'The engineering economics blog provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+        title: 'AI & Engineering Economics Blog',
+        description: 'Forensic insights, case studies, and research breakdowns on AI unit economics, R&D capital allocation, and technical debt.',
         url: 'https://www.richardewing.io/blog',
         type: 'website',
         images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Engineering Economics Blog R&D Capital Audit | Richard Ewing',
-        description: 'The engineering economics blog provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+        title: 'AI & Engineering Economics Blog',
+        description: 'Forensic insights, case studies, and research breakdowns on AI unit economics, R&D capital allocation, and technical debt.',
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     }
 };

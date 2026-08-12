@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
 import AgentRouterContent from './content';
 
 export const metadata: Metadata = {
-    title: 'Multi & Strategy Diagnostics | Richard Ewing',
-    description: 'Multi provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Agentic Router FinOps Emulator',
+    description: 'Simulate multi-agent token costs, optimize model routing, and determine break-even points for SLM vs LLM routing.',
     keywords: [
         'Agentic Workflow Simulator',
         'LLM Token Burn Rate Calculator',

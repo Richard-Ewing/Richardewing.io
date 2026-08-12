@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Audit Interview vs LeetCode & Strategy Diagnostics | Richard Ewing',
-    description: 'Audit Interview vs LeetCode provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Audit Interview vs LeetCode',
+    description: 'Why algorithmic LeetCode puzzles fail in the AI age. Compare system architecture evaluation vs syntax testing.',
     keywords: ['leetcode alternative', 'coding interview alternative', 'audit interview vs leetcode', 'engineering judgment assessment', 'hiring for AI age', 'beyond leetcode', 'audit interview protocol'],
     alternates: { canonical: 'https://www.richardewing.io/compare/audit-interview-vs-leetcode' },
     openGraph: { title: 'Audit Interview vs LeetCode — Judgment vs Speed', description: 'AI writes code. The scarce skill is catching what AI gets wrong. The Audit Interview tests that.', url: 'https://www.richardewing.io/compare/audit-interview-vs-leetcode', type: 'article' },

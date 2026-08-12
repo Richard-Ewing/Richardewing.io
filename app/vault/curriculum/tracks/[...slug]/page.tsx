@@ -8,9 +8,10 @@ import { getModule, getAllModuleSlugs, type CurriculumModule } from '@/lib/curri
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
     const { slug } = await params;
     const mod = getModule(slug.join('/'));
-    if (!mod) return { title: `Module Not Found: ${slug.join('/')} | Curriculum`, description: `The requested curriculum module at ${slug.join('/')} could not be found.` };
+    if (!mod) return { title: `Module Not Found: ${slug.join('/')}`, description: `Curriculum module ${slug.join('/')} not found.` };
+    const cleanModTitle = mod.title.length > 25 ? mod.title.slice(0, 24) + '…' : mod.title;
     return {
-        title: `${mod.moduleId}: ${mod.title} | Curriculum | Richard Ewing`,
+        title: `${mod.moduleId}: ${cleanModTitle}`,
         description: mod.description,
         robots: {
             index: true,

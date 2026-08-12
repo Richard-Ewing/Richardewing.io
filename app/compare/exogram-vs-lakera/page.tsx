@@ -5,8 +5,8 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import ProductBridgeCard from '@/app/components/ProductBridgeCard';
 
 export const metadata: Metadata = {
-  title: 'Exogram vs Lakera & Guardrails AI — Zero-Trust AI Enforcement | Richard Ewing',
-  description: 'Compare Exogram deterministic AI governance runtime vs Lakera Guard and Guardrails AI. Evaluate pre-execution admissibility vs post-hoc monitoring.',
+  title: 'Exogram vs Lakera Guard',
+  description: 'Compare deterministic runtime execution controls vs probabilistic prompt guardrails.',
   alternates: { canonical: 'https://www.richardewing.io/compare/exogram-vs-lakera' },
   openGraph: {
     title: 'Exogram vs Lakera & Guardrails AI Comparison',

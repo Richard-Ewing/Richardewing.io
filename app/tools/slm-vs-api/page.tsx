@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
 import SLMTool from './content';
 
 export const metadata: Metadata = {
-    title: 'Should You Self & Strategy Diagnostics | Richard Ewing',
-    description: 'Should You Self provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'SLM vs API Tradeoff Calculator',
+    description: 'Calculate the hardware break-even point for self-hosting Small Language Models vs proprietary cloud APIs.',
     keywords: [
         'SLM vs LLM',
         'OpenAI API cost calculator',

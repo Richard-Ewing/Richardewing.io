@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
 import APERTool from './content';
 
 export const metadata: Metadata = {
-    title: 'Are You Overstaffed or Underpe & Strategy Diagnostics | Richard Ewing',
-    description: 'Are You Overstaffed or Underpe provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'AI Provider Efficiency Ratio (APER)',
+    description: 'Calculate Revenue-Per-Engineer (APER) impact, evaluate team capacity, and benchmark engineering efficiency against stage benchmarks.',
     keywords: [
         'revenue per engineer',
         'engineering efficiency calculator',
@@ -27,7 +26,7 @@ export const metadata: Metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'APER Diagnostic | Richard Ewing',
-        description: 'Revenue Per Engineer calculator. Benchmark against Stripe, Figma, Linear. Free tool.',
+        description: 'Revenue Per Engineer benchmarking tool.',
     },
 };
 

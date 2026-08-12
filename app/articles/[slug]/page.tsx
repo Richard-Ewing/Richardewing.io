@@ -25,8 +25,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         };
     }
 
+    const cleanTitle = article.title.length > 38 ? article.title.slice(0, 37) + '…' : article.title;
+
     return {
-        title: `${article.title} | Richard Ewing`,
+        title: cleanTitle,
         description: article.description,
         keywords: [
             'Richard Ewing',
