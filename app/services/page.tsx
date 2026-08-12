@@ -10,6 +10,8 @@ import { ScrollReveal } from '@/components/magicui/scroll-reveal';
 import { COMMERCIAL_OFFERS } from '@/lib/platform/offers/offers';
 import AsSeenInBar from '@/components/social-proof/AsSeenInBar';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
+import ProductBridgeCard from '@/app/components/ProductBridgeCard';
+import PlainEnglishTooltip from '@/app/components/PlainEnglishTooltip';
 
 export const metadata: Metadata = {
     title: 'AI Advisory Services - Diagnostics, Audits & Cost Governance | Richard Ewing',
@@ -308,6 +310,11 @@ export default function ServicesPage() {
                             </li>
                         </ul>
                     </section>
+                </ScrollReveal>
+
+                {/* Section 7.5: Ecosystem Product Bridge */}
+                <ScrollReveal>
+                    <ProductBridgeCard />
                 </ScrollReveal>
 
                 {/* Section 8: FAQ */}

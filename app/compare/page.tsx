@@ -17,6 +17,27 @@ export const metadata: Metadata = {
 
 const curattedComparisons = [
     {
+        title: 'Exogram vs LangChain Guardrails',
+        subtitle: 'Deterministic Runtime vs Prompt Wrapper',
+        description: 'Why pre-execution zero-trust gateways outperform probabilistic prompt wrappers for enterprise safety.',
+        href: '/compare/exogram-vs-langchain',
+        color: 'cyan'
+    },
+    {
+        title: 'Exogram vs Lakera & Guardrails AI',
+        subtitle: 'Runtime Interception vs Observability',
+        description: 'Pre-execution admissibility runtime vs post-hoc LLM monitoring and content moderation tools.',
+        href: '/compare/exogram-vs-lakera',
+        color: 'purple'
+    },
+    {
+        title: 'Advisory vs Big-4 Tech Due Diligence',
+        subtitle: 'Empirical Audit vs Checklist Advisory',
+        description: 'Forensic codebase and R&D capital audits vs survey-based management checklists.',
+        href: '/compare/advisory-vs-big4',
+        color: 'indigo'
+    },
+    {
         title: 'Claude Code vs Cursor Governance',
         subtitle: 'Runtime Gating vs Prompt Boundaries',
         description: 'Why deterministic runtime gating outperforms probabilistic prompt boundaries for enterprise AI development.',
@@ -31,32 +52,11 @@ const curattedComparisons = [
         color: 'cyan'
     },
     {
-        title: 'Claude Context Rot Mitigation',
-        subtitle: 'Bounded Cognition Engines',
-        description: 'Prevent Claude from forgetting core architecture in long sessions using semantic reset checkpoints.',
-        href: '/compare/claude-context-rot-mitigation',
-        color: 'indigo'
-    },
-    {
-        title: 'Cursor Repository Drift Prevention',
-        subtitle: 'Ghost Dependencies & Scope Creep',
-        description: 'Stop Cursor from rewriting unrelated files and creating ghost dependencies.',
-        href: '/compare/cursor-repository-drift-prevention',
-        color: 'purple'
-    },
-    {
         title: 'Product Debt Index vs SonarQube',
         subtitle: 'Financial vs Technical Debt',
         description: 'Comparing code quality tools against dollar-denominated financial debt models.',
         href: '/compare/pdi-vs-sonarqube',
         color: 'emerald'
-    },
-    {
-        title: 'AI Unit Economics vs AWS Cost Explorer',
-        subtitle: 'Inference Unit Margins',
-        description: 'Why raw cloud billing fails to measure AI feature gross margin erosion.',
-        href: '/compare/aueb-vs-aws-cost-explorer',
-        color: 'cyan'
     }
 ];
 

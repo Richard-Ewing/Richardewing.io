@@ -3,6 +3,8 @@ import { Inter, Space_Grotesk, JetBrains_Mono, Playfair_Display } from 'next/fon
 import './globals.css';
 import Navigation from './components/Navigation';
 import { Footer } from './components/footer';
+import ExitIntentModal from './components/ExitIntentModal';
+import CookieConsent from './components/CookieConsent';
 import { personSchema, professionalServiceSchema } from './lib/schemas';
 import { homepageKeywords } from './lib/keywords';
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -206,6 +208,8 @@ export default function RootLayout({
           </main>
 
           <Footer />
+          <ExitIntentModal />
+          <CookieConsent />
 
           {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
             <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />

@@ -126,6 +126,63 @@ export default function StartHerePage() {
                     </p>
                 </div>
 
+                {/* 5-Second Persona Decision Tree */}
+                <section className="mb-16 bg-zinc-950 text-white border border-zinc-800 rounded-3xl p-8 shadow-xl relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 blur-3xl rounded-full pointer-events-none" />
+                    <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest block mb-2">
+                        5-Second Onboarding Selector
+                    </span>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-grotesk mb-6 text-white">
+                        Which Describes Your Current Operational Role?
+                    </h2>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <Link href="/services" className="group p-5 bg-zinc-900 border border-zinc-800 rounded-2xl hover:border-cyan-500 transition-all flex flex-col justify-between">
+                            <div>
+                                <span className="text-[10px] font-mono font-bold text-cyan-400 uppercase tracking-wider block mb-1">CFO / Finance Leader</span>
+                                <p className="text-sm font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">"I need to audit R&D spend and measure AI unit ROI."</p>
+                                <p className="text-xs text-zinc-400 leading-relaxed">Quantify engineering capital efficiency, calculate your Technical Insolvency Date, and run R&D capital audits.</p>
+                            </div>
+                            <span className="text-xs font-mono font-bold text-cyan-400 mt-4 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Explore CFO Solutions &rarr;
+                            </span>
+                        </Link>
+
+                        <Link href="/for-ctos" className="group p-5 bg-zinc-900 border border-zinc-800 rounded-2xl hover:border-indigo-500 transition-all flex flex-col justify-between">
+                            <div>
+                                <span className="text-[10px] font-mono font-bold text-indigo-400 uppercase tracking-wider block mb-1">CTO / VP Engineering</span>
+                                <p className="text-sm font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">"I need to govern AI agents and eliminate tech debt."</p>
+                                <p className="text-xs text-zinc-400 leading-relaxed">Enforce runtime governance via Exogram, baseline Product Debt Index (PDI), and structure team velocity.</p>
+                            </div>
+                            <span className="text-xs font-mono font-bold text-indigo-400 mt-4 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Explore CTO Solutions &rarr;
+                            </span>
+                        </Link>
+
+                        <Link href="/for-boards" className="group p-5 bg-zinc-900 border border-zinc-800 rounded-2xl hover:border-amber-500 transition-all flex flex-col justify-between">
+                            <div>
+                                <span className="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-wider block mb-1">Board Member / PE Partner</span>
+                                <p className="text-sm font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">"I need technical due diligence and capital risk oversight."</p>
+                                <p className="text-xs text-zinc-400 leading-relaxed">Access enterprise scenario modeling, portfolio risk assessments, and fractional CPO/CTO retainers.</p>
+                            </div>
+                            <span className="text-xs font-mono font-bold text-amber-400 mt-4 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Explore Board Solutions &rarr;
+                            </span>
+                        </Link>
+
+                        <Link href="/careerwin" className="group p-5 bg-zinc-900 border border-zinc-800 rounded-2xl hover:border-purple-500 transition-all flex flex-col justify-between">
+                            <div>
+                                <span className="text-[10px] font-mono font-bold text-purple-400 uppercase tracking-wider block mb-1">Senior Engineer / Leader</span>
+                                <p className="text-sm font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">"I need market role benchmarks and leveling strategy."</p>
+                                <p className="text-xs text-zinc-400 leading-relaxed">Weaponize career intelligence, map Staff/Principal scope, and negotiate data-backed compensation.</p>
+                            </div>
+                            <span className="text-xs font-mono font-bold text-purple-400 mt-4 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Launch Career Intelligence &rarr;
+                            </span>
+                        </Link>
+                    </div>
+                </section>
+
                 {/* Why This Exists Section */}
                 <section className="mb-16 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
                     <h3 className="text-lg font-bold font-grotesk text-zinc-950 mb-4">Why This Exists</h3>

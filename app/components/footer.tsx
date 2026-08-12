@@ -36,8 +36,8 @@ export function Footer() {
                                 <div className="text-xs font-bold text-zinc-950 font-mono">AI Economist</div>
                             </div>
                         </div>
-                        <p className="text-zinc-950 text-sm">
-                            I audit engineering spend and surface capital risks.
+                        <p className="text-zinc-950 text-sm leading-relaxed">
+                            Richard Ewing is the AI Economist. He founded <Link href="/exogram" className="underline font-bold hover:text-cyan-900">Exogram</Link> (AI governance) and <Link href="/careerwin" className="underline font-bold hover:text-indigo-900">CareerWin</Link> (career intelligence).
                         </p>
                     </div>
 
