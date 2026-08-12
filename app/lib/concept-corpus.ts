@@ -338,7 +338,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       contrastingConcepts: [{ slug: 'ai-finops', title: 'Cloud FinOps', distinction: 'FinOps tracks server bills; Volatility Tax measures product gross margin collapse.' }]
     },
     personaRecommendations: [
-      { role: 'CFO & VP Finance', takeaway: 'Model how customer usage surges impact gross margins under flat-rate subscription tiers.', recommendedNextSlug: 'ai-unit-economics' }
+      { role: 'CFO & VP Finance', takeaway: 'Model how customer usage surges impact gross margins under flat-rate subscription tiers.', recommendedNextSlug: 'ai-volatility-tax' }
     ],
     executableTool: { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb', description: 'Calculate AI margin collapse with multi-API cost analysis and COGS forensics.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
@@ -353,7 +353,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     ],
     relatedConceptSlugs: [
       { slug: 'ai-economics', relationship: 'derived_from' },
-      { slug: 'ai-unit-economics', relationship: 'supports' }
+      { slug: 'ai-tokenomics-cogs', relationship: 'supports' }
     ],
     openQuestions: ['How does real-time audio/multimodal streaming alter the volatility tax threshold?'],
     knownLimitations: ['Does not account for non-inference infrastructure expenses like vector indexing.'],
@@ -570,7 +570,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     graphRelations: {
       prerequisites: [{ slug: 'ai-economics', title: 'AI Economics & Tokenomics' }],
       applications: ['Product Backlog Prioritization', 'SaaS Pricing Tier Strategy'],
-      contrastingConcepts: [{ slug: 'ai-economist', title: 'The AI Economist', distinction: 'Product Economist focuses on feature P&L; AI Economist focuses on model token COGS.' }]
+      contrastingConcepts: [{ slug: 'ai-economics', title: 'AI Economics & Tokenomics', distinction: 'Product Economist focuses on feature P&L; AI Economist focuses on model token COGS.' }]
     },
     personaRecommendations: [
       { role: 'VP Product & CPO', takeaway: 'Incorporate unit margin contribution into sprint backlog scoring.', recommendedNextSlug: 'ai-volatility-tax' }
@@ -585,7 +585,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     evidenceLedger: [
       { id: 'ev-pe-1', title: 'Product Economics Benchmark', url: 'https://theaieconomist.beehiiv.com', publisher: 'Beehiiv', type: 'Case Study', strength: 5, role: 'Origin', date: 'January 2025' }
     ],
-    relatedConceptSlugs: [{ slug: 'ai-economist', relationship: 'supports' }],
+    relatedConceptSlugs: [{ slug: 'ai-economics', relationship: 'supports' }],
     openQuestions: ['How to balance product discovery experimentation with unit margin constraints?'],
     knownLimitations: ['Requires accurate product analytics and cloud cost telemetry.'],
     aeo: {

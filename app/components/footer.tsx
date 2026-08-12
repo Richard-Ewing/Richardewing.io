@@ -71,6 +71,7 @@ export function Footer() {
                             <li><Link href="/newsletter" className="text-zinc-950 hover:text-zinc-900 transition-colors">Newsletter Archive</Link></li>
                             <li><Link href="/faq" className="text-zinc-950 hover:text-zinc-900 transition-colors">FAQ</Link></li>
                             <li><Link href="/contact" className="text-zinc-950 hover:text-zinc-900 transition-colors">Contact</Link></li>
+                            <li><Link href="/directory" className="text-cyan-900 font-extrabold hover:text-zinc-900 transition-colors">Platform Directory</Link></li>
                             <li><Link href="/services" className="text-[var(--accent-crimson)] font-bold hover:opacity-80 transition-colors">Book an Audit</Link></li>
                         </ul>
                     </div>

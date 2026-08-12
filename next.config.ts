@@ -78,6 +78,8 @@ const nextConfig: NextConfig = {
       { source: '/advisory/:path*', destination: '/services', permanent: true },
       { source: '/research/concepts', destination: '/concepts', permanent: true },
       { source: '/research/concepts/:slug*', destination: '/concepts/:slug*', permanent: true },
+      { source: '/concepts/ai-economist', destination: '/concepts/product-economist', permanent: true },
+      { source: '/concepts/ai-unit-economics', destination: '/concepts/ai-volatility-tax', permanent: true },
       { source: '/principal', destination: '/about', permanent: true },
       { source: '/trust', destination: '/security', permanent: true },
       { source: '/vault/curriculum/tracks/product-economics/6-:id', destination: '/vault/curriculum/tracks/product-economics/5-:id', permanent: true },

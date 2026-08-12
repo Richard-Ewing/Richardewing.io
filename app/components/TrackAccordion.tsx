@@ -131,13 +131,15 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                         {track.glossaryTerms && track.glossaryTerms.length > 0 && (
                             <div>
                                 <h3 className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest mb-3">Related Glossary</h3>
-                                <div className="flex flex-wrap gap-2">
-                                    {track.glossaryTerms.map((t: string) => (
-                                        <Link key={t} href={`/glossary/${t}`} className="px-2 py-1 rounded-md bg-white text-xs font-bold text-zinc-900 font-bold hover:text-zinc-900 transition-colors border border-zinc-400 hover:border-zinc-500">
-                                            {t.replace(/-/g, ' ')}
-                                        </Link>
-                                    ))}
-                                </div>
+                                    {track.glossaryTerms.map((t: string) => {
+                                        const isKeep = ['ic-vs-management-track', 'engineering-levels', 'career-levels', 'ai-cost-attribution', 'ai-unit-economics', 'ai-cogs', 'calculating-roai', 'hallucination-debt', 'model-right-sizing', 'orchestration-debt'].includes(t);
+                                        const href = isKeep ? `/glossary/${t}` : `/glossary#${t}`;
+                                        return (
+                                            <Link key={t} href={href} className="px-2 py-1 rounded-md bg-white text-xs font-bold text-zinc-900 font-bold hover:text-zinc-900 transition-colors border border-zinc-400 hover:border-zinc-500">
+                                                {t.replace(/-/g, ' ')}
+                                            </Link>
+                                        );
+                                    })}
                             </div>
                         )}
                         {track.tools && track.tools.length > 0 && (

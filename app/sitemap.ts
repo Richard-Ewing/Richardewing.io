@@ -48,6 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/services`, 'monthly', 0.9);
     add(`${baseUrl}/contact`, 'monthly', 0.8);
     add(`${baseUrl}/careerwin`, 'monthly', 0.8);
+    add(`${baseUrl}/directory`, 'weekly', 0.9);
 
     // === TOOL PAGES ===
     add(`${baseUrl}/tools/pdi`, 'monthly', 0.7);
