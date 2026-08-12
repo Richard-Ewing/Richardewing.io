@@ -37,10 +37,6 @@
       "schedule": "0 6 * * 3"
     },
     {
-      "path": "/api/cron/daily-ops-email",
-      "schedule": "0 7 * * *"
-    },
-    {
       "path": "/api/cron/seo-optimizer",
       "schedule": "0 9 * * *"
     }

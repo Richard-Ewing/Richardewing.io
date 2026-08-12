@@ -84,6 +84,8 @@ async function handleSkip(payload: Record<string, string>): Promise<{ success: b
 }
 
 async function sendConfirmationEmail(subject: string, body: string) {
+    if (process.env.ENABLE_CRON_EMAILS !== 'true') return;
+
     const resendKey = process.env.RESEND_API_KEY;
     if (!resendKey) return;
 

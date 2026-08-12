@@ -22,6 +22,16 @@ interface DirectEmailResult {
 }
 
 export async function sendDirectEmail(payload: DirectEmailPayload): Promise<DirectEmailResult> {
+    if (process.env.ENABLE_CRON_EMAILS !== 'true') {
+        console.log('[AGENT:DIRECT-EMAIL] Email dispatches disabled (ENABLE_CRON_EMAILS != true). Logging email:', {
+            to: payload.to,
+            subject: payload.subject,
+            contentLength: payload.html.length,
+            timestamp: new Date().toISOString()
+        });
+        return { success: true, provider: 'log-only' };
+    }
+
     const apiKey = process.env.RESEND_API_KEY;
 
     if (!apiKey) {

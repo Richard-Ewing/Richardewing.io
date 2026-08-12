@@ -34,9 +34,9 @@ const personSchema = {
     "url": "https://www.richardewing.io",
     "image": "https://www.richardewing.io/assets/images/headshot.jpg",
     "sameAs": [
-        "https://linkedin.com/in/richard-ewing-mba",
+        "https://www.linkedin.com/in/richard-ewing-mba/",
         "https://x.com/Richard85626233",
-        "https://www.mindtheproduct.com/author/richard-ewing/"
+        "https://www.mindtheproduct.com/profile/richard-ewing"
     ],
     "knowsAbout": [
         "AI Economics",

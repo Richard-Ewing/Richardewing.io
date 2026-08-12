@@ -146,7 +146,7 @@ export default function PrincipalContent() {
                                 </div>
                             </div>
                             <div>
-                                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-950 mb-2">Richard Ewing</h1>
+                                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-950 mb-2">Richard Ewing</h2>
                                 <div className="font-mono text-sm font-semibold text-zinc-900 font-medium uppercase tracking-widest mb-4">AI Economist</div>
                                 <p className="text-zinc-950 leading-relaxed text-base sm:text-lg">
                                     I operate as <span className="text-zinc-950 font-bold">The AI Economist</span>. I align AI model performance directly with gross margins.
@@ -210,7 +210,7 @@ export default function PrincipalContent() {
                             </div>
                         </div>
                         <p className="text-sm font-medium">
-                            Few people translate cleanly between them. <span className="text-zinc-950 font-bold">That translation layer is where real influence lives.</span> I build the category where product management meets corporate finance and technical reality. My frameworks aren't theoretical—they are <span className="italic font-bold">financial wrappers around technical problems.</span>
+                            Few people translate cleanly between them. <span className="text-zinc-950 font-bold">That translation layer is where real influence lives.</span> I build the category where product management meets corporate finance and technical reality. My frameworks aren't theoretical: they are <span className="italic font-bold">financial wrappers around technical problems.</span>
                         </p>
                     </div>
                 </div>

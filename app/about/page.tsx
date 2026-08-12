@@ -10,7 +10,7 @@ import AsSeenInBar from '@/components/social-proof/AsSeenInBar';
 import ProductBridgeCard from '@/app/components/ProductBridgeCard';
 
 export const metadata: Metadata = {
-    title: 'About Richard Ewing — AI Economist',
+    title: 'About Richard Ewing | AI Economist',
     description: 'Richard Ewing is an enterprise AI Economist and the founder of Exogram. Audit production AI security and build PE-backed product economics.',
     alternates: {
         canonical: 'https://www.richardewing.io/about',
@@ -30,9 +30,61 @@ export const metadata: Metadata = {
     }
 };
 
+const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': 'https://www.richardewing.io/#person',
+    'name': 'Richard Ewing',
+    'jobTitle': 'AI Economist',
+    'description': 'Enterprise AI Economist and founder of Exogram and CareerWin. Audits production AI security and builds PE-backed product economics.',
+    'url': 'https://www.richardewing.io',
+    'image': 'https://www.richardewing.io/assets/images/headshot.jpg',
+    'sameAs': [
+        'https://www.linkedin.com/in/richard-ewing-mba/',
+        'https://x.com/Richard85626233',
+        'https://www.mindtheproduct.com/profile/richard-ewing'
+    ],
+    'knowsAbout': [
+        'AI Economics',
+        'R&D Auditing',
+        'Technical Debt Valuation',
+        'AI Unit Economics',
+        'AI Capital Auditing',
+        'Capital Allocation',
+        'Engineering ROI',
+        'AI Hallucination Debt',
+        'Zombie Infrastructure',
+        'Deterministic AI Infrastructure',
+        'AI Cost Governance',
+        'Gross Margin Preservation'
+    ],
+    'founder': [
+        {
+            '@type': 'Organization',
+            'name': 'Exogram',
+            'url': 'https://exogram.ai',
+            'sameAs': ['https://www.linkedin.com/company/exogram-ai/']
+        },
+        {
+            '@type': 'Organization',
+            'name': 'CareerWin',
+            'url': 'https://careerwin.ai'
+        }
+    ],
+    'brand': {
+        '@type': 'Brand',
+        'name': 'The AI Economist',
+        'url': 'https://www.richardewing.io'
+    }
+};
+
 export default function AboutPage() {
     return (
         <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+            />
             <div className="page-container max-w-4xl mx-auto">
                 
                 {/* Breadcrumb */}

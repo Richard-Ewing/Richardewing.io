@@ -26,6 +26,16 @@ export interface DispatchResult {
  * Falls back to structured logging if Beehiiv is not configured.
  */
 export async function sendExecutiveDigest(payload: DigestEmailPayload): Promise<DispatchResult> {
+    if (process.env.ENABLE_CRON_EMAILS !== 'true') {
+        console.log('[AGENT:EMAIL] Email dispatches disabled (ENABLE_CRON_EMAILS != true). Logging digest payload:', {
+            subject: payload.subject,
+            contentLength: payload.htmlContent.length,
+            tags: payload.tags,
+            timestamp: new Date().toISOString()
+        });
+        return { success: true, provider: 'log-only' };
+    }
+
     const apiKey = process.env.BEEHIIV_API_KEY;
     const publicationId = process.env.BEEHIIV_PUBLICATION_ID;
 

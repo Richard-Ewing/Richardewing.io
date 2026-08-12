@@ -119,6 +119,10 @@ function identifyActions(data: PerformanceData) {
 }
 
 async function sendDigestEmail(data: PerformanceData, alignment: ReturnType<typeof analyzeStarvingCrowdAlignment>, actions: ReturnType<typeof identifyActions>, rewrites: Array<{ url: string; oldTitle: string; newTitle: string; reasoning: string }> = []) {
+    if (process.env.ENABLE_CRON_EMAILS !== 'true') {
+        return { sent: false, error: 'Daily email digest disabled (ENABLE_CRON_EMAILS != true)' };
+    }
+
     const resendKey = process.env.RESEND_API_KEY;
     if (!resendKey) return { sent: false, error: 'No RESEND_API_KEY' };
 
