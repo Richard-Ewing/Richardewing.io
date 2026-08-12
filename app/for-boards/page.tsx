@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import TechnicalInsolvencySimulator from '@/app/components/TechnicalInsolvencySimulator';
 
 export const metadata: Metadata = {
     title: 'For Board Members & Strategy Diagnostics | Richard Ewing',
@@ -41,6 +42,8 @@ export default function ForBoardsPage() {
                         </p>
                         <Link href="/services" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Request Board Briefing →</Link>
                     </div>
+
+                    <TechnicalInsolvencySimulator />
 
                     <div className="mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-8 text-center">Questions Boards Should Be Asking</h2>

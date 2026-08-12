@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import TechnicalInsolvencySimulator from '@/app/components/TechnicalInsolvencySimulator';
 
 export const metadata: Metadata = {
     title: 'CTO Toolkit & Strategy Diagnostics | Richard Ewing',
@@ -58,6 +59,10 @@ export default function ForCTOsPage() {
                         <p className="text-xl text-zinc-900 max-w-2xl mx-auto mb-8">
                             6 free tools + 400+ glossary definitions + proprietary frameworks. Everything a CTO needs to quantify engineering economics and communicate with boards in financial language.
                         </p>
+
+                        {/* Interactive Insolvency Simulator */}
+                        <TechnicalInsolvencySimulator />
+                        
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link href="/tools" className="px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Explore All Tools →</Link>
                             <Link href="/glossary" className="px-8 py-4 rounded-lg border border-zinc-500 text-zinc-950 font-bold hover:bg-white/5 transition-colors">Browse 400+ Definitions →</Link>

@@ -17,6 +17,41 @@ export const metadata: Metadata = {
 
 const curattedComparisons = [
     {
+        title: 'Advisory vs McKinsey Tech Due Diligence',
+        subtitle: 'Empirical Code Audit vs Survey Checklist',
+        description: 'Why empirical codebase & cloud telemetry diagnostics beat high-level management interview checklists.',
+        href: '/compare/advisory-vs-mckinsey',
+        color: 'amber'
+    },
+    {
+        title: 'Advisory vs Bain & Company R&D Audits',
+        subtitle: 'Financial Engineering vs Strategy Advisory',
+        description: 'Comparing Product Debt Index modeling against traditional corporate strategy consulting.',
+        href: '/compare/advisory-vs-bain',
+        color: 'red'
+    },
+    {
+        title: 'Advisory vs Gartner Executive Advisory',
+        subtitle: 'Actionable Technical Audit vs Research Reports',
+        description: 'Custom codebase & AI unit economics audits vs generic analyst subscription reports.',
+        href: '/compare/advisory-vs-gartner',
+        color: 'indigo'
+    },
+    {
+        title: 'Advisory vs Traditional Fractional CTO',
+        subtitle: 'Fixed-Fee Retainer vs Generalist Hourly Advice',
+        description: 'AI economic outcome retainers vs hourly generalist engineering management.',
+        href: '/compare/advisory-vs-traditional-fractional-cto',
+        color: 'cyan'
+    },
+    {
+        title: 'Advisory vs Big-4 Tech Due Diligence',
+        subtitle: 'Empirical Audit vs Checklist Advisory',
+        description: 'Forensic codebase and R&D capital audits vs survey-based management checklists.',
+        href: '/compare/advisory-vs-big4',
+        color: 'indigo'
+    },
+    {
         title: 'Exogram vs LangChain Guardrails',
         subtitle: 'Deterministic Runtime vs Prompt Wrapper',
         description: 'Why pre-execution zero-trust gateways outperform probabilistic prompt wrappers for enterprise safety.',
@@ -29,13 +64,6 @@ const curattedComparisons = [
         description: 'Pre-execution admissibility runtime vs post-hoc LLM monitoring and content moderation tools.',
         href: '/compare/exogram-vs-lakera',
         color: 'purple'
-    },
-    {
-        title: 'Advisory vs Big-4 Tech Due Diligence',
-        subtitle: 'Empirical Audit vs Checklist Advisory',
-        description: 'Forensic codebase and R&D capital audits vs survey-based management checklists.',
-        href: '/compare/advisory-vs-big4',
-        color: 'indigo'
     },
     {
         title: 'Claude Code vs Cursor Governance',

@@ -12,6 +12,7 @@ import { BenchmarkComparison } from '@/components/reports/BenchmarkComparison';
 import { DiagnosticProgression } from '@/components/reports/DiagnosticProgression';
 import { LongitudinalHistory } from '@/components/reports/LongitudinalHistory';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
+import ExecutiveMemoExport from '@/app/components/ExecutiveMemoExport';
 import { motion } from 'framer-motion';
 import ToolCelebration from '../../components/ToolCelebration';
 import Link from 'next/link';
@@ -540,6 +541,25 @@ Migrate from Heroku to AWS"
                                     <AdvisoryCTA variant="tool-result" />
                                 </div>
                             }
+                        />
+                    </ScrollReveal>
+
+                    {/* Executive Board Memo Export */}
+                    <ScrollReveal delay={75}>
+                        <ExecutiveMemoExport 
+                            toolName="Product Debt Index (PDI)"
+                            metrics={[
+                                { label: 'Product Debt Score', value: `${results.score} / 100` },
+                                { label: 'Maintenance Capacity Load', value: `${results.metrics.maintenance}%` },
+                                { label: 'Annual Maintenance Waste', value: formatMoney(results.financials.waste) },
+                                { label: 'Growth Backlog Allocation', value: `${results.metrics.growth}%` },
+                            ]}
+                            executiveSummary={`Current technical debt maintenance consumes ${results.metrics.maintenance}% of total engineering bandwidth, resulting in ${formatMoney(results.financials.waste)} in annual un-accretive expenditure. Without structural refactoring, velocity will drop to near-zero before feature delivery goals are met.`}
+                            remediationSteps={[
+                                "Institute a strict 20% R&D debt remediation budget cap per sprint cycle.",
+                                "Audit high-volatility modules using Product Debt Index diagnostic benchmarks.",
+                                "Deploy Exogram deterministic runtime gatekeeper to block unverified AI code from entering production."
+                            ]}
                         />
                     </ScrollReveal>
 
