@@ -69,11 +69,11 @@ export default function ExitIntentModal() {
             </div>
 
             <h3 className="text-2xl sm:text-3xl font-bold font-grotesk text-white mb-3 leading-tight">
-              Before You Go: Download the Executive AI Audit Checklist
+              Before You Go: Download the Executive AI Cost Control Checklist
             </h3>
 
             <p className="text-zinc-300 text-sm leading-relaxed mb-6 font-medium">
-              A 10-point diagnostic framework used in $7,500 advisory engagements. Identify AI budget leakage, shadow tools, and technical insolvency risks in 15 minutes.
+              A 10-point diagnostic checklist used by financial leaders to spot unmonitored AI overspend, rogue software tools, and unbudgeted cloud invoices in 15 minutes.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-3">

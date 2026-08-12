@@ -61,13 +61,13 @@ export default function GlossaryContent() {
                     </p>
 
                     {/* Search Input */}
-                    <div className="relative max-w-md w-full">
+                    <div className="relative max-w-md w-full mb-4">
                         <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 w-5 h-5" />
                         <input
                             type="text"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            placeholder="Search glossary terms (e.g. Technical Debt)..."
+                            placeholder="Search 430+ terms (e.g. AI Cost Governance)..."
                             className="w-full pl-12 pr-10 py-4 bg-white border border-zinc-400 rounded-2xl text-zinc-900 font-medium placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500 transition-all shadow-sm"
                         />
                         {searchQuery && (
@@ -78,6 +78,29 @@ export default function GlossaryContent() {
                                 <X className="w-5 h-5" />
                             </button>
                         )}
+                    </div>
+
+                    {/* Quick Non-Technical Topic Filter Pills */}
+                    <div className="flex flex-wrap gap-2 text-xs font-semibold">
+                        <span className="text-zinc-500 font-mono flex items-center pr-1">Filter by topic:</span>
+                        {[
+                            { label: "AI Overspend", query: "AI" },
+                            { label: "Technical Debt", query: "Debt" },
+                            { label: "Cloud & FinOps", query: "Cost" },
+                            { label: "Governance & Risk", query: "Governance" }
+                        ].map((chip, idx) => (
+                            <button
+                                key={idx}
+                                onClick={() => setSearchQuery(searchQuery === chip.query ? '' : chip.query)}
+                                className={`px-3 py-1.5 rounded-full border transition-all ${
+                                    searchQuery === chip.query
+                                        ? 'bg-purple-700 text-white border-purple-700 font-bold'
+                                        : 'bg-white text-zinc-700 border-zinc-300 hover:border-purple-400 hover:bg-purple-50'
+                                }`}
+                            >
+                                {chip.label}
+                            </button>
+                        ))}
                     </div>
                 </div>
             </ScrollReveal>

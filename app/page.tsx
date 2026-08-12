@@ -53,6 +53,16 @@ export default function Home() {
               'logo': 'https://www.richardewing.io/favicon.png'
             },
             {
+              '@type': 'WebPage',
+              '@id': 'https://www.richardewing.io/#webpage',
+              'url': 'https://www.richardewing.io/',
+              'name': 'AI Economist & Enterprise Cost Governance',
+              'speakable': {
+                '@type': 'SpeakableSpecification',
+                'cssSelector': ['h1', 'p']
+              }
+            },
+            {
               '@type': 'FAQPage',
               'mainEntity': [
                 {
@@ -60,7 +70,7 @@ export default function Home() {
                   'name': 'What is an AI Economist?',
                   'acceptedAnswer': {
                     '@type': 'Answer',
-                    'text': 'An AI Economist is the translation layer between engineering output and CFO-level financial outcomes. They audit R&D spend, analyze AI unit economics, and construct deterministic governance systems to prevent margin collapse.'
+                    'text': 'An AI Economist is the financial advisor between engineering output and CFO-level profitability. They audit tech spend, analyze AI unit economics, and install automated cost guardrails to protect gross margins.'
                   }
                 },
                 {
@@ -68,15 +78,15 @@ export default function Home() {
                   'name': 'What is AI Economics?',
                   'acceptedAnswer': {
                     '@type': 'Answer',
-                    'text': 'AI Economics is the discipline of measuring, modeling, and governing the financial impact of AI systems on enterprise profitability. It combines unit economics analysis, R&D capital auditing, and runtime cost governance to turn volatile AI investments into predictable business assets.'
+                    'text': 'AI Economics is the discipline of measuring, modeling, and governing the financial impact of AI systems on enterprise profitability. It combines unit economics analysis, engineering financial auditing, and cost governance to turn volatile AI investments into predictable business assets.'
                   }
                 },
                 {
                   '@type': 'Question',
-                  'name': 'What is AI governance?',
+                  'name': 'What is executive AI governance?',
                   'acceptedAnswer': {
                     '@type': 'Answer',
-                    'text': 'AI governance is the system of constraints, cost caps, and verification policies that prevent probabilistic models from causing margin erosion, security breaches, or regulatory liabilities. It turns volatile models into predictable enterprise assets.'
+                    'text': 'Executive AI governance is the system of automated cost guardrails, spending limits, and security policies that prevent AI tools from causing margin erosion, security leaks, or unbudgeted cloud invoices.'
                   }
                 },
                 {
@@ -84,7 +94,7 @@ export default function Home() {
                   'name': 'How much does a fractional CPO / CTO cost?',
                   'acceptedAnswer': {
                     '@type': 'Answer',
-                    'text': 'Fractional CPO / CTO advisory retainer is $10,000 per month. This provides senior technology leadership, cost-cap architecture reviews, and board-ready reporting.'
+                    'text': 'Fractional CPO / CTO advisory retainer is $10,000 per month. This provides senior technology leadership, cost governance reviews, and board-ready financial reporting.'
                   }
                 }
               ]

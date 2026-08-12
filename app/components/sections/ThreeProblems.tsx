@@ -6,12 +6,12 @@ import { ArrowRight, DollarSign, ShieldOff, Bug } from 'lucide-react';
 const problems = [
     {
         icon: DollarSign,
-        label: "AI BILLING SHOCK",
-        businessImpact: "Unpredictable AI spending is eroding your margins.",
-        headline: "Your AI costs are unpredictable because nobody is measuring them.",
-        description: "Runaway inference loops. Unmonitored API calls. Token waste compounding at 3x your projected budget. The CFO sees a growing line item with no unit economics attached.",
+        label: "UNPREDICTABLE AI INVOICES",
+        businessImpact: "Unmonitored AI usage is shrinking gross margins.",
+        headline: "AI spending is erratic because nobody is tracking cost per transaction.",
+        description: "Uncapped monthly API invoices, unmonitored vendor usage, and runaway computational loops create budget overruns with zero financial accountability attached.",
         metric: "$14,200/mo",
-        metricLabel: "Average token waste before audit",
+        metricLabel: "Average unmonitored AI overspend found per audit",
         color: {
             border: "border-rose-200",
             hoverBorder: "hover:border-rose-400",
@@ -23,12 +23,12 @@ const problems = [
     },
     {
         icon: ShieldOff,
-        label: "SHADOW AI LIABILITY",
-        businessImpact: "Unmanaged AI use creates governance and compliance risk.",
-        headline: "Employees are pasting proprietary data into public LLMs. Your DLP tools are blind to it.",
-        description: "Every unsanctioned ChatGPT session is a potential data exfiltration event. OAuth tokens proliferate. Nobody tracks which models have access to which internal systems.",
+        label: "UNMONITORED SECURITY RISKS",
+        businessImpact: "Unmanaged employee AI tools create compliance and data liabilities.",
+        headline: "Employees are sharing company data with public AI tools without oversight.",
+        description: "Unregistered AI tools create data leakage risks. Without explicit administrative controls, internal financial plans and customer records risk exposure to external systems.",
         metric: "73%",
-        metricLabel: "of enterprises lack AI-specific access controls",
+        metricLabel: "of companies lack executive AI data policies",
         color: {
             border: "border-violet-200",
             hoverBorder: "hover:border-violet-400",
@@ -40,12 +40,12 @@ const problems = [
     },
     {
         icon: Bug,
-        label: "VIBE CODING DEBT",
-        businessImpact: "AI-assisted development increases long-term maintenance costs.",
-        headline: "AI-generated code looks structurally sound. It is architecturally bankrupt.",
-        description: "3,000-line Copilot PRs that compile perfectly and fail in production. Junior developers shipping code they cannot explain. Context rot compounding every sprint.",
+        label: "UNVERIFIED AI CODE LABILITIES",
+        businessImpact: "AI-assisted software development inflates future maintenance costs.",
+        headline: "AI-generated software looks complete—until maintenance bills triple.",
+        description: "Developers using AI assistants often ship high volumes of unverified software. Without technical governance, this creates technical debt that slows future feature delivery.",
         metric: "42%",
-        metricLabel: "engineering capacity lost to zombie features",
+        metricLabel: "engineering capacity consumed by software maintenance",
         color: {
             border: "border-purple-200",
             hoverBorder: "hover:border-purple-400",
