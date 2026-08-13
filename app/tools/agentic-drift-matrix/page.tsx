@@ -119,14 +119,30 @@ export default function AgenticDriftMatrixPage() {
                     <div className="mt-20 border-t border-zinc-400 pt-12 text-center">
                         <h3 className="text-lg font-bold text-zinc-950 mb-4">Ready to stop the decay permanently?</h3>
                         <p className="text-sm text-zinc-900 font-medium mb-6">See the architecture I use to enforce deterministic state management.</p>
-                        <a 
-                            href="https://newsletter.richardewing.io/p/fixing-agentic-drift" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center text-sm font-bold text-indigo-900 hover:text-indigo-700 underline underline-offset-4 transition-colors"
-                        >
-                            Read "Fixing Agentic Drift" →
-                        </a>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            <a 
+                                href="https://newsletter.richardewing.io/p/fixing-agentic-drift" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center text-sm font-bold text-indigo-900 hover:text-indigo-700 underline underline-offset-4 transition-colors"
+                            >
+                                Read "Fixing Agentic Drift" →
+                            </a>
+                            <a 
+                                href="https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center text-sm font-bold text-cyan-900 hover:text-cyan-700 underline underline-offset-4 transition-colors"
+                            >
+                                Read CIO.com Article on Shadow Delegation ↗
+                            </a>
+                            <Link 
+                                href="/concepts/shadow-delegation" 
+                                className="inline-flex items-center text-sm font-bold text-emerald-900 hover:text-emerald-700 underline underline-offset-4 transition-colors"
+                            >
+                                Explore Shadow Delegation Concept →
+                            </Link>
+                        </div>
                     </div>
                 </ScrollReveal>
             </div>

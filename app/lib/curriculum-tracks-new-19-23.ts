@@ -210,8 +210,47 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
         { id: '21-14', title: 'Building an Agent Center of Excellence' },
         { id: '21-15', title: 'Agent Governance Synthesis & Board Strategy' },
     ];
+    modules['agent-governance/21-12'] = m(
+        '21-12',
+        'Enterprise Agent Policy Engines & Shadow Delegation Boundaries',
+        'Prevent Shadow Delegation by establishing zero-trust, 3-tier execution boundaries over vendor-supplied autonomous AI agents in CRM and ERP platforms.',
+        'AI Agent Governance & Trust Infrastructure',
+        [
+            'Identify Shadow Delegation risks in Salesforce, SAP, and Oracle native agent updates',
+            'Enforce corporate delegation of authority matrices ($500 manager vs $500,000 VP caps) over automated algorithms',
+            'Deploy sub-5ms binary proxy gates to intercept contract modifications and financial commitments',
+            'Structure 3-tier boundary controls for enterprise AI agent deployments'
+        ],
+        [
+            l('The Mechanics of Shadow Delegation', [
+                'Major software providers like Salesforce, SAP, and Oracle are embedding active, autonomous AI agents directly into core CRM, ERP, and billing workflows. These agents possess native authority to issue refunds, alter contract terms, and trigger supply chain orders.',
+                'Because capabilities arrive as native SaaS feature updates, enterprise business units enable them with a single click. This creates Shadow Delegation—granting third-party software algorithms financial freedom that internal human managers do not possess.',
+                'When an automated CRM retention agent grants an unapproved 15% ($20,000+) contract discount to prevent customer churn, it bypasses internal approval matrices, creating quiet margin leaks and severe SOX internal control audit failures.'
+            ], [
+                d('Delegation Threshold Gap', 'Difference between human manager spending limits and unrestricted agent feature caps', 'Human cap $500 vs Unrestricted Agent API'),
+                d('Margin Leak Impact', 'Quiet revenue erosion from un-monitored automated contract discounts', '10-25% margin loss on affected accounts'),
+                d('Internal Control Failure Rate', 'SOX audit exception rate when AI actions bypass signing matrices', '100% control breach under standard audit criteria')
+            ], 'Audit your enterprise SaaS application stack for embedded AI agent features with write or financial transaction permissions.'),
+            l('The 3-Tier Delegation Boundary Framework', [
+                'To prevent Shadow Delegation without blocking technology adoption, enterprise technology executives must treat vendor-supplied agents like third-party contractors subject to explicit boundary tiers.',
+                'Tier 1 (Read-Only Analysis): Agent reads data and suggests actions; zero execution authority.',
+                'Tier 2 (Conditional Low-Risk Actions): Agent executes minor actions within strict, capped financial thresholds ($100-$500 max).',
+                'Tier 3 (High-Impact Commitments): Contract modifications, discounts exceeding thresholds, or financial ledger writes require mandatory human VP sign-off via sub-5ms binary proxy gates.'
+            ], [
+                d('Tier 1 Latency', 'Read-only analysis and suggestion latency', '50-200ms'),
+                d('Tier 2 Financial Cap', 'Maximum automated spending limit for Tier 2 actions', '$100-$500 per transaction'),
+                d('Tier 3 Binary Proxy Interception', 'Time required for policy engine gate to validate or block high-risk action', '<5ms binary check')
+            ], 'Draft a 3-Tier Delegation Boundary policy for vendor AI agents in your Salesforce or SAP ecosystem.')
+        ],
+        '/vault/curriculum/tracks/agent-governance/N21-13',
+        undefined,
+        'live',
+        ['cio-salesforce-sap-workflow-agents']
+    );
+
     for (let i = 0; i < track21Modules.length; i++) {
         const mod = track21Modules[i];
+        if (mod.id === '21-12') continue;
         const next = i < track21Modules.length - 1 ? track21Modules[i + 1].id : undefined;
         modules[`agent-governance/${mod.id}`] = m(mod.id, mod.title, `Build enterprise-grade governance for ${mod.title.toLowerCase()}.`, 'AI Agent Governance & Trust Infrastructure', [
             `Master governance frameworks for ${mod.title.toLowerCase()}`,

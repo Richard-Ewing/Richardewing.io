@@ -14,6 +14,17 @@ export interface Article {
 
 export const articles: Article[] = [
     {
+        slug: "salesforce-sap-workflow-agents",
+        title: "Salesforce and SAP are putting AI agents inside your workflows. Who tells them no?",
+        description: "Enterprise SaaS vendors are embedding autonomous AI agents directly into transactional workflows with authority to issue refunds, alter contract terms, and spend corporate capital—creating a critical breakdown in corporate signing matrices and shadow delegation.",
+        date: "August 2026",
+        readTime: "5 min read",
+        source: "CIO.com",
+        category: "Governance",
+        externalUrl: "https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html",
+        editorsPick: true
+    },
+    {
         slug: "growth-is-not-your-cost-problem-architecture-is",
         title: "Growth Is Not Your Cost Problem — Your Architecture Is",
         description: "If your software margins shrink as your user base grows, you likely have an underlying architecture issue rather than a growth problem. Placing semantic caching and edge filtering in front of models cuts API spend by over 50% without degrading quality.",

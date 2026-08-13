@@ -38,6 +38,24 @@ export const glossaryCategories = [
 
 const _baseGlossaryTerms: GlossaryTerm[] = [
     // =========================================================================
+    // AI GOVERNANCE & VERIFICATION / SHADOW DELEGATION
+    // =========================================================================
+    {
+        slug: 'shadow-delegation',
+        title: 'Shadow Delegation',
+        category: 'AI Governance & Verification',
+        definition: `Shadow Delegation is the unauthorized transfer of operational and financial decision-making authority to autonomous AI features embedded within enterprise software without explicit delegation matrix sign-off.\n\nMajor software providers like Salesforce, SAP, and Oracle are embedding active, autonomous AI agents directly into transactional workflows. Because these capabilities arrive as native SaaS updates, business units enable them with a single click—granting automated algorithms more spending freedom than human managers possess. Read the full analysis in [Salesforce and SAP are putting AI agents inside your workflows. Who tells them no?](https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html).`,
+        whyItMatters: `When an automated CRM retention agent grants an unapproved 15% ($20,000+) contract discount to prevent churn, it bypasses internal VP approval controls. From an executive perspective, an un-vetted third-party algorithm executed an unauthorized financial modification, creating quiet margin leaks and severe SOX internal control audit failures.\n\nEnterprise security requires treating vendor-supplied AI agents like third-party contractors subject to a 3-tier zero-trust delegation boundary and sub-5ms binary proxy gates. Explore the [Deterministic Governance](/concepts/deterministic-governance) concept and [Shadow Delegation Boundary](/frameworks/automated-delegation-boundary) framework.`,
+        howToMeasure: `1. **Delegation Gap Audit**: Compare spending limits of human roles vs enabled API permissions of vendor AI features.\n2. **Un-approved Discount Tracking**: Audit CRM & ERP contract modification logs for algorithmic vs human sign-offs.\n3. **SOX Control Interception**: Deploy sub-5ms binary proxy inspection at the API gateway to log and intercept out-of-bounds agent state mutations.\n4. **Margin Leak Quantification**: Calculate monthly revenue loss from un-monitored automated retention discounts.`,
+        faqs: [
+            { question: 'What is Shadow Delegation?', answer: 'Shadow Delegation occurs when software features are granted authority to make financial or legal commitments (discounts, refunds, purchase orders) without explicit delegation of authority matrix approval.' },
+            { question: 'Why does Shadow Delegation happen with enterprise SaaS like Salesforce and SAP?', answer: 'Because AI capabilities are delivered as native platform updates, teams enable them with a single click without realizing they are delegating spending authority to an algorithm.' },
+            { question: 'How can enterprises prevent Shadow Delegation?', answer: 'By installing a 3-tier zero-trust delegation boundary using sub-5ms binary proxy gates that enforce hard-coded spending caps and require human VP approval for contract modifications.' }
+        ],
+        relatedTerms: ['deterministic-governance', 'agent-kill-switch', 'shadow-ai', 'prompt-injection'],
+        relatedTools: [{ name: 'Agentic Drift Matrix', url: '/tools/agentic-drift-matrix' }],
+    },
+    // =========================================================================
     // TECHNICAL DEBT & CODE QUALITY
     // =========================================================================
     {

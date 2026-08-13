@@ -258,6 +258,21 @@ export const subFrameworks: Record<string, SubFramework> = {
                     enforcement: 'Exogram Enterprise Proxy Filter'
                 },
                 conceptSlug: 'prompt-injection'
+            },
+            {
+                id: 'PAIG-SEC-004',
+                name: 'Shadow Delegation Boundary Framework',
+                definition: 'A 3-tier zero-trust governance boundary containing vendor-supplied AI agents within explicit corporate delegation matrices.',
+                problem: 'Enterprise SaaS vendors (Salesforce, SAP, Oracle) push native AI updates with authority to alter contracts and issue refunds, bypassing executive signing matrices.',
+                whyItMatters: 'Prevents silent margin leaks, contract compliance violations, and SOX internal control audit failures caused by ungoverned software agents.',
+                provenance: ['CIO.com publications', 'Exogram sandbox', 'Curriculum Track 21'],
+                implementation: {
+                    research: ['Salesforce and SAP are putting AI agents inside your workflows. Who tells them no?'],
+                    diagnostics: ['Shadow AI Security Audit', 'Agentic Drift Matrix'],
+                    education: ['Track 21: AI Agent Governance & Trust Infrastructure'],
+                    enforcement: 'Exogram 3-Tier Binary Proxy Interceptor'
+                },
+                conceptSlug: 'shadow-delegation'
             }
         ]
     },

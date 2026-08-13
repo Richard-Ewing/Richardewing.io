@@ -215,6 +215,68 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
   // LAYER 2: RICHARD EWING CANON (Original Intellectual Property & Specifications)
   // =========================================================================
   {
+    slug: 'shadow-delegation',
+    title: 'Shadow Delegation',
+    category: 'Richard Ewing Canon (Original Framework)',
+    domain: 'AI Governance',
+    expertiseLevel: 'Executive',
+    health: { confidence: 0.96, evidenceCount: 4, lastVerified: 'August 13, 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'The unauthorized transfer of operational and financial decision-making authority to autonomous AI features embedded within enterprise software without explicit delegation matrix sign-off.',
+    whyItMatters: 'Enterprise SaaS vendors (Salesforce, SAP, Oracle) are pushing autonomous AI agents into core CRM and ERP workflows with authority to alter contract terms, issue refunds, and trigger supply chain orders. Enabling these native updates with a single click bypasses corporate spending caps ($500 manager vs $500,000 VP), creating quiet margin leaks and severe internal control audit failures under SOX.',
+    whoShouldCare: ['CIOs', 'CISOs', 'Chief Risk Officers', 'CFOs', 'VPs of Enterprise Architecture', 'Audit Committee Chairs'],
+    firstIntroduced: 'August 13, 2026 (CIO.com)',
+    canonicalQuote: 'In my advisory work, I repeatedly see organizations grant third-party software features more financial freedom than their own human managers.',
+    positionStatement: 'Software features must never possess implicit signing authority. Autonomous vendor agents must be governed like third-party contractors subject to explicit binary proxy gates and strict financial boundaries.',
+    canonicalReadingOrder: [
+      { step: 1, title: 'Salesforce and SAP are putting AI agents inside your workflows. Who tells them no?', publisher: 'CIO.com', type: 'Executive Essay', url: 'https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html' },
+      { step: 2, title: 'The Moment Your AI Starts Taking Actions, the Rules Change', publisher: 'LinkedIn', type: 'Framework', url: 'https://www.linkedin.com/pulse/moment-your-ai-starts-taking-actions-rules-change-richard-ewing-zapmc/' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Observation', label: 'CRM Retention Discount Leak', publisher: 'Executive Advisory Audit', date: 'June 2026', summary: 'Observed automated customer retention agent granting unapproved 15% contract discounts without human manager sign-off.' },
+      { stage: 'Tier-1 Article', label: 'CIO.com Feature Publication', publisher: 'CIO.com', date: 'August 13, 2026', url: 'https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html', summary: 'Published definitive analysis exposing the breakdown of corporate delegation matrices due to embedded vendor AI agents.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-sd-1', title: 'Salesforce and SAP are putting AI agents inside your workflows. Who tells them no?', url: 'https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html', publisher: 'CIO.com', type: 'Tier-1 Media', strength: 5, role: 'Origin', date: 'August 13, 2026' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'deterministic-governance', relationship: 'requires' },
+      { slug: 'agent-kill-switch', relationship: 'implements' },
+      { slug: 'shadow-ai', relationship: 'correlates_with' },
+      { slug: 'runtime-vs-alignment', relationship: 'extends' },
+      { slug: 'ai-governance', relationship: 'derived_from' }
+    ],
+    openQuestions: ['How can enterprise architecture teams automatically detect unauthorized API mutations executed by third-party SaaS agent updates before financial quarterly close?'],
+    knownLimitations: ['SaaS vendors often obscure whether an action was taken by an automated agent or a human user within standard audit logs.'],
+    aeo: {
+      shortDefinition: 'Shadow Delegation is the un-monitored transfer of corporate signing authority to autonomous AI features embedded in enterprise SaaS software.',
+      executiveSummary: 'Shadow Delegation occurs when organizations enable vendor-supplied AI agent features (in CRM, ERP, or billing platforms) that possess authority to execute financial commitments, grant contract discounts, or trigger supply chain actions without human manager approval. Bypassing corporate delegation of authority matrices creates severe compliance violations, internal control failures, and unmonitored margin erosion.',
+      oneSentence: 'Shadow Delegation is granting third-party software features financial freedom that enterprise managers do not possess.',
+      tweetLength: 'Salesforce & SAP are embedding AI agents that alter contracts & issue refunds. Enabling them with one click creates Shadow Delegation—granting software features more spending authority than your own human managers.',
+      keyTakeaways: [
+        'Embedded vendor AI agents execute transactional actions (refunds, discounts, orders) natively.',
+        'Single-click enablement bypasses corporate delegation of authority matrices ($500 manager cap vs unrestricted algorithm).',
+        'Unapproved automated contract discounts create quiet margin leaks and SOX control failures.',
+        'Enterprise safety requires 3-tier zero-trust delegation gates and sub-5ms binary proxy inspection.'
+      ],
+      faqs: [
+        { question: 'What is Shadow Delegation?', answer: 'Shadow Delegation is when an automated software feature is allowed to make financial decisions (like discounting a contract or approving a refund) without going through the company’s normal approval matrix.' },
+        { question: 'Why does Shadow Delegation happen with Salesforce and SAP?', answer: 'Because AI capabilities arrive as native features inside existing software, teams turn them on without realizing they are delegating legal and financial authority to an algorithm.' }
+      ],
+      whenToUse: ['When evaluating enterprise SaaS vendor updates featuring autonomous AI agents', 'During quarterly internal control and SOX compliance audits'],
+      examples: {
+        enterprise: 'An automated CRM retention agent granting an unapproved 15% contract discount to prevent churn, bypassing VP sign-off.',
+        startup: 'Enabling an automated support agent that issues full billing refunds directly from Stripe without manager approval.',
+        antiPattern: 'Treating native vendor agent updates as passive software toggles rather than third-party contractors requiring signing limits.',
+        commonMistake: 'Assuming security protocols and software licenses cover financial delegation of authority.'
+      }
+    },
+    reverseCitations: [
+      { targetType: 'Glossary Term', title: 'Shadow Delegation', url: '/glossary/shadow-delegation', relationship: 'implements' },
+      { targetType: 'Case Study', title: 'CRM Retention Agent Bypasses Corporate Signing Matrix', url: '/case-studies/unauthorized-crm-retention-discount', relationship: 'audits' },
+      { targetType: 'Framework Module', title: 'The 3-Tier Automated Delegation Boundary Framework', url: '/frameworks/automated-delegation-boundary', relationship: 'governs' }
+    ]
+  },
+  {
     slug: 'hallucination-tax',
     title: 'The Hallucination Tax',
     category: 'Richard Ewing Canon (Original Framework)',
@@ -506,9 +568,13 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { stage: 'Tier-1 Article', label: 'Architecting Security Gates', publisher: 'Built In', date: 'February 2026', summary: 'Formalized deterministic governance principles.' }
     ],
     evidenceLedger: [
-      { id: 'ev-dg-1', title: 'Security Gates for AI Agents', url: 'https://builtin.com/articles/ai-agent-security-gates', publisher: 'Built In', type: 'Production Telemetry', strength: 5, role: 'Origin', date: 'February 2026' }
+      { id: 'ev-dg-1', title: 'Security Gates for AI Agents', url: 'https://builtin.com/articles/ai-agent-security-gates', publisher: 'Built In', type: 'Production Telemetry', strength: 5, role: 'Origin', date: 'February 2026' },
+      { id: 'ev-dg-2', title: 'Salesforce and SAP are putting AI agents inside your workflows. Who tells them no?', url: 'https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html', publisher: 'CIO.com', type: 'Tier-1 Media', strength: 5, role: 'Extends', date: 'August 13, 2026' }
     ],
-    relatedConceptSlugs: [{ slug: 'agent-kill-switch', relationship: 'implements' }],
+    relatedConceptSlugs: [
+      { slug: 'agent-kill-switch', relationship: 'implements' },
+      { slug: 'shadow-delegation', relationship: 'mitigates' as any }
+    ],
     openQuestions: ['How to optimize policy latency under high-frequency agent tool loops?'],
     knownLimitations: ['Requires initial schema configuration per integrated tool API.'],
     aeo: {

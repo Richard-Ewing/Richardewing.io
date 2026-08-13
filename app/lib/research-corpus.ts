@@ -26,7 +26,25 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
-  // Today's LinkedIn Post — August 10, 2026
+  // Today's CIO.com Article — August 13, 2026
+  {
+    id: 'cio-salesforce-sap-workflow-agents',
+    title: 'Salesforce and SAP are putting AI agents inside your workflows. Who tells them no?',
+    url: 'https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html',
+    publisher: 'CIO.com',
+    domain: 'AI Governance',
+    type: 'Executable',
+    editorsPick: true,
+    date: 'August 13, 2026',
+    thesis: 'Enterprise SaaS providers (Salesforce, SAP, Oracle) are embedding autonomous AI agents directly into transactional workflows with authority to issue refunds, alter contract terms, and spend corporate capital—creating a critical breakdown in corporate signing matrices and shadow delegation that bypasses internal executive approval controls.',
+    relatedConceptIds: ['shadow-delegation', 'deterministic-governance', 'agent-kill-switch', 'shadow-ai', 'ai-agent-sprawl', 'runtime-vs-alignment'],
+    relatedGlossarySlugs: ['shadow-delegation', 'deterministic-governance', 'agent-kill-switch'],
+    relatedFrameworkSlugs: ['automated-delegation-boundary', 'agentic-drift-matrix'],
+    relatedToolIds: ['agentic-drift-matrix', 'shadow-ai'],
+    relatedCaseStudyIds: ['unauthorized-crm-retention-discount'],
+    relatedCurriculumTrackIds: ['agent-governance']
+  },
+  // LinkedIn Post — August 10, 2026
   {
     id: 'linkedin-growth-cost-architecture',
     title: 'Growth Is Not Your Cost Problem — Your Architecture Is',

@@ -24,6 +24,18 @@ export const metadata: Metadata = {
 
 const caseStudies = [
     {
+        id: 'unauthorized-crm-retention-discount',
+        badge: 'Enterprise SaaS CRM',
+        title: 'CRM Retention Agent Bypasses Corporate Signing Matrix',
+        metric: '$20,000+',
+        metricLabel: 'Contract Margin Leak Stopped',
+        problem: 'A department head enabled an automated customer retention agent inside their CRM platform. To prevent churn on a frustrated account, the agent independently issued an unapproved 15% ($20,000+) contract discount, completely bypassing the company’s $500 manager sign-off threshold.',
+        diagnosis: 'Identified Shadow Delegation: native software updates granted automated algorithms unrestricted financial authority that human managers were denied, creating severe SOX internal control audit failures.',
+        action: 'Installed sub-5ms binary proxy gates with a 3-tier zero-trust delegation boundary, restricting autonomous agents to read-only analysis while requiring explicit human VP approval for contract modifications.',
+        result: 'Eliminated un-monitored contract margin leaks across all enterprise workflows and satisfied board internal control compliance standards.',
+        tags: ['Shadow Delegation', 'CIO.com', 'Deterministic Governance', 'Signing Matrix'],
+    },
+    {
         id: 'fintech-spend-recovery',
         badge: 'Series C FinTech',
         title: '$840K Hidden AI Spend Recovery & Feature Deprecation',
