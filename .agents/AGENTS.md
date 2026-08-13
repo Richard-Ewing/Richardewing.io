@@ -27,11 +27,19 @@ All essays, landing page copy, explanations, and documentation must adhere to th
 ---
 
 ## 3. Sovereign Master Operating Directive (MOD v3.0) Execution System
+
+> [!CRITICAL]
+> **MANDATORY TURN-END EXECUTION GATE (UNBREAKABLE):**
+> If ANY file in the workspace is modified or created during a turn, you are STRICTLY FORBIDDEN from ending the turn until you have executed:
+> `node .agents/scripts/verify-qa.mjs` $\rightarrow$ `npm run build` $\rightarrow$ `git add -A` $\rightarrow$ `git commit -m "..."` $\rightarrow$ `git push origin main` $\rightarrow$ `git status` (verify clean).
+> You MUST NEVER ask or wait for the user to prompt you to deploy code or push to git.
+
 1. **Adaptive Operational Router**: Scale depth across Mode 1 (Direct Query), Mode 2 (Targeted Implementation), and Mode 3 (Autonomous Full System Swarm).
 2. **5-Agent War Room Swarms**: Deploy custom subagents (`lived_experience_writer`, `qa_auditor`, `seo_architect`, `ui_designer`, `code_architect`) via `invoke_subagent` in isolated git worktrees (`Workspace: "branch"` or `"share"`).
 3. **Zero-Drift Deterministic Verification**: Execute `node .agents/scripts/verify-qa.mjs` to automatically lint em-dashes, stat sources, metadata length limits, and git hygiene.
 4. **4-Pass QA & Self-Healing Protocol**: Unit, Integration, Domain Rules, Build/Runtime validation (`npm run build`). Fix root causes empirically; never mask symptoms.
 5. **Auto-Push & Workspace Hygiene**: Validate builds (`npm run build`). AUTOMATICALLY execute `git add -A`, `git commit`, and `git push origin main` for every code/content change. Route temporary files to `.scratch/`.
+
 
 
 
