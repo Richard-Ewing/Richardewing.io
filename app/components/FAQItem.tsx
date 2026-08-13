@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState, ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-interface FAQItemProps {
+export interface FAQItemProps {
     question: string;
-    answer: string;
+    answer: React.ReactNode;
 }
 
 export default function FAQItem({ question, answer }: FAQItemProps) {
@@ -35,9 +35,9 @@ export default function FAQItem({ question, answer }: FAQItemProps) {
                         transition={{ duration: 0.25, ease: "easeInOut" }}
                         className="overflow-hidden"
                     >
-                        <p className="text-zinc-900 leading-relaxed font-semibold text-sm">
+                        <div className="text-zinc-900 leading-relaxed font-semibold text-sm">
                             {answer}
-                        </p>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>

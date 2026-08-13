@@ -11,7 +11,7 @@ import { COMMERCIAL_OFFERS } from '@/lib/platform/offers/offers';
 import AsSeenInBar from '@/components/social-proof/AsSeenInBar';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import ProductBridgeCard from '@/app/components/ProductBridgeCard';
-import PlainEnglishTooltip from '@/app/components/PlainEnglishTooltip';
+import ExecutiveTooltip from '@/components/ExecutiveTooltip';
 
 export const metadata: Metadata = {
     title: 'AI Advisory Services - Diagnostics, Audits & Cost Governance | Richard Ewing',
@@ -76,6 +76,17 @@ export default function ServicesPage() {
                             <Link href="/assessment" className="flex items-center justify-center px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-bold transition-all bg-white border border-zinc-300 text-zinc-950 hover:bg-zinc-50">
                                 Run Free Benchmark
                             </Link>
+                        </div>
+
+                        {/* Executive Plain-English Summary Box */}
+                        <div className="mb-12 bg-white border border-indigo-200 rounded-2xl p-6 shadow-sm">
+                            <div className="flex items-center gap-2 text-indigo-700 font-mono font-bold text-xs uppercase tracking-widest mb-3">
+                                <ShieldCheck className="w-4 h-4" />
+                                <span>Executive Summary (CFO Plain-English Translation)</span>
+                            </div>
+                            <p className="text-zinc-800 text-sm sm:text-base leading-relaxed font-medium">
+                                Unchecked AI infrastructure spend and unverified code creates technical debt that acts like a high-interest credit card. Our advisory engagements execute an <ExecutiveTooltip term="R&D Capital Audit">R&D Capital Audit</ExecutiveTooltip> to calculate your <ExecutiveTooltip term="Technical Insolvency Date">Technical Insolvency Date</ExecutiveTooltip> and reduce your <ExecutiveTooltip term="Product Debt Index (PDI)">Product Debt Index (PDI)</ExecutiveTooltip>. By converting <ExecutiveTooltip term="Vibe Coding Debt">Vibe Coding Debt</ExecutiveTooltip> into software assets under <ExecutiveTooltip term="Deterministic controls">Deterministic controls</ExecutiveTooltip>, we protect gross margins and restore predictable financial returns.
+                            </p>
                         </div>
 
                         {/* Role-Specific Segmentation Cards */}
@@ -150,7 +161,7 @@ export default function ServicesPage() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-zinc-950 text-lg mb-2">Hidden liabilities</h3>
-                                    <p className="text-zinc-700">Shadow AI creates liability that only surfaces during due diligence or a security breach.</p>
+                                    <p className="text-zinc-700">Shadow AI creates liability that surfaces during due diligence or security audits, expanding your <ExecutiveTooltip term="Vibe Coding Debt">Vibe Coding Debt</ExecutiveTooltip>.</p>
                                 </div>
                             </div>
                             <div className="bg-white border border-zinc-300 rounded-2xl p-6 shadow-sm flex gap-4 items-start">
@@ -159,7 +170,7 @@ export default function ServicesPage() {
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-zinc-950 text-lg mb-2">Features without profit</h3>
-                                    <p className="text-zinc-700">Engineering teams build features faster but cannot explain whether those features make money.</p>
+                                    <p className="text-zinc-700">Engineering teams build features faster but cannot explain whether those features make money without an <ExecutiveTooltip term="R&D Capital Audit">R&D Capital Audit</ExecutiveTooltip>.</p>
                                 </div>
                             </div>
                         </div>
@@ -177,10 +188,16 @@ export default function ServicesPage() {
                                 "Engineers are using AI tools we did not approve.",
                                 "We are deploying models faster than we can govern them.",
                                 "Board wants AI metrics we cannot produce.",
-                                "Technical debt is accelerating, not shrinking."
+                                "Technical debt is accelerating, moving us closer to our Technical Insolvency Date."
                             ].map((symptom, idx) => (
                                 <div key={idx} className="bg-white border border-zinc-200 rounded-xl p-5 shadow-sm">
-                                    <p className="text-zinc-800 font-medium italic">"{symptom}"</p>
+                                    <p className="text-zinc-800 font-medium italic">
+                                        "{symptom.includes('Technical Insolvency Date') ? (
+                                            <>
+                                                Technical debt is accelerating, moving us closer to our <ExecutiveTooltip term="Technical Insolvency Date">Technical Insolvency Date</ExecutiveTooltip>.
+                                            </>
+                                        ) : symptom}"
+                                    </p>
                                 </div>
                             ))}
                         </div>
@@ -198,15 +215,15 @@ export default function ServicesPage() {
                             </div>
                             <div>
                                 <h3 className="font-bold text-lg mb-2 text-indigo-300">Shadow AI discovery</h3>
-                                <p className="text-zinc-400 text-sm">We map unsanctioned model and API usage across your engineering team to quantify risk exposure.</p>
+                                <p className="text-zinc-400 text-sm">We map unsanctioned model and API usage across your engineering team to quantify financial risk exposure.</p>
                             </div>
                             <div>
                                 <h3 className="font-bold text-lg mb-2 text-indigo-300">Capital allocation mapping</h3>
-                                <p className="text-zinc-400 text-sm">We determine exactly what percentage of your R&D budget produces tangible business value.</p>
+                                <p className="text-zinc-400 text-sm">We perform an <ExecutiveTooltip term="R&D Capital Audit" className="text-indigo-300">R&D Capital Audit</ExecutiveTooltip> to determine what percentage of your engineering budget produces durable software assets.</p>
                             </div>
                             <div>
                                 <h3 className="font-bold text-lg mb-2 text-indigo-300">Governance gap analysis</h3>
-                                <p className="text-zinc-400 text-sm">We audit what controls exist versus what controls are required for your specific regulatory environment.</p>
+                                <p className="text-zinc-400 text-sm">We audit existing guards versus where <ExecutiveTooltip term="Deterministic controls" className="text-indigo-300">Deterministic controls</ExecutiveTooltip> are required for hard budget enforcement.</p>
                             </div>
                         </div>
                     </section>
@@ -247,7 +264,32 @@ export default function ServicesPage() {
                                                 </div>
 
                                                 <h3 className="text-2xl font-bold text-zinc-950 mb-2 font-grotesk">{pkg.name}</h3>
-                                                <p className="text-sm text-zinc-600 font-semibold mb-6 max-w-xl">{pkg.description}</p>
+                                                <p className="text-sm text-zinc-600 font-semibold mb-4 max-w-xl">
+                                                    {key === 'insolvency_diagnostic' ? (
+                                                        <>Deep-dive session for teams with high <ExecutiveTooltip term="Product Debt Index (PDI)">Product Debt Index (PDI)</ExecutiveTooltip> or spiraling API costs. We analyze architecture bottlenecks and map out a 30-day capital recovery roadmap.</>
+                                                    ) : key === 'hallucination_tax_audit' ? (
+                                                        <>Engineers spend an average of 4.3 hrs/week manually validating AI outputs. Our <ExecutiveTooltip term="R&D Capital Audit">R&D Capital Audit</ExecutiveTooltip> measures total verification overhead and installs <ExecutiveTooltip term="Deterministic controls">Deterministic controls</ExecutiveTooltip>.</>
+                                                    ) : (
+                                                        pkg.description
+                                                    )}
+                                                </p>
+
+                                                {/* Plain-English CFO Summary per package */}
+                                                <div className="mb-6 bg-zinc-50 border border-zinc-200 rounded-xl p-3 text-xs text-zinc-700">
+                                                    <span className="font-mono text-[10px] font-bold uppercase text-zinc-500 block mb-1">CFO Financial Takeaway:</span>
+                                                    {key === 'gut_check' && (
+                                                        <span>Identifies active cloud overspending and fixes initial <ExecutiveTooltip term="Vibe Coding Debt">Vibe Coding Debt</ExecutiveTooltip> exposure in 30 minutes.</span>
+                                                    )}
+                                                    {key === 'insolvency_diagnostic' && (
+                                                        <span>Pinpoints your exact <ExecutiveTooltip term="Technical Insolvency Date">Technical Insolvency Date</ExecutiveTooltip> and establishes hard dollar boundaries.</span>
+                                                    )}
+                                                    {key === 'hallucination_tax_audit' && (
+                                                        <span>Full <ExecutiveTooltip term="R&D Capital Audit">R&D Capital Audit</ExecutiveTooltip> replacing wasted engineer hours with <ExecutiveTooltip term="Deterministic controls">Deterministic controls</ExecutiveTooltip>.</span>
+                                                    )}
+                                                    {key === 'advisory_retainer' && (
+                                                        <span>Fractional CPO/CTO oversight guaranteeing zero billing surprises and a low <ExecutiveTooltip term="Product Debt Index (PDI)">Product Debt Index (PDI)</ExecutiveTooltip>.</span>
+                                                    )}
+                                                </div>
 
                                                 <div className="mb-6 flex items-baseline gap-1">
                                                     <span className="text-4xl font-extrabold text-zinc-950 font-grotesk">${pkg.price.toLocaleString()}</span>
@@ -306,7 +348,7 @@ export default function ServicesPage() {
                             </li>
                             <li className="flex gap-3">
                                 <CheckCircle2 className="w-6 h-6 text-indigo-600 shrink-0" />
-                                <span className="font-semibold text-zinc-800">Ongoing measurement framework</span>
+                                <span className="font-semibold text-zinc-800">Ongoing measurement framework with <ExecutiveTooltip term="Deterministic controls">Deterministic controls</ExecutiveTooltip></span>
                             </li>
                         </ul>
                     </section>
@@ -328,7 +370,11 @@ export default function ServicesPage() {
                             />
                             <FAQItem 
                                 question="What is the difference between a Diagnostic and a full Audit?" 
-                                answer="A Diagnostic ($2,500) evaluates code and identifies leaks over a 60-minute session. A full R&D Capital Audit ($7,500) is a 3-week engagement that includes comprehensive financial modeling, team productivity audits, and a 90-day custom remediation plan."
+                                answer={
+                                    <span>
+                                        A Diagnostic ($2,500) evaluates code and identifies your <ExecutiveTooltip term="Technical Insolvency Date">Technical Insolvency Date</ExecutiveTooltip> over a 60-minute session. A full <ExecutiveTooltip term="R&D Capital Audit">R&D Capital Audit</ExecutiveTooltip> ($7,500) is a 3-week engagement that includes comprehensive financial modeling, team productivity audits, and a 90-day custom remediation plan.
+                                    </span>
+                                }
                             />
                             <FAQItem 
                                 question="Who qualifies for the $450 Gut-Check Session?" 
