@@ -86,3 +86,23 @@ If an error or failure occurs at any stage:
 1. **Mandatory Live Production Deployment**: Validate builds (`npm run build`). EVERY task modifying code or content MUST automatically execute `git add -A`, `git commit -m "..."`, and `git push origin main` to deploy to live production. The user should NEVER have to remind or prompt the agent to deploy. Always verify `git status` is clean before ending the turn.
 2. **Workspace Hygiene Standard**: Keep the repository root immaculate. All temporary scripts, intermediate JSON outputs, and diagnostic logs MUST be routed to `.scratch/` or `<appDataDir>\brain\<conversation-id>/scratch/`. Never commit `tmp_*.js` or debug `.txt` files to the root directory.
 
+---
+
+## 8. Cognitive Model Maximization (Gemini 3.7 Flash / Claude 3.7 / Opus / Fable)
+
+To harness the full capabilities of next-generation high-reasoning frontier models:
+
+1. **Deep Architectural Synthesis**: Utilize high-reasoning token budgets to perform multi-hop systems analysis. Do not take shortcuts or settle for shallow fixes.
+2. **Euclidean Chain of Thought**: Reason explicitly through foundational principles (Experience $\rightarrow$ Observation $\rightarrow$ Mechanism $\rightarrow$ Principle) before executing edits.
+3. **Multi-Model Subagent Dynamic Dispatch**: When invoking subagents via `invoke_subagent`, match subagent tasks to their optimal model tier (`inherit` for complex reasoning, `flash` for rapid search/lookups, `pro` for large multi-step refactors).
+
+---
+
+## 9. Google Antigravity 2.0 Full Feature Harness
+
+1. **Subagent Swarms**: Summon custom subagents (`lived_experience_writer`, `qa_auditor`, `seo_architect`, `ui_designer`, `code_architect`) in parallel branch worktrees (`Workspace: "branch"`).
+2. **Lifecycle Hooks (`hooks.json`)**: Enforce automated validation scripts (`verify-qa.mjs`) on tool lifecycle events.
+3. **Always-On Rules (`.agents/rules/`)**: Ensure non-negotiable operational invariants are injected into every turn.
+4. **Slash Command Synergy**: Leverage `/goal` for autonomous long-horizon missions, `/schedule` for background timers/crons, `/grill-me` for design alignment, and `/learn` for pattern persistence.
+
+

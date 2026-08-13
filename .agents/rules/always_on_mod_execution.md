@@ -1,10 +1,10 @@
 ---
 name: always_on_mod_execution
-description: Mandates operational routing across Mode 1, Mode 2, and Mode 3 under Sovereign MOD v3.0.
+description: Mandates operational routing across Mode 1, Mode 2, and Mode 3 under Sovereign MOD v3.0, enforcing REWS v1.0 and 4-pass QA.
 trigger: always_on
 ---
 
-# Sovereign MOD v3.0 Operational Routing Rule
+# Sovereign MOD v3.0 Operational Routing & QA Rule
 
 Whenever the user submits a request (especially when saying "use the master directives"):
 
@@ -17,3 +17,10 @@ Whenever the user submits a request (especially when saying "use the master dire
    - Enforce REWS v1.0 copywriting (no consulting jargon: *unlock, delve, seamless, robust, leverage, elevate*).
    - Enforce Next.js App Router invariants (Server Components by default, leaf client components, prerender safety).
    - Enforce SEO bounds (<60 chars title, active voice meta description, canonical URLs, sitemap sync).
+
+3. **4-Tier Closed-Loop QA Gate**:
+   - **Pass 1**: Technical integrity & TypeScript signatures.
+   - **Pass 2**: Automated `node .agents/scripts/verify-qa.mjs` scan (em-dashes, stat fallbacks, hygiene).
+   - **Pass 3**: REWS copy & UI/UX design standards.
+   - **Pass 4**: `npm run build` compilation & live deployment.
+
