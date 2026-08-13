@@ -1,38 +1,37 @@
-# Project Rules
+# Project Rules & Sovereign Execution System (MOD v3.0)
 
-All essays, landing page copy, explanations, and documentation in this workspace must be written in accordance with the **Richard Ewing Writing Specification (REWS) Version 1.0**.
+All task execution in this workspace MUST strictly follow the **Sovereign Master Operating Directive (MOD v3.0)** and its associated modular skill definitions.
 
-Refer to the official skill definition at [.agents/skills/lived-experience/SKILL.md](file:///d:/Antigravity_RichardEwing.io/.agents/skills/lived-experience/SKILL.md) for full details.
+Refer to the official skill definition at [.agents/skills/master-directive/SKILL.md](file:///d:/Antigravity_RichardEwing.io/.agents/skills/master-directive/SKILL.md) for complete details.
 
 ---
 
-## 1. Core Copywriting Directives for AI Agents
+## 1. Core Copywriting Directives (REWS v1.0)
+All essays, landing page copy, explanations, and documentation must adhere to the **Richard Ewing Writing Specification (REWS v1.0)**:
 1. **The Prime Directive**: Optimize for clarity, insight, and durable understanding.
-2. **Start With Lived Experience**: Start with concrete observed evidence. Experience is the starting point for investigation, not the final proof.
-3. **Write From Learning (Intellectual Humility)**: Frame insights through evolving thinking rather than absolute certainty.
-4. **Explain Systems and Mechanisms**: Focus on structural analysis rather than isolated events. Show *why* things occur.
-5. **Attack Architectures, Not People**: Critique system design and execution models, never individuals.
-6. **Sentence Rhythm**: Mix long and short sentences. Allow core points to stand alone as short, declarative statements.
-7. **Vocabulary Constraints**: Strictly avoid marketing/consulting jargon (such as *unlock, delve, seamless, robust, leverage, elevate, game-changing*).
+2. **Start With Lived Experience**: Start with concrete observed evidence.
+3. **Write From Learning**: Frame insights through intellectual humility and evolving thinking.
+4. **Explain Systems & Mechanisms**: Move from Event $\rightarrow$ Pattern $\rightarrow$ System $\rightarrow$ Principle.
+5. **Attack Architectures, Not People**: Critique system design, never individuals.
+6. **Sentence Rhythm**: Mix long and short sentences. Allow core points to stand alone.
+7. **Vocabulary Constraints**: Strictly avoid marketing/consulting jargon (*unlock, delve, seamless, robust, leverage, elevate, game-changing*).
+*Full Specification:* [.agents/skills/lived-experience/SKILL.md](file:///d:/Antigravity_RichardEwing.io/.agents/skills/lived-experience/SKILL.md)
 
 ---
 
 ## 2. Next.js App Router Architectural Invariants
-1. **Page Files**: Keep page routes as Server Components. Define metadata at the page level.
-2. **Client Isolation**: Isolate interactive features (hooks, animations, storage) in `"use client"` sub-components and import them into Server pages.
-3. **Prerender Safety**: Guard all `localStorage` reads or browser API references with `useEffect` or `typeof window !== 'undefined'` checks to prevent build-time dehydration errors.
+1. **Server Components by Default**: Keep page routes as Server Components; define page-level metadata.
+2. **Client Component Isolation**: Isolate interactive hooks, Framer Motion, and state in leaf components with `"use client"`.
+3. **Prerender Safety**: Guard all browser APIs and `localStorage` with `useEffect` or `typeof window !== 'undefined'`.
 
 ---
 
-## 3. Sovereign Master Operating Directive (MOD v2.0) & Execution System
-All task execution in this workspace MUST follow the **Sovereign Master Operating Directive (MOD v2.0)**:
-Refer to the official skill definition at [.agents/skills/master-directive/SKILL.md](file:///d:/Antigravity_RichardEwing.io/.agents/skills/master-directive/SKILL.md).
+## 3. Sovereign Master Operating Directive (MOD v3.0) Execution System
+1. **Adaptive Operational Router**: Scale depth across Mode 1 (Direct Query), Mode 2 (Targeted Implementation), and Mode 3 (Autonomous Full System Swarm).
+2. **5-Agent War Room Swarms**: Deploy custom subagents (`lived_experience_writer`, `qa_auditor`, `seo_architect`, `ui_designer`, `code_architect`) via `invoke_subagent` in isolated git worktrees (`Workspace: "branch"` or `"share"`).
+3. **Zero-Drift Deterministic Verification**: Execute `node .agents/scripts/verify-qa.mjs` to automatically lint em-dashes, stat sources, metadata length limits, and git hygiene.
+4. **4-Pass QA & Self-Healing Protocol**: Unit, Integration, Domain Rules, Build/Runtime validation (`npm run build`). Fix root causes empirically; never mask symptoms.
+5. **Auto-Push & Workspace Hygiene**: Validate builds (`npm run build`). AUTOMATICALLY execute `git add -A`, `git commit`, and `git push origin main` for every code/content change. Route temporary files to `.scratch/`.
 
-1. **Adaptive Operational Router**: Dynamically scale depth across Mode 1 (Direct Query), Mode 2 (Targeted Refinement), and Mode 3 (Autonomous Full System "Boil the Ocean").
-2. **360° Panoramic System Context**: Evaluate adjacent code, full dependency graphs, and downstream impacts before writing output.
-3. **Domain Synthesis Engines**: Dynamically activate specialized quality engines (REWS v1.0, Next.js Architecture, UI/UX Polish, SEO & Growth, Strategic Artifacts).
-4. **War Room Research Swarms**: Deploy concurrent subagent swarms (`invoke_subagent`) in isolated git worktrees (`branch` mode) to audit gaps and remediate before feature construction.
-5. **4-Pass QA & Self-Healing Protocol**: Execute 4-tier closed-loop QA (Unit, Integration, Domain Rules, Build/Runtime). Fix root causes empirically; never mask symptoms.
-6. **Live Production Validation, Auto-Push & Hygiene**: Validate live deployments (`npm run build`). AUTOMATICALLY execute `git add -A`, `git commit`, and `git push origin main` for every code/content change without requiring user prompting. Verify `git status` is clean before declaring task completion, and maintain zero root clutter by routing temporary outputs to `.scratch/`.
 
 
