@@ -70,7 +70,7 @@ export default function ExecutiveTooltip({
 
   // Handle click outside to close on touch devices
   useEffect(() => {
-    function handleClickOutside(event: Event) {
+    function handleClickOutside(event: MouseEvent | TouchEvent) {
       if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
         setIsOpen(false);
       }
