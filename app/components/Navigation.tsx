@@ -10,6 +10,7 @@ import Image from 'next/image';
 const Navigation = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
+    const [toolsDropdownOpen, setToolsDropdownOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const { isSignedIn, isLoaded } = useUser();
 
@@ -118,6 +119,106 @@ const Navigation = () => {
                                                     Role benchmarks, leveling intelligence, and compensation strategy for engineers & leaders.
                                                 </p>
                                             </Link>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+
+                            {/* Free Tools & Calculators Dropdown */}
+                            <div 
+                                className="relative"
+                                onMouseEnter={() => setToolsDropdownOpen(true)}
+                                onMouseLeave={() => setToolsDropdownOpen(false)}
+                            >
+                                <button 
+                                    className="text-emerald-800 hover:text-emerald-950 transition-colors font-bold inline-flex items-center gap-1 py-1 cursor-pointer whitespace-nowrap"
+                                    onClick={() => setToolsDropdownOpen(!toolsDropdownOpen)}
+                                >
+                                    <span>Free Tools</span>
+                                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${toolsDropdownOpen ? 'rotate-180 text-emerald-700' : 'text-emerald-600'}`} />
+                                </button>
+
+                                <AnimatePresence>
+                                    {toolsDropdownOpen && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                                            exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                                            transition={{ duration: 0.15 }}
+                                            className="absolute top-full left-0 w-80 mt-2 bg-white/95 backdrop-blur-xl border border-zinc-300 rounded-2xl p-3 shadow-2xl z-50 space-y-1"
+                                        >
+                                            <Link 
+                                                href="/tools/aper" 
+                                                onClick={() => setToolsDropdownOpen(false)}
+                                                className="block p-2.5 rounded-xl hover:bg-emerald-50/70 border border-transparent hover:border-emerald-200 transition-all group"
+                                            >
+                                                <div className="flex items-center justify-between mb-0.5">
+                                                    <span className="font-grotesk font-bold text-xs text-zinc-950 group-hover:text-emerald-900">
+                                                        APER Calculator
+                                                    </span>
+                                                    <span className="text-[9px] font-mono font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">
+                                                        Popular
+                                                    </span>
+                                                </div>
+                                                <p className="text-[11px] text-zinc-600 font-medium leading-tight">
+                                                    Revenue per engineer financial benchmark.
+                                                </p>
+                                            </Link>
+
+                                            <Link 
+                                                href="/tools/pdi" 
+                                                onClick={() => setToolsDropdownOpen(false)}
+                                                className="block p-2.5 rounded-xl hover:bg-cyan-50/70 border border-transparent hover:border-cyan-200 transition-all group"
+                                            >
+                                                <div className="flex items-center justify-between mb-0.5">
+                                                    <span className="font-grotesk font-bold text-xs text-zinc-950 group-hover:text-cyan-900">
+                                                        Product Debt Index (PDI)
+                                                    </span>
+                                                </div>
+                                                <p className="text-[11px] text-zinc-600 font-medium leading-tight">
+                                                    Quantify legacy technical debt & valuation risk.
+                                                </p>
+                                            </Link>
+
+                                            <Link 
+                                                href="/tools/shadow-ai" 
+                                                onClick={() => setToolsDropdownOpen(false)}
+                                                className="block p-2.5 rounded-xl hover:bg-purple-50/70 border border-transparent hover:border-purple-200 transition-all group"
+                                            >
+                                                <div className="flex items-center justify-between mb-0.5">
+                                                    <span className="font-grotesk font-bold text-xs text-zinc-950 group-hover:text-purple-900">
+                                                        Shadow AI Auditor
+                                                    </span>
+                                                </div>
+                                                <p className="text-[11px] text-zinc-600 font-medium leading-tight">
+                                                    Audit unmonitored LLM token leakage & risk.
+                                                </p>
+                                            </Link>
+
+                                            <Link 
+                                                href="/tools/aueb" 
+                                                onClick={() => setToolsDropdownOpen(false)}
+                                                className="block p-2.5 rounded-xl hover:bg-indigo-50/70 border border-transparent hover:border-indigo-200 transition-all group"
+                                            >
+                                                <div className="flex items-center justify-between mb-0.5">
+                                                    <span className="font-grotesk font-bold text-xs text-zinc-950 group-hover:text-indigo-900">
+                                                        AI Unit Economics Benchmark
+                                                    </span>
+                                                </div>
+                                                <p className="text-[11px] text-zinc-600 font-medium leading-tight">
+                                                    Calculate COGS per inference & gross margin.
+                                                </p>
+                                            </Link>
+
+                                            <div className="pt-2 mt-1 border-t border-zinc-200">
+                                                <Link 
+                                                    href="/tools" 
+                                                    onClick={() => setToolsDropdownOpen(false)}
+                                                    className="block p-2 rounded-lg text-center font-mono font-bold text-xs text-zinc-900 hover:text-emerald-700 hover:bg-zinc-100 transition-all"
+                                                >
+                                                    View All 25 Diagnostic Tools →
+                                                </Link>
+                                            </div>
                                         </motion.div>
                                     )}
                                 </AnimatePresence>
