@@ -26,6 +26,24 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
+  // Today's LinkedIn Newsletter Article — August 13, 2026
+  {
+    id: 'linkedin-inference-dividend-model',
+    title: 'How to Reduce LLM Costs in Production: The Inference Dividend Model',
+    url: 'https://www.linkedin.com/pulse/how-reduce-llm-costs-production-inference-dividend-model-ewing-nwtgc/',
+    publisher: 'LinkedIn',
+    domain: 'AI Economics',
+    type: 'Executable',
+    editorsPick: true,
+    date: 'August 13, 2026',
+    thesis: 'Serving AI features with un-monitored model calls erodes traditional 80% SaaS gross margins into low-margin territory as user activity scales linearly with API token burn. Capturing the Inference Dividend through edge pre-validation, semantic intent caching, and task-based model tiering slashes token OpEx by over 50% while reducing cache response latencies under 20ms.',
+    relatedConceptIds: ['inference-dividend-model', 'semantic-caching', 'inference-economics', 'ai-volatility-tax', 'ai-margin-squeeze', 'cost-of-predictivity', 'ai-cost-optimization'],
+    relatedGlossarySlugs: ['inference-dividend-model', 'synthetic-cogs', 'ai-volatility-tax', 'semantic-caching'],
+    relatedFrameworkSlugs: ['inference-optimizer-matrix', 'semantic-cache-edge-filter', 'inference-dividend-framework'],
+    relatedToolIds: ['aueb', 'slm-vs-api', 'agentic-token-simulator'],
+    relatedCaseStudyIds: ['exogram-inference-dividend-optimization', 'saas-cost-collapse'],
+    relatedCurriculumTrackIds: ['ai-economics', 'cloud-finops']
+  },
   // Today's CIO.com Article — August 13, 2026
   {
     id: 'cio-salesforce-sap-workflow-agents',

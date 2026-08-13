@@ -63,10 +63,12 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
       { stage: 'LinkedIn Essay', label: 'Growth Is Not Your Cost Problem — Your Architecture Is', publisher: 'LinkedIn', date: 'August 10, 2026', summary: 'Proved 50%+ API spend reduction using semantic caching + edge filtering in front of Exogram execution loops.' }
     ],
     evidenceLedger: [
+      { id: 'ev-sc-3', title: 'How to Reduce LLM Costs in Production: The Inference Dividend Model', url: 'https://www.linkedin.com/pulse/how-reduce-llm-costs-production-inference-dividend-model-ewing-nwtgc/', publisher: 'LinkedIn', type: 'Production Telemetry', strength: 5, role: 'Extends', date: 'August 13, 2026' },
       { id: 'ev-sc-2', title: 'Growth Is Not Your Cost Problem — Your Architecture Is', url: 'https://www.linkedin.com/feed/update/urn:li:share:7487606608009814016/', publisher: 'LinkedIn', type: 'Executable', strength: 5, role: 'Extends', date: 'August 10, 2026' },
       { id: 'ev-sc-1', title: 'Semantic Caching Playbook', url: 'https://theaieconomist.beehiiv.com', publisher: 'Beehiiv', type: 'Framework Module', strength: 4, role: 'Origin', date: 'June 2025' }
     ],
     relatedConceptSlugs: [
+      { slug: 'inference-dividend-model', relationship: 'implements' },
       { slug: 'ai-volatility-tax', relationship: 'measures' },
       { slug: 'inference-economics', relationship: 'supports' }
     ],

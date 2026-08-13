@@ -32,6 +32,8 @@ export const metadata: Metadata = {
     },
 };
 
+import Link from 'next/link';
+
 export default function Page() {
     const howToSchema = {
         '@context': 'https://schema.org',
@@ -52,12 +54,34 @@ export default function Page() {
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
             <AUEBTool />
-            <div className="page-container max-w-4xl mx-auto px-6">
+            <div className="page-container max-w-4xl mx-auto px-6 mb-16">
                 <DiagnosticCTA 
                     title="Is your runway burning faster than your MRR?"
                     subtitle="Compute costs are the new cloud tax. Take the AI Economics Diagnostic Audit to find your hidden margin leaks before your next board meeting."
                     metrics={["$100K+ API Bills", "Token Sprawl", "Negative Margin"]}
                 />
+                
+                <div className="mt-12 bg-white border border-zinc-300 rounded-3xl p-8 text-center space-y-4 shadow-sm">
+                    <h3 className="text-xl font-bold font-grotesk text-zinc-950">
+                        Related Research &amp; Architectural Specifications
+                    </h3>
+                    <div className="flex flex-wrap justify-center gap-4 pt-2">
+                        <a 
+                            href="https://www.linkedin.com/pulse/how-reduce-llm-costs-production-inference-dividend-model-ewing-nwtgc/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-4 py-2 bg-cyan-900 text-white font-mono text-xs font-bold rounded-xl hover:bg-cyan-800 transition"
+                        >
+                            Read "The Inference Dividend Model" on LinkedIn ↗
+                        </a>
+                        <Link 
+                            href="/concepts/inference-dividend-model"
+                            className="px-4 py-2 bg-zinc-900 text-white font-mono text-xs font-bold rounded-xl hover:bg-zinc-800 transition"
+                        >
+                            Explore Inference Dividend Concept →
+                        </Link>
+                    </div>
+                </div>
             </div>
         </>
     );

@@ -202,6 +202,21 @@ export const subFrameworks: Record<string, SubFramework> = {
                     enforcement: 'Exogram Semantic Model Router & Fallback Gate'
                 },
                 conceptSlug: 'innovation-tax'
+            },
+            {
+                id: 'PAIG-ECON-004',
+                name: 'The Inference Dividend Model Framework',
+                definition: 'A 3-level edge optimization architecture (pre-call validation, vector intent caching, SLM routing) recapturing >50% of wasted AI token spend.',
+                problem: 'Un-monitored model calls cause AI feature OpEx to scale linearly with user activity, destroying traditional 80% SaaS gross profit margins.',
+                whyItMatters: 'Recaptures wasted token capital while dropping cache hit latencies under 20ms to preserve software unit margins.',
+                provenance: ['LinkedIn Newsletters', 'CIO.com', 'Exogram Platform'],
+                implementation: {
+                    research: ['How to Reduce LLM Costs in Production: The Inference Dividend Model', 'Growth Is Not Your Cost Problem — Your Architecture Is'],
+                    diagnostics: ['AI Unit Economics Benchmark (AUEB)', 'SLM vs API Arbitrage'],
+                    education: ['Track 2: AI Economics', 'Track 7: Cloud FinOps & AI Cost Management'],
+                    enforcement: 'Exogram 3-Level Edge Inference Dividend Interceptor'
+                },
+                conceptSlug: 'inference-dividend-model'
             }
         ]
     },

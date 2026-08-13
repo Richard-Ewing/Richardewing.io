@@ -215,6 +215,68 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
   // LAYER 2: RICHARD EWING CANON (Original Intellectual Property & Specifications)
   // =========================================================================
   {
+    slug: 'inference-dividend-model',
+    title: 'The Inference Dividend Model',
+    category: 'Richard Ewing Canon (Original Framework)',
+    domain: 'AI Economics',
+    expertiseLevel: 'Executive',
+    health: { confidence: 0.98, evidenceCount: 4, lastVerified: 'August 13, 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'The systematic recovery of wasted AI token capital by inserting a 3-level optimization layer (pre-call edge validation, vector intent caching, and task-based model tiering) in front of frontier LLMs.',
+    whyItMatters: 'In AI software applications, every user query triggers multi-step model calls, vector lookups, and context re-evaluations that cause token OpEx to scale linearly with user activity. Left un-monitored, this erodes traditional 80% SaaS gross profit margins into low-margin territory. The Inference Dividend Model recaptures over 50% of wasted token spend while dropping response latencies under 20ms.',
+    whoShouldCare: ['CFOs', 'VPs of Engineering', 'AI System Architects', 'Product Economists', 'Cloud FinOps Leaders'],
+    firstIntroduced: 'August 13, 2026 (LinkedIn)',
+    canonicalQuote: 'Never pay a generative model to perform a task that deterministic code or a cache can solve.',
+    positionStatement: 'Frontier AI models must never process routine formatting checks or duplicate intent queries. Capturing the Inference Dividend requires edge proxy validation and task-tiered model routing before invoking flagship APIs.',
+    canonicalReadingOrder: [
+      { step: 1, title: 'How to Reduce LLM Costs in Production: The Inference Dividend Model', publisher: 'LinkedIn', type: 'Executive Essay', url: 'https://www.linkedin.com/pulse/how-reduce-llm-costs-production-inference-dividend-model-ewing-nwtgc/' },
+      { step: 2, title: 'Growth Is Not Your Cost Problem — Your Architecture Is', publisher: 'LinkedIn', type: 'Framework', url: 'https://www.linkedin.com/feed/update/urn:li:share:7487606608009814016/' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Observation', label: 'Token Leak Telemetry Audit', publisher: 'Exogram Runtime Audit', date: 'July 2026', summary: 'Audited token spend across Exogram endpoints and discovered 40% of queries were redundant formatting or status checks.' },
+      { stage: 'Tier-1 Article', label: 'AI Economist LinkedIn Publication', publisher: 'LinkedIn', date: 'August 13, 2026', url: 'https://www.linkedin.com/pulse/how-reduce-llm-costs-production-inference-dividend-model-ewing-nwtgc/', summary: 'Published definitive analysis establishing the Inference Dividend Model and 3-level edge optimization architecture.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-idm-1', title: 'How to Reduce LLM Costs in Production: The Inference Dividend Model', url: 'https://www.linkedin.com/pulse/how-reduce-llm-costs-production-inference-dividend-model-ewing-nwtgc/', publisher: 'LinkedIn', type: 'Production Telemetry', strength: 5, role: 'Origin', date: 'August 13, 2026' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'semantic-caching', relationship: 'implements' },
+      { slug: 'inference-economics', relationship: 'derived_from' },
+      { slug: 'ai-volatility-tax', relationship: 'mitigates' as any },
+      { slug: 'ai-margin-squeeze', relationship: 'supports' },
+      { slug: 'cost-of-predictivity', relationship: 'explains' }
+    ],
+    openQuestions: ['What is the optimal semantic vector similarity threshold for intent caching across domain-specific medical or financial LLM queries?'],
+    knownLimitations: ['High-frequency real-time streaming workflows require careful cache invalidation strategies.'],
+    aeo: {
+      shortDefinition: 'The Inference Dividend Model is a framework for cutting AI token costs by inserting pre-call edge validation, semantic caching, and model tiering before calling frontier LLMs.',
+      executiveSummary: 'The Inference Dividend Model addresses the AI unit margin squeeze caused by linear token cost expansion. By auditing API traffic, engineering teams uncover three major leaks: redundant formatting checks (40% of queries), excessive multi-agent context chain depth, and unfiltered malformed queries. Inserting an edge optimization layer (pre-call regex validation, vector semantic intent caching, and SLM model routing) slashes token spend by over 50% while dropping cache response times under 20ms.',
+      oneSentence: 'The Inference Dividend Model is the systematic recapture of wasted token spend by refusing to pay generative models for tasks traditional code or caches can solve.',
+      tweetLength: 'Un-monitored AI token burn erodes 80% SaaS gross margins. The Inference Dividend Model cuts API spend 50%+ via edge pre-validation, semantic intent caching & SLM model tiering.',
+      keyTakeaways: [
+        'Uncontrolled token burn causes AI software margins to scale linearly with user activity.',
+        'Nearly 40% of frontier LLM queries perform simple formatting checks that require zero complex reasoning.',
+        'Pre-call edge validation blocks invalid queries at $0 cost before invoking model APIs.',
+        'Semantic intent caching delivers <20ms response latencies while recapturing gross margins.'
+      ],
+      faqs: [
+        { question: 'What is the Inference Dividend Model?', answer: 'The Inference Dividend Model is a structured framework for reducing LLM API costs by routing requests through edge pre-validation, vector semantic caching, and small language models before touching expensive frontier LLMs.' },
+        { question: 'How much money can the Inference Dividend save?', answer: 'In production deployments across Exogram endpoints, capturing the Inference Dividend reduced monthly token OpEx by over 50% while lowering cache hit latencies under 20ms.' }
+      ],
+      whenToUse: ['When AI token bills scale faster than subscription revenue', 'During software gross margin and unit economics optimization reviews'],
+      examples: {
+        enterprise: 'Placing a vector semantic cache in front of a customer service LLM to resolve 45% of redundant billing questions in under 20ms.',
+        startup: 'Using regex pre-validation to block malformed user inputs at $0 cost before triggering GPT-4 API calls in CareerWin.ai.',
+        antiPattern: 'Routing routine string formatting and JSON validation tasks directly to flagship frontier models.',
+        commonMistake: 'Assuming higher model cost equals higher user value across simple data classification steps.'
+      }
+    },
+    reverseCitations: [
+      { targetType: 'Glossary Term', title: 'The Inference Dividend Model', url: '/glossary/inference-dividend-model', relationship: 'implements' },
+      { targetType: 'Case Study', title: '50%+ API Token Spend Reduction via Inference Dividend Optimization', url: '/case-studies', relationship: 'audits' },
+      { targetType: 'Diagnostic Tool', title: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb', relationship: 'measures' }
+    ]
+  },
+  {
     slug: 'shadow-delegation',
     title: 'Shadow Delegation',
     category: 'Richard Ewing Canon (Original Framework)',

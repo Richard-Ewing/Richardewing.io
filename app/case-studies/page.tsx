@@ -24,6 +24,18 @@ export const metadata: Metadata = {
 
 const caseStudies = [
     {
+        id: 'exogram-inference-dividend-optimization',
+        badge: 'Exogram Runtime Edge',
+        title: '50%+ API Token Spend Reduction via Inference Dividend Optimization',
+        metric: '50%+',
+        metricLabel: 'Monthly Token OpEx Recaptured',
+        problem: 'Exogram runtime endpoints experienced linear token bill expansion as user activity scaled, threatening 80% SaaS gross profit margins with uncontrolled API token burn.',
+        diagnosis: 'Audited token traffic and identified 3 key leaks: 40% redundant formatting checks, unnecessary multi-agent context chain depth, and unfiltered malformed queries hitting frontier model APIs.',
+        action: 'Deployed a 3-level edge optimization layer: regex pre-call validation ($0 cost), vector semantic intent caching (<20ms latency), and task-based model tiering (SLM routing).',
+        result: 'Slashed monthly token spend by over 50%, dropped cache hit response times under 20ms, and protected 80%+ gross software margins for client applications like CareerWin.ai.',
+        tags: ['Inference Dividend', 'Semantic Caching', 'Edge Validation', 'Margin Protection'],
+    },
+    {
         id: 'unauthorized-crm-retention-discount',
         badge: 'Enterprise SaaS CRM',
         title: 'CRM Retention Agent Bypasses Corporate Signing Matrix',

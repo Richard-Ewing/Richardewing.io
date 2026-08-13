@@ -38,6 +38,23 @@ export const glossaryCategories = [
 
 const _baseGlossaryTerms: GlossaryTerm[] = [
     // =========================================================================
+    // AI ECONOMICS / INFERENCE DIVIDEND MODEL
+    // =========================================================================
+    {
+        slug: 'inference-dividend-model',
+        title: 'The Inference Dividend Model',
+        category: 'SaaS Metrics & Finance',
+        definition: `The Inference Dividend Model is the systematic recovery of wasted AI token capital by inserting a 3-level edge optimization layer (pre-call validation, vector intent caching, and task-based model tiering) in front of frontier LLMs.\n\nIn traditional SaaS economics, serving a new user carries a marginal infrastructure cost close to zero. In AI applications, however, every user interaction triggers multi-step model calls, vector lookups, and context re-evaluations. Left un-monitored, your infrastructure costs scale linearly with user activity, gradually eroding gross profit margins from traditional 80% software levels down into low-margin territory. Read the full publication in [How to Reduce LLM Costs in Production: The Inference Dividend Model](https://www.linkedin.com/pulse/how-reduce-llm-costs-production-inference-dividend-model-ewing-nwtgc/).`,
+        whyItMatters: `Auditing token spend reveals three primary financial leaks: 40% of queries to frontier models are simple formatting/status checks, multi-agent context chains pass full transcripts for basic classification tasks, and malformed queries hit APIs before software validation. Capturing the Inference Dividend slashes token OpEx by >50% while dropping cache hit response times under 20ms. Explore the [Inference Dividend Model](/concepts/inference-dividend-model) concept and [AI Unit Economics Benchmark](/tools/aueb).`,
+        howToMeasure: `1. **Token Cost-per-Interaction (CPI)**: Track API spend relative to user active sessions.\n2. **Redundant Query Ratio**: Measure percentage of prompt requests with >0.85 vector similarity to recent queries.\n3. **Cache Hit Response Time**: Benchmark edge cache latencies (<20ms target).\n4. **Gross Margin Recovery Rate**: Calculate gross margin expansion post-edge optimization deployment.`,
+        faqs: [
+            { question: 'What is the Inference Dividend Model?', answer: 'The Inference Dividend Model is a framework for cutting AI API costs by routing requests through edge pre-validation, vector semantic caching, and small language models before touching expensive frontier LLMs.' },
+            { question: 'How much token OpEx can the Inference Dividend recover?', answer: 'Deploying edge pre-filtering and semantic intent caching cuts monthly token spend by over 50% while improving response latency to under 20 milliseconds.' }
+        ],
+        relatedTerms: ['synthetic-cogs', 'ai-volatility-tax', 'semantic-caching', 'inference-economics'],
+        relatedTools: [{ name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }],
+    },
+    // =========================================================================
     // AI GOVERNANCE & VERIFICATION / SHADOW DELEGATION
     // =========================================================================
     {
