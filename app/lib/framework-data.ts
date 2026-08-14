@@ -33,7 +33,7 @@ export const subFrameworks: Record<string, SubFramework> = {
         badgeColor: 'bg-cyan-50 text-cyan-900 border-cyan-200',
         icon: '📊',
         overview: 'Forensic methodologies to audit, categorize, and optimize R&D capital allocation and GenAI margins.',
-        livedExperience: 'While conducting R&D audits for PE-backed B2B SaaS companies, I kept seeing the same margin leak: teams scaled AI features assuming flat SaaS software costs, only to experience margin collapse. The pattern was clear—power users consumed model queries far faster than subscriptions recovered costs. The underlying mechanism was Synthetic COGS—variable GPU and API runtime execution capitalized incorrectly as fixed hosting. This reveals a general principle: AI features have variable unit economics that scale non-linearly with user activity. The broader implication is that SaaS companies must pivot to consumption-capped or credit-based pricing models to remain structurally solvent.',
+        livedExperience: 'While conducting R&D audits for PE-backed B2B SaaS companies, I kept seeing the same margin leak: teams scaled AI features assuming flat SaaS software costs, only to experience margin collapse. The pattern was clear - power users consumed model queries far faster than subscriptions recovered costs. The underlying mechanism was Synthetic COGS - variable GPU and API runtime execution capitalized incorrectly as fixed hosting. This reveals a general principle: AI features have variable unit economics that scale non-linearly with user activity. The broader implication is that SaaS companies must pivot to consumption-capped or credit-based pricing models to remain structurally solvent.',
         concepts: [
             {
                 id: 'PAIG-ECON-001',
@@ -43,7 +43,7 @@ export const subFrameworks: Record<string, SubFramework> = {
                 whyItMatters: 'Calculating cost-per-interaction allows organizations to adjust pricing tiers or model routing before running at a loss.',
                 provenance: ['CIO.com articles', 'Built In publications', 'Beehiiv Laboratory', 'LinkedIn Newsletters', 'AI Unit Economics Benchmark (AUEB)', 'Curriculum Track 2', 'Exogram Platform'],
                 implementation: {
-                    research: ['Growth Is Not Your Cost Problem — Your Architecture Is', 'How to Prevent Memory Loss in AI Applications', 'Giving an AI a bigger memory window is like giving a confused worker a bigger inbox', 'Most AI Projects Burn Cash', 'Your Claude API Bill is Higher Than Your Revenue'],
+                    research: ['Growth Is Not Your Cost Problem  -  Your Architecture Is', 'How to Prevent Memory Loss in AI Applications', 'Giving an AI a bigger memory window is like giving a confused worker a bigger inbox', 'Most AI Projects Burn Cash', 'Your Claude API Bill is Higher Than Your Revenue'],
                     diagnostics: ['AI Unit Economics Benchmark (AUEB)', 'AI Unit Economics Audit'],
                     education: ['Track 2: AI AI Economics', 'Track 24: AI Economics & Margin Engineering'],
                     enforcement: 'Exogram API Token Budget Enforcer'
@@ -58,7 +58,7 @@ export const subFrameworks: Record<string, SubFramework> = {
                 whyItMatters: 'Correctly identifying Synthetic COGS ensures accurate gross profit reporting and models true product contribution margins.',
                 provenance: ['CIO.com articles', 'Manning Book Proposal', 'Curriculum Track 2', 'LinkedIn Publications'],
                 implementation: {
-                    research: ['Growth Is Not Your Cost Problem — Your Architecture Is', 'The Hidden Inflation of AI: Why Model Collapse is a Business Risk'],
+                    research: ['Growth Is Not Your Cost Problem  -  Your Architecture Is', 'The Hidden Inflation of AI: Why Model Collapse is a Business Risk'],
                     diagnostics: ['AI Unit Economics Benchmark (AUEB)', 'SLM vs API Arbitrage'],
                     education: ['Track 2: AI AI Economics', 'Track 7: Cloud FinOps & AI Cost Management'],
                     enforcement: 'Exogram Route optimizer & Caching Engine'
@@ -103,7 +103,7 @@ export const subFrameworks: Record<string, SubFramework> = {
         badgeColor: 'bg-emerald-50 text-emerald-900 border-emerald-200',
         icon: '🎯',
         overview: 'Metrics and gating frameworks to prioritize feature deprecation, prevent product bloating, and ensure feature-level profitability.',
-        livedExperience: 'During product portfolio audits, I watched teams continually build complex AI capabilities that customers never actually used. I noticed a consistent feedback loop: engineers shipped buttons to hit sprint targets, but the carrying cost of maintaining those features slowly strangled roadmap velocity. The mechanism is Feature Bloat—unused code paths requiring continuous testing, dependency updates, and compute power. This leads to the principle of the Product Debt Index (PDI): the carrying cost of legacy features decays long-term valuation. Ultimately, companies must systematically deprecate their bottom 20% of features to restore EBITDA and engineering throughput.',
+        livedExperience: 'During product portfolio audits, I watched teams continually build complex AI capabilities that customers never actually used. I noticed a consistent feedback loop: engineers shipped buttons to hit sprint targets, but the carrying cost of maintaining those features slowly strangled roadmap velocity. The mechanism is Feature Bloat - unused code paths requiring continuous testing, dependency updates, and compute power. This leads to the principle of the Product Debt Index (PDI): the carrying cost of legacy features decays long-term valuation. Ultimately, companies must systematically deprecate their bottom 20% of features to restore EBITDA and engineering throughput.',
         concepts: [
             {
                 id: 'PAIG-PROD-001',
@@ -156,7 +156,7 @@ export const subFrameworks: Record<string, SubFramework> = {
         badgeColor: 'bg-purple-50 text-purple-900 border-purple-200',
         icon: '⚙️',
         overview: 'System-level validation structures to address vibe-coding debt, calculate velocity-insolvency horizons, and enforce testing standards.',
-        livedExperience: 'After reviewing dozens of enterprise codebases, I saw development velocity freeze completely as teams spent 70% of their sprints resolving bugs. The pattern was unmistakable: developers were \'vibe coding\'—copy-pasting thousands of lines of LLM-generated code without writing unit tests. The mechanism is cyclomatic complexity explosion: AI-generated code introduces unmapped state mutations and subtle logic branches. This leads to the principle of the Technical Insolvency Date—the specific quarter when codebase maintenance consumes 100% of engineering resources. The broader implication is that AI-assisted velocity is a valuation liability unless coupled with strict, deterministic code compilation gates.',
+        livedExperience: 'After reviewing dozens of enterprise codebases, I saw development velocity freeze completely as teams spent 70% of their sprints resolving bugs. The pattern was unmistakable: developers were \'vibe coding\' - copy-pasting thousands of lines of LLM-generated code without writing unit tests. The mechanism is cyclomatic complexity explosion: AI-generated code introduces unmapped state mutations and subtle logic branches. This leads to the principle of the Technical Insolvency Date - the specific quarter when codebase maintenance consumes 100% of engineering resources. The broader implication is that AI-assisted velocity is a valuation liability unless coupled with strict, deterministic code compilation gates.',
         concepts: [
             {
                 id: 'PAIG-ENG-001',
@@ -211,7 +211,7 @@ export const subFrameworks: Record<string, SubFramework> = {
                 whyItMatters: 'Recaptures wasted token capital while dropping cache hit latencies under 20ms to preserve software unit margins.',
                 provenance: ['LinkedIn Newsletters', 'CIO.com', 'Exogram Platform'],
                 implementation: {
-                    research: ['How to Reduce LLM Costs in Production: The Inference Dividend Model', 'Growth Is Not Your Cost Problem — Your Architecture Is'],
+                    research: ['How to Reduce LLM API Token Costs in Production', 'How to Reduce LLM Costs in Production: The Inference Dividend Model', 'Growth Is Not Your Cost Problem  -  Your Architecture Is'],
                     diagnostics: ['AI Unit Economics Benchmark (AUEB)', 'SLM vs API Arbitrage'],
                     education: ['Track 2: AI Economics', 'Track 7: Cloud FinOps & AI Cost Management'],
                     enforcement: 'Exogram 3-Level Edge Inference Dividend Interceptor'
@@ -227,7 +227,7 @@ export const subFrameworks: Record<string, SubFramework> = {
         badgeColor: 'bg-amber-50 text-amber-900 border-amber-200',
         icon: '🛡️',
         overview: 'Defensive architectures to prevent data leakage, intercept adversarial payloads, and establish agent execution guardrails.',
-        livedExperience: 'While analyzing runtime vulnerabilities in autonomous systems, I watched an agent exfiltrate a customer database because a user submitted a base64-encoded command. I kept seeing the same security flaw: developers relying on English system prompts to govern agent behavior. The mechanism is Prompt Injection—probabilistic models treat instructions and data as a single execution context, allowing data to overwrite rules. This generalized into a core principle: prompt-level guardrails are fundamentally non-deterministic and easily bypassed. The broader implication is that AI agents cannot be secured via prompts; they require physical network-level interception and action-admissibility proxy gates.',
+        livedExperience: 'While analyzing runtime vulnerabilities in autonomous systems, I watched an agent exfiltrate a customer database because a user submitted a base64-encoded command. I kept seeing the same security flaw: developers relying on English system prompts to govern agent behavior. The mechanism is Prompt Injection - probabilistic models treat instructions and data as a single execution context, allowing data to overwrite rules. This generalized into a core principle: prompt-level guardrails are fundamentally non-deterministic and easily bypassed. The broader implication is that AI agents cannot be secured via prompts; they require physical network-level interception and action-admissibility proxy gates.',
         concepts: [
             {
                 id: 'PAIG-SEC-001',
@@ -298,7 +298,7 @@ export const subFrameworks: Record<string, SubFramework> = {
         badgeColor: 'bg-rose-50 text-rose-900 border-rose-200',
         icon: '🔄',
         overview: 'FinOps frameworks and hardware repatriation metrics to manage spot-GPU usage, local compute breakevens, and token decay.',
-        livedExperience: 'During cloud infrastructure assessments, I watched a startup burn $40K in a single weekend because a multi-agent loop entered an infinite retry cycle. The pattern was highly repetitive: teams deployed autonomous agents with direct API access without setting loop caps or cost circuit breakers. The mechanism is Token Inflation—agents query models in loops, expanding context windows and scaling billing exponentially. This illustrates the principle of unoptimized inference routing: uncontrolled agent loops lead to rapid capital erosion. The broader implication is that companies must deploy autonomous agents behind sovereign gateway proxies that enforce deterministic token and cost budgets.',
+        livedExperience: 'During cloud infrastructure assessments, I watched a startup burn $40K in a single weekend because a multi-agent loop entered an infinite retry cycle. The pattern was highly repetitive: teams deployed autonomous agents with direct API access without setting loop caps or cost circuit breakers. The mechanism is Token Inflation - agents query models in loops, expanding context windows and scaling billing exponentially. This illustrates the principle of unoptimized inference routing: uncontrolled agent loops lead to rapid capital erosion. The broader implication is that companies must deploy autonomous agents behind sovereign gateway proxies that enforce deterministic token and cost budgets.',
         concepts: [
             {
                 id: 'PAIG-OPS-001',
@@ -351,7 +351,7 @@ export const subFrameworks: Record<string, SubFramework> = {
         badgeColor: 'bg-indigo-50 text-indigo-900 border-indigo-200',
         icon: '🛡️',
         overview: 'The final integration layer where frameworks, diagnostics, and educational guidelines compile into deterministic physical control boundaries.',
-        livedExperience: 'While building Exogram, I watched our prototype agent continuously attempt to call disabled API endpoints because a model output suggested it. I noticed a clear operational mismatch: developers writing code-level checks that models easily bypassed by altering their payloads. The mechanism is Execution Boundary Drift—probabilistic outputs cannot be constrained by software-level logic alone because the execution state mutates dynamically. This led to the principle of Runtime Governance: physical security requires deterministic boundary control outside the model\'s cognition. The broader implication is that agent safety requires a network-intercepting runtime proxy that enforces action admissibility rules at the physical boundary.',
+        livedExperience: 'While building Exogram, I watched our prototype agent continuously attempt to call disabled API endpoints because a model output suggested it. I noticed a clear operational mismatch: developers writing code-level checks that models easily bypassed by altering their payloads. The mechanism is Execution Boundary Drift - probabilistic outputs cannot be constrained by software-level logic alone because the execution state mutates dynamically. This led to the principle of Runtime Governance: physical security requires deterministic boundary control outside the model\'s cognition. The broader implication is that agent safety requires a network-intercepting runtime proxy that enforces action admissibility rules at the physical boundary.',
         concepts: [
             {
                 id: 'PAIG-GOV-001',

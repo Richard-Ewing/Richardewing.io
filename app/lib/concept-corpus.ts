@@ -229,13 +229,16 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     positionStatement: 'Frontier AI models must never process routine formatting checks or duplicate intent queries. Capturing the Inference Dividend requires edge proxy validation and task-tiered model routing before invoking flagship APIs.',
     canonicalReadingOrder: [
       { step: 1, title: 'How to Reduce LLM Costs in Production: The Inference Dividend Model', publisher: 'LinkedIn', type: 'Executive Essay', url: 'https://www.linkedin.com/pulse/how-reduce-llm-costs-production-inference-dividend-model-ewing-nwtgc/' },
-      { step: 2, title: 'Growth Is Not Your Cost Problem — Your Architecture Is', publisher: 'LinkedIn', type: 'Framework', url: 'https://www.linkedin.com/feed/update/urn:li:share:7487606608009814016/' }
+      { step: 2, title: 'How to Reduce LLM API Token Costs in Production', publisher: 'Beehiiv Laboratory', type: 'Architecture Guide', url: 'https://theaieconomist.beehiiv.com/p/how-to-reduce-llm-api-token-costs-in-production' },
+      { step: 3, title: 'Growth Is Not Your Cost Problem  -  Your Architecture Is', publisher: 'LinkedIn', type: 'Framework', url: 'https://www.linkedin.com/feed/update/urn:li:share:7487606608009814016/' }
     ],
     provenanceTimeline: [
       { stage: 'Observation', label: 'Token Leak Telemetry Audit', publisher: 'Exogram Runtime Audit', date: 'July 2026', summary: 'Audited token spend across Exogram endpoints and discovered 40% of queries were redundant formatting or status checks.' },
-      { stage: 'Tier-1 Article', label: 'AI Economist LinkedIn Publication', publisher: 'LinkedIn', date: 'August 13, 2026', url: 'https://www.linkedin.com/pulse/how-reduce-llm-costs-production-inference-dividend-model-ewing-nwtgc/', summary: 'Published definitive analysis establishing the Inference Dividend Model and 3-level edge optimization architecture.' }
+      { stage: 'Tier-1 Article', label: 'AI Economist LinkedIn Publication', publisher: 'LinkedIn', date: 'August 13, 2026', url: 'https://www.linkedin.com/pulse/how-reduce-llm-costs-production-inference-dividend-model-ewing-nwtgc/', summary: 'Published definitive analysis establishing the Inference Dividend Model and 3-level edge optimization architecture.' },
+      { stage: 'Architecture Specification', label: 'Beehiiv Laboratory Architecture Breakdown', publisher: 'Beehiiv', date: 'August 14, 2026', url: 'https://theaieconomist.beehiiv.com/p/how-to-reduce-llm-api-token-costs-in-production', summary: 'Published concrete mathematical formulation of semantic caching thresholds (0.85-0.92 cosine similarity) and edge validation.' }
     ],
     evidenceLedger: [
+      { id: 'ev-idm-2', title: 'How to Reduce LLM API Token Costs in Production', url: 'https://theaieconomist.beehiiv.com/p/how-to-reduce-llm-api-token-costs-in-production', publisher: 'Beehiiv', type: 'Architecture Guide', strength: 5, role: 'Specification', date: 'August 14, 2026' },
       { id: 'ev-idm-1', title: 'How to Reduce LLM Costs in Production: The Inference Dividend Model', url: 'https://www.linkedin.com/pulse/how-reduce-llm-costs-production-inference-dividend-model-ewing-nwtgc/', publisher: 'LinkedIn', type: 'Production Telemetry', strength: 5, role: 'Origin', date: 'August 13, 2026' }
     ],
     relatedConceptSlugs: [
@@ -313,7 +316,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       shortDefinition: 'Shadow Delegation is the un-monitored transfer of corporate signing authority to autonomous AI features embedded in enterprise SaaS software.',
       executiveSummary: 'Shadow Delegation occurs when organizations enable vendor-supplied AI agent features (in CRM, ERP, or billing platforms) that possess authority to execute financial commitments, grant contract discounts, or trigger supply chain actions without human manager approval. Bypassing corporate delegation of authority matrices creates severe compliance violations, internal control failures, and unmonitored margin erosion.',
       oneSentence: 'Shadow Delegation is granting third-party software features financial freedom that enterprise managers do not possess.',
-      tweetLength: 'Salesforce & SAP are embedding AI agents that alter contracts & issue refunds. Enabling them with one click creates Shadow Delegation—granting software features more spending authority than your own human managers.',
+      tweetLength: 'Salesforce & SAP are embedding AI agents that alter contracts & issue refunds. Enabling them with one click creates Shadow Delegation - granting software features more spending authority than your own human managers.',
       keyTakeaways: [
         'Embedded vendor AI agents execute transactional actions (refunds, discounts, orders) natively.',
         'Single-click enablement bypasses corporate delegation of authority matrices ($500 manager cap vs unrestricted algorithm).',

@@ -55,9 +55,21 @@
     overflow-x: hidden;
   }
 
-  /* Responsive Typography - 18px Base */
+  /* Responsive Typography: 16px on mobile, 17px on tablet, 18px on desktop */
   html {
-    font-size: 18px;
+    font-size: 16px;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      font-size: 17px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 18px;
+    }
   }
 
   h1,
@@ -71,19 +83,45 @@
   }
 
   h1 {
-    font-size: clamp(42px, 6vw, 72px);
+    font-size: clamp(32px, 5vw, 64px);
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.15;
   }
 
   h2 {
-    font-size: clamp(32px, 4vw, 48px);
+    font-size: clamp(26px, 3.5vw, 42px);
     font-weight: 600;
   }
 
   h3 {
-    font-size: clamp(24px, 3vw, 32px);
+    font-size: clamp(20px, 2.5vw, 30px);
     font-weight: 600;
+  }
+
+  /* Universal table & code overflow safety */
+  table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+
+  code {
+    word-break: break-word;
+  }
+
+  /* Prevent image and iframe overflow */
+  img, video, iframe, canvas, svg {
+    max-width: 100%;
+    height: auto;
   }
 }
 
@@ -95,17 +133,24 @@
   background-clip: text;
 }
 
-/* ══════════════════════════════════════════════════════════ */
+/* ========================================================== */
 /* SURGICAL FIX LAYOUT CLASSES                                */
-/* ══════════════════════════════════════════════════════════ */
+/* ========================================================== */
 
-/* Consistent Page Container */
+/* Consistent Page Container - Responsive across all viewports */
 .page-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
   width: 100%;
+}
+
+@media (min-width: 640px) {
+  .page-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 @media (min-width: 768px) {

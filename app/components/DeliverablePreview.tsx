@@ -19,10 +19,10 @@ export const DeliverablePreview = () => {
                         Every Engagement Produces Board-Ready Deliverables
                     </h3>
                 </div>
-                <div className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 p-1.5 rounded-xl">
+                <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 bg-zinc-900 border border-zinc-800 p-1.5 rounded-xl w-full sm:w-auto">
                     <button
                         onClick={() => setActiveTab('brief')}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-colors ${
+                        className={`flex-1 sm:flex-initial text-center px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-colors ${
                             activeTab === 'brief' ? 'bg-violet-600 text-white' : 'text-zinc-300 hover:text-white'
                         }`}
                     >
@@ -30,7 +30,7 @@ export const DeliverablePreview = () => {
                     </button>
                     <button
                         onClick={() => setActiveTab('pdi')}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-colors ${
+                        className={`flex-1 sm:flex-initial text-center px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-colors ${
                             activeTab === 'pdi' ? 'bg-violet-600 text-white' : 'text-zinc-300 hover:text-white'
                         }`}
                     >
@@ -38,11 +38,11 @@ export const DeliverablePreview = () => {
                     </button>
                     <button
                         onClick={() => setActiveTab('board')}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-colors ${
+                        className={`flex-1 sm:flex-initial text-center px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-colors ${
                             activeTab === 'board' ? 'bg-violet-600 text-white' : 'text-zinc-300 hover:text-white'
                         }`}
                     >
-                        1-Page Executive Summary
+                        1-Page Executive Brief
                     </button>
                 </div>
             </div>

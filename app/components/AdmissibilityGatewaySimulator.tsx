@@ -32,10 +32,10 @@ export const AdmissibilityGatewaySimulator = () => {
                     </h3>
                 </div>
 
-                <div className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 p-1.5 rounded-xl text-xs font-mono">
+                <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 bg-zinc-900 border border-zinc-800 p-1.5 rounded-xl text-xs font-mono w-full sm:w-auto">
                     <button
                         onClick={() => { setScenario('token_blowout'); setSimState('idle'); }}
-                        className={`px-3 py-1.5 rounded-lg font-bold transition-all ${
+                        className={`flex-1 sm:flex-initial text-center px-3 py-1.5 rounded-lg font-bold transition-all ${
                             scenario === 'token_blowout' ? 'bg-purple-600 text-white' : 'text-zinc-300 hover:text-white'
                         }`}
                     >
@@ -43,7 +43,7 @@ export const AdmissibilityGatewaySimulator = () => {
                     </button>
                     <button
                         onClick={() => { setScenario('unauthorized_exec'); setSimState('idle'); }}
-                        className={`px-3 py-1.5 rounded-lg font-bold transition-all ${
+                        className={`flex-1 sm:flex-initial text-center px-3 py-1.5 rounded-lg font-bold transition-all ${
                             scenario === 'unauthorized_exec' ? 'bg-purple-600 text-white' : 'text-zinc-300 hover:text-white'
                         }`}
                     >
@@ -51,7 +51,7 @@ export const AdmissibilityGatewaySimulator = () => {
                     </button>
                     <button
                         onClick={() => { setScenario('valid_query'); setSimState('idle'); }}
-                        className={`px-3 py-1.5 rounded-lg font-bold transition-all ${
+                        className={`flex-1 sm:flex-initial text-center px-3 py-1.5 rounded-lg font-bold transition-all ${
                             scenario === 'valid_query' ? 'bg-purple-600 text-white' : 'text-zinc-300 hover:text-white'
                         }`}
                     >

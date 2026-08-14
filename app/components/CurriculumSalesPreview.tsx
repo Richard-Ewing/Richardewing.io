@@ -82,18 +82,18 @@ export default function CurriculumSalesPreview({ lessons = [] }: CurriculumSales
                         <p className="text-zinc-950 text-sm font-semibold mt-3 max-w-xl mx-auto">No generic advice. No filler. Just uncompromising architectural truths and unit economic calculators.</p>
                     </div>
 
-                    <div className="relative w-full aspect-[21/9] flex items-center justify-center -mt-10 perspective-[1000px] select-none pointer-events-none">
+                    <div className="relative w-full min-h-[380px] sm:min-h-[420px] md:aspect-[21/9] flex items-center justify-center -mt-6 sm:-mt-10 perspective-[1000px] select-none pointer-events-none">
                         
                         {/* Center Encrypted Modal over the glass panes */}
-                        <div className="absolute inset-0 z-30 flex items-center justify-center backdrop-blur-[2px]">
-                            <div className="bg-white/80 p-10 rounded-3xl border border-rose-500/30 shadow-[0_0_100px_rgba(0,0,0,0.8),inset_0_0_30px_rgba(244,63,94,0.1)] text-center max-w-md backdrop-blur-3xl transform scale-110 relative overflow-hidden shrink-0">
+                        <div className="absolute inset-0 z-30 flex items-center justify-center backdrop-blur-[2px] p-4">
+                            <div className="bg-white/80 p-6 sm:p-10 rounded-3xl border border-rose-500/30 shadow-[0_0_100px_rgba(0,0,0,0.8),inset_0_0_30px_rgba(244,63,94,0.1)] text-center max-w-md backdrop-blur-3xl sm:scale-105 md:scale-110 relative overflow-hidden shrink-0">
                                 <BorderBeam size={300} duration={8} delay={0} colorFrom="#f43f5e" colorTo="#3b82f6" borderWidth={2} />
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/20 blur-[50px]" />
-                                <div className="w-20 h-20 rounded-full bg-rose-50 border border-rose-500/30 flex items-center justify-center mx-auto mb-6 shadow-inner relative z-10">
-                                    <Lock className="w-8 h-8 text-rose-500" />
+                                <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-rose-50 border border-rose-500/30 flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-inner relative z-10">
+                                    <Lock className="w-6 h-6 sm:w-8 sm:h-8 text-rose-500" />
                                 </div>
-                                <h4 className="text-2xl font-bold text-zinc-900 mb-4 relative z-10 tracking-tight">Vault Terminal Locked</h4>
-                                <p className="text-xs font-bold text-zinc-900 font-bold font-mono uppercase tracking-widest leading-relaxed relative z-10 bg-white/50 p-4 rounded-xl border border-zinc-400">
+                                <h4 className="text-xl sm:text-2xl font-bold text-zinc-900 mb-3 sm:mb-4 relative z-10 tracking-tight">Vault Terminal Locked</h4>
+                                <p className="text-[11px] sm:text-xs font-bold text-zinc-900 font-mono uppercase tracking-widest leading-relaxed relative z-10 bg-white/50 p-3 sm:p-4 rounded-xl border border-zinc-400">
                                     Awaiting authorization clearance. Access the module to decrypt architectural playbooks, P&L models, and deterministic diagnostic utilities.
                                 </p>
                             </div>

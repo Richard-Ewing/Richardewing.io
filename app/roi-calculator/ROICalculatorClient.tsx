@@ -93,11 +93,11 @@ export function ROICalculatorClient() {
                     <label className="block text-xs font-mono font-bold text-zinc-900 uppercase tracking-wider mb-3">
                         Current Governance Maturity
                     </label>
-                    <div className="grid grid-cols-3 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         <button
                             type="button"
                             onClick={() => setGovernanceLevel('none')}
-                            className={`py-3 px-4 rounded-xl text-xs font-mono font-bold uppercase tracking-wider border transition-all ${
+                            className={`py-3 px-4 rounded-xl text-xs font-mono font-bold uppercase tracking-wider border transition-all cursor-pointer ${
                                 governanceLevel === 'none'
                                     ? 'bg-rose-900 text-white border-rose-900 shadow-sm'
                                     : 'bg-zinc-50 text-zinc-800 border-zinc-300 hover:bg-zinc-100'
@@ -108,7 +108,7 @@ export function ROICalculatorClient() {
                         <button
                             type="button"
                             onClick={() => setGovernanceLevel('basic')}
-                            className={`py-3 px-4 rounded-xl text-xs font-mono font-bold uppercase tracking-wider border transition-all ${
+                            className={`py-3 px-4 rounded-xl text-xs font-mono font-bold uppercase tracking-wider border transition-all cursor-pointer ${
                                 governanceLevel === 'basic'
                                     ? 'bg-amber-900 text-white border-amber-900 shadow-sm'
                                     : 'bg-zinc-50 text-zinc-800 border-zinc-300 hover:bg-zinc-100'
@@ -119,7 +119,7 @@ export function ROICalculatorClient() {
                         <button
                             type="button"
                             onClick={() => setGovernanceLevel('advanced')}
-                            className={`py-3 px-4 rounded-xl text-xs font-mono font-bold uppercase tracking-wider border transition-all ${
+                            className={`py-3 px-4 rounded-xl text-xs font-mono font-bold uppercase tracking-wider border transition-all cursor-pointer ${
                                 governanceLevel === 'advanced'
                                     ? 'bg-emerald-900 text-white border-emerald-900 shadow-sm'
                                     : 'bg-zinc-50 text-zinc-800 border-zinc-300 hover:bg-zinc-100'

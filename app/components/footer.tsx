@@ -111,7 +111,7 @@ export function Footer() {
                 {/* Bottom bar */}
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm font-semibold text-zinc-900 font-medium">
                     <p>© 2026 Richard Ewing. All rights reserved.</p>
-                    <div className="flex items-center gap-6">
+                    <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-2 text-xs sm:text-sm">
                         <Link href="/legal" className="hover:text-zinc-900 transition-colors">Legal & Privacy</Link>
                         <Link href="https://linkedin.com/in/richard-ewing-mba" target="_blank" className="hover:text-zinc-900 transition-colors">LinkedIn</Link>
                         <Link href="https://x.com/Richard85626233" target="_blank" className="hover:text-zinc-900 transition-colors">X (Twitter)</Link>

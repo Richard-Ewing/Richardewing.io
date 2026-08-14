@@ -20,10 +20,10 @@ export const CareerWinBenchmarkVisual = () => {
                     </h3>
                 </div>
 
-                <div className="flex items-center gap-2 bg-slate-950 border border-slate-800 p-1.5 rounded-xl text-xs font-mono">
+                <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 bg-slate-950 border border-slate-800 p-1.5 rounded-xl text-xs font-mono w-full sm:w-auto">
                     <button
                         onClick={() => setSelectedTab('mirror')}
-                        className={`px-3 py-1.5 rounded-lg font-bold transition-all ${
+                        className={`flex-1 sm:flex-initial text-center px-3 py-1.5 rounded-lg font-bold transition-all ${
                             selectedTab === 'mirror' ? 'bg-orange-600 text-white shadow' : 'text-slate-300 hover:text-white'
                         }`}
                     >
@@ -31,7 +31,7 @@ export const CareerWinBenchmarkVisual = () => {
                     </button>
                     <button
                         onClick={() => setSelectedTab('forge')}
-                        className={`px-3 py-1.5 rounded-lg font-bold transition-all ${
+                        className={`flex-1 sm:flex-initial text-center px-3 py-1.5 rounded-lg font-bold transition-all ${
                             selectedTab === 'forge' ? 'bg-orange-600 text-white shadow' : 'text-slate-300 hover:text-white'
                         }`}
                     >
@@ -39,7 +39,7 @@ export const CareerWinBenchmarkVisual = () => {
                     </button>
                     <button
                         onClick={() => setSelectedTab('benchmark')}
-                        className={`px-3 py-1.5 rounded-lg font-bold transition-all ${
+                        className={`flex-1 sm:flex-initial text-center px-3 py-1.5 rounded-lg font-bold transition-all ${
                             selectedTab === 'benchmark' ? 'bg-orange-600 text-white shadow' : 'text-slate-300 hover:text-white'
                         }`}
                     >

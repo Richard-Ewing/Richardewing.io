@@ -43,18 +43,24 @@ export default function EcosystemMap() {
                         </div>
                     </Link>
 
-                    {/* Connecting Split Lines */}
+                    {/* Connecting Split Lines - Responsive flow for mobile vs desktop */}
                     <div className="w-full max-w-lg flex flex-col items-center">
-                        <div className="h-4 w-px bg-zinc-400" />
-                        <div className="w-full h-px bg-zinc-400" />
-                        <div className="w-full flex justify-between px-6 sm:px-12">
+                        {/* Mobile single connector */}
+                        <div className="h-6 w-px bg-zinc-400 sm:hidden" />
+                        
+                        {/* Tablet & Desktop 3-way split */}
+                        <div className="hidden sm:flex flex-col items-center w-full">
                             <div className="h-4 w-px bg-zinc-400" />
-                            <div className="h-4 w-px bg-zinc-400" />
-                            <div className="h-4 w-px bg-zinc-400" />
+                            <div className="w-full h-px bg-zinc-400" />
+                            <div className="w-full flex justify-between px-6 sm:px-12">
+                                <div className="h-4 w-px bg-zinc-400" />
+                                <div className="h-4 w-px bg-zinc-400" />
+                                <div className="h-4 w-px bg-zinc-400" />
+                            </div>
                         </div>
                     </div>
 
-                    {/* Asset Nodes (Three Columns) */}
+                    {/* Asset Nodes (Three Columns on tablet/desktop, stacked on mobile) */}
                     <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4">
                         {/* Node 3: Articles */}
                         <Link href="/articles" className="group">
@@ -86,13 +92,19 @@ export default function EcosystemMap() {
 
                     {/* Connecting Split Lines Down */}
                     <div className="w-full max-w-lg flex flex-col items-center">
-                        <div className="w-full flex justify-between px-6 sm:px-12">
-                            <div className="h-4 w-px bg-zinc-400" />
-                            <div className="h-4 w-px bg-zinc-400" />
+                        {/* Mobile single connector */}
+                        <div className="h-6 w-px bg-zinc-400 sm:hidden" />
+                        
+                        {/* Tablet & Desktop 3-way merge */}
+                        <div className="hidden sm:flex flex-col items-center w-full">
+                            <div className="w-full flex justify-between px-6 sm:px-12">
+                                <div className="h-4 w-px bg-zinc-400" />
+                                <div className="h-4 w-px bg-zinc-400" />
+                                <div className="h-4 w-px bg-zinc-400" />
+                            </div>
+                            <div className="w-full h-px bg-zinc-400" />
                             <div className="h-4 w-px bg-zinc-400" />
                         </div>
-                        <div className="w-full h-px bg-zinc-400" />
-                        <div className="h-4 w-px bg-zinc-400" />
                     </div>
 
                     {/* Convergence Box: Exogram & GitHub */}

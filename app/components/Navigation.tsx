@@ -23,6 +23,18 @@ const Navigation = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Prevent body scroll when mobile menu is open
+    useEffect(() => {
+        if (mobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [mobileMenuOpen]);
+
     return (
         <>
             <nav
@@ -31,7 +43,7 @@ const Navigation = () => {
                     : 'bg-transparent py-4'
                     }`}
             >
-                <div className="max-w-7xl mx-auto px-6">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="flex items-center justify-between">
 
                         {/* Logo/Identity */}
@@ -45,8 +57,8 @@ const Navigation = () => {
                             </div>
                         </Link>
 
-                        {/* Desktop Nav */}
-                        <div className="hidden lg:flex items-center gap-5 font-medium text-sm">
+                        {/* Desktop Nav - Active on xl (1280px+) */}
+                        <div className="hidden xl:flex items-center gap-4 2xl:gap-5 font-medium text-sm">
 
                             {/* Start Here / Member Dashboard */}
                             <Link 
@@ -282,11 +294,11 @@ const Navigation = () => {
                             )}
                         </div>
 
-                        {/* Mobile Menu Button */}
-                        <div className="lg:hidden flex items-center gap-3">
+                        {/* Mobile Menu Button - Shown on screens < xl (tablet & mobile) */}
+                        <div className="xl:hidden flex items-center gap-3">
                             <button
                                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                                className="p-2 text-zinc-800 hover:text-zinc-900 focus:outline-none cursor-pointer"
+                                className="p-2 text-zinc-800 hover:text-zinc-900 focus:outline-none cursor-pointer rounded-lg hover:bg-zinc-100 transition-colors"
                                 aria-label="Toggle Menu"
                             >
                                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -297,6 +309,20 @@ const Navigation = () => {
                 </div>
             </nav>
 
+            {/* Backdrop overlay for mobile drawer */}
+            <AnimatePresence>
+                {mobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 xl:hidden"
+                        aria-hidden="true"
+                    />
+                )}
+            </AnimatePresence>
+
             {/* Mobile Drawer */}
             <AnimatePresence>
                 {mobileMenuOpen && (
@@ -304,11 +330,15 @@ const Navigation = () => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="fixed inset-x-0 top-16 z-40 bg-white/95 backdrop-blur-xl border-b border-zinc-300 p-6 lg:hidden shadow-xl max-h-[85vh] overflow-y-auto"
+                        className="fixed inset-x-0 top-16 z-50 bg-white/95 backdrop-blur-xl border-b border-zinc-300 p-6 xl:hidden shadow-2xl max-h-[calc(100vh-4.5rem)] overflow-y-auto"
                     >
                         <div className="flex flex-col gap-4">
-                            <Link href="/start-here" onClick={() => setMobileMenuOpen(false)} className="text-emerald-700 font-bold text-base">
-                                ✦ Start Here
+                            <Link 
+                                href={isSignedIn ? "/vault" : "/start-here"} 
+                                onClick={() => setMobileMenuOpen(false)} 
+                                className="text-emerald-700 font-bold text-base flex items-center gap-2"
+                            >
+                                <span>✦ {isSignedIn ? "Member Dashboard" : "Start Here"}</span>
                             </Link>
                             
                             {/* Mobile Platforms & Products Group */}
@@ -317,46 +347,78 @@ const Navigation = () => {
                                     Platforms & Products
                                 </div>
                                 <Link href="/exogram" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-purple-900 font-bold text-base">
-                                    <ShieldCheck className="w-4 h-4 text-purple-600" />
+                                    <ShieldCheck className="w-4 h-4 text-purple-600 shrink-0" />
                                     <span>Exogram (Enterprise B2B)</span>
                                 </Link>
                                 <Link href="/careerwin" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-indigo-900 font-bold text-base">
-                                    <Award className="w-4 h-4 text-indigo-600" />
+                                    <Award className="w-4 h-4 text-indigo-600 shrink-0" />
                                     <span>CareerWin.ai (Career Intelligence)</span>
                                 </Link>
                             </div>
 
-                            <Link href="/framework" onClick={() => setMobileMenuOpen(false)} className="text-zinc-900 font-medium text-base">
-                                Framework
-                            </Link>
-                            <Link href="/concepts" onClick={() => setMobileMenuOpen(false)} className="text-zinc-900 font-medium text-base">
-                                Concepts
-                            </Link>
-                            <Link href="/tools" onClick={() => setMobileMenuOpen(false)} className="text-zinc-900 font-medium text-base">
-                                Tools & Benchmarks
-                            </Link>
-                            <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="text-zinc-900 font-medium text-base">
-                                Advisory & Services
-                            </Link>
-                            <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="text-zinc-700 font-medium text-base">
-                                About Richard Ewing
-                            </Link>
+                            {/* Core Navigation Links */}
+                            <div className="grid grid-cols-2 gap-2 text-sm font-semibold text-zinc-900">
+                                <Link href="/case-studies" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
+                                    Case Studies
+                                </Link>
+                                <Link href="/framework" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
+                                    Framework
+                                </Link>
+                                <Link href="/concepts" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
+                                    Concepts
+                                </Link>
+                                <Link href="/roi" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
+                                    ROI Calculator
+                                </Link>
+                                <Link href="/tools" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
+                                    Free Tools (25)
+                                </Link>
+                                <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
+                                    Advisory & Services
+                                </Link>
+                                <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
+                                    About Principal
+                                </Link>
+                                <Link href="/research" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
+                                    Research Corpus
+                                </Link>
+                            </div>
 
+                            {/* Mobile Actions & CTA Buttons */}
                             <div className="pt-4 border-t border-zinc-200 flex flex-col gap-3">
                                 <Link
                                     href="/services"
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="w-full py-3 bg-amber-500 text-zinc-950 font-bold text-center rounded-xl text-xs uppercase tracking-wider shadow-md"
+                                    className="w-full py-3 bg-amber-500 text-zinc-950 font-bold text-center rounded-xl text-xs uppercase tracking-wider shadow-md active:scale-95 transition-transform"
                                 >
                                     Book a Call
                                 </Link>
                                 <Link
                                     href="/assessment"
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="w-full py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-center rounded-xl text-xs uppercase tracking-wider shadow-md"
+                                    className="w-full py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-center rounded-xl text-xs uppercase tracking-wider shadow-md active:scale-95 transition-transform"
                                 >
-                                    Take 15-Q Assessment
+                                    Take 15-Q Assessment →
                                 </Link>
+
+                                {isLoaded && !isSignedIn ? (
+                                    <SignInButton mode="modal" fallbackRedirectUrl="/vault" signUpFallbackRedirectUrl="/vault">
+                                        <button 
+                                            onClick={() => setMobileMenuOpen(false)}
+                                            className="w-full py-2.5 bg-zinc-100 border border-zinc-300 text-zinc-900 font-bold text-center rounded-xl text-xs uppercase tracking-wider hover:bg-zinc-200 transition-colors"
+                                        >
+                                            Sign In to Vault
+                                        </button>
+                                    </SignInButton>
+                                ) : isSignedIn ? (
+                                    <Link
+                                        href="/vault"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="w-full py-2.5 bg-emerald-100 border border-emerald-300 text-emerald-950 font-bold text-center rounded-xl text-xs uppercase tracking-wider hover:bg-emerald-200 transition-colors"
+                                    >
+                                        Open Member Vault →
+                                    </Link>
+                                ) : null}
                             </div>
                         </div>
                     </motion.div>

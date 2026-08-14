@@ -26,7 +26,25 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
-  // Today's LinkedIn Newsletter Article — August 13, 2026
+  // Today's Beehiiv Laboratory Article  -  August 14, 2026
+  {
+    id: 'beehiiv-how-to-reduce-llm-api-token-costs-in-production',
+    title: 'How to Reduce LLM API Token Costs in Production',
+    url: 'https://theaieconomist.beehiiv.com/p/how-to-reduce-llm-api-token-costs-in-production',
+    publisher: 'Beehiiv',
+    domain: 'AI Economics',
+    type: 'Executable',
+    editorsPick: true,
+    date: 'August 14, 2026',
+    thesis: 'Deploying semantic vector caching with cosine similarity thresholds (0.85-0.92) alongside edge regex pre-filtering cuts production LLM API token OpEx by 50%+ and reduces query latency to <20ms, protecting SaaS gross profit margins from linear token burn.',
+    relatedConceptIds: ['inference-dividend-model', 'semantic-caching', 'inference-economics', 'ai-volatility-tax', 'ai-margin-squeeze', 'cost-of-predictivity', 'ai-cost-optimization'],
+    relatedGlossarySlugs: ['inference-dividend-model', 'synthetic-cogs', 'ai-volatility-tax', 'semantic-caching'],
+    relatedFrameworkSlugs: ['inference-optimizer-matrix', 'semantic-cache-edge-filter', 'inference-dividend-framework'],
+    relatedToolIds: ['aueb', 'slm-vs-api', 'agentic-token-simulator'],
+    relatedCaseStudyIds: ['exogram-inference-dividend-optimization', 'saas-cost-collapse'],
+    relatedCurriculumTrackIds: ['ai-economics', 'cloud-finops']
+  },
+  // LinkedIn Newsletter Article  -  August 13, 2026
   {
     id: 'linkedin-inference-dividend-model',
     title: 'How to Reduce LLM Costs in Production: The Inference Dividend Model',
@@ -44,7 +62,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     relatedCaseStudyIds: ['exogram-inference-dividend-optimization', 'saas-cost-collapse'],
     relatedCurriculumTrackIds: ['ai-economics', 'cloud-finops']
   },
-  // Today's CIO.com Article — August 13, 2026
+  // Today's CIO.com Article  -  August 13, 2026
   {
     id: 'cio-salesforce-sap-workflow-agents',
     title: 'Salesforce and SAP are putting AI agents inside your workflows. Who tells them no?',
@@ -54,7 +72,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     type: 'Executable',
     editorsPick: true,
     date: 'August 13, 2026',
-    thesis: 'Enterprise SaaS providers (Salesforce, SAP, Oracle) are embedding autonomous AI agents directly into transactional workflows with authority to issue refunds, alter contract terms, and spend corporate capital—creating a critical breakdown in corporate signing matrices and shadow delegation that bypasses internal executive approval controls.',
+    thesis: 'Enterprise SaaS providers (Salesforce, SAP, Oracle) are embedding autonomous AI agents directly into transactional workflows with authority to issue refunds, alter contract terms, and spend corporate capital - creating a critical breakdown in corporate signing matrices and shadow delegation that bypasses internal executive approval controls.',
     relatedConceptIds: ['shadow-delegation', 'deterministic-governance', 'agent-kill-switch', 'shadow-ai', 'ai-agent-sprawl', 'runtime-vs-alignment'],
     relatedGlossarySlugs: ['shadow-delegation', 'deterministic-governance', 'agent-kill-switch'],
     relatedFrameworkSlugs: ['automated-delegation-boundary', 'agentic-drift-matrix'],
@@ -62,10 +80,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     relatedCaseStudyIds: ['unauthorized-crm-retention-discount'],
     relatedCurriculumTrackIds: ['agent-governance']
   },
-  // LinkedIn Post — August 10, 2026
+  // LinkedIn Post  -  August 10, 2026
   {
     id: 'linkedin-growth-cost-architecture',
-    title: 'Growth Is Not Your Cost Problem — Your Architecture Is',
+    title: 'Growth Is Not Your Cost Problem  -  Your Architecture Is',
     url: 'https://www.linkedin.com/feed/update/urn:li:share:7487606608009814016/',
     publisher: 'LinkedIn',
     domain: 'AI Economics',
@@ -79,7 +97,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     relatedCaseStudyIds: ['saas-cost-collapse', 'semantic-caching-edge-filtering'],
     relatedFrameworkSlugs: ['inference-optimizer-matrix', 'semantic-cache-edge-filter']
   },
-  // Today's Beehiiv Laboratory Newsletter — August 7, 2026
+  // Today's Beehiiv Laboratory Newsletter  -  August 7, 2026
   {
     id: 'beehiiv-prevent-context-loss',
     title: 'How to Prevent Memory Loss in AI Applications',
@@ -92,7 +110,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     thesis: 'Stop AI context decay and errors using a 3-tier memory structure, organized state summaries, and database state separation rather than expanding raw prompt context.',
     relatedConceptIds: ['deterministic-governance', 'ai-governance', 'context-rot', 'inference-economics', 'retrieval-augmented-generation']
   },
-  // Today's LinkedIn Newsletter — August 6, 2026
+  // Today's LinkedIn Newsletter  -  August 6, 2026
   {
     id: 'linkedin-bigger-memory-window-confused-worker-inbox',
     title: 'Giving an AI a bigger memory window is like giving a confused worker a bigger inbox.',
@@ -105,7 +123,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     thesis: 'Expanding an AI agent’s context window without structured indexing creates cognitive clutter rather than intelligence. True operational velocity requires deterministic context filtering over raw token expansion.',
     relatedConceptIds: ['deterministic-governance', 'ai-governance', 'context-rot', 'ai-volatility-tax', 'retrieval-augmented-generation']
   },
-  // Today's Beehiiv Laboratory Newsletter — August 6, 2026
+  // Today's Beehiiv Laboratory Newsletter  -  August 6, 2026
   {
     id: 'beehiiv-claude-search-tool-zero-adoption',
     title: 'Claude Search Fails: Prompting Kills Adoption',
@@ -118,7 +136,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     thesis: 'Why relying purely on prompt instructions for search tools causes enterprise adoption to plummet, and how deterministic tool-execution boundaries solve user friction.',
     relatedConceptIds: ['deterministic-governance', 'ai-governance', 'ai-volatility-tax']
   },
-  // LinkedIn Post — August 3, 2026
+  // LinkedIn Post  -  August 3, 2026
   {
     id: 'linkedin-context-window-clutter',
     title: 'More Memory Creates Clutter: Why 1M-Token Context Windows Break AI Agents',
@@ -131,7 +149,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     thesis: 'Giving an AI agent a massive unformatted context window creates informational clutter rather than intelligence; performance requires database-managed structured filing over raw memory capacity.',
     relatedConceptIds: ['deterministic-governance', 'ai-governance', 'ai-agents']
   },
-  // New Beehiiv Laboratory Newsletter — July 31, 2026
+  // New Beehiiv Laboratory Newsletter  -  July 31, 2026
   {
     id: 'beehiiv-stop-unauthorized-db-actions',
     title: 'How to Stop Unauthorized AI Agent Database Actions',
@@ -144,7 +162,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     thesis: 'Why probabilistic system prompts fail when AI agents execute direct database operations, and how to install sub-5ms binary proxy gates to prevent unauthorized state mutations.',
     relatedConceptIds: ['agent-kill-switch', 'deterministic-governance', 'runtime-vs-alignment', 'ai-governance']
   },
-  // LinkedIn Newsletter — July 30, 2026
+  // LinkedIn Newsletter  -  July 30, 2026
   {
     id: 'linkedin-ai-taking-actions',
     title: 'The Moment Your AI Starts Taking Actions, the Rules Change',
@@ -158,7 +176,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     relatedConceptIds: ['agent-kill-switch', 'deterministic-governance', 'ai-governance', 'ai-agents', 'agentic-engineering', 'mlops']
   },
 
-  // Tier 1 Media — CIO.com (7 Articles)
+  // Tier 1 Media  -  CIO.com (7 Articles)
   {
     id: 'cio-shipping-faster',
     title: 'Hey, Senior PMs: Shipping Faster Won’t Get You Promoted',
@@ -244,7 +262,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     relatedToolIds: ["aueb"]
   },
 
-  // Tier 1 Media — Built In (11 Articles)
+  // Tier 1 Media  -  Built In (11 Articles)
   {
     id: 'builtin-fable-vs-gpt5',
     title: 'Fable 5 vs. GPT-5: Comparing Frontier Reasoning Paradigms',
@@ -688,7 +706,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
   },
   {
     id: 'linkedin-genesis-starting-unfiltered',
-    title: 'Genesis: Starting Unfiltered — Why I’m Writing',
+    title: 'Genesis: Starting Unfiltered  -  Why I’m Writing',
     url: 'https://www.linkedin.com/pulse/genesis-starting-unfiltered-why-richard-ewing-4zijc/',
     publisher: 'LinkedIn',
     domain: 'Product Leadership',
@@ -967,7 +985,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
 
   // =========================================================================
   // EXPANDED CATALOG: Career Economics, Product Fundamentals, AI Strategy
-  // Added via automated catalog expansion — August 2026
+  // Added via automated catalog expansion  -  August 2026
   // =========================================================================
 
   {
@@ -1082,7 +1100,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
 
   {
     id: 'beehiiv-ai-revolution-isnt-technical',
-    title: 'The AI Revolution Isn\'t Technical — It\'s Financial',
+    title: 'The AI Revolution Isn\'t Technical  -  It\'s Financial',
     url: 'https://theaieconomist.beehiiv.com/p/the-ai-revolution-isnt-technical',
     publisher: 'Beehiiv',
     domain: 'AI Economics',
@@ -1170,7 +1188,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
 
   {
     id: 'beehiiv-stop-managing-activity',
-    title: 'Stop Managing Activity — Start Creating Leverage',
+    title: 'Stop Managing Activity  -  Start Creating Leverage',
     url: 'https://theaieconomist.beehiiv.com/p/stop-managing-activity-start-creating',
     publisher: 'Beehiiv',
     domain: 'Product Leadership',
@@ -1225,7 +1243,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
 
   {
     id: 'beehiiv-stop-working-hard',
-    title: 'Stop Working Hard on Your Job — Start Working Smart on Your Career',
+    title: 'Stop Working Hard on Your Job  -  Start Working Smart on Your Career',
     url: 'https://theaieconomist.beehiiv.com/p/stop-working-hard-on-your-job',
     publisher: 'Beehiiv',
     domain: 'Career Economics',
@@ -1368,7 +1386,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
 
   {
     id: 'beehiiv-stop-showing-ceo-roadmap',
-    title: 'Stop Showing Your CEO a Roadmap — Show Them a P&L',
+    title: 'Stop Showing Your CEO a Roadmap  -  Show Them a P&L',
     url: 'https://theaieconomist.beehiiv.com/p/stop-showing-your-ceo-a-roadmap',
     publisher: 'Beehiiv',
     domain: 'Product Leadership',
@@ -1379,7 +1397,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
 
   {
     id: 'beehiiv-reject-90-inbound',
-    title: 'I Reject 90% of Inbound Requests — Here\'s My Decision Framework',
+    title: 'I Reject 90% of Inbound Requests  -  Here\'s My Decision Framework',
     url: 'https://theaieconomist.beehiiv.com/p/i-reject-90-of-inbound-requests',
     publisher: 'Beehiiv',
     domain: 'Product Leadership',
@@ -1390,7 +1408,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
 
   {
     id: 'beehiiv-ai-strategy-burning-cash',
-    title: 'Your AI Strategy Is Burning Cash — Here\'s Why',
+    title: 'Your AI Strategy Is Burning Cash  -  Here\'s Why',
     url: 'https://theaieconomist.beehiiv.com/p/your-ai-strategy-is-burning-cash',
     publisher: 'Beehiiv',
     domain: 'AI Economics',
@@ -1401,7 +1419,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
 
   {
     id: 'beehiiv-ai-revolution-financial-leadership',
-    title: 'The AI Revolution Isn\'t Technical — It\'s a Financial Leadership Problem',
+    title: 'The AI Revolution Isn\'t Technical  -  It\'s a Financial Leadership Problem',
     url: 'https://theaieconomist.beehiiv.com/p/the-ai-revolution-isnt-technical-eda',
     publisher: 'Beehiiv',
     domain: 'AI Economics',
@@ -1423,7 +1441,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
 
   {
     id: 'beehiiv-resume-is-dead',
-    title: 'The Resume Is Dead — Long Live the Portfolio',
+    title: 'The Resume Is Dead  -  Long Live the Portfolio',
     url: 'https://theaieconomist.beehiiv.com/p/the-resume-is-dead-long-live-the',
     publisher: 'Beehiiv',
     domain: 'Career Economics',
@@ -1533,7 +1551,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
 
   {
     id: 'linkedin-ai-revolution-financial-leadership',
-    title: 'The AI Revolution Isn\'t Technical — It\'s a Financial Leadership Problem',
+    title: 'The AI Revolution Isn\'t Technical  -  It\'s a Financial Leadership Problem',
     url: 'https://www.linkedin.com/pulse/ai-revolution-isnt-technical-its-financial-leadership-richard-ewing-2d92c/',
     publisher: 'LinkedIn',
     domain: 'AI Economics',
@@ -1577,7 +1595,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
 
   {
     id: 'linkedin-stop-negotiating-ai-infrastructure',
-    title: 'Stop Negotiating Your AI Infrastructure — Start Auditing It',
+    title: 'Stop Negotiating Your AI Infrastructure  -  Start Auditing It',
     url: 'https://www.linkedin.com/pulse/stop-negotiating-your-ai-infrastructure-richard-ewing-4horc/',
     publisher: 'LinkedIn',
     domain: 'AI Economics',
