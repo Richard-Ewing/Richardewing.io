@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: 'Governance Skills Setup Guide provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['how to use Claude skills', 'install Claude Code skills', 'CLAUDE.md tutorial', 'Cursor rules setup', 'AI coding agent governance', 'deploy runtime governance'],
     openGraph: {
-        title: 'Getting Started — Deploy Governance Skills in 10 Minutes',
+        title: 'Getting Started - Deploy Governance Skills in 10 Minutes',
         description: 'Step-by-step installation guide for Claude Code, Cursor, Windsurf, and all major AI coding agents.',
     },
     alternates: { canonical: 'https://www.richardewing.io/skills/getting-started' },
@@ -85,7 +85,7 @@ const agentConfigs = [
 const troubleshooting = [
     { problem: 'Agent doesn\'t mention the skill', solution: 'Make sure your root CLAUDE.md or rules file references the skill path. Start a new session after adding the reference.' },
     { problem: 'Agent ignores the governance rules', solution: 'Rules are loaded at session start. Restart the session. If using Cursor, close and reopen the editor.' },
-    { problem: 'Tool scripts won\'t run', solution: 'On Mac/Linux, run: chmod +x tools/*.sh — On Windows, use Git Bash or WSL.' },
+    { problem: 'Tool scripts won\'t run', solution: 'On Mac/Linux, run: chmod +x tools/*.sh - On Windows, use Git Bash or WSL.' },
     { problem: 'YAML syntax error in policy.yaml', solution: 'YAML requires spaces, not tabs. Open in VS Code which highlights syntax errors automatically.' },
     { problem: 'Agent runs tools but they produce errors', solution: 'Make sure you\'re running from the project root, not from inside the skill folder. The tools use relative paths.' },
 ];
@@ -226,14 +226,14 @@ export default function GettingStartedPage() {
                 </div>
 
                 {/* CTA */}
-                <div className="p-10 bg-[#1A1A1A] rounded-2xl text-zinc-900 text-center">
-                    <h2 className="text-2xl font-grotesk font-bold mb-4">Ready to deploy?</h2>
-                    <p className="text-zinc-600 mb-6">Choose your governance system and start protecting your codebase in under 10 minutes.</p>
+                <div className="p-10 bg-[#1A1A1A] rounded-2xl text-white text-center border border-white/10 shadow-xl">
+                    <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Ready to deploy?</h2>
+                    <p className="text-zinc-300 mb-6">Choose your governance system and start protecting your codebase in under 10 minutes.</p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/skills" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded hover:bg-zinc-100 transition-colors">
+                        <Link href="/skills" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded hover:bg-zinc-100 transition-colors shadow-sm">
                             Browse All 15 Systems →
                         </Link>
-                        <Link href="/runtime-architecture" className="px-8 py-4 text-zinc-900 font-bold rounded border border-zinc-300 hover:border-zinc-500 transition-colors">
+                        <Link href="/runtime-architecture" className="px-8 py-4 text-white font-bold rounded border border-white/30 hover:border-white/60 transition-colors">
                             Read the Architecture
                         </Link>
                     </div>

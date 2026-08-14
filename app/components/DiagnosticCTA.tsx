@@ -27,17 +27,17 @@ export default function DiagnosticCTA({
             iconText: 'text-red-600',
             badgeBg: 'bg-red-500/10',
             badgeText: 'text-red-700',
-            button: 'bg-red-600 hover:bg-red-700 text-zinc-900 shadow-red-500/20',
+            button: 'bg-red-600 hover:bg-red-700 text-white font-bold shadow-red-500/20',
             buttonSubtext: 'text-red-600'
         },
         warning: {
-            bg: 'bg-amber-500/5',
+            bg: 'bg-amber-50/50',
             border: 'border-amber-500/20',
             iconBg: 'bg-amber-500/10',
             iconText: 'text-amber-600',
             badgeBg: 'bg-amber-500/10',
             badgeText: 'text-amber-700',
-            button: 'bg-amber-600 hover:bg-amber-700 text-zinc-900 shadow-amber-500/20',
+            button: 'bg-amber-600 hover:bg-amber-700 text-white font-bold shadow-amber-500/20',
             buttonSubtext: 'text-amber-600'
         },
         primary: {
@@ -47,7 +47,7 @@ export default function DiagnosticCTA({
             iconText: 'text-cyan-600',
             badgeBg: 'bg-cyan-500/10',
             badgeText: 'text-cyan-700',
-            button: 'bg-cyan-600 hover:bg-cyan-700 text-zinc-900 shadow-cyan-500/20',
+            button: 'bg-cyan-600 hover:bg-cyan-700 text-white font-bold shadow-cyan-500/20',
             buttonSubtext: 'text-cyan-600'
         }
     };

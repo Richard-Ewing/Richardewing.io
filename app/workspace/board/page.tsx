@@ -67,7 +67,7 @@ export default function BoardWorkspacePage() {
                 href="https://richardewing.io/exports/boarddeck_dp_board_001.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-zinc-950 font-mono font-bold text-xs rounded-lg flex items-center gap-1.5 transition-colors cursor-pointer"
+                className="px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-white font-mono font-bold text-xs rounded-lg flex items-center gap-1.5 transition-colors cursor-pointer shadow-sm"
               >
                 <Download className="w-3.5 h-3.5" /> Export PDF Deck
               </a>

@@ -79,7 +79,7 @@ export default function MissionsCatalogPage() {
 
                             <button
                                 onClick={() => handleExecuteMission(mission)}
-                                className="w-full py-2.5 bg-zinc-900 hover:bg-cyan-600 text-white hover:text-zinc-950 font-bold rounded-xl text-xs font-mono transition-colors flex items-center justify-center gap-2"
+                                className="w-full py-2.5 bg-zinc-900 hover:bg-cyan-600 text-white font-bold rounded-xl text-xs font-mono transition-colors flex items-center justify-center gap-2"
                             >
                                 Launch Executive Mission <ArrowRight className="w-3.5 h-3.5" />
                             </button>

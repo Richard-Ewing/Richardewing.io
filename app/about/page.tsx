@@ -125,7 +125,7 @@ export default function AboutPage() {
                         This coordinates the operational boundaries of **Economics**, **Product**, **Engineering**, **Security**, and **Operations**, culminating in **Runtime Governance** (Exogram) to lock down the verified state at the network layer.
                     </p>
                     <div className="flex gap-4">
-                        <Link href="/framework" className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-zinc-900 font-bold rounded-xl text-sm uppercase tracking-wider shadow transition-colors">
+                        <Link href="/framework" className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-sm uppercase tracking-wider shadow transition-colors">
                             Explore The Framework &rarr;
                         </Link>
                         <Link href="/start-here" className="px-6 py-3 bg-white border border-zinc-300 text-zinc-950 hover:bg-zinc-50 font-bold rounded-xl text-sm uppercase tracking-wider transition-colors">

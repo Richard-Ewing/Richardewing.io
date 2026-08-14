@@ -119,7 +119,7 @@ export default function AdvisoryVsMcKinseyPage() {
         <ProductBridgeCard variant="both" />
 
         <div className="text-center pt-8">
-          <Link href="/services" className="inline-flex items-center gap-2 px-8 py-4 bg-amber-600 hover:bg-amber-500 text-zinc-950 font-bold font-mono text-xs uppercase tracking-widest rounded-xl transition-all shadow-md">
+          <Link href="/services" className="inline-flex items-center gap-2 px-8 py-4 bg-amber-600 hover:bg-amber-500 text-white font-bold font-mono text-xs uppercase tracking-widest rounded-xl transition-all shadow-md">
             View Advisory Packages & Rates <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

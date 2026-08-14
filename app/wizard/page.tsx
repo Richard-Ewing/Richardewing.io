@@ -55,7 +55,7 @@ export default function MissionWizardPage() {
                         {Array.from({ length: 10 }).map((_, idx) => (
                             <div 
                                 key={idx} 
-                                className={`py-1.5 rounded ${idx + 1 <= state.step ? 'bg-cyan-600 text-zinc-950 font-bold' : 'bg-zinc-200 text-zinc-500'}`}
+                                className={`py-1.5 rounded ${idx + 1 <= state.step ? 'bg-cyan-600 text-white font-bold' : 'bg-zinc-200 text-zinc-500'}`}
                             >
                                 {idx + 1}
                             </div>
@@ -88,7 +88,7 @@ export default function MissionWizardPage() {
                                     <button
                                         key={role}
                                         onClick={() => setState({ ...state, targetRole: role as any })}
-                                        className={`py-2 rounded-lg font-bold border transition-colors ${state.targetRole === role ? 'bg-cyan-600 text-zinc-950 border-cyan-500 font-bold' : 'bg-zinc-50 text-zinc-700 border-zinc-200'}`}
+                                        className={`py-2 rounded-lg font-bold border transition-colors ${state.targetRole === role ? 'bg-cyan-600 text-white border-cyan-500 font-bold' : 'bg-zinc-50 text-zinc-700 border-zinc-200'}`}
                                     >
                                         {role}
                                     </button>
@@ -110,7 +110,7 @@ export default function MissionWizardPage() {
                         <button
                             onClick={handleRunWizard}
                             disabled={isExecuting}
-                            className="w-full py-4 bg-cyan-600 hover:bg-cyan-700 text-zinc-950 font-bold font-mono rounded-xl text-sm transition-colors flex items-center justify-center gap-2 shadow-sm"
+                            className="w-full py-4 bg-cyan-600 hover:bg-cyan-700 text-white font-bold font-mono rounded-xl text-sm transition-colors flex items-center justify-center gap-2 shadow-sm"
                         >
                             {isExecuting ? <Activity className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />}
                             Run 10-Step Mission Wizard Execution &rarr;
@@ -185,7 +185,7 @@ export default function MissionWizardPage() {
                             </button>
                             <Link
                                 href="/workspace"
-                                className="px-5 py-2 bg-cyan-600 text-zinc-950 font-bold rounded-lg text-xs font-mono hover:bg-cyan-700 transition-colors"
+                                className="px-5 py-2 bg-cyan-600 text-white font-bold rounded-lg text-xs font-mono hover:bg-cyan-700 transition-colors shadow-sm"
                             >
                                 Open Persistent Workspace &rarr;
                             </Link>

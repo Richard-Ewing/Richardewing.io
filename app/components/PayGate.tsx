@@ -34,7 +34,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                 <div className="mb-0 relative z-20">
                     <div className="flex items-center gap-2 mb-4 px-4 py-2 rounded-lg bg-emerald-50 border border-emerald-200 w-fit">
                         <BookOpen className="w-4 h-4 text-emerald-900 font-extrabold" />
-                        <span className="text-xs font-bold font-mono text-emerald-900 font-extrabold uppercase tracking-widest">Free Preview — Lesson 1</span>
+                        <span className="text-xs font-bold font-mono text-emerald-900 font-extrabold uppercase tracking-widest">Free Preview - Lesson 1</span>
                     </div>
                     <div className="relative pb-24">
                         {previewContent}
@@ -44,7 +44,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
             )}
 
             {/* ═══════════════════════════════════════════════════ */}
-            {/* PRIMARY BUY CTA — ABOVE THE FOLD FOR CONVERSION    */}
+            {/* PRIMARY BUY CTA - ABOVE THE FOLD FOR CONVERSION    */}
             {/* ═══════════════════════════════════════════════════ */}
             <div className={`relative ${showPreview ? '-mt-16' : 'mt-4'} z-30 mb-8`}>
                 <div className="mx-auto max-w-2xl rounded-2xl border-2 border-violet-300 bg-white p-8 shadow-2xl">
@@ -63,7 +63,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                             {/* Per-Track */}
                             <div className="border-2 border-violet-400 bg-violet-50 rounded-xl p-5 relative">
-                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-violet-600 text-zinc-950 font-semibold text-xs font-bold font-medium font-bold uppercase tracking-widest rounded-full">Most Popular</div>
+                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-violet-600 text-white text-xs font-bold uppercase tracking-widest rounded-full">Most Popular</div>
                                 <div className="text-3xl font-bold text-zinc-900 mb-1">$149</div>
                                 <div className="text-xs font-bold text-zinc-950 mb-4">This Track · Lifetime</div>
                                 <CheckoutButton 
@@ -92,13 +92,13 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
                         {status === 'waitlist' ? (
                             <button disabled className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-zinc-400 bg-zinc-50 text-zinc-900 cursor-not-allowed transition-colors font-medium text-sm">
                                 <Lock className="w-4 h-4" />
-                                <span>Join Waitlist — In Active Development</span>
+                                <span>Join Waitlist - In Active Development</span>
                             </button>
                         ) : (
                             <CheckoutButton 
                                 productId="team_license_pass" 
                                 moduleId={moduleId}
-                                label="B2B Team License (10 Seats) — $4,999" 
+                                label="B2B Team License (10 Seats) - $4,999" 
                                 icon="file" 
                                 variant="outline" 
                             />

@@ -51,7 +51,7 @@ export function ToolGateCTA({ toolName }: ToolGateCTAProps) {
                         </div>
                         <button 
                             type="submit"
-                            className="w-full py-3 rounded-lg bg-white border border-zinc-200 text-zinc-950 font-semibold font-bold hover:bg-emerald-600 hover:shadow-lg transition-all flex items-center justify-center gap-2 font-grotesk text-sm"
+                            className="w-full py-3 rounded-lg bg-white border border-zinc-200 text-zinc-950 font-bold hover:bg-emerald-600 hover:text-white hover:border-emerald-600 hover:shadow-lg transition-all flex items-center justify-center gap-2 font-grotesk text-sm"
                         >
                             <FileDown className="w-4 h-4" />
                             Download PDF Report

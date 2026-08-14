@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: 'Compare Lakera, Guardrails AI, NeMo, and Exogram. Evaluate deterministic runtime controls vs probabilistic prompts.',
     keywords: ['AI guardrails comparison', 'Lakera Guard review', 'Galileo AI pricing', 'Invariant Labs review', 'AI governance platform', 'best AI guardrails 2026', 'Lakera vs Galileo', 'AI agent security platform', 'AI guardrails pricing', 'NeMo Guardrails alternative', 'Zenity AI review', 'Endor Labs AI review', 'AI coding governance', 'runtime governance vs guardrails'],
     openGraph: {
-        title: 'AI Guardrails Platform Comparison 2026 — Enterprise vs Practitioner Governance',
+        title: 'AI Guardrails Platform Comparison 2026 - Enterprise vs Practitioner Governance',
         description: 'Why enterprise guardrails miss the practitioner layer and how $99 governance modules fill the gap.',
     },
     alternates: { canonical: 'https://www.richardewing.io/compare/ai-guardrails-platforms' },
@@ -22,7 +22,7 @@ const platforms = [
         focus: 'Prompt injection & jailbreak detection',
         pricing: 'Enterprise quote via Check Point',
         strengths: ['Sub-200ms latency', 'Strong prompt attack detection', 'Threat intelligence database'],
-        weaknesses: ['Prompt-level only — no agent action governance', 'Now sales-gated through Check Point procurement', 'No file scope, retry, or cost controls', 'Limited customization reported by users'],
+        weaknesses: ['Prompt-level only - no agent action governance', 'Now sales-gated through Check Point procurement', 'No file scope, retry, or cost controls', 'Limited customization reported by users'],
     },
     {
         name: 'Invariant Labs',
@@ -30,7 +30,7 @@ const platforms = [
         focus: 'MCP security & tool poisoning detection',
         pricing: 'Integrated into Snyk enterprise subscription',
         strengths: ['MCP-specific threat scanning', 'Trajectory monitoring for agents', 'Deep agentic security research'],
-        weaknesses: ['Absorbed into Snyk platform — no standalone product', 'Enterprise-only pricing', 'Security scanning, not runtime enforcement', 'No practitioner tooling for individual developers'],
+        weaknesses: ['Absorbed into Snyk platform - no standalone product', 'Enterprise-only pricing', 'Security scanning, not runtime enforcement', 'No practitioner tooling for individual developers'],
     },
     {
         name: 'Galileo AI',
@@ -38,7 +38,7 @@ const platforms = [
         focus: 'Evaluation, observability, and runtime guardrails',
         pricing: 'Enterprise quote-based',
         strengths: ['Eval-to-guardrail lifecycle', 'Hallucination detection', 'Compliance audit trails'],
-        weaknesses: ['Quote-gated pricing — inaccessible to teams/individuals', 'Complex platform requiring dedicated security engineering', 'Overkill for coding-specific governance needs', 'No file scope, retry loop, or cost containment'],
+        weaknesses: ['Quote-gated pricing - inaccessible to teams/individuals', 'Complex platform requiring dedicated security engineering', 'Overkill for coding-specific governance needs', 'No file scope, retry loop, or cost containment'],
     },
     {
         name: 'Zenity',
@@ -91,7 +91,7 @@ export default function AIGuardrailsPlatformsPage() {
                         AI Guardrails Platforms in 2026
                     </h1>
                     <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto">
-                        Enterprise guardrails platforms solve prompt injection and shadow AI visibility. They do not solve context rot, retry loops, file scope violations, or cost overruns. That is the practitioner governance layer — and it is what is missing.
+                        Enterprise guardrails platforms solve prompt injection and shadow AI visibility. They do not solve context rot, retry loops, file scope violations, or cost overruns. That is the practitioner governance layer - and it is what is missing.
                     </p>
                 </div>
 
@@ -102,7 +102,7 @@ export default function AIGuardrailsPlatformsPage() {
                         <div>
                             <h3 className="font-grotesk font-bold text-[#1A1A1A] text-lg mb-2">The Practitioner Governance Gap</h3>
                             <p className="text-[#4A4A4A] leading-relaxed">
-                                Enterprise platforms (Lakera, Galileo, Zenity) focus on <strong>organizational security posture</strong>: prompt injection, shadow AI, compliance. They are designed for CISOs and security teams. But the daily practitioner failures — context rot, retry inflation, file scope violations, $1,100 token burns — are <strong>not addressed by any enterprise guardrails platform</strong>. That gap is the practitioner governance layer.
+                                Enterprise platforms (Lakera, Galileo, Zenity) focus on <strong>organizational security posture</strong>: prompt injection, shadow AI, compliance. They are designed for CISOs and security teams. But the daily practitioner failures - context rot, retry inflation, file scope violations, $1,100 token burns - are <strong>not addressed by any enterprise guardrails platform</strong>. That gap is the practitioner governance layer.
                             </p>
                         </div>
                     </div>
@@ -168,20 +168,20 @@ export default function AIGuardrailsPlatformsPage() {
                 </div>
 
                 {/* Pricing Anchor */}
-                <div className="bg-[#1A1A1A] rounded-2xl p-8 mb-8 text-zinc-900">
-                    <h2 className="text-xl font-grotesk font-bold mb-4 flex items-center gap-2">
-                        <DollarSign className="w-5 h-5" /> The Pricing Gap
+                <div className="bg-[#1A1A1A] rounded-2xl p-8 mb-8 text-white border border-white/10 shadow-xl">
+                    <h2 className="text-xl font-grotesk font-bold text-white mb-4 flex items-center gap-2">
+                        <DollarSign className="w-5 h-5 text-emerald-400" /> The Pricing Gap
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                        <div className="p-4 bg-white/10 rounded-xl text-center">
-                            <div className="text-2xl font-bold">$10K+</div>
-                            <div className="text-xs text-zinc-600 font-mono uppercase">Enterprise guardrails / year</div>
-                            <div className="text-[10px] text-zinc-500 mt-1">Quote-gated, 3-6 month deploy</div>
+                        <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-center">
+                            <div className="text-2xl font-bold text-white">$10K+</div>
+                            <div className="text-xs text-zinc-300 font-mono uppercase">Enterprise guardrails / year</div>
+                            <div className="text-[10px] text-zinc-400 mt-1">Quote-gated, 3-6 month deploy</div>
                         </div>
-                        <div className="p-4 bg-white/10 rounded-xl text-center">
-                            <div className="text-2xl font-bold">$0</div>
-                            <div className="text-xs text-zinc-600 font-mono uppercase">NeMo Guardrails (OSS)</div>
-                            <div className="text-[10px] text-zinc-500 mt-1">Prompt-level only, no agent governance</div>
+                        <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-center">
+                            <div className="text-2xl font-bold text-white">$0</div>
+                            <div className="text-xs text-zinc-300 font-mono uppercase">NeMo Guardrails (OSS)</div>
+                            <div className="text-[10px] text-zinc-400 mt-1">Prompt-level only, no agent governance</div>
                         </div>
                         <div className="p-4 bg-emerald-500/20 border border-emerald-500/30 rounded-xl text-center">
                             <div className="text-2xl font-bold text-emerald-400">$99</div>
@@ -189,14 +189,14 @@ export default function AIGuardrailsPlatformsPage() {
                             <div className="text-[10px] text-emerald-200 mt-1">Deploy in 15 minutes, any agent</div>
                         </div>
                     </div>
-                    <p className="text-sm text-zinc-600">
+                    <p className="text-sm text-zinc-300">
                         Enterprise guardrails are quote-gated. Open source is prompt-level only. Practitioner governance modules are $99 one-time and deploy in 15 minutes. There is nothing else in the market at this layer.
                     </p>
                 </div>
 
                 {/* CTA */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                    <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
+                    <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors shadow-sm">
                         View All 15 Governance Modules →
                     </Link>
                     <Link href="/compare/ai-coding-agents" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">
@@ -210,7 +210,7 @@ export default function AIGuardrailsPlatformsPage() {
                     <div className="space-y-3">
                         {[
                             { q: 'Do I need enterprise guardrails AND practitioner governance?', a: 'They solve different problems. Enterprise guardrails (Lakera, Galileo) protect against prompt injection, shadow AI, and compliance violations. Practitioner governance protects against context rot, retry inflation, file scope violations, and cost overruns. For complete protection, you need both layers.' },
-                            { q: 'What happened to Lakera and Invariant Labs?', a: 'Lakera was acquired by Check Point in November 2025. Invariant Labs was acquired by Snyk in June 2025. Both are now integrated into larger enterprise security platforms — making them less accessible to individual teams and practitioners.' },
+                            { q: 'What happened to Lakera and Invariant Labs?', a: 'Lakera was acquired by Check Point in November 2025. Invariant Labs was acquired by Snyk in June 2025. Both are now integrated into larger enterprise security platforms - making them less accessible to individual teams and practitioners.' },
                             { q: 'Is NVIDIA NeMo Guardrails a good alternative?', a: 'NeMo Guardrails is an open-source framework for adding guardrails to LLM applications. It handles conversational safety (topic filtering, output moderation) but does not address coding-specific governance: context rot, retry loops, file scope, or financial circuit breakers.' },
                             { q: 'Why are enterprise guardrails so expensive?', a: 'Enterprise platforms are designed for CISO-level procurement: SOC 2 compliance, VPC deployment, custom SLAs, and dedicated support. This is appropriate for organizational security posture but creates a pricing gap for practitioner-level governance that individual developers and small teams need.' },
                         ].map((faq, i) => (

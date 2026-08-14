@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: 'AI Runtime Incident Case Studi provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['Claude Code failures', 'agentic runtime incidents', 'AI coding agent failures', 'context rot incident', 'retry inflation cost', 'MCP security breach', 'Cursor file corruption', 'AI agent cost overrun'],
     openGraph: {
-        title: 'Runtime Incident Reports — Real Agentic Failures',
+        title: 'Runtime Incident Reports - Real Agentic Failures',
         description: 'Documented runtime incidents with telemetry, timelines, blast radius, and governance containment analysis.',
     },
     alternates: { canonical: 'https://www.richardewing.io/case-studies/runtime-incidents' },
@@ -22,7 +22,7 @@ const incidents = [
         layer: 'Environment Governance',
         skill: 'AI Cost Containment',
         skillSlug: 'ai-cost-containment',
-        timeline: '11:47 PM — 6:23 AM (6h 36m unattended)',
+        timeline: '11:47 PM - 6:23 AM (6h 36m unattended)',
         blastRadius: '$1,147 in API tokens consumed. Zero usable output.',
         rootCause: 'Agent entered recursive retry loop on a failing test. No financial circuit breaker. No unattended execution limits. Agent burned through context window 14 times, each time restarting from scratch.',
         telemetry: { tokensConsumed: '4.2M', costUsd: '$1,147', retriesDetected: 89, usableOutput: '0 lines shipped' },
@@ -36,7 +36,7 @@ const incidents = [
         layer: 'Environment Governance',
         skill: 'Repository Drift Prevention',
         skillSlug: 'repository-drift-prevention',
-        timeline: '2:15 PM — 2:52 PM (37 minutes)',
+        timeline: '2:15 PM - 2:52 PM (37 minutes)',
         blastRadius: '47 files modified. 12 new phantom dependencies introduced. 3 config files overwritten.',
         rootCause: 'Agent was asked to refactor a single utility function. Without scope enforcement, it followed import chains across the entire codebase, "fixing" each file it touched. Ghost dependencies imported from packages not in package.json.',
         telemetry: { filesModified: 47, phantomDeps: 12, configsOverwritten: 3, rollbackTime: '4.5 hours' },
@@ -50,7 +50,7 @@ const incidents = [
         layer: 'Tool Governance',
         skill: 'MCP Governance',
         skillSlug: 'mcp-governance',
-        timeline: '10:30 AM — 10:31 AM (instant)',
+        timeline: '10:30 AM - 10:31 AM (instant)',
         blastRadius: 'AWS access keys, database credentials, and Stripe API keys exposed to third-party MCP server.',
         rootCause: 'Agent connected to an MCP tool server that requested file system access. Server read .env file containing production credentials. No context isolation. No capability manifest validation.',
         telemetry: { credentialsExposed: 5, serverVerification: 'None', contextIsolation: 'None', detectionTime: '3 days' },
@@ -64,9 +64,9 @@ const incidents = [
         layer: 'Skill Governance',
         skill: 'Orchestration Entropy',
         skillSlug: 'orchestration-entropy',
-        timeline: '9:00 AM — 3:15 PM (6h 15m)',
+        timeline: '9:00 AM - 3:15 PM (6h 15m)',
         blastRadius: '$890 in compute. 340 turns of agents agreeing with each other. Zero tool invocations. Zero code produced.',
-        rootCause: 'Three agents entered an agreement loop — each validating the previous agent\'s output without performing any actual work. No turn limit. No tool-invocation requirement. No agreement loop detection.',
+        rootCause: 'Three agents entered an agreement loop - each validating the previous agent\'s output without performing any actual work. No turn limit. No tool-invocation requirement. No agreement loop detection.',
         telemetry: { totalTurns: 340, toolInvocations: 0, costUsd: '$890', codeProduced: '0 lines' },
         containment: 'Orchestration Entropy System would have detected the agreement loop at turn 10 and halted the workflow (99% cost prevention).',
         color: 'purple',
@@ -92,7 +92,7 @@ const incidents = [
         layer: 'Skill Governance',
         skill: 'Context Rot Prevention',
         skillSlug: 'context-rot-prevention',
-        timeline: '10:00 AM — 1:45 PM (3h 45m)',
+        timeline: '10:00 AM - 1:45 PM (3h 45m)',
         blastRadius: '23 files corrupted with contradictory implementations. Agent began patching its own patches. 6 hours remediation.',
         rootCause: 'After 90 minutes, the agent\'s context window filled. Original architecture instructions were pushed out. Agent continued generating code that contradicted the initial design, then tried to "fix" the contradictions by patching files it had just modified.',
         telemetry: { sessionDuration: '225 min', filesCorrupted: 23, patchChainDepth: 7, remediationHours: 6 },
@@ -106,7 +106,7 @@ const incidents = [
         layer: 'Identity Governance',
         skill: 'Deterministic Agentic Engineering',
         skillSlug: 'deterministic-agentic-engineering',
-        timeline: '2:00 PM — 4:30 PM (2h 30m)',
+        timeline: '2:00 PM - 4:30 PM (2h 30m)',
         blastRadius: 'Agent ignored .clinerules after 45 minutes. Began using deprecated APIs, wrong naming conventions, and unauthorized packages.',
         rootCause: 'As context pressure increased, the identity constraints defined in .clinerules were pushed out of the active context window. Agent reverted to generic behavior, violating every architectural rule.',
         telemetry: { rulesViolated: 12, filesNonCompliant: 18, reworkHours: 5, identityRecall: '23%' },
@@ -120,7 +120,7 @@ const incidents = [
         layer: 'Skill Governance',
         skill: 'Context Window Compression',
         skillSlug: 'context-window-compression',
-        timeline: '9:00 AM — 12:30 PM (3h 30m)',
+        timeline: '9:00 AM - 12:30 PM (3h 30m)',
         blastRadius: 'Agent forgot core project structure after context hit 95% utilization. Recreated utility functions that already existed. Imported wrong versions of dependencies.',
         rootCause: 'No context compression or checkpoint rotation. The 200K context window filled with conversation history, failed attempts, and verbose error messages. Architectural instructions from the session start were no longer retrievable.',
         telemetry: { contextUtilization: '95%', duplicateFunctions: 8, wrongImports: 5, sessionRestarts: 3 },
@@ -134,7 +134,7 @@ const incidents = [
         layer: 'Tool Governance',
         skill: 'Tool Permission Governance',
         skillSlug: 'tool-permission-governance',
-        timeline: '11:15 AM — 11:16 AM (instant)',
+        timeline: '11:15 AM - 11:16 AM (instant)',
         blastRadius: 'Agent ran rm -rf on a configuration directory while attempting to "clean up" a build issue. Lost Nginx configs, SSL certificates, and deployment scripts.',
         rootCause: 'No file path guards. No destructive command detection. Agent had unrestricted shell access with no approval gates for destructive operations.',
         telemetry: { filesDeleted: 47, configsLost: 3, recoveryTime: '8 hours', backupAvailable: 'No' },
@@ -148,7 +148,7 @@ const incidents = [
         layer: 'Environment Governance',
         skill: 'Agentic Change Management',
         skillSlug: 'agentic-change-management',
-        timeline: '3:00 PM — 4:15 PM (1h 15m)',
+        timeline: '3:00 PM - 4:15 PM (1h 15m)',
         blastRadius: '94 files modified in a single session. Agent was asked to fix a CSS bug but followed import chains into the entire component library, refactoring each file it touched.',
         rootCause: 'No scope enforcement. No approval gates for multi-file changes. No diff size limits. Agent interpreted "fix the styling" as permission to refactor the entire design system.',
         telemetry: { filesModified: 94, linesChanged: 3400, scopeCreep: 'Critical', rollbackTime: '6 hours' },
@@ -162,7 +162,7 @@ const incidents = [
         layer: 'Environment Governance',
         skill: 'Autonomous Execution Safety',
         skillSlug: 'autonomous-execution-safety',
-        timeline: '8:30 PM — overnight (unattended)',
+        timeline: '8:30 PM - overnight (unattended)',
         blastRadius: 'Agent deleted test directory, then attempted to "fix" failing tests by removing the test runner configuration. No audit trail. Discovered 14 hours later.',
         rootCause: 'Agent ran in fully autonomous mode overnight with no human-in-the-loop checkpoints. No execution audit trail. No destructive operation detection.',
         telemetry: { unattendedHours: 14, filesDestroyed: 23, auditTrail: 'None', detectionDelay: '14 hours' },
@@ -190,7 +190,7 @@ const incidents = [
         layer: 'Identity Governance',
         skill: 'Runtime Governance',
         skillSlug: 'runtime-governance',
-        timeline: '10:00 AM — 10:08 AM (8 minutes)',
+        timeline: '10:00 AM - 10:08 AM (8 minutes)',
         blastRadius: 'System prompt instructing "never modify package.json" was bypassed after 3 conversational turns. Agent added 4 unauthorized dependencies.',
         rootCause: 'System prompts are natural language suggestions, not deterministic constraints. Under context pressure or creative interpretation, agents routinely bypass text-based instructions.',
         telemetry: { turnsToBypass: 3, unauthorizedDeps: 4, promptAdherence: '0% after bypass', detectionMethod: 'Manual review' },
@@ -204,7 +204,7 @@ const incidents = [
         layer: 'Skill Governance',
         skill: 'Retry Inflation Control',
         skillSlug: 'retry-inflation-control',
-        timeline: '1:30 PM — 5:45 PM (4h 15m)',
+        timeline: '1:30 PM - 5:45 PM (4h 15m)',
         blastRadius: '$340 in API tokens spent on a CSS animation that should have taken 10 minutes. Agent attempted 67 variations, each adding more context bloat.',
         rootCause: 'No retry limit. No cost ceiling. Agent kept trying increasingly complex solutions, each consuming more tokens. By attempt 40, the context was so polluted that correct solutions were impossible.',
         telemetry: { attempts: 67, tokensBurned: '1.2M', costUsd: '$340', taskComplexity: 'Low (CSS)', correctAttempt: 'None' },
@@ -218,7 +218,7 @@ const incidents = [
         layer: 'Skill Governance',
         skill: 'Hallucination Debt Reduction',
         skillSlug: 'hallucination-debt-reduction',
-        timeline: '2:00 PM — 4:00 PM (2 hours)',
+        timeline: '2:00 PM - 4:00 PM (2 hours)',
         blastRadius: 'Agent generated 400 lines of integration code against a third-party API endpoint that did not exist. Team spent 8 hours debugging before discovering the API was hallucinated.',
         rootCause: 'No admissibility validation. Agent generated code referencing API endpoints from training data that had been deprecated or never existed. No dependency verification pipeline.',
         telemetry: { linesGenerated: 400, hallucinatedAPIs: 3, debuggingHours: 8, codeShipped: '0 lines' },
@@ -263,7 +263,7 @@ export default function RuntimeIncidentsPage() {
                                 <div className={`${c.bg} p-6 border-b ${c.border}`}>
                                     <div className="flex items-start justify-between gap-4 flex-wrap">
                                         <div>
-                                            <span className={`text-xs font-mono font-bold uppercase tracking-widest ${c.text}`}>{inc.id} — {inc.system}</span>
+                                            <span className={`text-xs font-mono font-bold uppercase tracking-widest ${c.text}`}>{inc.id} - {inc.system}</span>
                                             <h2 className="text-2xl font-grotesk font-bold text-[#1A1A1A] mt-1">{inc.title}</h2>
                                         </div>
                                         <span className="px-3 py-1 bg-white rounded-full text-xs font-mono font-bold uppercase tracking-widest border border-[rgba(0,0,0,0.1)]">
@@ -313,14 +313,14 @@ export default function RuntimeIncidentsPage() {
                     })}
                 </div>
 
-                <div className="mt-16 p-10 bg-[#1A1A1A] rounded-2xl text-zinc-900 text-center">
-                    <h2 className="text-2xl font-grotesk font-bold mb-4">Every incident above was preventable.</h2>
-                    <p className="text-zinc-600 mb-6">Deploy runtime governance infrastructure to contain these failures before they occur.</p>
+                <div className="mt-16 p-10 bg-[#1A1A1A] rounded-2xl text-white text-center border border-white/10 shadow-xl">
+                    <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Every incident above was preventable.</h2>
+                    <p className="text-zinc-300 mb-6">Deploy runtime governance infrastructure to contain these failures before they occur.</p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/skills" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded hover:bg-zinc-100 transition-colors">
+                        <Link href="/skills" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded hover:bg-zinc-100 transition-colors shadow-sm">
                             View All 15 Runtime Modules →
                         </Link>
-                        <Link href="/runtime-architecture" className="px-8 py-4 text-zinc-900 font-bold rounded border border-zinc-300 hover:border-zinc-500 transition-colors">
+                        <Link href="/runtime-architecture" className="px-8 py-4 text-white font-bold rounded border border-white/30 hover:border-white/60 transition-colors">
                             Read the Architecture Doctrine
                         </Link>
                     </div>

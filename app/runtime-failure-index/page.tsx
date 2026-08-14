@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: 'AI Runtime Failure Database provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['AI agent failures', 'Claude Code failure modes', 'runtime failure index', 'agentic failure database', 'AI coding agent risks', 'context rot frequency', 'retry inflation cost', 'MCP security breach', 'AI governance failure taxonomy', 'most common AI coding failures'],
     openGraph: {
-        title: 'Runtime Failure Index — The Canonical Agentic Failure Database',
+        title: 'Runtime Failure Index - The Canonical Agentic Failure Database',
         description: 'Ranked failure modes for AI coding agents: frequency, cost, blast radius, and governance containment mapping.',
     },
     alternates: { canonical: 'https://www.richardewing.io/runtime-failure-index' },
@@ -195,7 +195,7 @@ export default function RuntimeFailureIndexPage() {
                                 <Shield className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                                 <div>
                                     <h3 className="text-sm font-bold text-[#1A1A1A]">The 4-layer model contains all failures</h3>
-                                    <p className="text-xs text-zinc-500">Every documented failure maps to Identity, Skill, Tool, or Environment governance — confirming the runtime architecture is complete.</p>
+                                    <p className="text-xs text-zinc-500">Every documented failure maps to Identity, Skill, Tool, or Environment governance - confirming the runtime architecture is complete.</p>
                                 </div>
                             </div>
                         </div>
@@ -228,7 +228,7 @@ export default function RuntimeFailureIndexPage() {
                         Every failure in this index maps to a deployable runtime infrastructure module with TypeScript middleware, YAML policy manifests, and operational tooling.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
+                        <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors shadow-sm">
                             View All 15 Runtime Modules →
                         </Link>
                         <Link href="/diagrams" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">

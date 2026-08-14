@@ -65,7 +65,7 @@ export default function ExecutiveDashboard() {
                         >
                             <Settings className="w-4 h-4 text-cyan-400" /> Reset Enterprise Demo
                         </button>
-                        <Link href="/tools" className="px-4 py-2 bg-cyan-600 border border-cyan-500 text-zinc-950 font-semibold rounded-lg text-sm font-bold hover:bg-cyan-700 transition-colors flex items-center gap-2">
+                        <Link href="/tools" className="px-4 py-2 bg-cyan-600 border border-cyan-500 text-white font-bold rounded-lg text-sm hover:bg-cyan-700 transition-colors flex items-center gap-2 shadow-sm">
                             <Activity className="w-4 h-4" /> New Diagnostic Run
                         </Link>
                     </div>
@@ -260,7 +260,7 @@ export default function ExecutiveDashboard() {
                                     localStorage.setItem('unified_diagnostic_history', JSON.stringify(defaultData));
                                     setHistory(defaultData);
                                 }}
-                                className="px-6 py-3 bg-cyan-600 text-zinc-950 font-bold rounded-lg hover:bg-cyan-700 transition-colors shadow-sm"
+                                className="px-6 py-3 bg-cyan-600 text-white font-bold rounded-lg hover:bg-cyan-700 transition-colors shadow-sm"
                             >
                                 Initialize Live Workspace
                             </button>

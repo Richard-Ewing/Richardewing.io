@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: 'Why markdown instruction files fail as AI governance. Compare static prompt hints vs deterministic runtime enforcement.',
     keywords: ['CLAUDE.md not working', 'CLAUDE.md ignored', 'CLAUDE.md bypassed', '.cursorrules ignored', '.cursorrules not working', 'system prompt bypass', 'AI agent ignores rules', 'AI agent ignores instructions', 'AI governance vs system prompts', 'Claude Code ignoring instructions', 'AI coding agent disobeys', 'AI rules suggestions not constraints'],
     openGraph: {
-        title: 'CLAUDE.md Is Not Governance — Why System Prompts Fail',
+        title: 'CLAUDE.md Is Not Governance - Why System Prompts Fail',
         description: 'The structural difference between text-based AI instructions and deterministic runtime governance enforcement.',
     },
     alternates: { canonical: 'https://www.richardewing.io/compare/claude-md-is-not-governance' },
@@ -116,17 +116,17 @@ export default function ClaudeMdIsNotGovernancePage() {
                         <Shield className="w-5 h-5" /> How to Move Beyond System Prompts
                     </h2>
                     <ul className="space-y-3 text-emerald-800 text-sm">
-                        <li><strong>Step 1</strong> — Deploy CLAUDE.md as identity layer (necessary but not sufficient)</li>
-                        <li><strong>Step 2</strong> — Add policy.yaml with machine-readable rules</li>
-                        <li><strong>Step 3</strong> — Deploy middleware.ts that intercepts and enforces policies</li>
-                        <li><strong>Step 4</strong> — Configure file guards, cost limits, and retry caps</li>
-                        <li><strong>Step 5</strong> — Add audit logging for every agent action</li>
-                        <li><strong>Step 6</strong> — Set up human escalation triggers for threshold violations</li>
+                        <li><strong>Step 1</strong> - Deploy CLAUDE.md as identity layer (necessary but not sufficient)</li>
+                        <li><strong>Step 2</strong> - Add policy.yaml with machine-readable rules</li>
+                        <li><strong>Step 3</strong> - Deploy middleware.ts that intercepts and enforces policies</li>
+                        <li><strong>Step 4</strong> - Configure file guards, cost limits, and retry caps</li>
+                        <li><strong>Step 5</strong> - Add audit logging for every agent action</li>
+                        <li><strong>Step 6</strong> - Set up human escalation triggers for threshold violations</li>
                     </ul>
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                    <Link href="/skills/runtime-governance" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
+                    <Link href="/skills/runtime-governance" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors shadow-sm">
                         Deploy Runtime Governance →
                     </Link>
                     <Link href="/runtime-architecture" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">
@@ -139,10 +139,10 @@ export default function ClaudeMdIsNotGovernancePage() {
                     <div className="space-y-3">
                         {[
                             { q: 'My CLAUDE.md is being ignored. Why?', a: 'CLAUDE.md occupies tokens in the same context window as your conversation. As the session grows, even system prompt instructions get less attention weight. The model treats them as suggestions, not constraints. After ~60 minutes, your CLAUDE.md is effectively invisible to the agent.' },
-                            { q: 'My .cursorrules stopped working. How do I fix it?', a: '.cursorrules is the same pattern as CLAUDE.md — text-based instructions competing for context space. Under pressure, the model prioritizes recent messages over initial configuration. The fix is not a better .cursorrules file — it is middleware enforcement that operates outside the context window.' },
+                            { q: 'My .cursorrules stopped working. How do I fix it?', a: '.cursorrules is the same pattern as CLAUDE.md - text-based instructions competing for context space. Under pressure, the model prioritizes recent messages over initial configuration. The fix is not a better .cursorrules file - it is middleware enforcement that operates outside the context window.' },
                             { q: 'Why does my AI agent ignore instructions?', a: 'AI agents are trained to be helpful, not obedient. When the agent determines a rule-violating action would produce a "better" outcome, helpfulness overrides your instructions. This is why text-based rules are suggestions, not constraints. Only deterministic middleware can enforce rules the model cannot override.' },
-                            { q: 'Should I delete my CLAUDE.md?', a: 'No. CLAUDE.md is the Identity Layer — it is necessary but not sufficient. Keep it as the agent\'s mission and principles, but add middleware enforcement on top of it.' },
-                            { q: 'What does "middleware enforcement" mean?', a: 'Middleware intercepts agent actions before they execute. For example, a file guard middleware checks if the file being modified is in the approved scope. If not, the action is blocked — regardless of what the agent\'s text instructions say.' },
+                            { q: 'Should I delete my CLAUDE.md?', a: 'No. CLAUDE.md is the Identity Layer - it is necessary but not sufficient. Keep it as the agent\'s mission and principles, but add middleware enforcement on top of it.' },
+                            { q: 'What does "middleware enforcement" mean?', a: 'Middleware intercepts agent actions before they execute. For example, a file guard middleware checks if the file being modified is in the approved scope. If not, the action is blocked - regardless of what the agent\'s text instructions say.' },
                         ].map((faq, i) => (
                             <details key={i} className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] shadow-sm">
                                 <summary className="p-4 cursor-pointer text-sm font-bold text-[#1A1A1A] hover:text-violet-700">{faq.q}</summary>

@@ -22,16 +22,16 @@ export const metadata: Metadata = {
         'AI integration consultant', 'AI transformation plan', 'enterprise AI roadmap',
     ],
     openGraph: {
-        title: 'AI Integration Advisor — Your Personalized AI Roadmap in Minutes',
+        title: 'AI Integration Advisor - Your Personalized AI Roadmap in Minutes',
         description: 'Stop guessing about AI. Answer 5 questions about your business and get a custom AI integration roadmap with specific tools, ROI estimates, and a step-by-step implementation plan. Download as PDF.',
         type: 'website',
         url: 'https://www.richardewing.io/ai-integration/advisor',
-        siteName: 'Richard Ewing — AI Economist',
+        siteName: 'Richard Ewing - AI Economist',
         images: [{ url: 'https://www.richardewing.io/og-image-home.png', width: 1200, height: 630 }],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'AI Integration Advisor — Personalized AI Roadmap for Your Business',
+        title: 'AI Integration Advisor - Personalized AI Roadmap for Your Business',
         description: 'Answer 5 questions. Get a custom AI integration plan with specific tools, ROI estimates, and a 30-day action plan. No consultants required.',
     },
     alternates: { canonical: 'https://www.richardewing.io/ai-integration/advisor' },
@@ -103,15 +103,15 @@ export default async function AdvisorPage() {
                                 </a>
                             </div>
 
-                            {/* Annual — Best Value */}
+                            {/* Annual - Best Value */}
                             <div className="rounded-xl border-2 border-cyan-500 p-5 text-center relative bg-cyan-50/30">
-                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-cyan-600 text-zinc-900 text-[10px] font-bold font-mono uppercase tracking-widest rounded-full">Save 33%</div>
+                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-cyan-600 text-white text-[10px] font-bold font-mono uppercase tracking-widest rounded-full">Save 33%</div>
                                 <div className="text-xs font-mono text-cyan-700 uppercase tracking-widest mb-2">Annual</div>
                                 <div className="text-3xl font-bold text-[#1A1A1A] mb-1">$1,997<span className="text-sm font-normal text-zinc-500">/yr</span></div>
                                 <p className="text-[10px] text-zinc-600 mb-4">$166/mo · Billed annually</p>
                                 <a
                                     href="/api/buy/ai_advisor_yearly"
-                                    className="block w-full text-center py-3 bg-cyan-600 text-zinc-900 font-bold rounded-xl text-sm hover:bg-cyan-500 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.15)]"
+                                    className="block w-full text-center py-3 bg-cyan-600 text-white font-bold rounded-xl text-sm hover:bg-cyan-500 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.15)]"
                                 >
                                     Start Annual →
                                 </a>
@@ -128,7 +128,7 @@ export default async function AdvisorPage() {
         );
     }
 
-    // Authenticated + Subscribed — show the advisor
+    // Authenticated + Subscribed - show the advisor
     return (
         <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
             <div className="max-w-5xl mx-auto px-6">

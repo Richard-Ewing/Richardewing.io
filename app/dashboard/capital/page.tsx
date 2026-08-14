@@ -44,7 +44,7 @@ export default function AICapitalLedgerPage() {
                     </div>
 
                     <div className="flex gap-3">
-                        <Link href="/tools/aueb" className="px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-zinc-950 font-bold rounded-lg text-sm transition-colors flex items-center gap-2">
+                        <Link href="/tools/aueb" className="px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-white font-bold rounded-lg text-sm transition-colors flex items-center gap-2 shadow-sm">
                             <Activity className="w-4 h-4" /> Run AUEB Audit
                         </Link>
                     </div>

@@ -668,7 +668,7 @@ export default function DueDiligenceTool() {
                                         
                                         <div className="flex flex-col sm:flex-row gap-4 mt-8">
                                             <button onClick={() => setStep(1)} className="px-6 py-4 bg-zinc-200 hover:bg-zinc-700 text-zinc-950 rounded-xl transition-all">← Back</button>
-                                            <button onClick={() => calculate()} disabled={loading} className="flex-1 py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2">
+                                            <button onClick={() => calculate()} disabled={loading} className="flex-1 py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-bold uppercase tracking-widest rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-sm">
                                                 {loading ? <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Analyzing Target...</> : 'Generate Threat Matrix →'}
                                             </button>
                                         </div>

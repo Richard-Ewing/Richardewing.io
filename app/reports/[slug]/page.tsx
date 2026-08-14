@@ -97,7 +97,7 @@ export default async function ReportDetailPage({ params }: { params: { slug: str
                             <p className="text-red-800 mt-2">
                                 To remediate the risks identified in this index, organizations must deploy a deterministic interception layer.
                             </p>
-                            <Link href="/exogram" className="inline-block mt-4 text-sm font-bold bg-red-600 text-zinc-950 font-semibold px-6 py-3 rounded-lg hover:bg-red-700 transition-colors">
+                            <Link href="/exogram" className="inline-block mt-4 text-sm font-bold bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors shadow-sm">
                                 Initialize Exogram Simulation
                             </Link>
                         </div>

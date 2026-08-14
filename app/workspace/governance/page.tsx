@@ -165,7 +165,7 @@ export default function GovernanceWorkspacePage() {
               href="https://richardewing.io/exports/riskregister_dp_board_001.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 py-3 px-4 bg-cyan-600 hover:bg-cyan-700 text-zinc-950 font-mono font-bold text-xs rounded-xl flex items-center justify-center gap-2 transition-colors cursor-pointer"
+              className="mt-8 py-3 px-4 bg-cyan-600 hover:bg-cyan-700 text-white font-mono font-bold text-xs rounded-xl flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-sm"
             >
               <Download className="w-4 h-4" /> Download Certified Audit Package
             </a>

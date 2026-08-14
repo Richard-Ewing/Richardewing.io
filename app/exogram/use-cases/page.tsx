@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const useCases = [
     {
         icon: '🏥', title: 'Healthcare AI', industry: 'HealthTech',
-        problem: 'AI-generated clinical summaries contain hallucinated medications, dosages, or contradicted patient history — creating patient safety risk and HIPAA violations.',
+        problem: 'AI-generated clinical summaries contain hallucinated medications, dosages, or contradicted patient history - creating patient safety risk and HIPAA violations.',
         solution: 'Schema Integrity Engine validates every clinical output against known drug databases and patient records. Boundary Control prevents AI from making recommendations outside its approved scope.',
         impact: '99.8% reduction in hallucinated medical data. Zero HIPAA violations from AI outputs.',
         regulations: ['HIPAA', 'FDA 21 CFR Part 11', 'HITECH'],
@@ -112,7 +112,7 @@ export default function ExogramUseCasesPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Your Industry Not Listed?</h2>
                         <p className="text-zinc-900 mb-6 max-w-lg mx-auto">Exogram&apos;s verification layers are industry-agnostic. If your AI system produces outputs that need to be trusted, Exogram can verify them.</p>
                         <div className="flex justify-center gap-4">
-                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-zinc-950 font-semibold font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm">
+                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm shadow-sm">
                                 Visit Exogram.ai →
                             </a>
                             <Link href="/services" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">

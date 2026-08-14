@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: 'AI Governance Telemetry & Cost provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['AI agent telemetry', 'Claude Code cost analysis', 'retry inflation metrics', 'context rot measurement', 'AI coding agent ROI', 'governance telemetry dashboard', 'token burn rate', 'agent cost containment'],
     openGraph: {
-        title: 'Runtime Telemetry — Agentic Governance Metrics',
+        title: 'Runtime Telemetry - Agentic Governance Metrics',
         description: 'Operational telemetry showing why AI coding agents fail and how runtime governance contains costs.',
     },
     alternates: { canonical: 'https://www.richardewing.io/telemetry' },
@@ -29,7 +29,7 @@ const retryInflation = [
     { attempt: 3, tokens: '58K', cost: '$1.74', contextUse: '29%' },
     { attempt: 5, tokens: '110K', cost: '$3.30', contextUse: '55%' },
     { attempt: 10, tokens: '185K', cost: '$5.55', contextUse: '93%' },
-    { attempt: 15, tokens: '200K', cost: '$6.00', contextUse: '100% — SESSION LOST' },
+    { attempt: 15, tokens: '200K', cost: '$6.00', contextUse: '100% - SESSION LOST' },
     { attempt: 'RESTART', tokens: '+200K', cost: '+$6.00', contextUse: 'Reset to 0%' },
     { attempt: 'RESTART ×5', tokens: '1M+', cost: '$30+', contextUse: 'Compounding' },
 ];
@@ -232,7 +232,7 @@ export default function TelemetryPage() {
                         Start with any module. Measure the delta.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
+                        <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors shadow-sm">
                             View All 15 Runtime Modules →
                         </Link>
                         <Link href="/case-studies/runtime-incidents" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">

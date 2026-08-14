@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Why Cursor Rewrites Files provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['Cursor rewrites files', 'Cursor rewriting files', 'Cursor modifying wrong files', 'AI agent scope creep', 'AI unintended edits', 'AI changing everything', 'AI touched something it shouldn\'t', 'AI refactoring code I didn\'t ask', 'Windsurf file access', 'AI coding agent file mutation', 'repository drift', 'AI agent changing my code'],
     openGraph: {
-        title: 'Why Cursor Rewrites Files — AI Agent Scope Creep Explained',
+        title: 'Why Cursor Rewrites Files - AI Agent Scope Creep Explained',
         description: 'The mechanics of repository drift and scope creep mutation in AI coding agents.',
     },
     alternates: { canonical: 'https://www.richardewing.io/compare/why-cursor-rewrites-files' },
@@ -28,7 +28,7 @@ export default function WhyCursorRewritesFilesPage() {
                         Why Cursor Rewrites Your Files
                     </h1>
                     <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto">
-                        You asked it to fix one function. It started rewriting files across the entire project, making unintended edits, and changing everything. It touched something it shouldn&apos;t have and now your auth middleware is broken. This is scope creep mutation — and it&apos;s solvable.
+                        You asked it to fix one function. It started rewriting files across the entire project, making unintended edits, and changing everything. It touched something it shouldn&apos;t have and now your auth middleware is broken. This is scope creep mutation - and it&apos;s solvable.
                     </p>
                 </div>
 
@@ -80,17 +80,17 @@ export default function WhyCursorRewritesFilesPage() {
                         <Shield className="w-5 h-5" /> How Governance Contains Scope Creep
                     </h2>
                     <ul className="space-y-3 text-emerald-800 text-sm">
-                        <li><strong>File scope declaration</strong> — every task must declare which files it will modify before execution</li>
-                        <li><strong>Directory guards</strong> — restrict agent access to specific directories per task</li>
-                        <li><strong>Mutation limits</strong> — maximum files modified per task (default: 5)</li>
-                        <li><strong>Change review gates</strong> — pause execution when file count exceeds threshold</li>
-                        <li><strong>Rollback capability</strong> — git-based automatic rollback for unauthorized modifications</li>
-                        <li><strong>Diff summary</strong> — force agent to summarize all planned changes before execution</li>
+                        <li><strong>File scope declaration</strong> - every task must declare which files it will modify before execution</li>
+                        <li><strong>Directory guards</strong> - restrict agent access to specific directories per task</li>
+                        <li><strong>Mutation limits</strong> - maximum files modified per task (default: 5)</li>
+                        <li><strong>Change review gates</strong> - pause execution when file count exceeds threshold</li>
+                        <li><strong>Rollback capability</strong> - git-based automatic rollback for unauthorized modifications</li>
+                        <li><strong>Diff summary</strong> - force agent to summarize all planned changes before execution</li>
                     </ul>
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                    <Link href="/skills/repository-drift-prevention" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
+                    <Link href="/skills/repository-drift-prevention" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors shadow-sm">
                         Deploy Drift Prevention →
                     </Link>
                     <Link href="/skills/agentic-change-management" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">
@@ -103,7 +103,7 @@ export default function WhyCursorRewritesFilesPage() {
                     <div className="space-y-3">
                         {[
                             { q: 'Can\'t I just tell it not to modify other files?', a: 'You can, but text-based instructions are routinely bypassed under context pressure. The agent\'s "helpful" optimization instinct overrides explicit scope restrictions when it determines a broader change would be "better." It will keep rewriting files and refactoring code you didn\'t ask it to touch. Only middleware enforcement prevents this.' },
-                            { q: 'My AI keeps changing everything — how do I stop unintended edits?', a: 'Unintended edits happen because AI agents have no default file scope boundary. Every file in your repository is fair game. Governance adds file scope declarations, directory guards, and mutation limits (default: 5 files per task) so the agent cannot touch something it shouldn\'t.' },
+                            { q: 'My AI keeps changing everything - how do I stop unintended edits?', a: 'Unintended edits happen because AI agents have no default file scope boundary. Every file in your repository is fair game. Governance adds file scope declarations, directory guards, and mutation limits (default: 5 files per task) so the agent cannot touch something it shouldn\'t.' },
                             { q: 'How many files can an agent modify in one session?', a: 'Without governance, there is no limit. Documented incidents show 23-94 files modified in a single task. With governance, the default limit is 5 files per task with human approval required for more.' },
                             { q: 'I had to revert after AI changes broke my project. How do I prevent this?', a: 'Governance includes git-based automatic rollback for unauthorized modifications and change review gates that pause execution when file count exceeds threshold. You should never have to manually revert AI changes again.' },
                             { q: 'Is this the same as "repository drift"?', a: 'Scope creep is a single-task problem. Repository drift is the cumulative effect: after many ungoverned sessions, your repository diverges significantly from its intended architecture. Both require governance to prevent.' },

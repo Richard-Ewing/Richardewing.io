@@ -120,7 +120,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                                     <a href={article.url} className="text-lg text-zinc-950 group-hover:text-purple-900 font-extrabold font-semibold transition-colors font-semibold block mb-1">
                                         "{article.title}"
                                     </a>
-                                    <span className="text-zinc-950 text-sm font-semibold font-mono"> — {article.publication}, {article.date}</span>
+                                    <span className="text-zinc-950 text-sm font-semibold font-mono"> - {article.publication}, {article.date}</span>
                                 </li>
                             ))}
                         </ul>
@@ -132,7 +132,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                     <div className="max-w-3xl p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5">
                         <h2 className="text-lg font-semibold text-cyan-900 font-extrabold font-semibold mb-2 font-grotesk">Deep Dive on the Blog</h2>
                         <p className="text-zinc-950 font-bold mb-4">Explore the latest analysis and practical applications of this framework on the engineering economics blog.</p>
-                        <a href="/blog" className="inline-block px-6 py-2 rounded-lg bg-cyan-600 text-zinc-950 font-semibold hover:bg-cyan-500 transition-colors">
+                        <a href="/blog" className="inline-block px-6 py-2 rounded-lg bg-cyan-600 text-white font-bold hover:bg-cyan-500 transition-colors shadow-sm">
                             Search the Blog Archive →
                         </a>
                     </div>
@@ -146,7 +146,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                             <p className="text-zinc-950 font-bold mb-6">Use the interactive tool to calculate your {framework.name}.</p>
                             <a
                                 href={framework.relatedTool.url}
-                                className="inline-block px-6 py-3 rounded-lg bg-purple-600 text-zinc-950 font-semibold hover:bg-purple-500 transition-colors"
+                                className="inline-block px-6 py-3 rounded-lg bg-purple-600 text-white font-bold hover:bg-purple-500 transition-colors shadow-sm"
                             >
                                 Use the {framework.relatedTool.name} →
                             </a>

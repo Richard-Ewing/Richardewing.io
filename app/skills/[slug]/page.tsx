@@ -124,16 +124,16 @@ export default async function SkillDetailPage({ params }: { params: Promise<{ sl
 
                         {/* CTA Box */}
                         <div className="flex-shrink-0 w-full md:w-auto min-w-[280px]">
-                            <div className="p-6 rounded-2xl bg-[#1A1A1A] text-zinc-900 shadow-xl">
-                                <div className="text-xs font-bold font-mono text-zinc-600 uppercase tracking-widest mb-1">Commercial License</div>
-                                <div className="text-3xl font-grotesk font-bold mb-4">${skill.price}<span className="text-sm font-semibold text-zinc-500 line-through ml-2 font-normal">$299</span></div>
+                            <div className="p-6 rounded-2xl bg-[#1A1A1A] text-white shadow-xl border border-white/10">
+                                <div className="text-xs font-bold font-mono text-zinc-400 uppercase tracking-widest mb-1">Commercial License</div>
+                                <div className="text-3xl font-grotesk font-bold text-white mb-4">${skill.price}<span className="text-sm font-semibold text-zinc-400 line-through ml-2 font-normal">$299</span></div>
                                 <a 
                                     href={skill.checkoutUrl}
                                     className="block w-full py-3 px-4 bg-white text-[#1A1A1A] text-center font-bold rounded hover:bg-zinc-100 transition-colors shadow-sm"
                                 >
                                     {skill.ctaText || 'Deploy Infrastructure'}
                                 </a>
-                                <div className="text-[10px] text-zinc-600 font-bold font-mono text-center mt-3 uppercase tracking-widest bg-zinc-100/50 py-2 rounded border border-zinc-300 leading-relaxed">
+                                <div className="text-[10px] text-zinc-300 font-bold font-mono text-center mt-3 uppercase tracking-widest bg-white/5 py-2 rounded border border-white/10 leading-relaxed">
                                     You are buying deployable governance infrastructure<br/>not AI education.
                                 </div>
                             </div>

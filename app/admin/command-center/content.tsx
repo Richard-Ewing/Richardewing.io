@@ -233,7 +233,7 @@ function NotConnected({ label }: { label: string }) {
     return (
         <div className="bg-white border border-black/8 rounded-xl p-8 flex flex-col items-center justify-center gap-3 shadow-sm">
             <AlertTriangle className="w-6 h-6 text-amber-500" />
-            <p className="text-sm text-[#6B6B6B] font-mono">{label} — Not connected</p>
+            <p className="text-sm text-[#6B6B6B] font-mono">{label} - Not connected</p>
         </div>
     );
 }
@@ -525,7 +525,7 @@ export default function CommandCenter() {
                     <KpiCard label="Total Clicks" value={fmtNumber(seoSummary?.totalClicks || 0)} icon={MousePointerClick} color="text-emerald-600" />
                     <KpiCard
                         label="Paid / Glossary Ratio"
-                        value={`${seoSummary?.glossaryVsPaidFunnel.ratio || '—'}x`}
+                        value={`${seoSummary?.glossaryVsPaidFunnel.ratio || ' - '}x`}
                         icon={glossaryRatio >= 1 ? TrendingUp : TrendingDown}
                         color={glossaryRatio >= 1 ? 'text-emerald-600' : 'text-red-600'}
                         subtitle="Goal: > 1.0x"
@@ -622,7 +622,7 @@ export default function CommandCenter() {
                     <div className="bg-red-50 border border-red-200 rounded-xl p-6">
                         <h3 className="text-sm font-semibold text-red-900 mb-4 flex items-center gap-2">
                             <AlertTriangle className="w-4 h-4 text-red-600" />
-                            Low CTR Pages (Below 2% — Need Meta Rewrite)
+                            Low CTR Pages (Below 2% - Need Meta Rewrite)
                         </h3>
                         <div className="space-y-2">
                             {seo.lowCtrPages.map((page, i) => (
@@ -926,7 +926,7 @@ export default function CommandCenter() {
                         <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-[#6B6B6B]">Hot Leads</p>
                         <Flame className="w-4 h-4 text-red-600" />
                     </div>
-                    <p className="text-4xl font-bold text-red-600">{pipeline.HOT || '—'}</p>
+                    <p className="text-4xl font-bold text-red-600">{pipeline.HOT || ' - '}</p>
                     <div className="mt-2 h-1 bg-[#F5F0EB] rounded-full overflow-hidden">
                         <div className="h-full bg-red-500 rounded-full transition-all duration-700" style={{ width: `${totalPipeline > 0 ? (pipeline.HOT / totalPipeline) * 100 : 0}%` }} />
                     </div>
@@ -936,7 +936,7 @@ export default function CommandCenter() {
                         <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-[#6B6B6B]">Warm Leads</p>
                         <TrendingUp className="w-4 h-4 text-amber-600" />
                     </div>
-                    <p className="text-4xl font-bold text-amber-600">{pipeline.WARM || '—'}</p>
+                    <p className="text-4xl font-bold text-amber-600">{pipeline.WARM || ' - '}</p>
                     <div className="mt-2 h-1 bg-[#F5F0EB] rounded-full overflow-hidden">
                         <div className="h-full bg-amber-500 rounded-full transition-all duration-700" style={{ width: `${totalPipeline > 0 ? (pipeline.WARM / totalPipeline) * 100 : 0}%` }} />
                     </div>
@@ -946,7 +946,7 @@ export default function CommandCenter() {
                         <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-[#6B6B6B]">Cold Leads</p>
                         <Shield className="w-4 h-4 text-blue-600" />
                     </div>
-                    <p className="text-4xl font-bold text-blue-600">{pipeline.COLD || '—'}</p>
+                    <p className="text-4xl font-bold text-blue-600">{pipeline.COLD || ' - '}</p>
                     <div className="mt-2 h-1 bg-[#F5F0EB] rounded-full overflow-hidden">
                         <div className="h-full bg-blue-500 rounded-full transition-all duration-700" style={{ width: `${totalPipeline > 0 ? (pipeline.COLD / totalPipeline) * 100 : 0}%` }} />
                     </div>
@@ -956,7 +956,7 @@ export default function CommandCenter() {
                         <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-[#6B6B6B]">Nurture</p>
                         <Users className="w-4 h-4 text-[#6B6B6B]" />
                     </div>
-                    <p className="text-4xl font-bold text-[#3A3A3A]">{pipeline.NURTURE || '—'}</p>
+                    <p className="text-4xl font-bold text-[#3A3A3A]">{pipeline.NURTURE || ' - '}</p>
                     <div className="mt-2 h-1 bg-[#F5F0EB] rounded-full overflow-hidden">
                         <div className="h-full bg-zinc-400 rounded-full transition-all duration-700" style={{ width: `${totalPipeline > 0 ? (pipeline.NURTURE / totalPipeline) * 100 : 0}%` }} />
                     </div>
@@ -986,7 +986,7 @@ export default function CommandCenter() {
                                     <div className="text-xs text-[#6B6B6B] mt-0.5">
                                         {hasMatch
                                             ? `${crowd.matchingQueries} matching queries · Top: "${crowd.topQuery}"`
-                                            : 'No matching queries found — content gap'
+                                            : 'No matching queries found - content gap'
                                         }
                                     </div>
                                 </div>
@@ -1043,7 +1043,7 @@ export default function CommandCenter() {
                                     <strong className="text-[#3A3A3A]">Rationale:</strong> {rec.rationale}
                                 </div>
                                 <div className="flex gap-2">
-                                    <button onClick={() => approveRecommendation(rec.id)} className="px-4 py-2 bg-[#7C3AED] text-zinc-900 text-xs font-bold rounded hover:bg-[#6D28D9] transition-colors">
+                                    <button onClick={() => approveRecommendation(rec.id)} className="px-4 py-2 bg-[#7C3AED] text-white text-xs font-bold rounded hover:bg-[#6D28D9] transition-colors">
                                         Approve & Deploy
                                     </button>
                                     <button className="px-4 py-2 bg-white border border-black/10 text-[#6B6B6B] text-xs font-bold rounded hover:bg-[#F5F0EB] transition-colors">
@@ -1159,7 +1159,7 @@ export default function CommandCenter() {
                             Operations Dashboard
                         </h1>
                         <p className="text-[#6B6B6B] mt-1 text-sm">
-                            Revenue · SEO · Agents · Pipeline — auto-refreshes every 60s
+                            Revenue · SEO · Agents · Pipeline - auto-refreshes every 60s
                         </p>
                     </div>
                     <div className="flex items-center gap-3 flex-wrap">
@@ -1170,7 +1170,7 @@ export default function CommandCenter() {
                                     key={d}
                                     onClick={() => setDays(d)}
                                     className={`px-3 py-1.5 text-xs font-bold font-mono rounded-md transition-all duration-200 ${days === d
-                                        ? 'bg-[#7C3AED] text-zinc-900 shadow-sm'
+                                        ? 'bg-[#7C3AED] text-white shadow-sm'
                                         : 'text-[#6B6B6B] hover:text-[#1A1A1A] hover:bg-[#F5F0EB]'
                                         }`}
                                 >
@@ -1202,7 +1202,7 @@ export default function CommandCenter() {
                                 key={t.id}
                                 onClick={() => setTab(t.id)}
                                 className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${active
-                                    ? 'bg-[#7C3AED] text-zinc-900 shadow-sm'
+                                    ? 'bg-[#7C3AED] text-white shadow-sm'
                                     : 'text-[#6B6B6B] hover:text-[#1A1A1A] hover:bg-[#F5F0EB]'
                                     }`}
                             >

@@ -70,7 +70,7 @@ export function LeadMagnetCTA({ variant = 'full' }: LeadMagnetCTAProps) {
                 <div className="w-full md:w-96 flex-shrink-0 bg-white border border-zinc-200 rounded-xl p-6 sm:p-8 shadow-sm relative">
                     <div className="text-center mb-6">
                         <div className="text-zinc-950 font-bold text-xl mb-2 font-grotesk">Where should we send it?</div>
-                        <p className="text-sm text-zinc-900 font-medium font-medium">Join 2,000+ executives receiving <strong>The AI Economist</strong> — AI Economics applied to AI.</p>
+                        <p className="text-sm text-zinc-900 font-medium font-medium">Join 2,000+ executives receiving <strong>The AI Economist</strong> - AI Economics applied to AI.</p>
                     </div>
 
                     <form action={beehiivUrl} method="GET" target="_blank" className="space-y-4">
@@ -85,7 +85,7 @@ export function LeadMagnetCTA({ variant = 'full' }: LeadMagnetCTAProps) {
                         </div>
                         <button 
                             type="submit"
-                            className="w-full py-3.5 rounded-lg bg-white border border-zinc-200 text-zinc-950 font-semibold font-bold hover:bg-violet-600 hover:shadow-lg hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 group font-grotesk text-lg"
+                            className="w-full py-3.5 rounded-lg bg-white border border-zinc-200 text-zinc-950 font-bold hover:bg-violet-600 hover:text-white hover:border-violet-600 hover:shadow-lg hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 group font-grotesk text-lg"
                         >
                             <Download className="w-5 h-5" />
                             Download Toolkit

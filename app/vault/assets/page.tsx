@@ -70,7 +70,7 @@ export default async function AssetsPage() {
                                     <div className="flex-shrink-0">
                                         <a 
                                             href={`/api/assets/download?slug=${slug}`}
-                                            className="inline-flex items-center justify-center px-6 py-3 bg-[#1A1A1A] text-zinc-900 font-bold text-sm rounded shadow-md hover:bg-[#FCFAF7] transition-colors"
+                                            className="inline-flex items-center justify-center px-6 py-3 bg-[#1A1A1A] text-white font-bold text-sm rounded shadow-sm hover:bg-zinc-800 transition-colors"
                                             download
                                         >
                                             <Download className="w-4 h-4 mr-2" />
@@ -89,7 +89,7 @@ export default async function AssetsPage() {
                             <p className="text-[#4A4A4A] max-w-md mx-auto mb-8">
                                 You do not currently hold an active license for any deterministic governance assets. Browse the marketplace to deploy operational infrastructure.
                             </p>
-                            <Link href="/skills" className="inline-flex items-center justify-center px-8 py-3 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-[#FCFAF7] transition-colors">
+                            <Link href="/skills" className="inline-flex items-center justify-center px-8 py-3 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors shadow-sm">
                                 View Marketplace
                             </Link>
                         </div>

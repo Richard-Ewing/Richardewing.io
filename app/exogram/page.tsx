@@ -46,7 +46,7 @@ export default function ExogramPage() {
             <div className="page-container">
 
                 {/* ═══════════════════════════════════════════════════════
-                    HERO — Call Bullshit Hook (Scar Tissue Step 1)
+                    HERO - Call Bullshit Hook (Scar Tissue Step 1)
                 ═══════════════════════════════════════════════════════ */}
                 <section className="section-lg text-center relative overflow-hidden">
                     <Meteors count={20} />
@@ -109,7 +109,7 @@ export default function ExogramPage() {
 
 
                 {/* ═══════════════════════════════════════════════════════
-                    THE PROBLEM — Scar Tissue Step 2 (Pain with Numbers)
+                    THE PROBLEM - Scar Tissue Step 2 (Pain with Numbers)
                 ═══════════════════════════════════════════════════════ */}
                 <section className="py-16 border-b border-zinc-200 bg-zinc-100">
                     <div className="max-w-5xl mx-auto px-4 md:px-0">
@@ -135,7 +135,7 @@ export default function ExogramPage() {
                                 <AlertTriangle className="w-8 h-8 text-red-600 mb-3" />
                                 <p className="text-3xl font-bold text-zinc-950 mb-1">88%</p>
                                 <p className="text-xs font-mono font-bold text-red-700 uppercase tracking-widest mb-2">Failure Rate</p>
-                                <p className="text-sm text-zinc-700 font-medium">AI agent projects fail in production. Traditional monitoring is blind to semantic failures — HTTP 200 while the agent hallucinates.</p>
+                                <p className="text-sm text-zinc-700 font-medium">AI agent projects fail in production. Traditional monitoring is blind to semantic failures - HTTP 200 while the agent hallucinates.</p>
                             </div>
 
                             {/* Stat 3 */}
@@ -187,7 +187,7 @@ export default function ExogramPage() {
 
 
                 {/* ═══════════════════════════════════════════════════════
-                    WHAT EXOGRAM IS — Mechanism Reveal (Scar Tissue Step 3)
+                    WHAT EXOGRAM IS - Mechanism Reveal (Scar Tissue Step 3)
                 ═══════════════════════════════════════════════════════ */}
                 <section className="py-16 border-b border-zinc-200 bg-white">
                     <div className="max-w-4xl mx-auto px-4 md:px-0">
@@ -212,7 +212,7 @@ export default function ExogramPage() {
                                     </li>
                                     <li className="flex items-start gap-3 text-zinc-800">
                                         <span className="text-red-500 font-bold mt-0.5 shrink-0">✕</span>
-                                        <span className="font-medium">An LLM-as-a-judge approach — stacking uncertainty on uncertainty</span>
+                                        <span className="font-medium">An LLM-as-a-judge approach - stacking uncertainty on uncertainty</span>
                                     </li>
                                     <li className="flex items-start gap-3 text-zinc-800">
                                         <span className="text-red-500 font-bold mt-0.5 shrink-0">✕</span>
@@ -229,7 +229,7 @@ export default function ExogramPage() {
                                     </li>
                                     <li className="flex items-start gap-3 text-zinc-800">
                                         <span className="text-emerald-500 font-bold mt-0.5 shrink-0">→</span>
-                                        <span className="font-medium"><strong>Deterministic policy enforcement</strong> — binary go/no-go decisions, not probabilistic guesses</span>
+                                        <span className="font-medium"><strong>Deterministic policy enforcement</strong> - binary go/no-go decisions, not probabilistic guesses</span>
                                     </li>
                                     <li className="flex items-start gap-3 text-zinc-800">
                                         <span className="text-emerald-500 font-bold mt-0.5 shrink-0">→</span>
@@ -237,7 +237,7 @@ export default function ExogramPage() {
                                     </li>
                                     <li className="flex items-start gap-3 text-zinc-800">
                                         <span className="text-emerald-500 font-bold mt-0.5 shrink-0">→</span>
-                                        <span className="font-medium">Like how a <strong>compiler catches errors before runtime</strong> — Exogram catches AI failures before they reach users</span>
+                                        <span className="font-medium">Like how a <strong>compiler catches errors before runtime</strong> - Exogram catches AI failures before they reach users</span>
                                     </li>
                                 </ul>
                             </div>
@@ -255,7 +255,7 @@ export default function ExogramPage() {
 
 
                 {/* ═══════════════════════════════════════════════════════
-                    WHO NEEDS IT — Target Audience (Scar Tissue Step 4)
+                    WHO NEEDS IT - Target Audience (Scar Tissue Step 4)
                 ═══════════════════════════════════════════════════════ */}
                 <section className="py-16 border-b border-zinc-200 bg-zinc-100">
                     <div className="max-w-5xl mx-auto px-4 md:px-0">
@@ -289,7 +289,7 @@ export default function ExogramPage() {
 
 
                 {/* ═══════════════════════════════════════════════════════
-                    CTAs — The Hard Truth Pivot (Scar Tissue Step 4/5)
+                    CTAs - The Hard Truth Pivot (Scar Tissue Step 4/5)
                 ═══════════════════════════════════════════════════════ */}
                 <section className="py-16 border-b border-zinc-200 bg-white">
                     <div className="max-w-4xl mx-auto px-4 md:px-0 text-center">
@@ -422,7 +422,7 @@ export default function ExogramPage() {
                         <div className="space-y-6 max-w-2xl mx-auto">
                             {/* Standard Flow */}
                             <div className="rounded-xl border border-rose-200 bg-rose-50 p-6">
-                                <h3 className="text-sm font-bold text-rose-800 mb-3 uppercase tracking-widest font-mono">Standard Flow — High Risk, Zero Memory</h3>
+                                <h3 className="text-sm font-bold text-rose-800 mb-3 uppercase tracking-widest font-mono">Standard Flow - High Risk, Zero Memory</h3>
                                 <div className="flex items-center gap-2 flex-wrap font-mono text-sm text-rose-900">
                                     <span className="px-3 py-1.5 bg-white rounded border border-rose-200">Prompt</span>
                                     <span>→</span>
@@ -435,7 +435,7 @@ export default function ExogramPage() {
                             </div>
                             {/* Exogram Flow */}
                             <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-6">
-                                <h3 className="text-sm font-bold text-emerald-800 mb-3 uppercase tracking-widest font-mono">Exogram Flow — Trusted, Continuous, Verifiable</h3>
+                                <h3 className="text-sm font-bold text-emerald-800 mb-3 uppercase tracking-widest font-mono">Exogram Flow - Trusted, Continuous, Verifiable</h3>
                                 <div className="flex items-center gap-2 flex-wrap font-mono text-sm text-emerald-900">
                                     <span className="px-3 py-1.5 bg-white rounded border border-emerald-200">Prompt</span>
                                     <span>→</span>
@@ -457,7 +457,7 @@ export default function ExogramPage() {
                 </section>
 
 
-                {/* Technical Schema — Admissibility Request */}
+                {/* Technical Schema - Admissibility Request */}
                 <section className="section bg-zinc-100">
                     <div className="max-w-4xl mx-auto px-4 md:px-0">
                         <div className="text-center mb-10">
@@ -500,7 +500,7 @@ export default function ExogramPage() {
                 </section>
 
 
-                {/* Why I Built Exogram — Founder Narrative */}
+                {/* Why I Built Exogram - Founder Narrative */}
                 <section className="section bg-white border-y border-zinc-200 relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-purple-500"></div>
                     <div className="max-w-3xl mx-auto px-4 md:px-0">
@@ -671,7 +671,7 @@ export default function ExogramPage() {
                                     <h3 className="text-sm font-bold text-zinc-950">Deterministic Admissibility Gateway</h3>
                                 </div>
                                 <p className="text-sm text-zinc-700 mb-2"><strong>Goal:</strong> Establish an execution gateway that processes go/no-go decisions at sub-runtime latencies.</p>
-                                <p className="text-sm text-zinc-600"><strong>Core Challenge:</strong> If the admissibility check takes too long, autonomous loops break down. Probabilistic LLM-as-a-judge approaches are too slow and unreliable. This RFC proposes moving governance checks to deterministic policy engines — fast, binary rules — to safely gate API and tool calls natively.</p>
+                                <p className="text-sm text-zinc-600"><strong>Core Challenge:</strong> If the admissibility check takes too long, autonomous loops break down. Probabilistic LLM-as-a-judge approaches are too slow and unreliable. This RFC proposes moving governance checks to deterministic policy engines - fast, binary rules - to safely gate API and tool calls natively.</p>
                             </div>
                             <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-6">
                                 <div className="flex items-center gap-2 mb-3">
@@ -686,7 +686,7 @@ export default function ExogramPage() {
                 </section>
 
 
-                {/* The Stack — simplified position view */}
+                {/* The Stack - simplified position view */}
                 <section className="section bg-white border-y border-zinc-200 pt-0">
                     <div className="max-w-3xl mx-auto text-center">
                         <h2 className="text-2xl font-bold text-zinc-950 mb-8">The Stack</h2>
@@ -748,7 +748,7 @@ export default function ExogramPage() {
                 </section>
 
 
-                {/* Connection — Mic Drop (Scar Tissue Step 5) */}
+                {/* Connection - Mic Drop (Scar Tissue Step 5) */}
                 <section className="section">
                     <div className="max-w-3xl mx-auto">
                         <div className="card p-10 flex flex-col items-center text-center space-y-8">
@@ -772,7 +772,7 @@ export default function ExogramPage() {
                                     </div>
                                 </div>
                                 <div className="flex items-center justify-center md:justify-start h-12">
-                                    <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center px-6 py-2.5 rounded-lg bg-purple-600 text-zinc-950 font-semibold hover:bg-purple-500 transition-colors shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] h-10">
+                                    <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center px-6 py-2.5 rounded-lg bg-purple-600 text-white font-bold hover:bg-purple-500 transition-colors shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] h-10">
                                         Visit Exogram.ai →
                                     </a>
                                 </div>

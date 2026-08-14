@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: 'AI Integration System Details provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['AI integration system', 'AI playbook for business', 'AI implementation guide', 'how to implement AI step by step', 'AI for small business guide', 'AI strategy template', 'AI readiness template', 'AI roadmap template', 'AI prompts for business', 'AI ROI calculator', 'AI tool selection guide', 'AI adoption playbook', 'DIY AI strategy', 'AI integration toolkit'],
     openGraph: {
-        title: 'The AI Integration System — Self-Serve AI Playbook for Business',
+        title: 'The AI Integration System - Self-Serve AI Playbook for Business',
         description: '50+ prompts, templates, scoring matrices, and step-by-step guides. The exact system from $5,000 audits. Most consultants charge $8K-$25K.',
     },
     alternates: { canonical: 'https://www.richardewing.io/ai-integration/system' },
@@ -41,7 +41,7 @@ export default function AIIntegrationSystemPage() {
                         The AI Integration System
                     </h1>
                     <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto mb-4">
-                        The exact system from $5,000 audits — now available as a self-serve toolkit. Every template, prompt, scoring matrix, and framework you need to implement AI in your business. <strong>No technical background required.</strong>
+                        The exact system from $5,000 audits - now available as a self-serve toolkit. Every template, prompt, scoring matrix, and framework you need to implement AI in your business. <strong>No technical background required.</strong>
                     </p>
                     <p className="text-sm text-[#6A6A6A] max-w-xl mx-auto">
                         10 modules. 50+ prompts. 100-point checklist. Step-by-step guides with day-by-day action plans. Designed for someone who doesn't know where to start.
@@ -53,7 +53,7 @@ export default function AIIntegrationSystemPage() {
                     <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-6 shadow-sm">
                         <div className="text-xs font-mono font-bold text-violet-600 uppercase tracking-widest mb-2">Starter</div>
                         <div className="text-4xl font-bold text-[#1A1A1A] mb-2">$997<span className="text-sm font-normal text-zinc-500"> one-time</span></div>
-                        <p className="text-sm text-[#4A4A4A] mb-4">Core system — audit template, prompt library, roadmap generator, 30-day plan, and ROI calculator.</p>
+                        <p className="text-sm text-[#4A4A4A] mb-4">Core system - audit template, prompt library, roadmap generator, 30-day plan, and ROI calculator.</p>
                         <ul className="space-y-2 mb-6">
                             {['Modules 1-6 (Core System)', '30+ prompts for Claude & ChatGPT', '30-Day Kickstart Plan', 'ROI Calculator', 'Lifetime access + updates'].map((item, i) => (
                                 <li key={i} className="flex items-start gap-2 text-sm text-[#3A3A3A]">
@@ -61,14 +61,14 @@ export default function AIIntegrationSystemPage() {
                                 </li>
                             ))}
                         </ul>
-                        <a href="/api/buy/ai_integration_starter" className="block text-center py-3 bg-violet-600 text-zinc-900 font-bold rounded-lg text-sm hover:bg-violet-500 transition-colors">Get Starter System →</a>
+                        <a href="/api/buy/ai_integration_starter" className="block text-center py-3 bg-violet-600 text-white font-bold rounded-lg text-sm hover:bg-violet-500 transition-colors">Get Starter System →</a>
                     </div>
 
                     <div className="bg-white rounded-2xl border-2 border-emerald-400 p-6 shadow-lg relative">
-                        <div className="absolute -top-3 right-4 px-3 py-1 bg-emerald-500 text-zinc-900 text-[10px] font-bold font-mono uppercase tracking-widest rounded-full">Best Value</div>
+                        <div className="absolute -top-3 right-4 px-3 py-1 bg-emerald-600 text-white text-[10px] font-bold font-mono uppercase tracking-widest rounded-full">Best Value</div>
                         <div className="text-xs font-mono font-bold text-emerald-600 uppercase tracking-widest mb-2">Complete</div>
                         <div className="text-4xl font-bold text-[#1A1A1A] mb-2">$1,997<span className="text-sm font-normal text-zinc-500"> one-time</span></div>
-                        <p className="text-sm text-[#4A4A4A] mb-4">Full system — all 10 modules, 50+ prompts, tool selection guide, quarterly framework, and 100-point checklist.</p>
+                        <p className="text-sm text-[#4A4A4A] mb-4">Full system - all 10 modules, 50+ prompts, tool selection guide, quarterly framework, and 100-point checklist.</p>
                         <ul className="space-y-2 mb-6">
                             {['All 10 modules (Complete System)', '50+ prompts for Claude & ChatGPT', 'AI Tool Selection Guide (50+ tools)', 'Quarterly Review Framework', '100-point Implementation Checklist', 'Priority email support', 'Lifetime access + updates'].map((item, i) => (
                                 <li key={i} className="flex items-start gap-2 text-sm text-[#3A3A3A]">
@@ -76,21 +76,21 @@ export default function AIIntegrationSystemPage() {
                                 </li>
                             ))}
                         </ul>
-                        <a href="/api/buy/ai_integration_complete" className="block text-center py-3 bg-emerald-600 text-zinc-900 font-bold rounded-lg text-sm hover:bg-emerald-500 transition-colors">Get Complete System →</a>
+                        <a href="/api/buy/ai_integration_complete" className="block text-center py-3 bg-emerald-600 text-white font-bold rounded-lg text-sm hover:bg-emerald-500 transition-colors">Get Complete System →</a>
                     </div>
                 </div>
 
                 {/* Value Anchor */}
-                <div className="bg-[#1A1A1A] rounded-2xl p-6 mb-12 text-zinc-900 text-center">
-                    <h2 className="text-lg font-grotesk font-bold mb-3">The Math</h2>
+                <div className="bg-[#1A1A1A] rounded-2xl p-6 mb-12 text-white text-center border border-white/10 shadow-xl">
+                    <h2 className="text-lg font-grotesk font-bold text-white mb-3">The Math</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="p-4 bg-white/5 rounded-xl border border-white/10">
-                            <div className="text-2xl font-bold">$5,000</div>
-                            <div className="text-xs text-zinc-600">Quarterly audit (my time)</div>
+                            <div className="text-2xl font-bold text-white">$5,000</div>
+                            <div className="text-xs text-zinc-300">Quarterly audit (my time)</div>
                         </div>
                         <div className="p-4 bg-white/5 rounded-xl border border-white/10">
-                            <div className="text-2xl font-bold">$8,000-$25,000</div>
-                            <div className="text-xs text-zinc-600">Typical AI readiness assessment (4-8 weeks)</div>
+                            <div className="text-2xl font-bold text-white">$8,000-$25,000</div>
+                            <div className="text-xs text-zinc-300">Typical AI readiness assessment (4-8 weeks)</div>
                         </div>
                         <div className="p-4 bg-emerald-500/20 border border-emerald-500/30 rounded-xl">
                             <div className="text-2xl font-bold text-emerald-400">$997-$1,997</div>
@@ -154,7 +154,7 @@ export default function AIIntegrationSystemPage() {
                             { q: 'What\'s the difference between the $997 and $1,997 versions?', a: 'The $997 Starter includes the core system: audit template, prompt library, roadmap generator, 30-day plan, and ROI calculator (Modules 1-6). The $1,997 Complete adds the AI Tool Selection Guide, Quarterly Review Framework, 100-point Implementation Checklist, and 20+ additional prompts (Modules 7-10).' },
                             { q: 'Is this the same system you use in $5,000 audits?', a: 'Yes. The templates, prompts, scoring matrices, and frameworks are identical. The difference is that in the $5,000 audit, I run the process for you and interpret the results in 48 hours. With the system, you follow the step-by-step guides yourself.' },
                             { q: 'Can I use this to offer AI advisory to my own clients?', a: 'Yes. Many agency owners and consultants purchase the Complete system to white-label the methodology for their own client base. The system is designed to be repeatable and scalable.' },
-                            { q: 'What format does the system come in?', a: 'Notion templates, Google Sheets/Excel spreadsheets, PDF guides, and plain text prompt files. Everything is immediately usable — no special software required.' },
+                            { q: 'What format does the system come in?', a: 'Notion templates, Google Sheets/Excel spreadsheets, PDF guides, and plain text prompt files. Everything is immediately usable - no special software required.' },
                             { q: 'What if I get stuck?', a: 'Complete system purchasers ($1,997) get priority email support. If you need hands-on help, you can always upgrade to the Quarterly Audit ($5,000) or Monthly Advisor ($5K-$15K) at any time.' },
                         ].map((faq, i) => (
                             <details key={i} className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] shadow-sm">
@@ -166,12 +166,12 @@ export default function AIIntegrationSystemPage() {
                 </div>
 
                 {/* CTA */}
-                <div className="bg-violet-600 rounded-2xl p-8 text-zinc-900 text-center mb-12">
-                    <h2 className="text-2xl font-grotesk font-bold mb-3">Stop Guessing. Start Implementing.</h2>
+                <div className="bg-violet-600 rounded-2xl p-8 text-white text-center mb-12 shadow-lg">
+                    <h2 className="text-2xl font-grotesk font-bold text-white mb-3">Stop Guessing. Start Implementing.</h2>
                     <p className="text-violet-100 mb-6">The same system from $5,000 audits. Self-serve. Immediate access.</p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <a href="/api/buy/ai_integration_complete" className="px-8 py-4 bg-white text-violet-800 font-bold rounded-lg hover:bg-violet-50 transition-colors">Get Complete System ($1,997) →</a>
-                        <a href="/api/buy/ai_integration_starter" className="px-8 py-4 text-zinc-900 font-bold rounded-lg border border-white/30 hover:border-white/60 transition-colors">Get Starter ($997) →</a>
+                        <a href="/api/buy/ai_integration_starter" className="px-8 py-4 text-white font-bold rounded-lg border border-white/30 hover:border-white/60 transition-colors">Get Starter ($997) →</a>
                     </div>
                 </div>
 

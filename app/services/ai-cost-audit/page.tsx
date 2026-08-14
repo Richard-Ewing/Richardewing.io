@@ -60,7 +60,7 @@ export default function AICostAuditPage() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                            <Link href="/services#gut_check" className="flex items-center justify-center px-8 py-4 rounded-xl text-sm uppercase tracking-widest font-bold transition-all bg-amber-600 hover:bg-amber-700 text-zinc-950 shadow-sm">
+                            <Link href="/services#gut_check" className="flex items-center justify-center px-8 py-4 rounded-xl text-sm uppercase tracking-widest font-bold transition-all bg-amber-600 hover:bg-amber-700 text-white shadow-sm">
                                 Book a Gut-Check ($450)
                             </Link>
                             <Link href="/services" className="flex items-center justify-center px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-bold transition-all bg-white border border-zinc-300 text-zinc-950 hover:bg-zinc-50">

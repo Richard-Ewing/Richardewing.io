@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Why MCP Is a Security Risk provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['MCP dangerous', 'MCP security risk', 'Model Context Protocol security', 'MCP credential leak', 'MCP confused deputy', 'MCP tool poisoning', 'MCP over-permissioning', 'Claude Code MCP risk', 'MCP supply chain attack', 'AI agent security', 'MCP governance'],
     openGraph: {
-        title: 'Why MCP Is Dangerous — Model Context Protocol Security',
+        title: 'Why MCP Is Dangerous - Model Context Protocol Security',
         description: 'Security analysis of MCP risks and the governance infrastructure needed to contain them.',
     },
     alternates: { canonical: 'https://www.richardewing.io/compare/why-mcp-is-dangerous' },
@@ -34,7 +34,7 @@ const risks = [
     {
         title: 'Context Injection & Tool Poisoning',
         severity: 'HIGH',
-        desc: 'MCP tools can inject content into the agent\'s context window through tool poisoning — hiding malicious instructions in tool descriptions or return values. This can override system prompts and bias model behavior.',
+        desc: 'MCP tools can inject content into the agent\'s context window through tool poisoning - hiding malicious instructions in tool descriptions or return values. This can override system prompts and bias model behavior.',
         example: 'A tool server returning carefully crafted content can influence the agent\'s subsequent reasoning and code generation. This is the MCP equivalent of prompt injection.',
         color: 'bg-orange-50 border-orange-200',
     },
@@ -87,7 +87,7 @@ export default function WhyMCPIsDangerousPage() {
                 <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-8 mb-8 shadow-sm">
                     <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-4">What MCP Is</h2>
                     <p className="text-[#4A4A4A] leading-relaxed mb-4">
-                        MCP (Model Context Protocol) is a standard that connects AI coding agents to external tools and data sources — databases, file systems, APIs, search engines, and more. It&apos;s powerful. It&apos;s also ungoverned by default.
+                        MCP (Model Context Protocol) is a standard that connects AI coding agents to external tools and data sources - databases, file systems, APIs, search engines, and more. It&apos;s powerful. It&apos;s also ungoverned by default.
                     </p>
                     <p className="text-[#4A4A4A] leading-relaxed">
                         When you connect a Claude Code session to an MCP server, you&apos;re granting that server access to your agent&apos;s execution context. Without capability manifests, context isolation, or supply chain verification, <strong>any MCP server can access anything the agent can access</strong>.
@@ -115,17 +115,17 @@ export default function WhyMCPIsDangerousPage() {
                         <Shield className="w-5 h-5" /> MCP Governance Containment
                     </h2>
                     <ul className="space-y-3 text-emerald-800 text-sm">
-                        <li><strong>Capability Manifests</strong> — every MCP server must declare what it needs access to before connection</li>
-                        <li><strong>File Guards</strong> — block access to .env, credentials, and sensitive configuration paths</li>
-                        <li><strong>Context Isolation</strong> — MCP tool outputs are sandboxed, preventing context injection</li>
-                        <li><strong>Supply Chain Verification</strong> — verify server packages against a trusted registry before installation</li>
-                        <li><strong>Audit Trail</strong> — log every MCP tool invocation with timestamp, server ID, and data accessed</li>
-                        <li><strong>Scope Restriction</strong> — limit MCP access to project-specific directories only</li>
+                        <li><strong>Capability Manifests</strong> - every MCP server must declare what it needs access to before connection</li>
+                        <li><strong>File Guards</strong> - block access to .env, credentials, and sensitive configuration paths</li>
+                        <li><strong>Context Isolation</strong> - MCP tool outputs are sandboxed, preventing context injection</li>
+                        <li><strong>Supply Chain Verification</strong> - verify server packages against a trusted registry before installation</li>
+                        <li><strong>Audit Trail</strong> - log every MCP tool invocation with timestamp, server ID, and data accessed</li>
+                        <li><strong>Scope Restriction</strong> - limit MCP access to project-specific directories only</li>
                     </ul>
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                    <Link href="/skills/mcp-governance" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
+                    <Link href="/skills/mcp-governance" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors shadow-sm">
                         Deploy MCP Governance →
                     </Link>
                     <Link href="/case-studies/runtime-incidents" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">
@@ -137,9 +137,9 @@ export default function WhyMCPIsDangerousPage() {
                     <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-6">Frequently Asked Questions</h2>
                     <div className="space-y-3">
                         {[
-                            { q: 'Should I stop using MCP entirely?', a: 'No. MCP is powerful infrastructure. But it needs governance. The solution is not to avoid MCP — it\'s to govern MCP access the same way you govern API access: with scoping, verification, and audit trails.' },
+                            { q: 'Should I stop using MCP entirely?', a: 'No. MCP is powerful infrastructure. But it needs governance. The solution is not to avoid MCP - it\'s to govern MCP access the same way you govern API access: with scoping, verification, and audit trails.' },
                             { q: 'What is a confused deputy attack in MCP?', a: 'A confused deputy attack occurs when an MCP server performs actions using its own elevated privileges rather than the user\'s. Without least-privilege enforcement, the server can access databases, APIs, and files that the user never authorized. This is the most common form of MCP over-permissioning.' },
-                            { q: 'What is MCP tool poisoning?', a: 'Tool poisoning is when malicious instructions are hidden in MCP tool descriptions or response data. When the AI agent reads these descriptions, the hidden instructions override system prompts and redirect agent behavior — essentially an MCP-specific form of prompt injection.' },
+                            { q: 'What is MCP tool poisoning?', a: 'Tool poisoning is when malicious instructions are hidden in MCP tool descriptions or response data. When the AI agent reads these descriptions, the hidden instructions override system prompts and redirect agent behavior - essentially an MCP-specific form of prompt injection.' },
                             { q: 'Does Anthropic provide MCP security?', a: 'Anthropic provides the MCP protocol and some basic permission prompts. But there are no capability manifests, no file guards, no supply chain verification, and no comprehensive audit trails built into the default experience.' },
                             { q: 'How quickly can credentials be exposed?', a: 'In documented incidents, credential exposure happened in under 60 seconds after MCP server connection. The server requested filesystem access, read .env, and the credentials were exposed with no warning.' },
                         ].map((faq, i) => (

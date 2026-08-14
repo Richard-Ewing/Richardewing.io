@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Windsurf Problems & Fixes 2026 provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['Windsurf problems', 'Windsurf problems 2026', 'Windsurf AI complaints', 'Windsurf pricing', 'Windsurf credit burn', 'Windsurf alternative', 'Windsurf rug pull', 'left Windsurf', 'switched from Windsurf', 'Windsurf credits expensive', 'Windsurf hallucinations', 'Windsurf Cascade problems'],
     openGraph: {
-        title: 'Windsurf Problems 2026 — Real User Complaints & Governance Solutions',
+        title: 'Windsurf Problems 2026 - Real User Complaints & Governance Solutions',
         description: 'Why developers left Windsurf and what runtime governance actually fixes.',
     },
     alternates: { canonical: 'https://www.richardewing.io/compare/windsurf-problems' },
@@ -23,7 +23,7 @@ const complaints = [
         source: 'Reddit / Hacker News',
         quote: '"They went from $15/month to $20/month with stricter quotas. Users who paid for annual plans got worse terms than what they signed up for. That\'s a rug pull."',
         detail: 'In March 2026, Windsurf raised prices and shifted to daily/weekly usage quotas. Power users who relied on the previous credit system felt betrayed by sudden cost increases and more restrictive limits. Annual subscribers reported getting worse terms mid-subscription.',
-        fix: 'Runtime governance is vendor-independent. Your enforcement layer operates regardless of which AI tool changes its pricing or terms — protecting your workflows from platform decisions.',
+        fix: 'Runtime governance is vendor-independent. Your enforcement layer operates regardless of which AI tool changes its pricing or terms - protecting your workflows from platform decisions.',
         color: 'bg-rose-50 border-rose-200',
     },
     {
@@ -32,7 +32,7 @@ const complaints = [
         source: 'Reddit / Trustpilot',
         quote: '"I watched my credits drain in real-time and had no idea what was consuming them. Background Cascade tasks were burning tokens I didn\'t authorize."',
         detail: 'Users report that credits deplete rapidly and unpredictably. Background Cascade agent tasks consume credits silently, auto-refill features obscure actual spending, and the credit accounting system provides insufficient transparency into what specific operations cost.',
-        fix: 'Per-task and per-session financial circuit breakers with transparent token accounting. Every token consumed is logged, attributed, and capped — no silent burns.',
+        fix: 'Per-task and per-session financial circuit breakers with transparent token accounting. Every token consumed is logged, attributed, and capped - no silent burns.',
         color: 'bg-rose-50 border-rose-200',
     },
     {
@@ -41,7 +41,7 @@ const complaints = [
         source: 'Reddit / Support Forums',
         quote: '"The tool crashed mid-generation. I got no output. But my credit balance still dropped. When I contacted support, they said it was \'expected behavior.\'"',
         detail: 'Users report that system errors, timeouts, and failed generations still consume credits. This contradicts documentation and creates a billing model where users pay for failed attempts with no recourse. Support responses have been described as inadequate.',
-        fix: 'Governance middleware tracks output quality per-token. If a generation fails or produces no usable output, the retry budget accounts for it — preventing waste from being billed as productive work.',
+        fix: 'Governance middleware tracks output quality per-token. If a generation fails or produces no usable output, the retry budget accounts for it - preventing waste from being billed as productive work.',
         color: 'bg-orange-50 border-orange-200',
     },
     {
@@ -59,7 +59,7 @@ const complaints = [
         source: 'G2 / Reddit',
         quote: '"After about 40 minutes, Cascade starts hallucinating function names, forgets what we already built, and repeats the same failed approach three times in a row."',
         detail: 'Windsurf\'s Cascade agent suffers from the same context rot problem as all AI coding agents: as conversations grow, the signal-to-noise ratio degrades until the agent reasons against its own stale assumptions. Users report repetitive failures, hallucinated code, and forgotten context.',
-        fix: 'Context Rot Prevention deploys bounded cognition middleware that enforces checkpoint rotation before degradation occurs — maintaining signal-to-noise ratio throughout the session.',
+        fix: 'Context Rot Prevention deploys bounded cognition middleware that enforces checkpoint rotation before degradation occurs - maintaining signal-to-noise ratio throughout the session.',
         color: 'bg-orange-50 border-orange-200',
     },
 ];
@@ -82,7 +82,7 @@ export default function WindsurfProblemsPage() {
                         Windsurf Problems in 2026
                     </h1>
                     <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto">
-                        Real complaints from G2, Reddit, and developer forums. Pricing rug pull, silent credit burn, failed requests charging credits, acquisition uncertainty, and context loss — and what governance fixes.
+                        Real complaints from G2, Reddit, and developer forums. Pricing rug pull, silent credit burn, failed requests charging credits, acquisition uncertainty, and context loss - and what governance fixes.
                     </p>
                 </div>
 
@@ -135,20 +135,20 @@ export default function WindsurfProblemsPage() {
                 </div>
 
                 {/* Pricing Anchor */}
-                <div className="bg-[#1A1A1A] rounded-2xl p-8 mb-8 text-zinc-900">
-                    <h2 className="text-xl font-grotesk font-bold mb-4 flex items-center gap-2">
-                        <Shield className="w-5 h-5" /> The Pricing Reality
+                <div className="bg-[#1A1A1A] rounded-2xl p-8 mb-8 text-white border border-white/10 shadow-xl">
+                    <h2 className="text-xl font-grotesk font-bold text-white mb-4 flex items-center gap-2">
+                        <Shield className="w-5 h-5 text-emerald-400" /> The Pricing Reality
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                        <div className="p-4 bg-white/10 rounded-xl text-center">
-                            <div className="text-2xl font-bold">$720</div>
-                            <div className="text-xs text-zinc-600 font-mono uppercase">Windsurf Enterprise / year</div>
-                            <div className="text-[10px] text-zinc-500 mt-1">per user, no governance</div>
+                        <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-center">
+                            <div className="text-2xl font-bold text-white">$720</div>
+                            <div className="text-xs text-zinc-300 font-mono uppercase">Windsurf Enterprise / year</div>
+                            <div className="text-[10px] text-zinc-400 mt-1">per user, no governance</div>
                         </div>
-                        <div className="p-4 bg-white/10 rounded-xl text-center">
-                            <div className="text-2xl font-bold">$10K+</div>
-                            <div className="text-xs text-zinc-600 font-mono uppercase">Enterprise guardrails / year</div>
-                            <div className="text-[10px] text-zinc-500 mt-1">quote-gated, 6-month deploy</div>
+                        <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-center">
+                            <div className="text-2xl font-bold text-white">$10K+</div>
+                            <div className="text-xs text-zinc-300 font-mono uppercase">Enterprise guardrails / year</div>
+                            <div className="text-[10px] text-zinc-400 mt-1">quote-gated, 6-month deploy</div>
                         </div>
                         <div className="p-4 bg-emerald-500/20 border border-emerald-500/30 rounded-xl text-center">
                             <div className="text-2xl font-bold text-emerald-400">$99</div>
@@ -156,14 +156,14 @@ export default function WindsurfProblemsPage() {
                             <div className="text-[10px] text-emerald-200 mt-1">deploy in 15 minutes</div>
                         </div>
                     </div>
-                    <p className="text-sm text-zinc-600">
-                        Each governance module costs less than 2 months of Windsurf Pro — and it works with every agent, not just one vendor.
+                    <p className="text-sm text-zinc-300">
+                        Each governance module costs less than 2 months of Windsurf Pro - and it works with every agent, not just one vendor.
                     </p>
                 </div>
 
                 {/* CTA */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                    <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
+                    <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors shadow-sm">
                         View All 15 Governance Modules →
                     </Link>
                     <Link href="/compare/ai-coding-agents" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">
@@ -176,10 +176,10 @@ export default function WindsurfProblemsPage() {
                     <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-6">Frequently Asked Questions</h2>
                     <div className="space-y-3">
                         {[
-                            { q: 'Is Windsurf dead after the acquisition?', a: 'Windsurf still operates, but the team split between Google and Cognition Labs in 2025 has created uncertainty about long-term support, feature development, and pricing stability. Governance infrastructure is platform-independent — it transfers to any replacement tool.' },
-                            { q: 'Why did Windsurf raise prices?', a: 'Windsurf shifted from flexible credit-based pricing to daily/weekly quotas and raised the Pro plan from $15 to $20/month. Power users who relied on the previous model described it as a "rug pull" — paying more for less predictable access.' },
+                            { q: 'Is Windsurf dead after the acquisition?', a: 'Windsurf still operates, but the team split between Google and Cognition Labs in 2025 has created uncertainty about long-term support, feature development, and pricing stability. Governance infrastructure is platform-independent - it transfers to any replacement tool.' },
+                            { q: 'Why did Windsurf raise prices?', a: 'Windsurf shifted from flexible credit-based pricing to daily/weekly quotas and raised the Pro plan from $15 to $20/month. Power users who relied on the previous model described it as a "rug pull" - paying more for less predictable access.' },
                             { q: 'Why does Windsurf burn credits so fast?', a: 'Windsurf\'s Cascade agent runs background tasks that consume credits silently. Combined with failed requests still charging credits and opaque credit accounting, users report spending 2-3x what they expected.' },
-                            { q: 'What is the best Windsurf alternative?', a: 'Cursor and Claude Code are the most common migration targets. But all AI coding agents share the same governance gaps. The fix is not switching tools — it\'s deploying runtime governance on top of whichever tool you choose.' },
+                            { q: 'What is the best Windsurf alternative?', a: 'Cursor and Claude Code are the most common migration targets. But all AI coding agents share the same governance gaps. The fix is not switching tools - it\'s deploying runtime governance on top of whichever tool you choose.' },
                         ].map((faq, i) => (
                             <details key={i} className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] shadow-sm">
                                 <summary className="p-4 cursor-pointer text-sm font-bold text-[#1A1A1A] hover:text-violet-700">{faq.q}</summary>

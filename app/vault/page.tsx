@@ -10,17 +10,17 @@ import progressStyles from '../styles/progress.module.css';
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-    title: 'Vault — Executive Diagnostic Toolkit | Richard Ewing',
+    title: 'Vault - Executive Diagnostic Toolkit | Richard Ewing',
     description: 'Client Vault provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     robots: { index: false, follow: false },
     openGraph: {
-        title: 'Vault — Executive Diagnostic Toolkit | Richard Ewing',
+        title: 'Vault - Executive Diagnostic Toolkit | Richard Ewing',
         description: 'Client Vault provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
         url: 'https://www.richardewing.io/vault',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Vault — Executive Diagnostic Toolkit | Richard Ewing',
+        title: 'Vault - Executive Diagnostic Toolkit | Richard Ewing',
         description: 'Client Vault provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     },
 };
@@ -500,7 +500,7 @@ export default async function VaultPage() {
                                         <Lock className="w-3 h-3 text-zinc-950 font-bold group-hover:text-violet-400" />
                                     </div>
                                     <p className="text-xs font-bold text-zinc-900 font-bold mb-4">Unlock all 218 modules across 18 curriculum tracks. Lifetime access.</p>
-                                    <a href="/api/buy/full_curriculum" className="block text-center w-full py-2 bg-zinc-50 hover:bg-violet-600 text-zinc-950 font-semibold text-xs font-bold font-medium font-bold uppercase tracking-widest rounded transition-colors">
+                                    <a href="/api/buy/full_curriculum" className="block text-center w-full py-2 bg-zinc-50 hover:bg-violet-600 text-zinc-950 hover:text-white text-xs font-bold uppercase tracking-widest rounded transition-colors">
                                         Unlock for $999
                                     </a>
                                 </div>

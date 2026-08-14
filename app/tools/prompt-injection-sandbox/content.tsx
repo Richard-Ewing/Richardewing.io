@@ -320,7 +320,7 @@ Only answer questions related to AcmeCorp logistics.
                                                 </div>
                                                 <button 
                                                     onClick={copyToClipboard}
-                                                    className="flex items-center gap-2 px-3 py-1.5 bg-zinc-200 hover:bg-zinc-700 rounded-lg text-xs font-bold font-mono text-zinc-950 transition-colors"
+                                                    className="flex items-center gap-2 px-3 py-1.5 bg-zinc-200 hover:bg-zinc-800 rounded-lg text-xs font-bold font-mono text-zinc-900 hover:text-white transition-colors"
                                                 >
                                                     {copied ? <CheckCircle2 size={14} className="text-emerald-900 font-extrabold font-semibold" /> : <Copy size={14} />}
                                                     {copied ? 'COPIED' : 'COPY PAYLOAD'}

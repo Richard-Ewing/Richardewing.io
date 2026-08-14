@@ -62,7 +62,7 @@ export default async function CurriculumTracksPage() {
                         <BlurIn word="Academy." className="text-4xl sm:text-6xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mb-6" />
                         
                         <p className="text-lg text-zinc-950 font-bold max-w-2xl mx-auto mb-8 leading-relaxed">
-                            These aren&apos;t courses. These are 23 deep-authority curriculum tracks built from published frameworks in CIO.com and Built In — spanning AI economics, AI agents, leadership, career capital, M&A integration, and executive governance.
+                            These aren&apos;t courses. These are 23 deep-authority curriculum tracks built from published frameworks in CIO.com and Built In - spanning AI economics, AI agents, leadership, career capital, M&A integration, and executive governance.
                         </p>
                         
                         <div className="flex items-center justify-center gap-8 mt-6">
@@ -177,7 +177,7 @@ export default async function CurriculumTracksPage() {
                                 <h2 className="text-sm font-semibold font-mono text-indigo-500 uppercase tracking-widest font-bold">Executive & Board Economics</h2>
                                 <div className="h-px bg-zinc-300 flex-grow"></div>
                             </div>
-                            <p className="text-sm font-semibold text-zinc-900 font-medium mb-8 text-center italic">Board reporting, EBITDA translation, M&A leadership, and technical debt at the balance sheet level — curated for senior leaders and aspiring C-suite.</p>
+                            <p className="text-sm font-semibold text-zinc-900 font-medium mb-8 text-center italic">Board reporting, EBITDA translation, M&A leadership, and technical debt at the balance sheet level - curated for senior leaders and aspiring C-suite.</p>
                             <div className="space-y-6">
                                 {/* Track 4: Capstone & Applied Practice */}
                                 {tracks[3] && <TrackAccordion key="exec-capstone" track={tracks[3]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
@@ -213,7 +213,7 @@ export default async function CurriculumTracksPage() {
                                 Every module teaches you to connect work to business outcomes. $149 per track. $999 for everything. Lifetime access.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
-                                <Link href="/services" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs font-bold bg-purple-700 text-zinc-950 font-semibold hover:bg-purple-600 transition-colors shadow-lg">
+                                <Link href="/services" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs bg-purple-700 text-white hover:bg-purple-600 transition-colors shadow-lg">
                                     Explore Advisory
                                 </Link>
                                 <Link href="/vault" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs font-bold bg-white border border-zinc-400 text-zinc-950 hover:text-zinc-900 hover:border-zinc-500 transition-colors shadow-sm">

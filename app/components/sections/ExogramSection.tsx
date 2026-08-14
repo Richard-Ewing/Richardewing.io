@@ -35,8 +35,7 @@ const ExogramSection = () => {
 
                         {/* Description */}
                         <p className="text-zinc-950 max-w-xl">
-                            <Link href="/exogram" className="font-bold text-purple-900 font-extrabold hover:underline">Exogram</Link> is the missing trust layer between AI models and applications —
-                            maintaining context, meaning, and truth so AI systems can be relied upon.
+                            <Link href="/exogram" className="font-bold text-purple-900 font-extrabold hover:underline">Exogram</Link> is the missing trust layer between AI models and applications - maintaining context, meaning, and truth so AI systems can be relied upon.
                         </p>
 
                         {/* Founder & CTAs Container - Side by Side on Desktop */}
@@ -57,7 +56,7 @@ const ExogramSection = () => {
 
                             {/* CTAs - Left Aligned on Desktop to kiss the center line */}
                             <div className="flex items-center justify-center md:justify-start h-12">
-                                <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center px-6 py-2.5 rounded-lg bg-purple-600 text-zinc-950 font-semibold hover:bg-purple-500 transition-colors shadow-md h-10">
+                                <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center px-6 py-2.5 rounded-lg bg-purple-600 text-white font-bold hover:bg-purple-500 transition-colors shadow-md h-10">
                                     Visit Exogram.ai →
                                 </a>
                             </div>

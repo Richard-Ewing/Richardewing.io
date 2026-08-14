@@ -138,7 +138,7 @@ export default function AgentDashboard() {
     const totalLeads = data ? data.pipeline.HOT + data.pipeline.WARM + data.pipeline.COLD + data.pipeline.NURTURE : 0;
 
     return (
-        <div className="min-h-screen bg-[#0a0a0f] text-zinc-900 pt-24 pb-20">
+        <div className="min-h-screen bg-[#0a0a0f] text-white pt-24 pb-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Header */}
@@ -181,19 +181,19 @@ export default function AgentDashboard() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                     <div className="bg-[#12121f] border border-zinc-200/50 rounded-xl p-5">
                         <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">Hot Leads</p>
-                        <p className="text-4xl font-bold text-red-400">{data?.pipeline.HOT ?? '—'}</p>
+                        <p className="text-4xl font-bold text-red-400">{data?.pipeline.HOT ?? ' - '}</p>
                     </div>
                     <div className="bg-[#12121f] border border-zinc-200/50 rounded-xl p-5">
                         <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">Warm Leads</p>
-                        <p className="text-4xl font-bold text-amber-400">{data?.pipeline.WARM ?? '—'}</p>
+                        <p className="text-4xl font-bold text-amber-400">{data?.pipeline.WARM ?? ' - '}</p>
                     </div>
                     <div className="bg-[#12121f] border border-zinc-200/50 rounded-xl p-5">
                         <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">Total Pipeline</p>
-                        <p className="text-4xl font-bold text-indigo-400">{totalLeads || '—'}</p>
+                        <p className="text-4xl font-bold text-indigo-400">{totalLeads || ' - '}</p>
                     </div>
                     <div className="bg-[#12121f] border border-zinc-200/50 rounded-xl p-5">
                         <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">Nurture</p>
-                        <p className="text-4xl font-bold text-zinc-500">{data?.pipeline.NURTURE ?? '—'}</p>
+                        <p className="text-4xl font-bold text-zinc-500">{data?.pipeline.NURTURE ?? ' - '}</p>
                     </div>
                 </div>
 

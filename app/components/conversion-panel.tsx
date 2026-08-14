@@ -101,8 +101,8 @@ export function ConversionPanel({ toolName, score, scoreType, headline, onReset 
                     <p className="text-zinc-950 text-sm font-semibold mb-4">Ready to fix this? Talk to a AI Economist.</p>
                     <Link
                         href="/services"
-                        className={`group relative inline-flex items-center gap-3 px-10 py-4 font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all transform hover:scale-105 ${contextCTA.urgency === 'critical'
-                            ? 'bg-red-600 hover:bg-red-500 text-zinc-950 font-semibold shadow-[0_0_30px_rgba(220,38,38,0.4)]'
+                        className={`group relative inline-flex items-center gap-3 px-10 py-4 font-bold uppercase tracking-widest text-sm rounded-xl transition-all transform hover:scale-105 ${contextCTA.urgency === 'critical'
+                            ? 'bg-red-600 hover:bg-red-500 text-white font-bold shadow-[0_0_30px_rgba(220,38,38,0.4)]'
                             : contextCTA.urgency === 'warning'
                                 ? 'bg-yellow-500 hover:bg-yellow-400 text-black shadow-[0_0_30px_rgba(234,179,8,0.4)]'
                                 : 'bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_30px_rgba(34,211,238,0.3)]'

@@ -155,7 +155,7 @@ export default function ExogramArchitecturePage() {
                     ))}
                 </div>
 
-                {/* Live governance visualization — what this looks like in operation */}
+                {/* Live governance visualization - what this looks like in operation */}
                 <GovernanceDashboard />
 
                 <section className="text-center mb-12">
@@ -165,7 +165,7 @@ export default function ExogramArchitecturePage() {
                         {[
                             { method: 'MCP Server', desc: 'Native protocol integration for Claude and compatible AI agents', badge: 'Recommended' },
                             { method: 'REST API', desc: 'Standard HTTP endpoints for any programming language or framework', badge: 'Universal' },
-                            { method: 'Python SDK', desc: 'pip install exogram — type-safe client with async support', badge: 'Coming Soon' },
+                            { method: 'Python SDK', desc: 'pip install exogram - type-safe client with async support', badge: 'Coming Soon' },
                         ].map(m => (
                             <div key={m.method} className="p-6 rounded-xl bg-white/[0.03] border border-zinc-400">
                                 <span className="text-xs font-bold font-medium font-mono text-purple-900 font-extrabold font-semibold uppercase tracking-widest">{m.badge}</span>
@@ -177,7 +177,7 @@ export default function ExogramArchitecturePage() {
                 </section>
 
                 <div className="flex justify-center gap-4">
-                    <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-zinc-950 font-semibold font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm">
+                    <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm shadow-sm">
                         Visit Exogram.ai →
                     </a>
                     <Link href="/exogram/use-cases" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Why AI Coding Burns Money provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['AI coding cost', 'Claude Code expensive', 'AI agent cost overrun', 'AI coding surprise bill', 'Cursor token cost', 'AI coding burns money', 'API token waste', 'AI agent budget', 'retry inflation cost', 'vibe coding maintenance nightmare', 'AI generated code abandonware'],
     openGraph: {
-        title: 'Why AI Coding Burns Money — Token Cost Analysis',
+        title: 'Why AI Coding Burns Money - Token Cost Analysis',
         description: 'The hidden economics of AI coding agents: retry inflation, context waste, and how governance contains costs.',
     },
     alternates: { canonical: 'https://www.richardewing.io/compare/why-ai-coding-burns-money' },
@@ -37,7 +37,7 @@ export default function WhyAICodingBurnsMoneyPage() {
                     </h1>
                     <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto">
                         $100–$1,100 token burns in a single session are documented, not hypothetical.
-                        Here&apos;s exactly where the money goes — and how to stop it.
+                        Here&apos;s exactly where the money goes - and how to stop it.
                     </p>
                 </div>
 
@@ -88,17 +88,17 @@ export default function WhyAICodingBurnsMoneyPage() {
                         <Shield className="w-5 h-5" /> How Governance Contains Costs
                     </h2>
                     <ul className="space-y-3 text-emerald-800 text-sm">
-                        <li><strong>Per-task budget caps</strong> — execution halts at $25 by default</li>
-                        <li><strong>Per-session budget caps</strong> — hard ceiling at $50 per session</li>
-                        <li><strong>Retry limits</strong> — maximum 3 retries before human escalation</li>
-                        <li><strong>Unattended timeout</strong> — automatic halt after 30 minutes without interaction</li>
-                        <li><strong>Agreement loop detection</strong> — halts multi-agent workflows with no tool invocations</li>
-                        <li><strong>Scope enforcement</strong> — blocks file modifications outside the approved scope</li>
+                        <li><strong>Per-task budget caps</strong> - execution halts at $25 by default</li>
+                        <li><strong>Per-session budget caps</strong> - hard ceiling at $50 per session</li>
+                        <li><strong>Retry limits</strong> - maximum 3 retries before human escalation</li>
+                        <li><strong>Unattended timeout</strong> - automatic halt after 30 minutes without interaction</li>
+                        <li><strong>Agreement loop detection</strong> - halts multi-agent workflows with no tool invocations</li>
+                        <li><strong>Scope enforcement</strong> - blocks file modifications outside the approved scope</li>
                     </ul>
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                    <Link href="/skills/ai-cost-containment" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
+                    <Link href="/skills/ai-cost-containment" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors shadow-sm">
                         Deploy Cost Containment →
                     </Link>
                     <Link href="/telemetry" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">
@@ -112,8 +112,8 @@ export default function WhyAICodingBurnsMoneyPage() {
                         {[
                             { q: 'I got a surprise bill from my AI coding tool. Why?', a: 'Surprise bills happen because AI coding agents have no default financial circuit breakers. Without governance, a doom loop or retry storm can consume $100-$1,100 in tokens overnight with no human notification. Cost governance adds per-task ($25) and per-session ($50) caps that halt execution before your bill explodes.' },
                             { q: 'How much does a typical AI coding session cost?', a: 'A governed session costs $8-$40. An ungoverned session with retry inflation can cost $100-$1,100. The difference is whether financial circuit breakers are in place.' },
-                            { q: 'Can I just set a budget in the API?', a: 'API-level budget limits stop ALL execution, including productive work. Governance-level limits are task-aware — they halt only when the cost-per-task ratio indicates waste, not productive computation.' },
-                            { q: 'Is vibe coding creating a maintenance nightmare?', a: 'Yes. AI-generated codebases accumulate technical debt 3-5x faster than human-written code because agents optimize for local fixes, not architectural coherence. Without governance, vibe coding produces black box codebases that become abandonware — too fragile to modify, too expensive to maintain.' },
+                            { q: 'Can I just set a budget in the API?', a: 'API-level budget limits stop ALL execution, including productive work. Governance-level limits are task-aware - they halt only when the cost-per-task ratio indicates waste, not productive computation.' },
+                            { q: 'Is vibe coding creating a maintenance nightmare?', a: 'Yes. AI-generated codebases accumulate technical debt 3-5x faster than human-written code because agents optimize for local fixes, not architectural coherence. Without governance, vibe coding produces black box codebases that become abandonware - too fragile to modify, too expensive to maintain.' },
                             { q: 'What about Claude Max/Pro subscriptions?', a: 'Subscription plans cap your bill but not your waste. You still burn through rate limits on retries and context waste. Governance prevents the waste itself, making every token productive.' },
                         ].map((faq, i) => (
                             <details key={i} className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] shadow-sm">

@@ -825,7 +825,7 @@ export default function EVSETool() {
                                   <h4 className="text-lg font-bold text-zinc-950 mb-2">Get valuation scenarios that survive board scrutiny</h4>
                                   <p className="text-sm text-zinc-600 mb-4">This engine models the range. A full R&D Capital Audit produces forensic analysis of your capital allocation with board-ready recommendations that impact your next round or exit.</p>
                                   <div className="flex flex-wrap gap-3">
-                                    <a href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-zinc-900 text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">Book Advisory Session →</a>
+                                    <a href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-opacity shadow-sm">Book Advisory Session →</a>
                                     <a href="/api/buy/gut_check" className="inline-flex items-center gap-2 px-5 py-2.5 border border-purple-500/30 text-purple-700 text-sm font-bold rounded-lg hover:bg-purple-50 transition-colors">$450 Gut-Check Call →</a>
                                   </div>
                                 </div>
@@ -865,7 +865,7 @@ export default function EVSETool() {
                         Founders love to quote top-decile public market multiples. &quot;Datadog trades at 15x, so I trade at 15x.&quot; This is a delusion. Valuation is not just a function of Growth Rate; it is a function of <strong>Predictability</strong>.
                     </p>
                     <p className="text-zinc-900 leading-relaxed">
-                        The <strong>EV-SE Engine™</strong> (Enterprise Value Scenario Engine) introduces the concept of the <strong>Certainty Premium</strong>. Investors pay for certainty. If your roadmap has a high probability of failure (due to technical risk, scope creep, or talent gaps), your effective valuation is discounted—often by 30-50%—before you even enter the boardroom.
+                        The <strong>EV-SE Engine™</strong> (Enterprise Value Scenario Engine) introduces the concept of the <strong>Certainty Premium</strong>. Investors pay for certainty. If your roadmap has a high probability of failure (due to technical risk, scope creep, or talent gaps), your effective valuation is discounted - often by 30-50% - before you even enter the boardroom.
                     </p>
                 </div>
 
@@ -882,7 +882,7 @@ export default function EVSETool() {
                     <div>
                         <h3 className="text-2xl font-bold text-yellow-900 font-extrabold font-semibold mb-4">Defending the Downside</h3>
                         <p className="text-zinc-900 text-sm font-semibold leading-relaxed">
-                            The most valuable thing a Product Leader can do is not &quot;ideation&quot;—it is <strong>Risk Adjustment</strong>. By using this calculator to model &quot;Worst Case,&quot; &quot;Base Case,&quot; and &quot;Blue Sky,&quot; you transform your roadmap from a lottery ticket into a bankable bond. This is how you defend your budget in a downturn.
+                            The most valuable thing a Product Leader can do is not &quot;ideation&quot; - it is <strong>Risk Adjustment</strong>. By using this calculator to model &quot;Worst Case,&quot; &quot;Base Case,&quot; and &quot;Blue Sky,&quot; you transform your roadmap from a lottery ticket into a bankable bond. This is how you defend your budget in a downturn.
                         </p>
                     </div>
                 </div>

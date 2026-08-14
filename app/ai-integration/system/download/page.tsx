@@ -71,7 +71,7 @@ export default async function DownloadPage() {
                                         <Download className="w-5 h-5 text-emerald-600" />
                                         <div>
                                             <div className="font-bold text-[#1A1A1A]">
-                                                {hasComplete ? 'Starter Modules (1-6)' : 'AI Integration System — Starter'}
+                                                {hasComplete ? 'Starter Modules (1-6)' : 'AI Integration System - Starter'}
                                             </div>
                                             <div className="text-xs text-[#6A6A6A]">7 files • Audit, Process Map, Scoring Matrix, 55 Prompts, Roadmap Generator, 30-Day Plan</div>
                                         </div>
@@ -91,7 +91,7 @@ export default async function DownloadPage() {
                                         <div className="flex items-center gap-3">
                                             <Download className="w-5 h-5 text-violet-600" />
                                             <div>
-                                                <div className="font-bold text-[#1A1A1A]">AI Integration System — Complete (All 10 Modules)</div>
+                                                <div className="font-bold text-[#1A1A1A]">AI Integration System - Complete (All 10 Modules)</div>
                                                 <div className="text-xs text-[#6A6A6A]">11 files • All Starter modules + ROI Calculator, Tool Guide, Quarterly Review, 100-Point Checklist</div>
                                             </div>
                                         </div>
@@ -148,7 +148,7 @@ export default async function DownloadPage() {
                             <h3 className="font-grotesk font-bold text-[#1A1A1A] mb-3">Getting Started</h3>
                             <ol className="space-y-2 text-sm text-[#4A4A4A] list-decimal list-inside">
                                 <li>Download and unzip your files</li>
-                                <li>Start with <strong>MODULE-01-AI-Readiness-Audit.md</strong> — complete the full assessment</li>
+                                <li>Start with <strong>MODULE-01-AI-Readiness-Audit.md</strong> - complete the full assessment</li>
                                 <li>Work through modules in order (01 → 06)</li>
                                 <li>Use the prompts in Module 04 throughout the process</li>
                                 <li>Begin your 30-Day Kickstart (Module 06) once your roadmap is ready</li>
@@ -171,7 +171,7 @@ export default async function DownloadPage() {
                             It looks like you haven&apos;t purchased the AI Integration System yet. If you recently purchased, it may take a moment to process.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <Link href="/ai-integration/system" className="px-6 py-3 bg-violet-600 text-zinc-900 font-bold rounded-lg text-sm hover:bg-violet-500 transition-colors">
+                            <Link href="/ai-integration/system" className="px-6 py-3 bg-violet-600 text-white font-bold rounded-lg text-sm hover:bg-violet-500 transition-colors">
                                 View System Details →
                             </Link>
                             <button

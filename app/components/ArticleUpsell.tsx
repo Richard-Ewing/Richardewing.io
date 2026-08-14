@@ -16,7 +16,7 @@ export default function ArticleUpsell({ productId, headline, description }: Arti
     const displayDescription = description || `Start with the free Executive Diagnostic Toolkit. Includes the R&D Audit Checklist, AI Unit Economics Matrix, and M&A Technical Diligence Cheatsheet.`;
 
     const isGuide = productId.includes('guide');
-    const label = isGuide ? `Buy Guide — $${product.price / 100}` : `Buy Track — $${product.price / 100}`;
+    const label = isGuide ? `Buy Guide - $${product.price / 100}` : `Buy Track - $${product.price / 100}`;
     const icon = isGuide ? 'file' : 'lock';
     const beehiivUrl = 'https://theaieconomist.beehiiv.com/subscribe';
 
@@ -48,7 +48,7 @@ export default function ArticleUpsell({ productId, headline, description }: Arti
                             />
                             <button 
                                 type="submit"
-                                className="px-4 py-2 rounded-lg bg-white border border-zinc-200 text-zinc-950 font-semibold font-bold hover:bg-violet-600 transition-all text-sm whitespace-nowrap"
+                                className="px-4 py-2 rounded-lg bg-white border border-zinc-200 text-zinc-950 font-bold hover:bg-violet-600 hover:text-white hover:border-violet-600 transition-all text-sm whitespace-nowrap"
                             >
                                 Get PDF
                             </button>

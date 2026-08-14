@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Forensic audit of GitHub Copilot code quality impact, review overhead, and true financial ROI.',
     keywords: ['GitHub Copilot problems', 'GitHub Copilot problems 2026', 'GitHub Copilot not worth it', 'GitHub Copilot complaints', 'GitHub Copilot alternative', 'Copilot waste of money', 'Copilot cancelled', 'Copilot downgraded', 'Copilot rate limiting', 'Copilot PR ads', 'Copilot model carousel', 'GitHub Copilot Enterprise review', 'GitHub Copilot vs governance'],
     openGraph: {
-        title: 'GitHub Copilot Problems 2026 — Real User Complaints & Governance Solutions',
+        title: 'GitHub Copilot Problems 2026 - Real User Complaints & Governance Solutions',
         description: 'Why developers are leaving Copilot and what runtime governance actually fixes.',
     },
     alternates: { canonical: 'https://www.richardewing.io/compare/github-copilot-problems' },
@@ -23,7 +23,7 @@ const complaints = [
         source: 'Reddit / G2',
         quote: '"The model carousel keeps swapping models without telling us. Quality dropped overnight and nobody knows which model we\'re even using anymore."',
         detail: 'GitHub frequently swaps underlying models (GPT, Claude variants) without proactive communication. Users report accuracy regressions, latency spikes, and inconsistent code style after silent model switches.',
-        fix: 'Runtime governance validates output quality per-task against deterministic thresholds. If quality drops below baseline, execution halts — regardless of which model is running underneath.',
+        fix: 'Runtime governance validates output quality per-task against deterministic thresholds. If quality drops below baseline, execution halts - regardless of which model is running underneath.',
         color: 'bg-rose-50 border-rose-200',
     },
     {
@@ -31,8 +31,8 @@ const complaints = [
         severity: 'CRITICAL',
         source: 'Hacker News / Reddit',
         quote: '"They literally injected promotional tips into our pull requests. In a production workflow. That\'s not a feature, that\'s a trust violation."',
-        detail: 'In March 2026, GitHub injected promotional "tips" into pull requests, causing widespread developer outrage. This incident — combined with opaque model changes — has severely eroded trust in the platform.',
-        fix: 'Governance middleware operates outside vendor control. Your policies, your enforcement, your audit trail — independent of platform decisions.',
+        detail: 'In March 2026, GitHub injected promotional "tips" into pull requests, causing widespread developer outrage. This incident - combined with opaque model changes - has severely eroded trust in the platform.',
+        fix: 'Governance middleware operates outside vendor control. Your policies, your enforcement, your audit trail - independent of platform decisions.',
         color: 'bg-rose-50 border-rose-200',
     },
     {
@@ -50,7 +50,7 @@ const complaints = [
         source: 'G2 / Reddit',
         quote: '"Even on Pro, I hit rate limits by Thursday every week. For $19/month I expect to actually use the tool."',
         detail: 'Professional users report hitting rate limits mid-week, disrupting workflows. Copilot\'s weekly limits restrict productive usage, forcing developers to ration AI assistance.',
-        fix: 'Token governance optimizes every request — eliminating retry waste and context pollution that consume rate-limited capacity on non-productive work.',
+        fix: 'Token governance optimizes every request - eliminating retry waste and context pollution that consume rate-limited capacity on non-productive work.',
         color: 'bg-yellow-50 border-yellow-200',
     },
     {
@@ -82,7 +82,7 @@ export default function GitHubCopilotProblemsPage() {
                         GitHub Copilot Problems in 2026
                     </h1>
                     <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto">
-                        Real complaints from G2, Reddit, and developer forums. Model carousel regressions, PR ads, surprise bills, rate limiting, and speculative code — and what governance actually fixes.
+                        Real complaints from G2, Reddit, and developer forums. Model carousel regressions, PR ads, surprise bills, rate limiting, and speculative code - and what governance actually fixes.
                     </p>
                 </div>
 
@@ -135,20 +135,20 @@ export default function GitHubCopilotProblemsPage() {
                 </div>
 
                 {/* Pricing Anchor */}
-                <div className="bg-[#1A1A1A] rounded-2xl p-8 mb-8 text-zinc-900">
-                    <h2 className="text-xl font-grotesk font-bold mb-4 flex items-center gap-2">
-                        <Shield className="w-5 h-5" /> The Pricing Reality
+                <div className="bg-[#1A1A1A] rounded-2xl p-8 mb-8 text-white border border-white/10 shadow-xl">
+                    <h2 className="text-xl font-grotesk font-bold text-white mb-4 flex items-center gap-2">
+                        <Shield className="w-5 h-5 text-emerald-400" /> The Pricing Reality
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                        <div className="p-4 bg-white/10 rounded-xl text-center">
-                            <div className="text-2xl font-bold">$720</div>
-                            <div className="text-xs text-zinc-600 font-mono uppercase">Copilot Enterprise / year</div>
-                            <div className="text-[10px] text-zinc-500 mt-1">per user, no governance</div>
+                        <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-center">
+                            <div className="text-2xl font-bold text-white">$720</div>
+                            <div className="text-xs text-zinc-300 font-mono uppercase">Copilot Enterprise / year</div>
+                            <div className="text-[10px] text-zinc-400 mt-1">per user, no governance</div>
                         </div>
-                        <div className="p-4 bg-white/10 rounded-xl text-center">
-                            <div className="text-2xl font-bold">$10K+</div>
-                            <div className="text-xs text-zinc-600 font-mono uppercase">Enterprise guardrails / year</div>
-                            <div className="text-[10px] text-zinc-500 mt-1">quote-gated, 6-month deploy</div>
+                        <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-center">
+                            <div className="text-2xl font-bold text-white">$10K+</div>
+                            <div className="text-xs text-zinc-300 font-mono uppercase">Enterprise guardrails / year</div>
+                            <div className="text-[10px] text-zinc-400 mt-1">quote-gated, 6-month deploy</div>
                         </div>
                         <div className="p-4 bg-emerald-500/20 border border-emerald-500/30 rounded-xl text-center">
                             <div className="text-2xl font-bold text-emerald-400">$99</div>
@@ -156,14 +156,14 @@ export default function GitHubCopilotProblemsPage() {
                             <div className="text-[10px] text-emerald-200 mt-1">deploy in 15 minutes</div>
                         </div>
                     </div>
-                    <p className="text-sm text-zinc-600">
-                        Each governance module costs less than a single month of Copilot Enterprise — and it deploys in 15 minutes, not 6 months.
+                    <p className="text-sm text-zinc-300">
+                        Each governance module costs less than a single month of Copilot Enterprise - and it deploys in 15 minutes, not 6 months.
                     </p>
                 </div>
 
                 {/* CTA */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                    <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
+                    <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors shadow-sm">
                         View All 15 Governance Modules →
                     </Link>
                     <Link href="/compare/ai-coding-agents" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">
@@ -176,7 +176,7 @@ export default function GitHubCopilotProblemsPage() {
                     <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-6">Frequently Asked Questions</h2>
                     <div className="space-y-3">
                         {[
-                            { q: 'Is GitHub Copilot worth it in 2026?', a: 'For basic autocomplete, yes. For agentic workflows, no — Copilot has no retry loop detection, no context rot prevention, no financial circuit breakers, and no file scope enforcement. You are paying $60+/user/month for a tool that ships without governance infrastructure.' },
+                            { q: 'Is GitHub Copilot worth it in 2026?', a: 'For basic autocomplete, yes. For agentic workflows, no - Copilot has no retry loop detection, no context rot prevention, no financial circuit breakers, and no file scope enforcement. You are paying $60+/user/month for a tool that ships without governance infrastructure.' },
                             { q: 'Why are developers leaving GitHub Copilot?', a: 'The top reasons from G2 and Reddit: model carousel regressions (quality drops from silent model swaps), the PR ads incident (promotional content injected into pull requests), surprise bills from usage-based pricing, aggressive rate limiting on Pro tiers, and speculative code that hallucinates imports and API calls.' },
                             { q: 'What is the best GitHub Copilot alternative?', a: 'It depends on your needs. Claude Code offers deeper reasoning. Cursor offers better context awareness. But none of them ship with governance. The actual fix is to deploy runtime governance infrastructure on top of whichever agent you choose.' },
                             { q: 'How does governance compare to Copilot Enterprise?', a: 'Copilot Enterprise ($60+/user/month) provides code generation without governance. Each governance module here ($99 one-time) provides the enforcement layer Copilot is missing: context rot prevention, retry inflation control, financial circuit breakers, and file scope restrictions.' },
@@ -189,7 +189,7 @@ export default function GitHubCopilotProblemsPage() {
                     </div>
                 </div>
 
-                {/* Internal Links — Hub and Spoke */}
+                {/* Internal Links - Hub and Spoke */}
                 <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-6 mb-8 shadow-sm">
                     <h2 className="text-sm font-mono font-bold text-zinc-500 uppercase tracking-widest mb-4">Related Analyses</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

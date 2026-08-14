@@ -77,7 +77,7 @@ export default function AssessmentCatalogPage() {
 
                             <button
                                 onClick={() => handleRunAssessment(def)}
-                                className="w-full py-2.5 bg-zinc-900 hover:bg-cyan-600 text-white hover:text-zinc-950 font-bold rounded-xl text-xs font-mono transition-colors flex items-center justify-center gap-2"
+                                className="w-full py-2.5 bg-zinc-900 hover:bg-cyan-600 text-white font-bold rounded-xl text-xs font-mono transition-colors flex items-center justify-center gap-2"
                             >
                                 Compile Assessment <ArrowRight className="w-3.5 h-3.5" />
                             </button>

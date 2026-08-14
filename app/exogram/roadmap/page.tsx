@@ -14,7 +14,7 @@ const phases = [
         badgeClass: 'text-xs font-bold font-medium font-mono text-emerald-900 font-extrabold font-semibold px-2 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 uppercase tracking-widest',
         dotClass: 'hidden md:flex absolute left-4 top-2 w-5 h-5 rounded-full border-2 border-emerald-500 bg-emerald-500/20 items-center justify-center',
         items: [
-            'Schema Integrity Engine v1.0 — JSON output validation',
+            'Schema Integrity Engine v1.0 - JSON output validation',
             'MCP Server integration for Claude ecosystem',
             'REST API for universal integration',
             'EAAP Protocol RFC published on GitHub',
@@ -29,9 +29,9 @@ const phases = [
         badgeClass: 'text-xs font-bold font-medium font-mono text-purple-900 font-extrabold font-semibold px-2 py-1 rounded-full border border-purple-500/30 bg-purple-500/10 uppercase tracking-widest',
         dotClass: 'hidden md:flex absolute left-4 top-2 w-5 h-5 rounded-full border-2 border-purple-500 bg-purple-500/50 items-center justify-center',
         items: [
-            'Schema Integrity v2.0 — multi-format support (Protocol Buffers, Avro)',
-            'Boundary Control Protocol — agent action admissibility',
-            'Advanced threat prevention — adversarial input classification',
+            'Schema Integrity v2.0 - multi-format support (Protocol Buffers, Avro)',
+            'Boundary Control Protocol - agent action admissibility',
+            'Advanced threat prevention - adversarial input classification',
             'SOC 2 Type 1 certification preparation',
             'Self-hosted deployment option',
             'Dashboard for verification analytics',
@@ -44,7 +44,7 @@ const phases = [
         badgeClass: 'text-xs font-bold font-medium font-mono text-cyan-900 font-extrabold font-semibold px-2 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 uppercase tracking-widest',
         dotClass: 'hidden md:flex absolute left-4 top-2 w-5 h-5 rounded-full border-2 border-cyan-500 bg-cyan-500/20 items-center justify-center',
         items: [
-            'Multi-model verification — validate outputs across GPT, Claude, Gemini, Llama',
+            'Multi-model verification - validate outputs across GPT, Claude, Gemini, Llama',
             'Federated verification for multi-agent systems',
             'Streaming output verification (validate tokens as they arrive)',
             'Python SDK (pip install exogram)',
@@ -59,10 +59,10 @@ const phases = [
         badgeClass: 'text-xs font-bold font-medium font-mono text-zinc-900 px-2 py-1 rounded-full border border-zinc-500/30 bg-zinc-500/10 uppercase tracking-widest',
         dotClass: 'hidden md:flex absolute left-4 top-2 w-5 h-5 rounded-full border-2 border-zinc-500 bg-zinc-500/20 items-center justify-center',
         items: [
-            'Predictive verification — flag likely hallucinations before generation completes',
+            'Predictive verification - flag likely hallucinations before generation completes',
             'Cross-session memory consistency across organizations',
             'Industry-specific verification modules (healthcare, finance, legal)',
-            'Verification marketplace — community-contributed schemas and rules',
+            'Verification marketplace - community-contributed schemas and rules',
             'On-device verification for edge AI',
             'Formal verification proofs for safety-critical applications',
         ],
@@ -125,7 +125,7 @@ export default function ExogramRoadmapPage() {
                         <h3 className="text-xl font-grotesk font-bold text-zinc-950 mb-3">Shape the Roadmap</h3>
                         <p className="text-zinc-900 text-sm font-semibold mb-6">Exogram&apos;s roadmap is shaped by real enterprise needs. If you&apos;re deploying AI at scale, your requirements drive our priorities.</p>
                         <div className="flex justify-center gap-4">
-                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-zinc-950 font-semibold font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm">
+                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm shadow-sm">
                                 Visit Exogram.ai →
                             </a>
                             <Link href="/services" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">

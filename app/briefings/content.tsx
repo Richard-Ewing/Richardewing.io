@@ -65,7 +65,7 @@ export default function BriefingsPage() {
                         <span className="text-purple-900 font-extrabold font-semibold">Briefings.</span>
                     </h1>
                     <p className="text-zinc-950 font-bold text-lg mb-8 max-w-2xl">
-                        <strong>The AI Economist</strong> — AI Economics applied to AI.<br/><br/>
+                        <strong>The AI Economist</strong> - AI Economics applied to AI.<br/><br/>
                         Dense, actionable intelligence for leaders who don't have time for
                         "thought leadership." <span className="text-zinc-900">Read time: 5-10 minutes each.</span>
                     </p>
@@ -74,7 +74,7 @@ export default function BriefingsPage() {
                         href="https://theaieconomist.beehiiv.com/subscribe"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-zinc-950 font-semibold hover:bg-purple-500 transition-colors shadow-lg shadow-purple-900/20"
+                        className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-white font-bold hover:bg-purple-500 transition-colors shadow-lg shadow-purple-900/20"
                     >
                         Subscribe on Beehiiv →
                     </a>
@@ -107,7 +107,7 @@ export default function BriefingsPage() {
                             </div>
                             <Link
                                 href="/tools/aueb"
-                                className="px-6 py-3 rounded-lg bg-purple-600 text-zinc-950 font-semibold hover:bg-purple-500 transition-colors whitespace-nowrap"
+                                className="px-6 py-3 rounded-lg bg-purple-600 text-white font-bold hover:bg-purple-500 transition-colors whitespace-nowrap shadow-sm"
                             >
                                 Launch Tool →
                             </Link>

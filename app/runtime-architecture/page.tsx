@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     ],
     openGraph: {
         title: 'The 4-Layer Agent Runtime Architecture',
-        description: 'Identity × Skill × Tool × Environment — the canonical runtime model for deterministic agentic execution.',
+        description: 'Identity × Skill × Tool × Environment - the canonical runtime model for deterministic agentic execution.',
         url: 'https://www.richardewing.io/runtime-architecture',
         images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'The 4-Layer Agent Runtime Architecture',
-        description: 'Identity × Skill × Tool × Environment — the canonical runtime model for deterministic agentic execution.',
+        description: 'Identity × Skill × Tool × Environment - the canonical runtime model for deterministic agentic execution.',
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },
     alternates: {
@@ -40,7 +40,7 @@ const layers = [
         name: 'Identity Layer',
         purpose: 'Govern Cognition',
         color: 'violet',
-        description: 'Defines the agent\'s mission, principles, heuristics, risk tolerance, escalation logic, and failure boundaries. Without identity governance, the agent has no operational constraints — it will hallucinate freely, fabricate state, and exceed authority.',
+        description: 'Defines the agent\'s mission, principles, heuristics, risk tolerance, escalation logic, and failure boundaries. Without identity governance, the agent has no operational constraints - it will hallucinate freely, fabricate state, and exceed authority.',
         governs: ['Mission & principles', 'Risk tolerance', 'Escalation logic', 'Communication style', 'Failure boundaries'],
         systems: ['Deterministic Agentic Engineering', 'Autonomous Execution Safety', 'Agentic Change Management'],
         riskWithout: 'Agent operates without constraints. System prompt instructions are ignored under pressure. Authority boundaries are theoretical.',
@@ -50,7 +50,7 @@ const layers = [
         name: 'Skill Layer',
         purpose: 'Govern Procedures',
         color: 'cyan',
-        description: 'Skills are executable workflows — not prompts. They define procedural cognition: how the agent reasons through specific operational tasks with structured inputs, required context, authorized tools, and output contracts.',
+        description: 'Skills are executable workflows - not prompts. They define procedural cognition: how the agent reasons through specific operational tasks with structured inputs, required context, authorized tools, and output contracts.',
         governs: ['Executable workflows', 'Procedural cognition', 'Required context', 'Output contracts', 'Trigger conditions'],
         systems: ['Context Rot Prevention', 'Retry Inflation Control', 'Orchestration Entropy', 'Verification Burden Collapse', 'Hallucination Debt Reduction'],
         riskWithout: 'Agent enters recursive patch loops. Context degrades silently. Retry chains burn unlimited tokens. Multi-agent systems collapse into agreement loops.',
@@ -60,7 +60,7 @@ const layers = [
         name: 'Tool Layer',
         purpose: 'Govern Actuation',
         color: 'rose',
-        description: 'Tools are controlled reality interfaces — not capabilities embedded in skills. They define what the agent can touch: permissions, execution boundaries, schemas, APIs, retries, rate limits, side effects, and transactional safety.',
+        description: 'Tools are controlled reality interfaces - not capabilities embedded in skills. They define what the agent can touch: permissions, execution boundaries, schemas, APIs, retries, rate limits, side effects, and transactional safety.',
         governs: ['Permissions & boundaries', 'API access control', 'Side effect containment', 'Transactional safety', 'Rate limiting'],
         systems: ['Runtime Governance', 'MCP Governance', 'Tool Permission Governance'],
         riskWithout: 'Agent reads .env files containing AWS keys. Executes rm -rf. Installs malicious packages. Capability escalation through tool chaining.',
@@ -70,7 +70,7 @@ const layers = [
         name: 'Environment Layer',
         purpose: 'Govern Semantic Terrain',
         color: 'emerald',
-        description: 'The environment is the persistent semantic world state — memory, relationships, projects, active state, ontology, and unresolved workflows. The agent inhabits it. Without governance, environments mutate unpredictably.',
+        description: 'The environment is the persistent semantic world state - memory, relationships, projects, active state, ontology, and unresolved workflows. The agent inhabits it. Without governance, environments mutate unpredictably.',
         governs: ['Repository state', 'Context windows', 'Financial budgets', 'Memory continuity', 'Active project state'],
         systems: ['Repository Drift Prevention', 'Context Window Compression', 'AI Cost Containment', 'AI Engineering Economics'],
         riskWithout: 'Repository diverges from agent\'s model. Context windows overflow. API costs explode. Ghost dependencies reach production.',
@@ -140,7 +140,7 @@ export default function RuntimeArchitecturePage() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-cyan-600">Runtime Architecture</span>
                     </h1>
                     <p className="text-xl text-[#4A4A4A] max-w-3xl mx-auto leading-relaxed font-medium mb-8">
-                        Why agentic systems fail — and the compositional runtime model that prevents it. 
+                        Why agentic systems fail - and the compositional runtime model that prevents it. 
                         Identity × Skill × Tool × Environment, compiled into deterministic execution.
                     </p>
                     <p className="text-sm font-mono font-bold text-zinc-500 uppercase tracking-widest">
@@ -156,16 +156,16 @@ export default function RuntimeArchitecturePage() {
                 />
 
                 {/* THE FORMULA */}
-                <div className="mb-20 p-8 bg-[#1A1A1A] rounded-2xl text-zinc-900 shadow-xl">
-                    <h2 className="text-2xl font-grotesk font-bold mb-6 text-center">The Runtime Cognition Formula</h2>
-                    <div className="font-mono text-sm sm:text-base leading-relaxed text-center text-zinc-700 space-y-1">
+                <div className="mb-20 p-8 bg-[#1A1A1A] rounded-2xl text-white shadow-xl border border-white/10">
+                    <h2 className="text-2xl font-grotesk font-bold text-white mb-6 text-center">The Runtime Cognition Formula</h2>
+                    <div className="font-mono text-sm sm:text-base leading-relaxed text-center text-zinc-300 space-y-1">
                         <p className="text-cyan-400 font-bold">Agent Runtime Intelligence =</p>
                         <p>( Identity Layer × Skill Layer × Tool Layer × Environment Layer )</p>
                         <p>→ <span className="text-violet-400 font-bold">Runtime Compiler</span></p>
                         <p>→ <span className="text-emerald-400 font-bold">Constrained Execution</span></p>
                         <p>→ <span className="text-rose-400 font-bold">State Mutation</span></p>
                     </div>
-                    <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest text-center mt-6">
+                    <p className="text-xs text-zinc-400 font-mono uppercase tracking-widest text-center mt-6">
                         This is the actual architecture. Not prompts. Not workflows. Runtime infrastructure.
                     </p>
                 </div>
@@ -281,7 +281,7 @@ export default function RuntimeArchitecturePage() {
                             { step: '7', title: 'State Mutation', desc: 'Update memory, environment, and active state. This creates continuity safely.', color: 'bg-white text-zinc-900' },
                         ].map((item, i) => (
                             <div key={i} className={`flex items-start gap-4 p-4 rounded-xl ${item.color}`}>
-                                <div className="w-8 h-8 rounded-full bg-[#1A1A1A] text-zinc-900 flex items-center justify-center text-sm font-bold flex-shrink-0">
+                                <div className="w-8 h-8 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center text-sm font-bold flex-shrink-0">
                                     {item.step}
                                 </div>
                                 <div>
@@ -308,9 +308,9 @@ export default function RuntimeArchitecturePage() {
                 </div>
 
                 {/* CTA - DEPLOY */}
-                <div className="mb-16 p-10 bg-[#1A1A1A] rounded-2xl text-zinc-900 text-center shadow-xl">
-                    <h2 className="text-3xl font-grotesk font-bold mb-4">Deploy Runtime Governance Infrastructure</h2>
-                    <p className="text-zinc-600 mb-8 max-w-2xl mx-auto">
+                <div className="mb-16 p-10 bg-[#1A1A1A] rounded-2xl text-white text-center shadow-xl border border-white/10">
+                    <h2 className="text-3xl font-grotesk font-bold text-white mb-4">Deploy Runtime Governance Infrastructure</h2>
+                    <p className="text-zinc-300 mb-8 max-w-2xl mx-auto">
                         15 deployable runtime infrastructure modules across all 4 governance layers. 
                         Each contains deterministic TypeScript middleware, YAML policy manifests, Mermaid architecture diagrams, 
                         financial models, and operational playbooks.
@@ -324,7 +324,7 @@ export default function RuntimeArchitecturePage() {
                         </Link>
                         <Link 
                             href="/exogram" 
-                            className="px-8 py-4 bg-transparent text-zinc-900 font-bold rounded border border-zinc-300 hover:border-zinc-500 transition-colors"
+                            className="px-8 py-4 bg-transparent text-white font-bold rounded border border-white/30 hover:border-white/60 transition-colors"
                         >
                             Explore Exogram Runtime OS
                         </Link>

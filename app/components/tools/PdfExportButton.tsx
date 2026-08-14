@@ -196,7 +196,7 @@ export default function PdfExportButton({
         mt-8 w-full py-4 rounded-xl font-bold tracking-tight uppercase flex items-center justify-center gap-3 transition-all duration-300 relative overflow-hidden group
         ${isExporting 
           ? 'bg-zinc-50 border border-zinc-200 text-zinc-950 cursor-not-allowed border-zinc-400 border' 
-          : 'bg-indigo-600 hover:bg-indigo-700 text-zinc-950 font-semibold shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_30px_rgba(79,70,229,0.5)]'
+          : 'bg-indigo-600 hover:bg-indigo-700 text-white font-bold shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_30px_rgba(79,70,229,0.5)]'
         }
       `}
     >

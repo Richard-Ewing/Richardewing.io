@@ -272,7 +272,7 @@ export default function AuditInterview() {
                                                         key={val}
                                                         onClick={() => handleScoreChange(dim.id as keyof Scores, val)}
                                                         className={`flex-1 py-2 text-sm font-semibold font-mono font-bold rounded-md transition-all ${scores[dim.id as keyof Scores] === val
-                                                            ? 'bg-emerald-600 text-zinc-900'
+                                                            ? 'bg-emerald-600 text-white font-bold'
                                                             : 'hover:bg-white/10 text-zinc-900'
                                                             }`}
                                                     >

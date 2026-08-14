@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Why Claude Loses Context provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['Claude Code losing context', 'Claude Code context loss', 'Claude Code session amnesia', 'Claude context rot', 'Claude context bleeding', 'Claude context drowning', 'Claude context decay', 'why Claude forgets instructions', 'Claude contradicts itself', 'Claude loses track', 'Claude Code getting worse', 'Claude Code context window', 'Claude Code long sessions'],
     openGraph: {
-        title: 'Why Claude Loses Context — The Technical Explanation',
+        title: 'Why Claude Loses Context - The Technical Explanation',
         description: 'Why Claude Code degrades over long sessions and the runtime governance infrastructure that prevents it.',
     },
     alternates: { canonical: 'https://www.richardewing.io/compare/why-claude-loses-context' },
@@ -28,7 +28,7 @@ export default function WhyClaudeLosesContextPage() {
                         Why Claude Code Loses Context
                     </h1>
                     <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto">
-                        Context loss, session amnesia, context bleeding — it&apos;s not a bug. It&apos;s an architectural constraint called context decay. And it&apos;s solvable.
+                        Context loss, session amnesia, context bleeding - it&apos;s not a bug. It&apos;s an architectural constraint called context decay. And it&apos;s solvable.
                     </p>
                 </div>
 
@@ -37,7 +37,7 @@ export default function WhyClaudeLosesContextPage() {
                     <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-8 mb-8 shadow-sm">
                         <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-4">The Core Problem: Context Loss & Session Amnesia</h2>
                         <p className="text-[#4A4A4A] leading-relaxed mb-4">
-                            Claude Code operates within a <strong>200K token context window</strong>. Every message, every file read, every error, every retry — it all accumulates in that window. There is no automatic garbage collection.
+                            Claude Code operates within a <strong>200K token context window</strong>. Every message, every file read, every error, every retry - it all accumulates in that window. There is no automatic garbage collection.
                         </p>
                         <p className="text-[#4A4A4A] leading-relaxed mb-4">
                             After approximately 60 minutes of active use, the context window begins filling with:
@@ -49,7 +49,7 @@ export default function WhyClaudeLosesContextPage() {
                             <li className="flex items-start gap-2"><AlertTriangle className="w-4 h-4 text-rose-500 mt-1 flex-shrink-0" /> <span>Stale conversation turns no longer relevant to the task</span></li>
                         </ul>
                         <p className="text-[#4A4A4A] leading-relaxed mt-4">
-                            As the context fills, the <strong>original instructions get pushed further away</strong> from the model&apos;s attention. By hour 2, Claude literally cannot &quot;see&quot; what you told it at the beginning. This is why it loses track of your architecture, contradicts itself on design decisions, and exhibits what developers call &quot;context drowning&quot; — the agent is submerged in noise and can no longer surface the signal.
+                            As the context fills, the <strong>original instructions get pushed further away</strong> from the model&apos;s attention. By hour 2, Claude literally cannot &quot;see&quot; what you told it at the beginning. This is why it loses track of your architecture, contradicts itself on design decisions, and exhibits what developers call &quot;context drowning&quot; - the agent is submerged in noise and can no longer surface the signal.
                         </p>
                     </div>
 
@@ -98,16 +98,16 @@ export default function WhyClaudeLosesContextPage() {
                             Runtime governance prevents context rot through <strong>deterministic enforcement</strong>, not natural language suggestions:
                         </p>
                         <ul className="space-y-3 text-emerald-800">
-                            <li className="flex items-start gap-2"><span className="font-bold text-emerald-700">1.</span> <span><strong>Checkpoint Rotation</strong> — automatically prune stale context at 65% utilization while preserving architectural state</span></li>
-                            <li className="flex items-start gap-2"><span className="font-bold text-emerald-700">2.</span> <span><strong>Semantic Reset</strong> — emergency context purge at 85% that reloads core instructions</span></li>
-                            <li className="flex items-start gap-2"><span className="font-bold text-emerald-700">3.</span> <span><strong>Patch Chain Detection</strong> — halt execution when an agent patches the same file 3+ times</span></li>
-                            <li className="flex items-start gap-2"><span className="font-bold text-emerald-700">4.</span> <span><strong>Session Duration Limits</strong> — mandatory checkpoints every 30 minutes</span></li>
+                            <li className="flex items-start gap-2"><span className="font-bold text-emerald-700">1.</span> <span><strong>Checkpoint Rotation</strong> - automatically prune stale context at 65% utilization while preserving architectural state</span></li>
+                            <li className="flex items-start gap-2"><span className="font-bold text-emerald-700">2.</span> <span><strong>Semantic Reset</strong> - emergency context purge at 85% that reloads core instructions</span></li>
+                            <li className="flex items-start gap-2"><span className="font-bold text-emerald-700">3.</span> <span><strong>Patch Chain Detection</strong> - halt execution when an agent patches the same file 3+ times</span></li>
+                            <li className="flex items-start gap-2"><span className="font-bold text-emerald-700">4.</span> <span><strong>Session Duration Limits</strong> - mandatory checkpoints every 30 minutes</span></li>
                         </ul>
                     </div>
 
                     {/* CTA */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/skills/context-rot-prevention" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
+                        <Link href="/skills/context-rot-prevention" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors shadow-sm">
                             Deploy Context Rot Prevention →
                         </Link>
                         <Link href="/telemetry" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">
@@ -120,9 +120,9 @@ export default function WhyClaudeLosesContextPage() {
                         <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-6">Frequently Asked Questions</h2>
                         <div className="space-y-3">
                             {[
-                                { q: 'Why does Claude lose context and get session amnesia?', a: 'Claude operates within a finite context window. As conversations grow, original instructions get pushed out of the attention window — causing context loss, session amnesia, and context bleeding between tasks. The agent loses track of architecture decisions and starts contradicting itself.' },
-                                { q: 'Does this happen with all AI coding agents?', a: 'Yes. Context decay affects Claude Code, Cursor, Windsurf, Cline, and every agent that operates within a finite context window. The rate varies by model, but the pattern — context drowning, instruction drift, and eventual session amnesia — is universal.' },
-                                { q: 'Can I just start a new session?', a: 'Starting a new session resets context but loses all accumulated understanding of your codebase. The real solution is checkpoint rotation — preserving architectural state while pruning conversation history to prevent context window bankruptcy.' },
+                                { q: 'Why does Claude lose context and get session amnesia?', a: 'Claude operates within a finite context window. As conversations grow, original instructions get pushed out of the attention window - causing context loss, session amnesia, and context bleeding between tasks. The agent loses track of architecture decisions and starts contradicting itself.' },
+                                { q: 'Does this happen with all AI coding agents?', a: 'Yes. Context decay affects Claude Code, Cursor, Windsurf, Cline, and every agent that operates within a finite context window. The rate varies by model, but the pattern - context drowning, instruction drift, and eventual session amnesia - is universal.' },
+                                { q: 'Can I just start a new session?', a: 'Starting a new session resets context but loses all accumulated understanding of your codebase. The real solution is checkpoint rotation - preserving architectural state while pruning conversation history to prevent context window bankruptcy.' },
                                 { q: 'How much does context rot actually cost?', a: 'In documented incidents, context rot has caused 6+ hours of rework, 23 corrupted files, and $340+ in wasted tokens in a single session. Across a team, this compounds into $100K+ annually.' },
                             ].map((faq, i) => (
                                 <details key={i} className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] shadow-sm">

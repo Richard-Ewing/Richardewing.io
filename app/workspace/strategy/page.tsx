@@ -116,7 +116,7 @@ export default function AIStrategyWorkspacePage() {
               <button
                 disabled={activeStage === strategyStages.length - 1}
                 onClick={() => setActiveStage(prev => Math.min(strategyStages.length - 1, prev + 1))}
-                className="px-4 py-2 bg-cyan-600 hover:bg-cyan-700 disabled:opacity-40 text-zinc-950 font-bold rounded-lg text-xs font-mono cursor-pointer flex items-center gap-1.5"
+                className="px-4 py-2 bg-cyan-600 hover:bg-cyan-700 disabled:opacity-40 text-white font-bold rounded-lg text-xs font-mono cursor-pointer flex items-center gap-1.5 shadow-sm"
               >
                 Next Stage <ArrowRight className="w-3.5 h-3.5" />
               </button>

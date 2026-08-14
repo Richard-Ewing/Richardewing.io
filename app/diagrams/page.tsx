@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: 'AI Governance Architecture Dia provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['runtime architecture diagrams', 'AI agent governance diagrams', 'bounded cognition diagram', 'retry inflation flow', 'MCP containment architecture', 'orchestration collapse pattern'],
     openGraph: {
-        title: 'Runtime Architecture Diagrams — Governance Visual Library',
+        title: 'Runtime Architecture Diagrams - Governance Visual Library',
         description: '10 architectural diagrams mapping the failure modes and governance containment patterns for AI coding agents.',
     },
     alternates: { canonical: 'https://www.richardewing.io/diagrams' },
@@ -119,7 +119,7 @@ const diagrams = [
     {
         id: 5,
         title: 'Environment Isolation Model',
-        description: 'How agent execution environments are sandboxed. Each agent session receives a constrained environment slice — not the entire file system. Write permissions are scoped, destructive commands require approval, and sensitive paths are masked.',
+        description: 'How agent execution environments are sandboxed. Each agent session receives a constrained environment slice - not the entire file system. Write permissions are scoped, destructive commands require approval, and sensitive paths are masked.',
         skill: 'Autonomous Execution Safety',
         skillSlug: 'autonomous-execution-safety',
         color: 'emerald',
@@ -207,7 +207,7 @@ const diagrams = [
     {
         id: 9,
         title: 'Context Poisoning Flow',
-        description: 'How stale assumptions, failed attempts, and correction history accumulate in the context window until they crowd out valid architectural state. This is the root cause of "Claude getting worse over time" — the context literally poisons itself.',
+        description: 'How stale assumptions, failed attempts, and correction history accumulate in the context window until they crowd out valid architectural state. This is the root cause of "Claude getting worse over time" - the context literally poisons itself.',
         skill: 'Context Window Compression',
         skillSlug: 'context-window-compression',
         color: 'orange',
@@ -322,7 +322,7 @@ export default function DiagramsPage() {
                         YAML policy manifests, and operational tooling.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
+                        <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors shadow-sm">
                             View All 15 Runtime Modules →
                         </Link>
                         <Link href="/runtime-architecture" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">

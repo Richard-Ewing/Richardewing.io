@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: 'Real pricing, user complaints, and governance gap analysis for every major AI coding agent.',
     keywords: ['Claude Code vs Cursor', 'Cursor vs Windsurf', 'Claude Code vs Windsurf', 'GitHub Copilot vs Cursor', 'AI coding agent comparison', 'AI coding agent pricing 2026', 'best AI coding agent 2026', 'Cursor problems', 'Copilot problems', 'Windsurf problems', 'AI coding agent complaints', 'Claude Code governance', 'Cursor governance', 'Windsurf safety', 'Cline vs Roo Code', 'deterministic vs probabilistic coding', 'AI agent runtime governance comparison', 'Tabnine vs Copilot'],
     openGraph: {
-        title: 'Claude Code vs Cursor vs Windsurf 2026 — Pricing, Problems & Governance',
+        title: 'Claude Code vs Cursor vs Windsurf 2026 - Pricing, Problems & Governance',
         description: 'Real pricing, user complaints, and governance gap analysis for every major AI coding agent.',
     },
     alternates: { canonical: 'https://www.richardewing.io/compare/ai-coding-agents' },
@@ -71,7 +71,7 @@ export default function AgentComparisonPage() {
                     </h1>
                     <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto">
                         Every major AI coding agent ships without runtime governance infrastructure.
-                        This comparison shows exactly what's missing — and what you need to deploy.
+                        This comparison shows exactly what's missing - and what you need to deploy.
                     </p>
                 </div>
 
@@ -206,7 +206,7 @@ export default function AgentComparisonPage() {
                         {[
                             { q: 'Which AI coding agent is safest?', a: 'None of them ship with runtime governance infrastructure by default. Claude Code has the most mature permission model (command approval prompts), but it lacks context rot prevention, retry inflation control, and financial circuit breakers. All agents require external governance deployment.' },
                             { q: 'Can I use governance skills with any agent?', a: 'Yes. The 15 governance modules on this site are designed for Claude Code, Cursor, Windsurf, Cline, Roo Code, Codex, Copilot, Gemini Code Assist, Amazon Q Developer, Devin, OpenHands, and SWE-Agent. Each includes a CLAUDE.md manifest, YAML policies, TypeScript middleware, and reusable bash tools.' },
-                            { q: 'How does $99 one-time compare to $60/user/month?', a: 'A single governance module at $99 costs less than one month of Copilot Enterprise or Windsurf Enterprise — and it is a permanent deployment, not a recurring subscription. For a 10-person team on Copilot Enterprise, you would spend $7,200/year on the tool alone with zero governance. The full 15-module governance suite costs $1,485 total, one-time.' },
+                            { q: 'How does $99 one-time compare to $60/user/month?', a: 'A single governance module at $99 costs less than one month of Copilot Enterprise or Windsurf Enterprise - and it is a permanent deployment, not a recurring subscription. For a 10-person team on Copilot Enterprise, you would spend $7,200/year on the tool alone with zero governance. The full 15-module governance suite costs $1,485 total, one-time.' },
                             { q: 'What is runtime governance?', a: 'Runtime governance is the enforcement layer between the AI agent and your codebase. It intercepts agent actions, validates them against policy manifests, and halts execution when governance boundaries are violated. It prevents context rot, retry inflation, repository drift, and financial overruns.' },
                             { q: 'Why does Claude Code get worse after an hour?', a: 'Context rot. As the context window fills with stale assumptions, failed attempts, and correction history, the signal-to-noise ratio degrades until the agent is reasoning against its own historical errors. The Context Rot Prevention System deploys bounded cognition middleware to enforce checkpoint rotation before degradation occurs.' },
                         ].map(faq => (
@@ -241,14 +241,14 @@ export default function AgentComparisonPage() {
                 </div>
 
                 {/* CTA */}
-                <div className="p-10 bg-[#1A1A1A] rounded-2xl text-zinc-900 text-center">
-                    <h2 className="text-2xl font-grotesk font-bold mb-4">Deploy the governance layer these tools are missing.</h2>
-                    <p className="text-zinc-600 mb-6">15 runtime infrastructure modules. Works with every agent. $99 each, one-time.</p>
+                <div className="p-10 bg-[#1A1A1A] rounded-2xl text-white text-center border border-white/10 shadow-xl">
+                    <h2 className="text-2xl font-grotesk font-bold text-white mb-4">Deploy the governance layer these tools are missing.</h2>
+                    <p className="text-zinc-300 mb-6">15 runtime infrastructure modules. Works with every agent. $99 each, one-time.</p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/skills" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded hover:bg-zinc-100 transition-colors">
+                        <Link href="/skills" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded hover:bg-zinc-100 transition-colors shadow-sm">
                             View All 15 Modules →
                         </Link>
-                        <Link href="/runtime-architecture" className="px-8 py-4 text-zinc-900 font-bold rounded border border-zinc-300 hover:border-zinc-500 transition-colors">
+                        <Link href="/runtime-architecture" className="px-8 py-4 text-white font-bold rounded border border-white/30 hover:border-white/60 transition-colors">
                             Read the Architecture
                         </Link>
                     </div>

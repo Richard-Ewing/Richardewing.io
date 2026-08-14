@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: 'Executive AI Briefing provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['AI governance executive briefing', 'AI risk matrix', 'AI governance maturity model', 'AI coding agent ROI', 'engineering leadership AI governance', 'CTO AI governance', 'board AI risk', 'AI governance scorecard'],
     openGraph: {
-        title: 'Executive Briefing — AI Governance for Engineering Leadership',
+        title: 'Executive Briefing - AI Governance for Engineering Leadership',
         description: 'Board-ready governance assessment: maturity model, risk matrix, and ROI analysis for AI coding agent deployment.',
     },
     alternates: { canonical: 'https://www.richardewing.io/executive-briefing' },
@@ -193,7 +193,7 @@ export default function ExecutiveBriefingPage() {
                         Start with any module. Each includes TypeScript middleware, YAML policy manifests, operational tooling, and a step-by-step deployment guide.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
+                        <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors shadow-sm">
                             View All 15 Runtime Modules →
                         </Link>
                         <Link href="/telemetry" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">

@@ -168,7 +168,7 @@ export default function DoctrinePage() {
                             <p className="text-xl text-zinc-950 italic mb-4">
                                 "Technical debt isn't a cleanup problem. It's a balance sheet liability."
                             </p>
-                            <cite className="text-purple-900 font-extrabold font-semibold text-sm">— RICHARD EWING, PRODUCT ECONOMIST</cite>
+                            <cite className="text-purple-900 font-extrabold font-semibold text-sm"> - RICHARD EWING, PRODUCT ECONOMIST</cite>
                         </blockquote>
                     </div>
                 </section>
@@ -234,7 +234,7 @@ export default function DoctrinePage() {
                 {/* CTA */}
                 <section className="section-sm text-center">
                     <p className="text-zinc-950 font-bold mb-6">Apply these principles to your organization.</p>
-                    <a href="/services" className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-zinc-950 font-semibold hover:bg-purple-500">
+                    <a href="/services" className="inline-block px-8 py-4 rounded-lg bg-purple-600 text-white font-bold hover:bg-purple-500 transition-colors shadow-sm">
                         Book an Intervention →
                     </a>
                 </section>

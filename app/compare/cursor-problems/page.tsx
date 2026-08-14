@@ -7,10 +7,10 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Cursor IDE Problems & Fixes (2026)',
-    description: 'Analysis of Cursor repository drift, file rewrites, and context loss issues — and how to fix them.',
+    description: 'Analysis of Cursor repository drift, file rewrites, and context loss issues - and how to fix them.',
     keywords: ['Cursor problems', 'Cursor problems 2026', 'Cursor AI complaints', 'Cursor credits expensive', 'Cursor rewriting files', 'Cursor alternative', 'Cursor crashes', 'Cursor ignores rules', '.cursorrules not working Cursor', 'Cursor AI review', 'Cursor vs governance', 'left Cursor', 'switched from Cursor'],
     openGraph: {
-        title: 'Cursor Problems 2026 — Real User Complaints & Governance Solutions',
+        title: 'Cursor Problems 2026 - Real User Complaints & Governance Solutions',
         description: 'Why developers are frustrated with Cursor and what runtime governance actually fixes.',
     },
     alternates: { canonical: 'https://www.richardewing.io/compare/cursor-problems' },
@@ -40,8 +40,8 @@ const complaints = [
         severity: 'HIGH',
         source: 'Reddit / Developer Forums',
         quote: '"My .cursorrules file says DO NOT modify anything in /config. After 20 messages, it rewrote my entire config directory because it thought it would be \'helpful.\'"',
-        detail: '.cursorrules is a text-based instruction file that competes for context window space. As conversations grow, the model prioritizes recent messages over initial configuration — effectively making .cursorrules invisible after ~60 minutes.',
-        fix: 'Runtime governance operates outside the context window. Middleware enforcement intercepts agent actions before execution and blocks violations — regardless of what the model\'s text instructions say.',
+        detail: '.cursorrules is a text-based instruction file that competes for context window space. As conversations grow, the model prioritizes recent messages over initial configuration - effectively making .cursorrules invisible after ~60 minutes.',
+        fix: 'Runtime governance operates outside the context window. Middleware enforcement intercepts agent actions before execution and blocks violations - regardless of what the model\'s text instructions say.',
         color: 'bg-orange-50 border-orange-200',
     },
     {
@@ -50,7 +50,7 @@ const complaints = [
         source: 'G2 / Reddit',
         quote: '"Cursor is a VS Code fork that can\'t handle our monorepo. Memory usage hits 4GB, the UI freezes, and I have to force-quit twice a day."',
         detail: 'As a VS Code fork, Cursor inherits Electron\'s performance limitations. Users with large codebases report UI lag, memory leaks during extended sessions, crashes during multi-file operations, and corrupted chat histories after updates.',
-        fix: 'Context window compression and checkpoint rotation reduce the cognitive load on the agent — decreasing memory pressure and preventing the session bloat that causes crashes.',
+        fix: 'Context window compression and checkpoint rotation reduce the cognitive load on the agent - decreasing memory pressure and preventing the session bloat that causes crashes.',
         color: 'bg-yellow-50 border-yellow-200',
     },
     {
@@ -58,8 +58,8 @@ const complaints = [
         severity: 'HIGH',
         source: 'Hacker News / Reddit',
         quote: '"Cursor generates code I don\'t understand. My junior devs commit it without reviewing. We now have a black box codebase that nobody can maintain."',
-        detail: 'Cursor\'s speed incentivizes "vibe coding" — accepting AI output without understanding it. This creates codebases that are fragile, undocumented, and architecturally incoherent. Teams report that maintaining AI-generated code costs 3-5x more than writing it from scratch.',
-        fix: 'Verification Burden Collapse deploys zero-trust validation pipelines that score generated code and reject low-confidence patches before humans see them — preventing black box accumulation.',
+        detail: 'Cursor\'s speed incentivizes "vibe coding" - accepting AI output without understanding it. This creates codebases that are fragile, undocumented, and architecturally incoherent. Teams report that maintaining AI-generated code costs 3-5x more than writing it from scratch.',
+        fix: 'Verification Burden Collapse deploys zero-trust validation pipelines that score generated code and reject low-confidence patches before humans see them - preventing black box accumulation.',
         color: 'bg-orange-50 border-orange-200',
     },
 ];
@@ -82,7 +82,7 @@ export default function CursorProblemsPage() {
                         Cursor Problems in 2026
                     </h1>
                     <p className="text-lg text-[#4A4A4A] max-w-2xl mx-auto">
-                        Real complaints from G2, Reddit, and developer forums. Credit anxiety, file rewriting, .cursorrules ignored, crashes, and black box code — and what governance actually fixes.
+                        Real complaints from G2, Reddit, and developer forums. Credit anxiety, file rewriting, .cursorrules ignored, crashes, and black box code - and what governance actually fixes.
                     </p>
                 </div>
 
@@ -135,20 +135,20 @@ export default function CursorProblemsPage() {
                 </div>
 
                 {/* Pricing Anchor */}
-                <div className="bg-[#1A1A1A] rounded-2xl p-8 mb-8 text-zinc-900">
-                    <h2 className="text-xl font-grotesk font-bold mb-4 flex items-center gap-2">
-                        <Shield className="w-5 h-5" /> The Pricing Reality
+                <div className="bg-[#1A1A1A] rounded-2xl p-8 mb-8 text-white border border-white/10 shadow-xl">
+                    <h2 className="text-xl font-grotesk font-bold text-white mb-4 flex items-center gap-2">
+                        <Shield className="w-5 h-5 text-emerald-400" /> The Pricing Reality
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                        <div className="p-4 bg-white/10 rounded-xl text-center">
-                            <div className="text-2xl font-bold">$480+</div>
-                            <div className="text-xs text-zinc-600 font-mono uppercase">Cursor Enterprise / year</div>
-                            <div className="text-[10px] text-zinc-500 mt-1">per user + overages, no governance</div>
+                        <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-center">
+                            <div className="text-2xl font-bold text-white">$480+</div>
+                            <div className="text-xs text-zinc-300 font-mono uppercase">Cursor Enterprise / year</div>
+                            <div className="text-[10px] text-zinc-400 mt-1">per user + overages, no governance</div>
                         </div>
-                        <div className="p-4 bg-white/10 rounded-xl text-center">
-                            <div className="text-2xl font-bold">$10K+</div>
-                            <div className="text-xs text-zinc-600 font-mono uppercase">Enterprise guardrails / year</div>
-                            <div className="text-[10px] text-zinc-500 mt-1">quote-gated, 6-month deploy</div>
+                        <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-center">
+                            <div className="text-2xl font-bold text-white">$10K+</div>
+                            <div className="text-xs text-zinc-300 font-mono uppercase">Enterprise guardrails / year</div>
+                            <div className="text-[10px] text-zinc-400 mt-1">quote-gated, 6-month deploy</div>
                         </div>
                         <div className="p-4 bg-emerald-500/20 border border-emerald-500/30 rounded-xl text-center">
                             <div className="text-2xl font-bold text-emerald-400">$99</div>
@@ -156,14 +156,14 @@ export default function CursorProblemsPage() {
                             <div className="text-[10px] text-emerald-200 mt-1">deploy in 15 minutes</div>
                         </div>
                     </div>
-                    <p className="text-sm text-zinc-600">
-                        Each governance module costs less than 3 months of Cursor Pro — and it deploys in 15 minutes, not 6 months.
+                    <p className="text-sm text-zinc-300">
+                        Each governance module costs less than 3 months of Cursor Pro - and it deploys in 15 minutes, not 6 months.
                     </p>
                 </div>
 
                 {/* CTA */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                    <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors">
+                    <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors shadow-sm">
                         View All 15 Governance Modules →
                     </Link>
                     <Link href="/compare/ai-coding-agents" className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded border border-[#1A1A1A] hover:bg-[#F5F0EB] transition-colors">
@@ -176,9 +176,9 @@ export default function CursorProblemsPage() {
                     <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-6">Frequently Asked Questions</h2>
                     <div className="space-y-3">
                         {[
-                            { q: 'Why does Cursor keep rewriting files I didn\'t ask it to touch?', a: 'Cursor\'s Composer mode has full repository access by default. There are no file scope restrictions, no directory guards, and no mutation limits. The agent interprets "fix this bug" as permission to touch anything it thinks is related — and its definition of "related" includes your entire codebase.' },
-                            { q: 'My .cursorrules stopped working. How do I fix it?', a: '.cursorrules is a text-based instruction file that competes for context window space. Under context pressure, the model prioritizes recent messages over initial configuration. The fix is not a better .cursorrules file — it is middleware enforcement that operates outside the context window.' },
-                            { q: 'Is Cursor worth the price in 2026?', a: 'For individual developers on the Pro plan ($20/month), Cursor provides strong value for autocomplete and short tasks. For teams on Enterprise ($40-60/user/month), the lack of governance infrastructure — no retry limits, no scope enforcement, no financial circuit breakers — means you are paying premium prices for an ungoverned tool.' },
+                            { q: 'Why does Cursor keep rewriting files I didn\'t ask it to touch?', a: 'Cursor\'s Composer mode has full repository access by default. There are no file scope restrictions, no directory guards, and no mutation limits. The agent interprets "fix this bug" as permission to touch anything it thinks is related - and its definition of "related" includes your entire codebase.' },
+                            { q: 'My .cursorrules stopped working. How do I fix it?', a: '.cursorrules is a text-based instruction file that competes for context window space. Under context pressure, the model prioritizes recent messages over initial configuration. The fix is not a better .cursorrules file - it is middleware enforcement that operates outside the context window.' },
+                            { q: 'Is Cursor worth the price in 2026?', a: 'For individual developers on the Pro plan ($20/month), Cursor provides strong value for autocomplete and short tasks. For teams on Enterprise ($40-60/user/month), the lack of governance infrastructure - no retry limits, no scope enforcement, no financial circuit breakers - means you are paying premium prices for an ungoverned tool.' },
                             { q: 'What is the best Cursor alternative?', a: 'Claude Code offers deeper reasoning. Windsurf offers agentic workflows. VS Code + Copilot offers ecosystem integration. But all of them share the same fundamental problem: no runtime governance. The fix is governance infrastructure deployed on top of whichever agent you choose.' },
                         ].map((faq, i) => (
                             <details key={i} className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] shadow-sm">

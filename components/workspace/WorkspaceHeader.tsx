@@ -48,7 +48,7 @@ export default function WorkspaceHeader({ title, subtitle, badge }: WorkspaceHea
             </Link>
             <Link
               href="/workspace/search"
-              className="px-3.5 py-2 bg-cyan-600 hover:bg-cyan-700 text-zinc-950 font-bold rounded-lg text-xs font-mono transition-colors flex items-center gap-1.5"
+              className="px-3.5 py-2 bg-cyan-600 hover:bg-cyan-700 text-white font-bold rounded-lg text-xs font-mono transition-colors flex items-center gap-1.5 shadow-sm"
             >
               <Sparkles className="w-3.5 h-3.5" /> Enterprise Search
             </Link>

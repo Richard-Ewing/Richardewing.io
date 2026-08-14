@@ -229,7 +229,7 @@ export default function ToolsContent() {
                 Level Up Your <span className="text-purple-900 font-extrabold">AI Skills</span>
               </h2>
               <p className="text-zinc-950 font-bold text-sm font-semibold max-w-lg mx-auto">
-                Anthropic Academy courses — free, self-paced, with certificates. Curated by Richard Ewing.
+                Anthropic Academy courses - free, self-paced, with certificates. Curated by Richard Ewing.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -334,7 +334,7 @@ export default function ToolsContent() {
             Diagnostic insights are irrelevant without a deterministic interception layer. To remediate the risks identified, you must implement Admissibility-Native architecture.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://exogram.ai/analyze" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 rounded-lg bg-red-600 text-zinc-950 font-bold tracking-widest uppercase hover:bg-red-700 transition-colors">
+            <a href="https://exogram.ai/analyze" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 rounded-lg bg-red-600 text-white font-bold tracking-widest uppercase hover:bg-red-700 transition-colors shadow-sm">
               Initialize Exogram Simulation →
             </a>
           </div>

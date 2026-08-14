@@ -493,7 +493,7 @@ export default function AUEBTool() {
                                         </div>
                                         <div className="flex flex-col sm:flex-row gap-4 mt-8">
                                             <button onClick={() => setStep(2)} className="px-6 py-4 bg-zinc-200 hover:bg-zinc-700 text-zinc-950 rounded-xl transition-all">← Back</button>
-                                            <button onClick={() => calculate()} disabled={loading} className="flex-1 py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2">
+                                            <button onClick={() => calculate()} disabled={loading} className="flex-1 py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-bold uppercase tracking-widest rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-sm">
                                                 {loading ? <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Calculating Collapse Point...</> : 'Calculate My Collapse Point →'}
                                             </button>
                                         </div>
@@ -635,7 +635,7 @@ export default function AUEBTool() {
                                       <h4 className="text-lg font-bold text-zinc-950 mb-2">Get unit economics that survive a board meeting</h4>
                                       <p className="text-sm text-zinc-600 mb-4">This benchmark gives you the ratio. A $5,000 AI Cost Governance engagement models your collapse point and builds the margin protection plan.</p>
                                       <div className="flex flex-wrap gap-3">
-                                        <a href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-zinc-900 text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">Book Advisory Session →</a>
+                                        <a href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-opacity shadow-sm">Book Advisory Session →</a>
                                         <a href="/api/buy/gut_check" className="inline-flex items-center gap-2 px-5 py-2.5 border border-purple-500/30 text-purple-700 text-sm font-bold rounded-lg hover:bg-purple-50 transition-colors">$450 Gut-Check Call →</a>
                                       </div>
                                     </div>
@@ -995,7 +995,7 @@ export default function AUEBTool() {
                                     </div>
                                 </motion.div>
 
-                                {/* Q-PEP Remediation Block — captured into PDF */}
+                                {/* Q-PEP Remediation Block - captured into PDF */}
                                 <QPEPRemediation toolId="AUEB" metrics={results!} />
 
 

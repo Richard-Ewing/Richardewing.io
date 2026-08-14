@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: 'Prove You Understand AI Costs provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
     keywords: ['AI governance certification', 'runtime governance maturity', 'AI governance assessment', 'agentic engineering certification', 'MCP governance certified', 'AI governance training', 'runtime maturity model'],
     openGraph: {
-        title: 'Runtime Governance Maturity — Certification & Assessment',
+        title: 'Runtime Governance Maturity - Certification & Assessment',
         description: 'Institutional credentials for deterministic agentic engineering. 5-level maturity model with certification tracks.',
     },
     alternates: { canonical: 'https://www.richardewing.io/certification' },
@@ -208,7 +208,7 @@ export default function CertificationPage() {
                         Each governance module moves you one level up the maturity model.
                         Deploy any module. Measure the delta. Build toward institutional governance.
                     </p>
-                    <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-zinc-900 font-bold rounded hover:bg-zinc-100 transition-colors inline-block">
+                    <Link href="/skills" className="px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded hover:bg-zinc-800 transition-colors inline-block shadow-sm">
                         View All 15 Runtime Modules →
                     </Link>
                 </div>
