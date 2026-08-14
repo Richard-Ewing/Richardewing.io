@@ -8,6 +8,8 @@ import pseoMatrixData from '@/app/lib/pseo-matrix.json';
 import compareCategorized from '@/app/lib/compare-categorized.json';
 import FAQItem from '@/app/components/FAQItem';
 import StructuredData, { generateFaqSchema } from '@/app/components/seo/StructuredData';
+import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
+import { BookOpen, ExternalLink } from 'lucide-react';
 
 const COMPARISONS = [
     {
@@ -248,6 +250,66 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
                         </div>
                     </section>
                 )}
+
+                {/* Relevant Canonical Research & Publications */}
+                {(() => {
+                    const matchedArticles = RESEARCH_CORPUS.filter(art => 
+                        art.title.toLowerCase().includes('governance') || 
+                        art.title.toLowerCase().includes('agent') || 
+                        art.title.toLowerCase().includes('cost') ||
+                        art.domain === 'AI Governance' ||
+                        art.domain === 'AI Economics'
+                    ).slice(0, 3);
+
+                    if (matchedArticles.length === 0) return null;
+
+                    return (
+                        <section className="mb-16 bg-zinc-50 border border-zinc-300 rounded-3xl p-8 shadow-sm">
+                            <div className="flex items-center gap-2 text-xs font-mono font-bold text-zinc-900 uppercase tracking-widest mb-4">
+                                <BookOpen className="w-4 h-4 text-cyan-900" />
+                                <span>Related Research &amp; Peer-Reviewed Publications</span>
+                            </div>
+                            <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">
+                                Evidence-Based Architecture Specifications
+                            </h2>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                {matchedArticles.map((art) => (
+                                    <div key={art.id} className="bg-white border border-zinc-200 rounded-2xl p-5 flex flex-col justify-between hover:border-zinc-400 transition-colors">
+                                        <div>
+                                            <div className="flex items-center justify-between text-[11px] font-mono font-bold text-zinc-500 mb-2">
+                                                <span>{art.publisher}</span>
+                                                <span className="text-cyan-900">{art.date}</span>
+                                            </div>
+                                            <h3 className="font-grotesk font-bold text-zinc-950 text-sm leading-snug mb-2">
+                                                {art.title}
+                                            </h3>
+                                            <p className="text-zinc-600 text-xs line-clamp-3 leading-relaxed mb-4">
+                                                {art.thesis}
+                                            </p>
+                                        </div>
+                                        <a 
+                                            href={art.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-cyan-900 hover:text-cyan-700 transition-colors"
+                                        >
+                                            <span>Read on {art.publisher}</span>
+                                            <ExternalLink className="w-3 h-3" />
+                                        </a>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="mt-6 text-center">
+                                <Link 
+                                    href="/research/publications"
+                                    className="inline-flex items-center gap-2 text-xs font-mono font-bold text-zinc-900 hover:text-cyan-900 uppercase tracking-widest transition-colors"
+                                >
+                                    <span>Explore Full Research Corpus ({RESEARCH_CORPUS.length} Works) →</span>
+                                </Link>
+                            </div>
+                        </section>
+                    );
+                })()}
 
                 <AdvisoryCTA variant="compare" />
 
