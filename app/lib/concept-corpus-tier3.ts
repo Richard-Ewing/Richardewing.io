@@ -65,7 +65,7 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
       { stage: 'Protocol Specification', label: 'How to Reduce LLM API Token Costs in Production', publisher: 'Beehiiv', date: 'August 14, 2026', summary: 'Detailed cosine similarity threshold tuning (0.85-0.92) and sub-20ms edge cache hits.' }
     ],
     evidenceLedger: [
-      { id: 'ev-sc-4', title: 'How to Reduce LLM API Token Costs in Production', url: 'https://theaieconomist.beehiiv.com/p/how-to-reduce-llm-api-token-costs-in-production', publisher: 'Beehiiv', type: 'Architecture Guide', strength: 5, role: 'Specification', date: 'August 14, 2026' },
+      { id: 'ev-sc-4', title: 'How to Reduce LLM API Token Costs in Production', url: 'https://theaieconomist.beehiiv.com/p/how-to-reduce-llm-api-token-costs-in-production', publisher: 'Beehiiv', type: 'Architecture Guide', strength: 5, role: 'Extends', date: 'August 14, 2026' },
       { id: 'ev-sc-3', title: 'How to Reduce LLM Costs in Production: The Inference Dividend Model', url: 'https://www.linkedin.com/pulse/how-reduce-llm-costs-production-inference-dividend-model-ewing-nwtgc/', publisher: 'LinkedIn', type: 'Production Telemetry', strength: 5, role: 'Extends', date: 'August 13, 2026' },
       { id: 'ev-sc-2', title: 'Growth Is Not Your Cost Problem  -  Your Architecture Is', url: 'https://www.linkedin.com/feed/update/urn:li:share:7487606608009814016/', publisher: 'LinkedIn', type: 'Executable', strength: 5, role: 'Extends', date: 'August 10, 2026' },
       { id: 'ev-sc-1', title: 'Semantic Caching Playbook', url: 'https://theaieconomist.beehiiv.com', publisher: 'Beehiiv', type: 'Framework Module', strength: 4, role: 'Origin', date: 'June 2025' }
