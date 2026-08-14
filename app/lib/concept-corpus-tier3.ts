@@ -62,7 +62,7 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
     provenanceTimeline: [
       { stage: 'Observation', label: 'Semantic Caching Economics', publisher: 'Beehiiv', date: 'June 2025', summary: 'Outlined the financial necessity of vector-based caching.' },
       { stage: 'LinkedIn Essay', label: 'Growth Is Not Your Cost Problem  -  Your Architecture Is', publisher: 'LinkedIn', date: 'August 10, 2026', summary: 'Proved 50%+ API spend reduction using semantic caching + edge filtering in front of Exogram execution loops.' },
-      { stage: 'Architecture Specification', label: 'How to Reduce LLM API Token Costs in Production', publisher: 'Beehiiv', date: 'August 14, 2026', summary: 'Detailed cosine similarity threshold tuning (0.85-0.92) and sub-20ms edge cache hits.' }
+      { stage: 'Protocol Specification', label: 'How to Reduce LLM API Token Costs in Production', publisher: 'Beehiiv', date: 'August 14, 2026', summary: 'Detailed cosine similarity threshold tuning (0.85-0.92) and sub-20ms edge cache hits.' }
     ],
     evidenceLedger: [
       { id: 'ev-sc-4', title: 'How to Reduce LLM API Token Costs in Production', url: 'https://theaieconomist.beehiiv.com/p/how-to-reduce-llm-api-token-costs-in-production', publisher: 'Beehiiv', type: 'Architecture Guide', strength: 5, role: 'Specification', date: 'August 14, 2026' },

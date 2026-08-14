@@ -235,7 +235,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     provenanceTimeline: [
       { stage: 'Observation', label: 'Token Leak Telemetry Audit', publisher: 'Exogram Runtime Audit', date: 'July 2026', summary: 'Audited token spend across Exogram endpoints and discovered 40% of queries were redundant formatting or status checks.' },
       { stage: 'Tier-1 Article', label: 'AI Economist LinkedIn Publication', publisher: 'LinkedIn', date: 'August 13, 2026', url: 'https://www.linkedin.com/pulse/how-reduce-llm-costs-production-inference-dividend-model-ewing-nwtgc/', summary: 'Published definitive analysis establishing the Inference Dividend Model and 3-level edge optimization architecture.' },
-      { stage: 'Architecture Specification', label: 'Beehiiv Laboratory Architecture Breakdown', publisher: 'Beehiiv', date: 'August 14, 2026', url: 'https://theaieconomist.beehiiv.com/p/how-to-reduce-llm-api-token-costs-in-production', summary: 'Published concrete mathematical formulation of semantic caching thresholds (0.85-0.92 cosine similarity) and edge validation.' }
+      { stage: 'Protocol Specification', label: 'Beehiiv Laboratory Architecture Breakdown', publisher: 'Beehiiv', date: 'August 14, 2026', url: 'https://theaieconomist.beehiiv.com/p/how-to-reduce-llm-api-token-costs-in-production', summary: 'Published concrete mathematical formulation of semantic caching thresholds (0.85-0.92 cosine similarity) and edge validation.' }
     ],
     evidenceLedger: [
       { id: 'ev-idm-2', title: 'How to Reduce LLM API Token Costs in Production', url: 'https://theaieconomist.beehiiv.com/p/how-to-reduce-llm-api-token-costs-in-production', publisher: 'Beehiiv', type: 'Architecture Guide', strength: 5, role: 'Specification', date: 'August 14, 2026' },
