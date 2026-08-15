@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Space_Grotesk, JetBrains_Mono, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Navigation from './components/Navigation';
 import { Footer } from './components/footer';
@@ -11,10 +10,10 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import { ClerkProvider } from '@clerk/nextjs';
 import { PHProvider } from '@/lib/telemetry/posthog';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-grotesk' });
-const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
-const serif = Playfair_Display({ subsets: ['latin'], variable: '--font-serif' });
+const inter = { variable: 'font-sans' };
+const spaceGrotesk = { variable: 'font-grotesk' };
+const mono = { variable: 'font-mono' };
+const serif = { variable: 'font-serif' };
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -96,7 +95,7 @@ export default function RootLayout({
         <link rel="author" href="https://www.richardewing.io/about" />
         <link rel="me" href="https://linkedin.com/in/richard-ewing-mba" />
         <link rel="alternate" type="text/plain" href="https://www.richardewing.io/llms.txt" title="LLM-readable site information" />
-        <link rel="alternate" type="application/rss+xml" href="https://www.richardewing.io/feed.xml" title="Richard Ewing — Engineering Economics Blog" />
+        <link rel="alternate" type="application/rss+xml" href="https://www.richardewing.io/feed.xml" title="Richard Ewing - Engineering Economics Blog" />
         {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (
           <script defer data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN} src="https://plausible.io/js/script.js"></script>
         )}

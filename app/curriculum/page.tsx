@@ -1,174 +1,66 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
-import SyllabusPreview from '@/app/components/client/SyllabusPreview';
-import { tracks } from '@/app/lib/curriculum-tracks-ui';
-import FAQItem from '@/app/components/FAQItem';
-import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
+import { Sparkles, ArrowRight, BookOpen, Layers, CheckCircle2 } from 'lucide-react';
+import CurriculumMindmapViewer from '@/components/ai-product-builder/CurriculumMindmapViewer';
 
 export const metadata: Metadata = {
-    title: 'Executive AI Curriculum & Strategy Diagnostics | Richard Ewing',
-    description: 'Executive AI Curriculum provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
-    alternates: { canonical: 'https://www.richardewing.io/curriculum' },
-    openGraph: {
-        title: 'Executive AI Curriculum | 25 Tracks, 303 Modules | Richard Ewing',
-        description: 'Master AI economics through 25 structured authority tracks: financial modeling, governance, M&A diligence, agent economics, and executive strategy. $149/track or $999 all-access.',
-        url: 'https://www.richardewing.io/curriculum',
-        type: 'website',
-        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Executive AI Curriculum | 25 Tracks, 303 Modules | Richard Ewing',
-        description: 'Master AI economics through 25 structured authority tracks: financial modeling, governance, M&A diligence, agent economics, and executive strategy.',
-        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
-    },
+  title: 'The AI Product Builder: Complete Master Curriculum',
+  description: 'Exhaustive 4-week syllabus for technical founders. Day-by-day sprint guides covering product validation, FastAPI, semantic caching, and GTM.',
+  alternates: {
+    canonical: 'https://richardewing.io/curriculum',
+  },
+  openGraph: {
+    title: 'The AI Product Builder: Complete Master Curriculum',
+    description: 'Exhaustive 4-week syllabus for technical founders. Day-by-day sprint guides covering product validation, FastAPI, semantic caching, and GTM.',
+    url: 'https://richardewing.io/curriculum',
+    siteName: 'Richard Ewing',
+    type: 'website',
+  }
 };
 
 export default function CurriculumPage() {
-    return (
-        <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
-            <div className="page-container max-w-4xl mx-auto text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-violet-100 text-violet-700 mb-6">
-                    <span className="text-2xl">🎓</span>
-                </div>
-                <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                    The AI Economics Academy
-                </h1>
-                <p className="text-lg text-zinc-700 max-w-2xl mx-auto mb-12">
-                    25 authority curriculum tracks built from published frameworks in CIO.com and Built In — spanning AI economics, AI agents, leadership, career capital, M&A integration, and executive governance.
-                </p>
+  return (
+    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-sky-500 selection:text-slate-950">
+      {/* Header */}
+      <div className="relative pt-24 pb-12 sm:pt-32 sm:pb-16 border-b border-slate-900 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-900/20 via-slate-950 to-slate-950 pointer-events-none" />
+        
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-semibold uppercase tracking-wider mb-4">
+            <BookOpen className="w-3.5 h-3.5" />
+            20-Day Interactive Syllabus
+          </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
-                    <div className="p-6 bg-white rounded-2xl border border-zinc-200 shadow-sm text-center">
-                        <div className="text-3xl font-grotesk font-bold text-zinc-950">25</div>
-                        <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest mt-1">Authority Tracks</div>
-                    </div>
-                    <div className="p-6 bg-white rounded-2xl border border-zinc-200 shadow-sm text-center">
-                        <div className="text-3xl font-grotesk font-bold text-zinc-950">303</div>
-                        <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest mt-1">Deep Modules</div>
-                    </div>
-                    <div className="p-6 bg-purple-50 rounded-2xl border border-purple-200 shadow-sm text-center">
-                        <div className="text-3xl font-grotesk font-bold text-purple-700">$149</div>
-                        <div className="text-xs font-mono font-bold text-purple-500 uppercase tracking-widest mt-1">Per Track</div>
-                    </div>
-                </div>
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-4xl">
+            The AI Product Builder: Master Curriculum
+          </h1>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-                    <Link
-                        href="/vault/curriculum/tracks"
-                        className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-zinc-900 font-bold rounded-xl hover:opacity-90 transition-opacity shadow-lg"
-                    >
-                        Browse All 25 Tracks →
-                    </Link>
-                    <Link
-                        href="/vault"
-                        className="px-8 py-4 bg-white border border-zinc-300 text-zinc-800 font-bold rounded-xl hover:border-zinc-400 transition-colors"
-                    >
-                        Unlock Full Academy — $999
-                    </Link>
-                </div>
+          <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
+            The comprehensive operational blueprint taking technical engineers from problem validation to production deployment, legal incorporation, and 10 paying customers.
+          </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16 text-left">
-                    {[
-                        { title: 'Engineering Economics Foundations', tracks: '4 tracks', desc: 'R&D capital allocation, unit economics, financial modeling' },
-                        { title: 'AI, Cloud & Agent Economics', tracks: '10 tracks', desc: 'AI inference costs, cloud FinOps, agent governance, model arbitrage' },
-                        { title: 'Career Capital & Leadership', tracks: '7 tracks', desc: 'CTO training, engineering-to-executive, remote teams, DX economics' },
-                        { title: 'Executive & Board Economics', tracks: '8 tracks', desc: 'Board reporting, M&A integration, vendor economics, AI governance' },
-                    ].map((cat, i) => (
-                        <div key={i} className="p-6 bg-white rounded-2xl border border-zinc-200 shadow-sm">
-                            <div className="text-xs font-mono font-bold text-purple-500 uppercase tracking-widest mb-2">{cat.tracks}</div>
-                            <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-2">{cat.title}</h3>
-                            <p className="text-sm text-zinc-600">{cat.desc}</p>
-                        </div>
-                    ))}
-                </div>
+          <div className="mt-6 flex flex-wrap items-center gap-4 text-xs">
+            <Link
+              href="/apply"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-sky-400 hover:bg-sky-300 text-slate-950 font-bold uppercase tracking-wider transition-all shadow-md shadow-sky-400/20"
+            >
+              Apply for Pilot ($1,500) <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+            <Link
+              href="/programs/ai-product-builder"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 transition-all font-semibold"
+            >
+              Program Overview
+            </Link>
+          </div>
+        </div>
+      </div>
 
-                {/* Syllabus Preview Accordion Section */}
-                <section className="mb-20 pt-4">
-                    <SyllabusPreview tracks={tracks} />
-                </section>
-
-                {/* FAQ Section */}
-                <section className="mb-16 border-t border-zinc-300 pt-12 text-left">
-                    <script
-                        type="application/ld+json"
-                        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-                            '@context': 'https://schema.org',
-                            '@type': 'FAQPage',
-                            'mainEntity': [
-                                {
-                                    '@type': 'Question',
-                                    'name': 'What is the AI Economics Academy curriculum?',
-                                    'acceptedAnswer': {
-                                        '@type': 'Answer',
-                                        'text': 'The academy features 25 tracks and 303 deep modules covering AI economics, unit economics modeling, cloud FinOps, agentic security, M&A due diligence, and remote engineering management.'
-                                    }
-                                },
-                                {
-                                    '@type': 'Question',
-                                    'name': 'How much does the curriculum cost?',
-                                    'acceptedAnswer': {
-                                        '@type': 'Answer',
-                                        'text': 'Individual authority tracks cost $149 each, or you can purchase all-access to the entire academy for a one-time price of $999.'
-                                    }
-                                }
-                            ]
-                        }) }}
-                    />
-                    <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-6 text-center">Frequently Asked Questions</h2>
-                    <div className="space-y-4 max-w-2xl mx-auto">
-                        <FAQItem 
-                            question="What is the AI Economics Academy curriculum?" 
-                            answer="The academy features 25 tracks and 303 deep modules covering AI economics, unit economics modeling, cloud FinOps, agentic security, M&A due diligence, and remote engineering management."
-                        />
-                        <FAQItem 
-                            question="How much does the curriculum cost?" 
-                            answer="Individual authority tracks cost $149 each, or you can purchase all-access to the entire academy for a one-time price of $999."
-                        />
-                    </div>
-                </section>
-
-                <section className="mb-16 text-left">
-                    <div className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm max-w-4xl mx-auto">
-                        <div className="space-y-1">
-                            <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
-                                Empirical Context
-                            </span>
-                            <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
-                                Research Foundations
-                            </h2>
-                        </div>
-
-                        <div className="space-y-3 pt-2">
-                            {RESEARCH_CORPUS.slice(0, 6).map((art) => (
-                                <div key={art.id} className="bg-zinc-50 border border-zinc-200 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                                    <div className="space-y-1">
-                                        <div className="flex items-center gap-2 text-[10px] font-mono font-bold">
-                                            <span className="text-cyan-900 uppercase">{art.publisher}</span>
-                                            {art.date && <span className="text-zinc-500">• {art.date}</span>}
-                                        </div>
-                                        <h3 className="text-sm font-bold text-zinc-950">
-                                            {art.title}
-                                        </h3>
-                                    </div>
-                                    <a
-                                        href={art.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="px-3 py-1.5 bg-cyan-900 text-white text-xs font-mono font-bold rounded-xl whitespace-nowrap self-start sm:self-center hover:bg-cyan-800"
-                                    >
-                                        Read Work ↗
-                                    </a>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                <AdvisoryCTA variant="educational" />
-            </div>
-        </main>
-    );
+      {/* Main Interactive Curriculum Viewer */}
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        <CurriculumMindmapViewer />
+      </main>
+    </div>
+  );
 }

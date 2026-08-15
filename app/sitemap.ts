@@ -49,6 +49,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/contact`, 'monthly', 0.8);
     add(`${baseUrl}/careerwin`, 'monthly', 0.8);
     add(`${baseUrl}/directory`, 'weekly', 0.9);
+    add(`${baseUrl}/programs/ai-product-builder`, 'weekly', 1.0);
+    add(`${baseUrl}/curriculum`, 'weekly', 0.95);
+    add(`${baseUrl}/assessment`, 'weekly', 0.9);
+    add(`${baseUrl}/apply`, 'weekly', 0.95);
+    add(`${baseUrl}/resources/ai-prompt-library`, 'weekly', 0.9);
+    add(`${baseUrl}/vault/blueprints`, 'weekly', 0.9);
+    add(`${baseUrl}/starter-kit`, 'weekly', 0.9);
 
     // === TOOL PAGES ===
     add(`${baseUrl}/tools/pdi`, 'monthly', 0.7);
