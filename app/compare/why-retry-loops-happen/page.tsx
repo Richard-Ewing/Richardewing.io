@@ -6,8 +6,8 @@ import ExogramBridge from '@/components/ExogramBridge';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Why AI Retry Loops Cost Thousa & Strategy Diagnostics | Richard Ewing',
-    description: 'Why AI Retry Loops Cost Thousa provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Why AI Retry Loops Happen & Solutions',
+    description: 'How to break autonomous agent endless retry loops and prevent runaway inference token billing disasters.',
     keywords: ['AI retry loop', 'AI doom loop', 'AI retry storm', 'Claude Code stuck in a loop', 'AI same error over and over', 'Cursor keeps failing', 'Cursor keeps retrying', 'AI agent stuck', 'retry inflation', 'AI coding agent loop', 'Claude Code retry', 'context pollution', 'streak breaker AI'],
     openGraph: {
         title: 'Why Retry Loops Happen - AI Agent Retry Inflation',

@@ -7,8 +7,8 @@ import ShineBorder from '@/components/magicui/shine-border';
 import { BorderBeam } from '@/components/magicui/border-beam';
 
 export const metadata: Metadata = {
-    title: 'Stop Pricing AI Like SaaS or B & Strategy Diagnostics | Richard Ewing',
-    description: 'Stop Pricing AI Like SaaS or B provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'AI Unit Economics Audit Diagnostic',
+    description: 'Identify margin collapse risks and calculate true token-level profitability before shipping AI features.',
     keywords: [
         'AI Unit Economics',
         'Technical Insolvency Date',

@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Client Testimonials & Strategy Diagnostics | Richard Ewing',
-    description: 'Client Testimonials provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Executive Client Testimonials & Outcomes',
+    description: 'Verified reviews and quantitative ROI case outcomes from CTOs, CFOs, and PE operating partners.',
     keywords: ['R&D audit testimonials', 'technical debt audit reviews', 'AI economist testimonials', 'Richard Ewing reviews'],
     alternates: { canonical: 'https://www.richardewing.io/testimonials' },
-    openGraph: { title: 'Testimonials — What Clients Say', description: 'Client testimonials for R&D Capital Audits.', url: 'https://www.richardewing.io/testimonials', type: 'website' },
+    openGraph: { title: 'Testimonials  -  What Clients Say', description: 'Client testimonials for R&D Capital Audits.', url: 'https://www.richardewing.io/testimonials', type: 'website' },
 };
 
 const testimonials = [
@@ -30,7 +30,7 @@ export default function TestimonialsPage() {
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">Say</span>
                         </h1>
                         <p className="text-xl text-zinc-900 max-w-2xl mx-auto">
-                            From PE partners to CTOs to board directors — hear how R&D Capital Audits have transformed engineering investment decisions.
+                            From PE partners to CTOs to board directors  -  hear how R&D Capital Audits have transformed engineering investment decisions.
                         </p>
                     </div>
 

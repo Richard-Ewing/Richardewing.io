@@ -21,7 +21,7 @@ const VARIANTS = {
   },
   'compare': {
     headline: 'Need an expert verdict?',
-    body: "30-minute rapid-fire evaluation. You describe the problem, I tell you which approach wins — and why.",
+    body: "30-minute rapid-fire evaluation. You describe the problem, I tell you which approach wins  -  and why.",
     primaryLabel: 'Schedule Evaluation',
     primaryHref: '/api/buy/gut_check',
     primaryPrice: '$450',
@@ -118,7 +118,7 @@ export default function AdvisoryCTA({ variant, termTitle }: AdvisoryCTAProps) {
       </div>
 
       <p className="mt-4 text-xs font-mono text-zinc-500 uppercase tracking-widest">
-        Richard Ewing — AI Economist & Capital Auditor
+        Richard Ewing  -  AI Economist & Capital Auditor
       </p>
     </section>
   );

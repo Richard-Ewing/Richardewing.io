@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     description: 'Compare dollar-quantified Product Debt Index (PDI) vs static code quality metrics.',
     keywords: ['codeclimate alternative', 'technical debt measurement', 'pdi vs codeclimate', 'economic technical debt', 'code quality vs economics'],
     alternates: { canonical: 'https://www.richardewing.io/compare/pdi-vs-codeclimate' },
-    openGraph: { title: 'PDI vs CodeClimate — Economics vs Code Quality', description: 'Code quality metrics tell you the symptoms. PDI tells you the prognosis.', url: 'https://www.richardewing.io/compare/pdi-vs-codeclimate', type: 'article' },
+    openGraph: { title: 'PDI vs CodeClimate  -  Economics vs Code Quality', description: 'Code quality metrics tell you the symptoms. PDI tells you the prognosis.', url: 'https://www.richardewing.io/compare/pdi-vs-codeclimate', type: 'article' },
 };
 
 const rows = [
@@ -33,7 +33,7 @@ export default function PDIvsCodeClimatePage() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-pink-400">CodeClimate</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">
-                        CodeClimate tells you your code has problems. PDI tells you <span className="text-zinc-950 font-bold">when those problems will bankrupt your engineering capacity</span> — in dollars and quarters.
+                        CodeClimate tells you your code has problems. PDI tells you <span className="text-zinc-950 font-bold">when those problems will bankrupt your engineering capacity</span>  -  in dollars and quarters.
                     </p>
                     <div className="overflow-x-auto mb-16">
                         <table className="w-full border-collapse">

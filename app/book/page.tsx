@@ -4,12 +4,12 @@ import { NewsletterForm } from '../components/newsletter-form';
 import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-    title: 'Stop Losing Money on AI & Strategy Diagnostics | Richard Ewing',
-    description: 'Stop Losing Money on AI provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'The AI Economist Book & Excerpts',
+    description: 'Practical frameworks for stopping AI spend bleeding, calculating technical debt, and building durable software margins.',
     keywords: ['AI economist book', 'technical debt book', 'R&D capital allocation', 'engineering economics', 'Richard Ewing book'],
     alternates: { canonical: 'https://www.richardewing.io/book' },
     openGraph: {
-        title: 'The AI Economist — Book | Richard Ewing',
+        title: 'The AI Economist  -  Book | Richard Ewing',
         description: 'The definitive guide to R&D capital allocation and technical debt valuation.',
         url: 'https://www.richardewing.io/book',
         type: 'website',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'The AI Economist — Book | Richard Ewing',
+        title: 'The AI Economist  -  Book | Richard Ewing',
         description: 'The definitive guide to R&D capital allocation and technical debt valuation.',
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },
@@ -67,7 +67,7 @@ export default function BookPage() {
                 </p>
 
                 <p className="text-zinc-950 font-bold mb-12 text-lg leading-relaxed">
-                    Why most engineering organizations are making uninformed capital allocation decisions with every sprint —
+                    Why most engineering organizations are making uninformed capital allocation decisions with every sprint  - 
                     and the frameworks, metrics, and diagnostic tools to fix it. Based on advisory engagements with 50+ technology companies.
                 </p>
 

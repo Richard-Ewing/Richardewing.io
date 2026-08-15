@@ -399,7 +399,7 @@ export const CAREER_PATHS: CareerPath[] = [
         ],
         first90Days: {
             day30: "Perform a brutal autopsy on the AWS/GCP bill, isolating exactly which managed AI services are functioning as hidden taxation.",
-            day60: "Design the initial Bare-Metal proving ground—a hyper-localized cluster running a dedicated, high-density batch inference pipeline.",
+            day60: "Design the initial Bare-Metal proving ground - a hyper-localized cluster running a dedicated, high-density batch inference pipeline.",
             day90: "Migrate the heaviest, most predictable background batch AI workload off the cloud, securing an immediate 60% margin improvement."
         },
         interviewAntiPatterns: [
@@ -597,7 +597,7 @@ export const CAREER_PATHS: CareerPath[] = [
         ],
         first90Days: {
             day30: "Run a massive, silent network packet audit to locate exactly where engineering teams are circumventing the proxy to hit OpenAI/Anthropic APIs natively.",
-            day60: "Execute 'The Purge'—terminating unauthorized webhook integrations and shadow slack-bots.",
+            day60: "Execute 'The Purge' - terminating unauthorized webhook integrations and shadow slack-bots.",
             day90: "Deploy the 'Safe Haven' internal gateway, provisioning governed, enterprise-grade, zero-retention LLM access to immediately replace the banned workflows."
         },
         interviewAntiPatterns: [
@@ -635,7 +635,7 @@ export const CAREER_PATHS: CareerPath[] = [
         manifesto: [
             'The internet has been scraped dry. AI models can no longer achieve exponential leaps simply by ingesting more public data. The future belongs to those who generate pristine, high-fidelity Synthetic Data.',
             'As a Synthetic Data Architect, you build pipelines that use frontier models to generate adversarial training scenarios, edge-case evaluations, and domain-locked knowledge graphs.',
-            'You are the vanguard against "Model Collapse"—the cognitive inbreeding that occurs when AI trains on AI-generated sludge. You establish the "ground truth" anchors that keep the enterprise models sane.'
+            'You are the vanguard against "Model Collapse" - the cognitive inbreeding that occurs when AI trains on AI-generated sludge. You establish the "ground truth" anchors that keep the enterprise models sane.'
         ],
         glossaryTerms: ['rag', 'large-language-model', 'ai-inference', 'cost-of-predictivity', 'ai-cogs'],
         curriculumKeywords: ['data', 'synthetic', 'rag', 'fine-tuning', 'models'],

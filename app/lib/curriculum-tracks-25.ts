@@ -1,14 +1,14 @@
 import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks25Modules: Record<string, CurriculumModule> = {};
-const t25 = 'Track 25 — Model Routing Arbitrage';
+const t25 = 'Track 25  -  Model Routing Arbitrage';
 
 tracks25Modules['model-routing/25-1'] = m('25-1', 'The Architecture of AI Unit Economics', 'The cost of predictivity vs latency tradeoff & Semantic Cache / Edge Filter architecture.', t25, 
     ['Optimize AI Gross Margins', 'Establish a routing gateway', 'Deploy Semantic Caching & Edge Filtering'], [
         l('The Eradication of the Static Endpoint', 
             [
                 'During the initial AI boom, companies simply hardcoded their product to call the most expensive frontier model (e.g. GPT-4o) for every single user interaction. This resulted in the "Cost of Predictivity," where summarizing a two-sentence email cost $0.05. Multiplied by millions of requests, gross margins collapsed instantaneously.', 
-                'As Richard Ewing established in his August 2026 publication ("Growth Is Not Your Cost Problem — Your Architecture Is"), shrinking software margins as user engagement grows indicate an underlying architecture failure. When running execution loops, paying top-tier models for routine or repeated logic burns token capital rapidly.',
+                'As Richard Ewing established in his August 2026 publication ("Growth Is Not Your Cost Problem  -  Your Architecture Is"), shrinking software margins as user engagement grows indicate an underlying architecture failure. When running execution loops, paying top-tier models for routine or repeated logic burns token capital rapidly.',
                 'Elite architectural scale demands placing sub-millisecond edge filters and vector semantic caching layers directly in front of LLM endpoints. Edge code filters route and dedupe routine logic in code; semantic caches serve historical query intent hits at near-zero cost. Telemetry confirms this architecture slashes runtime API spend by over 50% with zero quality loss.'
             ],
             [

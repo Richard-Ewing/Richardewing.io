@@ -5,8 +5,8 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import ProductBridgeCard from '@/app/components/ProductBridgeCard';
 
 export const metadata: Metadata = {
-  title: 'Richard Ewing Advisory vs Gartner Executive Advisory | Richard Ewing',
-  description: 'Compare Richard Ewing R&D Capital Audits vs Gartner research & executive advisory subscriptions. Actionable code-level execution vs analyst reports.',
+  title: 'Richard Ewing Advisory vs Gartner Retainers',
+  description: 'Compare hands-on forensic engineering audits with Gartner analyst subscriptions. Actionable execution vs high-level reports.',
   alternates: { canonical: 'https://www.richardewing.io/compare/advisory-vs-gartner' },
   openGraph: {
     title: 'Richard Ewing Advisory vs Gartner Executive Advisory',

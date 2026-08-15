@@ -44,7 +44,7 @@ export default function CheckoutButton({ productId, label, icon = 'file', varian
     else if (variant === 'ghost') baseClass = "block w-full py-3 mt-4 text-center text-xs font-bold font-mono uppercase tracking-widest rounded bg-zinc-100 text-zinc-900 hover:bg-zinc-200 transition-colors";
     else baseClass += "border border-zinc-500 text-zinc-950 font-bold hover:bg-zinc-50";
 
-    const defaultLabel = `Get Access — $${PRODUCTS[productId]?.price ? PRODUCTS[productId].price / 100 : 29}`;
+    const defaultLabel = `Get Access  -  $${PRODUCTS[productId]?.price ? PRODUCTS[productId].price / 100 : 29}`;
 
     return (
         <button

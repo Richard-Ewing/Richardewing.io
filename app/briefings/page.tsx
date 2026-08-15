@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import BriefingsPage from './content';
 
 export const metadata: Metadata = {
-    title: 'Executive AI Briefings & Strategy Diagnostics',
-    description: 'Executive AI Briefings provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Executive AI Research Briefings',
+    description: 'Curated monthly briefings on enterprise AI unit economics, R&D capital efficiency, and agentic governance.',
     keywords: [
         'executive briefings',
         'war-time leadership',

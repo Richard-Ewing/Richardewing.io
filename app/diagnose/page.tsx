@@ -6,8 +6,8 @@ import RuntimeEscalationSimulator from '../components/RuntimeEscalationSimulator
 import GovernanceMaturityAssessment from '../components/GovernanceMaturityAssessment';
 
 export const metadata: Metadata = {
-    title: 'Free AI & Engineering Diagnost & Strategy Diagnostics | Richard Ewing',
-    description: 'Free AI & Engineering Diagnost provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Free AI Diagnostic Tools Hub',
+    description: 'Access boardroom-ready diagnostic instruments to measure technical debt, AI unit costs, and headcount efficiency.',
     alternates: { canonical: 'https://www.richardewing.io/diagnose' },
     openGraph: {
         title: 'Diagnose Your AI & Engineering Risk',
@@ -23,7 +23,7 @@ const painRoutes = [
         tool: 'AI Unit Economics Benchmark',
         slug: '/tools/aueb',
         time: '3 min',
-        output: 'Your exact cost collapse point — the usage volume where your AI feature starts destroying margin',
+        output: 'Your exact cost collapse point  -  the usage volume where your AI feature starts destroying margin',
         icon: DollarSign,
         color: 'rose',
         stat: 'POCs cost $100s. Production costs $1M+.',
@@ -33,7 +33,7 @@ const painRoutes = [
         tool: 'Product Debt Index',
         slug: '/tools/pdi',
         time: '4 min',
-        output: 'Your Technical Insolvency Date — the quarter when maintenance consumes 100% of engineering capacity',
+        output: 'Your Technical Insolvency Date  -  the quarter when maintenance consumes 100% of engineering capacity',
         icon: TrendingDown,
         color: 'violet',
         stat: 'Average: 47% of eng time is maintenance.',
@@ -43,7 +43,7 @@ const painRoutes = [
         tool: 'APER Calculator',
         slug: '/tools/aper',
         time: '2 min',
-        output: 'Revenue per engineer benchmarked against your industry — the metric your board should track',
+        output: 'Revenue per engineer benchmarked against your industry  -  the metric your board should track',
         icon: Calculator,
         color: 'blue',
         stat: 'Top quartile: $450K+ revenue/engineer.',
@@ -53,7 +53,7 @@ const painRoutes = [
         tool: 'Runtime Failure Index',
         slug: '/runtime-failure-index',
         time: '5 min read',
-        output: 'Root cause analysis of every enterprise AI failure mode — context rot, retry inflation, verification collapse',
+        output: 'Root cause analysis of every enterprise AI failure mode  -  context rot, retry inflation, verification collapse',
         icon: AlertTriangle,
         color: 'amber',
         stat: '78% of AI agents are over-privileged.',
@@ -63,7 +63,7 @@ const painRoutes = [
         tool: 'Enterprise Value × Eng Calculator',
         slug: '/tools/ev-se',
         time: '2 min',
-        output: 'Your EV/Software Engineer ratio vs. public benchmarks — reveals whether R&D creates or destroys value',
+        output: 'Your EV/Software Engineer ratio vs. public benchmarks  -  reveals whether R&D creates or destroys value',
         icon: Gauge,
         color: 'emerald',
         stat: 'Median EV/SE: $3.2M. Bottom decile: $400K.',
@@ -107,7 +107,7 @@ export default function DiagnosePage() {
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-violet-500">Right Now?</span>
                         </h1>
                         <p className="text-lg text-zinc-600 max-w-2xl mx-auto mb-2">
-                            Start with the pain. Each tool diagnoses a specific instability — and gives you a number your board can act on.
+                            Start with the pain. Each tool diagnoses a specific instability  -  and gives you a number your board can act on.
                         </p>
                         <p className="text-sm text-zinc-500 font-medium">
                             <Clock className="w-4 h-4 inline mr-1" />
@@ -174,10 +174,10 @@ export default function DiagnosePage() {
             {/* Proof bar */}
             <ProofRail />
 
-            {/* Escalation simulator — feel the operational danger */}
+            {/* Escalation simulator  -  feel the operational danger */}
             <RuntimeEscalationSimulator />
 
-            {/* Governance Maturity Assessment — intermediate trust artifact */}
+            {/* Governance Maturity Assessment  -  intermediate trust artifact */}
             <GovernanceMaturityAssessment />
 
             <div className="page-container">

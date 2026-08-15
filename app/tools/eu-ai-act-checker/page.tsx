@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import EUAIActChecker from './content';
 
 export const metadata: Metadata = {
-    title: 'EU AI Act Starts August 2026 & Strategy Diagnostics | Richard Ewing',
-    description: 'EU AI Act Starts August 2026 provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'EU AI Act Compliance Assessment',
+    description: 'Determine your regulatory risk tier and technical documentation obligations under the EU AI Act.',
     keywords: [
         'EU AI Act compliance',
         'AI governance audit',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         canonical: 'https://www.richardewing.io/tools/eu-ai-act-checker',
     },
     openGraph: {
-        title: 'EU AI Act Enforcement Starts August 2026 — Score Your Readiness',
+        title: 'EU AI Act Enforcement Starts August 2026  -  Score Your Readiness',
         description: 'Fines up to 7% of global turnover. Score your compliance across 8 areas in 3 minutes.',
         url: 'https://www.richardewing.io/tools/eu-ai-act-checker',
         type: 'website',

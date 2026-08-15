@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Built In Articles & Strategy Diagnostics | Richard Ewing',
-    description: 'Built In Articles provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Built In Research Publications',
+    description: 'Published architectural research and operational frameworks by Richard Ewing on Built In.',
     keywords: ['Richard Ewing Built In', 'engineering economics articles', 'scaling engineering teams', 'developer productivity', 'AI economist Built In'],
     alternates: { canonical: 'https://www.richardewing.io/articles/recap/built-in' },
     openGraph: { title: 'Richard Ewing on Built In', description: 'Published articles on engineering team economics and developer productivity.', url: 'https://www.richardewing.io/articles/recap/built-in', type: 'article' },
@@ -39,7 +39,7 @@ const articles = [
 export default function BuiltInRecapPage() {
     const articleSchema = {
         '@context': 'https://schema.org', '@type': 'Article',
-        headline: 'Richard Ewing Built In Articles — Engineering Economics for Scaling Teams',
+        headline: 'Richard Ewing Built In Articles  -  Engineering Economics for Scaling Teams',
         author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/principal' },
         publisher: { '@type': 'Organization', name: 'Built In' },
         url: 'https://www.richardewing.io/articles/recap/built-in',
@@ -67,7 +67,7 @@ export default function BuiltInRecapPage() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">Built In</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-4 max-w-2xl">
-                        Richard Ewing&apos;s articles on Built In — the leading platform for startup and tech company culture, covering engineering team economics, developer productivity, and scaling strategies.
+                        Richard Ewing&apos;s articles on Built In  -  the leading platform for startup and tech company culture, covering engineering team economics, developer productivity, and scaling strategies.
                      </p>
                     <p className="text-sm font-semibold text-zinc-950 mb-12">Built In reaches 3M+ tech professionals monthly across 8 metro markets.</p>
 

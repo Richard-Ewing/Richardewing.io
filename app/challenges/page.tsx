@@ -5,8 +5,8 @@ import { ArrowRight, DollarSign, Shield, AlertTriangle, LucideIcon } from 'lucid
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/challenges' },
-    title: 'Enterprise AI Challenges - Cost, Governance & Engineering Economics | Richard Ewing',
-    description: 'Nine enterprise failure modes where AI creates measurable financial risk. From billing shock to governance drift, each challenge maps to a diagnostic and remediation path.',
+    title: 'Enterprise AI Failure Modes & Challenges',
+    description: 'Nine enterprise failure modes where AI creates measurable financial risk. From billing shock to governance drift, with diagnostic and remediation paths.',
     openGraph: {
         title: 'Enterprise AI Challenges - Cost, Governance & Engineering Economics',
         description: 'Nine enterprise failure modes where AI creates measurable financial risk. Each challenge maps to a diagnostic and remediation path.',

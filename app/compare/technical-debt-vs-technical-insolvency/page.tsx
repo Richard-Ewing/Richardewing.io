@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Technical Debt vs Insolvency & Strategy Diagnostics | Richard Ewing',
-    description: 'Technical Debt vs Insolvency provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Technical Debt vs Technical Insolvency',
+    description: 'The critical boundary where software maintenance interest exceeds feature velocity, causing roadmap bankruptcy.',
     keywords: ['technical debt', 'technical insolvency', 'technical insolvency date', 'technical debt vs technical insolvency', 'innovation tax', 'engineering capacity'],
     alternates: { canonical: 'https://www.richardewing.io/compare/technical-debt-vs-technical-insolvency' },
     openGraph: { title: 'Technical Debt vs Technical Insolvency', description: 'Technical debt slows you down. Technical insolvency stops you completely. Find out when your engineering team will hit the wall.', url: 'https://www.richardewing.io/compare/technical-debt-vs-technical-insolvency', type: 'article' },

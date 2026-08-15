@@ -58,7 +58,7 @@ export default function robots(): MetadataRoute.Robots {
                 allow: '/',
             },
 
-            // === AI TRAINING CRAWLERS (Allowed — we WANT retrieval presence) ===
+            // === AI TRAINING CRAWLERS (Allowed  -  we WANT retrieval presence) ===
             {
                 userAgent: 'GPTBot',
                 allow: '/',

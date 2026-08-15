@@ -7,8 +7,8 @@ import { professionalServiceSchema } from '@/app/lib/schemas';
 import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 
 export const metadata: Metadata = {
-    title: 'AI Cost Attribution & Margin Protection Audit | Richard Ewing',
-    description: 'The AI Cost Governance Review calculates exact unit economics and collapse points. Enforce hard cost caps before API overruns wreck your R&D roadmap.',
+    title: 'AI Cost Attribution & Margin Audit',
+    description: 'Forensic audit of AI token expenditure, infrastructure overhead, and unit margin collapse risks.',
     alternates: {
         canonical: 'https://www.richardewing.io/services/ai-cost-audit',
     },

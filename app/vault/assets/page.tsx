@@ -6,8 +6,8 @@ import { Download, ShieldCheck, Database, ChevronRight, Lock } from 'lucide-reac
 import { SKILLS } from '@/lib/content/skills';
 
 export const metadata = {
-    title: 'Governance Assets & Strategy Diagnostics | Richard Ewing',
-    description: 'Governance Assets provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Enterprise Governance Assets',
+    description: 'Downloadable financial pro-formas, legal contracts, policy-as-code manifests, and deployment templates.',
 };
 
 export default async function AssetsPage() {

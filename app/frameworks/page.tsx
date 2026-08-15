@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import FrameworksPage from './content';
 
 export const metadata: Metadata = {
-    title: 'AI Diagnostic Frameworks & Strategy Diagnostics | Richard Ewing',
-    description: 'AI Diagnostic Frameworks provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'AI Economics Frameworks Directory',
+    description: 'Complete directory of 19 diagnostic frameworks covering technical debt valuation, unit economics, and R&D capital.',
     keywords: [
         'AI governance frameworks',
         'technical debt frameworks',

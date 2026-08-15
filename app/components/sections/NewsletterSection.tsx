@@ -78,7 +78,7 @@ const NewsletterSection = () => {
                         ) : (
                             <>
                                 <p className="text-zinc-950 mb-8 max-w-xl mx-auto">
-                                    Subscribe and get the <strong className="text-zinc-900">R&D Audit Checklist</strong> — The 15 questions I ask in every $7,500 engagement.
+                                    Subscribe and get the <strong className="text-zinc-900">R&D Audit Checklist</strong>  -  The 15 questions I ask in every $7,500 engagement.
                                 </p>
 
                                 <form onSubmit={handleSubmit} className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">

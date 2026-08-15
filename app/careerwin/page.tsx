@@ -6,8 +6,8 @@ import CareerWinBenchmarkVisual from '@/app/components/CareerWinBenchmarkVisual'
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 export const metadata: Metadata = {
-    title: 'CareerWin Platform Career Intelligence | Richard Ewing',
-    description: 'CareerWin is a career intelligence platform for engineers and product leaders. Access role benchmarks and build a data-backed compensation strategy.',
+    title: 'CareerWin Platform Career Intelligence',
+    description: 'Career intelligence platform for engineers and product leaders. Access role benchmarks and build a data-backed compensation strategy.',
     alternates: { canonical: 'https://www.richardewing.io/careerwin' },
     openGraph: {
         title: 'CareerWin Platform Career Intelligence | Richard Ewing',
@@ -88,7 +88,7 @@ export default function CareerWinPage() {
                                     &ldquo;Richard&apos;s leveling intelligence helped me negotiate a $40K compensation increase and a Staff Engineer title I didn&apos;t know I qualified for. CareerWin OS turns vague resume claims into recruiter-stopping evidence.&rdquo;
                                 </blockquote>
                                 <div className="text-xs font-mono font-bold text-zinc-700">
-                                    — Senior Engineer → Staff Engineer, Series B SaaS (Verified Outcome)
+                                     -  Senior Engineer → Staff Engineer, Series B SaaS (Verified Outcome)
                                 </div>
                             </div>
                         </div>

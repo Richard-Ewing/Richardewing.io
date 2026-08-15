@@ -42,7 +42,7 @@ export default function Page() {
             { '@type': 'HowToStep', position: 1, name: 'Enter team size', text: 'Input your total engineering headcount and average fully-loaded cost per engineer.' },
             { '@type': 'HowToStep', position: 2, name: 'Estimate maintenance allocation', text: 'Estimate the percentage of engineering time currently spent on maintenance vs. new features.' },
             { '@type': 'HowToStep', position: 3, name: 'Set growth parameters', text: 'Define your expected maintenance growth rate and hiring capacity.' },
-            { '@type': 'HowToStep', position: 4, name: 'Calculate insolvency date', text: 'The calculator projects your Technical Insolvency Date — the quarter when maintenance consumes 100% of capacity.' },
+            { '@type': 'HowToStep', position: 4, name: 'Calculate insolvency date', text: 'The calculator projects your Technical Insolvency Date  -  the quarter when maintenance consumes 100% of capacity.' },
         ],
     };
 

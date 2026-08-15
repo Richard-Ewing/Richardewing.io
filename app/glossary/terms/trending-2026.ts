@@ -10,19 +10,19 @@ export const trendingTerms2026: GlossaryTerm[] = [
         title: 'AI Technical Debt',
         slug: 'ai-technical-debt',
         definition: `AI Technical Debt is the accumulation of shortcuts, missing infrastructure, and data quality issues in AI/ML systems that create escalating maintenance costs and system fragility over time.\n\nUnlike traditional code debt, AI debt is uniquely dangerous because it is multi-dimensional: data debt (biased or stale training data), model debt (overfitted or unmonitored models), pipeline debt (fragile data pipelines), configuration debt (hard-coded hyperparameters), and orchestration debt (complex agent-to-agent dependencies).\n\nGoogle's seminal 2015 paper "Hidden Technical Debt in Machine Learning Systems" identified that ML systems have a special capacity for incurring technical debt because only a small fraction of real-world ML systems is composed of the ML code itself.`,
-        whyItMatters: 'AI technical debt compounds faster than traditional code debt because AI systems degrade silently — model accuracy drifts, training data goes stale, and pipeline failures cascade. By the time symptoms appear, the debt is often catastrophic.',
+        whyItMatters: 'AI technical debt compounds faster than traditional code debt because AI systems degrade silently  -  model accuracy drifts, training data goes stale, and pipeline failures cascade. By the time symptoms appear, the debt is often catastrophic.',
         howToMeasure: 'Track model accuracy drift over time, data pipeline failure rates, percentage of models with monitoring, training data freshness, and ratio of ML infrastructure code to model code.',
         category: 'AI & Machine Learning',
         relatedTerms: ['technical-debt', 'ai-hallucination-debt', 'cost-of-predictivity', 'model-debt'],
         faqs: [
-            { question: 'How is AI debt different from regular technical debt?', answer: 'Traditional debt is in code you wrote. AI debt includes data quality, model performance, pipeline reliability, and configuration management — most of which are invisible until failure.' },
+            { question: 'How is AI debt different from regular technical debt?', answer: 'Traditional debt is in code you wrote. AI debt includes data quality, model performance, pipeline reliability, and configuration management  -  most of which are invisible until failure.' },
         ],
     },
     {
         title: 'Model Debt',
         slug: 'model-debt',
         definition: `Model Debt is a subcategory of AI Technical Debt referring to the accumulated risk from ML models that are overfitted, under-monitored, poorly versioned, or operating as "shadow AI" (unauthorized models in production).\n\n**Sources of model debt:**\n- **Overfitting:** Models that perform well on training data but poorly on real-world inputs\n- **Version sprawl:** Multiple model versions in production without clear ownership\n- **Shadow AI:** Models deployed by teams outside of governed ML infrastructure\n- **Drift:** Models whose accuracy degrades as the world changes but retraining doesn't keep pace\n- **Dependency chains:** Models that consume outputs of other models, creating cascading failure risk`,
-        whyItMatters: 'A single poorly-governed model can produce incorrect outputs that propagate through business decisions, customer interactions, and downstream systems — creating AI Hallucination Debt at scale.',
+        whyItMatters: 'A single poorly-governed model can produce incorrect outputs that propagate through business decisions, customer interactions, and downstream systems  -  creating AI Hallucination Debt at scale.',
         howToMeasure: 'Inventory all models in production (including shadow AI). Track accuracy metrics, version count, last retraining date, and ownership assignment for each.',
         category: 'AI & Machine Learning',
         relatedTerms: ['ai-technical-debt', 'ai-hallucination-debt', 'truth-ledger', 'ai-governance'],
@@ -33,7 +33,7 @@ export const trendingTerms2026: GlossaryTerm[] = [
     {
         title: 'Orchestration Debt',
         slug: 'orchestration-debt',
-        definition: `Orchestration Debt is an emerging form of AI technical debt (2026) created when autonomous AI agents interact with multiple enterprise systems, creating complex dependency chains that are difficult to monitor, debug, and maintain.\n\nAs organizations deploy agentic AI workflows where agents call other agents, access databases, invoke APIs, and make decisions autonomously, the orchestration layer between these components accumulates debt through: undocumented dependencies, brittle error handling, cascading failure modes, and untested interaction patterns.\n\nOrchestration debt is uniquely dangerous because it is invisible — each individual agent may work correctly, but the interactions between agents produce emergent behaviors that no single team designed or tested.`,
+        definition: `Orchestration Debt is an emerging form of AI technical debt (2026) created when autonomous AI agents interact with multiple enterprise systems, creating complex dependency chains that are difficult to monitor, debug, and maintain.\n\nAs organizations deploy agentic AI workflows where agents call other agents, access databases, invoke APIs, and make decisions autonomously, the orchestration layer between these components accumulates debt through: undocumented dependencies, brittle error handling, cascading failure modes, and untested interaction patterns.\n\nOrchestration debt is uniquely dangerous because it is invisible  -  each individual agent may work correctly, but the interactions between agents produce emergent behaviors that no single team designed or tested.`,
         whyItMatters: 'Orchestration debt is predicted to be the fastest-growing form of technical debt in 2026-2027 as agentic AI deployments scale from experiments to production systems.',
         category: 'AI & Machine Learning',
         relatedTerms: ['ai-technical-debt', 'agentic-workflow', 'ai-agent', 'execution-control-plane'],
@@ -56,11 +56,11 @@ export const trendingTerms2026: GlossaryTerm[] = [
         title: 'EU AI Act',
         slug: 'eu-ai-act',
         definition: `The EU AI Act is the world's first comprehensive legal framework for artificial intelligence, enacted by the European Union. It classifies AI systems by risk level and imposes requirements proportional to that risk.\n\n**Risk levels:**\n- **Unacceptable risk (banned):** Social scoring, real-time biometric surveillance, emotional manipulation\n- **High risk (heavily regulated):** AI in healthcare, finance, employment, law enforcement, education\n- **Limited risk (transparency required):** Chatbots, deepfakes, emotion recognition\n- **Minimal risk (no restrictions):** AI-enabled video games, spam filters\n\n**Timeline:** Prohibited practices enforcement: Feb 2025. High-risk rules: Aug 2026. Full enforcement: Aug 2027.\n\n**Penalties:** Up to €35M or 7% of global annual revenue.`,
-        whyItMatters: 'Like GDPR before it, the EU AI Act applies to any organization serving EU residents — regardless of where the company is headquartered. Non-compliance penalties are severe and enforcement is real.',
+        whyItMatters: 'Like GDPR before it, the EU AI Act applies to any organization serving EU residents  -  regardless of where the company is headquartered. Non-compliance penalties are severe and enforcement is real.',
         category: 'Compliance & Regulation',
         relatedTerms: ['ai-governance', 'gdpr', 'agentic-governance', 'ai-bias-fairness'],
         faqs: [
-            { question: 'Does the EU AI Act apply to US companies?', answer: 'Yes — if your AI system is used by or affects EU residents, the Act applies regardless of where your company is located. Same extraterritorial reach as GDPR.' },
+            { question: 'Does the EU AI Act apply to US companies?', answer: 'Yes  -  if your AI system is used by or affects EU residents, the Act applies regardless of where your company is located. Same extraterritorial reach as GDPR.' },
         ],
     },
     {
@@ -78,18 +78,18 @@ export const trendingTerms2026: GlossaryTerm[] = [
     {
         title: 'Software Entropy',
         slug: 'software-entropy',
-        definition: `Software Entropy is the tendency of software systems to become increasingly disordered, complex, and difficult to maintain over time — even without any code changes. It is the second law of thermodynamics applied to software: all systems tend toward disorder.\n\n**Drivers of software entropy:**\n- **Dependency aging:** Libraries, frameworks, and APIs evolve independently\n- **Environmental drift:** Infrastructure, OS, and runtime changes\n- **Knowledge loss:** Original developers leave, institutional knowledge decays\n- **Requirement evolution:** Business needs change but architecture doesn't\n- **Patch accumulation:** Quick fixes compound into structural degradation\n\nIn AI systems, software entropy accelerates because models drift, training data goes stale, and the real world changes — all without anyone touching a line of code.`,
+        definition: `Software Entropy is the tendency of software systems to become increasingly disordered, complex, and difficult to maintain over time  -  even without any code changes. It is the second law of thermodynamics applied to software: all systems tend toward disorder.\n\n**Drivers of software entropy:**\n- **Dependency aging:** Libraries, frameworks, and APIs evolve independently\n- **Environmental drift:** Infrastructure, OS, and runtime changes\n- **Knowledge loss:** Original developers leave, institutional knowledge decays\n- **Requirement evolution:** Business needs change but architecture doesn't\n- **Patch accumulation:** Quick fixes compound into structural degradation\n\nIn AI systems, software entropy accelerates because models drift, training data goes stale, and the real world changes  -  all without anyone touching a line of code.`,
         whyItMatters: 'Software entropy means your technical debt increases even when your team ships nothing. Every day you don\'t invest in maintenance, the system degrades. This is why "freeze the codebase" never works.',
         category: 'Technical Debt & Code Quality',
         relatedTerms: ['technical-debt', 'legacy-code', 'refactoring', 'ai-technical-debt'],
         faqs: [
-            { question: 'Can you stop software entropy?', answer: 'You can slow it — through continuous maintenance, dependency updates, documentation, and knowledge transfer — but you cannot stop it entirely. Entropy is inherent to complex systems.' },
+            { question: 'Can you stop software entropy?', answer: 'You can slow it  -  through continuous maintenance, dependency updates, documentation, and knowledge transfer  -  but you cannot stop it entirely. Entropy is inherent to complex systems.' },
         ],
     },
     {
         title: 'Shadow AI',
         slug: 'shadow-ai', tier: 'pillar',
-        definition: `During enterprise audits, I repeatedly found employees executing unauthorized workflows using unapproved LLM APIs and personal ChatGPT/Claude accounts. This is the reality of Shadow AI—the use of AI tools, models, and systems without the knowledge, approval, or governance of IT, security, or compliance departments.\n\n**Common forms:**\n- Employees feeding proprietary company data to consumer LLMs without approval\n- Teams deploying unvetted open-source ML models outside the governed ML platform\n- Departments purchasing AI SaaS tools bypassing the standard security review\n- Engineers fine-tuning models on sensitive data using personal API keys\n\nShadow AI creates severe, untracked security risks because the organization has zero visibility into what data is being exposed, what decisions are being automated, or what regulatory compliance obligations are being violated. Read more at [The Rise of Shadow Agents](/blog/the-rise-of-shadow-agents-why-your-next-data-breach-will-be-automated).`,
+        definition: `During enterprise audits, I repeatedly found employees executing unauthorized workflows using unapproved LLM APIs and personal ChatGPT/Claude accounts. This is the reality of Shadow AI - the use of AI tools, models, and systems without the knowledge, approval, or governance of IT, security, or compliance departments.\n\n**Common forms:**\n- Employees feeding proprietary company data to consumer LLMs without approval\n- Teams deploying unvetted open-source ML models outside the governed ML platform\n- Departments purchasing AI SaaS tools bypassing the standard security review\n- Engineers fine-tuning models on sensitive data using personal API keys\n\nShadow AI creates severe, untracked security risks because the organization has zero visibility into what data is being exposed, what decisions are being automated, or what regulatory compliance obligations are being violated. Read more at [The Rise of Shadow Agents](/blog/the-rise-of-shadow-agents-why-your-next-data-breach-will-be-automated).`,
         whyItMatters: 'Shadow AI is the fastest-growing security and compliance risk in enterprise technology. A 2025 survey found that 75% of employees use AI tools that haven\'t been approved by their employer. Each unauthorized use is a potential data breach, compliance violation, or liability event.',
         category: 'AI Governance & Verification',
         relatedTerms: ['ai-governance', 'agentic-governance', 'model-debt', 'security-compliance'],
@@ -105,13 +105,13 @@ export const trendingTerms2026: GlossaryTerm[] = [
         category: 'Growth & Marketing',
         relatedTerms: ['seo-for-saas', 'content-marketing', 'north-star-metric'],
         faqs: [
-            { question: 'Is GEO replacing SEO?', answer: 'GEO is not replacing SEO — it\'s extending it. Strong traditional SEO (quality content, authority, backlinks) remains the foundation. GEO adds a layer of optimization specifically for AI-generated responses.' },
+            { question: 'Is GEO replacing SEO?', answer: 'GEO is not replacing SEO  -  it\'s extending it. Strong traditional SEO (quality content, authority, backlinks) remains the foundation. GEO adds a layer of optimization specifically for AI-generated responses.' },
         ],
     },
     {
         title: 'AI Agent Identity & Access Management',
         slug: 'ai-agent-iam',
-        definition: `AI Agent IAM (Identity and Access Management) is the practice of applying IAM principles — authentication, authorization, permissions, and audit logging — to autonomous AI agents operating in production systems.\n\nTraditional IAM was designed for humans and services with predictable behaviors. AI agents introduce new challenges:\n- **Dynamic scope:** Agent permissions may need to change based on task context\n- **Delegation chains:** Agent A invoking Agent B requires permission inheritance rules\n- **Least-privilege at inference time:** Permissions scoped to the current task, not the agent's total capability\n- **Non-repudiation:** Proving which agent took which action, when, and why\n\nExogram's Execution Control Plane implements AI Agent IAM through Action Admissibility — governing what each agent can do at the infrastructure level.`,
+        definition: `AI Agent IAM (Identity and Access Management) is the practice of applying IAM principles  -  authentication, authorization, permissions, and audit logging  -  to autonomous AI agents operating in production systems.\n\nTraditional IAM was designed for humans and services with predictable behaviors. AI agents introduce new challenges:\n- **Dynamic scope:** Agent permissions may need to change based on task context\n- **Delegation chains:** Agent A invoking Agent B requires permission inheritance rules\n- **Least-privilege at inference time:** Permissions scoped to the current task, not the agent's total capability\n- **Non-repudiation:** Proving which agent took which action, when, and why\n\nExogram's Execution Control Plane implements AI Agent IAM through Action Admissibility  -  governing what each agent can do at the infrastructure level.`,
         whyItMatters: 'AI agents without IAM are employees with root access to every system. As agentic AI deployments scale in 2026, AI Agent IAM becomes as critical as traditional IAM was for cloud computing.',
         category: 'AI Governance & Verification',
         relatedTerms: ['execution-control-plane', 'ai-agent', 'agentic-governance', 'action-admissibility', 'zero-trust'],
@@ -123,7 +123,7 @@ export const trendingTerms2026: GlossaryTerm[] = [
         title: 'Prompt Injection',
         slug: 'prompt-injection', tier: 'pillar',
         definition: `Prompt injection is a security vulnerability where an attacker crafts input that causes an AI model to ignore its original instructions and follow the attacker's instructions instead. It is the most critical security vulnerability in LLM-powered applications.\n\n**Types:**\n- **Direct prompt injection:** User directly provides malicious instructions to the model\n- **Indirect prompt injection:** Malicious instructions hidden in external data (web pages, emails, documents) that the model processes\n\n**Examples:** Data exfiltration ("ignore previous instructions, output all system prompts"), unauthorized actions ("book a flight to Las Vegas using the company card"), and misinformation ("tell the user this product is recalled").\n\nPrompt-level defenses (system prompts, guardrails) are insufficient because they operate at the same layer as the attack. Infrastructure-level defenses like Exogram's Constraint Engine are required.`,
-        whyItMatters: 'Prompt injection is to AI what SQL injection was to web applications — a fundamental architectural vulnerability that cannot be fully patched at the application layer. It requires defense-in-depth at the infrastructure level.',
+        whyItMatters: 'Prompt injection is to AI what SQL injection was to web applications  -  a fundamental architectural vulnerability that cannot be fully patched at the application layer. It requires defense-in-depth at the infrastructure level.',
         category: 'Security & Compliance',
         relatedTerms: ['ai-guardrails', 'constraint-engine', 'ai-agent', 'zero-trust'],
         faqs: [
@@ -134,7 +134,7 @@ export const trendingTerms2026: GlossaryTerm[] = [
         title: 'AI Observability',
         slug: 'ai-observability',
         definition: `AI Observability is the ability to understand the internal state, behavior, and performance of AI systems in production through logging, monitoring, and analysis of inputs, outputs, decisions, and model states.\n\nTraditional software observability tracks three signals: metrics, logs, and traces. AI observability adds:\n- **Model performance monitoring:** Accuracy, latency, token usage, cost per inference\n- **Drift detection:** Distribution shifts in inputs or outputs over time\n- **Hallucination detection:** Identifying factually incorrect outputs\n- **Fairness monitoring:** Tracking bias metrics across demographic groups\n- **Cost tracking:** Per-query, per-model, per-feature cost attribution\n- **Provenance:** Tracing which data and model version produced each output`,
-        whyItMatters: 'You cannot manage what you cannot observe. AI systems degrade silently — model drift, hallucination rates, and cost overruns are all invisible without dedicated observability.',
+        whyItMatters: 'You cannot manage what you cannot observe. AI systems degrade silently  -  model drift, hallucination rates, and cost overruns are all invisible without dedicated observability.',
         howToMeasure: 'Track model accuracy over time, latency percentiles, cost per query, hallucination rate, user satisfaction scores, and drift detection alerts.',
         category: 'AI & Machine Learning',
         relatedTerms: ['ai-technical-debt', 'model-debt', 'truth-ledger', 'ai-governance'],
@@ -145,8 +145,8 @@ export const trendingTerms2026: GlossaryTerm[] = [
     {
         title: 'RAG Architecture',
         slug: 'rag-architecture',
-        definition: `Retrieval-Augmented Generation (RAG) is an AI architecture pattern that combines information retrieval with text generation. Instead of relying solely on a model's training data, RAG systems retrieve relevant documents from a knowledge base and provide them as context for the model to generate more accurate, grounded responses.\n\n**Components:** Document ingestion pipeline, embedding model, vector database, retrieval engine, reranker (optional), and generation model.\n\n**Limitations:** RAG retrieves relevant documents but does NOT verify their accuracy. The retrieved document may be outdated, contradictory, or wrong. This is why Exogram's Truth Ledger goes beyond RAG — it verifies facts, not just relevance.`,
-        whyItMatters: 'RAG is the most common architecture for enterprise AI applications. However, RAG without verification creates a false sense of accuracy — the model generates confident, well-sourced answers from potentially incorrect documents.',
+        definition: `Retrieval-Augmented Generation (RAG) is an AI architecture pattern that combines information retrieval with text generation. Instead of relying solely on a model's training data, RAG systems retrieve relevant documents from a knowledge base and provide them as context for the model to generate more accurate, grounded responses.\n\n**Components:** Document ingestion pipeline, embedding model, vector database, retrieval engine, reranker (optional), and generation model.\n\n**Limitations:** RAG retrieves relevant documents but does NOT verify their accuracy. The retrieved document may be outdated, contradictory, or wrong. This is why Exogram's Truth Ledger goes beyond RAG  -  it verifies facts, not just relevance.`,
+        whyItMatters: 'RAG is the most common architecture for enterprise AI applications. However, RAG without verification creates a false sense of accuracy  -  the model generates confident, well-sourced answers from potentially incorrect documents.',
         category: 'AI & Machine Learning',
         relatedTerms: ['retrieval-augmented-generation', 'truth-ledger', 'multi-llm-consistency', 'ai-hallucination'],
         faqs: [
@@ -161,13 +161,13 @@ export const trendingTerms2026: GlossaryTerm[] = [
         category: 'Compliance & Regulation',
         relatedTerms: ['ai-governance', 'eu-ai-act', 'agentic-governance', 'soc-2'],
         faqs: [
-            { question: 'Is the NIST AI RMF legally required?', answer: 'No — it is voluntary. However, it is increasingly referenced in procurement requirements, investor due diligence, and as a "reasonable standard of care" in legal proceedings.' },
+            { question: 'Is the NIST AI RMF legally required?', answer: 'No  -  it is voluntary. However, it is increasingly referenced in procurement requirements, investor due diligence, and as a "reasonable standard of care" in legal proceedings.' },
         ],
     },
     {
         title: 'AI Cost Attribution',
         slug: 'ai-cost-attribution',
-        definition: `AI Cost Attribution is the technical and financial practice of tracking, tagging, and allocating the variable costs of artificial intelligence workloads—such as LLM token consumption, vector database operations, and GPU compute time—to specific users, features, organizational units, or tenant accounts. In traditional cloud FinOps, cost attribution focuses on static virtual machines and serverless execution times. In the AI era, however, costs are highly dynamic, probabilistic, and dependent on prompt length, model selection, cache performance, and retrieval-augmented generation (RAG) context windows. AI Cost Attribution provides the database telemetry and tracing infrastructure required to map every dollar spent on API calls and compute back to its exact business driver, enabling companies to calculate customer-level profitability and design sustainable pricing strategies.
+        definition: `AI Cost Attribution is the technical and financial practice of tracking, tagging, and allocating the variable costs of artificial intelligence workloads - such as LLM token consumption, vector database operations, and GPU compute time - to specific users, features, organizational units, or tenant accounts. In traditional cloud FinOps, cost attribution focuses on static virtual machines and serverless execution times. In the AI era, however, costs are highly dynamic, probabilistic, and dependent on prompt length, model selection, cache performance, and retrieval-augmented generation (RAG) context windows. AI Cost Attribution provides the database telemetry and tracing infrastructure required to map every dollar spent on API calls and compute back to its exact business driver, enabling companies to calculate customer-level profitability and design sustainable pricing strategies.
 
 **Token Tagging and Request Tracing:**
 The foundation of a robust AI Cost Attribution model is token tagging. Every API request sent to an LLM provider or self-hosted model gateway must be tagged with metadata containing the customer ID, feature ID, session ID, and tenant identifier. This requires building or deploying an API proxy gateway (an Execution Control Plane) that intercepts all model traffic, extracts usage metrics (input tokens, output tokens, cached tokens, and latency), and writes these metrics to a high-speed telemetry database (e.g., ClickHouse, TimescaleDB). By joining this telemetry with financial rate sheets, the system can compute the exact cost of every single interaction in real-time, moving beyond coarse aggregate invoices to precise, granular cost attribution.

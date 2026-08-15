@@ -411,7 +411,7 @@ export default function HallucinationTaxTool() {
                                         The $67.4B Global Tax:
                                     </strong>{' '}
                                     Research indicates organizations spend an average of $14,200 per
-                                    employee per year on AI verification labor alone — before
+                                    employee per year on AI verification labor alone  -  before
                                     counting production incidents. This invisible tax compounds
                                     silently across every department using AI.
                                 </div>

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     description: 'Compare DORA velocity metrics vs APER revenue-per-engineer financial translation for board reporting.',
     keywords: ['dora metrics', 'aper', 'revenue per engineer', 'engineering productivity', 'dora metrics vs aper', 'engineering metrics'],
     alternates: { canonical: 'https://www.richardewing.io/compare/dora-metrics-vs-aper' },
-    openGraph: { title: 'DORA Metrics vs APER — Velocity vs Value', description: 'Why high DORA metrics don\'t guarantee business success, and why CFOs are shifting to APER.', url: 'https://www.richardewing.io/compare/dora-metrics-vs-aper', type: 'article' },
+    openGraph: { title: 'DORA Metrics vs APER  -  Velocity vs Value', description: 'Why high DORA metrics don\'t guarantee business success, and why CFOs are shifting to APER.', url: 'https://www.richardewing.io/compare/dora-metrics-vs-aper', type: 'article' },
 };
 
 const rows = [

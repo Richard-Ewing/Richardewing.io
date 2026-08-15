@@ -5,8 +5,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { Shield, CheckCircle, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Prove You Understand AI Costs & Strategy Diagnostics | Richard Ewing',
-    description: 'Prove You Understand AI Costs provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'AI Economics Professional Certification',
+    description: 'Validate your expertise in calculating AI unit economics, technical debt valuation, and deterministic governance.',
     keywords: ['AI governance certification', 'runtime governance maturity', 'AI governance assessment', 'agentic engineering certification', 'MCP governance certified', 'AI governance training', 'runtime maturity model'],
     openGraph: {
         title: 'Runtime Governance Maturity - Certification & Assessment',

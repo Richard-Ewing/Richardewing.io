@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'IoT Data Debt Is Burying Your & Strategy Diagnostics | Richard Ewing',
-    description: 'IoT Data Debt Is Burying Your provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Agritech AI Economics & IoT Data Debt',
+    description: 'Audit R&D capital, sensor telemetry pipelines, and agricultural IoT data debt across commercial precision farming systems.',
     keywords: ['agritech technical debt', 'agriculture technology', 'precision farming AI', 'IoT agriculture', 'agritech engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/agritech' },
     openGraph: { title: 'AgriTech AI Economics', description: 'R&D capital challenges in agriculture technology.', url: 'https://www.richardewing.io/industries/agritech', type: 'article' },

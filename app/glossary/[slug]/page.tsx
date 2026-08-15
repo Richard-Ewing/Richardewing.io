@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 
     const shortTermTitle = term.title.length > 25 ? term.title.slice(0, 24) + '…' : term.title;
-    const titleStr = `${shortTermTitle} — Definition`;
+    const titleStr = `${shortTermTitle}  -  Definition`;
 
     return {
         title: titleStr,
@@ -125,11 +125,11 @@ function autoChecklist(category: string, title: string): string[] {
 // Auto-generate how-to-apply based on category
 function autoHowToApply(category: string, title: string): string {
     const guides: Record<string, string> = {
-        'Technical Debt & Code Quality': `**Step 1: Audit** — Identify where ${title} exists in your systems using static analysis tools and code reviews.\n\n**Step 2: Quantify** — Use the Product Debt Index framework to attach dollar values to each instance of ${title}.\n\n**Step 3: Prioritize** — Rank remediation items by economic impact, not just technical severity.\n\n**Step 4: Execute** — Allocate 15-20% of sprint capacity to addressing ${title} issues.\n\n**Step 5: Measure** — Track improvement over time using the same metrics established in Step 2.`,
-        'AI & Machine Learning': `**Step 1: Understand** — Map how ${title} fits into your AI product architecture and cost structure.\n\n**Step 2: Measure** — Use the AUEB calculator to quantify ${title}-related costs per user, per request, and per feature.\n\n**Step 3: Optimize** — Apply common optimization patterns (caching, batching, model downsizing) to reduce ${title} costs.\n\n**Step 4: Monitor** — Set up dashboards tracking ${title} costs in real-time. Alert on anomalies.\n\n**Step 5: Scale** — Ensure your ${title} approach remains economically viable at 10x and 100x current volume.`,
-        'SaaS & Metrics': `**Step 1: Define** — Establish clear ${title} measurement methodology across your organization.\n\n**Step 2: Benchmark** — Compare your ${title} against industry standards and top-quartile performers.\n\n**Step 3: Analyze** — Identify the levers that most impact ${title} in your specific business.\n\n**Step 4: Improve** — Create initiatives targeting the highest-impact levers for ${title} improvement.\n\n**Step 5: Report** — Build ${title} into your monthly/quarterly reporting cadence for leadership and investors.`,
+        'Technical Debt & Code Quality': `**Step 1: Audit**  -  Identify where ${title} exists in your systems using static analysis tools and code reviews.\n\n**Step 2: Quantify**  -  Use the Product Debt Index framework to attach dollar values to each instance of ${title}.\n\n**Step 3: Prioritize**  -  Rank remediation items by economic impact, not just technical severity.\n\n**Step 4: Execute**  -  Allocate 15-20% of sprint capacity to addressing ${title} issues.\n\n**Step 5: Measure**  -  Track improvement over time using the same metrics established in Step 2.`,
+        'AI & Machine Learning': `**Step 1: Understand**  -  Map how ${title} fits into your AI product architecture and cost structure.\n\n**Step 2: Measure**  -  Use the AUEB calculator to quantify ${title}-related costs per user, per request, and per feature.\n\n**Step 3: Optimize**  -  Apply common optimization patterns (caching, batching, model downsizing) to reduce ${title} costs.\n\n**Step 4: Monitor**  -  Set up dashboards tracking ${title} costs in real-time. Alert on anomalies.\n\n**Step 5: Scale**  -  Ensure your ${title} approach remains economically viable at 10x and 100x current volume.`,
+        'SaaS & Metrics': `**Step 1: Define**  -  Establish clear ${title} measurement methodology across your organization.\n\n**Step 2: Benchmark**  -  Compare your ${title} against industry standards and top-quartile performers.\n\n**Step 3: Analyze**  -  Identify the levers that most impact ${title} in your specific business.\n\n**Step 4: Improve**  -  Create initiatives targeting the highest-impact levers for ${title} improvement.\n\n**Step 5: Report**  -  Build ${title} into your monthly/quarterly reporting cadence for leadership and investors.`,
     };
-    return guides[category] || `**Step 1: Assess** — Evaluate your organization's current relationship with ${title}. Where is it strong? Where are the gaps?\n\n**Step 2: Define Goals** — Set specific, measurable targets for ${title} improvement aligned with business outcomes.\n\n**Step 3: Build Plan** — Create a phased implementation plan with clear milestones and ownership.\n\n**Step 4: Execute** — Implement changes incrementally. Start with high-impact, low-risk improvements.\n\n**Step 5: Iterate** — Measure results, learn from outcomes, and continuously refine your approach to ${title}.`;
+    return guides[category] || `**Step 1: Assess**  -  Evaluate your organization's current relationship with ${title}. Where is it strong? Where are the gaps?\n\n**Step 2: Define Goals**  -  Set specific, measurable targets for ${title} improvement aligned with business outcomes.\n\n**Step 3: Build Plan**  -  Create a phased implementation plan with clear milestones and ownership.\n\n**Step 4: Execute**  -  Implement changes incrementally. Start with high-impact, low-risk improvements.\n\n**Step 5: Iterate**  -  Measure results, learn from outcomes, and continuously refine your approach to ${title}.`;
 }
 
 export default async function GlossaryTermPage({ params }: Props) {
@@ -167,7 +167,7 @@ export default async function GlossaryTermPage({ params }: Props) {
     const wordCount = (term.definition + ' ' + term.whyItMatters + ' ' + (term.howToMeasure || '') + ' ' + (term.howToApply || '')).split(/\s+/).length;
     const readingTime = Math.max(2, Math.ceil(wordCount / 200));
 
-    // TL;DR — first sentence of definition
+    // TL;DR  -  first sentence of definition
     const tldr = term.definition.split(/[.!?]\s/)[0] + '.';
 
     // Get checklist and how-to-apply (explicit or auto-generated)
@@ -290,7 +290,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </h1>
                 </header>
 
-                {/* TL;DR Box — LLM-citation-friendly summary */}
+                {/* TL;DR Box  -  LLM-citation-friendly summary */}
                 <section className="tldr-box mb-10 p-6 rounded-xl bg-cyan-500/5 border border-cyan-500/20">
                     <div className="flex items-center gap-2 mb-2">
                         <span className="text-xs font-bold font-mono font-bold text-cyan-500 uppercase tracking-widest">TL;DR</span>
@@ -298,7 +298,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     <p className="text-zinc-950 font-bold leading-relaxed text-lg">{tldr}</p>
                 </section>
 
-                {/* At a Glance — Quick Reference Card */}
+                {/* At a Glance  -  Quick Reference Card */}
                 <section className="mb-12 rounded-2xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-violet-500/5 p-8">
                     <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">⚡ {term.title} at a Glance</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
@@ -311,7 +311,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </div>
                 </section>
 
-                {/* Key Metrics Dashboard — always rendered */}
+                {/* Key Metrics Dashboard  -  always rendered */}
                 <section className="mb-12">
                     <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">📊 Key Metrics &amp; Benchmarks</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -382,7 +382,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </section>
                 )}
 
-                {/* How to Apply — always rendered */}
+                {/* How to Apply  -  always rendered */}
                 <section className="mb-12 card p-8 border-violet-500/20">
                     <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">🛠️ How to Apply {term.title}</h2>
                     <div className="prose prose-zinc max-w-none">
@@ -394,7 +394,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </div>
                 </section>
 
-                {/* Actionable Checklist — always rendered */}
+                {/* Actionable Checklist  -  always rendered */}
                 <section className="mb-12 card p-8 border-emerald-500/20">
                     <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">✅ {term.title} Checklist</h2>
                     <div className="space-y-3">
@@ -407,7 +407,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </div>
                 </section>
 
-                {/* Maturity Model — always rendered */}
+                {/* Maturity Model  -  always rendered */}
                 <section className="mb-12">
                     <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">📈 {term.title} Maturity Model</h2>
                     <p className="text-zinc-950 font-bold text-sm font-semibold mb-4">Where does your organization stand? Use this model to assess your current level and identify the next milestone.</p>
@@ -436,7 +436,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </div>
                 </section>
 
-                {/* Comparison Table — always rendered */}
+                {/* Comparison Table  -  always rendered */}
                 <section className="mb-12">
                     <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">⚔️ Comparisons</h2>
                     <div className="overflow-x-auto">
@@ -461,7 +461,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </div>
                 </section>
 
-                {/* Visual Diagram — always rendered */}
+                {/* Visual Diagram  -  always rendered */}
                 <section className="mb-12 rounded-2xl border border-violet-500/20 bg-gradient-to-br from-violet-500/[0.03] to-cyan-500/[0.03] overflow-hidden">
                     <div className="px-8 pt-6 pb-4 border-b border-zinc-400 flex items-center gap-3">
                         <div className="w-8 h-8 rounded-lg bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
@@ -479,7 +479,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </div>
                 </section>
 
-                {/* Common Mistakes — always rendered */}
+                {/* Common Mistakes  -  always rendered */}
                 <section className="mb-12">
                     <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">🚫 Common Mistakes to Avoid</h2>
                     <div className="space-y-4">
@@ -500,7 +500,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </div>
                 </section>
 
-                {/* Best Practices — always rendered */}
+                {/* Best Practices  -  always rendered */}
                 <section className="mb-12">
                     <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">🏆 Best Practices</h2>
                     <div className="space-y-3">
@@ -518,7 +518,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </div>
                 </section>
 
-                {/* Industry Benchmarks — always rendered */}
+                {/* Industry Benchmarks  -  always rendered */}
                 <section className="mb-12">
                     <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">📊 Industry Benchmarks</h2>
                     <p className="text-zinc-950 font-bold text-sm font-semibold mb-4">How does your organization compare? Use these benchmarks to identify where you stand and where to invest.</p>
@@ -548,7 +548,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </div>
                 </section>
 
-                {/* Hub-and-Spoke SEO Matrix — NEW (3-Tier Governance) */}
+                {/* Hub-and-Spoke SEO Matrix  -  NEW (3-Tier Governance) */}
                 {term.tier === 'pillar' && (
                     <section className="mb-12 mt-16 pt-12 border-t border-zinc-400">
                         <div className="flex items-center gap-3 mb-8">
@@ -686,7 +686,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </section>
                 )}
 
-                {/* Interactive Quiz — always rendered */}
+                {/* Interactive Quiz  -  always rendered */}
                 <GlossaryQuiz quiz={quiz} title={term.title} />
 
                 {/* External Resources */}
@@ -722,7 +722,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </section>
                 )}
 
-                {/* Ontology Mesh — cross-links to compare, failures, tools, articles */}
+                {/* Ontology Mesh  -  cross-links to compare, failures, tools, articles */}
                 <GlossaryMesh
                     termSlug={slug}
                     termTitle={term.title}

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Route Optimization Debt Is Eat & Strategy Diagnostics | Richard Ewing',
-    description: 'Route Optimization Debt Is Eat provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Logistics AI Economics & Dispatch Route Debt',
+    description: 'Audit fleet telematics data latency, dynamic routing optimization costs, and supply chain API integration debt.',
     keywords: ['logistics technical debt', 'supply chain technology', 'logistics AI cost', 'IoT infrastructure debt', 'logistics CTO advisor'],
     alternates: { canonical: 'https://www.richardewing.io/industries/logistics' },
     openGraph: { title: 'AI Economics for Logistics', description: 'Real-time systems, IoT scale, and AI forecasting create unique engineering economics.', url: 'https://www.richardewing.io/industries/logistics', type: 'website' },

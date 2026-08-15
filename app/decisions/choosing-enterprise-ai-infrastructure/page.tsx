@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { ArrowRight, Server, Shield, Network, LayoutDashboard } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Choosing Enterprise AI Infrast & Strategy Diagnostics | Richard Ewing',
-    description: 'Choosing Enterprise AI Infrast provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Choosing Enterprise AI Infrastructure Guide',
+    description: 'Compare hosted vs self-hosted AI infrastructure, inference hardware options, and cost optimization architectures.',
     alternates: {
         canonical: 'https://www.richardewing.io/decisions/choosing-enterprise-ai-infrastructure',
     },

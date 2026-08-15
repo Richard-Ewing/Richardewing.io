@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     description: 'Compare the Audit Interview protocol vs HackerRank syntax tests for evaluating AI-era senior engineers.',
     keywords: ['hackerrank alternative', 'technical assessment alternative', 'engineering judgment test', 'audit interview vs hackerrank', 'hiring for AI age', 'beyond hackerrank'],
     alternates: { canonical: 'https://www.richardewing.io/compare/audit-interview-vs-hackerrank' },
-    openGraph: { title: 'Audit Interview vs HackerRank — Judgment vs Puzzles', description: 'When AI can pass HackerRank tests, what are you actually measuring?', url: 'https://www.richardewing.io/compare/audit-interview-vs-hackerrank', type: 'article' },
+    openGraph: { title: 'Audit Interview vs HackerRank  -  Judgment vs Puzzles', description: 'When AI can pass HackerRank tests, what are you actually measuring?', url: 'https://www.richardewing.io/compare/audit-interview-vs-hackerrank', type: 'article' },
 };
 
 const rows = [
@@ -15,7 +15,7 @@ const rows = [
     { dimension: 'Core skill', audit: 'Catching what AI gets wrong', hack: 'Implementing what AI already does' },
     { dimension: 'Question format', audit: 'Scenario-based, multi-dimensional', hack: 'Algorithmic puzzles with edge cases' },
     { dimension: 'AI can pass it?', audit: '❌ Requires contextual judgment AI can\'t replicate', hack: '✅ GPT-4 passes most problems' },
-    { dimension: 'Proctoring', audit: 'Judgment-based — no need for proctoring', hack: 'Requires proctoring to prevent AI cheating' },
+    { dimension: 'Proctoring', audit: 'Judgment-based  -  no need for proctoring', hack: 'Requires proctoring to prevent AI cheating' },
     { dimension: 'Cost', audit: 'Free (richardewing.io/tools/audit-interview)', hack: '$100-$500/mo per company' },
     { dimension: 'What it predicts', audit: 'On-the-job decision-making quality', hack: 'Ability to solve puzzles under pressure' },
     { dimension: 'Bias profile', audit: 'Tests judgment regardless of education path', hack: 'Favors CS-degree competitive programmers' },
@@ -35,7 +35,7 @@ export default function AuditInterviewVsHackerRankPage() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">HackerRank</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">
-                        HackerRank tests algorithmic puzzles. GPT-4 passes most HackerRank tests. The Audit Interview tests <span className="text-zinc-950 font-bold">engineering judgment</span> — the skill AI makes MORE important, not less.
+                        HackerRank tests algorithmic puzzles. GPT-4 passes most HackerRank tests. The Audit Interview tests <span className="text-zinc-950 font-bold">engineering judgment</span>  -  the skill AI makes MORE important, not less.
                     </p>
 
                     <div className="overflow-x-auto mb-16">

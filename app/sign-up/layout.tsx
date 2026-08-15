@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Register for command center ac & Strategy Diagnostics | Richard Ewing',
-    description: 'Register for command center ac provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Register for Command Center Access',
+    description: 'Create an enterprise account to access AI Economics diagnostic tools, research databases, and benchmarks.',
     alternates: {
         canonical: 'https://www.richardewing.io/sign-up',
     },

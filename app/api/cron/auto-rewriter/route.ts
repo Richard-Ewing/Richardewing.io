@@ -78,7 +78,7 @@ POSITION: ${page.position.toFixed(1)}
 TOP QUERIES DRIVING TRAFFIC: ${page.topQueries.join(', ')}
 
 The CTR is below 2%. Rewrite the title and description to increase clicks.
-Focus on the top queries — these are what people are actually searching for.
+Focus on the top queries  -  these are what people are actually searching for.
 
 Respond in this exact JSON format:
 {"title": "new title here", "description": "new description here", "reasoning": "why this will improve CTR"}`;
@@ -205,7 +205,7 @@ async function commitToGitHub(changes: Array<{ path: string; content: string }>)
             method: 'POST',
             headers,
             body: JSON.stringify({
-                message: `chore(seo): autonomous meta rewrite — ${date}\n\nAutomated by SEO Optimizer Agent.\nRewrote ${changes.length} meta title(s)/description(s) based on GSC CTR data + market intelligence.`,
+                message: `chore(seo): autonomous meta rewrite  -  ${date}\n\nAutomated by SEO Optimizer Agent.\nRewrote ${changes.length} meta title(s)/description(s) based on GSC CTR data + market intelligence.`,
                 tree: newTreeData.sha,
                 parents: [currentCommitSha],
                 author: {

@@ -32,7 +32,7 @@ export const PHASE_BANK: Record<Role, { phase: string; questions: Question[] }[]
                     prompt: "The engineering team is celebrating record productivity (Velocity is up 50%).\n\nWhat is the primary constraint here?",
                     chart_type: "dashboard",
                     chart_data: {
-                        title: "SYSTEM HEALTH — LAST 30 DAYS",
+                        title: "SYSTEM HEALTH  -  LAST 30 DAYS",
                         metrics: [
                             { label: "Cloud Costs", value: "$252K", trend: "up", change: "40%", context: "$180K → $252K" },
                             { label: "Gross Margin", value: "64%", trend: "down", change: "11%", context: "72% → 64%" },
@@ -54,7 +54,7 @@ export const PHASE_BANK: Record<Role, { phase: string; questions: Question[] }[]
                     prompt: "The CTO presents these metrics at the all-hands and says 'We are executing well.' The CFO disagrees.\n\nWho is right, and why?",
                     chart_type: "dashboard",
                     chart_data: {
-                        title: "ENGINEERING OPS — Q3 REVIEW",
+                        title: "ENGINEERING OPS  -  Q3 REVIEW",
                         metrics: [
                             { label: "Headcount", value: "48", trend: "up", change: "33%", context: "36 → 48" },
                             { label: "Revenue/Eng", value: "$62K", trend: "down", change: "18%", context: "$76K → $62K" },
@@ -66,7 +66,7 @@ export const PHASE_BANK: Record<Role, { phase: string; questions: Question[] }[]
                     },
                     grading: {
                         l3_example: "The CTO is right because they shipped more releases.",
-                        l6_example: "The CFO is right. Revenue per engineer dropped 18%—we hired 33% more people but output didn't scale linearly. P0 incidents tripled, meaning quality is collapsing. We're in a 'hiring as a strategy' trap.",
+                        l6_example: "The CFO is right. Revenue per engineer dropped 18% - we hired 33% more people but output didn't scale linearly. P0 incidents tripled, meaning quality is collapsing. We're in a 'hiring as a strategy' trap.",
                         rubric: "Does the candidate see that hiring != productivity? Do they connect Revenue/Eng declining with headcount growth? Do they flag the quality collapse (P0s + MTTR)?"
                     }
                 },
@@ -76,7 +76,7 @@ export const PHASE_BANK: Record<Role, { phase: string; questions: Question[] }[]
                     prompt: "Your team just completed a migration from a monolith to microservices. Leadership is celebrating.\n\nWhat should you be worried about?",
                     chart_type: "dashboard",
                     chart_data: {
-                        title: "POST-MIGRATION HEALTH — WEEK 4",
+                        title: "POST-MIGRATION HEALTH  -  WEEK 4",
                         metrics: [
                             { label: "Services", value: "23", trend: "up", change: "2200%", context: "1 → 23" },
                             { label: "Avg Latency", value: "340ms", trend: "up", change: "89%", context: "180ms → 340ms" },
@@ -98,7 +98,7 @@ export const PHASE_BANK: Record<Role, { phase: string; questions: Question[] }[]
                     prompt: "The VP of Engineering is proud: 'Our test coverage is at 92%.' The on-call engineer is exhausted.\n\nWhat is actually happening?",
                     chart_type: "dashboard",
                     chart_data: {
-                        title: "QUALITY METRICS — LAST 60 DAYS",
+                        title: "QUALITY METRICS  -  LAST 60 DAYS",
                         metrics: [
                             { label: "Test Coverage", value: "92%", trend: "up", change: "15%", context: "80% → 92%" },
                             { label: "Flaky Tests", value: "34%", trend: "up", change: "240%", context: "10% → 34%" },
@@ -110,7 +110,7 @@ export const PHASE_BANK: Record<Role, { phase: string; questions: Question[] }[]
                     },
                     grading: {
                         l3_example: "The flaky tests need to be fixed to improve the CI pipeline.",
-                        l6_example: "Coverage is a vanity metric. 34% of tests are flaky—they're testing nothing. Prod bugs increased 80% despite 'higher coverage,' proving the tests aren't catching real issues. The team is writing tests-for-coverage, not tests-for-correctness. The test code is 2.8x production code, which is itself a maintenance liability.",
+                        l6_example: "Coverage is a vanity metric. 34% of tests are flaky - they're testing nothing. Prod bugs increased 80% despite 'higher coverage,' proving the tests aren't catching real issues. The team is writing tests-for-coverage, not tests-for-correctness. The test code is 2.8x production code, which is itself a maintenance liability.",
                         rubric: "Does the candidate see through the coverage vanity metric? Do they connect flaky tests to false confidence? Do they identify test code as its own maintenance burden?"
                     }
                 },
@@ -179,7 +179,7 @@ export const PHASE_BANK: Record<Role, { phase: string; questions: Question[] }[]
         return len(cls._cache)`,
                     grading: {
                         l3_example: "The cache should have a TTL or expiration.",
-                        l6_example: "Three bombs: (1) Unbounded memory—_cache grows forever with no eviction, guaranteed OOM on any real traffic. (2) Stale data—update_user writes to DB but doesn't invalidate cache, so reads return stale data indefinitely. (3) Class-level state means in multi-worker deployments each worker has its own inconsistent cache. This is a data corruption + memory bomb.",
+                        l6_example: "Three bombs: (1) Unbounded memory - _cache grows forever with no eviction, guaranteed OOM on any real traffic. (2) Stale data - update_user writes to DB but doesn't invalidate cache, so reads return stale data indefinitely. (3) Class-level state means in multi-worker deployments each worker has its own inconsistent cache. This is a data corruption + memory bomb.",
                         rubric: "Does the candidate identify unbounded memory growth? Do they spot the cache invalidation bug? Do they consider multi-process/multi-worker implications?"
                     }
                 },
@@ -211,7 +211,7 @@ def rate_limit(user_id: str, max_requests=100, window=60):
     return True  # Allowed`,
                     grading: {
                         l3_example: "It should use Redis instead of in-memory storage.",
-                        l6_example: "Four critical failures: (1) In-memory dict means each server instance has independent counters—attacker round-robins across instances. (2) No cleanup of rate_limits dict—users who stop sending requests leak memory forever. (3) List filtering on every request is O(n)—an attacker can make it O(n²) by sending max_requests rapidly. (4) No IP-based limiting—attacker rotates user_id values to bypass completely.",
+                        l6_example: "Four critical failures: (1) In-memory dict means each server instance has independent counters - attacker round-robins across instances. (2) No cleanup of rate_limits dict - users who stop sending requests leak memory forever. (3) List filtering on every request is O(n) - an attacker can make it O(n²) by sending max_requests rapidly. (4) No IP-based limiting - attacker rotates user_id values to bypass completely.",
                         rubric: "Does the candidate identify the per-instance bypass? Do they see the memory leak? Do they consider adversarial input (ID rotation)?"
                     }
                 },
@@ -247,7 +247,7 @@ def enqueue(task):
     return {"status": "queued"}`,
                     grading: {
                         l3_example: "It should use Celery or a proper queue system.",
-                        l6_example: "Five failures at scale: (1) Unbounded queue with no backpressure—at 10x input, memory grows until OOM. (2) Failed tasks are silently dropped—no retry, no dead-letter queue. (3) 50 threads doing CPU-heavy work on GIL-bound Python means zero actual parallelism. (4) Daemon threads mean in-flight tasks are killed on app shutdown—data loss. (5) No observability—no metrics on queue depth, failure rate, or processing time.",
+                        l6_example: "Five failures at scale: (1) Unbounded queue with no backpressure - at 10x input, memory grows until OOM. (2) Failed tasks are silently dropped - no retry, no dead-letter queue. (3) 50 threads doing CPU-heavy work on GIL-bound Python means zero actual parallelism. (4) Daemon threads mean in-flight tasks are killed on app shutdown - data loss. (5) No observability - no metrics on queue depth, failure rate, or processing time.",
                         rubric: "Does the candidate identify the unbounded queue / OOM risk? Do they spot silent task loss? Do they understand the GIL limitation? Do they consider graceful shutdown?"
                     }
                 },
@@ -322,7 +322,7 @@ jobs:
                     chart_type: "text_only",
                     grading: {
                         l3_example: "We should dedicate one sprint to fix all tech debt.",
-                        l6_example: "Don't ask for a full sprint—embed fixes into existing work. Fix 1 (size validation) is a 2-hour PR, ship it today. Fix 2 (cache eviction) goes into the next user story that touches the cache. Fix 3 (rate limiter rewrite) gets scoped as a separate ticket with a deadline. Total roadmap impact: ~1 day. Frame it as 'risk reduction' not 'tech debt.'",
+                        l6_example: "Don't ask for a full sprint - embed fixes into existing work. Fix 1 (size validation) is a 2-hour PR, ship it today. Fix 2 (cache eviction) goes into the next user story that touches the cache. Fix 3 (rate limiter rewrite) gets scoped as a separate ticket with a deadline. Total roadmap impact: ~1 day. Frame it as 'risk reduction' not 'tech debt.'",
                         rubric: "Does the candidate avoid the all-or-nothing trap? Do they propose incremental fixes embedded in existing work? Do they frame it in terms the PM cares about (risk, not debt)?"
                     }
                 },
@@ -333,7 +333,7 @@ jobs:
                     chart_type: "text_only",
                     grading: {
                         l3_example: "It's fine if the tests pass.",
-                        l6_example: "Block the PR. A swallowed exception turns a visible crash into an invisible data corruption. The tests pass because they don't test for correctness of the returned data—they test for 'no crash.' I'd (1) add a test that validates the actual output, (2) replace the catch with proper error handling that logs + returns a meaningful error code, and (3) use this as a coaching moment about the difference between 'working' and 'correct.'",
+                        l6_example: "Block the PR. A swallowed exception turns a visible crash into an invisible data corruption. The tests pass because they don't test for correctness of the returned data - they test for 'no crash.' I'd (1) add a test that validates the actual output, (2) replace the catch with proper error handling that logs + returns a meaningful error code, and (3) use this as a coaching moment about the difference between 'working' and 'correct.'",
                         rubric: "Does the candidate identify that swallowing exceptions hides bugs? Do they distinguish between 'tests pass' and 'code is correct'? Do they propose a constructive teaching approach?"
                     }
                 },
@@ -363,7 +363,7 @@ jobs:
                     prompt: "The growth team says we're on track. The CFO is concerned.\n\nWhat is the primary constraint here?",
                     chart_type: "dashboard",
                     chart_data: {
-                        title: "PRODUCT METRICS — Q4",
+                        title: "PRODUCT METRICS  -  Q4",
                         metrics: [
                             { label: "MRR", value: "$2.4M", trend: "up", change: "14%", context: "$2.1M → $2.4M" },
                             { label: "CAC", value: "$450", trend: "up", change: "34%", context: "Spike!" },
@@ -385,7 +385,7 @@ jobs:
                     prompt: "The Head of Product is presenting the Q4 review. They say 'We shipped everything on the roadmap.'\n\nShould the board be impressed?",
                     chart_type: "dashboard",
                     chart_data: {
-                        title: "PRODUCT HEALTH — Q4",
+                        title: "PRODUCT HEALTH  -  Q4",
                         metrics: [
                             { label: "Features Shipped", value: "18", trend: "up", change: "50%", context: "12 → 18" },
                             { label: "DAU Growth", value: "3%", trend: "down", change: "-40%", context: "5% → 3%" },
@@ -397,7 +397,7 @@ jobs:
                     },
                     grading: {
                         l3_example: "They shipped everything, so yes, they executed well.",
-                        l6_example: "No. They shipped 50% more features but feature usage dropped 35%. They're building things nobody wants. DAU growth halved while spend increased 25%. This is a 'Feature Factory' trap—output is up, outcomes are down. The roadmap was wrong, not the execution.",
+                        l6_example: "No. They shipped 50% more features but feature usage dropped 35%. They're building things nobody wants. DAU growth halved while spend increased 25%. This is a 'Feature Factory' trap - output is up, outcomes are down. The roadmap was wrong, not the execution.",
                         rubric: "Does the candidate distinguish between Output (features shipped) and Outcomes (usage, growth)? Do they identify the Feature Factory anti-pattern?"
                     }
                 },
@@ -407,7 +407,7 @@ jobs:
                     prompt: "The Sales VP is celebrating: 'We closed 40% more deals this quarter!'\n\nBut the Customer Success team is panicking. What's happening?",
                     chart_type: "dashboard",
                     chart_data: {
-                        title: "SALES vs. RETENTION — Q3",
+                        title: "SALES vs. RETENTION  -  Q3",
                         metrics: [
                             { label: "New Deals", value: "142", trend: "up", change: "40%", context: "101 → 142" },
                             { label: "Avg Deal Size", value: "$8.2K", trend: "down", change: "-28%", context: "$11.4K → $8.2K" },
@@ -429,7 +429,7 @@ jobs:
                     prompt: "Engineering says they need to 'pause features for a quarter to pay down tech debt.'\n\nThe CEO asks you: 'Is this real or are they sandbagging?'\n\nHow do you assess?",
                     chart_type: "dashboard",
                     chart_data: {
-                        title: "ENGINEERING VELOCITY — TRAILING 4Q",
+                        title: "ENGINEERING VELOCITY  -  TRAILING 4Q",
                         metrics: [
                             { label: "Cycle Time", value: "18 days", trend: "up", change: "80%", context: "10 → 18 days" },
                             { label: "Rollback Rate", value: "22%", trend: "up", change: "175%", context: "8% → 22%" },
@@ -441,7 +441,7 @@ jobs:
                     },
                     grading: {
                         l3_example: "A quarter is too long. They should fix things gradually.",
-                        l6_example: "The data validates the request. Cycle time nearly doubled, 22% of deploys are rolled back, 35% of work is rework. Story points went up 12% while sprint completion dropped to 61%—classic point inflation hiding declining real output. But a full-quarter freeze is the wrong prescription. I'd propose a 70/30 split: 70% features, 30% debt burn-down, targeted at the highest-rollback-rate areas first. Measure cycle time weekly to validate progress.",
+                        l6_example: "The data validates the request. Cycle time nearly doubled, 22% of deploys are rolled back, 35% of work is rework. Story points went up 12% while sprint completion dropped to 61% - classic point inflation hiding declining real output. But a full-quarter freeze is the wrong prescription. I'd propose a 70/30 split: 70% features, 30% debt burn-down, targeted at the highest-rollback-rate areas first. Measure cycle time weekly to validate progress.",
                         rubric: "Does the candidate use data to validate or refute? Do they propose a nuanced alternative to all-or-nothing? Do they identify point inflation as a red flag?"
                     }
                 },
@@ -470,7 +470,7 @@ jobs:
                     chart_type: "text_only",
                     grading: {
                         l3_example: "Feature A, because it has more demand.",
-                        l6_example: "Neither—not without more data. Volume of requests ≠ value. Feature A's 200 requests might be from free-tier users worth $0 in expansion. Feature B's 12 requests from enterprise accounts might represent $1.2M in ARR risk. I'd weight by revenue-at-risk, churn probability, and build cost before deciding. If Feature B prevents churn of a $400K account, the ROI dwarfs Feature A.",
+                        l6_example: "Neither - not without more data. Volume of requests ≠ value. Feature A's 200 requests might be from free-tier users worth $0 in expansion. Feature B's 12 requests from enterprise accounts might represent $1.2M in ARR risk. I'd weight by revenue-at-risk, churn probability, and build cost before deciding. If Feature B prevents churn of a $400K account, the ROI dwarfs Feature A.",
                         rubric: "Does the candidate refuse to answer based on request count alone? Do they weight by revenue impact? Do they consider opportunity cost?"
                     }
                 },
@@ -492,7 +492,7 @@ jobs:
                     chart_type: "text_only",
                     grading: {
                         l3_example: "We should build it quickly to stay competitive.",
-                        l6_example: "Sales saying 'it's killing deals' is anecdotal. I'd (1) Pull actual win/loss data for the last 90 days to quantify real impact. (2) Talk to 5 lost prospects to see if the feature was actually the deciding factor. (3) Assess if cloning the feature plays to our strengths or gets us into a feature-parity arms race we can't win. (4) Consider if there's an asymmetric response—solving the same problem in a way that leverages our unique architecture. Copying is the most expensive strategy because you never catch up.",
+                        l6_example: "Sales saying 'it's killing deals' is anecdotal. I'd (1) Pull actual win/loss data for the last 90 days to quantify real impact. (2) Talk to 5 lost prospects to see if the feature was actually the deciding factor. (3) Assess if cloning the feature plays to our strengths or gets us into a feature-parity arms race we can't win. (4) Consider if there's an asymmetric response - solving the same problem in a way that leverages our unique architecture. Copying is the most expensive strategy because you never catch up.",
                         rubric: "Does the candidate validate the sales claim with data? Do they avoid reactive copying? Do they consider asymmetric competitive responses?"
                     }
                 },
@@ -532,7 +532,7 @@ jobs:
                     chart_type: "text_only",
                     grading: {
                         l3_example: "We're building for our power users because they drive the most value.",
-                        l6_example: "I wouldn't defend it—I'd reframe. If 10% adoption is intentional (we're building for a high-value segment that drives 60% of revenue), it's strategic focus. If it's unintentional (we didn't know adoption was 10%), that's a failure of instrumentation. I'd show the revenue concentration: if those 5,000 users represent disproportionate ARR, we're right. If not, we need to pivot to high-reach, low-effort improvements for the other 45,000.",
+                        l6_example: "I wouldn't defend it - I'd reframe. If 10% adoption is intentional (we're building for a high-value segment that drives 60% of revenue), it's strategic focus. If it's unintentional (we didn't know adoption was 10%), that's a failure of instrumentation. I'd show the revenue concentration: if those 5,000 users represent disproportionate ARR, we're right. If not, we need to pivot to high-reach, low-effort improvements for the other 45,000.",
                         rubric: "Does the candidate use revenue data to defend or pivot? Do they avoid emotional defense? Do they consider both possibilities honestly?"
                     }
                 },
@@ -554,7 +554,7 @@ jobs:
                     chart_type: "text_only",
                     grading: {
                         l3_example: "I'd schedule a meeting with both teams to align.",
-                        l6_example: "These aren't contradictory—they want different things from the same document. Engineers want constraints (API contracts, acceptance criteria, edge cases). Designers want intent (user problem, success metrics, flexibility on how). I'd split the spec: Section 1 = Problem + User Outcome + Success Metrics (for Design). Section 2 = Technical Constraints + Acceptance Criteria + Edge Cases (for Eng). Same spec, two audiences. Takes 30 minutes to reorganize, not days to rewrite.",
+                        l6_example: "These aren't contradictory - they want different things from the same document. Engineers want constraints (API contracts, acceptance criteria, edge cases). Designers want intent (user problem, success metrics, flexibility on how). I'd split the spec: Section 1 = Problem + User Outcome + Success Metrics (for Design). Section 2 = Technical Constraints + Acceptance Criteria + Edge Cases (for Eng). Same spec, two audiences. Takes 30 minutes to reorganize, not days to rewrite.",
                         rubric: "Does the candidate identify that both teams have legitimate needs? Do they find a structural solution (not a process/meeting solution)? Do they avoid rewriting from scratch?"
                     }
                 },

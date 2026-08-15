@@ -7,8 +7,8 @@ import FAQItem from '@/app/components/FAQItem';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Audit Methodology & Strategy Diagnostics | Richard Ewing',
-    description: 'Audit Methodology provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'AI Forensic Audit Methodology',
+    description: 'A 3-week forensic process inspecting R&D capital yield, technical debt liabilities, and AI unit economic stability.',
     alternates: { canonical: 'https://www.richardewing.io/methodology' },
     openGraph: {
         title: 'Audit Methodology | Richard Ewing',

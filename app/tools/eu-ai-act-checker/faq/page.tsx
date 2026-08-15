@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { ArrowLeft, Shield } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'EU AI Act Compliance FAQ & Strategy Diagnostics | Richard Ewing',
-    description: 'EU AI Act Compliance FAQ provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'EU AI Act Compliance Checker FAQ',
+    description: 'Common questions regarding EU AI Act classification rules, risk tier thresholds, and enforcement timelines.',
 };
 
 const FAQS = [
@@ -14,18 +14,18 @@ const FAQS = [
     },
     {
         q: 'What are the maximum fines under the EU AI Act?',
-        a: 'Fines scale by violation severity: up to €35M or 7% of global annual turnover for prohibited AI practices, up to €15M or 3% for high-risk system violations, and up to €7.5M or 1.5% for providing incorrect information to authorities. These are maximums — actual fines consider proportionality.',
+        a: 'Fines scale by violation severity: up to €35M or 7% of global annual turnover for prohibited AI practices, up to €15M or 3% for high-risk system violations, and up to €7.5M or 1.5% for providing incorrect information to authorities. These are maximums  -  actual fines consider proportionality.',
     },
     {
         q: 'Does the EU AI Act apply to US companies?',
-        a: 'Yes. Like GDPR, the AI Act has extraterritorial reach. It applies to any company that places AI systems on the EU market or whose AI system outputs are used in the EU — regardless of where the company is headquartered.',
+        a: 'Yes. Like GDPR, the AI Act has extraterritorial reach. It applies to any company that places AI systems on the EU market or whose AI system outputs are used in the EU  -  regardless of where the company is headquartered.',
     },
     {
         q: 'What counts as a "high-risk" AI system?',
         a: 'High-risk AI systems include those used in: employment and worker management, creditworthiness assessment, insurance risk pricing, law enforcement, border management, critical infrastructure, education, and certain safety components. Most enterprise AI in HR, finance, and operations qualifies.',
     },
     {
-        q: 'How do I handle "shadow AI" — employees using unauthorized AI tools?',
+        q: 'How do I handle "shadow AI"  -  employees using unauthorized AI tools?',
         a: '67% of employees use AI tools at work, but fewer than 12% of AI applications are visible to IT. The EU AI Act requires a complete inventory of AI systems. Use our Shadow AI Exposure Scanner to identify unauthorized usage across your organization.',
     },
     {
@@ -37,7 +37,7 @@ const FAQS = [
         a: 'Most high-risk AI systems can undergo internal conformity assessment under Annex VI. However, AI systems used in biometric identification, critical infrastructure safety, or law enforcement require third-party conformity assessment by a notified body.',
     },
     {
-        q: 'What about AI-generated code — does that fall under the AI Act?',
+        q: 'What about AI-generated code  -  does that fall under the AI Act?',
         a: 'AI coding tools (Copilot, Cursor, etc.) are classified as general-purpose AI. If their outputs are used in high-risk applications (safety-critical software, financial systems), the deploying organization bears compliance responsibility. With 41% of new code being AI-generated, this is a significant exposure area.',
     },
 ];

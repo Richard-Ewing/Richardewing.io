@@ -57,7 +57,7 @@ export default function GlossaryContent() {
                     <p className="text-lg text-zinc-950 font-bold leading-relaxed max-w-2xl mb-8">
                         {glossaryTerms.length}+ terms defined with rich explanations, practical FAQs, and links to free diagnostic tools.
                         <br />
-                        <span className="text-zinc-950">Technical debt, AI economics, SaaS metrics, product management, and engineering leadership — explained.</span>
+                        <span className="text-zinc-950">Technical debt, AI economics, SaaS metrics, product management, and engineering leadership  -  explained.</span>
                     </p>
 
                     {/* Search Input */}
@@ -184,7 +184,7 @@ export default function GlossaryContent() {
                 <div className="absolute top-0 right-0 w-full h-full bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
                 <h2 className="text-3xl font-grotesk font-black text-zinc-900 mb-4">Master The Architecture</h2>
                 <p className="text-zinc-950 font-bold mb-8 max-w-lg mx-auto leading-relaxed">
-                    Our diagnostic tools put these definitions into direct, mathematically precise execution—evaluate your enterprise today.
+                    Our diagnostic tools put these definitions into direct, mathematically precise execution - evaluate your enterprise today.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4 px-6">
                     <Link

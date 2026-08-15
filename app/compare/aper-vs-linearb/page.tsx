@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     description: 'Compare APER financial translation vs LinearB DORA & cycle-time analytics for engineering leadership.',
     keywords: ['linearb alternative', 'engineering metrics tool', 'engineering judgment assessment', 'aper vs linearb', 'developer productivity measurement'],
     alternates: { canonical: 'https://www.richardewing.io/compare/aper-vs-linearb' },
-    openGraph: { title: 'APER vs LinearB — Judgment vs Activity', description: 'LinearB tracks what engineers did. APER evaluates whether they made economically sound decisions.', url: 'https://www.richardewing.io/compare/aper-vs-linearb', type: 'article' },
+    openGraph: { title: 'APER vs LinearB  -  Judgment vs Activity', description: 'LinearB tracks what engineers did. APER evaluates whether they made economically sound decisions.', url: 'https://www.richardewing.io/compare/aper-vs-linearb', type: 'article' },
 };
 
 const rows = [
@@ -43,7 +43,7 @@ export default function APERvsLinearBPage() {
                     </div>
                     <div className="rounded-2xl border border-violet-500/30 bg-violet-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
-                        <p className="text-zinc-950 mb-6"><strong>Metrics without judgment is measurement without meaning.</strong> LinearB tells you engineers are moving fast. APER tells you they are moving in a direction that creates economic value. Use both — but APER for the decisions that matter.</p>
+                        <p className="text-zinc-950 mb-6"><strong>Metrics without judgment is measurement without meaning.</strong> LinearB tells you engineers are moving fast. APER tells you they are moving in a direction that creates economic value. Use both  -  but APER for the decisions that matter.</p>
                         <Link href="/tools/aper" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-purple-600 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Try the Free APER Assessment →</Link>
                     
                     <AdvisoryCTA variant="compare" />

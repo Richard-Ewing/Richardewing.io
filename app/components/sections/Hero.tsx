@@ -30,7 +30,7 @@ const Hero = () => {
                         {/* Eyebrow */}
                         <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/80 backdrop-blur-sm border border-zinc-200/80 shadow-sm mb-6">
                             <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                            <span className="text-xs sm:text-sm font-semibold text-zinc-700 tracking-wide">Richard Ewing — AI Economist & Enterprise Financial Advisor</span>
+                            <span className="text-xs sm:text-sm font-semibold text-zinc-700 tracking-wide">Richard Ewing  -  AI Economist & Enterprise Financial Advisor</span>
                         </div>
 
                         {/* H1 Headline - Plain English 5-Second Executive Test */}
@@ -88,7 +88,7 @@ const Hero = () => {
                                 />
                             </div>
                             <div className="text-xs text-zinc-600 font-medium">
-                                <p className="font-bold text-zinc-900">Richard Ewing — Founder of Exogram & CareerWin</p>
+                                <p className="font-bold text-zinc-900">Richard Ewing  -  Founder of Exogram & CareerWin</p>
                                 <p>11,141+ LinkedIn Followers · 1,400+ Executive Subscribers · 778 AI Citations</p>
                             </div>
                         </div>

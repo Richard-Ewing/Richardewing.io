@@ -4,8 +4,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/exogram/docs' },
-    title: 'Exogram Docs & Strategy Diagnostics | Richard Ewing',
-    description: 'Exogram Docs provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Exogram Docs & Quickstart',
+    description: 'Deploy deterministic runtime boundaries, token firewalls, and context filters in under 10 minutes.',
 };
 
 export default function ExogramDocsIndex() {
@@ -30,7 +30,7 @@ export default function ExogramDocsIndex() {
 
             <h2 className="text-2xl font-bold mt-16 mb-4">Getting Started</h2>
             <p className="text-zinc-900 mb-4">
-                Exogram operates implicitly adjacent to your existing LLM pipelines. You do not need to rewrite your agent execution loops—simply pass inputs and outputs through the verification boundary.
+                Exogram operates implicitly adjacent to your existing LLM pipelines. You do not need to rewrite your agent execution loops - simply pass inputs and outputs through the verification boundary.
             </p>
             <div className="bg-white/50 p-6 rounded-xl border border-zinc-400 mt-8">
                 <h3 className="text-sm font-semibold font-mono text-cyan-900 font-extrabold font-semibold mb-4">QUICK INSTALL</h3>

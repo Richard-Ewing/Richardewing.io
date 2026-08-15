@@ -1,7 +1,7 @@
 import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks20Modules: Record<string, CurriculumModule> = {};
-const t20 = 'Track 20 — System Design & Architecture';
+const t20 = 'Track 20  -  System Design & Architecture';
 
 tracks20Modules['system-design/20-1'] = m('20-1', 'Monolith vs Microservice TCO', 'Network tax, deployment overhead, mental load.', t20, 
     ['Stop premature scaling', 'Quantify network tax'], [

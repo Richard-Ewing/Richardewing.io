@@ -4,8 +4,8 @@ import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/system-prompts' },
-    title: 'Executive AI System Prompts & Strategy Diagnostics | Richard Ewing',
-    description: 'Executive AI System Prompts provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Executive AI System Prompts Library',
+    description: '50+ battle-tested system prompt templates for strategic planning, architectural reviews, and code auditing.',
     openGraph: {
         title: 'Executive AI System Prompts | Richard Ewing',
         description: 'System prompts and operational frameworks for CTOs to audit technical debt and R&D capital.',

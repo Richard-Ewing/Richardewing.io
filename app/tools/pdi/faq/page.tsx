@@ -3,15 +3,15 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Product Debt Index FAQ & Strategy Diagnostics | Richard Ewing',
-    description: 'Product Debt Index FAQ provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Product Debt Index (PDI) FAQ',
+    description: 'Frequently asked questions about calculating dollar-denominated technical debt and Technical Insolvency Dates.',
     keywords: ['product debt index', 'PDI calculator', 'technical debt measurement', 'PDI vs DORA', 'PDI score meaning'],
     alternates: { canonical: 'https://www.richardewing.io/tools/pdi/faq' },
     openGraph: { title: 'Product Debt Index (PDI) FAQ', description: 'Everything you need to know about the PDI framework.', url: 'https://www.richardewing.io/tools/pdi/faq', type: 'article' },
 };
 
 const faqs = [
-    { q: 'What is the Product Debt Index (PDI)?', a: 'The Product Debt Index (PDI) is a quantitative framework that measures the total burden of technical debt across a codebase or product. Unlike simple code quality scores, PDI combines multiple dimensions — code debt, architecture debt, infrastructure debt, test debt, and documentation debt — into a single normalized score (0-100) that translates engineering complexity into financial impact. A PDI of 0 means zero measurable debt; a PDI of 100 indicates critical technical insolvency.', color: 'cyan' },
+    { q: 'What is the Product Debt Index (PDI)?', a: 'The Product Debt Index (PDI) is a quantitative framework that measures the total burden of technical debt across a codebase or product. Unlike simple code quality scores, PDI combines multiple dimensions  -  code debt, architecture debt, infrastructure debt, test debt, and documentation debt  -  into a single normalized score (0-100) that translates engineering complexity into financial impact. A PDI of 0 means zero measurable debt; a PDI of 100 indicates critical technical insolvency.', color: 'cyan' },
     { q: 'How is the PDI score calculated?', a: 'PDI is calculated by scoring five debt dimensions on a 0-20 scale: Code Debt (complexity, duplication, code smells), Architecture Debt (coupling, cohesion, dependency cycles), Infrastructure Debt (deployment pipeline age, monitoring gaps), Test Debt (coverage gaps, flaky tests, missing integration tests), and Documentation Debt (stale docs, missing API docs, tribal knowledge). These five scores are summed to produce the composite PDI score (0-100).', color: 'violet' },
     { q: 'What is a good PDI score?', a: 'PDI scores are interpreted as: 0-20 (Excellent) means minimal technical debt with sustainable pace. 21-40 (Healthy) means manageable debt with clear remediation paths. 41-60 (Warning) means debt is impacting velocity and needs attention. 61-80 (Critical) means significant drag on delivery with urgent remediation needed. 81-100 (Insolvency) means technical debt exceeds the team\u0027s capacity to service it while delivering features.', color: 'emerald' },
     { q: 'How does PDI compare to DORA metrics?', a: 'PDI and DORA measure different things. DORA (Deployment Frequency, Lead Time, Change Failure Rate, MTTR) measures delivery performance outcomes. PDI measures the underlying technical debt that causes those outcomes. Think of PDI as a leading indicator and DORA as a lagging indicator. A high PDI score today predicts declining DORA metrics in 3-6 months.', color: 'amber' },
@@ -66,7 +66,7 @@ export default function PdiFaqPage() {
                         PDI{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">FAQ</span>
                     </h1>
-                    <p className="text-lg text-zinc-900 mb-12 max-w-2xl">Everything you need to know about the Product Debt Index — from scoring to board reporting.</p>
+                    <p className="text-lg text-zinc-900 mb-12 max-w-2xl">Everything you need to know about the Product Debt Index  -  from scoring to board reporting.</p>
 
                     <div className="space-y-6 mb-16">
                         {faqs.map((faq, i) => (

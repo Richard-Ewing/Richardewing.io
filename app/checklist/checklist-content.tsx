@@ -7,14 +7,14 @@ import { CheckCircle2, Lock, ArrowRight, Shield } from 'lucide-react';
 const QUESTIONS = [
     { id: 1, text: 'What percentage of your R&D budget funds new capability vs. maintaining existing features?' },
     { id: 2, text: 'Can your CFO calculate the per-request cost of every AI-powered feature?' },
-    { id: 3, text: 'Do you have a Technical Insolvency Date — the date when maintenance load exceeds engineering capacity?' },
+    { id: 3, text: 'Do you have a Technical Insolvency Date  -  the date when maintenance load exceeds engineering capacity?' },
     { id: 4, text: 'Has your board seen a Product Debt Index report in the last 90 days?' },
     { id: 5, text: 'How many AI agent permissions have been audited for least-privilege compliance?' },
-    { id: 6, text: 'Do you measure retry inflation — the cost of recursive AI failure loops?' },
-    { id: 7, text: 'Can you quantify your Innovation Tax — R&D spend that produces zero net-new capability?' },
+    { id: 6, text: 'Do you measure retry inflation  -  the cost of recursive AI failure loops?' },
+    { id: 7, text: 'Can you quantify your Innovation Tax  -  R&D spend that produces zero net-new capability?' },
     { id: 8, text: 'Do you have a kill switch protocol for negative-carry features?' },
     { id: 9, text: 'Are your AI model outputs verified before they reach production systems?' },
-    { id: 10, text: 'Do you track hallucination debt — the cumulative cost of unverified AI outputs?' },
+    { id: 10, text: 'Do you track hallucination debt  -  the cumulative cost of unverified AI outputs?' },
     { id: 11, text: 'Can you calculate the margin collapse point for each AI feature at scale?' },
     { id: 12, text: 'Does your governance infrastructure enforce deterministic verification at the runtime layer?' },
 ];

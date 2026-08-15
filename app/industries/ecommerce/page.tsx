@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Platform Complexity Is Crushin & Strategy Diagnostics | Richard Ewing',
-    description: 'Platform Complexity Is Crushin provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'E-Commerce AI Economics & Catalog Data Sprawl',
+    description: 'Audit recommendation engine inference costs, search index latency debt, and multi-channel inventory integration overhead.',
     keywords: ['ecommerce technical debt', 'ecommerce platform engineering', 'AI recommendation cost', 'checkout optimization', 'ecommerce CTO advisor', 'peak traffic scaling'],
     alternates: { canonical: 'https://www.richardewing.io/industries/ecommerce' },
     openGraph: { title: 'AI Economics for E-Commerce', description: 'Platform debt, AI personalization economics, and peak traffic scaling for e-commerce.', url: 'https://www.richardewing.io/industries/ecommerce', type: 'website' },
@@ -31,7 +31,7 @@ export default function EcommercePage() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-400">E-Commerce</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">
-                        E-commerce platforms face the unique challenge of managing massive product catalogs, complex integrations, and extreme traffic spikes — all while AI personalization adds variable cost to every interaction.
+                        E-commerce platforms face the unique challenge of managing massive product catalogs, complex integrations, and extreme traffic spikes  -  all while AI personalization adds variable cost to every interaction.
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">

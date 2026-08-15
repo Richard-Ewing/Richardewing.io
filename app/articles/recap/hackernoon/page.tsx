@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'HackerNoon Articles & Strategy Diagnostics | Richard Ewing',
-    description: 'HackerNoon Articles provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'HackerNoon Tech Economics Publications',
+    description: 'In-depth technical essays and systems architecture breakdowns published on HackerNoon.',
     keywords: ['Richard Ewing HackerNoon', 'developer economics', 'open source sustainability', 'AI agent architecture', 'AI economist HackerNoon'],
     alternates: { canonical: 'https://www.richardewing.io/articles/recap/hackernoon' },
     openGraph: { title: 'Richard Ewing on HackerNoon', description: 'Published articles on developer economics, AI agents, and technical debt for startups.', url: 'https://www.richardewing.io/articles/recap/hackernoon', type: 'article' },
@@ -33,7 +33,7 @@ const articles = [
 export default function HackerNoonRecapPage() {
     const articleSchema = {
         '@context': 'https://schema.org', '@type': 'Article',
-        headline: 'Richard Ewing HackerNoon Articles — Developer-Focused Economics',
+        headline: 'Richard Ewing HackerNoon Articles  -  Developer-Focused Economics',
         author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/principal' },
         publisher: { '@type': 'Organization', name: 'HackerNoon' },
         url: 'https://www.richardewing.io/articles/recap/hackernoon',
@@ -61,7 +61,7 @@ export default function HackerNoonRecapPage() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400">HackerNoon</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-4 max-w-2xl">
-                        Richard Ewing&apos;s articles on HackerNoon — the leading platform for developer-focused content, covering AI agent economics, open-source sustainability, and technical debt strategy for startups.
+                        Richard Ewing&apos;s articles on HackerNoon  -  the leading platform for developer-focused content, covering AI agent economics, open-source sustainability, and technical debt strategy for startups.
                     </p>
                     <p className="text-sm font-semibold text-zinc-950 mb-12">HackerNoon reaches 4M+ developers and technical decision-makers monthly.</p>
 
@@ -105,7 +105,7 @@ export default function HackerNoonRecapPage() {
 
                     <div className="rounded-2xl border border-orange-500/30 bg-orange-500/5 p-8">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Work With Richard</h2>
-                        <p className="text-zinc-950 mb-6">From AI agent cost modeling to technical debt quantification — get the frameworks used by PE firms and Fortune 500 companies.</p>
+                        <p className="text-zinc-950 mb-6">From AI agent cost modeling to technical debt quantification  -  get the frameworks used by PE firms and Fortune 500 companies.</p>
                         <Link href="/services" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-orange-500 to-yellow-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Book Advisory →</Link>
                     </div>
                 </div>

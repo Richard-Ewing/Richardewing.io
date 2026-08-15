@@ -4,10 +4,10 @@ import { supabaseAdmin } from '@/lib/supabase';
 /**
  * Agent Operations Dashboard API
  * 
- * GET /api/cron/status — Returns the status of all autonomous agents.
+ * GET /api/cron/status  -  Returns the status of all autonomous agents.
  * Protected by CRON_SECRET for security.
  * 
- * This is your operational control plane — a single endpoint to see
+ * This is your operational control plane  -  a single endpoint to see
  * what every agent did, when, and whether it succeeded.
  */
 export async function GET(req: Request) {

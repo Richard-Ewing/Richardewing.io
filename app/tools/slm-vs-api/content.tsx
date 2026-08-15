@@ -381,7 +381,7 @@ export default function SLMTool() {
                                         </div>
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-zinc-950 font-bold mb-2">Stand Up a Sovereign Validation Enclave</h4>
-                                            <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">Data sovereignty isn't just about privacy—it's an M&A prerequisite. Moving to an SLM (Llama 3 8B) on your VPC completely insulates your proprietary vectors from SaaS telemetry.</p>
+                                            <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">Data sovereignty isn't just about privacy - it's an M&A prerequisite. Moving to an SLM (Llama 3 8B) on your VPC completely insulates your proprietary vectors from SaaS telemetry.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-emerald-900 font-extrabold font-semibold uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive

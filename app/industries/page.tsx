@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Industry AI Economics & R&D Au & Strategy Diagnostics | Richard Ewing',
-    description: 'Industry AI Economics & R&D Au provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Industry AI Economics & Technical Debt Benchmarks',
+    description: 'Sector-specific diagnostic benchmarks for AI unit economics, R&D capital efficiency, and technical debt across 15 verticals.',
     keywords: ['industry advisory', 'fintech CTO advisor', 'healthtech engineering audit', 'AI company economics', 'vertical AI economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries' },
 };

@@ -5,8 +5,8 @@ import { failures } from '@/lib/content/failures';
 
 export const metadata = {
     alternates: { canonical: 'https://www.richardewing.io/failures' },
-  title: 'AI Failure Database & Strategy Diagnostics | Richard Ewing',
-  description: 'AI Failure Database provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+  title: 'AI Failure Modes & Remediation Index',
+  description: 'Catalog of nine common enterprise AI failure modes, from billing shocks to governance drift, with remediation steps.',
 };
 
 export default function FailuresIndexPage() {

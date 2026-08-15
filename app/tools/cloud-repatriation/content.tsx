@@ -379,7 +379,7 @@ export default function CloudContent() {
                                             
                                             <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
                                                 <div className={`px-3 py-1 rounded-md text-xs font-bold font-medium uppercase font-mono tracking-widest shrink-0 inline-block w-fit ${plan.month === 1 ? 'bg-rose-500/20 text-rose-900 font-extrabold border border-rose-500/50 font-bold' : 'bg-white/5 text-zinc-950 font-bold'}`}>
-                                                    Month {plan.month} {plan.month === 1 && '— CRITICAL DEPENDENCY'}
+                                                    Month {plan.month} {plan.month === 1 && ' -  CRITICAL DEPENDENCY'}
                                                 </div>
                                                 <div className="font-bold text-zinc-950 text-base">
                                                     {plan.focus}
@@ -465,7 +465,7 @@ export default function CloudContent() {
                                         </div>
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-zinc-950 font-bold mb-2">Eliminate the Egress Cartel Monopoly</h4>
-                                            <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">AWS charges $0.09/GB for data egress—an artificial monopoly markup. A 10G unmetered drop in a private rack costs less than $1,000/mo statically.</p>
+                                            <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">AWS charges $0.09/GB for data egress - an artificial monopoly markup. A 10G unmetered drop in a private rack costs less than $1,000/mo statically.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-cyan-900 font-extrabold font-semibold uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive

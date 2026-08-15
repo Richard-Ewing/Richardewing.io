@@ -6,7 +6,7 @@ export default function CurriculumTracksLayout({ children }: { children: React.R
         <>
             {children}
 
-            {/* Sticky Engagement CTA — appears at bottom of every curriculum page */}
+            {/* Sticky Engagement CTA  -  appears at bottom of every curriculum page */}
             <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-t border-zinc-400 py-3 px-4 shadow-lg">
                 <div className="max-w-5xl mx-auto flex items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
@@ -32,7 +32,7 @@ export default function CurriculumTracksLayout({ children }: { children: React.R
                             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gradient-to-r from-violet-600 to-indigo-600 text-zinc-950 font-semibold font-bold text-xs font-bold hover:opacity-90 transition-opacity shadow-md"
                         >
                             <Sparkles className="w-3 h-3" />
-                            Unlock All 23 Tracks — $999
+                            Unlock All 23 Tracks  -  $999
                         </a>
                     </div>
                 </div>

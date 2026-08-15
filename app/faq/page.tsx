@@ -5,12 +5,12 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-    title: 'FAQ — AI Advisory, Exogram & Frameworks',
+    title: 'FAQ  -  AI Advisory, Exogram & Frameworks',
     description: 'Frequently asked questions about AI Economics, advisory services, diagnostic tools, and the Exogram platform.',
     alternates: { canonical: 'https://www.richardewing.io/faq' },
     keywords: ['AI economist FAQ', 'richard ewing FAQ', 'advisory FAQ', 'exogram FAQ', 'technical debt FAQ'],
     openGraph: {
-        title: 'FAQ — AI Advisory, Exogram & Frameworks | Richard Ewing',
+        title: 'FAQ  -  AI Advisory, Exogram & Frameworks | Richard Ewing',
         description: 'Frequently asked questions about AI Economics, advisory services, diagnostic tools, and the Exogram platform.',
         url: 'https://www.richardewing.io/faq',
         siteName: 'Richard Ewing',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'FAQ — AI Advisory, Exogram & Frameworks | Richard Ewing',
+        title: 'FAQ  -  AI Advisory, Exogram & Frameworks | Richard Ewing',
         description: 'Frequently asked questions about AI Economics, advisory services, diagnostic tools, and the Exogram platform.',
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },

@@ -117,7 +117,7 @@ export const ExecutiveVideoModal = () => {
                                     EXECUTIVE BRIEFING PRESENTATION
                                 </span>
                                 <h3 className="text-xl sm:text-2xl font-grotesk font-bold text-white">
-                                    What is an AI Economist? — Richard Ewing
+                                    What is an AI Economist?  -  Richard Ewing
                                 </h3>
                             </div>
 
@@ -233,7 +233,7 @@ export const ExecutiveVideoModal = () => {
 
                         {/* Modal Footer */}
                         <div className="mt-6 pt-4 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-400">
-                            <span>Presenter: Richard Ewing — Founder of Exogram & CareerWin.ai</span>
+                            <span>Presenter: Richard Ewing  -  Founder of Exogram & CareerWin.ai</span>
                             <div className="flex gap-3">
                                 <a
                                     href="/services#gut_check"

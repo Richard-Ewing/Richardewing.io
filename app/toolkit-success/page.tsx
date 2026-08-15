@@ -4,8 +4,8 @@ import Navigation from '../components/Navigation';
 import { Footer } from '../components/footer';
 
 export const metadata = {
-    title: 'Toolkit Downloaded & Strategy Diagnostics | Richard Ewing',
-    description: 'Toolkit Downloaded provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Diagnostic Toolkit Downloaded',
+    description: 'Access instructions and documentation for your downloaded AI Economics diagnostic spreadsheets and templates.',
     robots: 'noindex, nofollow' // Keep this hidden from Google so only subscribers get it
 };
 

@@ -3,7 +3,7 @@ import { type CurriculumModule, m, l, d } from './curriculum-data';
 export function populateExpansion8to14(modules: Record<string, CurriculumModule>) {
 
     // ═══════════════════ TRACK 8 EXPANSION: Modules 6-10 ═══════════════════
-    const t8 = 'Track 8 — AI Pricing Strategy';
+    const t8 = 'Track 8  -  AI Pricing Strategy';
     const t8Exp: [string, string, string, string[], ReturnType<typeof l>[]][] = [
         ['8-6', 'Enterprise AI Contract Structures', 'Designing AI pricing contracts for enterprise buyers with committed spend, SLAs, and volume tiers.',
             ['Structure enterprise AI contracts', 'Design committed-use discounts', 'Build SLA pricing tiers', 'Negotiate minimum commitments'],
@@ -28,7 +28,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
         ['8-7', 'AI Pricing Page Optimization', 'The psychology and economics of presenting AI pricing to maximize conversion and ACV.',
             ['Design high-converting pricing pages', 'Apply anchoring psychology', 'Optimize plan names and descriptions', 'A/B test pricing presentation'],
             [
-                l('Lesson 1: Anchoring and Plan Architecture', 'The highest-converting pricing pages use exactly 3 plans with a highlighted "recommended" option. The cheap plan exists to anchor value. The expensive plan exists to make the middle plan feel reasonable. The middle plan is your target — it should capture 60-70% of signups.', [
+                l('Lesson 1: Anchoring and Plan Architecture', 'The highest-converting pricing pages use exactly 3 plans with a highlighted "recommended" option. The cheap plan exists to anchor value. The expensive plan exists to make the middle plan feel reasonable. The middle plan is your target  -  it should capture 60-70% of signups.', [
                     d('Three-Plan Rule', 'More than 3 options creates decision paralysis and reduces conversion by 15-25%.', 'Exception: enterprise "Contact Us" as a 4th option'),
                     d('Anchor Plan', 'The cheapest plan should feel limiting but functional. Its job is to make the middle plan look like a bargain.', 'Price at 40-50% of the middle tier'),
                     d('Decoy Effect', 'The expensive plan makes the middle plan feel reasonable by comparison.', 'Price at 2.5-3x the middle tier')
@@ -69,11 +69,11 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
             ['Design platform pricing tiers', 'Balance marketplace economics', 'Calculate platform take rates', 'Manage cross-subsidization'],
             [
                 l('Lesson 1: Multi-Sided Pricing Architecture', 'AI platforms serve multiple customer types: developers (who build on the platform), enterprises (who buy solutions), and end-users (who consume the product). Each side has different willingness-to-pay and cost-to-serve. The art is pricing each side to maximize total platform value, not individual transaction profit.', [
-                    d('Developer Side', 'Price to attract: low/free tier for adoption, usage-based for scale.', 'Developers are the supply side — subsidize them to build the platform'),
-                    d('Enterprise Side', 'Price for value: outcome-based or committed-use contracts.', 'Enterprises are the demand side — charge for business impact'),
+                    d('Developer Side', 'Price to attract: low/free tier for adoption, usage-based for scale.', 'Developers are the supply side  -  subsidize them to build the platform'),
+                    d('Enterprise Side', 'Price for value: outcome-based or committed-use contracts.', 'Enterprises are the demand side  -  charge for business impact'),
                     d('Cross-Subsidization', 'Enterprise revenue subsidizes developer platform costs.', 'Platform economics: one side pays more so the other side grows faster')
                 ], 'Map your platform\'s customer types. For each, define the pricing strategy and how cross-subsidization flows between sides.'),
-                l('Lesson 2: Platform Take Rate Economics', 'Your take rate (the percentage of transactions flowing through the platform) must balance growth vs revenue. Too high (>30%) and developers leave. Too low (<10%) and you can\'t sustain the platform. The optimal take rate decreases as transaction volume increases — reward scale.', [
+                l('Lesson 2: Platform Take Rate Economics', 'Your take rate (the percentage of transactions flowing through the platform) must balance growth vs revenue. Too high (>30%) and developers leave. Too low (<10%) and you can\'t sustain the platform. The optimal take rate decreases as transaction volume increases  -  reward scale.', [
                     d('Optimal Take Rate', 'Start at 20-30% for low volume. Decrease to 10-15% at scale.', 'App Store model: 30% is the ceiling, not the target'),
                     d('Volume Tiers', 'First $100K/year: 25% take rate. $100K-1M: 15%. $1M+: 10%.', 'Rewards developers who scale on your platform'),
                     d('Minimum Fee', 'A per-transaction minimum fee ($0.01-0.05) to prevent micro-transaction abuse.', 'Ensures every transaction contributes to platform costs')
@@ -93,7 +93,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                     d('Grandfather Period', 'Existing customers keep old pricing for 3-12 months depending on contract.', 'Enterprise contracts: honor through term. Month-to-month: 90 days'),
                     d('Cohort Migration', 'Migrate customers in waves: smallest first (lowest risk), largest last (highest touch).', 'Each cohort provides learning for the next')
                 ], 'Create a 90-day pricing migration plan with specific dates, communication templates, and cohort migration schedule.'),
-                l('Lesson 2: Value Communication Framework', 'Never say "price increase." Say "new pricing that aligns with value delivered." The framework: (1) Anchor to value delivered — "You saved $X using our AI this quarter," (2) Explain the alignment — "Your new pricing reflects a fraction of that value," (3) Provide options — "Choose the plan that fits your usage pattern."', [
+                l('Lesson 2: Value Communication Framework', 'Never say "price increase." Say "new pricing that aligns with value delivered." The framework: (1) Anchor to value delivered  -  "You saved $X using our AI this quarter," (2) Explain the alignment  -  "Your new pricing reflects a fraction of that value," (3) Provide options  -  "Choose the plan that fits your usage pattern."', [
                     d('Value Anchor', 'Quantify the value the customer has received before discussing price.', 'If they saved $50K and you charge $5K more, the math is obvious'),
                     d('Savings Calculator', 'Build a tool that shows each customer their ROI from your AI product.', 'Turns the price conversation into a value conversation'),
                     d('Option Architecture', 'Give 2-3 new plan options. Never present a single "take it or leave it" price.', 'Choice gives customers a sense of control')
@@ -101,7 +101,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                 l('Lesson 3: Migration Success Metrics', 'Measuring migration success requires tracking: Logo retention (what % of customers stayed?), Net Revenue Retention (did revenue grow or shrink from existing customers?), Support ticket volume (are customers confused?), and NPS impact (did satisfaction change?). A successful migration retains 90%+ logos and achieves positive NRR.', [
                     d('Logo Retention Target', '90%+ of customers stay through the migration.', 'Below 85% indicates communication or value perception failure'),
                     d('NRR Impact', 'Net Revenue Retention should be >100% after migration.', 'Pricing increase + expansion should exceed churn'),
-                    d('Support Ticket Analysis', 'Track pricing-related support tickets per week during migration.', 'Rising tickets signal confusion — improve communication immediately')
+                    d('Support Ticket Analysis', 'Track pricing-related support tickets per week during migration.', 'Rising tickets signal confusion  -  improve communication immediately')
                 ], 'Define your pricing migration success dashboard: 4 metrics, targets for each, and weekly tracking cadence.')
             ]
         ],
@@ -112,9 +112,9 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
     });
 
     // ═══════════════════ TRACK 9 EXPANSION: Modules 6-10 ═══════════════════
-    const t9 = 'Track 9 — Technical Debt as Financial Liability';
+    const t9 = 'Track 9  -  Technical Debt as Financial Liability';
     const t9Exp: [string, string, string, string[], ReturnType<typeof l>[]][] = [
-        ['9-6', 'Debt Remediation Prioritization Frameworks', 'Deciding which debt to kill first — using economic models, not gut feel.',
+        ['9-6', 'Debt Remediation Prioritization Frameworks', 'Deciding which debt to kill first  -  using economic models, not gut feel.',
             ['Apply weighted scoring models', 'Calculate bang-for-buck ratios', 'Build remediation roadmaps', 'Secure budget for debt reduction'],
             [
                 l('Lesson 1: The WSJF Model for Debt', 'Weighted Shortest Job First (WSJF) adapted for debt: Priority Score = (Cost of Delay + Risk Reduction + Team Velocity Improvement) / Remediation Effort. Score each debt item on a 1-10 scale for each factor, divide by effort, and rank. The highest-scoring items deliver the most economic value per unit of engineering effort.', [
@@ -125,7 +125,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                 l('Lesson 2: The 20/80 Debt Reduction Rule', '20% of your debt items cause 80% of your maintenance costs. Find them. The technique: rank all debt items by annual carrying cost, then draw a cumulative percentage line. The items above the 80% line are your critical few. Resolving just these 20% will eliminate 80% of your debt costs.', [
                     d('Pareto Analysis', 'Rank debt items by annual carrying cost. Identify the vital few.', 'Usually 3-5 items account for the majority of costs'),
                     d('Critical Path Debt', 'Debt on the critical path of feature delivery blocks all downstream work.', 'Resolving critical-path debt has multiplicative impact'),
-                    d('Quick Wins', 'Debt items that take <1 sprint to resolve but eliminate >$10K/year in costs.', 'Low effort, high impact — schedule these immediately')
+                    d('Quick Wins', 'Debt items that take <1 sprint to resolve but eliminate >$10K/year in costs.', 'Low effort, high impact  -  schedule these immediately')
                 ], 'Perform a Pareto analysis on your debt inventory. Identify the 20% that drives 80% of maintenance costs.'),
                 l('Lesson 3: Building the Remediation Roadmap', 'A debt remediation roadmap needs executive sponsorship, a dedicated budget, and measurable outcomes. Structure it as 3 phases: Phase 1 (quick wins, 0-3 months, <$50K), Phase 2 (critical path debt, 3-6 months, $50-200K), Phase 3 (strategic debt, 6-12 months, $200K+). Each phase has a defined ROI that must be proven before the next phase is funded.', [
                     d('Phase-Gated Funding', 'Each phase must demonstrate ROI before the next phase is approved.', 'Reduces executive risk and builds confidence in debt reduction'),
@@ -134,7 +134,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                 ], 'Build a 3-phase debt remediation roadmap with phase-gated funding, measurable KPIs, and executive sponsor identification.')
             ]
         ],
-        ['9-7', 'Debt-Driven Architecture Migration', 'When the debt is so deep the only answer is a full migration — and how to fund it.',
+        ['9-7', 'Debt-Driven Architecture Migration', 'When the debt is so deep the only answer is a full migration  -  and how to fund it.',
             ['Identify migration triggers', 'Build the economic case', 'Design the strangler pattern', 'Manage dual-system costs'],
             [
                 l('Lesson 1: Migration Trigger Identification', 'Three signals that debt has crossed the migration threshold: (1) Maintenance load exceeds 60% of engineering capacity, (2) The cost of patching exceeds the cost of rebuilding on an annual basis, (3) The system cannot support a critical business requirement (regulatory, scale, or security) regardless of investment. When any of these is true, patching is throwing good money after bad.', [
@@ -144,25 +144,25 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                 ], 'Evaluate your highest-debt system against the 3 migration triggers. Has it crossed the migration threshold?'),
                 l('Lesson 2: The Strangler Fig Economics', 'The strangler fig pattern: build the new system alongside the old one, migrating one capability at a time. Each migrated capability immediately starts delivering value (better performance, lower costs, new features). The economics: you\'re amortizing the migration cost over 12-24 months while extracting incremental value at each stage.', [
                     d('Incremental Value', 'Each migrated module delivers immediate improvements.', 'Keeps stakeholders funded and motivated throughout the migration'),
-                    d('Dual-System Cost', 'Running both old and new systems simultaneously increases infrastructure costs 30-50%.', 'Budget for this — it\'s the price of safe migration'),
+                    d('Dual-System Cost', 'Running both old and new systems simultaneously increases infrastructure costs 30-50%.', 'Budget for this  -  it\'s the price of safe migration'),
                     d('Rollback Safety', 'Each migration step can be independently rolled back.', 'Reduces risk from catastrophic failure to manageable scope')
                 ], 'Design a strangler fig migration plan for your highest-debt system. Identify the migration order and expected value at each stage.'),
-                l('Lesson 3: Migration ROI Tracking', 'Track migration ROI at each stage: cost spent vs value delivered vs projected remaining investment. If ROI at the 6-month mark is below projection, the team and executive sponsor must decide: adjust scope, accelerate, or stop. Sunk cost fallacy kills migration projects — be willing to stop if the data says stop.', [
+                l('Lesson 3: Migration ROI Tracking', 'Track migration ROI at each stage: cost spent vs value delivered vs projected remaining investment. If ROI at the 6-month mark is below projection, the team and executive sponsor must decide: adjust scope, accelerate, or stop. Sunk cost fallacy kills migration projects  -  be willing to stop if the data says stop.', [
                     d('Stage-Gate Reviews', 'Every 3 months, review: cost spent, value delivered, projection accuracy.', 'Provides off-ramp opportunities before overcommitting'),
                     d('Value Velocity', 'Rate of value delivery per engineering week invested.', 'Should increase over time as the team gets faster on the new platform'),
                     d('Sunk Cost Discipline', 'Past investment is irrelevant. Only future cost vs future value matters.', 'The hardest discipline in engineering leadership')
                 ], 'Build a migration ROI tracking dashboard with stage-gate reviews every 3 months. Define the stop criteria.')
             ]
         ],
-        ['9-8', 'Debt Culture & Organizational Incentives', 'Why teams keep creating debt — and how to redesign incentives to prevent it.',
+        ['9-8', 'Debt Culture & Organizational Incentives', 'Why teams keep creating debt  -  and how to redesign incentives to prevent it.',
             ['Diagnose debt culture', 'Redesign team incentives', 'Create debt prevention mechanisms', 'Build sustainable engineering practices'],
             [
-                l('Lesson 1: The Incentive Trap', 'Teams create debt because the incentive structure rewards it. Ship fast = promotion. Write clean, sustainable code = invisible. Until you make debt creation visible and debt prevention rewarded, you will never reduce debt — you\'ll only keep cleaning up yesterday\'s mess while creating tomorrow\'s.', [
+                l('Lesson 1: The Incentive Trap', 'Teams create debt because the incentive structure rewards it. Ship fast = promotion. Write clean, sustainable code = invisible. Until you make debt creation visible and debt prevention rewarded, you will never reduce debt  -  you\'ll only keep cleaning up yesterday\'s mess while creating tomorrow\'s.', [
                     d('Ship-Speed Bias', 'Promotions and bonuses tied exclusively to feature delivery speed.', 'Creates a rational incentive to cut corners'),
                     d('Invisible Quality', 'Clean architecture, documentation, and testing are invisible to leadership.', 'If leadership can\'t see it, it doesn\'t get rewarded'),
-                    d('Debt Attribution', 'When debt causes incidents, trace it back to the decisions (and people) that created it.', 'Not to blame — to make the cost of debt visible')
+                    d('Debt Attribution', 'When debt causes incidents, trace it back to the decisions (and people) that created it.', 'Not to blame  -  to make the cost of debt visible')
                 ], 'Audit your promotion criteria: do they reward sustainable engineering or just fast shipping? Redesign to balance both.'),
-                l('Lesson 2: Debt Prevention Mechanisms', 'Four mechanisms that prevent debt creation: (1) Architecture Decision Records (ADRs) requiring explicit documentation of "debt accepted here," (2) Code quality gates in CI/CD that block merges below standards, (3) Debt budgets — each sprint allocates 20% to debt prevention, (4) Debt reviews in sprint retros.', [
+                l('Lesson 2: Debt Prevention Mechanisms', 'Four mechanisms that prevent debt creation: (1) Architecture Decision Records (ADRs) requiring explicit documentation of "debt accepted here," (2) Code quality gates in CI/CD that block merges below standards, (3) Debt budgets  -  each sprint allocates 20% to debt prevention, (4) Debt reviews in sprint retros.', [
                     d('ADR Documentation', 'Every architectural shortcut must be documented with rationale and remediation plan.', 'Makes debt creation a conscious, visible decision'),
                     d('Quality Gates', 'Automated code quality checks that reject code below minimum standards.', 'Automated enforcement removes human conflict from quality discussions'),
                     d('20% Debt Budget', 'Every sprint, 20% of capacity is reserved for debt prevention and reduction.', 'Non-negotiable. Features cannot cannibalize this budget.')
@@ -174,10 +174,10 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                 ], 'Design a "Debt-Aware Engineering Culture" initiative: recognition programs, review criteria changes, and career path updates.')
             ]
         ],
-        ['9-9', 'Regulatory & Compliance Debt', 'When technical debt creates legal liability — GDPR, SOC2, HIPAA, and the cost of non-compliance.',
+        ['9-9', 'Regulatory & Compliance Debt', 'When technical debt creates legal liability  -  GDPR, SOC2, HIPAA, and the cost of non-compliance.',
             ['Identify compliance debt', 'Calculate regulatory risk exposure', 'Build compliance remediation roadmaps', 'Present risk to legal and board'],
             [
-                l('Lesson 1: Compliance Debt Identification', 'Compliance debt is technical debt with teeth. A system that stores PII without encryption isn\'t just messy code — it\'s a GDPR violation with fines up to 4% of global revenue. A missing audit log isn\'t just a gap — it\'s a SOC2 failure that blocks enterprise sales. Compliance debt has external deadlines and external consequences.', [
+                l('Lesson 1: Compliance Debt Identification', 'Compliance debt is technical debt with teeth. A system that stores PII without encryption isn\'t just messy code  -  it\'s a GDPR violation with fines up to 4% of global revenue. A missing audit log isn\'t just a gap  -  it\'s a SOC2 failure that blocks enterprise sales. Compliance debt has external deadlines and external consequences.', [
                     d('GDPR Exposure', 'Unencrypted PII, missing consent records, no data deletion workflows.', 'Fines: up to €20M or 4% of global revenue'),
                     d('SOC2 Gaps', 'Missing audit logs, weak access controls, no change management documentation.', 'Blocks enterprise deals worth $100K+/year each'),
                     d('HIPAA Risk', 'Healthcare data without BAAs, inadequate encryption, no access tracking.', 'Fines: $100-$50,000 per violation, up to $1.5M/year')
@@ -190,24 +190,24 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                 l('Lesson 3: Compliance Remediation ROI', 'Compliance remediation ROI = (Expected Annual Regulatory Loss + Blocked Revenue from Missing Certifications) / Remediation Cost. If resolving SOC2 gaps costs $200K but enables $2M in enterprise deals, the ROI is 10x. If fixing GDPR exposure costs $150K against $1M in expected fines, the ROI is 6.7x.', [
                     d('Revenue Enablement', 'Enterprise deals requiring certifications you don\'t have.', 'Sum of all qualified pipeline blocked by compliance gaps'),
                     d('Risk Reduction ROI', 'Expected fine reduction divided by remediation investment.', 'Usually 5-10x for critical compliance items'),
-                    d('Combined Business Case', 'Revenue enabled + fines avoided = total compliance remediation value.', 'Present both to the board — offense and defense')
+                    d('Combined Business Case', 'Revenue enabled + fines avoided = total compliance remediation value.', 'Present both to the board  -  offense and defense')
                 ], 'Build a compliance remediation business case combining revenue enablement and risk reduction. Present with ROI and payback period.')
             ]
         ],
         ['9-10', 'Building a Technical Debt Dashboard', 'Creating an executive-ready, real-time view of technical debt across the organization.',
             ['Design debt dashboards', 'Select leading indicators', 'Automate debt tracking', 'Present to executives quarterly'],
             [
-                l('Lesson 1: Dashboard Architecture', 'The Technical Debt Dashboard has four zones: (1) Health Score — a single 0-100 composite score reflecting overall debt health, (2) Financial Impact — debt-related costs in dollar terms (carrying cost, remediation backlog, EBITDA drag), (3) Velocity Impact — deployment frequency, lead time, and maintenance load trends, (4) Risk Register — top 5 debt-related risks with severity and probability.', [
+                l('Lesson 1: Dashboard Architecture', 'The Technical Debt Dashboard has four zones: (1) Health Score  -  a single 0-100 composite score reflecting overall debt health, (2) Financial Impact  -  debt-related costs in dollar terms (carrying cost, remediation backlog, EBITDA drag), (3) Velocity Impact  -  deployment frequency, lead time, and maintenance load trends, (4) Risk Register  -  top 5 debt-related risks with severity and probability.', [
                     d('Composite Health Score', 'A weighted average of maintenance load, deployment frequency, incident rate, and coverage.', 'Provides a single "how are we doing?" metric for executives'),
-                    d('Financial Zone', 'Annual carrying cost, remediation backlog total, EBITDA margin impact.', 'In dollar terms — the only language the board fluently speaks'),
+                    d('Financial Zone', 'Annual carrying cost, remediation backlog total, EBITDA margin impact.', 'In dollar terms  -  the only language the board fluently speaks'),
                     d('Trend Lines', 'All metrics shown with 4-quarter trend lines.', 'Direction matters more than absolute numbers')
                 ], 'Design the 4-zone Technical Debt Dashboard for your organization. Define the composite health score formula.'),
                 l('Lesson 2: Automated Metrics Collection', 'Manual debt tracking dies within 2 quarters. Automate: pull deployment frequency from CI/CD, extract maintenance load from Jira/Linear labels, calculate test coverage from CI reports, and aggregate incident data from PagerDuty/ops. The dashboard should update weekly without human intervention.', [
-                    d('CI/CD Integration', 'Deployment frequency and lead time from GitHub Actions/Jenkins.', 'Direct API integration — no manual data entry'),
+                    d('CI/CD Integration', 'Deployment frequency and lead time from GitHub Actions/Jenkins.', 'Direct API integration  -  no manual data entry'),
                     d('Issue Tracker Labels', 'Standardized labels: "tech-debt," "maintenance," "bug-fix" on all tickets.', 'Enables automated maintenance load calculation'),
                     d('Weekly Cadence', 'Dashboard refreshes every Monday morning before leadership standup.', 'Consistent cadence builds trust and accountability')
                 ], 'Identify data sources for each dashboard metric. Design the automation pipeline for weekly dashboard refresh.'),
-                l('Lesson 3: Quarterly Board Reporting', 'Present the debt dashboard to the board quarterly in a 3-minute update: (1) One number — the composite health score with trend arrow, (2) One insight — the most impactful debt event this quarter, (3) One ask — budget or resource request backed by ROI. Three minutes, three points, zero technical jargon.', [
+                l('Lesson 3: Quarterly Board Reporting', 'Present the debt dashboard to the board quarterly in a 3-minute update: (1) One number  -  the composite health score with trend arrow, (2) One insight  -  the most impactful debt event this quarter, (3) One ask  -  budget or resource request backed by ROI. Three minutes, three points, zero technical jargon.', [
                     d('The One Number', 'Health Score with quarter-over-quarter trend. Green (>70), Yellow (40-70), Red (<40).', 'Boards love simple grading systems'),
                     d('The One Insight', '"This quarter, we resolved the database SPOF that had a $5M revenue exposure."', 'Concrete, dollar-denominated, impressive'),
                     d('The One Ask', '"To maintain trajectory, I need $X for Q3 debt reduction. Expected ROI: Y:1."', 'Always have a specific ask with specific ROI')
@@ -221,7 +221,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
     });
 
     // ═══════════════════ TRACK 10 EXPANSION: Modules 4-10 ═══════════════════
-    const t10 = 'Track 10 — AI Due Diligence';
+    const t10 = 'Track 10  -  AI Due Diligence';
     const t10Exp: [string, string, string, string[], ReturnType<typeof l>[]][] = [
         ['10-4', 'AI Team Assessment', 'Evaluating the talent, structure, and retention risk of an AI engineering team during diligence.',
             ['Assess ML team depth', 'Evaluate key-person risk', 'Calculate replacement costs', 'Identify talent retention risks'],
@@ -266,12 +266,12 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
         ['10-6', 'AI Revenue Quality Analysis', 'Distinguishing real AI revenue from hype revenue in due diligence.',
             ['Analyze revenue attribution', 'Identify hype vs substance', 'Calculate AI-specific NRR', 'Evaluate pricing durability'],
             [
-                l('Lesson 1: AI Revenue Attribution', 'Companies love to label everything "AI revenue." The test: if you removed the AI component, would the customer still pay? If yes, it\'s software revenue with AI marketing. If no, it\'s true AI revenue. Only AI-attributed revenue — where the AI is the primary value driver — should be valued at AI multiples.', [
+                l('Lesson 1: AI Revenue Attribution', 'Companies love to label everything "AI revenue." The test: if you removed the AI component, would the customer still pay? If yes, it\'s software revenue with AI marketing. If no, it\'s true AI revenue. Only AI-attributed revenue  -  where the AI is the primary value driver  -  should be valued at AI multiples.', [
                     d('Removal Test', 'If the AI feature were removed, what % of the price would customers still pay?', 'AI premium = total price - price without AI'),
                     d('Feature Usage', 'What percentage of active users actually use the AI features?', 'AI usage <30% suggests the AI is marketing, not value'),
                     d('Retention Attribution', 'Is AI usage correlated with higher retention?', 'If AI users churn at the same rate as non-AI users, AI isn\'t driving retention')
                 ], 'Apply the removal test to your AI product. What percentage of revenue is truly AI-attributed?'),
-                l('Lesson 2: Hype Revenue Identification', 'Three patterns of hype revenue: (1) POC Revenue — customers paying $5-10K for a proof of concept they won\'t renew, (2) Innovation Budget — funded by the customer\'s "innovation lab" instead of operational budget, (3) Executive Sponsor Risk — revenue dependent on a single champion who may leave or lose interest.', [
+                l('Lesson 2: Hype Revenue Identification', 'Three patterns of hype revenue: (1) POC Revenue  -  customers paying $5-10K for a proof of concept they won\'t renew, (2) Innovation Budget  -  funded by the customer\'s "innovation lab" instead of operational budget, (3) Executive Sponsor Risk  -  revenue dependent on a single champion who may leave or lose interest.', [
                     d('POC Revenue', 'One-time proof-of-concept payments that don\'t convert to production contracts.', 'POC-to-production conversion rate <30% = hype signal'),
                     d('Innovation Budget Risk', 'Innovation lab budgets are cut first in downturns.', 'Ask: is this funded from innovation or operations budget?'),
                     d('Single Champion Risk', 'Revenue dependent on one executive sponsor at the customer.', 'If that person leaves, the contract follows them out the door')
@@ -288,7 +288,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
             [
                 l('Lesson 1: AI IP Ownership Analysis', 'Who owns the AI? If the model was trained using open-source frameworks (mostly fine), on third-party APIs (they own the outputs in many cases), by contractors (check the IP assignment clause), or using customer data (check the data processing agreement). Clean IP ownership is non-negotiable for acquisition.', [
                     d('Training IP', 'Who owns the trained model weights? The company, the cloud provider, or the researcher?', 'Check employment agreements and contractor IP clauses'),
-                    d('Output Ownership', 'Some API providers claim rights to outputs generated through their APIs.', 'Review ToS for OpenAI, Anthropic, etc. — terms vary significantly'),
+                    d('Output Ownership', 'Some API providers claim rights to outputs generated through their APIs.', 'Review ToS for OpenAI, Anthropic, etc.  -  terms vary significantly'),
                     d('Customer Data IP', 'Models trained on customer data may trigger data processing agreement restrictions.', 'Customer may have rights to models trained on their data')
                 ], 'Audit your AI IP ownership: training data rights, model weight ownership, output rights, and contractor IP assignments.'),
                 l('Lesson 2: Regulatory Risk Mapping', 'Map your AI product against the emerging regulatory environment: EU AI Act (risk classification), US state-level AI laws (bias audits), sector-specific regulations (financial, healthcare, employment), and international data sovereignty requirements. Each regulation creates compliance costs and potential liability.', [
@@ -303,7 +303,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                 ], 'Assess your AI product\'s litigation exposure across copyright, bias, and output liability. Estimate total legal risk.')
             ]
         ],
-        ['10-8', 'AI Financial Model Construction', 'Building the financial model for an AI company — from unit economics to 5-year projections.',
+        ['10-8', 'AI Financial Model Construction', 'Building the financial model for an AI company  -  from unit economics to 5-year projections.',
             ['Build AI unit economics models', 'Project inference cost trajectories', 'Model margin expansion scenarios', 'Present to investment committees'],
             [
                 l('Lesson 1: AI Unit Economics Deep Dive', 'The AI unit economics model: Revenue per customer - (Inference COGS per customer + Acquisition cost amortized + Infrastructure allocation + Support cost) = Contribution margin per customer. The catch: inference COGS is variable and usage-dependent, making it harder to predict than traditional SaaS.', [
@@ -316,7 +316,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                     d('Usage Growth Assumptions', 'Model per-customer usage growing 30-80% annually.', 'Based on historical cohort usage data'),
                     d('Margin Trajectory', 'Plot gross margin quarterly over 5 years under each scenario.', 'The gap between scenarios shows the range of possible outcomes')
                 ], 'Build a 3-scenario 5-year financial model for your AI product. Plot margin trajectories for bear, base, and bull cases.'),
-                l('Lesson 3: Investment Committee Presentation', 'The investment memo for an AI company needs: (1) Market sizing with AI-specific TAM, (2) Product differentiation (moat analysis), (3) Unit economics at current scale AND projected scale, (4) Margin trajectory under multiple scenarios, (5) Key risks with mitigation plans. The memo should prove that margins expand with scale — the defining characteristic of great AI businesses.', [
+                l('Lesson 3: Investment Committee Presentation', 'The investment memo for an AI company needs: (1) Market sizing with AI-specific TAM, (2) Product differentiation (moat analysis), (3) Unit economics at current scale AND projected scale, (4) Margin trajectory under multiple scenarios, (5) Key risks with mitigation plans. The memo should prove that margins expand with scale  -  the defining characteristic of great AI businesses.', [
                     d('TAM with AI Premium', 'AI companies can capture larger TAM than traditional software in the same space.', 'AI enables automation of tasks that were previously service-only'),
                     d('Scale Economics', 'Show that unit economics improve at 10x current scale.', 'If margins compress at scale, the business model is broken'),
                     d('Risk Section', 'Explicitly address: model obsolescence, provider dependency, regulatory changes.', 'Investors reward transparency about risks')
@@ -326,7 +326,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
         ['10-9', 'Post-Acquisition AI Integration', 'The playbook for integrating an acquired AI company without destroying its value.',
             ['Plan AI team integration', 'Merge ML infrastructure', 'Retain key talent', 'Realize synergies without disruption'],
             [
-                l('Lesson 1: Day 1 Through Day 100 Playbook', 'AI acquisitions fail most often in the first 100 days. The playbook: Days 1-30 (protect the AI team — no org changes, no tool changes, no process changes), Days 31-60 (map integration synergies and dependencies), Days 61-100 (begin incremental integration with the AI team\'s buy-in). The single most important rule: keep the AI team intact and productive.', [
+                l('Lesson 1: Day 1 Through Day 100 Playbook', 'AI acquisitions fail most often in the first 100 days. The playbook: Days 1-30 (protect the AI team  -  no org changes, no tool changes, no process changes), Days 31-60 (map integration synergies and dependencies), Days 61-100 (begin incremental integration with the AI team\'s buy-in). The single most important rule: keep the AI team intact and productive.', [
                     d('Protection Phase', 'First 30 days: zero changes to the AI team\'s workflow, tools, or reporting structure.', 'Change causes attrition. Attrition destroys the acquisition value.'),
                     d('Mapping Phase', 'Days 31-60: where are the integration synergies between AI teams?', 'Map shared infrastructure, data assets, and model capabilities'),
                     d('Integration Phase', 'Days 61-100: begin merging infrastructure and workflows incrementally.', 'Each integration step must be voluntary and reversible')
@@ -346,7 +346,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
         ['10-10', 'AI Due Diligence Report Template', 'The complete framework for delivering a board-ready AI due diligence report.',
             ['Structure due diligence findings', 'Present risk-adjusted valuations', 'Build recommendation frameworks', 'Deliver board-ready reports'],
             [
-                l('Lesson 1: The 7-Section DD Report', 'The AI due diligence report has 7 sections: (1) Executive Summary — 1-page go/no-go with confidence level, (2) Revenue Quality — real AI revenue vs hype, (3) Technology Assessment — moat, infrastructure, model quality, (4) Team Assessment — talent depth, key-person risk, (5) Financial Model — unit economics and margin projections, (6) Risk Register — legal, technical, regulatory, and (7) Recommendation — buy/pass with conditions.', [
+                l('Lesson 1: The 7-Section DD Report', 'The AI due diligence report has 7 sections: (1) Executive Summary  -  1-page go/no-go with confidence level, (2) Revenue Quality  -  real AI revenue vs hype, (3) Technology Assessment  -  moat, infrastructure, model quality, (4) Team Assessment  -  talent depth, key-person risk, (5) Financial Model  -  unit economics and margin projections, (6) Risk Register  -  legal, technical, regulatory, and (7) Recommendation  -  buy/pass with conditions.', [
                     d('Executive Summary', 'One page: go/no-go, confidence level (high/medium/low), 3 key findings.', 'This is the only page most board members will read closely'),
                     d('Revenue Quality Score', 'Composite score: 1-5 based on AI attribution, NRR, and revenue durability.', 'Score <3 = significant revenue quality concerns'),
                     d('Risk-Adjusted Valuation', 'Standard multiple adjusted for tech debt, key-person risk, and regulatory exposure.', 'Present as a range, not a point estimate')
@@ -370,7 +370,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
     });
 
     // ═══════════════════ TRACK 11 EXPANSION: Modules 4-10 ═══════════════════
-    const t11 = 'Track 11 — Economics of Build vs Buy';
+    const t11 = 'Track 11  -  Economics of Build vs Buy';
     const t11Exp: [string, string, string, string[], ReturnType<typeof l>[]][] = [
         ['11-4', 'Vendor Evaluation Economics', 'The complete economic framework for evaluating AI vendors beyond the sales demo.',
             ['Score vendors on total economics', 'Evaluate vendor viability', 'Calculate switching costs', 'Negotiate from strength'],
@@ -392,11 +392,11 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                 ], 'Prepare for your next vendor negotiation: build a competitive POC, document the internal alternative, and time to their quarter-end.')
             ]
         ],
-        ['11-5', 'Open Source AI Economics', 'When open source is "free" but costs more than buying — and when it\'s genuinely the best economic choice.',
+        ['11-5', 'Open Source AI Economics', 'When open source is "free" but costs more than buying  -  and when it\'s genuinely the best economic choice.',
             ['Calculate true open source TCO', 'Evaluate community health', 'Assess long-term sustainability', 'Build vs extend decisions'],
             [
                 l('Lesson 1: The "Free" Illusion', 'Open source software is free to download but not free to operate. True cost = 0 (license) + Integration engineering + Customization + Security patching (you, not the vendor, are responsible) + Monitoring & operations + Community risk (what if the maintainer abandons it?). For complex AI frameworks, the operational cost often exceeds commercial alternatives.', [
-                    d('Security Responsibility', 'You own patching, vulnerability scanning, and compliance for open source.', 'Commercial vendors handle this — you\'re now the security team'),
+                    d('Security Responsibility', 'You own patching, vulnerability scanning, and compliance for open source.', 'Commercial vendors handle this  -  you\'re now the security team'),
                     d('Customization Debt', 'Customizations to open source require maintenance during version upgrades.', 'Each customization = ongoing forking cost'),
                     d('Support Cost', 'No SLA, no phone number to call when it breaks at 3am.', 'Your engineers are the support team')
                 ], 'Calculate the true TCO of your most critical open-source dependency. Compare to the commercial alternative.'),
@@ -425,7 +425,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                     d('Quality Parity Check', 'Automated comparison of old and new system outputs on the same inputs.', 'Must pass statistical significance tests before increasing traffic'),
                     d('Instant Rollback', 'If new system degrades quality, route 100% back to old system within minutes.', 'The safety net that makes migration risk acceptable')
                 ], 'Design a blue-green migration plan for your AI system: traffic split schedule, quality gates, and rollback triggers.'),
-                l('Lesson 3: Post-Migration ROI Validation', 'After migration, validate ROI within 90 days: (1) Cost comparison (new vs old system at same volume), (2) Quality comparison (accuracy/satisfaction metrics pre and post), (3) Engineering impact (time saved or spent on the new system vs old). If ROI is negative at 90 days, the migration was a mistake — acknowledge and plan the correction.', [
+                l('Lesson 3: Post-Migration ROI Validation', 'After migration, validate ROI within 90 days: (1) Cost comparison (new vs old system at same volume), (2) Quality comparison (accuracy/satisfaction metrics pre and post), (3) Engineering impact (time saved or spent on the new system vs old). If ROI is negative at 90 days, the migration was a mistake  -  acknowledge and plan the correction.', [
                     d('Cost Validation', 'Monthly cost on new platform vs projected savings.', 'If actual savings <50% of projected, investigate the gap'),
                     d('Quality Validation', 'A/B test quality metrics before and after migration.', 'Any quality regression should trigger investigation'),
                     d('Honest Assessment', 'If the migration made things worse, acknowledge it and plan correction.', 'Sunk cost fallacy kills engineering organizations')
@@ -435,7 +435,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
         ['11-7', 'AI Vendor Lock-In Prevention', 'Designing your AI architecture to prevent vendor dependency from day one.',
             ['Build abstraction layers', 'Design portable data formats', 'Create vendor exit plans', 'Maintain competitive alternatives'],
             [
-                l('Lesson 1: The Abstraction Layer Pattern', 'Every AI vendor interaction should go through an internal abstraction layer: your application calls your AI service, which calls the vendor. If the vendor changes or you switch providers, only the adapter layer changes — your application code is untouched.', [
+                l('Lesson 1: The Abstraction Layer Pattern', 'Every AI vendor interaction should go through an internal abstraction layer: your application calls your AI service, which calls the vendor. If the vendor changes or you switch providers, only the adapter layer changes  -  your application code is untouched.', [
                     d('Interface Design', 'Define your internal AI interface based on your needs, not the vendor\'s API.', 'Your interface should be provider-agnostic'),
                     d('Adapter Pattern', 'Each vendor gets an adapter that translates your interface to their API.', 'Switching vendors = writing a new adapter, not rewriting the application'),
                     d('Testing Strategy', 'Test against your internal interface, not the vendor\'s API directly.', 'Makes vendor changes invisible to your test suite')
@@ -452,7 +452,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                 ], 'Create a vendor exit plan for your most critical AI vendor. Calculate the exit cost ratio and identify data extraction requirements.')
             ]
         ],
-        ['11-8', 'AI Build Economics at Scale', 'When building AI in-house becomes the only viable economic option — and how to plan the investment.',
+        ['11-8', 'AI Build Economics at Scale', 'When building AI in-house becomes the only viable economic option  -  and how to plan the investment.',
             ['Identify scale triggers', 'Plan multi-year AI investments', 'Build internal ML platforms', 'Measure build ROI'],
             [
                 l('Lesson 1: Scale-Triggered Build Decision', 'At small scale, buying is always cheaper. At massive scale, building is sometimes necessary. The trigger: when your AI spend exceeds $1M/year with a single vendor AND the AI is a core differentiator AND you have 5+ ML engineers AND proprietary data that could train a superior model. All four conditions must be true.', [
@@ -465,27 +465,27 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                     d('Year 2 Investment', 'Maturation: automated workflows, monitoring, A/B testing.', '$300K-600K in engineering time + scaling compute costs'),
                     d('Year 3 Investment', 'Optimization: multi-model routing, cost optimization, platform self-service.', '$200K-400K in engineering time + declining per-unit compute costs')
                 ], 'Build a 3-year ML platform investment plan with engineering headcount, compute budget, and expected capability milestones.'),
-                l('Lesson 3: Build ROI Measurement', 'Measure build ROI quarterly: (1) Cost comparison — internal cost vs what you would have paid vendors at current volume, (2) Quality delta — model performance improvement from proprietary data advantage, (3) Speed delta — time to ship new AI features internally vs waiting for vendor roadmaps.', [
+                l('Lesson 3: Build ROI Measurement', 'Measure build ROI quarterly: (1) Cost comparison  -  internal cost vs what you would have paid vendors at current volume, (2) Quality delta  -  model performance improvement from proprietary data advantage, (3) Speed delta  -  time to ship new AI features internally vs waiting for vendor roadmaps.', [
                     d('Cost Crossover', 'The quarter when internal costs drop below equivalent vendor costs.', 'Typically 18-30 months after initial investment'),
                     d('Quality Premium', 'Benchmark internal model against best vendor on your specific use case.', 'Internal model should outperform on domain-specific tasks'),
                     d('Feature Velocity', 'Time from AI feature idea to production, internal vs external dependency.', 'Internal: days. External: depends on vendor roadmap (months)')
                 ], 'Design the quarterly ROI dashboard for your AI build investment. Define the cost crossover target quarter.')
             ]
         ],
-        ['11-9', 'AI Partnership & Co-Development Models', 'When neither full build nor full buy is optimal — and how to structure co-development partnerships.',
+        ['11-9', 'AI Partnership & Co-Development Models', 'When neither full build nor full buy is optimal  -  and how to structure co-development partnerships.',
             ['Design partnership structures', 'Negotiate IP ownership', 'Manage co-development risks', 'Measure partnership value'],
             [
-                l('Lesson 1: Partnership Model Taxonomy', 'Beyond build and buy, there are 4 partnership models: (1) Co-Development — you and the vendor build together, sharing IP, (2) OEM — you embed the vendor\'s AI as a white-labeled component, (3) Revenue Share — the vendor provides AI, you provide distribution, revenue is split, (4) Strategic Investment — you invest in the AI vendor in exchange for preferential access and pricing.', [
+                l('Lesson 1: Partnership Model Taxonomy', 'Beyond build and buy, there are 4 partnership models: (1) Co-Development  -  you and the vendor build together, sharing IP, (2) OEM  -  you embed the vendor\'s AI as a white-labeled component, (3) Revenue Share  -  the vendor provides AI, you provide distribution, revenue is split, (4) Strategic Investment  -  you invest in the AI vendor in exchange for preferential access and pricing.', [
                     d('Co-Development', 'Joint development with shared IP. Best when both parties bring unique capabilities.', 'Risk: IP disputes, scope creep, uneven contribution'),
                     d('OEM Model', 'Embed vendor AI as a component with your branding.', 'Fast to market, but limited differentiation and vendor dependency'),
                     d('Revenue Share', 'Split revenue generated from the AI integration.', 'Aligns incentives but requires transparent revenue attribution')
                 ], 'Evaluate which partnership model fits your current AI needs. Map each option against your strategic priorities.'),
-                l('Lesson 2: Co-Development IP Negotiation', 'The #1 deal-breaker in AI partnerships is IP ownership. Three clean models: (1) Joint ownership with field-of-use restrictions (each party uses the AI in their domain), (2) Background IP stays with creator, foreground IP (new work) is jointly owned, (3) Licensed back — one party owns the IP, the other gets a perpetual license.', [
+                l('Lesson 2: Co-Development IP Negotiation', 'The #1 deal-breaker in AI partnerships is IP ownership. Three clean models: (1) Joint ownership with field-of-use restrictions (each party uses the AI in their domain), (2) Background IP stays with creator, foreground IP (new work) is jointly owned, (3) Licensed back  -  one party owns the IP, the other gets a perpetual license.', [
                     d('Field-of-Use Split', 'Each party owns rights to use the jointly developed AI in their specific market.', 'Clean separation. Works when markets don\'t overlap.'),
                     d('Background/Foreground Split', 'Pre-existing IP stays with creator. New IP created together is jointly owned.', 'Requires clear documentation of what existed before the partnership'),
                     d('License-Back Model', 'One party owns all IP, grants perpetual license to the other.', 'Simpler but requires trust in the relationship\'s durability')
                 ], 'Draft IP ownership terms for a hypothetical co-development partnership. Choose the model and justify why.'),
-                l('Lesson 3: Partnership Value Measurement', 'Measure partnership health quarterly: (1) Value delivered vs projected — is the partnership generating the expected ROI? (2) IP contribution balance — are both parties contributing equally? (3) Strategic alignment — are both parties still heading in the same direction? If any metric falls below threshold for 2 consecutive quarters, renegotiate or exit.', [
+                l('Lesson 3: Partnership Value Measurement', 'Measure partnership health quarterly: (1) Value delivered vs projected  -  is the partnership generating the expected ROI? (2) IP contribution balance  -  are both parties contributing equally? (3) Strategic alignment  -  are both parties still heading in the same direction? If any metric falls below threshold for 2 consecutive quarters, renegotiate or exit.', [
                     d('ROI Tracking', 'Actual revenue/savings vs projected at partnership inception.', 'Below 50% of projection at month 12 = restructure needed'),
                     d('Contribution Balance', 'Are both parties investing equivalent effort and resources?', 'Imbalanced partnerships breed resentment and fail'),
                     d('Strategic Drift', 'Are the partners\' product strategies still aligned?', 'Diverging strategies make the partnership value-destructive')
@@ -495,12 +495,12 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
         ['11-10', 'The AI Build vs Buy Decision Document', 'Creating the definitive decision document that survives board scrutiny.',
             ['Structure the decision document', 'Present balanced analysis', 'Include risk matrices', 'Get stakeholder buy-in'],
             [
-                l('Lesson 1: Decision Document Structure', 'The Build vs Buy Decision Document has 6 sections: (1) Strategic Context — why this AI capability matters, (2) Options Analysis — build, buy, partner with TCO for each, (3) Decision Matrix — weighted scoring across 8 criteria, (4) Risk Assessment — what could go wrong with each option, (5) Recommendation — with confidence level, (6) Implementation Plan — first 90 days.', [
+                l('Lesson 1: Decision Document Structure', 'The Build vs Buy Decision Document has 6 sections: (1) Strategic Context  -  why this AI capability matters, (2) Options Analysis  -  build, buy, partner with TCO for each, (3) Decision Matrix  -  weighted scoring across 8 criteria, (4) Risk Assessment  -  what could go wrong with each option, (5) Recommendation  -  with confidence level, (6) Implementation Plan  -  first 90 days.', [
                     d('Strategic Context', 'Connect the AI capability to a specific business outcome with dollar value.', 'Without strategic context, the document is an engineering exercise'),
                     d('Options Analysis', 'At minimum 3 options: build in-house, buy from vendor, and hybrid/partner.', 'Each option must have a 3-year TCO projection'),
                     d('Confidence Level', 'High (>80% data available), Medium (50-80%), Low (<50%).', 'Honest confidence levels build executive trust')
                 ], 'Create the framework for your Build vs Buy decision document. Define the strategic context and identify the 3 options to analyze.'),
-                l('Lesson 2: Weighted Decision Matrix', 'Score each option across 8 criteria: Cost (TCO), Time-to-Market, Quality/Performance, Strategic Control, Scalability, Security/Compliance, Team Impact, and Vendor Risk. Weight each criterion based on your organization\'s priorities. The option with the highest weighted score wins — but the gap between options matters more than the winner.', [
+                l('Lesson 2: Weighted Decision Matrix', 'Score each option across 8 criteria: Cost (TCO), Time-to-Market, Quality/Performance, Strategic Control, Scalability, Security/Compliance, Team Impact, and Vendor Risk. Weight each criterion based on your organization\'s priorities. The option with the highest weighted score wins  -  but the gap between options matters more than the winner.', [
                     d('Criterion Weighting', 'Assign weights (1-5) based on organizational priorities. Total must sum to a constant.', 'Time-to-market usually gets highest weight in startups; control in enterprise'),
                     d('Scoring Scale', '1-5 for each option on each criterion. Use pre-defined rubrics for consistency.', 'Define what 1, 3, and 5 mean for each criterion before scoring'),
                     d('Gap Analysis', 'If the top two options are within 10% of each other, the decision is a toss-up.', 'In toss-ups, default to the option with lower reversibility risk')
@@ -519,9 +519,9 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
     });
 
     // ═══════════════════ TRACK 12 EXPANSION: Modules 4-10 ═══════════════════
-    const t12 = 'Track 12 — Career Capital Economics';
+    const t12 = 'Track 12  -  Career Capital Economics';
     const t12Exp: [string, string, string, string[], ReturnType<typeof l>[]][] = [
-        ['12-4', 'Job Switching Economics', 'The math behind staying vs leaving — and when switching companies is the highest-ROI career decision.',
+        ['12-4', 'Job Switching Economics', 'The math behind staying vs leaving  -  and when switching companies is the highest-ROI career decision.',
             ['Calculate switching premium', 'Evaluate hidden costs', 'Time transitions optimally', 'Negotiate from strength'],
             [
                 l('Lesson 1: The Switching Premium', 'On average, changing companies yields a 15-25% total compensation increase, compared to the 3-5% annual raise for staying. Over a 20-year career, an engineer who switches every 3-4 years earns 30-50% more lifetime compensation than one who stays at the same company. The switching premium is the single largest wealth-building lever in your career.', [
@@ -541,7 +541,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                 ], 'Evaluate your current situation against the 3 switching signals. How many are active?')
             ]
         ],
-        ['12-5', 'Technical Skill Portfolio Management', 'Managing your skills like a financial portfolio — diversification, risk, and returns.',
+        ['12-5', 'Technical Skill Portfolio Management', 'Managing your skills like a financial portfolio  -  diversification, risk, and returns.',
             ['Audit your skill portfolio', 'Identify skill depreciation', 'Invest in high-growth skills', 'Build T-shaped expertise'],
             [
                 l('Lesson 1: Skill Portfolio Audit', 'Your skills are assets that appreciate and depreciate. Map every skill you have on two axes: Market Value (demand × scarcity) and Depreciation Rate (how quickly the skill becomes obsolete). High value, low depreciation = core holdings. High value, high depreciation = momentum plays. Low value, any depreciation = sell (stop investing time).', [
@@ -561,7 +561,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                 ], 'Define your T-shape: what\'s your vertical depth? What adjacent domains form your horizontal breadth? Design a 6-month learning plan.')
             ]
         ],
-        ['12-6', 'Network Capital Economics', 'Your professional network has a quantifiable economic value — and most engineers underinvest in it.',
+        ['12-6', 'Network Capital Economics', 'Your professional network has a quantifiable economic value  -  and most engineers underinvest in it.',
             ['Quantify network value', 'Build strategic relationships', 'Convert network to opportunities', 'Maintain network as an asset'],
             [
                 l('Lesson 1: Network Effect on Career Outcomes', 'Studies show that 70-80% of jobs are filled through networks, not applications. An engineer with a strong network receives inbound opportunities at 3-5x the rate of one without. Network value = Number of meaningful connections × Average opportunity value × Activation probability.', [
@@ -570,7 +570,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                     d('Activation Probability', 'The likelihood a connection leads to an actionable opportunity per year.', 'For active connections: 5-10%. For dormant: <1%.')
                 ], 'Calculate your network value: count meaningful connections, estimate average opportunity value, and activation probability.'),
                 l('Lesson 2: Strategic Relationship Investment', 'Not all relationships are equal. Invest most heavily in: (1) Hiring managers at target companies (direct pipeline to opportunities), (2) Peers who are 2 years ahead of you (mentorship and referrals), (3) People in adjacent functions (product, design, data science) who expand your perspective. Invest 2 hours/week in relationship building.', [
-                    d('Hiring Managers', 'Building relationships with hiring managers before you need a job.', 'When a role opens, you\'re first call — not first applicant'),
+                    d('Hiring Managers', 'Building relationships with hiring managers before you need a job.', 'When a role opens, you\'re first call  -  not first applicant'),
                     d('Peer Mentors', 'People 2 years ahead in their career who can share recent learnings.', 'Their recent experience is more relevant than a senior executive\'s'),
                     d('Cross-Functional Network', 'Product managers, designers, and data scientists who expand your reach.', 'Cross-functional referrals open doors engineering-only networks can\'t')
                 ], 'Identify 10 strategic relationships to invest in over the next quarter. Schedule the first touchpoint with each.'),
@@ -584,7 +584,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
         ['12-7', 'Personal Brand Economics', 'Building a professional brand that creates inbound career opportunities and pricing power.',
             ['Build professional visibility', 'Create content with career ROI', 'Measure brand impact', 'Convert brand to compensation'],
             [
-                l('Lesson 1: The Inbound Opportunity Engine', 'Engineers with a personal brand (blog posts, open source contributions, conference talks, technical writing) receive 3-10x more inbound recruiter messages and targeted opportunities than those without. The brand creates "pull" instead of "push" — companies compete for you instead of you competing for roles.', [
+                l('Lesson 1: The Inbound Opportunity Engine', 'Engineers with a personal brand (blog posts, open source contributions, conference talks, technical writing) receive 3-10x more inbound recruiter messages and targeted opportunities than those without. The brand creates "pull" instead of "push"  -  companies compete for you instead of you competing for roles.', [
                     d('Blog Post ROI', 'One viral technical blog post can generate 50+ recruiter contacts over 12 months.', 'Investment: 4-8 hours. Return: months of inbound opportunities'),
                     d('Open Source ROI', 'Contributing to popular projects signals competence to hiring managers who review your commits.', 'Your GitHub is a portfolio that works 24/7'),
                     d('Conference Talk ROI', 'One conference talk positions you as an expert to hundreds of potential advocates.', 'Investment: 20-40 hours. Return: expert positioning for years')
@@ -594,7 +594,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                     d('Case Studies', 'Documenting specific problems you solved and the outcomes.', 'Most credible: shows proven capability, not theoretical knowledge'),
                     d('Tutorial Content', 'Teaching others how to do something you\'re expert at.', 'High volume but lower differentiation: many people write tutorials')
                 ], 'Identify 3 case studies from your work experience that would make compelling content. Outline each.'),
-                l('Lesson 3: Brand-to-Compensation Conversion', 'A strong brand increases your compensation through 3 mechanisms: (1) Negotiating leverage — you have options, they know it, (2) Scope expansion — brand attracts bigger roles and projects, (3) Rate premium — for consulting/contracting, known experts command 2-3x premiums.', [
+                l('Lesson 3: Brand-to-Compensation Conversion', 'A strong brand increases your compensation through 3 mechanisms: (1) Negotiating leverage  -  you have options, they know it, (2) Scope expansion  -  brand attracts bigger roles and projects, (3) Rate premium  -  for consulting/contracting, known experts command 2-3x premiums.', [
                     d('Negotiating Leverage', 'Multiple inbound opportunities = multiple offers = maximum negotiating power.', 'Brand creates competition for your talent'),
                     d('Scope Attraction', 'Companies offer bigger roles to people with proven public expertise.', 'Your brand gets you interviewed for the role above the one you applied for'),
                     d('Rate Premium', 'Known experts command $300-500/hr consulting vs $100-150 for unknowns.', 'Brand = pricing power in the services market')
@@ -604,12 +604,12 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
         ['12-8', 'Side Project Economics', 'The financial case for building, the financial case against, and the framework for deciding.',
             ['Evaluate project ROI realistically', 'Assess opportunity costs', 'Structure projects for learning ROI', 'Build portfolio-worthy work'],
             [
-                l('Lesson 1: Revenue Reality Check', 'The median side project generates $0 in revenue. The median successful side project generates <$500/month. The purpose of most side projects is not revenue — it\'s learning, portfolio building, and brand creation. If you\'re building a side project for revenue, you need product-market fit, distribution, and persistence. Most engineers have none of these.', [
+                l('Lesson 1: Revenue Reality Check', 'The median side project generates $0 in revenue. The median successful side project generates <$500/month. The purpose of most side projects is not revenue  -  it\'s learning, portfolio building, and brand creation. If you\'re building a side project for revenue, you need product-market fit, distribution, and persistence. Most engineers have none of these.', [
                     d('Revenue Distribution', '95% of side projects: $0/month. 4%: $1-1000/month. 1%: >$1000/month.', 'Don\'t delude yourself about revenue expectations'),
                     d('Learning ROI', 'Even a $0-revenue side project can teach skills worth $20K+ in career capital.', 'Value the skill acquisition, not the MRR'),
                     d('Portfolio Value', 'A shipped, deployed project is worth 10x an in-progress project on your resume.', 'Finished > ambitious. Deployed > local.')
                 ], 'Audit your current or planned side project: is the primary goal revenue, learning, or portfolio? Be honest about which.'),
-                l('Lesson 2: Opportunity Cost Assessment', 'Every hour on a side project is an hour not spent on: (1) Your primary job (which actually pays), (2) Learning skills directly applicable to career advancement, (3) Network building, (4) Rest and sustainability. If your side project doesn\'t compound on your primary career trajectory, it\'s a hobby — not an investment.', [
+                l('Lesson 2: Opportunity Cost Assessment', 'Every hour on a side project is an hour not spent on: (1) Your primary job (which actually pays), (2) Learning skills directly applicable to career advancement, (3) Network building, (4) Rest and sustainability. If your side project doesn\'t compound on your primary career trajectory, it\'s a hobby  -  not an investment.', [
                     d('Time Investment', 'Track actual hours per week spent on the side project.', 'Most people underestimate by 2x'),
                     d('Alternative Investment', 'What career-advancing activity could you do with those hours instead?', 'Compare: building a side project vs writing a blog post vs networking'),
                     d('Compounding Test', 'Does this project make you better at your primary career or is it tangential?', 'Compounding projects build on your existing expertise')
@@ -644,15 +644,15 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
         ['12-10', 'Career Capital Compounding Strategy', 'The 20-year plan: how to compound your career capital for maximum lifetime earnings and impact.',
             ['Design long-term career architecture', 'Identify compounding decisions', 'Avoid career traps', 'Build sustainable momentum'],
             [
-                l('Lesson 1: The Compound Career Effect', 'Career capital compounds like financial capital. A 20% skill improvement in year 1 enables a higher-impact role in year 2, which enables a higher-comp position in year 3, which enables a leadership opportunity in year 4. The engineers who earn the most at 40 aren\'t the smartest — they\'re the ones who made compounding decisions at 25.', [
+                l('Lesson 1: The Compound Career Effect', 'Career capital compounds like financial capital. A 20% skill improvement in year 1 enables a higher-impact role in year 2, which enables a higher-comp position in year 3, which enables a leadership opportunity in year 4. The engineers who earn the most at 40 aren\'t the smartest  -  they\'re the ones who made compounding decisions at 25.', [
                     d('Early Compounders', 'High-impact decisions early in career: choosing the right company, the right technology, the right mentors.', 'A great first job compounds for 15+ years'),
                     d('Mid-Career Pivot', 'The transition from IC to leadership or IC to deep specialization.', 'This pivot determines the next 15+ years of earning potential'),
                     d('Late-Career Leverage', 'Converting expertise into advisory, training, or executive roles.', 'Highest leverage per hour worked, but requires earlier compounding')
                 ], 'Map 5 decisions from your career that compounded (positively or negatively). What pattern do you see?'),
-                l('Lesson 2: Career Trap Identification', 'Three traps that destroy compounding: (1) The Golden Handcuffs — high pay in a dead-end skill (legacy system maintenance), (2) The Title Trap — chasing title inflation without real scope growth, (3) The Comfort Trap — staying in a comfortable role where you\'ve stopped learning.', [
+                l('Lesson 2: Career Trap Identification', 'Three traps that destroy compounding: (1) The Golden Handcuffs  -  high pay in a dead-end skill (legacy system maintenance), (2) The Title Trap  -  chasing title inflation without real scope growth, (3) The Comfort Trap  -  staying in a comfortable role where you\'ve stopped learning.', [
                     d('Golden Handcuffs', 'Earning well for skills that are depreciating.', 'The compensation feels good now but limits options in 5 years'),
                     d('Title Inflation', 'Companies giving titles instead of real scope (and compensation).', '"Director" at a 5-person startup ≠ "Director" at a 5,000-person company'),
-                    d('Comfort Trap', 'The role is easy, the pay is decent, and you\'ve stopped being challenged.', 'This is where career capital starts eroding — slowly, invisibly')
+                    d('Comfort Trap', 'The role is easy, the pay is decent, and you\'ve stopped being challenged.', 'This is where career capital starts eroding  -  slowly, invisibly')
                 ], 'Honestly assess: are you in any of the 3 career traps? What would you need to change to escape?'),
                 l('Lesson 3: The 20-Year Architecture', 'Design your career like a system architecture. Phase 1 (Years 0-5): Build technical foundation and identify your specialization vector. Phase 2 (Years 5-10): Deepen expertise, build brand, transition to leadership or deep IC. Phase 3 (Years 10-15): Maximize earning power through scope, impact, and leverage. Phase 4 (Years 15-20): Convert expertise to scalable impact (advisory, investing, teaching, building).', [
                     d('Phase 1: Foundation', 'Learn fundamentals, ship real products, find your specialization.', 'Optimize for learning rate, not compensation'),
@@ -668,7 +668,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
     });
 
     // ═══════════════════ TRACK 13 EXPANSION: Modules 4-10 ═══════════════════
-    const t13 = 'Track 13 — Engineering-to-Executive';
+    const t13 = 'Track 13  -  Engineering-to-Executive';
     const t13Exp: [string, string, string, string[], ReturnType<typeof l>[]][] = [
         ['13-4', 'M&A for Technical Leaders', 'How technical leaders evaluate, execute, and integrate acquisitions.',
             ['Evaluate acquisition targets technically', 'Lead technical due diligence', 'Plan integration', 'Protect value post-acquisition'],
@@ -686,24 +686,24 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                 l('Lesson 3: Integration Value Protection', 'Most acquisition value is destroyed during integration. Value protection rules: (1) Never merge codebases in the first 6 months, (2) Never reorganize the acquired team in the first 3 months, (3) Define 3 measurable integration milestones with dates, (4) Assign a dedicated integration lead who reports to the CEO.', [
                     d('Codebase Patience', 'Run the acquired product independently for 6+ months. Merge only after deep understanding.', 'Premature merges create catastrophic bugs and attrition'),
                     d('Team Stability', '90-day freeze on any changes to the acquired team\'s structure or reporting.', 'Change = uncertainty = attrition = value destruction'),
-                    d('Integration Lead', 'One senior person dedicated full-time to the integration.', 'Integration is a full-time job — not a side project for the CTO')
+                    d('Integration Lead', 'One senior person dedicated full-time to the integration.', 'Integration is a full-time job  -  not a side project for the CTO')
                 ], 'Design an integration value protection plan: 90-day freeze rules, 3 milestones, and integration lead role definition.')
             ]
         ],
         ['13-5', 'Strategic Planning for Engineering Organizations', 'Building the 3-year engineering strategy that earns the board\'s confidence.',
             ['Build engineering strategy documents', 'Align technology with business goals', 'Present roadmaps to executives', 'Manage strategic trade-offs'],
             [
-                l('Lesson 1: Engineering Strategy Document', 'The engineering strategy is NOT a list of technologies you want to use. It\'s the answer to: "How will technology create competitive advantage over the next 3 years?" Structure: (1) Business context — where the company is going, (2) Technical thesis — how technology enables it, (3) Investment plan — what to build, buy, or retire, (4) People plan — team shape and skills needed.', [
+                l('Lesson 1: Engineering Strategy Document', 'The engineering strategy is NOT a list of technologies you want to use. It\'s the answer to: "How will technology create competitive advantage over the next 3 years?" Structure: (1) Business context  -  where the company is going, (2) Technical thesis  -  how technology enables it, (3) Investment plan  -  what to build, buy, or retire, (4) People plan  -  team shape and skills needed.', [
                     d('Business Alignment', 'Every technical decision must trace to a business outcome.', 'If you can\'t explain why in business terms, it\'s not strategic'),
                     d('Technical Thesis', 'A 2-3 sentence statement of how technology creates competitive advantage.', 'Example: "Our proprietary ML pipeline processes data 10x faster than competitors"'),
                     d('Kill List', 'Technologies and systems to deliberately sunset over 3 years.', 'What you DON\'T do is as strategic as what you do')
                 ], 'Draft a 1-page engineering strategy: business context, technical thesis, investments, and kill list.'),
-                l('Lesson 2: Roadmap Presentation for Non-Technical Audiences', 'Never show a Gantt chart to the board. Instead: (1) Capability roadmap — what new business capabilities technology will enable each quarter, (2) Investment roadmap — how R&D budget is allocated across capabilities, (3) Risk roadmap — what technical risks are being retired each quarter.', [
+                l('Lesson 2: Roadmap Presentation for Non-Technical Audiences', 'Never show a Gantt chart to the board. Instead: (1) Capability roadmap  -  what new business capabilities technology will enable each quarter, (2) Investment roadmap  -  how R&D budget is allocated across capabilities, (3) Risk roadmap  -  what technical risks are being retired each quarter.', [
                     d('Capability Language', '"Q3: AI-powered pricing optimization" not "Q3: Deploy TensorFlow model."', 'Executives care about capabilities, not implementations'),
                     d('Investment Allocation', 'Show R&D budget as a pie chart: new capabilities, debt reduction, infrastructure, operations.', 'Executives understand budget allocation intuitively'),
                     d('Risk Retirement', 'Each quarter, explicitly identify which technical risks you eliminated.', 'Reducing risk is as valuable as shipping features')
                 ], 'Translate your current engineering roadmap into capability language. Remove all technical jargon.'),
-                l('Lesson 3: Managing Strategic Trade-offs', 'Every strategy has trade-offs. The frameworks: (1) Speed vs Quality — explicitly state which you\'re optimizing for on each initiative, (2) Build vs Buy — for each capability, defend your choice with TCO, (3) Short-term vs Long-term — how much capacity goes to current revenue vs future positioning.', [
+                l('Lesson 3: Managing Strategic Trade-offs', 'Every strategy has trade-offs. The frameworks: (1) Speed vs Quality  -  explicitly state which you\'re optimizing for on each initiative, (2) Build vs Buy  -  for each capability, defend your choice with TCO, (3) Short-term vs Long-term  -  how much capacity goes to current revenue vs future positioning.', [
                     d('Speed vs Quality', 'Some features need to ship fast (competitive response). Some need to be perfect (compliance).', 'State the trade-off explicitly in the roadmap'),
                     d('Capacity Allocation', 'Target: 60% current revenue features, 20% future positioning, 20% debt/infrastructure.', 'Adjust based on company maturity and strategy'),
                     d('Reversibility Test', 'If a trade-off is reversible, move fast. If irreversible, invest in getting it right.', 'This simple framework resolves 80% of speed vs quality debates')
@@ -723,8 +723,8 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                     d('Escalation Protocol', 'When and how to escalate issues. Clear triggers, not "use your judgment."', 'Bad escalation = problems either hidden (too late) or over-escalated (wasted exec time)'),
                     d('Failure Protocol', 'Blameless post-mortems within 48 hours of every significant incident.', 'The quality of your failure protocol determines how fast you learn')
                 ], 'Define your engineering culture operating system: decision protocol, escalation protocol, and failure protocol.'),
-                l('Lesson 3: Cultural Transformation Economics', 'Changing culture takes 12-18 months — roughly 3 hiring cycles. The mechanism: (1) Define the target culture explicitly, (2) Hire exclusively for culture-add (not culture-fit), (3) Promote people who model the target culture, (4) Exit people who resist it. Each step has an economic cost and an economic return.', [
-                    d('Culture-Add Hiring', 'Hire people who bring the missing cultural attributes, not duplicates of existing culture.', '"Culture fit" perpetuates the current culture — which you\'re trying to change'),
+                l('Lesson 3: Cultural Transformation Economics', 'Changing culture takes 12-18 months  -  roughly 3 hiring cycles. The mechanism: (1) Define the target culture explicitly, (2) Hire exclusively for culture-add (not culture-fit), (3) Promote people who model the target culture, (4) Exit people who resist it. Each step has an economic cost and an economic return.', [
+                    d('Culture-Add Hiring', 'Hire people who bring the missing cultural attributes, not duplicates of existing culture.', '"Culture fit" perpetuates the current culture  -  which you\'re trying to change'),
                     d('Promotion Signals', 'Who gets promoted tells the organization what really matters.', 'Promote for the culture you want, not the culture you have'),
                     d('Exit Cost', 'Some people will leave during cultural transformation. This is expected and healthy.', 'Cost of exits: 6-9 months salary. Cost of cultural stagnation: years of underperformance')
                 ], 'Design a 12-month cultural transformation plan: define the target, hiring criteria changes, promotion signal changes, and expected attrition.')
@@ -738,7 +738,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                     d('15-Minute Window', 'Most incidents either resolve in 15 minutes or escalate to multi-hour events.', 'The initial response quality determines the trajectory'),
                     d('Escalation ROI', 'Escalating early has a small cost (executive attention). Not escalating has a massive cost (extended outage).', 'When in doubt, escalate.')
                 ], 'Calculate cost-per-minute for your primary product. Design the 15-minute rapid response protocol.'),
-                l('Lesson 2: Crisis Communication for Executives', 'During a crisis, the CTO communicates to three audiences: (1) The engineering team — "here\'s what we know, here\'s what we\'re doing, here\'s how you can help," (2) The executive team — "here\'s the business impact and our ETA to resolution," (3) Customers — "here\'s what happened, here\'s what we\'re doing, here\'s how to reach us."', [
+                l('Lesson 2: Crisis Communication for Executives', 'During a crisis, the CTO communicates to three audiences: (1) The engineering team  -  "here\'s what we know, here\'s what we\'re doing, here\'s how you can help," (2) The executive team  -  "here\'s the business impact and our ETA to resolution," (3) Customers  -  "here\'s what happened, here\'s what we\'re doing, here\'s how to reach us."', [
                     d('Team Communication', 'Frequent, honest updates every 30 minutes. Don\'t hide uncertainty.', 'Engineers respect transparency: "We don\'t know yet" is better than silence'),
                     d('Executive Communication', 'Business impact in dollars, ETA ranges (not false precision), and resource needs.', 'The CEO wants: how bad, how long, what do you need?'),
                     d('Customer Communication', 'External status page updates within 30 minutes. Empathy + transparency + action.', 'Customers forgive outages. They don\'t forgive silence.')
@@ -764,9 +764,9 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                     d('150→500 Transition', 'Internal platform teams and formal governance become essential.', 'Without platforms, every team reinvents the wheel')
                 ], 'Identify which transition your organization is approaching. Design the structural changes needed for the next phase.'),
                 l('Lesson 3: Autonomy vs Alignment at Scale', 'The core tension at scale: autonomous teams move fast but diverge. Aligned teams move together but slowly. The solution: align on outcomes (what to achieve) and give autonomy on methods (how to achieve it). This requires clear OKRs, shared architectural principles, and trust.', [
-                    d('Outcome Alignment', 'All teams align on what business outcome to achieve this quarter.', 'Alignment does not mean telling teams what to build — it means what to achieve'),
+                    d('Outcome Alignment', 'All teams align on what business outcome to achieve this quarter.', 'Alignment does not mean telling teams what to build  -  it means what to achieve'),
                     d('Method Autonomy', 'Each team decides how to achieve the outcome using their expertise.', 'Autonomy drives innovation and ownership'),
-                    d('Architectural Guardrails', 'Shared principles that constrain individual team decisions within acceptable bounds.', 'Example: "All services must be deployable independently" — HOW is up to the team')
+                    d('Architectural Guardrails', 'Shared principles that constrain individual team decisions within acceptable bounds.', 'Example: "All services must be deployable independently"  -  HOW is up to the team')
                 ], 'Design your autonomy/alignment framework: define 3 aligned outcomes and 3 architectural guardrails that give autonomy everywhere else.')
             ]
         ],
@@ -784,29 +784,29 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                     d('Exercise Window', 'Standard: 90 days post-departure. Better: 7-10 years post-departure.', 'A 90-day window forces you to exercise (and pay taxes) before you leave')
                 ], 'Review your current equity terms. Identify which negotiations you missed and what you\'d ask for in your next role.'),
                 l('Lesson 3: Liquidity Event Preparation', 'As a CTO, you must prepare for liquidity events: IPO, acquisition, or secondary sales. Key decisions: (1) When to exercise options (before or after the event?), (2) Tax optimization (83(b) elections, QSBS exemptions), (3) Diversification (how much of your net worth should be in company stock?).', [
-                    d('Exercise Timing', 'Exercising early (83(b) election) starts capital gains clock. Exercising late gives more information.', 'Consult a tax advisor — this decision is worth thousands in tax savings'),
+                    d('Exercise Timing', 'Exercising early (83(b) election) starts capital gains clock. Exercising late gives more information.', 'Consult a tax advisor  -  this decision is worth thousands in tax savings'),
                     d('QSBS Exemption', 'Qualified Small Business Stock: potential 100% capital gains exclusion up to $10M.', 'Available for C-corp stock held >5 years. Plan around this.'),
                     d('Diversification Rule', 'Never hold >25% of your net worth in a single company\'s stock.', 'After any liquidity event, diversify to protect your financial security')
                 ], 'Create a liquidity event preparation checklist: exercise strategy, tax optimization options, and diversification plan.')
             ]
         ],
-        ['13-10', 'The CTO Operating System', 'Designing your personal operating system as a technical executive — time, energy, and decision allocation.',
+        ['13-10', 'The CTO Operating System', 'Designing your personal operating system as a technical executive  -  time, energy, and decision allocation.',
             ['Design your weekly operating rhythm', 'Optimize decision allocation', 'Build executive leverage', 'Prevent executive burnout'],
             [
-                l('Lesson 1: The CTO Weekly Operating Rhythm', 'A CTO\'s week should follow a deliberate pattern, not react to the loudest fire. The operating rhythm: Monday (strategy and planning — no meetings before noon), Tuesday-Wednesday (1:1s, team syncs, decision meetings), Thursday (external — customers, partners, board prep), Friday (reflection, writing, and deep work).', [
+                l('Lesson 1: The CTO Weekly Operating Rhythm', 'A CTO\'s week should follow a deliberate pattern, not react to the loudest fire. The operating rhythm: Monday (strategy and planning  -  no meetings before noon), Tuesday-Wednesday (1:1s, team syncs, decision meetings), Thursday (external  -  customers, partners, board prep), Friday (reflection, writing, and deep work).', [
                     d('Monday Strategy Block', '4 hours of uninterrupted strategy time. Review metrics, make decisions, plan the week.', 'If you start the week reacting, you\'ll spend the whole week reacting'),
                     d('Midweek Engagement', 'Concentrate meetings on Tuesday-Wednesday. Batch for efficiency.', 'Two days of meetings is better than meetings scattered across every day'),
                     d('Friday Reflection', 'Write the weekly update, review decisions made, identify next week\'s priorities.', 'Without reflection, you optimize for speed without checking direction')
                 ], 'Design your ideal weekly operating rhythm. Block time on your calendar for each zone. Protect it.'),
-                l('Lesson 2: Decision Allocation Framework', 'A CTO makes hundreds of decisions per month. Only 5-10 actually matter. The framework: (1) Irreversible decisions — you must make these personally with full context, (2) Reversible decisions — delegate aggressively with a bias toward action, (3) Low-impact decisions — eliminate or automate.', [
+                l('Lesson 2: Decision Allocation Framework', 'A CTO makes hundreds of decisions per month. Only 5-10 actually matter. The framework: (1) Irreversible decisions  -  you must make these personally with full context, (2) Reversible decisions  -  delegate aggressively with a bias toward action, (3) Low-impact decisions  -  eliminate or automate.', [
                     d('Type 1 Decisions', 'Irreversible, high-impact: technology bets, senior hires, architecture choices.', 'Take time. Get input. Make the call. You own the outcome.'),
                     d('Type 2 Decisions', 'Reversible, moderate impact: tool selection, process changes, sprint priorities.', 'Delegate. If the decision is wrong, change it. Speed matters more than perfection.'),
                     d('Decision Tax', 'Every decision you make personally is a decision your team didn\'t make.', 'Delegating decisions develops your team. Hoarding decisions creates bottlenecks.')
                 ], 'Categorize last week\'s decisions into Type 1 and Type 2. How many Type 2 decisions should you have delegated?'),
-                l('Lesson 3: Executive Energy Management', 'Executive burnout is an existential risk — to you and to the organization. Energy management rules: (1) Protect sleep (7+ hours), (2) Schedule recovery (1 hour/day of non-work activity), (3) Take real vacations (minimum 1 week/quarter with zero work), (4) Monitor the signs (declining decision quality, increasing irritability, loss of strategic thinking).', [
+                l('Lesson 3: Executive Energy Management', 'Executive burnout is an existential risk  -  to you and to the organization. Energy management rules: (1) Protect sleep (7+ hours), (2) Schedule recovery (1 hour/day of non-work activity), (3) Take real vacations (minimum 1 week/quarter with zero work), (4) Monitor the signs (declining decision quality, increasing irritability, loss of strategic thinking).', [
                     d('Sleep ROI', 'Decision quality drops 25-40% on <6 hours of sleep.', 'Sleep is the single highest-ROI productivity investment'),
                     d('Recovery Scheduling', 'Block 1 hour/day for exercise, meditation, walking, or reading.', 'This hour makes the other 10 hours more productive, not less'),
-                    d('Burnout Signals', 'Cynicism about work, difficulty engaging in strategic thinking, physical stress symptoms.', 'These are late-stage signals — prevention is 10x better than recovery')
+                    d('Burnout Signals', 'Cynicism about work, difficulty engaging in strategic thinking, physical stress symptoms.', 'These are late-stage signals  -  prevention is 10x better than recovery')
                 ], 'Design your personal energy management plan: sleep target, daily recovery block, quarterly vacation, and burnout signal monitoring.')
             ]
         ],
@@ -817,7 +817,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
     });
 
     // ═══════════════════ TRACK 14 EXPANSION: Modules 6-10 ═══════════════════
-    const t14 = 'Track 14 — Economics of Leadership';
+    const t14 = 'Track 14  -  Economics of Leadership';
     const t14Exp: [string, string, string, string[], ReturnType<typeof l>[]][] = [
         ['14-6', 'Delegation Economics', 'Why what you stop doing is more valuable than what you start doing.',
             ['Calculate delegation ROI', 'Build delegation frameworks', 'Overcome the control paradox', 'Develop team capability through delegation'],
@@ -828,7 +828,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                     d('Delegation Gap', 'Total delegatable hours × (your rate - delegate\'s rate) = value recovered.', 'This is the economic argument for delegation')
                 ], 'Conduct a 1-week time audit. Calculate the delegation gap: how much value are you failing to capture?'),
                 l('Lesson 2: The Control Paradox', 'The instinct is: "I\'ll do it myself because it will be done right." The reality: (1) you become the bottleneck, (2) your team doesn\'t grow, (3) you burn out. The paradox: leaders who release control get better outcomes because the team develops capability and ownership. Letting go creates more quality, not less.', [
-                    d('Bottleneck Cost', 'If 5 tasks are waiting on you, the queuing delay costs 5× the task duration.', 'You\'re not saving time — you\'re multiplying wait times'),
+                    d('Bottleneck Cost', 'If 5 tasks are waiting on you, the queuing delay costs 5× the task duration.', 'You\'re not saving time  -  you\'re multiplying wait times'),
                     d('Growth Investment', 'Delegation is a training investment. The first 3 times, quality may dip 20%.', 'By the 5th time, quality matches yours. By the 10th, it exceeds yours.'),
                     d('Ownership Effect', 'People who own outcomes care more about quality than people who are assigned tasks.', 'Delegation creates owners. Task assignment creates executors.')
                 ], 'Identify 3 tasks you\'re hoarding. Delegate each to a team member with context and support. Track quality over 4 weeks.'),
@@ -839,7 +839,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                 ], 'Apply the delegation framework to your next 3 handoffs. Document the outcome, quality standard, check-in cadence, and authority level.')
             ]
         ],
-        ['14-7', 'Feedback Economics', 'Why bad feedback costs more than no feedback — and how to deliver feedback that creates value.',
+        ['14-7', 'Feedback Economics', 'Why bad feedback costs more than no feedback  -  and how to deliver feedback that creates value.',
             ['Calculate the cost of withheld feedback', 'Design feedback delivery frameworks', 'Build feedback cultures', 'Measure feedback impact'],
             [
                 l('Lesson 1: The Cost of Silence', 'Withheld feedback compounds like accruing interest on a loan. A behavior issue that takes 5 minutes to address today takes 30 minutes in a month, a formal PIP in 3 months, and a termination in 6 months. The cost curve is exponential: $0 (immediate feedback) → $5K (PIP administration) → $150K (termination and replacement). Silence is the most expensive leadership decision.', [
@@ -847,39 +847,39 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                     d('Delayed Feedback Cost', 'Behavior becomes a pattern. Team morale degrades. Performance review becomes confrontational.', 'Each month of delay: 2-3x increase in resolution cost'),
                     d('Terminal Cost', 'If feedback is never given: PIP → termination → replacement = $150K+ and 6 months of disruption.', 'The most expensive feedback is the feedback you never gave')
                 ], 'Identify 1 feedback conversation you\'ve been avoiding. Calculate the cost of another month of silence. Deliver it this week.'),
-                l('Lesson 2: The SBI Feedback Model', 'Situation-Behavior-Impact: "In yesterday\'s meeting (situation), when you interrupted the product manager three times (behavior), the team stopped sharing ideas and we didn\'t hear a critical constraint (impact)." SBI feedback is specific, behavioral, and connects to economic impact. It\'s not personal — it\'s about the behavior\'s cost.', [
+                l('Lesson 2: The SBI Feedback Model', 'Situation-Behavior-Impact: "In yesterday\'s meeting (situation), when you interrupted the product manager three times (behavior), the team stopped sharing ideas and we didn\'t hear a critical constraint (impact)." SBI feedback is specific, behavioral, and connects to economic impact. It\'s not personal  -  it\'s about the behavior\'s cost.', [
                     d('Situation', 'When and where the behavior occurred. Be specific about context.', 'Prevents confusion with "you always do X" generalizations'),
-                    d('Behavior', 'The observable action — what you saw or heard. Not interpretation.', '"You interrupted" is observable. "You were rude" is interpretation.'),
+                    d('Behavior', 'The observable action  -  what you saw or heard. Not interpretation.', '"You interrupted" is observable. "You were rude" is interpretation.'),
                     d('Impact', 'The consequence of the behavior on the team, project, or outcome.', 'Connect to business impact when possible: "This may cost us the milestone"')
                 ], 'Write 3 SBI feedback statements for real situations. Practice delivering each aloud. Notice how specificity removes emotion.'),
-                l('Lesson 3: Building a Feedback Culture', 'A feedback culture is one where giving and receiving feedback is normal — not a special event tied to performance reviews. Build it: (1) Ask for feedback on yourself publicly and regularly, (2) Thank people for negative feedback (modeling graciousness), (3) Make feedback a 5-minute standing item in every 1:1, not a quarterly event.', [
+                l('Lesson 3: Building a Feedback Culture', 'A feedback culture is one where giving and receiving feedback is normal  -  not a special event tied to performance reviews. Build it: (1) Ask for feedback on yourself publicly and regularly, (2) Thank people for negative feedback (modeling graciousness), (3) Make feedback a 5-minute standing item in every 1:1, not a quarterly event.', [
                     d('Leader Goes First', 'Ask your team: "What could I do better?" in a group setting at least quarterly.', 'If the leader doesn\'t ask for feedback, no one else will give it'),
                     d('Gratitude Response', 'When someone gives you negative feedback, say "Thank you" first.', 'Your reaction determines whether you\'ll ever get honest feedback again'),
                     d('1:1 Feedback Block', 'Last 5 minutes of every 1:1: "What feedback do you have for me?"', 'Normalizes feedback as routine, not a crisis signal')
                 ], 'Design your feedback culture implementation plan: leader modeling, 1:1 integration, and gratitude practice.')
             ]
         ],
-        ['14-8', 'Conflict Resolution Economics', 'Every unresolved conflict has a mounting cost — and every resolution has a measurable return.',
+        ['14-8', 'Conflict Resolution Economics', 'Every unresolved conflict has a mounting cost  -  and every resolution has a measurable return.',
             ['Quantify conflict costs', 'Apply resolution frameworks', 'Build healthy conflict norms', 'Prevent destructive conflict patterns'],
             [
-                l('Lesson 1: The Cost of Unresolved Conflict', 'Unresolved team conflict costs: (1) Decision paralysis — contested decisions don\'t get made, blocking progress, (2) Shadow work — people work around each other, duplicating effort, (3) Talent loss — one party eventually leaves, taking institutional knowledge, (4) Morale contagion — the conflict infects the broader team\'s energy and focus.', [
+                l('Lesson 1: The Cost of Unresolved Conflict', 'Unresolved team conflict costs: (1) Decision paralysis  -  contested decisions don\'t get made, blocking progress, (2) Shadow work  -  people work around each other, duplicating effort, (3) Talent loss  -  one party eventually leaves, taking institutional knowledge, (4) Morale contagion  -  the conflict infects the broader team\'s energy and focus.', [
                     d('Decision Paralysis', 'Contested decisions average 3x longer to resolve, costing 2-4 weeks per occurrence.', 'At $50K/week in team cost, each paralyzed decision costs $100-200K'),
                     d('Shadow Work', 'Working around conflicts creates 20-30% duplicated effort within teams.', 'Two people building parallel solutions because they won\'t collaborate'),
                     d('Attrition Cost', 'In 70% of unresolved conflicts, one party leaves within 12 months.', 'Replacement cost: $150K+. Knowledge loss: often irreplaceable.')
                 ], 'Identify an active conflict on your team. Calculate the total cost: decision delays, duplicated work, and attrition risk.'),
-                l('Lesson 2: The Mediation Framework', 'Mediation steps: (1) Hear both sides separately — each person tells their story without interruption, (2) Identify shared goals — "you both want the product to succeed," (3) Focus on interests, not positions — "you want reliability" vs "you want your architecture," (4) Co-create a solution — the resolution must be created by the parties, not imposed by the leader.', [
+                l('Lesson 2: The Mediation Framework', 'Mediation steps: (1) Hear both sides separately  -  each person tells their story without interruption, (2) Identify shared goals  -  "you both want the product to succeed," (3) Focus on interests, not positions  -  "you want reliability" vs "you want your architecture," (4) Co-create a solution  -  the resolution must be created by the parties, not imposed by the leader.', [
                     d('Separate Conversations', 'Meet with each party individually before bringing them together.', 'People are more honest in private. You learn the real issues.'),
                     d('Interest-Based Negotiation', 'Dig beneath positions to find underlying interests.', '"I want microservices" (position) vs "I want independent deployability" (interest)'),
                     d('Co-Created Solutions', 'Solutions imposed by leadership don\'t stick. Solutions created by the parties do.', 'Your job is to facilitate, not decide.')
                 ], 'Apply the mediation framework to an active conflict. Hold separate conversations, identify interests, and facilitate a co-created solution.'),
-                l('Lesson 3: Healthy Conflict Norms', 'Not all conflict is bad. Healthy conflict — passionate disagreement about the best approach — produces better decisions. Unhealthy conflict — personal attacks, power plays, passive aggression — destroys teams. Build norms: (1) Disagree with ideas, not people, (2) "Disagree and commit" — once decided, full support, (3) No triangulation — speak directly to the person, not about them.', [
+                l('Lesson 3: Healthy Conflict Norms', 'Not all conflict is bad. Healthy conflict  -  passionate disagreement about the best approach  -  produces better decisions. Unhealthy conflict  -  personal attacks, power plays, passive aggression  -  destroys teams. Build norms: (1) Disagree with ideas, not people, (2) "Disagree and commit"  -  once decided, full support, (3) No triangulation  -  speak directly to the person, not about them.', [
                     d('Disagree with Ideas', 'Attack the proposal, not the proposer. "I think this approach has risk X" not "Your idea won\'t work."', 'Depersonalizing disagreement keeps it productive'),
-                    d('Disagree and Commit', 'After the decision is made, everyone commits fully — even those who disagreed.', 'This prevents sabotage through half-hearted implementation'),
+                    d('Disagree and Commit', 'After the decision is made, everyone commits fully  -  even those who disagreed.', 'This prevents sabotage through half-hearted implementation'),
                     d('No Triangulation', 'If you have a problem with someone, talk to them directly. Not their peers. Not their manager.', 'Triangulation is the #1 destroyer of team trust')
                 ], 'Define 3 conflict norms for your team. Introduce them at a team meeting. Hold everyone (including yourself) accountable.')
             ]
         ],
-        ['14-9', 'Vision & Direction Setting Economics', 'The economic value of a clear direction — and the cost of its absence.',
+        ['14-9', 'Vision & Direction Setting Economics', 'The economic value of a clear direction  -  and the cost of its absence.',
             ['Quantify the cost of ambiguity', 'Build compelling team visions', 'Align individual motivation to team goals', 'Measure alignment impact'],
             [
                 l('Lesson 1: The Cost of Directional Ambiguity', 'When the team doesn\'t know where they\'re going, they go in 6 directions simultaneously. Result: 40-60% of effort is non-aligned (working on things that don\'t matter), decisions take 3x longer (no framework to decide), and morale drops (purposeless work is demotivating). A clear direction adds 30-50% in effective capacity by eliminating waste.', [
@@ -887,12 +887,12 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                     d('Decision Drag', 'Without clear direction, every decision requires going up the chain.', 'Cost: 2-4 hours per decision × 50+ decisions per quarter'),
                     d('Purpose Premium', 'Teams with clear purpose report 30% higher engagement and productivity.', 'People work harder for something they believe in')
                 ], 'Calculate the non-aligned effort in your team last quarter. What percentage of work was directly tied to the top 3 goals?'),
-                l('Lesson 2: Building a Team Vision', 'A vision is not a roadmap — it\'s a picture of the future that people want to create. The formula: (1) The world is this way now (acknowledgment of current state), (2) It should be this way instead (the ambitious better state), (3) Here\'s how we\'re uniquely positioned to make it happen (our specific role), (4) Here\'s what victory looks like (measurable outcomes).', [
+                l('Lesson 2: Building a Team Vision', 'A vision is not a roadmap  -  it\'s a picture of the future that people want to create. The formula: (1) The world is this way now (acknowledgment of current state), (2) It should be this way instead (the ambitious better state), (3) Here\'s how we\'re uniquely positioned to make it happen (our specific role), (4) Here\'s what victory looks like (measurable outcomes).', [
                     d('Current State', 'Honest acknowledgment of what\'s broken or insufficient today.', 'Starting with reality builds credibility. Starting with hype builds skepticism.'),
                     d('Better State', 'A vivid, specific picture of the improved future.', '"We will be the most reliable AI platform in enterprise" not "we will be great"'),
                     d('Measurable Victory', 'Define 2-3 metrics that would prove the vision is realized.', 'Without measurement, a vision is a wish')
                 ], 'Write your team\'s vision using the 4-part formula. Share it with your team. Does it resonate?'),
-                l('Lesson 3: Aligning Individual Motivation', 'Each team member has different motivations: mastery (getting better), autonomy (having control), purpose (doing meaningful work), recognition (being seen), and growth (advancing their career). A great leader maps each person\'s motivation to the team\'s goals — so achieving the team\'s goals simultaneously serves each individual\'s needs.', [
+                l('Lesson 3: Aligning Individual Motivation', 'Each team member has different motivations: mastery (getting better), autonomy (having control), purpose (doing meaningful work), recognition (being seen), and growth (advancing their career). A great leader maps each person\'s motivation to the team\'s goals  -  so achieving the team\'s goals simultaneously serves each individual\'s needs.', [
                     d('Motivation Mapping', 'In your next 1:1, ask: "What are you optimizing for in the next 12 months?"', 'Their answer reveals their primary motivator'),
                     d('Goal Alignment', 'Connect each person\'s individual motivator to a team goal.', '"If we achieve X, you\'ll get the cross-team visibility you need for promotion"'),
                     d('Misalignment Red Flag', 'If someone\'s individual goals and team goals don\'t align, attrition is likely.', 'Better to address the misalignment than pretend it doesn\'t exist')
@@ -902,7 +902,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
         ['14-10', 'Leadership Measurement & Continuous Improvement', 'Quantifying your leadership effectiveness and building a system for continuous improvement.',
             ['Build leadership scorecards', 'Collect actionable feedback', 'Design improvement sprints', 'Track leadership ROI over time'],
             [
-                l('Lesson 1: The Leadership Scorecard', 'You can\'t improve what you don\'t measure. A leadership scorecard tracks 4 metrics quarterly: (1) Team Retention Rate — percentage of team members retained, (2) Team Velocity Trend — is output increasing, stable, or declining, (3) Team NPS — anonymous score on "Would you work for this leader again?", (4) Promotion Rate — how many team members have grown into larger roles.', [
+                l('Lesson 1: The Leadership Scorecard', 'You can\'t improve what you don\'t measure. A leadership scorecard tracks 4 metrics quarterly: (1) Team Retention Rate  -  percentage of team members retained, (2) Team Velocity Trend  -  is output increasing, stable, or declining, (3) Team NPS  -  anonymous score on "Would you work for this leader again?", (4) Promotion Rate  -  how many team members have grown into larger roles.', [
                     d('Retention Rate', 'Target: >90% annual voluntary retention.', 'Below 85% = leadership problem'),
                     d('Team NPS', 'Anonymous survey: "On a scale of 0-10, would you work for me again?"', 'NPS >50: strong leader. 0-30: developing. <0: critical problem'),
                     d('Promotion Rate', 'Team members promoted or given expanded scope per year.', 'If nobody on your team grows, you\'re a manager, not a leader')

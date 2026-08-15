@@ -2,7 +2,7 @@ import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks8Modules: Record<string, CurriculumModule> = {};
 
-const t8 = 'Track 8 — Data & Analytics Economics';
+const t8 = 'Track 8  -  Data & Analytics Economics';
 
 // ═══════════════════ TRACK 8: DATA & ANALYTICS ECONOMICS ═══════════════════
 
@@ -31,7 +31,7 @@ tracks8Modules['data-economics/8-1'] = m('8-1', 'Data Warehouse Economics', 'Mas
             [
                 'The shift from ETL (Transform before Loading) to ELT (Load raw, Transform in the warehouse) popularized by dbt has a massive hidden cost: computational debt inside the warehouse.',
                 'Because ELT pushes all transformations into the warehouse\'s compute engine, inefficient dbt models that run daily full-table rebuilds instead of incremental updates will cause your warehouse bill to grow exponentially as your data volume grows.',
-                'Data engineering must adopt the concept of "computational depreciation" — older data models must be aggressively refactored for incremental processing, or the sheer cost of maintaining the daily pipeline will exceed the business value of the data.'
+                'Data engineering must adopt the concept of "computational depreciation"  -  older data models must be aggressively refactored for incremental processing, or the sheer cost of maintaining the daily pipeline will exceed the business value of the data.'
             ],
             [
                 d('Incremental Refresh Rate', 'The percentage of your daily data models that only process new rows vs full rebuilds.', 'Target: >85% Incremental'),
@@ -242,7 +242,7 @@ tracks8Modules['data-economics/8-10'] = m('8-10', 'Customer Data Platform (CDP)'
             [
                 'A Customer Data Platform (CDP) like Segment promises to unify user data and easily syndicate it to 50 marketing tools. The reality: implementation takes 6-9 months, generates massive engineering friction, and costs $60k+ annually.',
                 'Before buying a CDP, question the marketing team. Do they actually use 10 different target destinations, or do they just send an email via HubSpot and run ads on Facebook? If the destination count is low, point-to-point webhook integrations are significantly cheaper.',
-                'Modern architectures favor the "Composable CDP" — turning your existing Snowflake/BigQuery warehouse into the CDP engine via Reverse ETL tools like Hightouch, avoiding the massively overpriced CDP data storage tax.'
+                'Modern architectures favor the "Composable CDP"  -  turning your existing Snowflake/BigQuery warehouse into the CDP engine via Reverse ETL tools like Hightouch, avoiding the massively overpriced CDP data storage tax.'
             ],
             [
                 d('Identity Resolution Friction', 'The engineering difficulty of stitching a mobile anonymous ID to a logged-in web ID.', 'Requires complex graph logic'),
@@ -277,7 +277,7 @@ tracks8Modules['data-economics/8-12'] = m('8-12', 'Feature Store Economics', 'Ev
             [
                 'When multiple data science teams try to predict churn, they will all independently write complex SQL to calculate "User Logins in Last 30 Days." This redundant engineering costs hundreds of thousands in payroll.',
                 'A Feature Store centralizes these mathematical definitions. Team A calculates it once, pushes it to the store, and Team B can instantly pull it via API for their models.',
-                'Furthermore, Feature Stores solve "Training-Serving Skew"—ensuring the offline historical data used to train the model exactly matches the real-time online data the model sees in production. Skew silently kills model accuracy.'
+                'Furthermore, Feature Stores solve "Training-Serving Skew" - ensuring the offline historical data used to train the model exactly matches the real-time online data the model sees in production. Skew silently kills model accuracy.'
             ],
             [],
             'Evaluate your ML organization for Feature Store readiness.',

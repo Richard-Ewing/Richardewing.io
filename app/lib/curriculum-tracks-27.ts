@@ -1,13 +1,13 @@
 import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks27Modules: Record<string, CurriculumModule> = {};
-const t27 = 'Track 27 — Synthetic Data & Model Collapse';
+const t27 = 'Track 27  -  Synthetic Data & Model Collapse';
 
 tracks27Modules['synthetic-data/27-1'] = m('27-1', 'The Exhaustion of Human Data', 'Hitting the data wall, generation pipelines, simulation curves.', t27, 
     ['Execute Synthetic Data pipelines', 'Measure data fidelity'], [
         l('Scaling Beyond the Text Deficit', 
             [
-                'The massive surge of foundational models (GPT-4) was powered by vacuuming up the totality of human text on the public internet. However, humanity only produces so much text. By 2026, the industry collided violently with the "Data Wall"—the realization that there is literally not enough high-quality organic data left on Earth to train the next generation of Trillion-parameter models.', 
+                'The massive surge of foundational models (GPT-4) was powered by vacuuming up the totality of human text on the public internet. However, humanity only produces so much text. By 2026, the industry collided violently with the "Data Wall" - the realization that there is literally not enough high-quality organic data left on Earth to train the next generation of Trillion-parameter models.', 
                 'To bypass this boundary, enterprises must construct massive Synthetic Data Simulation pipelines. Using highly specialized "Teacher" models (like Llama 3 400B) to programmatically generate billions of permutations of high-fidelity logic problems, which are then used to effectively train significantly smaller, cheaper "Student" models.',
                 'Synthetic Data allows organizations to perfectly map edge-cases that almost never occur natively in production. You can generate one million unique examples of a catastrophic fraud transaction to train your anomaly detection agent, without waiting 10 years to organically collect one million real frauds.'
             ],
@@ -57,7 +57,7 @@ for (let i = 3; i <= 10; i++) {
             l(`Deep Data Filtering Constraints ${i}`, 
                 [
                     `Continuing the expansion into data pipeline protection. The failure to filter out low-quality AI outputs before merging them into a production training run is economically fatal.`, 
-                    `The executive strategy demands deploying Adversarial Discriminators—models designed specifically to reject boring, incorrect, or heavily hallucinated synthetic data outputs.`,
+                    `The executive strategy demands deploying Adversarial Discriminators - models designed specifically to reject boring, incorrect, or heavily hallucinated synthetic data outputs.`,
                     `The architecture absolutely mandates establishing massive quality checkpoints prior to initiating a $10,000 GPU-intensive parameter update.`
                 ],
                 [

@@ -573,7 +573,7 @@ export default function ShadowContent() {
                                     <span className="text-xs font-bold font-mono uppercase tracking-widest text-zinc-900">The Enterprise Mandate</span>
                                 </div>
                                 <p className="text-zinc-950 text-sm font-semibold leading-relaxed mb-4">
-                                    You cannot train engineers not to use ChatGPT—it is a 10x multiplier on velocity. The only SOC-compliant resolution is deploying a private enclave inside your VPC, giving them an interface that mathematically guarantees zero-data-retention.
+                                    You cannot train engineers not to use ChatGPT - it is a 10x multiplier on velocity. The only SOC-compliant resolution is deploying a private enclave inside your VPC, giving them an interface that mathematically guarantees zero-data-retention.
                                 </p>
                             </div>
 

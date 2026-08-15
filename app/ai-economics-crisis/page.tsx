@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { TrendingDown, DollarSign, AlertTriangle, ArrowRight, BarChart3, Calculator, Shield, Zap, Users, Target, Clock, ChevronRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'AI Tools Cost $58K/Engineer in & Strategy Diagnostics | Richard Ewing',
-    description: 'AI Tools Cost $58K/Engineer in provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'The Enterprise AI Economics Crisis',
+    description: 'Why enterprise AI spend is expanding while gross margins shrink, and how deterministic governance restores profitability.',
     alternates: { canonical: 'https://www.richardewing.io/ai-economics-crisis' },
     openGraph: {
         title: 'The AI Economics Crisis: Your Coding Tools Cost More Than You Think',
@@ -16,10 +16,10 @@ export const metadata: Metadata = {
 
 const STATS = [
     { value: '$58K', label: 'Hidden cost per engineer per year', sublabel: 'from AI-generated maintenance & rework', icon: DollarSign },
-    { value: '19%', label: 'Slower with AI tools', sublabel: 'METR study — experienced devs measured', icon: TrendingDown },
+    { value: '19%', label: 'Slower with AI tools', sublabel: 'METR study  -  experienced devs measured', icon: TrendingDown },
     { value: '41%', label: 'Of new code is AI-generated', sublabel: 'but developer trust is only 29-33%', icon: AlertTriangle },
     { value: '45%', label: 'Contain security vulnerabilities', sublabel: 'of AI-generated code segments', icon: Shield },
-    { value: '95%', label: 'Of AI pilots fail to show ROI', sublabel: '"Pilot Purgatory" — never reach production', icon: Target },
+    { value: '95%', label: 'Of AI pilots fail to show ROI', sublabel: '"Pilot Purgatory"  -  never reach production', icon: Target },
     { value: '4.3h', label: 'Per week verifying AI outputs', sublabel: '$14,200/employee/year "verification tax"', icon: Clock },
 ];
 
@@ -28,7 +28,7 @@ const TOOLS = [
     { name: 'AI Unit Economics Audit', href: '/tools/aueb', description: 'Map every AI cost from inference to rework. Find your real gross margin.' },
     { name: 'Product Debt Index', href: '/tools/pdi', description: 'Quantify how much AI-generated technical debt is draining your runway.' },
     { name: 'Innovation Tax Calculator', href: '/tools/innovation-tax-calculator', description: 'What % of your R&D budget is maintenance disguised as innovation?' },
-    { name: 'FTE Displacement Estimator', href: '/tools/fte-displacement', description: 'Model real AI workforce impact — not vendor fantasies.' },
+    { name: 'FTE Displacement Estimator', href: '/tools/fte-displacement', description: 'Model real AI workforce impact  -  not vendor fantasies.' },
     { name: 'AI ROI Timeline', href: '/tools/ai-roi-timeline', description: 'When will your AI investment actually break even? Model it.' },
 ];
 
@@ -41,7 +41,7 @@ export default function AIEconomicsCrisis() {
                 <div className="relative max-w-5xl mx-auto px-6 text-center">
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-red-500/10 border border-red-500/20 rounded-full text-red-400 text-xs font-mono uppercase tracking-widest mb-8">
                         <AlertTriangle className="w-3.5 h-3.5" />
-                        Market Alert — June 2026
+                        Market Alert  -  June 2026
                     </div>
                     <h1 className="text-4xl md:text-6xl font-grotesk font-bold text-zinc-900 leading-tight mb-6">
                         Your AI Tools Cost More
@@ -105,7 +105,7 @@ export default function AIEconomicsCrisis() {
                     </h2>
                     <p className="text-lg text-zinc-600 max-w-2xl mx-auto mb-8 leading-relaxed">
                         Everyone else sells &ldquo;better AI.&rdquo; We quantify what AI actually costs.
-                        The tools below give you the exact numbers your CFO needs — before they ask.
+                        The tools below give you the exact numbers your CFO needs  -  before they ask.
                     </p>
                     <div className="flex items-center justify-center gap-6 text-sm text-zinc-500">
                         <Link href="/methodology" className="hover:text-purple-600 transition-colors flex items-center gap-1">

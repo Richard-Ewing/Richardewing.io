@@ -109,15 +109,15 @@ populateTrack28(modules);
 
 // ═══════════════════ LEGACY TRACK CONTENT (kept on disk for future restoration) ═══════════════════
 // The following files exist on disk but are NOT imported into the active registry:
-// - curriculum-tracks-5-6.ts (Track 5 DevOps — killed; Track 6 PM — kept above)
-// - curriculum-tracks-7.ts (Security Economics — killed)
-// - curriculum-tracks-8.ts (Data Economics — killed)
-// - curriculum-tracks-9.ts (Engineering Leadership — consolidated into Track 3)
-// - curriculum-tracks-10.ts (Startup Economics — consolidated into Track 4)
-// - curriculum-tracks-12.ts (Enterprise Architecture — killed)
-// - curriculum-tracks-13.ts (AI Agent Economics — consolidated into Track 11)
-// - curriculum-tracks-15.ts (Free Playbooks — killed from catalog)
-// - curriculum-tracks-16-17-expansion.ts (Guides/Comparisons — killed)
+// - curriculum-tracks-5-6.ts (Track 5 DevOps  -  killed; Track 6 PM  -  kept above)
+// - curriculum-tracks-7.ts (Security Economics  -  killed)
+// - curriculum-tracks-8.ts (Data Economics  -  killed)
+// - curriculum-tracks-9.ts (Engineering Leadership  -  consolidated into Track 3)
+// - curriculum-tracks-10.ts (Startup Economics  -  consolidated into Track 4)
+// - curriculum-tracks-12.ts (Enterprise Architecture  -  killed)
+// - curriculum-tracks-13.ts (AI Agent Economics  -  consolidated into Track 11)
+// - curriculum-tracks-15.ts (Free Playbooks  -  killed from catalog)
+// - curriculum-tracks-16-17-expansion.ts (Guides/Comparisons  -  killed)
 // - curriculum-tracks-18.ts through curriculum-tracks-29.ts (all killed)
 // - curriculum-guides-comparisons.ts (killed)
 

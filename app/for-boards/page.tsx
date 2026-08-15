@@ -3,11 +3,11 @@ import Link from 'next/link';
 import TechnicalInsolvencySimulator from '@/app/components/TechnicalInsolvencySimulator';
 
 export const metadata: Metadata = {
-    title: 'For Board Members & Strategy Diagnostics | Richard Ewing',
-    description: 'For Board Members provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'AI Governance for Board Members',
+    description: 'Board-level fiduciary guidance on governing enterprise AI investments, evaluating technical debt, and assessing risk.',
     keywords: ['board technology oversight', 'R&D capital board reporting', 'technical debt for boards', 'CTO board presentation', 'engineering metrics for directors'],
     alternates: { canonical: 'https://www.richardewing.io/for-boards' },
-    openGraph: { title: 'For Board Members — R&D Capital Visibility', description: 'Board-ready engineering reports in financial language.', url: 'https://www.richardewing.io/for-boards', type: 'website' },
+    openGraph: { title: 'For Board Members  -  R&D Capital Visibility', description: 'Board-ready engineering reports in financial language.', url: 'https://www.richardewing.io/for-boards', type: 'website' },
 };
 
 const boardQuestions = [
@@ -38,7 +38,7 @@ export default function ForBoardsPage() {
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">You Need Financial Language.</span>
                         </h1>
                         <p className="text-xl text-zinc-900 max-w-2xl mx-auto mb-8">
-                            R&D Capital Audits translate technical complexity into board-ready financial metrics. Know the real cost of your technology investment — not the optimistic narrative.
+                            R&D Capital Audits translate technical complexity into board-ready financial metrics. Know the real cost of your technology investment  -  not the optimistic narrative.
                         </p>
                         <Link href="/services" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Request Board Briefing →</Link>
                     </div>

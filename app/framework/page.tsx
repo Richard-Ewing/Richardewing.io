@@ -5,8 +5,8 @@ import EcosystemMap from '@/app/components/EcosystemMap';
 import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-    title: 'Production AI Governance Framework Audits | Richard Ewing',
-    description: 'The Production AI Governance Framework provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Production AI Governance Frameworks',
+    description: 'The Production AI Governance Framework provides diagnostic instruments and audit structures for enterprise engineering leadership.',
     alternates: {
         canonical: 'https://www.richardewing.io/framework',
     },

@@ -42,7 +42,7 @@ const problems = [
         icon: Bug,
         label: "UNVERIFIED AI CODE LABILITIES",
         businessImpact: "AI-assisted software development inflates future maintenance costs.",
-        headline: "AI-generated software looks complete—until maintenance bills triple.",
+        headline: "AI-generated software looks complete - until maintenance bills triple.",
         description: "Developers using AI assistants often ship high volumes of unverified software. Without technical governance, this creates technical debt that slows future feature delivery.",
         metric: "42%",
         metricLabel: "engineering capacity consumed by software maintenance",

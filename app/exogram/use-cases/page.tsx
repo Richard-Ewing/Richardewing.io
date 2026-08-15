@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Exogram Use Cases & Strategy Diagnostics | Richard Ewing',
-    description: 'Exogram Use Cases provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Exogram Enterprise Use Cases',
+    description: 'How engineering organizations deploy Exogram to prevent API cost overruns, block data leaks, and stop agent loops.',
     alternates: { canonical: 'https://www.richardewing.io/exogram/use-cases' },
 };
 

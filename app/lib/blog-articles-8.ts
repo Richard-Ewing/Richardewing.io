@@ -2,7 +2,7 @@ import { ArticleData } from './blog-types';
 
 export const articlesBatch8: Record<string, ArticleData> = {
     'why-your-ai-agent-needs-a-kill-switch': {
-        title: 'Why Your AI Agent Needs a Kill Switch — And Why Guardrails Are Not One',
+        title: 'Why Your AI Agent Needs a Kill Switch  -  And Why Guardrails Are Not One',
         excerpt: 'Guardrails are probabilistic. Your AI agents need deterministic execution control. Here is the architectural pattern that stops autonomous failures before they reach production.',
         date: '2026-05-22',
         category: 'Security',
@@ -18,16 +18,16 @@ In July 2025, an AI coding agent <a href="/failures/autonomous-execution-risk">d
 
 The database was still deleted.
 
-This is not an edge case. This is the <strong>structural flaw</strong> in how the industry approaches AI agent security. We built probabilistic systems to police probabilistic systems — and then acted surprised when probability failed.
+This is not an edge case. This is the <strong>structural flaw</strong> in how the industry approaches AI agent security. We built probabilistic systems to police probabilistic systems  -  and then acted surprised when probability failed.
 
 As I wrote in <a href="https://builtin.com/articles/ai-agent-kill-switch" target="_blank" rel="noopener">Built In</a>: "Guardrails are the TSA of AI: expensive, visible, and designed to make stakeholders feel safe rather than actually prevent the breach."
 
 The enterprise AI security stack looks like this:
 
 <ul>
-<li><strong>Confidence thresholds</strong> — "only execute if confidence > 0.85"</li>
-<li><strong>Output filters</strong> — "block responses containing harmful content"</li>
-<li><strong>LLM-as-a-judge</strong> — "ask another LLM if this action seems safe"</li>
+<li><strong>Confidence thresholds</strong>  -  "only execute if confidence > 0.85"</li>
+<li><strong>Output filters</strong>  -  "block responses containing harmful content"</li>
+<li><strong>LLM-as-a-judge</strong>  -  "ask another LLM if this action seems safe"</li>
 </ul>
 
 Every single one of these is probabilistic. You are asking a guessing system to evaluate whether another guessing system guessed correctly.
@@ -42,7 +42,7 @@ A kill switch is not a panic button. It is a <strong>deterministic execution con
 
 <h3>1. Admissibility Gate</h3>
 
-Every proposed agent action is evaluated against an explicit allowlist of permitted operations. This is not a confidence check — it is a binary pass/fail evaluation. The action is either in the set of permitted operations or it is not.
+Every proposed agent action is evaluated against an explicit allowlist of permitted operations. This is not a confidence check  -  it is a binary pass/fail evaluation. The action is either in the set of permitted operations or it is not.
 
 If the agent proposes "DELETE FROM production_users WHERE 1=1," the <a href="/glossary/admissibility-gate">admissibility gate</a> does not evaluate whether this "looks safe." It checks whether bulk deletion is on the allowlist. It is not. Action denied. No probability involved.
 
@@ -54,7 +54,7 @@ This catches the scenarios guardrails miss: the agent that technically does an a
 
 <h3>3. Cryptographic Audit Ledger</h3>
 
-Every proposed action, every gate evaluation, and every execution outcome is logged with immutable cryptographic integrity. Not for compliance theater — for forensic reconstruction when (not if) something fails.
+Every proposed action, every gate evaluation, and every execution outcome is logged with immutable cryptographic integrity. Not for compliance theater  -  for forensic reconstruction when (not if) something fails.
 
 The entire pipeline executes in under 5 milliseconds per action. This is not a performance tradeoff. This is baseline security infrastructure.
 
@@ -72,7 +72,7 @@ Enterprise AI agents now have:
 <li><strong>Financial transaction authority</strong></li>
 </ul>
 
-According to recent research, <strong>78% of AI agents in enterprise deployments are over-privileged</strong> — they have more permissions than their task requires. This is the equivalent of giving every employee in the company root access to every system.
+According to recent research, <strong>78% of AI agents in enterprise deployments are over-privileged</strong>  -  they have more permissions than their task requires. This is the equivalent of giving every employee in the company root access to every system.
 
 Reddit and Hacker News are filled with practitioners reporting <a href="/compare/why-retry-loops-happen">retry loops that burned thousands overnight</a>, <a href="/compare/why-cursor-rewrites-files">coding agents that rewrote production files</a>, and <a href="/compare/why-mcp-is-dangerous">MCP configurations that gave agents unrestricted system access</a>.
 
@@ -87,33 +87,33 @@ That is not a solution. That is hope.
 The correct architecture separates two things that the industry currently conflates:
 
 <ul>
-<li><strong>Inference</strong> — which is inherently probabilistic (let the model generate any proposal)</li>
-<li><strong>Execution</strong> — which must be deterministic (only pre-approved actions reach production)</li>
+<li><strong>Inference</strong>  -  which is inherently probabilistic (let the model generate any proposal)</li>
+<li><strong>Execution</strong>  -  which must be deterministic (only pre-approved actions reach production)</li>
 </ul>
 
 The <a href="/glossary/agentic-kill-switch">agentic kill switch</a> is the boundary between these two layers. It does not make inference better. It makes execution safe.
 
-This is the architecture that <a href="/exogram/architecture">Exogram</a> implements: deterministic verification infrastructure that sits between model inference and system execution. Not optional. Not best practice. <strong>Mandatory</strong> — once agents gain execution authority, runtime governance becomes the minimum viable security posture.
+This is the architecture that <a href="/exogram/architecture">Exogram</a> implements: deterministic verification infrastructure that sits between model inference and system execution. Not optional. Not best practice. <strong>Mandatory</strong>  -  once agents gain execution authority, runtime governance becomes the minimum viable security posture.
 
 ---
 
 <h2>What To Do Right Now</h2>
 
 <ol>
-<li><strong>Audit your agent permissions</strong> — Use the <a href="/tools/pdi">Product Debt Index</a> to quantify your current exposure.</li>
-<li><strong>Implement admissibility gates</strong> — Start with your highest-risk agents. Define explicit allowlists.</li>
-<li><strong>Add state integrity checking</strong> — Hash before and after. Roll back on deviation.</li>
-<li><strong>Deploy cryptographic logging</strong> — Every action, every evaluation, immutably recorded.</li>
-<li><strong>Review the <a href="/exogram/architecture">Exogram architecture</a></strong> — The reference implementation for deterministic execution control.</li>
+<li><strong>Audit your agent permissions</strong>  -  Use the <a href="/tools/pdi">Product Debt Index</a> to quantify your current exposure.</li>
+<li><strong>Implement admissibility gates</strong>  -  Start with your highest-risk agents. Define explicit allowlists.</li>
+<li><strong>Add state integrity checking</strong>  -  Hash before and after. Roll back on deviation.</li>
+<li><strong>Deploy cryptographic logging</strong>  -  Every action, every evaluation, immutably recorded.</li>
+<li><strong>Review the <a href="/exogram/architecture">Exogram architecture</a></strong>  -  The reference implementation for deterministic execution control.</li>
 </ol>
 
-The guardrail era is over. The governance era has begun. The question is whether your organization will build the kill switch before it needs one — or after.
+The guardrail era is over. The governance era has begun. The question is whether your organization will build the kill switch before it needs one  -  or after.
 
 <em>Originally published in <a href="https://builtin.com/articles/ai-agent-kill-switch" target="_blank" rel="noopener">Built In</a> on May 21, 2026.</em>
         `
     },
     'your-claude-api-bill-is-destroying-your-margins': {
-        title: 'Your Claude API Bill Is Destroying Your Margins — The Economics of Model-Task Mismatch',
+        title: 'Your Claude API Bill Is Destroying Your Margins  -  The Economics of Model-Task Mismatch',
         excerpt: 'Enterprise teams are using frontier models for simple tasks and watching margins evaporate. Here is how to calculate your cost collapse point and implement tiered inference routing.',
         date: '2026-05-22',
         category: 'AI Economics',
@@ -158,7 +158,7 @@ Practitioners on Reddit report proofs-of-concept that cost hundreds of dollars b
 
 <h2>The Cost Collapse Point</h2>
 
-Every AI feature has a <strong>cost collapse point</strong> — the specific usage volume where the API cost of serving the feature exceeds the revenue it generates. Below this point, the feature is profitable. Above it, every additional user destroys margin.
+Every AI feature has a <strong>cost collapse point</strong>  -  the specific usage volume where the API cost of serving the feature exceeds the revenue it generates. Below this point, the feature is profitable. Above it, every additional user destroys margin.
 
 Use the <a href="/tools/aueb">AI Unit Economics Calculator (AUEB)</a> to find yours. You will need:
 
@@ -208,14 +208,14 @@ The routing decision can be rule-based (keyword matching), model-based (a lightw
 
 <h2>API Cost Governance: The Missing Layer</h2>
 
-Beyond model routing, enterprises need <a href="/glossary/api-cost-governance">API cost governance</a> — the organizational practice of monitoring, controlling, and optimizing AI API spend:
+Beyond model routing, enterprises need <a href="/glossary/api-cost-governance">API cost governance</a>  -  the organizational practice of monitoring, controlling, and optimizing AI API spend:
 
 <ol>
-<li><strong>Cost per request tracking</strong> — Know exactly what each AI feature costs per invocation</li>
-<li><strong>Hard cost ceilings</strong> — Automatic throttling when API spend exceeds thresholds</li>
-<li><strong>Retry budgets</strong> — Cap retries per task to prevent <a href="/glossary/retry-inflation">retry inflation</a> (AI agents retrying 47 times, each retry costing tokens)</li>
-<li><strong>Anomaly alerting</strong> — Flag sudden usage spikes before they become budget crises</li>
-<li><strong>Per-feature P&L</strong> — Track whether each AI feature generates more revenue than it consumes in compute</li>
+<li><strong>Cost per request tracking</strong>  -  Know exactly what each AI feature costs per invocation</li>
+<li><strong>Hard cost ceilings</strong>  -  Automatic throttling when API spend exceeds thresholds</li>
+<li><strong>Retry budgets</strong>  -  Cap retries per task to prevent <a href="/glossary/retry-inflation">retry inflation</a> (AI agents retrying 47 times, each retry costing tokens)</li>
+<li><strong>Anomaly alerting</strong>  -  Flag sudden usage spikes before they become budget crises</li>
+<li><strong>Per-feature P&L</strong>  -  Track whether each AI feature generates more revenue than it consumes in compute</li>
 </ol>
 
 This is not traditional <a href="/glossary/ai-finops">FinOps</a>. FinOps optimizes infrastructure utilization. AI cost governance optimizes the relationship between model capability, task complexity, and output quality. Different problem, different solution.
@@ -225,14 +225,14 @@ This is not traditional <a href="/glossary/ai-finops">FinOps</a>. FinOps optimiz
 <h2>What To Do Monday Morning</h2>
 
 <ol>
-<li><strong>Run the <a href="/tools/aueb">AUEB calculator</a></strong> — Find your cost collapse point for every AI feature</li>
-<li><strong>Audit your API calls by task type</strong> — Classify every call as simple/medium/complex</li>
-<li><strong>Benchmark smaller models</strong> — Test mid-tier and small models on your simple tasks. You will be surprised</li>
-<li><strong>Implement hard cost ceilings</strong> — No feature should run without a per-request and per-month cap</li>
-<li><strong>Present the numbers to your CFO</strong> — Use the <a href="/tools/aueb">AUEB output</a> to show exactly where margin collapse begins</li>
+<li><strong>Run the <a href="/tools/aueb">AUEB calculator</a></strong>  -  Find your cost collapse point for every AI feature</li>
+<li><strong>Audit your API calls by task type</strong>  -  Classify every call as simple/medium/complex</li>
+<li><strong>Benchmark smaller models</strong>  -  Test mid-tier and small models on your simple tasks. You will be surprised</li>
+<li><strong>Implement hard cost ceilings</strong>  -  No feature should run without a per-request and per-month cap</li>
+<li><strong>Present the numbers to your CFO</strong>  -  Use the <a href="/tools/aueb">AUEB output</a> to show exactly where margin collapse begins</li>
 </ol>
 
-The AI cost crisis is not a technology problem. It is a governance problem. The models work. The economics do not — unless you architect them deliberately.
+The AI cost crisis is not a technology problem. It is a governance problem. The models work. The economics do not  -  unless you architect them deliberately.
 
 <em>Originally published in <a href="https://www.cio.com/article/4175244/your-claude-api-bill-is-higher-than-your-revenue-why-simple-python-tasks-are-blowing-up-ai-costs.html" target="_blank" rel="noopener">CIO.com</a> on May 21, 2026.</em>
         `

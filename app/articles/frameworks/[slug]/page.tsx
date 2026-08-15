@@ -11,12 +11,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!framework) return { title: 'Framework Not Found' };
 
     const searchTitle = {
-        'technical-insolvency-date': 'Technical Insolvency Date — When Technical Debt Kills Innovation',
-        'innovation-tax': 'Innovation Tax — Hidden Maintenance Disguised as R&D Investment',
-        'cost-of-predictivity': 'Cost of Predictivity — The True Cost of AI Accuracy',
-        'audit-interview': 'Audit Interview — AI-Age Engineering Hiring Assessment',
-        'kill-switch-protocol': 'Kill Switch Protocol — How to Deprecate Zombie Features',
-        'feature-bloat-calculus': 'Feature Bloat Calculus — When Features Cost More Than They Earn',
+        'technical-insolvency-date': 'Technical Insolvency Date  -  When Technical Debt Kills Innovation',
+        'innovation-tax': 'Innovation Tax  -  Hidden Maintenance Disguised as R&D Investment',
+        'cost-of-predictivity': 'Cost of Predictivity  -  The True Cost of AI Accuracy',
+        'audit-interview': 'Audit Interview  -  AI-Age Engineering Hiring Assessment',
+        'kill-switch-protocol': 'Kill Switch Protocol  -  How to Deprecate Zombie Features',
+        'feature-bloat-calculus': 'Feature Bloat Calculus  -  When Features Cost More Than They Earn',
     }[slug] || framework.name;
 
     return {

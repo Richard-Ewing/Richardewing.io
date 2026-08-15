@@ -1,7 +1,7 @@
 import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks28Modules: Record<string, CurriculumModule> = {};
-const t28 = 'Track 28 — Agentic Process Automation (APA)';
+const t28 = 'Track 28  -  Agentic Process Automation (APA)';
 
 tracks28Modules['28/28-1'] = m('28-1', 'Beyond Rules-Based RPA', 'Action Space, DOM Understanding, Semantic Selectors', t28, 
     ['Map the Agentic Action Space', 'Diagnose brittle RPA scripts'], [

@@ -1,7 +1,7 @@
 import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks18Modules: Record<string, CurriculumModule> = {};
-const t18 = 'Track 18 — The Fullstack Career';
+const t18 = 'Track 18  -  The Fullstack Career';
 
 tracks18Modules['fullstack-career/18-1'] = m('18-1', 'Frontend State Economics', 'Cost of uncontrolled state, re-rendering waste, and React optimization ROI.', t18, 
     ['Identify re-rendering waste', 'Optimize state economics', 'Measure frontend performance ROI'], [
@@ -57,7 +57,7 @@ tracks18Modules['fullstack-career/18-3'] = m('18-3', 'Database Query Optimizatio
             [
                 'A single missing SQL join can create 10,000 recursive database hits in a single page load. In the modern era, an ORM (Object-Relational Mapper) is essentially a chainsaw: wildly powerful for velocity, but incredibly dangerous if you do not understand the underlying SQL it generates.', 
                 'Junior engineers treat databases as magic black boxes. Senior engineers recognize that mastering the execution plan (`EXPLAIN ANALYZE`) is the absolute floor for professional competency.',
-                'Adding a database index isn\'t free—it accelerates read times tremendously, but fundamentally degrades write speed because the index must be recalculated on every single insert. This is the core trade-off of database engineering.'
+                'Adding a database index isn\'t free - it accelerates read times tremendously, but fundamentally degrades write speed because the index must be recalculated on every single insert. This is the core trade-off of database engineering.'
             ],
             [
                 d('Query Execution Time', 'The raw database fetch speed, totally independent of network latency.', '< 10ms Target'),

@@ -2,15 +2,15 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'For PE & VC & Strategy Diagnostics | Richard Ewing',
-    description: 'For PE & VC provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'PE & VC AI Capital Due Diligence',
+    description: 'Pre-close software forensic audits and margin engineering for private equity firms and growth stage investors.',
     keywords: ['R&D due diligence', 'technical due diligence PE', 'VC technology assessment', 'portfolio company audit', 'technical debt valuation', 'Product Debt Index', 'Richard Ewing'],
     alternates: { canonical: 'https://www.richardewing.io/for-investors' },
-    openGraph: { title: 'For Investors — R&D Capital Due Diligence', description: 'Quantify technical debt in dollars before you invest.', url: 'https://www.richardewing.io/for-investors', type: 'website' },
+    openGraph: { title: 'For Investors  -  R&D Capital Due Diligence', description: 'Quantify technical debt in dollars before you invest.', url: 'https://www.richardewing.io/for-investors', type: 'website' },
 };
 
 const useCases = [
-    { title: 'Pre-Acquisition Due Diligence', description: 'Quantify the technical debt of an acquisition target before closing. Know the real R&D capital cost — not the story the CTO tells.', icon: '🔍', stats: 'Prevents 20-40% hidden cost surprises' },
+    { title: 'Pre-Acquisition Due Diligence', description: 'Quantify the technical debt of an acquisition target before closing. Know the real R&D capital cost  -  not the story the CTO tells.', icon: '🔍', stats: 'Prevents 20-40% hidden cost surprises' },
     { title: 'Portfolio Company Monitoring', description: 'Ongoing R&D audits for portfolio companies. Track Technical Insolvency Date, Innovation Tax, and engineering velocity across your portfolio.', icon: '📊', stats: 'Quarterly reporting for LPs' },
     { title: 'Value Creation Planning', description: 'Post-acquisition technology roadmap. Prioritize debt remediation, team restructuring, and AI modernization for maximum IRR.', icon: '💎', stats: 'Align engineering to EBITDA' },
     { title: 'Exit Preparation', description: 'Prepare portfolio companies for sale. Clean up technical debt, improve DORA metrics, and create vendor-ready technology documentation.', icon: '🚀', stats: 'Maximize exit multiples' },
@@ -18,9 +18,9 @@ const useCases = [
 
 const metrics = [
     { name: 'Product Debt Index (PDI)', description: 'Single score (0-100) quantifying total technical debt', link: '/tools/pdi' },
-    { name: 'Technical Insolvency Date', description: 'When maintenance load exceeds capacity — the "death date" for R&D', link: '/glossary/technical-insolvency-date' },
+    { name: 'Technical Insolvency Date', description: 'When maintenance load exceeds capacity  -  the "death date" for R&D', link: '/glossary/technical-insolvency-date' },
     { name: 'Innovation Tax', description: 'Percentage of engineering spent on maintenance vs. new features', link: '/glossary/innovation-tax' },
-    { name: 'APER Score', description: 'Revenue generated per engineer — the ultimate efficiency metric', link: '/tools/aper' },
+    { name: 'APER Score', description: 'Revenue generated per engineer  -  the ultimate efficiency metric', link: '/tools/aper' },
     { name: 'AI COGS Analysis', description: 'Variable cost of AI features eating into gross margins', link: '/tools/aueb' },
 ];
 

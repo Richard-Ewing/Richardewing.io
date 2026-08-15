@@ -1,7 +1,7 @@
 import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks22Modules: Record<string, CurriculumModule> = {};
-const t22 = 'Track 22 — Engineering Culture & Motivation';
+const t22 = 'Track 22  -  Engineering Culture & Motivation';
 
 tracks22Modules['culture/22-1'] = m('22-1', 'The Psychological Safety Premium', 'Blame cultures vs execution speed, hiding errors.', t22, 
     ['Measure psychological safety', 'Prevent error hiding'], [
@@ -31,7 +31,7 @@ tracks22Modules['culture/22-2'] = m('22-2', 'Hero Worship Toxicity', 'Single Poi
     ['Eliminate the 10x Hero', 'Enforce the Bus Factor'], [
         l('The Paralyzing Liability of the Enterprise Hero', 
             [
-                'Many organizations mistakenly celebrate the "Hero Engineer"—the single individual who works 80-hour weeks, possesses all domain knowledge of a complex legacy system, and routinely saves the company during weekend outages. In reality, a Hero Engineer is the single most dangerous architectural risk to the firm\'s balance sheet.', 
+                'Many organizations mistakenly celebrate the "Hero Engineer" - the single individual who works 80-hour weeks, possesses all domain knowledge of a complex legacy system, and routinely saves the company during weekend outages. In reality, a Hero Engineer is the single most dangerous architectural risk to the firm\'s balance sheet.', 
                 'When an architecture fundamentally relies on one individual\'s tribal knowledge, that system possesses a "Bus Factor" of 1. If that engineer resigns, falls ill, or demands a massive raise, the company\'s operational capacity drops to absolute zero.',
                 'Elite engineering cultures actively punish individual data siloing. Outstanding performance is not defined by how crucial you are to an isolated system, but by how rapidly you can document and distribute your expertise to completely deprecate your own indispensability.'
             ],
@@ -104,7 +104,7 @@ tracks22Modules['culture/22-5'] = m('22-5', 'The 10x Developer Illusion', 'Syste
         l('Redefining the 10x Capability Matrix', 
             [
                 'The Silicon Valley myth of the "10x Developer" incorrectly glorifies the individual who types 10 times faster or writes highly obscure, overly clever algorithmic hacks. These developers actively create crushing technical debt that takes massive teams years to unravel.', 
-                'A true 10x engineer operates strictly as an organizational multiplier. They achieve extreme velocity by establishing frictionless CI/CD pipelines, automating brutal database migrations, and mentoring junior developers—effectively turning five 1x engineers into 2x engineers.',
+                'A true 10x engineer operates strictly as an organizational multiplier. They achieve extreme velocity by establishing frictionless CI/CD pipelines, automating brutal database migrations, and mentoring junior developers - effectively turning five 1x engineers into 2x engineers.',
                 'Scaling a software company requires optimizing the environment, not worshipping the isolated coder. By heavily investing in profound Developer Experience (DX), you systemically raise the entire floor of the organization.'
             ],
             [
@@ -115,7 +115,7 @@ tracks22Modules['culture/22-5'] = m('22-5', 'The 10x Developer Illusion', 'Syste
             ['Penalize code reviews that favor obscure, "clever" one-liners over incredibly dense, highly readable resilience.', 'Promote the engineer who spent 3 days setting up an automated staging environment that saves every other developer 20 minutes a day.', 'Track leverage, not raw syntax volume.'], 
             {
                 question: 'How does a true "10x Engineer" operate in an elite enterprise environment?',
-                options: ['By writing all the complex code themselves over the weekend', 'By acting as an organizational multiplier—automating bottlenecks, writing pristine documentation, and elevating the velocity of the developers around them', 'By learning the newest, highly experimental Javascript framework', 'By avoiding all meetings'],
+                options: ['By writing all the complex code themselves over the weekend', 'By acting as an organizational multiplier - automating bottlenecks, writing pristine documentation, and elevating the velocity of the developers around them', 'By learning the newest, highly experimental Javascript framework', 'By avoiding all meetings'],
                 correctIndex: 1,
                 explanation: 'Raw typing speed does not scale a company. Multiplying the effective output of an entire squad by eliminating architectural friction provides exponential corporate returns.'
             }
@@ -223,7 +223,7 @@ tracks22Modules['culture/22-10'] = m('22-10', 'Culture Capstone Economics', 'Syn
     ['Finalize the culture model', 'Deploy extreme ownership'], [
         l('The Board-Level Cultural Culmination', 
             [
-                'You have now completely mapped the underlying economics of modern software execution. You recognize that every line of code carries an invisible financial ledger—a downstream cost in maintenance, compute, and cognitive load.', 
+                'You have now completely mapped the underlying economics of modern software execution. You recognize that every line of code carries an invisible financial ledger - a downstream cost in maintenance, compute, and cognitive load.', 
                 'Engineering culture is not about bean bags and ping pong tables. It is about constructing an environment rooted in extreme psychological safety, blistering feedback loops, unyielding technical standards, and pure financial accountability.',
                 'When you merge architectural mastery with deep P&L understanding, you transcend the title of "Developer" and become an absolute force of enterprise scaling. You now possess the playbook.'
             ],

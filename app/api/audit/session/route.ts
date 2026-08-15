@@ -26,7 +26,7 @@ Scoring Dimensions:
 3. Economic Awareness: Do they think about cost, ROI, capital efficiency, maintenance liability?
 4. Strategic Altitude: Do they connect decisions to org-level, market-level, or enterprise-value implications?
 
-Level Definitions (BE PRECISE — USE THE FULL L3-L8 RANGE):
+Level Definitions (BE PRECISE  -  USE THE FULL L3-L8 RANGE):
 - L3 (Score 3): ONLY if the answer is purely superficial. They restate the obvious, suggest trivial fixes, or miss the core issue entirely. Example: "${grading.l3_example}"
 - L4 (Score 4): The answer identifies the right problem area but stays local in scope. They see immediate risks but miss second-order effects or economic implications. Shows competence but not depth.
 - L5 (Score 5): Demonstrates system-level thinking. Identifies maintenance liability, scalability concerns, or economic trade-offs. Can prioritize and defer intelligently. This is a solid senior-level answer.
@@ -135,7 +135,7 @@ export async function POST(request: Request) {
             let question: Question | undefined;
 
             if (questionId) {
-                // Use exact ID match — this ensures the correct rubric is used
+                // Use exact ID match  -  this ensures the correct rubric is used
                 // even when multiple variants share the same phase title
                 question = roleBank?.find(q => q.id === questionId);
             }

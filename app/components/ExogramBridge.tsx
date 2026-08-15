@@ -6,7 +6,7 @@ interface ExogramBridgeProps {
 }
 
 const ExogramBridge = ({
-    context = 'Once agents gain execution authority, runtime governance becomes mandatory. Not optional. Not best practice. Mandatory. Exogram is that governance layer — the deterministic verification infrastructure that stops failures before they reach production.',
+    context = 'Once agents gain execution authority, runtime governance becomes mandatory. Not optional. Not best practice. Mandatory. Exogram is that governance layer  -  the deterministic verification infrastructure that stops failures before they reach production.',
 }: ExogramBridgeProps) => {
     return (
         <div className="my-16 rounded-2xl border-l-4 border-l-violet-500 border border-zinc-200 bg-gradient-to-r from-violet-50/60 to-white p-8 relative overflow-hidden">

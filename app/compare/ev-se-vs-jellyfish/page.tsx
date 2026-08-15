@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     description: 'Compare risk-adjusted SaaS valuation modeling vs engineering resource allocation metrics.',
     keywords: ['jellyfish alternative', 'engineering metrics tool', 'evergreen ratio', 'engineering sustainability', 'engineering economics vs metrics'],
     alternates: { canonical: 'https://www.richardewing.io/compare/ev-se-vs-jellyfish' },
-    openGraph: { title: 'EV-SE vs Jellyfish — Economics vs Metrics', description: 'Jellyfish tracks what engineers did. EV-SE tells you if it matters economically.', url: 'https://www.richardewing.io/compare/ev-se-vs-jellyfish', type: 'article' },
+    openGraph: { title: 'EV-SE vs Jellyfish  -  Economics vs Metrics', description: 'Jellyfish tracks what engineers did. EV-SE tells you if it matters economically.', url: 'https://www.richardewing.io/compare/ev-se-vs-jellyfish', type: 'article' },
 };
 
 const rows = [
@@ -17,7 +17,7 @@ const rows = [
     { dimension: 'Audience', evse: 'CTOs, CFOs, board members', jelly: 'Engineering managers, VPs of Engineering' },
     { dimension: 'Approach', evse: 'Economic modeling of R&D capital allocation', jelly: 'Jira/GitHub data aggregation and visualization' },
     { dimension: 'Cost', evse: 'Free (richardewing.io/tools/ev-se)', jelly: '$20K-$100K+/yr enterprise contracts' },
-    { dimension: 'Board-ready?', evse: '✅ Produces investment-grade analysis', jelly: '⚠️ Dashboards — requires interpretation' },
+    { dimension: 'Board-ready?', evse: '✅ Produces investment-grade analysis', jelly: '⚠️ Dashboards  -  requires interpretation' },
 ];
 
 export default function EVSEvsJellyfishPage() {
@@ -43,7 +43,7 @@ export default function EVSEvsJellyfishPage() {
                     </div>
                     <div className="rounded-2xl border border-teal-500/30 bg-teal-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
-                        <p className="text-zinc-950 mb-6"><strong>Use both — for different purposes.</strong> Jellyfish shows engineering activity. EV-SE evaluates whether that activity creates lasting value. Tracking without economic analysis is measurement without meaning.</p>
+                        <p className="text-zinc-950 mb-6"><strong>Use both  -  for different purposes.</strong> Jellyfish shows engineering activity. EV-SE evaluates whether that activity creates lasting value. Tracking without economic analysis is measurement without meaning.</p>
                         <Link href="/tools/ev-se" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-teal-500 to-cyan-600 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Try the Free EV-SE Calculator →</Link>
                     
                     <AdvisoryCTA variant="compare" />

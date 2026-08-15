@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Exogram Product Roadmap 2026 & Strategy Diagnostics | Richard Ewing',
-    description: 'Exogram Product Roadmap 2026 provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Exogram Product Roadmap 2026',
+    description: 'Upcoming release milestones for VPC deployment, multi-agent arbitration, and automated regulatory compliance.',
     alternates: { canonical: 'https://www.richardewing.io/exogram/roadmap' },
 };
 

@@ -7,14 +7,14 @@ export const metadata: Metadata = {
     description: 'Compare Product Debt Index valuation vs Waydev git activity analytics.',
     keywords: ['PDI vs Waydev', 'technical debt measurement comparison', 'engineering analytics tools', 'Waydev alternative', 'Product Debt Index'],
     alternates: { canonical: 'https://www.richardewing.io/compare/pdi-vs-waydev' },
-    openGraph: { title: 'PDI vs Waydev — Engineering Intelligence Comparison', description: 'Economic debt measurement vs. git analytics.', url: 'https://www.richardewing.io/compare/pdi-vs-waydev', type: 'article' },
+    openGraph: { title: 'PDI vs Waydev  -  Engineering Intelligence Comparison', description: 'Economic debt measurement vs. git analytics.', url: 'https://www.richardewing.io/compare/pdi-vs-waydev', type: 'article' },
 };
 
 const dimensions = [
-    { dimension: 'Primary Metric', pdi: 'Technical Insolvency Date — when debt exceeds capacity', waydev: 'Developer activity metrics — commits, PRs, cycle time', winner: 'pdi' },
+    { dimension: 'Primary Metric', pdi: 'Technical Insolvency Date  -  when debt exceeds capacity', waydev: 'Developer activity metrics  -  commits, PRs, cycle time', winner: 'pdi' },
     { dimension: 'Economic Output', pdi: 'Dollar-denominated debt liability with quarterly amortization', waydev: 'Developer productivity dashboards and reports', winner: 'pdi' },
     { dimension: 'Board Readability', pdi: 'Financial language: "Your R&D has $2.4M in technical debt"', waydev: 'Engineering language: "Average PR size is 342 lines"', winner: 'pdi' },
-    { dimension: 'Data Source', pdi: 'Assessment-based — architecture review + team interviews', waydev: 'Git-connected — automated pull from repositories', winner: 'waydev' },
+    { dimension: 'Data Source', pdi: 'Assessment-based  -  architecture review + team interviews', waydev: 'Git-connected  -  automated pull from repositories', winner: 'waydev' },
     { dimension: 'Setup Time', pdi: '10 minutes (free calculator)', waydev: 'Hours (git integration, user setup)', winner: 'pdi' },
     { dimension: 'Ongoing Monitoring', pdi: 'Periodic audits (quarterly recommended)', waydev: 'Continuous real-time dashboards', winner: 'waydev' },
     { dimension: 'Team Privacy', pdi: 'No individual developer tracking', waydev: 'Individual developer activity visible (controversial)', winner: 'pdi' },
@@ -59,7 +59,7 @@ export default function ComparePDIWaydevPage() {
                     </div>
 
                     <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-8 text-center">
-                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Try PDI — Free</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Try PDI  -  Free</h2>
                         <p className="text-zinc-950 mb-6">Calculate your Product Debt Index and Technical Insolvency Date in 10 minutes. No git integration required.</p>
                         <Link href="/tools/pdi" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Calculate Your PDI →</Link>
                     

@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'CIO.com Articles on R&D Capita & Strategy Diagnostics | Richard Ewing',
-    description: 'CIO.com Articles on R&D Capita provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'CIO.com Publications on R&D Capital',
+    description: 'Strategic analysis and governance articles authored by Richard Ewing for CIO.com.',
     keywords: ['Richard Ewing CIO.com', 'CIO articles technical debt', 'R&D capital efficiency CIO', 'CTO thought leadership', 'AI economist CIO.com'],
     alternates: { canonical: 'https://www.richardewing.io/articles/recap/cio-com' },
     openGraph: { title: 'Richard Ewing on CIO.com', description: 'Published articles on R&D capital efficiency, technical debt economics, and AI adoption for CIOs.', url: 'https://www.richardewing.io/articles/recap/cio-com', type: 'article' },
@@ -40,7 +40,7 @@ export default function CIORecapPage() {
     const articleSchema = {
         '@context': 'https://schema.org',
         '@type': 'Article',
-        headline: 'Richard Ewing CIO.com Articles — Executive Technology Leadership',
+        headline: 'Richard Ewing CIO.com Articles  -  Executive Technology Leadership',
         author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/principal' },
         publisher: { '@type': 'Organization', name: 'CIO.com' },
         url: 'https://www.richardewing.io/articles/recap/cio-com',
@@ -69,7 +69,7 @@ export default function CIORecapPage() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">CIO.com</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-4 max-w-2xl">
-                        Richard Ewing&apos;s published articles on CIO.com — Tier 1 media for CIOs, CTOs, and technology executives. Covering R&amp;D capital efficiency, technical debt economics, and AI adoption strategies.
+                        Richard Ewing&apos;s published articles on CIO.com  -  Tier 1 media for CIOs, CTOs, and technology executives. Covering R&amp;D capital efficiency, technical debt economics, and AI adoption strategies.
                     </p>
                     <p className="text-sm font-semibold text-zinc-950 mb-12">CIO.com is an IDG publication reaching 2M+ technology decision-makers monthly.</p>
 

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Security Tech Debt Is Your Big & Strategy Diagnostics | Richard Ewing',
-    description: 'Security Tech Debt Is Your Big provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Cybersecurity Tech Debt & Alert Fatigue Costs',
+    description: 'Quantify SIEM integration debt, alert volume infrastructure costs, and security engineering efficiency metrics.',
     keywords: ['cybersecurity technical debt', 'security debt', 'AI threat detection cost', 'cybersecurity CTO advisor', 'security engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/cybersecurity' },
     openGraph: { title: 'AI Economics for Cybersecurity', description: 'Security debt compounds faster than any other form of technical debt.', url: 'https://www.richardewing.io/industries/cybersecurity', type: 'website' },
@@ -30,7 +30,7 @@ export default function CybersecurityPage() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">Cybersecurity</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">
-                        Security debt compounds faster than any other form of technical debt because the cost of failure is a breach — not slower features, but data loss, regulatory fines, and destroyed trust.
+                        Security debt compounds faster than any other form of technical debt because the cost of failure is a breach  -  not slower features, but data loss, regulatory fines, and destroyed trust.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
                         {challenges.map((c, i) => (
@@ -45,7 +45,7 @@ export default function CybersecurityPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">How I Help Cybersecurity Companies</h2>
                         <ul className="space-y-3 text-zinc-950 mb-8">
                             <li className="flex items-start gap-3"><span className="text-red-900 font-extrabold font-semibold mt-1">→</span> <span>Quantify security debt in breach risk dollars, not just vulnerability counts</span></li>
-                            <li className="flex items-start gap-3"><span className="text-red-900 font-extrabold font-semibold mt-1">→</span> <span>Model AI detection feature economics — false positive cost vs detection value</span></li>
+                            <li className="flex items-start gap-3"><span className="text-red-900 font-extrabold font-semibold mt-1">→</span> <span>Model AI detection feature economics  -  false positive cost vs detection value</span></li>
                             <li className="flex items-start gap-3"><span className="text-red-900 font-extrabold font-semibold mt-1">→</span> <span>Calculate compliance engineering overhead across multiple framework certifications</span></li>
                         </ul>
                         <div className="flex flex-wrap gap-4">

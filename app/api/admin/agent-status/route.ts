@@ -3,9 +3,9 @@ import { auth } from '@clerk/nextjs/server';
 import { supabaseAdmin } from '@/lib/supabase';
 
 /**
- * Agent Status API — powers the /admin/agents dashboard.
+ * Agent Status API  -  powers the /admin/agents dashboard.
  * 
- * Protected by Clerk auth — only logged-in users can access.
+ * Protected by Clerk auth  -  only logged-in users can access.
  * Returns the same data shape as /api/cron/status but without CRON_SECRET.
  */
 export async function GET() {

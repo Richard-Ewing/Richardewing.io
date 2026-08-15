@@ -10,7 +10,7 @@ type RevenueCategory = 'advisory' | 'curriculum' | 'tools' | 'subscriptions' | '
 
 /**
  * Map a charge / payment-intent to a revenue category using:
- *  1. Product metadata (`category` field) — most reliable
+ *  1. Product metadata (`category` field)  -  most reliable
  *  2. Product name substring matching
  *  3. Amount-based heuristics as fallback
  */

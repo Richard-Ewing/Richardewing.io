@@ -7,8 +7,8 @@ import { professionalServiceSchema } from '@/app/lib/schemas';
 import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 
 export const metadata: Metadata = {
-    title: 'Platform Consolidation Strategy & Cost ROI | Richard Ewing',
-    description: 'Platform consolidation resolves tool sprawl and redundant infrastructure costs. Secure an architecture roadmap and cost savings model for your engineering org.',
+    title: 'Platform Consolidation Advisory',
+    description: 'Eliminate redundant SaaS tools and developer infrastructure sprawl with an architectural consolidation plan.',
     alternates: {
         canonical: 'https://www.richardewing.io/services/platform-consolidation',
     },

@@ -1,5 +1,5 @@
 /**
- * GlossaryMesh — Ontology reinforcement component for glossary pages
+ * GlossaryMesh  -  Ontology reinforcement component for glossary pages
  * 
  * Automatically links each glossary term to:
  * - Related compare pages (by keyword matching)

@@ -16,7 +16,7 @@ import { logAgentRun, createAgentTimer } from '@/lib/agents/logger';
  * 4. Compiles everything into a single daily operations email
  * 5. Sends directly to richardewing@exogram.ai via Resend
  * 
- * This is your daily morning briefing — delivered to your inbox.
+ * This is your daily morning briefing  -  delivered to your inbox.
  * No login required. No dashboard check required.
  */
 export async function GET(req: Request) {
@@ -109,7 +109,7 @@ export async function GET(req: Request) {
 
         const emailResult = await sendDirectEmail({
             to: 'richardewing@exogram.ai',
-            subject: `⚡ Daily Ops — ${pipeline.HOT} HOT leads · ${seoIssues} SEO issues · ${new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`,
+            subject: `⚡ Daily Ops  -  ${pipeline.HOT} HOT leads · ${seoIssues} SEO issues · ${new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`,
             html: emailHtml,
         });
 

@@ -102,7 +102,7 @@ export default function DoctrineContent() {
                         <p className="text-xl sm:text-2xl text-zinc-950 font-serif mb-4">
                             "Technical debt isn't a cleanup problem. It's a balance sheet liability."
                         </p>
-                        <cite className="text-sm font-semibold font-mono text-cyan-900 font-extrabold font-semibold not-italic uppercase tracking-widest">— Richard Ewing, AI Economist</cite>
+                        <cite className="text-sm font-semibold font-mono text-cyan-900 font-extrabold font-semibold not-italic uppercase tracking-widest"> -  Richard Ewing, AI Economist</cite>
                     </div>
                 </div>
             </ScrollReveal>

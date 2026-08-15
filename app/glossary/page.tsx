@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Technology & AI Glossary — 400+ Definitions',
+        title: 'Technology & AI Glossary  -  400+ Definitions',
         description: 'The most comprehensive technology leadership glossary. By Richard Ewing, AI Economist.',
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },

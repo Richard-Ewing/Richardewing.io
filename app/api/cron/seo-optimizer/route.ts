@@ -13,7 +13,7 @@ const supabase = createClient(
     process.env.SUPABASE_SERVICE_ROLE_KEY || ''
 );
 
-// Market intelligence starving crowds — aligned with target keywords
+// Market intelligence starving crowds  -  aligned with target keywords
 const STARVING_CROWDS = [
     { id: 'ai-economics', name: 'VP Eng (AI Billing Shock)', keywords: ['copilot roi', 'ai coding tool cost', 'ai tool pricing', 'github copilot cost', 'ai economics'], targetPages: ['/tools/copilot-roi', '/ai-economics-crisis', '/tools/aueb'] },
     { id: 'shadow-ai', name: 'CISO (Shadow AI Risk)', keywords: ['shadow ai', 'ai compliance', 'ai governance', 'eu ai act', 'ai policy'], targetPages: ['/tools/shadow-ai', '/tools/eu-ai-act-checker'] },
@@ -77,7 +77,7 @@ function identifyActions(data: PerformanceData) {
         actions.push({
             type: 'meta_rewrite_needed',
             page: page.url,
-            reason: `CTR ${(page.ctr * 100).toFixed(1)}% on ${page.impressions} impressions — below 2% threshold`,
+            reason: `CTR ${(page.ctr * 100).toFixed(1)}% on ${page.impressions} impressions  -  below 2% threshold`,
             priority: page.impressions > 200 ? 'high' : 'medium',
             impressions: page.impressions,
             clicks: page.clicks,
@@ -182,22 +182,22 @@ async function sendDigestEmail(data: PerformanceData, alignment: ReturnType<type
     const html = `
     <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:700px;margin:0 auto;color:#18181b">
         <div style="background:linear-gradient(135deg,#7c3aed,#4f46e5);padding:24px 32px;border-radius:12px 12px 0 0">
-            <h1 style="color:white;margin:0;font-size:20px">📊 Daily SEO Performance — ${today}</h1>
+            <h1 style="color:white;margin:0;font-size:20px">📊 Daily SEO Performance  -  ${today}</h1>
             <p style="color:rgba(255,255,255,0.8);margin:8px 0 0;font-size:14px">richardewing.io • 7-day rolling window</p>
         </div>
 
         <div style="background:white;padding:24px 32px;border:1px solid #e4e4e7;border-top:none">
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:24px">
                 <div style="background:#faf5ff;padding:16px;border-radius:8px;text-align:center">
-                    <div style="font-size:24px;font-weight:800;color:#7c3aed">${summary?.totalImpressions?.toLocaleString() || '—'}</div>
+                    <div style="font-size:24px;font-weight:800;color:#7c3aed">${summary?.totalImpressions?.toLocaleString() || ' - '}</div>
                     <div style="font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:1px">Impressions</div>
                 </div>
                 <div style="background:#f0fdf4;padding:16px;border-radius:8px;text-align:center">
-                    <div style="font-size:24px;font-weight:800;color:#16a34a">${summary?.totalClicks?.toLocaleString() || '—'}</div>
+                    <div style="font-size:24px;font-weight:800;color:#16a34a">${summary?.totalClicks?.toLocaleString() || ' - '}</div>
                     <div style="font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:1px">Clicks</div>
                 </div>
                 <div style="background:${parseFloat(glossaryRatio?.ratio || '0') >= 1 ? '#f0fdf4' : '#fef2f2'};padding:16px;border-radius:8px;text-align:center">
-                    <div style="font-size:24px;font-weight:800;color:${ratioColor}">${glossaryRatio?.ratio || '—'}x</div>
+                    <div style="font-size:24px;font-weight:800;color:${ratioColor}">${glossaryRatio?.ratio || ' - '}x</div>
                     <div style="font-size:12px;color:#71717a;text-transform:uppercase;letter-spacing:1px">Paid/Glossary Ratio</div>
                 </div>
             </div>
@@ -220,7 +220,7 @@ async function sendDigestEmail(data: PerformanceData, alignment: ReturnType<type
                 <tbody>${topPagesRows}</tbody>
             </table>
 
-            <h2 style="font-size:16px;margin:24px 0 12px;border-bottom:2px solid #dc2626;padding-bottom:8px">⚠️ Action Items — Click to Deploy</h2>
+            <h2 style="font-size:16px;margin:24px 0 12px;border-bottom:2px solid #dc2626;padding-bottom:8px">⚠️ Action Items  -  Click to Deploy</h2>
             ${actionItems}
 
             ${rewrites.length > 0 ? `
@@ -252,7 +252,7 @@ async function sendDigestEmail(data: PerformanceData, alignment: ReturnType<type
         body: JSON.stringify({
             from: 'SEO Agent <seo@updates.richardewing.io>',
             to: ['richardewing@exogram.ai'],
-            subject: `[richardewing.io] Daily SEO Performance — ${today}${subjectSuffix}`,
+            subject: `[richardewing.io] Daily SEO Performance  -  ${today}${subjectSuffix}`,
             html,
         }),
     });
@@ -274,7 +274,7 @@ export async function GET(request: Request) {
         const gscData = await fetchGscData();
 
         if (!gscData.success) {
-            // GSC not connected — log and email setup instructions
+            // GSC not connected  -  log and email setup instructions
             await logAgentRun({
                 agent: 'seo-optimizer',
                 status: 'failed',
@@ -297,7 +297,7 @@ export async function GET(request: Request) {
         // 3. Identify actions needed
         const actions = identifyActions(gscData);
 
-        // 4. AUTONOMOUS REWRITE — if low-CTR pages found, rewrite meta automatically
+        // 4. AUTONOMOUS REWRITE  -  if low-CTR pages found, rewrite meta automatically
         let rewriteResults: Array<{ url: string; oldTitle: string; newTitle: string; reasoning: string }> = [];
         const lowCtrForRewrite = (gscData.lowCtrPages || [])
             .filter(p => ['tools', 'advisory', 'framework'].includes(p.category))
@@ -330,7 +330,7 @@ export async function GET(request: Request) {
                 if (rewriteData.results) {
                     rewriteResults = rewriteData.results;
                 }
-            } catch { /* auto-rewriter failed — non-fatal */ }
+            } catch { /* auto-rewriter failed  -  non-fatal */ }
         }
 
         // 5. Send email digest (now includes rewrite results)

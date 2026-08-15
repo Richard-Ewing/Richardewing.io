@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Resources Hub & Strategy Diagnostics | Richard Ewing',
-    description: 'Resources Hub provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'AI Economics Resources & Tools Hub',
+    description: 'Complete library of diagnostic calculators, prompt architectures, execution blueprints, and research papers.',
     keywords: ['technology resources', 'CTO tools', 'engineering metrics', 'product management resources', 'Richard Ewing tools', 'free SaaS tools'],
     alternates: { canonical: 'https://www.richardewing.io/resources' },
     openGraph: { title: 'Resources Hub | Richard Ewing', description: 'Access free tools, a 2026 tech glossary, curriculum tracks, deep-dive articles, and strategic frameworks for engineering economics.', url: 'https://www.richardewing.io/resources', type: 'website' },
@@ -24,7 +24,7 @@ const resourceSections = [
     },
     {
         title: 'Glossary (400+ Terms)',
-        description: 'The most comprehensive technology leadership glossary — from technical debt to AI governance.',
+        description: 'The most comprehensive technology leadership glossary  -  from technical debt to AI governance.',
         icon: '📖',
         items: [
             { name: 'Technical Debt & Code Quality', description: '16+ terms on debt measurement & management', href: '/glossary' },
@@ -46,7 +46,7 @@ const resourceSections = [
     },
     {
         title: 'AI Training (Anthropic Academy)',
-        description: 'Free, self-paced AI courses from Anthropic — curated by Richard Ewing with editorial commentary.',
+        description: 'Free, self-paced AI courses from Anthropic  -  curated by Richard Ewing with editorial commentary.',
         icon: '🤖',
         items: [
             { name: 'All 15 Curated Courses', description: 'Full catalog grouped by audience with Richard\'s editorial take', href: '/resources/ai-courses' },
@@ -81,7 +81,7 @@ const resourceSections = [
         ],
     },
     {
-        title: 'Exogram — AI Verification Platform',
+        title: 'Exogram  -  AI Verification Platform',
         description: 'The execution control plane for autonomous AI agents. Built by Richard Ewing.',
         icon: '🔮',
         items: [

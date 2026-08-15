@@ -1,7 +1,7 @@
 import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks26Modules: Record<string, CurriculumModule> = {};
-const t26 = 'Track 26 — AI-Native Internal Developer Platforms (IDPs)';
+const t26 = 'Track 26  -  AI-Native Internal Developer Platforms (IDPs)';
 
 tracks26Modules['idps/26-1'] = m('26-1', 'The Collapse of DevOps Tool Sprawl', 'Abstracting cognitive load, platform engineering, paved roads.', t26, 
     ['Eradicate infrastructure cognitive load', 'Deploy the Golden Path'], [
@@ -68,7 +68,7 @@ for (let i = 3; i <= 10; i++) {
                 [`Integrate massive software catalog tracking within the platform UI.`, `Monitor the deployment metrics of autonomous infrastructure pipelines.`, `Force rigorous abstraction over massive Terraform configs.`], 
                 {
                     question: `Why is an IDP considered a "Product" rather than just an IT operations ticket system?`,
-                    options: [`You sell it to other companies`, `Because its ultimate goal is maximizing the Developer Experience (DX) and velocity of the internal user—requiring product analytics, UX testing, and continuous feedback loops to ensure high adoption`, `Because it has an expensive logo`, `Because it requires a credit card to use`],
+                    options: [`You sell it to other companies`, `Because its ultimate goal is maximizing the Developer Experience (DX) and velocity of the internal user - requiring product analytics, UX testing, and continuous feedback loops to ensure high adoption`, `Because it has an expensive logo`, `Because it requires a credit card to use`],
                     correctIndex: 1,
                     explanation: `Developers will completely abandon complicated, slow internal tools. Treating the IDP like a high-end consumer SaaS product is the only way to successfully scale its adoption.`
                 }

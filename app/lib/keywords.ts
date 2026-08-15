@@ -1,8 +1,8 @@
 // =============================================================================
-// CENTRALIZED KEYWORD POOLS — 5000+ keywords organized by 20 categories
+// CENTRALIZED KEYWORD POOLS  -  5000+ keywords organized by 20 categories
 // Each page imports relevant pools and combines them into its metadata.
 // Covers: Google, Bing, AI crawlers (GPTBot, Claude, Perplexity), LLM browsers
-// Channels: SEO, AEO, GEO, AIEO — all search optimization
+// Channels: SEO, AEO, GEO, AIEO  -  all search optimization
 // Timeframe: 2025 (yesterday), 2026 (today), 2027-2030 (future)
 // =============================================================================
 
@@ -573,7 +573,7 @@ export const FINANCE_BUDGETS = [
 ];
 
 // ---------------------------------------------------------------------------
-// CATEGORY 15: SEO, AEO, GEO, AIEO — Search Optimization Meta
+// CATEGORY 15: SEO, AEO, GEO, AIEO  -  Search Optimization Meta
 // ---------------------------------------------------------------------------
 export const SEARCH_OPTIMIZATION = [
     // SEO

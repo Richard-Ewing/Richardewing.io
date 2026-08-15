@@ -3,11 +3,11 @@ import Link from 'next/link';
 import TechnicalInsolvencySimulator from '@/app/components/TechnicalInsolvencySimulator';
 
 export const metadata: Metadata = {
-    title: 'CTO Toolkit & Strategy Diagnostics | Richard Ewing',
-    description: 'CTO Toolkit provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'AI Economics Toolkit for CTOs',
+    description: 'Actionable frameworks for engineering executives to defend gross margins, audit R&D yield, and eliminate tech debt.',
     keywords: ['CTO tools', 'engineering benchmarks', 'technical debt calculator CTO', 'CTO advisory', 'engineering productivity metrics', 'R&D capital efficiency CTO'],
     alternates: { canonical: 'https://www.richardewing.io/for-ctos' },
-    openGraph: { title: 'For CTOs — Engineering Economics Toolkit', description: 'Free tools and benchmarks for engineering leaders.', url: 'https://www.richardewing.io/for-ctos', type: 'website' },
+    openGraph: { title: 'For CTOs  -  Engineering Economics Toolkit', description: 'Free tools and benchmarks for engineering leaders.', url: 'https://www.richardewing.io/for-ctos', type: 'website' },
 };
 
 const tools = [
@@ -34,13 +34,13 @@ const frameworks = [
     { name: 'Cost of Predictivity', description: 'The true variable cost of AI features per prediction', href: '/glossary/cost-of-predictivity' },
     { name: 'EAAP Protocol', description: 'Action Admissibility Protocol for governing AI agents', href: '/glossary/eaap-protocol' },
     { name: 'Orchestration Debt', description: 'The hidden debt of multi-agent AI systems', href: '/glossary/orchestration-debt' },
-    { name: 'AI COGS', description: 'Cost of Goods Sold for AI features — the margin killer', href: '/glossary/ai-cogs' },
+    { name: 'AI COGS', description: 'Cost of Goods Sold for AI features  -  the margin killer', href: '/glossary/ai-cogs' },
 ];
 
 export default function ForCTOsPage() {
     const schema = {
         '@context': 'https://schema.org', '@type': 'WebPage',
-        name: 'For CTOs — Engineering Economics Toolkit',
+        name: 'For CTOs  -  Engineering Economics Toolkit',
         description: 'Free tools and benchmarks for engineering leaders.',
         url: 'https://www.richardewing.io/for-ctos',
     };

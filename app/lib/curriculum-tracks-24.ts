@@ -1,7 +1,7 @@
 import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks24Modules: Record<string, CurriculumModule> = {};
-const t24 = 'Track 24 — Sovereign AI & On-Premise LLMs';
+const t24 = 'Track 24  -  Sovereign AI & On-Premise LLMs';
 
 tracks24Modules['sovereign-ai/24-1'] = m('24-1', 'The Nationalization of Compute', 'Data gravity, geopolitical pressures, on-prem repatriation.', t24, 
     ['Map data residency requirements', 'Evaluate open-weight sovereignty'], [
@@ -32,7 +32,7 @@ tracks24Modules['sovereign-ai/24-2'] = m('24-2', 'Hosting Open-Weights at Scale'
         l('The Physics of Self-Managed Inference', 
             [
                 'Running your own Sovereign AI is not as simple as launching a Python script. If an organization naively runs an LLaMA 3 model using a basic transformer library, the latency will be staggering, yielding 2 tokens per second and causing massive user abandonment.', 
-                'Elite Sovereign architectures require deploying hyper-optimized inference engines like vLLM or NVIDIA TensorRT-LLM. These engines utilize PagedAttention—a technique adapted from virtual memory management—to aggressively manage the fragile GPU VRAM, allowing a single clustered node to handle thousands of concurrent queries without OOM (Out of Memory) crashing.',
+                'Elite Sovereign architectures require deploying hyper-optimized inference engines like vLLM or NVIDIA TensorRT-LLM. These engines utilize PagedAttention - a technique adapted from virtual memory management - to aggressively manage the fragile GPU VRAM, allowing a single clustered node to handle thousands of concurrent queries without OOM (Out of Memory) crashing.',
                 'The transition from calling an API to managing physical inference requires a brutal pivot from simple "Prompt Engineering" to profound "Hardware Engineering."'
             ],
             [

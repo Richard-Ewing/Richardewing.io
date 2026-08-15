@@ -11,7 +11,7 @@ export default function AuditInterviewLayout({ children }: { children: React.Rea
                         name: 'The Audit Interview',
                         applicationCategory: 'BusinessApplication',
                         operatingSystem: 'Web',
-                        description: 'AI-powered engineering judgment assessment. Tests verification depth, architectural reasoning, and economic awareness — not syntax memorization.',
+                        description: 'AI-powered engineering judgment assessment. Tests verification depth, architectural reasoning, and economic awareness  -  not syntax memorization.',
                         url: 'https://www.richardewing.io/tools/audit-interview',
                         offers: {
                             '@type': 'Offer',

@@ -108,7 +108,7 @@ export default function ExogramVsLangChainPage() {
           <div className="bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
             <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-3">Why Prompt Wrappers Fail in Enterprise Production</h3>
             <p className="text-zinc-800 leading-relaxed font-medium text-base mb-4">
-              When an enterprise AI agent attempts to execute an action—such as executing SQL queries, altering cloud permissions, or dispatching API webhooks—asking a second LLM to evaluate the prompt introduces stacked uncertainty.
+              When an enterprise AI agent attempts to execute an action - such as executing SQL queries, altering cloud permissions, or dispatching API webhooks - asking a second LLM to evaluate the prompt introduces stacked uncertainty.
             </p>
             <p className="text-zinc-800 leading-relaxed font-medium text-base">
               <strong>Exogram eliminates guessing.</strong> By embedding a zero-trust binary execution gateway, Exogram evaluates policies deterministically before payloads reach production infrastructure.

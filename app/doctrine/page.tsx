@@ -4,8 +4,8 @@ import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 import FAQItem from '../components/FAQItem';
 
 export const metadata: Metadata = {
-    title: 'The Doctrine of Sovereignty & Strategy Diagnostics | Richard Ewing',
-    description: 'The Doctrine of Sovereignty provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'The Doctrine of Sovereignty',
+    description: 'Explore the core laws of software solvency: Capital Allocation > Agile Theater, and deterministic control over probabilistic drift.',
     alternates: { canonical: 'https://www.richardewing.io/doctrine' },
     openGraph: {
         title: 'The Doctrine of Sovereignty | Richard Ewing',

@@ -1,4 +1,4 @@
-// Shared product catalog — single source of truth for all Stripe checkout flows
+// Shared product catalog  -  single source of truth for all Stripe checkout flows
 // Each product has a paymentLink that points directly to a buy.stripe.com URL
 export interface Product {
     name: string;
@@ -42,28 +42,28 @@ export const PRODUCTS: Record<string, Product> = {
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_engineering: {
-        name: 'Engineering Economics — Track Access',
+        name: 'Engineering Economics  -  Track Access',
         description: 'Lifetime access to the Engineering Economics Foundations track (Track 1). All 16 modules, lessons, and assessments.',
         price: 14900, // $149.00
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_ai_economics: {
-        name: 'AI AI Economics — Track Access',
+        name: 'AI AI Economics  -  Track Access',
         description: 'Lifetime access to the AI AI Economics track (Track 2). All 16 modules, lessons, and assessments.',
         price: 14900, // $149.00
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/14A9AMaj44ng01f5NS2B20q',
     },
     module_rd_capital: {
-        name: 'R&D Capital Management — Track Access',
+        name: 'R&D Capital Management  -  Track Access',
         description: 'Lifetime access to the R&D Capital Management track (Track 3). All 15 modules, lessons, and assessments.',
         price: 14900, // $149.00
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/5kQdR2ezk3jc01f5NS2B20r',
     },
     module_capstone: {
-        name: 'Capstone Applied Practice — Track Access',
+        name: 'Capstone Applied Practice  -  Track Access',
         description: 'Lifetime access to the Capstone & Applied Practice track (Track 4). All 15 modules, lessons, and assessments.',
         price: 14900, // $149.00
         mode: 'payment',
@@ -77,74 +77,74 @@ export const PRODUCTS: Record<string, Product> = {
         paymentLink: 'https://buy.stripe.com/eVq6oA76SaLE15jfos2B20t',
     },
     full_curriculum: {
-        name: 'Full Curriculum Bundle — All 23 Tracks',
+        name: 'Full Curriculum Bundle  -  All 23 Tracks',
         description: 'All 23 authority tracks, 293 modules, 400+ lessons, all diagnostic tools, lifetime access.',
         price: 99900, // $999.00
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/9B600c8aW3jc3drdgk2B20z',
     },
     module_cto: {
-        name: 'Engineering Leader / CTO — Track Access',
+        name: 'Engineering Leader / CTO  -  Track Access',
         description: 'Lifetime access to the Engineeering Leader / CTO track.',
         price: 14900, mode: 'payment',
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_pm: {
-        name: 'Product Manager / CPO — Track Access',
+        name: 'Product Manager / CPO  -  Track Access',
         description: 'Lifetime access to the Product Manager / CPO track.',
         price: 14900, mode: 'payment',
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_investor: {
-        name: 'PE / VC / Investor — Track Access',
+        name: 'PE / VC / Investor  -  Track Access',
         description: 'Lifetime access to the PE / VC / Investor track.',
         price: 14900, mode: 'payment',
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_ai_enterprise: {
-        name: 'AI & Enterprise Architect — Track Access',
+        name: 'AI & Enterprise Architect  -  Track Access',
         description: 'Lifetime access to the AI & Enterprise Architect track.',
         price: 14900, mode: 'payment',
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_devops: {
-        name: 'DevOps & Platform Economics — Single Module',
+        name: 'DevOps & Platform Economics  -  Single Module',
         description: 'Lifetime access to one DevOps & Platform Economics module (Track 5).',
         price: 14900, mode: 'payment',
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_product_mgmt: {
-        name: 'Product Management Economics — Single Module',
+        name: 'Product Management Economics  -  Single Module',
         description: 'Lifetime access to one Product Management Economics module (Track 6).',
         price: 14900, mode: 'payment',
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_security: {
-        name: 'Security & Compliance Economics — Single Module',
+        name: 'Security & Compliance Economics  -  Single Module',
         description: 'Lifetime access to one Security & Compliance Economics module (Track 7).',
         price: 14900, mode: 'payment',
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_financials: {
-        name: 'C-Suite Financials & M&A Diligence — Track Access',
+        name: 'C-Suite Financials & M&A Diligence  -  Track Access',
         description: 'Lifetime access to the C-Suite Financials & M&A Diligence track.',
         price: 14900, mode: 'payment',
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_data: {
-        name: 'Data & Analytics Economics — Single Module',
+        name: 'Data & Analytics Economics  -  Single Module',
         description: 'Lifetime access to one Data & Analytics Economics module (Track 8).',
         price: 14900, mode: 'payment',
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_leadership: {
-        name: 'Engineering Leadership — Single Module',
+        name: 'Engineering Leadership  -  Single Module',
         description: 'Lifetime access to one Engineering Leadership module (Track 9).',
         price: 14900, mode: 'payment',
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_startup: {
-        name: 'Startup Economics — Single Module',
+        name: 'Startup Economics  -  Single Module',
         description: 'Lifetime access to one Startup Economics module (Track 10).',
         price: 14900, mode: 'payment',
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
@@ -259,7 +259,7 @@ export const PRODUCTS: Record<string, Product> = {
         paymentLink: 'https://buy.stripe.com/00w6oA62O8DweW97W02B216',
     },
     retainer: {
-        name: 'Independent Oversight — Monthly',
+        name: 'Independent Oversight  -  Monthly',
         description: 'Board-level economic sanity checks: 4 hours/month, quarterly board report, continuous PDI monitoring, async access.',
         price: 500000,
         mode: 'subscription',
@@ -269,7 +269,7 @@ export const PRODUCTS: Record<string, Product> = {
 
     // --- BOARD & FRACTIONAL LEADERSHIP ---
     board_observer: {
-        name: 'Board Observer — Monthly',
+        name: 'Board Observer  -  Monthly',
         description: 'Quarterly board meeting attendance, independent technical oversight, pre-meeting prep, written assessment, async advisory.',
         price: 250000,
         mode: 'subscription',
@@ -292,7 +292,7 @@ export const PRODUCTS: Record<string, Product> = {
         paymentLink: 'https://buy.stripe.com/4gM8wIgHs6vo15j3FK2B20B',
     },
     fractional_cpo: {
-        name: 'Fractional CPO — Monthly',
+        name: 'Fractional CPO  -  Monthly',
         description: '2-3 days/week embedded: product strategy, roadmap ownership, engineering economics oversight, board reporting, hiring.',
         price: 1000000,
         mode: 'subscription',
@@ -351,7 +351,7 @@ export const PRODUCTS: Record<string, Product> = {
         paymentLink: 'https://buy.stripe.com/bJe8wIdvgf1UcO15NS2B20h',
     },
     white_label: {
-        name: 'White-Label Tool Licensing — Monthly',
+        name: 'White-Label Tool Licensing  -  Monthly',
         description: 'License Richard Ewing diagnostic tools (PDI, AUEB, APER, EV-SE) for your organization under your own brand.',
         price: 150000,
         mode: 'subscription',
@@ -361,7 +361,7 @@ export const PRODUCTS: Record<string, Product> = {
 
     // --- PARTNERSHIPS ---
     partner_licensed: {
-        name: 'Licensed Partner — Monthly',
+        name: 'Licensed Partner  -  Monthly',
         description: 'White-label frameworks for your consulting practice. Includes training, co-branded case studies, and tools access.',
         price: 250000,
         mode: 'subscription',
@@ -486,7 +486,7 @@ export const PRODUCTS: Record<string, Product> = {
 
     // --- AI INTEGRATION ADVISOR ---
     ai_advisor_monthly: {
-        name: 'AI Integration Advisor — Monthly',
+        name: 'AI Integration Advisor  -  Monthly',
         description: 'Unlimited AI-powered business consultations. Interactive advisor generates personalized AI integration roadmaps for your business. Powered by Exogram AI Governance + Google Gemini.',
         price: 24900,
         mode: 'subscription',
@@ -494,7 +494,7 @@ export const PRODUCTS: Record<string, Product> = {
         paymentLink: 'https://buy.stripe.com/3cIaEQezkbPIeW9fos2B211',
     },
     ai_advisor_yearly: {
-        name: 'AI Integration Advisor — Annual',
+        name: 'AI Integration Advisor  -  Annual',
         description: 'Unlimited AI-powered business consultations. Save 33% with annual billing. Interactive advisor generates personalized AI integration roadmaps for your business.',
         price: 199700,
         mode: 'subscription',
@@ -504,14 +504,14 @@ export const PRODUCTS: Record<string, Product> = {
 
     // --- AI INTEGRATION SYSTEM ---
     ai_integration_starter: {
-        name: 'AI Integration System — Starter',
+        name: 'AI Integration System  -  Starter',
         description: 'Core AI Integration System: AI Readiness Audit Template, 30+ prompts for Claude & ChatGPT, Business Process Scoring Matrix, Strategic Roadmap Generator, 30-Day Kickstart Plan, ROI Calculator. Modules 1-6.',
         price: 99700, // $997.00
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/eVq7sEbn8aLE9BPb8c2B20Y',
     },
     ai_integration_complete: {
-        name: 'AI Integration System — Complete',
+        name: 'AI Integration System  -  Complete',
         description: 'Full AI Integration System: All 10 modules, 50+ prompts, AI Tool Selection Guide, Quarterly Review Framework, 100-point Implementation Checklist, priority email support. Lifetime access.',
         price: 199700, // $1,997.00
         mode: 'payment',

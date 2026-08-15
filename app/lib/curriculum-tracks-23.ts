@@ -1,7 +1,7 @@
 import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks23Modules: Record<string, CurriculumModule> = {};
-const t23 = 'Track 23 — Agentic Process Automation (APA)';
+const t23 = 'Track 23  -  Agentic Process Automation (APA)';
 
 tracks23Modules['agentic-automation/23-1'] = m('23-1', 'The End of Robotic Process Automation (RPA)', 'Fragility of screen-scraping vs semantic API agents.', t23, 
     ['Deprecate legacy RPA', 'Calculate semantic durability'], [
@@ -165,7 +165,7 @@ tracks23Modules['agentic-automation/23-7'] = m('23-7', 'Human in the Loop (HITL)
                 question: 'What is the primary operational failure of a strict "Human in the Loop" (HITL) architecture at massive scale?',
                 options: ['The AI models get confused by humans', 'It entirely negates the speed and throughput benefits of automation by capping system velocity strictly at the speed of human UI clicks', 'It violates European privacy laws', 'Humans demand higher salaries'],
                 correctIndex: 1,
-                explanation: 'If automation requires 100% human sign-off, you haven\'t automated the work—you have simply organized the work into a massive, unscalable pending queue.'
+                explanation: 'If automation requires 100% human sign-off, you haven\'t automated the work - you have simply organized the work into a massive, unscalable pending queue.'
             }
         )
     ], '/vault/curriculum/tracks/agentic-automation/23-8', undefined, 'live'
@@ -176,7 +176,7 @@ tracks23Modules['agentic-automation/23-8'] = m('23-8', 'The Agentic Egress Tax',
         l('Infinite Agent Looping Traps', 
             [
                 'When traditional code fails, it typically crashes, producing an error logs and stopping instantly. When an Agentic AI fails to satisfy a requirement, it will often "hallucinate a retry," entering an infinite, recursive loop where it calls an external API, fails to parse it, and calls it again.', 
-                'A recursive agentic loop does not crash the server—it silently executes thousands of API calls within minutes, generating massive Cloudflare egress bills and violently tripping target vendor API rate limits, bringing the entire underlying corporate account offline.',
+                'A recursive agentic loop does not crash the server - it silently executes thousands of API calls within minutes, generating massive Cloudflare egress bills and violently tripping target vendor API rate limits, bringing the entire underlying corporate account offline.',
                 'A rigorous "Maximum Step Count" is a non-negotiable architectural requirement. If an agent executes its tool-loop more than 10 times without returning a definitive end-state, the architecture must kill the thread instantly.'
             ],
             [

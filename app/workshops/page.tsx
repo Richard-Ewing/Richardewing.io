@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import { Mic, Users, Lightbulb, Clock, ArrowRight, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'AI Economics Keynotes & Worksh & Strategy Diagnostics | Richard Ewing',
-    description: 'AI Economics Keynotes & Worksh provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Executive AI Economics Workshops',
+    description: 'Intensive board-level and executive workshops covering AI unit economics, PDI calculation, and technical solvency.',
     keywords: [
         'technical debt keynote speaker', 'AI economics speaker', 'AI economics workshop',
         'engineering leadership speaker', 'CTO conference speaker', 'R&D audit workshop',
@@ -36,7 +36,7 @@ const keynotes = [
         audience: 'CFOs, Finance leaders, AI/ML leaders, Product leaders',
         duration: '45 min keynote',
         highlights: [
-            'Cost per useful AI output vs. cost per query — the metric that matters',
+            'Cost per useful AI output vs. cost per query  -  the metric that matters',
             'AI hallucination as economic risk, not just accuracy risk',
             'When to build vs. buy AI capabilities (the $0.001 threshold)',
             'Real case study: 34% AI cost reduction without reducing output quality',
@@ -171,7 +171,7 @@ export default function WorkshopsPage() {
                                 href="/api/buy/keynote_speaking"
                                 className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-rose-500 hover:bg-rose-400 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all"
                             >
-                                Book Keynote — $5,000 <ArrowRight className="w-4 h-4" />
+                                Book Keynote  -  $5,000 <ArrowRight className="w-4 h-4" />
                             </a>
                             <a
                                 href="mailto:richardewing@exogram.ai?subject=Speaking%20Engagement%20Inquiry"

@@ -11,8 +11,8 @@ import EcosystemPainSignals from '@/components/skills/EcosystemPainSignals';
 import ExogramBridge from '@/components/skills/ExogramBridge';
 
 export const metadata: Metadata = {
-  title: 'Governance Skills for Claude C & Strategy Diagnostics | Richard Ewing',
-  description: 'Governance Skills for Claude C provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+  title: 'Deterministic Governance Skills',
+  description: 'Pre-built governance rules and runtime skills for Claude Code, Cursor, and enterprise coding agents.',
   openGraph: {
     title: 'Deterministic Runtime Infrastructure for Claude Code & Agentic Engineering',
     description: 'Deployable runtime governance modules across 4 architectural layers: Identity, Skill, Tool, and Environment governance for deterministic AI execution.',
@@ -56,7 +56,7 @@ export default function SkillsPage() {
             </div>
             <h2>Runtime governance modules for Claude Code, Cursor, Windsurf, and agentic engineering systems.</h2>
             <p className="text-lg mt-4">
-              15 deployable runtime infrastructure modules across 4 architectural layers — Identity, Skill, Tool, and Environment governance. Install deterministic containment directly into your agentic workflow.
+              15 deployable runtime infrastructure modules across 4 architectural layers  -  Identity, Skill, Tool, and Environment governance. Install deterministic containment directly into your agentic workflow.
             </p>
           </div>
           
@@ -95,7 +95,7 @@ export default function SkillsPage() {
           <ExogramBridge />
         </section>
 
-        {/* 7. INSTITUTIONAL CROSS-LINKS — Hub & Spoke */}
+        {/* 7. INSTITUTIONAL CROSS-LINKS  -  Hub & Spoke */}
         <section className="section-lg border-t border-[rgba(0,0,0,0.08)]">
           <div className="section-header text-center max-w-3xl mx-auto">
             <div className="inline-block px-4 py-1.5 mb-4 rounded-full border border-violet-200 bg-violet-50 text-violet-700 font-mono text-sm tracking-widest font-bold uppercase">
@@ -103,7 +103,7 @@ export default function SkillsPage() {
             </div>
             <h2>Operational Intelligence for Governance Deployment</h2>
             <p className="text-lg mt-4">
-              Architecture diagrams, failure databases, governance telemetry, executive briefings, and maturity assessments — everything you need to deploy, measure, and communicate governance impact.
+              Architecture diagrams, failure databases, governance telemetry, executive briefings, and maturity assessments  -  everything you need to deploy, measure, and communicate governance impact.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">

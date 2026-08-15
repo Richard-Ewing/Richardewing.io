@@ -5,8 +5,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { Shield, AlertTriangle, TrendingUp, DollarSign, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Executive AI Briefing & Strategy Diagnostics | Richard Ewing',
-    description: 'Executive AI Briefing provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Executive AI Economics Briefing',
+    description: 'Confidential strategic briefing for boards and executive committees navigating AI capital allocation and margin risk.',
     keywords: ['AI governance executive briefing', 'AI risk matrix', 'AI governance maturity model', 'AI coding agent ROI', 'engineering leadership AI governance', 'CTO AI governance', 'board AI risk', 'AI governance scorecard'],
     openGraph: {
         title: 'Executive Briefing - AI Governance for Engineering Leadership',

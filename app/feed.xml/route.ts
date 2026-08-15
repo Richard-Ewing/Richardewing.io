@@ -7,7 +7,7 @@ export async function GET() {
     const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>Richard Ewing — Engineering Economics Blog</title>
+    <title>Richard Ewing  -  Engineering Economics Blog</title>
     <link>${baseUrl}/blog</link>
     <description>100+ articles on engineering economics, technical debt quantification, AI cost analysis, R&amp;D capital allocation, and the economics nobody else is talking about.</description>
     <language>en-us</language>

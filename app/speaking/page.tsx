@@ -3,8 +3,8 @@ import Image from 'next/image';
 import { SpeakingBookingForm } from './SpeakingBookingForm';
 
 export const metadata: Metadata = {
-    title: 'Executive Keynotes & Speaking | AI Economics & R&D Strategy',
-    description: 'Book Richard Ewing for keynote addresses, board briefings, and executive workshops on AI unit economics, R&D capital governance, and runtime cost control.',
+    title: 'Keynotes & Executive Briefings',
+    description: 'Book Richard Ewing for board briefings, executive retreats, and keynotes on AI unit economics and R&D capital governance.',
     alternates: { canonical: 'https://www.richardewing.io/speaking' },
     openGraph: {
         title: 'Executive Keynotes & Speaking | Richard Ewing',

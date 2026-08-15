@@ -3,8 +3,8 @@ import Link from "next/link";
 import { Lock } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: 'Securing Your Advisory Session & Strategy Diagnostics | Richard Ewing',
-    description: 'Securing Your Advisory Session provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Securing Your Diagnostic Session',
+    description: 'Confirming your diagnostic assessment engagement and scheduling pre-audit data collection.',
     alternates: {
         canonical: 'https://www.richardewing.io/checkout-pending',
     },

@@ -102,7 +102,7 @@ export async function GET(req: Request) {
         });
 
         const emailResult = await sendExecutiveDigest({
-            subject: `[${cadence.toUpperCase()}] Governance Intelligence — ${dispatches.length} org${dispatches.length !== 1 ? 's' : ''} tracked`,
+            subject: `[${cadence.toUpperCase()}] Governance Intelligence  -  ${dispatches.length} org${dispatches.length !== 1 ? 's' : ''} tracked`,
             htmlContent: emailHtml,
             tags: ['intelligence-digest', cadence]
         });

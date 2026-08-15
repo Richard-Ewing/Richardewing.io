@@ -8,7 +8,7 @@ const failures = [
         title: "Unverified Outputs",
         stat: "95%",
         source: "MIT",
-        description: "of GenAI pilots fail to reach production. Your AI generates answers — but who verifies they're correct before they hit a customer?",
+        description: "of GenAI pilots fail to reach production. Your AI generates answers  -  but who verifies they're correct before they hit a customer?",
         color: "rose",
     },
     {

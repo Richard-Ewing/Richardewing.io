@@ -1,14 +1,14 @@
 import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks21Modules: Record<string, CurriculumModule> = {};
-const t21 = 'Track 21 — Traditional Product Management';
+const t21 = 'Track 21  -  Traditional Product Management';
 
 tracks21Modules['product-management/21-1'] = m('21-1', 'The PM/Engineering Friction Line', 'Misaligned incentives, feature factories, technical health.', t21, 
     ['Align incentives', 'Stop the Feature Factory'], [
         l('Engineering vs Product Misalignment', 
             [
                 'The canonical friction between Product Management and Engineering stems entirely from misaligned corporate incentives. PMs are almost exclusively compensated and promoted based on shipping new visual features. Engineers are evaluated on system stability, uptime, and lack of bugs.', 
-                'When leadership demands infinite velocity from Product, PMs inevitably demand engineers bypass foundational architecture to hit arbitrary marketing launch dates. This creates the "Feature Factory"—a dynamic where code is shoved onto users rapidly with zero regard for compounding structural decay.',
+                'When leadership demands infinite velocity from Product, PMs inevitably demand engineers bypass foundational architecture to hit arbitrary marketing launch dates. This creates the "Feature Factory" - a dynamic where code is shoved onto users rapidly with zero regard for compounding structural decay.',
                 'A high-functioning organization merges these incentives. PMs must be held financially accountable for post-launch P1 outages, and engineers must be graded on exactly how their technical architecture accelerated overall business KPIs.'
             ],
             [

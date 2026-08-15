@@ -48,7 +48,7 @@ function generateAPERRemediation(metrics: Record<string, any>): RemediationItem[
             title: 'Immediate Workforce Right-Sizing',
             prescription: `Your APER of $${(aper/1000).toFixed(0)}K/engineer is in the critical zone (<$300K). You are carrying approximately ${Math.max(0, headcountDelta)} engineers above optimal capacity. Initiate a targeted RIF or redeployment within 30 days. Each month of delay costs approximately $${((headcountDelta * (metrics.costPerEng || 150000)) / 12 / 1000).toFixed(0)}K in pure overhead burn.`,
             urgency: 'CRITICAL',
-            asc_reference: 'ASC 420 — Exit/Disposal Cost Obligations'
+            asc_reference: 'ASC 420  -  Exit/Disposal Cost Obligations'
         });
     } else if (aper < 500000) {
         items.push({
@@ -72,9 +72,9 @@ function generateAPERRemediation(metrics: Record<string, any>): RemediationItem[
         items.push({
             phase: 'PHASE 3',
             title: 'Productivity Index Recovery',
-            prescription: `Your Productivity Index of ${productivityIndex}/100 indicates systemic execution drag. Prescribe: (1) Increase average tenure by implementing 18-month retention bonuses, (2) Reduce hiring velocity — each new hire creates a 3-month productivity deficit costing $${((metrics.newHireRampCost || 0) / 1000).toFixed(0)}K, (3) Audit sprint completion rate and eliminate scope creep from product management.`,
+            prescription: `Your Productivity Index of ${productivityIndex}/100 indicates systemic execution drag. Prescribe: (1) Increase average tenure by implementing 18-month retention bonuses, (2) Reduce hiring velocity  -  each new hire creates a 3-month productivity deficit costing $${((metrics.newHireRampCost || 0) / 1000).toFixed(0)}K, (3) Audit sprint completion rate and eliminate scope creep from product management.`,
             urgency: 'HIGH',
-            asc_reference: 'ASC 350-40 — Internal-Use Software Capitalization'
+            asc_reference: 'ASC 350-40  -  Internal-Use Software Capitalization'
         });
     }
 
@@ -112,15 +112,15 @@ function generateAUEBRemediation(metrics: Record<string, any>): RemediationItem[
         items.push({
             phase: 'PHASE 1',
             title: 'Margin Collapse Emergency Protocol',
-            prescription: `Gross margin of ${grossMargin.toFixed(1)}% is below SaaS viability threshold (40%). At current trajectory, you will reach insolvency in ${monthsToCollapse} months. Immediate actions: (1) Implement aggressive semantic caching to reduce LLM query volume by 30-50%, (2) Evaluate model tier-gating — reserve GPT-4 class models for premium users only, (3) Shift 60%+ of queries to fine-tuned smaller models (Llama 3, Mistral).`,
+            prescription: `Gross margin of ${grossMargin.toFixed(1)}% is below SaaS viability threshold (40%). At current trajectory, you will reach insolvency in ${monthsToCollapse} months. Immediate actions: (1) Implement aggressive semantic caching to reduce LLM query volume by 30-50%, (2) Evaluate model tier-gating  -  reserve GPT-4 class models for premium users only, (3) Shift 60%+ of queries to fine-tuned smaller models (Llama 3, Mistral).`,
             urgency: 'CRITICAL',
-            asc_reference: 'ASC 330 — Inventory (Cost Allocation)'
+            asc_reference: 'ASC 330  -  Inventory (Cost Allocation)'
         });
     } else if (grossMargin < 60) {
         items.push({
             phase: 'PHASE 1',
             title: 'Margin Optimization Required',
-            prescription: `Gross margin of ${grossMargin.toFixed(1)}% is below the 60% target for healthy AI SaaS. Prescribe: (1) Audit feature-level cost allocation — identify the 20% of features consuming 80% of LLM cost, (2) Implement usage-based pricing tiers above free-plan thresholds, (3) Negotiate volume discounts with your LLM provider.`,
+            prescription: `Gross margin of ${grossMargin.toFixed(1)}% is below the 60% target for healthy AI SaaS. Prescribe: (1) Audit feature-level cost allocation  -  identify the 20% of features consuming 80% of LLM cost, (2) Implement usage-based pricing tiers above free-plan thresholds, (3) Negotiate volume discounts with your LLM provider.`,
             urgency: 'HIGH'
         });
     }
@@ -129,7 +129,7 @@ function generateAUEBRemediation(metrics: Record<string, any>): RemediationItem[
         items.push({
             phase: 'PHASE 2',
             title: 'LLM Cost Concentration Risk',
-            prescription: `LLM costs represent ${((llmCost / totalInfraCost) * 100).toFixed(0)}% of total infrastructure — critical vendor concentration. Remediation: (1) Deploy a model router that dynamically selects the cheapest model capable of handling each query complexity tier, (2) Build an embedding-based cache layer to serve repeated semantic queries without LLM invocation, (3) Pre-compute high-frequency query responses during off-peak hours.`,
+            prescription: `LLM costs represent ${((llmCost / totalInfraCost) * 100).toFixed(0)}% of total infrastructure  -  critical vendor concentration. Remediation: (1) Deploy a model router that dynamically selects the cheapest model capable of handling each query complexity tier, (2) Build an embedding-based cache layer to serve repeated semantic queries without LLM invocation, (3) Pre-compute high-frequency query responses during off-peak hours.`,
             urgency: llmCost / totalInfraCost > 0.85 ? 'CRITICAL' : 'HIGH'
         });
     }
@@ -178,7 +178,7 @@ function generateEVSERemediation(metrics: Record<string, any>): RemediationItem[
             title: 'Execution Confidence Recovery',
             prescription: `Adjusted execution confidence of ${adjustedConfidence.toFixed(0)}% signals high deal risk to potential acquirers or investors. Sub-50% scores typically result in 20-40% valuation haircuts at term sheet. Prescribe: (1) Demonstrate 3 consecutive quarters of predictable delivery (ship-on-time rate >85%), (2) Eliminate scope creep via strict product council governance, (3) Document and de-risk key-person dependencies immediately.`,
             urgency: 'CRITICAL',
-            asc_reference: 'ASC 820 — Fair Value Measurement'
+            asc_reference: 'ASC 820  -  Fair Value Measurement'
         });
     } else if (adjustedConfidence < 70) {
         items.push({
@@ -194,7 +194,7 @@ function generateEVSERemediation(metrics: Record<string, any>): RemediationItem[
         title: 'Pre-Transaction Positioning',
         prescription: `To close the gap between your risk-adjusted value ($${((metrics.riskedValue || 0) / 1000000).toFixed(1)}M) and theoretical ceiling ($${(perfectValue / 1000000).toFixed(1)}M), execute the Strangler Fig pattern on legacy systems, implement continuous compliance monitoring, and ensure all IP is properly documented under ASC 350-40 capitalization guidelines.`,
         urgency: wealthGap > perfectValue * 0.2 ? 'HIGH' : 'MODERATE',
-        asc_reference: 'ASC 350-40 — Internal-Use Software'
+        asc_reference: 'ASC 350-40  -  Internal-Use Software'
     });
 
     return items;
@@ -219,7 +219,7 @@ export function QPEPRemediation({ toolId, metrics }: QPEPRemediationProps) {
                 <span className="font-mono text-xs font-bold font-medium text-cobalt uppercase tracking-[0.2em]">Q-PEP™ Remediation Protocol</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-zinc-950 mb-1 tracking-tight">Prescriptive Action Plan</h3>
-            <p className="text-xs font-bold text-zinc-950 mb-6">Qualitative-Profitability Efficiency Protocol — Generated {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+            <p className="text-xs font-bold text-zinc-950 mb-6">Qualitative-Profitability Efficiency Protocol  -  Generated {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
 
             {/* Remediation Items */}
             <div className="space-y-4">
@@ -246,7 +246,7 @@ export function QPEPRemediation({ toolId, metrics }: QPEPRemediationProps) {
 
             {/* Footer */}
             <div className="mt-6 pt-4 border-t border-zinc-400 flex items-center justify-between">
-                <p className="text-xs font-bold font-medium text-zinc-950 font-bold font-mono">CONFIDENTIAL — For Internal Executive Distribution Only</p>
+                <p className="text-xs font-bold font-medium text-zinc-950 font-bold font-mono">CONFIDENTIAL  -  For Internal Executive Distribution Only</p>
                 <p className="text-xs font-bold font-medium text-zinc-950 font-bold font-mono">RichardEwing.io/advisory</p>
             </div>
         </section>

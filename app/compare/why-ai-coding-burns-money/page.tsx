@@ -6,8 +6,8 @@ import ExogramBridge from '@/components/ExogramBridge';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Why AI Coding Burns Money & Strategy Diagnostics | Richard Ewing',
-    description: 'Why AI Coding Burns Money provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Why AI Coding Assistants Burn R&D Budget',
+    description: 'Forensic breakdown of invisible context churn, verification overhead, and downstream refactor costs in AI tools.',
     keywords: ['AI coding cost', 'Claude Code expensive', 'AI agent cost overrun', 'AI coding surprise bill', 'Cursor token cost', 'AI coding burns money', 'API token waste', 'AI agent budget', 'retry inflation cost', 'vibe coding maintenance nightmare', 'AI generated code abandonware'],
     openGraph: {
         title: 'Why AI Coding Burns Money - Token Cost Analysis',

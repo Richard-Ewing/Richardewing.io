@@ -2,7 +2,7 @@ import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks9Modules: Record<string, CurriculumModule> = {};
 
-const t9 = 'Track 9 — Engineering Leadership';
+const t9 = 'Track 9  -  Engineering Leadership';
 
 // ═══════════════════ TRACK 9: ENGINEERING LEADERSHIP ═══════════════════
 
@@ -34,7 +34,7 @@ tracks9Modules['engineering-leadership/9-2'] = m('9-2', 'Headcount Planning', 'M
     ['Calculate Recruiter friction', 'Manage onboarding velocity drops', 'Execute span-of-control models'], [
         l('The Onboarding Velocity Dip', 
             [
-                'When you hire 5 new engineers, your team\'s output does not increase—it plummets. Every new hire requires 2-3 months of intense mentoring from your most senior, productive engineers.',
+                'When you hire 5 new engineers, your team\'s output does not increase - it plummets. Every new hire requires 2-3 months of intense mentoring from your most senior, productive engineers.',
                 'This "Brooks\'s Law" manifestation means a poorly timed hiring surge just before a critical product launch guarantees the launch will fail. Engineers are pulled off features to explain the codebase architecture to the new hires.',
                 'Optimal headcount planning spaces out onboarding cohorts and explicitly factors a 20% velocity tax on senior engineering output for a full 90 days following a hire.'
             ],
@@ -53,7 +53,7 @@ tracks9Modules['engineering-leadership/9-3'] = m('9-3', 'Reorg Economics', 'Meas
         l('The 90-Day Reshuffle Tax', 
             [
                 'An engineering "Reorg" visually shifts boxes on an org chart. Economically, it detonates team psychological safety and resets the "Forming, Storming, Norming, Performing" cycle back to zero across the entire department.',
-                'During a Reorg, engineers stop writing code and spend weeks questioning their new scope, evaluating their new manager, and defending their codebase domains. A massive reorg destroys a minimum of 6 weeks of feature velocity—a multimillion-dollar soft cost.',
+                'During a Reorg, engineers stop writing code and spend weeks questioning their new scope, evaluating their new manager, and defending their codebase domains. A massive reorg destroys a minimum of 6 weeks of feature velocity - a multimillion-dollar soft cost.',
                 'Reorgs must only be triggered when the current team topologies explicitly block Conway’s Law (the architecture strictly mandates a new communication structure). Restructuring purely "because we hired a new VP" is financial malpractice.'
             ],
             [
@@ -90,7 +90,7 @@ tracks9Modules['engineering-leadership/9-5'] = m('9-5', 'Engineering Culture Eco
             [
                 'A "brilliant jerk" 10x engineer does not exist. If they generate 10x the code but create an environment so toxic that 3 senior engineers (who each generate 5x) quit, the company is mathematically operating at a -5x net deficit.',
                 'Tolerating abusive high-performers establishes a precedent that outputs bypass behavioral standards. The financial mechanism of this toxicity is attrition. The HR recruitment fees, onboarding delays, and domain knowledge evaporation directly zero out whatever codebase velocity the "brilliant" engineer contributed.',
-                'Psychological safety—the ability for a junior engineer to tell a VP that a launch will fail without fear of retribution—is the most powerful financial defense mechanism an organization possesses against catastrophic PR and data breaches.'
+                'Psychological safety - the ability for a junior engineer to tell a VP that a launch will fail without fear of retribution - is the most powerful financial defense mechanism an organization possesses against catastrophic PR and data breaches.'
             ],
             [
                 d('The Escalation Threshold', 'The friction an engineer feels before reporting a critical failure to leadership.', 'In toxic cultures, they hide the failure until production burns down'),

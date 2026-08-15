@@ -2,7 +2,7 @@ import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks10Modules: Record<string, CurriculumModule> = {};
 
-const t10 = 'Track 10 — Startup Economics';
+const t10 = 'Track 10  -  Startup Economics';
 
 // ═══════════════════ TRACK 10: STARTUP ECONOMICS ═══════════════════
 

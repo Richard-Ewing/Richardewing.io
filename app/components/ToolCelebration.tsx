@@ -5,7 +5,7 @@ import CelebrationOverlay from './CelebrationOverlay';
 
 /**
  * Self-contained celebration trigger. Just render it and pass show=true when results appear.
- * No children needed — it's purely an overlay trigger.
+ * No children needed  -  it's purely an overlay trigger.
  */
 export default function ToolCelebration({ show, toolName }: { show: boolean; toolName: string }) {
     const [celebrate, setCelebrate] = useState(false);

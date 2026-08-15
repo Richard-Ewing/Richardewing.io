@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import ExogramSidebar from '@/components/ExogramSidebar';
 
 export const metadata: Metadata = {
-    title: 'Exogram Documentation & Strategy Diagnostics | Richard Ewing',
-    description: 'Exogram Documentation provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Exogram Developer Documentation',
+    description: 'Integration guides, API references, and policy manifest specifications for the Exogram AI governance runtime.',
     alternates: {
         canonical: 'https://www.richardewing.io/exogram/docs',
     },

@@ -2,7 +2,7 @@ import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks15Modules: Record<string, CurriculumModule> = {};
 
-const t15 = 'Track 15 — Free Playbooks & Guides';
+const t15 = 'Track 15  -  Free Playbooks & Guides';
 
 tracks15Modules['free-guides/15-1'] = m('15-1', 'The AI Survival Guide for Non-Technical Founders', 'How to differentiate between genuine AI capability and vendor hype, establish a data moat, and avoid AI wrapper technical debt.', t15, 
     ['Execute the "Thin Wrapper" Test', 'Identify hallucination liabilities', 'Calculate true GenAI implementation costs'], [
@@ -28,7 +28,7 @@ tracks15Modules['free-guides/15-2'] = m('15-2', 'Enterprise FinOps: Taming AWS B
             [
                 'Cloud environments naturally tend toward maximum entropy and maximum billing. Developers spin up staging databases to test a feature and leave the company over the weekend. The database runs for three years at $800/month.',
                 'Before attempting complex "Right-Sizing" architecture, an enterprise must execute a "Zombie Hunt". Searching strictly for unattached volumes, idle load balancers, and unused elastic IPs often recaptures 5-10% of the entire monthly cloud bill in a single afternoon.',
-                'This requires no engineering architecture changes—it is pure financial housekeeping that immediately drops to the bottom line profit.'
+                'This requires no engineering architecture changes - it is pure financial housekeeping that immediately drops to the bottom line profit.'
             ],
             [
                 d('Orphaned Infrastructure Waste', 'The total dollar amount spent monthly on cloud assets that have zero inbound network traffic.', 'Often exceeds thousands of dollars'),
@@ -81,7 +81,7 @@ tracks15Modules['free-guides/15-5'] = m('15-5', 'Enterprise AI Team Scaling Guid
         l('The Fallacy of the 10x ML Researcher', 
             [
                 'When traditional enterprises attempt to adopt AI, they often make the mistake of attempting to hire specialized AI/ML PhDs from Google or Stanford for $500k/year to build algorithms from scratch.',
-                'Enterprise AI is not about building algorithms. It is about securely piping proprietary data into existing Cloud APIs (OpenAI, Anthropic). You need "AI Application Engineers"—standard senior developers who understand how to build production-grade RAG pipelines and prompt-routing logic.',
+                'Enterprise AI is not about building algorithms. It is about securely piping proprietary data into existing Cloud APIs (OpenAI, Anthropic). You need "AI Application Engineers" - standard senior developers who understand how to build production-grade RAG pipelines and prompt-routing logic.',
                 'The ideal AI Pod consists of: 1 Data Engineer (for pipeline), 2 AI App Engineers (for API integration/RAG), and 1 Subject Matter Expert (for writing the Golden Dataset ground-truth evaluations).'
             ],
             [

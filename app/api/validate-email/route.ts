@@ -47,7 +47,7 @@ export async function POST(request: Request) {
             return NextResponse.json({ valid: false, reason: 'Please use a non-disposable email address.' });
         }
 
-        // 3. MX record check — verify domain accepts email
+        // 3. MX record check  -  verify domain accepts email
         const hasMx = await checkMxRecords(domain);
         if (!hasMx) {
             return NextResponse.json({ valid: false, reason: 'This email domain doesn\'t appear to accept emails. Please check for typos.' });

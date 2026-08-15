@@ -22,7 +22,7 @@ export default function NotFound() {
                     </p>
                 </div>
 
-                {/* Semantic Recovery — Diagnostics First */}
+                {/* Semantic Recovery  -  Diagnostics First */}
                 <div className="mb-12">
                     <div className="text-xs font-mono font-bold text-rose-600 uppercase tracking-[0.2em] mb-4 text-center">
                         Diagnose the Problem
@@ -63,7 +63,7 @@ export default function NotFound() {
                     </div>
                 </div>
 
-                {/* Common Pain Points — Semantic Rerouting */}
+                {/* Common Pain Points  -  Semantic Rerouting */}
                 <div className="mb-12 p-6 rounded-2xl bg-zinc-50 border border-zinc-200">
                     <div className="flex items-center gap-2 mb-4">
                         <AlertTriangle className="w-4 h-4 text-amber-600" />

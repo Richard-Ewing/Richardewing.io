@@ -3,7 +3,7 @@ import crypto from 'crypto';
 
 export const dynamic = 'force-dynamic';
 
-// Action Trigger API — one-click actions from email digest
+// Action Trigger API  -  one-click actions from email digest
 // Each action link in the email contains a signed token to prevent unauthorized access
 // Actions: approve-rewrite, skip, create-content
 
@@ -75,11 +75,11 @@ async function handleApproveRewrite(payload: Record<string, string>): Promise<{ 
         );
         return { success: true, message: `Rewrite deployed for ${url}` };
     }
-    return { success: false, message: data.message || 'Rewrite failed — no viable changes generated' };
+    return { success: false, message: data.message || 'Rewrite failed  -  no viable changes generated' };
 }
 
 async function handleSkip(payload: Record<string, string>): Promise<{ success: boolean; message: string }> {
-    // Just acknowledge — no action needed
+    // Just acknowledge  -  no action needed
     return { success: true, message: `Skipped action for ${payload.url || 'item'}. No changes made.` };
 }
 

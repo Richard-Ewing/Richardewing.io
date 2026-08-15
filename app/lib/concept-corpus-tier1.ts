@@ -180,7 +180,7 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
     canonicalQuote: 'Inference economics demands that every prompt generation is treated as a financial transaction with measurable margin impact.',
     positionStatement: 'You cannot scale AI features using traditional SaaS pricing models. Inference economics requires semantic caching, model routing, and unit margin visibility at the query level.',
     canonicalReadingOrder: [
-      { step: 1, title: 'Growth Is Not Your Cost Problem — Your Architecture Is', publisher: 'LinkedIn', type: 'Executable Article', url: 'https://www.linkedin.com/feed/update/urn:li:share:7487606608009814016/' },
+      { step: 1, title: 'Growth Is Not Your Cost Problem  -  Your Architecture Is', publisher: 'LinkedIn', type: 'Executable Article', url: 'https://www.linkedin.com/feed/update/urn:li:share:7487606608009814016/' },
       { step: 2, title: 'Mastering AI Costs', publisher: 'FinOps Weekly', type: 'Guide', url: '/tools/aueb' }
     ],
     provenanceTimeline: [
@@ -188,7 +188,7 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
       { stage: 'LinkedIn Essay', label: 'Architecture vs Cost Scaling', publisher: 'LinkedIn', date: 'August 10, 2026', summary: 'Demonstrated 50%+ reduction in API runtime spend by inserting semantic caching and edge filtering in front of models.' }
     ],
     evidenceLedger: [
-      { id: 'ev-ie-2', title: 'Growth Is Not Your Cost Problem — Your Architecture Is', url: 'https://www.linkedin.com/feed/update/urn:li:share:7487606608009814016/', publisher: 'LinkedIn', type: 'Executable', strength: 5, role: 'Extends', date: 'August 10, 2026' },
+      { id: 'ev-ie-2', title: 'Growth Is Not Your Cost Problem  -  Your Architecture Is', url: 'https://www.linkedin.com/feed/update/urn:li:share:7487606608009814016/', publisher: 'LinkedIn', type: 'Executable', strength: 5, role: 'Extends', date: 'August 10, 2026' },
       { id: 'ev-ie-1', title: 'The Cost of Generative AI', url: '#', publisher: 'Economics Today', type: 'Report', strength: 4, role: 'Supports', date: '2024' }
     ],
     reverseCitations: [

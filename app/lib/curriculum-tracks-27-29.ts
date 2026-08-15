@@ -2,9 +2,9 @@ import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks27to29Modules: Record<string, CurriculumModule> = {};
 
-const t27 = 'Track 27 — SLMs & Edge Intelligence';
-const t28 = 'Track 28 — Agentic Process Automation (APA)';
-const t29 = 'Track 29 — AI Supply Chain & GPU FinOps';
+const t27 = 'Track 27  -  SLMs & Edge Intelligence';
+const t28 = 'Track 28  -  Agentic Process Automation (APA)';
+const t29 = 'Track 29  -  AI Supply Chain & GPU FinOps';
 
 // ═══════════════════ TRACK 27: SLMs & EDGE INTELLIGENCE (10 Modules) ═══════════════════
 
@@ -176,7 +176,7 @@ tracks27to29Modules['29-1'] = m('29-1', 'Hardware Monopolies & Moats', 'NVIDIA D
     ['Analyze the CUDA Moat', 'Understand TPU/Inferentia capabilities'], [
         l('The Platform Monopoly', 
             ['NVIDIA’s dominance is not strictly in silicon; it is in the CUDA software layer that 95% of AI researchers use. Competing hardware (AMD MI300X, AWS Inferentia) works, but suffers from massive software compatibility friction.'],
-            [d('Silicon Lock-In Margin', 'The extra cost paid specifically for NVIDIA brand.', 'Massive Premium')], 'Evaluate AWS Trainium instances—are your PyTorch models compatible with minor tweaks?', undefined, undefined)
+            [d('Silicon Lock-In Margin', 'The extra cost paid specifically for NVIDIA brand.', 'Massive Premium')], 'Evaluate AWS Trainium instances - are your PyTorch models compatible with minor tweaks?', undefined, undefined)
     ], '/vault/curriculum/tracks/29/29-2', undefined, 'live'
 );
 

@@ -7,8 +7,8 @@ import { professionalServiceSchema } from '@/app/lib/schemas';
 import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 
 export const metadata: Metadata = {
-    title: 'Technical Due Diligence & R&D Cost Audit | Richard Ewing',
-    description: 'The R&D Capital Audit provides an independent 3-week forensic review of target architectures. Uncover hidden liabilities before term sheet execution.',
+    title: 'Technical Due Diligence for PE & VC',
+    description: 'Independent 3-week forensic R&D capital audit uncovering software liabilities and unit economic risks before closing.',
     alternates: {
         canonical: 'https://www.richardewing.io/services/technical-due-diligence',
     },

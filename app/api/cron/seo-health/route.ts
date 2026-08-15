@@ -128,7 +128,7 @@ export async function GET(req: Request) {
             throw new Error('No URLs found in sitemap');
         }
 
-        // 3. Sample check — check up to 50 URLs per run to stay within function limits
+        // 3. Sample check  -  check up to 50 URLs per run to stay within function limits
         // Rotate through the sitemap so all pages get checked over time
         const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
         const batchSize = 50;

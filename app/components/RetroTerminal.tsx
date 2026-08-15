@@ -20,7 +20,7 @@ export default function RetroTerminal({ title, category, definition, whyItMatter
 ${title.toUpperCase()}(7)              Richard Ewing Glossary              ${title.toUpperCase()}(7)
 
 NAME
-    ${title} — ${category}
+    ${title}  -  ${category}
 
 SYNOPSIS
     A comprehensive reference for technology leaders, investors, and operators.
@@ -35,7 +35,7 @@ SEE ALSO
     richardewing.io/glossary, richardewing.io/tools, exogram.ai
 
 AUTHOR
-    Richard Ewing — AI Economist (AI Economics Domain)
+    Richard Ewing  -  AI Economist (AI Economics Domain)
     https://www.richardewing.io
 
                         ${new Date().getFullYear()}-03-22                    ${title.toUpperCase()}(7)
@@ -84,7 +84,7 @@ AUTHOR
                     <div className="w-3 h-3 rounded-full bg-red-500/80" />
                     <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
                     <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                    <span className="ml-3 text-green-400/60 text-xs font-bold font-mono">richardewing.io — glossary terminal</span>
+                    <span className="ml-3 text-green-400/60 text-xs font-bold font-mono">richardewing.io  -  glossary terminal</span>
                 </div>
                 <button onClick={() => setIsOpen(false)} className="text-green-400/60 hover:text-green-400 text-xs font-bold font-mono transition-colors">
                     [× CLOSE]

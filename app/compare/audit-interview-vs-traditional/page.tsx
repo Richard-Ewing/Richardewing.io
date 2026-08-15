@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 
 const dimensions = [
     { dimension: 'Standardization', audit: 'Identical questions for every candidate at each level', traditional: 'Varies by interviewer mood, preparation, and personal style', winner: 'audit' },
-    { dimension: 'Bias Reduction', audit: 'AI-scored against fixed rubric — no interviewer bias', traditional: 'Subject to affinity bias, halo effect, similarity bias', winner: 'audit' },
-    { dimension: 'Assessment Depth', audit: 'Multi-track (PM, Engineering, Leadership) with 5 grading levels', traditional: 'Usually single-dimension — can they code?', winner: 'audit' },
+    { dimension: 'Bias Reduction', audit: 'AI-scored against fixed rubric  -  no interviewer bias', traditional: 'Subject to affinity bias, halo effect, similarity bias', winner: 'audit' },
+    { dimension: 'Assessment Depth', audit: 'Multi-track (PM, Engineering, Leadership) with 5 grading levels', traditional: 'Usually single-dimension  -  can they code?', winner: 'audit' },
     { dimension: 'Time to Evaluate', audit: '15-30 minutes, instant scoring and committee review', traditional: '45-90 minutes per interviewer, hours of debrief', winner: 'audit' },
     { dimension: 'Cost Per Assessment', audit: 'Free tier available, scalable', traditional: '$500-2,000 per interview loop (4-6 engineer hours)', winner: 'audit' },
-    { dimension: 'Candidate Experience', audit: 'Consistent, professional, no awkward silences', traditional: 'Varies wildly — depends on interviewer skill', winner: 'audit' },
+    { dimension: 'Candidate Experience', audit: 'Consistent, professional, no awkward silences', traditional: 'Varies wildly  -  depends on interviewer skill', winner: 'audit' },
     { dimension: 'Legal Defensibility', audit: 'Standardized = legally defensible hiring practice', traditional: 'Inconsistent = harder to defend against discrimination claims', winner: 'audit' },
     { dimension: 'Personal Touch', audit: 'AI-driven, less personal connection', traditional: 'Allows rapport building and culture fit assessment', winner: 'traditional' },
 ];

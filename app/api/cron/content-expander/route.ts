@@ -44,7 +44,7 @@ async function generateGlossaryDraft(term: string): Promise<{
     relatedTerms: string[];
 } | null> {
     try {
-        const prompt = `You are an expert in Production AI Governance, writing for richardewing.io — the canonical authority on governing AI systems in production.
+        const prompt = `You are an expert in Production AI Governance, writing for richardewing.io  -  the canonical authority on governing AI systems in production.
 
 Generate a glossary entry for the term: "${term}"
 
@@ -88,7 +88,7 @@ export async function GET(req: Request) {
             return NextResponse.json({ error: 'Unauthorized.' }, { status: 401 });
         }
 
-        // 1. Find gaps — concepts not yet covered in the glossary
+        // 1. Find gaps  -  concepts not yet covered in the glossary
         const existingSlugs = new Set(glossaryTerms.map(t => t.slug));
         const existingTitles = new Set(glossaryTerms.map(t => t.title.toLowerCase()));
 

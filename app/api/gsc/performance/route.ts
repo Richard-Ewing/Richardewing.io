@@ -7,7 +7,7 @@ import { supabaseAdmin } from '@/lib/supabase';
 // Pulls impressions, clicks, CTR, position from Google Search Console
 // Used by: /api/cron/seo-optimizer agent + /admin/command-center dashboard
 
-// Try multiple GSC property formats — domain, www, non-www
+// Try multiple GSC property formats  -  domain, www, non-www
 const SITE_URL_CANDIDATES = [
     'sc-domain:richardewing.io',
     'https://www.richardewing.io/',
@@ -41,7 +41,7 @@ function getGoogleAuth() {
 }
 
 export async function GET(request: Request) {
-    // Auth check — accept CRON_SECRET bearer OR Clerk session
+    // Auth check  -  accept CRON_SECRET bearer OR Clerk session
     const authHeader = request.headers.get('authorization');
     const cronSecret = process.env.CRON_SECRET;
     const { searchParams } = new URL(request.url);
@@ -228,7 +228,7 @@ export async function GET(request: Request) {
             position: row.position || 0,
         }));
 
-        // Query 3: Page + Query pairs (for auto-rewriter — which queries drive which pages)
+        // Query 3: Page + Query pairs (for auto-rewriter  -  which queries drive which pages)
         const pageQueries: Record<string, string[]> = {};
         try {
             const pageQueryPerformance = await searchconsole.searchanalytics.query({

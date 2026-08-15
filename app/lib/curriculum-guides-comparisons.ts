@@ -5,7 +5,7 @@ export const guidesComparisonsModules: Record<string, CurriculumModule> = {
     'guides/16-1': {
         moduleId: '16-1',
         title: 'How to Deploy Small Language Models (SLMs)',
-        trackName: 'Track 16 — Executive Playbooks & Guides',
+        trackName: 'Track 16  -  Executive Playbooks & Guides',
         description: 'The complete playbook for running local, quantized inference to bypass API monopolization.',
         takeaways: [
             'Mastering 4-bit and 8-bit QLoRA strategies',
@@ -39,7 +39,7 @@ export const guidesComparisonsModules: Record<string, CurriculumModule> = {
     'guides/16-2': {
         moduleId: '16-2',
         title: 'AI Governance & Compliance Audit',
-        trackName: 'Track 16 — Executive Playbooks & Guides',
+        trackName: 'Track 16  -  Executive Playbooks & Guides',
         description: 'Establishing security frontiers for LLM usage in regulated enterprise environments.',
         takeaways: [
             'Mapping the EU AI Act to your software architecture',
@@ -67,7 +67,7 @@ export const guidesComparisonsModules: Record<string, CurriculumModule> = {
     'guides/16-3': {
         moduleId: '16-3',
         title: 'Building AI-Native Engineering Teams',
-        trackName: 'Track 16 — Executive Playbooks & Guides',
+        trackName: 'Track 16  -  Executive Playbooks & Guides',
         description: 'How to structure, resource, and lead engineering teams augmented by AI.',
         takeaways: [
             'Defining the new "10x Developer" baseline',
@@ -97,7 +97,7 @@ export const guidesComparisonsModules: Record<string, CurriculumModule> = {
     'guides/cto-first-90-days': {
         moduleId: '15-1',
         title: 'The CTO\'s First 90 Days',
-        trackName: 'Track 15 — Free Playbooks',
+        trackName: 'Track 15  -  Free Playbooks',
         description: 'The definitive playbook for establishing technical authority, assessing architecture, and stabilizing team morale during an executive transition.',
         takeaways: [
             'How to conduct a 360-degree technical debt audit',
@@ -122,7 +122,7 @@ export const guidesComparisonsModules: Record<string, CurriculumModule> = {
     'guides/technical-debt': {
         moduleId: '15-2',
         title: 'The Definitive Guide to Technical Debt',
-        trackName: 'Track 15 — Free Playbooks',
+        trackName: 'Track 15  -  Free Playbooks',
         description: 'How to classify, quantify, and remediate technical debt using the Product Debt Index (PDI).',
         takeaways: [
             'PDI Framework quantification',
@@ -141,7 +141,7 @@ export const guidesComparisonsModules: Record<string, CurriculumModule> = {
     'guides/build-vs-buy': {
         moduleId: '15-3',
         title: 'Build vs. Buy Economics',
-        trackName: 'Track 15 — Free Playbooks',
+        trackName: 'Track 15  -  Free Playbooks',
         description: 'The $500K Decision Framework for deciding when to write code and when to swipe a credit card.',
         takeaways: [
             'Total Cost of Ownership (TCO) models',
@@ -160,7 +160,7 @@ export const guidesComparisonsModules: Record<string, CurriculumModule> = {
     'guides/engineering-efficiency': {
         moduleId: '15-4',
         title: 'Engineering Efficiency Blueprint',
-        trackName: 'Track 15 — Free Playbooks',
+        trackName: 'Track 15  -  Free Playbooks',
         description: 'How elite organizations measure and optimize output using DORA and APER.',
         takeaways: [
             'DORA vs PDI integration',
@@ -179,7 +179,7 @@ export const guidesComparisonsModules: Record<string, CurriculumModule> = {
     'guides/product-economics': {
         moduleId: '15-5',
         title: 'AI Economics & Unit Profitability',
-        trackName: 'Track 15 — Free Playbooks',
+        trackName: 'Track 15  -  Free Playbooks',
         description: 'Every feature has a P&L. Learn to calculate per-feature profitability and execute the Kill Switch Protocol on zombie features.',
         takeaways: [
             'Feature-level P&L tracking',
@@ -200,7 +200,7 @@ export const guidesComparisonsModules: Record<string, CurriculumModule> = {
     'comparisons/17-1': {
         moduleId: '17-1',
         title: 'Next.js vs Remix vs Astro for 2026',
-        trackName: 'Track 17 — Technical Framework Comparisons',
+        trackName: 'Track 17  -  Technical Framework Comparisons',
         description: 'Evaluating edge capabilities, RSC latency, and caching strategies for modern web architecture.',
         takeaways: [
             'Cost comparison of Vercel Edge vs Cloudflare Workers',
@@ -225,7 +225,7 @@ export const guidesComparisonsModules: Record<string, CurriculumModule> = {
     'comparisons/17-2': {
         moduleId: '17-2',
         title: 'Anthropic Claude 3.5 vs OpenAI GPT-4o',
-        trackName: 'Track 17 — Technical Framework Comparisons',
+        trackName: 'Track 17  -  Technical Framework Comparisons',
         description: 'Evaluating unit costs, coding proficiency, and agentic orchestration efficiency.',
         takeaways: [
             'Token efficiency algorithms for high-volume logs',
@@ -250,7 +250,7 @@ export const guidesComparisonsModules: Record<string, CurriculumModule> = {
     'comparisons/17-3': {
         moduleId: '17-3',
         title: 'PDI vs DORA Metrics',
-        trackName: 'Track 17 — Technical Framework Comparisons',
+        trackName: 'Track 17  -  Technical Framework Comparisons',
         description: 'Financial Health vs Delivery Speed. How to combine both frameworks for board-level reporting.',
         takeaways: [
             'When to use DORA vs PDI',
@@ -269,7 +269,7 @@ export const guidesComparisonsModules: Record<string, CurriculumModule> = {
     'comparisons/17-4': {
         moduleId: '17-4',
         title: 'Agile vs Kanban',
-        trackName: 'Track 17 — Technical Framework Comparisons',
+        trackName: 'Track 17  -  Technical Framework Comparisons',
         description: 'Sprint-based vs flow-based delivery: mapping team topology to the correct operational methodology.',
         takeaways: [
             'The ceremony overhead of Scrum',
@@ -288,7 +288,7 @@ export const guidesComparisonsModules: Record<string, CurriculumModule> = {
     'comparisons/17-5': {
         moduleId: '17-5',
         title: 'Monolith vs Microservices',
-        trackName: 'Track 17 — Technical Framework Comparisons',
+        trackName: 'Track 17  -  Technical Framework Comparisons',
         description: 'The architectural decision that costs $2M to reverse. When to split the monolith.',
         takeaways: [
             'Conway\'s law and team topology',

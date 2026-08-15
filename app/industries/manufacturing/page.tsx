@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Manufacturing & Robotics AI Ec & Strategy Diagnostics | Richard Ewing',
-    description: 'Manufacturing & Robotics AI Ec provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Manufacturing AI Economics & Edge Telemetry Debt',
+    description: 'Audit predictive maintenance model reliability, industrial IoT sensor debt, and shop-floor automation software yield.',
     keywords: ['manufacturing technical debt', 'robotics CTO advisor', 'industrial AI governance', 'edge AI economics', 'manufacturing software debt'],
     alternates: { canonical: 'https://www.richardewing.io/industries/manufacturing' },
     openGraph: { title: 'AI Economics for Manufacturing & Robotics', description: 'R&D audit and AI governance for industrial systems.', url: 'https://www.richardewing.io/industries/manufacturing', type: 'website' },
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const challenges = [
     { icon: '🏭', title: 'Edge Computing Constraints', description: 'Industrial IoT and robotics often operate in latency-sensitive, bandwidth-constrained environments. Cloud reliance creates physical production risks.' },
-    { icon: '⏱️', title: 'Latency Liability', description: 'In manufacturing, inference latency isn\'t just a bad user experience—it\'s physical damage or yield reduction. This creates an extreme penalty for non-deterministic AI.' },
+    { icon: '⏱️', title: 'Latency Liability', description: 'In manufacturing, inference latency isn\'t just a bad user experience - it\'s physical damage or yield reduction. This creates an extreme penalty for non-deterministic AI.' },
     { icon: '🔧', title: 'Hardware Integration Debt', description: 'Bridging modern AI models with legacy PLCs and SCADA systems from the 1990s creates massive, fragile integration layers.' },
     { icon: '🤖', title: 'Automation Margin Erosion', description: 'Robotic process automation often masks broken underlying processes. The compute cost of continuous computer vision models often exceeds the human labor saved.' },
 ];

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Your SaaS Maintenance Burden I & Strategy Diagnostics | Richard Ewing',
-    description: 'Your SaaS Maintenance Burden I provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'B2B SaaS Margin Engineering & Maintenance Debt',
+    description: 'Quantify the true cost of legacy customer workarounds, multi-tenant database sprawl, and hidden maintenance burdens.',
     keywords: ['saas technical debt', 'b2b AI economics', 'saas gross margin', 'cogs optimization saas', 'technical debt arr impact', 'saas cto advisor'],
     alternates: { canonical: 'https://www.richardewing.io/industries/saas' },
     openGraph: { title: 'AI Economics for SaaS & B2B', description: 'Why your technical debt is destroying your ARR multiple.', url: 'https://www.richardewing.io/industries/saas', type: 'website' },
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const challenges = [
     { icon: '📉', title: 'Debt-to-ARR Drag', description: 'Technical debt slows feature velocity and ARR growth, which compresses SaaS valuation multiples. We audit this cascade.' },
-    { icon: '💰', title: 'COGS Inflation', description: 'AI features and cloud waste inflate Cost of Goods Sold — the silent killer of SaaS gross margins scrutinized by investors.' },
+    { icon: '💰', title: 'COGS Inflation', description: 'AI features and cloud waste inflate Cost of Goods Sold  -  the silent killer of SaaS gross margins scrutinized by investors.' },
     { icon: '🏗️', title: 'Platform Complexity', description: 'Multi-tenant architectures, API ecosystems, and integration layers create compounding technical debt that is uniquely difficult to measure and remediate.' },
     { icon: '🔄', title: 'Feature Bloat', description: 'Custom features shipped for deals add maintenance costs. Zombie features consume over 30% of engineering capacity.' },
 ];
@@ -31,7 +31,7 @@ export default function SaaSPage() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400">SaaS &amp; B2B</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">
-                        SaaS economics depend on gross margin, feature velocity, and ARR growth. Technical debt attacks all three simultaneously. The question isn&apos;t whether you have debt — it&apos;s whether the debt is destroying your valuation.
+                        SaaS economics depend on gross margin, feature velocity, and ARR growth. Technical debt attacks all three simultaneously. The question isn&apos;t whether you have debt  -  it&apos;s whether the debt is destroying your valuation.
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">

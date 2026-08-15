@@ -8,8 +8,8 @@ import ReportUnlocker from './unlocker';
 
 export const metadata = {
     alternates: { canonical: 'https://www.richardewing.io/reports/state-of-ai-engineering' },
-    title: 'State of AI Engineering 2026 & Strategy Diagnostics | Richard Ewing',
-    description: 'State of AI Engineering 2026 provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'State of AI Engineering 2026 Report',
+    description: 'Annual industry study on enterprise AI adoption, inference cost structures, and agent runtime failure rates.',
 };
 
 export default function StateOfAIEngineering() {
@@ -35,7 +35,7 @@ export default function StateOfAIEngineering() {
                         State of AI <br />Engineering <span className="text-purple-500">2026</span>
                     </h1>
                     <p className="text-xl text-zinc-900 max-w-2xl leading-relaxed">
-                        The definitive executive playbook for surviving the generative capability chasm. Discover exactly when your LLM OpEx outpaces human FTE displacement—and how to stop the bleeding.
+                        The definitive executive playbook for surviving the generative capability chasm. Discover exactly when your LLM OpEx outpaces human FTE displacement - and how to stop the bleeding.
                     </p>
                 </div>
 
@@ -91,7 +91,7 @@ export default function StateOfAIEngineering() {
                         <div className="p-4 bg-zinc-50 rounded-lg border border-zinc-400">
                             <p className="text-xs font-bold text-zinc-950 font-mono italic">
                                 "This is the document I wish my CTO read before we burned $4M trying to build an internal Claude wrapper." 
-                                <br/><span className="text-zinc-950 mt-2 block">— Director of R&D, Series C Fintech</span>
+                                <br/><span className="text-zinc-950 mt-2 block"> -  Director of R&D, Series C Fintech</span>
                             </p>
                         </div>
                     </div>

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Technical Due Diligence FAQ & Strategy Diagnostics | Richard Ewing',
-    description: 'Technical Due Diligence FAQ provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Technical Due Diligence FAQ',
+    description: 'Details on the 3-week forensic R&D capital audit process, required access, and board deliverable formats.',
     keywords: ['technical due diligence', 'M&A audit', 'AI architecture validation', 'CTO due diligence', 'technical audit'],
     alternates: { canonical: 'https://www.richardewing.io/tools/due-diligence/faq' },
     openGraph: { title: 'Technical Due Diligence FAQ', description: 'Frequently asked questions about Technical Due Diligence.', url: 'https://www.richardewing.io/tools/due-diligence/faq', type: 'article' },

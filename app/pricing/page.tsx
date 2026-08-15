@@ -8,8 +8,8 @@ import CheckoutButton from '@/app/components/client/CheckoutButton';
 import { COMMERCIAL_OFFERS } from '@/lib/platform/offers/offers';
 
 export const metadata: Metadata = {
-    title: 'Advisory & Diagnostic Pricing | Richard Ewing',
-    description: 'Transparent pricing for AI Economics diagnostics and R&D capital audits. Secure fixed scope deliverables and guarantee financial impact.',
+    title: 'Advisory & Diagnostic Pricing',
+    description: 'Transparent fixed-fee pricing for AI Economics diagnostics, R&D capital audits, and fractional executive advisory.',
     alternates: {
         canonical: 'https://www.richardewing.io/pricing',
     },
@@ -123,7 +123,7 @@ export default function PricingPage() {
                         <ul className="list-disc pl-5 space-y-2 mb-8 text-sm text-zinc-800">
                             <li>We run your architecture through the <strong>Product Debt Index (PDI)</strong> and the <strong>AI Unit Economics Benchmark (AUEB)</strong>.</li>
                             <li>We isolate features or models eroding gross margin.</li>
-                            <li>We calculate your Technical Insolvency Date—where maintenance outpaces feature shipping.</li>
+                            <li>We calculate your Technical Insolvency Date - where maintenance outpaces feature shipping.</li>
                             <li>I deliver a written executive brief and lead a 60-minute sync with leadership.</li>
                         </ul>
 

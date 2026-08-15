@@ -3,11 +3,11 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Legacy Systems Are Consuming Y & Strategy Diagnostics | Richard Ewing',
-    description: 'Legacy Systems Are Consuming Y provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'GovTech Legacy Modernization & Cost Governance',
+    description: 'Remediate mainframe technical debt, procurement cycle drag, and security compliance overhead in public sector software.',
     keywords: ['govtech technical debt', 'government technology modernization', 'fedramp compliance engineering', 'public sector AI governance', 'govtech cto advisor', 'legacy government systems'],
     alternates: { canonical: 'https://www.richardewing.io/industries/govtech' },
-    openGraph: { title: 'AI Economics for GovTech', description: 'Legacy mainframes, FedRAMP compliance, and AI procurement — GovTech has unique engineering economics.', url: 'https://www.richardewing.io/industries/govtech', type: 'website' },
+    openGraph: { title: 'AI Economics for GovTech', description: 'Legacy mainframes, FedRAMP compliance, and AI procurement  -  GovTech has unique engineering economics.', url: 'https://www.richardewing.io/industries/govtech', type: 'website' },
 };
 
 const challenges = [

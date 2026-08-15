@@ -5,7 +5,7 @@ import PartnerContactForm from '@/app/components/client/PartnerContactForm';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-    title: 'Partner with Richard: Newsletter & Speaking | Richard Ewing',
+    title: 'Newsletter Sponsorship & Speaking Partnerships',
     description: 'Sponsor or collaborate with Richard Ewing on AI advisory, speaking, or newsletter placements. Connect directly with technology leaders.',
     alternates: {
         canonical: 'https://www.richardewing.io/partner',
@@ -195,7 +195,7 @@ export default function PartnerPage() {
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-zinc-200">
                             <div>
                                 <div className="text-xs font-mono font-bold text-blue-700 uppercase tracking-widest mb-1">
-                                    Channel 1 — LinkedIn Creator Network
+                                    Channel 1  -  LinkedIn Creator Network
                                 </div>
                                 <h3 className="text-xl font-bold font-grotesk text-zinc-950">
                                     Sponsored Posts & Creator Reach (11,141 Followers)
@@ -516,7 +516,7 @@ export default function PartnerPage() {
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-zinc-200">
                             <div>
                                 <div className="text-xs font-mono font-bold text-indigo-700 uppercase tracking-widest mb-1">
-                                    Channel 2 — LinkedIn Newsletter Column
+                                    Channel 2  -  LinkedIn Newsletter Column
                                 </div>
                                 <h3 className="text-xl font-bold font-grotesk text-zinc-950">
                                     The AI Economist Newsletter (1,366 Subscribers)

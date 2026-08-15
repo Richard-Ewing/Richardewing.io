@@ -29,7 +29,7 @@ export default async function AdminLayout({
 
     return (
         <div>
-            {/* Admin nav bar — matches site light theme */}
+            {/* Admin nav bar  -  matches site light theme */}
             <div className="fixed top-16 left-0 right-0 z-40 bg-[#F5F0EB]/95 backdrop-blur border-b border-black/8">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-1 py-2">
                     <span className="text-xs font-mono text-[#6B6B6B] mr-4 uppercase tracking-widest">Admin</span>

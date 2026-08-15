@@ -43,7 +43,7 @@ export default function HomeContent() {
 
                 <p className="text-lg sm:text-xl text-zinc-950 font-bold max-w-2xl leading-relaxed mb-12 font-sans">
                     I'm <span className="text-zinc-900 font-bold">Richard Ewing</span>, a AI Economist.
-                    I run forensic audits that find the capital leaks inside your AI investments—then I help you plug them.
+                    I run forensic audits that find the capital leaks inside your AI investments - then I help you plug them.
                     <span className="text-cyan-900 font-extrabold"> No consulting theater. Just hard numbers.</span>
                 </p>
 
@@ -173,7 +173,7 @@ export default function HomeContent() {
                         <div className="space-y-2">
                             <h3 className="text-xl font-bold text-zinc-900">What is an R&D audit?</h3>
                             <p className="text-zinc-950 font-bold leading-relaxed">
-                                An R&D audit is a forensic review of engineering spend that surfaces hidden capital risks — technical debt, maintenance costs reported as innovation, and AI economics that aren't being tracked. Unlike consulting, an audit doesn't optimize; it verifies what's actually true.
+                                An R&D audit is a forensic review of engineering spend that surfaces hidden capital risks  -  technical debt, maintenance costs reported as innovation, and AI economics that aren't being tracked. Unlike consulting, an audit doesn't optimize; it verifies what's actually true.
                             </p>
                         </div>
                         <div className="space-y-2">
@@ -187,7 +187,7 @@ export default function HomeContent() {
                         <div className="space-y-2">
                             <h3 className="text-xl font-bold text-zinc-900">What's the difference between consulting and auditing?</h3>
                             <p className="text-zinc-950 font-bold leading-relaxed">
-                                Consulting asks "how can we improve?" Auditing asks "what's actually true?" Consultants optimize. Auditors verify. An R&D audit surfaces the facts — the real maintenance ratio, the true technical debt liability, the actual AI unit economics — without assuming the current approach is correct.
+                                Consulting asks "how can we improve?" Auditing asks "what's actually true?" Consultants optimize. Auditors verify. An R&D audit surfaces the facts  -  the real maintenance ratio, the true technical debt liability, the actual AI unit economics  -  without assuming the current approach is correct.
                             </p>
                         </div>
                         <div className="space-y-2">

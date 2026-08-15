@@ -4,21 +4,21 @@ import PrincipalContent from '../components/principal-content';
 import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 
 export const metadata: Metadata = {
-    title: 'Richard Ewing & Strategy Diagnostics | Richard Ewing',
-    description: 'Richard Ewing provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Richard Ewing  -  Principal Profile',
+    description: 'Background, methodology, and published research of Richard Ewing, AI Economist and founder of Exogram.',
     keywords: principalKeywords,
     alternates: {
         canonical: 'https://www.richardewing.io/principal',
     },
     openGraph: {
-        title: 'Richard Ewing — AI Economist | Exogram',
+        title: 'Richard Ewing  -  AI Economist | Exogram',
         description: 'I identify AI hallucination debt, zombie infrastructure, and structural margin collapse before they become financial events. Founder of Exogram.',
         url: 'https://www.richardewing.io/principal',
         images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Richard Ewing — AI Economist (AI Economics Domain)',
+        title: 'Richard Ewing  -  AI Economist (AI Economics Domain)',
         description: 'Founder of Exogram. The AI Economist specializing in AI unit economics and R&D capital audits.',
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },
@@ -57,7 +57,7 @@ const personSchema = {
         "@type": "Organization",
         "name": "Exogram",
         "url": "https://exogram.ai",
-        "description": "Verification infrastructure for AI — the missing trust layer between models and applications"
+        "description": "Verification infrastructure for AI  -  the missing trust layer between models and applications"
     },
     "hasOccupation": [
         {

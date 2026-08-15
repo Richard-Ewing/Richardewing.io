@@ -131,7 +131,7 @@ export const exogramDocs: ExogramDoc[] = [
         category: 'Core Concepts',
         description: 'Limit the maximum operational and financial damage of a hijacked agent.',
         content: [
-            { type: 'p', text: 'When an agent goes off the rails—either through hallucination or adversarial attack—Blast Radius Containment ensures the maximum resulting damage is bounded.' },
+            { type: 'p', text: 'When an agent goes off the rails - either through hallucination or adversarial attack - Blast Radius Containment ensures the maximum resulting damage is bounded.' },
             { type: 'h2', text: 'Sandboxing' },
             { type: 'p', text: 'Agents run in isolated execution enclaves using Read-Only (RO) scopes by default. Write (RW) scopes are granted ephemerally through human-in-the-loop (HITL) overrides or strict EAAP verification sequences.' }
         ]

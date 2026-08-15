@@ -3,8 +3,8 @@ import { Suspense } from 'react';
 import CommandCenter from './content';
 
 export const metadata: Metadata = {
-    title: 'Command Center & Strategy Diagnostics | Richard Ewing',
-    description: 'Command Center provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Executive Command Center',
+    description: 'Unified dashboard for tracking client diagnostic pipelines, research engagement milestones, and telemetry.',
     robots: { index: false, follow: false },
 };
 

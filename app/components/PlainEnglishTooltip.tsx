@@ -9,7 +9,7 @@ interface PlainEnglishTooltipProps {
 }
 
 const DICTIONARY: Record<string, string> = {
-  'R&D Capital Audit': 'A forensic review of where your engineering budget actually goes—measured in dollars, not story points.',
+  'R&D Capital Audit': 'A forensic review of where your engineering budget actually goes - measured in dollars, not story points.',
   'Technical Insolvency Date': 'The exact date your tech debt maintenance costs outpace your new feature development budget.',
   'Product Debt Index': 'A financial scorecard quantifying interest paid on past architectural decisions.',
   'Product Debt Index (PDI)': 'A financial scorecard quantifying interest paid on past architectural decisions.',

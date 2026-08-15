@@ -244,7 +244,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionSlug: 'dependency-hell',
                     questionHeadline: 'What is Dependency Hell and how much does it cost in enterprise software?',
                     answerHtml: `
-                        <p><strong>Dependency Hell</strong> occurs when an application's required libraries, microservices, or external packages form a brittle, deeply nested web of conflicting versions. In enterprise environments, this isn't just an annoyance for developers—it's a critical bottleneck that actively drains capitalized engineering hours (CapEx) and brings product velocity to a violent halt.</p>
+                        <p><strong>Dependency Hell</strong> occurs when an application's required libraries, microservices, or external packages form a brittle, deeply nested web of conflicting versions. In enterprise environments, this isn't just an annoyance for developers - it's a critical bottleneck that actively drains capitalized engineering hours (CapEx) and brings product velocity to a violent halt.</p>
                         
                         <h3 class="text-xl font-bold mt-8 mb-4">The Compounding Cost of Hell</h3>
                         <p>When an engineer attempts to update a single security patch but is blocked because three other internal services rely on the deprecated version, delivery stops. Instead of shipping features, highly paid engineers spend days forcibly resolving transitive dependency conflicts.</p>
@@ -330,7 +330,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <p>The "CTO Agent Delusion" is a dangerous new executive belief that probabilistic AI agents (like Devin or AutoDev) can completely replace deterministic QA and engineering teams. This is driven by hype, fundamentally misunderstanding the difference between generating code and architecting reliable systems.</p>
                         
                         <h3 class="text-xl font-bold mt-8 mb-4">The Fragility of Probabilistic Code</h3>
-                        <p>AI agents are highly proficient at generating raw text (code) that passes localized tests. However, they lack "Codebase Intimacy"—the deep, contextual understanding of your system's edge cases, deployment pipelines, and business logic constraints. When you replace engineers with agents, you are replacing deterministic problem solvers with a probabilistic text generator.</p>
+                        <p>AI agents are highly proficient at generating raw text (code) that passes localized tests. However, they lack "Codebase Intimacy" - the deep, contextual understanding of your system's edge cases, deployment pipelines, and business logic constraints. When you replace engineers with agents, you are replacing deterministic problem solvers with a probabilistic text generator.</p>
                         
                         <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
                             <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
@@ -508,7 +508,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionSlug: 'cost-of-legacy-code-vs-rewrite',
                     questionHeadline: 'What is the true cost of maintaining legacy code vs rewriting from scratch?',
                     answerHtml: `
-                        <p>The "Second System Effect" is the silent killer of enterprise software companies. While engineering teams almost universally advocate for greenfield rewrites—citing brittle legacy code and developer misery—the true financial devastation of a rewrite is the <strong>Opportunity Cost of Stalled Features</strong>.</p>
+                        <p>The "Second System Effect" is the silent killer of enterprise software companies. While engineering teams almost universally advocate for greenfield rewrites - citing brittle legacy code and developer misery - the true financial devastation of a rewrite is the <strong>Opportunity Cost of Stalled Features</strong>.</p>
                         
                         <h3 class="text-xl font-bold mt-8 mb-4">The Rewrite Fallacy</h3>
                         <p>When a CTO authorizes a "v2.0 rewrite from scratch," they are implicitly agreeing to halt or severely bottleneck net-new revenue-generating features on the existing platform. If an engineering organization spends 18 months rebuilding the core infrastructure, you must calculate the exact Net Revenue Retention (NRR) you will bleed to agile competitors executing against modern customer demands during that dark period. A massive rewrite often equates to giving your market share away for free.</p>
@@ -628,7 +628,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
                         <ul class="list-disc pl-6 space-y-2 mb-6">
                             <li><strong>Day 1-30:</strong> Measure system complexity explicitly. Deploy static analysis (e.g., Code Climate) to identify the specific 5% of files that are mutated most frequently and have the highest "cyclomatic complexity."</li>
-                            <li><strong>Day 31-60:</strong> Institute a mandatory 20% "Platform Surcharge"—meaning 20% of all sprint points are inherently ring-fenced for paying down technical debt in those toxic files.</li>
+                            <li><strong>Day 31-60:</strong> Institute a mandatory 20% "Platform Surcharge" - meaning 20% of all sprint points are inherently ring-fenced for paying down technical debt in those toxic files.</li>
                             <li><strong>Day 61-90:</strong> Implement "The Strangler Pattern" on the most crystallized component. Wrap it in a clean API facade, allowing new development to function normally while you slowly rewrite the internal organs to reverse the entropy.</li>
                         </ul>
 
@@ -700,7 +700,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <p>The "Build vs. Rent" decision for AI infrastructure is the single most consequential financial lever an enterprise CEO will pull this decade. The default strategy of infinitely renting foundational intelligence (via OpenAI or Anthropic APIs) fundamentally breaks traditional SaaS economics, replacing high fixed-margin software with a variable-cost commodity tollbooth.</p>
                         
                         <h3 class="text-xl font-bold mt-8 mb-4">The Build vs. Rent Margin Tipping Point</h3>
-                        <p>Renting APIs (OpEx) optimizes for <em>Speed to Market</em> and requires zero upfront capital. However, as your product scales, your inference costs scale perfectly linearly with your revenue. Owning infrastructure (CapEx)—such as buying NVIDIA GPUs and fine-tuning open-source models like Llama-3—requires massive upfront capital but flattens your ongoing inference costs, allowing Gross Margins to actually expand as volume grows.</p>
+                        <p>Renting APIs (OpEx) optimizes for <em>Speed to Market</em> and requires zero upfront capital. However, as your product scales, your inference costs scale perfectly linearly with your revenue. Owning infrastructure (CapEx) - such as buying NVIDIA GPUs and fine-tuning open-source models like Llama-3 - requires massive upfront capital but flattens your ongoing inference costs, allowing Gross Margins to actually expand as volume grows.</p>
                         
                         <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
                             <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
@@ -916,7 +916,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionSlug: 'retrieval-vs-behavioral-synthesis',
                     questionHeadline: 'Why does a RAG model that retrieves perfectly still fail to replicate human voice and behavior?',
                     answerHtml: `
-                        <p>A foundational error Product Managers make is conflating <strong>Semantic Retrieval</strong> with <strong>Behavioral Synthesis</strong>. When you dump 100 pages of a user's past writing into an LLM's context window, the model successfully retrieves the <em>facts</em>, but it inherently averages out the <em>tone</em> to match its RLHF (Reinforcement Learning from Human Feedback) training base—defaulting to a generic, corporate "AI voice."</p>
+                        <p>A foundational error Product Managers make is conflating <strong>Semantic Retrieval</strong> with <strong>Behavioral Synthesis</strong>. When you dump 100 pages of a user's past writing into an LLM's context window, the model successfully retrieves the <em>facts</em>, but it inherently averages out the <em>tone</em> to match its RLHF (Reinforcement Learning from Human Feedback) training base - defaulting to a generic, corporate "AI voice."</p>
                         
                         <h3 class="text-xl font-bold mt-8 mb-4">The Context Flattening Effect</h3>
                         <p>LLMs are trained to be helpful, harmless, and generic. If you provide a highly aggressive, uniquely formatted sales email in the context window and ask the model to "reply like this," the model's base safety alignment will often override the aggressive tone, "flattening" the output into polite boilerplate. RAG solves for data access, it does not solve for personality.</p>
@@ -1104,7 +1104,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionSlug: 'what-is-mlops-infrastructure-cost',
                     questionHeadline: 'What is MLOps and how do you calculate the infrastructure cost of Machine Learning Operations?',
                     answerHtml: `
-                        <p>Machine Learning Operations (MLOps) is the discipline of treating AI models like engineered software—establishing CI/CD pipelines, version control, and regression testing specifically for neural weights and prompts. Without MLOps, an AI prototype will immediately unravel in production due to model drift.</p>
+                        <p>Machine Learning Operations (MLOps) is the discipline of treating AI models like engineered software - establishing CI/CD pipelines, version control, and regression testing specifically for neural weights and prompts. Without MLOps, an AI prototype will immediately unravel in production due to model drift.</p>
                         
                         <h3 class="text-xl font-bold mt-8 mb-4">The Hidden OpEx of MLOps</h3>
                         <p>Platform Engineers are repeatedly blindsided by the compounding infrastructure costs of deploying models. You are not just paying for inference duration.</p>
@@ -1202,7 +1202,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'code-smell-engineering-manager',
                     questionHeadline: 'How should an engineering manager translate code smells into organizational risk metrics?',
-                    answerHtml: `<p>A "Code Smell" is a surface indication that usually corresponds to a deeper problem in the system. For an Engineering Manager, these aren't just technical issues—they are organizational symptoms indicating process failures, misaligned incentives, or severe skill gaps.</p>
+                    answerHtml: `<p>A "Code Smell" is a surface indication that usually corresponds to a deeper problem in the system. For an Engineering Manager, these aren't just technical issues - they are organizational symptoms indicating process failures, misaligned incentives, or severe skill gaps.</p>
         <h3 class="text-xl font-bold mt-8 mb-4">The Cultural Translation of Code Smells</h3>
         <p>When an engineer writes a 5,000-line "God Class," it doesn't just mean they don't understand object-oriented programming. It usually means the team lacks architectural oversight, code reviews are being rubber-stamped to meet artificial deadlines, or the feature requirements were changed 10 times during the sprint.</p>
         <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
@@ -1276,7 +1276,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionSlug: 'measuring-developer-productivity-space-dora',
                     questionHeadline: 'How to measure developer productivity without using lines of code (SPACE vs DORA)?',
                     answerHtml: `
-                        <p>Attempting to measure software engineering productivity using traditional industrial metrics—like tracking Lines of Code (LOC) or raw ticket volume—is the fastest way to destroy engineering culture and incentivize toxic coding practices. Modern engineering leaders must build telemetry that balances quantitative pipeline velocity with qualitative human friction.</p>
+                        <p>Attempting to measure software engineering productivity using traditional industrial metrics - like tracking Lines of Code (LOC) or raw ticket volume - is the fastest way to destroy engineering culture and incentivize toxic coding practices. Modern engineering leaders must build telemetry that balances quantitative pipeline velocity with qualitative human friction.</p>
                         
                         <h3 class="text-xl font-bold mt-8 mb-4">The Pipeline Efficiency: DORA Metrics</h3>
                         <p>Developed by Google's DevOps Research team, DORA metrics are the gold standard for measuring operational delivery. They track <em>Deployment Frequency, Lead Time for Changes, Mean Time to Recovery (MTTR), and Change Failure Rate</em>. DORA doesn't track developer output; it tracks how efficiently your infrastructure allows developers to push value to the customer without breaking the system.</p>
@@ -1393,7 +1393,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <p>A "code smell" is not a crash or an outright bug; it is a surface-level symptom indicating a deeper architectural rot within the codebase. While junior developers view code smells as aesthetic annoyances, elite Engineering Managers view them as <strong>Leading Indicators of Margin Decay</strong>.</p>
                         
                         <h3 class="text-xl font-bold mt-8 mb-4">The P&L Impact of "Smelly" Code</h3>
-                        <p>When code exhibits severe smells—such as Massive God Classes, Deeply Nested Conditionals, or Duplicated Logic—it violently increases the <em>Cognitive Load</em> required to understand the system. High cognitive load directly increases the DORA "Lead Time for Changes." Features that should take 3 days begin taking 3 weeks simply because the codebase is too terrifying to navigate.</p>
+                        <p>When code exhibits severe smells - such as Massive God Classes, Deeply Nested Conditionals, or Duplicated Logic - it violently increases the <em>Cognitive Load</em> required to understand the system. High cognitive load directly increases the DORA "Lead Time for Changes." Features that should take 3 days begin taking 3 weeks simply because the codebase is too terrifying to navigate.</p>
                         
                         <div class="my-10 p-8 rounded-2xl bg-zinc-50 border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
                             <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
@@ -1417,7 +1417,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
                         <ul class="list-disc pl-6 space-y-2 mb-6">
                             <li><strong>Day 1-30:</strong> Instantiate strict automated linting rules (e.g., SonarQube, ESLint) that explicitly block CI/CD pipelines if cognitive complexity exceeds a baseline threshold.</li>
-                            <li><strong>Day 31-60:</strong> Formalize the "Boy Scout Rule"—mandate that any developer touching a file must leave it 10% cleaner than they found it, gradually reversing entropy natively within the sprint.</li>
+                            <li><strong>Day 31-60:</strong> Formalize the "Boy Scout Rule" - mandate that any developer touching a file must leave it 10% cleaner than they found it, gradually reversing entropy natively within the sprint.</li>
                             <li><strong>Day 61-90:</strong> Require architecture design reviews for any PRs that introduce new dependencies or massive class structures.</li>
                         </ul>
 
@@ -1557,11 +1557,11 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <ul class="list-disc pl-6 space-y-2 mb-6">
                             <li><strong>Day 1-30:</strong> Measure the "Meeting Tax." If your founding CTO is spending more than 40% of their week doing 1-on-1s, sprint planning, and performance management rather than coding or architecting, you are burning your most valuable IP asset.</li>
                             <li><strong>Day 31-60:</strong> Restructure the organizational chart. Formally bifurcate "Engineering Operations" (delivery, hiring, agile) from "System Architecture" (scale, data models, AI).</li>
-                            <li><strong>Day 61-90:</strong> Hire the VP of Engineering explicitly on a mandate of Operational Efficiency. Their KPIs should be entirely tied to DORA metrics, retention, and sprint completion accuracy—not lines of code.</li>
+                            <li><strong>Day 61-90:</strong> Hire the VP of Engineering explicitly on a mandate of Operational Efficiency. Their KPIs should be entirely tied to DORA metrics, retention, and sprint completion accuracy - not lines of code.</li>
                         </ul>
 
                         <h3 class="text-xl font-bold mt-8 mb-4">The Scaling Heuristic</h3>
-                        <p>If your startup is losing market share because competitors are leveraging new technologies you don't understand, you have a CTO problem. However, if your codebase is a mess, features that should take 2 weeks are taking 3 months, developers are consistently missing deadlines, and departmental coordination is chaotic—you do not need a visionary CTO. You need a ruthless, operationally grounded VP of Engineering to establish cadence and enforce accountability.</p>
+                        <p>If your startup is losing market share because competitors are leveraging new technologies you don't understand, you have a CTO problem. However, if your codebase is a mess, features that should take 2 weeks are taking 3 months, developers are consistently missing deadlines, and departmental coordination is chaotic - you do not need a visionary CTO. You need a ruthless, operationally grounded VP of Engineering to establish cadence and enforce accountability.</p>
                     `,
                     recommendedProductId: 'gut_check',
                     upsellHeadline: 'Need to diagnose your leadership gap? Let\'s talk.'
@@ -1593,7 +1593,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionSlug: 'hard-vs-soft-ai-roi',
                     questionHeadline: 'Hard vs Soft AI ROI: Why Developer Productivity is a Trap',
                     answerHtml: `
-                        <p>When engineering leaders pitch AI initiatives to the Board, they typically rely on "Soft ROI" metrics—claiming that AI tools will "save developers 30% of their time." However, if headcount doesn't decrease and product velocity doesn't increase, that 30% time savings does not translate into <strong>Hard ROI</strong> (P&L impact).</p>
+                        <p>When engineering leaders pitch AI initiatives to the Board, they typically rely on "Soft ROI" metrics - claiming that AI tools will "save developers 30% of their time." However, if headcount doesn't decrease and product velocity doesn't increase, that 30% time savings does not translate into <strong>Hard ROI</strong> (P&L impact).</p>
                         
                         <h3 class="text-xl font-bold mt-8 mb-4">The Soft ROI Liability</h3>
                         <p>Boards are increasingly rejecting AI capital requests based purely on "productivity." To secure funding, engineering leaders must shift to Hard ROI: attributing AI adoption directly to decreased cloud costs, deferred headcount hires, or demonstrably faster time-to-market for revenue-generating features.</p>
@@ -1668,7 +1668,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
             <li><strong>The Post-Mortem Tax:</strong> The hours spent writing the RCA (Root Cause Analysis), meeting with executives, and deploying the preventative fix.</li>
             <li><strong>The Opportunity Cost:</strong> The features that were <em>not</em> built because the engineering team was busy fighting fires and stabilizing the system.</li>
         </ul>
-        <p>When you fully burden an incident, a 2-hour outage for a mid-market SaaS company rarely costs $10,000—it often exceeds $150,000 in diverted organizational energy.</p>`,
+        <p>When you fully burden an incident, a 2-hour outage for a mid-market SaaS company rarely costs $10,000 - it often exceeds $150,000 in diverted organizational energy.</p>`,
                     recommendedProductId: 'module_financials',
                     upsellHeadline: 'Master technical financial modeling.'
                 },
@@ -1791,7 +1791,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
                         <ul class="list-disc pl-6 space-y-2 mb-6">
                             <li><strong>Day 1-30:</strong> Bridge the Finance-Engineering gap. The CFO must sit down with the VP of Engineering and audit exactly how Jira tags are used. Redefine ticket types distinctly into "Net-New Development" vs "Maintenance/Bug".</li>
-                            <li><strong>Day 31-60:</strong> Institute automated Time Tracking. Do not ask engineers to manually submit timesheets—they will rebel. Connect Git commit hooks to Jira epics, automatically allocating payroll capitalization based on the volume of code pushed to specific capitalized project tags.</li>
+                            <li><strong>Day 31-60:</strong> Institute automated Time Tracking. Do not ask engineers to manually submit timesheets - they will rebel. Connect Git commit hooks to Jira epics, automatically allocating payroll capitalization based on the volume of code pushed to specific capitalized project tags.</li>
                             <li><strong>Day 61-90:</strong> Run the retroactive audit. Work with your auditors to mathematically re-categorize the last 12 months of development using the new rigid tagging structure, driving an immediate positive adjustment to your current balance sheet.</li>
                         </ul>
 
@@ -1847,7 +1847,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'integration-risk',
                     questionHeadline: 'How do you mitigate external integration risk before launching a new product?',
-                    answerHtml: `<p>Integration Risk is the probability that a product feature or entire application will fail—not because its internal logic is flawed, but because it cannot successfully communicate with external systems, legacy databases, or third-party APIs.</p>
+                    answerHtml: `<p>Integration Risk is the probability that a product feature or entire application will fail - not because its internal logic is flawed, but because it cannot successfully communicate with external systems, legacy databases, or third-party APIs.</p>
         <h3 class="text-xl font-bold mt-8 mb-4">The Late-Stage Discovery Tax</h3>
         <p>Most product managers scope the UI and internal business logic extensively, but leave "API integration" as a black box for the final sprint. This is catastrophic. Finding out in week 11 of a 12-week project that a critical third-party API rate-limits you, or doesn't return the necessary payload, means the entire feature is scrapped and the CapEx is wasted.</p>
         <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
@@ -2161,7 +2161,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         </div>
 
                         <h3 class="text-xl font-bold mt-8 mb-4">The Executive Case Study</h3>
-                        <p>A B2B video-hosting platform's product manager enthusiastically pushed for an "Automated AI Transcription" feature to compete with incumbents. It was a massive hit—adoption reached 80% of their user base in month one. However, the PM had never modeled the inference cost of Whisper AI running across 10 million minutes of uploaded video. The feature immediately triggered $400,000/month in deep-learning infrastructure costs. Because the feature was offered on the "Free Tier," it generated zero revenue. A massively "successful" product launch nearly bankrupted the company because the PM operated without P&L accountability.</p>
+                        <p>A B2B video-hosting platform's product manager enthusiastically pushed for an "Automated AI Transcription" feature to compete with incumbents. It was a massive hit - adoption reached 80% of their user base in month one. However, the PM had never modeled the inference cost of Whisper AI running across 10 million minutes of uploaded video. The feature immediately triggered $400,000/month in deep-learning infrastructure costs. Because the feature was offered on the "Free Tier," it generated zero revenue. A massively "successful" product launch nearly bankrupted the company because the PM operated without P&L accountability.</p>
 
                         <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
                         <ul class="list-disc pl-6 space-y-2 mb-6">

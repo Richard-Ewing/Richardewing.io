@@ -919,7 +919,7 @@ Migrate from Heroku to AWS"
                     diagnosticName="Product Debt Index"
                     frameworkSlug="technical-insolvency-date"
                     frameworkName="Technical Insolvency Date"
-                    frameworkDescription="The PDI measures your velocity towards Technical Insolvency—the quarter when maintenance costs consume 100% of engineering capacity and feature development drops to zero."
+                    frameworkDescription="The PDI measures your velocity towards Technical Insolvency - the quarter when maintenance costs consume 100% of engineering capacity and feature development drops to zero."
                     exogramRisk="Execution Variance"
                     exogramDescription="Stop relying on subjective engineering estimates. Exogram forces runtime observability, catching architectural drift before it turns into unmanageable technical debt."
                 />

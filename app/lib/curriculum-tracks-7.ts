@@ -2,7 +2,7 @@ import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks7Modules: Record<string, CurriculumModule> = {};
 
-const t7 = 'Track 7 — Security & Compliance Economics';
+const t7 = 'Track 7  -  Security & Compliance Economics';
 
 // ═══════════════════ TRACK 7: SECURITY & COMPLIANCE ECONOMICS ═══════════════════
 
@@ -203,7 +203,7 @@ tracks7Modules['security-economics/7-5'] = m('7-5', 'Application Security Invest
             [
                 'A compliance-grade penetration test (Pen Test) costs $15k to $30k and provides a point-in-time snapshot. It is essentially a rapidly depreciating asset; the moment new code is pushed the next day, the test is outdated.',
                 'However, Pen Tests are mandatory for achieving SOC 2, closing enterprise deals, and satisfying cyber insurance underwriters. Therefore, a Pen Test is a compliance mandate first, and a security diagnostic second.',
-                'To maximize ROI from a Pen Test, force the consulting firm into "Purple Teaming" — where they actively collaborate with your internal defenders showing them *how* they breach the systems, rather than just throwing a PDF report over the wall.'
+                'To maximize ROI from a Pen Test, force the consulting firm into "Purple Teaming"  -  where they actively collaborate with your internal defenders showing them *how* they breach the systems, rather than just throwing a PDF report over the wall.'
             ],
             [
                 d('Point-in-Time Depreciation', 'The loss of validity of a pen test report as new code is shipped.', 'Depreciates fully within 6-12 months'),
@@ -288,7 +288,7 @@ tracks7Modules['security-economics/7-7'] = m('7-7', 'Cloud Security Economics', 
     ['Audit CSPM ROI', 'Manage encryption key costs', 'Architect isolated VPCs'], [
         l('Cloud Security Posture Management (CSPM)', 
             [
-                'The dominant vector for cloud breaches is not advanced hacking—it is misconfiguration (e.g., open S3 buckets, exposed RDS instances). Cloud environments are too massive to audit manually.',
+                'The dominant vector for cloud breaches is not advanced hacking - it is misconfiguration (e.g., open S3 buckets, exposed RDS instances). Cloud environments are too massive to audit manually.',
                 'A CSPM tool constantly scans the AWS/GCP fabric and compares configurations against CIS benchmarks or SOC 2 frameworks. The economic value is simple: it systematically eliminates the unforced errors that lead to catastrophic data leaks.',
                 'However, CSPMs generate thousands of compliance alerts. If left untuned, they paralyze the DevOps team with "low severity" infrastructure noise. CSPMs must be gated to block builds, not just generate PDF reports.'
             ],

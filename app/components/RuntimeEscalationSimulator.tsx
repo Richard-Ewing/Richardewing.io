@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * RuntimeEscalationSimulator — Interactive visualization of AI failure cascades
+ * RuntimeEscalationSimulator  -  Interactive visualization of AI failure cascades
  * 
  * Shows how a single governance gap (context drift) escalates through:
  * Context Drift → Retry Inflation → Verification Collapse → Margin Compression → Runtime Intervention
@@ -9,7 +9,7 @@
  * Each stage shows: token burn, latency, confidence, cost
  * Auto-plays on scroll, with manual stage controls.
  * 
- * This is the "operationally undeniable" component — makes visitors FEEL the danger.
+ * This is the "operationally undeniable" component  -  makes visitors FEEL the danger.
  * 
  * Grounded in real practitioner data:
  * - Reddit: retry loops burning $47K overnight

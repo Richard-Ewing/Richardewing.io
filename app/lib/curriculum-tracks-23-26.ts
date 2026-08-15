@@ -2,10 +2,10 @@ import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks23to26Modules: Record<string, CurriculumModule> = {};
 
-const t23 = 'Track 23 — Neural-Symbolic AI & System 2 Reasoning';
-const t24 = 'Track 24 — Post-Quantum Security & Threat Modeling';
-const t25 = 'Track 25 — Bio-Computational AI Integration';
-const t26 = 'Track 26 — Synthetic Data Economics';
+const t23 = 'Track 23  -  Neural-Symbolic AI & System 2 Reasoning';
+const t24 = 'Track 24  -  Post-Quantum Security & Threat Modeling';
+const t25 = 'Track 25  -  Bio-Computational AI Integration';
+const t26 = 'Track 26  -  Synthetic Data Economics';
 
 // ═══════════════════ TRACK 23: SYSTEM 2 REASONING (10 Modules) ═══════════════════
 

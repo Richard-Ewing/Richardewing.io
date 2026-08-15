@@ -11,7 +11,7 @@ import AsSeenInBar from '@/components/social-proof/AsSeenInBar';
 import DirectAnswerBlock from '@/components/DirectAnswerBlock';
 
 export const metadata: Metadata = {
-  title: 'AI Economist - Enterprise AI Audits & Cost Governance | Richard Ewing',
+  title: 'AI Economist & Enterprise R&D Capital Audits',
   description: 'Richard Ewing helps organizations measure, govern, and improve the economics of enterprise AI. 19 frameworks, 25 diagnostic tools, and advisory services for CTOs, CFOs, and PE operating partners.',
   alternates: {
     canonical: 'https://www.richardewing.io',

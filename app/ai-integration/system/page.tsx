@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { Package, CheckCircle, ArrowRight, BookOpen, FileText, Brain, Target, Calculator, ClipboardList, MessageSquare, BarChart3, Settings, Layers, Zap, Shield } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'AI Integration System Details & Strategy Diagnostics | Richard Ewing',
-    description: 'AI Integration System Details provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Enterprise AI Integration System Spec',
+    description: 'Technical specification of the 4-layer AI integration system for secure, deterministic enterprise deployment.',
     keywords: ['AI integration system', 'AI playbook for business', 'AI implementation guide', 'how to implement AI step by step', 'AI for small business guide', 'AI strategy template', 'AI readiness template', 'AI roadmap template', 'AI prompts for business', 'AI ROI calculator', 'AI tool selection guide', 'AI adoption playbook', 'DIY AI strategy', 'AI integration toolkit'],
     openGraph: {
         title: 'The AI Integration System - Self-Serve AI Playbook for Business',

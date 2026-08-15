@@ -4,8 +4,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { AlertTriangle, DollarSign, Clock, Shield, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'AI Runtime Incident Case Studi & Strategy Diagnostics | Richard Ewing',
-    description: 'AI Runtime Incident Case Studi provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'AI Runtime Incident Post-Mortems',
+    description: 'Detailed dollar-denominated case studies analyzing production AI failures and subsequent architectural remediation.',
     keywords: ['Claude Code failures', 'agentic runtime incidents', 'AI coding agent failures', 'context rot incident', 'retry inflation cost', 'MCP security breach', 'Cursor file corruption', 'AI agent cost overrun'],
     openGraph: {
         title: 'Runtime Incident Reports - Real Agentic Failures',

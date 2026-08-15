@@ -7,8 +7,8 @@ import FAQItem from '@/app/components/FAQItem';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 export const metadata: Metadata = {
-    title: 'Research Evolution Timeline AI Governance | Richard Ewing',
-    description: 'Research Evolution Timeline provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'AI Governance Research Timeline',
+    description: 'Chronological research evolution timeline covering AI unit economics, deterministic governance, and runtime cost control architectures.',
     alternates: {
         canonical: 'https://www.richardewing.io/research',
     },

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import ResearchCorpusExplorer from '@/app/components/ResearchCorpusExplorer';
 
 export const metadata: Metadata = {
-  title: 'Research Publications & Published Works | Richard Ewing',
-  description: 'Over 100 published works on engineering economics, AI capital management, and runtime governance. Sourced from CIO.com, HackerNoon, and Built In.',
+  title: 'Research Publications & Published Works',
+  description: 'Over 100 published works on engineering economics, AI capital management, and runtime governance across CIO.com, HackerNoon, and Built In.',
   alternates: {
     canonical: 'https://www.richardewing.io/research/publications',
   },

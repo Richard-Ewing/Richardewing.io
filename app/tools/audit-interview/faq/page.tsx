@@ -3,15 +3,15 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Audit Interview FAQ & Strategy Diagnostics | Richard Ewing',
-    description: 'Audit Interview FAQ provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Audit Interview Protocol FAQ',
+    description: 'Answers to common questions regarding the hiring protocol that tests technical judgment over probabilistic syntax.',
     keywords: ['audit interview tool', 'AI technical interview', 'engineering assessment', 'judgment-based interview'],
     alternates: { canonical: 'https://www.richardewing.io/tools/audit-interview/faq' },
     openGraph: { title: 'Audit Interview FAQ', description: 'AI-powered engineering assessment that tests judgment.', url: 'https://www.richardewing.io/tools/audit-interview/faq', type: 'article' },
 };
 
 const faqs = [
-    { q: 'What is the Audit Interview tool?', a: 'The Audit Interview is an AI-powered technical assessment tool that evaluates engineering candidates on judgment, decision-making, and engineering economics understanding — not just coding syntax. It presents real-world scenarios (architecture decisions, technical debt tradeoffs, build vs buy) and evaluates the candidate\u0027s reasoning quality.', color: 'cyan' },
+    { q: 'What is the Audit Interview tool?', a: 'The Audit Interview is an AI-powered technical assessment tool that evaluates engineering candidates on judgment, decision-making, and engineering economics understanding  -  not just coding syntax. It presents real-world scenarios (architecture decisions, technical debt tradeoffs, build vs buy) and evaluates the candidate\u0027s reasoning quality.', color: 'cyan' },
     { q: 'How is the Audit Interview different from LeetCode?', a: 'Traditional coding interviews (LeetCode, HackerRank) test algorithm knowledge and syntax recall. The Audit Interview tests what actually matters in senior engineering roles: architectural judgment, tradeoff analysis, stakeholder communication, and economic reasoning. Research shows traditional interviews have a 50% false negative rate for senior candidates.', color: 'violet' },
     { q: 'What scenarios does the Audit Interview cover?', a: 'The Audit Interview covers: technical debt assessment and prioritization, build vs buy decision analysis, architecture scaling decisions, team and process optimization, cost-benefit analysis for technology investments, and incident response and post-mortem analysis. Each scenario is calibrated to the declared seniority level.', color: 'emerald' },
     { q: 'How is the assessment scored?', a: 'Candidates are scored across multiple dimensions: Technical Depth (understanding of concepts), Economic Reasoning (ability to translate technical decisions into business impact), Communication (clarity and structure of responses), and Judgment Quality (ability to identify tradeoffs and make defensible decisions). An overall composite score is provided with detailed per-dimension feedback.', color: 'amber' },

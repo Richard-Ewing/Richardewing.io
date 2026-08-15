@@ -30,7 +30,7 @@ tracks5and6Modules['product-economics/5-1'] = m('5-1', 'Unit Economics & Cloud C
         l('Per-Tenant Unit Economics', 
             [
                 'In multi-tenant SaaS architectures, calculating the cost per specific customer is notoriously difficult because compute and memory are pooled.',
-                'Without per-tenant unit economics, you cannot identify "toxic tenants"—customers who pay $500/month but consume $800/month in database IOPS.',
+                'Without per-tenant unit economics, you cannot identify "toxic tenants" - customers who pay $500/month but consume $800/month in database IOPS.',
                 'You must allocate shared costs mathematically using a proportional heuristic: usually total requests, storage footprint, or active user sessions.'
             ],
             [

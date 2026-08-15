@@ -2,11 +2,11 @@ import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks18to22Modules: Record<string, CurriculumModule> = {};
 
-const t18 = 'Track 18 — The Fullstack Career';
-const t19 = 'Track 19 — Agile & Delivery Economics';
-const t20 = 'Track 20 — System Design & Architecture';
-const t21 = 'Track 21 — Traditional Product Management';
-const t22 = 'Track 22 — Engineering Culture & Motivation';
+const t18 = 'Track 18  -  The Fullstack Career';
+const t19 = 'Track 19  -  Agile & Delivery Economics';
+const t20 = 'Track 20  -  System Design & Architecture';
+const t21 = 'Track 21  -  Traditional Product Management';
+const t22 = 'Track 22  -  Engineering Culture & Motivation';
 
 // ═══════════════════ TRACK 18: THE FULLSTACK CAREER (10 Modules) ═══════════════════
 

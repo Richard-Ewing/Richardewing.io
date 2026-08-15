@@ -6,8 +6,8 @@ import { currentUser } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
 
 export const metadata: Metadata = {
-    title: 'Download AI Integration System & Strategy Diagnostics | Richard Ewing',
-    description: 'Download AI Integration System provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Download AI Integration System Assets',
+    description: 'Download complete deployment manifests, policy schemas, and implementation guides for enterprise AI integration.',
     robots: { index: false, follow: false },
 };
 

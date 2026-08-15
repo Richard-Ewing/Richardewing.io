@@ -1,19 +1,19 @@
 import { GlossaryTerm } from '../types';
 
 // =============================================================================
-// NINTH PASS: Trending terms — vibe coding, SaaS finance, developer productivity
+// NINTH PASS: Trending terms  -  vibe coding, SaaS finance, developer productivity
 // =============================================================================
 
 export const trendingTermsBatch2: GlossaryTerm[] = [
     {
         title: 'Vibe Coding',
         slug: 'vibe-coding',
-        definition: `Vibe Coding is an AI-assisted approach to software development where developers interact with large language models (LLMs) to generate and refine code using natural language commands rather than writing code manually.\n\nCoined by Andrej Karpathy in 2025, vibe coding describes an improvisational, prompt-to-code flow where the developer describes what they want, the AI generates code, and the developer accepts, rejects, or iterates on the output.\n\n**Key characteristics:**\n- Natural language prompts replace manual coding\n- AI generates significant portions of the codebase\n- Developer focuses on direction and verification, not syntax\n- Rapid prototyping becomes dramatically faster\n\n**The risk:** Vibe-coded applications accumulate technical debt at unprecedented speed because the developer may not fully understand the generated code. This creates what Richard Ewing calls "AI Hallucination Debt" — errors embedded invisibly in AI-generated code.`,
+        definition: `Vibe Coding is an AI-assisted approach to software development where developers interact with large language models (LLMs) to generate and refine code using natural language commands rather than writing code manually.\n\nCoined by Andrej Karpathy in 2025, vibe coding describes an improvisational, prompt-to-code flow where the developer describes what they want, the AI generates code, and the developer accepts, rejects, or iterates on the output.\n\n**Key characteristics:**\n- Natural language prompts replace manual coding\n- AI generates significant portions of the codebase\n- Developer focuses on direction and verification, not syntax\n- Rapid prototyping becomes dramatically faster\n\n**The risk:** Vibe-coded applications accumulate technical debt at unprecedented speed because the developer may not fully understand the generated code. This creates what Richard Ewing calls "AI Hallucination Debt"  -  errors embedded invisibly in AI-generated code.`,
         whyItMatters: 'Vibe coding democratizes development but accelerates technical debt accumulation. The AI Economist perspective: code written faster without economic understanding creates debt faster. Verification skill (Audit Interview) becomes the scarce differentiator.',
         category: 'Engineering Management',
         relatedTerms: ['ai-technical-debt', 'ai-hallucination-debt', 'audit-interview-protocol', 'refactoring'],
         faqs: [
-            { question: 'Is vibe coding real software engineering?', answer: 'Vibe coding is a valid tool for prototyping and exploration. For production systems, it must be combined with verification, code review, and economic analysis — exactly what the Audit Interview Protocol tests.' },
+            { question: 'Is vibe coding real software engineering?', answer: 'Vibe coding is a valid tool for prototyping and exploration. For production systems, it must be combined with verification, code review, and economic analysis  -  exactly what the Audit Interview Protocol tests.' },
         ],
     },
     {
@@ -32,7 +32,7 @@ export const trendingTermsBatch2: GlossaryTerm[] = [
         title: 'Rule of 40',
         slug: 'rule-of-40',
         definition: `The Rule of 40 is a SaaS benchmark stating that a healthy company's combined revenue growth rate and profit margin (typically EBITDA margin) should equal or exceed 40%.\n\n**Formula:** Growth Rate (%) + Profit Margin (%) ≥ 40%\n\n**Examples:**\n- 30% growth + 10% margin = 40% ✅\n- 50% growth + -5% margin = 45% ✅\n- 15% growth + 10% margin = 25% ❌\n\nThe Rule of 40 allows comparison between high-growth, unprofitable companies and slower-growth, profitable ones. It is the standard benchmark used by public market investors, M&A analysts, and board members to evaluate SaaS business health.`,
-        whyItMatters: 'Companies that consistently exceed the Rule of 40 trade at higher valuation multiples. Technical debt directly erodes both sides of the equation — it slows growth (velocity impact) and compresses margins (maintenance cost).',
+        whyItMatters: 'Companies that consistently exceed the Rule of 40 trade at higher valuation multiples. Technical debt directly erodes both sides of the equation  -  it slows growth (velocity impact) and compresses margins (maintenance cost).',
         howToMeasure: 'Add your YoY revenue growth rate to your EBITDA margin percentage. 40+ is healthy; 50+ is elite.',
         category: 'SaaS Metrics & Finance',
         relatedTerms: ['arr', 'burn-multiple', 'gross-margin-preservation', 'net-revenue-retention'],
@@ -49,25 +49,25 @@ export const trendingTermsBatch2: GlossaryTerm[] = [
         category: 'SaaS Metrics & Finance',
         relatedTerms: ['arr', 'churn-rate', 'customer-lifetime-value', 'rule-of-40'],
         faqs: [
-            { question: 'Why is NRR more important than gross retention?', answer: 'NRR includes expansion revenue — it shows whether customers are spending MORE over time, not just whether they stay. A company with 90% gross retention but 130% NRR is healthier than one with 95% gross retention and 105% NRR.' },
+            { question: 'Why is NRR more important than gross retention?', answer: 'NRR includes expansion revenue  -  it shows whether customers are spending MORE over time, not just whether they stay. A company with 90% gross retention but 130% NRR is healthier than one with 95% gross retention and 105% NRR.' },
         ],
     },
     {
         title: 'Product-Led Growth (PLG)',
         slug: 'product-led-growth',
         definition: `Product-Led Growth (PLG) is a go-to-market strategy where the product itself is the primary driver of customer acquisition, conversion, and expansion. Users discover, try, and adopt the product before encountering a sales team.\n\n**Key characteristics:**\n- Free tier or freemium model\n- Self-serve onboarding\n- In-product upgrade prompts\n- Usage-based expansion triggers\n- Viral loops and sharing mechanics\n\n**Examples:** Slack (team invites), Figma (collaboration), Notion (templates), and Zoom (meeting links) all used PLG to achieve massive adoption.\n\nRichard Ewing's site practices PLG: free diagnostic tools (PDI, AUEB, Audit Interview) serve as the acquisition layer that drives advisory engagement.`,
-        whyItMatters: 'PLG companies have lower customer acquisition costs and faster adoption cycles. However, PLG creates a specific form of technical debt — every free tier user consumes infrastructure without revenue, making unit economics critical.',
+        whyItMatters: 'PLG companies have lower customer acquisition costs and faster adoption cycles. However, PLG creates a specific form of technical debt  -  every free tier user consumes infrastructure without revenue, making unit economics critical.',
         category: 'Growth & Marketing',
         relatedTerms: ['customer-acquisition-cost', 'north-star-metric', 'content-marketing', 'seo-for-saas'],
         faqs: [
-            { question: 'Is PLG replacing enterprise sales?', answer: 'PLG complements enterprise sales — it does not replace it. Most successful PLG companies layer sales on top of product-led acquisition. The product creates the pipeline; sales converts high-value accounts.' },
+            { question: 'Is PLG replacing enterprise sales?', answer: 'PLG complements enterprise sales  -  it does not replace it. Most successful PLG companies layer sales on top of product-led acquisition. The product creates the pipeline; sales converts high-value accounts.' },
         ],
     },
     {
         title: 'Developer Experience (DevEx)',
         slug: 'developer-experience', tier: 'pillar',
         definition: `Developer Experience (DevEx) is the holistic experience of software developers as they interact with tools, processes, systems, and organizational culture to accomplish their work.\n\n**DevEx encompasses:**\n- **Tooling:** IDE quality, CI/CD speed, debugging tools, documentation\n- **Process:** Code review speed, deployment frequency, approval bottlenecks\n- **Environment:** Build times, test reliability, environment provisioning speed\n- **Culture:** Autonomy, knowledge sharing, on-call burden, meeting load\n\nDevEx has become a critical investment area because it directly impacts developer productivity, retention, and code quality. Companies with strong DevEx report 2x faster delivery and 50% lower engineer turnover.`,
-        whyItMatters: 'Poor DevEx is a form of organizational technical debt. It compounds because frustrated developers write worse code, take longer to ship, and leave — creating knowledge loss and hiring costs that further degrade the system.',
+        whyItMatters: 'Poor DevEx is a form of organizational technical debt. It compounds because frustrated developers write worse code, take longer to ship, and leave  -  creating knowledge loss and hiring costs that further degrade the system.',
         howToMeasure: 'Survey-based metrics (DX Core 4), DORA metrics, build/deploy times, PR review cycle times, and engineer satisfaction scores.',
         category: 'Engineering Management',
         relatedTerms: ['engineering-management-role', 'dora-metrics', 'developer-velocity', 'team-topologies'],
@@ -103,19 +103,19 @@ export const trendingTermsBatch2: GlossaryTerm[] = [
         title: 'DORA Metrics',
         slug: 'dora-metrics', tier: 'pillar',
         definition: `DORA Metrics are the four key measures of software delivery performance identified by the DevOps Research and Assessment (DORA) team (now part of Google Cloud). They are the industry standard for measuring engineering team effectiveness.\n\n**The four DORA metrics:**\n1. **Deployment Frequency:** How often code is deployed to production\n2. **Lead Time for Changes:** Time from code commit to production\n3. **Change Failure Rate:** Percentage of deployments causing failures\n4. **Time to Restore Service:** How quickly teams recover from failures\n\n**Performance levels (2025):**\n- **Elite:** Deploy on-demand, < 1 hour lead time, < 5% failure rate, < 1 hour MTTR\n- **High:** Deploy daily-weekly, 1 day-1 week lead time, < 15% failure rate, < 1 day MTTR\n- **Low:** Deploy monthly+, 1-6 months lead time, > 30% failure rate, > 1 week MTTR`,
-        whyItMatters: 'DORA metrics are the operational evidence of technical debt impact. High technical debt directly degrades all four metrics — slower deployments, longer lead times, more failures, and slower recovery.',
+        whyItMatters: 'DORA metrics are the operational evidence of technical debt impact. High technical debt directly degrades all four metrics  -  slower deployments, longer lead times, more failures, and slower recovery.',
         howToMeasure: 'Track through CI/CD pipeline data, deployment logs, incident management systems, and source control metrics.',
         category: 'Engineering Management',
         relatedTerms: ['developer-velocity', 'change-failure-rate', 'continuous-deployment', 'developer-experience'],
         faqs: [
-            { question: 'Should DORA metrics be used for individual performance?', answer: 'No — DORA metrics measure team and organizational performance, not individual output. Using them for individual evaluation creates perverse incentives.' },
+            { question: 'Should DORA metrics be used for individual performance?', answer: 'No  -  DORA metrics measure team and organizational performance, not individual output. Using them for individual evaluation creates perverse incentives.' },
         ],
     },
     {
         title: 'AI Hallucination',
         slug: 'ai-hallucination',
-        definition: `An AI Hallucination is a response generated by an AI model that is factually incorrect, fabricated, or not grounded in the training data or provided context. The model generates confident, well-structured output that appears correct but contains invented facts, citations, or conclusions.\n\n**Types:**\n- **Factual hallucinations:** Incorrect statements presented as facts\n- **Citation hallucinations:** References to non-existent papers, URLs, or sources\n- **Reasoning hallucinations:** Logical conclusions based on incorrect premises\n- **Context hallucinations:** Answers that ignore or contradict provided context\n\nHallucinations are not bugs — they are inherent to how language models work. Models generate statistically likely text, not verified truth. This is why Exogram's Truth Ledger exists as verification infrastructure separate from generation.`,
-        whyItMatters: 'AI hallucinations create AI Hallucination Debt — errors embedded in AI-generated content, code, and decisions that propagate through systems and business processes. Unlike software bugs, hallucinations may not produce errors; they produce wrong answers that look right.',
+        definition: `An AI Hallucination is a response generated by an AI model that is factually incorrect, fabricated, or not grounded in the training data or provided context. The model generates confident, well-structured output that appears correct but contains invented facts, citations, or conclusions.\n\n**Types:**\n- **Factual hallucinations:** Incorrect statements presented as facts\n- **Citation hallucinations:** References to non-existent papers, URLs, or sources\n- **Reasoning hallucinations:** Logical conclusions based on incorrect premises\n- **Context hallucinations:** Answers that ignore or contradict provided context\n\nHallucinations are not bugs  -  they are inherent to how language models work. Models generate statistically likely text, not verified truth. This is why Exogram's Truth Ledger exists as verification infrastructure separate from generation.`,
+        whyItMatters: 'AI hallucinations create AI Hallucination Debt  -  errors embedded in AI-generated content, code, and decisions that propagate through systems and business processes. Unlike software bugs, hallucinations may not produce errors; they produce wrong answers that look right.',
         category: 'AI & Machine Learning',
         relatedTerms: ['ai-hallucination-debt', 'truth-ledger', 'ai-guardrails', 'rag-architecture'],
         faqs: [

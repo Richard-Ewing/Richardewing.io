@@ -193,7 +193,7 @@ export const COMBAT_SEO_MATRIX: CompetitorMapping[] = [
                 slug: 'workday-planning',
                 name: 'Workday Workforce Planning',
                 theirFocus: 'Linear head-count reduction and standard HR turnover metrics.',
-                ourAdvantage: 'Exogram models true Hyper-Leverage—where a single 10x architect weaponized with autonomous agents outperforms an entire traditional department, fundamentally rewriting unit economics.'
+                ourAdvantage: 'Exogram models true Hyper-Leverage - where a single 10x architect weaponized with autonomous agents outperforms an entire traditional department, fundamentally rewriting unit economics.'
             }
         ]
     }

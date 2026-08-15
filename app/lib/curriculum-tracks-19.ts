@@ -1,7 +1,7 @@
 import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks19Modules: Record<string, CurriculumModule> = {};
-const t19 = 'Track 19 — Agile & Delivery Economics';
+const t19 = 'Track 19  -  Agile & Delivery Economics';
 
 tracks19Modules['agile-economics/19-1'] = m('19-1', 'Story Point Dollar Value', 'Engineering cost metrics, sprint burn rate.', t19, 
     ['Convert points to dollars', 'Calculate sprint burn rate'], [
@@ -9,7 +9,7 @@ tracks19Modules['agile-economics/19-1'] = m('19-1', 'Story Point Dollar Value', 
             [
                 'Agile "Story Points" were invented to obfuscate time tracking, but they actively hide massive capital waste. Engineers estimate points relative to complexity, but CFOs pay payroll in absolute dollars. A purely technical abstraction shields engineering from financial accountability.', 
                 'If a highly-compensated squad burns $40,000 in payroll over a 2-week sprint and delivers 40 total points, then a single "point" strictly equals $1,000 of capital outlay.',
-                'Therefore, when a Product Manager drops a 5-point unvalidated "nice-to-have" feature into an active sprint, they are not assigning a minor task—they are executing a binding $5,000 corporate purchase order.'
+                'Therefore, when a Product Manager drops a 5-point unvalidated "nice-to-have" feature into an active sprint, they are not assigning a minor task - they are executing a binding $5,000 corporate purchase order.'
             ],
             [
                 d('Absolute Cost Per Point', 'Total Sprint Payroll Burn Rate divided by Average True Velocity.', 'Strictly Tracked Value'),
@@ -31,7 +31,7 @@ tracks19Modules['agile-economics/19-2'] = m('19-2', 'Cost of Agile Ceremonies', 
     ['Measure the cost of a 10-person daily standup', 'Transition to Async'], [
         l('The Crushing Standup Tax', 
             [
-                'A 30-minute daily standup may feel inconsequential, but scaled across 10 senior engineers over a calendar year, it destroys roughly $50,000 in unrecoverable raw payroll—excluding the infinitely higher penalty of mid-morning context switching.', 
+                'A 30-minute daily standup may feel inconsequential, but scaled across 10 senior engineers over a calendar year, it destroys roughly $50,000 in unrecoverable raw payroll - excluding the infinitely higher penalty of mid-morning context switching.', 
                 'Most standups devolve into unstructured status updates aimed entirely at soothing the anxiety of middle management, providing zero technical value to the actual developers.',
                 'High-performance teams default to ferocious asynchronous execution. Pushing status updates to a structured, async Slack bot frees up massive blocks of deep-work flow state, yielding substantial velocity gains.'
             ],
@@ -55,9 +55,9 @@ tracks19Modules['agile-economics/19-3'] = m('19-3', 'Technical Debt in the Backl
     ['Quantify debt ticket value', 'Stop hiding debt from PMs'], [
         l('Exposing the Shadow Backlog', 
             [
-                'When Product Managers routinely reject technical debt tickets to blindly prioritize feature factories, engineers resort to a "Shadow Backlog"—refactoring systems in secret during feature work. This obliterates trust and creates highly unpredictable velocity sizing.', 
+                'When Product Managers routinely reject technical debt tickets to blindly prioritize feature factories, engineers resort to a "Shadow Backlog" - refactoring systems in secret during feature work. This obliterates trust and creates highly unpredictable velocity sizing.', 
                 'Technical debt must never be presented as "cleaning up." It must be positioned strictly as an insurance premium. Ignoring it creates a compounded interest penalty that eventually halts all feature velocity completely.',
-                'The most elite enterprise teams enforce an absolutely rigid 20% sprint capacity allocation exclusively for structural engineering, security, and refactoring—regardless of external product demands.'
+                'The most elite enterprise teams enforce an absolutely rigid 20% sprint capacity allocation exclusively for structural engineering, security, and refactoring - regardless of external product demands.'
             ],
             [
                 d('Structural Debt Allocation', 'The immovable percentage of sprint capacity devoted purely to non-feature technical health.', 'Strict 20% Baseline'),
@@ -80,7 +80,7 @@ tracks19Modules['agile-economics/19-4'] = m('19-4', 'Predictability vs Velocity'
         l('Velocity is a Toxic Vanity Metric', 
             [
                 'Tracking raw "Velocity" (total points burned) inevitably encourages point inflation. If management demands 50 points instead of 40, engineers will simply start labeling 3-point tasks as 5-point tasks. The baseline metric becomes utterly useless.', 
-                'The singular metric that builds actual, sustainable Board-level trust is Predictability—often termed the "Say/Do Ratio." The goal is not to ship the maximum volume; the goal is to exactly meet the stated commitment.',
+                'The singular metric that builds actual, sustainable Board-level trust is Predictability - often termed the "Say/Do Ratio." The goal is not to ship the maximum volume; the goal is to exactly meet the stated commitment.',
                 'If an engineering team commits to 30 points and delivers 30 points for three consecutive sprints, Product Marketing can safely orchestrate million-dollar launch campaigns without fear of delays.'
             ],
             [
@@ -104,7 +104,7 @@ tracks19Modules['agile-economics/19-5'] = m('19-5', 'Agile Capitalization', 'Cap
         l('The CFO’s View of Software Capitalization', 
             [
                 'Engineering teams operate in Jira, but CFOs operate in the General Ledger. The financial structure of a tech company depends deeply on classifying engineering time as either an Operating Expense (OpEx) or a Capital Expenditure (CapEx).', 
-                'Developing a brand new, revenue-generating feature is classified as CapEx. It acts as an asset on the balance sheet, amortizing over years and drastically boosting EBITDA definitions. Conversely, fixing bugs or maintaining servers is pure OpEx—immediate margin destruction.',
+                'Developing a brand new, revenue-generating feature is classified as CapEx. It acts as an asset on the balance sheet, amortizing over years and drastically boosting EBITDA definitions. Conversely, fixing bugs or maintaining servers is pure OpEx - immediate margin destruction.',
                 'If an engineering team routinely mislabels their new feature work as "maintenance" in the tracking system, they are artificially destroying the company\'s valuation multiplier.'
             ],
             [

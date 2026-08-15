@@ -1,5 +1,5 @@
 /**
- * NarrativeCompression — The 15-second comprehension layer
+ * NarrativeCompression  -  The 15-second comprehension layer
  * 
  * Placed between Hero and ClientOutcomes on the homepage.
  * Delivers the full thesis in a single scannable visual:
@@ -17,7 +17,7 @@ const NarrativeCompression = () => {
 
                     {/* Header */}
                     <div className="px-6 py-4 bg-[#FCFAF7] text-zinc-900">
-                        <p className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-600">The Bottom Line — 15 Seconds</p>
+                        <p className="text-xs font-mono uppercase tracking-[0.2em] text-zinc-600">The Bottom Line  -  15 Seconds</p>
                     </div>
 
                     {/* Compression Grid */}
@@ -45,7 +45,7 @@ const NarrativeCompression = () => {
                                 <p className="text-xs font-mono font-bold text-violet-600 uppercase tracking-wider">Why</p>
                             </div>
                             <div className="px-6 py-4">
-                                <p className="text-sm text-zinc-900 font-medium">No verification layer between model inference and execution. Guardrails are probabilistic — one guessing system policing another.</p>
+                                <p className="text-sm text-zinc-900 font-medium">No verification layer between model inference and execution. Guardrails are probabilistic  -  one guessing system policing another.</p>
                             </div>
                         </div>
 
@@ -64,7 +64,7 @@ const NarrativeCompression = () => {
                             </div>
                             <div className="px-6 py-4">
                                 <p className="text-sm text-zinc-900 font-medium">
-                                    <a href="/exogram" className="text-purple-700 font-bold hover:text-purple-500 transition-colors underline decoration-purple-300 underline-offset-2">Exogram</a> — the deterministic verification layer for AI systems. Not optional. Not best practice. <span className="font-bold">Mandatory.</span>
+                                    <a href="/exogram" className="text-purple-700 font-bold hover:text-purple-500 transition-colors underline decoration-purple-300 underline-offset-2">Exogram</a>  -  the deterministic verification layer for AI systems. Not optional. Not best practice. <span className="font-bold">Mandatory.</span>
                                 </p>
                             </div>
                         </div>

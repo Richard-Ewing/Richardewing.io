@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 
 export const metadata: Metadata = {
-  title: 'AI Governance & Economics Concepts | Richard Ewing',
-  description: 'Index of original frameworks and industry concepts in AI economics, governance, and software capital. Each concept links field research to operational decision models.',
+  title: 'AI Governance & Economics Concepts',
+  description: 'Index of original frameworks and industry concepts in AI economics, governance, and software capital. Links field research to decision models.',
   alternates: {
     canonical: 'https://www.richardewing.io/concepts',
   },

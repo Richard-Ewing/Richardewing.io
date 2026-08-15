@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Actuarial AI Is Burning Cash F & Strategy Diagnostics | Richard Ewing',
-    description: 'Actuarial AI Is Burning Cash F provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'InsurTech Actuarial AI & Claims Data Economics',
+    description: 'Audit automated claims processing unit economics, legacy policy database debt, and underwriting model drift.',
     keywords: ['insurtech technical debt', 'insurance technology economics', 'legacy insurance systems', 'AI underwriting cost', 'insurtech AI economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/insurtech' },
     openGraph: { title: 'InsurTech AI Economics', description: 'The hidden engineering costs destroying InsurTech margins.', url: 'https://www.richardewing.io/industries/insurtech', type: 'article' },

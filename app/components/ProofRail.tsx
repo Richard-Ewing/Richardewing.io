@@ -1,5 +1,5 @@
 /**
- * ProofRail — Persistent credibility proof bar
+ * ProofRail  -  Persistent credibility proof bar
  * 
  * Displays operational proof-of-authority metrics across key pages.
  * Designed to be deployed on: homepage, /advisory, /principal, /for-ctos, /for-boards, /diagnose

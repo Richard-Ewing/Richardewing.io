@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * GovernanceMaturityAssessment — Interactive self-assessment that produces
+ * GovernanceMaturityAssessment  -  Interactive self-assessment that produces
  * a Governance Maturity Score (0-100) across 5 dimensions.
  * 
  * This is the intermediate trust artifact between free diagnostic tools
@@ -9,11 +9,11 @@
  * intermediate trust object before high-ticket escalation.
  * 
  * Dimensions (grounded in CIO/CISO research):
- * 1. Agent Inventory & Discovery — do you know what's running?
- * 2. Policy Enforcement — binary gates or probabilistic guardrails?
- * 3. Cost Governance — per-task cost tracking + ceilings?
- * 4. Audit Infrastructure — tamper-evident trails?
- * 5. Incident Response — kill switch + rollback capability?
+ * 1. Agent Inventory & Discovery  -  do you know what's running?
+ * 2. Policy Enforcement  -  binary gates or probabilistic guardrails?
+ * 3. Cost Governance  -  per-task cost tracking + ceilings?
+ * 4. Audit Infrastructure  -  tamper-evident trails?
+ * 5. Incident Response  -  kill switch + rollback capability?
  */
 
 import { useState } from 'react';
@@ -32,18 +32,18 @@ const questions: Question[] = [
         id: 'q1', dimension: 'Agent Inventory',
         text: 'Do you have a centralized registry of all AI agents operating in your organization?',
         options: [
-            { label: 'No — we don\'t track individual agents', score: 0 },
-            { label: 'Partially — some teams maintain their own lists', score: 1 },
-            { label: 'Yes — centralized inventory with owner, scope, and permissions', score: 3 },
+            { label: 'No  -  we don\'t track individual agents', score: 0 },
+            { label: 'Partially  -  some teams maintain their own lists', score: 1 },
+            { label: 'Yes  -  centralized inventory with owner, scope, and permissions', score: 3 },
         ],
     },
     {
         id: 'q2', dimension: 'Agent Inventory',
         text: 'Can you identify which agents have access to production data vs. sandbox environments?',
         options: [
-            { label: 'No — agents access whatever they need', score: 0 },
-            { label: 'Somewhat — we have informal policies', score: 1 },
-            { label: 'Yes — strict environment isolation with access logs', score: 3 },
+            { label: 'No  -  agents access whatever they need', score: 0 },
+            { label: 'Somewhat  -  we have informal policies', score: 1 },
+            { label: 'Yes  -  strict environment isolation with access logs', score: 3 },
         ],
     },
     {
@@ -52,14 +52,14 @@ const questions: Question[] = [
         options: [
             { label: 'Prompt instructions and guardrails only', score: 0 },
             { label: 'Guardrails + human-in-the-loop for some actions', score: 1 },
-            { label: 'Deterministic policy gates — binary allow/block per action type', score: 3 },
+            { label: 'Deterministic policy gates  -  binary allow/block per action type', score: 3 },
         ],
     },
     {
         id: 'q4', dimension: 'Policy Enforcement',
         text: 'If an agent proposes a destructive action (e.g., deleting production data), what happens?',
         options: [
-            { label: 'Nothing — the agent decides based on its training', score: 0 },
+            { label: 'Nothing  -  the agent decides based on its training', score: 0 },
             { label: 'An LLM-based evaluator checks if it seems safe', score: 1 },
             { label: 'The action is blocked by an admissibility gate before execution', score: 3 },
         ],
@@ -68,54 +68,54 @@ const questions: Question[] = [
         id: 'q5', dimension: 'Cost Governance',
         text: 'Do you track AI API costs per task, per agent, and per feature?',
         options: [
-            { label: 'No — we track aggregate monthly API spend only', score: 0 },
-            { label: 'Partially — we track per-project costs', score: 1 },
-            { label: 'Yes — per-task cost tracking with hard ceilings and alerts', score: 3 },
+            { label: 'No  -  we track aggregate monthly API spend only', score: 0 },
+            { label: 'Partially  -  we track per-project costs', score: 1 },
+            { label: 'Yes  -  per-task cost tracking with hard ceilings and alerts', score: 3 },
         ],
     },
     {
         id: 'q6', dimension: 'Cost Governance',
         text: 'Do you have retry budgets that cap how many times an agent can retry a failed task?',
         options: [
-            { label: 'No — agents retry until they succeed or time out', score: 0 },
-            { label: 'Informally — developers set ad-hoc limits', score: 1 },
-            { label: 'Yes — enforced retry budgets with cost ceiling per task', score: 3 },
+            { label: 'No  -  agents retry until they succeed or time out', score: 0 },
+            { label: 'Informally  -  developers set ad-hoc limits', score: 1 },
+            { label: 'Yes  -  enforced retry budgets with cost ceiling per task', score: 3 },
         ],
     },
     {
         id: 'q7', dimension: 'Audit Infrastructure',
         text: 'Are AI agent actions logged with tamper-evident integrity (e.g., cryptographic hashing)?',
         options: [
-            { label: 'No — standard application logs only', score: 0 },
+            { label: 'No  -  standard application logs only', score: 0 },
             { label: 'We log actions but they\'re in standard log systems', score: 1 },
-            { label: 'Yes — cryptographic audit trail with immutable chain', score: 3 },
+            { label: 'Yes  -  cryptographic audit trail with immutable chain', score: 3 },
         ],
     },
     {
         id: 'q8', dimension: 'Audit Infrastructure',
         text: 'Can you reconstruct the full decision chain of any agent action after the fact?',
         options: [
-            { label: 'No — we only see inputs and outputs', score: 0 },
-            { label: 'Sometimes — depends on the agent and logging level', score: 1 },
-            { label: 'Yes — full reasoning trace, tool calls, and context captured', score: 3 },
+            { label: 'No  -  we only see inputs and outputs', score: 0 },
+            { label: 'Sometimes  -  depends on the agent and logging level', score: 1 },
+            { label: 'Yes  -  full reasoning trace, tool calls, and context captured', score: 3 },
         ],
     },
     {
         id: 'q9', dimension: 'Incident Response',
         text: 'Do you have a kill switch that can immediately suspend a misbehaving agent?',
         options: [
-            { label: 'No — we\'d have to manually find and stop the process', score: 0 },
-            { label: 'Sort of — we can revoke API keys but it takes time', score: 1 },
-            { label: 'Yes — centralized kill switch with automatic rollback', score: 3 },
+            { label: 'No  -  we\'d have to manually find and stop the process', score: 0 },
+            { label: 'Sort of  -  we can revoke API keys but it takes time', score: 1 },
+            { label: 'Yes  -  centralized kill switch with automatic rollback', score: 3 },
         ],
     },
     {
         id: 'q10', dimension: 'Incident Response',
         text: 'If an agent corrupts production state, can you automatically roll back to pre-action state?',
         options: [
-            { label: 'No — we would manually assess and fix damage', score: 0 },
-            { label: 'Partially — we have database backups but not instant rollback', score: 1 },
-            { label: 'Yes — state integrity hashing with automatic rollback on deviation', score: 3 },
+            { label: 'No  -  we would manually assess and fix damage', score: 0 },
+            { label: 'Partially  -  we have database backups but not instant rollback', score: 1 },
+            { label: 'Yes  -  state integrity hashing with automatic rollback on deviation', score: 3 },
         ],
     },
 ];

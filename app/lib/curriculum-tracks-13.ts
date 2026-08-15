@@ -2,7 +2,7 @@ import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks13Modules: Record<string, CurriculumModule> = {};
 
-const t13 = 'Track 13 — AI Agent & Automation Economics';
+const t13 = 'Track 13  -  AI Agent & Automation Economics';
 
 tracks13Modules['ai-agent-economics/13-1'] = m('13-1', 'Agentic System Cost Structures', 'Foundation models for agents, tool-use pricing, loop constraints, and agent architecture limits.', t13, 
     ['Model Autonomous loop costs', 'Identify execution hallucinations', 'Calculate tool use API burn rates'], [
@@ -86,8 +86,8 @@ tracks13Modules['ai-agent-economics/13-5'] = m('13-5', 'State Management & Memor
     ['Calculate Vector memory vs Graph memory Opex', 'Model context window eviction strategies', 'Optimize cross-session persistence'], [
         l('The Economics of Infinite Memory', 
             [
-                'For an agent to be truly useful, it needs episodic memory—it must remember what the user told it three weeks ago. Storing this memory requires sophisticated state management.',
-                'You cannot simply shove the entire 3-week conversation history into the LLM context window—that would cost $20 per query. You must use RAG, Semantic Routing, or Knowledge Graphs to recall only the relevant memories.',
+                'For an agent to be truly useful, it needs episodic memory - it must remember what the user told it three weeks ago. Storing this memory requires sophisticated state management.',
+                'You cannot simply shove the entire 3-week conversation history into the LLM context window - that would cost $20 per query. You must use RAG, Semantic Routing, or Knowledge Graphs to recall only the relevant memories.',
                 'Knowledge Graphs (like Neo4j) map entity relationships flawlessly but carry high setup costs, whereas Vector Databases are fast but struggle with complex logical reasoning.'
             ],
             [
@@ -106,7 +106,7 @@ tracks13Modules['ai-agent-economics/13-6'] = m('13-6', 'AI Multi-Agent Systems S
             [
                 'Running one agent is a Python script. Running 50,000 agents concurrently responding to enterprise data streams is a distributed systems nightmare that most organizations underestimate.',
                 'If every agent requires its own localized prompt matrix and memory cache, horizontally scaling agents rapidly exhausts the Redis cache and SQL connection limits of the underlying architecture.',
-                'Effective scaling demands Agentic Orchestration—leveraging tools like Temporal to ensure agents can suspend execution, wait for external API webhooks, and wake up without burning active server memory.'
+                'Effective scaling demands Agentic Orchestration - leveraging tools like Temporal to ensure agents can suspend execution, wait for external API webhooks, and wake up without burning active server memory.'
             ],
             [
                 d('Agent Suspension CapEx', 'The infrastructure required to safely "pause" an agent mid-thought without losing context.', 'Driven by State machines'),
@@ -268,7 +268,7 @@ tracks13Modules['ai-agent-economics/13-15'] = m('13-15', 'AI System Threat Preve
             [
                 'Adversaries no longer just attack the API; they attack the training data. Data Poisoning involves injecting corrupted text into public repositories or internal scraping pipelines so that the final LLM learns malicious associations.',
                 'If an attacker subtly changes Wikipedia articles that your RAG system ingests, they can force your customer service bot to confidently recommend competitors or direct users to phishing sites.',
-                'Preventing this requires cryptographic data provenance—storing cryptographic hashes of all ingested documents and routinely auditing the RAG vector database for anomalies.'
+                'Preventing this requires cryptographic data provenance - storing cryptographic hashes of all ingested documents and routinely auditing the RAG vector database for anomalies.'
             ],
             [
                 d('Dataset Integrity Coverage', 'The percentage of ingested facts that trace back to a cryptographically validated internal system of record.', 'Target: > 99%'),

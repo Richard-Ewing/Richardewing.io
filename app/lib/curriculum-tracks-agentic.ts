@@ -2,9 +2,9 @@ import { CurriculumModule, Lesson, LessonDetail, m, l, d } from './curriculum-da
 
 export const agenticGovernanceModules: Record<string, CurriculumModule> = {};
 
-const t58 = 'Track 58 — Governance for Agentic AI';
-const t1 = 'Track 1 — Engineering Economics';
-const t2 = 'Track 2 — AI AI Economics';
+const t58 = 'Track 58  -  Governance for Agentic AI';
+const t1 = 'Track 1  -  Engineering Economics';
+const t2 = 'Track 2  -  AI AI Economics';
 
 const singleProduct = 'single_track'; // $149.00 per-track payment gateway product
 
@@ -82,7 +82,7 @@ agenticGovernanceModules['agentic-governance/58-2'] = {
         ),
         l(
             'Lesson 2: Execution Sandboxing',
-            'Never execute code written by an LLM in your core infrastructure. Whether it is "Vibe Coding" output or an autonomous agent writing Python to solve a problem, all agent-generated code must run in a secure sandbox (like Docker, Firecracker microVMs, or WebAssembly isolates). The sandbox must have strictly controlled egress networking—meaning the agent cannot reach out to the broader internet or local network unless explicitly permitted. If the agent writes malicious code, the sandbox containment prevents horizontal escalation.',
+            'Never execute code written by an LLM in your core infrastructure. Whether it is "Vibe Coding" output or an autonomous agent writing Python to solve a problem, all agent-generated code must run in a secure sandbox (like Docker, Firecracker microVMs, or WebAssembly isolates). The sandbox must have strictly controlled egress networking - meaning the agent cannot reach out to the broader internet or local network unless explicitly permitted. If the agent writes malicious code, the sandbox containment prevents horizontal escalation.',
             [
                 d('Egress Control', 'Network boundaries enforced at the container level. Prevent the agent from calling home or scanning internal IP ranges.', 'Target: Zero default egress from agent execution environments.'),
                 d('Resource Quotas', 'CPU, memory, and timeout limits to prevent denial-of-service via infinite loops (e.g., `while(true)`).', 'Benchmark: Max execution time of 10 seconds per generated script.'),
@@ -230,7 +230,7 @@ agenticGovernanceModules['agentic-governance/58-5'] = {
         ),
         l(
             'Lesson 3: Pitching Governance as an Accelerator',
-            'Business leadership naturally views "Governance" as red tape that slows down innovation. This is profoundly false in the era of AI. Without governance, developers spend 80% of their time playing whack-a-mole with edge cases, prompt regressions, and security alerts. Implementing a production-grade Agentic Governance framework—standardized RBAC, kill switches, and strict data schemas—creates a "Paved Road" for engineering. Teams can provision new AI features 5x faster because they don\'t have to reinvent the safety guardrails from scratch every time.',
+            'Business leadership naturally views "Governance" as red tape that slows down innovation. This is profoundly false in the era of AI. Without governance, developers spend 80% of their time playing whack-a-mole with edge cases, prompt regressions, and security alerts. Implementing a production-grade Agentic Governance framework - standardized RBAC, kill switches, and strict data schemas - creates a "Paved Road" for engineering. Teams can provision new AI features 5x faster because they don\'t have to reinvent the safety guardrails from scratch every time.',
             [
                 d('Time-to-Market (TTM)', 'The duration from concept to production deployment for an AI feature.', 'Target: Reduce AI feature TTM from 6 weeks to 1 week.'),
                 d('Infrastructure Reuse', 'The percentage of AI security code that is written once and reused globally across all features.', 'Benchmark: >90% code reuse via a centralized Threat Prevention Layer.'),
@@ -321,7 +321,7 @@ agenticGovernanceModules['ai-product-economics/2-16'] = {
         ),
         l(
             'Lesson 2: ROAI (Return on AI Investment)',
-            'In 2024, deploying an AI chatbot was enough to secure VC funding; it was an "Innovation Budget" experiment. In 2026, CFOs are demanding hard ROI—specifically ROAI. If you spend $1M developing an RAG-powered internal knowledge base and $50k/month in API costs, how many dollars of human labor did it actually replace or accelerate? ROAI forces teams to justify AI projects based on hard metric movement: FTE displacement, customer churn reduction, or direct new-revenue expansion. If the AI doesn\'t move the needle financially, the pilot dies.',
+            'In 2024, deploying an AI chatbot was enough to secure VC funding; it was an "Innovation Budget" experiment. In 2026, CFOs are demanding hard ROI - specifically ROAI. If you spend $1M developing an RAG-powered internal knowledge base and $50k/month in API costs, how many dollars of human labor did it actually replace or accelerate? ROAI forces teams to justify AI projects based on hard metric movement: FTE displacement, customer churn reduction, or direct new-revenue expansion. If the AI doesn\'t move the needle financially, the pilot dies.',
             [
                 d('Hard Cost Savings', 'Direct displacement of software licenses, support headcount, or outsourced labor.', 'Target: ROAI payback period of < 12 months on hard savings.'),
                 d('Soft Velocity Gains', 'Engineering or operational speed increases. Harder to quantify but critical for the business case.', 'Benchmark: Convert hours saved into salary dollars equivalent.'),

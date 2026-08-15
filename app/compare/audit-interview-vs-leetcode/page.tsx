@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     description: 'Why algorithmic LeetCode puzzles fail in the AI age. Compare system architecture evaluation vs syntax testing.',
     keywords: ['leetcode alternative', 'coding interview alternative', 'audit interview vs leetcode', 'engineering judgment assessment', 'hiring for AI age', 'beyond leetcode', 'audit interview protocol'],
     alternates: { canonical: 'https://www.richardewing.io/compare/audit-interview-vs-leetcode' },
-    openGraph: { title: 'Audit Interview vs LeetCode — Judgment vs Speed', description: 'AI writes code. The scarce skill is catching what AI gets wrong. The Audit Interview tests that.', url: 'https://www.richardewing.io/compare/audit-interview-vs-leetcode', type: 'article' },
+    openGraph: { title: 'Audit Interview vs LeetCode  -  Judgment vs Speed', description: 'AI writes code. The scarce skill is catching what AI gets wrong. The Audit Interview tests that.', url: 'https://www.richardewing.io/compare/audit-interview-vs-leetcode', type: 'article' },
 };
 
 const rows = [
@@ -35,7 +35,7 @@ export default function AuditInterviewVsLeetCodePage() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">LeetCode</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">
-                        LeetCode tests code generation speed — a skill AI now does better than humans. The Audit Interview tests <span className="text-zinc-950 font-bold">engineering judgment</span> — the skill that becomes MORE valuable as AI improves.
+                        LeetCode tests code generation speed  -  a skill AI now does better than humans. The Audit Interview tests <span className="text-zinc-950 font-bold">engineering judgment</span>  -  the skill that becomes MORE valuable as AI improves.
                     </p>
 
                     {/* Comparison Table */}

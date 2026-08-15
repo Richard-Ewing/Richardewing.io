@@ -101,7 +101,7 @@ export default function ExecutiveMemoExport({
       {/* Live Preview Container */}
       <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 font-mono text-xs text-zinc-300 space-y-4 max-h-60 overflow-y-auto leading-relaxed">
         <div className="text-cyan-400 font-bold border-b border-zinc-800 pb-2">
-          [PREVIEW] EXECUTIVE BOARD MEMORANDUM — {toolName.toUpperCase()}
+          [PREVIEW] EXECUTIVE BOARD MEMORANDUM  -  {toolName.toUpperCase()}
         </div>
         <div>
           <span className="text-zinc-500 block mb-1">Key Metrics:</span>

@@ -15,7 +15,7 @@ const PHASES = [
         id: 1,
         name: 'Discovery',
         description: 'Understanding your business',
-        systemContext: `You are Richard Ewing's AI Integration Advisor — an expert business consultant specializing in helping companies integrate AI into their operations. You are in Phase 1: Discovery.
+        systemContext: `You are Richard Ewing's AI Integration Advisor  -  an expert business consultant specializing in helping companies integrate AI into their operations. You are in Phase 1: Discovery.
 
 Your goal is to deeply understand the user's business. Ask about:
 - Business name, industry, and what they sell/do
@@ -42,7 +42,7 @@ You already know about their business from Phase 1. Now dig into:
 - Customer-facing pain points (slow response times, errors, etc.)
 - Any failed technology implementations
 
-Be empathetic and specific. When they mention a pain point, dig deeper — ask "how many hours per week does that consume?" or "what does that cost you monthly?"
+Be empathetic and specific. When they mention a pain point, dig deeper  -  ask "how many hours per week does that consume?" or "what does that cost you monthly?"
 
 End your message with [PHASE_COMPLETE] when you have 3-5 clear pain points documented.`,
     },
@@ -88,14 +88,14 @@ You now have ALL the information. Generate a comprehensive AI Integration Roadma
 Start with: "Based on everything you've shared, here's your personalized AI Integration Roadmap..."
 
 Then provide a structured plan with:
-1. **Executive Summary** — 2-3 sentence overview of the opportunity
-2. **Quick Wins (Week 1-2)** — 2-3 actions they can take immediately with minimal effort
-3. **Foundation Phase (Month 1)** — Core tools to implement, training needed
-4. **Growth Phase (Month 2-3)** — Advanced integrations, workflow automation
-5. **Optimization Phase (Month 4-6)** — Scaling what works, measuring ROI
+1. **Executive Summary**  -  2-3 sentence overview of the opportunity
+2. **Quick Wins (Week 1-2)**  -  2-3 actions they can take immediately with minimal effort
+3. **Foundation Phase (Month 1)**  -  Core tools to implement, training needed
+4. **Growth Phase (Month 2-3)**  -  Advanced integrations, workflow automation
+5. **Optimization Phase (Month 4-6)**  -  Scaling what works, measuring ROI
 
 For EACH action item include:
-- Specific AI tool recommendation (real tool names — ChatGPT, Claude, Zapier AI, HubSpot AI, etc.)
+- Specific AI tool recommendation (real tool names  -  ChatGPT, Claude, Zapier AI, HubSpot AI, etc.)
 - Estimated ROI or time saved
 - Implementation difficulty (Easy/Medium/Hard)
 - Estimated monthly cost of the tool
@@ -174,7 +174,7 @@ export async function POST(req: Request) {
                 }
             }
         } catch {
-            // Non-critical — continue without vault context
+            // Non-critical  -  continue without vault context
         }
 
         // Build conversation for Gemini

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Content Pipeline Debt Is Destr & Strategy Diagnostics | Richard Ewing',
-    description: 'Content Pipeline Debt Is Destr provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'MediaTech AI Economics & Video Processing Debt',
+    description: 'Audit generative media rendering compute costs, digital asset management storage bloat, and CMS pipeline debt.',
     keywords: ['mediatech technical debt', 'streaming technology', 'content delivery infrastructure', 'media technology economics', 'CDN engineering debt'],
     alternates: { canonical: 'https://www.richardewing.io/industries/mediatech' },
     openGraph: { title: 'MediaTech AI Economics', description: 'R&D capital challenges in media and entertainment technology.', url: 'https://www.richardewing.io/industries/mediatech', type: 'article' },

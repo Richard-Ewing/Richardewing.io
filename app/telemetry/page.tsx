@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { TrendingDown, TrendingUp, DollarSign, AlertTriangle, Clock, Shield } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'AI Governance Telemetry & Cost & Strategy Diagnostics | Richard Ewing',
-    description: 'AI Governance Telemetry & Cost provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Live AI Governance Telemetry',
+    description: 'Real-time benchmark telemetry analyzing AI cost overruns, retry loop frequencies, and context drift across enterprise stacks.',
     keywords: ['AI agent telemetry', 'Claude Code cost analysis', 'retry inflation metrics', 'context rot measurement', 'AI coding agent ROI', 'governance telemetry dashboard', 'token burn rate', 'agent cost containment'],
     openGraph: {
         title: 'Runtime Telemetry - Agentic Governance Metrics',

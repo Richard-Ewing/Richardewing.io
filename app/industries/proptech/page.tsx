@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'MLS Integration Debt Is Killin & Strategy Diagnostics | Richard Ewing',
-    description: 'MLS Integration Debt Is Killin provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'PropTech AI Economics & MLS Integration Debt',
+    description: 'Audit property valuation model retraining costs, MLS feed data integration debt, and commercial building IoT sprawl.',
     keywords: ['proptech technical debt', 'real estate technology', 'MLS integration', 'property valuation AI', 'proptech engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/proptech' },
     openGraph: { title: 'PropTech AI Economics', description: 'R&D capital challenges in real estate technology.', url: 'https://www.richardewing.io/industries/proptech', type: 'article' },

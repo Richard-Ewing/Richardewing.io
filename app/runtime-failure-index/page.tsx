@@ -5,8 +5,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { AlertTriangle, TrendingUp, DollarSign, Shield, BarChart3 } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'AI Runtime Failure Database & Strategy Diagnostics | Richard Ewing',
-    description: 'AI Runtime Failure Database provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'AI Runtime Failure Database',
+    description: 'Forensic post-mortems of enterprise AI incidents, billing runaways, context corruptions, and security breaches.',
     keywords: ['AI agent failures', 'Claude Code failure modes', 'runtime failure index', 'agentic failure database', 'AI coding agent risks', 'context rot frequency', 'retry inflation cost', 'MCP security breach', 'AI governance failure taxonomy', 'most common AI coding failures'],
     openGraph: {
         title: 'Runtime Failure Index - The Canonical Agentic Failure Database',

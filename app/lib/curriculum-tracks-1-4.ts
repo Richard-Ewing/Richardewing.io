@@ -8,7 +8,7 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
     };
 
     // ═══════════════════ TRACK 1: CTO / Engineering Leader ═══════════════════
-    const t1 = 'Track 1 — CTO / Engineering Leader';
+    const t1 = 'Track 1  -  CTO / Engineering Leader';
     const ctoMods: [string, string, string, string[], ReturnType<typeof l>[]][] = [
         ['1-1', 'The Product Debt Index (PDI)', 'Learn the exact framework used in $7,500 advisory engagements to value legacy codebases.', 
             ['Define the Innovation Tax', 'Calculate Technical Insolvency', 'Build a PDI equation', 'Defend refactoring budgets to the board'],
@@ -77,7 +77,7 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
     });
 
     // ═══════════════════ TRACK 2: PM / CPO ═══════════════════
-    const t2 = 'Track 2 — Product Manager / CPO';
+    const t2 = 'Track 2  -  Product Manager / CPO';
     const pmMods: [string, string, string, string[], ReturnType<typeof l>[]][] = [
         ['2-1', 'Product Unit Economics', 'Transition from backlog manager to AI Economist.', 
             ['Calculate Feature ROI', 'Perform the Feature Bloat Calculus', 'Stop building zombie features', 'Map adoption metrics'],
@@ -166,7 +166,7 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
     });
 
     // ═══════════════════ TRACK 3: Investor / PE / VC ═══════════════════
-    const t3 = 'Track 3 — PE / VC / Investor';
+    const t3 = 'Track 3  -  PE / VC / Investor';
     const invMods: [string, string, string, string[], ReturnType<typeof l>[]][] = [
         ['3-1', 'Technical Due Diligence Red Flags', 'Exposing hidden technical risks that destroy M&A enterprise value.', 
             ['Spot legacy code rot', 'Audit key person dependencies', 'Evaluate architecture scaling ceilings', 'Assess AI lock-in risks'],
@@ -231,13 +231,13 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
         ['3-16', 'The Innovation Tax Audit', 'Are your software assets still generating value, or are they just burning resources? A guide to auditing your portfolio and killing zombie features.', 
             ['Identify Zombie Assets', 'Apply the Rule of Two', 'Execute the Scream Test', 'Establish Sunset Committees'],
             [
-                l('Lesson 1: Diagnosing Zombie Assets', 'Every codebase harbors Zombie Assets—features that are technically alive but functionally dead. They consume compute resources, inflate test suites, and distract engineering attention, yet they deliver zero marginal value to the customer.', [
+                l('Lesson 1: Diagnosing Zombie Assets', 'Every codebase harbors Zombie Assets - features that are technically alive but functionally dead. They consume compute resources, inflate test suites, and distract engineering attention, yet they deliver zero marginal value to the customer.', [
                     d('The Rule of Two', 'Look for features that have not been touched by a user in two months or updated by a developer in two years. If a feature hits both markers, it is a prime candidate for the morgue.', 'Audit your codebase with these metrics'),
                     d('Silent Drain', 'The hidden maintenance cost of code that never errors but never adds value.', 'Calculated in wasted infrastructure compute and engineering support'),
                     d('Risk Aversion', 'The psychological trap where removing features seems riskier than leaving them alone.', 'Combat through data-driven usage metrics')
                 ], 'Identify three features in your primary application that likely meet the Rule of Two and propose them for a sunset review.'),
                 l('Lesson 2: Executing the Scream Test', 'Once identified, how do you kill Zombie Assets safely? The cheapest way is the Scream Test: turn the feature off in staging, then production, and see if anyone complains. Most of the time, there will be silence.', [
-                    d('Safe Shutoff', 'Disabling the code path without deleting the code repository—initially.', 'Use feature flags for easy reversal'),
+                    d('Safe Shutoff', 'Disabling the code path without deleting the code repository - initially.', 'Use feature flags for easy reversal'),
                     d('Monitoring for Noise', 'Tracking customer support tickets and user behavior post-shutdown.', 'Establish a defined monitoring window (e.g., 2 weeks)'),
                     d('Final Deletion', 'If the Scream Test passes with silence, completely remove the code and its dependencies.', 'Claim the engineering velocity reward')
                 ], 'Design a Scream Test for one low-usage feature. Draft the communication to support teams to handle potential (but unlikely) complaints.'),
@@ -295,7 +295,7 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
     });
 
     // ═══════════════════ TRACK 4: AI Enterprise Architect ═══════════════════
-    const t4 = 'Track 4 — AI & Enterprise Architect';
+    const t4 = 'Track 4  -  AI & Enterprise Architect';
     const aiMods: [string, string, string, string[], ReturnType<typeof l>[]][] = [
         ['4-1', 'AI Infrastructure & RAG Architecture', 'Deploying enterprise AI securely, affordably, and accurately.', 
             ['Optimize Vector Databases', 'Structure RAG pipelines', 'Calculate embedding costs', 'Deploy hybrid search mechanisms'],

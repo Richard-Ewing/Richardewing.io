@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * GovernanceDashboard — Interactive runtime governance control plane visualization
+ * GovernanceDashboard  -  Interactive runtime governance control plane visualization
  * 
  * Shows what Exogram governance looks like in operation:
  * - Live policy evaluation feed
@@ -31,14 +31,14 @@ interface PolicyEvent {
 }
 
 const sampleEvents: PolicyEvent[] = [
-    { id: 'evt-1a', timestamp: '14:23:07', agent: 'data-analyst-v3', action: 'SELECT * FROM production_users', decision: 'BLOCK', reason: 'Unbounded query on PII table — requires scoped WHERE clause', tokens: 0, latency: '2ms' },
+    { id: 'evt-1a', timestamp: '14:23:07', agent: 'data-analyst-v3', action: 'SELECT * FROM production_users', decision: 'BLOCK', reason: 'Unbounded query on PII table  -  requires scoped WHERE clause', tokens: 0, latency: '2ms' },
     { id: 'evt-2b', timestamp: '14:23:04', agent: 'code-review-bot', action: 'git push origin main --force', decision: 'BLOCK', reason: 'Force push to protected branch not on allowlist', tokens: 0, latency: '1ms' },
     { id: 'evt-3c', timestamp: '14:22:58', agent: 'support-copilot', action: 'Generate refund recommendation', decision: 'ALLOW', reason: 'Within authorized scope, confidence 94%, under cost ceiling', tokens: 1240, latency: '340ms' },
     { id: 'evt-4d', timestamp: '14:22:51', agent: 'onboarding-agent', action: 'Send welcome email sequence', decision: 'ALLOW', reason: 'Template-based action, deterministic routing, no LLM needed', tokens: 0, latency: '8ms' },
-    { id: 'evt-5e', timestamp: '14:22:44', agent: 'research-agent', action: 'Summarize 47-page compliance doc', decision: 'MODIFY', reason: 'Downgraded from Opus to Sonnet — task complexity below frontier threshold', tokens: 3200, latency: '1.2s' },
-    { id: 'evt-6f', timestamp: '14:22:38', agent: 'code-review-bot', action: 'Modify auth middleware', decision: 'ESCALATE', reason: 'Security-critical file — requires human approval before execution', tokens: 0, latency: '3ms' },
+    { id: 'evt-5e', timestamp: '14:22:44', agent: 'research-agent', action: 'Summarize 47-page compliance doc', decision: 'MODIFY', reason: 'Downgraded from Opus to Sonnet  -  task complexity below frontier threshold', tokens: 3200, latency: '1.2s' },
+    { id: 'evt-6f', timestamp: '14:22:38', agent: 'code-review-bot', action: 'Modify auth middleware', decision: 'ESCALATE', reason: 'Security-critical file  -  requires human approval before execution', tokens: 0, latency: '3ms' },
     { id: 'evt-7g', timestamp: '14:22:31', agent: 'data-analyst-v3', action: 'Generate quarterly revenue report', decision: 'ALLOW', reason: 'Read-only query on analytics schema, scoped to current quarter', tokens: 2100, latency: '890ms' },
-    { id: 'evt-8h', timestamp: '14:22:24', agent: 'support-copilot', action: 'Access customer payment history', decision: 'BLOCK', reason: 'PCI-DSS scope violation — agent lacks financial data authorization', tokens: 0, latency: '1ms' },
+    { id: 'evt-8h', timestamp: '14:22:24', agent: 'support-copilot', action: 'Access customer payment history', decision: 'BLOCK', reason: 'PCI-DSS scope violation  -  agent lacks financial data authorization', tokens: 0, latency: '1ms' },
 ];
 
 const decisionStyles: Record<string, { bg: string; text: string; icon: React.ReactNode; border: string }> = {

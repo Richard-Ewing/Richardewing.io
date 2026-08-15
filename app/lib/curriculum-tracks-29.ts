@@ -1,13 +1,13 @@
 import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks29Modules: Record<string, CurriculumModule> = {};
-const t29 = 'Track 29 — Sovereign AI Substrates';
+const t29 = 'Track 29  -  Sovereign AI Substrates';
 
 tracks29Modules['29/29-1'] = m('29-1', 'The Sovereign Risk Profile', 'Data Exhaust, Fine-Tuning SLMs, On-Premise AI Architecture', t29, 
     ['Calculate Multi-Tenant AI Liability', 'Deploy localized execution envelopes'], [
         l('The End of the Universal Cloud AI', 
             [
-                'For the past four years, enterprises shoved every piece of proprietary intellectual property they owned into APIs hosted by massive cloud vendors. This was the "Wrapper Era"—fast, cheap, and structurally insecure. We are now entering the Sovereign Era.', 
+                'For the past four years, enterprises shoved every piece of proprietary intellectual property they owned into APIs hosted by massive cloud vendors. This was the "Wrapper Era" - fast, cheap, and structurally insecure. We are now entering the Sovereign Era.', 
                 'A Sovereign AI Substrate is a physical and digital border around corporate intelligence. It mandates that any Small Language Model (SLM) executing localized business logic operates entirely on metal the company controls (whether true on-premise or strictly partitioned isolated cloud networks).',
                 'If you are feeding a third-party frontier model your operational data, you are providing the vendor with free training exhaust. They will use your data to make a better model, which they will then sell to your direct competitor.'
             ],

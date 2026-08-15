@@ -10,7 +10,7 @@ const COMPLIANCE_AREAS = [
         name: 'AI System Inventory',
         question: 'Do you have a complete inventory of all AI systems in production and development?',
         weight: 15,
-        risk: 'Article 6-7: Risk classification requires knowing all systems. 67% of employees use AI tools — only 18% have policies.',
+        risk: 'Article 6-7: Risk classification requires knowing all systems. 67% of employees use AI tools  -  only 18% have policies.',
     },
     {
         id: 'risk-classification',
@@ -45,7 +45,7 @@ const COMPLIANCE_AREAS = [
         name: 'Incident Reporting',
         question: 'Do you have a documented process to report serious AI incidents within 72 hours?',
         weight: 10,
-        risk: 'Article 62: Mandatory incident reporting. Most orgs can\'t even detect AI semantic failures — 82% of production AI bugs are from hallucinations.',
+        risk: 'Article 62: Mandatory incident reporting. Most orgs can\'t even detect AI semantic failures  -  82% of production AI bugs are from hallucinations.',
     },
     {
         id: 'documentation',

@@ -2,7 +2,7 @@ import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks7Modules: Record<string, CurriculumModule> = {};
 
-const t14 = 'Track 7 — Cloud FinOps & Infrastructure';
+const t14 = 'Track 7  -  Cloud FinOps & Infrastructure';
 
 tracks7Modules['cloud-finops/7-1'] = m('7-1', 'Internal Developer Platform ROI', 'Calculate the economics of golden paths, self-service infrastructure, and platform team sizing.', t14, 
     ['Calculate IDP deployment velocity', 'Measure the Platform Tax', 'Optimize GitOps provisioning'], [
@@ -34,7 +34,7 @@ tracks7Modules['cloud-finops/7-2'] = m('7-2', 'Cloud Cost Allocation Strategy', 
             [
                 'A core failure in cloud economics is that developers spin up AWS infrastructure but Finance pays the bill 30 days later. This separation of provisioning and payment creates massive waste.',
                 'When developers have no visibility into the cost of their architecture, they over-provision out of caution. "Cost Allocation" forces every asset to carry a mandatory tag linking it back to a specific team or product code.',
-                'By distributing Showback Dashboards directly to the engineering squads, you induce "Cost Empathy"—engineers self-regulate and begin optimizing poorly performing queries.'
+                'By distributing Showback Dashboards directly to the engineering squads, you induce "Cost Empathy" - engineers self-regulate and begin optimizing poorly performing queries.'
             ],
             [
                 d('Untagged Resource Waste', 'The percentage of the AWS bill that cannot be traced to a specific revenue-generating product.', 'Must be driven to zero'),
@@ -124,7 +124,7 @@ tracks7Modules['cloud-finops/7-7'] = m('7-7', 'Cloud Migration ROI', 'The financ
             [
                 'When migrating to the cloud, taking 50 monolithic legacy Windows servers from a physical data center and running them on 50 EC2 instances is called "Lift and Shift". It is the fastest migration path, but it fundamentally breaks the cloud economic model.',
                 'Because the servers run 24/7 at low utilization, "Lift and Shift" almost always results in a cloud bill that is vastly higher than the original on-prem hardware depreciation costs.',
-                'Realizing the "Cloud Premium" requires "Refactoring"—breaking those servers into auto-scaling microservices and serverless functions that scale to zero when not in use. Refactoring is slow and expensive, creating a steep TCO trough.'
+                'Realizing the "Cloud Premium" requires "Refactoring" - breaking those servers into auto-scaling microservices and serverless functions that scale to zero when not in use. Refactoring is slow and expensive, creating a steep TCO trough.'
             ],
             [
                 d('Cloud Migration Bubble', 'The 12-to-18-month financial period where the organization pays for both the fading data center and the new cloud environment simultaneously.', 'Peak financial risk phase'),
@@ -160,7 +160,7 @@ tracks7Modules['cloud-finops/7-9'] = m('7-9', 'Observability & MTTR Economics', 
             [
                 'Mean Time To Resolution (MTTR) consists of two phases: 1) Identification (What broke?) and 2) Remediation (Fixing it). Without distributed tracing, 90% of MTTR is spent blindly searching log files.',
                 'If an ecommerce checkout is down during Black Friday, generating $100/minute in lost revenue, a logging tool that reduces Identification time from 40 minutes to 3 minutes yields an immediate $3,700 ROI on that single incident.',
-                'However, ingesting 100% of telemetry data into Datadog or Splunk creates ruinous billing. FinOps requires "Aggressive Sampling"—dropping 95% of successful trace data and keeping 100% of error traces.'
+                'However, ingesting 100% of telemetry data into Datadog or Splunk creates ruinous billing. FinOps requires "Aggressive Sampling" - dropping 95% of successful trace data and keeping 100% of error traces.'
             ],
             [
                 d('Log Ingestion Cost', 'The monthly Datadog bill to index telemetry data.', 'Aggressively sample non-errors to reduce'),

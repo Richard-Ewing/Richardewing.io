@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'EV/SE Calculator FAQ & Strategy Diagnostics | Richard Ewing',
-    description: 'EV/SE Calculator FAQ provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'EV-SE Valuation Engine FAQ',
+    description: 'Methodology notes on modeling the dollar impact of technical debt and execution risk on enterprise valuation.',
     keywords: ['enterprise value per engineer', 'EV/SE calculator', 'engineering team valuation', 'M&A engineering assessment'],
     alternates: { canonical: 'https://www.richardewing.io/tools/ev-se/faq' },
     openGraph: { title: 'EV/SE Calculator FAQ', description: 'How to value engineering teams with EV/SE.', url: 'https://www.richardewing.io/tools/ev-se/faq', type: 'article' },
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const faqs = [
     { q: 'What is EV/SE?', a: 'Enterprise Value per Software Engineer (EV/SE) measures how much enterprise value each software engineer creates or supports. It is calculated as Enterprise Value divided by total software engineering headcount. This metric is used by PE/VC firms, acquirers, and boards to assess engineering leverage and efficiency.', color: 'cyan' },
-    { q: 'How is EV/SE used in M&A?', a: 'EV/SE is a key due diligence metric. A high EV/SE (e.g., above $5M/engineer) indicates the engineering team has high leverage — each engineer supports significant enterprise value. A low EV/SE may indicate overstaffing or that the technology is commoditized. Acquirers use EV/SE to benchmark targets against comparable transactions.', color: 'violet' },
+    { q: 'How is EV/SE used in M&A?', a: 'EV/SE is a key due diligence metric. A high EV/SE (e.g., above $5M/engineer) indicates the engineering team has high leverage  -  each engineer supports significant enterprise value. A low EV/SE may indicate overstaffing or that the technology is commoditized. Acquirers use EV/SE to benchmark targets against comparable transactions.', color: 'violet' },
     { q: 'What is a good EV/SE ratio?', a: 'Benchmarks by stage: Pre-revenue startups ($500K-2M/engineer), Seed/Series A ($1-3M/engineer), Growth stage ($2-8M/engineer), Late stage ($5-15M/engineer), Public SaaS ($8-25M/engineer). Top-tier companies like Palantir and Datadog have achieved $15-30M/engineer.', color: 'emerald' },
     { q: 'How does EV/SE relate to fundraising?', a: 'During fundraising, EV/SE helps justify valuation. If industry comparables show $5M/engineer and you have 20 engineers, a $100M valuation is within market norms. If you are asking for $200M ($10M/engineer), you need to demonstrate why your team has above-average leverage through proprietary technology, network effects, or data moats.', color: 'amber' },
     { q: 'Can EV/SE be artificially inflated?', a: 'Yes. Companies can inflate EV/SE by using contractors instead of FTEs (reducing denominator), outsourcing significant engineering (offshore teams not counted), or through inflated valuations (numerator too high). Sophisticated investors normalize for these factors.', color: 'rose' },

@@ -2,8 +2,8 @@ import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks16to17ExpansionModules: Record<string, CurriculumModule> = {};
 
-const t16 = 'Track 16 — Executive Premium Playbooks';
-const t17 = 'Track 17 — Technical Framework Comparisons';
+const t16 = 'Track 16  -  Executive Premium Playbooks';
+const t17 = 'Track 17  -  Technical Framework Comparisons';
 
 // ═══════════════════ TRACK 16: EXECUTIVE PREMIUM PLAYBOOKS EXPANSION ═══════════════════
 
@@ -114,7 +114,7 @@ tracks16to17ExpansionModules['guides/16-8'] = m('16-8', 'Incident Response Comma
             [
                 'When a primary database locks or an edge proxy fails, engineering adrenaline induces chaotic action. A 45-minute total outage at a $50M ARR company incinerates tens of thousands of dollars in direct cart revenue, and potentially millions in SLA (Service Level Agreement) breach penalties.',
                 'A military-grade Command & Control structure is non-negotiable: you must assign one Incident Commander (who enforces protocol and writes zero code), one Primary Communicator (who shields the team and updates stakeholders), and the execution team (who debugs).',
-                'Post-mortems must remain fundamentally blameless. If a junior engineer ran a script that dropped a production table, the root failure is not the engineer—it is the systemic CI/CD pipeline and IAM permission architecture that permitted such a destructive command to fire.'
+                'Post-mortems must remain fundamentally blameless. If a junior engineer ran a script that dropped a production table, the root failure is not the engineer - it is the systemic CI/CD pipeline and IAM permission architecture that permitted such a destructive command to fire.'
             ],
             [
                 d('Downtime Burn Rate', 'The absolute cost-per-minute of an unresponsive application.', 'Revenue ÷ Operational Minutes'),
@@ -163,7 +163,7 @@ tracks16to17ExpansionModules['guides/16-10'] = m('16-10', 'CEO Communication for
         l('The EBITDA Translation Layer', 
             [
                 'CEOs and the broader executive Board do not care about Webpack build times, Kubernetes namespace partitions, or React render cycles. They operate entirely in the realms of Growth, Free Cash Flow margin, and Liability Risk.',
-                'The ultimate, defining skill of a CTO or VP of Engineering is deploying the "Translation Layer"—the ability to flawlessly convert granular technical realities into strict financial realities. Refactoring is never just "cleaning up code"; it must be pitched as "retiring technical debt to permanently increase feature throughput and protect EBITDA."',
+                'The ultimate, defining skill of a CTO or VP of Engineering is deploying the "Translation Layer" - the ability to flawlessly convert granular technical realities into strict financial realities. Refactoring is never just "cleaning up code"; it must be pitched as "retiring technical debt to permanently increase feature throughput and protect EBITDA."',
                 'If an engineering leader requests half a million dollars to orchestrate a database migration based purely on "it improves query performance," they will fail. If they request it to "eliminate $1.2M in annual recurring downtime liability," the budget is authorized instantly.'
             ],
             [

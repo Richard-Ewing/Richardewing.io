@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'APER Calculator FAQ & Strategy Diagnostics | Richard Ewing',
-    description: 'APER Calculator FAQ provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'APER Calculator FAQ & Methodology',
+    description: 'Frequently asked questions about calculating Revenue-Per-Engineer (APER) and engineering headcount efficiency.',
     keywords: ['APER calculator', 'engineering efficiency', 'revenue per engineer', 'engineering productivity metrics'],
     alternates: { canonical: 'https://www.richardewing.io/tools/aper/faq' },
     openGraph: { title: 'APER Calculator FAQ', description: 'How to benchmark engineering efficiency with APER.', url: 'https://www.richardewing.io/tools/aper/faq', type: 'article' },
@@ -15,7 +15,7 @@ const faqs = [
     { q: 'How is APER different from revenue per engineer?', a: 'Raw revenue per engineer can be misleading. A company with 10 engineers and $10M ARR ($1M/engineer) appears efficient, but if 8 of those engineers are contractors, the adjusted figure changes dramatically. APER normalizes for team composition (FTE vs contractors), company stage (seed vs growth vs enterprise), industry vertical, and technology complexity.', color: 'violet' },
     { q: 'What is a good APER score?', a: 'APER benchmarks vary by stage. For seed-stage startups: $150-300K/engineer is healthy. For growth-stage: $300-600K/engineer. For enterprise: $500K-1.2M/engineer. Elite companies like Stripe achieve $3.2M/engineer, but this reflects their unique market position and should not be used as a universal benchmark.', color: 'emerald' },
     { q: 'How do I calculate APER for my team?', a: 'Use our free APER Calculator. You input: Annual Recurring Revenue (ARR), total engineering headcount (FTEs), contractor equivalents, company stage, and primary technology vertical. The calculator produces your raw and adjusted APER scores with industry benchmarks.', color: 'amber' },
-    { q: 'Can APER be used to justify hiring decisions?', a: 'Yes. APER trends are powerful for hiring ROI analysis. If your APER is declining quarter-over-quarter despite growing revenue, it indicates each marginal engineer is producing less incremental value — a signal to optimize before adding headcount. Rising APER with stable headcount indicates improving efficiency.', color: 'rose' },
+    { q: 'Can APER be used to justify hiring decisions?', a: 'Yes. APER trends are powerful for hiring ROI analysis. If your APER is declining quarter-over-quarter despite growing revenue, it indicates each marginal engineer is producing less incremental value  -  a signal to optimize before adding headcount. Rising APER with stable headcount indicates improving efficiency.', color: 'rose' },
     { q: 'How does APER relate to DORA metrics?', a: 'APER measures economic output (revenue per engineering unit), while DORA measures delivery performance (how fast and reliably you ship). They are complementary. High DORA scores with low APER may indicate you are shipping efficiently but working on the wrong things. High APER with low DORA may indicate good product-market fit but delivery bottlenecks.', color: 'cyan' },
     { q: 'Is the APER Calculator free?', a: 'Yes. The APER Calculator is completely free with no account required. It provides instant benchmarking against industry standards and actionable recommendations for improving engineering efficiency.', color: 'violet' },
     { q: 'What industries does APER benchmark against?', a: 'APER benchmarks cover SaaS, fintech, healthtech, e-commerce, enterprise software, developer tools, edtech, and infrastructure/platform companies. Each vertical has distinct efficiency profiles based on typical engineering team sizes and revenue models.', color: 'emerald' },

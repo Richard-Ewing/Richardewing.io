@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Stop Building AI Features That & Strategy Diagnostics | Richard Ewing',
-    description: 'Stop Building AI Features That provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'The AI Economist Manifesto',
+    description: 'Why enterprise AI requires financial engineering, unit economic governance, and sovereign deterministic execution.',
     keywords: [
         'AI economist manifesto',
         'innovation without solvency',

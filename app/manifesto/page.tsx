@@ -50,7 +50,7 @@ export default function ManifestoPage() {
                                     We are not just builders anymore. We are Architects of Capital.
                                 </p>
                                 <p className="text-zinc-900 text-sm font-semibold sm:text-base">
-                                    We must learn to speak the language of the P&L, or we will be relegated to the children's table while the CFO makes the real roadmap decisions. The AI Economist exists to bridge this gap—to give technical leaders the financial fluency they need to command the room.
+                                    We must learn to speak the language of the P&L, or we will be relegated to the children's table while the CFO makes the real roadmap decisions. The AI Economist exists to bridge this gap - to give technical leaders the financial fluency they need to command the room.
                                 </p>
                             </div>
 

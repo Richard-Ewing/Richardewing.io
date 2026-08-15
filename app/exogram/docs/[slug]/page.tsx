@@ -15,11 +15,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     if (!doc) return { title: 'Not Found' };
 
     return {
-        title: `${doc.title} — Exogram Docs`,
+        title: `${doc.title}  -  Exogram Docs`,
         description: doc.description,
         alternates: { canonical: `https://www.richardewing.io/exogram/docs/${doc.slug}` },
         openGraph: {
-            title: `${doc.title} — Exogram Docs`,
+            title: `${doc.title}  -  Exogram Docs`,
             description: doc.description,
             url: `https://www.richardewing.io/exogram/docs/${doc.slug}`,
             siteName: 'Richard Ewing',
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${doc.title} — Exogram Docs`,
+            title: `${doc.title}  -  Exogram Docs`,
             description: doc.description,
             images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
         }

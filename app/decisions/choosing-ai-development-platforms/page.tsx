@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { ArrowRight, BookOpen, AlertTriangle, CheckCircle, Database } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Choosing AI Development Platfo & Strategy Diagnostics | Richard Ewing',
-    description: 'Choosing AI Development Platfo provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Choosing AI Development Platforms Guide',
+    description: 'Objective architectural evaluation framework for selecting enterprise AI development platforms and model providers.',
     alternates: {
         canonical: 'https://www.richardewing.io/decisions/choosing-ai-development-platforms',
     },
@@ -34,7 +34,7 @@ export default function ChoosingAIDevelopmentPlatforms() {
                         The standard engineering argument for orchestration platforms (such as LangChain, LlamaIndex, or internal wrappers) is model agnosticism. The theory suggests that abstracting the LLM provider prevents vendor lock-in.
                     </p>
                     <p>
-                        Observed evidence contradicts this. High-performing AI features inevitably rely on provider-specific capabilities—such as Claude's 200k context window or GPT-4's specific function-calling syntax. An abstraction layer that forces lowest-common-denominator compatibility destroys the precise reasoning capabilities you are paying frontier prices to access.
+                        Observed evidence contradicts this. High-performing AI features inevitably rely on provider-specific capabilities - such as Claude's 200k context window or GPT-4's specific function-calling syntax. An abstraction layer that forces lowest-common-denominator compatibility destroys the precise reasoning capabilities you are paying frontier prices to access.
                     </p>
                     <p>
                         The true cost of abstraction is latency and token bloat. When an orchestration framework manages prompt construction invisibly, it often injects massive, hidden system prompts. This multiplies your token consumption per query, accelerating margin collapse without adding proportional end-user value.

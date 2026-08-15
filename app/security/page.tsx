@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Enterprise Security & Trust Center | Exogram Governance',
+    title: 'Enterprise Security & Trust Center',
     description: 'Security architecture, VPC isolation, zero data retention (ZDR), policy-as-code enforcement, and NDA compliance protocols.',
     alternates: { canonical: 'https://www.richardewing.io/security' },
     openGraph: {

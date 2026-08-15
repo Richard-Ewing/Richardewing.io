@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Glossary of Technology, AI & P & Strategy Diagnostics | Richard Ewing',
-    description: 'Glossary of Technology, AI & P provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'AI Economics & Engineering Glossary',
+    description: 'Definitive lexicon of AI economics, software capital, runtime governance, and technical insolvency terminology.',
     keywords: [
         'technology glossary', 'AI glossary', 'SaaS glossary', 'engineering glossary',
         'product management glossary', 'technical debt definition', 'what is ARR',

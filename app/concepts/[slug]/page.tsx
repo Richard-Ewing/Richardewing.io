@@ -24,13 +24,13 @@ export async function generateMetadata({ params }: ConceptPageProps): Promise<Me
   const shortTitle = concept.title.length > 30 ? concept.title.slice(0, 29) + '…' : concept.title;
 
   return {
-    title: `${shortTitle} — Research Spec`,
+    title: `${shortTitle}  -  Research Spec`,
     description,
     alternates: {
       canonical: `https://www.richardewing.io/concepts/${slug}`,
     },
     openGraph: {
-      title: `${shortTitle} — Research Spec | Richard Ewing`,
+      title: `${shortTitle}  -  Research Spec | Richard Ewing`,
       description,
       url: `https://www.richardewing.io/concepts/${concept.slug}`,
       type: 'article',
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: ConceptPageProps): Promise<Me
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${shortTitle} — Research Spec | Richard Ewing`,
+      title: `${shortTitle}  -  Research Spec | Richard Ewing`,
       description,
       images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },
@@ -383,31 +383,31 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
 
             <div className="grid grid-cols-3 sm:grid-cols-9 gap-2 pt-2 font-mono text-[11px] text-center font-bold">
               <div className={`p-2.5 rounded-xl border ${concept.expandedConsensus.website ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
-                Website {concept.expandedConsensus.website ? '✓' : '—'}
+                Website {concept.expandedConsensus.website ? '✓' : ' - '}
               </div>
               <div className={`p-2.5 rounded-xl border ${concept.expandedConsensus.newsletter ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
-                Newsletter {concept.expandedConsensus.newsletter ? '✓' : '—'}
+                Newsletter {concept.expandedConsensus.newsletter ? '✓' : ' - '}
               </div>
               <div className={`p-2.5 rounded-xl border ${concept.expandedConsensus.book ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
-                Book {concept.expandedConsensus.book ? '✓' : '—'}
+                Book {concept.expandedConsensus.book ? '✓' : ' - '}
               </div>
               <div className={`p-2.5 rounded-xl border ${concept.expandedConsensus.video ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
-                Video {concept.expandedConsensus.video ? '✓' : '—'}
+                Video {concept.expandedConsensus.video ? '✓' : ' - '}
               </div>
               <div className={`p-2.5 rounded-xl border ${concept.expandedConsensus.talk ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
-                Talk {concept.expandedConsensus.talk ? '✓' : '—'}
+                Talk {concept.expandedConsensus.talk ? '✓' : ' - '}
               </div>
               <div className={`p-2.5 rounded-xl border ${concept.expandedConsensus.framework ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
-                Framework {concept.expandedConsensus.framework ? '✓' : '—'}
+                Framework {concept.expandedConsensus.framework ? '✓' : ' - '}
               </div>
               <div className={`p-2.5 rounded-xl border ${concept.expandedConsensus.calculator ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
-                Calculator {concept.expandedConsensus.calculator ? '✓' : '—'}
+                Calculator {concept.expandedConsensus.calculator ? '✓' : ' - '}
               </div>
               <div className={`p-2.5 rounded-xl border ${concept.expandedConsensus.research ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
-                Research {concept.expandedConsensus.research ? '✓' : '—'}
+                Research {concept.expandedConsensus.research ? '✓' : ' - '}
               </div>
               <div className={`p-2.5 rounded-xl border ${concept.expandedConsensus.caseStudy ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
-                Case Study {concept.expandedConsensus.caseStudy ? '✓' : '—'}
+                Case Study {concept.expandedConsensus.caseStudy ? '✓' : ' - '}
               </div>
             </div>
           </section>

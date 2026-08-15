@@ -10,13 +10,13 @@ const ClientOutcomes = () => {
             <div className="page-container">
 
                 <div className="section-header text-center">
-                    <h2>Audit Outcomes — Before & After</h2>
+                    <h2>Audit Outcomes  -  Before & After</h2>
                     <p>Real results from R&D Capital Audits. Dollar-denominated findings with measurable remediation.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
 
-                    {/* Finding 1 — Capital Misallocation */}
+                    {/* Finding 1  -  Capital Misallocation */}
                     <div className="card relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-rose-400 to-rose-500"></div>
                         <div className="pt-3">
@@ -36,7 +36,7 @@ const ClientOutcomes = () => {
                         </div>
                     </div>
 
-                    {/* Finding 2 — AI Cost Reduction */}
+                    {/* Finding 2  -  AI Cost Reduction */}
                     <div className="card relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-400 to-violet-500"></div>
                         <div className="pt-3">
@@ -56,7 +56,7 @@ const ClientOutcomes = () => {
                         </div>
                     </div>
 
-                    {/* Finding 3 — Engineering Capacity Recovery */}
+                    {/* Finding 3  -  Engineering Capacity Recovery */}
                     <div className="card relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-400 to-purple-600"></div>
                         <div className="pt-3">

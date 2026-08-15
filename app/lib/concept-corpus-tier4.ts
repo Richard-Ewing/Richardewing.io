@@ -333,7 +333,7 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
     expertiseLevel: 'Intermediate',
     health: { confidence: 0.9, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The discipline of designing and delivering AI-powered software, balancing probabilistic user experiences with stringent margin protection and ethical governance.',
-    whyItMatters: 'Traditional product management relies on deterministic logic. AI product management requires the Product Economist mindset—weighing the value of fuzzy, probabilistic features against their compounding inference costs and technical debt liabilities.',
+    whyItMatters: 'Traditional product management relies on deterministic logic. AI product management requires the Product Economist mindset - weighing the value of fuzzy, probabilistic features against their compounding inference costs and technical debt liabilities.',
     whoShouldCare: ['Product Managers', 'Chief Product Officers', 'UX Designers', 'Founders'],
     firstIntroduced: 'Industry Consensus 2023',
     canonicalReadingOrder: [

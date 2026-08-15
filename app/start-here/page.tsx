@@ -4,11 +4,11 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import EcosystemMap from '@/app/components/EcosystemMap';
 
 export const metadata: Metadata = {
-    title: 'Start Here & Strategy Diagnostics | Richard Ewing',
-    description: 'Start Here provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Start Here: The AI Economics Blueprint',
+    description: 'Your orientation guide to diagnosing AI unit economics, evaluating technical debt, and deploying deterministic governance.',
     alternates: { canonical: 'https://www.richardewing.io/start-here' },
     openGraph: {
-        title: 'Start Here — Guided Onboarding Flow',
+        title: 'Start Here  -  Guided Onboarding Flow',
         description: 'A 5-step operational pathway from identifying hidden AI risk to executing runtime controls via Exogram.',
         url: 'https://www.richardewing.io/start-here',
         type: 'website',

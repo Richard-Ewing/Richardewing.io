@@ -6,8 +6,8 @@ import Meteors from '@/app/components/magicui/meteors';
 import { ArrowRight, BarChart3, TrendingDown, Cpu, ShieldAlert, Zap, Globe, Scale, Activity, ShieldCheck, Database } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'AI Capital Benchmark 2026 & Strategy Diagnostics | Richard Ewing',
-    description: 'AI Capital Benchmark 2026 provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: '2026 AI Capital Allocation Benchmark',
+    description: 'Comprehensive empirical benchmark evaluating enterprise AI returns, compute expenditure, and technical debt accumulation.',
     keywords: [
         'AI economics', 'LLM CapEx vs OpEx', 'tech debt benchmarks 2026',
         'AI wrapper latency', 'FTE displacement timeline', 'capital engineering statistics',

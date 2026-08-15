@@ -10,8 +10,8 @@ import progressStyles from '../styles/progress.module.css';
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-    title: 'Vault - Executive Diagnostic Toolkit | Richard Ewing',
-    description: 'Client Vault provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Executive Diagnostic Toolkit & Vault',
+    description: 'Secure client portal for enterprise diagnostic calculators, audit deliverables, and research frameworks.',
     robots: { index: false, follow: false },
     openGraph: {
         title: 'Vault - Executive Diagnostic Toolkit | Richard Ewing',

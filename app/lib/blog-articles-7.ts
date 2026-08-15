@@ -11,7 +11,7 @@ export const articlesBatch7: Record<string, ArticleData> = {
 
 For the last twenty years, product managers have operated under a financial delusion disguised as a business model: zero marginal cost. 
 
-When you build a traditional SaaS feature—say, a new analytics dashboard or a better export tool—it costs money to build (R&D) and money to maintain (Technical Debt). But once it's deployed, the cost to serve that feature to the next user is functionally zero. Whether 10 users click "Export to CSV" or 10,000 users click it, your AWS bill barely registers the change. 
+When you build a traditional SaaS feature - say, a new analytics dashboard or a better export tool - it costs money to build (R&D) and money to maintain (Technical Debt). But once it's deployed, the cost to serve that feature to the next user is functionally zero. Whether 10 users click "Export to CSV" or 10,000 users click it, your AWS bill barely registers the change. 
 
 Because the marginal cost was zero, product managers were trained to optimize for one thing above all else: **Engagement**. 
 
@@ -19,7 +19,7 @@ Get the user to click more. Get them to stay longer. Get them to use the product
 
 But generative AI just broke the formula. 
 
-When you build an AI feature—say, an LLM-powered "Chat with your Data" bot—the economics fundamentally flip. Every time a user interacts with that feature, your application makes an API call to a foundation model. That call costs money. It might be a fraction of a cent, or it might be ten cents depending on the context window and the model. 
+When you build an AI feature - say, an LLM-powered "Chat with your Data" bot - the economics fundamentally flip. Every time a user interacts with that feature, your application makes an API call to a foundation model. That call costs money. It might be a fraction of a cent, or it might be ten cents depending on the context window and the model. 
 
 Suddenly, the marginal cost is not zero. It is highly variable, entirely unpredictable, and dangerously scalable. 
 
@@ -44,7 +44,7 @@ Your gross margin just plummeted from 85% to 6%.
 
 This is what I call **Power User Liability**. In the AI era, your most engaged customers are your most expensive liabilities. They are actively destroying your unit economics. And because you likely sold them a flat-rate subscription, you have no mechanism to capture the value they are extracting.
 
-If you scale this feature successfully—if you actually achieve the "high engagement" you were trained to seek—you will bankrupt the company. You have built a machine that converts venture capital directly into Nvidia revenue, with your SaaS company acting as a low-margin compute reseller in the middle.
+If you scale this feature successfully - if you actually achieve the "high engagement" you were trained to seek - you will bankrupt the company. You have built a machine that converts venture capital directly into Nvidia revenue, with your SaaS company acting as a low-margin compute reseller in the middle.
 
 ---
 
@@ -93,7 +93,7 @@ They will be promoted to Chief Product Officer.
 
 <h2>The Masterclass: Your Transition Plan</h2>
 
-If you are a Product Manager, Engineering Leader, or startup Founder, you are standing at a career crossroads. The skills that got you here—agile methodology, story mapping, A/B testing—are commodities. They are table stakes.
+If you are a Product Manager, Engineering Leader, or startup Founder, you are standing at a career crossroads. The skills that got you here - agile methodology, story mapping, A/B testing - are commodities. They are table stakes.
 
 The scarce skill in the market today is the ability to architect, govern, and monetize probabilistic software without destroying unit economics. 
 

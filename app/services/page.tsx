@@ -14,8 +14,8 @@ import ProductBridgeCard from '@/app/components/ProductBridgeCard';
 import ExecutiveTooltip from '@/components/ExecutiveTooltip';
 
 export const metadata: Metadata = {
-    title: 'AI Advisory Services - Diagnostics, Audits & Cost Governance | Richard Ewing',
-    description: 'Your AI budget is growing. Your AI returns are not. Advisory services that measure, govern, and improve the economics of enterprise AI. From $450 diagnostics to fractional CPO retainers.',
+    title: 'Enterprise AI Advisory Services',
+    description: 'Advisory services measuring, governing, and improving the economics of enterprise AI. From diagnostics to retainers.',
     alternates: {
         canonical: 'https://www.richardewing.io/services',
     },

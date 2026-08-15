@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'AI Contract Review Costs Are D & Strategy Diagnostics | Richard Ewing',
-    description: 'AI Contract Review Costs Are D provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'LegalTech AI Unit Economics & Document Ingestion',
+    description: 'Control vector database costs, document OCR processing overhead, and contract review inference margins.',
     keywords: ['legaltech technical debt', 'legal technology', 'contract AI economics', 'legal document processing', 'legaltech engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/legaltech' },
     openGraph: { title: 'LegalTech AI Economics', description: 'R&D capital challenges in legal technology.', url: 'https://www.richardewing.io/industries/legaltech', type: 'article' },

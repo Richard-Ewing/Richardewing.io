@@ -2,7 +2,7 @@ import { CurriculumModule, l, d, m } from './curriculum-data';
 
 export const tracks12Modules: Record<string, CurriculumModule> = {};
 
-const t12 = 'Track 12 — Enterprise Architecture Economics';
+const t12 = 'Track 12  -  Enterprise Architecture Economics';
 
 tracks12Modules['enterprise-architecture/12-1'] = m('12-1', 'Architecture Review Board Economics', 'Calculate ARB decision throughput, governance overhead, and the ROI of enterprise architecture.', t12, 
     ['Calculate ARB operational drag', 'Quantify governance overhead', 'Model the financial return on architectural standardization'], [
@@ -146,7 +146,7 @@ tracks12Modules['enterprise-architecture/12-8'] = m('12-8', 'Database Strategy &
     ['Quantify Polyglot Persistence overhead', 'Model the migration CapEx of leaving Oracle', 'Determine Read Replica economics'], [
         l('The Fragmentation of Data Stores', 
             [
-                'Polyglot Persistence—using the "right database for the job" (MongoDB for documents, Redis for cache, Neo4j for graphs, Postgres for relations)—is architecturally beautiful but operationally ruinous.',
+                'Polyglot Persistence - using the "right database for the job" (MongoDB for documents, Redis for cache, Neo4j for graphs, Postgres for relations) - is architecturally beautiful but operationally ruinous.',
                 'Every new database technology introduced to the enterprise requires a specialized Site Reliability Engineer (SRE) to manage patches, backups, and failovers. The payroll cost of maintaining expertise in 6 disparate databases far outstrips the latency benefits.',
                 'Standardization drives margin. An organization that mandates PostgreSQL for 95% of workloads structurally minimizes its Operational Expense (OpEx) for DevOps and training.'
             ],
@@ -183,7 +183,7 @@ tracks12Modules['enterprise-architecture/12-10'] = m('12-10', 'Enterprise Archit
         l('The Architecture Balance Sheet', 
             [
                 'Enterprise Architects are fundamentally financial portfolio managers. The technology stack is the asset; coupling and tech debt are the liabilities. Most EAs fail because they cannot articulate their value in CFO language.',
-                'To secure funding for refactoring, an EA must demonstrate the "Innovation Tax"—the exact percentage of developer payroll currently being burned navigating architectural rot rather than delivering features.',
+                'To secure funding for refactoring, an EA must demonstrate the "Innovation Tax" - the exact percentage of developer payroll currently being burned navigating architectural rot rather than delivering features.',
                 'A centralized EA dashboard tracking the "Technical Insolvency Date" (when maintenance costs will consume 100% of engineering bandwidth) forces executive action immediately.'
             ],
             [
