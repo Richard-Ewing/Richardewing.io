@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: 'Richard Ewing',
     type: 'website',
     locale: 'en_US',
-    images: [{ url: 'https://www.richardewing.io/og-image-home.png' }],
+    images: [{ url: 'https://www.richardewing.io/api/og?title=AI+Economics+%26+R%26D+Capital+Audits&category=Sovereign+Architecture' }],
   },
 
   // Twitter
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Richard Ewing | AI Economist - Enterprise AI Audits & Cost Governance',
     description: 'Richard Ewing helps organizations measure, govern, and improve the economics of enterprise AI. 19 frameworks, 25 diagnostic tools, and advisory services for CTOs, CFOs, and PE operating partners.',
-    images: ['https://www.richardewing.io/og-image-home.png'],
+    images: ['https://www.richardewing.io/api/og?title=AI+Economics+%26+R%26D+Capital+Audits&category=Sovereign+Architecture'],
   },
 
   // Robots

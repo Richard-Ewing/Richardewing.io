@@ -3,6 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 import EcosystemMap from '@/app/components/EcosystemMap';
 import FAQItem from '@/app/components/FAQItem';
+import InteractiveSystemsDiagram from '@/components/InteractiveSystemsDiagram';
 
 export const metadata: Metadata = {
     title: 'Production AI Governance Frameworks',
@@ -121,6 +122,11 @@ export default function FrameworkLandingPage() {
                             </div>
                         </Link>
                     </div>
+                </section>
+
+                {/* Interactive Systems Architecture Inspection */}
+                <section className="mb-20">
+                    <InteractiveSystemsDiagram />
                 </section>
 
                 {/* Ecosystem Map Section */}

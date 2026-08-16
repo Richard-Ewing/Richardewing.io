@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { TrendingDown, DollarSign, AlertTriangle, ArrowRight, BarChart3, Calculator, Shield, Zap, Users, Target, Clock, ChevronRight } from 'lucide-react';
+import NotebookLMAudioPlayer from '@/components/NotebookLMAudioPlayer';
 
 export const metadata: Metadata = {
     title: 'The Enterprise AI Economics Crisis',
@@ -60,9 +61,18 @@ export default function AIEconomicsCrisis() {
                             Run Your Free AI Economics Audit
                             <ArrowRight className="w-5 h-5" />
                         </Link>
-                        <Link href="/services" className="inline-flex items-center gap-2 px-8 py-4 border border-zinc-300 text-zinc-700 font-medium rounded-xl hover:bg-zinc-100 transition-colors">
-                            Book an Advisory Session
+                        <Link href="/pricing" className="inline-flex items-center gap-6 py-4 bg-zinc-800/80 hover:bg-zinc-800 text-zinc-200 font-semibold rounded-xl transition-all border border-zinc-700 px-8">
+                            View Advisory Retainers
                         </Link>
+                    </div>
+
+                    {/* NotebookLM Audio Deep Dive */}
+                    <div className="mt-12 max-w-3xl mx-auto text-left">
+                        <NotebookLMAudioPlayer
+                            title="The Enterprise AI Economics Crisis: Full Audio Analysis"
+                            subtitle="Executive deep dive on hidden AI maintenance costs ($58K/eng/yr) and gross margin erosion."
+                            durationStr="12:45"
+                        />
                     </div>
                 </div>
             </section>

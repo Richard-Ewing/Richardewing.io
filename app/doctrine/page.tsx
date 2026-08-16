@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 import FAQItem from '../components/FAQItem';
+import InteractiveSystemsDiagram from '@/components/InteractiveSystemsDiagram';
 
 export const metadata: Metadata = {
     title: 'The Doctrine of Sovereignty',
@@ -131,6 +132,11 @@ export default function DoctrinePage() {
                         </div>
 
                     </div>
+                </section>
+
+                {/* Interactive Systems Architecture Inspection */}
+                <section className="section">
+                    <InteractiveSystemsDiagram />
                 </section>
 
                 {/* Definitions */}

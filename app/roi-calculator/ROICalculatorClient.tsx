@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import ExportPDFButton from '@/components/ExportPDFButton';
 
 export function ROICalculatorClient() {
     const [monthlySpend, setMonthlySpend] = useState<number>(15000);
@@ -133,7 +134,7 @@ export function ROICalculatorClient() {
             </div>
 
             {/* Diagnostic Results Display */}
-            <div className="lg:col-span-6 bg-zinc-950 text-white rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-lg">
+            <div id="roi-results-card" className="lg:col-span-6 bg-zinc-950 text-white rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-lg">
                 <div>
                     <div className="flex justify-between items-center mb-6">
                         <span className="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest">
@@ -182,6 +183,11 @@ export function ROICalculatorClient() {
                 </div>
 
                 <div className="space-y-3">
+                    <ExportPDFButton
+                        elementId="roi-results-card"
+                        fileName="AI_Economics_ROI_Audit_Report.pdf"
+                        buttonLabel="Download Boardroom PDF Audit Report"
+                    />
                     <Link
                         href="/services"
                         className="w-full py-4 bg-amber-500 text-zinc-950 font-mono text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-amber-400 transition-colors flex items-center justify-center gap-2"

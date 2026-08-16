@@ -117,5 +117,17 @@ To harness the full capabilities of next-generation high-reasoning frontier mode
 6. **`/learn` (Pattern Persistence)**: Codify durable user preferences, design tokens, and architectural rules.
 7. **MCP Server Integration**: Actively interface with vector indexes (`pinecone-mcp-server`) and relational data/edge functions (`supabase-mcp-server`).
 
+---
+
+## 11. NotebookLM & Multimodal Media Protocol
+
+To leverage Google Ultra and NotebookLM across all platform publications:
+
+1. **Grounded Source Packaging**: Every new essay, research track, or whitepaper created by `lived_experience_writer` must include structured source citations and an executive summary formatted for instant ingestion into NotebookLM.
+2. **Audio Deep Dive Integration**: Flagship publications must embed `NotebookLMAudioPlayer` containers configured to stream generated 2-host audio overviews from `public/audio/` or external audio CDNs.
+3. **Executive Slide Viewer Scaffolding**: Transform key findings into `NotebookLMSlides` interactive carousel decks with metric callouts and speaker context notes.
+4. **Autonomous Media Synchronization**: When new audio or slide assets are generated, automatically wire component props without disrupting static pre-rendering.
+
+
 
 

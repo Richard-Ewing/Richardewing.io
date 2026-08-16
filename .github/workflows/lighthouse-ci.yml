@@ -1,0 +1,35 @@
+name: MOD v3.0 Lighthouse & QA CI Gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  audit:
+    name: Zero-Drift QA & Systems Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run MOD v3.0 QA Verification Gate
+        run: node .agents/scripts/verify-qa.mjs
+
+      - name: Run Next.js Build
+        run: npm run build
+
+      - name: Run Lighthouse & Systems Route Audit
+        run: node scripts/audit-lighthouse.mjs
+        env:
+          AUDIT_URL: 'https://www.richardewing.io'
