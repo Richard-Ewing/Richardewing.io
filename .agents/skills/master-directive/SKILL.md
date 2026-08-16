@@ -105,4 +105,17 @@ To harness the full capabilities of next-generation high-reasoning frontier mode
 3. **Always-On Rules (`.agents/rules/`)**: Ensure non-negotiable operational invariants are injected into every turn.
 4. **Slash Command Synergy**: Leverage `/goal` for autonomous long-horizon missions, `/schedule` for background timers/crons, `/grill-me` for design alignment, and `/learn` for pattern persistence.
 
+---
+
+## 10. Slash Command Execution & Ecosystem Harness
+
+1. **`/goal` (Long-Horizon Autonomous Loops)**: When a broad optimization goal is set (e.g., reaching 100/100 Lighthouse score or refactoring multi-track layouts), execute continuous loops: Audit -> Refactor -> Verify -> Repeat until target metrics are achieved.
+2. **`/schedule` (Background Monitoring & Crons)**: Use one-shot timers or cron schedules for periodic health checks, broken link crawls, and automated sitemap pings.
+3. **`/browser` (Live Headless Visual Inspection)**: Validate UI layout shifts, responsive mobile breakpoints, and user tap states in real browsers.
+4. **`/grill-me` (Interactive Socratic Alignment)**: Run design interviews to surface architectural tradeoffs before writing code.
+5. **`/teamwork-preview` & Agent Dispatch**: Coordinate multi-agent collaborative workflows across isolated git worktrees.
+6. **`/learn` (Pattern Persistence)**: Codify durable user preferences, design tokens, and architectural rules.
+7. **MCP Server Integration**: Actively interface with vector indexes (`pinecone-mcp-server`) and relational data/edge functions (`supabase-mcp-server`).
+
+
 

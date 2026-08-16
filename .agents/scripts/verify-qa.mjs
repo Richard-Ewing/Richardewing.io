@@ -60,7 +60,7 @@ try {
   // Fallback if git command fails
 }
 
-// 3. Perform Em-Dash & Stat Verification
+// 3. Perform Em-Dash, Stat & Accessibility Verification
 filesToAudit.forEach(filePath => {
   const relativePath = path.relative(rootDir, filePath);
   if (relativePath.includes('verify-qa.mjs')) return;
@@ -79,7 +79,28 @@ filesToAudit.forEach(filePath => {
     console.warn(`[STAT WARNING] Found unverified stat fallback in ${relativePath}`);
     warningCount++;
   }
+
+  // Rule C: Basic Image Alt Check for Modified TSX/JSX
+  if (/\.(tsx|jsx)$/i.test(relativePath)) {
+    const rawImgMatches = content.match(/<img\s+[^>]+>/g) || [];
+    rawImgMatches.forEach(tag => {
+      if (!tag.includes('alt=') || /alt=["']\s*["']/.test(tag)) {
+        console.warn(`[A11Y WARNING] Image tag missing non-empty alt prop in ${relativePath}`);
+        warningCount++;
+      }
+    });
+  }
 });
+
+// 4. Validate Security Headers in middleware.ts
+const middlewarePath = path.join(rootDir, 'middleware.ts');
+if (fs.existsSync(middlewarePath)) {
+  const mwContent = fs.readFileSync(middlewarePath, 'utf8');
+  if (!mwContent.includes('Strict-Transport-Security') || !mwContent.includes('X-Frame-Options')) {
+    console.error(`[SECURITY ERROR] middleware.ts is missing standard enterprise security headers`);
+    errorCount++;
+  }
+}
 
 console.log('\n--- Verification Summary ---');
 console.log(`Files audited: ${filesToAudit.length}`);
@@ -93,4 +114,3 @@ if (errorCount > 0) {
   console.log('✅ All QA Checks Passed Cleanly.');
   process.exit(0);
 }
-
