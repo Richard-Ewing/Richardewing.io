@@ -335,6 +335,17 @@ export const articles: Article[] = [
         editorsPick: true
     },
     {
+        slug: "fable-5-vs-gpt-56-sol",
+        title: "Fable 5 vs. GPT-5.6 Sol: Which Model Is Better?",
+        description: "I put each model through a series of everyday tasks. Here is what I learned about what they are good at - comparing frontier model reasoning paradigms through enterprise cost-per-task efficiency.",
+        date: "Jul 2026",
+        readTime: "7 min read",
+        source: "Built In",
+        category: "Economics",
+        externalUrl: "https://builtin.com/articles/fable-5-vs-gpt-56-sol",
+        editorsPick: true
+    },
+    {
         slug: "technical-insolvency-date",
         title: "The Technical Insolvency Date",
         description: "The exact quarter when maintenance costs mathematically consume 100% of engineering capacity.",

@@ -62,6 +62,12 @@ const publications = [
         url: "https://builtin.com/editors-picks?i=08d8cc66-3dd4-4057-8e19-d79a11e32f55&utm_campaign=content_newsletter&utm_medium=email&utm_source=ses", 
         thesis: "A forensic breakdown of product-market fit failures in the AI space.",
         editorsPick: true
+      },
+      {
+        title: "Fable 5 vs. GPT-5.6 Sol: Which Model Is Better?",
+        url: "https://builtin.com/articles/fable-5-vs-gpt-56-sol",
+        thesis: "I put each model through a series of everyday tasks. Here is what I learned about what they are good at - comparing frontier reasoning paradigms through enterprise cost-per-task efficiency.",
+        editorsPick: true
       }
     ]
   },

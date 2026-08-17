@@ -1,4 +1,4 @@
-﻿import { ConceptNode } from './concept-corpus';
+import { ConceptNode } from './concept-corpus';
 
 export const TIER5_CONCEPTS: ConceptNode[] = [
   {
@@ -775,7 +775,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     ],
     evidenceLedger: [
       { id: 'ev-smc-1', title: 'The Hidden Inflation of AI: Why Model Collapse Is a Business Risk', url: '/articles/cio-model-collapse', publisher: 'CIO.com', type: 'Executive Essay', strength: 5, role: 'Origin', date: 'August 2026' },
-      { id: 'ev-smc-2', title: 'Fable 5 vs. GPT-5', url: '/articles/builtin-fable-vs-gpt5', publisher: 'Built In', type: 'Industry Analysis', strength: 4, role: 'Extends', date: 'August 2026' }
+      { id: 'ev-smc-2', title: 'Fable 5 vs. GPT-5.6 Sol: Which Model Is Better?', url: 'https://builtin.com/articles/fable-5-vs-gpt-56-sol', publisher: 'Built In (Editor\'s Pick)', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'July 29, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'model-collapse', relationship: 'refines' },

@@ -283,15 +283,16 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
   // Tier 1 Media  -  Built In (11 Articles)
   {
     id: 'builtin-fable-vs-gpt5',
-    title: 'Fable 5 vs. GPT-5: Comparing Frontier Reasoning Paradigms',
+    title: 'Fable 5 vs. GPT-5.6 Sol: Which Model Is Better?',
     url: 'https://builtin.com/articles/fable-5-vs-gpt-56-sol',
     publisher: 'Built In',
-    domain: 'AI Governance',
+    domain: 'AI Economics',
     type: 'Evergreen',
     editorsPick: true,
-    thesis: 'Compares deterministic versus probabilistic reasoning architectures for enterprise execution.',
-    relatedConceptIds: ["model-collapse","cost-of-predictivity","inference-economics"],
-    relatedGlossarySlugs: ["model-collapse","frontier-model"]
+    date: 'July 29, 2026',
+    thesis: 'I put each model through a series of everyday tasks. Here is what I learned about what they are good at - comparing frontier model reasoning paradigms through the lens of enterprise cost-per-task efficiency rather than benchmark leaderboards.',
+    relatedConceptIds: ["model-collapse", "cost-of-predictivity", "inference-economics", "synthetic-model-collapse"],
+    relatedGlossarySlugs: ["model-collapse", "frontier-model"]
   },
   {
     id: 'builtin-ai-security-gates',
@@ -915,13 +916,14 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
   {
     id: 'builtin-fable5-gpt5',
     title: 'Fable 5 vs. GPT-5.6 Sol: Which Model Is Better?',
-    url: 'https://builtin.com/articles/fable-5-vs-gpt-5',
+    url: 'https://builtin.com/articles/fable-5-vs-gpt-56-sol',
     publisher: 'Built In',
     domain: 'AI Economics',
     type: 'Evergreen',
-    thesis: 'Compares frontier model reasoning paradigms through the lens of enterprise cost-per-task efficiency rather than benchmark leaderboards.',
-    date: 'July 2026',
-    relatedConceptIds: ['inference-economics', 'model-collapse']
+    editorsPick: true,
+    thesis: 'I put each model through a series of everyday tasks. Here is what I learned about what they are good at - comparing frontier model reasoning paradigms through the lens of enterprise cost-per-task efficiency rather than benchmark leaderboards.',
+    date: 'July 29, 2026',
+    relatedConceptIds: ['inference-economics', 'model-collapse', 'synthetic-model-collapse']
   },
   {
     id: 'builtin-ai-product-nobody-wanted',
