@@ -425,6 +425,187 @@ export const failures: FailureMode[] = [
     remediationAssets: [
       { title: 'Deploy the Exogram Control Plane ($299)', url: '/skills/deterministic-agentic-engineering' }
     ]
+  },
+  {
+    id: 'unreliability-tax',
+    slug: 'unreliability-tax',
+    title: 'The Unreliability Tax',
+    subtitle: 'Human Review Overhead That Erases AI Productivity Gains',
+    description: 'The Unreliability Tax is the hidden cost layer that accumulates when organizations deploy probabilistic AI systems without verification gates. Every AI-generated output that requires human review, correction, or rollback adds a tax on the theoretical productivity gains. When the tax exceeds the savings, AI deployment becomes a net negative.',
+    symptoms: [
+      'Engineers spend more time reviewing AI output than they would writing the code themselves.',
+      'QA cycles double after adopting AI coding tools because defect rates climb silently.',
+      'Executives see tool adoption metrics climbing while actual feature delivery velocity stalls.'
+    ],
+    causes: [
+      'Treating AI output confidence scores as binary pass/fail rather than probability distributions.',
+      'Failing to instrument the human verification overhead as a measurable cost center.',
+      'No economic feedback loop connecting AI tool costs to actual engineering throughput.'
+    ],
+    telemetrySignals: [
+      { metric: 'Review-to-Generate Ratio', value: '> 1.5x', interpretation: 'Human review time exceeds generation time, creating negative ROI.' },
+      { metric: 'Defect Injection Rate', value: '> 15% per PR', interpretation: 'AI-generated code introduces bugs faster than it fixes them.' },
+      { metric: 'Effective Throughput', value: 'Declining', interpretation: 'Net feature delivery drops despite rising generation volume.' }
+    ],
+    operationalPatterns: [
+      'Instrument review-to-generate ratio per engineer per sprint.',
+      'Calculate fully loaded cost-per-merged-PR including all review overhead.',
+      'Set automated quality gates that reject AI output below confidence thresholds before human review.'
+    ],
+    economicImpact: {
+      title: 'Phantom Productivity Gains',
+      description: 'Organizations report 40% coding speed improvements while actual delivery velocity remains flat or declines, because the unreliability tax absorbs all productivity gains in the review pipeline.',
+      marginCompression: '-18% Effective Engineering ROI'
+    },
+    governanceResponse: 'Deploy an Unreliability Tax Calculator that instruments the full review pipeline cost and compares it to the AI generation savings. Kill any workflow where the tax exceeds 80% of the savings.',
+    exogramMapping: 'Economic Constraints -> Unreliability Tax Threshold',
+    remediationAssets: [
+      { title: 'AI Engineering Economics Toolkit ($99)', url: '/skills' }
+    ]
+  },
+  {
+    id: 'synthetic-model-collapse',
+    slug: 'synthetic-model-collapse',
+    title: 'Synthetic Model Collapse',
+    subtitle: 'Training Data Contamination From AI-Generated Content',
+    description: 'Synthetic Model Collapse occurs when AI models are fine-tuned or retrained on datasets contaminated by previous AI-generated content. Each generation of synthetic data introduces subtle distribution shifts that compound across training cycles, producing models that drift toward homogeneous, low-variance outputs that fail on edge cases.',
+    symptoms: [
+      'Model outputs become increasingly generic and template-like across versions.',
+      'Edge case performance degrades despite improving benchmark scores.',
+      'The model confidently generates plausible-sounding but factually hollow responses.'
+    ],
+    causes: [
+      'Web-scraped training data contaminated by AI-generated blog posts and documentation.',
+      'Fine-tuning on synthetic datasets without provenance verification or human curation.',
+      'No data pipeline controls distinguishing human-authored from machine-generated training samples.'
+    ],
+    telemetrySignals: [
+      { metric: 'Output Entropy', value: 'Declining', interpretation: 'Model responses converge toward a narrow distribution of patterns.' },
+      { metric: 'Edge Case Failure Rate', value: '> 30%', interpretation: 'Model fails on inputs outside its narrowing synthetic distribution.' }
+    ],
+    operationalPatterns: [
+      'Tag all training data with provenance metadata (human vs. synthetic origin).',
+      'Maintain minimum human-authored data ratios in all training pipelines.',
+      'Regularly benchmark models against curated edge-case test suites.'
+    ],
+    economicImpact: {
+      title: 'Compounding Quality Degradation',
+      description: 'Each retraining cycle on contaminated data produces incrementally worse models, creating a debt spiral where fixing the output quality requires expensive data curation that organizations failed to invest in upfront.',
+      marginCompression: '+200% Data Curation Costs'
+    },
+    governanceResponse: 'Enforce data provenance pipelines that cryptographically verify human-authored training samples and reject datasets with synthetic contamination above configurable thresholds.',
+    exogramMapping: 'Data Integrity Engine -> Provenance Verification',
+    remediationAssets: [
+      { title: 'AI Governance Toolkit ($99)', url: '/skills' }
+    ]
+  },
+  {
+    id: 'ai-margin-collapse',
+    slug: 'ai-margin-collapse',
+    title: 'AI Margin Collapse',
+    subtitle: 'The Point Where AI Feature Costs Exceed Revenue Contribution',
+    description: 'AI Margin Collapse is the financial inflection point where the variable inference costs of AI-powered features exceed the marginal revenue those features generate. It occurs when organizations scale AI features without unit-level economic monitoring, and the growing token/compute costs silently erode gross margins below sustainable thresholds.',
+    symptoms: [
+      'Gross margins decline quarter-over-quarter despite flat or growing revenue.',
+      'AI feature usage increases linearly but infrastructure costs increase superlinearly.',
+      'Finance discovers that the most popular AI features are the least profitable.'
+    ],
+    causes: [
+      'Pricing AI features on flat-rate subscriptions while costs scale with usage.',
+      'No feature-level P&L attribution connecting inference costs to specific product capabilities.',
+      'Optimizing for engagement metrics (DAU, feature adoption) rather than unit economics.'
+    ],
+    telemetrySignals: [
+      { metric: 'Feature-Level Gross Margin', value: '< 40%', interpretation: 'AI features are operating below sustainable SaaS margin thresholds.' },
+      { metric: 'Cost-per-Inference Trend', value: 'Rising', interpretation: 'Scaling creates compounding cost pressure rather than economies of scale.' }
+    ],
+    operationalPatterns: [
+      'Instrument feature-level P&L dashboards tracking revenue vs. inference cost per feature.',
+      'Set automated kill thresholds for any feature where gross margin drops below 50%.',
+      'Implement usage-based pricing tiers for compute-intensive AI capabilities.'
+    ],
+    economicImpact: {
+      title: 'Negative Unit Economics',
+      description: 'Every additional user of the AI feature makes the company less profitable, creating a death spiral where growth accelerates losses.',
+      marginCompression: '-35% Gross Margin Erosion'
+    },
+    governanceResponse: 'Deploy the AI Margin Collapse Point Calculator to identify exactly where each AI feature crosses from profitable to margin-destructive, and enforce automatic scaling controls at that threshold.',
+    exogramMapping: 'Economic Constraints -> Margin Floor Enforcement',
+    remediationAssets: [
+      { title: 'AI Engineering Economics Toolkit ($99)', url: '/skills' }
+    ]
+  },
+  {
+    id: 'shadow-agentic-execution',
+    slug: 'shadow-agentic-execution',
+    title: 'Shadow Agentic Execution',
+    subtitle: 'Unsanctioned AI Agent Deployments Operating Without Governance',
+    description: 'Shadow Agentic Execution occurs when employees, teams, or departments deploy autonomous AI agents that take real actions (write to databases, send emails, modify codebases, interact with customers) without centralized governance, audit trails, or kill switches. These shadow agents operate in production environments without the organization knowing what permissions they hold or what actions they execute.',
+    symptoms: [
+      'IT discovers API keys provisioned to unknown AI agent services in production environments.',
+      'Customer-facing communications are sent by AI agents that no governance team authorized.',
+      'Database mutations appear in audit logs from service accounts tied to unregistered agent workflows.'
+    ],
+    causes: [
+      'No centralized AI agent registry requiring formal deployment approval.',
+      'Individual teams deploying MCP servers and agent frameworks without security review.',
+      'The barrier to deploying an AI agent (install an npm package) is far lower than the barrier to governing one.'
+    ],
+    telemetrySignals: [
+      { metric: 'Unregistered API Keys', value: '> 5', interpretation: 'Shadow agents are operating through unauthorized credentials.' },
+      { metric: 'Unknown Agent Actions', value: '> 0', interpretation: 'Production mutations from unregistered AI services.' }
+    ],
+    operationalPatterns: [
+      'Deploy an AI Agent Registry that catalogs every autonomous agent with its permissions and owner.',
+      'Instrument API gateway monitoring to flag unregistered service accounts making LLM API calls.',
+      'Require formal risk assessment for any agent granted write permissions to production systems.'
+    ],
+    economicImpact: {
+      title: 'Unquantified Operational Risk',
+      description: 'Shadow agents can execute financially material actions (approve transactions, modify pricing, alter customer data) without human oversight, creating liability exposure that compounds until a breach surfaces it.',
+      marginCompression: 'Unbounded Regulatory Exposure'
+    },
+    governanceResponse: 'Deploy the Shadow AI Scanner to discover, catalog, and enforce governance policies on all autonomous agents operating within the enterprise.',
+    exogramMapping: 'Identity Governance -> Agent Registry Enforcement',
+    remediationAssets: [
+      { title: 'Shadow AI Governance Toolkit ($99)', url: '/skills' }
+    ]
+  },
+  {
+    id: 'mcp-tool-sprawl',
+    slug: 'mcp-tool-sprawl',
+    title: 'MCP Tool Sprawl',
+    subtitle: 'Uncontrolled Model Context Protocol Server Proliferation',
+    description: 'MCP Tool Sprawl is the governance failure that occurs when organizations adopt the Model Context Protocol without centralized control over which MCP servers are installed, what tools they expose, and what permissions those tools grant to LLM agents. With 17,000+ community MCP servers available and zero built-in authentication in the MCP specification, every installed server becomes an unaudited attack surface.',
+    symptoms: [
+      'Developers install community MCP servers that grant agents shell access, file system writes, or database mutations.',
+      'No centralized inventory exists of which MCP servers are deployed across the organization.',
+      'An agent executes a destructive action through a community MCP tool that no security team reviewed.'
+    ],
+    causes: [
+      'The MCP specification contains no built-in authentication, authorization, or rate-limiting standards.',
+      'Community MCP servers are installed via npm/pip with zero security audit or vetting.',
+      'Organizations treat MCP as a developer productivity tool rather than an enterprise attack surface.'
+    ],
+    telemetrySignals: [
+      { metric: 'Unaudited MCP Servers', value: '> 3', interpretation: 'Community servers operating without formal security review.' },
+      { metric: 'Tool Permission Scope', value: 'Write Access', interpretation: 'MCP tools with destructive capabilities operating without governance gates.' }
+    ],
+    operationalPatterns: [
+      'Maintain a centralized MCP Server Registry with mandatory security review before deployment.',
+      'Implement tool-level permission policies that restrict destructive operations to approved servers only.',
+      'Deploy rate-limiting and audit logging at the MCP transport layer.'
+    ],
+    economicImpact: {
+      title: 'Confused Deputy Attack Surface',
+      description: 'Each unaudited MCP server is a potential confused deputy that an adversarial prompt can weaponize to exfiltrate data, modify production systems, or execute unauthorized shell commands.',
+      marginCompression: 'Critical Security Exposure'
+    },
+    governanceResponse: 'Deploy the EAAP (Exogram Action Admissibility Protocol) at the MCP boundary layer to enforce deterministic tool-level permission gates before any agent action executes.',
+    exogramMapping: 'Tool Governance -> MCP Boundary Enforcement',
+    remediationAssets: [
+      { title: 'MCP Governance Toolkit ($99)', url: '/skills' }
+    ]
   }
 ];
 

@@ -1,4 +1,4 @@
-import { ConceptNode } from './concept-corpus';
+﻿import { ConceptNode } from './concept-corpus';
 
 export const TIER5_CONCEPTS: ConceptNode[] = [
   {
@@ -45,7 +45,9 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Initial Risk Vector', publisher: 'Richard Ewing', date: 'August 2026', summary: 'Concept introduced to address the rapid proliferation of insecure MCP servers.' }
     ],
     evidenceLedger: [
-      { id: 'ev-mcp-1', title: 'Architecting Security Gates', url: '/articles/architecting-security-gates', publisher: 'Built In', type: 'Article', strength: 5, role: 'Origin', date: 'August 2026' }
+      { id: 'ev-mcp-1', title: 'Salesforce and SAP are putting AI agents inside your workflows. Who tells them no?', url: '/articles/cio-salesforce-sap-workflow-agents', publisher: 'CIO.com', type: 'Industry Analysis', strength: 4, role: 'Supports', date: 'August 2026' },
+      { id: 'ev-mcp-2', title: 'Architecting Deterministic Security Gates for AI Agents', url: '/articles/builtin-ai-security-gates', publisher: 'Built In', type: 'Architecture Guide', strength: 5, role: 'Origin', date: 'August 2026' },
+      { id: 'ev-mcp-3', title: 'Inside the First Autonomous AI Agent Security Breach', url: '/articles/builtin-ai-security-breach', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'deterministic-governance', relationship: 'implements' },
@@ -128,10 +130,12 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       { stage: 'LinkedIn Essay', label: 'More Memory Creates Clutter', publisher: 'Richard Ewing', date: 'August 2026', summary: 'Codified to address the failures of pure prompt engineering at enterprise scale.' }
     ],
     evidenceLedger: [
-      { id: 'ev-ctx-1', title: 'More Memory Creates Clutter', url: '/articles/more-memory-creates-clutter', publisher: 'LinkedIn', type: 'Article', strength: 4, role: 'Origin', date: 'August 2026' }
+      { id: 'ev-ctx-1', title: 'More Memory Creates Clutter: Why 1M-Token Context Windows Break AI Agents', url: '/articles/linkedin-context-window-clutter', publisher: 'LinkedIn', type: 'Executive Essay', strength: 4, role: 'Origin', date: 'August 2026' },
+      { id: 'ev-ctx-2', title: 'How to Prevent Memory Loss in AI Applications', url: '/articles/beehiiv-prevent-context-loss', publisher: 'Beehiiv', type: 'Architecture Guide', strength: 4, role: 'Extends', date: 'August 2026' },
+      { id: 'ev-ctx-3', title: 'Giving an AI a bigger memory window is like giving a confused worker a bigger inbox', url: '/articles/linkedin-bigger-memory-window-confused-worker-inbox', publisher: 'LinkedIn', type: 'Executive Essay', strength: 3, role: 'Supports', date: 'August 2026' }
     ],
     relatedConceptSlugs: [
-      { slug: 'context-rot', relationship: 'formalizes' },
+      { slug: 'context-rot', relationship: 'explains' },
       { slug: 'semantic-caching', relationship: 'implements' },
       { slug: 'retrieval-augmented-generation', relationship: 'refines' },
       { slug: 'inference-dividend-model', relationship: 'supports' }
@@ -170,7 +174,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     category: 'Bridge Concept',
     domain: 'AI Economics',
     expertiseLevel: 'Executive',
-    health: { confidence: 0.95, evidenceCount: 1, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 2 },
+    health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 2 },
     definition: 'Agentic ROI is the economic framework for measuring the value of autonomous AI agents by shifting from per-seat SaaS licensing to a fully loaded cost-per-completed-task versus a human baseline. It quantifies the actual economic gap between deploying autonomous agents and achieving net revenue expansion. A critical component of this framework is accounting for agentic creep - where recursive multi-agent loops generate massive token spikes - and the Unreliability Tax, where necessary human review and retries wipe out the theoretical paper gains of automation.',
     whyItMatters: 'Enterprise leaders frequently miscalculate the return on AI investments by applying legacy software economics to probabilistic systems. A flat $20 monthly subscription implies fixed costs, but agentic systems operate on metered consumption where failure is expensive. By measuring the true cost per completed task - including the hidden costs of debugging, reviewing, and retrying failed agent outputs - organizations can avoid catastrophic budget overruns and identify which workflows actually benefit from agentic automation.',
     whoShouldCare: ['CIOs', 'CFOs', 'Product Managers', 'Engineering Directors'],
@@ -207,7 +211,9 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Agentic Creep Discovered', publisher: 'Richard Ewing', date: 'August 2026', summary: 'Formalized to expose the hidden costs of running autonomous agents.' }
     ],
     evidenceLedger: [
-      { id: 'ev-roi-1', title: 'Task-Level Economics Model', url: '/models/task-level-economics', publisher: 'Internal', type: 'Framework', strength: 4, role: 'Origin', date: 'August 2026' }
+      { id: 'ev-roi-1', title: 'Your Claude API Bill Is Higher Than Your Revenue', url: '/articles/cio-claude-api-bill', publisher: 'CIO.com', type: 'Industry Analysis', strength: 4, role: 'Origin', date: 'August 2026' },
+      { id: 'ev-roi-2', title: 'How to Reduce LLM API Token Costs in Production', url: '/articles/beehiiv-how-to-reduce-llm-api-token-costs-in-production', publisher: 'Beehiiv', type: 'Architecture Guide', strength: 4, role: 'Extends', date: 'August 2026' },
+      { id: 'ev-roi-3', title: 'Most AI Projects Just Burn Cash. Here Is How to Make Them Profitable.', url: '/articles/builtin-make-ai-profitable', publisher: 'Built In', type: 'Executive Essay', strength: 5, role: 'Extends', date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'ai-volatility-tax', relationship: 'correlates_with' },
@@ -250,7 +256,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     category: 'Bridge Concept',
     domain: 'Software Economics',
     expertiseLevel: 'Intermediate',
-    health: { confidence: 0.9, evidenceCount: 1, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 2 },
+    health: { confidence: 0.9, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 2 },
     definition: 'Spec-Driven Development (SDD) is the architectural reaction to the collapse of untyped vibe coding. It represents a paradigm shift where engineers transition from conversational prompt iteration to treating structured, machine-readable specifications as executable contracts. In this model, specifications - such as strict JSON/YAML schemas and deterministic acceptance criteria - act as the single source of truth. These specifications guide, bound, and validate the work of autonomous coding swarms, ensuring that probabilistic models produce deterministic, predictable software components.',
     whyItMatters: 'Conversational coding works for simple scripts but fails catastrophically at enterprise scale. When developers rely on vague natural language to direct AI, they invite semantic drift, subtle bugs, and unmaintainable architectures. By enforcing Spec-Driven Development, organizations establish rigorous validation gates that prevent AI coding agents from going off-track. It restores engineering discipline to the AI era, ensuring that code generated by machines is governed by contracts written and verified by humans.',
     whoShouldCare: ['Engineering Managers', 'Staff Engineers', 'QA Leads', 'Systems Architects'],
@@ -287,7 +293,9 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Vibe Coding Collapse', publisher: 'Richard Ewing', date: 'August 2026', summary: 'Introduced as the structural antidote to the vulnerabilities exposed by widespread vibe coding.' }
     ],
     evidenceLedger: [
-      { id: 'ev-sdd-1', title: 'SDD Principles', url: '/frameworks/sdd', publisher: 'Internal', type: 'Protocol Specification', strength: 4, role: 'Origin', date: 'August 2026' }
+      { id: 'ev-sdd-1', title: 'The Subprime Code Crisis', url: '/articles/beehiiv-subprime-code-crisis', publisher: 'Beehiiv', type: 'Industry Analysis', strength: 5, role: 'Origin', date: 'August 2026' },
+      { id: 'ev-sdd-2', title: 'In the Vibe Coding Era, What Does a Software Engineer Even Do?', url: '/articles/builtin-vibe-coding-era', publisher: 'Built In', type: 'Executive Essay', strength: 4, role: 'Supports', date: 'August 2026' },
+      { id: 'ev-sdd-3', title: 'GitHub Copilot Is Generating More Code Than Your Team Can Review', url: '/articles/cio-copilot-bottleneck', publisher: 'CIO.com', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'vibe-coding', relationship: 'contradicts' },
@@ -365,7 +373,8 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'The Failure of Unit Tests for AI', publisher: 'Richard Ewing', date: 'August 2026', summary: 'Defined as a necessary operational standard for managing unreliability.' }
     ],
     evidenceLedger: [
-      { id: 'ev-edd-1', title: 'EDD Framework', url: '/frameworks/edd', publisher: 'Internal', type: 'Protocol Specification', strength: 5, role: 'Origin', date: 'August 2026' }
+      { id: 'ev-edd-1', title: 'The Hidden Inflation of AI: Why Model Collapse Is a Business Risk', url: '/articles/cio-model-collapse', publisher: 'CIO.com', type: 'Executive Essay', strength: 5, role: 'Supports', date: 'August 2026' },
+      { id: 'ev-edd-2', title: 'The Architecture of Runtime Governance', url: '/articles/beehiiv-runtime-governance-architecture', publisher: 'Beehiiv', type: 'Architecture Guide', strength: 4, role: 'Origin', date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'deterministic-governance', relationship: 'supports' },
@@ -406,7 +415,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     category: 'Industry Concept (Discovery On-Ramp)',
     domain: 'AI Economics',
     expertiseLevel: 'Intermediate',
-    health: { confidence: 0.9, evidenceCount: 1, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 2 },
+    health: { confidence: 0.9, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 2 },
     definition: 'AI Coding Tool Economics analyzes the massive financial shift occurring as developer tools transition from simple autocomplete features to autonomous, agentic command-line tools like Claude Code, Cursor, and Windsurf. This transition replaces predictable flat-fee subscriptions with severe cost volatility driven by recursive terminal loops, aggressive codebase indexing, and test-fix churn. The framework unpacks the true unit economics of modern development, contrasting subscription vs. metered API consumption, tracking the Cost per Merged PR, and highlighting the hidden Debugging Tax incurred when cheap AI generation requires expensive human review.',
     whyItMatters: 'Engineering organizations are abandoning standard IDEs for AI-native editors, often without modeling the financial impact. While autocomplete costs $20 a month, agentic coding tools operating on metered API keys can easily consume hundreds of dollars per developer per month. Without understanding AI Coding Tool Economics, engineering leaders cannot accurately forecast their infrastructure budgets or determine if the increased output actually offsets the combined cost of API usage and senior developer review time.',
     whoShouldCare: ['Engineering Directors', 'CTOs', 'FinOps Teams', 'Lead Developers'],
@@ -443,10 +452,12 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'The Agentic Coding Shift', publisher: 'Richard Ewing', date: 'August 2026', summary: 'Articulated to help enterprise leaders navigate the chaotic pricing landscape of next-generation AI developer tools.' }
     ],
     evidenceLedger: [
-      { id: 'ev-econ-1', title: 'Developer Tool Economics', url: '/models/dev-tools', publisher: 'Internal', type: 'Framework', strength: 4, role: 'Origin', date: 'August 2026' }
+      { id: 'ev-econ-1', title: 'Your Claude API Bill Is Higher Than Your Revenue', url: '/articles/cio-claude-api-bill', publisher: 'CIO.com', type: 'Industry Analysis', strength: 4, role: 'Origin', date: 'August 2026' },
+      { id: 'ev-econ-2', title: 'GitHub Copilot Is Generating More Code Than Your Team Can Review', url: '/articles/cio-copilot-bottleneck', publisher: 'CIO.com', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 2026' },
+      { id: 'ev-econ-3', title: 'In the Vibe Coding Era, What Does a Software Engineer Even Do?', url: '/articles/builtin-vibe-coding-era', publisher: 'Built In', type: 'Executive Essay', strength: 4, role: 'Supports', date: 'August 2026' }
     ],
     relatedConceptSlugs: [
-      { slug: 'ai-volatility-tax', relationship: 'formalizes' },
+      { slug: 'ai-volatility-tax', relationship: 'explains' },
       { slug: 'inference-economics', relationship: 'extends' },
       { slug: 'retry-inflation', relationship: 'correlates_with' }
     ],
@@ -522,7 +533,8 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'The Shift to Systems', publisher: 'Richard Ewing', date: 'August 2026', summary: 'Highlighted as the dominant architectural pattern moving beyond prototype phases.' }
     ],
     evidenceLedger: [
-      { id: 'ev-comp-1', title: 'Compound Architecture Patterns', url: '/patterns/compound-systems', publisher: 'Internal', type: 'Framework', strength: 5, role: 'Origin', date: 'August 2026' }
+      { id: 'ev-comp-1', title: 'The Architecture of Runtime Governance', url: '/articles/beehiiv-runtime-governance-architecture', publisher: 'Beehiiv', type: 'Architecture Guide', strength: 5, role: 'Origin', date: 'August 2026' },
+      { id: 'ev-comp-2', title: 'The Moment Your AI Starts Taking Actions, the Rules Change', url: '/articles/linkedin-ai-taking-actions', publisher: 'LinkedIn', type: 'Executive Essay', strength: 4, role: 'Supports', date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'inference-dividend-model', relationship: 'supports' },
@@ -600,7 +612,9 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Shadow Agentic Execution Emerges', publisher: 'Richard Ewing', date: 'August 2026', summary: 'Formalized to address the escalation from conversational Shadow AI to dangerous agentic execution.' }
     ],
     evidenceLedger: [
-      { id: 'ev-shadow-1', title: 'Shadow AI Risk Model', url: '/models/shadow-ai', publisher: 'Internal', type: 'Framework', strength: 4, role: 'Origin', date: 'August 2026' }
+      { id: 'ev-shadow-1', title: 'Salesforce and SAP are putting AI agents inside your workflows. Who tells them no?', url: '/articles/cio-salesforce-sap-workflow-agents', publisher: 'CIO.com', type: 'Industry Analysis', strength: 4, role: 'Supports', date: 'August 2026' },
+      { id: 'ev-shadow-2', title: 'AI Agents Won\'t Crash the Economy. Bad Governance Might.', url: '/articles/builtin-agentic-ai-analysis', publisher: 'Built In', type: 'Executive Essay', strength: 5, role: 'Extends', date: 'August 2026' },
+      { id: 'ev-shadow-3', title: 'Discovering Shadow AI Agents in Enterprise API Gateways', url: '/articles/beehiiv-shadow-ai-agent-discovery', publisher: 'Beehiiv', type: 'Architecture Guide', strength: 4, role: 'Origin', date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'shadow-ai', relationship: 'refines' },
@@ -679,7 +693,10 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'The Economics of Failure', publisher: 'Richard Ewing', date: 'August 2026', summary: 'Established as the third pillar of AI Economics.' }
     ],
     evidenceLedger: [
-      { id: 'ev-tax-1', title: 'Unreliability Tax Framework', url: '/frameworks/unreliability-tax', publisher: 'Internal', type: 'Framework', strength: 5, role: 'Origin', date: 'August 2026' }
+      { id: 'ev-tax-1', title: 'The Hidden Inflation of AI: Why Model Collapse Is a Business Risk', url: '/articles/cio-model-collapse', publisher: 'CIO.com', type: 'Executive Essay', strength: 4, role: 'Supports', date: 'August 2026' },
+      { id: 'ev-tax-2', title: 'Most AI Projects Just Burn Cash. Here Is How to Make Them Profitable.', url: '/articles/builtin-make-ai-profitable', publisher: 'Built In', type: 'Executive Essay', strength: 5, role: 'Origin', date: 'August 2026' },
+      { id: 'ev-tax-3', title: 'The Financial Cost of Hallucinations in Production AI Systems', url: '/articles/linkedin-cost-of-hallucinations-in-production', publisher: 'LinkedIn', type: 'Industry Analysis', strength: 4, role: 'Extends', date: 'August 2026' },
+      { id: 'ev-tax-4', title: 'AI Unit Economics: Burn Rate and Technical Insolvency', url: '/articles/beehiiv-ai-unit-economics-burn-rate', publisher: 'Beehiiv', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'hallucination-tax', relationship: 'correlates_with' },
@@ -757,11 +774,13 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Model Autophagy Observed', publisher: 'Richard Ewing', date: 'August 2026', summary: 'Integrated to emphasize the premium on Lived Experience and empirical research.' }
     ],
     evidenceLedger: [
-      { id: 'ev-smc-1', title: 'Synthetic Model Collapse Research', url: '/research/synthetic-collapse', publisher: 'Internal', type: 'Research Note', strength: 5, role: 'Origin', date: 'August 2026' }
+      { id: 'ev-smc-1', title: 'The Hidden Inflation of AI: Why Model Collapse Is a Business Risk', url: '/articles/cio-model-collapse', publisher: 'CIO.com', type: 'Executive Essay', strength: 5, role: 'Origin', date: 'August 2026' },
+      { id: 'ev-smc-2', title: 'Fable 5 vs. GPT-5', url: '/articles/builtin-fable-vs-gpt5', publisher: 'Built In', type: 'Industry Analysis', strength: 4, role: 'Extends', date: 'August 2026' }
     ],
     relatedConceptSlugs: [
-      { slug: 'model-collapse', relationship: 'formalizes' },
-      { slug: 'subprime-code-crisis', relationship: 'correlates_with' }
+      { slug: 'model-collapse', relationship: 'refines' },
+      { slug: 'subprime-code-crisis', relationship: 'correlates_with' },
+      { slug: 'unreliability-tax', relationship: 'causes' }
     ],
     aeo: {
       shortDefinition: 'The degradation of AI model quality, reasoning, and variance that occurs when models are recursively trained on AI-generated synthetic data.',

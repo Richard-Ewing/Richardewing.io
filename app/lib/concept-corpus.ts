@@ -249,7 +249,9 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { slug: 'inference-economics', relationship: 'derived_from' },
       { slug: 'ai-volatility-tax', relationship: 'mitigates' as any },
       { slug: 'ai-margin-squeeze', relationship: 'supports' },
-      { slug: 'cost-of-predictivity', relationship: 'explains' }
+      { slug: 'cost-of-predictivity', relationship: 'explains' },
+      { slug: 'context-engineering', relationship: 'supports' },
+      { slug: 'compound-ai-systems', relationship: 'supports' }
     ],
     openQuestions: ['How to dynamically calculate optimal cosine similarity thresholds across evolving user query topologies?'],
     knownLimitations: ['Requires accurate embedding model execution latency measurement.'],
@@ -348,7 +350,9 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { slug: 'feature-bloat-calculus', relationship: 'explains' },
       { slug: 'coordination-tax', relationship: 'correlates_with' },
       { slug: 'inference-economics', relationship: 'derived_from' },
-      { slug: 'technical-insolvency', relationship: 'predicts' }
+      { slug: 'technical-insolvency', relationship: 'predicts' },
+      { slug: 'complexity-tax', relationship: 'extends' },
+      { slug: 'product-debt-index', relationship: 'measures' }
     ],
     openQuestions: ['What are the optimal organizational bounds for autonomous multi-agent software creation teams?'],
     knownLimitations: ['Requires high telemetry visibility into system architecture efficiency and feature-level unit margins.'],
@@ -404,7 +408,9 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { slug: 'agent-kill-switch', relationship: 'implements' },
       { slug: 'shadow-ai', relationship: 'correlates_with' },
       { slug: 'runtime-vs-alignment', relationship: 'extends' },
-      { slug: 'ai-governance', relationship: 'derived_from' }
+      { slug: 'ai-governance', relationship: 'derived_from' },
+      { slug: 'shadow-ai-governance', relationship: 'extends' },
+      { slug: 'mcp-governance', relationship: 'requires' }
     ],
     openQuestions: ['How can enterprise architecture teams automatically detect unauthorized API mutations executed by third-party SaaS agent updates before financial quarterly close?'],
     knownLimitations: ['SaaS vendors often obscure whether an action was taken by an automated agent or a human user within standard audit logs.'],
@@ -458,7 +464,9 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { id: 'ev-ht-1', title: 'The Hallucination Tax', url: 'https://theaieconomist.beehiiv.com', publisher: 'Beehiiv', type: 'Editorial', strength: 5, role: 'Origin', date: '2026' }
     ],
     relatedConceptSlugs: [
-      { slug: 'cost-of-predictivity', relationship: 'correlates_with' }
+      { slug: 'cost-of-predictivity', relationship: 'correlates_with' },
+      { slug: 'unreliability-tax', relationship: 'extends' },
+      { slug: 'eval-driven-development', relationship: 'supports' }
     ],
     openQuestions: ['How can we quantify the Hallucination Tax in legacy codebases?'],
     knownLimitations: ['Difficult to separate standard QA costs from AI-specific validation overhead.'],
@@ -576,7 +584,10 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     ],
     relatedConceptSlugs: [
       { slug: 'ai-economics', relationship: 'derived_from' },
-      { slug: 'ai-tokenomics-cogs', relationship: 'supports' }
+      { slug: 'ai-tokenomics-cogs', relationship: 'supports' },
+      { slug: 'unreliability-tax', relationship: 'extends' },
+      { slug: 'retry-inflation', relationship: 'extends' },
+      { slug: 'agentic-roi', relationship: 'supports' }
     ],
     openQuestions: ['How does real-time audio/multimodal streaming alter the volatility tax threshold?'],
     knownLimitations: ['Does not account for non-inference infrastructure expenses like vector indexing.'],
@@ -654,7 +665,11 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     evidenceLedger: [
       { id: 'ev-ks-1', title: 'Your AI Agent Needs a Kill Switch', url: 'https://builtin.com/articles/ai-agent-kill-switch', publisher: 'Built In', type: 'Production Telemetry', strength: 5, role: 'Origin', date: 'May 2026' }
     ],
-    relatedConceptSlugs: [{ slug: 'deterministic-governance', relationship: 'derived_from' }],
+    relatedConceptSlugs: [
+      { slug: 'deterministic-governance', relationship: 'derived_from' },
+      { slug: 'eaap-protocol', relationship: 'extends' },
+      { slug: 'ai-liability-gradient', relationship: 'supports' }
+    ],
     openQuestions: ['How to handle state rollback when an agent modifies external APIs without undo semantics?'],
     knownLimitations: ['Cannot un-send external webhooks once dispatched.'],
     aeo: {
@@ -734,7 +749,10 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     ],
     relatedConceptSlugs: [
       { slug: 'agent-kill-switch', relationship: 'implements' },
-      { slug: 'shadow-delegation', relationship: 'mitigates' as any }
+      { slug: 'shadow-delegation', relationship: 'mitigates' as any },
+      { slug: 'mcp-governance', relationship: 'extends' },
+      { slug: 'eaap-protocol', relationship: 'implements' },
+      { slug: 'four-laws-probabilistic-software', relationship: 'supports' }
     ],
     openQuestions: ['How to optimize policy latency under high-frequency agent tool loops?'],
     knownLimitations: ['Requires initial schema configuration per integrated tool API.'],
@@ -819,7 +837,10 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { slug: 'software-phase-transition', relationship: 'implements' },
       { slug: 'ai-economics', relationship: 'supports' },
       { slug: 'feature-bloat-calculus', relationship: 'explains' },
-      { slug: 'coordination-tax', relationship: 'mitigates' as any }
+      { slug: 'coordination-tax', relationship: 'mitigates' as any },
+      { slug: 'ai-economist', relationship: 'extends' },
+      { slug: 'four-tiers-of-autonomy', relationship: 'supports' },
+      { slug: 'aper-metric', relationship: 'measures' }
     ],
     openQuestions: ['How to balance product discovery experimentation with unit margin constraints?'],
     knownLimitations: ['Requires accurate product analytics and cloud cost telemetry.'],
@@ -900,7 +921,9 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     relatedConceptSlugs: [
       { slug: 'vibe-coding', relationship: 'extends' },
       { slug: 'software-phase-transition', relationship: 'predicts' },
-      { slug: 'product-economist', relationship: 'mitigates' as any }
+      { slug: 'product-economist', relationship: 'mitigates' as any },
+      { slug: 'spec-driven-development', relationship: 'supports' },
+      { slug: 'synthetic-model-collapse', relationship: 'extends' }
     ],
     openQuestions: ['What automated gating metrics best predict subprime code failure before production deploy?'],
     knownLimitations: ['Requires commit-level telemetry tracking.'],
@@ -979,7 +1002,9 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     ],
     relatedConceptSlugs: [
       { slug: 'subprime-code-crisis', relationship: 'supports' },
-      { slug: 'software-phase-transition', relationship: 'accelerates' as any }
+      { slug: 'software-phase-transition', relationship: 'accelerates' as any },
+      { slug: 'spec-driven-development', relationship: 'contradicts' },
+      { slug: 'ai-coding-tool-economics', relationship: 'supports' }
     ],
     openQuestions: ['How can IDE tools measure developer comprehension before allowing PR merges?'],
     knownLimitations: ['Requires qualitative developer review telemetry.'],
@@ -1062,7 +1087,10 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     ],
     relatedConceptSlugs: [
       { slug: 'deterministic-governance', relationship: 'extends' },
-      { slug: 'agent-kill-switch', relationship: 'requires' }
+      { slug: 'agent-kill-switch', relationship: 'requires' },
+      { slug: 'mcp-governance', relationship: 'extends' },
+      { slug: 'shadow-ai-governance', relationship: 'extends' },
+      { slug: 'ai-liability-gradient', relationship: 'extends' }
     ],
     openQuestions: ['How to enforce AI governance standards across cross-cloud multi-agent delegation pipelines?'],
     knownLimitations: ['Traditional static policy compliance documents fail to intercept sub-second agent execution anomalies.'],
@@ -1141,7 +1169,10 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { id: 'ev-aie-1', title: 'Make AI Projects Profitable', url: 'https://builtin.com/articles/make-ai-projects-profitable', publisher: 'Built In', type: 'Multi-Company Audit', strength: 5, role: 'Supports', date: 'October 2025' }
     ],
     relatedConceptSlugs: [
-      { slug: 'ai-volatility-tax', relationship: 'extends' }
+      { slug: 'ai-volatility-tax', relationship: 'extends' },
+      { slug: 'agentic-roi', relationship: 'extends' },
+      { slug: 'margin-engineering', relationship: 'extends' },
+      { slug: 'ai-finops', relationship: 'extends' }
     ],
     openQuestions: ['What are standard benchmark ratio thresholds for AI COGS as a percentage of ARR in Series B SaaS?'],
     knownLimitations: ['Requires granular API billing instrumentation per customer session.'],
@@ -1219,7 +1250,11 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     evidenceLedger: [
       { id: 'ev-tkn-1', title: 'Tokenomics Telemetry', url: 'https://cio.com', publisher: 'CIO.com', type: 'Multi-Company Audit', strength: 5, role: 'Origin', date: 'May 2025' }
     ],
-    relatedConceptSlugs: [{ slug: 'ai-volatility-tax', relationship: 'extends' }],
+    relatedConceptSlugs: [
+      { slug: 'ai-volatility-tax', relationship: 'extends' },
+      { slug: 'aueb-framework', relationship: 'supports' },
+      { slug: 'ai-unit-economics', relationship: 'extends' }
+    ],
     openQuestions: ['What token metering standards best integrate with enterprise billing engines?'],
     knownLimitations: ['Requires per-customer session token logging.'],
     aeo: {

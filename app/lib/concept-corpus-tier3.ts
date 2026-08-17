@@ -73,7 +73,8 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
     relatedConceptSlugs: [
       { slug: 'inference-dividend-model', relationship: 'implements' },
       { slug: 'ai-volatility-tax', relationship: 'measures' },
-      { slug: 'inference-economics', relationship: 'supports' }
+      { slug: 'inference-economics', relationship: 'supports' },
+      { slug: 'context-engineering', relationship: 'implements' }
     ],
     openQuestions: ['How should we govern cache invalidation when foundational models update their knowledge cutoffs?'],
     knownLimitations: ['High memory constraints for storing dense vector embeddings at scale.'],
@@ -151,7 +152,8 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
       { id: 'ev-cm-1', title: 'Why Your CFO Hates Your Agile Transformation', url: 'https://www.cio.com', publisher: 'CIO.com', type: 'Tier-1 Media', strength: 5, role: 'Origin', date: 'October 2024' }
     ],
     relatedConceptSlugs: [
-      { slug: 'product-economist', relationship: 'implements' }
+      { slug: 'product-economist', relationship: 'implements' },
+      { slug: 'ev-se-framework', relationship: 'extends' }
     ],
     openQuestions: ['How can AI automatically classify code commits into CapEx or OpEx without developer intervention?'],
     knownLimitations: ['Requires high discipline in project management software hygiene.'],
@@ -228,7 +230,8 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
       { id: 'ev-sg-1', title: 'What Does a Software Engineer Even Do?', url: 'https://builtin.com', publisher: 'Built In', type: 'Editorial', strength: 4, role: 'Origin', date: 'July 2025' }
     ],
     relatedConceptSlugs: [
-      { slug: 'deterministic-governance', relationship: 'implements' }
+      { slug: 'deterministic-governance', relationship: 'implements' },
+      { slug: 'compound-ai-systems', relationship: 'supports' }
     ],
     openQuestions: ['How do junior engineers acquire the architectural context required to become Systems Governors?'],
     knownLimitations: ['Requires an organization mature enough to value architecture over raw feature output.'],
@@ -386,7 +389,8 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
     ],
     relatedConceptSlugs: [
       { slug: 'ai-volatility-tax', relationship: 'measures' },
-      { slug: 'inference-economics', relationship: 'supports' }
+      { slug: 'inference-economics', relationship: 'supports' },
+      { slug: 'compound-ai-systems', relationship: 'supports' }
     ],
     openQuestions: ['At what token volume does the operational cost of managing MLOps exceed API savings?'],
     knownLimitations: ['SLMs lack the generalized reasoning capabilities of frontier models.'],
@@ -544,7 +548,8 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
     ],
     relatedConceptSlugs: [
       { slug: 'technical-insolvency', relationship: 'measures' },
-      { slug: 'product-economist', relationship: 'supports' }
+      { slug: 'product-economist', relationship: 'supports' },
+      { slug: 'aper-metric', relationship: 'extends' }
     ],
     openQuestions: ['How can we dynamically calculate the exact hourly cost of engineering downtime per deployment?'],
     knownLimitations: ['Requires accurate compensation and infrastructure cost data.'],

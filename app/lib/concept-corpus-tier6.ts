@@ -1,4 +1,4 @@
-import { ConceptNode } from './concept-corpus';
+﻿import { ConceptNode } from './concept-corpus';
 
 export const TIER6_CONCEPTS: ConceptNode[] = [
   {
@@ -19,11 +19,15 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Initial framework', publisher: 'Internal Research', date: 'August 2026', summary: 'Initial formulation of the Product Debt Index in proprietary research.' }
     ],
     evidenceLedger: [
-      { id: 'ev-pdi-1', title: 'Financialized Debt Impact', url: '#', publisher: 'Internal', type: 'Observation', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' }
+      { id: 'cio-shipping-faster', title: 'Hey, Senior PMs: Shipping Faster Won\'t Get You Promoted', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' },
+      { id: 'mtp-3-financial-metrics', title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', url: '#', publisher: 'Mind the Product', type: 'Industry Article', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' },
+      { id: 'beehiiv-subprime-code-crisis', title: 'The Subprime Code Crisis', url: '#', publisher: 'Beehiiv', type: 'Newsletter', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'software-phase-transition', relationship: 'extends' },
-      { slug: 'feature-bloat-calculus', relationship: 'depends_on' }
+      { slug: 'feature-bloat-calculus', relationship: 'depends_on' },
+      { slug: 'complexity-tax', relationship: 'extends' },
+      { slug: 'technical-insolvency', relationship: 'extends' }
     ],
     openQuestions: [
       'How frequently should the PDI be recalculated in a continuous deployment environment?',
@@ -92,7 +96,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     category: 'Richard Ewing Canon (Original Framework)',
     domain: 'Software Economics',
     expertiseLevel: 'Executive',
-    health: { confidence: 0.90, evidenceCount: 2, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
+    health: { confidence: 0.90, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A valuation impact modeling framework that calculates how specific engineering and product decisions cascade into enterprise valuation multiples. The EV-SE explicitly models the compounding effects of technical debt, AI cost of goods sold (COGS), and gross margin compression. It provides a deterministic bridge between micro-level architecture choices and macro-level financial outcomes. This engine allows leaders to simulate the long-term financial consequences of their technical strategies before committing capital.',
     whyItMatters: 'Engineering decisions are rarely evaluated for their impact on enterprise valuation multiples until it is too late. The EV-SE allows organizations to model how a seemingly minor architectural compromise today will compress gross margins three years from now. By forecasting these outcomes, executives can avoid strategies that artificially inflate short-term metrics at the expense of long-term enterprise value. It forces a discipline of margin engineering at the earliest stages of product development.',
     whoShouldCare: ['Private Equity Operating Partners', 'Startup Founders', 'Chief Technology Officers'],
@@ -104,11 +108,15 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Framework Design', publisher: 'Internal Research', date: 'August 2026', summary: 'Formalization of the EV-SE framework to connect engineering with enterprise valuation.' }
     ],
     evidenceLedger: [
-      { id: 'ev-se-1', title: 'Valuation Correlates', url: '#', publisher: 'Internal', type: 'Case Study', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' }
+      { id: 'cio-shipping-faster', title: 'Hey, Senior PMs: Shipping Faster Won\'t Get You Promoted', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' },
+      { id: 'mtp-3-financial-metrics', title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', url: '#', publisher: 'Mind the Product', type: 'Industry Article', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' },
+      { id: 'linkedin-real-ai-opportunity', title: 'The Real AI Opportunity Isn\'t a Chatbot', url: '#', publisher: 'LinkedIn', type: 'Post', strength: 3 as const, role: 'Extends' as const, date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'capitalization-matrix', relationship: 'depends_on' },
-      { slug: 'ai-margin-squeeze', relationship: 'extends' }
+      { slug: 'ai-margin-squeeze', relationship: 'extends' },
+      { slug: 'product-debt-index', relationship: 'extends' },
+      { slug: 'dora-financial-translation', relationship: 'extends' }
     ],
     openQuestions: [
       'How accurately can the EV-SE predict public market reactions to AI infrastructure shifts?'
@@ -187,7 +195,10 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       { stage: 'Tier-1 Article', label: 'CIO.com Publication', publisher: 'CIO.com', date: 'August 2026', summary: 'Publication of the AUEB methodology in CIO.com.' }
     ],
     evidenceLedger: [
-      { id: 'ev-aueb-1', title: 'Hidden AI Costs', url: '#', publisher: 'CIO.com', type: 'Case Study', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' }
+      { id: 'cio-claude-api-bill', title: 'Your Claude API Bill Is Higher Than Your Revenue', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' },
+      { id: 'beehiiv-how-to-reduce-llm-api-token-costs-in-production', title: 'How to Reduce LLM API Token Costs in Production', url: '#', publisher: 'Beehiiv', type: 'Newsletter', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' },
+      { id: 'beehiiv-ai-unit-economics-burn-rate', title: 'AI Unit Economics: Burn Rate and Technical Insolvency', url: '#', publisher: 'Beehiiv', type: 'Newsletter', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' },
+      { id: 'builtin-make-ai-profitable', title: 'How to Make AI Profitable', url: '#', publisher: 'Built In', type: 'Industry Article', strength: 4 as const, role: 'Supports' as const, date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'ai-tokenomics-cogs', relationship: 'depends_on' },
@@ -261,7 +272,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     expertiseLevel: 'Executive',
     health: { confidence: 0.9, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 2 },
     definition: 'A macro-economic metric calculated by dividing Annual Recurring Revenue (ARR) by Total Engineering Headcount. APER replaces isolated, self-referential metrics like story point velocity with a direct measurement of economic output per engineer. It serves as a high-level indicator of whether engineering investments are translating into actual commercial value. Featured extensively in executive leadership discussions, APER aligns technical execution with corporate financial realities.',
-    whyItMatters: 'Engineering teams often declare success because they shipped a high volume of code or completed many story points, even while the company’s revenue growth stalls. APER forces engineering leadership to take responsibility for commercial outcomes, not just output. It quickly identifies when an organization has hired beyond its capacity to generate revenue. This metric shifts the engineering culture from a factory mindset to a value-creation mindset.',
+    whyItMatters: 'Engineering teams often declare success because they shipped a high volume of code or completed many story points, even while the companyâ€™s revenue growth stalls. APER forces engineering leadership to take responsibility for commercial outcomes, not just output. It quickly identifies when an organization has hired beyond its capacity to generate revenue. This metric shifts the engineering culture from a factory mindset to a value-creation mindset.',
     whoShouldCare: ['VP of Engineering', 'Chief Executive Officers', 'Board Members'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
@@ -271,11 +282,15 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Metric Design', publisher: 'Internal Research', date: 'August 2026', summary: 'Introduced as an alternative to story points for executive reporting.' }
     ],
     evidenceLedger: [
-      { id: 'ev-aper-1', title: 'Velocity vs Revenue Disconnect', url: '#', publisher: 'Internal', type: 'Case Study', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' }
+      { id: 'cio-shipping-faster', title: 'Hey, Senior PMs: Shipping Faster Won\'t Get You Promoted', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' },
+      { id: 'mtp-3-financial-metrics', title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', url: '#', publisher: 'Mind the Product', type: 'Industry Article', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' },
+      { id: 'linkedin-product-economist-structural-shift', title: 'The Product Economist: A Structural Shift', url: '#', publisher: 'LinkedIn', type: 'Post', strength: 3 as const, role: 'Extends' as const, date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'product-economist', relationship: 'depends_on' },
-      { slug: 'ten-man-parity', relationship: 'extends' }
+      { slug: 'ten-man-parity', relationship: 'extends' },
+      { slug: 'dora-financial-translation', relationship: 'extends' },
+      { slug: 'coordination-tax', relationship: 'extends' }
     ],
     openQuestions: [
       'Does APER penalize engineering teams for failures in the sales and marketing departments?'
@@ -343,7 +358,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     category: 'Richard Ewing Canon (Original Framework)',
     domain: 'Software Economics',
     expertiseLevel: 'Architect',
-    health: { confidence: 0.95, evidenceCount: 5, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 2, knownLimitationsCount: 1 },
+    health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 2, knownLimitationsCount: 1 },
     definition: 'Four foundational laws governing the behavior, economics, and maintenance of AI-generated code. Law 1: AI code is probabilistic, not deterministic. Law 2: Complexity scales non-linearly with AI assistance. Law 3: The verification cost of AI code exceeds the generation cost. Law 4: AI-generated code accumulates debt faster than human-written code. These laws, coined in Built In, form the baseline for managing modern, AI-augmented engineering teams.',
     whyItMatters: 'The industry is treating AI-generated code as a free lunch, assuming that faster code generation strictly equates to higher productivity. The 4 Laws establish that the physics of software engineering have changed. Because the code is probabilistic, it introduces subtle, compounding errors that require massive human oversight. Ignoring these laws leads directly to the subprime code crisis, where systems become unmaintainable due to the sheer volume of unverified, machine-generated complexity.',
     whoShouldCare: ['Engineering Leaders', 'DevOps Engineers', 'AI Tooling Evaluators'],
@@ -355,7 +370,10 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       { stage: 'Tier-1 Article', label: 'Built In Publication', publisher: 'Built In', date: 'February 2026', summary: 'Published in Built In as a warning against unmanaged AI code generation.' }
     ],
     evidenceLedger: [
-      { id: 'ev-4laws-1', title: 'AI Code Review Burden', url: '#', publisher: 'Built In', type: 'Observation', strength: 5 as const, role: 'Origin' as const, date: 'February 2026' }
+      { id: 'beehiiv-subprime-code-crisis', title: 'The Subprime Code Crisis', url: '#', publisher: 'Beehiiv', type: 'Newsletter', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' },
+      { id: 'builtin-vibe-coding-era', title: 'The Vibe Coding Era', url: '#', publisher: 'Built In', type: 'Industry Article', strength: 4 as const, role: 'Supports' as const, date: 'August 2026' },
+      { id: 'cio-copilot-bottleneck', title: 'The Copilot Bottleneck', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 5 as const, role: 'Extends' as const, date: 'August 2026' },
+      { id: 'cio-model-collapse', title: 'Model Collapse', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'deterministic-governance', relationship: 'implements' },
@@ -435,7 +453,9 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Framework Definition', publisher: 'Internal Research', date: 'August 2026', summary: 'Codified the gradient to address rapid enterprise adoption of autonomous agents.' }
     ],
     evidenceLedger: [
-      { id: 'ev-ailg-1', title: 'Exponential Risk Models', url: '#', publisher: 'Internal', type: 'Observation', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' }
+      { id: 'cio-salesforce-sap-workflow-agents', title: 'Salesforce and SAP Workflow Agents', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' },
+      { id: 'builtin-ai-security-breach', title: 'AI Security Breach', url: '#', publisher: 'Built In', type: 'Industry Article', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' },
+      { id: 'builtin-agentic-ai-analysis', title: 'Agentic AI Analysis', url: '#', publisher: 'Built In', type: 'Industry Article', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'shadow-delegation', relationship: 'correlates_with' },
@@ -455,7 +475,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       ],
       keyTakeaways: [
         'Never deploy a Zone 4 agent without a deterministic kill switch.',
-        'Human oversight must match the speed and scale of the agent’s actions.',
+        'Human oversight must match the speed and scale of the agentâ€™s actions.',
         'Risk teams must approve any feature moving up the liability gradient.'
       ],
       comparisons: [
@@ -513,11 +533,15 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Pattern Discovery', publisher: 'Internal Research', date: 'August 2026', summary: 'Identified as a primary driver of unpredictable AI cloud spend.' }
     ],
     evidenceLedger: [
-      { id: 'ev-retry-1', title: 'Context Expansion Costs', url: '#', publisher: 'Internal', type: 'Observation', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' }
+      { id: 'cio-model-collapse', title: 'Model Collapse', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' },
+      { id: 'cio-claude-api-bill', title: 'Your Claude API Bill Is Higher Than Your Revenue', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 5 as const, role: 'Extends' as const, date: 'August 2026' },
+      { id: 'beehiiv-ai-unit-economics-burn-rate', title: 'AI Unit Economics: Burn Rate and Technical Insolvency', url: '#', publisher: 'Beehiiv', type: 'Newsletter', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'ai-volatility-tax', relationship: 'causes' },
-      { slug: 'context-rot', relationship: 'correlates_with' }
+      { slug: 'context-rot', relationship: 'correlates_with' },
+      { slug: 'unreliability-tax', relationship: 'extends' },
+      { slug: 'agentic-roi', relationship: 'extends' }
     ],
     openQuestions: [
       'What is the optimal retry limit for a complex coding agent before it should yield to a human?'
@@ -579,7 +603,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     domain: 'AI Governance',
     expertiseLevel: 'Architect',
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
-    definition: 'An open standard and architectural RFC designed to govern the tool execution boundaries of autonomous AI agents. EAAP defines a strict set of binary admissibility gates that filter and validate proposed agent actions against deterministic allowlists prior to execution. By decoupling the probabilistic reasoning of the LLM from the deterministic execution of the environment, EAAP ensures that agents cannot perform destructive, unauthorized, or financially ruinous actions, even if they hallucinate the intent to do so. This is the foundational protocol powering Exogram’s runtime governance.',
+    definition: 'An open standard and architectural RFC designed to govern the tool execution boundaries of autonomous AI agents. EAAP defines a strict set of binary admissibility gates that filter and validate proposed agent actions against deterministic allowlists prior to execution. By decoupling the probabilistic reasoning of the LLM from the deterministic execution of the environment, EAAP ensures that agents cannot perform destructive, unauthorized, or financially ruinous actions, even if they hallucinate the intent to do so. This is the foundational protocol powering Exogramâ€™s runtime governance.',
     whyItMatters: 'As agents move into Zone 3 and Zone 4 of the AI Liability Gradient, relying on system prompts to enforce safety is structurally insufficient; LLMs can always be jailbroken or confused. EAAP provides a hard, cryptographic boundary at the execution layer. It guarantees that regardless of what the LLM decides to do, the system will only execute mathematically verified, pre-approved actions. This is the only way to safely deploy autonomous agents in high-stakes enterprise environments without exposing the company to infinite liability.',
     whoShouldCare: ['Security Architects', 'AI Platform Engineers', 'Compliance Officers'],
     firstIntroduced: 'August 2026',
@@ -590,7 +614,9 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       { stage: 'Protocol Specification', label: 'Exogram Core RFC', publisher: 'Internal Research', date: 'August 2026', summary: 'Drafted as the core governance protocol for the Exogram platform.' }
     ],
     evidenceLedger: [
-      { id: 'ev-eaap-1', title: 'Deterministic Tool Governance', url: '#', publisher: 'Internal', type: 'Observation', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' }
+      { id: 'cio-salesforce-sap-workflow-agents', title: 'Salesforce and SAP Workflow Agents', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' },
+      { id: 'beehiiv-runtime-governance-architecture', title: 'Runtime Governance Architecture', url: '#', publisher: 'Beehiiv', type: 'Newsletter', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' },
+      { id: 'beehiiv-deterministic-control-plane', title: 'Deterministic Control Plane', url: '#', publisher: 'Beehiiv', type: 'Newsletter', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'deterministic-governance', relationship: 'formalizes' },
@@ -657,7 +683,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     domain: 'AI Economics',
     expertiseLevel: 'Architect',
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
-    definition: 'The architectural discipline of designing and structuring software systems where gross profitability is treated as a first-class engineering constraint, alongside performance, security, and scalability. In AI-native products, because every feature relies on variable compute COGS (like LLM tokens), engineers must model, monitor, and cap the financial cost of inference at the feature level. Margin Engineering requires developers to actively design caching layers, model routing, and fallback mechanisms specifically to protect the company’s gross margin from unpredictable user behavior.',
+    definition: 'The architectural discipline of designing and structuring software systems where gross profitability is treated as a first-class engineering constraint, alongside performance, security, and scalability. In AI-native products, because every feature relies on variable compute COGS (like LLM tokens), engineers must model, monitor, and cap the financial cost of inference at the feature level. Margin Engineering requires developers to actively design caching layers, model routing, and fallback mechanisms specifically to protect the companyâ€™s gross margin from unpredictable user behavior.',
     whyItMatters: 'In the SaaS era, software had high fixed costs but negligible variable costs, meaning margin took care of itself once the software was built. Generative AI fundamentally breaks this model; high usage can bankrupt a company if inference costs are not strictly controlled. Margin Engineering forces technical teams to take ownership of the P&L. If an engineer designs a feature that destroys unit economics, it is considered an architectural failure, not just a finance problem. It is the only way to build sustainable AI businesses.',
     whoShouldCare: ['Software Architects', 'Engineering Leaders', 'Founders'],
     firstIntroduced: 'August 2026',
@@ -734,8 +760,8 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     domain: 'AI Economics',
     expertiseLevel: 'Executive',
     health: { confidence: 0.9, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
-    definition: 'The specific, calculable query volume threshold where the variable costs of operating an AI feature exceed the fixed subscription revenue generated by the user. Beyond this mathematical inflection point, the product’s unit economics invert, and every additional user interaction actively erodes gross margin. Identifying the collapse point is critical for setting pricing tiers, throttling usage, and designing cost-aware system architectures.',
-    whyItMatters: 'Many companies offer "unlimited" AI generation as a marketing tactic, relying on the assumption that average usage will remain low. When power users discover the utility of the tool, they rapidly cross the Margin Collapse Point, turning the company’s best customers into its biggest financial liabilities. If leadership does not know where this point exists, they cannot implement the necessary throttling, caching, or tiering required to survive hyper-growth.',
+    definition: 'The specific, calculable query volume threshold where the variable costs of operating an AI feature exceed the fixed subscription revenue generated by the user. Beyond this mathematical inflection point, the productâ€™s unit economics invert, and every additional user interaction actively erodes gross margin. Identifying the collapse point is critical for setting pricing tiers, throttling usage, and designing cost-aware system architectures.',
+    whyItMatters: 'Many companies offer "unlimited" AI generation as a marketing tactic, relying on the assumption that average usage will remain low. When power users discover the utility of the tool, they rapidly cross the Margin Collapse Point, turning the companyâ€™s best customers into its biggest financial liabilities. If leadership does not know where this point exists, they cannot implement the necessary throttling, caching, or tiering required to survive hyper-growth.',
     whoShouldCare: ['Pricing Strategists', 'Product Managers', 'Chief Financial Officers'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
@@ -964,7 +990,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     category: 'Richard Ewing Canon (Original Framework)',
     domain: 'Career Economics',
     expertiseLevel: 'Intermediate',
-    health: { confidence: 0.95, evidenceCount: 5, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
+    health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A four-stage career progression framework defining how professionals evolve in their capacity to handle complexity and generate value. Tier 1 (The Reporter) identifies problems and waits for instruction. Tier 2 (The Solver) is given a problem and independently executes a solution. Tier 3 (The Communicator) anticipates systemic problems, proposes solutions, and aligns cross-functional teams. Tier 4 (The Architect/Apex) designs resilient systems that prevent entire classes of problems from existing in the first place.',
     whyItMatters: 'Most career ladders focus on technical skills or years of experience, which poorly correlate with actual business impact. The Four Tiers of Autonomy shift the focus entirely to agency and problem-solving scope. It clarifies exactly why someone is or is not ready for promotion. A Tier 2 engineer might write brilliant code, but if they cannot align a team (Tier 3), they cannot be a staff engineer. This framework provides clear, actionable language for professional development and performance reviews.',
     whoShouldCare: ['Engineering Managers', 'Human Resources', 'Individual Contributors'],
@@ -976,11 +1002,15 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Framework Definition', publisher: 'Internal Research', date: 'August 2026', summary: 'Formalized the autonomy framework to standardize promotion criteria.' }
     ],
     evidenceLedger: [
-      { id: 'ev-tiers-1', title: 'Autonomy over Skills', url: '#', publisher: 'Internal', type: 'Observation', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' }
+      { id: 'linkedin-hardest-truth-clarity', title: 'The Hardest Truth: Don\'t Hire Visionaries, Hire for Clarity', url: '#', publisher: 'LinkedIn', type: 'Post', strength: 3 as const, role: 'Origin' as const, date: 'August 2026' },
+      { id: 'beehiiv-senior-pm-trap', title: 'The Senior PM Trap', url: '#', publisher: 'Beehiiv', type: 'Newsletter', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' },
+      { id: 'linkedin-product-economist-structural-shift', title: 'The Product Economist: A Structural Shift', url: '#', publisher: 'LinkedIn', type: 'Post', strength: 3 as const, role: 'Extends' as const, date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'double-diamond-career-trajectory', relationship: 'extends' },
-      { slug: 'product-economist', relationship: 'implements' }
+      { slug: 'product-economist', relationship: 'implements' },
+      { slug: 'ai-economist', relationship: 'extends' },
+      { slug: 'aper-metric', relationship: 'extends' }
     ],
     openQuestions: [
       'Can an individual operate at Tier 4 in one specific domain while remaining at Tier 2 in another?'
@@ -1009,7 +1039,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       }
     },
     canonicalQuote: 'Do not reward the firefighter for putting out the blaze; reward the architect who built the building out of stone.',
-    positionStatement: 'Career progression must be strictly tied to an individual’s ability to handle increasingly ambiguous, systemic complexity.',
+    positionStatement: 'Career progression must be strictly tied to an individualâ€™s ability to handle increasingly ambiguous, systemic complexity.',
     claims: [
       { statement: 'Evaluating employees by their Tier of Autonomy drastically improves the quality of leadership promotions.', confidence: 0.95, counterarguments: ['Technical mastery should be enough for senior promotions.'], supportingData: 'Reduction in Peter Principle failures post-adoption.' }
     ],
@@ -1118,9 +1148,9 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     category: 'Bridge Concept',
     domain: 'AI Economics',
     expertiseLevel: 'Architect',
-    health: { confidence: 0.9, evidenceCount: 2, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
+    health: { confidence: 0.9, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The discipline of granular cost attribution and optimization applied specifically to the individual feature level, moving beyond generalized infrastructure monitoring. While traditional FinOps optimizes bulk cloud spend (servers, databases) at the resource layer, Feature-Level AI FinOps traces token costs, inference latency, and API call volumes to specific product features, user cohorts, and even individual prompt interactions. This creates a hyper-accurate, real-time map of exactly which parts of the application are generating or destroying gross margin.',
-    whyItMatters: 'In traditional SaaS, costs are smeared across the entire infrastructure, making it acceptable to look at bulk AWS bills. AI completely breaks this. A single poorly designed chat feature can consume 80% of a company’s API budget in a weekend. Without Feature-Level AI FinOps, finance teams see a massive OpenAI bill but have no idea which feature or user caused it. This discipline allows organizations to quarantine unprofitable features, dynamically route traffic to cheaper models, and enforce strict token budgets at the point of interaction.',
+    whyItMatters: 'In traditional SaaS, costs are smeared across the entire infrastructure, making it acceptable to look at bulk AWS bills. AI completely breaks this. A single poorly designed chat feature can consume 80% of a companyâ€™s API budget in a weekend. Without Feature-Level AI FinOps, finance teams see a massive OpenAI bill but have no idea which feature or user caused it. This discipline allows organizations to quarantine unprofitable features, dynamically route traffic to cheaper models, and enforce strict token budgets at the point of interaction.',
     whoShouldCare: ['FinOps Engineers', 'Platform Architects', 'AI Product Managers'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
@@ -1130,11 +1160,15 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Discipline Evolution', publisher: 'Internal Research', date: 'August 2026', summary: 'Established as the necessary evolution of FinOps for generative AI applications.' }
     ],
     evidenceLedger: [
-      { id: 'ev-finops-1', title: 'Granular Telemetry', url: '#', publisher: 'Internal', type: 'Observation', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' }
+      { id: 'beehiiv-token-burn-analytics', title: 'Token Burn Analytics: Real-Time LLM Cost Allocation', url: '#', publisher: 'Beehiiv', type: 'Newsletter', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' },
+      { id: 'beehiiv-why-scaling-breaks-bank', title: 'Why Scaling Software Suddenly Breaks the Bank', url: '#', publisher: 'Beehiiv', type: 'Newsletter', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' },
+      { id: 'cio-claude-api-bill', title: 'Your Claude API Bill Is Higher Than Your Revenue', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 5 as const, role: 'Extends' as const, date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'margin-engineering', relationship: 'implements' },
-      { slug: 'aueb-framework', relationship: 'depends_on' }
+      { slug: 'aueb-framework', relationship: 'depends_on' },
+      { slug: 'ai-tokenomics-cogs', relationship: 'extends' },
+      { slug: 'inference-economics', relationship: 'extends' }
     ],
     openQuestions: [
       'What is the most efficient way to tag and trace token usage through complex, multi-agent orchestration layers?'
@@ -1263,7 +1297,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Founder', takeaway: 'Ensure your pricing model scales linearly or exponentially with the user’s token consumption.', recommendedNextSlug: 'ai-economist' }
+      { role: 'Founder', takeaway: 'Ensure your pricing model scales linearly or exponentially with the userâ€™s token consumption.', recommendedNextSlug: 'ai-economist' }
     ]
   },
   {

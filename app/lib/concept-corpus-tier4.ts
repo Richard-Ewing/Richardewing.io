@@ -22,7 +22,9 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
       { id: 'ev-aa-1', title: 'The Risks of Autonomous Agents', url: 'https://www.cio.com', publisher: 'CIO.com', type: 'Editorial', strength: 5, role: 'Origin', date: '2024' }
     ],
     relatedConceptSlugs: [
-      { slug: 'deterministic-governance', relationship: 'requires' }
+      { slug: 'deterministic-governance', relationship: 'requires' },
+      { slug: 'agentic-roi', relationship: 'supports' },
+      { slug: 'mcp-governance', relationship: 'requires' }
     ],
     openQuestions: ['How can state hash verification scale for high-frequency agent actions?'],
     knownLimitations: ['Current context windows degrade rapidly, limiting long-term autonomous planning.'],
@@ -58,7 +60,9 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
       { id: 'ev-airoi-1', title: 'Generative AI Margin Squeeze', url: 'https://theaieconomist.beehiiv.com', publisher: 'Beehiiv', type: 'Analysis', strength: 5, role: 'Origin', date: '2025' }
     ],
     relatedConceptSlugs: [
-      { slug: 'ai-volatility-tax', relationship: 'measures' }
+      { slug: 'ai-volatility-tax', relationship: 'measures' },
+      { slug: 'agentic-roi', relationship: 'extends' },
+      { slug: 'aueb-framework', relationship: 'measures' }
     ],
     openQuestions: ['How can we accurately attribute user retention to specific AI feature adoption?'],
     knownLimitations: ['Intangible value like brand perception is difficult to capture in pure ROI math.'],
@@ -94,7 +98,9 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
       { id: 'ev-aitd-1', title: 'The Subprime Code Crisis', url: 'https://builtin.com', publisher: 'Built In', type: 'Editorial', strength: 5, role: 'Origin', date: '2025' }
     ],
     relatedConceptSlugs: [
-      { slug: 'subprime-code-crisis', relationship: 'correlates_with' }
+      { slug: 'subprime-code-crisis', relationship: 'correlates_with' },
+      { slug: 'complexity-tax', relationship: 'extends' },
+      { slug: 'product-debt-index', relationship: 'measures' }
     ],
     openQuestions: ['How can we automatically detect prompt degradation when underlying model weights shift?'],
     knownLimitations: ['Difficult to measure the precise impact of silent model updates on legacy prompts.'],
@@ -130,7 +136,9 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
       { id: 'ev-aico-1', title: 'Generative AI Margin Squeeze', url: 'https://theaieconomist.beehiiv.com', publisher: 'Beehiiv', type: 'Analysis', strength: 5, role: 'Origin', date: '2025' }
     ],
     relatedConceptSlugs: [
-      { slug: 'semantic-caching', relationship: 'requires' }
+      { slug: 'semantic-caching', relationship: 'requires' },
+      { slug: 'ai-finops', relationship: 'extends' },
+      { slug: 'margin-engineering', relationship: 'implements' }
     ],
     openQuestions: ['At what threshold does the cost of maintaining routing logic exceed the API savings?'],
     knownLimitations: ['Optimization techniques often require increased architectural complexity.'],
@@ -166,7 +174,9 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
       { id: 'ev-llmcm-1', title: 'The AI Volatility Tax', url: 'https://theaieconomist.beehiiv.com', publisher: 'Beehiiv', type: 'Framework', strength: 5, role: 'Origin', date: '2025' }
     ],
     relatedConceptSlugs: [
-      { slug: 'ai-volatility-tax', relationship: 'mitigates' as any }
+      { slug: 'ai-volatility-tax', relationship: 'mitigates' as any },
+      { slug: 'ai-finops', relationship: 'extends' },
+      { slug: 'ai-unit-economics', relationship: 'extends' }
     ],
     openQuestions: ['How can we price AI features for enterprise customers without exposing the business to unbounded variable risks?'],
     knownLimitations: ['Token prices from API providers fluctuate, complicating long-term cost forecasting.'],
@@ -202,7 +212,8 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
       { id: 'ev-rai-1', title: 'Deterministic Governance for AI', url: 'https://www.cio.com', publisher: 'CIO.com', type: 'Editorial', strength: 5, role: 'Origin', date: '2024' }
     ],
     relatedConceptSlugs: [
-      { slug: 'deterministic-governance', relationship: 'requires' }
+      { slug: 'deterministic-governance', relationship: 'requires' },
+      { slug: 'ai-liability-gradient', relationship: 'extends' }
     ],
     openQuestions: ['How do we encode subjective ethical guidelines into deterministic execution constraints?'],
     knownLimitations: ['Ethical definitions vary globally, making unified technical policies difficult.'],
@@ -238,7 +249,9 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
       { id: 'ev-aic-1', title: 'Deterministic Governance', url: 'https://www.cio.com', publisher: 'CIO.com', type: 'Editorial', strength: 5, role: 'Origin', date: '2024' }
     ],
     relatedConceptSlugs: [
-      { slug: 'deterministic-governance', relationship: 'requires' }
+      { slug: 'deterministic-governance', relationship: 'requires' },
+      { slug: 'shadow-ai-governance', relationship: 'extends' },
+      { slug: 'ai-liability-gradient', relationship: 'supports' }
     ],
     openQuestions: ['How can decentralized open-source models comply with centralized regulatory reporting requirements?'],
     knownLimitations: ['Regulations are evolving faster than the technical capabilities to audit black-box models.'],
@@ -274,7 +287,8 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
       { id: 'ev-aio-1', title: 'The Cost of Predictivity', url: 'https://richardewing.io/blog/cost-of-predictivity', publisher: 'RichardEwing.io', type: 'Analysis', strength: 5, role: 'Origin', date: '2026' }
     ],
     relatedConceptSlugs: [
-      { slug: 'context-rot', relationship: 'measures' }
+      { slug: 'context-rot', relationship: 'measures' },
+      { slug: 'eval-driven-development', relationship: 'supports' }
     ],
     openQuestions: ['How can we evaluate semantic output quality dynamically without invoking another expensive LLM?'],
     knownLimitations: ['Traditional APM tools struggle to process and index unstructured natural language traces.'],
@@ -310,7 +324,8 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
       { id: 'ev-rag-1', title: 'Governing Enterprise Data', url: 'https://www.cio.com', publisher: 'CIO.com', type: 'Editorial', strength: 5, role: 'Origin', date: '2024' }
     ],
     relatedConceptSlugs: [
-      { slug: 'hallucination-tax', relationship: 'mitigates' as any }
+      { slug: 'hallucination-tax', relationship: 'mitigates' as any },
+      { slug: 'context-engineering', relationship: 'supports' }
     ],
     openQuestions: ['How can we handle permission-aware retrieval in highly federated data environments?'],
     knownLimitations: ['RAG quality is entirely dependent on the accuracy of the underlying search algorithm and vector embeddings.'],
@@ -382,7 +397,9 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
       { id: 'ev-aisec-1', title: 'Deterministic Governance', url: 'https://www.cio.com', publisher: 'CIO.com', type: 'Editorial', strength: 5, role: 'Origin', date: '2024' }
     ],
     relatedConceptSlugs: [
-      { slug: 'deterministic-governance', relationship: 'requires' }
+      { slug: 'deterministic-governance', relationship: 'requires' },
+      { slug: 'mcp-governance', relationship: 'requires' },
+      { slug: 'eaap-protocol', relationship: 'implements' }
     ],
     openQuestions: ['How can we sanitize inputs for prompt injection without destroying the semantic nuance required for the task?'],
     knownLimitations: ['Heuristic defenses against prompt injection are constantly bypassed by novel attack strings.'],
@@ -490,7 +507,8 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
       { id: 'ev-pe-1', title: 'The Coordination Tax', url: 'https://richardewing.io/blog/hiring-engineers-gross-margin', publisher: 'RichardEwing.io', type: 'Analysis', strength: 5, role: 'Origin', date: '2025' }
     ],
     relatedConceptSlugs: [
-      { slug: 'coordination-tax', relationship: 'mitigates' as any }
+      { slug: 'coordination-tax', relationship: 'mitigates' as any },
+      { slug: 'spec-driven-development', relationship: 'supports' }
     ],
     openQuestions: ['How do we measure the direct financial ROI of an internal developer platform?'],
     knownLimitations: ['Building a platform requires massive initial investment before product teams see value.'],

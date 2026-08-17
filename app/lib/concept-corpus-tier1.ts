@@ -28,7 +28,8 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
       { targetType: 'Curriculum Track', title: 'CareerWin Security Track', url: 'https://careerwin.ai/paths/security', relationship: 'teaches' }
     ],
     relatedConceptSlugs: [
-      { slug: 'deterministic-governance', relationship: 'requires' }
+      { slug: 'deterministic-governance', relationship: 'requires' },
+      { slug: 'shadow-ai-governance', relationship: 'extends' }
     ],
     openQuestions: ['How to detect unauthorized AI extensions in enterprise browsers?'],
     knownLimitations: ['Discovery tools struggle with API level integration of shadow AI.'],
@@ -69,7 +70,8 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
       { targetType: 'Framework Module', title: 'Exogram Control Plane', url: 'https://exogram.ai/control-plane', relationship: 'governs' }
     ],
     relatedConceptSlugs: [
-      { slug: 'agentic-engineering', relationship: 'depends_on' }
+      { slug: 'agentic-engineering', relationship: 'depends_on' },
+      { slug: 'mcp-governance', relationship: 'requires' }
     ],
     openQuestions: ['How can we standardized agent communication protocols?', 'What are the best practices for agent lifecycle management?'],
     knownLimitations: ['Difficult to discover agents embedded deep within legacy systems.'],
@@ -151,7 +153,8 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
       { targetType: 'Glossary Term', title: 'Data Provenance in CareerWin', url: 'https://careerwin.ai/glossary', relationship: 'explains' as any }
     ],
     relatedConceptSlugs: [
-      { slug: 'ai-economics', relationship: 'correlates_with' }
+      { slug: 'ai-economics', relationship: 'correlates_with' },
+      { slug: 'synthetic-model-collapse', relationship: 'extends' }
     ],
     openQuestions: ['At what percentage of synthetic data does irreversible collapse begin?'],
     knownLimitations: ['Difficult to measure the exact ratio of synthetic data in open web scrapes.'],
@@ -196,7 +199,9 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
       { targetType: 'Framework Module', title: 'CareerWin AI ROI Model', url: 'https://careerwin.ai/roi', relationship: 'implements' }
     ],
     relatedConceptSlugs: [
-      { slug: 'ai-volatility-tax', relationship: 'requires' }
+      { slug: 'ai-volatility-tax', relationship: 'requires' },
+      { slug: 'ai-coding-tool-economics', relationship: 'extends' },
+      { slug: 'ai-unit-economics', relationship: 'extends' }
     ],
     openQuestions: ['How will decentralized inference hardware affect token pricing models?'],
     knownLimitations: ['Cost models become obsolete quickly as foundation providers drop API prices.'],
@@ -280,7 +285,9 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
       { targetType: 'Curriculum Track', title: 'CareerWin Agentic Path', url: 'https://careerwin.ai/paths/agentic', relationship: 'teaches' }
     ],
     relatedConceptSlugs: [
-      { slug: 'deterministic-governance', relationship: 'requires' }
+      { slug: 'deterministic-governance', relationship: 'requires' },
+      { slug: 'compound-ai-systems', relationship: 'extends' },
+      { slug: 'spec-driven-development', relationship: 'supports' }
     ],
     openQuestions: ['What are the optimal patterns for inter agent conflict resolution?', 'How do we manage state rollback in non transactional external APIs?'],
     knownLimitations: ['Lack of standardized tooling and testing frameworks for multi agent interactions.'],
@@ -322,7 +329,8 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
       { targetType: 'Glossary Term', title: 'CareerWin Prompt Engineering Guide', url: 'https://careerwin.ai/guides/prompt-engineering', relationship: 'explains' as any }
     ],
     relatedConceptSlugs: [
-      { slug: 'deterministic-governance', relationship: 'requires' }
+      { slug: 'deterministic-governance', relationship: 'requires' },
+      { slug: 'context-engineering', relationship: 'supports' }
     ],
     openQuestions: ['How can we effectively measure context rot in real time production environments?'],
     knownLimitations: ['Models behave unpredictably and inconsistently when experiencing context rot.'],

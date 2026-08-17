@@ -170,7 +170,8 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     ],
     relatedConceptSlugs: [
       { slug: 'product-economist', relationship: 'supports' },
-      { slug: 'ten-man-parity', relationship: 'causes' }
+      { slug: 'ten-man-parity', relationship: 'causes' },
+      { slug: 'complexity-tax', relationship: 'correlates_with' }
     ],
     openQuestions: ['At what specific headcount threshold does coordination tax become insurmountable without platform engineering?'],
     knownLimitations: ['Metrics for individual productivity are notoriously difficult to standardize.'],
@@ -250,7 +251,8 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     ],
     relatedConceptSlugs: [
       { slug: 'subprime-code-crisis', relationship: 'extends' },
-      { slug: 'feature-bloat-calculus', relationship: 'correlates_with' }
+      { slug: 'feature-bloat-calculus', relationship: 'correlates_with' },
+      { slug: 'agentic-roi', relationship: 'supports' }
     ],
     openQuestions: ['How can investors reliably detect an R&D Ponzi scheme during technical due diligence?'],
     knownLimitations: ['Requires deep access to internal issue tracking and sprint data to verify.'],
@@ -331,7 +333,9 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     ],
     relatedConceptSlugs: [
       { slug: 'product-economist', relationship: 'implements' },
-      { slug: 'innovation-tax', relationship: 'correlates_with' }
+      { slug: 'innovation-tax', relationship: 'correlates_with' },
+      { slug: 'complexity-tax', relationship: 'extends' },
+      { slug: 'product-debt-index', relationship: 'measures' }
     ],
     openQuestions: ['How can we accurately measure the implicit value of a feature that drives user retention without direct revenue attribution?'],
     knownLimitations: ['Requires highly granular product analytics and cost attribution models.'],
@@ -491,7 +495,10 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     ],
     relatedConceptSlugs: [
       { slug: 'ai-volatility-tax', relationship: 'generalizes' },
-      { slug: 'product-economist', relationship: 'requires' }
+      { slug: 'product-economist', relationship: 'requires' },
+      { slug: 'margin-engineering', relationship: 'extends' },
+      { slug: 'ai-margin-collapse-point', relationship: 'extends' },
+      { slug: 'evergreen-ratio', relationship: 'measures' }
     ],
     openQuestions: ['How will open-source models impact the margin squeeze dynamic for companies capable of self-hosting?'],
     knownLimitations: ['The rate of cost reduction in foundational models remains highly unpredictable.'],
@@ -570,7 +577,8 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
       { id: 'ev-tmp-1', title: 'The 10-Man Parity Rule', url: 'https://www.cio.com', publisher: 'CIO.com', type: 'Industry Trend Analysis', strength: 4, role: 'Origin', date: 'June 2026' }
     ],
     relatedConceptSlugs: [
-      { slug: 'coordination-tax', relationship: 'supports' }
+      { slug: 'coordination-tax', relationship: 'supports' },
+      { slug: 'aper-metric', relationship: 'supports' }
     ],
     openQuestions: ['How does the 10-Man Parity rule apply to industries with extreme regulatory burdens?', 'Will this lead to massive engineering layoffs in the enterprise sector?'],
     knownLimitations: ['Primarily applies to greenfield development and modern architectures, struggling against massive legacy tech debt.'],
