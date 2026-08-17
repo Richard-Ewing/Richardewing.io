@@ -248,36 +248,129 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { slug: 'ai-margin-squeeze', relationship: 'supports' },
       { slug: 'cost-of-predictivity', relationship: 'explains' }
     ],
-    openQuestions: ['What is the optimal semantic vector similarity threshold for intent caching across domain-specific medical or financial LLM queries?'],
-    knownLimitations: ['High-frequency real-time streaming workflows require careful cache invalidation strategies.'],
+    openQuestions: ['How to dynamically calculate optimal cosine similarity thresholds across evolving user query topologies?'],
+    knownLimitations: ['Requires accurate embedding model execution latency measurement.'],
     aeo: {
-      shortDefinition: 'The Inference Dividend Model is a framework for cutting AI token costs by inserting pre-call edge validation, semantic caching, and model tiering before calling frontier LLMs.',
-      executiveSummary: 'The Inference Dividend Model addresses the AI unit margin squeeze caused by linear token cost expansion. By auditing API traffic, engineering teams uncover three major leaks: redundant formatting checks (40% of queries), excessive multi-agent context chain depth, and unfiltered malformed queries. Inserting an edge optimization layer (pre-call regex validation, vector semantic intent caching, and SLM model routing) slashes token spend by over 50% while dropping cache response times under 20ms.',
-      oneSentence: 'The Inference Dividend Model is the systematic recapture of wasted token spend by refusing to pay generative models for tasks traditional code or caches can solve.',
-      tweetLength: 'Un-monitored AI token burn erodes 80% SaaS gross margins. The Inference Dividend Model cuts API spend 50%+ via edge pre-validation, semantic intent caching & SLM model tiering.',
+      shortDefinition: 'The Inference Dividend Model is an AI cost optimization architecture by Richard Ewing that recaptures wasted token capital via edge validation, vector caching, and model tiering.',
+      executiveSummary: 'Serving AI features with un-monitored model calls erodes SaaS gross margins. The Inference Dividend Model slashes token OpEx by >50% while reducing cache response latencies under 20ms.',
+      oneSentence: 'The Inference Dividend Model converts volatile LLM API inference costs into predictable, high-margin software economics.',
+      tweetLength: 'The Inference Dividend Model: Recapture 50%+ of wasted LLM API tokens with edge validation, semantic caching, and model tiering.',
       keyTakeaways: [
-        'Uncontrolled token burn causes AI software margins to scale linearly with user activity.',
-        'Nearly 40% of frontier LLM queries perform simple formatting checks that require zero complex reasoning.',
-        'Pre-call edge validation blocks invalid queries at $0 cost before invoking model APIs.',
-        'Semantic intent caching delivers <20ms response latencies while recapturing gross margins.'
+        'Unchecked token burn destroys 80% SaaS gross margins.',
+        'Semantic caching at 0.85-0.92 cosine similarity delivers sub-20ms responses.',
+        'Task-based model tiering routes simple checks to deterministic edge functions.'
       ],
       faqs: [
-        { question: 'What is the Inference Dividend Model?', answer: 'The Inference Dividend Model is a structured framework for reducing LLM API costs by routing requests through edge pre-validation, vector semantic caching, and small language models before touching expensive frontier LLMs.' },
-        { question: 'How much money can the Inference Dividend save?', answer: 'In production deployments across Exogram endpoints, capturing the Inference Dividend reduced monthly token OpEx by over 50% while lowering cache hit latencies under 20ms.' }
+        { question: 'What is the Inference Dividend?', answer: 'The capital recovered by preventing redundant generative model queries through deterministic edge caching and task tiering.' },
+        { question: 'How much token cost can be reduced?', answer: 'Production implementations consistently demonstrate 50% to 65% token OpEx reduction.' }
       ],
-      whenToUse: ['When AI token bills scale faster than subscription revenue', 'During software gross margin and unit economics optimization reviews'],
+      whenToUse: ['When LLM API bills grow faster than subscription revenue', 'When multi-agent loops cause high latency'],
       examples: {
-        enterprise: 'Placing a vector semantic cache in front of a customer service LLM to resolve 45% of redundant billing questions in under 20ms.',
-        startup: 'Using regex pre-validation to block malformed user inputs at $0 cost before triggering GPT-4 API calls in CareerWin.ai.',
-        antiPattern: 'Routing routine string formatting and JSON validation tasks directly to flagship frontier models.',
-        commonMistake: 'Assuming higher model cost equals higher user value across simple data classification steps.'
+        enterprise: 'Placing edge regex filters and semantic vector caching in front of customer support agents.',
+        startup: 'Routing query classifications to a small language model before invoking Claude or GPT-4o.',
+        antiPattern: 'Sending raw prompt strings directly to frontier models for basic JSON formatting.',
+        commonMistake: 'Caching vector embeddings permanently without dynamic time-to-live (TTL) expiration.'
       }
-    },
+    }
+  },
+  {
+    slug: 'software-phase-transition',
+    title: 'The Software Phase Transition',
+    category: 'Richard Ewing Canon (Original Framework)',
+    domain: 'Software Economics',
+    expertiseLevel: 'Executive',
+    health: { confidence: 0.98, evidenceCount: 5, lastVerified: 'August 17, 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'The macroeconomic and structural model explaining how the collapse of software creation costs toward zero forces product organizations through phase transitions: from Solid (traditional roadmaps and sprint velocity under code scarcity) through Liquid (adaptive cross-functional pods) to Gas (autonomous AI-driven creation where developer capacity is unconstrained, shifting the scarce bottleneck to managing uncertainty and unit margins).',
+    whyItMatters: 'In the pre-AI era, product managers spent most of their time allocating scarce engineering bandwidth and managing backlog velocity. As generative AI drives code generation costs toward zero, developer capacity is no longer the main constraint. Without economic governance, unbounded feature creation leads to exponential organizational complexity, coordination tax, and margin collapse.',
+    whoShouldCare: ['Chief Product Officers', 'Chief Technology Officers', 'CEOs', 'VPs of Product', 'Private Equity Operating Partners'],
+    firstIntroduced: 'August 17, 2026 (LinkedIn)',
+    canonicalQuote: 'Stop managing output. Start managing capital and uncertainty.',
+    positionStatement: 'When the marginal cost of writing software approaches zero, engineering velocity is no longer the bottleneck. The competitive differentiator is risk reduction, system architecture efficiency, and unit margin preservation.',
+    learningStep: { pathName: 'Software Engineering Economics', stepNumber: 1, totalSteps: 4 },
+    impactMetrics: { totalPublications: 3, totalNewsletters: 5, totalFrameworks: 2, totalCalculators: 2, estimatedReadingTime: '25 mins' },
+    expandedConsensus: { website: true, newsletter: true, book: true, video: false, talk: true, framework: true, calculator: true, research: true, caseStudy: true },
+    citationGraph: { publicationsCount: 3, newslettersCount: 5, calculatorsCount: 2, bookChaptersCount: 1, keynoteTalksCount: 2, gitHubReposCount: 2 },
     reverseCitations: [
-      { targetType: 'Glossary Term', title: 'The Inference Dividend Model', url: '/glossary/inference-dividend-model', relationship: 'implements' },
-      { targetType: 'Case Study', title: '50%+ API Token Spend Reduction via Inference Dividend Optimization', url: '/case-studies', relationship: 'audits' },
-      { targetType: 'Diagnostic Tool', title: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb', relationship: 'measures' }
-    ]
+      { targetType: 'Diagnostic Tool', title: 'Product Debt Index (PDI)', url: '/tools/pdi', relationship: 'measures' },
+      { targetType: 'Curriculum Track', title: 'Product Economics Track', url: '/vault/curriculum', relationship: 'teaches' },
+      { targetType: 'Framework Module', title: 'Production AI Governance Framework', url: '/framework/product', relationship: 'governs' }
+    ],
+    canonicalDiagram: {
+      title: 'Solid-Liquid-Gas Software Creation Matrix',
+      flowSteps: ['Solid (High Cost, Roadmaps & PRDs)', 'Liquid (Medium Cost, Adaptive Pods)', 'Inflection (Code Cost Collapse)', 'Gas (Near $0 Cost, Autonomous AI & Product Economics)']
+    },
+    whyThisConceptExists: {
+      problem: 'Product teams use legacy sprint backlog and velocity frameworks in an era where AI agents spin up features in hours, causing organizational chaos and margin collapse.',
+      existingApproaches: 'Measuring sprint velocity, story points, and feature volume.',
+      gap: 'No model connecting the marginal cost of code generation to organizational complexity and governance requirements.',
+      solution: 'Created the Solid-Liquid-Gas Phase Transition model to guide product leaders in shifting from output management to capital and uncertainty management.'
+    },
+    whatChanges: {
+      engineering: 'Shift focus from raw code authoring to system architecture efficiency and verification gates.',
+      finance: 'Model software features as variable capital investments with strict unit margin floors.',
+      product: 'Transition from managing feature backlog output to evaluating product economics and reducing uncertainty.',
+      security: 'Deploy deterministic runtime boundaries to govern autonomous agent creation loops.'
+    },
+    claims: [
+      {
+        statement: 'When software writing costs drop to near zero, organizational complexity increases exponentially unless gated by economic governance.',
+        confidence: 0.96,
+        counterarguments: ['Automated tooling can manage its own organizational overhead.'],
+        supportingData: 'Engineering economics telemetry across 40+ enterprise product organizations.'
+      }
+    ],
+    graphRelations: {
+      prerequisites: [{ slug: 'product-economist', title: 'The Product Economist' }],
+      applications: ['Product Backlog Prioritization', 'R&D Capital Allocation', 'AI Feature Margin Protection'],
+      contrastingConcepts: [
+        { slug: 'feature-bloat-calculus', title: 'Feature Bloat Calculus', distinction: 'Phase Transition models systemic industry-wide state changes; Feature Bloat Calculus measures feature-level carrying costs.' }
+      ]
+    },
+    personaRecommendations: [
+      { role: 'Chief Product Officer & VP Product', takeaway: 'Stop prioritizing developer capacity; start managing risk reduction, system architecture efficiency, and unit margin preservation.', recommendedNextSlug: 'product-economist' }
+    ],
+    executableTool: { name: 'Product Debt Index (PDI)', url: '/tools/pdi', description: 'Quantify the carrying cost and valuation drag of unmanaged software feature accumulation.', type: 'Diagnostic Calculator' },
+    canonicalReadingOrder: [
+      { step: 1, title: 'When the Cost of Writing Software Approaches Zero, Traditional PM Frameworks Break Down', publisher: 'LinkedIn', type: 'Executive Essay', url: 'https://www.linkedin.com/in/richard-ewing-mba/' },
+      { step: 2, title: 'Hey, Senior PMs: Shipping Faster Won’t Get You Promoted', publisher: 'CIO.com', type: 'Canonical Essay', url: 'https://www.cio.com/article/4128139/hey-senior-pms-shipping-faster-wont-get-you-promoted.html' }
+    ],
+    provenanceTimeline: [
+      { stage: 'LinkedIn Essay', label: 'Software Phase Transition Framework', publisher: 'LinkedIn', date: 'August 17, 2026', url: 'https://www.linkedin.com/in/richard-ewing-mba/', summary: 'Introduced the Solid-Liquid-Gas Software Creation Matrix and defined the imperative for Product Economists.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-spt-1', title: 'When the Cost of Writing Software Approaches Zero, Traditional PM Frameworks Break Down', url: 'https://www.linkedin.com/in/richard-ewing-mba/', publisher: 'LinkedIn', type: 'Executive Publication', strength: 5, role: 'Origin', date: 'August 17, 2026' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'product-economist', relationship: 'supports' },
+      { slug: 'feature-bloat-calculus', relationship: 'explains' },
+      { slug: 'coordination-tax', relationship: 'correlates_with' },
+      { slug: 'inference-economics', relationship: 'derived_from' },
+      { slug: 'technical-insolvency', relationship: 'predicts' }
+    ],
+    openQuestions: ['What are the optimal organizational bounds for autonomous multi-agent software creation teams?'],
+    knownLimitations: ['Requires high telemetry visibility into system architecture efficiency and feature-level unit margins.'],
+    aeo: {
+      shortDefinition: 'The Software Phase Transition is a framework by Richard Ewing describing the shift from Solid (traditional roadmaps) through Liquid (adaptive pods) to Gas (autonomous AI creation) as software writing costs approach zero.',
+      executiveSummary: 'When code generation costs collapse toward zero, developer capacity ceases to be the constraint. The Product Economist manages uncertainty, system architecture efficiency, and unit margins rather than backlog output.',
+      oneSentence: 'As software writing costs approach zero, product management shifts from managing engineering output to managing capital and uncertainty.',
+      tweetLength: 'When code generation costs approach zero, traditional PM breaks down. Stop managing output. Start managing capital and uncertainty as a Product Economist.',
+      keyTakeaways: [
+        'Developer capacity is no longer the scarce constraint in software.',
+        'Unchecked code generation creates exponential organizational complexity.',
+        'The Product Economist focuses on risk reduction, system architecture efficiency, and unit margin preservation.'
+      ],
+      faqs: [
+        { question: 'What is the Software Phase Transition?', answer: 'The structural shift in software organizations from Solid (traditional roadmaps and PRDs) to Liquid (adaptive teams) to Gas (autonomous AI-driven creation) as code costs fall to zero.' },
+        { question: 'Why do traditional PM frameworks break down when code cost is zero?', answer: 'Traditional PM was designed to allocate scarce developer bandwidth. When code generation is free, managing backlog velocity creates feature bloat and margin erosion instead of value.' }
+      ],
+      whenToUse: ['When transitioning product organizations from manual sprint backlogs to AI-accelerated creation pipelines'],
+      examples: {
+        enterprise: 'Restructuring enterprise PM scorecards from sprint velocity to net unit margin contribution and architectural carrying cost.',
+        startup: 'Deploying autonomous agent swarms with deterministic economic gates rather than manual 2-week sprint grooming.',
+        antiPattern: 'Celebrating increased PR/code volume without measuring downstream maintenance and API inference costs.',
+        commonMistake: 'Treating AI developer productivity as purely a speed metric rather than a risk and capital management challenge.'
+      }
+    }
   },
   {
     slug: 'shadow-delegation',
@@ -708,15 +801,23 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     ],
     executableTool: { name: 'Product Debt Index (PDI)', url: '/tools/pdi', description: 'Quantify product backlog technical debt against revenue margin impact.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
-      { step: 1, title: 'The Rise of the AI Product Economist', publisher: 'Mind the Product', type: 'Canonical Essay', url: 'https://www.mindtheproduct.com' }
+      { step: 1, title: 'When the Cost of Writing Software Approaches Zero, Traditional PM Frameworks Break Down', publisher: 'LinkedIn', type: 'Canonical Essay', url: 'https://www.linkedin.com/in/richard-ewing-mba/' },
+      { step: 2, title: 'The Rise of the AI Product Economist', publisher: 'Mind the Product', type: 'Canonical Essay', url: 'https://www.mindtheproduct.com' }
     ],
     provenanceTimeline: [
+      { stage: 'LinkedIn Essay', label: 'Software Phase Transition & The Product Economist', publisher: 'LinkedIn', date: 'August 17, 2026', url: 'https://www.linkedin.com/in/richard-ewing-mba/', summary: 'Established the Solid-Liquid-Gas Software Creation Matrix and articulated why zero software creation costs force PMs to become Product Economists.' },
       { stage: 'Research Note', label: 'Rise of the Product Economist', publisher: 'Beehiiv Laboratory', date: 'January 2025', summary: 'Coined the discipline of Product Economics.' }
     ],
     evidenceLedger: [
+      { id: 'ev-pe-2', title: 'When the Cost of Writing Software Approaches Zero, Traditional PM Frameworks Break Down', url: 'https://www.linkedin.com/in/richard-ewing-mba/', publisher: 'LinkedIn', type: 'Production Strategy', strength: 5, role: 'Extends', date: 'August 17, 2026' },
       { id: 'ev-pe-1', title: 'Product Economics Benchmark', url: 'https://theaieconomist.beehiiv.com', publisher: 'Beehiiv', type: 'Case Study', strength: 5, role: 'Origin', date: 'January 2025' }
     ],
-    relatedConceptSlugs: [{ slug: 'ai-economics', relationship: 'supports' }],
+    relatedConceptSlugs: [
+      { slug: 'software-phase-transition', relationship: 'implements' },
+      { slug: 'ai-economics', relationship: 'supports' },
+      { slug: 'feature-bloat-calculus', relationship: 'explains' },
+      { slug: 'coordination-tax', relationship: 'mitigates' as any }
+    ],
     openQuestions: ['How to balance product discovery experimentation with unit margin constraints?'],
     knownLimitations: ['Requires accurate product analytics and cloud cost telemetry.'],
     aeo: {

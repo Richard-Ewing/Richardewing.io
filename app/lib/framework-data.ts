@@ -146,6 +146,21 @@ export const subFrameworks: Record<string, SubFramework> = {
                     education: ['Track 2: AI AI Economics', 'Track 8: AI Pricing Strategy'],
                     enforcement: 'Exogram Adaptive Usage Boundary Control'
                 }
+            },
+            {
+                id: 'PAIG-PROD-004',
+                name: 'The Software Phase Transition',
+                definition: 'The structural breakdown of traditional product management as code creation costs approach zero, shifting teams from Solid (roadmaps and sprints) to Gas (autonomous AI creation and Product Economics).',
+                problem: 'Product leaders continue using developer capacity rationing and sprint velocity metrics when generative tools make code generation virtually free, creating organizational complexity and margin erosion.',
+                whyItMatters: 'Shifts product leadership from managing feature output to managing capital allocation, risk reduction, system architecture efficiency, and unit margins.',
+                provenance: ['LinkedIn publications', 'CIO.com articles', 'Mind the Product', 'PDI Calculator', 'Curriculum Track 5'],
+                implementation: {
+                    research: ['When the Cost of Writing Software Approaches Zero, Traditional PM Frameworks Break Down', 'Hey Senior PMs: Shipping Faster Won\'t Get You Promoted'],
+                    diagnostics: ['Product Debt Index (PDI)', 'AI Unit Economics Benchmark (AUEB)'],
+                    education: ['Track 5: Product Management Economics', 'Track 24: AI Economics & Margin Engineering'],
+                    enforcement: 'Exogram Economic Gate & Policy Rules'
+                },
+                conceptSlug: 'software-phase-transition'
             }
         ]
     },

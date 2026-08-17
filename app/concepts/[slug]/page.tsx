@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
+import SoftwarePhaseTransitionVisual from '@/app/components/visualizations/SoftwarePhaseTransitionVisual';
 
 interface ConceptPageProps {
   params: Promise<{ slug: string }>;
@@ -210,6 +211,11 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
             </div>
           )}
         </div>
+
+        {/* Interactive Software Creation Phase Transition Visualizer */}
+        {(concept.slug === 'software-phase-transition' || concept.slug === 'product-economist') && (
+          <SoftwarePhaseTransitionVisual />
+        )}
 
         {/* Citation Graph (Forward Citations) */}
         {concept.citationGraph && (

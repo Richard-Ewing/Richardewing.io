@@ -67,6 +67,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/tools/ai-roi-timeline`, 'monthly', 0.9);
 
     // === CONTENT PAGES ===
+    add(`${baseUrl}/research`, 'weekly', 0.95);
+    add(`${baseUrl}/research/publications`, 'weekly', 0.95);
     add(`${baseUrl}/articles`, 'weekly', 0.8);
     add(`${baseUrl}/briefings`, 'monthly', 0.7);
     add(`${baseUrl}/newsletter`, 'weekly', 0.8);

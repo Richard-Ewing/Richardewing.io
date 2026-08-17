@@ -14,6 +14,32 @@ export interface Article {
 
 export const articles: Article[] = [
     {
+        slug: "software-cost-zero-product-economist",
+        title: "When the Cost of Writing Software Approaches Zero, Traditional PM Frameworks Break Down",
+        description: "When generative AI drives the cost of code generation toward zero, developer bandwidth ceases to be the constraint. The bottleneck shifts from managing backlog velocity to managing uncertainty, evaluating system architecture efficiency, and preserving unit margins as a Product Economist.",
+        date: "August 2026",
+        readTime: "5 min read",
+        source: "LinkedIn",
+        category: "Economics",
+        externalUrl: "https://www.linkedin.com/in/richard-ewing-mba/",
+        editorsPick: true,
+        content: `
+            <p>When the cost of writing software approaches zero, traditional product management frameworks break down.</p>
+            <p>In the pre-AI era, product managers spent most of their time prioritizing engineering capacity and managing backlog velocity because developer bandwidth was scarce and expensive. In an age where generative tools can spin up features in hours, developer capacity is no longer the main constraint.</p>
+            <h3>The New Bottleneck: Uncertainty & Economics</h3>
+            <p>The new product bottleneck is managing uncertainty and evaluating product economics. When code generation is unconstrained, shipping more features does not create competitive differentiation - it creates exponential organizational complexity, coordination tax, and margin erosion.</p>
+            <p>The future belongs to the <strong>Product Economist</strong>: leaders who focus on risk reduction, system architecture efficiency, and unit margin preservation rather than simply shipping more features.</p>
+            <h3>The Software Phase Transition Matrix</h3>
+            <p>We model this structural shift through the <strong>Solid-Liquid-Gas Framework</strong> of software creation:</p>
+            <ul>
+                <li><strong>Solid Phase (Traditional PM)</strong>: High cost to write software, medium organizational complexity. Characterized by fixed roadmaps, 2-week sprints, granular ticket grooming, and backlog rationing.</li>
+                <li><strong>Liquid Phase (Adaptive Teams)</strong>: Medium cost to write software, low organizational complexity. Characterized by autonomous cross-functional pods, fluid iteration, and rapid customer telemetry.</li>
+                <li><strong>Gas Phase (Autonomous AI Creation)</strong>: Near-zero / $0 cost to write software, high organizational complexity. Characterized by autonomous agent swarms, continuous prompt-to-code pipelines, and deterministic policy gates.</li>
+            </ul>
+            <p>We are currently sitting at the critical inflection point between code scarcity and code abundance. The mandate for modern product leaders is simple: <em>Stop managing output. Start managing capital and uncertainty.</em></p>
+        `
+    },
+    {
         slug: "how-to-reduce-llm-api-token-costs-in-production",
         title: "How to Reduce LLM API Token Costs in Production",
         description: "Cut LLM API costs by 50%+ using semantic caching, cosine similarity thresholds (0.85-0.92), and edge filtering in live software builds.",
@@ -367,6 +393,25 @@ export const articles: Article[] = [
 ];
 
 export const frameworks = [
+    {
+        slug: 'software-phase-transition',
+        name: 'The Software Phase Transition',
+        definition: `The Software Phase Transition models the structural breakdown of traditional product management as the marginal cost of writing software approaches zero.\n\nIn the pre-AI era, developer bandwidth was scarce and expensive. Organizations operated in the Solid state: managing 2-week sprints, grooming backlogs, and writing exhaustive PRDs to ration engineering hours. As tooling improved, organizations transitioned into the Liquid state of adaptive teams with fluid prototyping.\n\nWith generative AI and autonomous agent pipelines, code generation costs collapse toward zero, propelling organizations into the Gas state. In the Gas state, developer capacity is no longer the rate-limiting constraint. Unbounded code generation creates exponential organizational complexity, coordination tax, and margin collapse.\n\nThis forces a fundamental leadership evolution: product leaders must transition from managing feature velocity to becoming Product Economists who govern capital, system architecture efficiency, and uncertainty.`,
+        whyItMatters: `When software creation is free, adding features without economic governance destroys enterprise valuation. Output is no longer a proxy for progress.\n\nFor Chief Product Officers, this framework establishes why traditional sprint metrics fail in the AI era and guides the transition to unit margin accountability.\n\nFor CTOs and engineering leaders, it highlights why unbounded AI code generation creates catastrophic technical insolvency unless paired with strict verification gates.\n\nFor boards and investors, it separates teams that burn capital on feature sprawl from teams that preserve durable gross margins.`,
+        howToCalculate: [
+            'Audit developer capacity vs feature generation cycle times across teams',
+            'Measure organizational complexity growth (interaction points, dependency sprawl)',
+            'Evaluate unit margin contribution per shipped feature or autonomous loop',
+            'Track Product Debt Index (PDI) to detect code carrying drag',
+            'Transition team scoring from sprint story points to capital efficiency and risk reduction'
+        ],
+        relatedArticles: [
+            { title: 'When the Cost of Writing Software Approaches Zero, Traditional PM Frameworks Break Down', publication: 'LinkedIn', date: 'Aug 2026', url: 'https://www.linkedin.com/in/richard-ewing-mba/' },
+            { title: 'Hey, Senior PMs: Shipping Faster Won’t Get You Promoted', publication: 'CIO.com', date: 'Feb 2026', url: 'https://www.cio.com/article/4128139/hey-senior-pms-shipping-faster-wont-get-you-promoted.html' },
+            { title: 'The Cost of Predictivity', publication: 'Built In', date: 'Nov 2025', url: '/articles/cost-of-predictivity' }
+        ],
+        relatedTool: { name: 'Product Debt Index (PDI) Calculator', url: '/tools/pdi' }
+    },
     {
         slug: 'technical-insolvency-date',
         name: 'Technical Insolvency Date',

@@ -11,6 +11,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!framework) return { title: 'Framework Not Found' };
 
     const searchTitle = {
+        'software-phase-transition': 'The Software Phase Transition  -  Managing Product When Code Costs Near Zero',
         'technical-insolvency-date': 'Technical Insolvency Date  -  When Technical Debt Kills Innovation',
         'innovation-tax': 'Innovation Tax  -  Hidden Maintenance Disguised as R&D Investment',
         'cost-of-predictivity': 'Cost of Predictivity  -  The True Cost of AI Accuracy',

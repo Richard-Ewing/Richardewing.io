@@ -6,6 +6,7 @@ import { articles } from '../../lib/data';
 import { articleSchemaTemplate } from '../../lib/schemas';
 import ArticleUpsell from '../../components/ArticleUpsell';
 import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated';
+import SoftwarePhaseTransitionVisual from '@/app/components/visualizations/SoftwarePhaseTransitionVisual';
 
 interface Props {
     params: Promise<{
@@ -132,7 +133,13 @@ export default async function ArticlePage({ params }: Props) {
 
                 {/* Simulated Content Snippet if available */}
                 {article.content && (
-                    <div className="opacity-75" dangerouslySetInnerHTML={{ __html: article.content }} />
+                    <div className="opacity-90 space-y-4" dangerouslySetInnerHTML={{ __html: article.content }} />
+                )}
+
+                {resolvedParams.slug === 'software-cost-zero-product-economist' && (
+                    <div className="my-8">
+                        <SoftwarePhaseTransitionVisual />
+                    </div>
                 )}
             </div>
 
