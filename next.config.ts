@@ -111,7 +111,7 @@ const nextConfig: NextConfig = {
       { source: '/tools/shadow-ai-risk-calculator', destination: '/tools/shadow-ai', permanent: true },
       { source: '/tools/copilot-roi-calculator', destination: '/tools/copilot-roi', permanent: true },
       { source: '/tools/cloud-repatriation-calculator', destination: '/tools/cloud-repatriation', permanent: true },
-      // Compare page aliases — pain-forward versions
+      // Compare page aliases - pain-forward versions
       { source: '/compare/technical-debt-calculator-vs-sonarqube', destination: '/compare/pdi-vs-sonarqube', permanent: true },
       { source: '/compare/revenue-per-engineer-vs-jellyfish', destination: '/compare/aper-vs-jellyfish', permanent: true },
       { source: '/compare/ai-cost-calculator-vs-aws', destination: '/compare/aueb-vs-aws-cost-explorer', permanent: true },
@@ -143,7 +143,7 @@ const nextConfig: NextConfig = {
       { source: '/compare/docker-vs-langchain', destination: '/tools', permanent: true },
       { source: '/compare/astro-vs-llamaindex', destination: '/tools', permanent: true },
       // NOTE: Tier C compare redirects are handled by middleware.ts with Tier A allowlist.
-      // Do NOT add a blanket /compare/:slug* redirect here — it overrides Tier A page rendering.
+      // Do NOT add a blanket /compare/:slug* redirect here - it overrides Tier A page rendering.
       { source: '/vault/curriculum/tracks/strategic-leadership/N22-5', destination: '/vault/curriculum/tracks', permanent: true },
       { source: '/vault/curriculum/tracks/model-routing/25-3', destination: '/vault/curriculum/tracks', permanent: true },
       { source: '/vault/curriculum/tracks/25/25-9', destination: '/vault/curriculum/tracks', permanent: true },
@@ -259,6 +259,42 @@ const nextConfig: NextConfig = {
         destination: 'https://github.com/Richard-Ewing',
         permanent: true,
       },
+      // ═══════════════════ PARTNERSHIP & BRAND ALIAS REDIRECTS ═══════════════════
+      {
+        source: '/partnerships/integrations',
+        destination: '/partnerships/integration-docs',
+        permanent: true,
+      },
+      {
+        source: '/partnerships/supabase',
+        destination: '/integrations/supabase',
+        permanent: true,
+      },
+      {
+        source: '/docs/integrations/supabase',
+        destination: '/integrations/supabase',
+        permanent: true,
+      },
+      {
+        source: '/docs/integrations',
+        destination: '/partnerships/integration-docs',
+        permanent: true,
+      },
+      {
+        source: '/integrations',
+        destination: '/partnerships/integration-docs',
+        permanent: true,
+      },
+      {
+        source: '/media-kit',
+        destination: '/brand',
+        permanent: true,
+      },
+      {
+        source: '/press',
+        destination: '/brand',
+        permanent: true,
+      },
       // ═══════════════════ GSC 404 REMEDIATION ═══════════════════
       // Redirect all old numeric tracks and modules directly to the vault curriculum in a single hop
       {
@@ -329,7 +365,7 @@ const nextConfig: NextConfig = {
         destination: '/vault/curriculum/tracks',
         permanent: true,
       },
-      // ═══════════════════ 2026 CURRICULUM RESTRUCTURING — KILLED TRACKS ═══════════════════
+      // ═══════════════════ 2026 CURRICULUM RESTRUCTURING - KILLED TRACKS ═══════════════════
       // Classic disciplines killed
       // Track 15 Free Playbooks
       {
