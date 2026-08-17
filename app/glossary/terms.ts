@@ -38,6 +38,38 @@ export const glossaryCategories = [
 
 const _baseGlossaryTerms: GlossaryTerm[] = [
     // =========================================================================
+    // SOFTWARE CREATION PHASE TRANSITION & PRODUCT ECONOMIST
+    // =========================================================================
+    {
+        slug: 'software-phase-transition',
+        title: 'The Software Phase Transition',
+        category: 'Richard Ewing Frameworks',
+        definition: `The Software Phase Transition is a macroeconomic framework formulated by Richard Ewing describing how the collapse of software creation costs toward zero breaks traditional product management.\n\nIn the pre-AI era, product managers allocated scarce developer bandwidth and managed sprint velocity because code authoring was expensive. In an era where generative AI and autonomous agents generate working software in hours, developer capacity is no longer the main constraint. Organizations transition through three distinct operational phases: Solid (roadmaps and PRDs under high code cost), Liquid (adaptive pods under medium cost), and Gas (autonomous AI creation where code cost approaches $0).\n\nRead the full executive analysis in [When the Cost of Writing Software Approaches Zero, Traditional Product Management Frameworks Break Down](https://www.linkedin.com/in/richard-ewing-mba/).`,
+        whyItMatters: `When software writing costs drop to near zero, un-gated code generation creates exponential organizational complexity, coordination tax, and margin erosion. The new product bottleneck is managing uncertainty, evaluating system architecture efficiency, and preserving unit margins. This forces product leaders to transition from backlog output managers to Product Economists. Explore the [Software Phase Transition](/concepts/software-phase-transition) concept and the [Solid-Liquid-Gas Model](/articles/frameworks/software-phase-transition).`,
+        howToMeasure: `1. **Marginal Cost of Code Generation ($/Feature)**: Measure the API inference and developer time required to author a new capability.\n2. **Organizational Coordination Tax**: Track the weekly hours spent in cross-team syncs and backlog grooming relative to output.\n3. **Feature Unit Margin Floor**: Calculate net gross margin contribution per feature after deducting recurring maintenance and inference COGS.\n4. **Uncertainty Resolution Velocity**: Measure the time elapsed between hypothesis formation and empirical user validation.`,
+        faqs: [
+            { question: 'What is the Software Phase Transition?', answer: 'The structural shift in software organizations from Solid (traditional roadmaps and sprint backlogs) to Liquid (adaptive teams) to Gas (autonomous AI-driven creation) as the cost to write code approaches zero.' },
+            { question: 'Why do traditional PM frameworks break down when code is free?', answer: 'Traditional PM was built to ration scarce engineering capacity. When code generation is free, managing backlog velocity creates feature bloat and margin collapse rather than durable customer value.' },
+            { question: 'What is the Product Economist imperative in the Gas phase?', answer: 'In the Gas phase, product leaders must stop managing output and start managing capital allocation, risk reduction, system architecture efficiency, and unit margins.' }
+        ],
+        relatedTerms: ['product-economist', 'feature-bloat-calculus', 'coordination-tax', 'inference-economics', 'technical-debt'],
+        relatedTools: [{ name: 'Product Debt Index (PDI)', url: '/tools/pdi' }, { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }],
+    },
+    {
+        slug: 'product-economist',
+        title: 'Product Economist',
+        category: 'Richard Ewing Frameworks',
+        definition: `A Product Economist is a product leader who treats product management decisions as capital allocation decisions. Rather than managing sprint backlog velocity, story points, or feature volume, a Product Economist measures Return on Invested Capital (ROIC), Cost of Goods Sold (COGS) efficiency, system architecture carrying cost, and technical debt in dollar terms.\n\nFormulated by Richard Ewing, the discipline bridges engineering velocity, financial P&L contribution, and product margin strategy to prevent technical debt and AI inference costs from destroying enterprise valuation.`,
+        whyItMatters: `As AI coding tools drive software creation costs toward zero, feature shipping speed ceases to be a competitive advantage. Unbounded feature velocity without economic governance inflates maintenance overhead and causes margin collapse. The Product Economist installs deterministic economic gates, enforces feature-level P&Ls, and sunsets low-margin zombie capabilities. Explore [The Product Economist](/concepts/product-economist) concept.`,
+        howToMeasure: `1. **Feature-Level ROIC**: Track incremental revenue generated relative to R&D capital invested.\n2. **Unit Margin Preservation Rate**: Ensure feature inference and infrastructure COGS do not exceed 20% of subscription price.\n3. **PDI Valuation Discount**: Measure technical debt drag on enterprise valuation multiple.\n4. **Sunset Velocity**: Quantify the dollar value of retired zombie features returned to gross margin.`,
+        faqs: [
+            { question: 'What is a Product Economist?', answer: 'A product leader who evaluates features through gross margin contribution, capital allocation, and technical insolvency risk rather than sprint backlog velocity.' },
+            { question: 'How does a Product Economist differ from a traditional PM?', answer: 'Traditional PMs maximize feature shipping velocity and backlog throughput. Product Economists maximize unit margins, capital efficiency, and uncertainty reduction.' }
+        ],
+        relatedTerms: ['software-phase-transition', 'feature-bloat-calculus', 'synthetic-cogs', 'ai-volatility-tax', 'technical-debt'],
+        relatedTools: [{ name: 'Product Debt Index (PDI)', url: '/tools/pdi' }, { name: 'Valuation Scenario Engine (EV-SE)', url: '/tools/ev-se' }],
+    },
+    // =========================================================================
     // AI ECONOMICS / INFERENCE DIVIDEND MODEL
     // =========================================================================
     {

@@ -38,7 +38,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     date: 'August 17, 2026',
     thesis: 'When generative tools collapse the marginal cost of writing software toward zero, developer capacity ceases to be the constraint. The product bottleneck shifts from managing backlog velocity to managing uncertainty, evaluating system architecture efficiency, and preserving unit margins as a Product Economist.',
     relatedConceptIds: ['product-economist', 'software-phase-transition', 'feature-bloat-calculus', 'coordination-tax', 'inference-economics', 'technical-insolvency'],
-    relatedGlossarySlugs: ['product-debt-index', 'feature-bloat', 'synthetic-cogs', 'inference-economics'],
+    relatedGlossarySlugs: ['software-phase-transition', 'product-economist', 'product-debt-index', 'feature-bloat', 'synthetic-cogs', 'inference-economics'],
     relatedFrameworkSlugs: ['software-phase-transition', 'feature-bloat-calculus'],
     relatedToolIds: ['pdi', 'aueb', 'slm-vs-api'],
     relatedCaseStudyIds: ['saas-cost-collapse'],

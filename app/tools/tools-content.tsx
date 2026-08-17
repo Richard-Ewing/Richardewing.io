@@ -281,7 +281,7 @@ export default function ToolsContent() {
         <section className="section max-w-5xl mx-auto">
           {(() => {
             const domainArticles = RESEARCH_CORPUS.filter(
-              (art) => art.domain === 'AI Economics' || art.domain === 'AI Governance'
+              (art) => art.domain === 'Product Leadership' || art.domain === 'Software Economics' || art.domain === 'AI Economics' || art.domain === 'AI Governance'
             ).slice(0, 6);
 
             if (domainArticles.length === 0) return null;

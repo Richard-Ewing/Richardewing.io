@@ -894,7 +894,11 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     evidenceLedger: [
       { id: 'ev-scc-1', title: 'Subprime Code Analysis', url: 'https://builtin.com', publisher: 'Built In', type: 'Multi-Company Audit', strength: 5, role: 'Origin', date: 'April 2025' }
     ],
-    relatedConceptSlugs: [{ slug: 'vibe-coding', relationship: 'extends' }],
+    relatedConceptSlugs: [
+      { slug: 'vibe-coding', relationship: 'extends' },
+      { slug: 'software-phase-transition', relationship: 'predicts' },
+      { slug: 'product-economist', relationship: 'mitigates' as any }
+    ],
     openQuestions: ['What automated gating metrics best predict subprime code failure before production deploy?'],
     knownLimitations: ['Requires commit-level telemetry tracking.'],
     aeo: {
@@ -970,7 +974,10 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     evidenceLedger: [
       { id: 'ev-vc-1', title: 'Vibe Coding Analysis', url: 'https://hackernoon.com', publisher: 'HackerNoon', type: 'Case Study', strength: 5, role: 'Origin', date: 'February 2025' }
     ],
-    relatedConceptSlugs: [{ slug: 'subprime-code-crisis', relationship: 'supports' }],
+    relatedConceptSlugs: [
+      { slug: 'subprime-code-crisis', relationship: 'supports' },
+      { slug: 'software-phase-transition', relationship: 'accelerates' as any }
+    ],
     openQuestions: ['How can IDE tools measure developer comprehension before allowing PR merges?'],
     knownLimitations: ['Requires qualitative developer review telemetry.'],
     aeo: {
@@ -1362,7 +1369,10 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     evidenceLedger: [
       { id: 'ev-id-1', title: 'Induced Demand Audit', url: 'https://builtin.com', publisher: 'Built In', type: 'Case Study', strength: 5, role: 'Origin', date: 'March 2025' }
     ],
-    relatedConceptSlugs: [{ slug: 'subprime-code-crisis', relationship: 'extends' }],
+    relatedConceptSlugs: [
+      { slug: 'subprime-code-crisis', relationship: 'extends' },
+      { slug: 'software-phase-transition', relationship: 'supports' }
+    ],
     openQuestions: ['What AI automated review workflows best reduce senior developer review burden without compromising code quality?'],
     knownLimitations: ['Requires commit-level telemetry across GitHub/GitLab.'],
     aeo: {
