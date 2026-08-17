@@ -203,6 +203,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'Shifts product management focus from feature output to margin contribution and P&L ownership.',
+    date: 'February 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus","coordination-tax", "product-debt-index", "ev-se-framework", "aper-metric"],
     relatedGlossarySlugs: ["product-debt-index","feature-bloat"],
     relatedToolIds: ["pdi"]
@@ -215,6 +216,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Software Economics',
     type: 'Evergreen',
     thesis: 'Details the hidden financial costs of velocity-centric Agile and their impact on CFO-level capital allocation.',
+    date: 'March 2026',
     relatedConceptIds: ["r-and-d-ponzi","coordination-tax","technical-insolvency", 'capitalization-matrix', 'dora-financial-translation'],
     relatedGlossarySlugs: ["technical-debt","technical-insolvency-date"],
     relatedToolIds: ["pdi","ev-se"]
@@ -227,6 +229,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Evergreen',
     thesis: 'Examines degrading economics and operational risks of recursive AI model training on enterprise margin.',
+    date: 'April 2026',
     relatedConceptIds: ["model-collapse","inference-economics","ai-volatility-tax", "synthetic-model-collapse", "unreliability-tax", "retry-inflation", "eval-driven-development"],
     relatedGlossarySlugs: ["model-collapse","synthetic-cogs"],
     relatedToolIds: ["aueb"]
@@ -239,6 +242,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Software Economics',
     type: 'Executable',
     thesis: 'Provides a framework for auditing R&D spend under ASC 350-40 to distinguish genuine innovation from maintenance OpEx.',
+    date: 'May 2026',
     relatedConceptIds: ["r-and-d-ponzi","technical-insolvency","coordination-tax", 'innovation-tax', 'capitalization-matrix'],
     relatedGlossarySlugs: ["innovation-tax","technical-debt"],
     relatedToolIds: ["innovation-tax-calculator","pdi"]
@@ -251,6 +255,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Executable',
     thesis: 'Analyzes model-task mismatch where frontier LLMs are misallocated to low-complexity tasks, destroying SaaS unit economics.',
+    date: 'June 2026',
     relatedConceptIds: ["inference-economics","ai-volatility-tax","ai-margin-squeeze","cost-of-predictivity", 'ai-finops', 'ai-tokenomics-cogs', 'ai-cost-optimization', 'agentic-roi', 'ai-coding-tool-economics', 'margin-engineering', 'aueb-framework', 'ai-unit-economics', 'ai-economist'],
     relatedGlossarySlugs: ["synthetic-cogs","ai-volatility-tax"],
     relatedToolIds: ["aueb","slm-vs-api"]
@@ -263,6 +268,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Engineering Leadership',
     type: 'Evergreen',
     thesis: 'Identifies the review capacity crunch created when AI code generation outpaces senior engineering verification velocity.',
+    date: 'July 2026',
     relatedConceptIds: ["vibe-coding","subprime-code-crisis","ten-man-parity", 'induced-demand-software', 'platform-engineering'],
     relatedGlossarySlugs: ["vibe-coding-debt","subprime-code-crisis"],
     relatedToolIds: ["copilot-roi","audit-interview"]
@@ -275,6 +281,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Executable',
     thesis: 'Details the cost impact of un-cached duplicate inference requests and introduces semantic caching mechanisms.',
+    date: 'August 2026',
     relatedConceptIds: ["semantic-caching","inference-economics","ai-volatility-tax", 'ai-cost-optimization'],
     relatedGlossarySlugs: ["semantic-caching","synthetic-cogs"],
     relatedToolIds: ["aueb"]
@@ -302,6 +309,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Governance',
     type: 'Executable',
     thesis: 'Provides implementation specifications for binary admissibility gates in autonomous agent execution pipelines.',
+    date: 'July 2026',
     relatedConceptIds: ["deterministic-governance","agent-kill-switch","runtime-vs-alignment","ai-governance", 'prompt-injection', 'ai-compliance', 'ai-security'],
     relatedGlossarySlugs: ["deterministic-governance","agent-kill-switch"],
     relatedToolIds: ["prompt-injection-sandbox","agentic-drift-matrix"]
@@ -315,6 +323,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     type: 'Time-Sensitive',
     editorsPick: true,
     thesis: 'A post-mortem analysis of memory poisoning and unauthorized tool execution in production AI agents.',
+    date: 'June 2026',
     relatedConceptIds: ["agent-kill-switch","shadow-ai","ai-governance","deterministic-governance", 'prompt-injection', 'ai-security', 'shadow-ai-governance', 'ai-liability-gradient'],
     relatedGlossarySlugs: ["agent-kill-switch","shadow-ai"],
     relatedToolIds: ["shadow-ai","agentic-drift-matrix"]
@@ -328,6 +337,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     type: 'Executable',
     editorsPick: true,
     thesis: 'Introduces binary execution control layers and state integrity hashing to contain rogue agent behavior.',
+    date: 'May 2026',
     relatedConceptIds: ["agent-kill-switch","deterministic-governance","runtime-vs-alignment","ai-governance", 'ai-compliance', 'ai-security'],
     relatedGlossarySlugs: ["agent-kill-switch","deterministic-governance"],
     relatedToolIds: ["agentic-drift-matrix"]
@@ -340,6 +350,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Executable',
     thesis: 'Calculates the AI Volatility Tax and provides formulas for establishing positive inference unit economics.',
+    date: 'April 2026',
     relatedConceptIds: ["ai-volatility-tax","inference-economics","ai-margin-squeeze","cost-of-predictivity", 'ai-unit-economics', 'ai-roi', 'hallucination-tax'],
     relatedGlossarySlugs: ["ai-volatility-tax","synthetic-cogs"],
     relatedToolIds: ["aueb","slm-vs-api"]
@@ -353,6 +364,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     type: 'Evergreen',
     editorsPick: true,
     thesis: 'Defines the 4 Laws of Probabilistic Software Development and the shift from code authoring to system verification.',
+    date: 'March 2026',
     relatedConceptIds: ["vibe-coding","subprime-code-crisis","ten-man-parity", 'induced-demand-software', 'platform-engineering', 'audit-interview', 'spec-driven-development', 'four-laws-probabilistic-software', 'complexity-tax'],
     relatedGlossarySlugs: ["vibe-coding-debt"],
     relatedToolIds: ["audit-interview","copilot-roi"]
@@ -365,6 +377,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Governance',
     type: 'Evergreen',
     thesis: 'Analytic review of agentic macro-economics, systemic risk, and the necessity of deterministic governance.',
+    date: 'March 2026',
     relatedConceptIds: ["ai-governance","deterministic-governance","agent-kill-switch","ai-agents", 'agentic-engineering', 'responsible-ai', 'ai-agent-sprawl', 'shadow-ai-governance', 'ai-liability-gradient'],
     relatedGlossarySlugs: ["deterministic-governance","ai-agent-sprawl"]
   },
@@ -376,6 +389,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Software Economics',
     type: 'Evergreen',
     thesis: 'Advocates for negative code velocity (deleting zombie features) to reclaim R&D capital efficiency.',
+    date: 'February 2026',
     relatedConceptIds: ["r-and-d-ponzi","feature-bloat-calculus","technical-insolvency", 'innovation-tax', 'zombie-code'],
     relatedGlossarySlugs: ["zombie-code","product-debt-index"],
     relatedToolIds: ["pdi"]
@@ -389,6 +403,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     type: 'Executable',
     editorsPick: true,
     thesis: 'Presents the 4 Dimensions of Engineering Judgment scorecard for evaluating software engineers in the AI era.',
+    date: 'February 2026',
     relatedConceptIds: ["vibe-coding","ten-man-parity","subprime-code-crisis", 'audit-interview'],
     relatedGlossarySlugs: ["vibe-coding-debt","audit-interview"],
     relatedToolIds: ["audit-interview"]
@@ -402,6 +417,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     type: 'Time-Sensitive',
     editorsPick: true,
     thesis: 'Replaces traditional leetcode interviews with the Audit Interview framework to test error detection capacity.',
+    date: 'February 2026',
     relatedConceptIds: ["vibe-coding","ten-man-parity", 'audit-interview'],
     relatedGlossarySlugs: ["audit-interview","vibe-coding-debt"],
     relatedToolIds: ["audit-interview"]
@@ -415,6 +431,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     type: 'Executable',
     editorsPick: true,
     thesis: 'Diagnostic evaluation to audit whether an AI feature has viable gross margin potential before deployment.',
+    date: 'January 2026',
     relatedConceptIds: ["cost-of-predictivity","product-economist","ai-margin-squeeze", 'ai-roi', 'ai-product-management'],
     relatedGlossarySlugs: ["product-debt-index","ai-volatility-tax"],
     relatedToolIds: ["pdi","aueb"]
@@ -429,6 +446,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Executable',
     thesis: 'Deep dive into product P&L ownership, margin contribution, and capital efficiency metrics for PMs.',
+    date: 'February 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus","coordination-tax", "product-debt-index", "ev-se-framework", "aper-metric"],
     relatedGlossarySlugs: ["product-debt-index"],
     relatedToolIds: ["pdi"]
@@ -441,6 +459,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Time-Sensitive',
     thesis: 'Forensic breakdown of technical excellence versus product-market fit failures in AI startups.',
+    date: 'January 2026',
     relatedConceptIds: ["product-economist","cost-of-predictivity","feature-bloat-calculus"],
     relatedGlossarySlugs: ["product-debt-index"]
   },
@@ -454,6 +473,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Time-Sensitive',
     thesis: 'Foundational manifesto introducing the Product Economist framework and research agenda.',
+    date: 'January 2026',
     relatedConceptIds: ["product-economist","ai-economics", 'ai-economist']
   },
   {
@@ -464,6 +484,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'Hard-earned operational rules on feature bloat, roadmap fantasy, and revenue accountability.',
+    date: 'January 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus","coordination-tax"]
   },
   {
@@ -474,6 +495,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Executable',
     thesis: 'Replaces feature timeline roadmaps with outcome-based commitment horizons.',
+    date: 'February 2026',
     relatedConceptIds: ["coordination-tax","product-economist","feature-bloat-calculus"],
     relatedToolIds: ["pdi"]
   },
@@ -485,6 +507,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'Deconstructs governance bureaucracy and establishes autonomous execution parameters.',
+    date: 'February 2026',
     relatedConceptIds: ["coordination-tax","product-economist"]
   },
   {
@@ -495,6 +518,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'Translates abstract vision statements into testable economic hypotheses.',
+    date: 'February 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus"]
   },
   {
@@ -505,6 +529,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Software Economics',
     type: 'Evergreen',
     thesis: 'Draws parallels between 2008 financial derivatives and unverified AI-generated code accumulating in enterprise repositories.',
+    date: 'March 2026',
     relatedConceptIds: ["subprime-code-crisis","vibe-coding","technical-insolvency", 'induced-demand-software', 'ai-technical-debt', 'platform-engineering', 'spec-driven-development', 'four-laws-probabilistic-software', 'complexity-tax'],
     relatedGlossarySlugs: ["subprime-code-crisis","vibe-coding-debt"],
     relatedToolIds: ["pdi","copilot-roi"]
@@ -517,6 +542,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Executable',
     thesis: 'Formulas for modeling when API costs cross gross margin contribution thresholds into technical insolvency.',
+    date: 'March 2026',
     relatedConceptIds: ["inference-economics","ai-volatility-tax","ai-margin-squeeze","cost-of-predictivity", 'ai-unit-economics', 'ai-roi', 'hallucination-tax'],
     relatedGlossarySlugs: ["synthetic-cogs","ai-volatility-tax"],
     relatedToolIds: ["aueb"]
@@ -529,6 +555,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Governance',
     type: 'Evergreen',
     thesis: 'Architectural rationale for building deterministic verification layers between frontier LLMs and production databases.',
+    date: 'April 2026',
     relatedConceptIds: ["deterministic-governance","agent-kill-switch","ai-governance","runtime-vs-alignment", 'responsible-ai'],
     relatedGlossarySlugs: ["deterministic-governance","agent-kill-switch"]
   },
@@ -540,6 +567,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Governance',
     type: 'Executable',
     thesis: 'Technical specification for state integrity checks, admissibility gates, and cryptographic audit ledgers.',
+    date: 'April 2026',
     relatedConceptIds: ["deterministic-governance","runtime-vs-alignment","agent-kill-switch","ai-governance", 'agentic-engineering', 'systems-governor', 'responsible-ai', 'mlops', 'ai-agent-sprawl'],
     relatedGlossarySlugs: ["deterministic-governance"],
     relatedToolIds: ["agentic-drift-matrix"]
@@ -552,6 +580,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Executable',
     thesis: 'Practical diagnostic audit for calculating feature-level gross margin contribution.',
+    date: 'April 2026',
     relatedConceptIds: ["cost-of-predictivity","product-economist","ai-margin-squeeze","inference-economics", 'ai-unit-economics'],
     relatedGlossarySlugs: ["product-debt-index","ai-volatility-tax"],
     relatedToolIds: ["pdi","aueb"]
@@ -564,6 +593,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Software Economics',
     type: 'Evergreen',
     thesis: 'Quantifies organizational friction overhead that erodes engineering gross margins at scale.',
+    date: 'May 2026',
     relatedConceptIds: ["coordination-tax","r-and-d-ponzi","ten-man-parity"],
     relatedGlossarySlugs: ["coordination-tax"]
   },
@@ -575,6 +605,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Evergreen',
     thesis: 'Examines how shifting hosting infrastructure into variable COGS compresses SaaS gross margins.',
+    date: 'May 2026',
     relatedConceptIds: ["ai-margin-squeeze","inference-economics","ai-volatility-tax","cost-of-predictivity", 'ai-tokenomics-cogs', 'llm-cost-management'],
     relatedGlossarySlugs: ["synthetic-cogs","ai-volatility-tax"],
     relatedToolIds: ["aueb","slm-vs-api"]
@@ -587,6 +618,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Governance',
     type: 'Executable',
     thesis: 'Blueprint for separating probabilistic inference from deterministic action execution.',
+    date: 'June 2026',
     relatedConceptIds: ["deterministic-governance","agent-kill-switch","runtime-vs-alignment","ai-governance", 'systems-governor', 'ai-compliance', 'mlops'],
     relatedGlossarySlugs: ["deterministic-governance"],
     relatedToolIds: ["agentic-drift-matrix"]
@@ -599,6 +631,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Software Economics',
     type: 'Evergreen',
     thesis: 'Identifies accumulating maintenance costs of un-governed AI integrations across enterprise stacks.',
+    date: 'June 2026',
     relatedConceptIds: ["technical-insolvency","r-and-d-ponzi","ai-volatility-tax","subprime-code-crisis", 'ai-technical-debt'],
     relatedGlossarySlugs: ["technical-debt","technical-insolvency-date"],
     relatedToolIds: ["pdi","ev-se"]
@@ -611,6 +644,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Evergreen',
     thesis: 'Analyzes non-linear cost scaling when AI model inference scales faster than user revenue.',
+    date: 'June 2026',
     relatedConceptIds: ["ai-margin-squeeze","inference-economics","ai-volatility-tax", 'ai-finops', 'ai-cost-optimization', 'cloud-repatriation', 'slm-repatriation'],
     relatedGlossarySlugs: ["synthetic-cogs"],
     relatedToolIds: ["aueb"]
@@ -623,6 +657,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Executable',
     thesis: 'Designing per-tenant token tracking architectures to attribute inference expenses directly to customer subscriptions.',
+    date: 'July 2026',
     relatedConceptIds: ["inference-economics","ai-volatility-tax","semantic-caching", 'ai-finops', 'ai-tokenomics-cogs', 'llm-cost-management', 'ai-observability'],
     relatedGlossarySlugs: ["synthetic-cogs","ai-tokenomics-cogs"],
     relatedToolIds: ["aueb"]
@@ -635,6 +670,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Executable',
     thesis: 'Vector similarity thresholding strategies to reduce redundant inference queries by 40-60%.',
+    date: 'July 2026',
     relatedConceptIds: ["semantic-caching","inference-economics","ai-volatility-tax", 'llm-cost-management', 'retrieval-augmented-generation'],
     relatedGlossarySlugs: ["semantic-caching"],
     relatedToolIds: ["aueb"]
@@ -647,6 +683,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Executable',
     thesis: 'Financial breakeven analysis for migrating from commercial API endpoints to fine-tuned local small language models.',
+    date: 'July 2026',
     relatedConceptIds: ["inference-economics","ai-margin-squeeze","cost-of-predictivity", 'llm-cost-management', 'cloud-repatriation', 'ai-vendor-lock-in', 'slm-repatriation'],
     relatedGlossarySlugs: ["small-language-model"],
     relatedToolIds: ["slm-vs-api","cloud-repatriation"]
@@ -659,6 +696,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Governance',
     type: 'Executable',
     thesis: 'Demonstrates vulnerability of using probabilistic models to police probabilistic models.',
+    date: 'July 2026',
     relatedConceptIds: ["deterministic-governance","agent-kill-switch","ai-governance", 'prompt-injection', 'ai-security'],
     relatedGlossarySlugs: ["prompt-injection"],
     relatedToolIds: ["prompt-injection-sandbox"]
@@ -671,6 +709,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Governance',
     type: 'Executable',
     thesis: 'Cryptographic hash checking protocols between agentic decision steps.',
+    date: 'July 2026',
     relatedConceptIds: ["deterministic-governance","runtime-vs-alignment","agent-kill-switch", 'ai-compliance', 'ai-observability'],
     relatedGlossarySlugs: ["state-integrity-hashing"],
     relatedToolIds: ["agentic-drift-matrix"]
@@ -683,6 +722,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Governance',
     type: 'Executable',
     thesis: 'Audit tactics for uncovering un-sanctioned autonomous tools executing against internal database endpoints.',
+    date: 'July 2026',
     relatedConceptIds: ["shadow-ai","ai-agent-sprawl","agent-kill-switch","ai-governance", 'ai-agents', 'ai-observability'],
     relatedGlossarySlugs: ["shadow-ai","ai-agent-sprawl"],
     relatedToolIds: ["shadow-ai"]
@@ -695,6 +735,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Software Economics',
     type: 'Executable',
     thesis: 'Accounting heuristics for evaluating software development capitalization under US GAAP.',
+    date: 'August 2026',
     relatedConceptIds: ["r-and-d-ponzi","technical-insolvency","coordination-tax", 'capitalization-matrix'],
     relatedGlossarySlugs: ["innovation-tax","technical-debt"],
     relatedToolIds: ["innovation-tax-calculator"]
@@ -707,6 +748,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Software Economics',
     type: 'Executable',
     thesis: 'Static analysis strategies to identify and prune dead code paths.',
+    date: 'August 2026',
     relatedConceptIds: ["subprime-code-crisis","technical-insolvency","r-and-d-ponzi", 'zombie-code', 'ai-technical-debt'],
     relatedGlossarySlugs: ["zombie-code","technical-debt"],
     relatedToolIds: ["pdi"]
@@ -721,6 +763,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'Replaces intuitive product management with empirical data models and financial metrics.',
+    date: 'January 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus"]
   },
   {
@@ -731,6 +774,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Time-Sensitive',
     thesis: 'Personal manifesto on bringing intellectual rigor and financial literacy to product management.',
+    date: 'January 2026',
     relatedConceptIds: ["product-economist","ai-economics"]
   },
   {
@@ -741,6 +785,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Why execution clarity and analytical discipline outperform charismatic product vision.',
+    date: 'February 2026',
     relatedConceptIds: ["product-economist","coordination-tax", "four-tiers-of-autonomy", "double-diamond-career-trajectory"]
   },
   {
@@ -751,6 +796,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Evergreen',
     thesis: 'Shifts executive AI strategy from conversational UI novelties to core operational cost reduction.',
+    date: 'February 2026',
     relatedConceptIds: ["ai-economics","inference-economics","cost-of-predictivity", 'ai-roi'],
     relatedToolIds: ["aueb"]
   },
@@ -762,6 +808,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Defines the skill evolution required for product managers transitioning into AI and financial governance.',
+    date: 'February 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus"]
   },
   {
@@ -772,6 +819,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Software Economics',
     type: 'Executable',
     thesis: 'Audit guide for eliminating zombie code to protect R&D capital efficiency.',
+    date: 'March 2026',
     relatedConceptIds: ["r-and-d-ponzi","technical-insolvency","subprime-code-crisis", 'innovation-tax', 'zombie-code'],
     relatedGlossarySlugs: ["innovation-tax","zombie-code"],
     relatedToolIds: ["innovation-tax-calculator","pdi"]
@@ -784,6 +832,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Software Economics',
     type: 'Evergreen',
     thesis: 'Exposes how velocity metrics mask maintenance OpEx misclassified as strategic R&D investment.',
+    date: 'March 2026',
     relatedConceptIds: ["r-and-d-ponzi","technical-insolvency","coordination-tax"],
     relatedGlossarySlugs: ["r-and-d-ponzi","technical-debt"],
     relatedToolIds: ["pdi","ev-se"]
@@ -796,6 +845,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Evergreen',
     thesis: 'Explains how inference shifts software from zero-marginal-cost economics to variable COGS.',
+    date: 'April 2026',
     relatedConceptIds: ["inference-economics","ai-volatility-tax","ai-margin-squeeze"],
     relatedGlossarySlugs: ["synthetic-cogs","ai-volatility-tax"],
     relatedToolIds: ["aueb"]
@@ -808,6 +858,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Governance',
     type: 'Time-Sensitive',
     thesis: 'Case study on why AI features fail when user workflow integration is ignored in favor of model complexity.',
+    date: 'April 2026',
     relatedConceptIds: ["deterministic-governance","ai-governance","cost-of-predictivity"],
     relatedGlossarySlugs: ["deterministic-governance"]
   },
@@ -819,6 +870,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Governance',
     type: 'Evergreen',
     thesis: 'Argues that agent deployment is blocked by execution safety boundaries rather than model reasoning capacity.',
+    date: 'May 2026',
     relatedConceptIds: ["ai-governance","deterministic-governance","agent-kill-switch","ai-agents", 'systems-governor', 'ai-agent-sprawl'],
     relatedGlossarySlugs: ["deterministic-governance","agent-kill-switch"],
     relatedToolIds: ["agentic-drift-matrix"]
@@ -831,6 +883,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Evergreen',
     thesis: 'Examines negative unit margins in AI SaaS where user activity outpaces subscription revenue.',
+    date: 'May 2026',
     relatedConceptIds: ["ai-margin-squeeze","inference-economics","ai-volatility-tax"],
     relatedGlossarySlugs: ["synthetic-cogs","ai-volatility-tax"],
     relatedToolIds: ["aueb"]
@@ -843,6 +896,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'Defines the structural shift from output velocity to capital return in software organizations.',
+    date: 'June 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus","coordination-tax", 'ai-economist', 'dora-financial-translation']
   },
   {
@@ -853,6 +907,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Software Economics',
     type: 'Executable',
     thesis: 'Translating code quality metrics into GAAP balance sheet liabilities for board directors.',
+    date: 'June 2026',
     relatedConceptIds: ["technical-insolvency","r-and-d-ponzi","subprime-code-crisis", 'ai-technical-debt'],
     relatedGlossarySlugs: ["technical-debt","technical-insolvency-date"],
     relatedToolIds: ["ev-se","pdi"]
@@ -865,6 +920,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Engineering Leadership',
     type: 'Evergreen',
     thesis: 'Analyzing the systemic failure points when 50+ engineers generate code with AI without deterministic verification.',
+    date: 'July 2026',
     relatedConceptIds: ["vibe-coding","subprime-code-crisis","ten-man-parity"],
     relatedGlossarySlugs: ["vibe-coding-debt","subprime-code-crisis"],
     relatedToolIds: ["copilot-roi","audit-interview"]
@@ -877,6 +933,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Evergreen',
     thesis: 'Quantifying downstream customer support and remediation OpEx caused by un-verified model outputs.',
+    date: 'July 2026',
     relatedConceptIds: ["ai-volatility-tax","context-rot","inference-economics", 'hallucination-tax'],
     relatedGlossarySlugs: ["ai-hallucination","context-rot"],
     relatedToolIds: ["hallucination-tax"]
@@ -889,6 +946,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Executable',
     thesis: 'Executive hiring framework for AI PMs based on P&L margin contribution and model-task routing efficiency.',
+    date: 'August 2026',
     relatedConceptIds: ["product-economist","ai-economics","feature-bloat-calculus", 'ai-economist', 'ai-product-management']
   },
   {
@@ -1016,6 +1074,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Time-Sensitive',
     thesis: 'Introduces the Product Quarterback operating model for cross-functional product leaders managing P&L responsibility.',
+    date: 'January 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus"]
   },
 
@@ -1027,6 +1086,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'Defines the foundational competencies required for product managers to operate as business owners rather than feature coordinators.',
+    date: 'January 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus","coordination-tax"]
   },
 
@@ -1038,6 +1098,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Structural guide for career-switchers entering product management with emphasis on financial literacy over certification.',
+    date: 'January 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1049,6 +1110,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'Distinguishes product ownership (outcome accountability) from project execution (timeline delivery) at the structural level.',
+    date: 'January 2026',
     relatedConceptIds: ["product-economist","coordination-tax"]
   },
 
@@ -1060,6 +1122,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Maps the career progression from associate PM to VP/CPO with specific skill thresholds at each transition.',
+    date: 'February 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1071,6 +1134,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Executable',
     thesis: 'Introduces a signal-to-noise measurement framework for evaluating product feature investments.',
+    date: 'February 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus"]
   },
 
@@ -1082,6 +1146,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Executable',
     thesis: 'Five operational frameworks for increasing product team throughput without adding headcount.',
+    date: 'February 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus","coordination-tax"]
   },
 
@@ -1093,6 +1158,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Exposes the structural mismatch between what PM interviews test and what PM roles actually require.',
+    date: 'February 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1104,6 +1170,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'Why process-obsessed organizations lose to outcome-obsessed ones at scale.',
+    date: 'March 2026',
     relatedConceptIds: ["coordination-tax","product-economist"]
   },
 
@@ -1115,6 +1182,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Network-first job search strategy backed by structural hiring pipeline analysis.',
+    date: 'March 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1126,6 +1194,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Evergreen',
     thesis: 'Argues that AI adoption is constrained by unit economics and margin destruction, not model capability gaps.',
+    date: 'March 2026',
     relatedConceptIds: ["ai-economics","inference-economics","ai-volatility-tax"]
   },
 
@@ -1137,6 +1206,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Evergreen',
     thesis: 'Analyzes the structural capital misallocation in enterprise AI where spending outpaces revenue contribution.',
+    date: 'March 2026',
     relatedConceptIds: ["ai-economics","inference-economics","ai-volatility-tax"]
   },
 
@@ -1148,6 +1218,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'How technical vocabulary creates communication barriers that block product leaders from C-suite influence.',
+    date: 'April 2026',
     relatedConceptIds: ["coordination-tax","product-economist"]
   },
 
@@ -1159,6 +1230,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Reframes interpersonal competencies as structural negotiation and organizational influence mechanisms.',
+    date: 'April 2026',
     relatedConceptIds: ["product-economist","coordination-tax"]
   },
 
@@ -1170,6 +1242,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Career advancement treated as a capital allocation problem rather than a tenure reward.',
+    date: 'April 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1181,6 +1254,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Time-Sensitive',
     thesis: 'Analyzes the cost-per-inference impact of custom AI accelerators on enterprise SaaS gross margins.',
+    date: 'April 2026',
     relatedConceptIds: ["inference-economics","ai-economics","ai-volatility-tax"]
   },
 
@@ -1192,6 +1266,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'Quantifies the hidden organizational costs when product failures go unreported and compound silently.',
+    date: 'May 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus","coordination-tax"]
   },
 
@@ -1203,6 +1278,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Structural analysis of how motion-over-outcome cultures erode both career advancement and organizational output.',
+    date: 'May 2026',
     relatedConceptIds: ["coordination-tax","product-economist"]
   },
 
@@ -1214,6 +1290,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'Shifts product team management from activity tracking to leverage creation and outcome ownership.',
+    date: 'May 2026',
     relatedConceptIds: ["product-economist","coordination-tax"]
   },
 
@@ -1225,6 +1302,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'The structural decision to shift from execution contributor to strategic operator.',
+    date: 'May 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1236,6 +1314,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Statistical analysis of how financial literacy separates the top 3% of product leaders from the rest.',
+    date: 'June 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1247,6 +1326,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Wealth creation as a structural consequence of compounding career capital, not compensation negotiation.',
+    date: 'June 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1258,6 +1338,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Confronts the discomfort of honest self-assessment in career trajectory analysis.',
+    date: 'June 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1269,6 +1350,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Distinguishes between effort allocation toward employer deliverables and strategic career capital building.',
+    date: 'June 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1280,6 +1362,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Why problem identification and framing creates more career leverage than problem execution.',
+    date: 'July 2026',
     relatedConceptIds: ["product-economist","coordination-tax"]
   },
 
@@ -1291,6 +1374,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'Redefines product management as a cross-functional operating system rather than a siloed role.',
+    date: 'July 2026',
     relatedConceptIds: ["product-economist","coordination-tax"]
   },
 
@@ -1302,6 +1386,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'Quantifies coordination overhead from synchronous communication and prescribes asynchronous decision structures.',
+    date: 'July 2026',
     relatedConceptIds: ["coordination-tax","feature-bloat-calculus"]
   },
 
@@ -1313,6 +1398,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Priority management as a capital allocation discipline rather than a scheduling exercise.',
+    date: 'July 2026',
     relatedConceptIds: ["product-economist","coordination-tax"]
   },
 
@@ -1324,6 +1410,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'System design outperforms willpower as a mechanism for sustained professional output.',
+    date: 'July 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1335,6 +1422,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'ROI analysis of professional certifications versus demonstrated operational competence.',
+    date: 'July 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1346,6 +1434,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Executable',
     thesis: 'Shifts product management measurement from feature delivery to P&L contribution ownership.',
+    date: 'August 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus","ai-economics", 'dora-financial-translation']
   },
 
@@ -1357,6 +1446,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'Structural realignment from solution shipping to outcome measurement in product organizations.',
+    date: 'August 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus"]
   },
 
@@ -1368,6 +1458,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Executable',
     thesis: 'Operational application of JTBD theory for feature prioritization and roadmap construction.',
+    date: 'August 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus"]
   },
 
@@ -1379,6 +1470,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Executable',
     thesis: 'Single-source-of-truth documentation as a coordination cost elimination strategy.',
+    date: 'August 2026',
     relatedConceptIds: ["coordination-tax","product-economist"]
   },
 
@@ -1390,6 +1482,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'How single North Star metrics create perverse incentives and obscure the real economic signals.',
+    date: 'August 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus"]
   },
 
@@ -1401,6 +1494,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'Why Minimum Lovable Product thinking produces better unit economics than Minimum Viable Product iteration.',
+    date: 'August 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus"]
   },
 
@@ -1412,6 +1506,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Executable',
     thesis: 'Translates feature-centric roadmaps into financial contribution models for executive audiences.',
+    date: 'August 2026',
     relatedConceptIds: ["coordination-tax","product-economist","feature-bloat-calculus"]
   },
 
@@ -1423,6 +1518,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Executable',
     thesis: 'Systematic prioritization framework for filtering feature requests against P&L impact thresholds.',
+    date: 'August 2026',
     relatedConceptIds: ["coordination-tax","product-economist","feature-bloat-calculus"]
   },
 
@@ -1434,6 +1530,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Evergreen',
     thesis: 'Diagnoses the structural cost drivers behind enterprise AI implementations that consume capital without generating margin.',
+    date: 'August 2026',
     relatedConceptIds: ["ai-volatility-tax","inference-economics","ai-margin-squeeze", 'ai-cost-optimization', 'ai-vendor-lock-in']
   },
 
@@ -1445,6 +1542,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Evergreen',
     thesis: 'Positions the AI transformation challenge as a CFO-level capital allocation problem rather than a CTO-level technology decision.',
+    date: 'August 2026',
     relatedConceptIds: ["ai-economics","inference-economics","ai-volatility-tax"]
   },
 
@@ -1456,6 +1554,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Operational business education curriculum for product leaders who lack formal financial training.',
+    date: 'August 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1467,6 +1566,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Why demonstrated operational evidence replaces credential signaling in AI-era hiring.',
+    date: 'August 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1478,6 +1578,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Why senior PMs plateau when they operate at execution altitude instead of strategic altitude.',
+    date: 'August 2026',
     relatedConceptIds: ["product-economist","coordination-tax"]
   },
 
@@ -1489,6 +1590,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Executable',
     thesis: 'Quantifies the annual compensation gap between product managers who own P&L metrics and those who track feature velocity.',
+    date: 'August 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1500,6 +1602,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Executable',
     thesis: 'Operational specification of the Product Economist role: responsibilities, metrics, and organizational positioning.',
+    date: 'August 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus","ai-economics", 'ai-product-management']
   },
 
@@ -1511,6 +1614,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Software Economics',
     type: 'Executable',
     thesis: 'Step-by-step audit framework for distinguishing genuine R&D innovation from maintenance OpEx masquerading as strategic investment.',
+    date: 'August 2026',
     relatedConceptIds: ["innovation-tax","r-and-d-ponzi","technical-insolvency"]
   },
 
@@ -1522,6 +1626,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Career progression framework mapping the competency thresholds from associate PM to VP of Product.',
+    date: 'February 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1533,6 +1638,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Executable',
     thesis: 'Operational frameworks for increasing team throughput through structural efficiency rather than headcount.',
+    date: 'February 2026',
     relatedConceptIds: ["product-economist","feature-bloat-calculus","coordination-tax"]
   },
 
@@ -1544,6 +1650,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Evergreen',
     thesis: 'Analysis of the structural capital misallocation in enterprise AI investment exceeding revenue generation.',
+    date: 'March 2026',
     relatedConceptIds: ["ai-economics","inference-economics","ai-volatility-tax"]
   },
 
@@ -1555,6 +1662,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'Hidden organizational costs when product failures go unreported and compound silently.',
+    date: 'May 2026',
     relatedConceptIds: ["product-economist","coordination-tax","feature-bloat-calculus"]
   },
 
@@ -1566,6 +1674,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'The structural career decision to shift from execution contributor to strategic operator.',
+    date: 'May 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1577,6 +1686,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Evergreen',
     thesis: 'Positions enterprise AI transformation as a CFO-level capital allocation problem rather than a technology decision.',
+    date: 'August 2026',
     relatedConceptIds: ["ai-economics","inference-economics","ai-volatility-tax"]
   },
 
@@ -1588,6 +1698,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Time-Sensitive',
     thesis: 'Product announcement and design rationale for a career capital assessment platform.',
+    date: 'August 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1599,6 +1710,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Diagnoses the structural competency gaps that create career plateaus at the Senior PM level.',
+    date: 'August 2026',
     relatedConceptIds: ["product-economist"]
   },
 
@@ -1610,6 +1722,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Evergreen',
     thesis: 'Structural analysis of how AI inference shifts SaaS from zero-marginal-cost to variable-COGS economics.',
+    date: 'August 2026',
     relatedConceptIds: ["ai-economics","ai-volatility-tax","ai-margin-squeeze"]
   },
 
@@ -1621,6 +1734,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Executable',
     thesis: 'Vendor procurement for AI infrastructure treated as a cost audit problem rather than a negotiation exercise.',
+    date: 'August 2026',
     relatedConceptIds: ["inference-economics","ai-volatility-tax","ai-margin-squeeze", 'cloud-repatriation', 'ai-vendor-lock-in', 'slm-repatriation']
   },
 
