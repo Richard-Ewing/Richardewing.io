@@ -43,7 +43,7 @@ export const CAREER_PATHS: CareerPath[] = [
             'The AI AI Economist models the financial viability of AI features at the atomic inference level. If a feature costs $0.02 in API calls but only generates $0.01 in user value, you are shipping negative margins at scale.',
             'Your job is to understand the AI Unit Economics Benchmark (AUEB), determine whether to use expensive frontier APIs vs. cheap edge SLMs, and validate that AI product expansion aligns with Enterprise Valuation.'
         ],
-        glossaryTerms: ['ai-cogs', 'innovation-tax', 'cost-of-delay', 'technical-insolvency-date', 'ai-assisted-development', 'dora-metrics'],
+        glossaryTerms: ['ai-cogs', 'innovation-tax', 'cost-of-delay', 'technical-insolvency-date', 'ai-assisted-development', 'dora-metrics', 'margin-engineering', 'aueb-framework', 'ai-finops', 'ai-unit-economics', 'ai-economist', 'agentic-roi'],
         curriculumKeywords: ['finops', 'pricing', 'economics', 'roi', 'cogs'],
         seoMeta: 'Transition to an AI AI Economist. Master AI Unit Economics, inference cost modeling, and govern the generative product roadmap as a fiduciary asset.',
         seoKeywords: ['AI AI Economist', 'AI PM', 'AI product management', 'AI unit economics', 'LLM feature pricing', 'API tracking', 'AUEB'],
@@ -141,7 +141,7 @@ export const CAREER_PATHS: CareerPath[] = [
             'As the VP of Engineering Economics, your mandate is to translate cloud spend, developer productivity, and technical debt directly into financial reporting.',
             'You measure Annualized Productivity per Engineer (APER). You enforce build-vs-buy constraints. You are the ultimate fiduciary of the engineering organization, ensuring the business extracts compounding value from every line of code deployed.'
         ],
-        glossaryTerms: ['technical-debt', 'ai-cogs', 'innovation-tax', 'technical-insolvency-date', 'aper-metric', 'dora-metrics'],
+        glossaryTerms: ['technical-debt', 'ai-cogs', 'innovation-tax', 'technical-insolvency-date', 'aper-metric', 'dora-metrics', 'spec-driven-development', 'four-laws-probabilistic-software', 'unreliability-tax', 'four-tiers-of-autonomy', 'double-diamond-career-trajectory'],
         curriculumKeywords: ['economics', 'roi', 'valuation', 'budget'],
         seoMeta: 'Become a VP of Engineering Economics. Master APER, translate engineering metrics to the CFO, and govern enterprise R&D Capital investments.',
         seoKeywords: ['VP of Engineering Economics', 'Engineering Economics', 'R&D Capital Management', 'CFO Engineering Metrics', 'APER metric', 'Tech Debt Valuation'],
@@ -190,7 +190,7 @@ export const CAREER_PATHS: CareerPath[] = [
             'The AI Implementation Leader manages the blast radius of this transition. You orchestrate cross-functional teams combining Data Engineers, Security CISOs, and Economists.',
             'Your metric of success is how quickly you can decommission legacy SaaS vendor contracts by replacing them with governed internal Agentic workflows.'
         ],
-        glossaryTerms: ['technical-debt', 'maintenance-load', 'cost-of-delay', 'ai-assisted-development'],
+        glossaryTerms: ['technical-debt', 'maintenance-load', 'cost-of-delay', 'ai-assisted-development', 'aper-metric', 'spec-driven-development', 'four-laws-probabilistic-software', 'unreliability-tax'],
         curriculumKeywords: ['leadership', 'strategy', 'management', 'roi', 'pm'],
         seoMeta: 'Transition into an AI Implementation Leader. Manage the enterprise PMO migration from legacy tech stacks to autonomous Agentic architectures.',
         seoKeywords: ['AI Implementation', 'Enterprise AI Migration', 'AI PMO', 'Legacy Tech Migration', 'Agentic Workflows', 'Change Management AI'],
@@ -290,7 +290,7 @@ export const CAREER_PATHS: CareerPath[] = [
             'Platform Engineers are the new sysadmins. You are building Internal Developer Platforms (IDPs) that abstract away the complexity of deploying RAG pipelines, Vector Databases, and edge intelligence.',
             'You are the ultimate weapon against vendor lock-in. By deploying local weights and optimizing GPU FinOps, you reduce the company\'s monthly inference bill by 90% while improving latency and security.'
         ],
-        glossaryTerms: ['small-language-models', 'open-weights', 'developer-experience', 'maintenance-load', 'conways-law', 'rag'],
+        glossaryTerms: ['small-language-models', 'open-weights', 'developer-experience', 'maintenance-load', 'conways-law', 'rag', 'mcp-governance', 'eaap-protocol', 'compound-ai-systems', 'context-engineering'],
         curriculumKeywords: ['devops', 'platform', 'cloud', 'finops', 'edge'],
         seoMeta: 'Master Platform & Edge Engineering for 2026. Scale internal developer platforms, deploy edge SLMs, and execute cloud repatriation to collapse API costs.',
         seoKeywords: ['Platform Engineer', 'Edge Engineer', 'SLM deployment', 'Internal Developer Platform', 'IDP', 'Cloud Repatriation', 'GPU FinOps'],
@@ -339,7 +339,7 @@ export const CAREER_PATHS: CareerPath[] = [
             'As an Agentic DevOps Engineer, you build semantic caching layers to prevent redundant, expensive API calls. You deploy shadow models to test new prompts against baseline metrics.',
             'You are the reason an agentic application can survive a massive DDoS or hallucination loop without crashing the entire Kubernetes cluster.'
         ],
-        glossaryTerms: ['rag', 'large-language-model', 'ai-inference', 'dora-metrics', 'orchestration-debt'],
+        glossaryTerms: ['rag', 'large-language-model', 'ai-inference', 'dora-metrics', 'orchestration-debt', 'mcp-governance', 'eaap-protocol', 'compound-ai-systems', 'context-engineering'],
         curriculumKeywords: ['devops', 'mlops', 'llmops', 'caching', 'infrastructure'],
         seoMeta: 'Become an Agentic DevOps Engineer. Build LLMOps pipelines, semantic caching arrays, and scaling infrastructure for enterprise AI inference.',
         seoKeywords: ['Agentic DevOps', 'LLMOps', 'MLOps pipelines', 'Semantic Caching AI', 'AI Infrastructure Scaling', 'Vector Database DevOps'],
@@ -439,7 +439,7 @@ export const CAREER_PATHS: CareerPath[] = [
             'The AI Security Fiduciary operates at the board level. You are responsible for isolating AI reasoning sandboxes, enforcing deterministic privilege boundaries, and defending against data poisoning.',
             'Beyond active defense, you must accurately model the financial liability of AI. If an agent hallucinates a contract, you are the one explaining the blast radius to the CFO.'
         ],
-        glossaryTerms: ['guardrails', 'technical-debt', 'orchestration-debt', 'innovation-tax', 'ai-assisted-development'],
+        glossaryTerms: ['guardrails', 'technical-debt', 'orchestration-debt', 'innovation-tax', 'ai-assisted-development', 'shadow-ai-governance', 'ai-liability-gradient', 'mcp-governance'],
         curriculumKeywords: ['security', 'compliance', 'governance', 'risk', 'board'],
         seoMeta: 'The 2026 AI Security Fiduciary path. Defend against multi-modal prompt injections, secure agentic privileges, and manage enterprise AI hallucination liability.',
         seoKeywords: ['AI Security', 'AI CISO', 'Agentic Security', 'Prompt Injection Defense', 'AI Hallucination Liability', 'Enterprise AI Governance'],
@@ -488,7 +488,7 @@ export const CAREER_PATHS: CareerPath[] = [
             'The AI Governance Director ensures that every deployed model meets strict regulatory, ethical, and legal thresholds like the EU AI Act.',
             'You do not just write policies; you enforce them via automated pipelines that halt code deployments if algorithmic drift or bias is detected.'
         ],
-        glossaryTerms: ['guardrails', 'technical-debt', 'ai-assisted-development'],
+        glossaryTerms: ['guardrails', 'technical-debt', 'ai-assisted-development', 'shadow-ai-governance', 'ai-liability-gradient', 'mcp-governance'],
         curriculumKeywords: ['governance', 'compliance', 'legal', 'risk', 'board'],
         seoMeta: 'Transition into an AI Governance Director. Navigate EU AI Act liabilities, execute deep AI bias auditing, and construct deterministic compliance pipelines.',
         seoKeywords: ['AI Governance', 'EU AI Act Compliance', 'AI Risk Parity', 'Algorithmic Bias Auditing', 'Enterprise AI Legal Risk'],
@@ -586,7 +586,7 @@ export const CAREER_PATHS: CareerPath[] = [
             'As a Shadow AI Remediation Specialist, you deploy network inspection, endpoint monitoring, and cultural engineering to hunt down these unauthorized neural pipelines.',
             'You do not just block the tools; you provide governed, high-utility internal alternatives that employees actually want to use.'
         ],
-        glossaryTerms: ['guardrails', 'technical-debt', 'ai-assisted-development'],
+        glossaryTerms: ['guardrails', 'technical-debt', 'ai-assisted-development', 'shadow-ai-governance', 'ai-liability-gradient', 'mcp-governance'],
         curriculumKeywords: ['security', 'governance', 'risk', 'compliance'],
         seoMeta: 'Master Shadow AI Remediation. Hunt down unauthorized API pipelines, secure Enterprise IP leaks, and govern employee AI utilization patterns.',
         seoKeywords: ['Shadow AI', 'AI Cyber Hunt', 'Enterprise IP Leak AI', 'Unauthorized LLM use', 'AI Security Governance'],

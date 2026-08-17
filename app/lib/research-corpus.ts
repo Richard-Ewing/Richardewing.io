@@ -37,7 +37,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     editorsPick: true,
     date: 'August 17, 2026',
     thesis: 'When generative tools collapse the marginal cost of writing software toward zero, developer capacity ceases to be the constraint. The product bottleneck shifts from managing backlog velocity to managing uncertainty, evaluating system architecture efficiency, and preserving unit margins as a Product Economist.',
-    relatedConceptIds: ['product-economist', 'software-phase-transition', 'feature-bloat-calculus', 'coordination-tax', 'inference-economics', 'technical-insolvency'],
+    relatedConceptIds: ['product-economist', 'software-phase-transition', 'feature-bloat-calculus', 'coordination-tax', 'inference-economics', 'technical-insolvency', 'complexity-tax', 'evergreen-ratio'],
     relatedGlossarySlugs: ['software-phase-transition', 'product-economist', 'product-debt-index', 'feature-bloat', 'synthetic-cogs', 'inference-economics'],
     relatedFrameworkSlugs: ['software-phase-transition', 'feature-bloat-calculus'],
     relatedToolIds: ['pdi', 'aueb', 'slm-vs-api'],
@@ -55,7 +55,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     editorsPick: true,
     date: 'August 14, 2026',
     thesis: 'Deploying semantic vector caching with cosine similarity thresholds (0.85-0.92) alongside edge regex pre-filtering cuts production LLM API token OpEx by 50%+ and reduces query latency to <20ms, protecting SaaS gross profit margins from linear token burn.',
-    relatedConceptIds: ['inference-dividend-model', 'semantic-caching', 'inference-economics', 'ai-volatility-tax', 'ai-margin-squeeze', 'cost-of-predictivity', 'ai-cost-optimization'],
+    relatedConceptIds: ['inference-dividend-model', 'semantic-caching', 'inference-economics', 'ai-volatility-tax', 'ai-margin-squeeze', 'cost-of-predictivity', 'ai-cost-optimization', 'agentic-roi', 'ai-coding-tool-economics', 'margin-engineering', 'aueb-framework', 'ai-unit-economics', 'ai-finops', 'ai-economist'],
     relatedGlossarySlugs: ['inference-dividend-model', 'synthetic-cogs', 'ai-volatility-tax', 'semantic-caching'],
     relatedFrameworkSlugs: ['inference-optimizer-matrix', 'semantic-cache-edge-filter', 'inference-dividend-framework'],
     relatedToolIds: ['aueb', 'slm-vs-api', 'agentic-token-simulator'],
@@ -91,7 +91,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     editorsPick: true,
     date: 'August 13, 2026',
     thesis: 'Enterprise SaaS providers (Salesforce, SAP, Oracle) are embedding autonomous AI agents directly into transactional workflows with authority to issue refunds, alter contract terms, and spend corporate capital - creating a critical breakdown in corporate signing matrices and shadow delegation that bypasses internal executive approval controls.',
-    relatedConceptIds: ['shadow-delegation', 'deterministic-governance', 'agent-kill-switch', 'shadow-ai', 'ai-agent-sprawl', 'runtime-vs-alignment'],
+    relatedConceptIds: ['shadow-delegation', 'deterministic-governance', 'agent-kill-switch', 'shadow-ai', 'ai-agent-sprawl', 'runtime-vs-alignment', 'mcp-governance', 'eaap-protocol', 'shadow-ai-governance', 'ai-liability-gradient'],
     relatedGlossarySlugs: ['shadow-delegation', 'deterministic-governance', 'agent-kill-switch'],
     relatedFrameworkSlugs: ['automated-delegation-boundary', 'agentic-drift-matrix'],
     relatedToolIds: ['agentic-drift-matrix', 'shadow-ai'],
@@ -126,7 +126,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     editorsPick: true,
     date: 'August 7, 2026',
     thesis: 'Stop AI context decay and errors using a 3-tier memory structure, organized state summaries, and database state separation rather than expanding raw prompt context.',
-    relatedConceptIds: ['deterministic-governance', 'ai-governance', 'context-rot', 'inference-economics', 'retrieval-augmented-generation']
+    relatedConceptIds: ['deterministic-governance', 'ai-governance', 'context-rot', 'inference-economics', 'retrieval-augmented-generation', 'context-engineering']
   },
   // Today's LinkedIn Newsletter  -  August 6, 2026
   {
@@ -139,7 +139,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     editorsPick: true,
     date: 'August 6, 2026',
     thesis: 'Expanding an AI agent’s context window without structured indexing creates cognitive clutter rather than intelligence. True operational velocity requires deterministic context filtering over raw token expansion.',
-    relatedConceptIds: ['deterministic-governance', 'ai-governance', 'context-rot', 'ai-volatility-tax', 'retrieval-augmented-generation']
+    relatedConceptIds: ['deterministic-governance', 'ai-governance', 'context-rot', 'ai-volatility-tax', 'retrieval-augmented-generation', 'context-engineering']
   },
   // Today's Beehiiv Laboratory Newsletter  -  August 6, 2026
   {
@@ -165,7 +165,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     editorsPick: true,
     date: 'August 3, 2026',
     thesis: 'Giving an AI agent a massive unformatted context window creates informational clutter rather than intelligence; performance requires database-managed structured filing over raw memory capacity.',
-    relatedConceptIds: ['deterministic-governance', 'ai-governance', 'ai-agents']
+    relatedConceptIds: ['deterministic-governance', 'ai-governance', 'ai-agents', 'context-engineering']
   },
   // New Beehiiv Laboratory Newsletter  -  July 31, 2026
   {
@@ -203,7 +203,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Evergreen',
     thesis: 'Shifts product management focus from feature output to margin contribution and P&L ownership.',
-    relatedConceptIds: ["product-economist","feature-bloat-calculus","coordination-tax"],
+    relatedConceptIds: ["product-economist","feature-bloat-calculus","coordination-tax", "product-debt-index", "ev-se-framework", "aper-metric"],
     relatedGlossarySlugs: ["product-debt-index","feature-bloat"],
     relatedToolIds: ["pdi"]
   },
@@ -227,7 +227,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Evergreen',
     thesis: 'Examines degrading economics and operational risks of recursive AI model training on enterprise margin.',
-    relatedConceptIds: ["model-collapse","inference-economics","ai-volatility-tax"],
+    relatedConceptIds: ["model-collapse","inference-economics","ai-volatility-tax", "synthetic-model-collapse", "unreliability-tax", "retry-inflation", "eval-driven-development"],
     relatedGlossarySlugs: ["model-collapse","synthetic-cogs"],
     relatedToolIds: ["aueb"]
   },
@@ -251,7 +251,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Economics',
     type: 'Executable',
     thesis: 'Analyzes model-task mismatch where frontier LLMs are misallocated to low-complexity tasks, destroying SaaS unit economics.',
-    relatedConceptIds: ["inference-economics","ai-volatility-tax","ai-margin-squeeze","cost-of-predictivity", 'ai-finops', 'ai-tokenomics-cogs', 'ai-cost-optimization'],
+    relatedConceptIds: ["inference-economics","ai-volatility-tax","ai-margin-squeeze","cost-of-predictivity", 'ai-finops', 'ai-tokenomics-cogs', 'ai-cost-optimization', 'agentic-roi', 'ai-coding-tool-economics', 'margin-engineering', 'aueb-framework', 'ai-unit-economics', 'ai-economist'],
     relatedGlossarySlugs: ["synthetic-cogs","ai-volatility-tax"],
     relatedToolIds: ["aueb","slm-vs-api"]
   },
@@ -314,7 +314,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     type: 'Time-Sensitive',
     editorsPick: true,
     thesis: 'A post-mortem analysis of memory poisoning and unauthorized tool execution in production AI agents.',
-    relatedConceptIds: ["agent-kill-switch","shadow-ai","ai-governance","deterministic-governance", 'prompt-injection', 'ai-security'],
+    relatedConceptIds: ["agent-kill-switch","shadow-ai","ai-governance","deterministic-governance", 'prompt-injection', 'ai-security', 'shadow-ai-governance', 'ai-liability-gradient'],
     relatedGlossarySlugs: ["agent-kill-switch","shadow-ai"],
     relatedToolIds: ["shadow-ai","agentic-drift-matrix"]
   },
@@ -352,7 +352,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     type: 'Evergreen',
     editorsPick: true,
     thesis: 'Defines the 4 Laws of Probabilistic Software Development and the shift from code authoring to system verification.',
-    relatedConceptIds: ["vibe-coding","subprime-code-crisis","ten-man-parity", 'induced-demand-software', 'platform-engineering', 'audit-interview'],
+    relatedConceptIds: ["vibe-coding","subprime-code-crisis","ten-man-parity", 'induced-demand-software', 'platform-engineering', 'audit-interview', 'spec-driven-development', 'four-laws-probabilistic-software', 'complexity-tax'],
     relatedGlossarySlugs: ["vibe-coding-debt"],
     relatedToolIds: ["audit-interview","copilot-roi"]
   },
@@ -364,7 +364,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'AI Governance',
     type: 'Evergreen',
     thesis: 'Analytic review of agentic macro-economics, systemic risk, and the necessity of deterministic governance.',
-    relatedConceptIds: ["ai-governance","deterministic-governance","agent-kill-switch","ai-agents", 'agentic-engineering', 'responsible-ai', 'ai-agent-sprawl'],
+    relatedConceptIds: ["ai-governance","deterministic-governance","agent-kill-switch","ai-agents", 'agentic-engineering', 'responsible-ai', 'ai-agent-sprawl', 'shadow-ai-governance', 'ai-liability-gradient'],
     relatedGlossarySlugs: ["deterministic-governance","ai-agent-sprawl"]
   },
   {
@@ -428,7 +428,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Product Leadership',
     type: 'Executable',
     thesis: 'Deep dive into product P&L ownership, margin contribution, and capital efficiency metrics for PMs.',
-    relatedConceptIds: ["product-economist","feature-bloat-calculus","coordination-tax"],
+    relatedConceptIds: ["product-economist","feature-bloat-calculus","coordination-tax", "product-debt-index", "ev-se-framework", "aper-metric"],
     relatedGlossarySlugs: ["product-debt-index"],
     relatedToolIds: ["pdi"]
   },
@@ -504,7 +504,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Software Economics',
     type: 'Evergreen',
     thesis: 'Draws parallels between 2008 financial derivatives and unverified AI-generated code accumulating in enterprise repositories.',
-    relatedConceptIds: ["subprime-code-crisis","vibe-coding","technical-insolvency", 'induced-demand-software', 'ai-technical-debt', 'platform-engineering'],
+    relatedConceptIds: ["subprime-code-crisis","vibe-coding","technical-insolvency", 'induced-demand-software', 'ai-technical-debt', 'platform-engineering', 'spec-driven-development', 'four-laws-probabilistic-software', 'complexity-tax'],
     relatedGlossarySlugs: ["subprime-code-crisis","vibe-coding-debt"],
     relatedToolIds: ["pdi","copilot-roi"]
   },
@@ -740,7 +740,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     domain: 'Career Economics',
     type: 'Evergreen',
     thesis: 'Why execution clarity and analytical discipline outperform charismatic product vision.',
-    relatedConceptIds: ["product-economist","coordination-tax"]
+    relatedConceptIds: ["product-economist","coordination-tax", "four-tiers-of-autonomy", "double-diamond-career-trajectory"]
   },
   {
     id: 'linkedin-real-ai-opportunity',

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import ExogramSidebar from '@/components/ExogramSidebar';
 
 export const metadata: Metadata = {
@@ -19,12 +20,16 @@ export default function ExogramDocsLayout({
             <div className="page-container flex flex-col md:flex-row relative">
                 {/* Desktop Sidebar (Left) */}
                 <div className="hidden md:block">
-                    <ExogramSidebar />
+                    <Suspense fallback={<aside className="w-64" />}>
+                        <ExogramSidebar />
+                    </Suspense>
                 </div>
                 
-                {/* Mobile Sidebar Trigger (handled inside ExogramSidebar) */}
+                {/* Mobile Sidebar Trigger */}
                 <div className="md:hidden w-full">
-                    <ExogramSidebar />
+                    <Suspense fallback={<aside className="w-full" />}>
+                        <ExogramSidebar />
+                    </Suspense>
                 </div>
 
                 {/* Main Content Area (Right) */}

@@ -160,7 +160,7 @@ export default function PartnershipsPage() {
                         </p>
 
                         {/* Fast Anchor Navigation Jump Bar */}
-                        <div className="flex flex-wrap items-center justify-center gap-2 max-w-2xl mx-auto">
+                        <div className="flex flex-wrap items-center justify-center gap-2 max-w-3xl mx-auto">
                             <a
                                 href="#partner-models"
                                 className="px-3.5 py-1.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-mono font-bold transition-colors border border-zinc-200"
@@ -173,23 +173,29 @@ export default function PartnershipsPage() {
                             >
                                 ↓ Licensing Tiers
                             </a>
-                            <a
-                                href="#integration-docs"
+                            <Link
+                                href="/partnerships/integration-docs"
                                 className="px-3.5 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-mono font-bold transition-colors border border-emerald-300 shadow-2xs"
                             >
-                                ↓ Integration Docs
-                            </a>
-                            <a
-                                href="#brand-assets"
+                                ↗ Integration Docs (Dedicated URL)
+                            </Link>
+                            <Link
+                                href="/integrations/supabase"
+                                className="px-3.5 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-mono font-bold transition-colors border border-emerald-300 shadow-2xs"
+                            >
+                                ↗ Supabase Guide
+                            </Link>
+                            <Link
+                                href="/brand"
                                 className="px-3.5 py-1.5 rounded-lg bg-cyan-50 hover:bg-cyan-100 text-cyan-800 text-xs font-mono font-bold transition-colors border border-cyan-300 shadow-2xs"
                             >
-                                ↓ Brand &amp; Media Kit
-                            </a>
+                                ↗ Brand &amp; Media Kit (Dedicated URL)
+                            </Link>
                             <a
                                 href="#contact"
                                 className="px-3.5 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-mono font-bold transition-colors"
                             >
-                                ↓ Initiate Contact
+                                ↓ Contact
                             </a>
                         </div>
                     </div>

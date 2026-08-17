@@ -23,7 +23,7 @@ export const tracks = [
         ],
         color: 'cyan',
         icon: '📊',
-        glossaryTerms: ['technical-debt', 'dora-metrics', 'innovation-tax', 'technical-insolvency-date', 'maintenance-load', 'conways-law', 'cost-of-delay', 'developer-experience', 'architecture-review-board'],
+        glossaryTerms: ['technical-debt', 'dora-metrics', 'innovation-tax', 'technical-insolvency-date', 'maintenance-load', 'conways-law', 'cost-of-delay', 'developer-experience', 'architecture-review-board', 'spec-driven-development', 'compound-ai-systems', 'context-engineering', 'four-laws-probabilistic-software'],
         tools: [{ name: 'PDI Calculator', href: '/tools/pdi' }, { name: 'APER Calculator', href: '/tools/aper' }],
     },
     {
@@ -51,7 +51,7 @@ export const tracks = [
         ],
         color: 'violet',
         icon: '🤖',
-        glossaryTerms: ['ai-cogs', 'cost-of-predictivity', 'orchestration-debt', 'ai-inference', 'rag', 'token-ai', 'guardrails', 'large-language-model', 'small-language-models', 'open-weights', 'agentic-workflow', 'ai-assisted-development'],
+        glossaryTerms: ['ai-cogs', 'cost-of-predictivity', 'orchestration-debt', 'ai-inference', 'rag', 'token-ai', 'guardrails', 'large-language-model', 'small-language-models', 'open-weights', 'agentic-workflow', 'ai-assisted-development', 'agentic-roi', 'margin-engineering', 'aueb-framework', 'ai-finops', 'ai-unit-economics', 'ai-economist', 'unreliability-tax', 'evergreen-ratio'],
         tools: [{ name: 'AUEB Calculator', href: '/tools/aueb' }, { name: 'AI Scoring', href: '/tools/scoring' }, { name: 'Shadow AI Scanner', href: '/tools/shadow-ai' }],
     },
     {
@@ -132,7 +132,7 @@ export const tracks = [
         ],
         color: 'pink',
         icon: '📱',
-        glossaryTerms: ['software-phase-transition', 'product-economist', 'feature-bloat-calculus', 'cost-of-delay', 'cac', 'arr', 'product-led-growth', 'net-revenue-retention', 'burn-multiple'],
+        glossaryTerms: ['software-phase-transition', 'product-economist', 'feature-bloat-calculus', 'cost-of-delay', 'cac', 'arr', 'product-led-growth', 'net-revenue-retention', 'burn-multiple', 'product-debt-index', 'complexity-tax'],
         tools: [{ name: 'PDI Calculator', href: '/tools/pdi' }, { name: 'APER Calculator', href: '/tools/aper' }],
     },
     {
@@ -159,7 +159,7 @@ export const tracks = [
         ],
         color: 'teal',
         icon: '🧠',
-        glossaryTerms: ['ai-inference', 'rag-architecture', 'graph-rag', 'multimodal-ai', 'ai-product-management', 'shadow-ai', 'prompt-injection', 'guardrails', 'token-ai', 'ai-cogs', 'agentic-workflow'],
+        glossaryTerms: ['ai-inference', 'rag-architecture', 'graph-rag', 'multimodal-ai', 'ai-product-management', 'shadow-ai', 'prompt-injection', 'guardrails', 'token-ai', 'ai-cogs', 'agentic-workflow', 'agentic-roi', 'margin-engineering', 'aueb-framework', 'ai-finops', 'ai-unit-economics', 'ai-economist', 'unreliability-tax', 'evergreen-ratio'],
         tools: [{ name: 'AUEB Calculator', href: '/tools/aueb' }, { name: 'AI Scoring', href: '/tools/scoring' }],
     },
     {
@@ -185,7 +185,7 @@ export const tracks = [
         ],
         color: 'blue',
         icon: '☁️',
-        glossaryTerms: ['finops', 'ai-finops', 'cloud-repatriation', 'serverless-gpus', 'dspm', 'burn-multiple', 'infrastructure-as-code', 'cloud-cost-optimization'],
+        glossaryTerms: ['finops', 'ai-finops', 'cloud-repatriation', 'serverless-gpus', 'dspm', 'burn-multiple', 'infrastructure-as-code', 'cloud-cost-optimization', 'agentic-roi', 'margin-engineering', 'aueb-framework', 'ai-unit-economics', 'ai-economist', 'unreliability-tax', 'evergreen-ratio'],
         tools: [{ name: 'PDI Calculator', href: '/tools/pdi' }, { name: 'AUEB Calculator', href: '/tools/aueb' }],
     },
     {
@@ -206,7 +206,7 @@ export const tracks = [
         ],
         color: 'fuchsia',
         icon: '💰',
-        glossaryTerms: ['ai-cogs', 'unit-economics', 'net-revenue-retention', 'burn-multiple', 'cost-of-predictivity'],
+        glossaryTerms: ['ai-cogs', 'unit-economics', 'net-revenue-retention', 'burn-multiple', 'cost-of-predictivity', 'agentic-roi', 'margin-engineering', 'aueb-framework', 'ai-finops', 'ai-unit-economics', 'ai-economist', 'unreliability-tax', 'evergreen-ratio'],
         tools: [{ name: 'AUEB Calculator', href: '/tools/aueb' }],
     },
     {
@@ -290,7 +290,7 @@ export const tracks = [
         ],
         color: 'rose',
         icon: '📈',
-        glossaryTerms: ['cost-per-hire', 'attrition-rate', 'developer-experience', 'unit-economics'],
+        glossaryTerms: ['cost-per-hire', 'attrition-rate', 'developer-experience', 'unit-economics', 'four-tiers-of-autonomy', 'double-diamond-career-trajectory'],
         tools: [{ name: 'APER Calculator', href: '/tools/aper' }, { name: 'Career Pathing', href: '/tools/career-pathing' }],
     },
     {
@@ -311,7 +311,7 @@ export const tracks = [
         ],
         color: 'indigo',
         icon: '👑',
-        glossaryTerms: ['capex-vs-opex', 'ev-se', 'product-debt-index', 'vc-due-diligence', 'conways-law', 'span-of-control'],
+        glossaryTerms: ['capex-vs-opex', 'ev-se', 'product-debt-index', 'vc-due-diligence', 'conways-law', 'span-of-control', 'four-tiers-of-autonomy', 'double-diamond-career-trajectory'],
         tools: [{ name: 'EV-SE Calculator', href: '/tools/ev-se' }, { name: 'Audit Interview', href: '/tools/audit-interview' }],
     },
     {
@@ -332,7 +332,7 @@ export const tracks = [
         ],
         color: 'amber',
         icon: '🔥',
-        glossaryTerms: ['cost-per-hire', 'attrition-rate', 'developer-experience', 'conways-law', 'span-of-control'],
+        glossaryTerms: ['cost-per-hire', 'attrition-rate', 'developer-experience', 'conways-law', 'span-of-control', 'four-tiers-of-autonomy', 'double-diamond-career-trajectory'],
         tools: [{ name: 'APER Calculator', href: '/tools/aper' }, { name: 'Career Pathing', href: '/tools/career-pathing' }],
     },
     {
@@ -442,7 +442,7 @@ export const tracks = [
         ],
         color: 'violet',
         icon: '🤖',
-        glossaryTerms: ['agentic-workflow', 'ai-inference', 'ai-cogs', 'orchestration-debt', 'guardrails', 'rag', 'token-ai', 'mcp-protocol'],
+        glossaryTerms: ['agentic-workflow', 'ai-inference', 'ai-cogs', 'orchestration-debt', 'guardrails', 'rag', 'token-ai', 'mcp-protocol', 'spec-driven-development', 'compound-ai-systems', 'context-engineering', 'four-laws-probabilistic-software'],
         tools: [{ name: 'AUEB Calculator', href: '/tools/aueb' }, { name: 'AI Scoring', href: '/tools/scoring' }],
     },
     {
@@ -494,7 +494,7 @@ export const tracks = [
         ],
         color: 'emerald',
         icon: '🛡️',
-        glossaryTerms: ['guardrails', 'agentic-workflow', 'ai-inference', 'orchestration-debt', 'rag', 'prompt-injection'],
+        glossaryTerms: ['guardrails', 'agentic-workflow', 'ai-inference', 'orchestration-debt', 'rag', 'prompt-injection', 'mcp-governance', 'eaap-protocol', 'shadow-ai-governance', 'ai-liability-gradient', 'eval-driven-development'],
         tools: [{ name: 'AI Scoring', href: '/tools/scoring' }, { name: 'Shadow AI Scanner', href: '/tools/shadow-ai' }],
     },
     {
@@ -567,7 +567,7 @@ export const tracks = [
         ],
         color: 'violet',
         icon: '📈',
-        glossaryTerms: ['ai-cogs', 'power-user-liability', 'the-turing-tax', 'synthetic-cogs', 'deterministic-control-layer', 'compute-reseller-trap'],
+        glossaryTerms: ['ai-cogs', 'power-user-liability', 'the-turing-tax', 'synthetic-cogs', 'deterministic-control-layer', 'compute-reseller-trap', 'agentic-roi', 'margin-engineering', 'aueb-framework', 'ai-finops', 'ai-unit-economics', 'ai-economist', 'unreliability-tax', 'evergreen-ratio'],
         tools: [{ name: 'AUEB Calculator', href: '/tools/aueb' }, { name: 'PDI Calculator', href: '/tools/pdi' }],
     },
     {
@@ -583,7 +583,7 @@ export const tracks = [
         ],
         color: 'fuchsia',
         icon: '🎲',
-        glossaryTerms: ['probabilistic-tech-debt', 'the-turing-tax', 'codebase-intimacy', 'cto-agent-delusion'],
+        glossaryTerms: ['probabilistic-tech-debt', 'the-turing-tax', 'codebase-intimacy', 'cto-agent-delusion', 'spec-driven-development', 'compound-ai-systems', 'context-engineering', 'four-laws-probabilistic-software'],
         tools: [{ name: 'AI Scoring', href: '/tools/scoring' }],
     },
     {

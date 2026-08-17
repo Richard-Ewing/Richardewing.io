@@ -70,15 +70,16 @@ export interface DecisionNode {
 }
 
 export interface ConceptAEO {
-  shortDefinition: string; // ~50 words
-  executiveSummary: string; // ~150 words
-  oneSentence: string; // 1-sentence pitch
-  tweetLength: string; // ~280 chars
+  shortDefinition?: string; // ~50 words
+  executiveSummary?: string; // ~150 words
+  oneSentence?: string; // 1-sentence pitch
+  tweetLength?: string; // ~280 chars
   keyTakeaways: string[];
   faqs: ConceptFAQ[];
   comparisons?: ConceptComparison[];
-  whenToUse: string[];
-  examples: ConceptExamples;
+  analogies?: { analogy: string; explanation: string }[];
+  whenToUse?: string[];
+  examples?: ConceptExamples;
   decisionTree?: DecisionNode[];
 }
 

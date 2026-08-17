@@ -101,13 +101,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/benchmark`, 'monthly', 0.7);
     add(`${baseUrl}/workshops`, 'monthly', 0.7);
 
-    // === LEAD MAGNETS ===
+    // === LEAD MAGNETS & PARTNERSHIPS ===
     add(`${baseUrl}/checklist`, 'monthly', 0.8);
     add(`${baseUrl}/faq`, 'monthly', 0.7);
     add(`${baseUrl}/start-here`, 'monthly', 0.9);
     add(`${baseUrl}/reports/state-of-ai-engineering`, 'monthly', 0.9);
     add(`${baseUrl}/testimonials`, 'monthly', 0.7);
-    add(`${baseUrl}/partnerships`, 'monthly', 0.7);
+    add(`${baseUrl}/partnerships`, 'monthly', 0.8);
+    add(`${baseUrl}/partnerships/integration-docs`, 'weekly', 0.9);
+    add(`${baseUrl}/partnerships/brand-assets`, 'monthly', 0.8);
+    add(`${baseUrl}/brand`, 'monthly', 0.85);
+    add(`${baseUrl}/integrations/supabase`, 'weekly', 0.9);
     add(`${baseUrl}/partner`, 'monthly', 0.7);
 
     // === AI INTEGRATION & CANONICAL CONCEPTS ===

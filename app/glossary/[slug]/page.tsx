@@ -19,7 +19,7 @@ import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-    return glossaryTerms.map(t => ({ slug: t.slug }));
+    return glossaryTerms.filter(t => KEEP_TERMS.includes(t.slug)).map(t => ({ slug: t.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

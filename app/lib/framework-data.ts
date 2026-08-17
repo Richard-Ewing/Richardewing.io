@@ -117,7 +117,8 @@ export const subFrameworks: Record<string, SubFramework> = {
                     diagnostics: ['Product Debt Index (PDI)', 'Valuation Scenario Engine (EV-SE)'],
                     education: ['Track 5: Product Management Economics', 'Track 10: AI Due Diligence for Investors'],
                     enforcement: 'Exogram Policy Rules'
-                }
+                },
+                conceptSlug: 'product-debt-index'
             },
             {
                 id: 'PAIG-PROD-002',
@@ -145,7 +146,8 @@ export const subFrameworks: Record<string, SubFramework> = {
                     diagnostics: ['AI Unit Economics Benchmark (AUEB)', 'Valuation Scenario Engine (EV-SE)'],
                     education: ['Track 2: AI AI Economics', 'Track 8: AI Pricing Strategy'],
                     enforcement: 'Exogram Adaptive Usage Boundary Control'
-                }
+                },
+                conceptSlug: 'margin-engineering'
             },
             {
                 id: 'PAIG-PROD-004',
