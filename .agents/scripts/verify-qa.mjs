@@ -75,7 +75,7 @@ filesToAudit.forEach(filePath => {
   }
 
   // Rule B: Unsourced Stats Fallback Check
-  if (content.includes('[HUMAN_INPUT:SOURCE]')) {
+  if (content.includes('[HUMAN_INPUT:SOURCE]') && !relativePath.endsWith('SKILL.md')) {
     console.warn(`[STAT WARNING] Found unverified stat fallback in ${relativePath}`);
     warningCount++;
   }

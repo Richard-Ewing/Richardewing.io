@@ -22,7 +22,7 @@ async function fetchRoute(url, maxRedirects = 3) {
   const startTime = Date.now();
   
   return new Promise((resolve) => {
-    const req = client.get(url, { headers: { 'User-Agent': 'AntigravityAudit/3.0' }, timeout: 8000 }, (res) => {
+    const req = client.get(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' }, timeout: 8000 }, (res) => {
       // Handle redirects
       if ((res.statusCode === 301 || res.statusCode === 302 || res.statusCode === 307 || res.statusCode === 308) && res.headers.location && maxRedirects > 0) {
         const nextUrl = res.headers.location.startsWith('http') ? res.headers.location : new URL(res.headers.location, url).toString();
