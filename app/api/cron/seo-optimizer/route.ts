@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
+import { supabaseAdmin as supabase } from '@/lib/supabase';
 import { generateActionUrl } from '@/app/api/actions/trigger/route';
 import { logAgentRun, createAgentTimer } from '@/lib/agents/logger';
 
@@ -8,10 +8,6 @@ import { logAgentRun, createAgentTimer } from '@/lib/agents/logger';
 // Schedule: 0 9 * * * (9am UTC / 2am PDT)
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.richardewing.io';
-const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-    process.env.SUPABASE_SERVICE_ROLE_KEY || ''
-);
 
 // Market intelligence starving crowds  -  aligned with target keywords
 const STARVING_CROWDS = [

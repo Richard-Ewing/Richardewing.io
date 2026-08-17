@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
+import { supabaseAdmin as supabase } from '@/lib/supabase';
 import { logAgentRun, createAgentTimer } from '@/lib/agents/logger';
 
 // Autonomous Meta Rewriter Agent
@@ -13,11 +13,6 @@ import { logAgentRun, createAgentTimer } from '@/lib/agents/logger';
 const GITHUB_OWNER = 'Richard-Ewing';
 const GITHUB_REPO = 'Richardewing.io';
 const GITHUB_BRANCH = 'main';
-
-const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-    process.env.SUPABASE_SERVICE_ROLE_KEY || ''
-);
 
 // Scar Tissue meta rewrite rules (embedded from skill)
 const REWRITE_RULES = `
