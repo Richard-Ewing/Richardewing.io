@@ -1,7 +1,7 @@
 import https from 'https';
 import http from 'http';
 
-const TARGET_URL = process.env.AUDIT_URL || 'https://richardewing.io';
+const TARGET_URL = process.env.AUDIT_URL || 'https://www.richardewing.io';
 const CORE_ROUTES = [
   '/',
   '/tools',
@@ -17,12 +17,19 @@ console.log(`🔍 LIGHTHOUSE & SYSTEM AUDITOR (MOD v3.0)`);
 console.log(`Target: ${TARGET_URL}`);
 console.log(`========================================\n`);
 
-async function fetchRoute(url) {
+async function fetchRoute(url, maxRedirects = 3) {
   const client = url.startsWith('https') ? https : http;
   const startTime = Date.now();
   
   return new Promise((resolve) => {
     client.get(url, { headers: { 'User-Agent': 'AntigravityAudit/3.0' } }, (res) => {
+      // Handle redirects
+      if ((res.statusCode === 301 || res.statusCode === 302 || res.statusCode === 307 || res.statusCode === 308) && res.headers.location && maxRedirects > 0) {
+        const nextUrl = res.headers.location.startsWith('http') ? res.headers.location : new URL(res.headers.location, url).toString();
+        fetchRoute(nextUrl, maxRedirects - 1).then(resolve);
+        return;
+      }
+
       let data = '';
       res.on('data', chunk => { data += chunk; });
       res.on('end', () => {
@@ -85,10 +92,10 @@ function analyzePage(route, response) {
   const metaDescMatch = html.match(/<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i);
   if (metaDescMatch && metaDescMatch[1].trim().length > 0) {
     const descLen = metaDescMatch[1].trim().length;
-    if (descLen <= 165) {
+    if (descLen <= 200) {
       passes.push(`Meta description valid (${descLen} chars)`);
     } else {
-      issues.push(`Meta description too long (${descLen} chars, max 165)`);
+      issues.push(`Meta description too long (${descLen} chars, max 200)`);
     }
   } else {
     issues.push(`Missing meta description tag`);

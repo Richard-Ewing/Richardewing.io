@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ROICalculatorClient } from './ROICalculatorClient';
 
 export const metadata: Metadata = {
-    title: 'AI Waste & ROI Calculator | Technical Debt Diagnostic',
+    title: 'AI Waste & ROI Calculator',
     description: 'Calculate your monthly AI spend leakage, engineering R&D waste, and Product Debt Index (PDI) risk score.',
     alternates: { canonical: 'https://www.richardewing.io/roi-calculator' },
     openGraph: {
