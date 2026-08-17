@@ -1,0 +1,54 @@
+{
+  "name": "Richard Ewing",
+  "domain": "AI Economics & R&D Capital Audits",
+  "url": "https://www.richardewing.io",
+  "partnershipsUrl": "https://www.richardewing.io/partnerships",
+  "integrationDocsUrl": "https://www.richardewing.io/partnerships#integration-docs",
+  "brandAssetsUrl": "https://www.richardewing.io/partnerships#brand-assets",
+  "colors": {
+    "primary": {
+      "name": "Emerald Accent",
+      "hex": "#10B981",
+      "rgb": "rgb(16, 185, 129)",
+      "hsl": "hsl(160, 84%, 39%)"
+    },
+    "secondary": {
+      "name": "Cyan Highlight",
+      "hex": "#06B6D4",
+      "rgb": "rgb(6, 182, 212)",
+      "hsl": "hsl(189, 94%, 43%)"
+    },
+    "darkSurface": {
+      "name": "Obsidian Surface",
+      "hex": "#09090B",
+      "rgb": "rgb(9, 9, 11)"
+    },
+    "borderDark": {
+      "name": "Muted Zinc",
+      "hex": "#27272A",
+      "rgb": "rgb(39, 39, 42)"
+    },
+    "lightSurface": {
+      "name": "Alabaster Light",
+      "hex": "#F5F0EB",
+      "rgb": "rgb(245, 240, 235)"
+    }
+  },
+  "typography": {
+    "heading": "Space Grotesk, sans-serif",
+    "body": "Inter, system-ui, -apple-system, sans-serif",
+    "mono": "JetBrains Mono, SFMono-Regular, Menlo, monospace"
+  },
+  "assets": {
+    "logoDark": "https://www.richardewing.io/brand/richard-ewing-logo-dark.svg",
+    "logoLight": "https://www.richardewing.io/brand/richard-ewing-logo-light.svg",
+    "mark": "https://www.richardewing.io/brand/richard-ewing-mark.svg",
+    "headshot": "https://www.richardewing.io/assets/images/headshot.jpg",
+    "brandKitZip": "https://www.richardewing.io/brand/richard-ewing-brand-kit.zip"
+  },
+  "bios": {
+    "short": "Richard Ewing is an AI Economist and Founder helping technology executives audit R&D capital efficiency and govern enterprise AI systems.",
+    "medium": "Richard Ewing is an AI Economist and founder specializing in R&D Capital Audits, technical debt diagnostics, and AI unit economics. His frameworks quantify engineering insolvency risk and optimize technology investments for enterprise leadership.",
+    "long": "Richard Ewing is an AI Economist and advisor to CTOs, CFOs, and private equity operating partners. He developed the Product Debt Index (PDI), Revenue Per Engineer (APER) benchmarks, and AI Unit Economics models used to audit engineering productivity, detect technical debt accumulation, and govern production AI deployments."
+  }
+}

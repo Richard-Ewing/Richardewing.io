@@ -50,5 +50,11 @@ export const CATEGORY_MAP: Record<string, string> = {
 export const KEEP_TERMS = [
     'ic-vs-management-track', 'engineering-levels', 'career-levels',
     'ai-cost-attribution', 'ai-unit-economics', 'ai-cogs', 'calculating-roai', 
-    'hallucination-debt', 'model-right-sizing', 'orchestration-debt'
+    'hallucination-debt', 'model-right-sizing', 'orchestration-debt',
+    // Concept Corpus Expansion - high-priority standalone pages
+    'mcp-governance', 'context-engineering', 'agentic-roi', 'unreliability-tax',
+    'product-debt-index', 'aueb-framework', 'aper-metric', 'margin-engineering',
+    'spec-driven-development', 'eval-driven-development', 'ai-coding-tool-economics',
+    'four-laws-probabilistic-software', 'ai-liability-gradient', 'ai-finops',
+    'ai-economist', 'eaap-protocol', 'compound-ai-systems'
 ];

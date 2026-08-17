@@ -49,6 +49,7 @@ import { programmaticSeoTerms } from './programmatic-seo';
 import { aiEconomist } from './ai-economist';
 import { marginEngineering } from './margin-engineering';
 import { articleDerivedMay2026Terms } from './article-derived-may2026';
+import { conceptCorpusExpansionTerms } from './concept-corpus-expansion';
 
 export const allGlossaryTerms: GlossaryTerm[] = [
     ...technicalDebtTerms,
@@ -117,6 +118,8 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     marginEngineering,
     // Article-derived May 2026 (BuiltIn + CIO.com)
     ...articleDerivedMay2026Terms,
+    // Concept Corpus Expansion (Tier 5 + Tier 6)
+    ...conceptCorpusExpansionTerms,
 ];
 
 export const allGlossaryCategories = [
