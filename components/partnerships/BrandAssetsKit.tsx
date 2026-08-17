@@ -16,11 +16,12 @@ export default function BrandAssetsKit() {
   const [copiedBio, setCopiedBio] = useState<string | null>(null);
 
   const colors: ColorSwatch[] = [
-    { name: 'Emerald Accent', role: 'Primary Accent & Growth', hex: '#10B981', rgb: '16, 185, 129', textColor: '#09090B' },
-    { name: 'Cyan Highlight', role: 'Secondary Highlight & Logic', hex: '#06B6D4', rgb: '6, 182, 212', textColor: '#09090B' },
-    { name: 'Obsidian Dark', role: 'Primary Surface & Contrast', hex: '#09090B', rgb: '9, 9, 11', textColor: '#FAFAFA' },
-    { name: 'Muted Zinc', role: 'Borders & Structural Grid', hex: '#27272A', rgb: '39, 39, 42', textColor: '#FAFAFA' },
-    { name: 'Alabaster Light', role: 'Light Theme Background', hex: '#F5F0EB', rgb: '245, 240, 235', textColor: '#09090B' },
+    { name: 'Neon Cyan', role: 'Primary Logic & Identity Flare', hex: '#00F0FF', rgb: '0, 240, 255', textColor: '#09090B' },
+    { name: 'Royal Purple', role: 'AI Runtime & Exogram Boundary', hex: '#8B5CF6', rgb: '139, 92, 246', textColor: '#FAFAFA' },
+    { name: 'Vivid Magenta', role: 'Gradient Flare & Acceleration', hex: '#EC4899', rgb: '236, 72, 153', textColor: '#FAFAFA' },
+    { name: 'Emerald Accent', role: 'Capital Growth & Verified State', hex: '#10B981', rgb: '16, 185, 129', textColor: '#09090B' },
+    { name: 'Obsidian Dark', role: 'Primary Contrast & Terminal Base', hex: '#09090B', rgb: '9, 9, 11', textColor: '#FAFAFA' },
+    { name: 'Alabaster Light', role: 'Light Theme Editorial Base', hex: '#F5F0EB', rgb: '245, 240, 235', textColor: '#09090B' },
   ];
 
   const bios = {
@@ -55,7 +56,7 @@ export default function BrandAssetsKit() {
               Brand Resources &amp; Assets
             </h2>
             <p className="text-base sm:text-lg text-zinc-800 max-w-2xl leading-relaxed">
-              Official vector logos, color tokens, typography specifications, founder media, and boilerplate copy for partner directories, co-marketing materials, and event announcements.
+              Official vector logos, high-resolution insignia marks, color tokens, typography specifications, founder media, and boilerplate copy for partner directories, co-marketing materials, and event announcements.
             </p>
           </div>
 
@@ -74,6 +75,40 @@ export default function BrandAssetsKit() {
 
       {/* Asset Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        {/* Brand Mark Card (Favicon Emblem) */}
+        <div className="bg-white border border-zinc-300 rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between">
+          <div className="p-4 bg-zinc-950 border-b border-zinc-200 flex items-center justify-center min-h-[140px]">
+            <img
+              src="/brand/richard-ewing-mark.png"
+              alt="Richard Ewing Official Brand Emblem"
+              className="w-20 h-20 object-contain drop-shadow-[0_0_12px_rgba(0,240,255,0.4)]"
+            />
+          </div>
+          <div className="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div className="text-xs font-mono font-bold text-cyan-700 uppercase tracking-widest mb-1">Official Favicon &amp; Emblem</div>
+              <h3 className="text-base font-bold font-grotesk text-zinc-950 mb-2">Insignia Mark (Hi-Res)</h3>
+              <p className="text-xs text-zinc-600 font-semibold mb-4">Official glowing cyan/magenta ribbon flame emblem for app icons, favicons, and partner badges.</p>
+            </div>
+            <div className="space-y-2">
+              <a
+                href="/brand/richard-ewing-mark.png"
+                download="richard-ewing-mark.png"
+                className="block text-center py-2 px-3 rounded-lg bg-zinc-950 hover:bg-zinc-800 text-white font-mono text-xs font-bold transition-colors"
+              >
+                Download PNG (1024px) ↓
+              </a>
+              <a
+                href="/brand/richard-ewing-mark.svg"
+                download="richard-ewing-mark.svg"
+                className="block text-center py-2 px-3 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-mono text-xs font-bold transition-colors"
+              >
+                Download SVG ↓
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* Dark Logo Card */}
         <div className="bg-white border border-zinc-300 rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between">
           <div className="p-4 bg-zinc-950 border-b border-zinc-200 flex items-center justify-center min-h-[140px]">
@@ -87,7 +122,7 @@ export default function BrandAssetsKit() {
             <div>
               <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest mb-1">Primary Logotype</div>
               <h3 className="text-base font-bold font-grotesk text-zinc-950 mb-2">Dark Mode Vector</h3>
-              <p className="text-xs text-zinc-600 font-semibold mb-4">Scalable SVG logo optimized for dark backgrounds and high contrast headers.</p>
+              <p className="text-xs text-zinc-600 font-semibold mb-4">Scalable SVG logo with insignia mark optimized for dark backgrounds and headers.</p>
             </div>
             <a
               href="/brand/richard-ewing-logo-dark.svg"
@@ -124,31 +159,6 @@ export default function BrandAssetsKit() {
           </div>
         </div>
 
-        {/* Brand Mark Card */}
-        <div className="bg-white border border-zinc-300 rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between">
-          <div className="p-4 bg-zinc-950 border-b border-zinc-200 flex items-center justify-center min-h-[140px]">
-            <img
-              src="/brand/richard-ewing-mark.svg"
-              alt="Richard Ewing Geometric Brand Mark"
-              className="w-16 h-16 object-contain"
-            />
-          </div>
-          <div className="p-5 flex-1 flex flex-col justify-between">
-            <div>
-              <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest mb-1">Brand Emblem</div>
-              <h3 className="text-base font-bold font-grotesk text-zinc-950 mb-2">Icon Mark &amp; Badge</h3>
-              <p className="text-xs text-zinc-600 font-semibold mb-4">Geometric hex delta emblem for app icons, favicon integrations, and social avatars.</p>
-            </div>
-            <a
-              href="/brand/richard-ewing-mark.svg"
-              download="richard-ewing-mark.svg"
-              className="block text-center py-2.5 px-4 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-mono text-xs font-bold transition-colors"
-            >
-              Download SVG ↓
-            </a>
-          </div>
-        </div>
-
         {/* Headshot Card */}
         <div className="bg-white border border-zinc-300 rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between">
           <div className="relative h-[140px] bg-zinc-200 border-b border-zinc-200 overflow-hidden">
@@ -177,7 +187,7 @@ export default function BrandAssetsKit() {
         </div>
       </div>
 
-      {/* Color Palette & Typography Spec */}
+      {/* Color Tokens & Typography Specs */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
         {/* Color Palette */}
         <div className="bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
@@ -187,43 +197,41 @@ export default function BrandAssetsKit() {
           </div>
 
           <div className="space-y-3">
-            {colors.map((color, index) => (
-              <button
-                key={index}
-                onClick={() => copyText(color.hex, color.hex, 'color')}
-                className="w-full flex items-center justify-between p-3 rounded-xl border border-zinc-200 hover:border-zinc-400 bg-zinc-50 hover:bg-white transition-all text-left group"
-              >
-                <div className="flex items-center gap-3.5">
-                  <div
-                    className="w-9 h-9 rounded-lg border border-black/10 shadow-xs flex items-center justify-center font-mono text-xs font-bold shrink-0"
-                    style={{ backgroundColor: color.hex, color: color.textColor }}
-                  >
-                    {color.name[0]}
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-zinc-950 group-hover:text-emerald-700 transition-colors">
-                      {color.name}
+            {colors.map((color) => {
+              const isCopied = copiedColor === color.name;
+              return (
+                <button
+                  key={color.name}
+                  onClick={() => copyText(color.hex, color.name, 'color')}
+                  className="w-full flex items-center justify-between p-3 rounded-xl border border-zinc-200 hover:border-zinc-400 bg-zinc-50 hover:bg-white transition-all text-left group"
+                >
+                  <div className="flex items-center gap-3.5">
+                    <div
+                      className="w-9 h-9 rounded-lg border border-black/10 shadow-xs flex items-center justify-center font-mono text-xs font-bold shrink-0"
+                      style={{ backgroundColor: color.hex, color: color.textColor }}
+                    >
+                      {color.name.charAt(0)}
                     </div>
-                    <div className="text-xs text-zinc-600 font-semibold">{color.role}</div>
+                    <div>
+                      <div className="text-sm font-bold text-zinc-950 group-hover:text-emerald-700 transition-colors">
+                        {color.name}
+                      </div>
+                      <div className="text-xs text-zinc-600 font-semibold">{color.role}</div>
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex items-center gap-2">
-                  <span className="font-mono text-xs font-bold text-zinc-800 bg-white px-2.5 py-1 rounded-md border border-zinc-200">
-                    {color.hex}
-                  </span>
-                  {copiedColor === color.hex && (
-                    <span className="text-xs font-mono font-bold text-emerald-600 animate-fade-in">
-                      Copied!
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-xs font-bold text-zinc-800 bg-white px-2.5 py-1 rounded-md border border-zinc-200">
+                      {isCopied ? '✓ Copied!' : color.hex}
                     </span>
-                  )}
-                </div>
-              </button>
-            ))}
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </div>
 
-        {/* Typography & Font Guidelines */}
+        {/* Typography Specs */}
         <div className="bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm flex flex-col justify-between">
           <div>
             <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-6">Typography Architecture</h3>
@@ -258,11 +266,9 @@ export default function BrandAssetsKit() {
         </div>
       </div>
 
-      {/* Official Boilerplate Copy & Bios */}
+      {/* Official Boilerplates & Bios */}
       <div className="bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
-        <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
-          Official Company &amp; Speaker Bios
-        </h3>
+        <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">Official Company &amp; Speaker Bios</h3>
         <p className="text-sm text-zinc-700 font-semibold mb-6">
           Pre-approved descriptions for conference booklets, partner directory profiles, and co-branded press releases.
         </p>
@@ -304,7 +310,7 @@ export default function BrandAssetsKit() {
             </p>
           </div>
 
-          {/* Long Bio */}
+          {/* Comprehensive Bio */}
           <div className="p-5 rounded-2xl bg-zinc-50 border border-zinc-200">
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-mono font-bold text-zinc-600 uppercase tracking-wider">
