@@ -322,7 +322,8 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Long Context Degradation', publisher: 'Beehiiv April 2026', date: '2026', summary: 'Analysis of model performance drops in extended context windows.' }
     ],
     evidenceLedger: [
-      { id: 'ev-cr-1', title: 'Context Window Efficacy', url: '#', publisher: 'AI Research Metrics', type: 'Research Note', strength: 4, role: 'Origin', date: '2026' }
+      { id: 'ev-cr-1', title: 'Context Window Efficacy', url: '#', publisher: 'AI Research Metrics', type: 'Research Note', strength: 4, role: 'Origin', date: '2026' },
+      { id: 'ev-cr-2', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Supports', date: 'August 18, 2026' }
     ],
     reverseCitations: [
       { targetType: 'Diagnostic Tool', title: 'Exogram State Monitor', url: 'https://exogram.ai/monitor', relationship: 'measures' },

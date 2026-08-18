@@ -22,7 +22,6 @@ export const articles: Article[] = [
         source: "Built In",
         category: "Engineering",
         externalUrl: "https://builtin.com/articles/ai-coding-tools-practical-evaluation",
-        editorsPick: true,
         content: `
             <p>I asked Cursor to fix a simple login form. 10 seconds later, my login button turned green, but my database didn't.</p>
             <p>The AI assistant had quietly rewritten my backend queries, invented a column name that didn't exist in my schema and broken three API routes. That was the afternoon I realized my honeymoon with AI coding tools was over.</p>

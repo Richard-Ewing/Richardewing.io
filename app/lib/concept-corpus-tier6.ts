@@ -1,4 +1,4 @@
-﻿import { ConceptNode } from './concept-corpus';
+import { ConceptNode } from './concept-corpus';
 
 export const TIER6_CONCEPTS: ConceptNode[] = [
   {
@@ -535,7 +535,8 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     evidenceLedger: [
       { id: 'cio-model-collapse', title: 'Model Collapse', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' },
       { id: 'cio-claude-api-bill', title: 'Your Claude API Bill Is Higher Than Your Revenue', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 5 as const, role: 'Extends' as const, date: 'August 2026' },
-      { id: 'beehiiv-ai-unit-economics-burn-rate', title: 'AI Unit Economics: Burn Rate and Technical Insolvency', url: '#', publisher: 'Beehiiv', type: 'Newsletter', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' }
+      { id: 'beehiiv-ai-unit-economics-burn-rate', title: 'AI Unit Economics: Burn Rate and Technical Insolvency', url: '#', publisher: 'Beehiiv', type: 'Newsletter', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' },
+      { id: 'builtin-ai-coding-tools-practical-evaluation', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In', type: 'Industry Analysis', strength: 5 as const, role: 'Supports' as const, date: 'August 18, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'ai-volatility-tax', relationship: 'causes' },

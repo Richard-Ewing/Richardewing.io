@@ -59,7 +59,7 @@ export default function WhyCursorRewritesFilesPage() {
 
                     <div className="p-4 bg-cyan-50 rounded-xl border border-cyan-200">
                         <p className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider mb-1">
-                            Published in Built In • August 18, 2026 (Editor&apos;s Pick)
+                            Published in Built In • August 18, 2026
                         </p>
                         <p className="text-sm text-cyan-950 font-medium italic mb-2">
                             &quot;I asked Cursor to fix a simple login form. 10 seconds later, my login button turned green, but my database didn&apos;t. The AI assistant had quietly rewritten my backend queries, invented a column name that didn&apos;t exist in my schema and broken three API routes.&quot;

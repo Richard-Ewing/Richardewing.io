@@ -87,9 +87,6 @@ export default function WhyAICodingBurnsMoneyPage() {
                             <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
                                 Published in Built In • August 18, 2026
                             </span>
-                            <span className="text-[10px] font-mono font-bold bg-cyan-200 text-cyan-900 px-2 py-0.5 rounded">
-                                Editor&apos;s Pick
-                            </span>
                         </div>
                         <p className="text-sm text-cyan-950 font-medium italic mb-2">
                             &quot;Worst of all was the hidden financial cost. As the assistant lost context and spun in circles, my token usage skyrocketed. I burned through my included tokens and had to purchase extra token overages just to feed the model’s recursive error loops... I was spending real money on products that looked great visually in a sandbox, but were completely non-functional behind the scenes.&quot;

@@ -258,7 +258,7 @@ export default function ExogramPage() {
                                     Built In • August 18, 2026
                                 </span>
                                 <span className="text-xs font-mono text-zinc-500 font-semibold">
-                                    Editor&apos;s Pick
+                                    Runtime Architecture Case Study
                                 </span>
                             </div>
                             <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">

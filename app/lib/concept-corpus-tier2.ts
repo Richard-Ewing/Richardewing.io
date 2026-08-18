@@ -411,7 +411,8 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Cost of Predictivity Outlined', publisher: 'RichardEwing.io Blog', date: 'March 2026', summary: 'Outlined the architectural tradeoffs of reliable AI.' }
     ],
     evidenceLedger: [
-      { id: 'ev-cop-1', title: 'The Cost of Predictivity', url: 'https://richardewing.io/blog/cost-of-predictivity', publisher: 'RichardEwing.io', type: 'Framework Specification', strength: 5, role: 'Origin', date: 'March 2026' }
+      { id: 'ev-cop-1', title: 'The Cost of Predictivity', url: 'https://richardewing.io/blog/cost-of-predictivity', publisher: 'RichardEwing.io', type: 'Framework Specification', strength: 5, role: 'Origin', date: 'March 2026' },
+      { id: 'ev-cop-2', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Supports', date: 'August 18, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'deterministic-governance', relationship: 'supports' },
@@ -574,7 +575,8 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
       { stage: 'Tier-1 Article', label: '10-Man Parity Explored', publisher: 'CIO.com', date: 'June 2026', summary: 'Outlined how AI shifts power to small, elite engineering teams.' }
     ],
     evidenceLedger: [
-      { id: 'ev-tmp-1', title: 'The 10-Man Parity Rule', url: 'https://www.cio.com', publisher: 'CIO.com', type: 'Industry Trend Analysis', strength: 4, role: 'Origin', date: 'June 2026' }
+      { id: 'ev-tmp-1', title: 'The 10-Man Parity Rule', url: 'https://www.cio.com', publisher: 'CIO.com', type: 'Industry Trend Analysis', strength: 4, role: 'Origin', date: 'June 2026' },
+      { id: 'ev-tmp-2', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 18, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'coordination-tax', relationship: 'supports' },

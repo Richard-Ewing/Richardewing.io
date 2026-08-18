@@ -90,7 +90,7 @@ export default function CursorProblemsPage() {
                 <div className="bg-white rounded-2xl border-2 border-cyan-500/30 p-6 sm:p-8 mb-8 shadow-sm relative overflow-hidden">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                         <span className="px-3 py-1 bg-cyan-100 text-cyan-900 text-xs font-mono font-bold rounded-full border border-cyan-200">
-                            Built In • Editor&apos;s Pick (August 18, 2026)
+                            Built In • August 18, 2026
                         </span>
                         <span className="text-xs font-mono text-zinc-500 font-semibold">
                             By Richard Ewing (Reviewed by Seth Wilson)

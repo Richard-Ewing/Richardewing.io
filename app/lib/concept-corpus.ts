@@ -580,7 +580,8 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Initial Inference Cost Squeeze', publisher: 'Beehiiv Laboratory', date: 'March 2025', url: 'https://theaieconomist.beehiiv.com/p/generative-ai-margin-squeeze-saas-cogs', summary: 'Noticed non-linear cost escalation in SaaS backends deploying un-cached LLM prompts.' }
     ],
     evidenceLedger: [
-      { id: 'ev-vt-1', title: 'Claude API Bill Blowup Analysis', url: 'https://www.cio.com/article/4175244/your-claude-api-bill-is-higher-than-your-revenue-why-simple-python-tasks-are-blowing-up-ai-costs.html', publisher: 'CIO.com', type: 'Production Telemetry', strength: 5, role: 'Supports', date: 'May 2026' }
+      { id: 'ev-vt-1', title: 'Claude API Bill Blowup Analysis', url: 'https://www.cio.com/article/4175244/your-claude-api-bill-is-higher-than-your-revenue-why-simple-python-tasks-are-blowing-up-ai-costs.html', publisher: 'CIO.com', type: 'Production Telemetry', strength: 5, role: 'Supports', date: 'May 2026' },
+      { id: 'ev-vt-2', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Supports', date: 'August 18, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'ai-economics', relationship: 'derived_from' },
@@ -745,7 +746,8 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     ],
     evidenceLedger: [
       { id: 'ev-dg-1', title: 'Security Gates for AI Agents', url: 'https://builtin.com/articles/ai-agent-security-gates', publisher: 'Built In', type: 'Production Telemetry', strength: 5, role: 'Origin', date: 'February 2026' },
-      { id: 'ev-dg-2', title: 'Salesforce and SAP are putting AI agents inside your workflows. Who tells them no?', url: 'https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html', publisher: 'CIO.com', type: 'Tier-1 Media', strength: 5, role: 'Extends', date: 'August 13, 2026' }
+      { id: 'ev-dg-2', title: 'Salesforce and SAP are putting AI agents inside your workflows. Who tells them no?', url: 'https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html', publisher: 'CIO.com', type: 'Tier-1 Media', strength: 5, role: 'Extends', date: 'August 13, 2026' },
+      { id: 'ev-dg-3', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Supports', date: 'August 18, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'agent-kill-switch', relationship: 'implements' },
@@ -917,7 +919,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     ],
     evidenceLedger: [
       { id: 'ev-scc-1', title: 'Subprime Code Analysis', url: 'https://builtin.com', publisher: 'Built In', type: 'Multi-Company Audit', strength: 5, role: 'Origin', date: 'April 2025' },
-      { id: 'ev-scc-2', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In (Editor\'s Pick)', type: 'Industry Analysis', strength: 5, role: 'Supports', date: 'August 18, 2026' }
+      { id: 'ev-scc-2', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Supports', date: 'August 18, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'vibe-coding', relationship: 'extends' },
@@ -1000,7 +1002,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     ],
     evidenceLedger: [
       { id: 'ev-vc-1', title: 'Vibe Coding Analysis', url: 'https://hackernoon.com', publisher: 'HackerNoon', type: 'Case Study', strength: 5, role: 'Origin', date: 'February 2025' },
-      { id: 'ev-vc-2', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In (Editor\'s Pick)', type: 'Industry Analysis', strength: 5, role: 'Supports', date: 'August 18, 2026' }
+      { id: 'ev-vc-2', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Supports', date: 'August 18, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'subprime-code-crisis', relationship: 'supports' },
