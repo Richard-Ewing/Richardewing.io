@@ -14,6 +14,27 @@ export interface Article {
 
 export const articles: Article[] = [
     {
+        slug: "ai-coding-tools-practical-evaluation",
+        title: "I Used AI to Build My Startup. Here’s What I Learned.",
+        description: "I asked Cursor to fix a simple login form. 10 seconds later, my login button turned green, but my database didn’t. Discover why unconstrained AI tools break complex codebases and how static root rules with Google Antigravity build reliable software.",
+        date: "August 2026",
+        readTime: "8 min read",
+        source: "Built In",
+        category: "Engineering",
+        externalUrl: "https://builtin.com/articles/ai-coding-tools-practical-evaluation",
+        editorsPick: true,
+        content: `
+            <p>I asked Cursor to fix a simple login form. 10 seconds later, my login button turned green, but my database didn't.</p>
+            <p>The AI assistant had quietly rewritten my backend queries, invented a column name that didn't exist in my schema and broken three API routes. That was the afternoon I realized my honeymoon with AI coding tools was over.</p>
+            <h3>Cursor Thrives in a Sandbox but Stumbles Outside One</h3>
+            <p>Cursor was fantastic when my app fit comfortably inside a handful of files. The problem starts when your application leaves a single directory sandbox. As the codebase grew into nested routes and database handlers, I watched a simple one-line CSS styling request turn into a fourteen-file git diff.</p>
+            <h3>Google Antigravity and the Power of Strict Rules</h3>
+            <p>To stop AI tools from wandering around my codebase and burning tokens on hallucinated fixes, I moved my setup to Google Antigravity. Antigravity uses static root rule files paired with step-by-step execution. I set nonnegotiable rules at the top level of my project: strict TypeScript types, required Zod validation schemas, required error wrappers and zero edits to database migration files without explicit approval.</p>
+            <h3>Models Generate Possibilities, but Products Need Systems</h3>
+            <p>Every AI tool on the market was built to generate code, but none of them were designed to own product state or be the system itself. I built a runtime engine called Exogram.ai that sits between the model and my application, enforcing the rules the model shouldn't have to decide on. CareerWin.ai became the first production application I built on top of this system.</p>
+        `
+    },
+    {
         slug: "software-cost-zero-product-economist",
         title: "When the Cost of Writing Software Approaches Zero, Traditional PM Frameworks Break Down",
         description: "When generative AI drives the cost of code generation toward zero, developer bandwidth ceases to be the constraint. The bottleneck shifts from managing backlog velocity to managing uncertainty, evaluating system architecture efficiency, and preserving unit margins as a Product Economist.",

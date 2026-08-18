@@ -35,7 +35,8 @@ const BriefCard = ({ number, title, subtitle, href, isNew, date }: BriefCardProp
 
 export default function BriefingsPage() {
     const briefs = [
-        { number: '11', title: 'Real Innovation Requires Deleting Code', subtitle: 'An expert analysis of how to audit for zombie features and execute the Sunset Protocol.', href: 'https://builtin.com/articles/innovation-requires-deleting-code', isNew: true, date: 'Feb 2026' },
+        { number: '12', title: 'I Used AI to Build My Startup (Cursor vs. Google Antigravity)', subtitle: 'Why unconstrained AI coding tools fail outside sandboxes and how static root rules build reliable software.', href: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', isNew: true, date: 'Aug 2026' },
+        { number: '11', title: 'Real Innovation Requires Deleting Code', subtitle: 'An expert analysis of how to audit for zombie features and execute the Sunset Protocol.', href: 'https://builtin.com/articles/innovation-requires-deleting-code', isNew: false, date: 'Feb 2026' },
         { number: '10', title: 'The Audit Interview Scorecard', subtitle: 'When AI writes the code, what are employers actually hiring for? The 4 Dimensions of Engineering Judgment.', href: 'https://builtin.com/articles/audit-interview-scorecard', isNew: true, date: 'Feb 2026' },
         { number: '09', title: 'The 3 Financial Metrics Every PM Needs', subtitle: 'Selected for the Mind the Product Newsletter.', href: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/', isNew: true, date: 'Feb 2026' },
         { number: '08', title: 'Reimagining the Coding Interview', subtitle: 'AI can generate code. The scarce skill is catching what AI gets wrong.', href: 'https://builtin.com/articles/reimagining-coding-interview', isNew: false, date: 'Feb 2026' },

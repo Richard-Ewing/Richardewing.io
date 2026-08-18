@@ -244,11 +244,37 @@ export default function ExogramPage() {
                         </div>
 
                         {/* Analogy callout */}
-                        <div className="max-w-3xl mx-auto bg-purple-50 border border-purple-200 p-8 rounded-xl relative overflow-hidden">
+                        <div className="max-w-3xl mx-auto bg-purple-50 border border-purple-200 p-8 rounded-xl relative overflow-hidden mb-8">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 blur-2xl rounded-full"></div>
                             <p className="text-xl font-bold text-purple-950 relative z-10">
                                 When the early internet started handling real money, we had to invent SSL. AI is at that exact tipping point. Exogram is the SSL certificate for agentic execution.
                             </p>
+                        </div>
+
+                        {/* Built In Case Analysis Spotlight */}
+                        <div className="max-w-3xl mx-auto bg-white border-2 border-cyan-500/30 p-6 sm:p-8 rounded-2xl shadow-sm text-left">
+                            <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                                <span className="px-3 py-1 bg-cyan-100 text-cyan-900 text-xs font-mono font-bold rounded-full border border-cyan-200">
+                                    Built In • August 18, 2026
+                                </span>
+                                <span className="text-xs font-mono text-zinc-500 font-semibold">
+                                    Editor&apos;s Pick
+                                </span>
+                            </div>
+                            <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
+                                Building the Missing Piece: The Exogram Runtime Engine
+                            </h3>
+                            <p className="text-sm text-zinc-700 leading-relaxed font-medium italic mb-4">
+                                &quot;Every AI tool on the market was built to generate code, but none of them were designed to own product state or be the system itself... I stopped treating the model as the application and started treating it as one component inside a larger system. I built a runtime engine called Exogram.ai that sits between the model and my application, enforcing the rules the model shouldn’t have to decide on.&quot;
+                            </p>
+                            <a
+                                href="https://builtin.com/articles/ai-coding-tools-practical-evaluation"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-xs font-mono font-bold text-cyan-900 hover:text-cyan-700 hover:underline inline-flex items-center gap-1"
+                            >
+                                Read Full Article on Built In ↗
+                            </a>
                         </div>
                     </div>
                 </section>

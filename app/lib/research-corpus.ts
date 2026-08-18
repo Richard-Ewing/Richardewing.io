@@ -26,6 +26,24 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
+  // Today's Built In Publication - August 18, 2026
+  {
+    id: 'builtin-ai-coding-tools-practical-evaluation',
+    title: 'I Used AI to Build My Startup. Here’s What I Learned.',
+    url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation',
+    publisher: 'Built In',
+    domain: 'Software Economics',
+    type: 'Executable',
+    editorsPick: true,
+    date: 'August 18, 2026',
+    thesis: 'Transitioning from Cursor to Google Antigravity reveals that unconstrained AI coding tools break complex codebases and inflate token costs through recursive error loops. Enforcing static root rules, step-by-step execution, and decoupling syntax generation from runtime system state is essential for building production-ready applications like CareerWin.ai on Exogram.',
+    relatedConceptIds: ['ai-coding-tool-economics', 'vibe-coding', 'subprime-code-crisis', 'deterministic-governance', 'runtime-vs-alignment', 'spec-driven-development', 'four-laws-probabilistic-software', 'systems-governor', 'ai-volatility-tax', 'context-rot', 'retry-inflation'],
+    relatedGlossarySlugs: ['vibe-coding-debt', 'deterministic-governance', 'subprime-code-crisis', 'systems-governor'],
+    relatedFrameworkSlugs: ['four-laws-probabilistic-software', 'governed-execution'],
+    relatedToolIds: ['copilot-roi', 'aueb', 'pdi'],
+    relatedCaseStudyIds: ['exogram-inference-dividend-optimization', 'saas-cost-collapse'],
+    relatedCurriculumTrackIds: ['engineering-economics', 'ai-economics']
+  },
   // Today's LinkedIn Publication - August 17, 2026
   {
     id: 'linkedin-software-cost-zero-product-economist',
@@ -287,7 +305,24 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     relatedToolIds: ["aueb"]
   },
 
-  // Tier 1 Media  -  Built In (11 Articles)
+  // Tier 1 Media  -  Built In (12 Articles)
+  {
+    id: 'builtin-ai-coding-tools-practical-evaluation',
+    title: 'I Used AI to Build My Startup. Here’s What I Learned.',
+    url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation',
+    publisher: 'Built In',
+    domain: 'Software Economics',
+    type: 'Executable',
+    editorsPick: true,
+    date: 'August 18, 2026',
+    thesis: 'Transitioning from Cursor to Google Antigravity reveals that unconstrained AI coding tools break complex codebases and inflate token costs through recursive error loops. Enforcing static root rules, step-by-step execution, and decoupling syntax generation from runtime system state is essential for building production-ready applications like CareerWin.ai on Exogram.',
+    relatedConceptIds: ['ai-coding-tool-economics', 'vibe-coding', 'subprime-code-crisis', 'deterministic-governance', 'runtime-vs-alignment', 'spec-driven-development', 'four-laws-probabilistic-software', 'systems-governor', 'ai-volatility-tax', 'context-rot', 'retry-inflation'],
+    relatedGlossarySlugs: ['vibe-coding-debt', 'deterministic-governance', 'subprime-code-crisis', 'systems-governor'],
+    relatedFrameworkSlugs: ['four-laws-probabilistic-software', 'governed-execution'],
+    relatedToolIds: ['copilot-roi', 'aueb', 'pdi'],
+    relatedCaseStudyIds: ['exogram-inference-dividend-optimization', 'saas-cost-collapse'],
+    relatedCurriculumTrackIds: ['engineering-economics', 'ai-economics']
+  },
   {
     id: 'builtin-fable-vs-gpt5',
     title: 'Fable 5 vs. GPT-5.6 Sol: Which Model Is Better?',

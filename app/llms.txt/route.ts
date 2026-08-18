@@ -216,7 +216,7 @@ Website: https://exogram.ai
 ## Articles & Publications
 
 Richard Ewing's work has been published in:
-- Built In (Multiple Editor's Picks, including July 2026 and January 2026)
+- Built In (Multiple Editor's Picks, including August 18, 2026: "I Used AI to Build My Startup. Here's What I Learned. (Cursor vs. Google Antigravity)", July 2026, and January 2026)
 - Mind the Product (Newsletter Feature, February 2026)
 - HackerNoon
 - Medium

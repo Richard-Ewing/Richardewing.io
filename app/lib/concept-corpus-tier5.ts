@@ -295,7 +295,8 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     evidenceLedger: [
       { id: 'ev-sdd-1', title: 'The Subprime Code Crisis', url: '/articles/beehiiv-subprime-code-crisis', publisher: 'Beehiiv', type: 'Industry Analysis', strength: 5, role: 'Origin', date: 'August 2026' },
       { id: 'ev-sdd-2', title: 'In the Vibe Coding Era, What Does a Software Engineer Even Do?', url: '/articles/builtin-vibe-coding-era', publisher: 'Built In', type: 'Executive Essay', strength: 4, role: 'Supports', date: 'August 2026' },
-      { id: 'ev-sdd-3', title: 'GitHub Copilot Is Generating More Code Than Your Team Can Review', url: '/articles/cio-copilot-bottleneck', publisher: 'CIO.com', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 2026' }
+      { id: 'ev-sdd-3', title: 'GitHub Copilot Is Generating More Code Than Your Team Can Review', url: '/articles/cio-copilot-bottleneck', publisher: 'CIO.com', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 2026' },
+      { id: 'ev-sdd-4', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In (Editor\'s Pick)', type: 'Industry Analysis', strength: 5, role: 'Supports', date: 'August 18, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'vibe-coding', relationship: 'contradicts' },
@@ -454,7 +455,8 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     evidenceLedger: [
       { id: 'ev-econ-1', title: 'Your Claude API Bill Is Higher Than Your Revenue', url: '/articles/cio-claude-api-bill', publisher: 'CIO.com', type: 'Industry Analysis', strength: 4, role: 'Origin', date: 'August 2026' },
       { id: 'ev-econ-2', title: 'GitHub Copilot Is Generating More Code Than Your Team Can Review', url: '/articles/cio-copilot-bottleneck', publisher: 'CIO.com', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 2026' },
-      { id: 'ev-econ-3', title: 'In the Vibe Coding Era, What Does a Software Engineer Even Do?', url: '/articles/builtin-vibe-coding-era', publisher: 'Built In', type: 'Executive Essay', strength: 4, role: 'Supports', date: 'August 2026' }
+      { id: 'ev-econ-3', title: 'In the Vibe Coding Era, What Does a Software Engineer Even Do?', url: '/articles/builtin-vibe-coding-era', publisher: 'Built In', type: 'Executive Essay', strength: 4, role: 'Supports', date: 'August 2026' },
+      { id: 'ev-econ-4', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In (Editor\'s Pick)', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 18, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'ai-volatility-tax', relationship: 'explains' },

@@ -24,6 +24,18 @@ export const metadata: Metadata = {
 
 const caseStudies = [
     {
+        id: 'cursor-to-antigravity-startup-governance',
+        badge: 'Built In Case Study (Aug 2026)',
+        title: 'Halting Recursive Error Loops & Token Inflation: Transitioning from Cursor to Google Antigravity',
+        metric: '< 20 lines',
+        metricLabel: 'Predictable Git Diff Bound',
+        problem: 'Building multi-tier products with unconstrained AI coding assistants resulted in silent backend overwrites, broken database routes, and runaway token overages from recursive debug loops.',
+        diagnosis: 'Identified root cause: unconstrained assistants treat every task as permission to modify the whole repo, lacking static boundaries and architectural state controls.',
+        action: 'Migrated development to Google Antigravity with strict static root rules (AGENTS.md, mandatory TypeScript, Zod schemas) and paired with Exogram runtime execution boundaries to build CareerWin.ai.',
+        result: 'Reduced diff explosions from 90+ files down to <20 lines per step, eliminated recursive fix loops, and stabilized product margins.',
+        tags: ['Built In', 'Google Antigravity', 'Exogram', 'CareerWin.ai', 'Static Root Rules'],
+    },
+    {
         id: 'exogram-inference-dividend-optimization',
         badge: 'Exogram Runtime Edge',
         title: '50%+ API Token Spend Reduction via Inference Dividend Optimization',

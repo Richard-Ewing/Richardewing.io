@@ -93,6 +93,37 @@ export default function CareerWinPage() {
                             </div>
                         </div>
                     </div>
+
+                    {/* Built In Case Study Spotlight */}
+                    <div className="mb-16 bg-gradient-to-br from-indigo-50 via-white to-purple-50 border border-indigo-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+                        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <span className="px-3 py-1 bg-indigo-100 text-indigo-900 text-xs font-mono font-bold rounded-full border border-indigo-200">
+                                Featured in Built In • August 18, 2026
+                            </span>
+                            <span className="text-xs font-mono text-zinc-500 font-semibold">
+                                Architecture Case Study
+                            </span>
+                        </div>
+                        <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
+                            The Production Architecture Behind CareerWin.ai
+                        </h3>
+                        <p className="text-sm text-zinc-800 leading-relaxed font-medium italic mb-4">
+                            &quot;CareerWin.ai became the first production application I built on top of this system. On previous builds without this layer, setting up authentication, user state, database rules and API limits consumed weeks before I could even touch core product features. Using Google Antigravity alongside Exogram as the underlying runtime engine, the experience was completely different. Setting up security rules, state checks, and safety gates no longer resulted in broken routes or runaway token costs.&quot;
+                        </p>
+                        <div className="flex items-center justify-between flex-wrap gap-4 pt-2 border-t border-indigo-100">
+                            <span className="text-xs font-mono font-bold text-indigo-900">
+                                Built In: &quot;I Used AI to Build My Startup. Here’s What I Learned.&quot;
+                            </span>
+                            <a
+                                href="https://builtin.com/articles/ai-coding-tools-practical-evaluation"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-xs font-mono font-bold text-indigo-700 hover:text-indigo-900 hover:underline inline-flex items-center gap-1"
+                            >
+                                Read Article on Built In ↗
+                            </a>
+                        </div>
+                    </div>
                 </ScrollReveal>
 
                 {/* Core Pillars */}

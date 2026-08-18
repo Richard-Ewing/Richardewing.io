@@ -25,6 +25,12 @@ const publications = [
     platform: "Built In",
     articles: [
       {
+        title: "I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)",
+        url: "https://builtin.com/articles/ai-coding-tools-practical-evaluation",
+        thesis: "I used both Cursor and Google Antigravity to build a business. Six months of late-night error messages taught me why unconstrained AI coding breaks complex codebases and how static root rules build reliable software.",
+        editorsPick: true
+      },
+      {
         title: "Most AI Projects Just Burn Cash. Here's How to Make Them Profitable.",
         url: "https://builtin.com/articles/make-ai-projects-profitable", 
         thesis: "An expert analysis on AI unit economics, the 'Evergreen Ratio', and calculating the AI Volatility Tax to stop bleeding cash on inferencing."

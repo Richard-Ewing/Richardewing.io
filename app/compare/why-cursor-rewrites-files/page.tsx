@@ -51,10 +51,27 @@ export default function WhyCursorRewritesFilesPage() {
                             </div>
                         ))}
                     </div>
-                    <div className="p-4 bg-rose-50 rounded-xl border border-rose-200">
+                    <div className="p-4 bg-rose-50 rounded-xl border border-rose-200 mb-4">
                         <p className="text-sm font-bold text-rose-800">
                             Documented incident: A single &quot;fix CSS animation&quot; prompt resulted in 94 files modified, 3 config files changed, and a completely altered directory structure.
                         </p>
+                    </div>
+
+                    <div className="p-4 bg-cyan-50 rounded-xl border border-cyan-200">
+                        <p className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider mb-1">
+                            Published in Built In • August 18, 2026 (Editor&apos;s Pick)
+                        </p>
+                        <p className="text-sm text-cyan-950 font-medium italic mb-2">
+                            &quot;I asked Cursor to fix a simple login form. 10 seconds later, my login button turned green, but my database didn&apos;t. The AI assistant had quietly rewritten my backend queries, invented a column name that didn&apos;t exist in my schema and broken three API routes.&quot;
+                        </p>
+                        <a
+                            href="https://builtin.com/articles/ai-coding-tools-practical-evaluation"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs font-mono font-bold text-cyan-900 hover:text-cyan-700 hover:underline inline-flex items-center gap-1"
+                        >
+                            Read Full Analysis on Built In ↗
+                        </a>
                     </div>
                 </div>
 

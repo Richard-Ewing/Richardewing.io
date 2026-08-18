@@ -916,7 +916,8 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { stage: 'Tier-1 Article', label: 'Subprime Code Crisis', publisher: 'Built In', date: 'April 2025', summary: 'Coined the Subprime Code Crisis.' }
     ],
     evidenceLedger: [
-      { id: 'ev-scc-1', title: 'Subprime Code Analysis', url: 'https://builtin.com', publisher: 'Built In', type: 'Multi-Company Audit', strength: 5, role: 'Origin', date: 'April 2025' }
+      { id: 'ev-scc-1', title: 'Subprime Code Analysis', url: 'https://builtin.com', publisher: 'Built In', type: 'Multi-Company Audit', strength: 5, role: 'Origin', date: 'April 2025' },
+      { id: 'ev-scc-2', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In (Editor\'s Pick)', type: 'Industry Analysis', strength: 5, role: 'Supports', date: 'August 18, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'vibe-coding', relationship: 'extends' },
@@ -998,7 +999,8 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { stage: 'Tier-1 Article', label: 'Vibe Coding Debt', publisher: 'HackerNoon', date: 'February 2025', summary: 'Defined Vibe Coding Debt.' }
     ],
     evidenceLedger: [
-      { id: 'ev-vc-1', title: 'Vibe Coding Analysis', url: 'https://hackernoon.com', publisher: 'HackerNoon', type: 'Case Study', strength: 5, role: 'Origin', date: 'February 2025' }
+      { id: 'ev-vc-1', title: 'Vibe Coding Analysis', url: 'https://hackernoon.com', publisher: 'HackerNoon', type: 'Case Study', strength: 5, role: 'Origin', date: 'February 2025' },
+      { id: 'ev-vc-2', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In (Editor\'s Pick)', type: 'Industry Analysis', strength: 5, role: 'Supports', date: 'August 18, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'subprime-code-crisis', relationship: 'supports' },

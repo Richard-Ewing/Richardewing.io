@@ -81,6 +81,28 @@ export default function WhyAICodingBurnsMoneyPage() {
                             <p className="text-xs text-[#4A4A4A] mt-2">67 retry attempts on a simple task.</p>
                         </div>
                     </div>
+
+                    <div className="mt-6 p-4 bg-cyan-50 rounded-xl border border-cyan-200">
+                        <div className="flex items-center justify-between gap-2 mb-1">
+                            <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
+                                Published in Built In • August 18, 2026
+                            </span>
+                            <span className="text-[10px] font-mono font-bold bg-cyan-200 text-cyan-900 px-2 py-0.5 rounded">
+                                Editor&apos;s Pick
+                            </span>
+                        </div>
+                        <p className="text-sm text-cyan-950 font-medium italic mb-2">
+                            &quot;Worst of all was the hidden financial cost. As the assistant lost context and spun in circles, my token usage skyrocketed. I burned through my included tokens and had to purchase extra token overages just to feed the model’s recursive error loops... I was spending real money on products that looked great visually in a sandbox, but were completely non-functional behind the scenes.&quot;
+                        </p>
+                        <a
+                            href="https://builtin.com/articles/ai-coding-tools-practical-evaluation"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs font-mono font-bold text-cyan-900 hover:text-cyan-700 hover:underline inline-flex items-center gap-1"
+                        >
+                            Read Full Built In Article on AI Coding Tool Economics ↗
+                        </a>
+                    </div>
                 </div>
 
                 <div className="bg-emerald-50 rounded-2xl border border-emerald-200 p-8 mb-8">
