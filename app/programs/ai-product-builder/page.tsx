@@ -16,19 +16,20 @@ import {
   Target,
   FileCheck,
   ChevronRight,
-  Headphones
+  Headphones,
+  BookOpen
 } from 'lucide-react';
 import ProgramMediaPlayers from '@/components/ai-product-builder/ProgramMediaPlayers';
 
 export const metadata: Metadata = {
-  title: 'The AI Product Builder: 4-Week Technical Founder Cohort',
-  description: 'Go from developer to incorporated founder with paying customers. Capped at 15 builders. Live code reviews, cost governance, and capital rails.',
+  title: 'The AI Product Builder: 4-Week Founder Cohort | Richard Ewing',
+  description: 'Go from domain expert to incorporated AI founder with paying customers. For technical and non-technical builders. Cost governance, $500k capital rails, and live SOW audits.',
   alternates: {
     canonical: 'https://richardewing.io/programs/ai-product-builder',
   },
   openGraph: {
-    title: 'The AI Product Builder: 4-Week Technical Founder Cohort',
-    description: 'Go from developer to incorporated founder with paying customers. Capped at 15 builders. Live code reviews, cost governance, and capital rails.',
+    title: 'The AI Product Builder: 4-Week Founder Cohort | Richard Ewing',
+    description: 'Go from domain expert to incorporated AI founder with paying customers. For technical and non-technical builders. Cost governance, $500k capital rails, and live SOW audits.',
     url: 'https://richardewing.io/programs/ai-product-builder',
     siteName: 'Richard Ewing',
     type: 'website',
@@ -45,7 +46,15 @@ export default function AIProductBuilderPage() {
         "name": "Who is this cohort designed for?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The AI Product Builder is built specifically for technical founders, senior software engineers, and engineering leads who have coding ability but need structured guidance on validation economics, legal entity setup, cost governance, and B2B sales."
+          "text": "The AI Product Builder is designed for both technical engineers and non-technical domain experts (operators, consultants, industry specialists) who want to build real, cash-flowing AI software without getting trapped in the toy wrapper graveyard."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a computer science degree or prior coding experience?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. In 2026, AI coding assistants (like Cursor, Claude, and Antigravity) write the code. We teach you the General Contractor method: how to direct the AI to build clean software while you focus on customer pain, unit economics, legal rails, and sales."
         }
       },
       {
@@ -53,15 +62,7 @@ export default function AIProductBuilderPage() {
         "name": "What is the time commitment required each week?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Expect to commit 8 to 12 hours per week for 4 consecutive weeks. This includes two 2-hour live interactive sessions on Mondays and Thursdays at 6:00 PM PST, plus 4 to 8 hours of dedicated code sprints and customer discovery."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What if I do not have a validated product idea yet?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "That is completely fine. In Week 0 and Week 1, we use our Idea Parking Lot exercise, forum mining recipes, and the Product Sense Framework to locate and validate high-pain business problems before writing code."
+          "text": "Expect to commit 8 to 12 hours per week for 4 consecutive weeks. This includes two 2-hour live interactive sessions on Mondays and Thursdays at 6:00 PM PST, plus dedicated sprints and customer discovery."
         }
       },
       {
@@ -69,7 +70,7 @@ export default function AIProductBuilderPage() {
         "name": "How does the 100% money-back guarantee work?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "If you attend the live sessions, complete the daily sprint assignments, and do not feel you gained at least $10,000 in commercial and architectural clarity by Day 28, simply email Richard for a 100% refund."
+          "text": "If you attend the live sessions, complete the sprint milestones, and do not feel you gained at least $10,000 in commercial, architectural, and capital clarity by Day 28, simply email Richard for a 100% prompt refund."
         }
       }
     ]
@@ -90,15 +91,15 @@ export default function AIProductBuilderPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-semibold uppercase tracking-wider mb-6">
             <Sparkles className="w-3.5 h-3.5" />
-            Strictly Capped at 10 to 15 Technical Founders
+            Strictly Capped at 10 to 15 Founders &amp; Builders
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white max-w-4xl leading-tight sm:leading-none">
-            Build an AI Product That Makes Money: <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-400">Not Just Noise</span>
+            Build an AI Business That Makes Money: <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-400">Not Just Noise</span>
           </h1>
 
           <p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-3xl leading-relaxed">
-            A 4-week cohort for technical engineers bridging the gap between clean code, corporate formation, cost governance, and high-ticket customer acquisition.
+            A 4-week intensive cohort for builders, domain experts, and technical founders bridging the gap between AI coding tools, corporate formation, cost governance, and high-ticket customer acquisition.
           </p>
 
           {/* Action CTAs */}
@@ -110,10 +111,10 @@ export default function AIProductBuilderPage() {
               Apply for Pilot Cohort ($1,500) <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
-              href="/assessment"
+              href="/book"
               className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 text-sm font-semibold transition-all"
             >
-              Take 10-Question Diagnostic <CheckCircle2 className="w-4 h-4 text-sky-400" />
+              Read the Book Blueprint <BookOpen className="w-4 h-4 text-sky-400" />
             </Link>
           </div>
 
@@ -128,8 +129,8 @@ export default function AIProductBuilderPage() {
               <span>Core Modules Scaled</span>
             </div>
             <div>
-              <span className="block font-mono text-xl font-bold text-sky-400">Exogram &amp; CareerWin</span>
-              <span>Proprietary AI Architectures</span>
+              <span className="block font-mono text-xl font-bold text-sky-400">$500k+ Capital</span>
+              <span>Non-Dilutive Credit Playbook</span>
             </div>
             <div>
               <span className="block font-mono text-xl font-bold text-amber-400">100% Day 28</span>
@@ -152,13 +153,13 @@ export default function AIProductBuilderPage() {
               The Fatal Founder Trap
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2">
-              Why Flawless Code Kills AI Startups
+              Why Building in Isolation Kills AI Startups
             </h2>
             <p className="text-sm sm:text-base text-slate-300 mt-4 leading-relaxed">
-              Most engineers execute backwards: they spend 3 months writing clean async FastAPI backends, tuning vector embeddings, and refining UI buttons, only to launch to total silence.
+              Most builders execute backwards: they spend 3 months writing code in private, tuning prompts, and refining UI buttons, only to launch to total silence.
             </p>
             <p className="text-sm sm:text-base text-slate-300 mt-3 leading-relaxed">
-              They fail not because their code was poor, but because they neglected customer discovery, pricing psychology, legal entity setup, and the consulting-to-SaaS flywheel. The AI Product Builder fixes the order of operations permanently.
+              They fail not because their product was bad, but because they neglected customer discovery, pricing psychology, legal entity setup, and the consulting-to-SaaS flywheel. The AI Product Builder fixes the order of operations permanently.
             </p>
           </div>
 
@@ -168,11 +169,11 @@ export default function AIProductBuilderPage() {
                 The Backward Build (Why 90% Fail)
               </h3>
               <ul className="space-y-2 text-xs text-slate-300">
-                <li>• Code for 90 days in private isolation</li>
+                <li>• Build for 90 days in private isolation</li>
                 <li>• Generic landing page with no human outcome</li>
                 <li>• Uncontrolled LLM inference costs and token leaks</li>
                 <li>• Launch on Product Hunt to zero paying customers</li>
-                <li>• Burn out and abandon the repository</li>
+                <li>• Burn out and abandon the project</li>
               </ul>
             </div>
 
@@ -182,8 +183,8 @@ export default function AIProductBuilderPage() {
               </h3>
               <ul className="space-y-2 text-xs text-slate-300">
                 <li>• Validate business pain via Reddit &amp; live discovery calls (Week 1)</li>
-                <li>• Deploy cost-governed semantic caching and Stripe (Week 2)</li>
-                <li>• Incorporate LLC, file SAM.gov, and capture $100k+ credits (Week 3)</li>
+                <li>• Direct AI tools like a General Contractor with smart caching (Week 2)</li>
+                <li>• Incorporate LLC, file SAM.gov, and capture $500k+ credits (Week 3)</li>
                 <li>• Secure 10 paying pilot customers before public exposure (Week 4)</li>
                 <li>• Use high-ticket consulting cash flow to fund software scale</li>
               </ul>
@@ -211,15 +212,15 @@ export default function AIProductBuilderPage() {
             <Target className="w-6 h-6 text-sky-400" />
             <h3 className="text-base font-bold text-white">1. Product Sense &amp; Validation</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              The Mom Test framework, the 3 layers of customer pain, and Google PM methods adapted for lean technical founders.
+              The Mom Test framework, the 3 layers of customer pain, and Google PM methods adapted for lean founders.
             </p>
           </div>
 
           <div className="p-6 bg-slate-900/80 rounded-2xl border border-slate-800 space-y-2">
             <Cpu className="w-6 h-6 text-emerald-400" />
-            <h3 className="text-base font-bold text-white">2. Technical Architecture</h3>
+            <h3 className="text-base font-bold text-white">2. General Contractor Tech Architecture</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              FastAPI correlation IDs, Redis semantic caching at 0.92 cosine similarity, and hard HTTP 402 cost-caps.
+              Directing AI assistants, Redis semantic caching at 0.92 cosine similarity, and hard HTTP 402 cost-caps.
             </p>
           </div>
 
@@ -243,7 +244,7 @@ export default function AIProductBuilderPage() {
             <FileCheck className="w-6 h-6 text-rose-400" />
             <h3 className="text-base font-bold text-white">5. Value-Based Pricing</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Moving from cost-plus server math to 10x ROI anchors, $500 strategic pilots, and $7,500 forensic code audits.
+              Moving from cost-plus server math to 10x ROI anchors, $500 strategic pilots, and $7,500 forensic audits.
             </p>
           </div>
 
@@ -285,7 +286,7 @@ export default function AIProductBuilderPage() {
             </div>
             <div className="p-4 bg-slate-950/60 rounded-xl border border-slate-800 space-y-2">
               <span className="text-xs font-mono font-bold text-emerald-400">Week 2</span>
-              <h4 className="text-sm font-bold text-white">Architecture &amp; Code</h4>
+              <h4 className="text-sm font-bold text-white">Architecture &amp; Smart Caching</h4>
               <p className="text-xs text-slate-400">FastAPI, Redis semantic caching (0.92 cosine), and Stripe webhooks.</p>
             </div>
             <div className="p-4 bg-slate-950/60 rounded-xl border border-slate-800 space-y-2">
@@ -312,7 +313,7 @@ export default function AIProductBuilderPage() {
             Select Your Builder Tier
           </h2>
           <p className="text-sm text-slate-400 mt-2">
-            Pilot cohort seats are limited to 10 builders to ensure direct code reviews with Richard Ewing.
+            Pilot cohort seats are limited to 10 builders to ensure direct 1:1 guidance with Richard Ewing.
           </p>
         </div>
 
@@ -342,7 +343,7 @@ export default function AIProductBuilderPage() {
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
-                  <span>All 50+ System Prompts &amp; Code Boilerplates</span>
+                  <span>All 50+ System Prompts &amp; Boilerplates</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
@@ -381,11 +382,11 @@ export default function AIProductBuilderPage() {
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-slate-400 shrink-0" />
-                  <span>Small-Group Code Review Sessions</span>
+                  <span>Small-Group Product &amp; Architecture Reviews</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-slate-400 shrink-0" />
-                  <span>Full Prompt Library &amp; Boilerplates</span>
+                  <span>Full Prompt Library &amp; Starter Templates</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-slate-400 shrink-0" />
@@ -406,7 +407,7 @@ export default function AIProductBuilderPage() {
           <div className="p-8 bg-slate-900/60 rounded-3xl border border-slate-800 flex flex-col justify-between">
             <div>
               <h3 className="text-lg font-bold text-white">Enterprise &amp; 1:1 Advisory</h3>
-              <p className="text-xs text-slate-400 mt-1">Dedicated advisory for venture teams and spin-outs.</p>
+              <p className="text-xs text-slate-400 mt-1">Dedicated advisory for venture teams and domain leaders.</p>
               
               <div className="my-6">
                 <span className="text-4xl font-extrabold text-white font-mono">$7,500</span>
@@ -452,7 +453,7 @@ export default function AIProductBuilderPage() {
               The 100% Day-28 Money-Back Guarantee
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed max-w-2xl">
-              Attend the live sessions, execute the daily sprints, and submit your deliverables. If you do not feel you gained at least $10,000 in commercial and architectural clarity by Day 28, email us for a prompt, 100% refund. Zero friction.
+              Attend the live sessions, execute the daily sprints, and submit your deliverables. If you do not feel you gained at least $10,000 in commercial, capital, and architectural clarity by Day 28, email us for a prompt, 100% refund. Zero friction.
             </p>
           </div>
         </div>
@@ -470,7 +471,14 @@ export default function AIProductBuilderPage() {
           <div className="p-6 bg-slate-900/70 rounded-2xl border border-slate-800">
             <h3 className="text-sm font-bold text-white mb-2">Who is this cohort designed for?</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Technical founders, senior engineers, and engineering leads who can code but need structured execution on validation economics, legal setup, cost governance, and customer acquisition.
+              Both technical founders and non-technical domain experts (operators, consultants, industry specialists) who want to build real, cash-flowing AI software without getting trapped in the toy wrapper graveyard.
+            </p>
+          </div>
+
+          <div className="p-6 bg-slate-900/70 rounded-2xl border border-slate-800">
+            <h3 className="text-sm font-bold text-white mb-2">Do I need a computer science degree or prior coding experience?</h3>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              No. In 2026, AI coding assistants write the code. We teach you the General Contractor method: how to direct the AI to build clean software while you focus on customer pain, unit economics, legal rails, and sales.
             </p>
           </div>
 
@@ -484,7 +492,7 @@ export default function AIProductBuilderPage() {
           <div className="p-6 bg-slate-900/70 rounded-2xl border border-slate-800">
             <h3 className="text-sm font-bold text-white mb-2">What tech stack is supported?</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              While our provided boilerplates use Python (FastAPI), TypeScript (Next.js 14), PostgreSQL (Supabase), and Redis, the architectural patterns (semantic caching, HMAC cross-talk, Stripe webhooks) apply to any modern web stack.
+              While our provided starter templates use Python (FastAPI), TypeScript (Next.js 14), PostgreSQL (Supabase), and Redis, the architectural patterns (semantic caching, HMAC cross-talk, Stripe webhooks) apply to any modern web stack.
             </p>
           </div>
         </div>

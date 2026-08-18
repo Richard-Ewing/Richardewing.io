@@ -360,10 +360,12 @@ const curriculumData: WeekModule[] = [
 ];
 
 const glossaryTerms = [
+  { term: "The General Contractor Method", def: "Directing AI coding assistants with clear house rules (.cursorrules) and architecture boundaries while focusing on customer discovery, unit economics, and sales without needing to write raw syntax by hand." },
+  { term: "The Embedded Founder", def: "A founder strategy where you conduct a 2-week hands-on audit ($7,500) inside a client's operation to solve their problem manually, uncover proprietary edge cases, and use that cash flow to fund software development." },
+  { term: "The Smart Whiteboard (Semantic Cache)", def: "A caching system that uses vector embeddings (at 0.92 cosine similarity) to identify semantically identical user queries and return cached LLM responses, reducing API costs by 30% to 60%." },
   { term: "Cognitive Division of Labor", def: "A framework assigning distinct AI models to specific cognitive functions: Claude for deep thinking, Perplexity for search/research, Kimi for emotional persona simulation, and GPT-4o for code generation." },
-  { term: "Semantic Cache", def: "A caching system that uses vector embeddings (at 0.92 cosine similarity) to identify semantically identical user queries and return cached LLM responses, reducing API costs by 30% to 60%." },
   { term: "The Mom Test", def: "A customer discovery interviewing methodology designed by Rob Fitzpatrick to avoid getting polite lies by asking only about past behavior and actual money spent, never hypothetical future intentions." },
-  { term: "Richard's Rule (Entity Formation)", def: "The rule stating that technical founders should start as a low-cost LLC and convert to a Delaware C-Corp only when institutional venture capital requires it via a signed term sheet." },
+  { term: "Richard's Rule (Entity Formation)", def: "The rule stating that founders should start as a low-cost LLC and convert to a Delaware C-Corp only when institutional venture capital requires it via a signed term sheet." },
   { term: "5-Second Landing Page Rule", def: "The conversion design requirement that a visitor must understand what the product does, who it is for, the measurable outcome, and the next step within 5 seconds of landing." },
   { term: "Silent Launch Strategy", def: "The practice of securing 10 paying customers or signed pilots via direct outreach before announcing the product publicly on Product Hunt, Hacker News, or social media." },
   { term: "Interlocking Flywheel", def: "A business model combining SaaS subscriptions, high-ticket consulting audits, and authority content where consulting cash funds SaaS development and content drives inbound leads for both." },
