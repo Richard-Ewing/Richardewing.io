@@ -46,44 +46,45 @@ export const metadata: Metadata = {
 
 const chapters = [
   {
-    section: "Section 1: Finding Your Idea & Validating Real Human Pain",
-    desc: "Uncovering your authentic unfair advantage and discovering what people actively hate and pay to fix.",
+    section: "Stage 1: Mapping the Territory (Customer Pain & Product Sense)",
+    desc: "Uncovering your authentic unfair foothold and applying the Meta & Google Product Sense framework to find high-pain niches.",
     items: [
-      "Chapter 1: The Life Experience Audit (Your Unfair Advantage)",
-      "Chapter 2: Assembling Your AI Dream Team (Without Hiring Anyone)",
-      "Chapter 3: Internet Detective Work (Finding What People Hate & Complain About)",
-      "Chapter 4: The 15-Minute Coffee Chat (How to Talk to Customers Without Pitching)"
+      "Chapter 1: The Life Experience Audit (Your Unfair Foothold)",
+      "Chapter 2: The Meta & Google Product Sense Method for Solo Builders",
+      "Chapter 3: Assembling Your Virtual Crew (Cognitive Division of Labor)",
+      "Chapter 4: Field Scouting (Finding Where People Complain When Nobody Is Watching)",
+      "Chapter 5: The 15-Minute Coffee Chat (Getting the Truth Without Pitching)"
     ]
   },
   {
-    section: "Section 2: How AI Software Actually Works (In Plain English)",
-    desc: "De-jargonizing software architecture, the General Contractor method, and smart caching.",
+    section: "Stage 2: Building the Base Camp (De-Jargonized Systems & Smart Economics)",
+    desc: "De-jargonizing software architecture, the General Contractor method, and smart whiteboard caching.",
     items: [
-      "Chapter 5: De-Jargonizing the Tech Stack (Frontends, Backends, and Databases)",
-      "Chapter 6: The Smart Notebook Trick (How to Stop AI from Bankrupting You)",
-      "Chapter 7: Markdown Files: The Cheapest Database on Earth",
-      "Chapter 8: Managing Your AI Coding Assistant Like a Smart Intern (.cursorrules)",
-      "Chapter 9: Keeping Customer Data Safe & Getting Paid via Stripe"
+      "Chapter 6: The General Contractor Method (How Software Actually Works)",
+      "Chapter 7: The Smart Whiteboard Trick (Stopping AI Bills from Draining Your Wallet)",
+      "Chapter 8: Markdown Files: The Cheapest Database on Earth",
+      "Chapter 9: Setting House Rules for Your AI Assistants (.cursorrules)",
+      "Chapter 10: Safe Passage (Customer Data Privacy & Getting Paid via Stripe)"
     ]
   },
   {
-    section: "Section 3: Legal Setup, Free Money & Government Grants",
+    section: "Stage 3: Passing the Border (Legal Rails & Non-Dilutive Capital)",
     desc: "Setting up your entity cleanly and claiming non-dilutive capital before writing code.",
     items: [
-      "Chapter 10: The Simple 4-Step Legal Setup (Richard's Rule: Don't Overpay Lawyers)",
-      "Chapter 11: How to Claim $500,000 in Free Cloud Compute & AI Credits",
-      "Chapter 12: Getting Paid by the Government (SAM.gov & Free Federal SBIR Grants)",
-      "Chapter 13: The Confidence Game (Why You Should Apply to YC and Thiel Fellowship)"
+      "Chapter 11: The 4-Step Simple Legal Setup (Richard's Rule: Don't Overpay Lawyers)",
+      "Chapter 12: Claiming $500,000 in Free Cloud Compute & AI Credits",
+      "Chapter 13: Getting Paid by the Government (SAM.gov & Federal SBIR Grants)",
+      "Chapter 14: The Confidence Game (Why You Should Apply to YC and Thiel Fellowship)"
     ]
   },
   {
-    section: "Section 4: Making Real Money & Launching Without Noise",
+    section: "Stage 4: Establishing Trade Routes (Pricing, Pilots & The Cash-Flow Flywheel)",
     desc: "Using high-ticket audits to fund software and closing 10 paying customers in private.",
     items: [
-      "Chapter 14: The Embedded Founder (How a $7,500 Audit Pays Your Bills While You Build)",
-      "Chapter 15: Sweaty-Palm Pricing & The $500 Paid Pilot (The Rule of the Awkward Silence)",
-      "Chapter 16: The 5-Second Website & Getting Indexed Fast",
-      "Chapter 17: The Silent Launch & Your 5-Day Email Nurture Funnel"
+      "Chapter 15: The Embedded Founder (How a $7,500 Audit Pays Your Bills While You Build)",
+      "Chapter 16: Sweaty-Palm Pricing & The $500 Paid Pilot (The Rule of the Awkward Silence)",
+      "Chapter 17: The 5-Second Landing Page & Domain Sandboxing",
+      "Chapter 18: The Silent Launch & The 5-Day Email Funnel"
     ]
   }
 ];
