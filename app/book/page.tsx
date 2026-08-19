@@ -50,7 +50,7 @@ const chapters = [
     desc: "Uncovering your authentic unfair foothold and applying the Meta & Google Product Sense framework to find high-pain niches.",
     items: [
       "Chapter 1: The Life Experience Audit (Your Unfair Foothold)",
-      "Chapter 2: The Meta & Google Product Sense Method for Solo Builders",
+      "Chapter 2: The Wedge Scout Framework (Finding What People Pay to Fix)",
       "Chapter 3: Assembling Your Virtual Crew (Cognitive Division of Labor)",
       "Chapter 4: Field Scouting (Finding Where People Complain When Nobody Is Watching)",
       "Chapter 5: The 15-Minute Coffee Chat (Getting the Truth Without Pitching)"
