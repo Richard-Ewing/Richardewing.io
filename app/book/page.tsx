@@ -47,44 +47,46 @@ export const metadata: Metadata = {
 const chapters = [
   {
     section: "Stage 1: Mapping the Territory (Customer Pain & The Wedge Scout)",
-    desc: "Uncovering your authentic unfair foothold and applying the Wedge Scout framework to find high-pain niches.",
+    desc: "Uncovering your authentic unfair foothold, the 10-Signal Evidence Stack, and the Decision Ladder for when NOT to build.",
     items: [
       "Chapter 1: The Life Experience Audit (Your Unfair Foothold)",
-      "Chapter 2: The Wedge Scout Framework (Finding What People Pay to Fix)",
-      "Chapter 3: Cognitive Task Allocation (Principles Over Model Names)",
-      "Chapter 4: Field Scouting (Finding Where People Complain When Nobody Is Watching)",
-      "Chapter 5: The Discovery Conversation (Getting the Truth Without Pitching)"
+      "Chapter 2: The Wedge Scout Framework & The Evidence Stack",
+      "Chapter 3: The Decision Ladder: When NOT to Build Software",
+      "Chapter 4: The 'Why Not ChatGPT?' Defensibility Test",
+      "Chapter 5: Cognitive Task Allocation (Principles Over Model Names)",
+      "Chapter 6: Field Scouting & The Discovery Conversation"
     ]
   },
   {
     section: "Stage 2: Building the Base Camp (De-Jargonized Systems & Smart Economics)",
-    desc: "De-jargonizing software architecture, the General Contractor method, and smart whiteboard caching.",
+    desc: "The General Contractor method, the Software Inspection Checklist, Outcome Economics, and smart caching.",
     items: [
-      "Chapter 6: The General Contractor Method (How Software Actually Works)",
-      "Chapter 7: The Smart Whiteboard Trick (Stopping AI Bills from Draining Your Wallet)",
-      "Chapter 8: Markdown Files: The Cheapest Database on Earth",
-      "Chapter 9: Setting House Rules for Your AI Assistants (.cursorrules)",
-      "Chapter 10: Safe Passage (Customer Data Privacy & Getting Paid via Stripe)"
+      "Chapter 7: The General Contractor Method & The Software Inspection Checklist",
+      "Chapter 8: Outcome Economics: Managing Cost Per Successful Customer Job",
+      "Chapter 9: The Economics of Caching & Cost Control",
+      "Chapter 10: Deterministic Context: The Cheapest Database on Earth",
+      "Chapter 11: Setting House Rules for AI Assistants (.cursorrules & Directives)",
+      "Chapter 12: Safe Passage (Customer Data Privacy & Getting Paid via Stripe)"
     ]
   },
   {
     section: "Stage 3: Passing the Border (Legal Rails & Non-Dilutive Capital)",
-    desc: "Setting up your entity cleanly and claiming non-dilutive capital before writing code.",
+    desc: "Sensible entity formation, navigating startup credit tiers realistically, and claiming federal SBIR grants.",
     items: [
-      "Chapter 11: The 4-Step Simple Legal Setup (Richard's Rule: Don't Overpay Lawyers)",
-      "Chapter 12: Claiming $500,000 in Free Cloud Compute & AI Credits",
-      "Chapter 13: Getting Paid by the Government (SAM.gov & Federal SBIR Grants)",
-      "Chapter 14: The Confidence Game (Why You Should Apply to YC and Thiel Fellowship)"
+      "Chapter 13: Sensible Entity Formation (Richard's Rule: Formalities & Tax Reserves)",
+      "Chapter 14: Navigating Cloud Credits & Startup Programs (Realistic Tiers vs Caps)",
+      "Chapter 15: Non-Dilutive Government Grants (SAM.gov & SBIR)",
+      "Chapter 16: The Clarifying Power of High-Stakes Compression"
     ]
   },
   {
-    section: "Stage 4: Establishing Trade Routes (Pricing, Pilots & The Cash-Flow Flywheel)",
-    desc: "Using high-ticket audits to fund software and closing 10 paying customers in private.",
+    section: "Stage 4: Establishing Trade Routes (The Embedded Founder Flywheel)",
+    desc: "The complete 6-stage flywheel, value-based pricing heuristics, distribution, and customer retention loops.",
     items: [
-      "Chapter 15: The Embedded Founder (How a $7,500 Audit Pays Your Bills While You Build)",
-      "Chapter 16: Sweaty-Palm Pricing & The $500 Paid Pilot (The Rule of the Awkward Silence)",
-      "Chapter 17: The 5-Second Landing Page & Domain Sandboxing",
-      "Chapter 18: The Silent Launch & The 5-Day Email Funnel"
+      "Chapter 17: The Embedded Founder (Services as the Research Lab & Financing Engine)",
+      "Chapter 18: Value-Based Pricing & The Strategic Paid Pilot (The Awkward Silence)",
+      "Chapter 19: Distribution, Retention & The Customer Stickiness Loop",
+      "Chapter 20: The Quiet Launch & The 5-Day Nurture Funnel"
     ]
   }
 ];
