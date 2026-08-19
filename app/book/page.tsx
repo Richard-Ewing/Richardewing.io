@@ -20,7 +20,7 @@ import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
   title: 'The Pragmatic AI Builder Book | Richard Ewing',
-  description: 'How anyone can build, price, and launch a profitable AI business with or without a tech background. The full-stack engineering, economics, and GTM blueprint.',
+  description: 'How to turn what you already know into an AI business without venture capital theater. A field guide to domain validation, unit economics, and cash-flow-funded software.',
   keywords: [
     'The Pragmatic AI Builder',
     'AI founder book',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://richardewing.io/book' },
   openGraph: {
     title: 'The Pragmatic AI Builder - Book | Richard Ewing',
-    description: 'How anyone can build, price, and launch a profitable AI business with or without a tech background.',
+    description: 'How to turn what you already know into an AI business without venture capital theater.',
     url: 'https://richardewing.io/book',
     siteName: 'Richard Ewing',
     type: 'website',
@@ -40,20 +40,20 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'The Pragmatic AI Builder - Book | Richard Ewing',
-    description: 'The definitive full-stack engineering, economics, and GTM blueprint for modern AI builders.',
+    description: 'A field guide to turning domain knowledge into software without venture capital theater.',
   },
 };
 
 const chapters = [
   {
-    section: "Stage 1: Mapping the Territory (Customer Pain & Product Sense)",
-    desc: "Uncovering your authentic unfair foothold and applying the Meta & Google Product Sense framework to find high-pain niches.",
+    section: "Stage 1: Mapping the Territory (Customer Pain & The Wedge Scout)",
+    desc: "Uncovering your authentic unfair foothold and applying the Wedge Scout framework to find high-pain niches.",
     items: [
       "Chapter 1: The Life Experience Audit (Your Unfair Foothold)",
       "Chapter 2: The Wedge Scout Framework (Finding What People Pay to Fix)",
-      "Chapter 3: Assembling Your Virtual Crew (Cognitive Division of Labor)",
+      "Chapter 3: Cognitive Task Allocation (Principles Over Model Names)",
       "Chapter 4: Field Scouting (Finding Where People Complain When Nobody Is Watching)",
-      "Chapter 5: The 15-Minute Coffee Chat (Getting the Truth Without Pitching)"
+      "Chapter 5: The Discovery Conversation (Getting the Truth Without Pitching)"
     ]
   },
   {
