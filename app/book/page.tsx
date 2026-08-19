@@ -117,7 +117,7 @@ export default function BookPage() {
         "name": "What templates and tools are included with the book?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The book includes a complete $7,500 Forensic Audit Statement of Work (SOW), the $500 Strategic Pilot Agreement, the drop-in .cursorrules starter pack, 12 multi-model prompt sequences, and the $500,000 non-dilutive credit checklist."
+          "text": "The book includes the complete Forensic Audit Statement of Work (SOW), the Strategic Paid Pilot Agreement template, the drop-in .cursorrules builder directives, the Builder's Nine Questions inspection checklist, and the startup credit readiness guide."
         }
       }
     ]
