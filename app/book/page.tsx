@@ -46,22 +46,22 @@ export const metadata: Metadata = {
 
 const chapters = [
   {
-    section: "Stage 1: Mapping the Territory (Customer Pain & The Wedge Scout)",
+    section: "Part I: Should I Build This? (Customer Pain & The Wedge Scout)",
     desc: "Uncovering your authentic unfair foothold, the 10-Signal Evidence Stack, and the Decision Ladder for when NOT to build.",
     items: [
       "Chapter 1: The Life Experience Audit (Your Unfair Foothold)",
       "Chapter 2: The Wedge Scout Framework & The Evidence Stack",
       "Chapter 3: The Decision Ladder: When NOT to Build Software",
-      "Chapter 4: The 'Why Not ChatGPT?' Defensibility Test",
+      "Chapter 4: The Triple Defensibility Test (Why Not ChatGPT, SaaS, or Internal Build?)",
       "Chapter 5: Cognitive Task Allocation (Principles Over Model Names)",
       "Chapter 6: Field Scouting & The Discovery Conversation"
     ]
   },
   {
-    section: "Stage 2: Building the Base Camp (De-Jargonized Systems & Smart Economics)",
-    desc: "The General Contractor method, the Software Inspection Checklist, Outcome Economics, and smart caching.",
+    section: "Part II: If So, How Should I Build It? (De-Jargonized Systems & Smart Economics)",
+    desc: "The General Contractor method, The Builder's Nine Questions, Outcome Economics, and smart caching.",
     items: [
-      "Chapter 7: The General Contractor Method & The Software Inspection Checklist",
+      "Chapter 7: The General Contractor Method & The Builder's Nine Questions",
       "Chapter 8: Outcome Economics: Managing Cost Per Successful Customer Job",
       "Chapter 9: The Economics of Caching & Cost Control",
       "Chapter 10: Deterministic Context: The Cheapest Database on Earth",
@@ -70,7 +70,7 @@ const chapters = [
     ]
   },
   {
-    section: "Stage 3: Passing the Border (Legal Rails & Non-Dilutive Capital)",
+    section: "Part III: How Do I Structure the Business? (Legal Rails & Non-Dilutive Capital)",
     desc: "Sensible entity formation, navigating startup credit tiers realistically, and claiming federal SBIR grants.",
     items: [
       "Chapter 13: Sensible Entity Formation (Richard's Rule: Formalities & Tax Reserves)",
@@ -80,12 +80,12 @@ const chapters = [
     ]
   },
   {
-    section: "Stage 4: Establishing Trade Routes (The Embedded Founder Flywheel)",
+    section: "Part IV: How Do I Turn It into a Real Company? (The Embedded Founder Flywheel)",
     desc: "The complete 6-stage flywheel, value-based pricing heuristics, distribution, and customer retention loops.",
     items: [
       "Chapter 17: The Embedded Founder (Services as the Research Lab & Financing Engine)",
       "Chapter 18: Value-Based Pricing & The Strategic Paid Pilot (The Awkward Silence)",
-      "Chapter 19: Distribution, Retention & The Customer Stickiness Loop",
+      "Chapter 19: Distribution, Retention & Pain Reoccurrence",
       "Chapter 20: The Quiet Launch & The 5-Day Nurture Funnel"
     ]
   }
