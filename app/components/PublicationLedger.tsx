@@ -100,6 +100,26 @@ const publications = [
         thesis: "A forensic breakdown of product-market fit failures and technical excellence in the AI space."
       }
     ]
+  },
+  {
+    platform: "LinkedIn",
+    articles: [
+      {
+        title: "The AI Economist: Leading Product Strategy When Build Costs Approach Zero",
+        url: "https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic",
+        thesis: "When generative AI collapses the cost of writing software toward zero, developer bandwidth ceases to be the constraint. The bottleneck shifts to managing uncertainty, evaluating system architecture efficiency, and preserving unit margins."
+      },
+      {
+        title: "Why Static Resumes Are Dead: The Shift to Career Operating Systems",
+        url: "https://www.linkedin.com/pulse/why-static-resumes-dead-shift-career-operating-systems-richard-ewing-iui1c",
+        thesis: "Static PDF resumes fail in an AI-native hiring market. The future belongs to dynamic Career Operating Systems (like CareerWin.ai) that transform flat career claims into live, verified talent intelligence."
+      },
+      {
+        title: "How to Reduce LLM Costs in Production: The Inference Dividend Model",
+        url: "https://www.linkedin.com/pulse/how-reduce-llm-costs-production-inference-dividend-model-ewing-nwtgc/",
+        thesis: "Introduces the Inference Dividend Model and empirical telemetry demonstrating 50%+ reduction in API runtime spend."
+      }
+    ]
   }
 ];
 

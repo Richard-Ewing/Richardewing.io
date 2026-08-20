@@ -14,6 +14,38 @@ export interface Article {
 
 export const articles: Article[] = [
     {
+        slug: "ai-economist-leading-product-strategy-zero-cost",
+        title: "The AI Economist: Leading Product Strategy When Build Costs Approach Zero",
+        description: "For two decades, product management assumed developer time was the rarest asset. When generative AI drives build costs toward zero, developer bandwidth ceases to be the constraint. Learn how the bottleneck shifts to managing uncertainty, evaluating system architecture efficiency, and preserving unit margins as a Product Economist.",
+        date: "August 2026",
+        readTime: "5 min read",
+        source: "LinkedIn",
+        category: "Economics",
+        externalUrl: "https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic",
+        content: `
+            <p>For two decades, software product management has operated under a single core assumption: engineering time is the scarcest and most expensive asset in the company.</p>
+            <p>Product frameworks (Agile, Scrum, story points, feature roadmaps) were designed to solve one specific challenge: how to maximize the features shipped given constrained developer capacity. When generative AI drives the cost of writing code toward zero, developer bandwidth ceases to be the constraint.</p>
+            <h3>The Transition to Product Economics</h3>
+            <p>The bottleneck shifts from managing backlog velocity to managing uncertainty, evaluating system architecture efficiency, and preserving unit margins as a Product Economist.</p>
+        `
+    },
+    {
+        slug: "why-static-resumes-dead-career-operating-systems",
+        title: "Why Static Resumes Are Dead: The Shift to Career Operating Systems",
+        description: "For decades, career management revolved around a single document: the PDF resume. In an era where AI screens candidates in milliseconds and work outputs evolve dynamically, static resumes fail to capture real-time competency and verifiable problem-solving. Discover why dynamic Career Operating Systems are replacing flat resumes.",
+        date: "August 2026",
+        readTime: "4 min read",
+        source: "LinkedIn",
+        category: "Career",
+        externalUrl: "https://www.linkedin.com/pulse/why-static-resumes-dead-shift-career-operating-systems-richard-ewing-iui1c",
+        content: `
+            <p>For decades, career management has revolved around a single document: the PDF resume. Professionals draft a summary of their work history, polish the formatting, and send it into hiring systems.</p>
+            <p>In an era where AI screens candidates in milliseconds and work outputs evolve dynamically, static resumes fail to capture real-time competency, verifiable problem-solving, and continuous architectural skill evolution.</p>
+            <h3>The Rise of Career Operating Systems</h3>
+            <p>The market is shifting to dynamic Career Operating Systems (like CareerWin.ai) that transform flat career claims into live, verified talent intelligence.</p>
+        `
+    },
+    {
         slug: "ai-coding-tools-practical-evaluation",
         title: "I Used AI to Build My Startup. Here’s What I Learned.",
         description: "I asked Cursor to fix a simple login form. 10 seconds later, my login button turned green, but my database didn’t. Discover why unconstrained AI tools break complex codebases and how static root rules with Google Antigravity build reliable software.",

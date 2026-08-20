@@ -336,13 +336,16 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     ],
     executableTool: { name: 'Product Debt Index (PDI)', url: '/tools/pdi', description: 'Quantify the carrying cost and valuation drag of unmanaged software feature accumulation.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
-      { step: 1, title: 'When the Cost of Writing Software Approaches Zero, Traditional PM Frameworks Break Down', publisher: 'LinkedIn', type: 'Executive Essay', url: 'https://www.linkedin.com/in/richard-ewing-mba/' },
-      { step: 2, title: 'Hey, Senior PMs: Shipping Faster Won’t Get You Promoted', publisher: 'CIO.com', type: 'Canonical Essay', url: 'https://www.cio.com/article/4128139/hey-senior-pms-shipping-faster-wont-get-you-promoted.html' }
+      { step: 1, title: 'The AI Economist: Leading Product Strategy When Build Costs Approach Zero', publisher: 'LinkedIn', type: 'Executive Essay', url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic' },
+      { step: 2, title: 'When the Cost of Writing Software Approaches Zero, Traditional PM Frameworks Break Down', publisher: 'LinkedIn', type: 'Executive Essay', url: 'https://www.linkedin.com/in/richard-ewing-mba/' },
+      { step: 3, title: 'Hey, Senior PMs: Shipping Faster Won’t Get You Promoted', publisher: 'CIO.com', type: 'Canonical Essay', url: 'https://www.cio.com/article/4128139/hey-senior-pms-shipping-faster-wont-get-you-promoted.html' }
     ],
     provenanceTimeline: [
+      { stage: 'LinkedIn Essay', label: 'Leading Product Strategy When Build Costs Approach Zero', publisher: 'LinkedIn', date: 'August 20, 2026', url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic', summary: 'Explained the shift from developer capacity management to managing uncertainty, evaluating system architecture efficiency, and preserving unit margins.' },
       { stage: 'LinkedIn Essay', label: 'Software Phase Transition Framework', publisher: 'LinkedIn', date: 'August 17, 2026', url: 'https://www.linkedin.com/in/richard-ewing-mba/', summary: 'Introduced the Solid-Liquid-Gas Software Creation Matrix and defined the imperative for Product Economists.' }
     ],
     evidenceLedger: [
+      { id: 'ev-spt-2', title: 'The AI Economist: Leading Product Strategy When Build Costs Approach Zero', url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic', publisher: 'LinkedIn', type: 'Executive Publication', strength: 5, role: 'Extends', date: 'August 20, 2026' },
       { id: 'ev-spt-1', title: 'When the Cost of Writing Software Approaches Zero, Traditional PM Frameworks Break Down', url: 'https://www.linkedin.com/in/richard-ewing-mba/', publisher: 'LinkedIn', type: 'Executive Publication', strength: 5, role: 'Origin', date: 'August 17, 2026' }
     ],
     relatedConceptSlugs: [
@@ -824,14 +827,17 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     ],
     executableTool: { name: 'Product Debt Index (PDI)', url: '/tools/pdi', description: 'Quantify product backlog technical debt against revenue margin impact.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
-      { step: 1, title: 'When the Cost of Writing Software Approaches Zero, Traditional PM Frameworks Break Down', publisher: 'LinkedIn', type: 'Canonical Essay', url: 'https://www.linkedin.com/in/richard-ewing-mba/' },
-      { step: 2, title: 'The Rise of the AI Product Economist', publisher: 'Mind the Product', type: 'Canonical Essay', url: 'https://www.mindtheproduct.com' }
+      { step: 1, title: 'The AI Economist: Leading Product Strategy When Build Costs Approach Zero', publisher: 'LinkedIn', type: 'Canonical Essay', url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic' },
+      { step: 2, title: 'When the Cost of Writing Software Approaches Zero, Traditional PM Frameworks Break Down', publisher: 'LinkedIn', type: 'Canonical Essay', url: 'https://www.linkedin.com/in/richard-ewing-mba/' },
+      { step: 3, title: 'The Rise of the AI Product Economist', publisher: 'Mind the Product', type: 'Canonical Essay', url: 'https://www.mindtheproduct.com' }
     ],
     provenanceTimeline: [
+      { stage: 'LinkedIn Essay', label: 'Leading Product Strategy When Build Costs Approach Zero', publisher: 'LinkedIn', date: 'August 20, 2026', url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic', summary: 'Explained how zero software build costs shift product leadership from developer capacity management to managing uncertainty and preserving unit margins.' },
       { stage: 'LinkedIn Essay', label: 'Software Phase Transition & The Product Economist', publisher: 'LinkedIn', date: 'August 17, 2026', url: 'https://www.linkedin.com/in/richard-ewing-mba/', summary: 'Established the Solid-Liquid-Gas Software Creation Matrix and articulated why zero software creation costs force PMs to become Product Economists.' },
       { stage: 'Research Note', label: 'Rise of the Product Economist', publisher: 'Beehiiv Laboratory', date: 'January 2025', summary: 'Coined the discipline of Product Economics.' }
     ],
     evidenceLedger: [
+      { id: 'ev-pe-3', title: 'The AI Economist: Leading Product Strategy When Build Costs Approach Zero', url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic', publisher: 'LinkedIn', type: 'Production Strategy', strength: 5, role: 'Extends', date: 'August 20, 2026' },
       { id: 'ev-pe-2', title: 'When the Cost of Writing Software Approaches Zero, Traditional PM Frameworks Break Down', url: 'https://www.linkedin.com/in/richard-ewing-mba/', publisher: 'LinkedIn', type: 'Production Strategy', strength: 5, role: 'Extends', date: 'August 17, 2026' },
       { id: 'ev-pe-1', title: 'Product Economics Benchmark', url: 'https://theaieconomist.beehiiv.com', publisher: 'Beehiiv', type: 'Case Study', strength: 5, role: 'Origin', date: 'January 2025' }
     ],

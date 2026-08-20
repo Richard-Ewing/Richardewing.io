@@ -1005,7 +1005,8 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     evidenceLedger: [
       { id: 'linkedin-hardest-truth-clarity', title: 'The Hardest Truth: Don\'t Hire Visionaries, Hire for Clarity', url: '#', publisher: 'LinkedIn', type: 'Post', strength: 3 as const, role: 'Origin' as const, date: 'August 2026' },
       { id: 'beehiiv-senior-pm-trap', title: 'The Senior PM Trap', url: '#', publisher: 'Beehiiv', type: 'Newsletter', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' },
-      { id: 'linkedin-product-economist-structural-shift', title: 'The Product Economist: A Structural Shift', url: '#', publisher: 'LinkedIn', type: 'Post', strength: 3 as const, role: 'Extends' as const, date: 'August 2026' }
+      { id: 'linkedin-product-economist-structural-shift', title: 'The Product Economist: A Structural Shift', url: '#', publisher: 'LinkedIn', type: 'Post', strength: 3 as const, role: 'Extends' as const, date: 'August 2026' },
+      { id: 'linkedin-ai-economist-leading-product-strategy', title: 'The AI Economist: Leading Product Strategy When Build Costs Approach Zero', url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic', publisher: 'LinkedIn', type: 'Executive Publication' as const, strength: 5 as const, role: 'Extends' as const, date: 'August 20, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'double-diamond-career-trajectory', relationship: 'extends' },
@@ -1078,12 +1079,15 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     whoShouldCare: ['Senior Engineers', 'New Managers', 'Executive Coaches'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
-      { step: 1, title: 'The Double Diamond', publisher: 'Internal Research', type: 'Executive Essay', url: '/research/double-diamond' }
+      { step: 1, title: 'Why Static Resumes Are Dead: The Shift to Career Operating Systems', publisher: 'LinkedIn', type: 'Executive Essay', url: 'https://www.linkedin.com/pulse/why-static-resumes-dead-shift-career-operating-systems-richard-ewing-iui1c' },
+      { step: 2, title: 'The Double Diamond', publisher: 'Internal Research', type: 'Executive Essay', url: '/research/double-diamond' }
     ],
     provenanceTimeline: [
+      { stage: 'LinkedIn Essay', label: 'Why Static Resumes Are Dead', publisher: 'LinkedIn', date: 'August 20, 2026', url: 'https://www.linkedin.com/pulse/why-static-resumes-dead-shift-career-operating-systems-richard-ewing-iui1c', summary: 'Outlined the death of flat resume PDFs and the rise of dynamic Career Operating Systems that map verifiable talent trajectories across the double diamond.' },
       { stage: 'Observation', label: 'Trajectory Model', publisher: 'Internal Research', date: 'August 2026', summary: 'Created to explain the high failure rate of senior ICs transitioning to management.' }
     ],
     evidenceLedger: [
+      { id: 'linkedin-why-static-resumes-dead', title: 'Why Static Resumes Are Dead: The Shift to Career Operating Systems', url: 'https://www.linkedin.com/pulse/why-static-resumes-dead-shift-career-operating-systems-richard-ewing-iui1c', publisher: 'LinkedIn', type: 'Executive Publication' as const, strength: 5 as const, role: 'Supports' as const, date: 'August 20, 2026' },
       { id: 'ev-diamond-1', title: 'The Leadership Reset', url: '#', publisher: 'Internal', type: 'Observation', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' }
     ],
     relatedConceptSlugs: [

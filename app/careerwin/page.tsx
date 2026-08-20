@@ -95,7 +95,7 @@ export default function CareerWinPage() {
                     </div>
 
                     {/* Built In Case Study Spotlight */}
-                    <div className="mb-16 bg-gradient-to-br from-indigo-50 via-white to-purple-50 border border-indigo-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+                    <div className="mb-8 bg-gradient-to-br from-indigo-50 via-white to-purple-50 border border-indigo-200 rounded-2xl p-6 sm:p-8 shadow-sm">
                         <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                             <span className="px-3 py-1 bg-indigo-100 text-indigo-900 text-xs font-mono font-bold rounded-full border border-indigo-200">
                                 Featured in Built In • August 18, 2026
@@ -121,6 +121,37 @@ export default function CareerWinPage() {
                                 className="text-xs font-mono font-bold text-indigo-700 hover:text-indigo-900 hover:underline inline-flex items-center gap-1"
                             >
                                 Read Article on Built In ↗
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* LinkedIn Career OS Architecture Spotlight */}
+                    <div className="mb-16 bg-gradient-to-br from-purple-50 via-white to-indigo-50 border border-purple-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+                        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <span className="px-3 py-1 bg-purple-100 text-purple-900 text-xs font-mono font-bold rounded-full border border-purple-200">
+                                LinkedIn Newsletter • August 20, 2026
+                            </span>
+                            <span className="text-xs font-mono text-zinc-500 font-semibold">
+                                Executive Career Strategy
+                            </span>
+                        </div>
+                        <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
+                            Why Static Resumes Are Dead: The Shift to Career Operating Systems
+                        </h3>
+                        <p className="text-sm text-zinc-800 leading-relaxed font-medium italic mb-4">
+                            &quot;For decades, career management revolved around a single document: the PDF resume. In an era where AI screens candidates in milliseconds and work outputs evolve dynamically, static resumes fail to capture real-time competency, verifiable problem-solving, and continuous architectural skill evolution. The future belongs to dynamic Career Operating Systems that replace flat claims with verified talent intelligence.&quot;
+                        </p>
+                        <div className="flex items-center justify-between flex-wrap gap-4 pt-2 border-t border-purple-100">
+                            <span className="text-xs font-mono font-bold text-purple-900">
+                                By Richard Ewing: &quot;Why Static Resumes Are Dead: The Shift to Career Operating Systems&quot;
+                            </span>
+                            <a
+                                href="https://www.linkedin.com/pulse/why-static-resumes-dead-shift-career-operating-systems-richard-ewing-iui1c"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-xs font-mono font-bold text-purple-700 hover:text-purple-900 hover:underline inline-flex items-center gap-1"
+                            >
+                                Read Essay on LinkedIn ↗
                             </a>
                         </div>
                     </div>

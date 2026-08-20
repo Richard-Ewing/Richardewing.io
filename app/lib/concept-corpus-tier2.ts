@@ -329,7 +329,8 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Feature Bloat Calculus Introduced', publisher: 'RichardEwing.io Blog', date: 'December 2025', summary: 'Published the analytical framework for feature deprecation.' }
     ],
     evidenceLedger: [
-      { id: 'ev-fbc-1', title: 'Feature Bloat Calculus', url: 'https://richardewing.io/blog/feature-bloat-calculus', publisher: 'RichardEwing.io', type: 'Framework Specification', strength: 5, role: 'Origin', date: 'December 2025' }
+      { id: 'ev-fbc-1', title: 'Feature Bloat Calculus', url: 'https://richardewing.io/blog/feature-bloat-calculus', publisher: 'RichardEwing.io', type: 'Framework Specification', strength: 5, role: 'Origin', date: 'December 2025' },
+      { id: 'ev-fbc-2', title: 'The AI Economist: Leading Product Strategy When Build Costs Approach Zero', url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic', publisher: 'LinkedIn', type: 'Executive Publication', strength: 5, role: 'Extends', date: 'August 20, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'product-economist', relationship: 'implements' },
@@ -576,7 +577,8 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     ],
     evidenceLedger: [
       { id: 'ev-tmp-1', title: 'The 10-Man Parity Rule', url: 'https://www.cio.com', publisher: 'CIO.com', type: 'Industry Trend Analysis', strength: 4, role: 'Origin', date: 'June 2026' },
-      { id: 'ev-tmp-2', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 18, 2026' }
+      { id: 'ev-tmp-2', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 18, 2026' },
+      { id: 'ev-tmp-3', title: 'The AI Economist: Leading Product Strategy When Build Costs Approach Zero', url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic', publisher: 'LinkedIn', type: 'Executive Publication', strength: 5, role: 'Extends', date: 'August 20, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'coordination-tax', relationship: 'supports' },

@@ -26,7 +26,40 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
-  // Today's Built In Publication - August 18, 2026
+  // Today's LinkedIn Newsletters - August 20, 2026
+  {
+    id: 'linkedin-ai-economist-leading-product-strategy-zero-cost',
+    title: 'The AI Economist: Leading Product Strategy When Build Costs Approach Zero',
+    url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic',
+    publisher: 'LinkedIn',
+    domain: 'Product Leadership',
+    type: 'Executable',
+    date: 'August 20, 2026',
+    thesis: 'When generative AI collapses the cost of writing software toward zero, developer bandwidth ceases to be the constraint. The product bottleneck shifts from managing backlog velocity to managing uncertainty, evaluating system architecture efficiency, and preserving unit margins as a Product Economist.',
+    relatedConceptIds: ['product-economist', 'software-phase-transition', 'feature-bloat-calculus', 'ten-man-parity', 'ai-coding-tool-economics', 'ai-volatility-tax', 'coordination-tax', 'four-tiers-of-autonomy'],
+    relatedGlossarySlugs: ['software-phase-transition', 'product-economist', 'product-debt-index', 'feature-bloat', 'synthetic-cogs', 'inference-economics'],
+    relatedFrameworkSlugs: ['software-phase-transition', 'feature-bloat-calculus'],
+    relatedToolIds: ['pdi', 'aueb', 'slm-vs-api'],
+    relatedCaseStudyIds: ['saas-cost-collapse'],
+    relatedCurriculumTrackIds: ['product-economics', 'engineering-economics']
+  },
+  {
+    id: 'linkedin-why-static-resumes-dead-career-operating-systems',
+    title: 'Why Static Resumes Are Dead: The Shift to Career Operating Systems',
+    url: 'https://www.linkedin.com/pulse/why-static-resumes-dead-shift-career-operating-systems-richard-ewing-iui1c',
+    publisher: 'LinkedIn',
+    domain: 'Career Economics',
+    type: 'Executable',
+    date: 'August 20, 2026',
+    thesis: 'Static PDF resumes fail in an AI-native hiring market because they cannot capture real-time competency, verifiable problem-solving, or continuous architectural skill evolution. The market is shifting to dynamic Career Operating Systems (like CareerWin.ai) that transform flat career claims into live, verified talent intelligence.',
+    relatedConceptIds: ['double-diamond-career-trajectory', 'four-tiers-of-autonomy', 'systems-governor', 'vibe-coding', 'ten-man-parity'],
+    relatedGlossarySlugs: ['systems-governor', 'vibe-coding-debt', 'governed-execution'],
+    relatedFrameworkSlugs: ['governed-execution'],
+    relatedToolIds: ['career-pathing', 'copilot-roi'],
+    relatedCaseStudyIds: ['careerwin-intelligence-platform'],
+    relatedCurriculumTrackIds: ['engineering-economics']
+  },
+  // Built In Publication - August 18, 2026
   {
     id: 'builtin-ai-coding-tools-practical-evaluation',
     title: 'I Used AI to Build My Startup. Here’s What I Learned.',
@@ -787,7 +820,29 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     relatedToolIds: ["pdi"]
   },
 
-  // LinkedIn Newsletters & Executive Essays (22+ Articles)
+  // LinkedIn Newsletters & Executive Essays (24+ Articles)
+  {
+    id: 'linkedin-ai-economist-leading-product-strategy-zero-cost',
+    title: 'The AI Economist: Leading Product Strategy When Build Costs Approach Zero',
+    url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic',
+    publisher: 'LinkedIn',
+    domain: 'Product Leadership',
+    type: 'Executable',
+    date: 'August 20, 2026',
+    thesis: 'When generative AI collapses the cost of writing software toward zero, developer bandwidth ceases to be the constraint. The product bottleneck shifts from managing backlog velocity to managing uncertainty, evaluating system architecture efficiency, and preserving unit margins as a Product Economist.',
+    relatedConceptIds: ['product-economist', 'software-phase-transition', 'feature-bloat-calculus', 'ten-man-parity', 'ai-coding-tool-economics', 'ai-volatility-tax', 'coordination-tax', 'four-tiers-of-autonomy']
+  },
+  {
+    id: 'linkedin-why-static-resumes-dead-career-operating-systems',
+    title: 'Why Static Resumes Are Dead: The Shift to Career Operating Systems',
+    url: 'https://www.linkedin.com/pulse/why-static-resumes-dead-shift-career-operating-systems-richard-ewing-iui1c',
+    publisher: 'LinkedIn',
+    domain: 'Career Economics',
+    type: 'Executable',
+    date: 'August 20, 2026',
+    thesis: 'Static PDF resumes fail in an AI-native hiring market because they cannot capture real-time competency, verifiable problem-solving, or continuous architectural skill evolution. The market is shifting to dynamic Career Operating Systems (like CareerWin.ai) that transform flat career claims into live, verified talent intelligence.',
+    relatedConceptIds: ['double-diamond-career-trajectory', 'four-tiers-of-autonomy', 'systems-governor', 'vibe-coding', 'ten-man-parity']
+  },
   {
     id: 'linkedin-game-product-leadership',
     title: 'The Game of Product Leadership: Why You Need More Than a Hunch',
