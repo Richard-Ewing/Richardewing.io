@@ -74,7 +74,6 @@ export const articles: Article[] = [
         source: "LinkedIn",
         category: "Economics",
         externalUrl: "https://www.linkedin.com/in/richard-ewing-mba/",
-        editorsPick: true,
         content: `
             <p>When the cost of writing software approaches zero, traditional product management frameworks break down.</p>
             <p>In the pre-AI era, product managers spent most of their time prioritizing engineering capacity and managing backlog velocity because developer bandwidth was scarce and expensive. In an age where generative tools can spin up features in hours, developer capacity is no longer the main constraint.</p>
@@ -99,8 +98,7 @@ export const articles: Article[] = [
         readTime: "6 min read",
         source: "Beehiiv",
         category: "Economics",
-        externalUrl: "https://theaieconomist.beehiiv.com/p/how-to-reduce-llm-api-token-costs-in-production",
-        editorsPick: true
+        externalUrl: "https://theaieconomist.beehiiv.com/p/how-to-reduce-llm-api-token-costs-in-production"
     },
     {
         slug: "how-to-reduce-llm-costs-inference-dividend-model",
@@ -110,8 +108,7 @@ export const articles: Article[] = [
         readTime: "5 min read",
         source: "LinkedIn",
         category: "Economics",
-        externalUrl: "https://www.linkedin.com/pulse/how-reduce-llm-costs-production-inference-dividend-model-ewing-nwtgc/",
-        editorsPick: true
+        externalUrl: "https://www.linkedin.com/pulse/how-reduce-llm-costs-production-inference-dividend-model-ewing-nwtgc/"
     },
     {
         slug: "salesforce-sap-workflow-agents",
@@ -121,8 +118,7 @@ export const articles: Article[] = [
         readTime: "5 min read",
         source: "CIO.com",
         category: "Governance",
-        externalUrl: "https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html",
-        editorsPick: true
+        externalUrl: "https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html"
     },
     {
         slug: "growth-is-not-your-cost-problem-architecture-is",
@@ -132,8 +128,7 @@ export const articles: Article[] = [
         readTime: "5 min read",
         source: "LinkedIn",
         category: "Economics",
-        externalUrl: "https://www.linkedin.com/feed/update/urn:li:share:7487606608009814016/",
-        editorsPick: true
+        externalUrl: "https://www.linkedin.com/feed/update/urn:li:share:7487606608009814016/"
     },
     {
         slug: "ai-agent-kill-switch",

@@ -84,7 +84,6 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'Product Leadership',
     type: 'Executable',
-    editorsPick: true,
     date: 'August 17, 2026',
     thesis: 'When generative tools collapse the marginal cost of writing software toward zero, developer capacity ceases to be the constraint. The product bottleneck shifts from managing backlog velocity to managing uncertainty, evaluating system architecture efficiency, and preserving unit margins as a Product Economist.',
     relatedConceptIds: ['product-economist', 'software-phase-transition', 'feature-bloat-calculus', 'coordination-tax', 'inference-economics', 'technical-insolvency', 'complexity-tax', 'evergreen-ratio'],
@@ -102,7 +101,6 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'AI Economics',
     type: 'Executable',
-    editorsPick: true,
     date: 'August 14, 2026',
     thesis: 'Deploying semantic vector caching with cosine similarity thresholds (0.85-0.92) alongside edge regex pre-filtering cuts production LLM API token OpEx by 50%+ and reduces query latency to <20ms, protecting SaaS gross profit margins from linear token burn.',
     relatedConceptIds: ['inference-dividend-model', 'semantic-caching', 'inference-economics', 'ai-volatility-tax', 'ai-margin-squeeze', 'cost-of-predictivity', 'ai-cost-optimization', 'agentic-roi', 'ai-coding-tool-economics', 'margin-engineering', 'aueb-framework', 'ai-unit-economics', 'ai-finops', 'ai-economist'],
@@ -120,7 +118,6 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'AI Economics',
     type: 'Executable',
-    editorsPick: true,
     date: 'August 13, 2026',
     thesis: 'Serving AI features with un-monitored model calls erodes traditional 80% SaaS gross margins into low-margin territory as user activity scales linearly with API token burn. Capturing the Inference Dividend through edge pre-validation, semantic intent caching, and task-based model tiering slashes token OpEx by over 50% while reducing cache response latencies under 20ms.',
     relatedConceptIds: ['inference-dividend-model', 'semantic-caching', 'inference-economics', 'ai-volatility-tax', 'ai-margin-squeeze', 'cost-of-predictivity', 'ai-cost-optimization'],
@@ -138,7 +135,6 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'CIO.com',
     domain: 'AI Governance',
     type: 'Executable',
-    editorsPick: true,
     date: 'August 13, 2026',
     thesis: 'Enterprise SaaS providers (Salesforce, SAP, Oracle) are embedding autonomous AI agents directly into transactional workflows with authority to issue refunds, alter contract terms, and spend corporate capital - creating a critical breakdown in corporate signing matrices and shadow delegation that bypasses internal executive approval controls.',
     relatedConceptIds: ['shadow-delegation', 'deterministic-governance', 'agent-kill-switch', 'shadow-ai', 'ai-agent-sprawl', 'runtime-vs-alignment', 'mcp-governance', 'eaap-protocol', 'shadow-ai-governance', 'ai-liability-gradient'],
@@ -156,7 +152,6 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'AI Economics',
     type: 'Executable',
-    editorsPick: true,
     date: 'August 10, 2026',
     thesis: 'Shrinking software margins during user base growth stem from underlying LLM architecture flaws, not growth itself. Placing semantic caching and sub-millisecond edge filtering in front of frontier models slashes runtime API spend by over 50% without quality degradation.',
     relatedConceptIds: ['semantic-caching', 'inference-economics', 'ai-volatility-tax', 'ai-margin-squeeze', 'cost-of-predictivity', 'ai-cost-optimization'],
@@ -173,7 +168,6 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'AI Governance',
     type: 'Executable',
-    editorsPick: true,
     date: 'August 7, 2026',
     thesis: 'Stop AI context decay and errors using a 3-tier memory structure, organized state summaries, and database state separation rather than expanding raw prompt context.',
     relatedConceptIds: ['deterministic-governance', 'ai-governance', 'context-rot', 'inference-economics', 'retrieval-augmented-generation', 'context-engineering']
@@ -186,7 +180,6 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'AI Governance',
     type: 'Executable',
-    editorsPick: true,
     date: 'August 6, 2026',
     thesis: 'Expanding an AI agent’s context window without structured indexing creates cognitive clutter rather than intelligence. True operational velocity requires deterministic context filtering over raw token expansion.',
     relatedConceptIds: ['deterministic-governance', 'ai-governance', 'context-rot', 'ai-volatility-tax', 'retrieval-augmented-generation', 'context-engineering']
@@ -199,7 +192,6 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'AI Governance',
     type: 'Executable',
-    editorsPick: true,
     date: 'August 6, 2026',
     thesis: 'Why relying purely on prompt instructions for search tools causes enterprise adoption to plummet, and how deterministic tool-execution boundaries solve user friction.',
     relatedConceptIds: ['deterministic-governance', 'ai-governance', 'ai-volatility-tax']
@@ -212,7 +204,6 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'AI Governance',
     type: 'Executable',
-    editorsPick: true,
     date: 'August 3, 2026',
     thesis: 'Giving an AI agent a massive unformatted context window creates informational clutter rather than intelligence; performance requires database-managed structured filing over raw memory capacity.',
     relatedConceptIds: ['deterministic-governance', 'ai-governance', 'ai-agents', 'context-engineering']
@@ -225,7 +216,6 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'AI Governance',
     type: 'Executable',
-    editorsPick: true,
     date: 'July 31, 2026',
     thesis: 'Why probabilistic system prompts fail when AI agents execute direct database operations, and how to install sub-5ms binary proxy gates to prevent unauthorized state mutations.',
     relatedConceptIds: ['agent-kill-switch', 'deterministic-governance', 'runtime-vs-alignment', 'ai-governance']
@@ -238,7 +228,6 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'LinkedIn',
     domain: 'AI Governance',
     type: 'Executable',
-    editorsPick: true,
     date: 'July 30, 2026',
     thesis: 'When AI models transition from read-only text generation to taking autonomous actions across enterprise APIs, probabilistic guardrails fail and real-time execution boundaries are required.',
     relatedConceptIds: ['agent-kill-switch', 'deterministic-governance', 'ai-governance', 'ai-agents', 'agentic-engineering', 'mlops']
