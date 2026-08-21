@@ -1,6 +1,6 @@
 ---
-name: SEO Architecture & Metadata
-description: Strict formulas for Meta Titles, Meta Descriptions, indexing rules, and redirect strategies.
+name: seo-architecture
+description: Enforces strict formulas for Meta Titles (<60 chars), Meta Descriptions (<155 chars, active voice), canonical URLs, JSON-LD schemas, and sitemap synchronization. Use this skill when optimizing page SEO or auditing metadata.
 ---
 
 # SEO Architecture & Metadata

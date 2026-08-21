@@ -1,6 +1,6 @@
 ---
-name: UI/UX Refinement & Premium Polish
-description: Guidelines for implementing premium, high-conversion visual design systems and smooth micro-interactions.
+name: ui-ux-polish
+description: Enforces executive visual design standards, high-contrast dark mode typography (text-white, text-zinc-100), Framer Motion accordions (FAQItem), dynamic layout math, and zero visual cliché tropes. Use this skill when designing or refining UI/UX.
 ---
 
 # UI/UX Refinement & Premium Polish

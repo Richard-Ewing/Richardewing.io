@@ -1,6 +1,6 @@
 ---
-name: Content Governance & Architecture Stability
-description: Immutable rules for homepage freezes, destructive PRs, workbook stability, and stat verification.
+name: content-governance
+description: Enforces immutable governance rules including the homepage freeze rule (until Oct 6, 2026), protected workbook authority rows, zero-em-dash stat verification, and destructive change PR isolation. Use this skill when modifying core pages or verifying assertions.
 ---
 
 # Content Governance & Architecture Stability

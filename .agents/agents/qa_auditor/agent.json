@@ -12,6 +12,7 @@
       ],
       "toolNames": [
         "send_message",
+        "find_by_name",
         "grep_search",
         "view_file",
         "list_dir",

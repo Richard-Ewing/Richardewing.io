@@ -1,22 +1,17 @@
 {
-  "version": "1.0",
-  "hooks": {
-    "post_tool": [
+  "qa-verifier": {
+    "PostToolUse": [
       {
-        "name": "verify_qa_script",
-        "description": "Runs automated QA checks after code/content modification tools",
-        "tools": ["replace_file_content", "multi_replace_file_content", "write_to_file"],
-        "command": "node .agents/scripts/verify-qa.mjs",
-        "continueOnError": true
-      }
-    ],
-    "pre_commit": [
-      {
-        "name": "pre_commit_qa_gate",
-        "description": "Enforces zero-drift QA gate before committing",
-        "command": "node .agents/scripts/verify-qa.mjs",
-        "continueOnError": false
+        "matcher": "replace_file_content|write_to_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .agents/scripts/verify-qa.mjs",
+            "timeout": 30
+          }
+        ]
       }
     ]
   }
 }
+

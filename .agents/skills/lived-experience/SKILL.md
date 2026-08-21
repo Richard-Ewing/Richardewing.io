@@ -1,6 +1,6 @@
 ---
-name: Richard Ewing Writing Specification (REWS)
-description: The official copywriting specification splitting writing philosophy for humans and style guidelines for AI systems.
+name: lived-experience
+description: Enforces the Richard Ewing Writing Specification (REWS v1.0). Use this skill whenever drafting, editing, or auditing essays, landing page copy, frameworks, or explanations to ensure Euclidean reasoning, lived-experience openers, and zero marketing jargon.
 ---
 
 # Writing Philosophy (For Humans)
