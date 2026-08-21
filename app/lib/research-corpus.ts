@@ -26,7 +26,24 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
-  // Today's LinkedIn Newsletters - August 20, 2026
+  // Today's Beehiiv Newsletter - August 21, 2026
+  {
+    id: 'beehiiv-how-context-engines-power-ai-career-intelligence',
+    title: 'How Context Engines Power AI Career Intelligence',
+    url: 'https://theaieconomist.beehiiv.com/p/how-context-engines-power-ai-career-intelligence',
+    publisher: 'Beehiiv',
+    domain: 'Career Economics',
+    type: 'Executable',
+    date: 'August 21, 2026',
+    thesis: 'Stateless prompt wrappers fail in career workflows due to context loss and lack of persistent memory. CareerWin.ai implements structured context schemas, metadata preservation, and relational database state to replace static PDF resumes with dynamic career operating systems.',
+    relatedConceptIds: ['context-rot', 'deterministic-governance', 'systems-governor', 'double-diamond-career-trajectory', 'four-tiers-of-autonomy', 'vibe-coding'],
+    relatedGlossarySlugs: ['systems-governor', 'vibe-coding-debt', 'governed-execution'],
+    relatedFrameworkSlugs: ['governed-execution'],
+    relatedToolIds: ['career-pathing', 'copilot-roi', 'pdi'],
+    relatedCaseStudyIds: ['careerwin-intelligence-platform'],
+    relatedCurriculumTrackIds: ['engineering-economics']
+  },
+  // LinkedIn Newsletters - August 20, 2026
   {
     id: 'linkedin-ai-economist-leading-product-strategy-zero-cost',
     title: 'The AI Economist: Leading Product Strategy When Build Costs Approach Zero',

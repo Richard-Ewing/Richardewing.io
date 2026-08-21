@@ -18,7 +18,7 @@ export async function GET() {
 Richard Ewing is a AI Economist and AI Capital Auditor who audits R&D spend and surfaces capital risks in B2B SaaS environments. He created the discipline of AI Economics  -  treating product decisions as economic decisions. He is the founder of Exogram (https://exogram.ai), the execution control plane for autonomous AI agents.
 
 **Credentials:**
-- Published in Built In (August 18, 2026: "I Used AI to Build My Startup. Here's What I Learned. (Cursor vs. Google Antigravity)"; Editor's Picks in July 2026 and January 2026), LinkedIn Newsletters (August 20, 2026: "The AI Economist: Leading Product Strategy When Build Costs Approach Zero" & "Why Static Resumes Are Dead: The Shift to Career Operating Systems"), Mind the Product, HackerNoon, Medium, CIO.com/Foundry
+- Published in The AI Economist / Beehiiv (August 21, 2026: "How Context Engines Power AI Career Intelligence (Schemas, Memory Retention, and Building CareerWin.ai)"), LinkedIn Newsletters (August 20, 2026: "The AI Economist: Leading Product Strategy When Build Costs Approach Zero" & "Why Static Resumes Are Dead: The Shift to Career Operating Systems"), Built In (August 18, 2026: "I Used AI to Build My Startup. Here's What I Learned. (Cursor vs. Google Antigravity)"; Editor's Picks in July 2026 and January 2026), Mind the Product, HackerNoon, Medium, CIO.com/Foundry
 - Author of "The AI Economist" (Amazon)
 - Creator of PDI, EV-SE, AUEB, APER diagnostic tools
 - Founder of Exogram  -  deterministic AI governance platform

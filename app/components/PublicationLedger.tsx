@@ -102,6 +102,21 @@ const publications = [
     ]
   },
   {
+    platform: "The AI Economist (Beehiiv)",
+    articles: [
+      {
+        title: "How Context Engines Power AI Career Intelligence",
+        url: "https://theaieconomist.beehiiv.com/p/how-context-engines-power-ai-career-intelligence",
+        thesis: "Explains how CareerWin.ai uses structured schemas, metadata retention, and relational databases to replace stateless prompt wrappers with a dynamic career operating system."
+      },
+      {
+        title: "How to Reduce LLM API Token Costs in Production",
+        url: "https://theaieconomist.beehiiv.com/p/how-to-reduce-llm-api-token-costs-in-production",
+        thesis: "Details the Inference Dividend Model, semantic caching, and edge validation to protect enterprise SaaS gross margins."
+      }
+    ]
+  },
+  {
     platform: "LinkedIn",
     articles: [
       {

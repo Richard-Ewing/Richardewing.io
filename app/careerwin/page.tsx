@@ -126,7 +126,7 @@ export default function CareerWinPage() {
                     </div>
 
                     {/* LinkedIn Career OS Architecture Spotlight */}
-                    <div className="mb-16 bg-gradient-to-br from-purple-50 via-white to-indigo-50 border border-purple-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+                    <div className="mb-8 bg-gradient-to-br from-purple-50 via-white to-indigo-50 border border-purple-200 rounded-2xl p-6 sm:p-8 shadow-sm">
                         <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                             <span className="px-3 py-1 bg-purple-100 text-purple-900 text-xs font-mono font-bold rounded-full border border-purple-200">
                                 LinkedIn Newsletter • August 20, 2026
@@ -152,6 +152,37 @@ export default function CareerWinPage() {
                                 className="text-xs font-mono font-bold text-purple-700 hover:text-purple-900 hover:underline inline-flex items-center gap-1"
                             >
                                 Read Essay on LinkedIn ↗
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Beehiiv Context Engines Architecture Spotlight */}
+                    <div className="mb-16 bg-gradient-to-br from-emerald-50 via-white to-cyan-50 border border-emerald-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+                        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <span className="px-3 py-1 bg-emerald-100 text-emerald-900 text-xs font-mono font-bold rounded-full border border-emerald-200">
+                                The AI Economist (Beehiiv) • August 21, 2026
+                            </span>
+                            <span className="text-xs font-mono text-zinc-500 font-semibold">
+                                Deep Architecture Note
+                            </span>
+                        </div>
+                        <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
+                            How Context Engines Power AI Career Intelligence
+                        </h3>
+                        <p className="text-sm text-zinc-800 leading-relaxed font-medium italic mb-4">
+                            &quot;When people hear about AI career tools, they usually picture a basic prompt wrapper that takes a job description and rewrites a resume bullet point. Those wrappers fail because they lack persistent memory. CareerWin.ai solves this by structuring career history into discrete, verified relational objects (Canonical Career Ledger, Target Role Matrix, Application State Tracker). Shifting from flat text prompts to structured context databases drops hallucination rates to near zero and generates tailored application sets in under 60 seconds.&quot;
+                        </p>
+                        <div className="flex items-center justify-between flex-wrap gap-4 pt-2 border-t border-emerald-100">
+                            <span className="text-xs font-mono font-bold text-emerald-900">
+                                By Richard Ewing: &quot;Schemas, Memory Retention, and Building CareerWin.ai&quot;
+                            </span>
+                            <a
+                                href="https://theaieconomist.beehiiv.com/p/how-context-engines-power-ai-career-intelligence"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-xs font-mono font-bold text-emerald-700 hover:text-emerald-900 hover:underline inline-flex items-center gap-1"
+                            >
+                                Read Research on Beehiiv ↗
                             </a>
                         </div>
                     </div>

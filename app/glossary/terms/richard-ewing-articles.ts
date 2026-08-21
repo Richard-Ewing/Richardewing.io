@@ -161,5 +161,20 @@ export const richardEwingArticleTerms: GlossaryTerm[] = [
         relatedArticles: [
             { title: 'The AI Economist: Leading Product Strategy When Build Costs Approach Zero', url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic' }
         ]
+    },
+    {
+        slug: 'context-engine',
+        title: 'Context Engine',
+        category: 'Richard Ewing Frameworks',
+        definition: `A Context Engine is an architectural data pipeline introduced by Richard Ewing in The AI Economist that structures unstructured domain history into verified relational objects, preventing context rot and hallucinations in AI agents and career systems (exemplified by CareerWin.ai).\n\nStateless prompt wrappers fail because they lack persistent memory and structured state management. A Context Engine maintains a Canonical Ledger of verified accomplishments, maps domain requirements against structured matrices, and dynamically queries only the exact context required for execution.`,
+        whyItMatters: `Context Engines solve the context loss flaw inherent in prompt wrappers, dropping AI hallucination rates to near-zero and eliminating token waste.`,
+        faqs: [
+            { question: 'What is a Context Engine?', answer: 'A structured data pipeline and relational memory architecture that indexes domain history into verified objects, preventing AI context decay.' },
+            { question: 'How does it power CareerWin.ai?', answer: 'It structures user career accomplishments into a relational Canonical Career Ledger and queries targeted achievements for custom application matching in under 60 seconds.' }
+        ],
+        relatedTerms: ['context-rot', 'career-operating-system', 'deterministic-execution-control', 'governed-execution'],
+        relatedArticles: [
+            { title: 'How Context Engines Power AI Career Intelligence', url: 'https://theaieconomist.beehiiv.com/p/how-context-engines-power-ai-career-intelligence' }
+        ]
     }
 ];
