@@ -5,6 +5,7 @@ import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import SoftwarePhaseTransitionVisual from '@/app/components/visualizations/SoftwarePhaseTransitionVisual';
 import ConceptProvenanceSection from '@/app/components/concepts/ConceptProvenanceSection';
+import ConceptDownstreamSolution from '@/app/components/concepts/ConceptDownstreamSolution';
 
 interface ConceptPageProps {
   params: Promise<{ slug: string }>;
@@ -64,11 +65,11 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
     (art) => art.domain === concept.domain || art.relatedConceptIds?.includes(concept.slug)
   ).slice(0, 3);
 
-  // Schema.org DefinedTerm JSON-LD
+  // Schema.org DefinedTerm JSON-LD with persistent entity URI
   const definedTermJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'DefinedTerm',
-    '@id': `https://www.richardewing.io/concepts/${concept.slug}#term`,
+    '@id': concept.entityUri || `https://www.richardewing.io/concepts/${concept.slug}#entity`,
     name: concept.title,
     description: concept.definition,
     inDefinedTermSet: 'https://www.richardewing.io/canonical/dataset.jsonld',
@@ -603,6 +604,9 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
             </table>
           </div>
         </section>
+
+        {/* Downstream Operational Realization (Commercial Pathway Routing) */}
+        <ConceptDownstreamSolution concept={concept} />
 
         {/* Recommended Citation & Attribution Matrix */}
         <section className="space-y-4 bg-zinc-50 border border-zinc-300 rounded-3xl p-8 shadow-sm">

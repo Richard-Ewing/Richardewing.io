@@ -302,6 +302,33 @@ export interface ConceptProvenanceTelemetry {
   evolutionTimeline: ResearchEvolutionMilestone[];
 }
 
+// ============================================================================
+// ONTOLOGICAL PROBLEM & COMMERCIAL PATHWAY ROUTING
+// ============================================================================
+
+export type CommercialDestination = 
+  | 'RICHARD_EWING_ADVISORY' 
+  | 'EXOGRAM_SOFTWARE' 
+  | 'CAREERWIN_PLATFORM';
+
+export interface CommercialPathway {
+  destination: CommercialDestination;
+  channel: 'EXECUTIVE_ADVISORY' | 'ENGINEERING_RUNTIME' | 'CAREER_INTELLIGENCE';
+  headline: string;
+  subtext: string;
+  actionUrl: string;
+  actionLabel: string;
+  targetRole: string;
+}
+
+export interface OntologicalProblemMapping {
+  problemStatement: string;
+  financialImpact: string;
+  operationalBottleneck: string;
+  primaryPathway: CommercialPathway;
+  secondaryPathway?: CommercialPathway;
+}
+
 export interface ConceptNode {
   slug: string;
   title: string;
@@ -343,6 +370,8 @@ export interface ConceptNode {
   aeo?: ConceptAEO;
   telemetry?: ConceptProvenanceTelemetry;
   evolutionTimeline?: ResearchEvolutionMilestone[];
+  entityUri?: string;
+  problemMapping?: OntologicalProblemMapping;
 }
 
 export type CanonicalConcept = ConceptNode;
@@ -574,6 +603,30 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
           summary: 'EdgeStack Labs published an open-source TypeScript middleware executing the semantic caching and edge routing rules.'
         }
       ]
+    },
+    entityUri: 'https://www.richardewing.io/concepts/inference-dividend-model#entity',
+    problemMapping: {
+      problemStatement: 'Runaway LLM API token OpEx scaling linearly with user query volume, eroding SaaS gross margins from 80% to <50%.',
+      financialImpact: 'Unhedged token consumption leaks $200k to $1.5M+ annually across production multi-agent loops.',
+      operationalBottleneck: 'Generative models invoked for duplicate classification queries and basic JSON formatting tasks that deterministic caching solves.',
+      primaryPathway: {
+        destination: 'EXOGRAM_SOFTWARE',
+        channel: 'ENGINEERING_RUNTIME',
+        headline: 'Deploy Edge Semantic Caching Middleware',
+        subtext: 'Exogram provides a zero-trust runtime proxy executing sub-20ms vector cosine caching and deterministic edge gates.',
+        actionUrl: '/exogram/docs',
+        actionLabel: 'Inspect Exogram Runtime Architecture ↗',
+        targetRole: 'AI Architects & Lead Engineers'
+      },
+      secondaryPathway: {
+        destination: 'RICHARD_EWING_ADVISORY',
+        channel: 'EXECUTIVE_ADVISORY',
+        headline: 'Commission an AI Token Economics Audit',
+        subtext: 'Retain Richard Ewing for a structured portfolio audit to benchmark model OpEx and institute gross margin controls.',
+        actionUrl: '/services/ai-cost-audit',
+        actionLabel: 'Retain Executive Advisory ↗',
+        targetRole: 'CFOs & VPs of Engineering'
+      }
     }
   },
   {
@@ -583,6 +636,30 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     domain: 'Software Economics',
     expertiseLevel: 'Executive',
     health: { confidence: 0.98, evidenceCount: 5, lastVerified: 'August 17, 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
+    entityUri: 'https://www.richardewing.io/concepts/software-phase-transition#entity',
+    problemMapping: {
+      problemStatement: 'When AI collapses the cost of code generation toward zero, engineering backlog velocity ceases to be the constraint, shifting the bottleneck to managing uncertainty and unit margins.',
+      financialImpact: 'Unbounded feature bloat and coordination taxes cause product margin collapse.',
+      operationalBottleneck: 'Product organizations manage for code output rather than uncertainty reduction and capital efficiency.',
+      primaryPathway: {
+        destination: 'RICHARD_EWING_ADVISORY',
+        channel: 'EXECUTIVE_ADVISORY',
+        headline: 'R&D Capital Allocation & Product Economics Advisory',
+        subtext: 'Restructure your product organization from solid backlogs into adaptive pods governed by unit economics.',
+        actionUrl: '/workspace/strategy',
+        actionLabel: 'Explore Product Economics Advisory ↗',
+        targetRole: 'Chief Product Officers & CEOs'
+      },
+      secondaryPathway: {
+        destination: 'CAREERWIN_PLATFORM',
+        channel: 'CAREER_INTELLIGENCE',
+        headline: 'Transition Career from Feature PM to Product Economist',
+        subtext: 'CareerWin provides context engines and career trajectory blueprints for engineers and PMs navigating the software phase transition.',
+        actionUrl: '/careerwin',
+        actionLabel: 'Explore CareerWin Platform ↗',
+        targetRole: 'Senior PMs & Engineering Leaders'
+      }
+    },
     definition: 'The macroeconomic and structural model explaining how the collapse of software creation costs toward zero forces product organizations through phase transitions: from Solid (traditional roadmaps and sprint velocity under code scarcity) through Liquid (adaptive cross-functional pods) to Gas (autonomous AI-driven creation where developer capacity is unconstrained, shifting the scarce bottleneck to managing uncertainty and unit margins).',
     whyItMatters: 'In the pre-AI era, product managers spent most of their time allocating scarce engineering bandwidth and managing backlog velocity. As generative AI drives code generation costs toward zero, developer capacity is no longer the main constraint. Without economic governance, unbounded feature creation leads to exponential organizational complexity, coordination tax, and margin collapse.',
     whoShouldCare: ['Chief Product Officers', 'Chief Technology Officers', 'CEOs', 'VPs of Product', 'Private Equity Operating Partners'],
@@ -841,6 +918,30 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
           summary: 'Enterprise AI Governance Digest referenced the framework in their audit of agentic SOX compliance controls.'
         }
       ]
+    },
+    entityUri: 'https://www.richardewing.io/concepts/shadow-delegation#entity',
+    problemMapping: {
+      problemStatement: 'Embedded SaaS vendor AI agents executing financial commitments and granting contract discounts without management delegation approval.',
+      financialImpact: 'Unapproved automated contract discounting leaks 5-15% of ARR, creating severe SOX internal control audit failures.',
+      operationalBottleneck: 'Enabling native SaaS AI updates with a single click grants software algorithms spending authority exceeding human VP caps.',
+      primaryPathway: {
+        destination: 'RICHARD_EWING_ADVISORY',
+        channel: 'EXECUTIVE_ADVISORY',
+        headline: 'Execute an Enterprise AI Governance & Delegation Audit',
+        subtext: 'Retain Richard Ewing to audit enterprise SaaS vendor agent permissions and establish automated delegation matrices.',
+        actionUrl: '/workspace/governance',
+        actionLabel: 'Inquire for Governance Audit ↗',
+        targetRole: 'CIOs, CISOs & Audit Committee Chairs'
+      },
+      secondaryPathway: {
+        destination: 'EXOGRAM_SOFTWARE',
+        channel: 'ENGINEERING_RUNTIME',
+        headline: 'Implement Binary Delegation Proxy Gates',
+        subtext: 'Exogram provides deterministic runtime interception to enforce binary signing limits on autonomous SaaS agents.',
+        actionUrl: '/exogram',
+        actionLabel: 'Inspect Exogram Boundary Controls ↗',
+        targetRole: 'Enterprise Architecture Teams'
+      }
     }
   },
   {

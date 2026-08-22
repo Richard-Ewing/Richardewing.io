@@ -129,6 +129,30 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
           linkedArtifactUrl: '/tools/pdi'
         }
       ]
+    },
+    entityUri: 'https://www.richardewing.io/concepts/product-debt-index#entity',
+    problemMapping: {
+      problemStatement: 'Technical debt remains isolated in engineering as story points, preventing executive intervention while compounding balance sheet liabilities.',
+      financialImpact: 'Unmanaged feature accumulation drags enterprise valuation multiples by 20-40% during M&A and due diligence.',
+      operationalBottleneck: 'Engineering and finance lack a shared quantitative language connecting code entropy to explicit carrying costs.',
+      primaryPathway: {
+        destination: 'RICHARD_EWING_ADVISORY',
+        channel: 'EXECUTIVE_ADVISORY',
+        headline: 'Commission a Technical Due Diligence & PDI Audit',
+        subtext: 'Retain Richard Ewing to calculate your organization’s Product Debt Index and present financial stabilization roadmaps to the board.',
+        actionUrl: '/services/technical-due-diligence',
+        actionLabel: 'Book Technical Due Diligence ↗',
+        targetRole: 'PE Operating Partners & CPOs'
+      },
+      secondaryPathway: {
+        destination: 'RICHARD_EWING_ADVISORY',
+        channel: 'EXECUTIVE_ADVISORY',
+        headline: 'Calculate Carrying Costs via Interactive Tool',
+        subtext: 'Run the interactive PDI calculator to quantify technical debt carrying cost in dollars.',
+        actionUrl: '/tools/pdi',
+        actionLabel: 'Launch PDI Calculator ↗',
+        targetRole: 'Engineering Directors & CFOs'
+      }
     }
   },
   {
