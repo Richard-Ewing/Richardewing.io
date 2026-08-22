@@ -345,6 +345,32 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
       faqs: [{ question: 'What causes context rot?', answer: 'The dilution of attention across a large volume of tokens in a long interactive session.' }],
       whenToUse: ['When debugging AI agents that fail after executing multiple consecutive steps'],
       examples: { enterprise: 'An automated coding assistant forgetting the architectural guidelines mid refactor.', startup: 'A customer support bot hallucinating policies after a 50 message thread.', antiPattern: 'Putting all security rules at the very top of a massive prompt.', commonMistake: 'Assuming a 1 million token context window prevents memory loss.' }
+    },
+    entityUri: 'https://www.richardewing.io/concepts/context-rot#entity',
+    problemMapping: {
+      problemStatement: 'Extended LLM interactive sessions degrade attention and instruction adherence, causing autonomous coding and customer agents to hallucinate API actions.',
+      financialImpact: 'Wasted developer debugging cycles, corrupted database states, and token retry loops compounding bills by 3-5x.',
+      operationalBottleneck: 'Engineering teams rely on massive system prompts instead of external deterministic state machines.',
+      primaryPathway: {
+        destination: 'EXOGRAM_SOFTWARE',
+        relationshipType: 'OPERATIONALIZES',
+        channel: 'ENGINEERING_RUNTIME',
+        headline: 'Deploy Stateless Proxy State Management',
+        subtext: 'Exogram provides external memory compaction and boundary gates that preserve deterministic rules outside the LLM context.',
+        actionUrl: '/exogram/docs',
+        actionLabel: 'Inspect Exogram State Management ↗',
+        targetRole: 'AI Infrastructure Engineers & Architects'
+      },
+      secondaryPathway: {
+        destination: 'CAREERWIN_PLATFORM',
+        relationshipType: 'ADDRESSES',
+        channel: 'CAREER_INTELLIGENCE',
+        headline: 'Build Structured Talent Context Engines',
+        subtext: 'CareerWin leverages structured context engineering to prevent hallucination and preserve verifiable career trajectory data.',
+        actionUrl: '/careerwin',
+        actionLabel: 'Explore CareerWin Context Engines ↗',
+        targetRole: 'Talent Leaders & Hiring Managers'
+      }
     }
   }
 ];

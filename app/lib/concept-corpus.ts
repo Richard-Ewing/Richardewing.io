@@ -1117,6 +1117,32 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       faqs: [{ question: 'What is the AI Volatility Tax?', answer: 'The margin loss that occurs when variable LLM API costs scale faster than software subscription revenue.' }],
       whenToUse: ['When SaaS gross margins drop below 70% after launching LLM features'],
       examples: { enterprise: 'A SaaS product losing $0.15 on every customer search query.', startup: 'An AI writing assistant capping daily queries.', antiPattern: 'Selling unlimited frontier model prompts for a flat $15/month fee.', commonMistake: 'Expecting software gross margins to remain at 85%.' }
+    },
+    entityUri: 'https://www.richardewing.io/concepts/ai-volatility-tax#entity',
+    problemMapping: {
+      problemStatement: 'Un-cached LLM prompts under fixed subscription pricing turn infrastructure expenses into runaway variable COGS, eroding gross margins from 85% to <50%.',
+      financialImpact: 'Each active customer query surge creates non-linear cloud billing spikes, directly compressing EBITDA and SaaS valuation multiples.',
+      operationalBottleneck: 'Engineering and finance lack real-time query cost telemetry and automated model-task routing.',
+      primaryPathway: {
+        destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'ADVISES_ON',
+        channel: 'EXECUTIVE_ADVISORY',
+        headline: 'Commission an AI Volatility Tax & Gross Margin Audit',
+        subtext: 'Retain Richard Ewing to audit enterprise LLM feature economics, restructure subscription pricing, and stabilize SaaS gross margins.',
+        actionUrl: '/services/ai-cost-audit',
+        actionLabel: 'Retain Executive Advisory ↗',
+        targetRole: 'CFOs & Chief Technology Officers'
+      },
+      secondaryPathway: {
+        destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'MEASURES',
+        channel: 'EXECUTIVE_ADVISORY',
+        headline: 'Calculate Volatility Tax via AUEB',
+        subtext: 'Run the AI Unit Economics Benchmark to find your exact margin collapse point and model pricing tiers.',
+        actionUrl: '/tools/aueb',
+        actionLabel: 'Launch AUEB Calculator ↗',
+        targetRole: 'VPs of Finance & Product Leaders'
+      }
     }
   },
   {
@@ -1283,6 +1309,32 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       faqs: [{ question: 'What is Deterministic Governance?', answer: 'Enforcing security rules via hard-coded backend software rather than LLM prompts.' }],
       whenToUse: ['When AI agents have write permissions to enterprise databases'],
       examples: { enterprise: 'An API gateway verifying JSON schemas before executing SQL updates.', startup: 'Enforcing rate limits in TypeScript middleware.', antiPattern: 'Telling the LLM not to delete tables.', commonMistake: 'Trusting prompt guardrails for security.' }
+    },
+    entityUri: 'https://www.richardewing.io/concepts/deterministic-governance#entity',
+    problemMapping: {
+      problemStatement: 'Relying on probabilistic LLM guardrails (system prompts) to validate security boundaries allows prompt injection and unauthorized database mutations.',
+      financialImpact: 'Catastrophic unauthorized transactions, data leaks, and regulatory compliance failure (EU AI Act & SOX).',
+      operationalBottleneck: 'AI agent frameworks allow LLMs to validate their own actions instead of enforcing external binary authorization proxy gates.',
+      primaryPathway: {
+        destination: 'EXOGRAM_SOFTWARE',
+        relationshipType: 'IMPLEMENTS',
+        channel: 'ENGINEERING_RUNTIME',
+        headline: 'Deploy Deterministic EAAP Runtime Proxy',
+        subtext: 'Exogram implements the Executable Agent Action Protocol (EAAP), enforcing binary boundary controls in <5ms.',
+        actionUrl: '/exogram/docs',
+        actionLabel: 'Inspect EAAP Proxy Spec ↗',
+        targetRole: 'Security Architects & Lead Engineers'
+      },
+      secondaryPathway: {
+        destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'ADVISES_ON',
+        channel: 'EXECUTIVE_ADVISORY',
+        headline: 'Enterprise AI Governance & Audit Architecture',
+        subtext: 'Retain Richard Ewing to establish board-level AI governance frameworks and deterministic compliance boundaries.',
+        actionUrl: '/workspace/governance',
+        actionLabel: 'Explore Governance Advisory ↗',
+        targetRole: 'CISOs, General Counsel & CTOs'
+      }
     }
   },
   {

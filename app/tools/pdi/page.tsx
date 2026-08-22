@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import DiagnosticCTA from '@/app/components/DiagnosticCTA';
+import CalculatorIntentProposal from '@/app/components/calculators/CalculatorIntentProposal';
 import PDITool from './content';
 
 export const metadata: Metadata = {
@@ -50,7 +51,35 @@ export default function Page() {
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
             <PDITool />
-            <div className="page-container max-w-4xl mx-auto px-6">
+            <div className="page-container max-w-4xl mx-auto px-6 mb-16 space-y-12">
+                <CalculatorIntentProposal
+                    toolName="Product Debt Index (PDI) Calculator"
+                    problemDomain="Compounding Technical Debt &amp; Maintenance Insolvency"
+                    calculatedMetricLabel="Typical R&amp;D Carrying Cost Drag"
+                    calculatedMetricValue="25% to 55% of Engineering Capacity"
+                    severityLevel="CRITICAL"
+                    primaryPathway={{
+                        destination: 'RICHARD_EWING_ADVISORY',
+                        relationshipType: 'ADVISES_ON',
+                        channel: 'EXECUTIVE_ADVISORY',
+                        headline: 'Commission a Technical Due Diligence & PDI Audit',
+                        subtext: 'Retain Richard Ewing to audit software capital allocation, quantify balance sheet technical debt, and present remediation roadmaps to the board.',
+                        actionUrl: '/services/technical-due-diligence',
+                        actionLabel: 'Book Technical Due Diligence ↗',
+                        targetRole: 'Private Equity Operating Partners & CPOs'
+                    }}
+                    secondaryPathway={{
+                        destination: 'EXOGRAM_SOFTWARE',
+                        relationshipType: 'OPERATIONALIZES',
+                        channel: 'ENGINEERING_RUNTIME',
+                        headline: 'Deploy Boundary Gates to Prevent Code Drift',
+                        subtext: 'Exogram enforces deterministic boundary controls and schema validation to stop vibe coding debt from polluting production repositories.',
+                        actionUrl: '/exogram',
+                        actionLabel: 'Inspect Boundary Gate Architecture ↗',
+                        targetRole: 'VPs of Engineering & Staff Architects'
+                    }}
+                />
+
                 <DiagnosticCTA 
                     title="Is your team drowning in AI-generated Technical Debt?"
                     subtitle="Vibe coding gets you to MVP fast, but creates a maintenance nightmare. Take the AI Economics Diagnostic to map your debt liability before velocity drops to zero."

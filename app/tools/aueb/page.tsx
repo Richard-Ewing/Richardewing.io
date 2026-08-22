@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import DiagnosticCTA from '@/app/components/DiagnosticCTA';
+import CalculatorIntentProposal from '@/app/components/calculators/CalculatorIntentProposal';
 import AUEBTool from './content';
 
 export const metadata: Metadata = {
@@ -54,7 +55,35 @@ export default function Page() {
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
             <AUEBTool />
-            <div className="page-container max-w-4xl mx-auto px-6 mb-16">
+            <div className="page-container max-w-4xl mx-auto px-6 mb-16 space-y-12">
+                <CalculatorIntentProposal
+                    toolName="AI Unit Economics Benchmark (AUEB)"
+                    problemDomain="Inference Token Squeeze &amp; Gross Margin Erosion"
+                    calculatedMetricLabel="Typical Recoverable Token Dividend"
+                    calculatedMetricValue="$120k to $650k+ / year"
+                    severityLevel="ELEVATED"
+                    primaryPathway={{
+                        destination: 'EXOGRAM_SOFTWARE',
+                        relationshipType: 'OPERATIONALIZES',
+                        channel: 'ENGINEERING_RUNTIME',
+                        headline: 'Deploy Edge Semantic Caching & Vector Proxy',
+                        subtext: 'Exogram provides sub-20ms vector cosine similarity caching and deterministic edge gateways to capture your Inference Dividend.',
+                        actionUrl: '/exogram/docs',
+                        actionLabel: 'Inspect Exogram Runtime Proxy ↗',
+                        targetRole: 'AI Architects & Infrastructure Directors'
+                    }}
+                    secondaryPathway={{
+                        destination: 'RICHARD_EWING_ADVISORY',
+                        relationshipType: 'ADVISES_ON',
+                        channel: 'EXECUTIVE_ADVISORY',
+                        headline: 'Commission an AI Token Economics Audit',
+                        subtext: 'Retain Richard Ewing for a formal FinOps evaluation of enterprise token OpEx, gross margin recovery, and multi-agent loops.',
+                        actionUrl: '/services/ai-cost-audit',
+                        actionLabel: 'Inquire for Advisory Audit ↗',
+                        targetRole: 'CFOs & VPs of Engineering'
+                    }}
+                />
+
                 <DiagnosticCTA 
                     title="Is your runway burning faster than your MRR?"
                     subtitle="Compute costs are the new cloud tax. Take the AI Economics Diagnostic Audit to find your hidden margin leaks before your next board meeting."

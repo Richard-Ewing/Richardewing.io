@@ -182,6 +182,30 @@ export default function ResearchCorpusExplorer() {
               <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed font-medium">
                 {art.thesis}
               </p>
+
+              {/* Downstream Intellectual Lineage Strip */}
+              <div className="flex flex-wrap items-center gap-1.5 pt-2 border-t border-zinc-100">
+                {art.relatedConceptIds && art.relatedConceptIds.length > 0 && (
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-zinc-100 text-zinc-800 border border-zinc-200">
+                    {art.relatedConceptIds.length} {art.relatedConceptIds.length === 1 ? 'Concept' : 'Concepts'}
+                  </span>
+                )}
+                {art.relatedFrameworkSlugs && art.relatedFrameworkSlugs.length > 0 && (
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-zinc-100 text-zinc-800 border border-zinc-200">
+                    {art.relatedFrameworkSlugs.length} {art.relatedFrameworkSlugs.length === 1 ? 'Framework' : 'Frameworks'}
+                  </span>
+                )}
+                {art.relatedToolIds && art.relatedToolIds.length > 0 && (
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-cyan-50 text-cyan-900 border border-cyan-200">
+                    {art.relatedToolIds.length} {art.relatedToolIds.length === 1 ? 'Tool' : 'Tools'}
+                  </span>
+                )}
+                {art.downstreamExternalSignalIds && art.downstreamExternalSignalIds.length > 0 && (
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-50 text-emerald-900 border border-emerald-300">
+                    {art.downstreamExternalSignalIds.length} Verified {art.downstreamExternalSignalIds.length === 1 ? 'Citation' : 'Citations'}
+                  </span>
+                )}
+              </div>
             </div>
 
             {/* Footer Metadata */}
