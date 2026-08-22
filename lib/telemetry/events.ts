@@ -7,10 +7,10 @@ export type DiagnosticEventName =
   | 'exogram_clicked'
   | 'commercial_routing_rendered'
   | 'commercial_pathway_clicked'
-  | 'commercial_intent_engaged'
+  | 'commercial_intent_signal_engaged'
   | 'commercial_conversion_completed';
 
-export type CommercialFunnelStage = 'ROUTING' | 'INTEREST' | 'INTENT' | 'CONVERSION';
+export type CommercialFunnelStage = 'ROUTING' | 'INTEREST' | 'INTENT_SIGNAL' | 'CONVERSION';
 
 export interface TelemetryEvent {
     eventName: DiagnosticEventName;
@@ -59,7 +59,7 @@ export function trackCommercialFunnelStep(
     const eventNameMap: Record<CommercialFunnelStage, DiagnosticEventName> = {
         ROUTING: 'commercial_routing_rendered',
         INTEREST: 'commercial_pathway_clicked',
-        INTENT: 'commercial_intent_engaged',
+        INTENT_SIGNAL: 'commercial_intent_signal_engaged',
         CONVERSION: 'commercial_conversion_completed'
     };
 
@@ -78,7 +78,7 @@ export function trackCommercialJourney(
     action: 'pathway_clicked' | 'advisory_inquiry' | 'product_demo_requested',
     attribution: Omit<CommercialAttributionProperties, 'funnelStage'>
 ) {
-    const stage: CommercialFunnelStage = action === 'pathway_clicked' ? 'INTEREST' : 'INTENT';
+    const stage: CommercialFunnelStage = action === 'pathway_clicked' ? 'INTEREST' : 'INTENT_SIGNAL';
     trackCommercialFunnelStep(stage, attribution);
 }
 

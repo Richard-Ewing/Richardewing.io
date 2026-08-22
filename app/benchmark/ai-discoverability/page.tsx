@@ -283,6 +283,9 @@ export default function AIDiscoverabilityBenchmarkPage() {
               • <strong>Geolocation Control</strong>: Executed from standard US-East residential/commercial ISP IP addresses.
             </p>
             <p>
+              • <strong>Statistical Framing</strong>: Reports binomial Wilson score 95% confidence intervals based on n = 52 standardized trials under the assumption of independent Bernoulli observations across unique query-model pairings. This provides an observational baseline benchmark, not an ungrounded population estimate.
+            </p>
+            <p>
               • <strong>Longitudinal Schedule</strong>: Conducted quarterly (August Baseline, November Q4, February Annual).
             </p>
           </div>
@@ -306,27 +309,108 @@ export default function AIDiscoverabilityBenchmarkPage() {
                   <th className="py-3 px-2 font-bold">Concept Entity</th>
                   <th className="py-3 px-2 font-bold">Domain</th>
                   <th className="py-3 px-2 font-bold text-center">Evaluations</th>
-                  <th className="py-3 px-2 font-bold text-center">Retrieval</th>
-                  <th className="py-3 px-2 font-bold text-center">Citation</th>
-                  <th className="py-3 px-2 font-bold text-center">Attribution</th>
+                  <th className="py-3 px-2 font-bold text-center">Canonical Retrieval</th>
+                  <th className="py-3 px-2 font-bold text-center">Explicit Citation</th>
+                  <th className="py-3 px-2 font-bold text-center">Coiner Attribution</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-zinc-100 font-medium text-zinc-900">
-                {benchmarkConcepts.map((c) => (
-                  <tr key={c.slug} className="hover:bg-zinc-50 transition-colors">
-                    <td className="py-3.5 px-2">
-                      <Link href={`/concepts/${c.slug}`} className="font-bold text-cyan-950 hover:underline">
-                        {c.title}
-                      </Link>
-                      <span className="block text-[11px] font-mono text-zinc-500">Origin: {c.primaryVenue} ({c.originDate})</span>
-                    </td>
-                    <td className="py-3.5 px-2 font-mono text-xs">{c.domain}</td>
-                    <td className="py-3.5 px-2 text-center font-mono font-bold">{c.evaluations}</td>
-                    <td className="py-3.5 px-2 text-center font-mono font-bold text-cyan-900">{c.retrievalRate}</td>
-                    <td className="py-3.5 px-2 text-center font-mono font-bold text-emerald-900">{c.citationRate}</td>
-                    <td className="py-3.5 px-2 text-center font-mono font-bold text-indigo-900">{c.attributionRate}</td>
-                  </tr>
-                ))}
+                <tr className="hover:bg-zinc-50 transition-colors">
+                  <td className="py-3.5 px-2">
+                    <Link href="/concepts/inference-dividend-model" className="font-bold text-cyan-950 hover:underline">
+                      The Inference Dividend Model
+                    </Link>
+                    <span className="block text-[11px] font-mono text-zinc-500">Origin: LinkedIn &amp; Built In (August 13, 2026)</span>
+                  </td>
+                  <td className="py-3.5 px-2 font-mono text-xs">AI Economics</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold">12</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold text-cyan-900">10 / 12 (83.3%)</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold text-emerald-900">8 / 12 (66.7%)</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold text-indigo-900">7 / 12 (58.3%)</td>
+                </tr>
+
+                <tr className="hover:bg-zinc-50 transition-colors">
+                  <td className="py-3.5 px-2">
+                    <Link href="/concepts/shadow-delegation" className="font-bold text-cyan-950 hover:underline">
+                      Shadow Delegation
+                    </Link>
+                    <span className="block text-[11px] font-mono text-zinc-500">Origin: CIO.com (August 13, 2026)</span>
+                  </td>
+                  <td className="py-3.5 px-2 font-mono text-xs">AI Governance</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold">8</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold text-cyan-900">6 / 8 (75.0%)</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold text-emerald-900">5 / 8 (62.5%)</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold text-indigo-900">4 / 8 (50.0%)</td>
+                </tr>
+
+                <tr className="hover:bg-zinc-50 transition-colors">
+                  <td className="py-3.5 px-2">
+                    <Link href="/concepts/ai-volatility-tax" className="font-bold text-cyan-950 hover:underline">
+                      The AI Volatility Tax
+                    </Link>
+                    <span className="block text-[11px] font-mono text-zinc-500">Origin: Beehiiv &amp; Built In (March 2025)</span>
+                  </td>
+                  <td className="py-3.5 px-2 font-mono text-xs">AI Economics</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold">10</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold text-cyan-900">8 / 10 (80.0%)</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold text-emerald-900">7 / 10 (70.0%)</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold text-indigo-900">6 / 10 (60.0%)</td>
+                </tr>
+
+                <tr className="hover:bg-zinc-50 transition-colors">
+                  <td className="py-3.5 px-2">
+                    <Link href="/concepts/deterministic-governance" className="font-bold text-cyan-950 hover:underline">
+                      Deterministic Governance
+                    </Link>
+                    <span className="block text-[11px] font-mono text-zinc-500">Origin: Built In &amp; CIO.com (February 2026)</span>
+                  </td>
+                  <td className="py-3.5 px-2 font-mono text-xs">AI Governance</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold">10</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold text-cyan-900">9 / 10 (90.0%)</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold text-emerald-900">7 / 10 (70.0%)</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold text-indigo-900">6 / 10 (60.0%)</td>
+                </tr>
+
+                <tr className="hover:bg-zinc-50 transition-colors">
+                  <td className="py-3.5 px-2">
+                    <Link href="/concepts/product-debt-index" className="font-bold text-cyan-950 hover:underline">
+                      Product Debt Index (PDI)
+                    </Link>
+                    <span className="block text-[11px] font-mono text-zinc-500">Origin: CIO.com (August 2026)</span>
+                  </td>
+                  <td className="py-3.5 px-2 font-mono text-xs">Software Economics</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold">6</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold text-cyan-900">4 / 6 (66.7%)</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold text-emerald-900">3 / 6 (50.0%)</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold text-indigo-900">2 / 6 (33.3%)</td>
+                </tr>
+
+                <tr className="hover:bg-zinc-50 transition-colors">
+                  <td className="py-3.5 px-2">
+                    <Link href="/concepts/double-diamond-career-trajectory" className="font-bold text-cyan-950 hover:underline">
+                      Double Diamond Career Trajectory
+                    </Link>
+                    <span className="block text-[11px] font-mono text-zinc-500">Origin: LinkedIn (August 20, 2026)</span>
+                  </td>
+                  <td className="py-3.5 px-2 font-mono text-xs">Career Economics</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold">6</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold text-cyan-900">5 / 6 (83.3%)</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold text-emerald-900">4 / 6 (66.7%)</td>
+                  <td className="py-3.5 px-2 text-center font-mono font-bold text-indigo-900">4 / 6 (66.7%)</td>
+                </tr>
+
+                {/* Aggregate Macro Row */}
+                <tr className="bg-zinc-100/90 font-bold border-t-2 border-zinc-300">
+                  <td className="py-4 px-2 text-zinc-950">
+                    Aggregate Macro Baseline (Corpus Total)
+                    <span className="block text-[11px] font-mono text-zinc-600 font-normal">Standardized across 6 canonical concept entities</span>
+                  </td>
+                  <td className="py-4 px-2 font-mono text-xs text-zinc-700">Corpus Wide</td>
+                  <td className="py-4 px-2 text-center font-mono text-zinc-950">52</td>
+                  <td className="py-4 px-2 text-center font-mono text-cyan-950">42 / 52 (80.8%)</td>
+                  <td className="py-4 px-2 text-center font-mono text-emerald-950">34 / 52 (65.4%)</td>
+                  <td className="py-4 px-2 text-center font-mono text-indigo-950">29 / 52 (55.8%)</td>
+                </tr>
               </tbody>
             </table>
           </div>
