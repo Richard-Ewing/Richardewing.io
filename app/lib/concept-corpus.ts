@@ -311,8 +311,17 @@ export type CommercialDestination =
   | 'EXOGRAM_SOFTWARE' 
   | 'CAREERWIN_PLATFORM';
 
+export type SemanticRelationshipType = 
+  | 'MEASURES'          // Diagnostic calculator or benchmark measures the liability
+  | 'OPERATIONALIZES'   // Software proxy executes mathematical boundaries in runtime
+  | 'IMPLEMENTS'        // Codebase or product executes technical specification
+  | 'ADVISES_ON'        // Structured executive advisory for corporate governance
+  | 'ADDRESSES'         // Platform directly solves workflow/process bottleneck
+  | 'RELATED_SOLUTION'; // Contextual reference architecture or framework
+
 export interface CommercialPathway {
   destination: CommercialDestination;
+  relationshipType: SemanticRelationshipType;
   channel: 'EXECUTIVE_ADVISORY' | 'ENGINEERING_RUNTIME' | 'CAREER_INTELLIGENCE';
   headline: string;
   subtext: string;
@@ -611,6 +620,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       operationalBottleneck: 'Generative models invoked for duplicate classification queries and basic JSON formatting tasks that deterministic caching solves.',
       primaryPathway: {
         destination: 'EXOGRAM_SOFTWARE',
+        relationshipType: 'OPERATIONALIZES',
         channel: 'ENGINEERING_RUNTIME',
         headline: 'Deploy Edge Semantic Caching Middleware',
         subtext: 'Exogram provides a zero-trust runtime proxy executing sub-20ms vector cosine caching and deterministic edge gates.',
@@ -620,6 +630,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       },
       secondaryPathway: {
         destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'ADVISES_ON',
         channel: 'EXECUTIVE_ADVISORY',
         headline: 'Commission an AI Token Economics Audit',
         subtext: 'Retain Richard Ewing for a structured portfolio audit to benchmark model OpEx and institute gross margin controls.',
@@ -643,6 +654,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       operationalBottleneck: 'Product organizations manage for code output rather than uncertainty reduction and capital efficiency.',
       primaryPathway: {
         destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'ADVISES_ON',
         channel: 'EXECUTIVE_ADVISORY',
         headline: 'R&D Capital Allocation & Product Economics Advisory',
         subtext: 'Restructure your product organization from solid backlogs into adaptive pods governed by unit economics.',
@@ -651,13 +663,14 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
         targetRole: 'Chief Product Officers & CEOs'
       },
       secondaryPathway: {
-        destination: 'CAREERWIN_PLATFORM',
-        channel: 'CAREER_INTELLIGENCE',
-        headline: 'Transition Career from Feature PM to Product Economist',
-        subtext: 'CareerWin provides context engines and career trajectory blueprints for engineers and PMs navigating the software phase transition.',
-        actionUrl: '/careerwin',
-        actionLabel: 'Explore CareerWin Platform ↗',
-        targetRole: 'Senior PMs & Engineering Leaders'
+        destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'MEASURES',
+        channel: 'EXECUTIVE_ADVISORY',
+        headline: 'Measure R&D Velocity Drag via PDI',
+        subtext: 'Quantify organizational carrying costs and debt drag across phase transition pods with the Product Debt Index.',
+        actionUrl: '/tools/pdi',
+        actionLabel: 'Launch PDI Diagnostic Tool ↗',
+        targetRole: 'VPs of Product & Engineering Leaders'
       }
     },
     definition: 'The macroeconomic and structural model explaining how the collapse of software creation costs toward zero forces product organizations through phase transitions: from Solid (traditional roadmaps and sprint velocity under code scarcity) through Liquid (adaptive cross-functional pods) to Gas (autonomous AI-driven creation where developer capacity is unconstrained, shifting the scarce bottleneck to managing uncertainty and unit margins).',
@@ -926,6 +939,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       operationalBottleneck: 'Enabling native SaaS AI updates with a single click grants software algorithms spending authority exceeding human VP caps.',
       primaryPathway: {
         destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'ADVISES_ON',
         channel: 'EXECUTIVE_ADVISORY',
         headline: 'Execute an Enterprise AI Governance & Delegation Audit',
         subtext: 'Retain Richard Ewing to audit enterprise SaaS vendor agent permissions and establish automated delegation matrices.',
@@ -935,6 +949,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       },
       secondaryPathway: {
         destination: 'EXOGRAM_SOFTWARE',
+        relationshipType: 'OPERATIONALIZES',
         channel: 'ENGINEERING_RUNTIME',
         headline: 'Implement Binary Delegation Proxy Gates',
         subtext: 'Exogram provides deterministic runtime interception to enforce binary signing limits on autonomous SaaS agents.',

@@ -48,10 +48,15 @@ export default function ConceptDownstreamSolution({ concept }: ConceptDownstream
         {/* Primary Pathway */}
         <div className="bg-white border border-zinc-300 hover:border-cyan-700 rounded-2xl p-6 flex flex-col justify-between space-y-4 shadow-sm transition group">
           <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <span className={`px-2.5 py-0.5 rounded text-[10px] font-mono font-bold border ${getChannelBadge(primaryPathway.channel)}`}>
-                [{primaryPathway.channel.replace(/_/g, ' ')}]
-              </span>
+            <div className="flex flex-wrap items-center justify-between gap-1.5">
+              <div className="flex items-center gap-1.5">
+                <span className={`px-2.5 py-0.5 rounded text-[10px] font-mono font-bold border ${getChannelBadge(primaryPathway.channel)}`}>
+                  [{primaryPathway.channel.replace(/_/g, ' ')}]
+                </span>
+                <span className="px-2 py-0.5 rounded text-[9px] font-mono font-bold bg-zinc-100 text-zinc-800 border border-zinc-300">
+                  {primaryPathway.relationshipType.replace(/_/g, ' ')}
+                </span>
+              </div>
               <span className="text-[10px] font-mono text-zinc-500 font-bold">
                 For: {primaryPathway.targetRole}
               </span>
@@ -78,10 +83,15 @@ export default function ConceptDownstreamSolution({ concept }: ConceptDownstream
         {secondaryPathway && (
           <div className="bg-white border border-zinc-300 hover:border-cyan-700 rounded-2xl p-6 flex flex-col justify-between space-y-4 shadow-sm transition group">
             <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <span className={`px-2.5 py-0.5 rounded text-[10px] font-mono font-bold border ${getChannelBadge(secondaryPathway.channel)}`}>
-                  [{secondaryPathway.channel.replace(/_/g, ' ')}]
-                </span>
+              <div className="flex flex-wrap items-center justify-between gap-1.5">
+                <div className="flex items-center gap-1.5">
+                  <span className={`px-2.5 py-0.5 rounded text-[10px] font-mono font-bold border ${getChannelBadge(secondaryPathway.channel)}`}>
+                    [{secondaryPathway.channel.replace(/_/g, ' ')}]
+                  </span>
+                  <span className="px-2 py-0.5 rounded text-[9px] font-mono font-bold bg-zinc-100 text-zinc-800 border border-zinc-300">
+                    {secondaryPathway.relationshipType.replace(/_/g, ' ')}
+                  </span>
+                </div>
                 <span className="text-[10px] font-mono text-zinc-500 font-bold">
                   For: {secondaryPathway.targetRole}
                 </span>

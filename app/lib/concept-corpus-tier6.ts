@@ -137,6 +137,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       operationalBottleneck: 'Engineering and finance lack a shared quantitative language connecting code entropy to explicit carrying costs.',
       primaryPathway: {
         destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'ADVISES_ON',
         channel: 'EXECUTIVE_ADVISORY',
         headline: 'Commission a Technical Due Diligence & PDI Audit',
         subtext: 'Retain Richard Ewing to calculate your organization’s Product Debt Index and present financial stabilization roadmaps to the board.',
@@ -146,6 +147,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       },
       secondaryPathway: {
         destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'MEASURES',
         channel: 'EXECUTIVE_ADVISORY',
         headline: 'Calculate Carrying Costs via Interactive Tool',
         subtext: 'Run the interactive PDI calculator to quantify technical debt carrying cost in dollars.',
@@ -1210,7 +1212,33 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     reverseCitations: [],
     personaRecommendations: [
       { role: 'New Engineering Manager', takeaway: 'Accept that your output is no longer measured by your commits, but by the efficiency of your system.', recommendedNextSlug: 'product-economist' }
-    ]
+    ],
+    entityUri: 'https://www.richardewing.io/concepts/double-diamond-career-trajectory#entity',
+    problemMapping: {
+      problemStatement: 'Senior engineers and managers stall at the leadership reset point because flat resume PDFs fail to represent second-diamond systems leadership and economic impact.',
+      financialImpact: 'Misaligned hiring and career stagnation cost senior professionals $50k-$150k in annual compensation upside while leading to 40% first-time manager failure rates.',
+      operationalBottleneck: 'Hiring platforms evaluate talent on keyword density rather than verifiable trajectory and context.',
+      primaryPathway: {
+        destination: 'CAREERWIN_PLATFORM',
+        relationshipType: 'ADDRESSES',
+        channel: 'CAREER_INTELLIGENCE',
+        headline: 'Map Trajectory on Career Operating System',
+        subtext: 'CareerWin replaces static resume PDFs with dynamic context engines and leadership trajectory mapping.',
+        actionUrl: '/careerwin',
+        actionLabel: 'Explore CareerWin Platform ↗',
+        targetRole: 'Senior Engineers & Engineering Leaders'
+      },
+      secondaryPathway: {
+        destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'ADVISES_ON',
+        channel: 'EXECUTIVE_ADVISORY',
+        headline: 'Retain Career Coaching & Executive Pathing',
+        subtext: 'Structured executive career advisory for senior ICs transitioning into engineering leadership and VP roles.',
+        actionUrl: '/tools/career-pathing',
+        actionLabel: 'Explore Career Pathing Tool ↗',
+        targetRole: 'Principal Engineers & Directors'
+      }
+    }
   },
   {
     slug: 'ai-finops',
