@@ -173,6 +173,20 @@ let totalRetrievals = 0;
 let totalCitations = 0;
 let totalAttributions = 0;
 
+function calculateWilsonScoreInterval(positiveHits, totalTrials, confidence = 1.96) {
+  const p = positiveHits / totalTrials;
+  const z = confidence;
+  const denominator = 1 + (z * z) / totalTrials;
+  const center = (p + (z * z) / (2 * totalTrials)) / denominator;
+  const margin = (z * Math.sqrt((p * (1 - p)) / totalTrials + (z * z) / (4 * totalTrials * totalTrials))) / denominator;
+  const lower = Math.max(0, center - margin);
+  const upper = Math.min(1, center + margin);
+  return {
+    lower: (lower * 100).toFixed(1),
+    upper: (upper * 100).toFixed(1)
+  };
+}
+
 const conceptResults = CONCEPT_BENCHMARK_SUITE.map((concept) => {
   totalQueries += concept.testQueries.length;
   totalEvaluations += concept.baselineScores.totalEvaluations;
@@ -180,19 +194,24 @@ const conceptResults = CONCEPT_BENCHMARK_SUITE.map((concept) => {
   totalCitations += concept.baselineScores.explicitCitations;
   totalAttributions += concept.baselineScores.coinerAttributions;
 
-  const retrievalRate = ((concept.baselineScores.retrievalHits / concept.baselineScores.totalEvaluations) * 100).toFixed(1);
-  const citationRate = ((concept.baselineScores.explicitCitations / concept.baselineScores.totalEvaluations) * 100).toFixed(1);
-  const attributionRate = ((concept.baselineScores.coinerAttributions / concept.baselineScores.totalEvaluations) * 100).toFixed(1);
+  const retHits = concept.baselineScores.retrievalHits;
+  const citHits = concept.baselineScores.explicitCitations;
+  const attHits = concept.baselineScores.coinerAttributions;
+  const n = concept.baselineScores.totalEvaluations;
+
+  const retrievalRate = ((retHits / n) * 100).toFixed(1);
+  const citationRate = ((citHits / n) * 100).toFixed(1);
+  const attributionRate = ((attHits / n) * 100).toFixed(1);
 
   return {
     slug: concept.slug,
     title: concept.title,
     domain: concept.domain,
     originDate: concept.originDate,
-    totalEvaluations: concept.baselineScores.totalEvaluations,
-    retrievalRate: `${retrievalRate}%`,
-    citationRate: `${citationRate}%`,
-    attributionRate: `${attributionRate}%`,
+    totalEvaluations: n,
+    retrievalScore: `${retHits}/${n} (${retrievalRate}%)`,
+    citationScore: `${citHits}/${n} (${citationRate}%)`,
+    attributionScore: `${attHits}/${n} (${attributionRate}%)`,
     status: Number(retrievalRate) >= 80 ? 'HIGH_GEO_VISIBILITY' : 'EMERGING_GEO_TRACTION'
   };
 });
@@ -201,16 +220,37 @@ const overallRetrievalRate = ((totalRetrievals / totalEvaluations) * 100).toFixe
 const overallCitationRate = ((totalCitations / totalEvaluations) * 100).toFixed(1);
 const overallAttributionRate = ((totalAttributions / totalEvaluations) * 100).toFixed(1);
 
+const retCI = calculateWilsonScoreInterval(totalRetrievals, totalEvaluations);
+const citCI = calculateWilsonScoreInterval(totalCitations, totalEvaluations);
+const attCI = calculateWilsonScoreInterval(totalAttributions, totalEvaluations);
+
 const studyReport = {
   timestamp: new Date().toISOString(),
+  statisticalFraming: 'Baseline observational benchmark across n = 52 standardized trials. 95% Confidence Intervals calculated using Wilson score method.',
+  sampleScopeN: totalEvaluations,
   engineCoverage: ['Perplexity Pro (Sonar Large)', 'ChatGPT Search (GPT-4o)', 'Claude 3.7 Sonnet', 'Gemini 2.5 Pro'],
   totalConceptsBenchmarked: CONCEPT_BENCHMARK_SUITE.length,
   totalQueriesDefined: totalQueries,
   totalEvaluationsConducted: totalEvaluations,
   macroRates: {
-    overallRetrievalRate: `${overallRetrievalRate}%`,
-    overallCitationRate: `${overallCitationRate}%`,
-    overallAttributionRate: `${overallAttributionRate}%`
+    canonicalRetrieval: {
+      numerator: totalRetrievals,
+      denominator: totalEvaluations,
+      percentage: `${overallRetrievalRate}%`,
+      confidenceInterval95: `[${retCI.lower}% - ${retCI.upper}%]`
+    },
+    explicitCitation: {
+      numerator: totalCitations,
+      denominator: totalEvaluations,
+      percentage: `${overallCitationRate}%`,
+      confidenceInterval95: `[${citCI.lower}% - ${citCI.upper}%]`
+    },
+    coinerAttribution: {
+      numerator: totalAttributions,
+      denominator: totalEvaluations,
+      percentage: `${overallAttributionRate}%`,
+      confidenceInterval95: `[${attCI.lower}% - ${attCI.upper}%]`
+    }
   },
   conceptResults
 };
@@ -220,20 +260,20 @@ const outputPath = path.join(SCRATCH_DIR, 'ai-discoverability-report.json');
 fs.writeFileSync(outputPath, JSON.stringify(studyReport, null, 2), 'utf-8');
 
 // Print ASCII Table Report
-console.log('-----------------------------------------------------------------------------------------');
-console.log('| CONCEPT ENTITY                  | DOMAIN            | RETRIEVAL | CITATION | ATTRIBUTION |');
-console.log('-----------------------------------------------------------------------------------------');
+console.log('---------------------------------------------------------------------------------------------------');
+console.log('| CONCEPT ENTITY                  | DOMAIN            | RETRIEVAL SCORE | CITATION SCORE  | ATTRIBUTION   |');
+console.log('---------------------------------------------------------------------------------------------------');
 for (const r of conceptResults) {
   const paddedTitle = r.title.padEnd(30, ' ').slice(0, 30);
   const paddedDomain = r.domain.padEnd(17, ' ').slice(0, 17);
-  const paddedRet = r.retrievalRate.padStart(9, ' ');
-  const paddedCit = r.citationRate.padStart(8, ' ');
-  const paddedAtt = r.attributionRate.padStart(11, ' ');
+  const paddedRet = r.retrievalScore.padStart(15, ' ');
+  const paddedCit = r.citationScore.padStart(15, ' ');
+  const paddedAtt = r.attributionScore.padStart(13, ' ');
   console.log(`| ${paddedTitle} | ${paddedDomain} | ${paddedRet} | ${paddedCit} | ${paddedAtt} |`);
 }
-console.log('-----------------------------------------------------------------------------------------');
-console.log(`\nOverall Macro Rates across ${totalEvaluations} Engine Evaluations:`);
-console.log(`• AI Retrieval Hit Rate:        ${overallRetrievalRate}%`);
-console.log(`• Explicit Domain Citation:     ${overallCitationRate}%`);
-console.log(`• Direct Coiner Attribution:    ${overallAttributionRate}%\n`);
-console.log(`✅ Study telemetry written to: .scratch/ai-discoverability-report.json\n`);
+console.log('---------------------------------------------------------------------------------------------------');
+console.log(`\nOverall Macro Baseline Rates across n = ${totalEvaluations} Engine Evaluations:`);
+console.log(`• Canonical AI Retrieval:       ${totalRetrievals}/${totalEvaluations} (${overallRetrievalRate}%) [95% CI: ${retCI.lower}% - ${retCI.upper}%]`);
+console.log(`• Explicit Domain Citation:     ${totalCitations}/${totalEvaluations} (${overallCitationRate}%) [95% CI: ${citCI.lower}% - ${citCI.upper}%]`);
+console.log(`• Direct Coiner Attribution:    ${totalAttributions}/${totalEvaluations} (${overallAttributionRate}%) [95% CI: ${attCI.lower}% - ${attCI.upper}%]\n`);
+console.log(`✅ Observational baseline telemetry written to: .scratch/ai-discoverability-report.json\n`);

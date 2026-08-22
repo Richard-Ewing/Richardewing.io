@@ -5,7 +5,12 @@ export type DiagnosticEventName =
   | 'diagnostic_completed' 
   | 'pdf_exported' 
   | 'exogram_clicked'
-  | 'commercial_pathway_clicked';
+  | 'commercial_routing_rendered'
+  | 'commercial_pathway_clicked'
+  | 'commercial_intent_engaged'
+  | 'commercial_conversion_completed';
+
+export type CommercialFunnelStage = 'ROUTING' | 'INTEREST' | 'INTENT' | 'CONVERSION';
 
 export interface TelemetryEvent {
     eventName: DiagnosticEventName;
@@ -20,7 +25,9 @@ export interface CommercialAttributionProperties {
     problemStatement?: string;
     relationshipType: 'MEASURES' | 'OPERATIONALIZES' | 'IMPLEMENTS' | 'ADVISES_ON' | 'ADDRESSES' | 'RELATED_SOLUTION';
     destination: 'RICHARD_EWING_ADVISORY' | 'EXOGRAM_SOFTWARE' | 'CAREERWIN_PLATFORM';
+    funnelStage: CommercialFunnelStage;
     targetRole?: string;
+    metadata?: Record<string, any>;
 }
 
 export function trackDiagnosticEvent(eventName: DiagnosticEventName, toolId: string, properties?: Record<string, any>) {
@@ -45,13 +52,33 @@ export function trackDiagnosticEvent(eventName: DiagnosticEventName, toolId: str
     }
 }
 
+export function trackCommercialFunnelStep(
+    stage: CommercialFunnelStage,
+    attribution: Omit<CommercialAttributionProperties, 'funnelStage'>
+) {
+    const eventNameMap: Record<CommercialFunnelStage, DiagnosticEventName> = {
+        ROUTING: 'commercial_routing_rendered',
+        INTEREST: 'commercial_pathway_clicked',
+        INTENT: 'commercial_intent_engaged',
+        CONVERSION: 'commercial_conversion_completed'
+    };
+
+    trackDiagnosticEvent(
+        eventNameMap[stage],
+        attribution.toolId || attribution.conceptSlug || 'concept-graph',
+        {
+            funnelStage: stage,
+            ...attribution
+        }
+    );
+}
+
+// Backward-compatible helper for immediate pathway clicks and inquiries
 export function trackCommercialJourney(
     action: 'pathway_clicked' | 'advisory_inquiry' | 'product_demo_requested',
-    attribution: CommercialAttributionProperties
+    attribution: Omit<CommercialAttributionProperties, 'funnelStage'>
 ) {
-    trackDiagnosticEvent('commercial_pathway_clicked', attribution.toolId || attribution.conceptSlug || 'concept-graph', {
-        action,
-        ...attribution
-    });
+    const stage: CommercialFunnelStage = action === 'pathway_clicked' ? 'INTEREST' : 'INTENT';
+    trackCommercialFunnelStep(stage, attribution);
 }
 

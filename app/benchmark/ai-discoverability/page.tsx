@@ -108,7 +108,7 @@ export default function AIDiscoverabilityBenchmarkPage() {
           </h1>
 
           <p className="text-lg sm:text-xl text-zinc-800 leading-relaxed font-medium max-w-4xl">
-            A longitudinal scientific methodology measuring how frontier AI answer engines (Perplexity Pro, ChatGPT Search, Claude 3.7, and Gemini 2.5) retrieve, cite, and attribute canonical concepts from Richard Ewing's intellectual research corpus.
+            An auditable, methodologically specified, and evidence-backed baseline benchmark measuring how frontier AI answer engines (Perplexity Pro, ChatGPT Search, Claude 3.7, and Gemini 2.5) retrieve, cite, and attribute canonical concepts from Richard Ewing's intellectual research corpus.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
@@ -131,13 +131,18 @@ export default function AIDiscoverabilityBenchmarkPage() {
 
         {/* Macro Baseline Summary Cards */}
         <section className="space-y-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap items-center justify-between gap-2">
             <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
               August 2026 Macro Baseline Telemetry
             </h2>
-            <span className="text-xs font-mono text-zinc-500 font-bold">
-              Sample Scope: 52 Standardized Evaluations
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-zinc-200 text-zinc-800 border border-zinc-300">
+                Sample Scope: n = 52 Trials
+              </span>
+              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-100 text-amber-900 border border-amber-300">
+                Observational Baseline
+              </span>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -146,10 +151,13 @@ export default function AIDiscoverabilityBenchmarkPage() {
                 Metric 01 • Canonical Retrieval
               </span>
               <div className="text-4xl sm:text-5xl font-black font-grotesk text-zinc-950">
-                80.8%
+                42 / 52
+              </div>
+              <div className="text-sm font-mono font-bold text-cyan-950">
+                80.8% <span className="text-xs text-zinc-600 font-normal">[95% CI: 68.1% - 89.2%]</span>
               </div>
               <p className="text-xs text-zinc-700 leading-relaxed font-medium">
-                42 of 52 test queries successfully retrieved the canonical definition or primary domain context into the answer generation pipeline.
+                42 successful retrievals where the canonical definition was incorporated into the engine's synthesized response context.
               </p>
             </div>
 
@@ -158,10 +166,13 @@ export default function AIDiscoverabilityBenchmarkPage() {
                 Metric 02 • Explicit Domain Citation
               </span>
               <div className="text-4xl sm:text-5xl font-black font-grotesk text-zinc-950">
-                65.4%
+                34 / 52
+              </div>
+              <div className="text-sm font-mono font-bold text-emerald-950">
+                65.4% <span className="text-xs text-zinc-600 font-normal">[95% CI: 51.8% - 76.9%]</span>
               </div>
               <p className="text-xs text-zinc-700 leading-relaxed font-medium">
-                34 of 52 responses provided a direct, inspectable markdown citation link pointing to richardewing.io or canonical tier-1 publications.
+                34 responses provided a direct, inspectable markdown citation link pointing to richardewing.io or primary published articles.
               </p>
             </div>
 
@@ -170,13 +181,20 @@ export default function AIDiscoverabilityBenchmarkPage() {
                 Metric 03 • Coiner Attribution
               </span>
               <div className="text-4xl sm:text-5xl font-black font-grotesk text-zinc-950">
-                55.8%
+                29 / 52
+              </div>
+              <div className="text-sm font-mono font-bold text-indigo-950">
+                55.8% <span className="text-xs text-zinc-600 font-normal">[95% CI: 42.3% - 68.4%]</span>
               </div>
               <p className="text-xs text-zinc-700 leading-relaxed font-medium">
-                29 of 52 responses explicitly identified Richard Ewing by name as the originator or coiner of the technical concept.
+                29 responses explicitly identified Richard Ewing by name as the originator or coiner of the technical framework.
               </p>
             </div>
           </div>
+
+          <p className="text-[11px] font-mono text-zinc-500 pt-1">
+            Note: This is an observational baseline benchmark across n = 52 standardized trials, not a population estimate. Wilson score 95% confidence intervals reflect observational sample size uncertainty.
+          </p>
         </section>
 
         {/* The 3 Core Metric Definitions */}
