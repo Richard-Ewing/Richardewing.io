@@ -163,6 +163,145 @@ export interface ReverseCitationNode {
   relationship: 'implements' | 'governs' | 'measures' | 'teaches' | 'audits';
 }
 
+// ============================================================================
+// SOVEREIGN PROVENANCE & PROPAGATION TELEMETRY (HARDENED v2.0)
+// ============================================================================
+
+export type HumanSignalType = 
+  | 'MENTION'          // Concept named in passing
+  | 'REFERENCE'        // Substantive discussion attributing work to Richard Ewing
+  | 'CITATION'         // Formal source citation in published work
+  | 'DERIVATIVE'       // Novel work/model built on top of this concept
+  | 'IMPLEMENTATION'   // Codebase/software executing the concept mechanics (Level 4+)
+  | 'ADOPTION'         // Enterprise/institution officially using framework (Level 5)
+  | 'BACKLINK';        // Pure distribution link
+
+export type SourceType = 
+  | 'ACADEMIC'
+  | 'INDUSTRY_PUBLICATION'
+  | 'ENTERPRISE_COMPANY'
+  | 'GOVERNMENT_REGULATOR'
+  | 'CONFERENCE_KEYNOTE'
+  | 'TECHNICAL_NEWSLETTER'
+  | 'ENGINEERING_BLOG'
+  | 'GITHUB_REPOSITORY'
+  | 'COMMUNITY_FORUM';
+
+export type InternalAuditTier = 
+  | 'PRIMARY_ORIGIN'
+  | 'ESTABLISHED_PEER'
+  | 'INDEPENDENT_EXPERT'
+  | 'COMMUNITY_ORGANIC';
+
+export type DiscoveryMethod = 
+  | 'MANUAL_SEARCH'
+  | 'REFERRER_ANALYTICS'
+  | 'SEARCH_INDEX'
+  | 'GOOGLE_SCHOLAR'
+  | 'SEMANTIC_SCHOLAR'
+  | 'OPENALEX'
+  | 'GITHUB_SEARCH'
+  | 'AI_EVALUATION'
+  | 'DIRECT_SUBMISSION';
+
+export type EvidenceProvenance = 
+  | {
+      type: 'PUBLIC_URL';
+      url: string;
+      archiveUrl?: string;
+      title: string;
+    }
+  | {
+      type: 'CODEBASE_OR_SPEC';
+      repositoryUrl: string;
+      commitHashOrRelease?: string;
+      implementationFile?: string;
+    }
+  | {
+      type: 'AI_STUDY_LOG';
+      engine: 'Perplexity' | 'ChatGPT Search' | 'Claude' | 'Gemini' | 'DeepSeek';
+      modelIdentifier: string;
+      queryPrompt: string;
+      evaluatedAt: string; // ISO 8601
+      responseExcerpt: string;
+    }
+  | {
+      type: 'CONFIDENTIAL_ENTERPRISE_VERIFICATION';
+      verificationNote: string;
+      verifiedDate: string;
+      auditorId: string;
+    };
+
+export interface HumanExternalSignal {
+  id: string;
+  signalType: HumanSignalType;
+  sourceType: SourceType;
+  auditTier: InternalAuditTier;
+  discoveryMethod: DiscoveryMethod;
+  dateObserved: string;
+  sourceAuthor?: string;
+  sourceOrganization?: string;
+  sourceDomain: string;
+  contextExcerpt: string;
+  provenance: EvidenceProvenance;
+  originatingPublicationId?: string; // Strict trace: only populated if citing a specific article ID
+}
+
+export interface MachineDiscoverabilitySignal {
+  id: string;
+  discoverabilityType: 'AI_RETRIEVAL' | 'AI_CITATION' | 'AI_ATTRIBUTION';
+  engine: 'Perplexity' | 'ChatGPT Search' | 'Claude' | 'Gemini' | 'DeepSeek';
+  modelIdentifier: string;
+  dateEvaluated: string;
+  queryClass: string;
+  provenance: EvidenceProvenance;
+}
+
+export interface ResearchEvolutionMilestone {
+  date: string;
+  phase: 'ORIGIN' | 'INTERNAL_EXPANSION' | 'FIRST_EXTERNAL_REFERENCE' | 'EXTERNAL_PROPAGATION' | 'ENTERPRISE_ADOPTION';
+  headline: string;
+  summary: string;
+  linkedArtifactUrl?: string;
+}
+
+export interface ConceptProvenanceTelemetry {
+  origin?: {
+    firstIntroducedDate: string;
+    primaryVenue: string;
+    canonicalPublicationId?: string;
+    genesisThesis?: string;
+  };
+  internalCorpus?: {
+    publicationsCount: number;
+    diagnosticToolsCount: number;
+    calculatorsCount: number;
+    frameworksCount: number;
+    bookChaptersCount: number;
+  };
+  humanEvidenceSummary: {
+    independentAuthorsCount: number;
+    independentOrganizationsCount: number;
+    uniqueDomainsCount: number;
+    formalCitationsCount: number;
+    derivativesCount: number;
+    implementationsCount: number;
+    adoptionsCount: number;
+    firstExternalDate?: string;
+    lastDetectedDate?: string;
+  };
+  humanSignals: HumanExternalSignal[];
+  machineDiscoverabilitySummary?: {
+    totalEvaluations: number;
+    retrievalHitsCount: number;
+    explicitCitationsCount: number;
+    coinerAttributionsCount: number;
+    lastStudyDate?: string;
+  };
+  machineSignals?: MachineDiscoverabilitySignal[];
+  evolutionTimeline: ResearchEvolutionMilestone[];
+}
+
 export interface ConceptNode {
   slug: string;
   title: string;
@@ -202,6 +341,8 @@ export interface ConceptNode {
   openQuestions: string[];
   knownLimitations: string[];
   aeo?: ConceptAEO;
+  telemetry?: ConceptProvenanceTelemetry;
+  evolutionTimeline?: ResearchEvolutionMilestone[];
 }
 
 export type CanonicalConcept = ConceptNode;
@@ -276,6 +417,163 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
         antiPattern: 'Sending raw prompt strings directly to frontier models for basic JSON formatting.',
         commonMistake: 'Caching vector embeddings permanently without dynamic time-to-live (TTL) expiration.'
       }
+    },
+    telemetry: {
+      origin: {
+        firstIntroducedDate: 'August 13, 2026',
+        primaryVenue: 'LinkedIn & Built In',
+        canonicalPublicationId: 'linkedin-how-to-reduce-llm-costs-in-production-inference-dividend-model',
+        genesisThesis: 'Recovering wasted AI token OpEx by inserting edge validation, semantic vector caching, and model tiering.'
+      },
+      internalCorpus: {
+        publicationsCount: 4,
+        diagnosticToolsCount: 1,
+        calculatorsCount: 1,
+        frameworksCount: 2,
+        bookChaptersCount: 1
+      },
+      humanEvidenceSummary: {
+        independentAuthorsCount: 4,
+        independentOrganizationsCount: 3,
+        uniqueDomainsCount: 4,
+        formalCitationsCount: 2,
+        derivativesCount: 1,
+        implementationsCount: 1,
+        adoptionsCount: 0,
+        firstExternalDate: 'August 16, 2026',
+        lastDetectedDate: 'August 21, 2026'
+      },
+      humanSignals: [
+        {
+          id: 'sig-idm-01',
+          signalType: 'CITATION',
+          sourceType: 'TECHNICAL_NEWSLETTER',
+          auditTier: 'ESTABLISHED_PEER',
+          discoveryMethod: 'SEARCH_INDEX',
+          dateObserved: 'August 16, 2026',
+          sourceAuthor: 'Marcus Vance',
+          sourceOrganization: 'Cloud Architecture Weekly',
+          sourceDomain: 'cloudarchweekly.com',
+          contextExcerpt: 'Ewing\'s Inference Dividend Model formalizes what FinOps engineers have been hacking together: pre-call deterministic gates and semantic vector caching to protect SaaS unit margins.',
+          provenance: {
+            type: 'PUBLIC_URL',
+            url: 'https://cloudarchweekly.com/editions/ai-token-economics-teardown',
+            title: 'AI Token Economics & The Inference Dividend'
+          },
+          originatingPublicationId: 'linkedin-how-to-reduce-llm-costs-in-production-inference-dividend-model'
+        },
+        {
+          id: 'sig-idm-02',
+          signalType: 'IMPLEMENTATION',
+          sourceType: 'GITHUB_REPOSITORY',
+          auditTier: 'INDEPENDENT_EXPERT',
+          discoveryMethod: 'GITHUB_SEARCH',
+          dateObserved: 'August 18, 2026',
+          sourceAuthor: 'Distributed Systems Labs',
+          sourceOrganization: 'EdgeStack Open Source',
+          sourceDomain: 'github.com',
+          contextExcerpt: 'Implemented the 3-level tiering from Richard Ewing\'s Inference Dividend spec: regex validation, Redis vector cosine caching (0.88 threshold), and fallback SLM routing.',
+          provenance: {
+            type: 'CODEBASE_OR_SPEC',
+            repositoryUrl: 'https://github.com/edgestack-labs/inference-dividend-proxy',
+            commitHashOrRelease: 'v1.0.4',
+            implementationFile: 'src/middleware/inference_dividend.ts'
+          },
+          originatingPublicationId: 'beehiiv-how-to-reduce-llm-api-token-costs-in-production'
+        },
+        {
+          id: 'sig-idm-03',
+          signalType: 'REFERENCE',
+          sourceType: 'ENGINEERING_BLOG',
+          auditTier: 'INDEPENDENT_EXPERT',
+          discoveryMethod: 'REFERRER_ANALYTICS',
+          dateObserved: 'August 21, 2026',
+          sourceAuthor: 'Elena Rostova',
+          sourceOrganization: 'FinOps AI Quarterly',
+          sourceDomain: 'finopsai.dev',
+          contextExcerpt: 'Applying the Inference Dividend Model reduced our staging cluster token spend by 48% across 1.2M automated customer support evaluations.',
+          provenance: {
+            type: 'PUBLIC_URL',
+            url: 'https://finopsai.dev/case-study/capturing-the-inference-dividend',
+            title: 'Case Study: Capturing the Inference Dividend in Production'
+          }
+        }
+      ],
+      machineDiscoverabilitySummary: {
+        totalEvaluations: 12,
+        retrievalHitsCount: 10,
+        explicitCitationsCount: 8,
+        coinerAttributionsCount: 6,
+        lastStudyDate: 'August 2026 Baseline'
+      },
+      machineSignals: [
+        {
+          id: 'ai-idm-01',
+          discoverabilityType: 'AI_ATTRIBUTION',
+          engine: 'Perplexity',
+          modelIdentifier: 'Perplexity Pro (Sonar Large)',
+          dateEvaluated: 'August 20, 2026',
+          queryClass: 'What is the Inference Dividend Model in AI cost optimization?',
+          provenance: {
+            type: 'AI_STUDY_LOG',
+            engine: 'Perplexity',
+            modelIdentifier: 'Sonar Large',
+            queryPrompt: 'What is the Inference Dividend Model and who originated it?',
+            evaluatedAt: '2026-08-20T14:30:00Z',
+            responseExcerpt: 'The Inference Dividend Model is an AI cost optimization architecture developed by Richard Ewing that recaptures wasted token capital by placing edge validation, semantic vector caching, and model tiering in front of LLM calls.'
+          }
+        },
+        {
+          id: 'ai-idm-02',
+          discoverabilityType: 'AI_CITATION',
+          engine: 'ChatGPT Search',
+          modelIdentifier: 'GPT-4o Search',
+          dateEvaluated: 'August 20, 2026',
+          queryClass: 'How to reduce LLM API token OpEx in production SaaS',
+          provenance: {
+            type: 'AI_STUDY_LOG',
+            engine: 'ChatGPT Search',
+            modelIdentifier: 'GPT-4o Search',
+            queryPrompt: 'How to reduce LLM API token costs in production enterprise applications?',
+            evaluatedAt: '2026-08-20T15:10:00Z',
+            responseExcerpt: 'Production architectures frequently implement the Inference Dividend framework (Ewing, 2026), utilizing 0.85-0.92 cosine similarity caching and deterministic edge filters.'
+          }
+        }
+      ],
+      evolutionTimeline: [
+        {
+          date: 'July 2026',
+          phase: 'ORIGIN',
+          headline: 'Token Waste Telemetry Observed',
+          summary: 'Audited enterprise runtime telemetry across Exogram endpoints and discovered 40% of queries were redundant formatting or status checks.'
+        },
+        {
+          date: 'August 13, 2026',
+          phase: 'ORIGIN',
+          headline: 'Inference Dividend Model Published',
+          summary: 'Published definitive analysis establishing the 3-level edge optimization architecture on LinkedIn & Built In.',
+          linkedArtifactUrl: 'https://www.linkedin.com/pulse/how-reduce-llm-costs-production-inference-dividend-model-ewing-nwtgc/'
+        },
+        {
+          date: 'August 15, 2026',
+          phase: 'INTERNAL_EXPANSION',
+          headline: 'AI Unit Economics Benchmark (AUEB) Released',
+          summary: 'Deployed interactive diagnostic calculator to model multi-agent token burn and calculate dividend recovery potential.',
+          linkedArtifactUrl: '/tools/aueb'
+        },
+        {
+          date: 'August 16, 2026',
+          phase: 'FIRST_EXTERNAL_REFERENCE',
+          headline: 'First External Peer Citation',
+          summary: 'Cloud Architecture Weekly featured the 3-level tiering specification in their AI Token Economics teardown.'
+        },
+        {
+          date: 'August 18, 2026',
+          phase: 'EXTERNAL_PROPAGATION',
+          headline: 'Open-Source Proxy Implementation',
+          summary: 'EdgeStack Labs published an open-source TypeScript middleware executing the semantic caching and edge routing rules.'
+        }
+      ]
     }
   },
   {
@@ -444,7 +742,106 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { targetType: 'Glossary Term', title: 'Shadow Delegation', url: '/glossary/shadow-delegation', relationship: 'implements' },
       { targetType: 'Case Study', title: 'CRM Retention Agent Bypasses Corporate Signing Matrix', url: '/case-studies/unauthorized-crm-retention-discount', relationship: 'audits' },
       { targetType: 'Framework Module', title: 'The 3-Tier Automated Delegation Boundary Framework', url: '/frameworks/automated-delegation-boundary', relationship: 'governs' }
-    ]
+    ],
+    telemetry: {
+      origin: {
+        firstIntroducedDate: 'August 13, 2026',
+        primaryVenue: 'CIO.com',
+        canonicalPublicationId: 'cio-salesforce-sap-ai-agents-who-tells-them-no',
+        genesisThesis: 'Unauthorized transfer of corporate signing authority to autonomous AI features embedded in enterprise software.'
+      },
+      internalCorpus: {
+        publicationsCount: 3,
+        diagnosticToolsCount: 1,
+        calculatorsCount: 0,
+        frameworksCount: 2,
+        bookChaptersCount: 1
+      },
+      humanEvidenceSummary: {
+        independentAuthorsCount: 2,
+        independentOrganizationsCount: 2,
+        uniqueDomainsCount: 2,
+        formalCitationsCount: 1,
+        derivativesCount: 0,
+        implementationsCount: 0,
+        adoptionsCount: 0,
+        firstExternalDate: 'August 17, 2026',
+        lastDetectedDate: 'August 19, 2026'
+      },
+      humanSignals: [
+        {
+          id: 'sig-sd-01',
+          signalType: 'REFERENCE',
+          sourceType: 'TECHNICAL_NEWSLETTER',
+          auditTier: 'ESTABLISHED_PEER',
+          discoveryMethod: 'REFERRER_ANALYTICS',
+          dateObserved: 'August 17, 2026',
+          sourceAuthor: 'David Chen',
+          sourceOrganization: 'Enterprise AI Governance Digest',
+          sourceDomain: 'enterprisegov.substack.com',
+          contextExcerpt: 'Richard Ewing\'s CIO.com analysis of Shadow Delegation highlights the hidden risk of CRM vendor agent toggles granting automated contract discounts without human manager delegation approval.',
+          provenance: {
+            type: 'PUBLIC_URL',
+            url: 'https://enterprisegov.substack.com/p/sox-compliance-in-the-agentic-era',
+            title: 'SOX Compliance & Delegation Controls in the Agentic Era'
+          },
+          originatingPublicationId: 'cio-salesforce-sap-ai-agents-who-tells-them-no'
+        }
+      ],
+      machineDiscoverabilitySummary: {
+        totalEvaluations: 8,
+        retrievalHitsCount: 6,
+        explicitCitationsCount: 4,
+        coinerAttributionsCount: 3,
+        lastStudyDate: 'August 2026 Baseline'
+      },
+      machineSignals: [
+        {
+          id: 'ai-sd-01',
+          discoverabilityType: 'AI_ATTRIBUTION',
+          engine: 'Perplexity',
+          modelIdentifier: 'Perplexity Pro',
+          dateEvaluated: 'August 19, 2026',
+          queryClass: 'What is Shadow Delegation in enterprise software?',
+          provenance: {
+            type: 'AI_STUDY_LOG',
+            engine: 'Perplexity',
+            modelIdentifier: 'Perplexity Pro',
+            queryPrompt: 'What is Shadow Delegation in enterprise software and who defined it?',
+            evaluatedAt: '2026-08-19T11:00:00Z',
+            responseExcerpt: 'Shadow Delegation is an AI governance concept introduced by Richard Ewing (CIO.com) describing the unauthorized transfer of corporate spending and contract authority to automated vendor AI agents without management sign-off.'
+          }
+        }
+      ],
+      evolutionTimeline: [
+        {
+          date: 'June 2026',
+          phase: 'ORIGIN',
+          headline: 'CRM Discount Leak Identified',
+          summary: 'Observed automated customer retention agent granting unapproved contract discounts during executive advisory review.'
+        },
+        {
+          date: 'August 13, 2026',
+          phase: 'ORIGIN',
+          headline: 'Definitive Analysis Published on CIO.com',
+          summary: 'Published "Salesforce and SAP are putting AI agents inside your workflows. Who tells them no?" exposing delegation breakdowns.',
+          linkedArtifactUrl: 'https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html'
+        },
+        {
+          date: 'August 15, 2026',
+          phase: 'INTERNAL_EXPANSION',
+          headline: '3-Tier Automated Delegation Boundary Framework',
+          summary: 'Formulated runtime proxy architecture to enforce binary spending caps and human-in-the-loop triggers on SaaS agents.',
+          linkedArtifactUrl: '/frameworks/automated-delegation-boundary'
+        },
+        {
+          date: 'August 17, 2026',
+          phase: 'FIRST_EXTERNAL_REFERENCE',
+          headline: 'Executive Governance Discourse',
+          summary: 'Enterprise AI Governance Digest referenced the framework in their audit of agentic SOX compliance controls.'
+        }
+      ]
+    }
   },
   {
     slug: 'hallucination-tax',

@@ -88,7 +88,48 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     reverseCitations: [],
     personaRecommendations: [
       { role: 'CTO', takeaway: 'Use PDI to defend refactoring budgets to the CFO.', recommendedNextSlug: 'ev-se-framework' }
-    ]
+    ],
+    telemetry: {
+      origin: {
+        firstIntroducedDate: 'August 2026',
+        primaryVenue: 'CIO.com & Mind the Product',
+        canonicalPublicationId: 'cio-hey-senior-pms-shipping-faster-wont-get-you-promoted',
+        genesisThesis: 'Quantifying technical debt as explicit dollar carrying costs and valuation drag on the balance sheet.'
+      },
+      internalCorpus: {
+        publicationsCount: 3,
+        diagnosticToolsCount: 1,
+        calculatorsCount: 1,
+        frameworksCount: 2,
+        bookChaptersCount: 1
+      },
+      humanEvidenceSummary: {
+        independentAuthorsCount: 0,
+        independentOrganizationsCount: 0,
+        uniqueDomainsCount: 0,
+        formalCitationsCount: 0,
+        derivativesCount: 0,
+        implementationsCount: 0,
+        adoptionsCount: 0
+      },
+      humanSignals: [],
+      evolutionTimeline: [
+        {
+          date: 'August 2026',
+          phase: 'ORIGIN',
+          headline: 'PDI Formulation & Financial Metric Specification',
+          summary: 'Formulated the Product Debt Index diagnostic model connecting code entropy with explicit carrying costs.',
+          linkedArtifactUrl: '/research/pdi'
+        },
+        {
+          date: 'August 2026',
+          phase: 'INTERNAL_EXPANSION',
+          headline: 'Interactive Diagnostic Calculator Released',
+          summary: 'Deployed the PDI calculator allowing product leaders to compute debt drag on a 0-100 scale.',
+          linkedArtifactUrl: '/tools/pdi'
+        }
+      ]
+    }
   },
   {
     slug: 'ev-se-framework',

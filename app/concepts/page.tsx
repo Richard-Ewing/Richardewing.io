@@ -118,10 +118,16 @@ export default function ResearchConceptsIndexPage() {
                   )}
 
                   <div className="pt-2 border-t border-zinc-100 flex flex-wrap items-center justify-between text-xs font-mono text-zinc-500 gap-2">
-                    <span>First: {concept.firstIntroduced}</span>
-                    <span className="text-emerald-800 font-bold">
-                      {concept.evidenceLedger.length} Evidence Items
-                    </span>
+                    <span>First: {concept.telemetry?.origin?.firstIntroducedDate || concept.firstIntroduced}</span>
+                    {concept.telemetry?.humanEvidenceSummary && concept.telemetry.humanEvidenceSummary.uniqueDomainsCount > 0 ? (
+                      <span className="text-cyan-900 font-bold bg-cyan-50 px-2 py-0.5 rounded border border-cyan-200">
+                        {concept.telemetry.humanEvidenceSummary.independentAuthorsCount} authors • {concept.telemetry.humanEvidenceSummary.uniqueDomainsCount} domains
+                      </span>
+                    ) : (
+                      <span className="text-emerald-800 font-bold">
+                        {concept.evidenceLedger.length} Evidence Items
+                      </span>
+                    )}
                   </div>
                 </div>
 

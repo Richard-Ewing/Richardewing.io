@@ -14,6 +14,7 @@ export interface CorpusArticle {
   relatedToolIds?: string[];
   relatedCaseStudyIds?: string[];
   relatedCurriculumTrackIds?: string[];
+  downstreamExternalSignalIds?: string[];
 }
 
 export const RESEARCH_DOMAINS = [
@@ -125,7 +126,8 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     relatedFrameworkSlugs: ['inference-optimizer-matrix', 'semantic-cache-edge-filter', 'inference-dividend-framework'],
     relatedToolIds: ['aueb', 'slm-vs-api', 'agentic-token-simulator'],
     relatedCaseStudyIds: ['exogram-inference-dividend-optimization', 'saas-cost-collapse'],
-    relatedCurriculumTrackIds: ['ai-economics', 'cloud-finops']
+    relatedCurriculumTrackIds: ['ai-economics', 'cloud-finops'],
+    downstreamExternalSignalIds: ['sig-idm-02']
   },
   // LinkedIn Newsletter Article  -  August 13, 2026
   {
@@ -142,7 +144,8 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     relatedFrameworkSlugs: ['inference-optimizer-matrix', 'semantic-cache-edge-filter', 'inference-dividend-framework'],
     relatedToolIds: ['aueb', 'slm-vs-api', 'agentic-token-simulator'],
     relatedCaseStudyIds: ['exogram-inference-dividend-optimization', 'saas-cost-collapse'],
-    relatedCurriculumTrackIds: ['ai-economics', 'cloud-finops']
+    relatedCurriculumTrackIds: ['ai-economics', 'cloud-finops'],
+    downstreamExternalSignalIds: ['sig-idm-01', 'sig-idm-03']
   },
   // Today's CIO.com Article  -  August 13, 2026
   {
@@ -159,7 +162,8 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     relatedFrameworkSlugs: ['automated-delegation-boundary', 'agentic-drift-matrix'],
     relatedToolIds: ['agentic-drift-matrix', 'shadow-ai'],
     relatedCaseStudyIds: ['unauthorized-crm-retention-discount'],
-    relatedCurriculumTrackIds: ['agent-governance']
+    relatedCurriculumTrackIds: ['agent-governance'],
+    downstreamExternalSignalIds: ['sig-sd-01']
   },
   // LinkedIn Post  -  August 10, 2026
   {

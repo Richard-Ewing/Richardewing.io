@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import SoftwarePhaseTransitionVisual from '@/app/components/visualizations/SoftwarePhaseTransitionVisual';
+import ConceptProvenanceSection from '@/app/components/concepts/ConceptProvenanceSection';
 
 interface ConceptPageProps {
   params: Promise<{ slug: string }>;
@@ -547,6 +548,9 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
             </div>
           </section>
         )}
+
+        {/* 4-Section Sovereign Provenance & Propagation Ledger */}
+        <ConceptProvenanceSection concept={concept} />
 
         {/* Inspectable Evidence Ledger */}
         <section className="space-y-6">
