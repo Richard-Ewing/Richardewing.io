@@ -4,6 +4,7 @@
   "hidden": true,
   "config": {
     "customAgent": {
+      "inheritCustomizations": true,
       "systemPromptSections": [
         {
           "title": "Human Writing Standard & REWS Instructions",

@@ -4,6 +4,7 @@
   "hidden": false,
   "config": {
     "customAgent": {
+      "inheritCustomizations": true,
       "systemPromptSections": [
         {
           "title": "SEO Architect Instructions",

@@ -98,12 +98,14 @@ To harness the full capabilities of next-generation high-reasoning frontier mode
 
 ---
 
-## 9. Google Antigravity 2.0 Full Feature Harness
+## 9. Google Antigravity 2.9 Sovereign Harness
 
-1. **Subagent Swarms**: Summon custom subagents (`lived_experience_writer`, `qa_auditor`, `seo_architect`, `ui_designer`, `code_architect`) in parallel branch worktrees (`Workspace: "branch"`).
-2. **Lifecycle Hooks (`hooks.json`)**: Enforce automated validation scripts (`verify-qa.mjs`) on tool lifecycle events.
-3. **Always-On Rules (`.agents/rules/`)**: Ensure non-negotiable operational invariants are injected into every turn.
-4. **Slash Command Synergy**: Leverage `/goal` for autonomous long-horizon missions, `/schedule` for background timers/crons, `/grill-me` for design alignment, and `/learn` for pattern persistence.
+1. **Subagent Swarms & Customization Inheritance**: Summon custom subagents (`lived_experience_writer`, `qa_auditor`, `seo_architect`, `ui_designer`, `code_architect`) in parallel branch worktrees (`Workspace: "branch"`). Subagents leverage `inheritCustomizations: true` to automatically inherit all workspace rules, REWS guidelines, Next.js invariants, and progressive skills.
+2. **Native Lifecycle Hooks (`hooks.json`)**: Enforce automated validation scripts (`verify-qa.mjs`) via native `PostToolUse` lifecycle interception.
+3. **MCP Binary Payload Offloading**: Large payloads from `pinecone-mcp-server` and `supabase-mcp-server` are disk-persisted and referenced, preventing context window flooding.
+4. **Direct Error Recovery & Windows Review Reliability**: Native task recovery resumes execution streams cleanly without artificial prompt injections, and interactive `Proceed` review cards render reliably on Windows.
+5. **Always-On Rules (`.agents/rules/`)**: Ensure non-negotiable operational invariants are injected into every turn.
+6. **Remote Control & Push Notification Synergy**: Monitor long-running Turbopack static generations and Mode 3 swarms remotely with instant push notifications on task completion.
 
 ---
 
