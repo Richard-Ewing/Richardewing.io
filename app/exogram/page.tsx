@@ -278,6 +278,31 @@ export default function ExogramPage() {
                                 </a>
                             </div>
 
+                            <div className="bg-white border-2 border-emerald-500/30 p-6 sm:p-8 rounded-2xl shadow-sm text-left">
+                                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                                    <span className="px-3 py-1 bg-emerald-100 text-emerald-900 text-xs font-mono font-bold rounded-full border border-emerald-200">
+                                        The AI Economist (Beehiiv) • August 24, 2026
+                                    </span>
+                                    <span className="text-xs font-mono text-zinc-500 font-semibold">
+                                        Execution Systems Architecture
+                                    </span>
+                                </div>
+                                <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
+                                    The Environment as the Product: Beyond Model Leaderboards
+                                </h3>
+                                <p className="text-sm text-zinc-700 leading-relaxed font-medium italic mb-4">
+                                    &quot;As foundation models become interchangeable commodities, the real product is the execution harness surrounding the model. The model matters enormously, but the environment determines what happens when the model is wrong. Exogram turns fragile prompt-based agents into governed execution systems with automated recovery logs, pre-provisioned state, and strict blast-radius controls.&quot;
+                                </p>
+                                <a
+                                    href="https://theaieconomist.beehiiv.com/p/the-ai-coding-tool-battle-is-moving-somewhere-more-important-than-code"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-xs font-mono font-bold text-emerald-900 hover:text-emerald-700 hover:underline inline-flex items-center gap-1"
+                                >
+                                    Read Analysis on Beehiiv ↗
+                                </a>
+                            </div>
+
                             <div className="bg-white border-2 border-cyan-500/30 p-6 sm:p-8 rounded-2xl shadow-sm text-left">
                                 <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                                     <span className="px-3 py-1 bg-cyan-100 text-cyan-900 text-xs font-mono font-bold rounded-full border border-cyan-200">

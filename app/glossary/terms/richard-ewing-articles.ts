@@ -206,5 +206,20 @@ export const richardEwingArticleTerms: GlossaryTerm[] = [
         relatedArticles: [
             { title: 'How Does Meta’s Muse Code Compare to Other AI Coding Tools?', url: 'https://builtin.com/articles/meta-muse-code-comparison' }
         ]
+    },
+    {
+        slug: 'execution-harness-parity',
+        title: 'Execution Harness Parity',
+        category: 'Richard Ewing Frameworks',
+        definition: `Execution Harness Parity is a software economics principle introduced by Richard Ewing in The AI Economist asserting that as foundation LLMs become interchangeable, hot-swappable commodities, the true differentiation and defensibility of an AI development platform shifts entirely to the surrounding execution harness.\n\nWhile two competing coding products may utilize identical underlying models, their real-world developer productivity diverges based on the execution harness: automated workspace isolation, pre-provisioned virtual machine dependencies, append-only recovery logs, interactive design wireframing (e.g. Claude Code /design), and closed-loop verification before human diff handoff.\n\nIn modern engineering evaluation, the model provides baseline intelligence, but the execution harness determines what happens when the model is wrong.`,
+        whyItMatters: `Focusing on model benchmark leaderboards blinds engineering leaders to the dominant operational factors: environmental setup time, crash recovery, and multi-agent interference.`,
+        faqs: [
+            { question: 'What is Execution Harness Parity?', answer: 'A principle by Richard Ewing stating that foundation models are commodities, and an AI platform’s real-world value is determined by its surrounding runtime orchestration and recovery systems.' },
+            { question: 'Why does the execution harness matter more than model benchmarks?', answer: 'Because the model is easily swapped; the environment controls failure recovery, workspace isolation, permission boundaries, and automated test execution.' }
+        ],
+        relatedTerms: ['multi-agent-runtime-isolation', 'failure-cost-asymmetry', 'governed-execution', 'systems-governor'],
+        relatedArticles: [
+            { title: 'The AI Coding Tool Battle Is Moving Somewhere More Important Than Code', url: 'https://theaieconomist.beehiiv.com/p/the-ai-coding-tool-battle-is-moving-somewhere-more-important-than-code' }
+        ]
     }
 ];

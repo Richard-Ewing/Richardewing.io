@@ -110,6 +110,11 @@ const publications = [
     platform: "The AI Economist (Beehiiv)",
     articles: [
       {
+        title: "The AI Coding Tool Battle Is Moving Somewhere More Important Than Code",
+        url: "https://theaieconomist.beehiiv.com/p/the-ai-coding-tool-battle-is-moving-somewhere-more-important-than-code",
+        thesis: "As foundation models become hot-swappable commodities, developer tool competition shifts to the surrounding execution harness: environment pre-provisioning, recovery mechanisms, and making failure cheap."
+      },
+      {
         title: "How Context Engines Power AI Career Intelligence",
         url: "https://theaieconomist.beehiiv.com/p/how-context-engines-power-ai-career-intelligence",
         thesis: "Explains how CareerWin.ai uses structured schemas, metadata retention, and relational databases to replace stateless prompt wrappers with a dynamic career operating system."

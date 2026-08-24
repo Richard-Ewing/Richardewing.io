@@ -27,7 +27,24 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
-  // Today's Built In Publication - August 24, 2026
+  // Today's Beehiiv Newsletter - August 24, 2026
+  {
+    id: 'beehiiv-ai-coding-tool-battle-beyond-code',
+    title: 'The AI Coding Tool Battle Is Moving Somewhere More Important Than Code',
+    url: 'https://theaieconomist.beehiiv.com/p/the-ai-coding-tool-battle-is-moving-somewhere-more-important-than-code',
+    publisher: 'Beehiiv',
+    domain: 'Software Economics',
+    type: 'Executable',
+    date: 'August 24, 2026',
+    thesis: 'As foundation models become hot-swappable commodities (exemplified by GitHub retiring six older Copilot models), developer tool competition shifts to the surrounding execution harness. The true economic value of an AI coding platform is defined by environment pre-provisioning, recovery mechanisms, and making failure cheap rather than raw autocomplete benchmark velocity.',
+    relatedConceptIds: ['ai-coding-tool-economics', 'vibe-coding', 'runtime-vs-alignment', 'deterministic-governance', 'subprime-code-crisis', 'systems-governor', 'four-laws-probabilistic-software', 'spec-driven-development'],
+    relatedGlossarySlugs: ['systems-governor', 'vibe-coding-debt', 'governed-execution', 'deterministic-governance', 'subprime-code-crisis'],
+    relatedFrameworkSlugs: ['governed-execution', 'four-laws-probabilistic-software'],
+    relatedToolIds: ['copilot-roi', 'aueb', 'pdi'],
+    relatedCaseStudyIds: ['runtime-concurrency-failures', 'careerwin-intelligence-platform'],
+    relatedCurriculumTrackIds: ['engineering-economics', 'ai-governance']
+  },
+  // Built In Publication - August 24, 2026
   {
     id: 'builtin-meta-muse-code-comparison',
     title: 'How Does Meta’s Muse Code Compare to Other AI Coding Tools?',

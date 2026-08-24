@@ -35,6 +35,7 @@ const BriefCard = ({ number, title, subtitle, href, isNew, date }: BriefCardProp
 
 export default function BriefingsPage() {
     const briefs = [
+        { number: '17', title: 'Beyond Autocomplete: The Shift to Execution Environments', subtitle: 'As foundation models become commodities, developer tool competition moves to environment provisioning and crash recovery.', href: 'https://theaieconomist.beehiiv.com/p/the-ai-coding-tool-battle-is-moving-somewhere-more-important-than-code', isNew: true, date: 'Aug 2026' },
         { number: '16', title: 'Meta Muse Code vs. Cursor vs. Antigravity (Multi-Agent Isolation)', subtitle: 'Why Git worktree file isolation fails at the runtime layer and how autonomous verification loops make failure cheap.', href: 'https://builtin.com/articles/meta-muse-code-comparison', isNew: true, date: 'Aug 2026' },
         { number: '15', title: 'How Context Engines Power AI Career Intelligence', subtitle: 'How structured schemas, metadata retention, and relational databases replace stateless prompt wrappers in CareerWin.ai.', href: 'https://theaieconomist.beehiiv.com/p/how-context-engines-power-ai-career-intelligence', isNew: true, date: 'Aug 2026' },
         { number: '14', title: 'Leading Product Strategy When Build Costs Approach Zero', subtitle: 'Why zero software creation cost shifts PM from backlog velocity to managing uncertainty and preserving unit margins.', href: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic', isNew: true, date: 'Aug 2026' },
