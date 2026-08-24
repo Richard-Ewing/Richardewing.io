@@ -27,7 +27,24 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
-  // Today's Beehiiv Newsletter - August 21, 2026
+  // Today's Built In Publication - August 24, 2026
+  {
+    id: 'builtin-meta-muse-code-comparison',
+    title: 'How Does Meta’s Muse Code Compare to Other AI Coding Tools?',
+    url: 'https://builtin.com/articles/meta-muse-code-comparison',
+    publisher: 'Built In',
+    domain: 'Software Economics',
+    type: 'Executable',
+    date: 'August 24, 2026',
+    thesis: 'Evaluating Meta Muse Code against Cursor, Claude Code, and Google Antigravity reveals that multi-agent concurrency breaks down at the runtime layer. While Git worktrees isolate file diffs, systems still collide on shared port bindings, database transaction locks, and environment state. Developer ROI is maximized not by autocomplete speed, but by autonomous verification loops and making failure cheap to roll back.',
+    relatedConceptIds: ['ai-coding-tool-economics', 'vibe-coding', 'runtime-vs-alignment', 'deterministic-governance', 'subprime-code-crisis', 'systems-governor', 'four-laws-probabilistic-software', 'spec-driven-development'],
+    relatedGlossarySlugs: ['systems-governor', 'vibe-coding-debt', 'governed-execution', 'deterministic-governance', 'subprime-code-crisis'],
+    relatedFrameworkSlugs: ['governed-execution', 'four-laws-probabilistic-software'],
+    relatedToolIds: ['copilot-roi', 'aueb', 'pdi'],
+    relatedCaseStudyIds: ['runtime-concurrency-failures', 'careerwin-intelligence-platform'],
+    relatedCurriculumTrackIds: ['engineering-economics', 'ai-governance']
+  },
+  // Beehiiv Newsletter - August 21, 2026
   {
     id: 'beehiiv-how-context-engines-power-ai-career-intelligence',
     title: 'How Context Engines Power AI Career Intelligence',

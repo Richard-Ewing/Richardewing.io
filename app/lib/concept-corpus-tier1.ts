@@ -324,7 +324,8 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
     evidenceLedger: [
       { id: 'ev-cr-1', title: 'Context Window Efficacy', url: '#', publisher: 'AI Research Metrics', type: 'Research Note', strength: 4, role: 'Origin', date: '2026' },
       { id: 'ev-cr-2', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Supports', date: 'August 18, 2026' },
-      { id: 'ev-cr-3', title: 'How Context Engines Power AI Career Intelligence', url: 'https://theaieconomist.beehiiv.com/p/how-context-engines-power-ai-career-intelligence', publisher: 'Beehiiv', type: 'Industry Analysis', strength: 5, role: 'Refines', date: 'August 21, 2026' }
+      { id: 'ev-cr-3', title: 'How Context Engines Power AI Career Intelligence', url: 'https://theaieconomist.beehiiv.com/p/how-context-engines-power-ai-career-intelligence', publisher: 'Beehiiv', type: 'Industry Analysis', strength: 5, role: 'Refines', date: 'August 21, 2026' },
+      { id: 'ev-cr-4', title: 'How Does Meta’s Muse Code Compare to Other AI Coding Tools?', url: 'https://builtin.com/articles/meta-muse-code-comparison', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 24, 2026' }
     ],
     reverseCitations: [
       { targetType: 'Diagnostic Tool', title: 'Exogram State Monitor', url: 'https://exogram.ai/monitor', relationship: 'measures' },

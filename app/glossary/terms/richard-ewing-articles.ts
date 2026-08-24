@@ -176,5 +176,35 @@ export const richardEwingArticleTerms: GlossaryTerm[] = [
         relatedArticles: [
             { title: 'How Context Engines Power AI Career Intelligence', url: 'https://theaieconomist.beehiiv.com/p/how-context-engines-power-ai-career-intelligence' }
         ]
+    },
+    {
+        slug: 'multi-agent-runtime-isolation',
+        title: 'Multi-Agent Runtime Isolation',
+        category: 'Richard Ewing Frameworks',
+        definition: `Multi-Agent Runtime Isolation is an infrastructure principle introduced by Richard Ewing in Built In distinguishing between file-system isolation (such as Git worktrees) and full runtime environment isolation when running concurrent AI agents.\n\nWhile Git worktrees give each agent an isolated folder to prevent file write collisions, concurrent agents still share the host runtime environment. Failure occurs when agents clash on local port bindings (e.g., both binding to port 3000 for test servers), create database transaction deadlocks during concurrent migrations, or corrupt shared caches.\n\nTrue multi-agent concurrency requires isolating both repository files and runtime network/database state with deterministic recovery logs.`,
+        whyItMatters: `Without runtime environment isolation, running multiple background AI agents shifts engineering time from building features to debugging broken local development environments.`,
+        faqs: [
+            { question: 'What is Multi-Agent Runtime Isolation?', answer: 'An engineering discipline by Richard Ewing ensuring that concurrent AI coding agents are isolated across both file systems (Git worktrees) and runtime environments (ports, database locks, shared state).' },
+            { question: 'Why do Git worktrees alone fail in multi-agent workflows?', answer: 'Worktrees isolate file edits, but concurrent agents still collide when binding to the same local ports or running competing database migrations.' }
+        ],
+        relatedTerms: ['governed-execution', 'deterministic-execution-control', 'systems-governor', 'vibe-coding'],
+        relatedArticles: [
+            { title: 'How Does Meta’s Muse Code Compare to Other AI Coding Tools?', url: 'https://builtin.com/articles/meta-muse-code-comparison' }
+        ]
+    },
+    {
+        slug: 'failure-cost-asymmetry',
+        title: 'Failure Cost Asymmetry',
+        category: 'Richard Ewing Frameworks',
+        definition: `Failure Cost Asymmetry is a software economics principle formulated by Richard Ewing in Built In stating that the ROI of an AI coding platform is determined by how cheaply an incorrect approach can be rolled back and discarded, rather than by how fast the model generates syntax.\n\nIn probabilistic software development, AI agents frequently generate flawed initial implementations. If discarding an incorrect approach requires 20 minutes of manual Git cleanup, killing locked background processes, and repairing corrupted state, the tool creates negative ROI. Platforms that run autonomous verification loops (compilers, type checks, unit tests) and support instant, zero-cost worktree rollbacks make failure cheap and unlock scalable velocity.`,
+        whyItMatters: `Optimizing for model typing speed ignores the dominant cost of AI-assisted engineering: human verification and rollback overhead. Making failure cheap is the only sustainable way to scale agentic teams.`,
+        faqs: [
+            { question: 'What is Failure Cost Asymmetry?', answer: 'A software economics metric by Richard Ewing: the true efficiency of an AI development tool is measured by the cost and speed of discarding incorrect attempts, not autocomplete generation speed.' },
+            { question: 'How do engineering teams achieve low-cost failure?', answer: 'By combining Git worktrees for instant file rollbacks, automated verification loops (type checks, linters, tests) before diff handoff, and append-only event logs.' }
+        ],
+        relatedTerms: ['four-laws-probabilistic-software', 'governed-execution', 'systems-governor', 'vibe-coding-debt'],
+        relatedArticles: [
+            { title: 'How Does Meta’s Muse Code Compare to Other AI Coding Tools?', url: 'https://builtin.com/articles/meta-muse-code-comparison' }
+        ]
     }
 ];

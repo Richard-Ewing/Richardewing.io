@@ -251,30 +251,57 @@ export default function ExogramPage() {
                             </p>
                         </div>
 
-                        {/* Built In Case Analysis Spotlight */}
-                        <div className="max-w-3xl mx-auto bg-white border-2 border-cyan-500/30 p-6 sm:p-8 rounded-2xl shadow-sm text-left">
-                            <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                                <span className="px-3 py-1 bg-cyan-100 text-cyan-900 text-xs font-mono font-bold rounded-full border border-cyan-200">
-                                    Built In • August 18, 2026
-                                </span>
-                                <span className="text-xs font-mono text-zinc-500 font-semibold">
-                                    Runtime Architecture Case Study
-                                </span>
+                        {/* Built In Case Analysis Spotlights */}
+                        <div className="max-w-3xl mx-auto space-y-6">
+                            <div className="bg-white border-2 border-purple-500/30 p-6 sm:p-8 rounded-2xl shadow-sm text-left">
+                                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                                    <span className="px-3 py-1 bg-purple-100 text-purple-900 text-xs font-mono font-bold rounded-full border border-purple-200">
+                                        Built In • August 24, 2026
+                                    </span>
+                                    <span className="text-xs font-mono text-zinc-500 font-semibold">
+                                        Multi-Agent Runtime Isolation
+                                    </span>
+                                </div>
+                                <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
+                                    Why Git Worktrees Fail at Runtime Isolation
+                                </h3>
+                                <p className="text-sm text-zinc-700 leading-relaxed font-medium italic mb-4">
+                                    &quot;Isolating files in Git worktrees is not the same as isolating the runtime system. The moment you run multiple background agents concurrently, one agent binds to port 3000 while another crashes, or concurrent migrations deadlock your local database. Exogram sits at the execution layer to isolate both code diffs and runtime environment state, running autonomous verification loops before changes ever hit production.&quot;
+                                </p>
+                                <a
+                                    href="https://builtin.com/articles/meta-muse-code-comparison"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-xs font-mono font-bold text-purple-900 hover:text-purple-700 hover:underline inline-flex items-center gap-1"
+                                >
+                                    Read Full Comparison on Built In ↗
+                                </a>
                             </div>
-                            <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
-                                Building the Missing Piece: The Exogram Runtime Engine
-                            </h3>
-                            <p className="text-sm text-zinc-700 leading-relaxed font-medium italic mb-4">
-                                &quot;Every AI tool on the market was built to generate code, but none of them were designed to own product state or be the system itself... I stopped treating the model as the application and started treating it as one component inside a larger system. I built a runtime engine called Exogram.ai that sits between the model and my application, enforcing the rules the model shouldn’t have to decide on.&quot;
-                            </p>
-                            <a
-                                href="https://builtin.com/articles/ai-coding-tools-practical-evaluation"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-xs font-mono font-bold text-cyan-900 hover:text-cyan-700 hover:underline inline-flex items-center gap-1"
-                            >
-                                Read Full Article on Built In ↗
-                            </a>
+
+                            <div className="bg-white border-2 border-cyan-500/30 p-6 sm:p-8 rounded-2xl shadow-sm text-left">
+                                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                                    <span className="px-3 py-1 bg-cyan-100 text-cyan-900 text-xs font-mono font-bold rounded-full border border-cyan-200">
+                                        Built In • August 18, 2026
+                                    </span>
+                                    <span className="text-xs font-mono text-zinc-500 font-semibold">
+                                        Runtime Architecture Case Study
+                                    </span>
+                                </div>
+                                <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
+                                    Building the Missing Piece: The Exogram Runtime Engine
+                                </h3>
+                                <p className="text-sm text-zinc-700 leading-relaxed font-medium italic mb-4">
+                                    &quot;Every AI tool on the market was built to generate code, but none of them were designed to own product state or be the system itself... I stopped treating the model as the application and started treating it as one component inside a larger system. I built a runtime engine called Exogram.ai that sits between the model and my application, enforcing the rules the model shouldn’t have to decide on.&quot;
+                                </p>
+                                <a
+                                    href="https://builtin.com/articles/ai-coding-tools-practical-evaluation"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-xs font-mono font-bold text-cyan-900 hover:text-cyan-700 hover:underline inline-flex items-center gap-1"
+                                >
+                                    Read Full Article on Built In ↗
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>

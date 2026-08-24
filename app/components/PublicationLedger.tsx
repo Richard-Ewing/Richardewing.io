@@ -25,6 +25,11 @@ const publications = [
     platform: "Built In",
     articles: [
       {
+        title: "How Does Meta’s Muse Code Compare to Other AI Coding Tools?",
+        url: "https://builtin.com/articles/meta-muse-code-comparison",
+        thesis: "A technical evaluation of Meta Muse Code against Cursor, Claude Code, and Google Antigravity, examining multi-agent concurrency, Git worktree isolation vs. runtime environment collisions, and autonomous closed-loop verification."
+      },
+      {
         title: "I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)",
         url: "https://builtin.com/articles/ai-coding-tools-practical-evaluation",
         thesis: "I used both Cursor and Google Antigravity to build a business. Six months of late-night error messages taught me why unconstrained AI coding breaks complex codebases and how static root rules build reliable software."

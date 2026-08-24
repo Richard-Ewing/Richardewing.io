@@ -11,6 +11,12 @@ export const metadata: Metadata = {
 
 const articles = [
     {
+        title: 'How Does Meta’s Muse Code Compare to Other AI Coding Tools?',
+        description: 'Evaluating Meta Muse Code against Cursor, Claude Code, and Google Antigravity reveals why multi-agent concurrency breaks down at the runtime layer, and why making failure cheap matters more than autocomplete speed.',
+        topics: ['Meta Muse Code', 'Google Antigravity', 'Git Worktrees', 'Runtime Isolation', 'Multi-Agent Concurrency'],
+        icon: '🤖',
+    },
+    {
         title: 'Your AI Agent Needs a Kill Switch',
         description: 'The common approach to AI agent security is based on guardrails that amount to guesses. A real security program needs rigid rules, not probabilistic predictions.',
         topics: ['AI Security', 'Kill Switch Protocol', 'Deterministic Control', 'Agentic AI'],

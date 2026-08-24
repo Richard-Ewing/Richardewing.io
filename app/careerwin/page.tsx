@@ -186,6 +186,37 @@ export default function CareerWinPage() {
                             </a>
                         </div>
                     </div>
+
+                    {/* Built In Multi-Agent Evaluation Spotlight */}
+                    <div className="mb-16 bg-gradient-to-br from-indigo-50 via-white to-purple-50 border border-indigo-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+                        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <span className="px-3 py-1 bg-indigo-100 text-indigo-900 text-xs font-mono font-bold rounded-full border border-indigo-200">
+                                Built In • August 24, 2026
+                            </span>
+                            <span className="text-xs font-mono text-zinc-500 font-semibold">
+                                Technical Leadership Scorecard
+                            </span>
+                        </div>
+                        <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
+                            Evaluating AI Tooling Leverage: Catching What Agents Get Wrong
+                        </h3>
+                        <p className="text-sm text-zinc-800 leading-relaxed font-medium italic mb-4">
+                            &quot;When evaluating engineers and technical leaders in the multi-agent era, the scarce skill is no longer typing syntax - it is understanding runtime failure modes, orchestrating concurrent agents across isolated worktrees, and enforcing autonomous verification loops. Staff and Principal engineers distinguish themselves by making failure cheap and building durable system boundaries.&quot;
+                        </p>
+                        <div className="flex items-center justify-between flex-wrap gap-4 pt-2 border-t border-indigo-100">
+                            <span className="text-xs font-mono font-bold text-indigo-900">
+                                By Richard Ewing: &quot;How Does Meta’s Muse Code Compare to Other AI Coding Tools?&quot;
+                            </span>
+                            <a
+                                href="https://builtin.com/articles/meta-muse-code-comparison"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-xs font-mono font-bold text-indigo-700 hover:text-indigo-900 hover:underline inline-flex items-center gap-1"
+                            >
+                                Read Comparison on Built In ↗
+                            </a>
+                        </div>
+                    </div>
                 </ScrollReveal>
 
                 {/* Core Pillars */}
