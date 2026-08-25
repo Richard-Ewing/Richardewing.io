@@ -130,6 +130,11 @@ const publications = [
     platform: "LinkedIn",
     articles: [
       {
+        title: "Most Companies Shouldn’t Be Using Autonomous Coding Agents Yet",
+        url: "https://www.linkedin.com/pulse/most-companies-should-using-autonomous-coding-agents-yet-ewing-lanhc/",
+        thesis: "Autonomous coding agents dropped into shared environments create investigation and cleanup bottlenecks that erase developer productivity. Teams must establish boundaries, verification loops, and failure recovery before scaling autonomy."
+      },
+      {
         title: "The AI Economist: Leading Product Strategy When Build Costs Approach Zero",
         url: "https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic",
         thesis: "When generative AI collapses the cost of writing software toward zero, developer bandwidth ceases to be the constraint. The bottleneck shifts to managing uncertainty, evaluating system architecture efficiency, and preserving unit margins."

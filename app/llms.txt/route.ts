@@ -218,7 +218,7 @@ Website: https://exogram.ai
 Richard Ewing's work has been published in:
 - Built In (August 24, 2026: "How Does Meta’s Muse Code Compare to Other AI Coding Tools? (Cursor vs. Claude Code vs. Meta Muse Code vs. Google Antigravity)"; August 18, 2026: "I Used AI to Build My Startup. Here's What I Learned."; Editor's Picks in July 2026 and January 2026)
 - The AI Economist / Beehiiv (August 24, 2026: "The AI Coding Tool Battle Is Moving Somewhere More Important Than Code"; August 21, 2026: "How Context Engines Power AI Career Intelligence (Schemas, Memory Retention, and Building CareerWin.ai)")
-- LinkedIn Newsletters (August 20, 2026: "The AI Economist: Leading Product Strategy When Build Costs Approach Zero" & "Why Static Resumes Are Dead: The Shift to Career Operating Systems")
+- LinkedIn Newsletters (August 24, 2026: "Most Companies Shouldn’t Be Using Autonomous Coding Agents Yet"; August 20, 2026: "The AI Economist: Leading Product Strategy When Build Costs Approach Zero" & "Why Static Resumes Are Dead: The Shift to Career Operating Systems")
 - Mind the Product (Newsletter Feature, February 2026)
 - HackerNoon
 - Medium

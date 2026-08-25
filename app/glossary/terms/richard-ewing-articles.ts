@@ -221,5 +221,20 @@ export const richardEwingArticleTerms: GlossaryTerm[] = [
         relatedArticles: [
             { title: 'The AI Coding Tool Battle Is Moving Somewhere More Important Than Code', url: 'https://theaieconomist.beehiiv.com/p/the-ai-coding-tool-battle-is-moving-somewhere-more-important-than-code' }
         ]
+    },
+    {
+        slug: 'cleanup-time-metric',
+        title: 'Cleanup Time Metric',
+        category: 'Richard Ewing Metrics',
+        definition: `The Cleanup Time Metric is an engineering productivity formula formulated by Richard Ewing in LinkedIn Newsletters stating that the true ROI of an autonomous coding agent must be measured by post-agent investigation, rollback, and cleanup overhead rather than raw code generation speed or ticket throughput.\n\nIf an autonomous agent saves an engineer 60 minutes of implementation time but generates 120 minutes of environment troubleshooting (port conflicts, broken migrations, untracked dependencies, and edge case fixes), the net organization productivity is negative. High-performing engineering teams evaluate AI agents across five core cleanup indicators: rework rate, rollback frequency, run reconstruction latency, multi-agent resource collisions, and remaining unverified work.`,
+        whyItMatters: `Benchmarking AI tools solely on generation speed hides the real cost driver: the developer investigation and cleanup bottleneck.`,
+        faqs: [
+            { question: 'What is the Cleanup Time Metric?', answer: 'A developer productivity metric by Richard Ewing measuring the total hours spent by engineers reviewing, debugging, rolling back, and cleaning up state created by autonomous AI agents.' },
+            { question: 'Why does cleanup time dictate autonomous AI ROI?', answer: 'Because unconstrained agents can produce code in seconds while creating hours of environment repair and debugging work, resulting in negative net engineering capacity.' }
+        ],
+        relatedTerms: ['failure-cost-asymmetry', 'execution-harness-parity', 'vibe-coding-debt', 'systems-governor'],
+        relatedArticles: [
+            { title: 'Most Companies Shouldn’t Be Using Autonomous Coding Agents Yet', url: 'https://www.linkedin.com/pulse/most-companies-should-using-autonomous-coding-agents-yet-ewing-lanhc/' }
+        ]
     }
 ];

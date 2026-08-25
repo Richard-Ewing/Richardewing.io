@@ -27,7 +27,24 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
-  // Today's Beehiiv Newsletter - August 24, 2026
+  // Today's LinkedIn Newsletter - August 24, 2026
+  {
+    id: 'linkedin-most-companies-shouldnt-be-using-autonomous-coding-agents-yet',
+    title: 'Most Companies Shouldn’t Be Using Autonomous Coding Agents Yet',
+    url: 'https://www.linkedin.com/pulse/most-companies-should-using-autonomous-coding-agents-yet-ewing-lanhc/',
+    publisher: 'LinkedIn',
+    domain: 'Software Economics',
+    type: 'Executable',
+    date: 'August 24, 2026',
+    thesis: 'The technology is getting ahead of the environments we are putting it in. Autonomous coding agents operating in shared environments create investigation and cleanup bottlenecks that erase productivity. Before increasing agent autonomy, engineering teams must establish strict boundary controls, autonomous verification loops, and failure recovery harnesses.',
+    relatedConceptIds: ['ai-coding-tool-economics', 'vibe-coding', 'runtime-vs-alignment', 'deterministic-governance', 'subprime-code-crisis', 'systems-governor', 'four-laws-probabilistic-software', 'spec-driven-development'],
+    relatedGlossarySlugs: ['systems-governor', 'vibe-coding-debt', 'governed-execution', 'deterministic-governance', 'subprime-code-crisis'],
+    relatedFrameworkSlugs: ['governed-execution', 'four-laws-probabilistic-software'],
+    relatedToolIds: ['copilot-roi', 'aueb', 'pdi'],
+    relatedCaseStudyIds: ['runtime-concurrency-failures', 'careerwin-intelligence-platform'],
+    relatedCurriculumTrackIds: ['engineering-economics', 'ai-governance']
+  },
+  // Beehiiv Newsletter - August 24, 2026
   {
     id: 'beehiiv-ai-coding-tool-battle-beyond-code',
     title: 'The AI Coding Tool Battle Is Moving Somewhere More Important Than Code',
