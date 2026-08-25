@@ -6,6 +6,7 @@ import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import SoftwarePhaseTransitionVisual from '@/app/components/visualizations/SoftwarePhaseTransitionVisual';
 import ConceptProvenanceSection from '@/app/components/concepts/ConceptProvenanceSection';
 import ConceptDownstreamSolution from '@/app/components/concepts/ConceptDownstreamSolution';
+import MultiHopGraphExplorer from '@/app/components/concepts/MultiHopGraphExplorer';
 
 interface ConceptPageProps {
   params: Promise<{ slug: string }>;
@@ -213,6 +214,9 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
             </div>
           )}
         </div>
+
+        {/* Multi-Hop Knowledge Graph Traversal & Infinite Relationship Hopper */}
+        <MultiHopGraphExplorer initialSlug={concept.slug} />
 
         {/* Interactive Software Creation Phase Transition Visualizer */}
         {(concept.slug === 'software-phase-transition' || concept.slug === 'product-economist') && (

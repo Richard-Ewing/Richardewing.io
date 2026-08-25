@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
+import MultiHopGraphExplorer from '@/app/components/concepts/MultiHopGraphExplorer';
 
 export const metadata: Metadata = {
   title: 'AI Governance & Economics Concepts',
@@ -58,6 +59,9 @@ export default function ResearchConceptsIndexPage() {
             </a>
           </div>
         </div>
+
+        {/* Multi-Hop Causal Knowledge Graph Traversal Engine */}
+        <MultiHopGraphExplorer initialSlug="product-management" />
 
         {/* Section 1: Layer 2 - The Richard Ewing Original Canon */}
         <section className="space-y-6">
