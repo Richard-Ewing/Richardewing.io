@@ -395,6 +395,7 @@ import { TIER3_CONCEPTS } from './concept-corpus-tier3';
 import { TIER4_CONCEPTS } from './concept-corpus-tier4';
 import { TIER5_CONCEPTS } from './concept-corpus-tier5';
 import { TIER6_CONCEPTS } from './concept-corpus-tier6';
+import { TIER7_CONCEPTS } from './concept-corpus-tier7';
 
 export const CANONICAL_CONCEPTS: ConceptNode[] = [
   // =========================================================================
@@ -2032,10 +2033,11 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
   ...TIER3_CONCEPTS,
   ...TIER4_CONCEPTS,
   // =========================================================================
-  // EXPANDED CONCEPTS: Tier 5 (Search Gap + Research) & Tier 6 (Proprietary)
+  // EXPANDED CONCEPTS: Tier 5 (Search Gap), Tier 6 (Proprietary), Tier 7 (Frontier)
   // =========================================================================
   ...TIER5_CONCEPTS,
   ...TIER6_CONCEPTS,
+  ...TIER7_CONCEPTS,
 ];
 
 export function getConceptBySlug(slug: string): CanonicalConcept | undefined {
