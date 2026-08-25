@@ -396,6 +396,7 @@ import { TIER4_CONCEPTS } from './concept-corpus-tier4';
 import { TIER5_CONCEPTS } from './concept-corpus-tier5';
 import { TIER6_CONCEPTS } from './concept-corpus-tier6';
 import { TIER7_CONCEPTS } from './concept-corpus-tier7';
+import { TIER8_CONCEPTS } from './concept-corpus-tier8';
 
 export const CANONICAL_CONCEPTS: ConceptNode[] = [
   // =========================================================================
@@ -2038,6 +2039,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
   ...TIER5_CONCEPTS,
   ...TIER6_CONCEPTS,
   ...TIER7_CONCEPTS,
+  ...TIER8_CONCEPTS,
 ];
 
 export function getConceptBySlug(slug: string): CanonicalConcept | undefined {
