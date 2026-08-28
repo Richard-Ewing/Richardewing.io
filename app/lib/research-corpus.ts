@@ -38,10 +38,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     date: 'August 28, 2026',
     thesis: 'Examining the operational shift from unconstrained conversational AI coding assistants (like Early Cursor) to structured development environments (Google Antigravity). By enforcing immutable root rule files, modular step-by-step execution, and terminal-level zero-trust type verification, context loss incidents dropped by over 90% and debugging overhead was reduced from hours to minutes during the production engineering of Exogram.ai and CareerWin.ai.',
     relatedConceptIds: ['ai-coding-tool-economics', 'vibe-coding', 'spec-driven-development', 'deterministic-governance', 'runtime-vs-alignment', 'systems-governor', 'context-rot', 'four-laws-probabilistic-software', 'subprime-code-crisis', 'context-window-exhaustion', 'prompt-engineering'],
-    relatedGlossarySlugs: ['autonomous-agent-readiness-index', 'spec-driven-agent-execution', 'zero-trust-type-gate', 'agentic-drift-constant', 'systems-governor', 'vibe-coding-debt', 'governed-execution', 'deterministic-governance', 'subprime-code-crisis'],
-    relatedFrameworkSlugs: ['agentic-control-plane', 'governed-execution', 'four-laws-probabilistic-software'],
-    relatedToolIds: ['aari', 'subprime-code-auditor', 'copilot-roi', 'aueb', 'pdi'],
-    relatedCaseStudyIds: ['cursor-to-antigravity-startup-governance', 'agentic-drift-monorepo-incident', 'careerwin-intelligence-platform', 'runtime-concurrency-failures'],
+    relatedGlossarySlugs: ['macro-coding', 'pr-review-gridlock', 'executable-specification', 'human-compiler-syndrome', 'autonomous-agent-readiness-index', 'spec-driven-agent-execution', 'zero-trust-type-gate', 'agentic-drift-constant', 'systems-governor', 'vibe-coding-debt', 'governed-execution', 'deterministic-governance', 'subprime-code-crisis'],
+    relatedFrameworkSlugs: ['macro-coding-governance', 'agentic-control-plane', 'governed-execution', 'four-laws-probabilistic-software'],
+    relatedToolIds: ['spec-quality-scorecard', 'code-review-bottleneck-calc', 'aari', 'subprime-code-auditor', 'copilot-roi', 'aueb', 'pdi'],
+    relatedCaseStudyIds: ['spec-driven-enterprise-rewrite', 'pr-review-gridlock-unlocked', 'cursor-to-antigravity-startup-governance', 'agentic-drift-monorepo-incident', 'careerwin-intelligence-platform', 'runtime-concurrency-failures'],
     relatedCurriculumTrackIds: ['engineering-economics', 'ai-governance', 'track-19-agent-architecture']
   },
   // LinkedIn Newsletter - August 24, 2026
@@ -55,10 +55,10 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     date: 'August 24, 2026',
     thesis: 'The technology is getting ahead of the environments we are putting it in. Autonomous coding agents operating in shared environments create investigation and cleanup bottlenecks that erase productivity. Before increasing agent autonomy, engineering teams must establish strict boundary controls, autonomous verification loops, and failure recovery harnesses.',
     relatedConceptIds: ['ai-coding-tool-economics', 'vibe-coding', 'runtime-vs-alignment', 'deterministic-governance', 'subprime-code-crisis', 'systems-governor', 'four-laws-probabilistic-software', 'spec-driven-development'],
-    relatedGlossarySlugs: ['systems-governor', 'vibe-coding-debt', 'governed-execution', 'deterministic-governance', 'subprime-code-crisis'],
-    relatedFrameworkSlugs: ['governed-execution', 'four-laws-probabilistic-software'],
-    relatedToolIds: ['copilot-roi', 'aueb', 'pdi'],
-    relatedCaseStudyIds: ['runtime-concurrency-failures', 'careerwin-intelligence-platform'],
+    relatedGlossarySlugs: ['macro-coding', 'pr-review-gridlock', 'tool-poisoning-attack', 'shadow-mcp', 'autonomous-agent-readiness-index', 'systems-governor', 'vibe-coding-debt', 'governed-execution', 'deterministic-governance', 'subprime-code-crisis'],
+    relatedFrameworkSlugs: ['mcp-zero-trust-gateway', 'macro-coding-governance', 'agentic-control-plane', 'governed-execution', 'four-laws-probabilistic-software'],
+    relatedToolIds: ['mcp-security-auditor', 'code-review-bottleneck-calc', 'aari', 'copilot-roi', 'aueb', 'pdi'],
+    relatedCaseStudyIds: ['mcp-tool-poisoning-data-breach', 'pr-review-gridlock-unlocked', 'runtime-concurrency-failures', 'careerwin-intelligence-platform'],
     relatedCurriculumTrackIds: ['engineering-economics', 'ai-governance']
   },
   // Beehiiv Newsletter - August 24, 2026

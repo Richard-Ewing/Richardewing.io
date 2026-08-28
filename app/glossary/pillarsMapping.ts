@@ -1,4 +1,7 @@
 export const PILLARS = [
+    { slug: 'mcp-security-zero-trust', name: 'MCP Security & Tool Governance' },
+    { slug: 'macro-coding-architecture', name: 'Macro-Coding & Spec-Driven Engineering' },
+
     { slug: 'probabilistic-product-management', name: 'Probabilistic Product Management' },
     { slug: 'agentic-governance-engineering', name: 'Agentic Governance & Autonomous Software' },
     { slug: 'subprime-code-insolvency', name: 'Subprime Code & Technical Insolvency' },

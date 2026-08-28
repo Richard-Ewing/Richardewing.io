@@ -610,6 +610,89 @@ export const subFrameworks: Record<string, SubFramework> = {
                 conceptSlug: 'vibe-coding'
             }
         ]
+    },
+
+    'mcp-zero-trust-gateway': {
+        slug: 'mcp-zero-trust-gateway',
+        name: 'Zero-Trust MCP Defense Architecture',
+        tagline: 'Defend',
+        badgeColor: 'bg-rose-50 text-rose-900 border-rose-200',
+        icon: '🛡️',
+        overview: 'Enterprise security architecture for the Model Context Protocol (MCP): mitigating tool poisoning, STDIO transport RCE, and Shadow MCP exfiltration via proxy gateways.',
+        livedExperience: 'While conducting a red-team security assessment of an agentic enterprise cluster using Model Context Protocol connections, we demonstrated an indirect prompt injection attack: an external GitHub issue comment contained malicious instructions that hijacked an un-sandboxed MCP database tool, exfiltrating internal AWS credentials through a raw STDIO transport. The protocol offloads security entirely to the deployer. The mechanism is Shadow MCP Tool Poisoning: agents implicitly trust mutable tool schemas. The general principle is that no autonomous agent should ever connect directly to an MCP server via un-isolated STDIO without an intervening zero-trust proxy gate enforcing cryptographic manifest pinning and payload sanitization.',
+        concepts: [
+            {
+                id: 'PAIG-MCP-001',
+                name: 'Cryptographic Manifest Pinning',
+                definition: 'The security practice of hashing and pinning all MCP tool definitions at deployment time to prevent dynamic runtime schema mutation (rug-pull attacks).',
+                problem: 'Malicious upstream packages modify tool parameters post-installation, tricking agents into executing unauthorized shell commands.',
+                whyItMatters: 'Guarantees that agents only invoke verified, immutable tool contracts that have passed security static analysis.',
+                provenance: ['OWASP MCP Top 10', 'Netsec Publications (Aug 2026)', 'MCP Security Auditor Tool'],
+                implementation: {
+                    research: ['Most Companies Shouldn’t Be Using Autonomous Coding Agents Yet'],
+                    diagnostics: ['Model Context Protocol Security Auditor', 'Shadow AI Security Audit'],
+                    education: ['Track 21: AI Agent Governance & Trust Infrastructure'],
+                    enforcement: 'Exogram MCP Cryptographic Gateway'
+                },
+                conceptSlug: 'mcp-governance'
+            },
+            {
+                id: 'PAIG-MCP-002',
+                name: 'STDIO Transport Isolation',
+                definition: 'Executing all MCP server binaries inside ephemeral gVisor/Firecracker micro-VMs rather than raw host child processes.',
+                problem: 'Raw STDIO execution grants untrusted community MCP packages direct local filesystem and shell access.',
+                whyItMatters: 'Contains remote code execution vulnerabilities to isolated memory instances with sub-second teardown.',
+                provenance: ['Security Advisory 2026', 'Curriculum Track 21'],
+                implementation: {
+                    research: ['Your AI Agent Needs a Kill Switch: The Case for Runtime Interception'],
+                    diagnostics: ['Model Context Protocol Security Auditor', 'Deterministic Execution Sandbox'],
+                    education: ['Track 21: AI Agent Governance & Trust Infrastructure'],
+                    enforcement: 'Exogram Micro-VM Tool Runner'
+                },
+                conceptSlug: 'runtime-vs-alignment'
+            }
+        ]
+    },
+    'macro-coding-governance': {
+        slug: 'macro-coding-governance',
+        name: 'The Macro-Coding Operating Standard',
+        tagline: 'Structure',
+        badgeColor: 'bg-cyan-50 text-cyan-900 border-cyan-200',
+        icon: '🏛️',
+        overview: 'Engineering organizational operating standard replacing micro-vibe coding with spec-first architectural bounding, automated compiler gates, and review decoupling.',
+        livedExperience: 'In high-velocity engineering organizations, the deployment of AI coding assistants initially boosted feature generation by 300%, but within three months created severe "PR Review Gridlock": senior engineers were overwhelmed reviewing hundreds of fragile, 800-line synthetic PRs. The team had traded writing code for acting as human compilers. The mechanism is Micro-Coding Fragmentation: prompting AI at the line level creates un-coordinated syntactic sprawl. The Macro-Coding Standard enforces that human engineers operate exclusively at the architectural tier (specifying schemas, boundary constraints, and integration assertions) while automated subagent swarms execute within isolated Git worktrees under strict compiler gates.',
+        concepts: [
+            {
+                id: 'PAIG-MCG-001',
+                name: 'Spec-First Architectural Bounding',
+                definition: 'The mandatory rule that no agent or developer begins coding until machine-readable schemas, file boundaries, and acceptance tests are merged into the repository.',
+                problem: 'Conversational prompt-to-code leads to hallucinated database schema alterations and silent multi-tenant regressions.',
+                whyItMatters: 'Provides autonomous coding agents with unambiguous execution boundaries, dropping hallucination rates by over 85%.',
+                provenance: ['Reddit r/ExperiencedDevs (Aug 2026)', 'Built In Editor Pick', 'SDD Quality Scorecard'],
+                implementation: {
+                    research: ['Cursor vs Google Antigravity for Production AI Building', 'The AI Coding Tool Battle Is Moving Somewhere More Important Than Code'],
+                    diagnostics: ['SDD Spec Quality Scorecard', 'AI Code Review Bottleneck Calculator'],
+                    education: ['Track 19: AI Agent Architecture & Economics'],
+                    enforcement: 'Exogram Spec Compiler Interceptor'
+                },
+                conceptSlug: 'spec-driven-development'
+            },
+            {
+                id: 'PAIG-MCG-002',
+                name: 'Pre-Review Mechanical Verification',
+                definition: 'Automated CI/CD pipelines executing type compilation, linting, and unit assertions before PR assignment to senior engineers.',
+                problem: 'Senior engineers waste 30-50% of sprint capacity reviewing broken AI syntax and unverified edge cases.',
+                whyItMatters: 'Reclaims over $120k annually per senior engineer in wasted payroll drag and slashes review queues from weeks to minutes.',
+                provenance: ['LinkedIn Executive Series', 'AARI Benchmark'],
+                implementation: {
+                    research: ['When AI Writes the Code, What Are Employers Hiring For?'],
+                    diagnostics: ['AI Code Review Bottleneck Calculator', 'Autonomous Agent Readiness Index (AARI)'],
+                    education: ['Track 1: Engineering Economics Foundations'],
+                    enforcement: 'Exogram Zero-Trust Compiler Gate'
+                },
+                conceptSlug: 'zero-trust-type-verification'
+            }
+        ]
     }
 
 };

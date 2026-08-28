@@ -194,6 +194,17 @@ export default function ToolsContent() {
                     </ShineBorder>
                   </a>
 
+                  <Link href="/tools/mcp-security-auditor" className="group block">
+                    <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#f43f5e", "#fb7185"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                      <div className="flex flex-col h-full">
+                        <div className="text-[10px] font-mono font-bold text-rose-900 uppercase tracking-wider mb-2">Measures: MCP Vulnerabilities</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-rose-900 font-extrabold">MCP Security &amp; Poisoning Auditor</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Audit your Model Context Protocol connections against OWASP MCP Top 10 risks and raw STDIO RCE vectors.</p>
+                        <span className="text-rose-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run MCP Audit →</span>
+                      </div>
+                    </ShineBorder>
+                  </Link>
+
                   <Link href="/tools/shadow-ai" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
@@ -244,6 +255,28 @@ export default function ToolsContent() {
                         <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-amber-500">Audit Interview Protocol</h3>
                         <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">The hiring methodology for the AI age. Reconfigure your funnel to test high-level architectural judgment, not raw syntax.</p>
                         <span className="text-amber-600 text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
+                      </div>
+                    </ShineBorder>
+                  </Link>
+
+                  <Link href="/tools/code-review-bottleneck-calc" className="group block">
+                    <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#06b6d4", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                      <div className="flex flex-col h-full">
+                        <div className="text-[10px] font-mono font-bold text-cyan-900 uppercase tracking-wider mb-2">Measures: Engineering SDLC</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-900 font-extrabold">AI Code Review Bottleneck</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Calculate senior engineering payroll waste and cycle time inflation caused by AI-generated PR floods.</p>
+                        <span className="text-cyan-900 font-extrabold text-xs font-bold uppercase tracking-wider">Calculate Bottleneck →</span>
+                      </div>
+                    </ShineBorder>
+                  </Link>
+
+                  <Link href="/tools/spec-quality-scorecard" className="group block">
+                    <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#06b6d4"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                      <div className="flex flex-col h-full">
+                        <div className="text-[10px] font-mono font-bold text-emerald-900 uppercase tracking-wider mb-2">Measures: Spec-Driven Dev</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold">SDD Spec Quality Scorecard</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Linter grading feature PRDs for machine-readable schemas, boundaries, and assertions before agent execution.</p>
+                        <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Score Spec →</span>
                       </div>
                     </ShineBorder>
                   </Link>

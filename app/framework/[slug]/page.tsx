@@ -16,6 +16,8 @@ export async function generateStaticParams() {
         { slug: 'inference-dividend-cascade' },
         { slug: 'general-contractor-pm' },
         { slug: 'subprime-code-governance' },
+        { slug: 'mcp-zero-trust-gateway' },
+        { slug: 'macro-coding-governance' },
     ];
 }
 
