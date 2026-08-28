@@ -1,3 +1,4 @@
+export * from './terms/cpo-ceo-leadership-2026';
 export * from './terms/executive-leadership-2026';
 export * from './terms/high-search-2026';
 export * from './terms/sovereign-expansion-2026';

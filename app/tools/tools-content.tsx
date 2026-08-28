@@ -316,6 +316,38 @@ export default function ToolsContent() {
                 </div>
               </div>
 
+              {/* Category 4: Executive & C-Suite Leadership */}
+              <div>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="h-px bg-zinc-300 flex-1"></div>
+                  <h2 className="text-sm font-bold text-zinc-950 tracking-widest uppercase text-indigo-700">Executive &amp; C-Suite Leadership (Directors On Up)</h2>
+                  <div className="h-px bg-zinc-300 flex-1"></div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <Link href="/tools/executive-ai-operating-model" className="group block">
+                    <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#6366f1", "#a855f7"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                      <div className="flex flex-col h-full">
+                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Measures: CEO &amp; Executive Strategy</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-indigo-900 font-extrabold">Executive AI Operating Model Audit</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">For CEOs, COOs, and Managing Directors: Benchmark enterprise operating readiness, sovereign moats, and cross-functional capital allocation.</p>
+                        <span className="text-indigo-900 font-extrabold text-xs font-bold uppercase tracking-wider">Audit Operating Model →</span>
+                      </div>
+                    </ShineBorder>
+                  </Link>
+
+                  <Link href="/tools/cpo-product-portfolio-matrix" className="group block">
+                    <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#8b5cf6", "#ec4899"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                      <div className="flex flex-col h-full">
+                        <div className="text-[10px] font-mono font-bold text-purple-900 uppercase tracking-wider mb-2">Measures: CPO &amp; Product Economics</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-purple-900 font-extrabold">CPO AI Feature Margin Matrix</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">For CPOs and Product Directors: Model feature gross margins, identify negative-carry features, and transition to outcome-based pricing.</p>
+                        <span className="text-purple-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run Portfolio Audit →</span>
+                      </div>
+                    </ShineBorder>
+                  </Link>
+                </div>
+              </div>
+
             </div>
         </section>
 

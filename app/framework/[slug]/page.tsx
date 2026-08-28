@@ -21,6 +21,9 @@ export async function generateStaticParams() {
         { slug: 'board-fiduciary-governance' },
         { slug: 'cfo-capital-allocation' },
         { slug: 'vp-engineering-operating-model' },
+        { slug: 'cpo-product-strategy' },
+        { slug: 'ceo-enterprise-operating-model' },
+        { slug: 'cro-revenue-transition' },
     ];
 }
 

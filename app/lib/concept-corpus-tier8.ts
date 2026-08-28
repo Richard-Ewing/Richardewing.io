@@ -2131,4 +2131,200 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       evolutionTimeline: []
     }
   }
+,
+
+  // 21. CPO Feature Margin Floor
+  {
+    slug: 'cpo-feature-margin-floor',
+    title: 'CPO Feature Margin Floor (70% Rule)',
+    category: 'Richard Ewing Canon (Original Framework)',
+    domain: 'Product Economics',
+    expertiseLevel: 'Executive',
+    health: { confidence: 0.98, evidenceCount: 6, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 0, knownLimitationsCount: 0 },
+    definition: 'A mandatory product leadership standard requiring all generative AI capabilities and reasoning features to maintain at least a 70% gross margin under peak enterprise token consumption loads before deployment.',
+    whyItMatters: 'Prevents power-user accounts from eroding enterprise SaaS gross profits and protects company exit valuation multiples from token COGS inflation.',
+    whoShouldCare: ['Chief Product Officers (CPO)', 'VPs of Product', 'Product Directors', 'Chief Financial Officers (CFO)'],
+    firstIntroduced: 'August 2026',
+    canonicalReadingOrder: [
+      { step: 1, title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publisher: 'Mind the Product', type: 'Canonical Essay', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Protocol Specification', label: 'CPO Feature Margin Floor', publisher: 'Mind the Product', date: 'August 2026', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/', summary: 'Codified in CPO Sovereign Product Strategy Framework' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-cpo-1', title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/', publisher: 'Mind the Product', type: 'Canonical Essay', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'ai-cogs', relationship: 'supports' },
+      { slug: 'cost-of-predictivity', relationship: 'extends' }
+    ],
+    openQuestions: ['How should product leaders dynamically adjust token credit pricing when upstream frontier model providers alter API rates?'],
+    knownLimitations: ['Requires accurate telemetry on prompt token length and cache hit ratios.'],
+    aeo: {
+      shortDefinition: 'The CPO Feature Margin Floor is a governance standard mandating that all AI features yield at least 70% gross margin.',
+      executiveSummary: 'By enforcing a 70% gross margin floor on AI features, product leaders prevent heavy power users from turning SaaS accounts margin-negative. Features below the floor are metered via consumption credits.',
+      oneSentence: 'Enforces a 70% gross margin floor on all AI product features to protect SaaS profitability.',
+      tweetLength: 'Unmetered AI features kill SaaS margins. The CPO Feature Margin Floor mandates a 70%+ gross margin on all LLM workflows.',
+      keyTakeaways: [
+        'Guarantees that variable GPU token burn does not erode software gross margins.',
+        'Identifies negative-carry features before they cause financial restatements.',
+        'Accelerates the transition to consumption credits and outcome-based pricing.'
+      ],
+      faqs: [
+        { question: 'What is the CPO Feature Margin Floor?', answer: 'A governance policy requiring all AI features to maintain >= 70% gross margin under peak usage.' }
+      ],
+      whenToUse: ['When evaluating new generative AI feature PRDs and reviewing enterprise subscription tiers.'],
+      examples: {
+        enterprise: 'Repackaging a heavy multi-agent contract analyzer from a flat $49/mo seat to a prepaid credit tier.',
+        startup: 'Setting per-user monthly token quotas to prevent gross margin collapse.',
+        antiPattern: 'Offering unbounded Claude Opus reasoning queries on a $29 flat monthly seat.',
+        commonMistake: 'Treating API token costs as general hosting overhead rather than direct feature COGS.'
+      }
+    },
+    canonicalQuote: 'If power users reduce your company cash flow, your pricing model is broken. Enforce the 70% margin floor.',
+    positionStatement: 'SaaS companies that sell variable reasoning compute on fixed seats are transferring margin to foundation model providers.',
+    executableTool: { name: 'CPO AI Feature Margin Matrix', url: '/tools/cpo-product-portfolio-matrix', description: 'Evaluates feature gross margins and models outcome-based pricing.', type: 'Audit Scorecard' },
+    claims: [
+      { statement: 'Enforcing a 70% gross margin floor recovers 20 to 35 points of gross margin across B2B SaaS portfolios.', confidence: 0.95, counterarguments: ['Customers resist usage metering.'], supportingData: 'Portfolio audits across high-growth B2B SaaS companies.' }
+    ],
+    graphRelations: {
+      prerequisites: [{ slug: 'ai-cogs', title: 'AI COGS' }],
+      applications: ['Product Portfolio Pruning', 'SaaS Pricing Transition'],
+      contrastingConcepts: [{ slug: 'cost-of-predictivity', title: 'Cost of Predictivity', distinction: 'Gross Margin Rule vs Variable Predictivity Cost' }]
+    },
+    whatChanges: {
+      engineering: 'Engineering teams implement token telemetry and per-customer rate limiters.',
+      finance: 'Finance gains guaranteed 70%+ gross margin floors on all AI customer tiers.',
+      product: 'Product teams prune negative-carry features and transition to consumption pricing.',
+      security: 'Security enforces bounded execution quotas on all model calls.'
+    },
+    reverseCitations: [],
+    personaRecommendations: [
+      { role: 'Chief Product Officer', takeaway: 'Require affirmative gross margin modeling before signing off on any AI PRD.', recommendedNextSlug: 'seat-based-pricing-compression' }
+    ],
+    telemetry: {
+      origin: {
+        firstIntroducedDate: 'August 2026',
+        primaryVenue: 'Mind the Product',
+        canonicalPublicationId: 'mtp-3-financial-metrics-every-pm-needs',
+        genesisThesis: 'AI features require direct gross margin bounding to protect SaaS profitability.'
+      },
+      internalCorpus: {
+        publicationsCount: 2,
+        diagnosticToolsCount: 1,
+        calculatorsCount: 1,
+        frameworksCount: 1,
+        bookChaptersCount: 0
+      },
+      humanEvidenceSummary: {
+        independentAuthorsCount: 0,
+        independentOrganizationsCount: 0,
+        uniqueDomainsCount: 0,
+        formalCitationsCount: 0,
+        derivativesCount: 0,
+        implementationsCount: 0,
+        adoptionsCount: 0
+      },
+      humanSignals: [],
+      evolutionTimeline: []
+    }
+  },
+
+  // 22. Autonomous Enterprise Operating Model
+  {
+    slug: 'autonomous-enterprise-operating-model',
+    title: 'Autonomous Enterprise Operating Model',
+    category: 'Richard Ewing Canon (Original Framework)',
+    domain: 'Engineering Leadership',
+    expertiseLevel: 'Executive',
+    health: { confidence: 0.98, evidenceCount: 6, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 0, knownLimitationsCount: 0 },
+    definition: 'An executive corporate architecture that replaces functional matrix silos with small, sovereign multidisciplinary units augmented by autonomous agent swarms and governed by runtime signing matrices.',
+    whyItMatters: 'Enables 10x output per employee, slashes release latency from quarters to days, and eliminates bureaucratic matrix coordination overhead.',
+    whoShouldCare: ['Chief Executive Officers (CEO)', 'Chief Operating Officers (COO)', 'Managing Directors', 'Board Directors', 'SVPs'],
+    firstIntroduced: 'August 2026',
+    canonicalReadingOrder: [
+      { step: 1, title: 'Why Your CFO Hates Your Agile Transformation', publisher: 'CIO.com', type: 'Canonical Essay', url: 'https://www.cio.com/article/4143737/why-your-cfo-hates-your-agile-transformation.html' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Tier-1 Article', label: 'CEO Autonomous Enterprise Standard', publisher: 'CIO.com', date: 'August 2026', url: 'https://www.cio.com/article/4143737/why-your-cfo-hates-your-agile-transformation.html', summary: 'Codified in CEO Autonomous Enterprise Standard' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-ceo-1', title: 'Why Your CFO Hates Your Agile Transformation', url: 'https://www.cio.com/article/4143737/why-your-cfo-hates-your-agile-transformation.html', publisher: 'CIO.com', type: 'Industry Benchmark', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'deterministic-governance', relationship: 'supports' },
+      { slug: 'systems-governor', relationship: 'extends' }
+    ],
+    openQuestions: ['How should executive incentive compensation be restructured when agent swarms perform 80% of execution tasks?'],
+    knownLimitations: ['Requires high-maturity automated testing harnesses and clear API contracts.'],
+    aeo: {
+      shortDefinition: 'An executive organizational design replacing functional matrix silos with sovereign, agent-augmented multidisciplinary units.',
+      executiveSummary: 'The Autonomous Enterprise Operating Model structures organizations into high-leverage multidisciplinary units. Each unit pairs a business domain expert with autonomous agent swarms governed by deterministic signing proxies.',
+      oneSentence: 'Transitions corporate matrix hierarchies into high-velocity autonomous agentic units with deterministic governance.',
+      tweetLength: 'Matrix management is dead in the AI era. The Autonomous Enterprise pairs domain leaders with agent swarms governed by runtime proxies.',
+      keyTakeaways: [
+        'Eliminates cross-silo meetings, handoffs, and bureaucratic coordination latency.',
+        'Enforces deterministic financial signing limits ($) and SOX 404 controls on all agents.',
+        'Drives 10x revenue per employee by shifting human focus from syntax to architecture.'
+      ],
+      faqs: [
+        { question: 'What is an Autonomous Enterprise Operating Model?', answer: 'A corporate structure where cross-functional units utilize autonomous AI swarms within deterministic risk boundaries.' }
+      ],
+      whenToUse: ['When restructuring enterprise business units and transitioning from legacy Agile sprint models.'],
+      examples: {
+        enterprise: 'Transforming a 400-person division into 12 sovereign units that ship production features bi-weekly.',
+        startup: 'Scaling from $1M to $20M ARR with a 15-person core team orchestrating agent swarms.',
+        antiPattern: 'Adding more management layers and status meetings to oversee AI code generation.',
+        commonMistake: 'Treating AI as a personal productivity tool rather than an organizational architecture redesign.'
+      }
+    },
+    canonicalQuote: 'You cannot run a 21st-century autonomous enterprise with a 20th-century matrix hierarchy.',
+    positionStatement: 'The competitive moat of the next decade belongs to companies that redesign their organizational structure around autonomous verification loops.',
+    executableTool: { name: 'Executive AI Operating Model Diagnostic', url: '/tools/executive-ai-operating-model', description: 'Audits enterprise organizational maturity and autonomous readiness.', type: 'Audit Scorecard' },
+    claims: [
+      { statement: 'Organizations adopting autonomous unit design achieve 3x faster release velocity while reducing coordination OpEx by over 40 percent.', confidence: 0.95, counterarguments: ['Middle management resistance to matrix dismantling.'], supportingData: 'Enterprise case studies and organizational performance telemetry.' }
+    ],
+    graphRelations: {
+      prerequisites: [{ slug: 'deterministic-governance', title: 'Deterministic Governance' }],
+      applications: ['Enterprise Organizational Restructuring', 'Agent Swarm Deployment'],
+      contrastingConcepts: [{ slug: 'vibe-coding', title: 'Vibe Coding', distinction: 'Systemic Organizational Architecture vs Ad-hoc Code Prompting' }]
+    },
+    whatChanges: {
+      engineering: 'Engineers operate as macro-architects designing machine-readable specifications and test harnesses.',
+      finance: 'Finance achieves direct capital allocation visibility and eliminates disguised maintenance waste.',
+      product: 'Product managers act as Product Economists modeling unit margins and outcome contracts.',
+      security: 'Security enforces runtime binary signing limits and zero-trust proxy isolation.'
+    },
+    reverseCitations: [],
+    personaRecommendations: [
+      { role: 'Chief Executive Officer', takeaway: 'Consolidate fragmented departmental AI pilots into sovereign multidisciplinary units.', recommendedNextSlug: 'cpo-feature-margin-floor' }
+    ],
+    telemetry: {
+      origin: {
+        firstIntroducedDate: 'August 2026',
+        primaryVenue: 'CIO.com',
+        canonicalPublicationId: 'cio-why-your-cfo-hates-your-agile-transformation',
+        genesisThesis: 'Enterprise transformation requires aligning organizational design with autonomous agent execution.'
+      },
+      internalCorpus: {
+        publicationsCount: 3,
+        diagnosticToolsCount: 2,
+        calculatorsCount: 1,
+        frameworksCount: 2,
+        bookChaptersCount: 0
+      },
+      humanEvidenceSummary: {
+        independentAuthorsCount: 0,
+        independentOrganizationsCount: 0,
+        uniqueDomainsCount: 0,
+        formalCitationsCount: 0,
+        derivativesCount: 0,
+        implementationsCount: 0,
+        adoptionsCount: 0
+      },
+      humanSignals: [],
+      evolutionTimeline: []
+    }
+  }
 ];
+

@@ -817,6 +817,130 @@ export const subFrameworks: Record<string, SubFramework> = {
                 conceptSlug: 'audit-interview'
             }
         ]
+    },
+
+    'cpo-product-strategy': {
+        slug: 'cpo-product-strategy',
+        name: 'The CPO Sovereign Product Strategy Framework',
+        tagline: 'Monetize',
+        badgeColor: 'bg-violet-50 text-violet-900 border-violet-200',
+        icon: '🎯',
+        overview: 'Product leadership operating standard for CPOs, VPs of Product, and Product Directors: eliminating negative-carry AI features, enforcing 70%+ gross margin floors, and transitioning from seat-based to outcome monetization.',
+        livedExperience: 'When consulting with growth-stage SaaS product leaders, the most common trap is the "AI Feature Panic": every competitor launched a conversational chat assistant, so the product team rushed 6 LLM features onto their roadmap without modeling the variable token burn. Within 6 months, their heaviest enterprise power users generated tens of thousands of complex multi-agent queries, driving feature-level gross margin to negative 35%. The mechanism is Flat-Fee AI Cannibalization: selling variable compute costs under fixed monthly seat pricing. The CPO Sovereign Product Strategy Framework forces product organizations to treat inference as direct COGS, enforce strict margin floors before PRD sign-off, and package AI capabilities into consumption credits and outcome-based pricing tiers.',
+        concepts: [
+            {
+                id: 'PAIG-CPO-001',
+                name: 'Product Portfolio Margin Floor (70% Rule)',
+                definition: 'The product governance rule requiring all AI capabilities to maintain at least 70% gross margin under peak user consumption loads.',
+                problem: 'Unbounded token consumption by power users secretly turns high-ARR accounts into net-negative gross margin liabilities.',
+                whyItMatters: 'Preserves enterprise SaaS software valuation multiples by defending gross profit margins.',
+                provenance: ['Built In publications', 'CPO Feature Margin Matrix', 'Curriculum Track 2'],
+                implementation: {
+                    research: ['How to Reduce LLM API Token Costs in Production', 'Growth Is Not Your Cost Problem  -  Your Architecture Is'],
+                    diagnostics: ['CPO AI Feature Margin Matrix', 'AI Unit Economics Benchmark (AUEB)'],
+                    education: ['Track 2: AI Economics & Margin Engineering'],
+                    enforcement: 'Exogram Margin Interceptor'
+                },
+                conceptSlug: 'ai-cogs'
+            },
+            {
+                id: 'PAIG-CPO-002',
+                name: 'Seat-to-Outcome Pricing Transition',
+                definition: 'The systematic migration of SaaS pricing architecture from per-user monthly seats to consumption credits, work units, or guaranteed business outcomes.',
+                problem: 'As AI agents automate knowledge worker tasks, enterprise customers reduce employee seat counts, shrinking traditional SaaS contract values.',
+                whyItMatters: 'Aligns vendor revenue with enterprise value creation rather than human headcounts that are actively being automated.',
+                provenance: ['Product Leadership Series', 'AUEB Benchmark'],
+                implementation: {
+                    research: ['Why Your CFO Hates Your Agile Transformation', 'The Autonomous Enterprise'],
+                    diagnostics: ['CPO AI Feature Margin Matrix', 'Agentic FTE Displacement Matrix'],
+                    education: ['Track 19: AI Agent Architecture & Economics'],
+                    enforcement: 'Exogram Usage Metering Proxy'
+                },
+                conceptSlug: 'probabilistic-product-management'
+            }
+        ]
+    },
+    'ceo-enterprise-operating-model': {
+        slug: 'ceo-enterprise-operating-model',
+        name: 'The CEO Autonomous Enterprise Standard',
+        tagline: 'Transform',
+        badgeColor: 'bg-indigo-50 text-indigo-900 border-indigo-200',
+        icon: '👑',
+        overview: 'Executive organizational operating blueprint for CEOs, COOs, Managing Directors, and SVPs to transition legacy corporate matrix hierarchies into high-leverage agentic operating units.',
+        livedExperience: 'In large enterprises, executive leadership faces "Pilot Paralysis": hundreds of uncoordinated AI pilots across marketing, customer support, and engineering with zero compounding moat and millions in un-tracked SaaS spend. The root cause is applying legacy 20th-century matrix management to 21st-century autonomous software. The CEO Autonomous Enterprise Standard consolidates fragmented departmental experiments into sovereign, cross-functional agentic units governed by automated binary signing limits and centralized capital allocation ledgers.',
+        concepts: [
+            {
+                id: 'PAIG-CEO-001',
+                name: 'Sovereign Moat Architecture',
+                definition: 'The executive strategy of investing capital in proprietary enterprise data pipelines, fine-tuned SLM weights, and deterministic governance rather than rented third-party wrapper APIs.',
+                problem: 'Building thin wrappers on generic foundation models leaves enterprise software vulnerable to instant commoditization by platform providers.',
+                whyItMatters: 'Guarantees durable enterprise value, defensible intellectual property, and independence from foundation model price hikes.',
+                provenance: ['CIO.com Executive Briefing', 'CEO AI Operating Model Diagnostic'],
+                implementation: {
+                    research: ['The Technical Diligence Guide for PE-Backed AI Acquisitions', 'Most Companies Shouldn’t Be Using Autonomous Coding Agents Yet'],
+                    diagnostics: ['Executive AI Operating Model Diagnostic', 'Board AI Governance Scorecard'],
+                    education: ['Track 10: AI Due Diligence for Investors & Acquirers'],
+                    enforcement: 'Exogram Sovereign Gateway'
+                },
+                conceptSlug: 'systems-governor'
+            },
+            {
+                id: 'PAIG-CEO-002',
+                name: 'Cross-Functional Agentic Unit Design',
+                definition: 'Restructuring functional silos into small, multidisciplinary teams comprising a domain leader, an AI systems architect, and dedicated autonomous agent swarms.',
+                problem: 'Traditional matrix orgs suffer from cross-departmental friction and communication latency that erases AI execution speed.',
+                whyItMatters: 'Enables 10x output per employee while maintaining strict executive risk bounding and capital accountability.',
+                provenance: ['Executive Advisory Series', 'Curriculum Track 21'],
+                implementation: {
+                    research: ['Cursor vs Google Antigravity for Production AI Building', 'The Innovation Tax'],
+                    diagnostics: ['Executive AI Operating Model Diagnostic', 'APER Benchmark Tool'],
+                    education: ['Track 21: AI Agent Governance & Trust Infrastructure'],
+                    enforcement: 'Exogram Organization Policy Controller'
+                },
+                conceptSlug: 'deterministic-governance'
+            }
+        ]
+    },
+    'cro-revenue-transition': {
+        slug: 'cro-revenue-transition',
+        name: 'The CRO AI Monetization & GTM Standard',
+        tagline: 'Monetize',
+        badgeColor: 'bg-emerald-50 text-emerald-900 border-emerald-200',
+        icon: '💼',
+        overview: 'Go-to-market and revenue leadership standard for CROs, VPs of Sales, and CS Directors: structuring AI consumption contracts, defending net revenue retention, and adapting sales quotas.',
+        livedExperience: 'When enterprise sales teams pitch AI-powered SaaS solutions, enterprise procurement officers routinely demand proof of ROI before agreeing to multi-year contracts. Furthermore, as customers deploy internal AI agents that reduce their human headcount, annual contract renewals face 20-30% seat contraction. The CRO AI Monetization Standard equips revenue organizations to replace vulnerable per-seat contracts with hybrid platform-fee plus consumption-credit commitments, establishing net revenue retention expansion even as client headcounts streamline.',
+        concepts: [
+            {
+                id: 'PAIG-CRO-001',
+                name: 'Hybrid Platform + Consumption Packaging',
+                definition: 'A commercial contract structure combining a predictable base platform license fee with prepaid consumption credits for high-compute AI reasoning workflows.',
+                problem: 'Pure usage pricing creates volatile revenue forecasting; pure seat pricing leads to gross margin compression.',
+                whyItMatters: 'Provides predictable recurring ARR while capturing upside from power-user enterprise token consumption.',
+                provenance: ['SaaS Revenue Economics', 'Curriculum Track 2'],
+                implementation: {
+                    research: ['Why Your CFO Hates Your Agile Transformation', 'The Autonomous Enterprise'],
+                    diagnostics: ['CPO AI Feature Margin Matrix', 'AI Unit Economics Benchmark (AUEB)'],
+                    education: ['Track 2: AI Economics & Margin Engineering'],
+                    enforcement: 'Exogram Metering Ledger'
+                },
+                conceptSlug: 'ai-cogs'
+            },
+            {
+                id: 'PAIG-CRO-002',
+                name: 'Net Retention AI Deflation Hedge',
+                definition: 'The go-to-market strategy of expanding customer lifetime value by selling automated business outcome modules rather than licensing human user seats.',
+                problem: 'Customer seat reductions cause severe net negative revenue retention (NDR < 90%) across traditional SaaS vendors.',
+                whyItMatters: 'Protects enterprise valuation multiples by sustaining 120%+ net revenue retention through algorithmic workflow adoption.',
+                provenance: ['Executive Advisory Series', 'EV-SE Scenario Engine'],
+                implementation: {
+                    research: ['The Technical Diligence Guide for PE-Backed AI Acquisitions'],
+                    diagnostics: ['Valuation Scenario Engine (EV-SE)', 'Agentic FTE Displacement Matrix'],
+                    education: ['Track 10: AI Due Diligence for Investors & Acquirers'],
+                    enforcement: 'Exogram Customer Quota Gate'
+                },
+                conceptSlug: 'probabilistic-product-management'
+            }
+        ]
     }
 
 };

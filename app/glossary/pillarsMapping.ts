@@ -1,4 +1,7 @@
 export const PILLARS = [
+    { slug: 'cpo-product-leadership', name: 'CPO Product Strategy & Outcome Pricing' },
+    { slug: 'ceo-executive-operating-model', name: 'CEO Enterprise Strategy & Sovereign Org Design' },
+
     { slug: 'board-executive-governance', name: 'Board Governance, Fiduciary Duty & AI Risk' },
     { slug: 'cfo-finance-capital-allocation', name: 'CFO Capital Allocation & Section 174' },
 
