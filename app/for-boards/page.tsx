@@ -11,11 +11,13 @@ export const metadata: Metadata = {
 };
 
 const boardQuestions = [
-    { question: 'How much of our engineering budget is spent on maintenance?', answer: 'The Innovation Tax metric measures this. Average is 40-60%. High-performing teams: 20-30%.', metric: 'Innovation Tax', link: '/glossary/innovation-tax' },
+    { question: 'What is our corporate exposure to un-monitored AI risk and shadow delegation?', answer: 'The Board AI Governance Scorecard benchmarks fiduciary duty, SOX 404 agent signing limits, and capital efficiency.', metric: 'Board AI Risk Scorecard', link: '/tools/board-risk-scorecard' },
+    { question: 'How much of our engineering budget is spent on maintenance vs innovation?', answer: 'The Innovation Tax metric measures this. Average is 40-60%. High-performing teams: 20-30%.', metric: 'Innovation Tax', link: '/glossary/innovation-tax' },
+    { question: 'What is our Section 174 tax drag and phantom taxable income liability?', answer: 'The CFO R&D Capitalization Audit forensically separates deductible maintenance OpEx from 5-year amortizable R&D.', metric: 'CFO Capitalization Audit', link: '/tools/cfo-capitalization-audit' },
     { question: 'When will technical debt make new features impossible?', answer: 'The Technical Insolvency Date predicts when maintenance load exceeds total capacity. Some companies are already past it.', metric: 'Technical Insolvency Date', link: '/glossary/technical-insolvency-date' },
     { question: 'How productive is our engineering team compared to benchmarks?', answer: 'APER (Annualized Productive Engineering Revenue) measures revenue generated per engineer. Industry benchmarks available.', metric: 'APER', link: '/tools/aper' },
     { question: 'Are our AI features profitable or margin-negative?', answer: 'AI COGS analysis reveals the variable cost per AI query. Many companies discover their AI features lose money at current margins.', metric: 'AI Unit Economics', link: '/tools/aueb' },
-    { question: 'What is the dollar value of our technical debt?', answer: 'The Product Debt Index translates engineering debt into dollar-denominated liability with quarterly amortization schedules.', metric: 'Product Debt Index', link: '/tools/pdi' },
+    { question: 'What is the dollar value of our technical debt and AI boilerplate?', answer: 'The Product Debt Index and Subprime Code Risk Auditor translate code entropy into dollar-denominated balance sheet liabilities.', metric: 'Subprime Code Auditor', link: '/tools/subprime-code-auditor' },
 ];
 
 export default function ForBoardsPage() {

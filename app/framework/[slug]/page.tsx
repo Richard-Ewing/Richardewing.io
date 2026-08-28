@@ -18,6 +18,9 @@ export async function generateStaticParams() {
         { slug: 'subprime-code-governance' },
         { slug: 'mcp-zero-trust-gateway' },
         { slug: 'macro-coding-governance' },
+        { slug: 'board-fiduciary-governance' },
+        { slug: 'cfo-capital-allocation' },
+        { slug: 'vp-engineering-operating-model' },
     ];
 }
 

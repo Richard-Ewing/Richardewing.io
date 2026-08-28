@@ -693,6 +693,130 @@ export const subFrameworks: Record<string, SubFramework> = {
                 conceptSlug: 'zero-trust-type-verification'
             }
         ]
+    },
+
+    'board-fiduciary-governance': {
+        slug: 'board-fiduciary-governance',
+        name: 'The Boardroom AI Fiduciary Framework',
+        tagline: 'Govern',
+        badgeColor: 'bg-amber-50 text-amber-900 border-amber-200',
+        icon: '🏛️',
+        overview: 'Executive fiduciary governance for Board Directors, CEOs, and Audit Committees to oversee AI capital allocation, prevent shadow delegation, and verify balance-sheet code liabilities.',
+        livedExperience: 'While briefing the board of a publicly traded software enterprise, the CEO proudly presented a slide claiming "300% AI engineering acceleration." When the Audit Committee asked what percentage of current sprint capacity was consumed by bug fixes and maintenance, management had no answer. Our forensic audit revealed that 58% of engineering payroll was consumed by uncapitalized maintenance on AI boilerplate, and autonomous CRM agents were executing unauthorized customer discounts. The mechanism is Fiduciary Blindness: board committees tracking revenue and headcount without quantitative visibility into R&D capital efficiency or agentic delegation limits. The Boardroom AI Fiduciary Framework provides directors with an un-fudgeable, financial-first dashboard of technical liabilities and autonomous boundaries.',
+        concepts: [
+            {
+                id: 'PAIG-BFG-001',
+                name: 'Boardroom AI Risk Oversight',
+                definition: 'The fiduciary duty of corporate boards to actively govern non-deterministic AI systems, evaluate synthetic debt liabilities, and mandate formal signing matrices.',
+                problem: 'Boards treat AI as an IT department concern until an autonomous agent bypasses internal controls or triggers an SEC disclosure event.',
+                whyItMatters: 'Protects directors from duty-of-oversight liabilities (Caremark claims) and ensures enterprise capital is invested in genuine innovation.',
+                provenance: ['CIO.com Executive Series', 'Board AI Governance Scorecard', 'Curriculum Track 10'],
+                implementation: {
+                    research: ['The Technical Diligence Guide for PE-Backed AI Acquisitions', 'The Innovation Tax: Is Your R&D Actually Just OpEx?'],
+                    diagnostics: ['Board AI Governance Scorecard', 'Valuation Scenario Engine (EV-SE)'],
+                    education: ['Track 10: AI Due Diligence for Investors & Acquirers'],
+                    enforcement: 'Exogram Executive Policy Matrix'
+                },
+                conceptSlug: 'deterministic-governance'
+            },
+            {
+                id: 'PAIG-BFG-002',
+                name: 'Autonomous Agent Signing Matrix (SOX 404)',
+                definition: 'A formal corporate delegation policy establishing deterministic dollar thresholds ($) and multi-signature gates for autonomous software agents.',
+                problem: 'Autonomous agents independently modify pricing tiers, approve refunds, and commit code without executive authorization.',
+                whyItMatters: 'Maintains strict Sarbanes-Oxley 404 internal control compliance for algorithmic enterprise workflows.',
+                provenance: ['Built In publications', 'Exogram Runtime Governance'],
+                implementation: {
+                    research: ['Your AI Agent Needs a Kill Switch: The Case for Runtime Interception'],
+                    diagnostics: ['Board AI Governance Scorecard', 'Shadow AI Security Audit'],
+                    education: ['Track 21: AI Agent Governance & Trust Infrastructure'],
+                    enforcement: 'Exogram Binary Signing Proxy'
+                },
+                conceptSlug: 'shadow-delegation'
+            }
+        ]
+    },
+    'cfo-capital-allocation': {
+        slug: 'cfo-capital-allocation',
+        name: 'The CFO AI Capital Allocation Model',
+        tagline: 'Capitalize',
+        badgeColor: 'bg-emerald-50 text-emerald-900 border-emerald-200',
+        icon: '📊',
+        overview: 'Financial engineering operating model for CFOs and finance leaders to optimize Section 174 R&D capitalization, eliminate the Innovation Tax, and defend SaaS EBITDA margins.',
+        livedExperience: 'In modern technology companies, CFOs face a dual financial crisis: cloud GPU token bills scale non-linearly with user activity (compressing gross margins from 80% to 45%), while IRS Section 174 rules mandate 5-year domestic amortization of all R&D expenses. If 60% of your engineering payroll is actually routine bug fixing on AI code, claiming that spend as capitalized R&D creates massive phantom taxable income. The CFO Capital Allocation Model provides finance leaders with automated telemetry to segregate true innovation from maintenance OpEx, structure tiered inference cascades, and defend enterprise exit multiples.',
+        concepts: [
+            {
+                id: 'PAIG-CFO-001',
+                name: 'Section 174 R&D Forensic Segregation',
+                definition: 'The mathematical classification of engineering activities into capitalizable innovation R&D vs deductible maintenance OpEx.',
+                problem: 'Over-reporting maintenance as innovation triggers severe 5-year amortization tax drag under Section 174.',
+                whyItMatters: 'Restores cash flow liquidity by ensuring only genuine new architectural capabilities are subjected to multi-year amortization.',
+                provenance: ['Foundry / CIO.com', 'CFO R&D Capitalization Audit', 'Curriculum Track 1'],
+                implementation: {
+                    research: ['Why Your CFO Hates Your Agile Transformation', 'The Innovation Tax'],
+                    diagnostics: ['CFO AI R&D Capitalization Audit', 'Product Debt Index (PDI)'],
+                    education: ['Track 1: Engineering Economics Foundations'],
+                    enforcement: 'Exogram Sprint Telemetry Classifier'
+                },
+                conceptSlug: 'innovation-tax'
+            },
+            {
+                id: 'PAIG-CFO-002',
+                name: 'Synthetic COGS Amortization Curve',
+                definition: 'The accounting and FinOps methodology for tracking variable token consumption as direct cost of goods sold rather than general hosting OpEx.',
+                problem: 'Buried GPU bills obscure negative-carry features until gross margins collapse during financial audits.',
+                whyItMatters: 'Enables feature-level contribution margin visibility and guides pricing transitions to credit-based token consumption rails.',
+                provenance: ['Built In publications', 'AUEB Benchmark'],
+                implementation: {
+                    research: ['Growth Is Not Your Cost Problem  -  Your Architecture Is', 'How to Reduce LLM API Token Costs in Production'],
+                    diagnostics: ['AI Unit Economics Benchmark (AUEB)', 'AI Feature Unit Margin Matrix'],
+                    education: ['Track 2: AI Economics & Margin Engineering'],
+                    enforcement: 'Exogram Token Ledger Interceptor'
+                },
+                conceptSlug: 'ai-cogs'
+            }
+        ]
+    },
+    'vp-engineering-operating-model': {
+        slug: 'vp-engineering-operating-model',
+        name: 'The VP Engineering Capital Operating Standard',
+        tagline: 'Elevate',
+        badgeColor: 'bg-indigo-50 text-indigo-900 border-indigo-200',
+        icon: '⚡',
+        overview: 'Executive leadership standard for VPs and Directors of Engineering: transitioning teams from story-point sprint velocity to capital efficiency, macro-coding, and talent modernization.',
+        livedExperience: 'When I consult with engineering executives, the most common frustration is the "Productivity Paradox": the team has GitHub Copilot, Cursor, and Claude Code enabled, commit frequency is up 400%, but feature delivery dates are slipping and senior architects are exhausted. The root cause is managing modern AI teams with 2012 Agile metrics. Measuring story points or lines of code incentives synthetic clutter. The VP Engineering Capital Operating Standard re-aligns engineering incentives around Annualized Productive Engineering Revenue (APER), automated compiler bounding, and sovereign talent leveling.',
+        concepts: [
+            {
+                id: 'PAIG-VPE-001',
+                name: 'Annualized Productive Engineering Revenue (APER)',
+                definition: 'An executive efficiency metric calculating the net enterprise revenue generated per fully-loaded engineering headcount after deducting technical debt maintenance.',
+                problem: 'Sprint velocity and DORA deployment frequency reward teams for shipping high-churn, low-value boilerplate.',
+                whyItMatters: 'Translates engineering productivity directly into boardroom revenue metrics ($/Engineer).',
+                provenance: ['CIO.com publications', 'APER Diagnostic Tool', 'Curriculum Track 1'],
+                implementation: {
+                    research: ['Hey, Senior PMs: Shipping Faster Won’t Get You Promoted', 'The Technical Insolvency Date'],
+                    diagnostics: ['APER Benchmark Tool', 'Product Debt Index (PDI)'],
+                    education: ['Track 1: Engineering Economics Foundations'],
+                    enforcement: 'Exogram Team Efficiency Dashboard'
+                },
+                conceptSlug: 'aper-metric'
+            },
+            {
+                id: 'PAIG-VPE-002',
+                name: 'Post-Syntax Career Architecture',
+                definition: 'The restructuring of engineering job ladders, hiring rubrics, and performance reviews to reward verification, architectural judgment, and specification design over manual syntax writing.',
+                problem: 'Interviewing candidates on whiteboard LeetCode algorithms when AI tools generate identical code in 200ms.',
+                whyItMatters: 'Builds resilient engineering organizations staffed by macro-architects who can safely govern autonomous agent swarms.',
+                provenance: ['Built In Editor Pick', 'Audit Interview Scorecard'],
+                implementation: {
+                    research: ['When AI Writes the Code, What Are Employers Hiring For?', 'Reimagining the Coding Interview for the AI Generation'],
+                    diagnostics: ['Audit Interview Protocol', 'Career Architecture Funnel'],
+                    education: ['Track 15: AI Career Pivot & Engineering Strategy'],
+                    enforcement: 'Exogram Audit Interview Engine'
+                },
+                conceptSlug: 'audit-interview'
+            }
+        ]
     }
 
 };

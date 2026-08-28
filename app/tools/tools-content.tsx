@@ -48,6 +48,28 @@ export default function ToolsContent() {
                     </ShineBorder>
                   </Link>
 
+                  <Link href="/tools/cfo-capitalization-audit" className="group block">
+                    <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                      <div className="flex flex-col h-full">
+                        <div className="text-[10px] font-mono font-bold text-emerald-900 uppercase tracking-wider mb-2">Measures: CFO &amp; Tax Strategy</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold">CFO R&amp;D Capitalization Audit</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Calculate true innovation investment vs hidden maintenance OpEx, Section 174 tax impact, and EBITDA adjustments.</p>
+                        <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run Financial Audit →</span>
+                      </div>
+                    </ShineBorder>
+                  </Link>
+
+                  <Link href="/tools/board-risk-scorecard" className="group block">
+                    <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#f59e0b", "#d97706"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                      <div className="flex flex-col h-full">
+                        <div className="text-[10px] font-mono font-bold text-amber-900 uppercase tracking-wider mb-2">Measures: Board Fiduciary Duty</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-amber-900 font-extrabold">Board AI Governance Scorecard</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">10-vector fiduciary audit for Board Directors, CEOs, and Audit Committees to evaluate agent signing limits and capital risk.</p>
+                        <span className="text-amber-900 font-extrabold text-xs font-bold uppercase tracking-wider">Audit Fiduciary Risk →</span>
+                      </div>
+                    </ShineBorder>
+                  </Link>
+
                   <Link href="/tools/ev-se" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#22d3ee", "#8b5cf6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">

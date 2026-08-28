@@ -1,3 +1,4 @@
+export * from './terms/executive-leadership-2026';
 export * from './terms/high-search-2026';
 export * from './terms/sovereign-expansion-2026';
 import { allGlossaryTerms } from './terms/index';

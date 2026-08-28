@@ -1,4 +1,7 @@
 export const PILLARS = [
+    { slug: 'board-executive-governance', name: 'Board Governance, Fiduciary Duty & AI Risk' },
+    { slug: 'cfo-finance-capital-allocation', name: 'CFO Capital Allocation & Section 174' },
+
     { slug: 'mcp-security-zero-trust', name: 'MCP Security & Tool Governance' },
     { slug: 'macro-coding-architecture', name: 'Macro-Coding & Spec-Driven Engineering' },
 

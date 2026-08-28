@@ -11,12 +11,15 @@ export const metadata: Metadata = {
 };
 
 const tools = [
+    { name: 'Autonomous Agent Readiness (AARI)', description: 'Audit repository architecture and type strictness before enabling Claude Code or Antigravity.', href: '/tools/aari', icon: '🤖', color: 'cyan' },
+    { name: 'Subprime Code Risk Auditor', description: 'Quantify the financial refactor liability and maintenance drag of un-governed vibe coding.', href: '/tools/subprime-code-auditor', icon: '⚖️', color: 'rose' },
+    { name: 'AI Code Review Bottleneck', description: 'Calculate senior engineer payroll waste and cycle time inflation from synthetic PR floods.', href: '/tools/code-review-bottleneck-calc', icon: '⚡', color: 'teal' },
+    { name: 'MCP Security Auditor', description: 'Audit Model Context Protocol connections against OWASP MCP Top 10 and STDIO RCE risks.', href: '/tools/mcp-security-auditor', icon: '🛡️', color: 'rose' },
+    { name: 'SLM Break-Even Calculator', description: 'Model the exact monthly query volume where self-hosting quantized SLMs beats frontier model APIs.', href: '/tools/slm-break-even', icon: '💻', color: 'violet' },
     { name: 'Product Debt Index (PDI)', description: 'Calculate your Technical Insolvency Date. Know when maintenance load will exceed capacity.', href: '/tools/pdi', icon: '🔬', color: 'rose' },
     { name: 'APER Calculator', description: 'Measure Annualized Productive Engineering Revenue. Benchmark against industry.', href: '/tools/aper', icon: '📈', color: 'cyan' },
     { name: 'AUEB Calculator', description: 'Model AI Unit Economics. Find the margin collapse point before you ship.', href: '/tools/aueb', icon: '🤖', color: 'violet' },
-    { name: 'EV-SE Calculator', description: 'Enterprise Value per Software Engineer. Map engineering investment to valuation.', href: '/tools/ev-se', icon: '💰', color: 'emerald' },
     { name: 'Audit Interview', description: 'AI-powered engineering assessment. Score candidates across 5 grading levels.', href: '/tools/audit-interview', icon: '🎯', color: 'amber' },
-    { name: 'AI Scoring Engine', description: 'Evaluate AI feature economics before committing engineering resources.', href: '/tools/scoring', icon: '⚡', color: 'teal' },
 ];
 
 const colorMap: Record<string, string> = {
