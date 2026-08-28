@@ -251,8 +251,33 @@ export default function ExogramPage() {
                             </p>
                         </div>
 
-                        {/* Built In Case Analysis Spotlights */}
+                        {/* Built In & Beehiiv Case Analysis Spotlights */}
                         <div className="max-w-3xl mx-auto space-y-6">
+                            <div className="bg-white border-2 border-indigo-500/30 p-6 sm:p-8 rounded-2xl shadow-sm text-left">
+                                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                                    <span className="px-3 py-1 bg-indigo-100 text-indigo-900 text-xs font-mono font-bold rounded-full border border-indigo-200">
+                                        The AI Economist (Beehiiv) • August 28, 2026
+                                    </span>
+                                    <span className="text-xs font-mono text-zinc-500 font-semibold">
+                                        Production Setup &amp; Governance
+                                    </span>
+                                </div>
+                                <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
+                                    Enforcing Immutable Rules &amp; Zero-Trust Boundaries for Exogram.ai
+                                </h3>
+                                <p className="text-sm text-zinc-700 leading-relaxed font-medium italic mb-4">
+                                    &quot;To prevent context drift and code corruption when building Exogram.ai, I established three operational rules: maintain immutable system prompt files, execute modular step-by-step verified updates, and run zero-trust terminal-level type checks. Context loss incidents dropped by over 90% and debugging overhead was reduced from hours down to minutes.&quot;
+                                </p>
+                                <a
+                                    href="https://theaieconomist.beehiiv.com/p/cursor-vs-google-antigravity-for-production-ai-building-278a"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-xs font-mono font-bold text-indigo-900 hover:text-indigo-700 hover:underline inline-flex items-center gap-1"
+                                >
+                                    Read Research Note on Beehiiv ↗
+                                </a>
+                            </div>
+
                             <div className="bg-white border-2 border-purple-500/30 p-6 sm:p-8 rounded-2xl shadow-sm text-left">
                                 <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                                     <span className="px-3 py-1 bg-purple-100 text-purple-900 text-xs font-mono font-bold rounded-full border border-purple-200">

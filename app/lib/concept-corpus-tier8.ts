@@ -1938,7 +1938,8 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     ],
     evidenceLedger: [
       { id: 'ev-pe-1', title: 'How Does Meta’s Muse Code Compare to Other AI Coding Tools?', url: 'https://builtin.com/articles/meta-muse-code-comparison', publisher: 'Built In', type: 'Industry Benchmark', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' },
-      { id: 'ev-pe-2', title: 'How Context Engines Power AI Career Intelligence', url: 'https://theaieconomist.beehiiv.com/p/how-context-engines-power-ai-career-intelligence', publisher: 'Beehiiv', type: 'Technical Essay', strength: 5 as const, role: 'Supports' as const, date: 'August 2026' }
+      { id: 'ev-pe-2', title: 'How Context Engines Power AI Career Intelligence', url: 'https://theaieconomist.beehiiv.com/p/how-context-engines-power-ai-career-intelligence', publisher: 'Beehiiv', type: 'Technical Essay', strength: 5 as const, role: 'Supports' as const, date: 'August 2026' },
+      { id: 'ev-pe-3', title: 'Cursor vs Google Antigravity for Production AI Building', url: 'https://theaieconomist.beehiiv.com/p/cursor-vs-google-antigravity-for-production-ai-building-278a', publisher: 'Beehiiv', type: 'Industry Analysis', strength: 5 as const, role: 'Extends' as const, date: 'August 28, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'context-engineering', relationship: 'extends' },

@@ -14,6 +14,52 @@ export interface Article {
 
 export const articles: Article[] = [
     {
+        slug: "cursor-vs-google-antigravity-production-ai",
+        title: "Cursor vs Google Antigravity for Production AI Building",
+        description: "Development Environments, System Prompts, and Solo Founder Velocity. Learn why Richard Ewing switched from unconstrained agents to structured development environments to build Exogram.ai and CareerWin.ai.",
+        date: "August 2026",
+        readTime: "6 min read",
+        source: "Beehiiv",
+        category: "Engineering",
+        externalUrl: "https://theaieconomist.beehiiv.com/p/cursor-vs-google-antigravity-for-production-ai-building-278a",
+        content: `
+            <p>In early 2025, I was fully bought into the promise of AI-assisted coding. I used tools like Cursor to spin up prototypes, excited by the initial generation speed. By month two, that excitement turned into frustration.</p>
+            <p>As my application architectures grew more complex, the agent began making confident mistakes. It would forget database relationship models, overwrite working route handlers, and invent fake library functions. I was spending more time auditing agent errors than writing actual business logic.</p>
+            <h3>The Transition to Structured Development Environments</h3>
+            <p>This research note breaks down why I switched my primary development stack to Google Antigravity and how it restored engineering control across three operational rules: immutable rule files, modular step execution, and zero-trust code verification.</p>
+        `
+    },
+    {
+        slug: "meta-muse-code-comparison",
+        title: "How Does Meta’s Muse Code Compare to Other AI Coding Tools?",
+        description: "A technical evaluation of Meta Muse Code against Cursor, Claude Code, and Google Antigravity, examining multi-agent concurrency, Git worktree isolation vs. runtime environment collisions, and autonomous closed-loop verification.",
+        date: "August 2026",
+        readTime: "8 min read",
+        source: "Built In",
+        category: "Engineering",
+        externalUrl: "https://builtin.com/articles/meta-muse-code-comparison",
+        editorsPick: true,
+        content: `
+            <p>Evaluating Meta Muse Code against Cursor, Claude Code, and Google Antigravity reveals that multi-agent concurrency breaks down at the runtime layer.</p>
+            <p>While Git worktrees isolate file diffs, systems still collide on shared port bindings, database transaction locks, and environment state. Developer ROI is maximized not by autocomplete speed, but by autonomous verification loops and making failure cheap to roll back.</p>
+        `
+    },
+    {
+        slug: "fable-5-vs-gpt-56-sol",
+        title: "Fable 5 vs. GPT-5.6 Sol: Which Model Is Better?",
+        description: "A solo developer tested GPT-5.6 Sol and Fable 5 against a real eight-task workday backlog rather than abstract benchmarks. Sol excelled at creative copy, document extraction, and customer feedback; Fable proved superior for cautious, reliable coding, debugging, and risk analysis.",
+        date: "July 2026",
+        readTime: "8 min read",
+        source: "Built In",
+        category: "Economics",
+        externalUrl: "https://builtin.com/articles/fable-5-vs-gpt-56-sol",
+        editorsPick: true,
+        content: `
+            <p>In a real-world workday test comparing GPT-5.6 Sol and Fable 5 across an eight-task developer backlog, neither tool dominated completely.</p>
+            <p>Fable 5 proved superior for precise software development, risk analysis, and edge-case handling, while GPT-5.6 Sol outperformed on natural language synthesis and high-volume parsing.</p>
+        `
+    },
+    {
         slug: "ai-economist-leading-product-strategy-zero-cost",
         title: "The AI Economist: Leading Product Strategy When Build Costs Approach Zero",
         description: "For two decades, product management assumed developer time was the rarest asset. When generative AI drives build costs toward zero, developer bandwidth ceases to be the constraint. Learn how the bottleneck shifts to managing uncertainty, evaluating system architecture efficiency, and preserving unit margins as a Product Economist.",

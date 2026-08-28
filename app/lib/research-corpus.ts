@@ -27,7 +27,24 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
-  // Today's LinkedIn Newsletter - August 24, 2026
+  // Today's Beehiiv Newsletter - August 28, 2026
+  {
+    id: 'beehiiv-cursor-vs-google-antigravity-production-ai',
+    title: 'Cursor vs Google Antigravity for Production AI Building',
+    url: 'https://theaieconomist.beehiiv.com/p/cursor-vs-google-antigravity-for-production-ai-building-278a',
+    publisher: 'Beehiiv',
+    domain: 'Software Economics',
+    type: 'Executable',
+    date: 'August 28, 2026',
+    thesis: 'Examining the operational shift from unconstrained conversational AI coding assistants (like Early Cursor) to structured development environments (Google Antigravity). By enforcing immutable root rule files, modular step-by-step execution, and terminal-level zero-trust type verification, context loss incidents dropped by over 90% and debugging overhead was reduced from hours to minutes during the production engineering of Exogram.ai and CareerWin.ai.',
+    relatedConceptIds: ['ai-coding-tool-economics', 'vibe-coding', 'spec-driven-development', 'deterministic-governance', 'runtime-vs-alignment', 'systems-governor', 'context-rot', 'four-laws-probabilistic-software', 'subprime-code-crisis', 'context-window-exhaustion', 'prompt-engineering'],
+    relatedGlossarySlugs: ['systems-governor', 'vibe-coding-debt', 'governed-execution', 'deterministic-governance', 'subprime-code-crisis'],
+    relatedFrameworkSlugs: ['governed-execution', 'four-laws-probabilistic-software'],
+    relatedToolIds: ['copilot-roi', 'aueb', 'pdi'],
+    relatedCaseStudyIds: ['careerwin-intelligence-platform', 'runtime-concurrency-failures'],
+    relatedCurriculumTrackIds: ['engineering-economics', 'ai-governance']
+  },
+  // LinkedIn Newsletter - August 24, 2026
   {
     id: 'linkedin-most-companies-shouldnt-be-using-autonomous-coding-agents-yet',
     title: 'Most Companies Shouldn’t Be Using Autonomous Coding Agents Yet',
@@ -69,6 +86,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Built In',
     domain: 'Software Economics',
     type: 'Executable',
+    editorsPick: true,
     date: 'August 24, 2026',
     thesis: 'Evaluating Meta Muse Code against Cursor, Claude Code, and Google Antigravity reveals that multi-agent concurrency breaks down at the runtime layer. While Git worktrees isolate file diffs, systems still collide on shared port bindings, database transaction locks, and environment state. Developer ROI is maximized not by autocomplete speed, but by autonomous verification loops and making failure cheap to roll back.',
     relatedConceptIds: ['ai-coding-tool-economics', 'vibe-coding', 'runtime-vs-alignment', 'deterministic-governance', 'subprime-code-crisis', 'systems-governor', 'four-laws-probabilistic-software', 'spec-driven-development'],

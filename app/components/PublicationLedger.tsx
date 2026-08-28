@@ -27,7 +27,8 @@ const publications = [
       {
         title: "How Does Meta’s Muse Code Compare to Other AI Coding Tools?",
         url: "https://builtin.com/articles/meta-muse-code-comparison",
-        thesis: "A technical evaluation of Meta Muse Code against Cursor, Claude Code, and Google Antigravity, examining multi-agent concurrency, Git worktree isolation vs. runtime environment collisions, and autonomous closed-loop verification."
+        thesis: "A technical evaluation of Meta Muse Code against Cursor, Claude Code, and Google Antigravity, examining multi-agent concurrency, Git worktree isolation vs. runtime environment collisions, and autonomous closed-loop verification.",
+        editorsPick: true
       },
       {
         title: "I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)",
@@ -109,6 +110,11 @@ const publications = [
   {
     platform: "The AI Economist (Beehiiv)",
     articles: [
+      {
+        title: "Cursor vs Google Antigravity for Production AI Building",
+        url: "https://theaieconomist.beehiiv.com/p/cursor-vs-google-antigravity-for-production-ai-building-278a",
+        thesis: "Development Environments, System Prompts, and Solo Founder Velocity. Analyzes the 90%+ reduction in context loss and debugging overhead achieved by enforcing immutable root rules and zero-trust verification inside Google Antigravity."
+      },
       {
         title: "The AI Coding Tool Battle Is Moving Somewhere More Important Than Code",
         url: "https://theaieconomist.beehiiv.com/p/the-ai-coding-tool-battle-is-moving-somewhere-more-important-than-code",

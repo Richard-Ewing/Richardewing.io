@@ -458,7 +458,8 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       { id: 'ev-econ-3', title: 'In the Vibe Coding Era, What Does a Software Engineer Even Do?', url: '/articles/builtin-vibe-coding-era', publisher: 'Built In', type: 'Executive Essay', strength: 4, role: 'Supports', date: 'August 2026' },
       { id: 'ev-econ-4', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 18, 2026' },
       { id: 'ev-econ-5', title: 'How Does Meta’s Muse Code Compare to Other AI Coding Tools?', url: 'https://builtin.com/articles/meta-muse-code-comparison', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 24, 2026' },
-      { id: 'ev-econ-6', title: 'The AI Coding Tool Battle Is Moving Somewhere More Important Than Code', url: 'https://theaieconomist.beehiiv.com/p/the-ai-coding-tool-battle-is-moving-somewhere-more-important-than-code', publisher: 'Beehiiv', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 24, 2026' }
+      { id: 'ev-econ-6', title: 'The AI Coding Tool Battle Is Moving Somewhere More Important Than Code', url: 'https://theaieconomist.beehiiv.com/p/the-ai-coding-tool-battle-is-moving-somewhere-more-important-than-code', publisher: 'Beehiiv', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 24, 2026' },
+      { id: 'ev-econ-7', title: 'Cursor vs Google Antigravity for Production AI Building', url: 'https://theaieconomist.beehiiv.com/p/cursor-vs-google-antigravity-for-production-ai-building-278a', publisher: 'Beehiiv', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 28, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'ai-volatility-tax', relationship: 'explains' },

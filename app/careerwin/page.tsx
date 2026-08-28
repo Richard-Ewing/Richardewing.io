@@ -217,6 +217,37 @@ export default function CareerWinPage() {
                             </a>
                         </div>
                     </div>
+
+                    {/* Beehiiv Solo Founder Velocity Spotlight */}
+                    <div className="mb-16 bg-gradient-to-br from-cyan-50 via-white to-indigo-50 border border-cyan-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+                        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <span className="px-3 py-1 bg-cyan-100 text-cyan-900 text-xs font-mono font-bold rounded-full border border-cyan-200">
+                                The AI Economist (Beehiiv) • August 28, 2026
+                            </span>
+                            <span className="text-xs font-mono text-zinc-500 font-semibold">
+                                Solo Founder Velocity &amp; Architecture
+                            </span>
+                        </div>
+                        <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
+                            Building CareerWin.ai with Google Antigravity &amp; Structured System Boundaries
+                        </h3>
+                        <p className="text-sm text-zinc-800 leading-relaxed font-medium italic mb-4">
+                            &quot;By replacing unconstrained conversational coding with immutable root rule files, modular step execution, and terminal-level zero-trust type checks, context loss incidents dropped by over 90% and debugging overhead shrank from hours to minutes. CareerWin.ai advanced from initial concept to 90% production completion at record speed.&quot;
+                        </p>
+                        <div className="flex items-center justify-between flex-wrap gap-4 pt-2 border-t border-cyan-100">
+                            <span className="text-xs font-mono font-bold text-cyan-900">
+                                By Richard Ewing: &quot;Cursor vs Google Antigravity for Production AI Building&quot;
+                            </span>
+                            <a
+                                href="https://theaieconomist.beehiiv.com/p/cursor-vs-google-antigravity-for-production-ai-building-278a"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-xs font-mono font-bold text-cyan-700 hover:text-cyan-900 hover:underline inline-flex items-center gap-1"
+                            >
+                                Read Research on Beehiiv ↗
+                            </a>
+                        </div>
+                    </div>
                 </ScrollReveal>
 
                 {/* Core Pillars */}

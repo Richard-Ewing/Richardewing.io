@@ -86,30 +86,61 @@ export default function CursorProblemsPage() {
                     </p>
                 </div>
 
-                {/* Built In Case Analysis Callout */}
-                <div className="bg-white rounded-2xl border-2 border-cyan-500/30 p-6 sm:p-8 mb-8 shadow-sm relative overflow-hidden">
-                    <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                        <span className="px-3 py-1 bg-cyan-100 text-cyan-900 text-xs font-mono font-bold rounded-full border border-cyan-200">
-                            Built In • August 18, 2026
-                        </span>
-                        <span className="text-xs font-mono text-zinc-500 font-semibold">
-                            By Richard Ewing (Reviewed by Seth Wilson)
-                        </span>
+                {/* Built In & Beehiiv Case Analysis Callouts */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                    <div className="bg-white rounded-2xl border-2 border-cyan-500/30 p-6 shadow-sm relative overflow-hidden flex flex-col justify-between space-y-4">
+                        <div className="space-y-2">
+                            <div className="flex flex-wrap items-center justify-between gap-2">
+                                <span className="px-2.5 py-0.5 bg-cyan-100 text-cyan-900 text-[10px] font-mono font-bold rounded-full border border-cyan-200">
+                                    Built In • August 18, 2026
+                                </span>
+                                <span className="text-[10px] font-mono text-zinc-500 font-semibold">
+                                    By Richard Ewing
+                                </span>
+                            </div>
+                            <h3 className="text-base font-bold font-grotesk text-zinc-950">
+                                I Used AI to Build My Startup. Here’s What I Learned.
+                            </h3>
+                            <p className="text-xs text-zinc-700 leading-relaxed font-medium">
+                                &quot;Cursor was fantastic when my app fit comfortably inside a handful of files. Once I added real database schemas, user permissions and state logic across multiple folders, the AI started tripping over itself...&quot;
+                            </p>
+                        </div>
+                        <a
+                            href="https://builtin.com/articles/ai-coding-tools-practical-evaluation"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center gap-1 text-xs font-mono font-bold bg-cyan-900 text-white px-3.5 py-2 rounded-xl hover:bg-cyan-800 transition shadow-sm"
+                        >
+                            Read on Built In ↗
+                        </a>
                     </div>
-                    <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
-                        I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)
-                    </h3>
-                    <p className="text-sm text-zinc-700 leading-relaxed font-medium mb-4">
-                        &quot;Cursor was fantastic when my app fit comfortably inside a handful of files. Once I added real database schemas, user permissions and state logic across multiple folders, the AI started tripping over itself... Generating lines of syntax was easy, but keeping my database intact across 50 files was where the inline assistant completely stalled out.&quot;
-                    </p>
-                    <a
-                        href="https://builtin.com/articles/ai-coding-tools-practical-evaluation"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-xs font-mono font-bold bg-cyan-900 text-white px-4 py-2 rounded-xl hover:bg-cyan-800 transition shadow-sm"
-                    >
-                        Read the Full Practical Evaluation on Built In ↗
-                    </a>
+
+                    <div className="bg-white rounded-2xl border-2 border-indigo-500/30 p-6 shadow-sm relative overflow-hidden flex flex-col justify-between space-y-4">
+                        <div className="space-y-2">
+                            <div className="flex flex-wrap items-center justify-between gap-2">
+                                <span className="px-2.5 py-0.5 bg-indigo-100 text-indigo-900 text-[10px] font-mono font-bold rounded-full border border-indigo-200">
+                                    Beehiiv • August 28, 2026
+                                </span>
+                                <span className="text-[10px] font-mono text-zinc-500 font-semibold">
+                                    THE AI ECONOMIST
+                                </span>
+                            </div>
+                            <h3 className="text-base font-bold font-grotesk text-zinc-950">
+                                Cursor vs Google Antigravity for Production AI Building
+                            </h3>
+                            <p className="text-xs text-zinc-700 leading-relaxed font-medium">
+                                Breaking down the 90%+ drop in context loss incidents and reduction in code audit overhead achieved by enforcing immutable root rules and zero-trust verification during the production build of Exogram.ai and CareerWin.ai.
+                            </p>
+                        </div>
+                        <a
+                            href="https://theaieconomist.beehiiv.com/p/cursor-vs-google-antigravity-for-production-ai-building-278a"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center gap-1 text-xs font-mono font-bold bg-indigo-900 text-white px-3.5 py-2 rounded-xl hover:bg-indigo-800 transition shadow-sm"
+                        >
+                            Read Research Note on Beehiiv ↗
+                        </a>
+                    </div>
                 </div>
 
                 {/* Pricing Context */}
