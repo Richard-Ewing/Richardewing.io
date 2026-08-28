@@ -52,36 +52,122 @@ export default async function CurriculumTracksPage() {
                 <div className="max-w-5xl mx-auto">
                     
                     {/* Enterprise Executive HERO */}
-                    <div className="text-center mb-16 relative">
+                    <div className="text-center mb-12 relative">
                         <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-purple-500/5 to-transparent pointer-events-none -z-10" />
-                        <div className="text-xs font-bold font-medium font-mono text-purple-900 font-extrabold uppercase tracking-widest mb-4 flex items-center justify-center gap-2">
+                        <div className="text-xs font-bold font-mono text-purple-900 uppercase tracking-widest mb-4 flex items-center justify-center gap-2">
                             <span className="w-1.5 h-1.5 rounded-full bg-purple-600 animate-pulse"></span>
-                            AI Economics Academy
+                            AI Economics Academy &bull; Sovereign Operating System
                         </div>
                         <BlurIn word="The AI Economics" className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-900 mb-1" />
                         <BlurIn word="Academy." className="text-4xl sm:text-6xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mb-6" />
                         
-                        <p className="text-lg text-zinc-950 font-bold max-w-2xl mx-auto mb-8 leading-relaxed">
-                            These aren&apos;t courses. These are 23 deep-authority curriculum tracks built from published frameworks in CIO.com and Built In - spanning AI economics, AI agents, leadership, career capital, M&A integration, and executive governance.
+                        <p className="text-lg text-zinc-900 font-semibold max-w-3xl mx-auto mb-8 leading-relaxed">
+                            This is not a generic course catalog or certificate mill. It is the operational consumption layer of our research and proving grounds: 25 deep curriculum tracks designed to turn empirical telemetry into balance-sheet outcomes.
                         </p>
                         
-                        <div className="flex items-center justify-center gap-8 mt-6">
-                            <div className="text-center">
+                        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mt-6">
+                            <div className="text-center bg-white px-5 py-3 rounded-2xl border border-zinc-300 shadow-sm">
                                 <div className="text-2xl font-grotesk font-bold text-zinc-900">25</div>
-                                <div className="text-xs font-bold font-medium font-mono uppercase tracking-widest text-zinc-950 mt-1">Authority Tracks</div>
+                                <div className="text-xs font-mono uppercase tracking-widest text-zinc-600 mt-0.5">Authority Tracks</div>
                             </div>
-                            <div className="text-center">
+                            <div className="text-center bg-white px-5 py-3 rounded-2xl border border-zinc-300 shadow-sm">
                                 <div className="text-2xl font-grotesk font-bold text-zinc-900">303</div>
-                                <div className="text-xs font-bold font-medium font-mono uppercase tracking-widest text-zinc-950 mt-1">Deep Modules</div>
+                                <div className="text-xs font-mono uppercase tracking-widest text-zinc-600 mt-0.5">Deep Modules</div>
                             </div>
-                            <div className="text-center bg-purple-50 px-4 py-2 rounded-lg border border-purple-200">
-                                <div className="text-xl font-mono font-bold text-purple-900 font-extrabold">$149</div>
-                                <div className="text-xs font-bold font-medium font-mono uppercase tracking-widest text-purple-500 mt-1">Per Track</div>
+                            <div className="text-center bg-purple-50 px-5 py-3 rounded-2xl border border-purple-200 shadow-sm">
+                                <div className="text-2xl font-mono font-bold text-purple-900">$149</div>
+                                <div className="text-xs font-mono uppercase tracking-widest text-purple-700 mt-0.5">Per Track</div>
                             </div>
-                            <div className="text-center bg-indigo-50 px-4 py-2 rounded-lg border border-indigo-200">
-                                <div className="text-xl font-mono font-bold text-indigo-900 font-extrabold">$999</div>
-                                <div className="text-xs font-bold font-medium font-mono uppercase tracking-widest text-indigo-500 mt-1">All 23 Tracks</div>
+                            <div className="text-center bg-indigo-50 px-5 py-3 rounded-2xl border border-indigo-200 shadow-sm">
+                                <div className="text-2xl font-mono font-bold text-indigo-900">$999</div>
+                                <div className="text-xs font-mono uppercase tracking-widest text-indigo-700 mt-0.5">All 25 Tracks</div>
                             </div>
+                        </div>
+                    </div>
+
+                    {/* THE 5-STEP SOVEREIGN ASSET ENGINE PIPELINE */}
+                    <div className="mb-16 bg-white border-2 border-indigo-500/20 rounded-3xl p-6 sm:p-10 shadow-sm relative overflow-hidden">
+                        <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+                            <div>
+                                <span className="px-3 py-1 bg-indigo-100 text-indigo-900 text-xs font-mono font-bold rounded-full border border-indigo-200 uppercase tracking-wider">
+                                    The Academy Engine Moat
+                                </span>
+                                <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mt-2">
+                                    Why This Beats Generic Courseware
+                                </h2>
+                            </div>
+                            <span className="text-xs font-mono text-zinc-500 font-semibold">
+                                Closed-Loop Sovereign System
+                            </span>
+                        </div>
+
+                        <p className="text-sm text-zinc-800 leading-relaxed font-medium mb-8">
+                            Most tech academies (Reforge, Product School, Lenny, AI academies) sell video courses with static frameworks that disconnect from actual production systems. Our curriculum operates as the direct consumption layer of our 5-step asset pipeline:
+                        </p>
+
+                        {/* 5-Step Pipeline Grid */}
+                        <div className="grid grid-cols-1 sm:grid-cols-5 gap-3 relative">
+                            <div className="p-4 rounded-2xl bg-cyan-50/70 border border-cyan-200 flex flex-col justify-between">
+                                <div>
+                                    <div className="text-[10px] font-mono font-bold text-cyan-800 uppercase tracking-widest mb-1">Step 1</div>
+                                    <h3 className="text-sm font-bold font-grotesk text-zinc-950 mb-1">Research</h3>
+                                    <p className="text-xs text-zinc-700 leading-relaxed">
+                                        Empirical industry investigations &amp; live failure telemetry across CIO.com and Built In.
+                                    </p>
+                                </div>
+                                <div className="mt-3 text-[10px] font-mono font-bold text-cyan-900">&rarr; 100+ Works</div>
+                            </div>
+
+                            <div className="p-4 rounded-2xl bg-violet-50/70 border border-violet-200 flex flex-col justify-between">
+                                <div>
+                                    <div className="text-[10px] font-mono font-bold text-violet-800 uppercase tracking-widest mb-1">Step 2</div>
+                                    <h3 className="text-sm font-bold font-grotesk text-zinc-950 mb-1">Concept</h3>
+                                    <p className="text-xs text-zinc-700 leading-relaxed">
+                                        118+ atomic economic and architectural truths linked in an ontological knowledge graph.
+                                    </p>
+                                </div>
+                                <div className="mt-3 text-[10px] font-mono font-bold text-violet-900">&rarr; Graph Mesh</div>
+                            </div>
+
+                            <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200 flex flex-col justify-between">
+                                <div>
+                                    <div className="text-[10px] font-mono font-bold text-amber-800 uppercase tracking-widest mb-1">Step 3</div>
+                                    <h3 className="text-sm font-bold font-grotesk text-zinc-950 mb-1">Framework</h3>
+                                    <p className="text-xs text-zinc-700 leading-relaxed">
+                                        Rigorous operating models: Inference Dividend, Systems Governor, and PDI Formulas.
+                                    </p>
+                                </div>
+                                <div className="mt-3 text-[10px] font-mono font-bold text-amber-900">&rarr; Blueprints</div>
+                            </div>
+
+                            <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200 flex flex-col justify-between">
+                                <div>
+                                    <div className="text-[10px] font-mono font-bold text-emerald-800 uppercase tracking-widest mb-1">Step 4</div>
+                                    <h3 className="text-sm font-bold font-grotesk text-zinc-950 mb-1">Diagnostic</h3>
+                                    <p className="text-xs text-zinc-700 leading-relaxed">
+                                        Interactive proving grounds and ROI calculators that stress-test architectures.
+                                    </p>
+                                </div>
+                                <div className="mt-3 text-[10px] font-mono font-bold text-emerald-900">&rarr; Proving Grounds</div>
+                            </div>
+
+                            <div className="p-4 rounded-2xl bg-indigo-50/70 border border-indigo-200 flex flex-col justify-between">
+                                <div>
+                                    <div className="text-[10px] font-mono font-bold text-indigo-800 uppercase tracking-widest mb-1">Step 5</div>
+                                    <h3 className="text-sm font-bold font-grotesk text-zinc-950 mb-1">Implementation</h3>
+                                    <p className="text-xs text-zinc-700 leading-relaxed">
+                                        Live runtime execution (Exogram proxy layers) and executive advisory alignment.
+                                    </p>
+                                </div>
+                                <div className="mt-3 text-[10px] font-mono font-bold text-indigo-900">&rarr; Production Live</div>
+                            </div>
+                        </div>
+
+                        <div className="mt-6 pt-4 border-t border-zinc-200 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-zinc-600">
+                            <span>Every module in this academy connects directly back to this operational spine.</span>
+                            <Link href="/concepts" className="text-indigo-700 hover:text-indigo-900 font-bold hover:underline">
+                                Explore Concepts Directory &rarr;
+                            </Link>
                         </div>
                     </div>
 

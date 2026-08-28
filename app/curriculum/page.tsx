@@ -29,15 +29,15 @@ export default function CurriculumPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-semibold uppercase tracking-wider mb-4">
             <BookOpen className="w-3.5 h-3.5" />
-            20-Day Interactive Syllabus
+            20-Day Production Syllabus &bull; Sovereign Asset Engine
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-4xl">
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-4xl font-grotesk">
             The AI Product Builder: Master Curriculum
           </h1>
 
-          <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
-            The comprehensive operational blueprint taking technical engineers from problem validation to production deployment, legal incorporation, and 10 paying customers.
+          <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed font-medium">
+            Not another passive video course. A concrete, day-by-day operational blueprint taking technical engineers through actual problem validation, FastAPI architectures, semantic caching, and securing your first 10 paying customers.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-4 text-xs">
@@ -48,10 +48,10 @@ export default function CurriculumPage() {
               Apply for Pilot ($1,500) <ArrowRight className="w-3.5 h-3.5" />
             </Link>
             <Link
-              href="/programs/ai-product-builder"
+              href="/vault/curriculum/tracks"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 transition-all font-semibold"
             >
-              Program Overview
+              Explore All 25 Academy Tracks &rarr;
             </Link>
           </div>
         </div>

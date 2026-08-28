@@ -1,32 +1,39 @@
-# Project Rules & Sovereign Execution System (MOD v3.0)
+# Project Rules & Sovereign Execution System (MOD v3.1)
 
-All task execution in this workspace MUST strictly follow the **Sovereign Master Operating Directive (MOD v3.0)** and its associated modular skill definitions.
+All task execution in this workspace MUST strictly follow the **Sovereign Master Operating Directive (MOD v3.1)** and its associated modular skill definitions.
 
 Refer to the official skill definition at [.agents/skills/master-directive/SKILL.md](file:///d:/Antigravity_RichardEwing.io/.agents/skills/master-directive/SKILL.md) for complete details.
 
 ---
 
-## 1. Core Copywriting Directives (REWS v1.0)
-All essays, landing page copy, explanations, and documentation must adhere to the **Richard Ewing Writing Specification (REWS v1.0)**:
-1. **The Prime Directive**: Optimize for clarity, insight, and durable understanding.
-2. **Start With Lived Experience**: Start with concrete observed evidence.
-3. **Write From Learning**: Frame insights through intellectual humility and evolving thinking.
-4. **Explain Systems & Mechanisms**: Move from Event $\rightarrow$ Pattern $\rightarrow$ System $\rightarrow$ Principle.
-5. **Attack Architectures, Not People**: Critique system design, never individuals.
-6. **Sentence Rhythm**: Mix long and short sentences. Allow core points to stand alone.
-7. **Vocabulary Constraints**: Strictly avoid marketing/consulting jargon (*unlock, delve, seamless, robust, leverage, elevate, game-changing*).
+## 1. The Sovereign 5-Step Asset Engine Hierarchy (Academy Moat Protocol)
+A large curriculum is NOT a moat on its own. To defeat commoditized courseware (Reforge, Product School, Lenny, Farnam Street, generic AI academies), every curriculum track and module MUST consume the 5-step closed-loop asset engine:
+$$\text{Research} \longrightarrow \text{Concept} \longrightarrow \text{Framework} \longrightarrow \text{Diagnostic} \longrightarrow \text{Implementation}$$
+The academy is the operational consumption layer of our research and proving grounds, NEVER a standalone content factory.
+
+---
+
+## 2. Core Copywriting Directives (Human Writing Standard HWS v2.0 / REWS v2.0)
+All essays, landing page copy, explanations, curriculum modules, and documentation must adhere to the **Human Writing Standard (HWS v2.0 / REWS v2.0)**:
+1. **The Prime Directive**: Human first. Always. Write like a person, not a content producer. Be human, genuine, personable as fuck.
+2. **Start With the 10th Thought**: Look for the less-obvious human observation, tension, irritation, admission, or contradiction underneath the obvious topic.
+3. **Concrete Observed Evidence**: Prefer something that broke, worked, cost money, took longer, or changed the writer's mind over abstract generalities.
+4. **Controlled Surprise & Unevenness**: Break predictable structural symmetry and formulaic transitions. Allow paragraphs to breathe.
+5. **No AI Jargon or LinkedIn Voice**: Strictly eliminate consulting filler (*unlock, delve, seamless, robust, leverage, elevate*) and engagement bait (*Let that sink in*, *Read that again*).
+6. **Sentence Rhythm**: Mix short and long sentences naturally. Preserve authentic conversational quirks and blunt opinions.
+7. **The Final Human Test**: *"Would Richard actually say this out loud?"* If not, rewrite it.
 *Full Specification:* [.agents/skills/lived-experience/SKILL.md](file:///d:/Antigravity_RichardEwing.io/.agents/skills/lived-experience/SKILL.md)
 
 ---
 
-## 2. Next.js App Router Architectural Invariants
+## 3. Next.js App Router Architectural Invariants
 1. **Server Components by Default**: Keep page routes as Server Components; define page-level metadata.
 2. **Client Component Isolation**: Isolate interactive hooks, Framer Motion, and state in leaf components with `"use client"`.
 3. **Prerender Safety**: Guard all browser APIs and `localStorage` with `useEffect` or `typeof window !== 'undefined'`.
 
 ---
 
-## 3. Sovereign Master Operating Directive (MOD v3.0) Execution System
+## 4. Sovereign Master Operating Directive (MOD v3.1) Execution System
 
 > [!CRITICAL]
 > **MANDATORY TURN-END EXECUTION GATE (UNBREAKABLE):**

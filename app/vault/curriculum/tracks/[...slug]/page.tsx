@@ -90,6 +90,54 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                         })()}
                     </div>
 
+                    {/* 5-Step Sovereign Pipeline Trace */}
+                    <div className="rounded-2xl border border-indigo-200 bg-white p-6 mb-8 shadow-sm">
+                        <div className="flex items-center justify-between gap-2 mb-3">
+                            <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-indigo-900 bg-indigo-50 px-2.5 py-1 rounded-full border border-indigo-200">
+                                Sovereign Asset Pipeline Trace
+                            </span>
+                            <span className="text-[10px] font-mono text-zinc-500 font-semibold">
+                                Research &rarr; Implementation
+                            </span>
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs">
+                            <div className="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200">
+                                <div className="text-[9px] font-mono text-cyan-800 uppercase font-bold">1. Research</div>
+                                <div className="text-zinc-900 font-bold truncate text-[11px] mt-0.5">
+                                    {mod.relatedArticles && mod.relatedArticles.length > 0 ? `${mod.relatedArticles.length} Studies` : 'Field Telemetry'}
+                                </div>
+                            </div>
+                            <div className="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200">
+                                <div className="text-[9px] font-mono text-violet-800 uppercase font-bold">2. Concept</div>
+                                <div className="text-zinc-900 font-bold truncate text-[11px] mt-0.5">
+                                    <Link href="/concepts" className="hover:underline text-violet-900">118+ Ontology</Link>
+                                </div>
+                            </div>
+                            <div className="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200">
+                                <div className="text-[9px] font-mono text-amber-800 uppercase font-bold">3. Framework</div>
+                                <div className="text-zinc-900 font-bold truncate text-[11px] mt-0.5">
+                                    {parseInt(mod.moduleId.split('-')[0], 10) <= 11 ? 'AI Unit Economics' : 'Systems Governor'}
+                                </div>
+                            </div>
+                            <div className="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200">
+                                <div className="text-[9px] font-mono text-emerald-800 uppercase font-bold">4. Diagnostic</div>
+                                <div className="text-zinc-900 font-bold truncate text-[11px] mt-0.5">
+                                    {mod.embeddedTool ? (
+                                        <Link href={`/tools/${mod.embeddedTool}`} className="hover:underline text-emerald-900">
+                                            {mod.embeddedTool.toUpperCase()} Proving Ground
+                                        </Link>
+                                    ) : 'PDI / APER Engine'}
+                                </div>
+                            </div>
+                            <div className="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200 col-span-2 sm:col-span-1">
+                                <div className="text-[9px] font-mono text-indigo-800 uppercase font-bold">5. Implementation</div>
+                                <div className="text-zinc-900 font-bold truncate text-[11px] mt-0.5">
+                                    <Link href="/services" className="hover:underline text-indigo-900">Exogram / Advisory</Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="rounded-2xl border border-cyan-200 bg-cyan-50 p-8 mb-12">
                         <h2 className="text-lg font-grotesk font-bold text-zinc-900 mb-4">🎯 What You&apos;ll Learn</h2>
                         <ul className="space-y-2 text-zinc-900">
