@@ -12,6 +12,10 @@ export async function generateStaticParams() {
         { slug: 'security' },
         { slug: 'operations' },
         { slug: 'runtime-governance' },
+        { slug: 'agentic-control-plane' },
+        { slug: 'inference-dividend-cascade' },
+        { slug: 'general-contractor-pm' },
+        { slug: 'subprime-code-governance' },
     ];
 }
 

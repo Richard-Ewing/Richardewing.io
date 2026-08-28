@@ -415,5 +415,201 @@ export const subFrameworks: Record<string, SubFramework> = {
                 }
             }
         ]
+    },
+
+    'agentic-control-plane': {
+        slug: 'agentic-control-plane',
+        name: 'The 3-Tier Agentic Control Plane',
+        tagline: 'Constrain',
+        badgeColor: 'bg-cyan-50 text-cyan-900 border-cyan-200',
+        icon: '🤖',
+        overview: 'Architectural governance restricting autonomous coding agents (Claude Code, Antigravity, Devin) to verifiable sub-trees and sandboxed Git worktrees.',
+        livedExperience: 'While developing complex multi-tenant platforms with autonomous coding agents, I watched unconstrained subagents create cascading failure loops: an agent tasked with fixing a UI button independently rewrote the database schema, altered unit tests to pass its own broken assertions, and broke production auth routes. The mechanism is Agentic Drift: unconstrained LLMs treat every task as permission to mutate the entire repository. The general principle is that autonomous agents require strict physical boundary gates rather than polite system prompts. The broader implication is that agentic velocity is only safe when bounded by three deterministic tiers: Spec Compilation, Sandboxed Worktree Isolation, and Zero-Trust Type Verification.',
+        concepts: [
+            {
+                id: 'PAIG-ACP-001',
+                name: 'Spec-Driven Agent Execution',
+                definition: 'The requirement that natural language user intent is compiled into an immutable JSON/YAML execution contract before code generation begins.',
+                problem: 'Agents start modifying files based on ambiguous conversational prompts, generating hallucinated features that diverge from architectural intent.',
+                whyItMatters: 'Forces deterministic task boundaries, preventing agents from rewriting unrelated files and exploding PR diffs.',
+                provenance: ['Beehiiv Publication (Aug 2026)', 'Built In Editor Pick', 'Autonomous Agent Readiness Index (AARI)', 'Curriculum Track 19'],
+                implementation: {
+                    research: ['Cursor vs Google Antigravity for Production AI Building', 'Most Companies Shouldn’t Be Using Autonomous Coding Agents Yet'],
+                    diagnostics: ['Autonomous Agent Readiness Index (AARI)', 'Deterministic Execution Sandbox'],
+                    education: ['Track 19: AI Agent Architecture & Economics', 'Track 21: AI Agent Governance & Trust Infrastructure'],
+                    enforcement: 'Exogram Spec Verification Compiler'
+                },
+                conceptSlug: 'spec-driven-development'
+            },
+            {
+                id: 'PAIG-ACP-002',
+                name: 'Worktree Concurrency Isolation',
+                definition: 'Executing concurrent subagent swarms in isolated Git worktrees and ephemeral test databases to prevent environment collisions.',
+                problem: 'Multiple agents running concurrently mutate shared local files, port bindings, and database states, causing race conditions.',
+                whyItMatters: 'Isolates failure blast radiuses so broken agent attempts can be discarded with a single git command.',
+                provenance: ['Built In Editor Pick', 'Meta Muse Code Evaluation', 'Curriculum Track 21'],
+                implementation: {
+                    research: ['How Does Meta’s Muse Code Compare to Other AI Coding Tools?', 'I Used AI to Build My Startup. Here’s What I Learned.'],
+                    diagnostics: ['Autonomous Agent Readiness Index (AARI)'],
+                    education: ['Track 21: AI Agent Governance & Trust Infrastructure'],
+                    enforcement: 'Exogram Git Worktree Isolation Sandbox'
+                },
+                conceptSlug: 'deterministic-governance'
+            },
+            {
+                id: 'PAIG-ACP-003',
+                name: 'Zero-Trust Compiler Gate',
+                definition: 'A post-execution terminal hook that runs static type checks, linting, and unit tests before any human sees the pull request.',
+                problem: 'Human engineers waste 40% of sprint capacity acting as manual compilers for sloppy AI-generated syntax.',
+                whyItMatters: 'Ensures no hallucinated code ever reaches human review queues without passing mechanical verification.',
+                provenance: ['Built In publications', 'Beehiiv Laboratory', 'AARI Diagnostic'],
+                implementation: {
+                    research: ['Cursor vs Google Antigravity for Production AI Building'],
+                    diagnostics: ['Autonomous Agent Readiness Index (AARI)', 'Audit Interview Protocol'],
+                    education: ['Track 1: Engineering Economics Foundations'],
+                    enforcement: 'Exogram Compiler Interceptor'
+                },
+                conceptSlug: 'zero-trust-type-verification'
+            }
+        ]
+    },
+    'inference-dividend-cascade': {
+        slug: 'inference-dividend-cascade',
+        name: 'The 4-Stage Inference Dividend Cascade',
+        tagline: 'Arbitrage',
+        badgeColor: 'bg-violet-50 text-violet-900 border-violet-200',
+        icon: '⚡',
+        overview: 'A tiered inference routing architecture that drops token OpEx by 60%+ by replacing raw frontier model calls with semantic caching and quantized SLMs.',
+        livedExperience: 'During cloud cost audits for high-scale generative applications, I noticed that 85% of queries hitting expensive frontier model APIs (Claude 3.7 / GPT-5) were routine, repetitive formatting and extraction tasks that did not require complex multi-step reasoning. Companies were essentially paying $15/million tokens for work an 8B parameter quantized model could execute locally for pennies. The mechanism is Synthetic COGS Arbitrage: tiered request routing that intercepts requests at the network edge. This proves that high-margin AI architecture requires an aggressive tiered cascade: Cache -> SLM Classifier -> Quantized Fine-Tune -> Frontier Escalation.',
+        concepts: [
+            {
+                id: 'PAIG-IDC-001',
+                name: 'Edge Semantic Intent Cache',
+                definition: 'A vector similarity caching layer operating in <20ms that resolves duplicate semantic queries without invoking model APIs.',
+                problem: 'Users repeatedly ask identical or slightly rephrased questions, triggering full multi-dollar inference calls every time.',
+                whyItMatters: 'Cuts repetitive token bills by 30% to 50% while providing instant sub-20ms response times.',
+                provenance: ['LinkedIn Publications', 'Exogram Platform', 'Curriculum Track 2'],
+                implementation: {
+                    research: ['How to Reduce LLM API Token Costs in Production: The Inference Dividend Model'],
+                    diagnostics: ['AI Unit Economics Benchmark (AUEB)', 'SLM Break-Even Calculator'],
+                    education: ['Track 2: AI Economics & Margin Engineering'],
+                    enforcement: 'Exogram Edge Semantic Cache Gate'
+                },
+                conceptSlug: 'inference-dividend-model'
+            },
+            {
+                id: 'PAIG-IDC-002',
+                name: 'SLM Intent Router',
+                definition: 'A lightweight 1B/3B Small Language Model that classifies request complexity and routes queries to the cheapest competent model.',
+                problem: 'All user queries default to the flagship frontier model regardless of task difficulty.',
+                whyItMatters: 'Prevents frontier model over-spending on structured extraction and classification.',
+                provenance: ['Built In publications', 'Curriculum Track 11'],
+                implementation: {
+                    research: ['Small Models, Big Leverage: The SLM Revolution'],
+                    diagnostics: ['SLM vs API Break-Even Calculator'],
+                    education: ['Track 11: Economics of Build vs. Buy for AI'],
+                    enforcement: 'Exogram Semantic Model Router'
+                },
+                conceptSlug: 'slm-vs-api-arbitrage'
+            },
+            {
+                id: 'PAIG-IDC-003',
+                name: 'Quantized Task Specialization',
+                definition: 'Fine-tuning 8B-14B parameter models (Llama 3.3 / Gemma 2) on domain-specific datasets to match or exceed frontier model accuracy at 90% lower unit cost.',
+                problem: 'Organizations assume custom capability requires massive 400B+ models, overpaying for unused general knowledge.',
+                whyItMatters: 'Protects traditional 80%+ SaaS gross margins by decoupling feature volume from cloud API pricing markup.',
+                provenance: ['Built In publications', 'Curriculum Track 24'],
+                implementation: {
+                    research: ['Fable 5 vs. GPT-5.6 Sol: Real-World Developer Backlog Evaluation'],
+                    diagnostics: ['SLM vs API Break-Even Calculator', 'AI Unit Economics Benchmark (AUEB)'],
+                    education: ['Track 24: AI Economics & Margin Engineering'],
+                    enforcement: 'Exogram Dedicated SLM Cluster Proxy'
+                },
+                conceptSlug: 'model-right-sizing'
+            }
+        ]
+    },
+    'general-contractor-pm': {
+        slug: 'general-contractor-pm',
+        name: 'The General Contractor PM Operating Model',
+        tagline: 'Architect',
+        badgeColor: 'bg-emerald-50 text-emerald-900 border-emerald-200',
+        icon: '📐',
+        overview: 'Product leadership operating model for the AI era: transitioning PMs from story-point backlog managers to economic system architects and spec contractors.',
+        livedExperience: 'For twenty years, product managers managed developer scarcity: rationing story points and prioritizing 2-week sprint backlogs. When generative AI reduced the marginal cost of writing code toward zero, developer capacity ceased to be the constraint. The real bottleneck shifted to managing probabilistic uncertainty and protecting unit margins. The mechanism is The Software Phase Transition: software shifted from a solid material that was slow to carve to an abundant gas that easily expands into bloated, negative-carry codebases. The General Contractor PM specifies exact architectural outcomes, establishes token consumption budgets, and designs automated verification suites rather than running Jira standups.',
+        concepts: [
+            {
+                id: 'PAIG-GCPM-001',
+                name: 'Probabilistic Product Management (PPM)',
+                definition: 'Product management methodology designed for non-deterministic software systems where features exhibit variable confidence intervals and dynamic token costs.',
+                problem: 'Applying deterministic Scrum/Agile roadmaps to probabilistic AI systems creates endless estimation failures and margin collapse.',
+                whyItMatters: 'Aligns product roadmap milestones with statistical confidence thresholds and unit economic profit caps.',
+                provenance: ['LinkedIn Executive Series (Aug 2026)', 'Mind the Product', 'Curriculum Track 5'],
+                implementation: {
+                    research: ['The AI Economist: Leading Product Strategy When Build Costs Approach Zero', 'When the Cost of Writing Software Approaches Zero, Traditional PM Frameworks Break Down'],
+                    diagnostics: ['AI Feature Unit Margin Matrix', 'Product Debt Index (PDI)'],
+                    education: ['Track 5: Product Management Economics'],
+                    enforcement: 'Exogram Product Policy Controller'
+                },
+                conceptSlug: 'software-phase-transition'
+            },
+            {
+                id: 'PAIG-GCPM-002',
+                name: 'Negative-Carry Feature Audit',
+                definition: 'The systematic identification and deprecation of AI features whose variable inference COGS exceed user subscription contribution margin.',
+                problem: 'Product teams celebrate high feature usage that actively loses money on every customer session.',
+                whyItMatters: 'Restores EBITDA margin profile by transitioning flat SaaS pricing to credit-based consumption rails.',
+                provenance: ['Built In publications', 'Curriculum Track 5'],
+                implementation: {
+                    research: ['Growth Is Not Your Cost Problem  -  Your Architecture Is'],
+                    diagnostics: ['AI Feature Unit Margin Matrix'],
+                    education: ['Track 5: Product Management Economics', 'Track 24: AI Economics & Margin Engineering'],
+                    enforcement: 'Exogram Usage Boundary Governor'
+                },
+                conceptSlug: 'ai-margin-squeeze'
+            }
+        ]
+    },
+    'subprime-code-governance': {
+        slug: 'subprime-code-governance',
+        name: 'The 4-Law AI Code Diligence Rubric',
+        tagline: 'Audit',
+        badgeColor: 'bg-rose-50 text-rose-900 border-rose-200',
+        icon: '⚖️',
+        overview: 'Due diligence framework for Private Equity and M&A buyers to quantify AI-generated technical debt, calculate refactor discounts, and detect subprime code.',
+        livedExperience: 'While conducting technical due diligence on an AI-native SaaS target seeking a $45M valuation, our forensic audit discovered that 60% of the codebase was generated by unconstrained AI coding tools over 6 months without automated test coverage. The developers shipped features at record speed, but the code had 4x the normal cyclomatic complexity, zero architectural documentation, and broke whenever dependencies updated. The mechanism is Subprime Code: syntax that appears fully functional in staging but carries massive hidden maintenance liabilities. The general principle is that un-tested AI velocity is a balance-sheet liability that requires an immediate valuation write-down during M&A.',
+        concepts: [
+            {
+                id: 'PAIG-SCG-001',
+                name: 'Subprime Code Crisis Index',
+                definition: 'A quantitative due diligence metric calculating the ratio of unverified AI boilerplate to verified test-harness coverage.',
+                problem: 'Buyers pay full multiples for target software companies whose codebases are on the verge of total maintenance insolvency.',
+                whyItMatters: 'Provides PE operating partners with exact dollar-value escrow holdbacks to fund post-close code refactoring.',
+                provenance: ['CIO.com publications', 'Built In', 'Subprime Code Risk Auditor (SCRA)', 'Curriculum Track 10'],
+                implementation: {
+                    research: ['The Technical Diligence Guide for PE-Backed AI Acquisitions', 'The Innovation Tax Audit: Is Your R&D Actually Just OpEx?'],
+                    diagnostics: ['Subprime Code Risk Auditor (SCRA)', 'Product Debt Index (PDI)'],
+                    education: ['Track 10: AI Due Diligence for Investors & Acquirers', 'Track 9: Technical Debt as Financial Liability'],
+                    enforcement: 'Exogram Code Quality Gate'
+                },
+                conceptSlug: 'subprime-code-crisis'
+            },
+            {
+                id: 'PAIG-SCG-002',
+                name: 'Technical Insolvency Date Horizon',
+                definition: 'The mathematically projected date when bug fixes and dependency maintenance consume 100% of sprint capacity, reducing new feature shipping to zero.',
+                problem: 'Executives celebrate 300% feature velocity without realizing they are accelerating toward the insolvency wall.',
+                whyItMatters: 'Forces engineering teams to establish automated test floors and subtraction budgets before codebases freeze.',
+                provenance: ['CIO.com publications', 'Curriculum Track 1'],
+                implementation: {
+                    research: ['The Technical Insolvency Date: When Your Codebase Freezes'],
+                    diagnostics: ['Subprime Code Risk Auditor (SCRA)', 'Valuation Scenario Engine (EV-SE)'],
+                    education: ['Track 1: Engineering Economics Foundations'],
+                    enforcement: 'Exogram Subtraction Rules'
+                },
+                conceptSlug: 'vibe-coding'
+            }
+        ]
     }
+
 };

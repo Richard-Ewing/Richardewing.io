@@ -1,3 +1,4 @@
+export * from './terms/sovereign-expansion-2026';
 import { allGlossaryTerms } from './terms/index';
 export * from './terms/sixteenth-pass';
 export * from './terms/saas-metrics';

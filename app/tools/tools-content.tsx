@@ -103,6 +103,50 @@ export default function ToolsContent() {
                     </ShineBorder>
                   </Link>
                   
+                  <Link href="/tools/slm-break-even" className="group block">
+                    <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#8b5cf6", "#ec4899"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                      <div className="flex flex-col h-full">
+                        <div className="text-[10px] font-mono font-bold text-violet-900 uppercase tracking-wider mb-2">Measures: Inference Economics</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-violet-900 font-extrabold">SLM Break-Even Calculator</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Model the exact monthly query volume where fine-tuning and self-hosting an 8B/70B SLM beats frontier model APIs.</p>
+                        <span className="text-violet-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run Break-Even Model →</span>
+                      </div>
+                    </ShineBorder>
+                  </Link>
+
+                  <Link href="/tools/ai-feature-margin" className="group block">
+                    <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                      <div className="flex flex-col h-full">
+                        <div className="text-[10px] font-mono font-bold text-emerald-900 uppercase tracking-wider mb-2">Measures: Product Economics</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold">AI Feature Margin Matrix</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Map user subscription pricing against variable token burn to identify toxic negative-carry AI features.</p>
+                        <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Calculate Margin →</span>
+                      </div>
+                    </ShineBorder>
+                  </Link>
+
+                  <Link href="/tools/subprime-code-auditor" className="group block">
+                    <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#f43f5e", "#fb7185"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                      <div className="flex flex-col h-full">
+                        <div className="text-[10px] font-mono font-bold text-rose-900 uppercase tracking-wider mb-2">Measures: PE Due Diligence</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-rose-900 font-extrabold">Subprime Code Risk Auditor</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Quantify the balance-sheet refactor discount and technical insolvency risk of un-governed vibe coding.</p>
+                        <span className="text-rose-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run M&amp;A Audit →</span>
+                      </div>
+                    </ShineBorder>
+                  </Link>
+
+                  <Link href="/tools/aari" className="group block">
+                    <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#06b6d4", "#8b5cf6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
+                      <div className="flex flex-col h-full">
+                        <div className="text-[10px] font-mono font-bold text-cyan-900 uppercase tracking-wider mb-2">Measures: Agentic SDLC</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-900 font-extrabold">Autonomous Agent Readiness (AARI)</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Evaluate repo architecture, type strictness, and sandboxed worktrees before turning on Claude Code or Antigravity.</p>
+                        <span className="text-cyan-900 font-extrabold text-xs font-bold uppercase tracking-wider">Audit Readiness →</span>
+                      </div>
+                    </ShineBorder>
+                  </Link>
+
                   <Link href="/tools/agent-router" className="group block md:col-span-2">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#a855f7", "#ec4899"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">

@@ -38,11 +38,11 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     date: 'August 28, 2026',
     thesis: 'Examining the operational shift from unconstrained conversational AI coding assistants (like Early Cursor) to structured development environments (Google Antigravity). By enforcing immutable root rule files, modular step-by-step execution, and terminal-level zero-trust type verification, context loss incidents dropped by over 90% and debugging overhead was reduced from hours to minutes during the production engineering of Exogram.ai and CareerWin.ai.',
     relatedConceptIds: ['ai-coding-tool-economics', 'vibe-coding', 'spec-driven-development', 'deterministic-governance', 'runtime-vs-alignment', 'systems-governor', 'context-rot', 'four-laws-probabilistic-software', 'subprime-code-crisis', 'context-window-exhaustion', 'prompt-engineering'],
-    relatedGlossarySlugs: ['systems-governor', 'vibe-coding-debt', 'governed-execution', 'deterministic-governance', 'subprime-code-crisis'],
-    relatedFrameworkSlugs: ['governed-execution', 'four-laws-probabilistic-software'],
-    relatedToolIds: ['copilot-roi', 'aueb', 'pdi'],
-    relatedCaseStudyIds: ['careerwin-intelligence-platform', 'runtime-concurrency-failures'],
-    relatedCurriculumTrackIds: ['engineering-economics', 'ai-governance']
+    relatedGlossarySlugs: ['autonomous-agent-readiness-index', 'spec-driven-agent-execution', 'zero-trust-type-gate', 'agentic-drift-constant', 'systems-governor', 'vibe-coding-debt', 'governed-execution', 'deterministic-governance', 'subprime-code-crisis'],
+    relatedFrameworkSlugs: ['agentic-control-plane', 'governed-execution', 'four-laws-probabilistic-software'],
+    relatedToolIds: ['aari', 'subprime-code-auditor', 'copilot-roi', 'aueb', 'pdi'],
+    relatedCaseStudyIds: ['cursor-to-antigravity-startup-governance', 'agentic-drift-monorepo-incident', 'careerwin-intelligence-platform', 'runtime-concurrency-failures'],
+    relatedCurriculumTrackIds: ['engineering-economics', 'ai-governance', 'track-19-agent-architecture']
   },
   // LinkedIn Newsletter - August 24, 2026
   {
