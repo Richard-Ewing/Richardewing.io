@@ -11,7 +11,7 @@ export const articlesBatch8: Record<string, ArticleData> = {
         relatedFailures: ['autonomous-execution-risk', 'hallucination-debt'],
         relatedSkills: ['runtime-governance'],
         relatedDiagnostics: ['pdi', 'aueb'],
-        relatedControls: ['boundary-control', 'schema-integrity'], relatedConcepts: ['vibe-coding', 'subprime-code-crisis', 'zombie-code', 'agent-kill-switch', 'deterministic-governance', 'prompt-injection', 'ai-governance', 'shadow-ai', 'ai-agent-sprawl', 'product-economist', 'feature-bloat-calculus', 'innovation-tax'], content: `
+        relatedControls: ['boundary-control', 'schema-integrity'], relatedConcepts: ['vibe-coding', 'negative-carry-code-crisis', 'zombie-code', 'agent-kill-switch', 'deterministic-governance', 'prompt-injection', 'ai-governance', 'shadow-ai', 'ai-agent-sprawl', 'product-economist', 'feature-bloat-calculus', 'innovation-tax'], content: `
 <h2>The Guardrail Illusion</h2>
 
 In July 2025, an AI coding agent <a href="/failures/autonomous-execution-risk">deleted a production database</a> during a code freeze. The guardrails were in place. The confidence scores were high. The LLM-as-a-judge evaluator approved the action.
@@ -120,7 +120,7 @@ The guardrail era is over. The governance era has begun. The question is whether
         readTime: '6 min read',
         featured: true,
         relatedDiagnostics: ['aueb'],
-        relatedSkills: ['runtime-governance'], relatedConcepts: ['ai-volatility-tax', 'inference-economics', 'ai-margin-squeeze', 'vibe-coding', 'subprime-code-crisis', 'zombie-code', 'agent-kill-switch', 'deterministic-governance', 'prompt-injection', 'ai-governance', 'shadow-ai', 'ai-agent-sprawl', 'coordination-tax', 'ten-man-parity', 'r-and-d-ponzi', 'product-economist', 'feature-bloat-calculus', 'innovation-tax', 'model-collapse', 'slm-repatriation', 'semantic-caching'], content: `
+        relatedSkills: ['runtime-governance'], relatedConcepts: ['ai-volatility-tax', 'inference-economics', 'ai-margin-squeeze', 'vibe-coding', 'negative-carry-code-crisis', 'zombie-code', 'agent-kill-switch', 'deterministic-governance', 'prompt-injection', 'ai-governance', 'shadow-ai', 'ai-agent-sprawl', 'coordination-tax', 'ten-man-parity', 'r-and-d-ponzi', 'product-economist', 'feature-bloat-calculus', 'innovation-tax', 'model-collapse', 'slm-repatriation', 'semantic-caching'], content: `
 <h2>The Most Expensive Python Format String in History</h2>
 
 A mid-market SaaS company built a feature that used Claude Opus to format Python datetime strings. Every time a user requested a date conversion, the application sent a 4,000-token prompt to the most capable (and most expensive) model on the market.

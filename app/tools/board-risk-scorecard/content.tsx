@@ -31,8 +31,8 @@ const BOARD_QUESTIONS: BoardQuestion[] = [
         category: 'Financial'
     },
     {
-        id: 'subprime-debt-reserve',
-        label: 'Subprime Code & AI Debt Balance Sheet Escrow',
+        id: 'negative-carry-debt-reserve',
+        label: 'Negative-Carry Code & AI Debt Balance Sheet Escrow',
         desc: 'The company tracks code entropy and maintains explicit capital reserves for post-AI architectural refactoring.',
         weight: 20,
         category: 'Fiduciary'
@@ -57,7 +57,7 @@ export default function BoardRiskScorecardTool() {
     const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({
         'signing-matrix': false,
         'rd-capitalization-audit': true,
-        'subprime-debt-reserve': false,
+        'negative-carry-debt-reserve': false,
         'shadow-ai-policy': true,
         'unit-margin-governance': false
     });

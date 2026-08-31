@@ -82,7 +82,7 @@ export const challenges: Challenge[] = [
         exogramRisk: 'System Bloat',
         exogramDescription: 'Exogram monitors unused code paths and actively flags Zombie Assets for deprecation, automating the Sunset Committee process.',
         category: 'engineering-governance',
-        relatedConcepts: ['zombie-code', 'subprime-code-crisis']
+        relatedConcepts: ['zombie-code', 'negative-carry-code-crisis']
     },
     {
         slug: 'runtime-governance',

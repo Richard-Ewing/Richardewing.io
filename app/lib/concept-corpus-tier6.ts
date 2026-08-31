@@ -21,7 +21,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     evidenceLedger: [
       { id: 'cio-shipping-faster', title: 'Hey, Senior PMs: Shipping Faster Won\'t Get You Promoted', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' },
       { id: 'mtp-3-financial-metrics', title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', url: '#', publisher: 'Mind the Product', type: 'Industry Article', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' },
-      { id: 'beehiiv-subprime-code-crisis', title: 'The Subprime Code Crisis', url: '#', publisher: 'Beehiiv', type: 'Newsletter', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' }
+      { id: 'beehiiv-negative-carry-code-crisis', title: 'The Negative-Carry Code Crisis', url: '#', publisher: 'Beehiiv', type: 'Newsletter', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'software-phase-transition', relationship: 'extends' },
@@ -427,7 +427,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     expertiseLevel: 'Architect',
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 2, knownLimitationsCount: 1 },
     definition: 'Four foundational laws governing the behavior, economics, and maintenance of AI-generated code. Law 1: AI code is probabilistic, not deterministic. Law 2: Complexity scales non-linearly with AI assistance. Law 3: The verification cost of AI code exceeds the generation cost. Law 4: AI-generated code accumulates debt faster than human-written code. These laws, coined in Built In, form the baseline for managing modern, AI-augmented engineering teams.',
-    whyItMatters: 'The industry is treating AI-generated code as a free lunch, assuming that faster code generation strictly equates to higher productivity. The 4 Laws establish that the physics of software engineering have changed. Because the code is probabilistic, it introduces subtle, compounding errors that require massive human oversight. Ignoring these laws leads directly to the subprime code crisis, where systems become unmaintainable due to the sheer volume of unverified, machine-generated complexity.',
+    whyItMatters: 'The industry is treating AI-generated code as a free lunch, assuming that faster code generation strictly equates to higher productivity. The 4 Laws establish that the physics of software engineering have changed. Because the code is probabilistic, it introduces subtle, compounding errors that require massive human oversight. Ignoring these laws leads directly to the negative-carry code crisis, where systems become unmaintainable due to the sheer volume of unverified, machine-generated complexity.',
     whoShouldCare: ['Engineering Leaders', 'DevOps Engineers', 'AI Tooling Evaluators'],
     firstIntroduced: 'February 2026',
     canonicalReadingOrder: [
@@ -437,14 +437,14 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       { stage: 'Tier-1 Article', label: 'Built In Publication', publisher: 'Built In', date: 'February 2026', summary: 'Published in Built In as a warning against unmanaged AI code generation.' }
     ],
     evidenceLedger: [
-      { id: 'beehiiv-subprime-code-crisis', title: 'The Subprime Code Crisis', url: '#', publisher: 'Beehiiv', type: 'Newsletter', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' },
+      { id: 'beehiiv-negative-carry-code-crisis', title: 'The Negative-Carry Code Crisis', url: '#', publisher: 'Beehiiv', type: 'Newsletter', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' },
       { id: 'builtin-vibe-coding-era', title: 'The Vibe Coding Era', url: '#', publisher: 'Built In', type: 'Industry Article', strength: 4 as const, role: 'Supports' as const, date: 'August 2026' },
       { id: 'cio-copilot-bottleneck', title: 'The Copilot Bottleneck', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 5 as const, role: 'Extends' as const, date: 'August 2026' },
       { id: 'cio-model-collapse', title: 'Model Collapse', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'deterministic-governance', relationship: 'implements' },
-      { slug: 'subprime-code-crisis', relationship: 'causes' },
+      { slug: 'negative-carry-code-crisis', relationship: 'causes' },
       { slug: 'vibe-coding', relationship: 'contradicts' },
       { slug: 'hallucination-tax', relationship: 'extends' }
     ],

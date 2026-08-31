@@ -73,7 +73,7 @@ const conceptPages = [
     { slug: 'agent-kill-switch', keywords: ['kill switch', 'circuit breaker', 'execution control'] },
     { slug: 'deterministic-governance', keywords: ['deterministic governance', 'code gates'] },
     { slug: 'product-economist', keywords: ['product economist', 'p&l', 'margin contribution'] },
-    { slug: 'subprime-code-crisis', keywords: ['subprime code', 'code inflation', 'debt bubble'] },
+    { slug: 'negative-carry-code-crisis', keywords: ['negative-carry code', 'negative carry', 'code inflation', 'debt bubble'] },
     { slug: 'vibe-coding', keywords: ['vibe coding', 'vibe code', 'superficial'] },
     { slug: 'ai-governance', keywords: ['ai governance', 'enterprise governance', 'governance'] },
     { slug: 'ai-economics', keywords: ['ai economics', 'tokenomics', 'unit economics'] },

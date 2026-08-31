@@ -9,7 +9,7 @@ export const articlesBatch9: Record<string, ArticleData> = {
         readTime: '14 min read',
         featured: true,
         relatedDiagnostics: ['aueb', 'copilot-roi'],
-        relatedSkills: ['runtime-governance'], relatedConcepts: ['ai-volatility-tax', 'inference-economics', 'ai-margin-squeeze', 'vibe-coding', 'subprime-code-crisis', 'zombie-code', 'agent-kill-switch', 'deterministic-governance', 'prompt-injection', 'ai-governance', 'shadow-ai', 'ai-agent-sprawl', 'product-economist', 'feature-bloat-calculus', 'innovation-tax', 'technical-insolvency', 'dora-financial-translation'], content: `
+        relatedSkills: ['runtime-governance'], relatedConcepts: ['ai-volatility-tax', 'inference-economics', 'ai-margin-squeeze', 'vibe-coding', 'negative-carry-code-crisis', 'zombie-code', 'agent-kill-switch', 'deterministic-governance', 'prompt-injection', 'ai-governance', 'shadow-ai', 'ai-agent-sprawl', 'product-economist', 'feature-bloat-calculus', 'innovation-tax', 'technical-insolvency', 'dora-financial-translation'], content: `
 <h2>Your AI Coding Tool Is Not a Productivity Gain  -  It Is a $58K Maintenance Liability</h2>
 
 <p>AI Copilot is not making your engineers faster. It is generating $58,000 per engineer per year in hidden maintenance debt, security remediation, and verification overhead  -  while your team <em>reports</em> feeling 24% more productive. The METR study measured the reality: <strong>19% slower on actual task completion.</strong> You are paying more for measurably worse output, and your vendor just made it more expensive.</p>
@@ -188,7 +188,7 @@ export const articlesBatch9: Record<string, ArticleData> = {
         relatedFailures: ['autonomous-execution-risk', 'hallucination-debt'],
         relatedSkills: ['runtime-governance'],
         relatedDiagnostics: ['pdi', 'aueb'],
-        relatedControls: ['boundary-control', 'schema-integrity'], relatedConcepts: ['ai-volatility-tax', 'inference-economics', 'ai-margin-squeeze', 'vibe-coding', 'subprime-code-crisis', 'zombie-code', 'agent-kill-switch', 'deterministic-governance', 'prompt-injection', 'ai-governance', 'shadow-ai', 'ai-agent-sprawl', 'coordination-tax', 'ten-man-parity', 'r-and-d-ponzi', 'product-economist', 'feature-bloat-calculus', 'innovation-tax', 'technical-insolvency', 'dora-financial-translation'], content: `
+        relatedControls: ['boundary-control', 'schema-integrity'], relatedConcepts: ['ai-volatility-tax', 'inference-economics', 'ai-margin-squeeze', 'vibe-coding', 'negative-carry-code-crisis', 'zombie-code', 'agent-kill-switch', 'deterministic-governance', 'prompt-injection', 'ai-governance', 'shadow-ai', 'ai-agent-sprawl', 'coordination-tax', 'ten-man-parity', 'r-and-d-ponzi', 'product-economist', 'feature-bloat-calculus', 'innovation-tax', 'technical-insolvency', 'dora-financial-translation'], content: `
 <h2>The 88% Failure Rate Is Not a Bug  -  It Is Architecture</h2>
 
 <p>Your AI agent project is going to fail in production. Not because the model is bad  -  GPT-4, Claude, Gemini are extraordinary. It is going to fail because your platform team deployed a probabilistic reasoning engine with the operational assumptions of a CRUD app, and <strong>88% of agent projects that make that mistake never survive 90 days in production.</strong></p>

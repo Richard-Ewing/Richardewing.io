@@ -343,7 +343,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     ],
     relatedConceptSlugs: [
       { slug: 'failure-cost-asymmetry', relationship: 'depends_on' },
-      { slug: 'subprime-code-crisis', relationship: 'correlates_with' },
+      { slug: 'negative-carry-code-crisis', relationship: 'correlates_with' },
       { slug: 'vibe-coding-debt', relationship: 'explains' }
     ],
     openQuestions: ['How can automated CI/CD pipelines automatically tag and quantify developer investigation time on AI-authored PRs?'],
@@ -1085,7 +1085,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     ],
     relatedConceptSlugs: [
       { slug: 'pl-ownership-for-pms', relationship: 'extends' },
-      { slug: 'subprime-code-crisis', relationship: 'explains' },
+      { slug: 'negative-carry-code-crisis', relationship: 'explains' },
       { slug: 'four-laws-probabilistic-software', relationship: 'supports' }
     ],
     openQuestions: ['How should enterprise capital allocation models evolve when R&D software creation is treated as a zero-marginal-cost activity?'],

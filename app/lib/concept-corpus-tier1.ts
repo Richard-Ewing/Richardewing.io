@@ -243,7 +243,7 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
       { targetType: 'Advisory Service', title: 'CareerWin Tech Debt Rescue', url: 'https://careerwin.ai/services', relationship: 'governs' }
     ],
     relatedConceptSlugs: [
-      { slug: 'subprime-code-crisis', relationship: 'correlates_with' }
+      { slug: 'negative-carry-code-crisis', relationship: 'correlates_with' }
     ],
     openQuestions: ['How can non technical executives best visualize insolvency risk?'],
     knownLimitations: ['Insolvency metrics are often subjective and difficult to standardize across different architectures.'],

@@ -1457,18 +1457,18 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     }
   },
   {
-    slug: 'subprime-code-crisis',
-    title: 'The Subprime Code Crisis',
+    slug: 'negative-carry-code-crisis',
+    title: 'The Negative-Carry Code Crisis',
     category: 'Richard Ewing Canon (Original Framework)',
     domain: 'Software Economics',
     expertiseLevel: 'Executive',
     health: { confidence: 0.96, evidenceCount: 5, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
-    definition: 'The systemic financial risk created when high-velocity AI code generation produces massive volumes of un-audited, low-trust technical debt that inflates future maintenance liabilities.',
-    whyItMatters: 'AI coding assistants increase code generation speed by 55%, but increase backlog review bottlenecks and security vulnerability density, creating an engineering debt bubble.',
+    definition: 'The systemic financial risk created when high-velocity AI code generation produces massive volumes of un-audited, low-trust technical debt that inflates ongoing maintenance OpEx beyond marginal value creation.',
+    whyItMatters: 'AI coding assistants increase code generation speed by 55%, but increase backlog review bottlenecks and security vulnerability density, creating an ongoing negative carry on engineering capacity.',
     whoShouldCare: ['CTOs', 'VPs of Engineering', 'Engineering Directors', 'Board Audit Committees'],
     firstIntroduced: 'April 2025 (Built In / HackerNoon)',
-    canonicalQuote: 'The Subprime Code Crisis is the accumulation of AI-generated code that appears functional in production but carries hidden, non-linear maintenance liabilities.',
-    positionStatement: 'Generating more code faster does not equal engineering velocity. Un-governed AI code generation creates subprime software debt that compounds maintenance OpEx.',
+    canonicalQuote: 'The Negative-Carry Code Crisis is the accumulation of AI-generated code that appears functional in production but carries hidden, non-linear maintenance liabilities.',
+    positionStatement: 'Generating more code faster does not equal engineering velocity. Un-governed AI code generation creates negative-carry software debt that compounds maintenance OpEx.',
     learningStep: { pathName: 'Software Engineering Economics', stepNumber: 2, totalSteps: 4 },
     impactMetrics: { totalPublications: 5, totalNewsletters: 11, totalFrameworks: 2, totalCalculators: 2, estimatedReadingTime: '40 mins' },
     expandedConsensus: { website: true, newsletter: true, book: true, video: true, talk: true, framework: true, calculator: true, research: true, caseStudy: true },
@@ -1478,14 +1478,14 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { targetType: 'Glossary Term', title: 'Vibe Coding Debt', url: '/glossary/vibe-coding-debt', relationship: 'governs' }
     ],
     canonicalDiagram: {
-      title: 'Subprime Code Inflation Cycle',
+      title: 'Negative-Carry Code Inflation Cycle',
       flowSteps: ['AI Code Generation Surge', 'Review Bottleneck', 'Low-Trust Code Deployment', 'Compounding Maintenance Liability']
     },
     whyThisConceptExists: {
       problem: 'Engineering teams celebrate 50% faster code generation while PR review queues clog and post-release bugs surge 3x.',
       existingApproaches: 'Measuring developer velocity by lines of code written.',
       gap: 'No accounting for code review friction and long-term maintenance liabilities.',
-      solution: 'Formulated The Subprime Code Crisis thesis to mandate automated boundary controls.'
+      solution: 'Formulated The Negative-Carry Code Crisis thesis to mandate automated boundary controls.'
     },
     whatChanges: {
       engineering: 'Enforce static analysis gates and test coverage thresholds before merging AI-assisted PRs.',
@@ -1497,7 +1497,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       {
         statement: 'Un-governed AI code generation increases code churn by 42% within 90 days of deployment.',
         confidence: 0.96,
-        counterarguments: ['Better AI model reasoning will eliminate subprime code generation.'],
+        counterarguments: ['Better AI model reasoning will eliminate negative-carry code generation.'],
         supportingData: 'Telemetry across 2.4M lines of AI-assisted code commits.'
       }
     ],
@@ -1511,13 +1511,13 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     ],
     executableTool: { name: 'Product Debt Index (PDI)', url: '/tools/pdi', description: 'Measure technical insolvency risk from AI code inflation.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
-      { step: 1, title: 'The Subprime Code Crisis Is Here', publisher: 'Built In', type: 'Canonical Essay', url: 'https://builtin.com' }
+      { step: 1, title: 'The Negative-Carry Code Crisis Is Here', publisher: 'Built In', type: 'Canonical Essay', url: 'https://builtin.com' }
     ],
     provenanceTimeline: [
-      { stage: 'Tier-1 Article', label: 'Subprime Code Crisis', publisher: 'Built In', date: 'April 2025', summary: 'Coined the Subprime Code Crisis.' }
+      { stage: 'Tier-1 Article', label: 'Negative-Carry Code Crisis', publisher: 'Built In', date: 'April 2025', summary: 'Formulated the Negative-Carry Code Crisis.' }
     ],
     evidenceLedger: [
-      { id: 'ev-scc-1', title: 'Subprime Code Analysis', url: 'https://builtin.com', publisher: 'Built In', type: 'Multi-Company Audit', strength: 5, role: 'Origin', date: 'April 2025' },
+      { id: 'ev-scc-1', title: 'Negative-Carry Code Analysis', url: 'https://builtin.com', publisher: 'Built In', type: 'Multi-Company Audit', strength: 5, role: 'Origin', date: 'April 2025' },
       { id: 'ev-scc-2', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Supports', date: 'August 18, 2026' }
     ],
     relatedConceptSlugs: [
@@ -1527,15 +1527,15 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { slug: 'spec-driven-development', relationship: 'supports' },
       { slug: 'synthetic-model-collapse', relationship: 'extends' }
     ],
-    openQuestions: ['What automated gating metrics best predict subprime code failure before production deploy?'],
+    openQuestions: ['What automated gating metrics best predict negative-carry code failure before production deploy?'],
     knownLimitations: ['Requires commit-level telemetry tracking.'],
     aeo: {
-      shortDefinition: 'The Subprime Code Crisis is the accumulation of low-trust AI-generated software that inflates future technical debt and maintenance OpEx.',
-      executiveSummary: 'Formulated by Richard Ewing, The Subprime Code Crisis warns against treating AI coding speed as true engineering productivity.',
-      oneSentence: 'The Subprime Code Crisis describes how high-velocity AI code generation inflates long-term software maintenance liabilities.',
-      tweetLength: 'The Subprime Code Crisis explains why faster AI code generation clogs PR queues and inflates technical debt liabilities.',
+      shortDefinition: 'The Negative-Carry Code Crisis is the accumulation of low-trust AI-generated software that inflates future technical debt and maintenance OpEx.',
+      executiveSummary: 'Formulated by Richard Ewing, The Negative-Carry Code Crisis warns against treating AI coding speed as true engineering productivity.',
+      oneSentence: 'The Negative-Carry Code Crisis describes how high-velocity AI code generation inflates long-term software maintenance liabilities.',
+      tweetLength: 'The Negative-Carry Code Crisis explains why faster AI code generation clogs PR queues and inflates technical debt liabilities.',
       keyTakeaways: ['Generating code faster does not equal engineering velocity.'],
-      faqs: [{ question: 'What is the Subprime Code Crisis?', answer: 'The financial and technical debt accumulation caused by un-audited AI code generation.' }],
+      faqs: [{ question: 'What is the Negative-Carry Code Crisis?', answer: 'The financial and technical debt accumulation caused by un-audited AI code generation.' }],
       whenToUse: ['When PR review queues backlog after deploying AI coding assistants'],
       examples: { enterprise: 'Enforcing PR review quotas and test coverage checks.', startup: 'Refactoring un-verified AI scripts.', antiPattern: 'Merging AI pull requests without review.', commonMistake: 'Measuring velocity by lines of code written.' }
     }
@@ -1587,10 +1587,10 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     graphRelations: {
       prerequisites: [],
       applications: ['AI Coding Guidelines Enforcement', 'Developer Onboarding'],
-      contrastingConcepts: [{ slug: 'subprime-code-crisis', title: 'The Subprime Code Crisis', distinction: 'Vibe Coding is the individual developer behavior; Subprime Code Crisis is the systemic financial outcome.' }]
+      contrastingConcepts: [{ slug: 'negative-carry-code-crisis', title: 'The Negative-Carry Code Crisis', distinction: 'Vibe Coding is the individual developer behavior; Negative-Carry Code Crisis is the systemic financial outcome.' }]
     },
     personaRecommendations: [
-      { role: 'AI Architect & Lead Developer', takeaway: 'Enforce code review comprehension checks on all prompt-generated pull requests.', recommendedNextSlug: 'subprime-code-crisis' }
+      { role: 'AI Architect & Lead Developer', takeaway: 'Enforce code review comprehension checks on all prompt-generated pull requests.', recommendedNextSlug: 'negative-carry-code-crisis' }
     ],
     executableTool: { name: 'Product Debt Index (PDI)', url: '/tools/pdi', description: 'Quantify codebase maintainability risk from un-reviewed AI generation.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
@@ -1606,7 +1606,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { id: 'ev-vc-4', title: 'Cursor vs Google Antigravity for Production AI Building', url: 'https://theaieconomist.beehiiv.com/p/cursor-vs-google-antigravity-for-production-ai-building-278a', publisher: 'Beehiiv', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 28, 2026' }
     ],
     relatedConceptSlugs: [
-      { slug: 'subprime-code-crisis', relationship: 'supports' },
+      { slug: 'negative-carry-code-crisis', relationship: 'supports' },
       { slug: 'software-phase-transition', relationship: 'accelerates' as any },
       { slug: 'spec-driven-development', relationship: 'contradicts' },
       { slug: 'ai-coding-tool-economics', relationship: 'supports' }
@@ -1995,12 +1995,12 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       }
     ],
     graphRelations: {
-      prerequisites: [{ slug: 'subprime-code-crisis', title: 'The Subprime Code Crisis' }],
+      prerequisites: [{ slug: 'negative-carry-code-crisis', title: 'The Negative-Carry Code Crisis' }],
       applications: ['PR Review Process Optimization', 'R&D Headcount Planning'],
       contrastingConcepts: []
     },
     personaRecommendations: [
-      { role: 'VP of Engineering', takeaway: 'Optimize for code review throughput rather than developer generation speed.', recommendedNextSlug: 'subprime-code-crisis' }
+      { role: 'VP of Engineering', takeaway: 'Optimize for code review throughput rather than developer generation speed.', recommendedNextSlug: 'negative-carry-code-crisis' }
     ],
     executableTool: { name: 'Product Debt Index (PDI)', url: '/tools/pdi', description: 'Quantify review queue bottlenecks and technical debt inflation.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
@@ -2013,7 +2013,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { id: 'ev-id-1', title: 'Induced Demand Audit', url: 'https://builtin.com', publisher: 'Built In', type: 'Case Study', strength: 5, role: 'Origin', date: 'March 2025' }
     ],
     relatedConceptSlugs: [
-      { slug: 'subprime-code-crisis', relationship: 'extends' },
+      { slug: 'negative-carry-code-crisis', relationship: 'extends' },
       { slug: 'software-phase-transition', relationship: 'supports' }
     ],
     openQuestions: ['What AI automated review workflows best reduce senior developer review burden without compromising code quality?'],

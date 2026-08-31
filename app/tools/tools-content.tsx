@@ -147,11 +147,11 @@ export default function ToolsContent() {
                     </ShineBorder>
                   </Link>
 
-                  <Link href="/tools/subprime-code-auditor" className="group block">
+                  <Link href="/tools/negative-carry-code-auditor" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#f43f5e", "#fb7185"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
                         <div className="text-[10px] font-mono font-bold text-rose-900 uppercase tracking-wider mb-2">Measures: PE Due Diligence</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-rose-900 font-extrabold">Subprime Code Risk Auditor</h3>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-rose-900 font-extrabold">Negative-Carry Code Auditor</h3>
                         <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Quantify the balance-sheet refactor discount and technical insolvency risk of un-governed vibe coding.</p>
                         <span className="text-rose-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run M&amp;A Audit →</span>
                       </div>

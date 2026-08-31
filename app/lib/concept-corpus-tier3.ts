@@ -176,7 +176,7 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
     expertiseLevel: 'Executive',
     health: { confidence: 0.92, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 0 },
     definition: 'The evolutionary end-state of the senior software engineer: a role defined not by writing raw syntax, but by designing deterministic boundaries, governing AI agents, and managing systemic tradeoffs.',
-    whyItMatters: 'As AI coding assistants commoditize syntax generation, the value of a senior engineer shifts from output volume to architectural governance. The Systems Governor designs the constraints that prevent subprime code from destroying the enterprise.',
+    whyItMatters: 'As AI coding assistants commoditize syntax generation, the value of a senior engineer shifts from output volume to architectural governance. The Systems Governor designs the constraints that prevent negative-carry code from destroying the enterprise.',
     whoShouldCare: ['Senior Software Engineers', 'Staff Engineers', 'VPs of Engineering'],
     firstIntroduced: 'July 2025 (Built In)',
     canonicalQuote: 'The senior engineer of the future does not write code, they govern the systems that generate it. The role has evolved from syntax author to Systems Governor.',

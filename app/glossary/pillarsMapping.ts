@@ -10,7 +10,7 @@ export const PILLARS = [
 
     { slug: 'probabilistic-product-management', name: 'Probabilistic Product Management' },
     { slug: 'agentic-governance-engineering', name: 'Agentic Governance & Autonomous Software' },
-    { slug: 'subprime-code-insolvency', name: 'Subprime Code & Technical Insolvency' },
+    { slug: 'negative-carry-insolvency', name: 'Negative-Carry Code & Technical Insolvency' },
 
     { slug: 'ai-unit-economics', name: 'AI Unit Economics & Pricing' },
     { slug: 'technical-debt-platform-engineering', name: 'Technical Debt & Platform Engineering' },

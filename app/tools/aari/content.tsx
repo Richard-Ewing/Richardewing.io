@@ -91,7 +91,7 @@ export default function AARITool() {
     } else if (readinessScore >= 45) {
         tierLabel = 'Tier C: High Drift Vulnerability';
         tierColor = 'text-amber-700 bg-amber-50 border-amber-200';
-        tierDesc = 'High risk of recursive debug loops and subprime code accumulation. Senior engineers will spend up to 40% of sprint capacity reviewing broken AI diffs.';
+        tierDesc = 'High risk of recursive debug loops and negative-carry code accumulation. Senior engineers will spend up to 40% of sprint capacity reviewing broken AI diffs.';
     }
 
     return (

@@ -135,9 +135,9 @@ export const highSearch2026Terms: GlossaryTerm[] = [
         faqs: [
             {
                 question: 'How is synthetic entropy detected during M&A?',
-                answer: 'Via the [Subprime Code Risk Auditor](/tools/subprime-code-auditor) during pre-close technical due diligence.'
+                answer: 'Via the [Negative-Carry Code Auditor](/tools/negative-carry-code-auditor) during pre-close technical due diligence.'
             }
         ],
-        relatedTerms: ['subprime-code', 'vibe-coding-debt']
+        relatedTerms: ['negative-carry-code', 'vibe-coding-debt']
     }
 ];

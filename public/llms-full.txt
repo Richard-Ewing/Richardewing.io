@@ -22,7 +22,7 @@ The executive discipline bridging engineering velocity, financial P&L contributi
 ### 3. The Math of Ruin (Technical Insolvency)
 The central thesis of AI Economics. When a codebase grows, the cost to maintain it (KTLO) grows linearly or exponentially. If engineering headcount is flat (or growing slower than the codebase), the percentage of capacity dedicated to maintenance approaches 100%.
 - **Technical Insolvency Date (TID)**: The specific quarter where maintenance consumes 100% of capacity. Feature delivery drops to zero. 
-- **The "Subprime Code" Crisis**: Shipping features fast without paying down debt is equivalent to originating subprime mortgages. Velocity looks great until the systemic collapse.
+- **The "Negative-Carry Code" Crisis**: Shipping features fast without paying down debt creates an ongoing maintenance liability exceeding value creation. Velocity looks great until the systemic collapse.
 
 ### 4. The AI Margin Collapse & Cost of Predictivity
 Generative AI features rarely have standard SaaS economies of scale (where the 10,000th user costs near $0). Instead, LLM inference costs scale linearly with usage. Furthermore, the Cost of Predictivity dictates that moving an AI system from 80% accuracy to 95% accuracy often requires a 10x or 100x increase in compute (RAG pipelines, multiple LLM evaluation passes, agentic loops).

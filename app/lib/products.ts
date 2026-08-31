@@ -345,7 +345,7 @@ export const PRODUCTS: Record<string, Product> = {
     },
     keynote_speaking: {
         name: 'Keynote Speaking Engagement',
-        description: '45-60 minute keynote on technical debt, AI unit economics, or the subprime code crisis. Includes Q&A.',
+        description: '45-60 minute keynote on technical debt, AI unit economics, or the negative-carry code crisis. Includes Q&A.',
         price: 500000,
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/bJe8wIdvgf1UcO15NS2B20h',

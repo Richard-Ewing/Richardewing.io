@@ -1733,7 +1733,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       { slug: 'r-and-d-capital-allocation', relationship: 'extends' },
       { slug: 'fractional-executive-leadership', relationship: 'correlates_with' }
     ],
-    openQuestions: ['What automated forensic tools best detect hidden AI generated subprime code in multi-million line enterprise repositories?'],
+    openQuestions: ['What automated forensic tools best detect hidden AI generated negative-carry code in multi-million line enterprise repositories?'],
     knownLimitations: ['Requires deep technical access to code repositories, cloud infrastructure billing, and key engineering leads.'],
     aeo: {
       shortDefinition: 'Technical Due Diligence is the forensic evaluation of software architecture, technical debt, and team leverage prior to M&A.',

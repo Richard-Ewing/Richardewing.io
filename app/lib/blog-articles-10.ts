@@ -9,7 +9,7 @@ export const articlesBatch10: Record<string, ArticleData> = {
         readTime: "7 min read",
         featured: true,
         canonicalUrl: "https://theaieconomist.beehiiv.com/p/how-to-prevent-context-loss-in-ai-applications",
-        relatedConcepts: ["ai-governance","deterministic-governance","context-rot","inference-economics","subprime-code-crisis"],
+        relatedConcepts: ["ai-governance","deterministic-governance","context-rot","inference-economics","negative-carry-code-crisis"],
         content: `
 <h2>How to Prevent Memory Loss in AI Applications</h2>
 
@@ -65,7 +65,7 @@ export const articlesBatch10: Record<string, ArticleData> = {
         readTime: "7 min read",
         featured: true,
         canonicalUrl: "https://theaieconomist.beehiiv.com/p/claude-search-tool-zero-adoption",
-        relatedConcepts: ["ai-governance","deterministic-governance","ai-volatility-tax","inference-economics","subprime-code-crisis"],
+        relatedConcepts: ["ai-governance","deterministic-governance","ai-volatility-tax","inference-economics","negative-carry-code-crisis"],
         content: `
 <h2>Claude Search Fails: Prompting Kills Adoption</h2>
 
@@ -212,7 +212,7 @@ export const articlesBatch10: Record<string, ArticleData> = {
         readTime: "8 min read",
         featured: true,
         canonicalUrl: "https://builtin.com/articles/meta-muse-code-comparison",
-        relatedConcepts: ["ai-coding-tool-economics", "vibe-coding", "runtime-vs-alignment", "deterministic-governance", "subprime-code-crisis", "systems-governor"],
+        relatedConcepts: ["ai-coding-tool-economics", "vibe-coding", "runtime-vs-alignment", "deterministic-governance", "negative-carry-code-crisis", "systems-governor"],
         content: `
 <h2>How Does Meta’s Muse Code Compare to Other AI Coding Tools?</h2>
 <p><em>Multi-agent concurrency, Git worktree isolation, and the hidden operational cost of runtime collisions.</em></p>
@@ -302,7 +302,7 @@ export const articlesBatch10: Record<string, ArticleData> = {
         readTime: "7 min read",
         featured: true,
         canonicalUrl: "https://theaieconomist.beehiiv.com/p/the-ai-coding-tool-battle-is-moving-somewhere-more-important-than-code",
-        relatedConcepts: ["ai-coding-tool-economics", "vibe-coding", "runtime-vs-alignment", "deterministic-governance", "subprime-code-crisis", "systems-governor"],
+        relatedConcepts: ["ai-coding-tool-economics", "vibe-coding", "runtime-vs-alignment", "deterministic-governance", "negative-carry-code-crisis", "systems-governor"],
         content: `
 <h2>The Shift Beyond Autocomplete</h2>
 <p><em>Why the model is no longer the whole product, and why the environment around the model determines what happens when it is wrong.</em></p>

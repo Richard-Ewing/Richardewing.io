@@ -103,6 +103,10 @@ const nextConfig: NextConfig = {
       // VALIDATED: SaaS valuation calculators are a well-established search category
       { source: '/tools/saas-valuation-calculator', destination: '/tools/ev-se', permanent: true },
       { source: '/tools/enterprise-value-calculator', destination: '/tools/ev-se', permanent: true },
+      { source: '/tools/subprime-code-auditor', destination: '/tools/negative-carry-code-auditor', permanent: true },
+      { source: '/glossary/subprime-code', destination: '/glossary/negative-carry-code', permanent: true },
+      { source: '/glossary/subprime-code-crisis', destination: '/glossary/negative-carry-code-crisis', permanent: true },
+      { source: '/framework/subprime-code-governance', destination: '/framework/negative-carry-code-governance', permanent: true },
       // STRATEGIC: maps to pain language from advisory prospects
       { source: '/tools/ai-hallucination-cost', destination: '/tools/vta', permanent: true },
       { source: '/tools/ai-job-displacement-calculator', destination: '/tools/fte-displacement', permanent: true },

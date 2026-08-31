@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const tools = [
     { name: 'Autonomous Agent Readiness (AARI)', description: 'Audit repository architecture and type strictness before enabling Claude Code or Antigravity.', href: '/tools/aari', icon: '🤖', color: 'cyan' },
-    { name: 'Subprime Code Risk Auditor', description: 'Quantify the financial refactor liability and maintenance drag of un-governed vibe coding.', href: '/tools/subprime-code-auditor', icon: '⚖️', color: 'rose' },
+    { name: 'Negative-Carry Code Auditor', description: 'Quantify the financial refactor liability and maintenance drag of un-governed vibe coding.', href: '/tools/negative-carry-code-auditor', icon: '⚖️', color: 'rose' },
     { name: 'AI Code Review Bottleneck', description: 'Calculate senior engineer payroll waste and cycle time inflation from synthetic PR floods.', href: '/tools/code-review-bottleneck-calc', icon: '⚡', color: 'teal' },
     { name: 'MCP Security Auditor', description: 'Audit Model Context Protocol connections against OWASP MCP Top 10 and STDIO RCE risks.', href: '/tools/mcp-security-auditor', icon: '🛡️', color: 'rose' },
     { name: 'SLM Break-Even Calculator', description: 'Model the exact monthly query volume where self-hosting quantized SLMs beats frontier model APIs.', href: '/tools/slm-break-even', icon: '💻', color: 'violet' },

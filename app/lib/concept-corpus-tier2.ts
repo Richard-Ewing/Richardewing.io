@@ -232,7 +232,7 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
       }
     ],
     graphRelations: {
-      prerequisites: [{ slug: 'subprime-code-crisis', title: 'The Subprime Code Crisis' }],
+      prerequisites: [{ slug: 'negative-carry-code-crisis', title: 'The Negative-Carry Code Crisis' }],
       applications: ['Due Diligence Auditing', 'Engineering Budgeting'],
       contrastingConcepts: []
     },
@@ -250,7 +250,7 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
       { id: 'ev-rdp-1', title: 'R&D Ponzi Analysis', url: 'https://theaieconomist.beehiiv.com', publisher: 'Beehiiv', type: 'Market Analysis', strength: 5, role: 'Origin', date: 'April 2026' }
     ],
     relatedConceptSlugs: [
-      { slug: 'subprime-code-crisis', relationship: 'extends' },
+      { slug: 'negative-carry-code-crisis', relationship: 'extends' },
       { slug: 'feature-bloat-calculus', relationship: 'correlates_with' },
       { slug: 'agentic-roi', relationship: 'supports' }
     ],

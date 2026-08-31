@@ -17,7 +17,7 @@ const boardQuestions = [
     { question: 'When will technical debt make new features impossible?', answer: 'The Technical Insolvency Date predicts when maintenance load exceeds total capacity. Some companies are already past it.', metric: 'Technical Insolvency Date', link: '/glossary/technical-insolvency-date' },
     { question: 'How productive is our engineering team compared to benchmarks?', answer: 'APER (Annualized Productive Engineering Revenue) measures revenue generated per engineer. Industry benchmarks available.', metric: 'APER', link: '/tools/aper' },
     { question: 'Are our AI features profitable or margin-negative?', answer: 'AI COGS analysis reveals the variable cost per AI query. Many companies discover their AI features lose money at current margins.', metric: 'AI Unit Economics', link: '/tools/aueb' },
-    { question: 'What is the dollar value of our technical debt and AI boilerplate?', answer: 'The Product Debt Index and Subprime Code Risk Auditor translate code entropy into dollar-denominated balance sheet liabilities.', metric: 'Subprime Code Auditor', link: '/tools/subprime-code-auditor' },
+    { question: 'What is the dollar value of our technical debt and AI boilerplate?', answer: 'The Product Debt Index and Negative-Carry Code Auditor translate code entropy into dollar-denominated balance sheet liabilities.', metric: 'Negative-Carry Code Auditor', link: '/tools/negative-carry-code-auditor' },
 ];
 
 export default function ForBoardsPage() {

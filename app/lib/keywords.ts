@@ -687,7 +687,7 @@ export const BRANDED = [
     'The Audit Interview', 'audit interview tool', 'audit interview assessment',
     'Technical Insolvency Date', 'TID', 'innovation tax', 'innovation tax framework',
     'cost of predictivity', 'evergreen ratio', 'kill switch protocol',
-    'AI hallucination debt', 'zombie infrastructure', 'subprime code crisis',
+    'AI hallucination debt', 'zombie infrastructure', 'negative-carry code crisis',
     'capital exposure assessment', 'intervention protocols',
     'EAAP', 'Exogram Action Admissibility Protocol',
     'AI economics doctrine', 'doctrine of AI economics',

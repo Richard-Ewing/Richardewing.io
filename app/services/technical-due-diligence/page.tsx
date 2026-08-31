@@ -124,7 +124,7 @@ export default function TechnicalDueDiligencePage() {
                     <section className="mb-24 pt-16 border-t border-zinc-300">
                         <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-8">Research & Methodology Foundations</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            {['subprime-code-crisis', 'vibe-coding', 'r-and-d-ponzi', 'dora-financial-translation'].map(slug => {
+                            {['negative-carry-code-crisis', 'vibe-coding', 'r-and-d-ponzi', 'dora-financial-translation'].map(slug => {
                                 const concept = CANONICAL_CONCEPTS.find(c => c.slug === slug);
                                 if (!concept) return null;
                                 return (

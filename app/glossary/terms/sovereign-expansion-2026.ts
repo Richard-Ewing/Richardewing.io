@@ -48,7 +48,7 @@ export const sovereignExpansionTerms: GlossaryTerm[] = [
                 answer: 'Senior engineers spend 40% less time acting as manual human compilers for AI-generated code.'
             }
         ],
-        relatedTerms: ['subprime-code', 'vibe-coding-debt']
+        relatedTerms: ['negative-carry-code', 'vibe-coding-debt']
     },
     {
         slug: 'agentic-drift-constant',
@@ -216,15 +216,15 @@ export const sovereignExpansionTerms: GlossaryTerm[] = [
         relatedTerms: ['negative-carry-ai-feature', 'ai-unit-economics']
     },
     {
-        slug: 'subprime-code',
-        title: 'Subprime Code',
+        slug: 'negative-carry-code',
+        title: 'Negative-Carry Code',
         category: 'Technical Debt & Code Quality',
-        definition: 'Unverified, AI-generated boilerplate code that appears functional in staging but lacks architectural coherence, strict types, or unit tests, creating massive hidden maintenance debt.',
-        whyItMatters: 'Subprime code degrades 4x faster than human-written code, accelerating sprint maintenance load toward the Technical Insolvency Date.',
-        howToMeasure: 'Calculate the Subprime Code Risk Score (0-100) using the [Subprime Code Risk Auditor](/tools/subprime-code-auditor).',
+        definition: 'Unverified, AI-generated boilerplate code that appears functional in staging but lacks architectural coherence, strict types, or unit tests, creating an ongoing maintenance tax that exceeds its marginal economic value.',
+        whyItMatters: 'Negative-carry code degrades 4x faster than human-written code, accelerating sprint maintenance load toward the Technical Insolvency Date.',
+        howToMeasure: 'Calculate the Negative-Carry Risk Score (0-100) using the [Negative-Carry Code Auditor](/tools/negative-carry-code-auditor).',
         faqs: [
             {
-                question: 'Why do teams generate subprime code?',
+                question: 'Why do teams generate negative-carry code?',
                 answer: 'Incentives reward raw feature velocity. Autocomplete tools allow developers to ship without understanding edge cases or authoring test harnesses.'
             }
         ],
@@ -243,7 +243,7 @@ export const sovereignExpansionTerms: GlossaryTerm[] = [
                 answer: 'No. Adding engineers to an insolvent codebase increases coordination tax and accelerates architectural decay (Brooks Law).'
             }
         ],
-        relatedTerms: ['subprime-code', 'technical-insolvency-date']
+        relatedTerms: ['negative-carry-code', 'technical-insolvency-date']
     },
     {
         slug: 'vibe-coding-debt-discount',
@@ -258,7 +258,7 @@ export const sovereignExpansionTerms: GlossaryTerm[] = [
                 answer: 'Increasingly standard in 2026 technical due diligence for SaaS acquisitions valued over $20M.'
             }
         ],
-        relatedTerms: ['subprime-code', 'pe-due-diligence']
+        relatedTerms: ['negative-carry-code', 'pe-due-diligence']
     },
     {
         slug: 'sovereign-proxy-gateway',

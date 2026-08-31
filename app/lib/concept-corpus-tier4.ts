@@ -95,10 +95,10 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Fragile Prompt Integrations', publisher: 'Industry Meta', date: '2022', summary: 'Observation of systems breaking upon model updates.' }
     ],
     evidenceLedger: [
-      { id: 'ev-aitd-1', title: 'The Subprime Code Crisis', url: 'https://builtin.com', publisher: 'Built In', type: 'Editorial', strength: 5, role: 'Origin', date: '2025' }
+      { id: 'ev-aitd-1', title: 'The Negative-Carry Code Crisis', url: 'https://builtin.com', publisher: 'Built In', type: 'Editorial', strength: 5, role: 'Origin', date: '2025' }
     ],
     relatedConceptSlugs: [
-      { slug: 'subprime-code-crisis', relationship: 'correlates_with' },
+      { slug: 'negative-carry-code-crisis', relationship: 'correlates_with' },
       { slug: 'complexity-tax', relationship: 'extends' },
       { slug: 'product-debt-index', relationship: 'measures' }
     ],
@@ -468,10 +468,10 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Proprietary Model Dependency', publisher: 'Industry Meta', date: '2023', summary: 'Observation of companies struggling to move away from OpenAI dependencies.' }
     ],
     evidenceLedger: [
-      { id: 'ev-avl-1', title: 'The Subprime Code Crisis', url: 'https://builtin.com', publisher: 'Built In', type: 'Editorial', strength: 5, role: 'Origin', date: '2025' }
+      { id: 'ev-avl-1', title: 'The Negative-Carry Code Crisis', url: 'https://builtin.com', publisher: 'Built In', type: 'Editorial', strength: 5, role: 'Origin', date: '2025' }
     ],
     relatedConceptSlugs: [
-      { slug: 'subprime-code-crisis', relationship: 'correlates_with' }
+      { slug: 'negative-carry-code-crisis', relationship: 'correlates_with' }
     ],
     openQuestions: ['How can we create a universal abstraction layer that normalizes the subtle reasoning differences between frontier models?'],
     knownLimitations: ['True portability often means building to the lowest common denominator, missing out on unique proprietary features.'],

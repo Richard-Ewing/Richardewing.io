@@ -185,7 +185,7 @@ export function populateTrack24(modules: Record<string, CurriculumModule>) {
 
     modules['ai-economics/24-8'] = m(
         '24-8',
-        '24.8 Subprime Code and the Vibe Coding Debt Crisis',
+        '24.8 Negative-Carry Code and the Vibe Coding Debt Crisis',
         'Manage the massive inflation of technical debt caused by AI code assistants and the transition from software construction to software curation.',
         'AI Economics & Margin Engineering',
         [
@@ -200,7 +200,7 @@ export function populateTrack24(modules: Record<string, CurriculumModule>) {
                 'Surviving the AI Debt Bubble',
                 'AI copilots make generating code functionally free. Because it is free, we are overproducing it. LLMs lack architectural judgment; they write verbose, inefficient code that creates massive downstream maintenance burdens. You must shift your engineering culture from code creation to code curation.',
                 [
-                    d('Subprime Code', 'High-volume, AI-generated code lacking structural integrity.', 'Creates a toxic asset bubble in your repository'),
+                    d('Negative-Carry Code', 'High-volume, AI-generated code whose maintenance OpEx exceeds its marginal value creation.', 'Creates an ongoing capital drain in your repository'),
                     d('Vibe Coding Debt', 'Code accepted because it "looks right" rather than being mathematically verified.', 'Causes catastrophic MTTR during incidents'),
                     d('The Audit Interview', 'Testing engineers on finding bugs in AI code, not writing algorithms.', 'The new standard for technical hiring')
                 ],

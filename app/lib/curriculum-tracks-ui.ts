@@ -561,7 +561,7 @@ export const tracks = [
             { id: '24-5', name: '24.5 Avoiding the Compute Reseller Trap', topics: 'Defensibility, Proprietary Value Layers, Vendor Margins', href: '/vault/curriculum/tracks/ai-economics/24-5' },
             { id: '24-6', name: '24.6 Synthetic COGS and AI Unit Economics', topics: 'AUEB Framework, Gross Margin Forecasting, Cloud Infrastructure', href: '/vault/curriculum/tracks/ai-economics/24-6' },
             { id: '24-7', name: '24.7 The Evergreen Ratio', topics: 'Dynamic vs Static Inference, Caching Strategies, Defending Margins', href: '/vault/curriculum/tracks/ai-economics/24-7' },
-            { id: '24-8', name: '24.8 Subprime Code and AI Tech Debt', topics: 'Copilot Debt, Maintenance Overhead, Generative Refactoring', href: '/vault/curriculum/tracks/ai-economics/24-8' },
+            { id: '24-8', name: '24.8 Negative-Carry Code and AI Tech Debt', topics: 'Copilot Debt, Maintenance Overhead, Generative Refactoring', href: '/vault/curriculum/tracks/ai-economics/24-8' },
             { id: '24-9', name: '24.9 The AI Economics Product P&L', topics: 'Margin Thresholds, Value Verification, Pricing AI Features', href: '/vault/curriculum/tracks/ai-economics/24-9' },
             { id: '24-10', name: '24.10 Executive Synthesis: AI Economics', topics: 'Board Communication, AI Investment P&L, Strategy', href: '/vault/curriculum/tracks/ai-economics/24-10' },
         ],

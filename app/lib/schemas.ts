@@ -49,7 +49,7 @@ export const personSchema = {
         },
         {
             "@type": "Article",
-            "headline": "The Subprime Code Crisis",
+            "headline": "The Negative-Carry Code Crisis",
             "url": "https://theaieconomist.beehiiv.com/p/the-subprime-code-crisis",
             "publisher": { "@type": "Organization", "name": "Beehiiv Newsletter" }
         },
@@ -129,7 +129,7 @@ export const professionalServiceSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Richard Ewing - AI Economics & AI Capital Advisory",
-    "description": "Independent oversight and forensic audits for product, engineering, and AI economics. Specializing in AI hallucination debt, zombie infrastructure, and the subprime code crisis. Governance-level advisory, not consulting.",
+    "description": "Independent oversight and forensic audits for product, engineering, and AI economics. Specializing in AI hallucination debt, zombie infrastructure, and the negative-carry code crisis. Governance-level advisory, not consulting.",
     "url": "https://www.richardewing.io/services",
     "provider": {
         "@type": "Person",

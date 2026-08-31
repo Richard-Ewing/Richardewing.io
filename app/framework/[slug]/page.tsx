@@ -15,7 +15,7 @@ export async function generateStaticParams() {
         { slug: 'agentic-control-plane' },
         { slug: 'inference-dividend-cascade' },
         { slug: 'general-contractor-pm' },
-        { slug: 'subprime-code-governance' },
+        { slug: 'negative-carry-code-governance' },
         { slug: 'mcp-zero-trust-gateway' },
         { slug: 'macro-coding-governance' },
         { slug: 'board-fiduciary-governance' },

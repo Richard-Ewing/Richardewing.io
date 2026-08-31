@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: 'Executive Briefings | War-Time Leadership Support',
-        description: 'High-signal intelligence on engineering economics, AI cost governance, and the subprime code crisis.',
+        description: 'High-signal intelligence on engineering economics, AI cost governance, and the negative-carry code crisis.',
         url: 'https://www.richardewing.io/briefings',
         type: 'website',
     },

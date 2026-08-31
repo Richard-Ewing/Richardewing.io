@@ -7,7 +7,7 @@ export function classifyDomain(title: string, content: string): string {
     if (text.includes('ai economics') || text.includes('margin squeeze') || text.includes('inference') || text.includes('token')) {
         return 'AI Economics';
     }
-    if (text.includes('software economics') || text.includes('technical debt') || text.includes('subprime code') || text.includes('zombie code')) {
+    if (text.includes('software economics') || text.includes('technical debt') || text.includes('negative-carry code') || text.includes('subprime code') || text.includes('zombie code')) {
         return 'Software Economics';
     }
     if (text.includes('engineering leadership') || text.includes('vibe coding') || text.includes('audit interview')) {
@@ -30,7 +30,9 @@ export function mapConceptSlugs(title: string, content: string, domain: string):
         'kill switch': ['agent-kill-switch'],
         'deterministic governance': ['deterministic-governance'],
         'product economist': ['product-economist'],
-        'subprime code': ['subprime-code-crisis'],
+        'negative-carry code': ['negative-carry-code-crisis'],
+        'negative carry': ['negative-carry-code-crisis'],
+        'subprime code': ['negative-carry-code-crisis'],
         'inference': ['inference-economics'],
         'context rot': ['context-rot'],
         'r&d ponzi': ['r-and-d-ponzi']
