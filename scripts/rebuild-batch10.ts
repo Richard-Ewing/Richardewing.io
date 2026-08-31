@@ -10,7 +10,7 @@ const articles = {
         readTime: "7 min read",
         featured: true,
         canonicalUrl: "https://theaieconomist.beehiiv.com/p/how-to-prevent-context-loss-in-ai-applications",
-        relatedConcepts: ['ai-governance', 'deterministic-governance', 'context-rot', 'inference-economics', 'subprime-code-crisis'],
+        relatedConcepts: ['ai-governance', 'deterministic-governance', 'context-rot', 'inference-economics', 'negative-carry-code-crisis'],
         content: `
 <h2>How to Prevent Memory Loss in AI Applications</h2>
 
@@ -66,7 +66,7 @@ const articles = {
         readTime: "7 min read",
         featured: true,
         canonicalUrl: "https://theaieconomist.beehiiv.com/p/claude-search-tool-zero-adoption",
-        relatedConcepts: ['ai-governance', 'deterministic-governance', 'ai-volatility-tax', 'inference-economics', 'subprime-code-crisis'],
+        relatedConcepts: ['ai-governance', 'deterministic-governance', 'ai-volatility-tax', 'inference-economics', 'negative-carry-code-crisis'],
         content: `
 <h2>Claude Search Fails: Prompting Kills Adoption</h2>
 

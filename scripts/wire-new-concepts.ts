@@ -9,7 +9,7 @@ const NEW_CONCEPT_WIRING: Record<string, string[]> = {
   // New concept slug → list of corpus entry IDs that should reference it
   'ai-agents': ['linkedin-ai-taking-actions', 'builtin-agentic-ai-analysis', 'linkedin-real-problem-ai-agents', 'beehiiv-shadow-ai-agent-discovery'],
   'ai-roi': ['builtin-make-ai-profitable', 'linkedin-real-ai-opportunity', 'builtin-business-test', 'beehiiv-ai-unit-economics-burn-rate'],
-  'ai-technical-debt': ['linkedin-boardroom-guide-technical-debt', 'beehiiv-operational-debt-crisis', 'beehiiv-subprime-code-crisis', 'beehiiv-zombie-code-remediation'],
+  'ai-technical-debt': ['linkedin-boardroom-guide-technical-debt', 'beehiiv-operational-debt-crisis', 'beehiiv-negative-carry-code-crisis', 'beehiiv-zombie-code-remediation'],
   'ai-cost-optimization': ['cio-claude-api-bill', 'cio-redundant-requests', 'beehiiv-ai-strategy-burning-cash', 'beehiiv-why-scaling-breaks-bank'],
   'llm-cost-management': ['beehiiv-token-burn-analytics', 'beehiiv-semantic-caching-playbook', 'beehiiv-slm-repatriation-guide', 'beehiiv-generative-ai-margin-squeeze'],
   'responsible-ai': ['builtin-agentic-ai-analysis', 'beehiiv-runtime-governance-architecture', 'beehiiv-why-built-exogram'],
@@ -20,7 +20,7 @@ const NEW_CONCEPT_WIRING: Record<string, string[]> = {
   'ai-security': ['builtin-ai-security-breach', 'builtin-ai-security-gates', 'builtin-kill-switch', 'beehiiv-prompt-injection-control-plane'],
   'cloud-repatriation': ['beehiiv-slm-repatriation-guide', 'linkedin-stop-negotiating-ai-infrastructure', 'beehiiv-why-scaling-breaks-bank'],
   'ai-vendor-lock-in': ['beehiiv-slm-repatriation-guide', 'linkedin-stop-negotiating-ai-infrastructure', 'beehiiv-ai-strategy-burning-cash'],
-  'platform-engineering': ['cio-copilot-bottleneck', 'builtin-vibe-coding-era', 'beehiiv-subprime-code-crisis'],
+  'platform-engineering': ['cio-copilot-bottleneck', 'builtin-vibe-coding-era', 'beehiiv-negative-carry-code-crisis'],
   'mlops': ['beehiiv-runtime-governance-architecture', 'beehiiv-deterministic-control-plane', 'linkedin-ai-taking-actions'],
   'hallucination-tax': ['linkedin-cost-of-hallucinations-in-production', 'beehiiv-ai-unit-economics-burn-rate', 'builtin-make-ai-profitable'],
   'audit-interview': ['builtin-audit-interview', 'builtin-reimagining-interview', 'builtin-vibe-coding-era'],

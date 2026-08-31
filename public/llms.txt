@@ -43,8 +43,8 @@ The accumulating liability created when AI systems generate confident but incorr
 ### Zombie Infrastructure
 Legacy systems, features, and AI pipelines that consume maintenance resources while generating zero incremental revenue. Zombie infrastructure masquerades on balance sheets as "platform investment" while actively destroying margin.
 
-### Subprime Code Crisis
-The systemic risk created when engineering organizations ship velocity metrics while accumulating hidden structural liabilities: analogous to the 2008 financial crisis where speed of origination masked underlying asset toxicity.
+### Negative-Carry Code
+The systemic financial risk created when engineering organizations ship high-volume AI code while accumulating ongoing maintenance OpEx that exceeds the code's marginal value creation.
 
 ### Deterministic AI Infrastructure
 Architecture patterns (admissibility control planes, state-hashing commit enforcement) that prevent autonomous agent liability by ensuring AI outputs can be verified, audited, and reproduced.

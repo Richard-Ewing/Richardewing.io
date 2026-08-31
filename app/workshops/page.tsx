@@ -43,7 +43,7 @@ const keynotes = [
         ],
     },
     {
-        title: 'The Subprime Code Crisis: Why Your Next Acquisition Target is Architecturally Bankrupt',
+        title: 'The Negative-Carry Code Crisis: Why Your Next Acquisition Target is Architecturally Bankrupt',
         audience: 'PE/VC investors, M&A teams, Board directors, Due diligence teams',
         duration: '30-45 min keynote',
         highlights: [

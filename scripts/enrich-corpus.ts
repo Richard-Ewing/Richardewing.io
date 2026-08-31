@@ -34,8 +34,8 @@ const ENRICHMENT_MAP: Record<string, { relatedConceptIds: string[], relatedGloss
         relatedToolIds: ['aueb', 'slm-vs-api']
     },
     'cio-copilot-bottleneck': {
-        relatedConceptIds: ['vibe-coding', 'subprime-code-crisis', 'ten-man-parity'],
-        relatedGlossarySlugs: ['vibe-coding-debt', 'subprime-code-crisis'],
+        relatedConceptIds: ['vibe-coding', 'negative-carry-code-crisis', 'ten-man-parity'],
+        relatedGlossarySlugs: ['vibe-coding-debt', 'negative-carry-code-crisis'],
         relatedToolIds: ['copilot-roi', 'audit-interview']
     },
     'cio-redundant-requests': {
@@ -70,7 +70,7 @@ const ENRICHMENT_MAP: Record<string, { relatedConceptIds: string[], relatedGloss
         relatedToolIds: ['aueb', 'slm-vs-api']
     },
     'builtin-vibe-coding-era': {
-        relatedConceptIds: ['vibe-coding', 'subprime-code-crisis', 'ten-man-parity'],
+        relatedConceptIds: ['vibe-coding', 'negative-carry-code-crisis', 'ten-man-parity'],
         relatedGlossarySlugs: ['vibe-coding-debt'],
         relatedToolIds: ['audit-interview', 'copilot-roi']
     },
@@ -84,7 +84,7 @@ const ENRICHMENT_MAP: Record<string, { relatedConceptIds: string[], relatedGloss
         relatedToolIds: ['pdi']
     },
     'builtin-audit-interview': {
-        relatedConceptIds: ['vibe-coding', 'ten-man-parity', 'subprime-code-crisis'],
+        relatedConceptIds: ['vibe-coding', 'ten-man-parity', 'negative-carry-code-crisis'],
         relatedGlossarySlugs: ['vibe-coding-debt', 'audit-interview'],
         relatedToolIds: ['audit-interview']
     },
@@ -127,9 +127,9 @@ const ENRICHMENT_MAP: Record<string, { relatedConceptIds: string[], relatedGloss
     'beehiiv-product-vision-wallpaper': {
         relatedConceptIds: ['product-economist', 'feature-bloat-calculus'],
     },
-    'beehiiv-subprime-code-crisis': {
-        relatedConceptIds: ['subprime-code-crisis', 'vibe-coding', 'technical-insolvency'],
-        relatedGlossarySlugs: ['subprime-code-crisis', 'vibe-coding-debt'],
+    'beehiiv-negative-carry-code-crisis': {
+        relatedConceptIds: ['negative-carry-code-crisis', 'vibe-coding', 'technical-insolvency'],
+        relatedGlossarySlugs: ['negative-carry-code-crisis', 'vibe-coding-debt'],
         relatedToolIds: ['pdi', 'copilot-roi']
     },
     'beehiiv-ai-unit-economics-burn-rate': {
@@ -166,7 +166,7 @@ const ENRICHMENT_MAP: Record<string, { relatedConceptIds: string[], relatedGloss
         relatedToolIds: ['agentic-drift-matrix']
     },
     'beehiiv-operational-debt-crisis': {
-        relatedConceptIds: ['technical-insolvency', 'r-and-d-ponzi', 'ai-volatility-tax', 'subprime-code-crisis'],
+        relatedConceptIds: ['technical-insolvency', 'r-and-d-ponzi', 'ai-volatility-tax', 'negative-carry-code-crisis'],
         relatedGlossarySlugs: ['technical-debt', 'technical-insolvency-date'],
         relatedToolIds: ['pdi', 'ev-se']
     },
@@ -211,7 +211,7 @@ const ENRICHMENT_MAP: Record<string, { relatedConceptIds: string[], relatedGloss
         relatedToolIds: ['innovation-tax-calculator']
     },
     'beehiiv-zombie-code-remediation': {
-        relatedConceptIds: ['subprime-code-crisis', 'technical-insolvency', 'r-and-d-ponzi'],
+        relatedConceptIds: ['negative-carry-code-crisis', 'technical-insolvency', 'r-and-d-ponzi'],
         relatedGlossarySlugs: ['zombie-code', 'technical-debt'],
         relatedToolIds: ['pdi']
     },
@@ -234,7 +234,7 @@ const ENRICHMENT_MAP: Record<string, { relatedConceptIds: string[], relatedGloss
         relatedConceptIds: ['product-economist', 'feature-bloat-calculus'],
     },
     'linkedin-innovation-tax-deleting-code': {
-        relatedConceptIds: ['r-and-d-ponzi', 'technical-insolvency', 'subprime-code-crisis'],
+        relatedConceptIds: ['r-and-d-ponzi', 'technical-insolvency', 'negative-carry-code-crisis'],
         relatedGlossarySlugs: ['innovation-tax', 'zombie-code'],
         relatedToolIds: ['innovation-tax-calculator', 'pdi']
     },
@@ -266,13 +266,13 @@ const ENRICHMENT_MAP: Record<string, { relatedConceptIds: string[], relatedGloss
         relatedConceptIds: ['product-economist', 'feature-bloat-calculus', 'coordination-tax'],
     },
     'linkedin-boardroom-guide-technical-debt': {
-        relatedConceptIds: ['technical-insolvency', 'r-and-d-ponzi', 'subprime-code-crisis'],
+        relatedConceptIds: ['technical-insolvency', 'r-and-d-ponzi', 'negative-carry-code-crisis'],
         relatedGlossarySlugs: ['technical-debt', 'technical-insolvency-date'],
         relatedToolIds: ['ev-se', 'pdi']
     },
     'linkedin-why-vibe-coding-breaks-enterprise': {
-        relatedConceptIds: ['vibe-coding', 'subprime-code-crisis', 'ten-man-parity'],
-        relatedGlossarySlugs: ['vibe-coding-debt', 'subprime-code-crisis'],
+        relatedConceptIds: ['vibe-coding', 'negative-carry-code-crisis', 'ten-man-parity'],
+        relatedGlossarySlugs: ['vibe-coding-debt', 'negative-carry-code-crisis'],
         relatedToolIds: ['copilot-roi', 'audit-interview']
     },
     'linkedin-cost-of-hallucinations-in-production': {

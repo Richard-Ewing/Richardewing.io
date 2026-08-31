@@ -49,7 +49,7 @@ const personSchema = {
         "AI Hallucination Debt",
         "Zombie Infrastructure",
         "Deterministic AI Infrastructure",
-        "Subprime Code Crisis",
+        "Negative-Carry Code Crisis",
         "AI Cost Governance",
         "Gross Margin Preservation"
     ],

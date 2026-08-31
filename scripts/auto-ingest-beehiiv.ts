@@ -112,7 +112,7 @@ async function run() {
                 `        readTime: "7 min read",\n` +
                 `        featured: true,\n` +
                 `        canonicalUrl: "${item.url}",\n` +
-                `        relatedConcepts: ['ai-governance', 'deterministic-governance', 'ai-volatility-tax', 'inference-economics', 'subprime-code-crisis'],\n` +
+                `        relatedConcepts: ['ai-governance', 'deterministic-governance', 'ai-volatility-tax', 'inference-economics', 'negative-carry-code-crisis'],\n` +
                 `        content: \`\n${markdownHtml}\n\`\n` +
                 `    },\n`;
 

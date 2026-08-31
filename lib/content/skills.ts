@@ -1439,7 +1439,7 @@ export const SKILLS: GovernanceSkill[] = [
   title: "Spec-Driven Development Framework",
   category: "Engineering Governance",
   failureSolved: "Vibe Coding Debt & Untyped AI Code Generation",
-  description: "Replaces conversational prompt iteration with structured, machine-readable specifications as executable contracts for AI coding agents. Deploys JSON/YAML schema validation, deterministic acceptance criteria, and specification-bounded generation to eliminate the subprime code crisis.",
+  description: "Replaces conversational prompt iteration with structured, machine-readable specifications as executable contracts for AI coding agents. Deploys JSON/YAML schema validation, deterministic acceptance criteria, and specification-bounded generation to eliminate the negative-carry code crisis.",
   difficulty: "Intermediate",
   assetCount: 5,
   runtimeRelevance: "High",
@@ -1453,7 +1453,7 @@ export const SKILLS: GovernanceSkill[] = [
   whatBreaks: ["AI generates code without understanding requirements", "Code review burden exceeds generation savings", "Technical debt compounds from unspecified agent output"],
   economicDamage: ["60% of AI-generated code requires rework", "Senior engineer time consumed by review"],
   whatSystemInstalls: ["Machine-readable specification contracts", "Deterministic validation gates", "Automated acceptance testing"],
-  failureCascades: ["Subprime Code Crisis", "Verification Collapse", "Context Rot"],
+  failureCascades: ["Negative-Carry Code Crisis", "Verification Collapse", "Context Rot"],
   ctaText: "Deploy Spec-Driven Development",
   runtimeLayer: "Skill Governance"
 },

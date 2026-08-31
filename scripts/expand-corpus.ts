@@ -101,7 +101,7 @@ const MISSING_BEEHIIV: NewEntry[] = [
   },
   {
     id: 'beehiiv-ai-revolution-isnt-technical',
-    title: 'The AI Revolution Isn\'t Technical — It\'s Financial',
+    title: 'The AI Revolution Isn\'t Technical - It\'s Financial',
     url: 'https://theaieconomist.beehiiv.com/p/the-ai-revolution-isnt-technical',
     publisher: 'Beehiiv', domain: 'AI Economics', type: 'Evergreen',
     thesis: 'Argues that AI adoption is constrained by unit economics and margin destruction, not model capability gaps.',
@@ -165,7 +165,7 @@ const MISSING_BEEHIIV: NewEntry[] = [
   },
   {
     id: 'beehiiv-stop-managing-activity',
-    title: 'Stop Managing Activity — Start Creating Leverage',
+    title: 'Stop Managing Activity - Start Creating Leverage',
     url: 'https://theaieconomist.beehiiv.com/p/stop-managing-activity-start-creating',
     publisher: 'Beehiiv', domain: 'Product Leadership', type: 'Evergreen',
     thesis: 'Shifts product team management from activity tracking to leverage creation and outcome ownership.',
@@ -205,7 +205,7 @@ const MISSING_BEEHIIV: NewEntry[] = [
   },
   {
     id: 'beehiiv-stop-working-hard',
-    title: 'Stop Working Hard on Your Job — Start Working Smart on Your Career',
+    title: 'Stop Working Hard on Your Job - Start Working Smart on Your Career',
     url: 'https://theaieconomist.beehiiv.com/p/stop-working-hard-on-your-job',
     publisher: 'Beehiiv', domain: 'Career Economics', type: 'Evergreen',
     thesis: 'Distinguishes between effort allocation toward employer deliverables and strategic career capital building.',
@@ -309,7 +309,7 @@ const MISSING_BEEHIIV: NewEntry[] = [
   },
   {
     id: 'beehiiv-stop-showing-ceo-roadmap',
-    title: 'Stop Showing Your CEO a Roadmap — Show Them a P&L',
+    title: 'Stop Showing Your CEO a Roadmap - Show Them a P&L',
     url: 'https://theaieconomist.beehiiv.com/p/stop-showing-your-ceo-a-roadmap',
     publisher: 'Beehiiv', domain: 'Product Leadership', type: 'Executable',
     thesis: 'Translates feature-centric roadmaps into financial contribution models for executive audiences.',
@@ -317,7 +317,7 @@ const MISSING_BEEHIIV: NewEntry[] = [
   },
   {
     id: 'beehiiv-reject-90-inbound',
-    title: 'I Reject 90% of Inbound Requests — Here\'s My Decision Framework',
+    title: 'I Reject 90% of Inbound Requests - Here\'s My Decision Framework',
     url: 'https://theaieconomist.beehiiv.com/p/i-reject-90-of-inbound-requests',
     publisher: 'Beehiiv', domain: 'Product Leadership', type: 'Executable',
     thesis: 'Systematic prioritization framework for filtering feature requests against P&L impact thresholds.',
@@ -325,7 +325,7 @@ const MISSING_BEEHIIV: NewEntry[] = [
   },
   {
     id: 'beehiiv-ai-strategy-burning-cash',
-    title: 'Your AI Strategy Is Burning Cash — Here\'s Why',
+    title: 'Your AI Strategy Is Burning Cash - Here\'s Why',
     url: 'https://theaieconomist.beehiiv.com/p/your-ai-strategy-is-burning-cash',
     publisher: 'Beehiiv', domain: 'AI Economics', type: 'Evergreen',
     thesis: 'Diagnoses the structural cost drivers behind enterprise AI implementations that consume capital without generating margin.',
@@ -333,7 +333,7 @@ const MISSING_BEEHIIV: NewEntry[] = [
   },
   {
     id: 'beehiiv-ai-revolution-financial-leadership',
-    title: 'The AI Revolution Isn\'t Technical — It\'s a Financial Leadership Problem',
+    title: 'The AI Revolution Isn\'t Technical - It\'s a Financial Leadership Problem',
     url: 'https://theaieconomist.beehiiv.com/p/the-ai-revolution-isnt-technical-eda',
     publisher: 'Beehiiv', domain: 'AI Economics', type: 'Evergreen',
     thesis: 'Positions the AI transformation challenge as a CFO-level capital allocation problem rather than a CTO-level technology decision.',
@@ -349,7 +349,7 @@ const MISSING_BEEHIIV: NewEntry[] = [
   },
   {
     id: 'beehiiv-resume-is-dead',
-    title: 'The Resume Is Dead — Long Live the Portfolio',
+    title: 'The Resume Is Dead - Long Live the Portfolio',
     url: 'https://theaieconomist.beehiiv.com/p/the-resume-is-dead-long-live-the',
     publisher: 'Beehiiv', domain: 'Career Economics', type: 'Evergreen',
     thesis: 'Why demonstrated operational evidence replaces credential signaling in AI-era hiring.',
@@ -435,7 +435,7 @@ const MISSING_LINKEDIN: NewEntry[] = [
   },
   {
     id: 'linkedin-ai-revolution-financial-leadership',
-    title: 'The AI Revolution Isn\'t Technical — It\'s a Financial Leadership Problem',
+    title: 'The AI Revolution Isn\'t Technical - It\'s a Financial Leadership Problem',
     url: 'https://www.linkedin.com/pulse/ai-revolution-isnt-technical-its-financial-leadership-richard-ewing-2d92c/',
     publisher: 'LinkedIn', domain: 'AI Economics', type: 'Evergreen',
     thesis: 'Positions enterprise AI transformation as a CFO-level capital allocation problem rather than a technology decision.',
@@ -467,7 +467,7 @@ const MISSING_LINKEDIN: NewEntry[] = [
   },
   {
     id: 'linkedin-stop-negotiating-ai-infrastructure',
-    title: 'Stop Negotiating Your AI Infrastructure — Start Auditing It',
+    title: 'Stop Negotiating Your AI Infrastructure - Start Auditing It',
     url: 'https://www.linkedin.com/pulse/stop-negotiating-your-ai-infrastructure-richard-ewing-4horc/',
     publisher: 'LinkedIn', domain: 'AI Economics', type: 'Executable',
     thesis: 'Vendor procurement for AI infrastructure treated as a cost audit problem rather than a negotiation exercise.',
@@ -484,7 +484,7 @@ const UNUSED_CONCEPT_FIXES: Record<string, string[]> = {
   'ai-unit-economics': ['beehiiv-ai-unit-economics-burn-rate', 'builtin-make-ai-profitable', 'beehiiv-product-p-and-l-test'],
   'ai-economist': ['beehiiv-clarity-to-compass', 'linkedin-product-economist-structural-shift', 'linkedin-evaluating-ai-product-managers'],
   'ai-tokenomics-cogs': ['beehiiv-token-burn-analytics', 'cio-claude-api-bill', 'beehiiv-generative-ai-margin-squeeze'],
-  'induced-demand-software': ['cio-copilot-bottleneck', 'builtin-vibe-coding-era', 'beehiiv-subprime-code-crisis'],
+  'induced-demand-software': ['cio-copilot-bottleneck', 'builtin-vibe-coding-era', 'beehiiv-negative-carry-code-crisis'],
   'agentic-engineering': ['linkedin-ai-taking-actions', 'builtin-agentic-ai-analysis', 'beehiiv-runtime-governance-architecture'],
   'prompt-injection': ['beehiiv-prompt-injection-control-plane', 'builtin-ai-security-breach', 'builtin-ai-security-gates'],
   'innovation-tax': ['cio-innovation-tax-audit', 'linkedin-innovation-tax-deleting-code', 'builtin-deleting-code'],
@@ -510,7 +510,7 @@ async function execute() {
   // Generate entry strings
   let newEntries = '\n\n  // =========================================================================\n';
   newEntries += '  // EXPANDED CATALOG: Career Economics, Product Fundamentals, AI Strategy\n';
-  newEntries += '  // Added via automated catalog expansion — August 2026\n';
+  newEntries += '  // Added via automated catalog expansion - August 2026\n';
   newEntries += '  // =========================================================================\n';
   
   for (const entry of allNew) {

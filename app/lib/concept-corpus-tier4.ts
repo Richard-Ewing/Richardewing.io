@@ -89,7 +89,7 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
     whoShouldCare: ['CTOs', 'Engineering Directors', 'Staff Engineers', 'Product Managers'],
     firstIntroduced: 'Industry Consensus 2022',
     canonicalReadingOrder: [
-      { step: 1, title: 'The Subprime Code Crisis', publisher: 'Built In', type: 'Canonical Essay' }
+      { step: 1, title: 'The Negative-Carry Code Crisis', publisher: 'Built In', type: 'Canonical Essay' }
     ],
     provenanceTimeline: [
       { stage: 'Observation', label: 'Fragile Prompt Integrations', publisher: 'Industry Meta', date: '2022', summary: 'Observation of systems breaking upon model updates.' }

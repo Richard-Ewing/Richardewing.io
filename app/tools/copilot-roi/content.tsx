@@ -301,9 +301,9 @@ export default function CopilotROITool() {
                             </div>
                             
                             <div className="p-5 rounded-2xl bg-fuchsia-500/5 items-start flex gap-3 border border-fuchsia-500/20">
-                                <Code className="w-5 h-5 text-zinc-950 font-semibolduchsia-400 mt-1 flex-shrink-0" />
+                                <Code className="w-5 h-5 text-fuchsia-600 mt-1 flex-shrink-0" />
                                 <div className="text-xs font-bold text-zinc-900 font-bold">
-                                    <strong className="text-zinc-950">The Subprime Code Crisis:</strong> Vibe coding generates massive volumes of syntactically correct but architecturally flawed code. This calculator mathematically prices the downstream cost of unwinding that code.
+                                    <strong className="text-zinc-950">The Negative-Carry Code Crisis:</strong> Vibe coding generates massive volumes of syntactically correct but architecturally flawed code. This calculator mathematically prices the downstream cost of unwinding that code.
                                 </div>
                             </div>
 
