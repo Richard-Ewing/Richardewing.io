@@ -198,7 +198,7 @@ export default function CareerWinPage() {
                             </span>
                         </div>
                         <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
-                            Evaluating AI Tooling Leverage: Catching What Agents Get Wrong
+                            Evaluating AI Tooling Use: Catching What Agents Get Wrong
                         </h3>
                         <p className="text-sm text-zinc-800 leading-relaxed font-medium italic mb-4">
                             &quot;When evaluating engineers and technical leaders in the multi-agent era, the scarce skill is no longer typing syntax - it is understanding runtime failure modes, orchestrating concurrent agents across isolated worktrees, and enforcing autonomous verification loops. Staff and Principal engineers distinguish themselves by making failure cheap and building durable system boundaries.&quot;
@@ -264,7 +264,7 @@ export default function CareerWinPage() {
                                 </div>
                                 <h3 className="text-xl font-grotesk font-bold text-zinc-950 mb-3">1. Market Value Benchmarks</h3>
                                 <p className="text-zinc-900 font-semibold text-sm leading-relaxed">
-                                    Real-time compensation data and equity valuation models adjusted for AI leverage, remote tiering, and engineering specialization.
+                                    Real-time compensation data and equity valuation models adjusted for AI use, remote tiering, and engineering specialization.
                                 </p>
                             </div>
 
@@ -274,7 +274,7 @@ export default function CareerWinPage() {
                                 </div>
                                 <h3 className="text-xl font-grotesk font-bold text-zinc-950 mb-3">2. Leveling Intelligence</h3>
                                 <p className="text-zinc-900 font-semibold text-sm leading-relaxed">
-                                    Map your technical scope from Senior to Staff, Principal, and VP of Engineering based on architectural leverage, not just tenure.
+                                    Map your technical scope from Senior to Staff, Principal, and VP of Engineering based on architectural use, not just tenure.
                                 </p>
                             </div>
 

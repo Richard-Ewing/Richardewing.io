@@ -449,12 +449,12 @@ export default function AssessmentTool() {
                       type="submit"
                       className="px-4 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-xl text-xs font-bold font-mono uppercase tracking-widest shrink-0 transition-colors cursor-pointer"
                     >
-                      Unlock Full PDF
+                      Access Full PDF
                     </button>
                   </form>
                 ) : (
                   <div className="flex items-center gap-2 text-xs font-bold text-emerald-700 bg-emerald-50 px-4 py-3 rounded-xl border border-emerald-200">
-                    <CheckCircle className="w-4 h-4" /> Full Report Unlocked!
+                    <CheckCircle className="w-4 h-4" /> Full Report Accessed!
                   </div>
                 )}
 

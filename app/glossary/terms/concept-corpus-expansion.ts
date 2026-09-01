@@ -217,7 +217,7 @@ export const conceptCorpusExpansionTerms: GlossaryTerm[] = [
         category: 'Richard Ewing Frameworks',
         definition: 'A foundational framework defining the inescapable realities of building applications on top of non-deterministic models. The laws address variance, degradation, liability, and verification. Read more about [The 4 Laws of Probabilistic Software](/concepts/four-laws-probabilistic-software).',
         whyItMatters: 'Engineers trained in deterministic systems often apply the wrong mental models to AI. These laws establish a new paradigm for designing resilient, fault-tolerant applications.',
-        howToApply: 'Use the four laws as a design checklist during architectural reviews. Ensure every system component has fallback mechanisms and robust verification to handle inevitable probabilistic failures.',
+        howToApply: 'Use the four laws as a design checklist during architectural reviews. Ensure every system component has fallback mechanisms and resilient verification to handle inevitable probabilistic failures.',
         whoUsesIt: 'Software Architects, AI Engineers, Technical Founders',
         faqs: [
             { question: 'What is the first law?', answer: 'The first law states that variance is guaranteed: identical inputs will eventually yield divergent outputs, requiring strict boundary enforcement.' },

@@ -30,7 +30,7 @@ Level Definitions (BE PRECISE  -  USE THE FULL L3-L8 RANGE):
 - L3 (Score 3): ONLY if the answer is purely superficial. They restate the obvious, suggest trivial fixes, or miss the core issue entirely. Example: "${grading.l3_example}"
 - L4 (Score 4): The answer identifies the right problem area but stays local in scope. They see immediate risks but miss second-order effects or economic implications. Shows competence but not depth.
 - L5 (Score 5): Demonstrates system-level thinking. Identifies maintenance liability, scalability concerns, or economic trade-offs. Can prioritize and defer intelligently. This is a solid senior-level answer.
-- L6 (Score 6): Exceptional answers showing capital stewardship, leverage thinking, and second-order strategic effects. Quantifies impact, proposes concrete solutions with acceptance criteria. Example: "${grading.l6_example}"
+- L6 (Score 6): Exceptional answers showing capital stewardship, use thinking, and second-order strategic effects. Quantifies impact, proposes concrete solutions with acceptance criteria. Example: "${grading.l6_example}"
 - L7 (Score 7): Portfolio-level strategic thinking. Connects the specific issue to broader organizational patterns, market positioning, or enterprise value. Proposes frameworks that prevent entire classes of problems, not just this one.
 - L8 (Score 8): Executive-grade foresight. Reframes the entire problem, identifies industry-wide patterns, articulates how this decision affects capital allocation at the org level. Demonstrates the ability to realign teams and strategy around fundamental truths.
 

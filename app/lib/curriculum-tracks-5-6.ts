@@ -206,7 +206,7 @@ tracks5and6Modules['product-economics/5-15'] = m('5-15', 'AI Product Economics S
                 question: 'What defines the ultimate mandate of a Product Economist in the era of autonomous AI?',
                 options: ['Maximizing the number of features released per sprint', 'Acting as a disciplined capital allocator who manages uncertainty, system architecture efficiency, and unit margins while eliminating negative-carry software liabilities', 'Writing LeetCode algorithms for junior developers', 'Outsourcing all engineering to third-party vendors'],
                 correctIndex: 1,
-                explanation: 'In an age of code abundance, the highest leverage product leadership lies in capital allocation, uncertainty management, and ruthless margin defense.'
+                explanation: 'In an age of code abundance, the highest use product leadership lies in capital allocation, uncertainty management, and ruthless margin defense.'
             }
         )
     ], '/vault/curriculum', undefined, 'live'

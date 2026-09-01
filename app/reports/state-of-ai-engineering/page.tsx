@@ -48,10 +48,10 @@ export default function StateOfAIEngineering() {
                         <div className="relative z-10 flex flex-col gap-6">
                             <div className="space-y-2">
                                 <h3 className="text-2xl font-bold text-zinc-950 flex items-center gap-2">
-                                   <BookOpen className="text-purple-900 font-extrabold font-semibold" size={24} /> Unlock The Playbook
+                                   <BookOpen className="text-purple-900 font-extrabold font-semibold" size={24} /> Access The Playbook
                                 </h3>
                                 <p className="text-sm font-semibold text-zinc-900 font-medium">
-                                    Enter your executive email to instantly unlock the 40-page report and map your dashboard telemetry.
+                                    Enter your executive email to instantly access the 40-page report and map your dashboard telemetry.
                                 </p>
                             </div>
                             

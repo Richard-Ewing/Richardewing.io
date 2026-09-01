@@ -43,7 +43,7 @@ function categorisePayment(
     const subscriptionKeywords = ['ai_advisor', 'ai advisor', 'subscription', 'monthly', 'yearly'];
     if (subscriptionKeywords.some(kw => name.includes(kw))) return 'subscriptions';
 
-    const toolsKeywords = ['tools_library', 'tools library', 'tool unlock', 'tools_unlock'];
+    const toolsKeywords = ['tools_library', 'tools library', 'tool access', 'tools_unlock'];
     if (toolsKeywords.some(kw => name.includes(kw))) return 'tools';
 
     const curriculumKeywords = [

@@ -48,7 +48,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       ],
       whenToUse: ['When aligning engineering capacity with commercial strategy and defining multi-quarter product roadmaps'],
       examples: {
-        enterprise: 'Structuring empowered product teams focused on customer retention metrics rather than sprint velocity.',
+        enterprise: 'Structuring equipped product teams focused on customer retention metrics rather than sprint velocity.',
         startup: 'Running rapid customer discovery interviews to validate problem-solution fit before writing code.',
         antiPattern: 'Operating as a feature factory where PMs act as project managers writing Jira tickets dictated by sales.',
         commonMistake: 'Equating feature delivery volume with product success.'
@@ -58,7 +58,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     positionStatement: 'Product management is an economic discipline that requires stewardship of both customer value and company margins.',
     executableTool: { name: 'PDI Calculator', url: '/tools/pdi', description: 'Calculates the carrying cost of product features across engineering budgets.', type: 'Diagnostic Calculator' },
     claims: [
-      { statement: 'Empowered product management increases capital efficiency by over 40 percent compared to feature-factory models.', confidence: 0.95, counterarguments: ['Sales-led roadmaps close immediate revenue.'], supportingData: 'Product organizational benchmark analysis across 100 enterprise SaaS companies.' }
+      { statement: 'Equipped product management increases capital efficiency by over 40 percent compared to feature-factory models.', confidence: 0.95, counterarguments: ['Sales-led roadmaps close immediate revenue.'], supportingData: 'Product organizational benchmark analysis across 100 enterprise SaaS companies.' }
     ],
     graphRelations: {
       prerequisites: [{ slug: 'product-discovery', title: 'Product Discovery' }],
@@ -146,13 +146,13 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       oneSentence: 'Product Leadership establishes the strategic vision, organizational architecture, and capital governance that enable product teams to thrive.',
       tweetLength: 'Great product leadership is not about reviewing roadmaps. It is about setting strategic context, coaching talent, and governing R&D capital efficiency.',
       keyTakeaways: [
-        'Creates the organizational architecture and incentives for empowered product teams.',
+        'Creates the organizational architecture and incentives for equipped product teams.',
         'Allocates R&D capital across core maintenance, growth bets, and platform innovation.',
         'Bridges executive board expectations with ground-level product discovery.'
       ],
       faqs: [
         { question: 'What is the difference between Product Management and Product Leadership?', answer: 'Product managers focus on discovery and delivery for specific product areas; product leaders focus on organizational design, portfolio strategy, talent coaching, and executive alignment.' },
-        { question: 'What makes an effective Product Leader?', answer: 'The ability to define clear strategic moats, enforce unit economic rigor, and empower autonomous product teams without micromanaging solutions.' }
+        { question: 'What makes an effective Product Leader?', answer: 'The ability to define clear strategic moats, enforce unit economic rigor, and equip autonomous product teams without micromanaging solutions.' }
       ],
       whenToUse: ['When scaling a product organization from 5 to 50+ PMs and structuring multi-product portfolio governance'],
       examples: {
@@ -183,7 +183,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       problem: 'Product organizations stall as they scale because leadership fails to provide strategic context and capital discipline.',
       existingApproaches: 'Treating product leadership as senior-level project management.',
       gap: 'No framework integrating organizational design, coaching, and unit economic governance.',
-      solution: 'A modern Product Leadership framework elevating CPOs to strategic capital allocators.'
+      solution: 'A modern Product Leadership framework improving CPOs to strategic capital allocators.'
     },
     reverseCitations: [],
     personaRecommendations: [
@@ -284,7 +284,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     whatChanges: {
       engineering: 'Engineering initiatives receive clear strategic mandates and sustained executive sponsorship.',
       finance: 'Aligns balance sheet capital deployment directly with high-ROI strategic priorities.',
-      product: 'Product organizations are empowered with long-term strategic roadmaps rather than reactionary pivots.',
+      product: 'Product organizations are equipped with long-term strategic roadmaps rather than reactionary pivots.',
       security: 'Embeds enterprise risk management and cybersecurity into board-level oversight.'
     },
     whyThisConceptExists: {
@@ -355,7 +355,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     knownLimitations: ['Less effective for highly complex, regulated enterprise software requiring extensive systems integration.'],
     aeo: {
       shortDefinition: 'Product-Led Growth (PLG) is a go-to-market strategy where the product itself drives user acquisition, retention, and expansion.',
-      executiveSummary: 'Product-Led Growth leverages self-serve product experiences, rapid time-to-value, and viral loops to acquire and expand customers, dramatically reducing sales and marketing costs.',
+      executiveSummary: 'Product-Led Growth uses self-serve product experiences, rapid time-to-value, and viral loops to acquire and expand customers, dramatically reducing sales and marketing costs.',
       oneSentence: 'Product-Led Growth uses the product experience as the primary vehicle for customer acquisition, conversion, and expansion.',
       tweetLength: 'Product-Led Growth is the ultimate capital efficiency engine: let the product do the selling through frictionless onboarding and immediate time-to-value.',
       keyTakeaways: [
@@ -888,7 +888,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       tweetLength: 'The most expensive way to test a feature is to build it. Product discovery de-risks customer value and usability before writing a single line of code.',
       keyTakeaways: [
         'Addresses 4 core risks: Value, Usability, Feasibility, and Business Viability.',
-        'Conducted by empowered product trios (PM, Designer, Tech Lead) in continuous weekly rhythms.',
+        'Conducted by equipped product trios (PM, Designer, Tech Lead) in continuous weekly rhythms.',
         'Uses rapid prototypes and customer interviews to test hypotheses in days instead of months.'
       ],
       faqs: [
@@ -1000,7 +1000,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
         { question: 'What is Dual-Track Agile?', answer: 'A product workflow where discovery (problem validation) and delivery (production software engineering) run concurrently in parallel loops.' },
         { question: 'Who works on which track in Dual-Track Agile?', answer: 'The entire product trio (PM, Designer, Engineers) participates in both tracks, though PMs and Designers lead discovery while Engineers lead delivery.' }
       ],
-      whenToUse: ['When transitioning engineering teams from a feature factory model to an empowered product team model'],
+      whenToUse: ['When transitioning engineering teams from a feature factory model to an equipped product team model'],
       examples: {
         enterprise: 'A cross-functional squad testing 3 design prototypes in discovery while building and deploying the previous sprint’s validated feature in delivery.',
         startup: 'Validating customer willingness-to-pay via concierge discovery while backend engineers refactor core database infrastructure in delivery.',
@@ -1029,7 +1029,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       problem: 'Agile teams become delivery-obsessed ticket executors with zero time to validate whether features solve real problems.',
       existingApproaches: 'Single-track Scrum sprints where every sprint backlog item is assumed to be ready for production build.',
       gap: 'No mechanism for running low-fidelity experiments and prototypes in parallel with production software delivery.',
-      solution: 'Dual-Track Agile synchronizing continuous discovery and robust delivery within the same team.'
+      solution: 'Dual-Track Agile synchronizing continuous discovery and resilient delivery within the same team.'
     },
     reverseCitations: [],
     personaRecommendations: [
@@ -1071,7 +1071,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     domain: 'Engineering Leadership',
     expertiseLevel: 'Executive',
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
-    definition: 'The comprehensive organizational design, governance principles, talent staffing, funding structures, and cultural mechanisms that dictate how an enterprise conceives, builds, and scales digital products. The model transitions organizations from traditional IT project-based delivery (funded by annual Capex with fixed deadlines and feature scopes) to empowered, outcome-driven product teams funded by continuous streams of value creation.',
+    definition: 'The comprehensive organizational design, governance principles, talent staffing, funding structures, and cultural mechanisms that dictate how an enterprise conceives, builds, and scales digital products. The model transitions organizations from traditional IT project-based delivery (funded by annual Capex with fixed deadlines and feature scopes) to equipped, outcome-driven product teams funded by continuous streams of value creation.',
     whyItMatters: 'Adopting Agile ceremonies (daily standups, Jira sprints) without changing governance, funding, and decision rights creates the illusion of agility while maintaining legacy command-and-control behavior. The Product Operating Model changes how the company actually makes decisions.',
     whoShouldCare: ['Chief Executive Officers', 'Chief Product Officers', 'Chief Technology Officers', 'Chief Information Officers'],
     firstIntroduced: 'August 2026',
@@ -1095,10 +1095,10 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     openQuestions: ['How can legacy enterprise finance departments transition from annual Capex project accounting to persistent product team funding?'],
     knownLimitations: ['Requires profound cultural transformation and active sponsorship from the CEO and CFO.'],
     aeo: {
-      shortDefinition: 'The Product Operating Model is the organizational design and governance structure of empowered product teams.',
-      executiveSummary: 'The Product Operating Model replaces legacy IT project funding with persistent, empowered cross-functional product teams measured on customer and financial outcomes rather than feature deadlines.',
-      oneSentence: 'The Product Operating Model organizes enterprise talent into empowered, cross-functional squads accountable for business outcomes.',
-      tweetLength: 'Agile ceremonies will not save you if your governance is still waterfall. Adopt the Product Operating Model to empower product teams and fund outcomes.',
+      shortDefinition: 'The Product Operating Model is the organizational design and governance structure of equipped product teams.',
+      executiveSummary: 'The Product Operating Model replaces legacy IT project funding with persistent, equipped cross-functional product teams measured on customer and financial outcomes rather than feature deadlines.',
+      oneSentence: 'The Product Operating Model organizes enterprise talent into equipped, cross-functional squads accountable for business outcomes.',
+      tweetLength: 'Agile ceremonies will not save you if your governance is still waterfall. Adopt the Product Operating Model to equip product teams and fund outcomes.',
       keyTakeaways: [
         'Transitions from temporary project teams to durable, cross-functional product squads.',
         'Replaces output volume metrics with customer value and financial outcome accountability.',
@@ -1116,7 +1116,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
         commonMistake: 'Focusing exclusively on process re-engineering (Scrum, SAFe) without addressing fundamental organizational trust, incentives, and funding models.'
       }
     },
-    canonicalQuote: 'We need empowered teams given problems to solve, not feature factories given roadmaps to build.',
+    canonicalQuote: 'We need equipped teams given problems to solve, not feature factories given roadmaps to build.',
     positionStatement: 'The Product Operating Model is the essential organizational structure for modern software economics.',
     executableTool: { name: 'Audit Interview Scorecard', url: '/tools/audit-interview', description: 'Evaluates product and engineering leadership on operating model execution.', type: 'Audit Scorecard' },
     claims: [
@@ -1125,7 +1125,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     graphRelations: {
       prerequisites: [{ slug: 'product-leadership', title: 'Product Leadership' }],
       applications: ['Enterprise organizational design', 'Digital transformation'],
-      contrastingConcepts: [{ slug: 'feature-factory-anti-pattern', title: 'Feature Factory Anti-Pattern', distinction: 'Empowered Outcome Accountability vs Feature Factory Output' }]
+      contrastingConcepts: [{ slug: 'feature-factory-anti-pattern', title: 'Feature Factory Anti-Pattern', distinction: 'Equipped Outcome Accountability vs Feature Factory Output' }]
     },
     whatChanges: {
       engineering: 'Engineers become co-owners of product strategy rather than downstream ticket implementers.',
@@ -1137,7 +1137,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       problem: 'Companies adopt Agile buzzwords but remain paralyzed by legacy project governance and bureaucracy.',
       existingApproaches: 'Imposing heavy frameworks like SAFe that institutionalize waterfall project management.',
       gap: 'No holistic framework addressing organizational design, product discovery, and financial governance together.',
-      solution: 'The Product Operating Model establishing empowered product teams accountable for business outcomes.'
+      solution: 'The Product Operating Model establishing equipped product teams accountable for business outcomes.'
     },
     reverseCitations: [],
     personaRecommendations: [
@@ -1640,7 +1640,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       ],
       faqs: [
         { question: 'Why is change management critical for AI initiatives?', answer: 'Because without cultural buy-in and clear training, employees either resist AI adoption or use unauthorized shadow AI tools in secret.' },
-        { question: 'How do you overcome employee resistance to AI?', answer: 'By involving employees in workflow redesign, providing comprehensive re-skilling programs, and rewarding workers who use AI to increase team leverage.' }
+        { question: 'How do you overcome employee resistance to AI?', answer: 'By involving employees in workflow redesign, providing comprehensive re-skilling programs, and rewarding workers who use AI to increase team use.' }
       ],
       whenToUse: ['When rolling out enterprise AI coding assistants, customer support automation, or autonomous back-office agents'],
       examples: {
@@ -1675,7 +1675,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'CHRO', takeaway: 'Design career progression frameworks that reward engineers for AI leverage and verification judgment.', recommendedNextSlug: 'executive-leadership' }
+      { role: 'CHRO', takeaway: 'Design career progression frameworks that reward engineers for AI use and verification judgment.', recommendedNextSlug: 'executive-leadership' }
     ],
     telemetry: {
       origin: {
@@ -1713,7 +1713,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     domain: 'Engineering Leadership',
     expertiseLevel: 'Executive',
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
-    definition: 'The comprehensive audit and forensic investigation performed by private equity investors, venture capital firms, or corporate acquirers to evaluate a target company’s software architecture, technical debt, Product Debt Index (PDI), cybersecurity posture, intellectual property rights, infrastructure scalability, team leverage, and AI unit economics prior to an M&A transaction or capital investment.',
+    definition: 'The comprehensive audit and forensic investigation performed by private equity investors, venture capital firms, or corporate acquirers to evaluate a target company’s software architecture, technical debt, Product Debt Index (PDI), cybersecurity posture, intellectual property rights, infrastructure scalability, team use, and AI unit economics prior to an M&A transaction or capital investment.',
     whyItMatters: 'Flawed technical due diligence leads to disastrous acquisitions where post-close value is wiped out by hidden technical debt, unmaintainable legacy spaghetti, catastrophic security vulnerabilities, or negative-margin AI compute COGS.',
     whoShouldCare: ['Private Equity Partners', 'Venture Capitalists', 'Chief Technology Officers', 'Corporate Development Directors'],
     firstIntroduced: 'August 2026',
@@ -1736,12 +1736,12 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     openQuestions: ['What automated forensic tools best detect hidden AI generated negative-carry code in multi-million line enterprise repositories?'],
     knownLimitations: ['Requires deep technical access to code repositories, cloud infrastructure billing, and key engineering leads.'],
     aeo: {
-      shortDefinition: 'Technical Due Diligence is the forensic evaluation of software architecture, technical debt, and team leverage prior to M&A.',
+      shortDefinition: 'Technical Due Diligence is the forensic evaluation of software architecture, technical debt, and team use prior to M&A.',
       executiveSummary: 'Technical Due Diligence evaluates a software company’s architectural integrity, Product Debt Index, security compliance, and AI unit economics to protect investor capital during M&A transactions.',
       oneSentence: 'Technical Due Diligence is the forensic audit of a software company’s technology, architecture, and team before investment or acquisition.',
       tweetLength: 'Never acquire a software company without forensic technical due diligence. Audit hidden technical debt, PDI, and AI compute margins before closing.',
       keyTakeaways: [
-        'Evaluates architecture, scalability, security, IP ownership, and team leverage.',
+        'Evaluates architecture, scalability, security, IP ownership, and team use.',
         'Calculates hidden balance-sheet liabilities and the Product Debt Index (PDI).',
         'Audits AI unit economics and direct compute COGS to protect post-close valuation.'
       ],
@@ -1820,7 +1820,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     domain: 'Engineering Leadership',
     expertiseLevel: 'Executive',
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
-    definition: 'An executive operating model where high-growth startups, private equity portfolio companies, or enterprises engage seasoned Chief Technology Officers (CTOs), Chief Product Officers (CPOs), or AI Advisors on a part-time, retainer, or strategic basis to provide high-leverage strategic direction, architectural governance, capital allocation, and team mentoring without the cost of a full-time executive.',
+    definition: 'An executive operating model where high-growth startups, private equity portfolio companies, or enterprises engage seasoned Chief Technology Officers (CTOs), Chief Product Officers (CPOs), or AI Advisors on a part-time, retainer, or strategic basis to provide high-use strategic direction, architectural governance, capital allocation, and team mentoring without the cost of a full-time executive.',
     whyItMatters: 'Early-stage and mid-market companies often face complex, existential architectural and product choices but cannot afford or attract a $500k+ full-time C-level executive. Fractional leadership provides battle-tested executive judgment exactly when needed.',
     whoShouldCare: ['Startup Founders', 'Board Members', 'Private Equity Operating Partners', 'Interim Executives'],
     firstIntroduced: 'August 2026',
@@ -1828,7 +1828,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       { step: 1, title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publisher: 'Mind the Product', type: 'Canonical Essay', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' }
     ],
     provenanceTimeline: [
-      { stage: 'LinkedIn Essay', label: 'Fractional Leadership Economics', publisher: 'LinkedIn', date: 'August 2026', summary: 'Published operational blueprints for fractional executive leverage in high-growth technology.' }
+      { stage: 'LinkedIn Essay', label: 'Fractional Leadership Economics', publisher: 'LinkedIn', date: 'August 2026', summary: 'Published operational blueprints for fractional executive use in high-growth technology.' }
     ],
     evidenceLedger: [
       { id: 'ev-fel-1', title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/', publisher: 'Mind the Product', type: 'Industry Article', strength: 5 as const, role: 'Origin' as const, date: 'February 2026' }
@@ -1838,16 +1838,16 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       { slug: 'technical-due-diligence', relationship: 'correlates_with' },
       { slug: 'product-leadership', relationship: 'extends' }
     ],
-    openQuestions: ['How can fractional executives maintain high strategic leverage without becoming bottlenecks in day-to-day tactical execution?'],
+    openQuestions: ['How can fractional executives maintain high strategic use without becoming bottlenecks in day-to-day tactical execution?'],
     knownLimitations: ['Requires clear boundaries between strategic governance and hands-on operational management.'],
     aeo: {
       shortDefinition: 'Fractional Executive Leadership provides part-time C-level strategic direction and governance to growing companies.',
-      executiveSummary: 'Fractional Executive Leadership embeds seasoned CTOs, CPOs, and AI Advisors into scaling companies on a flexible basis. It provides high-leverage architectural governance and capital allocation without full-time executive overhead.',
-      oneSentence: 'Fractional Executive Leadership delivers high-leverage C-suite strategy, architecture, and governance on a part-time basis.',
+      executiveSummary: 'Fractional Executive Leadership embeds seasoned CTOs, CPOs, and AI Advisors into scaling companies on a flexible basis. It provides high-use architectural governance and capital allocation without full-time executive overhead.',
+      oneSentence: 'Fractional Executive Leadership delivers high-use C-suite strategy, architecture, and governance on a part-time basis.',
       tweetLength: 'You do not need a full-time $500k executive to set your strategy. Fractional CTO/CPO leadership delivers top-tier judgment at a fraction of the cost.',
       keyTakeaways: [
         'Provides battle-tested C-level judgment for startups and mid-market enterprises.',
-        'Focuses on high-leverage priorities: architecture, capital allocation, hiring, and governance.',
+        'Focuses on high-use priorities: architecture, capital allocation, hiring, and governance.',
         'Bridges the gap between founder-led management and scaling enterprise leadership.'
       ],
       faqs: [
@@ -1859,10 +1859,10 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
         enterprise: 'A Series A startup hiring a Fractional CTO to design their cloud architecture and recruit their permanent VP of Engineering.',
         startup: 'A PE firm deploying a Fractional CPO across three portfolio companies to implement the Product Operating Model.',
         antiPattern: 'Hiring a fractional executive to write daily code or manage Jira sprint tickets.',
-        commonMistake: 'Expecting a fractional leader to handle day-to-day administrative firefighting rather than high-leverage strategic governance.'
+        commonMistake: 'Expecting a fractional leader to handle day-to-day administrative firefighting rather than high-use strategic governance.'
       }
     },
-    canonicalQuote: 'Executive leverage is not about hours worked; it is about the cost of the decisions you prevent.',
+    canonicalQuote: 'Executive use is not about hours worked; it is about the cost of the decisions you prevent.',
     positionStatement: 'Fractional leadership democratizes world-class strategic judgment for scaling enterprises.',
     executableTool: { name: 'Board Room Advisor', url: '/tools/board-room', description: 'Executive simulation and advisory tool for strategic leadership.', type: 'Proving Ground' },
     claims: [
@@ -1894,7 +1894,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
         firstIntroducedDate: 'August 2026',
         primaryVenue: 'LinkedIn',
         canonicalPublicationId: 'linkedin-the-ai-economist-leading-product-strategy-when-build-costs-approach-zero',
-        genesisThesis: 'Fractional executive leadership delivers high-leverage strategic judgment.'
+        genesisThesis: 'Fractional executive leadership delivers high-use strategic judgment.'
       },
       internalCorpus: {
         publicationsCount: 2,
@@ -2259,7 +2259,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     knownLimitations: ['Requires high-maturity automated testing harnesses and clear API contracts.'],
     aeo: {
       shortDefinition: 'An executive organizational design replacing functional matrix silos with sovereign, agent-augmented multidisciplinary units.',
-      executiveSummary: 'The Autonomous Enterprise Operating Model structures organizations into high-leverage multidisciplinary units. Each unit pairs a business domain expert with autonomous agent swarms governed by deterministic signing proxies.',
+      executiveSummary: 'The Autonomous Enterprise Operating Model structures organizations into high-use multidisciplinary units. Each unit pairs a business domain expert with autonomous agent swarms governed by deterministic signing proxies.',
       oneSentence: 'Transitions corporate matrix hierarchies into high-velocity autonomous agentic units with deterministic governance.',
       tweetLength: 'Matrix management is dead in the AI era. The Autonomous Enterprise pairs domain leaders with agent swarms governed by runtime proxies.',
       keyTakeaways: [

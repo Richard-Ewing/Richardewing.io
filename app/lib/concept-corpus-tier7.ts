@@ -53,7 +53,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
       }
     },
     canonicalQuote: 'Isolating files in Git worktrees is not the same as isolating the runtime system.',
-    positionStatement: 'We must isolate runtime state, not just file trees, to unlock scalable multi-agent coding.',
+    positionStatement: 'We must isolate runtime state, not just file trees, to access scalable multi-agent coding.',
     executableTool: { name: 'Exogram Control Plane', url: '/exogram', description: 'Deterministic runtime governance and boundary isolation for autonomous software agents.', type: 'Proving Ground' },
     claims: [
       { statement: 'Runtime collisions account for over 60 percent of autonomous agent execution failures.', confidence: 0.95, counterarguments: ['Developers can manually assign static ports.'], supportingData: 'Empirical telemetry across 200 concurrent agent runs.' }
@@ -477,7 +477,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
       }
     },
     canonicalQuote: 'The prompt is ephemeral. The relational schema is the durable foundation of intelligence.',
-    positionStatement: 'We must build context engines, not prompt wrappers, to unlock persistent enterprise AI value.',
+    positionStatement: 'We must build context engines, not prompt wrappers, to access persistent enterprise AI value.',
     executableTool: { name: 'Audit Interview Scorecard', url: '/tools/audit-interview', description: 'Evaluates candidate engineering judgment using structured context evaluation.', type: 'Audit Scorecard' },
     claims: [
       { statement: 'Relational context engines reduce hallucination rates by over 85 percent compared to unstructured prompt chaining.', confidence: 0.95, counterarguments: ['Larger LLM context windows eliminate the need for databases.'], supportingData: 'Production telemetry from CareerWin.ai platform validation.' }
@@ -576,7 +576,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
       ],
       whenToUse: ['When product velocity slows due to regression testing overhead and bloated legacy codebases'],
       examples: {
-        enterprise: 'Retiring a legacy reporting module used by fewer than 2 percent of enterprise accounts to unlock 4 full-time engineers.',
+        enterprise: 'Retiring a legacy reporting module used by fewer than 2 percent of enterprise accounts to access 4 full-time engineers.',
         startup: 'Deleting an abandoned experimental integration before a Series B technical due diligence audit.',
         antiPattern: 'Keeping a broken feature alive indefinitely because one legacy customer requested it three years ago.',
         commonMistake: 'Hiding a feature from the UI while leaving the backend code and database tables in production.'
@@ -913,7 +913,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     },
     whatChanges: {
       engineering: 'Product managers justify feature requirements with clear margin models before engineering starts.',
-      finance: 'Creates seamless alignment between R&D capital allocation and financial performance.',
+      finance: 'Creates direct alignment between R&D capital allocation and financial performance.',
       product: 'PMs gain executive credibility by speaking the financial language of the board.',
       security: 'Prevents wasteful feature sprawl that introduces unnecessary compliance obligations.'
     },
@@ -1443,7 +1443,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     },
     whatChanges: {
       engineering: 'Engineers review verified, passing diffs rather than acting as human compilers.',
-      finance: 'Maximizes engineering salary leverage by eliminating manual syntax debugging.',
+      finance: 'Maximizes engineering salary use by eliminating manual syntax debugging.',
       product: 'Accelerates feature release cadence with higher baseline quality.',
       security: 'Ensures security linters and typecheckers run automatically on every generated file.'
     },

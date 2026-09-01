@@ -9,7 +9,7 @@ tracks24Modules['sovereign-ai/24-1'] = m('24-1', 'The Nationalization of Compute
             [
                 'For the past decade, enterprises blindly forwarded their deepest intellectual property into centralized public clouds (AWS, GCP). With the advent of LLMs, doing so means continuously sending unredacted financial records and proprietary secrets to a massive, centralized multi-tenant intelligence API like OpenAI.', 
                 'In 2026, severe geopolitical regulations and the sheer risk of corporate espionage have triggered the "Sovereign AI" movement. Governments and Fortune 500s now mandate that high-tier intelligence runs entirely physically inside their own borders and Virtual Private Clouds.',
-                'The framework for Sovereign AI completely abandons relying on black-box frontier vendors. Instead, it leverages immensely powerful "Open-Weight" models hosted locally, ensuring the weights, the data, and the execution trace never leave the corporate firewall.'
+                'The framework for Sovereign AI completely abandons relying on black-box frontier vendors. Instead, it uses immensely powerful "Open-Weight" models hosted locally, ensuring the weights, the data, and the execution trace never leave the corporate firewall.'
             ],
             [
                 d('Public API Data Siphoning', 'The probability of proprietary prompts being utilized for shadow model training.', 'Unacceptable Existential Risk'),

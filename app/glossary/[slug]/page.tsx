@@ -761,7 +761,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                         <div className="flex-1 w-full">
                             <h3 className="text-xl font-grotesk font-bold text-zinc-950 mb-1">Get the 12-Point Enterprise AI Governance Checklist</h3>
                             <p className="text-sm text-zinc-900 font-medium mb-4 leading-relaxed">
-                                Unlock the exact diagnostic questions used in **$7,500 R&D Capital Audits** to isolate technical insolvency and prevent AI margin leakage.
+                                Access the exact diagnostic questions used in **$7,500 R&D Capital Audits** to isolate technical insolvency and prevent AI margin leakage.
                             </p>
                             <NewsletterForm 
                                 buttonText="Download Checklist" 

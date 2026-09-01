@@ -300,7 +300,7 @@ export default async function DynamicModulePage({ params }: { params: Promise<{ 
         unlockedItems.includes(`module_${slug[0]}`)
     ));
 
-    // Unlock Lesson 1 of EVERY module universally to drive high conversion to the PayGate.
+    // Access Lesson 1 of EVERY module universally to drive high conversion to the PayGate.
     const isFreePreviewModule = true;
 
     let aiContent = null;

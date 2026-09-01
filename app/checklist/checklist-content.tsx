@@ -23,7 +23,7 @@ const GATE_AFTER = 4;
 
 export default function ChecklistPageContent() {
     const [email, setEmail] = useState('');
-    const [unlocked, setUnlocked] = useState(false);
+    const [accessed, setUnlocked] = useState(false);
     const [checked, setChecked] = useState<Record<number, boolean>>({});
     const [submitting, setSubmitting] = useState(false);
 
@@ -84,7 +84,7 @@ export default function ChecklistPageContent() {
                 {/* Questions */}
                 <div className="space-y-3 mb-12">
                     {QUESTIONS.map((q, i) => {
-                        const isLocked = i >= GATE_AFTER && !unlocked;
+                        const isLocked = i >= GATE_AFTER && !accessed;
                         
                         return (
                             <div
@@ -133,13 +133,13 @@ export default function ChecklistPageContent() {
                 </div>
 
                 {/* Gate CTA */}
-                {!unlocked && (
+                {!accessed && (
                     <div className="mb-12 p-8 rounded-2xl bg-gradient-to-br from-violet-50 to-rose-50 border-2 border-violet-200 text-center">
                         <h2 className="text-2xl font-grotesk font-bold text-[#1A1A1A] mb-3">
                             Get the Full Checklist Free
                         </h2>
                         <p className="text-sm text-[#4A4A4A] mb-6 max-w-md mx-auto">
-                            Questions 5–12 cover agent permissions, retry economics, kill switches, and deterministic verification. Enter your email to unlock all 12.
+                            Questions 5–12 cover agent permissions, retry economics, kill switches, and deterministic verification. Enter your email to access all 12.
                         </p>
                         <form onSubmit={handleUnlock} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                             <input
@@ -155,7 +155,7 @@ export default function ChecklistPageContent() {
                                 disabled={submitting}
                                 className="px-6 py-3 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-zinc-900 font-bold text-sm hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center gap-2 justify-center"
                             >
-                                {submitting ? 'Unlocking...' : 'Unlock All 12'} <ArrowRight className="w-4 h-4" />
+                                {submitting ? 'Accessing...' : 'Access All 12'} <ArrowRight className="w-4 h-4" />
                             </button>
                         </form>
                         <p className="text-xs text-zinc-600 mt-3">No spam. One weekly briefing. Unsubscribe anytime.</p>
@@ -163,7 +163,7 @@ export default function ChecklistPageContent() {
                 )}
 
                 {/* Score Interpretation */}
-                {(unlocked || Object.keys(checked).length > 0) && (
+                {(accessed || Object.keys(checked).length > 0) && (
                     <div className="mb-12 p-6 bg-white rounded-2xl border border-zinc-200 shadow-sm">
                         <h2 className="text-lg font-grotesk font-bold text-[#1A1A1A] mb-4">Score Interpretation</h2>
                         <div className="space-y-3 text-sm">

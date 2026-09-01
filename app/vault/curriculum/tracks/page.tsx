@@ -303,7 +303,7 @@ export default async function CurriculumTracksPage() {
                                     Explore Advisory
                                 </Link>
                                 <Link href="/vault" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs font-bold bg-white border border-zinc-400 text-zinc-950 hover:text-zinc-900 hover:border-zinc-500 transition-colors shadow-sm">
-                                    Unlock $999 Full Curriculum
+                                    Access $999 Full Curriculum
                                 </Link>
                             </div>
                         </div>

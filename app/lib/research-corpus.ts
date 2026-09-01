@@ -41,7 +41,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     relatedGlossarySlugs: ['macro-coding', 'pr-review-gridlock', 'executable-specification', 'human-compiler-syndrome', 'autonomous-agent-readiness-index', 'spec-driven-agent-execution', 'zero-trust-type-gate', 'agentic-drift-constant', 'systems-governor', 'vibe-coding-debt', 'governed-execution', 'deterministic-governance', 'negative-carry-code-crisis'],
     relatedFrameworkSlugs: ['macro-coding-governance', 'agentic-control-plane', 'governed-execution', 'four-laws-probabilistic-software'],
     relatedToolIds: ['spec-quality-scorecard', 'code-review-bottleneck-calc', 'aari', 'negative-carry-code-auditor', 'copilot-roi', 'aueb', 'pdi'],
-    relatedCaseStudyIds: ['spec-driven-enterprise-rewrite', 'pr-review-gridlock-unlocked', 'cursor-to-antigravity-startup-governance', 'agentic-drift-monorepo-incident', 'careerwin-intelligence-platform', 'runtime-concurrency-failures'],
+    relatedCaseStudyIds: ['spec-driven-enterprise-rewrite', 'pr-review-gridlock-accessed', 'cursor-to-antigravity-startup-governance', 'agentic-drift-monorepo-incident', 'careerwin-intelligence-platform', 'runtime-concurrency-failures'],
     relatedCurriculumTrackIds: ['engineering-economics', 'ai-governance', 'track-19-agent-architecture']
   },
   // LinkedIn Newsletter - August 24, 2026
@@ -58,7 +58,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     relatedGlossarySlugs: ['macro-coding', 'pr-review-gridlock', 'tool-poisoning-attack', 'shadow-mcp', 'autonomous-agent-readiness-index', 'systems-governor', 'vibe-coding-debt', 'governed-execution', 'deterministic-governance', 'negative-carry-code-crisis'],
     relatedFrameworkSlugs: ['mcp-zero-trust-gateway', 'macro-coding-governance', 'agentic-control-plane', 'governed-execution', 'four-laws-probabilistic-software'],
     relatedToolIds: ['mcp-security-auditor', 'code-review-bottleneck-calc', 'aari', 'copilot-roi', 'aueb', 'pdi'],
-    relatedCaseStudyIds: ['mcp-tool-poisoning-data-breach', 'pr-review-gridlock-unlocked', 'runtime-concurrency-failures', 'careerwin-intelligence-platform'],
+    relatedCaseStudyIds: ['mcp-tool-poisoning-data-breach', 'pr-review-gridlock-accessed', 'runtime-concurrency-failures', 'careerwin-intelligence-platform'],
     relatedCurriculumTrackIds: ['engineering-economics', 'ai-governance']
   },
   // Beehiiv Newsletter - August 24, 2026
@@ -1451,12 +1451,12 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
 
   {
     id: 'beehiiv-stop-managing-activity',
-    title: 'Stop Managing Activity  -  Start Creating Leverage',
+    title: 'Stop Managing Activity  -  Start Creating Use',
     url: 'https://theaieconomist.beehiiv.com/p/stop-managing-activity-start-creating',
     publisher: 'Beehiiv',
     domain: 'Product Leadership',
     type: 'Evergreen',
-    thesis: 'Shifts product team management from activity tracking to leverage creation and outcome ownership.',
+    thesis: 'Shifts product team management from activity tracking to use creation and outcome ownership.',
     date: 'May 2026',
     relatedConceptIds: ["product-economist","coordination-tax"]
   },
@@ -1474,8 +1474,8 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
   },
 
   {
-    id: 'beehiiv-97e-financial-leverage',
-    title: 'The 97% Rule: Financial Leverage in Product Careers',
+    id: 'beehiiv-97e-financial-use',
+    title: 'The 97% Rule: Financial Use in Product Careers',
     url: 'https://theaieconomist.beehiiv.com/p/97e',
     publisher: 'Beehiiv',
     domain: 'Career Economics',
@@ -1528,7 +1528,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     publisher: 'Beehiiv',
     domain: 'Career Economics',
     type: 'Evergreen',
-    thesis: 'Why problem identification and framing creates more career leverage than problem execution.',
+    thesis: 'Why problem identification and framing creates more career use than problem execution.',
     date: 'July 2026',
     relatedConceptIds: ["product-economist","coordination-tax"]
   },

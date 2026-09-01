@@ -100,15 +100,15 @@ tracks18Modules['fullstack-career/18-4'] = m('18-4', 'Client vs Server Rendering
 );
 
 tracks18Modules['fullstack-career/18-5'] = m('18-5', 'The Promotion Calculus', 'Business outcomes, impact translation.', t18, 
-    ['Speak EBITDA', 'Align technical wins with business leverage'], [
+    ['Speak EBITDA', 'Align technical wins with business use'], [
         l('Promotions are Strict Economic Transactions', 
             [
-                'You do not get promoted to Senior or Staff Engineer for writing "clean code" or resolving a high volume of minor Jira tickets. You get promoted for delivering and proving massive organizational leverage.', 
+                'You do not get promoted to Senior or Staff Engineer for writing "clean code" or resolving a high volume of minor Jira tickets. You get promoted for delivering and proving massive organizational use.', 
                 'The singular path to immense compensation is translating your pull requests into unassailable financial wins. You must treat your engineering output as an investment portfolio.',
                 'If you rewrite a core service, do not tell leadership you "upgraded the framework." Tell them you "retired $140,000 of AWS technical debt and unblocked 5 junior engineers by streamlining local environment boot times."'
             ],
             [
-                d('Engineering Leverage Score', 'The total number of other engineers permanently unblocked or accelerated by your infrastructure.', '> 10 Devs Impacted'),
+                d('Engineering Use Score', 'The total number of other engineers permanently unblocked or accelerated by your infrastructure.', '> 10 Devs Impacted'),
                 d('EBITDA Translation', 'The direct correlation of an engineering task to revenue protection or generation.', 'Tracked on PRs')
             ], 
             'Rewrite your internal "Brag Document" or promo packet using strictly financial terminology.', 

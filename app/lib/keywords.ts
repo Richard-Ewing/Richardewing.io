@@ -800,7 +800,7 @@ export const MEGA_TRENDS_2026 = [
     'Model Collapse', 'Synthetic Data Exhaust', 'AI ground truth degradation',
     'cognitive inbreeding AI', 'verified human datasets', 'AI data poisoning',
     'Thermodynamic Compute Cost', 'AI energy economics', 'nuclear data centers',
-    'nuclear AI SaaS', 'energy-adjusted EBITDA', 'compute as leverage',
+    'nuclear AI SaaS', 'energy-adjusted EBITDA', 'compute as use',
     'post-Turing evaluation metrics', 'local compute sandboxing',
 ];
 

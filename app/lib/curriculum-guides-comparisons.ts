@@ -241,7 +241,7 @@ export const guidesComparisonsModules: Record<string, CurriculumModule> = {
             },
             {
                 title: 'Token Economics (AUEB)',
-                content: 'Orchestrating autonomous agents means token cascades. A $5/M prompt API can quickly bankrupt a high-frequency system. GPT-4o mini offers intense leverage for router tasks, saving the expensive inference for complex reasoning.',
+                content: 'Orchestrating autonomous agents means token cascades. A $5/M prompt API can quickly bankrupt a high-frequency system. GPT-4o mini offers intense use for router tasks, saving the expensive inference for complex reasoning.',
                 details: [d('Route Token Optimization', 'Cost efficiency gained by passing simple tasks to lower-tier models.', '85% Cost Delta')],
                 exercise: 'Implement a Router LLM layer to classify intent before executing.'
             }

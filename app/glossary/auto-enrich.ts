@@ -132,7 +132,7 @@ export function autoMaturityLevels(category: string, title: string): { level: st
         { level: 'Managed', description: `${title} measured with KPIs. Continuous improvement active. Cross-team consistency achieved.` },
         { level: 'Optimized', description: `${title} is a strategic advantage. Automated where possible. Data-driven decision making.` },
         { level: 'Leading', description: `Organization sets industry standards for ${title}. Published thought leadership and benchmarks.` },
-        { level: 'Transformative', description: `${title} drives business model innovation. Competitive moat. External recognition and awards.` },
+        { level: 'Major', description: `${title} drives business model innovation. Competitive moat. External recognition and awards.` },
     ];
 }
 
@@ -408,8 +408,8 @@ export function autoSpokes(category: string, title: string, slug: string): { tit
             { title: `The Cost of Predictivity: Why ${title} Defies Software Economics`, url: `/articles/cost-of-predictivity-defies-${slug}`, description: `Understanding why AI scaling costs compound differently than traditional SaaS.` }
         ],
         'SaaS Metrics & Finance': [
-            { title: `Leveraging ${title} to Drive Rule of 40 Valuations`, url: `/articles/leveraging-${slug}-rule-of-40`, description: `How top-quartile companies engineer their metrics for venture funding.` },
-            { title: `${title} Benchmarks for Series B and Beyond`, url: `/articles/${slug}-benchmarks-series-b-beyond`, description: `The exact financial milestones required to unlock late-stage growth capital.` },
+            { title: `Using ${title} to Drive Rule of 40 Valuations`, url: `/articles/using-${slug}-rule-of-40`, description: `How top-quartile companies engineer their metrics for venture funding.` },
+            { title: `${title} Benchmarks for Series B and Beyond`, url: `/articles/${slug}-benchmarks-series-b-beyond`, description: `The exact financial milestones required to access late-stage growth capital.` },
             { title: `The Board's Guide to Interpreting ${title}`, url: `/articles/boards-guide-interpreting-${slug}`, description: `How sophisticated investors strip away vanity metrics to find truth.` }
         ],
     };
@@ -476,7 +476,7 @@ export function autoWhereIsItUsed(category: string, title: string): string {
         'AI & Machine Learning': `${title} is deployed within the production inference path of intelligent applications.\n\nIt is heavily utilized by organizations scaling generative workflows, operating large language models at enterprise volumes, and architecting agentic AI systems that require strict cost controls and guardrails.`,
         'Cloud & Infrastructure': `${title} forms the operational backbone of modern, distributed cloud architectures.\n\nIt is essential within hyper-growth SaaS platforms, high-availability enterprise environments, and multi-region deployments where resilience, auto-scaling, and FinOps unit economics dictate survival.`,
         'Security & Compliance': `${title} is implemented across the entire software supply chain - from code commit to runtime telemetry.\n\nIt is mandated within regulated environments (FinTech, HealthTech), high-compliance SaaS dealing with SOC2/ISO requirements, and organizations adopting Zero Trust architecture.`,
-        'Product Management': `${title} is leveraged heavily during the product discovery and strategic roadmapping phases of software development.\n\nIt is central to cross-functional alignment between engineering, design, and go-to-market teams to ensure R&D capital is deployed efficiently toward validated market motion.`,
+        'Product Management': `${title} is used heavily during the product discovery and strategic roadmapping phases of software development.\n\nIt is central to cross-functional alignment between engineering, design, and go-to-market teams to ensure R&D capital is deployed efficiently toward validated market motion.`,
         'SaaS & Metrics': `${title} surfaces primarily in the boardroom and during executive capital allocation planning.\n\nIt is used by CFOs, Private Equity sponsors, and technical leadership to track unit economics, calculate the Rule of 40, and model the financial efficiency of the engineering engine.`,
     };
     return context[category] || `${title} is implemented across modern technology organizations navigating complex digital transformation.\n\nIt is particularly relevant to teams scaling beyond their initial product-market fit, where operational maturity, predictability, and economic efficiency are required by leadership and investors.`;
@@ -485,13 +485,13 @@ export function autoWhereIsItUsed(category: string, title: string): string {
 // NEW: Auto-generated Who Uses It sections
 export function autoWhoUsesIt(category: string, title: string): string {
     const context: Record<string, string> = {
-        'Technical Debt & Code Quality': `**CTOs & VPs of Engineering** use ${title} parameters to negotiate R&D budget allocation with the finance department and justify modernization efforts.\n\n**Private Equity & M&A Teams** leverage these insights during due diligence to calculate valuation impairment and model technical debt recovery costs.`,
+        'Technical Debt & Code Quality': `**CTOs & VPs of Engineering** use ${title} parameters to negotiate R&D budget allocation with the finance department and justify modernization efforts.\n\n**Private Equity & M&A Teams** use these insights during due diligence to calculate valuation impairment and model technical debt recovery costs.`,
         'AI & Machine Learning': `**AI Engineering Leads** utilize ${title} to architect scalable, high-performance model pipelines without destroying unit economics.\n\n**Product Managers** rely on this to balance token expenditure against feature profitability, ensuring the AI functionality remains accretive to gross margin.`,
         'Cloud & Infrastructure': `**Site Reliability Engineers (SREs) & Platform Teams** construct ${title} to guarantee five-nines availability and automate developer velocity.\n\n**FinOps Analysts** monitor this architecture to prevent cloud sprawl, eliminate OPEX waste, and enforce tagging compliance across the org.`,
         'Security & Compliance': `**Chief Information Security Officers (CISOs)** enforce ${title} to maintain continuous compliance posture and minimize blast radius during an event.\n\n**DevSecOps Teams** integrate these concepts directly into the CI/CD pipeline to shift security left and prevent vulnerabilities from surviving code review.`,
         'Product Management': `**Chief Product Officers (CPOs) & Product Leads** operationalize ${title} to translate raw engineering velocity into measurable business outcomes.\n\n**Founders** use this methodology to navigate the transition from a sales-led motion to a product-led growth (PLG) vector.`,
     };
-    return context[category] || `**Technology Executives (CTO/CIO)** leverage ${title} to align their technical strategy with overriding business constraints and board expectations.\n\n**Staff Engineers & Architects** rely on this framework to implement scalable, predictable patterns throughout their domains.`;
+    return context[category] || `**Technology Executives (CTO/CIO)** use ${title} to align their technical strategy with overriding business constraints and board expectations.\n\n**Staff Engineers & Architects** rely on this framework to implement scalable, predictable patterns throughout their domains.`;
 }
 
 // NEW: Auto-generated Diagnostic & Exogram Bridge mapping

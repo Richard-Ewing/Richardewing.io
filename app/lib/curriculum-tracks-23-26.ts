@@ -312,7 +312,7 @@ tracks23to26Modules['26-7'] = m('26-7', 'Synthetic Image Architectures', 'Diffus
 );
 
 tracks23to26Modules['26-8'] = m('26-8', 'Adversarial Generative Networks (GANs)', 'Discriminator Bottlenecks vs Diffusion.', t26, 
-    ['Understand GAN limits', 'Leverage Latent space'], [
+    ['Understand GAN limits', 'Use Latent space'], [
         l('The Death of GANs?', 
             ['GANs ruled AI image generation until 2021, when Diffusion models proved to be far more stable to train. GANs still hold extreme value in low-latency upscaling and real-time generation due to lower compute overhead.'],
             [d('Generation Speed', 'GAN vs Diffusion frame rate.', 'GANs win for real-time')], 'Evaluate GAN upscaling (DLSS) for real-time latency needs.', undefined, undefined)

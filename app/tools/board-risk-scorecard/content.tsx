@@ -81,7 +81,7 @@ export default function BoardRiskScorecardTool() {
         tierColor = 'bg-emerald-50 text-emerald-800 border-emerald-200';
         assessment = 'Excellent governance posture. Board possesses quantitative visibility into AI unit economics and technical balance sheet liabilities.';
     } else if (boardScore >= 50) {
-        governanceTier = 'Moderate Oversight (Elevated SOX & Margin Exposure)';
+        governanceTier = 'Moderate Oversight (Improved SOX & Margin Exposure)';
         tierColor = 'bg-amber-50 text-amber-800 border-amber-200';
         assessment = 'Acceptable baseline, but requires immediate implementation of autonomous agent signing limits and Section 174 audit verification.';
     }

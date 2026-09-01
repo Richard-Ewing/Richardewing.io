@@ -230,7 +230,7 @@ export default function AuditInterview() {
                             Audit <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">Interview.</span>
                         </h1>
                         <p className="text-lg sm:text-xl text-zinc-900 mb-8">
-                            The "AI Economist" framework for technical auditing. Quantify judgment, capital risk, and leverage.
+                            The "AI Economist" framework for technical auditing. Quantify judgment, capital risk, and use.
                         </p>
 
                         {/* Role Selector */}

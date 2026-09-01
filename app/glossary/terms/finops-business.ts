@@ -74,15 +74,15 @@ export const finopsBusinessTerms: GlossaryTerm[] = [
         ],
     },
     {
-        title: 'Operating Leverage',
-        slug: 'operating-leverage',
-        definition: `Operating leverage measures how effectively a company converts revenue growth into profit growth. High operating leverage means each additional dollar of revenue costs less to generate than the previous dollar  -  revenue grows faster than costs.\n\nSoftware companies have inherently high operating leverage because the marginal cost of serving an additional customer is near-zero (for traditional software). AI features reduce operating leverage by introducing variable costs that scale with usage.`,
-        whyItMatters: 'Operating leverage is the reason software companies are valued at premium multiples. AI features that introduce per-usage variable costs reduce operating leverage  -  this is the core challenge the Cost of Predictivity framework addresses.',
-        howToMeasure: 'Operating Leverage = Revenue Growth % ÷ Operating Income Growth %. A ratio above 1.0 indicates positive operating leverage  -  profits growing faster than revenue.',
+        title: 'Operating Use',
+        slug: 'operating-use',
+        definition: `Operating use measures how effectively a company converts revenue growth into profit growth. High operating use means each additional dollar of revenue costs less to generate than the previous dollar  -  revenue grows faster than costs.\n\nSoftware companies have inherently high operating use because the marginal cost of serving an additional customer is near-zero (for traditional software). AI features reduce operating use by introducing variable costs that scale with usage.`,
+        whyItMatters: 'Operating use is the reason software companies are valued at premium multiples. AI features that introduce per-usage variable costs reduce operating use  -  this is the core challenge the Cost of Predictivity framework addresses.',
+        howToMeasure: 'Operating Use = Revenue Growth % ÷ Operating Income Growth %. A ratio above 1.0 indicates positive operating use  -  profits growing faster than revenue.',
         category: 'SaaS Metrics & Finance',
         relatedTerms: ['gross-margin-preservation', 'cost-of-predictivity', 'rule-of-40', 'unit-economics'],
         faqs: [
-            { question: 'How do AI features affect operating leverage?', answer: 'Traditional software has near-zero marginal cost. AI features have per-query costs (tokens, compute) that increase with usage. This shifts the cost structure from fixed to variable, reducing operating leverage and compressing valuation multiples.' },
+            { question: 'How do AI features affect operating use?', answer: 'Traditional software has near-zero marginal cost. AI features have per-query costs (tokens, compute) that increase with usage. This shifts the cost structure from fixed to variable, reducing operating use and compressing valuation multiples.' },
         ],
     },
     {

@@ -27,7 +27,7 @@ const briefingArchive = [
         issue: 'Issue #24',
         date: 'July 2026',
         title: 'Why Non-Deterministic Retries Are Erasing 30% of SaaS Gross Margins',
-        summary: 'An empirical analysis of token loop accumulation, unhandled JSON parsing failures, and how gateway cost-caps protect operating leverage.',
+        summary: 'An empirical analysis of token loop accumulation, unhandled JSON parsing failures, and how gateway cost-caps protect operating use.',
         link: '/articles',
     },
     {

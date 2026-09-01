@@ -505,7 +505,7 @@ export const subFrameworks: Record<string, SubFramework> = {
                 whyItMatters: 'Prevents frontier model over-spending on structured extraction and classification.',
                 provenance: ['Built In publications', 'Curriculum Track 11'],
                 implementation: {
-                    research: ['Small Models, Big Leverage: The SLM Revolution'],
+                    research: ['Small Models, Big Use: The SLM Revolution'],
                     diagnostics: ['SLM vs API Break-Even Calculator'],
                     education: ['Track 11: Economics of Build vs. Buy for AI'],
                     enforcement: 'Exogram Semantic Model Router'
@@ -780,7 +780,7 @@ export const subFrameworks: Record<string, SubFramework> = {
     'vp-engineering-operating-model': {
         slug: 'vp-engineering-operating-model',
         name: 'The VP Engineering Capital Operating Standard',
-        tagline: 'Elevate',
+        tagline: 'Improve',
         badgeColor: 'bg-indigo-50 text-indigo-900 border-indigo-200',
         icon: '⚡',
         overview: 'Executive leadership standard for VPs and Directors of Engineering: transitioning teams from story-point sprint velocity to capital efficiency, macro-coding, and talent modernization.',
@@ -866,7 +866,7 @@ export const subFrameworks: Record<string, SubFramework> = {
         tagline: 'Transform',
         badgeColor: 'bg-indigo-50 text-indigo-900 border-indigo-200',
         icon: '👑',
-        overview: 'Executive organizational operating blueprint for CEOs, COOs, Managing Directors, and SVPs to transition legacy corporate matrix hierarchies into high-leverage agentic operating units.',
+        overview: 'Executive organizational operating blueprint for CEOs, COOs, Managing Directors, and SVPs to transition legacy corporate matrix hierarchies into high-use agentic operating units.',
         livedExperience: 'In large enterprises, executive leadership faces "Pilot Paralysis": hundreds of uncoordinated AI pilots across marketing, customer support, and engineering with zero compounding moat and millions in un-tracked SaaS spend. The root cause is applying legacy 20th-century matrix management to 21st-century autonomous software. The CEO Autonomous Enterprise Standard consolidates fragmented departmental experiments into sovereign, cross-functional agentic units governed by automated binary signing limits and centralized capital allocation ledgers.',
         concepts: [
             {

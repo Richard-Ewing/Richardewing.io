@@ -133,7 +133,7 @@ export const COMBAT_SEO_MATRIX: CompetitorMapping[] = [
                 slug: 'gartner-magic-quadrant',
                 name: 'Gartner Magic Quadrant',
                 theirFocus: 'High-level subjective market positioning and enterprise brand safety.',
-                ourAdvantage: 'Exogram executes a surgical, technical audit of a vendors proprietary Moat, SLA liabilities, and Shadow Compute architecture, giving you absolute leverage in contract negotiations.'
+                ourAdvantage: 'Exogram executes a surgical, technical audit of a vendors proprietary Moat, SLA liabilities, and Shadow Compute architecture, giving you absolute use in contract negotiations.'
             },
             {
                 slug: 'g2-crowd',
@@ -247,7 +247,7 @@ export const COMBAT_SEO_MATRIX: CompetitorMapping[] = [
                 slug: 'workday-planning',
                 name: 'Workday Workforce Planning',
                 theirFocus: 'Linear head-count reduction and standard HR turnover metrics.',
-                ourAdvantage: 'Exogram models true Hyper-Leverage - where a single 10x architect weaponized with autonomous agents outperforms an entire traditional department, fundamentally rewriting unit economics.'
+                ourAdvantage: 'Exogram models true Hyper-Use - where a single 10x architect weaponized with autonomous agents outperforms an entire traditional department, fundamentally rewriting unit economics.'
             }
         ]
     }

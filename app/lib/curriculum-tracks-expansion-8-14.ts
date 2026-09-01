@@ -378,16 +378,16 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                 l('Lesson 1: The Total Vendor Cost Model', 'The vendor\'s list price is 30-50% of the true cost. Total vendor cost = License/API fees + Integration engineering (your team building the connection) + Data migration (getting your data into the vendor\'s format) + Training (teaching your team to use it) + Ongoing maintenance (keeping the integration alive) + Opportunity cost (what your team could have built instead).', [
                     d('Integration Cost', 'Engineering time to connect the vendor to your systems.', 'Typically 2-8 engineering weeks for API integrations'),
                     d('Maintenance Tax', 'Ongoing engineering time to maintain vendor integrations through API changes.', '5-15% of integration cost annually in maintenance'),
-                    d('Switching Cost', 'Total cost to replace the vendor with an alternative.', 'This determines your negotiating leverage')
+                    d('Switching Cost', 'Total cost to replace the vendor with an alternative.', 'This determines your negotiating use')
                 ], 'Calculate the total cost of your most expensive vendor relationship. Include all hidden costs beyond the license fee.'),
                 l('Lesson 2: Vendor Viability Assessment', 'Before committing to a vendor, assess their viability: (1) Burn rate vs revenue (how many months of runway?), (2) Customer concentration (are >30% of revenues from one customer?), (3) Team stability (has the engineering team churned?), (4) Product roadmap credibility (are they shipping what they promise?).', [
                     d('Runway Assessment', 'Last funding round date, amount raised, estimated burn rate.', 'If they have <18 months runway, migration risk is critical'),
                     d('Customer Concentration', '>30% of revenue from one customer = dangerous dependency.', 'If that customer leaves, the vendor may not survive'),
                     d('Roadmap Credibility', 'Compare last year\'s promised roadmap to what actually shipped.', '<50% delivery = roadmap is aspirational, not reliable')
                 ], 'Perform a viability assessment on your 3 most critical vendors. Grade each Red/Yellow/Green.'),
-                l('Lesson 3: Negotiation Leverage Engineering', 'The best time to negotiate is before you\'re dependent. Build leverage: run a POC on a competing vendor before contract renewal, document internal build alternatives, and time negotiations to the vendor\'s quarter-end (when they need to close deals for their own targets).', [
-                    d('Competitive POC', 'Running a proof-of-concept on a competitor\'s product creates credible switching threat.', 'Investment: 2-4 engineering weeks. Leverage: 20-40% discount potential'),
-                    d('Internal Alternative', 'Having a documented internal build plan gives you a walk-away option.', 'Even if you don\'t intend to build, the option creates leverage'),
+                l('Lesson 3: Negotiation Use Engineering', 'The best time to negotiate is before you\'re dependent. Build use: run a POC on a competing vendor before contract renewal, document internal build alternatives, and time negotiations to the vendor\'s quarter-end (when they need to close deals for their own targets).', [
+                    d('Competitive POC', 'Running a proof-of-concept on a competitor\'s product creates credible switching threat.', 'Investment: 2-4 engineering weeks. Use: 20-40% discount potential'),
+                    d('Internal Alternative', 'Having a documented internal build plan gives you a walk-away option.', 'Even if you don\'t intend to build, the option creates use'),
                     d('Quarter-End Timing', 'Vendors are most flexible on pricing in the last 2 weeks of their fiscal quarter.', 'Their sales team needs to close deals for quota attainment')
                 ], 'Prepare for your next vendor negotiation: build a competitive POC, document the internal alternative, and time to their quarter-end.')
             ]
@@ -594,8 +594,8 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                     d('Case Studies', 'Documenting specific problems you solved and the outcomes.', 'Most credible: shows proven capability, not theoretical knowledge'),
                     d('Tutorial Content', 'Teaching others how to do something you\'re expert at.', 'High volume but lower differentiation: many people write tutorials')
                 ], 'Identify 3 case studies from your work experience that would make compelling content. Outline each.'),
-                l('Lesson 3: Brand-to-Compensation Conversion', 'A strong brand increases your compensation through 3 mechanisms: (1) Negotiating leverage  -  you have options, they know it, (2) Scope expansion  -  brand attracts bigger roles and projects, (3) Rate premium  -  for consulting/contracting, known experts command 2-3x premiums.', [
-                    d('Negotiating Leverage', 'Multiple inbound opportunities = multiple offers = maximum negotiating power.', 'Brand creates competition for your talent'),
+                l('Lesson 3: Brand-to-Compensation Conversion', 'A strong brand increases your compensation through 3 mechanisms: (1) Negotiating use  -  you have options, they know it, (2) Scope expansion  -  brand attracts bigger roles and projects, (3) Rate premium  -  for consulting/contracting, known experts command 2-3x premiums.', [
+                    d('Negotiating Use', 'Multiple inbound opportunities = multiple offers = maximum negotiating power.', 'Brand creates competition for your talent'),
                     d('Scope Attraction', 'Companies offer bigger roles to people with proven public expertise.', 'Your brand gets you interviewed for the role above the one you applied for'),
                     d('Rate Premium', 'Known experts command $300-500/hr consulting vs $100-150 for unknowns.', 'Brand = pricing power in the services market')
                 ], 'Calculate the compensation premium your personal brand is generating today. If it\'s $0, identify the first step to build it.')
@@ -647,17 +647,17 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                 l('Lesson 1: The Compound Career Effect', 'Career capital compounds like financial capital. A 20% skill improvement in year 1 enables a higher-impact role in year 2, which enables a higher-comp position in year 3, which enables a leadership opportunity in year 4. The engineers who earn the most at 40 aren\'t the smartest  -  they\'re the ones who made compounding decisions at 25.', [
                     d('Early Compounders', 'High-impact decisions early in career: choosing the right company, the right technology, the right mentors.', 'A great first job compounds for 15+ years'),
                     d('Mid-Career Pivot', 'The transition from IC to leadership or IC to deep specialization.', 'This pivot determines the next 15+ years of earning potential'),
-                    d('Late-Career Leverage', 'Converting expertise into advisory, training, or executive roles.', 'Highest leverage per hour worked, but requires earlier compounding')
+                    d('Late-Career Use', 'Converting expertise into advisory, training, or executive roles.', 'Highest use per hour worked, but requires earlier compounding')
                 ], 'Map 5 decisions from your career that compounded (positively or negatively). What pattern do you see?'),
                 l('Lesson 2: Career Trap Identification', 'Three traps that destroy compounding: (1) The Golden Handcuffs  -  high pay in a dead-end skill (legacy system maintenance), (2) The Title Trap  -  chasing title inflation without real scope growth, (3) The Comfort Trap  -  staying in a comfortable role where you\'ve stopped learning.', [
                     d('Golden Handcuffs', 'Earning well for skills that are depreciating.', 'The compensation feels good now but limits options in 5 years'),
                     d('Title Inflation', 'Companies giving titles instead of real scope (and compensation).', '"Director" at a 5-person startup ≠ "Director" at a 5,000-person company'),
                     d('Comfort Trap', 'The role is easy, the pay is decent, and you\'ve stopped being challenged.', 'This is where career capital starts eroding  -  slowly, invisibly')
                 ], 'Honestly assess: are you in any of the 3 career traps? What would you need to change to escape?'),
-                l('Lesson 3: The 20-Year Architecture', 'Design your career like a system architecture. Phase 1 (Years 0-5): Build technical foundation and identify your specialization vector. Phase 2 (Years 5-10): Deepen expertise, build brand, transition to leadership or deep IC. Phase 3 (Years 10-15): Maximize earning power through scope, impact, and leverage. Phase 4 (Years 15-20): Convert expertise to scalable impact (advisory, investing, teaching, building).', [
+                l('Lesson 3: The 20-Year Architecture', 'Design your career like a system architecture. Phase 1 (Years 0-5): Build technical foundation and identify your specialization vector. Phase 2 (Years 5-10): Deepen expertise, build brand, transition to leadership or deep IC. Phase 3 (Years 10-15): Maximize earning power through scope, impact, and use. Phase 4 (Years 15-20): Convert expertise to scalable impact (advisory, investing, teaching, building).', [
                     d('Phase 1: Foundation', 'Learn fundamentals, ship real products, find your specialization.', 'Optimize for learning rate, not compensation'),
                     d('Phase 2: Specialization', 'Become the go-to expert in a specific domain. Build reputation.', 'Optimize for brand and depth, not breadth'),
-                    d('Phase 3: Leverage', 'Use expertise for maximum impact: lead teams, drive strategy, shape markets.', 'Optimize for scope and influence, not individual contribution')
+                    d('Phase 3: Use', 'Use expertise for maximum impact: lead teams, drive strategy, shape markets.', 'Optimize for scope and influence, not individual contribution')
                 ], 'Design your 20-year career architecture. Identify which phase you\'re in and what the transition trigger is to the next phase.')
             ]
         ],
@@ -778,7 +778,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
                     d('Startup CTO', 'Base: $200-350K. Bonus: $0-50K. Options: 1-3% of company.', 'Total comp depends entirely on outcome. Could be $200K or $20M.'),
                     d('Growth-Stage VPE', 'Base: $250-400K. Bonus: $50-100K. RSUs/Options: $200K-1M/year.', 'Blended risk: meaningful cash + meaningful equity')
                 ], 'Benchmark your current compensation against market data for your title, stage, and geography. Calculate the gap.'),
-                l('Lesson 2: Equity Negotiation for Executives', 'Executive equity negotiation is a different sport. Key leverage: (1) Vesting schedule acceleration (single-trigger vs double-trigger acceleration on M&A), (2) Refresh grants (annual equity refreshes to prevent the vesting cliff problem), (3) Exercise window (post-departure exercise window of 90 days vs 7-10 years).', [
+                l('Lesson 2: Equity Negotiation for Executives', 'Executive equity negotiation is a different sport. Key use: (1) Vesting schedule acceleration (single-trigger vs double-trigger acceleration on M&A), (2) Refresh grants (annual equity refreshes to prevent the vesting cliff problem), (3) Exercise window (post-departure exercise window of 90 days vs 7-10 years).', [
                     d('Acceleration Clause', 'Single-trigger: all equity vests on acquisition. Double-trigger: requires acquisition + termination.', 'Double-trigger is standard. Single-trigger is rare but negotiable for CTOs.'),
                     d('Refresh Grants', 'Annual equity grants that maintain your total equity value as initial grants vest.', 'Without refreshes, your equity value declines 25%/year after year 1'),
                     d('Exercise Window', 'Standard: 90 days post-departure. Better: 7-10 years post-departure.', 'A 90-day window forces you to exercise (and pay taxes) before you leave')
@@ -791,7 +791,7 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
             ]
         ],
         ['13-10', 'The CTO Operating System', 'Designing your personal operating system as a technical executive  -  time, energy, and decision allocation.',
-            ['Design your weekly operating rhythm', 'Optimize decision allocation', 'Build executive leverage', 'Prevent executive burnout'],
+            ['Design your weekly operating rhythm', 'Optimize decision allocation', 'Build executive use', 'Prevent executive burnout'],
             [
                 l('Lesson 1: The CTO Weekly Operating Rhythm', 'A CTO\'s week should follow a deliberate pattern, not react to the loudest fire. The operating rhythm: Monday (strategy and planning  -  no meetings before noon), Tuesday-Wednesday (1:1s, team syncs, decision meetings), Thursday (external  -  customers, partners, board prep), Friday (reflection, writing, and deep work).', [
                     d('Monday Strategy Block', '4 hours of uninterrupted strategy time. Review metrics, make decisions, plan the week.', 'If you start the week reacting, you\'ll spend the whole week reacting'),
@@ -822,9 +822,9 @@ export function populateExpansion8to14(modules: Record<string, CurriculumModule>
         ['14-6', 'Delegation Economics', 'Why what you stop doing is more valuable than what you start doing.',
             ['Calculate delegation ROI', 'Build delegation frameworks', 'Overcome the control paradox', 'Develop team capability through delegation'],
             [
-                l('Lesson 1: The Delegation Multiplier', 'Every task you do yourself costs the team your hourly rate. Every task you delegate creates capacity at their rate while freeing your time for higher-leverage work. If you spend 2 hours on code review ($150/hr = $300), but delegating it means you spend that time on strategy worth $1,000/hr, delegation creates $1,400 in net value.', [
+                l('Lesson 1: The Delegation Multiplier', 'Every task you do yourself costs the team your hourly rate. Every task you delegate creates capacity at their rate while freeing your time for higher-use work. If you spend 2 hours on code review ($150/hr = $300), but delegating it means you spend that time on strategy worth $1,000/hr, delegation creates $1,400 in net value.', [
                     d('Time Audit', 'Track how you spend each hour for 1 week. Categorize: only-I-can-do vs delegatable.', 'Most leaders find 40-60% of their time is delegatable'),
-                    d('Leverage Ratio', 'Your highest-value work / your lowest-value work. Should be >5x.', 'If you\'re doing tasks that someone at half your salary could handle, you\'re under-leveraged'),
+                    d('Use Ratio', 'Your highest-value work / your lowest-value work. Should be >5x.', 'If you\'re doing tasks that someone at half your salary could handle, you\'re under-used'),
                     d('Delegation Gap', 'Total delegatable hours × (your rate - delegate\'s rate) = value recovered.', 'This is the economic argument for delegation')
                 ], 'Conduct a 1-week time audit. Calculate the delegation gap: how much value are you failing to capture?'),
                 l('Lesson 2: The Control Paradox', 'The instinct is: "I\'ll do it myself because it will be done right." The reality: (1) you become the bottleneck, (2) your team doesn\'t grow, (3) you burn out. The paradox: leaders who release control get better outcomes because the team develops capability and ownership. Letting go creates more quality, not less.', [

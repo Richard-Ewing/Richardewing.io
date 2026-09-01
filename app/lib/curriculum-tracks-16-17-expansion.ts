@@ -83,13 +83,13 @@ tracks16to17ExpansionModules['guides/16-6'] = m('16-6', 'Tech Debt Forgiveness P
 );
 
 tracks16to17ExpansionModules['guides/16-7'] = m('16-7', 'Vendor Lock-In Negotiation', 'Enterprise agreements, cloud credits, and the egress taxation trap.', t16, 
-    ['Leverage multi-cloud threats', 'Negotiate EDPs (Enterprise Discount Programs)', 'Manage data egress leverage'],
+    ['Use multi-cloud threats', 'Negotiate EDPs (Enterprise Discount Programs)', 'Manage data egress use'],
     [
         l('Weaponizing the Egress Tax', 
             [
-                'Cloud hyperscalers utilize "data gravity" as a strategic zero-interest loan against your balance sheet. By making initial ingress completely free, but data egress prohibitively expensive, they hold your entire infrastructure hostage and eliminate your negotiation leverage.',
+                'Cloud hyperscalers utilize "data gravity" as a strategic zero-interest loan against your balance sheet. By making initial ingress completely free, but data egress prohibitively expensive, they hold your entire infrastructure hostage and eliminate your negotiation use.',
                 'Before engaging in an Enterprise Discount Program (EDP) renewal, your internal architecture must be highly portable. You must theoretically prove to the hyperscaler account managers that your workloads can immediately run on a competing cloud using containerization.',
-                'The credible threat of a full-scale migration is your only financial leverage. Do not spend time negotiating granular compute server costs; ruthlessly negotiate massive egress fee discounting or total waivers.'
+                'The credible threat of a full-scale migration is your only financial use. Do not spend time negotiating granular compute server costs; ruthlessly negotiate massive egress fee discounting or total waivers.'
             ],
             [
                 d('Egress Taxation Penalty', 'The artificial penalty charged for extracting data out-of-cloud vs internal xfer.', 'Historically a 10x multiplier'),
@@ -98,7 +98,7 @@ tracks16to17ExpansionModules['guides/16-7'] = m('16-7', 'Vendor Lock-In Negotiat
             'Execute an aggressive audit of your cloud bill targeting Egress and Data Transfer Out.',
             ['Review the preceding month’s Amazon Web Services (AWS) or Google Cloud (GCP) invoice.', 'Isolate and total the raw external bandwidth/transit charges.', 'Simulate the exact egress cost of moving your massive primary database to a Bare Metal provider.'],
             {
-                question: 'What is the most effective negotiating leverage during an AWS or GCP Enterprise renewal?',
+                question: 'What is the most effective negotiating use during an AWS or GCP Enterprise renewal?',
                 options: ['Threatening to hire more internal DevOps engineers', 'Proving via containerized architecture that you can fully migrate to a competitor', 'Complaining about small compute spot instance price fluctuations', 'Purchasing more internal on-premise hardware'],
                 correctIndex: 1,
                 explanation: 'Cloud providers only act creatively on pricing when there is a tangible, architectural threat of total account abandonment to a rival network.'
@@ -176,7 +176,7 @@ tracks16to17ExpansionModules['guides/16-10'] = m('16-10', 'CEO Communication for
                 question: 'How should a VP of Engineering request $200,000 for a structural database migration?',
                 options: ['Explain how the current database is deprecated and lacks modern developer features', 'Highlight the impressive new vector embeddings and horizontal scaling that the new DB offers', 'Present it as an OpEx reduction capital play: spending $200K in CapEx to permanently eliminate $800K in annual DB licensing and downtime risks', 'Threaten that senior developers will quit if forced to use legacy infrastructure'],
                 correctIndex: 2,
-                explanation: 'Executives make capital allocation decisions based on leverage. Spending capital to eliminate recurring operational overhead or mitigate critical financial risk is music to a CFO\'s ears.'
+                explanation: 'Executives make capital allocation decisions based on use. Spending capital to eliminate recurring operational overhead or mitigate critical financial risk is music to a CFO\'s ears.'
             }
         )
     ], undefined, undefined, 'live'
@@ -210,7 +210,7 @@ tracks16to17ExpansionModules['comparisons/17-6'] = m('17-6', 'Kafka vs AWS Event
 );
 
 tracks16to17ExpansionModules['comparisons/17-7'] = m('17-7', 'Postgres vs MongoDB JSONb', 'Schema rigidity, NoSQL usage myths, and scaling bounds.', t17, 
-    ['Identify premature NoSQL adoption', 'Leverage Postgres JSONb features', 'Analyze join penalties'],
+    ['Identify premature NoSQL adoption', 'Use Postgres JSONb features', 'Analyze join penalties'],
     [
         l('The Great NoSQL Architectural Delusion', 
             [
@@ -272,7 +272,7 @@ tracks16to17ExpansionModules['comparisons/17-9'] = m('17-9', 'GraphQL vs RESTful
                 d('N+1 Resolver Debt Cost', 'The devastating, exponential database hits caused by loosely structured, deeply nested GraphQL queries.', 'Total System Load Spikes'),
                 d('Mobile Payload Trimming', 'The exact, mathematical byte reduction in volatile cellular transit environments versus REST chains.', '-40% standard payload size')
             ],
-            'Aggressively audit your active GraphQL endpoints leveraging strict query depth limiters and detailed tracing logs to hunt N+1 loops.',
+            'Aggressively audit your active GraphQL endpoints using strict query depth limiters and detailed tracing logs to hunt N+1 loops.',
             ['If you currently permit boundless, infinite nested query chains, an attacker can theoretically crash your primary database instantly in one payload.', 'Evaluate the GraphQL resolver map for unintended, cyclical database pings.', 'Enforce an absolute strict query depth threshold execution limit immediately.'],
             {
                 question: 'What is the primary performance vulnerability of GraphQL compared to REST?',

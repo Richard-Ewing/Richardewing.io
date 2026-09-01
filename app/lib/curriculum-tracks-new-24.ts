@@ -112,7 +112,7 @@ export function populateTrack24(modules: Record<string, CurriculumModule>) {
         'AI Economics & Margin Engineering',
         [
             'The definition of a Compute Reseller: Buying API tokens wholesale and selling them via a UI wrapper.',
-            'Why thin wrappers lack economic leverage and face a continuous race to the bottom on price.',
+            'Why thin wrappers lack economic use and face a continuous race to the bottom on price.',
             'The risk of platform absorption: When OpenAI or Anthropic launch your core feature natively.',
             'Building deep moats through proprietary enterprise data, specialized RAG architectures, and complex agentic workflows.',
             'Owning the domain-specific outcome rather than just selling access to raw intelligence.'

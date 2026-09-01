@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 export default function ReportUnlocker() {
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
-    const [unlocked, setUnlocked] = useState(false);
+    const [accessed, setUnlocked] = useState(false);
     const router = useRouter();
 
     const handleUnlock = (e: React.FormEvent) => {
@@ -23,15 +23,15 @@ export default function ReportUnlocker() {
             // In a real app we would set a massive cookie or call Clerk here.
             localStorage.setItem('has_unlocked_ai_report', 'true');
             
-            // Redirect them to the dashboard/command center immediately to consume their unlocked asset.
+            // Redirect them to the dashboard/command center immediately to consume their accessed asset.
             setTimeout(() => {
-                router.push("/tools/dashboard?unlocked=ai-report-2026");
+                router.push("/tools/dashboard?accessed=ai-report-2026");
             }, 1500);
             
         }, 1200);
     };
 
-    if (unlocked) {
+    if (accessed) {
         return (
             <div className="animate-in fade-in zoom-in duration-500 p-6 rounded-xl bg-green-500/10 border border-green-500/30 flex flex-col items-center justify-center text-center space-y-3">
                 <CheckCircle2 className="w-12 h-12 text-green-400" />
@@ -67,13 +67,13 @@ export default function ReportUnlocker() {
                 ) : (
                     <>
                         <Sparkles size={16} /> 
-                        Unlock Now 
+                        Access Now 
                         <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                     </>
                 )}
             </button>
             <p className="text-xs font-bold font-medium text-zinc-950 font-bold font-mono text-center">
-                By unlocking, you agree to receive high-leverage architectural intelligence. No spam. Ever.
+                By accessing, you agree to receive high-use architectural intelligence. No spam. Ever.
             </p>
         </form>
     );

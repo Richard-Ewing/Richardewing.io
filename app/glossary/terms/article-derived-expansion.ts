@@ -63,7 +63,7 @@ export const articleDerivedTerms: GlossaryTerm[] = [
         relatedTerms: ['engineering-velocity', 'product-debt-index', 'rule-of-40', 'net-revenue-retention'],
         faqs: [
             { question: 'What is a good RPE?', answer: 'It depends on company stage. Pre-Series A: $150K+ is healthy. Post-Series B: $400K+ is the target. Public companies averaging $800K+ are considered efficient.' },
-            { question: 'Does RPE account for AI-assisted development?', answer: 'Not directly, but companies leveraging AI tools effectively should see RPE improvements. If RPE doesn\'t improve with AI tool adoption, the tools may be generating more maintenance than value.' },
+            { question: 'Does RPE account for AI-assisted development?', answer: 'Not directly, but companies using AI tools effectively should see RPE improvements. If RPE doesn\'t improve with AI tool adoption, the tools may be generating more maintenance than value.' },
         ],
     },
     {
@@ -180,7 +180,7 @@ export const articleDerivedTerms: GlossaryTerm[] = [
         title: 'Agentic Workflow',
         slug: 'agentic-workflow',
         definition: `An agentic workflow is a multi-step process executed by AI agents that can make decisions, use tools, and adapt their approach based on intermediate results  -  without requiring human intervention at each step. Unlike simple automation (which follows fixed rules), agentic workflows involve reasoning, planning, and dynamic tool selection.\n\n**Examples:**\n- A coding agent that reads a bug report, identifies the root cause, writes a fix, runs tests, and creates a PR\n- A customer support agent that reads a ticket, queries the knowledge base, checks the customer's account, and drafts a response\n- A data analysis agent that receives a question, writes SQL, executes it, interprets results, and generates a report`,
-        whyItMatters: `Agentic workflows are where AI delivers the most transformative value  -  but also where governance is most critical. An agent that can take actions autonomously can also take wrong actions autonomously.\n\nExogram's execution control plane provides the governance layer for agentic workflows: action admissibility filtering, truth verification, constraint enforcement, and audit logging ensure that agents operate within defined boundaries even when making autonomous decisions.`,
+        whyItMatters: `Agentic workflows are where AI delivers the most major value  -  but also where governance is most critical. An agent that can take actions autonomously can also take wrong actions autonomously.\n\nExogram's execution control plane provides the governance layer for agentic workflows: action admissibility filtering, truth verification, constraint enforcement, and audit logging ensure that agents operate within defined boundaries even when making autonomous decisions.`,
         howToMeasure: 'Track agent task completion rate, error rate, human intervention rate, and cost per workflow. Compare against human-executed workflow benchmarks.',
         category: 'AI & Machine Learning',
         relatedTerms: ['ai-agent', 'action-admissibility', 'execution-control-plane', 'ai-liability-gradient'],

@@ -52,7 +52,7 @@ tracks21Modules['product-management/21-2'] = m('21-2', 'Roadmap Bankruptcy', 'Ov
 );
 
 tracks21Modules['product-management/21-3'] = m('21-3', 'Validation Before Engineering', 'Design sprints, Figma prototypes, fake door tests.', t21, 
-    ['Kill ideas before code', 'Leverage fake-door tests'], [
+    ['Kill ideas before code', 'Use fake-door tests'], [
         l('The Economics of Validation', 
             [
                 'Writing code is the absolute most extraordinarily expensive way to test a product hypothesis. If a team spends 3 months coding a feature only to discover zero users want it, that team has incinerated millions of dollars in opportunity cost.', 

@@ -28,7 +28,7 @@ export const articlesBatch9: Record<string, ArticleData> = {
 <strong>Experienced developers took 19% LONGER to complete tasks when using AI coding tools  -  despite self-reporting that they felt 24% faster.</strong>
 </blockquote>
 
-<p>Read that again. The perception gap is not a rounding error. It is a <strong>24-percentage-point inversion</strong> between felt productivity and measured productivity. Engineers genuinely believed they were moving faster. The data showed they were moving slower.</p>
+<p> The perception gap is not a rounding error. It is a <strong>24-percentage-point inversion</strong> between felt productivity and measured productivity. Engineers genuinely believed they were moving faster. The data showed they were moving slower.</p>
 
 <p>Why does this happen? Three compounding mechanisms:</p>
 

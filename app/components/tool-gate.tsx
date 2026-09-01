@@ -46,7 +46,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
     const hasCurriculumAsset = mappedCurriculumId ? unlockedAssets.includes(mappedCurriculumId) : false;
     const hasPaidEntitlement = isVaultMaster || hasToolAsset || hasCurriculumAsset;
 
-    // Auto-unlock if user has paid entitlements
+    // Auto-access if user has paid entitlements
     React.useEffect(() => {
         if (isLoaded && isSignedIn && hasPaidEntitlement && !isUnlocked) {
             setIsUnlocked(true);
@@ -54,7 +54,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
         }
     }, [isLoaded, isSignedIn, hasPaidEntitlement, isUnlocked, onUnlock]);
 
-    // Auto-unlock (bypass form) for signed-in free users BUT increment their local counter
+    // Auto-access (bypass form) for signed-in free users BUT increment their local counter
     React.useEffect(() => {
         if (isLoaded && isSignedIn && user?.primaryEmailAddress?.emailAddress && !isUnlocked && !hasPaidEntitlement) {
             if (usesCounter < 3) {
@@ -74,7 +74,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
         }
     }, [isLoaded, isSignedIn, isUnlocked, onUnlock, user, toolName, usesCounter, hasPaidEntitlement]);
 
-    // When Formspree submission succeeds, unlock and trigger callback
+    // When Formspree submission succeeds, access and trigger callback
     React.useEffect(() => {
         if (state.succeeded) {
             const newCount = usesCounter + 1;
@@ -243,7 +243,7 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                     </form>
 
                     <p className="text-xs font-bold font-medium text-zinc-950 font-mono mt-6 uppercase tracking-widest">
-                        Zero spam. Just high-leverage insights for product leaders.
+                        Zero spam. Just high-use insights for product leaders.
                     </p>
                 </div>
             </motion.div>

@@ -120,10 +120,10 @@ export const challenges: Challenge[] = [
         painPoint: 'You bought 500 Copilot licenses at $19/seat/month. Lines of code went up 40%. Revenue per engineer stayed flat. Pull request volume increased but deployment frequency did not. You are paying for activity, not productivity.',
         diagnosticName: 'Revenue Per Engineer (APER)',
         diagnosticSlug: 'aper',
-        frameworkName: 'Engineering Leverage',
-        frameworkSlug: 'engineering-leverage',
+        frameworkName: 'Engineering Use',
+        frameworkSlug: 'engineering-use',
         exogramRisk: 'Productivity Theater',
-        exogramDescription: 'Measuring AI tool ROI by output volume rather than business outcomes creates a false sense of improvement while masking declining engineering leverage ratios.',
+        exogramDescription: 'Measuring AI tool ROI by output volume rather than business outcomes creates a false sense of improvement while masking declining engineering use ratios.',
         relatedConcepts: ['r-and-d-ponzi', 'dora-financial-translation', 'margin-engineering', 'ai-margin-collapse-point']
     },
     {

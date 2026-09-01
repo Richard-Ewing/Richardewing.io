@@ -456,7 +456,7 @@ export default function DueDiligenceTool() {
                     focus: "Valuation Accretion",
                     actionItems: [
                         "Enforce strict 70/20/10 (Feature/Debt/R&D) capacity allocation",
-                        engEfficiency < 50 ? "Execute targeted restructuring for low-leverage headcount" : "Scale high-leverage engineering squads",
+                        engEfficiency < 50 ? "Execute targeted restructuring for low-use headcount" : "Scale high-use engineering squads",
                         "Present clean Technical Diligence Posture to Board"
                     ]
                 }

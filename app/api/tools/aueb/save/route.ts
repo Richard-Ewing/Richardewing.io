@@ -18,7 +18,7 @@ The user has just run an AI Unit Economics Benchmark (AUEB) showing their Gross 
 
 Your job is to generate a highly tactical, ruthless 3-month Quarterly Product Execution Plan (Q-PEP) to optimize their AI architecture and save them from insolvency.
 - Month 1: Triage & Token Reduction (Quick wins, stop the bleeding)
-- Month 2: Semantic Caching & Model Arbitrage (Structural leverage)
+- Month 2: Semantic Caching & Model Arbitrage (Structural use)
 - Month 3: Infrastructure Automation & Edge Compute (Scaling unit economics)
 
 Provide 3 highly tactical action items per month based on the provided metrics.

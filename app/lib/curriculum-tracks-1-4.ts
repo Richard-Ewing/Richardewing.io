@@ -65,7 +65,7 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
                 ], 'Model the financial savings of migrating your stateless web cluster to purely Spot Instances.'),
                 l('Lesson 3: Avoiding Vendor Lock-In', 'Using proprietary managed services (like DynamoDB or Spanner) accelerates shipping but creates massive exit costs. The Build vs. Buy framework for deciding when to use primitives (EC2/S3) versus managed services.', [
                     d('Exit Cost Calculation', 'The engineering months required to migrate off a proprietary DB.', 'Include data egress fees'),
-                    d('Multi-Cloud Value', 'The leverage gained in enterprise contract negotiations.', 'Often yields 15-20% discounts'),
+                    d('Multi-Cloud Value', 'The use gained in enterprise contract negotiations.', 'Often yields 15-20% discounts'),
                     d('Open Source Primitives', 'Relying on Postgres/Redis instead of vendor-locked equivalents.', 'Maximizes architectural portability')
                 ], 'Perform a lock-in audit. Rank your top 5 vendor dependencies by migration difficulty.')
             ]
@@ -271,7 +271,7 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
         ['3-18', 'Technical Debt vs Technical Insolvency', 'Understanding the critical threshold where maintenance costs terminalize your engineering capability.', 
             ['Differentiate Debt from Insolvency', 'Identify the Event Horizon', 'Calculate the PDI limit', 'Communicate collapse to the Board'],
             [
-                l('Lesson 1: The Gradual Decay of Technical Debt', 'Technical debt is a normal, healthy part of software development. It represents the deliberate choice to optimize for speed over perfection. Like financial debt, it allows you to leverage future capacity to capture immediate market share. But it must be serviced.', [
+                l('Lesson 1: The Gradual Decay of Technical Debt', 'Technical debt is a normal, healthy part of software development. It represents the deliberate choice to optimize for speed over perfection. Like financial debt, it allows you to use future capacity to capture immediate market share. But it must be serviced.', [
                     d('Linear Cost Accumulation', 'The steady increase in maintenance time as codebases grow.', 'Expected and manageable'),
                     d('Interest Payments', 'The time spent refactoring and updating dependencies.', 'Required to prevent compounding'),
                     d('The Velocity Drag', 'The slight, noticeable slowing of feature delivery.', 'The primary symptom of unmanaged debt')

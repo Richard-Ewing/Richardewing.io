@@ -78,7 +78,7 @@ tracks8Modules['data-economics/8-3'] = m('8-3', 'Analytics Team Economics', 'Mod
         l('The Data Engineer vs Analyst Ratio', 
             [
                 'A common organizational failure is hiring 10 Data Analysts to produce dashboards, but only 1 Data Engineer to build the pipelines. The resulting economic trap: highly paid Analysts spend 80% of their time writing complex SQL to bypass broken pipelines, rather than generating business insights.',
-                'The optimal organizational ratio is roughly 2 Data Engineers for every 3 Analysts. A strong engineering foundation creates "Analytics Engineering" leverage, where automated, clean models allow Analysts to operate at 5x velocity.',
+                'The optimal organizational ratio is roughly 2 Data Engineers for every 3 Analysts. A strong engineering foundation creates "Analytics Engineering" use, where automated, clean models allow Analysts to operate at 5x velocity.',
                 'If an Analyst claims they are "waiting for data" more than 10% of the week, your org is under-invested in Data Engineering.'
             ],
             [
@@ -199,7 +199,7 @@ tracks8Modules['data-economics/8-8'] = m('8-8', 'Data Lake Strategy', 'Calculati
         l('The Economics of Schema-on-Read', 
             [
                 'Traditional Data Warehouses require you to structure the data perfectly before you load it (Schema-on-Write). This requires heavy upfront engineering investment just to see if the data is useful.',
-                'Data Lakes (S3 buckets full of Parquet files) leverage Schema-on-Read. You dump raw data cheaply ($0.02/GB), and only apply expensive parsing logic if an analyst actively queries it. This defers the engineering cost until the exact moment value is requested.',
+                'Data Lakes (S3 buckets full of Parquet files) use Schema-on-Read. You dump raw data cheaply ($0.02/GB), and only apply expensive parsing logic if an analyst actively queries it. This defers the engineering cost until the exact moment value is requested.',
                 'The "Lakehouse" pattern (Databricks) combines cheap S3 storage with Warehouse-level performance, creating the optimal balance of deferred engineering cost and rapid analytical retrieval.'
             ],
             [

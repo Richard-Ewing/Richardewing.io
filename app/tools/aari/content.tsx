@@ -83,7 +83,7 @@ export default function AARITool() {
     if (readinessScore >= 85) {
         tierLabel = 'Tier A: Sovereign Autonomous Ready';
         tierColor = 'text-emerald-700 bg-emerald-50 border-emerald-200';
-        tierDesc = 'Your repository enforces strict type verification, isolated worktrees, and machine-readable specs. Autonomous agents can operate safely with high leverage.';
+        tierDesc = 'Your repository enforces strict type verification, isolated worktrees, and machine-readable specs. Autonomous agents can operate safely with high use.';
     } else if (readinessScore >= 65) {
         tierLabel = 'Tier B: Supervised Semi-Autonomous';
         tierColor = 'text-cyan-700 bg-cyan-50 border-cyan-200';

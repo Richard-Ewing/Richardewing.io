@@ -433,7 +433,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         
                         <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
                             <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
-                                <span class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-sm">📉</span> The Debt-to-Spec Leverage Equation
+                                <span class="w-8 h-8 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-sm">📉</span> The Debt-to-Spec Use Equation
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 opacity-80">
@@ -650,7 +650,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionSlug: 'ai-production-gap',
                     questionHeadline: 'Why do AI pilots succeed but production deployments fail?',
                     answerHtml: `
-                        <p>The tech industry is suffering from the <strong>AI Production Gap</strong>. A proof-of-concept AI agent built on a weekend hackathon looks revolutionary. But migrating that agent into an enterprise production environment introduces non-deterministic latency, hallucination liabilities, and explosive inference costs.</p>
+                        <p>The tech industry is suffering from the <strong>AI Production Gap</strong>. A proof-of-concept AI agent built on a weekend hackathon looks breakthrough. But migrating that agent into an enterprise production environment introduces non-deterministic latency, hallucination liabilities, and explosive inference costs.</p>
                         
                         <h3 class="text-xl font-bold mt-8 mb-4">Bridging the Gap</h3>
                         <p>To bridge the Production Gap, CTOs must abandon "velocity-first" prototyping and adopt <strong>Deterministic AI Systems</strong>. This means implementing hard boundaries: token quotas, fallback deterministic logic paths, and strict evaluation-driven deployment (EDD) pipelines.</p>
@@ -950,7 +950,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
                         <ul class="list-disc pl-6 space-y-2 mb-6">
                             <li><strong>Day 1-30:</strong> Extract the Style Matrix. Before generating output, run a pre-processing prompt that analyzes the user's data and extracts 5 explicit formatting rules (e.g., vocabulary grade level, paragraph length, punctuation quirks).</li>
-                            <li><strong>Day 31-60:</strong> Implement Negative Few-Shot Prompting. LLMs learn faster from what they are told *not* to do. Explicitly ban words like "delve", "testament", and "tapestry" in the system prompt.</li>
+                            <li><strong>Day 31-60:</strong> Implement Negative Few-Shot Prompting. LLMs learn faster from what they are told *not* to do. Explicitly ban words like "explore", "testament", and "tapestry" in the system prompt.</li>
                             <li><strong>Day 61-90:</strong> If prompt engineering fails to override the RLHF flattening, you must advance to PEFT (Parameter-Efficient Fine-Tuning). Use LoRA to fine-tune a small model exclusively on the user's stylistic data to permanently bake the behavioral cadence into the model weights.</li>
                         </ul>
                     `,
@@ -1166,7 +1166,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                                 <span class="w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-sm">💡</span> Synthesis ROI Equation
                             </h4>
                             <div class="bg-white/5 p-6 rounded-xl border border-white/10 text-center">
-                                <h5 class="text-zinc-950 font-semibold font-bold mb-2">The Arbitrage Leverage Play</h5>
+                                <h5 class="text-zinc-950 font-semibold font-bold mb-2">The Arbitrage Use Play</h5>
                                 <p class="text-sm text-zinc-900 font-medium mb-4 px-4">Pay top-tier prices (GPT-4o) locally for a short 48-hour burn cycle to generate 100k highly specific QA embeddings. Fine-tune a free 8B local model. Shift 80% of customer inference traffic to the local model indefinitely.</p>
                                 <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-widest">
                                     Breakeven Often < 3 Weeks
@@ -1515,10 +1515,10 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         </ul>
 
                         <h3 class="text-xl font-bold mt-8 mb-4">Defending DX Budget</h3>
-                        <p>When asking for budget to improve DX, tie it explicitly to developer retention and payroll leverage. "We are spending $5M a year on engineering payroll. By investing $150k in a dedicated DX internal tooling squad, we will reduce build times by 50%, immediately returning $400k worth of previously idle developer capacity."</p>
+                        <p>When asking for budget to improve DX, tie it explicitly to developer retention and payroll use. "We are spending $5M a year on engineering payroll. By investing $150k in a dedicated DX internal tooling squad, we will reduce build times by 50%, immediately returning $400k worth of previously idle developer capacity."</p>
                     `,
                     recommendedProductId: 'module_leadership',
-                    upsellHeadline: 'Optimize Your Developer Leverage.'
+                    upsellHeadline: 'Optimize Your Developer Use.'
                 }
             ],
             'founder-ceo': [
@@ -1561,7 +1561,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         </ul>
 
                         <h3 class="text-xl font-bold mt-8 mb-4">The Scaling Heuristic</h3>
-                        <p>If your startup is losing market share because competitors are leveraging new technologies you don't understand, you have a CTO problem. However, if your codebase is a mess, features that should take 2 weeks are taking 3 months, developers are consistently missing deadlines, and departmental coordination is chaotic - you do not need a visionary CTO. You need a ruthless, operationally grounded VP of Engineering to establish cadence and enforce accountability.</p>
+                        <p>If your startup is losing market share because competitors are using new technologies you don't understand, you have a CTO problem. However, if your codebase is a mess, features that should take 2 weeks are taking 3 months, developers are consistently missing deadlines, and departmental coordination is chaotic - you do not need a visionary CTO. You need a ruthless, operationally grounded VP of Engineering to establish cadence and enforce accountability.</p>
                     `,
                     recommendedProductId: 'gut_check',
                     upsellHeadline: 'Need to diagnose your leadership gap? Let\'s talk.'

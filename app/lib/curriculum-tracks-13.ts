@@ -106,7 +106,7 @@ tracks13Modules['ai-agent-economics/13-6'] = m('13-6', 'AI Multi-Agent Systems S
             [
                 'Running one agent is a Python script. Running 50,000 agents concurrently responding to enterprise data streams is a distributed systems nightmare that most organizations underestimate.',
                 'If every agent requires its own localized prompt matrix and memory cache, horizontally scaling agents rapidly exhausts the Redis cache and SQL connection limits of the underlying architecture.',
-                'Effective scaling demands Agentic Orchestration - leveraging tools like Temporal to ensure agents can suspend execution, wait for external API webhooks, and wake up without burning active server memory.'
+                'Effective scaling demands Agentic Orchestration - using tools like Temporal to ensure agents can suspend execution, wait for external API webhooks, and wake up without burning active server memory.'
             ],
             [
                 d('Agent Suspension CapEx', 'The infrastructure required to safely "pause" an agent mid-thought without losing context.', 'Driven by State machines'),

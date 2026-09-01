@@ -70,7 +70,7 @@ export const AsSeenIn = () => {
                                 />
                             </a>
                         ))}
-                        {/* Set 2 (for seamless loop) */}
+                        {/* Set 2 (for direct loop) */}
                         {publications.map((pub) => (
                             <a
                                 key={`${pub.name}-2`}

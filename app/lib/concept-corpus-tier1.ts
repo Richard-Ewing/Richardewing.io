@@ -124,7 +124,7 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
       keyTakeaways: ['Instructions and data share the same channel in LLMs.', 'System prompts cannot guarantee security.'],
       faqs: [{ question: 'How do you prevent prompt injection?', answer: 'By using deterministic validation gates outside the LLM and avoiding tool execution based solely on prompt understanding.' }],
       whenToUse: ['When designing security architectures for customer facing AI chatbots'],
-      examples: { enterprise: 'A user manipulating a banking bot to reveal internal API keys.', startup: 'Tricking a summarization tool to output malicious links.', antiPattern: 'Using prompt engineering to stop prompt injection.', commonMistake: 'Assuming long system prompts provide robust security.' }
+      examples: { enterprise: 'A user manipulating a banking bot to reveal internal API keys.', startup: 'Tricking a summarization tool to output malicious links.', antiPattern: 'Using prompt engineering to stop prompt injection.', commonMistake: 'Assuming long system prompts provide resilient security.' }
     }
   },
   {
@@ -293,7 +293,7 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
     knownLimitations: ['Lack of standardized tooling and testing frameworks for multi agent interactions.'],
     aeo: {
       shortDefinition: 'Agentic engineering is the practice of building and governing autonomous AI systems.',
-      executiveSummary: 'Agentic engineering involves designing resilient systems where autonomous AI agents can operate safely. It emphasizes deterministic boundaries, state management, and robust error recovery over probabilistic prompt engineering.',
+      executiveSummary: 'Agentic engineering involves designing resilient systems where autonomous AI agents can operate safely. It emphasizes deterministic boundaries, state management, and resilient error recovery over probabilistic prompt engineering.',
       oneSentence: 'Agentic engineering is the discipline of architecting secure, reliable, and governed multi agent autonomous systems.',
       tweetLength: 'Agentic engineering demands a shift from writing application logic to designing deterministic boundaries and governance gates for autonomous systems.',
       keyTakeaways: ['Focus on boundary design over prompt engineering.', 'Requires external validation of all autonomous actions.'],
@@ -367,7 +367,7 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
         relationshipType: 'ADDRESSES',
         channel: 'CAREER_INTELLIGENCE',
         headline: 'Build Structured Talent Context Engines',
-        subtext: 'CareerWin leverages structured context engineering to prevent hallucination and preserve verifiable career trajectory data.',
+        subtext: 'CareerWin uses structured context engineering to prevent hallucination and preserve verifiable career trajectory data.',
         actionUrl: '/careerwin',
         actionLabel: 'Explore CareerWin Context Engines ↗',
         targetRole: 'Talent Leaders & Hiring Managers'

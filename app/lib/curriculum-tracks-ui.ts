@@ -281,7 +281,7 @@ export const tracks = [
             { id: '12-2', name: '12.2 Compensation Economics', topics: 'Pay Band Analysis, Equity Valuation, Total Comp Modeling, RSU vs Options', href: '/vault/curriculum/tracks/career-capital/12-2' },
             { id: '12-3', name: '12.3 The Business Case for Promotion', topics: 'Quantified Impact Dossiers, P&L Outcomes, Translating Code to Revenue', href: '/vault/curriculum/tracks/career-capital/12-3' },
             { id: '12-4', name: '12.4 Navigating Layoff Economics', topics: 'Severance Math, Risk Indicators, Cost Center vs Profit Center Positioning', href: '/vault/curriculum/tracks/career-capital/12-4' },
-            { id: '12-5', name: '12.5 The Senior Engineer P&L', topics: 'Measuring Leverage, Technical Debt Prevention ROI, Architecture Impact', href: '/vault/curriculum/tracks/career-capital/12-5' },
+            { id: '12-5', name: '12.5 The Senior Engineer P&L', topics: 'Measuring Use, Technical Debt Prevention ROI, Architecture Impact', href: '/vault/curriculum/tracks/career-capital/12-5' },
             { id: '12-6', name: '12.6 Staff Engineer as Capital Allocator', topics: 'Cross-Team Influence Economics, RFC ROI, Platform Strategy Ownership', href: '/vault/curriculum/tracks/career-capital/12-6' },
             { id: '12-7', name: '12.7 The Cost of Career Stagnation', topics: 'Opportunity Cost Modeling, Market Rate Drift, Skill Depreciation Curves', href: '/vault/curriculum/tracks/career-capital/12-7' },
             { id: '12-8', name: '12.8 Negotiation Using Economic Frameworks', topics: 'Anchoring with Data, Competing Offers, Equity vs Cash Tradeoffs', href: '/vault/curriculum/tracks/career-capital/12-8' },
@@ -405,7 +405,7 @@ export const tracks = [
         modules: [
             { id: '18-1', name: '18.1 SaaS Sprawl Cost Analysis', topics: 'Shadow IT Quantification, License Waste, Overlapping Tool Audit', href: '/vault/curriculum/tracks/vendor-economics/18-1' },
             { id: '18-2', name: '18.2 Vendor Consolidation ROI', topics: 'Platform vs Best-of-Breed, Consolidation Savings, Migration Costs', href: '/vault/curriculum/tracks/vendor-economics/18-2' },
-            { id: '18-3', name: '18.3 Contract Negotiation Economics', topics: 'Leverage Point Analysis, Quarter-End Timing, Competitive Positioning', href: '/vault/curriculum/tracks/vendor-economics/18-3' },
+            { id: '18-3', name: '18.3 Contract Negotiation Economics', topics: 'Use Point Analysis, Quarter-End Timing, Competitive Positioning', href: '/vault/curriculum/tracks/vendor-economics/18-3' },
             { id: '18-4', name: '18.4 Cloud Commitment Strategy', topics: 'Reserved vs On-Demand, Savings Plan Economics, Commitment Risk Analysis', href: '/vault/curriculum/tracks/vendor-economics/18-4' },
             { id: '18-5', name: '18.5 Renewal vs Replacement Analysis', topics: 'Switching Cost Calculation, Feature Parity Assessment, Total Migration TCO', href: '/vault/curriculum/tracks/vendor-economics/18-5' },
             { id: '18-6', name: '18.6 Procurement Process Optimization', topics: 'Procurement Cycle Time, Legal Review Bottlenecks, Security Assessment Costs', href: '/vault/curriculum/tracks/vendor-economics/18-6' },
@@ -502,7 +502,7 @@ export const tracks = [
         subtitle: 'Track 22  -  Leadership',
         description: 'Leadership is the awesome responsibility to see those around us rise. Most of us achieved our rank because we were good at our old job  -  but that\'s not our job anymore. This track teaches the economics of becoming a leader who multiplies value, not just manages resources.',
         modules: [
-            { id: '22-1', name: '22.1 The Leadership Multiplier Effect', topics: 'IC Output vs Leader Output, Leverage Economics, Value Multiplication Framework', href: '/vault/curriculum/tracks/strategic-leadership/22-1' },
+            { id: '22-1', name: '22.1 The Leadership Multiplier Effect', topics: 'IC Output vs Leader Output, Use Economics, Value Multiplication Framework', href: '/vault/curriculum/tracks/strategic-leadership/22-1' },
             { id: '22-2', name: '22.2 From Technical Expert to Strategic Leader', topics: 'The Identity Shift, Letting Go of the Keyboard, Strategic Thinking Economics', href: '/vault/curriculum/tracks/strategic-leadership/22-2' },
             { id: '22-3', name: '22.3 Building & Leading High-Performance Teams', topics: 'Team Composition Economics, Cognitive Diversity Premium, Psychological Safety ROI', href: '/vault/curriculum/tracks/strategic-leadership/22-3' },
             { id: '22-4', name: '22.4 The Economics of Trust & Delegation', topics: 'Trust Building Costs, Delegation ROI, Micromanagement Tax, Autonomy Premium', href: '/vault/curriculum/tracks/strategic-leadership/22-4' },

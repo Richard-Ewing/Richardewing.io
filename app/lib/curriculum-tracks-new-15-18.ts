@@ -511,11 +511,11 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 l('Lesson 3: SaaS Rationalization Roadmap', 'After audit and discovery, build the rationalization roadmap: (1) Quick wins (cancel unused licenses this month), (2) Consolidation (pick one tool per category, migrate teams within 90 days), (3) Negotiation (for remaining tools, renegotiate contracts based on actual usage). Target: 20-30% total SaaS spend reduction.', [
                     d('Quick Wins', 'Cancel zero-usage and single-user licenses immediately.', 'Typical savings: 5-10% of total SaaS budget with zero effort'),
                     d('Consolidation', 'For each category with multiple tools, select one. Migrate within 90 days.', 'Typical savings: 10-15% through elimination of duplicates'),
-                    d('Renegotiation', 'Armed with actual usage data, renegotiate all remaining contracts.', 'Typical savings: 5-10% through right-sizing and competitive leverage')
+                    d('Renegotiation', 'Armed with actual usage data, renegotiate all remaining contracts.', 'Typical savings: 5-10% through right-sizing and competitive use')
                 ], 'Build a SaaS rationalization roadmap with quick wins, consolidation targets, and renegotiation opportunities. Present total savings.')
             ]
         ],
-        ['18-2', 'Vendor Consolidation ROI', 'Fewer vendors means lower costs, less management overhead, and better negotiating leverage.',
+        ['18-2', 'Vendor Consolidation ROI', 'Fewer vendors means lower costs, less management overhead, and better negotiating use.',
             ['Evaluate platform vs best-of-breed', 'Calculate consolidation savings', 'Manage migration risks', 'Negotiate from strength'],
             [
                 l('Lesson 1: Platform vs Best-of-Breed Decision', 'The eternal debate: one platform that does everything adequately vs. best-of-breed tools for each function. Platforms reduce integration costs and management overhead but limit flexibility. Best-of-breed provides superior functionality but multiplies vendor relationships and integration complexity.', [
@@ -523,11 +523,11 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                     d('Best-of-Breed Advantages', 'Each tool is the best available for its function.', 'But integration costs between 10 tools: $50-200K in ongoing engineering'),
                     d('The Middle Path', 'Platform for core functions, best-of-breed for high-differentiation needs.', 'Typically: 1-2 platforms + 3-5 specialist tools = optimal')
                 ], 'Map your current tool environment on the platform vs best-of-breed spectrum. Identify 3 best-of-breed tools that a platform could replace.'),
-                l('Lesson 2: Consolidation Savings Model', 'Consolidation savings = Eliminated tool licenses + Eliminated integration maintenance + Reduced vendor management overhead + Negotiating leverage improvement on remaining vendors. For a 50-engineer team consolidating from 25 to 12 tools: typical savings of $100-200K/year.', [
+                l('Lesson 2: Consolidation Savings Model', 'Consolidation savings = Eliminated tool licenses + Eliminated integration maintenance + Reduced vendor management overhead + Negotiating use improvement on remaining vendors. For a 50-engineer team consolidating from 25 to 12 tools: typical savings of $100-200K/year.', [
                     d('Direct License Savings', 'Sum of licenses for eliminated tools.', 'Usually 20-40% of current total spend'),
                     d('Integration Savings', 'Reduced engineering time maintaining integrations between tools.', '2-4 weeks of engineering time freed per eliminated integration'),
-                    d('Leverage Improvement', 'Higher spend with fewer vendors = better volume discounts.', '$100K with one vendor gets better pricing than $20K with five')
-                ], 'Model the consolidation savings for your organization: direct, integration, and leverage improvements.'),
+                    d('Use Improvement', 'Higher spend with fewer vendors = better volume discounts.', '$100K with one vendor gets better pricing than $20K with five')
+                ], 'Model the consolidation savings for your organization: direct, integration, and use improvements.'),
                 l('Lesson 3: Migration Risk Management', 'Consolidation requires migrating teams off of tools they chose and love. Migration risks: (1) Productivity dip during transition (2-4 weeks), (2) Data loss if migration is botched, (3) Team resistance (people hate losing their favorite tools). Mitigation: phase the migration, provide training, and acknowledge the loss.', [
                     d('Phased Migration', 'Move one team at a time, not the whole organization at once.', 'Each team provides feedback that improves the next team\'s migration'),
                     d('Champion Model', 'Find 1-2 early adopters in each team who learn the new tool first and help their teammates.', 'Peer influence is 10x more effective than management mandates'),
@@ -536,12 +536,12 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
             ]
         ],
         ['18-3', 'Contract Negotiation Economics', 'You\'re leaving 20-40% on the table in every vendor negotiation  -  here\'s how to take it back.',
-            ['Build negotiation leverage', 'Time negotiations strategically', 'Structure win-win deals', 'Manage multi-year commitments'],
+            ['Build negotiation use', 'Time negotiations strategically', 'Structure win-win deals', 'Manage multi-year commitments'],
             [
-                l('Lesson 1: Leverage Engineering', 'Negotiating leverage comes from three sources: (1) Competitive alternatives (you can credibly switch), (2) Volume (you spend enough for them to care), (3) Timing (they need to close the deal more than you need to sign it). Maximize all three before sitting at the negotiating table.', [
+                l('Lesson 1: Use Engineering', 'Negotiating use comes from three sources: (1) Competitive alternatives (you can credibly switch), (2) Volume (you spend enough for them to care), (3) Timing (they need to close the deal more than you need to sign it). Maximize all three before sitting at the negotiating table.', [
                     d('Competitive Proof', 'Run a genuine POC on a competing product before renewal negotiations.', 'Having real data on an alternative creates credible switching threat'),
-                    d('Volume Positioning', 'Combine multiple teams\' spend into a single contract for volume leverage.', 'A $200K/year deal gets VP-level attention. 5 × $40K deals don\'t.'),
-                    d('Timeline Leverage', 'Negotiate 2-3 months before expiry  -  enough time for alternatives but close enough to create urgency.', 'The later you wait, the weaker your leverage becomes')
+                    d('Volume Positioning', 'Combine multiple teams\' spend into a single contract for volume use.', 'A $200K/year deal gets VP-level attention. 5 × $40K deals don\'t.'),
+                    d('Timeline Use', 'Negotiate 2-3 months before expiry  -  enough time for alternatives but close enough to create urgency.', 'The later you wait, the weaker your use becomes')
                 ], 'Prepare for your most important vendor renewal: build competitive proof, consolidate volume, and plan the timing.'),
                 l('Lesson 2: Negotiation Tactics for Engineering Leaders', 'Engineering leaders negotiate differently than procurement: (1) Lead with technical requirements, not price, (2) Ask for product roadmap commitments in writing, (3) Negotiate SLA penalties and uptime guarantees, (4) Get data portability and API commitments contractually. Price comes last  -  after you\'ve secured everything that protects your engineering team.', [
                     d('Roadmap Commitments', 'Get specific features committed with delivery dates in the contract.', 'Verbal roadmap promises are worthless. Contractual commitments are enforceable.'),

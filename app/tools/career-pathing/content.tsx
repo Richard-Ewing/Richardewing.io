@@ -264,7 +264,7 @@ export default function CareerPathingContent() {
                                             className="px-8 py-4 rounded-xl relative bg-white overflow-hidden group border border-white hover:border-zinc-500 transition-all font-bold text-black text-sm font-semibold uppercase tracking-widest shrink-0"
                                         >
                                             <span className="relative z-10 flex items-center gap-3">
-                                                Unlock Vault Curriculum <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                                Access Vault Curriculum <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                             </span>
                                             <div className="absolute inset-0 w-full h-full bg-zinc-200 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                                         </Link>

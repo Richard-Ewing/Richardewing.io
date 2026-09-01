@@ -103,9 +103,9 @@ tracks20Modules['system-design/20-5'] = m('20-5', 'Architecture Defensibility', 
     ['Defend against vendor lock-in', 'Own the domain layer'], [
         l('The AWS Golden Handcuffs', 
             [
-                'Rapid adoption of heavy proprietary cloud primitives (e.g., DynamoDB, AWS Cognito, Google Spanner, SQS) permanently binds your application architecture to a single vendor. This completely obliterates your leverage during contract negotiations.', 
+                'Rapid adoption of heavy proprietary cloud primitives (e.g., DynamoDB, AWS Cognito, Google Spanner, SQS) permanently binds your application architecture to a single vendor. This completely obliterates your use during contract negotiations.', 
                 'Architectural defensibility requires constructing strict Hexagonal Architecture boundaries. Your core business logic must never import massive cloud SDKs directly. You must build thin Interface Repositories that wrap the cloud logic safely.',
-                'By abstracting data storage and identity verification behind strict interfaces, you gain the operational leverage to credibly threaten a massive migration to a competitor if your cloud invoice spirals out of control.'
+                'By abstracting data storage and identity verification behind strict interfaces, you gain the operational use to credibly threaten a massive migration to a competitor if your cloud invoice spirals out of control.'
             ],
             [
                 d('Cloud Portability Window', 'The theoretical amount of time required to lift-and-shift to Azure or GCP.', '< 3 Months Target'),
@@ -117,7 +117,7 @@ tracks20Modules['system-design/20-5'] = m('20-5', 'Architecture Defensibility', 
                 question: 'How do strict Interface boundaries (Hexagonal Architecture) reduce cloud costs?',
                 options: ['By compressing data automatically', 'By preventing direct codebase entanglement with proprietary SDKs, allowing the firm to credibly threaten migration during price negotiations', 'By optimizing AWS Lambda execution speeds', 'By making code compile natively to c++'],
                 correctIndex: 1,
-                explanation: 'A company cannot aggressively negotiate an Enterprise Discount if the cloud provider knows rewriting the application would take two years. Isolation creates leverage.'
+                explanation: 'A company cannot aggressively negotiate an Enterprise Discount if the cloud provider knows rewriting the application would take two years. Isolation creates use.'
             }
         )
     ], '/vault/curriculum/tracks/system-design/20-6', undefined, 'live'
@@ -172,7 +172,7 @@ tracks20Modules['system-design/20-7'] = m('20-7', 'CQRS & Event Sourcing Ceiling
 );
 
 tracks20Modules['system-design/20-8'] = m('20-8', 'CDN Data Transit Pricing', 'Edge Nodes, Cross-Region Transit Tax.', t20, 
-    ['Calculate Egress bounds', 'Leverage Cloudflare'], [
+    ['Calculate Egress bounds', 'Use Cloudflare'], [
         l('The Devastating S3 Inter-Region Tax', 
             [
                 'Moving raw data between AWS Availability Zones costs actual money. Serving massive raw assets directly out of an S3 bucket to end users over the internet is financial suicide that will bankrupt an application at scale.', 

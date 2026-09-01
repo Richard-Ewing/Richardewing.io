@@ -294,7 +294,7 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
           </section>
         )}
 
-        {/* Elevated Canonical Research Position Stance */}
+        {/* Improved Canonical Research Position Stance */}
         {concept.positionStatement && (
           <section className="bg-gradient-to-r from-zinc-950 via-cyan-950 to-zinc-950 text-white border-2 border-cyan-700 rounded-3xl p-8 space-y-4 shadow-md">
             <div className="flex items-center gap-2 font-mono text-xs font-bold text-cyan-300 uppercase tracking-widest">

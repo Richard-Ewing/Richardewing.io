@@ -89,7 +89,7 @@ export const HiringStore = {
         } else if (total <= 20) {
             verdict = `L6: STAFF ${roleTitle}`;
             if (isEng) {
-                rationale = "Exceptional capital stewardship. Prioritizes ROI, Leverage, and Capital Efficiency across the system. Thinks in terms of organizational impact.";
+                rationale = "Exceptional capital stewardship. Prioritizes ROI, Use, and Capital Efficiency across the system. Thinks in terms of organizational impact.";
             } else {
                 rationale = "Drives portfolio-level strategy. Aligns engineering efforts with Enterprise Value. Understands the economic engine behind product decisions.";
             }
@@ -106,7 +106,7 @@ export const HiringStore = {
             // Score >= 23 (Consistent L8 performance)
             verdict = `L8: DISTINGUISHED ${roleTitle}`;
             if (isEng) {
-                rationale = "Visionary technical governance. Realigns entire organizations towards solvency and leverage. Thinks at the intersection of technology, economics, and strategy.";
+                rationale = "Visionary technical governance. Realigns entire organizations towards solvency and use. Thinks at the intersection of technology, economics, and strategy.";
             } else {
                 rationale = "Executive-grade strategic foresight. Defines the market and capital allocation strategy. Transforms how the organization thinks about product-market fit.";
             }

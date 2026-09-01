@@ -131,7 +131,7 @@ export default function DeepCareersHub() {
                 <div className="mb-20 mt-32">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl sm:text-5xl font-black text-zinc-950 mb-4 tracking-tighter">The Path to Multi-Million Dollar Capitalization</h2>
-                        <p className="text-zinc-900 max-w-2xl mx-auto">This is not a bootcamp. This is the exact telemetry, math, and strategic leverage I use during $7,500/day boardroom interventions. Filtered sequentially by your commitment.</p>
+                        <p className="text-zinc-900 max-w-2xl mx-auto">This is not a bootcamp. This is the exact telemetry, math, and strategic use I use during $7,500/day boardroom interventions. Filtered sequentially by your commitment.</p>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -209,7 +209,7 @@ export default function DeepCareersHub() {
                                 
                                 <div className="mt-auto pt-4 relative z-20 text-center">
                                     <a href="/api/buy/all_access_pass" className="inline-block w-full py-3 px-6 bg-white text-black font-bold text-sm font-semibold tracking-widest uppercase rounded-lg hover:bg-gray-200 transition-colors shadow-lg shadow-white/10 hover:shadow-white/20">
-                                        Unlock The Vault
+                                        Access The Vault
                                     </a>
                                 </div>
                             </ShineBorder>

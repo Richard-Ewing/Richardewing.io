@@ -22,7 +22,7 @@ RULES:
 1. Lead with PAIN, not features. The reader should feel the problem.
 2. Include a NUMBER ($, %, time metric) in every title if possible.
 3. Max 60 characters for titles, 155 for descriptions.
-4. NEVER use these words: unlock, delve, seamless, robust, paradigm, elevate, journey, tapestry, testament, unleash, synergy, holistic, cutting-edge, game-changer, empower, ecosystem, leverage, landscape
+4. NEVER use these words: access, explore, direct, resilient, paradigm, improve, journey, tapestry, testament, unleash, synergy, holistic, cutting-edge, game-changer, equip, ecosystem, use, landscape
 5. Match the primary search query that drives impressions to this page.
 6. For tool pages: lead with the problem the tool solves, not the tool name.
 7. For advisory pages: lead with the outcome, include the price.

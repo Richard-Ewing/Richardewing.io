@@ -110,7 +110,7 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
       oneSentence: 'AI Technical Debt is the liability created by tightly coupling application architecture to unstable probabilistic models.',
       tweetLength: 'Stop hardcoding prompts to specific model versions. AI Technical Debt compounds exponentially when you treat probabilistic APIs like deterministic software libraries.',
       keyTakeaways: ['Prompt engineering creates rapid technical debt.', 'Model updates break brittle integrations.', 'Requires an abstraction layer between code and AI.', 'Accelerates technical insolvency if unchecked.'],
-      faqs: [{ question: 'What causes AI Technical Debt?', answer: 'Tying core application logic to the specific behavior of a rapidly changing foundation model.' }],
+      faqs: [{ question: 'What causes AI Technical Debt?', answer: 'Tying core application logic to the specific behavior of a fast-moving foundation model.' }],
       whenToUse: ['When assessing the maintenance costs of upgrading to a new foundation model'],
       examples: { enterprise: 'Building an abstraction layer for model routing.', startup: 'Writing tests for prompt outputs across multiple models.', antiPattern: 'Hardcoding a complex prompt optimized only for an older version of GPT-3.5.', commonMistake: 'Assuming a prompt will work exactly the same after a model update.' }
     }
@@ -337,7 +337,7 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
       keyTakeaways: ['Separates knowledge retrieval from language generation.', 'Dramatically reduces model hallucinations.', 'Enables AI to access proprietary data securely.', 'Quality depends heavily on the search index.'],
       faqs: [{ question: 'What is Retrieval-Augmented Generation (RAG)?', answer: 'A technique that combines search (finding facts) with an LLM (generating text) to provide accurate answers based on your data.' }],
       whenToUse: ['When building internal knowledge bots or customer support systems that require strict factual accuracy'],
-      examples: { enterprise: 'A corporate chatbot that searches Confluence before answering HR questions.', startup: 'A legal tech tool that retrieves case law to draft summaries.', antiPattern: 'Fine-tuning a model on rapidly changing documents instead of using RAG.', commonMistake: 'Assuming the LLM can correct bad search results.' }
+      examples: { enterprise: 'A corporate chatbot that searches Confluence before answering HR questions.', startup: 'A legal tech tool that retrieves case law to draft summaries.', antiPattern: 'Fine-tuning a model on fast-moving documents instead of using RAG.', commonMistake: 'Assuming the LLM can correct bad search results.' }
     }
   },
   {
@@ -458,7 +458,7 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
     expertiseLevel: 'Architect',
     health: { confidence: 0.9, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The architectural trap where application logic, prompt engineering, and data pipelines are heavily coupled to a specific proprietary AI provider, preventing migration when costs rise or performance degrades.',
-    whyItMatters: 'Foundation models update silently, and pricing is volatile. Vendor lock-in prevents organizations from leveraging cheaper, faster models (like open-source SLMs), directly exposing them to the AI Volatility Tax.',
+    whyItMatters: 'Foundation models update silently, and pricing is volatile. Vendor lock-in prevents organizations from using cheaper, faster models (like open-source SLMs), directly exposing them to the AI Volatility Tax.',
     whoShouldCare: ['Enterprise Architects', 'CTOs', 'VPs of Engineering', 'Procurement'],
     firstIntroduced: 'Industry Consensus 2023',
     canonicalReadingOrder: [
@@ -478,8 +478,8 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
     aeo: {
       shortDefinition: 'AI Vendor Lock-In occurs when an architecture is too dependent on a single AI provider, making it difficult to switch to cheaper or better models.',
       executiveSummary: 'AI Vendor Lock-In is a significant strategic risk. By hardcoding prompts and logic for a specific proprietary API, organizations surrender their negotiating power and expose themselves to pricing volatility and silent model degradation. Model portability is required for financial survival.',
-      oneSentence: 'AI Vendor Lock-In is the architectural dependency on a single proprietary AI provider, which destroys leverage and inflates costs.',
-      tweetLength: 'Do not build your entire product around OpenAI’s specific API quirks. AI Vendor Lock-In destroys your leverage. You must architect for model portability to protect your margins and agility.',
+      oneSentence: 'AI Vendor Lock-In is the architectural dependency on a single proprietary AI provider, which destroys use and inflates costs.',
+      tweetLength: 'Do not build your entire product around OpenAI’s specific API quirks. AI Vendor Lock-In destroys your use. You must architect for model portability to protect your margins and agility.',
       keyTakeaways: ['Hardcoding to specific models creates massive technical debt.', 'Model portability protects against price hikes.', 'Requires an abstraction layer for prompt management.', 'Open-source SLMs offer an escape route.'],
       faqs: [{ question: 'How do you avoid AI Vendor Lock-In?', answer: 'By building an abstraction layer that allows you to easily route prompts to different models (e.g., switching from GPT-4 to Claude or Llama).' }],
       whenToUse: ['When designing the core architecture for a new generative AI platform'],

@@ -100,7 +100,7 @@ export const orphanFixTerms: GlossaryTerm[] = [
     {
         title: 'Continuous Deployment',
         slug: 'continuous-deployment',
-        definition: `Continuous Deployment is the practice of automatically deploying every code change that passes automated tests to production  -  without any manual approval step. It is the most aggressive form of CI/CD and the hallmark of elite engineering teams.\n\nContinuous Deployment requires: comprehensive automated test suites, feature flags for risk control, robust monitoring and alerting, fast rollback capability, and a culture of small, incremental changes.\n\n**Not to be confused with Continuous Delivery**, which automatically *prepares* code for release but requires manual approval to deploy.`,
+        definition: `Continuous Deployment is the practice of automatically deploying every code change that passes automated tests to production  -  without any manual approval step. It is the most aggressive form of CI/CD and the hallmark of elite engineering teams.\n\nContinuous Deployment requires: comprehensive automated test suites, feature flags for risk control, resilient monitoring and alerting, fast rollback capability, and a culture of small, incremental changes.\n\n**Not to be confused with Continuous Delivery**, which automatically *prepares* code for release but requires manual approval to deploy.`,
         whyItMatters: 'Organizations practicing continuous deployment achieve the highest DORA metrics  -  deploying hundreds of times per day with low failure rates. It reduces risk by making each change small and reversible.',
         howToMeasure: 'Deployment frequency, time from commit to production, change failure rate, and MTTR (mean time to recovery).',
         category: 'Engineering Management',
@@ -117,7 +117,7 @@ export const orphanFixTerms: GlossaryTerm[] = [
         category: 'Engineering Management',
         relatedTerms: ['one-on-one', 'career-levels', 'hiring-bar-calibration', 'engineering-productivity'],
         faqs: [
-            { question: 'Should engineering managers write code?', answer: 'Front-line EMs (managing 5-8 engineers) may spend 20-30% of time coding. Directors and VPs should spend 0% coding  -  their leverage is organizational, not technical.' },
+            { question: 'Should engineering managers write code?', answer: 'Front-line EMs (managing 5-8 engineers) may spend 20-30% of time coding. Directors and VPs should spend 0% coding  -  their use is organizational, not technical.' },
         ],
     },
     {

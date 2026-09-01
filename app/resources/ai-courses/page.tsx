@@ -145,8 +145,8 @@ const tracks = [
         textColor: 'text-amber-400',
         description: 'Bring AI fluency into classrooms, teams, and organizations.',
         courses: [
-            { name: 'AI Fluency for Educators', url: 'https://anthropic.skilljar.com/ai-fluency-for-educators', provider: 'Anthropic', description: 'Empowers faculty and educational leaders to apply AI Fluency in teaching.', editorial: 'If you\'re responsible for upskilling a team, start here - then use it as a template for your own training programs.' },
-            { name: 'Teaching AI Fluency', url: 'https://anthropic.skilljar.com/teaching-ai-fluency', provider: 'Anthropic', description: 'Empowers academic faculty to teach and assess AI Fluency in instructor-led settings.', editorial: 'The "train the trainer" course. For organizations building internal AI education programs.' },
+            { name: 'AI Fluency for Educators', url: 'https://anthropic.skilljar.com/ai-fluency-for-educators', provider: 'Anthropic', description: 'Equips faculty and educational leaders to apply AI Fluency in teaching.', editorial: 'If you\'re responsible for upskilling a team, start here - then use it as a template for your own training programs.' },
+            { name: 'Teaching AI Fluency', url: 'https://anthropic.skilljar.com/teaching-ai-fluency', provider: 'Anthropic', description: 'Equips academic faculty to teach and assess AI Fluency in instructor-led settings.', editorial: 'The "train the trainer" course. For organizations building internal AI education programs.' },
             { name: 'AI Fluency for Students', url: 'https://anthropic.skilljar.com/ai-fluency-for-students', provider: 'Anthropic', description: 'Develop AI Fluency skills that enhance learning, career planning, and academic success.', editorial: 'Recommend to junior engineers and new graduates. Sets the right foundation for AI-augmented work.' },
             { name: 'AI Fluency for Nonprofits', url: 'https://anthropic.skilljar.com/ai-fluency-for-nonprofits', provider: 'Anthropic', description: 'Develop AI fluency to increase organizational impact while staying true to mission.', editorial: 'Purpose-built for mission-driven organizations. Covers ethical considerations unique to nonprofit AI adoption.' },
         ],
@@ -366,7 +366,7 @@ export default function AiCoursesPage() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a href="/api/buy/practitioner_certification" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-lg hover:opacity-90 transition-opacity text-sm shadow-sm">
-                                Unlock AI Practitioner Pass ($249) →
+                                Access AI Practitioner Pass ($249) →
                             </a>
                             <Link href="/tools/aueb" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
                                 Run AUEB Profitability Audit →

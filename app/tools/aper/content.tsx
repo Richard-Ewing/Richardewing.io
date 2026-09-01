@@ -506,7 +506,7 @@ export default function APERTool() {
                                                 <div className="text-xs font-bold font-medium text-zinc-950 font-bold mt-1">ARR needed for $600K/eng</div>
                                             </div>
                                             <div className="bg-zinc-100 rounded-xl p-4">
-                                                <div className="text-sm font-semibold font-medium text-zinc-950 mb-1">Leverage Ratio</div>
+                                                <div className="text-sm font-semibold font-medium text-zinc-950 mb-1">Use Ratio</div>
                                                 <div className="text-2xl font-bold text-purple-900 font-extrabold font-semibold">{results.leverageRatio.toFixed(1)}x</div>
                                                 <div className="text-xs font-bold font-medium text-zinc-950 font-bold mt-1">Revenue per $ eng spend</div>
                                             </div>
@@ -660,7 +660,7 @@ export default function APERTool() {
                                             </div>
                                             <div className="relative z-10 w-full">
                                                 <h4 className="text-zinc-950 font-bold mb-2">Freeze Middle-Management Roles</h4>
-                                                <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">Adding Engineering Managers before unlocking IC leverage only compounds your coordination tax.</p>
+                                                <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">Adding Engineering Managers before accessing IC use only compounds your coordination tax.</p>
                                                 <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
                                                     <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                         <Zap size={10} /> Execution Directive
@@ -726,7 +726,7 @@ export default function APERTool() {
                     frameworkName="The Innovation Tax"
                     frameworkDescription="The APER highlights the Innovation Tax at scale. When headcount expands but velocity drops, you are paying a coordination tax that masquerades as R&D investment."
                     exogramRisk="Organizational Entropy"
-                    exogramDescription="Stop throwing engineers at architectural problems. Exogram enforces structural boundaries so you can scale leverage without scaling headcount."
+                    exogramDescription="Stop throwing engineers at architectural problems. Exogram enforces structural boundaries so you can scale use without scaling headcount."
                 />
             </div>
             

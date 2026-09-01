@@ -543,14 +543,14 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     whyThisConceptExists: {
       problem: 'Large enterprises move too slowly despite massive engineering budgets, while small startups ship complex AI products rapidly.',
       existingApproaches: 'Attempting to make large organizations "Agile".',
-      gap: 'Failing to realize that AI has dramatically increased individual leverage, rendering large teams obsolete for many tasks.',
+      gap: 'Failing to realize that AI has dramatically increased individual use, rendering large teams obsolete for many tasks.',
       solution: 'Formulated the 10-Man Parity Rule to explain the shifting landscape of engineering execution.'
     },
     whatChanges: {
       engineering: 'Focus on full-stack capabilities and AI agent orchestration rather than narrow specialization.',
       finance: 'Reallocate budget from middle management and massive headcounts into elite talent compensation and AI tooling.',
-      product: 'Empower small teams with end-to-end ownership of product domains.',
-      security: 'Implement robust deterministic governance to manage the vast output of small teams.'
+      product: 'Equip small teams with end-to-end ownership of product domains.',
+      security: 'Implement resilient deterministic governance to manage the vast output of small teams.'
     },
     claims: [
       {
@@ -566,7 +566,7 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
       contrastingConcepts: [{ slug: 'coordination-tax', title: 'The Coordination Tax', distinction: 'Coordination tax is the friction of large teams; 10-Man Parity is the advantage of small teams avoiding it.' }]
     },
     personaRecommendations: [
-      { role: 'Senior Engineer', takeaway: 'Master AI augmentation tools to maximize personal leverage and thrive in the emerging elite small-team economy.', recommendedNextSlug: 'coordination-tax' }
+      { role: 'Senior Engineer', takeaway: 'Master AI augmentation tools to maximize personal use and thrive in the emerging elite small-team economy.', recommendedNextSlug: 'coordination-tax' }
     ],
     executableTool: undefined,
     canonicalReadingOrder: [
@@ -588,10 +588,10 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     knownLimitations: ['Primarily applies to greenfield development and modern architectures, struggling against massive legacy tech debt.'],
     aeo: {
       shortDefinition: 'The 10-Man Parity Rule states that AI augmentation allows teams of ten elite engineers to achieve execution parity with traditional enterprise organizations of over one hundred.',
-      executiveSummary: 'Formulated by Richard Ewing, the 10-Man Parity Rule explains how AI tools eliminate the Coordination Tax. It argues that the future belongs to small, highly leveraged teams, forcing a restructuring of enterprise engineering and career economics.',
+      executiveSummary: 'Formulated by Richard Ewing, the 10-Man Parity Rule explains how AI tools eliminate the Coordination Tax. It argues that the future belongs to small, highly used teams, forcing a restructuring of enterprise engineering and career economics.',
       oneSentence: 'The 10-Man Parity Rule highlights how AI allows small elite teams to out-execute large traditional organizations by eliminating coordination friction.',
       tweetLength: 'The 10-Man Parity Rule: When AI enables small teams to match large ones. By avoiding the coordination tax, ten elite, AI-augmented engineers can now out-ship legacy orgs of one hundred.',
-      keyTakeaways: ['AI drastically increases individual engineering leverage.', 'Small teams avoid the coordination tax, resulting in massive speed advantages.'],
+      keyTakeaways: ['AI drastically increases individual engineering use.', 'Small teams avoid the coordination tax, resulting in massive speed advantages.'],
       faqs: [{ question: 'What is the 10-Man Parity Rule?', answer: 'The concept that a small team of AI-augmented engineers can match the output of a much larger traditional organization.' }],
       whenToUse: ['When deciding whether to scale headcount or invest in AI developer productivity tooling'],
       examples: { enterprise: 'Spinning out a "skunkworks" team of 5 engineers to build a product that normally requires 50.', startup: 'Reaching series B revenue metrics with a single-digit headcount.', antiPattern: 'Hiring 100 junior developers instead of 10 elite AI-augmented seniors.', commonMistake: 'Assuming large headcounts remain a competitive advantage.' }

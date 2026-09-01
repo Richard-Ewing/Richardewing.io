@@ -100,8 +100,8 @@ tracks7Modules['cloud-finops/7-5'] = m('7-5', 'FinOps & Cloud Margin Engineering
     ], '/vault/curriculum/tracks/cloud-finops/7-6', undefined, 'live'
 );
 
-tracks7Modules['cloud-finops/7-6'] = m('7-6', 'Multi-Cloud Arbitrage & Negotiation', 'Evaluating the negotiation leverage of multi-cloud capability, avoiding the "Lowest Common Denominator" trap, and Egress data economics.', t14, 
-    ['Determine the true cost of Multi-Cloud translation', 'Leverage Enterprise Commitment Discounts', 'Map API lock-in vectors'], [
+tracks7Modules['cloud-finops/7-6'] = m('7-6', 'Multi-Cloud Arbitrage & Negotiation', 'Evaluating the negotiation use of multi-cloud capability, avoiding the "Lowest Common Denominator" trap, and Egress data economics.', t14, 
+    ['Determine the true cost of Multi-Cloud translation', 'Use Enterprise Commitment Discounts', 'Map API lock-in vectors'], [
         l('The Multi-Cloud Mirage', 
             [
                 'Enterprises frequently mandate "Multi-Cloud" (running concurrently on AWS and GCP) to avoid vendor lock-in. From a FinOps perspective, this is often a catastrophic decision.',

@@ -122,11 +122,11 @@ export default function ProtocolInitialization() {
                                 <h3 className="text-2xl font-bold text-zinc-950 mb-2 group-hover:text-indigo-900 font-extrabold font-semibold transition-colors">Product Management</h3>
                                 <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-6">
                                     <strong>For PMs, Group PMs, and Directors.</strong><br /><br />
-                                    Assess ability to leverage <strong>AI-Assisted Engineering</strong>. Focus on <strong>Unit Economics</strong> and <strong>Strategic Governance</strong>, not rote memorization.
+                                    Assess ability to use <strong>AI-Assisted Engineering</strong>. Focus on <strong>Unit Economics</strong> and <strong>Strategic Governance</strong>, not rote memorization.
                                     Can they drive value with new tools?
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-8">
-                                    {['STRATEGY', 'ECONOMICS', 'LEVERAGE'].map(tag => (
+                                    {['STRATEGY', 'ECONOMICS', 'EXECUTION'].map(tag => (
                                         <span key={tag} className="px-2 py-1 bg-indigo-500/10 border border-indigo-500/20 rounded text-xs font-bold font-medium font-mono text-indigo-900 font-extrabold font-semibold">
                                             {tag}
                                         </span>
@@ -164,7 +164,7 @@ export default function ProtocolInitialization() {
                                 <p className="text-zinc-950 leading-relaxed font-mono text-sm font-semibold md:text-base">
                                     We must stop testing for <strong className="text-zinc-900">Construction</strong> (writing code/product specs) and start testing for <strong className="text-zinc-900">Verification</strong> (auditing outcomes).
                                     <br /><br />
-                                    Engineering is now about reviewing AI-generated code for scale and solvency. Product Management is no longer about rote product sense, but leveraging AI-assisted engineering to drive value.
+                                    Engineering is now about reviewing AI-generated code for scale and solvency. Product Management is no longer about rote product sense, but using AI-assisted engineering to drive value.
                                     The Fiduciary Protocol™ measures the only three signals that remain scarce: <span className="text-emerald-900 font-extrabold font-semibold border-b border-emerald-500/50">Skepticism</span>, <span className="text-emerald-900 font-extrabold font-semibold border-b border-emerald-500/50">System Thinking</span>, and <span className="text-emerald-900 font-extrabold font-semibold border-b border-emerald-500/50">Capital Stewardship</span>.
                                 </p>
                             </div>

@@ -63,7 +63,7 @@ export default function ChoosingEnterpriseAIInfrastructure() {
                         Enterprise AI infrastructure must be evaluated on its ability to enforce organizational policy at the network layer. If a developer can bypass your cost constraints by simply changing a URL in their code, your infrastructure is fundamentally broken.
                     </p>
                     <p>
-                        A robust enterprise AI architecture requires:
+                        A resilient enterprise AI architecture requires:
                     </p>
                     <ul className="list-disc pl-6 space-y-2 text-zinc-800">
                         <li><strong className="text-zinc-950">A Unified API Gateway:</strong> All LLM requests must pass through a single choke point that enforces identity, rate limits, and budget caps before the request reaches the model provider.</li>

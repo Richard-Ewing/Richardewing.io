@@ -367,7 +367,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       'What is the standard acceptable variance for semantic similarity scores in enterprise applications?'
     ],
     knownLimitations: [
-      'Building robust golden datasets is labor-intensive.',
+      'Building resilient golden datasets is labor-intensive.',
       'Running comprehensive eval suites on every commit can incur significant API costs.'
     ],
     provenanceTimeline: [
@@ -812,7 +812,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       }
     },
     personaRecommendations: [
-      { role: 'Architect', takeaway: 'Build robust data capture pipelines that isolate verified human actions.', recommendedNextSlug: 'negative-carry-code-crisis' }
+      { role: 'Architect', takeaway: 'Build resilient data capture pipelines that isolate verified human actions.', recommendedNextSlug: 'negative-carry-code-crisis' }
     ]
   }
 ];

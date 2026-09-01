@@ -32,7 +32,7 @@ export default function CurriculumTracksLayout({ children }: { children: React.R
                             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gradient-to-r from-violet-600 to-indigo-600 text-zinc-950 font-semibold font-bold text-xs font-bold hover:opacity-90 transition-opacity shadow-md"
                         >
                             <Sparkles className="w-3 h-3" />
-                            Unlock All 23 Tracks  -  $999
+                            Access All 23 Tracks  -  $999
                         </a>
                     </div>
                 </div>

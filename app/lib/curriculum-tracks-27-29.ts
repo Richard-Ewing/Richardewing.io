@@ -150,7 +150,7 @@ tracks27to29Modules['28-8'] = m('28-8', 'API Economy Destruction', 'Bypassing AP
     ['Bypass corporate integrations', 'Treat the website as the API'], [
         l('The UI as the Final Interface', 
             ['SaaS companies want you to pay $5,000/mo for API access. An autonomous agent equipped with Playwright logs into the UI as a normal human and extracts reality. 100% of the web is now programmatic, whether an API exists or not.'],
-            [d('API Licensing Cost Avoidance', 'ROI of ignoring official enterprise tier pricing.', 'Maximum leverage')], 'Program an agent to click through a UI portal that actively refused you API access.', undefined, undefined)
+            [d('API Licensing Cost Avoidance', 'ROI of ignoring official enterprise tier pricing.', 'Maximum use')], 'Program an agent to click through a UI portal that actively refused you API access.', undefined, undefined)
     ], '/vault/curriculum/tracks/28/28-9', undefined, 'live'
 );
 

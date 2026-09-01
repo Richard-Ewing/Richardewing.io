@@ -148,7 +148,7 @@ tracks9Modules['engineering-leadership/9-8'] = m('9-8', 'Performance Management 
                  // Minimal definitions
             ],
             'Execute an OKR purge for the upcoming quarter.',
-            ['Force every engineering squad to delete their bottom 5 tracked objectives.', 'Concentrate 100% of the team\'s focus on a maximum of 3 high-leverage technical goals that explicitly drive revenue or system stability.']
+            ['Force every engineering squad to delete their bottom 5 tracked objectives.', 'Concentrate 100% of the team\'s focus on a maximum of 3 high-use technical goals that explicitly drive revenue or system stability.']
         )
     ], '/vault/curriculum/tracks/engineering-leadership/9-9', undefined, 'live'
 );

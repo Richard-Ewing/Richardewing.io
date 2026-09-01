@@ -43,10 +43,10 @@ tracks18to22Modules['fullstack-career/18-4'] = m('18-4', 'Client vs Server Rende
 );
 
 tracks18to22Modules['fullstack-career/18-5'] = m('18-5', 'The Promotion Calculus', 'Business outcomes, impact translation.', t18, 
-    ['Speak EBITDA', 'Align technical wins with business leverage'], [
+    ['Speak EBITDA', 'Align technical wins with business use'], [
         l('Promotions are Economic Transactions', 
-            ['You do not get promoted for writing clean code. You get promoted for delivering massive organizational leverage. Translating your pull requests into financial wins is the only path to Staff Engineer.'],
-            [d('Leverage Score', 'Engineers unblocked by your infra.', '>10')], 'Write your promo doc using strictly dollars/hours saved.', undefined, undefined)
+            ['You do not get promoted for writing clean code. You get promoted for delivering massive organizational use. Translating your pull requests into financial wins is the only path to Staff Engineer.'],
+            [d('Use Score', 'Engineers unblocked by your infra.', '>10')], 'Write your promo doc using strictly dollars/hours saved.', undefined, undefined)
     ], '/vault/curriculum/tracks/fullstack-career/18-6', undefined, 'live'
 );
 
@@ -231,7 +231,7 @@ tracks18to22Modules['system-design/20-7'] = m('20-7', 'CQRS & Event Sourcing Cei
 );
 
 tracks18to22Modules['system-design/20-8'] = m('20-8', 'CDN Data Transit Pricing', 'Edge Nodes, Cross-Region Transit Tax.', t20, 
-    ['Calculate Egress bounds', 'Leverage Cloudflare'], [
+    ['Calculate Egress bounds', 'Use Cloudflare'], [
         l('The S3 Inter-Region Tax', 
             ['Moving data across AWS Availability Zones costs money. Serving raw assets directly out of an S3 bucket to end users is financial suicide. Put Cloudflare in front of it.'],
             [d('CDN Cache Load', 'Percentage of assets served from edge.', '> 95%')], 'Audit your direct S3 GET volume and insert a CDN.', undefined, undefined)
@@ -389,7 +389,7 @@ tracks18to22Modules['engineering-culture/22-6'] = m('22-6', 'Fully Distributed E
 tracks18to22Modules['engineering-culture/22-7'] = m('22-7', 'In-Person Return ROI', 'Office Leases, Proximity Bias, Spontaneous Debugging.', t22, 
     ['Calculate desk utilization', 'Measure whiteboard momentum'], [
         l('The Whiteboard Premium', 
-            ['Certain systems architectures are solved 10x faster in person. However, forcing engineers to commute 2 hours to sit on Zoom calls in an open office destroys value. Leverage office space strictly for collaborative sprints.'],
+            ['Certain systems architectures are solved 10x faster in person. However, forcing engineers to commute 2 hours to sit on Zoom calls in an open office destroys value. Use office space strictly for collaborative sprints.'],
             [d('Collaborative Value', 'Offices used strictly for design, not IC output.', 'Design Sprints')], 'Survey engineers on what specific tasks are improved by the office space.', undefined, undefined)
     ], '/vault/curriculum/tracks/engineering-culture/22-8', undefined, 'live'
 );

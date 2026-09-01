@@ -139,7 +139,7 @@ export function calculateScore(answers: Record<number, number>): AssessmentResul
 
       case 'engineering':
         if (score >= 75) {
-          finding = 'High engineering leverage. Standardized prompt contracts and automated context pruning preserve velocity.';
+          finding = 'High engineering use. Standardized prompt contracts and automated context pruning preserve velocity.';
           actionableSteps = [
             'Track context rot metrics during multi-file automated refactoring.',
             'Standardize team-wide repository context rules (.cursorrules / RFC contracts).',
@@ -164,7 +164,7 @@ export function calculateScore(answers: Record<number, number>): AssessmentResul
 
       case 'risk':
         if (score >= 75) {
-          finding = 'Hardened runtime architecture. Robust input sanitization, rate limiting, and SLM fallbacks are active.';
+          finding = 'Hardened runtime architecture. Resilient input sanitization, rate limiting, and SLM fallbacks are active.';
           actionableSteps = [
             'Conduct quarterly red-teaming against prompt injection and multi-agent jailbreaks.',
             'Maintain dynamic SLA fallback routing between primary and secondary LLM providers.',
@@ -200,7 +200,7 @@ export function calculateScore(answers: Record<number, number>): AssessmentResul
           actionableSteps = [
             'Align CTO and CFO on a single metric: AI Gross Margin per Active User (AUEB).',
             'Require financial ROI models for every proposed AI feature before allocating engineering sprints.',
-            'Conduct quarterly R&D capital audits to reallocate budget from low-margin AI features to core high-leverage workflows.'
+            'Conduct quarterly R&D capital audits to reallocate budget from low-margin AI features to core high-use workflows.'
           ];
         } else {
           finding = 'OpEx misalignment. AI initiatives operate as unmonitored R&D projects without gross margin targets or payback metrics.';

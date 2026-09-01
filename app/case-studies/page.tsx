@@ -180,9 +180,9 @@ const caseStudies = [
         tags: ['Model Context Protocol', 'OWASP MCP Top 10', 'Tool Poisoning', 'Exogram Gateway'],
     },
     {
-        id: 'pr-review-gridlock-unlocked',
+        id: 'pr-review-gridlock-accessed',
         badge: 'Engineering SDLC Forensics (2026)',
-        title: 'Unlocking a 300-PR Review Gridlock: Slashing 18-Day Latency to 4 Hours',
+        title: 'Accessing a 300-PR Review Gridlock: Slashing 18-Day Latency to 4 Hours',
         metric: '4 Hours',
         metricLabel: 'From 18-Day PR Review Queue',
         problem: 'A 60-engineer SaaS company adopted AI coding assistants, driving a 4x surge in pull request volume. However, senior engineers spent 45% of their working hours acting as manual compilers for sloppy AI-generated syntax, causing PR turnaround times to explode from 2 days to 18 days.',

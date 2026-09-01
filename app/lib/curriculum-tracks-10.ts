@@ -190,7 +190,7 @@ tracks10Modules['startup-economics/10-12'] = m('10-12', 'Acquisition Readiness',
 );
 
 tracks10Modules['startup-economics/10-13'] = m('10-13', 'Competition & Moat', 'Weaponizing speed-to-market against larger, slower incumbents and valuing feature-parity drag.', t10, 
-    ['Value deployment frequency', 'Leverage modern CI/CD against legacy players', 'Deploy asymmetric engineering'], [
+    ['Value deployment frequency', 'Use modern CI/CD against legacy players', 'Deploy asymmetric engineering'], [
         l('Speed as a Financial Moat', 
             [
                 'An enterprise incumbent takes 6 months to ship a database migration due to strict Change Advisory Boards (CABs). A startup can ship it in an afternoon. That delta in lead time is the only reason startups survive.',
@@ -222,7 +222,7 @@ tracks10Modules['startup-economics/10-15'] = m('10-15', 'Startup Economics Synth
         l('The Terminal Velocity Synthesis', 
             [
                 'Startup Engineering Economics is fundamentally a race against insolvency. Every architectural choice either adds days to the runway (efficiency) or generates immense lift to attract more capital (growth metrics).',
-                'A mature startup CTO treats the entire engineering department as a leveraged financial instrument. You are converting investor capital directly into enterprise equity value through the medium of software.',
+                'A mature startup CTO treats the entire engineering department as a used financial instrument. You are converting investor capital directly into enterprise equity value through the medium of software.',
                 'If the software cannot aggressively scale revenue faster than the server instances it requires, the economic engine fails. Profit margin is an architectural constraint.'
             ],
             [

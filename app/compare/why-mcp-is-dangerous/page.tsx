@@ -41,7 +41,7 @@ const risks = [
     {
         title: 'Confused Deputy & Over-Permissioning',
         severity: 'HIGH',
-        desc: 'The confused deputy problem: MCP servers perform actions with their own (often elevated) privileges rather than the user\'s. Combined with default over-permissioning, agents get far more access than any task requires.',
+        desc: 'The confused deputy problem: MCP servers perform actions with their own (often improved) privileges rather than the user\'s. Combined with default over-permissioning, agents get far more access than any task requires.',
         example: 'An MCP server with database access can execute arbitrary queries using its own credentials, bypassing the user\'s permission scope entirely.',
         color: 'bg-orange-50 border-orange-200',
     },
@@ -138,7 +138,7 @@ export default function WhyMCPIsDangerousPage() {
                     <div className="space-y-3">
                         {[
                             { q: 'Should I stop using MCP entirely?', a: 'No. MCP is powerful infrastructure. But it needs governance. The solution is not to avoid MCP - it\'s to govern MCP access the same way you govern API access: with scoping, verification, and audit trails.' },
-                            { q: 'What is a confused deputy attack in MCP?', a: 'A confused deputy attack occurs when an MCP server performs actions using its own elevated privileges rather than the user\'s. Without least-privilege enforcement, the server can access databases, APIs, and files that the user never authorized. This is the most common form of MCP over-permissioning.' },
+                            { q: 'What is a confused deputy attack in MCP?', a: 'A confused deputy attack occurs when an MCP server performs actions using its own improved privileges rather than the user\'s. Without least-privilege enforcement, the server can access databases, APIs, and files that the user never authorized. This is the most common form of MCP over-permissioning.' },
                             { q: 'What is MCP tool poisoning?', a: 'Tool poisoning is when malicious instructions are hidden in MCP tool descriptions or response data. When the AI agent reads these descriptions, the hidden instructions override system prompts and redirect agent behavior - essentially an MCP-specific form of prompt injection.' },
                             { q: 'Does Anthropic provide MCP security?', a: 'Anthropic provides the MCP protocol and some basic permission prompts. But there are no capability manifests, no file guards, no supply chain verification, and no comprehensive audit trails built into the default experience.' },
                             { q: 'How quickly can credentials be exposed?', a: 'In documented incidents, credential exposure happened in under 60 seconds after MCP server connection. The server requested filesystem access, read .env, and the credentials were exposed with no warning.' },

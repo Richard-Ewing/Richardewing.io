@@ -112,10 +112,10 @@ tracks22Modules['culture/22-5'] = m('22-5', 'The 10x Developer Illusion', 'Syste
                 d('Cleverness Penalty', 'The extensive future maintenance cost of writing deeply obscure, non-standard code.', 'Massively negative ROI')
             ], 
             'Redefine criteria for Senior and Staff engineering promotions entirely around systemic organizational multiplication.', 
-            ['Penalize code reviews that favor obscure, "clever" one-liners over incredibly dense, highly readable resilience.', 'Promote the engineer who spent 3 days setting up an automated staging environment that saves every other developer 20 minutes a day.', 'Track leverage, not raw syntax volume.'], 
+            ['Penalize code reviews that favor obscure, "clever" one-liners over incredibly dense, highly readable resilience.', 'Promote the engineer who spent 3 days setting up an automated staging environment that saves every other developer 20 minutes a day.', 'Track use, not raw syntax volume.'], 
             {
                 question: 'How does a true "10x Engineer" operate in an elite enterprise environment?',
-                options: ['By writing all the complex code themselves over the weekend', 'By acting as an organizational multiplier - automating bottlenecks, writing pristine documentation, and elevating the velocity of the developers around them', 'By learning the newest, highly experimental Javascript framework', 'By avoiding all meetings'],
+                options: ['By writing all the complex code themselves over the weekend', 'By acting as an organizational multiplier - automating bottlenecks, writing pristine documentation, and improving the velocity of the developers around them', 'By learning the newest, highly experimental Javascript framework', 'By avoiding all meetings'],
                 correctIndex: 1,
                 explanation: 'Raw typing speed does not scale a company. Multiplying the effective output of an entire squad by eliminating architectural friction provides exponential corporate returns.'
             }
@@ -175,7 +175,7 @@ tracks22Modules['culture/22-8'] = m('22-8', 'The Compensation Trap', 'Salary sta
     ['Align compensation heavily to inflation', 'Prevent architectural flight'], [
         l('The Cost of Systemic Resignation', 
             [
-                'When a company caps annual engineering raises at 3% to "save budget," they force their absolute best, highest-leverage senior developers to interview externally to secure a 20% market-rate correction.', 
+                'When a company caps annual engineering raises at 3% to "save budget," they force their absolute best, highest-use senior developers to interview externally to secure a 20% market-rate correction.', 
                 'When that elite senior engineer resigns, the company loses deep, irreplaceable domain knowledge. They must then spend $20,000 on recruiter fees, hire a replacement at the highly-inflated external market rate anyway, and endure 6 months of negative velocity while the new hire learns the fragmented architecture.',
                 'Refusing to proactively compensate elite internal talent is not a cost-saving measure; it is a mathematically guaranteed formula for inciting massive, expensive corporate churn and inducing catastrophic technical debt.'
             ],

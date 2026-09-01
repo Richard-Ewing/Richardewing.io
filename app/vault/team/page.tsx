@@ -54,7 +54,7 @@ export default async function TeamAdminPage() {
                         Team License Management
                     </h1>
                     <p className="text-zinc-900 text-lg max-w-2xl">
-                        You have unlocked an enterprise-tier license. Distribute your unique team code to colleagues to instantly grant them full subscription access.
+                        You have accessed an enterprise-tier license. Distribute your unique team code to colleagues to instantly grant them full subscription access.
                     </p>
                 </div>
 

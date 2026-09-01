@@ -68,7 +68,7 @@ export default function JoinTeamPage() {
                             Claim Enterprise Seat
                         </h1>
                         <p className="text-zinc-900 text-sm">
-                            Enter the secure team code provided by your administrator to instantly unlock full curriculum and platform access.
+                            Enter the secure team code provided by your administrator to instantly access full curriculum and platform access.
                         </p>
                     </div>
 
@@ -112,7 +112,7 @@ export default function JoinTeamPage() {
                                 {status === 'loading' ? (
                                     <span className="animate-pulse">Verifying Code...</span>
                                 ) : (
-                                    <>Join Team & Unlock Vault <ArrowRight className="w-4 h-4" /></>
+                                    <>Join Team & Access Vault <ArrowRight className="w-4 h-4" /></>
                                 )}
                             </button>
                         )}

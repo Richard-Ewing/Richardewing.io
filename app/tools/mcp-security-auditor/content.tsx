@@ -81,7 +81,7 @@ export default function MCPAuditorTool() {
         tierColor = 'bg-emerald-50 text-emerald-800 border-emerald-200';
         recommendation = 'Strong security posture. Ensure monthly manifest hash re-validation and SAST scanning.';
     } else if (totalRiskScore < 60) {
-        vulnerabilityTier = 'Elevated Lateral Movement Risk';
+        vulnerabilityTier = 'Improved Lateral Movement Risk';
         tierColor = 'bg-amber-50 text-amber-800 border-amber-200';
         recommendation = 'Pin all tool schemas and restrict unmanaged community MCP servers to read-only environments.';
     }

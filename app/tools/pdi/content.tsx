@@ -495,7 +495,7 @@ Migrate from Heroku to AWS"
                                             </span>
                                         ) : (
                                             <span className="px-3 py-1.5 rounded-full bg-cyan-900/30 text-cyan-900 font-extrabold font-semibold border border-cyan-900/50 text-xs font-bold uppercase tracking-widest">
-                                                ✓ HIGH LEVERAGE
+                                                ✓ HIGH EFFICIENCY
                                             </span>
                                         )}
                                     </div>
@@ -945,7 +945,7 @@ Migrate from Heroku to AWS"
                             
                             <h3 className="text-3xl font-bold text-zinc-950 mb-2 font-grotesk tracking-tight">Limit Reached.</h3>
                             <p className="text-zinc-900 text-sm font-semibold mb-8 leading-relaxed">
-                                You have consumed your allocation of 3 free diagnostic audits. Unlock the Full Library to save unlimited board-ready PDF reports directly to your Vault.
+                                You have consumed your allocation of 3 free diagnostic audits. Access the Full Library to save unlimited board-ready PDF reports directly to your Vault.
                             </p>
                             
                             <div className="space-y-3">
@@ -954,7 +954,7 @@ Migrate from Heroku to AWS"
                                     onClick={() => setShowPaywall(false)}
                                     className="flex items-center justify-center w-full py-4 bg-cyan-500 text-black font-bold uppercase tracking-widest text-xs font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(6,182,212,0.2)] hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] hover:scale-[1.02]"
                                 >
-                                    Unlock Library for $199
+                                    Access Library for $199
                                 </a>
                                 <button 
                                     onClick={() => setShowPaywall(false)} 

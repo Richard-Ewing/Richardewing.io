@@ -110,7 +110,7 @@ export default async function VaultPage() {
                                 Welcome back, <span className="text-cyan-900 font-extrabold font-semibold">{user.firstName || 'Strategist'}</span>
                             </h1>
                             <p className="text-zinc-900 max-w-2xl text-lg">
-                                Access your unlocked advisory assets and board-ready PDF diagnostic reports.
+                                Access your accessed advisory assets and board-ready PDF diagnostic reports.
                             </p>
                         </div>
                     </div>
@@ -334,7 +334,7 @@ export default async function VaultPage() {
                                         <BookOpen className="w-8 h-8 text-zinc-950 font-bold mx-auto mb-3" />
                                         <h3 className="text-lg font-bold text-zinc-950 mb-2">No Premium Assets Yet</h3>
                                         <p className="text-sm font-semibold text-zinc-900 font-medium mb-6 max-w-md mx-auto">
-                                            Unlock the curriculum, premium playbooks, or advisory resources to see them beautifully organized here.
+                                            Access the curriculum, premium playbooks, or advisory resources to see them beautifully organized here.
                                         </p>
                                         <Link href="/vault/curriculum/tracks" className="inline-flex items-center justify-center px-6 py-2 bg-white text-black text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-cyan-400 transition-colors">
                                             Browse Library
@@ -479,13 +479,13 @@ export default async function VaultPage() {
                                         </div>
                                         
                                         {toolRuns.length >= 3 ? (
-                                            <p className="text-xs font-bold text-zinc-900 font-bold mb-4">Limit reached. Unlock the library to generate unlimited diagnostic reports.</p>
+                                            <p className="text-xs font-bold text-zinc-900 font-bold mb-4">Limit reached. Access the library to generate unlimited diagnostic reports.</p>
                                         ) : (
                                             <p className="text-xs font-bold text-zinc-900 font-bold mb-4">{3 - toolRuns.length} board-ready reports remaining this month.</p>
                                         )}
                                         
                                         <a href="/api/buy/full_curriculum" className={`block text-center w-full py-2 text-xs font-bold font-medium font-bold uppercase tracking-widest rounded transition-all ${toolRuns.length >= 3 ? 'bg-cyan-500 text-black shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:bg-cyan-400' : 'bg-zinc-50 border border-zinc-400 hover:border-cyan-500/50 text-zinc-900'}`}>
-                                            Unlock Unlimited
+                                            Access Unlimited
                                         </a>
                                     </div>
                                 </div>
@@ -499,9 +499,9 @@ export default async function VaultPage() {
                                         <h3 className="font-bold text-zinc-950 group-hover:text-violet-400 transition-colors">Full Library Access</h3>
                                         <Lock className="w-3 h-3 text-zinc-950 font-bold group-hover:text-violet-400" />
                                     </div>
-                                    <p className="text-xs font-bold text-zinc-900 font-bold mb-4">Unlock all 218 modules across 18 curriculum tracks. Lifetime access.</p>
+                                    <p className="text-xs font-bold text-zinc-900 font-bold mb-4">Access all 218 modules across 18 curriculum tracks. Lifetime access.</p>
                                     <a href="/api/buy/full_curriculum" className="block text-center w-full py-2 bg-zinc-50 hover:bg-violet-600 text-zinc-950 hover:text-white text-xs font-bold uppercase tracking-widest rounded transition-colors">
-                                        Unlock for $999
+                                        Access for $999
                                     </a>
                                 </div>
                             )}

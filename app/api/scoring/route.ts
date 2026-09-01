@@ -58,7 +58,7 @@ ${observations.join("; ")}
 
 INSTRUCTIONS:
 Write a concise, 4-sentence paragraph explaining the hiring decision.
-Use terms like "Capital Risk," "Leverage," "Technical Insolvency," and "Judgment."
+Use terms like "Capital Risk," "Use," "Technical Insolvency," and "Judgment."
 Do not use HR fluff. Be ruthless and direct.
 `;
 

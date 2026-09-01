@@ -20,7 +20,7 @@ export default async function AssetsPage() {
     const hasAllAccess = user.publicMetadata?.has_yearly_subscription === true || user.publicMetadata?.is_team_admin === true;
     const unlockedAssets = (user.publicMetadata?.unlocked_assets as string[]) || [];
 
-    // Filter available assets based on unlocks (or all if they have the subscription pass)
+    // Filter available assets based on accesses (or all if they have the subscription pass)
     const availableAssets = hasAllAccess 
         ? SKILLS 
         : SKILLS.filter(skill => unlockedAssets.includes(skill.slug));

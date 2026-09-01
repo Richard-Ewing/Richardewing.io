@@ -492,7 +492,7 @@ jobs:
                     chart_type: "text_only",
                     grading: {
                         l3_example: "We should build it quickly to stay competitive.",
-                        l6_example: "Sales saying 'it's killing deals' is anecdotal. I'd (1) Pull actual win/loss data for the last 90 days to quantify real impact. (2) Talk to 5 lost prospects to see if the feature was actually the deciding factor. (3) Assess if cloning the feature plays to our strengths or gets us into a feature-parity arms race we can't win. (4) Consider if there's an asymmetric response - solving the same problem in a way that leverages our unique architecture. Copying is the most expensive strategy because you never catch up.",
+                        l6_example: "Sales saying 'it's killing deals' is anecdotal. I'd (1) Pull actual win/loss data for the last 90 days to quantify real impact. (2) Talk to 5 lost prospects to see if the feature was actually the deciding factor. (3) Assess if cloning the feature plays to our strengths or gets us into a feature-parity arms race we can't win. (4) Consider if there's an asymmetric response - solving the same problem in a way that uses our unique architecture. Copying is the most expensive strategy because you never catch up.",
                         rubric: "Does the candidate validate the sales claim with data? Do they avoid reactive copying? Do they consider asymmetric competitive responses?"
                     }
                 },

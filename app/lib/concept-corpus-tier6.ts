@@ -66,7 +66,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       type: 'Diagnostic Calculator'
     },
     claims: [
-      { statement: 'Converting technical debt to financial debt accelerates executive intervention.', confidence: 0.95, counterarguments: ['Financializing technical concepts confuses non-technical stakeholders.'], supportingData: 'Case studies showing immediate budget unlocks for refactoring post-PDI presentation.' }
+      { statement: 'Converting technical debt to financial debt accelerates executive intervention.', confidence: 0.95, counterarguments: ['Financializing technical concepts confuses non-technical stakeholders.'], supportingData: 'Case studies showing immediate budget accesses for refactoring post-PDI presentation.' }
     ],
     graphRelations: {
       prerequisites: [{ slug: 'feature-bloat-calculus', title: 'Feature Bloat Calculus' }],
@@ -795,7 +795,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       }
     },
     canonicalQuote: 'If your architecture cannot guarantee a positive gross margin, it is a broken architecture.',
-    positionStatement: 'We must elevate financial viability to the same level of architectural importance as security and uptime.',
+    positionStatement: 'We must improve financial viability to the same level of architectural importance as security and uptime.',
     claims: [
       { statement: 'Treating margin as an engineering problem prevents business model failure in AI companies.', confidence: 0.95, counterarguments: ['Engineers should focus on user experience; finance should worry about margin.'], supportingData: 'Startups failing due to runaway API costs despite high user growth.' }
     ],
@@ -1449,7 +1449,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       }
     },
     canonicalQuote: 'Do not ask your engineers to build an AI feature until you have asked your AI Economist if you can afford it.',
-    positionStatement: 'Every enterprise deploying generative AI at scale must empower an AI Economist with veto authority over architectural decisions.',
+    positionStatement: 'Every enterprise deploying generative AI at scale must equip an AI Economist with veto authority over architectural decisions.',
     claims: [
       { statement: 'Organizations that employ AI Economists will structurally outcompete those that treat AI purely as an engineering challenge.', confidence: 0.95, counterarguments: ['Standard engineering leaders will eventually learn the economics.'], supportingData: 'The rising demand for FinOps-trained architects in the job market.' }
     ],

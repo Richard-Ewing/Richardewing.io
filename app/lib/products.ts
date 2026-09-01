@@ -27,7 +27,7 @@ export const PRODUCTS: Record<string, Product> = {
     },
     // --- DIAGNOSTIC TOOLS ---
     tools_library_unlock: {
-        name: 'Diagnostic Tools Library Unlock',
+        name: 'Diagnostic Tools Library Access',
         description: 'Unlimited access to all diagnostic tools (PDI, AUEB, APER, EV-SE). Generate unlimited board-ready reports.',
         price: 19900, // $199.00
         mode: 'payment',
@@ -449,7 +449,7 @@ export const PRODUCTS: Record<string, Product> = {
     },
     guide_eng_productivity_metrics: {
         name: 'Engineering Productivity Metrics 2026',
-        description: 'DORA and SPACE are a start, but incomplete. See how high-performing teams measure true leverage.',
+        description: 'DORA and SPACE are a start, but incomplete. See how high-performing teams measure true use.',
         price: 2900, mode: 'payment',
         paymentLink: 'https://buy.stripe.com/5kQ3cogHs3jc5lz3FK2B20p',
     },

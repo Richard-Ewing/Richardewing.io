@@ -369,7 +369,7 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                     </p>
                     <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
                         <a href="/api/buy/all_access_pass" className="w-full sm:w-auto py-5 px-12 bg-white text-black font-black text-sm font-semibold tracking-widest uppercase rounded-xl hover:bg-gray-200 transition-colors shadow-lg shadow-white/10 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]">
-                            Unlock Full Execution Architecture
+                            Access Full Execution Architecture
                         </a>
                     </div>
                     <p className="mt-6 text-xs font-bold font-medium text-zinc-950 font-bold font-mono tracking-widest uppercase border border-zinc-400 bg-zinc-50 px-4 py-2 rounded-full inline-block">

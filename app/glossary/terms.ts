@@ -243,7 +243,7 @@ The key challenge with agentic AI is governance: when an AI agent makes a decisi
         whyItMatters: `Agentic AI promises massive productivity gains but introduces new governance, liability, and cost risks. Organizations deploying AI agents without proper oversight frameworks risk regulatory, legal, and financial consequences.`,
         faqs: [
             { question: 'What is agentic AI?', answer: 'Agentic AI is artificial intelligence that can autonomously plan, reason, and take actions to achieve goals  -  going beyond simple chatbot responses to independently execute complex workflows.' },
-            { question: 'Is agentic AI safe?', answer: 'Agentic AI requires robust governance frameworks. Without proper oversight, AI agents can make costly mistakes, create liability, and take actions that conflict with organizational goals.' }
+            { question: 'Is agentic AI safe?', answer: 'Agentic AI requires resilient governance frameworks. Without proper oversight, AI agents can make costly mistakes, create liability, and take actions that conflict with organizational goals.' }
         ],
         relatedTerms: ['artificial-intelligence', 'ai-governance', 'ai-hallucination', 'large-language-model'],
     },
@@ -544,7 +544,7 @@ CI/CD is the foundation of modern software delivery. Teams with mature CI/CD pip
 
 Successful digital transformation requires alignment across technology, processes, people, and culture. Most digital transformations fail not because of technology but because of organizational resistance, unclear strategy, or poor change management.
 
-For CIOs and board members, digital transformation is no longer optional  -  it's a survival requirement. Companies that haven't transformed digitally face competitive obsolescence, talent flight, and inability to leverage AI capabilities.`,
+For CIOs and board members, digital transformation is no longer optional  -  it's a survival requirement. Companies that haven't transformed digitally face competitive obsolescence, talent flight, and inability to use AI capabilities.`,
         whyItMatters: `In 2026, digital transformation is the prerequisite for AI adoption, competitive agility, and talent retention. Companies that haven't transformed face existential risk from digitally-native competitors.`,
         faqs: [
             { question: 'What is digital transformation?', answer: 'Digital transformation is fundamentally changing how a business operates and delivers value through digital technology  -  beyond just digitizing existing processes.' },
@@ -701,7 +701,7 @@ The 4 Laws of Probabilistic Software Development (coined by Richard Ewing) addre
 A traditional RPA bot breaks if a vendor changes their invoice template. An APA agent simply reads the new invoice, understands the structural change, extracts the data, and proceeds with the workflow without human intervention or reprogramming.
 
 However, APA introduces massive governance risks. Because the agents interpret data probabilistically rather than deterministically, they require strict Execution Layers and boundary monitoring to prevent autonomous hallucination cascades.`,
-        whyItMatters: `APA represents the shift from 'scripted efficiency' to 'autonomous operations'. Organizations deploying APA realize 10x the operational leverage of legacy RPA, but require entirely new architectures to govern the unpredictable nature of the agents.`,
+        whyItMatters: `APA represents the shift from 'scripted efficiency' to 'autonomous operations'. Organizations deploying APA realize 10x the operational use of legacy RPA, but require entirely new architectures to govern the unpredictable nature of the agents.`,
         faqs: [
             { question: 'What is Agentic Process Automation (APA)?', answer: 'The use of autonomous AI agents instead of rigid rules-based scripts to automate complex, unstructured business workflows.' },
             { question: 'How is APA different from RPA?', answer: 'RPA requires structured data and static workflows. APA can handle unstructured data, unexpected variations, and multi-step reasoning.' }
@@ -818,7 +818,7 @@ In 2026, Model Collapse has created a massive premium on verified, purely human 
         definition: 'Workflows driven by LLMs that introduce variance into execution. Unlike deterministic automation (where inputs strictly define outputs), probabilistic automation interprets ambiguous inputs and dynamically plans execution paths.',
         whyItMatters: 'While powerful, probabilistic systems are slower, more expensive, and less reliable than rule-based systems. Product leaders must design Hybrid Architectures - using probabilistic agents to structure messy data, then handing that structured data to highly reliable deterministic pipelines (like Zapier or CI/CD).',
         faqs: [
-            { question: 'Does Agentic AI replace rule-based automation?', answer: 'No. The most robust enterprise systems use probabilistic agents as "translators" that feed into rigid deterministic automation layers.' }
+            { question: 'Does Agentic AI replace rule-based automation?', answer: 'No. The most resilient enterprise systems use probabilistic agents as "translators" that feed into rigid deterministic automation layers.' }
         ],
         relatedTerms: ['agentic-process-automation', 'ai-hallucination', 'vibe-coding']
     },
@@ -902,7 +902,7 @@ To help organizations identify their exposure, Richard Ewing provides dedicated 
 1. **The $450 Technical Insolvency Gut-Check:** A rapid, 1-hour developer-interview-driven assessment that isolates immediate code fragility, copilot dependency ratios, and baseline hallucination debt markers.
 2. **The $2,500 AI Governance & Insolvency Audit:** A deep, multi-week architecture and FinOps review that maps code contamination, calculates the exact Technical Insolvency Date, and establishes a deterministic execution control plane.
 
-Both diagnostics leverage the **Product Debt Index (PDI)** framework to quantify code risk in hard currency, enabling boards to make informed capital allocation decisions.`,
+Both diagnostics use the **Product Debt Index (PDI)** framework to quantify code risk in hard currency, enabling boards to make informed capital allocation decisions.`,
         whyItMatters: `Traditional technical debt is an engineering compromise; Hallucination Debt is a systemic business risk. When an organization runs on probabilistic software, it exposes its gross margins to unpredictable compute costs and its brand to sudden compliance failures. Left unaddressed, it leads to codebase crystallization - where developers can no longer edit the system without causing cascading failures. Quantifying this debt is the first step toward reclaiming operational control.`,
         faqs: [
             { question: 'Why don\'t traditional unit tests catch Hallucination Debt?', answer: 'Traditional unit tests are written against known scenarios and deterministic mocks. AI-generated code fails on the "unknown unknowns" - probabilistic edge cases and complex state transitions that the developer did not think to test and the AI did not model.' },

@@ -275,14 +275,14 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
         'Build a personal P&L as a leader',
     ], [
         l('From Producer to Multiplier', [
-            'As an individual contributor, your value equation is simple: hours worked × skill level × complexity of problems = value produced. As a leader, the equation fundamentally changes: team size × team capability × team alignment × organizational leverage = value produced. Your personal output is now a rounding error.',
+            'As an individual contributor, your value equation is simple: hours worked × skill level × complexity of problems = value produced. As a leader, the equation fundamentally changes: team size × team capability × team alignment × organizational use = value produced. Your personal output is now a rounding error.',
             'The math is uncomfortable but undeniable. A senior engineer producing $500K in direct value can, as a leader of 8 engineers, multiply their team\'s output by 20-40%. That\'s $800K-$1.6M in value created  -  but only if they stop doing and start enabling.',
-            'The most expensive leaders are the ones who can\'t let go. A Director who spends 30% of their time writing code is costing the organization the difference between their code output (~$150K in value) and the leadership leverage they\'re not providing (~$800K in team uplift). That\'s a $650K opportunity cost.',
+            'The most expensive leaders are the ones who can\'t let go. A Director who spends 30% of their time writing code is costing the organization the difference between their code output (~$150K in value) and the leadership use they\'re not providing (~$800K in team uplift). That\'s a $650K opportunity cost.',
         ], [
             d('Leadership Multiplier', 'Percentage uplift in team output attributable to effective leadership', '20-40% for strong leaders, -10% to 0% for weak ones'),
             d('IC Time Tax', 'Value lost when leaders do IC work instead of leading', '$400K-$800K/year for a Director-level leader'),
             d('Team Capability Uplift', 'Skill improvement rate of team members under effective leadership', '15-25% per year in measurable competency growth'),
-        ], 'Calculate your current leadership multiplier. Track how you spend your time this week  -  categorize every hour as IC work, management overhead, or leadership leverage.', [
+        ], 'Calculate your current leadership multiplier. Track how you spend your time this week  -  categorize every hour as IC work, management overhead, or leadership use.', [
             'Tracked time for one full week',
             'Categorized hours into IC/Management/Leadership',
             'Calculated current vs potential leadership multiplier',
