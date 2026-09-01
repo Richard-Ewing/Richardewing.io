@@ -93,10 +93,14 @@ const nextConfig: NextConfig = {
       // VALIDATED: competitors exist for these exact terms (TechDebtCalculator.com, Red Eagle, etc.)
       { source: '/tools/technical-debt-calculator', destination: '/tools/pdi', permanent: true },
       { source: '/tools/code-quality-calculator', destination: '/tools/pdi', permanent: true },
+      { source: '/tools/vibe-coding-debt-calculator', destination: '/tools/pdi', permanent: true },
+      { source: '/tools/synthetic-debt-calculator', destination: '/tools/pdi', permanent: true },
       // VALIDATED: "ai cost calculator" demand at all-time high per industry analysts
       { source: '/tools/ai-cost-calculator', destination: '/tools/aueb', permanent: true },
       { source: '/tools/llm-cost-calculator', destination: '/tools/aueb', permanent: true },
       { source: '/tools/ai-unit-economics-calculator', destination: '/tools/aueb', permanent: true },
+      { source: '/tools/ai-cogs-calculator', destination: '/tools/aueb', permanent: true },
+      { source: '/tools/token-cost-calculator', destination: '/tools/aueb', permanent: true },
       // VALIDATED: "revenue per engineer" used for board-level benchmarking (DX, LinearB)
       { source: '/tools/revenue-per-engineer', destination: '/tools/aper', permanent: true },
       { source: '/tools/engineering-efficiency-calculator', destination: '/tools/aper', permanent: true },
@@ -113,7 +117,10 @@ const nextConfig: NextConfig = {
       { source: '/tools/ai-workforce-impact', destination: '/tools/fte-displacement', permanent: true },
       { source: '/tools/self-host-vs-api', destination: '/tools/slm-vs-api', permanent: true },
       { source: '/tools/shadow-ai-risk-calculator', destination: '/tools/shadow-ai', permanent: true },
+      { source: '/tools/mcp-security-scanner', destination: '/tools/shadow-ai', permanent: true },
       { source: '/tools/copilot-roi-calculator', destination: '/tools/copilot-roi', permanent: true },
+      { source: '/tools/ai-pilot-roi-calculator', destination: '/tools/ai-roi-timeline', permanent: true },
+      { source: '/tools/roai-calculator', destination: '/tools/ai-roi-timeline', permanent: true },
       { source: '/tools/cloud-repatriation-calculator', destination: '/tools/cloud-repatriation', permanent: true },
       // Compare page aliases - pain-forward versions
       { source: '/compare/technical-debt-calculator-vs-sonarqube', destination: '/compare/pdi-vs-sonarqube', permanent: true },

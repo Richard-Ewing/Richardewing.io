@@ -12,6 +12,30 @@ export interface CompetitorMapping {
 
 export const COMBAT_SEO_MATRIX: CompetitorMapping[] = [
     {
+        toolSlug: 'pdi',
+        toolName: 'Product Debt Index',
+        competitors: [
+            {
+                slug: 'sonarqube',
+                name: 'SonarQube Enterprise',
+                theirFocus: 'Static code analysis and mechanical syntax complexity tracking.',
+                ourAdvantage: 'Exogram and PDI translate synthetic technical debt and vibe-coding entropy into direct enterprise valuation drag and carrying cost metrics for C-level executives.'
+            },
+            {
+                slug: 'codeclimate',
+                name: 'Code Climate Quality',
+                theirFocus: 'Engineering velocity metrics and line-by-line test coverage.',
+                ourAdvantage: 'PDI isolates architectural carrying cost and feature decay from raw code churn, proving how synthetic AI code accelerates technical insolvency.'
+            },
+            {
+                slug: 'linearb',
+                name: 'LinearB Delivery Metrics',
+                theirFocus: 'DORA metrics and developer pull request cycle times.',
+                ourAdvantage: 'PDI calculates the true balance-sheet liability of bloated codebases, demonstrating why shipping faster without architectural governance destroys enterprise value.'
+            }
+        ]
+    },
+    {
         toolSlug: 'ai-margin-analyzer',
         toolName: 'AI Margin Collapse Analyzer',
         competitors: [
@@ -38,6 +62,12 @@ export const COMBAT_SEO_MATRIX: CompetitorMapping[] = [
                 name: 'Cyberhaven',
                 theirFocus: 'Data lineage and DLP mapping across applications.',
                 ourAdvantage: 'Exogram specifically maps Generative AI data exfiltration to deterministic Local SLM solutions (Llama 3), instantly proving the ROI of Sovereign Hardware over traditional DLP blocking.'
+            },
+            {
+                slug: 'protect-ai',
+                name: 'Protect AI',
+                theirFocus: 'MLOps vulnerability scanning and model card compliance.',
+                ourAdvantage: 'Exogram executes deterministic runtime IAM boundaries on autonomous MCP loops, preventing agent privilege escalation and data exfiltration at zero API overhead.'
             }
         ]
     },
@@ -80,6 +110,18 @@ export const COMBAT_SEO_MATRIX: CompetitorMapping[] = [
                 name: 'Datadog LLM Observability',
                 theirFocus: 'Post-deployment APM tracing and latency monitoring for multi-hop chains.',
                 ourAdvantage: 'Exogram prevents API Bankruptcy before code is shipped by predicting compound token explosion and modeling the $100k+ savings of Edge-Routed SLMs.'
+            },
+            {
+                slug: 'helicone',
+                name: 'Helicone AI Observability',
+                theirFocus: 'Post-inference LLM API proxy caching and request logging.',
+                ourAdvantage: 'Exogram executes pre-call semantic vector caching and local SLM task tiering, slashing token OpEx by 50%+ before queries ever hit expensive frontier APIs.'
+            },
+            {
+                slug: 'portkey',
+                name: 'Portkey AI Gateway',
+                theirFocus: 'AI gateway load balancing and failover routing across model providers.',
+                ourAdvantage: 'Exogram combines multi-provider routing with cryptographic audit logging and deterministic boundary gates to prevent unauthorized spend and agent hallucination.'
             }
         ]
     },
@@ -110,6 +152,18 @@ export const COMBAT_SEO_MATRIX: CompetitorMapping[] = [
                 name: 'AWS Cost Explorer',
                 theirFocus: 'Tracking raw compute spend and reactive budget alerts.',
                 ourAdvantage: 'Exogram calculates the hidden Margin Collapse of non-deterministic inference, allowing boards to forecast exactly when AI features become structurally unprofitable.'
+            },
+            {
+                slug: 'vantage',
+                name: 'Vantage Cloud Cost',
+                theirFocus: 'Multi-cloud cost allocation and dashboard reporting for FinOps teams.',
+                ourAdvantage: 'Exogram isolates per-prompt generative AI COGS from fixed cloud infrastructure, forecasting exact gross margin erosion across production LLM workflows.'
+            },
+            {
+                slug: 'cast-ai',
+                name: 'CAST AI Kubernetes FinOps',
+                theirFocus: 'Automated Kubernetes cluster rightsizing and instance provisioning.',
+                ourAdvantage: 'Exogram optimizes at the semantic inference layer, reducing model token consumption through vector caching and task-based SLM tiering before compute is provisioned.'
             }
         ]
     },
