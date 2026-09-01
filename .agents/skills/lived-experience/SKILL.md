@@ -8,7 +8,7 @@ description: Enforces the Human Writing Standard (HWS v2.0 / REWS v2.0) and the 
 ## Human first. Always.
 
 Write like a person, not a content producer.
-Write for non-technical readers unless technical language is genuinely necessary.
+Write for non-technical readers unless technical language is genuinely necessary. Always write non-technically.
 Be human, genuine, personable as fuck.
 Do not write to sound impressive. Write to communicate something worth saying.
 

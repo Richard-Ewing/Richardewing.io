@@ -19,7 +19,7 @@ Whenever the user submits a request (especially when saying "use the master dire
    - **Mode 3 (Full System Execution)**: Create `implementation_plan.md` artifact, deploy 5-agent War Room swarm (`lived_experience_writer`, `qa_auditor`, `seo_architect`, `ui_designer`, `code_architect`) in isolated worktrees (`Workspace: "branch"`), enforce 4-pass QA, and auto-push to main.
 
 3. **Domain Quality Synthesis**:
-   - Enforce Human Writing Standard (HWS v2.0 / REWS v2.0): Human first. Always. Start with the 10th thought, zero AI fingerprints, no LinkedIn voice, no consulting jargon (*unlock, delve, seamless, robust, leverage, elevate*), natural sentence unevenness, and the 16-point pre-publish audit.
+   - Enforce Human Writing Standard (HWS v2.0 / REWS v2.0): Human first. Always. Write like a person, not a content producer. Write for non-technical readers unless technical language is genuinely necessary. Always write non-technically. Be human, genuine, personable as fuck. Start with the 10th thought, zero AI fingerprints, no LinkedIn voice, no consulting jargon (*unlock, delve, seamless, robust, leverage, elevate*), natural sentence unevenness, and the 16-point pre-publish audit.
    - Enforce Next.js App Router invariants (Server Components by default, leaf client components, prerender safety).
    - Enforce SEO bounds (<60 chars title, active voice meta description, canonical URLs, sitemap sync).
 
