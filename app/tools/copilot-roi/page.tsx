@@ -51,12 +51,32 @@ export default function Page() {
                         relationshipType: 'ADVISES_ON',
                         channel: 'EXECUTIVE_ADVISORY',
                         headline: 'R&D Productivity & AI Tooling Economics Audit',
-                        subtext: 'Retain Richard Ewing to benchmark AI developer tool ROI, code churn rates, and engineering capacity allocation.',
+                        subtext: 'Retain Richard Ewing to benchmark AI developer tool ROI, code churn rates, and engineering capacity allocation, addressing the Engineering Bottleneck Illusion.',
                         actionUrl: '/workspace/engineering',
                         actionLabel: 'Inquire for Engineering Audit ↗',
                         targetRole: 'VPs of Engineering & CTOs'
                     }}
                 />
+                <div className="mt-8 p-6 bg-white border border-zinc-300 rounded-2xl shadow-sm text-center">
+                    <p className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-500 mb-2">Primary Research &amp; Analysis</p>
+                    <h3 className="text-base font-bold text-zinc-950 mb-3">Why Faster Typing Does Not Mean Faster Shipping</h3>
+                    <div className="flex flex-wrap justify-center gap-4 text-sm font-semibold">
+                        <a 
+                            href="https://www.linkedin.com/pulse/engineering-bottleneck-illusion-what-copilot-adoption-richard-ewing-f5qhc/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-indigo-900 hover:text-indigo-700 underline underline-offset-4"
+                        >
+                            Read "The Engineering Bottleneck Illusion" on LinkedIn ↗
+                        </a>
+                        <a 
+                            href="/glossary/engineering-bottleneck-illusion"
+                            className="text-emerald-900 hover:text-emerald-700 underline underline-offset-4"
+                        >
+                            Explore Engineering Bottleneck Illusion Concept →
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     );

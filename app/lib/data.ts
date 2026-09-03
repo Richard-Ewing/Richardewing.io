@@ -14,6 +14,29 @@ export interface Article {
 
 export const articles: Article[] = [
     {
+        slug: "engineering-bottleneck-illusion",
+        title: "The Engineering Bottleneck Illusion: What Copilot Adoption Taught Us",
+        description: "Typing code was never the primary constraint in software engineering. When enterprises deploy AI coding assistants like GitHub Copilot, they do not eliminate system bottlenecks, but shift them downstream into code review traffic jams, security and architectural drift, and staging validation delays.",
+        date: "September 2026",
+        readTime: "4 min read",
+        source: "LinkedIn",
+        category: "Software Economics",
+        externalUrl: "https://www.linkedin.com/pulse/engineering-bottleneck-illusion-what-copilot-adoption-richard-ewing-f5qhc/",
+        content: `
+            <p>Over the past two years, enterprise technology leaders have poured millions of dollars into AI coding assistants like GitHub Copilot, expecting instant improvements in software delivery speed. Board decks regularly showcase promises of 20% to 30% increases in developer productivity. Yet when executive teams look at product delivery timelines, feature release velocity often remains stubbornly flat.</p>
+            <p>This disconnect is the Engineering Bottleneck Illusion.</p>
+            <h3>Where the Software Pipeline Actually Stalls</h3>
+            <p>The mistake technology leaders make is assuming that typing code is the primary constraint in software engineering. In reality, writing raw syntax accounts for a small fraction of the software development lifecycle. When you introduce AI tools that generate code at high speeds, you do not eliminate system bottlenecks, but shift them down the line:</p>
+            <ul>
+                <li><strong>Code Review Traffic Jams:</strong> Senior engineers become overwhelmed by massive, AI-generated pull requests that require extensive manual reviewing.</li>
+                <li><strong>Quality and Security Gaps:</strong> Fast generation leads to subtle security bugs, duplicate logic, and architectural drift that fail automated testing suites.</li>
+                <li><strong>Deployment Stalls:</strong> Legacy QA and staging environments struggle to validate the increased volume of code changes, delaying production releases.</li>
+            </ul>
+            <h3>Redefining Developer Productivity</h3>
+            <p>To capture real economic return from developer AI tools, leadership must look at the entire delivery system rather than focusing solely on line-of-code output. Technology executives must measure delivery velocity using system-wide metrics: Deployment Lead Time, Review Cycle Time, and Defect Escape Rate, bounded by automated runtime allowlists and deterministic state checks (Exogram).</p>
+        `
+    },
+    {
         slug: "who-governs-ai-agent",
         title: "Who’s Actually Responsible for Your AI Agents?",
         description: "None of the existing roles in a business (CISO, VP of Engineering, CPO, Legal) are equipped to handle autonomous AI agents in production. Discover why enterprise AI agent deployment creates a dangerous risk gap and why organizations need a dedicated Systems Governor.",

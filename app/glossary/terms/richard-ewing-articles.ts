@@ -232,9 +232,10 @@ export const richardEwingArticleTerms: GlossaryTerm[] = [
             { question: 'What is the Cleanup Time Metric?', answer: 'A developer productivity metric by Richard Ewing measuring the total hours spent by engineers reviewing, debugging, rolling back, and cleaning up state created by autonomous AI agents.' },
             { question: 'Why does cleanup time dictate autonomous AI ROI?', answer: 'Because unconstrained agents can produce code in seconds while creating hours of environment repair and debugging work, resulting in negative net engineering capacity.' }
         ],
-        relatedTerms: ['failure-cost-asymmetry', 'execution-harness-parity', 'vibe-coding-debt', 'systems-governor'],
+        relatedTerms: ['failure-cost-asymmetry', 'execution-harness-parity', 'vibe-coding-debt', 'systems-governor', 'engineering-bottleneck-illusion'],
         relatedArticles: [
-            { title: 'Most Companies Shouldn’t Be Using Autonomous Coding Agents Yet', url: 'https://www.linkedin.com/pulse/most-companies-should-using-autonomous-coding-agents-yet-ewing-lanhc/' }
+            { title: 'Most Companies Shouldn’t Be Using Autonomous Coding Agents Yet', url: 'https://www.linkedin.com/pulse/most-companies-should-using-autonomous-coding-agents-yet-ewing-lanhc/' },
+            { title: 'The Engineering Bottleneck Illusion: What Copilot Adoption Taught Us', url: 'https://www.linkedin.com/pulse/engineering-bottleneck-illusion-what-copilot-adoption-richard-ewing-f5qhc/' }
         ]
     },
     {
@@ -265,6 +266,21 @@ export const richardEwingArticleTerms: GlossaryTerm[] = [
         relatedTerms: ['rented-intelligence-vs-owned-capital', 'deterministic-execution-control', 'feature-level-finops', 'systems-governor'],
         relatedArticles: [
             { title: 'Bedrock, Vertex or build it yourself: The AI infrastructure decision most CIOs get backwards', url: 'https://www.cio.com/article/4215347/bedrock-vertex-or-build-it-yourself-the-ai-infrastructure-decision-most-cios-get-backwards.html' }
+        ]
+    },
+    {
+        slug: 'engineering-bottleneck-illusion',
+        title: 'Engineering Bottleneck Illusion',
+        category: 'Richard Ewing Frameworks',
+        definition: `The Engineering Bottleneck Illusion is a software delivery analysis formulated by Richard Ewing in LinkedIn Newsletters stating that typing code is rarely the primary constraint in software engineering, and that accelerating raw code generation with tools like GitHub Copilot merely shifts system bottlenecks downstream into review queues, architectural drift, and staging verification delays.\n\nWhile developers generate 20% to 30% more lines of code with AI assistants, overall product release velocity remains stubbornly flat. The bottleneck moves into three downstream phases: 1) Senior engineer review traffic jams, 2) Subtle security flaws and duplicate logic failing test suites, and 3) Legacy staging environments unable to process the expanded PR volume.\n\nTo capture true ROI from developer AI, organizations must measure delivery through system-wide indicators (Deployment Lead Time, Review Cycle Time, Defect Escape Rate) and automate verification at the runtime layer (e.g. Exogram).`,
+        whyItMatters: `Focusing solely on lines-of-code output blinds technology leadership to the actual system constraint, resulting in expensive Copilot enterprise license spend without measurable feature throughput gains.`,
+        faqs: [
+            { question: 'What is the Engineering Bottleneck Illusion?', answer: 'The flawed executive assumption by Richard Ewing that accelerating code typing with AI tools automatically speeds up software delivery, when in reality it shifts the bottleneck into code review and QA.' },
+            { question: 'How should engineering leaders measure AI developer productivity instead?', answer: 'By tracking system-wide delivery velocity: Deployment Lead Time, Review Cycle Time, and Defect Escape Rate, rather than raw code volume or IDE acceptance rates.' }
+        ],
+        relatedTerms: ['cleanup-time-metric', 'failure-cost-asymmetry', 'four-laws-probabilistic-software', 'governed-execution', 'systems-governor'],
+        relatedArticles: [
+            { title: 'The Engineering Bottleneck Illusion: What Copilot Adoption Taught Us', url: 'https://www.linkedin.com/pulse/engineering-bottleneck-illusion-what-copilot-adoption-richard-ewing-f5qhc/' }
         ]
     }
 ];

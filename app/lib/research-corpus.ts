@@ -27,6 +27,23 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
+  // Today's LinkedIn Newsletter - September 3, 2026
+  {
+    id: 'linkedin-engineering-bottleneck-illusion',
+    title: 'The Engineering Bottleneck Illusion: What Copilot Adoption Taught Us',
+    url: 'https://www.linkedin.com/pulse/engineering-bottleneck-illusion-what-copilot-adoption-richard-ewing-f5qhc/',
+    publisher: 'LinkedIn',
+    domain: 'Software Economics',
+    type: 'Executable',
+    date: 'September 3, 2026',
+    thesis: 'Typing code was never the primary constraint in software engineering. When enterprises deploy AI coding assistants like GitHub Copilot, they do not eliminate system bottlenecks, but shift them downstream into code review traffic jams, security and architectural drift, and staging validation delays. To capture real economic ROI, engineering leaders must measure deployment lead time, review cycle time, and defect escape rate, bounded by automated runtime allowlists and deterministic state checks.',
+    relatedConceptIds: ['copilot-roi', 'failure-cost-asymmetry', 'execution-harness-parity', 'cleanup-time-metric', 'four-laws-probabilistic-software', 'vibe-coding-debt', 'deterministic-execution-control'],
+    relatedGlossarySlugs: ['engineering-bottleneck-illusion', 'cleanup-time-metric', 'failure-cost-asymmetry', 'execution-harness-parity', 'four-laws-probabilistic-software', 'vibe-coding-debt'],
+    relatedFrameworkSlugs: ['governed-execution', 'runtime-vs-alignment'],
+    relatedToolIds: ['copilot-roi', 'aper', 'pdi'],
+    relatedCaseStudyIds: ['cursor-to-antigravity-startup-governance', 'runtime-concurrency-failures'],
+    relatedCurriculumTrackIds: ['engineering-economics', 'agentic-engineering', 'ai-economics']
+  },
   // Today's Built In Article - September 2, 2026
   {
     id: 'builtin-who-governs-ai-agent',
@@ -965,7 +982,23 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     relatedToolIds: ["pdi"]
   },
 
-  // LinkedIn Newsletters & Executive Essays (24+ Articles)
+  // LinkedIn Newsletters & Executive Essays (25+ Articles)
+  {
+    id: 'linkedin-engineering-bottleneck-illusion',
+    title: 'The Engineering Bottleneck Illusion: What Copilot Adoption Taught Us',
+    url: 'https://www.linkedin.com/pulse/engineering-bottleneck-illusion-what-copilot-adoption-richard-ewing-f5qhc/',
+    publisher: 'LinkedIn',
+    domain: 'Software Economics',
+    type: 'Executable',
+    date: 'September 3, 2026',
+    thesis: 'Typing code was never the primary constraint in software engineering. When enterprises deploy AI coding assistants like GitHub Copilot, they do not eliminate system bottlenecks, but shift them downstream into code review traffic jams, security and architectural drift, and staging validation delays. To capture real economic ROI, engineering leaders must measure deployment lead time, review cycle time, and defect escape rate, bounded by automated runtime allowlists and deterministic state checks.',
+    relatedConceptIds: ['copilot-roi', 'failure-cost-asymmetry', 'execution-harness-parity', 'cleanup-time-metric', 'four-laws-probabilistic-software', 'vibe-coding-debt', 'deterministic-execution-control'],
+    relatedGlossarySlugs: ['engineering-bottleneck-illusion', 'cleanup-time-metric', 'failure-cost-asymmetry', 'execution-harness-parity', 'four-laws-probabilistic-software', 'vibe-coding-debt'],
+    relatedFrameworkSlugs: ['governed-execution', 'runtime-vs-alignment'],
+    relatedToolIds: ['copilot-roi', 'aper', 'pdi'],
+    relatedCaseStudyIds: ['cursor-to-antigravity-startup-governance', 'runtime-concurrency-failures'],
+    relatedCurriculumTrackIds: ['engineering-economics', 'agentic-engineering', 'ai-economics']
+  },
   {
     id: 'linkedin-ai-economist-leading-product-strategy-zero-cost',
     title: 'The AI Economist: Leading Product Strategy When Build Costs Approach Zero',

@@ -440,7 +440,8 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       { id: 'beehiiv-negative-carry-code-crisis', title: 'The Negative-Carry Code Crisis', url: '#', publisher: 'Beehiiv', type: 'Newsletter', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' },
       { id: 'builtin-vibe-coding-era', title: 'The Vibe Coding Era', url: '#', publisher: 'Built In', type: 'Industry Article', strength: 4 as const, role: 'Supports' as const, date: 'August 2026' },
       { id: 'cio-copilot-bottleneck', title: 'The Copilot Bottleneck', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 5 as const, role: 'Extends' as const, date: 'August 2026' },
-      { id: 'cio-model-collapse', title: 'Model Collapse', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' }
+      { id: 'cio-model-collapse', title: 'Model Collapse', url: '#', publisher: 'CIO.com', type: 'Tier-1 Article', strength: 4 as const, role: 'Extends' as const, date: 'August 2026' },
+      { id: 'linkedin-engineering-bottleneck-illusion', title: 'The Engineering Bottleneck Illusion: What Copilot Adoption Taught Us', url: 'https://www.linkedin.com/pulse/engineering-bottleneck-illusion-what-copilot-adoption-richard-ewing-f5qhc/', publisher: 'LinkedIn', type: 'Newsletter', strength: 5 as const, role: 'Extends' as const, date: 'September 3, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'deterministic-governance', relationship: 'implements' },

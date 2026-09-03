@@ -145,6 +145,11 @@ const publications = [
     platform: "LinkedIn",
     articles: [
       {
+        title: "The Engineering Bottleneck Illusion: What Copilot Adoption Taught Us",
+        url: "https://www.linkedin.com/pulse/engineering-bottleneck-illusion-what-copilot-adoption-richard-ewing-f5qhc/",
+        thesis: "Typing code is rarely the primary software delivery bottleneck. Rapid AI code generation shifts the constraint downstream into code review queues, architectural drift, and staging validation stalls."
+      },
+      {
         title: "Most Companies Shouldn’t Be Using Autonomous Coding Agents Yet",
         url: "https://www.linkedin.com/pulse/most-companies-should-using-autonomous-coding-agents-yet-ewing-lanhc/",
         thesis: "Autonomous coding agents dropped into shared environments create investigation and cleanup bottlenecks that erase developer productivity. Teams must establish boundaries, verification loops, and failure recovery before scaling autonomy."
