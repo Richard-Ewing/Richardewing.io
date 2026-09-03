@@ -239,6 +239,52 @@ agenticGovernanceModules['agentic-governance/58-5'] = {
             'Draft a 3-point business case to your CTO explaining why investing 2 weeks of engineering time into building a global Agentic RBAC layer will save 10 weeks of collective effort over the next 6 months.'
         )
     ],
+    nextHref: '/vault/curriculum/tracks/agentic-governance/58-6'
+};
+
+agenticGovernanceModules['agentic-governance/58-6'] = {
+    moduleId: '58-6',
+    title: 'The Systems Governor: Operationalizing Non-Deterministic Boundary Control',
+    description: 'Install the executive control plane closing the enterprise risk vacuum between probabilistic AI agent inference and deterministic execution.',
+    trackName: t58,
+    productId: singleProduct,
+    takeaways: [
+        'Differentiate why CISOs, VPs of Engineering, CPOs, and Legal fail to govern autonomous agents.',
+        'Implement the 4 operational pillars: execution boundaries, state integrity, cryptographic audit ledgers, and financial liability metrics.',
+        'Establish the Systems Governor reporting cadence directly to the CIO or CEO.'
+    ],
+    lessons: [
+        l(
+            'Lesson 1: The Enterprise Governance Vacuum',
+            'When an enterprise deploys 40 autonomous agents across customer service, legal review, financial analysis, and engineering workflows, they hold production database credentials and API keys. But who is responsible when one of them takes a destructive action? The CISO protects network perimeters, but agents live inside the perimeter. The VP of Engineering tests deterministic code, but agents are probabilistic. The CPO owns product roadmaps, not autonomous actors. Legal owns static compliance, not runtime hallucination liability. This creates a dangerous executive vacuum. You cannot manage probabilistic actors with deterministic org charts.',
+            [
+                d('Perimeter Blindness', 'Traditional firewalls and WAFs cannot detect an agent executing an authorized API command with an unauthorized hallucinated payload.', 'Audit: 100% of internal agent calls bypass perimeter security.'),
+                d('Probabilistic Drift', 'Code that passed unit tests 5 minutes ago can take an entirely different execution path when prompted with an ambiguous customer edge case.', 'Benchmark: Zero unmonitored runtime autonomy.'),
+                d('Accountability Deadlock', 'In an outage, Engineering blames model alignment, Security blames tool access, and Product blames prompt instructions.', 'Target: Single designated executive owner.')
+            ],
+            'Audit your organization chart. Identify who technically and legally signs off on the actions taken by an autonomous agent with production database write access.'
+        ),
+        l(
+            'Lesson 2: The Four Operational Pillars',
+            'The Systems Governor is a dedicated role reporting to the CIO or CEO that owns the deterministic boundary between LLM inference and system execution. This role enforces four architectural pillars: 1) Deterministic Execution Boundaries (strict permission allowlists specifying exactly which API endpoints and database operations an agent may execute), 2) State Integrity Verification (automated assertions verifying system state before and after execution), 3) Cryptographic Audit Ledgers (tamper-proof chronological records capturing input prompt, intermediate reasoning, tool payload, and result), and 4) Financial Liability Modeling (quantifying the dollar blast radius of potential agent error).',
+            [
+                d('Permission Allowlists', 'Deny-by-default execution boundaries. An agent can never execute arbitrary shell commands or wildcard database operations.', 'Target: 100% explicitly allowlisted tool interfaces.'),
+                d('State Integrity Checks', 'Pre-flight and post-flight validation ensuring row count invariants and account balances are preserved.', 'Benchmark: Auto-rollback on invariant violation.'),
+                d('Tamper-Proof Provenance', 'Machine identity signatures linking the human invoker, the agent run, and the database mutation.', 'Storage: Write-Once-Read-Many (WORM) audit trail.')
+            ],
+            'Draft an Admissibility Allowlist for your highest-impact agent. Define the exact JSON schema and allowed parameter ranges for every tool it can call.'
+        ),
+        l(
+            'Lesson 3: The Systems Governor in Practice',
+            'Operating as a Systems Governor requires continuous risk-adjusted monitoring. The governor models agent risk as: Risk = P(Hallucination) * Blast Radius. If an agent has a 2% hallucination rate but an unconstrained database blast radius, the annualized financial exposure is catastrophic. The Systems Governor sets automated kill switches, mandates rate governors, and presents monthly risk scorecards to the board. Without this role, autonomous AI remains an unhedged enterprise liability.',
+            [
+                d('Blast Radius Capping', 'Partitioning agent permissions so no single failure can impact multiple tenants or systems.', 'Target: Session-level isolation enclaves.'),
+                d('Automated Circuit Breakers', 'Instantly severing token execution when error rates exceed statistical baselines.', 'Trip latency: <500 milliseconds.'),
+                d('Executive Scorecard', 'Reporting agentic uptime, liability exposure, and prevented violations to the Board.', 'Frequency: Monthly executive review.')
+            ],
+            'Calculate the financial blast radius of your primary customer-facing agent if it were to execute a 100% discount or invalid data refund loop for 15 minutes.'
+        )
+    ],
     nextHref: '/vault/curriculum/tracks'
 };
 

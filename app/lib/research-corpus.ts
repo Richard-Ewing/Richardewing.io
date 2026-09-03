@@ -2004,4 +2004,46 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     relatedConceptIds: ["inference-economics","ai-volatility-tax","ai-margin-squeeze", 'cloud-repatriation', 'ai-vendor-lock-in', 'slm-repatriation']
   },
 
+  // Tier 1 Media - Mind the Product (2 Articles)
+  {
+    id: 'mtp-3-financial-metrics',
+    title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard',
+    url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/',
+    publisher: 'Mind the Product',
+    domain: 'Product Leadership',
+    type: 'Executable',
+    thesis: 'A deep dive into product P&L ownership, margin contribution, and capital efficiency for product leaders.',
+    date: 'February 2026',
+    relatedConceptIds: ['product-economist', 'feature-level-finops', 'synthetic-cogs'],
+    relatedGlossarySlugs: ['feature-level-finops', 'synthetic-cogs'],
+    relatedToolIds: ['aueb', 'pdi'],
+    relatedCurriculumTrackIds: ['product-economics']
+  },
+  {
+    id: 'mtp-community-post',
+    title: 'Community Post of the Week: The 3 Financial Metrics Every PM Needs on Their Scorecard',
+    url: 'https://go.pendo.io/index.php/email/emailWebview?email=MTg1LUxRVy0zNzAAAAGg-VozHnUlZENwwi1xI-qJJbTNChJkRXl5leffTwCm8dM8Szj9-Zw5fwHnDr4rvyyGNoXC4ecigJ1mXOEnZc8rX4ZDBtm2v95QhQ',
+    publisher: 'Mind the Product',
+    domain: 'Product Leadership',
+    type: 'Evergreen',
+    thesis: 'Official Mind the Product Newsletter Feature showcasing the unit economics scorecard framework to thousands of global product managers.',
+    date: 'February 2026',
+    relatedConceptIds: ['product-economist', 'feature-level-finops'],
+    relatedGlossarySlugs: ['feature-level-finops'],
+    relatedCurriculumTrackIds: ['product-economics']
+  },
+
+  // Tier 1 Media - HackerNoon (1 Article)
+  {
+    id: 'hackernoon-best-ai-product-zero-customers',
+    title: 'The Best AI Product I Ever Led Had Zero Customers',
+    url: 'https://hackernoon.com/the-best-ai-product-i-ever-led-had-zero-customers',
+    publisher: 'HackerNoon',
+    domain: 'Product Leadership',
+    type: 'Evergreen',
+    thesis: 'A forensic breakdown of product-market fit failures and technical excellence in the AI space.',
+    date: 'February 2026',
+    relatedConceptIds: ['product-economist', 'vibe-coding-debt'],
+    relatedCurriculumTrackIds: ['product-economics']
+  }
 ];

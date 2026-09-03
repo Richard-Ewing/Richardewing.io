@@ -102,6 +102,31 @@ if (fs.existsSync(middlewarePath)) {
   }
 }
 
+// 5. Research Corpus Schema & Type Invariant Gate
+const corpusPath = path.join(rootDir, 'app/lib/research-corpus.ts');
+if (fs.existsSync(corpusPath)) {
+  const corpusContent = fs.readFileSync(corpusPath, 'utf8');
+  const validDomains = ['AI Economics', 'AI Governance', 'Software Economics', 'Engineering Leadership', 'Product Leadership', 'Career Economics'];
+  const domainMatches = [...corpusContent.matchAll(/domain:\s*['"]([^'"]+)['"]/g)];
+  domainMatches.forEach(m => {
+    const domainVal = m[1];
+    if (!validDomains.includes(domainVal)) {
+      console.error(`[CORPUS TYPE ERROR] Invalid domain '${domainVal}' found in research-corpus.ts! Must be one of: ${validDomains.join(', ')}`);
+      errorCount++;
+    }
+  });
+
+  const validPublishers = ['CIO.com', 'Built In', 'Mind the Product', 'HackerNoon', 'Beehiiv', 'LinkedIn'];
+  const pubMatches = [...corpusContent.matchAll(/publisher:\s*['"]([^'"]+)['"]/g)];
+  pubMatches.forEach(m => {
+    const pubVal = m[1];
+    if (!validPublishers.includes(pubVal)) {
+      console.error(`[CORPUS TYPE ERROR] Invalid publisher '${pubVal}' found in research-corpus.ts! Must be one of: ${validPublishers.join(', ')}`);
+      errorCount++;
+    }
+  });
+}
+
 console.log('\n--- Verification Summary ---');
 console.log(`Files audited: ${filesToAudit.length}`);
 console.log(`Errors: ${errorCount}`);

@@ -357,6 +357,26 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
                 ], 'Architect a secure execution enclave for an AI agent tasked with analyzing a CSV file and outputting SQL commands.')
             ]
         ],
+        ['4-4', 'Rented Intelligence vs. Owned Capital', 'Decoupling enterprise context from hyperscaler model lock-in (Bedrock vs Vertex vs Self-Hosted).', 
+            ['Treat raw model compute as utility overhead', 'Prevent the three phases of vendor capture', 'Deploy Vendor-Neutral Control Gateways', 'Preserve enterprise IP and commercial leverage'],
+            [
+                l('Lesson 1: Rented Intelligence vs. Owned Capital', 'Across dozens of enterprise procurement reviews, technology executives make the same expensive mistake: they start their AI strategy by asking which cloud provider offers the smartest model today. Signing a multi-year, multi-million-dollar commitment with a single hyperscaler based on a temporary technological lead treats a rapidly commoditizing utility service as a permanent asset, while surrendering control over the true intellectual property of your business. Raw computational intelligence is a rented utility overhead; proprietary corporate context is owned enterprise capital. Never tie the permanent location of your corporate capital to the temporary rental location of a utility.', [
+                    d('Price Curve Deflation', 'Frontier model token prices fall by 50% to 80% every 12 months. Long-term commitments lock you into obsolete price points.', 'Target: Metered, short-term commitments only.'),
+                    d('Commoditization Velocity', 'A 6-month reasoning lead by one provider is routinely matched or surpassed by open-weight models shortly thereafter.', 'Benchmark: Treat foundation models as swappable commodities.'),
+                    d('Capital Separation', 'Keeping corporate context (schemas, business rules, customer embeddings) isolated from hyperscaler platforms.', 'Target: 100% portable context layer.')
+                ], 'Audit your enterprise AI contracts. Determine whether proprietary customer context or prompt logic is hardcoded into provider-specific SDKs.'),
+                l('Lesson 2: The Three Phases of Vendor Capture', 'Vendor capture in enterprise AI does not happen overnight; it unfolds through three distinct phases: 1) Data Entanglement (indexing enterprise knowledge inside proprietary cloud vector databases that cannot be extracted without significant engineering cost), 2) Workflow Dependence (embedding provider-specific orchestration APIs like Bedrock Agents or Vertex Reasoning Engines throughout production applications), and 3) Loss of Commercial Leverage (facing steep contract renewal increases because engineering cannot migrate off the platform without a multi-quarter rewrite).', [
+                    d('Entanglement Cost', 'The engineering hours required to migrate 100 million embeddings and schema mappings to an alternate cloud.', 'Target: Migration latency < 48 hours.'),
+                    d('Proprietary Tool Lock-In', 'Using provider-specific agent frameworks that fail outside the vendor ecosystem.', 'Benchmark: Standardize on vendor-neutral protocols like MCP.'),
+                    d('Renewal Penalty', 'The premium cloud vendors charge once they know an enterprise cannot afford to leave.', 'Risk: 30% to 50% contract cost inflation at renewal.')
+                ], 'Map the dependency chain between your core customer workflows and your cloud AI vendor. Identify the single highest-friction migration lock-in point.'),
+                l('Lesson 3: The Vendor-Neutral Control Gateway', 'To preserve commercial leverage and technical flexibility, enterprises must mandate an internal Vendor-Neutral Control Gateway. Instead of allowing individual applications to connect directly to AWS Bedrock, Google Vertex, or Azure OpenAI, every internal workload communicates exclusively with the internal gateway. The gateway enforces three executive controls: 1) Cost-optimized dynamic routing (routing routine tasks to low-cost utility models and complex reasoning to frontier models), 2) Centralized data protection (stripping sensitive PII before payloads leave the network), and 3) Instant supplier portability (switching backends via configuration without rewriting application code).', [
+                    d('Routing Arbitrage', 'Automatically routing prompts based on cost, latency, and task complexity.', 'Target: 40% reduction in gross AI inference COGS.'),
+                    d('Zero-Code Provider Switching', 'Changing the backend model for an entire feature by updating a gateway routing rule.', 'Target: Immediate failover across hyperscalers.'),
+                    d('Perimeter Data Protection', 'Centralizing audit logs, PII redaction, and prompt injection filters in a single control plane.', 'Benchmark: 100% outbound traffic visibility.')
+                ], 'Architect an internal Vendor-Neutral Control Gateway proxy for your application. Outline the configuration rules required to switch an inference pipeline from AWS Bedrock to self-hosted SLMs with zero application downtime.')
+            ]
+        ]
     ];
 
     aiMods.forEach(([id, title, desc, takeaways, lessons], i) => {
