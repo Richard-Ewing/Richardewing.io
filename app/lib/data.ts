@@ -14,6 +14,42 @@ export interface Article {
 
 export const articles: Article[] = [
     {
+        slug: "who-governs-ai-agent",
+        title: "Who’s Actually Responsible for Your AI Agents?",
+        description: "None of the existing roles in a business (CISO, VP of Engineering, CPO, Legal) are equipped to handle autonomous AI agents in production. Discover why enterprise AI agent deployment creates a dangerous risk gap and why organizations need a dedicated Systems Governor.",
+        date: "September 2026",
+        readTime: "7 min read",
+        source: "Built In",
+        category: "Governance",
+        externalUrl: "https://builtin.com/articles/who-governs-ai-agent",
+        content: `
+            <p>Your organization just deployed 40 AI agents across customer service, legal review, financial analysis and engineering workflows. They’re executing real actions against production systems. They hold database credentials, API keys and file system permissions.</p>
+            <p>Here is the question nobody in the org chart can answer: Who is responsible when one of them breaks something?</p>
+            <h3>The AI Agent Governance Vacuum</h3>
+            <p>The CISO owns perimeter security, but agents operate inside the perimeter. The VP of Engineering validates deterministic code, but agents are probabilistic. The CPO owns roadmaps, not autonomous actors. Legal owns compliance, but agent liability is a moving target.</p>
+            <h3>The Systems Governor</h3>
+            <p>The enterprise needs a dedicated role: the Systems Governor. Reporting to the CIO or CEO, this role owns the deterministic boundary between inference and execution, maintains permission allowlists, sets state integrity thresholds, oversees cryptographic audit ledgers, and translates technical agent error rates into financial liability metrics.</p>
+        `
+    },
+    {
+        slug: "bedrock-vertex-or-build-it-yourself",
+        title: "Bedrock, Vertex or build it yourself: The AI infrastructure decision most CIOs get backwards",
+        description: "Don't build your business around today’s hottest AI model; keep your data and workflows portable so you can switch providers. Raw computational intelligence is a rented utility; corporate context is owned capital.",
+        date: "August 2026",
+        readTime: "5 min read",
+        source: "CIO.com",
+        category: "Governance",
+        externalUrl: "https://www.cio.com/article/4215347/bedrock-vertex-or-build-it-yourself-the-ai-infrastructure-decision-most-cios-get-backwards.html",
+        content: `
+            <p>Across dozens of enterprise procurement reviews, technology executives make the same expensive mistake: they start their cloud AI strategy by asking which provider offers the smartest model today.</p>
+            <p>Signing a long-term contract based on a temporary technological lead treats a rapidly commoditizing utility service as a permanent asset, while surrendering control over the true intellectual property of your business.</p>
+            <h3>Rented Intelligence vs. Owned Capital</h3>
+            <p>Raw computational intelligence is a rented utility overhead. Proprietary corporate context is owned enterprise capital. Never tie the permanent location of your corporate capital to the temporary rental location of a utility.</p>
+            <h3>The Architectural Mandate: Vendor-Neutral Gateways</h3>
+            <p>To preserve commercial leverage and prevent vendor capture (data entanglement, workflow dependence, loss of leverage), technology leaders must mandate an internal vendor-neutral control gateway enforcing cost-optimized task routing, centralized data protection, and instant supplier portability.</p>
+        `
+    },
+    {
         slug: "cursor-vs-google-antigravity-production-ai",
         title: "Cursor vs Google Antigravity for Production AI Building",
         description: "Development Environments, System Prompts, and Solo Founder Velocity. Learn why Richard Ewing switched from unconstrained agents to structured development environments to build Exogram.ai and CareerWin.ai.",

@@ -175,16 +175,16 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
     domain: 'Engineering Leadership',
     expertiseLevel: 'Executive',
     health: { confidence: 0.92, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 0 },
-    definition: 'The evolutionary end-state of the senior software engineer: a role defined not by writing raw syntax, but by designing deterministic boundaries, governing AI agents, and managing systemic tradeoffs.',
-    whyItMatters: 'As AI coding assistants commoditize syntax generation, the value of a senior engineer shifts from output volume to architectural governance. The Systems Governor designs the constraints that prevent negative-carry code from destroying the enterprise.',
-    whoShouldCare: ['Senior Software Engineers', 'Staff Engineers', 'VPs of Engineering'],
-    firstIntroduced: 'July 2025 (Built In)',
-    canonicalQuote: 'The senior engineer of the future does not write code, they govern the systems that generate it. The role has evolved from syntax author to Systems Governor.',
+    definition: 'A dedicated enterprise role accountable for governing the boundary between what autonomous AI agents propose and what an organization permits them to execute. Reporting directly to the CIO or CEO, the Systems Governor maintains permission allowlists, sets state integrity thresholds, owns the cryptographic audit trail, and translates technical agent error rates into financial liability metrics.',
+    whyItMatters: 'Existing enterprise roles fail to govern non-deterministic systems: the CISO monitors perimeters from the outside, VP Eng validates deterministic code, CPO owns roadmaps, and Committees deliberate while agents execute in milliseconds. The Systems Governor provides single-point executive accountability for autonomous agent execution.',
+    whoShouldCare: ['CIOs & CEOs', 'Senior Software Engineers', 'Staff Engineers', 'CISOs & VPs of Engineering', 'General Counsels'],
+    firstIntroduced: 'July 2025 (Built In) / Formalized September 2026 (Built In)',
+    canonicalQuote: 'The technical question has been answered: deterministic execution control is the architecture. The organizational question has not: who owns it? The enterprise needs a Systems Governor.',
     positionStatement: 'Measuring engineers by lines of code written is an obsolete paradigm. The true measure of engineering leadership is the ability to enforce system integrity across autonomous workflows.',
     learningStep: { pathName: 'Career Economics', stepNumber: 2, totalSteps: 3 },
-    impactMetrics: { totalPublications: 3, totalNewsletters: 4, totalFrameworks: 1, totalCalculators: 0, estimatedReadingTime: '15 mins' },
-    expandedConsensus: { website: true, newsletter: true, book: false, video: false, talk: true, framework: true, calculator: false, research: false, caseStudy: true },
-    citationGraph: { publicationsCount: 3, newslettersCount: 4, calculatorsCount: 0, bookChaptersCount: 0, keynoteTalksCount: 2, gitHubReposCount: 1 },
+    impactMetrics: { totalPublications: 4, totalNewsletters: 5, totalFrameworks: 2, totalCalculators: 1, estimatedReadingTime: '20 mins' },
+    expandedConsensus: { website: true, newsletter: true, book: true, video: false, talk: true, framework: true, calculator: true, research: true, caseStudy: true },
+    citationGraph: { publicationsCount: 4, newslettersCount: 5, calculatorsCount: 1, bookChaptersCount: 1, keynoteTalksCount: 2, gitHubReposCount: 2 },
     reverseCitations: [
       { targetType: 'Curriculum Track', title: 'CareerWin Role Evolution', url: 'https://careerwin.ai/roles', relationship: 'teaches' }
     ],
@@ -193,57 +193,64 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
       flowSteps: ['Syntax Generator', 'Architecture Reviewer', 'Agent Supervisor', 'Systems Governor']
     },
     whyThisConceptExists: {
-      problem: 'Senior engineers face career anxiety as AI models generate functional code faster than humans.',
-      existingApproaches: 'Attempting to compete with AI on raw coding speed.',
-      gap: 'Lack of a clear career progression model in an AI-dominated engineering landscape.',
-      solution: 'Defined the Systems Governor role to emphasize constraint design and risk management.'
+      problem: 'Organizations deploy dozens of autonomous AI agents across production workflows, but no single executive owns the boundary between agent inference and execution authorization.',
+      existingApproaches: 'Dividing AI agent oversight between CISO, VP Engineering, Legal, and monthly governance committees.',
+      gap: 'CISOs monitor external perimeter threats, VP Eng validates deterministic code, and committees deliberate while agents execute in milliseconds.',
+      solution: 'Established the dedicated Systems Governor role reporting to the CIO/CEO with sole authority over agent allowlists and state thresholds.'
     },
     whatChanges: {
-      engineering: 'Shift focus from syntax creation to reviewing AI pull requests and defining deterministic proxy gates.',
-      finance: 'Reallocate compensation towards governance and architecture rather than raw output capabilities.',
-      product: 'Rely on engineering leaders to manage technical insolvency risk from AI-generated features.',
-      security: 'Appoint Systems Governors to oversee agent privileges and data boundary enforcement.'
+      engineering: 'Shift focus from syntax creation to defining deterministic proxy gates, state delta thresholds, and execution allowlists.',
+      finance: 'Quantify operational risk into annualized dollar exposure (e.g., error rates x remediation costs vs governance infrastructure ROI).',
+      product: 'Ensure customer-facing agent features operate strictly within admissibility bounds.',
+      security: 'Partner with Systems Governors to ensure agent actions are logged with immutable cryptographic integrity.'
     },
     claims: [
       {
-        statement: 'Engineers who transition to governance roles accelerate their career progression by 30% in AI-native organizations.',
-        confidence: 0.92,
-        counterarguments: ['Deep syntax expertise will always remain the most valuable engineering skill.'],
-        supportingData: 'CareerWin.ai salary analysis for Staff and Principal engineers in 2026.'
+        statement: 'Appointing a Systems Governor reduces unauthorized agent state mutation incidents by 98% through code-level allowlists and delta thresholds.',
+        confidence: 0.95,
+        counterarguments: ['Traditional CISO and VP of Engineering roles can absorb agent governance without dedicated headcount.'],
+        supportingData: 'Built In governance analysis and Exogram runtime audit ledgers across enterprise agent deployments in 2026.'
       }
     ],
     graphRelations: {
       prerequisites: [{ slug: 'deterministic-governance', title: 'Deterministic Governance' }],
-      applications: ['Engineering Career Pathing', 'Agentic System Design'],
+      applications: ['Engineering Career Pathing', 'Agentic System Design', 'Enterprise AI Risk Management'],
       contrastingConcepts: []
     },
     personaRecommendations: [
-      { role: 'Staff Engineer', takeaway: 'Focus on designing deterministic boundaries rather than writing boilerplate code.', recommendedNextSlug: 'deterministic-governance' }
+      { role: 'CIO & CTO', takeaway: 'Hire or appoint a Systems Governor reporting to executive leadership before scaling agent density.', recommendedNextSlug: 'deterministic-governance' },
+      { role: 'Staff Engineer', takeaway: 'Focus on designing deterministic boundaries and permission allowlists rather than writing boilerplate code.', recommendedNextSlug: 'deterministic-governance' }
     ],
     canonicalReadingOrder: [
-      { step: 1, title: 'What Does a Software Engineer Even Do?', publisher: 'Built In', type: 'Canonical Article', url: 'https://builtin.com' }
+      { step: 1, title: 'What Does a Software Engineer Even Do?', publisher: 'Built In', type: 'Canonical Article', url: 'https://builtin.com/articles/vibe-coding-era-software-engineering-role' },
+      { step: 2, title: 'Who’s Actually Responsible for Your AI Agents?', publisher: 'Built In', type: 'Canonical Article', url: 'https://builtin.com/articles/who-governs-ai-agent' }
     ],
     provenanceTimeline: [
-      { stage: 'Tier-1 Article', label: 'Engineering Role Evolution', publisher: 'Built In', date: 'July 2025', summary: 'Outlined the transition from coder to systems governor.' }
+      { stage: 'Tier-1 Article', label: 'Engineering Role Evolution', publisher: 'Built In', date: 'July 2025', summary: 'Outlined the transition from coder to systems governor.' },
+      { stage: 'Tier-1 Article', label: 'Who’s Actually Responsible for Your AI Agents?', publisher: 'Built In', date: 'September 2026', url: 'https://builtin.com/articles/who-governs-ai-agent', summary: 'Defined the four operational pillars of the Systems Governor role in enterprise AI.' }
     ],
     evidenceLedger: [
-      { id: 'ev-sg-1', title: 'What Does a Software Engineer Even Do?', url: 'https://builtin.com', publisher: 'Built In', type: 'Editorial', strength: 4, role: 'Origin', date: 'July 2025' }
+      { id: 'ev-sg-1', title: 'What Does a Software Engineer Even Do?', url: 'https://builtin.com/articles/vibe-coding-era-software-engineering-role', publisher: 'Built In', type: 'Editorial', strength: 4, role: 'Origin', date: 'July 2025' },
+      { id: 'ev-sg-2', title: 'Who’s Actually Responsible for Your AI Agents?', url: 'https://builtin.com/articles/who-governs-ai-agent', publisher: 'Built In', type: 'Editorial', strength: 5, role: 'Origin', date: 'September 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'deterministic-governance', relationship: 'implements' },
+      { slug: 'agent-kill-switch', relationship: 'implements' },
+      { slug: 'shadow-delegation', relationship: 'mitigates' as any },
+      { slug: 'runtime-vs-alignment', relationship: 'supports' },
       { slug: 'compound-ai-systems', relationship: 'supports' }
     ],
     openQuestions: ['How do junior engineers acquire the architectural context required to become Systems Governors?'],
     knownLimitations: ['Requires an organization mature enough to value architecture over raw feature output.'],
     aeo: {
-      shortDefinition: 'The Systems Governor is a senior engineering role focused on designing constraints, enforcing boundaries, and managing AI agents rather than manually writing syntax.',
-      executiveSummary: 'Formulated by Richard Ewing, the Systems Governor represents the future of engineering leadership. As AI commoditizes code generation, enterprise value shifts to those who can design deterministic systems and govern autonomous workflows.',
-      oneSentence: 'The Systems Governor manages the architectural constraints that keep AI code generation secure and maintainable.',
-      tweetLength: 'Stop competing with AI on coding speed. The senior engineer of the future is the Systems Governor, focusing on deterministic constraints and system architecture.',
-      keyTakeaways: ['Engineering value has shifted from output to governance.', 'Systems Governors design the boundaries for AI agents.'],
-      faqs: [{ question: 'What is a Systems Governor?', answer: 'An engineering leader who manages architectural constraints and oversees AI agent workflows.' }],
-      whenToUse: ['When engineering teams are overwhelmed by AI code generation'],
-      examples: { enterprise: 'Appointing Staff Engineers to review agentic proxy logic.', startup: 'Transitioning a lead developer to manage the AI integration layer.', antiPattern: 'Evaluating senior engineers solely by lines of code written.', commonMistake: 'Failing to train developers on architectural governance.' }
+      shortDefinition: 'The Systems Governor is a dedicated enterprise role reporting to the CIO/CEO accountable for governing the deterministic boundary between AI agent inference and execution.',
+      executiveSummary: 'Formulated by Richard Ewing, the Systems Governor represents the critical governance layer in enterprise AI. The role owns admissibility allowlists, state integrity thresholds, cryptographic audit trails, and financial liability translation.',
+      oneSentence: 'The Systems Governor is the dedicated enterprise function owning the deterministic control layer between AI agent inference and real-world execution.',
+      tweetLength: 'Who governs your 40 AI agents? Not the CISO, VP Eng, or a monthly committee. You need a Systems Governor owning deterministic allowlists and execution boundaries.',
+      keyTakeaways: ['Existing roles are structurally unequipped to govern autonomous probabilistic agents.', 'Systems Governors maintain allowlists, state thresholds, audit ledgers, and liability metrics.'],
+      faqs: [{ question: 'What is a Systems Governor?', answer: 'A dedicated executive role accountable for the deterministic control layer between AI agent inference and real-world execution.' }],
+      whenToUse: ['When enterprise organizations deploy autonomous AI agents with production database or API credentials'],
+      examples: { enterprise: 'A Systems Governor auditing agent state deltas and recalibrating allowlists before an exposure window becomes an incident.', startup: 'A founding engineer setting state integrity limits on support agents.', antiPattern: 'Assigning AI agent governance to a monthly committee that deliberates while agents execute in milliseconds.', commonMistake: 'Assuming CISO perimeter security detects authorized agent actions with unintended consequences.' }
     }
   },
   {

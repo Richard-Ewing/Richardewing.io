@@ -5,6 +5,11 @@ const publications = [
     platform: "CIO.com",
     articles: [
       {
+        title: "Bedrock, Vertex or build it yourself: The AI infrastructure decision most CIOs get backwards",
+        url: "https://www.cio.com/article/4215347/bedrock-vertex-or-build-it-yourself-the-ai-infrastructure-decision-most-cios-get-backwards.html",
+        thesis: "Raw computational intelligence is a rented utility overhead; proprietary corporate context is owned enterprise capital. To avoid vendor capture and multi-million dollar lock-in, CIOs must deploy vendor-neutral internal gateways."
+      },
+      {
         title: "The Hidden Inflation of AI: Why Model Collapse Is a Business Risk",
         url: "https://www.cio.com/article/4151360/the-hidden-inflation-of-ai-why-model-collapse-is-a-business-risk.html", 
         thesis: "Examines the degrading economics and operational risks of recursive AI model training."
@@ -25,10 +30,14 @@ const publications = [
     platform: "Built In",
     articles: [
       {
+        title: "Who’s Actually Responsible for Your AI Agents?",
+        url: "https://builtin.com/articles/who-governs-ai-agent",
+        thesis: "Deploying autonomous AI agents creates dangerous risk gaps as CISO, VP Eng, CPO, and Legal fail to govern non-deterministic systems. Organizations need a dedicated Systems Governor to control admissibility allowlists and state integrity thresholds."
+      },
+      {
         title: "How Does Meta’s Muse Code Compare to Other AI Coding Tools?",
         url: "https://builtin.com/articles/meta-muse-code-comparison",
-        thesis: "A technical evaluation of Meta Muse Code against Cursor, Claude Code, and Google Antigravity, examining multi-agent concurrency, Git worktree isolation vs. runtime environment collisions, and autonomous closed-loop verification.",
-        editorsPick: true
+        thesis: "A technical evaluation of Meta Muse Code against Cursor, Claude Code, and Google Antigravity, examining multi-agent concurrency, Git worktree isolation vs. runtime environment collisions, and autonomous closed-loop verification."
       },
       {
         title: "I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)",

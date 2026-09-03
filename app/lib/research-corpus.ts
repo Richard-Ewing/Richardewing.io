@@ -27,6 +27,40 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
+  // Today's Built In Article - September 2, 2026
+  {
+    id: 'builtin-who-governs-ai-agent',
+    title: 'Who’s Actually Responsible for Your AI Agents?',
+    url: 'https://builtin.com/articles/who-governs-ai-agent',
+    publisher: 'Built In',
+    domain: 'AI Governance',
+    type: 'Executable',
+    date: 'September 2, 2026',
+    thesis: 'Deploying autonomous AI agents creates dangerous enterprise risk gaps as existing roles (CISO, VP of Engineering, CPO, Legal) fail to govern non-deterministic systems. Organizations must install a dedicated Systems Governor who owns the deterministic boundary between inference and execution, maintains permission allowlists, sets state integrity thresholds, oversees cryptographic audit ledgers, and translates technical agent error rates into financial liability metrics.',
+    relatedConceptIds: ['systems-governor', 'deterministic-governance', 'agent-kill-switch', 'ai-liability-gradient', 'shadow-delegation', 'runtime-vs-alignment', 'ai-governance', 'four-tiers-of-autonomy'],
+    relatedGlossarySlugs: ['systems-governor', 'deterministic-execution-control', 'admissibility-allowlist', 'state-integrity-check', 'cryptographic-audit-ledger', 'ai-liability-gradient', 'shadow-delegation'],
+    relatedFrameworkSlugs: ['governed-execution', 'automated-delegation-boundary', 'agentic-drift-matrix'],
+    relatedToolIds: ['agentic-drift-matrix', 'shadow-ai', 'prompt-injection-sandbox'],
+    relatedCaseStudyIds: ['unauthorized-crm-retention-discount', 'runtime-concurrency-failures'],
+    relatedCurriculumTrackIds: ['ai-governance', 'agent-governance']
+  },
+  // CIO.com Article - August 31, 2026
+  {
+    id: 'cio-bedrock-vertex-build-it-yourself',
+    title: 'Bedrock, Vertex or build it yourself: The AI infrastructure decision most CIOs get backwards',
+    url: 'https://www.cio.com/article/4215347/bedrock-vertex-or-build-it-yourself-the-ai-infrastructure-decision-most-cios-get-backwards.html',
+    publisher: 'CIO.com',
+    domain: 'Enterprise Architecture',
+    type: 'Executable',
+    date: 'August 31, 2026',
+    thesis: 'Raw computational intelligence is a rented utility overhead; proprietary corporate context is owned enterprise capital. Never tie the permanent location of corporate capital to the temporary rental location of a utility. To avoid vendor capture and data entanglement across AWS Bedrock, Google Vertex, and proprietary stacks, CIOs must deploy vendor-neutral internal gateways enforcing cost-optimized task routing, centralized data protection, and instant supplier portability.',
+    relatedConceptIds: ['inference-economics', 'variable-compute-cost', 'excess-capability', 'feature-level-finops', 'hardware-deflation-illusion', 'cost-of-predictivity', 'semantic-caching', 'ai-volatility-tax'],
+    relatedGlossarySlugs: ['variable-compute-cost', 'excess-capability', 'hardware-deflation-illusion', 'feature-level-finops', 'synthetic-cogs', 'inference-dividend-model'],
+    relatedFrameworkSlugs: ['inference-optimizer-matrix', 'semantic-cache-edge-filter', 'inference-dividend-framework'],
+    relatedToolIds: ['aueb', 'slm-vs-api', 'cloud-repatriation'],
+    relatedCaseStudyIds: ['saas-cost-collapse', 'exogram-inference-dividend-optimization'],
+    relatedCurriculumTrackIds: ['cloud-finops', 'ai-economics', 'engineering-economics']
+  },
   // Today's Beehiiv Newsletter - August 28, 2026
   {
     id: 'beehiiv-cursor-vs-google-antigravity-production-ai',
@@ -323,7 +357,23 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     relatedConceptIds: ['agent-kill-switch', 'deterministic-governance', 'ai-governance', 'ai-agents', 'agentic-engineering', 'mlops']
   },
 
-  // Tier 1 Media  -  CIO.com (7 Articles)
+  // Tier 1 Media  -  CIO.com (8 Articles)
+  {
+    id: 'cio-bedrock-vertex-build-it-yourself',
+    title: 'Bedrock, Vertex or build it yourself: The AI infrastructure decision most CIOs get backwards',
+    url: 'https://www.cio.com/article/4215347/bedrock-vertex-or-build-it-yourself-the-ai-infrastructure-decision-most-cios-get-backwards.html',
+    publisher: 'CIO.com',
+    domain: 'Enterprise Architecture',
+    type: 'Executable',
+    date: 'August 31, 2026',
+    thesis: 'Raw computational intelligence is a rented utility overhead; proprietary corporate context is owned enterprise capital. Never tie the permanent location of corporate capital to the temporary rental location of a utility. To avoid vendor capture and data entanglement across AWS Bedrock, Google Vertex, and proprietary stacks, CIOs must deploy vendor-neutral internal gateways enforcing cost-optimized task routing, centralized data protection, and instant supplier portability.',
+    relatedConceptIds: ['inference-economics', 'variable-compute-cost', 'excess-capability', 'feature-level-finops', 'hardware-deflation-illusion', 'cost-of-predictivity', 'semantic-caching', 'ai-volatility-tax'],
+    relatedGlossarySlugs: ['variable-compute-cost', 'excess-capability', 'hardware-deflation-illusion', 'feature-level-finops', 'synthetic-cogs', 'inference-dividend-model'],
+    relatedFrameworkSlugs: ['inference-optimizer-matrix', 'semantic-cache-edge-filter', 'inference-dividend-framework'],
+    relatedToolIds: ['aueb', 'slm-vs-api', 'cloud-repatriation'],
+    relatedCaseStudyIds: ['saas-cost-collapse', 'exogram-inference-dividend-optimization'],
+    relatedCurriculumTrackIds: ['cloud-finops', 'ai-economics', 'engineering-economics']
+  },
   {
     id: 'cio-shipping-faster',
     title: 'Hey, Senior PMs: Shipping Faster Won’t Get You Promoted',
@@ -416,7 +466,23 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     relatedToolIds: ["aueb"]
   },
 
-  // Tier 1 Media  -  Built In (12 Articles)
+  // Tier 1 Media  -  Built In (13 Articles)
+  {
+    id: 'builtin-who-governs-ai-agent',
+    title: 'Who’s Actually Responsible for Your AI Agents?',
+    url: 'https://builtin.com/articles/who-governs-ai-agent',
+    publisher: 'Built In',
+    domain: 'AI Governance',
+    type: 'Executable',
+    date: 'September 2, 2026',
+    thesis: 'Deploying autonomous AI agents creates dangerous enterprise risk gaps as existing roles (CISO, VP of Engineering, CPO, Legal) fail to govern non-deterministic systems. Organizations must install a dedicated Systems Governor who owns the deterministic boundary between inference and execution, maintains permission allowlists, sets state integrity thresholds, oversees cryptographic audit ledgers, and translates technical agent error rates into financial liability metrics.',
+    relatedConceptIds: ['systems-governor', 'deterministic-governance', 'agent-kill-switch', 'ai-liability-gradient', 'shadow-delegation', 'runtime-vs-alignment', 'ai-governance', 'four-tiers-of-autonomy'],
+    relatedGlossarySlugs: ['systems-governor', 'deterministic-execution-control', 'admissibility-allowlist', 'state-integrity-check', 'cryptographic-audit-ledger', 'ai-liability-gradient', 'shadow-delegation'],
+    relatedFrameworkSlugs: ['governed-execution', 'automated-delegation-boundary', 'agentic-drift-matrix'],
+    relatedToolIds: ['agentic-drift-matrix', 'shadow-ai', 'prompt-injection-sandbox'],
+    relatedCaseStudyIds: ['unauthorized-crm-retention-discount', 'runtime-concurrency-failures'],
+    relatedCurriculumTrackIds: ['ai-governance', 'agent-governance']
+  },
   {
     id: 'builtin-ai-coding-tools-practical-evaluation',
     title: 'I Used AI to Build My Startup. Here’s What I Learned.',

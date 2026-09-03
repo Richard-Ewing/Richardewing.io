@@ -810,7 +810,8 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { stage: 'Tier-1 Article', label: 'CIO.com Feature Publication', publisher: 'CIO.com', date: 'August 13, 2026', url: 'https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html', summary: 'Published definitive analysis exposing the breakdown of corporate delegation matrices due to embedded vendor AI agents.' }
     ],
     evidenceLedger: [
-      { id: 'ev-sd-1', title: 'Salesforce and SAP are putting AI agents inside your workflows. Who tells them no?', url: 'https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html', publisher: 'CIO.com', type: 'Tier-1 Media', strength: 5, role: 'Origin', date: 'August 13, 2026' }
+      { id: 'ev-sd-1', title: 'Salesforce and SAP are putting AI agents inside your workflows. Who tells them no?', url: 'https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html', publisher: 'CIO.com', type: 'Tier-1 Media', strength: 5, role: 'Origin', date: 'August 13, 2026' },
+      { id: 'ev-sd-2', title: 'Who’s Actually Responsible for Your AI Agents?', url: 'https://builtin.com/articles/who-governs-ai-agent', publisher: 'Built In', type: 'Tier-1 Media', strength: 5, role: 'Extends', date: 'September 2, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'deterministic-governance', relationship: 'requires' },
@@ -1119,7 +1120,8 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     ],
     evidenceLedger: [
       { id: 'ev-vt-1', title: 'Claude API Bill Blowup Analysis', url: 'https://www.cio.com/article/4175244/your-claude-api-bill-is-higher-than-your-revenue-why-simple-python-tasks-are-blowing-up-ai-costs.html', publisher: 'CIO.com', type: 'Production Telemetry', strength: 5, role: 'Supports', date: 'May 2026' },
-      { id: 'ev-vt-2', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Supports', date: 'August 18, 2026' }
+      { id: 'ev-vt-2', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Supports', date: 'August 18, 2026' },
+      { id: 'ev-vt-3', title: 'Bedrock, Vertex or build it yourself: The AI infrastructure decision most CIOs get backwards', url: 'https://www.cio.com/article/4215347/bedrock-vertex-or-build-it-yourself-the-ai-infrastructure-decision-most-cios-get-backwards.html', publisher: 'CIO.com', type: 'Tier-1 Media', strength: 5, role: 'Extends', date: 'August 31, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'ai-economics', relationship: 'derived_from' },
@@ -1228,7 +1230,8 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { stage: 'Tier-1 Article', label: 'Your AI Agent Needs a Kill Switch', publisher: 'Built In', date: 'May 2026', url: 'https://builtin.com/articles/ai-agent-kill-switch', summary: 'Published the canonical kill switch specification (Editor\'s Pick).' }
     ],
     evidenceLedger: [
-      { id: 'ev-ks-1', title: 'Your AI Agent Needs a Kill Switch', url: 'https://builtin.com/articles/ai-agent-kill-switch', publisher: 'Built In', type: 'Production Telemetry', strength: 5, role: 'Origin', date: 'May 2026' }
+      { id: 'ev-ks-1', title: 'Your AI Agent Needs a Kill Switch', url: 'https://builtin.com/articles/ai-agent-kill-switch', publisher: 'Built In', type: 'Production Telemetry', strength: 5, role: 'Origin', date: 'May 2026' },
+      { id: 'ev-ks-2', title: 'Who’s Actually Responsible for Your AI Agents?', url: 'https://builtin.com/articles/who-governs-ai-agent', publisher: 'Built In', type: 'Tier-1 Media', strength: 5, role: 'Extends', date: 'September 2, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'deterministic-governance', relationship: 'derived_from' },
@@ -1317,7 +1320,8 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { id: 'ev-dg-2', title: 'Salesforce and SAP are putting AI agents inside your workflows. Who tells them no?', url: 'https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html', publisher: 'CIO.com', type: 'Tier-1 Media', strength: 5, role: 'Extends', date: 'August 13, 2026' },
       { id: 'ev-dg-3', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Supports', date: 'August 18, 2026' },
       { id: 'ev-dg-4', title: 'How Does Meta’s Muse Code Compare to Other AI Coding Tools?', url: 'https://builtin.com/articles/meta-muse-code-comparison', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 24, 2026' },
-      { id: 'ev-dg-5', title: 'Cursor vs Google Antigravity for Production AI Building', url: 'https://theaieconomist.beehiiv.com/p/cursor-vs-google-antigravity-for-production-ai-building-278a', publisher: 'Beehiiv', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 28, 2026' }
+      { id: 'ev-dg-5', title: 'Cursor vs Google Antigravity for Production AI Building', url: 'https://theaieconomist.beehiiv.com/p/cursor-vs-google-antigravity-for-production-ai-building-278a', publisher: 'Beehiiv', type: 'Industry Analysis', strength: 5, role: 'Extends', date: 'August 28, 2026' },
+      { id: 'ev-dg-6', title: 'Who’s Actually Responsible for Your AI Agents?', url: 'https://builtin.com/articles/who-governs-ai-agent', publisher: 'Built In', type: 'Tier-1 Media', strength: 5, role: 'Extends', date: 'September 2, 2026' }
     ],
     relatedConceptSlugs: [
       { slug: 'agent-kill-switch', relationship: 'implements' },
@@ -1934,7 +1938,8 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       { stage: 'Tier-1 Article', label: 'Runtime vs Alignment', publisher: 'Built In', date: 'June 2025', summary: 'Published thesis on external proxy gates.' }
     ],
     evidenceLedger: [
-      { id: 'ev-rva-1', title: 'Runtime Governance Telemetry', url: 'https://builtin.com', publisher: 'Built In', type: 'Production Audit', strength: 5, role: 'Origin', date: 'June 2025' }
+      { id: 'ev-rva-1', title: 'Runtime Governance Telemetry', url: 'https://builtin.com', publisher: 'Built In', type: 'Production Audit', strength: 5, role: 'Origin', date: 'June 2025' },
+      { id: 'ev-rva-2', title: 'Who’s Actually Responsible for Your AI Agents?', url: 'https://builtin.com/articles/who-governs-ai-agent', publisher: 'Built In', type: 'Tier-1 Media', strength: 5, role: 'Extends', date: 'September 2, 2026' }
     ],
     relatedConceptSlugs: [{ slug: 'agent-kill-switch', relationship: 'requires' }],
     openQuestions: ['What performance overhead threshold is acceptable for real-time streaming runtime proxies?'],
