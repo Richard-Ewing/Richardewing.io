@@ -403,7 +403,19 @@ export default function ServicesPage() {
                     </section>
                 </ScrollReveal>
 
-                <div className="mt-16 text-center pt-12">
+                {/* Commercial Governance & Legal Terms Notice */}
+                <div className="mt-12 p-6 rounded-2xl bg-white border border-indigo-200 text-center text-xs text-zinc-700 font-mono shadow-sm">
+                    <span className="font-bold text-zinc-950">Commercial Advisory Notice: </span>
+                    <span>All advisory packages, diagnostic working sessions, and audits are governed by our </span>
+                    <Link href="/legal#terms" className="underline font-bold text-zinc-950 hover:text-indigo-900">Terms of Use (TOC)</Link>
+                    <span>, </span>
+                    <Link href="/legal#advisory" className="underline font-bold text-zinc-950 hover:text-indigo-900">Advisory Scope</Link>
+                    <span>, and </span>
+                    <Link href="/legal#disclaimers" className="underline font-bold text-zinc-950 hover:text-indigo-900">Advisory Disclaimers</Link>
+                    <span>. Richard Ewing &bull; Registered Washington State LLC.</span>
+                </div>
+
+                <div className="mt-12 text-center pt-8">
                     <Link href="/" className="text-zinc-600 hover:text-zinc-950 transition-colors flex items-center gap-2 text-sm font-semibold font-mono uppercase tracking-widest justify-center">
                         ← Back to Homepage
                     </Link>

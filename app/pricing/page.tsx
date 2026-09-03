@@ -176,6 +176,18 @@ export default function PricingPage() {
 
                 </div>
 
+                {/* Commercial Governance & Legal Terms Notice */}
+                <div className="mt-12 p-6 rounded-2xl bg-white border border-zinc-300 text-center text-xs text-zinc-700 font-mono shadow-sm">
+                    <span className="font-bold text-zinc-950">Commercial Governance Notice: </span>
+                    <span>All advisory bookings, audits, and digital vault licenses are governed by our </span>
+                    <Link href="/legal#terms" className="underline font-bold text-zinc-950 hover:text-cyan-900">Terms of Use (TOC)</Link>
+                    <span>, </span>
+                    <Link href="/legal#advisory" className="underline font-bold text-zinc-950 hover:text-cyan-900">Advisory Scope</Link>
+                    <span>, and </span>
+                    <Link href="/legal#refunds" className="underline font-bold text-zinc-950 hover:text-cyan-900">Digital Refund Policy</Link>
+                    <span>. Richard Ewing &bull; Registered Washington State LLC.</span>
+                </div>
+
             </div>
         </main>
     );
