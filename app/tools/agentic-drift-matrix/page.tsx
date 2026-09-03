@@ -123,24 +123,32 @@ export default function AgenticDriftMatrixPage() {
                             <a 
                                 href="https://newsletter.richardewing.io/p/fixing-agentic-drift" 
                                 target="_blank" 
-                                rel="noopener noreferrer"
+                                rel="noopener noreferrer" 
                                 className="inline-flex items-center text-sm font-bold text-indigo-900 hover:text-indigo-700 underline underline-offset-4 transition-colors"
                             >
                                 Read "Fixing Agentic Drift" →
                             </a>
                             <a 
+                                href="https://builtin.com/articles/who-governs-ai-agent" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="inline-flex items-center text-sm font-bold text-indigo-900 hover:text-indigo-700 underline underline-offset-4 transition-colors"
+                            >
+                                Read Built In on Agent Governance ↗
+                            </a>
+                            <a 
                                 href="https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html" 
                                 target="_blank" 
-                                rel="noopener noreferrer"
+                                rel="noopener noreferrer" 
                                 className="inline-flex items-center text-sm font-bold text-cyan-900 hover:text-cyan-700 underline underline-offset-4 transition-colors"
                             >
-                                Read CIO.com Article on Shadow Delegation ↗
+                                Read CIO.com on Shadow Delegation ↗
                             </a>
                             <Link 
-                                href="/concepts/shadow-delegation" 
+                                href="/concepts/systems-governor" 
                                 className="inline-flex items-center text-sm font-bold text-emerald-900 hover:text-emerald-700 underline underline-offset-4 transition-colors"
                             >
-                                Explore Shadow Delegation Concept →
+                                Systems Governor Concept →
                             </Link>
                         </div>
                     </div>

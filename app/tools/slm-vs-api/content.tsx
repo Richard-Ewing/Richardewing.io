@@ -345,12 +345,12 @@ export default function SLMTool() {
                                         </div>
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-zinc-950 font-bold mb-2">Audit Provider Arbitrage Velocity</h4>
-                                            <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">Are you locked into OpenAI because your developers love the playground? API moat lock-in prevents margin optimization through dynamic prompt routing.</p>
+                                            <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">Are you locked into OpenAI because your developers love the playground? API moat lock-in prevents margin optimization through dynamic prompt routing. As established in <a href="https://www.cio.com/article/4215347/bedrock-vertex-or-build-it-yourself-the-ai-infrastructure-decision-most-cios-get-backwards.html" target="_blank" rel="noopener noreferrer" className="text-indigo-900 font-bold underline underline-offset-2 hover:text-indigo-700">CIO.com</a>, raw model intelligence is rented utility overhead; corporate context is owned capital.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-rose-400 uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive
                                                 </div>
-                                                <p className="text-sm font-semibold font-medium text-zinc-950">Mandate an abstraction layer implementation (LiteLLM, Langfuse). Disconnect core business logic from single-provider SDKs within 14 days to enable instant token arbitrage.</p>
+                                                <p className="text-sm font-semibold font-medium text-zinc-950">Mandate a Vendor-Neutral Control Gateway implementation. Disconnect core business logic from single-provider SDKs within 14 days to enable instant token arbitrage.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -381,7 +381,7 @@ export default function SLMTool() {
                                         </div>
                                         <div className="relative z-10 w-full">
                                             <h4 className="text-zinc-950 font-bold mb-2">Stand Up a Sovereign Validation Enclave</h4>
-                                            <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">Data sovereignty isn't just about privacy - it's an M&A prerequisite. Moving to an SLM (Llama 3 8B) on your VPC completely insulates your proprietary vectors from SaaS telemetry.</p>
+                                            <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">Data sovereignty isn't just about privacy - it's an M&A prerequisite. Moving to an SLM (Llama 3 8B) on your VPC completely insulates your proprietary vectors from SaaS telemetry and cloud vendor lock-in.</p>
                                             <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
                                                 <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-emerald-900 font-extrabold font-semibold uppercase tracking-widest font-bold">
                                                     <Zap size={10} /> Execution Directive

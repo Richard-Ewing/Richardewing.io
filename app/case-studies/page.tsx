@@ -24,6 +24,30 @@ export const metadata: Metadata = {
 
 const caseStudies = [
     {
+        id: 'systems-governor-agentic-liability-control',
+        badge: 'Built In Case Study (Sep 2026)',
+        title: 'Eliminating Shadow Delegation & AI Agent Liability: Installing the Systems Governor Control Plane',
+        metric: '100%',
+        metricLabel: 'Autonomous Action Traceability',
+        problem: 'Enterprise deployment of multi-agent autonomous workflows resulted in unmonitored aggregate liability exposure, unauthorized API tool mutations, and structural conflict between CISO perimeter security and product velocity.',
+        diagnosis: 'Existing executive roles (CISO, VP of Engineering, CPO, Legal) were structurally incapable of governing non-deterministic AI agents operating with production system permissions.',
+        action: 'Established the Systems Governor function with deterministic admissibility allowlists, pre/post cryptographic state integrity checks (<5ms), and external tamper-proof audit ledgers.',
+        result: 'Decoupled non-deterministic model inference from deterministic execution, eliminated hallucinated production mutations, and gave the board real-time financial liability telemetry.',
+        tags: ['Built In', 'Systems Governor', 'Deterministic Execution', 'Allowlists', 'Agent Governance'],
+    },
+    {
+        id: 'rented-intelligence-vendor-neutral-gateway',
+        badge: 'CIO.com Case Study (Aug 2026)',
+        title: 'Rented Intelligence vs. Owned Capital: Decoupling Enterprise Context from Cloud AI Lock-In',
+        metric: '64%',
+        metricLabel: 'Inference COGS Recaptured',
+        problem: 'An enterprise committed to an expensive, multi-year single-vendor cloud AI stack, suffering 35% margin compression and data entanglement as newer, cheaper models were released on competing platforms.',
+        diagnosis: 'Foundational confusion between rented utility compute and owned corporate context; applications had direct, proprietary API bindings to vendor-specific tooling.',
+        action: 'Implemented a Vendor-Neutral Control Gateway between internal applications and external cloud models (Bedrock, Vertex, self-hosted SLMs), enforcing dynamic cost routing and PII sanitization.',
+        result: 'Enabled instant zero-downtime model switching, reduced API compute overhead by 64%, and preserved enterprise data independence.',
+        tags: ['CIO.com', 'Vendor-Neutral Gateway', 'Rented Intelligence', 'Bedrock vs Vertex', 'FinOps'],
+    },
+    {
         id: 'cursor-to-antigravity-startup-governance',
         badge: 'Built In Case Study (Aug 2026)',
         title: 'Halting Recursive Error Loops & Token Inflation: Transitioning from Cursor to Google Antigravity',
