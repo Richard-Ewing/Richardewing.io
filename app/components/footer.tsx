@@ -111,12 +111,14 @@ export function Footer() {
                 {/* Bottom bar */}
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm font-semibold text-zinc-900 font-medium">
                     <p>© 2026 Richard Ewing. All rights reserved.</p>
-                    <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-2 text-xs sm:text-sm">
-                        <Link href="/legal" className="hover:text-zinc-900 transition-colors">Legal & Privacy</Link>
+                    <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-5 gap-y-2 text-xs sm:text-sm">
+                        <Link href="/legal" className="hover:text-cyan-900 transition-colors">Legal Hub</Link>
+                        <Link href="/legal#terms" className="hover:text-cyan-900 transition-colors">Terms of Use (TOC)</Link>
+                        <Link href="/legal#privacy" className="hover:text-cyan-900 transition-colors">Privacy Policy</Link>
+                        <Link href="/legal#disclaimers" className="hover:text-cyan-900 transition-colors">Disclaimers</Link>
                         <Link href="https://linkedin.com/in/richard-ewing-mba" target="_blank" className="hover:text-zinc-900 transition-colors">LinkedIn</Link>
                         <Link href="https://x.com/Richard85626233" target="_blank" className="hover:text-zinc-900 transition-colors">X (Twitter)</Link>
-                        <Link href="https://github.com/Richard-Ewing" target="_blank" className="hover:text-zinc-900 transition-colors">GitHub (Profile)</Link>
-                        <Link href="https://github.com/Richard-Ewing/synthetic-enterprise-cognition" target="_blank" className="hover:text-zinc-900 transition-colors">GitHub (SECS Repo)</Link>
+                        <Link href="https://github.com/Richard-Ewing" target="_blank" className="hover:text-zinc-900 transition-colors">GitHub</Link>
                     </div>
                 </div>
 

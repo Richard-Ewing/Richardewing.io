@@ -67,6 +67,19 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // ═══════════════════ LEGAL & TOC URL ALIASES ═══════════════════
+      { source: '/terms', destination: '/legal#terms', permanent: true },
+      { source: '/terms-of-service', destination: '/legal#terms', permanent: true },
+      { source: '/terms-and-conditions', destination: '/legal#terms', permanent: true },
+      { source: '/toc', destination: '/legal#terms', permanent: true },
+      { source: '/tos', destination: '/legal#terms', permanent: true },
+      { source: '/tac', destination: '/legal#terms', permanent: true },
+      { source: '/privacy', destination: '/legal#privacy', permanent: true },
+      { source: '/privacy-policy', destination: '/legal#privacy', permanent: true },
+      { source: '/disclaimer', destination: '/legal#disclaimers', permanent: true },
+      { source: '/disclaimers', destination: '/legal#disclaimers', permanent: true },
+      { source: '/refunds', destination: '/legal#refunds', permanent: true },
+      { source: '/refund-policy', destination: '/legal#refunds', permanent: true },
       { source: '/frameworks', destination: '/framework', permanent: true },
       { source: '/frameworks/innovation-tax', destination: '/glossary/pillars/product-economics#innovation-tax', permanent: true },
       { source: '/frameworks/product-debt-index', destination: '/glossary/pillars/product-economics#product-debt-index', permanent: true },
