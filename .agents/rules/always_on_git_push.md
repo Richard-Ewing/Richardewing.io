@@ -12,7 +12,7 @@ If any file in the workspace is created or modified during the current turn:
 2. **QA Script**: Run `node .agents/scripts/verify-qa.mjs` to verify zero em-dashes and root hygiene.
 3. **Build Gate**: Run `npm run build` to verify production compilation.
 4. **Git Auto-Deploy**: Run `git add -A` $\rightarrow$ `git commit -m "<type>(<scope>): <description>"` $\rightarrow$ `git push origin main`.
-5. **Clean Status**: Verify `git status` returns clean.
-
 DO NOT end the conversation turn without executing these steps whenever files are changed. The user should NEVER have to prompt or remind you to push code to production.
+
+If NO files in the workspace were created or modified during the turn (Track 2: Strategic / Evaluative Inquiry), do NOT create empty git commits or trigger redundant builds.
 

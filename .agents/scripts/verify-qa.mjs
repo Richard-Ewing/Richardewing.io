@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '../../');
 
-console.log('=== Running MOD v3.0 QA Verification Script ===');
+console.log('=== Running MOD v3.2 QA Verification Script ===');
 
 let errorCount = 0;
 let warningCount = 0;
