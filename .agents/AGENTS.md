@@ -1,6 +1,6 @@
-# Project Rules & Sovereign Execution System (MOD v3.1)
+# Project Rules & Sovereign Execution System (MOD v3.2)
 
-All task execution in this workspace MUST strictly follow the **Sovereign Master Operating Directive (MOD v3.1)** and its associated modular skill definitions.
+All task execution in this workspace MUST strictly follow the **Sovereign Master Operating Directive (MOD v3.2)** and its associated modular skill definitions.
 
 Refer to the official skill definition at [.agents/skills/master-directive/SKILL.md](file:///d:/Antigravity_RichardEwing.io/.agents/skills/master-directive/SKILL.md) for complete details.
 
@@ -33,19 +33,32 @@ All essays, landing page copy, explanations, curriculum modules, and documentati
 
 ---
 
-## 4. Sovereign Master Operating Directive (MOD v3.1) Execution System
+## 4. Two-Track Operational Router & Turn-End Execution Gates
 
-> [!CRITICAL]
-> **MANDATORY TURN-END EXECUTION GATE (UNBREAKABLE):**
-> If ANY file in the workspace is modified or created during a turn, you are STRICTLY FORBIDDEN from ending the turn until you have executed:
-> `node .agents/scripts/verify-qa.mjs` $\rightarrow$ `npm run build` $\rightarrow$ `git add -A` $\rightarrow$ `git commit -m "..."` $\rightarrow$ `git push origin main` $\rightarrow$ `git status` (verify clean).
-> You MUST NEVER ask or wait for the user to prompt you to deploy code or push to git.
+Before executing any request, dynamically classify the user prompt into one of two tracks:
 
-1. **Adaptive Operational Router**: Scale depth across Mode 1 (Direct Query), Mode 2 (Targeted Implementation), and Mode 3 (Autonomous Full System Swarm).
-2. **5-Agent War Room Swarms**: Deploy custom subagents (`lived_experience_writer`, `qa_auditor`, `seo_architect`, `ui_designer`, `code_architect`) via `invoke_subagent` in isolated git worktrees (`Workspace: "branch"` or `"share"`).
-3. **Zero-Drift Deterministic Verification**: Execute `node .agents/scripts/verify-qa.mjs` to automatically lint em-dashes, stat sources, metadata length limits, and git hygiene.
-4. **4-Pass QA & Self-Healing Protocol**: Unit, Integration, Domain Rules, Build/Runtime validation (`npm run build`). Fix root causes empirically; never mask symptoms.
-5. **Auto-Push & Workspace Hygiene**: Validate builds (`npm run build`). AUTOMATICALLY execute `git add -A`, `git commit`, and `git push origin main` for every code/content change. Route temporary files to `.scratch/`.
+### Track 1: Execution Pipeline (Code Mutations)
+* **Trigger**: Any turn where files are created, modified, refactored, or deleted.
+* **Mandatory Turn-End Gate (UNBREAKABLE)**:
+  `node .agents/scripts/verify-qa.mjs` $\longrightarrow$ `npm run build` $\longrightarrow$ `git add -A` $\longrightarrow$ `git commit -m "..."` $\longrightarrow$ `git push origin main` $\longrightarrow$ `git status` (verify clean).
+  You MUST NEVER end a code-modifying turn without running this full deployment sequence. Never ask the user to remind you.
+
+### Track 2: Strategic & Advisory Pipeline (No Code Mutations)
+* **Trigger**: Pure research, architectural critiques, conceptual models, plan reviews, or exploratory Q&A where no workspace code is touched.
+* **Protocol**: Deliver deep 360° synthesis, Euclidean chain-of-thought analysis, and structured artifacts (`RequestFeedback: false`).
+* **Gate Exemption**: Do NOT create empty git commits, dummy files, or trigger redundant deployment builds on pure advisory turns.
+
+---
+
+## 5. Google Antigravity 2.12.2 Sovereign Master Harness
+
+1. **Cognitive Reasoning Engine**: Harness enterprise **Gemini 3.8 Flash (High Reasoning Effort)** via Application Default Credentials (ADC) for multi-hop system architecture and zero-drift reasoning.
+2. **G-Stack Role Specialization**: Deploy the War Room across specialized virtual engineering roles (CEO / Product Economist, Engineering Architect, QA Lead, Security Officer, Release Engineer) inspired by Garry Tan's `gstack` discipline.
+3. **Karpathy Empirical Test Invariants**: Before applying complex bug fixes or architectural refactors, construct a lightweight Red/Green test probe in `.scratch/`. Verify failure (Red), apply the structural fix, verify resolution (Green), then run the full build. Eliminate all "AI Hallucination Debt".
+4. **Git Worktree Subagent Swarming**: When dispatching subagents (`invoke_subagent`), default to isolated git worktrees (`Workspace: "branch"` or `"share"`) with model tiering (`flash` for fast search/lint, `pro` or `inherit` for architecture) to prevent main-thread context bloat.
+5. **Generative UI Activation**: Utilize Antigravity 2.12 Generative UI (`builtin/skills/generative_ui`) to render interactive diagnostics, calculators, and sandboxes directly within artifacts and chat surfaces.
+6. **Zero-Drift Deterministic Verification**: Execute `node .agents/scripts/verify-qa.mjs` to automatically enforce zero em-dashes, stat source attribution, meta length limits, and workspace root hygiene.
+7. **Production Deployment & Clean Git Hygiene**: Always verify `git status` returns clean before ending execution. Route all scratch scripts and temporary dumps to `.scratch/`.
 
 
 

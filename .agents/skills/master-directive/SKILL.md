@@ -1,9 +1,9 @@
 ---
 name: master-directive
-description: Sovereign Master Operating Directive (MOD v3.1) for richardewing.io. Enforces adaptive task routing, 360-degree panoramic context, the 5-step Asset Pipeline Hierarchy (Research -> Concept -> Framework -> Diagnostic -> Implementation), Academy moat governance against generic courseware, 5-agent War Room swarm orchestration, zero-drift deterministic QA verification scripts, domain synthesis engines (HWS v2.0, UI/UX, SEO, Code), self-healing error recovery, and zero-error live production deployments.
+description: Sovereign Master Operating Directive (MOD v3.2) for richardewing.io. Enforces adaptive two-track task routing, 360-degree panoramic context, the 5-step Asset Pipeline Hierarchy (Research -> Concept -> Framework -> Diagnostic -> Implementation), Academy moat governance, gstack virtual engineering team discipline, Karpathy empirical test assertions, 5-agent War Room worktree swarm orchestration, zero-drift deterministic QA verification, domain synthesis engines (HWS v2.0, UI/UX, SEO, Code), and zero-error live production deployments.
 ---
 
-# Sovereign Master Operating Directive (MOD v3.1): Antigravity Execution System
+# Sovereign Master Operating Directive (MOD v3.2): Antigravity Execution System
 
 This document establishes the official, hardened execution standard for ALL tasks (software, copywriting, strategy, SEO, operations) on **`richardewing.io`**. 
 
@@ -28,16 +28,16 @@ This document establishes the official, hardened execution standard for ALL task
 
 ---
 
-## 2. Adaptive Operational Router (Task Scaling Matrix)
+## 2. Adaptive Operational Router & Two-Track Intent Architecture
 
-Before taking action, classify the user request into one of three operational modes to optimize execution depth, speed, and agent allocation:
+Before taking action, classify the user request into the appropriate operational track and mode to optimize execution depth, speed, and agent allocation:
 
-* **Mode 1: Direct Inquiry & Exploration** (Questions, file lookups, direct explanations)
-  * *Action*: Execute directly using read tools. Provide precise, jargon-free synthesis adhering to HWS v2.0 principles. No subagent overhead needed.
-* **Mode 2: Targeted Implementation & Refinement** (Single-file edits, bug fixes, isolated feature additions)
-  * *Action*: Perform rapid 360° context read $\rightarrow$ apply changes $\rightarrow$ run targeted verification script `node .agents/scripts/verify-qa.mjs` $\rightarrow$ report result.
-* **Mode 3: Full Autonomous System Execution ("Boil the Ocean")** (Complex refactors, multi-file features, site-wide SEO, platform transformation, strategy blueprints)
-  * *Action*: Full War Room orchestration. Deploy subagent swarms across isolated worktrees (`Workspace: "branch"`), write `implementation_plan.md`, enforce 4-pass QA, run `node .agents/scripts/verify-qa.mjs`, and auto-push to production.
+### Track 1: Execution Pipeline (Code & Content Mutations)
+* **Mode 2 (Targeted Refinement)**: Rapid 360° context read $\rightarrow$ apply changes $\rightarrow$ run `node .agents/scripts/verify-qa.mjs` $\rightarrow$ `npm run build` $\rightarrow$ auto-push to main.
+* **Mode 3 (Autonomous Full System Swarm)**: Deploy War Room subagent swarms in parallel git worktrees (`Workspace: "branch"` or `"share"`), write `implementation_plan.md`, enforce 4-pass QA, verify `node .agents/scripts/verify-qa.mjs`, compile `npm run build`, and auto-push to production.
+
+### Track 2: Strategic & Advisory Pipeline (Pure Evaluation & Architecture)
+* **Mode 1 (Direct Strategic Inquiry)**: Deliver deep, jargon-free synthesis adhering to HWS v2.0 principles. Construct structured artifacts (`RequestFeedback: false`). Never generate empty git commits, dummy files, or trigger redundant deployment builds when no code is touched.
 
 ---
 
@@ -107,36 +107,39 @@ If an error or failure occurs at any stage:
 
 ---
 
-## 8. Cognitive Model Maximization (Gemini 3.7 Flash / Claude 3.7 / Opus / Fable)
+## 8. Cognitive Model Maximization (Gemini 3.8 Flash High / Gemini 3 Pro / Claude 3.7 / Opus / Fable)
 
 To harness the full capabilities of next-generation high-reasoning frontier models:
 
-1. **Deep Architectural Synthesis**: Utilize high-reasoning token budgets to perform multi-hop systems analysis. Do not take shortcuts or settle for shallow fixes.
+1. **Enterprise ADC & High-Reasoning Budgets**: Harness Gemini 3.8 Flash (High Reasoning Effort) via Application Default Credentials (ADC) for deep multi-hop architectural synthesis and complex type derivations without settling for shallow fixes.
 2. **Euclidean Chain of Thought**: Reason explicitly through foundational principles (Experience $\rightarrow$ Observation $\rightarrow$ Mechanism $\rightarrow$ Principle) before executing edits.
 3. **Multi-Model Subagent Dynamic Dispatch**: When invoking subagents via `invoke_subagent`, match subagent tasks to their optimal model tier (`inherit` for complex reasoning, `flash` for rapid search/lookups, `pro` for large multi-step refactors).
 
 ---
 
-## 9. Google Antigravity 2.9 Sovereign Harness
+## 9. Google Antigravity 2.12.2 Sovereign Master Harness & Swarm Architecture
 
-1. **Subagent Swarms & Customization Inheritance**: Summon custom subagents (`lived_experience_writer`, `qa_auditor`, `seo_architect`, `ui_designer`, `code_architect`) in parallel branch worktrees (`Workspace: "branch"`). Subagents leverage `inheritCustomizations: true` to automatically inherit all workspace rules, REWS guidelines, Next.js invariants, and progressive skills.
-2. **Native Lifecycle Hooks (`hooks.json`)**: Enforce automated validation scripts (`verify-qa.mjs`) via native `PostToolUse` lifecycle interception.
-3. **MCP Binary Payload Offloading**: Large payloads from `pinecone-mcp-server` and `supabase-mcp-server` are disk-persisted and referenced, preventing context window flooding.
-4. **Direct Error Recovery & Windows Review Reliability**: Native task recovery resumes execution streams cleanly without artificial prompt injections, and interactive `Proceed` review cards render reliably on Windows.
-5. **Always-On Rules (`.agents/rules/`)**: Ensure non-negotiable operational invariants are injected into every turn.
-6. **Remote Control & Push Notification Synergy**: Monitor long-running Turbopack static generations and Mode 3 swarms remotely with instant push notifications on task completion.
+1. **Subagent Swarms in True Git Worktrees**: Summon custom subagents (`lived_experience_writer`, `qa_auditor`, `seo_architect`, `ui_designer`, `code_architect`) in parallel branch worktrees (`Workspace: "branch"` or `"share"`). Subagents leverage `inheritCustomizations: true` to automatically inherit workspace rules, HWS v2.0 guidelines, Next.js invariants, and progressive skills without dirtying the primary working directory.
+2. **G-Stack Virtual Engineering Roles**: Enforce role-based accountability modeled after Garry Tan's `gstack` virtual team discipline (Product Economist / Strategy, Architecture Lead, Design Reviewer, Headless QA Lead, Release Engineer) to maintain end-to-end software factory velocity.
+3. **Karpathy Empirical Test Invariants**: Before applying non-trivial bug fixes or refactors, construct an empirical Red/Green diagnostic probe in `.scratch/`. Confirm the failure (Red), apply the structural fix, confirm resolution (Green), then run the full build. Eliminate all "AI Hallucination Debt".
+4. **Generative UI Activation**: Use native Antigravity 2.12 Generative UI (`builtin/skills/generative_ui`) to generate interactive HTML/React proof-of-concept widgets, diagnostic testbeds, and live ROI calculators directly in chat and artifacts.
+5. **Native Lifecycle Hooks (`hooks.json`)**: Enforce automated validation scripts (`verify-qa.mjs`) via native `PostToolUse` lifecycle interception.
+6. **MCP Binary Payload Offloading**: Offload large payloads from `pinecone-mcp-server`, `supabase-mcp-server`, and `github-mcp-server` to disk storage to prevent context window flooding.
+7. **Direct Error Recovery & Preserved Split Layouts**: Native task recovery resumes execution streams cleanly without artificial prompt injections, and terminal split layouts are preserved across sessions.
+8. **Always-On Rules (`.agents/rules/`)**: Ensure non-negotiable operational invariants are injected into every turn.
 
 ---
 
-## 10. Slash Command Execution & Ecosystem Harness
+## 10. Slash Command Execution & Community Ecosystem Harness
 
-1. **`/goal` (Long-Horizon Autonomous Loops)**: When a broad optimization goal is set (e.g., reaching 100/100 Lighthouse score or refactoring multi-track layouts), execute continuous loops: Audit -> Refactor -> Verify -> Repeat until target metrics are achieved.
-2. **`/schedule` (Background Monitoring & Crons)**: Use one-shot timers or cron schedules for periodic health checks, broken link crawls, and automated sitemap pings.
-3. **`/browser` (Live Headless Visual Inspection)**: Validate UI layout shifts, responsive mobile breakpoints, and user tap states in real browsers.
-4. **`/grill-me` (Interactive Socratic Alignment)**: Run design interviews to surface architectural tradeoffs before writing code.
-5. **`/teamwork-preview` & Agent Dispatch**: Coordinate multi-agent collaborative workflows across isolated git worktrees.
-6. **`/learn` (Pattern Persistence)**: Codify durable user preferences, design tokens, and architectural rules.
-7. **MCP Server Integration**: Actively interface with vector indexes (`pinecone-mcp-server`) and relational data/edge functions (`supabase-mcp-server`).
+1. **`/boost` (High-Reasoning Swarm Escalation)**: For complex multi-layered architectural problems, invoke `/boost` to coordinate multi-agent reasoning pipelines with maximum thinking effort.
+2. **`/browser` (Live Headless Visual & DOM Inspection)**: Validate UI layout shifts, responsive mobile breakpoints, and user interaction flows using Playwright/Chromium headless browser automation.
+3. **`/goal` (Long-Horizon Autonomous Loops)**: When a broad optimization goal is set, execute continuous loops: Audit -> Refactor -> Verify -> Repeat until target metrics are achieved.
+4. **`/schedule` (Background Monitoring & Crons)**: Use one-shot timers or cron schedules for periodic health checks, broken link crawls, and automated sitemap pings.
+5. **`/grill-me` (Interactive Socratic Alignment)**: Run design interviews to surface architectural tradeoffs before writing code.
+6. **`/teamwork-preview` & Agent Dispatch**: Coordinate multi-agent collaborative workflows across isolated git worktrees.
+7. **`/learn` (Pattern Persistence)**: Codify durable user preferences, design tokens, and architectural rules.
+8. **MCP Server Integration**: Actively interface with vector indexes (`pinecone-mcp-server`), relational edge functions (`supabase-mcp-server`), and repository automation (`github-mcp-server`).
 
 ---
 
