@@ -2397,7 +2397,8 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
         supportingData: 'Direct registrar routing and organic brand protection telemetry across startup portfolio assets.'
       }
     ],
-    roleImpacts: [
+    reverseCitations: [],
+    personaRecommendations: [
       { role: 'Startup Founder', takeaway: 'Eliminate first-year cloud overhead and preserve equity by systematically applying to startup ecosystem programs.', recommendedNextSlug: 'rented-intelligence-vs-owned-capital' },
       { role: 'Chief Financial Officer', takeaway: 'Leverage hyperscaler subsidies to extend cash runway and delay dilutive funding rounds.', recommendedNextSlug: 'ai-volatility-tax' }
     ],
