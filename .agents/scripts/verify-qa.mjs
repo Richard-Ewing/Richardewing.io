@@ -127,6 +127,29 @@ if (fs.existsSync(corpusPath)) {
   });
 }
 
+// 6. Concept Relationship Invariant Gate (relatedConceptSlugs)
+const validConceptRelationships = [
+  'implements', 'measures', 'requires', 'supports', 'extends', 'derived_from',
+  'predicts', 'contradicts', 'depends_on', 'refines', 'simplifies', 'generalizes',
+  'explains', 'formalizes', 'causes', 'correlates_with'
+];
+const conceptFiles = fs.readdirSync(path.join(rootDir, 'app/lib')).filter(f => f.startsWith('concept-corpus') && f.endsWith('.ts'));
+for (const cf of conceptFiles) {
+  const filePath = path.join(rootDir, 'app/lib', cf);
+  const content = fs.readFileSync(filePath, 'utf8');
+  const slugBlocks = [...content.matchAll(/relatedConceptSlugs:\s*\[([\s\S]*?)\]/g)];
+  for (const block of slugBlocks) {
+    const relMatches = [...block[1].matchAll(/relationship:\s*['"]([^'"]+)['"](?!\s+as\s+any)/g)];
+    for (const m of relMatches) {
+      const rel = m[1];
+      if (!validConceptRelationships.includes(rel)) {
+        console.error(`[CONCEPT TYPE ERROR] Invalid relationship '${rel}' in ${cf} relatedConceptSlugs! Must be one of: ${validConceptRelationships.join(', ')}`);
+        errorCount++;
+      }
+    }
+  }
+}
+
 console.log('\n--- Verification Summary ---');
 console.log(`Files audited: ${filesToAudit.length}`);
 console.log(`Errors: ${errorCount}`);

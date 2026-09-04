@@ -2352,7 +2352,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     ],
     relatedConceptSlugs: [
       { slug: 'rented-intelligence-vs-owned-capital', relationship: 'supports' },
-      { slug: 'ai-volatility-tax', relationship: 'mitigates' },
+      { slug: 'ai-volatility-tax', relationship: 'refines' },
       { slug: 'product-economist', relationship: 'extends' },
       { slug: 'cloud-repatriation', relationship: 'depends_on' }
     ],
