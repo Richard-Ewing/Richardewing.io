@@ -27,6 +27,24 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
+  // Today's Beehiiv Newsletter - September 4, 2026
+  {
+    id: 'beehiiv-bootstrappers-cloud-credit-playbook',
+    title: "The Bootstrapper's Cloud Credit Playbook",
+    url: 'https://theaieconomist.beehiiv.com/p/the-bootstrapper-s-cloud-credit-playbook',
+    publisher: 'Beehiiv',
+    domain: 'AI Economics',
+    type: 'Executable',
+    date: 'September 4, 2026',
+    thesis: 'When building software as a solo founder, cash flow preservation is everything. How systematic execution across AWS Activate, Google for Startups Cloud, and Microsoft Founders Hub secures $100,000+ in non-dilutive infrastructure capital, eliminates first-year cloud overhead, and captures authoritative domain backlinks while executing defensive domain acquisition.',
+    editorsPick: false,
+    relatedConceptIds: ['non-dilutive-infrastructure-capital', 'rented-intelligence-vs-owned-capital', 'ai-volatility-tax', 'product-economist', 'synthetic-cogs'],
+    relatedGlossarySlugs: ['non-dilutive-infrastructure-leverage', 'defensive-domain-architecture', 'synthetic-cogs', 'ai-volatility-tax'],
+    relatedFrameworkSlugs: ['governed-execution', 'runtime-vs-alignment'],
+    relatedToolIds: ['aueb', 'pdi', 'aper'],
+    relatedCaseStudyIds: ['cursor-to-antigravity-startup-governance', 'runtime-concurrency-failures'],
+    relatedCurriculumTrackIds: ['cloud-finops', 'engineering-economics', 'rd-capital-management']
+  },
   // Today's LinkedIn Newsletter - September 3, 2026
   {
     id: 'linkedin-engineering-bottleneck-illusion',
@@ -928,6 +946,21 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     relatedConceptIds: ["deterministic-governance","agent-kill-switch","ai-governance", 'prompt-injection', 'ai-security'],
     relatedGlossarySlugs: ["prompt-injection"],
     relatedToolIds: ["prompt-injection-sandbox"]
+  },
+  // Beehiiv Newsletters
+  {
+    id: 'beehiiv-bootstrappers-cloud-credit-playbook-archive',
+    title: "The Bootstrapper's Cloud Credit Playbook",
+    url: 'https://theaieconomist.beehiiv.com/p/the-bootstrapper-s-cloud-credit-playbook',
+    publisher: 'Beehiiv',
+    domain: 'AI Economics',
+    type: 'Executable',
+    thesis: 'A founder playbook for securing AWS and Google Cloud startup credits, directory backlinks, and cloud tools without giving up equity.',
+    date: 'September 2026',
+    editorsPick: false,
+    relatedConceptIds: ['non-dilutive-infrastructure-capital', 'rented-intelligence-vs-owned-capital', 'ai-volatility-tax', 'product-economist', 'synthetic-cogs'],
+    relatedGlossarySlugs: ['non-dilutive-infrastructure-leverage', 'defensive-domain-architecture'],
+    relatedToolIds: ['aueb', 'pdi', 'aper']
   },
   {
     id: 'beehiiv-state-hashing-spec',

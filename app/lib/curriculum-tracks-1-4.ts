@@ -288,6 +288,26 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
                 ], 'Draft a presentation to the Board of Directors explaining that a core system is nearing Technical Insolvency and requesting a 6-month feature freeze to remediate.')
             ]
         ],
+        ['3-19', 'Non-Dilutive Infrastructure Financing', 'Financing early AI and SaaS systems through hyperscaler startup credits and defensive domain architecture.', 
+            ['Secure $100k+ in Cloud Credits', 'Sequence AWS, GCP, and Azure Approvals', 'Establish Corporate Legitimacy', 'Execute Defensive Domain Strategy'],
+            [
+                l('Lesson 1: The Non-Dilutive Capital Arbitrage', 'Every dollar spent on cloud hosting, databases, or API inference is a dollar drawn directly from cash runway or paid for with expensive equity dilution. Systematic founders finance first-year infrastructure through hyperscaler startup programs.', [
+                    d('AWS Startup Program', 'Secures EC2, RDS/Supabase, and CloudFront credits, plus high-authority AWS Directory backlinks.', 'Covers early database and CDN overhead'),
+                    d('Google for Startups Cloud', 'Offsets AI inference and storage infrastructure with credits plus 12 months free Google Workspace.', 'Eliminates developer tooling and AI OpEx'),
+                    d('Microsoft Founders Hub', 'Azure credits, GitHub Enterprise access, and OpenAI API allocations.', 'Provides non-dilutive frontier model tokens')
+                ], 'Calculate the runway extension of securing $100k+ in cloud credits versus raising an equivalent pre-seed equity tranche.'),
+                l('Lesson 2: Corporate Legitimacy & Qualification Protocol', 'Hyperscaler program review teams reject applications without established business verification. Founders must construct clear corporate legitimacy before applying.', [
+                    d('Corporate Entity & EIN', 'Official LLC or C-Corp registration and Employer Identification Number.', 'Mandatory proof of business identity'),
+                    d('Domain & Professional Email Alignment', 'Active product landing page on primary domain with matching business email.', 'Instant disqualification if using consumer @gmail.com'),
+                    d('Architecture Thesis', 'Concise 2-sentence description of workload architecture and expected consumption.', 'Aligns product roadmap with cloud provider capabilities')
+                ], 'Audit your corporate documentation, primary domain, and cloud architecture statement against tier-1 startup program requirements.'),
+                l('Lesson 3: Defensive Domain Architecture', 'As products gain initial market traction, defend brand identity early before domain squatters and competitors notice traffic growth.', [
+                    d('Defensive TLD Acquisition', 'Acquiring brand variants, alternative TLDs, and operating system permutations (e.g. careerwinos.com).', 'Preempts cybersquatting and brand confusion'),
+                    d('Canonical 301 Redirect Mapping', 'Routing all defensive variants directly to the primary domain with permanent redirects.', 'Consolidates domain authority and backlink equity'),
+                    d('Directory Backlink Authority', 'Leveraging AWS Startup Directory listings to secure enterprise-grade domain authority within weeks of launch.', 'Accelerates organic search engine indexing')
+                ], 'Map out the defensive domain variants for your primary product and establish automated redirect rules.')
+            ]
+        ],
     ];
 
     invMods.forEach(([id, title, desc, takeaways, lessons], i) => {

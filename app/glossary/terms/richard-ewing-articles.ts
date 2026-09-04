@@ -282,5 +282,35 @@ export const richardEwingArticleTerms: GlossaryTerm[] = [
         relatedArticles: [
             { title: 'The Engineering Bottleneck Illusion: What Copilot Adoption Taught Us', url: 'https://www.linkedin.com/pulse/engineering-bottleneck-illusion-what-copilot-adoption-richard-ewing-f5qhc/' }
         ]
+    },
+    {
+        slug: 'non-dilutive-infrastructure-leverage',
+        title: 'Non-Dilutive Infrastructure Leverage',
+        category: 'Richard Ewing Frameworks',
+        definition: `Non-Dilutive Infrastructure Leverage is the operational financing architecture formulated by Richard Ewing in The AI Economist (Beehiiv) demonstrating how solo builders and early-stage founders systematically secure $100,000+ in cloud hosting, database, and inference compute subsidies across AWS Activate, Google for Startups Cloud, and Microsoft Founders Hub without giving up equity.\n\nInstead of raising expensive pre-seed venture capital to pay retail hosting rates, founders establish corporate legitimacy (LLC/C-Corp, EIN, custom business email) to unlock three tiers of subsidies: 1) AWS credits covering EC2, RDS/Supabase, and CloudFront routing, plus an AWS Startup Directory backlink, 2) Google Cloud credits for inference and storage alongside 12 months of Google Workspace, and 3) Microsoft Founders Hub credits for Azure compute, GitHub Enterprise, and OpenAI API tokens.\n\nThis sequence drives first-year infrastructure COGS to near zero, extending runway during product-market fit discovery.`,
+        whyItMatters: `Infrastructure and inference compute are the fastest drains on early venture capital. Financing early architecture with non-dilutive hyperscaler credits preserves founder equity and delays dilutive financing rounds until after commercial traction is proven.`,
+        faqs: [
+            { question: 'What is Non-Dilutive Infrastructure Leverage?', answer: 'An operational financing framework by Richard Ewing showing how founders secure $100,000+ in cloud credits across AWS, Google, and Microsoft to eliminate early hosting costs without giving up equity.' },
+            { question: 'What documentation is required to qualify for hyperscaler startup credits?', answer: 'Founders must establish corporate legitimacy: an official LLC or C-Corp filing with an EIN, an active landing page on a custom domain, professional business email addresses (no consumer webmail), and a concise 2-sentence architecture description.' }
+        ],
+        relatedTerms: ['rented-intelligence-vs-owned-capital', 'defensive-domain-architecture', 'synthetic-cogs', 'ai-volatility-tax', 'vendor-neutral-control-gateway'],
+        relatedArticles: [
+            { title: "The Bootstrapper's Cloud Credit Playbook", url: 'https://theaieconomist.beehiiv.com/p/the-bootstrapper-s-cloud-credit-playbook' }
+        ]
+    },
+    {
+        slug: 'defensive-domain-architecture',
+        title: 'Defensive Domain Architecture',
+        category: 'Richard Ewing Frameworks',
+        definition: `Defensive Domain Architecture is an intellectual property and search discovery strategy formulated by Richard Ewing where emerging software ventures preemptively acquire brand variants, alternative TLDs, and operating system permutations (such as acquiring careerwinos.com alongside careerwin.ai) to prevent cybersquatting, brand dilution, and SEO fragmentation before commercial traffic spikes occur.\n\nAll acquired defensive variants are routed to the canonical domain via 301 permanent redirects. In parallel, founders secure high-authority directory listings (such as the AWS Startup Directory) within weeks of corporate formation to anchor early search discovery moats.`,
+        whyItMatters: `Waiting until after a product gains market traction before buying domain variants exposes founders to predatory domain squatters and brand hijacking. Preemptive acquisition locks down intellectual property at registration cost.`,
+        faqs: [
+            { question: 'What is Defensive Domain Architecture?', answer: 'A proactive intellectual property framework by Richard Ewing where founders register brand variants, TLDs, and OS permutations early, routing them back to the primary domain with permanent redirects.' },
+            { question: 'How does the AWS Startup Directory fit into defensive domain strategy?', answer: 'Completing the company profile upon AWS startup approval yields an authoritative, high-trust backlink directly to the primary domain, accelerating search indexation and domain authority.' }
+        ],
+        relatedTerms: ['non-dilutive-infrastructure-leverage', 'vendor-neutral-control-gateway', 'systems-governor'],
+        relatedArticles: [
+            { title: "The Bootstrapper's Cloud Credit Playbook", url: 'https://theaieconomist.beehiiv.com/p/the-bootstrapper-s-cloud-credit-playbook' }
+        ]
     }
 ];

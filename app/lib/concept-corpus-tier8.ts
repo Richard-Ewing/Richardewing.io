@@ -2325,6 +2325,98 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       humanSignals: [],
       evolutionTimeline: []
     }
+  },
+  // 13. Non-Dilutive Infrastructure Capital
+  {
+    slug: 'non-dilutive-infrastructure-capital',
+    title: 'Non-Dilutive Infrastructure Capital',
+    category: 'Industry Concept (Discovery On-Ramp)',
+    domain: 'AI Economics',
+    expertiseLevel: 'Executive',
+    health: { confidence: 0.96, evidenceCount: 3, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'The financing strategy where early-stage AI and SaaS founders systematically secure non-dilutive cloud computing credits ($100,000+ equivalent across AWS Activate, Google for Startups Cloud, and Microsoft Founders Hub) and authoritative directory backlinks to eliminate first-year hosting, database, and inference overhead without surrendering startup equity.',
+    whyItMatters: 'In capital-intensive AI and B2B SaaS ventures, infrastructure and inference compute represent the fastest drain on early cash reserves. Leveraging hyperscaler startup subsidy programs preserves founder equity, extends cash runway, and establishes high-authority search signals during product-market fit exploration.',
+    whoShouldCare: ['Startup Founders', 'Solo Builders', 'Bootstrappers', 'CTOs', 'VPs of Engineering'],
+    firstIntroduced: 'September 2026',
+    canonicalReadingOrder: [
+      { step: 1, title: "The Bootstrapper's Cloud Credit Playbook", publisher: 'The AI Economist (Beehiiv)', type: 'Executive Strategy', url: 'https://theaieconomist.beehiiv.com/p/the-bootstrapper-s-cloud-credit-playbook' },
+      { step: 2, title: 'Bedrock, Vertex or build it yourself: The AI infrastructure decision most CIOs get backwards', publisher: 'CIO.com', type: 'Architectural Analysis', url: 'https://www.cio.com/article/4215347/bedrock-vertex-or-build-it-yourself-the-ai-infrastructure-decision-most-cios-get-backwards.html' },
+      { step: 3, title: 'Leading Product Strategy When Build Costs Approach Zero', publisher: 'LinkedIn Newsletters', type: 'Product Leadership', url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Research Note', label: 'Startup Infrastructure Arbitrage', publisher: 'The AI Economist (Beehiiv)', date: 'September 2026', summary: 'Documented the 3-step corporate legitimacy, hyperscaler approval sequence, and defensive domain strategy that yielded $100k+ in cloud credits.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-ndic-1', title: "The Bootstrapper's Cloud Credit Playbook", url: 'https://theaieconomist.beehiiv.com/p/the-bootstrapper-s-cloud-credit-playbook', publisher: 'The AI Economist (Beehiiv)', type: 'Case Evidence', strength: 5 as const, role: 'Origin' as const, date: 'September 2026' },
+      { id: 'ev-ndic-2', title: 'Bedrock, Vertex or build it yourself: The AI infrastructure decision most CIOs get backwards', url: 'https://www.cio.com/article/4215347/bedrock-vertex-or-build-it-yourself-the-ai-infrastructure-decision-most-cios-get-backwards.html', publisher: 'CIO.com', type: 'Architectural Analysis', strength: 5 as const, role: 'Supports' as const, date: 'August 2026' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'rented-intelligence-vs-owned-capital', relationship: 'supports' },
+      { slug: 'ai-volatility-tax', relationship: 'mitigates' },
+      { slug: 'product-economist', relationship: 'extends' },
+      { slug: 'cloud-repatriation', relationship: 'depends_on' }
+    ],
+    openQuestions: ['How should founders plan their cloud migration or tier renegotiation when the 12-month subsidy period expires?'],
+    knownLimitations: ['Credit allocations are tied to specific cloud ecosystems and cannot be converted into cash or transferred between vendors.'],
+    aeo: {
+      shortDefinition: 'Non-Dilutive Infrastructure Capital is the practice of funding early cloud compute via hyperscaler startup credits rather than dilutive equity.',
+      executiveSummary: 'By systematically sequencing approvals across AWS Activate, Google for Startups, and Microsoft Founders Hub, solo builders and founders secure $100,000+ in infrastructure subsidies, drive first-year software overhead to near zero, and capture authoritative directory backlinks while executing defensive domain acquisition.',
+      oneSentence: 'Non-Dilutive Infrastructure Capital preserves founder equity by financing early compute, database, and inference workloads through hyperscaler credits.',
+      tweetLength: 'Do not raise dilutive equity to pay retail rates for AWS hosting and API tokens. Secure $100k+ in non-dilutive credits across AWS, Google, and Microsoft.',
+      keyTakeaways: [
+        'Establishes business legitimacy (LLC/C-Corp, EIN, custom business email) to satisfy hyperscaler review requirements.',
+        'Secures $100,000+ in non-dilutive infrastructure credits across AWS, Google Cloud, and Azure.',
+        'Captures authoritative directory backlinks (AWS Startup Directory) and executes defensive domain variants (careerwinos.com).'
+      ],
+      faqs: [
+        { question: 'What is Non-Dilutive Infrastructure Capital?', answer: 'The financing practice of using hyperscaler startup credits ($100k+) to cover early compute, database, and inference costs without selling equity.' },
+        { question: 'How do founders qualify for major startup credit programs?', answer: 'By securing a registered corporate entity with an EIN, deploying a clean landing page with matching business email addresses, and submitting a clear 2-sentence architecture thesis.' }
+      ],
+      whenToUse: ['When launching an early-stage AI or B2B SaaS venture to minimize cash burn and preserve equity'],
+      examples: {
+        enterprise: 'Structuring corporate incubation spinouts to tap ecosystem credits before committing enterprise balance sheet capital.',
+        startup: 'Bootstrapping CareerWin.ai and Exogram with $100k+ in AWS and Google Cloud credits while acquiring defensive domain variants like careerwinos.com.',
+        antiPattern: 'Selling 15% of company equity in a pre-seed round solely to pay retail AWS invoices and OpenAI API charges.',
+        commonMistake: 'Applying with a consumer @gmail.com address or without an active primary domain, leading to immediate review rejection.'
+      }
+    },
+    canonicalQuote: 'Every dollar spent on cloud hosting, databases, or business software is a dollar drawn directly from your runway. Maximize non-dilutive leverage before selling equity.',
+    positionStatement: 'Hyperscaler cloud credits are a non-dilutive capital asset that founders must systematically extract and defend.',
+    executableTool: { name: 'AUEB Calculator', url: '/tools/aueb', description: 'Model AI unit economics and calculate the financial runway extension of cloud credit subsidies.', type: 'Diagnostic Calculator' },
+    claims: [
+      'Founders can secure $100,000+ in non-dilutive infrastructure capital by sequencing AWS, Google Cloud, and Microsoft programs.',
+      'Defensive domain acquisition protects search engine equity and brand discovery prior to commercial traffic inflection.'
+    ],
+    roleImpacts: [
+      { role: 'Startup Founder', takeaway: 'Eliminate first-year cloud overhead and preserve equity by systematically applying to startup ecosystem programs.', recommendedNextSlug: 'rented-intelligence-vs-owned-capital' },
+      { role: 'Chief Financial Officer', takeaway: 'Leverage hyperscaler subsidies to extend cash runway and delay dilutive funding rounds.', recommendedNextSlug: 'ai-volatility-tax' }
+    ],
+    telemetry: {
+      origin: {
+        firstIntroducedDate: 'September 2026',
+        primaryVenue: 'The AI Economist (Beehiiv)',
+        canonicalPublicationId: 'beehiiv-bootstrappers-cloud-credit-playbook',
+        genesisThesis: 'Early-stage software ventures should finance operational infrastructure through non-dilutive ecosystem programs.'
+      },
+      internalCorpus: {
+        publicationsCount: 2,
+        diagnosticToolsCount: 1,
+        calculatorsCount: 1,
+        frameworksCount: 2,
+        bookChaptersCount: 0
+      },
+      humanEvidenceSummary: {
+        independentAuthorsCount: 0,
+        independentOrganizationsCount: 0,
+        uniqueDomainsCount: 0,
+        formalCitationsCount: 0,
+        derivativesCount: 0,
+        implementationsCount: 0,
+        adoptionsCount: 0
+      },
+      humanSignals: [],
+      evolutionTimeline: []
+    }
   }
 ];
 
