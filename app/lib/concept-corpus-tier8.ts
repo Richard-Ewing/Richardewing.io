@@ -2384,8 +2384,18 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     positionStatement: 'Hyperscaler cloud credits are a non-dilutive capital asset that founders must systematically extract and defend.',
     executableTool: { name: 'AUEB Calculator', url: '/tools/aueb', description: 'Model AI unit economics and calculate the financial runway extension of cloud credit subsidies.', type: 'Diagnostic Calculator' },
     claims: [
-      'Founders can secure $100,000+ in non-dilutive infrastructure capital by sequencing AWS, Google Cloud, and Microsoft programs.',
-      'Defensive domain acquisition protects search engine equity and brand discovery prior to commercial traffic inflection.'
+      {
+        statement: 'Founders can secure $100,000+ in non-dilutive infrastructure capital by sequencing AWS, Google Cloud, and Microsoft programs.',
+        confidence: 0.95,
+        counterarguments: ['Credit expiration creates a sudden cost cliff if unit economics are not proven within 12 months.'],
+        supportingData: 'Hyperscaler startup program allocations across AWS Activate, Google Cloud for Startups, and Microsoft Founders Hub.'
+      },
+      {
+        statement: 'Defensive domain acquisition protects search engine equity and brand discovery prior to commercial traffic inflection.',
+        confidence: 0.90,
+        counterarguments: ['Early domain spending can be an unnecessary distraction if the core product has no search demand.'],
+        supportingData: 'Direct registrar routing and organic brand protection telemetry across startup portfolio assets.'
+      }
     ],
     roleImpacts: [
       { role: 'Startup Founder', takeaway: 'Eliminate first-year cloud overhead and preserve equity by systematically applying to startup ecosystem programs.', recommendedNextSlug: 'rented-intelligence-vs-owned-capital' },
