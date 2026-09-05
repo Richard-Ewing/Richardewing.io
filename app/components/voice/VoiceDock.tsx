@@ -12,7 +12,12 @@ import {
   ExternalLink,
   Loader2,
   Send,
-  AlertCircle
+  AlertCircle,
+  Calendar,
+  Wrench,
+  BookOpen,
+  Layers,
+  RotateCcw
 } from 'lucide-react';
 import { RecommendedCard } from '@/app/lib/voice-knowledge';
 
@@ -209,10 +214,24 @@ export default function VoiceDock() {
 
     const closeMsg: Message = {
       role: 'assistant',
-      content: "We have reached our 90-second quick chat limit. If you want to dig deeper into your numbers, grab time on my calendar or explore the curriculum below."
+      content: "We have reached our 90-second quick chat limit. Rather than leaving you hanging, here are direct links to book working time with me, run diagnostic tools on your team, or explore the curriculum below."
     };
 
     setMessages((prev) => [...prev, closeMsg]);
+  };
+
+  const handleRestartSession = () => {
+    hasSessionEndedRef.current = false;
+    setSecondsRemaining(90);
+    setMicError(null);
+    setActiveCard(null);
+    setStatus('idle');
+    setMessages([
+      {
+        role: 'assistant',
+        content: "Richard here. What would you like to explore or stress-test in this session?"
+      }
+    ]);
   };
 
   // Start recording actual audio from user's microphone
@@ -322,7 +341,16 @@ export default function VoiceDock() {
       // Show user's transcribed question if returned
       const userText = data.transcription || '(Audio message)';
       const userMsg: Message = { role: 'user', content: userText };
-      const assistantMsg: Message = { role: 'assistant', content: data.reply };
+      
+      let replyText = data.reply || '';
+      if (hasSessionEndedRef.current) {
+        // Strip trailing question marks and open-ended queries so the user isn't left hanging
+        replyText = replyText.replace(/([.!?])\s+[A-Z][^.!?]*\?\s*$/, '$1').trim();
+        if (!replyText) {
+          replyText = "Understood.";
+        }
+      }
+      const assistantMsg: Message = { role: 'assistant', content: replyText };
 
       setMessages((prev) => [...prev, userMsg, assistantMsg]);
 
@@ -333,7 +361,7 @@ export default function VoiceDock() {
       if (data.audioDataUrl && !isMuted) {
         playNeuralAudio(data.audioDataUrl);
       } else {
-        setStatus('idle');
+        setStatus(hasSessionEndedRef.current ? 'limit_reached' : 'idle');
       }
     } catch {
       const errorMsg: Message = {
@@ -341,7 +369,7 @@ export default function VoiceDock() {
         content: "Richard here. I had trouble connecting. Feel free to book a direct session or explore the curriculum below."
       };
       setMessages((prev) => [...prev, errorMsg]);
-      setStatus('idle');
+      setStatus(hasSessionEndedRef.current ? 'limit_reached' : 'idle');
     }
   };
 
@@ -367,25 +395,33 @@ export default function VoiceDock() {
         setActiveCard(data.card);
       }
 
+      let replyText = data.reply || '';
+      if (hasSessionEndedRef.current) {
+        replyText = replyText.replace(/([.!?])\s+[A-Z][^.!?]*\?\s*$/, '$1').trim();
+        if (!replyText) {
+          replyText = "Understood.";
+        }
+      }
+
       const assistantMessage: Message = {
         role: 'assistant',
-        content: data.reply
+        content: replyText
       };
 
       setMessages((prev) => [...prev, assistantMessage]);
 
-      if (!isMuted && data.audioDataUrl) {
+      if (data.audioDataUrl && !isMuted) {
         playNeuralAudio(data.audioDataUrl);
       } else {
-        setStatus('idle');
+        setStatus(hasSessionEndedRef.current ? 'limit_reached' : 'idle');
       }
     } catch {
       const errorMsg: Message = {
         role: 'assistant',
-        content: "Richard here. I had trouble connecting. Feel free to book a direct 30-minute session or explore the curriculum."
+        content: "Richard here. I had trouble connecting. Feel free to book a direct session or explore the curriculum below."
       };
       setMessages((prev) => [...prev, errorMsg]);
-      setStatus('idle');
+      setStatus(hasSessionEndedRef.current ? 'limit_reached' : 'idle');
     }
   };
 
@@ -430,7 +466,7 @@ export default function VoiceDock() {
                 <h3 className="text-sm font-semibold text-zinc-100 flex items-center gap-1.5">
                   Richard Ewing
                   <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-950/80 text-cyan-400 border border-cyan-800/50">
-                    Neural AI Voice
+                    Audio Partner
                   </span>
                 </h3>
                 <p className="text-[11px] text-zinc-400 font-mono">
@@ -516,7 +552,106 @@ export default function VoiceDock() {
             {status === 'processing' && (
               <div className="flex items-center gap-2 text-zinc-400 text-xs py-1">
                 <Loader2 className="w-3.5 h-3.5 animate-spin text-cyan-400" />
-                <span>Diagnosing with Gemini...</span>
+                <span>Thinking through this...</span>
+              </div>
+            )}
+
+            {status === 'limit_reached' && (
+              <div className="pt-2 pb-1 space-y-2.5 animate-in fade-in slide-in-from-bottom-2 duration-300">
+                <div className="flex items-center justify-between border-b border-zinc-800/80 pb-1.5">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-cyan-400 font-semibold">
+                    Recommended Next Steps
+                  </span>
+                  <span className="text-[10px] text-zinc-500 font-mono">Direct Actions</span>
+                </div>
+
+                <div className="grid grid-cols-1 gap-2">
+                  {/* 1. Book Working Session */}
+                  <a
+                    href="https://cal.com/richard-ewing-2cevwb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-start gap-3 p-2.5 rounded-xl bg-zinc-900 border border-zinc-700/80 hover:border-cyan-500/60 hover:bg-zinc-800 transition-all text-left shadow-sm"
+                  >
+                    <div className="p-2 rounded-lg bg-cyan-950 text-cyan-400 border border-cyan-800/60 group-hover:scale-105 transition-transform shrink-0">
+                      <Calendar className="w-4 h-4" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between gap-1">
+                        <h5 className="text-xs font-semibold text-white group-hover:text-cyan-300 transition-colors truncate">
+                          1:1 Advisory Strategy Session
+                        </h5>
+                        <span className="text-[10px] font-mono text-cyan-400 shrink-0">Cal.com</span>
+                      </div>
+                      <p className="text-[11px] text-zinc-400 mt-0.5 line-clamp-1">
+                        Direct 30-min working review on your architecture or team burn.
+                      </p>
+                    </div>
+                  </a>
+
+                  {/* 2. Diagnostic Tools */}
+                  <a
+                    href="/tools"
+                    className="group flex items-start gap-3 p-2.5 rounded-xl bg-zinc-900 border border-zinc-700/80 hover:border-emerald-500/60 hover:bg-zinc-850 transition-all text-left shadow-sm"
+                  >
+                    <div className="p-2 rounded-lg bg-emerald-950 text-emerald-400 border border-emerald-800/60 group-hover:scale-105 transition-transform shrink-0">
+                      <Wrench className="w-4 h-4" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between gap-1">
+                        <h5 className="text-xs font-semibold text-white group-hover:text-emerald-300 transition-colors truncate">
+                          Executive Diagnostic Tools
+                        </h5>
+                        <span className="text-[10px] font-mono text-emerald-400 shrink-0">Free / Pro</span>
+                      </div>
+                      <p className="text-[11px] text-zinc-400 mt-0.5 line-clamp-1">
+                        Audit Product Debt Index (PDI), Copilot ROI, and AI Unit Economics.
+                      </p>
+                    </div>
+                  </a>
+
+                  {/* 3. Curriculum Tracks */}
+                  <a
+                    href="/curriculum"
+                    className="group flex items-start gap-3 p-2.5 rounded-xl bg-zinc-900 border border-zinc-700/80 hover:border-indigo-500/60 hover:bg-zinc-850 transition-all text-left shadow-sm"
+                  >
+                    <div className="p-2 rounded-lg bg-indigo-950 text-indigo-400 border border-indigo-800/60 group-hover:scale-105 transition-transform shrink-0">
+                      <BookOpen className="w-4 h-4" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between gap-1">
+                        <h5 className="text-xs font-semibold text-white group-hover:text-indigo-300 transition-colors truncate">
+                          Academy Curriculum Tracks
+                        </h5>
+                        <span className="text-[10px] font-mono text-indigo-400 shrink-0">From $149</span>
+                      </div>
+                      <p className="text-[11px] text-zinc-400 mt-0.5 line-clamp-1">
+                        AI economics, R&D capital triage, and engineering leadership.
+                      </p>
+                    </div>
+                  </a>
+
+                  {/* 4. Digital Products & Vault */}
+                  <a
+                    href="/pricing"
+                    className="group flex items-start gap-3 p-2.5 rounded-xl bg-zinc-900 border border-zinc-700/80 hover:border-amber-500/60 hover:bg-zinc-850 transition-all text-left shadow-sm"
+                  >
+                    <div className="p-2 rounded-lg bg-amber-950 text-amber-400 border border-amber-800/60 group-hover:scale-105 transition-transform shrink-0">
+                      <Layers className="w-4 h-4" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between gap-1">
+                        <h5 className="text-xs font-semibold text-white group-hover:text-amber-300 transition-colors truncate">
+                          Playbooks & All-Access Vault
+                        </h5>
+                        <span className="text-[10px] font-mono text-amber-400 shrink-0">Lifetime</span>
+                      </div>
+                      <p className="text-[11px] text-zinc-400 mt-0.5 line-clamp-1">
+                        13 engineering economics playbooks and complete vault access.
+                      </p>
+                    </div>
+                  </a>
+                </div>
               </div>
             )}
 
@@ -610,7 +745,39 @@ export default function VoiceDock() {
 
           {/* Controls Footer */}
           <div className="p-4 border-t border-zinc-800/80 bg-zinc-900/30">
-            {mode === 'voice' ? (
+            {status === 'limit_reached' ? (
+              <div className="flex flex-col gap-2.5 animate-in fade-in duration-200">
+                <button
+                  onClick={handleRestartSession}
+                  className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-cyan-600 to-teal-500 hover:from-cyan-500 hover:to-teal-400 text-white text-xs font-semibold shadow-lg shadow-cyan-600/20 hover:scale-[1.01] active:scale-[0.99] transition-all"
+                >
+                  <RotateCcw className="w-4 h-4" />
+                  <span>Start Another 90s Session</span>
+                </button>
+                <div className="flex items-center justify-center gap-3 text-[11px] text-zinc-400 font-mono pt-0.5">
+                  <a
+                    href="https://cal.com/richard-ewing-2cevwb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-cyan-300 transition-colors"
+                  >
+                    Book Call
+                  </a>
+                  <span className="text-zinc-600">•</span>
+                  <a href="/tools" className="hover:text-cyan-300 transition-colors">
+                    Tools
+                  </a>
+                  <span className="text-zinc-600">•</span>
+                  <a href="/curriculum" className="hover:text-cyan-300 transition-colors">
+                    Curriculum
+                  </a>
+                  <span className="text-zinc-600">•</span>
+                  <a href="/pricing" className="hover:text-cyan-300 transition-colors">
+                    Vault
+                  </a>
+                </div>
+              </div>
+            ) : mode === 'voice' ? (
               <div className="flex flex-col items-center gap-3">
                 {/* Visualizer and Mic button */}
                 <div className="flex items-center justify-center gap-4 w-full">
@@ -628,12 +795,9 @@ export default function VoiceDock() {
                   {/* Main Record/Talk Button */}
                   <button
                     onClick={status === 'listening' ? stopRecording : startRecording}
-                    disabled={status === 'limit_reached'}
                     className={`relative p-4 rounded-full transition-all duration-300 shadow-xl ${
                       status === 'listening'
                         ? 'bg-rose-600 hover:bg-rose-500 ring-4 ring-rose-500/30 scale-110'
-                        : status === 'limit_reached'
-                        ? 'bg-zinc-800 text-zinc-600 cursor-not-allowed'
                         : 'bg-cyan-600 hover:bg-cyan-500 text-white hover:scale-105 shadow-cyan-600/30'
                     }`}
                     aria-label={status === 'listening' ? 'Finish Speaking' : 'Start Talking'}
@@ -661,11 +825,9 @@ export default function VoiceDock() {
                   {status === 'listening'
                     ? 'Listening... Speak now (Tap mic when done)'
                     : status === 'speaking'
-                    ? 'Richard is speaking (Neural Voice)...'
+                    ? 'Richard is speaking...'
                     : status === 'processing'
-                    ? 'Diagnosing with Gemini...'
-                    : status === 'limit_reached'
-                    ? 'Limit reached - book a session above'
+                    ? 'Thinking through this...'
                     : 'Tap microphone to talk'}
                 </p>
 
@@ -690,17 +852,13 @@ export default function VoiceDock() {
                     type="text"
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
-                    placeholder={
-                      status === 'limit_reached'
-                        ? 'Session ended'
-                        : 'Ask about career, AI burn, or team velocity...'
-                    }
-                    disabled={status === 'limit_reached' || status === 'processing'}
+                    placeholder="Ask about career, AI burn, or team velocity..."
+                    disabled={status === 'processing'}
                     className="flex-1 bg-zinc-900 border border-zinc-700/80 rounded-xl px-3.5 py-2 text-xs sm:text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-500 transition-colors"
                   />
                   <button
                     type="submit"
-                    disabled={!inputText.trim() || status === 'processing' || status === 'limit_reached'}
+                    disabled={!inputText.trim() || status === 'processing'}
                     className="p-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-white transition-colors"
                     aria-label="Send message"
                   >
