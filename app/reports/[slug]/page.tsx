@@ -14,8 +14,8 @@ const reportMeta: Record<string, { title: string; description: string }> = {
     'ai-margin-compression-report': { title: 'AI Margin Compression Report | COGS & Profitability Analysis', description: 'How AI inference costs compress gross margins. Enterprise benchmarks for AI feature economics and cost attribution.' },
 };
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const { slug } = params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
     const meta = reportMeta[slug];
     if (!meta) return { title: 'Report | Richard Ewing', description: 'Enterprise benchmark report from live AI telemetry.' };
     return {
@@ -38,8 +38,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
 }
 
-export default async function ReportDetailPage({ params }: { params: { slug: string } }) {
-    const { slug } = params;
+export default async function ReportDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
 
     // In production, fetch specific snapshot data from Supabase based on slug.
     // For now, we stub the rendering logic to support the mandated taxonomy.
