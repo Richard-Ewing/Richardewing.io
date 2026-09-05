@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { supabaseAdmin as supabase } from '@/lib/supabase';
-import { generateActionUrl } from '@/app/api/actions/trigger/route';
+import { generateActionUrl } from '@/app/lib/action-tokens';
 import { logAgentRun, createAgentTimer } from '@/lib/agents/logger';
 
 // Daily SEO Optimizer Agent

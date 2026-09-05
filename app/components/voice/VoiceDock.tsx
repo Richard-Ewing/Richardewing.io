@@ -448,6 +448,29 @@ export default function VoiceDock() {
               </div>
             ))}
 
+            {messages.length <= 1 && status !== 'processing' && (
+              <div className="pt-2">
+                <p className="text-[11px] text-zinc-400 font-mono mb-2">Or ask directly about:</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {[
+                    { label: "Book 30m Working Session", prompt: "How do I book a 1:1 strategy session with Richard on Cal.com?" },
+                    { label: "30m Gut-Check Call ($450)", prompt: "I need a fast 30-minute gut check on our architecture and token burn." },
+                    { label: "Diagnostic Tools Library ($199)", prompt: "What diagnostic calculators and tools can I access to measure tech debt?" },
+                    { label: "Curriculum Tracks ($149)", prompt: "What curriculum tracks do you have for AI economics and engineering leadership?" },
+                    { label: "All-Access Vault Pass ($999)", prompt: "Tell me about the All-Access Vault Pass for lifetime access to everything." }
+                  ].map((btn, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleSendTextMessage(btn.prompt)}
+                      className="text-left text-[11px] px-2.5 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-cyan-500/50 hover:bg-zinc-800 transition-colors"
+                    >
+                      {btn.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {status === 'processing' && (
               <div className="flex items-center gap-2 text-zinc-400 text-xs py-1">
                 <Loader2 className="w-3.5 h-3.5 animate-spin text-cyan-400" />

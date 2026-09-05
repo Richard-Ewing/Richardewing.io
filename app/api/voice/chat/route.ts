@@ -96,15 +96,15 @@ export async function POST(req: NextRequest) {
       .map((m: any) => `${m.role === 'user' ? 'Visitor' : 'Richard'}: ${m.content}`)
       .join('\n');
 
+    const availableCardsList = Object.entries(PAID_RESOURCES)
+      .map(([id, item]) => `- ${id}: ${item.title} (${item.price || 'Direct Booking'}) - ${item.description}`)
+      .join('\n');
+
     const promptInstructions = `
 ${REWS_VOICE_SYSTEM_PROMPT}
 
 You have these paid resource cards available to recommend when relevant:
-- single_track: Single Curriculum Track ($149) for career progression, IC vs Management, or foundational AI economics.
-- tools_library_unlock: Diagnostic Tools Library ($199) for team velocity, PDI audit, AI burn, or PR review bottlenecks.
-- module_bundle_3: 3-Track Curriculum Bundle ($349) for broader technical and economic upskilling.
-- all_access_pass: All-Access Vault Pass ($999) for full organization-wide curriculum and all tools.
-- cal_advisory_booking: 1:1 Advisory Strategy Session on Cal.com for bespoke, messy problems, hiring, or direct working calls.
+${availableCardsList}
 
 Conversation history:
 ${conversationHistory}
@@ -113,7 +113,7 @@ Respond ONLY with a valid JSON object matching this exact schema:
 {
   "transcription": "If user provided audio, your verbatim transcript of what they said. Otherwise null.",
   "reply": "Your punchy, spoken response as Richard (2 to 3 sentences max, no em-dashes, no buzzwords, helpful first)",
-  "recommendedCardId": "single_track" | "tools_library_unlock" | "module_bundle_3" | "all_access_pass" | "cal_advisory_booking" | null
+  "recommendedCardId": "cal_advisory_booking" | "gut_check" | "strategy_session" | "insolvency_diagnostic" | "full_audit" | "tools_library_unlock" | "single_track" | "module_ai_economics" | "module_rd_capital" | "module_bundle_3" | "all_access_pass" | "premium_bundle_ultimate" | "pe_intelligence_tier" | "team_license_pass" | null
 }
 `;
 
