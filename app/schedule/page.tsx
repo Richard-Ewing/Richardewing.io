@@ -95,6 +95,10 @@ export default function SchedulePage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <span><strong>1-on-1 Hourly Advisory (60 Min):</strong> Direct working session for architecture reviews, vendor vetting, and engineering roadblocks.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <span><strong>Technical Insolvency Audit (60 Min):</strong> Deep-dive PDI calculation and a 30-day capital recovery roadmap.</span>
                 </li>
                 <li className="flex items-start gap-2">
