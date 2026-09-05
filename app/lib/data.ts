@@ -24,7 +24,7 @@ export const articles: Article[] = [
         externalUrl: "https://theaieconomist.beehiiv.com/p/the-bootstrapper-s-cloud-credit-playbook",
         content: `
             <p>When building software as a solo founder, cash flow preservation is everything. Every dollar spent on cloud hosting, databases, or business software is a dollar drawn directly from your runway.</p>
-            <p>When we formed our corporate entity and registered our advisory and software platforms, we set a target: minimize operational infrastructure spend by leveraging official startup ecosystem programs.</p>
+            <p>When we formed our corporate entity and registered our advisory and software platforms, we set a target: minimize operational infrastructure spend by using official startup ecosystem programs.</p>
             <h3>Step 1: Corporate Entity Setup &amp; Verification</h3>
             <p>Before applying to major cloud ecosystem programs, establish clear business legitimacy. Most program review teams require basic documentation before approving credits:</p>
             <ul>
@@ -104,7 +104,7 @@ export const articles: Article[] = [
             <h3>Rented Intelligence vs. Owned Capital</h3>
             <p>Raw computational intelligence is a rented utility overhead. Proprietary corporate context is owned enterprise capital. Never tie the permanent location of your corporate capital to the temporary rental location of a utility.</p>
             <h3>The Architectural Mandate: Vendor-Neutral Gateways</h3>
-            <p>To preserve commercial leverage and prevent vendor capture (data entanglement, workflow dependence, loss of leverage), technology leaders must mandate an internal vendor-neutral control gateway enforcing cost-optimized task routing, centralized data protection, and instant supplier portability.</p>
+            <p>To preserve commercial use and prevent vendor capture (data entanglement, workflow dependence, loss of use), technology leaders must mandate an internal vendor-neutral control gateway enforcing cost-optimized task routing, centralized data protection, and instant supplier portability.</p>
         `
     },
     {

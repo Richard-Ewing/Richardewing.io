@@ -243,10 +243,10 @@ export const richardEwingArticleTerms: GlossaryTerm[] = [
         title: 'Rented Intelligence vs. Owned Capital',
         category: 'Richard Ewing Frameworks',
         definition: `Rented Intelligence vs. Owned Capital is a central strategic axiom formulated by Richard Ewing in CIO.com establishing that raw computational intelligence is a rented utility overhead, whereas proprietary corporate context is owned enterprise capital.\n\nTechnology leaders frequently make the mistake of signing multi-year, multi-million-dollar commitments with cloud hyperscalers based on a temporary technological lead. In reality, foundation models operate on rapidly commoditizing, declining price curves where the top-performing model today will be matched or surpassed shortly by cheaper alternatives.\n\nUnder this framework, processing power is treated like electricity (consumed as needed with complete freedom to switch utility suppliers), while proprietary context (customer ledgers, internal business rules, compliance frameworks, institutional memory) is retained as durable, isolated capital assets.`,
-        whyItMatters: `Tying the permanent location of enterprise capital to the temporary rental location of a foundation model creates severe vendor lock-in and strips companies of commercial leverage during contract renewals.`,
+        whyItMatters: `Tying the permanent location of enterprise capital to the temporary rental location of a foundation model creates severe vendor lock-in and strips companies of commercial use during contract renewals.`,
         faqs: [
             { question: 'What is the Rented Intelligence vs. Owned Capital framework?', answer: 'A strategic principle by Richard Ewing: raw model compute is a rented utility overhead (manage for minimum marginal cost), while corporate context is owned enterprise capital (manage for maximum asset valuation).' },
-            { question: 'Why should enterprises avoid long-term model-specific commitments?', answer: 'Because raw intelligence is commoditizing rapidly. Locking workflows to a specific cloud platform based on a 6-month feature lead surrenders commercial leverage and creates expensive data entanglement.' }
+            { question: 'Why should enterprises avoid long-term model-specific commitments?', answer: 'Because raw intelligence is commoditizing rapidly. Locking workflows to a specific cloud platform based on a 6-month feature lead surrenders commercial use and creates expensive data entanglement.' }
         ],
         relatedTerms: ['variable-compute-cost', 'excess-capability', 'vendor-neutral-control-gateway', 'systems-governor'],
         relatedArticles: [
@@ -258,10 +258,10 @@ export const richardEwingArticleTerms: GlossaryTerm[] = [
         title: 'Vendor-Neutral Control Gateway',
         category: 'Richard Ewing Frameworks',
         definition: `A Vendor-Neutral Control Gateway is an enterprise architecture pattern introduced by Richard Ewing in CIO.com that inserts a centralized management layer between internal corporate applications and external cloud AI providers (such as AWS Bedrock, Google Vertex, or self-hosted SLMs).\n\nInstead of allowing individual applications to establish direct, entangled connections to external cloud vendors, every application communicates exclusively with the internal gateway. The gateway enforces three executive controls:\n\n1. Cost-optimized task routing: dynamically routes routine tasks to low-cost utility models and complex reasoning to frontier options.\n2. Centralized data protection: strips sensitive PII before corporate payloads leave the enterprise boundary.\n3. Commercial agility: enables instant switching between cloud providers by updating routing rules without rewriting application code.`,
-        whyItMatters: `Vendor-neutral gateways prevent the three phases of vendor capture: data entanglement, workflow dependence, and loss of negotiating leverage at contract renewal.`,
+        whyItMatters: `Vendor-neutral gateways prevent the three phases of vendor capture: data entanglement, workflow dependence, and loss of negotiating use at contract renewal.`,
         faqs: [
             { question: 'What is a Vendor-Neutral Control Gateway?', answer: 'An internal enterprise management proxy by Richard Ewing that decouples applications from specific cloud AI providers, enforcing task routing, PII redaction, and instant model switching.' },
-            { question: 'How does an internal gateway preserve commercial leverage?', answer: 'Because applications only communicate with the internal gateway, the enterprise can switch cloud AI suppliers immediately if a vendor raises prices or a competitor releases a superior option.' }
+            { question: 'How does an internal gateway preserve commercial use?', answer: 'Because applications only communicate with the internal gateway, the enterprise can switch cloud AI suppliers immediately if a vendor raises prices or a competitor releases a superior option.' }
         ],
         relatedTerms: ['rented-intelligence-vs-owned-capital', 'deterministic-execution-control', 'feature-level-finops', 'systems-governor'],
         relatedArticles: [
@@ -284,13 +284,13 @@ export const richardEwingArticleTerms: GlossaryTerm[] = [
         ]
     },
     {
-        slug: 'non-dilutive-infrastructure-leverage',
-        title: 'Non-Dilutive Infrastructure Leverage',
+        slug: 'non-dilutive-infrastructure-use',
+        title: 'Non-Dilutive Infrastructure Use',
         category: 'Richard Ewing Frameworks',
-        definition: `Non-Dilutive Infrastructure Leverage is the operational financing architecture formulated by Richard Ewing in The AI Economist (Beehiiv) demonstrating how solo builders and early-stage founders systematically secure $100,000+ in cloud hosting, database, and inference compute subsidies across AWS Activate, Google for Startups Cloud, and Microsoft Founders Hub without giving up equity.\n\nInstead of raising expensive pre-seed venture capital to pay retail hosting rates, founders establish corporate legitimacy (LLC/C-Corp, EIN, custom business email) to unlock three tiers of subsidies: 1) AWS credits covering EC2, RDS/Supabase, and CloudFront routing, plus an AWS Startup Directory backlink, 2) Google Cloud credits for inference and storage alongside 12 months of Google Workspace, and 3) Microsoft Founders Hub credits for Azure compute, GitHub Enterprise, and OpenAI API tokens.\n\nThis sequence drives first-year infrastructure COGS to near zero, extending runway during product-market fit discovery.`,
+        definition: `Non-Dilutive Infrastructure Use is the operational financing architecture formulated by Richard Ewing in The AI Economist (Beehiiv) demonstrating how solo builders and early-stage founders systematically secure $100,000+ in cloud hosting, database, and inference compute subsidies across AWS Activate, Google for Startups Cloud, and Microsoft Founders Hub without giving up equity.\n\nInstead of raising expensive pre-seed venture capital to pay retail hosting rates, founders establish corporate legitimacy (LLC/C-Corp, EIN, custom business email) to access three tiers of subsidies: 1) AWS credits covering EC2, RDS/Supabase, and CloudFront routing, plus an AWS Startup Directory backlink, 2) Google Cloud credits for inference and storage alongside 12 months of Google Workspace, and 3) Microsoft Founders Hub credits for Azure compute, GitHub Enterprise, and OpenAI API tokens.\n\nThis sequence drives first-year infrastructure COGS to near zero, extending runway during product-market fit discovery.`,
         whyItMatters: `Infrastructure and inference compute are the fastest drains on early venture capital. Financing early architecture with non-dilutive hyperscaler credits preserves founder equity and delays dilutive financing rounds until after commercial traction is proven.`,
         faqs: [
-            { question: 'What is Non-Dilutive Infrastructure Leverage?', answer: 'An operational financing framework by Richard Ewing showing how founders secure $100,000+ in cloud credits across AWS, Google, and Microsoft to eliminate early hosting costs without giving up equity.' },
+            { question: 'What is Non-Dilutive Infrastructure Use?', answer: 'An operational financing framework by Richard Ewing showing how founders secure $100,000+ in cloud credits across AWS, Google, and Microsoft to eliminate early hosting costs without giving up equity.' },
             { question: 'What documentation is required to qualify for hyperscaler startup credits?', answer: 'Founders must establish corporate legitimacy: an official LLC or C-Corp filing with an EIN, an active landing page on a custom domain, professional business email addresses (no consumer webmail), and a concise 2-sentence architecture description.' }
         ],
         relatedTerms: ['rented-intelligence-vs-owned-capital', 'defensive-domain-architecture', 'synthetic-cogs', 'ai-volatility-tax', 'vendor-neutral-control-gateway'],
@@ -308,7 +308,7 @@ export const richardEwingArticleTerms: GlossaryTerm[] = [
             { question: 'What is Defensive Domain Architecture?', answer: 'A proactive intellectual property framework by Richard Ewing where founders register brand variants, TLDs, and OS permutations early, routing them back to the primary domain with permanent redirects.' },
             { question: 'How does the AWS Startup Directory fit into defensive domain strategy?', answer: 'Completing the company profile upon AWS startup approval yields an authoritative, high-trust backlink directly to the primary domain, accelerating search indexation and domain authority.' }
         ],
-        relatedTerms: ['non-dilutive-infrastructure-leverage', 'vendor-neutral-control-gateway', 'systems-governor'],
+        relatedTerms: ['non-dilutive-infrastructure-use', 'vendor-neutral-control-gateway', 'systems-governor'],
         relatedArticles: [
             { title: "The Bootstrapper's Cloud Credit Playbook", url: 'https://theaieconomist.beehiiv.com/p/the-bootstrapper-s-cloud-credit-playbook' }
         ]

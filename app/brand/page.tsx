@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     description: 'Download official vector SVG logos, PNG marks, executive portraits, and brand guidelines for Richard Ewing and Exogram partnerships.',
     url: 'https://www.richardewing.io/brand',
     type: 'website',
-    images: [{ url: 'https://www.richardewing.io/brand/richard-ewing-logo-dark.svg' }],
+    images: [{ url: 'https://www.richardewing.io/assets/brand/richard-ewing-logo-dark.svg' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Brand Assets & Media Resources | Richard Ewing',
     description: 'Download official vector SVG logos, PNG marks, executive portraits, and brand guidelines for Richard Ewing and Exogram partnerships.',
-    images: ['https://www.richardewing.io/brand/richard-ewing-logo-dark.svg'],
+    images: ['https://www.richardewing.io/assets/brand/richard-ewing-logo-dark.svg'],
   }
 };
 
@@ -79,7 +79,7 @@ export default function BrandPage() {
           </p>
           <div className="flex flex-wrap items-center gap-4 mt-6">
             <a
-              href="/brand/richard-ewing-brand-kit.zip"
+              href="/assets/brand/richard-ewing-brand-kit.zip"
               download="richard-ewing-brand-kit.zip"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white font-grotesk font-bold text-sm shadow-md transition-all"
             >

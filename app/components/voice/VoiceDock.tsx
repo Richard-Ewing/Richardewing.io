@@ -32,6 +32,7 @@ export default function VoiceDock() {
   const [secondsRemaining, setSecondsRemaining] = useState(90);
   const [visualizerBars, setVisualizerBars] = useState<number[]>([4, 8, 12, 8, 4]);
   const [micError, setMicError] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   const audioPlayerRef = useRef<HTMLAudioElement | null>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
@@ -41,6 +42,10 @@ export default function VoiceDock() {
   const hasSessionEndedRef = useRef(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const initialAudioRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Initialize audio element on client
   useEffect(() => {
@@ -341,6 +346,8 @@ export default function VoiceDock() {
       setStatus('idle');
     }
   };
+
+  if (!mounted) return null;
 
   return (
     <div className="fixed bottom-6 right-6 z-50 font-sans">

@@ -17,67 +17,67 @@ export const metadata: Metadata = {
 
 const curattedComparisons = [
     {
-        title: 'Advisory vs McKinsey Tech Due Diligence',
-        subtitle: 'Empirical Code Audit vs Survey Checklist',
-        description: 'Why empirical codebase & cloud telemetry diagnostics beat high-level management interview checklists.',
-        href: '/compare/advisory-vs-mckinsey',
-        color: 'amber'
-    },
-    {
-        title: 'Advisory vs Bain & Company R&D Audits',
-        subtitle: 'Financial Engineering vs Strategy Advisory',
-        description: 'Comparing Product Debt Index modeling against traditional corporate strategy consulting.',
-        href: '/compare/advisory-vs-bain',
+        title: 'Why AI API Bills Jump 4x After Adding Tools',
+        subtitle: 'Token Inflation & Schema Re-Transmission',
+        description: 'Why adding web search or database tools multiplies token bills by 400% and how prompt caching solves it.',
+        href: '/compare/why-anthropic-bills-spike-with-tool-use',
         color: 'red'
     },
     {
-        title: 'Advisory vs Gartner Executive Advisory',
-        subtitle: 'Actionable Technical Audit vs Research Reports',
-        description: 'Custom codebase & AI unit economics audits vs generic analyst subscription reports.',
-        href: '/compare/advisory-vs-gartner',
-        color: 'indigo'
-    },
-    {
-        title: 'Advisory vs Traditional Fractional CTO',
-        subtitle: 'Fixed-Fee Retainer vs Generalist Hourly Advice',
-        description: 'AI economic outcome retainers vs hourly generalist engineering management.',
-        href: '/compare/advisory-vs-traditional-fractional-cto',
-        color: 'cyan'
-    },
-    {
-        title: 'Advisory vs Big-4 Tech Due Diligence',
-        subtitle: 'Empirical Audit vs Checklist Advisory',
-        description: 'Forensic codebase and R&D capital audits vs survey-based management checklists.',
-        href: '/compare/advisory-vs-big4',
-        color: 'indigo'
-    },
-    {
-        title: 'Exogram vs LangChain Guardrails',
-        subtitle: 'Deterministic Runtime vs Prompt Wrapper',
-        description: 'Why pre-execution zero-trust gateways outperform probabilistic prompt wrappers for enterprise safety.',
-        href: '/compare/exogram-vs-langchain',
-        color: 'cyan'
-    },
-    {
-        title: 'Exogram vs Lakera & Guardrails AI',
-        subtitle: 'Runtime Interception vs Observability',
-        description: 'Pre-execution admissibility runtime vs post-hoc LLM monitoring and content moderation tools.',
-        href: '/compare/exogram-vs-lakera',
+        title: 'Why Hosting Your Own AI Model Costs More Than APIs',
+        subtitle: 'Cloud GPU Idle Costs vs API Tokens',
+        description: 'Why renting dedicated AWS GPUs to run open-source Llama models often costs 3x more than OpenAI tokens.',
+        href: '/compare/why-local-llms-are-more-expensive-than-apis',
         color: 'purple'
     },
     {
-        title: 'Claude Code vs Cursor Governance',
-        subtitle: 'Runtime Gating vs Prompt Boundaries',
-        description: 'Why deterministic runtime gating outperforms probabilistic prompt boundaries for enterprise AI development.',
-        href: '/compare/claude-code-vs-cursor-governance',
+        title: 'Why Senior Engineers Spend All Day Reviewing AI Code',
+        subtitle: 'The AI Code Review Bottleneck',
+        description: 'Why generating code faster creates massive pull request review queues that burn out senior engineers.',
+        href: '/compare/why-ai-pr-review-time-is-exploding',
         color: 'amber'
     },
     {
-        title: 'Claude Code Retry Loop Prevention',
-        subtitle: 'Token Burn & Patch Loops',
-        description: 'How to stop Claude Code from getting caught in recursive patch loops that burn API compute.',
-        href: '/compare/claude-code-retry-loop-prevention',
+        title: 'Why CFOs Are Canceling AI Pilots in 2026',
+        subtitle: 'AI Pilot ROI & Margin Proof',
+        description: 'Why enterprise finance chiefs are shutting down 6-figure AI pilots that fail to show gross margin expansion.',
+        href: '/compare/why-cfos-are-shutting-down-ai-pilots',
+        color: 'red'
+    },
+    {
+        title: 'Why Your Search AI Keeps Giving Outdated Answers',
+        subtitle: 'Vector Database Ghost Chunks',
+        description: 'Why RAG search systems keep quoting deleted documents and old product prices after updates.',
+        href: '/compare/why-rag-returns-stale-data-after-updates',
         color: 'cyan'
+    },
+    {
+        title: 'Why AI Coding Tools Didn\'t Lower Engineering Payroll',
+        subtitle: 'The Jevons Paradox of Software',
+        description: 'Why buying Copilot or Cursor subscriptions did not reduce software engineering headcount.',
+        href: '/compare/why-copilot-didnt-reduce-engineering-headcount',
+        color: 'indigo'
+    },
+    {
+        title: 'Why Your New AI Feature Is Losing Money on Every User',
+        subtitle: 'Negative-Carry Product Economics',
+        description: 'Why bundling variable token compute into flat-rate SaaS subscriptions destroys profit margins.',
+        href: '/compare/why-ai-feature-margins-turn-negative',
+        color: 'red'
+    },
+    {
+        title: 'Why Cursor Rewrites Your Project Files',
+        subtitle: 'Scope Creep & Repository Drift',
+        description: 'How to stop IDE coding agents from touching files outside the prompt boundary and breaking imports.',
+        href: '/compare/why-cursor-rewrites-files',
+        color: 'amber'
+    },
+    {
+        title: 'Why Model Context Protocol (MCP) Is Dangerous',
+        subtitle: 'Zero-Trust Agent Defense',
+        description: 'Why unsanitized local MCP server connections expose companies to prompt injections and data leaks.',
+        href: '/compare/why-mcp-is-dangerous',
+        color: 'red'
     },
     {
         title: 'Product Debt Index vs SonarQube',

@@ -39,7 +39,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     thesis: 'When building software as a solo founder, cash flow preservation is everything. How systematic execution across AWS Activate, Google for Startups Cloud, and Microsoft Founders Hub secures $100,000+ in non-dilutive infrastructure capital, eliminates first-year cloud overhead, and captures authoritative domain backlinks while executing defensive domain acquisition.',
     editorsPick: false,
     relatedConceptIds: ['non-dilutive-infrastructure-capital', 'rented-intelligence-vs-owned-capital', 'ai-volatility-tax', 'product-economist', 'synthetic-cogs'],
-    relatedGlossarySlugs: ['non-dilutive-infrastructure-leverage', 'defensive-domain-architecture', 'synthetic-cogs', 'ai-volatility-tax'],
+    relatedGlossarySlugs: ['non-dilutive-infrastructure-use', 'defensive-domain-architecture', 'synthetic-cogs', 'ai-volatility-tax'],
     relatedFrameworkSlugs: ['governed-execution', 'runtime-vs-alignment'],
     relatedToolIds: ['aueb', 'pdi', 'aper'],
     relatedCaseStudyIds: ['cursor-to-antigravity-startup-governance', 'runtime-concurrency-failures'],
@@ -959,7 +959,7 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     date: 'September 2026',
     editorsPick: false,
     relatedConceptIds: ['non-dilutive-infrastructure-capital', 'rented-intelligence-vs-owned-capital', 'ai-volatility-tax', 'product-economist', 'synthetic-cogs'],
-    relatedGlossarySlugs: ['non-dilutive-infrastructure-leverage', 'defensive-domain-architecture'],
+    relatedGlossarySlugs: ['non-dilutive-infrastructure-use', 'defensive-domain-architecture'],
     relatedToolIds: ['aueb', 'pdi', 'aper']
   },
   {

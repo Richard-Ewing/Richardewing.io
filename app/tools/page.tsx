@@ -3,29 +3,26 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import ToolsContent from './tools-content';
 
 export const metadata: Metadata = {
-    title: 'Free AI Cost & Token Diagnostics',
-    description: 'Free AI Cost Attribution & Tok provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
+    title: 'Free AI Cost & Diagnostic Calculators',
+    description: 'Free calculators to find why AI tools slow down teams, why token bills outpace revenue, and when self-hosting costs more than cloud APIs.',
     keywords: [
-        'technical debt calculator', 'product debt index', 'free engineering tools',
-        'AI unit economics calculator', 'SaaS valuation tool', 'revenue per engineer calculator',
-        'technical debt assessment', 'engineering productivity benchmark',
-        'AUEB calculator', 'enterprise value scenario engine',
-        'audit interview tool', 'engineering hiring assessment',
-        'Richard Ewing tools', 'free CTO tools', 'R&D audit tools',
-        'executive diagnostics', 'AI governance diagnostics'
+        'why ai slows down engineering', 'ai token cost calculator', 'ai unit economics',
+        'why cursor rewrites files', 'technical debt in dollar terms', 'slm break even',
+        'free engineering calculators', 'ai margin calculator', 'shadow ai scanner',
+        'copilot real roi calculator', 'why ai coding burns money'
     ],
     alternates: { canonical: 'https://www.richardewing.io/tools' },
     openGraph: {
-        title: 'Executive Diagnostics Hub | Production AI Governance',
-        description: 'Boardroom-ready diagnostic instruments used in audits. Try them free: PDI, EV-SE, AUEB, and SLM Arbitrage.',
+        title: 'Free AI Cost & Diagnostic Calculators',
+        description: 'Free calculators to find why AI tools slow down teams, why token bills outpace revenue, and how to fix real engineering bottlenecks.',
         url: 'https://www.richardewing.io/tools',
         type: 'website',
         images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Executive Diagnostics Hub | Production AI Governance',
-        description: 'Forensic instruments to measure technical debt, AI costs, and operational risk.',
+        title: 'Free AI Cost & Diagnostic Calculators',
+        description: 'Free calculators to find why AI tools slow down teams and how to fix operational bottlenecks.',
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },
 };

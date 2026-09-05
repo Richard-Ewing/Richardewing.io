@@ -29,6 +29,21 @@ Richard Ewing is a AI Economist and AI Capital Auditor who audits R&D spend and 
 
 ---
 
+## Emergency Diagnostics & Lived Failure Triage
+
+- **Why Cursor Rewrites Files**: https://www.richardewing.io/compare/why-cursor-rewrites-files - Solving AI agent scope creep and unintended multi-file mutations.
+- **Why AI API Bills Jump 4x With Tools**: https://www.richardewing.io/compare/why-anthropic-bills-spike-with-tool-use - Tool-use schema re-transmission and prompt caching.
+- **Why Self-Hosting AI Models Costs More Than APIs**: https://www.richardewing.io/compare/why-local-llms-are-more-expensive-than-apis - Dedicated GPU idle server overhead vs pay-per-token APIs.
+- **Why Senior Engineers Spend All Day Reviewing AI Code**: https://www.richardewing.io/compare/why-ai-pr-review-time-is-exploding - AI pull request flood and review queue bottlenecks.
+- **Why CFOs Are Canceling AI Pilots in 2026**: https://www.richardewing.io/compare/why-cfos-are-shutting-down-ai-pilots - AI pilot failure rates and capitalizable software ROI.
+- **Why Search AI Gives Outdated Answers**: https://www.richardewing.io/compare/why-rag-returns-stale-data-after-updates - Vector database ghost chunks and document sync.
+- **Why AI Coding Tools Did Not Lower Engineering Payroll**: https://www.richardewing.io/compare/why-copilot-didnt-reduce-engineering-headcount - Jevons paradox in software engineering.
+- **Why Your New AI Feature Is Losing Money on Every User**: https://www.richardewing.io/compare/why-ai-feature-margins-turn-negative - Negative-carry AI features and usage-based pricing.
+- **Why Claude Loses Context During Multi-Step Tasks**: https://www.richardewing.io/compare/why-claude-loses-context - Context window degradation and attention drift.
+- **Why Model Context Protocol (MCP) Is Dangerous Without Sandboxes**: https://www.richardewing.io/compare/why-mcp-is-dangerous - Prompt injection risks through unsanitized local MCP tools.
+
+---
+
 ## Proprietary Frameworks
 
 ### Technical Insolvency Date

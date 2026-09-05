@@ -32,7 +32,7 @@ export default function ToolsContent() {
               <div>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="h-px bg-zinc-300 flex-1"></div>
-                  <h2 className="text-sm font-bold text-zinc-950 tracking-widest uppercase text-cyan-900">Financial Audits & Enterprise Valuation</h2>
+                  <h2 className="text-sm font-bold text-zinc-950 tracking-widest uppercase text-cyan-900">Cost Audits &amp; Financial Leaks</h2>
                   <div className="h-px bg-zinc-300 flex-1"></div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -40,10 +40,10 @@ export default function ToolsContent() {
                   <Link href="/tools/pdi" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#22d3ee", "#8b5cf6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Measures: Product</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-900 font-extrabold">Product Debt Index</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Diagnostic for measuring Product Governance Debt.</p>
-                        <span className="text-cyan-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
+                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Problem: AI Slowing Down Sprints</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-900 font-extrabold">Why AI Code Slows Down Your Team (PDI)</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Your engineers are shipping 3x more code with AI assistants, but releases are slower and bugs doubled. Calculate how much messy AI code is costing your company in dollars.</p>
+                        <span className="text-cyan-900 font-extrabold text-xs font-bold uppercase tracking-wider">Calculate AI Code Cost →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -51,10 +51,10 @@ export default function ToolsContent() {
                   <Link href="/tools/cfo-capitalization-audit" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-emerald-900 uppercase tracking-wider mb-2">Measures: CFO &amp; Tax Strategy</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold">CFO R&amp;D Capitalization Audit</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Calculate true innovation investment vs hidden maintenance OpEx, Section 174 tax impact, and EBITDA adjustments.</p>
-                        <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run Financial Audit →</span>
+                        <div className="text-[10px] font-mono font-bold text-emerald-900 uppercase tracking-wider mb-2">Problem: Software Tax Deductions &amp; OpEx</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold">How to Write Off AI Software Costs Properly</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Calculate the difference between real software innovation and hidden maintenance waste to protect your tax deductions, Section 174 filings, and company earnings.</p>
+                        <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run Tax &amp; OpEx Audit →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -62,10 +62,10 @@ export default function ToolsContent() {
                   <Link href="/tools/board-risk-scorecard" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#f59e0b", "#d97706"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-amber-900 uppercase tracking-wider mb-2">Measures: Board Fiduciary Duty</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-amber-900 font-extrabold">Board AI Governance Scorecard</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">10-vector fiduciary audit for Board Directors, CEOs, and Audit Committees to evaluate agent signing limits and capital risk.</p>
-                        <span className="text-amber-900 font-extrabold text-xs font-bold uppercase tracking-wider">Audit Fiduciary Risk →</span>
+                        <div className="text-[10px] font-mono font-bold text-amber-900 uppercase tracking-wider mb-2">Problem: Board Liability &amp; Unapproved AI</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-amber-900 font-extrabold">Board AI Governance &amp; Liability Scorecard</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">A 10-point check for CEOs, Board Directors, and Audit Committees to evaluate rogue AI agents, data privacy exposure, and capital risks before the next board meeting.</p>
+                        <span className="text-amber-900 font-extrabold text-xs font-bold uppercase tracking-wider">Audit Board Risk →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -73,10 +73,10 @@ export default function ToolsContent() {
                   <Link href="/tools/ev-se" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#22d3ee", "#8b5cf6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Measures: Economics</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-900 font-extrabold">Valuation Scenario Engine</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Model exactly how delayed technical decisions compound and impact enterprise exit scenarios.</p>
-                        <span className="text-cyan-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
+                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Problem: Company Valuation Drag</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-900 font-extrabold">Valuation Impact Calculator (EV-SE)</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">See exactly how delayed technical decisions, customer churn, and code debt reduce what buyers or investors will pay for your business.</p>
+                        <span className="text-cyan-900 font-extrabold text-xs font-bold uppercase tracking-wider">Calculate Valuation Impact →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -84,10 +84,10 @@ export default function ToolsContent() {
                   <Link href="/tools/aueb" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#22d3ee", "#8b5cf6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Measures: Economics</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-900 font-extrabold">AI Unit Economics Benchmark</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Diagnostic for measuring AI Unit Economics.</p>
-                        <span className="text-cyan-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
+                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Problem: Exploding AI Token Invoices</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-900 font-extrabold">Why Your AI API Bill Outpaces Revenue (AUEB)</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Customer signups grew 10%, but your monthly OpenAI or Anthropic bill jumped 300%. Calculate your exact profit margin loss per active user and find your break-even point.</p>
+                        <span className="text-cyan-900 font-extrabold text-xs font-bold uppercase tracking-wider">Calculate Token Margin Loss →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -95,10 +95,10 @@ export default function ToolsContent() {
                   <Link href="/tools/slm-vs-api" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#22d3ee", "#8b5cf6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Measures: Economics</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-900 font-extrabold">SLM vs API Arbitrage</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Calculate the exact hardware breakeven point for repatriating cloud AI workloads to bare-metal servers.</p>
-                        <span className="text-cyan-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
+                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Problem: Cloud GPU vs API Pricing</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-900 font-extrabold">Why Hosting Your Own AI Model Costs More Than APIs</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">You rented expensive cloud servers to escape API token fees, but the monthly server bill is higher. Find the exact request volume where self-hosting actually saves money.</p>
+                        <span className="text-cyan-900 font-extrabold text-xs font-bold uppercase tracking-wider">Find Hardware Break-Even →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -106,10 +106,10 @@ export default function ToolsContent() {
                   <Link href="/tools/fte-displacement" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#a855f7", "#ec4899"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Measures: Operations</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-purple-900 font-extrabold">Agentic FTE Displacement Matrix</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Calculate EBITDA expansion of replacing human Tier-1 support with autonomous LLM agents.</p>
-                        <span className="text-purple-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
+                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Problem: Headcount vs AI Automation</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-purple-900 font-extrabold">Did AI Actually Lower Customer Support Costs?</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Calculate real payroll savings versus the hidden costs of managing, prompt tuning, and supervising autonomous AI agents.</p>
+                        <span className="text-purple-900 font-extrabold text-xs font-bold uppercase tracking-wider">Calculate Headcount Impact →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -117,10 +117,10 @@ export default function ToolsContent() {
                   <Link href="/tools/cloud-repatriation" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#a855f7", "#ec4899"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Measures: Economics</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-purple-900 font-extrabold">Cloud Repatriation Engine</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Calculate the exact EBITDA recapture of moving off AWS to sovereign bare-metal architecture.</p>
-                        <span className="text-purple-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
+                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Problem: Overpaying on AWS / Azure</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-purple-900 font-extrabold">When to Move AI Off Expensive Cloud Servers</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Calculate how much cash your business gets back each month by moving steady AI database workloads off AWS to dedicated servers.</p>
+                        <span className="text-purple-900 font-extrabold text-xs font-bold uppercase tracking-wider">Calculate Cloud Savings →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -128,9 +128,9 @@ export default function ToolsContent() {
                   <Link href="/tools/slm-break-even" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#8b5cf6", "#ec4899"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-violet-900 uppercase tracking-wider mb-2">Measures: Inference Economics</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-violet-900 font-extrabold">SLM Break-Even Calculator</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Model the exact monthly query volume where fine-tuning and self-hosting an 8B/70B SLM beats frontier model APIs.</p>
+                        <div className="text-[10px] font-mono font-bold text-violet-900 uppercase tracking-wider mb-2">Problem: Small Model Economics</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-violet-900 font-extrabold">Small AI Model Break-Even Calculator</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Calculate the exact number of monthly prompts where fine-tuning a small 8B model beats paying frontier cloud APIs.</p>
                         <span className="text-violet-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run Break-Even Model →</span>
                       </div>
                     </ShineBorder>
@@ -139,10 +139,10 @@ export default function ToolsContent() {
                   <Link href="/tools/ai-feature-margin" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-emerald-900 uppercase tracking-wider mb-2">Measures: Product Economics</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold">AI Feature Margin Matrix</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Map user subscription pricing against variable token burn to identify toxic negative-carry AI features.</p>
-                        <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Calculate Margin →</span>
+                        <div className="text-[10px] font-mono font-bold text-emerald-900 uppercase tracking-wider mb-2">Problem: Unprofitable AI Features</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold">Is Your AI Feature Losing Money on Each User?</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Map flat-rate subscription pricing against actual variable token usage to spot features that eat into your product profits.</p>
+                        <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Check Feature Margins →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -150,10 +150,10 @@ export default function ToolsContent() {
                   <Link href="/tools/negative-carry-code-auditor" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#f43f5e", "#fb7185"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-rose-900 uppercase tracking-wider mb-2">Measures: PE Due Diligence</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-rose-900 font-extrabold">Negative-Carry Code Auditor</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Quantify the balance-sheet refactor discount and technical insolvency risk of un-governed vibe coding.</p>
-                        <span className="text-rose-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run M&amp;A Audit →</span>
+                        <div className="text-[10px] font-mono font-bold text-rose-900 uppercase tracking-wider mb-2">Problem: Vibe Coding Liabilities</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-rose-900 font-extrabold">Vibe Coding &amp; Unreviewed AI Code Auditor</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Calculate the hidden debt and rewrite costs created when non-technical founders or teams generate thousands of lines of unreviewed code.</p>
+                        <span className="text-rose-900 font-extrabold text-xs font-bold uppercase tracking-wider">Audit Code Risk →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -161,9 +161,9 @@ export default function ToolsContent() {
                   <Link href="/tools/aari" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#06b6d4", "#8b5cf6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-cyan-900 uppercase tracking-wider mb-2">Measures: Agentic SDLC</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-900 font-extrabold">Autonomous Agent Readiness (AARI)</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Evaluate repo architecture, type strictness, and sandboxed worktrees before turning on Claude Code or Antigravity.</p>
+                        <div className="text-[10px] font-mono font-bold text-cyan-900 uppercase tracking-wider mb-2">Problem: Agents Breaking Codebases</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-900 font-extrabold">AI Coding Agent Readiness Check (AARI)</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Check your codebase structure and automated test safety before turning on autonomous coding agents like Claude Code or Cursor.</p>
                         <span className="text-cyan-900 font-extrabold text-xs font-bold uppercase tracking-wider">Audit Readiness →</span>
                       </div>
                     </ShineBorder>
@@ -172,10 +172,10 @@ export default function ToolsContent() {
                   <Link href="/tools/agent-router" className="group block md:col-span-2">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#a855f7", "#ec4899"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Measures: Operations</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-purple-900 font-extrabold">Agentic Token Simulator</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Calculate the compound token decay and GPU execution costs of multi-agent LLM reasoning workflows.</p>
-                        <span className="text-purple-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run FinOps Simulation →</span>
+                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Problem: Multi-Agent Token Costs</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-purple-900 font-extrabold">Multi-Agent AI Token Cost Simulator</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Calculate the compounding token bills when multiple AI agents talk to each other in automated loops.</p>
+                        <span className="text-purple-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run Token Simulation →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -186,18 +186,18 @@ export default function ToolsContent() {
               <div>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="h-px bg-zinc-300 flex-1"></div>
-                  <h2 className="text-sm font-bold text-zinc-950 tracking-widest uppercase text-emerald-900">Agentic Defense & Security Ops</h2>
+                  <h2 className="text-sm font-bold text-zinc-950 tracking-widest uppercase text-emerald-900">Security Leaks &amp; Rogue AI</h2>
                   <div className="h-px bg-zinc-300 flex-1"></div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <a href="https://exogram.ai/proving-ground" target="_blank" rel="noopener noreferrer" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Measures: Runtime Governance</div>
+                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Problem: AI Hallucinations in Production</div>
                         <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold flex items-center gap-1.5">
-                          Deterministic Execution Sandbox <span className="text-xs text-zinc-400 group-hover:text-emerald-950 transition-colors">↗</span>
+                          Stop AI Agents From Going Off-Script <span className="text-xs text-zinc-400 group-hover:text-emerald-950 transition-colors">↗</span>
                         </h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Fire adversarial payloads at Exogram's 8-rule deterministic policy engine. Zero LLM.</p>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Test how Exogram blocks rogue tool calls, unauthorized database writes, and dangerous prompts without slowing down your app.</p>
                         <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Try Live Sandbox ↗</span>
                       </div>
                     </ShineBorder>
@@ -206,12 +206,12 @@ export default function ToolsContent() {
                   <a href="https://exogram.ai/analyze" target="_blank" rel="noopener noreferrer" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Measures: Runtime Governance</div>
+                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Problem: Unmonitored Agent Actions</div>
                         <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold flex items-center gap-1.5">
-                          Agentic Telemetry Analyzer <span className="text-xs text-zinc-400 group-hover:text-emerald-950 transition-colors">↗</span>
+                          Live AI Agent Activity Monitor <span className="text-xs text-zinc-400 group-hover:text-emerald-950 transition-colors">↗</span>
                         </h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Enforce a deterministic execution boundary for your autonomous AI agents.</p>
-                        <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Analyze Architecture ↗</span>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Get complete visibility into every command, file write, and external API call made by autonomous AI agents in your stack.</p>
+                        <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Analyze Activity ↗</span>
                       </div>
                     </ShineBorder>
                   </a>
@@ -219,10 +219,10 @@ export default function ToolsContent() {
                   <Link href="/tools/mcp-security-auditor" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#f43f5e", "#fb7185"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-rose-900 uppercase tracking-wider mb-2">Measures: MCP Vulnerabilities</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-rose-900 font-extrabold">MCP Security &amp; Poisoning Auditor</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Audit your Model Context Protocol connections against OWASP MCP Top 10 risks and raw STDIO RCE vectors.</p>
-                        <span className="text-rose-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run MCP Audit →</span>
+                        <div className="text-[10px] font-mono font-bold text-rose-900 uppercase tracking-wider mb-2">Problem: Unsafe Tool Connections (MCP)</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-rose-900 font-extrabold">MCP Security &amp; Connection Auditor</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Find out if your team connected AI tools to internal servers or files without safety boundaries, exposing company code to remote risks.</p>
+                        <span className="text-rose-900 font-extrabold text-xs font-bold uppercase tracking-wider">Scan MCP Tools →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -230,10 +230,10 @@ export default function ToolsContent() {
                   <Link href="/tools/shadow-ai" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Measures: Security</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold">Shadow AI Security Audit</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Calculate your enterprise blast radius for unauthorized shadow AI usage and IP Leakage.</p>
-                        <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
+                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Problem: Data Leaks via Public AI</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold">How to Spot AI Agents Leaking Company Data</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Calculate your risk when employees paste private customer data, financial spreadsheets, or proprietary code into public AI tools.</p>
+                        <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run Security Audit →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -241,10 +241,10 @@ export default function ToolsContent() {
                   <Link href="/tools/prompt-injection-sandbox" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Measures: Security</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold">Prompt Injection Sandbox</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Test your system prompts against modern jailbreaks, Base64 encodings, and roleplay bypasses.</p>
-                        <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run Red Team →</span>
+                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Problem: AI Jailbreaks &amp; Prompt Attacks</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold">Test If Hackers Can Trick Your AI App</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Test your customer support bots and AI agents against sneaky prompts, hidden instructions, and roleplay bypasses.</p>
+                        <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Test Prompts Now →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -252,10 +252,10 @@ export default function ToolsContent() {
                   <Link href="/tools/rag-chunking-visualizer" className="group block md:col-span-2">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Measures: Engineering</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold">RAG Chunking Visualizer</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Visually optimize your Vector DB embeddings. See exactly where semantic context breaks across token limits.</p>
-                        <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Map Boundaries →</span>
+                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Problem: AI Search Giving Bad Answers</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold">Why Your Search AI Misses Important Answers</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">See visually how cutting documents into clumsy text chunks breaks meaning, causes hallucinations, and gives bad answers to users.</p>
+                        <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Visualize Chunk Breaks →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -266,17 +266,17 @@ export default function ToolsContent() {
               <div>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="h-px bg-zinc-300 flex-1"></div>
-                  <h2 className="text-sm font-bold text-zinc-950 tracking-widest uppercase text-amber-600">Human Capital & Architecture</h2>
+                  <h2 className="text-sm font-bold text-zinc-950 tracking-widest uppercase text-amber-600">Team Hiring &amp; Engineering Speed</h2>
                   <div className="h-px bg-zinc-300 flex-1"></div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <Link href="/tools/audit-interview" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#f59e0b", "#fbbf24"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Measures: Engineering</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-amber-500">Audit Interview Protocol</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">The hiring methodology for the AI age. Reconfigure your funnel to test high-level architectural judgment, not raw syntax.</p>
-                        <span className="text-amber-600 text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
+                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Problem: Hiring Engineers in the AI Era</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-amber-500">How to Interview Engineers Who Use AI</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Stop testing trivia and leetcode syntax that AI solves in 2 seconds. Test whether candidates can spot bugs, verify AI code, and design reliable systems.</p>
+                        <span className="text-amber-600 text-xs font-bold uppercase tracking-wider">Try Interview Tool →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -284,10 +284,10 @@ export default function ToolsContent() {
                   <Link href="/tools/code-review-bottleneck-calc" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#06b6d4", "#3b82f6"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-cyan-900 uppercase tracking-wider mb-2">Measures: Engineering SDLC</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-900 font-extrabold">AI Code Review Bottleneck</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Calculate senior engineering payroll waste and cycle time inflation caused by AI-generated PR floods.</p>
-                        <span className="text-cyan-900 font-extrabold text-xs font-bold uppercase tracking-wider">Calculate Bottleneck →</span>
+                        <div className="text-[10px] font-mono font-bold text-cyan-900 uppercase tracking-wider mb-2">Problem: Code Review Overload</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-900 font-extrabold">Why Pull Requests Are Stuck in Review for Days</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Calculate how many hours your senior engineers lose each week reviewing massive floods of AI-generated pull requests.</p>
+                        <span className="text-cyan-900 font-extrabold text-xs font-bold uppercase tracking-wider">Calculate Review Bottleneck →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -295,10 +295,10 @@ export default function ToolsContent() {
                   <Link href="/tools/spec-quality-scorecard" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#10b981", "#06b6d4"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-emerald-900 uppercase tracking-wider mb-2">Measures: Spec-Driven Dev</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold">SDD Spec Quality Scorecard</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Linter grading feature PRDs for machine-readable schemas, boundaries, and assertions before agent execution.</p>
-                        <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Score Spec →</span>
+                        <div className="text-[10px] font-mono font-bold text-emerald-900 uppercase tracking-wider mb-2">Problem: Vague Prompts Causing Rework</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-emerald-900 font-extrabold">Test Your Project Specs Before Feeding AI</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Check your feature write-up to make sure AI agents have clear rules, boundaries, and acceptance tests before they write any code.</p>
+                        <span className="text-emerald-900 font-extrabold text-xs font-bold uppercase tracking-wider">Check Spec Quality →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -306,10 +306,10 @@ export default function ToolsContent() {
                   <Link href="/tools/career-pathing" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#f59e0b", "#fbbf24"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Measures: Engineering</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-amber-500">Career Architecture Funnel</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">A diagnostic engine mapping your specific career bottleneck directly to the required structural Curriculum Vault tracks.</p>
-                        <span className="text-amber-600 text-xs font-bold uppercase tracking-wider">Run Diagnostic →</span>
+                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Problem: Engineering Career Growth</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-amber-500">Tech Leadership Career Diagnostic</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">Find your exact career bottleneck to advance from Senior Engineer or PM into Director, VP, and CTO executive roles.</p>
+                        <span className="text-amber-600 text-xs font-bold uppercase tracking-wider">Check Career Bottleneck →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -327,10 +327,10 @@ export default function ToolsContent() {
                   <Link href="/tools/executive-ai-operating-model" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#6366f1", "#a855f7"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Measures: CEO &amp; Executive Strategy</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-indigo-900 font-extrabold">Executive AI Operating Model Audit</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">For CEOs, COOs, and Managing Directors: Benchmark enterprise operating readiness, sovereign moats, and cross-functional capital allocation.</p>
-                        <span className="text-indigo-900 font-extrabold text-xs font-bold uppercase tracking-wider">Audit Operating Model →</span>
+                        <div className="text-[10px] font-mono font-bold text-indigo-900 uppercase tracking-wider mb-2">Problem: AI Strategy Without ROI</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-indigo-900 font-extrabold">Executive AI Operating Strategy Check</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">For CEOs, COOs, and Managing Directors: Benchmark company AI readiness, real business moats, and budget allocation before spending millions.</p>
+                        <span className="text-indigo-900 font-extrabold text-xs font-bold uppercase tracking-wider">Audit Strategy →</span>
                       </div>
                     </ShineBorder>
                   </Link>
@@ -338,10 +338,10 @@ export default function ToolsContent() {
                   <Link href="/tools/cpo-product-portfolio-matrix" className="group block">
                     <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={["#8b5cf6", "#ec4899"]} classNameOverlay="opacity-0 group-hover:opacity-100">
                       <div className="flex flex-col h-full">
-                        <div className="text-[10px] font-mono font-bold text-purple-900 uppercase tracking-wider mb-2">Measures: CPO &amp; Product Economics</div>
-                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-purple-900 font-extrabold">CPO AI Feature Margin Matrix</h3>
-                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">For CPOs and Product Directors: Model feature gross margins, identify negative-carry features, and transition to outcome-based pricing.</p>
-                        <span className="text-purple-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run Portfolio Audit →</span>
+                        <div className="text-[10px] font-mono font-bold text-purple-900 uppercase tracking-wider mb-2">Problem: Product Margins &amp; Pricing</div>
+                        <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-purple-900 font-extrabold">Product Leader AI Margin Matrix</h3>
+                        <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">For CPOs and Product Directors: Calculate feature profit margins, identify features losing cash, and switch to profitable pricing models.</p>
+                        <span className="text-purple-900 font-extrabold text-xs font-bold uppercase tracking-wider">Run Product Audit →</span>
                       </div>
                     </ShineBorder>
                   </Link>

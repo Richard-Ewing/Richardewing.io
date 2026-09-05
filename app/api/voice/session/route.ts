@@ -52,40 +52,44 @@ let cachedGreetingAudio: string | null = null;
 async function getInitialGreetingAudio(apiKey: string): Promise<string | null> {
   if (cachedGreetingAudio) return cachedGreetingAudio;
 
-  try {
-    const text = "Richard here. What are you wrestling with right now in your team, architecture, or career?";
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text }] }],
-        generationConfig: {
-          responseModalities: ["AUDIO"],
-          speechConfig: {
-            voiceConfig: {
-              prebuiltVoiceConfig: {
-                voiceName: "Puck"
+  const models = ['gemini-3.1-flash-tts-preview', 'gemini-2.5-flash-preview-tts'];
+  for (const ttsModel of models) {
+    try {
+      const text = "Richard here. What are you wrestling with right now in your team, architecture, or career?";
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${ttsModel}:generateContent?key=${apiKey}`;
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text }] }],
+          generationConfig: {
+            responseModalities: ["AUDIO"],
+            speechConfig: {
+              voiceConfig: {
+                prebuiltVoiceConfig: {
+                  voiceName: "Puck"
+                }
               }
             }
           }
-        }
-      })
-    });
+        })
+      });
 
-    if (!response.ok) return null;
+      if (!response.ok) continue;
 
-    const data = await response.json();
-    const rawPcmBase64 = data.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
-    if (!rawPcmBase64) return null;
+      const data = await response.json();
+      const rawPcmBase64 = data.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+      if (!rawPcmBase64) continue;
 
-    const pcmBuffer = Buffer.from(rawPcmBase64, 'base64');
-    const wavBuffer = addWavHeader(pcmBuffer);
-    cachedGreetingAudio = `data:audio/wav;base64,${wavBuffer.toString('base64')}`;
-    return cachedGreetingAudio;
-  } catch {
-    return null;
+      const pcmBuffer = Buffer.from(rawPcmBase64, 'base64');
+      const wavBuffer = addWavHeader(pcmBuffer);
+      cachedGreetingAudio = `data:audio/wav;base64,${wavBuffer.toString('base64')}`;
+      return cachedGreetingAudio;
+    } catch {
+      // try next model
+    }
   }
+  return null;
 }
 
 export async function POST(req: NextRequest) {

@@ -28,42 +28,44 @@ function addWavHeader(pcmBuffer: Buffer, sampleRate = 24000, numChannels = 1, bi
 
 // Generate authentic Gemini neural voice audio (voice: Puck)
 async function generateNeuralAudio(text: string, apiKey: string): Promise<string | null> {
-  try {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text }] }],
-        generationConfig: {
-          responseModalities: ["AUDIO"],
-          speechConfig: {
-            voiceConfig: {
-              prebuiltVoiceConfig: {
-                voiceName: "Puck"
+  const models = ['gemini-3.1-flash-tts-preview', 'gemini-2.5-flash-preview-tts'];
+  for (const ttsModel of models) {
+    try {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${ttsModel}:generateContent?key=${apiKey}`;
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text }] }],
+          generationConfig: {
+            responseModalities: ["AUDIO"],
+            speechConfig: {
+              voiceConfig: {
+                prebuiltVoiceConfig: {
+                  voiceName: "Puck"
+                }
               }
             }
           }
-        }
-      })
-    });
+        })
+      });
 
-    if (!response.ok) {
-      console.warn('Gemini TTS request failed with status:', response.status);
-      return null;
+      if (!response.ok) {
+        continue;
+      }
+
+      const data = await response.json();
+      const rawPcmBase64 = data.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+      if (!rawPcmBase64) continue;
+
+      const pcmBuffer = Buffer.from(rawPcmBase64, 'base64');
+      const wavBuffer = addWavHeader(pcmBuffer);
+      return `data:audio/wav;base64,${wavBuffer.toString('base64')}`;
+    } catch {
+      // Try next model fallback
     }
-
-    const data = await response.json();
-    const rawPcmBase64 = data.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
-    if (!rawPcmBase64) return null;
-
-    const pcmBuffer = Buffer.from(rawPcmBase64, 'base64');
-    const wavBuffer = addWavHeader(pcmBuffer);
-    return `data:audio/wav;base64,${wavBuffer.toString('base64')}`;
-  } catch (err: any) {
-    console.error('Error generating neural audio:', err?.message || err);
-    return null;
   }
+  return null;
 }
 
 export async function POST(req: NextRequest) {
@@ -84,7 +86,7 @@ export async function POST(req: NextRequest) {
 
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3.7-flash',
       generationConfig: {
         responseMimeType: 'application/json'
       }

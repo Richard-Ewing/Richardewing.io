@@ -61,7 +61,7 @@ export default function BrandAssetsKit() {
           </div>
 
           <a
-            href="/brand/richard-ewing-brand-kit.zip"
+            href="/assets/brand/richard-ewing-brand-kit.zip"
             download="richard-ewing-brand-kit.zip"
             className="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white font-grotesk font-bold text-sm shadow-md hover:shadow-lg transition-all self-start md:self-auto whitespace-nowrap"
           >
@@ -79,7 +79,7 @@ export default function BrandAssetsKit() {
         <div className="bg-white border border-zinc-300 rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between">
           <div className="p-4 bg-zinc-950 border-b border-zinc-200 flex items-center justify-center min-h-[140px]">
             <img
-              src="/brand/richard-ewing-mark.png"
+              src="/assets/brand/richard-ewing-mark.png"
               alt="Richard Ewing Official Brand Emblem"
               className="w-20 h-20 object-contain drop-shadow-[0_0_12px_rgba(0,240,255,0.4)]"
             />
@@ -92,14 +92,14 @@ export default function BrandAssetsKit() {
             </div>
             <div className="space-y-2">
               <a
-                href="/brand/richard-ewing-mark.png"
+                href="/assets/brand/richard-ewing-mark.png"
                 download="richard-ewing-mark.png"
                 className="block text-center py-2 px-3 rounded-lg bg-zinc-950 hover:bg-zinc-800 text-white font-mono text-xs font-bold transition-colors"
               >
                 Download PNG (1024px) ↓
               </a>
               <a
-                href="/brand/richard-ewing-mark.svg"
+                href="/assets/brand/richard-ewing-mark.svg"
                 download="richard-ewing-mark.svg"
                 className="block text-center py-2 px-3 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-mono text-xs font-bold transition-colors"
               >
@@ -113,7 +113,7 @@ export default function BrandAssetsKit() {
         <div className="bg-white border border-zinc-300 rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between">
           <div className="p-4 bg-zinc-950 border-b border-zinc-200 flex items-center justify-center min-h-[140px]">
             <img
-              src="/brand/richard-ewing-logo-dark.svg"
+              src="/assets/brand/richard-ewing-logo-dark.svg"
               alt="Richard Ewing Dark Vector Logo"
               className="max-h-20 w-auto object-contain"
             />
@@ -125,7 +125,7 @@ export default function BrandAssetsKit() {
               <p className="text-xs text-zinc-600 font-semibold mb-4">Scalable SVG logo with insignia mark optimized for dark backgrounds and headers.</p>
             </div>
             <a
-              href="/brand/richard-ewing-logo-dark.svg"
+              href="/assets/brand/richard-ewing-logo-dark.svg"
               download="richard-ewing-logo-dark.svg"
               className="block text-center py-2.5 px-4 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-mono text-xs font-bold transition-colors"
             >
@@ -138,7 +138,7 @@ export default function BrandAssetsKit() {
         <div className="bg-white border border-zinc-300 rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between">
           <div className="p-4 bg-zinc-100 border-b border-zinc-200 flex items-center justify-center min-h-[140px]">
             <img
-              src="/brand/richard-ewing-logo-light.svg"
+              src="/assets/brand/richard-ewing-logo-light.svg"
               alt="Richard Ewing Light Vector Logo"
               className="max-h-20 w-auto object-contain"
             />
@@ -150,7 +150,7 @@ export default function BrandAssetsKit() {
               <p className="text-xs text-zinc-600 font-semibold mb-4">Scalable SVG logo for print, white papers, and clean white application interfaces.</p>
             </div>
             <a
-              href="/brand/richard-ewing-logo-light.svg"
+              href="/assets/brand/richard-ewing-logo-light.svg"
               download="richard-ewing-logo-light.svg"
               className="block text-center py-2.5 px-4 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-mono text-xs font-bold transition-colors"
             >
@@ -259,7 +259,7 @@ export default function BrandAssetsKit() {
 
           <div className="mt-6 pt-4 border-t border-zinc-200 flex items-center justify-between text-xs font-mono text-zinc-600 font-bold">
             <span>License: Open Editorial &amp; Partner Use</span>
-            <a href="/brand/brand-guidelines.json" target="_blank" className="text-cyan-800 hover:underline">
+            <a href="/assets/brand/brand-guidelines.json" target="_blank" className="text-cyan-800 hover:underline">
               View JSON Spec →
             </a>
           </div>

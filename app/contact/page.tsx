@@ -174,18 +174,34 @@ export default function ContactPage() {
                             'mainEntity': [
                                 {
                                     '@type': 'Question',
-                                    'name': 'What happens after I request a diagnostic call?',
+                                    'name': 'What advisory sessions can I book directly?',
                                     'acceptedAnswer': {
                                         '@type': 'Answer',
-                                        'text': 'We will schedule a direct diagnostic call to understand your codebase structure, engineering team size, and current billing bottlenecks. Within 48 hours, you\'ll receive a free diagnostic report with high-level recommendations.'
+                                        'text': 'You can book a 30-minute Rapid Gut-Check ($450) for immediate cost triage, a 60-minute 1-on-1 Hourly Advisory ($650) for direct architecture and vendor reviews, or a 60-minute Technical Insolvency Audit ($2,500) which includes a formal PDI report and 30-day recovery plan.'
                                     }
                                 },
                                 {
                                     '@type': 'Question',
-                                    'name': 'Do I need to share code access to get started?',
+                                    'name': 'How does payment work for advisory bookings?',
                                     'acceptedAnswer': {
                                         '@type': 'Answer',
-                                        'text': 'No. Code access is not required for the initial discovery call. If you decide to proceed with an audit, we will execute a mutual NDA before reviewing any repositories or logs.'
+                                        'text': 'Payment is collected securely via Stripe at the moment of booking using credit card, Apple Pay, or Google Pay. The meeting is confirmed and added to your calendar immediately upon payment.'
+                                    }
+                                },
+                                {
+                                    '@type': 'Question',
+                                    'name': 'Do I need to share code access before our initial session?',
+                                    'acceptedAnswer': {
+                                        '@type': 'Answer',
+                                        'text': 'No. Code access is not required for advisory calls or initial discovery. If you proceed with a full R&D Capital Audit, a mutual NDA is executed prior to any repository or server log review.'
+                                    }
+                                },
+                                {
+                                    '@type': 'Question',
+                                    'name': 'Are all discussions protected under an NDA?',
+                                    'acceptedAnswer': {
+                                        '@type': 'Answer',
+                                        'text': 'Yes. All financial figures, cloud infrastructure bills, and architecture discussions are strictly confidential.'
                                     }
                                 }
                             ]
@@ -194,12 +210,20 @@ export default function ContactPage() {
                     <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-6">Frequently Asked Questions</h2>
                     <div className="space-y-4">
                         <FAQItem 
-                            question="What happens after I request a diagnostic call?" 
-                            answer="We will schedule a direct diagnostic call to understand your codebase structure, engineering team size, and current billing bottlenecks. Within 48 hours, you'll receive a free diagnostic report with high-level recommendations."
+                            question="What advisory sessions can I book directly?" 
+                            answer="You can book a 30-minute Rapid Gut-Check ($450) for immediate cost triage, a 60-minute 1-on-1 Hourly Advisory ($650) for direct architecture and vendor reviews, or a 60-minute Technical Insolvency Audit ($2,500) which includes a formal PDI report and 30-day recovery plan."
                         />
                         <FAQItem 
-                            question="Do I need to share code access to get started?" 
-                            answer="No. Code access is not required for the initial 15-minute discovery call. If you decide to proceed with an audit, we will execute a mutual NDA before reviewing any repositories or logs."
+                            question="How does payment work for advisory bookings?" 
+                            answer="Payment is collected securely via Stripe at the moment of booking using credit card, Apple Pay, or Google Pay. The meeting is confirmed and added to your calendar immediately upon payment."
+                        />
+                        <FAQItem 
+                            question="Do I need to share code access before our initial session?" 
+                            answer="No. Code access is not required for advisory calls or initial discovery. If you proceed with a full R&D Capital Audit, a mutual NDA is executed prior to any repository or server log review."
+                        />
+                        <FAQItem 
+                            question="Are all discussions protected under an NDA?" 
+                            answer="Yes. All financial figures, cloud infrastructure bills, and architecture discussions are strictly confidential."
                         />
                     </div>
                 </section>

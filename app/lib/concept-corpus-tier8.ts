@@ -2335,7 +2335,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     expertiseLevel: 'Executive',
     health: { confidence: 0.96, evidenceCount: 3, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The financing strategy where early-stage AI and SaaS founders systematically secure non-dilutive cloud computing credits ($100,000+ equivalent across AWS Activate, Google for Startups Cloud, and Microsoft Founders Hub) and authoritative directory backlinks to eliminate first-year hosting, database, and inference overhead without surrendering startup equity.',
-    whyItMatters: 'In capital-intensive AI and B2B SaaS ventures, infrastructure and inference compute represent the fastest drain on early cash reserves. Leveraging hyperscaler startup subsidy programs preserves founder equity, extends cash runway, and establishes high-authority search signals during product-market fit exploration.',
+    whyItMatters: 'In capital-intensive AI and B2B SaaS ventures, infrastructure and inference compute represent the fastest drain on early cash reserves. Using hyperscaler startup subsidy programs preserves founder equity, extends cash runway, and establishes high-authority search signals during product-market fit exploration.',
     whoShouldCare: ['Startup Founders', 'Solo Builders', 'Bootstrappers', 'CTOs', 'VPs of Engineering'],
     firstIntroduced: 'September 2026',
     canonicalReadingOrder: [
@@ -2380,7 +2380,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
         commonMistake: 'Applying with a consumer @gmail.com address or without an active primary domain, leading to immediate review rejection.'
       }
     },
-    canonicalQuote: 'Every dollar spent on cloud hosting, databases, or business software is a dollar drawn directly from your runway. Maximize non-dilutive leverage before selling equity.',
+    canonicalQuote: 'Every dollar spent on cloud hosting, databases, or business software is a dollar drawn directly from your runway. Maximize non-dilutive use before selling equity.',
     positionStatement: 'Hyperscaler cloud credits are a non-dilutive capital asset that founders must systematically extract and defend.',
     executableTool: { name: 'AUEB Calculator', url: '/tools/aueb', description: 'Model AI unit economics and calculate the financial runway extension of cloud credit subsidies.', type: 'Diagnostic Calculator' },
     claims: [
@@ -2400,7 +2400,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     reverseCitations: [],
     personaRecommendations: [
       { role: 'Startup Founder', takeaway: 'Eliminate first-year cloud overhead and preserve equity by systematically applying to startup ecosystem programs.', recommendedNextSlug: 'rented-intelligence-vs-owned-capital' },
-      { role: 'Chief Financial Officer', takeaway: 'Leverage hyperscaler subsidies to extend cash runway and delay dilutive funding rounds.', recommendedNextSlug: 'ai-volatility-tax' }
+      { role: 'Chief Financial Officer', takeaway: 'Use hyperscaler subsidies to extend cash runway and delay dilutive funding rounds.', recommendedNextSlug: 'ai-volatility-tax' }
     ],
     telemetry: {
       origin: {

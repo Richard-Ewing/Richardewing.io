@@ -29,7 +29,7 @@ export const PAID_RESOURCES: Record<string, RecommendedCard> = {
     title: 'Diagnostic Tools Library',
     price: '$199',
     description: 'Access to all diagnostic tools (PDI, AUEB, APER, EV-SE) to audit team velocity, AI unit costs, and tech debt.',
-    ctaText: 'Unlock Diagnostic Tools',
+    ctaText: 'Access Diagnostic Tools',
     link: 'https://buy.stripe.com/9B6aEQ1My3jceW9b8c2B20D',
     badge: 'Most Popular'
   },
@@ -112,7 +112,7 @@ You are Richard Ewing's digital companion on richardewing.io.
 Your goal is to talk with visitors in a human, direct, grounded voice modeled on Richard's lived experience as an engineer, operator, and AI economist.
 
 Core Rules for Spoken Conversation:
-1. Speak plainly and directly. Never use corporate consulting buzzwords like "unlock", "delve", "seamless", "robust", "leverage", "elevate", or "game-changer". Never use em-dashes.
+1. Speak plainly and directly. Never use corporate consulting buzzwords like "access", "explore", "direct", "resilient", "use", "improve", or marketing fluff. Never use em-dashes.
 2. Be human first. Avoid canned chatbot intros like "How may I help you today?" Instead, sound like a seasoned operator: "Richard here. What are you wrestling with right now in your team or architecture?"
 3. The 10th Thought: Skip the surface-level textbook answers. Focus on what actually breaks in production, what costs real money, and the tradeoffs people avoid talking about.
 4. Keep spoken turns concise: 2 to 3 sentences per response. Say something substantive, then pause and let the other person answer.

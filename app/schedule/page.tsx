@@ -33,18 +33,42 @@ export default function SchedulePage() {
     'mainEntity': [
       {
         '@type': 'Question',
-        'name': 'What sessions are available to book?',
+        'name': 'What advisory sessions are available to book?',
         'acceptedAnswer': {
           '@type': 'Answer',
-          'text': 'You can book a 30-minute Rapid Gut-Check Evaluation, a 60-minute Technical Insolvency Audit, or an introductory Executive Advisory Briefing for enterprise retainers.'
+          'text': 'We offer three primary sessions: (1) Rapid Gut-Check ($450, 30 min) for urgent cloud/API cost triage, (2) 1-on-1 Hourly Advisory ($650, 60 min) for hands-on architecture reviews and vendor vetting, and (3) Technical Insolvency Audit ($2,500, 60 min) which includes a formal Product Debt Index (PDI) calculation and a 30-day capital recovery roadmap. For ongoing support, fractional retainers are available at $10,000/month.'
         }
       },
       {
         '@type': 'Question',
-        'name': 'Are meetings conducted under confidentiality?',
+        'name': 'How does payment and confirmation work?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'Payment is processed securely via Stripe at the time of booking. Once payment clears, Cal.com instantly reserves your slot, adds the event to Google Calendar, and generates an automated Google Meet video room.'
+        }
+      },
+      {
+        '@type': 'Question',
+        'name': 'What should I prepare for our session?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'Bring real numbers: your current cloud provider bills, API token commitments, architecture diagrams, or vendor proposals. No slide decks or formal presentations are needed.'
+        }
+      },
+      {
+        '@type': 'Question',
+        'name': 'Are all sessions held under strict confidentiality?',
         'acceptedAnswer': {
           '@type': 'Answer',
           'text': 'Yes. All discovery discussions, repository metrics, and cloud billing logs are held under strict confidentiality. Mutual NDAs are executed prior to any technical review.'
+        }
+      },
+      {
+        '@type': 'Question',
+        'name': 'What if I need to reschedule or cancel?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'Every confirmation email includes a direct link to reschedule or cancel your session with at least 24 hours advance notice. Your booking payment automatically applies to your rescheduled slot.'
         }
       }
     ]
@@ -156,16 +180,24 @@ export default function SchedulePage() {
           <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
             <FAQItem
-              question="What sessions are available to book?"
-              answer="You can book a 30-minute Rapid Gut-Check Evaluation, a 60-minute Technical Insolvency Audit, or an introductory Executive Advisory Briefing for enterprise retainers."
+              question="What advisory sessions are available to book?"
+              answer="We offer three primary sessions: (1) Rapid Gut-Check ($450, 30 min) for urgent cloud/API cost triage, (2) 1-on-1 Hourly Advisory ($650, 60 min) for hands-on architecture reviews and vendor vetting, and (3) Technical Insolvency Audit ($2,500, 60 min) which includes a formal Product Debt Index (PDI) calculation and a 30-day capital recovery roadmap. For ongoing support, fractional retainers are available at $10,000/month."
             />
             <FAQItem
-              question="Are meetings conducted under confidentiality?"
+              question="How does payment and confirmation work?"
+              answer="Payment is processed securely via Stripe at the time of booking. Once payment clears, Cal.com instantly reserves your slot, adds the event to Google Calendar, and generates an automated Google Meet video room."
+            />
+            <FAQItem
+              question="What should I prepare for our session?"
+              answer="Bring real numbers: your current cloud provider bills, API token commitments, architecture diagrams, or vendor proposals. No slide decks or formal presentations are needed."
+            />
+            <FAQItem
+              question="Are all sessions held under strict confidentiality?"
               answer="Yes. All discovery discussions, repository metrics, and cloud billing logs are held under strict confidentiality. Mutual NDAs are executed prior to any technical review."
             />
             <FAQItem
-              question="What conferencing platform is used for the call?"
-              answer="Calendar invitations include a direct Google Meet video conference link generated automatically upon booking."
+              question="What if I need to reschedule or cancel?"
+              answer="Every confirmation email includes a direct link to reschedule or cancel your session with at least 24 hours advance notice. Your booking payment automatically applies to your rescheduled slot."
             />
           </div>
         </section>

@@ -428,7 +428,7 @@ export default function LegalPage() {
                             <div className="font-bold text-emerald-950 uppercase tracking-wider text-xs mb-1 font-mono">
                                 Plain English Human Translation (HWS v2.0):
                             </div>
-                            Our digital curriculum, Vault access, and diagnostic tool unlocks deliver instant access to proprietary trade knowledge and downloadable intellectual property. Because digital files cannot be un-downloaded, all digital purchases are final and non-refundable once access is delivered. If you have any billing question, email us directly before disputing a charge with your credit card company.
+                            Our digital curriculum, Vault access, and diagnostic tool accesses deliver instant access to proprietary trade knowledge and downloadable intellectual property. Because digital files cannot be un-downloaded, all digital purchases are final and non-refundable once access is delivered. If you have any billing question, email us directly before disputing a charge with your credit card company.
                         </div>
 
                         <div className="space-y-6 text-sm sm:text-base text-zinc-800 leading-relaxed">
