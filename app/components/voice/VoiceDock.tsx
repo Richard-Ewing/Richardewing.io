@@ -16,7 +16,8 @@ import {
   Calendar,
   Wrench,
   BookOpen,
-  Layers
+  Layers,
+  RotateCcw
 } from 'lucide-react';
 import { RecommendedCard } from '@/app/lib/voice-knowledge';
 
@@ -108,16 +109,8 @@ export default function VoiceDock() {
   useEffect(() => {
     setMounted(true);
     try {
-      if (typeof window !== 'undefined' && localStorage.getItem('rew_voice_session_ended') === 'true') {
-        hasSessionEndedRef.current = true;
-        setSecondsRemaining(0);
-        setStatus('limit_reached');
-        setMessages([
-          {
-            role: 'assistant',
-            content: "You have completed your 90-second diagnostic sparring session. To dive deeper into your numbers, book direct working time or use the resources below."
-          }
-        ]);
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem('rew_voice_session_ended');
       }
     } catch {
       // Ignore
@@ -280,6 +273,25 @@ export default function VoiceDock() {
     }
   };
 
+  const handleRestartSession = () => {
+    hasSessionEndedRef.current = false;
+    if (timerRef.current) clearInterval(timerRef.current);
+    setSecondsRemaining(90);
+    setStatus('idle');
+    setMessages([]);
+    setActiveCard(null);
+    setMicError(null);
+    setInputText('');
+    try {
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem('rew_voice_session_ended');
+      }
+    } catch {
+      // Ignore
+    }
+    handleOpen();
+  };
+
   const handleSessionLimitReached = () => {
     if (hasSessionEndedRef.current) return;
     hasSessionEndedRef.current = true;
@@ -291,14 +303,6 @@ export default function VoiceDock() {
     }
 
     setStatus('limit_reached');
-
-    try {
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('rew_voice_session_ended', 'true');
-      }
-    } catch {
-      // Ignore
-    }
 
     const closeMsg: Message = {
       role: 'assistant',
@@ -901,6 +905,15 @@ export default function VoiceDock() {
                   <span>Book 1:1 Working Session</span>
                   <ExternalLink className="w-3.5 h-3.5 opacity-80" />
                 </a>
+
+                <button
+                  onClick={handleRestartSession}
+                  className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-700/70 text-zinc-300 hover:text-white text-xs font-medium transition-colors"
+                >
+                  <RotateCcw className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Start New 90s Session</span>
+                </button>
+
                 <p className="text-[11px] text-zinc-400 font-mono text-center">
                   90s diagnostic limit reached. Explore direct resources below:
                 </p>
