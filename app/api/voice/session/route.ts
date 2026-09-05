@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { PAID_RESOURCES, CORE_TOPICS, REWS_VOICE_SYSTEM_PROMPT } from '@/app/lib/voice-knowledge';
 
 // In-memory sliding window IP rate limiter for anonymous voice sessions
-// Max 3 sessions per 24 hours per IP
+// Max 5 sessions per 24 hours per IP
 const ipSessionTracker = new Map<string, { count: number; expiresAt: number }>();
 
 function isRateLimited(ip: string): boolean {
@@ -14,12 +14,78 @@ function isRateLimited(ip: string): boolean {
     return false;
   }
 
-  if (record.count >= 5) {
+  if (record.count >= 10) {
     return true;
   }
 
   record.count += 1;
   return false;
+}
+
+// Prepend standard 44-byte WAV header to 24kHz 16-bit mono PCM
+function addWavHeader(pcmBuffer: Buffer, sampleRate = 24000, numChannels = 1, bitsPerSample = 16): Buffer {
+  const byteRate = sampleRate * numChannels * (bitsPerSample / 8);
+  const blockAlign = numChannels * (bitsPerSample / 8);
+  const dataSize = pcmBuffer.length;
+  const header = Buffer.alloc(44);
+
+  header.write('RIFF', 0);
+  header.writeUInt32LE(36 + dataSize, 4);
+  header.write('WAVE', 8);
+  header.write('fmt ', 12);
+  header.writeUInt32LE(16, 16);
+  header.writeUInt16LE(1, 20);
+  header.writeUInt16LE(numChannels, 22);
+  header.writeUInt32LE(sampleRate, 24);
+  header.writeUInt32LE(byteRate, 28);
+  header.writeUInt16LE(blockAlign, 32);
+  header.writeUInt16LE(bitsPerSample, 34);
+  header.write('data', 36);
+  header.writeUInt32LE(dataSize, 40);
+
+  return Buffer.concat([header, pcmBuffer]);
+}
+
+// Cached initial greeting audio so it only generates once per server instance
+let cachedGreetingAudio: string | null = null;
+
+async function getInitialGreetingAudio(apiKey: string): Promise<string | null> {
+  if (cachedGreetingAudio) return cachedGreetingAudio;
+
+  try {
+    const text = "Richard here. What are you wrestling with right now in your team, architecture, or career?";
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text }] }],
+        generationConfig: {
+          responseModalities: ["AUDIO"],
+          speechConfig: {
+            voiceConfig: {
+              prebuiltVoiceConfig: {
+                voiceName: "Puck"
+              }
+            }
+          }
+        }
+      })
+    });
+
+    if (!response.ok) return null;
+
+    const data = await response.json();
+    const rawPcmBase64 = data.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+    if (!rawPcmBase64) return null;
+
+    const pcmBuffer = Buffer.from(rawPcmBase64, 'base64');
+    const wavBuffer = addWavHeader(pcmBuffer);
+    cachedGreetingAudio = `data:audio/wav;base64,${wavBuffer.toString('base64')}`;
+    return cachedGreetingAudio;
+  } catch {
+    return null;
+  }
 }
 
 export async function POST(req: NextRequest) {
@@ -30,7 +96,7 @@ export async function POST(req: NextRequest) {
     if (isRateLimited(ip)) {
       return NextResponse.json(
         {
-          error: 'Daily voice session limit reached (5 sessions per day). Please try again tomorrow or book a 1:1 session.',
+          error: 'Daily voice session limit reached. Please try again tomorrow or book a 1:1 session.',
           rateLimited: true,
           bookingUrl: 'https://cal.com/richard-ewing-2cevwb'
         },
@@ -41,12 +107,18 @@ export async function POST(req: NextRequest) {
     const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || '';
     const hasKey = Boolean(apiKey);
 
+    let initialAudioDataUrl: string | null = null;
+    if (hasKey) {
+      initialAudioDataUrl = await getInitialGreetingAudio(apiKey);
+    }
+
     return NextResponse.json({
       success: true,
       sessionId: `voice_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`,
       hasKey,
       maxDurationSeconds: 90,
       initialGreeting: "Richard here. What are you wrestling with right now in your team, architecture, or career?",
+      initialAudioDataUrl,
       systemPrompt: REWS_VOICE_SYSTEM_PROMPT,
       resources: PAID_RESOURCES,
       topics: CORE_TOPICS

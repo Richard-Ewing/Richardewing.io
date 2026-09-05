@@ -1,38 +1,84 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { PAID_RESOURCES, CORE_TOPICS, REWS_VOICE_SYSTEM_PROMPT } from '@/app/lib/voice-knowledge';
+import { PAID_RESOURCES, REWS_VOICE_SYSTEM_PROMPT } from '@/app/lib/voice-knowledge';
+
+// Prepend standard 44-byte WAV header to 24kHz 16-bit mono PCM
+function addWavHeader(pcmBuffer: Buffer, sampleRate = 24000, numChannels = 1, bitsPerSample = 16): Buffer {
+  const byteRate = sampleRate * numChannels * (bitsPerSample / 8);
+  const blockAlign = numChannels * (bitsPerSample / 8);
+  const dataSize = pcmBuffer.length;
+  const header = Buffer.alloc(44);
+
+  header.write('RIFF', 0);
+  header.writeUInt32LE(36 + dataSize, 4);
+  header.write('WAVE', 8);
+  header.write('fmt ', 12);
+  header.writeUInt32LE(16, 16);
+  header.writeUInt16LE(1, 20); // PCM format
+  header.writeUInt16LE(numChannels, 22);
+  header.writeUInt32LE(sampleRate, 24);
+  header.writeUInt32LE(byteRate, 28);
+  header.writeUInt16LE(blockAlign, 32);
+  header.writeUInt16LE(bitsPerSample, 34);
+  header.write('data', 36);
+  header.writeUInt32LE(dataSize, 40);
+
+  return Buffer.concat([header, pcmBuffer]);
+}
+
+// Generate authentic Gemini neural voice audio (voice: Puck)
+async function generateNeuralAudio(text: string, apiKey: string): Promise<string | null> {
+  try {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text }] }],
+        generationConfig: {
+          responseModalities: ["AUDIO"],
+          speechConfig: {
+            voiceConfig: {
+              prebuiltVoiceConfig: {
+                voiceName: "Puck"
+              }
+            }
+          }
+        }
+      })
+    });
+
+    if (!response.ok) {
+      console.warn('Gemini TTS request failed with status:', response.status);
+      return null;
+    }
+
+    const data = await response.json();
+    const rawPcmBase64 = data.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+    if (!rawPcmBase64) return null;
+
+    const pcmBuffer = Buffer.from(rawPcmBase64, 'base64');
+    const wavBuffer = addWavHeader(pcmBuffer);
+    return `data:audio/wav;base64,${wavBuffer.toString('base64')}`;
+  } catch (err: any) {
+    console.error('Error generating neural audio:', err?.message || err);
+    return null;
+  }
+}
 
 export async function POST(req: NextRequest) {
   try {
-    const { messages } = await req.json();
+    const body = await req.json();
+    const { messages = [], audioBase64, mimeType = 'audio/webm' } = body;
 
-    if (!messages || !Array.isArray(messages) || messages.length === 0) {
-      return NextResponse.json({ error: 'Messages array is required' }, { status: 400 });
-    }
-
-    const lastUserMessage = messages[messages.length - 1].content;
     const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
 
     // Fallback if API key is not configured
     if (!apiKey) {
-      const lower = lastUserMessage.toLowerCase();
-      let matchedCard = null;
-      let reply = "Richard here. In my experience, when teams struggle with this, the real bottleneck is not the tooling, but the incentive structure and how decisions get signed off. What is the immediate roadblock you are running into?";
-
-      if (lower.includes('cal') || lower.includes('book') || lower.includes('talk') || lower.includes('hire') || lower.includes('consult')) {
-        matchedCard = PAID_RESOURCES.cal_advisory_booking;
-        reply = "Let us skip the back and forth. You can grab 30 minutes directly on my calendar and we can look at your actual numbers and architecture.";
-      } else if (lower.includes('drag') || lower.includes('velocity') || lower.includes('metric') || lower.includes('burn') || lower.includes('review')) {
-        matchedCard = PAID_RESOURCES.tools_library_unlock;
-        reply = "You are likely dealing with production drag. The hours are disappearing in review queues and rework. Our Diagnostic Tools Library has the exact PDI rubric to audit this.";
-      } else if (lower.includes('curriculum') || lower.includes('course') || lower.includes('learn') || lower.includes('track') || lower.includes('career') || lower.includes('staff') || lower.includes('management')) {
-        matchedCard = PAID_RESOURCES.single_track;
-        reply = "Moving between engineering tracks is about expanding your leverage, not just writing code. Our curriculum tracks break down the exact rubrics and frameworks.";
-      }
-
       return NextResponse.json({
-        reply,
-        card: matchedCard
+        reply: "Richard here. Most teams wrestling with this are stuck between shipping fast and protecting gross margins. What is the immediate roadblock you are hitting?",
+        card: PAID_RESOURCES.cal_advisory_booking,
+        audioDataUrl: null
       });
     }
 
@@ -44,9 +90,11 @@ export async function POST(req: NextRequest) {
       }
     });
 
-    const conversationHistory = messages.map(m => `${m.role === 'user' ? 'Visitor' : 'Richard'}: ${m.content}`).join('\n');
+    const conversationHistory = messages
+      .map((m: any) => `${m.role === 'user' ? 'Visitor' : 'Richard'}: ${m.content}`)
+      .join('\n');
 
-    const prompt = `
+    const promptInstructions = `
 ${REWS_VOICE_SYSTEM_PROMPT}
 
 You have these paid resource cards available to recommend when relevant:
@@ -56,20 +104,38 @@ You have these paid resource cards available to recommend when relevant:
 - all_access_pass: All-Access Vault Pass ($999) for full organization-wide curriculum and all tools.
 - cal_advisory_booking: 1:1 Advisory Strategy Session on Cal.com for bespoke, messy problems, hiring, or direct working calls.
 
-Current conversation:
+Conversation history:
 ${conversationHistory}
 
 Respond ONLY with a valid JSON object matching this exact schema:
 {
+  "transcription": "If user provided audio, your verbatim transcript of what they said. Otherwise null.",
   "reply": "Your punchy, spoken response as Richard (2 to 3 sentences max, no em-dashes, no buzzwords, helpful first)",
   "recommendedCardId": "single_track" | "tools_library_unlock" | "module_bundle_3" | "all_access_pass" | "cal_advisory_booking" | null
 }
 `;
 
-    const result = await model.generateContent(prompt);
+    let contentParts: any[] = [];
+    if (audioBase64) {
+      contentParts.push({
+        inlineData: {
+          mimeType: mimeType || 'audio/webm',
+          data: audioBase64
+        }
+      });
+      contentParts.push({
+        text: `Listen to this user audio recording. Transcribe it into "transcription", then diagnose and reply as Richard.\n\n${promptInstructions}`
+      });
+    } else {
+      contentParts.push({
+        text: promptInstructions
+      });
+    }
+
+    const result = await model.generateContent(contentParts);
     const text = result.response.text();
 
-    let parsed: { reply: string; recommendedCardId?: string | null };
+    let parsed: { transcription?: string; reply: string; recommendedCardId?: string | null };
     try {
       parsed = JSON.parse(text);
     } catch {
@@ -83,19 +149,27 @@ Respond ONLY with a valid JSON object matching this exact schema:
       ? PAID_RESOURCES[parsed.recommendedCardId]
       : null;
 
-    // Clean any accidental em-dashes from model output
-    const cleanReply = parsed.reply.replace(/—/g, ' - ').replace(/–/g, ' - ');
+    // Clean any accidental em-dashes
+    const cleanReply = (parsed.reply || "Richard here. What are you looking to solve?")
+      .replace(/\u2014/g, ' - ')
+      .replace(/\u2013/g, ' - ');
+
+    // Generate real neural AI audio
+    const audioDataUrl = await generateNeuralAudio(cleanReply, apiKey);
 
     return NextResponse.json({
       reply: cleanReply,
-      card
+      transcription: parsed.transcription || null,
+      card,
+      audioDataUrl
     });
   } catch (error: any) {
     console.error('Error in voice chat API:', error);
     return NextResponse.json(
       {
-        reply: "Richard here. I ran into a brief connection hitch, but if you want to dig into your specific setup, you can reach me directly or grab time on my calendar.",
-        card: PAID_RESOURCES.cal_advisory_booking
+        reply: "Richard here. I had a brief connection hitch. If you want to review your numbers directly, grab time on my calendar.",
+        card: PAID_RESOURCES.cal_advisory_booking,
+        audioDataUrl: null
       },
       { status: 200 }
     );

@@ -32,34 +32,38 @@ export default function VoiceDock() {
   const [secondsRemaining, setSecondsRemaining] = useState(90);
   const [visualizerBars, setVisualizerBars] = useState<number[]>([4, 8, 12, 8, 4]);
   const [micError, setMicError] = useState<string | null>(null);
-  const [interimText, setInterimText] = useState<string>('');
 
-  const recognitionRef = useRef<any>(null);
-  const synthRef = useRef<SpeechSynthesis | null>(null);
-  const voicesRef = useRef<SpeechSynthesisVoice[]>([]);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const audioPlayerRef = useRef<HTMLAudioElement | null>(null);
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const audioChunksRef = useRef<Blob[]>([]);
   const mediaStreamRef = useRef<MediaStream | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
   const hasSessionEndedRef = useRef(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
+  const initialAudioRef = useRef<string | null>(null);
 
-  // Initialize Speech Synthesis and pre-cache natural human voices
+  // Initialize audio element on client
   useEffect(() => {
-    if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
-    synthRef.current = window.speechSynthesis;
-
-    const loadVoices = () => {
-      const list = window.speechSynthesis.getVoices();
-      if (list && list.length > 0) {
-        voicesRef.current = list;
-      }
-    };
-
-    loadVoices();
-    window.speechSynthesis.onvoiceschanged = loadVoices;
+    if (typeof window !== 'undefined') {
+      audioPlayerRef.current = new Audio();
+      audioPlayerRef.current.onplay = () => {
+        if (!hasSessionEndedRef.current) setStatus('speaking');
+      };
+      audioPlayerRef.current.onended = () => {
+        if (!hasSessionEndedRef.current) setStatus('idle');
+      };
+      audioPlayerRef.current.onerror = () => {
+        if (!hasSessionEndedRef.current) setStatus('idle');
+      };
+    }
 
     return () => {
-      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-        window.speechSynthesis.onvoiceschanged = null;
+      if (audioPlayerRef.current) {
+        audioPlayerRef.current.pause();
+        audioPlayerRef.current = null;
+      }
+      if (mediaStreamRef.current) {
+        mediaStreamRef.current.getTracks().forEach((t) => t.stop());
       }
     };
   }, []);
@@ -67,9 +71,9 @@ export default function VoiceDock() {
   // Scroll to bottom when messages or status change
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages, status, interimText]);
+  }, [messages, status]);
 
-  // Session timer: 90-second cap (guaranteed zero infinite re-trigger loop)
+  // Session timer: 90-second cap (guaranteed zero loop)
   useEffect(() => {
     if (!isOpen) {
       if (timerRef.current) clearInterval(timerRef.current);
@@ -100,127 +104,64 @@ export default function VoiceDock() {
     if (status === 'listening' || status === 'speaking') {
       interval = setInterval(() => {
         setVisualizerBars(
-          Array.from({ length: 5 }, () => Math.floor(Math.random() * 20) + 4)
+          Array.from({ length: 5 }, () => Math.floor(Math.random() * 22) + 4)
         );
-      }, 120);
+      }, 100);
     } else {
       setVisualizerBars([4, 6, 8, 6, 4]);
     }
     return () => clearInterval(interval);
   }, [status]);
 
-  const selectBestHumanVoice = (voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | null => {
-    if (!voices || voices.length === 0) return null;
-
-    // 1. Natural online male voices (sounds remarkably close to a real human operator)
-    const naturalMale = voices.find(
-      (v) =>
-        v.lang.startsWith('en') &&
-        (v.name.includes('Christopher Online (Natural)') ||
-          v.name.includes('Guy Online (Natural)') ||
-          v.name.includes('Eric Online (Natural)') ||
-          v.name.includes('Ryan Online (Natural)'))
-    );
-    if (naturalMale) return naturalMale;
-
-    // 2. Any English Natural voice (Microsoft/Google Neural)
-    const naturalGeneral = voices.find(
-      (v) =>
-        v.lang.startsWith('en') &&
-        v.name.includes('Natural') &&
-        !v.name.includes('Jenny') &&
-        !v.name.includes('Aria')
-    );
-    if (naturalGeneral) return naturalGeneral;
-
-    // 3. Google US English (Chrome native high quality)
-    const googleVoice = voices.find(
-      (v) =>
-        v.lang.startsWith('en') &&
-        (v.name.includes('Google US English') || v.name.includes('Google UK English Male'))
-    );
-    if (googleVoice) return googleVoice;
-
-    // 4. Apple Alex or Daniel
-    const appleVoice = voices.find(
-      (v) =>
-        v.lang.startsWith('en') &&
-        (v.name.includes('Alex') || v.name.includes('Daniel'))
-    );
-    if (appleVoice) return appleVoice;
-
-    // 5. Fallback to any English voice
-    return voices.find((v) => v.lang.startsWith('en')) || voices[0] || null;
-  };
-
-  const speakResponse = (text: string) => {
-    if (isMuted || typeof window === 'undefined' || !('speechSynthesis' in window)) {
+  const playNeuralAudio = (audioDataUrl: string) => {
+    if (isMuted || !audioPlayerRef.current || !audioDataUrl) {
       if (!hasSessionEndedRef.current) setStatus('idle');
       return;
     }
 
     try {
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.rate = 1.0;
-      utterance.pitch = 0.96; // Grounded, authentic operator pitch
-
-      const availableVoices =
-        voicesRef.current.length > 0
-          ? voicesRef.current
-          : window.speechSynthesis.getVoices();
-
-      const chosenVoice = selectBestHumanVoice(availableVoices);
-      if (chosenVoice) {
-        utterance.voice = chosenVoice;
-      }
-
-      utterance.onstart = () => {
-        if (!hasSessionEndedRef.current) {
-          setStatus('speaking');
-        }
-      };
-
-      utterance.onend = () => {
-        if (!hasSessionEndedRef.current) {
-          setStatus('idle');
-        }
-      };
-
-      utterance.onerror = () => {
-        if (!hasSessionEndedRef.current) {
-          setStatus('idle');
-        }
-      };
-
-      window.speechSynthesis.speak(utterance);
+      audioPlayerRef.current.src = audioDataUrl;
+      audioPlayerRef.current.play().catch((err) => {
+        console.warn('Audio play was interrupted or blocked:', err);
+        if (!hasSessionEndedRef.current) setStatus('idle');
+      });
     } catch {
       if (!hasSessionEndedRef.current) setStatus('idle');
     }
   };
 
-  const handleOpen = () => {
+  const handleOpen = async () => {
     setIsOpen(true);
     setMicError(null);
+
     if (messages.length === 0) {
       const initialGreeting: Message = {
         role: 'assistant',
         content: "Richard here. What are you wrestling with right now in your team, architecture, or career?"
       };
       setMessages([initialGreeting]);
-      setTimeout(() => {
-        if (!isMuted) {
-          speakResponse(initialGreeting.content);
+
+      // Fetch session initialization and pre-rendered neural greeting audio
+      try {
+        const res = await fetch('/api/voice/session', { method: 'POST' });
+        const sessionData = await res.json();
+        if (sessionData.initialAudioDataUrl) {
+          initialAudioRef.current = sessionData.initialAudioDataUrl;
+          if (!isMuted) {
+            playNeuralAudio(sessionData.initialAudioDataUrl);
+          }
         }
-      }, 300);
+      } catch {
+        // Continue normally
+      }
     }
   };
 
   const handleClose = () => {
     setIsOpen(false);
-    stopListening();
-    if (synthRef.current) {
-      synthRef.current.cancel();
+    stopRecording();
+    if (audioPlayerRef.current) {
+      audioPlayerRef.current.pause();
     }
     if (!hasSessionEndedRef.current) {
       setStatus('idle');
@@ -232,7 +173,11 @@ export default function VoiceDock() {
     hasSessionEndedRef.current = true;
 
     if (timerRef.current) clearInterval(timerRef.current);
-    stopListening();
+    stopRecording();
+    if (audioPlayerRef.current) {
+      audioPlayerRef.current.pause();
+    }
+
     setStatus('limit_reached');
 
     const closeMsg: Message = {
@@ -241,127 +186,125 @@ export default function VoiceDock() {
     };
 
     setMessages((prev) => [...prev, closeMsg]);
-    if (!isMuted) {
-      speakResponse(closeMsg.content);
-    }
   };
 
-  const startListening = async () => {
+  // Start recording actual audio from user's microphone
+  const startRecording = async () => {
     if (hasSessionEndedRef.current || status === 'limit_reached') return;
-    if (typeof window === 'undefined') return;
 
     setMicError(null);
-    setInterimText('');
 
-    // Step 1: Explicitly request browser microphone permission to trigger Chrome's Allow prompt
+    if (audioPlayerRef.current) {
+      audioPlayerRef.current.pause();
+    }
+
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       mediaStreamRef.current = stream;
+
+      const mimeType = MediaRecorder.isTypeSupported('audio/webm')
+        ? 'audio/webm'
+        : MediaRecorder.isTypeSupported('audio/mp4')
+        ? 'audio/mp4'
+        : 'audio/ogg';
+
+      const mediaRecorder = new MediaRecorder(stream, { mimeType });
+      audioChunksRef.current = [];
+
+      mediaRecorder.ondataavailable = (event) => {
+        if (event.data && event.data.size > 0) {
+          audioChunksRef.current.push(event.data);
+        }
+      };
+
+      mediaRecorder.onstop = async () => {
+        const audioBlob = new Blob(audioChunksRef.current, { type: mimeType });
+        if (audioBlob.size < 500) {
+          // Empty or tap-to-cancel
+          setStatus('idle');
+          return;
+        }
+
+        setStatus('processing');
+
+        // Convert blob to base64
+        const reader = new FileReader();
+        reader.readAsDataURL(audioBlob);
+        reader.onloadend = async () => {
+          const base64Audio = (reader.result as string).split(',')[1];
+          await sendAudioTurn(base64Audio, mimeType);
+        };
+      };
+
+      mediaRecorderRef.current = mediaRecorder;
+      mediaRecorder.start(250);
+      setStatus('listening');
     } catch (err: any) {
       console.warn('Microphone permission request failed:', err);
       setMicError(
         'Microphone access was blocked. Please click the lock or camera icon in your address bar to allow microphone, or use text mode below.'
       );
       setStatus('idle');
-      return;
-    }
-
-    // Step 2: Initialize Speech Recognition
-    const SpeechRecognition =
-      (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-
-    if (!SpeechRecognition) {
-      setMicError('Speech recognition is not supported in this browser. Please use text mode.');
-      setMode('text');
-      setStatus('idle');
-      return;
-    }
-
-    try {
-      if (synthRef.current) {
-        synthRef.current.cancel();
-      }
-
-      const recognition = new SpeechRecognition();
-      recognition.continuous = false;
-      recognition.interimResults = true;
-      recognition.lang = 'en-US';
-
-      recognition.onstart = () => {
-        setStatus('listening');
-      };
-
-      recognition.onresult = (event: any) => {
-        let interim = '';
-        let final = '';
-
-        for (let i = event.resultIndex; i < event.results.length; ++i) {
-          if (event.results[i].isFinal) {
-            final += event.results[i][0].transcript;
-          } else {
-            interim += event.results[i][0].transcript;
-          }
-        }
-
-        if (interim) {
-          setInterimText(interim);
-        }
-
-        if (final.trim()) {
-          setInterimText('');
-          stopListening();
-          handleSendMessage(final.trim());
-        }
-      };
-
-      recognition.onerror = (event: any) => {
-        console.warn('SpeechRecognition error:', event.error);
-        if (event.error === 'not-allowed') {
-          setMicError('Microphone access was blocked. Please allow microphone permissions in your browser settings.');
-        }
-        setStatus('idle');
-      };
-
-      recognition.onend = () => {
-        if (status === 'listening') {
-          setStatus('idle');
-        }
-      };
-
-      recognitionRef.current = recognition;
-      recognition.start();
-    } catch (err) {
-      console.error('Speech recognition failed to start:', err);
-      setStatus('idle');
-      setMode('text');
     }
   };
 
-  const stopListening = () => {
-    if (recognitionRef.current) {
-      try {
-        recognitionRef.current.stop();
-      } catch {
-        // Ignore already stopped
-      }
+  const stopRecording = () => {
+    if (mediaRecorderRef.current && mediaRecorderRef.current.state === 'recording') {
+      mediaRecorderRef.current.stop();
     }
     if (mediaStreamRef.current) {
       mediaStreamRef.current.getTracks().forEach((track) => track.stop());
       mediaStreamRef.current = null;
     }
-    if (status === 'listening') {
+  };
+
+  const sendAudioTurn = async (base64Audio: string, mimeType: string) => {
+    try {
+      const response = await fetch('/api/voice/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          audioBase64: base64Audio,
+          mimeType,
+          messages
+        })
+      });
+
+      const data = await response.json();
+
+      // Show user's transcribed question if returned
+      const userText = data.transcription || '(Audio message)';
+      const userMsg: Message = { role: 'user', content: userText };
+      const assistantMsg: Message = { role: 'assistant', content: data.reply };
+
+      setMessages((prev) => [...prev, userMsg, assistantMsg]);
+
+      if (data.card) {
+        setActiveCard(data.card);
+      }
+
+      if (data.audioDataUrl && !isMuted) {
+        playNeuralAudio(data.audioDataUrl);
+      } else {
+        setStatus('idle');
+      }
+    } catch {
+      const errorMsg: Message = {
+        role: 'assistant',
+        content: "Richard here. I had trouble connecting. Feel free to book a direct session or explore the curriculum below."
+      };
+      setMessages((prev) => [...prev, errorMsg]);
       setStatus('idle');
     }
   };
 
-  const handleSendMessage = async (text: string) => {
+  const handleSendTextMessage = async (text: string) => {
     if (!text.trim() || hasSessionEndedRef.current) return;
 
     const userMessage: Message = { role: 'user', content: text.trim() };
     const newMessages = [...messages, userMessage];
     setMessages(newMessages);
     setInputText('');
-    setInterimText('');
     setStatus('processing');
 
     try {
@@ -384,8 +327,8 @@ export default function VoiceDock() {
 
       setMessages((prev) => [...prev, assistantMessage]);
 
-      if (mode === 'voice' && !isMuted) {
-        speakResponse(data.reply);
+      if (mode === 'voice' && !isMuted && data.audioDataUrl) {
+        playNeuralAudio(data.audioDataUrl);
       } else {
         setStatus('idle');
       }
@@ -408,7 +351,6 @@ export default function VoiceDock() {
           className="group relative flex items-center gap-3 px-5 py-3.5 bg-zinc-950 border border-cyan-500/40 hover:border-cyan-400 text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-cyan-500/20"
           aria-label="Open Voice Companion"
         >
-          {/* Subtle pulse orb */}
           <div className="relative flex items-center justify-center">
             <span className="absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-30 animate-ping" />
             <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-cyan-600 to-emerald-500 flex items-center justify-center shadow-inner">
@@ -439,7 +381,7 @@ export default function VoiceDock() {
                 <h3 className="text-sm font-semibold text-zinc-100 flex items-center gap-1.5">
                   Richard Ewing
                   <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-950/80 text-cyan-400 border border-cyan-800/50">
-                    AI Companion
+                    Neural AI Voice
                   </span>
                 </h3>
                 <p className="text-[11px] text-zinc-400 font-mono">
@@ -450,7 +392,12 @@ export default function VoiceDock() {
 
             <div className="flex items-center gap-1">
               <button
-                onClick={() => setIsMuted(!isMuted)}
+                onClick={() => {
+                  if (!isMuted && audioPlayerRef.current) {
+                    audioPlayerRef.current.pause();
+                  }
+                  setIsMuted(!isMuted);
+                }}
                 className="p-1.5 text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800 transition-colors"
                 aria-label={isMuted ? 'Unmute' : 'Mute'}
               >
@@ -494,19 +441,10 @@ export default function VoiceDock() {
               </div>
             ))}
 
-            {/* Interim live speech feedback */}
-            {interimText && (
-              <div className="flex flex-col items-end">
-                <div className="max-w-[85%] px-4 py-2.5 rounded-2xl text-xs sm:text-sm leading-relaxed bg-cyan-900/40 border border-cyan-500/40 text-cyan-200 rounded-br-none animate-pulse">
-                  {interimText}...
-                </div>
-              </div>
-            )}
-
             {status === 'processing' && (
               <div className="flex items-center gap-2 text-zinc-400 text-xs py-1">
                 <Loader2 className="w-3.5 h-3.5 animate-spin text-cyan-400" />
-                <span>Thinking...</span>
+                <span>Diagnosing with Gemini...</span>
               </div>
             )}
 
@@ -602,16 +540,16 @@ export default function VoiceDock() {
 
                   {/* Main Record/Talk Button */}
                   <button
-                    onClick={status === 'listening' ? stopListening : startListening}
+                    onClick={status === 'listening' ? stopRecording : startRecording}
                     disabled={status === 'limit_reached'}
                     className={`relative p-4 rounded-full transition-all duration-300 shadow-xl ${
                       status === 'listening'
-                        ? 'bg-rose-600 hover:bg-rose-500 ring-4 ring-rose-500/20 scale-110'
+                        ? 'bg-rose-600 hover:bg-rose-500 ring-4 ring-rose-500/30 scale-110'
                         : status === 'limit_reached'
                         ? 'bg-zinc-800 text-zinc-600 cursor-not-allowed'
                         : 'bg-cyan-600 hover:bg-cyan-500 text-white hover:scale-105 shadow-cyan-600/30'
                     }`}
-                    aria-label={status === 'listening' ? 'Stop Listening' : 'Start Talking'}
+                    aria-label={status === 'listening' ? 'Finish Speaking' : 'Start Talking'}
                   >
                     {status === 'listening' ? (
                       <MicOff className="w-6 h-6 text-white animate-pulse" />
@@ -634,17 +572,16 @@ export default function VoiceDock() {
 
                 <p className="text-[11px] text-zinc-400 font-mono text-center">
                   {status === 'listening'
-                    ? 'Listening... Speak clearly (Tap to finish)'
+                    ? 'Listening... Speak now (Tap mic when done)'
                     : status === 'speaking'
-                    ? 'Richard is speaking...'
+                    ? 'Richard is speaking (Neural Voice)...'
                     : status === 'processing'
-                    ? 'Synthesizing diagnosis...'
+                    ? 'Diagnosing with Gemini...'
                     : status === 'limit_reached'
                     ? 'Limit reached - book a session above'
                     : 'Tap microphone to talk'}
                 </p>
 
-                {/* Quick button to toggle text mode */}
                 <button
                   onClick={() => setMode('text')}
                   className="text-[11px] text-zinc-500 hover:text-zinc-300 underline transition-colors"
@@ -658,7 +595,7 @@ export default function VoiceDock() {
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
-                    handleSendMessage(inputText);
+                    handleSendTextMessage(inputText);
                   }}
                   className="flex items-center gap-2"
                 >
