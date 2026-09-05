@@ -16,8 +16,7 @@ import {
   Calendar,
   Wrench,
   BookOpen,
-  Layers,
-  RotateCcw
+  Layers
 } from 'lucide-react';
 import { RecommendedCard } from '@/app/lib/voice-knowledge';
 
@@ -50,6 +49,21 @@ export default function VoiceDock() {
 
   useEffect(() => {
     setMounted(true);
+    try {
+      if (typeof window !== 'undefined' && localStorage.getItem('rew_voice_session_ended') === 'true') {
+        hasSessionEndedRef.current = true;
+        setSecondsRemaining(0);
+        setStatus('limit_reached');
+        setMessages([
+          {
+            role: 'assistant',
+            content: "You have completed your 90-second diagnostic sparring session. To dive deeper into your numbers, book direct working time or use the resources below."
+          }
+        ]);
+      }
+    } catch {
+      // Ignore
+    }
   }, []);
 
   // Auto-detect when user grants microphone permission in Chrome or browser settings
@@ -166,7 +180,7 @@ export default function VoiceDock() {
     setIsOpen(true);
     setMicError(null);
 
-    if (messages.length === 0) {
+    if (messages.length === 0 && !hasSessionEndedRef.current) {
       const initialGreeting: Message = {
         role: 'assistant',
         content: "Richard here. What are you wrestling with right now in your team, architecture, or career?"
@@ -212,26 +226,20 @@ export default function VoiceDock() {
 
     setStatus('limit_reached');
 
+    try {
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('rew_voice_session_ended', 'true');
+      }
+    } catch {
+      // Ignore
+    }
+
     const closeMsg: Message = {
       role: 'assistant',
-      content: "We have reached our 90-second quick chat limit. Rather than leaving you hanging, here are direct links to book working time with me, run diagnostic tools on your team, or explore the curriculum below."
+      content: "We have reached our 90-second quick diagnostic chat limit. Rather than leaving you hanging, choose an option below to book working time with me, audit your architecture with diagnostic tools, or explore the curriculum."
     };
 
     setMessages((prev) => [...prev, closeMsg]);
-  };
-
-  const handleRestartSession = () => {
-    hasSessionEndedRef.current = false;
-    setSecondsRemaining(90);
-    setMicError(null);
-    setActiveCard(null);
-    setStatus('idle');
-    setMessages([
-      {
-        role: 'assistant',
-        content: "Richard here. What would you like to explore or stress-test in this session?"
-      }
-    ]);
   };
 
   // Start recording actual audio from user's microphone
@@ -325,6 +333,7 @@ export default function VoiceDock() {
   };
 
   const sendAudioTurn = async (base64Audio: string, mimeType: string) => {
+    if (hasSessionEndedRef.current) return;
     try {
       const response = await fetch('/api/voice/chat', {
         method: 'POST',
@@ -747,13 +756,19 @@ export default function VoiceDock() {
           <div className="p-4 border-t border-zinc-800/80 bg-zinc-900/30">
             {status === 'limit_reached' ? (
               <div className="flex flex-col gap-2.5 animate-in fade-in duration-200">
-                <button
-                  onClick={handleRestartSession}
-                  className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-cyan-600 to-teal-500 hover:from-cyan-500 hover:to-teal-400 text-white text-xs font-semibold shadow-lg shadow-cyan-600/20 hover:scale-[1.01] active:scale-[0.99] transition-all"
+                <a
+                  href="https://cal.com/richard-ewing-2cevwb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-600 to-teal-500 hover:from-cyan-500 hover:to-teal-400 text-white text-xs font-semibold shadow-lg shadow-cyan-600/20 hover:scale-[1.01] active:scale-[0.99] transition-all"
                 >
-                  <RotateCcw className="w-4 h-4" />
-                  <span>Start Another 90s Session</span>
-                </button>
+                  <Calendar className="w-4 h-4" />
+                  <span>Book 1:1 Working Session</span>
+                  <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+                </a>
+                <p className="text-[11px] text-zinc-400 font-mono text-center">
+                  90s diagnostic limit reached. Explore direct resources below:
+                </p>
                 <div className="flex items-center justify-center gap-3 text-[11px] text-zinc-400 font-mono pt-0.5">
                   <a
                     href="https://cal.com/richard-ewing-2cevwb"
