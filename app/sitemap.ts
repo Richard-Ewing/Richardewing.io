@@ -47,6 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/methodology`, 'monthly', 0.8);
     add(`${baseUrl}/services`, 'monthly', 0.9);
     add(`${baseUrl}/contact`, 'monthly', 0.8);
+    add(`${baseUrl}/schedule`, 'monthly', 0.85);
     add(`${baseUrl}/careerwin`, 'monthly', 0.8);
     add(`${baseUrl}/directory`, 'weekly', 0.9);
     add(`${baseUrl}/programs/ai-product-builder`, 'weekly', 1.0);

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Mail, Linkedin, Twitter, Github, ShieldAlert, ArrowRight, CheckCircle, ShieldCheck } from 'lucide-react';
 import ContactForm from '@/app/components/client/ContactForm';
 import FAQItem from '@/app/components/FAQItem';
+import CalEmbed from '@/app/components/client/CalEmbed';
 
 export const metadata: Metadata = {
     title: 'Contact & Advisory Requests',
@@ -46,15 +47,9 @@ export default function ContactPage() {
                 </section>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                    {/* Left: Calendly Embed */}
-                    <div className="bg-white border border-zinc-300 rounded-3xl p-2 sm:p-4 shadow-sm min-h-[600px] flex flex-col relative overflow-hidden">
-                        <iframe 
-                            src="https://calendly.com/richard-richardewing/30min?hide_gdpr_banner=1" 
-                            width="100%" 
-                            height="100%" 
-                            frameBorder="0" 
-                            className="min-h-[600px] w-full"
-                        ></iframe>
+                    {/* Left: Cal.com Embed */}
+                    <div className="bg-white border border-zinc-300 rounded-3xl p-3 sm:p-5 shadow-sm min-h-[640px] flex flex-col relative overflow-hidden">
+                        <CalEmbed calLink="richard-ewing-2cevwb" />
                     </div>
 
                     {/* Right: Contact details and Secure NDA Seal */}
@@ -135,7 +130,7 @@ export default function ContactPage() {
                         {/* Step 1 */}
                         <div className="flex-1 text-center flex flex-col items-center bg-zinc-50 p-5 rounded-2xl border border-zinc-200 shadow-sm relative">
                             <div className="w-9 h-9 bg-indigo-600 border border-indigo-400 rounded-full flex items-center justify-center mb-4 font-mono font-bold text-white text-sm shadow-sm">1</div>
-                            <h4 className="text-sm font-bold text-zinc-950 mb-1">15-Min Zoom Call</h4>
+                            <h4 className="text-sm font-bold text-zinc-950 mb-1">Diagnostic Video Call</h4>
                             <p className="text-[11px] text-zinc-600 leading-relaxed font-semibold max-w-xs">Brief diagnostic alignment. No code access required. We review symptoms and billing peaks.</p>
                         </div>
 
@@ -182,7 +177,7 @@ export default function ContactPage() {
                                     'name': 'What happens after I request a diagnostic call?',
                                     'acceptedAnswer': {
                                         '@type': 'Answer',
-                                        'text': 'We will schedule a 15-minute Zoom call to understand your codebase structure, engineering team size, and current billing bottlenecks. Within 48 hours, you\'ll receive a free diagnostic report with high-level recommendations.'
+                                        'text': 'We will schedule a direct diagnostic call to understand your codebase structure, engineering team size, and current billing bottlenecks. Within 48 hours, you\'ll receive a free diagnostic report with high-level recommendations.'
                                     }
                                 },
                                 {
@@ -190,7 +185,7 @@ export default function ContactPage() {
                                     'name': 'Do I need to share code access to get started?',
                                     'acceptedAnswer': {
                                         '@type': 'Answer',
-                                        'text': 'No. Code access is not required for the initial 15-minute discovery call. If you decide to proceed with an audit, we will execute a mutual NDA before reviewing any repositories or logs.'
+                                        'text': 'No. Code access is not required for the initial discovery call. If you decide to proceed with an audit, we will execute a mutual NDA before reviewing any repositories or logs.'
                                     }
                                 }
                             ]
@@ -200,7 +195,7 @@ export default function ContactPage() {
                     <div className="space-y-4">
                         <FAQItem 
                             question="What happens after I request a diagnostic call?" 
-                            answer="We will schedule a 15-minute Zoom call to understand your codebase structure, engineering team size, and current billing bottlenecks. Within 48 hours, you'll receive a free diagnostic report with high-level recommendations."
+                            answer="We will schedule a direct diagnostic call to understand your codebase structure, engineering team size, and current billing bottlenecks. Within 48 hours, you'll receive a free diagnostic report with high-level recommendations."
                         />
                         <FAQItem 
                             question="Do I need to share code access to get started?" 
