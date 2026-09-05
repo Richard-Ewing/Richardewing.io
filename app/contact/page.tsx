@@ -54,7 +54,7 @@ export default function ContactPage() {
 
                     {/* Right: Contact details and Secure NDA Seal */}
                     <div className="space-y-6 flex flex-col justify-between">
-                        <div className="bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm flex flex-col justify-between h-full">
+                        <div className="bg-white border border-zinc-300 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
                             <div>
                                 <h3 className="text-lg font-bold font-grotesk text-zinc-950 mb-4">Direct Contact</h3>
                                 <p className="text-sm text-zinc-600 mb-6 leading-relaxed font-semibold">
@@ -102,18 +102,22 @@ export default function ContactPage() {
                         </div>
 
                         {/* NDA Security Seal */}
-                        <div className="p-6 bg-white border border-zinc-300 rounded-3xl flex flex-col items-center text-center shadow-sm relative overflow-hidden group">
+                        <div className="p-6 bg-white border border-zinc-300 rounded-3xl flex flex-col shadow-sm relative overflow-hidden group">
                             {/* Accent line */}
                             <div className="absolute top-0 inset-x-0 h-1 bg-emerald-500" />
-                            <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center mb-3 relative z-10 border border-emerald-200">
-                                <ShieldCheck className="w-6 h-6 text-emerald-600" />
+                            <div className="flex items-center gap-3 mb-2">
+                                <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center border border-emerald-200 shrink-0">
+                                    <ShieldCheck className="w-5 h-5 text-emerald-600" />
+                                </div>
+                                <div>
+                                    <span className="text-[10px] font-bold font-mono text-emerald-800 uppercase tracking-wider block">
+                                        CONFIDENTIALITY ASSURED
+                                    </span>
+                                    <h4 className="text-sm font-bold text-zinc-950 font-grotesk">Mutual NDA Protocol</h4>
+                                </div>
                             </div>
-                            <span className="text-[10px] font-bold font-mono text-emerald-800 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded border border-emerald-200 relative z-10">
-                                SECURE NDA PROTOCOL
-                            </span>
-                            <h4 className="text-sm font-bold text-zinc-950 mt-2 font-grotesk relative z-10">NDA Compliance Assured</h4>
-                            <p className="text-[11px] text-zinc-600 mt-2 leading-relaxed font-semibold max-w-xs relative z-10">
-                                All discovery discussions, billing logs, and repository metrics are held under strict confidentiality. Mutual NDAs are executed prior to any technical review.
+                            <p className="text-xs text-zinc-600 leading-relaxed font-semibold mt-1">
+                                All discovery discussions, cloud billing logs, and repository metrics are held under strict confidentiality. Mutual NDAs are executed prior to any technical review.
                             </p>
                         </div>
                     </div>
