@@ -25,6 +25,61 @@ interface Message {
   content: string;
 }
 
+function encodeWAV(samples: Float32Array, sampleRate = 16000): Blob {
+  const buffer = new ArrayBuffer(44 + samples.length * 2);
+  const view = new DataView(buffer);
+
+  const writeString = (offset: number, str: string) => {
+    for (let i = 0; i < str.length; i++) {
+      view.setUint8(offset + i, str.charCodeAt(i));
+    }
+  };
+
+  writeString(0, 'RIFF');
+  view.setUint32(4, 36 + samples.length * 2, true);
+  writeString(8, 'WAVE');
+  writeString(12, 'fmt ');
+  view.setUint32(16, 16, true);
+  view.setUint16(20, 1, true); // PCM format
+  view.setUint16(22, 1, true); // Mono
+  view.setUint32(24, sampleRate, true);
+  view.setUint32(28, sampleRate * 2, true);
+  view.setUint16(32, 2, true);
+  view.setUint16(34, 16, true);
+  writeString(36, 'data');
+  view.setUint32(40, samples.length * 2, true);
+
+  let offset = 44;
+  for (let i = 0; i < samples.length; i++, offset += 2) {
+    const s = Math.max(-1, Math.min(1, samples[i]));
+    view.setInt16(offset, s < 0 ? s * 0x8000 : s * 0x7fff, true);
+  }
+
+  return new Blob([buffer], { type: 'audio/wav' });
+}
+
+function downsampleBuffer(buffer: Float32Array, inputRate: number, outputRate = 16000): Float32Array {
+  if (inputRate === outputRate) return buffer;
+  const ratio = inputRate / outputRate;
+  const newLength = Math.round(buffer.length / ratio);
+  const result = new Float32Array(newLength);
+  let offsetResult = 0;
+  let offsetBuffer = 0;
+  while (offsetResult < result.length) {
+    const nextOffsetBuffer = Math.round((offsetResult + 1) * ratio);
+    let accum = 0;
+    let count = 0;
+    for (let i = offsetBuffer; i < nextOffsetBuffer && i < buffer.length; i++) {
+      accum += buffer[i];
+      count++;
+    }
+    result[offsetResult] = count > 0 ? accum / count : 0;
+    offsetResult++;
+    offsetBuffer = nextOffsetBuffer;
+  }
+  return result;
+}
+
 export default function VoiceDock() {
   const [isOpen, setIsOpen] = useState(false);
   const [mode, setMode] = useState<'voice' | 'text'>('voice');
@@ -39,6 +94,9 @@ export default function VoiceDock() {
   const [mounted, setMounted] = useState(false);
 
   const audioPlayerRef = useRef<HTMLAudioElement | null>(null);
+  const audioContextRef = useRef<AudioContext | null>(null);
+  const processorNodeRef = useRef<ScriptProcessorNode | null>(null);
+  const pcmChunksRef = useRef<Float32Array[]>([]);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const mediaStreamRef = useRef<MediaStream | null>(null);
@@ -110,6 +168,14 @@ export default function VoiceDock() {
       }
       if (mediaStreamRef.current) {
         mediaStreamRef.current.getTracks().forEach((t) => t.stop());
+      }
+      if (processorNodeRef.current) {
+        processorNodeRef.current.disconnect();
+        processorNodeRef.current = null;
+      }
+      if (audioContextRef.current) {
+        audioContextRef.current.close().catch(() => {});
+        audioContextRef.current = null;
       }
     };
   }, []);
@@ -242,7 +308,7 @@ export default function VoiceDock() {
     setMessages((prev) => [...prev, closeMsg]);
   };
 
-  // Start recording actual audio from user's microphone
+  // Start recording actual audio from user's microphone as 16kHz PCM WAV
   const startRecording = async () => {
     if (hasSessionEndedRef.current || status === 'limit_reached') return;
 
@@ -261,46 +327,73 @@ export default function VoiceDock() {
     }
 
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: {
+          echoCancellation: true,
+          noiseSuppression: true,
+          autoGainControl: true
+        }
+      });
       mediaStreamRef.current = stream;
 
-      const mimeType = MediaRecorder.isTypeSupported('audio/webm')
-        ? 'audio/webm'
-        : MediaRecorder.isTypeSupported('audio/mp4')
-        ? 'audio/mp4'
-        : 'audio/ogg';
+      const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+      if (AudioCtx) {
+        const audioCtx = new AudioCtx();
+        audioContextRef.current = audioCtx;
+        const source = audioCtx.createMediaStreamSource(stream);
+        const processor = audioCtx.createScriptProcessor(4096, 1, 1);
+        processorNodeRef.current = processor;
+        pcmChunksRef.current = [];
 
-      const mediaRecorder = new MediaRecorder(stream, { mimeType });
-      audioChunksRef.current = [];
-
-      mediaRecorder.ondataavailable = (event) => {
-        if (event.data && event.data.size > 0) {
-          audioChunksRef.current.push(event.data);
-        }
-      };
-
-      mediaRecorder.onstop = async () => {
-        const audioBlob = new Blob(audioChunksRef.current, { type: mimeType });
-        if (audioBlob.size < 500) {
-          // Empty or tap-to-cancel
-          setStatus('idle');
-          return;
-        }
-
-        setStatus('processing');
-
-        // Convert blob to base64
-        const reader = new FileReader();
-        reader.readAsDataURL(audioBlob);
-        reader.onloadend = async () => {
-          const base64Audio = (reader.result as string).split(',')[1];
-          await sendAudioTurn(base64Audio, mimeType);
+        processor.onaudioprocess = (e) => {
+          if (hasSessionEndedRef.current) return;
+          const channelData = e.inputBuffer.getChannelData(0);
+          pcmChunksRef.current.push(new Float32Array(channelData));
         };
-      };
 
-      mediaRecorderRef.current = mediaRecorder;
-      mediaRecorder.start(250);
-      setStatus('listening');
+        source.connect(processor);
+        processor.connect(audioCtx.destination);
+        setStatus('listening');
+      } else {
+        // Fallback for older browsers without AudioContext
+        const mimeType = MediaRecorder.isTypeSupported('audio/webm')
+          ? 'audio/webm'
+          : MediaRecorder.isTypeSupported('audio/mp4')
+          ? 'audio/mp4'
+          : 'audio/ogg';
+
+        const mediaRecorder = new MediaRecorder(stream, { mimeType });
+        audioChunksRef.current = [];
+
+        mediaRecorder.ondataavailable = (event) => {
+          if (event.data && event.data.size > 0) {
+            audioChunksRef.current.push(event.data);
+          }
+        };
+
+        mediaRecorder.onstop = async () => {
+          if (mediaStreamRef.current) {
+            mediaStreamRef.current.getTracks().forEach((track) => track.stop());
+            mediaStreamRef.current = null;
+          }
+          const audioBlob = new Blob(audioChunksRef.current, { type: mimeType });
+          if (audioBlob.size < 500) {
+            setStatus(hasSessionEndedRef.current ? 'limit_reached' : 'idle');
+            return;
+          }
+          setStatus('processing');
+          const reader = new FileReader();
+          reader.readAsDataURL(audioBlob);
+          reader.onloadend = async () => {
+            const base64Audio = (reader.result as string).split(',')[1];
+            await sendAudioTurn(base64Audio, mimeType);
+          };
+        };
+
+        mediaRecorderRef.current = mediaRecorder;
+        mediaRecorder.start(250);
+        setStatus('listening');
+      }
     } catch (err: any) {
       console.warn('Microphone permission request failed:', err);
       const isDenied = err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError';
@@ -323,12 +416,58 @@ export default function VoiceDock() {
   };
 
   const stopRecording = () => {
+    if (processorNodeRef.current && audioContextRef.current) {
+      const audioCtx = audioContextRef.current;
+      const processor = processorNodeRef.current;
+      const stream = mediaStreamRef.current;
+
+      processor.disconnect();
+      processorNodeRef.current = null;
+      audioContextRef.current = null;
+
+      if (stream) {
+        stream.getTracks().forEach((track) => track.stop());
+        mediaStreamRef.current = null;
+      }
+
+      const inputRate = audioCtx.sampleRate;
+      audioCtx.close().catch(() => {});
+
+      const chunks = pcmChunksRef.current;
+      pcmChunksRef.current = [];
+
+      let totalLength = 0;
+      for (const chunk of chunks) totalLength += chunk.length;
+
+      // If user tapped without speaking (< 0.25s)
+      if (totalLength < inputRate * 0.25) {
+        setStatus(hasSessionEndedRef.current ? 'limit_reached' : 'idle');
+        return;
+      }
+
+      setStatus('processing');
+
+      const merged = new Float32Array(totalLength);
+      let offset = 0;
+      for (const chunk of chunks) {
+        merged.set(chunk, offset);
+        offset += chunk.length;
+      }
+
+      const downsampled = downsampleBuffer(merged, inputRate, 16000);
+      const wavBlob = encodeWAV(downsampled, 16000);
+
+      const reader = new FileReader();
+      reader.readAsDataURL(wavBlob);
+      reader.onloadend = async () => {
+        const base64Audio = (reader.result as string).split(',')[1];
+        await sendAudioTurn(base64Audio, 'audio/wav');
+      };
+      return;
+    }
+
     if (mediaRecorderRef.current && mediaRecorderRef.current.state === 'recording') {
       mediaRecorderRef.current.stop();
-    }
-    if (mediaStreamRef.current) {
-      mediaStreamRef.current.getTracks().forEach((track) => track.stop());
-      mediaStreamRef.current = null;
     }
   };
 
@@ -540,7 +679,7 @@ export default function VoiceDock() {
                 <p className="text-[11px] text-zinc-400 font-mono mb-2">Or ask directly about:</p>
                 <div className="flex flex-wrap gap-1.5">
                   {[
-                    { label: "Book 30m Working Session", prompt: "How do I book a 1:1 strategy session with Richard on Cal.com?" },
+                    { label: "Book 30m Working Session", prompt: "How do I book a 1:1 strategy session with Richard directly?" },
                     { label: "30m Gut-Check Call ($450)", prompt: "I need a fast 30-minute gut check on our architecture and token burn." },
                     { label: "Diagnostic Tools Library ($199)", prompt: "What diagnostic calculators and tools can I access to measure tech debt?" },
                     { label: "Curriculum Tracks ($149)", prompt: "What curriculum tracks do you have for AI economics and engineering leadership?" },
@@ -577,9 +716,7 @@ export default function VoiceDock() {
                 <div className="grid grid-cols-1 gap-2">
                   {/* 1. Book Working Session */}
                   <a
-                    href="https://cal.com/richard-ewing-2cevwb"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/contact"
                     className="group flex items-start gap-3 p-2.5 rounded-xl bg-zinc-900 border border-zinc-700/80 hover:border-cyan-500/60 hover:bg-zinc-800 transition-all text-left shadow-sm"
                   >
                     <div className="p-2 rounded-lg bg-cyan-950 text-cyan-400 border border-cyan-800/60 group-hover:scale-105 transition-transform shrink-0">
@@ -590,7 +727,7 @@ export default function VoiceDock() {
                         <h5 className="text-xs font-semibold text-white group-hover:text-cyan-300 transition-colors truncate">
                           1:1 Advisory Strategy Session
                         </h5>
-                        <span className="text-[10px] font-mono text-cyan-400 shrink-0">Cal.com</span>
+                        <span className="text-[10px] font-mono text-cyan-400 shrink-0">richardewing.io</span>
                       </div>
                       <p className="text-[11px] text-zinc-400 mt-0.5 line-clamp-1">
                         Direct 30-min working review on your architecture or team burn.
@@ -699,8 +836,8 @@ export default function VoiceDock() {
               <div className="mt-2.5 pt-2 border-t border-zinc-800/80 flex items-center justify-between">
                 <a
                   href={activeCard.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={activeCard.link.startsWith('/') ? undefined : '_blank'}
+                  rel={activeCard.link.startsWith('/') ? undefined : 'noopener noreferrer'}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-cyan-600 to-teal-500 hover:from-cyan-500 hover:to-teal-400 text-white text-xs font-medium transition-all shadow-md"
                 >
                   <span>{activeCard.ctaText}</span>
@@ -757,9 +894,7 @@ export default function VoiceDock() {
             {status === 'limit_reached' ? (
               <div className="flex flex-col gap-2.5 animate-in fade-in duration-200">
                 <a
-                  href="https://cal.com/richard-ewing-2cevwb"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/contact"
                   className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-600 to-teal-500 hover:from-cyan-500 hover:to-teal-400 text-white text-xs font-semibold shadow-lg shadow-cyan-600/20 hover:scale-[1.01] active:scale-[0.99] transition-all"
                 >
                   <Calendar className="w-4 h-4" />
@@ -771,9 +906,7 @@ export default function VoiceDock() {
                 </p>
                 <div className="flex items-center justify-center gap-3 text-[11px] text-zinc-400 font-mono pt-0.5">
                   <a
-                    href="https://cal.com/richard-ewing-2cevwb"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/contact"
                     className="hover:text-cyan-300 transition-colors"
                   >
                     Book Call

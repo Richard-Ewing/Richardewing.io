@@ -20,7 +20,7 @@ export const PAID_RESOURCES: Record<string, RecommendedCard> = {
     title: '1:1 Advisory Strategy Session',
     description: 'Direct 30-minute working session with Richard to review your actual architecture, AI burn, or team setup.',
     ctaText: 'Book 30m Working Session',
-    link: 'https://cal.com/richard-ewing-2cevwb',
+    link: '/contact',
     badge: '1:1 Advisory'
   },
   gut_check: {

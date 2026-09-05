@@ -3,6 +3,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import { PAID_RESOURCES, REWS_VOICE_SYSTEM_PROMPT } from '@/app/lib/voice-knowledge';
 
 export const dynamic = 'force-dynamic';
+export const maxDuration = 60;
 
 // Prepend standard 44-byte WAV header to 24kHz 16-bit mono PCM
 function addWavHeader(pcmBuffer: Buffer, sampleRate = 24000, numChannels = 1, bitsPerSample = 16): Buffer {
@@ -73,7 +74,7 @@ async function generateNeuralAudio(text: string, apiKey: string): Promise<string
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { messages = [], audioBase64, mimeType = 'audio/webm' } = body;
+    const { messages = [], audioBase64, mimeType = 'audio/wav' } = body;
 
     const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
 
@@ -87,12 +88,6 @@ export async function POST(req: NextRequest) {
     }
 
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({
-      model: 'gemini-3.7-flash',
-      generationConfig: {
-        responseMimeType: 'application/json'
-      }
-    });
 
     const conversationHistory = messages
       .map((m: any) => `${m.role === 'user' ? 'Visitor' : 'Richard'}: ${m.content}`)
@@ -124,28 +119,85 @@ Respond ONLY with a valid JSON object matching this exact schema:
 }
 `;
 
+    const candidateModels = ['gemini-3.7-flash', 'gemini-3.6-flash', 'gemini-2.5-flash'];
+    let text = '';
+    let usedAudio = Boolean(audioBase64);
 
-    let contentParts: any[] = [];
     if (audioBase64) {
-      contentParts.push({
-        inlineData: {
-          mimeType: mimeType || 'audio/webm',
-          data: audioBase64
+      const audioParts: any[] = [
+        {
+          inlineData: {
+            mimeType: mimeType || 'audio/wav',
+            data: audioBase64
+          }
+        },
+        {
+          text: `Listen to this user audio recording. Transcribe it into "transcription", then diagnose and reply as Richard.\n\n${promptInstructions}`
         }
-      });
-      contentParts.push({
-        text: `Listen to this user audio recording. Transcribe it into "transcription", then diagnose and reply as Richard.\n\n${promptInstructions}`
-      });
+      ];
+
+      for (const modelName of candidateModels) {
+        try {
+          const model = genAI.getGenerativeModel({
+            model: modelName,
+            generationConfig: { responseMimeType: 'application/json' }
+          });
+          const result = await model.generateContent(audioParts);
+          const candidate = result.response.candidates?.[0];
+          const candidateText = candidate?.content?.parts?.find((p: any) => p.text)?.text || '';
+          if (candidateText) {
+            text = candidateText;
+            break;
+          }
+        } catch (err: any) {
+          console.warn(`Audio turn failed on ${modelName}:`, err.message || err);
+        }
+      }
+
+      // If audio transcription failed across models (e.g. muffled, truncated, or invalid mic buffer),
+      // gracefully recover by asking the user to repeat or type without throwing an error
+      if (!text) {
+        usedAudio = false;
+        try {
+          const fallbackModel = genAI.getGenerativeModel({
+            model: 'gemini-3.7-flash',
+            generationConfig: { responseMimeType: 'application/json' }
+          });
+          const recoveryPrompt = `The visitor attempted an audio input, but the audio was silent, muffled, or inaudible.
+Acknowledge as Richard Ewing that you couldn't hear their microphone clearly, ask them to say it again or type it below, and tie back to where the conversation was.
+Keep it conversational, punchy, human, and no em-dashes.\n\n${promptInstructions}`;
+          const res = await fallbackModel.generateContent([{ text: recoveryPrompt }]);
+          text = res.response.text();
+        } catch {
+          text = JSON.stringify({
+            transcription: null,
+            reply: "I couldn't quite hear your microphone on that turn. What was that? Feel free to speak again or type your question in the chat below.",
+            recommendedCardId: null
+          });
+        }
+      }
     } else {
-      contentParts.push({
-        text: promptInstructions
-      });
+      // Text-based turn
+      for (const modelName of candidateModels) {
+        try {
+          const model = genAI.getGenerativeModel({
+            model: modelName,
+            generationConfig: { responseMimeType: 'application/json' }
+          });
+          const result = await model.generateContent([{ text: promptInstructions }]);
+          const candidate = result.response.candidates?.[0];
+          const candidateText = candidate?.content?.parts?.find((p: any) => p.text)?.text || '';
+          if (candidateText) {
+            text = candidateText;
+            break;
+          }
+        } catch (err: any) {
+          console.warn(`Text turn failed on ${modelName}:`, err.message || err);
+        }
+      }
     }
 
-    const result = await model.generateContent(contentParts);
-    const text = result.response.text();
-
-    let parsed: { transcription?: string; reply: string; recommendedCardId?: string | null };
+    let parsed: { transcription?: string | null; reply: string; recommendedCardId?: string | null };
     try {
       parsed = JSON.parse(text);
     } catch {
@@ -169,7 +221,7 @@ Respond ONLY with a valid JSON object matching this exact schema:
 
     return NextResponse.json({
       reply: cleanReply,
-      transcription: parsed.transcription || null,
+      transcription: usedAudio ? (parsed.transcription || null) : null,
       card,
       audioDataUrl
     });
@@ -177,7 +229,7 @@ Respond ONLY with a valid JSON object matching this exact schema:
     console.error('Error in voice chat API:', error);
     return NextResponse.json(
       {
-        reply: "Richard here. I had a brief connection hitch. If you want to review your numbers directly, grab time on my calendar.",
+        reply: "Richard here. I didn't catch that last turn clearly. What is the main roadblock you are wrestling with right now? You can reply by voice, type below, or grab time directly on my calendar.",
         card: PAID_RESOURCES.cal_advisory_booking,
         audioDataUrl: null
       },

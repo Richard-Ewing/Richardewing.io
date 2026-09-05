@@ -104,7 +104,7 @@ export async function POST(req: NextRequest) {
         {
           error: 'Daily voice session limit reached. Please try again tomorrow or book a 1:1 session.',
           rateLimited: true,
-          bookingUrl: 'https://cal.com/richard-ewing-2cevwb'
+          bookingUrl: '/contact'
         },
         { status: 429 }
       );
