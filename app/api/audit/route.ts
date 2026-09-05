@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { model } from '@/app/lib/gemini';
 import { z } from 'zod';
 
+export const dynamic = 'force-dynamic';
+
 // Zod Schema for strict typing
 const TicketSchema = z.object({
     ticket: z.string(),

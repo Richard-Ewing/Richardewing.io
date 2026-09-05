@@ -4,6 +4,8 @@ import { supabaseAdmin } from '../../../../lib/supabase';
 import { trackGovernanceDelta } from '../../../../lib/intelligence/observability';
 import { getPercentile } from '../../../../lib/benchmarks/percentiles';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: Request) {
     try {
         // 1. Authenticate Identity

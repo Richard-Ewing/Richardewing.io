@@ -45,7 +45,7 @@ export default function ConceptProvenanceSection({ concept }: ConceptProvenanceS
             <div className="p-3 bg-zinc-50 border border-zinc-200 rounded-xl">
               <span className="text-[10px] text-zinc-500 block font-bold uppercase">Primary Venue</span>
               <span className="font-bold text-cyan-950 truncate block">
-                {telemetry?.origin?.primaryVenue || concept.provenanceTimeline[0]?.publisher || 'Research Canon'}
+                {telemetry?.origin?.primaryVenue || concept.provenanceTimeline?.[0]?.publisher || 'Research Canon'}
               </span>
             </div>
           </div>

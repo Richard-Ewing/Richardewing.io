@@ -47,6 +47,28 @@ export default function VoiceDock() {
     setMounted(true);
   }, []);
 
+  // Auto-detect when user grants microphone permission in Chrome or browser settings
+  useEffect(() => {
+    if (typeof window === 'undefined' || !navigator?.permissions?.query) return;
+
+    try {
+      navigator.permissions
+        .query({ name: 'microphone' as PermissionName })
+        .then((permissionStatus) => {
+          permissionStatus.onchange = () => {
+            if (permissionStatus.state === 'granted') {
+              setMicError(null);
+            }
+          };
+        })
+        .catch(() => {
+          // Ignore if permission query for microphone is not supported
+        });
+    } catch {
+      // Ignore
+    }
+  }, []);
+
   // Initialize audio element on client
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -203,6 +225,14 @@ export default function VoiceDock() {
       audioPlayerRef.current.pause();
     }
 
+    if (typeof window === 'undefined' || !navigator?.mediaDevices?.getUserMedia) {
+      setMicError(
+        'Microphone recording is not supported in this browser. You can still talk with Richard using the text chat below.'
+      );
+      setStatus('idle');
+      return;
+    }
+
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       mediaStreamRef.current = stream;
@@ -246,9 +276,21 @@ export default function VoiceDock() {
       setStatus('listening');
     } catch (err: any) {
       console.warn('Microphone permission request failed:', err);
-      setMicError(
-        'Microphone access was blocked. Please click the lock or camera icon in your address bar to allow microphone, or use text mode below.'
-      );
+      const isDenied = err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError';
+      const isNotFound = err.name === 'NotFoundError' || err.name === 'DevicesNotFoundError';
+      const isNotReadable = err.name === 'NotReadableError' || err.name === 'TrackStartError';
+
+      if (isDenied) {
+        setMicError(
+          'Microphone was previously blocked in your browser settings. Because Chrome already has it blocked, it will not display a popup. Click the slider settings icon directly to the left of richardewing.io in the address bar, toggle Microphone to Allow, then click Try Again.'
+        );
+      } else if (isNotFound) {
+        setMicError('No microphone was detected on your device. Please plug in a microphone or headset, or use text chat below.');
+      } else if (isNotReadable) {
+        setMicError('Microphone is in use by another program (such as Zoom or Teams) or blocked by Windows privacy settings.');
+      } else {
+        setMicError('Microphone could not be accessed. Click the slider settings icon left of richardewing.io in your address bar to allow microphone, or use text mode below.');
+      }
       setStatus('idle');
     }
   };
@@ -332,7 +374,7 @@ export default function VoiceDock() {
 
       setMessages((prev) => [...prev, assistantMessage]);
 
-      if (mode === 'voice' && !isMuted && data.audioDataUrl) {
+      if (!isMuted && data.audioDataUrl) {
         playNeuralAudio(data.audioDataUrl);
       } else {
         setStatus('idle');
@@ -527,27 +569,42 @@ export default function VoiceDock() {
 
           {/* Microphone Error Banner */}
           {micError && (
-            <div className="mx-4 mb-2 p-2.5 rounded-xl bg-rose-950/80 border border-rose-800 text-rose-200 text-xs flex items-start gap-2">
-              <AlertCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-              <div className="flex-1">
-                <p className="leading-snug">{micError}</p>
+            <div className="mx-4 mb-2 p-3 rounded-2xl bg-rose-950/90 border border-rose-800/80 text-rose-100 text-xs flex flex-col gap-2.5 shadow-lg animate-in fade-in duration-200">
+              <div className="flex items-start gap-2.5">
+                <AlertCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                <div className="flex-1 space-y-1">
+                  <p className="font-semibold text-rose-200">Microphone Blocked</p>
+                  <p className="text-[11px] text-rose-300 leading-relaxed">{micError}</p>
+                </div>
+                <button
+                  onClick={() => setMicError(null)}
+                  className="text-rose-400 hover:text-white p-0.5"
+                  aria-label="Dismiss error"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              </div>
+
+              <div className="flex items-center gap-2 pt-1 border-t border-rose-900/60">
+                <button
+                  onClick={() => {
+                    setMicError(null);
+                    startRecording();
+                  }}
+                  className="px-2.5 py-1 rounded-lg bg-rose-700 hover:bg-rose-600 text-white text-[11px] font-medium transition-colors"
+                >
+                  Try Again
+                </button>
                 <button
                   onClick={() => {
                     setMode('text');
                     setMicError(null);
                   }}
-                  className="mt-1.5 font-semibold underline text-rose-300 hover:text-white"
+                  className="px-2.5 py-1 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-300 hover:text-white text-[11px] transition-colors"
                 >
                   Switch to Text Mode
                 </button>
               </div>
-              <button
-                onClick={() => setMicError(null)}
-                className="text-rose-400 hover:text-white p-0.5"
-                aria-label="Dismiss error"
-              >
-                <X className="w-3.5 h-3.5" />
-              </button>
             </div>
           )}
 

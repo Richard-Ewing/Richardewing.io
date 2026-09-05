@@ -3,6 +3,8 @@ import { supabaseAdmin as supabase } from '@/lib/supabase';
 import { generateActionUrl } from '@/app/lib/action-tokens';
 import { logAgentRun, createAgentTimer } from '@/lib/agents/logger';
 
+export const dynamic = 'force-dynamic';
+
 // Daily SEO Optimizer Agent
 // Runs daily: pulls GSC data, identifies underperformers, logs changes, emails digest
 // Schedule: 0 9 * * * (9am UTC / 2am PDT)

@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * Webhook Ingestion API for Instant Auto-Digesting
  * POST /api/webhooks/ingest

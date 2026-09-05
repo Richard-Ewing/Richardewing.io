@@ -3,6 +3,8 @@ import { HiringStore } from '../../../lib/hiring-store';
 import { QUESTION_BANK, SCENARIOS, Role, Question, selectRandomQuestions } from '../../../lib/question-bank';
 import { model } from '@/app/lib/gemini';
 
+export const dynamic = 'force-dynamic';
+
 const evaluateAnswer = async (question: Question, answer: string, role: string) => {
     if (!question.grading) return { score: 4, feedback: "No rubric available. Neutral score assigned." };
 

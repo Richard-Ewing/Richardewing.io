@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { auth, clerkClient } from '@clerk/nextjs/server';
 import path from 'path';
 import fs from 'fs';
+
+export const dynamic = 'force-dynamic';
 const archiver = require('archiver');
 
 export async function GET(req: NextRequest) {

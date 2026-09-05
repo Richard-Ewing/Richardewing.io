@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { logAgentRun, createAgentTimer } from '@/lib/agents/logger';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * AGENT 4: Lead Scoring Agent
  * 

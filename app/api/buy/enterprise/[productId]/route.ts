@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { PRODUCTS } from '@/lib/products';
 import { auth } from '@clerk/nextjs/server';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(
     request: Request,
     { params }: { params: Promise<{ productId: string }> }

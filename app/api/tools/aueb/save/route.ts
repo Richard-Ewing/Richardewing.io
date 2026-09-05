@@ -4,6 +4,8 @@ import { currentUser } from '@clerk/nextjs/server';
 import { model } from '@/app/lib/gemini';
 import { z } from 'zod';
 
+export const dynamic = 'force-dynamic';
+
 const ResponseSchema = z.object({
     qpep_roadmap: z.array(z.object({
         month: z.number(),

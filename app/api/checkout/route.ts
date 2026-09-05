@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * Legacy checkout route  -  kept as a redirect to advisory page.
  * All payments now use direct Stripe Payment Links (buy.stripe.com).

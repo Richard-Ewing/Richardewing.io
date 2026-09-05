@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { supabaseAdmin } from '../../../../lib/supabase';
 
+export const dynamic = 'force-dynamic';
+
 // Helper to map external signals to internal governance risks
 function mapSignalToGovernanceRisk(signalType: string) {
     const signalMap: Record<string, string> = {

@@ -1,4 +1,3 @@
-import { NextResponse } from 'next/server';
 import { verifyToken } from '@/app/lib/action-tokens';
 
 export const dynamic = 'force-dynamic';

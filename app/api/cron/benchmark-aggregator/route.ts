@@ -3,6 +3,8 @@ import { supabaseAdmin } from '@/lib/supabase';
 import { calculateIndustryBenchmarks } from '@/lib/intelligence/aggregation';
 import { logAgentRun, createAgentTimer } from '@/lib/agents/logger';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * AGENT 2: Benchmark Aggregation Agent
  * 

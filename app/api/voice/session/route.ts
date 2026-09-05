@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { PAID_RESOURCES, CORE_TOPICS, REWS_VOICE_SYSTEM_PROMPT } from '@/app/lib/voice-knowledge';
 
+export const dynamic = 'force-dynamic';
+
 // In-memory sliding window IP rate limiter for anonymous voice sessions
 // Max 5 sessions per 24 hours per IP
 const ipSessionTracker = new Map<string, { count: number; expiresAt: number }>();

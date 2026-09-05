@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { model } from '@/app/lib/gemini';
 import { z } from 'zod';
 
+export const dynamic = 'force-dynamic';
+
 // Schema for input validation
 const ScoreRequestSchema = z.object({
     role: z.enum(['engineering', 'pm']),

@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { PAID_RESOURCES, REWS_VOICE_SYSTEM_PROMPT } from '@/app/lib/voice-knowledge';
 
+export const dynamic = 'force-dynamic';
+
 // Prepend standard 44-byte WAV header to 24kHz 16-bit mono PCM
 function addWavHeader(pcmBuffer: Buffer, sampleRate = 24000, numChannels = 1, bitsPerSample = 16): Buffer {
   const byteRate = sampleRate * numChannels * (bitsPerSample / 8);
@@ -109,13 +111,19 @@ ${availableCardsList}
 Conversation history:
 ${conversationHistory}
 
+Execution Guidelines:
+- Go with the flow of the conversation. Listen to the visitor, validate their specific context, and never pivot abruptly.
+- Be genuinely helpful first. Give them actionable, high-density insight right away.
+- Make the sale naturally: recommend a relevant card and mention it in speech ONLY when it flows naturally as the next step, or when the user asks how to work together, book time, or access tools/curriculums. If the turn is purely exploratory, set recommendedCardId to null.
+
 Respond ONLY with a valid JSON object matching this exact schema:
 {
   "transcription": "If user provided audio, your verbatim transcript of what they said. Otherwise null.",
-  "reply": "Your punchy, spoken response as Richard (2 to 3 sentences max, no em-dashes, no buzzwords, helpful first)",
+  "reply": "Your punchy, spoken response as Richard (2 to 3 sentences max, no em-dashes, no buzzwords, helpful first, earned conversion)",
   "recommendedCardId": "cal_advisory_booking" | "gut_check" | "strategy_session" | "insolvency_diagnostic" | "full_audit" | "tools_library_unlock" | "single_track" | "module_ai_economics" | "module_rd_capital" | "module_bundle_3" | "all_access_pass" | "premium_bundle_ultimate" | "pe_intelligence_tier" | "team_license_pass" | null
 }
 `;
+
 
     let contentParts: any[] = [];
     if (audioBase64) {

@@ -4,6 +4,8 @@ import { synthesizeGovernanceIntelligence } from '@/lib/intelligence/synthesis';
 import { sendExecutiveDigest, formatDigestEmail } from '@/lib/agents/email-dispatch';
 import { logAgentRun, createAgentTimer } from '@/lib/agents/logger';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * AGENT 1: Intelligence Digest Agent
  * 

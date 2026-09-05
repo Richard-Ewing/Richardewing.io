@@ -4,6 +4,8 @@ import { model } from '@/app/lib/gemini';
 import { logAgentRun, createAgentTimer } from '@/lib/agents/logger';
 import { glossaryTerms } from '@/app/glossary/terms';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * AGENT 5: Content Expansion Agent
  * 

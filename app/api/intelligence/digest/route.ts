@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { supabaseAdmin } from '../../../../lib/supabase';
 import { synthesizeGovernanceIntelligence } from '../../../../lib/intelligence/synthesis';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * Cron endpoint to dispatch Executive Intelligence Subscriptions.
  * In production, this connects to Beehiiv or Resend to physically dispatch the email.

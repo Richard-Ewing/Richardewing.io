@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { diagnoseRootCause } from '@/lib/intelligence/rootCauseEngine';
 import { simulateSLMMigration, simulateTokenSaverDeployment } from '@/lib/intelligence/simulationEngine';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: Request) {
     try {
         const { query } = await req.json();

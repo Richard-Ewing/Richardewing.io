@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { supabaseAdmin as supabase } from '@/lib/supabase';
 import { logAgentRun, createAgentTimer } from '@/lib/agents/logger';
 
+export const dynamic = 'force-dynamic';
+
 // Autonomous Meta Rewriter Agent
 // Called by the SEO Optimizer when low-CTR pages are detected
 // Uses Gemini to rewrite meta titles/descriptions based on:

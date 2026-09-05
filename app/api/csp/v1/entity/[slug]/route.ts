@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 
+export const dynamic = 'force-dynamic';
+
 interface RouteProps {
   params: Promise<{ slug: string }>;
 }

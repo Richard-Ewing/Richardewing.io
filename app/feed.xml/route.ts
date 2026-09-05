@@ -1,5 +1,7 @@
 import { getSortedArticles } from '@/lib/blog-data';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
     const articles = getSortedArticles();
     const baseUrl = 'https://www.richardewing.io';

@@ -3,6 +3,8 @@ import { google } from 'googleapis';
 import { auth as clerkAuth } from '@clerk/nextjs/server';
 import { supabaseAdmin } from '@/lib/supabase';
 
+export const dynamic = 'force-dynamic';
+
 // GSC Performance Data API
 // Pulls impressions, clicks, CTR, position from Google Search Console
 // Used by: /api/cron/seo-optimizer agent + /admin/command-center dashboard

@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   const protocolGraph = {
     '@context': 'https://schema.org',

@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { supabaseAdmin } from '../../../../lib/supabase';
 import { auth } from '@clerk/nextjs/server';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * This endpoint is designed to be triggered by a Cron Job (or admin manually)
  * to generate the quarterly benchmark reports.

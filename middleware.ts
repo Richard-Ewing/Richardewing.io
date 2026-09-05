@@ -36,7 +36,19 @@ export default clerkMiddleware(async (auth, req) => {
       'aueb-vs-aws-cost-explorer', 'ev-se-vs-jellyfish', 'aper-vs-jellyfish',
       'aper-vs-linearb', 'copilot-roi-vs-gitclear', 'dora-metrics-vs-aper',
       'shadow-ai-vs-shadow-it', 'technical-debt-vs-technical-insolvency',
-      'vibe-coding-vs-agile'
+      'vibe-coding-vs-agile',
+      'why-anthropic-bills-spike-with-tool-use',
+      'why-local-llms-are-more-expensive-than-apis',
+      'why-ai-pr-review-time-is-exploding',
+      'why-cfos-are-shutting-down-ai-pilots',
+      'why-rag-returns-stale-data-after-updates',
+      'why-copilot-didnt-reduce-engineering-headcount',
+      'why-ai-feature-margins-turn-negative',
+      'advisory-vs-mckinsey',
+      'advisory-vs-bain',
+      'advisory-vs-big4',
+      'advisory-vs-gartner',
+      'advisory-vs-traditional-fractional-cto'
     ];
     if (slug && !tierA.includes(slug)) {
       return NextResponse.redirect(new URL('/tools', req.url), 308);

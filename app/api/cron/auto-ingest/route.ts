@@ -4,6 +4,8 @@ import { generateArticleData } from '@/app/lib/article-generator';
 import { articlesAuto } from '@/app/lib/blog-articles-auto';
 import { corpusAuto } from '@/app/lib/research-corpus-auto';
 
+export const dynamic = 'force-dynamic';
+
 const GITHUB_OWNER = 'Richard-Ewing';
 const GITHUB_REPO = 'Richardewing.io';
 const GITHUB_BRANCH = 'main';

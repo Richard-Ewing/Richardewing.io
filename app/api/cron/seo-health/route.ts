@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { logAgentRun, createAgentTimer } from '@/lib/agents/logger';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * AGENT 3: SEO Health Monitor Agent
  * 

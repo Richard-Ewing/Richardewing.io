@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import dns from 'dns';
 
+export const dynamic = 'force-dynamic';
+
 // Common disposable email domains to block
 const DISPOSABLE_DOMAINS = new Set([
     'tempmail.com', 'guerrillamail.com', 'guerrillamail.info', 'grr.la',

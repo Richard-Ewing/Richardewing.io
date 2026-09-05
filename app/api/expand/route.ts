@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { model } from '@/app/lib/gemini';
 
+export const dynamic = 'force-dynamic';
+
 const SYSTEM_PROMPT = `You are Richard Ewing, The AI Economist. You speak with authority, precision, and a hint of ruthlessness.
 
 FORMAT YOUR RESPONSE FOR EASY SCANNING:

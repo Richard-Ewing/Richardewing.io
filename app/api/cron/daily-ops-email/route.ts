@@ -3,6 +3,8 @@ import { supabaseAdmin } from '@/lib/supabase';
 import { sendDirectEmail, formatDailyOpsEmail } from '@/lib/agents/direct-email';
 import { logAgentRun, createAgentTimer } from '@/lib/agents/logger';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * AGENT 6: Daily Operations Email Agent
  * 
