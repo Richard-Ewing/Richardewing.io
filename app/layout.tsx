@@ -4,6 +4,7 @@ import Navigation from './components/Navigation';
 import { Footer } from './components/footer';
 import ExitIntentModal from './components/ExitIntentModal';
 import CookieConsent from './components/CookieConsent';
+import VoiceDock from './components/voice/VoiceDock';
 import { personSchema, professionalServiceSchema } from './lib/schemas';
 import { homepageKeywords } from './lib/keywords';
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -209,6 +210,7 @@ export default function RootLayout({
           <Footer />
           <ExitIntentModal />
           <CookieConsent />
+          <VoiceDock />
 
           {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
             <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
