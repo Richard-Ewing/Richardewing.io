@@ -282,14 +282,14 @@ export default function VoiceDock() {
 
       if (isDenied) {
         setMicError(
-          'Microphone was previously blocked in your browser settings. Because Chrome already has it blocked, it will not display a popup. Click the slider settings icon directly to the left of richardewing.io in the address bar, toggle Microphone to Allow, then click Try Again.'
+          `Microphone permission was denied. If Chrome didn't show a popup, click the slider settings icon next to richardewing.io, click "Site settings", and set Microphone to Allow. Then click Try Again. (${err.name}${err.message ? ': ' + err.message : ''})`
         );
       } else if (isNotFound) {
-        setMicError('No microphone was detected on your device. Please plug in a microphone or headset, or use text chat below.');
+        setMicError(`No microphone was detected on your device. Please plug in a microphone or headset, or use text chat below. (${err.name})`);
       } else if (isNotReadable) {
-        setMicError('Microphone is in use by another program (such as Zoom or Teams) or blocked by Windows privacy settings.');
+        setMicError(`Microphone is in use by another program (such as Zoom or Teams) or blocked by Windows privacy settings. (${err.name})`);
       } else {
-        setMicError('Microphone could not be accessed. Click the slider settings icon left of richardewing.io in your address bar to allow microphone, or use text mode below.');
+        setMicError(`Microphone could not be accessed. Click the slider icon left of richardewing.io, click "Site settings", set Microphone to Allow, or use text mode below. (${err.name}${err.message ? ': ' + err.message : ''})`);
       }
       setStatus('idle');
     }

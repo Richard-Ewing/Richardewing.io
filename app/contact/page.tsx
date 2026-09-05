@@ -46,15 +46,15 @@ export default function ContactPage() {
                     </p>
                 </section>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-16">
                     {/* Left: Cal.com Embed */}
                     <div className="bg-white border border-zinc-300 rounded-3xl p-3 sm:p-5 shadow-sm min-h-[640px] flex flex-col relative overflow-hidden">
                         <CalEmbed calLink="richard-ewing-2cevwb" />
                     </div>
 
                     {/* Right: Contact details and Secure NDA Seal */}
-                    <div className="space-y-6 flex flex-col justify-between">
-                        <div className="bg-white border border-zinc-300 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
+                    <div className="flex flex-col gap-6">
+                        <div className="bg-white border border-zinc-300 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col">
                             <div>
                                 <h3 className="text-lg font-bold font-grotesk text-zinc-950 mb-4">Direct Contact</h3>
                                 <p className="text-sm text-zinc-600 mb-6 leading-relaxed font-semibold">
