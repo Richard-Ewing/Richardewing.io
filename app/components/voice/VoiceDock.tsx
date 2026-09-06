@@ -17,7 +17,8 @@ import {
   Wrench,
   BookOpen,
   Layers,
-  RotateCcw
+  RotateCcw,
+  Clock
 } from 'lucide-react';
 import { RecommendedCard } from '@/app/lib/voice-knowledge';
 
@@ -81,6 +82,12 @@ function downsampleBuffer(buffer: Float32Array, inputRate: number, outputRate = 
   return result;
 }
 
+function formatTimerDisplay(seconds: number): string {
+  const mins = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  return `${mins}:${secs.toString().padStart(2, '0')}`;
+}
+
 export default function VoiceDock() {
   const [isOpen, setIsOpen] = useState(false);
   const [mode, setMode] = useState<'voice' | 'text'>('voice');
@@ -102,6 +109,8 @@ export default function VoiceDock() {
   const audioChunksRef = useRef<Blob[]>([]);
   const mediaStreamRef = useRef<MediaStream | null>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const sessionEndTimeRef = useRef<number | null>(null);
+  const savedRemainingSecRef = useRef(90);
   const hasSessionEndedRef = useRef(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const initialAudioRef = useRef<string | null>(null);
@@ -147,10 +156,10 @@ export default function VoiceDock() {
         if (!hasSessionEndedRef.current) setStatus('speaking');
       };
       audioPlayerRef.current.onended = () => {
-        if (!hasSessionEndedRef.current) setStatus('idle');
+        setStatus(hasSessionEndedRef.current ? 'limit_reached' : 'idle');
       };
       audioPlayerRef.current.onerror = () => {
-        if (!hasSessionEndedRef.current) setStatus('idle');
+        setStatus(hasSessionEndedRef.current ? 'limit_reached' : 'idle');
       };
     }
 
@@ -178,30 +187,15 @@ export default function VoiceDock() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, status]);
 
-  // Session timer: 90-second cap (guaranteed zero loop)
+  // Session timer cleanup on unmount
   useEffect(() => {
-    if (!isOpen) {
-      if (timerRef.current) clearInterval(timerRef.current);
-      return;
-    }
-
-    if (hasSessionEndedRef.current) return;
-
-    timerRef.current = setInterval(() => {
-      setSecondsRemaining((prev) => {
-        if (prev <= 1) {
-          if (timerRef.current) clearInterval(timerRef.current);
-          handleSessionLimitReached();
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
     return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
     };
-  }, [isOpen]);
+  }, []);
 
   // Visualizer animation
   useEffect(() => {
@@ -235,9 +229,44 @@ export default function VoiceDock() {
     }
   };
 
+  const resumeOrStartTimer = (initialSec = 90) => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+    if (hasSessionEndedRef.current) return;
+
+    const sec = savedRemainingSecRef.current > 0 ? savedRemainingSecRef.current : initialSec;
+    setSecondsRemaining(sec);
+    const endTime = Date.now() + sec * 1000;
+    sessionEndTimeRef.current = endTime;
+
+    timerRef.current = setInterval(() => {
+      if (!sessionEndTimeRef.current) return;
+      const msLeft = sessionEndTimeRef.current - Date.now();
+      const secsLeft = Math.max(0, Math.ceil(msLeft / 1000));
+      savedRemainingSecRef.current = secsLeft;
+      setSecondsRemaining(secsLeft);
+
+      if (secsLeft <= 0) {
+        if (timerRef.current) {
+          clearInterval(timerRef.current);
+          timerRef.current = null;
+        }
+        sessionEndTimeRef.current = null;
+        savedRemainingSecRef.current = 0;
+        handleSessionLimitReached();
+      }
+    }, 250);
+  };
+
   const handleOpen = async () => {
     setIsOpen(true);
     setMicError(null);
+
+    if (!hasSessionEndedRef.current) {
+      resumeOrStartTimer(savedRemainingSecRef.current || 90);
+    }
 
     if (messages.length === 0 && !hasSessionEndedRef.current) {
       const initialGreeting: Message = {
@@ -268,6 +297,11 @@ export default function VoiceDock() {
     if (audioPlayerRef.current) {
       audioPlayerRef.current.pause();
     }
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+    sessionEndTimeRef.current = null;
     if (!hasSessionEndedRef.current) {
       setStatus('idle');
     }
@@ -275,13 +309,12 @@ export default function VoiceDock() {
 
   const handleRestartSession = () => {
     hasSessionEndedRef.current = false;
-    if (timerRef.current) clearInterval(timerRef.current);
-    setSecondsRemaining(90);
+    savedRemainingSecRef.current = 90;
     setStatus('idle');
-    setMessages([]);
     setActiveCard(null);
     setMicError(null);
     setInputText('');
+
     try {
       if (typeof window !== 'undefined') {
         localStorage.removeItem('rew_voice_session_ended');
@@ -289,14 +322,32 @@ export default function VoiceDock() {
     } catch {
       // Ignore
     }
-    handleOpen();
+
+    const initialGreeting: Message = {
+      role: 'assistant',
+      content: "Richard here. What are you wrestling with right now in your team, architecture, or career?"
+    };
+    setMessages([initialGreeting]);
+
+    resumeOrStartTimer(90);
+
+    if (initialAudioRef.current && !isMuted) {
+      playNeuralAudio(initialAudioRef.current);
+    }
   };
 
   const handleSessionLimitReached = () => {
     if (hasSessionEndedRef.current) return;
     hasSessionEndedRef.current = true;
 
-    if (timerRef.current) clearInterval(timerRef.current);
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+    sessionEndTimeRef.current = null;
+    savedRemainingSecRef.current = 0;
+    setSecondsRemaining(0);
+
     stopRecording();
     if (audioPlayerRef.current) {
       audioPlayerRef.current.pause();
@@ -609,21 +660,46 @@ export default function VoiceDock() {
       {isOpen && (
         <div className="w-[92vw] sm:w-[410px] max-h-[85vh] flex flex-col bg-zinc-950/95 border border-zinc-800 text-white rounded-3xl shadow-2xl backdrop-blur-xl overflow-hidden animate-in slide-in-from-bottom-5 duration-300">
           {/* Header */}
-          <div className="flex items-center justify-between px-5 py-4 border-b border-zinc-800/80 bg-zinc-900/50">
+          <div className="flex items-center justify-between px-5 py-3.5 border-b border-zinc-800/80 bg-zinc-900/50">
             <div className="flex items-center gap-2.5">
-              <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-cyan-600 to-emerald-500 flex items-center justify-center">
+              <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-cyan-600 to-emerald-500 flex items-center justify-center shrink-0">
                 <Sparkles className="w-3.5 h-3.5 text-white" />
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-zinc-100 flex items-center gap-1.5">
-                  Richard Ewing
+                <div className="flex items-center gap-1.5">
+                  <h3 className="text-sm font-semibold text-zinc-100">
+                    Richard Ewing
+                  </h3>
                   <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-950/80 text-cyan-400 border border-cyan-800/50">
                     Audio Partner
                   </span>
-                </h3>
-                <p className="text-[11px] text-zinc-400 font-mono">
-                  {secondsRemaining > 0 ? `${secondsRemaining}s session budget` : 'Session ended'}
-                </p>
+                </div>
+                <div className="flex items-center gap-1.5 mt-0.5">
+                  {secondsRemaining > 0 && status !== 'limit_reached' ? (
+                    <div className="flex items-center gap-1.5">
+                      <span
+                        className={`inline-flex items-center gap-1 text-[11px] font-mono font-medium transition-colors ${
+                          secondsRemaining <= 15
+                            ? 'text-rose-400 animate-pulse font-bold'
+                            : secondsRemaining <= 30
+                            ? 'text-amber-400 font-semibold'
+                            : 'text-cyan-400'
+                        }`}
+                      >
+                        <Clock className="w-3 h-3 inline-block shrink-0" />
+                        <span>{formatTimerDisplay(secondsRemaining)} remaining</span>
+                      </span>
+                      <span className="text-[10px] text-zinc-500 font-mono">
+                        (90s budget)
+                      </span>
+                    </div>
+                  ) : (
+                    <span className="text-[11px] font-mono text-zinc-400 flex items-center gap-1">
+                      <Clock className="w-3 h-3 text-zinc-500" />
+                      Session ended
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
 
@@ -655,6 +731,26 @@ export default function VoiceDock() {
                 <X className="w-4 h-4" />
               </button>
             </div>
+          </div>
+
+          {/* Real-time 90s Countdown Bar */}
+          <div className="w-full h-1 bg-zinc-900 overflow-hidden">
+            <div
+              className={`h-full transition-all duration-300 ease-linear ${
+                secondsRemaining <= 15
+                  ? 'bg-rose-500'
+                  : secondsRemaining <= 30
+                  ? 'bg-amber-500'
+                  : 'bg-gradient-to-r from-cyan-500 to-emerald-400'
+              }`}
+              style={{
+                width: `${
+                  status === 'limit_reached'
+                    ? 0
+                    : Math.max(0, Math.min(100, (secondsRemaining / 90) * 100))
+                }%`
+              }}
+            />
           </div>
 
           {/* Transcript Scroll Area */}
@@ -989,6 +1085,8 @@ export default function VoiceDock() {
                     ? 'Richard is speaking...'
                     : status === 'processing'
                     ? 'Thinking through this...'
+                    : secondsRemaining <= 25
+                    ? `${secondsRemaining}s left - Tap microphone to talk`
                     : 'Tap microphone to talk'}
                 </p>
 
