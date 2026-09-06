@@ -74,7 +74,7 @@ async function generateNeuralAudio(text: string, apiKey: string): Promise<string
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { messages = [], audioBase64, mimeType = 'audio/wav' } = body;
+    const { messages = [], audioBase64, mimeType = 'audio/wav', userName } = body;
 
     const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
 
@@ -97,8 +97,14 @@ export async function POST(req: NextRequest) {
       .map(([id, item]) => `- ${id}: ${item.title} (${item.price || 'Direct Booking'}) - ${item.description}`)
       .join('\n');
 
+    const visitorPersonalization = userName && typeof userName === 'string' && userName.trim()
+      ? `You are speaking directly with ${userName.trim()}. Address them by their first name (${userName.trim().split(' ')[0]}) naturally when it fits, but never overuse it or sound like an artificial salesperson.`
+      : 'You are speaking directly with an executive visitor.';
+
     const promptInstructions = `
 ${REWS_VOICE_SYSTEM_PROMPT}
+
+${visitorPersonalization}
 
 You have these paid resource cards available to recommend when relevant:
 ${availableCardsList}

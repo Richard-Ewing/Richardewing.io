@@ -18,7 +18,11 @@ import {
   BookOpen,
   Layers,
   RotateCcw,
-  Clock
+  Clock,
+  User,
+  Mail,
+  ArrowRight,
+  ShieldCheck
 } from 'lucide-react';
 import { RecommendedCard } from '@/app/lib/voice-knowledge';
 
@@ -101,6 +105,19 @@ export default function VoiceDock() {
   const [micError, setMicError] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
 
+  // User Profile and Lead Intake State
+  const [userName, setUserName] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [intakeSubmitted, setIntakeSubmitted] = useState(false);
+  const [intakeError, setIntakeError] = useState<string | null>(null);
+  const [isIntakeSubmitting, setIsIntakeSubmitting] = useState(false);
+
+  // Owner and Testing Mode State
+  const [ownerMode, setOwnerMode] = useState(false);
+  const [ownerToast, setOwnerToast] = useState<string | null>(null);
+  const ownerClickCountRef = useRef(0);
+  const ownerClickTimerRef = useRef<NodeJS.Timeout | null>(null);
+
   const audioPlayerRef = useRef<HTMLAudioElement | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const processorNodeRef = useRef<ScriptProcessorNode | null>(null);
@@ -120,6 +137,28 @@ export default function VoiceDock() {
     try {
       if (typeof window !== 'undefined') {
         localStorage.removeItem('rew_voice_session_ended');
+
+        const params = new URLSearchParams(window.location.search);
+        const hasOwnerParam = params.get('voice_test') === 'true' || params.get('owner') === 'true';
+        if (hasOwnerParam) {
+          setOwnerMode(true);
+          localStorage.removeItem('rew_voice_completed');
+        }
+
+        const savedName = localStorage.getItem('rew_voice_user_name') || '';
+        const savedEmail = localStorage.getItem('rew_voice_user_email') || '';
+        if (savedName) setUserName(savedName);
+        if (savedEmail) setUserEmail(savedEmail);
+        if (savedName && savedEmail) {
+          setIntakeSubmitted(true);
+        }
+
+        const isCompleted = localStorage.getItem('rew_voice_completed') === 'true';
+        if (isCompleted && !hasOwnerParam) {
+          hasSessionEndedRef.current = true;
+          setStatus('limit_reached');
+          setSecondsRemaining(0);
+        }
       }
     } catch {
       // Ignore
@@ -260,34 +299,52 @@ export default function VoiceDock() {
     }, 250);
   };
 
+  const initializeSession = async (nameToUse?: string) => {
+    const currentName = nameToUse || userName;
+    const firstName = currentName ? currentName.trim().split(/\s+/)[0] : '';
+    const greetingText = firstName
+      ? `Good to meet you, ${firstName}. Richard here. What are you wrestling with right now in your team, architecture, or career?`
+      : "Richard here. What are you wrestling with right now in your team, architecture, or career?";
+
+    const initialGreeting: Message = {
+      role: 'assistant',
+      content: greetingText
+    };
+    setMessages([initialGreeting]);
+
+    try {
+      const res = await fetch('/api/voice/session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userName: currentName || undefined })
+      });
+      const sessionData = await res.json();
+      if (sessionData.initialAudioDataUrl) {
+        initialAudioRef.current = sessionData.initialAudioDataUrl;
+        if (!isMuted) {
+          playNeuralAudio(sessionData.initialAudioDataUrl);
+        }
+      }
+    } catch {
+      // Continue normally
+    }
+  };
+
   const handleOpen = async () => {
     setIsOpen(true);
     setMicError(null);
+
+    // If intake is not yet submitted and user is not in owner mode, await intake form completion
+    if (!intakeSubmitted && !ownerMode) {
+      return;
+    }
 
     if (!hasSessionEndedRef.current) {
       resumeOrStartTimer(savedRemainingSecRef.current || 90);
     }
 
     if (messages.length === 0 && !hasSessionEndedRef.current) {
-      const initialGreeting: Message = {
-        role: 'assistant',
-        content: "Richard here. What are you wrestling with right now in your team, architecture, or career?"
-      };
-      setMessages([initialGreeting]);
-
-      // Fetch session initialization and pre-rendered neural greeting audio
-      try {
-        const res = await fetch('/api/voice/session', { method: 'POST' });
-        const sessionData = await res.json();
-        if (sessionData.initialAudioDataUrl) {
-          initialAudioRef.current = sessionData.initialAudioDataUrl;
-          if (!isMuted) {
-            playNeuralAudio(sessionData.initialAudioDataUrl);
-          }
-        }
-      } catch {
-        // Continue normally
-      }
+      await initializeSession(userName);
     }
   };
 
@@ -307,7 +364,81 @@ export default function VoiceDock() {
     }
   };
 
-  const handleRestartSession = () => {
+  const handleIntakeSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!userName.trim()) {
+      setIntakeError('Please enter your name.');
+      return;
+    }
+    if (!userEmail.trim() || !userEmail.includes('@')) {
+      setIntakeError('Please enter a valid work email.');
+      return;
+    }
+
+    setIntakeError(null);
+    setIsIntakeSubmitting(true);
+
+    try {
+      // Subscribe to Beehiiv
+      await fetch('/api/beehiiv', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: userEmail.trim(),
+          name: userName.trim(),
+          source: 'Voice Companion'
+        })
+      });
+
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('rew_voice_user_name', userName.trim());
+        localStorage.setItem('rew_voice_user_email', userEmail.trim());
+      }
+
+      setIntakeSubmitted(true);
+      setIsIntakeSubmitting(false);
+
+      resumeOrStartTimer(90);
+      await initializeSession(userName.trim());
+    } catch (err) {
+      console.warn('Beehiiv submission error:', err);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('rew_voice_user_name', userName.trim());
+        localStorage.setItem('rew_voice_user_email', userEmail.trim());
+      }
+      setIntakeSubmitted(true);
+      setIsIntakeSubmitting(false);
+      resumeOrStartTimer(90);
+      await initializeSession(userName.trim());
+    }
+  };
+
+  const handleBadgeClick = () => {
+    ownerClickCountRef.current += 1;
+    if (ownerClickTimerRef.current) {
+      clearTimeout(ownerClickTimerRef.current);
+    }
+    ownerClickTimerRef.current = setTimeout(() => {
+      ownerClickCountRef.current = 0;
+    }, 1200);
+
+    if (ownerClickCountRef.current >= 3) {
+      ownerClickCountRef.current = 0;
+      setOwnerMode(true);
+      hasSessionEndedRef.current = false;
+      try {
+        if (typeof window !== 'undefined') {
+          localStorage.removeItem('rew_voice_completed');
+        }
+      } catch {
+        // Ignore
+      }
+      setOwnerToast('Owner Mode Activated: Unlimited test sessions unlocked.');
+      setTimeout(() => setOwnerToast(null), 3500);
+    }
+  };
+
+  const handleOwnerResetSession = () => {
     hasSessionEndedRef.current = false;
     savedRemainingSecRef.current = 90;
     setStatus('idle');
@@ -317,23 +448,14 @@ export default function VoiceDock() {
 
     try {
       if (typeof window !== 'undefined') {
-        localStorage.removeItem('rew_voice_session_ended');
+        localStorage.removeItem('rew_voice_completed');
       }
     } catch {
       // Ignore
     }
 
-    const initialGreeting: Message = {
-      role: 'assistant',
-      content: "Richard here. What are you wrestling with right now in your team, architecture, or career?"
-    };
-    setMessages([initialGreeting]);
-
     resumeOrStartTimer(90);
-
-    if (initialAudioRef.current && !isMuted) {
-      playNeuralAudio(initialAudioRef.current);
-    }
+    initializeSession(userName);
   };
 
   const handleSessionLimitReached = () => {
@@ -353,11 +475,24 @@ export default function VoiceDock() {
       audioPlayerRef.current.pause();
     }
 
+    if (!ownerMode) {
+      try {
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('rew_voice_completed', 'true');
+        }
+      } catch {
+        // Ignore
+      }
+    }
+
     setStatus('limit_reached');
 
+    const firstName = userName ? userName.trim().split(/\s+/)[0] : '';
     const closeMsg: Message = {
       role: 'assistant',
-      content: "We have reached our 90-second quick diagnostic chat limit. Rather than leaving you hanging, choose an option below to book working time with me, audit your architecture with diagnostic tools, or explore the curriculum."
+      content: firstName
+        ? `We have reached our 90-second quick diagnostic chat limit, ${firstName}. Rather than leaving you hanging, choose an option below to book working time with me, audit your architecture with diagnostic tools, or explore the curriculum.`
+        : "We have reached our 90-second quick diagnostic chat limit. Rather than leaving you hanging, choose an option below to book working time with me, audit your architecture with diagnostic tools, or explore the curriculum."
     };
 
     setMessages((prev) => [...prev, closeMsg]);
@@ -535,7 +670,8 @@ export default function VoiceDock() {
         body: JSON.stringify({
           audioBase64: base64Audio,
           mimeType,
-          messages
+          messages,
+          userName: userName || undefined
         })
       });
 
@@ -589,7 +725,10 @@ export default function VoiceDock() {
       const response = await fetch('/api/voice/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: newMessages })
+        body: JSON.stringify({
+          messages: newMessages,
+          userName: userName || undefined
+        })
       });
 
       const data = await response.json();
@@ -670,12 +809,28 @@ export default function VoiceDock() {
                   <h3 className="text-sm font-semibold text-zinc-100">
                     Richard Ewing
                   </h3>
-                  <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-950/80 text-cyan-400 border border-cyan-800/50">
+                  <button
+                    type="button"
+                    onClick={handleBadgeClick}
+                    className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-950/80 text-cyan-400 border border-cyan-800/50 hover:border-cyan-500/80 transition-colors cursor-pointer select-none"
+                    title="Audio Partner"
+                  >
                     Audio Partner
-                  </span>
+                  </button>
+                  {ownerMode && (
+                    <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-950/80 text-emerald-300 border border-emerald-700/60 flex items-center gap-1">
+                      <ShieldCheck className="w-2.5 h-2.5" />
+                      Owner
+                    </span>
+                  )}
                 </div>
                 <div className="flex items-center gap-1.5 mt-0.5">
-                  {secondsRemaining > 0 && status !== 'limit_reached' ? (
+                  {!intakeSubmitted && !ownerMode ? (
+                    <span className="text-[11px] font-mono text-cyan-400 flex items-center gap-1">
+                      <Clock className="w-3 h-3 text-cyan-400" />
+                      90s Live Audio Sprint
+                    </span>
+                  ) : secondsRemaining > 0 && status !== 'limit_reached' ? (
                     <div className="flex items-center gap-1.5">
                       <span
                         className={`inline-flex items-center gap-1 text-[11px] font-mono font-medium transition-colors ${
@@ -732,6 +887,108 @@ export default function VoiceDock() {
               </button>
             </div>
           </div>
+
+          {/* Owner Mode Toast */}
+          {ownerToast && (
+            <div className="px-4 py-1.5 bg-emerald-950/90 border-b border-emerald-800/80 text-emerald-200 text-[11px] font-mono flex items-center justify-between">
+              <div className="flex items-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>{ownerToast}</span>
+              </div>
+              <button onClick={() => setOwnerToast(null)} className="text-emerald-400 hover:text-white">
+                <X className="w-3 h-3" />
+              </button>
+            </div>
+          )}
+
+          {!intakeSubmitted && !ownerMode ? (
+            /* Lead Capture Intake Form */
+            <div className="p-5 sm:p-6 flex flex-col justify-between flex-1 overflow-y-auto">
+              <div className="space-y-4">
+                <div className="space-y-1.5">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-800/60 text-cyan-400 text-[11px] font-mono">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>90-Second Advisory Sprint</span>
+                  </div>
+                  <h4 className="text-base font-semibold text-white">
+                    Direct Working Audio with Richard
+                  </h4>
+                  <p className="text-xs text-zinc-400 leading-relaxed">
+                    Introduce yourself before our 90-second working sprint so Richard addresses your team, systems, and context directly.
+                  </p>
+                </div>
+
+                <form onSubmit={handleIntakeSubmit} className="space-y-3.5 pt-1">
+                  {intakeError && (
+                    <div className="p-2.5 rounded-xl bg-rose-950/80 border border-rose-800 text-rose-200 text-xs flex items-center gap-2">
+                      <AlertCircle className="w-4 h-4 text-rose-400 shrink-0" />
+                      <span>{intakeError}</span>
+                    </div>
+                  )}
+
+                  <div>
+                    <label className="block text-[11px] font-mono text-zinc-400 uppercase tracking-wider mb-1">
+                      Your Full Name
+                    </label>
+                    <div className="relative">
+                      <User className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                      <input
+                        type="text"
+                        required
+                        value={userName}
+                        onChange={(e) => setUserName(e.target.value)}
+                        placeholder="Alex Rivera"
+                        className="w-full bg-zinc-900 border border-zinc-700/80 rounded-xl pl-9 pr-3 py-2 text-xs sm:text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-500 transition-colors"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-[11px] font-mono text-zinc-400 uppercase tracking-wider mb-1">
+                      Work Email
+                    </label>
+                    <div className="relative">
+                      <Mail className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                      <input
+                        type="email"
+                        required
+                        value={userEmail}
+                        onChange={(e) => setUserEmail(e.target.value)}
+                        placeholder="alex@company.com"
+                        className="w-full bg-zinc-900 border border-zinc-700/80 rounded-xl pl-9 pr-3 py-2 text-xs sm:text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-500 transition-colors"
+                      />
+                    </div>
+                    <p className="text-[10px] text-zinc-500 font-mono mt-1">
+                      Subscribes you to The AI Economist newsletter. Unsubscribe anytime.
+                    </p>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isIntakeSubmitting}
+                    className="w-full mt-2 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-600 to-teal-500 hover:from-cyan-500 hover:to-teal-400 disabled:opacity-50 text-white text-xs sm:text-sm font-semibold shadow-lg shadow-cyan-600/20 transition-all cursor-pointer"
+                  >
+                    {isIntakeSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>Connecting with Richard...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Start 90s Diagnostic Sprint</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </>
+                    )}
+                  </button>
+                </form>
+              </div>
+
+              <div className="pt-4 border-t border-zinc-800/80 text-[11px] text-zinc-500 font-mono text-center">
+                90-second live audio sprint. Direct neural voice response.
+              </div>
+            </div>
+          ) : (
+            <>
 
           {/* Real-time 90s Countdown Bar */}
           <div className="w-full h-1 bg-zinc-900 overflow-hidden">
@@ -1002,16 +1259,18 @@ export default function VoiceDock() {
                   <ExternalLink className="w-3.5 h-3.5 opacity-80" />
                 </a>
 
-                <button
-                  onClick={handleRestartSession}
-                  className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-700/70 text-zinc-300 hover:text-white text-xs font-medium transition-colors"
-                >
-                  <RotateCcw className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>Start New 90s Session</span>
-                </button>
+                {ownerMode && (
+                  <button
+                    onClick={handleOwnerResetSession}
+                    className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-cyan-500/50 text-cyan-300 hover:text-white text-xs font-medium transition-colors cursor-pointer"
+                  >
+                    <RotateCcw className="w-3.5 h-3.5 text-cyan-400" />
+                    <span>Restart 90s Session (Owner Mode)</span>
+                  </button>
+                )}
 
                 <p className="text-[11px] text-zinc-400 font-mono text-center">
-                  90s diagnostic limit reached. Explore direct resources below:
+                  90-second diagnostic limit reached. Explore direct resources below:
                 </p>
                 <div className="flex items-center justify-center gap-3 text-[11px] text-zinc-400 font-mono pt-0.5">
                   <a
@@ -1133,6 +1392,8 @@ export default function VoiceDock() {
               </div>
             )}
           </div>
+          </>
+        )}
         </div>
       )}
     </div>

@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
     try {
-        const { email, source } = await request.json();
+        const { email, source, name } = await request.json();
 
         if (!email) {
             return NextResponse.json({ error: 'Email is required' }, { status: 400 });
@@ -18,7 +18,25 @@ export async function POST(request: Request) {
             return NextResponse.json({ skipped: true, reason: 'Beehiiv not configured' });
         }
 
-        const res = await fetch(
+        const utmSource = source ? source.toLowerCase().replace(/[^a-z0-9]+/g, '_') : 'tool_gate';
+
+        const bodyPayload: Record<string, any> = {
+            email,
+            reactivate_existing: true,
+            send_welcome_email: true,
+            utm_source: utmSource,
+            utm_medium: source || 'tool',
+            referring_site: 'richardewing.io',
+        };
+
+        if (name && typeof name === 'string' && name.trim()) {
+            bodyPayload.custom_fields = [
+                { name: 'First Name', value: name.trim().split(' ')[0] },
+                { name: 'Full Name', value: name.trim() }
+            ];
+        }
+
+        let res = await fetch(
             `https://api.beehiiv.com/v2/publications/${publicationId}/subscriptions`,
             {
                 method: 'POST',
@@ -26,16 +44,25 @@ export async function POST(request: Request) {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${apiKey}`,
                 },
-                body: JSON.stringify({
-                    email,
-                    reactivate_existing: true,
-                    send_welcome_email: true,
-                    utm_source: 'tool_gate',
-                    utm_medium: source || 'tool',
-                    referring_site: 'richardewing.io',
-                }),
+                body: JSON.stringify(bodyPayload),
             }
         );
+
+        // If Beehiiv rejects custom_fields schema, fallback to basic payload
+        if (!res.ok && bodyPayload.custom_fields) {
+            delete bodyPayload.custom_fields;
+            res = await fetch(
+                `https://api.beehiiv.com/v2/publications/${publicationId}/subscriptions`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${apiKey}`,
+                    },
+                    body: JSON.stringify(bodyPayload),
+                }
+            );
+        }
 
         if (!res.ok) {
             const errorText = await res.text();

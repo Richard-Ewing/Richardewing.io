@@ -51,13 +51,10 @@ function addWavHeader(pcmBuffer: Buffer, sampleRate = 24000, numChannels = 1, bi
 // Cached initial greeting audio so it only generates once per server instance
 let cachedGreetingAudio: string | null = null;
 
-async function getInitialGreetingAudio(apiKey: string): Promise<string | null> {
-  if (cachedGreetingAudio) return cachedGreetingAudio;
-
+async function getInitialGreetingAudio(apiKey: string, text: string): Promise<string | null> {
   const models = ['gemini-3.1-flash-tts-preview', 'gemini-2.5-flash-preview-tts'];
   for (const ttsModel of models) {
     try {
-      const text = "Richard here. What are you wrestling with right now in your team, architecture, or career?";
       const url = `https://generativelanguage.googleapis.com/v1beta/models/${ttsModel}:generateContent?key=${apiKey}`;
       const response = await fetch(url, {
         method: 'POST',
@@ -85,8 +82,7 @@ async function getInitialGreetingAudio(apiKey: string): Promise<string | null> {
 
       const pcmBuffer = Buffer.from(rawPcmBase64, 'base64');
       const wavBuffer = addWavHeader(pcmBuffer);
-      cachedGreetingAudio = `data:audio/wav;base64,${wavBuffer.toString('base64')}`;
-      return cachedGreetingAudio;
+      return `data:audio/wav;base64,${wavBuffer.toString('base64')}`;
     } catch {
       // try next model
     }
@@ -98,6 +94,14 @@ export async function POST(req: NextRequest) {
   try {
     const forwardedFor = req.headers.get('x-forwarded-for');
     const ip = forwardedFor ? forwardedFor.split(',')[0].trim() : '127.0.0.1';
+
+    let userName = '';
+    try {
+      const body = await req.json();
+      userName = typeof body?.userName === 'string' ? body.userName.trim() : '';
+    } catch {
+      // Body is optional
+    }
 
     if (isRateLimited(ip)) {
       return NextResponse.json(
@@ -113,9 +117,14 @@ export async function POST(req: NextRequest) {
     const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || '';
     const hasKey = Boolean(apiKey);
 
+    const firstName = userName ? userName.split(' ')[0] : '';
+    const initialGreeting = firstName
+      ? `Good to meet you, ${firstName}. Richard here. What are you wrestling with right now in your team, architecture, or career?`
+      : "Richard here. What are you wrestling with right now in your team, architecture, or career?";
+
     let initialAudioDataUrl: string | null = null;
     if (hasKey) {
-      initialAudioDataUrl = await getInitialGreetingAudio(apiKey);
+      initialAudioDataUrl = await getInitialGreetingAudio(apiKey, initialGreeting);
     }
 
     return NextResponse.json({
@@ -123,7 +132,7 @@ export async function POST(req: NextRequest) {
       sessionId: `voice_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`,
       hasKey,
       maxDurationSeconds: 90,
-      initialGreeting: "Richard here. What are you wrestling with right now in your team, architecture, or career?",
+      initialGreeting,
       initialAudioDataUrl,
       systemPrompt: REWS_VOICE_SYSTEM_PROMPT,
       resources: PAID_RESOURCES,
