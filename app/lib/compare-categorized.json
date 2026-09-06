@@ -29,7 +29,22 @@
     "dora-metrics-vs-aper",
     "shadow-ai-vs-shadow-it",
     "technical-debt-vs-technical-insolvency",
-    "vibe-coding-vs-agile"
+    "vibe-coding-vs-agile",
+    "why-anthropic-bills-spike-with-tool-use",
+    "why-local-llms-are-more-expensive-than-apis",
+    "why-ai-pr-review-time-is-exploding",
+    "why-cfos-are-shutting-down-ai-pilots",
+    "why-rag-returns-stale-data-after-updates",
+    "why-copilot-didnt-reduce-engineering-headcount",
+    "why-ai-feature-margins-turn-negative",
+    "why-ai-costs-spiral-from-silent-retries",
+    "why-ai-prompts-break-after-model-updates",
+    "why-ai-prds-and-specs-create-waste",
+    "why-ai-teams-become-api-janitors",
+    "why-unused-ai-features-drain-cloud-budgets",
+    "why-companies-pay-shadow-ai-vendor-tax",
+    "why-board-ai-metrics-sound-impressive-but-mean-nothing",
+    "why-ai-code-creates-more-bugs-than-it-fixes"
   ],
   "tierB_noindexed": [],
   "tierC_redirected": [

@@ -81,26 +81,53 @@ export default function GlossaryContent() {
                     </div>
 
                     {/* Quick Non-Technical Topic Filter Pills */}
-                    <div className="flex flex-wrap gap-2 text-xs font-semibold">
-                        <span className="text-zinc-500 font-mono flex items-center pr-1">Filter by topic:</span>
-                        {[
-                            { label: "AI Overspend", query: "AI" },
-                            { label: "Technical Debt", query: "Debt" },
-                            { label: "Cloud & FinOps", query: "Cost" },
-                            { label: "Governance & Risk", query: "Governance" }
-                        ].map((chip, idx) => (
-                            <button
-                                key={idx}
-                                onClick={() => setSearchQuery(searchQuery === chip.query ? '' : chip.query)}
-                                className={`px-3 py-1.5 rounded-full border transition-all ${
-                                    searchQuery === chip.query
-                                        ? 'bg-purple-700 text-white border-purple-700 font-bold'
-                                        : 'bg-white text-zinc-700 border-zinc-300 hover:border-purple-400 hover:bg-purple-50'
-                                }`}
-                            >
-                                {chip.label}
-                            </button>
-                        ))}
+                    <div className="space-y-3">
+                        <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
+                            <span className="text-zinc-500 font-mono pr-1">Search by what is broken:</span>
+                            {[
+                                { label: "AI bill too high", query: "Retry Inflation" },
+                                { label: "Developers moving slower", query: "APER" },
+                                { label: "AI losing money on users", query: "AI Unit Economics" },
+                                { label: "Prompts breaking on updates", query: "Model Version" },
+                                { label: "Engineers babysitting prompts", query: "API Janitor" },
+                                { label: "Unapproved shadow AI tools", query: "Shadow AI" },
+                                { label: "Code debt in dollars", query: "Product Debt Index" },
+                            ].map((chip, idx) => (
+                                <button
+                                    key={idx}
+                                    onClick={() => setSearchQuery(searchQuery === chip.query ? '' : chip.query)}
+                                    className={`px-3 py-1.5 rounded-full border transition-all ${
+                                        searchQuery === chip.query
+                                            ? 'bg-rose-700 text-white border-rose-700 font-bold'
+                                            : 'bg-white text-zinc-800 border-rose-200 hover:border-rose-400 hover:bg-rose-50'
+                                    }`}
+                                >
+                                    {chip.label}
+                                </button>
+                            ))}
+                        </div>
+
+                        <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
+                            <span className="text-zinc-500 font-mono pr-1">Filter by category:</span>
+                            {[
+                                { label: "AI Overspend", query: "AI" },
+                                { label: "Technical Debt", query: "Debt" },
+                                { label: "Cloud & FinOps", query: "Cost" },
+                                { label: "Governance & Risk", query: "Governance" }
+                            ].map((chip, idx) => (
+                                <button
+                                    key={idx}
+                                    onClick={() => setSearchQuery(searchQuery === chip.query ? '' : chip.query)}
+                                    className={`px-3 py-1.5 rounded-full border transition-all ${
+                                        searchQuery === chip.query
+                                            ? 'bg-purple-700 text-white border-purple-700 font-bold'
+                                            : 'bg-white text-zinc-700 border-zinc-300 hover:border-purple-400 hover:bg-purple-50'
+                                    }`}
+                                >
+                                    {chip.label}
+                                </button>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </ScrollReveal>

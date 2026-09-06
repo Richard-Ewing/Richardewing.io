@@ -41,6 +41,14 @@ Direct non-technical problem resolution for live production and engineering emer
 
 - [Why Cursor Rewrites Your Files & How to Stop It](https://www.richardewing.io/compare/why-cursor-rewrites-files): When AI coding assistants modify 20 unrelated files and break imports.
 - [Why AI API Bills Jump 4x After Adding Tools](https://www.richardewing.io/compare/why-anthropic-bills-spike-with-tool-use): The tool-use token multiplier effect and how prompt caching solves it.
+- [Why AI Bill Spikes From Silent Retries](https://www.richardewing.io/compare/why-ai-costs-spiral-from-silent-retries): Unmonitored background retry loops multiplying token bills.
+- [Why AI Prompts Stop Working When Models Update](https://www.richardewing.io/compare/why-ai-prompts-break-after-model-updates): Semantic drift and model version depreciation without golden evals.
+- [Why AI-Generated Product Specs Waste Engineering Time](https://www.richardewing.io/compare/why-ai-prds-and-specs-create-waste): Synthetic spec inflation and unvalidated feature factories.
+- [Why Your Engineers Are Babysitting AI All Day](https://www.richardewing.io/compare/why-ai-teams-become-api-janitors): Senior engineers acting as API janitors rather than building products.
+- [Why Forgotten AI Features Quietly Burn Cloud Budgets](https://www.richardewing.io/compare/why-unused-ai-features-drain-cloud-budgets): Zombie feature compute drain and background vector indexing.
+- [How to Find Secret AI Tools in Your Company](https://www.richardewing.io/compare/why-companies-pay-shadow-ai-vendor-tax): Unapproved shadow AI tools expensed with corporate data.
+- [Why Boardroom AI Metrics Mean Nothing to the Bottom Line](https://www.richardewing.io/compare/why-board-ai-metrics-sound-impressive-but-mean-nothing): Vanity commit counts vs gross margin expansion.
+- [Why AI Coding Assistants Lead to More Production Outages](https://www.richardewing.io/compare/why-ai-code-creates-more-bugs-than-it-fixes): AI technical debt acceleration and review bottlenecks.
 - [Why Hosting Your Own AI Model Costs More Than APIs](https://www.richardewing.io/compare/why-local-llms-are-more-expensive-than-apis): Why dedicated GPU cloud instances bill 24/7 idle server overhead.
 - [Why Senior Engineers Spend All Day Reviewing AI Code](https://www.richardewing.io/compare/why-ai-pr-review-time-is-exploding): The AI code review bottleneck and pull request inflation.
 - [Why CFOs Are Canceling AI Pilots in 2026](https://www.richardewing.io/compare/why-cfos-are-shutting-down-ai-pilots): How to defend AI budgets with real gross margin calculations.

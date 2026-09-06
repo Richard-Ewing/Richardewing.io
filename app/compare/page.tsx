@@ -24,6 +24,62 @@ const curattedComparisons = [
         color: 'red'
     },
     {
+        title: 'Why AI Bill Spikes From Silent Retries',
+        subtitle: 'The Inference Retry Spiral',
+        description: 'Why your dashboard shows 95% success but monthly API spend jumps 40% due to automated retry loops.',
+        href: '/compare/why-ai-costs-spiral-from-silent-retries',
+        color: 'red'
+    },
+    {
+        title: 'Why AI Prompts Stop Working When Models Update',
+        subtitle: 'Model Version Depreciation Cliff',
+        description: 'Why vendor model updates cause silent semantic drift and how to pin dated snapshots with golden eval suites.',
+        href: '/compare/why-ai-prompts-break-after-model-updates',
+        color: 'purple'
+    },
+    {
+        title: 'Why AI Product Specs Waste Engineering Time',
+        subtitle: 'Synthetic Spec Inflation',
+        description: 'Why product managers churn out 30-page AI PRDs in minutes that solve zero validated customer problems.',
+        href: '/compare/why-ai-prds-and-specs-create-waste',
+        color: 'amber'
+    },
+    {
+        title: 'Why Your Engineers Are Babysitting AI All Day',
+        subtitle: 'The API Janitor Trap',
+        description: 'Why senior engineering capacity gets swallowed by continuous prompt tuning and flaky vector glue code.',
+        href: '/compare/why-ai-teams-become-api-janitors',
+        color: 'red'
+    },
+    {
+        title: 'Why Forgotten AI Features Burn Cloud Budgets',
+        subtitle: 'Zombie Feature Compute Drain',
+        description: 'Why features with 15 users still cost $8,000/month in continuous vector embedding refreshes.',
+        href: '/compare/why-unused-ai-features-drain-cloud-budgets',
+        color: 'cyan'
+    },
+    {
+        title: 'How to Find Secret AI Tools in Your Company',
+        subtitle: 'The Shadow AI Vendor Tax',
+        description: 'Why employees expense dozens of unapproved AI tools with company data and how to run a zero-blame audit.',
+        href: '/compare/why-companies-pay-shadow-ai-vendor-tax',
+        color: 'indigo'
+    },
+    {
+        title: 'Why Boardroom AI Metrics Mean Nothing',
+        subtitle: 'Board AI Metric Theater',
+        description: 'Why investors reject commit volume vanity slides and demand P&L proof of gross margin expansion.',
+        href: '/compare/why-board-ai-metrics-sound-impressive-but-mean-nothing',
+        color: 'amber'
+    },
+    {
+        title: 'Why AI Code Leads to More Outages',
+        subtitle: 'The AI Technical Debt Accelerator',
+        description: 'Why pull request velocity is up 35% but production incidents and code review times doubled.',
+        href: '/compare/why-ai-code-creates-more-bugs-than-it-fixes',
+        color: 'red'
+    },
+    {
         title: 'Why Hosting Your Own AI Model Costs More Than APIs',
         subtitle: 'Cloud GPU Idle Costs vs API Tokens',
         description: 'Why renting dedicated AWS GPUs to run open-source Llama models often costs 3x more than OpenAI tokens.',
@@ -89,6 +145,7 @@ const curattedComparisons = [
 ];
 
 const colorMap: Record<string, { border: string; text: string; hover: string }> = {
+    red: { border: 'border-rose-500/30', text: 'text-rose-900', hover: 'hover:border-rose-500/60' },
     amber: { border: 'border-amber-500/30', text: 'text-amber-900', hover: 'hover:border-amber-500/60' },
     cyan: { border: 'border-cyan-500/30', text: 'text-cyan-900', hover: 'hover:border-cyan-500/60' },
     indigo: { border: 'border-indigo-500/30', text: 'text-indigo-900', hover: 'hover:border-indigo-500/60' },

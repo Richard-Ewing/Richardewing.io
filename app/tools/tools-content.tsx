@@ -28,6 +28,45 @@ export default function ToolsContent() {
         <section className="section">
             <div className="space-y-16 max-w-5xl mx-auto">
               
+              {/* Emergency Symptom Guides Banner */}
+              <div className="rounded-2xl border border-rose-300 bg-rose-50/70 p-6 md:p-8 shadow-sm">
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6 pb-4 border-b border-rose-200">
+                  <div>
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-rose-800 block mb-1">Live Incident Triage</span>
+                    <h2 className="text-xl md:text-2xl font-bold text-zinc-950 font-grotesk">Search by What is Broken in Production</h2>
+                  </div>
+                  <Link href="/compare" className="text-xs font-bold font-mono text-rose-900 hover:text-rose-950 uppercase tracking-wider underline">
+                    View All 18 Incident Analyses &rarr;
+                  </Link>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+                  <Link href="/compare/why-ai-costs-spiral-from-silent-retries" className="p-3 bg-white rounded-xl border border-rose-200 hover:border-rose-400 text-xs font-bold text-zinc-900 transition-colors block">
+                    Why AI Bills Spike from Silent Retries &rarr;
+                  </Link>
+                  <Link href="/compare/why-ai-prompts-break-after-model-updates" className="p-3 bg-white rounded-xl border border-rose-200 hover:border-rose-400 text-xs font-bold text-zinc-900 transition-colors block">
+                    Why Prompts Break on Model Updates &rarr;
+                  </Link>
+                  <Link href="/compare/why-ai-feature-margins-turn-negative" className="p-3 bg-white rounded-xl border border-rose-200 hover:border-rose-400 text-xs font-bold text-zinc-900 transition-colors block">
+                    Why AI Features Lose Money on Users &rarr;
+                  </Link>
+                  <Link href="/compare/why-ai-teams-become-api-janitors" className="p-3 bg-white rounded-xl border border-rose-200 hover:border-rose-400 text-xs font-bold text-zinc-900 transition-colors block">
+                    Why Engineers Babysit Prompts All Day &rarr;
+                  </Link>
+                  <Link href="/compare/why-unused-ai-features-drain-cloud-budgets" className="p-3 bg-white rounded-xl border border-rose-200 hover:border-rose-400 text-xs font-bold text-zinc-900 transition-colors block">
+                    Why Forgotten AI Features Drain Budgets &rarr;
+                  </Link>
+                  <Link href="/compare/why-companies-pay-shadow-ai-vendor-tax" className="p-3 bg-white rounded-xl border border-rose-200 hover:border-rose-400 text-xs font-bold text-zinc-900 transition-colors block">
+                    How to Find Secret Shadow AI Tools &rarr;
+                  </Link>
+                  <Link href="/compare/why-ai-prds-and-specs-create-waste" className="p-3 bg-white rounded-xl border border-rose-200 hover:border-rose-400 text-xs font-bold text-zinc-900 transition-colors block">
+                    Why 30-Page AI PRDs Waste Engineering &rarr;
+                  </Link>
+                  <Link href="/compare/why-ai-code-creates-more-bugs-than-it-fixes" className="p-3 bg-white rounded-xl border border-rose-200 hover:border-rose-400 text-xs font-bold text-zinc-900 transition-colors block">
+                    Why AI Coding Causes More Outages &rarr;
+                  </Link>
+                </div>
+              </div>
+
               {/* Category 1 */}
               <div>
                 <div className="flex items-center gap-4 mb-6">

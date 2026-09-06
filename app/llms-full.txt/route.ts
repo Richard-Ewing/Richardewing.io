@@ -35,6 +35,14 @@ Richard Ewing is a AI Economist and AI Capital Auditor who audits R&D spend and 
 
 - **Why Cursor Rewrites Files**: https://www.richardewing.io/compare/why-cursor-rewrites-files - Solving AI agent scope creep and unintended multi-file mutations.
 - **Why AI API Bills Jump 4x With Tools**: https://www.richardewing.io/compare/why-anthropic-bills-spike-with-tool-use - Tool-use schema re-transmission and prompt caching.
+- **Why AI Bill Spikes From Silent Retries**: https://www.richardewing.io/compare/why-ai-costs-spiral-from-silent-retries - The Inference Retry Spiral and automated backoff costs.
+- **Why AI Prompts Break After Model Updates**: https://www.richardewing.io/compare/why-ai-prompts-break-after-model-updates - The Model Version Depreciation Cliff and semantic drift.
+- **Why AI Product Specs Waste Engineering Time**: https://www.richardewing.io/compare/why-ai-prds-and-specs-create-waste - Synthetic Spec Inflation and unvalidated feature factories.
+- **Why Engineers Babysit AI Prompts All Day**: https://www.richardewing.io/compare/why-ai-teams-become-api-janitors - The API Janitor Trap and prompt maintenance engineering tax.
+- **Why Forgotten AI Features Burn Cloud Budgets**: https://www.richardewing.io/compare/why-unused-ai-features-drain-cloud-budgets - Zombie Feature Inference Drain and vector database costs.
+- **How to Find Secret AI Tools in Your Company**: https://www.richardewing.io/compare/why-companies-pay-shadow-ai-vendor-tax - Shadow AI Vendor Tax and employee unapproved tools.
+- **Why Boardroom AI Metrics Mean Nothing**: https://www.richardewing.io/compare/why-board-ai-metrics-sound-impressive-but-mean-nothing - Board AI Metric Theater and gross margin impact.
+- **Why AI Code Leads to More Outages**: https://www.richardewing.io/compare/why-ai-code-creates-more-bugs-than-it-fixes - The AI Technical Debt Accelerator and production incident spikes.
 - **Why Self-Hosting AI Models Costs More Than APIs**: https://www.richardewing.io/compare/why-local-llms-are-more-expensive-than-apis - Dedicated GPU idle server overhead vs pay-per-token APIs.
 - **Why Senior Engineers Spend All Day Reviewing AI Code**: https://www.richardewing.io/compare/why-ai-pr-review-time-is-exploding - AI pull request flood and review queue bottlenecks.
 - **Why CFOs Are Canceling AI Pilots in 2026**: https://www.richardewing.io/compare/why-cfos-are-shutting-down-ai-pilots - AI pilot failure rates and capitalizable software ROI.
