@@ -117,8 +117,77 @@ export default function AdvisoryCTA({ variant, termTitle }: AdvisoryCTAProps) {
         )}
       </div>
 
+      {variant === 'compare' && (
+        <div className="mt-8 pt-6 border-t border-amber-500/20">
+          <div className="text-xs font-mono font-bold uppercase tracking-wider text-amber-900 mb-3">
+            Immediate Forensic Advisory Tiers
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="p-4 rounded-xl bg-white border border-amber-200 shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <h3 className="font-bold text-zinc-950 text-sm">The Gut-Check Evaluation</h3>
+                  <span className="text-xs font-mono font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">$450</span>
+                </div>
+                <p className="text-xs text-zinc-600 leading-relaxed mb-3">
+                  30-minute rapid triage for founders and executives who need to know if their architecture or cloud bill is on fire.
+                </p>
+              </div>
+              <a href="/api/buy/gut_check" className="text-xs font-bold text-amber-900 hover:text-amber-950 uppercase tracking-wider inline-flex items-center gap-1">
+                Book Gut-Check &rarr;
+              </a>
+            </div>
+
+            <div className="p-4 rounded-xl bg-white border border-amber-200 shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <h3 className="font-bold text-zinc-950 text-sm">60-Min Insolvency Audit</h3>
+                  <span className="text-xs font-mono font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">$2,500</span>
+                </div>
+                <p className="text-xs text-zinc-600 leading-relaxed mb-3">
+                  Dedicated teardown of your exact token leakage, retry settings, and technical debt bottlenecks with an immediate remediation plan.
+                </p>
+              </div>
+              <a href="/api/buy/insolvency_diagnostic" className="text-xs font-bold text-amber-900 hover:text-amber-950 uppercase tracking-wider inline-flex items-center gap-1">
+                Book Insolvency Audit &rarr;
+              </a>
+            </div>
+
+            <div className="p-4 rounded-xl bg-white border border-amber-200 shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <h3 className="font-bold text-zinc-950 text-sm">Full R&amp;D Capital Audit</h3>
+                  <span className="text-xs font-mono font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">$7,500</span>
+                </div>
+                <p className="text-xs text-zinc-600 leading-relaxed mb-3">
+                  Complete forensic examination across team payroll, codebase health, and cloud spend. Delivers a 40-page board-ready audit.
+                </p>
+              </div>
+              <Link href="/services" className="text-xs font-bold text-amber-900 hover:text-amber-950 uppercase tracking-wider inline-flex items-center gap-1">
+                View Audit Scope &rarr;
+              </Link>
+            </div>
+
+            <div className="p-4 rounded-xl bg-white border border-amber-200 shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <h3 className="font-bold text-zinc-950 text-sm">AI Cost Governance Retainer</h3>
+                  <span className="text-xs font-mono font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">$10,000/mo</span>
+                </div>
+                <p className="text-xs text-zinc-600 leading-relaxed mb-3">
+                  Ongoing fractional executive oversight, vendor contract negotiations, and runtime guardrails to stop margin decay permanently.
+                </p>
+              </div>
+              <Link href="/services" className="text-xs font-bold text-amber-900 hover:text-amber-950 uppercase tracking-wider inline-flex items-center gap-1">
+                Inquire for Retainer &rarr;
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
+
       <p className="mt-4 text-xs font-mono text-zinc-500 uppercase tracking-widest">
-        Richard Ewing  -  AI Economist & Capital Auditor
+        Richard Ewing: AI Economist &amp; Capital Auditor
       </p>
     </section>
   );

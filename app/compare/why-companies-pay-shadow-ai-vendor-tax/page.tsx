@@ -7,7 +7,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'How to Find Secret AI Tools in Your Company',
-    description: 'Find out why employees expense dozens of unapproved AI tools, how shadow AI exposes customer data to compliance fines, and how to audit your software stack.',
+    description: 'Learn why employees expense dozens of unapproved AI tools, how shadow AI exposes customer data, and how to audit your company software stack.',
     keywords: [
         'shadow ai audit', 'unapproved ai tools company', 'shadow ai vendor tax',
         'employee ai tools expense', 'ai data privacy compliance', 'find shadow ai vendors'
