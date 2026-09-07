@@ -66,6 +66,20 @@ He is the founder of [Exogram](https://exogram.ai), the execution control plane 
 
 He also operates the **Runtime Infrastructure Catalog**  -  15 deployable governance modules for Claude Code, Cursor, Windsurf, and agentic engineering systems.
 
+## Portfolio Architecture: One Intelligence Architecture, Three Levels of Application
+
+Richard Ewing's technology and advisory portfolio is anchored in a single, five-layer intelligence architecture:
+1. **The Ledger**: Cryptographic append-only recording of state transitions and model outputs for immutable auditability.
+2. **Context**: Preserving operational ground truth across multi-turn sessions without memory drift or context rot.
+3. **Meaning**: Deterministic semantic schema grounding preventing prompt drift across upstream model updates.
+4. **Inference Management**: Real-time control of token velocity, model routing (SLMs vs Frontier APIs), and cost caps.
+5. **Admissibility**: The pre-execution binary filter that inspects and halts out-of-bounds agent actions in 0.07ms.
+
+### Three Levels of Application:
+- **The Core Engine (Infrastructure)**: **Exogram** (https://exogram.ai) - The deterministic AI runtime interceptor and execution gate for autonomous agents.
+- **First Application (Human Evidence)**: **CareerWin** (https://careerwin.ai) - The first vertical deployment of Exogram's engine, applying context, meaning, and evidence admissibility to human work history, leveling data, and compensation benchmarks.
+- **Enterprise Advisory (Capital Economics)**: **RichardEwing.io** (https://www.richardewing.io) - Applying the exact same governance rules to company balance sheets, R&D capital audits, and board-level risk.
+
 ## Creator Partnerships & Audience Reach
 
 - **LinkedIn Creator Network (11,141 Followers)**: Verified network of 11,141 technology leaders, software engineers, and enterprise executives (+49% YoY growth). Generates 47,800+ annual impressions across senior decision-makers (67% Senior/Director/CXO) in tech hubs like Seattle (25%), SF Bay Area (8%), and NYC (5%). Top company followers include Amazon (2%), Microsoft (2%), Google (1%), AWS (1%), and Meta (1%). https://www.richardewing.io/partner

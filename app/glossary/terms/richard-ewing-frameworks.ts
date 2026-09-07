@@ -226,5 +226,47 @@ export const richardEwingFrameworksTerms: GlossaryTerm[] = [
         ], 
         relatedTerms: ['four-tiers-of-autonomy', 'double-diamond-career-trajectory'], 
         relatedTools: [] 
+    },
+    {
+        slug: 'portfolio-intelligence-architecture',
+        title: 'One Intelligence Architecture (Three Levels of Application)',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `The Portfolio Intelligence Architecture is the single technological and economic framework that connects Exogram, CareerWin, and RichardEwing.io. What normal people call this: how Richard Ewing's software products and advisory services fit together as one connected system instead of separate side projects.\n\nIt operates across five foundational layers: (1) The Ledger for immutable truth tracking, (2) Context for maintaining runtime environment without degradation, (3) Meaning for semantic schema stability across changing models, (4) Inference Management for controlling token costs and latency, and (5) Admissibility for deterministic execution guardrails.\n\nThis architecture is deployed at three levels: (1) Exogram as the core enterprise runtime engine, (2) CareerWin as the first vertical application to human work and career evidence, and (3) RichardEwing.io as the executive advisory practice applying the same governance principles to company balance sheets.`,
+        whyItMatters: `It unifies runtime software controls with corporate capital allocation. Whether evaluating human career progression or autonomous AI agents, the problem is identical: verifying ground truth and stopping unauthorized or hallucinated actions before damage occurs.`,
+        faqs: [
+            { question: 'What is the Portfolio Intelligence Architecture in plain English?', answer: 'A single five-layer system (Ledger, Context, Meaning, Inference, Admissibility) that powers Exogram for enterprise AI safety, CareerWin for human career verification, and Richard Ewing advisory for corporate AI budgets.' },
+            { question: 'Why does CareerWin share the same engine as Exogram?', answer: 'Because both solve the problem of unverified assertions. Exogram stops AI agents from hallucinating code; CareerWin stops resumes from trading in unverified buzzwords by checking admissible work evidence.' }
+        ],
+        relatedTerms: ['exogram-runtime-proxy', 'action-admissibility', 'context-rot', 'aueb-framework'],
+        relatedTools: [{ name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }]
+    },
+    {
+        slug: 'payroll-absorbed-ai-costs',
+        title: 'Payroll-Absorbed AI Costs',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `Payroll-Absorbed AI Costs are the invisible engineering salaries burned when senior developers spend hours validating, debugging, and babysitting flaky AI outputs instead of building products. What normal people call this: the hidden fortune you spend on engineering payroll because your developers are stuck reviewing messy AI code and tweaking system prompts all day.\n\nWhile corporate FP&A reports track visible monthly cloud invoices and token bills, payroll-absorbed costs routinely exceed raw API costs by 5x to 10x. If a senior engineer earning $200,000 spends 5 hours a week cleaning up AI-generated bugs, that is a $25,000 hidden annual tax per engineer.`,
+        whyItMatters: `Tracking raw token spend without accounting for developer validation hours produces a false illusion of productivity. Real AI ROI requires measuring total verification overhead.`,
+        faqs: [
+            { question: 'What are Payroll-Absorbed AI Costs in plain English?', answer: 'The high-dollar engineering salaries lost when developers have to constantly babysit, fix, and review flaky AI code rather than shipping new features.' },
+            { question: 'How do you calculate payroll-absorbed AI costs?', answer: 'Multiply the hours per week engineers spend reviewing and fixing AI code by their hourly loaded payroll rate, then add that to your cloud token invoices.' }
+        ],
+        relatedTerms: ['api-janitor-trap', 'product-debt-index', 'innovation-tax', 'aper-metric'],
+        relatedTools: [{ name: 'Product Debt Index Calculator', url: '/tools/pdi' }]
+    },
+    {
+        slug: 'ai-pilot-purgatory',
+        title: 'AI Pilot Purgatory',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `AI Pilot Purgatory is the organizational deadlock where enterprise AI initiatives remain stuck in perpetual demo mode without ever reaching profitable production. What normal people call this: spending hundreds of thousands of dollars on flashy AI experiments that look cool in a boardroom demo but can never be deployed to real customers because they are too buggy, slow, or expensive.\n\nIn 2026, research indicates up to 95% of enterprise generative AI pilots fail to deliver measurable P&L return. The root cause is lack of upfront unit economics modeling and absence of hard kill criteria before engineering begins.`,
+        whyItMatters: `CFOs and boards are shutting down unmeasured AI pilots. Escaping pilot purgatory requires defining hard financial kill criteria, calculating cost per useful output, and installing deterministic execution controls before scaling.`,
+        faqs: [
+            { question: 'What is AI Pilot Purgatory in plain English?', answer: 'The trap where companies spend huge budgets building AI demos that can never actually launch to paying customers because they are unreliable or lose money on every query.' },
+            { question: 'How do you get an AI pilot into real production?', answer: 'Install hard token cost caps, measure net AI margin per customer, and enforce pre-execution guardrails so the model cannot cause outages.' }
+        ],
+        relatedTerms: ['board-ai-metric-theater', 'aueb-framework', 'technical-insolvency-date', 'retry-inflation'],
+        relatedTools: [{ name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }, { name: 'AI ROI Timeline Simulator', url: '/tools/ai-roi-timeline' }]
     }
 ];

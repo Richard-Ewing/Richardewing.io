@@ -107,23 +107,39 @@ export default function EcosystemMap() {
                         </div>
                     </div>
 
-                    {/* Convergence Box: Exogram & GitHub */}
-                    <div className="w-full max-w-md grid grid-cols-2 gap-4">
+                    {/* Convergence Box: Exogram, CareerWin, & GitHub */}
+                    <div className="w-full max-w-2xl grid grid-cols-1 sm:grid-cols-3 gap-4">
                         {/* Node 6: Exogram */}
                         <Link href="/exogram" className="group">
-                            <div className="p-4 rounded-xl border border-purple-300 bg-purple-50/50 hover:border-purple-500 transition-all text-center relative shadow-sm">
+                            <div className="p-4 rounded-xl border border-purple-300 bg-purple-50/50 hover:border-purple-500 transition-all text-center relative shadow-sm h-full flex flex-col justify-between">
                                 <div className="absolute -inset-1 bg-gradient-to-r from-purple-400 to-indigo-500 rounded-xl blur opacity-0 group-hover:opacity-20 transition-opacity" />
-                                <div className="text-[10px] font-mono font-bold text-purple-700 uppercase tracking-widest mb-1">RUNTIME CONTROL</div>
-                                <div className="font-bold text-sm text-zinc-950 group-hover:text-purple-900 transition-colors">Exogram Platform</div>
-                                <div className="text-[10px] text-zinc-950 font-semibold mt-1">Deterministic Boundary</div>
+                                <div>
+                                    <div className="text-[10px] font-mono font-bold text-purple-700 uppercase tracking-widest mb-1">THE ENGINE</div>
+                                    <div className="font-bold text-sm text-zinc-950 group-hover:text-purple-900 transition-colors">Exogram Platform</div>
+                                </div>
+                                <div className="text-[10px] text-zinc-950 font-semibold mt-1">Runtime Interceptor &amp; Admissibility Gate</div>
                             </div>
                         </Link>
 
-                        {/* Node 7: GitHub */}
+                        {/* Node 7: CareerWin */}
+                        <Link href="/careerwin" className="group">
+                            <div className="p-4 rounded-xl border border-indigo-300 bg-indigo-50/50 hover:border-indigo-500 transition-all text-center relative shadow-sm h-full flex flex-col justify-between">
+                                <div className="absolute -inset-1 bg-gradient-to-r from-indigo-400 to-cyan-500 rounded-xl blur opacity-0 group-hover:opacity-20 transition-opacity" />
+                                <div>
+                                    <div className="text-[10px] font-mono font-bold text-indigo-700 uppercase tracking-widest mb-1">FIRST APPLICATION</div>
+                                    <div className="font-bold text-sm text-zinc-950 group-hover:text-indigo-900 transition-colors">CareerWin Platform</div>
+                                </div>
+                                <div className="text-[10px] text-zinc-950 font-semibold mt-1">Human Work Evidence &amp; Leveling Engine</div>
+                            </div>
+                        </Link>
+
+                        {/* Node 8: GitHub */}
                         <a href="https://github.com/Richard-Ewing" target="_blank" rel="noopener noreferrer" className="group block">
-                            <div className="p-4 rounded-xl border border-zinc-400 bg-white hover:border-cyan-500 transition-all text-center relative h-full shadow-sm">
-                                <div className="text-[10px] font-mono font-bold text-zinc-500 uppercase tracking-widest mb-1">INFRASTRUCTURE</div>
-                                <div className="font-bold text-sm text-zinc-950 group-hover:text-cyan-900 transition-colors">GitHub Codebase</div>
+                            <div className="p-4 rounded-xl border border-zinc-400 bg-white hover:border-cyan-500 transition-all text-center relative shadow-sm h-full flex flex-col justify-between">
+                                <div>
+                                    <div className="text-[10px] font-mono font-bold text-zinc-500 uppercase tracking-widest mb-1">INFRASTRUCTURE</div>
+                                    <div className="font-bold text-sm text-zinc-950 group-hover:text-cyan-900 transition-colors">GitHub Codebase</div>
+                                </div>
                                 <div className="text-[10px] text-zinc-950 font-semibold mt-1">Open-Source Engine (SECS)</div>
                             </div>
                         </a>

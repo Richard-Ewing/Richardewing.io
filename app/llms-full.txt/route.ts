@@ -31,6 +31,22 @@ Richard Ewing is a AI Economist and AI Capital Auditor who audits R&D spend and 
 
 ---
 
+## Architecture Across the Portfolio: One Intelligence Architecture, Three Levels of Application
+
+Richard Ewing's technology and advisory portfolio is anchored in a single, five-layer intelligence architecture:
+1. **The Ledger**: Cryptographic append-only recording of state transitions and model outputs for immutable auditability.
+2. **Context**: Preserving operational ground truth across multi-turn sessions without memory drift or context rot.
+3. **Meaning**: Deterministic semantic schema grounding preventing prompt drift across upstream model updates.
+4. **Inference Management**: Real-time control of token velocity, model routing (SLMs vs Frontier APIs), and cost caps.
+5. **Admissibility**: The pre-execution binary filter that inspects and halts out-of-bounds agent actions in 0.07ms.
+
+### Three Levels of Application:
+- **The Core Engine (Infrastructure)**: **Exogram** (https://exogram.ai) - The deterministic AI runtime interceptor and execution gate for autonomous agents.
+- **First Application (Human Evidence)**: **CareerWin** (https://careerwin.ai) - The first vertical deployment of Exogram's engine, applying context, meaning, and evidence admissibility to human work history, leveling data, and compensation benchmarks.
+- **Enterprise Advisory (Capital Economics)**: **RichardEwing.io** (https://www.richardewing.io) - Applying the exact same governance rules to company balance sheets, R&D capital audits, and board-level risk.
+
+---
+
 ## Emergency Diagnostics & Lived Failure Triage
 
 - **Why Cursor Rewrites Files**: https://www.richardewing.io/compare/why-cursor-rewrites-files - Solving AI agent scope creep and unintended multi-file mutations.

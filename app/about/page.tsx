@@ -36,7 +36,7 @@ const personSchema = {
     '@id': 'https://www.richardewing.io/#person',
     'name': 'Richard Ewing',
     'jobTitle': 'AI Economist',
-    'description': 'Enterprise AI Economist and founder of Exogram and CareerWin. Audits production AI security and builds PE-backed product economics.',
+    'description': 'Enterprise AI Economist and founder of Exogram and CareerWin. Architect of the five-layer intelligence substrate powering Exogram runtime governance and CareerWin human work intelligence. Advises CTOs, CFOs, and PE boards on AI capital allocation and unit economics.',
     'url': 'https://www.richardewing.io',
     'image': 'https://www.richardewing.io/assets/images/headshot.jpg',
     'sameAs': [
@@ -56,7 +56,8 @@ const personSchema = {
         'Zombie Infrastructure',
         'Deterministic AI Infrastructure',
         'AI Cost Governance',
-        'Gross Margin Preservation'
+        'Gross Margin Preservation',
+        'Runtime Admissibility'
     ],
     'founder': [
         {
@@ -119,10 +120,10 @@ export default function AboutPage() {
 
                 {/* Section 2: The Framework */}
                 <section className="mb-16 border-b border-zinc-300 pb-12">
-                    <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-4">The Solution: The Governance Framework</h2>
+                    <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-4">The Solution: One Intelligence Architecture</h2>
                     <p className="text-sm text-zinc-900 leading-relaxed font-semibold mb-6">
-                        To address the operational entropy of scaling models, my research is distilled into a centripetal governance model. 
-                        This coordinates the operational boundaries of **Economics**, **Product**, **Engineering**, **Security**, and **Operations**, culminating in **Runtime Governance** (Exogram) to lock down the verified state at the network layer.
+                        To address the operational entropy of scaling models, my research is distilled into a universal five-layer intelligence architecture: **The Ledger**, **Context**, **Meaning**, **Inference Management**, and **Admissibility**. 
+                        This core engine powers **Exogram** as an enterprise runtime control plane, drives **CareerWin** as a human work verification platform, and guides our executive advisory practice for enterprise boards and PE firms.
                     </p>
                     <div className="flex gap-4">
                         <Link href="/framework" className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-sm uppercase tracking-wider shadow transition-colors">
