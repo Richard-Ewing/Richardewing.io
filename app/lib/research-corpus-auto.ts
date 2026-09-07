@@ -2,6 +2,17 @@ import { CorpusArticle } from './research-corpus';
 
 export const corpusAuto: CorpusArticle[] = [
 {
+    "id": "beehiiv-the-software-factory-is-running-24-7-and-nobody-wants-the-output",
+    "title": "The Software Factory Is Running 24/7 (And Nobody Wants the Output)",
+    "url": "https://theaieconomist.beehiiv.com/p/the-software-factory-is-running-24-7-and-nobody-wants-the-output-c01a",
+    "publisher": "Beehiiv",
+    "domain": "Career Economics",
+    "type": "Evergreen",
+    "date": "September 7, 2026",
+    "thesis": "If you spent the last five days doing actual work instead of staring at tech blogs, you missed an absolute circus. Google pushed out Gemini 3.8 Flash. That is their third model update in six weeks. Th...",
+    "relatedConceptIds": []
+},
+{
     "id": "beehiiv-the-1-person-ai-blueprint-how-to-automate-80-of-your-workload",
     "title": "The 1-Person AI Blueprint: How to Automate 80% of Your Workload",
     "url": "https://theaieconomist.beehiiv.com/p/the-1-person-ai-blueprint-how-to-automate-80-of-your-workload",
