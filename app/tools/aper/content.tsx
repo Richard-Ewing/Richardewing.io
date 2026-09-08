@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
+import { useQueryState, parseAsString, parseAsStringLiteral } from 'nuqs';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
-import { TrendingUp, TrendingDown, AlertTriangle, DollarSign, Lock, Zap, Users, Target, Mail, ArrowRight, Cpu, Clock, Building, Building2, Skull } from 'lucide-react';
+import { TrendingUp, TrendingDown, AlertTriangle, DollarSign, Lock, Zap, Users, Target, Mail, ArrowRight, Cpu, Clock, Building, Building2, Skull, Share2, Check } from 'lucide-react';
 import Link from 'next/link';
 import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
@@ -65,17 +66,20 @@ const BentoCard = ({ children, title, icon: Icon, className = '' }: { children: 
 // --- PERSONA TYPES ---
 // Types are now imported.
 
-export default function APERTool() {
+function APERToolContent() {
     // Persona State
-    const [persona, setPersona] = useState<Persona>('Founder');
+    const [persona, setPersona] = useQueryState<Persona>(
+        'persona',
+        parseAsStringLiteral(['Founder', 'CPO', 'VP Eng', 'CFO'] as const).withDefault('Founder')
+    );
 
     // Progressive Disclosure State
     const [step, setStep] = useState(1);
 
     // Basic Inputs
-    const [arr, setArr] = useState('15000000');
-    const [engineers, setEngineers] = useState('25');
-    const [costPerEng, setCostPerEng] = useState('220000');
+    const [arr, setArr] = useQueryState('arr', parseAsString.withDefault('15000000'));
+    const [engineers, setEngineers] = useQueryState('engineers', parseAsString.withDefault('25'));
+    const [costPerEng, setCostPerEng] = useQueryState('costPerEng', parseAsString.withDefault('220000'));
 
     // Enhanced Inputs
     const [teamBreakdown, setTeamBreakdown] = useState<TeamBreakdown>({
@@ -84,13 +88,22 @@ export default function APERTool() {
         infra: 20,
         data: 10
     });
-    const [avgTenure, setAvgTenure] = useState('18');
-    const [hiringVelocity, setHiringVelocity] = useState('8');
-    const [remotePercent, setRemotePercent] = useState('60');
+    const [avgTenure, setAvgTenure] = useQueryState('avgTenure', parseAsString.withDefault('18'));
+    const [hiringVelocity, setHiringVelocity] = useQueryState('hiringVelocity', parseAsString.withDefault('8'));
+    const [remotePercent, setRemotePercent] = useQueryState('remotePercent', parseAsString.withDefault('60'));
 
     const [results, setResults] = useState<AperScoreMetrics | null>(null);
     const [loading, setLoading] = useState(false);
     const [showGate, setShowGate] = useState(false);
+    const [copiedLink, setCopiedLink] = useState(false);
+
+    const handleCopyShareLink = () => {
+        if (typeof window !== 'undefined') {
+            navigator.clipboard.writeText(window.location.href);
+            setCopiedLink(true);
+            setTimeout(() => setCopiedLink(false), 2000);
+        }
+    };
 
     useEffect(() => {
         trackDiagnosticEvent('diagnostic_started', 'aper');
@@ -159,10 +172,21 @@ export default function APERTool() {
                         <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse shadow-[0_0_10px_#eab308]" />
                         <span className="font-bold tracking-tight text-lg">APER™ <span className="text-zinc-950 font-bold font-normal">| Efficiency Diagnostic</span></span>
                     </div>
-                    <Link href="/services" className="flex items-center gap-2 text-xs font-bold font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest">
-                        <Lock size={12} />
-                        Get Expert Help
-                    </Link>
+                    <div className="flex items-center gap-3">
+                        <button
+                            type="button"
+                            onClick={handleCopyShareLink}
+                            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white/5 hover:bg-white/10 text-xs font-mono text-zinc-700 dark:text-zinc-300 transition"
+                            title="Copy shareable URL with current parameters"
+                        >
+                            {copiedLink ? <Check size={14} className="text-emerald-500" /> : <Share2 size={14} />}
+                            <span>{copiedLink ? 'Link Copied' : 'Share Scenario'}</span>
+                        </button>
+                        <Link href="/services" className="flex items-center gap-2 text-xs font-bold font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest">
+                            <Lock size={12} />
+                            Get Expert Help
+                        </Link>
+                    </div>
                 </div>
             </nav>
 
@@ -729,8 +753,15 @@ export default function APERTool() {
                     exogramDescription="Stop throwing engineers at architectural problems. Exogram enforces structural boundaries so you can scale use without scaling headcount."
                 />
             </div>
-            
             <ProgrammaticAnswersRelated seed="aper-tool" maxCount={2} />
         </div>
+    );
+}
+
+export default function APERTool() {
+    return (
+        <Suspense fallback={<div className="max-w-7xl mx-auto p-12 text-center text-zinc-500 font-mono text-xs">Loading APER Efficiency Diagnostic...</div>}>
+            <APERToolContent />
+        </Suspense>
     );
 }

@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 import APERTool from './content';
 
 export const metadata: Metadata = {
@@ -31,5 +32,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-    return <APERTool />;
+    return (
+        <Suspense fallback={<div className="max-w-7xl mx-auto p-12 text-center text-zinc-500 font-mono text-xs">Loading APER Efficiency Diagnostic...</div>}>
+            <APERTool />
+        </Suspense>
+    );
 }

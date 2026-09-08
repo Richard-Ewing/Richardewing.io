@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
+import { useQueryState, parseAsString, parseAsStringLiteral } from 'nuqs';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { TrendingDown, TrendingUp, AlertTriangle, DollarSign, Lock, Activity, Zap, Flame, Users, Target, Mail, ArrowRight, Cpu, Skull, Building2 } from 'lucide-react';
+import { TrendingDown, TrendingUp, AlertTriangle, DollarSign, Lock, Activity, Zap, Flame, Users, Target, Mail, ArrowRight, Cpu, Skull, Building2, Share2, Check } from 'lucide-react';
 import Link from 'next/link';
 import { NewsletterForm } from '../../components/newsletter-form';
 import ToolGate from '../../components/tool-gate';
@@ -96,24 +97,39 @@ const GaugeChart = ({ value }: { value: number }) => {
 
 // Types are now imported
 
-export default function AUEBTool() {
+function AUEBToolContent() {
     // Persona State
-    const [persona, setPersona] = useState<Persona>('Founder');
+    const [persona, setPersona] = useQueryState<Persona>(
+        'persona',
+        parseAsStringLiteral(['Founder', 'CPO', 'VP Eng', 'CFO'] as const).withDefault('Founder')
+    );
     const [step, setStep] = useState(1);
     const [isSaving, setIsSaving] = useState(false);
     const [showPaywall, setShowPaywall] = useState(false);
+    const [copiedLink, setCopiedLink] = useState(false);
 
     // Basic Inputs
-    const [price, setPrice] = useState('29');
-    const [queries, setQueries] = useState('150');
-    const [costPerQuery, setCostPerQuery] = useState('0.025');
-    const [users, setUsers] = useState('5000');
+    const [price, setPrice] = useQueryState('price', parseAsString.withDefault('29'));
+    const [queries, setQueries] = useQueryState('queries', parseAsString.withDefault('150'));
+    const [costPerQuery, setCostPerQuery] = useQueryState('costPerQuery', parseAsString.withDefault('0.025'));
+    const [users, setUsers] = useQueryState('users', parseAsString.withDefault('5000'));
 
     // Enhanced Inputs
-    const [monetizationStrategy, setMonetizationStrategy] = useState<'bundled' | 'premium'>('bundled');
-    const [premiumCharge, setPremiumCharge] = useState('10');
-    const [growthRate, setGrowthRate] = useState('15');
+    const [monetizationStrategy, setMonetizationStrategy] = useQueryState<'bundled' | 'premium'>(
+        'strategy',
+        parseAsStringLiteral(['bundled', 'premium'] as const).withDefault('bundled')
+    );
+    const [premiumCharge, setPremiumCharge] = useQueryState('premiumCharge', parseAsString.withDefault('10'));
+    const [growthRate, setGrowthRate] = useQueryState('growthRate', parseAsString.withDefault('15'));
     const [cachingEnabled, setCachingEnabled] = useState(false);
+
+    const handleCopyShareLink = () => {
+        if (typeof window !== 'undefined') {
+            navigator.clipboard.writeText(window.location.href);
+            setCopiedLink(true);
+            setTimeout(() => setCopiedLink(false), 2000);
+        }
+    };
     const [features, setFeatures] = useState<FeatureData[]>([
         { name: 'AI Chat', queriesPercent: 40 },
         { name: 'AI Search', queriesPercent: 30 },
@@ -286,10 +302,21 @@ export default function AUEBTool() {
                         <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse shadow-[0_0_10px_#dc2626]" />
                         <span className="font-bold tracking-tight text-lg">AUEB™ <span className="text-zinc-950 font-bold font-normal">| AI Margin Audit</span></span>
                     </div>
-                    <Link href="/services" className="flex items-center gap-2 text-xs font-bold font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest">
-                        <Lock size={12} />
-                        Get Expert Help
-                    </Link>
+                    <div className="flex items-center gap-3">
+                        <button
+                            type="button"
+                            onClick={handleCopyShareLink}
+                            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white/5 hover:bg-white/10 text-xs font-mono text-zinc-700 dark:text-zinc-300 transition"
+                            title="Copy shareable URL with current parameters"
+                        >
+                            {copiedLink ? <Check size={14} className="text-emerald-500" /> : <Share2 size={14} />}
+                            <span>{copiedLink ? 'Link Copied' : 'Share Scenario'}</span>
+                        </button>
+                        <Link href="/services" className="flex items-center gap-2 text-xs font-bold font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest">
+                            <Lock size={12} />
+                            Get Expert Help
+                        </Link>
+                    </div>
                 </div>
             </nav>
 
@@ -1025,5 +1052,13 @@ export default function AUEBTool() {
                 />
             </div>
         </div>
+    );
+}
+
+export default function AUEBTool() {
+    return (
+        <Suspense fallback={<div className="max-w-7xl mx-auto p-12 text-center text-zinc-500 font-mono text-xs">Loading AUEB Margin Audit...</div>}>
+            <AUEBToolContent />
+        </Suspense>
     );
 }

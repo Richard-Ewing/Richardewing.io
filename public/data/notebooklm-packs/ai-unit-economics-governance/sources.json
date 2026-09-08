@@ -1,0 +1,27 @@
+{
+  "title": "AI Unit Economics and Autonomous Agent Governance",
+  "generatedAt": "2026-09-08T15:44:11.130Z",
+  "methodology": "MOD v3.2 Asset Engine closed-loop verification",
+  "empiricalFacts": [
+    {
+      "metric": "$58,000 / eng / yr",
+      "label": "Hidden AI maintenance overhead",
+      "source": "Enterprise AI Benchmark telemetry across 45 engineering orgs"
+    },
+    {
+      "metric": "4.8x",
+      "label": "Retry amplification rate without bounded output validation",
+      "source": "Exogram systems telemetry on unconstrained LLM agent loops"
+    },
+    {
+      "metric": "68%",
+      "label": "Gross margin degradation in unmetered multi-agent pipelines",
+      "source": "AUEB unit economics telemetry"
+    }
+  ],
+  "coreTheses": [
+    "Context rot is not a model intelligence defect; it is an architectural isolation failure.",
+    "A curriculum without an asset engine is commoditized courseware. Research must directly inform diagnostics and code.",
+    "Deterministic verification gates must run out-of-band to eliminate model self-rationalization debt."
+  ]
+}

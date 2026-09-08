@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 import DiagnosticCTA from '@/app/components/DiagnosticCTA';
 import CalculatorIntentProposal from '@/app/components/calculators/CalculatorIntentProposal';
 import AUEBTool from './content';
@@ -54,7 +55,9 @@ export default function Page() {
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
-            <AUEBTool />
+            <Suspense fallback={<div className="max-w-7xl mx-auto p-12 text-center text-zinc-500 font-mono text-xs">Loading AUEB Margin Audit...</div>}>
+                <AUEBTool />
+            </Suspense>
             <div className="page-container max-w-4xl mx-auto px-6 mb-16 space-y-12">
                 <CalculatorIntentProposal
                     toolName="AI Unit Economics Benchmark (AUEB)"

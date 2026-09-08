@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "tag": "Problem Diagnosis",
+    "title": "The Illusion of Agent Reliability",
+    "takeaway": "Agents demonstrate 90% benchmark accuracy in isolation but fail under multi-turn compounding context.",
+    "points": [
+      "Scratchpad memory buffers accumulate unverified intermediate outputs.",
+      "Error rates cascade exponentially when upstream hallucinations become downstream axioms.",
+      "Pure prompt engineering cannot solve state-space drift without mechanical fences."
+    ],
+    "metric": {
+      "value": "4.8x",
+      "label": "Retry amplification rate without bounded output validation"
+    },
+    "notes": "Context rot is an architectural boundary defect, not a training limitation."
+  },
+  {
+    "id": 2,
+    "tag": "Unit Economics",
+    "title": "The $58K Per-Engineer Hidden Maintenance Tax",
+    "takeaway": "Unmetered generative infrastructure shifts budget from feature delivery to token firefighting.",
+    "points": [
+      "Gross margin degradation of up to 48 percentage points on bundled AI features.",
+      "Engineers spend 11.4 hours weekly triaging probabilistic agent outputs.",
+      "Unbounded recursive retry loops generate unpredictable billing spikes."
+    ],
+    "metric": {
+      "value": "$58,000",
+      "label": "Annual hidden maintenance overhead per engineer"
+    },
+    "notes": "Calculated from AUEB and APER telemetry across enterprise engineering cohorts."
+  },
+  {
+    "id": 3,
+    "tag": "Architectural Pattern",
+    "title": "Deterministic Out-of-Band Governance",
+    "takeaway": "Never allow an autonomous agent to evaluate or declare its own completion.",
+    "points": [
+      "Enforce 4-tier closed loop QA (TypeScript, Regex Lint, Style Standard, Production Build).",
+      "Treat all LLM tool-calling endpoints as untrusted external RPCs.",
+      "Quarantine prompt injection payloads inside hardened sandbox delimiters."
+    ],
+    "metric": {
+      "value": "100%",
+      "label": "Deterministic pass requirement before git production deployment"
+    },
+    "notes": "Mechanical out-of-band linters prevent model self-rationalization."
+  }
+]
