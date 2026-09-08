@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 import DiagnosticCTA from '@/app/components/DiagnosticCTA';
 import CalculatorIntentProposal from '@/app/components/calculators/CalculatorIntentProposal';
 import PDITool from './content';
@@ -50,7 +51,9 @@ export default function Page() {
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
-            <PDITool />
+            <Suspense fallback={<div className="max-w-5xl mx-auto p-8 text-center text-zinc-500 font-mono text-xs">Loading PDI Diagnostic...</div>}>
+                <PDITool />
+            </Suspense>
             <div className="page-container max-w-4xl mx-auto px-6 mb-16 space-y-12">
                 <CalculatorIntentProposal
                     toolName="Product Debt Index (PDI) Calculator"

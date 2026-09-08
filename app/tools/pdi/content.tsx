@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { calculateProductDebtScore, PDIScoreMetrics } from '@/lib/diagnostics/scoring';
 import { getPersonaInsight, Persona, formatMoney } from '@/lib/diagnostics/interpretations';
 import { getRecommendedTracks } from '@/lib/diagnostics/recommendations';
@@ -22,7 +22,8 @@ import { GlowCard } from '../../components/magicui/glow-card';
 import ShineBorder from '../../components/magicui/shine-border';
 import NumberTicker from '../../components/magicui/number-ticker';
 import { BorderBeam } from '../../components/magicui/border-beam';
-import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, TrendingDown, AlertTriangle, Lock, Zap, Skull, Building2 } from 'lucide-react';
+import { useQueryState, parseAsInteger, parseAsString, parseAsStringLiteral } from 'nuqs';
+import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, TrendingDown, AlertTriangle, Lock, Zap, Skull, Building2, Share2, Check } from 'lucide-react';
 import { NewsletterForm } from '../../components/newsletter-form';
 import { ToolGateCTA } from '../../components/ToolGateCTA';
 import ToolGate from '../../components/tool-gate';
@@ -114,20 +115,23 @@ interface Results extends PDIScoreMetrics {
     }>;
 }
 
-export default function PDITool() {
+function PDIToolContent() {
     // Persona State
-    const [persona, setPersona] = useState<Persona>('Founder');
+    const [persona, setPersona] = useQueryState<Persona>(
+        'persona',
+        parseAsStringLiteral(['Founder', 'CPO', 'VP Eng', 'CFO'] as const).withDefault('Founder')
+    );
 
     // Progressive Disclosure State
     const [step, setStep] = useState(1);
 
     // Inputs
     const [tickets, setTickets] = useState('');
-    const [teamSize, setTeamSize] = useState(20);
-    const [salary, setSalary] = useState(240000);
-    const [prCycleHours, setPrCycleHours] = useState('48');
-    const [sprintLength, setSprintLength] = useState('2');
-    const [deployFreqDays, setDeployFreqDays] = useState('7');
+    const [teamSize, setTeamSize] = useQueryState('teamSize', parseAsInteger.withDefault(20));
+    const [salary, setSalary] = useQueryState('salary', parseAsInteger.withDefault(240000));
+    const [prCycleHours, setPrCycleHours] = useQueryState('prCycleHours', parseAsString.withDefault('48'));
+    const [sprintLength, setSprintLength] = useQueryState('sprintLength', parseAsString.withDefault('2'));
+    const [deployFreqDays, setDeployFreqDays] = useQueryState('deployFreqDays', parseAsString.withDefault('7'));
     
     // UI States
     const [loading, setLoading] = useState(false);
@@ -135,6 +139,15 @@ export default function PDITool() {
     const [results, setResults] = useState<Results | null>(null);
     const [showGate, setShowGate] = useState(false);
     const [showPaywall, setShowPaywall] = useState(false);
+    const [copiedLink, setCopiedLink] = useState(false);
+
+    const handleCopyShareLink = () => {
+        if (typeof window !== 'undefined') {
+            navigator.clipboard.writeText(window.location.href);
+            setCopiedLink(true);
+            setTimeout(() => setCopiedLink(false), 2000);
+        }
+    };
 
     // Email capture
 
@@ -249,11 +262,22 @@ export default function PDITool() {
     return (
         <div className="max-w-5xl w-full relative z-10 mx-auto px-4">
             <ToolCelebration show={!!results} toolName="PDI" />
-            {/* Breadcrumb */}
-            <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
-                <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
-                <span>/</span>
-                <span className="text-zinc-950 font-bold">PDI Engine</span>
+            {/* Breadcrumb & Share */}
+            <div className="mb-6 flex items-center justify-between">
+                <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
+                    <Link href="/system" className="hover:text-zinc-900 transition">Intelligence</Link>
+                    <span>/</span>
+                    <span className="text-zinc-950 font-bold">PDI Engine</span>
+                </div>
+                <button
+                    type="button"
+                    onClick={handleCopyShareLink}
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white/5 hover:bg-white/10 text-xs font-mono text-zinc-700 dark:text-zinc-300 transition"
+                    title="Copy shareable URL with current parameters"
+                >
+                    {copiedLink ? <Check size={14} className="text-emerald-500" /> : <Share2 size={14} />}
+                    <span>{copiedLink ? 'Link Copied' : 'Share Scenario'}</span>
+                </button>
             </div>
 
             {!results ? (
@@ -967,6 +991,14 @@ Migrate from Heroku to AWS"
                     </div>
                 </div>
             )}
-        </div >
+        </div>
+    );
+}
+
+export default function PDITool() {
+    return (
+        <Suspense fallback={<div className="max-w-5xl mx-auto p-8 text-center text-zinc-500 font-mono text-xs">Loading PDI Diagnostic...</div>}>
+            <PDIToolContent />
+        </Suspense>
     );
 }

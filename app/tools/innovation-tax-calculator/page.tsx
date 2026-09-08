@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 import PDITool from '../pdi/content';
 
 export const metadata: Metadata = {
@@ -24,5 +25,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-    return <PDITool />;
+    return (
+        <Suspense fallback={<div className="max-w-5xl mx-auto p-8 text-center text-zinc-500 font-mono text-xs">Loading Diagnostic...</div>}>
+            <PDITool />
+        </Suspense>
+    );
 }

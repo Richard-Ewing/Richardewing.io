@@ -150,6 +150,15 @@ for (const cf of conceptFiles) {
   }
 }
 
+// 7. Agent Skills Security & Hygiene Gate
+try {
+  const auditOutput = execSync(`node "${path.join(__dirname, 'audit-agent-skills.mjs')}"`, { encoding: 'utf8' });
+  console.log(auditOutput.trim());
+} catch (err) {
+  console.error(`[SECURITY ERROR] audit-agent-skills.mjs failed:\n${err.stdout || err.message}`);
+  errorCount++;
+}
+
 console.log('\n--- Verification Summary ---');
 console.log(`Files audited: ${filesToAudit.length}`);
 console.log(`Errors: ${errorCount}`);

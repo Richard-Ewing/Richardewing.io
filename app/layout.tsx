@@ -10,6 +10,7 @@ import { homepageKeywords } from './lib/keywords';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { ClerkProvider } from '@clerk/nextjs';
 import { PHProvider } from '@/lib/telemetry/posthog';
+import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
 const inter = { variable: 'font-sans' };
 const spaceGrotesk = { variable: 'font-grotesk' };
@@ -204,7 +205,9 @@ export default function RootLayout({
 
           {/* Main content */}
           <main className="flex-grow relative">
-            {children}
+            <NuqsAdapter>
+              {children}
+            </NuqsAdapter>
           </main>
 
           <Footer />
