@@ -4,6 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { ShieldCheck, Cpu, Wrench, Globe, Layers, ArrowRight, Zap, Target, AlertTriangle } from 'lucide-react';
 import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 import FAQItem from '@/app/components/FAQItem';
+import InteractiveSystemsDiagram from '@/components/InteractiveSystemsDiagram';
 
 export const metadata: Metadata = {
     title: '4-Layer Agent Runtime Architecture',
@@ -168,6 +169,11 @@ export default function RuntimeArchitecturePage() {
                     <p className="text-xs text-zinc-400 font-mono uppercase tracking-widest text-center mt-6">
                         This is the actual architecture. Not prompts. Not workflows. Runtime infrastructure.
                     </p>
+                </div>
+
+                {/* INTERACTIVE ARCHITECTURE MAP */}
+                <div className="mb-20">
+                    <InteractiveSystemsDiagram />
                 </div>
 
                 {/* WHY AGENTS FAIL */}

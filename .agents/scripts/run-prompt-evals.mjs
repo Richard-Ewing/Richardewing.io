@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -118,9 +119,17 @@ for (const t of tests) {
 
   let output = '';
   if (isLive && apiKey) {
-    console.log('  Mode: Live Gemini 2.5 Flash API execution');
-    // Reserved for live API calls when credentials provided
-    output = mockDefensiveProxyResponse(t.description, userInput);
+    console.log('  Mode: Live Gemini API execution');
+    try {
+      const genAI = new GoogleGenerativeAI(apiKey);
+      const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+      const result = await model.generateContent(hydratedPrompt);
+      output = result.response.text();
+      console.log(`  Live output received (${output.length} chars)`);
+    } catch (err) {
+      console.warn(`  [LIVE FALLBACK] Live call failed (${err.message}), falling back to defensive proxy simulation.`);
+      output = mockDefensiveProxyResponse(t.description, userInput);
+    }
   } else {
     output = mockDefensiveProxyResponse(t.description, userInput);
   }

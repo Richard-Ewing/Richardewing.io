@@ -47,9 +47,36 @@ export default function NotebookLMAudioPlayer({
     }
   }, [playbackRate]);
 
+  useEffect(() => {
+    return () => {
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
+
   const togglePlay = () => {
     if (!audioRef.current && !audioUrl) {
-      // Mock simulation mode if no audio file provided
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+        if (isPlaying) {
+          window.speechSynthesis.pause();
+          setIsPlaying(false);
+        } else {
+          if (window.speechSynthesis.paused) {
+            window.speechSynthesis.resume();
+          } else {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(transcript);
+            utterance.rate = playbackRate;
+            utterance.onend = () => setIsPlaying(false);
+            utterance.onerror = () => setIsPlaying(false);
+            window.speechSynthesis.speak(utterance);
+          }
+          setIsPlaying(true);
+        }
+        return;
+      }
+      // Simulation mode if speech synthesis is unavailable
       setIsPlaying(!isPlaying);
       return;
     }
