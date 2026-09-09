@@ -56,6 +56,32 @@ export default function Page() {
                         targetRole: 'CTOs & Heads of Engineering'
                     }}
                 />
+                <div className="mt-8 p-6 bg-white border border-zinc-300 rounded-2xl shadow-sm text-center">
+                    <p className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-500 mb-2">Primary Research &amp; Analysis</p>
+                    <h3 className="text-base font-bold text-zinc-950 mb-3">The Crisis of Autonomous Overproduction &amp; Review Debt</h3>
+                    <div className="flex flex-wrap justify-center gap-4 text-sm font-semibold">
+                        <a 
+                            href="https://theaieconomist.beehiiv.com/p/the-software-factory-is-running-24-7-and-nobody-wants-the-output-c01a"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-cyan-900 hover:text-cyan-700 underline underline-offset-4"
+                        >
+                            Read &quot;The Software Factory Is Running 24/7&quot; on Beehiiv ↗
+                        </a>
+                        <a 
+                            href="/concepts/software-factory-overproduction"
+                            className="text-indigo-900 hover:text-indigo-700 underline underline-offset-4"
+                        >
+                            Explore Software Factory Overproduction Concept →
+                        </a>
+                        <a 
+                            href="/glossary/software-factory-overproduction"
+                            className="text-emerald-900 hover:text-emerald-700 underline underline-offset-4"
+                        >
+                            Glossary Definition →
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     );

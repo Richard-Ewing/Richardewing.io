@@ -14,6 +14,57 @@ export interface Article {
 
 export const articles: Article[] = [
     {
+        slug: "software-factory-running-24-7",
+        title: "The Software Factory Is Running 24/7 (And Nobody Wants the Output)",
+        description: "Google dropped Gemini 3.8 Flash, OpenAI launched GPT-6 Astra, and tools churn out code faster than anyone can verify. Discover why autonomous code generation creates an overproduction crisis, how review debt chokes engineering, and the four personas navigating the AI shift.",
+        date: "September 2026",
+        readTime: "6 min read",
+        source: "Beehiiv",
+        category: "Software Economics",
+        externalUrl: "https://theaieconomist.beehiiv.com/p/the-software-factory-is-running-24-7-and-nobody-wants-the-output-c01a",
+        content: `
+            <p>If you spent the last five days doing actual work instead of staring at tech blogs, you missed an absolute circus. Google released Gemini 3.8 Flash down in the bargain basement: fractions of a cent for thousands of words. OpenAI launched GPT-6 Astra into ChatGPT, claiming it can take over your mouse and keyboard, build websites on the fly, and conduct multi-step research projects while you step away.</p>
+            <p>Yet sitting in an office looking at your calendar, nobody feels unburdened. We are living through a moment where machines generate work ten times faster than human beings can read, verify, or care about it.</p>
+            <h3>The Economics of Bargain-Bin Thinking</h3>
+            <p>When the supply of words and code costs virtually nothing, the quality of attention drops straight to zero. In the past, writing a six-page proposal took two days, which acted as a natural filter proving someone sweated the details. Now, someone types a sloppy sentence into an assistant and sends an eight-page memo.</p>
+            <p>The recipient knows it took twelve seconds to make, so they do not read it: they click a button to summarize it into three bullets. We have built an economy where one machine inflates a thought into 2,000 words of polite corporate filler, and another machine deflates it back down to twenty words, while humans pretend collaboration happened.</p>
+            <h3>The Surveillance Stress of Computer-Use Agents</h3>
+            <p>Autonomous agents driving your keyboard and mouse sound effortless in sanitized demos. But real corporate systems have two-factor authentication prompts that expire after sixty seconds, legacy forms with mismatched department codes, and image-based invoices. When an autonomous tool runs into those mundane speed bumps, it does not have common sense: it guesses.</p>
+            <p>The manual labor of typing was replaced by the pure stress of surveillance: sitting with hands hovering two inches above the keyboard, praying the agent does not send an unfinished pricing sheet to an active enterprise client.</p>
+            <h3>The Four Organizational Personas in the AI Shift</h3>
+            <ul>
+                <li><strong>The Panicked VP:</strong> Calls emergency meetings demanding 30% efficiency bumps, generating synthetic documentation theater to show the board while engineers work late cleaning up the mess.</li>
+                <li><strong>The Exhausted Auditor:</strong> Senior managers choking on Review Debt: spending thirty hours a week acting like high school teachers grading essays, debugging immaculate-looking output that conceals hallucinated competitors and bad arithmetic.</li>
+                <li><strong>The Quiet Operator:</strong> The person actually getting ahead. They treat AI like a fast, slightly distracted junior clerk for repetitive grunt work (cleaning messy mainframe exports, scanning 70-page building codes for setbacks, rewording awkward collection emails) while keeping judgment strictly human.</li>
+                <li><strong>The Naive Outsourcer:</strong> Automates customer support and outbound sales, trading human trust for cheap words and driving away enterprise clients with canned bots.</li>
+            </ul>
+            <h3>The Core Rule: Never Delegate Judgment</h3>
+            <p>Let software format, extract, summarize, and clean up messy text. But when it comes to strategy, ethics, pricing, and people, make the call yourself. The winners are not those spinning up the most agents; they are the ones who can look at a mountain of machine-generated noise, cut straight to the three things that are true, and put their own name on the result.</p>
+        `
+    },
+    {
+        slug: "ai-hype-cycle-exhausting",
+        title: "The AI Hype Cycle Is Exhausting",
+        description: "Why 90% of model release announcements are distracting noise for real businesses. Escape the software subscription trap, leverage the Interview Protocol, schedule overnight compute queues, and capture high-intent leads as AI answer engines replace the 10 blue links.",
+        date: "September 2026",
+        readTime: "8 min read",
+        source: "LinkedIn",
+        category: "AI Economics",
+        externalUrl: "https://www.linkedin.com/pulse/ai-hype-cycle-exhausting-richard-ewing-3bdic/",
+        content: `
+            <p>Every major tech company decided to drop model updates at the exact same time: OpenAI previewed frontier models, Anthropic pushed reasoning upgrades, Google released faster Flash models, and Grok slashed pricing. Overnight, feeds transformed into self-proclaimed futurists shouting that careers are finished without autonomous agent swarms.</p>
+            <p>It is exhausting, and it is mostly noise. Ninety percent of breathless weekly announcements do not matter to operators running real businesses. What operators need is simple: for Tuesday morning not to suck, to stop rewriting boring emails, and to stop burning cash on unused software subscriptions.</p>
+            <h3>The Software Subscription Trap</h3>
+            <p>Over the last eighteen months, the average operator has accumulated a ridiculous stack: $20 to ChatGPT, $20 to Claude, $30 to an AI video generator, $20 to transcription, and $50 to broken automation tools. Operators are burning nearly $200 a month on software they open once every two weeks.</p>
+            <p>The solution is consolidation. Core frontier models can handle 90% of what specialized micro-SaaS platforms charge premium fees for. Replace bloated third-party tools with one trusted model plus pay-as-you-go connectors, and return that cash to your operating budget.</p>
+            <h3>The Silent Death of the 10 Blue Links</h3>
+            <p>For two decades, small businesses played the SEO agency extortion game: awkward keywords and paid backlink placements. That game is collapsing. Buyers now ask ChatGPT, Claude, or Perplexity for direct recommendations.</p>
+            <p>While direct traffic from AI search engines represents only 0.5% to 2% of total visitors, that slice often delivers 10% to 15% of qualified sales conversations because AI answer engines pre-sell the buyer. To capitalize, replace generic marketing brochure copy with specific, literal questions buyers ask, followed by concrete numbers, project timelines, and clean comparison tables.</p>
+            <h3>The Interview Protocol &amp; Overnight Compute</h3>
+            <p>Stop treating AI like a casual text messenger that returns agreeable platitudes. Use the Interview Protocol: instruct the model, 'Before you draft a single sentence, interview me. Ask me five specific questions about my budget, target audience, and constraints.' Furthermore, avoid screen babysitting: queue heavy synthesis tasks at 5:00 PM for background execution while you sleep.</p>
+        `
+    },
+    {
         slug: "bootstrappers-cloud-credit-playbook",
         title: "The Bootstrapper's Cloud Credit Playbook",
         description: "When building software as a solo founder, cash flow preservation is everything. How systematic execution across AWS Activate, Google for Startups Cloud, and Microsoft Founders Hub secures $100,000+ in non-dilutive infrastructure capital, eliminates first-year cloud overhead, and captures authoritative domain backlinks while executing defensive domain acquisition.",

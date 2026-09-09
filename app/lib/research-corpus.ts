@@ -27,6 +27,42 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
+  // Today's Beehiiv Newsletter - September 9, 2026
+  {
+    id: 'beehiiv-software-factory-running-24-7',
+    title: 'The Software Factory Is Running 24/7 (And Nobody Wants the Output)',
+    url: 'https://theaieconomist.beehiiv.com/p/the-software-factory-is-running-24-7-and-nobody-wants-the-output-c01a',
+    publisher: 'Beehiiv',
+    domain: 'Software Economics',
+    type: 'Executable',
+    date: 'September 9, 2026',
+    thesis: 'When foundational models become hyper-cheap and agentic tools run mouse and keyboard actions 24/7, code generation outpaces human review capacity by orders of magnitude. The inflation-deflation loop floods companies with synthetic work that nobody requested, shifting true enterprise value from feature production to ruthless deprecation, product discovery, and human boundary control.',
+    editorsPick: false,
+    relatedConceptIds: ['software-factory-overproduction', 'engineering-bottleneck-illusion', 'failure-cost-asymmetry', 'vibe-coding-debt', 'product-economist', 'review-debt'],
+    relatedGlossarySlugs: ['software-factory-overproduction', 'review-debt', 'cleanup-time-metric', 'failure-cost-asymmetry'],
+    relatedFrameworkSlugs: ['governed-execution', 'runtime-vs-alignment'],
+    relatedToolIds: ['code-review-bottleneck-calc', 'copilot-roi', 'pdi'],
+    relatedCaseStudyIds: ['cursor-to-antigravity-startup-governance', 'runtime-concurrency-failures'],
+    relatedCurriculumTrackIds: ['agentic-engineering', 'engineering-economics', 'product-economics']
+  },
+  // Today's LinkedIn Newsletter - September 7, 2026
+  {
+    id: 'linkedin-ai-hype-cycle-exhausting',
+    title: 'The AI Hype Cycle Is Exhausting',
+    url: 'https://www.linkedin.com/pulse/ai-hype-cycle-exhausting-richard-ewing-3bdic/',
+    publisher: 'LinkedIn',
+    domain: 'AI Economics',
+    type: 'Executable',
+    date: 'September 7, 2026',
+    thesis: 'Ninety percent of weekly AI release announcements and model benchmark wars are distracting noise for real-world businesses. Operators maximize economic returns by avoiding the fragmented micro-SaaS subscription trap, treating AI as a junior clerk with the Interview Protocol, scheduling heavy compute to overnight batch queues, and formatting service offerings for direct quotation by AI answer engines rather than gaming dead ten-blue-links SEO.',
+    editorsPick: false,
+    relatedConceptIds: ['ai-hype-cycle-exhaustion', 'rented-intelligence-vs-owned-capital', 'ai-volatility-tax', 'product-economist', 'non-dilutive-infrastructure-capital'],
+    relatedGlossarySlugs: ['ai-hype-cycle-exhaustion', 'software-subscription-trap', 'interview-protocol', 'vendor-neutral-control-gateway'],
+    relatedFrameworkSlugs: ['governed-execution', 'runtime-vs-alignment'],
+    relatedToolIds: ['aueb', 'copilot-roi', 'slm-vs-api'],
+    relatedCaseStudyIds: ['cursor-to-antigravity-startup-governance', 'exogram-inference-dividend-optimization'],
+    relatedCurriculumTrackIds: ['ai-economics', 'engineering-economics', 'cloud-finops']
+  },
   // Today's Beehiiv Newsletter - September 4, 2026
   {
     id: 'beehiiv-bootstrappers-cloud-credit-playbook',
@@ -949,6 +985,20 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
   },
   // Beehiiv Newsletters
   {
+    id: 'beehiiv-software-factory-running-24-7-archive',
+    title: 'The Software Factory Is Running 24/7 (And Nobody Wants the Output)',
+    url: 'https://theaieconomist.beehiiv.com/p/the-software-factory-is-running-24-7-and-nobody-wants-the-output-c01a',
+    publisher: 'Beehiiv',
+    domain: 'Software Economics',
+    type: 'Executable',
+    thesis: 'Exposes the crisis of autonomous code overproduction, the inflation-deflation loop of synthetic work, and the four personas navigating AI automation.',
+    date: 'September 2026',
+    editorsPick: false,
+    relatedConceptIds: ['software-factory-overproduction', 'engineering-bottleneck-illusion', 'failure-cost-asymmetry', 'vibe-coding-debt', 'product-economist'],
+    relatedGlossarySlugs: ['software-factory-overproduction', 'review-debt', 'cleanup-time-metric'],
+    relatedToolIds: ['code-review-bottleneck-calc', 'copilot-roi', 'pdi']
+  },
+  {
     id: 'beehiiv-bootstrappers-cloud-credit-playbook-archive',
     title: "The Bootstrapper's Cloud Credit Playbook",
     url: 'https://theaieconomist.beehiiv.com/p/the-bootstrapper-s-cloud-credit-playbook',
@@ -1016,6 +1066,20 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
   },
 
   // LinkedIn Newsletters & Executive Essays (25+ Articles)
+  {
+    id: 'linkedin-ai-hype-cycle-exhausting-archive',
+    title: 'The AI Hype Cycle Is Exhausting',
+    url: 'https://www.linkedin.com/pulse/ai-hype-cycle-exhausting-richard-ewing-3bdic/',
+    publisher: 'LinkedIn',
+    domain: 'AI Economics',
+    type: 'Executable',
+    thesis: 'Practical guide to escaping the software subscription trap, using the Interview Protocol, and restructuring web content for AI answer engines.',
+    date: 'September 2026',
+    editorsPick: false,
+    relatedConceptIds: ['ai-hype-cycle-exhaustion', 'rented-intelligence-vs-owned-capital', 'ai-volatility-tax', 'non-dilutive-infrastructure-capital'],
+    relatedGlossarySlugs: ['ai-hype-cycle-exhaustion', 'software-subscription-trap', 'interview-protocol'],
+    relatedToolIds: ['aueb', 'copilot-roi', 'slm-vs-api']
+  },
   {
     id: 'linkedin-engineering-bottleneck-illusion',
     title: 'The Engineering Bottleneck Illusion: What Copilot Adoption Taught Us',

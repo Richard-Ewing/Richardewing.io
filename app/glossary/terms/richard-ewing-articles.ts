@@ -312,5 +312,65 @@ export const richardEwingArticleTerms: GlossaryTerm[] = [
         relatedArticles: [
             { title: "The Bootstrapper's Cloud Credit Playbook", url: 'https://theaieconomist.beehiiv.com/p/the-bootstrapper-s-cloud-credit-playbook' }
         ]
+    },
+    {
+        slug: 'software-factory-overproduction',
+        title: 'Software Factory Overproduction',
+        category: 'Richard Ewing Frameworks',
+        definition: `Software Factory Overproduction is a software economics principle formulated by Richard Ewing in The AI Economist (Beehiiv) stating that as inference costs collapse and autonomous agents gain operating-system control, software factories run 24/7 generating code and synthetic documentation faster than human engineers can read, verify, or care about it.\n\nThis dynamic creates an inflation-deflation loop where one AI inflates a simple thought into 2,000 words of corporate filler, and the recipient uses another AI to summarize it back into three bullet points. In software engineering, this causes an overproduction crisis where unrequested pull requests flood review queues, shifting the primary constraint from typing syntax to managing review debt and bearing the surveillance stress of computer-use agents.\n\nTo preserve organizational sanity and margins, leadership must enforce pre-review compiler gates and establish the prime boundary rule: never delegate judgment to automated agents.`,
+        whyItMatters: `When code costs virtually nothing to generate, human attention becomes the ultimate bottleneck. Unchecked software factories paralyze engineering organizations under review debt while generating zero marginal customer value.`,
+        faqs: [
+            { question: 'What is Software Factory Overproduction?', answer: 'The structural crisis where autonomous AI agents churn out code and synthetic documentation 24/7 that exceed human verification capacity and customer demand.' },
+            { question: 'How does Software Factory Overproduction create Review Debt?', answer: 'Because AI code looks clean on the surface, senior engineers spend up to 30 hours a week acting as human compilers, hunting for subtle hallucinated dependencies and faulty business logic.' }
+        ],
+        relatedTerms: ['engineering-bottleneck-illusion', 'cleanup-time-metric', 'failure-cost-asymmetry', 'vibe-coding-debt', 'systems-governor'],
+        relatedArticles: [
+            { title: 'The Software Factory Is Running 24/7 (And Nobody Wants the Output)', url: 'https://theaieconomist.beehiiv.com/p/the-software-factory-is-running-24-7-and-nobody-wants-the-output-c01a' }
+        ]
+    },
+    {
+        slug: 'ai-hype-cycle-exhaustion',
+        title: 'AI Hype Cycle Exhaustion',
+        category: 'Richard Ewing Frameworks',
+        definition: `AI Hype Cycle Exhaustion is an operational and financial framework formulated by Richard Ewing in LinkedIn Newsletters diagnosing the severe fatigue and capital misallocation experienced by businesses attempting to keep pace with weekly foundation model benchmark churn.\n\nRather than accelerating business velocity, participating in the hype cycle leads to the Software Subscription Trap: where companies burn hundreds of dollars monthly across fragmented micro-SaaS subscriptions that core frontier models now handle natively.\n\nTo capture sustainable ROI, operators must execute four defensive practices: 1) Consolidate to a primary trusted model with pay-as-you-go connectors, 2) Deploy the Interview Protocol to force structured back-and-forth clarification before generation, 3) Offload heavy synthesis to overnight batch compute queues, and 4) Restructure web pages into direct-quote question-and-answer tables optimized for conversational AI answer engines rather than legacy 10-blue-links SEO.`,
+        whyItMatters: `Chasing weekly model updates wastes capital on redundant tooling. High-margin operators focus on boring consistency, subscription consolidation, and direct quotation by generative answer engines.`,
+        faqs: [
+            { question: 'What is AI Hype Cycle Exhaustion?', answer: 'The burnout and financial waste caused by reacting to weekly model releases and benchmark marketing instead of focusing on profitable operational workflows.' },
+            { question: 'How does the Interview Protocol counter hype cycle fatigue?', answer: 'It replaces casual chat prompts with a structured routine where the AI interviews the user with 5 clarifying questions before writing, eliminating generic filler.' }
+        ],
+        relatedTerms: ['software-subscription-trap', 'interview-protocol', 'rented-intelligence-vs-owned-capital', 'ai-volatility-tax', 'non-dilutive-infrastructure-use'],
+        relatedArticles: [
+            { title: 'The AI Hype Cycle Is Exhausting', url: 'https://www.linkedin.com/pulse/ai-hype-cycle-exhausting-richard-ewing-3bdic/' }
+        ]
+    },
+    {
+        slug: 'software-subscription-trap',
+        title: 'Software Subscription Trap',
+        category: 'Richard Ewing Frameworks',
+        definition: `The Software Subscription Trap is a SaaS capital expenditure anti-pattern identified by Richard Ewing in LinkedIn Newsletters where solopreneurs and enterprises accumulate dozens of specialized micro-SaaS subscriptions ($20 to $50 each per month for transcription, slide design, video editing, and workflow automation) that core frontier LLMs can now perform natively for fractions of a cent.\n\nEscaping the trap requires conducting a ruthless software audit, consolidating to one trusted frontier model plus lightweight pay-as-you-go connectors, and returning wasted subscription overhead directly to the operating budget.`,
+        whyItMatters: `Accumulating fragmented AI point solutions burns operating cash on tools used only once or twice a month while creating brittle, disconnected data silos.`,
+        faqs: [
+            { question: 'What is the Software Subscription Trap?', answer: 'The unchecked accumulation of monthly micro-SaaS licenses that core frontier models render obsolete.' },
+            { question: 'How do companies escape the subscription trap?', answer: 'By auditing monthly credit card spend, eliminating redundant single-purpose tools, and replacing them with pay-as-you-go API calls or native frontier model capabilities.' }
+        ],
+        relatedTerms: ['ai-hype-cycle-exhaustion', 'rented-intelligence-vs-owned-capital', 'ai-volatility-tax', 'non-dilutive-infrastructure-use'],
+        relatedArticles: [
+            { title: 'The AI Hype Cycle Is Exhausting', url: 'https://www.linkedin.com/pulse/ai-hype-cycle-exhausting-richard-ewing-3bdic/' }
+        ]
+    },
+    {
+        slug: 'interview-protocol',
+        title: 'Interview Protocol',
+        category: 'Richard Ewing Frameworks',
+        definition: `The Interview Protocol is an operational prompt architecture formulated by Richard Ewing in LinkedIn Newsletters designed to eliminate hallucinated corporate filler and align AI generation with strategic business intent.\n\nInstead of treating AI like a casual text messenger and issuing raw, unconstrained drafting prompts, the user instructs the model: "Before you draft a single sentence, interview me. Ask me five specific questions about my budget, my target audience, and what I refuse to compromise on."\n\nThis reverses the cognitive posture: it forces the system to uncover strategic constraints and forces the operator to clarify trade-offs, yielding actionable, context-rich execution plans.`,
+        whyItMatters: `Treating AI like a casual chat buddy produces polite, agreeable platitudes. The Interview Protocol forces rigorous discovery, making the resulting output ten times more actionable.`,
+        faqs: [
+            { question: 'What is the Interview Protocol?', answer: 'A structured prompt technique by Richard Ewing where the user mandates that the AI interview them with 5 clarifying questions before producing any draft or analysis.' },
+            { question: 'Why is the Interview Protocol superior to standard prompts?', answer: 'It prevents the model from making wild assumptions, strips out corporate filler, and clarifies strategic trade-offs before writing begins.' }
+        ],
+        relatedTerms: ['ai-hype-cycle-exhaustion', 'deterministic-execution-control', 'governed-execution', 'software-factory-overproduction'],
+        relatedArticles: [
+            { title: 'The AI Hype Cycle Is Exhausting', url: 'https://www.linkedin.com/pulse/ai-hype-cycle-exhausting-richard-ewing-3bdic/' }
+        ]
     }
 ];

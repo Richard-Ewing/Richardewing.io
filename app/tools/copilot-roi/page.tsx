@@ -67,11 +67,33 @@ export default function Page() {
                             rel="noopener noreferrer"
                             className="text-indigo-900 hover:text-indigo-700 underline underline-offset-4"
                         >
-                            Read "The Engineering Bottleneck Illusion" on LinkedIn ↗
+                            Read &quot;The Engineering Bottleneck Illusion&quot; on LinkedIn ↗
+                        </a>
+                        <a 
+                            href="https://theaieconomist.beehiiv.com/p/the-software-factory-is-running-24-7-and-nobody-wants-the-output-c01a"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-cyan-900 hover:text-cyan-700 underline underline-offset-4"
+                        >
+                            Read &quot;The Software Factory Is Running 24/7&quot; on Beehiiv ↗
+                        </a>
+                        <a 
+                            href="https://www.linkedin.com/pulse/ai-hype-cycle-exhausting-richard-ewing-3bdic/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-purple-900 hover:text-purple-700 underline underline-offset-4"
+                        >
+                            Read &quot;The AI Hype Cycle Is Exhausting&quot; on LinkedIn ↗
+                        </a>
+                        <a 
+                            href="/concepts/software-factory-overproduction"
+                            className="text-emerald-900 hover:text-emerald-700 underline underline-offset-4"
+                        >
+                            Explore Software Factory Overproduction Concept →
                         </a>
                         <a 
                             href="/glossary/engineering-bottleneck-illusion"
-                            className="text-emerald-900 hover:text-emerald-700 underline underline-offset-4"
+                            className="text-zinc-900 hover:text-zinc-700 underline underline-offset-4"
                         >
                             Explore Engineering Bottleneck Illusion Concept →
                         </a>

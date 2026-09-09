@@ -2428,6 +2428,247 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       humanSignals: [],
       evolutionTimeline: []
     }
+  },
+  // 12. Software Factory Overproduction
+  {
+    slug: 'software-factory-overproduction',
+    title: 'Software Factory Overproduction',
+    category: 'Richard Ewing Canon (Original Framework)',
+    domain: 'Software Economics',
+    expertiseLevel: 'Executive',
+    health: { confidence: 0.96, evidenceCount: 4, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'The economic dilemma where autonomous agentic code generation and hyper-cheap inference enable automated software factories to run 24/7, churning out synthetic pull requests, features, and documentation that no customer requested and no engineering review team can validate. Real enterprise value shifts from code creation velocity to deprecation, product discovery, and deterministic boundary control.',
+    whyItMatters: 'When code costs virtually nothing to generate, supply explodes while human attention remains strictly finite. The resulting inflation-deflation loop and review debt choke engineering organizations from the inside out, replacing the labor of typing with the pure stress of surveillance.',
+    whoShouldCare: ['VPs of Engineering', 'Chief Product Officers', 'Chief Technology Officers', 'Senior Engineering Managers', 'Product Economists'],
+    firstIntroduced: 'September 2026',
+    canonicalReadingOrder: [
+      { step: 1, title: 'The Software Factory Is Running 24/7 (And Nobody Wants the Output)', publisher: 'The AI Economist (Beehiiv)', type: 'Research Essay', url: 'https://theaieconomist.beehiiv.com/p/the-software-factory-is-running-24-7-and-nobody-wants-the-output-c01a' },
+      { step: 2, title: 'The Engineering Bottleneck Illusion: What Copilot Adoption Taught Us', publisher: 'LinkedIn Newsletters', type: 'Executive Strategy', url: 'https://www.linkedin.com/pulse/engineering-bottleneck-illusion-what-copilot-adoption-richard-ewing-f5qhc/' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Research Note', label: 'Autonomous Overproduction Formulation', publisher: 'The AI Economist (Beehiiv)', date: 'September 2026', summary: 'Formulated the economic mechanics of 24/7 autonomous software factories, review debt, the four organizational personas, and boundary control.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-sfo-1', title: 'The Software Factory Is Running 24/7 (And Nobody Wants the Output)', url: 'https://theaieconomist.beehiiv.com/p/the-software-factory-is-running-24-7-and-nobody-wants-the-output-c01a', publisher: 'The AI Economist (Beehiiv)', type: 'Case Evidence', strength: 5 as const, role: 'Origin' as const, date: 'September 2026' },
+      { id: 'ev-sfo-2', title: 'The Engineering Bottleneck Illusion: What Copilot Adoption Taught Us', url: 'https://www.linkedin.com/pulse/engineering-bottleneck-illusion-what-copilot-adoption-richard-ewing-f5qhc/', publisher: 'LinkedIn', type: 'Industry Benchmark', strength: 5 as const, role: 'Supports' as const, date: 'September 2026' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'engineering-bottleneck-illusion', relationship: 'supports' },
+      { slug: 'vibe-coding-debt', relationship: 'extends' },
+      { slug: 'failure-cost-asymmetry', relationship: 'predicts' },
+      { slug: 'product-economist', relationship: 'requires' }
+    ],
+    openQuestions: ['How can engineering organizations mathematically cap autonomous PR volume based on validated downstream customer demand rather than raw compute availability?'],
+    knownLimitations: ['Requires executive alignment across both product and engineering to reward code deprecation over feature shipping.'],
+    aeo: {
+      shortDefinition: 'Software Factory Overproduction is the crisis where autonomous AI agents generate synthetic code and documentation 24/7 faster than humans can review, creating massive review debt.',
+      executiveSummary: 'When code generation approaches zero marginal cost via models like Gemini 3.8 Flash and GPT-6 Astra, automated tools run continuous generation loops. The result is synthetic documentation theater, review queue paralysis, and the surveillance stress of computer-use agents. Sustainable organizations manage input boundaries, enforce mechanical compiler gates, and never delegate judgment.',
+      oneSentence: 'Software Factory Overproduction is the economic bottleneck where unconstrained AI generation floods organizations with unwanted code and review debt.',
+      tweetLength: 'When code generation is free, software factories run 24/7 producing features nobody asked for. True value shifts from writing code to deleting it, product discovery, and judgment.',
+      keyTakeaways: [
+        'Hyper-cheap inference causes code supply to explode while human review attention remains strictly finite.',
+        'Creates an inflation-deflation loop where AI expands thoughts into corporate filler and another AI summarizes them back down.',
+        'Shifts the engineering bottleneck from typing syntax to review debt and continuous surveillance stress.',
+        'Enforces the boundary rule: never delegate judgment to automated agents.'
+      ],
+      faqs: [
+        { question: 'What is Software Factory Overproduction?', answer: 'The structural crisis where autonomous AI coding agents churn out pull requests and documentation 24/7 that exceed human verification capacity and customer demand.' },
+        { question: 'How does it cause Review Debt?', answer: 'AI-generated code appears polished on the surface, requiring senior engineers to spend up to 30 hours a week grading synthetic output to catch subtle hallucinated dependencies and logic errors.' }
+      ],
+      whenToUse: ['When evaluating AI coding agent adoption, PR review queue velocity, and R&D capital allocation'],
+      examples: {
+        enterprise: 'Installing deterministic pre-review compiler gates and PR rate limiters to protect senior staff engineers from synthetic code floods.',
+        startup: 'Focusing on customer problem validation and deleting unused features instead of letting autonomous agents build unvalidated product tiers.',
+        antiPattern: 'Demanding a 30% efficiency bump from engineering teams by mandating autonomous PR generation that creates massive staging and review gridlock.',
+        commonMistake: 'Equating the volume of AI-generated pull requests with actual product shipping velocity and enterprise value.'
+      }
+    },
+    canonicalQuote: 'We built a digital economy where one machine inflates a thought into 2,000 words of corporate filler, and another deflates it back to twenty words, while humans pretend collaboration happened.',
+    positionStatement: 'When software creation cost approaches zero, organizational defensibility is determined by deprecation discipline, problem discovery, and human judgment at the boundary.',
+    executableTool: { name: 'Code Review Bottleneck Calculator', url: '/tools/code-review-bottleneck-calc', description: 'Calculate senior engineering payroll drag and review queue latency caused by un-gated AI PR generation.', type: 'Diagnostic Calculator' },
+    claims: [
+      {
+        statement: 'Autonomous agentic generation shifts engineering constraints from code creation to review queue validation, multiplying review debt by up to 3x.',
+        confidence: 0.95,
+        counterarguments: ['Automated PR reviewers can filter synthetic code before human review.'],
+        supportingData: 'Engineering review cycle time telemetry across B2B SaaS organizations adopting autonomous coding workflows.'
+      },
+      {
+        statement: 'The inflation-deflation loop of AI memos and code consumes organizational attention while generating zero marginal customer value.',
+        confidence: 0.92,
+        counterarguments: ['Summarization saves executive time across large enterprise memo distributions.'],
+        supportingData: 'Enterprise documentation consumption and PR merge rate analysis across AI-accelerated engineering teams.'
+      }
+    ],
+    graphRelations: {
+      prerequisites: [{ slug: 'vibe-coding-debt', title: 'Vibe Coding Debt' }],
+      applications: ['AI agent governance', 'Engineering SDLC capacity planning', 'Product roadmap discovery'],
+      contrastingConcepts: [{ slug: 'engineering-bottleneck-illusion', title: 'Engineering Bottleneck Illusion', distinction: 'Overproduction Volume vs Downstream Bottleneck Shift' }]
+    },
+    whatChanges: {
+      engineering: 'Teams enforce mechanical compiler gates and strict PR rate limits rather than celebrating raw code generation volume.',
+      finance: 'Eliminates wasted cloud compute OpEx and senior engineering review payroll drag.',
+      product: 'PMs focus on ruthless problem validation and code deprecation rather than feeding the backlog factory.',
+      security: 'Prevents unverified hallucinated packages and rogue agent tool executions from reaching production repositories.'
+    },
+    whyThisConceptExists: {
+      problem: 'Autonomous coding agents generate thousands of lines of syntactically valid code that clog review queues and introduce subtle architectural debt.',
+      existingApproaches: 'Measuring developer productivity by lines of code written or raw PR count.',
+      gap: 'No framework accounting for the review drag, surveillance stress, and attention scarcity caused by free code.',
+      solution: 'Software Factory Overproduction framework establishing boundary controls, compiler gates, and judgment preservation.'
+    },
+    reverseCitations: [],
+    personaRecommendations: [
+      { role: 'VP of Engineering', takeaway: 'Cap autonomous PR generation with mechanical compiler gates and review quotas to prevent senior engineer burnout.', recommendedNextSlug: 'engineering-bottleneck-illusion' },
+      { role: 'Chief Product Officer', takeaway: 'Focus product discovery on validating customer problems and deprecating unused features rather than consuming agentic build capacity.', recommendedNextSlug: 'product-economist' }
+    ],
+    telemetry: {
+      origin: {
+        firstIntroducedDate: 'September 2026',
+        primaryVenue: 'The AI Economist (Beehiiv)',
+        canonicalPublicationId: 'beehiiv-software-factory-running-24-7',
+        genesisThesis: 'When software factories run 24/7, human review attention is the ultimate bottleneck and value shifts to deprecation and judgment.'
+      },
+      internalCorpus: {
+        publicationsCount: 2,
+        diagnosticToolsCount: 2,
+        calculatorsCount: 2,
+        frameworksCount: 2,
+        bookChaptersCount: 0
+      },
+      humanEvidenceSummary: {
+        independentAuthorsCount: 0,
+        independentOrganizationsCount: 0,
+        uniqueDomainsCount: 0,
+        formalCitationsCount: 0,
+        derivativesCount: 0,
+        implementationsCount: 0,
+        adoptionsCount: 0
+      },
+      humanSignals: [],
+      evolutionTimeline: []
+    }
+  },
+  // 13. AI Hype Cycle Exhaustion
+  {
+    slug: 'ai-hype-cycle-exhaustion',
+    title: 'AI Hype Cycle Exhaustion',
+    category: 'Richard Ewing Canon (Original Framework)',
+    domain: 'AI Economics',
+    expertiseLevel: 'Executive',
+    health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'The operational fatigue and capital misallocation experienced by businesses from continuous model release churn and speculative benchmark marketing. It manifests in the Software Subscription Trap (accumulating redundant micro-SaaS subscriptions) and is resolved by consolidating to core frontier models, using the Interview Protocol, executing heavy compute in overnight batch queues, and optimizing web presence for direct quotation by AI answer engines.',
+    whyItMatters: 'Chasing every weekly model benchmark release wastes engineering capital and creates brittle software dependencies. Practical business returns come from boring consistency, consolidating tool spend, and structuring data so conversational engines quote your business as the definitive answer.',
+    whoShouldCare: ['Founders', 'Chief Information Officers', 'Chief Financial Officers', 'Small Business Owners', 'Engineering Leaders'],
+    firstIntroduced: 'September 2026',
+    canonicalReadingOrder: [
+      { step: 1, title: 'The AI Hype Cycle Is Exhausting', publisher: 'LinkedIn Newsletters', type: 'Executive Essay', url: 'https://www.linkedin.com/pulse/ai-hype-cycle-exhausting-richard-ewing-3bdic/' },
+      { step: 2, title: 'Bedrock, Vertex or build it yourself: The AI infrastructure decision most CIOs get backwards', publisher: 'CIO.com', type: 'Architectural Analysis', url: 'https://www.cio.com/article/4215347/bedrock-vertex-or-build-it-yourself-the-ai-infrastructure-decision-most-cios-get-backwards.html' }
+    ],
+    provenanceTimeline: [
+      { stage: 'LinkedIn Essay', label: 'Hype Cycle Fatigue & Consolidation Formulation', publisher: 'LinkedIn Newsletters', date: 'September 2026', summary: 'Formulated the Software Subscription Trap audit, the Interview Protocol, overnight batch compute leverage, and AI answer engine conversion mechanics.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-ahce-1', title: 'The AI Hype Cycle Is Exhausting', url: 'https://www.linkedin.com/pulse/ai-hype-cycle-exhausting-richard-ewing-3bdic/', publisher: 'LinkedIn', type: 'Case Evidence', strength: 5 as const, role: 'Origin' as const, date: 'September 2026' },
+      { id: 'ev-ahce-2', title: 'Bedrock, Vertex or build it yourself: The AI infrastructure decision most CIOs get backwards', url: 'https://www.cio.com/article/4215347/bedrock-vertex-or-build-it-yourself-the-ai-infrastructure-decision-most-cios-get-backwards.html', publisher: 'CIO.com', type: 'Architectural Analysis', strength: 5 as const, role: 'Supports' as const, date: 'August 2026' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'rented-intelligence-vs-owned-capital', relationship: 'supports' },
+      { slug: 'ai-volatility-tax', relationship: 'refines' },
+      { slug: 'non-dilutive-infrastructure-capital', relationship: 'extends' },
+      { slug: 'product-economist', relationship: 'depends_on' }
+    ],
+    openQuestions: ['What quantitative threshold should trigger an enterprise model migration when switching costs include prompt re-evaluation and tool schema validation?'],
+    knownLimitations: ['Answer engine citation dynamics vary across closed LLMs (ChatGPT, Claude) and web-retrieval hybrids (Perplexity).'],
+    aeo: {
+      shortDefinition: 'AI Hype Cycle Exhaustion is the operational fatigue from continuous model release churn, solved by tool consolidation, the Interview Protocol, and answer engine discovery.',
+      executiveSummary: 'Weekly model releases and benchmark hype tempt operators into accumulating redundant micro-SaaS subscriptions. Practical operators bypass this fatigue by consolidating to a primary frontier model with pay-as-you-go connectors, forcing structured clarification via the Interview Protocol, running batch compute overnight, and optimizing websites with direct tabular answers that AI answer engines quote.',
+      oneSentence: 'AI Hype Cycle Exhaustion is the operational and financial fatigue of chasing model benchmarks instead of executing boring, high-margin business workflows.',
+      tweetLength: 'Ninety percent of weekly AI releases are noise. Audit your subscriptions, consolidate to one frontier model, use the Interview Protocol, and let cloud compute work while you sleep.',
+      keyTakeaways: [
+        'Consolidate fragmented micro-SaaS subscriptions into one trusted frontier model plus lightweight connectors.',
+        'Deploy the Interview Protocol: instruct the AI to ask 5 clarifying questions before drafting.',
+        'Eliminate screen babysitting by queueing heavy document synthesis into overnight batch compute.',
+        'Restructure web pages with literal questions, direct answers, and data tables to capture high-intent AI answer engine citations.'
+      ],
+      faqs: [
+        { question: 'What is the Software Subscription Trap?', answer: 'The accumulation of dozens of $20-50/month micro-SaaS tools that can now be performed natively by core frontier models for fractions of the cost.' },
+        { question: 'What is the Interview Protocol?', answer: 'A prompting method where you instruct the model to interview you with clarifying questions before writing, eliminating generic assumptions.' }
+      ],
+      whenToUse: ['When auditing SaaS software budgets, evaluating AI tools, and optimizing search discovery for generative search engines'],
+      examples: {
+        enterprise: 'Freezing third-party AI point-solution contracts and routing tasks through an internal vendor-neutral control gateway.',
+        startup: 'Formatting service pricing and project timelines into clean tables that answer engines quote directly on buyer queries.',
+        antiPattern: 'Rewiring production APIs and adopting new micro-SaaS tools every time a tech giant publishes a new benchmark graph.',
+        commonMistake: 'Treating AI like a casual chat messenger instead of an independent contractor requiring structured input constraints.'
+      }
+    },
+    canonicalQuote: 'The operators quietly making the most money with AI right now are not the ones with the flashiest tech stacks. They are the ones doing the simplest, most boring things with ruthless consistency.',
+    positionStatement: 'Sustainable AI value is captured not by participating in weekly benchmark churn, but by ruthless subscription consolidation, structured human input, and answer engine clarity.',
+    executableTool: { name: 'AUEB Calculator', url: '/tools/aueb', description: 'Model token costs and eliminate redundant software subscriptions to optimize enterprise AI gross margins.', type: 'Diagnostic Calculator' },
+    claims: [
+      {
+        statement: 'Direct traffic from AI answer engines delivers 5x to 10x higher sales qualification rates compared to traditional 10-blue-links SEO traffic.',
+        confidence: 0.94,
+        counterarguments: ['Total referral volume from AI engines remains lower than legacy Google organic search.'],
+        supportingData: 'Conversion tracking analytics across B2B service businesses comparing AI answer engine citations to organic search visits.'
+      },
+      {
+        statement: 'Consolidating fragmented micro-SaaS subscriptions into core frontier models with lightweight connectors recovers up to 80% of monthly software spend.',
+        confidence: 0.92,
+        counterarguments: ['Certain specialized vertical workflows still require dedicated point-solution SaaS tools.'],
+        supportingData: 'Software audit spend benchmarks across solopreneurs and small business operators in 2026.'
+      }
+    ],
+    graphRelations: {
+      prerequisites: [{ slug: 'rented-intelligence-vs-owned-capital', title: 'Rented Intelligence vs. Owned Capital' }],
+      applications: ['SaaS cost reduction', 'AI search engine optimization (AEO)', 'Operator workflow design'],
+      contrastingConcepts: [{ slug: 'ai-volatility-tax', title: 'AI Volatility Tax', distinction: 'Operational Fatigue vs Unpredictable Inference COGS' }]
+    },
+    whatChanges: {
+      engineering: 'Freezes tool-churn refactors and focuses engineering capacity on durable business logic and background batch queues.',
+      finance: 'Recovers thousands in unused SaaS subscription spend and avoids multi-vendor license sprawl.',
+      product: 'Optimizes customer-facing documentation with structured data tables that generative answer engines cite.',
+      security: 'Reduces attack surface by eliminating unvetted third-party micro-SaaS browser extensions and plugins.'
+    },
+    whyThisConceptExists: {
+      problem: 'Businesses burn cash and engineering hours reacting to weekly model release marketing rather than solving operational bottlenecks.',
+      existingApproaches: 'Subscribing to every new AI point solution and trying to out-prompt generic chat models.',
+      gap: 'No disciplined methodology for SaaS consolidation, structured interview prompting, and answer engine discovery.',
+      solution: 'AI Hype Cycle Exhaustion framework outlining subscription audits, the Interview Protocol, and direct-quote architecture.'
+    },
+    reverseCitations: [],
+    personaRecommendations: [
+      { role: 'Small Business Founder', takeaway: 'Audit recurring credit card subscriptions, cancel redundant micro-tools, and format website pages with direct tabular answers for AI search discovery.', recommendedNextSlug: 'non-dilutive-infrastructure-capital' },
+      { role: 'Chief Financial Officer', takeaway: 'Mandate a freeze on specialized micro-SaaS subscriptions that can be natively handled by existing enterprise frontier model contracts.', recommendedNextSlug: 'rented-intelligence-vs-owned-capital' }
+    ],
+    telemetry: {
+      origin: {
+        firstIntroducedDate: 'September 2026',
+        primaryVenue: 'LinkedIn Newsletters',
+        canonicalPublicationId: 'linkedin-ai-hype-cycle-exhausting',
+        genesisThesis: 'Enterprise AI returns come from subscription consolidation, structured prompting discipline, and answer engine clarity rather than benchmark churn.'
+      },
+      internalCorpus: {
+        publicationsCount: 2,
+        diagnosticToolsCount: 2,
+        calculatorsCount: 2,
+        frameworksCount: 2,
+        bookChaptersCount: 0
+      },
+      humanEvidenceSummary: {
+        independentAuthorsCount: 0,
+        independentOrganizationsCount: 0,
+        uniqueDomainsCount: 0,
+        formalCitationsCount: 0,
+        derivativesCount: 0,
+        implementationsCount: 0,
+        adoptionsCount: 0
+      },
+      humanSignals: [],
+      evolutionTimeline: []
+    }
   }
 ];
+
 
