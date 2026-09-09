@@ -3,10 +3,8 @@ import { exogramDocs } from '@/lib/exogram-docs';
 import { glossaryTerms } from './glossary/terms';
 import { PILLARS, KEEP_TERMS } from './glossary/pillarsMapping';
 import { frameworks, articles } from '@/lib/data';
-import { tracks } from '@/app/lib/curriculum-tracks-ui';
-import { getAllModuleSlugs } from '@/app/lib/curriculum-data';
+import { getLiveModuleSlugs } from '@/app/lib/curriculum-data';
 import { getSortedArticles } from '@/app/lib/blog-data';
-import { COMBAT_SEO_MATRIX } from '@/app/lib/combat-seo';
 import { CAREER_PATHS } from '@/app/lib/career-paths';
 import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 import { getAllSpokeRoutes } from '@/app/lib/spoke-data';
@@ -21,7 +19,57 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // If the same URL appears twice, the later entry overwrites the earlier one.
     const entries = new Map<string, MetadataRoute.Sitemap[number]>();
 
+    // Redirect sources from next.config.ts and middleware to prevent any redirected URL from entering sitemap.xml
+    const REDIRECT_DISALLOWED = new Set([
+        '/terms', '/terms-of-service', '/terms-and-conditions', '/toc', '/tos', '/tac',
+        '/privacy', '/privacy-policy', '/disclaimer', '/disclaimers', '/refunds', '/refund-policy',
+        '/frameworks', '/frameworks/innovation-tax', '/frameworks/product-debt-index',
+        '/frameworks/technical-insolvency-date', '/frameworks/synthetic-cogs',
+        '/advisory', '/research/concepts', '/principal', '/trust',
+        '/tools/technical-debt-calculator', '/tools/code-quality-calculator',
+        '/tools/vibe-coding-debt-calculator', '/tools/synthetic-debt-calculator',
+        '/tools/ai-cost-calculator', '/tools/llm-cost-calculator',
+        '/tools/ai-unit-economics-calculator', '/tools/ai-cogs-calculator',
+        '/tools/token-cost-calculator', '/tools/revenue-per-engineer',
+        '/tools/engineering-efficiency-calculator', '/tools/saas-valuation-calculator',
+        '/tools/enterprise-value-calculator', '/tools/subprime-code-auditor',
+        '/glossary/subprime-code', '/glossary/subprime-code-crisis',
+        '/framework/subprime-code-governance', '/tools/ai-hallucination-cost',
+        '/tools/ai-job-displacement-calculator', '/tools/ai-workforce-impact',
+        '/tools/self-host-vs-api', '/tools/shadow-ai-risk-calculator',
+        '/tools/mcp-security-scanner', '/tools/copilot-roi-calculator',
+        '/tools/ai-pilot-roi-calculator', '/tools/roai-calculator',
+        '/tools/cloud-repatriation-calculator',
+        '/compare/technical-debt-calculator-vs-sonarqube',
+        '/compare/revenue-per-engineer-vs-jellyfish',
+        '/compare/ai-cost-calculator-vs-aws',
+        '/compare/engineering-efficiency-vs-jellyfish',
+        '/compare/engineering-metrics-vs-dora',
+        '/canonical/financial-conways-law.html',
+        '/canonical/governance-of-subtraction.html',
+        '/canonical/kill-switch.html',
+        '/canonical/capital-allocation-strategy.html',
+        '/index.html', '/advisory.html', '/manifesto.html', '/system.html',
+        '/briefings.html', '/the-operator.html', '/studio.html',
+        '/q-pep-product-economics-protocol', '/10', '/methodology.html',
+        '/working-papers.html', '/robots/', '/git', '/github',
+        '/partnerships/integrations', '/partnerships/supabase',
+        '/docs/integrations/supabase', '/docs/integrations', '/integrations',
+        '/media-kit', '/press', '/guides', '/vault/curriculum',
+        '/guides/cto-first-90-days', '/guides/technical-debt',
+        '/guides/build-vs-buy', '/guides/engineering-efficiency',
+        '/guides/product-economics', '/guides/how-to-deploy-small-language-models',
+        '/guides/ai-governance-compliance', '/guides/ai-native-development-teams',
+        '/comparisons/nextjs-remix-astro', '/comparisons/claude-vs-gpt4',
+        '/comparisons/pdi-vs-dora', '/comparisons/agile-vs-kanban',
+        '/comparisons/monolith-vs-microservices', '/tools/cloud-finops-calculator',
+        '/tools/unit-economics'
+    ]);
+
     function add(url: string, changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'], priority: number) {
+        const path = url.replace(baseUrl, '');
+        if (REDIRECT_DISALLOWED.has(path)) return;
+        if (path.startsWith('/advisory') || path.startsWith('/research/concepts')) return;
         entries.set(url, { url, changeFrequency, priority });
     }
 
@@ -134,7 +182,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // === VAULT CURRICULUM & MODULES ===
     add(`${baseUrl}/vault/curriculum/tracks`, 'monthly', 0.8);
-    getAllModuleSlugs().forEach(slug => add(`${baseUrl}/vault/curriculum/tracks/${slug}`, 'monthly', 0.7));
+    getLiveModuleSlugs().forEach(slug => add(`${baseUrl}/vault/curriculum/tracks/${slug}`, 'monthly', 0.8));
 
     // === CAREER PATHWAYS ===
     add(`${baseUrl}/careers`, 'monthly', 0.85);
@@ -153,13 +201,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Challenges
     challenges.forEach(c => add(`${baseUrl}/challenges/${c.slug}`, 'monthly', 0.8));
-
-    // Combat SEO (tool vs competitor)
-    COMBAT_SEO_MATRIX.forEach(t =>
-        t.competitors.forEach(c =>
-            add(`${baseUrl}/tools/${t.toolSlug}/vs/${c.slug}`, 'weekly', 0.9)
-        )
-    );
 
     // Glossary
     PILLARS.forEach(pillar => add(`${baseUrl}/glossary/pillars/${pillar.slug}`, 'weekly', 0.6));

@@ -227,3 +227,11 @@ export function getModule(slug: string): CurriculumModule | undefined {
 export function getAllModuleSlugs(): string[] {
     return Object.keys(modules);
 }
+
+// Return only active, fully-written modules for sitemap to avoid thin content flags in GSC
+export function getLiveModuleSlugs(): string[] {
+    return Object.entries(modules)
+        .filter(([_, mod]) => mod.status !== 'waitlist' && Array.isArray(mod.lessons) && mod.lessons.length > 0)
+        .map(([slug]) => slug);
+}
+
