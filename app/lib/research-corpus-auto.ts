@@ -2,6 +2,17 @@ import { CorpusArticle } from './research-corpus';
 
 export const corpusAuto: CorpusArticle[] = [
 {
+    "id": "beehiiv-solving-ai-engineering-bottlenecks-a-leadership-guide",
+    "title": "Solving AI Engineering Bottlenecks: A Leadership Guide",
+    "url": "https://theaieconomist.beehiiv.com/p/solving-ai-engineering-bottlenecks-a-leadership-guide",
+    "publisher": "Beehiiv",
+    "domain": "AI Governance",
+    "type": "Evergreen",
+    "date": "September 11, 2026",
+    "thesis": "Code Review Traffic Jams, Delivery Metrics, and Advisory Insights When executives approve enterprise licenses for AI coding tools, the expected ROI is simple: software features should ship significant...",
+    "relatedConceptIds": []
+},
+{
     "id": "beehiiv-the-software-factory-is-running-24-7-and-nobody-wants-the-output",
     "title": "The Software Factory Is Running 24/7 (And Nobody Wants the Output)",
     "url": "https://theaieconomist.beehiiv.com/p/the-software-factory-is-running-24-7-and-nobody-wants-the-output-c01a",
