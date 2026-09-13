@@ -61,7 +61,7 @@ export class PresentationCompiler {
             tier,
             slideCount,
             slides,
-            exportRefUrl: `https://richardewing.io/exports/slides_${tier.toLowerCase()}_${pkg.id}.pptx`
+            exportRefUrl: `https://www.richardewing.io/exports/slides_${tier.toLowerCase()}_${pkg.id}.pptx`
         };
     }
 }

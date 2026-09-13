@@ -19,7 +19,7 @@ import { NewsletterForm } from '../components/newsletter-form';
 import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-  title: 'The Pragmatic AI Builder Book | Richard Ewing',
+  title: 'The Pragmatic AI Builder Book',
   description: 'How to turn what you already know into an AI business without venture capital theater. A field guide to domain validation, unit economics, and cash-flow-funded software.',
   keywords: [
     'The Pragmatic AI Builder',
@@ -29,17 +29,17 @@ export const metadata: Metadata = {
     'AI cost governance',
     'Richard Ewing book'
   ],
-  alternates: { canonical: 'https://richardewing.io/book' },
+  alternates: { canonical: 'https://www.richardewing.io/book' },
   openGraph: {
-    title: 'The Pragmatic AI Builder - Book | Richard Ewing',
+    title: 'The Pragmatic AI Builder: Field Guide | Richard Ewing',
     description: 'How to turn what you already know into an AI business without venture capital theater.',
-    url: 'https://richardewing.io/book',
+    url: 'https://www.richardewing.io/book',
     siteName: 'Richard Ewing',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Pragmatic AI Builder - Book | Richard Ewing',
+    title: 'The Pragmatic AI Builder: Field Guide | Richard Ewing',
     description: 'A field guide to turning domain knowledge into software without venture capital theater.',
   },
 };

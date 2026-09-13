@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: 'The AI Product Builder: Complete Master Curriculum',
   description: 'Exhaustive 4-week syllabus for technical founders. Day-by-day sprint guides covering product validation, FastAPI, semantic caching, and GTM.',
   alternates: {
-    canonical: 'https://richardewing.io/curriculum',
+    canonical: 'https://www.richardewing.io/curriculum',
   },
   openGraph: {
     title: 'The AI Product Builder: Complete Master Curriculum',
     description: 'Exhaustive 4-week syllabus for technical founders. Day-by-day sprint guides covering product validation, FastAPI, semantic caching, and GTM.',
-    url: 'https://richardewing.io/curriculum',
+    url: 'https://www.richardewing.io/curriculum',
     siteName: 'Richard Ewing',
     type: 'website',
   }

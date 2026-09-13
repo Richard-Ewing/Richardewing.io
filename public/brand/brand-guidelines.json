@@ -1,0 +1,19 @@
+{
+  "name": "Richard Ewing",
+  "title": "AI Economist & R&D Capital Advisory",
+  "website": "https://www.richardewing.io",
+  "brandGuidelines": {
+    "primaryColor": "#0A0A0A",
+    "accentColor": "#06B6D4",
+    "backgroundLight": "#F5F0EB",
+    "fontFamilyGrotesk": "Space Grotesk, sans-serif",
+    "fontFamilyMono": "JetBrains Mono, monospace"
+  },
+  "assets": {
+    "logoLight": "https://www.richardewing.io/assets/brand/richard-ewing-logo-light.svg",
+    "logoDark": "https://www.richardewing.io/assets/brand/richard-ewing-logo-dark.svg",
+    "brandKitZip": "https://www.richardewing.io/assets/brand/richard-ewing-brand-kit.zip"
+  },
+  "boilerplate": "Richard Ewing is an AI Economist who helps organizations measure, govern, and improve the economics of enterprise AI systems.",
+  "canonicalUrl": "https://www.richardewing.io/brand"
+}

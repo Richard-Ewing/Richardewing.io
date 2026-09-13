@@ -64,7 +64,7 @@ export default function BoardWorkspacePage() {
                 <h2 className="text-2xl font-grotesk font-bold text-zinc-900 mt-1">Q3 2026 Board Executive Deck</h2>
               </div>
               <a
-                href="https://richardewing.io/exports/boarddeck_dp_board_001.pdf"
+                href="https://www.richardewing.io/exports/boarddeck_dp_board_001.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-white font-mono font-bold text-xs rounded-lg flex items-center gap-1.5 transition-colors cursor-pointer shadow-sm"

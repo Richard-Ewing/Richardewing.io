@@ -35,7 +35,7 @@ export class ArtifactCompiler {
             title: `Executive Deliverable: ${type} - ${pkg.executiveOwnerRole}`,
             executiveSummary: pkg.summary,
             contentMarkdown: content,
-            downloadRef: `https://richardewing.io/exports/${type.toLowerCase()}_${pkg.id}.pdf`,
+            downloadRef: `https://www.richardewing.io/exports/${type.toLowerCase()}_${pkg.id}.pdf`,
             generatedAt: new Date().toISOString()
         };
     }

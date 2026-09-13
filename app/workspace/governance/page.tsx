@@ -162,7 +162,7 @@ export default function GovernanceWorkspacePage() {
             </div>
 
             <a
-              href="https://richardewing.io/exports/riskregister_dp_board_001.pdf"
+              href="https://www.richardewing.io/exports/riskregister_dp_board_001.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-8 py-3 px-4 bg-cyan-600 hover:bg-cyan-700 text-white font-mono font-bold text-xs rounded-xl flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-sm"

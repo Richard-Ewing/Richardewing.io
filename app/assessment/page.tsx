@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: 'AI Founder Readiness Diagnostic: 10-Question Benchmark',
   description: 'Benchmark your product validation, technical architecture, cost governance, and capital readiness in 5 minutes with immediate scoring.',
   alternates: {
-    canonical: 'https://richardewing.io/assessment',
+    canonical: 'https://www.richardewing.io/assessment',
   },
   openGraph: {
     title: 'AI Founder Readiness Diagnostic: 10-Question Benchmark',
     description: 'Benchmark your product validation, technical architecture, cost governance, and capital readiness in 5 minutes with immediate scoring.',
-    url: 'https://richardewing.io/assessment',
+    url: 'https://www.richardewing.io/assessment',
     siteName: 'Richard Ewing',
     type: 'website',
   }

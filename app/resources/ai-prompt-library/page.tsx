@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: 'AI Founder System Prompt Library: 50+ Production Prompts',
   description: 'Production prompt catalog for AI builders. Cognitive division of labor prompts for Perplexity Pro, Claude 3.5 Sonnet, Kimi, and GPT-4o.',
   alternates: {
-    canonical: 'https://richardewing.io/resources/ai-prompt-library',
+    canonical: 'https://www.richardewing.io/resources/ai-prompt-library',
   },
   openGraph: {
     title: 'AI Founder System Prompt Library: 50+ Production Prompts',
     description: 'Production prompt catalog for AI builders. Cognitive division of labor prompts for Perplexity Pro, Claude 3.5 Sonnet, Kimi, and GPT-4o.',
-    url: 'https://richardewing.io/resources/ai-prompt-library',
+    url: 'https://www.richardewing.io/resources/ai-prompt-library',
     siteName: 'Richard Ewing',
     type: 'website',
   }

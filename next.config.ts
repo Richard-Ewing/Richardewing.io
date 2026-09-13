@@ -63,6 +63,12 @@ const nextConfig: NextConfig = {
           { key: 'X-Robots-Tag', value: 'noindex, follow' },
         ],
       },
+      {
+        source: '/feed.xml',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, follow' },
+        ],
+      },
     ];
   },
   async redirects() {
@@ -80,6 +86,8 @@ const nextConfig: NextConfig = {
       { source: '/disclaimers', destination: '/legal#disclaimers', permanent: true },
       { source: '/refunds', destination: '/legal#refunds', permanent: true },
       { source: '/refund-policy', destination: '/legal#refunds', permanent: true },
+      { source: '/robots', destination: '/robots.txt', permanent: true },
+      { source: '/robots/', destination: '/robots.txt', permanent: true },
       { source: '/frameworks', destination: '/framework', permanent: true },
       { source: '/frameworks/innovation-tax', destination: '/glossary/pillars/product-economics#innovation-tax', permanent: true },
       { source: '/frameworks/product-debt-index', destination: '/glossary/pillars/product-economics#product-debt-index', permanent: true },
@@ -97,6 +105,12 @@ const nextConfig: NextConfig = {
       { source: '/curriculum/tracks/product-economics/6-:id', destination: '/vault/curriculum/tracks/product-economics/5-:id', permanent: true },
       { source: '/vault/curriculum/tracks/ai-operations/11-:id', destination: '/vault/curriculum/tracks/ai-operations/6-:id', permanent: true },
       { source: '/curriculum/tracks/ai-operations/11-:id', destination: '/vault/curriculum/tracks/ai-operations/6-:id', permanent: true },
+      { source: '/curriculum/tracks/startup-economics/10-6', destination: '/vault/curriculum/tracks', permanent: true },
+      { source: '/curriculum/tracks/startup-economics/10-11', destination: '/vault/curriculum/tracks', permanent: true },
+      { source: '/vault/curriculum/tracks/startup-economics/10-6', destination: '/vault/curriculum/tracks', permanent: true },
+      { source: '/vault/curriculum/tracks/startup-economics/10-11', destination: '/vault/curriculum/tracks', permanent: true },
+      { source: '/curriculum/tracks/enterprise-architecture/:slug*', destination: '/vault/curriculum/tracks', permanent: true },
+      { source: '/vault/curriculum/tracks/enterprise-architecture/:slug*', destination: '/vault/curriculum/tracks', permanent: true },
       { source: '/curriculum/tracks/startup-economics/10-:id', destination: '/vault/curriculum/tracks/startup-economics/26-:id', permanent: true },
       { source: '/vault/curriculum/tracks/startup-economics/10-:id', destination: '/vault/curriculum/tracks/startup-economics/26-:id', permanent: true },
       // ═══════════════════ PAIN-FORWARD URL ALIASES ═══════════════════
@@ -331,12 +345,12 @@ const nextConfig: NextConfig = {
       },
       // Redirect only truly deprecated legacy tracks directly to /vault/curriculum/tracks to prevent redirect chains
       {
-        source: '/vault/curriculum/tracks/:category(b2b-saas-economics|fintech-economics|logistics-ecommerce|healthtech-economics|traditional-pm|breaking-into-tech|junior-to-senior|erp-enterprise-integration|outsourcing-economics|corporate-it-cost-centers|mainframe-legacy-systems|career-mobility-technical-economics|classic-qa-quality|monolith-classic-database|executive-alignment-governance|fullstack-career|system-design|devops-economics|security-economics|data-economics|engineering-leadership|fractional-engineering|ai-agent-economics|synthetic-data)/:slug*',
+        source: '/vault/curriculum/tracks/:category(b2b-saas-economics|fintech-economics|logistics-ecommerce|healthtech-economics|traditional-pm|breaking-into-tech|junior-to-senior|erp-enterprise-integration|outsourcing-economics|corporate-it-cost-centers|mainframe-legacy-systems|career-mobility-technical-economics|classic-qa-quality|monolith-classic-database|executive-alignment-governance|fullstack-career|system-design|devops-economics|security-economics|data-economics|engineering-leadership|fractional-engineering|ai-agent-economics|synthetic-data|enterprise-architecture|agentic-automation|tech-debt-liability|dx-economics|ai-due-diligence|vendor-economics|exec-economics|ma-integration|agent-governance|career-capital|agile-economics|agentic-governance)/:slug*',
         destination: '/vault/curriculum/tracks',
         permanent: true,
       },
       {
-        source: '/curriculum/tracks/:category(b2b-saas-economics|fintech-economics|logistics-ecommerce|healthtech-economics|traditional-pm|breaking-into-tech|junior-to-senior|erp-enterprise-integration|outsourcing-economics|corporate-it-cost-centers|mainframe-legacy-systems|career-mobility-technical-economics|classic-qa-quality|monolith-classic-database|executive-alignment-governance|fullstack-career|system-design|devops-economics|security-economics|data-economics|engineering-leadership|fractional-engineering|ai-agent-economics|synthetic-data)/:slug*',
+        source: '/curriculum/tracks/:category(b2b-saas-economics|fintech-economics|logistics-ecommerce|healthtech-economics|traditional-pm|breaking-into-tech|junior-to-senior|erp-enterprise-integration|outsourcing-economics|corporate-it-cost-centers|mainframe-legacy-systems|career-mobility-technical-economics|classic-qa-quality|monolith-classic-database|executive-alignment-governance|fullstack-career|system-design|devops-economics|security-economics|data-economics|engineering-leadership|fractional-engineering|ai-agent-economics|synthetic-data|enterprise-architecture|agentic-automation|tech-debt-liability|dx-economics|ai-due-diligence|vendor-economics|exec-economics|ma-integration|agent-governance|career-capital|agile-economics|agentic-governance)/:slug*',
         destination: '/vault/curriculum/tracks',
         permanent: true,
       },
@@ -505,11 +519,18 @@ const nextConfig: NextConfig = {
         'openai-vs-tailwindcss',
         'dora-vs-space',
         'openai-vs-anthropic'
-      ].map(slug => ({
-        source: `/compare/${slug}`,
-        destination: '/compare',
-        permanent: true as const,
-      })),
+      ].flatMap(slug => [
+        {
+          source: `/compare/${slug}`,
+          destination: '/compare',
+          permanent: true as const,
+        },
+        {
+          source: `/comparisons/${slug}`,
+          destination: '/compare',
+          permanent: true as const,
+        },
+      ]),
       {
         source: '/comparisons/:slug*',
         destination: '/compare/:slug*',

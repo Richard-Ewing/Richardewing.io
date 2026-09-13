@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: 'AI Founder Blueprints: Code, Legal Contracts & Pro-Formas',
   description: 'Production FastAPI scaffolds, Redis semantic caching, Stripe webhooks, consulting SOW contracts, and 12-month financial models.',
   alternates: {
-    canonical: 'https://richardewing.io/vault/blueprints',
+    canonical: 'https://www.richardewing.io/vault/blueprints',
   },
   openGraph: {
     title: 'AI Founder Blueprints: Code, Legal Contracts & Pro-Formas',
     description: 'Production FastAPI scaffolds, Redis semantic caching, Stripe webhooks, consulting SOW contracts, and 12-month financial models.',
-    url: 'https://richardewing.io/vault/blueprints',
+    url: 'https://www.richardewing.io/vault/blueprints',
     siteName: 'Richard Ewing',
     type: 'website',
   }

@@ -160,13 +160,13 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     ],
     executableTool: { name: 'Organizational Friction Audit', url: '/tools/org-friction', description: 'Measure coordination tax via meeting load and dependency mapping.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
-      { step: 1, title: 'Why Hiring More Engineers Destroys Gross Margin', publisher: 'RichardEwing.io', type: 'Canonical Essay', url: 'https://richardewing.io/blog/hiring-engineers-gross-margin' }
+      { step: 1, title: 'Why Hiring More Engineers Destroys Gross Margin', publisher: 'RichardEwing.io', type: 'Canonical Essay', url: 'https://www.richardewing.io/blog/hiring-engineers-gross-margin' }
     ],
     provenanceTimeline: [
       { stage: 'Observation', label: 'Coordination Tax Identified', publisher: 'RichardEwing.io Blog', date: 'November 2025', summary: 'Published the core thesis linking headcount scaling to margin degradation.' }
     ],
     evidenceLedger: [
-      { id: 'ev-ct-1', title: 'Why Hiring More Engineers Destroys Gross Margin', url: 'https://richardewing.io/blog/hiring-engineers-gross-margin', publisher: 'RichardEwing.io', type: 'Production Telemetry', strength: 5, role: 'Origin', date: 'November 2025' }
+      { id: 'ev-ct-1', title: 'Why Hiring More Engineers Destroys Gross Margin', url: 'https://www.richardewing.io/blog/hiring-engineers-gross-margin', publisher: 'RichardEwing.io', type: 'Production Telemetry', strength: 5, role: 'Origin', date: 'November 2025' }
     ],
     relatedConceptSlugs: [
       { slug: 'product-economist', relationship: 'supports' },
@@ -323,13 +323,13 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     ],
     executableTool: { name: 'Product Debt Index (PDI)', url: '/tools/pdi', description: 'Quantify when maintenance cost exceeds feature value.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
-      { step: 1, title: 'Feature Bloat Calculus', publisher: 'RichardEwing.io', type: 'Canonical Essay', url: 'https://richardewing.io/blog/feature-bloat-calculus' }
+      { step: 1, title: 'Feature Bloat Calculus', publisher: 'RichardEwing.io', type: 'Canonical Essay', url: 'https://www.richardewing.io/blog/feature-bloat-calculus' }
     ],
     provenanceTimeline: [
       { stage: 'Observation', label: 'Feature Bloat Calculus Introduced', publisher: 'RichardEwing.io Blog', date: 'December 2025', summary: 'Published the analytical framework for feature deprecation.' }
     ],
     evidenceLedger: [
-      { id: 'ev-fbc-1', title: 'Feature Bloat Calculus', url: 'https://richardewing.io/blog/feature-bloat-calculus', publisher: 'RichardEwing.io', type: 'Framework Specification', strength: 5, role: 'Origin', date: 'December 2025' },
+      { id: 'ev-fbc-1', title: 'Feature Bloat Calculus', url: 'https://www.richardewing.io/blog/feature-bloat-calculus', publisher: 'RichardEwing.io', type: 'Framework Specification', strength: 5, role: 'Origin', date: 'December 2025' },
       { id: 'ev-fbc-2', title: 'The AI Economist: Leading Product Strategy When Build Costs Approach Zero', url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic', publisher: 'LinkedIn', type: 'Executive Publication', strength: 5, role: 'Extends', date: 'August 20, 2026' }
     ],
     relatedConceptSlugs: [
@@ -406,13 +406,13 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     ],
     executableTool: { name: 'AI Reliability Cost Estimator', url: '/tools/predictivity-cost', description: 'Estimate latency and cost multipliers for validation pipelines.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
-      { step: 1, title: 'The Cost of Predictivity in AI Systems', publisher: 'RichardEwing.io', type: 'Canonical Essay', url: 'https://richardewing.io/blog/cost-of-predictivity' }
+      { step: 1, title: 'The Cost of Predictivity in AI Systems', publisher: 'RichardEwing.io', type: 'Canonical Essay', url: 'https://www.richardewing.io/blog/cost-of-predictivity' }
     ],
     provenanceTimeline: [
       { stage: 'Observation', label: 'Cost of Predictivity Outlined', publisher: 'RichardEwing.io Blog', date: 'March 2026', summary: 'Outlined the architectural tradeoffs of reliable AI.' }
     ],
     evidenceLedger: [
-      { id: 'ev-cop-1', title: 'The Cost of Predictivity', url: 'https://richardewing.io/blog/cost-of-predictivity', publisher: 'RichardEwing.io', type: 'Framework Specification', strength: 5, role: 'Origin', date: 'March 2026' },
+      { id: 'ev-cop-1', title: 'The Cost of Predictivity', url: 'https://www.richardewing.io/blog/cost-of-predictivity', publisher: 'RichardEwing.io', type: 'Framework Specification', strength: 5, role: 'Origin', date: 'March 2026' },
       { id: 'ev-cop-2', title: 'I Used AI to Build My Startup. Here’s What I Learned. (Cursor vs. Google Antigravity)', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation', publisher: 'Built In', type: 'Industry Analysis', strength: 5, role: 'Supports', date: 'August 18, 2026' }
     ],
     relatedConceptSlugs: [

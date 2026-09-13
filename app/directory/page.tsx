@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: 'Startup Capital & Open-Source Directory: 60+ Programs',
   description: 'Search 60+ accelerators, SBIR grants, and $500k in cloud credits, alongside 120 open-source AI boilerplates and vector caching repos.',
   alternates: {
-    canonical: 'https://richardewing.io/directory',
+    canonical: 'https://www.richardewing.io/directory',
   },
   openGraph: {
     title: 'Startup Capital & Open-Source Directory: 60+ Programs',
     description: 'Search 60+ accelerators, SBIR grants, and $500k in cloud credits, alongside 120 open-source AI boilerplates and vector caching repos.',
-    url: 'https://richardewing.io/directory',
+    url: 'https://www.richardewing.io/directory',
     siteName: 'Richard Ewing',
     type: 'website',
   }

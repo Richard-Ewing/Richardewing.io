@@ -195,7 +195,7 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
       { id: 'ev-ie-1', title: 'The Cost of Generative AI', url: '#', publisher: 'Economics Today', type: 'Report', strength: 4, role: 'Supports', date: '2024' }
     ],
     reverseCitations: [
-      { targetType: 'Diagnostic Tool', title: 'AI Unit Economics Benchmark', url: 'https://richardewing.io/tools/aueb', relationship: 'measures' },
+      { targetType: 'Diagnostic Tool', title: 'AI Unit Economics Benchmark', url: 'https://www.richardewing.io/tools/aueb', relationship: 'measures' },
       { targetType: 'Framework Module', title: 'CareerWin AI ROI Model', url: 'https://careerwin.ai/roi', relationship: 'implements' }
     ],
     relatedConceptSlugs: [
@@ -239,7 +239,7 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
       { id: 'ev-ti-1', title: 'The Cost of Poor Software Quality', url: '#', publisher: 'Quality Consortium', type: 'Report', strength: 5, role: 'Supports', date: '2022' }
     ],
     reverseCitations: [
-      { targetType: 'Diagnostic Tool', title: 'Product Debt Index', url: 'https://richardewing.io/tools/pdi', relationship: 'measures' },
+      { targetType: 'Diagnostic Tool', title: 'Product Debt Index', url: 'https://www.richardewing.io/tools/pdi', relationship: 'measures' },
       { targetType: 'Advisory Service', title: 'CareerWin Tech Debt Rescue', url: 'https://careerwin.ai/services', relationship: 'governs' }
     ],
     relatedConceptSlugs: [

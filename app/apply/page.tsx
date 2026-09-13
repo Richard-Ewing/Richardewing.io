@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: 'Apply: The AI Product Builder 4-Week Cohort',
   description: 'Apply for the upcoming 4-week technical founder cohort. Capped at 15 builders. 1:1 code audits, cost governance, and pilot customer acquisition.',
   alternates: {
-    canonical: 'https://richardewing.io/apply',
+    canonical: 'https://www.richardewing.io/apply',
   },
   openGraph: {
     title: 'Apply: The AI Product Builder 4-Week Cohort',
     description: 'Apply for the upcoming 4-week technical founder cohort. Capped at 15 builders. 1:1 code audits, cost governance, and pilot customer acquisition.',
-    url: 'https://richardewing.io/apply',
+    url: 'https://www.richardewing.io/apply',
     siteName: 'Richard Ewing',
     type: 'website',
   }

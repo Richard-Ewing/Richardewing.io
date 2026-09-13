@@ -51,7 +51,7 @@ export class DeliverableRuntime {
           { version: 2, updatedAt: '2026-08-01T14:30:00Z', updatedBy: 'CFO', changeSummary: 'Verified $319,500 token savings included.' }
         ],
         executionLinks: ['/workspace/finance', '/workspace/vendors'],
-        metadata: { slideCount: 11, format: 'PDF', downloadUrl: 'https://richardewing.io/exports/boarddeck_dp_board_001.pdf' },
+        metadata: { slideCount: 11, format: 'PDF', downloadUrl: 'https://www.richardewing.io/exports/boarddeck_dp_board_001.pdf' },
         createdAt: '2026-07-15T10:00:00Z',
         updatedAt: '2026-08-01T14:30:00Z'
       }
@@ -71,7 +71,7 @@ export class DeliverableRuntime {
           { version: 1, updatedAt: '2026-07-20T09:15:00Z', updatedBy: 'VP Infra', changeSummary: 'Final architecture memo signed off.' }
         ],
         executionLinks: ['/workspace/engineering', '/workspace/governance'],
-        metadata: { wordCount: 1450, classification: 'Restricted', downloadUrl: 'https://richardewing.io/exports/executivememo_dp_board_001.pdf' },
+        metadata: { wordCount: 1450, classification: 'Restricted', downloadUrl: 'https://www.richardewing.io/exports/executivememo_dp_board_001.pdf' },
         createdAt: '2026-07-20T09:15:00Z',
         updatedAt: '2026-07-20T09:15:00Z'
       }

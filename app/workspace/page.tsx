@@ -112,7 +112,7 @@ export default function CustomerWorkspacePage() {
                 <h4 className="font-bold text-zinc-900 text-sm mt-1">Q3 2026 Board Briefing Deck</h4>
                 <span className="text-[10px] font-mono text-zinc-500 block mt-1">11 Compiled Slides • Verified $319.5k ROI</span>
               </div>
-              <a href="https://richardewing.io/exports/boarddeck_dp_board_001.pdf" target="_blank" rel="noopener noreferrer" className="mt-4 pt-2 border-t border-zinc-200 text-xs font-mono text-cyan-700 font-bold flex items-center justify-between">
+              <a href="https://www.richardewing.io/exports/boarddeck_dp_board_001.pdf" target="_blank" rel="noopener noreferrer" className="mt-4 pt-2 border-t border-zinc-200 text-xs font-mono text-cyan-700 font-bold flex items-center justify-between">
                 Download Board Deck <Download className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -123,7 +123,7 @@ export default function CustomerWorkspacePage() {
                 <h4 className="font-bold text-zinc-900 text-sm mt-1">Token Saver Sidecar Architecture Review</h4>
                 <span className="text-[10px] font-mono text-zinc-500 block mt-1">CFO Briefing • Zero Code Egress Verified</span>
               </div>
-              <a href="https://richardewing.io/exports/executivememo_dp_board_001.pdf" target="_blank" rel="noopener noreferrer" className="mt-4 pt-2 border-t border-zinc-200 text-xs font-mono text-violet-700 font-bold flex items-center justify-between">
+              <a href="https://www.richardewing.io/exports/executivememo_dp_board_001.pdf" target="_blank" rel="noopener noreferrer" className="mt-4 pt-2 border-t border-zinc-200 text-xs font-mono text-violet-700 font-bold flex items-center justify-between">
                 Download Executive Memo <Download className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -134,7 +134,7 @@ export default function CustomerWorkspacePage() {
                 <h4 className="font-bold text-zinc-900 text-sm mt-1">Shadow AI & Context Rot Audit</h4>
                 <span className="text-[10px] font-mono text-zinc-500 block mt-1">CISO Audit • 14 Repos Cleaned</span>
               </div>
-              <a href="https://richardewing.io/exports/riskregister_dp_board_001.pdf" target="_blank" rel="noopener noreferrer" className="mt-4 pt-2 border-t border-zinc-200 text-xs font-mono text-emerald-700 font-bold flex items-center justify-between">
+              <a href="https://www.richardewing.io/exports/riskregister_dp_board_001.pdf" target="_blank" rel="noopener noreferrer" className="mt-4 pt-2 border-t border-zinc-200 text-xs font-mono text-emerald-700 font-bold flex items-center justify-between">
                 Download Risk Register <Download className="w-3.5 h-3.5" />
               </a>
             </div>

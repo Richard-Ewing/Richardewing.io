@@ -545,13 +545,13 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
     ],
     executableTool: { name: 'DORA to P&L Calculator', url: 'https://careerwin.ai/dora-calculator', description: 'Translate engineering metrics into financial impact statements.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
-      { step: 1, title: 'How to Translate DORA into Financial Debt', publisher: 'Personal Blog', type: 'Canonical Article', url: 'https://richardewing.io/blog' }
+      { step: 1, title: 'How to Translate DORA into Financial Debt', publisher: 'Personal Blog', type: 'Canonical Article', url: 'https://www.richardewing.io/blog' }
     ],
     provenanceTimeline: [
       { stage: 'Observation', label: 'Financial Translation Post', publisher: 'Personal Blog', date: 'September 2025', summary: 'Mapped engineering friction directly to EBITDA impact.' }
     ],
     evidenceLedger: [
-      { id: 'ev-dft-1', title: 'How to Translate DORA into Financial Debt', url: 'https://richardewing.io/blog', publisher: 'Blog', type: 'Framework Module', strength: 4, role: 'Origin', date: 'September 2025' }
+      { id: 'ev-dft-1', title: 'How to Translate DORA into Financial Debt', url: 'https://www.richardewing.io/blog', publisher: 'Blog', type: 'Framework Module', strength: 4, role: 'Origin', date: 'September 2025' }
     ],
     relatedConceptSlugs: [
       { slug: 'technical-insolvency', relationship: 'measures' },
