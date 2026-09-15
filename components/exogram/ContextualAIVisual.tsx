@@ -41,11 +41,11 @@ export default function ContextualAIVisual() {
         },
         {
             id: 4,
-            title: '5. Model Reasoning',
-            desc: 'Frontier, open-weight, or local inference models',
-            tag: 'Model Agnostic',
+            title: '5. Grounded Intelligence',
+            desc: 'Conversational reasoning grounded in verified context and active constraints',
+            tag: 'Grounded AI',
             icon: Cpu,
-            preview: 'Model interprets, plans, and explains with accurate ground truth.'
+            preview: 'Interprets, plans, and explains with accurate understanding of your reality.'
         }
     ];
 
@@ -66,7 +66,7 @@ export default function ContextualAIVisual() {
                 <div className="flex items-center gap-2 text-xs font-mono text-zinc-600">
                     <span>Evidence-Linked</span>
                     <span className="text-zinc-400">•</span>
-                    <span>Model-Agnostic</span>
+                    <span>Persistent Context</span>
                     <span className="text-zinc-400">•</span>
                     <span>User-Controlled</span>
                 </div>
@@ -139,7 +139,7 @@ export default function ContextualAIVisual() {
                             </div>
                         </div>
                         <div className="text-[10px] text-zinc-500 mt-2">
-                            Compatible with local or hosted foundation models
+                            Private local reasoning or cloud reasoning options
                         </div>
                     </div>
                 </div>
