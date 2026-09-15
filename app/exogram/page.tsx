@@ -31,13 +31,13 @@ import CognitiveLoopVisual from '@/components/exogram/CognitiveLoopVisual';
 
 export const metadata: Metadata = {
     title: 'Exogram: AI That Remembers Context | Richard Ewing',
-    description: 'Exogram is persistent context infrastructure for AI. It helps AI retain relevant history, understand relationships, track what changed, and reason from evidence across time and models.',
+    description: 'Exogram is a conversational AI that understands your context, remembers what matters, and helps you move work and life forward without starting over every time.',
     alternates: {
         canonical: 'https://www.richardewing.io/exogram',
     },
     openGraph: {
         title: 'Exogram: AI That Remembers Reality',
-        description: "Richard Ewing's founder thesis for Exogram: persistent, evidence-linked context that helps AI understand what users mean - not only what they type.",
+        description: "Richard Ewing's founder thesis for Exogram: a conversational AI that carries context forward so you can ask naturally instead of briefing a new chatbot every time.",
         url: 'https://www.richardewing.io/exogram',
         type: 'website',
         images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'Exogram: AI That Remembers Reality',
-        description: "Richard Ewing's founder thesis for Exogram: persistent, evidence-linked context that helps AI understand what users mean - not only what they type.",
+        description: "Richard Ewing's founder thesis for Exogram: a conversational AI that carries context forward so you can ask naturally instead of briefing a new chatbot every time.",
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     }
 };
@@ -78,8 +78,8 @@ export default function ExogramFounderThesisPage() {
             icon: Compass
         },
         {
-            layer: 'Model reasoning',
-            desc: 'Lets a selected local or cloud model interpret, synthesize, plan, and explain',
+            layer: 'Reasoning',
+            desc: 'Exogram interprets the assembled context, synthesizes relevant information, plans next steps, and explains its thinking',
             icon: Cpu
         },
         {
@@ -107,7 +107,7 @@ export default function ExogramFounderThesisPage() {
         },
         {
             title: 'AI product teams',
-            desc: 'A context layer for assistants and agents that need durable state, evidence qualification, and model portability through APIs and MCP.',
+            desc: 'A persistent context layer for assistants and agents that need durable state, evidence qualification, and continuity across sessions and workflows.',
             icon: Cpu
         }
     ];
@@ -119,7 +119,7 @@ export default function ExogramFounderThesisPage() {
         'Keep temporary conversations separate from durable knowledge',
         'Mark information as current, proposed, verified, superseded, or expired',
         'Revoke or delete retained context',
-        'Use local or customer-controlled inference where privacy requires it'
+        'Choose between private local reasoning and cloud reasoning depending on the task'
     ];
 
     return (
@@ -145,7 +145,7 @@ export default function ExogramFounderThesisPage() {
                     </h1>
 
                     <p className="text-lg sm:text-xl text-zinc-800 max-w-3xl mx-auto leading-relaxed mb-8 font-medium">
-                        Exogram turns conversations, documents, decisions, and lived experience into durable context - so AI can understand what you mean, remember what changed, and show the evidence behind important answers.
+                        Exogram is a conversational AI that understands your context, remembers what matters, and helps you move work and life forward - without starting over every time.
                     </p>
 
                     {/* CTAs */}
@@ -156,7 +156,7 @@ export default function ExogramFounderThesisPage() {
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center px-8 py-4 bg-purple-700 hover:bg-purple-800 text-white font-bold uppercase tracking-widest text-xs rounded-xl shadow-md transition-all gap-2 w-full sm:w-auto"
                         >
-                            Explore Exogram.ai →
+                            Try Exogram →
                         </a>
                         <a
                             href="#how-it-works"
@@ -238,7 +238,7 @@ export default function ExogramFounderThesisPage() {
                                 A conventional chatbot sees only the words typed into the current message, plus whatever information was manually added to the conversation. That gap creates a tax: the user repeatedly translates their world into long instructions that the model can use once.
                             </p>
                             <div className="p-5 bg-purple-50 rounded-xl border border-purple-200 text-purple-950 font-medium text-base">
-                                Exogram is built to reduce that tax by carrying forward relevant, user-controlled context across conversations, projects, tools, and models.
+                                Exogram is built to eliminate that tax. It carries forward the relevant context you choose to retain, so each conversation picks up where the last one left off.
                             </div>
                         </div>
                     </div>
@@ -281,13 +281,27 @@ export default function ExogramFounderThesisPage() {
                     <div className="max-w-4xl mx-auto">
                         <div className="max-w-3xl mx-auto text-center mb-8">
                             <span className="text-xs font-mono font-bold uppercase tracking-wider text-purple-700 mb-2 block">
-                                Architectural Definition
+                                What Exogram Is
                             </span>
                             <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-zinc-950 tracking-tight mb-4">
-                                Exogram is persistent context infrastructure for AI.
+                                Exogram is AI that understands your context.
                             </h2>
-                            <p className="text-base sm:text-lg text-zinc-800 leading-relaxed">
-                                Exogram is not another foundation model. It is the cognitive layer around models that preserves continuity. It records meaningful events with provenance, identifies entities and relationships, tracks what changed over time, and assembles the smallest useful context packet for the task at hand. A connected model - whether local, open-weight, or frontier-hosted - can then reason with a more accurate view of the user’s personal or organizational reality.
+                            <div className="text-base sm:text-lg text-zinc-800 leading-relaxed space-y-4 text-left">
+                                <p>
+                                    Exogram is a conversational AI built to carry your real context forward.
+                                </p>
+                                <p>
+                                    It remembers the work you have done, the decisions you have made, the people and projects involved, what changed, what failed, and what still needs attention. It connects that context to the question you ask now - so you can speak naturally instead of rebuilding the entire briefing in every prompt.
+                                </p>
+                                <p>
+                                    The result is not just another chat thread. It is an AI system that becomes more useful as it understands the relevant reality around your work and life.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="my-8 p-6 sm:p-8 bg-white rounded-2xl border-l-4 border-purple-600 border border-zinc-300 shadow-xs max-w-3xl mx-auto">
+                            <p className="text-xl sm:text-2xl font-grotesk font-bold text-zinc-950 leading-snug">
+                                Ask naturally. Exogram connects the dots.
                             </p>
                         </div>
 
@@ -304,13 +318,13 @@ export default function ExogramFounderThesisPage() {
                     <div className="max-w-4xl mx-auto">
                         <div className="max-w-3xl mx-auto text-center mb-12">
                             <span className="text-xs font-mono font-bold uppercase tracking-wider text-purple-700 mb-2 block">
-                                Seven-Layer Anatomy
+                                Under the Hood
                             </span>
                             <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-zinc-950 tracking-tight mb-4">
-                                From raw events to useful understanding.
+                                Exogram turns your history into useful intelligence.
                             </h2>
-                            <p className="text-zinc-700 text-base">
-                                How Exogram transforms unstructured interactions into high-fidelity ground truth.
+                            <p className="text-zinc-700 text-base max-w-2xl mx-auto">
+                                Every conversation, project, document, decision, and outcome can contribute context - when it is relevant and when you choose to retain it. Exogram organizes that context into a persistent understanding of people, projects, preferences, events, relationships, and changing facts.
                             </p>
                         </div>
 
@@ -351,13 +365,13 @@ export default function ExogramFounderThesisPage() {
                     <div className="max-w-4xl mx-auto">
                         <div className="max-w-3xl mx-auto text-center mb-10">
                             <span className="text-xs font-mono font-bold uppercase tracking-wider text-purple-700 mb-2 block">
-                                Comparative Matrix
+                                The Difference
                             </span>
                             <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-zinc-950 tracking-tight mb-4">
-                                Memory is useful. Meaningful context is more useful.
+                                Most AI responds to a prompt. Exogram responds to the situation.
                             </h2>
                             <p className="text-zinc-700 text-base">
-                                The architectural gap between simple vector recall and durable contextual intelligence.
+                                The gap between answering the words you typed and understanding what you actually need.
                             </p>
                         </div>
 
@@ -503,15 +517,23 @@ export default function ExogramFounderThesisPage() {
                             Market Thesis
                         </span>
                         <h2 className="text-3xl sm:text-4xl font-grotesk font-bold text-zinc-950 tracking-tight mb-6">
-                            Models will improve. Context will compound.
+                            The next generation of AI will not just answer. It will understand.
                         </h2>
-                        <p className="text-base sm:text-lg text-zinc-800 leading-relaxed mb-8">
-                            Foundation models will become more capable, cheaper, and easier to switch. The durable value will not belong only to the model that produces the next response. It will belong to the systems that preserve experience, organize meaning, understand relationships, recognize change, and give AI the right context at the right moment.
-                        </p>
+                        <div className="text-base sm:text-lg text-zinc-800 leading-relaxed mb-8 space-y-4 text-left">
+                            <p>
+                                The world does not arrive as a clean prompt.
+                            </p>
+                            <p>
+                                It arrives as conversations, relationships, calendars, projects, documents, decisions, changing priorities, unfinished work, and events that matter for reasons users may not think to explain every time.
+                            </p>
+                            <p>
+                                Exogram is being built for that reality: AI that can carry context forward, recognize when it matters, and collaborate with people over time.
+                            </p>
+                        </div>
 
                         <div className="p-6 sm:p-8 bg-white border border-zinc-300 rounded-2xl shadow-xs">
                             <p className="text-xl sm:text-2xl font-grotesk font-bold text-zinc-950">
-                                &ldquo;Run the model you choose. Keep the intelligence you build.&rdquo;
+                                &ldquo;The AI you keep using is the one that already knows the situation.&rdquo;
                             </p>
                         </div>
                     </div>
@@ -532,16 +554,16 @@ export default function ExogramFounderThesisPage() {
 
                         <div className="space-y-4 text-base text-zinc-800 leading-relaxed font-sans">
                             <p>
-                                I began building Exogram after repeatedly encountering the same problem while using AI to research, write, plan, and build products. The models were often impressive. But the work was discontinuous. A model would lose the architecture of a project, forget a prior decision, repeat a failed approach, or require another lengthy explanation to recreate context that already existed days earlier.
+                                I began building Exogram after repeatedly encountering the same problem while using AI to research, write, plan, and build products. The models were often impressive. But the experience was discontinuous. A model would lose the architecture of a project, forget a prior decision, repeat a failed approach, or require another lengthy explanation to recreate context that already existed days earlier.
                             </p>
                             <p>
-                                That was not only a model-capability problem. It was an infrastructure problem.
+                                That was not a prompting problem. It was a product problem. The intelligence was there, but the continuity was not.
                             </p>
                             <p>
-                                Exogram is my attempt to build the missing continuity layer: a system that can preserve the events, relationships, decisions, constraints, outcomes, and evidence that make an AI response relevant to real life and real work.
+                                Exogram is my attempt to build what I wanted to use: an AI that remembers the work, understands the situation, and lets me speak naturally instead of re-briefing a blank chatbot every morning. Not a wrapper. Not middleware. The actual AI I go to when I need to think, plan, research, or build.
                             </p>
                             <p>
-                                The ambition is simple: AI should understand enough of the context behind a request that people can speak naturally, remain in control, and spend less time reconstructing their world for every new conversation.
+                                The ambition is simple: AI should understand enough of what is going on that people can just talk to it.
                             </p>
                         </div>
 
@@ -570,10 +592,10 @@ export default function ExogramFounderThesisPage() {
                 <section className="py-16 text-center">
                     <div className="max-w-2xl mx-auto">
                         <h2 className="text-3xl sm:text-5xl font-grotesk font-bold text-zinc-950 tracking-tight mb-4">
-                            AI should understand the context behind the question.
+                            AI that already knows the situation.
                         </h2>
                         <p className="text-base sm:text-lg text-zinc-700 leading-relaxed mb-8">
-                            Exogram is building persistent, evidence-linked context that helps AI carry understanding forward across conversations, projects, and models.
+                            Exogram is a conversational AI that understands your context, remembers what matters, and helps you move forward without starting over.
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -583,7 +605,7 @@ export default function ExogramFounderThesisPage() {
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center px-8 py-4 bg-purple-700 hover:bg-purple-800 text-white font-bold uppercase tracking-widest text-xs rounded-xl shadow-md transition-all gap-2 w-full sm:w-auto"
                             >
-                                Explore Exogram.ai →
+                                Try Exogram →
                             </a>
                             <Link
                                 href="/about"

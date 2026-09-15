@@ -388,7 +388,7 @@ export const exogramSoftwareSchema = {
     "@type": "SoftwareApplication",
     "name": "Exogram",
     "url": "https://exogram.ai",
-    "applicationCategory": "InfrastructureApplication",
+    "applicationCategory": "BusinessApplication",
     "operatingSystem": "Linux, Cloud, Kubernetes, Web",
     "author": {
         "@type": "Person",
@@ -414,6 +414,6 @@ export const exogramSoftwareSchema = {
         "https://www.richardewing.io/exogram",
         "https://exogram.ai"
     ],
-    "description": "Exogram is persistent context infrastructure for AI. Retains relevant history, understands relationships, tracks what changed, and reasons from evidence across time and models."
+    "description": "Exogram is a conversational AI that understands your context, remembers what matters, and helps you move work and life forward without starting over every time."
 };
 

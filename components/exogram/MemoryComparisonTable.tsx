@@ -6,37 +6,37 @@ import { Check, X } from 'lucide-react';
 export default function MemoryComparisonTable() {
     const comparisonRows = [
         {
-            dimension: 'Scope of Memory',
-            ordinary: 'Saves preferences or past messages',
-            exogram: 'Preserves scoped events, entities, relationships, evidence, and task state'
+            dimension: 'Starting point',
+            ordinary: 'Responds mainly to what you type now',
+            exogram: 'Uses relevant context from your prior work, preferences, decisions, and current task'
         },
         {
-            dimension: 'Retrieval Logic',
-            ordinary: 'Retrieves similar text based on raw vector similarity',
-            exogram: 'Retrieves context based on relevance, relationship, timing, source, and status'
+            dimension: 'Prompting burden',
+            ordinary: 'Requires detailed prompting to get useful results',
+            exogram: 'Lets you ask naturally and clarifies only what it still needs'
         },
         {
-            dimension: 'Epistemic Status',
-            ordinary: 'Treats all remembered content similarly',
-            exogram: 'Distinguishes a fact, preference, proposal, policy, verified outcome, and inference'
+            dimension: 'Continuity',
+            ordinary: 'Starts each new thread with limited or no memory of prior work',
+            exogram: 'Carries forward projects, plans, relationships, and open work'
         },
         {
-            dimension: 'Visibility & Control',
-            ordinary: 'Uses personalization invisibly behind closed doors',
-            exogram: 'Shows relevant context transparently and lets users edit or suppress it'
+            dimension: 'Depth of response',
+            ordinary: 'Gives an answer to the immediate question',
+            exogram: 'Helps identify what matters, what changed, and what should happen next'
         },
         {
-            dimension: 'Temporal Accuracy',
-            ordinary: 'May carry stale or outdated context forward indefinitely',
-            exogram: 'Actively tracks current, superseded, expired, and disputed information'
+            dimension: 'Transparency',
+            ordinary: 'Memory is often hidden, generic, or invisible to the user',
+            exogram: 'Lets you see, edit, and control the context it uses'
         },
         {
-            dimension: 'Portability',
-            ordinary: 'Is often tied to one proprietary provider or walled garden',
-            exogram: 'Preserves context across compatible local and cloud models'
+            dimension: 'Privacy options',
+            ordinary: 'Typically runs through one cloud provider with limited control',
+            exogram: 'One Exogram experience with private local and cloud reasoning options'
         },
         {
-            dimension: 'Core Outcome',
+            dimension: 'Core outcome',
             ordinary: 'Answers an isolated prompt in the moment',
             exogram: 'Helps continue a project, decision, research process, or long-running plan'
         }
@@ -52,10 +52,10 @@ export default function MemoryComparisonTable() {
                                 Dimension
                             </th>
                             <th className="py-4 px-5 text-xs font-mono font-bold uppercase tracking-wider text-zinc-500 w-[37.5%] border-l border-zinc-200">
-                                Ordinary AI Memory
+                                Typical AI Chat
                             </th>
                             <th className="py-4 px-5 text-xs font-mono font-bold uppercase tracking-wider text-purple-900 w-[37.5%] border-l border-zinc-200 bg-purple-50/60">
-                                Exogram Persistent Context
+                                Exogram
                             </th>
                         </tr>
                     </thead>
@@ -88,8 +88,8 @@ export default function MemoryComparisonTable() {
                 </table>
             </div>
             <div className="p-4 bg-zinc-50 border-t border-zinc-200 text-xs text-zinc-600 font-mono flex items-center justify-between">
-                <span>The distinction between simple storage and durable cognitive continuity.</span>
-                <span className="text-purple-700 font-bold">Context Architecture</span>
+                <span>The difference between answering a prompt and understanding the situation.</span>
+                <span className="text-purple-700 font-bold">Exogram</span>
             </div>
         </div>
     );

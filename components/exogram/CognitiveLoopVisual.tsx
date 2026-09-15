@@ -1,50 +1,50 @@
 'use client';
 
 import React from 'react';
-import { ArrowDown, HelpCircle, Layers, GitBranch, RefreshCw, Zap, Compass } from 'lucide-react';
+import { MessageSquare, Lightbulb, ArrowDownRight, HelpCircle, CheckCircle2, RefreshCw } from 'lucide-react';
 
 export default function CognitiveLoopVisual() {
     const steps = [
         {
             number: '01',
-            label: 'What happened',
-            detail: 'Meaningful conversations, recorded actions, decisions, artifacts, and outcomes with source provenance.',
-            icon: Zap,
+            label: 'You ask naturally',
+            detail: 'No special formatting, no system prompts, no lengthy backstory. Just say what you need.',
+            icon: MessageSquare,
             color: 'text-purple-700 bg-purple-100 border-purple-200'
         },
         {
             number: '02',
-            label: 'What it means',
-            detail: 'Semantic extraction identifying key entities: people, projects, claims, preferences, and commitments.',
-            icon: Layers,
+            label: 'Exogram understands the relevant situation',
+            detail: 'Draws from your retained context: prior work, decisions, preferences, relationships, and what has changed.',
+            icon: Lightbulb,
             color: 'text-cyan-700 bg-cyan-100 border-cyan-200'
         },
         {
             number: '03',
-            label: 'How it relates',
-            detail: 'Cross-temporal entity graphing connecting people, systems, documents, and historical initiatives.',
-            icon: GitBranch,
+            label: 'It brings forward useful context',
+            detail: 'Selects only the information that matters for this specific task. No flooding, no stale assumptions.',
+            icon: ArrowDownRight,
             color: 'text-indigo-700 bg-indigo-100 border-indigo-200'
         },
         {
             number: '04',
-            label: 'What changed',
-            detail: 'Active temporal tracking distinguishing current, proposed, verified, superseded, or expired reality.',
-            icon: RefreshCw,
+            label: 'It answers, suggests, and asks the next best question',
+            detail: 'Provides a grounded response and identifies the smallest clarification that would materially improve the result.',
+            icon: HelpCircle,
             color: 'text-amber-700 bg-amber-100 border-amber-200'
         },
         {
             number: '05',
-            label: 'What matters now',
-            detail: 'Context packet assembly extracting only the specific evidence and active state required for this task.',
-            icon: Compass,
+            label: 'You confirm, correct, or redirect',
+            detail: 'See what context Exogram used. Edit assumptions. Dismiss irrelevant history. Stay in control.',
+            icon: CheckCircle2,
             color: 'text-emerald-700 bg-emerald-100 border-emerald-200'
         },
         {
             number: '06',
-            label: 'What the AI should ask, explain, or do next',
-            detail: 'Connected foundation model reasons with ground truth, asks minimal clarifying questions, and acts.',
-            icon: HelpCircle,
+            label: 'The work continues instead of starting over',
+            detail: 'Next session, next week, next project. Exogram picks up where you left off.',
+            icon: RefreshCw,
             color: 'text-blue-700 bg-blue-100 border-blue-200'
         }
     ];
@@ -54,14 +54,14 @@ export default function CognitiveLoopVisual() {
             <div className="flex items-center justify-between border-b border-zinc-200 pb-4 mb-6">
                 <div>
                     <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-purple-700">
-                        The Cognitive Cycle
+                        The Interaction Loop
                     </span>
                     <h3 className="text-xl font-grotesk font-bold text-zinc-950 mt-1">
-                        How Exogram Preserves Continuity
+                        How a conversation with Exogram works
                     </h3>
                 </div>
                 <div className="text-xs font-mono text-zinc-500 hidden sm:block">
-                    Closed-Loop Context Flow
+                    Continuous Context Loop
                 </div>
             </div>
 
@@ -92,14 +92,14 @@ export default function CognitiveLoopVisual() {
 
                             {idx < steps.length - 1 && (
                                 <div className="mt-4 pt-3 border-t border-zinc-200/60 flex items-center gap-1.5 text-[11px] font-mono text-zinc-400 group-hover:text-purple-600">
-                                    <span>Next progression</span>
-                                    <span className="font-bold">↓</span>
+                                    <span>Next</span>
+                                    <span className="font-bold">→</span>
                                 </div>
                             )}
                             {idx === steps.length - 1 && (
                                 <div className="mt-4 pt-3 border-t border-emerald-200 flex items-center gap-1.5 text-[11px] font-mono text-emerald-700 font-bold">
-                                    <span>Ready for execution</span>
-                                    <span>✓</span>
+                                    <span>Loop continues</span>
+                                    <span>↻</span>
                                 </div>
                             )}
                         </div>
