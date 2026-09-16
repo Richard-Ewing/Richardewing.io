@@ -15,8 +15,15 @@ let fileCount = 0;
 const dangerousPatterns = [
   { regex: /curl\s+.*\|\s*(ba)?sh/i, message: 'Unverified remote script pipe execution' },
   { regex: /eval\s*\(\s*.*untrusted/i, message: 'Unsafe eval execution' },
-  { regex: /sk-[a-zA-Z0-9]{20,}/i, message: 'Exposed OpenAI / model secret key pattern' },
-  { regex: /ghp_[a-zA-Z0-9]{20,}/i, message: 'Exposed GitHub personal access token' },
+  { regex: /(?:^|[^a-zA-Z0-9_-])sk-[a-zA-Z0-9_-]{20,}/i, message: 'Exposed OpenAI / model secret key pattern' },
+  { regex: /(?:^|[^a-zA-Z0-9_-])sk-ant-[a-zA-Z0-9_-]{20,}/i, message: 'Exposed Anthropic secret key pattern' },
+  { regex: /(?:^|[^a-zA-Z0-9_-])AIza[0-9A-Za-z-_]{35}/i, message: 'Exposed Google API key pattern' },
+  { regex: /(?:^|[^a-zA-Z0-9_-])(?:ghp|gho|ghu|ghs|ghr)_[a-zA-Z0-9]{36,}/i, message: 'Exposed GitHub personal access token' },
+  { regex: /(?:^|[^a-zA-Z0-9_-])AKIA[0-9A-Z]{16}/i, message: 'Exposed AWS access key pattern' },
+  { regex: /(?:^|[^a-zA-Z0-9_-])pcsk_[a-zA-Z0-9_-]{20,}/i, message: 'Exposed Pinecone secret key pattern' },
+  { regex: /(?:^|[^a-zA-Z0-9_-])sbp_[a-zA-Z0-9]{20,}/i, message: 'Exposed Supabase secret key pattern' },
+  { regex: /-----BEGIN (?:RSA |EC |OPENSSH |DSA |PGP )?PRIVATE KEY-----/, message: 'Exposed private cryptographic key' },
+  { regex: /(?:postgres|postgresql|mysql|mongodb(?:\+srv)?):\/\/[a-zA-Z0-9_.-]+:[^@\s/]+@[a-zA-Z0-9_.-]+/i, message: 'Exposed database connection string with password' },
   { regex: /[\u2013\u2014]/, message: 'En-dash or Em-dash character detected in agent skill' }
 ];
 
@@ -35,9 +42,9 @@ function scanDirectory(dir) {
 
       for (const { regex, message } of dangerousPatterns) {
         if (regex.test(content)) {
-          // Allow em-dash regex in this audit script itself
-          if (relPath.includes('audit-agent-skills.mjs') && message.includes('dash')) continue;
-          if (relPath.includes('verify-qa.mjs') && message.includes('dash')) continue;
+          // Allow em-dash regex and pattern definitions in audit script and verify script
+          if (relPath.includes('audit-agent-skills.mjs') && (message.includes('dash') || message.includes('pattern') || message.includes('key') || message.includes('token') || message.includes('string'))) continue;
+          if (relPath.includes('verify-qa.mjs') && (message.includes('dash') || message.includes('pattern') || message.includes('key') || message.includes('token') || message.includes('string'))) continue;
 
           console.error(`[SECURITY ERROR] ${relPath}: ${message}`);
           errorCount++;

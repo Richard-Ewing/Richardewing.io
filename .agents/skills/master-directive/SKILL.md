@@ -1,6 +1,6 @@
 ---
 name: master-directive
-description: Sovereign Master Operating Directive (MOD v3.2) for richardewing.io. Enforces adaptive two-track task routing, 360-degree panoramic context, the 5-step Asset Pipeline Hierarchy (Research -> Concept -> Framework -> Diagnostic -> Implementation), Academy moat governance, gstack virtual engineering team discipline, Karpathy empirical test assertions, 5-agent War Room worktree swarm orchestration, zero-drift deterministic QA verification, domain synthesis engines (HWS v2.0, UI/UX, SEO, Code), and zero-error live production deployments.
+description: Sovereign Master Operating Directive (MOD v3.2) for richardewing.io. Enforces adaptive two-track task routing, 360-degree panoramic context, the 5-step Asset Pipeline Hierarchy (Research -> Concept -> Framework -> Diagnostic -> Implementation), Academy moat governance, gstack virtual engineering team discipline, Karpathy empirical test assertions, 5-agent War Room worktree swarm orchestration, zero-drift deterministic QA verification (including zero secret key/credential leakage), domain synthesis engines (HWS v2.0, UI/UX, SEO, Code), and zero-error live production deployments.
 ---
 
 # Sovereign Master Operating Directive (MOD v3.2): Antigravity Execution System
@@ -66,7 +66,7 @@ Depending on the nature of the task, dynamically activate the corresponding doma
 
 ---
 
-## 4. Multi-Agent Swarm Orchestration ("War Room Protocol")
+## 5. Multi-Agent Swarm Orchestration ("War Room Protocol")
 
 Deploy specialized custom subagents from `.agents/agents/` using `invoke_subagent`:
 
@@ -80,18 +80,18 @@ Deploy specialized custom subagents from `.agents/agents/` using `invoke_subagen
 
 ---
 
-## 5. Zero-Drift Deterministic Verification & 4-Pass QA
+## 6. Zero-Drift Deterministic Verification & 4-Pass QA
 
 Every deliverable must pass a 4-Tier Verification Gate before completion:
 
 * **Pass 1: Unit & Technical Integrity**: Zero syntax errors, valid TypeScript types, valid component contracts.
-* **Pass 2: Integration & Automated Script QA**: Run `node .agents/scripts/verify-qa.mjs` to lint illegal em-dashes, verify stat sources, check meta length limits, and ensure clean root directory.
+* **Pass 2: Integration & Automated Script QA**: Run `node .agents/scripts/verify-qa.mjs` to verify zero secret keys/tokens, lint illegal em-dashes, verify stat sources, check meta length limits, and ensure clean root directory.
 * **Pass 3: Domain & Specification Compliance**: Adherence to REWS copy rules, UI/UX polish standards, and SEO canonical structures.
 * **Pass 4: Build & Production Readiness**: Clean compilation (`npm run build`), verified live deployment, and zero runtime log exceptions.
 
 ---
 
-## 6. Self-Healing Error Recovery Protocol
+## 7. Self-Healing Error Recovery Protocol
 
 If an error or failure occurs at any stage:
 1. **Never Swallow Exceptions or Mask Symptoms**: Do not comment out failing assertions, wrap errors in empty try-catch blocks, or return 0-byte fallbacks.
@@ -100,14 +100,42 @@ If an error or failure occurs at any stage:
 
 ---
 
-## 7. Production Deployment & Repository Hygiene
+## 8. Production Deployment & Repository Hygiene
 
 1. **Mandatory Live Production Deployment**: Validate builds (`npm run build`). EVERY task modifying code or content MUST automatically execute `git add -A`, `git commit -m "..."`, and `git push origin main` to deploy to live production. The user should NEVER have to remind or prompt the agent to deploy. Always verify `git status` is clean before ending the turn.
 2. **Workspace Hygiene Standard**: Keep the repository root immaculate. All temporary scripts, intermediate JSON outputs, and diagnostic logs MUST be routed to `.scratch/` or `<appDataDir>\brain\<conversation-id>/scratch/`. Never commit `tmp_*.js` or debug `.txt` files to the root directory.
 
 ---
 
-## 8. Cognitive Model Maximization (Gemini 3.8 Flash High / Gemini 3 Pro / Claude 3.7 / Opus / Fable)
+## 9. Sovereign Security Invariant: Absolute Prohibition of Secret Key & Credential Leakage
+
+> [!CAUTION]
+> **UNBREAKABLE SECURITY INVARIANT:**
+> UNDER NO CIRCUMSTANCES SHALL ANY SECRET KEYS, PRIVATE TOKENS, CREDENTIALS, OR SENSITIVE ACCESS KEYS THAT ARE NOT MEANT TO BE PUBLICLY SHARED EVER BE COMMITTED, PUSHED, OR PUBLISHED TO PUBLIC REPOSITORIES, CODEBASES, OR SYSTEM OUTPUTS.
+
+1. **Testing Never Justifies Secret Exposure**:
+   - The requirement to test, prototype, debug, benchmark, or validate code NEVER excuses placing real secret keys, API tokens, service account credentials, or private keys into committable files, test probes, scratch files, documentation, or public git history.
+   - Testing imperatives never supersede secret confidentiality: Live private keys must never touch files intended for or accessible by git tracking.
+   - All automated test probes, diagnostic harnesses, and CI checks MUST run against local mock fixtures, simulated dummy responses, or gitignored local environment variables.
+2. **Strict Environment Segregation**:
+   - Real keys (OpenAI, Anthropic, Gemini, Pinecone, Supabase Service Role, GitHub PATs, AWS, GCP Service Account JSON) must reside exclusively in local gitignored `.env*.local` files or secure runtime secret vaults.
+   - Never commit `.env` files containing live secrets to the repository.
+   - Never embed secret keys in scratch files located in committable directories. Route all local scratch files to `.scratch/` (which is in `.gitignore`).
+3. **Synthetic Test Token Mandate**:
+   - All tests, mock APIs, and documentation examples requiring token parameters must utilize explicitly synthetic, inert placeholders (e.g., `MOCK_TEST_SECRET_REDACTED`).
+   - If a test requires validating live connectivity, it must read securely from `process.env` (loaded from `.env.local`), verifying that the key exists without printing, logging, or dumping the key string to test outputs, console logs, or file artifacts.
+4. **Deterministic Pre-Push Gate Interception**:
+   - Automated credential scanning in `verify-qa.mjs` executes before every build and git push.
+   - The scanner checks for known secret prefixes (`sk-`, `sk-ant-`, `AIza`, `ghp_`, `AKIA`, `pcsk_`, `sbp_`, private key headers, database passwords, and service account JSONs).
+   - Any detected match immediately terminates execution with a non-zero exit code (`exit 1`), blocking `npm run build` and `git push`.
+5. **Immediate Incident Protocol**:
+   - If any sensitive key is ever inadvertently staged or committed, it must be treated as instantly compromised.
+   - Immediately revoke and rotate the credential at the upstream provider.
+   - Scrub the git commit history before pushing to origin.
+
+---
+
+## 10. Cognitive Model Maximization (Gemini 3.8 Flash High / Gemini 3 Pro / Claude 3.7 / Opus / Fable)
 
 To harness the full capabilities of next-generation high-reasoning frontier models:
 
@@ -117,7 +145,7 @@ To harness the full capabilities of next-generation high-reasoning frontier mode
 
 ---
 
-## 9. Google Antigravity 2.12.2 Sovereign Master Harness & Swarm Architecture
+## 11. Google Antigravity 2.12.2 Sovereign Master Harness & Swarm Architecture
 
 1. **Subagent Swarms in True Git Worktrees**: Summon custom subagents (`lived_experience_writer`, `qa_auditor`, `seo_architect`, `ui_designer`, `code_architect`) in parallel branch worktrees (`Workspace: "branch"` or `"share"`). Subagents leverage `inheritCustomizations: true` to automatically inherit workspace rules, HWS v2.0 guidelines, Next.js invariants, and progressive skills without dirtying the primary working directory.
 2. **G-Stack Virtual Engineering Roles**: Enforce role-based accountability modeled after Garry Tan's `gstack` virtual team discipline (Product Economist / Strategy, Architecture Lead, Design Reviewer, Headless QA Lead, Release Engineer) to maintain end-to-end software factory velocity.
@@ -130,7 +158,7 @@ To harness the full capabilities of next-generation high-reasoning frontier mode
 
 ---
 
-## 10. Slash Command Execution & Community Ecosystem Harness
+## 12. Slash Command Execution & Community Ecosystem Harness
 
 1. **`/boost` (High-Reasoning Swarm Escalation)**: For complex multi-layered architectural problems, invoke `/boost` to coordinate multi-agent reasoning pipelines with maximum thinking effort.
 2. **`/browser` (Live Headless Visual & DOM Inspection)**: Validate UI layout shifts, responsive mobile breakpoints, and user interaction flows using Playwright/Chromium headless browser automation.
@@ -143,7 +171,7 @@ To harness the full capabilities of next-generation high-reasoning frontier mode
 
 ---
 
-## 11. NotebookLM & Multimodal Media Protocol
+## 13. NotebookLM & Multimodal Media Protocol
 
 To leverage Google Ultra and NotebookLM across all platform publications:
 
@@ -151,7 +179,3 @@ To leverage Google Ultra and NotebookLM across all platform publications:
 2. **Audio Deep Dive Integration**: Flagship publications must embed `NotebookLMAudioPlayer` containers configured to stream generated 2-host audio overviews from `public/audio/` or external audio CDNs.
 3. **Executive Slide Viewer Scaffolding**: Transform key findings into `NotebookLMSlides` interactive carousel decks with metric callouts and speaker context notes.
 4. **Autonomous Media Synchronization**: When new audio or slide assets are generated, automatically wire component props without disrupting static pre-rendering.
-
-
-
-

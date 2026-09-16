@@ -40,7 +40,7 @@ Before executing any request, dynamically classify the user prompt into one of t
 ### Track 1: Execution Pipeline (Code Mutations)
 * **Trigger**: Any turn where files are created, modified, refactored, or deleted.
 * **Mandatory Turn-End Gate (UNBREAKABLE)**:
-  `node .agents/scripts/verify-qa.mjs` $\longrightarrow$ `npm run build` $\longrightarrow$ `git add -A` $\longrightarrow$ `git commit -m "..."` $\longrightarrow$ `git push origin main` $\longrightarrow$ `git status` (verify clean).
+  `node .agents/scripts/verify-qa.mjs` (Zero Secret Keys + Zero Em-Dashes + Root Hygiene) $\longrightarrow$ `npm run build` $\longrightarrow$ `git add -A` $\longrightarrow$ `git commit -m "..."` $\longrightarrow$ `git push origin main` $\longrightarrow$ `git status` (verify clean).
   You MUST NEVER end a code-modifying turn without running this full deployment sequence. Never ask the user to remind you.
 
 ### Track 2: Strategic & Advisory Pipeline (No Code Mutations)
@@ -57,8 +57,22 @@ Before executing any request, dynamically classify the user prompt into one of t
 3. **Karpathy Empirical Test Invariants**: Before applying complex bug fixes or architectural refactors, construct a lightweight Red/Green test probe in `.scratch/`. Verify failure (Red), apply the structural fix, verify resolution (Green), then run the full build. Eliminate all "AI Hallucination Debt".
 4. **Git Worktree Subagent Swarming**: When dispatching subagents (`invoke_subagent`), default to isolated git worktrees (`Workspace: "branch"` or `"share"`) with model tiering (`flash` for fast search/lint, `pro` or `inherit` for architecture) to prevent main-thread context bloat.
 5. **Generative UI Activation**: Utilize Antigravity 2.12 Generative UI (`builtin/skills/generative_ui`) to render interactive diagnostics, calculators, and sandboxes directly within artifacts and chat surfaces.
-6. **Zero-Drift Deterministic Verification**: Execute `node .agents/scripts/verify-qa.mjs` to automatically enforce zero em-dashes, stat source attribution, meta length limits, and workspace root hygiene.
+6. **Zero-Drift Deterministic Verification**: Execute `node .agents/scripts/verify-qa.mjs` to automatically enforce zero secret leaks, zero em-dashes, stat source attribution, meta length limits, and workspace root hygiene.
 7. **Production Deployment & Clean Git Hygiene**: Always verify `git status` returns clean before ending execution. Route all scratch scripts and temporary dumps to `.scratch/`.
+
+---
+
+## 6. Sovereign Security Invariant: Absolute Prohibition of Secret Key & Credential Leakage
+
+> [!CAUTION]
+> **CRITICAL SECURITY INVARIANT (NON-NEGOTIABLE):**
+> NEVER PUBLISH, PUSH, COMMIT, OR EXPOSE TO THE PUBLIC ANY SECRET KEYS, API TOKENS, OR KEYS THAT ARE NOT MEANT TO BE SHARED.
+
+1. **Testing Never Excuses Secret Exposure**: The requirement to test, prototype, debug, benchmark, or validate code NEVER justifies placing real secret keys, API tokens, service account credentials, or private keys into committable files, test probes, documentation, or public git history.
+2. **Local Gitignored Environment Only**: All actual credentials, API keys, and environment secrets must live exclusively in gitignored `.env*.local` files or local OS environment variables. They must never be checked into git.
+3. **Synthetic Test Fixtures**: All tests, diagnostics, and code examples must use synthetic dummy strings (e.g. `TEST_MOCK_KEY_REDACTED_DO_NOT_USE`) or local emulators.
+4. **Automated Pre-Push Defense Gate**: Every code-modifying turn must pass automated secret credential scanning in `verify-qa.mjs`. If any secret key, private token, database password, or private key pattern is detected, the pipeline immediately halts with exit code 1 and blocks deployment.
+
 
 
 

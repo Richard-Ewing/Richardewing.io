@@ -48,8 +48,15 @@ try {
   const gitOutput = execSync('git status --porcelain', { cwd: rootDir, encoding: 'utf8' });
   const modifiedLines = gitOutput.split('\n').filter(Boolean);
   modifiedLines.forEach(line => {
-    const file = line.trim().split(/\s+/).slice(1).join(' ');
-    if (file && /\.(md|mdx|tsx|ts|jsx|js)$/i.test(file)) {
+    let file = line.trim();
+    if (file.includes('->')) {
+      file = file.split('->')[1].trim();
+    } else {
+      file = file.split(/\s+/).slice(1).join(' ');
+    }
+    const isBinary = /\.(png|jpe?g|gif|webp|ico|woff2?|ttf|eot|mp3|mp4|webm|pdf|zip|tar|gz)$/i.test(file);
+    const isLockfile = file.endsWith('package-lock.json') || file.endsWith('yarn.lock') || file.endsWith('pnpm-lock.yaml');
+    if (file && !isBinary && !isLockfile) {
       const fullPath = path.join(rootDir, file);
       if (fs.existsSync(fullPath) && !filesToAudit.includes(fullPath)) {
         filesToAudit.push(fullPath);
@@ -63,15 +70,17 @@ try {
 // 3. Perform Em-Dash, Stat & Accessibility Verification
 filesToAudit.forEach(filePath => {
   const relativePath = path.relative(rootDir, filePath);
-  if (relativePath.includes('verify-qa.mjs')) return;
+  if (relativePath.includes('verify-qa.mjs') || relativePath.includes('audit-agent-skills.mjs')) return;
 
   const content = fs.readFileSync(filePath, 'utf8');
 
   // Rule A: Zero Em-Dashes
-  const emDashMatch = content.match(/—/g);
-  if (emDashMatch) {
-    console.error(`[STYLE ERROR] Found ${emDashMatch.length} illegal em-dash(es) in ${relativePath}`);
-    errorCount++;
+  if (/\.(md|mdx|tsx|ts|jsx|js|html|txt)$/i.test(relativePath)) {
+    const emDashMatch = content.match(/—/g);
+    if (emDashMatch) {
+      console.error(`[STYLE ERROR] Found ${emDashMatch.length} illegal em-dash(es) in ${relativePath}`);
+      errorCount++;
+    }
   }
 
   // Rule B: Unsourced Stats Fallback Check
@@ -90,7 +99,47 @@ filesToAudit.forEach(filePath => {
       }
     });
   }
+
+  // Rule D: Zero Secret Key & Private Credential Leakage
+  const secretPatterns = [
+    { regex: /(?:^|[^a-zA-Z0-9_-])sk-[a-zA-Z0-9_-]{20,}/i, name: 'OpenAI / Model Secret API Key' },
+    { regex: /(?:^|[^a-zA-Z0-9_-])sk-ant-[a-zA-Z0-9_-]{20,}/i, name: 'Anthropic Secret API Key' },
+    { regex: /(?:^|[^a-zA-Z0-9_-])AIza[0-9A-Za-z-_]{35}/i, name: 'Google Cloud API Key' },
+    { regex: /(?:^|[^a-zA-Z0-9_-])(?:ghp|gho|ghu|ghs|ghr)_[a-zA-Z0-9]{36,}/i, name: 'GitHub Personal Access Token' },
+    { regex: /(?:^|[^a-zA-Z0-9_-])AKIA[0-9A-Z]{16}/i, name: 'AWS Access Key ID' },
+    { regex: /(?:^|[^a-zA-Z0-9_-])pcsk_[a-zA-Z0-9_-]{20,}/i, name: 'Pinecone Secret Key' },
+    { regex: /(?:^|[^a-zA-Z0-9_-])sbp_[a-zA-Z0-9]{20,}/i, name: 'Supabase Secret Token' },
+    { regex: /-----BEGIN (?:RSA |EC |OPENSSH |DSA |PGP )?PRIVATE KEY-----/, name: 'Private Cryptographic Key' },
+    { regex: /(?:postgres|postgresql|mysql|mongodb(?:\+srv)?):\/\/[a-zA-Z0-9_.-]+:[^@\s/]+@[a-zA-Z0-9_.-]+/i, name: 'Database URL with Embedded Password' }
+  ];
+
+  for (const { regex, name } of secretPatterns) {
+    if (regex.test(content)) {
+      console.error(`[SECURITY ERROR] Potential ${name} detected in ${relativePath}! Publishing secrets is strictly prohibited.`);
+      errorCount++;
+    }
+  }
 });
+
+// Rule E: Audit Git Status for Untracked/Staged .env or Credential Files
+try {
+  const gitStatusOutput = execSync('git status --porcelain', { cwd: rootDir, encoding: 'utf8' });
+  const gitLines = gitStatusOutput.split('\n').filter(Boolean);
+  gitLines.forEach(line => {
+    const file = line.trim().split(/\s+/).slice(1).join(' ');
+    const base = path.basename(file);
+    if (/^\.env(\..+)?$/i.test(base) && !base.endsWith('.example')) {
+      console.error(`[SECURITY ERROR] Attempting to track/stage environment secret file: ${file}`);
+      errorCount++;
+    }
+    if (/credentials?\.json$/i.test(base) || /service-account.*\.json$/i.test(base)) {
+      console.error(`[SECURITY ERROR] Attempting to track/stage credential JSON file: ${file}`);
+      errorCount++;
+    }
+  });
+} catch (e) {
+  // Ignore if git command fails
+}
 
 // 4. Validate Security Headers in middleware.ts
 const middlewarePath = path.join(rootDir, 'middleware.ts');

@@ -29,4 +29,15 @@ This skill enforces zero-drift defensive security standards across our custom su
 ## 3. Skill Supply-Chain Integrity
 
 1. **No Dynamic Remote Execution**: Any skill or script imported into `.agents/` must be committed and statically auditable. Never allow skills to fetch and execute arbitrary remote scripts at runtime.
-2. **Automated Skill Scanning**: Run `node .agents/scripts/audit-agent-skills.mjs` before deploying any changes to `.agents/` to detect hidden jailbreaks, dangerous regexes, or unauthorized file writes.
+2. **Automated Skill Scanning**: Run `node .agents/scripts/audit-agent-skills.mjs` before deploying any changes to `.agents/` to detect hidden jailbreaks, dangerous regexes, unauthorized file writes, or exposed API credentials.
+
+---
+
+## 4. Zero Secret Key Publication & Testing Isolation (CRITICAL)
+
+1. **Absolute Prohibition**: Never publish, push, commit, stage, or expose any secret keys, API tokens, service account credentials, database connection strings, auth secrets, or private keys to git or public repositories.
+2. **Testing Precedence Clause**: The requirement to test, prototype, debug, benchmark, or validate code NEVER justifies placing real secret keys or private credentials into committable files, test probes, documentation, or public git history.
+3. **Local Gitignored Environment Strictness**: Real keys (OpenAI, Anthropic, Gemini, Pinecone, Supabase Service Role, GitHub PATs, AWS, GCP Service Account JSON) must reside exclusively in local gitignored `.env*.local` files or local OS environment variables. Never commit `.env` files containing live credentials.
+4. **Synthetic Test Fixtures**: All tests, mock APIs, diagnostics, and documentation examples must use synthetic dummy strings (e.g. `TEST_MOCK_SECRET_REDACTED`) or local sandboxes.
+5. **Deterministic Pre-Push Gate**: Automated credential scanning in `verify-qa.mjs` and `audit-agent-skills.mjs` scans all modified and system files for secret key patterns and immediately blocks git commit and push if detected.
+

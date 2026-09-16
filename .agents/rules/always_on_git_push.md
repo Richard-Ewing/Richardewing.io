@@ -8,10 +8,11 @@ trigger: always_on
 
 If any file in the workspace is created or modified during the current turn:
 
-1. **Hygiene**: Ensure no loose `tmp_*.js` or test dump files exist in workspace root (route all scratch scripts to `.scratch/`).
-2. **QA Script**: Run `node .agents/scripts/verify-qa.mjs` to verify zero em-dashes and root hygiene.
-3. **Build Gate**: Run `npm run build` to verify production compilation.
-4. **Git Auto-Deploy**: Run `git add -A` $\rightarrow$ `git commit -m "<type>(<scope>): <description>"` $\rightarrow$ `git push origin main`.
+1. **Secret & Credential Gate (CRITICAL)**: Verify zero secret keys, private API tokens, service account credentials, database passwords, or unshared keys exist in modified or staged files. Testing NEVER excuses publishing or committing secrets.
+2. **Hygiene**: Ensure no loose `tmp_*.js` or test dump files exist in workspace root (route all scratch scripts to `.scratch/`).
+3. **QA Script**: Run `node .agents/scripts/verify-qa.mjs` to verify zero secret keys/tokens, zero em-dashes, and root hygiene.
+4. **Build Gate**: Run `npm run build` to verify production compilation.
+5. **Git Auto-Deploy**: Run `git add -A` $\rightarrow$ `git commit -m "<type>(<scope>): <description>"` $\rightarrow$ `git push origin main`.
 DO NOT end the conversation turn without executing these steps whenever files are changed. The user should NEVER have to prompt or remind you to push code to production.
 
 If NO files in the workspace were created or modified during the turn (Track 2: Strategic / Evaluative Inquiry), do NOT create empty git commits or trigger redundant builds.

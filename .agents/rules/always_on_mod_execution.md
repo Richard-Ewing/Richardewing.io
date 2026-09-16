@@ -29,7 +29,13 @@ Whenever the user submits a request (especially when saying "use the master dire
 
 4. **4-Tier Closed-Loop QA Gate (Track 1)**:
    - **Pass 1**: Technical integrity & TypeScript signatures (`npx tsc --noEmit`).
-   - **Pass 2**: Automated `node .agents/scripts/verify-qa.mjs` scan (em-dashes, stat fallbacks, hygiene).
+   - **Pass 2**: Automated `node .agents/scripts/verify-qa.mjs` scan (secret keys & credential leaks, em-dashes, stat fallbacks, hygiene).
    - **Pass 3**: HWS v2.0 copy & UI/UX design standards.
    - **Pass 4**: `npm run build` compilation & live production deployment.
+
+5. **Zero Secret Key Publication Invariant (CRITICAL)**:
+   - NEVER publish, push, commit, or expose to the public any secret keys, API tokens, service account credentials, database passwords, or unshared keys.
+   - Testing imperatives NEVER supersede secret confidentiality: live keys must never touch committable files or git history regardless of testing or debugging needs.
+   - Real keys remain exclusively in local gitignored `.env*.local`. All tests, mock APIs, and documentation must use synthetic placeholders (e.g., `MOCK_TEST_SECRET_REDACTED`).
+
 
