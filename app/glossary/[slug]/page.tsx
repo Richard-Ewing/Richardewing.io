@@ -157,7 +157,10 @@ export default async function GlossaryTermPage({ params }: Props) {
             const escaped = t.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             const regex = new RegExp(`\\b(${escaped})\\b`, 'i');
             if (regex.test(result)) {
-                result = result.replace(regex, `<a href="/glossary/${t.slug}" class="text-cyan-900 font-extrabold font-semibold hover:text-cyan-900 font-extrabold font-semibold underline underline-offset-2 decoration-cyan-500/30 transition-colors">$1</a>`);
+                const isKept = KEEP_TERMS.includes(t.slug);
+                const pillarSlug = CATEGORY_MAP[t.category] || 'cloud-infrastructure-finops';
+                const targetUrl = isKept ? `/glossary/${t.slug}` : `/glossary/pillars/${pillarSlug}#${t.slug}`;
+                result = result.replace(regex, `<a href="${targetUrl}" class="text-cyan-900 font-extrabold font-semibold hover:text-cyan-900 font-extrabold font-semibold underline underline-offset-2 decoration-cyan-500/30 transition-colors">$1</a>`);
             }
         }
         return result;
@@ -736,12 +739,18 @@ export default async function GlossaryTermPage({ params }: Props) {
                     <section className="mb-12">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">🔗 Related Terms</h2>
                         <div className="flex flex-wrap gap-3">
-                            {relatedTermObjects.map(rt => rt && (
-                                <Link key={rt.slug} href={`/glossary/${rt.slug}`}
-                                    className="px-4 py-2 bg-white/5 border border-zinc-400 rounded-full text-sm font-semibold text-zinc-900 font-medium hover:border-cyan-500/50 hover:text-cyan-900 font-extrabold font-semibold transition-all">
-                                    {rt.title}
-                                </Link>
-                            ))}
+                            {relatedTermObjects.map(rt => {
+                                if (!rt) return null;
+                                const isKept = KEEP_TERMS.includes(rt.slug);
+                                const pillarSlug = CATEGORY_MAP[rt.category] || 'cloud-infrastructure-finops';
+                                const targetUrl = isKept ? `/glossary/${rt.slug}` : `/glossary/pillars/${pillarSlug}#${rt.slug}`;
+                                return (
+                                    <Link key={rt.slug} href={targetUrl}
+                                        className="px-4 py-2 bg-white/5 border border-zinc-400 rounded-full text-sm font-semibold text-zinc-900 font-medium hover:border-cyan-500/50 hover:text-cyan-900 font-extrabold font-semibold transition-all">
+                                        {rt.title}
+                                    </Link>
+                                );
+                            })}
                         </div>
                     </section>
                 )}

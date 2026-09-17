@@ -48,30 +48,35 @@ export function Footer() {
                             <li><Link href="/roi" className="text-zinc-950 hover:text-zinc-900 transition-colors">ROI Calculator</Link></li>
                             <li><Link href="/case-studies" className="text-amber-900 font-extrabold hover:text-zinc-900 transition-colors">Case Studies</Link></li>
                             <li><Link href="/framework" className="text-zinc-950 hover:text-zinc-900 transition-colors">Framework</Link></li>
-                            <li><Link href="/research" className="text-zinc-950 hover:text-zinc-900 transition-colors">Research</Link></li>
                             <li><Link href="/concepts" className="text-zinc-950 hover:text-zinc-900 transition-colors">Canonical Concepts</Link></li>
+                            <li><Link href="/compare" className="text-zinc-950 hover:text-zinc-900 transition-colors">Platform Comparisons</Link></li>
+                            <li><Link href="/industries" className="text-zinc-950 hover:text-zinc-900 transition-colors">Industry Briefings</Link></li>
+                            <li><Link href="/benchmark" className="text-zinc-950 hover:text-zinc-900 transition-colors">Enterprise Benchmarks</Link></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Enforcement</h4>
+                        <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Knowledge & Academy</h4>
+                        <ul className="space-y-2 text-sm font-semibold font-grotesk">
+                            <li><Link href="/articles" className="text-zinc-950 hover:text-zinc-900 transition-colors">Forensic Articles</Link></li>
+                            <li><Link href="/blog" className="text-zinc-950 hover:text-zinc-900 transition-colors">Engineering Blog</Link></li>
+                            <li><Link href="/glossary" className="text-zinc-950 hover:text-zinc-900 transition-colors">Glossary & Pillars</Link></li>
+                            <li><Link href="/careers" className="text-emerald-900 font-extrabold hover:text-zinc-900 transition-colors">2026 Career Pathfinder</Link></li>
+                            <li><Link href="/book" className="text-purple-900 font-extrabold hover:text-zinc-900 transition-colors">The AI Economist (Book)</Link></li>
+                            <li><Link href="/curriculum" className="text-zinc-950 hover:text-zinc-900 transition-colors">Builder Curriculum</Link></li>
+                            <li><Link href="/answers" className="text-zinc-950 hover:text-zinc-900 transition-colors">Executive Answers</Link></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Advisory & Platforms</h4>
                         <ul className="space-y-2 text-sm font-semibold font-grotesk">
                             <li><Link href="/start-here" className="text-cyan-900 font-extrabold hover:text-zinc-900 transition-colors">Start Here</Link></li>
                             <li><Link href="/exogram" className="text-purple-900 font-extrabold hover:text-zinc-900 transition-colors">Exogram Platform</Link></li>
-                            <li><Link href="/exogram/demo" className="text-cyan-900 font-extrabold hover:text-zinc-900 transition-colors">Exogram Demo</Link></li>
+                            <li><Link href="/about" className="text-zinc-950 hover:text-zinc-900 transition-colors">About Richard</Link></li>
+                            <li><Link href="/doctrine" className="text-zinc-950 hover:text-zinc-900 transition-colors">Architectural Doctrine</Link></li>
                             <li><Link href="/security" className="text-zinc-950 hover:text-zinc-900 transition-colors">Security & Trust</Link></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Advisory & Info</h4>
-                        <ul className="space-y-2 text-sm font-semibold font-grotesk">
-                            <li><Link href="/about" className="text-zinc-950 hover:text-zinc-900 transition-colors">About</Link></li>
                             <li><Link href="/speaking" className="text-amber-900 font-extrabold hover:text-zinc-900 transition-colors">Keynotes & Speaking</Link></li>
-                            <li><Link href="/newsletter" className="text-zinc-950 hover:text-zinc-900 transition-colors">Newsletter Archive</Link></li>
-                            <li><Link href="/faq" className="text-zinc-950 hover:text-zinc-900 transition-colors">FAQ</Link></li>
-                            <li><Link href="/contact" className="text-zinc-950 hover:text-zinc-900 transition-colors">Contact</Link></li>
-                            <li><Link href="/directory" className="text-cyan-900 font-extrabold hover:text-zinc-900 transition-colors">Platform Directory</Link></li>
                             <li><Link href="/services" className="text-[var(--accent-crimson)] font-bold hover:opacity-80 transition-colors">Book an Audit</Link></li>
                         </ul>
                     </div>
@@ -112,6 +117,10 @@ export function Footer() {
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm font-semibold text-zinc-900 font-medium">
                     <p>© 2026 Richard Ewing. All rights reserved.</p>
                     <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-5 gap-y-2 text-xs sm:text-sm">
+                        <Link href="/faq" className="hover:text-cyan-900 transition-colors">FAQ</Link>
+                        <Link href="/newsletter" className="hover:text-cyan-900 transition-colors">Newsletter</Link>
+                        <Link href="/contact" className="hover:text-cyan-900 transition-colors">Contact</Link>
+                        <Link href="/directory" className="hover:text-cyan-900 transition-colors">Platform Directory</Link>
                         <Link href="/legal" className="hover:text-cyan-900 transition-colors">Legal Hub</Link>
                         <Link href="/legal#terms" className="hover:text-cyan-900 transition-colors">Terms of Use (TOC)</Link>
                         <Link href="/legal#privacy" className="hover:text-cyan-900 transition-colors">Privacy Policy</Link>

@@ -22,6 +22,32 @@ export const metadata: Metadata = {
     }
 };
 
+import { getSortedArticles } from '@/lib/blog-data';
+
 export default function BlogPage() {
-    return <BlogContent />;
+    const articles = getSortedArticles();
+    const blogSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        'name': 'AI & Engineering Economics Blog by Richard Ewing',
+        'description': 'Forensic insights, case studies, and research breakdowns on AI unit economics, R&D capital allocation, and technical debt.',
+        'numberOfItems': articles.length,
+        'itemListElement': articles.map((article, idx) => ({
+            '@type': 'ListItem',
+            'position': idx + 1,
+            'url': `https://www.richardewing.io/blog/${article.slug}`,
+            'name': article.title,
+            'description': article.excerpt
+        }))
+    };
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+            />
+            <BlogContent />
+        </>
+    );
 }

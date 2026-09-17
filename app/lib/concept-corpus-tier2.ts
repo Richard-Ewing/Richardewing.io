@@ -123,7 +123,7 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     expandedConsensus: { website: true, newsletter: true, book: false, video: true, talk: true, framework: true, calculator: true, research: true, caseStudy: true },
     citationGraph: { publicationsCount: 4, newslettersCount: 7, calculatorsCount: 1, bookChaptersCount: 0, keynoteTalksCount: 2, gitHubReposCount: 0 },
     reverseCitations: [
-      { targetType: 'Glossary Term', title: 'Coordination Tax', url: '/glossary/coordination-tax', relationship: 'implements' },
+      { targetType: 'Glossary Term', title: 'Coordination Tax', url: '/glossary/pillars/product-economics#coordination-tax', relationship: 'implements' },
       { targetType: 'Framework Module', title: 'CareerWin Scaling Strategies', url: 'https://careerwin.ai', relationship: 'teaches' }
     ],
     canonicalDiagram: {

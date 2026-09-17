@@ -455,6 +455,7 @@ export default function AdvisorRoadmap({ roadmap, businessProfile, sessionId }: 
                 </button>
                 <a
                     href="/ai-integration/advisor"
+                    rel="nofollow"
                     className="inline-flex items-center gap-2 px-6 py-3 border border-zinc-300 text-zinc-700 font-bold rounded-xl text-sm hover:bg-zinc-50 transition-colors"
                 >
                     <FileText className="w-4 h-4" /> Start New Consultation

@@ -31,6 +31,7 @@ function getAgentFiles(dir) {
   let results = [];
   const list = fs.readdirSync(dir);
   list.forEach(file => {
+    if (file === '.agents') return;
     const filePath = path.join(dir, file);
     const stat = fs.statSync(filePath);
     if (stat.isDirectory()) {
@@ -58,7 +59,7 @@ try {
     const isLockfile = file.endsWith('package-lock.json') || file.endsWith('yarn.lock') || file.endsWith('pnpm-lock.yaml');
     if (file && !isBinary && !isLockfile) {
       const fullPath = path.join(rootDir, file);
-      if (fs.existsSync(fullPath) && !filesToAudit.includes(fullPath)) {
+      if (fs.existsSync(fullPath) && fs.statSync(fullPath).isFile() && !filesToAudit.includes(fullPath)) {
         filesToAudit.push(fullPath);
       }
     }

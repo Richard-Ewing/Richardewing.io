@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
-import { articles } from '../lib/data';
+import { articles, frameworks } from '../lib/data';
 import { LeadMagnetCTA } from '../components/LeadMagnetCTA';
 import { Search, X } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -182,6 +182,57 @@ export default function ArticlesPage() {
                                 </button>
                             );
                         })}
+                    </div>
+                </div>
+            </ScrollReveal>
+
+            {/* Executive Frameworks & Reference Architectures */}
+            <ScrollReveal delay={250}>
+                <div id="executive-frameworks" className="mb-20">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 border-b border-zinc-300 pb-4 gap-2">
+                        <div>
+                            <span className="text-xs font-mono font-bold text-indigo-900 uppercase tracking-widest block mb-1">
+                                Canonical Specifications
+                            </span>
+                            <h2 className="text-2xl sm:text-3xl font-bold text-zinc-950 font-grotesk">
+                                Executive Frameworks &amp; Blueprints
+                            </h2>
+                        </div>
+                        <p className="text-xs font-mono font-bold text-zinc-600 uppercase tracking-wider">
+                            15 Core Reference Architectures
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {frameworks.map((fw) => (
+                            <Link 
+                                key={fw.slug} 
+                                href={`/articles/frameworks/${fw.slug}`} 
+                                className="group block"
+                            >
+                                <div className="p-6 h-full flex flex-col justify-between rounded-2xl bg-white border border-zinc-300 hover:border-indigo-500 hover:shadow-md transition-all">
+                                    <div>
+                                        <div className="flex items-center justify-between mb-3">
+                                            <span className="text-[10px] font-mono font-bold uppercase tracking-widest px-2 py-0.5 rounded bg-indigo-50 text-indigo-900 border border-indigo-200">
+                                                Framework
+                                            </span>
+                                            <span className="text-xs font-bold text-zinc-400 font-mono">
+                                                Specification
+                                            </span>
+                                        </div>
+                                        <h3 className="text-lg font-bold text-zinc-950 mb-2 font-grotesk group-hover:text-indigo-900 transition-colors">
+                                            {fw.name}
+                                        </h3>
+                                        <p className="text-zinc-900 text-xs font-semibold leading-relaxed line-clamp-3 mb-4">
+                                            {fw.definition.replace(/\n/g, ' ')}
+                                        </p>
+                                    </div>
+                                    <div className="text-xs font-bold uppercase tracking-widest text-indigo-900 group-hover:text-indigo-950 flex items-center gap-1 mt-auto pt-2 border-t border-zinc-100">
+                                        Inspect Specification <span>&rarr;</span>
+                                    </div>
+                                </div>
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </ScrollReveal>

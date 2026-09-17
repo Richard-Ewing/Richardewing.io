@@ -848,9 +848,9 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
       }
     },
     reverseCitations: [
-      { targetType: 'Glossary Term', title: 'Shadow Delegation', url: '/glossary/shadow-delegation', relationship: 'implements' },
+      { targetType: 'Glossary Term', title: 'Shadow Delegation', url: '/glossary/pillars/governance-architecture#shadow-delegation', relationship: 'implements' },
       { targetType: 'Case Study', title: 'CRM Retention Agent Bypasses Corporate Signing Matrix', url: '/case-studies/unauthorized-crm-retention-discount', relationship: 'audits' },
-      { targetType: 'Framework Module', title: 'The 3-Tier Automated Delegation Boundary Framework', url: '/frameworks/automated-delegation-boundary', relationship: 'governs' }
+      { targetType: 'Framework Module', title: 'The 3-Tier Automated Delegation Boundary Framework', url: '/doctrine', relationship: 'governs' }
     ],
     telemetry: {
       origin: {
@@ -1896,7 +1896,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     citationGraph: { publicationsCount: 6, newslettersCount: 10, calculatorsCount: 2, bookChaptersCount: 1, keynoteTalksCount: 2, gitHubReposCount: 5 },
     reverseCitations: [
       { targetType: 'Framework Module', title: 'Runtime Control Layer', url: '/architecture/deterministic-control-layer', relationship: 'governs' },
-      { targetType: 'Glossary Term', title: 'Deterministic Control Plane', url: '/glossary/deterministic-control-plane', relationship: 'audits' }
+      { targetType: 'Glossary Term', title: 'Deterministic Control Plane', url: '/glossary/pillars/governance-architecture#deterministic-control-plane', relationship: 'audits' }
     ],
     canonicalDiagram: {
       title: 'Model Alignment vs Runtime Proxy Boundary',

@@ -18,9 +18,9 @@ const useCases = [
 
 const metrics = [
     { name: 'Product Debt Index (PDI)', description: 'Single score (0-100) quantifying total technical debt', link: '/tools/pdi' },
-    { name: 'Technical Insolvency Date', description: 'When maintenance load exceeds capacity  -  the "death date" for R&D', link: '/glossary/technical-insolvency-date' },
-    { name: 'Innovation Tax', description: 'Percentage of engineering spent on maintenance vs. new features', link: '/glossary/innovation-tax' },
-    { name: 'APER Score', description: 'Revenue generated per engineer  -  the ultimate efficiency metric', link: '/tools/aper' },
+    { name: 'Technical Insolvency Date', description: 'When maintenance load exceeds capacity, the final boundary for R&D', link: '/articles/frameworks/technical-insolvency-date' },
+    { name: 'Innovation Tax', description: 'Percentage of engineering spent on maintenance vs. new features', link: '/articles/frameworks/innovation-tax' },
+    { name: 'APER Score', description: 'Revenue generated per engineer, the primary efficiency metric', link: '/tools/aper' },
     { name: 'AI COGS Analysis', description: 'Variable cost of AI features eating into gross margins', link: '/tools/aueb' },
 ];
 

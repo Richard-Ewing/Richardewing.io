@@ -32,12 +32,12 @@ const colorMap: Record<string, string> = {
 };
 
 const frameworks = [
-    { name: 'Technical Insolvency Date', description: 'When maintenance load exceeds total engineering capacity', href: '/glossary/technical-insolvency-date' },
-    { name: 'Innovation Tax', description: 'Percentage of R&D spent on maintenance vs. innovation', href: '/glossary/innovation-tax' },
-    { name: 'Cost of Predictivity', description: 'The true variable cost of AI features per prediction', href: '/glossary/cost-of-predictivity' },
+    { name: 'Technical Insolvency Date', description: 'When maintenance load exceeds total engineering capacity', href: '/articles/frameworks/technical-insolvency-date' },
+    { name: 'Innovation Tax', description: 'Percentage of R&D spent on maintenance vs. innovation', href: '/articles/frameworks/innovation-tax' },
+    { name: 'Cost of Predictivity', description: 'The true variable cost of AI features per prediction', href: '/concepts/cost-of-predictivity' },
     { name: 'EAAP Protocol', description: 'Action Admissibility Protocol for governing AI agents', href: '/glossary/eaap-protocol' },
     { name: 'Orchestration Debt', description: 'The hidden debt of multi-agent AI systems', href: '/glossary/orchestration-debt' },
-    { name: 'AI COGS', description: 'Cost of Goods Sold for AI features  -  the margin killer', href: '/glossary/ai-cogs' },
+    { name: 'AI COGS', description: 'Cost of Goods Sold for AI features, the primary margin risk', href: '/glossary/ai-cogs' },
 ];
 
 export default function ForCTOsPage() {

@@ -125,12 +125,18 @@ export default function AboutPage() {
                         To address the operational entropy of scaling models, my research is distilled into a universal five-layer intelligence architecture: **The Ledger**, **Context**, **Meaning**, **Inference Management**, and **Admissibility**. 
                         This core engine powers **Exogram** as an enterprise runtime control plane, drives **CareerWin** as a human work verification platform, and guides our executive advisory practice for enterprise boards and PE firms.
                     </p>
-                    <div className="flex gap-4">
+                    <div className="flex flex-wrap gap-4">
                         <Link href="/framework" className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-sm uppercase tracking-wider shadow transition-colors">
                             Explore The Framework &rarr;
                         </Link>
                         <Link href="/start-here" className="px-6 py-3 bg-white border border-zinc-300 text-zinc-950 hover:bg-zinc-50 font-bold rounded-xl text-sm uppercase tracking-wider transition-colors">
                             Follow Onboarding Sequence &rarr;
+                        </Link>
+                        <Link href="/careers" className="px-6 py-3 bg-white border border-zinc-300 text-zinc-950 hover:bg-zinc-50 font-bold rounded-xl text-sm uppercase tracking-wider transition-colors">
+                            2026 Career Pathfinder &rarr;
+                        </Link>
+                        <Link href="/book" className="px-6 py-3 bg-white border border-zinc-300 text-zinc-950 hover:bg-zinc-50 font-bold rounded-xl text-sm uppercase tracking-wider transition-colors">
+                            The Pragmatic AI Builder &rarr;
                         </Link>
                     </div>
                 </section>
@@ -142,9 +148,17 @@ export default function AboutPage() {
                         This research program is verified across multi-year essays published in major tech outlets, open-source repositories, educational courses, and running SaaS systems.
                     </p>
                     <EcosystemMap />
-                    <div className="text-center mt-4">
+                    <div className="text-center mt-6 flex flex-wrap justify-center items-center gap-4">
                         <Link href="/research" className="text-xs font-bold font-mono text-cyan-900 hover:text-cyan-950 uppercase tracking-widest">
                             View Chronological Research Timeline &rarr;
+                        </Link>
+                        <span className="text-zinc-400 font-bold">•</span>
+                        <Link href="/articles/frameworks/technical-insolvency-date" className="text-xs font-bold font-mono text-indigo-900 hover:text-indigo-950 uppercase tracking-widest">
+                            Technical Insolvency Date Spec &rarr;
+                        </Link>
+                        <span className="text-zinc-400 font-bold">•</span>
+                        <Link href="/articles/frameworks/shadow-agents" className="text-xs font-bold font-mono text-purple-900 hover:text-purple-950 uppercase tracking-widest">
+                            Shadow Agents Spec &rarr;
                         </Link>
                     </div>
                 </section>

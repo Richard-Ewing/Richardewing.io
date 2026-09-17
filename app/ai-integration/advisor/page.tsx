@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         description: 'Answer 5 questions. Get a custom AI integration plan with specific tools, ROI estimates, and a 30-day action plan. No consultants required.',
     },
     alternates: { canonical: 'https://www.richardewing.io/ai-integration/advisor' },
-    robots: { index: true, follow: true },
+    robots: { index: false, follow: false },
 };
 
 export const dynamic = 'force-dynamic';

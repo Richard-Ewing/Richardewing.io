@@ -66,7 +66,7 @@ export default function AIIntegrationPage() {
                             Answer 5 questions about your business and get a personalized AI integration roadmap in minutes - complete with specific tool recommendations, ROI estimates, and a step-by-step implementation plan. Downloadable as a PDF.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                            <Link href="/ai-integration/advisor" className="px-8 py-3 bg-cyan-600 text-white font-bold rounded-xl text-sm hover:bg-cyan-500 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+                            <Link href="/ai-integration/advisor" rel="nofollow" className="px-8 py-3 bg-cyan-600 text-white font-bold rounded-xl text-sm hover:bg-cyan-500 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.2)]">
                                 Start Your AI Roadmap →
                             </Link>
                             <span className="text-xs text-zinc-500 font-mono">$249/month · Unlimited Consultations</span>

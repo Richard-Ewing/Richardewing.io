@@ -73,15 +73,15 @@ const resourceSections = [
         description: 'Proprietary frameworks developed from 20+ years of technology leadership.',
         icon: '🏗️',
         items: [
-            { name: 'Technical Insolvency Date', description: 'When maintenance consumes 100% of engineering', href: '/glossary/technical-insolvency-date' },
-            { name: 'Innovation Tax', description: 'Hidden maintenance masquerading as R&D', href: '/glossary/innovation-tax' },
-            { name: 'Cost of Predictivity', description: 'The exponential cost curve of AI accuracy', href: '/glossary/cost-of-predictivity' },
-            { name: 'Kill Switch Protocol', description: 'Framework for identifying and removing zombie features', href: '/glossary/kill-switch-protocol' },
+            { name: 'Technical Insolvency Date', description: 'When maintenance consumes 100% of engineering', href: '/articles/frameworks/technical-insolvency-date' },
+            { name: 'Innovation Tax', description: 'Hidden maintenance masquerading as R&D', href: '/articles/frameworks/innovation-tax' },
+            { name: 'Cost of Predictivity', description: 'The exponential cost curve of AI accuracy', href: '/concepts/cost-of-predictivity' },
+            { name: 'Kill Switch Protocol', description: 'Framework for identifying and removing zombie features', href: '/concepts/agent-kill-switch' },
             { name: 'AI Liability Gradient', description: 'How liability scales non-linearly with AI autonomy', href: '/glossary/ai-liability-gradient' },
         ],
     },
     {
-        title: 'Exogram  -  AI Verification Platform',
+        title: 'Exogram: AI Verification Platform',
         description: 'The execution control plane for autonomous AI agents. Built by Richard Ewing.',
         icon: '🔮',
         items: [

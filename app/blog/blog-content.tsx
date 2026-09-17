@@ -136,7 +136,7 @@ export default function BlogContent() {
                                     if (catArticles.length === 0) return null;
                                     
                                     return (
-                                        <details key={cat.name} className="group/accordion rounded-xl border border-zinc-400 bg-zinc-50 overflow-hidden" open={!!search || !!selectedCategory}>
+                                        <details key={cat.name} className="group/accordion rounded-xl border border-zinc-400 bg-zinc-50 overflow-hidden" open={true}>
                                             <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-white/[0.04] transition-colors select-none marker:content-none [&::-webkit-details-marker]:hidden">
                                                 <div className="flex items-center gap-4">
                                                     <span className={`text-xs font-bold font-medium font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border ${categoryColors[cat.name] || 'text-zinc-900 bg-zinc-500/10 border-zinc-500/20'}`}>

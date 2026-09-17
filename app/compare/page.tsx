@@ -141,6 +141,34 @@ const curattedComparisons = [
         description: 'Comparing code quality tools against dollar-denominated financial debt models.',
         href: '/compare/pdi-vs-sonarqube',
         color: 'emerald'
+    },
+    {
+        title: 'Product Debt Index vs CodeClimate',
+        subtitle: 'Code Smells vs Capital Drag',
+        description: 'Why static analysis flags thousands of syntax issues while missing systemic technical debt compounding.',
+        href: '/compare/pdi-vs-codeclimate',
+        color: 'emerald'
+    },
+    {
+        title: 'Product Debt Index vs Waydev',
+        subtitle: 'Activity Tracking vs Enterprise Valuation',
+        description: 'Comparing developer surveillance dashboards against balance-sheet technical debt accounting.',
+        href: '/compare/pdi-vs-waydev',
+        color: 'emerald'
+    },
+    {
+        title: 'DORA Metrics vs APER',
+        subtitle: 'Delivery Speed vs Financial Efficiency',
+        description: 'Why elite deployment frequency does not guarantee profitable unit economics or sustainable engineering ROI.',
+        href: '/compare/dora-metrics-vs-aper',
+        color: 'cyan'
+    },
+    {
+        title: 'Technical Debt vs Technical Insolvency',
+        subtitle: 'Accumulation vs Zero Velocity',
+        description: 'The critical difference between carrying technical debt and reaching the date where 100% of engineering is maintenance.',
+        href: '/compare/technical-debt-vs-technical-insolvency',
+        color: 'purple'
     }
 ];
 

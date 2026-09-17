@@ -20,6 +20,7 @@ export default function GlossaryContent() {
     const termsByCategory = PILLARS.map(pillar => {
         return {
             category: pillar.name,
+            slug: pillar.slug,
             terms: filteredTerms.filter(t => {
                 const mappedSlug = CATEGORY_MAP[t.category] || 'cloud-infrastructure-finops';
                 return mappedSlug === pillar.slug;
@@ -132,6 +133,48 @@ export default function GlossaryContent() {
                 </div>
             </ScrollReveal>
 
+            {/* Core Architectural Pillar Hubs */}
+            <ScrollReveal delay={150}>
+                <div className="mb-12">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 border-b border-zinc-300 pb-3 gap-2">
+                        <div>
+                            <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest block mb-1">
+                                Consolidated Knowledge Hubs
+                            </span>
+                            <h2 className="text-2xl font-bold text-zinc-950 font-grotesk">
+                                Strategic Pillar Hubs
+                            </h2>
+                        </div>
+                        <p className="text-xs font-mono font-bold text-zinc-600 uppercase tracking-wider">
+                            Domain Consolidation Engines
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        {PILLARS.slice(0, 8).map((pillar) => (
+                            <Link
+                                key={pillar.slug}
+                                href={`/glossary/pillars/${pillar.slug}`}
+                                className="p-4 rounded-xl border border-zinc-300 bg-white hover:border-cyan-500 hover:shadow-sm transition-all flex flex-col justify-between group"
+                            >
+                                <div>
+                                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-900 px-2 py-0.5 rounded bg-cyan-50 border border-cyan-200 inline-block mb-2">
+                                        Pillar Hub
+                                    </span>
+                                    <h3 className="text-sm font-bold font-grotesk text-zinc-950 group-hover:text-cyan-900 transition-colors">
+                                        {pillar.name}
+                                    </h3>
+                                </div>
+                                <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-cyan-800 group-hover:text-cyan-950 mt-4 flex items-center justify-between">
+                                    <span>Explore Pillar</span>
+                                    <span>&rarr;</span>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </ScrollReveal>
+
             <div className="space-y-6">
                 {termsByCategory.length === 0 && (
                     <div className="text-center py-12 border border-dashed border-zinc-400 rounded-3xl bg-zinc-50/50">
@@ -150,22 +193,34 @@ export default function GlossaryContent() {
                         <ScrollReveal key={group.category} delay={gi * 50}>
                             <div className={`border ${isOpen ? 'border-cyan-300 bg-cyan-50/50' : 'border-zinc-400 bg-white'} rounded-2xl overflow-hidden transition-all duration-300`}>
                                 {/* Accordion Header */}
-                                <button 
-                                    onClick={() => toggleCategory(group.category)}
-                                    className="w-full flex items-center justify-between p-6 sm:p-8 hover:bg-zinc-50 transition-colors text-left"
-                                >
-                                    <div className="flex items-center gap-4">
+                                <div className="w-full flex items-center justify-between p-6 sm:p-8 hover:bg-zinc-50 transition-colors">
+                                    <button 
+                                        onClick={() => toggleCategory(group.category)}
+                                        className="flex items-center gap-4 flex-1 text-left cursor-pointer"
+                                    >
                                         <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${isOpen ? 'bg-cyan-100 text-cyan-900 font-extrabold' : 'bg-zinc-100 text-zinc-900'}`}>
                                             <span className="font-bold font-mono">{group.terms.length}</span>
                                         </div>
                                         <h2 className={`text-2xl font-bold font-grotesk transition-colors ${isOpen ? 'text-zinc-900' : 'text-zinc-900'}`}>
                                             {group.category}
                                         </h2>
+                                    </button>
+                                    <div className="flex items-center gap-3">
+                                        <Link
+                                            href={`/glossary/pillars/${group.slug}`}
+                                            className="text-xs font-mono font-bold text-cyan-900 hover:text-cyan-950 uppercase tracking-widest px-3 py-1.5 rounded-lg bg-cyan-100 hover:bg-cyan-200 transition-colors"
+                                        >
+                                            Pillar Hub &rarr;
+                                        </Link>
+                                        <button
+                                            onClick={() => toggleCategory(group.category)}
+                                            className={`shrink-0 transition-transform duration-300 cursor-pointer ${isOpen ? 'text-cyan-900 font-extrabold' : 'text-zinc-950 font-bold'}`}
+                                            aria-label="Toggle section"
+                                        >
+                                            {isOpen ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
+                                        </button>
                                     </div>
-                                    <div className={`shrink-0 transition-transform duration-300 ${isOpen ? 'text-cyan-900 font-extrabold' : 'text-zinc-950 font-bold'}`}>
-                                        {isOpen ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
-                                    </div>
-                                </button>
+                                </div>
                                 
                                 {/* Accordion Content */}
                                 <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>

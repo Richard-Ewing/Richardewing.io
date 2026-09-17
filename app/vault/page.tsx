@@ -298,7 +298,7 @@ export default async function VaultPage() {
                                         <div className="text-2xl mb-3">🤖</div>
                                         <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-600 transition-colors">AI Integration Advisor</h3>
                                         <p className="text-sm font-semibold text-zinc-900 font-medium mb-4">Get a personalized AI integration roadmap for your business in minutes.</p>
-                                        <Link href="/ai-integration/advisor" className="inline-flex items-center text-xs font-bold text-cyan-600 uppercase tracking-widest">
+                                        <Link href="/ai-integration/advisor" rel="nofollow" className="inline-flex items-center text-xs font-bold text-cyan-600 uppercase tracking-widest">
                                             Start Consultation <ChevronRight className="w-3 h-3 ml-1" />
                                         </Link>
                                     </div>

@@ -69,6 +69,24 @@ const nextConfig: NextConfig = {
           { key: 'X-Robots-Tag', value: 'noindex, follow' },
         ],
       },
+      {
+        source: '/brand/:path*.json',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+        ],
+      },
+      {
+        source: '/:path*.json',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+        ],
+      },
+      {
+        source: '/ai-integration/advisor',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+        ],
+      },
     ];
   },
   async redirects() {
