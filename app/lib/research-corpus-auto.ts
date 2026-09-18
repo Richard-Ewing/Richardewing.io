@@ -2,6 +2,20 @@ import { CorpusArticle } from './research-corpus';
 
 export const corpusAuto: CorpusArticle[] = [
 {
+    "id": "beehiiv-the-ai-economist-product-strategy-when-build-costs-drop",
+    "title": "The AI Economist: Product Strategy When Build Costs Drop",
+    "url": "https://theaieconomist.beehiiv.com/p/the-ai-economist-product-strategy-when-build-costs-drop-282c",
+    "publisher": "Beehiiv",
+    "domain": "AI Governance",
+    "type": "Evergreen",
+    "date": "September 18, 2026",
+    "thesis": "Uncertainty Reduction, Capital Allocation, and Systems Thinking For years, product management literature taught us that the main job of a PM was working with engineering leads to prioritize the sprint...",
+    "relatedConceptIds": [
+        "product-economist",
+        "inference-economics"
+    ]
+},
+{
     "id": "beehiiv-solving-ai-engineering-bottlenecks-a-leadership-guide",
     "title": "Solving AI Engineering Bottlenecks: A Leadership Guide",
     "url": "https://theaieconomist.beehiiv.com/p/solving-ai-engineering-bottlenecks-a-leadership-guide",
