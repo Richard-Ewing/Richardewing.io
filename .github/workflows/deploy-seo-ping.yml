@@ -1,0 +1,41 @@
+name: Deploy SEO Notification (IndexNow & Google)
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  ping-search-engines:
+    name: "Push Sitemap to IndexNow & Google Indexing API"
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Vercel needs time to compile and deploy the production build.
+      # Waiting ensures search engines crawl the fresh sitemap and updated pages.
+      - name: Delay for Vercel Synchronous Deployment
+        run: |
+          echo "Waiting 3 minutes to ensure Vercel has fully published the production deployment..."
+          sleep 180
+
+      - name: Execute Mass IndexNow Ping (Bing / Yandex)
+        run: node ping-all.js
+
+      - name: Submit Programmatic URLs to Google Indexing API
+        if: env.GOOGLE_CREDS != ''
+        env:
+          GOOGLE_CREDS: ${{ secrets.GOOGLE_CREDENTIALS }}
+        run: |
+          echo "$GOOGLE_CREDS" > google-credentials.json
+          npm install googleapis form-data node-fetch dotenv
+          node scripts/ping-pseo.js
+          rm -f google-credentials.json
