@@ -22,7 +22,6 @@ export const articles: Article[] = [
         source: "Built In",
         category: "Engineering Leadership",
         externalUrl: "https://builtin.com/articles/ai-agents-to-do-list",
-        editorsPick: true,
         content: `
             <p>The promise of autonomous AI agents is complete delegation: dump your messy backlog into a tool, walk away from your desk, and come back to find your inbox cleared, code verified, and schedule organized.</p>
             <p>Over the last few months, I tested that promise on my actual working life. Instead of running synthetic benchmark prompts, I configured specialized agents across my development environment, calendar, research, and email systems. I gave them ordinary chores: triaging emails, drafting replies, managing calendar invites, tracking weekly AI developments, running deployment health checks, auditing UI accessibility, and parsing messy contracts.</p>
@@ -53,7 +52,6 @@ export const articles: Article[] = [
         source: "Built In",
         category: "AI Governance",
         externalUrl: "https://builtin.com/articles/claude-code-vs-google-gemini-spark",
-        editorsPick: true,
         content: `
             <p>An AI mistake is different when someone is there to catch it. When nobody is watching, the mistake gets time to spread.</p>
             <p>Anthropic built Claude Code for a person who is actively present at the screen. You give it an assignment, and it works directly inside your project files, making updates, testing the results, and letting you course-correct the instant something looks wrong. If the software misreads a prompt or uses a bad assumption, you have an immediate chance to stop the run and discard changes before anything leaves your desk.</p>
@@ -78,7 +76,6 @@ export const articles: Article[] = [
         source: "CIO.com",
         category: "AI Governance",
         externalUrl: "https://www.cio.com/article/4223955/your-ai-agent-may-have-made-the-decision-but-your-company-owns-the-risk.html",
-        editorsPick: true,
         content: `
             <p>During a recent architecture review with a client, I asked their leadership to trace a single automated transaction backward through their production systems. Three days earlier, an embedded customer support agent had issued an unapproved account credit to a corporate client. Every system monitoring dashboard was glowing green. Internal network logs showed a clean, successful transaction. Cloud performance monitors showed standard processing times.</p>
             <p>When we queried the core financial system, the control environment could not answer the question we were trying to resolve. There was no log explaining what customer context triggered the refund, what calculations took place, or which corporate business policy authorized the spend. The software had executed cleanly from a technical standpoint, but from a business governance standpoint, it was an unauthorized transaction.</p>
@@ -120,7 +117,6 @@ export const articles: Article[] = [
         source: "Built In",
         category: "AI Economics",
         externalUrl: "https://builtin.com/articles/frontier-model",
-        editorsPick: true,
         content: `
             <p>The word "frontier" makes artificial intelligence sound like a territory on a map. It is not. The term describes an expensive, moving boundary. A model that once felt astonishing can quickly become everyday software running on a modest cloud instance or a developer's laptop. The frontier simply describes whatever systems currently sit at the leading edge of what AI can do.</p>
             <p>That makes frontier AI different from a stable category like a database or an operating system. It is an empirical description of a threshold that refuses to sit still.</p>
