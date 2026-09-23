@@ -328,5 +328,281 @@ export const richardEwingFrameworksTerms: GlossaryTerm[] = [
         ],
         relatedTerms: ['board-ai-metric-theater', 'shadow-agents', 'persistence-vs-authority', 'sovereign-ai'],
         relatedTools: [{ name: 'Board AI Governance Scorecard', url: '/tools/board-risk-scorecard' }]
+    },
+    {
+        slug: 'innovation-tax',
+        title: 'Innovation Tax',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `The Innovation Tax is the percentage of software R&D spend consumed by unrecorded maintenance, architectural drift, and technical debt rather than net-new customer value. Introduced by Richard Ewing in CIO.com. While executive leadership assumes 70% of engineering payroll builds new capability, forensic audits reveal that 40% to 60% is silently diverted into patching brittle systems, maintaining zombie features, and nursing legacy integrations.\n\nWhat normal people call this: paying full price for software innovation while receiving maintenance disguised as progress.`,
+        whyItMatters: `The Innovation Tax turns high-growth software investments into operational dead weight. Without forensic audit, companies overstate their capitalization rates and deceive investors on true R&D efficiency.`,
+        howToMeasure: `1. Audit sprint allocations against ASC 350-40 criteria.\n2. Calculate the ratio of bug-fix and maintenance tickets disguised as feature work.\n3. Run the Innovation Tax Calculator at richardewing.io/tools/innovation-tax-calculator.`,
+        faqs: [
+            { question: 'What is the Innovation Tax in plain English?', answer: 'The hidden share of engineering payroll that gets swallowed by fixing broken code and nursing old systems instead of building new product features.' },
+            { question: 'How do you calculate your Innovation Tax?', answer: 'Compare claimed innovation spending on sprint boards against actual time spent on maintenance and bug fixes using the Innovation Tax Calculator.' }
+        ],
+        relatedTerms: ['r-and-d-capitalization', 'product-debt-index', 'technical-insolvency-date', 'aper-metric'],
+        relatedTools: [{ name: 'Innovation Tax Calculator', url: '/tools/innovation-tax-calculator' }],
+        relatedArticles: [{ title: 'The Innovation Tax: Is Your R&D Actually Just OpEx?', url: 'https://www.cio.com/article/4158459/the-innovation-tax-audit-is-your-rd-actually-just-opex.html' }]
+    },
+    {
+        slug: 'technical-insolvency-date',
+        title: 'Technical Insolvency Date',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `The Technical Insolvency Date is the projected calendar date at which an engineering organization's compounding technical debt consumes 100% of available developer hours, reducing net-new feature delivery to absolute zero. Formulated by Richard Ewing. Borrowed from corporate insolvency: just as financial insolvency occurs when liabilities exceed assets, technical insolvency occurs when maintenance overhead completely eclipses development bandwidth.\n\nWhat normal people call this: the day your engineering team becomes completely paralyzed by their own mess, unable to ship anything new ever again.`,
+        whyItMatters: `Passing the Technical Insolvency Date means every additional engineer hired is consumed by coordination overhead and bug triage. Product roadmaps freeze, competitors pull ahead, and enterprise valuation multiples collapse during acquisition due diligence.`,
+        howToMeasure: `1. Plot historical velocity trends against maintenance ticket volume.\n2. Measure the degradation of feature lead time over trailing 12 months.\n3. Project the intersection where maintenance velocity equals total team capacity.`,
+        faqs: [
+            { question: 'What is the Technical Insolvency Date in plain English?', answer: 'The exact date when bad code and technical debt will consume 100% of your engineers time, meaning you can never release a new feature again.' },
+            { question: 'Can a company recover from Technical Insolvency?', answer: 'Yes, through surgical code retirement (Sunset Protocol) and debt remediation, but it requires stopping new feature work and deleting non-performing code.' }
+        ],
+        relatedTerms: ['product-debt-index', 'innovation-tax', 'sunset-protocol', 'technical-debt'],
+        relatedTools: [{ name: 'Product Debt Index (PDI)', url: '/tools/pdi' }],
+        relatedArticles: [{ title: 'The Technical Insolvency Date', url: '/articles/technical-insolvency-date' }]
+    },
+    {
+        slug: 'air-traffic-control-tax',
+        title: 'Air Traffic Control Tax',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `The Air Traffic Control Tax is the cognitive overhead and calendar drag created when autonomous AI agents shift human developers and managers from direct execution into supervisory audit queues. Coined by Richard Ewing in Built In. While agents produce code or drafts in seconds, humans spend minutes reading, verifying, sanity-checking, and correcting slightly plausible but fundamentally flawed outputs.\n\nWhat normal people call this: why having AI bots do your chores leaves you more exhausted because you spend the entire day proofreading their junior work.`,
+        whyItMatters: `Delegation does not automatically yield leverage. When verification time exceeds manual writing time, autonomous agents create negative productivity carry.`,
+        faqs: [
+            { question: 'What is the Air Traffic Control Tax in plain English?', answer: 'The mental fatigue and wasted hours spent monitoring, checking, and correcting AI agents that do tasks almost right.' },
+            { question: 'How do you minimize the Air Traffic Control Tax?', answer: 'Only give agents tasks with deterministic, automated pass/fail verification (like compiler checks or DOM contrast tests) and avoid unconstrained creative delegation.' }
+        ],
+        relatedTerms: ['supervisory-review-queue', 'silent-syntax-failure', 'review-debt', 'vibe-coding-debt'],
+        relatedTools: [{ name: 'AI Code Review Bottleneck Calculator', url: '/tools/code-review-bottleneck-calc' }],
+        relatedArticles: [{ title: 'I Put AI Agents in Charge of My To-Do List', url: 'https://builtin.com/articles/ai-agents-to-do-list' }]
+    },
+    {
+        slug: 'silent-syntax-failure',
+        title: 'Silent Syntax Failure',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `A Silent Syntax Failure is an insidious failure mode in autonomous software engineering where AI-generated code compiles with zero errors, passes basic type checks, and follows standard formatting, but silently violates domain rules, breaks cross-service contracts, or corrupts background financial ledgers. Analyzed by Richard Ewing in Built In. The code looks flawless on a quick pull-request inspection, but is functionally toxic in production.\n\nWhat normal people call this: code that compiles perfectly with no red squiggly lines, but quietly destroys your business logic behind the scenes.`,
+        whyItMatters: `Standard CI pipelines test syntax and unit mocks, not domain coherence. Silent syntax failures slip past traditional automated gates and corrupt data stores before monitoring triggers alerts.`,
+        faqs: [
+            { question: 'What is a Silent Syntax Failure in plain English?', answer: 'When an AI writes code that runs without any crash or syntax error, but breaks an unwritten business rule or corrupts a database ledger.' },
+            { question: 'Why does traditional CI miss Silent Syntax Failures?', answer: 'Compilers only verify grammar and type contracts. They do not know corporate business policies or cross-system ledger rules.' }
+        ],
+        relatedTerms: ['deterministic-execution-control', 'systems-governor', 'the-transaction-that-succeeds'],
+        relatedArticles: [{ title: 'I Put AI Agents in Charge of My To-Do List', url: 'https://builtin.com/articles/ai-agents-to-do-list' }]
+    },
+    {
+        slug: 'synthetic-cogs',
+        title: 'Synthetic COGS',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `Synthetic COGS describes variable runtime compute costs (LLM token calls, vector database queries, multi-agent retry loops) misclassified as fixed cloud hosting instead of Cost of Goods Sold. Formulated by Richard Ewing across CIO.com and Built In. Because AI features scale linearly or exponentially with customer usage, treating inference as overhead masks margin collapse and produces deceptive 85% gross margin metrics that are actually sub-50% in reality.\n\nWhat normal people call this: pretending your massive AI token bill is just general IT overhead instead of acknowledging it costs you real money every single time a user clicks a button.`,
+        whyItMatters: `Misclassifying Synthetic COGS blinds executive leadership to the point where power users become margin-negative liabilities.`,
+        faqs: [
+            { question: 'What are Synthetic COGS in plain English?', answer: 'The direct API and GPU compute bills you pay every time an AI feature runs for a customer, which must be accounted for as direct cost of sales.' },
+            { question: 'Why does Synthetic COGS break traditional SaaS?', answer: 'Traditional software has zero marginal cost per user click. AI features have variable per-query costs that destroy margins if bundled into flat subscriptions.' }
+        ],
+        relatedTerms: ['ai-unit-economics', 'cost-of-predictivity', 'variable-cost-of-intelligence', 'aueb-framework'],
+        relatedTools: [{ name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }],
+        relatedArticles: [{ title: 'Your Claude API Bill is Higher Than Your Revenue', url: 'https://www.cio.com/article/4175244/your-claude-api-bill-is-higher-than-your-revenue-why-simple-python-tasks-are-blowing-up-ai-costs.html' }]
+    },
+    {
+        slug: 'semantic-caching',
+        title: 'Semantic Caching',
+        tier: 'standard',
+        category: 'Richard Ewing Frameworks',
+        definition: `Semantic Caching is an infrastructure optimization technique where AI query intents and vector embeddings are stored and resolved at the network edge before dispatching calls to commercial foundation models. Published by Richard Ewing in The AI Economist. Replaces expensive round-trip inference ($0.03-$0.15 per query) with sub-millisecond similarity lookups, reducing model API spend by 40% to 75% on repetitive enterprise workflows.\n\nWhat normal people call this: remembering the answers to similar questions so you do not have to pay OpenAI or Anthropic five cents every time someone asks the same thing.`,
+        whyItMatters: `Eliminates redundant calls to external LLM providers and drastically cuts inference latency without degrading answer quality.`,
+        faqs: [
+            { question: 'What is Semantic Caching in plain English?', answer: 'A smart cache that recognizes when two different users are asking the same question in different words, serving the saved answer without paying for a new AI model call.' },
+            { question: 'How much money does Semantic Caching save?', answer: 'Between 40% and 75% of foundation model API costs for enterprise support, search, and knowledge retrieval workloads.' }
+        ],
+        relatedTerms: ['synthetic-cogs', 'ai-unit-economics', 'slm-repatriation'],
+        relatedArticles: [{ title: 'Semantic Caching Playbook for Enterprise LLMs', url: 'https://theaieconomist.beehiiv.com/p/semantic-caching-playbook-for-enterprise-llms' }]
+    },
+    {
+        slug: 'coordination-tax',
+        title: 'Coordination Tax',
+        tier: 'standard',
+        category: 'Richard Ewing Frameworks',
+        definition: `The Coordination Tax is the non-linear communication overhead, cross-functional alignment drag, and meeting inflation that degrades developer output as engineering teams grow. Formulated by Richard Ewing in Mind the Product and Beehiiv. In modern SaaS companies, as headcount doubles, interaction channels scale quadratically, forcing engineers to spend more time syncing than shipping.\n\nWhat normal people call this: spending 30 hours a week in meetings talking about work instead of actually doing the work.`,
+        whyItMatters: `Explains why adding engineers to a slowing project makes it slower (Brooks' Law quantified in modern R&D balance sheets).`,
+        faqs: [
+            { question: 'What is the Coordination Tax in plain English?', answer: 'The massive waste of time spent in status meetings, Slack threads, and alignment syncs when an engineering team gets too large.' }
+        ],
+        relatedTerms: ['aper-metric', 'innovation-tax', 'feature-bloat-calculus'],
+        relatedTools: [{ name: 'APER Calculator', url: '/tools/aper' }]
+    },
+    {
+        slug: 'zombie-code',
+        title: 'Zombie Code',
+        tier: 'standard',
+        category: 'Richard Ewing Frameworks',
+        definition: `Zombie Code refers to deprecated, abandoned, or unmaintained code paths that remain active in production environments, continuing to consume compute and security patch cycles without generating user value or revenue. Analyzed by Richard Ewing in Built In and Beehiiv. Unlike dead code that is never reached, zombie code is executed by legacy cron jobs or forgotten integrations, creating silent surface vulnerabilities.\n\nWhat normal people call this: old, abandoned code running on live servers that nobody remembers writing and everyone is terrified to touch.`,
+        whyItMatters: `Reclaiming 30% of engineering efficiency often comes down to surgically excising zombie code through rigorous deprecation protocols.`,
+        faqs: [
+            { question: 'What is Zombie Code in plain English?', answer: 'Forgotten software features that still run in production and consume server resources, but produce zero value for customers.' }
+        ],
+        relatedTerms: ['sunset-protocol', 'zombie-features', 'technical-debt'],
+        relatedArticles: [{ title: 'Zombie Code Remediation: Reclaiming 30% R&D Efficiency', url: 'https://theaieconomist.beehiiv.com/p/zombie-code-remediation-reclaiming-30-percent-rd-efficiency' }]
+    },
+    {
+        slug: 'four-pillars-of-agent-governance',
+        title: '4 Pillars of Agent Governance',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `The 4 Pillars of Agent Governance is the foundational enterprise risk architecture formulated by Richard Ewing in CIO.com separating technical uptime from business permissioning across four discrete disciplines: 1. Monitoring (mechanical health and latency), 2. Auditability (cryptographic trace of inputs, outputs, and intent), 3. Authorization (runtime verification of financial and policy signing limits), and 4. Accountability (designated human ownership and blast radius insurance).\n\nWhat normal people call this: the four rules a company must put in place so an autonomous AI bot does not spend corporate money or break the law without anyone noticing.`,
+        whyItMatters: `Prevents "the transaction that succeeds" where green system dashboards conceal catastrophic unauthorized business decisions.`,
+        faqs: [
+            { question: 'What are the 4 Pillars of Agent Governance?', answer: 'Monitoring (uptime), Auditability (logs), Authorization (permission limits), and Accountability (human ownership).' },
+            { question: 'Why is standard IT monitoring insufficient for AI agents?', answer: 'Standard monitoring only tests whether an API returned status 200. It does not verify whether the action obeyed corporate policy or financial limits.' }
+        ],
+        relatedTerms: ['the-transaction-that-succeeds', 'systems-governor', 'deterministic-execution-control'],
+        relatedTools: [{ name: 'Board AI Governance Scorecard', url: '/tools/board-risk-scorecard' }],
+        relatedArticles: [{ title: 'Your AI Agent May Have Made the Decision, but Your Company Owns the Risk', url: 'https://www.cio.com/article/4223955/your-ai-agent-may-have-made-the-decision-but-your-company-owns-the-risk.html' }]
+    },
+    {
+        slug: 'state-drift-in-persistent-agents',
+        title: 'State Drift in Persistent Agents',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `State Drift in Persistent Agents is the gradual, compounding deviation between an autonomous background agent's internal model assumptions and the true physical state of production systems. Analyzed by Richard Ewing in Built In. Over hours or days of unattended execution, minor misunderstandings amplify exponentially, culminating in corrupted databases and broken downstream workflows.\n\nWhat normal people call this: when a background AI bot works on your files for hours, slowly misunderstands what it is doing, and ends up wrecking your system before you check on it.`,
+        whyItMatters: `Persistence without continuous state verification guarantees eventual data corruption.`,
+        faqs: [
+            { question: 'What is State Drift in plain English?', answer: 'The way an AI agent running unattended in the background gets progressively more confused about what is happening in reality, creating silent bugs.' }
+        ],
+        relatedTerms: ['persistence-vs-authority', 'admissibility-allowlist', 'deterministic-execution-control'],
+        relatedArticles: [{ title: 'Claude Code vs. Google Gemini Spark: Architectural Divergence', url: 'https://builtin.com/articles/claude-code-vs-google-gemini-spark' }]
+    },
+    {
+        slug: 'enterprise-governance-vacuum',
+        title: 'Enterprise Governance Vacuum',
+        tier: 'standard',
+        category: 'Richard Ewing Frameworks',
+        definition: `The Enterprise Governance Vacuum is the organizational void that emerges when enterprises deploy autonomous AI agents without a designated executive role or deterministic control layer bridging technical IT operations, legal compliance, and financial controllership. Coined by Richard Ewing in CIO.com. While CISOs manage perimeters and VPs of Engineering validate deterministic code, no traditional role owns the probabilistic boundary.\n\nWhat normal people call this: the dangerous gap in a company where nobody knows who is actually in charge of keeping AI bots from causing multimillion-dollar disasters.`,
+        whyItMatters: `Leads to unmonitored aggregate corporate liability where autonomous software commits company capital without authorization.`,
+        faqs: [
+            { question: 'What is the Enterprise Governance Vacuum?', answer: 'The organizational gap where neither IT, security, nor legal assumes responsibility for what autonomous AI agents actually decide and execute.' }
+        ],
+        relatedTerms: ['systems-governor', 'four-pillars-of-agent-governance', 'the-transaction-that-succeeds'],
+        relatedArticles: [{ title: 'Your AI Agent May Have Made the Decision, but Your Company Owns the Risk', url: 'https://www.cio.com/article/4223955/your-ai-agent-may-have-made-the-decision-but-your-company-owns-the-risk.html' }]
+    },
+    {
+        slug: 'review-debt',
+        title: 'Review Debt',
+        tier: 'standard',
+        category: 'Richard Ewing Frameworks',
+        definition: `Review Debt is the accumulating backlog of plausible, unverified AI-generated code, documentation, and design assets awaiting senior human verification. Coined by Richard Ewing in Built In. While generative models produce pull requests in seconds, human verification bandwidth remains fixed, leading to PR review gridlock and developer burnout.\n\nWhat normal people call this: drowning in a pile of AI-written code that takes longer to proofread than it would have taken to write yourself.`,
+        whyItMatters: `Review debt clogs deployment pipelines and turns senior software engineers into exhausted proofreaders.`,
+        faqs: [
+            { question: 'What is Review Debt in plain English?', answer: 'The massive pile of pull requests generated by AI tools that human engineers do not have time to review, slowing down the entire engineering team.' }
+        ],
+        relatedTerms: ['air-traffic-control-tax', 'supervisory-review-queue', 'software-factory-overproduction'],
+        relatedTools: [{ name: 'AI Code Review Bottleneck Calculator', url: '/tools/code-review-bottleneck-calc' }],
+        relatedArticles: [{ title: 'I Put AI Agents in Charge of My To-Do List', url: 'https://builtin.com/articles/ai-agents-to-do-list' }]
+    },
+    {
+        slug: 'ai-volatility-tax',
+        title: 'AI Volatility Tax',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `The AI Volatility Tax is the financial premium paid by enterprises due to unhedged, fluctuating API token pricing, silent foundation model version updates, and non-deterministic latency spikes. Formulated by Richard Ewing across Built In and CIO.com. When cloud providers adjust underlying model weights or pricing tiers, downstream enterprise agent pipelines suffer margin degradation and unexpected system retries.\n\nWhat normal people call this: getting hit with unexpected cloud bill spikes and broken software whenever OpenAI, Google, or Anthropic pushes a model update behind your back.`,
+        whyItMatters: `Turns predictable software operational expenses into unhedged, volatile liabilities.`,
+        faqs: [
+            { question: 'What is the AI Volatility Tax in plain English?', answer: 'The extra money you waste fixing broken prompts, paying for silent retry loops, and eating margin hits when model providers change their APIs.' }
+        ],
+        relatedTerms: ['variable-cost-of-intelligence', 'synthetic-cogs', 'aueb-framework'],
+        relatedTools: [{ name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }]
+    },
+    {
+        slug: 'context-rot',
+        title: 'Context Rot',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `Context Rot is the progressive degradation of an LLM or autonomous agent's reasoning fidelity as the conversation context window fills with tool-call results, irrelevant history, and noisy data payloads. Formulated by Richard Ewing in Built In. As context grows, models experience lost-in-the-middle attention failure, hallucinate missing instructions, and introduce catastrophic regressions into previously clean code.\n\nWhat normal people call this: why an AI coding assistant gets dumber and starts breaking things the longer you chat with it.`,
+        whyItMatters: `Proves that giving an AI agent a bigger context window is often like giving a confused worker a bigger inbox.`,
+        faqs: [
+            { question: 'What is Context Rot in plain English?', answer: 'The way an AI model loses track of earlier instructions and starts making careless mistakes as the conversation gets too long.' },
+            { question: 'How do you prevent Context Rot?', answer: 'Keep context windows lean, enforce strict session hygiene, and run fresh subagents in isolated worktrees rather than maintaining massive conversational threads.' }
+        ],
+        relatedTerms: ['context-engineering', 'silent-syntax-failure', 'state-drift-in-persistent-agents'],
+        relatedArticles: [{ title: 'How to Prevent Memory Loss in AI Applications', url: 'https://theaieconomist.beehiiv.com/p/how-to-prevent-memory-loss-in-ai-applications' }]
+    },
+    {
+        slug: 'shadow-delegation',
+        title: 'Shadow Delegation',
+        tier: 'standard',
+        category: 'Richard Ewing Frameworks',
+        definition: `Shadow Delegation is an unauthorized organizational practice where individual developers, product managers, or business operators unofficially delegate sensitive decision-making, code generation, or client data processing to unmonitored AI agents without executive visibility or deterministic audit trails. Coined by Richard Ewing in Built In and CIO.com.\n\nWhat normal people call this: employees secretly using unauthorized ChatGPT or AI bots to write client proposals and company code without telling their boss.`,
+        whyItMatters: `Creates invisible corporate risk where confidential intellectual property and customer records are leaked to commercial model providers without IT authorization.`,
+        faqs: [
+            { question: 'What is Shadow Delegation in plain English?', answer: 'When workers secretly hand off company work to AI bots without permission or security reviews.' }
+        ],
+        relatedTerms: ['shadow-ai', 'four-pillars-of-agent-governance', 'enterprise-governance-vacuum'],
+        relatedTools: [{ name: 'Shadow AI Scanner', url: '/tools/shadow-ai' }]
+    },
+    {
+        slug: 'product-economist',
+        title: 'Product Economist',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `The Product Economist is an evolved product management executive archetype championed by Richard Ewing in Mind the Product and Built In. Unlike traditional product managers who optimize for shipped feature velocity and roadmap output, the Product Economist manages gross margin contribution, COGS efficiency, maintenance cost ratios, and R&D capital allocation per feature.\n\nWhat normal people call this: a product leader who actually understands the math of the business and makes sure software features make money instead of burning cash.`,
+        whyItMatters: `Transforms PMs from feature factory operators into financial fiduciaries who ensure AI features generate durable net margin rather than cash burn.`,
+        faqs: [
+            { question: 'What is a Product Economist in plain English?', answer: 'A product manager who treats software features like investments on a balance sheet, managing their profit margins and maintenance costs.' }
+        ],
+        relatedTerms: ['pl-ownership-for-pms', 'synthetic-cogs', 'feature-bloat-calculus'],
+        relatedArticles: [{ title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' }]
+    },
+    {
+        slug: 'r-and-d-ponzi',
+        title: 'R&D Ponzi Scheme',
+        tier: 'standard',
+        category: 'Richard Ewing Frameworks',
+        definition: `The R&D Ponzi Scheme is a software corporate finance trap where an engineering organization continuously justifies hiring new developers to build new features in order to hit quarterly product goals, while concealing that the majority of existing developer payroll is consumed by unaddressed technical debt and maintenance overhead. Coined by Richard Ewing in CIO.com.\n\nWhat normal people call this: hiring more and more programmers to build new stuff because all your current programmers are busy babysitting old, broken code.`,
+        whyItMatters: `Creates an exponential cost spiral that collapses when headcount growth slows or revenue multiples contract.`,
+        faqs: [
+            { question: 'What is the R&D Ponzi Scheme in plain English?', answer: 'When a company has to keep hiring engineers just to maintain their existing software, hiding how much maintenance actually costs.' }
+        ],
+        relatedTerms: ['innovation-tax', 'technical-insolvency-date', 'product-debt-index']
+    },
+    {
+        slug: 'feature-bloat-calculus',
+        title: 'Feature Bloat Calculus',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `Feature Bloat Calculus is an economic formula introduced by Richard Ewing in Built In quantifying the true, compounding annual cost of maintaining unnecessary software features. Total Feature Cost = Direct Maintenance Hours + Opportunity Cost Multiplier + Complexity Tax. Doubling features quadruples interaction complexity, creating exponential drag on engineering velocity.\n\nWhat normal people call this: doing the math on how much money and time your company wastes maintaining features nobody uses.`,
+        whyItMatters: `Proves that subtraction (retiring code) generates higher ROI than building new features.`,
+        faqs: [
+            { question: 'What is Feature Bloat Calculus in plain English?', answer: 'A formula showing that every new feature added to software makes all existing features harder and more expensive to maintain.' }
+        ],
+        relatedTerms: ['sunset-protocol', 'zombie-features', 'complexity-tax', 'negative-carry-features'],
+        relatedArticles: [{ title: 'Real Innovation Requires Deleting Code, Not Writing It', url: 'https://builtin.com/articles/innovation-requires-deleting-code' }]
+    },
+    {
+        slug: 'inference-economics',
+        title: 'Inference Economics',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `Inference Economics is the micro-economic study of per-token computing costs, latency trade-offs, and gross margin scaling laws in generative AI software. Formulated by Richard Ewing across Built In and CIO.com. Maps the transition from zero-marginal-cost traditional software to variable-COGS AI systems.\n\nWhat normal people call this: calculating whether your AI product makes a profit or loses money on every customer interaction.`,
+        whyItMatters: `Essential for pricing AI products and avoiding margin collapse as user activity scales.`,
+        faqs: [
+            { question: 'What is Inference Economics in plain English?', answer: 'The business math behind how much compute and money it takes to run AI features for users.' }
+        ],
+        relatedTerms: ['ai-unit-economics', 'synthetic-cogs', 'variable-cost-of-intelligence', 'cost-of-predictivity'],
+        relatedTools: [{ name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }]
+    },
+    {
+        slug: 'shadow-agents',
+        title: 'Shadow Agents',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `Shadow Agents refers to autonomous AI agents deployed, configured, or invoked by internal employees without centralized security authorization, observability, or permission boundaries. Coined by Richard Ewing in CIO.com and Built In. Shadow agents run scripts, access customer databases, and trigger webhooks invisibly, creating severe enterprise compliance and data exfiltration liabilities.\n\nWhat normal people call this: autonomous AI bots running inside your company network that the IT or security team has no clue about.`,
+        whyItMatters: `Represents the modern evolution of Shadow IT, where unauthorized software does not just store data, but autonomously executes actions.`,
+        faqs: [
+            { question: 'What are Shadow Agents in plain English?', answer: 'Unapproved AI bots that employees set up to do work without getting permission from IT or security.' }
+        ],
+        relatedTerms: ['shadow-ai', 'shadow-delegation', 'four-pillars-of-agent-governance', 'mcp-governance'],
+        relatedTools: [{ name: 'Shadow AI Scanner', url: '/tools/shadow-ai' }],
+        relatedArticles: [{ title: 'Your AI Agent Needs a Kill Switch', url: 'https://builtin.com/articles/ai-agent-kill-switch' }]
     }
 ];

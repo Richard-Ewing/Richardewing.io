@@ -5,6 +5,7 @@ import EcosystemMap from '@/app/components/EcosystemMap';
 import ProductBridgeCard from '@/app/components/ProductBridgeCard';
 import ResearchTimeline from '@/app/components/client/ResearchTimeline';
 import FAQItem from '@/app/components/FAQItem';
+import PublicationLedger from '@/app/components/PublicationLedger';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 export const metadata: Metadata = {
@@ -123,7 +124,7 @@ export default function ResearchPage() {
 
                     <div className="mt-8 flex flex-wrap gap-4">
                         <Link href="/research/publications" className="px-5 py-3 rounded-xl bg-cyan-900 text-white font-mono font-bold text-xs hover:bg-cyan-800 transition shadow-sm">
-                            Browse Publications Catalog (80+ Works) →
+                            Browse Publications Catalog (160+ Works) →
                         </Link>
                         <Link href="/concepts" className="px-5 py-3 rounded-xl bg-zinc-900 text-white font-mono font-bold text-xs hover:bg-zinc-800 transition shadow-sm">
                             Explore Canonical Concepts →
@@ -143,7 +144,7 @@ export default function ResearchPage() {
                             </h2>
                         </div>
                         <Link href="/research/publications" className="text-xs font-mono font-bold text-cyan-900 hover:underline">
-                            View All 80+ Works →
+                            View All 160+ Works →
                         </Link>
                     </div>
 
@@ -405,6 +406,8 @@ export default function ResearchPage() {
                         />
                     </div>
                 </section>
+
+                <PublicationLedger />
 
                 <AdvisoryCTA variant="educational" />
             </div>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { permanentRedirect } from 'next/navigation';
 import { subFrameworks, type SubFramework } from '@/app/lib/framework-data';
+import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export async function generateStaticParams() {
@@ -63,6 +64,18 @@ export default async function SubFrameworkPage({ params }: { params: Promise<{ s
     if (!fw) {
         permanentRedirect('/framework');
     }
+
+    const relatedPublications = RESEARCH_CORPUS.filter(art => {
+        if (art.relatedFrameworkSlugs?.includes(slug)) return true;
+        if (slug === 'board-fiduciary-governance' && (art.publisher === 'CIO.com' || art.domain === 'AI Governance')) return true;
+        if (slug === 'cfo-capital-allocation' && (art.title.includes('CFO') || art.title.includes('Capitalization') || art.title.includes('Tax'))) return true;
+        if (slug === 'security' && (art.title.includes('Security') || art.title.includes('Kill Switch') || art.title.includes('Injection'))) return true;
+        if (slug === 'operations' && (art.title.includes('Operational') || art.title.includes('Debt') || art.title.includes('Retries'))) return true;
+        if (slug === 'vp-engineering-operating-model' && (art.domain === 'Engineering Leadership' || art.title.includes('Engineer'))) return true;
+        if (slug === 'cpo-product-strategy' && (art.publisher === 'Mind the Product' || art.domain === 'Product Leadership')) return true;
+        if (slug === 'cro-revenue-transition' && (art.title.includes('Margin') || art.title.includes('Revenue') || art.title.includes('SaaS'))) return true;
+        return false;
+    });
 
     return (
         <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
@@ -204,6 +217,57 @@ export default async function SubFrameworkPage({ params }: { params: Promise<{ s
                         </div>
                     ))}
                 </section>
+
+                {/* Foundational Research & Publications Section */}
+                {relatedPublications.length > 0 && (
+                    <section className="mb-20 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-zinc-300 pb-4 mb-6">
+                            <div>
+                                <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest block mb-1">
+                                    Empirical Grounding • Published Evidence
+                                </span>
+                                <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
+                                    Foundational Research &amp; External Publications
+                                </h2>
+                            </div>
+                            <Link 
+                                href="/research/publications" 
+                                className="text-xs font-mono font-bold text-cyan-900 hover:underline shrink-0"
+                            >
+                                View Full Corpus ({RESEARCH_CORPUS.length} Works) →
+                            </Link>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {relatedPublications.slice(0, 6).map((art) => (
+                                <a
+                                    key={art.id}
+                                    href={art.url}
+                                    target={art.url.startsWith('http') ? '_blank' : '_self'}
+                                    rel="noopener noreferrer"
+                                    className="p-5 rounded-2xl border border-zinc-200 bg-zinc-50 hover:border-cyan-600 transition-all flex flex-col justify-between group"
+                                >
+                                    <div className="space-y-2">
+                                        <div className="flex items-center justify-between text-[10px] font-mono font-bold text-cyan-900 uppercase">
+                                            <span>{art.publisher}</span>
+                                            {art.date && <span className="text-zinc-500 font-mono">• {art.date}</span>}
+                                        </div>
+                                        <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-900 transition-colors leading-snug">
+                                            {art.title} ↗
+                                        </h3>
+                                        <p className="text-xs text-zinc-700 font-medium line-clamp-3 leading-relaxed">
+                                            {art.thesis}
+                                        </p>
+                                    </div>
+                                    <div className="mt-4 pt-3 border-t border-zinc-200/60 flex items-center justify-between text-[11px] font-mono font-bold text-cyan-900">
+                                        <span>Read Primary Source ↗</span>
+                                        <span className="text-zinc-500 text-[10px] uppercase font-mono">{art.type}</span>
+                                    </div>
+                                </a>
+                            ))}
+                        </div>
+                    </section>
+                )}
 
                 <AdvisoryCTA variant="educational" />
             </div>
