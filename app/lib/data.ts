@@ -1102,5 +1102,69 @@ export const frameworks = [
             { title: 'AI Economics: How Intelligent Systems Make and Lose Money', publication: 'The Canon', date: 'May 2026', url: '/blog/ai-economics-how-intelligent-systems-make-and-lose-money' }
         ],
         relatedTool: { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }
+    },
+    {
+        slug: 'frontier-model-economics',
+        name: 'Frontier Model Economics',
+        definition: `Frontier Model Economics establishes that frontier AI represents an expensive, moving empirical threshold rather than a permanent category or static map. While everyday AI automates structured, narrow tasks at near-zero marginal cost, frontier systems are deployed when tasks present high ambiguity, multi-step execution paths, conflicting contracts, and code generation across unprogrammed domains.\n\nWeighing closed commercial APIs against open-weight private deployment requires balancing $78M to $191M training compute floors against compounding multi-step inference costs and strict operational authority limits. Enterprises that default to frontier models for simple classification suffer massive gross margin compression, while teams that underestimate private cluster infrastructure overhead face severe capital misallocation.`,
+        whyItMatters: `Prevents organizations from overpaying for frontier reasoning on trivial automation tasks or underestimating the infrastructure and inference compounding costs of deploying frontier models into multi-agent workflows.`,
+        howToCalculate: [
+            'Audit task ambiguity: separate structured classification from open-ended reasoning',
+            'Model multi-turn compounding inference cost vs single-turn prompt baseline',
+            'Evaluate private cluster hosting break-even using the AUEB Calculator',
+            'Implement dynamic model routing to reserve frontier compute for high-ambiguity exceptions'
+        ],
+        relatedArticles: [
+            { title: 'What Is a Frontier Model?', publication: 'Built In', date: 'Sep 2026', url: 'https://builtin.com/articles/frontier-model' }
+        ],
+        relatedTool: { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }
+    },
+    {
+        slug: 'persistence-vs-authority',
+        name: 'Persistence vs. Authority',
+        definition: `Persistence vs. Authority is the foundational AI systems governance principle distinguishing execution duration from state-altering permission scope. Persistence measures how long an AI agent can execute unattended across background servers and workspace applications (such as Gemini Spark); Authority measures what records, databases, financial ledgers, and external communications the software is authorized to modify independently.\n\nConflating persistence with authority allows flawed assumptions to silently spread across connected systems, creating compounding state drift and forensic recovery nightmares. Operating safely requires narrow read triggers, deterministic write allowlists, and unified rollback mechanics.`,
+        whyItMatters: `Extending agent runtime without strict write boundaries creates silent distributed failures. While terminal-interactive tools (Claude Code) contain blast radius through human presence, unattended background agents require mechanical write allowlists and deterministic rollbacks.`,
+        howToCalculate: [
+            'Audit persistent service account permissions and revoke unconstrained write tokens',
+            'Separate background read triggers from state-mutating execution endpoints',
+            'Measure state drift risk thresholds across multi-turn autonomous agent loops',
+            'Deploy cryptographic state-hashing and action admissibility verification'
+        ],
+        relatedArticles: [
+            { title: 'Claude Code vs. Gemini Spark: How Do They Compare?', publication: 'Built In', date: 'Sep 2026', url: 'https://builtin.com/articles/claude-code-vs-google-gemini-spark' }
+        ],
+        relatedTool: { name: 'Agentic Drift Risk Matrix', url: '/tools/agentic-drift-matrix' }
+    },
+    {
+        slug: 'supervisory-review-queue',
+        name: 'The Supervisory Review Queue',
+        definition: `The Supervisory Review Queue demonstrates that delegating tasks to autonomous AI agents does not eliminate workloads, but shifts human labor into an air traffic control supervisory review queue. While agents deliver immense leverage on bounded, mechanically verifiable tasks (CI monitoring, DOM accessibility audits, syntax validation), they fail silently with perfect syntax during complex architectural refactors and struggle with physical reality collisions and interpersonal nuance.\n\nAuditing someone else's plausible, slightly flawed work line-by-line is often more mentally exhausting than performing the task manually. Unbounded agent delegation replaces to-do lists with review debt queues. Real leverage requires four operational laws: start with read-only triggers, enforce narrow definitions of done, require human approval on external actions, and treat all output as junior drafts.`,
+        whyItMatters: `Unbounded agent delegation creates severe review fatigue and silent architectural regressions. Restricting agentic PRs to bounded tasks with mechanical pass/fail criteria reclaims senior engineering capacity.`,
+        howToCalculate: [
+            'Track senior engineer review hours spent debugging plausible AI-generated pull requests',
+            'Measure review cycle time and queue inflation using the Code Review Bottleneck Calculator',
+            'Enforce the 4 operating rules: read-only triggers, narrow definitions of done, human gates, junior draft posture',
+            'Deploy automated compiler gates to verify syntax, types, and tests prior to human review'
+        ],
+        relatedArticles: [
+            { title: 'I Put AI Agents in Charge of My To-Do List. Here\'s What They Actually Took Off My Plate.', publication: 'Built In', date: 'Sep 2026', url: 'https://builtin.com/articles/ai-agents-to-do-list' }
+        ],
+        relatedTool: { name: 'AI Code Review Bottleneck Calculator', url: '/tools/code-review-bottleneck-calc' }
+    },
+    {
+        slug: 'the-transaction-that-succeeds',
+        name: 'The Transaction That Succeeds',
+        definition: `The Transaction That Succeeds is the enterprise AI governance failure mode where an automated agent transaction completes with perfect technical execution (glowing green operations dashboards, 240ms latency, zero server errors), but completely violates internal business policy, financial controls, or procurement rules.\n\nExamples include automated support agents issuing unapproved corporate credits, procurement agents bypassing $50,000 competitive bid mandates, or sales agents altering contract terms that destroy gross margin. Because technical monitoring verifies mechanics rather than business authorization, enterprises must enforce the 4 Pillars of Agent Governance: Monitoring, Auditability, Authorization, and Accountability.`,
+        whyItMatters: `Traditional IT monitoring alarms on broken systems; AI creates transactions that succeed technically while failing legally and financially. With Gartner forecasting 40% of enterprise agents decommissioned by 2027 due to post-incident governance gaps, organizations must decouple technical uptime from business permissioning.`,
+        howToCalculate: [
+            'Audit automated agent execution logs against corporate signing and authorization matrices',
+            'Implement the 4 Pillars of Agent Governance: Monitoring, Auditability, Authorization, Accountability',
+            'Demand the 6 Executive Procurement Questions for all autonomous vendor agents',
+            'Score corporate fiduciary risk using the Board AI Governance Scorecard'
+        ],
+        relatedArticles: [
+            { title: 'Your AI agent may have made the decision, but your company owns the risk', publication: 'CIO.com', date: 'Sep 2026', url: 'https://www.cio.com/article/4223955/your-ai-agent-may-have-made-the-decision-but-your-company-owns-the-risk.html' }
+        ],
+        relatedTool: { name: 'Board AI Governance Scorecard', url: '/tools/board-risk-scorecard' }
     }
 ];

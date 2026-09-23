@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { BookOpen, Network, BarChart } from 'lucide-react';
+import { BookOpen, Network, BarChart, ShieldCheck, Users } from 'lucide-react';
 import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 import FAQItem from '@/app/components/FAQItem';
 
@@ -124,6 +124,41 @@ export default function MethodologyPage() {
                         <div className="bg-zinc-50 p-4 rounded-xl border border-zinc-200">
                             <p className="font-mono text-sm text-zinc-900 font-medium">
                                 Target Top-Quartile SaaS Baseline: &lt; 8% of COGS attributed to unoptimized inference.
+                            </p>
+                        </div>
+                    </section>
+
+                    {/* Persistence vs Authority */}
+                    <section className="bg-white p-8 rounded-2xl border border-zinc-200 shadow-sm">
+                        <div className="flex items-center gap-3 mb-4">
+                            <ShieldCheck className="w-6 h-6 text-amber-600" />
+                            <h2 className="text-2xl font-grotesk font-bold text-zinc-900">Persistence vs. Authority Baseline</h2>
+                        </div>
+                        <p className="text-zinc-600 mb-6 leading-relaxed">
+                            The definitive security standard for **Autonomous Background Agents**. Runtime execution persistence must be strictly decoupled from state-altering write permissions across enterprise databases, CRM systems, and code repositories.
+                        </p>
+                        <div className="bg-zinc-50 p-4 rounded-xl border border-zinc-200">
+                            <h3 className="text-sm font-bold font-mono uppercase tracking-widest text-zinc-800 mb-3">Governance Authority Tiers</h3>
+                            <ul className="space-y-3 font-mono text-sm">
+                                <li className="flex gap-4"><span className="font-bold text-emerald-600 w-24">Tier 0 (Read)</span><span className="text-zinc-700">Persistent passive monitoring, log parsing, read-only extraction.</span></li>
+                                <li className="flex gap-4"><span className="font-bold text-amber-600 w-24">Tier 1 (Draft)</span><span className="text-zinc-700">Sandboxed PR generation, draft staging with mandatory human approval.</span></li>
+                                <li className="flex gap-4"><span className="font-bold text-red-600 w-24">Tier 2 (Write)</span><span className="text-zinc-700">Strictly prohibited for un-isolated background agents without cryptographic signing.</span></li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    {/* Supervisory Review Queue */}
+                    <section className="bg-white p-8 rounded-2xl border border-zinc-200 shadow-sm">
+                        <div className="flex items-center gap-3 mb-4">
+                            <Users className="w-6 h-6 text-cyan-600" />
+                            <h2 className="text-2xl font-grotesk font-bold text-zinc-900">The Supervisory Review Queue Metric</h2>
+                        </div>
+                        <p className="text-zinc-600 mb-6 leading-relaxed">
+                            The engineering throughput metric measuring the ratio of human auditing time to machine code generation. Prevents senior developer review fatigue and identifies when agentic delegation creates negative net productivity drag.
+                        </p>
+                        <div className="bg-zinc-50 p-4 rounded-xl border border-zinc-200">
+                            <p className="font-mono text-sm text-zinc-900 font-medium">
+                                Target Senior Review Floor: &lt; 15% of sprint capacity consumed auditing AI-generated pull requests.
                             </p>
                         </div>
                     </section>

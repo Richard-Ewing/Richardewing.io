@@ -163,6 +163,34 @@ export default function DoctrinePage() {
                                 </p>
                             </div>
 
+                            <div>
+                                <h3 className="text-lg font-semibold text-emerald-900 font-extrabold font-semibold mb-2">Persistence vs. Authority</h3>
+                                <p className="text-zinc-950">
+                                    <span className="text-zinc-900">Persistence vs. Authority</span> is the immutable systems law that execution duration (how long an autonomous agent can run unattended in the background) must be strictly decoupled from state-altering write permissions (what databases, ledgers, and communications it is authorized to modify).
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="text-lg font-semibold text-amber-900 font-extrabold font-semibold mb-2">The Transaction That Succeeds</h3>
+                                <p className="text-zinc-950">
+                                    <span className="text-zinc-900">The Transaction That Succeeds</span> is the silent enterprise failure mode where an automated AI agent transaction completes with perfect technical execution (green dashboards, sub-second latency, zero HTTP errors), but completely violates corporate policy, financial controls, or regulatory signing limits.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="text-lg font-semibold text-cyan-900 font-extrabold font-semibold mb-2">The Supervisory Review Queue</h3>
+                                <p className="text-zinc-950">
+                                    <span className="text-zinc-900">The Supervisory Review Queue</span> establishes that delegating tasks to autonomous AI agents does not eliminate human labor; it transfers engineering effort into an exhausting air traffic control review queue, demanding bounded tasks, read-only triggers, and junior draft posture.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="text-lg font-semibold text-indigo-900 font-extrabold font-semibold mb-2">Frontier Model Economics</h3>
+                                <p className="text-zinc-950">
+                                    <span className="text-zinc-900">Frontier Model Economics</span> proves that frontier AI is an expensive, moving empirical threshold rather than a permanent category. Sustainable software margins require matching task ambiguity to the lowest viable compute tier rather than defaulting to frontier reasoning tokens.
+                                </p>
+                            </div>
+
                         </div>
                     </div>
                 </section>

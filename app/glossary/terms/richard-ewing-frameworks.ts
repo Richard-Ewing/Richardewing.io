@@ -268,5 +268,65 @@ export const richardEwingFrameworksTerms: GlossaryTerm[] = [
         ],
         relatedTerms: ['board-ai-metric-theater', 'aueb-framework', 'technical-insolvency-date', 'retry-inflation'],
         relatedTools: [{ name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }, { name: 'AI ROI Timeline Simulator', url: '/tools/ai-roi-timeline' }]
+    },
+    {
+        slug: 'frontier-model-economics-framework',
+        title: 'Frontier Model Economics Framework',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `Frontier Model Economics is an analytical framework establishing that frontier AI represents an expensive, moving empirical threshold rather than a permanent category or static map. What normal people call this: knowing when a task actually needs an expensive, cutting-edge AI model and when using one is just burning money on work that cheap, ordinary software can do for pennies.\n\nWhile everyday AI automates structured, narrow tasks at near-zero marginal cost, frontier systems are deployed when tasks present high ambiguity, multi-step execution paths, conflicting contracts, and code generation across unprogrammed domains.\n\nWeighing closed commercial APIs against open-weight private deployment requires balancing $78M to $191M training compute floors against compounding multi-step inference costs and strict operational authority limits. Enterprises that default to frontier models for simple classification suffer massive gross margin compression, while teams that underestimate private cluster infrastructure overhead face severe capital misallocation.`,
+        whyItMatters: `Prevents organizations from overpaying for frontier reasoning on trivial automation tasks or underestimating the infrastructure and inference compounding costs of deploying frontier models into multi-agent workflows.`,
+        howToMeasure: `1. Audit task ambiguity across customer workflows.\n2. Model multi-turn compounding inference costs against single-turn prompt baselines.\n3. Benchmark private cluster hosting vs. API tokens with the AUEB Calculator.\n4. Deploy dynamic model routing to reserve frontier reasoning for high-ambiguity exceptions.`,
+        faqs: [
+            { question: 'What is Frontier Model Economics in plain English?', answer: 'A financial framework that tells companies when to pay for expensive leading-edge AI models versus when to use cheap, everyday automation tools.' },
+            { question: 'When should you use a frontier model?', answer: 'Only when the problem has high ambiguity and edge cases that break cheaper everyday software, such as conflicting enterprise contracts or legacy architectural refactoring.' }
+        ],
+        relatedTerms: ['aueb-framework', 'the-turing-tax', 'synthetic-cogs', 'slm-vs-api-arbitrage'],
+        relatedTools: [{ name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }]
+    },
+    {
+        slug: 'persistence-vs-authority-framework',
+        title: 'Persistence vs. Authority Framework',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `Persistence vs. Authority is a systems governance principle distinguishing runtime execution duration from state-altering permission scope. What normal people call this: understanding that just because an AI agent can run in the background for three days without crashing does not mean it should have permission to rewrite your company database or send emails to your clients.\n\nPersistence measures how long an AI agent can execute unattended across background servers and workspace applications (such as Gemini Spark); Authority measures what records, databases, financial ledgers, and external communications the software is authorized to modify independently.\n\nConflating persistence with authority allows flawed assumptions to silently spread across connected systems, creating compounding state drift and forensic recovery nightmares. Operating safely requires narrow read triggers, deterministic write allowlists, and unified rollback mechanics.`,
+        whyItMatters: `Extending agent runtime without strict write boundaries creates silent distributed failures. While terminal-interactive tools (Claude Code) contain blast radius through human presence, unattended background agents require mechanical write allowlists and deterministic rollbacks.`,
+        howToMeasure: `1. Audit persistent service account tokens and revoke wildcard write scopes.\n2. Separate background read triggers from state-mutating API endpoints.\n3. Measure state drift risk thresholds across multi-turn agent loops using the Agentic Drift Matrix.\n4. Deploy cryptographic state-hashing to intercept unauthorized write attempts.`,
+        faqs: [
+            { question: 'What is Persistence vs. Authority in plain English?', answer: 'The rule that running an AI agent unattended for hours does not give it permission to change critical business records or spend money without human sign-off.' },
+            { question: 'Why are unattended background agents dangerous?', answer: 'Because subtle errors in reasoning compound silently over hours of background execution, corrupting databases and external systems before humans notice.' }
+        ],
+        relatedTerms: ['agentic-drift', 'shadow-agents', 'deterministic-control-layer', 'the-transaction-that-succeeds'],
+        relatedTools: [{ name: 'Agentic Drift Risk Matrix', url: '/tools/agentic-drift-matrix' }]
+    },
+    {
+        slug: 'supervisory-review-queue-framework',
+        title: 'Supervisory Review Queue Framework',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `The Supervisory Review Queue is an engineering productivity framework demonstrating that delegating tasks to autonomous AI agents does not eliminate workloads, but shifts human labor into an air traffic control supervisory review queue. What normal people call this: why hiring a team of AI bots to write your code or manage your to-do list often leaves you more exhausted because you spend all day reading, verifying, and fixing slightly broken work.\n\nWhile agents deliver immense leverage on bounded, mechanically verifiable tasks (CI monitoring, DOM accessibility audits, syntax validation), they fail silently with perfect syntax during complex architectural refactors and struggle with physical reality collisions and interpersonal nuance.\n\nReal leverage requires four operational laws: start with read-only triggers, enforce narrow definitions of done, require human approval on external actions, and treat all output as junior drafts.`,
+        whyItMatters: `Unbounded agent delegation creates severe review fatigue and silent architectural regressions. Restricting agentic PRs to bounded tasks with mechanical pass/fail criteria reclaims senior engineering capacity.`,
+        howToMeasure: `1. Track senior engineer review hours spent debugging plausible AI pull requests.\n2. Measure review cycle time and queue inflation with the Code Review Bottleneck Calculator.\n3. Enforce the 4 operating rules across all automated workflows.\n4. Deploy automated compiler gates to verify syntax, types, and tests prior to human review.`,
+        faqs: [
+            { question: 'What is the Supervisory Review Queue in plain English?', answer: 'The hidden trap where delegating work to AI agents replaces your to-do list with a massive pile of junior drafts you have to carefully verify.' },
+            { question: 'How do you get real productivity out of AI agents?', answer: 'Assign them narrow, bounded chores with clear pass/fail criteria (like running test suites), and never delegate complex strategy or un-gated architectural changes.' }
+        ],
+        relatedTerms: ['vibe-coding-debt', 'induced-demand-in-software-delivery', 'payroll-absorbed-ai-costs', 'aper-metric'],
+        relatedTools: [{ name: 'AI Code Review Bottleneck Calculator', url: '/tools/code-review-bottleneck-calc' }]
+    },
+    {
+        slug: 'the-transaction-that-succeeds-framework',
+        title: 'The Transaction That Succeeds Framework',
+        tier: 'pillar',
+        category: 'Richard Ewing Frameworks',
+        definition: `The Transaction That Succeeds is an enterprise AI governance failure mode where an automated agent transaction completes with perfect technical execution (glowing green operations dashboards, 240ms latency, zero server errors), but completely violates internal business policy, financial controls, or procurement rules. What normal people call this: when an AI bot successfully executes an action without crashing your servers, but gives away an unauthorized discount, violates a law, or approves an illegal purchase order.\n\nBecause technical monitoring verifies mechanics rather than business authorization, enterprises must enforce the 4 Pillars of Agent Governance: Monitoring, Auditability, Authorization, and Accountability.\n\nWith Gartner forecasting 40% of enterprise agents decommissioned by 2027 due to post-incident governance gaps, organizations must decouple technical uptime from business permissioning.`,
+        whyItMatters: `Traditional IT monitoring alarms on broken systems; AI creates transactions that succeed technically while failing legally and financially. Enterprises must install deterministic signing limits and demand answers to the 6 executive procurement questions.`,
+        howToMeasure: `1. Audit automated execution logs against corporate signing and authorization matrices.\n2. Implement the 4 Pillars of Agent Governance: Monitoring, Auditability, Authorization, Accountability.\n3. Demand the 6 Executive Procurement Questions for all third-party AI agents.\n4. Score corporate fiduciary risk using the Board AI Governance Scorecard.`,
+        faqs: [
+            { question: 'What is The Transaction That Succeeds in plain English?', answer: 'An AI action that runs with zero technical errors on server dashboards, but completely breaks corporate rules, spending limits, or legal compliance.' },
+            { question: 'How do you prevent silent policy failures by AI agents?', answer: 'Deploy runtime authorization boundaries with hard financial signing caps and immutable audit trails outside the model cognition layer.' }
+        ],
+        relatedTerms: ['board-ai-metric-theater', 'shadow-agents', 'persistence-vs-authority', 'sovereign-ai'],
+        relatedTools: [{ name: 'Board AI Governance Scorecard', url: '/tools/board-risk-scorecard' }]
     }
 ];

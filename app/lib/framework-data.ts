@@ -93,6 +93,21 @@ export const subFrameworks: Record<string, SubFramework> = {
                     education: ['Track 24: AI Economics & Margin Engineering', 'Track 6: AI Operations Economics'],
                     enforcement: 'Exogram Deterministic Formatting Gate (reduces retries)'
                 }
+            },
+            {
+                id: 'PAIG-ECON-005',
+                name: 'Frontier Model Economics',
+                definition: 'The moving empirical threshold where high ambiguity, unprogrammed multi-step reasoning, and legacy codebase refactoring require massive compute expenditure ($78M to $191M training compute floors) that must be rigorously weighed against compounding multi-step inference costs and operational authority boundaries.',
+                problem: 'Enterprises indiscriminately deploy high-cost frontier models for trivial classification or misjudge open-weight hosting costs, burning margins on tasks cheaper everyday models could handle.',
+                whyItMatters: 'Establishes task ambiguity to compute matching, preventing exponential inference compounding and protecting SaaS unit gross margins.',
+                provenance: ['Built In publications', 'Stanford AI Index', 'Curriculum Track 2', 'AUEB Benchmark'],
+                implementation: {
+                    research: ['What Is a Frontier Model?', 'Growth Is Not Your Cost Problem - Your Architecture Is'],
+                    diagnostics: ['AI Unit Economics Benchmark (AUEB)', 'SLM vs API Arbitrage'],
+                    education: ['Track 2: AI Economics & Margin Engineering', 'Track 24: AI Economics & Margin Engineering'],
+                    enforcement: 'Exogram Frontier Model Router & Cost Threshold Gate'
+                },
+                conceptSlug: 'frontier-model-economics'
             }
         ]
     },
@@ -470,6 +485,21 @@ export const subFrameworks: Record<string, SubFramework> = {
                     enforcement: 'Exogram Compiler Interceptor'
                 },
                 conceptSlug: 'zero-trust-type-verification'
+            },
+            {
+                id: 'PAIG-ACP-004',
+                name: 'Persistence vs. Authority',
+                definition: 'The fundamental architectural principle that runtime persistence (how long an AI agent can execute unattended across background servers and workspace applications) must be strictly decoupled from state-altering authority (what files, financial ledgers, and database records it is authorized to modify).',
+                problem: 'Deploying persistent background agents (Gemini Spark) with broad write permissions allows flawed assumptions and accumulated context drift to silently corrupt production state.',
+                whyItMatters: 'Decoupling execution duration from write authority enforces read-only sandboxes and mandatory cryptographic human sign-offs on all state mutations.',
+                provenance: ['Built In publications', 'Curriculum Track 21', 'Agentic Drift Matrix', 'Exogram Runtime Governance'],
+                implementation: {
+                    research: ['Claude Code vs. Gemini Spark: How Do They Compare?', 'Salesforce and SAP are putting AI agents inside your workflows. Who tells them no?'],
+                    diagnostics: ['Agentic Drift Risk Matrix', 'Autonomous Agent Readiness Index (AARI)'],
+                    education: ['Track 21: AI Agent Governance & Trust Infrastructure', 'Track 19: AI Agent Architecture & Economics'],
+                    enforcement: 'Exogram State Mutation Allowlist & Ephemeral Token Scoper'
+                },
+                conceptSlug: 'persistence-vs-authority'
             }
         ]
     },
@@ -691,6 +721,21 @@ export const subFrameworks: Record<string, SubFramework> = {
                     enforcement: 'Exogram Zero-Trust Compiler Gate'
                 },
                 conceptSlug: 'zero-trust-type-verification'
+            },
+            {
+                id: 'PAIG-MCG-003',
+                name: 'The Supervisory Review Queue',
+                definition: 'The operational engineering reality that autonomous agent delegation does not erase developer workloads, but transfers human labor from keyboard typing into an air traffic control supervisory review queue, demanding bounded tasks, read-only triggers, and junior draft posture.',
+                problem: 'Unconstrained agent delegation replaces to-do lists with review debt queues; senior engineers waste 40% of their capacity auditing plausible, slightly flawed code with perfect syntax.',
+                whyItMatters: 'Enforcing the 4 operating rules prevents review fatigue, eliminates silent architectural failures, and ensures agents deliver net productivity leverage.',
+                provenance: ['Built In publications', 'Beehiiv Laboratory', 'Curriculum Track 1', 'Code Review Bottleneck Calculator'],
+                implementation: {
+                    research: ['I Put AI Agents in Charge of My To-Do List. Here\'s What They Actually Took Off My Plate.', 'The Software Factory Is Running 24/7 (And Nobody Wants the Output)'],
+                    diagnostics: ['AI Code Review Bottleneck Calculator', 'Autonomous Agent Readiness Index (AARI)'],
+                    education: ['Track 1: Engineering Economics Foundations', 'Track 19: AI Agent Architecture & Economics'],
+                    enforcement: 'Exogram Mechanical Pre-Verification & PR Review Throttler'
+                },
+                conceptSlug: 'supervisory-review-queue'
             }
         ]
     },
@@ -733,6 +778,21 @@ export const subFrameworks: Record<string, SubFramework> = {
                     enforcement: 'Exogram Binary Signing Proxy'
                 },
                 conceptSlug: 'shadow-delegation'
+            },
+            {
+                id: 'PAIG-BFG-003',
+                name: 'The Transaction That Succeeds',
+                definition: 'The enterprise governance failure mode where an automated AI agent transaction completes with perfect technical execution (green dashboards, sub-second latency, zero HTTP errors), but completely violates internal business policy, financial controls, or procurement signing limits.',
+                problem: 'Traditional IT monitoring alarms on system outages, completely missing transactions that succeed technically while failing legally and financially.',
+                whyItMatters: 'Mandates the deployment of the 4 Pillars of Agent Governance (Monitoring, Auditability, Authorization, Accountability) to protect boards from un-monitored corporate liability.',
+                provenance: ['CIO.com Executive Series', 'Gartner Research (2026-2027 Forecasts)', 'Board AI Governance Scorecard', 'Curriculum Track 21'],
+                implementation: {
+                    research: ['Your AI agent may have made the decision, but your company owns the risk', 'AI Agents Won\'t Crash the Economy. Bad Governance Might.'],
+                    diagnostics: ['Board AI Governance Scorecard', 'Agentic Drift Matrix'],
+                    education: ['Track 21: AI Agent Governance & Trust Infrastructure', 'Track 10: AI Due Diligence for Investors & Acquirers'],
+                    enforcement: 'Exogram Business Rule Interceptor & Policy Matrix'
+                },
+                conceptSlug: 'the-transaction-that-succeeds'
             }
         ]
     },

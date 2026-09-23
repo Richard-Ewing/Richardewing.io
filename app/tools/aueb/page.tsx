@@ -99,32 +99,38 @@ export default function Page() {
                     </h3>
                     <div className="flex flex-wrap justify-center gap-4 pt-2">
                         <a 
-                            href="https://theaieconomist.beehiiv.com/p/the-bootstrapper-s-cloud-credit-playbook"
+                            href="https://builtin.com/articles/frontier-model"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="px-4 py-2 bg-cyan-900 text-white font-mono text-xs font-bold rounded-xl hover:bg-cyan-800 transition"
                         >
-                            Read &quot;The Bootstrapper&apos;s Cloud Credit Playbook&quot; on Beehiiv ↗
+                            Read &quot;What Is a Frontier Model?&quot; on Built In ↗
                         </a>
                         <Link 
-                            href="/concepts/non-dilutive-infrastructure-capital"
+                            href="/concepts/frontier-model-economics"
                             className="px-4 py-2 bg-emerald-900 text-white font-mono text-xs font-bold rounded-xl hover:bg-emerald-800 transition"
                         >
-                            Non-Dilutive Capital Concept →
+                            Frontier Economics Concept →
+                        </Link>
+                        <Link 
+                            href="/articles/frameworks/frontier-model-economics"
+                            className="px-4 py-2 bg-violet-900 text-white font-mono text-xs font-bold rounded-xl hover:bg-violet-800 transition"
+                        >
+                            Frontier Framework Axiom →
                         </Link>
                         <a 
-                            href="https://www.linkedin.com/pulse/how-reduce-llm-costs-production-inference-dividend-model-ewing-nwtgc/"
+                            href="https://theaieconomist.beehiiv.com/p/the-bootstrapper-s-cloud-credit-playbook"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-4 py-2 bg-zinc-900 text-white font-mono text-xs font-bold rounded-xl hover:bg-zinc-800 transition"
+                            className="px-4 py-2 bg-zinc-800 text-white font-mono text-xs font-bold rounded-xl hover:bg-zinc-700 transition"
                         >
-                            Read &quot;The Inference Dividend Model&quot; on LinkedIn ↗
+                            Cloud Credit Playbook on Beehiiv ↗
                         </a>
                         <Link 
                             href="/concepts/inference-dividend-model"
-                            className="px-4 py-2 bg-zinc-800 text-white font-mono text-xs font-bold rounded-xl hover:bg-zinc-700 transition"
+                            className="px-4 py-2 bg-zinc-900 text-white font-mono text-xs font-bold rounded-xl hover:bg-zinc-800 transition"
                         >
-                            Explore Inference Dividend Concept →
+                            Inference Dividend Concept →
                         </Link>
                     </div>
                 </div>
