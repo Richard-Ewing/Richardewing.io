@@ -22,6 +22,8 @@ const metrics = [
     { name: 'Innovation Tax', description: 'Percentage of engineering spent on maintenance vs. new features', link: '/articles/frameworks/innovation-tax' },
     { name: 'APER Score', description: 'Revenue generated per engineer, the primary efficiency metric', link: '/tools/aper' },
     { name: 'AI COGS Analysis', description: 'Variable cost of AI features eating into gross margins', link: '/tools/aueb' },
+    { name: 'Frontier Model Economics', description: 'Preventing portfolio gross margin collapse from un-routed inference spend', link: '/articles/frameworks/frontier-model-economics' },
+    { name: 'The Transaction That Succeeds', description: 'Fiduciary AI risk audit assessing corporate liability from autonomous agents', link: '/articles/frameworks/the-transaction-that-succeeds' },
 ];
 
 export default function ForInvestorsPage() {

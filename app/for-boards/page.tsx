@@ -18,6 +18,8 @@ const boardQuestions = [
     { question: 'How productive is our engineering team compared to benchmarks?', answer: 'APER (Annualized Productive Engineering Revenue) measures revenue generated per engineer. Industry benchmarks available.', metric: 'APER', link: '/tools/aper' },
     { question: 'Are our AI features profitable or margin-negative?', answer: 'AI COGS analysis reveals the variable cost per AI query. Many companies discover their AI features lose money at current margins.', metric: 'AI Unit Economics', link: '/tools/aueb' },
     { question: 'What is the dollar value of our technical debt and AI boilerplate?', answer: 'The Product Debt Index and Negative-Carry Code Auditor translate code entropy into dollar-denominated balance sheet liabilities.', metric: 'Negative-Carry Code Auditor', link: '/tools/negative-carry-code-auditor' },
+    { question: 'What happens when an AI agent makes decisions that pass operational health checks but violate corporate policy?', answer: 'The Transaction That Succeeds framework establishes the 4 Pillars of Agent Governance (Monitoring, Auditability, Authorization, Accountability) and the 6 Executive Questions every board must mandate.', metric: 'The Transaction That Succeeds', link: '/articles/frameworks/the-transaction-that-succeeds' },
+    { question: 'Are we overpaying for $100M+ frontier models when commodity models or code would suffice?', answer: 'Frontier Model Economics sizes tasks between everyday deterministic software and multi-million dollar reasoning models to protect enterprise gross margins.', metric: 'Frontier Model Economics', link: '/articles/frameworks/frontier-model-economics' },
 ];
 
 export default function ForBoardsPage() {

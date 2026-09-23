@@ -107,6 +107,11 @@ populateTrack24(modules);
 import { populateTrack28 } from './curriculum-tracks-new-28';
 populateTrack28(modules);
 
+// ═══════════════════ TRACK 58: GOVERNANCE FOR AGENTIC AI ═══════════════════
+// Track 58: Governance for Agentic AI (Persistence vs Authority, The 4 Pillars, Review Queue)
+import { agenticGovernanceModules } from './curriculum-tracks-agentic';
+Object.assign(modules, agenticGovernanceModules);
+
 // ═══════════════════ LEGACY TRACK CONTENT (kept on disk for future restoration) ═══════════════════
 // The following files exist on disk but are NOT imported into the active registry:
 // - curriculum-tracks-5-6.ts (Track 5 DevOps  -  killed; Track 6 PM  -  kept above)

@@ -57,6 +57,148 @@ export default function CurriculumPage() {
         </div>
       </div>
 
+      {/* Featured Operational Modules: The Sovereign Asset Engine */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 border-b border-slate-900">
+        <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
+          <div>
+            <div className="text-xs font-mono font-bold text-sky-400 uppercase tracking-widest mb-1">
+              Sovereign Asset Engine &bull; Research to Production
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white font-grotesk">
+              Core Governance & Economics Modules
+            </h2>
+          </div>
+          <Link
+            href="/vault/curriculum/tracks"
+            className="text-xs font-mono font-bold text-sky-400 hover:text-sky-300 flex items-center gap-1.5 uppercase tracking-wider"
+          >
+            View All Academy Tracks <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Module 1 */}
+          <div className="rounded-2xl border border-sky-500/20 bg-slate-900/60 p-6 flex flex-col justify-between hover:border-sky-500/40 transition">
+            <div>
+              <div className="flex items-center justify-between text-xs font-mono text-slate-400 mb-3">
+                <span className="text-sky-400 font-bold">Track 2 &bull; Module 2.2</span>
+                <span className="bg-sky-500/10 text-sky-300 px-2 py-0.5 rounded border border-sky-500/20">Built In (Sep 2026)</span>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">
+                Frontier Model Sizing & Inference Economics
+              </h3>
+              <p className="text-sm text-slate-300 leading-relaxed mb-4">
+                Establish task ambiguity thresholds before routing queries to $78M-$191M frontier models. Prevent gross margin collapse by benchmarking against specialized SLMs.
+              </p>
+            </div>
+            <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+              <Link
+                href="/vault/curriculum/tracks/ai-product-economics/2-2"
+                className="font-bold text-sky-400 hover:underline flex items-center gap-1"
+              >
+                Launch Module <ArrowRight className="w-3 h-3" />
+              </Link>
+              <Link
+                href="/concepts/frontier-model-economics"
+                className="text-slate-400 hover:text-white"
+              >
+                Concept &rarr;
+              </Link>
+            </div>
+          </div>
+
+          {/* Module 2 */}
+          <div className="rounded-2xl border border-emerald-500/20 bg-slate-900/60 p-6 flex flex-col justify-between hover:border-emerald-500/40 transition">
+            <div>
+              <div className="flex items-center justify-between text-xs font-mono text-slate-400 mb-3">
+                <span className="text-emerald-400 font-bold">Track 58 &bull; Module 58.5</span>
+                <span className="bg-emerald-500/10 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/20">Built In (Sep 2026)</span>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">
+                Persistence vs. Authority: Background vs. Interactive Agents
+              </h3>
+              <p className="text-sm text-slate-300 leading-relaxed mb-4">
+                Compare Claude Code terminal oversight with Gemini Spark unattended cloud persistence. Decouple runtime duration from write authorization to prevent forensic data corruption.
+              </p>
+            </div>
+            <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+              <Link
+                href="/vault/curriculum/tracks/agentic-governance/58-5"
+                className="font-bold text-emerald-400 hover:underline flex items-center gap-1"
+              >
+                Launch Module <ArrowRight className="w-3 h-3" />
+              </Link>
+              <Link
+                href="/concepts/persistence-vs-authority"
+                className="text-slate-400 hover:text-white"
+              >
+                Concept &rarr;
+              </Link>
+            </div>
+          </div>
+
+          {/* Module 3 */}
+          <div className="rounded-2xl border border-rose-500/20 bg-slate-900/60 p-6 flex flex-col justify-between hover:border-rose-500/40 transition">
+            <div>
+              <div className="flex items-center justify-between text-xs font-mono text-slate-400 mb-3">
+                <span className="text-rose-400 font-bold">Track 58 &bull; Module 58.6</span>
+                <span className="bg-rose-500/10 text-rose-300 px-2 py-0.5 rounded border border-rose-500/20">CIO.com (Sep 2026)</span>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">
+                The Transaction That Succeeds & The 4 Pillars
+              </h3>
+              <p className="text-sm text-slate-300 leading-relaxed mb-4">
+                Catch silent business failures where operations dashboards show green but corporate policies are breached. Enforce Monitoring, Auditability, Authorization, and Accountability.
+              </p>
+            </div>
+            <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+              <Link
+                href="/vault/curriculum/tracks/agentic-governance/58-6"
+                className="font-bold text-rose-400 hover:underline flex items-center gap-1"
+              >
+                Launch Module <ArrowRight className="w-3 h-3" />
+              </Link>
+              <Link
+                href="/concepts/the-transaction-that-succeeds"
+                className="text-slate-400 hover:text-white"
+              >
+                Concept &rarr;
+              </Link>
+            </div>
+          </div>
+
+          {/* Module 4 */}
+          <div className="rounded-2xl border border-amber-500/20 bg-slate-900/60 p-6 flex flex-col justify-between hover:border-amber-500/40 transition">
+            <div>
+              <div className="flex items-center justify-between text-xs font-mono text-slate-400 mb-3">
+                <span className="text-amber-400 font-bold">Track 58 &bull; Module 58.7</span>
+                <span className="bg-amber-500/10 text-amber-300 px-2 py-0.5 rounded border border-amber-500/20">Built In (Sep 2026)</span>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">
+                The Supervisory Review Queue & Air Traffic Control Tax
+              </h3>
+              <p className="text-sm text-slate-300 leading-relaxed mb-4">
+                Calculate the cognitive drag of auditing plausible AI output. Catch silent syntax failures in database refactors and implement the 4 Operational Laws for bounded delegation.
+              </p>
+            </div>
+            <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+              <Link
+                href="/vault/curriculum/tracks/agentic-governance/58-7"
+                className="font-bold text-amber-400 hover:underline flex items-center gap-1"
+              >
+                Launch Module <ArrowRight className="w-3 h-3" />
+              </Link>
+              <Link
+                href="/concepts/supervisory-review-queue"
+                className="text-slate-400 hover:text-white"
+              >
+                Concept &rarr;
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Main Interactive Curriculum Viewer */}
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <CurriculumMindmapViewer />

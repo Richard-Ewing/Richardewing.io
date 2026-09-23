@@ -69,5 +69,10 @@ export const KEEP_TERMS = [
     'product-debt-index', 'aueb-framework', 'aper-metric', 'margin-engineering',
     'spec-driven-development', 'eval-driven-development', 'ai-coding-tool-economics',
     'four-laws-probabilistic-software', 'ai-liability-gradient', 'ai-finops',
-    'ai-economist', 'eaap-protocol', 'compound-ai-systems'
+    'ai-economist', 'eaap-protocol', 'compound-ai-systems',
+    // 2026 Published Works Expansion - Standalone Canonical Pages
+    'frontier-model-economics', 'persistence-vs-authority', 'supervisory-review-queue',
+    'the-transaction-that-succeeds', 'explainability-vs-recoverability',
+    'frontier-model-economics-framework', 'persistence-vs-authority-framework',
+    'supervisory-review-queue-framework', 'the-transaction-that-succeeds-framework'
 ];

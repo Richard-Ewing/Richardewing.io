@@ -38,6 +38,10 @@ const frameworks = [
     { name: 'EAAP Protocol', description: 'Action Admissibility Protocol for governing AI agents', href: '/glossary/eaap-protocol' },
     { name: 'Orchestration Debt', description: 'The hidden debt of multi-agent AI systems', href: '/glossary/orchestration-debt' },
     { name: 'AI COGS', description: 'Cost of Goods Sold for AI features, the primary margin risk', href: '/glossary/ai-cogs' },
+    { name: 'Persistence vs. Authority', description: 'Decoupling execution persistence from state-altering authority', href: '/articles/frameworks/persistence-vs-authority' },
+    { name: 'Supervisory Review Queue', description: 'Quantifying the air traffic control tax and synthetic PR triage', href: '/articles/frameworks/supervisory-review-queue' },
+    { name: 'Frontier Model Economics', description: 'Sizing tasks between commodity SLMs and $78M-$191M frontier models', href: '/articles/frameworks/frontier-model-economics' },
+    { name: 'The Transaction That Succeeds', description: 'The 4 Pillars of Agent Governance for decoupled authorization', href: '/articles/frameworks/the-transaction-that-succeeds' },
 ];
 
 export default function ForCTOsPage() {

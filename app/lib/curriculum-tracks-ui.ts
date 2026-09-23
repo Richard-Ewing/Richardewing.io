@@ -634,4 +634,22 @@ export const tracks = [
         glossaryTerms: ['ai-economist', 'margin-engineering', 'synthetic-cogs', 'shadow-ai', 'the-turing-tax'],
         tools: [{ name: 'AUEB Calculator', href: '/tools/aueb' }, { name: 'Shadow AI Scanner', href: '/tools/shadow-ai' }],
     },
+    {
+        title: 'Governance for Agentic AI',
+        subtitle: 'Track 58  -  AI Agents & Enterprise Risk',
+        description: 'The definitive executive and engineering curriculum for governing autonomous AI agents. Learn to decouple runtime persistence from state authority, triage the supervisory review queue, and enforce the 4 Pillars of Agent Governance.',
+        modules: [
+            { id: '58-1', name: '58.1 The Rise of Shadow Agents', topics: 'Shadow Agents, Machine-Speed Breaches, Threat Prevention Layer', href: '/vault/curriculum/tracks/agentic-governance/58-1' },
+            { id: '58-2', name: '58.2 Boundary Control & RBAC for AI', topics: 'Agentic RBAC, Scoped Ephemeral Tokens, Execution Sandboxing', href: '/vault/curriculum/tracks/agentic-governance/58-2' },
+            { id: '58-3', name: '58.3 Admissibility Allowlists & State Checks', topics: 'Binary Evaluation, Hash Integrity, State Rollbacks', href: '/vault/curriculum/tracks/agentic-governance/58-3' },
+            { id: '58-4', name: '58.4 Deterministic Execution Control', topics: 'Decoupling Inference from Execution, Cryptographic Ledgers', href: '/vault/curriculum/tracks/agentic-governance/58-4' },
+            { id: '58-5', name: '58.5 Persistence vs. Authority: Background Agents', topics: 'Claude Code vs Gemini Spark, Unattended Blast Radius, State Drift', href: '/vault/curriculum/tracks/agentic-governance/58-5' },
+            { id: '58-6', name: '58.6 The Transaction That Succeeds & 4 Pillars', topics: 'Silent Policy Failure, 4 Pillars of Agent Governance, 6 Executive Questions', href: '/vault/curriculum/tracks/agentic-governance/58-6' },
+            { id: '58-7', name: '58.7 The Supervisory Review Queue & Air Traffic Control', topics: 'Silent Syntax Failures, Air Traffic Control Tax, 4 Operational Laws', href: '/vault/curriculum/tracks/agentic-governance/58-7' },
+        ],
+        color: 'emerald',
+        icon: '🛡️',
+        glossaryTerms: ['persistence-vs-authority', 'the-transaction-that-succeeds', 'supervisory-review-queue', 'deterministic-execution-control', 'systems-governor', 'ai-liability-gradient'],
+        tools: [{ name: 'Agentic Drift Risk Matrix', href: '/tools/agentic-drift-matrix' }, { name: 'Board Risk Scorecard', href: '/tools/board-risk-scorecard' }, { name: 'Code Review Bottleneck Calculator', href: '/tools/code-review-bottleneck-calc' }],
+    },
 ];

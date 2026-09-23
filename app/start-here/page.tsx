@@ -48,7 +48,10 @@ const steps: StepItem[] = [
         subtitle: 'Audit the 6-pillar operational boundaries',
         description: 'Review the multidisciplinary system that translates engineering costs and security liabilities into EBITDA exit margins.',
         links: [
-            { label: 'Explore The Framework', href: '/framework', primary: true }
+            { label: 'Explore The Framework', href: '/framework', primary: true },
+            { label: 'Frontier Model Economics', href: '/articles/frameworks/frontier-model-economics' },
+            { label: 'Persistence vs Authority', href: '/articles/frameworks/persistence-vs-authority' },
+            { label: 'The Transaction That Succeeds', href: '/articles/frameworks/the-transaction-that-succeeds' },
         ],
         color: 'indigo',
     },
@@ -61,6 +64,7 @@ const steps: StepItem[] = [
             { label: 'Take 15-Q Assessment', href: '/assessment', primary: true },
             { label: 'Product Debt Index (PDI)', href: '/tools/pdi' },
             { label: 'AI Unit Economics (AUEB)', href: '/tools/aueb' },
+            { label: 'Board Risk Scorecard', href: '/tools/board-risk-scorecard' },
         ],
         color: 'cyan',
     },
@@ -71,6 +75,7 @@ const steps: StepItem[] = [
         description: 'Once measured, you must establish an operational doctrine. Our semantic curriculum tracks map every diagnostic symptom directly to a training module that provides the structural remediation plan.',
         links: [
             { label: 'Browse Curriculum tracks', href: '/curriculum', primary: true },
+            { label: 'Agentic Governance (Track 58)', href: '/vault/curriculum/tracks/agentic-governance/58-5' },
             { label: 'Access Member Vault', href: '/vault' },
         ],
         color: 'purple',
