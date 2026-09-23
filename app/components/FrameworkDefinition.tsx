@@ -74,8 +74,8 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                 {/* Definition */}
                 <section className="section-sm">
                     <div className="max-w-3xl">
-                        <h2 className="text-lg font-semibold text-cyan-900 font-extrabold font-semibold mb-4 font-grotesk">Definition</h2>
-                        <div className="p-6 bg-white/5 border-l-4 border-cyan-400 rounded-r-lg">
+                        <h2 className="text-xl font-bold text-cyan-950 mb-4 font-grotesk">Definition</h2>
+                        <div className="p-6 bg-white border-l-4 border-cyan-500 rounded-r-xl shadow-sm">
                             <p className="text-xl text-zinc-950 leading-relaxed font-serif italic">
                                 {framework.definition}
                             </p>
@@ -83,11 +83,90 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                     </div>
                 </section>
 
+                {/* Mathematical Axioms & Dedicated Formula Modules */}
+                {framework.slug === 'return-on-ai-investment' && (
+                    <section className="section-sm">
+                        <div className="max-w-3xl p-6 rounded-2xl border-2 border-cyan-500/40 bg-white shadow-lg">
+                            <div className="flex items-center justify-between mb-4">
+                                <span className="text-xs font-mono font-bold uppercase tracking-widest text-cyan-950 bg-cyan-100 px-3 py-1 rounded border border-cyan-300">
+                                    Mathematical Axiom
+                                </span>
+                                <span className="text-xs font-mono font-bold text-zinc-600">The ROAI Equation</span>
+                            </div>
+                            <div className="p-4 bg-zinc-950 text-cyan-300 font-mono text-sm sm:text-base rounded-xl overflow-x-auto my-3 text-center shadow-inner">
+                                ROAI = (Δ Gross Profit Attributable to AI - Synthetic COGS) / Capital Invested
+                            </div>
+                            <p className="text-sm text-zinc-800 leading-relaxed font-medium mt-3">
+                                <strong>The Margin Collapse Law:</strong> Moving AI accuracy from 85% to 95% triggers an exponential 10x compute cost increase. If incremental revenue lift does not outpace Synthetic COGS, every user interaction carries Negative Carry.
+                            </p>
+                            <div className="mt-6 pt-4 border-t border-zinc-200 flex flex-wrap gap-4">
+                                <a href="/tools/aueb" className="px-5 py-2.5 rounded-lg bg-cyan-600 text-white font-bold text-sm hover:bg-cyan-700 transition shadow">
+                                    Run AUEB Benchmark Calculator →
+                                </a>
+                                <a href="/services" className="px-5 py-2.5 rounded-lg bg-zinc-900 text-white font-bold text-sm hover:bg-zinc-800 transition shadow">
+                                    Boardroom R&amp;D Capital Audit →
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                )}
+
+                {framework.slug === 'technical-insolvency-date' && (
+                    <section className="section-sm">
+                        <div className="max-w-3xl p-6 rounded-2xl border-2 border-red-500/40 bg-white shadow-lg">
+                            <div className="flex items-center justify-between mb-4">
+                                <span className="text-xs font-mono font-bold uppercase tracking-widest text-red-950 bg-red-100 px-3 py-1 rounded border border-red-300">
+                                    Mathematical Axiom
+                                </span>
+                                <span className="text-xs font-mono font-bold text-zinc-600">The TID Projection</span>
+                            </div>
+                            <div className="p-4 bg-zinc-950 text-amber-300 font-mono text-sm sm:text-base rounded-xl overflow-x-auto my-3 text-center shadow-inner">
+                                TID = Current Quarter + (100% - Current Maintenance %) / QoQ Maintenance Growth Rate
+                            </div>
+                            <p className="text-sm text-zinc-800 leading-relaxed font-medium mt-3">
+                                <strong>The Stagnation Threshold:</strong> At the Technical Insolvency Date, maintenance burden consumes 100% of engineering bandwidth. New feature velocity mathematically stops. R&amp;D expenditure converts into pure operational maintenance.
+                            </p>
+                            <div className="mt-6 pt-4 border-t border-zinc-200 flex flex-wrap gap-4">
+                                <a href="/tools/pdi" className="px-5 py-2.5 rounded-lg bg-purple-600 text-white font-bold text-sm hover:bg-purple-700 transition shadow">
+                                    Calculate Your Organization's TID →
+                                </a>
+                                <a href="/api/buy/insolvency_diagnostic" className="px-5 py-2.5 rounded-lg bg-red-700 text-white font-bold text-sm hover:bg-red-800 transition shadow">
+                                    Book 60-Min Insolvency Audit ($2,500) →
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                )}
+
+                {framework.slug === 'synthetic-cogs' && (
+                    <section className="section-sm">
+                        <div className="max-w-3xl p-6 rounded-2xl border-2 border-purple-500/40 bg-white shadow-lg">
+                            <div className="flex items-center justify-between mb-4">
+                                <span className="text-xs font-mono font-bold uppercase tracking-widest text-purple-950 bg-purple-100 px-3 py-1 rounded border border-purple-300">
+                                    Mathematical Axiom
+                                </span>
+                                <span className="text-xs font-mono font-bold text-zinc-600">Unit COGS Breakdown</span>
+                            </div>
+                            <div className="p-4 bg-zinc-950 text-purple-300 font-mono text-sm sm:text-base rounded-xl overflow-x-auto my-3 text-center shadow-inner">
+                                Synthetic COGS = Embedding Cost + Vector Search + Prompt Tokens + Completion Tokens + Dynamic Evals
+                            </div>
+                            <p className="text-sm text-zinc-800 leading-relaxed font-medium mt-3">
+                                <strong>The Zero-Marginal-Cost Death:</strong> AI SaaS is an extraction business, not pure cloud hosting. Every user query consumes non-zero hardware cycles and API tokens.
+                            </p>
+                            <div className="mt-6 pt-4 border-t border-zinc-200 flex flex-wrap gap-4">
+                                <a href="/tools/aueb" className="px-5 py-2.5 rounded-lg bg-purple-600 text-white font-bold text-sm hover:bg-purple-700 transition shadow">
+                                    Benchmark Synthetic COGS →
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                )}
+
                 {/* Why It Matters */}
                 <section className="section-sm">
                     <div className="max-w-3xl">
-                        <h2 className="text-lg font-semibold text-purple-900 font-extrabold font-semibold mb-4 font-grotesk">Why It Matters</h2>
-                        <p className="text-zinc-950 font-bold leading-relaxed text-lg">
+                        <h2 className="text-xl font-bold text-purple-950 mb-4 font-grotesk">Why It Matters</h2>
+                        <p className="text-zinc-950 font-medium leading-relaxed text-lg">
                             {framework.whyItMatters}
                         </p>
                     </div>
@@ -97,11 +176,11 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                 {framework.howToCalculate && (
                     <section className="section-sm">
                         <div className="max-w-3xl">
-                            <h2 className="text-lg font-semibold text-green-400 mb-4 font-grotesk">How to Calculate</h2>
+                            <h2 className="text-xl font-bold text-emerald-950 mb-4 font-grotesk">How to Calculate</h2>
                             <ol className="space-y-4">
                                 {framework.howToCalculate.map((step, i) => (
-                                    <li key={i} className="flex gap-4 text-zinc-950">
-                                        <span className="text-green-500 font-mono font-bold bg-green-900/20 px-2 rounded">{i + 1}</span>
+                                    <li key={i} className="flex gap-4 text-zinc-900 font-medium">
+                                        <span className="text-emerald-700 font-mono font-bold bg-emerald-100 px-2 py-0.5 rounded h-fit">{i + 1}</span>
                                         <span>{step}</span>
                                     </li>
                                 ))}

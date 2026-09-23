@@ -118,37 +118,55 @@ export default function AgenticDriftMatrixPage() {
                 <ScrollReveal delay={150}>
                     <div className="mt-20 border-t border-zinc-400 pt-12 text-center">
                         <h3 className="text-lg font-bold text-zinc-950 mb-4">Ready to stop the decay permanently?</h3>
-                        <p className="text-sm text-zinc-900 font-medium mb-6">See the architecture I use to enforce deterministic state management.</p>
+                        <p className="text-sm text-zinc-900 font-medium mb-6">See the published research and architectural models we use to enforce deterministic state management and authority bounds.</p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <a 
-                                href="https://newsletter.richardewing.io/p/fixing-agentic-drift" 
+                                href="https://builtin.com/articles/claude-code-vs-google-gemini-spark" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
                                 className="inline-flex items-center text-sm font-bold text-indigo-900 hover:text-indigo-700 underline underline-offset-4 transition-colors"
                             >
-                                Read "Fixing Agentic Drift" →
+                                Built In: Claude Code vs. Gemini Spark ↗
                             </a>
                             <a 
-                                href="https://builtin.com/articles/who-governs-ai-agent" 
+                                href="https://builtin.com/articles/ai-agents-to-do-list" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
                                 className="inline-flex items-center text-sm font-bold text-indigo-900 hover:text-indigo-700 underline underline-offset-4 transition-colors"
                             >
-                                Read Built In on Agent Governance ↗
+                                Built In: The AI Agent To-Do List ↗
                             </a>
                             <a 
-                                href="https://www.cio.com/article/4208746/salesforce-and-sap-are-putting-ai-agents-inside-your-workflows-who-tells-them-no.html" 
+                                href="https://www.cio.com/article/4223955/your-ai-agent-may-have-made-the-decision-but-your-company-owns-the-risk.html" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
                                 className="inline-flex items-center text-sm font-bold text-cyan-900 hover:text-cyan-700 underline underline-offset-4 transition-colors"
                             >
-                                Read CIO.com on Shadow Delegation ↗
+                                CIO.com: Company Owns the Risk ↗
                             </a>
+                            <Link 
+                                href="/concepts/persistence-vs-authority" 
+                                className="inline-flex items-center text-sm font-bold text-emerald-900 hover:text-emerald-700 underline underline-offset-4 transition-colors"
+                            >
+                                Concept: Persistence vs Authority →
+                            </Link>
+                            <Link 
+                                href="/concepts/supervisory-review-queue" 
+                                className="inline-flex items-center text-sm font-bold text-emerald-900 hover:text-emerald-700 underline underline-offset-4 transition-colors"
+                            >
+                                Concept: Supervisory Review Queue →
+                            </Link>
                             <Link 
                                 href="/concepts/systems-governor" 
                                 className="inline-flex items-center text-sm font-bold text-emerald-900 hover:text-emerald-700 underline underline-offset-4 transition-colors"
                             >
                                 Systems Governor Concept →
+                            </Link>
+                            <Link 
+                                href="/research/publications" 
+                                className="inline-flex items-center text-sm font-bold text-zinc-900 hover:text-zinc-700 underline underline-offset-4 transition-colors"
+                            >
+                                Full Research Publications Catalog →
                             </Link>
                         </div>
                     </div>

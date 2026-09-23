@@ -27,6 +27,78 @@ export const RESEARCH_DOMAINS = [
 ] as const;
 
 export const RESEARCH_CORPUS: CorpusArticle[] = [
+  // Built In Expert Contributor - September 23, 2026
+  {
+    id: 'builtin-ai-agents-to-do-list',
+    title: "I Put AI Agents in Charge of My To-Do List. Here's What They Actually Took Off My Plate.",
+    url: 'https://builtin.com/articles/ai-agents-to-do-list',
+    publisher: 'Built In',
+    domain: 'Engineering Leadership',
+    type: 'Executable',
+    date: 'September 23, 2026',
+    thesis: 'Testing autonomous AI agents across administrative, research, and software engineering chores proves that delegation does not eliminate workloads, but shifts human labor into an air traffic control supervisory review queue. While agents excel at bounded, easily verifiable technical tasks like CI pipeline monitoring, DOM contrast audits, and build validation, they fail silently with perfect syntax during complex database refactors and struggle with physical reality collisions and interpersonal nuance. Real leverage requires four operational laws: start with read-only triggers, enforce narrow definitions of done, require human approval on external actions, and treat all output as junior drafts.',
+    editorsPick: true,
+    relatedConceptIds: ['supervisory-review-queue', 'air-traffic-control-tax', 'silent-syntax-failure', 'software-factory-overproduction', 'engineering-bottleneck-illusion', 'review-debt', 'deterministic-execution-control'],
+    relatedGlossarySlugs: ['supervisory-review-queue', 'air-traffic-control-tax', 'silent-syntax-failure', 'software-factory-overproduction', 'review-debt'],
+    relatedFrameworkSlugs: ['governed-execution', 'runtime-vs-alignment'],
+    relatedToolIds: ['code-review-bottleneck-calc', 'copilot-roi', 'pdi', 'agentic-drift-matrix'],
+    relatedCaseStudyIds: ['cursor-to-antigravity-startup-governance', 'runtime-concurrency-failures'],
+    relatedCurriculumTrackIds: ['agentic-engineering', 'engineering-economics', 'product-economics']
+  },
+  // Built In Software Engineering Perspectives - September 21, 2026
+  {
+    id: 'builtin-claude-code-vs-gemini-spark',
+    title: 'Claude Code vs. Gemini Spark: How Do They Compare?',
+    url: 'https://builtin.com/articles/claude-code-vs-google-gemini-spark',
+    publisher: 'Built In',
+    domain: 'AI Governance',
+    type: 'Executable',
+    date: 'September 21, 2026',
+    thesis: 'Claude Code won the terminal through active human presence and localized error feedback loops, while Gemini Spark bets on remote background persistence across office apps and external MCP connectors. However, persistence is not authority: extending execution duration without strict write boundaries allows flawed assumptions to silently corrupt shared systems. Because explainability is not recoverability, unmonitored background agents turn operators into forensic auditors, proving that an autonomous agent\'s true metric is not how long it works without you, but how much authority you give it when you are away.',
+    editorsPick: true,
+    relatedConceptIds: ['persistence-vs-authority', 'explainability-vs-recoverability', 'state-drift-in-persistent-agents', 'deterministic-execution-control', 'governed-execution', 'admissibility-allowlist'],
+    relatedGlossarySlugs: ['persistence-vs-authority', 'explainability-vs-recoverability', 'state-drift-in-persistent-agents', 'systems-governor', 'deterministic-execution-control'],
+    relatedFrameworkSlugs: ['governed-execution', 'runtime-vs-alignment'],
+    relatedToolIds: ['agentic-drift-matrix', 'prompt-injection-sandbox', 'mcp-security-auditor', 'pdi'],
+    relatedCaseStudyIds: ['cursor-to-antigravity-startup-governance', 'exogram-inference-dividend-optimization'],
+    relatedCurriculumTrackIds: ['agentic-governance', 'engineering-economics', 'agentic-engineering']
+  },
+  // CIO.com IT Leadership & Governance - September 2026
+  {
+    id: 'cio-your-ai-agent-made-the-decision-company-owns-the-risk',
+    title: 'AI Agents Are Creating New Enterprise Governance Risks',
+    url: 'https://www.cio.com/article/4223955/your-ai-agent-may-have-made-the-decision-but-your-company-owns-the-risk.html',
+    publisher: 'CIO.com',
+    domain: 'AI Governance',
+    type: 'Evergreen',
+    date: 'September 2026',
+    thesis: 'With Gartner predicting 40% of enterprise applications embedding AI agents by end of 2026 and 40% being decommissioned by 2027 due to post-incident governance gaps, organizations face an insidious new failure mode: the transaction that succeeds. While operations dashboards glow green with 240-millisecond response times, automated agents silently violate corporate procurement limits, accounting rules, and customer credit policies. Because monitoring is not authorization, enterprises must separate system health from business permissioning across four pillars (Monitoring, Auditability, Authorization, Accountability) and establish external policy firewalls before autonomous software commits corporate capital.',
+    editorsPick: true,
+    relatedConceptIds: ['the-transaction-that-succeeds', 'four-pillars-of-agent-governance', 'enterprise-governance-vacuum', 'systems-governor', 'ai-liability-gradient', 'deterministic-execution-control'],
+    relatedGlossarySlugs: ['the-transaction-that-succeeds', 'four-pillars-of-agent-governance', 'enterprise-governance-vacuum', 'systems-governor', 'ai-liability-gradient'],
+    relatedFrameworkSlugs: ['governed-execution', 'runtime-vs-alignment'],
+    relatedToolIds: ['board-risk-scorecard', 'mcp-security-auditor', 'prompt-injection-sandbox', 'aueb'],
+    relatedCaseStudyIds: ['cursor-to-antigravity-startup-governance', 'runtime-concurrency-failures'],
+    relatedCurriculumTrackIds: ['agentic-governance', 'ai-product-economics', 'engineering-economics']
+  },
+  // Built In Expert Contributor - September 9, 2026
+  {
+    id: 'builtin-what-is-a-frontier-model',
+    title: 'What Is a Frontier Model?',
+    url: 'https://builtin.com/articles/frontier-model',
+    publisher: 'Built In',
+    domain: 'AI Economics',
+    type: 'Evergreen',
+    date: 'September 9, 2026',
+    thesis: 'Frontier AI describes an expensive, moving empirical threshold rather than a fixed technical territory or map. While everyday AI automates structured, narrow tasks without surprises, frontier models are deployed when problems present high ambiguity, multi-step execution paths, conflicting contracts, and code generation across unprogrammed domains. Weighing open-weight private deployment versus closed API services requires balancing $78M to $191M training compute floors against compounding multi-step inference costs and strict operational authority limits.',
+    editorsPick: true,
+    relatedConceptIds: ['frontier-model-economics', 'cost-of-predictivity', 'variable-cost-of-intelligence', 'rented-intelligence-vs-owned-capital', 'ai-volatility-tax', 'deterministic-execution-control'],
+    relatedGlossarySlugs: ['frontier-model-economics', 'variable-cost-of-intelligence', 'deterministic-execution-control', 'systems-governor'],
+    relatedFrameworkSlugs: ['governed-execution', 'runtime-vs-alignment'],
+    relatedToolIds: ['aueb', 'pdi', 'agentic-drift-matrix', 'slm-vs-api'],
+    relatedCaseStudyIds: ['exogram-inference-dividend-optimization', 'runtime-concurrency-failures'],
+    relatedCurriculumTrackIds: ['ai-product-economics', 'agentic-governance', 'engineering-economics']
+  },
   // Today's Beehiiv Newsletter - September 9, 2026
   {
     id: 'beehiiv-software-factory-running-24-7',

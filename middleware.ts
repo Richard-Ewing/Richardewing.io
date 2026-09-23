@@ -4,6 +4,12 @@ import { NextResponse } from "next/server";
 export default clerkMiddleware(async (auth, req) => {
   const url = req.nextUrl;
   const pathname = url.pathname;
+  const host = req.headers.get('host') || '';
+
+  // Canonical Hostname Enforcement: Redirect non-www to www in production
+  if (host === 'richardewing.io') {
+    return NextResponse.redirect(new URL(`https://www.richardewing.io${pathname}${url.search}`), 308);
+  }
 
   // Edge-level 308 Permanent Redirect for /advisory -> /services
   if (pathname === '/advisory' || pathname.startsWith('/advisory/')) {

@@ -10,19 +10,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const framework = frameworks.find((f) => f.slug === slug);
     if (!framework) return { title: 'Framework Not Found' };
 
-    const searchTitle = {
-        'software-phase-transition': 'The Software Phase Transition  -  Managing Product When Code Costs Near Zero',
-        'technical-insolvency-date': 'Technical Insolvency Date  -  When Technical Debt Kills Innovation',
-        'innovation-tax': 'Innovation Tax  -  Hidden Maintenance Disguised as R&D Investment',
-        'cost-of-predictivity': 'Cost of Predictivity  -  The True Cost of AI Accuracy',
-        'audit-interview': 'Audit Interview  -  AI-Age Engineering Hiring Assessment',
-        'kill-switch-protocol': 'Kill Switch Protocol  -  How to Deprecate Zombie Features',
-        'feature-bloat-calculus': 'Feature Bloat Calculus  -  When Features Cost More Than They Earn',
-    }[slug] || framework.name;
+    const searchTitle: Record<string, string> = {
+        'software-phase-transition': 'The Software Phase Transition: Managing Product When Code Costs Near Zero',
+        'technical-insolvency-date': 'Technical Insolvency Date: When Technical Debt Kills Innovation',
+        'innovation-tax': 'Innovation Tax: Hidden Maintenance Disguised as R&D Investment',
+        'cost-of-predictivity': 'Cost of Predictivity: The True Cost of AI Accuracy',
+        'audit-interview': 'Audit Interview: AI-Age Engineering Hiring Assessment',
+        'kill-switch-protocol': 'Kill Switch Protocol: How to Deprecate Zombie Features',
+        'feature-bloat-calculus': 'Feature Bloat Calculus: When Features Cost More Than They Earn',
+        'return-on-ai-investment': 'Return on AI Investment (ROAI): Framework for AI Unit Economics',
+        'vibe-coding-debt': 'Vibe Coding Debt: Architectural Liabilities of AI Copilots',
+        'shadow-agents': 'Shadow Agents: Autonomous AI Governance & Security Framework',
+        'agentic-drift': 'Agentic Drift (Logic Drift): Mitigating Recursive Model Failure',
+        'dspm': 'Data Security Posture Management (DSPM): Protecting AI Context Layers',
+        'sovereign-ai': 'Sovereign AI: On-Premise Enterprise LLM Architecture',
+        'graph-rag': 'Graph RAG: Knowledge Graphs for Enterprise Retrieval',
+        'slm': 'Small Language Models (SLM): Unit Economic Right-Sizing',
+        'the-turing-tax': 'The Turing Tax: The Margin Cost of Frontier Models',
+        'synthetic-cogs': 'Synthetic COGS: AI Compute Unit Economics & Margin Engineering',
+    };
+
+    const titleStr = searchTitle[slug] || framework.name;
 
     return {
-        title: `${searchTitle} | Richard Ewing Framework`,
-        description: framework.definition.replace(/\n/g, ' ').slice(0, 155) + '...',
+        title: `${titleStr} | Richard Ewing Framework`,
+        description: framework.definition.replace(/\n/g, ' ').slice(0, 155).trim() + '...',
         keywords: [
             framework.name.toLowerCase(), `${framework.name.toLowerCase()} framework`,
             `what is ${framework.name.toLowerCase()}`, 'Richard Ewing', 'AI Economist',
@@ -81,7 +93,7 @@ export default async function Page({ params }: Props) {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
             <FrameworkDefinition framework={framework} />
             <div className="page-container max-w-4xl mx-auto">
-                <AdvisoryCTA variant="educational" />
+                <AdvisoryCTA variant={slug === 'return-on-ai-investment' ? 'tool-result' : 'educational'} termTitle={framework.name} />
             </div>
         </>
     );

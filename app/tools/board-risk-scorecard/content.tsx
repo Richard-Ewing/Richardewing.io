@@ -191,8 +191,108 @@ export default function BoardRiskScorecardTool() {
                                 Sovereign Framework Connection
                             </div>
                             <p className="text-amber-900 leading-relaxed">
-                                Directly connects to <Link href="/for-boards" className="underline font-bold">For Board Members</Link> and <Link href="/framework/governance" className="underline font-bold">Executive AI Fiduciary Framework</Link>.
+                                Directly connects to <Link href="/for-boards" className="underline font-bold">For Board Members</Link>, <Link href="/framework/governance" className="underline font-bold">Executive AI Fiduciary Framework</Link>, and the published CIO.com research on <a href="https://www.cio.com/article/4223955/your-ai-agent-may-have-made-the-decision-but-your-company-owns-the-risk.html" target="_blank" rel="noopener noreferrer" className="underline font-bold">Corporate Agent Liability</a>.
                             </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* 4 Pillars & 6 Executive Questions from CIO.com */}
+                <div className="mt-12 bg-white border border-zinc-300 rounded-3xl p-6 sm:p-10 shadow-sm space-y-8">
+                    <div className="border-b border-zinc-200 pb-6">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest mb-3">
+                            Executive Research Reference • CIO.com
+                        </div>
+                        <h2 className="text-2xl sm:text-3xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
+                            The 4 Pillars of Agent Governance &amp; The 6 Executive Procurement Questions
+                        </h2>
+                        <p className="mt-2 text-sm text-zinc-700 leading-relaxed font-medium">
+                            Synthesized from Richard Ewing's published analysis in CIO.com (&quot;Your AI Agent May Have Made the Decision, but Your Company Owns the Risk&quot;). When autonomous agents act in production, the legal, financial, and regulatory accountability never transfers to the vendor: it remains entirely with the deploying enterprise.
+                        </p>
+                    </div>
+
+                    {/* The 4 Pillars */}
+                    <div>
+                        <h3 className="text-lg font-bold font-grotesk text-zinc-950 mb-4">
+                            The 4 Architectural Pillars of Agent Governance
+                        </h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200">
+                                <div className="text-xs font-mono font-bold text-cyan-900 uppercase mb-1">01. Monitoring</div>
+                                <h4 className="text-sm font-bold text-zinc-950 mb-1">Continuous Telemetry</h4>
+                                <p className="text-xs text-zinc-600 leading-relaxed">
+                                    Real-time tracking of agent actions, system interactions, and latency without relying on delayed post-run log exports.
+                                </p>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200">
+                                <div className="text-xs font-mono font-bold text-indigo-900 uppercase mb-1">02. Auditability</div>
+                                <h4 className="text-sm font-bold text-zinc-950 mb-1">Immutable Ledger</h4>
+                                <p className="text-xs text-zinc-600 leading-relaxed">
+                                    Forensic recording of prompts, context state, intermediate reasoning chains, tool invocations, and output diffs.
+                                </p>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200">
+                                <div className="text-xs font-mono font-bold text-amber-900 uppercase mb-1">03. Authorization</div>
+                                <h4 className="text-sm font-bold text-zinc-950 mb-1">Enforced Boundaries</h4>
+                                <p className="text-xs text-zinc-600 leading-relaxed">
+                                    Granular financial thresholds ($), corporate signing limits, and capability manifests that agents cannot bypass.
+                                </p>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200">
+                                <div className="text-xs font-mono font-bold text-rose-900 uppercase mb-1">04. Accountability</div>
+                                <h4 className="text-sm font-bold text-zinc-950 mb-1">Deterministic Rollback</h4>
+                                <p className="text-xs text-zinc-600 leading-relaxed">
+                                    Unambiguous human ownership, clear escalation paths, and automated rollback mechanisms when mutations fail.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* The 6 Executive Procurement Questions */}
+                    <div>
+                        <h3 className="text-lg font-bold font-grotesk text-zinc-950 mb-4">
+                            The 6 Questions Every Board &amp; Audit Committee Must Demand
+                        </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200">
+                                <span className="text-xs font-mono font-bold text-amber-800">1. Scope &amp; Authority</span>
+                                <p className="text-xs text-zinc-800 mt-1 font-medium">What specific decisions and transactions is this agent authorized to execute without human intervention?</p>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200">
+                                <span className="text-xs font-mono font-bold text-amber-800">2. Financial Signing Limits</span>
+                                <p className="text-xs text-zinc-800 mt-1 font-medium">At what financial dollar threshold, contract commitment, or risk exposure does human sign-off become mandatory?</p>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200">
+                                <span className="text-xs font-mono font-bold text-amber-800">3. Audit Trail Integrity</span>
+                                <p className="text-xs text-zinc-800 mt-1 font-medium">Can every automated action be reconstructed step-by-step from prompt, context, tool invocation, and decision state?</p>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200">
+                                <span className="text-xs font-mono font-bold text-amber-800">4. Rollback &amp; Recovery</span>
+                                <p className="text-xs text-zinc-800 mt-1 font-medium">If the agent executes an erroneous or catastrophic mutation, what is the exact deterministic recovery protocol?</p>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200">
+                                <span className="text-xs font-mono font-bold text-amber-800">5. Blast Radius Containment</span>
+                                <p className="text-xs text-zinc-800 mt-1 font-medium">Are credentials and tool permissions scoped strictly to least privilege, or does the agent possess wide system access?</p>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200">
+                                <span className="text-xs font-mono font-bold text-amber-800">6. Regulatory Accountability</span>
+                                <p className="text-xs text-zinc-800 mt-1 font-medium">Who within executive leadership is legally and operationally accountable when the agent produces non-compliant outcomes?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="pt-4 border-t border-zinc-200 flex flex-wrap items-center justify-between gap-4">
+                        <span className="text-xs text-zinc-500 font-mono">Published by Richard Ewing on CIO.com</span>
+                        <div className="flex flex-wrap gap-4">
+                            <Link href="/concepts/the-transaction-that-succeeds" className="text-xs font-bold text-amber-800 hover:text-amber-950 underline">
+                                Concept: The Transaction That Succeeds →
+                            </Link>
+                            <Link href="/concepts/persistence-vs-authority" className="text-xs font-bold text-amber-800 hover:text-amber-950 underline">
+                                Concept: Persistence vs Authority →
+                            </Link>
+                            <a href="https://www.cio.com/article/4223955/your-ai-agent-may-have-made-the-decision-but-your-company-owns-the-risk.html" target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-cyan-900 hover:text-cyan-700 underline">
+                                Read Full Article on CIO.com ↗
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -372,5 +372,80 @@ export const richardEwingArticleTerms: GlossaryTerm[] = [
         relatedArticles: [
             { title: 'The AI Hype Cycle Is Exhausting', url: 'https://www.linkedin.com/pulse/ai-hype-cycle-exhausting-richard-ewing-3bdic/' }
         ]
+    },
+    {
+        slug: 'frontier-model-economics',
+        title: 'Frontier Model Economics',
+        category: 'Richard Ewing Frameworks',
+        definition: `Frontier Model Economics is an analytical framework formulated by Richard Ewing in Built In establishing that frontier AI represents an expensive, moving empirical threshold rather than a permanent category or fixed map.\n\nWhile everyday AI automates structured, narrow tasks (spam filtering, speech transcription, support ticket classification) at near-zero marginal cost without surprises, frontier models are deployed when tasks present high ambiguity, multi-step execution paths, conflicting contracts, and code generation across unprogrammed domains.\n\nEvaluating closed commercial APIs versus open-weight private deployment requires balancing $78M to $191M training compute floors (per Stanford's AI Index for GPT-4 and Gemini Ultra) against compounding multi-step inference costs and strict operational authority boundaries.`,
+        whyItMatters: `Prevents organizations from overpaying for frontier reasoning on trivial automation tasks or underestimating the infrastructure and inference compounding costs of deploying frontier models into multi-agent workflows.`,
+        faqs: [
+            { question: 'What is a frontier model in simple terms?', answer: 'An AI system operating at the current leading edge of capability on ambiguous, complex tasks. What is frontier today becomes ordinary software tomorrow.' },
+            { question: 'What is the economic difference between everyday AI and frontier AI?', answer: 'Everyday AI automates narrow, predictable tasks cheaply and reliably. Frontier AI tackles messy, unprogrammed problems where simpler software fails, but incurs massive compute and inference compounding costs.' }
+        ],
+        relatedTerms: ['variable-cost-of-intelligence', 'cost-of-predictivity', 'deterministic-execution-control', 'systems-governor'],
+        relatedArticles: [
+            { title: 'What Is a Frontier Model?', url: 'https://builtin.com/articles/frontier-model' }
+        ]
+    },
+    {
+        slug: 'persistence-vs-authority',
+        title: 'Persistence vs. Authority',
+        category: 'Richard Ewing Frameworks',
+        definition: `Persistence vs. Authority is a core AI governance principle formulated by Richard Ewing in Built In distinguishing execution duration from state-altering permission scope.\n\nPersistence measures how long an AI agent can execute unattended across background cloud servers and connected office applications; Authority measures what state, databases, financial accounts, and commercial commitments the software is permitted to modify independently.\n\nConflating the two is lethal: extending runtime persistence without strict write allowlists allows flawed assumptions to silently spread across internal records, turning operators into forensic auditors. Google's documentation acknowledges that while scheduled tasks run offline, active human supervision remains the primary risk control.`,
+        whyItMatters: `Treating persistence as a pure productivity upgrade ignores the blast radius of unmonitored background writes. Operating safely requires narrow, read-heavy triggers, deterministic allowlists, and explicit recovery paths.`,
+        faqs: [
+            { question: 'What is the difference between persistence and authority?', answer: 'Persistence is how long an agent runs unattended; authority is what permissions it has to alter data, send communications, or commit capital while it runs.' },
+            { question: 'Why do confirmation prompts fail to resolve operational risk?', answer: 'Confirmation prompts only trigger on purchases or external messages; they miss internal spreadsheet formula corruption or CRM record modifications that silently create hours of forensic cleanup.' }
+        ],
+        relatedTerms: ['systems-governor', 'deterministic-execution-control', 'explainability-vs-recoverability', 'admissibility-allowlist'],
+        relatedArticles: [
+            { title: 'Claude Code vs. Gemini Spark: How Do They Compare?', url: 'https://builtin.com/articles/claude-code-vs-google-gemini-spark' }
+        ]
+    },
+    {
+        slug: 'supervisory-review-queue',
+        title: 'Supervisory Review Queue',
+        category: 'Richard Ewing Frameworks',
+        definition: `The Supervisory Review Queue is an operational engineering framework introduced by Richard Ewing in Built In demonstrating that autonomous AI agents do not eliminate to-do lists, but replace manual execution with a demanding supervisory review queue (the "air traffic control" tax).\n\nWhile agents provide massive leverage on bounded, mechanically verifiable tasks (CI monitoring, DOM accessibility audits, syntax validation), they fail silently with perfect syntax during complex database refactors and struggle with physical reality collisions (booking travel-impossible meetings) and interpersonal nuance.\n\nReal leverage requires four operational laws: 1) Start with read-only triggers, 2) Enforce narrow definitions of done, 3) Require human approval on external actions, and 4) Treat all machine output as junior drafts.`,
+        whyItMatters: `Auditing plausible, slightly flawed AI output line-by-line is often more mentally exhausting than performing the task manually. Unbounded delegation inflates senior review debt without creating business value.`,
+        faqs: [
+            { question: 'What is the Supervisory Review Queue?', answer: 'The shift in human labor from manual execution to auditing, verifying edge cases, and supervising autonomous agent output.' },
+            { question: 'Why do coding agents fail silently with perfect syntax?', answer: 'They optimize for syntax validity and local completion while bypassing unstated global validation rules or shared architectural state.' }
+        ],
+        relatedTerms: ['software-factory-overproduction', 'review-debt', 'cleanup-time-metric', 'engineering-bottleneck-illusion'],
+        relatedArticles: [
+            { title: "I Put AI Agents in Charge of My To-Do List. Here's What They Actually Took Off My Plate.", url: 'https://builtin.com/articles/ai-agents-to-do-list' }
+        ]
+    },
+    {
+        slug: 'the-transaction-that-succeeds',
+        title: 'The Transaction That Succeeds',
+        category: 'Richard Ewing Frameworks',
+        definition: `The Transaction That Succeeds (Silent Policy Failure) is an enterprise governance failure mode coined by Richard Ewing in CIO.com where an automated AI agent transaction completes with perfect technical execution (glowing green operations dashboards, 240ms response times, zero server errors), but completely violates internal business policy, financial controls, or procurement rules.\n\nExamples include automated support agents granting unapproved customer refunds, procurement agents bypassing $50k 3-bid thresholds, or sales agents offering custom payment terms that break revenue recognition rules.\n\nBecause monitoring is not authorization, enterprises must enforce the 4 Pillars of Agent Governance: Monitoring (is it running?), Auditability (can we reconstruct what it did?), Authorization (was it allowed to do it?), and Accountability (who owns the consequence?).`,
+        whyItMatters: `Traditional IT monitoring only alarms on broken systems. Silent policy failures change financial ledgers and legal commitments outside authorized governance while operations monitors report 100% uptime.`,
+        faqs: [
+            { question: 'What is "The Transaction That Succeeds"?', answer: 'An AI transaction that executes cleanly from a technical standpoint but violates business policy, compliance rules, or spending authorizations.' },
+            { question: 'What are the 4 Pillars of Agent Governance?', answer: '1) Monitoring: system health, 2) Auditability: forensic reconstruction, 3) Authorization: business permissioning, 4) Accountability: named human ownership.' }
+        ],
+        relatedTerms: ['systems-governor', 'ai-liability-gradient', 'deterministic-execution-control', 'persistence-vs-authority'],
+        relatedArticles: [
+            { title: 'AI Agents Are Creating New Enterprise Governance Risks', url: 'https://www.cio.com/article/4223955/your-ai-agent-may-have-made-the-decision-but-your-company-owns-the-risk.html' }
+        ]
+    },
+    {
+        slug: 'explainability-vs-recoverability',
+        title: 'Explainability vs. Recoverability',
+        category: 'Richard Ewing Frameworks',
+        definition: `Explainability vs. Recoverability is a systems architecture principle formulated by Richard Ewing in Built In stating that generating a post-incident summary of why an AI agent took a destructive action is fundamentally useless unless the system possesses an automated mechanism to reverse the damage across all connected applications.\n\nAn assistant that generates a clean log explaining why it overwrote live formulas in a shared financial spreadsheet or corrupted customer records still leaves the spreadsheet corrupted. Without cross-application rollback infrastructure, explainability simply turns human operators into forensic auditors.`,
+        whyItMatters: `Enterprise software lacks unified cross-application rollback. Unattended agents with write access must be constrained by state integrity checks and automated recovery paths before deployment.`,
+        faqs: [
+            { question: 'What is the difference between explainability and recoverability?', answer: 'Explainability tells you why the agent broke the system; recoverability provides the mechanical ability to undo the damage.' },
+            { question: 'Why is explainability alone insufficient for autonomous agents?', answer: 'Knowing why an agent corrupted a database or spreadsheet does not fix the data. Without rollback tools, operators spend hours manually fixing records.' }
+        ],
+        relatedTerms: ['persistence-vs-authority', 'systems-governor', 'deterministic-execution-control', 'state-integrity-check'],
+        relatedArticles: [
+            { title: 'Claude Code vs. Gemini Spark: How Do They Compare?', url: 'https://builtin.com/articles/claude-code-vs-google-gemini-spark' }
+        ]
     }
 ];

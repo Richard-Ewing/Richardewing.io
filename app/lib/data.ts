@@ -14,6 +14,128 @@ export interface Article {
 
 export const articles: Article[] = [
     {
+        slug: "ai-agents-to-do-list",
+        title: "I Put AI Agents in Charge of My To-Do List. Here's What They Actually Took Off My Plate.",
+        description: "Testing AI agents across administrative, research, and technical tasks revealed they do not eliminate workloads but shift human labor to supervisory oversight. The hidden air traffic control tax of working with autonomous agents.",
+        date: "September 2026",
+        readTime: "7 min read",
+        source: "Built In",
+        category: "Engineering Leadership",
+        externalUrl: "https://builtin.com/articles/ai-agents-to-do-list",
+        editorsPick: true,
+        content: `
+            <p>The promise of autonomous AI agents is complete delegation: dump your messy backlog into a tool, walk away from your desk, and come back to find your inbox cleared, code verified, and schedule organized.</p>
+            <p>Over the last few months, I tested that promise on my actual working life. Instead of running synthetic benchmark prompts, I configured specialized agents across my development environment, calendar, research, and email systems. I gave them ordinary chores: triaging emails, drafting replies, managing calendar invites, tracking weekly AI developments, running deployment health checks, auditing UI accessibility, and parsing messy contracts.</p>
+            <p>The result was not an empty to-do list. The agents took over substantial execution work, but they created a demanding new job: air traffic control. I spent less time typing, but far more time auditing confident assumptions, resolving silent drift, and checking edge cases.</p>
+            <h3>Administrative Chores: When the Grid Hits Physical Reality</h3>
+            <p>For straightforward virtual meetings, the calendar agent scanned incoming requests, checked open slots, drafted invites, and sent confirmations in seconds. The friction showed up the moment physical reality collided with the calendar grid.</p>
+            <p>During my second week, a collaborator asked to meet at 3:00 p.m. on a Thursday. My calendar showed that hour as open because I had not blocked out travel time for an in-person meeting forty miles away at 4:00 p.m. A human glancing at that schedule knows you cannot sit in a Seattle coffee shop at 3:30 and walk into a Tacoma boardroom at 4:00. The agent saw an empty white box and booked the call. In another instance, an executive emailed asking to grab coffee "sometime next week when things quiet down." The agent treated the comment as an immediate scheduling request, firing off three morning slots for Tuesday and completely misreading the informal tone of the relationship.</p>
+            <p>Email triage faced a similar split. The agent excelled at passive awareness: scanning inbound messages across accounts, flagging operational alerts, and ignoring marketing newsletters. That saved ten to fifteen minutes of mindless scanning every morning. But drafting replies was a complete failure. The generated drafts opened with enthusiastic greetings, polite restatements, bulleted lists, and generic closing offers. It took three minutes to edit a draft back into a human voice, whereas typing a direct two-sentence reply on my phone took thirty seconds.</p>
+            <h3>Technical Agents: Silent Failures with Perfect Syntax</h3>
+            <p>Where the experiment flipped to real operational leverage was inside isolated engineering loops. Specialized agents monitoring continuous integration pipelines, diagnosing build warnings, verifying live endpoints, and auditing DOM accessibility saved hours of repetitive testing. That work is easy to verify deterministically.</p>
+            <p>The breakdown happened when agents made architectural assumptions. During one refactor, an autonomous agent tasked with updating an API route decided to optimize performance by rewriting database record synchronization. The code compiled with zero errors, but it broke data consistency across my background ledger because it bypassed a critical validation rule it did not know existed. The agent did not fail loudly; it failed silently with perfect syntax.</p>
+            <h3>The Four Operating Principles for Autonomous Agents</h3>
+            <ul>
+                <li><strong>1. Start With Read-Only Triggers:</strong> Give the agent permission to read, scan, and summarize before giving it permission to create, send, or change data.</li>
+                <li><strong>2. Narrow Definitions of Done:</strong> Bounded checks like color contrast or license expiration parsing succeed because success criteria are explicit.</li>
+                <li><strong>3. Human Approval on External Actions:</strong> For anything where a mistake carries real blast radius (sending emails, booking calendars, merging code), keep a mandatory human gate.</li>
+                <li><strong>4. Treat Output as Junior Drafts:</strong> Assume machine-generated output contains blind spots and scan for stripped context before letting it reach clients.</li>
+            </ul>
+            <p>AI agents do not eliminate your to-do list. They replace your task list with a supervisory review queue. Auditing someone else's plausible, slightly flawed work is often more mentally exhausting than doing the work manually.</p>
+        `
+    },
+    {
+        slug: "claude-code-vs-gemini-spark",
+        title: "Claude Code vs. Gemini Spark: How Do They Compare?",
+        description: "Claude won the terminal. Google is betting on the background. Compare Claude Code's active feedback loop with Gemini Spark's unattended persistence, and why persistence is not authority.",
+        date: "September 2026",
+        readTime: "8 min read",
+        source: "Built In",
+        category: "AI Governance",
+        externalUrl: "https://builtin.com/articles/claude-code-vs-google-gemini-spark",
+        editorsPick: true,
+        content: `
+            <p>An AI mistake is different when someone is there to catch it. When nobody is watching, the mistake gets time to spread.</p>
+            <p>Anthropic built Claude Code for a person who is actively present at the screen. You give it an assignment, and it works directly inside your project files, making updates, testing the results, and letting you course-correct the instant something looks wrong. If the software misreads a prompt or uses a bad assumption, you have an immediate chance to stop the run and discard changes before anything leaves your desk.</p>
+            <p>Google is taking an entirely different approach with Gemini Spark. Spark runs on remote cloud servers, built to keep working after you lock your phone, shut your laptop, and walk away. It connects directly into everyday office tools (Gmail, Google Docs, Sheets, Calendar) while linking out to third-party business applications through custom MCP connectors. Instead of waiting for you to type in an active window, you assign ongoing responsibilities and let it execute across hours or days.</p>
+            <h3>Persistence Is Not Authority</h3>
+            <p>Persistence and authority are entirely separate decisions. Treating them as the same thing is where operational trouble begins. Persistence tells you how long an agent can run; it does not tell you how much authority it should have while it runs.</p>
+            <p>Confirmation controls exist around purchases and external messages, but they miss routine operational blast radius. Modifying an internal customer database, closing an unresolved ticket, or overwriting a shared strategy spreadsheet in Google Drive does not trigger a payment warning. Yet an automated agent overwriting live financial formulas with static numbers creates hours of forensic recovery.</p>
+            <p>If an assistant stops to prompt you for confirmation every time it updates a spreadsheet row or edits a record, the freedom of running in the background disappears. The human is back inside the loop, and the supervision model has not really changed.</p>
+            <h3>State Drift: Stale Context and Accumulated Workarounds</h3>
+            <p>In an active session, working context is tied closely to the task in front of you. Persistent agents carry reusable instructions, skills, and memory across runs. That creates state drift: accumulated context becomes stale over time. If a temporary workaround used during an urgent crisis becomes part of the permanent context a recurring task uses, the assistant acts on outdated assumptions that no longer match reality.</p>
+            <p>Explainability is not recoverability. After an unattended run, an assistant that generates a clean summary explaining why it corrupted your financial spreadsheet still does not fix the spreadsheet. Without unified cross-application rollback mechanisms, operators spend hours reverse-engineering activity records as forensic auditors.</p>
+            <h3>The Real Measurement of Autonomous Work</h3>
+            <p>Tasks completed and hours saved are easy vanity metrics for persistent agents. They miss the cost of being wrong. An agent can perform routine tasks correctly almost every time and still create devastating damage when the rare mistake alters records across several systems. The real test of an autonomous agent is not how long it can work without you. It is how much authority you are willing to give it when you are not there.</p>
+        `
+    },
+    {
+        slug: "ai-agents-enterprise-governance-risks",
+        title: "AI Agents Are Creating New Enterprise Governance Risks",
+        description: "Gartner says 40% of enterprise apps will embed AI agents by 2026, and 40% will be decommissioned by 2027. Why the transaction that succeeds is your biggest risk, and the 4 pillars of agent governance.",
+        date: "September 2026",
+        readTime: "9 min read",
+        source: "CIO.com",
+        category: "AI Governance",
+        externalUrl: "https://www.cio.com/article/4223955/your-ai-agent-may-have-made-the-decision-but-your-company-owns-the-risk.html",
+        editorsPick: true,
+        content: `
+            <p>During a recent architecture review with a client, I asked their leadership to trace a single automated transaction backward through their production systems. Three days earlier, an embedded customer support agent had issued an unapproved account credit to a corporate client. Every system monitoring dashboard was glowing green. Internal network logs showed a clean, successful transaction. Cloud performance monitors showed standard processing times.</p>
+            <p>When we queried the core financial system, the control environment could not answer the question we were trying to resolve. There was no log explaining what customer context triggered the refund, what calculations took place, or which corporate business policy authorized the spend. The software had executed cleanly from a technical standpoint, but from a business governance standpoint, it was an unauthorized transaction.</p>
+            <h3>The Transaction That Succeeds</h3>
+            <p>The AI failures that make headlines are usually the obvious ones where systems crash or spew offensive text. Enterprise systems have an insidious class of failure: the transaction that succeeds.</p>
+            <p>Traditional IT monitoring is built to catch systems that break. A server stops responding, a database times out, or an application crashes, triggering an immediate alert. Policy failures do not trigger technical alarms. The purchase order processes, the supplier gets paid, the customer receives a confirmation email, and the transaction closes. From a technical standpoint, nothing failed. From an internal governance standpoint, it was a complete failure of controls.</p>
+            <p>In procurement, an automated purchasing agent routinely routes material orders to a preferred supplier that delivers quickly, quietly bypassing a corporate policy that requires gathering three competitive bids for purchases over $50,000. In sales, an agent offers custom payment terms that violate internal accounting rules for revenue recognition. In customer support, an agent resolves a ticket by pulling private client records across department lines without proper authorization.</p>
+            <h3>Gartner Telemetry: The 2026 to 2027 Reversal</h3>
+            <p>According to Gartner research, forty percent of enterprise applications will feature task-specific AI agents by the end of 2026, up from less than five percent in 2025. But that forecast measures vendor supply, not organizational readiness. Software can be deployed long before an enterprise decides what it is allowed to decide.</p>
+            <p>Gartner further predicts that by 2027, forty percent of enterprises will demote or decommission autonomous AI agents due to governance gaps discovered only after production incidents occur. The research specifically points to the failure to distinguish an agent's ability to act from the scope of access it is granted.</p>
+            <h3>Monitoring Is Not Authorization: The Four Governance Pillars</h3>
+            <p>In architecture reviews, four questions consistently get conflated:</p>
+            <ul>
+                <li><strong>1. Monitoring:</strong> Is the system working? (Technical uptime and latency)</li>
+                <li><strong>2. Auditability:</strong> Can we reconstruct what it did and why? (Forensic state logging)</li>
+                <li><strong>3. Authorization:</strong> Was it allowed to do it? (Business policy compliance)</li>
+                <li><strong>4. Accountability:</strong> Who owns the consequence? (Named human ownership)</li>
+            </ul>
+            <p>NIST's 2026 research identifies fragmented logging across distributed infrastructure as an unresolved challenge between monitoring and auditing. A vendor's SOC 2 or ISO certification proves their infrastructure is secure against outside intruders; it does not prove an action taken by an embedded agent complied with your internal company rules.</p>
+            <h3>The Six Executive Questions for Agent Procurement</h3>
+            <p>Before approving any embedded agent rollout, leadership must put six practical questions to architecture teams:</p>
+            <ol>
+                <li>Which vendor-supplied agents can currently modify live business records, alter contracts, or execute financial transactions?</li>
+                <li>What access does each agent receive from the user, and what additional access does it have on its own?</li>
+                <li>Which named business leader owns and audits the operational rules governing each agent?</li>
+                <li>How do controls distinguish low-risk informational tasks from high-consequence write operations and financial commitments?</li>
+                <li>What happens to governance boundaries when a vendor updates an agent's underlying decision logic in a routine software patch?</li>
+                <li>If an auditor asks six months from now why an automated decision was made, can we prove both the business context that triggered it and who authorized it?</li>
+            </ol>
+            <p>Software vendors will continue embedding autonomous agents into enterprise applications. Leadership cannot let the vendor's release cycle become the company's authority model.</p>
+        `
+    },
+    {
+        slug: "what-is-a-frontier-model",
+        title: "What Is a Frontier Model?",
+        description: "Frontier AI is not a static territory on a map: it is an expensive, moving empirical boundary. Explore everyday vs. frontier AI, open-weight vs. closed models, and the real cost of leading-edge intelligence.",
+        date: "September 2026",
+        readTime: "6 min read",
+        source: "Built In",
+        category: "AI Economics",
+        externalUrl: "https://builtin.com/articles/frontier-model",
+        editorsPick: true,
+        content: `
+            <p>The word "frontier" makes artificial intelligence sound like a territory on a map. It is not. The term describes an expensive, moving boundary. A model that once felt astonishing can quickly become everyday software running on a modest cloud instance or a developer's laptop. The frontier simply describes whatever systems currently sit at the leading edge of what AI can do.</p>
+            <p>That makes frontier AI different from a stable category like a database or an operating system. It is an empirical description of a threshold that refuses to sit still.</p>
+            <h3>Everyday AI vs. Frontier AI</h3>
+            <p>Most artificial intelligence running inside businesses today is built for predictable, narrow work: spam filters, recommendation engines ranking feeds, transcription turning speech into text, and small classifiers sorting support tickets. These systems automate structured tasks fast, stay inside clear boundaries, and rarely produce surprises.</p>
+            <p>Frontier models are built for ambiguity. What matters is what the system can actually do: reading two conflicting vendor contracts and spotting commercial liabilities that keyword searches miss, refactoring legacy repositories with undocumented dependencies, or serving as the decision engine for autonomous agents that resolve operational exceptions without hand-holding.</p>
+            <h3>The Economics: Closed Systems vs. Open-Weight Models</h3>
+            <p>Training a system at the boundary costs tens or hundreds of millions of dollars in compute, power, and specialized engineering. Stanford's AI Index estimated the compute used to train GPT-4 at roughly $78 million and Gemini Ultra at roughly $191 million.</p>
+            <p>Closed models keep their weights, data mixtures, and code private. You consume them via API, gaining leading reasoning without data center infrastructure or specialized staff. The tradeoff is custody and control: you depend entirely on vendor pricing and uptime, and an upstream patch can alter how your production pipeline behaves.</p>
+            <p>Open-weight models release trained mathematical weights, enabling private deployment for teams with strict data residency and regulatory obligations. But open-weight is not free software. Hosting an open-weight frontier model requires enterprise data center hardware with massive memory capacity and high-speed networking, while the underlying training datasets remain locked up by the lab that built them.</p>
+            <h3>Operational Authority and Cyber Boundaries</h3>
+            <p>When models move from answering questions to executing actions across live databases, governance becomes an immediate engineering constraint. The primary risk is operational authority: keeping the model within strict business limits. Giving software permission to read a customer record is completely different from giving it authority to issue credits, alter pricing, or modify database entries.</p>
+        `
+    },
+    {
         slug: "software-factory-running-24-7",
         title: "The Software Factory Is Running 24/7 (And Nobody Wants the Output)",
         description: "Google dropped Gemini 3.8 Flash, OpenAI launched GPT-6 Astra, and tools churn out code faster than anyone can verify. Discover why autonomous code generation creates an overproduction crisis, how review debt chokes engineering, and the four personas navigating the AI shift.",

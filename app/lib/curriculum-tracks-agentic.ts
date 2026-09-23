@@ -481,4 +481,207 @@ agenticGovernanceModules['ai-product-economics/2-16'] = {
     nextHref: '/vault/curriculum/tracks/ai-product-economics/2-17'
 };
 
+// ---------------------------------------------------------
+// TRACK 2-17: FRONTIER MODEL ECONOMICS & MOVING BOUNDARIES
+// ---------------------------------------------------------
+
+agenticGovernanceModules['ai-product-economics/2-17'] = {
+    moduleId: '2-17',
+    title: 'Frontier Model Economics: The Moving Boundary & Compute Thresholds',
+    description: 'Learn the economic criteria separating everyday automation from frontier AI, model training cost floors ($78M to $191M), and private open-weight vs. closed API tradeoffs.',
+    trackName: t2,
+    productId: singleProduct,
+    takeaways: [
+        'Distinguish everyday AI (predictable automation) from frontier AI (unprogrammed ambiguity).',
+        'Model the training cost floors of frontier models ($78M for GPT-4, $191M for Gemini Ultra per Stanford AI Index).',
+        'Evaluate the true total cost of ownership for private open-weight deployments versus closed vendor APIs.'
+    ],
+    lessons: [
+        l(
+            'Lesson 1: Everyday AI vs. Frontier AI',
+            'Most enterprise AI running today automates structured, narrow tasks: spam filtering, speech transcription, recommendation ranking, and support ticket triage. These systems run fast, stay inside clear boundaries, and rarely produce surprises. Frontier models represent an expensive, moving empirical threshold designed for ambiguity. You do not reach for a frontier model simply because a project involves AI; you deploy one when problems present messy, unprogrammed complexity: reading conflicting commercial contracts, refactoring undocumented legacy code repositories, or resolving multi-step operational exceptions.',
+            [
+                d('Everyday AI Scope', 'Narrow, structured tasks with predictable boundaries and low inference costs.', 'Benchmark: Sub-millisecond latency at fractions of a cent per 1,000 queries.'),
+                d('Frontier AI Scope', 'High ambiguity, unprogrammed problem solving, multi-contract risk analysis, and multi-step execution.', 'Target: Deploy only when simpler models fail.'),
+                d('Moving Capability Boundary', 'Capabilities that define the frontier today rapidly distill into commodity software running on developer laptops tomorrow.', 'Strategy: Avoid hardcoding vendor dependencies to transient benchmark wins.')
+            ],
+            'Audit your organization\'s AI portfolio. Identify three workflows currently routed to expensive frontier reasoning models that can be safely downgraded to narrow everyday classifiers.'
+        ),
+        l(
+            'Lesson 2: The Training Capital Floor & Inference Compounding',
+            'Training a system at the capability boundary requires tens to hundreds of millions in specialized compute and power. Stanford\'s AI Index estimated the compute to train GPT-4 at roughly $78 million and Gemini Ultra at roughly $191 million. In production, the economic danger shifts from training capex to inference compounding: multi-step reasoning agents that query databases, invoke tools, and critique their own drafts multiply inference token costs exponentially. Without token circuit breakers, a single complex enterprise agent workflow can consume $15 in API inference before returning an answer.',
+            [
+                d('Training Capital Floor', 'Extreme capital requirements ($78M to $191M+) restrict frontier foundation model training to hyper-scaled labs.', 'Takeaway: Build on rented utility intelligence while owning corporate context.'),
+                d('Inference Compounding', 'Multi-step agent loops multiply token consumption non-linearly across tool calls and retries.', 'Target: Max 5 reasoning turns per autonomous task.'),
+                d('Cost per Useful Output', 'Evaluating total inference spend divided by validated production-ready artifacts.', 'Benchmark: Maintain >70% gross margins on agent-delivered services.')
+            ],
+            'Calculate the multi-turn inference compounding cost of an agent workflow that makes 4 reasoning passes, 3 database lookups, and 2 tool executions per user request.'
+        ),
+        l(
+            'Lesson 3: Closed APIs vs. Open-Weight Infrastructure TCO',
+            'Closed models provide immediate access to leading-edge reasoning without server maintenance or specialized infrastructure staff, but introduce vendor lock-in, price volatility, and unannounced model updates that alter production behavior. Open-weight models release trained weights, making private data center deployment viable for teams with strict regulatory boundaries. However, open-weight is not free: hosting an open-weight 70B+ model requires enterprise data center hardware with massive memory capacity and high-speed networking, while proprietary training datasets remain locked with the creator lab.',
+            [
+                d('Closed Model Tradeoff', 'Zero infrastructure management versus complete dependence on vendor pricing, uptime, and patch cycles.', 'Rule: Isolate API calls behind vendor-neutral abstraction gateways.'),
+                d('Open-Weight TCO', 'Public mathematical weights require dedicated data-center GPUs, cooling, and infrastructure engineers.', 'Break-Even: Only host private clusters when API volume exceeds $50K/month consistently.'),
+                d('Operational Authority Limits', 'Open-weight hosting does not eliminate cyber risk: models require deterministic execution firewalls before touching live data.', 'Target: 100% binary allowlist enforcement on database writes.')
+            ],
+            'Construct a 12-month Total Cost of Ownership (TCO) comparison between calling an enterprise frontier API versus provisioning a private 8xH100 cloud cluster for a 10M-token/day workload.'
+        )
+    ],
+    nextHref: '/vault/curriculum/tracks/agentic-governance/58-5'
+};
+
+// ---------------------------------------------------------
+// TRACK 58-5: PERSISTENCE VS. AUTHORITY
+// ---------------------------------------------------------
+
+agenticGovernanceModules['agentic-governance/58-5'] = {
+    moduleId: '58-5',
+    title: 'Persistence vs. Authority: Terminal Supervision vs. Background Cloud Agents',
+    description: 'Master the architectural distinction between runtime persistence and state authority, prevent state drift in recurring agents, and decouple explainability from recoverability.',
+    trackName: t58,
+    productId: singleProduct,
+    takeaways: [
+        'Decouple agent execution duration (persistence) from state-altering permission scope (authority).',
+        'Compare terminal-supervised feedback loops (Claude Code) with unattended cloud persistence (Gemini Spark).',
+        'Prevent state drift and accumulated context poisoning in recurring background agent workflows.'
+    ],
+    lessons: [
+        l(
+            'Lesson 1: The Terminal vs. The Background: Supervision Models',
+            'Anthropic\'s Claude Code won the terminal because it operates interactively with active human supervision: you give it an assignment, watch it work inside project files, and course-correct instantly before changes leave your desk. Google\'s Gemini Spark takes an entirely different approach: running on remote cloud servers across office tools (Docs, Sheets, Gmail, Calendar) after you close your laptop. Background persistence looks like a pure productivity upgrade, but failure shifts from localized and visible to silent and distributed. A bad assumption in an unattended agent spreads across customer records, financial sheets, and team notifications before anyone notices.',
+            [
+                d('Terminal Supervision', 'Active human presence contains errors in real time with immediate discard mechanisms.', 'Best For: Exploratory problem solving, architecture design, and complex refactors.'),
+                d('Background Persistence', 'Unattended execution across hours or days connects directly into business tools.', 'Best For: Structured, repetitive coordination with predictable inputs and outcomes.'),
+                d('Supervision Parity', 'Google\'s documentation admits scheduled tasks run offline yet notes active supervision remains the primary risk defense.', 'Rule: Never confuse long runtime with trustworthy authority.')
+            ],
+            'Audit your engineering and operations workflows. Categorize tasks into interactive terminal supervision versus candidate background jobs based on blast radius.'
+        ),
+        l(
+            'Lesson 2: Persistence Is Not Authority & Confirmation Prompt Limits',
+            'Persistence tells you how long an agent can run; authority tells you what it is permitted to change while it runs. Treating them as the same decision is where catastrophic failures occur. While platforms provide confirmation prompts for external payments or outbound messages, they ignore routine operational blast radius: an agent overwriting live formulas in a shared financial model with static numbers or altering CRM customer statuses does not trigger financial alerts, but creates hours of forensic cleanup. If an agent must prompt you for every row update, the benefit of background execution evaporates and the human is trapped back in the loop.',
+            [
+                d('Authority Decoupling', 'Granting runtime duration must be strictly separated from granting write permissions.', 'Target: Zero unattended write permissions to core financial or customer ledgers.'),
+                d('Confirmation Prompt Blindspots', 'Superficial dialogs miss internal database mutations, ticket closures, and document overwrites.', 'Benchmark: Enforce policy checks on internal mutations, not just external transactions.'),
+                d('The Supervision Dilemma', 'Prompting on every action destroys automation velocity; prompting on nothing destroys system integrity.', 'Solution: Start with read-only triggers and narrow definitions of done.')
+            ],
+            'Draft an Admissibility Allowlist for a background reporting agent. Explicitly define which database tables are read-only and which specific fields (if any) can be updated independently.'
+        ),
+        l(
+            'Lesson 3: State Drift & Explainability vs. Recoverability',
+            'Persistent agents carry reusable instructions, skills, and memory across runs. Over time, accumulated context becomes stale: a temporary workaround used during an urgent project crisis becomes part of the permanent context a recurring task uses, causing the agent to act on outdated assumptions that no longer match reality. Furthermore, explainability is not recoverability. An assistant that produces a clear log explaining why it corrupted your financial spreadsheet still does not repair the spreadsheet. Because enterprise SaaS lacks unified cross-application rollback, operators are forced into forensic auditing.',
+            [
+                d('State Drift', 'Accumulation of temporary workarounds, stale memory, and outdated schema context across runs.', 'Target: Enforce stateless session resets and periodic memory purging for recurring tasks.'),
+                d('Explainability Fallacy', 'Detailed execution summaries only document failure; they do not reverse unauthorized changes.', 'Benchmark: Mandate automated rollback mechanisms for every write-capable agent.'),
+                d('Forensic Auditor Drag', 'Spending hours hunting through distributed logs to reconstruct what an agent changed while unattended.', 'Metric: If audit time exceeds manual execution time, revoke autonomous write authority.')
+            ],
+            'Design a rollback protocol for an agent modifying customer records across both a PostgreSQL database and a HubSpot CRM instance. How do you guarantee atomic revert on failure?'
+        )
+    ],
+    nextHref: '/vault/curriculum/tracks/agentic-governance/58-6'
+};
+
+// ---------------------------------------------------------
+// TRACK 58-6: THE TRANSACTION THAT SUCCEEDS
+// ---------------------------------------------------------
+
+agenticGovernanceModules['agentic-governance/58-6'] = {
+    moduleId: '58-6',
+    title: 'The Transaction That Succeeds: Enterprise Risk & The 4 Pillars of Agent Governance',
+    description: 'Deploy the CIO.com governance framework to detect silent policy failures, separate system monitoring from business authorization, and audit the 6 Executive Questions.',
+    trackName: t58,
+    productId: singleProduct,
+    takeaways: [
+        'Identify and prevent "the transaction that succeeds" where operations monitors show green but business rules are violated.',
+        'Implement the 4 Pillars of Agent Governance: Monitoring, Auditability, Authorization, and Accountability.',
+        'Operationalize the 6 Executive Questions before procuring or deploying enterprise applications with embedded AI agents.'
+    ],
+    lessons: [
+        l(
+            'Lesson 1: The Transaction That Succeeds (Silent Policy Failure)',
+            'The AI failures that make headlines are obvious crashes or hallucinations. Enterprise systems face an insidious class of failure: the transaction that succeeds. Traditional IT monitoring alarms when servers crash, databases time out, or requests fail. Policy failures do not trigger technical alarms: the support agent grants an unapproved account credit, the procurement agent bypasses a $50,000 competitive bidding mandate to reorder from a fast supplier, or the sales agent alters contract discount terms. Every operations dashboard glows green with 240ms latency, yet corporate business rules were completely breached.',
+            [
+                d('Technical vs. Policy Failure', 'Technical monitoring measures server mechanics; policy governance measures rule compliance.', 'Danger: 100% technical uptime can conceal 100% unauthorized business transactions.'),
+                d('Gartner Telemetry', '40% of enterprise apps will embed agents by 2026; 40% will be decommissioned by 2027 due to post-incident governance gaps.', 'Root Cause: Failing to distinguish an agent\'s technical capability to act from its authorized scope of decision-making.'),
+                d('NIST 2026 Telemetry', 'Distributed infrastructure creates fragmented logging, leaving the boundary between monitoring and auditing unresolved.', 'Mandate: Centralize semantic authorization logs independently of vendor applications.')
+            ],
+            'Identify two automated workflows in your company where a transaction could complete cleanly from an IT standpoint while violating financial or compliance rules.'
+        ),
+        l(
+            'Lesson 2: The 4 Pillars of Agent Governance',
+            'In enterprise architecture reviews, four critical questions consistently get conflated. To govern autonomous agents at scale, leadership must enforce the 4 Pillars independently: 1) Monitoring: Is the system working? (technical uptime and latency); 2) Auditability: Can we reconstruct what it did and why? (immutable context and tool-call logging); 3) Authorization: Was it allowed to do it? (compliance with corporate financial and legal policy); 4) Accountability: Who owns the consequence? (named human executive ownership). A vendor\'s cloud security certification proves their perimeter is secure; it does not prove an agent\'s decision complied with your internal policy.',
+            [
+                d('Pillar 1: Monitoring', 'Validates system mechanics and latency (e.g., Datadog, CloudWatch). Cannot verify business authorization.', 'Standard: Technical performance verification.'),
+                d('Pillar 2: Auditability', 'Reconstructs prompts, retrieved data, and execution steps for forensic review.', 'Standard: Immutable, append-only cryptographic logging.'),
+                d('Pillar 3: Authorization', 'Evaluates proposed actions against business spending and compliance policies before record mutation.', 'Standard: Pre-execution policy enforcement gate.'),
+                d('Pillar 4: Accountability', 'Assigns named business leader ownership for every agent decision scope.', 'Standard: Zero orphan agents; explicit sign-off on decision boundaries.')
+            ],
+            'Map the 4 Pillars across an agent authorized to draft and approve supplier purchase orders. Who owns each pillar, and where does the independent authorization check live?'
+        ),
+        l(
+            'Lesson 3: The 6 Executive Procurement Questions & The Ownership Vacuum',
+            'Governance frequently falls into an ownership vacuum: the business application team assumes cybersecurity manages agent permissions; cybersecurity assumes the business process owner defined operational rules; finance assumes the software vendor engineered guardrails. To eliminate this vacuum, every leader must mandate the 6 Executive Questions before approving any vendor-supplied agent rollout: 1) Which agents can modify live records, alter contracts, or execute money? 2) What access does it have beyond the user? 3) Which named leader owns the rules? 4) How are write operations bounded? 5) What happens when vendor logic updates in a routine patch? 6) Can decisions be proven to auditors six months later?',
+            [
+                d('The Governance Vacuum', 'Cross-department assumptions leave agents running for months with decisions nobody explicitly approved.', 'Remedy: Formalize Systems Governor sign-off on all embedded agents.'),
+                d('Vendor Update Risk', 'A vendor software patch can alter underlying prompt logic and decision boundaries without notice.', 'Defense: Decouple enterprise business rules from vendor application code.'),
+                d('Audit Proof Standard', 'Proving to regulators both the context that triggered an action and the authority that permitted it.', 'Target: Independent evidence capture detailing context and authorization before state mutation.')
+            ],
+            'Apply the 6 Executive Questions to an embedded AI feature in your CRM (Salesforce, HubSpot) or ERP (SAP, Workday) and present the scorecard to your leadership team.'
+        )
+    ],
+    nextHref: '/vault/curriculum/tracks/agentic-governance/58-7'
+};
+
+// ---------------------------------------------------------
+// TRACK 58-7: THE SUPERVISORY REVIEW QUEUE
+// ---------------------------------------------------------
+
+agenticGovernanceModules['agentic-governance/58-7'] = {
+    moduleId: '58-7',
+    title: 'The Supervisory Review Queue: Mitigating the Air Traffic Control Tax',
+    description: 'Learn why agent delegation shifts human work to supervisory review drag, detect silent syntax failures in code, and enforce the 4 operational laws for bounded agent leverage.',
+    trackName: t58,
+    productId: singleProduct,
+    takeaways: [
+        'Quantify the "air traffic control tax" of auditing plausible machine-generated drafts and code.',
+        'Catch silent syntax failures where agents optimize local code while breaking global architectural invariants.',
+        'Implement the 4 Operational Laws for autonomous agent delegation.'
+    ],
+    lessons: [
+        l(
+            'Lesson 1: The Air Traffic Control Tax & Interpersonal Friction',
+            'The promise of complete delegation fails because AI agents do not eliminate to-do lists; they replace them with a supervisory review queue. Testing agents across administrative chores shows where friction appears: calendar agents fail when digital grids collide with physical reality (booking meetings 40 miles apart without travel time, or converting casual "coffee sometime" comments into urgent Tuesday invites). Email drafting agents produce polite, generic corporate filler that takes 3 minutes to rewrite into human voice versus 30 seconds to type manually. Operators spend less time executing and far more time in exhausting air traffic control supervision.',
+            [
+                d('The Air Traffic Control Tax', 'Cognitive exhaustion from auditing confident assumptions and checking edge cases.', 'Observation: Reviewing flawed output is more taxing than doing the work manually.'),
+                d('Grid vs. Physical Reality', 'Calendar models see empty schedule slots but ignore commute times and real-world logistics.', 'Rule: Require manual verification on all external appointment scheduling.'),
+                d('Synthetic Tone Penalty', 'Machine-drafted emails strip conversational shorthand and damage authentic business relationships.', 'Policy: Ban automated reply-sending on client-facing channels; keep passive alerting only.')
+            ],
+            'Track your time spent reviewing AI-generated drafts over one week. Compare total review and rewrite time against the baseline of writing the messages from scratch.'
+        ),
+        l(
+            'Lesson 2: Silent Syntax Failures in Software Engineering',
+            'Where agents provide real operational leverage is inside isolated engineering loops: monitoring CI pipelines, checking deployment health, verifying endpoint responses, and auditing DOM accessibility. That work has clear mechanical pass/fail criteria. The catastrophic failure mode occurs during architectural refactoring: an agent updates an API route to optimize performance, writes clean code that compiles with zero linter errors, but breaks database consistency by bypassing an unstated validation rule. The agent fails silently with perfect syntax. Catching these subtle bugs requires hours of senior debugging.',
+            [
+                d('Mechanical Leverage', 'Background agents excel at bounded checks with explicit binary verification criteria.', 'Target: Automate CI triage, accessibility contrast checks, and package lockfile auditing.'),
+                d('Silent Syntax Failures', 'Syntactically valid code that compiles cleanly but violates unstated business or architectural logic.', 'Danger: Compiling code does not equal correct domain architecture.'),
+                d('Refactoring Boundaries', 'Autonomous agents must never be granted unsupervised refactoring authority over multi-table database interactions.', 'Rule: Mandate human architectural review on all state-mutating code changes.')
+            ],
+            'Implement an automated Red/Green test probe in your CI pipeline that tests whether an agent-suggested API optimization violates existing transactional consistency constraints.'
+        ),
+        l(
+            'Lesson 3: The 4 Operational Laws for Autonomous Agent Delegation',
+            'To capture real operational ROI and escape the supervisory review queue trap, engineering and operations leaders must enforce 4 non-negotiable operational laws: 1) Start With Read-Only Triggers: give agents permission to read, scan, and summarize before granting create, send, or update access; 2) Narrow Definitions of Done: scope workflows to explicit, easily verified targets (e.g., contrast ratios or contract expiration dates); 3) Human Approval on External Actions: enforce human gates on emails, calendar bookings, and code merges; 4) Treat Output as Junior Drafts: assume machine output contains blind spots and scan for stripped context before release.',
+            [
+                d('Law 1: Read-Only Triggers', 'Scan and alert first; never delegate write authority until verification is proven.', 'Target: 100% read-only baseline for newly deployed agents.'),
+                d('Law 2: Narrow Definition of Done', 'Explicit mechanical criteria eliminate subjective guessing and review ambiguity.', 'Benchmark: If "Done" cannot be validated by a script, bound the scope tightly.'),
+                d('Law 3: Human Gates on External Actions', 'Require human confirmation before any agent action touches customers, calendars, or production code.', 'Standard: Mandatory two-man rule on state mutation.'),
+                d('Law 4: Junior Draft Posture', 'Review all text and code with the assumption of hidden context omission and polite bias.', 'Mindset: The human remains the Systems Governor.')
+            ],
+            'Draft an organizational SOP codifying the 4 Operational Laws for all employee-deployed agents, and establish an automated audit mechanism for newly created API tokens.'
+        )
+    ],
+    nextHref: '/vault/curriculum/tracks'
+};
+
 export const allAgenticModulesData = agenticGovernanceModules;
+

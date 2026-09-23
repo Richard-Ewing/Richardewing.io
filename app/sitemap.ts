@@ -189,8 +189,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     CAREER_PATHS.forEach(path => add(`${baseUrl}/careers/${path.slug}`, 'monthly', 0.85));
 
     // === CANONICAL ARTICLES ===
+    const frameworkSlugSet = new Set(frameworks.map(f => f.slug));
     articles
-        .filter(article => !article.externalUrl)
+        .filter(article => !article.externalUrl && !frameworkSlugSet.has(article.slug))
         .forEach(article => add(`${baseUrl}/articles/${article.slug}`, 'monthly', 0.8));
 
     // === COMPARE PAGES (Tier A Indexed Only) ===

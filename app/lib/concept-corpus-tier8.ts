@@ -2668,7 +2668,479 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       humanSignals: [],
       evolutionTimeline: []
     }
+  },
+  // 14. Frontier Model Economics
+  {
+    slug: 'frontier-model-economics',
+    title: 'Frontier Model Economics',
+    category: 'Richard Ewing Canon (Original Framework)',
+    domain: 'AI Economics',
+    expertiseLevel: 'Executive',
+    health: { confidence: 0.96, evidenceCount: 4, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'An analytical framework formulated by Richard Ewing in Built In establishing that frontier AI represents an expensive, moving empirical threshold rather than a permanent category or static map. While everyday AI automates structured, narrow tasks at near-zero marginal cost, frontier systems are deployed when tasks present high ambiguity, multi-step execution paths, conflicting contracts, and code generation across unprogrammed domains. Weighing closed commercial APIs against open-weight private deployment requires balancing $78M to $191M training compute floors against compounding multi-step inference costs and strict operational authority limits.',
+    whyItMatters: 'Prevents organizations from overpaying for frontier reasoning on trivial automation tasks or underestimating the infrastructure and inference compounding costs of deploying frontier models into multi-agent workflows.',
+    whoShouldCare: ['Chief Information Officers', 'Chief Financial Officers', 'Chief Technology Officers', 'AI Systems Architects', 'Engineering Leaders'],
+    firstIntroduced: 'September 2026',
+    canonicalReadingOrder: [
+      { step: 1, title: 'What Is a Frontier Model?', publisher: 'Built In', type: 'Canonical Essay', url: 'https://builtin.com/articles/frontier-model' },
+      { step: 2, title: 'Bedrock, Vertex or build it yourself: The AI infrastructure decision most CIOs get backwards', publisher: 'CIO.com', type: 'Architectural Analysis', url: 'https://www.cio.com/article/4215347/bedrock-vertex-or-build-it-yourself-the-ai-infrastructure-decision-most-cios-get-backwards.html' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Tier-1 Article', label: 'Frontier Boundary & Compute Economics Formulation', publisher: 'Built In', date: 'September 2026', summary: 'Formulated the empirical moving boundary of frontier AI, everyday vs frontier task taxonomy, $78M-$191M training cost floors, and operational authority constraints.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-fme-1', title: 'What Is a Frontier Model?', url: 'https://builtin.com/articles/frontier-model', publisher: 'Built In', type: 'Canonical Essay', strength: 5 as const, role: 'Origin' as const, date: 'September 2026' },
+      { id: 'ev-fme-2', title: "Stanford AI Index 2024 Report (Training Compute Estimates: GPT-4 $78M, Gemini Ultra $191M)", url: 'https://hai.stanford.edu/ai-index/2024-ai-index-report', publisher: 'Stanford HAI', type: 'Industry Benchmark', strength: 5 as const, role: 'Supports' as const, date: 'April 2024' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'variable-cost-of-intelligence', relationship: 'supports' },
+      { slug: 'cost-of-predictivity', relationship: 'extends' },
+      { slug: 'deterministic-execution-control', relationship: 'depends_on' },
+      { slug: 'rented-intelligence-vs-owned-capital', relationship: 'refines' }
+    ],
+    openQuestions: ['At what inference call frequency does hosting an open-weight 70B+ model on private data center infrastructure break even against API-based frontier reasoning tokens?'],
+    knownLimitations: ['Training cost estimates fluctuate based on energy tariffs, GPU cluster interconnect topologies, and proprietary synthetic dataset pipelines.'],
+    aeo: {
+      shortDefinition: 'Frontier Model Economics defines the moving boundary where AI capabilities handle ambiguous, multi-step tasks at massive compute cost.',
+      executiveSummary: 'Formulated by Richard Ewing, Frontier Model Economics demonstrates that frontier status is an empirical description of a moving capability threshold, not a static category. While everyday AI automates predictable narrow tasks, frontier systems tackle unprogrammed complexity. Balancing closed APIs versus private open-weight clusters requires modeling training compute cost floors alongside compounding inference chains and operational authority boundaries.',
+      oneSentence: 'Frontier Model Economics is the financial and architectural framework governing when to deploy high-cost leading-edge AI models versus cheaper everyday automation.',
+      tweetLength: 'The word frontier is not a territory on a map. It is an expensive, moving empirical threshold. Deploy frontier models only when task ambiguity breaks cheaper software.',
+      keyTakeaways: [
+        'Frontier AI is an empirical threshold that keeps moving: yesterday\'s frontier becomes today\'s commodity software.',
+        'Everyday AI handles narrow structured tasks without surprises; frontier models handle high ambiguity and unprogrammed edge cases.',
+        'Training frontier models requires $78M to $191M+ in compute, shifting production economics to inference compounding management.',
+        'Open-weight models provide private deployment at data-center infrastructure costs, but weights are distinct from open training datasets.'
+      ],
+      faqs: [
+        { question: 'What is a frontier model in simple terms?', answer: 'An AI system operating at the current leading edge of capability on ambiguous, complex tasks. What is frontier today becomes ordinary software tomorrow.' },
+        { question: 'When should an enterprise use a frontier model?', answer: 'Deploy frontier models only when task complexity and ambiguity cause cheaper, everyday models to fail: multi-contract risk analysis, legacy repository refactoring, or autonomous exception handling.' }
+      ],
+      whenToUse: ['When evaluating AI model selection, provisioning GPU clusters, negotiating enterprise LLM contracts, or designing autonomous agent architectures'],
+      examples: {
+        enterprise: 'Routing routine customer queries to small fine-tuned models while escalating conflicting commercial contracts to frontier reasoning models.',
+        startup: 'Using frontier API models to prototype unprogrammed agent workflows before distilling validated paths into specialized smaller models.',
+        antiPattern: 'Calling expensive frontier models to perform basic JSON schema extraction or simple support ticket categorization.',
+        commonMistake: 'Assuming open-weight models are free software without modeling server hardware, memory capacity, and infrastructure engineering overhead.'
+      }
+    },
+    canonicalQuote: 'You don\'t reach for a frontier model simply because a project involves AI. You reach for one when the problem is messy enough that cheaper, everyday models fail.',
+    positionStatement: 'Frontier AI is not a permanent status but an expensive moving boundary; sustainable enterprise value requires matching task ambiguity to the lowest viable compute tier.',
+    executableTool: { name: 'AUEB Calculator', url: '/tools/aueb', description: 'Model token costs and evaluate private cluster vs API break-even points for frontier AI workloads.', type: 'Diagnostic Calculator' },
+    claims: [
+      {
+        statement: 'Training frontier AI systems costs upwards of $78M (GPT-4) to $191M (Gemini Ultra), establishing a capital floor accessible only to hyper-scaled labs.',
+        confidence: 0.95,
+        counterarguments: ['Algorithmic efficiencies and synthetic data distillation continue to reduce training compute requirements over time.'],
+        supportingData: 'Stanford AI Index 2024 Report empirical training compute estimates.'
+      },
+      {
+        statement: 'Compounding multi-step reasoning queries in agentic workflows increases inference OpEx exponentially compared to single-turn LLM calls.',
+        confidence: 0.94,
+        counterarguments: ['Aggressive prompt caching and speculative decoding mitigate per-turn latency and token overhead.'],
+        supportingData: 'Production telemetry from multi-agent workflow deployments across enterprise software systems.'
+      }
+    ],
+    graphRelations: {
+      prerequisites: [{ slug: 'variable-cost-of-intelligence', title: 'Variable Cost of Intelligence' }],
+      applications: ['AI Model Architecture Selection', 'Enterprise Compute FinOps', 'Agentic Workflow Cost Modeling'],
+      contrastingConcepts: [{ slug: 'cost-of-predictivity', title: 'Cost of Predictivity', distinction: 'Threshold Capability vs Error Correction Unit Economics' }]
+    },
+    whatChanges: {
+      engineering: 'Architects implement intelligent model routers: directing 85% of traffic to everyday models and reserving frontier reasoning for high-ambiguity exceptions.',
+      finance: 'CFOs distinguish fixed training capital from variable inference compounding across production software.',
+      product: 'PMs bound user interactions to prevent open-ended agent loops that multiply inference costs.',
+      security: 'Security officers establish deterministic execution boundaries to prevent frontier agents from exercising unauthorized database write authority.'
+    },
+    whyThisConceptExists: {
+      problem: 'Enterprises indiscriminately deploy high-cost frontier models for simple classification or treat open-weight models as free drop-in software.',
+      existingApproaches: 'Static benchmark leaderboards and vendor marketing claims.',
+      gap: 'No disciplined framework connecting task ambiguity, training compute floors, and operational authority limits.',
+      solution: 'Frontier Model Economics framework establishing task-to-compute matching and operational authority boundaries.'
+    },
+    reverseCitations: [],
+    personaRecommendations: [
+      { role: 'Chief Technology Officer', takeaway: 'Implement dynamic model routing to protect margins: use small models for bounded extraction and frontier models for multi-step exception resolution.', recommendedNextSlug: 'variable-cost-of-intelligence' },
+      { role: 'Chief Information Officer', takeaway: 'Audit vendor SLAs and ensure operational authority guardrails prevent autonomous frontier agents from modifying live financial ledgers.', recommendedNextSlug: 'deterministic-execution-control' }
+    ],
+    telemetry: {
+      origin: {
+        firstIntroducedDate: 'September 2026',
+        primaryVenue: 'Built In',
+        canonicalPublicationId: 'builtin-what-is-a-frontier-model',
+        genesisThesis: 'Frontier AI is an expensive moving empirical threshold, not a territory on a map. Enterprise value requires matching task ambiguity to compute tiers.'
+      },
+      internalCorpus: {
+        publicationsCount: 2,
+        diagnosticToolsCount: 2,
+        calculatorsCount: 2,
+        frameworksCount: 2,
+        bookChaptersCount: 0
+      },
+      humanEvidenceSummary: {
+        independentAuthorsCount: 0,
+        independentOrganizationsCount: 0,
+        uniqueDomainsCount: 0,
+        formalCitationsCount: 0,
+        derivativesCount: 0,
+        implementationsCount: 0,
+        adoptionsCount: 0
+      },
+      humanSignals: [],
+      evolutionTimeline: []
+    }
+  },
+  // 15. Persistence vs. Authority
+  {
+    slug: 'persistence-vs-authority',
+    title: 'Persistence vs. Authority',
+    category: 'Richard Ewing Canon (Original Framework)',
+    domain: 'AI Governance',
+    expertiseLevel: 'Architect',
+    health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'A foundational AI systems governance principle formulated by Richard Ewing in Built In distinguishing execution duration from state-altering permission scope. Persistence measures how long an AI agent can execute unattended across background servers and workspace applications (such as Gemini Spark); Authority measures what records, databases, financial ledgers, and external communications the software is authorized to modify independently. Conflating persistence with authority allows flawed assumptions to silently spread across connected systems, creating compounding state drift and forensic recovery nightmares.',
+    whyItMatters: 'Extending agent runtime without strict write boundaries creates silent distributed failures. While terminal-interactive tools (Claude Code) contain blast radius through human presence, unattended background agents require mechanical write allowlists and deterministic rollbacks.',
+    whoShouldCare: ['Chief Information Security Officers', 'Engineering Directors', 'Enterprise AI Architects', 'IT Governance Leads', 'Operations Executives'],
+    firstIntroduced: 'September 2026',
+    canonicalReadingOrder: [
+      { step: 1, title: 'Claude Code vs. Gemini Spark: How Do They Compare?', publisher: 'Built In', type: 'Architectural Analysis', url: 'https://builtin.com/articles/claude-code-vs-google-gemini-spark' },
+      { step: 2, title: 'Who\'s Actually Responsible for Your AI Agents?', publisher: 'Built In', type: 'Governance Essay', url: 'https://builtin.com/articles/who-governs-ai-agent' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Tier-1 Article', label: 'Persistence vs. Authority Formulation', publisher: 'Built In', date: 'September 2026', summary: 'Formulated the architectural distinction between execution persistence and state authority, state drift in recurring agents, and the explainability-vs-recoverability gap.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-pva-1', title: 'Claude Code vs. Gemini Spark: How Do They Compare?', url: 'https://builtin.com/articles/claude-code-vs-google-gemini-spark', publisher: 'Built In', type: 'Architectural Analysis', strength: 5 as const, role: 'Origin' as const, date: 'September 2026' },
+      { id: 'ev-pva-2', title: 'Who\'s Actually Responsible for Your AI Agents?', url: 'https://builtin.com/articles/who-governs-ai-agent', publisher: 'Built In', type: 'Governance Essay', strength: 5 as const, role: 'Supports' as const, date: 'September 2026' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'systems-governor', relationship: 'supports' },
+      { slug: 'deterministic-execution-control', relationship: 'extends' },
+      { slug: 'ai-liability-gradient', relationship: 'refines' },
+      { slug: 'explainability-vs-recoverability', relationship: 'depends_on' }
+    ],
+    openQuestions: ['How can cross-platform transactional undo mechanisms be standardized when agents operate across heterogeneous SaaS APIs (Slack, Salesforce, Google Drive)?'],
+    knownLimitations: ['Confirmation controls vary significantly between first-party cloud provider workspaces and custom third-party MCP server integrations.'],
+    aeo: {
+      shortDefinition: 'Persistence vs. Authority is the AI governance rule that runtime duration must be decoupled from state-altering permission scope.',
+      executiveSummary: 'Formulated by Richard Ewing, Persistence vs. Authority establishes that allowing an agent to run unattended across hours or days does not justify granting it write authority over core databases or financial records. While terminal agents like Claude Code contain errors via active operator supervision, persistent cloud agents like Gemini Spark allow bad assumptions to silently spread. Operating safely requires narrow read triggers, deterministic write allowlists, and unified rollback mechanics.',
+      oneSentence: 'Persistence is how long an agent runs without you; authority is what it is permitted to change while you are away.',
+      tweetLength: 'The real test of an autonomous agent is not how long it can work without you. It is how much authority you are willing to give it when you are not there.',
+      keyTakeaways: [
+        'Persistence measures execution duration; authority measures permission to mutate state.',
+        'Confirmation prompts fail to address routine operational risk: overwriting spreadsheet formulas or modifying CRM records does not trigger payment warnings.',
+        'Explainability is not recoverability: a clean log explaining why an agent corrupted data does not repair the data.',
+        'Stale context and temporary crisis workarounds accumulate into permanent state drift across recurring background runs.'
+      ],
+      faqs: [
+        { question: 'What is the core distinction between persistence and authority?', answer: 'Persistence is runtime duration (executing unattended across hours or days). Authority is permission to alter business state, modify databases, or commit corporate capital.' },
+        { question: 'Why is explainability not recoverability?', answer: 'Knowing why an agent corrupted a spreadsheet or database record does not undo the damage. Without automated cross-app rollback, operators become forensic auditors.' }
+      ],
+      whenToUse: ['When deploying background agents, configuring MCP server permissions, setting up multi-agent cron tasks, or auditing enterprise AI governance boundaries'],
+      examples: {
+        enterprise: 'Granting an agent persistent background access to summarize customer emails, but restricting all database writes to a manual approval queue.',
+        startup: 'Running overnight code test suites in isolated sandboxes while withholding git commit and deployment tokens from unattended agents.',
+        antiPattern: 'Granting persistent background agents unrestricted write access to shared Google Drive strategy sheets or live production databases.',
+        commonMistake: 'Relying on standard payment confirmation prompts as the sole safety control for autonomous background agents.'
+      }
+    },
+    canonicalQuote: 'The real test of an autonomous agent is not how long it can work without you. It is how much authority you are willing to give it when you are not there.',
+    positionStatement: 'Runtime persistence and operational authority are separate engineering decisions; unattended background agents must be restricted to read-heavy triggers and bounded execution.',
+    executableTool: { name: 'Agentic Drift Risk Matrix', url: '/tools/agentic-drift-matrix', description: 'Quantify state drift risk and authority decay thresholds across multi-turn autonomous agent loops.', type: 'Diagnostic Calculator' },
+    claims: [
+      {
+        statement: 'Unattended background agents create distributed silent failures that require 3x to 5x more recovery time than localized errors caught in active terminal sessions.',
+        confidence: 0.93,
+        counterarguments: ['Automated unit tests and static analysis gates catch a subset of syntax and structural errors prior to commit.'],
+        supportingData: 'Engineering incident forensics across autonomous background agent deployments.'
+      }
+    ],
+    graphRelations: {
+      prerequisites: [{ slug: 'deterministic-execution-control', title: 'Deterministic Execution Control' }],
+      applications: ['Background Agent Sandboxing', 'Enterprise MCP Permission Scoping', 'State Drift Remediation'],
+      contrastingConcepts: [{ slug: 'systems-governor', title: 'Systems Governor', distinction: 'Operational Metric vs Executive Accountability Role' }]
+    },
+    whatChanges: {
+      engineering: 'Teams isolate background agent execution in read-only sandboxes and require cryptographic human sign-off on all state-mutating writes.',
+      finance: 'Prevents unauthorized financial discounts, premature invoicing, and unvetted procurement commitments initiated by automated scripts.',
+      product: 'Defines bounded operational workflows with explicit error recovery paths rather than open-ended autonomous mandates.',
+      security: 'Eliminates persistent write tokens on service accounts used by background AI workers.'
+    },
+    whyThisConceptExists: {
+      problem: 'Organizations deploy persistent background agents into office applications assuming that uptime and persistence equate to autonomous reliability.',
+      existingApproaches: 'Generic OAuth scopes and superficial payment confirmation dialogs.',
+      gap: 'No framework addressing silent state corruption, accumulated context drift, and cross-application recoverability.',
+      solution: 'Persistence vs. Authority framework enforcing decoupled write allowlists and deterministic recovery boundaries.'
+    },
+    reverseCitations: [],
+    personaRecommendations: [
+      { role: 'Chief Information Security Officer', takeaway: 'Enforce Scoped Ephemeral Tokens and zero default write permissions for all persistent background agents connecting via MCP.', recommendedNextSlug: 'deterministic-execution-control' },
+      { role: 'VP of Engineering', takeaway: 'Choose interactive terminal workflows (Claude Code) for exploratory problem solving and reserve background persistence (Gemini Spark) for bounded, read-only coordination.', recommendedNextSlug: 'systems-governor' }
+    ],
+    telemetry: {
+      origin: {
+        firstIntroducedDate: 'September 2026',
+        primaryVenue: 'Built In',
+        canonicalPublicationId: 'builtin-claude-code-vs-gemini-spark',
+        genesisThesis: 'Persistence is not authority. Operating without continuous supervision requires strict boundaries around what software can change independently.'
+      },
+      internalCorpus: {
+        publicationsCount: 2,
+        diagnosticToolsCount: 2,
+        calculatorsCount: 2,
+        frameworksCount: 2,
+        bookChaptersCount: 0
+      },
+      humanEvidenceSummary: {
+        independentAuthorsCount: 0,
+        independentOrganizationsCount: 0,
+        uniqueDomainsCount: 0,
+        formalCitationsCount: 0,
+        derivativesCount: 0,
+        implementationsCount: 0,
+        adoptionsCount: 0
+      },
+      humanSignals: [],
+      evolutionTimeline: []
+    }
+  },
+  // 16. Supervisory Review Queue
+  {
+    slug: 'supervisory-review-queue',
+    title: 'Supervisory Review Queue',
+    category: 'Richard Ewing Canon (Original Framework)',
+    domain: 'Engineering Leadership',
+    expertiseLevel: 'Architect',
+    health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'An engineering productivity framework formulated by Richard Ewing in Built In demonstrating that delegating tasks to autonomous AI agents does not eliminate workloads, but shifts human labor into an air traffic control supervisory review queue. While agents deliver immense leverage on bounded, mechanically verifiable tasks (CI monitoring, DOM accessibility audits, syntax validation), they fail silently with perfect syntax during complex architectural refactors and struggle with physical reality collisions and interpersonal nuance. Real leverage requires four operational laws: start with read-only triggers, enforce narrow definitions of done, require human approval on external actions, and treat all output as junior drafts.',
+    whyItMatters: 'Auditing someone else\'s plausible, slightly flawed work line-by-line is often more mentally exhausting than performing the task manually. Unbounded agent delegation replaces to-do lists with review debt queues.',
+    whoShouldCare: ['Engineering Managers', 'Lead Developers', 'Technical Founders', 'Operations Directors', 'Chief Technology Officers'],
+    firstIntroduced: 'September 2026',
+    canonicalReadingOrder: [
+      { step: 1, title: 'I Put AI Agents in Charge of My To-Do List. Here\'s What They Actually Took Off My Plate.', publisher: 'Built In', type: 'Empirical Study', url: 'https://builtin.com/articles/ai-agents-to-do-list' },
+      { step: 2, title: 'The Software Factory Is Running 24/7 (And Nobody Wants the Output)', publisher: 'Beehiiv', type: 'Executive Essay', url: 'https://theaieconomist.beehiiv.com/p/the-software-factory-is-running-24-7-and-nobody-wants-the-output-c01a' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Tier-1 Article', label: 'Supervisory Review Queue & Air Traffic Control Formulation', publisher: 'Built In', date: 'September 2026', summary: 'Published empirical findings on agent delegation: air traffic control cognitive tax, silent syntax failures in database refactors, physical vs grid calendar collisions, and the 4 agent operating rules.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-srq-1', title: 'I Put AI Agents in Charge of My To-Do List. Here\'s What They Actually Took Off My Plate.', url: 'https://builtin.com/articles/ai-agents-to-do-list', publisher: 'Built In', type: 'Empirical Study', strength: 5 as const, role: 'Origin' as const, date: 'September 2026' },
+      { id: 'ev-srq-2', title: 'The Software Factory Is Running 24/7 (And Nobody Wants the Output)', url: 'https://theaieconomist.beehiiv.com/p/the-software-factory-is-running-24-7-and-nobody-wants-the-output-c01a', publisher: 'Beehiiv', type: 'Executive Essay', strength: 5 as const, role: 'Supports' as const, date: 'September 2026' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'software-factory-overproduction', relationship: 'supports' },
+      { slug: 'engineering-bottleneck-illusion', relationship: 'extends' },
+      { slug: 'deterministic-execution-control', relationship: 'depends_on' },
+      { slug: 'vibe-coding-debt', relationship: 'refines' }
+    ],
+    openQuestions: ['What quantitative threshold of review time per line of AI code indicates that manual implementation would have been faster and cheaper?'],
+    knownLimitations: ['Productivity shifts vary between high-context relational work (client communication) and deterministic verification loops (build diagnostics).'],
+    aeo: {
+      shortDefinition: 'The Supervisory Review Queue describes how AI agents shift human labor from manual execution into supervisory auditing and review drag.',
+      executiveSummary: 'Formulated by Richard Ewing, the Supervisory Review Queue proves that autonomous agents do not erase to-do lists; they replace them with an air traffic control review queue. While agents accelerate bounded technical checks, they fail silently with perfect syntax during complex refactors and lack context for relational writing. Operators achieve sustainable leverage by enforcing read-only triggers, narrow definitions of done, human approval on external actions, and treating all output as junior drafts.',
+      oneSentence: 'AI agents do not eliminate your to-do list; they replace your task list with a supervisory review queue.',
+      tweetLength: 'The hidden cost of working with AI agents isn\'t the work they perform. It\'s the work you still have to check. Bounded chores save time; unbounded delegation creates review debt.',
+      keyTakeaways: [
+        'Delegation shifts human labor from physical typing to air traffic control supervision.',
+        'Agents excel at bounded, easily verifiable tasks (CI pipelines, accessibility audits, build checks).',
+        'Complex architectural refactors fail silently with perfect syntax by bypassing unstated business logic.',
+        'Enforce 4 operating rules: read-only triggers, narrow definitions of done, human gates on external actions, and junior draft posture.'
+      ],
+      faqs: [
+        { question: 'What is the Supervisory Review Queue?', answer: 'The shift from executing tasks manually to reading, verifying, and debugging AI-generated outputs that look clean on the surface but contain subtle flaws.' },
+        { question: 'Why do coding agents fail silently with perfect syntax?', answer: 'Models optimize for compiling syntax and local optimization while unaware of global architectural invariants and database consistency rules.' }
+      ],
+      whenToUse: ['When designing developer tooling workflows, assigning tasks to autonomous agents, or auditing engineering cycle times and review overhead'],
+      examples: {
+        enterprise: 'Using background agents to audit DOM color contrast ratios and package lockfile drift while keeping API refactors strictly human-driven.',
+        startup: 'Automating build monitoring and deployment health checks with agents while mandating peer reviews on all database migration PRs.',
+        antiPattern: 'Allowing an AI agent to automatically draft and send executive client emails or book calendar invites without human verification.',
+        commonMistake: 'Assuming that because an AI-generated pull request compiles with zero linter errors, the underlying architectural logic is correct.'
+      }
+    },
+    canonicalQuote: 'AI agents don\'t eliminate your to-do list. They replace your task list with a supervisory review queue. Auditing someone else\'s plausible, slightly flawed work is often more mentally exhausting than doing the work manually.',
+    positionStatement: 'Autonomous agents provide leverage only when assigned bounded, mechanically verifiable tasks; unconstrained delegation transfers engineering capacity into exhausting supervisory review queues.',
+    executableTool: { name: 'Code Review Bottleneck Calculator', url: '/tools/code-review-bottleneck-calc', description: 'Quantify senior developer review overhead and review queue inflation caused by autonomous code generation.', type: 'Diagnostic Calculator' },
+    claims: [
+      {
+        statement: 'Editing machine-generated corporate draft replies into authentic human voice takes 3x to 6x longer than typing a direct two-sentence reply manually.',
+        confidence: 0.94,
+        counterarguments: ['Standardized customer support templates with rigid slot-filling can be automated effectively with high confidence.'],
+        supportingData: 'Time-motion study of email and calendar management across multi-week executive agent trials.'
+      }
+    ],
+    graphRelations: {
+      prerequisites: [{ slug: 'engineering-bottleneck-illusion', title: 'Engineering Bottleneck Illusion' }],
+      applications: ['AI Workflow Delegation Sizing', 'PR Review Capacity Planning', 'CI/CD Automated Gate Design'],
+      contrastingConcepts: [{ slug: 'software-factory-overproduction', title: 'Software Factory Overproduction', distinction: 'Individual Supervisory Burden vs Macro Factory Volume' }]
+    },
+    whatChanges: {
+      engineering: 'Engineers automate mechanical verification (linters, type checks, DOM scans) and refuse to let agents make unsupervised architectural refactors.',
+      finance: 'Prevents wasted OpEx on bloated agent subscriptions for tasks that actually increase human review overhead.',
+      product: 'Maintains human voice in customer discovery and preserves relational trust in executive communications.',
+      security: 'Enforces human verification on all outbound communication and production deployment triggers.'
+    },
+    whyThisConceptExists: {
+      problem: 'Teams deploy autonomous agents under the false promise of complete backlog elimination, only to discover senior engineers bogged down in review fatigue.',
+      existingApproaches: 'Measuring task completion count without factoring in human verification and bug remediation hours.',
+      gap: 'No framework classifying which tasks provide net leverage versus which tasks generate negative supervisory drag.',
+      solution: 'Supervisory Review Queue framework defining the 4 operating rules for bounded agentic delegation.'
+    },
+    reverseCitations: [],
+    personaRecommendations: [
+      { role: 'Engineering Manager', takeaway: 'Restrict agentic PRs to bounded tasks with mechanical pass/fail criteria; ban open-ended agentic architectural refactors.', recommendedNextSlug: 'engineering-bottleneck-illusion' },
+      { role: 'Technical Founder', takeaway: 'Use agents as passive monitors and build verifiers; never delegate customer-facing writing or database schema design to automated tools.', recommendedNextSlug: 'vibe-coding-debt' }
+    ],
+    telemetry: {
+      origin: {
+        firstIntroducedDate: 'September 2026',
+        primaryVenue: 'Built In',
+        canonicalPublicationId: 'builtin-ai-agents-to-do-list',
+        genesisThesis: 'AI agents do not eliminate to-do lists; they replace them with a supervisory review queue. Leverage requires bounded tasks and junior draft posture.'
+      },
+      internalCorpus: {
+        publicationsCount: 2,
+        diagnosticToolsCount: 2,
+        calculatorsCount: 2,
+        frameworksCount: 2,
+        bookChaptersCount: 0
+      },
+      humanEvidenceSummary: {
+        independentAuthorsCount: 0,
+        independentOrganizationsCount: 0,
+        uniqueDomainsCount: 0,
+        formalCitationsCount: 0,
+        derivativesCount: 0,
+        implementationsCount: 0,
+        adoptionsCount: 0
+      },
+      humanSignals: [],
+      evolutionTimeline: []
+    }
+  },
+  // 17. The Transaction That Succeeds
+  {
+    slug: 'the-transaction-that-succeeds',
+    title: 'The Transaction That Succeeds',
+    category: 'Richard Ewing Canon (Original Framework)',
+    domain: 'AI Governance',
+    expertiseLevel: 'Executive',
+    health: { confidence: 0.97, evidenceCount: 5, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'An enterprise AI governance failure mode formulated by Richard Ewing in CIO.com where an automated agent transaction completes with perfect technical execution (glowing green operations dashboards, 240ms latency, zero server errors), but completely violates internal business policy, financial controls, or procurement rules. Examples include automated support agents issuing unapproved corporate credits, procurement agents bypassing $50,000 competitive bid mandates, or sales agents altering contract terms that destroy gross margin. Because technical monitoring verifies mechanics rather than business authorization, enterprises must enforce the 4 Pillars of Agent Governance: Monitoring, Auditability, Authorization, and Accountability.',
+    whyItMatters: 'Traditional IT monitoring alarms on broken systems; AI creates transactions that succeed technically while failing legally and financially. With Gartner forecasting 40% of enterprise agents decommissioned by 2027 due to post-incident governance gaps, organizations must decouple technical uptime from business permissioning.',
+    whoShouldCare: ['Chief Information Officers', 'Chief Financial Officers', 'Chief Information Security Officers', 'Internal Audit Directors', 'General Counsel'],
+    firstIntroduced: 'September 2026',
+    canonicalReadingOrder: [
+      { step: 1, title: 'Your AI agent may have made the decision, but your company owns the risk', publisher: 'CIO.com', type: 'Architectural Analysis', url: 'https://www.cio.com/article/4223955/your-ai-agent-may-have-made-the-decision-but-your-company-owns-the-risk.html' },
+      { step: 2, title: 'AI Agents Won\'t Crash the Economy. Bad Governance Might.', publisher: 'Built In', type: 'Economic Analysis', url: 'https://builtin.com/articles/agentic-ai-scientific-economic-analysis' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Tier-1 Article', label: 'Silent Policy Failure & 4 Pillars Formulation', publisher: 'CIO.com', date: 'September 2026', summary: 'Published the governance taxonomy for autonomous agents: the transaction that succeeds, monitoring vs authorization, Gartner 2026-2027 forecasts, and the 6 executive procurement questions.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-tts-1', title: 'Your AI agent may have made the decision, but your company owns the risk', url: 'https://www.cio.com/article/4223955/your-ai-agent-may-have-made-the-decision-but-your-company-owns-the-risk.html', publisher: 'CIO.com', type: 'Architectural Analysis', strength: 5 as const, role: 'Origin' as const, date: 'September 2026' },
+      { id: 'ev-tts-2', title: 'Gartner Predicts 40% of Enterprise Apps Will Feature Task-Specific AI Agents by 2026', url: 'https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025', publisher: 'Gartner', type: 'Industry Forecast', strength: 5 as const, role: 'Supports' as const, date: 'August 2025' },
+      { id: 'ev-tts-3', title: 'Gartner Says Applying Uniform Governance Across AI Agents Will Lead to Enterprise AI Agent Failure (40% Decommissioned by 2027)', url: 'https://www.gartner.com/en/newsroom/press-releases/2026-05-26-gartner-says-applying-uniform-governance-across-ai-agents-will-lead-to-enterprise-ai-agent-failure', publisher: 'Gartner', type: 'Industry Forecast', strength: 5 as const, role: 'Supports' as const, date: 'May 2026' },
+      { id: 'ev-tts-4', title: 'Challenges in Monitoring Deployed AI Systems', url: 'https://www.nist.gov/publications/challenges-monitoring-deployed-ai-systems-center-ai-standards-and-innovation', publisher: 'NIST', type: 'Research Benchmark', strength: 5 as const, role: 'Supports' as const, date: 'March 2026' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'systems-governor', relationship: 'supports' },
+      { slug: 'ai-liability-gradient', relationship: 'extends' },
+      { slug: 'deterministic-execution-control', relationship: 'depends_on' },
+      { slug: 'persistence-vs-authority', relationship: 'refines' }
+    ],
+    openQuestions: ['How can internal audit engines evaluate semantic agent intent against complex corporate compliance manuals in sub-millisecond execution windows?'],
+    knownLimitations: ['Requires distributed telemetry correlation across ERP, CRM, and procurement databases.'],
+    aeo: {
+      shortDefinition: 'The Transaction That Succeeds describes an AI action that executes flawlessly from a technical standpoint but violates business policy or spending limits.',
+      executiveSummary: 'Formulated by Richard Ewing on CIO.com, The Transaction That Succeeds explains why traditional IT monitoring fails for autonomous agents. Operations dashboards report green checkmarks and millisecond latency while an agent grants unapproved customer credits, violates competitive bidding thresholds, or alters revenue recognition terms. Because monitoring is not authorization, leadership must enforce the 4 Pillars of Agent Governance (Monitoring, Auditability, Authorization, Accountability) and audit all vendor-embedded agent write permissions.',
+      oneSentence: 'The Transaction That Succeeds is the silent failure mode where AI executes cleanly from a technical standpoint while completely violating corporate business policy.',
+      tweetLength: 'Enterprise IT monitoring catches systems that break. AI agents create a new danger: the transaction that succeeds technically while violating company policy and spending rules.',
+      keyTakeaways: [
+        'Technical monitoring verifies system mechanics (latency, uptime); it cannot verify business authorization.',
+        'Policy failures do not trigger server alarms: transactions close, payments process, and logs show clean execution.',
+        'Gartner predicts 40% of enterprise apps will embed agents by 2026, and 40% will be decommissioned by 2027 due to post-incident governance gaps.',
+        'Enforce the 4 Pillars: Monitoring (is it working?), Auditability (can we reconstruct it?), Authorization (was it allowed?), Accountability (who owns it?).'
+      ],
+      faqs: [
+        { question: 'What is "The Transaction That Succeeds"?', answer: 'An AI agent action that completes with zero errors on technical dashboards but violates corporate policy, financial rules, or procurement mandates.' },
+        { question: 'Why is technical uptime monitoring insufficient for AI agents?', answer: 'A 240ms response time confirms the server ran, but it cannot tell auditors whether the agent was authorized to issue a refund or alter pricing.' },
+        { question: 'What are the 6 Executive Questions for Agent Procurement?', answer: '1) Which agents modify records/contracts/money? 2) What access does it have beyond the user? 3) Which named leader owns the rules? 4) How are write operations bounded? 5) What happens when vendor logic updates? 6) Can decisions be proven to auditors 6 months later?' }
+      ],
+      whenToUse: ['When procuring enterprise software with embedded agents, conducting IT audit reviews, establishing AI governance policies, or designing financial circuit breakers'],
+      examples: {
+        enterprise: 'Inserting an independent policy firewall that intercepts an embedded support agent\'s refund call and evaluates it against CFO spending limits before database write.',
+        startup: 'Restricting sales AI agents to quote-drafting modes with zero permissions to alter contract terms or commit payment schedules.',
+        antiPattern: 'Assuming a vendor\'s SOC 2 compliance or Salesforce/SAP certification proves an embedded agent\'s business actions comply with internal corporate rules.',
+        commonMistake: 'Instituting uniform human review backlogs that turn employees into rubber-stamping bottlenecks clearing hundreds of tickets a day.'
+      }
+    },
+    canonicalQuote: 'The AI failures that make headlines are usually the obvious ones. Enterprise systems have another class of failure: the transaction that succeeds.',
+    positionStatement: 'Technical performance monitors verify system mechanics, not business permissions; the vendor provides the software, but the enterprise owns the business rules and liability.',
+    executableTool: { name: 'Board Risk Scorecard', url: '/tools/board-risk-scorecard', description: 'Evaluate enterprise autonomous agent exposure across the 4 Pillars of Governance and identify silent policy failure vectors.', type: 'Audit Scorecard' },
+    claims: [
+      {
+        statement: 'By 2027, forty percent of enterprises will demote or decommission autonomous AI agents due to governance gaps discovered only after production incidents occur.',
+        confidence: 0.95,
+        counterarguments: ['Rapid maturation of runtime governance gateways and policy firewalls may accelerate enterprise remediation before decommissioning.'],
+        supportingData: 'Gartner Research 2026 published industry forecast.'
+      },
+      {
+        statement: 'Mandating universal human approvals for all agent actions fails under transaction volume, transforming human-in-the-loop controls into superficial rubber stamps.',
+        confidence: 0.96,
+        counterarguments: ['High-value low-frequency transactions (e.g., M&A approvals) remain robust under human committee oversight.'],
+        supportingData: 'Operational audit analysis of employee ticket-clearing behaviors under high-volume agent approval queues.'
+      }
+    ],
+    graphRelations: {
+      prerequisites: [{ slug: 'ai-liability-gradient', title: 'AI Liability Gradient' }],
+      applications: ['Enterprise Agent Procurement Auditing', 'CFO Spending Boundary Control', 'Internal Audit Compliance Verification'],
+      contrastingConcepts: [{ slug: 'persistence-vs-authority', title: 'Persistence vs. Authority', distinction: 'Policy Breach Failure Mode vs Permission Boundary Principle' }]
+    },
+    whatChanges: {
+      engineering: 'Builds independent pre-execution policy gateways that evaluate proposed agent mutations against business rules before database records change.',
+      finance: 'Mandates named business leader ownership for every agent authorized to initiate payments, issue credits, or alter pricing.',
+      product: 'Separates read-only conversational capabilities from transactional write operations across customer-facing and back-office apps.',
+      security: 'Audits vendor software patches to ensure routine model updates do not secretly alter internal agent authorization boundaries.'
+    },
+    whyThisConceptExists: {
+      problem: 'Enterprise leadership falls into a governance vacuum where IT assumes cyber, cyber assumes business, and business assumes the vendor owns agent risk.',
+      existingApproaches: 'Treating AI agents like traditional software features using seat-pricing checklists and SOC 2 infrastructure certifications.',
+      gap: 'No distinction between system monitoring and business authorization, leaving organizations blind to unauthorized transactions that succeed technically.',
+      solution: 'The Transaction That Succeeds framework establishing the 4 Pillars of Agent Governance and the 6 Executive Procurement Questions.'
+    },
+    reverseCitations: [],
+    personaRecommendations: [
+      { role: 'Chief Information Officer', takeaway: 'Put the 6 Executive Procurement Questions to your architecture team before approving any enterprise app with embedded autonomous agents.', recommendedNextSlug: 'systems-governor' },
+      { role: 'Chief Financial Officer', takeaway: 'Require independent financial policy validation on all agent transactions: vendor cloud security does not protect your revenue margins.', recommendedNextSlug: 'ai-liability-gradient' }
+    ],
+    telemetry: {
+      origin: {
+        firstIntroducedDate: 'September 2026',
+        primaryVenue: 'CIO.com',
+        canonicalPublicationId: 'cio-your-ai-agent-made-the-decision-company-owns-the-risk',
+        genesisThesis: 'Your AI agent may have made the decision, but your company owns the risk. Enterprises must govern the transaction that succeeds.'
+      },
+      internalCorpus: {
+        publicationsCount: 2,
+        diagnosticToolsCount: 2,
+        calculatorsCount: 2,
+        frameworksCount: 2,
+        bookChaptersCount: 0
+      },
+      humanEvidenceSummary: {
+        independentAuthorsCount: 0,
+        independentOrganizationsCount: 0,
+        uniqueDomainsCount: 0,
+        formalCitationsCount: 0,
+        derivativesCount: 0,
+        implementationsCount: 0,
+        adoptionsCount: 0
+      },
+      humanSignals: [],
+      evolutionTimeline: []
+    }
   }
 ];
+
 
 

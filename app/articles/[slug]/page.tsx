@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { permanentRedirect } from 'next/navigation';
-import { articles } from '../../lib/data';
+import { articles, frameworks } from '../../lib/data';
 import { articleSchemaTemplate } from '../../lib/schemas';
 import ArticleUpsell from '../../components/ArticleUpsell';
 import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated';
@@ -17,6 +17,17 @@ interface Props {
 // Generate Metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const resolvedParams = await params;
+
+    // Consolidate framework canonical equity: if it's a framework slug, canonicalize to framework route
+    if (frameworks.some((f) => f.slug === resolvedParams.slug)) {
+        return {
+            title: 'Redirecting to Framework...',
+            alternates: {
+                canonical: `https://www.richardewing.io/articles/frameworks/${resolvedParams.slug}`
+            }
+        };
+    }
+
     const article = articles.find((a) => a.slug === resolvedParams.slug);
 
     if (!article) {
@@ -61,6 +72,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ArticlePage({ params }: Props) {
     const resolvedParams = await params;
+
+    // If this URL is a framework, 308 Permanent Redirect to the canonical framework specification
+    if (frameworks.some((f) => f.slug === resolvedParams.slug)) {
+        return permanentRedirect(`/articles/frameworks/${resolvedParams.slug}`);
+    }
+
     const article = articles.find((a) => a.slug === resolvedParams.slug);
 
     if (!article) {

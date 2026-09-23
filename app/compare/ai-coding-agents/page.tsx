@@ -218,11 +218,62 @@ export default function AgentComparisonPage() {
                     </div>
                 </div>
 
+                {/* Architectural Breakdown: Claude Code vs. Google Gemini Spark */}
+                <div className="mb-12 bg-white rounded-2xl border border-zinc-200 p-8 shadow-sm">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full border border-cyan-200 bg-cyan-50 text-cyan-800 font-mono text-xs font-bold uppercase tracking-widest">
+                        Research Insight • Built In Published Analysis
+                    </div>
+                    <h2 className="text-2xl font-grotesk font-bold text-[#1A1A1A] mb-4">
+                        Claude Code vs. Google Gemini Spark: The Terminal vs. Cloud Paradigm Divergence
+                    </h2>
+                    <p className="text-[#4A4A4A] leading-relaxed mb-6">
+                        In our published comparative analysis on Built In, we dissected the fundamental architectural divergence between Anthropic's Claude Code and Google's Gemini Spark. Claude Code is an interactive terminal agent: it prompts for confirmation on bash executions and diff mutations, giving engineers real-time supervisory oversight. Gemini Spark represents unattended, cloud-native persistence: running continuously in background developer environments to clear backlogs asynchronously.
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="p-5 rounded-xl bg-zinc-50 border border-zinc-200">
+                            <h3 className="font-grotesk font-bold text-zinc-950 mb-2">Claude Code: Terminal Interactive Oversight</h3>
+                            <ul className="space-y-2 text-xs text-zinc-700">
+                                <li>• <strong>Execution Model:</strong> Local CLI session bound to developer terminal.</li>
+                                <li>• <strong>Supervision Vector:</strong> Real-time human approval before commands execute.</li>
+                                <li>• <strong>Drift Risk:</strong> Lower unintended repository drift due to continuous engineer presence.</li>
+                                <li>• <strong>Cognitive Bottleneck:</strong> The human engineer remains the operational constraint. Context rot accelerates over prolonged sessions.</li>
+                            </ul>
+                        </div>
+                        <div className="p-5 rounded-xl bg-zinc-50 border border-zinc-200">
+                            <h3 className="font-grotesk font-bold text-zinc-950 mb-2">Gemini Spark: Cloud Background Persistence</h3>
+                            <ul className="space-y-2 text-xs text-zinc-700">
+                                <li>• <strong>Execution Model:</strong> Cloud-native background worker operating asynchronously.</li>
+                                <li>• <strong>Supervision Vector:</strong> Post-hoc PR review queues and batch artifact inspection.</li>
+                                <li>• <strong>Drift Risk:</strong> Higher cumulative drift if state contracts and authority boundaries are unmonitored.</li>
+                                <li>• <strong>Governance Requirement:</strong> Mandatory supervisory review queues and deterministic rollback logging before merge.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="mt-6 flex flex-wrap gap-4 items-center justify-between pt-4 border-t border-zinc-100">
+                        <span className="text-xs text-zinc-500 font-mono">Published by Richard Ewing on Built In (September 2026)</span>
+                        <div className="flex gap-3">
+                            <Link href="/concepts/persistence-vs-authority" className="text-xs font-bold text-violet-700 hover:text-violet-900">
+                                Concept: Persistence vs Authority →
+                            </Link>
+                            <Link href="/concepts/supervisory-review-queue" className="text-xs font-bold text-violet-700 hover:text-violet-900">
+                                Concept: Supervisory Review Queue →
+                            </Link>
+                            <a href="https://builtin.com/articles/claude-code-vs-google-gemini-spark" target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-cyan-800 hover:text-cyan-900">
+                                Read Built In Article ↗
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Hub Links */}
                 <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-6 mb-12 shadow-sm">
                     <h2 className="text-sm font-mono font-bold text-zinc-500 uppercase tracking-widest mb-4">Deep-Dive Analyses</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                         {[
+                            { title: 'Claude Code vs Google Gemini Spark', href: 'https://builtin.com/articles/claude-code-vs-google-gemini-spark' },
+                            { title: 'The AI Agent To-Do List', href: 'https://builtin.com/articles/ai-agents-to-do-list' },
+                            { title: 'Company Owns the Agent Risk (CIO.com)', href: 'https://www.cio.com/article/4223955/your-ai-agent-may-have-made-the-decision-but-your-company-owns-the-risk.html' },
+                            { title: 'Frontier Model Economics', href: 'https://builtin.com/articles/frontier-model' },
                             { title: 'GitHub Copilot Problems 2026', href: '/compare/github-copilot-problems' },
                             { title: 'Cursor Problems 2026', href: '/compare/cursor-problems' },
                             { title: 'Windsurf Problems 2026', href: '/compare/windsurf-problems' },
