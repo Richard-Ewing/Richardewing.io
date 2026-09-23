@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
+import { CANONICAL_CONCEPTS, type EvidenceLedgerItem } from '@/app/lib/concept-corpus';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import SoftwarePhaseTransitionVisual from '@/app/components/visualizations/SoftwarePhaseTransitionVisual';
 import ConceptProvenanceSection from '@/app/components/concepts/ConceptProvenanceSection';
@@ -62,9 +62,29 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
     };
   });
 
-  const domainArticles = RESEARCH_CORPUS.filter(
-    (art) => art.domain === concept.domain || art.relatedConceptIds?.includes(concept.slug)
-  ).slice(0, 3);
+  const exactConceptArticles = RESEARCH_CORPUS.filter(
+    (art) => art.relatedConceptIds?.includes(concept.slug)
+  );
+  const domainFallbackArticles = RESEARCH_CORPUS.filter(
+    (art) => !exactConceptArticles.includes(art) && art.domain === concept.domain
+  );
+  const domainArticles = [...exactConceptArticles, ...domainFallbackArticles].slice(0, 4);
+
+  // Merge static evidence items with matching publications from RESEARCH_CORPUS
+  const corpusEvidence: EvidenceLedgerItem[] = exactConceptArticles
+    .filter((art) => !concept.evidenceLedger.some((e) => e.url === art.url || e.title === art.title))
+    .map((art) => ({
+      id: `ev-${art.id}`,
+      title: art.title,
+      url: art.url,
+      publisher: art.publisher,
+      type: art.type || 'Empirical Study',
+      strength: 5 as const,
+      role: 'Supports' as const,
+      date: art.date || '2026',
+    }));
+
+  const allEvidence: EvidenceLedgerItem[] = [...concept.evidenceLedger, ...corpusEvidence];
 
   // Schema.org DefinedTerm JSON-LD with persistent entity URI
   const definedTermJsonLd = {
@@ -491,19 +511,27 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
         {/* Latest Research Activity Feed */}
         {domainArticles.length > 0 && (
           <section className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
-            <div className="space-y-1">
-              <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
-                Freshness &amp; Research Updates
-              </span>
-              <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
-                Latest Publications &amp; Research Activity
-              </h2>
+            <div className="flex items-center justify-between flex-wrap gap-2">
+              <div className="space-y-1">
+                <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider block">
+                  Freshness &amp; Research Updates
+                </span>
+                <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
+                  Latest Publications &amp; Research Activity
+                </h2>
+              </div>
+              <Link
+                href="/research/publications"
+                className="text-xs font-mono font-bold text-cyan-900 hover:text-cyan-700 flex items-center gap-1 uppercase tracking-wider"
+              >
+                Explore Full Corpus ({RESEARCH_CORPUS.length} Works) &rarr;
+              </Link>
             </div>
 
             <div className="space-y-3 pt-2">
               {domainArticles.map((art) => (
                 <div key={art.id} className="bg-zinc-50 border border-zinc-200 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="space-y-1">
+                  <div className="space-y-1 max-w-2xl">
                     <div className="flex items-center gap-2 text-[10px] font-mono font-bold">
                       <span className="text-cyan-900 uppercase">{art.publisher}</span>
                       {art.date && <span className="text-zinc-500">• {art.date}</span>}
@@ -511,6 +539,11 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
                     <h3 className="text-sm font-bold text-zinc-950">
                       {art.title}
                     </h3>
+                    {art.thesis && (
+                      <p className="text-xs text-zinc-600 line-clamp-2 font-sans font-medium">
+                        {art.thesis}
+                      </p>
+                    )}
                   </div>
                   <a
                     href={art.url}
@@ -579,7 +612,7 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
                 </tr>
               </thead>
               <tbody className="divide-y divide-zinc-200 font-mono">
-                {concept.evidenceLedger.map((item) => (
+                {allEvidence.map((item) => (
                   <tr key={item.id} className="hover:bg-zinc-50 transition">
                     <td className="p-4 font-bold text-zinc-950 font-sans">{item.title}</td>
                     <td className="p-4 text-zinc-600 font-bold">{item.publisher}</td>

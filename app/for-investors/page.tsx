@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 export const metadata: Metadata = {
     title: 'PE & VC AI Capital Due Diligence',
@@ -76,6 +77,60 @@ export default function ForInvestorsPage() {
                                     </div>
                                     <span className="text-zinc-950 font-bold group-hover:text-cyan-900 font-extrabold font-semibold transition-colors">→</span>
                                 </Link>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* PE & VC Due Diligence Research & Publications */}
+                    <div className="mb-16">
+                        <div className="flex items-center justify-between mb-6 flex-wrap gap-2">
+                            <div>
+                                <span className="text-xs font-mono font-bold text-emerald-600 uppercase tracking-widest block mb-1">
+                                    Primary Source Field Telemetry &bull; Investor Due Diligence
+                                </span>
+                                <h2 className="text-2xl font-grotesk font-bold text-zinc-950">
+                                    Capital Allocation &amp; Due Diligence Research
+                                </h2>
+                            </div>
+                            <Link 
+                                href="/research/publications"
+                                className="text-xs font-mono font-bold text-emerald-700 hover:text-emerald-900 flex items-center gap-1 uppercase tracking-wider"
+                            >
+                                Explore Full Corpus ({RESEARCH_CORPUS.length} Works) &rarr;
+                            </Link>
+                        </div>
+                        <div className="grid sm:grid-cols-2 gap-4">
+                            {RESEARCH_CORPUS.filter(art => 
+                                art.domain === 'Software Economics' || 
+                                art.domain === 'AI Economics' || 
+                                art.title.includes('CFO') || 
+                                art.title.includes('Capitalization') || 
+                                art.title.includes('Gross Margin') ||
+                                art.title.includes('P&L')
+                            ).slice(0, 4).map((pub) => (
+                                <a
+                                    key={pub.id}
+                                    href={pub.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-5 rounded-2xl border border-emerald-500/20 bg-emerald-500/5 hover:border-emerald-500/40 hover:bg-emerald-500/10 transition flex flex-col justify-between group"
+                                >
+                                    <div>
+                                        <div className="flex items-center justify-between text-[10px] font-mono font-bold mb-2">
+                                            <span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-950 uppercase">{pub.publisher}</span>
+                                            <span className="text-zinc-500">{pub.date}</span>
+                                        </div>
+                                        <h3 className="text-base font-bold text-zinc-950 group-hover:text-emerald-900 transition-colors mb-2 leading-snug">
+                                            {pub.title}
+                                        </h3>
+                                        <p className="text-xs text-zinc-700 leading-relaxed line-clamp-2">
+                                            {pub.thesis}
+                                        </p>
+                                    </div>
+                                    <div className="pt-3 mt-3 border-t border-emerald-200/40 text-[11px] font-mono text-emerald-700 font-bold flex items-center gap-1">
+                                        Read Due Diligence Paper &rarr;
+                                    </div>
+                                </a>
                             ))}
                         </div>
                     </div>

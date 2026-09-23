@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import TechnicalInsolvencySimulator from '@/app/components/TechnicalInsolvencySimulator';
+import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 export const metadata: Metadata = {
     title: 'AI Governance for Board Members',
@@ -76,6 +77,59 @@ export default function ForBoardsPage() {
                         <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-6 text-center">
                             <div className="text-3xl font-bold text-amber-400 mb-2">1 Page</div>
                             <div className="text-sm font-semibold text-zinc-900 font-medium">Executive summary, not 50-page engineering reports</div>
+                        </div>
+                    </div>
+
+                    {/* Fiduciary AI Governance Research & Publications */}
+                    <div className="mb-16">
+                        <div className="flex items-center justify-between mb-6 flex-wrap gap-2">
+                            <div>
+                                <span className="text-xs font-mono font-bold text-amber-500 uppercase tracking-widest block mb-1">
+                                    Primary Source Intelligence &bull; Board Governance
+                                </span>
+                                <h2 className="text-2xl font-grotesk font-bold text-zinc-950">
+                                    Fiduciary Research &amp; Publications
+                                </h2>
+                            </div>
+                            <Link 
+                                href="/research/publications"
+                                className="text-xs font-mono font-bold text-amber-600 hover:text-amber-800 flex items-center gap-1 uppercase tracking-wider"
+                            >
+                                Explore Full Corpus ({RESEARCH_CORPUS.length} Works) &rarr;
+                            </Link>
+                        </div>
+                        <div className="grid sm:grid-cols-2 gap-4">
+                            {RESEARCH_CORPUS.filter(art => 
+                                art.publisher === 'CIO.com' || 
+                                art.domain === 'AI Governance' || 
+                                art.title.includes('Board') || 
+                                art.title.includes('Risk') || 
+                                art.title.includes('Capitalization')
+                            ).slice(0, 4).map((pub) => (
+                                <a
+                                    key={pub.id}
+                                    href={pub.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-5 rounded-2xl border border-amber-500/20 bg-amber-500/5 hover:border-amber-500/40 hover:bg-amber-500/10 transition flex flex-col justify-between group"
+                                >
+                                    <div>
+                                        <div className="flex items-center justify-between text-[10px] font-mono font-bold mb-2">
+                                            <span className="px-2 py-0.5 rounded bg-amber-100 text-amber-950 uppercase">{pub.publisher}</span>
+                                            <span className="text-zinc-500">{pub.date}</span>
+                                        </div>
+                                        <h3 className="text-base font-bold text-zinc-950 group-hover:text-amber-900 transition-colors mb-2 leading-snug">
+                                            {pub.title}
+                                        </h3>
+                                        <p className="text-xs text-zinc-700 leading-relaxed line-clamp-2">
+                                            {pub.thesis}
+                                        </p>
+                                    </div>
+                                    <div className="pt-3 mt-3 border-t border-amber-200/40 text-[11px] font-mono text-amber-700 font-bold flex items-center gap-1">
+                                        Read Fiduciary Paper &rarr;
+                                    </div>
+                                </a>
+                            ))}
                         </div>
                     </div>
 

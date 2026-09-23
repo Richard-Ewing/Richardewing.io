@@ -458,13 +458,21 @@ export default function ToolsContent() {
 
             return (
               <div className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
-                <div className="space-y-1">
-                  <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
-                    Empirical Foundations
-                  </span>
-                  <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
-                    Research Foundations
-                  </h2>
+                <div className="flex items-center justify-between flex-wrap gap-2">
+                  <div className="space-y-1">
+                    <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider block">
+                      Empirical Foundations &bull; Step 1 to Diagnostic
+                    </span>
+                    <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
+                      Research Foundations
+                    </h2>
+                  </div>
+                  <Link
+                    href="/research/publications"
+                    className="text-xs font-mono font-bold text-cyan-900 hover:text-cyan-700 flex items-center gap-1 uppercase tracking-wider"
+                  >
+                    Explore Full Corpus ({RESEARCH_CORPUS.length} Works) &rarr;
+                  </Link>
                 </div>
 
                 <div className="space-y-3 pt-2">

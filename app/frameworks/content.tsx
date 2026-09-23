@@ -102,6 +102,18 @@ export default function FrameworksPage() {
                                 </div>
                             ))}
                         </div>
+
+                        <div className="pt-4 flex items-center justify-between border-t border-zinc-200 text-xs">
+                            <span className="font-mono text-zinc-500 font-medium">
+                                Grounded across all 18 canonical executive suites
+                            </span>
+                            <Link
+                                href="/research/publications"
+                                className="font-mono font-bold text-cyan-900 hover:text-cyan-700 flex items-center gap-1 uppercase tracking-wider"
+                            >
+                                Explore Full Corpus ({RESEARCH_CORPUS.length} Works) &rarr;
+                            </Link>
+                        </div>
                     </div>
                 </section>
             </ScrollReveal>

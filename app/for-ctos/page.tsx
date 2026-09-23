@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import TechnicalInsolvencySimulator from '@/app/components/TechnicalInsolvencySimulator';
+import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 export const metadata: Metadata = {
     title: 'AI Economics Toolkit for CTOs',
@@ -97,6 +98,60 @@ export default function ForCTOsPage() {
                                 </div>
                             </Link>
                         ))}
+                    </div>
+
+                    {/* Engineering Economics & Systems Research */}
+                    <div className="mb-16">
+                        <div className="flex items-center justify-between mb-6 flex-wrap gap-2">
+                            <div>
+                                <span className="text-xs font-mono font-bold text-cyan-700 uppercase tracking-widest block mb-1">
+                                    Primary Source Field Telemetry &bull; CTO Canon
+                                </span>
+                                <h2 className="text-2xl font-grotesk font-bold text-zinc-950">
+                                    Engineering Economics &amp; Systems Research
+                                </h2>
+                            </div>
+                            <Link 
+                                href="/research/publications"
+                                className="text-xs font-mono font-bold text-cyan-800 hover:text-cyan-900 flex items-center gap-1 uppercase tracking-wider"
+                            >
+                                Explore Full Corpus ({RESEARCH_CORPUS.length} Works) &rarr;
+                            </Link>
+                        </div>
+                        <div className="grid sm:grid-cols-2 gap-4">
+                            {RESEARCH_CORPUS.filter(art => 
+                                art.domain === 'Engineering Leadership' || 
+                                art.domain === 'Software Economics' || 
+                                art.title.includes('Copilot') || 
+                                art.title.includes('Code') || 
+                                art.title.includes('Debt') ||
+                                art.title.includes('Claude')
+                            ).slice(0, 4).map((pub) => (
+                                <a
+                                    key={pub.id}
+                                    href={pub.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-5 rounded-2xl border border-zinc-300 bg-white hover:border-cyan-500/40 hover:bg-cyan-50/40 transition flex flex-col justify-between group shadow-xs"
+                                >
+                                    <div>
+                                        <div className="flex items-center justify-between text-[10px] font-mono font-bold mb-2">
+                                            <span className="px-2 py-0.5 rounded bg-cyan-100 text-cyan-950 uppercase">{pub.publisher}</span>
+                                            <span className="text-zinc-500">{pub.date}</span>
+                                        </div>
+                                        <h3 className="text-base font-bold text-zinc-950 group-hover:text-cyan-900 transition-colors mb-2 leading-snug">
+                                            {pub.title}
+                                        </h3>
+                                        <p className="text-xs text-zinc-700 leading-relaxed line-clamp-2">
+                                            {pub.thesis}
+                                        </p>
+                                    </div>
+                                    <div className="pt-3 mt-3 border-t border-zinc-200 text-[11px] font-mono text-cyan-800 font-bold flex items-center gap-1">
+                                        Read Technical Work &rarr;
+                                    </div>
+                                </a>
+                            ))}
+                        </div>
                     </div>
 
                     <div className="rounded-2xl border border-rose-500/30 bg-rose-500/5 p-10 text-center">

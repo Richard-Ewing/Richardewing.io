@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Sparkles, ArrowRight, BookOpen, Layers, CheckCircle2 } from 'lucide-react';
+import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import CurriculumMindmapViewer from '@/components/ai-product-builder/CurriculumMindmapViewer';
 
 export const metadata: Metadata = {
@@ -196,6 +197,57 @@ export default function CurriculumPage() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Empirical Research Provenance: The Sovereign Asset Engine Foundation */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12 border-b border-slate-900">
+        <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
+          <div>
+            <div className="text-xs font-mono font-bold text-sky-400 uppercase tracking-widest mb-1">
+              Step 1 of Sovereign Asset Engine &bull; Research to Curriculum
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white font-grotesk">
+              Empirical Research Provenance
+            </h2>
+            <p className="mt-2 text-sm text-slate-300 max-w-2xl font-medium">
+              Every curriculum track is grounded in peer-reviewed and executive publications across CIO.com, Built In, Beehiiv, and industry journals.
+            </p>
+          </div>
+          <Link
+            href="/research/publications"
+            className="text-xs font-mono font-bold text-sky-400 hover:text-sky-300 flex items-center gap-1.5 uppercase tracking-wider"
+          >
+            Explore All {RESEARCH_CORPUS.length}+ Published Works <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {RESEARCH_CORPUS.slice(0, 6).map((pub) => (
+            <a
+              key={pub.id}
+              href={pub.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-5 rounded-2xl border border-slate-800 bg-slate-900/60 hover:border-sky-500/40 hover:bg-slate-900/90 transition flex flex-col justify-between group"
+            >
+              <div>
+                <div className="flex items-center justify-between text-[11px] font-mono mb-2">
+                  <span className="text-sky-400 font-bold uppercase">{pub.publisher}</span>
+                  <span className="text-slate-400">{pub.date}</span>
+                </div>
+                <h3 className="text-sm font-bold text-white group-hover:text-sky-300 transition-colors mb-2 line-clamp-2">
+                  {pub.title}
+                </h3>
+                <p className="text-xs text-slate-400 leading-relaxed line-clamp-2">
+                  {pub.thesis}
+                </p>
+              </div>
+              <div className="pt-3 mt-3 border-t border-slate-800 text-[11px] font-mono text-sky-400 flex items-center gap-1">
+                Read Publication &rarr;
+              </div>
+            </a>
+          ))}
         </div>
       </section>
 

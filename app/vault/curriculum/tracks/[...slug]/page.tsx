@@ -35,6 +35,63 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 import { articles } from '@/app/lib/data';
+import { RESEARCH_CORPUS, type CorpusArticle } from '@/app/lib/research-corpus';
+
+function getCurriculumRelatedResearch(mod: CurriculumModule): CorpusArticle[] {
+    const trackNumber = parseInt(mod.moduleId.split('-')[0], 10);
+    const modTitle = mod.title.toLowerCase();
+    const trackName = mod.trackName.toLowerCase();
+    
+    // 1. Check explicit matches from mod.relatedArticles
+    const explicitMatches: CorpusArticle[] = [];
+    if (mod.relatedArticles && mod.relatedArticles.length > 0) {
+        for (const rel of mod.relatedArticles) {
+            const cleanRel = rel.replace(/^\/blog\//, '').replace(/^\/articles\//, '');
+            const foundInCorpus = RESEARCH_CORPUS.find(a => 
+                a.id === rel || 
+                a.id === cleanRel ||
+                a.url.toLowerCase().includes(cleanRel.toLowerCase()) || 
+                a.title.toLowerCase().includes(cleanRel.toLowerCase())
+            );
+            if (foundInCorpus && !explicitMatches.some(m => m.id === foundInCorpus.id)) {
+                explicitMatches.push(foundInCorpus);
+            }
+        }
+    }
+
+    // 2. Dynamic matching from RESEARCH_CORPUS based on topic & domain
+    const dynamicMatches = RESEARCH_CORPUS.filter(art => {
+        if (explicitMatches.some(m => m.id === art.id)) return false;
+        
+        // Exact keyword matching in title or thesis
+        const keywords = [
+            'frontier model', 'prompt injection', 'semantic caching', 'copilot', 
+            'context loss', 'coordination tax', 'vibe coding', 'technical debt', 
+            'cogs', 'slm', 'governance', 'persistence', 'review queue', 
+            'innovation tax', 'kill switch', 'capitalization', 'insolvency'
+        ];
+        for (const kw of keywords) {
+            if (modTitle.includes(kw) && (art.title.toLowerCase().includes(kw) || art.thesis.toLowerCase().includes(kw))) {
+                return true;
+            }
+        }
+
+        // Domain affinity by track number
+        if ([2, 5, 6, 7, 8, 11, 24].includes(trackNumber)) {
+            return art.domain === 'AI Economics' || art.domain === 'Software Economics';
+        }
+        if ([19, 21, 22, 23, 25, 26].includes(trackNumber) || trackName.includes('governance') || trackName.includes('security')) {
+            return art.domain === 'AI Governance';
+        }
+        if ([1, 3, 4, 9, 12, 13, 14, 18, 20].includes(trackNumber) || trackName.includes('engineering') || trackName.includes('leadership')) {
+            return art.domain === 'Engineering Leadership' || art.domain === 'Product Leadership';
+        }
+        return false;
+    });
+
+    const combined = [...explicitMatches, ...dynamicMatches];
+    return combined.slice(0, 4);
+}
 
 import { auth } from '@clerk/nextjs/server';
 import PayGate from '@/app/components/PayGate';
@@ -51,6 +108,8 @@ import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated'
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod: CurriculumModule, hasAccess: boolean, showPreview: boolean, aiContent?: any, fullSlug: string }) {
+    const relatedResearch = getCurriculumRelatedResearch(mod);
+
     return (
         <main className="pt-20">
             <StructuredData data={generateCourseSchema(mod.title, mod.description, 'Richard Ewing', `https://www.richardewing.io/vault/curriculum/tracks/${fullSlug}`)} />
@@ -104,7 +163,9 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                             <div className="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200">
                                 <div className="text-[9px] font-mono text-cyan-800 uppercase font-bold">1. Research</div>
                                 <div className="text-zinc-900 font-bold truncate text-[11px] mt-0.5">
-                                    {mod.relatedArticles && mod.relatedArticles.length > 0 ? `${mod.relatedArticles.length} Studies` : 'Field Telemetry'}
+                                    <a href="#foundational-research" className="hover:underline text-cyan-900">
+                                        {relatedResearch.length > 0 ? `${relatedResearch.length} Studies` : 'Corpus Backed'}
+                                    </a>
                                 </div>
                             </div>
                             <div className="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200">
@@ -249,22 +310,50 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
 
                     <ProgrammaticAnswersRelated seed={mod.moduleId} maxCount={2} />
 
-                    {mod.relatedArticles && mod.relatedArticles.length > 0 && (
-                        <div className="mt-16 border-t border-cyan-500/10 pt-12">
-                            <h2 className="text-2xl font-grotesk font-bold text-zinc-900 mb-6">Related Thought Leadership</h2>
+                    {/* Step 1 of Sovereign Asset Engine: Foundational Research & Empirical Studies */}
+                    {relatedResearch.length > 0 && (
+                        <div id="foundational-research" className="mt-16 border-t border-cyan-500/10 pt-12">
+                            <div className="flex items-center justify-between mb-6 flex-wrap gap-2">
+                                <div>
+                                    <div className="text-xs font-mono font-bold text-cyan-600 uppercase tracking-widest mb-1">
+                                        Step 1 of Sovereign Asset Engine &bull; Primary Research
+                                    </div>
+                                    <h2 className="text-2xl font-grotesk font-bold text-zinc-900">
+                                        Foundational Research &amp; Empirical Studies
+                                    </h2>
+                                </div>
+                                <Link 
+                                    href="/research/publications"
+                                    className="text-xs font-mono font-bold text-cyan-700 hover:text-cyan-900 flex items-center gap-1 uppercase tracking-wider"
+                                >
+                                    Explore Full Corpus ({RESEARCH_CORPUS.length} Works) &rarr;
+                                </Link>
+                            </div>
                             <div className="grid md:grid-cols-2 gap-4">
-                                {mod.relatedArticles.map((slug) => {
-                                    const article = articles.find(a => a.slug === slug);
-                                    if (!article) return null;
-                                    const href = article.externalUrl || article.legacyUrl || `/articles/${article.slug}`;
-                                    return (
-                                        <Link key={slug} href={href} className="block p-5 rounded-xl border border-zinc-400 bg-zinc-50 hover:bg-cyan-50 hover:border-cyan-300 transition-all group">
-                                            <div className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest mb-2 group-hover:text-cyan-900 font-extrabold">{article.source}</div>
-                                            <h3 className="text-zinc-900 font-bold mb-2 group-hover:text-cyan-900 font-extrabold transition-colors">{article.title}</h3>
-                                            <p className="text-zinc-950 font-bold text-sm font-semibold line-clamp-2">{article.description}</p>
-                                        </Link>
-                                    )
-                                })}
+                                {relatedResearch.map((pub) => (
+                                    <a
+                                        key={pub.id}
+                                        href={pub.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block p-5 rounded-xl border border-zinc-300 bg-zinc-50 hover:bg-cyan-50/60 hover:border-cyan-400 transition-all group shadow-xs"
+                                    >
+                                        <div className="flex items-center justify-between gap-2 mb-2">
+                                            <span className="text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-cyan-100 text-cyan-950 uppercase tracking-wider">
+                                                {pub.publisher}
+                                            </span>
+                                            <span className="text-[11px] font-mono text-zinc-500">
+                                                {pub.date}
+                                            </span>
+                                        </div>
+                                        <h3 className="text-zinc-950 font-bold mb-2 group-hover:text-cyan-900 transition-colors text-base leading-snug">
+                                            {pub.title}
+                                        </h3>
+                                        <p className="text-zinc-700 text-xs leading-relaxed line-clamp-2">
+                                            {pub.thesis}
+                                        </p>
+                                    </a>
+                                ))}
                             </div>
                         </div>
                     )}
