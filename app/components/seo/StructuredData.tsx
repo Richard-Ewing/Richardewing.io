@@ -33,7 +33,7 @@ export const generateCourseSchema = (name: string, description: string, provider
     hasPart: {
         '@type': 'WebPageElement',
         isAccessibleForFree: 'False',
-        cssSelector: '.ai-content'
+        cssSelector: '.paywalled-content'
     }
 });
 

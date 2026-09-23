@@ -713,7 +713,7 @@ export const articles: Article[] = [
         readTime: "4 min read",
         source: "The Canon",
         category: "Engineering",
-
+        legacyUrl: "/articles/frameworks/technical-insolvency-date",
         content: `
             <p>The Technical Insolvency Date (TID) is the theoretical point where a software organization's maintenance burden consumes 100% of its available engineering capacity.</p>
             <h3>The Mathematics of Stagnation</h3>
@@ -729,7 +729,7 @@ export const articles: Article[] = [
         readTime: "6 min read",
         source: "CIO.com",
         category: "Economics",
-
+        legacyUrl: "/articles/frameworks/innovation-tax"
     },
     {
         slug: "cost-of-predictivity",
@@ -739,7 +739,7 @@ export const articles: Article[] = [
         readTime: "5 min read",
         source: "Built In",
         category: "Economics",
-
+        legacyUrl: "/articles/frameworks/cost-of-predictivity"
     },
     {
         slug: "feature-bloat-calculus",
@@ -749,7 +749,7 @@ export const articles: Article[] = [
         readTime: "4 min read",
         source: "Mind the Product",
         category: "Engineering",
-
+        legacyUrl: "/articles/frameworks/feature-bloat-calculus"
     },
     {
         slug: "best-ai-product-zero-customers",

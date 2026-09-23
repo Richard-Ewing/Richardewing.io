@@ -59,9 +59,12 @@ export function Footer() {
                         <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Knowledge & Academy</h4>
                         <ul className="space-y-2 text-sm font-semibold font-grotesk">
                             <li><Link href="/articles" className="text-zinc-950 hover:text-zinc-900 transition-colors">Forensic Articles</Link></li>
+                            <li><Link href="/articles/frameworks/return-on-ai-investment" className="text-cyan-950 font-bold hover:text-cyan-900 transition-colors">ROAI Framework</Link></li>
+                            <li><Link href="/articles/frameworks/technical-insolvency-date" className="text-zinc-950 hover:text-zinc-900 transition-colors">Technical Insolvency Date</Link></li>
+                            <li><Link href="/careers" className="text-emerald-900 font-extrabold hover:text-zinc-900 transition-colors">2026 Career Pathfinder</Link></li>
+                            <li><Link href="/careers/post-qa-verification-engineer" className="text-emerald-950 font-bold hover:text-emerald-900 transition-colors">Post-QA Verification Career</Link></li>
                             <li><Link href="/blog" className="text-zinc-950 hover:text-zinc-900 transition-colors">Engineering Blog</Link></li>
                             <li><Link href="/glossary" className="text-zinc-950 hover:text-zinc-900 transition-colors">Glossary & Pillars</Link></li>
-                            <li><Link href="/careers" className="text-emerald-900 font-extrabold hover:text-zinc-900 transition-colors">2026 Career Pathfinder</Link></li>
                             <li><Link href="/book" className="text-purple-900 font-extrabold hover:text-zinc-900 transition-colors">The AI Economist (Book)</Link></li>
                             <li><Link href="/curriculum" className="text-zinc-950 hover:text-zinc-900 transition-colors">Builder Curriculum</Link></li>
                             <li><Link href="/answers" className="text-zinc-950 hover:text-zinc-900 transition-colors">Executive Answers</Link></li>

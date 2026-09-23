@@ -46,7 +46,7 @@ export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons
             {/* ═══════════════════════════════════════════════════ */}
             {/* PRIMARY BUY CTA - ABOVE THE FOLD FOR CONVERSION    */}
             {/* ═══════════════════════════════════════════════════ */}
-            <div className={`relative ${showPreview ? '-mt-16' : 'mt-4'} z-30 mb-8`}>
+            <div className={`relative ${showPreview ? '-mt-16' : 'mt-4'} z-30 mb-8 paywalled-content`}>
                 <div className="mx-auto max-w-2xl rounded-2xl border-2 border-violet-300 bg-white p-8 shadow-2xl">
                     <div className="text-center">
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-50 border border-violet-200 text-violet-900 font-extrabold font-mono text-xs font-bold uppercase tracking-widest mb-4">
