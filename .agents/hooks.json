@@ -1,4 +1,4 @@
-﻿{
+{
   "qa-verifier": {
     "PostToolUse": [
       {
@@ -10,6 +10,15 @@
             "timeout": 30
           }
         ]
+      }
+    ]
+  },
+  "turn-end-deploy-guard": {
+    "Stop": [
+      {
+        "type": "command",
+        "command": "node -e \"const fs=require('fs');const p=fs.existsSync('scripts/stop-hook.mjs')?'scripts/stop-hook.mjs':'.agents/scripts/stop-hook.mjs';require('child_process').spawnSync(process.execPath,[p],{stdio:'inherit'});\"",
+        "timeout": 15
       }
     ]
   }

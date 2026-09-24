@@ -1,11 +1,11 @@
 ---
 name: master-directive
-description: Sovereign Master Operating Directive (MOD v3.2) for richardewing.io. Enforces adaptive two-track task routing, 360-degree panoramic context, the 5-step Asset Pipeline Hierarchy (Research -> Concept -> Framework -> Diagnostic -> Implementation), Academy moat governance, gstack virtual engineering team discipline, Karpathy empirical test assertions, 5-agent War Room worktree swarm orchestration, zero-drift deterministic QA verification (including zero secret key/credential leakage), domain synthesis engines (HWS v2.0, UI/UX, SEO, Code), and zero-error live production deployments.
+description: Sovereign Master Operating Directive (MOD v4.0) for richardewing.io. Enforces ambient universal execution, encapsulated slash command workflows, 360-degree panoramic context, the 5-step Asset Pipeline Hierarchy (Research -> Concept -> Framework -> Diagnostic -> Implementation), Academy moat governance, gstack virtual engineering team discipline, Karpathy empirical test assertions, 5-agent War Room worktree swarm orchestration, zero-drift deterministic QA verification (including physical Stop hook and zero secret key/credential leakage), domain synthesis engines (HWS v2.0, UI/UX, SEO, Code), and zero-error live production deployments.
 ---
 
-# Sovereign Master Operating Directive (MOD v3.2): Antigravity Execution System
+# Sovereign Master Operating Directive (MOD v4.0): Antigravity Execution System
 
-This document establishes the official, hardened execution standard for ALL tasks (software, copywriting, strategy, SEO, operations) on **`richardewing.io`**. 
+This document establishes the official, hardened execution standard for ALL tasks (software, copywriting, strategy, SEO, operations) on **`richardewing.io`**. MOD v4.0 is ambient and unconditional: the user never needs to manually trigger slash commands or reminder prompts. 
 
 ---
 
@@ -158,16 +158,17 @@ To harness the full capabilities of next-generation high-reasoning frontier mode
 
 ---
 
-## 12. Slash Command Execution & Community Ecosystem Harness
+## 12. Encapsulated Slash Workflows & Native Autonomous Harness
 
-1. **`/boost` (High-Reasoning Swarm Escalation)**: For complex multi-layered architectural problems, invoke `/boost` to coordinate multi-agent reasoning pipelines with maximum thinking effort.
-2. **`/browser` (Live Headless Visual & DOM Inspection)**: Validate UI layout shifts, responsive mobile breakpoints, and user interaction flows using Playwright/Chromium headless browser automation.
-3. **`/goal` (Long-Horizon Autonomous Loops)**: When a broad optimization goal is set, execute continuous loops: Audit -> Refactor -> Verify -> Repeat until target metrics are achieved.
-4. **`/schedule` (Background Monitoring & Crons)**: Use one-shot timers or cron schedules for periodic health checks, broken link crawls, and automated sitemap pings.
-5. **`/grill-me` (Interactive Socratic Alignment)**: Run design interviews to surface architectural tradeoffs before writing code.
-6. **`/teamwork-preview` & Agent Dispatch**: Coordinate multi-agent collaborative workflows across isolated git worktrees.
-7. **`/learn` (Pattern Persistence)**: Codify durable user preferences, design tokens, and architectural rules.
-8. **MCP Server Integration**: Actively interface with vector indexes (`pinecone-mcp-server`), relational edge functions (`supabase-mcp-server`), and repository automation (`github-mcp-server`).
+The user NEVER needs to manually type slash commands. All of their capabilities are natively encapsulated within the MOD v4.0 execution harness:
+
+1. **War Room Swarm & High Reasoning (`/boost` & `/teamwork-preview`)**: Automatically activated when solving complex multi-layered architectural problems, cross-functional features, or when the user mentions "assemble the war room". Coordinates multi-agent reasoning pipelines and dispatches subagents in parallel git worktrees (`Workspace: "branch"` or `"share"`).
+2. **Headless Visual & DOM Validation (`/browser`)**: Automatically validate UI layout shifts, responsive mobile breakpoints, and user interaction flows using Playwright/Chromium headless browser automation before deploying visual changes.
+3. **Continuous Goal Loops (`/goal`)**: For open-ended or high-ambition optimization requests, execute autonomous closed loops: Audit -> Refactor -> Verify -> Repeat until target quality metrics are reached.
+4. **Background Schedules & Monitoring (`/schedule`)**: Use one-shot timers or background cron schedules for periodic health checks, broken link crawls, and automated sitemap pings.
+5. **Interactive Socratic Alignment (`/grill-me`)**: Surface critical architectural tradeoffs and design forks proactively when requirements are underspecified.
+6. **Durable Pattern Learning (`/learn`)**: Persist durable user preferences, design tokens, and architectural rules directly into permanent workspace memory.
+7. **MCP Server Integration**: Actively interface with vector indexes (`pinecone-mcp-server`), relational edge functions (`supabase-mcp-server`), and repository automation (`github-mcp-server`).
 
 ---
 
