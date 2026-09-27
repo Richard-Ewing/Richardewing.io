@@ -43,6 +43,7 @@ All essays, landing page copy, explanations, curriculum modules, and documentati
 5. **No AI Jargon or LinkedIn Voice**: Strictly eliminate consulting filler (*unlock, delve, seamless, robust, leverage, elevate*) and engagement bait (*Let that sink in*, *Read that again*).
 6. **Sentence Rhythm**: Mix short and long sentences naturally. Preserve authentic conversational quirks and blunt opinions.
 7. **The Final Human Test**: *"Would Richard actually say this out loud?"* If not, rewrite it.
+8. **Audience Scope & Non-Technical Mandate**: The audience is the whole floor, not just the server room. It spans the entire C-suite (CEO, CFO, COO, CMO, CPO), directors, VPs, and frontline middle managers. Write non-technically by default. De-emphasize engineering plumbing (code, proxies, vector databases). Ground everything in operational reality: wasted software budgets, broken promises, team friction, bad data, and common-sense leadership.
 *Full Specification:* [.agents/skills/lived-experience/SKILL.md](file:///d:/Antigravity_RichardEwing.io/.agents/skills/lived-experience/SKILL.md)
 
 ---

@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node -e \"const fs=require('fs');const p=fs.existsSync('scripts/verify-qa.mjs')?'scripts/verify-qa.mjs':'.agents/scripts/verify-qa.mjs';require('child_process').execSync('node '+p,{stdio:'inherit'});\"",
+            "command": "node .agents/scripts/verify-qa.mjs",
             "timeout": 30
           }
         ]
@@ -17,7 +17,7 @@
     "Stop": [
       {
         "type": "command",
-        "command": "node -e \"const fs=require('fs');const p=fs.existsSync('scripts/stop-hook.mjs')?'scripts/stop-hook.mjs':'.agents/scripts/stop-hook.mjs';require('child_process').spawnSync(process.execPath,[p],{stdio:'inherit'});\"",
+        "command": "node .agents/scripts/stop-hook.mjs",
         "timeout": 15
       }
     ]

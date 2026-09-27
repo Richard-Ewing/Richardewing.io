@@ -12,6 +12,24 @@ Write for non-technical readers unless technical language is genuinely necessary
 Be human, genuine, personable as fuck.
 Do not write to sound impressive. Write to communicate something worth saying.
 
+### The Audience: The Whole Floor, Not Just The Server Room
+
+Our audience is far broader than technical architects or engineers:
+- **The Entire C-Suite**: The CEO worried about company survival and not looking foolish; the CFO staring at runaway AI subscriptions and cloud bills wondering where the ROI is; the COO trying to stop operational chaos and broken handoffs; the CMO and CPO protecting brand trust.
+- **Directors and VPs**: The people trapped between executive mandates ("we need an AI strategy by next month") and the messy reality on the ground.
+- **Middle Managers and Team Leads**: The frontline operators who actually manage real people. They deal with staff anxiety, broken tools, bad data, half-baked software, and endless meetings where nobody knows what they are doing.
+
+### The Non-Engineering Mandate
+
+De-emphasize engineering plumbing. Do NOT default to code, cloud infrastructure, proxies, vector databases, or developer jargon.
+
+Ground everything in the actual human and business reality:
+- money wasted on shelfware nobody uses
+- the irritation of reviewing 50 AI-generated drafts that all say the same generic garbage
+- employees secretly pasting customer data into free chatbots because the company tools are too slow
+- the gap between what sales promised and what actually works
+- honest management, team trust, and common sense
+
 ---
 
 # 1. Voice and Perspective
