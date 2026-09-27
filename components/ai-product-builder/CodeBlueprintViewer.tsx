@@ -408,6 +408,292 @@ Upon satisfying the Success Criteria at Day 30:
 **CLIENT ACCEPTANCE:** ______________________  **DATE:** _________
 **PROVIDER ACCEPTANCE:** ____________________  **DATE:** _________
 `
+  },
+  {
+    id: 'agent-governance-proxy',
+    title: 'Autonomous Agent Governance Proxy with Circuit Breakers & Nonce Verification',
+    filename: '/governance/agent_proxy.py',
+    category: 'AI Cost Governance',
+    description: 'Production Python/FastAPI proxy enforcing the 4 Pillars of Agent Governance: cryptographic nonce dual-verification, hard circuit breaker on 3 schema failures, and Air Traffic Control concurrency limits.',
+    language: 'python',
+    code: `import time
+import uuid
+import hashlib
+import asyncio
+from typing import Dict, Any, Optional
+from fastapi import FastAPI, Request, HTTPException, status
+from pydantic import BaseModel, Field
+
+# ==============================================================================
+# 4 PILLARS OF AGENT GOVERNANCE PROXY
+# Enforces: Nonce Verification, Schema Integrity, Circuit Breaking & ATC Queuing
+# Reference: richardewing.io canonical essay "The Transaction That Succeeds"
+# ==============================================================================
+
+app = FastAPI(title="Sovereign Agent Governance Proxy", version="1.0.0")
+
+class AgentMutationRequest(BaseModel):
+    agent_id: str
+    target_resource: str
+    action: str
+    nonce: str
+    payload: Dict[str, Any]
+    client_signature: str
+
+class CircuitBreaker:
+    """Trip agent execution after 3 consecutive schema or invariant failures."""
+    def __init__(self, failure_threshold: int = 3, reset_timeout_sec: float = 60.0):
+        self.failure_threshold = failure_threshold
+        self.reset_timeout = reset_timeout_sec
+        self.failure_count: Dict[str, int] = {}
+        self.tripped_at: Dict[str, float] = {}
+
+    def is_tripped(self, agent_id: str) -> bool:
+        if agent_id in self.tripped_at:
+            if time.time() - self.tripped_at[agent_id] < self.reset_timeout:
+                return True
+            # Auto-reset after timeout
+            del self.tripped_at[agent_id]
+            self.failure_count[agent_id] = 0
+        return False
+
+    def record_failure(self, agent_id: str):
+        count = self.failure_count.get(agent_id, 0) + 1
+        self.failure_count[agent_id] = count
+        if count >= self.failure_threshold:
+            self.tripped_at[agent_id] = time.time()
+            print(f"[CIRCUIT BREAKER] Tripped for agent {agent_id}. Execution halted for {self.reset_timeout}s.")
+
+    def record_success(self, agent_id: str):
+        self.failure_count[agent_id] = 0
+
+circuit_breaker = CircuitBreaker()
+observed_nonces = set()
+atc_locks: Dict[str, asyncio.Lock] = {}
+
+def compute_payload_hash(payload: Dict[str, Any], nonce: str) -> str:
+    serialized = f"{nonce}:{sorted(payload.items())}".encode('utf-8')
+    return hashlib.sha256(serialized).hexdigest()
+
+@app.post("/v1/governance/mutate", status_code=status.HTTP_200_OK)
+async def execute_governed_mutation(request: AgentMutationRequest):
+    agent_id = request.agent_id
+    resource_id = request.target_resource
+
+    # 1. Circuit Breaker Check
+    if circuit_breaker.is_tripped(agent_id):
+        raise HTTPException(
+            status_code=status.HTTP_429_TOO_MANY_REQUESTS,
+            detail=f"Agent {agent_id} is quarantined due to consecutive validation failures. Cool-down active."
+        )
+
+    # 2. Nonce Verification (Replay & Double-Mutation Prevention)
+    if request.nonce in observed_nonces:
+        circuit_breaker.record_failure(agent_id)
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Nonce already consumed. Mutation rejected to prevent duplicate execution."
+        )
+    observed_nonces.add(request.nonce)
+
+    # 3. Payload Integrity Check
+    expected_hash = compute_payload_hash(request.payload, request.nonce)
+    if request.client_signature != expected_hash:
+        circuit_breaker.record_failure(agent_id)
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Payload signature mismatch. State mutation payload rejected."
+        )
+
+    # 4. Air Traffic Control (ATC) Queuing: Strict Serial Execution per Resource
+    if resource_id not in atc_locks:
+        atc_locks[resource_id] = asyncio.Lock()
+
+    async with atc_locks[resource_id]:
+        try:
+            # Execute verified transactional mutation against underlying service
+            print(f"[ATC QUEUE] Executing verified mutation on {resource_id} by agent {agent_id}")
+            # Mock mutation execution: replace with real DB connection pool transaction
+            circuit_breaker.record_success(agent_id)
+            return {
+                "status": "committed",
+                "resource": resource_id,
+                "mutation_id": str(uuid.uuid4()),
+                "nonce": request.nonce
+            }
+        except Exception as e:
+            circuit_breaker.record_failure(agent_id)
+            raise HTTPException(status_code=500, detail=f"Mutation failed: {str(e)}")
+`
+  },
+  {
+    id: 'persistence-replica-guard',
+    title: 'Postgres Read-Only Replica Guard & Mutation Staging Queue',
+    filename: '/infrastructure/persistence_guard.py',
+    category: 'Backend Infrastructure',
+    description: 'Enforces decoupled persistence vs authority: Autonomous agents connect strictly to read-only replica connection pools, writing intended mutations to an append-only staging queue with cryptographic hash checks.',
+    language: 'python',
+    code: `import os
+import time
+import uuid
+import hashlib
+from typing import Dict, Any, List, Optional
+from pydantic import BaseModel, Field
+
+# ==============================================================================
+# DECOUPLED PERSISTENCE VS AUTHORITY ARCHITECTURE
+# Prevents background agent rogue database writes and phantom row explosion.
+# Reference: richardewing.io canonical essay "Persistence vs. Authority"
+# ==============================================================================
+
+class StagedMutation(BaseModel):
+    staging_id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    agent_id: str
+    target_table: str
+    operation: str  # INSERT, UPDATE, DELETE
+    proposed_data: Dict[str, Any]
+    checksum: str
+    created_at: float = Field(default_factory=time.time)
+
+class ReadOnlyAgentSession:
+    """
+    Agents only receive access to this Read-Only Interface.
+    Direct SQL write credentials (INSERT/UPDATE/DELETE) are never provided.
+    """
+    def __init__(self, read_only_pool_url: str):
+        self.db_url = read_only_pool_url
+        print(f"[REPLICA GUARD] Initialized read-only agent session on pool: {self.db_url}")
+
+    async def execute_query(self, sql_query: str) -> List[Dict[str, Any]]:
+        # Enforce read-only constraint at session level
+        disallowed_keywords = ["INSERT", "UPDATE", "DELETE", "DROP", "ALTER", "TRUNCATE"]
+        if any(keyword in sql_query.upper() for keyword in disallowed_keywords):
+            raise PermissionError("Write operations forbidden on agent connection pool. Use stage_mutation().")
+        
+        # Read-only execution simulation
+        return [{"status": "success", "result": "sample_data_from_replica"}]
+
+class MutationStagingPipeline:
+    """
+    Append-only mutation staging queue where agents propose changes.
+    A dedicated, isolated verification orchestrator validates invariants before committing.
+    """
+    def __init__(self):
+        self.staging_table: Dict[str, StagedMutation] = {}
+
+    def stage_mutation(self, agent_id: str, table: str, operation: str, data: Dict[str, Any]) -> str:
+        # 1. Compute deterministic SHA256 checksum of proposed data
+        serialized = f"{table}:{operation}:{sorted(data.items())}".encode('utf-8')
+        checksum = hashlib.sha256(serialized).hexdigest()
+
+        # 2. Append to staging table
+        mutation = StagedMutation(
+            agent_id=agent_id,
+            target_table=table,
+            operation=operation,
+            proposed_data=data,
+            checksum=checksum
+        )
+        self.staging_table[mutation.staging_id] = mutation
+        print(f"[STAGING QUEUE] Staged mutation {mutation.staging_id} for table {table} by agent {agent_id}")
+        return mutation.staging_id
+
+    def commit_staged_mutation(self, staging_id: str, verified_by_rule_engine: bool) -> bool:
+        """
+        Executed strictly by the backend authority service, NEVER by the agent.
+        """
+        mutation = self.staging_table.get(staging_id)
+        if not mutation:
+            raise KeyError(f"Staged mutation {staging_id} not found.")
+
+        if not verified_by_rule_engine:
+            print(f"[AUTHORITY] Staged mutation {staging_id} REJECTED by business rule verification.")
+            return False
+
+        # Execute verified write to Primary Master Database with service authority
+        print(f"[AUTHORITY] Committed mutation {staging_id} to primary DB for table {mutation.target_table}.")
+        del self.staging_table[staging_id]
+        return True
+`
+  },
+  {
+    id: 'finops-token-circuit-breaker',
+    title: 'FinOps Real-Time Token Budget & Rate Limiting Guard',
+    filename: '/finops/token_budget_guard.py',
+    category: 'AI Cost Governance',
+    description: 'Async Python wrapper intercepting Anthropic and OpenAI SDK requests to calculate exact token spend per session in real-time, tripping an emergency circuit breaker when budget thresholds are breached.',
+    language: 'python',
+    code: `import os
+import time
+from typing import Dict, Any, Optional
+
+# ==============================================================================
+# FINOPS REAL-TIME TOKEN BUDGET & RATE LIMITING GUARD
+# Eliminates runaway API token invoices from recursive agent retry loops.
+# ==============================================================================
+
+# Standard token pricing matrix (USD per 1,000 tokens)
+MODEL_PRICING: Dict[str, Dict[str, float]] = {
+    "claude-3-5-sonnet": {"input": 0.003, "output": 0.015},
+    "claude-3-haiku": {"input": 0.00025, "output": 0.00125},
+    "gpt-4o": {"input": 0.0025, "output": 0.010},
+    "gpt-4o-mini": {"input": 0.00015, "output": 0.0006},
+}
+
+class TokenBudgetExceededError(Exception):
+    """Raised when an organization or user session exceeds their allocated token budget."""
+    pass
+
+class FinOpsTokenGuard:
+    def __init__(self, daily_budget_usd: float = 100.0, per_session_cap_usd: float = 2.50):
+        self.daily_budget_usd = daily_budget_usd
+        self.per_session_cap_usd = per_session_cap_usd
+        self.session_spend: Dict[str, float] = {}
+        self.daily_total_spend: float = 0.0
+        self.last_reset: float = time.time()
+
+    def _check_and_reset_daily(self):
+        # Reset daily counters every 24 hours
+        if time.time() - self.last_reset > 86400:
+            self.daily_total_spend = 0.0
+            self.session_spend.clear()
+            self.last_reset = time.time()
+
+    def pre_flight_check(self, session_id: str, estimated_input_tokens: int, model: str):
+        """Enforces hard circuit breaker before invoking upstream LLM APIs."""
+        self._check_and_reset_daily()
+
+        pricing = MODEL_PRICING.get(model, {"input": 0.003, "output": 0.015})
+        estimated_cost = (estimated_input_tokens / 1000.0) * pricing["input"]
+
+        current_session = self.session_spend.get(session_id, 0.0)
+        if current_session + estimated_cost > self.per_session_cap_usd:
+            raise TokenBudgetExceededError(
+                f"Session {session_id} exceeded per-session limit of \${self.per_session_cap_usd:.2f}. "
+                f"Current spend: \${current_session:.4f}. Call aborted."
+            )
+
+        if self.daily_total_spend + estimated_cost > self.daily_budget_usd:
+            raise TokenBudgetExceededError(
+                f"Organization daily AI budget cap of \${self.daily_budget_usd:.2f} reached. "
+                f"Current daily spend: \${self.daily_total_spend:.4f}. Emergency stop triggered."
+            )
+
+    def record_usage(self, session_id: str, model: str, input_tokens: int, output_tokens: int) -> float:
+        """Calculates exact dollar cost and updates tracking ledgers."""
+        pricing = MODEL_PRICING.get(model, {"input": 0.003, "output": 0.015})
+        cost = ((input_tokens / 1000.0) * pricing["input"]) + ((output_tokens / 1000.0) * pricing["output"])
+
+        self.session_spend[session_id] = self.session_spend.get(session_id, 0.0) + cost
+        self.daily_total_spend += cost
+
+        print(
+            f"[FINOPS GUARD] Session: {session_id} | Model: {model} | "
+            f"Tokens: {input_tokens}in/{output_tokens}out | Cost: \${cost:.5f} | "
+            f"Session Total: \${self.session_spend[session_id]:.4f}"
+        )
+        return cost
+`
   }
 ];
 

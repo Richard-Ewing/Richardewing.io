@@ -136,13 +136,23 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                                     <div className="font-mono text-[9px] text-amber-800 font-bold uppercase">3. Framework</div>
                                     <div className="font-semibold text-zinc-900 text-xs mt-0.5">{track.pipelineSpine.framework}</div>
                                 </div>
-                                <div className="p-2.5 rounded-lg bg-white border border-indigo-100">
-                                    <div className="font-mono text-[9px] text-emerald-800 font-bold uppercase">4. Diagnostic</div>
-                                    <div className="font-semibold text-zinc-900 text-xs mt-0.5">{track.pipelineSpine.diagnostic}</div>
+                                <div className="p-2.5 rounded-lg bg-white border border-indigo-100 flex flex-col justify-between">
+                                    <div>
+                                        <div className="font-mono text-[9px] text-emerald-800 font-bold uppercase">4. Diagnostic</div>
+                                        <div className="font-semibold text-zinc-900 text-xs mt-0.5">{track.pipelineSpine.diagnostic}</div>
+                                    </div>
+                                    <Link href="/tools" className="mt-2 text-[10px] font-mono font-bold text-emerald-800 hover:text-emerald-950 underline flex items-center gap-0.5">
+                                        Run Audit &rarr;
+                                    </Link>
                                 </div>
-                                <div className="p-2.5 rounded-lg bg-white border border-indigo-100">
-                                    <div className="font-mono text-[9px] text-indigo-800 font-bold uppercase">5. Implementation</div>
-                                    <div className="font-semibold text-zinc-900 text-xs mt-0.5">{track.pipelineSpine.implementation}</div>
+                                <div className="p-2.5 rounded-lg bg-white border border-indigo-100 flex flex-col justify-between">
+                                    <div>
+                                        <div className="font-mono text-[9px] text-indigo-800 font-bold uppercase">5. Implementation</div>
+                                        <div className="font-semibold text-zinc-900 text-xs mt-0.5">{track.pipelineSpine.implementation}</div>
+                                    </div>
+                                    <Link href="/vault/blueprints" className="mt-2 text-[10px] font-mono font-bold text-indigo-800 hover:text-indigo-950 underline flex items-center gap-0.5">
+                                        View Blueprint &rarr;
+                                    </Link>
                                 </div>
                             </div>
                         </div>

@@ -148,7 +148,9 @@ export default async function CurriculumTracksPage() {
                                         Interactive proving grounds and ROI calculators that stress-test architectures.
                                     </p>
                                 </div>
-                                <div className="mt-3 text-[10px] font-mono font-bold text-emerald-900">&rarr; Proving Grounds</div>
+                                <Link href="/tools" className="mt-3 text-[10px] font-mono font-bold text-emerald-900 hover:text-emerald-950 underline flex items-center gap-1">
+                                    &rarr; Proving Grounds &amp; Diagnostics
+                                </Link>
                             </div>
 
                             <div className="p-4 rounded-2xl bg-indigo-50/70 border border-indigo-200 flex flex-col justify-between">
@@ -159,7 +161,9 @@ export default async function CurriculumTracksPage() {
                                         Live runtime execution (Exogram proxy layers) and executive advisory alignment.
                                     </p>
                                 </div>
-                                <div className="mt-3 text-[10px] font-mono font-bold text-indigo-900">&rarr; Production Live</div>
+                                <Link href="/vault/blueprints" className="mt-3 text-[10px] font-mono font-bold text-indigo-900 hover:text-indigo-950 underline flex items-center gap-1">
+                                    &rarr; Production Blueprints
+                                </Link>
                             </div>
                         </div>
 

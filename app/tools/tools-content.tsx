@@ -21,16 +21,106 @@ interface DiagnosticToolItem {
   roles: Array<'CFO' | 'CPO' | 'CTO' | 'EM' | 'FINOPS'>;
   category: 1 | 2 | 3 | 4;
   isSpan2?: boolean;
+  remediationTrack?: {
+    trackNumber: number;
+    title: string;
+    href: string;
+  };
 }
 
-const ROLES = [
-  { id: 'ALL', label: 'All Diagnostics (25)', roleTitle: 'Cross-Functional Executive Suite', desc: 'Complete library of 25 forensic engineering, financial, and security instruments used in formal R&D capital audits.' },
-  { id: 'CFO', label: 'CFO / Finance', roleTitle: 'Chief Financial Officer & Director of Finance', desc: 'Protect software gross margins from API token runaway, audit Section 174 software capitalization vs maintenance waste, and calculate tech debt drag on company valuation.' },
-  { id: 'CPO', label: 'CPO / Product Ops', roleTitle: 'Chief Product Officer & Product Ops Lead', desc: 'Identify negative-margin AI features, test specification quality before burning developer sprint capacity, and audit product portfolio margins.' },
-  { id: 'CTO', label: 'CTO / VP Engineering', roleTitle: 'Chief Technology Officer & VP of Engineering', desc: 'Quantify codebase technical debt in dollar terms (PDI), audit MCP tool connection risks, inspect shadow AI leaks, and test prompt injection defenses.' },
-  { id: 'EM', label: 'Engineering Manager', roleTitle: 'Engineering Manager & Tech Lead', desc: 'Diagnose pull request review bottlenecks, calculate unreviewed vibe coding debt, audit AI coding agent readiness, and validate technical candidate judgment.' },
-  { id: 'FINOPS', label: 'FinOps / VP Operations', roleTitle: 'FinOps Manager & VP of Operations', desc: 'Benchmark AI unit economics (AUEB), calculate small language model break-even vs cloud APIs, audit cloud repatriation savings, and simulate multi-agent token burn.' },
-] as const;
+interface RoleProfile {
+  id: 'ALL' | 'CFO' | 'CPO' | 'CTO' | 'EM' | 'FINOPS';
+  label: string;
+  roleTitle: string;
+  desc: string;
+  remediationTracks?: Array<{ trackNumber: number; title: string; href: string }>;
+  recommendedBlueprints?: Array<{ title: string; href: string }>;
+}
+
+const ROLES: RoleProfile[] = [
+  { 
+    id: 'ALL', 
+    label: 'All Diagnostics (25)', 
+    roleTitle: 'Cross-Functional Executive Suite', 
+    desc: 'Complete library of 25 forensic engineering, financial, and security instruments used in formal R&D capital audits.' 
+  },
+  { 
+    id: 'CFO', 
+    label: 'CFO / Finance', 
+    roleTitle: 'Chief Financial Officer & Director of Finance', 
+    desc: 'Protect software gross margins from API token runaway, audit Section 174 software capitalization vs maintenance waste, and calculate tech debt drag on company valuation.',
+    remediationTracks: [
+      { trackNumber: 2, title: 'AI Product Economics & Unit Margins', href: '/vault/curriculum/tracks/track-02' },
+      { trackNumber: 6, title: 'R&D Capitalization & Section 174 Compliance', href: '/vault/curriculum/tracks/track-06' },
+      { trackNumber: 21, title: 'Developer Tooling ROI & Engineering Capitalization', href: '/vault/curriculum/tracks/track-21' },
+    ],
+    recommendedBlueprints: [
+      { title: '12-Month Financial Pro-Forma & Flywheel Engine', href: '/vault/blueprints' },
+      { title: 'Strategic Pilot Agreement (30-Day Paid Conversion)', href: '/vault/blueprints' },
+    ]
+  },
+  { 
+    id: 'CPO', 
+    label: 'CPO / Product Ops', 
+    roleTitle: 'Chief Product Officer & Product Ops Lead', 
+    desc: 'Identify negative-margin AI features, test specification quality before burning developer sprint capacity, and audit product portfolio margins.',
+    remediationTracks: [
+      { trackNumber: 3, title: 'AI Product Strategy & Feature Defensibility', href: '/vault/curriculum/tracks/track-03' },
+      { trackNumber: 11, title: 'Prompt vs Fine-Tuning vs RAG Unit Economics', href: '/vault/curriculum/tracks/track-11' },
+      { trackNumber: 2, title: 'AI Product Economics & Unit Margins', href: '/vault/curriculum/tracks/track-02' },
+    ],
+    recommendedBlueprints: [
+      { title: 'Strategic Pilot Customer Agreement', href: '/vault/blueprints' },
+      { title: 'FastAPI Production Scaffold with Correlation IDs', href: '/vault/blueprints' },
+    ]
+  },
+  { 
+    id: 'CTO', 
+    label: 'CTO / VP Engineering', 
+    roleTitle: 'Chief Technology Officer & VP of Engineering', 
+    desc: 'Quantify codebase technical debt in dollar terms (PDI), audit MCP tool connection risks, inspect shadow AI leaks, and test prompt injection defenses.',
+    remediationTracks: [
+      { trackNumber: 1, title: 'Technical Debt Forensics & Legacy Modernization', href: '/vault/curriculum/tracks/track-01' },
+      { trackNumber: 8, title: 'Runtime AI Safety, Red Teaming & Boundary Enforcement', href: '/vault/curriculum/tracks/track-08' },
+      { trackNumber: 14, title: 'Local SLMs & Sovereign Inference Infrastructure', href: '/vault/curriculum/tracks/track-14' },
+    ],
+    recommendedBlueprints: [
+      { title: 'Autonomous Agent Governance Proxy with Circuit Breakers', href: '/vault/blueprints' },
+      { title: 'Postgres Read-Only Replica Guard & Mutation Staging Queue', href: '/vault/blueprints' },
+      { title: 'Redis Vector Semantic Cache (0.92 Cosine Threshold)', href: '/vault/blueprints' },
+    ]
+  },
+  { 
+    id: 'EM', 
+    label: 'Engineering Manager', 
+    roleTitle: 'Engineering Manager & Tech Lead', 
+    desc: 'Diagnose pull request review bottlenecks, calculate unreviewed vibe coding debt, audit AI coding agent readiness, and validate technical candidate judgment.',
+    remediationTracks: [
+      { trackNumber: 4, title: 'Engineering Organization Design & Talent Topology', href: '/vault/curriculum/tracks/track-04' },
+      { trackNumber: 17, title: 'AI Pair Programming & Code Review Architecture', href: '/vault/curriculum/tracks/track-17' },
+      { trackNumber: 22, title: 'Pull Request Bottleneck Eradication', href: '/vault/curriculum/tracks/track-22' },
+    ],
+    recommendedBlueprints: [
+      { title: 'Autonomous Agent Governance Proxy & ATC Queue', href: '/vault/blueprints' },
+      { title: 'FastAPI Production Scaffold with Structured JSON Logging', href: '/vault/blueprints' },
+    ]
+  },
+  { 
+    id: 'FINOPS', 
+    label: 'FinOps / VP Operations', 
+    roleTitle: 'FinOps Manager & VP of Operations', 
+    desc: 'Benchmark AI unit economics (AUEB), calculate small language model break-even vs cloud APIs, audit cloud repatriation savings, and simulate multi-agent token burn.',
+    remediationTracks: [
+      { trackNumber: 2, title: 'AI Product Economics & Unit Margins', href: '/vault/curriculum/tracks/track-02' },
+      { trackNumber: 10, title: 'Cloud FinOps & Multi-Cloud Inference Arbitrage', href: '/vault/curriculum/tracks/track-10' },
+      { trackNumber: 14, title: 'Local SLMs & Sovereign Inference Infrastructure', href: '/vault/curriculum/tracks/track-14' },
+    ],
+    recommendedBlueprints: [
+      { title: 'FinOps Real-Time Token Budget & Rate Limiting Guard', href: '/vault/blueprints' },
+      { title: 'Redis Vector Semantic Cache (0.92 Cosine Threshold)', href: '/vault/blueprints' },
+    ]
+  },
+];
 
 const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
   // Category 1: Cost Audits & Financial Leaks
@@ -47,6 +137,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-indigo-900',
     roles: ['CTO', 'EM', 'CFO'],
     category: 1,
+    remediationTrack: { trackNumber: 1, title: 'Technical Debt Forensics', href: '/vault/curriculum/tracks/track-01' },
   },
   {
     id: 'cfo-capitalization-audit',
@@ -61,6 +152,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-emerald-900',
     roles: ['CFO'],
     category: 1,
+    remediationTrack: { trackNumber: 6, title: 'R&D Capitalization & Section 174', href: '/vault/curriculum/tracks/track-06' },
   },
   {
     id: 'board-risk-scorecard',
@@ -75,6 +167,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-amber-900',
     roles: ['CFO', 'CTO'],
     category: 1,
+    remediationTrack: { trackNumber: 7, title: 'Board AI Governance', href: '/vault/curriculum/tracks/track-07' },
   },
   {
     id: 'ev-se',
@@ -89,6 +182,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-indigo-900',
     roles: ['CFO', 'CTO'],
     category: 1,
+    remediationTrack: { trackNumber: 19, title: 'M&A Technical Due Diligence', href: '/vault/curriculum/tracks/track-19' },
   },
   {
     id: 'aueb',
@@ -103,6 +197,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-indigo-900',
     roles: ['CFO', 'FINOPS'],
     category: 1,
+    remediationTrack: { trackNumber: 2, title: 'AI Product Economics & Unit Margins', href: '/vault/curriculum/tracks/track-02' },
   },
   {
     id: 'slm-vs-api',
@@ -117,6 +212,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-indigo-900',
     roles: ['FINOPS', 'CFO'],
     category: 1,
+    remediationTrack: { trackNumber: 14, title: 'Local SLMs & Sovereign Inference', href: '/vault/curriculum/tracks/track-14' },
   },
   {
     id: 'fte-displacement',
@@ -131,6 +227,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-indigo-900',
     roles: ['FINOPS', 'CFO'],
     category: 1,
+    remediationTrack: { trackNumber: 4, title: 'Engineering Org Design', href: '/vault/curriculum/tracks/track-04' },
   },
   {
     id: 'cloud-repatriation',
@@ -145,6 +242,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-indigo-900',
     roles: ['FINOPS', 'CTO'],
     category: 1,
+    remediationTrack: { trackNumber: 10, title: 'Cloud FinOps & Multi-Cloud Arbitrage', href: '/vault/curriculum/tracks/track-10' },
   },
   {
     id: 'slm-break-even',
@@ -159,6 +257,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-violet-900',
     roles: ['FINOPS', 'CPO'],
     category: 1,
+    remediationTrack: { trackNumber: 14, title: 'Local SLMs & Sovereign Inference', href: '/vault/curriculum/tracks/track-14' },
   },
   {
     id: 'ai-feature-margin',
@@ -173,6 +272,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-emerald-900',
     roles: ['CPO', 'CFO'],
     category: 1,
+    remediationTrack: { trackNumber: 2, title: 'AI Product Economics & Unit Margins', href: '/vault/curriculum/tracks/track-02' },
   },
   {
     id: 'negative-carry-code-auditor',
@@ -187,6 +287,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-rose-900',
     roles: ['CTO', 'EM'],
     category: 1,
+    remediationTrack: { trackNumber: 1, title: 'Technical Debt Forensics', href: '/vault/curriculum/tracks/track-01' },
   },
   {
     id: 'aari',
@@ -201,6 +302,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-cyan-900',
     roles: ['CTO', 'EM'],
     category: 1,
+    remediationTrack: { trackNumber: 15, title: 'Multi-Agent Orchestration', href: '/vault/curriculum/tracks/track-15' },
   },
   {
     id: 'agent-router',
@@ -216,6 +318,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     roles: ['FINOPS', 'CTO'],
     category: 1,
     isSpan2: true,
+    remediationTrack: { trackNumber: 15, title: 'Multi-Agent Orchestration', href: '/vault/curriculum/tracks/track-15' },
   },
 
   // Category 2: Security Leaks & Rogue AI
@@ -233,6 +336,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-indigo-900',
     roles: ['CTO'],
     category: 2,
+    remediationTrack: { trackNumber: 8, title: 'Runtime AI Safety & Boundaries', href: '/vault/curriculum/tracks/track-08' },
   },
   {
     id: 'exogram-analyze',
@@ -248,6 +352,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-indigo-900',
     roles: ['CTO'],
     category: 2,
+    remediationTrack: { trackNumber: 8, title: 'Runtime AI Safety & Boundaries', href: '/vault/curriculum/tracks/track-08' },
   },
   {
     id: 'mcp-security-auditor',
@@ -262,6 +367,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-rose-900',
     roles: ['CTO'],
     category: 2,
+    remediationTrack: { trackNumber: 8, title: 'Runtime AI Safety & Boundaries', href: '/vault/curriculum/tracks/track-08' },
   },
   {
     id: 'shadow-ai',
@@ -276,6 +382,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-indigo-900',
     roles: ['CTO', 'CFO'],
     category: 2,
+    remediationTrack: { trackNumber: 12, title: 'Enterprise Security & Shadow AI', href: '/vault/curriculum/tracks/track-12' },
   },
   {
     id: 'prompt-injection-sandbox',
@@ -290,6 +397,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-indigo-900',
     roles: ['CTO'],
     category: 2,
+    remediationTrack: { trackNumber: 8, title: 'Runtime AI Safety & Boundaries', href: '/vault/curriculum/tracks/track-08' },
   },
   {
     id: 'rag-chunking-visualizer',
@@ -305,6 +413,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     roles: ['CPO', 'CTO'],
     category: 2,
     isSpan2: true,
+    remediationTrack: { trackNumber: 11, title: 'Prompt vs Fine-Tuning vs RAG', href: '/vault/curriculum/tracks/track-11' },
   },
 
   // Category 3: Team Hiring & Engineering Speed
@@ -321,6 +430,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-indigo-900',
     roles: ['EM', 'CTO'],
     category: 3,
+    remediationTrack: { trackNumber: 5, title: 'Technical Interview Architecture', href: '/vault/curriculum/tracks/track-05' },
   },
   {
     id: 'code-review-bottleneck-calc',
@@ -335,6 +445,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-cyan-900',
     roles: ['EM', 'CTO'],
     category: 3,
+    remediationTrack: { trackNumber: 22, title: 'Pull Request Bottleneck Eradication', href: '/vault/curriculum/tracks/track-22' },
   },
   {
     id: 'spec-quality-scorecard',
@@ -349,6 +460,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-emerald-900',
     roles: ['CPO', 'EM'],
     category: 3,
+    remediationTrack: { trackNumber: 3, title: 'AI Product Strategy & Feature Defensibility', href: '/vault/curriculum/tracks/track-03' },
   },
   {
     id: 'career-pathing',
@@ -363,6 +475,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-indigo-900',
     roles: ['EM', 'CTO'],
     category: 3,
+    remediationTrack: { trackNumber: 16, title: 'Engineering Levels & Career Economics', href: '/vault/curriculum/tracks/track-16' },
   },
 
   // Category 4: Executive Leadership (Directors On Up)
@@ -379,6 +492,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-indigo-900',
     roles: ['CFO', 'CPO', 'CTO'],
     category: 4,
+    remediationTrack: { trackNumber: 7, title: 'Board AI Governance & Fiduciary Oversight', href: '/vault/curriculum/tracks/track-07' },
   },
   {
     id: 'cpo-product-portfolio-matrix',
@@ -393,6 +507,7 @@ const DIAGNOSTIC_TOOLS: DiagnosticToolItem[] = [
     tagColor: 'text-purple-900',
     roles: ['CPO'],
     category: 4,
+    remediationTrack: { trackNumber: 3, title: 'AI Product Strategy & Feature Defensibility', href: '/vault/curriculum/tracks/track-03' },
   },
 ];
 
@@ -431,9 +546,19 @@ export default function ToolsContent() {
           <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">
             {tool.description}
           </p>
-          <span className={`${tool.ctaColor} text-xs font-bold uppercase tracking-wider`}>
-            {tool.cta}
-          </span>
+          <div className="flex items-center justify-between mt-auto pt-2">
+            <span className={`${tool.ctaColor} text-xs font-bold uppercase tracking-wider`}>
+              {tool.cta}
+            </span>
+          </div>
+          {tool.remediationTrack && (
+            <div className="mt-3 pt-2.5 border-t border-zinc-200/90 flex flex-wrap items-center justify-between gap-1 text-[10px] font-mono">
+              <span className="text-zinc-600 font-semibold uppercase tracking-wider">Moat Remediation:</span>
+              <span className="text-indigo-900 font-bold">
+                Track {tool.remediationTrack.trackNumber}: {tool.remediationTrack.title}
+              </span>
+            </div>
+          )}
         </div>
       </ShineBorder>
     );
@@ -559,17 +684,67 @@ export default function ToolsContent() {
                 })}
               </div>
 
-              {/* Active Lens Executive Briefing */}
-              {activeRole !== 'ALL' && (
-                <div className="mt-4 p-4 rounded-xl bg-cyan-50/80 border border-cyan-200 text-xs">
-                  <div className="font-bold text-cyan-950 uppercase tracking-wider font-mono mb-1">
-                    Executive Lens: {ROLES.find(r => r.id === activeRole)?.roleTitle}
+              {/* Active Lens Executive Briefing & Closed-Loop Remediation Pathways */}
+              {activeRole !== 'ALL' && (() => {
+                const currentRole = ROLES.find(r => r.id === activeRole);
+                if (!currentRole) return null;
+                return (
+                  <div className="mt-4 p-5 rounded-2xl bg-gradient-to-br from-cyan-50/90 to-indigo-50/60 border border-cyan-200/90 text-xs shadow-sm">
+                    <div className="font-bold text-cyan-950 uppercase tracking-wider font-mono mb-1.5 flex items-center justify-between flex-wrap gap-2">
+                      <span>Executive Lens: {currentRole.roleTitle}</span>
+                      <span className="text-[10px] text-indigo-900 bg-white/80 px-2.5 py-0.5 rounded-full border border-indigo-200 font-semibold">
+                        Sovereign 5-Step Asset Engine Bridge
+                      </span>
+                    </div>
+                    <p className="text-zinc-800 leading-relaxed font-semibold mb-4">
+                      {currentRole.desc}
+                    </p>
+
+                    {/* Closed-Loop Remediation Bridge: Tracks & Blueprints */}
+                    <div className="pt-4 border-t border-cyan-200/70 grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {currentRole.remediationTracks && currentRole.remediationTracks.length > 0 && (
+                        <div>
+                          <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-950 mb-2">
+                            Recommended Sovereign Curriculum Tracks:
+                          </div>
+                          <div className="space-y-1.5">
+                            {currentRole.remediationTracks.map(t => (
+                              <Link
+                                key={t.trackNumber}
+                                href={t.href}
+                                className="flex items-center justify-between p-2 rounded-lg bg-white/90 border border-indigo-100 hover:border-indigo-300 transition text-zinc-900 hover:text-indigo-900 font-semibold"
+                              >
+                                <span>Track {t.trackNumber}: {t.title}</span>
+                                <span className="text-indigo-600 font-bold ml-1">&rarr;</span>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {currentRole.recommendedBlueprints && currentRole.recommendedBlueprints.length > 0 && (
+                        <div>
+                          <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-950 mb-2">
+                            Deployable Implementation Blueprints:
+                          </div>
+                          <div className="space-y-1.5">
+                            {currentRole.recommendedBlueprints.map((bp, idx) => (
+                              <Link
+                                key={idx}
+                                href={bp.href}
+                                className="flex items-center justify-between p-2 rounded-lg bg-white/90 border border-cyan-100 hover:border-cyan-300 transition text-zinc-900 hover:text-cyan-900 font-semibold"
+                              >
+                                <span>{bp.title}</span>
+                                <span className="text-cyan-700 font-bold ml-1">&rarr;</span>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <p className="text-zinc-800 leading-relaxed font-semibold">
-                    {ROLES.find(r => r.id === activeRole)?.desc}
-                  </p>
-                </div>
-              )}
+                );
+              })()}
             </div>
 
             {/* Category 1 */}
