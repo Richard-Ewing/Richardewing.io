@@ -12,12 +12,16 @@ Write for non-technical readers unless technical language is genuinely necessary
 Be human, genuine, personable as fuck.
 Do not write to sound impressive. Write to communicate something worth saying.
 
-### The Audience: The Whole Floor, Not Just The Server Room
+### The Audience: The Whole Floor (Use Actual Job Titles, Never Generic Labels)
 
-Our audience is far broader than technical architects or engineers:
-- **The Entire C-Suite**: The CEO worried about company survival and not looking foolish; the CFO staring at runaway AI subscriptions and cloud bills wondering where the ROI is; the COO trying to stop operational chaos and broken handoffs; the CMO and CPO protecting brand trust.
-- **Directors and VPs**: The people trapped between executive mandates ("we need an AI strategy by next month") and the messy reality on the ground.
-- **Middle Managers and Team Leads**: The frontline operators who actually manage real people. They deal with staff anxiety, broken tools, bad data, half-baked software, and endless meetings where nobody knows what they are doing.
+Do NOT use lazy umbrella terms like "middle manager" or "the C-suite." Always insert the actual, specific titles that real humans hold:
+- **Executive Leadership (Specific Titles)**: Chief Executive Officer (CEO), Chief Financial Officer (CFO), Chief Operating Officer (COO), Chief Marketing Officer (CMO), Chief Product Officer (CPO), Chief Information Officer (CIO), General Counsel / Chief Legal Officer (CLO), Head of Risk.
+- **Vice Presidents & Directors (Specific Titles)**: VP of Operations, Director of Product, VP of Customer Experience, Director of Finance, VP of Sales Ops, Head of People / HR, Director of IT.
+- **Frontline People & Operations Managers (Specific Titles)**: Customer Support Lead / Manager, Product Operations Manager, Engineering Manager, Marketing Operations Manager, IT Service Desk Manager, Sales Operations Lead, Project / Program Manager, Team Lead.
+
+Naming the specific title grounds the situation immediately:
+*"If you are a Customer Support Manager reviewing 40 tickets a day..."* hits ten times harder than *"If you are a middle manager..."*
+*"If you are the CFO staring at an unexpected $40,000 SaaS renewal..."* hits ten times harder than *"If you are an executive..."*
 
 ### The Non-Engineering Mandate
 
