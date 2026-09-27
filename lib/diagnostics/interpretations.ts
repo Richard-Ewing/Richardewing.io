@@ -1,6 +1,6 @@
 import { PDIScoreMetrics } from "./scoring";
 
-export type Persona = 'Founder' | 'CPO' | 'VP Eng' | 'CFO';
+export type Persona = 'Founder' | 'CPO' | 'VP Eng' | 'CFO' | 'Engineering Manager' | 'FinOps Manager';
 
 export interface PersonaInsight {
     headline: string;
@@ -49,7 +49,7 @@ export function getPersonaInsight(persona: Persona, results: PDIScoreMetrics, sa
             const seniorHours = waste / (salaryFallback / 2080); // Approximate hours wasted
             if (score < 50) return {
                 headline: `${Math.round(seniorHours).toLocaleString()} hours/year of senior IC time is wasted.`,
-                detail: `Your team is doing ${maintenance}% maintenance work. This is the #1 cause of senior engineer attrition—they didn't sign up to be janitors.`,
+                detail: `Your team is doing ${maintenance}% maintenance work. This is the #1 cause of senior engineer attrition: they didn't sign up to be janitors.`,
                 action: 'Identify the debt clusters and make a case for dedicated reduction sprints.'
             };
             return {
@@ -69,6 +69,30 @@ export function getPersonaInsight(persona: Persona, results: PDIScoreMetrics, sa
                 headline: `Engineering ROI: ${(roi * 100).toFixed(0)} cents per dollar.`,
                 detail: `This is within healthy bounds for a growth-stage company. Continue monitoring quarterly.`,
                 action: 'Set up quarterly PDI tracking as a financial KPI.'
+            };
+
+        case 'Engineering Manager':
+            if (score < 50) return {
+                headline: 'Pull requests are stuck in review queues for days.',
+                detail: `With ${maintenance}% of sprint bandwidth absorbed by maintenance and patch churn, senior ICs lose 14+ hours weekly reviewing uncurated code instead of shipping roadmap features.`,
+                action: 'Enforce atomic pull requests under 200 lines and automate static quality gates.'
+            };
+            return {
+                headline: 'Sprint velocity and review throughput are balanced.',
+                detail: `With ${results.metrics.growth}% dedicated to new value, review queues turn around in under 24 hours without burning out tech leads.`,
+                action: 'Protect current PR review SLAs and guard against unverified AI code dumps.'
+            };
+
+        case 'FinOps Manager':
+            if (score < 50) return {
+                headline: `Unbudgeted maintenance drag is burning ${formatMoney(waste)}/year.`,
+                detail: `Maintenance overhead and zombie infrastructure are inflating cloud operating expenses by ${(maintenance).toFixed(0)}%, directly lowering software gross margins.`,
+                action: 'Deploy semantic vector caching and establish hard per-tenant usage quotas.'
+            };
+            return {
+                headline: 'Infrastructure unit economics are operating within safe bounds.',
+                detail: 'Compute spend is directly accretive to gross margin with minimal zombie workload drag.',
+                action: 'Monitor quarterly token volume curves and set alert triggers at 15% variance.'
             };
 
         default:

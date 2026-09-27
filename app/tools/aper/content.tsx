@@ -4,7 +4,7 @@ import { useState, useEffect, Suspense } from 'react';
 import { useQueryState, parseAsString, parseAsStringLiteral } from 'nuqs';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
-import { TrendingUp, TrendingDown, AlertTriangle, DollarSign, Lock, Zap, Users, Target, Mail, ArrowRight, Cpu, Clock, Building, Building2, Skull, Share2, Check } from 'lucide-react';
+import { TrendingUp, TrendingDown, AlertTriangle, DollarSign, Lock, Zap, Users, Target, Mail, ArrowRight, Cpu, Clock, Building, Building2, Skull, Share2, Check, Activity } from 'lucide-react';
 import Link from 'next/link';
 import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
@@ -70,7 +70,7 @@ function APERToolContent() {
     // Persona State
     const [persona, setPersona] = useQueryState<Persona>(
         'persona',
-        parseAsStringLiteral(['Founder', 'CPO', 'VP Eng', 'CFO'] as const).withDefault('Founder')
+        parseAsStringLiteral(['Founder', 'CPO', 'VP Eng', 'CFO', 'Engineering Manager', 'FinOps Manager'] as const).withDefault('Founder')
     );
 
     // Progressive Disclosure State
@@ -215,6 +215,8 @@ function APERToolContent() {
                                                 { id: 'CPO', label: 'CPO/Product', icon: Users },
                                                 { id: 'VP Eng', label: 'VP Engineering', icon: Cpu },
                                                 { id: 'CFO', label: 'CFO/Finance', icon: DollarSign },
+                                                { id: 'Engineering Manager', label: 'Eng Manager', icon: Activity },
+                                                { id: 'FinOps Manager', label: 'FinOps / Ops', icon: Zap },
                                             ]}
                                         />
                                 </div>

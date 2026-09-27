@@ -67,6 +67,30 @@ export const getAuebPersonaInsight = (persona: Persona, results: AuebScoreMetric
                 action: 'Set up automated margin tracking and alerts.'
             };
 
+        case 'Engineering Manager':
+            if (margin < 50) return {
+                headline: 'Inference latency and token churn are inflating sprint review overhead.',
+                detail: `Model bills cost ${formatMoney(monthlyCost)}/month with gross margin at ${margin.toFixed(0)}%. Engineers are losing sprint bandwidth babysitting flaky prompts and debugging synthetic code regressions.`,
+                action: 'Implement prompt regression testing and set deterministic fallback tiers.'
+            };
+            return {
+                headline: 'Model integration is technically stable and performant.',
+                detail: `${margin.toFixed(0)}% gross margin indicates your model routing and token consumption are well-contained within sprint velocity expectations.`,
+                action: 'Document model routing benchmarks in team engineering guidelines.'
+            };
+
+        case 'FinOps Manager':
+            if (margin < 50) return {
+                headline: `AI COGS is running at ${(100 - margin).toFixed(0)}% of revenue.`,
+                detail: `At ${formatMoney(monthlyCost)}/month, inference spend is exceeding gross margin tolerance. Uncached repeat prompts and high-reasoning model routing are driving unforecasted OpEx.`,
+                action: 'Deploy semantic edge caching and route deterministic queries to small language models.'
+            };
+            return {
+                headline: 'AI unit economics are compliant with gross margin targets.',
+                detail: `Gross margin at ${margin.toFixed(0)}% leaves healthy buffer above the 60% SaaS threshold. Model spend scales sub-linearly with user volume.`,
+                action: 'Set automated per-customer anomaly alerts at 20% weekly burn increase.'
+            };
+
         default:
             return { headline: '', detail: '', action: '' };
     }

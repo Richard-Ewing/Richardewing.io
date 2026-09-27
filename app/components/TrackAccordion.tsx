@@ -73,6 +73,18 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                         );
                     })()}
                     <h2 className={`text-xl sm:text-2xl font-grotesk font-bold ${textMap[track.color]} transition-colors`}>{track.title}</h2>
+                    {track.targetRoles && track.targetRoles.length > 0 && (
+                        <div className="flex flex-wrap items-center gap-1.5 mt-2 mb-1">
+                            <span className="text-[9px] font-mono font-bold text-zinc-500 uppercase tracking-widest mr-1">
+                                Executive Lens:
+                            </span>
+                            {track.targetRoles.map((role: string) => (
+                                <span key={role} className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-zinc-100 text-zinc-800 border border-zinc-300">
+                                    {role}
+                                </span>
+                            ))}
+                        </div>
+                    )}
                     <p className={`text-sm font-semibold sm:text-base text-zinc-950 mt-2 line-clamp-2 sm:line-clamp-none ${isOpen ? '' : 'hidden sm:block'}`}>
                         {track.description}
                     </p>
@@ -102,6 +114,37 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                     {completionCount > 0 && (
                         <div className="w-full h-1.5 bg-zinc-200 overflow-hidden rounded-full mb-8 border border-zinc-500">
                             <div className={`h-full bg-emerald-500 transition-all duration-500 ${progressStyles[`w_${Math.round(progressPercent)}`]}`} />
+                        </div>
+                    )}
+
+                    {track.pipelineSpine && (
+                        <div className="mb-6 p-4 rounded-xl bg-indigo-50/70 border border-indigo-200">
+                            <div className="text-[10px] font-mono font-bold text-indigo-950 uppercase tracking-widest mb-2 flex items-center justify-between">
+                                <span>Sovereign Asset Engine Spine (5-Step Closed Loop)</span>
+                                <span className="text-indigo-600 font-semibold">Research to Production</span>
+                            </div>
+                            <div className="grid grid-cols-1 sm:grid-cols-5 gap-2 text-xs">
+                                <div className="p-2.5 rounded-lg bg-white border border-indigo-100">
+                                    <div className="font-mono text-[9px] text-cyan-800 font-bold uppercase">1. Research</div>
+                                    <div className="font-semibold text-zinc-900 text-xs mt-0.5">{track.pipelineSpine.research}</div>
+                                </div>
+                                <div className="p-2.5 rounded-lg bg-white border border-indigo-100">
+                                    <div className="font-mono text-[9px] text-violet-800 font-bold uppercase">2. Concept</div>
+                                    <div className="font-semibold text-zinc-900 text-xs mt-0.5">{track.pipelineSpine.concept}</div>
+                                </div>
+                                <div className="p-2.5 rounded-lg bg-white border border-indigo-100">
+                                    <div className="font-mono text-[9px] text-amber-800 font-bold uppercase">3. Framework</div>
+                                    <div className="font-semibold text-zinc-900 text-xs mt-0.5">{track.pipelineSpine.framework}</div>
+                                </div>
+                                <div className="p-2.5 rounded-lg bg-white border border-indigo-100">
+                                    <div className="font-mono text-[9px] text-emerald-800 font-bold uppercase">4. Diagnostic</div>
+                                    <div className="font-semibold text-zinc-900 text-xs mt-0.5">{track.pipelineSpine.diagnostic}</div>
+                                </div>
+                                <div className="p-2.5 rounded-lg bg-white border border-indigo-100">
+                                    <div className="font-mono text-[9px] text-indigo-800 font-bold uppercase">5. Implementation</div>
+                                    <div className="font-semibold text-zinc-900 text-xs mt-0.5">{track.pipelineSpine.implementation}</div>
+                                </div>
+                            </div>
                         </div>
                     )}
                     

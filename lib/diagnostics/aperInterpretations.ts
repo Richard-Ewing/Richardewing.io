@@ -52,6 +52,21 @@ export const getAperPersonaInsight = (persona: Persona, results: AperScoreMetric
                 action: `${engineeringRoi < 3 ? 'Model headcount scenarios for budget planning.' : 'Maintain discipline as you scale.'}`
             };
 
+        case 'Engineering Manager':
+            const meetingHours = results.coordinationTax * 40 / 100;
+            return {
+                headline: `Your engineers spend ${meetingHours.toFixed(1)} hrs/week in coordination overhead.`,
+                detail: `High coordination load reduces focus blocks for deep architecture. At ${results.coordinationTax.toFixed(0)}% coordination tax, delivery cadence slows down despite high headcount.`,
+                action: 'Streamline team topologies and eliminate status sync meetings in favor of async artifacts.'
+            };
+
+        case 'FinOps Manager':
+            return {
+                headline: `Engineering efficiency ratio is ${results.multiplier.toFixed(2)}x ARR return.`,
+                detail: `Average cost per engineer is ${formatMoney(results.costPerEng)}, with annualized revenue return of ${formatMoney(results.aper)} per seat.`,
+                action: 'Audit cloud infrastructure allocations per engineering team to uncover non-performing cost centers.'
+            };
+
         default:
             return { headline: '', detail: '', action: '' };
     }

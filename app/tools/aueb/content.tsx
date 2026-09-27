@@ -101,7 +101,7 @@ function AUEBToolContent() {
     // Persona State
     const [persona, setPersona] = useQueryState<Persona>(
         'persona',
-        parseAsStringLiteral(['Founder', 'CPO', 'VP Eng', 'CFO'] as const).withDefault('Founder')
+        parseAsStringLiteral(['Founder', 'CPO', 'VP Eng', 'CFO', 'Engineering Manager', 'FinOps Manager'] as const).withDefault('Founder')
     );
     const [step, setStep] = useState(1);
     const [isSaving, setIsSaving] = useState(false);
@@ -342,6 +342,8 @@ function AUEBToolContent() {
                                         { id: 'CPO', label: 'CPO/Product', icon: Users },
                                         { id: 'VP Eng', label: 'VP Engineering', icon: Cpu },
                                         { id: 'CFO', label: 'CFO/Finance', icon: DollarSign },
+                                        { id: 'Engineering Manager', label: 'Engineering Manager', icon: Activity },
+                                        { id: 'FinOps Manager', label: 'FinOps / VP Ops', icon: Zap },
                                     ].map((p: any) => (
                                         <button
                                             key={p.id}

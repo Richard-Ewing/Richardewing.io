@@ -1,7 +1,15 @@
 export const tracks = [
     {
         title: 'Engineering Economics Foundations',
-        subtitle: 'Track 1  -  Foundations',
+        targetRoles: ["CFO","VP of Engineering","Director of Finance","Engineering Manager"],
+        pipelineSpine: {
+                  "research": "CIO.com R&D Capital Benchmark Studies",
+                  "concept": "Capitalization Asymmetry",
+                  "framework": "PDI Technical Debt Conversion",
+                  "diagnostic": "PDI Calculator (/tools/pdi)",
+                  "implementation": "Quarterly R&D Capital Audit"
+        },
+        subtitle: 'Track 1: Foundations',
         description: 'During audits of over 200 software organizations, I saw a persistent disconnect between engineering velocity and board-level financial objectives. This track establishes the foundational economic frameworks to translate engineering activity into CFO-ready capital allocation metrics.',
         modules: [
             { id: '1-1', name: '1.1 Engineering Productivity Metrics', topics: 'DORA Metrics vs APER, Feature Velocity, Board-Ready Reporting', href: '/vault/curriculum/tracks/engineering-economics/1-1' },
@@ -27,8 +35,16 @@ export const tracks = [
         tools: [{ name: 'PDI Calculator', href: '/tools/pdi' }, { name: 'APER Calculator', href: '/tools/aper' }],
     },
     {
-        title: 'AI AI Economics',
-        subtitle: 'Track 2  -  AI-First (Flagship)',
+        title: 'AI Product Economics & Unit Margins',
+        targetRoles: ["CFO","Chief Product Officer","FinOps Manager","VP of Operations"],
+        pipelineSpine: {
+                  "research": "Built In LLM Inference Margin Telemetry",
+                  "concept": "Inference Economics & Variable COGS",
+                  "framework": "Inference Dividend Model",
+                  "diagnostic": "AUEB Calculator (/tools/aueb)",
+                  "implementation": "Exogram Vector Semantic Proxy"
+        },
+        subtitle: 'Track 2: AI-First (Flagship)',
         description: 'While tracking AWS billing spikes for scaling AI startups, I witnessed several companies compress their gross margins by 40% overnight. This track provides the core unit economics frameworks to audit inference costs, implement model routing, and protect your SaaS margins from run-away AI COGS.',
         modules: [
             { id: '2-1', name: '2.1 AI COGS Analysis', topics: 'AI COGS Equation, Token Economics, API Pricing Architecture', href: '/vault/curriculum/tracks/ai-product-economics/2-1' },
@@ -56,7 +72,15 @@ export const tracks = [
     },
     {
         title: 'R&D Capital Management',
-        subtitle: 'Track 3  -  Executive',
+        targetRoles: ["CEO","CFO","CTO","Audit Committee Chair"],
+        pipelineSpine: {
+                  "research": "Private Equity Technical Due Diligence Audits",
+                  "concept": "Technical Insolvency Date",
+                  "framework": "4-Quadrant Board Reporting",
+                  "diagnostic": "EV-SE Valuation Calculator (/tools/ev-se)",
+                  "implementation": "Executive Capital Allocation Advisory"
+        },
+        subtitle: 'Track 3: Executive',
         description: 'While leading diligence for private equity acquisitions, I repeatedly uncovered hidden technical liabilities that compromised post-close business outcomes. This track teaches CTOs and PE partners to conduct forensic audits, quantify software assets in dollar terms, and report technical health to the board with absolute clarity.',
         modules: [
             { id: '3-1', name: '3.1 R&D Capital Audit Methodology', topics: 'Discovery Phase, Technical Assessment, Economic Modeling', href: '/vault/curriculum/tracks/rd-capital-management/3-1' },
@@ -85,7 +109,15 @@ export const tracks = [
     },
     {
         title: 'Capstone & Applied Practice',
-        subtitle: 'Track 4  -  Capstone',
+        targetRoles: ["CEO","CTO","VP of Engineering","Lead System Architect"],
+        pipelineSpine: {
+                  "research": "Multi-Stage Startup & PE Portfolio Telemetry",
+                  "concept": "Continuous Capital Efficiency",
+                  "framework": "Full R&D Audit Playbook",
+                  "diagnostic": "APER Calculator (/tools/aper)",
+                  "implementation": "Enterprise Modernization Blueprint"
+        },
+        subtitle: 'Track 4: Capstone',
         description: 'After executing R&D audits for multi-million dollar portfolios, I synthesized the most common operational friction points into practical case studies. This capstone track applies these lessons to real-world scenarios - from seed-stage burn rate management to full portfolio due diligence.',
         modules: [
             { id: '4-1', name: '4.1 Startup Engineering Economics', topics: 'Runway-Aware Engineering, MVP Economics, Series A Positioning', href: '/vault/curriculum/tracks/capstone/4-1' },
@@ -111,7 +143,15 @@ export const tracks = [
     },
     {
         title: 'Product Management Economics',
-        subtitle: 'Track 5  -  Product',
+        targetRoles: ["Chief Product Officer","Product Ops Lead","VP of Product"],
+        pipelineSpine: {
+                  "research": "Mind the Product Financial Metrics Study",
+                  "concept": "Feature Margin Decay",
+                  "framework": "Feature Level P&L Protocol",
+                  "diagnostic": "AI Feature Margin Calculator (/tools/ai-feature-margin)",
+                  "implementation": "Pre-Code Social Pain Mining"
+        },
+        subtitle: 'Track 5: Product',
         description: 'Product economics for PMs and CPOs: feature prioritization using economic models, pricing strategy, churn economics, and the bridge between product and finance. Nobody else teaches PM through the P&L lens.',
         modules: [
             { id: '5-1', name: '5.1 Unit Economics & Cloud COGS', topics: 'Pure Cloud COGS, Shared Cluster Allocation, Per-Tenant Unit Modeling', href: '/vault/curriculum/tracks/product-economics/5-1' },
@@ -137,7 +177,15 @@ export const tracks = [
     },
     {
         title: 'AI Operations Economics & Cost Governance',
-        subtitle: 'Track 6  -  AI Ops',
+        targetRoles: ["FinOps Manager","VP of Operations","Cloud Infrastructure Director"],
+        pipelineSpine: {
+                  "research": "Cloud Runaway & GPU Billing Field Audits",
+                  "concept": "Synthetic COGS",
+                  "framework": "Dynamic Model Tier Routing",
+                  "diagnostic": "SLM vs API Calculator (/tools/slm-vs-api)",
+                  "implementation": "Runtime Edge Interception"
+        },
+        subtitle: 'Track 6: AI Ops',
         description: 'The economics of deploying, governing, and scaling AI systems: model selection, prompt engineering ROI, AI compliance costs, agentic automation, and vendor comparison. Connects to Exogram and EAAP.',
         modules: [
             { id: '6-1', name: '6.1 AI Model Selection Economics', topics: 'Foundation Model Costs, Inference Pricing, Quality-Cost Tradeoffs', href: '/vault/curriculum/tracks/ai-operations/6-1' },
@@ -164,7 +212,15 @@ export const tracks = [
     },
     {
         title: 'Cloud FinOps & AI Cost Management',
-        subtitle: 'Track 7  -  FinOps',
+        targetRoles: ["FinOps Manager","Director of Infrastructure","CFO"],
+        pipelineSpine: {
+                  "research": "Hyperscaler Egress & GPU Reservation Studies",
+                  "concept": "The Turing Tax",
+                  "framework": "Cloud Repatriation Formula",
+                  "diagnostic": "Cloud Repatriation Calculator (/tools/cloud-repatriation)",
+                  "implementation": "Dedicated Inference Cluster Topology"
+        },
+        subtitle: 'Track 7: FinOps',
         description: 'The economics of cloud cost management, optimization, and FinOps practice. 98% of FinOps teams now manage AI spend. AI cost management is the #1 capability teams plan to add in 2026.',
         modules: [
             { id: '7-1', name: '7.1 FinOps Fundamentals', topics: 'FinOps Maturity, Stakeholder Alignment, Team Sizing', href: '/vault/curriculum/tracks/cloud-finops/7-1' },
@@ -190,7 +246,15 @@ export const tracks = [
     },
     {
         title: 'AI Pricing Strategy & Monetization Economics',
-        subtitle: 'Track 8  -  NEW',
+        targetRoles: ["Chief Product Officer","CFO","VP of Growth"],
+        pipelineSpine: {
+                  "research": "SaaS Pricing Transition Telemetry",
+                  "concept": "Power User Liability",
+                  "framework": "Value-Metric Hedging Framework",
+                  "diagnostic": "AUEB Margin Calculator (/tools/aueb)",
+                  "implementation": "Dynamic Credit Metering Gateway"
+        },
+        subtitle: 'Track 8: NEW',
         description: '37% of AI companies plan to change their pricing model in the next 12 months. Outcome-based pricing jumped from 2% to 18% in six months. Teach the economics of pricing AI products.',
         modules: [
             { id: '8-1', name: '8.1 AI Pricing Model Taxonomy', topics: 'Usage-Based vs Outcome-Based vs Subscription, Hybrid Models', href: '/vault/curriculum/tracks/ai-pricing/8-1' },
@@ -211,7 +275,7 @@ export const tracks = [
     },
     {
         title: 'Technical Debt as Financial Liability',
-        subtitle: 'Track 9  -  NEW',
+        subtitle: 'Track 9: NEW',
         description: 'You already publish on calculating technical debt\'s EBITDA impact for PE due diligence. Direct buyer intent from PE firms, CFOs, and VPEs preparing for acquisitions or audits.',
         modules: [
             { id: '9-1', name: '9.1 Technical Debt on the Balance Sheet', topics: 'GAAP Treatment, Liability Classification, Audit Disclosure', href: '/vault/curriculum/tracks/tech-debt-liability/9-1' },
@@ -232,7 +296,15 @@ export const tracks = [
     },
     {
         title: 'AI Due Diligence for Investors & Acquirers',
-        subtitle: 'Track 10  -  NEW',
+        targetRoles: ["Managing Director","PE Operating Partner","CTO"],
+        pipelineSpine: {
+                  "research": "PE & VC Portfolio Forensics",
+                  "concept": "Codebase Intimacy vs Vibe Debt",
+                  "framework": "Technical Valuation Haircut Model",
+                  "diagnostic": "Board Risk Scorecard (/tools/board-risk-scorecard)",
+                  "implementation": "Pre-Close Technology Warranty Ledger"
+        },
+        subtitle: 'Track 10: NEW',
         description: 'PE firms, corporate development teams, and VCs evaluating AI companies need this. A natural extension of R&D Capital Management with a clear buyer profile.',
         modules: [
             { id: '10-1', name: '10.1 AI Company Valuation Frameworks', topics: 'ARR Multiples for AI, Revenue Quality, Gross Margin Analysis', href: '/vault/curriculum/tracks/ai-due-diligence/10-1' },
@@ -253,7 +325,15 @@ export const tracks = [
     },
     {
         title: 'Economics of Build vs. Buy for AI',
-        subtitle: 'Track 11  -  NEW',
+        targetRoles: ["CTO","VP of Engineering","CFO"],
+        pipelineSpine: {
+                  "research": "Open Source vs Frontier API TCO Analyses",
+                  "concept": "Commoditization Gradient",
+                  "framework": "SLM Distillation Matrix",
+                  "diagnostic": "SLM Break-Even Calculator (/tools/slm-break-even)",
+                  "implementation": "Private LoRA Fine-Tuning Pipeline"
+        },
+        subtitle: 'Track 11: NEW',
         description: 'Every engineering leader faces this right now. Frame it through your economic lens: TCO modeling, vendor lock-in costs, inference arbitrage, and the hidden costs of "free" open-source models.',
         modules: [
             { id: '11-1', name: '11.1 The Build vs Buy Decision Framework', topics: 'Total Cost of Ownership, Core vs Context, Strategic Differentiation Test', href: '/vault/curriculum/tracks/ai-build-vs-buy/11-1' },
@@ -274,7 +354,15 @@ export const tracks = [
     },
     {
         title: 'Career Capital Economics',
-        subtitle: 'Track 12  -  NEW',
+        targetRoles: ["Staff IC","Engineering Manager","Director of Engineering"],
+        pipelineSpine: {
+                  "research": "CareerWin.ai Compensation Telemetry",
+                  "concept": "The AI Capability Paradox",
+                  "framework": "Executive Authority Ladder",
+                  "diagnostic": "Career Pathing Diagnostic (/tools/career-pathing)",
+                  "implementation": "Strategic Career Navigation Engine"
+        },
+        subtitle: 'Track 12: NEW',
         description: 'Stop being a cost center. Learn to quantify your business impact, negotiate compensation using economic frameworks, and prove your dollar value at every level  -  from junior IC to Staff Engineer.',
         modules: [
             { id: '12-1', name: '12.1 Your Revenue-Per-Engineer Contribution', topics: 'Calculating APER Impact, Attributing Business Value, Beyond Story Points', href: '/vault/curriculum/tracks/career-capital/12-1' },
@@ -295,7 +383,15 @@ export const tracks = [
     },
     {
         title: 'Engineering-to-Executive Economics',
-        subtitle: 'Track 13  -  NEW',
+        targetRoles: ["Engineering Manager","Director of Engineering","VP of Engineering"],
+        pipelineSpine: {
+                  "research": "CIO.com \"Why Your CFO Hates Agile\"",
+                  "concept": "Language Translation Deficit",
+                  "framework": "EBITDA Bridge Framework",
+                  "diagnostic": "Audit Interview Tool (/tools/audit-interview)",
+                  "implementation": "CFO-Ready Board Slides"
+        },
+        subtitle: 'Track 13: NEW',
         description: 'The economics translation layer for Directors, VPs, and aspiring CTOs. Learn to think in P&L, present to boards, own budgets, and position yourself as a revenue-driving executive  -  not a technical manager.',
         modules: [
             { id: '13-1', name: '13.1 The Language of the Boardroom', topics: 'EBITDA Translation, Margin Frameworks, Executive Vocabulary', href: '/vault/curriculum/tracks/exec-economics/13-1' },
@@ -316,7 +412,7 @@ export const tracks = [
     },
     {
         title: 'The Economics of Leadership (Not Management)',
-        subtitle: 'Track 14  -  NEW',
+        subtitle: 'Track 14: NEW',
         description: 'Leadership is a skill, not a rank. Companies train you for the technical job, then promote you to a job they never teach. That\'s why we get managers, not leaders. This track teaches the economics of becoming one.',
         modules: [
             { id: '14-1', name: '14.1 Leadership vs Management: The Economic Distinction', topics: 'The Promotion Gap, Manager Cost vs Leader ROI, Skill vs Rank', href: '/vault/curriculum/tracks/leadership-economics/14-1' },
@@ -337,7 +433,7 @@ export const tracks = [
     },
     {
         title: 'The Economics of Remote & Distributed Teams',
-        subtitle: 'Track 15  -  NEW',
+        subtitle: 'Track 15: NEW',
         description: 'Remote work isn\'t a perk  -  it\'s an economic model with measurable costs, arbitrage opportunities, and hidden taxes. This track gives you the financial framework to build, manage, and optimize distributed engineering organizations.',
         modules: [
             { id: '15-1', name: '15.1 Remote vs Office: Total Cost Analysis', topics: 'Office TCO, Remote Infrastructure Costs, Net Savings Calculation', href: '/vault/curriculum/tracks/remote-economics/15-1' },
@@ -358,7 +454,15 @@ export const tracks = [
     },
     {
         title: 'M&A Technical Integration Economics',
-        subtitle: 'Track 16  -  NEW',
+        targetRoles: ["VP of Corporate Development","CTO","PE Partner"],
+        pipelineSpine: {
+                  "research": "Post-Acquisition System Consolidation Failures",
+                  "concept": "Integration Debt",
+                  "framework": "100-Day Architecture Harmonization",
+                  "diagnostic": "PDI Calculator (/tools/pdi)",
+                  "implementation": "Unified Runtime Control Plane"
+        },
+        subtitle: 'Track 16: NEW',
         description: 'Most acquisition value is destroyed during integration. This track teaches you to evaluate, plan, and execute technical integrations that preserve  -  not destroy  -  the value your company spent millions to acquire.',
         modules: [
             { id: '16-1', name: '16.1 Pre-Acquisition Technical Assessment', topics: 'Tech Stack Compatibility, Integration Cost Estimation, Deal-Breaker Discovery', href: '/vault/curriculum/tracks/ma-integration/16-1' },
@@ -379,7 +483,15 @@ export const tracks = [
     },
     {
         title: 'The Economics of Developer Experience (DX)',
-        subtitle: 'Track 17  -  NEW',
+        targetRoles: ["Director of Platform Engineering","VP of Engineering","Engineering Manager"],
+        pipelineSpine: {
+                  "research": "Internal Developer Platform Studies",
+                  "concept": "Cognitive Friction Tax",
+                  "framework": "Golden Path Architecture",
+                  "diagnostic": "Code Review Bottleneck Calc (/tools/code-review-bottleneck-calc)",
+                  "implementation": "Automated Verification CI Gates"
+        },
+        subtitle: 'Track 17: NEW',
         description: 'Developer experience is the hidden infrastructure tax or accelerator in every engineering organization. This track teaches you to measure, invest in, and monetize DX improvements with the same rigor as any capital investment.',
         modules: [
             { id: '17-1', name: '17.1 Developer Productivity as Economic Output', topics: 'DORA Metrics ROI, Flow State Economics, Interruption Cost Analysis', href: '/vault/curriculum/tracks/dx-economics/17-1' },
@@ -400,7 +512,15 @@ export const tracks = [
     },
     {
         title: 'Vendor & Contract Economics for Engineering Leaders',
-        subtitle: 'Track 18  -  NEW',
+        targetRoles: ["Director of Finance","VP of Engineering","Chief Legal Officer"],
+        pipelineSpine: {
+                  "research": "Enterprise SaaS Contract Renewal Telemetry",
+                  "concept": "Vendor Lock-in Convexity",
+                  "framework": "Multi-Model Switchboard Governance",
+                  "diagnostic": "Shadow AI Scanner (/tools/shadow-ai)",
+                  "implementation": "Model-Agnostic Proxy Gateway"
+        },
+        subtitle: 'Track 18: NEW',
         description: 'Engineering leaders manage millions in vendor relationships but are never taught contract economics. This track teaches you to negotiate, optimize, and govern vendor spend with the same rigor you apply to your codebase.',
         modules: [
             { id: '18-1', name: '18.1 SaaS Sprawl Cost Analysis', topics: 'Shadow IT Quantification, License Waste, Overlapping Tool Audit', href: '/vault/curriculum/tracks/vendor-economics/18-1' },
@@ -421,7 +541,15 @@ export const tracks = [
     },
     {
         title: 'AI Agent Architecture & Economics',
-        subtitle: 'Track 19  -  AI Agents',
+        targetRoles: ["Lead AI Architect","CTO","VP of Engineering"],
+        pipelineSpine: {
+                  "research": "Autonomous Multi-Agent Loop Telemetry",
+                  "concept": "Agentic Drift",
+                  "framework": "State Machine Isolation Boundary",
+                  "diagnostic": "Agent Router Simulator (/tools/agent-router)",
+                  "implementation": "Deterministic Agent Gateway"
+        },
+        subtitle: 'Track 19: AI Agents',
         description: 'AI agents are the next compute model. This track teaches you to design, cost, and govern multi-agent systems  -  from single-tool agents to enterprise orchestration platforms. Inspired by real-world agent infrastructure like Exogram.',
         modules: [
             { id: '19-1', name: '19.1 What Is an AI Agent? Economic Primitives', topics: 'Agent vs Chatbot, Autonomy Spectrum, Cost-Per-Action, Agent ROI Framework', href: '/vault/curriculum/tracks/ai-agent-architecture/19-1' },
@@ -447,7 +575,15 @@ export const tracks = [
     },
     {
         title: 'Agentic Process Automation Economics',
-        subtitle: 'Track 20  -  AI Agents',
+        targetRoles: ["VP of Operations","Customer Support Manager","COO"],
+        pipelineSpine: {
+                  "research": "Automated Workflow Displacement Field Studies",
+                  "concept": "Supervisory Overhead",
+                  "framework": "Human-in-the-Loop Triage Architecture",
+                  "diagnostic": "FTE Displacement Calculator (/tools/fte-displacement)",
+                  "implementation": "Automated Exception Routing"
+        },
+        subtitle: 'Track 20: AI Agents',
         description: 'Beyond RPA: agentic process automation replaces entire workflows, not just clicks. This track teaches you to identify, cost, and implement AI agent automation across enterprise operations  -  from customer support to DevOps to finance.',
         modules: [
             { id: '20-1', name: '20.1 From RPA to Agentic Automation', topics: 'RPA Limitations, Agentic Leap, Intelligence vs Scripting, Market Size & Opportunity', href: '/vault/curriculum/tracks/agentic-automation/20-1' },
@@ -473,7 +609,7 @@ export const tracks = [
     },
     {
         title: 'AI Agent Governance & Trust Infrastructure',
-        subtitle: 'Track 21  -  AI Agents',
+        subtitle: 'Track 21: AI Agents',
         description: 'Autonomous agents acting on behalf of your organization create unprecedented governance challenges. This track teaches you to build the trust, verification, and compliance infrastructure that makes enterprise agent deployment possible. Inspired by Exogram\'s verification architecture.',
         modules: [
             { id: '21-1', name: '21.1 The Trust Problem in Autonomous AI', topics: 'Why AI Fails at Trust, Verification vs Validation, Exogram\'s Truth Layer Architecture', href: '/vault/curriculum/tracks/agent-governance/21-1' },
@@ -499,7 +635,7 @@ export const tracks = [
     },
     {
         title: 'Strategic Leadership Economics',
-        subtitle: 'Track 22  -  Leadership',
+        subtitle: 'Track 22: Leadership',
         description: 'Leadership is the awesome responsibility to see those around us rise. Most of us achieved our rank because we were good at our old job  -  but that\'s not our job anymore. This track teaches the economics of becoming a leader who multiplies value, not just manages resources.',
         modules: [
             { id: '22-1', name: '22.1 The Leadership Multiplier Effect', topics: 'IC Output vs Leader Output, Use Economics, Value Multiplication Framework', href: '/vault/curriculum/tracks/strategic-leadership/22-1' },
@@ -525,7 +661,14 @@ export const tracks = [
     },
     {
         title: 'Executive Presence & Board Leadership',
-        subtitle: 'Track 23  -  Leadership',
+        targetRoles: ["CTO","VP of Engineering","Board Director"],
+        pipelineSpine: {
+                  "research": "Boardroom Technology Governance Audits",
+                  "concept": "Credibility Capital",
+                  "framework": "4-Quadrant Board Communication",
+                  "diagnostic": "Board Room Simulator (/tools/board-room)"
+        },
+        subtitle: 'Track 23: Leadership',
         description: 'The final frontier: translating technical excellence into boardroom authority. This track teaches senior leaders and aspiring C-suite executives to command rooms, govern budgets, and drive organizational strategy with economic precision.',
         modules: [
             { id: '23-1', name: '23.1 Executive Presence as Economic Asset', topics: 'Presence Premium, Authority Economics, Credibility Capital, First Impressions ROI', href: '/vault/curriculum/tracks/executive-presence/23-1' },
@@ -551,7 +694,15 @@ export const tracks = [
     },
     {
         title: 'AI Economics & Margin Engineering',
-        subtitle: 'Track 24  -  NEW',
+        targetRoles: ["CFO","Chief Product Officer","FinOps Manager"],
+        pipelineSpine: {
+                  "research": "Beehiiv The AI Economist Research Ledger",
+                  "concept": "The Evergreen Ratio",
+                  "framework": "Deterministic Control Layer",
+                  "diagnostic": "AUEB Calculator (/tools/aueb)",
+                  "implementation": "Exogram Runtime Semantic Caching"
+        },
+        subtitle: 'Track 24: NEW',
         description: 'The definitive curriculum for understanding how artificial intelligence fundamentally breaks traditional SaaS unit economics, and how to build deterministic control layers to govern inference costs, power user liability, and the Turing Tax.',
         modules: [
             { id: '24-1', name: '24.1 The End of Zero Marginal Cost Software', topics: 'Variable Cost Software, Synthetic COGS, Compute vs Code', href: '/vault/curriculum/tracks/ai-economics/24-1' },
@@ -572,7 +723,15 @@ export const tracks = [
     },
     {
         title: 'Probabilistic Software Engineering',
-        subtitle: 'Track 25  -  NEW',
+        targetRoles: ["VP of Engineering","Lead System Architect","Staff QA Engineer"],
+        pipelineSpine: {
+                  "research": "Non-Deterministic Failure Telemetry",
+                  "concept": "Four Laws of Probabilistic Software",
+                  "framework": "Eval Driven Development (EDD)",
+                  "diagnostic": "Spec Quality Scorecard (/tools/spec-quality-scorecard)",
+                  "implementation": "Pre-Commit Verification Harness"
+        },
+        subtitle: 'Track 25: NEW',
         description: 'Traditional software is deterministic. AI-generated software is probabilistic. Learn to architect, verify, and govern non-deterministic systems, shifting from generation to verification.',
         modules: [
             { id: '25-1', name: '25.1 The Death of Determinism', topics: 'Probabilistic Logic, Verification vs Generation, The Vibe Coding Trap', href: '/vault/curriculum/tracks/probabilistic-engineering/25-1' },
@@ -588,7 +747,15 @@ export const tracks = [
     },
     {
         title: 'Startup Economics',
-        subtitle: 'Track 26  -  NEW',
+        targetRoles: ["Founder / CEO","Founding Engineer","Seed Investor"],
+        pipelineSpine: {
+                  "research": "Early-Stage Runway Depletion Audits",
+                  "concept": "Burn Multiple Optimization",
+                  "framework": "Seed-to-Series-A Capital Protocol",
+                  "diagnostic": "APER Calculator (/tools/aper)",
+                  "implementation": "Runway-Aware Engineering Roadmap"
+        },
+        subtitle: 'Track 26: NEW',
         description: 'The definitive financial playbook for startup engineering. From Seed stage burn rate management to Series C infrastructure scaling, learn to align engineering output with VC milestones.',
         modules: [
             { id: '26-1', name: '26.1 Engineering Budget by Stage', topics: 'Seed to Series C Spend Profiles, Resource Allocation, Runway Modeling', href: '/vault/curriculum/tracks/startup-economics/26-1' },
@@ -604,7 +771,15 @@ export const tracks = [
     },
     {
         title: 'Boardroom AI Governance',
-        subtitle: 'Track 27  -  NEW',
+        targetRoles: ["Board Director","Chief Information Officer","CFO"],
+        pipelineSpine: {
+                  "research": "Enterprise AI Pilot Failure Analyses",
+                  "concept": "The AI Production Gap",
+                  "framework": "Hard vs Soft ROI Governance",
+                  "diagnostic": "Board Risk Scorecard (/tools/board-risk-scorecard)",
+                  "implementation": "CAIO Operating Charter"
+        },
+        subtitle: 'Track 27: NEW',
         description: 'For CIOs, CFOs, and Board Directors. Learn to govern AI capital expenditure, bridge the Production Gap, and demand Hard ROI from the engineering organization.',
         modules: [
             { id: '27-1', name: '27.1 The AI Production Gap', topics: 'Pilot vs Production Costs, Vector DB Scaling, TCC Modeling', href: '/vault/curriculum/tracks/boardroom-ai/27-1' },
@@ -620,7 +795,15 @@ export const tracks = [
     },
     {
         title: 'The AI Economist Masterclass',
-        subtitle: 'Track 28  -  NEW',
+        targetRoles: ["Chief Product Officer","CFO","VP of Product"],
+        pipelineSpine: {
+                  "research": "Capital Allocation in Zero-Build-Cost Regimes",
+                  "concept": "The AI Economist Doctrine",
+                  "framework": "Uncertainty Reduction Model",
+                  "diagnostic": "AUEB Margin Calculator (/tools/aueb)",
+                  "implementation": "Feature Sunset Deprecation Ledger"
+        },
+        subtitle: 'Track 28: NEW',
         description: 'The definitive curriculum for transitioning from traditional product management to rigorous AI capital allocation. Master the financial modeling of generative AI, govern rogue AI implementations, and engineer SaaS margins.',
         modules: [
             { id: '28-1', name: '28.1 The Core Philosophy', topics: 'Capital Allocation, EBITDA Protection, The End of Agile Velocity', href: '/vault/curriculum/tracks/ai-economist/28-1' },
@@ -636,7 +819,15 @@ export const tracks = [
     },
     {
         title: 'Governance for Agentic AI',
-        subtitle: 'Track 58  -  AI Agents & Enterprise Risk',
+        targetRoles: ["CTO","Chief Information Security Officer","Audit Committee Chair"],
+        pipelineSpine: {
+                  "research": "Machine-Speed Breach & Agentic Drift Forensics",
+                  "concept": "Persistence vs Authority",
+                  "framework": "4 Pillars of Agent Governance",
+                  "diagnostic": "Agentic Drift Matrix (/tools/agentic-drift-matrix)",
+                  "implementation": "Exogram Admissibility Proxy"
+        },
+        subtitle: 'Track 58: AI Agents & Enterprise Risk',
         description: 'The definitive executive and engineering curriculum for governing autonomous AI agents. Learn to decouple runtime persistence from state authority, triage the supervisory review queue, and enforce the 4 Pillars of Agent Governance.',
         modules: [
             { id: '58-1', name: '58.1 The Rise of Shadow Agents', topics: 'Shadow Agents, Machine-Speed Breaches, Threat Prevention Layer', href: '/vault/curriculum/tracks/agentic-governance/58-1' },
