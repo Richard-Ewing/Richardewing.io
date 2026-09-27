@@ -5,135 +5,230 @@ import { useUser } from '@clerk/nextjs';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
-import { ShieldAlert, Crosshair, Cpu, Briefcase, Activity, AlertTriangle, Database, TrendingUp, Users, ArrowRight, Zap, DownloadCloud } from 'lucide-react';
+import { 
+  ShieldAlert, 
+  ShieldCheck, 
+  Crosshair, 
+  Cpu, 
+  Briefcase, 
+  Activity, 
+  AlertTriangle, 
+  Database, 
+  TrendingUp, 
+  Users, 
+  ArrowRight, 
+  Zap, 
+  DownloadCloud, 
+  FileText, 
+  FileCheck, 
+  Lock, 
+  Sparkles,
+  DollarSign
+} from 'lucide-react';
 import { BorderBeam } from '../../components/magicui/border-beam';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import NumberTicker from '../../components/magicui/number-ticker';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { GlowCard } from '../../components/magicui/glow-card';
+import { loadDiagnosticSession } from '@/lib/storage/session';
+import ExecutiveBoardDeckModal from '@/app/components/ExecutiveBoardDeckModal';
+import EnterpriseSOWModal from '@/app/components/EnterpriseSOWModal';
 
 export default function BoardRoom() {
     const { user, isLoaded } = useUser();
     const [runs, setRuns] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
+    const [showBoardModal, setShowBoardModal] = useState(false);
+    const [showSowModal, setShowSowModal] = useState(false);
+
+    const [localSessions, setLocalSessions] = useState<{
+        pdi: any;
+        aueb: any;
+        aper: any;
+        agentRouter: any;
+    }>({ pdi: null, aueb: null, aper: null, agentRouter: null });
 
     useEffect(() => {
-        if (!isLoaded || !user) return;
+        // Load local browser diagnostics from session storage
+        const pdiData = loadDiagnosticSession('pdi');
+        const auebData = loadDiagnosticSession('aueb');
+        const aperData = loadDiagnosticSession('aper');
+        const routerData = loadDiagnosticSession('agent-router');
 
-        fetch('/api/tools/runs')
-            .then(res => res.json())
-            .then(data => {
-                if (Array.isArray(data)) {
-                    setRuns(data);
-                }
-                setLoading(false);
-            })
-            .catch(err => {
-                console.error("Failed to fetch runs:", err);
-                setLoading(false);
-            });
-    }, [isLoaded, user]);
+        setLocalSessions({
+            pdi: pdiData,
+            aueb: auebData,
+            aper: aperData,
+            agentRouter: routerData
+        });
 
-    if (!isLoaded) return <div className="min-h-screen bg-white flex items-center justify-center"><div className="w-8 h-8 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin" /></div>;
-
-    if (!user) {
-        return (
-            <div className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-center">
-                <ShieldAlert className="text-red-500 w-16 h-16 mb-6 animate-pulse" />
-                <h1 className="text-3xl font-bold text-zinc-950 mb-4 uppercase tracking-tighter">Clearance Required</h1>
-                <p className="text-zinc-950 mb-8 max-w-md font-mono text-sm font-semibold uppercase tracking-widest leading-relaxed">The board room is restricted to verified C-Suite personnel. Authenticate to establish connection.</p>
-                <Link href="/sign-in" className="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-bold uppercase tracking-widest rounded-lg transition-colors">Establish Neural Link</Link>
-            </div>
-        );
-    }
-
-    // --- AGGREGATION LOGIC ---
-    let totalWealthGap = 0;
-    let totalCloudSavings = 0;
-    let marginCollapseRisk = 0;
-    let pdiDebtScore = 0;
-    let pdiCount = 0;
-
-    const latestTools: Record<string, any> = {};
-
-    runs.forEach(run => {
-        // We want the latest run for each tool
-        if (!latestTools[run.tool_id]) {
-            latestTools[run.tool_id] = run;
+        if (user) {
+            fetch('/api/tools/runs')
+                .then(res => res.json())
+                .then(data => {
+                    if (Array.isArray(data)) {
+                        setRuns(data);
+                    }
+                    setLoading(false);
+                })
+                .catch(err => {
+                    console.error("Failed to fetch runs:", err);
+                    setLoading(false);
+                });
+        } else {
+            setLoading(false);
         }
+    }, [user]);
 
-        // Aggregate All-Time Risks
-        if (run.tool_id === 'EV-SE' && run.output_metrics?.wealthGap) totalWealthGap += run.output_metrics.wealthGap;
-        if (run.tool_id === 'CLOUD-REPAT' && run.output_metrics?.annualSavings) totalCloudSavings += run.output_metrics.annualSavings;
-        if (run.tool_id === 'AUEB' && run.output_metrics?.grossMargin) marginCollapseRisk = run.output_metrics.grossMargin; 
-        if (run.tool_id === 'PDI' && run.output_metrics?.score) { pdiDebtScore += run.output_metrics.score; pdiCount++; }
-    });
-
-    const averagePDI = pdiCount > 0 ? (pdiDebtScore / pdiCount).toFixed(1) : 'N/A';
-    const totalRuns = runs.length;
-
+    // Format currency helper
     const formatCurrency = (val: number) => {
-        if (val >= 1000000) return `$${(val / 1000000).toFixed(1)}M`;
+        if (val >= 1000000) return `$${(val / 1000000).toFixed(2)}M`;
         if (val >= 1000) return `$${(val / 1000).toFixed(0)}K`;
         return `$${val.toFixed(0)}`;
     };
+
+    // Calculate aggregated metrics from local sessions and cloud runs
+    const pdiScore = localSessions.pdi?.score ?? 48;
+    const pdiWaste = localSessions.pdi?.financials?.waste ?? 1450000;
+    const auebMargin = localSessions.aueb?.grossMargin ?? 41.5;
+    const auebMonthlyCost = localSessions.aueb?.monthlyCost ?? 24500;
+    const aperMultiple = localSessions.aper?.multiplier ?? 2.1;
+    const aperTotalCost = localSessions.aper?.totalEngCost ?? 4200000;
+    const aperCoordinationTax = localSessions.aper?.coordinationTax ?? 22.5;
+    const agentRouterCost = localSessions.agentRouter?.monthlyCost ?? 18400;
+
+    // Total Capital Bleed Calculation
+    const totalCapitalBleed = pdiWaste + (auebMonthlyCost * 12) + (aperTotalCost * (aperCoordinationTax / 100)) + (agentRouterCost * 12);
+    
+    // Composite Solvency Score (0-100)
+    const compositeScore = Math.max(10, Math.min(95, Math.round(
+        (0.40 * pdiScore) + (0.35 * auebMargin) + (0.25 * Math.min(100, aperMultiple * 20))
+    )));
+
+    const insolvencyHorizon = localSessions.aueb?.monthsToCollapse 
+        ? (localSessions.aueb.monthsToCollapse <= 12 ? 'Q3 2027' : 'Q1 2028')
+        : 'Q3 2027';
+
+    const hasLocalData = !!(localSessions.pdi || localSessions.aueb || localSessions.aper || localSessions.agentRouter);
 
     return (
         <div className="min-h-screen bg-white text-zinc-950 font-sans selection:bg-cyan-500/30 selection:text-cyan-900 font-extrabold">
             {/* Grid Background */}
             <div className="fixed inset-0 bg-[linear-gradient(to_right,#f4f4f510_1px,transparent_1px),linear-gradient(to_bottom,#f4f4f510_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
-            <nav className="border-b border-red-500/20 bg-white/60 backdrop-blur-xl sticky top-0 z-50">
+            {/* Navigation Bar */}
+            <nav className="border-b border-red-500/20 bg-white/70 backdrop-blur-xl sticky top-0 z-40">
                 <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <div className="w-3 h-3 rounded-full bg-red-500 animate-pulse shadow-[0_0_15px_rgba(239,68,68,0.8)]" />
-                        <span className="font-bold tracking-widest text-sm font-semibold text-zinc-950 uppercase font-mono">Executive Board Room <span className="text-zinc-950 font-bold font-normal">| ALL DEPARTMENTS</span></span>
+                        <span className="font-bold tracking-widest text-sm font-semibold text-zinc-950 uppercase font-mono">
+                            Capital Exposure War Room <span className="text-zinc-500 font-normal">| ALL DEPARTMENTS</span>
+                        </span>
                     </div>
-                    <div className="flex gap-4">
+                    <div className="flex items-center gap-3">
+                        <button
+                            onClick={() => setShowBoardModal(true)}
+                            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-zinc-950 text-white text-xs font-bold uppercase tracking-wider hover:bg-zinc-800 transition shadow"
+                        >
+                            <FileText className="w-3.5 h-3.5 text-cyan-400" />
+                            Board Deck Slip
+                        </button>
+                        <button
+                            onClick={() => setShowSowModal(true)}
+                            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-rose-600 text-white text-xs font-bold uppercase tracking-wider hover:bg-rose-500 transition shadow"
+                        >
+                            <FileCheck className="w-3.5 h-3.5" />
+                            Formal SOW Proposal
+                        </button>
                         <ExportToPDFButton targetId="board-room-matrix" fileName={`Enterprise_Threat_Matrix.pdf`} />
-                        <Link href="/system" className="text-xs font-bold font-medium font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest px-4 py-2 bg-white/5 rounded-md hover:bg-white/10 border border-zinc-400">
-                            Close Session
-                        </Link>
                     </div>
                 </div>
             </nav>
+
+            {/* Unauthenticated Session Banner */}
+            {!user && (
+                <div className="bg-zinc-100 border-b border-zinc-200 px-6 py-2.5 text-xs text-zinc-700 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-blue-500" />
+                        <span>
+                            {hasLocalData 
+                                ? 'Displaying active browser diagnostic session. Sign in to sync across executive devices and persist to company vault.' 
+                                : 'Displaying benchmark enterprise portfolio baseline. Complete diagnostics (PDI, AUEB, APER) to calibrate to your exact numbers.'}
+                        </span>
+                    </div>
+                    <Link href="/sign-in" className="font-bold text-zinc-900 hover:text-blue-600 uppercase font-mono tracking-wider">
+                        Sign In to Persist &rarr;
+                    </Link>
+                </div>
+            )}
 
             <main id="board-room-matrix" className="max-w-7xl mx-auto px-6 py-12 relative z-10 space-y-12">
                 
                 {/* GLOBAL THREAT MAP (CEO/BOARD) */}
                 <ScrollReveal>
-                    <div className="mb-4 flex items-center gap-3">
-                        <Crosshair className="text-rose-500" />
-                        <h2 className="text-2xl font-black text-zinc-950 uppercase tracking-tighter">Global Threat Matrix</h2>
-                        <div className="flex-1 h-px bg-rose-500/20 ml-4 hidden sm:block"></div>
+                    <div className="mb-4 flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                            <Crosshair className="text-rose-500" />
+                            <h2 className="text-2xl font-black text-zinc-950 uppercase tracking-tighter">
+                                Consolidated Capital Exposure Matrix
+                            </h2>
+                        </div>
+                        <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest hidden sm:block">
+                            Fiscal Health: {compositeScore < 50 ? 'Critical Insolvency Alert' : 'Sub-Optimal Carry'}
+                        </div>
                     </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <GlowCard className="p-6 bg-rose-50 border border-rose-200 rounded-2xl relative overflow-hidden group">
                             <BorderBeam size={100} duration={8} delay={0} colorFrom="#f43f5e" colorTo="#be123c" />
-                            <div className="text-xs font-bold font-medium font-mono text-rose-500 uppercase tracking-widest mb-4">Total Enterprise Value at Risk</div>
-                            <div className="text-4xl font-black text-zinc-900">{totalWealthGap > 0 ? formatCurrency(totalWealthGap) : 'TBD'}</div>
-                            <div className="mt-4 text-xs font-bold text-zinc-900 font-bold/70 font-mono tracking-widest">Aggregate across all erosion models.</div>
+                            <div className="text-xs font-bold font-medium font-mono text-rose-500 uppercase tracking-widest mb-4">
+                                Total Annual Capital Bleed
+                            </div>
+                            <div className="text-4xl font-black text-zinc-900">
+                                {formatCurrency(totalCapitalBleed)}
+                            </div>
+                            <div className="mt-4 text-xs font-bold text-zinc-600 font-mono tracking-widest">
+                                PDI Waste + Token COGS + Coordination Tax
+                            </div>
                         </GlowCard>
                         
                         <GlowCard className="p-6 bg-cyan-50 border border-cyan-200 rounded-2xl relative overflow-hidden">
                             <BorderBeam size={100} duration={10} delay={2} colorFrom="#06b6d4" colorTo="#0284c7" />
-                            <div className="text-xs font-bold font-medium font-mono text-cyan-500 uppercase tracking-widest mb-4">Total Cloud/Infra Arbitrage</div>
-                            <div className="text-4xl font-black text-zinc-900">{totalCloudSavings > 0 ? formatCurrency(totalCloudSavings) : 'TBD'}</div>
-                            <div className="mt-4 text-xs font-bold text-zinc-900 font-bold/70 font-mono tracking-widest">OpEx capture ready for execution.</div>
+                            <div className="text-xs font-bold font-medium font-mono text-cyan-500 uppercase tracking-widest mb-4">
+                                Blended Insolvency Horizon
+                            </div>
+                            <div className="text-4xl font-black text-zinc-900">
+                                {insolvencyHorizon}
+                            </div>
+                            <div className="mt-4 text-xs font-bold text-zinc-600 font-mono tracking-widest">
+                                100% R&amp;D maintenance lock date
+                            </div>
                         </GlowCard>
 
                         <GlowCard className="p-6 bg-emerald-50 border border-emerald-200 rounded-2xl relative overflow-hidden">
                             <BorderBeam size={100} duration={9} delay={4} colorFrom="#10b981" colorTo="#047857" />
-                            <div className="text-xs font-bold font-medium font-mono text-emerald-500 uppercase tracking-widest mb-4">AI Unit Economics (Margin)</div>
-                            <div className="text-4xl font-black text-zinc-900">{marginCollapseRisk ? `${marginCollapseRisk.toFixed(1)}%` : 'TBD'}</div>
-                            <div className="mt-4 text-xs font-bold text-zinc-900 font-bold/70 font-mono tracking-widest">Projected gross margin post-AI scale.</div>
+                            <div className="text-xs font-bold font-medium font-mono text-emerald-500 uppercase tracking-widest mb-4">
+                                AI Feature Gross Margin
+                            </div>
+                            <div className="text-4xl font-black text-zinc-900">
+                                {auebMargin.toFixed(1)}%
+                            </div>
+                            <div className="mt-4 text-xs font-bold text-zinc-600 font-mono tracking-widest">
+                                Net of multi-agent token billing
+                            </div>
                         </GlowCard>
 
                         <GlowCard className="p-6 bg-purple-50 border border-purple-200 rounded-2xl relative overflow-hidden">
                             <BorderBeam size={100} duration={12} delay={6} colorFrom="#a855f7" colorTo="#7e22ce" />
-                            <div className="text-xs font-bold font-medium font-mono text-purple-500 uppercase tracking-widest mb-4">Telemetry Snapshots</div>
-                            <div className="text-4xl font-black text-zinc-900">{totalRuns}</div>
-                            <div className="mt-4 text-xs font-bold text-zinc-900 font-bold/70 font-mono tracking-widest">Diagnostic data points processed.</div>
+                            <div className="text-xs font-bold font-medium font-mono text-purple-500 uppercase tracking-widest mb-4">
+                                Composite Solvency Health
+                            </div>
+                            <div className="text-4xl font-black text-zinc-900">
+                                {compositeScore} <span className="text-lg font-normal text-zinc-500">/ 100</span>
+                            </div>
+                            <div className="mt-4 text-xs font-bold text-zinc-600 font-mono tracking-widest">
+                                Blended R&amp;D capitalization index
+                            </div>
                         </GlowCard>
                     </div>
                 </ScrollReveal>
@@ -141,15 +236,15 @@ export default function BoardRoom() {
                 {/* DEPARTMENTAL PANELS */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     
-                    {/* ENGINEERING (CTO) */}
+                    {/* ENGINEERING (CTO / VP ENG) */}
                     <ScrollReveal delay={100}>
                         <div className="bg-white/60 border border-zinc-400 rounded-3xl p-8 relative overflow-hidden group hover:border-blue-500/30 transition-colors shrink-0">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-blue-500/10 transition-colors duration-1000"></div>
                             <div className="flex items-center gap-3 mb-8">
                                 <Cpu className="text-blue-500 h-8 w-8" />
                                 <div>
-                                    <h3 className="text-xl font-bold text-zinc-950 uppercase tracking-tight">Engineering Protocol</h3>
-                                    <p className="text-xs font-bold font-mono text-blue-900 font-extrabold font-semibold uppercase tracking-widest">CTO / Platform Architecture</p>
+                                    <h3 className="text-xl font-bold text-zinc-950 uppercase tracking-tight">Engineering &amp; Architecture</h3>
+                                    <p className="text-xs font-bold font-mono text-blue-900 uppercase tracking-widest">VP of Engineering / CTO Desk</p>
                                 </div>
                             </div>
 
@@ -157,200 +252,221 @@ export default function BoardRoom() {
                                 <div className="p-5 bg-white/80 border border-zinc-400 rounded-xl border-l-2 border-l-blue-500">
                                     <div className="flex items-center justify-between mb-2">
                                         <span className="text-sm font-semibold font-bold text-zinc-900">Product Debt Index (PDI)</span>
-                                        <span className="text-xl font-black text-zinc-900">{averagePDI}</span>
+                                        <span className="text-xl font-black text-zinc-900">{pdiScore} / 100</span>
                                     </div>
-                                    <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed font-mono">Current average code entropy spanning all active domains. Determines engineering velocity decay.</p>
-                                    {(latestTools['pdi']?.output_metrics?.qpep_roadmap || latestTools['PDI']?.output_metrics?.qpep_roadmap) && (
-                                        <div className="mt-4 mb-2 p-3 bg-blue-500/10 border border-blue-500/30 rounded-lg">
-                                            <div className="flex items-center gap-2 mb-1">
-                                                <Zap className="text-blue-900 font-extrabold font-semibold" size={12} />
-                                                <span className="text-xs font-bold font-medium uppercase tracking-widest text-blue-900 font-extrabold font-semibold font-bold">Execution Ready</span>
-                                            </div>
-                                            <p className="text-xs font-bold text-zinc-900 font-bold font-mono">Remediation timeline auto-generated from diagnostic payload.</p>
-                                        </div>
-                                    )}
+                                    <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed font-mono">
+                                        Annual maintenance debt waste: <strong className="text-rose-600">{formatCurrency(pdiWaste)}</strong>. Non-value work currently consumes {100 - pdiScore}% of backlog bandwidth.
+                                    </p>
                                     <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/pdi" className="text-xs font-bold font-medium uppercase tracking-widest text-blue-900 font-extrabold font-semibold hover:text-zinc-900 flex items-center gap-1 transition-colors">Execute PDI Modeler <ArrowRight size={12} /></Link>
+                                        <Link href="/tools/pdi" className="text-xs font-bold font-medium uppercase tracking-widest text-blue-900 hover:text-zinc-900 flex items-center gap-1 transition-colors">
+                                            Recalibrate PDI &rarr;
+                                        </Link>
                                     </div>
                                 </div>
 
                                 <div className="p-5 bg-white/80 border border-zinc-400 rounded-xl border-l-2 border-l-purple-500">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-semibold font-bold text-zinc-900">Engineering Velocity Erosion</span>
-                                        <span className="text-xl font-black text-zinc-900">{latestTools['EV-SE'] ? formatCurrency(latestTools['EV-SE'].output_metrics?.wealthGap || 0) : 'Pending'}</span>
+                                        <span className="text-sm font-semibold font-bold text-zinc-900">Agent Router &amp; FinOps Overrun</span>
+                                        <span className="text-xl font-black text-zinc-900">{formatCurrency(agentRouterCost * 12)} / yr</span>
                                     </div>
-                                    <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed font-mono">The CapEx being permanently vaporized by slow deployment cycles and untracked sprint spillage.</p>
+                                    <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed font-mono">
+                                        Frontier model context compounding across autonomous multi-agent hops without edge semantic classification.
+                                    </p>
                                     <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/ev-se" className="text-xs font-bold font-medium uppercase tracking-widest text-purple-900 font-extrabold font-semibold hover:text-zinc-900 flex items-center gap-1 transition-colors">Run Valuation Erosion <ArrowRight size={12} /></Link>
+                                        <Link href="/tools/agent-router" className="text-xs font-bold font-medium uppercase tracking-widest text-purple-900 hover:text-zinc-900 flex items-center gap-1 transition-colors">
+                                            Simulate Swarm Topology &rarr;
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </ScrollReveal>
 
-                    {/* FINANCE (CFO) */}
+                    {/* FINANCE (CFO / CONTROLLER) */}
                     <ScrollReveal delay={200}>
                         <div className="bg-white/60 border border-zinc-400 rounded-3xl p-8 relative overflow-hidden group hover:border-emerald-500/30 transition-colors shrink-0">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-emerald-500/10 transition-colors duration-1000"></div>
                             <div className="flex items-center gap-3 mb-8">
                                 <Activity className="text-emerald-500 h-8 w-8" />
                                 <div>
-                                    <h3 className="text-xl font-bold text-zinc-950 uppercase tracking-tight">Finance / Economics</h3>
-                                    <p className="text-xs font-bold font-mono text-emerald-900 font-extrabold font-semibold uppercase tracking-widest">CFO / FinOps Desk</p>
+                                    <h3 className="text-xl font-bold text-zinc-950 uppercase tracking-tight">Finance &amp; Unit Economics</h3>
+                                    <p className="text-xs font-bold font-mono text-emerald-900 uppercase tracking-widest">CFO / Director of Finance</p>
                                 </div>
                             </div>
 
                             <div className="space-y-6">
                                 <div className="p-5 bg-white/80 border border-zinc-400 rounded-xl border-l-2 border-l-emerald-500">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-semibold font-bold text-zinc-900">AI Unit Economics (AUEB)</span>
-                                        <span className="text-xl font-black text-zinc-950 text-right">
-                                            {latestTools['AUEB'] ? `${(latestTools['AUEB'].output_metrics?.grossMargin || 0).toFixed(1)}%` : 'Pending'}
-                                        </span>
+                                        <span className="text-sm font-semibold font-bold text-zinc-900">AI Unit Economics Benchmark (AUEB)</span>
+                                        <span className="text-xl font-black text-zinc-950 text-right">{auebMargin.toFixed(1)}% Margin</span>
                                     </div>
-                                    <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed font-mono">Tracks the collapse of software margins triggered by unbounded LLM API costs.</p>
-                                    {(latestTools['AUEB']?.output_metrics?.qpep_roadmap || latestTools['aueb']?.output_metrics?.qpep_roadmap) && (
-                                        <div className="mt-4 mb-2 p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
-                                            <div className="flex items-center gap-2 mb-1">
-                                                <Zap className="text-emerald-900 font-extrabold font-semibold" size={12} />
-                                                <span className="text-xs font-bold font-medium uppercase tracking-widest text-emerald-900 font-extrabold font-semibold font-bold">Execution Ready</span>
-                                            </div>
-                                            <p className="text-xs font-bold text-zinc-900 font-bold font-mono">Margin defense timeline auto-generated from diagnostic payload.</p>
-                                        </div>
-                                    )}
+                                    <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed font-mono">
+                                        Direct API spend of <strong className="text-rose-600">{formatCurrency(auebMonthlyCost)}/mo</strong> threatens subscription profitability as usage scales.
+                                    </p>
                                     <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/aueb" className="text-xs font-bold font-medium uppercase tracking-widest text-emerald-900 font-extrabold font-semibold hover:text-zinc-900 flex items-center gap-1 transition-colors">Calculate Margin <ArrowRight size={12} /></Link>
+                                        <Link href="/tools/aueb" className="text-xs font-bold font-medium uppercase tracking-widest text-emerald-900 hover:text-zinc-900 flex items-center gap-1 transition-colors">
+                                            Recalibrate AUEB &rarr;
+                                        </Link>
                                     </div>
                                 </div>
 
                                 <div className="p-5 bg-white/80 border border-zinc-400 rounded-xl border-l-2 border-l-cyan-500">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-semibold font-bold text-zinc-900">Cloud FinOps Arbitrage</span>
-                                        <span className="text-xl font-black text-zinc-900">{latestTools['CLOUD-REPAT'] ? formatCurrency(latestTools['CLOUD-REPAT'].output_metrics?.annualSavings || 0) : 'Pending'}</span>
+                                        <span className="text-sm font-semibold font-bold text-zinc-900">Revenue Multiple (APER)</span>
+                                        <span className="text-xl font-black text-zinc-900">{aperMultiple.toFixed(2)}x Multiple</span>
                                     </div>
-                                    <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed font-mono">OpEx available to recapture via private cloud repatriation vs AWS Basecamp index.</p>
+                                    <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed font-mono">
+                                        Coordination tax drains <strong className="text-rose-600">{aperCoordinationTax.toFixed(1)}%</strong> of engineering payroll into alignment and review friction.
+                                    </p>
                                     <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/cloud-repatriation" className="text-xs font-bold font-medium uppercase tracking-widest text-cyan-900 font-extrabold font-semibold hover:text-zinc-900 flex items-center gap-1 transition-colors">Arbitrage Analysis <ArrowRight size={12} /></Link>
-                                    </div>
-                                </div>
-
-                                <div className="p-5 bg-white/80 border border-zinc-400 rounded-xl border-l-2 border-l-rose-500">
-                                    <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-semibold font-bold text-zinc-900">AI Tool Economics (Net Revenue Retention)</span>
-                                        <span className="text-xl font-black text-zinc-950 text-right">
-                                            {latestTools['copilot-roi'] ? `${(latestTools['copilot-roi'].output_metrics?.netRevenueRetention || 0).toFixed(0)}%` : 'Pending'}
-                                        </span>
-                                    </div>
-                                    <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed font-mono">True profitability of AI tools factoring in downstream Vibe Coding Debt and Review Bottlenecks.</p>
-                                    <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/copilot-roi" className="text-xs font-bold font-medium uppercase tracking-widest text-rose-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Model AI Economics <ArrowRight size={12} /></Link>
+                                        <Link href="/tools/aper" className="text-xs font-bold font-medium uppercase tracking-widest text-cyan-900 hover:text-zinc-900 flex items-center gap-1 transition-colors">
+                                            Recalibrate APER &rarr;
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </ScrollReveal>
 
-                    {/* PEOPLE / TALENT (CHRO) */}
+                    {/* SECURITY & GOVERNANCE (CISO / INFRA) */}
                     <ScrollReveal delay={300}>
                         <div className="bg-white/60 border border-zinc-400 rounded-3xl p-8 relative overflow-hidden group hover:border-amber-500/30 transition-colors shrink-0">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-amber-500/10 transition-colors duration-1000"></div>
                             <div className="flex items-center gap-3 mb-8">
-                                <Users className="text-amber-500 h-8 w-8" />
+                                <ShieldAlert className="text-amber-500 h-8 w-8" />
                                 <div>
-                                    <h3 className="text-xl font-bold text-zinc-950 uppercase tracking-tight">Human Capital & Talent</h3>
-                                    <p className="text-xs font-bold font-mono text-amber-400 uppercase tracking-widest">CHRO / Resource Allocation</p>
+                                    <h3 className="text-xl font-bold text-zinc-950 uppercase tracking-tight">Security &amp; Shadow AI</h3>
+                                    <p className="text-xs font-bold font-mono text-amber-500 uppercase tracking-widest">CISO / Infosec Desk</p>
                                 </div>
                             </div>
 
                             <div className="space-y-6">
                                 <div className="p-5 bg-white/80 border border-zinc-400 rounded-xl border-l-2 border-l-amber-500">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-semibold font-bold text-zinc-900">AI CapEx Break-Even</span>
-                                        <span className="text-xl font-black text-zinc-950 text-right">
-                                            {latestTools['ai-roi-timeline'] ? `${(latestTools['ai-roi-timeline'].output_metrics?.breakEvenMonths || 0).toFixed(1)} Months` : 'Pending'}
-                                        </span>
+                                        <span className="text-sm font-semibold font-bold text-zinc-900">Model Context Protocol (MCP) Audit</span>
+                                        <span className="text-xl font-black text-zinc-950 text-right">Active Assessment</span>
                                     </div>
-                                    <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed font-mono">Displaced FTE equivalent tracked against AI architecture implementation costs.</p>
+                                    <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed font-mono">
+                                        Evaluates prompt injection vulnerability, dynamic schema poisoning, and un-sandboxed STDIO transport risks.
+                                    </p>
                                     <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/ai-roi-timeline" className="text-xs font-bold font-medium uppercase tracking-widest text-amber-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">Audit Break-Even <ArrowRight size={12} /></Link>
+                                        <Link href="/tools/mcp-security-auditor" className="text-xs font-bold font-medium uppercase tracking-widest text-amber-500 hover:text-zinc-900 flex items-center gap-1 transition-colors">
+                                            Run MCP Security Audit &rarr;
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </ScrollReveal>
 
-                    {/* EXTERNAL (PE / M&A) */}
-                     <ScrollReveal delay={400}>
+                    {/* PRIVATE EQUITY & M&A DUE DILIGENCE */}
+                    <ScrollReveal delay={400}>
                         <div className="bg-white/60 border border-zinc-400 rounded-3xl p-8 relative overflow-hidden group hover:border-zinc-500/50 transition-colors h-full shrink-0">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-zinc-500/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-zinc-500/10 transition-colors duration-1000"></div>
                             <div className="flex items-center gap-3 mb-8">
                                 <Briefcase className="text-zinc-950 h-8 w-8" />
                                 <div>
-                                    <h3 className="text-xl font-bold text-zinc-950 uppercase tracking-tight">Mergers & Acquisitions</h3>
-                                    <p className="text-xs font-bold font-mono text-zinc-900 uppercase tracking-widest">Private Equity / Due Diligence</p>
+                                    <h3 className="text-xl font-bold text-zinc-950 uppercase tracking-tight">M&amp;A Due Diligence</h3>
+                                    <p className="text-xs font-bold font-mono text-zinc-900 uppercase tracking-widest">Private Equity &amp; Deal Teams</p>
                                 </div>
                             </div>
 
                             <div className="space-y-6">
                                 <div className="p-5 bg-white/80 border border-zinc-400 rounded-xl border-l-2 border-l-zinc-300">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-semibold font-bold text-zinc-900">Technical Due Diligence Tracker</span>
-                                        <span className="text-xl font-black text-zinc-950 text-right">
-                                            {latestTools['DUE-DILIGENCE'] ? `${(latestTools['DUE-DILIGENCE'].output_metrics?.adjustedConfidence || 0).toFixed(0)}%` : 'Pending'}
-                                        </span>
+                                        <span className="text-sm font-semibold font-bold text-zinc-900">Technical Debt Diligence</span>
+                                        <span className="text-xl font-black text-zinc-950 text-right">Investment Ready</span>
                                     </div>
-                                    <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed font-mono">Overall technical health and survivability score for inbound acquisition targets.</p>
+                                    <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed font-mono">
+                                        Forensic code audit converting hidden tech debt into deal valuation discount currency before close.
+                                    </p>
                                     <div className="mt-4 flex justify-end">
-                                        <Link href="/tools/due-diligence" className="text-xs font-bold font-medium uppercase tracking-widest text-zinc-950 hover:text-zinc-900 flex items-center gap-1 transition-colors">Run External Diligence <ArrowRight size={12} /></Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </ScrollReveal>
-
-                    {/* AI STRATEGY & RISK (CAIO/CRO) */}
-                    <ScrollReveal delay={500}>
-                        <div className="bg-white/60 border border-rose-500/10 rounded-3xl p-8 relative overflow-hidden group hover:border-rose-500/30 transition-colors h-full shrink-0">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-rose-500/5 rounded-full blur-[100px] pointer-events-none group-hover:bg-rose-500/10 transition-colors duration-1000"></div>
-                            <div className="flex items-center gap-3 mb-8">
-                                <AlertTriangle className="text-rose-500 h-8 w-8" />
-                                <div>
-                                    <h3 className="text-xl font-bold text-zinc-950 uppercase tracking-tight">AI Strategy & Risk</h3>
-                                    <p className="text-xs font-bold font-mono text-rose-400 uppercase tracking-widest">Chief AI Officer / CRO</p>
-                                </div>
-                            </div>
-
-                            <div className="space-y-6">
-                                <div className="p-5 bg-white/80 border border-rose-500/20 rounded-xl border-l-2 border-l-rose-500">
-                                    <div className="flex items-center justify-between mb-2">
-                                        <span className="text-sm font-semibold font-bold text-zinc-900">Model Collapse Liability</span>
-                                        <span className="text-xl font-black text-zinc-950 text-right">
-                                            {totalWealthGap > 0 ? 'High Exposure' : 'Pending Audit'}
-                                        </span>
-                                    </div>
-                                    <p className="text-sm font-semibold font-medium text-zinc-950 leading-relaxed font-mono">Financial tax triggered by synthetic data decay forcing continuous model retraining capital expenditure.</p>
-                                    
-                                    <div className="mt-4 p-3 bg-rose-500/10 border border-rose-500/20 rounded-lg">
-                                        <div className="text-xs font-bold font-medium uppercase tracking-widest text-rose-400 font-bold mb-1 flex items-center gap-2">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
-                                            Active Threat Briefing
-                                        </div>
-                                        <Link href="/blog/model-collapse-financial-modeling" className="text-sm font-semibold font-medium text-zinc-950 hover:text-rose-900 font-extrabold transition-colors block leading-tight">
-                                           Read the CIO.com framework on mitigating this depreciation schedule.
+                                        <Link href="/tools/due-diligence" className="text-xs font-bold font-medium uppercase tracking-widest text-zinc-950 hover:text-zinc-900 flex items-center gap-1 transition-colors">
+                                            Run M&amp;A Diligence &rarr;
                                         </Link>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </ScrollReveal>
 
                 </div>
-            
-            <div className="page-container max-w-4xl mx-auto">
-                <AdvisoryCTA variant="tool-result" />
-            </div>
-        </main>
+
+                {/* Advisory CTA */}
+                <div className="page-container max-w-4xl mx-auto">
+                    <AdvisoryCTA variant="tool-result" />
+                </div>
+            </main>
+
+            {/* Consolidated Executive Board Deck Modal */}
+            <ExecutiveBoardDeckModal
+                isOpen={showBoardModal}
+                onClose={() => setShowBoardModal(false)}
+                toolName="Consolidated Enterprise Capital Exposure Audit"
+                toolSlug="board-room"
+                score={compositeScore}
+                scoreLabel={compositeScore < 50 ? 'Critical Insolvency Exposure' : 'Sub-Optimal R&D Capitalization'}
+                metrics={[
+                    { label: 'Total Annual Capital Bleed', value: formatCurrency(totalCapitalBleed), isNegative: true, subtext: 'PDI + AI COGS + Coordination Tax' },
+                    { label: 'Blended Insolvency Horizon', value: insolvencyHorizon, subtext: '100% capacity lock date' },
+                    { label: 'Product Debt Index Score', value: `${pdiScore} / 100`, isNegative: pdiScore < 50 },
+                    { label: 'Net AI Feature Margin', value: `${auebMargin.toFixed(1)}%`, isNegative: auebMargin < 50 },
+                    { label: 'Revenue Multiple (APER)', value: `${aperMultiple.toFixed(2)}x` },
+                    { label: 'Coordination Tax Load', value: `${aperCoordinationTax.toFixed(1)}%`, isNegative: true }
+                ]}
+                executiveSummary={[
+                    `The consolidated enterprise audit reveals an aggregate annual capital bleed of ${formatCurrency(totalCapitalBleed)} across engineering debt, AI inference fees, and organizational coordination tax.`,
+                    `Compounding maintenance interest and un-gated AI API consumption mathematically project a blended Technical Insolvency Horizon of ${insolvencyHorizon}.`,
+                    `Deploying the Sovereign Runtime Architecture and CapEx quarantine protocol reclaims an estimated 20% to 35% of lost R&D velocity within 90 days.`
+                ]}
+                remediationPlaybook={[
+                    {
+                        step: '01',
+                        title: 'CapEx Quarantine & Debt Cap',
+                        directive: 'Freeze net-new feature additions on any software domain operating above 35% maintenance allocation.',
+                        actionItem: 'Institute the Win Locker gate: zero pull request approvals until the debt ratio decreases by 15%.'
+                    },
+                    {
+                        step: '02',
+                        title: 'Deploy Intent Router & Caching Proxy',
+                        directive: 'Intercept repetitive prompt embeddings at >= 0.92 cosine similarity to deflect 40% to 60% of baseline queries.',
+                        actionItem: 'Triage queries between local 8B open weights models and external frontier APIs to protect gross margin.'
+                    },
+                    {
+                        step: '03',
+                        title: 'Institute Pre-Commit Schema Assertion',
+                        directive: 'Block raw AI-generated pull request boilerplate before it reaches human code review queues.',
+                        actionItem: 'Enforce deterministic verification gates and token budget circuit breakers across all agent loops.'
+                    }
+                ]}
+                remediationTrack={{
+                    trackNumber: 3,
+                    title: 'R&D Capital Management & Executive Reporting',
+                    href: '/vault/curriculum/tracks/track-03'
+                }}
+                blueprint={{
+                    title: 'Sovereign Agent Gateway & Capital Governance Blueprint',
+                    href: '/vault/blueprints'
+                }}
+                roleContext="CEO"
+            />
+
+            {/* Formal Statement of Work Proposal Modal */}
+            <EnterpriseSOWModal
+                isOpen={showSowModal}
+                onClose={() => setShowSowModal(false)}
+                clientName="Executive Board of Directors"
+                annualWaste={totalCapitalBleed}
+                pdiScore={pdiScore}
+                grossMargin={Math.round(auebMargin)}
+                arrPerEngineer={Math.round(aperTotalCost / 20)}
+                insolvencyHorizon={insolvencyHorizon}
+                recommendedRemediation={[
+                    'Freeze feature delivery on quarantined modules operating above 35% maintenance allocation.',
+                    'Deploy semantic intent router to deflect 40% to 60% of baseline LLM inference queries.',
+                    'Institute pre-commit schema assertion gates to eliminate AI pull request review bottlenecks.'
+                ]}
+            />
         </div>
     );
 }

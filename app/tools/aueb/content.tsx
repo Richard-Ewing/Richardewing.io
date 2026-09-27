@@ -4,7 +4,7 @@ import { useState, useEffect, Suspense } from 'react';
 import { useQueryState, parseAsString, parseAsStringLiteral } from 'nuqs';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { TrendingDown, TrendingUp, AlertTriangle, DollarSign, Lock, Activity, Zap, Flame, Users, Target, Mail, ArrowRight, Cpu, Skull, Building2, Share2, Check, FileText } from 'lucide-react';
+import { TrendingDown, TrendingUp, AlertTriangle, DollarSign, Lock, Activity, Zap, Flame, Users, Target, Mail, ArrowRight, Cpu, Skull, Building2, Share2, Check, FileText, FileCheck } from 'lucide-react';
 import Link from 'next/link';
 import { NewsletterForm } from '../../components/newsletter-form';
 import ToolGate from '../../components/tool-gate';
@@ -12,6 +12,7 @@ import ToolCelebration from '../../components/ToolCelebration';
 import ToolPayGate from '../../components/ToolPayGate';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import ExecutiveBoardDeckModal from '@/app/components/ExecutiveBoardDeckModal';
+import EnterpriseSOWModal from '@/app/components/EnterpriseSOWModal';
 import { QPEPRemediation } from '../../components/QPEPRemediation';
 import { VaultUpsell } from '../../components/VaultUpsell';
 import { ToolGateCTA } from '../../components/ToolGateCTA';
@@ -151,6 +152,7 @@ function AUEBToolContent() {
     const [loading, setLoading] = useState(false);
     const [showGate, setShowGate] = useState(false);
     const [showBoardModal, setShowBoardModal] = useState(false);
+    const [showSowModal, setShowSowModal] = useState(false);
 
     useEffect(() => {
         trackDiagnosticEvent('diagnostic_started', 'aueb');
@@ -554,6 +556,13 @@ function AUEBToolContent() {
                                             <FileText className="w-4 h-4 text-cyan-400" />
                                             Board Deck Slip (1-Page Briefing)
                                         </button>
+                                        <button
+                                            onClick={() => setShowSowModal(true)}
+                                            className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-rose-600 text-white font-bold text-xs uppercase tracking-wider hover:bg-rose-500 transition shadow-md shrink-0"
+                                        >
+                                            <FileCheck className="w-4 h-4" />
+                                            Formal SOW Proposal
+                                        </button>
                                         <div className="flex-1">
                                             <ToolGate toolName="Executive PDF Export" toolSlug="aueb" mappedCurriculumId="21-1">
                                                 <ExportToPDFButton 
@@ -616,6 +625,22 @@ function AUEBToolContent() {
                                         href: '/vault/blueprints'
                                     }}
                                     roleContext={persona}
+                                />
+
+                                <EnterpriseSOWModal
+                                    isOpen={showSowModal}
+                                    onClose={() => setShowSowModal(false)}
+                                    clientName="AI Product Organization"
+                                    annualWaste={results.monthlyCost * 12}
+                                    pdiScore={Math.round(results.grossMargin)}
+                                    grossMargin={Math.round(results.grossMargin)}
+                                    arrPerEngineer={Math.round(results.monthlyRevenue * 12 / 15)}
+                                    insolvencyHorizon={results.monthsToCollapse <= 12 ? 'Q3 2027' : 'Q1 2028'}
+                                    recommendedRemediation={[
+                                        'Deploy semantic caching proxy at >= 0.92 cosine similarity to deflect 30% to 50% of queries.',
+                                        'Implement model cascade routing: direct extraction to 8B SLMs, reserving frontier models for reasoning.',
+                                        'Enforce strict token session quotas and per-user velocity rate limits via Redis circuit breakers.'
+                                    ]}
                                 />
 
                                 {/* -------- PDF CAPTURE ZONE START -------- */}

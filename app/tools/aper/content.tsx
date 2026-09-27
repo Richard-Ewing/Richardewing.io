@@ -4,13 +4,14 @@ import { useState, useEffect, Suspense } from 'react';
 import { useQueryState, parseAsString, parseAsStringLiteral } from 'nuqs';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
-import { TrendingUp, TrendingDown, AlertTriangle, DollarSign, Lock, Zap, Users, Target, Mail, ArrowRight, Cpu, Clock, Building, Building2, Skull, Share2, Check, Activity, FileText } from 'lucide-react';
+import { TrendingUp, TrendingDown, AlertTriangle, DollarSign, Lock, Zap, Users, Target, Mail, ArrowRight, Cpu, Clock, Building, Building2, Skull, Share2, Check, Activity, FileText, FileCheck } from 'lucide-react';
 import Link from 'next/link';
 import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
 import ToolPayGate from '../../components/ToolPayGate';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import ExecutiveBoardDeckModal from '@/app/components/ExecutiveBoardDeckModal';
+import EnterpriseSOWModal from '@/app/components/EnterpriseSOWModal';
 import { QPEPRemediation } from '../../components/QPEPRemediation';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { VaultUpsell } from '../../components/VaultUpsell';
@@ -98,6 +99,7 @@ function APERToolContent() {
     const [showGate, setShowGate] = useState(false);
     const [copiedLink, setCopiedLink] = useState(false);
     const [showBoardModal, setShowBoardModal] = useState(false);
+    const [showSowModal, setShowSowModal] = useState(false);
 
     const handleCopyShareLink = () => {
         if (typeof window !== 'undefined') {
@@ -394,6 +396,13 @@ function APERToolContent() {
                                             <FileText className="w-4 h-4 text-cyan-400" />
                                             Board Deck Slip (1-Page Briefing)
                                         </button>
+                                        <button
+                                            onClick={() => setShowSowModal(true)}
+                                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-600 text-white font-bold text-xs uppercase tracking-wider hover:bg-rose-500 transition shadow-md"
+                                        >
+                                            <FileCheck className="w-4 h-4" />
+                                            Formal SOW Proposal
+                                        </button>
                                         <ExportToPDFButton targetId="aper-pdf-export-zone" fileName={`APER_Assessment_${persona}.pdf`} />
                                     </div>
                                 </div>
@@ -448,6 +457,22 @@ function APERToolContent() {
                                         href: '/vault/blueprints'
                                     }}
                                     roleContext={persona}
+                                />
+
+                                <EnterpriseSOWModal
+                                    isOpen={showSowModal}
+                                    onClose={() => setShowSowModal(false)}
+                                    clientName="Engineering Organization"
+                                    annualWaste={Math.round(results.totalEngCost * (results.coordinationTax / 100))}
+                                    pdiScore={Math.round(Math.min(100, results.multiplier * 20))}
+                                    grossMargin={Math.round(results.engineeringMargin)}
+                                    arrPerEngineer={Math.round(results.aper)}
+                                    insolvencyHorizon="Q4 2027"
+                                    recommendedRemediation={[
+                                        'Institute pre-commit schema assertion tests to reject unreviewed boilerplate before human review.',
+                                        'Shift from functional silos to paired pod topologies with dedicated quality gates.',
+                                        'Cap maximum AI-generated PR diff size at 300 lines of code.'
+                                    ]}
                                 />
 
                                 {/* -------- PDF CAPTURE ZONE START -------- */}

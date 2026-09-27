@@ -9,11 +9,12 @@ import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import ShineBorder from '../../components/magicui/shine-border';
 import { VaultUpsell } from '../../components/VaultUpsell';
 import { BorderBeam } from '../../components/magicui/border-beam';
-import { Network, Server, ArrowRight, ShieldCheck, Cpu, DollarSign, Lock, Zap, FileText } from 'lucide-react';
+import { Network, Server, ArrowRight, ShieldCheck, Cpu, DollarSign, Lock, Zap, FileText, FileCheck } from 'lucide-react';
 import ToolGate from '../../components/tool-gate';
 import { GlowCard } from '../../components/magicui/glow-card';
 import { PersonaSwitcher, Persona } from '../../components/PersonaSwitcher';
 import ExecutiveBoardDeckModal from '../../components/ExecutiveBoardDeckModal';
+import EnterpriseSOWModal from '../../components/EnterpriseSOWModal';
 import AirTrafficControlVisualizer from '../../components/AirTrafficControlVisualizer';
 
 // Pricing per 1M tokens (Input / Output)
@@ -35,6 +36,7 @@ export default function AgentRouterContent() {
     // UI
     const [loading, setLoading] = useState(false);
     const [showBoardModal, setShowBoardModal] = useState(false);
+    const [showSowModal, setShowSowModal] = useState(false);
     const [results, setResults] = useState<{
         grossMonthlyRequests: number;
         frontierRequests: number;
@@ -225,6 +227,13 @@ export default function AgentRouterContent() {
                                 <FileText className="w-4 h-4 text-cyan-400" />
                                 Board Deck Slip (1-Page Briefing)
                             </button>
+                            <button
+                                onClick={() => setShowSowModal(true)}
+                                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-rose-600 text-white font-bold text-xs uppercase tracking-wider hover:bg-rose-500 transition shadow-md shrink-0"
+                            >
+                                <FileCheck className="w-4 h-4" />
+                                Formal SOW Proposal
+                            </button>
                             <ExportToPDFButton targetId="router-pdf-export-zone" fileName={`Agentic_Topology_Audit.pdf`} />
                         </div>
                     </div>
@@ -281,6 +290,22 @@ export default function AgentRouterContent() {
                             href: '/vault/blueprints'
                         }}
                         roleContext={persona}
+                    />
+
+                    <EnterpriseSOWModal
+                        isOpen={showSowModal}
+                        onClose={() => setShowSowModal(false)}
+                        clientName="Engineering Swarm Team"
+                        annualWaste={results.monthlyCost * 12}
+                        pdiScore={useEdgeRouter ? 88 : 42}
+                        grossMargin={useEdgeRouter ? 74 : 35}
+                        arrPerEngineer={185000}
+                        insolvencyHorizon="Q3 2027"
+                        recommendedRemediation={[
+                            'Deploy private SLM semantic router on edge CPU to deflect 60% of baseline queries.',
+                            'Institute token budget circuit breakers that freeze agent loops after 3 consecutive retry faults.',
+                            'Insert contextual pruning layers between hops to compress prompt strings by 80%.'
+                        ]}
                     />
 
                     <PersonaSwitcher activePersona={persona} onChange={setPersona} />

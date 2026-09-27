@@ -1,11 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ShieldAlert, Server, Lock, AlertTriangle, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ShieldAlert, Server, Lock, AlertTriangle, ArrowRight, CheckCircle2, FileText, FileCheck } from 'lucide-react';
 import ToolGate from '@/app/components/tool-gate';
 import { ExportToPDFButton } from '@/app/components/ExportToPDFButton';
 import DiagnosticCTA from '@/app/components/DiagnosticCTA';
 import Link from 'next/link';
+import MCPSecurityExploitLab from '@/app/components/MCPSecurityExploitLab';
+import ExecutiveBoardDeckModal from '@/app/components/ExecutiveBoardDeckModal';
+import EnterpriseSOWModal from '@/app/components/EnterpriseSOWModal';
 
 interface AuditQuestion {
     id: string;
@@ -54,6 +57,8 @@ const AUDIT_QUESTIONS: AuditQuestion[] = [
 ];
 
 export default function MCPAuditorTool() {
+    const [showBoardModal, setShowBoardModal] = useState(false);
+    const [showSowModal, setShowSowModal] = useState(false);
     const [checkedRisks, setCheckedRisks] = useState<Record<string, boolean>>({
         'raw-stdio': true,
         'unpinned-schemas': true,
@@ -184,14 +189,32 @@ export default function MCPAuditorTool() {
                                 </p>
                             </div>
 
-                            <div className="pt-2 border-t border-zinc-200 flex items-center justify-between">
-                                <Link
-                                    href="/workspace/governance"
-                                    className="text-xs font-bold text-rose-700 hover:text-rose-900 hover:underline"
-                                >
-                                    Book MCP Threat Assessment &rarr;
-                                </Link>
-                                <ExportToPDFButton targetId="mcp-audit" fileName="mcp-security-audit.pdf" />
+                            <div className="pt-3 border-t border-zinc-200 flex flex-col gap-2">
+                                <div className="flex items-center gap-2">
+                                    <button
+                                        onClick={() => setShowBoardModal(true)}
+                                        className="flex-1 py-2 px-3 rounded-xl bg-zinc-950 text-white font-bold text-xs uppercase tracking-wider hover:bg-zinc-800 transition shadow flex items-center justify-center gap-1.5"
+                                    >
+                                        <FileText className="w-3.5 h-3.5 text-rose-400" />
+                                        Board Deck Slip
+                                    </button>
+                                    <button
+                                        onClick={() => setShowSowModal(true)}
+                                        className="flex-1 py-2 px-3 rounded-xl bg-rose-600 text-white font-bold text-xs uppercase tracking-wider hover:bg-rose-500 transition shadow flex items-center justify-center gap-1.5"
+                                    >
+                                        <FileCheck className="w-3.5 h-3.5" />
+                                        SOW Proposal
+                                    </button>
+                                </div>
+                                <div className="flex items-center justify-between pt-1">
+                                    <Link
+                                        href="/services"
+                                        className="text-xs font-bold text-rose-700 hover:text-rose-900 hover:underline"
+                                    >
+                                        Book Threat Assessment &rarr;
+                                    </Link>
+                                    <ExportToPDFButton targetId="mcp-audit" fileName="mcp-security-audit.pdf" />
+                                </div>
                             </div>
                         </div>
 
@@ -207,9 +230,82 @@ export default function MCPAuditorTool() {
                     </div>
                 </div>
 
+                {/* Interactive Exploit Simulation Lab */}
+                <div className="mt-12">
+                    <MCPSecurityExploitLab />
+                </div>
+
                 <div className="mt-12">
                     <DiagnosticCTA />
                 </div>
+
+                <ExecutiveBoardDeckModal
+                    isOpen={showBoardModal}
+                    onClose={() => setShowBoardModal(false)}
+                    toolName="MCP Security & Privilege Escalation Audit"
+                    toolSlug="mcp-security-auditor"
+                    score={Math.max(0, 100 - totalRiskScore)}
+                    scoreLabel={totalRiskScore > 50 ? 'Critical Lateral Movement Risk' : 'Zero-Trust Hardened'}
+                    metrics={[
+                        { label: 'Total Threat Index', value: `${totalRiskScore} / 100`, isNegative: totalRiskScore > 50, subtext: 'OWASP MCP Risk Exposure' },
+                        { label: 'Identified Vulnerabilities', value: `${Object.values(checkedRisks).filter(Boolean).length} Active Flags`, isNegative: true },
+                        { label: 'Unchecked Permission Blast', value: checkedRisks['missing-hitl'] ? 'High / Unrestricted' : 'Constrained', isNegative: checkedRisks['missing-hitl'] },
+                        { label: 'Dynamic Schema Pinning', value: checkedRisks['unpinned-schemas'] ? 'Vulnerable to Rug Pull' : 'Pinned & Hashed', isNegative: checkedRisks['unpinned-schemas'] },
+                        { label: 'Subprocess Transport Mode', value: checkedRisks['raw-stdio'] ? 'Raw STDIO (Direct Shell)' : 'Sandboxed Gateway', isNegative: checkedRisks['raw-stdio'] },
+                        { label: 'Exogram Admissibility Layer', value: '0.07ms Pre-Commit Gate' }
+                    ]}
+                    executiveSummary={[
+                        `The audit identifies a composite MCP threat index of ${totalRiskScore}/100, categorized as ${vulnerabilityTier}.`,
+                        `Current agent environments dispatch tool commands over raw STDIO without isolated process sandboxing or static schema pinning.`,
+                        `Autonomous agents operating without deterministic human-in-the-loop gates present immediate privilege escalation and credential exfiltration liability.`
+                    ]}
+                    remediationPlaybook={[
+                        {
+                            step: '01',
+                            title: 'Isolate MCP Transports via Dedicated Gateway',
+                            directive: 'Terminate raw STDIO process execution on host developer laptops and build machines.',
+                            actionItem: 'Deploy an isolated network-sandboxed MCP proxy to inspect tool payloads before execution.'
+                        },
+                        {
+                            step: '02',
+                            title: 'Enforce Cryptographic Schema Pinning',
+                            directive: 'Prohibit dynamic runtime tool list mutations without explicit workspace policy re-hash.',
+                            actionItem: 'Pin tool schemas into git-tracked policy manifests and reject unauthorized runtime tool definitions.'
+                        },
+                        {
+                            step: '03',
+                            title: 'Deploy Sub-Millisecond Action Admissibility',
+                            directive: 'Enforce dual-nonce execution validation on all external context chunks before model tool invocation.',
+                            actionItem: 'Deploy Exogram pre-commit gatekeeper to trip circuit breakers upon indirect prompt injection detection.'
+                        }
+                    ]}
+                    remediationTrack={{
+                        trackNumber: 21,
+                        title: 'AI Agent Governance & Trust Infrastructure',
+                        href: '/vault/curriculum/tracks/track-21'
+                    }}
+                    blueprint={{
+                        title: 'Deterministic MCP Execution Gateway & Payload Filter',
+                        href: '/vault/blueprints'
+                    }}
+                    roleContext="CISO"
+                />
+
+                <EnterpriseSOWModal
+                    isOpen={showSowModal}
+                    onClose={() => setShowSowModal(false)}
+                    clientName="Enterprise Security Team"
+                    annualWaste={totalRiskScore * 18500}
+                    pdiScore={Math.max(0, 100 - totalRiskScore)}
+                    grossMargin={totalRiskScore > 50 ? 32 : 68}
+                    arrPerEngineer={195000}
+                    insolvencyHorizon="Q2 2027"
+                    recommendedRemediation={[
+                        'Deploy sub-millisecond MCP proxy gateway to terminate un-sandboxed STDIO socket connections.',
+                        'Institute cryptographic manifest pinning to block dynamic tool injection and permission escalation.',
+                        'Enforce dual-signature human confirmation tokens for all database and filesystem mutating tools.'
+                    ]}
+                />
             </div>
         </ToolGate>
     );

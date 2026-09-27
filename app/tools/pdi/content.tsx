@@ -14,6 +14,7 @@ import { LongitudinalHistory } from '@/components/reports/LongitudinalHistory';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import ExecutiveMemoExport from '@/app/components/ExecutiveMemoExport';
 import ExecutiveBoardDeckModal from '@/app/components/ExecutiveBoardDeckModal';
+import EnterpriseSOWModal from '@/app/components/EnterpriseSOWModal';
 import { motion } from 'framer-motion';
 import ToolCelebration from '../../components/ToolCelebration';
 import Link from 'next/link';
@@ -24,7 +25,7 @@ import ShineBorder from '../../components/magicui/shine-border';
 import NumberTicker from '../../components/magicui/number-ticker';
 import { BorderBeam } from '../../components/magicui/border-beam';
 import { useQueryState, parseAsInteger, parseAsString, parseAsStringLiteral } from 'nuqs';
-import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, TrendingDown, AlertTriangle, Lock, Zap, Skull, Building2, Share2, Check, Activity, FileText } from 'lucide-react';
+import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, TrendingDown, AlertTriangle, Lock, Zap, Skull, Building2, Share2, Check, Activity, FileText, FileCheck } from 'lucide-react';
 import { NewsletterForm } from '../../components/newsletter-form';
 import { ToolGateCTA } from '../../components/ToolGateCTA';
 import ToolGate from '../../components/tool-gate';
@@ -144,6 +145,7 @@ function PDIToolContent() {
     const [showPaywall, setShowPaywall] = useState(false);
     const [copiedLink, setCopiedLink] = useState(false);
     const [showBoardModal, setShowBoardModal] = useState(false);
+    const [showSowModal, setShowSowModal] = useState(false);
 
     const handleCopyShareLink = () => {
         if (typeof window !== 'undefined') {
@@ -921,6 +923,13 @@ Migrate from Heroku to AWS"
                                 <FileText className="w-4 h-4 text-cyan-400" />
                                 Board Deck Slip (1-Page Briefing)
                             </button>
+                            <button
+                                onClick={() => setShowSowModal(true)}
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-600 text-white font-bold text-xs uppercase tracking-wider hover:bg-rose-500 transition shadow-md"
+                            >
+                                <FileCheck className="w-4 h-4" />
+                                Formal SOW Proposal
+                            </button>
                             <ExportToPDFButton 
                                 targetId="pdi-results-artifact" 
                                 fileName={`Product_Debt_Index_${new Date().toISOString().split('T')[0]}.pdf`} 
@@ -980,6 +989,22 @@ Migrate from Heroku to AWS"
                             href: '/vault/blueprints'
                         }}
                         roleContext={persona}
+                    />
+
+                    <EnterpriseSOWModal
+                        isOpen={showSowModal}
+                        onClose={() => setShowSowModal(false)}
+                        clientName="Engineering Organization"
+                        annualWaste={results.financials.waste}
+                        pdiScore={results.score}
+                        grossMargin={Math.round(results.metrics.growth)}
+                        arrPerEngineer={Math.round(results.financials.waste / (teamSize || 10))}
+                        insolvencyHorizon="Q3 2027"
+                        recommendedRemediation={[
+                            "Institute CapEx quarantine protocol for all software modules operating above 35% maintenance allocation.",
+                            "Enforce the Win Locker pattern: zero pull request approvals on quarantined repositories until debt ratio decreases by 15%.",
+                            "Deploy Exogram deterministic runtime gatekeeper to block unverified AI code from production."
+                        ]}
                     />
 
                     {/* Social Proof */}
