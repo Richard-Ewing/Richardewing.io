@@ -10,7 +10,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 2 },
     definition: 'The Model Context Protocol (MCP) created a universal standard for LLM-to-tool integration, but its rapid adoption has created an urgent governance gap. MCP governance formalizes the security boundary, rate-limiting, and permission control between AI agents and enterprise tools. Without deterministic governance gates at the MCP boundary, agents can execute unauthorized shell commands, exfiltrate data through untrusted community servers, and trigger confused deputy attacks. This discipline shifts the focus from what an agent can theoretically do, to what an agent is explicitly permitted to do.',
     whyItMatters: 'As the number of available MCP servers grows exponentially, the attack surface for AI applications expands linearly with each integration. Without strict governance, the protocol essentially provides unchecked remote code execution and data access capabilities to probabilistic systems. Implementing deterministic governance at the MCP boundary ensures that even if an agent hallucinates a malicious or destructive command, the system will block it, protecting enterprise infrastructure and data integrity.',
-    whoShouldCare: ['Security Architects', 'AI Platform Engineers', 'CTOs', 'DevSecOps Leads'],
+    whoShouldCare: ['Chief Information Security Officer (CISO)', 'Chief Operating Officer (COO)', 'Director of Governance & Risk', 'Quality Engineering (QE) Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Architecting Security Gates', publisher: 'Built In', type: 'Executive Essay', url: '/articles/architecting-security-gates' }
@@ -84,7 +84,26 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     },
     executableTool: { name: 'Shadow AI Scanner', url: '/tools/shadow-ai-scanner', description: 'Scans for unauthorized MCP server installations.', type: 'Audit Scorecard' },
     personaRecommendations: [
-      { role: 'Architect', takeaway: 'Implement a zero-trust model for all external tool interactions.', recommendedNextSlug: 'deterministic-governance' }
+      {
+        role: 'Chief Information Security Officer (CISO)',
+        takeaway: 'Treat every third-party Model Context Protocol server like an unverified contractor on your internal network with zero default credentials.',
+        recommendedNextSlug: 'deterministic-governance'
+      },
+      {
+        role: 'Chief Operating Officer (COO)',
+        takeaway: 'Block autonomous agents from committing financial transactions or modifying customer accounts without a human verification checkpoint.',
+        recommendedNextSlug: 'agent-kill-switch'
+      },
+      {
+        role: 'Director of Governance & Risk',
+        takeaway: 'Establish an audit inventory of all tools connected to enterprise AI models to satisfy board compliance standards.',
+        recommendedNextSlug: 'eaap-protocol'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Confine agent tool execution to sandboxed environments so a hallucinated script cannot delete production databases or leak API keys.',
+        recommendedNextSlug: 'ai-agent-sprawl'
+      }
     ]
   },
   {
@@ -96,7 +115,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.9, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 2 },
     definition: 'Context engineering is the architectural discipline of structuring what an AI model knows when it answers, as opposed to prompt engineering which focuses on how you ask. It encompasses recursive context chunking, semantic caching, memory tiering, RAG pipeline optimization, and deterministic data filtering. The key insight is that software architectures and data pipelines determine agent reliability, not clever prompt adjectives. By treating the context window as a highly constrained computational resource, architects can build systems that reliably solve complex problems without suffering from context rot or memory overload.',
     whyItMatters: 'As models boast increasingly large context windows, the temptation is to dump raw data into the prompt and hope for the best. This approach leads to context clutter, severe latency, and degraded reasoning quality. By formally engineering the context payload, teams can drastically reduce inference costs, eliminate hallucinations caused by irrelevant data, and ensure deterministic outputs from probabilistic models. It transitions AI application development from a dark art of prompt whispering to rigorous software engineering.',
-    whoShouldCare: ['Software Architects', 'Data Engineers', 'AI Application Developers'],
+    whoShouldCare: ['Chief Product Officer (CPO)', 'Customer Support Manager', 'Product Operations Manager', 'Engineering Manager (EM)', 'Director of Engineering'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'How to Prevent Memory Loss in AI Applications', publisher: 'Beehiiv', type: 'Executive Essay', url: '/articles/prevent-memory-loss-ai' }
@@ -165,7 +184,26 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       }
     },
     personaRecommendations: [
-      { role: 'Architect', takeaway: 'Treat your context construction logic as a mission-critical data pipeline.', recommendedNextSlug: 'semantic-caching' }
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Curate internal company knowledge carefully instead of paying for massive context windows that overwhelm users with bloated, slow responses.',
+        recommendedNextSlug: 'context-rot'
+      },
+      {
+        role: 'Customer Support Manager',
+        takeaway: 'Organize internal help documents by resolution type so customer service bots retrieve verified answers instead of outdated company policies.',
+        recommendedNextSlug: 'semantic-caching'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Standardize internal wiki formats and knowledge bases so retrieval pipelines pull clean facts without confusing models.',
+        recommendedNextSlug: 'retrieval-augmented-generation'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Filter noisy background data before requests reach the model to cut token bills and prevent slow response times.',
+        recommendedNextSlug: 'inference-dividend-model'
+      }
     ]
   },
   {
@@ -177,7 +215,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 2 },
     definition: 'Agentic ROI is the economic framework for measuring the value of autonomous AI agents by shifting from per-seat SaaS licensing to a fully loaded cost-per-completed-task versus a human baseline. It quantifies the actual economic gap between deploying autonomous agents and achieving net revenue expansion. A critical component of this framework is accounting for agentic creep - where recursive multi-agent loops generate massive token spikes - and the Unreliability Tax, where necessary human review and retries wipe out the theoretical paper gains of automation.',
     whyItMatters: 'Enterprise leaders frequently miscalculate the return on AI investments by applying legacy software economics to probabilistic systems. A flat $20 monthly subscription implies fixed costs, but agentic systems operate on metered consumption where failure is expensive. By measuring the true cost per completed task - including the hidden costs of debugging, reviewing, and retrying failed agent outputs - organizations can avoid catastrophic budget overruns and identify which workflows actually benefit from agentic automation.',
-    whoShouldCare: ['CIOs', 'CFOs', 'Product Managers', 'Engineering Directors'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Chief Operating Officer (COO)', 'VP of Operations', 'Product Operations Manager', 'Customer Support Manager'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The Economics of Autonomous Agents', publisher: 'Internal', type: 'Executive Essay', url: '/articles/economics-autonomous-agents' }
@@ -247,7 +285,26 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     },
     executableTool: { name: 'Copilot ROI Calculator', url: '/tools/copilot-roi-calculator', description: 'Calculates the true ROI of AI coding assistants.', type: 'Diagnostic Calculator' },
     personaRecommendations: [
-      { role: 'Executive', takeaway: 'Demand task-level cost attribution for all AI initiatives to prevent runaway API spend.', recommendedNextSlug: 'unreliability-tax' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Stop evaluating AI investments on monthly seat licenses; measure the fully loaded cost of completed tasks against human labor baselines.',
+        recommendedNextSlug: 'unreliability-tax'
+      },
+      {
+        role: 'Chief Operating Officer (COO)',
+        takeaway: 'Track how many times human employees must step in to fix broken AI outputs before declaring an automation project a success.',
+        recommendedNextSlug: 'product-economist'
+      },
+      {
+        role: 'VP of Operations',
+        takeaway: 'Audit vendor productivity claims by calculating net workflow hours saved versus the hours spent reviewing machine-generated tickets.',
+        recommendedNextSlug: 'ai-volatility-tax'
+      },
+      {
+        role: 'Customer Support Manager',
+        takeaway: 'Calculate true cost per resolved ticket by adding customer escalations and supervisor interventions into the AI bot operating expense.',
+        recommendedNextSlug: 'inference-dividend-model'
+      }
     ]
   },
   {
@@ -259,7 +316,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.9, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 2 },
     definition: 'Spec-Driven Development (SDD) is the architectural reaction to the collapse of untyped vibe coding. It represents a paradigm shift where engineers transition from conversational prompt iteration to treating structured, machine-readable specifications as executable contracts. In this model, specifications - such as strict JSON/YAML schemas and deterministic acceptance criteria - act as the single source of truth. These specifications guide, bound, and validate the work of autonomous coding swarms, ensuring that probabilistic models produce deterministic, predictable software components.',
     whyItMatters: 'Conversational coding works for simple scripts but fails catastrophically at enterprise scale. When developers rely on vague natural language to direct AI, they invite semantic drift, subtle bugs, and unmaintainable architectures. By enforcing Spec-Driven Development, organizations establish rigorous validation gates that prevent AI coding agents from going off-track. It restores engineering discipline to the AI era, ensuring that code generated by machines is governed by contracts written and verified by humans.',
-    whoShouldCare: ['Engineering Managers', 'Staff Engineers', 'QA Leads', 'Systems Architects'],
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'Director of Engineering', 'Quality Engineering (QE) Manager', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The End of Vibe Coding', publisher: 'Internal', type: 'Executive Essay', url: '/articles/end-of-vibe-coding' }
@@ -328,7 +385,26 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       }
     },
     personaRecommendations: [
-      { role: 'Architect', takeaway: 'Make executable specifications mandatory for any AI code generation in CI/CD.', recommendedNextSlug: 'eval-driven-development' }
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Ban conversational coding in enterprise repositories; mandate formal schema contracts so AI agents generate verifiable code that meets business requirements.',
+        recommendedNextSlug: 'negative-carry-code-crisis'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Establish machine-readable API specifications and architectural acceptance tests before letting autonomous agents touch existing codebases.',
+        recommendedNextSlug: 'deterministic-governance'
+      },
+      {
+        role: 'Quality Engineering (QE) Manager',
+        takeaway: 'Write automated integration assertions before generation so PRs that fail contract specifications get rejected instantly.',
+        recommendedNextSlug: 'eval-driven-development'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Require engineers to define data models and edge cases in YAML contracts so developers spend time architecting rather than babysitting syntax.',
+        recommendedNextSlug: 'vibe-coding'
+      }
     ]
   },
   {
@@ -340,7 +416,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 2, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 2 },
     definition: 'Eval-Driven Development (EDD) is the Test-Driven Development (TDD) of the AI era. Because large language models are probabilistic, traditional deterministic unit tests fail to catch semantic drift, tone collapse, and subtle hallucination patterns over time. EDD mandates that teams embed multi-dimensional evaluation suites - measuring accuracy, grounding, latency, cost, toxicity, and tool correctness - directly into their CI/CD pipelines. It structures the Agent Development Lifecycle (ADLC) around offline golden datasets, synthetic challenge sets, and continuous production online telemetry to ensure model updates do not break application logic.',
     whyItMatters: 'When a foundational model provider updates their weights, your application\'s behavior can change overnight without a single line of your code being altered. Without an eval-driven approach, these regressions go unnoticed until they reach the end user, causing trust erosion and financial loss. EDD provides the safety net required to deploy non-deterministic systems, allowing engineering teams to confidently ship updates, switch underlying models, and optimize prompts while quantitatively proving that system quality has improved or remained stable.',
-    whoShouldCare: ['AI Engineers', 'Machine Learning Engineers', 'QA Directors', 'Platform Architects'],
+    whoShouldCare: ['Chief Product Officer (CPO)', 'Director of Quality Assurance', 'Quality Engineering (QE) Manager', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The Agent Development Lifecycle', publisher: 'Internal', type: 'Protocol Specification', url: '/frameworks/adlc' }
@@ -407,7 +483,26 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       }
     },
     personaRecommendations: [
-      { role: 'Engineer', takeaway: 'Do not merge prompt changes without running them against your golden dataset.', recommendedNextSlug: 'unreliability-tax' }
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Maintain a verified benchmark of real customer prompts to ensure model updates never degrade response accuracy or product tone.',
+        recommendedNextSlug: 'unreliability-tax'
+      },
+      {
+        role: 'Director of Quality Assurance',
+        takeaway: 'Replace subjective manual spot-checking with automated golden evaluation suites that score model grounding and factual precision on every deploy.',
+        recommendedNextSlug: 'hallucination-tax'
+      },
+      {
+        role: 'Quality Engineering (QE) Manager',
+        takeaway: 'Build synthetic edge-case test sets that probe model responses under unexpected inputs and high concurrency before shipping to customers.',
+        recommendedNextSlug: 'deterministic-governance'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Capture production failure cases directly from user feedback tickets and convert them into automated test fixtures within 24 hours.',
+        recommendedNextSlug: 'adlc'
+      }
     ]
   },
   {
@@ -419,7 +514,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.9, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 2 },
     definition: 'AI Coding Tool Economics analyzes the massive financial shift occurring as developer tools transition from simple autocomplete features to autonomous, agentic command-line tools like Claude Code, Cursor, and Windsurf. This transition replaces predictable flat-fee subscriptions with severe cost volatility driven by recursive terminal loops, aggressive codebase indexing, and test-fix churn. The framework unpacks the true unit economics of modern development, contrasting subscription vs. metered API consumption, tracking the Cost per Merged PR, and highlighting the hidden Debugging Tax incurred when cheap AI generation requires expensive human review.',
     whyItMatters: 'Engineering organizations are abandoning standard IDEs for AI-native editors, often without modeling the financial impact. While autocomplete costs $20 a month, agentic coding tools operating on metered API keys can easily consume hundreds of dollars per developer per month. Without understanding AI Coding Tool Economics, engineering leaders cannot accurately forecast their infrastructure budgets or determine if the increased output actually offsets the combined cost of API usage and senior developer review time.',
-    whoShouldCare: ['Engineering Directors', 'CTOs', 'FinOps Teams', 'Lead Developers'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Chief Technology Officer (CTO)', 'Cloud FinOps Manager', 'Director of Engineering', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The True Cost of Agentic Tools', publisher: 'Internal', type: 'Executive Essay', url: '/articles/cost-of-agentic-tools' }
@@ -493,7 +588,26 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     },
     executableTool: { name: 'Copilot ROI Calculator', url: '/tools/copilot-roi-calculator', description: 'Calculates the true ROI of AI coding assistants.', type: 'Diagnostic Calculator' },
     personaRecommendations: [
-      { role: 'Executive', takeaway: 'Transition your developer tool budgets from fixed line items to variable cloud consumption models with strict alerting.', recommendedNextSlug: 'agentic-roi' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Switch from fixed developer tool allowances to metered consumption forecasts to avoid surprise end-of-month API invoices.',
+        recommendedNextSlug: 'agentic-roi'
+      },
+      {
+        role: 'Cloud FinOps Manager',
+        takeaway: 'Set hard spend caps and real-time alerts on individual developer API tokens to stop autonomous test-fix loops from burning thousands in compute.',
+        recommendedNextSlug: 'inference-economics'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Evaluate coding assistant ROI by tracking the net cost per merged PR rather than celebrating the sheer volume of generated lines of code.',
+        recommendedNextSlug: 'ai-volatility-tax'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Pair junior engineers with senior mentors to review AI-generated code so the team does not trade quick syntax creation for massive debugging debt.',
+        recommendedNextSlug: 'retry-inflation'
+      }
     ]
   },
   {
@@ -505,7 +619,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 2, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 2 },
     definition: 'Compound AI Systems represent the paradigm shift from trying to scale a single, monolithic model to engineering complex systems of specialized components. Leading AI architectures now outperform massive monolithic LLMs by orchestrating dynamic model routing, where small, fast models handle triage and routing, while heavy reasoning models are reserved for complex planning. These systems integrate external knowledge stores, deterministic state machines, memory tiers, and rigorous feedback loops. This approach validates the philosophy that superior system design and orchestration yield better results than model idolatry.',
     whyItMatters: 'Relying on a single, massive frontier model for all tasks is economically ruinous and architecturally fragile. It leads to high latency, exorbitant costs, and a single point of failure. Compound AI Systems allow organizations to optimize for cost, speed, and accuracy simultaneously. By breaking down complex tasks into specialized, deterministic workflows guided by smaller, purpose-built models, architects can build highly resilient applications that do not depend entirely on the shifting capabilities of one vendor\'s API.',
-    whoShouldCare: ['Systems Architects', 'AI Platform Engineers', 'CTOs', 'Machine Learning Engineers'],
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'Chief Product Officer (CPO)', 'VP of Operations', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Beyond the Monolith', publisher: 'Internal', type: 'Executive Essay', url: '/articles/beyond-the-monolith' }
@@ -572,7 +686,26 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       }
     },
     personaRecommendations: [
-      { role: 'Architect', takeaway: 'Decompose monolithic prompts into discrete, testable nodes.', recommendedNextSlug: 'systems-governor' }
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Stop routing every internal request to massive frontier models; orchestrate small, fast models for categorization and reserve expensive models for heavy reasoning.',
+        recommendedNextSlug: 'slm-repatriation'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Improve application responsiveness by breaking single monolithic prompts into discrete steps that return instant feedback to users.',
+        recommendedNextSlug: 'systems-governor'
+      },
+      {
+        role: 'VP of Operations',
+        takeaway: 'Reduce vendor lock-in and cut downtime by building multi-model pipelines that seamlessly failover to alternative providers.',
+        recommendedNextSlug: 'inference-dividend-model'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Map product user flows into deterministic state flows so models execute predictable actions at each stage.',
+        recommendedNextSlug: 'compound-ai-systems'
+      }
     ]
   },
   {
@@ -584,7 +717,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 1, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 2 },
     definition: 'Shadow AI Governance addresses the reality that 60-80% of knowledge workers use unsanctioned AI tools daily, bypassing IT controls. However, the risk has fundamentally mutated from employees simply pasting sensitive text into web chats to developers granting autonomous local agents shell access and production credentials - a phenomenon known as Shadow Agentic Execution. Shadow AI Governance quantifies the Breach Cost Premium associated with these unmonitored systems and advocates for Adaptive Governance. This involves continuous discovery, automated redirection to approved enterprise models, and the implementation of scoped, non-human identity management to secure the perimeter.',
     whyItMatters: 'Traditional cybersecurity perimeters are blind to autonomous agents running locally on developer machines. When an engineer gives an unvetted AI coding tool access to their terminal and AWS keys, the enterprise is exposed to catastrophic supply chain and data exfiltration risks. Shadow AI Governance is critical because blocking AI entirely pushes it further underground. By implementing adaptive governance, organizations can provide secure, sanctioned alternatives while actively monitoring and restricting unsanctioned agentic execution, mitigating the massive financial risk of an AI-driven breach.',
-    whoShouldCare: ['CISOs', 'CIOs', 'IT Governance Leads', 'Security Architects'],
+    whoShouldCare: ['Chief Information Security Officer (CISO)', 'Chief Operating Officer (COO)', 'Director of Governance & Risk', 'VP of Human Resources', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The Mutation of Shadow AI', publisher: 'Internal', type: 'Executive Essay', url: '/articles/mutation-of-shadow-ai' }
@@ -653,7 +786,26 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     },
     executableTool: { name: 'Shadow AI Scanner', url: '/tools/shadow-ai-scanner', description: 'Scans for unauthorized AI installations.', type: 'Audit Scorecard' },
     personaRecommendations: [
-      { role: 'Executive', takeaway: 'Pivot immediately to an adaptive governance strategy.', recommendedNextSlug: 'mcp-governance' }
+      {
+        role: 'Chief Information Security Officer (CISO)',
+        takeaway: 'Do not waste time with blanket bans that get bypassed; deploy discovery monitors and provide sanctioned enterprise models with zero data retention.',
+        recommendedNextSlug: 'shadow-ai'
+      },
+      {
+        role: 'Chief Operating Officer (COO)',
+        takeaway: 'Set clear acceptable use guidelines across every department so teams do not upload confidential customer contracts into public web tools.',
+        recommendedNextSlug: 'mcp-governance'
+      },
+      {
+        role: 'Director of Governance & Risk',
+        takeaway: 'Audit department credit card expensing for unapproved AI subscriptions and consolidate usage under central enterprise contracts.',
+        recommendedNextSlug: 'shadow-delegation'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Give developers vetted command-line AI tools with pre-configured secret masking so engineers do not bypass corporate security on private laptops.',
+        recommendedNextSlug: 'ai-agent-sprawl'
+      }
     ]
   },
   {
@@ -665,7 +817,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.99, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 2 },
     definition: 'The Unreliability Tax is the hidden economic burden of handling the failure rates of generative AI systems. It is the primary reason why over 80% of enterprise AI pilots fail to scale. The tax comprises several compounding components: the compute retry multiplier (the cost of re-running failed prompts), the latency penalty on user retention, the massive overhead of senior developer time required to review and debug AI-generated output, and the cost of downstream defect remediation. It argues that the true cost of an AI application is not its successful execution, but the expensive infrastructure and human capital required to catch and correct its probabilistic failures.',
     whyItMatters: 'Organizations frequently calculate the ROI of AI based solely on the speed of generation, ignoring the friction of verification. When a system generates code or content quickly but requires extensive human review to ensure it is accurate and safe, the economic gains evaporate. The Unreliability Tax makes invisible costs visible. By acknowledging this tax, engineering leaders can implement architectural strategies - such as deterministic kill-switches, strict boundary assertions, and Eval-Driven Development - to cap these losses and build systems that actually deliver positive net value.',
-    whoShouldCare: ['CFOs', 'Engineering Directors', 'Product Managers', 'AI Strategists'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Chief Executive Officer (CEO)', 'VP of Operations', 'Customer Support Manager', 'Product Operations Manager'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The Hidden Cost of AI', publisher: 'Internal', type: 'Executive Essay', url: '/articles/unreliability-tax' }
@@ -734,7 +886,26 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       }
     },
     personaRecommendations: [
-      { role: 'Executive', takeaway: 'Demand that AI proposals project their expected Unreliability Tax.', recommendedNextSlug: 'agentic-roi' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Require every AI business proposal to account for the ongoing cost of human verification, compute retries, and customer support escalations.',
+        recommendedNextSlug: 'agentic-roi'
+      },
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Beware of vendor demonstrations that show high initial speed; calculate the cost of errors before committing company workflows to probabilistic tools.',
+        recommendedNextSlug: 'hallucination-tax'
+      },
+      {
+        role: 'VP of Operations',
+        takeaway: 'Measure employee review time spent verifying AI drafts; if human editing takes longer than manual creation, pause the pilot immediately.',
+        recommendedNextSlug: 'ai-volatility-tax'
+      },
+      {
+        role: 'Customer Support Manager',
+        takeaway: 'Set conservative escalation thresholds so confusing or incorrect bot responses route immediately to human agents before customers cancel.',
+        recommendedNextSlug: 'product-economist'
+      }
     ]
   },
   {
@@ -746,7 +917,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 2, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 2 },
     definition: 'Synthetic Model Collapse (also referred to as Model Autophagy Disorder) occurs when AI models are recursively trained on synthetic, AI-generated data rather than primary human data. As the internet becomes flooded with generated content, models ingest their own outputs, leading to a severe variance collapse. This results in the loss of edge-case reasoning, linguistic homogeny, and a degradation of complex problem-solving capabilities. It establishes a massive premium on verified, primary human lived experience, rigorous telemetry, and proprietary enterprise data, proving that derived synthetic datasets eventually degrade system intelligence.',
     whyItMatters: 'As foundational models consume the last remaining reserves of high-quality human text, the shift to synthetic training data is inevitable. However, if this process is not carefully managed, the models will regress, producing increasingly bland, averaged-out, and mathematically flat outputs. For enterprises, this means that generic models will lose their edge. The only way to maintain competitive advantage in the AI era is to possess and strictly guard proprietary, human-verified datasets and empirical operational telemetry. It directly validates the market premium on authentic, lived experience over derivative content.',
-    whoShouldCare: ['Data Scientists', 'AI Researchers', 'Chief Data Officers', 'Content Strategists'],
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'Chief Product Officer (CPO)', 'Director of Marketing', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The End of the Public Web', publisher: 'Internal', type: 'Executive Essay', url: '/articles/end-of-public-web' }
@@ -813,7 +984,26 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       }
     },
     personaRecommendations: [
-      { role: 'Architect', takeaway: 'Build resilient data capture pipelines that isolate verified human actions.', recommendedNextSlug: 'negative-carry-code-crisis' }
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Protect your company proprietary database and operations logs; primary human operational telemetry is your only true moat against commoditized AI models.',
+        recommendedNextSlug: 'model-collapse'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Reward and prioritize authentic customer interviews and real-world testing over synthetic user personas that spit out homogenized consensus opinions.',
+        recommendedNextSlug: 'negative-carry-code-crisis'
+      },
+      {
+        role: 'Director of Marketing',
+        takeaway: 'Eliminate derivative AI content farms; build brand authority by publishing concrete case studies with real operational numbers and human bylines.',
+        recommendedNextSlug: 'unreliability-tax'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Filter synthetic training inputs out of internal knowledge bases to prevent enterprise retrieval bots from regurgitating generic web chatter.',
+        recommendedNextSlug: 'context-rot'
+      }
     ]
   }
 ];

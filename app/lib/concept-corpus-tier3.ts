@@ -10,7 +10,7 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.94, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The architectural pattern of storing and reusing similar LLM query results using vector embeddings to bypass redundant frontier model API execution and eliminate variable COGS.',
     whyItMatters: 'Engineers who route every prompt to commercial APIs subject their organization to the AI Volatility Tax. Semantic Caching intercepts redundant queries, restoring software gross margins to historic norms by serving results from local infrastructure.',
-    whoShouldCare: ['AI System Architects', 'CTOs', 'VPs of Engineering', 'CFOs'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Chief Technology Officer (CTO)', 'Cloud FinOps Manager', 'Product Operations Manager', 'Customer Support Manager'],
     firstIntroduced: 'June 2025 (Beehiiv)',
     canonicalQuote: 'Serving a redundant LLM prompt from an API is an unforced error in unit economics. Semantic Caching reclaims gross margins by treating prompt similarity as a cache hit.',
     positionStatement: 'We cannot build profitable SaaS platforms when every user interaction incurs a variable API toll. Architecture must aggressively cache inference state based on semantic intent.',
@@ -51,7 +51,26 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
       contrastingConcepts: []
     },
     personaRecommendations: [
-      { role: 'AI Architect', takeaway: 'Place semantic caching and edge filtering in front of models; never pay a generative model to handle a task traditional code or caching can solve.', recommendedNextSlug: 'inference-economics' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Stop paying commercial AI vendors twenty cents every time a customer asks a slight variation of the same common question.',
+        recommendedNextSlug: 'inference-economics'
+      },
+      {
+        role: 'Cloud FinOps Manager',
+        takeaway: 'Establish a minimum 40% cache hit threshold across all production AI features to protect software gross margins.',
+        recommendedNextSlug: 'ai-volatility-tax'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Audit repeated customer questions and build pre-computed answer tables instead of querying live frontier models.',
+        recommendedNextSlug: 'slm-repatriation'
+      },
+      {
+        role: 'Customer Support Manager',
+        takeaway: 'Deliver instant response times for common policy and order questions by serving validated answers from local cache.',
+        recommendedNextSlug: 'compound-ai-systems'
+      }
     ],
     executableTool: { name: 'Exogram Margin Calculator', url: 'https://exogram.ai/tools/margin', description: 'Calculate gross margin recovery through semantic caching.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
@@ -98,7 +117,7 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A structural framework for translating engineering effort into ASC 350-40 accounting standards, separating capitalizable R&D investments from operating expense maintenance liabilities.',
     whyItMatters: 'Agile transformations fail when CFOs cannot capitalize developer time. The Capitalization Matrix provides a system constraint that forces engineering tracking to align with financial reporting, securing enterprise valuation multiples.',
-    whoShouldCare: ['CFOs', 'VPs of Engineering', 'Engineering Directors', 'The Product Economist'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Director of Finance', 'Director of Engineering', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'October 2024 (CIO.com)',
     canonicalQuote: 'Engineering velocity means nothing if the finance team cannot capitalize the output. Software effort must be classified as an asset, not a sunk maintenance expense.',
     positionStatement: 'The disconnect between Agile story points and GAAP capitalization destroys enterprise value. Engineering must adopt reporting boundaries that satisfy financial audit constraints.',
@@ -139,7 +158,26 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
       contrastingConcepts: []
     },
     personaRecommendations: [
-      { role: 'VP Engineering', takeaway: 'Enforce strict epic metadata to automate R&D capitalization reporting for the CFO.', recommendedNextSlug: 'dora-financial-translation' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Stop treating your entire engineering payroll as an operating expense. Structure project epics so audit-ready R&D can be capitalized.',
+        recommendedNextSlug: 'dora-financial-translation'
+      },
+      {
+        role: 'Director of Finance',
+        takeaway: 'Establish ASC 350-40 compliance categories directly in project tracking tools so engineers do not have to fill out manual timesheets.',
+        recommendedNextSlug: 'dora-financial-translation'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Tag product roadmap initiatives by capitalizable new capabilities versus ongoing maintenance bug fixes.',
+        recommendedNextSlug: 'feature-bloat-calculus'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Ensure sprint tickets clearly distinguish between net-new architecture and routine technical debt remediation.',
+        recommendedNextSlug: 'technical-insolvency'
+      }
     ],
     executableTool: { name: 'CapEx Categorization Engine', url: 'https://careerwin.ai/capex', description: 'Map agile metrics to financial asset classifications.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
@@ -177,7 +215,7 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.92, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 0 },
     definition: 'A dedicated enterprise role accountable for governing the boundary between what autonomous AI agents propose and what an organization permits them to execute. Reporting directly to the CIO or CEO, the Systems Governor maintains permission allowlists, sets state integrity thresholds, owns the cryptographic audit trail, and translates technical agent error rates into financial liability metrics.',
     whyItMatters: 'Existing enterprise roles fail to govern non-deterministic systems: the CISO monitors perimeters from the outside, VP Eng validates deterministic code, CPO owns roadmaps, and Committees deliberate while agents execute in milliseconds. The Systems Governor provides single-point executive accountability for autonomous agent execution.',
-    whoShouldCare: ['CIOs & CEOs', 'Senior Software Engineers', 'Staff Engineers', 'CISOs & VPs of Engineering', 'General Counsels'],
+    whoShouldCare: ['Chief Executive Officer (CEO)', 'Chief Information Officer (CIO)', 'Chief Legal Officer (CLO)', 'Chief Information Security Officer (CISO)', 'Director of Governance & Risk'],
     firstIntroduced: 'July 2025 (Built In) / Formalized September 2026 (Built In)',
     canonicalQuote: 'The technical question has been answered: deterministic execution control is the architecture. The organizational question has not: who owns it? The enterprise needs a Systems Governor.',
     positionStatement: 'Measuring engineers by lines of code written is an obsolete paradigm. The true measure of engineering leadership is the ability to enforce system integrity across autonomous workflows.',
@@ -218,8 +256,26 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
       contrastingConcepts: []
     },
     personaRecommendations: [
-      { role: 'CIO & CTO', takeaway: 'Hire or appoint a Systems Governor reporting to executive leadership before scaling agent density.', recommendedNextSlug: 'deterministic-governance' },
-      { role: 'Staff Engineer', takeaway: 'Focus on designing deterministic boundaries and permission allowlists rather than writing boilerplate code.', recommendedNextSlug: 'deterministic-governance' }
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Appoint a single executive accountable for autonomous agent permissions before an autonomous bot executes an irreversible financial action.',
+        recommendedNextSlug: 'deterministic-governance'
+      },
+      {
+        role: 'Chief Legal Officer (CLO)',
+        takeaway: 'Establish cryptographic audit trails and deterministic boundaries to limit corporate liability when agents interact with contracts or customer data.',
+        recommendedNextSlug: 'runtime-vs-alignment'
+      },
+      {
+        role: 'Chief Information Security Officer (CISO)',
+        takeaway: 'Move beyond perimeter firewalls; internal autonomous agents require code-level execution allowlists and real-time state verification.',
+        recommendedNextSlug: 'agent-kill-switch'
+      },
+      {
+        role: 'Director of Governance & Risk',
+        takeaway: 'Translate technical agent error rates into annualized dollar exposure for executive board reporting.',
+        recommendedNextSlug: 'compound-ai-systems'
+      }
     ],
     canonicalReadingOrder: [
       { step: 1, title: 'What Does a Software Engineer Even Do?', publisher: 'Built In', type: 'Canonical Article', url: 'https://builtin.com/articles/vibe-coding-era-software-engineering-role' },
@@ -262,7 +318,7 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.96, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'Zombie Code refers to deprecated or unused features that continue to run in production, consuming maintenance budget, compute resources, and engineering focus. The Sunset Protocol is the structured mechanism for financial remediation through systematic deletion.',
     whyItMatters: 'Every line of un-deleted code is a financial liability. Zombie code inflates cloud costs, creates security vulnerabilities, and degrades system velocity, acting as a permanent innovation tax on the engineering organization.',
-    whoShouldCare: ['VPs of Engineering', 'CFOs', 'Product Managers', 'Security Engineers'],
+    whoShouldCare: ['Chief Product Officer (CPO)', 'Chief Financial Officer (CFO)', 'Customer Support Manager', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'November 2025 (Built In)',
     canonicalQuote: 'Code deletion is a high-yield financial maneuver. Zombie code is an operational tax that drains engineering budgets until a strict Sunset Protocol enforces its removal.',
     positionStatement: 'Maintaining unused features is a failure of product governance. We must treat code deletion with the same rigor and financial priority as new feature development.',
@@ -303,7 +359,26 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
       contrastingConcepts: []
     },
     personaRecommendations: [
-      { role: 'VP Engineering', takeaway: 'Mandate routine code deletion sprints to reclaim maintenance budgets.', recommendedNextSlug: 'capitalization-matrix' }
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Make code deletion a celebrated team milestone. Every unused feature left alive drains developer focus and user clarity.',
+        recommendedNextSlug: 'feature-bloat-calculus'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Calculate the annual cloud hosting and maintenance payroll saved by permanently decommissioning legacy infrastructure.',
+        recommendedNextSlug: 'capitalization-matrix'
+      },
+      {
+        role: 'Customer Support Manager',
+        takeaway: 'Identify zombie features that confuse onboarding users and push for their scheduled retirement in the next release.',
+        recommendedNextSlug: 'innovation-tax'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Schedule dedicated sunset sprints to strip out abandoned database tables, dead API routes, and orphan dependencies.',
+        recommendedNextSlug: 'technical-insolvency'
+      }
     ],
     executableTool: { name: 'Product Debt Index (PDI)', url: '/tools/pdi', description: 'Measure the financial drag of un-maintained legacy code.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
@@ -341,7 +416,7 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.93, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The strategic shift of migrating high-volume inference tasks from commercial Frontier APIs (OpenAI, Anthropic) to local Small Language Models (SLMs) to achieve financial breakeven on variable COGS.',
     whyItMatters: 'Using frontier models for simple classification tasks destroys unit economics. SLM Repatriation creates a structural boundary where high-volume, low-complexity requests are processed locally, capping the AI Volatility Tax.',
-    whoShouldCare: ['CTOs', 'AI System Architects', 'CFOs'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Chief Technology Officer (CTO)', 'Cloud FinOps Manager', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'December 2025 (Beehiiv)',
     canonicalQuote: 'Do not use a frontier model to extract JSON. SLM Repatriation is the architectural mandate to move simple inference workloads to local hardware, capping variable API costs.',
     positionStatement: 'Relying exclusively on commercial APIs for high-volume inference guarantees gross margin collapse. Architecture must prioritize local execution for routine tasks.',
@@ -382,7 +457,26 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
       contrastingConcepts: []
     },
     personaRecommendations: [
-      { role: 'AI Architect', takeaway: 'Route classification and extraction tasks to local SLMs rather than frontier APIs.', recommendedNextSlug: 'semantic-caching' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Stop paying commercial API markups for basic text classification that a compact internal model can execute for pennies.',
+        recommendedNextSlug: 'inference-economics'
+      },
+      {
+        role: 'Cloud FinOps Manager',
+        takeaway: 'Identify the exact monthly volume threshold where self-hosting a specialized compact model beats recurring API invoices.',
+        recommendedNextSlug: 'ai-volatility-tax'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Unbundle feature tiers so simple automated tagging runs on fast internal models while reserving premium frontier models for complex analysis.',
+        recommendedNextSlug: 'compound-ai-systems'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Deploy lightweight open-weights models for internal data extraction to eliminate external API rate limits and network latency.',
+        recommendedNextSlug: 'semantic-caching'
+      }
     ],
     executableTool: { name: 'SLM vs API Breakeven Calculator', url: '/tools/slm-vs-api', description: 'Calculate the point where hosting a local model becomes cheaper than API tolls.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
@@ -421,7 +515,7 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The cryptographic verification mechanism that guarantees the environmental state has not been maliciously altered between an AI agent’s decision step and its subsequent API execution.',
     whyItMatters: 'Agentic workflows are vulnerable to race conditions and intermediate state poisoning. State Integrity Hashing enforces a hard cryptographic constraint, ensuring agents only execute actions on validated, expected data boundaries.',
-    whoShouldCare: ['Security Engineers', 'AI System Architects', 'CTOs'],
+    whoShouldCare: ['Chief Information Security Officer (CISO)', 'Chief Operating Officer (COO)', 'Director of Governance & Risk', 'Quality Engineering (QE) Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'March 2026 (Beehiiv Specification)',
     canonicalQuote: 'An agent must not trust its own context. State Integrity Hashing guarantees that the environment matches the execution intent before any production API is invoked.',
     positionStatement: 'We cannot secure autonomous systems with probabilistic trust. Execution boundaries must be cryptographically locked between the reasoning phase and the action phase.',
@@ -462,7 +556,26 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
       contrastingConcepts: []
     },
     personaRecommendations: [
-      { role: 'Security Engineer', takeaway: 'Enforce state hashes in the proxy layer to validate environments before agent execution.', recommendedNextSlug: 'agent-kill-switch' }
+      {
+        role: 'Chief Operating Officer (COO)',
+        takeaway: 'Ensure autonomous workflows cannot take destructive actions if the underlying business data changes while the agent is processing.',
+        recommendedNextSlug: 'deterministic-governance'
+      },
+      {
+        role: 'Chief Information Security Officer (CISO)',
+        takeaway: 'Enforce cryptographic state validation at the execution boundary to prevent intermediate data tampering in automated workflows.',
+        recommendedNextSlug: 'agent-kill-switch'
+      },
+      {
+        role: 'Director of Governance & Risk',
+        takeaway: 'Require verifiable state checkpoints before agents are authorized to modify production database records or disburse funds.',
+        recommendedNextSlug: 'systems-governor'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Implement deterministic proxy checks that reject stale agent requests whenever the target record hash has shifted.',
+        recommendedNextSlug: 'spec-driven-development'
+      }
     ],
     canonicalReadingOrder: [
       { step: 1, title: 'State Integrity Hashing Specification', publisher: 'Beehiiv', type: 'Protocol Specification', url: 'https://theaieconomist.beehiiv.com' }
@@ -499,7 +612,7 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.94, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The analytical process of converting standard engineering performance metrics (Deployment Frequency, Lead Time, MTTR, Change Failure Rate) into direct financial liabilities and capitalization impacts on the P&L statement.',
     whyItMatters: 'CFOs do not understand Lead Time for Changes, but they understand OpEx drag and delayed revenue realization. Translating DORA metrics creates a common language, enabling engineering leaders to secure budget by proving financial efficiency.',
-    whoShouldCare: ['VPs of Engineering', 'CFOs', 'Engineering Directors', 'The Product Economist'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Chief Operating Officer (COO)', 'Director of Finance', 'Director of Engineering', 'Engineering Manager (EM)'],
     firstIntroduced: 'September 2025 (Personal Blog)',
     canonicalQuote: 'Engineering metrics without financial translation are just operational trivia. A high Change Failure Rate is not an engineering problem, it is an escalating OpEx liability.',
     positionStatement: 'To defend architecture investments, engineering leaders must map deployment friction directly to enterprise financial models. We must speak the language of the CFO.',
@@ -541,7 +654,26 @@ export const TIER3_CONCEPTS: ConceptNode[] = [
       contrastingConcepts: []
     },
     personaRecommendations: [
-      { role: 'VP Engineering', takeaway: 'Convert Change Failure Rate into an OpEx liability metric for your next budget review.', recommendedNextSlug: 'capitalization-matrix' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Understand that a high change failure rate is not an abstract developer metric; it is an escalating operating expense drag on company earnings.',
+        recommendedNextSlug: 'capitalization-matrix'
+      },
+      {
+        role: 'Chief Operating Officer (COO)',
+        takeaway: 'Link software deployment friction directly to delayed customer feature rollouts and missed revenue milestones.',
+        recommendedNextSlug: 'product-economist'
+      },
+      {
+        role: 'Director of Finance',
+        takeaway: 'Use deployment lead time and failure remediation hours to calculate the true dollar cost of unaddressed software fragility.',
+        recommendedNextSlug: 'technical-insolvency'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Stop presenting raw DORA charts to executives. Translate failed deployments into lost developer hours and delayed business value.',
+        recommendedNextSlug: 'aper-metric'
+      }
     ],
     executableTool: { name: 'DORA to P&L Calculator', url: 'https://careerwin.ai/dora-calculator', description: 'Translate engineering metrics into financial impact statements.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [

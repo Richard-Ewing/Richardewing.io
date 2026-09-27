@@ -10,7 +10,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 2, knownLimitationsCount: 2 },
     definition: 'A diagnostic score ranging from 0 to 100 that quantifies the total technical debt of a software organization in explicit dollar terms. The Product Debt Index translates abstract engineering complexity into measurable carrying costs and valuation drag. It provides a standardized mechanism for product and finance teams to measure the economic penalty of unmanaged software feature accumulation. By establishing a direct link between code entropy and financial performance, the PDI forces accountability in architectural decision-making.',
     whyItMatters: 'Traditional technical debt metrics fail because they remain isolated within engineering departments as story points or refactoring tickets. The Product Debt Index bridges this gap by expressing debt as a financial liability on the balance sheet. When executives can see the explicit dollar cost of feature bloat, they allocate resources toward stabilization rather than blind expansion. This metric fundamentally alters how companies evaluate the true cost of their product roadmaps.',
-    whoShouldCare: ['Chief Financial Officers', 'Chief Product Officers', 'Engineering Directors'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Chief Product Officer (CPO)', 'Director of Finance', 'Director of Engineering', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The PDI Framework', publisher: 'Internal Research', type: 'Executive Essay', url: '/research/pdi' }
@@ -87,7 +87,26 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'CTO', takeaway: 'Use PDI to defend refactoring budgets to the CFO.', recommendedNextSlug: 'ev-se-framework' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Calculate the explicit dollar carrying cost of your feature portfolio on the balance sheet to justify refactoring investments to the board.',
+        recommendedNextSlug: 'ev-se-framework'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Halt low-adoption feature roadmaps that drag down overall engineering velocity and inflate customer onboarding complexity.',
+        recommendedNextSlug: 'feature-bloat-calculus'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Use the index score to prove to executive leadership why engineers are spending 60 percent of their sprint capacity on maintenance instead of new features.',
+        recommendedNextSlug: 'technical-insolvency'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Track refactoring progress sprint by sprint so the team systematically reduces debt carrying costs before taking on new epics.',
+        recommendedNextSlug: 'complexity-tax'
+      }
     ],
     telemetry: {
       origin: {
@@ -166,7 +185,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.90, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A valuation impact modeling framework that calculates how specific engineering and product decisions cascade into enterprise valuation multiples. The EV-SE explicitly models the compounding effects of technical debt, AI cost of goods sold (COGS), and gross margin compression. It provides a deterministic bridge between micro-level architecture choices and macro-level financial outcomes. This engine allows leaders to simulate the long-term financial consequences of their technical strategies before committing capital.',
     whyItMatters: 'Engineering decisions are rarely evaluated for their impact on enterprise valuation multiples until it is too late. The EV-SE allows organizations to model how a seemingly minor architectural compromise today will compress gross margins three years from now. By forecasting these outcomes, executives can avoid strategies that artificially inflate short-term metrics at the expense of long-term enterprise value. It forces a discipline of margin engineering at the earliest stages of product development.',
-    whoShouldCare: ['Private Equity Operating Partners', 'Startup Founders', 'Chief Technology Officers'],
+    whoShouldCare: ['Chief Executive Officer (CEO)', 'Chief Financial Officer (CFO)', 'Chief Technology Officer (CTO)', 'VP of Operations', 'Director of Finance'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'EV-SE Modeling', publisher: 'Internal Research', type: 'Executive Essay', url: '/research/ev-se' }
@@ -241,7 +260,26 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Operating Partner', takeaway: 'Require EV-SE modeling during technical due diligence.', recommendedNextSlug: 'margin-engineering' }
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Model how high-variable AI compute costs compress gross margins before committing your company to a long-term AI-first market repositioning.',
+        recommendedNextSlug: 'capitalization-matrix'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Simulate how software architecture compromises today will impact enterprise valuation multiples during future capital raises and M&A diligence.',
+        recommendedNextSlug: 'ai-margin-squeeze'
+      },
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Choose infrastructure architectures that protect 80 percent gross software margins rather than chasing hype-driven model deployments that crush profitability.',
+        recommendedNextSlug: 'margin-engineering'
+      },
+      {
+        role: 'VP of Operations',
+        takeaway: 'Align infrastructure capacity planning with financial exit valuations to ensure operational expenditures do not outpace recurring revenue.',
+        recommendedNextSlug: 'dora-financial-translation'
+      }
     ]
   },
   {
@@ -253,7 +291,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A diagnostic framework calculating the true cost per useful output, hallucination remediation cost, and break-even volume for artificial intelligence features. The AUEB moves beyond raw token costs to incorporate the human and computational overhead required to verify and correct AI-generated results. It establishes a standard methodology for determining whether an AI feature is economically viable at scale. This framework has been referenced extensively in CIO.com publications as the definitive standard for AI margin analysis.',
     whyItMatters: 'Many companies launch AI features based solely on the low cost of API tokens, ignoring the massive hidden costs of error correction, context management, and customer support. The AUEB exposes these hidden costs, providing a realistic picture of feature profitability. Without this benchmark, organizations risk scaling features that become exponentially more expensive as usage grows. It is the fundamental tool for preventing the AI margin collapse point.',
-    whoShouldCare: ['Product Managers', 'AI System Architects', 'Finance Business Partners'],
+    whoShouldCare: ['Chief Product Officer (CPO)', 'Chief Financial Officer (CFO)', 'Cloud FinOps Manager', 'Customer Support Manager', 'Product Operations Manager'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The AUEB Methodology', publisher: 'CIO.com', type: 'Tier-1 Article', url: '#' }
@@ -328,7 +366,26 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Product Manager', takeaway: 'Run the AUEB before requesting engineering resources for a new AI feature.', recommendedNextSlug: 'ai-margin-collapse-point' }
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Require feature teams to benchmark total cost per useful output, including human error correction, before approving generative AI roadmap items.',
+        recommendedNextSlug: 'ai-margin-collapse-point'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Move beyond naive raw token pricing to model human verification overhead and customer refund costs for probabilistic features.',
+        recommendedNextSlug: 'ai-tokenomics-cogs'
+      },
+      {
+        role: 'Cloud FinOps Manager',
+        takeaway: 'Track inference retries and verification latency alongside raw cloud spend to detect features operating with negative unit economics.',
+        recommendedNextSlug: 'margin-engineering'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Monitor human review queues and support escalations to calculate the true operational cost of AI-generated content.',
+        recommendedNextSlug: 'ai-volatility-tax'
+      }
     ]
   },
   {
@@ -339,8 +396,8 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     expertiseLevel: 'Executive',
     health: { confidence: 0.9, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 2 },
     definition: 'A macro-economic metric calculated by dividing Annual Recurring Revenue (ARR) by Total Engineering Headcount. APER replaces isolated, self-referential metrics like story point velocity with a direct measurement of economic output per engineer. It serves as a high-level indicator of whether engineering investments are translating into actual commercial value. Featured extensively in executive leadership discussions, APER aligns technical execution with corporate financial realities.',
-    whyItMatters: 'Engineering teams often declare success because they shipped a high volume of code or completed many story points, even while the companyâ€™s revenue growth stalls. APER forces engineering leadership to take responsibility for commercial outcomes, not just output. It quickly identifies when an organization has hired beyond its capacity to generate revenue. This metric shifts the engineering culture from a factory mindset to a value-creation mindset.',
-    whoShouldCare: ['VP of Engineering', 'Chief Executive Officers', 'Board Members'],
+    whyItMatters: 'Engineering teams often declare success because they shipped a high volume of code or completed many story points, even while the company revenue growth stalls. APER forces engineering leadership to take responsibility for commercial outcomes, not just output. It quickly identifies when an organization has hired beyond its capacity to generate revenue. This metric shifts the engineering culture from a factory mindset to a value-creation mindset.',
+    whoShouldCare: ['Chief Executive Officer (CEO)', 'VP of Operations', 'Chief Financial Officer (CFO)', 'Director of Engineering', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Beyond Velocity: Introduction to APER', publisher: 'Internal Research', type: 'Executive Essay', url: '/research/aper' }
@@ -416,7 +473,26 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'VP of Engineering', takeaway: 'Report APER at board meetings instead of velocity or burndown charts.', recommendedNextSlug: 'ten-man-parity' }
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Replace self-referential engineering story points with Annualized Productivity to Engineering Ratio to ensure technical headcount directly drives commercial revenue.',
+        recommendedNextSlug: 'ten-man-parity'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Track ARR per engineer across departments to identify bloated divisions where payroll growth has decoupled from top-line performance.',
+        recommendedNextSlug: 'coordination-tax'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Anchor your team priorities around shipping measurable commercial value rather than celebrating the sheer volume of code merged into staging.',
+        recommendedNextSlug: 'product-economist'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Help developers understand the commercial impact of their projects so sprint goals align with business revenue goals.',
+        recommendedNextSlug: 'dora-financial-translation'
+      }
     ]
   },
   {
@@ -428,7 +504,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 2, knownLimitationsCount: 1 },
     definition: 'Four foundational laws governing the behavior, economics, and maintenance of AI-generated code. Law 1: AI code is probabilistic, not deterministic. Law 2: Complexity scales non-linearly with AI assistance. Law 3: The verification cost of AI code exceeds the generation cost. Law 4: AI-generated code accumulates debt faster than human-written code. These laws, coined in Built In, form the baseline for managing modern, AI-augmented engineering teams.',
     whyItMatters: 'The industry is treating AI-generated code as a free lunch, assuming that faster code generation strictly equates to higher productivity. The 4 Laws establish that the physics of software engineering have changed. Because the code is probabilistic, it introduces subtle, compounding errors that require massive human oversight. Ignoring these laws leads directly to the negative-carry code crisis, where systems become unmaintainable due to the sheer volume of unverified, machine-generated complexity.',
-    whoShouldCare: ['Engineering Leaders', 'DevOps Engineers', 'AI Tooling Evaluators'],
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'Quality Engineering (QE) Manager', 'Director of Engineering', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'February 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The 4 Laws of Probabilistic Software', publisher: 'Built In', type: 'Tier-1 Article', url: '#' }
@@ -500,7 +576,26 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Engineering Manager', takeaway: 'Increase time allocated for code reviews to account for Law 3.', recommendedNextSlug: 'deterministic-governance' }
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Enforce deterministic governance boundaries across all code generation tools because the verification cost of AI code inevitably exceeds its generation cost.',
+        recommendedNextSlug: 'deterministic-governance'
+      },
+      {
+        role: 'Quality Engineering (QE) Manager',
+        takeaway: 'Build automated verification gates that treat AI-generated code as untrusted input requiring rigorous regression testing.',
+        recommendedNextSlug: 'negative-carry-code-crisis'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Adjust release timelines to account for the human verification bottleneck instead of assuming AI coding tools double delivery speed.',
+        recommendedNextSlug: 'hallucination-tax'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Train engineers to spend their time reviewing architectural boundaries and failure modes rather than generating untyped vibe code.',
+        recommendedNextSlug: 'vibe-coding'
+      }
     ]
   },
   {
@@ -512,7 +607,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.90, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A four-zone risk model that maps exponential enterprise liability against increasing AI agent autonomy. Zone 1: Assisted (low liability, human in the loop). Zone 2: Supervised (moderate liability, human approves actions). Zone 3: Delegated (high liability, AI acts with human auditing after the fact). Zone 4: Autonomous (exponential liability, AI acts with full authority and no human oversight). This gradient visually and structurally demonstrates how risk compounds as human control is removed.',
     whyItMatters: 'Organizations are rushing to deploy autonomous agents without understanding the legal and financial liabilities they are assuming. The Liability Gradient provides a strict framework for governance, forcing teams to explicitly declare which zone a new AI feature operates within. By understanding that liability scales exponentially - not linearly - in Zones 3 and 4, companies can implement appropriate fail-safes, insurance, and auditing mechanisms before an autonomous agent triggers a catastrophic failure.',
-    whoShouldCare: ['Chief Risk Officers', 'Legal Counsel', 'AI Product Managers'],
+    whoShouldCare: ['Chief Risk Officer (CRO)', 'Chief Legal Officer (CLO)', 'Chief Executive Officer (CEO)', 'Customer Support Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The AI Liability Gradient', publisher: 'Internal Research', type: 'Executive Essay', url: '/research/liability-gradient' }
@@ -543,7 +638,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       ],
       keyTakeaways: [
         'Never deploy a Zone 4 agent without a deterministic kill switch.',
-        'Human oversight must match the speed and scale of the agentâ€™s actions.',
+        'Human oversight must match the speed and scale of the agent\'s actions.',
         'Risk teams must approve any feature moving up the liability gradient.'
       ],
       comparisons: [
@@ -580,7 +675,26 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Chief Risk Officer', takeaway: 'Audit all existing AI tools and map them to the four zones.', recommendedNextSlug: 'eaap-protocol' }
+      {
+        role: 'Chief Risk Officer (CRO)',
+        takeaway: 'Map every internal AI pilot to one of the four risk zones before authorizing live production access.',
+        recommendedNextSlug: 'eaap-protocol'
+      },
+      {
+        role: 'Chief Legal Officer (CLO)',
+        takeaway: 'Require contractual liability disclaimers and human verification checkpoints for any workflow operating in Zone 3 or Zone 4.',
+        recommendedNextSlug: 'shadow-delegation'
+      },
+      {
+        role: 'Customer Support Manager',
+        takeaway: 'Confine front-line support bots strictly to Zone 2 with human supervisor approvals on financial adjustments or refunds.',
+        recommendedNextSlug: 'deterministic-governance'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Build deterministic kill switches into agent execution loops so automated processes freeze the second risk bounds are breached.',
+        recommendedNextSlug: 'agent-kill-switch'
+      }
     ]
   },
   {
@@ -592,7 +706,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.9, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The exponential expansion of API costs and latency that occurs when autonomous AI agents enter unbounded retry loops while attempting to correct their own errors. Because each subsequent attempt often requires passing the entire failure context back to the LLM, token spend compounds rapidly. Retry inflation turns a minor localized error into a cascading financial and computational drain, often resulting in massive, unexpected cloud bills.',
     whyItMatters: 'In traditional software, a failing loop might burn CPU cycles, which are relatively cheap. In LLM-based architectures, a failing loop burns API tokens, which directly hit the gross margin. If an agent tries to fix a script, fails, reads the error, and tries again five times, the context window grows larger with each attempt, making the fifth attempt significantly more expensive than the first. Without strict circuit breakers, retry inflation can destroy the unit economics of an AI application in minutes.',
-    whoShouldCare: ['Cloud Architects', 'FinOps Engineers', 'AI Developers'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Cloud FinOps Manager', 'Director of Engineering', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The Economics of Retry Inflation', publisher: 'Internal Research', type: 'Executive Essay', url: '/research/retry-inflation' }
@@ -662,7 +776,26 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'FinOps Engineer', takeaway: 'Set up real-time billing alerts for anomalous token consumption spikes indicative of retry inflation.', recommendedNextSlug: 'ai-volatility-tax' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Eliminate unbounded agent retry loops that turn localized software glitches into six-figure monthly cloud provider bills.',
+        recommendedNextSlug: 'ai-volatility-tax'
+      },
+      {
+        role: 'Cloud FinOps Manager',
+        takeaway: 'Enforce hard token budgets and automated circuit breakers on individual agent sessions to halt cascading context bloat.',
+        recommendedNextSlug: 'inference-economics'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Design user interfaces that gracefully surface clear error states to human operators instead of letting bots cycle endlessly.',
+        recommendedNextSlug: 'unreliability-tax'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Truncate error message history and historical attempts before feeding context back to models during automated bug-fixing loops.',
+        recommendedNextSlug: 'context-rot'
+      }
     ]
   },
   {
@@ -672,9 +805,9 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     domain: 'AI Governance',
     expertiseLevel: 'Architect',
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
-    definition: 'An open standard and architectural RFC designed to govern the tool execution boundaries of autonomous AI agents. EAAP defines a strict set of binary admissibility gates that filter and validate proposed agent actions against deterministic allowlists prior to execution. By decoupling the probabilistic reasoning of the LLM from the deterministic execution of the environment, EAAP ensures that agents cannot perform destructive, unauthorized, or financially ruinous actions, even if they hallucinate the intent to do so. This is the foundational protocol powering Exogramâ€™s runtime governance.',
+    definition: 'An open standard and architectural RFC designed to govern the tool execution boundaries of autonomous AI agents. EAAP defines a strict set of binary admissibility gates that filter and validate proposed agent actions against deterministic allowlists prior to execution. By decoupling the probabilistic reasoning of the LLM from the deterministic execution of the environment, EAAP ensures that agents cannot perform destructive, unauthorized, or financially ruinous actions, even if they hallucinate the intent to do so. This is the foundational protocol powering Exogram\'s runtime governance.',
     whyItMatters: 'As agents move into Zone 3 and Zone 4 of the AI Liability Gradient, relying on system prompts to enforce safety is structurally insufficient; LLMs can always be jailbroken or confused. EAAP provides a hard, cryptographic boundary at the execution layer. It guarantees that regardless of what the LLM decides to do, the system will only execute mathematically verified, pre-approved actions. This is the only way to safely deploy autonomous agents in high-stakes enterprise environments without exposing the company to infinite liability.',
-    whoShouldCare: ['Security Architects', 'AI Platform Engineers', 'Compliance Officers'],
+    whoShouldCare: ['Chief Information Security Officer (CISO)', 'Chief Technology Officer (CTO)', 'Director of Governance & Risk', 'Quality Engineering (QE) Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'EAAP Specification', publisher: 'Internal Research', type: 'Protocol Specification', url: '/research/eaap' }
@@ -742,7 +875,26 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Security Architect', takeaway: 'Implement EAAP middleware before allowing any LLM to execute database mutations.', recommendedNextSlug: 'state-integrity-hashing' }
+      {
+        role: 'Chief Information Security Officer (CISO)',
+        takeaway: 'Deploy cryptographic runtime admissibility gates between AI models and internal databases to prevent unauthorized state mutations.',
+        recommendedNextSlug: 'state-integrity-hashing'
+      },
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Decouple probabilistic model reasoning from deterministic API execution so agents only trigger pre-cleared enterprise actions.',
+        recommendedNextSlug: 'deterministic-governance'
+      },
+      {
+        role: 'Director of Governance & Risk',
+        takeaway: 'Audit agent permission allowlists against regulatory requirements to ensure machines never bypass enterprise access controls.',
+        recommendedNextSlug: 'mcp-governance'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Implement binary admissibility schemas in proxy middleware before allowing agents to call external third-party tools.',
+        recommendedNextSlug: 'agent-kill-switch'
+      }
     ]
   },
   {
@@ -752,9 +904,9 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     domain: 'AI Economics',
     expertiseLevel: 'Architect',
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
-    definition: 'The architectural discipline of designing and structuring software systems where gross profitability is treated as a first-class engineering constraint, alongside performance, security, and scalability. In AI-native products, because every feature relies on variable compute COGS (like LLM tokens), engineers must model, monitor, and cap the financial cost of inference at the feature level. Margin Engineering requires developers to actively design caching layers, model routing, and fallback mechanisms specifically to protect the companyâ€™s gross margin from unpredictable user behavior.',
+    definition: 'The architectural discipline of designing and structuring software systems where gross profitability is treated as a first-class engineering constraint, alongside performance, security, and scalability. In AI-native products, because every feature relies on variable compute COGS (like LLM tokens), engineers must model, monitor, and cap the financial cost of inference at the feature level. Margin Engineering requires developers to actively design caching layers, model routing, and fallback mechanisms specifically to protect the company\'s gross margin from unpredictable user behavior.',
     whyItMatters: 'In the SaaS era, software had high fixed costs but negligible variable costs, meaning margin took care of itself once the software was built. Generative AI fundamentally breaks this model; high usage can bankrupt a company if inference costs are not strictly controlled. Margin Engineering forces technical teams to take ownership of the P&L. If an engineer designs a feature that destroys unit economics, it is considered an architectural failure, not just a finance problem. It is the only way to build sustainable AI businesses.',
-    whoShouldCare: ['Software Architects', 'Engineering Leaders', 'Founders'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Chief Technology Officer (CTO)', 'VP of Operations', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Margin Engineering in AI', publisher: 'Internal Research', type: 'Executive Essay', url: '/research/margin-engineering' }
@@ -819,7 +971,26 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Software Architect', takeaway: 'Implement semantic caching immediately to reduce redundant LLM calls and protect margin.', recommendedNextSlug: 'ai-margin-collapse-point' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Treat gross margin as an engineering constraint equal to system uptime so high feature usage expands profitability rather than destroying it.',
+        recommendedNextSlug: 'ai-margin-collapse-point'
+      },
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Mandate semantic caching and small language model triage layers across all applications before routing queries to expensive frontier endpoints.',
+        recommendedNextSlug: 'evergreen-ratio'
+      },
+      {
+        role: 'VP of Operations',
+        takeaway: 'Model the variable compute COGS of new software capabilities alongside traditional customer acquisition costs.',
+        recommendedNextSlug: 'aueb-framework'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Require developers to calculate expected token consumption per user interaction during technical design reviews.',
+        recommendedNextSlug: 'ai-unit-economics'
+      }
     ]
   },
   {
@@ -829,9 +1000,9 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     domain: 'AI Economics',
     expertiseLevel: 'Executive',
     health: { confidence: 0.9, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
-    definition: 'The specific, calculable query volume threshold where the variable costs of operating an AI feature exceed the fixed subscription revenue generated by the user. Beyond this mathematical inflection point, the productâ€™s unit economics invert, and every additional user interaction actively erodes gross margin. Identifying the collapse point is critical for setting pricing tiers, throttling usage, and designing cost-aware system architectures.',
-    whyItMatters: 'Many companies offer "unlimited" AI generation as a marketing tactic, relying on the assumption that average usage will remain low. When power users discover the utility of the tool, they rapidly cross the Margin Collapse Point, turning the companyâ€™s best customers into its biggest financial liabilities. If leadership does not know where this point exists, they cannot implement the necessary throttling, caching, or tiering required to survive hyper-growth.',
-    whoShouldCare: ['Pricing Strategists', 'Product Managers', 'Chief Financial Officers'],
+    definition: 'The specific, calculable query volume threshold where the variable costs of operating an AI feature exceed the fixed subscription revenue generated by the user. Beyond this mathematical inflection point, the product\'s unit economics invert, and every additional user interaction actively erodes gross margin. Identifying the collapse point is critical for setting pricing tiers, throttling usage, and designing cost-aware system architectures.',
+    whyItMatters: 'Many companies offer "unlimited" AI generation as a marketing tactic, relying on the assumption that average usage will remain low. When power users discover the utility of the tool, they rapidly cross the Margin Collapse Point, turning the company\'s best customers into its biggest financial liabilities. If leadership does not know where this point exists, they cannot implement the necessary throttling, caching, or tiering required to survive hyper-growth.',
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Chief Product Officer (CPO)', 'Director of Finance', 'Product Operations Manager', 'Customer Support Manager'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Defining the Collapse Point', publisher: 'Internal Research', type: 'Executive Essay', url: '/research/margin-collapse' }
@@ -896,7 +1067,26 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Pricing Strategist', takeaway: 'Ensure all pricing tiers have a safety valve when users approach the Margin Collapse Point.', recommendedNextSlug: 'aueb-framework' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Calculate the exact query threshold where variable inference expenses exceed fixed customer subscription fees to eliminate unprofitable power users.',
+        recommendedNextSlug: 'aueb-framework'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Replace marketing-driven unlimited AI tiers with usage-capped credit quotas and tiered volume pricing.',
+        recommendedNextSlug: 'margin-engineering'
+      },
+      {
+        role: 'Director of Finance',
+        takeaway: 'Audit top customer accounts monthly to identify clients who generate negative gross margins due to heavy model consumption.',
+        recommendedNextSlug: 'evergreen-ratio'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Implement graceful model downgrades and rate throttling when individual accounts approach their calculated collapse threshold.',
+        recommendedNextSlug: 'ai-finops'
+      }
     ]
   },
   {
@@ -908,7 +1098,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The economic phenomenon where the quadratic formula for connections (n * (n-1)/2) is applied directly to feature bloat within software products. The Complexity Tax dictates that each new feature does not add a linear, isolated cost; rather, it creates combinatorial integration surface area with every existing feature in the system. This tax manifests as exponentially slower release cycles, massive QA burdens, and degraded user experiences as the system grows.',
     whyItMatters: 'Product teams continually justify new features by looking only at the isolated cost to build them. They ignore the Complexity Tax - the permanent, compounding cost of maintaining that feature and ensuring it does not break the rest of the system. This ignorance leads to feature bloat, where the organization eventually spends 80% of its engineering capacity just maintaining the connections between features rather than creating new value. Understanding this tax is essential for knowing when to sunset legacy features.',
-    whoShouldCare: ['Product Managers', 'Engineering Managers', 'System Architects'],
+    whoShouldCare: ['Chief Product Officer (CPO)', 'Director of Engineering', 'Product Operations Manager', 'Quality Engineering (QE) Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The Mathematics of Bloat', publisher: 'Internal Research', type: 'Executive Essay', url: '/research/complexity-tax' }
@@ -973,7 +1163,26 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Product Manager', takeaway: 'Audit product analytics and delete the bottom 10% of features by usage to immediately lower the Complexity Tax.', recommendedNextSlug: 'product-debt-index' }
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Sunset the bottom 10% of unused features to eliminate quadratic integration maintenance overhead across your product suite.',
+        recommendedNextSlug: 'feature-bloat-calculus'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Adopt strict one-in-one-out policies for system interfaces to prevent compounding combinatorial complexity.',
+        recommendedNextSlug: 'technical-insolvency'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Measure regression testing delays caused by feature bloat to build executive cases for deprecation.',
+        recommendedNextSlug: 'unreliability-tax'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Resist one-off custom feature requests that entangle core service logic and inflate long-term maintenance costs.',
+        recommendedNextSlug: 'zombie-code'
+      }
     ]
   },
   {
@@ -985,7 +1194,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.9, evidenceCount: 2, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A financial diagnostic metric representing the ratio of fixed-cost software revenue (traditional SaaS features) to variable-cost AI revenue within a product portfolio. A high Evergreen Ratio indicates a stable, high-margin business with strong structural safety. A declining Evergreen Ratio signals that a company is becoming dangerously dependent on high-COGS AI features, exposing it to AI margin squeeze and severe valuation compression.',
     whyItMatters: 'As traditional SaaS companies rapidly bolt on AI features, they are unknowingly altering their fundamental economic structure. They are trading high-margin, predictable revenue for low-margin, variable-cost revenue. If the Evergreen Ratio drops too low, the company ceases to be a highly valued software company and begins to look economically like a low-margin services or manufacturing business. Tracking this ratio is essential for maintaining enterprise value during an AI transition.',
-    whoShouldCare: ['Chief Financial Officers', 'Board Members', 'SaaS Founders'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Chief Executive Officer (CEO)', 'Director of Finance', 'Product Operations Manager', 'Customer Support Manager'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The Evergreen Ratio', publisher: 'Internal Research', type: 'Executive Essay', url: '/research/evergreen-ratio' }
@@ -1050,7 +1259,26 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'CFO', takeaway: 'Include the Evergreen Ratio in all quarterly board decks to contextualize ARR growth.', recommendedNextSlug: 'ev-se-framework' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Balance zero-marginal-cost SaaS revenue against high-variable AI features to protect software valuation multiples.',
+        recommendedNextSlug: 'margin-engineering'
+      },
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Resist AI hype that dilutes recurring gross margins into low-margin professional services.',
+        recommendedNextSlug: 'ai-margin-collapse-point'
+      },
+      {
+        role: 'Director of Finance',
+        takeaway: 'Segment AI API compute costs from core software subscription revenue in quarterly board reporting.',
+        recommendedNextSlug: 'ai-margin-squeeze'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Design AI capabilities specifically to funnel users into sticky, evergreen retention loops.',
+        recommendedNextSlug: 'ai-unit-economics'
+      }
     ]
   },
   {
@@ -1062,7 +1290,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A four-stage career progression framework defining how professionals evolve in their capacity to handle complexity and generate value. Tier 1 (The Reporter) identifies problems and waits for instruction. Tier 2 (The Solver) is given a problem and independently executes a solution. Tier 3 (The Communicator) anticipates systemic problems, proposes solutions, and aligns cross-functional teams. Tier 4 (The Architect/Apex) designs resilient systems that prevent entire classes of problems from existing in the first place.',
     whyItMatters: 'Most career ladders focus on technical skills or years of experience, which poorly correlate with actual business impact. The Four Tiers of Autonomy shift the focus entirely to agency and problem-solving scope. It clarifies exactly why someone is or is not ready for promotion. A Tier 2 engineer might write brilliant code, but if they cannot align a team (Tier 3), they cannot be a staff engineer. This framework provides clear, actionable language for professional development and performance reviews.',
-    whoShouldCare: ['Engineering Managers', 'Human Resources', 'Individual Contributors'],
+    whoShouldCare: ['Chief Operating Officer (COO)', 'VP of Operations', 'Director of Engineering', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The Four Tiers', publisher: 'Internal Research', type: 'Executive Essay', url: '/research/four-tiers' }
@@ -1109,7 +1337,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
       }
     },
     canonicalQuote: 'Do not reward the firefighter for putting out the blaze; reward the architect who built the building out of stone.',
-    positionStatement: 'Career progression must be strictly tied to an individualâ€™s ability to handle increasingly ambiguous, systemic complexity.',
+    positionStatement: 'Career progression must be strictly tied to an individual\'s ability to handle increasingly ambiguous, systemic complexity.',
     claims: [
       { statement: 'Evaluating employees by their Tier of Autonomy drastically improves the quality of leadership promotions.', confidence: 0.95, counterarguments: ['Technical mastery should be enough for senior promotions.'], supportingData: 'Reduction in Peter Principle failures post-adoption.' }
     ],
@@ -1132,7 +1360,26 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Individual Contributor', takeaway: 'Stop waiting to be assigned tasks; identify systemic issues and propose complete solutions to move to Tier 3.', recommendedNextSlug: 'double-diamond-career-trajectory' }
+      {
+        role: 'Chief Operating Officer (COO)',
+        takeaway: 'Evaluate leadership promotions based on systemic problem prevention rather than reactive operational firefighting.',
+        recommendedNextSlug: 'double-diamond-career-trajectory'
+      },
+      {
+        role: 'VP of Operations',
+        takeaway: 'Align department compensation and leveling guides with the scope of business problems solved rather than task volume.',
+        recommendedNextSlug: 'coordination-tax'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Require senior engineers to demonstrate cross-functional organizational alignment before recommending staff-level promotions.',
+        recommendedNextSlug: 'product-economist'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Coach individual contributors to anticipate blockers and propose complete solutions rather than waiting for task assignments.',
+        recommendedNextSlug: 'ten-man-parity'
+      }
     ]
   },
   {
@@ -1144,7 +1391,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A visual model mapping the critical "Leadership Reset" point in a professional\'s career. The first diamond represents the expansion and mastery of deep individual contributor (IC) skills. The narrowing between the diamonds represents the painful reset where those specialized skills hit diminishing returns. To enter the second diamond (executive and systemic leadership), the professional must abandon the tactics that made them successful in the first diamond and build entirely new skills in delegation, systems thinking, and economic alignment.',
     whyItMatters: 'Many brilliant engineers and designers stall in their careers because they try to solve second-diamond problems using first-diamond tools - usually by just working harder or writing more code. The Double Diamond visualizes why this fails. What got you to the peak of the first diamond will actively prevent you from entering the second. Acknowledging this reset helps professionals navigate the psychological difficulty of feeling like a beginner again when transitioning to senior leadership roles.',
-    whoShouldCare: ['Senior Engineers', 'New Managers', 'Executive Coaches'],
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'VP of Human Resources', 'Director of Engineering', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Why Static Resumes Are Dead: The Shift to Career Operating Systems', publisher: 'LinkedIn', type: 'Executive Essay', url: 'https://www.linkedin.com/pulse/why-static-resumes-dead-shift-career-operating-systems-richard-ewing-iui1c' },
@@ -1212,7 +1459,26 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'New Engineering Manager', takeaway: 'Accept that your output is no longer measured by your commits, but by the efficiency of your system.', recommendedNextSlug: 'product-economist' }
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Structure coaching for new managers facing the leadership reset point where deep individual coding mastery hits diminishing returns.',
+        recommendedNextSlug: 'four-tiers-of-autonomy'
+      },
+      {
+        role: 'VP of Human Resources',
+        takeaway: 'Replace flat resume keyword screens with dynamic Career Operating Systems that evaluate talent trajectory and systems thinking.',
+        recommendedNextSlug: 'ten-man-parity'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Evaluate engineering managers on overall team throughput and operational resilience rather than personal commit volume.',
+        recommendedNextSlug: 'coordination-tax'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Accept that leadership success requires unlearning individual contributor execution habits to focus on delegation and systems coaching.',
+        recommendedNextSlug: 'product-economist'
+      }
     ],
     entityUri: 'https://www.richardewing.io/concepts/double-diamond-career-trajectory#entity',
     problemMapping: {
@@ -1249,8 +1515,8 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     expertiseLevel: 'Architect',
     health: { confidence: 0.9, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The discipline of granular cost attribution and optimization applied specifically to the individual feature level, moving beyond generalized infrastructure monitoring. While traditional FinOps optimizes bulk cloud spend (servers, databases) at the resource layer, Feature-Level AI FinOps traces token costs, inference latency, and API call volumes to specific product features, user cohorts, and even individual prompt interactions. This creates a hyper-accurate, real-time map of exactly which parts of the application are generating or destroying gross margin.',
-    whyItMatters: 'In traditional SaaS, costs are smeared across the entire infrastructure, making it acceptable to look at bulk AWS bills. AI completely breaks this. A single poorly designed chat feature can consume 80% of a companyâ€™s API budget in a weekend. Without Feature-Level AI FinOps, finance teams see a massive OpenAI bill but have no idea which feature or user caused it. This discipline allows organizations to quarantine unprofitable features, dynamically route traffic to cheaper models, and enforce strict token budgets at the point of interaction.',
-    whoShouldCare: ['FinOps Engineers', 'Platform Architects', 'AI Product Managers'],
+    whyItMatters: 'In traditional SaaS, costs are smeared across the entire infrastructure, making it acceptable to look at bulk AWS bills. AI completely breaks this. A single poorly designed chat feature can consume 80% of a company\'s API budget in a weekend. Without Feature-Level AI FinOps, finance teams see a massive OpenAI bill but have no idea which feature or user caused it. This discipline allows organizations to quarantine unprofitable features, dynamically route traffic to cheaper models, and enforce strict token budgets at the point of interaction.',
+    whoShouldCare: ['Cloud FinOps Manager', 'Chief Financial Officer (CFO)', 'Director of Finance', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Feature-Level FinOps', publisher: 'Internal Research', type: 'Executive Essay', url: '/research/ai-finops' }
@@ -1319,7 +1585,26 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Platform Architect', takeaway: 'Build middleware that automatically tags all outbound LLM requests with the originating feature ID.', recommendedNextSlug: 'ai-unit-economics' }
+      {
+        role: 'Cloud FinOps Manager',
+        takeaway: 'Tag every LLM request with feature IDs and user cohort metadata to eliminate blind bulk cloud invoices.',
+        recommendedNextSlug: 'inference-economics'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Audit gross margins feature by feature to identify hidden money-losing capabilities before they scale.',
+        recommendedNextSlug: 'ai-margin-collapse-point'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Quarantine or throttle features whose variable inference expenses exceed monthly customer revenue.',
+        recommendedNextSlug: 'margin-engineering'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Instrument telemetry middleware that logs token spend at the point of API execution across all services.',
+        recommendedNextSlug: 'ai-unit-economics'
+      }
     ]
   },
   {
@@ -1331,7 +1616,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 5, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The foundational study and measurement of the marginal cost structures associated with running generative inference models per specific user activity. It encompasses the raw cost-per-query, the hidden cost-per-completion, hallucination remediation overhead, and the critical relationship between model selection (e.g., GPT-4 vs Llama 3) and gross margin. AI Unit Economics forms the bedrock mathematical layer that dictates whether an AI-powered business model can scale profitably or will collapse under its own compute weight.',
     whyItMatters: 'Venture capital subsidized the early days of generative AI, allowing companies to ignore unit economics entirely. As the market matures, companies are discovering that adding AI to a product often degrades its profitability. Understanding AI Unit Economics allows a company to intentionally design its pricing, tiering, and model routing to ensure that the revenue generated by a user always exceeds the variable compute cost of serving them. It is the fundamental reality check against AI hype.',
-    whoShouldCare: ['Founders', 'Investors', 'Product Economists'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Chief Product Officer (CPO)', 'Cloud FinOps Manager', 'Director of Finance', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Introduction to AI Unit Economics', publisher: 'Internal Research', type: 'Executive Essay', url: '/research/ai-unit-economics' }
@@ -1396,7 +1681,26 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Founder', takeaway: 'Ensure your pricing model scales linearly or exponentially with the userâ€™s token consumption.', recommendedNextSlug: 'ai-economist' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Model unit inference COGS before authorizing product launches to prove scalability under heavy user adoption.',
+        recommendedNextSlug: 'ai-margin-collapse-point'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Price AI features with usage-based volume tiers rather than subsidizing unlimited generation on flat fees.',
+        recommendedNextSlug: 'margin-engineering'
+      },
+      {
+        role: 'Cloud FinOps Manager',
+        takeaway: 'Factor embedding generation and vector search costs into per-query calculations to capture total inference expense.',
+        recommendedNextSlug: 'ai-finops'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Optimize prompt templates and context chunking to reduce baseline token consumption per user interaction.',
+        recommendedNextSlug: 'context-rot'
+      }
     ]
   },
   {
@@ -1408,7 +1712,7 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A new professional archetype and operating methodology for technical leaders who treat AI systems primarily as complex economic instruments rather than traditional technology projects. The AI Economist rigorously models inference costs, token budgets, margin impact, and behavioral liability with the exact same precision a Chief Financial Officer applies to a corporate P&L. This role extends the fundamental principles of the Product Economist directly into the high-stakes, variable-cost domain of generative AI.',
     whyItMatters: 'Traditional software engineering leaders are ill-equipped to manage generative AI because they are trained to optimize for performance and feature delivery, assuming costs are static. The AI Economist understands that in the AI era, architecture is economics. They are the only professionals capable of bridging the gap between the stochastic nature of large language models and the deterministic requirements of corporate finance, ensuring that AI deployments generate actual enterprise value rather than just unmanaged cloud debt.',
-    whoShouldCare: ['Chief Technology Officers', 'VP of Product', 'Chief Financial Officers'],
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'Chief Financial Officer (CFO)', 'Chief Product Officer (CPO)', 'VP of Operations', 'Cloud FinOps Manager'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Rise of the AI Economist', publisher: 'Internal Research', type: 'Executive Essay', url: '/research/ai-economist' }
@@ -1473,7 +1777,26 @@ export const TIER6_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'CTO', takeaway: 'Adopt the mindset of the AI Economist, or hire one immediately to protect your architecture from margin collapse.', recommendedNextSlug: 'margin-engineering' }
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Appoint an architectural leader with veto power over model selections that threaten gross margin targets.',
+        recommendedNextSlug: 'margin-engineering'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Bridge the gap between probabilistic model costs and corporate financial projections using rigorous unit cost modeling.',
+        recommendedNextSlug: 'ai-margin-collapse-point'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Scope feature architectures within strict token budget ceilings established before sprint kickoff.',
+        recommendedNextSlug: 'product-economist'
+      },
+      {
+        role: 'VP of Operations',
+        takeaway: 'Align enterprise AI deployment roadmaps with measurable EBITDA expansion rather than vanity usage metrics.',
+        recommendedNextSlug: 'aueb-framework'
+      }
     ]
   }
 ];

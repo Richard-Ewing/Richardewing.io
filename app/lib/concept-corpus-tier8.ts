@@ -11,7 +11,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The multidisciplinary business discipline responsible for guiding the lifecycle of a product from customer problem discovery and market opportunity validation to technical definition, unit economic sustainability, and commercial distribution. In the AI era, product management transitions from managing backlog ticket delivery to governing architectural uncertainty, direct compute COGS, and feature-level gross margins.',
     whyItMatters: 'As automated code generation reduces the marginal cost of writing software to zero, product management is no longer bottlenecked by developer output. Product success is dictated by identifying real human needs and establishing sound unit economics.',
-    whoShouldCare: ['Product Managers', 'Chief Product Officers', 'Startup Founders', 'Engineering Directors'],
+    whoShouldCare: ['Chief Product Officer (CPO)', 'Group Product Manager (GPM)', 'Engineering Manager (EM)', 'Product Operations Manager', 'Director of Finance'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publisher: 'Mind the Product', type: 'Industry Article', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' },
@@ -79,7 +79,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Senior PM', takeaway: 'Transition your roadmap reviews from feature ship dates to customer outcomes and unit margins.', recommendedNextSlug: 'pl-ownership-for-pms' }
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Shift product reviews from tracking ticket delivery velocity to auditing feature gross margins and long-term customer retention.',
+        recommendedNextSlug: 'pl-ownership-for-pms'
+      },
+      {
+        role: 'Group Product Manager (GPM)',
+        takeaway: 'Equip product managers with direct financial scorecards and require them to validate customer pain points before writing specifications.',
+        recommendedNextSlug: 'product-discovery'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Partner with product managers to validate technical assumptions early rather than building bloated features from unverified PRDs.',
+        recommendedNextSlug: 'engineering-to-product-alignment'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Standardize customer feedback telemetry and deprecation criteria to retire low-adoption features before they accrue maintenance drag.',
+        recommendedNextSlug: 'zombie-features'
+      }
     ],
     telemetry: {
       origin: {
@@ -119,7 +138,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The executive function (VPs of Product, Chief Product Officers, Heads of Product) responsible for defining overarching product vision, establishing product organizational architecture, allocating R&D capital across competing initiatives, coaching product talent, and aligning product strategy with board-level enterprise objectives.',
     whyItMatters: 'Individual product managers execute within a domain, but product leaders set the context, incentives, and economic governance that determine whether the product organization drives enterprise value or degenerates into a feature factory.',
-    whoShouldCare: ['Chief Product Officers', 'VP of Product', 'Chief Executive Officers', 'Board Members'],
+    whoShouldCare: ['Chief Product Officer (CPO)', 'Chief Executive Officer (CEO)', 'VP of Operations', 'Group Product Manager (GPM)', 'Director of Finance'],
     firstIntroduced: 'February 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publisher: 'Mind the Product', type: 'Executive Essay', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' },
@@ -187,7 +206,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'CPO', takeaway: 'Establish clear portfolio investment buckets (Core, Adjacent, Transformational) to guide R&D allocation.', recommendedNextSlug: 'r-and-d-capital-allocation' }
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Allocate R&D capital across core maintenance, growth bets, and platform innovation using explicit unit margin hurdle rates.',
+        recommendedNextSlug: 'r-and-d-capital-allocation'
+      },
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Align board expectations with customer problem discovery rather than vanity roadmap checklists of arbitrary shipping dates.',
+        recommendedNextSlug: 'executive-leadership'
+      },
+      {
+        role: 'VP of Operations',
+        takeaway: 'Align cross-functional support, sales, and onboarding incentives with verified product adoption instead of speculative feature launches.',
+        recommendedNextSlug: 'product-operating-model'
+      },
+      {
+        role: 'Group Product Manager (GPM)',
+        takeaway: 'Coach product managers to make autonomous capital allocation decisions and take ownership of feature profitability.',
+        recommendedNextSlug: 'pl-ownership-for-pms'
+      }
     ],
     telemetry: {
       origin: {
@@ -227,7 +265,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The C-suite discipline (CEOs, CTOs, CFOs, Board of Directors) of steering enterprise strategy, managing fiduciary capital, orchestrating large-scale organizational change, establishing high-performance culture, and making high-stakes decisions under conditions of extreme market and technological uncertainty.',
     whyItMatters: 'Technological paradigm shifts like autonomous AI fundamentally disrupt business models and operating structures. Executive leadership determines whether an organization capitalizes on technological transformation or collapses under legacy inertia.',
-    whoShouldCare: ['Chief Executive Officers', 'Board Members', 'Chief Financial Officers', 'Chief Technology Officers'],
+    whoShouldCare: ['Chief Executive Officer (CEO)', 'Chief Financial Officer (CFO)', 'Chief Operating Officer (COO)', 'Chief Information Officer (CIO)', 'General Counsel'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Leading Product Strategy When Build Costs Approach Zero', publisher: 'LinkedIn Newsletters', type: 'Canonical Essay', url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic' },
@@ -295,7 +333,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'CEO', takeaway: 'Enforce clear economic hurdle rates and risk boundaries for all enterprise AI initiatives.', recommendedNextSlug: 'board-level-ai-governance' }
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Lead technological transformation by enforcing capital discipline, eliminating tool redundancy, and setting decisive strategic moats.',
+        recommendedNextSlug: 'board-level-ai-governance'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Require transparent ROI and unit economic hurdle rates for enterprise software investments rather than signing off on speculative AI experiments.',
+        recommendedNextSlug: 'r-and-d-capital-allocation'
+      },
+      {
+        role: 'Chief Operating Officer (COO)',
+        takeaway: 'Modernize cross-departmental operating workflows to eliminate organizational friction between product, sales, and customer operations.',
+        recommendedNextSlug: 'autonomous-enterprise-operating-model'
+      },
+      {
+        role: 'Chief Information Officer (CIO)',
+        takeaway: 'Establish enterprise data governance and vendor access boundaries to prevent shadow technology sprawl across business units.',
+        recommendedNextSlug: 'shadow-ai'
+      }
     ],
     telemetry: {
       origin: {
@@ -335,7 +392,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A go-to-market business methodology in which user acquisition, activation, conversion, retention, and expansion are driven primarily by the product itself rather than by heavy top-down sales and marketing teams. PLG relies on frictionless self-serve onboarding, rapid time-to-value, virality loops, and product usage telemetry to reduce Customer Acquisition Cost (CAC) and scale software businesses efficiently.',
     whyItMatters: 'Traditional enterprise sales cycles are expensive and slow. PLG flips the software buying cycle by allowing end-users to experience immediate value before asking for budget, lowering CAC and accelerating expansion revenue.',
-    whoShouldCare: ['Chief Growth Officers', 'Chief Product Officers', 'Growth PMs', 'Startup Founders'],
+    whoShouldCare: ['Chief Product Officer (CPO)', 'Chief Financial Officer (CFO)', 'VP of Operations', 'Customer Support Manager', 'Product Operations Manager'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publisher: 'Mind the Product', type: 'Canonical Essay', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' }
@@ -400,7 +457,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Head of Growth', takeaway: 'Measure your Time-to-Value (TTV) and optimize the first 5 minutes of user onboarding.', recommendedNextSlug: 'north-star-metric' }
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Optimize the first five minutes of user onboarding to deliver immediate time-to-value without requiring sales intervention.',
+        recommendedNextSlug: 'north-star-metric'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Lower customer acquisition costs by using self-serve product upgrades and usage telemetry to qualify enterprise sales pipelines.',
+        recommendedNextSlug: 'pl-ownership-for-pms'
+      },
+      {
+        role: 'Customer Support Manager',
+        takeaway: 'Feed recurring onboarding friction and ticket patterns directly into self-serve product workflows to reduce support volume.',
+        recommendedNextSlug: 'product-discovery'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Instrument behavioral funnels to identify where trial users encounter friction and trigger automated conversion nudges.',
+        recommendedNextSlug: 'opportunity-solution-tree'
+      }
     ],
     telemetry: {
       origin: {
@@ -440,7 +516,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The high-level plan that articulates an organization’s winning aspiration, target customer segment, unique value proposition, strategic moats (network effects, switching costs, proprietary data, scale economics), and cohesive set of product choices required to achieve durable competitive advantage and outsized financial returns.',
     whyItMatters: 'A roadmap is a list of features with dates; a strategy is a coherent hypothesis about how the company will win. Without a clear product strategy, teams waste millions building features that deliver zero competitive differentiation.',
-    whoShouldCare: ['Chief Product Officers', 'VP of Product', 'Chief Executive Officers', 'Product Directors'],
+    whoShouldCare: ['Chief Executive Officer (CEO)', 'Chief Product Officer (CPO)', 'Director of Finance', 'Group Product Manager (GPM)', 'Engineering Manager (EM)'],
     firstIntroduced: 'February 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Leading Product Strategy When Build Costs Approach Zero', publisher: 'LinkedIn Newsletters', type: 'Canonical Essay', url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic' },
@@ -507,7 +583,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'VP of Product', takeaway: 'Define your non-goals and competitive moats before finalizing your quarterly roadmaps.', recommendedNextSlug: 'r-and-d-capital-allocation' }
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Anchor enterprise strategy on defensible competitive moats like proprietary data and switching costs rather than easily cloned UI features.',
+        recommendedNextSlug: 'zero-cost-software-strategy'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Explicitly define what the organization chooses not to build to protect engineering focus and prevent feature bloat.',
+        recommendedNextSlug: 'r-and-d-capital-allocation'
+      },
+      {
+        role: 'Director of Finance',
+        takeaway: 'Direct capital toward high-conviction product bets that improve customer lifetime value and gross margins.',
+        recommendedNextSlug: 'pl-ownership-for-pms'
+      },
+      {
+        role: 'Group Product Manager (GPM)',
+        takeaway: 'Translate strategic priorities into tangible boundary conditions so product teams can make confident daily trade-offs.',
+        recommendedNextSlug: 'opportunity-solution-tree'
+      }
     ],
     telemetry: {
       origin: {
@@ -547,7 +642,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A visual discovery and decision-making framework formulated by Teresa Torres that connects a clear desired business outcome (e.g., reduce churn by 15%) to customer opportunities (unmet needs, pain points, desires), multiple potential solutions, and small, rapid assumption tests. The tree ensures product teams explore multiple pathways rather than falling in love with a single solution.',
     whyItMatters: 'Product teams frequently jump from a business goal directly to building a massive software feature without exploring the underlying customer opportunity space. The Opportunity Solution Tree forces continuous discovery and rapid assumption testing.',
-    whoShouldCare: ['Product Managers', 'Product Designers', 'Engineering Leads', 'Chief Product Officers'],
+    whoShouldCare: ['Chief Product Officer (CPO)', 'Group Product Manager (GPM)', 'Engineering Manager (EM)', 'Product Operations Manager', 'Customer Support Manager'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publisher: 'Mind the Product', type: 'Industry Article', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' }
@@ -612,7 +707,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Senior PM', takeaway: 'Build an Opportunity Solution Tree with your designer and tech lead for your next quarterly outcome.', recommendedNextSlug: 'jobs-to-be-done' }
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Mandate that teams show at least three alternative solution pathways and assumption test results before approving capital for major feature builds.',
+        recommendedNextSlug: 'jobs-to-be-done'
+      },
+      {
+        role: 'Group Product Manager (GPM)',
+        takeaway: 'Coach product managers to build dynamic trees connecting quarterly OKRs to verified customer pain points rather than static wishlists.',
+        recommendedNextSlug: 'product-discovery'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Involve senior developers in mapping technical assumption tests early to disqualify unviable architecture before writing code.',
+        recommendedNextSlug: 'engineering-to-product-alignment'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Maintain a shared opportunity repository that connects recurring customer support escalations directly to active solution trees.',
+        recommendedNextSlug: 'product-operating-model'
+      }
     ],
     telemetry: {
       origin: {
@@ -652,7 +766,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A customer research and product innovation framework originated by Clayton Christensen, Bob Moesta, and Tony Ulwick asserting that customers do not buy products or services; they "hire" them to make progress in a specific life situation. The framework shifts focus from demographic customer personas to the functional, emotional, and social dimensions of the underlying job.',
     whyItMatters: 'Customer demographics (e.g., 35-year-old software engineer in Seattle) explain who the user is, but they fail to explain why the user buys. JTBD reveals the causal triggers that drive customer purchasing and switching behavior.',
-    whoShouldCare: ['Product Managers', 'Product Designers', 'Marketing Strategists', 'Startup Founders'],
+    whoShouldCare: ['Chief Product Officer (CPO)', 'Chief Marketing Officer (CMO)', 'Customer Support Manager', 'Group Product Manager (GPM)', 'Product Operations Manager'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Real Innovation Requires Deleting Code, Not Writing It', publisher: 'Built In', type: 'Canonical Essay', url: 'https://builtin.com/articles/innovation-requires-deleting-code' }
@@ -717,7 +831,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Product Lead', takeaway: 'Conduct 5 JTBD switch interviews with recent churned customers to identify the real job.', recommendedNextSlug: 'opportunity-solution-tree' }
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Frame product roadmap investments around the progress customers are trying to achieve rather than competitor feature checklists.',
+        recommendedNextSlug: 'opportunity-solution-tree'
+      },
+      {
+        role: 'Chief Marketing Officer (CMO)',
+        takeaway: 'Align value propositions and messaging with the emotional and functional triggers that cause customers to switch solutions.',
+        recommendedNextSlug: 'product-led-growth'
+      },
+      {
+        role: 'Customer Support Manager',
+        takeaway: 'Audit churn and cancellation logs using the four forces of progress (push, pull, anxiety, habit) to pinpoint root causes.',
+        recommendedNextSlug: 'product-discovery'
+      },
+      {
+        role: 'Group Product Manager (GPM)',
+        takeaway: 'Train product managers to conduct customer switch interviews instead of asking users what hypothetical features they want.',
+        recommendedNextSlug: 'feature-factory-anti-pattern'
+      }
     ],
     telemetry: {
       origin: {
@@ -757,7 +890,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The single key metric that best captures the core value a product delivers to its customers and serves as the primary leading indicator of sustainable, long-term business growth and retention. A properly constructed North Star Metric is supported by a tree of input metrics across breadth, depth, frequency, and efficiency.',
     whyItMatters: 'Without a clear North Star Metric, different functional departments optimize for conflicting vanity metrics (marketing optimizes for page views, sales for bookings, engineering for velocity). A unified North Star Metric aligns the entire company around customer value creation.',
-    whoShouldCare: ['Chief Product Officers', 'Chief Executive Officers', 'VP of Product', 'Growth PMs'],
+    whoShouldCare: ['Chief Executive Officer (CEO)', 'Chief Product Officer (CPO)', 'Chief Financial Officer (CFO)', 'Group Product Manager (GPM)', 'VP of Operations'],
     firstIntroduced: 'February 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publisher: 'Mind the Product', type: 'Canonical Essay', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' }
@@ -822,7 +955,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'CPO', takeaway: 'Define your North Star Metric and map its 4 key input drivers across your product squads.', recommendedNextSlug: 'product-led-growth' }
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Align the entire leadership team around a single metric capturing customer value realization to stop departmental infighting over vanity numbers.',
+        recommendedNextSlug: 'executive-leadership'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Decompose the North Star into clear input drivers across breadth, depth, and frequency so individual product squads own tangible levers.',
+        recommendedNextSlug: 'product-led-growth'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Validate that improvements in the North Star Metric correlate directly with net revenue retention, gross margins, and customer lifetime value.',
+        recommendedNextSlug: 'pl-ownership-for-pms'
+      },
+      {
+        role: 'VP of Operations',
+        takeaway: 'Ensure cross-functional support and customer success workflows reinforce the primary value moment measured by the North Star.',
+        recommendedNextSlug: 'product-operating-model'
+      }
     ],
     telemetry: {
       origin: {
@@ -862,7 +1014,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The continuous, iterative process of deeply understanding customer problems, validating market opportunities, and de-risking software initiatives before committing expensive engineering capacity to production delivery. Product discovery systematically addresses four fundamental product risks: Value Risk, Usability Risk, Feasibility Risk, and Business Viability Risk.',
     whyItMatters: 'Writing software is expensive; writing the wrong software is catastrophic. Product discovery ensures that engineering teams build only what customers will buy, adopt, and retain.',
-    whoShouldCare: ['Product Managers', 'Product Designers', 'Engineering Leads', 'Chief Product Officers'],
+    whoShouldCare: ['Chief Product Officer (CPO)', 'Director of Engineering', 'Group Product Manager (GPM)', 'Quality Engineering (QE) Manager', 'Product Operations Manager'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publisher: 'Mind the Product', type: 'Industry Article', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' }
@@ -928,7 +1080,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Product Lead', takeaway: 'Establish a weekly cadence of at least 2 customer discovery interviews with your tech lead and designer.', recommendedNextSlug: 'dual-track-agile' }
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Require teams to de-risk value, usability, feasibility, and business viability before committing engineering capacity to production sprints.',
+        recommendedNextSlug: 'opportunity-solution-tree'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Ensure tech leads participate directly in discovery prototypes to catch architectural bottlenecks before delivery commits.',
+        recommendedNextSlug: 'dual-track-agile'
+      },
+      {
+        role: 'Group Product Manager (GPM)',
+        takeaway: 'Protect team calendars to maintain a steady cadence of at least two customer discovery conversations per week.',
+        recommendedNextSlug: 'jobs-to-be-done'
+      },
+      {
+        role: 'Quality Engineering (QE) Manager',
+        takeaway: 'Partner with product trios during discovery to establish automated acceptance criteria and prevent regression risks early.',
+        recommendedNextSlug: 'product-operating-model'
+      }
     ],
     telemetry: {
       origin: {
@@ -968,7 +1139,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'An agile product development methodology where two parallel, synchronized tracks of work operate simultaneously within the same product team: Track 1 (Discovery) focuses on rapidly validating user problems, prototyping solutions, and de-risking hypotheses; Track 2 (Delivery) focuses on building, testing, deploying, and maintaining production-grade software.',
     whyItMatters: 'Standard Scrum sprints force teams to focus exclusively on delivery velocity, leaving zero time for customer discovery. Dual-Track Agile formalizes discovery as an equal, ongoing stream of work that feeds validated, high-conviction items into the delivery backlog.',
-    whoShouldCare: ['Product Managers', 'Engineering Managers', 'Agile Coaches', 'VP of Engineering'],
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'Chief Product Officer (CPO)', 'Engineering Manager (EM)', 'Group Product Manager (GPM)', 'Product Operations Manager'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publisher: 'Mind the Product', type: 'Industry Article', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' }
@@ -1033,7 +1204,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Engineering Lead', takeaway: 'Dedicate 10-20% of your sprint capacity to participating in discovery assumption tests.', recommendedNextSlug: 'product-operating-model' }
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Ensure engineering managers reserve capacity for technical discovery so developers help prototype ideas rather than receiving rigid tickets.',
+        recommendedNextSlug: 'engineering-to-product-alignment'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Synchronize discovery and delivery within single cross-functional squads rather than allowing separate research and coding silos to form.',
+        recommendedNextSlug: 'product-operating-model'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Rotate engineers through discovery assumption spikes to build deep context on customer problems before writing production code.',
+        recommendedNextSlug: 'product-discovery'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Facilitate continuous handoffs between validated discovery prototypes and delivery backlogs to maintain steady flow.',
+        recommendedNextSlug: 'feature-factory-anti-pattern'
+      }
     ],
     telemetry: {
       origin: {
@@ -1073,7 +1263,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The comprehensive organizational design, governance principles, talent staffing, funding structures, and cultural mechanisms that dictate how an enterprise conceives, builds, and scales digital products. The model transitions organizations from traditional IT project-based delivery (funded by annual Capex with fixed deadlines and feature scopes) to equipped, outcome-driven product teams funded by continuous streams of value creation.',
     whyItMatters: 'Adopting Agile ceremonies (daily standups, Jira sprints) without changing governance, funding, and decision rights creates the illusion of agility while maintaining legacy command-and-control behavior. The Product Operating Model changes how the company actually makes decisions.',
-    whoShouldCare: ['Chief Executive Officers', 'Chief Product Officers', 'Chief Technology Officers', 'Chief Information Officers'],
+    whoShouldCare: ['Chief Executive Officer (CEO)', 'Chief Product Officer (CPO)', 'Chief Technology Officer (CTO)', 'Director of Finance', 'VP of Operations'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publisher: 'Mind the Product', type: 'Canonical Essay', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' },
@@ -1141,7 +1331,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'CTO', takeaway: 'Partner with your CPO to eliminate project-based handoffs and fund persistent product squads.', recommendedNextSlug: 'engineering-to-product-alignment' }
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Dismantle annual IT Capex project budgeting and fund persistent, cross-functional squads accountable for tangible business outcomes.',
+        recommendedNextSlug: 'r-and-d-capital-allocation'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Transition product teams from feature ticket managers into empowered problem-solvers equipped with direct customer access.',
+        recommendedNextSlug: 'pl-ownership-for-pms'
+      },
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Partner with product leadership to eliminate rigid stage-gate handoffs and integrate technical discovery into daily squad routines.',
+        recommendedNextSlug: 'engineering-to-product-alignment'
+      },
+      {
+        role: 'Director of Finance',
+        takeaway: 'Modernize accounting practices by funding durable capacity rather than tracking depreciating software project assets.',
+        recommendedNextSlug: 'cpo-feature-margin-floor'
+      }
     ],
     telemetry: {
       origin: {
@@ -1181,7 +1390,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A pervasive software organization failure mode (formulated by John Cutler) where product and engineering teams measure success primarily by the sheer volume and velocity of features shipped, rather than by the measurable business outcomes, customer value, or gross margin contribution created. Feature factories suffer from relentless backlog churn, accumulating technical debt, and zero post-launch outcome validation.',
     whyItMatters: 'Feature factories create an illusion of productivity while destroying capital. Every unvalidated feature shipped introduces perpetual regression testing overhead, slows down deployments, inflates the Product Debt Index, and fails to move enterprise revenue.',
-    whoShouldCare: ['Chief Product Officers', 'Chief Technology Officers', 'VP of Engineering', 'Product Managers'],
+    whoShouldCare: ['Chief Product Officer (CPO)', 'Chief Technology Officer (CTO)', 'Engineering Manager (EM)', 'Product Operations Manager', 'Customer Support Manager'],
     firstIntroduced: 'February 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Real Innovation Requires Deleting Code, Not Writing It', publisher: 'Built In', type: 'Canonical Essay', url: 'https://builtin.com/articles/innovation-requires-deleting-code' },
@@ -1249,7 +1458,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'VP of Product', takeaway: 'Audit your last 10 feature releases: if you did not measure adoption at 60 days, you are running a feature factory.', recommendedNextSlug: 'pl-ownership-for-pms' }
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Stop rewarding teams for shipping velocity and establish mandatory 60-day post-launch adoption and margin audits.',
+        recommendedNextSlug: 'pl-ownership-for-pms'
+      },
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Cap technical debt accumulation by setting strict deprecation policies for unadopted zombie features before they drain maintenance capacity.',
+        recommendedNextSlug: 'zombie-features'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Push back on unvalidated sales feature requests that bypass customer discovery and degrade system maintainability.',
+        recommendedNextSlug: 'engineering-to-product-alignment'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Implement telemetry scorecards that flag features with declining usage for immediate sunset evaluation.',
+        recommendedNextSlug: 'sunset-protocol'
+      }
     ],
     telemetry: {
       origin: {
@@ -1289,7 +1517,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The strategic integration and cultural synchronization between engineering architecture and product commercialization. True alignment occurs when engineers deeply understand customer business context and unit economics, while product managers understand technical architecture, technical debt carrying costs, and platform constraints.',
     whyItMatters: 'Misalignment between engineering and product is the leading cause of failed software initiatives. Product teams complain that engineering moves too slowly; engineering teams complain that product changes requirements erratically and ignores technical debt.',
-    whoShouldCare: ['Chief Technology Officers', 'Chief Product Officers', 'VP of Engineering', 'VP of Product'],
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'Chief Product Officer (CPO)', 'Director of Engineering', 'Group Product Manager (GPM)', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publisher: 'Mind the Product', type: 'Canonical Essay', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' },
@@ -1355,7 +1583,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'CTO', takeaway: 'Schedule joint weekly roadmap and architecture reviews with your CPO partner.', recommendedNextSlug: 'product-operating-model' }
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Co-author quarterly investment roadmaps with your CPO partner, ensuring at least twenty-five percent of capacity is reserved for architectural resilience.',
+        recommendedNextSlug: 'product-operating-model'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Involve tech leads in early discovery conversations so engineering shapes product viability rather than reacting to finished specifications.',
+        recommendedNextSlug: 'pl-ownership-for-pms'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Establish shared economic metrics like feature margin contribution rather than relying on isolated uptime and story point metrics.',
+        recommendedNextSlug: 'engineering-bottleneck-illusion'
+      },
+      {
+        role: 'Group Product Manager (GPM)',
+        takeaway: 'Foster transparent communication with engineering managers regarding business constraints, eliminating adversarial requirements negotiations.',
+        recommendedNextSlug: 'feature-factory-anti-pattern'
+      }
     ],
     telemetry: {
       origin: {
@@ -1395,7 +1642,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The fiduciary and supervisory framework utilized by corporate Boards of Directors, Audit Committees, and Risk Committees to oversee enterprise AI strategy, capital allocation, material regulatory compliance (such as the EU AI Act), data privacy liabilities, algorithmic bias, and runtime operational risks.',
     whyItMatters: 'AI is no longer an experimental IT initiative; it is a material balance-sheet expenditure with significant legal, reputational, and financial liability. Boards must exercise active fiduciary oversight rather than delegating AI risks entirely to technical management.',
-    whoShouldCare: ['Board Members', 'Chief Executive Officers', 'Chief Legal Officers', 'Chief Information Security Officers'],
+    whoShouldCare: ['Chief Executive Officer (CEO)', 'Chief Information Security Officer (CISO)', 'General Counsel', 'Chief Information Officer (CIO)', 'Director of Finance'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Leading Product Strategy When Build Costs Approach Zero', publisher: 'LinkedIn Newsletters', type: 'Executive Strategy', url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic' },
@@ -1462,7 +1709,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Board Director', takeaway: 'Mandate a quarterly AI Risk & Compliance audit from your CISO and General Counsel.', recommendedNextSlug: 'executive-leadership' }
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Establish clear enterprise risk thresholds and kill switches for autonomous systems to protect enterprise valuation and brand trust.',
+        recommendedNextSlug: 'executive-leadership'
+      },
+      {
+        role: 'Chief Information Security Officer (CISO)',
+        takeaway: 'Mandate continuous audit logging and credential boundary isolation across all third-party and internal model integrations.',
+        recommendedNextSlug: 'persistence-vs-authority'
+      },
+      {
+        role: 'General Counsel',
+        takeaway: 'Track evolving regulatory compliance, including the EU AI Act and copyright liabilities, to prevent material legal exposure.',
+        recommendedNextSlug: 'the-transaction-that-succeeds'
+      },
+      {
+        role: 'Chief Information Officer (CIO)',
+        takeaway: 'Audit enterprise software purchases to eliminate unmonitored shadow AI tools that risk intellectual property leakage.',
+        recommendedNextSlug: 'shadow-ai'
+      }
     ],
     telemetry: {
       origin: {
@@ -1502,7 +1768,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The strategic corporate finance and executive discipline of distributing an enterprise’s research and development budget across competing product initiatives, technical debt remediation, core platform maintenance, and transformational innovation bets to maximize long-term Return on Invested Capital (ROIC) and shareholder value.',
     whyItMatters: 'R&D is typically the single largest operating expenditure in software companies (often 20-35% of revenue). Inefficient capital allocation - such as over-investing in low-adoption zombie features while starving core platform performance - drastically reduces enterprise valuation.',
-    whoShouldCare: ['Chief Executive Officers', 'Chief Financial Officers', 'Chief Product Officers', 'Chief Technology Officers'],
+    whoShouldCare: ['Chief Executive Officer (CEO)', 'Chief Financial Officer (CFO)', 'Chief Product Officer (CPO)', 'Chief Technology Officer (CTO)', 'Director of Finance'],
     firstIntroduced: 'February 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publisher: 'Mind the Product', type: 'Canonical Essay', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' },
@@ -1570,7 +1836,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'CFO', takeaway: 'Implement the 70/20/10 R&D allocation model and audit feature margin contributions annually.', recommendedNextSlug: 'pl-ownership-for-pms' }
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Direct R&D capital toward durable platform moats and proprietary assets rather than spreading budget equally across competing departmental wishes.',
+        recommendedNextSlug: 'zero-cost-software-strategy'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Enforce the 70/20/10 portfolio allocation framework and calculate net return on engineering dollar across all active product lines.',
+        recommendedNextSlug: 'pl-ownership-for-pms'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Require rigorous business cases and unit economic margin projections before releasing engineering tranches for new product initiatives.',
+        recommendedNextSlug: 'cpo-feature-margin-floor'
+      },
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Protect dedicated funding for core platform maintenance and tech debt reduction to prevent compound architectural decay.',
+        recommendedNextSlug: 'engineering-to-product-alignment'
+      }
     ],
     telemetry: {
       origin: {
@@ -1610,7 +1895,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The structured organizational, psychological, and operational leadership process for guiding enterprise employees, managers, and executives through the adoption of autonomous artificial intelligence workflows. It focuses on overcoming institutional inertia, alleviating job displacement anxieties, establishing psychological safety, and re-skilling workforces to collaborate with AI agents.',
     whyItMatters: 'Over 70% of enterprise AI transformations fail not due to technical model limitations, but due to human resistance, cultural friction, and broken organizational change management. Technology is easy; changing human behavior is hard.',
-    whoShouldCare: ['Chief Human Resources Officers', 'Chief Information Officers', 'Chief Executive Officers', 'VP of Engineering'],
+    whoShouldCare: ['Chief Human Resources Officer (CHRO)', 'Chief Information Officer (CIO)', 'Chief Executive Officer (CEO)', 'Engineering Manager (EM)', 'VP of Operations'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Most Companies Shouldn’t Be Using Autonomous Coding Agents Yet', publisher: 'LinkedIn Newsletters', type: 'Canonical Essay', url: 'https://www.linkedin.com/pulse/most-companies-should-using-autonomous-coding-agents-yet-ewing-lanhc/' }
@@ -1675,7 +1960,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'CHRO', takeaway: 'Design career progression frameworks that reward engineers for AI use and verification judgment.', recommendedNextSlug: 'executive-leadership' }
+      {
+        role: 'Chief Human Resources Officer (CHRO)',
+        takeaway: 'Design incentive structures that reward engineers for AI audit judgment rather than typing speed.',
+        recommendedNextSlug: 'executive-leadership'
+      },
+      {
+        role: 'Chief Information Officer (CIO)',
+        takeaway: 'Demystify AI tools through transparent operational sandboxes to eliminate employee displacement fears.',
+        recommendedNextSlug: 'shadow-ai'
+      },
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Champion a culture of continuous re-skilling where human judgment remains the primary corporate moat.',
+        recommendedNextSlug: 'board-level-ai-governance'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Coach team members through anxiety by pairing them on supervised agent refactors.',
+        recommendedNextSlug: 'spec-driven-development'
+      }
     ],
     telemetry: {
       origin: {
@@ -1715,7 +2019,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The comprehensive audit and forensic investigation performed by private equity investors, venture capital firms, or corporate acquirers to evaluate a target company’s software architecture, technical debt, Product Debt Index (PDI), cybersecurity posture, intellectual property rights, infrastructure scalability, team use, and AI unit economics prior to an M&A transaction or capital investment.',
     whyItMatters: 'Flawed technical due diligence leads to disastrous acquisitions where post-close value is wiped out by hidden technical debt, unmaintainable legacy spaghetti, catastrophic security vulnerabilities, or negative-margin AI compute COGS.',
-    whoShouldCare: ['Private Equity Partners', 'Venture Capitalists', 'Chief Technology Officers', 'Corporate Development Directors'],
+    whoShouldCare: ['Private Equity Operating Partner', 'Chief Technology Officer (CTO)', 'Chief Financial Officer (CFO)', 'Corporate Development Director', 'Lead Architect'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publisher: 'Mind the Product', type: 'Canonical Essay', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' },
@@ -1782,7 +2086,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'PE Partner', takeaway: 'Require a forensic Product Debt Index audit before finalizing transaction terms.', recommendedNextSlug: 'product-debt-index' }
+      {
+        role: 'Private Equity Operating Partner',
+        takeaway: 'Require a forensic Product Debt Index audit before finalizing transaction valuation multiples.',
+        recommendedNextSlug: 'product-debt-index'
+      },
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Inspect target codebase for undocumented third-party AI APIs and license liabilities.',
+        recommendedNextSlug: 'engineering-to-product-alignment'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Verify whether R&D capitalization claims reflect durable software assets or unmaintainable zombie code.',
+        recommendedNextSlug: 'r-and-d-capital-allocation'
+      },
+      {
+        role: 'Corporate Development Director',
+        takeaway: 'Assess runtime carrying costs and infrastructure cloud debts during post-merger integration planning.',
+        recommendedNextSlug: 'fractional-executive-leadership'
+      }
     ],
     telemetry: {
       origin: {
@@ -1822,7 +2145,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'An executive operating model where high-growth startups, private equity portfolio companies, or enterprises engage seasoned Chief Technology Officers (CTOs), Chief Product Officers (CPOs), or AI Advisors on a part-time, retainer, or strategic basis to provide high-use strategic direction, architectural governance, capital allocation, and team mentoring without the cost of a full-time executive.',
     whyItMatters: 'Early-stage and mid-market companies often face complex, existential architectural and product choices but cannot afford or attract a $500k+ full-time C-level executive. Fractional leadership provides battle-tested executive judgment exactly when needed.',
-    whoShouldCare: ['Startup Founders', 'Board Members', 'Private Equity Operating Partners', 'Interim Executives'],
+    whoShouldCare: ['Startup Founder', 'Board Member', 'Private Equity Operating Partner', 'Chief Financial Officer (CFO)', 'VP of Operations'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publisher: 'Mind the Product', type: 'Canonical Essay', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' }
@@ -1887,7 +2210,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Founder/CEO', takeaway: 'Engage a Fractional CTO/CPO to audit your architecture and R&D capital allocation before your next fundraise.', recommendedNextSlug: 'r-and-d-capital-allocation' }
+      {
+        role: 'Startup Founder',
+        takeaway: 'Engage fractional product and engineering leadership to audit architectural foundations before scaling burn rate.',
+        recommendedNextSlug: 'r-and-d-capital-allocation'
+      },
+      {
+        role: 'Board Member',
+        takeaway: 'Deploy fractional executives to turn around distressed portfolio tech assets without permanent executive overhead.',
+        recommendedNextSlug: 'executive-leadership'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Rationalize executive compensation spend by leveraging senior fractional talent for high-stakes capital transitions.',
+        recommendedNextSlug: 'pl-ownership-for-pms'
+      },
+      {
+        role: 'VP of Operations',
+        takeaway: 'Work alongside fractional leaders to build repeatable governance processes that internal managers can run.',
+        recommendedNextSlug: 'technical-due-diligence'
+      }
     ],
     telemetry: {
       origin: {
@@ -1927,7 +2269,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The iterative engineering practice of structuring, refining, and optimizing natural language inputs, system instructions, context windows, few-shot examples, and chain-of-thought constraints to guide foundation large language models (LLMs) toward accurate, deterministic, and format-compliant outputs.',
     whyItMatters: 'Prompt engineering is the foundational discovery on-ramp for working with generative AI. While modern architectures are evolving toward persistent Context Engines, mastering prompt structure remains an essential skill for software engineers and knowledge workers.',
-    whoShouldCare: ['Software Engineers', 'AI Prompt Engineers', 'Product Managers', 'Technical Writers'],
+    whoShouldCare: ['Product Operations Manager', 'Engineering Manager (EM)', 'Quality Engineering (QE) Manager', 'Customer Support Manager', 'Lead Architect'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'How Does Meta’s Muse Code Compare to Other AI Coding Tools?', publisher: 'Built In', type: 'Canonical Benchmark', url: 'https://builtin.com/articles/meta-muse-code-comparison' },
@@ -1995,7 +2337,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'AI Engineer', takeaway: 'Adopt XML delimiters and explicit few-shot examples in all production system prompts.', recommendedNextSlug: 'context-engineering' }
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Maintain version-controlled prompt registries and evaluation datasets to prevent prompt drift across customer touchpoints.',
+        recommendedNextSlug: 'context-engineering'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Treat prompt engineering as strict schema and contract design rather than open-ended conversational trial and error.',
+        recommendedNextSlug: 'spec-driven-development'
+      },
+      {
+        role: 'Quality Engineering (QE) Manager',
+        takeaway: 'Automate regression testing suites that test prompt variations against deterministic assertions.',
+        recommendedNextSlug: 'context-engine-architecture'
+      },
+      {
+        role: 'Customer Support Manager',
+        takeaway: 'Structure customer macro prompts with explicit guardrails to prevent hallucinated commitments in customer responses.',
+        recommendedNextSlug: 'epistemic-verification-loops'
+      }
     ],
     telemetry: {
       origin: {
@@ -2035,7 +2396,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'Compact artificial intelligence foundation models (typically ranging from 1 billion to 14 billion parameters, such as Mistral, Llama-3-8B, Phi-3, and Gemma) designed to perform specialized tasks with high accuracy, low latency, minimal compute footprint, and low operational inference costs compared to massive monolithic frontier models.',
     whyItMatters: 'Running monolithic frontier models (e.g., GPT-4, Claude Opus) for every enterprise task is economically unsustainable and introduces data privacy and latency bottlenecks. SLMs allow enterprises to run sovereign, fine-tuned, low-cost inference on edge devices or private cloud infrastructure.',
-    whoShouldCare: ['Chief Technology Officers', 'AI Infrastructure Architects', 'Chief Information Security Officers', 'FinOps Leads'],
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'Cloud FinOps Manager', 'Chief Information Security Officer (CISO)', 'Director of Engineering', 'Product Operations Manager'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'How Does Meta’s Muse Code Compare to Other AI Coding Tools?', publisher: 'Built In', type: 'Canonical Benchmark', url: 'https://builtin.com/articles/meta-muse-code-comparison' },
@@ -2102,7 +2463,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'AI Architect', takeaway: 'Implement an intelligent model routing layer that defaults to fine-tuned SLMs before escalating to frontier APIs.', recommendedNextSlug: 'model-right-sizing' }
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Implement dynamic routing layers that prioritize fine-tuned SLMs for routine classification to reduce API dependency.',
+        recommendedNextSlug: 'model-right-sizing'
+      },
+      {
+        role: 'Cloud FinOps Manager',
+        takeaway: 'Cut AI compute operational costs by shifting high-volume inference from expensive frontier APIs to self-hosted SLMs.',
+        recommendedNextSlug: 'inference-economics'
+      },
+      {
+        role: 'Chief Information Security Officer (CISO)',
+        takeaway: 'Deploy on-premise SLMs to process sensitive customer data without violating data residency regulations.',
+        recommendedNextSlug: 'ai-margin-squeeze'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Train engineers on model right-sizing and task-specific quantization techniques.',
+        recommendedNextSlug: 'spec-driven-development'
+      }
     ],
     telemetry: {
       origin: {
@@ -2143,7 +2523,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.98, evidenceCount: 6, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 0, knownLimitationsCount: 0 },
     definition: 'A mandatory product leadership standard requiring all generative AI capabilities and reasoning features to maintain at least a 70% gross margin under peak enterprise token consumption loads before deployment.',
     whyItMatters: 'Prevents power-user accounts from eroding enterprise SaaS gross profits and protects company exit valuation multiples from token COGS inflation.',
-    whoShouldCare: ['Chief Product Officers (CPO)', 'VPs of Product', 'Product Directors', 'Chief Financial Officers (CFO)'],
+    whoShouldCare: ['Chief Product Officer (CPO)', 'Chief Financial Officer (CFO)', 'VP of Product', 'Group Product Manager (GPM)', 'Cloud FinOps Manager'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publisher: 'Mind the Product', type: 'Canonical Essay', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' }
@@ -2200,7 +2580,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Chief Product Officer', takeaway: 'Require affirmative gross margin modeling before signing off on any AI PRD.', recommendedNextSlug: 'seat-based-pricing-compression' }
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Require affirmative gross margin modeling and token quotas before signing off on any generative AI feature specification.',
+        recommendedNextSlug: 'seat-based-pricing-compression'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Audit unit economics on power-user tiers to ensure variable inference costs do not turn enterprise SaaS contracts gross-margin negative.',
+        recommendedNextSlug: 'pl-ownership-for-pms'
+      },
+      {
+        role: 'Group Product Manager (GPM)',
+        takeaway: 'Transition unbounded reasoning features into metered credit systems to protect baseline subscription profitability.',
+        recommendedNextSlug: 'north-star-metric'
+      },
+      {
+        role: 'Cloud FinOps Manager',
+        takeaway: 'Enforce per-customer token budget alerts and route high-frequency prompts to lower-cost specialized models.',
+        recommendedNextSlug: 'small-language-models'
+      }
     ],
     telemetry: {
       origin: {
@@ -2240,7 +2639,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.98, evidenceCount: 6, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 0, knownLimitationsCount: 0 },
     definition: 'An executive corporate architecture that replaces functional matrix silos with small, sovereign multidisciplinary units augmented by autonomous agent swarms and governed by runtime signing matrices.',
     whyItMatters: 'Enables 10x output per employee, slashes release latency from quarters to days, and eliminates bureaucratic matrix coordination overhead.',
-    whoShouldCare: ['Chief Executive Officers (CEO)', 'Chief Operating Officers (COO)', 'Managing Directors', 'Board Directors', 'SVPs'],
+    whoShouldCare: ['Chief Executive Officer (CEO)', 'Chief Operating Officer (COO)', 'Chief Information Officer (CIO)', 'VP of Operations', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Why Your CFO Hates Your Agile Transformation', publisher: 'CIO.com', type: 'Canonical Essay', url: 'https://www.cio.com/article/4143737/why-your-cfo-hates-your-agile-transformation.html' }
@@ -2297,7 +2696,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Chief Executive Officer', takeaway: 'Consolidate fragmented departmental AI pilots into sovereign multidisciplinary units.', recommendedNextSlug: 'cpo-feature-margin-floor' }
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Dismantle bureaucratic matrix silos and organize talent into small, sovereign multidisciplinary units augmented by autonomous agent fleets.',
+        recommendedNextSlug: 'cpo-feature-margin-floor'
+      },
+      {
+        role: 'Chief Operating Officer (COO)',
+        takeaway: 'Replace cross-departmental coordination meetings with deterministic API handoffs and verified machine-readable deliverables.',
+        recommendedNextSlug: 'product-operating-model'
+      },
+      {
+        role: 'Chief Information Officer (CIO)',
+        takeaway: 'Implement runtime proxy firewalls that enforce corporate signing limits and data boundary protections across all automated agents.',
+        recommendedNextSlug: 'deterministic-governance'
+      },
+      {
+        role: 'VP of Operations',
+        takeaway: 'Standardize operating procedures so autonomous units can execute rapid iterations without creating operational confusion.',
+        recommendedNextSlug: 'systems-governor'
+      }
     ],
     telemetry: {
       origin: {
@@ -2336,7 +2754,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.96, evidenceCount: 3, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The financing strategy where early-stage AI and SaaS founders systematically secure non-dilutive cloud computing credits ($100,000+ equivalent across AWS Activate, Google for Startups Cloud, and Microsoft Founders Hub) and authoritative directory backlinks to eliminate first-year hosting, database, and inference overhead without surrendering startup equity.',
     whyItMatters: 'In capital-intensive AI and B2B SaaS ventures, infrastructure and inference compute represent the fastest drain on early cash reserves. Using hyperscaler startup subsidy programs preserves founder equity, extends cash runway, and establishes high-authority search signals during product-market fit exploration.',
-    whoShouldCare: ['Startup Founders', 'Solo Builders', 'Bootstrappers', 'CTOs', 'VPs of Engineering'],
+    whoShouldCare: ['Startup Founder', 'Chief Financial Officer (CFO)', 'Chief Technology Officer (CTO)', 'Cloud FinOps Manager', 'VP of Operations'],
     firstIntroduced: 'September 2026',
     canonicalReadingOrder: [
       { step: 1, title: "The Bootstrapper's Cloud Credit Playbook", publisher: 'The AI Economist (Beehiiv)', type: 'Executive Strategy', url: 'https://theaieconomist.beehiiv.com/p/the-bootstrapper-s-cloud-credit-playbook' },
@@ -2399,8 +2817,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     ],
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Startup Founder', takeaway: 'Eliminate first-year cloud overhead and preserve equity by systematically applying to startup ecosystem programs.', recommendedNextSlug: 'rented-intelligence-vs-owned-capital' },
-      { role: 'Chief Financial Officer', takeaway: 'Use hyperscaler subsidies to extend cash runway and delay dilutive funding rounds.', recommendedNextSlug: 'ai-volatility-tax' }
+      {
+        role: 'Startup Founder',
+        takeaway: 'Eliminate first-year cloud and inference overhead by systematically applying to hyperscaler startup ecosystem programs before selling equity.',
+        recommendedNextSlug: 'rented-intelligence-vs-owned-capital'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Use non-dilutive hyperscaler cloud subsidies to extend cash runway and delay dilutive funding rounds until unit economics are proven.',
+        recommendedNextSlug: 'ai-volatility-tax'
+      },
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Architect multi-cloud abstraction layers to maximize credit consumption across AWS, Google Cloud, and Azure without getting locked into one ecosystem.',
+        recommendedNextSlug: 'cloud-repatriation'
+      },
+      {
+        role: 'Cloud FinOps Manager',
+        takeaway: 'Track credit burn rates across inference and database workloads to prevent unexpected invoice spikes when credits expire.',
+        recommendedNextSlug: 'small-language-models'
+      }
     ],
     telemetry: {
       origin: {
@@ -2439,7 +2875,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.96, evidenceCount: 4, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The economic dilemma where autonomous agentic code generation and hyper-cheap inference enable automated software factories to run 24/7, churning out synthetic pull requests, features, and documentation that no customer requested and no engineering review team can validate. Real enterprise value shifts from code creation velocity to deprecation, product discovery, and deterministic boundary control.',
     whyItMatters: 'When code costs virtually nothing to generate, supply explodes while human attention remains strictly finite. The resulting inflation-deflation loop and review debt choke engineering organizations from the inside out, replacing the labor of typing with the pure stress of surveillance.',
-    whoShouldCare: ['VPs of Engineering', 'Chief Product Officers', 'Chief Technology Officers', 'Senior Engineering Managers', 'Product Economists'],
+    whoShouldCare: ['VP of Engineering', 'Chief Product Officer (CPO)', 'Engineering Manager (EM)', 'Quality Engineering (QE) Manager', 'Product Operations Manager'],
     firstIntroduced: 'September 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The Software Factory Is Running 24/7 (And Nobody Wants the Output)', publisher: 'The AI Economist (Beehiiv)', type: 'Research Essay', url: 'https://theaieconomist.beehiiv.com/p/the-software-factory-is-running-24-7-and-nobody-wants-the-output-c01a' },
@@ -2519,8 +2955,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'VP of Engineering', takeaway: 'Cap autonomous PR generation with mechanical compiler gates and review quotas to prevent senior engineer burnout.', recommendedNextSlug: 'engineering-bottleneck-illusion' },
-      { role: 'Chief Product Officer', takeaway: 'Focus product discovery on validating customer problems and deprecating unused features rather than consuming agentic build capacity.', recommendedNextSlug: 'product-economist' }
+      {
+        role: 'VP of Engineering',
+        takeaway: 'Cap autonomous pull request generation with mechanical compiler gates and review quotas to prevent senior engineer burnout.',
+        recommendedNextSlug: 'engineering-bottleneck-illusion'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Focus product discovery on validating customer problems and deleting unused features rather than consuming agentic build capacity.',
+        recommendedNextSlug: 'product-economist'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Reward engineers for deprecating dead code and exercising architectural judgment rather than merging massive synthetic pull requests.',
+        recommendedNextSlug: 'feature-factory-anti-pattern'
+      },
+      {
+        role: 'Quality Engineering (QE) Manager',
+        takeaway: 'Enforce automated regression harnesses that reject synthetic PRs lacking deterministic verification tests.',
+        recommendedNextSlug: 'spec-driven-development'
+      }
     ],
     telemetry: {
       origin: {
@@ -2559,7 +3013,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The operational fatigue and capital misallocation experienced by businesses from continuous model release churn and speculative benchmark marketing. It manifests in the Software Subscription Trap (accumulating redundant micro-SaaS subscriptions) and is resolved by consolidating to core frontier models, using the Interview Protocol, executing heavy compute in overnight batch queues, and optimizing web presence for direct quotation by AI answer engines.',
     whyItMatters: 'Chasing every weekly model benchmark release wastes engineering capital and creates brittle software dependencies. Practical business returns come from boring consistency, consolidating tool spend, and structuring data so conversational engines quote your business as the definitive answer.',
-    whoShouldCare: ['Founders', 'Chief Information Officers', 'Chief Financial Officers', 'Small Business Owners', 'Engineering Leaders'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Chief Information Officer (CIO)', 'Startup Founder', 'VP of Operations', 'Product Operations Manager'],
     firstIntroduced: 'September 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The AI Hype Cycle Is Exhausting', publisher: 'LinkedIn Newsletters', type: 'Executive Essay', url: 'https://www.linkedin.com/pulse/ai-hype-cycle-exhausting-richard-ewing-3bdic/' },
@@ -2639,8 +3093,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Small Business Founder', takeaway: 'Audit recurring credit card subscriptions, cancel redundant micro-tools, and format website pages with direct tabular answers for AI search discovery.', recommendedNextSlug: 'non-dilutive-infrastructure-capital' },
-      { role: 'Chief Financial Officer', takeaway: 'Mandate a freeze on specialized micro-SaaS subscriptions that can be natively handled by existing enterprise frontier model contracts.', recommendedNextSlug: 'rented-intelligence-vs-owned-capital' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Mandate a freeze on specialized micro-SaaS subscriptions that can be natively handled by existing enterprise frontier model contracts.',
+        recommendedNextSlug: 'rented-intelligence-vs-owned-capital'
+      },
+      {
+        role: 'Chief Information Officer (CIO)',
+        takeaway: 'Establish a centralized model access portal to stop departmental software subscription sprawl and enforce compliance.',
+        recommendedNextSlug: 'board-level-ai-governance'
+      },
+      {
+        role: 'Startup Founder',
+        takeaway: 'Audit recurring software spend, cancel redundant tools, and format web pages with direct tabular answers for AI search discovery.',
+        recommendedNextSlug: 'non-dilutive-infrastructure-capital'
+      },
+      {
+        role: 'VP of Operations',
+        takeaway: 'Standardize core workflows on a single reliable model partner instead of thrashing operations with every weekly benchmark announcement.',
+        recommendedNextSlug: 'operational-drift'
+      }
     ],
     telemetry: {
       origin: {
@@ -2679,7 +3151,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.96, evidenceCount: 4, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'An analytical framework formulated by Richard Ewing in Built In establishing that frontier AI represents an expensive, moving empirical threshold rather than a permanent category or static map. While everyday AI automates structured, narrow tasks at near-zero marginal cost, frontier systems are deployed when tasks present high ambiguity, multi-step execution paths, conflicting contracts, and code generation across unprogrammed domains. Weighing closed commercial APIs against open-weight private deployment requires balancing $78M to $191M training compute floors against compounding multi-step inference costs and strict operational authority limits.',
     whyItMatters: 'Prevents organizations from overpaying for frontier reasoning on trivial automation tasks or underestimating the infrastructure and inference compounding costs of deploying frontier models into multi-agent workflows.',
-    whoShouldCare: ['Chief Information Officers', 'Chief Financial Officers', 'Chief Technology Officers', 'AI Systems Architects', 'Engineering Leaders'],
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'Chief Information Officer (CIO)', 'Chief Financial Officer (CFO)', 'Cloud FinOps Manager', 'Lead Architect'],
     firstIntroduced: 'September 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'What Is a Frontier Model?', publisher: 'Built In', type: 'Canonical Essay', url: 'https://builtin.com/articles/frontier-model' },
@@ -2759,8 +3231,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Chief Technology Officer', takeaway: 'Implement dynamic model routing to protect margins: use small models for bounded extraction and frontier models for multi-step exception resolution.', recommendedNextSlug: 'variable-cost-of-intelligence' },
-      { role: 'Chief Information Officer', takeaway: 'Audit vendor SLAs and ensure operational authority guardrails prevent autonomous frontier agents from modifying live financial ledgers.', recommendedNextSlug: 'deterministic-execution-control' }
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Implement dynamic model routing to protect margins: use small models for bounded extraction and frontier models for multi-step exception resolution.',
+        recommendedNextSlug: 'variable-cost-of-intelligence'
+      },
+      {
+        role: 'Chief Information Officer (CIO)',
+        takeaway: 'Audit vendor SLAs and ensure operational authority guardrails prevent autonomous frontier agents from modifying live financial ledgers.',
+        recommendedNextSlug: 'deterministic-execution-control'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Model compounding inference costs across multi-agent workflows to ensure production usage does not outpace contract subscription revenue.',
+        recommendedNextSlug: 'ai-cogs'
+      },
+      {
+        role: 'Cloud FinOps Manager',
+        takeaway: 'Track per-token reasoning spend across departments and establish hard monthly throttling limits for frontier model API usage.',
+        recommendedNextSlug: 'cpo-feature-margin-floor'
+      }
     ],
     telemetry: {
       origin: {
@@ -2799,7 +3289,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A foundational AI systems governance principle formulated by Richard Ewing in Built In distinguishing execution duration from state-altering permission scope. Persistence measures how long an AI agent can execute unattended across background servers and workspace applications (such as Gemini Spark); Authority measures what records, databases, financial ledgers, and external communications the software is authorized to modify independently. Conflating persistence with authority allows flawed assumptions to silently spread across connected systems, creating compounding state drift and forensic recovery nightmares.',
     whyItMatters: 'Extending agent runtime without strict write boundaries creates silent distributed failures. While terminal-interactive tools (Claude Code) contain blast radius through human presence, unattended background agents require mechanical write allowlists and deterministic rollbacks.',
-    whoShouldCare: ['Chief Information Security Officers', 'Engineering Directors', 'Enterprise AI Architects', 'IT Governance Leads', 'Operations Executives'],
+    whoShouldCare: ['Chief Information Security Officer (CISO)', 'Chief Technology Officer (CTO)', 'VP of Engineering', 'General Counsel', 'Director of IT'],
     firstIntroduced: 'September 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Claude Code vs. Gemini Spark: How Do They Compare?', publisher: 'Built In', type: 'Architectural Analysis', url: 'https://builtin.com/articles/claude-code-vs-google-gemini-spark' },
@@ -2873,8 +3363,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Chief Information Security Officer', takeaway: 'Enforce Scoped Ephemeral Tokens and zero default write permissions for all persistent background agents connecting via MCP.', recommendedNextSlug: 'deterministic-execution-control' },
-      { role: 'VP of Engineering', takeaway: 'Choose interactive terminal workflows (Claude Code) for exploratory problem solving and reserve background persistence (Gemini Spark) for bounded, read-only coordination.', recommendedNextSlug: 'systems-governor' }
+      {
+        role: 'Chief Information Security Officer (CISO)',
+        takeaway: 'Enforce Scoped Ephemeral Tokens and zero default write permissions for all persistent background agents connecting via MCP.',
+        recommendedNextSlug: 'deterministic-execution-control'
+      },
+      {
+        role: 'VP of Engineering',
+        takeaway: 'Choose interactive terminal workflows for exploratory coding and reserve background persistence for bounded, read-only coordination.',
+        recommendedNextSlug: 'systems-governor'
+      },
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Architect automated rollback mechanisms and audit trails before granting persistent background agents state-mutating privileges.',
+        recommendedNextSlug: 'the-transaction-that-succeeds'
+      },
+      {
+        role: 'General Counsel',
+        takeaway: 'Review operational risk boundaries to ensure autonomous agents cannot execute legally binding agreements without executive sign-off.',
+        recommendedNextSlug: 'ai-liability-gradient'
+      }
     ],
     telemetry: {
       origin: {
@@ -2913,7 +3421,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'An engineering productivity framework formulated by Richard Ewing in Built In demonstrating that delegating tasks to autonomous AI agents does not eliminate workloads, but shifts human labor into an air traffic control supervisory review queue. While agents deliver immense leverage on bounded, mechanically verifiable tasks (CI monitoring, DOM accessibility audits, syntax validation), they fail silently with perfect syntax during complex architectural refactors and struggle with physical reality collisions and interpersonal nuance. Real leverage requires four operational laws: start with read-only triggers, enforce narrow definitions of done, require human approval on external actions, and treat all output as junior drafts.',
     whyItMatters: 'Auditing someone else\'s plausible, slightly flawed work line-by-line is often more mentally exhausting than performing the task manually. Unbounded agent delegation replaces to-do lists with review debt queues.',
-    whoShouldCare: ['Engineering Managers', 'Lead Developers', 'Technical Founders', 'Operations Directors', 'Chief Technology Officers'],
+    whoShouldCare: ['Engineering Manager (EM)', 'Quality Engineering (QE) Manager', 'Chief Technology Officer (CTO)', 'Startup Founder', 'Product Operations Manager'],
     firstIntroduced: 'September 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'I Put AI Agents in Charge of My To-Do List. Here\'s What They Actually Took Off My Plate.', publisher: 'Built In', type: 'Empirical Study', url: 'https://builtin.com/articles/ai-agents-to-do-list' },
@@ -2987,8 +3495,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Engineering Manager', takeaway: 'Restrict agentic PRs to bounded tasks with mechanical pass/fail criteria; ban open-ended agentic architectural refactors.', recommendedNextSlug: 'engineering-bottleneck-illusion' },
-      { role: 'Technical Founder', takeaway: 'Use agents as passive monitors and build verifiers; never delegate customer-facing writing or database schema design to automated tools.', recommendedNextSlug: 'vibe-coding-debt' }
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Restrict agentic pull requests to bounded tasks with mechanical pass-fail criteria; ban open-ended agentic architectural refactors.',
+        recommendedNextSlug: 'engineering-bottleneck-illusion'
+      },
+      {
+        role: 'Startup Founder',
+        takeaway: 'Use agents as passive monitors and build verifiers; never delegate customer-facing writing or database schema design to automated tools.',
+        recommendedNextSlug: 'vibe-coding-debt'
+      },
+      {
+        role: 'Quality Engineering (QE) Manager',
+        takeaway: 'Implement strict automated testing gates so that senior engineers never spend time reviewing syntactically valid but broken code.',
+        recommendedNextSlug: 'software-factory-overproduction'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Define granular definitions of done for agent tasks to avoid flooding operational review queues with ambiguous drafts.',
+        recommendedNextSlug: 'product-operating-model'
+      }
     ],
     telemetry: {
       origin: {
@@ -3027,7 +3553,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.97, evidenceCount: 5, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'An enterprise AI governance failure mode formulated by Richard Ewing in CIO.com where an automated agent transaction completes with perfect technical execution (glowing green operations dashboards, 240ms latency, zero server errors), but completely violates internal business policy, financial controls, or procurement rules. Examples include automated support agents issuing unapproved corporate credits, procurement agents bypassing $50,000 competitive bid mandates, or sales agents altering contract terms that destroy gross margin. Because technical monitoring verifies mechanics rather than business authorization, enterprises must enforce the 4 Pillars of Agent Governance: Monitoring, Auditability, Authorization, and Accountability.',
     whyItMatters: 'Traditional IT monitoring alarms on broken systems; AI creates transactions that succeed technically while failing legally and financially. With Gartner forecasting 40% of enterprise agents decommissioned by 2027 due to post-incident governance gaps, organizations must decouple technical uptime from business permissioning.',
-    whoShouldCare: ['Chief Information Officers', 'Chief Financial Officers', 'Chief Information Security Officers', 'Internal Audit Directors', 'General Counsel'],
+    whoShouldCare: ['Chief Information Officer (CIO)', 'Chief Financial Officer (CFO)', 'Chief Information Security Officer (CISO)', 'General Counsel', 'Internal Audit Director'],
     firstIntroduced: 'September 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Your AI agent may have made the decision, but your company owns the risk', publisher: 'CIO.com', type: 'Architectural Analysis', url: 'https://www.cio.com/article/4223955/your-ai-agent-may-have-made-the-decision-but-your-company-owns-the-risk.html' },
@@ -3110,8 +3636,26 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Chief Information Officer', takeaway: 'Put the 6 Executive Procurement Questions to your architecture team before approving any enterprise app with embedded autonomous agents.', recommendedNextSlug: 'systems-governor' },
-      { role: 'Chief Financial Officer', takeaway: 'Require independent financial policy validation on all agent transactions: vendor cloud security does not protect your revenue margins.', recommendedNextSlug: 'ai-liability-gradient' }
+      {
+        role: 'Chief Information Officer (CIO)',
+        takeaway: 'Put the 6 Executive Procurement Questions to your architecture team before approving any enterprise app with embedded autonomous agents.',
+        recommendedNextSlug: 'systems-governor'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Require independent financial policy validation on all agent transactions: vendor cloud security does not protect your revenue margins.',
+        recommendedNextSlug: 'ai-liability-gradient'
+      },
+      {
+        role: 'Chief Information Security Officer (CISO)',
+        takeaway: 'Implement runtime policy firewalls that intercept agent actions and block unauthorized mutations before they hit production systems.',
+        recommendedNextSlug: 'persistence-vs-authority'
+      },
+      {
+        role: 'General Counsel',
+        takeaway: 'Establish formal accountability policies designating the named human business leader legally responsible for each deployed agent transaction.',
+        recommendedNextSlug: 'board-level-ai-governance'
+      }
     ],
     telemetry: {
       origin: {

@@ -33,7 +33,7 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.94, evidenceCount: 3, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The compounding maintenance burden and operational friction incurred when new technology is deployed without decommissioning legacy systems, effectively taxing all future engineering velocity.',
     whyItMatters: 'Every new feature or architectural pivot carries an ongoing maintenance cost. When organizations optimize purely for delivery speed without accounting for lifecycle maintenance, the innovation tax compoundingly degrades gross margins and product stability.',
-    whoShouldCare: ['CTOs', 'VPs of Engineering', 'Chief Product Officers', 'CFOs'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Chief Product Officer (CPO)', 'VP of Operations', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2025 (CIO.com)',
     canonicalQuote: 'The Innovation Tax is the compounding maintenance penalty paid by engineering teams that prioritize feature delivery over architectural lifecycle management.',
     positionStatement: 'Innovation requires constraint. Shipping net new capabilities without structured deprecation creates a shadow tax that eventually bankrupts engineering execution capacity.',
@@ -76,7 +76,26 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
       contrastingConcepts: []
     },
     personaRecommendations: [
-      { role: 'CPO', takeaway: 'Mandate feature deprecation targets in quarterly roadmap planning.', recommendedNextSlug: 'feature-bloat-calculus' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Audit how much developer payroll is spent propping up three-year-old experiments that generate zero revenue.',
+        recommendedNextSlug: 'feature-bloat-calculus'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Mandate an explicit retirement plan for every new capability before greenlighting the build.',
+        recommendedNextSlug: 'feature-bloat-calculus'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Track user traffic on legacy feature toggles and push underused screens toward formal deprecation.',
+        recommendedNextSlug: 'zombie-code'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Enforce a one-in, one-out discipline on third-party libraries and internal microservices.',
+        recommendedNextSlug: 'technical-insolvency'
+      }
     ],
     executableTool: { name: 'Innovation Tax Calculator', url: '/tools/innovation-tax-calculator', description: 'Quantify hidden maintenance burdens across product portfolios.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
@@ -114,7 +133,7 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.96, evidenceCount: 4, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The non-linear increase in communication overhead, alignment meetings, and process friction that occurs when scaling engineering organizations, ultimately degrading per-capita execution capacity.',
     whyItMatters: 'Adding headcount to an engineering team does not yield proportional output. The coordination tax explains why large teams often move slower than small teams, destroying gross margin efficiency through administrative bloat.',
-    whoShouldCare: ['VPs of Engineering', 'CTOs', 'Founders', 'CFOs'],
+    whoShouldCare: ['Chief Operating Officer (COO)', 'Chief Financial Officer (CFO)', 'VP of Operations', 'Director of Product Operations', 'Engineering Manager (EM)'],
     firstIntroduced: 'November 2025 (RichardEwing.io Blog)',
     canonicalQuote: 'The Coordination Tax dictates that every additional engineer added to a system increases the communication nodes exponentially, creating an administrative penalty that destroys execution speed.',
     positionStatement: 'Scaling teams blindly is a path to gross margin destruction. Organizations must optimize for small, autonomous units bound by clear interfaces to avoid the coordination tax.',
@@ -156,7 +175,26 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
       contrastingConcepts: [{ slug: 'ten-man-parity', title: 'The 10-Man Parity Rule', distinction: 'Coordination tax is the problem of large teams; 10-Man Parity is the AI-driven solution.' }]
     },
     personaRecommendations: [
-      { role: 'VP Engineering', takeaway: 'Design organizational structures that minimize cross-team dependencies.', recommendedNextSlug: 'ten-man-parity' }
+      {
+        role: 'Chief Operating Officer (COO)',
+        takeaway: 'Stop solving cross-department friction by scheduling weekly alignment syncs that paralyze thirty people.',
+        recommendedNextSlug: 'ten-man-parity'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Measure how headcount additions erode per-capita output before approving another round of hiring.',
+        recommendedNextSlug: 'r-and-d-ponzi'
+      },
+      {
+        role: 'Director of Product Operations',
+        takeaway: 'Break large interdependent project roadmaps into isolated, small-team work streams with rigid handoff contracts.',
+        recommendedNextSlug: 'spec-driven-development'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Protect your team calendar by killing recurring status updates that could easily be replaced with a single automated dashboard.',
+        recommendedNextSlug: 'aper-metric'
+      }
     ],
     executableTool: { name: 'Organizational Friction Audit', url: '/tools/org-friction', description: 'Measure coordination tax via meeting load and dependency mapping.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
@@ -195,7 +233,7 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The systemic masking of growing software maintenance liabilities (OpEx) behind inflated velocity metrics and new feature launches, creating a fragile engineering economy that requires constant new capital to sustain.',
     whyItMatters: 'Organizations trapped in the R&D Ponzi Scheme celebrate high feature delivery rates while their underlying codebase rots. Eventually, maintenance costs overwhelm execution capacity, causing catastrophic product stagnation and margin collapse.',
-    whoShouldCare: ['CFOs', 'Board Members', 'CTOs', 'VPs of Engineering'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Chief Executive Officer (CEO)', 'Director of Finance', 'VP of Engineering', 'Group Product Manager (GPM)'],
     firstIntroduced: 'April 2026 (Beehiiv / LinkedIn Essay)',
     canonicalQuote: 'The R&D Ponzi Scheme occurs when engineering velocity metrics are used to mask the compounding insolvency of software maintenance OpEx.',
     positionStatement: 'Velocity without stability is a financial illusion. Software organizations must account for the maintenance liability of every shipped feature, or face technical bankruptcy.',
@@ -237,7 +275,26 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
       contrastingConcepts: []
     },
     personaRecommendations: [
-      { role: 'CFO', takeaway: 'Demand transparency on the ratio of maintenance work versus new feature development.', recommendedNextSlug: 'feature-bloat-calculus' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Stop evaluating engineering productivity purely on feature delivery speed while technical debt inflates future operating costs.',
+        recommendedNextSlug: 'feature-bloat-calculus'
+      },
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Demand visibility into what percentage of sprint time actually builds new customer value versus patching unmaintained code.',
+        recommendedNextSlug: 'capitalization-matrix'
+      },
+      {
+        role: 'Director of Finance',
+        takeaway: 'Separate genuine capitalized development from recurring maintenance triage on your monthly department review.',
+        recommendedNextSlug: 'dora-financial-translation'
+      },
+      {
+        role: 'Group Product Manager (GPM)',
+        takeaway: 'Dedicate a guaranteed 20% slice of every product release cycle to paying down operational debt.',
+        recommendedNextSlug: 'product-debt-index'
+      }
     ],
     executableTool: { name: 'R&D Health Scorecard', url: '/tools/rd-health', description: 'Evaluate engineering investment sustainability.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
@@ -276,7 +333,7 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The analytical framework for determining the precise point where the ongoing maintenance cost of a software feature exceeds its marginal revenue value, necessitating immediate deprecation.',
     whyItMatters: 'Product teams rarely decommission features, leading to bloated architectures and cognitive overload for users. The feature bloat calculus provides a financial mechanism to justify cutting code, directly improving gross margins and system maintainability.',
-    whoShouldCare: ['Chief Product Officers', 'VPs of Product', 'Engineering Leaders'],
+    whoShouldCare: ['Chief Product Officer (CPO)', 'Chief Financial Officer (CFO)', 'Customer Support Manager', 'Product Operations Manager', 'Product Manager (PM)'],
     firstIntroduced: 'December 2025 (RichardEwing.io Blog)',
     canonicalQuote: 'Feature Bloat Calculus dictates that a feature must be killed the moment its ongoing maintenance cost exceeds its marginal contribution to retention or revenue.',
     positionStatement: 'Software products die from indigestion, not starvation. Disciplined product teams must use mathematical calculus to prune features aggressively to preserve execution capacity and margin health.',
@@ -319,7 +376,26 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
       contrastingConcepts: []
     },
     personaRecommendations: [
-      { role: 'CPO', takeaway: 'Implement regular feature audits to identify candidates for deprecation using the calculus framework.', recommendedNextSlug: 'innovation-tax' }
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Run quarterly usage audits and formally retire the bottom 15% of features that consume outsized support attention.',
+        recommendedNextSlug: 'innovation-tax'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Calculate the exact cloud hosting and QA regression costs tied to legacy modules kept alive for single-digit accounts.',
+        recommendedNextSlug: 'ai-margin-squeeze'
+      },
+      {
+        role: 'Customer Support Manager',
+        takeaway: 'Flag confusing legacy settings and outdated toggles that generate the highest volume of recurring customer complaints.',
+        recommendedNextSlug: 'zombie-code'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Build automated deprecation playbooks that notify affected users and migrate them cleanly without customer friction.',
+        recommendedNextSlug: 'product-debt-index'
+      }
     ],
     executableTool: { name: 'Product Debt Index (PDI)', url: '/tools/pdi', description: 'Quantify when maintenance cost exceeds feature value.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
@@ -360,7 +436,7 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.94, evidenceCount: 3, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The exponential increase in latency, compute cost, and engineering overhead required to force probabilistic AI models to produce highly deterministic, reliable outputs.',
     whyItMatters: 'Enterprises require deterministic systems for compliance and security. However, forcing LLMs to act deterministically requires extensive guardrails, validation loops, and retries, which exponentially inflate the cost and latency per query.',
-    whoShouldCare: ['AI Architects', 'VPs of Engineering', 'CFOs'],
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'Chief Financial Officer (CFO)', 'Customer Support Manager', 'Product Operations Manager', 'Quality Engineering (QE) Manager'],
     firstIntroduced: 'March 2026 (RichardEwing.io Blog)',
     canonicalQuote: 'The Cost of Predictivity states that squeezing 99.9% deterministic reliability out of a probabilistic AI model requires an exponential increase in architectural complexity and token spend.',
     positionStatement: 'Do not use LLMs for tasks that require absolute precision if traditional code can do the job. The architectural cost of forcing an LLM to be deterministic always eclipses the cost of writing standard software logic.',
@@ -402,7 +478,26 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
       contrastingConcepts: []
     },
     personaRecommendations: [
-      { role: 'AI Architect', takeaway: 'Design systems that use LLMs only for fuzzy reasoning, handing off to standard code for strict validation.', recommendedNextSlug: 'deterministic-governance' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Expect API bills to jump by 4x to 8x the moment you push an AI feature from casual demo to 99% reliable production.',
+        recommendedNextSlug: 'ai-margin-squeeze'
+      },
+      {
+        role: 'Customer Support Manager',
+        takeaway: 'Do not rely on open-ended AI generation for billing disputes or account verification where hallucinations create immediate escalations.',
+        recommendedNextSlug: 'deterministic-governance'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Pair generative AI summaries with strict rule-based validation gates rather than letting the model grade its own work.',
+        recommendedNextSlug: 'agentic-engineering'
+      },
+      {
+        role: 'Quality Engineering (QE) Manager',
+        takeaway: 'Measure how many validation retries and prompt guardrails run behind each user click to catch hidden latency spikes.',
+        recommendedNextSlug: 'eval-driven-development'
+      }
     ],
     executableTool: { name: 'AI Reliability Cost Estimator', url: '/tools/predictivity-cost', description: 'Estimate latency and cost multipliers for validation pipelines.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
@@ -441,7 +536,7 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.97, evidenceCount: 6, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The systemic erosion of traditional SaaS gross margins caused by the integration of generative AI features, as variable compute and API costs scale linearly or exponentially with user engagement, fundamentally altering software unit economics.',
     whyItMatters: 'SaaS historically traded at high multiples due to 80-90% gross margins. The AI margin squeeze threatens industry valuations by turning fixed hosting costs into highly variable, usage-driven COGS, potentially rendering popular products unprofitable at scale.',
-    whoShouldCare: ['CFOs', 'Founders', 'Venture Capitalists', 'Chief Product Officers'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Chief Product Officer (CPO)', 'Director of Finance', 'Cloud FinOps Manager', 'Group Product Manager (GPM)'],
     firstIntroduced: 'Early 2025 (Beehiiv)',
     canonicalQuote: 'The AI Margin Squeeze occurs when the variable COGS of generative AI inference scale faster than fixed subscription revenue, collapsing the economic model of traditional SaaS.',
     positionStatement: 'The era of zero-marginal-cost software is ending. Companies that fail to restructure pricing models and implement strict inference caching will see their gross margins squeezed into oblivion by AI COGS.',
@@ -483,7 +578,26 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
       contrastingConcepts: []
     },
     personaRecommendations: [
-      { role: 'CFO', takeaway: 'Model worst-case usage scenarios for AI features and adjust pricing tiers to protect minimum margin thresholds.', recommendedNextSlug: 'ai-volatility-tax' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Kill unlimited flat-rate subscriptions for AI features before active power users turn your 80% gross margins negative.',
+        recommendedNextSlug: 'inference-economics'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Package high-cost generative workflows into metered credit allowances or clear usage tiers.',
+        recommendedNextSlug: 'feature-bloat-calculus'
+      },
+      {
+        role: 'Cloud FinOps Manager',
+        takeaway: 'Track daily API token consumption by customer cohort to identify accounts burning more compute than their contract value.',
+        recommendedNextSlug: 'ai-tokenomics-cogs'
+      },
+      {
+        role: 'Group Product Manager (GPM)',
+        takeaway: 'Design product defaults that reuse cached answers instead of pinging expensive commercial models on every keystroke.',
+        recommendedNextSlug: 'semantic-caching'
+      }
     ],
     executableTool: { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb', description: 'Forecast margin compression based on usage patterns.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
@@ -524,7 +638,7 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.92, evidenceCount: 2, lastVerified: 'July 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 1 },
     definition: 'The principle that heavily AI-augmented teams of ten elite engineers can now achieve execution parity with traditional enterprise engineering organizations of over one hundred, fundamentally altering the economics of software creation.',
     whyItMatters: 'By avoiding the Coordination Tax and utilizing autonomous agents, small elite teams can outmaneuver large incumbents. This parity shift threatens traditional enterprise organizational structures and rewrites career economics for senior engineers.',
-    whoShouldCare: ['Founders', 'CTOs', 'Senior Software Engineers', 'Venture Capitalists'],
+    whoShouldCare: ['Chief Executive Officer (CEO)', 'Chief Operating Officer (COO)', 'VP of Operations', 'Director of Engineering', 'Engineering Manager (EM)'],
     firstIntroduced: 'June 2026 (CIO.com)',
     canonicalQuote: 'The 10-Man Parity Rule dictates that due to AI augmentation, a cohesive team of ten senior engineers can out-execute a traditional organization of one hundred by eliminating coordination friction.',
     positionStatement: 'The future of software engineering belongs to small, highly capable, AI-augmented teams. Enterprises must downsize and upskill, or be disrupted by startups operating with a fraction of the headcount and zero coordination tax.',
@@ -548,7 +662,7 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     },
     whatChanges: {
       engineering: 'Focus on full-stack capabilities and AI agent orchestration rather than narrow specialization.',
-      finance: 'Reallocate budget from middle management and massive headcounts into elite talent compensation and AI tooling.',
+      finance: 'Reallocate budget from sprawling coordination layers and inflated headcounts into elite talent compensation and high-leverage tooling.',
       product: 'Equip small teams with end-to-end ownership of product domains.',
       security: 'Implement resilient deterministic governance to manage the vast output of small teams.'
     },
@@ -566,7 +680,26 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
       contrastingConcepts: [{ slug: 'coordination-tax', title: 'The Coordination Tax', distinction: 'Coordination tax is the friction of large teams; 10-Man Parity is the advantage of small teams avoiding it.' }]
     },
     personaRecommendations: [
-      { role: 'Senior Engineer', takeaway: 'Master AI augmentation tools to maximize personal use and thrive in the emerging elite small-team economy.', recommendedNextSlug: 'coordination-tax' }
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Stop treating raw headcounts as a vanity badge. Ten focused leaders using modern tooling can out-execute an unfocused division of eighty.',
+        recommendedNextSlug: 'coordination-tax'
+      },
+      {
+        role: 'Chief Operating Officer (COO)',
+        takeaway: 'Eliminate administrative handoff layers between departments. Small cross-functional pods solve problems five times faster.',
+        recommendedNextSlug: 'spec-driven-development'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Equip small teams with end-to-end operational ownership instead of siloing people into isolated specialty tickets.',
+        recommendedNextSlug: 'agentic-engineering'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Coach developers to orchestrate automated systems and inspect boundaries rather than churning out manual boilerplate.',
+        recommendedNextSlug: 'aper-metric'
+      }
     ],
     executableTool: undefined,
     canonicalReadingOrder: [

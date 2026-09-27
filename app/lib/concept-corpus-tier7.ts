@@ -11,7 +11,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 2, knownLimitationsCount: 1 },
     definition: 'An infrastructure architectural standard formulated by Richard Ewing distinguishing between file-level Git worktree separation and complete runtime execution isolation when deploying concurrent AI coding agents. While Git worktrees prevent file write collisions, concurrent background agents still collide across shared local port bindings, competing database migration locks, and unisolated build caches. Multi-Agent Runtime Isolation enforces containerized network and state boundaries per agent execution thread.',
     whyItMatters: 'Without runtime isolation, scaling from one AI agent to ten concurrent agents degrades developer productivity. Engineers shift from shipping product features to debugging port 3000 collision crashes and deadlocked local database states.',
-    whoShouldCare: ['Platform Engineers', 'VP of Engineering', 'AI Systems Architects'],
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'Director of Engineering', 'Quality Engineering (QE) Manager', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'How Does Meta’s Muse Code Compare to Other AI Coding Tools?', publisher: 'Built In', type: 'Canonical Benchmark', url: 'https://builtin.com/articles/meta-muse-code-comparison' }
@@ -77,7 +77,26 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'VP of Engineering', takeaway: 'Enforce runtime container isolation before scaling agent seats.', recommendedNextSlug: 'failure-cost-asymmetry' }
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Mandate containerized network and database sandbox isolation across all developer environments before authorizing background multi-agent engineering tools.',
+        recommendedNextSlug: 'agentic-fleet-drift'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Replace shared local test databases with ephemeral branches to eliminate deadlocked migrations and port collisions between concurrent agent threads.',
+        recommendedNextSlug: 'failure-cost-asymmetry'
+      },
+      {
+        role: 'Quality Engineering (QE) Manager',
+        takeaway: 'Build automated environment teardown protocols into continuous integration pipelines to prevent phantom test failures.',
+        recommendedNextSlug: 'deterministic-governance'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Coach developers to verify that background coding agents run in isolated sandboxes rather than competing for local workstation port bindings.',
+        recommendedNextSlug: 'execution-harness-parity'
+      }
     ],
     telemetry: {
       origin: {
@@ -117,7 +136,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A software economics principle formulated by Richard Ewing stating that the true ROI of an AI developer tool is determined by how cheaply and rapidly an incorrect implementation can be rolled back and discarded, rather than by how fast the model generates initial code syntax. In probabilistic software engineering, AI assistants regularly generate plausible but flawed hypotheses. When discarding a failed attempt takes under 5 seconds with zero cleanup overhead, net engineering velocity accelerates.',
     whyItMatters: 'Evaluating AI tools purely on token generation speed ignores the primary cost driver of software development: human debugging and state cleanup overhead. Making failure cheap is the only mathematical prerequisite for scaling agentic systems.',
-    whoShouldCare: ['Chief Technology Officers', 'Chief Financial Officers', 'Engineering Directors'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Chief Technology Officer (CTO)', 'Director of Finance', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'How Does Meta’s Muse Code Compare to Other AI Coding Tools?', publisher: 'Built In', type: 'Canonical Essay', url: 'https://builtin.com/articles/meta-muse-code-comparison' }
@@ -183,7 +202,26 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'CTO', takeaway: 'Measure how easily your engineers can discard failed agent attempts.', recommendedNextSlug: 'cleanup-time-metric' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Evaluate AI developer licenses based on hypothesis discard latency rather than marketing claims of faster typing speed to protect engineering margins.',
+        recommendedNextSlug: 'ai-coding-tool-economics'
+      },
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Require single-click branch discarding and state reset capabilities before approving agentic developer seat rollouts.',
+        recommendedNextSlug: 'cleanup-time-metric'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Audit sprint cycle times to verify whether rapid hypothesis generation is actually shortening release milestones or clogging review queues.',
+        recommendedNextSlug: 'unreliability-tax'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Train engineers to reject flawed AI drafts instantly in under five seconds instead of spending hours rehabilitating broken syntax.',
+        recommendedNextSlug: 'four-laws-probabilistic-software'
+      }
     ],
     telemetry: {
       origin: {
@@ -223,7 +261,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A software economics thesis formulated by Richard Ewing asserting that as frontier foundation models become interchangeable, hot-swappable commodities, the competitive differentiation and enterprise value of an AI coding platform shift entirely to the surrounding execution harness. The execution harness encompasses workspace isolation, pre-provisioned virtual machine dependencies, append-only recovery logs, interactive visual design contracts, and closed-loop verification before human diff handoff.',
     whyItMatters: 'Two competing products with access to identical underlying intelligence behave completely differently based on their harness. One gives the model a raw terminal and asks the developer to clean up the wreckage; the other manages dependencies, verifies compilation, and sandboxes runtime state.',
-    whoShouldCare: ['Chief Technology Officers', 'Product Managers', 'Platform Engineers'],
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'Chief Product Officer (CPO)', 'Director of Engineering', 'Platform Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The AI Coding Tool Battle Is Moving Somewhere More Important Than Code', publisher: 'The AI Economist', type: 'Canonical Essay', url: 'https://theaieconomist.beehiiv.com/p/the-ai-coding-tool-battle-is-moving-somewhere-more-important-than-code' }
@@ -289,7 +327,26 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Platform Architect', takeaway: 'Invest in warm container environments and recovery logs rather than bespoke model prompting.', recommendedNextSlug: 'multi-agent-runtime-isolation' }
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Treat foundation models as hot-swappable commodities and focus engineering capital on the proprietary execution harness, permissions, and verification loops.',
+        recommendedNextSlug: 'multi-agent-runtime-isolation'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Insulate product roadmaps from underlying LLM vendor churn by building standardized harness interfaces and verification contracts.',
+        recommendedNextSlug: 'spec-driven-development'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Invest in warm dependency caches, pre-provisioned virtual machine sandboxes, and append-only recovery logs.',
+        recommendedNextSlug: 'agentic-fleet-drift'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Structure team workflows so autonomous tools run inside deterministic harnesses with automated compiler gates before human code review.',
+        recommendedNextSlug: 'epistemic-verification-loops'
+      }
     ],
     telemetry: {
       origin: {
@@ -329,7 +386,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'An engineering productivity metric formulated by Richard Ewing calculating the total human engineering hours spent investigating, debugging, refactoring, and rolling back state created by autonomous AI coding agents. The metric establishes that if an agent saves 60 minutes of writing code but creates 120 minutes of downstream environment debugging and PR untangling, the net productivity of the organization is negative.',
     whyItMatters: 'Output metrics like lines of code written, tickets closed, and token generation speed create an illusion of productivity. Cleanup time measures the true friction point where promised AI efficiency either survives or collapses into technical debt.',
-    whoShouldCare: ['Chief Technology Officers', 'VP of Engineering', 'Engineering Managers'],
+    whoShouldCare: ['Chief Executive Officer (CEO)', 'Chief Financial Officer (CFO)', 'Director of Engineering', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Most Companies Shouldn’t Be Using Autonomous Coding Agents Yet', publisher: 'LinkedIn Newsletters', type: 'Executive Essay', url: 'https://www.linkedin.com/pulse/most-companies-should-using-autonomous-coding-agents-yet-ewing-lanhc/' }
@@ -395,7 +452,26 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Engineering Director', takeaway: 'Instrument your PR review pipelines to measure cleanup and rework hours.', recommendedNextSlug: 'spec-driven-development' }
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Reject vanity metrics like lines of code merged and require engineering leaders to report net developer capacity saved versus cleanup hours incurred.',
+        recommendedNextSlug: 'zero-cost-software-strategy'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Calculate the true cost per merged pull request by factoring human debugging time, post-merge incidents, and local environment repair.',
+        recommendedNextSlug: 'failure-cost-asymmetry'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Track developer rework rates and run reconstruction latency across all teams experimenting with autonomous coding agents.',
+        recommendedNextSlug: 'spec-driven-development'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Audit sprint retrospectives to identify developers spending excess hours untangling machine-generated pull requests and establish strict rejection thresholds.',
+        recommendedNextSlug: 'four-laws-probabilistic-software'
+      }
     ],
     telemetry: {
       origin: {
@@ -435,7 +511,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A systems architecture paradigm formulated by Richard Ewing that replaces stateless, ephemeral LLM prompt wrappers with persistent relational schemas, metadata retention, and real-time state synchronization. As demonstrated in systems like CareerWin.ai, Context Engine Architecture structures user interactions into dynamic career operating systems rather than static text prompts, enabling compound intelligence and verified talent discovery.',
     whyItMatters: 'Stateless prompt wrappers produce hallucinated and disconnected outputs over time. Context Engine Architecture establishes persistent state integrity, allowing AI systems to maintain accurate historical memory and enforce relational data contracts.',
-    whoShouldCare: ['Chief Technology Officers', 'Principal Systems Architects', 'AI Product Builders'],
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'Chief Product Officer (CPO)', 'Director of Engineering', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'How Context Engines Power AI Career Intelligence', publisher: 'The AI Economist', type: 'Canonical Essay', url: 'https://theaieconomist.beehiiv.com/p/how-context-engines-power-ai-career-intelligence' }
@@ -501,7 +577,26 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Chief Architect', takeaway: 'Design relational schemas for your domain before writing prompt logic.', recommendedNextSlug: 'multi-agent-runtime-isolation' }
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Replace fragile, stateless prompt chains with persistent relational schemas and metadata lifecycle engines.',
+        recommendedNextSlug: 'multi-agent-runtime-isolation'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Build compound user intelligence features that retain verified context across sessions to drive retention.',
+        recommendedNextSlug: 'pl-ownership-for-pms'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Enforce relational schema constraints and database-level security before passing data to language models.',
+        recommendedNextSlug: 'deterministic-execution-control'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Coach engineers to treat database schemas as the primary source of truth rather than stuffing unstructured text into prompt windows.',
+        recommendedNextSlug: 'context-rot'
+      }
     ],
     telemetry: {
       origin: {
@@ -541,7 +636,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A structured, 4-step product governance and code deprecation process formulated by Richard Ewing for systematically identifying, auditing, sun-setting, and deleting zombie features from B2B SaaS platforms. The Sunset Protocol establishes objective thresholds (usage volume, maintenance carrying cost, margin drag) to trigger feature retirement, reclaiming up to 30 percent of engineering capacity for core platform innovation.',
     whyItMatters: 'Software organizations suffer from an accretion bias where features are continuously added but never removed. Over time, zombie features compound testing overhead, create security attack vectors, and inflate the Product Debt Index.',
-    whoShouldCare: ['Chief Product Officers', 'Chief Technology Officers', 'VP of Product'],
+    whoShouldCare: ['Chief Product Officer (CPO)', 'Chief Technology Officer (CTO)', 'Director of Engineering', 'Customer Support Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'February 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Real Innovation Requires Deleting Code, Not Writing It', publisher: 'Built In', type: 'Canonical Essay', url: 'https://builtin.com/articles/innovation-requires-deleting-code' }
@@ -607,7 +702,26 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'CPO', takeaway: 'Implement quarterly Sunset Audits to keep your feature portfolio economically viable.', recommendedNextSlug: 'zombie-features' }
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Establish formal quarterly Sunset Audits to systematically delete low-usage features and reclaim up to 30 percent of engineering bandwidth.',
+        recommendedNextSlug: 'zombie-features'
+      },
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Align architecture reviews around subtracting legacy code to shrink regression test suites and eliminate dormant security surfaces.',
+        recommendedNextSlug: 'product-debt-index'
+      },
+      {
+        role: 'Customer Support Manager',
+        takeaway: 'Identify legacy features that generate disproportionate user confusion and support tickets to build the operational case for retirement.',
+        recommendedNextSlug: 'negative-carry-features'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Champion feature deletion in sprint planning and celebrate PRs that remove more lines of code than they add.',
+        recommendedNextSlug: 'complexity-tax'
+      }
     ],
     telemetry: {
       origin: {
@@ -647,7 +761,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A product classification formulated by Richard Ewing describing legacy software capabilities that consume continuous engineering maintenance, test coverage, and infrastructure overhead while delivering negligible active customer engagement (<5% monthly active users) and zero measurable expansion revenue. Zombie features live on as architectural liabilities that silently degrade gross margins.',
     whyItMatters: 'Zombie features are the primary contributor to Product Debt Index inflation. Every zombie feature requires regression testing on every release, slows down database queries, and introduces security vulnerabilities without generating customer value.',
-    whoShouldCare: ['Product Directors', 'Engineering Leads', 'Chief Financial Officers'],
+    whoShouldCare: ['Chief Product Officer (CPO)', 'Chief Financial Officer (CFO)', 'Director of Engineering', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'February 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Real Innovation Requires Deleting Code, Not Writing It', publisher: 'Built In', type: 'Canonical Essay', url: 'https://builtin.com/articles/innovation-requires-deleting-code' }
@@ -713,7 +827,26 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'VP of Product', takeaway: 'Audit your feature portfolio against active usage to identify zombie candidates.', recommendedNextSlug: 'sunset-protocol' }
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Audit feature catalogs against telemetry benchmarks to flag capabilities with under 5 percent active usage for immediate retirement.',
+        recommendedNextSlug: 'sunset-protocol'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Calculate the annual engineering salary and cloud hosting drag dedicated to maintaining dead software features.',
+        recommendedNextSlug: 'negative-carry-features'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Eliminate combinatorial testing overhead by severing dependencies between active core systems and legacy zombie code.',
+        recommendedNextSlug: 'product-debt-index'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Guard team focus by refusing to assign developer cycles to bug fixes on zombie features slated for deprecation.',
+        recommendedNextSlug: 'complexity-tax'
+      }
     ],
     telemetry: {
       origin: {
@@ -753,7 +886,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A financial and software economics concept formulated by Richard Ewing defining SaaS features whose continuous operational carrying costs (direct compute COGS, third-party API consumption, support tickets, regression engineering hours) exceed the total recurring revenue or customer retention value attributable to those features. Negative-carry features directly erode gross margins.',
     whyItMatters: 'In the era of AI and token-based billing, features no longer have fixed marginal costs. A feature that costs 50 dollars per customer per month in LLM tokens but is bundled into a 30 dollar subscription creates negative unit economics at scale.',
-    whoShouldCare: ['Chief Financial Officers', 'Chief Product Officers', 'VP of Engineering'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Chief Product Officer (CPO)', 'Cloud FinOps Manager', 'Director of Finance', 'Engineering Manager (EM)'],
     firstIntroduced: 'February 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publisher: 'Mind the Product', type: 'Canonical Essay', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' }
@@ -819,7 +952,26 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'CFO', takeaway: 'Require PMs to report Feature-Level Gross Margins during quarterly reviews.', recommendedNextSlug: 'pl-ownership-for-pms' }
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Mandate feature-level gross margin reporting to prevent variable inference expenses from outpacing fixed subscription revenue.',
+        recommendedNextSlug: 'pl-ownership-for-pms'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Transition compute-intensive capabilities from flat-rate subscription tiers to usage-based quotas and tiered volume pricing.',
+        recommendedNextSlug: 'ai-margin-squeeze'
+      },
+      {
+        role: 'Cloud FinOps Manager',
+        takeaway: 'Instrument telemetry to measure per-query token and vector search costs across every customer account.',
+        recommendedNextSlug: 'aueb-framework'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Implement semantic caching and smaller specialized models to push feature operating costs below contract price thresholds.',
+        recommendedNextSlug: 'semantic-caching'
+      }
     ],
     telemetry: {
       origin: {
@@ -859,7 +1011,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A product leadership framework formulated by Richard Ewing establishing that modern product managers in the AI era must transition from backlog delivery and feature velocity to full unit economic accountability. Product managers are required to manage three specific financial metrics on their scorecard: Feature Margin Contribution, Direct Compute COGS, and R&D Capital Efficiency.',
     whyItMatters: 'When software build costs collapse toward zero, shipping velocity ceases to be a competitive differentiator. The scarce skill in modern product management is evaluating unit economics, managing uncertainty, and ensuring features generate positive cash flow.',
-    whoShouldCare: ['Chief Product Officers', 'VP of Product', 'Senior Product Managers'],
+    whoShouldCare: ['Chief Product Officer (CPO)', 'Chief Financial Officer (CFO)', 'VP of Operations', 'Group Product Manager (GPM)', 'Engineering Manager (EM)'],
     firstIntroduced: 'February 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publisher: 'Mind the Product', type: 'Canonical Essay', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' }
@@ -925,7 +1077,26 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'CPO', takeaway: 'Incorporate Feature Margin Contribution into senior PM performance scorecards.', recommendedNextSlug: 'negative-carry-features' }
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Add Feature Margin Contribution and Direct Compute COGS to senior product manager performance reviews.',
+        recommendedNextSlug: 'negative-carry-features'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Partner with product leaders to provide automated cloud spend allocations by feature rather than lump-sum AWS bills.',
+        recommendedNextSlug: 'product-economist'
+      },
+      {
+        role: 'Group Product Manager (GPM)',
+        takeaway: 'Train product teams to model the unit economics of AI features before writing product requirement documents.',
+        recommendedNextSlug: 'zero-cost-software-strategy'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Collaborate with product managers during sprint planning to evaluate the architectural cost implications of high-frequency model calls.',
+        recommendedNextSlug: 'margin-engineering'
+      }
     ],
     telemetry: {
       origin: {
@@ -965,7 +1136,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'An execution governance architecture formulated by Richard Ewing that enforces hard, cryptographically verified boundary constraints between probabilistic AI models and production enterprise infrastructure. Deterministic Execution Control dictates that probabilistic models are never permitted to execute state-mutating operations (database writes, financial transactions, credential deletions) directly; all operations must pass through deterministic schema allowlists, pre-execution assertions, and rollback ledgers.',
     whyItMatters: 'Probabilistic models cannot guarantee 100% adherence to natural language system prompts. In high-stakes enterprise environments, relying on model alignment alone creates catastrophic hallucination risk. Deterministic Execution Control enforces absolute safety at the runtime layer.',
-    whoShouldCare: ['Chief Information Security Officers', 'Principal Systems Architects', 'AI Governance Officers'],
+    whoShouldCare: ['Chief Information Security Officer (CISO)', 'Chief Technology Officer (CTO)', 'Director of Governance & Risk', 'Quality Engineering (QE) Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'I Used AI to Build My Startup. Here’s What I Learned.', publisher: 'Built In', type: 'Canonical Architecture', url: 'https://builtin.com/articles/ai-coding-tools-practical-evaluation' }
@@ -1031,7 +1202,26 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'CISO', takeaway: 'Mandate deterministic runtime proxies for all agentic tool execution.', recommendedNextSlug: 'multi-agent-runtime-isolation' }
+      {
+        role: 'Chief Information Security Officer (CISO)',
+        takeaway: 'Mandate deterministic runtime proxies that validate all agent tool calls against strict schemas before executing database mutations.',
+        recommendedNextSlug: 'multi-agent-runtime-isolation'
+      },
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Decouple probabilistic model generation from production infrastructure using cryptographically enforced allowlists.',
+        recommendedNextSlug: 'deterministic-governance'
+      },
+      {
+        role: 'Director of Governance & Risk',
+        takeaway: 'Establish immutable audit ledgers that record every automated tool call and schema validation event for regulatory compliance.',
+        recommendedNextSlug: 'runtime-vs-alignment'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Implement runtime schema filters in microservice middleware to prevent autonomous agents from triggering unauthorized state changes.',
+        recommendedNextSlug: 'agent-kill-switch'
+      }
     ],
     telemetry: {
       origin: {
@@ -1071,7 +1261,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A corporate strategy framework formulated by Richard Ewing addressing how executive leadership and product management must adapt when generative AI collapses the marginal cost of writing software toward zero. When developer typing speed and backlog throughput cease to be the primary corporate constraints, competitive advantage shifts to managing architectural uncertainty, preserving gross margins, and establishing deterministic schema governance.',
     whyItMatters: 'Organizations that continue to operate with traditional Agile delivery paradigms when build costs approach zero will drown in unmaintainable feature bloat. Executive leadership must pivot from managing developer capacity to managing software quality, carrying costs, and economic viability.',
-    whoShouldCare: ['Chief Executive Officers', 'Chief Product Officers', 'Board Members'],
+    whoShouldCare: ['Chief Executive Officer (CEO)', 'Chief Financial Officer (CFO)', 'Chief Product Officer (CPO)', 'VP of Operations', 'Director of Engineering'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The AI Economist: Leading Product Strategy When Build Costs Approach Zero', publisher: 'LinkedIn Newsletters', type: 'Canonical Essay', url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic' }
@@ -1137,7 +1327,26 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'CEO', takeaway: 'Pivot your leadership team from managing developer output to managing capital and quality moats.', recommendedNextSlug: 'pl-ownership-for-pms' }
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Shift executive focus from developer typing capacity to governing architectural quality, gross margins, and customer trust.',
+        recommendedNextSlug: 'pl-ownership-for-pms'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Protect enterprise valuation by directing R&D capital toward durable platform moats rather than commodity feature code.',
+        recommendedNextSlug: 'failure-cost-asymmetry'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Replace quarterly roadmap cycles with real-time hypothesis validation while enforcing strict unit economic controls.',
+        recommendedNextSlug: 'zombie-features'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Transition engineering organizations from writing boilerplate syntax to building automated verification harnesses.',
+        recommendedNextSlug: 'spec-driven-development'
+      }
     ],
     telemetry: {
       origin: {
@@ -1177,7 +1386,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'An engineering discipline and methodology where human developers and AI systems establish formal, executable specifications (JSON Schemas, TypeScript interface contracts, and interactive visual design wireframes like Claude Code /design) before any production code implementation is generated. Spec-Driven Development eliminates ambiguity and closes the feedback loop between human intent and autonomous agent execution.',
     whyItMatters: 'Describing what a complex user interface or distributed system should do in unstructured natural language prompts causes prompt drift and retry inflation. Formal specifications establish a verifiable contract that autonomous agents can self-verify against.',
-    whoShouldCare: ['Lead Architects', 'Full-Stack Engineers', 'Engineering Managers'],
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'Chief Product Officer (CPO)', 'Quality Engineering (QE) Manager', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'The AI Coding Tool Battle Is Moving Somewhere More Important Than Code', publisher: 'The AI Economist', type: 'Canonical Essay', url: 'https://theaieconomist.beehiiv.com/p/the-ai-coding-tool-battle-is-moving-somewhere-more-important-than-code' }
@@ -1243,7 +1452,26 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Lead Architect', takeaway: 'Mandate formal TypeScript contracts and wireframe specs in your agent prompting workflows.', recommendedNextSlug: 'execution-harness-parity' }
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Standardize on executable TypeScript interface contracts and JSON Schemas before allowing agents to generate backend logic.',
+        recommendedNextSlug: 'execution-harness-parity'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Require rendered interactive wireframes and design specs before engineering kickoff to eliminate conversational ambiguity.',
+        recommendedNextSlug: 'pl-ownership-for-pms'
+      },
+      {
+        role: 'Quality Engineering (QE) Manager',
+        takeaway: 'Build test suites that validate code directly against formal specification contracts rather than open-ended prompt intent.',
+        recommendedNextSlug: 'cleanup-time-metric'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Coach developers to spend their time refining contracts and boundary assertions rather than endlessly reprompting models.',
+        recommendedNextSlug: 'deterministic-execution-control'
+      }
     ],
     telemetry: {
       origin: {
@@ -1283,7 +1511,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A platform engineering failure mode describing the progressive state divergence, resource contention, and cascade crashes that occur when a fleet of autonomous AI coding agents operates concurrently in a shared development environment without centralized runtime governance. Drift manifests through competing database migration locks, colliding port allocations, overwritten environment secrets, and non-deterministic build cache corruption.',
     whyItMatters: 'Deploying agent swarms creates an illusion of horizontal scalability. Without centralized execution coordination, agentic fleet drift turns local development setups and staging environments into unusable war zones, requiring extensive developer cleanup time.',
-    whoShouldCare: ['Platform Engineers', 'VP of Engineering', 'DevOps Architects'],
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'Director of Engineering', 'Quality Engineering (QE) Manager', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'Most Companies Shouldn’t Be Using Autonomous Coding Agents Yet', publisher: 'LinkedIn Newsletters', type: 'Canonical Essay', url: 'https://www.linkedin.com/pulse/most-companies-should-using-autonomous-coding-agents-yet-ewing-lanhc/' }
@@ -1349,7 +1577,26 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'VP of Engineering', takeaway: 'Do not scale agent headcount without centralized runtime governance.', recommendedNextSlug: 'multi-agent-runtime-isolation' }
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Require centralized runtime governors that coordinate background agent threads across shared database branches and network ports.',
+        recommendedNextSlug: 'multi-agent-runtime-isolation'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Sandbox concurrent coding agents in ephemeral containers to eliminate cascade crashes and local environment corruption.',
+        recommendedNextSlug: 'cleanup-time-metric'
+      },
+      {
+        role: 'Quality Engineering (QE) Manager',
+        takeaway: 'Track environment drift indicators and serialize database migrations across concurrent agent workspaces.',
+        recommendedNextSlug: 'execution-harness-parity'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Prevent team frustration by restricting multi-agent execution to isolated worktrees with dedicated, dynamic port assignments.',
+        recommendedNextSlug: 'deterministic-execution-control'
+      }
     ],
     telemetry: {
       origin: {
@@ -1389,7 +1636,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'An autonomous software engineering feedback architecture where an AI coding agent is required to execute automated verification engines (compilers, linters, TypeScript typecheckers, unit tests, and integration test suites) inside an isolated sandbox and analyze the execution results to self-heal before presenting a change set to a human engineer.',
     whyItMatters: 'An AI assistant that generates unverified syntax simply transfers the debugging burden back to human developers. Epistemic Verification Loops ensure that every proposed diff has already proven technical compilation and regression safety, drastically reducing developer review time.',
-    whoShouldCare: ['Lead Architects', 'VP of Engineering', 'DevOps Engineers'],
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'Quality Engineering (QE) Manager', 'Director of Engineering', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
       { step: 1, title: 'How Does Meta’s Muse Code Compare to Other AI Coding Tools?', publisher: 'Built In', type: 'Canonical Benchmark', url: 'https://builtin.com/articles/meta-muse-code-comparison' }
@@ -1455,7 +1702,26 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     },
     reverseCitations: [],
     personaRecommendations: [
-      { role: 'Lead Architect', takeaway: 'Automate build and test execution inside agent sandboxes before opening PRs.', recommendedNextSlug: 'failure-cost-asymmetry' }
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Require autonomous coding agents to execute compilers, linters, and unit test suites inside sandboxes before presenting diffs to human reviewers.',
+        recommendedNextSlug: 'failure-cost-asymmetry'
+      },
+      {
+        role: 'Quality Engineering (QE) Manager',
+        takeaway: 'Automate self-healing loops that pass compilation errors back to the model for iterative correction before human triage.',
+        recommendedNextSlug: 'cleanup-time-metric'
+      },
+      {
+        role: 'Director of Engineering',
+        takeaway: 'Block machine-authored pull requests that fail automated build verification to protect senior engineer review bandwidth.',
+        recommendedNextSlug: 'execution-harness-parity'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Train developers to act as systems evaluators who review verified, passing diffs rather than manual syntax debuggers.',
+        recommendedNextSlug: 'spec-driven-development'
+      }
     ],
     telemetry: {
       origin: {

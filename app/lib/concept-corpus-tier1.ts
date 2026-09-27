@@ -10,7 +10,29 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.9, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'Unmonitored artificial intelligence tools and autonomous agents deployed by employees without explicit IT or security oversight.',
     whyItMatters: 'Shadow AI introduces significant data exfiltration risks and bypasses enterprise compliance boundaries. When employees use unvetted AI tools, they unknowingly feed proprietary data into public model training pipelines.',
-    whoShouldCare: ['CISOs', 'IT Directors', 'Security Architects'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Chief Operating Officer (COO)', 'Chief Information Security Officer (CISO)', 'Chief Legal Officer / General Counsel', 'Customer Support Manager', 'Product Operations Manager'],
+    personaRecommendations: [
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Audit expense reports for unapproved recurring AI tool subscriptions. Consolidate shadow seats into governed enterprise contracts to stop billing bleed.',
+        recommendedNextSlug: 'ai-volatility-tax'
+      },
+      {
+        role: 'Customer Support Manager',
+        takeaway: 'Enforce clear rules prohibiting staff from pasting customer records or sensitive tickets into public AI tools. Provide safe internal templates.',
+        recommendedNextSlug: 'deterministic-governance'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Identify which unvetted browser plugins and AI assistants your team is using to draft specs so proprietary roadmap data stays inside company boundaries.',
+        recommendedNextSlug: 'ai-agent-sprawl'
+      },
+      {
+        role: 'Chief Legal Officer / General Counsel',
+        takeaway: 'Update acceptable use policies to address client confidentiality when teams experiment with consumer generative AI services.',
+        recommendedNextSlug: 'deterministic-governance'
+      }
+    ],
     firstIntroduced: 'Industry Consensus 2023',
     canonicalQuote: 'Shadow AI is the modern equivalent of shadow IT, but with the added risk of permanent data leakage into public foundation models.',
     positionStatement: 'We cannot secure what we cannot observe. Enterprises must transition from blocking AI adoption to orchestrating it through deterministic governance and centralized agent registries.',
@@ -53,7 +75,29 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.85, evidenceCount: 2, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 1 },
     definition: 'The uncontrolled accumulation and uncoordinated deployment of autonomous AI agents across an enterprise environment.',
     whyItMatters: 'As teams deploy isolated AI agents for specific tasks, the enterprise architecture fragments. This sprawl creates overlapping API permissions, unpredictable interactions, and unmanageable token consumption costs.',
-    whoShouldCare: ['Enterprise Architects', 'VPs of Engineering', 'Cloud FinOps'],
+    whoShouldCare: ['Chief Operating Officer (COO)', 'Group Product Manager (GPM)', 'Engineering Manager (EM)', 'Cloud FinOps Manager', 'VP of Operations'],
+    personaRecommendations: [
+      {
+        role: 'Chief Operating Officer (COO)',
+        takeaway: 'Require every automated workflow or agent to have a named human operational owner. When an automated handoff fails, operational accountability must remain clear.',
+        recommendedNextSlug: 'deterministic-governance'
+      },
+      {
+        role: 'Group Product Manager (GPM)',
+        takeaway: 'Prevent individual feature teams from launching isolated, uncoordinated customer-facing bots that give conflicting answers to the same customer.',
+        recommendedNextSlug: 'compound-ai-systems'
+      },
+      {
+        role: 'Cloud FinOps Manager',
+        takeaway: 'Establish hard budget caps and alerting on automated API retry loops before autonomous agents rack up five-figure bills over a weekend.',
+        recommendedNextSlug: 'ai-volatility-tax'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Enforce a centralized registry and contract validation for internal agents so team handoffs do not break during routine deployments.',
+        recommendedNextSlug: 'spec-driven-development'
+      }
+    ],
     firstIntroduced: 'Industry Consensus 2024',
     canonicalQuote: 'AI Agent Sprawl turns isolated automation wins into systemic architectural liabilities.',
     positionStatement: 'Autonomous agents must be registered, monitored, and governed through a central control plane. Without orchestration, agent sprawl leads to compounding technical debt and API rate limit exhaustion.',
@@ -95,7 +139,24 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A vulnerability where adversarial user inputs are crafted to override the original instructions of a large language model.',
     whyItMatters: 'Prompt injection allows attackers to bypass security guardrails, access unauthorized data, or execute malicious tool calls. It breaks the fundamental assumption of control in LLM applications.',
-    whoShouldCare: ['Security Engineers', 'AI Application Developers', 'Red Teams'],
+    whoShouldCare: ['Product Manager (PM)', 'Customer Support Manager', 'Chief Information Security Officer (CISO)', 'Chief Legal Officer / General Counsel', 'Engineering Manager (EM)'],
+    personaRecommendations: [
+      {
+        role: 'Product Manager (PM)',
+        takeaway: 'Treat every user-facing input that touches an LLM as untrusted. Never allow prompt output to directly trigger financial refunds, account changes, or administrative rights without a human in the loop.',
+        recommendedNextSlug: 'deterministic-governance'
+      },
+      {
+        role: 'Customer Support Manager',
+        takeaway: 'Recognize that automated support bots can be manipulated by angry or malicious users into agreeing to unauthorized discounts or breaching company policy.',
+        recommendedNextSlug: 'shadow-ai'
+      },
+      {
+        role: 'Chief Legal Officer / General Counsel',
+        takeaway: 'Ensure terms of service state that automated customer assistant responses do not constitute legally binding amendments to commercial contracts.',
+        recommendedNextSlug: 'deterministic-governance'
+      }
+    ],
     firstIntroduced: 'Industry Consensus 2022',
     canonicalQuote: 'Prompt injection is the SQL injection of the generative AI era, blurring the line between data and instructions.',
     positionStatement: 'Relying solely on system prompts for security is fundamentally flawed. We must implement deterministic firewalls and strict execution boundaries to mitigate injection risks.',
@@ -136,7 +197,24 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.9, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'A degenerative process where AI models experience severe performance degradation after being iteratively trained on synthetic data generated by other models.',
     whyItMatters: 'As the internet fills with AI generated content, future foundation models risk training on low quality synthetic data. This recursive loop destroys the minority variance and original reasoning capabilities found in human generated text.',
-    whoShouldCare: ['Machine Learning Engineers', 'Chief Data Officers', 'AI Researchers'],
+    whoShouldCare: ['Chief Marketing Officer (CMO)', 'Product Operations Manager', 'Head of People / HR', 'Director of Product Management', 'VP of Operations'],
+    personaRecommendations: [
+      {
+        role: 'Chief Marketing Officer (CMO)',
+        takeaway: 'Protect human creative judgment. If all your marketing copy is generated from LLMs trained on internet averages, your brand voice degrades into identical competitor noise.',
+        recommendedNextSlug: 'ai-volatility-tax'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Ensure knowledge base articles and operational SOPs are written by real subject matter experts rather than recursively summarizing earlier AI summaries.',
+        recommendedNextSlug: 'context-rot'
+      },
+      {
+        role: 'Director of Product Management',
+        takeaway: 'Prioritize verified customer interviews and first-party behavioral data over synthetic user research generated by AI personas.',
+        recommendedNextSlug: 'spec-driven-development'
+      }
+    ],
     firstIntroduced: 'Industry Consensus 2023',
     canonicalQuote: 'Model collapse is the digital equivalent of genetic inbreeding, where synthetic data recursive loops destroy model variance and degrade performance.',
     positionStatement: 'High quality human data is becoming a premium asset. Organizations must secure proprietary, verified human data pipelines to avoid the commoditization and degradation associated with synthetic training sets.',
@@ -178,7 +256,24 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.92, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The financial discipline of managing, projecting, and optimizing the per query token costs associated with running large language models in production.',
     whyItMatters: 'Unlike traditional software hosting, LLM inference introduces highly variable and unpredictable costs. Without disciplined inference economics, scaling user engagement directly leads to margin collapse.',
-    whoShouldCare: ['CFOs', 'FinOps Teams', 'Engineering Leaders'],
+    whoShouldCare: ['Chief Financial Officer (CFO)', 'Cloud FinOps Manager', 'Group Product Manager (GPM)', 'VP of Engineering', 'Director of Finance'],
+    personaRecommendations: [
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Demand unit-level gross margin visibility for every AI feature before authorizing expansion. Verify that customer subscription tiers actually cover variable query costs.',
+        recommendedNextSlug: 'ai-volatility-tax'
+      },
+      {
+        role: 'Cloud FinOps Manager',
+        takeaway: 'Implement model routing and response caching so repetitive routine queries are not sent to expensive multi-million-dollar reasoning models.',
+        recommendedNextSlug: 'ai-coding-tool-economics'
+      },
+      {
+        role: 'Group Product Manager (GPM)',
+        takeaway: 'Design product features with token consumption budgets. Stop users from triggering unconstrained multi-step agent queries on free or low-tier plans.',
+        recommendedNextSlug: 'ai-unit-economics'
+      }
+    ],
     firstIntroduced: 'Industry Consensus 2023',
     canonicalQuote: 'Inference economics demands that every prompt generation is treated as a financial transaction with measurable margin impact.',
     positionStatement: 'You cannot scale AI features using traditional SaaS pricing models. Inference economics requires semantic caching, model routing, and unit margin visibility at the query level.',
@@ -225,7 +320,29 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.94, evidenceCount: 5, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The critical threshold where the operational cost of maintaining a codebase and resolving technical debt exceeds the engineering capacity available for new feature development.',
     whyItMatters: 'Technical insolvency freezes product innovation. When teams spend all their cycles patching legacy code and managing brittle AI integrations, the company loses its competitive market velocity and capital efficiency.',
-    whoShouldCare: ['CTOs', 'VPs of Engineering', 'Board Members'],
+    whoShouldCare: ['Chief Executive Officer (CEO)', 'Chief Financial Officer (CFO)', 'VP of Product', 'Engineering Manager (EM)', 'Director of Engineering'],
+    personaRecommendations: [
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Recognize that an engineering team spending 80% of its time fixing broken code is not a personnel problem: it is an unaddressed capital liability that freezes new revenue.',
+        recommendedNextSlug: 'negative-carry-code-crisis'
+      },
+      {
+        role: 'Chief Financial Officer (CFO)',
+        takeaway: 'Quantify the dollar carrying cost of technical debt and maintenance load using the Product Debt Index to protect R&D capital efficiency.',
+        recommendedNextSlug: 'inference-economics'
+      },
+      {
+        role: 'VP of Product',
+        takeaway: 'Negotiate dedicated refactoring sprints before compounding technical debt makes shipping promised roadmap features physically impossible.',
+        recommendedNextSlug: 'spec-driven-development'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Stop junior developers from relying on generative AI to paste hundreds of lines of unverified boilerplate code into production.',
+        recommendedNextSlug: 'agentic-engineering'
+      }
+    ],
     firstIntroduced: 'Industry Consensus 2020',
     canonicalQuote: 'Technical insolvency is the point of no return where a company stops building software and starts surviving it.',
     positionStatement: 'The rapid generation of AI assisted code is accelerating technical insolvency. Engineering leaders must enforce strict quality boundaries, utilizing tools like the Product Debt Index to quantify and mitigate maintenance liabilities.',
@@ -267,7 +384,29 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.88, evidenceCount: 3, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 2, knownLimitationsCount: 1 },
     definition: 'The emerging discipline of designing, deploying, and maintaining multi agent autonomous systems with rigorous deterministic governance and state management.',
     whyItMatters: 'Building systems that can act independently requires a fundamental shift from traditional software development. Agentic engineering ensures that autonomous actions are reliable, auditable, and secure.',
-    whoShouldCare: ['AI System Architects', 'Lead Developers', 'Engineering Directors'],
+    whoShouldCare: ['Chief Operating Officer (COO)', 'Director of Engineering', 'Engineering Manager (EM)', 'Product Operations Manager', 'Quality Engineering (QE) Manager'],
+    personaRecommendations: [
+      {
+        role: 'Chief Operating Officer (COO)',
+        takeaway: 'Shift organizational thinking from prompt tweaking to operational boundary design. Autonomous systems must have deterministic checkpoints.',
+        recommendedNextSlug: 'deterministic-governance'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Define rigid input and output schemas for every automated task so downstream teams are not forced to clean up inconsistent agent output.',
+        recommendedNextSlug: 'compound-ai-systems'
+      },
+      {
+        role: 'Quality Engineering (QE) Manager',
+        takeaway: 'Replace manual spot checks with automated regression test probes that verify agent behavior across edge cases before deployment.',
+        recommendedNextSlug: 'spec-driven-development'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Train developers to supervise and audit autonomous tool calls rather than blindly trusting model reasoning in production environments.',
+        recommendedNextSlug: 'context-rot'
+      }
+    ],
     firstIntroduced: 'Industry Consensus 2024',
     canonicalQuote: 'Agentic engineering shifts the developer focus from writing functional logic to designing boundaries and governance rules for autonomous systems.',
     positionStatement: 'Successful agentic engineering relies on deterministic governance. We must treat AI agents not as infallible human replacements, but as high variance functions that require strict code level supervision and proxy gates.',
@@ -311,7 +450,29 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
     health: { confidence: 0.91, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active', openQuestionsCount: 1, knownLimitationsCount: 1 },
     definition: 'The degradation of an AI models reasoning quality, instruction adherence, and factual accuracy as the context window fills during long interactive sessions.',
     whyItMatters: 'Context rot causes autonomous agents to forget critical safety instructions and operational constraints. This phenomenon leads to hallucinated API calls and severe breaches of deterministic governance protocols.',
-    whoShouldCare: ['Prompt Engineers', 'AI Application Developers', 'Quality Assurance Teams'],
+    whoShouldCare: ['Product Operations Manager', 'Customer Support Manager', 'Engineering Manager (EM)', 'Group Product Manager (GPM)', 'Quality Engineering (QE) Manager'],
+    personaRecommendations: [
+      {
+        role: 'Customer Support Manager',
+        takeaway: 'Beware of long multi-turn support sessions where automated assistants forget initial safety constraints or customer account rules mid-conversation.',
+        recommendedNextSlug: 'deterministic-governance'
+      },
+      {
+        role: 'Product Operations Manager',
+        takeaway: 'Break complex multi-step processes into discrete, stateless stages rather than stuffing twenty instructions into a single sprawling session.',
+        recommendedNextSlug: 'compound-ai-systems'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Ensure automated tools pull freshly validated state from databases instead of relying on stale context accumulated in conversation history.',
+        recommendedNextSlug: 'spec-driven-development'
+      },
+      {
+        role: 'Group Product Manager (GPM)',
+        takeaway: 'Design workflows that reset conversation state between distinct tasks to prevent subtle hallucinated errors from compounding.',
+        recommendedNextSlug: 'agentic-engineering'
+      }
+    ],
     firstIntroduced: 'Beehiiv April 2026',
     canonicalQuote: 'Context rot is the slow erosion of model reliability, where early instructions are forgotten as conversational memory fills up.',
     positionStatement: 'We cannot rely on long context windows to enforce complex rules. To combat context rot, we must implement stateless tool calls and deterministic governance architectures that validate constraints outside the LLM context.',
