@@ -4,12 +4,13 @@ import { useState, useEffect, Suspense } from 'react';
 import { useQueryState, parseAsString, parseAsStringLiteral } from 'nuqs';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
-import { TrendingUp, TrendingDown, AlertTriangle, DollarSign, Lock, Zap, Users, Target, Mail, ArrowRight, Cpu, Clock, Building, Building2, Skull, Share2, Check, Activity } from 'lucide-react';
+import { TrendingUp, TrendingDown, AlertTriangle, DollarSign, Lock, Zap, Users, Target, Mail, ArrowRight, Cpu, Clock, Building, Building2, Skull, Share2, Check, Activity, FileText } from 'lucide-react';
 import Link from 'next/link';
 import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
 import ToolPayGate from '../../components/ToolPayGate';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
+import ExecutiveBoardDeckModal from '@/app/components/ExecutiveBoardDeckModal';
 import { QPEPRemediation } from '../../components/QPEPRemediation';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import { VaultUpsell } from '../../components/VaultUpsell';
@@ -96,6 +97,7 @@ function APERToolContent() {
     const [loading, setLoading] = useState(false);
     const [showGate, setShowGate] = useState(false);
     const [copiedLink, setCopiedLink] = useState(false);
+    const [showBoardModal, setShowBoardModal] = useState(false);
 
     const handleCopyShareLink = () => {
         if (typeof window !== 'undefined') {
@@ -384,8 +386,69 @@ function APERToolContent() {
                                         <h2 className="text-xl font-bold text-zinc-950 mb-1">Board-Ready Deliverable Generated</h2>
                                         <p className="text-sm font-semibold text-zinc-900 font-medium">Export this assessment to a verified Executive PDF.</p>
                                     </div>
-                                    <ExportToPDFButton targetId="aper-pdf-export-zone" fileName={`APER_Assessment_${persona}.pdf`} />
+                                    <div className="flex flex-col sm:flex-row items-center gap-3">
+                                        <button
+                                            onClick={() => setShowBoardModal(true)}
+                                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-950 text-white font-bold text-xs uppercase tracking-wider hover:bg-zinc-800 transition shadow-md"
+                                        >
+                                            <FileText className="w-4 h-4 text-cyan-400" />
+                                            Board Deck Slip (1-Page Briefing)
+                                        </button>
+                                        <ExportToPDFButton targetId="aper-pdf-export-zone" fileName={`APER_Assessment_${persona}.pdf`} />
+                                    </div>
                                 </div>
+
+                                <ExecutiveBoardDeckModal
+                                    isOpen={showBoardModal}
+                                    onClose={() => setShowBoardModal(false)}
+                                    toolName="AI Payroll Efficiency Ratio (APER)"
+                                    toolSlug="aper"
+                                    score={Math.round(results.multiplier * 10)}
+                                    scoreLabel={results.multiplier < 2.5 ? 'Negative Carry R&D Drag' : 'High-Leverage R&D Capital'}
+                                    metrics={[
+                                        { label: 'Revenue Multiple (ARR / Comp)', value: `${results.multiplier.toFixed(2)}x`, isNegative: results.multiplier < 2.5, subtext: 'ARR generated per dollar of R&D payroll' },
+                                        { label: 'Total Engineering Comp', value: formatMoney(results.totalEngCost), isNegative: true, subtext: 'Fully loaded payroll burn' },
+                                        { label: 'Coordination Tax Drag', value: `${results.coordinationTax.toFixed(1)}%`, subtext: 'Capacity lost to alignment overhead' },
+                                        { label: 'ARR Generated per Engineer', value: formatMoney(results.aper) },
+                                        { label: 'Total Headcount', value: `${engineers} Engineers` },
+                                        { label: 'Engineering Margin', value: `${results.engineeringMargin.toFixed(1)}%`, isNegative: results.engineeringMargin < 0 },
+                                    ]}
+                                    executiveSummary={[
+                                        `The engineering organization generates ${formatMoney(results.aper)} in ARR per engineer, yielding a revenue multiple of ${results.multiplier.toFixed(2)}x on payroll.`,
+                                        `Coordination tax consumes an estimated ${results.coordinationTax.toFixed(1)}% of total engineering capacity across the team.`,
+                                        `AI assistant adoption without deterministic review gates has increased pull request volume while release velocity remains throttled.`,
+                                    ]}
+                                    remediationPlaybook={[
+                                        {
+                                            step: '01',
+                                            title: 'PR Bottleneck Elimination',
+                                            directive: 'Cap maximum PR diff size at 300 lines for AI-generated contributions.',
+                                            actionItem: 'Enforce pre-commit schema assertion tests to reject unreviewed boilerplate before human review.'
+                                        },
+                                        {
+                                            step: '02',
+                                            title: 'Engineering Topology Restructuring',
+                                            directive: 'Shift from vertical functional silos to paired pod topologies with dedicated quality gates.',
+                                            actionItem: 'Allocate 20% of senior capacity to golden eval suite construction rather than manual code review.'
+                                        },
+                                        {
+                                            step: '03',
+                                            title: 'Capital Allocation Governance',
+                                            directive: 'Tie developer tooling investments to verified ARR leverage rather than vanity commit metrics.',
+                                            actionItem: 'Present APER quarterly to the Board Compensation and Audit Committees.'
+                                        }
+                                    ]}
+                                    remediationTrack={{
+                                        trackNumber: 4,
+                                        title: 'Engineering Organization Design & Talent Topology',
+                                        href: '/vault/curriculum/tracks/track-04'
+                                    }}
+                                    blueprint={{
+                                        title: 'Autonomous Agent Governance Proxy & ATC Queue',
+                                        href: '/vault/blueprints'
+                                    }}
+                                    roleContext={persona}
+                                />
 
                                 {/* -------- PDF CAPTURE ZONE START -------- */}
                                 <div id="aper-pdf-export-zone" className="space-y-8 bg-white p-2 sm:p-4 rounded-3xl">

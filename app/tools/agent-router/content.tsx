@@ -9,10 +9,12 @@ import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import ShineBorder from '../../components/magicui/shine-border';
 import { VaultUpsell } from '../../components/VaultUpsell';
 import { BorderBeam } from '../../components/magicui/border-beam';
-import { Network, Server, ArrowRight, ShieldCheck, Cpu, DollarSign, Lock, Zap } from 'lucide-react';
+import { Network, Server, ArrowRight, ShieldCheck, Cpu, DollarSign, Lock, Zap, FileText } from 'lucide-react';
 import ToolGate from '../../components/tool-gate';
 import { GlowCard } from '../../components/magicui/glow-card';
 import { PersonaSwitcher, Persona } from '../../components/PersonaSwitcher';
+import ExecutiveBoardDeckModal from '../../components/ExecutiveBoardDeckModal';
+import AirTrafficControlVisualizer from '../../components/AirTrafficControlVisualizer';
 
 // Pricing per 1M tokens (Input / Output)
 const MODELS: Record<string, { in: number; out: number; name: string }> = {
@@ -32,6 +34,7 @@ export default function AgentRouterContent() {
 
     // UI
     const [loading, setLoading] = useState(false);
+    const [showBoardModal, setShowBoardModal] = useState(false);
     const [results, setResults] = useState<{
         grossMonthlyRequests: number;
         frontierRequests: number;
@@ -214,10 +217,71 @@ export default function AgentRouterContent() {
                             <h2 className="text-xl font-bold text-zinc-950 mb-1">Architecture Economics Validated</h2>
                             <p className="text-sm font-semibold text-zinc-900 font-medium">Compounding token burn mapped across {agentHops} sequential hops.</p>
                         </div>
-                        <div className="mt-4 sm:mt-0">
+                        <div className="mt-4 sm:mt-0 flex flex-col sm:flex-row items-center gap-3">
+                            <button
+                                onClick={() => setShowBoardModal(true)}
+                                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-950 text-white font-bold text-xs uppercase tracking-wider hover:bg-zinc-800 transition shadow-md shrink-0"
+                            >
+                                <FileText className="w-4 h-4 text-cyan-400" />
+                                Board Deck Slip (1-Page Briefing)
+                            </button>
                             <ExportToPDFButton targetId="router-pdf-export-zone" fileName={`Agentic_Topology_Audit.pdf`} />
                         </div>
                     </div>
+
+                    <ExecutiveBoardDeckModal
+                        isOpen={showBoardModal}
+                        onClose={() => setShowBoardModal(false)}
+                        toolName="Agentic FinOps & Topology Audit"
+                        toolSlug="agent-router"
+                        score={useEdgeRouter ? 88 : (results.monthlyCost > 50000 ? 28 : 55)}
+                        scoreLabel={useEdgeRouter ? 'Sovereign Edge Router Active' : (results.monthlyCost > 50000 ? 'Severe API OpEx Bleed' : 'Unmitigated Swarm Burn')}
+                        metrics={[
+                            { label: 'Monthly Incurred API Cost', value: formatMoney(results.monthlyCost), isNegative: results.monthlyCost > 20000, subtext: 'Frontier model token billing' },
+                            { label: 'Compounded Monthly Tokens', value: `${(results.totalTokens / 1000000).toFixed(1)}M`, subtext: `Across ${agentHops} agent logic hops` },
+                            { label: 'Router Cost Mitigation', value: formatMoney(results.savingsFromRouter), subtext: useEdgeRouter ? '60% deflection via edge SLM' : 'Zero deflection active' },
+                            { label: 'Engineering Headcount Equiv.', value: `${(results.monthlyCost * 12 / 185000).toFixed(1)} FTEs`, isNegative: true, subtext: 'Annualized API capital burn' },
+                            { label: 'Sequential Agent Hops', value: `${agentHops} hops`, subtext: 'Context accumulation factor' },
+                            { label: 'Frontier Query Volume', value: `${results.frontierRequests.toLocaleString()} / mo`, subtext: 'Dispatched to cloud APIs' }
+                        ]}
+                        executiveSummary={[
+                            `Sequential multi-agent chains compound input tokens monotonically, accumulating ${Math.floor(baseInputTokens * (agentHops > 1 ? agentHops * 1.5 : 1)).toLocaleString()} context tokens per request across ${agentHops} hops.`,
+                            `At ${dailyRequests.toLocaleString()} daily base triggers, monthly API fees reach ${formatMoney(results.monthlyCost)}, combusting the equivalent of ${(results.monthlyCost * 12 / 185000).toFixed(1)} senior engineering salaries annually.`,
+                            useEdgeRouter 
+                                ? `A sovereign SLM edge router deflects 60% of base requests, successfully reclaiming ${formatMoney(results.savingsFromRouter)} each month in operational savings.`
+                                : `Operating without an edge router exposes the system to HTTP 429 tier rate-limits and uncapped variable OpEx risk.`
+                        ]}
+                        remediationPlaybook={[
+                            {
+                                step: '01',
+                                title: 'Deploy Private SLM Semantic Router',
+                                directive: 'Intercept, classify, and satisfy 60% of baseline queries locally on CPU before contacting external APIs.',
+                                actionItem: 'Deploy an 8B open weights model as an edge air traffic controller with zero external token cost.'
+                            },
+                            {
+                                step: '02',
+                                title: 'Contextual Pruning & Summarization',
+                                directive: 'Never copy-paste raw previous agent outputs into subsequent hop prompts.',
+                                actionItem: 'Insert an intermediate token compression layer to reduce prompt payload sizes by 80%.'
+                            },
+                            {
+                                step: '03',
+                                title: 'Dynamic Cascade Routing & Circuit Breakers',
+                                directive: 'Default all requests to small, fast models and escalate only upon schema validation failure.',
+                                actionItem: 'Deploy token budget circuit breakers that trip and freeze agent loops after 3 consecutive retry faults.'
+                            }
+                        ]}
+                        remediationTrack={{
+                            trackNumber: 27,
+                            title: 'Hybrid Cloud-Edge Routing & Quantized Inference',
+                            href: '/vault/curriculum/tracks/track-27'
+                        }}
+                        blueprint={{
+                            title: 'Sovereign Agent Gateway & Air Traffic Control Proxy',
+                            href: '/vault/blueprints'
+                        }}
+                        roleContext={persona}
+                    />
 
                     <PersonaSwitcher activePersona={persona} onChange={setPersona} />
 
@@ -454,6 +518,11 @@ export default function AgentRouterContent() {
                     </div>
                 </div>
             )}
+
+            {/* Interactive Air Traffic Control Simulation Lab */}
+            <div className="mt-16 pt-12 border-t border-zinc-300">
+                <AirTrafficControlVisualizer />
+            </div>
         </div>
     );
 }

@@ -4,13 +4,14 @@ import { useState, useEffect, Suspense } from 'react';
 import { useQueryState, parseAsString, parseAsStringLiteral } from 'nuqs';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { TrendingDown, TrendingUp, AlertTriangle, DollarSign, Lock, Activity, Zap, Flame, Users, Target, Mail, ArrowRight, Cpu, Skull, Building2, Share2, Check } from 'lucide-react';
+import { TrendingDown, TrendingUp, AlertTriangle, DollarSign, Lock, Activity, Zap, Flame, Users, Target, Mail, ArrowRight, Cpu, Skull, Building2, Share2, Check, FileText } from 'lucide-react';
 import Link from 'next/link';
 import { NewsletterForm } from '../../components/newsletter-form';
 import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
 import ToolPayGate from '../../components/ToolPayGate';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
+import ExecutiveBoardDeckModal from '@/app/components/ExecutiveBoardDeckModal';
 import { QPEPRemediation } from '../../components/QPEPRemediation';
 import { VaultUpsell } from '../../components/VaultUpsell';
 import { ToolGateCTA } from '../../components/ToolGateCTA';
@@ -149,6 +150,7 @@ function AUEBToolContent() {
     const [results, setResults] = useState<AuebScoreMetrics | null>(null);
     const [loading, setLoading] = useState(false);
     const [showGate, setShowGate] = useState(false);
+    const [showBoardModal, setShowBoardModal] = useState(false);
 
     useEffect(() => {
         trackDiagnosticEvent('diagnostic_started', 'aueb');
@@ -544,16 +546,77 @@ function AUEBToolContent() {
                                         <h2 className="text-xl font-bold text-zinc-950 mb-1">Board-Ready Deliverable Generated</h2>
                                         <p className="text-sm font-semibold text-zinc-900 font-medium">Export this assessment to a verified Executive PDF.</p>
                                     </div>
-                                    <div className="w-full">
-                                        <ToolGate toolName="Executive PDF Export" toolSlug="aueb" mappedCurriculumId="21-1">
-                                            <ExportToPDFButton 
-                                                targetId="aueb-pdf-export-zone" 
-                                                fileName={`AUEB_Assessment_${persona}.pdf`} 
-                                                onBeforeExport={handleSaveToVault} 
-                                            />
-                                        </ToolGate>
+                                    <div className="w-full flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                                        <button
+                                            onClick={() => setShowBoardModal(true)}
+                                            className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-zinc-950 text-white font-bold text-xs uppercase tracking-wider hover:bg-zinc-800 transition shadow-md shrink-0"
+                                        >
+                                            <FileText className="w-4 h-4 text-cyan-400" />
+                                            Board Deck Slip (1-Page Briefing)
+                                        </button>
+                                        <div className="flex-1">
+                                            <ToolGate toolName="Executive PDF Export" toolSlug="aueb" mappedCurriculumId="21-1">
+                                                <ExportToPDFButton 
+                                                    targetId="aueb-pdf-export-zone" 
+                                                    fileName={`AUEB_Assessment_${persona}.pdf`} 
+                                                    onBeforeExport={handleSaveToVault} 
+                                                />
+                                            </ToolGate>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <ExecutiveBoardDeckModal
+                                    isOpen={showBoardModal}
+                                    onClose={() => setShowBoardModal(false)}
+                                    toolName="AI Unit Economics Benchmark (AUEB)"
+                                    toolSlug="aueb"
+                                    score={Math.round(results.grossMargin)}
+                                    scoreLabel={results.grossMargin < 50 ? 'Severe Margin Compression' : 'Sustainable Unit Economics'}
+                                    metrics={[
+                                        { label: 'Calculated Gross Margin', value: `${results.grossMargin.toFixed(1)}%`, isNegative: results.grossMargin < 50, subtext: 'Net software margin after model token fees' },
+                                        { label: 'Monthly AI Token Spend', value: formatMoney(results.monthlyCost), isNegative: true, subtext: 'Direct vendor API OpEx' },
+                                        { label: 'Inference Cost per User', value: formatMoney(results.costPerUser) },
+                                        { label: 'Margin Inversion Point', value: `${results.insolvencyPoint} queries/mo`, subtext: 'Per user threshold' },
+                                        { label: 'Monthly Net Profit', value: formatMoney(results.monthlyProfit), isNegative: results.monthlyProfit < 0 },
+                                        { label: 'Annualized Compute Run-Rate', value: formatMoney(results.monthlyCost * 12) },
+                                    ]}
+                                    executiveSummary={[
+                                        `The product tier generates a gross margin of ${results.grossMargin.toFixed(1)}%, with monthly API inference fees reaching ${formatMoney(results.monthlyCost)}.`,
+                                        `At ${queries} queries/user/month, variable model token costs consume a disproportionate share of the $${price}/month subscription fee.`,
+                                        `A 15% user growth rate compounds token consumption geometrically unless prompt caching and intent classification are deployed.`,
+                                    ]}
+                                    remediationPlaybook={[
+                                        {
+                                            step: '01',
+                                            title: 'Deploy Semantic Caching Architecture',
+                                            directive: 'Intercept repetitive prompt embeddings at >= 0.92 cosine similarity to deflect 30% to 50% of queries.',
+                                            actionItem: 'Deploy Redis vector cache to avoid paying frontier model fees for identical queries.'
+                                        },
+                                        {
+                                            step: '02',
+                                            title: 'Build a Sovereign Intent Router',
+                                            directive: 'Triage queries between low-cost SLMs (8B models) and frontier intelligence.',
+                                            actionItem: 'Reserve Claude 3.5 Sonnet / GPT-4o exclusively for high-reasoning tasks; route extraction to SLMs.'
+                                        },
+                                        {
+                                            step: '03',
+                                            title: 'Model Cascading & Token Quotas',
+                                            directive: 'Enforce hard session caps and token velocity ceilings per active subscriber.',
+                                            actionItem: 'Deploy the FinOps Real-Time Token Budget Interceptor to trip circuit breakers before overages occur.'
+                                        }
+                                    ]}
+                                    remediationTrack={{
+                                        trackNumber: 2,
+                                        title: 'AI Product Economics & Unit Margins',
+                                        href: '/vault/curriculum/tracks/track-02'
+                                    }}
+                                    blueprint={{
+                                        title: 'FinOps Real-Time Token Budget & Rate Limiting Guard',
+                                        href: '/vault/blueprints'
+                                    }}
+                                    roleContext={persona}
+                                />
 
                                 {/* -------- PDF CAPTURE ZONE START -------- */}
                                 <div id="aueb-pdf-export-zone" className="space-y-8 bg-white p-2 sm:p-4 rounded-3xl">

@@ -13,6 +13,7 @@ import { DiagnosticProgression } from '@/components/reports/DiagnosticProgressio
 import { LongitudinalHistory } from '@/components/reports/LongitudinalHistory';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import ExecutiveMemoExport from '@/app/components/ExecutiveMemoExport';
+import ExecutiveBoardDeckModal from '@/app/components/ExecutiveBoardDeckModal';
 import { motion } from 'framer-motion';
 import ToolCelebration from '../../components/ToolCelebration';
 import Link from 'next/link';
@@ -23,7 +24,7 @@ import ShineBorder from '../../components/magicui/shine-border';
 import NumberTicker from '../../components/magicui/number-ticker';
 import { BorderBeam } from '../../components/magicui/border-beam';
 import { useQueryState, parseAsInteger, parseAsString, parseAsStringLiteral } from 'nuqs';
-import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, TrendingDown, AlertTriangle, Lock, Zap, Skull, Building2, Share2, Check, Activity } from 'lucide-react';
+import { Target, Users, Cpu, DollarSign, Mail, ArrowRight, TrendingUp, TrendingDown, AlertTriangle, Lock, Zap, Skull, Building2, Share2, Check, Activity, FileText } from 'lucide-react';
 import { NewsletterForm } from '../../components/newsletter-form';
 import { ToolGateCTA } from '../../components/ToolGateCTA';
 import ToolGate from '../../components/tool-gate';
@@ -142,6 +143,7 @@ function PDIToolContent() {
     const [showGate, setShowGate] = useState(false);
     const [showPaywall, setShowPaywall] = useState(false);
     const [copiedLink, setCopiedLink] = useState(false);
+    const [showBoardModal, setShowBoardModal] = useState(false);
 
     const handleCopyShareLink = () => {
         if (typeof window !== 'undefined') {
@@ -910,8 +912,15 @@ Migrate from Heroku to AWS"
 
                     {/* Action Footer */}
                     <ScrollReveal delay={300}>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6 border-t border-zinc-400" data-html2canvas-ignore>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-6 border-t border-zinc-400" data-html2canvas-ignore>
                             <button onClick={() => setResults(null)} className="text-zinc-950 text-sm font-semibold hover:text-zinc-900 underline underline-offset-4">← Run New Audit</button>
+                            <button
+                                onClick={() => setShowBoardModal(true)}
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-zinc-950 text-white font-bold text-xs uppercase tracking-wider hover:bg-zinc-800 transition shadow-md"
+                            >
+                                <FileText className="w-4 h-4 text-cyan-400" />
+                                Board Deck Slip (1-Page Briefing)
+                            </button>
                             <ExportToPDFButton 
                                 targetId="pdi-results-artifact" 
                                 fileName={`Product_Debt_Index_${new Date().toISOString().split('T')[0]}.pdf`} 
@@ -920,6 +929,58 @@ Migrate from Heroku to AWS"
                             <Link href="/system" className="text-zinc-950 text-sm font-semibold hover:text-zinc-900">Explore All Tools →</Link>
                         </div>
                     </ScrollReveal>
+
+                    <ExecutiveBoardDeckModal
+                        isOpen={showBoardModal}
+                        onClose={() => setShowBoardModal(false)}
+                        toolName="Product Debt Index (PDI)"
+                        toolSlug="pdi"
+                        score={results.score}
+                        scoreLabel={results.score < 50 ? 'Critical Insolvency Risk' : 'Viable R&D Solvency'}
+                        metrics={[
+                            { label: 'Annual Capital Waste', value: formatMoney(results.financials.waste), isNegative: true, subtext: 'Servicing maintenance debt' },
+                            { label: 'Non-Value Engineering Drag', value: `${100 - results.score}%`, isNegative: true, subtext: 'Backlog capacity loss' },
+                            { label: 'Waste per Sprint', value: formatMoney(results.financials.wastePerSprint), isNegative: true },
+                            { label: 'Rewrite Cost (Principal)', value: formatMoney(results.financials.rewriteCost) },
+                            { label: 'Debt Velocity', value: `${results.debtVelocity} tix/sprint` },
+                            { label: 'Burndown Horizon', value: `${results.burnDownWeeks} wks` },
+                        ]}
+                        executiveSummary={[
+                            `The organization is burning ${formatMoney(results.financials.waste)} annually servicing technical debt across an engineering team of ${teamSize}.`,
+                            `Non-value creating tasks currently consume ${100 - results.score}% of total sprint capacity, creating structural velocity drag.`,
+                            `The default ratio stands at ${results.financials.defaultRatio.toFixed(1)}x maintenance interest relative to generative rebuild principal.`,
+                        ]}
+                        remediationPlaybook={[
+                            {
+                                step: '01',
+                                title: 'CapEx Quarantine Protocol',
+                                directive: 'Freeze net-new feature development for any codebase domain operating above 40% maintenance allocation.',
+                                actionItem: 'Enforce the Win Locker pattern: Zero PR approvals on quarantined domains until debt ratio decreases by 15%.'
+                            },
+                            {
+                                step: '02',
+                                title: 'Balance Sheet Refactoring',
+                                directive: 'Capitalize maintenance debt as a core business function and allocate protected capacity in Jira.',
+                                actionItem: 'Lock 20% of sprint story points to Structural Neutralization before any feature work is scheduled.'
+                            },
+                            {
+                                step: '03',
+                                title: 'CFO Workflow Alignment',
+                                directive: `Route maintenance spend over $50k OpEx equivalent through formal CFO approval workflows.`,
+                                actionItem: 'Use the PDI metric as the empirical justification vehicle for technical debt paydown.'
+                            }
+                        ]}
+                        remediationTrack={{
+                            trackNumber: 1,
+                            title: 'Technical Debt Forensics & Legacy Modernization',
+                            href: '/vault/curriculum/tracks/track-01'
+                        }}
+                        blueprint={{
+                            title: 'Autonomous Agent Governance Proxy with Circuit Breakers',
+                            href: '/vault/blueprints'
+                        }}
+                        roleContext={persona}
+                    />
 
                     {/* Social Proof */}
                     <ScrollReveal delay={300}>
