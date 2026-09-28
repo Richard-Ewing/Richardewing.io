@@ -296,7 +296,7 @@ export default function CareerWinPage() {
                     <section className="mb-20 bg-zinc-950 text-white rounded-3xl p-8 sm:p-12">
                         <div className="max-w-2xl">
                             <span className="text-xs font-mono font-bold text-indigo-400 uppercase tracking-widest mb-3 block">
-                                Platform Synergy
+                                Ecosystem Integration
                             </span>
                             <h2 className="text-3xl font-grotesk font-bold mb-6">
                                 How CareerWin Fits Into the Ecosystem

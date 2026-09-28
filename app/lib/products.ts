@@ -126,8 +126,8 @@ export const PRODUCTS: Record<string, Product> = {
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_financials: {
-        name: 'C-Suite Financials & M&A Diligence  -  Track Access',
-        description: 'Lifetime access to the C-Suite Financials & M&A Diligence track.',
+        name: 'Executive Financials & M&A Diligence  -  Track Access',
+        description: 'Lifetime access to the Executive Financials & M&A Diligence track.',
         price: 14900, mode: 'payment',
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },

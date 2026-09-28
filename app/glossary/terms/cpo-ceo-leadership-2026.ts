@@ -71,7 +71,7 @@ export const cpoCeoLeadership2026Terms: GlossaryTerm[] = [
         faqs: [
             {
                 question: 'Why do companies get trapped in performative AI pilots?',
-                answer: 'Due to lack of C-Suite cross-functional alignment and failure to establish clear unit margin floors before starting development.'
+                answer: 'Due to a lack of alignment between the CEO, CFO, and CTO, along with failure to establish clear unit margin floors before starting development.'
             }
         ],
         relatedTerms: ['autonomous-enterprise-operating-model', 'cpo-feature-margin-floor']

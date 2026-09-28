@@ -267,10 +267,10 @@ export const PRODUCT_MANAGEMENT = [
 ];
 
 // ---------------------------------------------------------------------------
-// CATEGORY 7: Leadership, C-Suite & Executive
+// CATEGORY 7: Leadership, Executive & Operating Roles
 // ---------------------------------------------------------------------------
 export const LEADERSHIP_EXECUTIVE = [
-    // C-Suite roles
+    // Executive and operating leadership roles
     'CTO', 'Chief Technology Officer', 'CTO role', 'CTO responsibilities',
     'CIO', 'Chief Information Officer', 'CIO role', 'CIO priorities 2026',
     'CPO', 'Chief Product Officer', 'CPO role', 'CPO responsibilities',

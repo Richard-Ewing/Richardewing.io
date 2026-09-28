@@ -277,7 +277,7 @@ tracks8Modules['data-economics/8-12'] = m('8-12', 'Feature Store Economics', 'Ev
             [
                 'When multiple data science teams try to predict churn, they will all independently write complex SQL to calculate "User Logins in Last 30 Days." This redundant engineering costs hundreds of thousands in payroll.',
                 'A Feature Store centralizes these mathematical definitions. Team A calculates it once, pushes it to the store, and Team B can instantly pull it via API for their models.',
-                'Furthermore, Feature Stores solve "Training-Serving Skew" - ensuring the offline historical data used to train the model exactly matches the real-time online data the model sees in production. Skew silently kills model accuracy.'
+                'Beyond code reuse, Feature Stores solve "Training-Serving Skew" - ensuring the offline historical data used to train the model exactly matches the real-time online data the model sees in production. Skew silently kills model accuracy.'
             ],
             [],
             'Evaluate your ML organization for Feature Store readiness.',

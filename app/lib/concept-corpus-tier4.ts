@@ -745,7 +745,7 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
       },
       {
         role: 'Chief Financial Officer (CFO)',
-        takeaway: 'Protect company pricing leverage during enterprise contract renewals by proving your software runs identically across competing foundation models.',
+        takeaway: 'Protect company bargaining power during enterprise contract renewals by proving your software runs identically across competing foundation models.',
         recommendedNextSlug: 'ai-margin-squeeze'
       },
       {

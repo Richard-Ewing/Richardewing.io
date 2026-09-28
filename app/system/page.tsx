@@ -42,7 +42,7 @@ export default function SystemPage() {
                                 <span className="font-mono text-xs font-bold font-medium text-zinc-900 uppercase tracking-widest">Board-Level Intelligence</span>
                             </div>
                             <h3 className="text-xl font-bold text-zinc-950 mb-2">Executive Board Room</h3>
-                            <p className="text-zinc-950 text-sm font-semibold mb-4">Secure repository for your historical execution snapshots. Track margin erosion, valuation destruction, and operational drift across quarters in a unified C-Suite dashboard.</p>
+                            <p className="text-zinc-950 text-sm font-semibold mb-4">Secure repository for your historical execution snapshots. Track margin erosion, valuation destruction, and operational drift across quarters in a unified executive dashboard.</p>
                             <ShineBorder borderColor="rgba(255, 255, 255, 0.4)" duration={3}>
                                 <Link href="/tools/board-room" className="block w-full text-center bg-white text-black font-bold text-xs font-bold uppercase tracking-widest py-3 hover:bg-zinc-200 transition">
                                     Enter Board Room →

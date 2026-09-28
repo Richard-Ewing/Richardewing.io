@@ -401,7 +401,7 @@ export const tracks = [
             { id: '13-5', name: '13.5 M&A Technical Leadership', topics: 'Due Diligence Leadership, Integration Playbook, Talent Retention', href: '/vault/curriculum/tracks/exec-economics/13-5' },
             { id: '13-6', name: '13.6 CTO vs VP Engineering Economics', topics: 'Role Separation, Cost Structures, Board Relationship Dynamics', href: '/vault/curriculum/tracks/exec-economics/13-6' },
             { id: '13-7', name: '13.7 Managing Technical Debt at the Board Level', topics: 'Risk Heat Maps, Investment Proposals, Remediation Roadmaps', href: '/vault/curriculum/tracks/exec-economics/13-7' },
-            { id: '13-8', name: '13.8 AI Strategy for Executives', topics: 'AI Investment Framework, Build vs Buy at the C-Suite, Vendor Selection', href: '/vault/curriculum/tracks/exec-economics/13-8' },
+            { id: '13-8', name: '13.8 AI Strategy for Executives', topics: 'AI Investment Framework, Build vs Buy for Executive Leadership, Vendor Selection', href: '/vault/curriculum/tracks/exec-economics/13-8' },
             { id: '13-9', name: '13.9 The 90-Day CTO Turnaround', topics: 'Trust Bridge, 360 Audit, Quick Wins, Board Confidence Building', href: '/vault/curriculum/tracks/exec-economics/13-9' },
             { id: '13-10', name: '13.10 Executive Economics Synthesis', topics: 'Your CTO Dashboard, Quarterly Cadence, Long-Term Capital Planning', href: '/vault/curriculum/tracks/exec-economics/13-10' },
         ],
@@ -669,7 +669,7 @@ export const tracks = [
                   "diagnostic": "Board Room Simulator (/tools/board-room)"
         },
         subtitle: 'Track 23: Leadership',
-        description: 'The final frontier: translating technical excellence into boardroom authority. This track teaches senior leaders and aspiring C-suite executives to command rooms, govern budgets, and drive organizational strategy with economic precision.',
+        description: 'The final frontier: translating technical excellence into boardroom authority. This track teaches senior leaders and aspiring corporate officers (CTOs, CPOs, CIOs) to command rooms, govern budgets, and drive organizational strategy with economic precision.',
         modules: [
             { id: '23-1', name: '23.1 Executive Presence as Economic Asset', topics: 'Presence Premium, Authority Economics, Credibility Capital, First Impressions ROI', href: '/vault/curriculum/tracks/executive-presence/23-1' },
             { id: '23-2', name: '23.2 Board Communication Mastery', topics: 'Board Slide Economics, Data Storytelling, 4-Quadrant Framework, Question Navigation', href: '/vault/curriculum/tracks/executive-presence/23-2' },
@@ -677,7 +677,7 @@ export const tracks = [
             { id: '23-4', name: '23.4 Investor Relations for CTOs', topics: 'Earnings Call Preparation, Technical Due Diligence, IR Strategy, Analyst Relations', href: '/vault/curriculum/tracks/executive-presence/23-4' },
             { id: '23-5', name: '23.5 Strategic Planning & OKR Economics', topics: 'Annual Planning Cycles, OKR Cascade Design, Strategy-to-Execution Translation', href: '/vault/curriculum/tracks/executive-presence/23-5' },
             { id: '23-6', name: '23.6 Cross-Functional Executive Alignment', topics: 'CTO-CFO Bridge, Engineering-Sales Alignment, Product-Engineering Governance', href: '/vault/curriculum/tracks/executive-presence/23-6' },
-            { id: '23-7', name: '23.7 Executive Negotiation & Deal Economics', topics: 'High-Stakes Negotiation, M&A Leadership, Partnership Economics, Vendor C-Suite Engagement', href: '/vault/curriculum/tracks/executive-presence/23-7' },
+            { id: '23-7', name: '23.7 Executive Negotiation & Deal Economics', topics: 'High-Stakes Negotiation, M&A Leadership, Partnership Economics, Executive Vendor Engagement', href: '/vault/curriculum/tracks/executive-presence/23-7' },
             { id: '23-8', name: '23.8 Organizational Restructuring Economics', topics: 'Reorg ROI, Layoff Economics, Rebuilding Morale, Restructuring Communication', href: '/vault/curriculum/tracks/executive-presence/23-8' },
             { id: '23-9', name: '23.9 Executive Coaching & Peer Networks', topics: 'Executive Coach ROI, Peer Advisory Boards, Mastermind Economics, Network Capital', href: '/vault/curriculum/tracks/executive-presence/23-9' },
             { id: '23-10', name: '23.10 Public Speaking & Thought Leadership', topics: 'Conference ROI, Publishing Strategy, Media Training, Brand Value Economics', href: '/vault/curriculum/tracks/executive-presence/23-10' },

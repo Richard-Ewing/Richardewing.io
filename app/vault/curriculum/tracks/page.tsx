@@ -267,7 +267,7 @@ export default async function CurriculumTracksPage() {
                                 <h2 className="text-sm font-semibold font-mono text-indigo-500 uppercase tracking-widest font-bold">Executive & Board Economics</h2>
                                 <div className="h-px bg-zinc-300 flex-grow"></div>
                             </div>
-                            <p className="text-sm font-semibold text-zinc-900 font-medium mb-8 text-center italic">Board reporting, EBITDA translation, M&A leadership, and technical debt at the balance sheet level - curated for senior leaders and aspiring C-suite.</p>
+                            <p className="text-sm font-semibold text-zinc-900 font-medium mb-8 text-center italic">Board reporting, EBITDA translation, M&A leadership, and technical debt at the balance sheet level - curated for senior leaders, CTOs, and CFOs.</p>
                             <div className="space-y-6">
                                 {/* Track 4: Capstone & Applied Practice */}
                                 {tracks[3] && <TrackAccordion key="exec-capstone" track={tracks[3]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}

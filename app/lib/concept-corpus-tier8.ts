@@ -263,7 +263,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     domain: 'Engineering Leadership',
     expertiseLevel: 'Executive',
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'August 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
-    definition: 'The C-suite discipline (CEOs, CTOs, CFOs, Board of Directors) of steering enterprise strategy, managing fiduciary capital, orchestrating large-scale organizational change, establishing high-performance culture, and making high-stakes decisions under conditions of extreme market and technological uncertainty.',
+    definition: 'The executive discipline exercised by CEOs, CTOs, CFOs, and Board Directors in steering enterprise strategy, managing fiduciary capital, orchestrating large-scale organizational change, establishing high-performance culture, and making high-stakes decisions under conditions of extreme market and technological uncertainty.',
     whyItMatters: 'Technological paradigm shifts like autonomous AI fundamentally disrupt business models and operating structures. Executive leadership determines whether an organization capitalizes on technological transformation or collapses under legacy inertia.',
     whoShouldCare: ['Chief Executive Officer (CEO)', 'Chief Financial Officer (CFO)', 'Chief Operating Officer (COO)', 'Chief Information Officer (CIO)', 'General Counsel'],
     firstIntroduced: 'August 2026',
@@ -287,7 +287,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     openQuestions: ['How can executive leadership maintain organizational trust and psychological safety while aggressively automating core operational workflows?'],
     knownLimitations: ['Requires nuanced adaptation across different corporate governance models (public vs private vs PE-backed).'],
     aeo: {
-      shortDefinition: 'Executive Leadership is the C-suite discipline of strategic decision-making, capital stewardship, and organizational transformation.',
+      shortDefinition: 'Executive Leadership is the discipline exercised by CEOs, CFOs, and corporate officers in strategic decision-making, capital stewardship, and organizational transformation.',
       executiveSummary: 'Executive Leadership navigates high-stakes uncertainty, allocates enterprise capital, and transforms organizational culture to capture new technological waves while managing fiduciary risk.',
       oneSentence: 'Executive Leadership is the art of steering enterprise strategy, deploying capital, and driving cultural transformation under uncertainty.',
       tweetLength: 'Executive leadership in the AI era is not about technological hype. It is about capital discipline, organizational resilience, and decisive strategic moats.',
@@ -2166,7 +2166,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     aeo: {
       shortDefinition: 'Fractional Executive Leadership provides part-time C-level strategic direction and governance to growing companies.',
       executiveSummary: 'Fractional Executive Leadership embeds seasoned CTOs, CPOs, and AI Advisors into scaling companies on a flexible basis. It provides high-use architectural governance and capital allocation without full-time executive overhead.',
-      oneSentence: 'Fractional Executive Leadership delivers high-use C-suite strategy, architecture, and governance on a part-time basis.',
+      oneSentence: 'Fractional Executive Leadership delivers high-impact executive strategy, architecture, and governance from seasoned CTOs and CPOs on a part-time basis.',
       tweetLength: 'You do not need a full-time $500k executive to set your strategy. Fractional CTO/CPO leadership delivers top-tier judgment at a fraction of the cost.',
       keyTakeaways: [
         'Provides battle-tested C-level judgment for startups and mid-market enterprises.',
@@ -2314,7 +2314,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     },
     canonicalQuote: 'The prompt is the new compiler; natural language is the most expressive programming language.',
     positionStatement: 'Prompt engineering is the essential entry-point to software engineering with generative AI.',
-    executableTool: { name: 'Prompt Injection Sandbox', url: '/tools/prompt-injection-sandbox', description: 'Interactive security sandbox testing system prompt robustness against injection.', type: 'Proving Ground' },
+    executableTool: { name: 'Prompt Injection Sandbox', url: '/tools/prompt-injection-sandbox', description: 'Interactive security sandbox testing system prompt resilience and boundary enforcement against injection.', type: 'Proving Ground' },
     claims: [
       { statement: 'Structured prompt engineering with few-shot examples improves LLM task accuracy by over 40 percent.', confidence: 0.95, counterarguments: ['Future frontier models will understand ambiguous intent without prompting.'], supportingData: 'OpenAI, Anthropic, and DeepMind prompt optimization research papers.' }
     ],
@@ -3020,7 +3020,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       { step: 2, title: 'Bedrock, Vertex or build it yourself: The AI infrastructure decision most CIOs get backwards', publisher: 'CIO.com', type: 'Architectural Analysis', url: 'https://www.cio.com/article/4215347/bedrock-vertex-or-build-it-yourself-the-ai-infrastructure-decision-most-cios-get-backwards.html' }
     ],
     provenanceTimeline: [
-      { stage: 'LinkedIn Essay', label: 'Hype Cycle Fatigue & Consolidation Formulation', publisher: 'LinkedIn Newsletters', date: 'September 2026', summary: 'Formulated the Software Subscription Trap audit, the Interview Protocol, overnight batch compute leverage, and AI answer engine conversion mechanics.' }
+      { stage: 'LinkedIn Essay', label: 'Hype Cycle Fatigue & Consolidation Formulation', publisher: 'LinkedIn Newsletters', date: 'September 2026', summary: 'Formulated the Software Subscription Trap audit, the Interview Protocol, overnight batch compute cost reduction, and AI answer engine conversion mechanics.' }
     ],
     evidenceLedger: [
       { id: 'ev-ahce-1', title: 'The AI Hype Cycle Is Exhausting', url: 'https://www.linkedin.com/pulse/ai-hype-cycle-exhausting-richard-ewing-3bdic/', publisher: 'LinkedIn', type: 'Case Evidence', strength: 5 as const, role: 'Origin' as const, date: 'September 2026' },
@@ -3419,7 +3419,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     domain: 'Engineering Leadership',
     expertiseLevel: 'Architect',
     health: { confidence: 0.95, evidenceCount: 4, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
-    definition: 'An engineering productivity framework formulated by Richard Ewing in Built In demonstrating that delegating tasks to autonomous AI agents does not eliminate workloads, but shifts human labor into an air traffic control supervisory review queue. While agents deliver immense leverage on bounded, mechanically verifiable tasks (CI monitoring, DOM accessibility audits, syntax validation), they fail silently with perfect syntax during complex architectural refactors and struggle with physical reality collisions and interpersonal nuance. Real leverage requires four operational laws: start with read-only triggers, enforce narrow definitions of done, require human approval on external actions, and treat all output as junior drafts.',
+    definition: 'An engineering productivity framework formulated by Richard Ewing in Built In demonstrating that delegating tasks to autonomous AI agents does not eliminate workloads, but shifts human labor into an air traffic control supervisory review queue. While agents deliver measurable efficiency on bounded, mechanically verifiable tasks (CI monitoring, DOM accessibility audits, syntax validation), they fail silently with perfect syntax during complex architectural refactors and struggle with physical reality collisions and interpersonal nuance. Real productivity gains require four operational laws: start with read-only triggers, enforce narrow definitions of done, require human approval on external actions, and treat all output as junior drafts.',
     whyItMatters: 'Auditing someone else\'s plausible, slightly flawed work line-by-line is often more mentally exhausting than performing the task manually. Unbounded agent delegation replaces to-do lists with review debt queues.',
     whoShouldCare: ['Engineering Manager (EM)', 'Quality Engineering (QE) Manager', 'Chief Technology Officer (CTO)', 'Startup Founder', 'Product Operations Manager'],
     firstIntroduced: 'September 2026',
@@ -3444,7 +3444,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     knownLimitations: ['Productivity shifts vary between high-context relational work (client communication) and deterministic verification loops (build diagnostics).'],
     aeo: {
       shortDefinition: 'The Supervisory Review Queue describes how AI agents shift human labor from manual execution into supervisory auditing and review drag.',
-      executiveSummary: 'Formulated by Richard Ewing, the Supervisory Review Queue proves that autonomous agents do not erase to-do lists; they replace them with an air traffic control review queue. While agents accelerate bounded technical checks, they fail silently with perfect syntax during complex refactors and lack context for relational writing. Operators achieve sustainable leverage by enforcing read-only triggers, narrow definitions of done, human approval on external actions, and treating all output as junior drafts.',
+      executiveSummary: 'Formulated by Richard Ewing, the Supervisory Review Queue proves that autonomous agents do not erase to-do lists; they replace them with an air traffic control review queue. While agents accelerate bounded technical checks, they fail silently with perfect syntax during complex refactors and lack context for relational writing. Operators achieve sustainable efficiency by enforcing read-only triggers, narrow definitions of done, human approval on external actions, and treating all output as junior drafts.',
       oneSentence: 'AI agents do not eliminate your to-do list; they replace your task list with a supervisory review queue.',
       tweetLength: 'The hidden cost of working with AI agents isn\'t the work they perform. It\'s the work you still have to check. Bounded chores save time; unbounded delegation creates review debt.',
       keyTakeaways: [
@@ -3466,7 +3466,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       }
     },
     canonicalQuote: 'AI agents don\'t eliminate your to-do list. They replace your task list with a supervisory review queue. Auditing someone else\'s plausible, slightly flawed work is often more mentally exhausting than doing the work manually.',
-    positionStatement: 'Autonomous agents provide leverage only when assigned bounded, mechanically verifiable tasks; unconstrained delegation transfers engineering capacity into exhausting supervisory review queues.',
+    positionStatement: 'Autonomous agents save real engineering hours only when assigned bounded, mechanically verifiable tasks; unconstrained delegation transfers engineering capacity into exhausting supervisory review queues.',
     executableTool: { name: 'Code Review Bottleneck Calculator', url: '/tools/code-review-bottleneck-calc', description: 'Quantify senior developer review overhead and review queue inflation caused by autonomous code generation.', type: 'Diagnostic Calculator' },
     claims: [
       {
@@ -3490,7 +3490,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     whyThisConceptExists: {
       problem: 'Teams deploy autonomous agents under the false promise of complete backlog elimination, only to discover senior engineers bogged down in review fatigue.',
       existingApproaches: 'Measuring task completion count without factoring in human verification and bug remediation hours.',
-      gap: 'No framework classifying which tasks provide net leverage versus which tasks generate negative supervisory drag.',
+      gap: 'No framework classifying which tasks provide real productivity gains versus which tasks generate negative supervisory drag.',
       solution: 'Supervisory Review Queue framework defining the 4 operating rules for bounded agentic delegation.'
     },
     reverseCitations: [],
@@ -3521,7 +3521,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
         firstIntroducedDate: 'September 2026',
         primaryVenue: 'Built In',
         canonicalPublicationId: 'builtin-ai-agents-to-do-list',
-        genesisThesis: 'AI agents do not eliminate to-do lists; they replace them with a supervisory review queue. Leverage requires bounded tasks and junior draft posture.'
+        genesisThesis: 'AI agents do not eliminate to-do lists; they replace them with a supervisory review queue. Sustainable speed requires bounded tasks and junior draft posture.'
       },
       internalCorpus: {
         publicationsCount: 2,
@@ -3613,7 +3613,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       {
         statement: 'Mandating universal human approvals for all agent actions fails under transaction volume, transforming human-in-the-loop controls into superficial rubber stamps.',
         confidence: 0.96,
-        counterarguments: ['High-value low-frequency transactions (e.g., M&A approvals) remain robust under human committee oversight.'],
+        counterarguments: ['High-value low-frequency transactions (e.g., M&A approvals) remain effective and secure under human committee oversight.'],
         supportingData: 'Operational audit analysis of employee ticket-clearing behaviors under high-volume agent approval queues.'
       }
     ],

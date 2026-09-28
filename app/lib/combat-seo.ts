@@ -79,7 +79,7 @@ export const COMBAT_SEO_MATRIX: CompetitorMapping[] = [
                 slug: 'promptfoo',
                 name: 'Promptfoo',
                 theirFocus: 'Developer-centric CLI red-teaming and unit string testing.',
-                ourAdvantage: 'Exogram generates a C-Suite executable Confidential Audit detailing the exact dollar-value liability of command hijacking across your RAG pipelines.'
+                ourAdvantage: 'Exogram generates an executive Confidential Audit detailing the exact dollar-value liability of command hijacking across your RAG pipelines for the CTO and CISO.'
             },
             {
                 slug: 'lakera-guard',

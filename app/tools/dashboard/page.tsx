@@ -45,7 +45,7 @@ export default function IntelligenceDashboard() {
         return (
             <div className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-center">
                 <h1 className="text-3xl font-bold text-zinc-950 mb-4">Authentication Required</h1>
-                <p className="text-zinc-900 mb-8 max-w-md">You must be signed in to access the C-Suite Command Center and historical execution data.</p>
+                <p className="text-zinc-900 mb-8 max-w-md">You must be signed in to access the Executive Portfolio Command Center and historical execution data.</p>
                 <Link href="/sign-in" className="px-6 py-3 bg-white text-black font-bold rounded-lg hover:bg-zinc-200 transition-colors">Authenticate</Link>
             </div>
         );
@@ -147,7 +147,7 @@ export default function IntelligenceDashboard() {
                 <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <Activity className="text-cyan-900 font-extrabold font-semibold" size={18} />
-                        <span className="font-bold tracking-tight text-lg text-zinc-900">C-Suite Command Center <span className="text-zinc-950 font-bold font-normal">| Strategic Diagnostics</span></span>
+                        <span className="font-bold tracking-tight text-lg text-zinc-900">Executive Portfolio Command Center <span className="text-zinc-950 font-bold font-normal">| Strategic Diagnostics</span></span>
                     </div>
                     <Link href="/system" className="text-xs font-bold font-medium font-mono text-zinc-900 hover:text-zinc-900 transition-colors uppercase tracking-widest px-4 py-2 bg-white/5 rounded-md hover:bg-white/10 border border-zinc-400">
                         Exit to Hub

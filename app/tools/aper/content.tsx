@@ -413,7 +413,7 @@ function APERToolContent() {
                                     toolName="AI Payroll Efficiency Ratio (APER)"
                                     toolSlug="aper"
                                     score={Math.round(results.multiplier * 10)}
-                                    scoreLabel={results.multiplier < 2.5 ? 'Negative Carry R&D Drag' : 'High-Leverage R&D Capital'}
+                                    scoreLabel={results.multiplier < 2.5 ? 'Negative Carry R&D Drag' : 'High-Efficiency R&D Capital'}
                                     metrics={[
                                         { label: 'Revenue Multiple (ARR / Comp)', value: `${results.multiplier.toFixed(2)}x`, isNegative: results.multiplier < 2.5, subtext: 'ARR generated per dollar of R&D payroll' },
                                         { label: 'Total Engineering Comp', value: formatMoney(results.totalEngCost), isNegative: true, subtext: 'Fully loaded payroll burn' },
@@ -443,7 +443,7 @@ function APERToolContent() {
                                         {
                                             step: '03',
                                             title: 'Capital Allocation Governance',
-                                            directive: 'Tie developer tooling investments to verified ARR leverage rather than vanity commit metrics.',
+                                            directive: 'Tie developer tooling investments to verified ARR yield rather than vanity commit metrics.',
                                             actionItem: 'Present APER quarterly to the Board Compensation and Audit Committees.'
                                         }
                                     ]}

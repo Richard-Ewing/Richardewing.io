@@ -103,7 +103,7 @@ export default function CareerPathingContent() {
             <div className="mb-12 border-b border-zinc-400 pb-8 mt-12">
                 <div className="flex items-center gap-3 mb-4">
                     <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                    <h1 className="text-3xl font-bold text-zinc-950 tracking-tight">C-Suite Career Architecture Funnel</h1>
+                    <h1 className="text-3xl font-bold text-zinc-950 tracking-tight">Executive Career Architecture Funnel</h1>
                 </div>
                 <p className="text-zinc-900 max-w-2xl leading-relaxed">
                     The tech market has permanently shifted from a growth-at-all-costs model to an efficiency-first mandate. Run this 3-step diagnostic to map your exact A-to-Z learning trajectory.

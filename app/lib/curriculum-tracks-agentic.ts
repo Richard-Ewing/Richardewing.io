@@ -387,7 +387,7 @@ agenticGovernanceModules['engineering-economics/1-16'] = {
 agenticGovernanceModules['engineering-economics/1-17'] = {
     moduleId: '1-17',
     title: 'Escaping the AI Hype Cycle: Subscription Audits & Answer Engine Moats',
-    description: 'Eliminate the Software Subscription Trap, leverage the Interview Protocol, schedule overnight compute queues, and capture high-intent buyers as AI answer engines replace 10 blue links.',
+    description: 'Eliminate the Software Subscription Trap, use the Interview Protocol, schedule overnight compute queues, and capture high-intent buyers as AI answer engines replace 10 blue links.',
     trackName: t1,
     productId: singleProduct,
     takeaways: [
@@ -408,11 +408,11 @@ agenticGovernanceModules['engineering-economics/1-17'] = {
         ),
         l(
             'Lesson 2: The Interview Protocol & Overnight Compute',
-            'Casual chat-box prompting fails because models optimize for polite agreeableness: making wild assumptions and returning corporate filler. The Interview Protocol forces cognitive rigor: instruct the assistant, "Before you draft a single sentence, interview me. Ask me five specific questions about my budget, target audience, and architectural constraints." Furthermore, eliminate daytime screen babysitting: queue heavy multi-document codebase synthesis and API transcript processing at 5:00 PM to run in background server queues overnight while you sleep.',
+            'Casual chat-box prompting fails because models optimize for polite agreeableness: making wild assumptions and returning corporate filler. The Interview Protocol forces cognitive rigor: instruct the assistant, "Before you draft a single sentence, interview me. Ask me five specific questions about my budget, target audience, and architectural constraints." Second, eliminate daytime screen babysitting: queue heavy multi-document codebase synthesis and API transcript processing at 5:00 PM to run in background server queues overnight while you sleep.',
             [
                 d('Cognitive Posture', 'Shifting the model from an agreeable text generator to an interrogating technical auditor.', 'Target: 5 mandatory clarifying questions before code generation.'),
                 d('Constraint Clarification', 'Forcing human engineers to explicitly define budgets, performance targets, and boundary rules.', 'Benchmark: 10x reduction in prompt rework cycles.'),
-                d('Overnight Batch Leverage', 'Offloading token-heavy repository evaluations to off-peak compute hours.', 'Efficiency: Zero wasted daytime engineering wait time.')
+                d('Overnight Batch Processing', 'Offloading token-heavy repository evaluations to off-peak compute hours.', 'Efficiency: Zero wasted daytime engineering wait time.')
             ],
             'Use the Interview Protocol to plan your next technical RFC. Mandate 5 constraint questions before accepting any proposed architecture draft.'
         ),
@@ -569,7 +569,7 @@ agenticGovernanceModules['agentic-governance/58-5'] = {
         ),
         l(
             'Lesson 3: State Drift & Explainability vs. Recoverability',
-            'Persistent agents carry reusable instructions, skills, and memory across runs. Over time, accumulated context becomes stale: a temporary workaround used during an urgent project crisis becomes part of the permanent context a recurring task uses, causing the agent to act on outdated assumptions that no longer match reality. Furthermore, explainability is not recoverability. An assistant that produces a clear log explaining why it corrupted your financial spreadsheet still does not repair the spreadsheet. Because enterprise SaaS lacks unified cross-application rollback, operators are forced into forensic auditing.',
+            'Persistent agents carry reusable instructions, skills, and memory across runs. Over time, accumulated context becomes stale: a temporary workaround used during an urgent project crisis becomes part of the permanent context a recurring task uses, causing the agent to act on outdated assumptions that no longer match reality. Equally dangerous, explainability is not recoverability. An assistant that produces a clear log explaining why it corrupted your financial spreadsheet still does not repair the spreadsheet. Because enterprise SaaS lacks unified cross-application rollback, operators are forced into forensic auditing.',
             [
                 d('State Drift', 'Accumulation of temporary workarounds, stale memory, and outdated schema context across runs.', 'Target: Enforce stateless session resets and periodic memory purging for recurring tasks.'),
                 d('Explainability Fallacy', 'Detailed execution summaries only document failure; they do not reverse unauthorized changes.', 'Benchmark: Mandate automated rollback mechanisms for every write-capable agent.'),
@@ -639,7 +639,7 @@ agenticGovernanceModules['agentic-governance/58-6'] = {
 agenticGovernanceModules['agentic-governance/58-7'] = {
     moduleId: '58-7',
     title: 'The Supervisory Review Queue: Mitigating the Air Traffic Control Tax',
-    description: 'Learn why agent delegation shifts human work to supervisory review drag, detect silent syntax failures in code, and enforce the 4 operational laws for bounded agent leverage.',
+    description: 'Learn why agent delegation shifts human work to supervisory review drag, detect silent syntax failures in code, and enforce the 4 operational laws for bounded agent efficiency.',
     trackName: t58,
     productId: singleProduct,
     takeaways: [
@@ -660,9 +660,9 @@ agenticGovernanceModules['agentic-governance/58-7'] = {
         ),
         l(
             'Lesson 2: Silent Syntax Failures in Software Engineering',
-            'Where agents provide real operational leverage is inside isolated engineering loops: monitoring CI pipelines, checking deployment health, verifying endpoint responses, and auditing DOM accessibility. That work has clear mechanical pass/fail criteria. The catastrophic failure mode occurs during architectural refactoring: an agent updates an API route to optimize performance, writes clean code that compiles with zero linter errors, but breaks database consistency by bypassing an unstated validation rule. The agent fails silently with perfect syntax. Catching these subtle bugs requires hours of senior debugging.',
+            'Where agents provide real operational value is inside isolated engineering loops: monitoring CI pipelines, checking deployment health, verifying endpoint responses, and auditing DOM accessibility. That work has clear mechanical pass/fail criteria. The catastrophic failure mode occurs during architectural refactoring: an agent updates an API route to optimize performance, writes clean code that compiles with zero linter errors, but breaks database consistency by bypassing an unstated validation rule. The agent fails silently with perfect syntax. Catching these subtle bugs requires hours of senior debugging.',
             [
-                d('Mechanical Leverage', 'Background agents excel at bounded checks with explicit binary verification criteria.', 'Target: Automate CI triage, accessibility contrast checks, and package lockfile auditing.'),
+                d('Mechanical Efficiency', 'Background agents excel at bounded checks with explicit binary verification criteria.', 'Target: Automate CI triage, accessibility contrast checks, and package lockfile auditing.'),
                 d('Silent Syntax Failures', 'Syntactically valid code that compiles cleanly but violates unstated business or architectural logic.', 'Danger: Compiling code does not equal correct domain architecture.'),
                 d('Refactoring Boundaries', 'Autonomous agents must never be granted unsupervised refactoring authority over multi-table database interactions.', 'Rule: Mandate human architectural review on all state-mutating code changes.')
             ],

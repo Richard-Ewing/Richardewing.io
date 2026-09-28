@@ -55,7 +55,7 @@ export const DeliverablePreview = () => {
                             <div>
                                 <span className="text-[10px] font-mono text-purple-300 font-bold uppercase tracking-widest">SAMPLE DOCUMENT OUTPUT</span>
                                 <h4 className="text-lg font-bold text-white">R&D Capital & AI Unit Economics Audit</h4>
-                                <p className="text-xs text-zinc-300 font-medium">Prepared for: Board of Directors & C-Suite</p>
+                                <p className="text-xs text-zinc-300 font-medium">Prepared for: Board of Directors, CEO, CTO & CFO</p>
                             </div>
                             <span className="px-2.5 py-1 rounded text-[10px] font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold">
                                 CONFIDENTIAL

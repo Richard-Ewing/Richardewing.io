@@ -33,7 +33,7 @@ tracks26Modules['idps/26-2'] = m('26-2', 'Agentic Code Scaffolding', 'Autonomous
             [
                 'A traditional IDP provisions the infrastructure correctly. An "AI-Native IDP" provisions the infrastructure and simultaneously primes the contextual intelligence required to continuously maintain it. When the platform generates a microservice, it automatically generates the hyper-specific AI context bounds for the repository.', 
                 'It instantly writes the `.cursorrules` file or the `copilot-instructions.md` file, strictly defining the precise architectural boundaries, linting styles, and API contract obligations natively into the repo prompt space.',
-                'Furthermore, it injects an autonomous "Pre-Flight Security Review Agent" directly into the CI/CD pipeline, guaranteeing that every line of code deployed from the Platform is fiercely audited for hallucinated bugs or insecure logic prior to human review.'
+                'On top of that, it injects an autonomous "Pre-Flight Security Review Agent" directly into the CI/CD pipeline, guaranteeing that every line of code deployed from the Platform is audited for bugs or insecure logic prior to human review.'
             ],
             [
                 d('Prompt Context Priming rate', 'The percentage of new repositories instantly pre-configured with organizational AI context files.', 'Must be 100% via Platform'),

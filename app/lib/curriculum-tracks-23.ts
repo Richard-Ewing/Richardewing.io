@@ -201,7 +201,7 @@ tracks23Modules['agentic-automation/23-9'] = m('23-9', 'Enterprise Data Sovereig
             [
                 'In standard SaaS, isolating Tenant A\'s SQL data from Tenant B relies on trivial `WHERE tenant_id = X` clauses. In Retrieval-Augmented Generation (RAG), failing to isolate vector records results in the LLM hallucinating Tenant A\'s highly confidential financial data into Tenant B\'s chat window.', 
                 'This single architectural failure guarantees extreme GDPR violations, massive corporate lawsuits, and immediate enterprise churn. Vector databases must aggressively deploy "Namespace" isolation or hard logical partitions ensuring embeddings physically cannot cross boundaries.',
-                'Furthermore, Personal Identifiable Information (PII) must be deterministically scrambled via classical Regex/NLP pipelines *before* it is ever transmitted to the embedding provider or the LLM.'
+                'Equally important, Personal Identifiable Information (PII) must be deterministically scrubbed with local regex or tokenization pipelines *before* it ever reaches the embedding model.'
             ],
             [
                 d('Vector Namespace Defensibility', 'The cryptographic assurance that a cosine search cannot access foreign tenant memory.', 'Absolute Zero Leakage'),

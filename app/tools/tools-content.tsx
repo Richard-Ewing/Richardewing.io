@@ -794,7 +794,7 @@ export default function ToolsContent() {
               <div>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="h-px bg-zinc-300 flex-1"></div>
-                  <h2 className="text-sm font-bold text-zinc-950 tracking-widest uppercase text-indigo-700">Executive &amp; C-Suite Leadership (Directors On Up)</h2>
+                  <h2 className="text-sm font-bold text-zinc-950 tracking-widest uppercase text-indigo-700">Executive &amp; Board Leadership (Directors On Up)</h2>
                   <div className="h-px bg-zinc-300 flex-1"></div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

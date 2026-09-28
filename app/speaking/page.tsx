@@ -34,7 +34,7 @@ const keynotes = [
         description: 'Why probabilistic LLM firewalls fail at scale, and how VPC-level policy-as-code enforces hard context boundaries, prevents data exfiltration, and satisfies regulatory audit standards.',
     },
     {
-        title: 'The AI Economist: A New Role for the C-Suite',
+        title: 'The AI Economist: The New Role for Executive Strategy',
         target: 'Board Directors, CEOs, Managing Directors',
         description: 'Why traditional financial models misprice software development in the generative era, and how leading technology companies track Revenue Per Engineer and AI Provider Efficiency Ratios.',
     },

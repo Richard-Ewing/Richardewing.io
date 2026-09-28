@@ -21,7 +21,7 @@ tracks27Modules['synthetic-data/27-1'] = m('27-1', 'The Exhaustion of Human Data
                 question: 'What is the primary architectural advantage of Synthetic Data generation for enterprise fine-tuning?',
                 options: ['It uses less electricity', 'It allows you to programmatically spawn infinite, perfect examples of wildly rare statistical edge-cases, completely removing the reliance on slow, organic data collection', 'It prevents users from complaining', 'It makes the neural network hallucinate less natively'],
                 correctIndex: 1,
-                explanation: 'Real-world data is extremely messy, heavily biased, and often lacks crucial edge cases. Synthetic data is generated algorithmically to ensure absolute perfection and balance across the entire training spectrum.'
+                explanation: 'Real-world data is messy, biased, and often lacks rare edge cases. Synthetic data is generated algorithmically to ensure strong balance across the training spectrum.'
             }
         )
     ], '/vault/curriculum/tracks/synthetic-data/27-2', undefined, 'live'

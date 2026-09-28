@@ -105,7 +105,7 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
                 l('Lesson 1: The Cost of Delay (CoD)', 'If you ship a feature 3 months late that generates $50,000/mo, your Cost of Delay is $150,000. Prioritization isn\'t just about ROI, it\'s about minimizing the financial penalty of waiting.', [
                     d('User-Business Value', 'The immediate revenue or retention saved.', 'Calculate in $ARR'),
                     d('Time Criticality', 'How the value decays over time (e.g., missing a holiday launch).', 'High / Medium / Low'),
-                    d('Risk Reduction', 'Value gained by unblocking future work.', 'Crucial for platform teams')
+                    d('Risk Reduction', 'Value gained by unblocking future work.', 'High priority for platform teams')
                 ], 'Calculate the Cost of Delay in pure dollars for your top 3 roadmap items.'),
                 l('Lesson 2: WSJF (Weighted Shortest Job First)', 'WSJF = Cost of Delay / Job Size. A massive feature with high value might lose to a tiny feature with medium value because the tiny feature ships immediately and starts compounding returns.', [
                     d('Job Duration (Size)', 'Estimated engineering effort.', 'Use T-shirt sizing translated to weeks'),
@@ -129,7 +129,7 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
                 ], 'Model the profitability of your AI feature assuming 5%, 50%, and 99th percentile usage patterns.'),
                 l('Lesson 2: Probabilistic UX Design', 'Standard software is deterministic. AI is probabilistic. PMs must design UI that handles failure gracefully, embraces latency, and sets clear user expectations for hallucinations.', [
                     d('Time-to-First-Token (TTFT)', 'The speed at which generated content begins streaming.', 'Target: < 1.5 seconds'),
-                    d('Feedback Loops', 'Thumbs up/down buttons immediately feeding back to fine-tunes.', 'Crucial for RLHF'),
+                    d('Feedback Loops', 'Thumbs up/down buttons immediately feeding back to fine-tunes.', 'Required for active RLHF'),
                     d('Graceful Degradation', 'How the UI reacts when the LLM returns an error or timeout.', 'Always provide a manual fallback')
                 ], 'Redesign an AI feature interface to include streaming, explicit feedback buttons, and a fallback state.'),
                 l('Lesson 3: RAG vs. Fine-Tuning Strategy', 'Deciding whether your feature requires Retrieval-Augmented Generation (giving the LLM search results) or Fine-Tuning (teaching the model your tone/format). They solve entirely different problems.', [
@@ -154,7 +154,7 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
                 ], 'Design the architecture for an internal AI portal. What models will it use, and how will it ensure zero retention?'),
                 l('Lesson 3: Governing the Adoption Curve', 'Transitioning from Shadow AI to Governed AI requires cultural engineering. You must prove to employees that the secure internal tools are just as capable as the public tools they were using illicitly.', [
                     d('Adoption Metrics', 'Tracking the usage of internal governed AI tools vs. blocked attempts to external tools.', 'Target: > 90% internal adoption'),
-                    d('Amnesty Programs', 'Allowing employees to report their Shadow AI usage without penalty.', 'Crucial for discovering hidden workflows'),
+                    d('Amnesty Programs', 'Allowing employees to report their Shadow AI usage without penalty.', 'Essential for discovering hidden workflows'),
                     d('Continuous Monitoring', 'Regularly scanning the network for new, unauthorized AI endpoints.', 'The AI market shifts weekly')
                 ], 'Draft a company-wide communication announcing an Amnesty Program for Shadow AI usage and introducing the new Governed AI portal.')
             ]
@@ -332,7 +332,7 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
                 ], 'Upgrade a naive RAG pipeline design by inserting a Semantic Router and a Cohere Reranker node.'),
                 l('Lesson 3: The Cost of Predictivity', 'Every token matters. If your RAG pipeline injects 10k tokens of context for every query, you are burning capital for minor accuracy gains. The curve of accuracy vs cost is logarithmic.', [
                     d('Token Efficiency', 'Information density of the retrieved chunks.', 'Summarize chunks before inference'),
-                    d('Context Window Waste', 'Paying for tokens the LLM ignores (Lost in the Middle).', 'Inject crucial facts at start/end of prompt'),
+                    d('Context Window Waste', 'Paying for tokens the LLM ignores (Lost in the Middle).', 'Inject key facts at start/end of prompt'),
                     d('Caching Layer Returns', 'Semantic caching for repetitive queries.', 'Identical queries hit Redis, bypassing OpenAI')
                 ], 'Calculate the daily cost of a 10K prompt context at 100 queries/min. Redesign the flow to reduce costs by 50%.')
             ]

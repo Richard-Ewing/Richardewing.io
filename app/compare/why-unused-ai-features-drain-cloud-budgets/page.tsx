@@ -102,7 +102,7 @@ export default function WhyUnusedAIFeaturesDrainCloudBudgetsPage() {
                         <div className="p-5 bg-zinc-50 rounded-xl border border-zinc-200">
                             <h3 className="font-bold text-zinc-900 text-base mb-1">1. The Promotion Problem</h3>
                             <p className="text-sm text-zinc-700 leading-relaxed">
-                                The product manager or engineering lead who spearheaded the flashy AI initiative six months ago was promoted for launching it. Sunsetting the feature feels like an admission that the project was commercially hollow.
+                                The product manager or engineering lead who pitched and shipped the flashy AI initiative six months ago was promoted for launching it. Sunsetting the feature feels like an admission that the project was commercially hollow.
                             </p>
                         </div>
                         <div className="p-5 bg-zinc-50 rounded-xl border border-zinc-200">

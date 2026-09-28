@@ -662,7 +662,7 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     },
     whatChanges: {
       engineering: 'Focus on full-stack capabilities and AI agent orchestration rather than narrow specialization.',
-      finance: 'Reallocate budget from sprawling coordination layers and inflated headcounts into elite talent compensation and high-leverage tooling.',
+      finance: 'Reallocate budget from sprawling coordination layers and inflated headcounts into top engineering compensation and high-efficiency tooling.',
       product: 'Equip small teams with end-to-end ownership of product domains.',
       security: 'Implement resilient deterministic governance to manage the vast output of small teams.'
     },

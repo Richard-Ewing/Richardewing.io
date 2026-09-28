@@ -33,7 +33,7 @@ tracks22Modules['culture/22-2'] = m('22-2', 'Hero Worship Toxicity', 'Single Poi
             [
                 'Many organizations mistakenly celebrate the "Hero Engineer" - the single individual who works 80-hour weeks, possesses all domain knowledge of a complex legacy system, and routinely saves the company during weekend outages. In reality, a Hero Engineer is the single most dangerous architectural risk to the firm\'s balance sheet.', 
                 'When an architecture fundamentally relies on one individual\'s tribal knowledge, that system possesses a "Bus Factor" of 1. If that engineer resigns, falls ill, or demands a massive raise, the company\'s operational capacity drops to absolute zero.',
-                'Elite engineering cultures actively punish individual data siloing. Outstanding performance is not defined by how crucial you are to an isolated system, but by how rapidly you can document and distribute your expertise to completely deprecate your own indispensability.'
+                'Elite engineering cultures actively punish individual data siloing. Outstanding performance is not defined by how indispensable you make yourself to an isolated system, but by how rapidly you can document and distribute your expertise to eliminate single points of failure.'
             ],
             [
                 d('Organizational Bus Factor', 'The exact number of critical developers required to depart before an entire product line halts.', 'Must be rigorously > 3'),

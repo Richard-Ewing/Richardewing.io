@@ -727,7 +727,7 @@ export const subFrameworks: Record<string, SubFramework> = {
                 name: 'The Supervisory Review Queue',
                 definition: 'The operational engineering reality that autonomous agent delegation does not erase developer workloads, but transfers human labor from keyboard typing into an air traffic control supervisory review queue, demanding bounded tasks, read-only triggers, and junior draft posture.',
                 problem: 'Unconstrained agent delegation replaces to-do lists with review debt queues; senior engineers waste 40% of their capacity auditing plausible, slightly flawed code with perfect syntax.',
-                whyItMatters: 'Enforcing the 4 operating rules prevents review fatigue, eliminates silent architectural failures, and ensures agents deliver net productivity leverage.',
+                whyItMatters: 'Enforcing the 4 operating rules prevents review fatigue, eliminates silent architectural failures, and ensures agents deliver net productivity gains.',
                 provenance: ['Built In publications', 'Beehiiv Laboratory', 'Curriculum Track 1', 'Code Review Bottleneck Calculator'],
                 implementation: {
                     research: ['I Put AI Agents in Charge of My To-Do List. Here\'s What They Actually Took Off My Plate.', 'The Software Factory Is Running 24/7 (And Nobody Wants the Output)'],
@@ -968,7 +968,7 @@ export const subFrameworks: Record<string, SubFramework> = {
         badgeColor: 'bg-emerald-50 text-emerald-900 border-emerald-200',
         icon: '💼',
         overview: 'Go-to-market and revenue leadership standard for CROs, VPs of Sales, and CS Directors: structuring AI consumption contracts, defending net revenue retention, and adapting sales quotas.',
-        livedExperience: 'When enterprise sales teams pitch AI-powered SaaS solutions, enterprise procurement officers routinely demand proof of ROI before agreeing to multi-year contracts. Furthermore, as customers deploy internal AI agents that reduce their human headcount, annual contract renewals face 20-30% seat contraction. The CRO AI Monetization Standard equips revenue organizations to replace vulnerable per-seat contracts with hybrid platform-fee plus consumption-credit commitments, establishing net revenue retention expansion even as client headcounts streamline.',
+        livedExperience: 'When enterprise sales teams pitch AI-powered SaaS solutions, enterprise procurement officers routinely demand proof of ROI before agreeing to multi-year contracts. Even more urgently, as customers deploy internal AI agents that reduce their human headcount, annual contract renewals face 20-30% seat contraction. The CRO AI Monetization Standard equips revenue organizations to replace vulnerable per-seat contracts with hybrid platform-fee plus consumption-credit commitments, establishing net revenue retention expansion even as client headcounts streamline.',
         concepts: [
             {
                 id: 'PAIG-CRO-001',

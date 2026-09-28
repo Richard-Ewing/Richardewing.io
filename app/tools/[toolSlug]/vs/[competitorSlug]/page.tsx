@@ -118,7 +118,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                         {competitor.name}
                      </h1>
                      <p className="text-xl text-zinc-950 font-bold max-w-3xl mx-auto leading-relaxed">
-                        If your goal is standard operational telemetry, {competitor.name} is sufficient. If you are a C-Suite executive quantifying millions in enterprise liability, deploy {tool.toolName}.
+                        If your goal is standard operational telemetry, {competitor.name} is sufficient. If you are a CEO, CTO, or CFO quantifying millions in enterprise liability, deploy {tool.toolName}.
                      </p>
                 </div>
 
@@ -193,7 +193,7 @@ export default async function CombatComparisonPage({ params }: { params: Promise
                                     <td className="p-6 text-center text-emerald-500 font-bold">✅</td>
                                 </tr>
                                 <tr className="hover:bg-white/5 transition-colors">
-                                    <td className="p-6 text-zinc-900">C-Suite Executive PDF Briefing Generation</td>
+                                    <td className="p-6 text-zinc-900">Board & Executive PDF Briefing Generation</td>
                                     <td className="p-6 text-center text-red-500 font-bold">❌</td>
                                     <td className="p-6 text-center text-emerald-500 font-bold">✅</td>
                                 </tr>

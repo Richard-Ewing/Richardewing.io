@@ -108,7 +108,7 @@ export function populateTrack28(modules: Record<string, CurriculumModule>) {
     modules['ai-economist/28-5'] = m(
         '28-5',
         '28.5 The Boardroom Presentation: Communicating AI ROI to Investors',
-        'Master the communication frameworks required to secure funding, justify R&D audits, and translate engineering realities to the C-Suite.',
+        'Master the communication frameworks required to secure funding, justify R&D audits, and translate engineering realities to the CEO, CFO, and Board of Directors.',
         'The AI Economist Masterclass',
         [
             'The Translation Gap: Why engineers speak in tokens and latency, while the Board speaks in EBITDA and CapEx.',

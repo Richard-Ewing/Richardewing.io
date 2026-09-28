@@ -281,7 +281,7 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
             ),
             l(
                 'Lesson 3: State Drift & Explainability vs. Recoverability',
-                'Persistent agents carry reusable instructions, skills, and memory across runs. Over time, accumulated context becomes stale: a temporary workaround used during an urgent project crisis becomes part of the permanent context a recurring task uses, causing the agent to act on outdated assumptions that no longer match reality. Furthermore, explainability is not recoverability. An assistant that produces a clear log explaining why it corrupted your financial spreadsheet still does not repair the spreadsheet. Because enterprise SaaS lacks unified cross-application rollback, operators are forced into forensic auditing.',
+                'Persistent agents carry reusable instructions, skills, and memory across runs. Over time, accumulated context becomes stale: a temporary workaround used during an urgent project crisis becomes part of the permanent context a recurring task uses, causing the agent to act on outdated assumptions that no longer match reality. Equally dangerous, explainability is not recoverability. An assistant that produces a clear log explaining why it corrupted your financial spreadsheet still does not repair the spreadsheet. Because enterprise SaaS lacks unified cross-application rollback, operators are forced into forensic auditing.',
                 [
                     d('State Drift', 'Accumulation of temporary workarounds, stale memory, and outdated schema context across runs.', 'Target: Enforce stateless session resets and periodic memory purging for recurring tasks.'),
                     d('Explainability Fallacy', 'Detailed execution summaries only document failure; they do not reverse unauthorized changes.', 'Benchmark: Mandate automated rollback mechanisms for every write-capable agent.'),
@@ -348,7 +348,7 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
     modules['agent-governance/21-5'] = m(
         '21-5',
         'The Supervisory Review Queue: Mitigating the Air Traffic Control Tax',
-        'Learn why agent delegation shifts human work to supervisory review drag, detect silent syntax failures in code, and enforce the 4 operational laws for bounded agent leverage.',
+        'Learn why agent delegation shifts human work to supervisory review drag, detect silent syntax failures in code, and enforce the 4 operational laws for bounded agent efficiency.',
         'AI Agent Governance & Trust Infrastructure',
         [
             'Quantify the air traffic control tax of auditing plausible machine-generated drafts and code',
@@ -368,9 +368,9 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
             ),
             l(
                 'Lesson 2: Silent Syntax Failures in Software Engineering',
-                'Where agents provide real operational leverage is inside isolated engineering loops: monitoring CI pipelines, checking deployment health, verifying endpoint responses, and auditing DOM accessibility. That work has clear mechanical pass/fail criteria. The catastrophic failure mode occurs during architectural refactoring: an agent updates an API route to optimize performance, writes clean code that compiles with zero linter errors, but breaks database consistency by bypassing an unstated validation rule. The agent fails silently with perfect syntax. Catching these subtle bugs requires hours of senior debugging.',
+                'Where agents provide real operational value is inside isolated engineering loops: monitoring CI pipelines, checking deployment health, verifying endpoint responses, and auditing DOM accessibility. That work has clear mechanical pass/fail criteria. The catastrophic failure mode occurs during architectural refactoring: an agent updates an API route to optimize performance, writes clean code that compiles with zero linter errors, but breaks database consistency by bypassing an unstated validation rule. The agent fails silently with perfect syntax. Catching these subtle bugs requires hours of senior debugging.',
                 [
-                    d('Mechanical Leverage', 'Background agents excel at bounded checks with explicit binary verification criteria.', 'Target: Automate CI triage, accessibility contrast checks, and package lockfile auditing.'),
+                    d('Mechanical Efficiency', 'Background agents excel at bounded checks with explicit binary verification criteria.', 'Target: Automate CI triage, accessibility contrast checks, and package lockfile auditing.'),
                     d('Silent Syntax Failures', 'Syntactically valid code that compiles cleanly but violates unstated business or architectural logic.', 'Danger: Compiling code does not equal correct domain architecture.'),
                     d('Refactoring Boundaries', 'Autonomous agents must never be granted unsupervised refactoring authority over multi-table database interactions.', 'Rule: Mandate human architectural review on all state-mutating code changes.')
                 ],
@@ -488,10 +488,10 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
     ], [
         l('Presence as Credibility Capital', [
             'Executive presence isn\'t about commanding a room with force of personality. It\'s about the credibility premium  -  the measurable increase in decision acceptance, negotiation outcomes, and organizational follow-through that comes from being perceived as competent, confident, and trustworthy.',
-            'Research from the Center for Talent Innovation shows that executive presence accounts for 26% of what it takes to get promoted to senior leadership. In economic terms, the presence premium can be worth $200K-$500K in total compensation difference between leaders with strong vs. weak executive presence at the VP/C-suite level.',
+            'Research from the Center for Talent Innovation shows that executive presence accounts for 26% of what it takes to get promoted to senior leadership. In economic terms, the presence premium can be worth $200K-$500K in total compensation difference between leaders with strong vs. weak executive presence at the VP and CEO/COO/CFO level.',
             'The three pillars of executive presence are: Gravitas (40%  -  how you think and decide), Communication (30%  -  how you speak and present), and Appearance (30%  -  how you show up). Each is trainable, measurable, and has a direct economic impact on your career trajectory and organizational outcomes.',
         ], [
-            d('Presence Premium', 'Compensation difference between leaders with strong vs weak executive presence', '$200K-$500K at VP/C-suite level'),
+            d('Presence Premium', 'Compensation difference between leaders with strong vs weak executive presence', '$200K-$500K at VP and Corporate Officer level'),
             d('Decision Acceptance Rate', 'Percentage of proposals approved by leaders with strong presence', '2-3x higher than leaders with weak presence'),
             d('Promotion Correlation', 'How much executive presence contributes to senior promotion decisions', '26% of the promotion decision per CTI research'),
         ], 'Rate yourself on the three pillars of executive presence (Gravitas, Communication, Appearance) on a 1-10 scale. Identify your lowest pillar and create a 30-day improvement plan.'),
@@ -525,14 +525,14 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
     for (let i = 0; i < track23Modules.length; i++) {
         const mod = track23Modules[i];
         const next = i < track23Modules.length - 1 ? track23Modules[i + 1].id : undefined;
-        modules[`executive-presence/${mod.id}`] = m(mod.id, mod.title, `Master ${mod.title.toLowerCase()} with frameworks designed for senior leaders and aspiring C-suite executives.`, 'Executive Presence & Board Leadership', [
+        modules[`executive-presence/${mod.id}`] = m(mod.id, mod.title, `Master ${mod.title.toLowerCase()} with frameworks designed for senior leaders and aspiring corporate executives (CEOs, CTOs, CFOs).`, 'Executive Presence & Board Leadership', [
             `Develop executive-level capability in ${mod.title.toLowerCase()}`,
             'Build board-ready presentations and frameworks',
             'Apply proven executive leadership models',
             'Create measurable career advancement strategies',
         ], [
             l(`Executive Mastery: ${mod.title}`, `An executive-level deep dive into ${mod.title.toLowerCase()}, providing the strategic frameworks, communication tools, and governance models that define top-tier technical leadership.`, [
-                d('Executive Metric', 'Primary measurement for this domain', 'C-suite benchmark'),
+                d('Executive Metric', 'Primary measurement for this domain', 'Executive benchmark'),
                 d('Career Impact', 'Expected impact on career trajectory', 'Measurable within 6 months'),
                 d('Organizational Value', 'Value created for the organization', 'Quantified in annual terms'),
             ], `Create an executive-level action plan for ${mod.title.toLowerCase()} including 30/60/90-day milestones.`),

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         'COO agentic automation diagnostic',
         'Managing Director enterprise AI',
         'Autonomous enterprise organizational design',
-        'C-Suite AI readiness benchmark'
+        'Executive AI readiness benchmark'
     ],
     alternates: {
         canonical: 'https://www.richardewing.io/tools/executive-ai-operating-model',

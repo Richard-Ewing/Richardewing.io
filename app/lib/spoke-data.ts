@@ -284,7 +284,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'incident-management-cost',
                     questionHeadline: 'How do you accurately measure the true financial cost of a Sev-1 incident?',
-                    answerHtml: `<p>Incident Management is often viewed purely as an operational function (PagerDuty alerts, war rooms, post-mortems). However, at the C-suite level, incidents are unbudgeted financial liabilities that actively destroy enterprise valuation through SLA penalties, churn, and diverted R&D capital.</p>
+                    answerHtml: `<p>Incident Management is often viewed purely as an operational function (PagerDuty alerts, war rooms, post-mortems). However, to the CEO, CFO, and Board of Directors, incidents are unbudgeted financial liabilities that actively destroy enterprise valuation through SLA penalties, churn, and diverted R&D capital.</p>
         <h3 class="text-xl font-bold mt-8 mb-4">The Hidden OpEx Drain</h3>
         <p>The cost of downtime isn't just lost transactions during the outage window. It is the cost of context switching. When a Sev-1 incident occurs, you are pulling 10 highly paid engineers off feature development. After the incident, the subsequent post-mortem and remediation sprint completely derails the roadmap.</p>
         <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
@@ -744,7 +744,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionHeadline: 'How do you calculate the financial Return on AI Investment (ROAI)?',
                     answerHtml: `<p>ROAI (Return on AI Investment) is the critical financial metric for evaluating generative models, autonomous agents, and RAG pipelines. Unlike traditional software ROI, which is deterministic, ROAI must account for probabilistic outcomes, hallucination costs, and inference burn rates.</p>
         <h3 class="text-xl font-bold mt-8 mb-4">The Token Economics Trap</h3>
-        <p>Many enterprises build a prototype using GPT-4 that works brilliantly in a demo. They fail to realize that running that model on 10,000 customer tickets a day will cost $80,000/month in API inference fees. Furthermore, if the model hallucinates on 5% of those tickets, the manual human remediation cost (or brand damage) often vastly exceeds the cost savings of the automation itself.</p>
+        <p>Many enterprises build a prototype using GPT-4 that works brilliantly in a demo. They fail to realize that running that model on 10,000 customer tickets a day will cost $80,000/month in API inference fees. Even worse, if the model hallucinates on 5% of those tickets, the manual human remediation cost (or brand damage) often vastly exceeds the cost savings of the automation itself.</p>
         <div class="my-10 p-8 rounded-2xl bg-gradient-to-br from-zinc-50 to-zinc-100 border border-zinc-200 shadow-sm relative overflow-hidden">
             <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
             <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-900 mb-6 flex items-center gap-2">
@@ -950,7 +950,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                         <h3 class="text-xl font-bold mt-8 mb-4">The 90-Day Remediation Plan</h3>
                         <ul class="list-disc pl-6 space-y-2 mb-6">
                             <li><strong>Day 1-30:</strong> Extract the Style Matrix. Before generating output, run a pre-processing prompt that analyzes the user's data and extracts 5 explicit formatting rules (e.g., vocabulary grade level, paragraph length, punctuation quirks).</li>
-                            <li><strong>Day 31-60:</strong> Implement Negative Few-Shot Prompting. LLMs learn faster from what they are told *not* to do. Explicitly ban words like "explore", "testament", and "tapestry" in the system prompt.</li>
+                            <li><strong>Day 31-60:</strong> Implement Negative Few-Shot Prompting. LLMs learn faster from what they are told *not* to do. Explicitly ban generic corporate filler and conversational fluff in the system prompt.</li>
                             <li><strong>Day 61-90:</strong> If prompt engineering fails to override the RLHF flattening, you must advance to PEFT (Parameter-Efficient Fine-Tuning). Use LoRA to fine-tune a small model exclusively on the user's stylistic data to permanently bake the behavioral cadence into the model weights.</li>
                         </ul>
                     `,
@@ -1570,8 +1570,8 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
         }
     },
     {
-        topicSlug: 'c-suite-financials',
-        topicName: 'C-Suite Financials & M&A Diligence',
+        topicSlug: 'executive-financials',
+        topicName: 'CEO & CFO Financials & M&A Diligence',
         personas: {
             'cfo-investor': [
                 {
