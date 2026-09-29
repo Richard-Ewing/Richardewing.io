@@ -2,8 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound, permanentRedirect } from 'next/navigation';
 import { getModule, getAllModuleSlugs, type CurriculumModule } from '@/lib/curriculum-data';
-
-// generateStaticParams removed to allow dynamic auth() rendering at request time
+export async function generateStaticParams() {
+    return getAllModuleSlugs().map(slug => ({
+        slug: slug.split('/')
+    }));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
     const { slug } = await params;
@@ -93,7 +96,6 @@ function getCurriculumRelatedResearch(mod: CurriculumModule): CorpusArticle[] {
     return combined.slice(0, 4);
 }
 
-import { auth } from '@clerk/nextjs/server';
 import PayGate from '@/app/components/PayGate';
 import CurriculumQuiz from '@/app/components/curriculum/CurriculumQuiz';
 import ActionChecklist from '@/app/components/curriculum/ActionChecklist';
@@ -373,21 +375,10 @@ export default async function DynamicModulePage({ params }: { params: Promise<{ 
     const mod = getModule(slug.join('/'));
     if (!mod) permanentRedirect('/vault/curriculum/tracks');
     
-    // Auth check for Stripe Access
-    const { userId, sessionClaims } = await auth();
-    const metadata: any = sessionClaims?.metadata || {};
-    const hasSubscription = metadata.has_yearly_subscription === true;
-    const unlockedItems = (metadata.unlocked_items as string[]) || [];
-
     // Bypass PayGate for Track 15 (Free Playbooks) and Track 17 (Comparisons). Track 16 remains paid.
+    // Client-side PayGate checks Clerk user subscription for paid tracks dynamically in the browser.
     const isExplicitlyFreeTrack = (slug[0] === 'guides' && mod.moduleId.startsWith('15-')) || slug[0] === 'comparisons';
-
-    const hasAccess = isExplicitlyFreeTrack || (!!userId && (
-        hasSubscription || 
-        unlockedItems.includes(`module_${mod.moduleId}`) || 
-        unlockedItems.includes(`module_track_${slug[0]}`) || 
-        unlockedItems.includes(`module_${slug[0]}`)
-    ));
+    const hasAccess = isExplicitlyFreeTrack;
 
     // Access Lesson 1 of EVERY module universally to drive high conversion to the PayGate.
     const isFreePreviewModule = true;

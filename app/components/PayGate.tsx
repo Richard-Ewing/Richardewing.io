@@ -1,3 +1,7 @@
+'use client';
+
+import React from 'react';
+import { useUser } from '@clerk/nextjs';
 import { Lock, BookOpen, Zap, ShieldCheck } from 'lucide-react';
 import CheckoutButton from './client/CheckoutButton';
 import { PRODUCTS } from '@/lib/products';
@@ -20,7 +24,22 @@ interface PayGateProps {
 }
 
 export default function PayGate({ moduleTitle, moduleId, trackName, totalLessons, previewLessonIndex = 0, hasAccess = false, showPreview = true, children, nextHref, productId = 'single_track', bundleId = 'full_curriculum', lessons = [], status = 'live' }: PayGateProps) {
-    if (hasAccess) {
+    const { user, isLoaded } = useUser();
+    const metadata: any = user?.publicMetadata || {};
+    const hasSubscription = metadata.has_yearly_subscription === true || metadata.is_team_admin === true;
+    const unlockedItems = (metadata.unlocked_items as string[]) || [];
+    const trackNumber = moduleId.split('-')[0];
+
+    const isClientUnlocked = isLoaded && !!user && (
+        hasSubscription ||
+        unlockedItems.includes(`module_${moduleId}`) ||
+        unlockedItems.includes(`module_track_${trackNumber}`) ||
+        unlockedItems.includes(`module_${trackNumber}`)
+    );
+
+    const effectiveAccess = hasAccess || isClientUnlocked;
+
+    if (effectiveAccess) {
         return <>{children}</>;
     }
 

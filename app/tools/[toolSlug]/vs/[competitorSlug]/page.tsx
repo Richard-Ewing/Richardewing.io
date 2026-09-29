@@ -57,6 +57,15 @@ export async function generateMetadata(
     };
 }
 
+export async function generateStaticParams() {
+    return COMBAT_SEO_MATRIX.flatMap((tool) =>
+        tool.competitors.map((competitor) => ({
+            toolSlug: tool.toolSlug,
+            competitorSlug: competitor.slug,
+        }))
+    );
+}
+
 export default async function CombatComparisonPage({ params }: { params: Promise<{ toolSlug: string; competitorSlug: string }> }) {
     const resolvedParams = await params;
     const match = getMatch(resolvedParams.toolSlug, resolvedParams.competitorSlug);

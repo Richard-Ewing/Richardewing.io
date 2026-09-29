@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 
-export const dynamic = 'force-dynamic';
-
 export const metadata: Metadata = {
     title: 'FAQ  -  AI Advisory, Exogram & Frameworks',
     description: 'Frequently asked questions about AI Economics, advisory services, diagnostic tools, and the Exogram platform.',

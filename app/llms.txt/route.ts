@@ -1,6 +1,5 @@
 import { glossaryTerms } from '../glossary/terms';
-
-export const dynamic = 'force-dynamic';
+export const revalidate = 86400;
 
 export async function GET() {
     const glossaryByCategory: Record<string, typeof glossaryTerms> = {};
