@@ -9,5 +9,9 @@
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
-  }
+  },
+  "routes": [
+    { "pattern": "richardewing.io/*", "zone_name": "richardewing.io" },
+    { "pattern": "www.richardewing.io/*", "zone_name": "richardewing.io" }
+  ]
 }

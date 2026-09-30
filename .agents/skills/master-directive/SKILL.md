@@ -100,10 +100,11 @@ If an error or failure occurs at any stage:
 
 ---
 
-## 8. Production Deployment & Repository Hygiene
+## 8. Cloudflare Edge Production Deployment & Repository Hygiene
 
-1. **Mandatory Live Production Deployment**: Validate builds (`npm run build`). EVERY task modifying code or content MUST automatically execute `git add -A`, `git commit -m "..."`, and `git push origin main` to deploy to live production. The user should NEVER have to remind or prompt the agent to deploy. Always verify `git status` is clean before ending the turn.
-2. **Workspace Hygiene Standard**: Keep the repository root immaculate. All temporary scripts, intermediate JSON outputs, and diagnostic logs MUST be routed to `.scratch/` or `<appDataDir>\brain\<conversation-id>/scratch/`. Never commit `tmp_*.js` or debug `.txt` files to the root directory.
+1. **Mandatory Live Cloudflare Deployment**: Validate builds (`npm run build`). EVERY task modifying code or content MUST deploy directly to Cloudflare edge using `npx wrangler deploy` (or `npm run deploy:worker`), followed by `git add -A`, `git commit -m "..."`, and `git push origin main` to maintain code synchronization. The user should NEVER have to remind or prompt the agent to deploy. Always verify `git status` is clean before ending the turn.
+2. **Cloudflare Hosting Invariant**: `richardewing.io` and `www.richardewing.io` are hosted on Cloudflare Workers with Static Assets (`@opennextjs/cloudflare` + `wrangler.jsonc`). NEVER deploy to Vercel. NEVER execute Vercel CLI commands.
+3. **Workspace Hygiene Standard**: Keep the repository root immaculate. All temporary scripts, intermediate JSON outputs, and diagnostic logs MUST be routed to `.scratch/` or `<appDataDir>\brain\<conversation-id>/scratch/`. Never commit `tmp_*.js` or debug `.txt` files to the root directory.
 
 ---
 

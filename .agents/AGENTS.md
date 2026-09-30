@@ -32,10 +32,11 @@ All essays, landing page copy, explanations, curriculum modules, and documentati
 
 ---
 
-## 4. Next.js App Router Architectural Invariants
-1. **Server Components by Default**: Keep page routes as Server Components; define page-level metadata.
-2. **Client Component Isolation**: Isolate interactive hooks, Framer Motion, and state in leaf components with `"use client"`.
-3. **Prerender Safety**: Guard all browser APIs and `localStorage` with `useEffect` or `typeof window !== 'undefined'`.
+## 4. Cloudflare Hosting & Next.js App Router Invariants
+1. **Cloudflare Edge Hosting (MANDATORY)**: `richardewing.io` is hosted exclusively on **Cloudflare** via `@opennextjs/cloudflare` and `wrangler.jsonc` (Cloudflare Workers with Static Assets routed to `richardewing.io/*` and `www.richardewing.io/*`). NEVER assume Vercel hosting. NEVER execute Vercel CLI commands (`vercel`, `npx vercel`).
+2. **Server Components by Default**: Keep page routes as Server Components; define page-level metadata.
+3. **Client Component Isolation**: Isolate interactive hooks, Framer Motion, and state in leaf components with `"use client"`.
+4. **Prerender Safety**: Guard all browser APIs and `localStorage` with `useEffect` or `typeof window !== 'undefined'`.
 
 ---
 
@@ -46,7 +47,7 @@ Before executing any request, dynamically classify the user prompt into one of t
 ### Track 1: Execution Pipeline (Code Mutations)
 * **Trigger**: Any turn where files are created, modified, refactored, or deleted.
 * **Mandatory Turn-End Gate (UNBREAKABLE)**:
-  `node .agents/scripts/verify-qa.mjs` (Zero Secret Keys + Zero Em-Dashes + Root Hygiene) $\longrightarrow$ `npm run build` $\longrightarrow$ `git add -A` $\longrightarrow$ `git commit -m "..."` $\longrightarrow$ `git push origin main` $\longrightarrow$ `git status` (verify clean).
+  `node .agents/scripts/verify-qa.mjs` (Zero Secret Keys + Zero Em-Dashes + Root Hygiene) $\longrightarrow$ `npm run build` $\longrightarrow$ `npx wrangler deploy` (Live Cloudflare Edge Deployment) $\longrightarrow$ `git add -A` $\longrightarrow$ `git commit -m "..."` $\longrightarrow$ `git push origin main` $\longrightarrow$ `git status` (verify clean).
   You MUST NEVER end a code-modifying turn without running this full deployment sequence. Never ask the user to remind you. Physically enforced by the `turn-end-deploy-guard` Stop hook in `hooks.json`.
 
 ### Track 2: Strategic & Advisory Pipeline (No Code Mutations)
