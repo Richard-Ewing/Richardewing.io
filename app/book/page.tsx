@@ -124,53 +124,51 @@ export default function BookPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-sky-500 selection:text-slate-950">
+    <main className="min-h-screen bg-[#F5F0EB] text-zinc-950 pt-28 pb-24 selection:bg-purple-200 selection:text-purple-950">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       {/* Hero Header */}
-      <section className="relative pt-24 pb-16 sm:pt-32 sm:pb-20 border-b border-slate-900 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-900/20 via-slate-950 to-slate-950 pointer-events-none" />
-        
+      <section className="relative pb-16 sm:pb-20 border-b border-zinc-300 overflow-hidden">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-semibold uppercase tracking-wider mb-6">
-            <BookOpen className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-100 border border-purple-300 text-purple-900 text-xs font-semibold uppercase tracking-wider mb-6">
+            <BookOpen className="w-3.5 h-3.5 text-purple-700" />
             Official Book Release (2026)
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
+          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-zinc-950 max-w-4xl mx-auto leading-tight">
             The Pragmatic AI Builder
           </h1>
 
-          <p className="mt-4 text-xl sm:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-400 font-bold max-w-3xl mx-auto">
+          <p className="mt-4 text-xl sm:text-2xl text-purple-700 font-bold max-w-3xl mx-auto">
             How Anyone Can Build, Price, and Launch a Profitable AI Business (With or Without a Tech Background)
           </p>
 
-          <p className="mt-6 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-base sm:text-lg text-zinc-700 max-w-2xl mx-auto leading-relaxed">
             Stop watching from the sidelines. Learn how to direct AI coding assistants like a General Contractor, protect your profit margins with smart caching, claim $500k in free cloud credits, and close paying customers before you write code.
           </p>
 
           {/* Value Props Bar */}
           <div className="mt-8 flex flex-wrap justify-center gap-3 text-xs font-semibold">
-            <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">
+            <span className="px-3.5 py-1.5 rounded-lg bg-white border border-zinc-300 text-zinc-800 shadow-sm">
               No CS Degree Required
             </span>
-            <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">
+            <span className="px-3.5 py-1.5 rounded-lg bg-white border border-zinc-300 text-zinc-800 shadow-sm">
               Includes $7.5k SOW Template
             </span>
-            <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">
+            <span className="px-3.5 py-1.5 rounded-lg bg-white border border-zinc-300 text-zinc-800 shadow-sm">
               $500k Cloud Credit Guide
             </span>
-            <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">
+            <span className="px-3.5 py-1.5 rounded-lg bg-white border border-zinc-300 text-zinc-800 shadow-sm">
               12 Multi-Model Prompts
             </span>
           </div>
 
           {/* Opt-in Box */}
-          <div className="mt-10 max-w-md mx-auto p-6 rounded-2xl bg-slate-900/90 border border-sky-500/30 shadow-2xl">
-            <p className="text-xs font-bold text-sky-400 uppercase tracking-widest mb-3">
+          <div className="mt-10 max-w-md mx-auto p-6 rounded-2xl bg-white border border-zinc-300 shadow-md">
+            <p className="text-xs font-bold text-purple-900 uppercase tracking-widest mb-3">
               Get Early Draft Chapters &amp; Launch Notice
             </p>
             <NewsletterForm
@@ -178,7 +176,7 @@ export default function BookPage() {
               placeholder="Enter your email address..."
               extraData={{ tool: 'pragmatic_ai_builder_book' }}
             />
-            <span className="text-[11px] text-slate-500 mt-2 block">
+            <span className="text-[11px] text-zinc-500 mt-2 block">
               Instant access to Chapter 1 preview and the $500k Credit Checklist upon signing up.
             </span>
           </div>
@@ -188,10 +186,10 @@ export default function BookPage() {
       {/* The 4 Sections Breakdown */}
       <section className="py-16 max-w-5xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-950">
             Inside the 17-Chapter Operating Manual
           </h2>
-          <p className="text-sm text-slate-400 mt-2 max-w-2xl mx-auto">
+          <p className="text-sm text-zinc-600 mt-2 max-w-2xl mx-auto">
             Structured into four tactical sections that guide you step-by-step from zero to incorporated, cash-flowing software business.
           </p>
         </div>
@@ -200,22 +198,22 @@ export default function BookPage() {
           {chapters.map((sec, idx) => (
             <div 
               key={idx}
-              className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between"
+              className="p-6 rounded-2xl bg-white border border-zinc-300 hover:border-purple-300 shadow-sm hover:shadow transition-all flex flex-col justify-between"
             >
               <div>
-                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-sky-400 block mb-1">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-700 block mb-1">
                   Part {idx + 1}
                 </span>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-lg font-bold text-zinc-950 mb-2">
                   {sec.section}
                 </h3>
-                <p className="text-xs text-slate-400 mb-4 leading-relaxed">
+                <p className="text-xs text-zinc-600 mb-4 leading-relaxed">
                   {sec.desc}
                 </p>
-                <ul className="space-y-2 text-xs text-slate-300">
+                <ul className="space-y-2 text-xs text-zinc-700">
                   {sec.items.map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-sky-400 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-purple-600 shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -227,36 +225,36 @@ export default function BookPage() {
       </section>
 
       {/* Free Assets Included Callout */}
-      <section className="py-12 bg-slate-900/40 border-y border-slate-900">
+      <section className="py-12 bg-[#ECE5DD]/50 border-y border-zinc-300">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
+            <h2 className="text-xl sm:text-2xl font-bold text-zinc-950 mb-4">
               Over $585,000 in Included Toolkits &amp; Financial Rails
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed">
               This is not abstract theory. Every copy comes with ready-to-use production assets:
             </p>
           </div>
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
-            <div className="p-5 rounded-xl bg-slate-950 border border-slate-800">
-              <ShieldCheck className="w-5 h-5 text-emerald-400 mb-2" />
-              <h4 className="text-sm font-bold text-white">Production Legal Contracts</h4>
-              <p className="text-xs text-slate-400 mt-1">
+            <div className="p-5 rounded-xl bg-white border border-zinc-300 shadow-sm">
+              <ShieldCheck className="w-5 h-5 text-emerald-600 mb-2" />
+              <h4 className="text-sm font-bold text-zinc-950">Production Legal Contracts</h4>
+              <p className="text-xs text-zinc-600 mt-1">
                 Copy-paste $7,500 Forensic Audit SOW and $500 Strategic Pilot Agreement with automatic SaaS conversion terms.
               </p>
             </div>
-            <div className="p-5 rounded-xl bg-slate-950 border border-slate-800">
-              <Cpu className="w-5 h-5 text-sky-400 mb-2" />
-              <h4 className="text-sm font-bold text-white">Smart Caching Architecture</h4>
-              <p className="text-xs text-slate-400 mt-1">
+            <div className="p-5 rounded-xl bg-white border border-zinc-300 shadow-sm">
+              <Cpu className="w-5 h-5 text-purple-600 mb-2" />
+              <h4 className="text-sm font-bold text-zinc-950">Smart Caching Architecture</h4>
+              <p className="text-xs text-zinc-600 mt-1">
                 Complete Redis vector semantic cache (0.92 cosine) Python class that slashes repetitive inference bills by 50%.
               </p>
             </div>
-            <div className="p-5 rounded-xl bg-slate-950 border border-slate-800">
-              <DollarSign className="w-5 h-5 text-amber-400 mb-2" />
-              <h4 className="text-sm font-bold text-white">$500k Capital Directory</h4>
-              <p className="text-xs text-slate-400 mt-1">
+            <div className="p-5 rounded-xl bg-white border border-zinc-300 shadow-sm">
+              <DollarSign className="w-5 h-5 text-amber-600 mb-2" />
+              <h4 className="text-sm font-bold text-zinc-950">$500k Capital Directory</h4>
+              <p className="text-xs text-zinc-600 mt-1">
                 Direct step-by-step approval recipes for Google ($350k), Microsoft ($150k), AWS ($25k), and SAM.gov SBIR grants.
               </p>
             </div>
@@ -266,7 +264,7 @@ export default function BookPage() {
 
       {/* FAQ Section */}
       <section className="py-16 max-w-3xl mx-auto px-4 sm:px-6">
-        <h2 className="text-2xl font-bold text-white text-center mb-8">
+        <h2 className="text-2xl font-bold text-zinc-950 text-center mb-8">
           Frequently Asked Questions
         </h2>
         <div className="space-y-4">
@@ -285,20 +283,20 @@ export default function BookPage() {
         </div>
 
         {/* Links to ecosystem */}
-        <div className="mt-12 pt-8 border-t border-slate-900 flex flex-wrap justify-center gap-4 text-xs font-semibold">
-          <Link href="/curriculum" className="text-sky-400 hover:text-sky-300 transition-colors">
+        <div className="mt-12 pt-8 border-t border-zinc-300 flex flex-wrap justify-center gap-4 text-xs font-semibold">
+          <Link href="/curriculum" className="text-purple-700 hover:text-purple-900 transition-colors">
             Explore the 20-Day Curriculum →
           </Link>
-          <span className="text-slate-700">•</span>
-          <Link href="/vault/blueprints" className="text-sky-400 hover:text-sky-300 transition-colors">
+          <span className="text-zinc-400">•</span>
+          <Link href="/vault/blueprints" className="text-purple-700 hover:text-purple-900 transition-colors">
             View Code &amp; Legal Vault →
           </Link>
-          <span className="text-slate-700">•</span>
-          <Link href="/programs/ai-product-builder" className="text-sky-400 hover:text-sky-300 transition-colors">
+          <span className="text-zinc-400">•</span>
+          <Link href="/programs/ai-product-builder" className="text-purple-700 hover:text-purple-900 transition-colors">
             Live 4-Week Cohort →
           </Link>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

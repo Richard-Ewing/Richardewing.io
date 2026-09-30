@@ -387,9 +387,9 @@ export default function CurriculumMindmapViewer() {
   );
 
   return (
-    <div className="w-full space-y-12 text-slate-100">
+    <div className="w-full space-y-12 text-zinc-900">
       {/* Week Selector Tabs */}
-      <div className="flex flex-wrap items-center gap-2 bg-slate-900/90 border border-slate-800 p-3 rounded-2xl">
+      <div className="flex flex-wrap items-center gap-2 bg-white/90 border border-zinc-300 p-3 rounded-2xl shadow-sm backdrop-blur-sm">
         {curriculumData.map(week => (
           <button
             key={week.weekNum}
@@ -397,10 +397,10 @@ export default function CurriculumMindmapViewer() {
               setActiveWeek(week.weekNum);
               setExpandedSprint(week.sprints[0]?.day || null);
             }}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all ${
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
               activeWeek === week.weekNum
-                ? "bg-sky-500 text-slate-950 shadow-lg shadow-sky-500/20"
-                : "bg-slate-950/60 text-slate-400 hover:text-white border border-slate-800"
+                ? "bg-purple-700 text-white shadow-md shadow-purple-700/20"
+                : "bg-white text-zinc-700 hover:text-zinc-950 hover:bg-zinc-100 border border-zinc-300"
             }`}
           >
             <Calendar className="w-3.5 h-3.5" />
@@ -410,36 +410,36 @@ export default function CurriculumMindmapViewer() {
       </div>
 
       {/* Week Overview Banner */}
-      <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-3">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+      <div className="bg-white border border-zinc-300 rounded-2xl p-6 sm:p-8 space-y-3 shadow-sm">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-zinc-200 pb-4">
           <div>
-            <span className="text-[10px] font-semibold uppercase tracking-wider text-sky-400 font-mono">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-purple-700 font-mono">
               Cohort Module: {currentModule.weekNum}
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-950 font-grotesk">
               {currentModule.theme}
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 mt-1">
+            <p className="text-xs sm:text-sm text-zinc-600 mt-1 font-medium">
               {currentModule.subtitle}
             </p>
           </div>
         </div>
 
-        <div className="p-4 bg-slate-950/60 rounded-xl border border-slate-800/80 flex items-start gap-3 text-xs">
-          <Target className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+        <div className="p-4 bg-purple-50/70 rounded-xl border border-purple-200 flex items-start gap-3 text-xs">
+          <Target className="w-4 h-4 text-purple-700 shrink-0 mt-0.5" />
           <div>
-            <span className="font-semibold text-emerald-400 uppercase tracking-wider">
+            <span className="font-bold text-purple-900 uppercase tracking-wider">
               Core Milestone Deliverable:{" "}
             </span>
-            <span className="text-slate-200">{currentModule.milestone}</span>
+            <span className="text-zinc-800 font-medium">{currentModule.milestone}</span>
           </div>
         </div>
       </div>
 
       {/* Sprints Accordion */}
       <div className="space-y-4">
-        <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400 flex items-center gap-2">
-          <Clock className="w-4 h-4 text-sky-400" />
+        <h3 className="text-sm font-bold uppercase tracking-wider text-zinc-600 flex items-center gap-2 font-mono">
+          <Clock className="w-4 h-4 text-purple-700" />
           Daily Sprint Playbooks &amp; Live Sessions
         </h3>
 
@@ -448,56 +448,56 @@ export default function CurriculumMindmapViewer() {
           return (
             <div
               key={sprint.day}
-              className="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden transition-all hover:border-slate-700"
+              className="bg-white border border-zinc-300 rounded-2xl overflow-hidden transition-all hover:border-purple-300 shadow-sm"
             >
               <button
                 onClick={() => setExpandedSprint(isOpen ? null : sprint.day)}
-                className="w-full p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-left"
+                className="w-full p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-left cursor-pointer"
               >
                 <div>
                   <div className="flex items-center gap-2.5 mb-1.5">
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-sky-500/10 text-sky-400 border border-sky-500/30">
+                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-purple-100 text-purple-800 border border-purple-200">
                       {sprint.day}
                     </span>
-                    <span className="text-xs font-mono text-slate-400">{sprint.hours}</span>
+                    <span className="text-xs font-mono text-zinc-500 font-semibold">{sprint.hours}</span>
                   </div>
-                  <h4 className="text-lg font-bold text-white group-hover:text-sky-300 transition-colors">
+                  <h4 className="text-lg font-bold text-zinc-950 group-hover:text-purple-700 transition-colors font-grotesk">
                     {sprint.title}
                   </h4>
-                  <p className="text-xs text-slate-300 mt-0.5">
+                  <p className="text-xs text-zinc-600 mt-0.5 font-medium">
                     {sprint.focus}
                   </p>
                 </div>
 
                 <div className="flex items-center gap-3 shrink-0">
-                  <span className="text-xs font-semibold text-sky-400 hidden sm:inline">
+                  <span className="text-xs font-bold text-purple-700 hidden sm:inline">
                     {isOpen ? "Collapse" : "View Tactics"}
                   </span>
-                  <div className="p-2 rounded-xl bg-slate-800 text-slate-400">
+                  <div className="p-2 rounded-xl bg-zinc-100 text-zinc-600 hover:bg-zinc-200">
                     {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                   </div>
                 </div>
               </button>
 
               {isOpen && (
-                <div className="p-6 bg-slate-950 border-t border-slate-800 space-y-4 animate-in fade-in duration-200">
+                <div className="p-6 bg-zinc-50 border-t border-zinc-200 space-y-4 animate-in fade-in duration-200">
                   <div>
-                    <h5 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                    <h5 className="text-xs font-bold uppercase tracking-wider text-zinc-500 mb-2 font-mono">
                       Tactical Execution Steps:
                     </h5>
                     <ul className="space-y-2">
                       {sprint.tactics.map((tactic, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5 text-xs text-slate-300 leading-relaxed">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-sky-400 shrink-0 mt-0.5" />
+                        <li key={idx} className="flex items-start gap-2.5 text-xs text-zinc-700 leading-relaxed font-medium">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-purple-700 shrink-0 mt-0.5" />
                           <span>{tactic}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="p-3.5 bg-slate-900/90 rounded-xl border border-sky-500/30 text-xs">
-                    <span className="font-semibold text-sky-400 uppercase tracking-wider">Required Deliverable: </span>
-                    <span className="text-slate-200">{sprint.deliverable}</span>
+                  <div className="p-3.5 bg-white rounded-xl border border-purple-200 text-xs shadow-sm">
+                    <span className="font-bold text-purple-800 uppercase tracking-wider">Required Deliverable: </span>
+                    <span className="text-zinc-800 font-medium">{sprint.deliverable}</span>
                   </div>
                 </div>
               )}
@@ -507,16 +507,16 @@ export default function CurriculumMindmapViewer() {
       </div>
 
       {/* 17-Term Technical Founder Glossary */}
-      <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+      <div className="bg-white border border-zinc-300 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-zinc-200 pb-4">
           <div>
-            <span className="text-[10px] font-semibold uppercase tracking-wider text-sky-400 font-mono">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-purple-700 font-mono">
               Knowledge Repository
             </span>
-            <h3 className="text-xl font-bold text-white">
+            <h3 className="text-xl font-bold text-zinc-950 font-grotesk">
               The Full-Stack Founder Technical Glossary
             </h3>
-            <p className="text-xs text-slate-400 mt-1">
+            <p className="text-xs text-zinc-600 mt-1 font-medium">
               Core terminology bridging modern AI engineering with corporate finance and GTM.
             </p>
           </div>
@@ -526,17 +526,17 @@ export default function CurriculumMindmapViewer() {
             value={searchTerm}
             onChange={e => setSearchTerm(e.target.value)}
             placeholder="Filter terms..."
-            className="px-3.5 py-1.5 bg-slate-950 border border-slate-800 rounded-xl text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-sky-500 w-full sm:w-60"
+            className="px-3.5 py-1.5 bg-white border border-zinc-300 rounded-xl text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-purple-600 w-full sm:w-60 shadow-sm"
           />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {filteredGlossary.map((item, idx) => (
-            <div key={idx} className="p-4 bg-slate-950/60 rounded-xl border border-slate-800/80 space-y-1.5">
-              <h4 className="text-xs font-bold font-mono text-sky-400">
+            <div key={idx} className="p-4 bg-zinc-50 rounded-xl border border-zinc-200 space-y-1.5">
+              <h4 className="text-xs font-bold font-mono text-purple-900">
                 {item.term}
               </h4>
-              <p className="text-xs text-slate-300 leading-relaxed">
+              <p className="text-xs text-zinc-700 leading-relaxed font-medium">
                 {item.def}
               </p>
             </div>

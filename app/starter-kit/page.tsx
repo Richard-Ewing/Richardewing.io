@@ -94,22 +94,20 @@ export default function StarterKitPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-sky-500 selection:text-slate-950">
+    <main className="min-h-screen bg-[#F5F0EB] text-zinc-950 pt-28 pb-24 selection:bg-purple-200 selection:text-purple-950">
       {/* Header */}
-      <div className="relative pt-24 pb-12 sm:pt-32 sm:pb-16 border-b border-slate-900 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-900/20 via-slate-950 to-slate-950 pointer-events-none" />
-        
+      <div className="relative pb-12 sm:pb-16 border-b border-zinc-300 overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Mail className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-100 border border-purple-300 text-purple-900 text-xs font-semibold uppercase tracking-wider mb-4">
+            <Mail className="w-3.5 h-3.5 text-purple-700" />
             Free 5-Day Email Crash Course
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-3xl mx-auto">
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-950 max-w-3xl mx-auto">
             The AI Product Builder&apos;s Starter Kit
           </h1>
 
-          <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-zinc-700 max-w-2xl mx-auto leading-relaxed">
             5 daily technical breakdowns delivered straight to your inbox: cognitive model division, semantic caching code, high-ticket consulting offers, and silent launch mechanics.
           </p>
 
@@ -123,22 +121,22 @@ export default function StarterKitPage() {
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                   placeholder="Enter your work email address..."
-                  className="flex-1 px-4 py-3.5 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-sky-500 transition-colors"
+                  className="flex-1 px-4 py-3.5 bg-white border border-zinc-300 rounded-xl text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-purple-600 focus:ring-1 focus:ring-purple-600 shadow-sm transition-colors"
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3.5 rounded-xl bg-sky-400 hover:bg-sky-300 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-sky-400/20 shrink-0"
+                  className="px-6 py-3.5 rounded-xl bg-purple-700 hover:bg-purple-800 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm shrink-0"
                 >
                   Get Starter Kit
                 </button>
               </form>
             ) : (
-              <div className="p-4 bg-emerald-950/40 border border-emerald-500/40 rounded-2xl flex items-center justify-center gap-2 text-emerald-300 text-xs font-semibold animate-in fade-in">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              <div className="p-4 bg-emerald-50 border border-emerald-300 rounded-2xl flex items-center justify-center gap-2 text-emerald-900 text-xs font-semibold animate-in fade-in">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 Lesson 1 has been dispatched to {email}!
               </div>
             )}
-            <span className="text-[11px] text-slate-500 mt-2 block">
+            <span className="text-[11px] text-zinc-500 mt-2 block">
               100% technical insights. Zero spam. Unsubscribe with 1 click anytime.
             </span>
           </div>
@@ -146,12 +144,12 @@ export default function StarterKitPage() {
       </div>
 
       {/* Course Curriculum Breakdown */}
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-6">
         <div className="text-center mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-white">
+          <h2 className="text-xl sm:text-2xl font-bold text-zinc-950">
             What You Will Learn in the 5-Day Sprint
           </h2>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-zinc-600 mt-1">
             Each email includes actionable Python code snippets, prompt templates, and step-by-step systems.
           </p>
         </div>
@@ -162,7 +160,7 @@ export default function StarterKitPage() {
             return (
               <div 
                 key={lesson.day}
-                className="bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden transition-all hover:border-slate-700"
+                className="bg-white border border-zinc-300 rounded-2xl overflow-hidden transition-all hover:border-purple-300 shadow-sm hover:shadow"
               >
                 <button
                   onClick={() => setExpandedDay(isOpen ? null : lesson.day)}
@@ -170,34 +168,34 @@ export default function StarterKitPage() {
                 >
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-sky-500/10 text-sky-400 border border-sky-500/30">
+                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-purple-100 text-purple-800 border border-purple-200">
                         {lesson.day}
                       </span>
-                      <span className="text-xs font-mono text-slate-400">{lesson.subject}</span>
+                      <span className="text-xs font-mono text-zinc-500">{lesson.subject}</span>
                     </div>
-                    <h3 className="text-base sm:text-lg font-bold text-white">
+                    <h3 className="text-base sm:text-lg font-bold text-zinc-950">
                       {lesson.title}
                     </h3>
                   </div>
 
-                  <div className="p-2 rounded-xl bg-slate-800 text-slate-400 shrink-0">
+                  <div className="p-2 rounded-xl bg-zinc-100 text-zinc-600 shrink-0">
                     {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="p-6 bg-slate-950 border-t border-slate-800 space-y-3 text-xs text-slate-300 animate-in fade-in duration-200">
-                    <p className="leading-relaxed text-slate-200">
+                  <div className="p-6 bg-[#F5F0EB]/60 border-t border-zinc-200 space-y-3 text-xs text-zinc-700 animate-in fade-in duration-200">
+                    <p className="leading-relaxed text-zinc-800">
                       {lesson.summary}
                     </p>
                     <div className="space-y-1.5 pt-2">
-                      <span className="font-semibold text-sky-400 uppercase tracking-wider text-[11px]">
+                      <span className="font-semibold text-purple-900 uppercase tracking-wider text-[11px]">
                         Key Takeaways:
                       </span>
                       <ul className="space-y-1.5">
                         {lesson.takeaways.map((t, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-slate-300">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-sky-400 shrink-0 mt-0.5" />
+                          <li key={idx} className="flex items-start gap-2 text-zinc-700">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-purple-600 shrink-0 mt-0.5" />
                             <span>{t}</span>
                           </li>
                         ))}
@@ -211,23 +209,23 @@ export default function StarterKitPage() {
         </div>
 
         {/* Bottom CTA to Full Cohort */}
-        <div className="mt-12 p-8 bg-slate-900/90 rounded-2xl border border-sky-500/30 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <div className="mt-12 p-8 bg-white rounded-2xl border border-zinc-300 shadow-md flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
           <div>
-            <h3 className="text-lg font-bold text-white">
+            <h3 className="text-lg font-bold text-zinc-950">
               Want the Full 4-Week Cohort with 1:1 Code Audits?
             </h3>
-            <p className="text-xs text-slate-400 mt-1 max-w-md">
+            <p className="text-xs text-zinc-600 mt-1 max-w-md">
               Join 10 to 15 technical founders building alongside Richard Ewing with live sessions, legal templates, and 10-customer silent launch mechanics.
             </p>
           </div>
           <Link
             href="/apply"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-400 hover:bg-sky-300 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-sky-400/20 shrink-0"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-purple-700 hover:bg-purple-800 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm shrink-0"
           >
             Apply for Pilot ($1,500) <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

@@ -21,31 +21,32 @@ export const metadata: Metadata = {
 
 export default function ApplyPage() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-sky-500 selection:text-slate-950">
+    <main className="min-h-screen bg-[#F5F0EB] text-zinc-950 pt-28 pb-24 selection:bg-purple-200 selection:text-purple-950">
       {/* Header */}
-      <div className="relative pt-24 pb-8 sm:pt-32 sm:pb-12 border-b border-slate-900 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-900/20 via-slate-950 to-slate-950 pointer-events-none" />
+      <div className="relative pt-12 pb-8 sm:pt-16 sm:pb-12 border-b border-zinc-300 overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-200/40 rounded-full blur-3xl pointer-events-none -z-10" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-200/30 rounded-full blur-3xl pointer-events-none -z-10" />
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-semibold uppercase tracking-wider mb-3">
-            <ShieldCheck className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-100 border border-purple-300 text-purple-900 text-xs font-semibold uppercase tracking-wider mb-3 font-mono">
+            <ShieldCheck className="w-3.5 h-3.5 text-purple-700" />
             Admissions Application
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-950 font-grotesk">
             Join The AI Product Builder Cohort
           </h1>
 
-          <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-zinc-700 max-w-xl mx-auto leading-relaxed font-medium">
             Please complete the 18-question diagnostic intake below. Applications are reviewed within 24 hours.
           </p>
         </div>
       </div>
 
       {/* Main Intake Form */}
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
         <IntakeApplicationForm />
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }

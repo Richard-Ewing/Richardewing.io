@@ -312,19 +312,19 @@ export default function PromptLibraryViewer() {
   const modelTabs = ['All', 'Perplexity Pro', 'Claude 3.5 Sonnet', 'Kimi', 'GPT-4o', 'Sequential Workflow'];
 
   return (
-    <div className="w-full space-y-8 text-slate-100">
+    <div className="w-full space-y-8 text-zinc-900">
       {/* Top Search & Filter Bar */}
-      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 bg-slate-900/90 border border-slate-800 p-4 rounded-2xl">
+      <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 bg-white border border-zinc-300 p-4 rounded-2xl shadow-sm">
         {/* Model Tabs */}
-        <div className="flex flex-wrap items-center gap-1.5 bg-slate-950 p-1 rounded-xl border border-slate-800">
+        <div className="flex flex-wrap items-center gap-1.5 bg-zinc-100 p-1 rounded-xl border border-zinc-200">
           {modelTabs.map(tab => (
             <button
               key={tab}
               onClick={() => setActiveModel(tab)}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all ${
                 activeModel === tab
-                  ? "bg-sky-500 text-slate-950 shadow-md"
-                  : "text-slate-400 hover:text-white"
+                  ? "bg-purple-700 text-white shadow-sm"
+                  : "text-zinc-600 hover:text-zinc-900"
               }`}
             >
               {tab}
@@ -334,13 +334,13 @@ export default function PromptLibraryViewer() {
 
         {/* Search */}
         <div className="relative flex-1 max-w-sm">
-          <Search className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-zinc-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
             placeholder="Search prompts by use case, variables, model..."
-            className="w-full pl-10 pr-4 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-sky-500 transition-colors"
+            className="w-full pl-10 pr-4 py-2 bg-white border border-zinc-300 rounded-xl text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-purple-600 focus:ring-1 focus:ring-purple-600 transition-colors"
           />
         </div>
       </div>
@@ -352,33 +352,33 @@ export default function PromptLibraryViewer() {
           return (
             <div 
               key={item.id}
-              className="bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden transition-all hover:border-slate-700"
+              className="bg-white border border-zinc-300 rounded-2xl overflow-hidden transition-all hover:border-purple-300 shadow-sm hover:shadow"
             >
               {/* Header Card */}
               <div className="p-6">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
                   <div className="flex items-center gap-2.5">
                     <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider border ${
-                      item.model.includes('Claude') ? "bg-amber-500/10 border-amber-500/30 text-amber-300" :
-                      item.model.includes('Perplexity') ? "bg-sky-500/10 border-sky-500/30 text-sky-300" :
-                      item.model.includes('Kimi') ? "bg-rose-500/10 border-rose-500/30 text-rose-300" :
-                      item.model.includes('GPT') ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-300" :
-                      "bg-purple-500/10 border-purple-500/30 text-purple-300"
+                      item.model.includes('Claude') ? "bg-amber-50 border-amber-200 text-amber-900" :
+                      item.model.includes('Perplexity') ? "bg-sky-50 border-sky-200 text-sky-900" :
+                      item.model.includes('Kimi') ? "bg-rose-50 border-rose-200 text-rose-900" :
+                      item.model.includes('GPT') ? "bg-emerald-50 border-emerald-200 text-emerald-900" :
+                      "bg-purple-50 border-purple-200 text-purple-900"
                     }`}>
                       {item.model}
                     </span>
-                    <span className="text-slate-500 text-xs">•</span>
-                    <span className="text-xs font-mono text-slate-400">{item.category}</span>
+                    <span className="text-zinc-400 text-xs">•</span>
+                    <span className="text-xs font-mono text-zinc-500">{item.category}</span>
                   </div>
 
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => handleCopy(item.systemPrompt, item.id)}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-sky-500 hover:text-slate-950 text-slate-300 text-xs font-semibold transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-purple-100 text-zinc-700 hover:text-purple-700 text-xs font-semibold transition-colors"
                     >
                       {copiedId === item.id ? (
                         <>
-                          <Check className="w-3.5 h-3.5 text-emerald-400" />
+                          <Check className="w-3.5 h-3.5 text-emerald-600" />
                           <span>Copied!</span>
                         </>
                       ) : (
@@ -390,7 +390,7 @@ export default function PromptLibraryViewer() {
                     </button>
                     <button
                       onClick={() => toggleExpand(item.id)}
-                      className="p-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
+                      className="p-1.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-600 hover:text-zinc-900 transition-colors"
                       aria-label="Toggle view"
                     >
                       {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
@@ -400,19 +400,19 @@ export default function PromptLibraryViewer() {
 
                 <h3 
                   onClick={() => toggleExpand(item.id)}
-                  className="text-lg font-bold text-white cursor-pointer hover:text-sky-300 transition-colors"
+                  className="text-lg font-bold text-zinc-950 cursor-pointer hover:text-purple-700 transition-colors"
                 >
                   {item.title}
                 </h3>
-                <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                <p className="text-xs text-zinc-600 mt-1 leading-relaxed">
                   {item.summary}
                 </p>
 
                 {/* Variables Pills */}
                 <div className="flex flex-wrap items-center gap-1.5 mt-3">
-                  <span className="text-[10px] font-mono text-slate-500 uppercase">Fill in:</span>
+                  <span className="text-[10px] font-mono text-zinc-400 uppercase">Fill in:</span>
                   {item.variables.map(v => (
-                    <span key={v} className="px-2 py-0.5 rounded bg-slate-950 text-[10px] font-mono text-sky-400 border border-slate-800">
+                    <span key={v} className="px-2 py-0.5 rounded bg-purple-50 text-[10px] font-mono text-purple-800 border border-purple-200">
                       {v}
                     </span>
                   ))}
@@ -421,20 +421,20 @@ export default function PromptLibraryViewer() {
 
               {/* Collapsible Prompt Body */}
               {isExpanded && (
-                <div className="p-6 bg-slate-950 border-t border-slate-800 animate-in fade-in duration-200">
-                  <div className="flex items-center justify-between text-xs text-slate-400 font-mono mb-2">
+                <div className="p-6 bg-zinc-900 border-t border-zinc-200 animate-in fade-in duration-200">
+                  <div className="flex items-center justify-between text-xs text-zinc-300 font-mono mb-2">
                     <span className="flex items-center gap-1.5">
-                      <Terminal className="w-3.5 h-3.5 text-sky-400" />
+                      <Terminal className="w-3.5 h-3.5 text-purple-400" />
                       System Prompt &amp; Execution Instructions
                     </span>
                     <button
                       onClick={() => handleCopy(item.systemPrompt, item.id)}
-                      className="text-sky-400 hover:underline"
+                      className="text-purple-300 hover:underline"
                     >
                       {copiedId === item.id ? "Copied to clipboard" : "Click to copy code block"}
                     </button>
                   </div>
-                  <pre className="p-4 bg-slate-900/90 rounded-xl border border-slate-800 text-xs font-mono text-slate-200 whitespace-pre-wrap leading-relaxed overflow-x-auto selection:bg-sky-500 selection:text-slate-950">
+                  <pre className="p-4 bg-zinc-950 rounded-xl border border-zinc-800 text-xs font-mono text-zinc-200 whitespace-pre-wrap leading-relaxed overflow-x-auto selection:bg-purple-600 selection:text-white">
                     {item.systemPrompt}
                   </pre>
                 </div>

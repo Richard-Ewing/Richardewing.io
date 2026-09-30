@@ -726,19 +726,19 @@ export default function CodeBlueprintViewer() {
   const netMonthlyProfit = totalMonthlyRunRate - estimatedHostingCosts;
 
   return (
-    <div className="w-full space-y-12 text-slate-100">
+    <div className="w-full space-y-12 text-zinc-900">
       {/* Code Snippets Section */}
-      <div className="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+      <div className="bg-white border border-zinc-300 rounded-2xl overflow-hidden shadow-sm">
         {/* Navigation Tabs */}
-        <div className="flex flex-wrap items-center gap-2 p-4 bg-slate-950 border-b border-slate-800">
+        <div className="flex flex-wrap items-center gap-2 p-4 bg-zinc-100 border-b border-zinc-200">
           {codeSnippets.map(snippet => (
             <button
               key={snippet.id}
               onClick={() => setActiveSnippetId(snippet.id)}
               className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all ${
                 activeSnippetId === snippet.id
-                  ? "bg-sky-500 text-slate-950 shadow-md font-bold"
-                  : "bg-slate-900 text-slate-400 hover:text-slate-200 border border-slate-800"
+                  ? "bg-purple-700 text-white shadow-sm font-bold"
+                  : "bg-white text-zinc-600 hover:text-zinc-900 border border-zinc-300 shadow-sm"
               }`}
             >
               <Code2 className="w-3.5 h-3.5" />
@@ -748,29 +748,29 @@ export default function CodeBlueprintViewer() {
         </div>
 
         {/* Snippet Header */}
-        <div className="p-6 border-b border-slate-800/80 bg-slate-900/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="p-6 border-b border-zinc-200 bg-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-sky-500/10 text-sky-400 border border-sky-500/30">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-purple-50 text-purple-800 border border-purple-200">
                 {activeSnippet.category}
               </span>
-              <span className="text-xs font-mono text-slate-400">{activeSnippet.filename}</span>
+              <span className="text-xs font-mono text-zinc-500">{activeSnippet.filename}</span>
             </div>
-            <h3 className="text-xl font-bold text-white">
+            <h3 className="text-xl font-bold text-zinc-950">
               {activeSnippet.title}
             </h3>
-            <p className="text-xs text-slate-300 mt-1 max-w-2xl">
+            <p className="text-xs text-zinc-600 mt-1 max-w-2xl">
               {activeSnippet.description}
             </p>
           </div>
 
           <button
             onClick={() => handleCopy(activeSnippet.code, activeSnippet.id)}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sky-400 hover:bg-sky-300 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all shadow-md shrink-0"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-700 hover:bg-purple-800 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm shrink-0"
           >
             {copiedId === activeSnippet.id ? (
               <>
-                <Check className="w-4 h-4 text-slate-950" /> Copied Code
+                <Check className="w-4 h-4 text-white" /> Copied Code
               </>
             ) : (
               <>
@@ -781,24 +781,24 @@ export default function CodeBlueprintViewer() {
         </div>
 
         {/* Code Viewer */}
-        <div className="p-6 bg-slate-950 overflow-x-auto">
-          <pre className="text-xs font-mono text-slate-200 whitespace-pre leading-relaxed selection:bg-sky-500 selection:text-slate-950">
+        <div className="p-6 bg-zinc-950 overflow-x-auto">
+          <pre className="text-xs font-mono text-zinc-200 whitespace-pre leading-relaxed selection:bg-purple-600 selection:text-white">
             {activeSnippet.code}
           </pre>
         </div>
       </div>
 
       {/* Interactive 12-Month Financial Model & Cash Flow Calculator */}
-      <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-10 shadow-2xl">
-        <div className="border-b border-slate-800 pb-6 mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-2">
+      <div className="bg-white border border-zinc-300 rounded-2xl p-6 sm:p-10 shadow-sm">
+        <div className="border-b border-zinc-200 pb-6 mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-2">
             <Calculator className="w-3.5 h-3.5" />
             Interlocking Flywheel Calculator
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950">
             12-Month Financial Pro-Forma Modeling Engine
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 mt-2">
+          <p className="text-xs sm:text-sm text-zinc-600 mt-2">
             Simulate how high-ticket consulting cash flow funds software development while organic authority content drives compounding SaaS subscriptions.
           </p>
         </div>
@@ -807,29 +807,29 @@ export default function CodeBlueprintViewer() {
           {/* Controls Column */}
           <div className="lg:col-span-2 space-y-6">
             {/* Cohort Tuition */}
-            <div className="p-5 bg-slate-950/60 rounded-xl border border-slate-800">
+            <div className="p-5 bg-[#F5F0EB]/60 rounded-xl border border-zinc-200">
               <div className="flex justify-between items-center mb-2">
-                <label className="text-xs font-semibold text-sky-400 uppercase tracking-wider">
+                <label className="text-xs font-semibold text-purple-900 uppercase tracking-wider">
                   Cohort Tuition &amp; Students
                 </label>
-                <span className="font-mono text-xs text-white font-bold">
+                <span className="font-mono text-xs text-zinc-950 font-bold">
                   {pilotStudents} students @ ${pilotPrice} = ${cohortRevenue.toLocaleString()}
                 </span>
               </div>
               <div className="grid grid-cols-2 gap-4 mt-3">
                 <div>
-                  <span className="text-[11px] text-slate-400 block mb-1">Students per Cohort:</span>
+                  <span className="text-[11px] text-zinc-600 block mb-1">Students per Cohort:</span>
                   <input
                     type="range"
                     min={5}
                     max={25}
                     value={pilotStudents}
                     onChange={e => setPilotStudents(Number(e.target.value))}
-                    className="w-full accent-sky-400"
+                    className="w-full accent-purple-700"
                   />
                 </div>
                 <div>
-                  <span className="text-[11px] text-slate-400 block mb-1">Tuition Rate:</span>
+                  <span className="text-[11px] text-zinc-600 block mb-1">Tuition Rate:</span>
                   <input
                     type="range"
                     min={1000}
@@ -837,36 +837,36 @@ export default function CodeBlueprintViewer() {
                     step={250}
                     value={pilotPrice}
                     onChange={e => setPilotPrice(Number(e.target.value))}
-                    className="w-full accent-sky-400"
+                    className="w-full accent-purple-700"
                   />
                 </div>
               </div>
             </div>
 
             {/* SaaS Subscriptions */}
-            <div className="p-5 bg-slate-950/60 rounded-xl border border-slate-800">
+            <div className="p-5 bg-[#F5F0EB]/60 rounded-xl border border-zinc-200">
               <div className="flex justify-between items-center mb-2">
-                <label className="text-xs font-semibold text-emerald-400 uppercase tracking-wider">
+                <label className="text-xs font-semibold text-emerald-800 uppercase tracking-wider">
                   SaaS MRR (Self-Serve Subscriptions)
                 </label>
-                <span className="font-mono text-xs text-white font-bold">
+                <span className="font-mono text-xs text-zinc-950 font-bold">
                   {saasSubscribers} subs @ ${saasPrice}/mo = ${saasMrr.toLocaleString()}/mo MRR
                 </span>
               </div>
               <div className="grid grid-cols-2 gap-4 mt-3">
                 <div>
-                  <span className="text-[11px] text-slate-400 block mb-1">Active Subscribers:</span>
+                  <span className="text-[11px] text-zinc-600 block mb-1">Active Subscribers:</span>
                   <input
                     type="range"
                     min={0}
                     max={150}
                     value={saasSubscribers}
                     onChange={e => setSaasSubscribers(Number(e.target.value))}
-                    className="w-full accent-emerald-400"
+                    className="w-full accent-emerald-700"
                   />
                 </div>
                 <div>
-                  <span className="text-[11px] text-slate-400 block mb-1">Monthly Plan Price:</span>
+                  <span className="text-[11px] text-zinc-600 block mb-1">Monthly Plan Price:</span>
                   <input
                     type="range"
                     min={49}
@@ -874,36 +874,36 @@ export default function CodeBlueprintViewer() {
                     step={25}
                     value={saasPrice}
                     onChange={e => setSaasPrice(Number(e.target.value))}
-                    className="w-full accent-emerald-400"
+                    className="w-full accent-emerald-700"
                   />
                 </div>
               </div>
             </div>
 
             {/* High-Ticket Forensic Audits */}
-            <div className="p-5 bg-slate-950/60 rounded-xl border border-slate-800">
+            <div className="p-5 bg-[#F5F0EB]/60 rounded-xl border border-zinc-200">
               <div className="flex justify-between items-center mb-2">
-                <label className="text-xs font-semibold text-amber-400 uppercase tracking-wider">
+                <label className="text-xs font-semibold text-amber-800 uppercase tracking-wider">
                   Forensic Code Audits / SOW Retainers
                 </label>
-                <span className="font-mono text-xs text-white font-bold">
+                <span className="font-mono text-xs text-zinc-950 font-bold">
                   {consultingClients} audit/mo @ ${consultingFee} = ${consultingMonthly.toLocaleString()}/mo
                 </span>
               </div>
               <div className="grid grid-cols-2 gap-4 mt-3">
                 <div>
-                  <span className="text-[11px] text-slate-400 block mb-1">Audits per Month:</span>
+                  <span className="text-[11px] text-zinc-600 block mb-1">Audits per Month:</span>
                   <input
                     type="range"
                     min={0}
                     max={3}
                     value={consultingClients}
                     onChange={e => setConsultingClients(Number(e.target.value))}
-                    className="w-full accent-amber-400"
+                    className="w-full accent-amber-700"
                   />
                 </div>
                 <div>
-                  <span className="text-[11px] text-slate-400 block mb-1">Audit Fee:</span>
+                  <span className="text-[11px] text-zinc-600 block mb-1">Audit Fee:</span>
                   <input
                     type="range"
                     min={3500}
@@ -911,7 +911,7 @@ export default function CodeBlueprintViewer() {
                     step={500}
                     value={consultingFee}
                     onChange={e => setConsultingFee(Number(e.target.value))}
-                    className="w-full accent-amber-400"
+                    className="w-full accent-amber-700"
                   />
                 </div>
               </div>
@@ -919,46 +919,46 @@ export default function CodeBlueprintViewer() {
           </div>
 
           {/* Results Summary Card */}
-          <div className="p-6 bg-slate-950 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-6">
+          <div className="p-6 bg-[#F5F0EB]/80 rounded-2xl border border-zinc-300 flex flex-col justify-between space-y-6 shadow-sm">
             <div>
-              <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">
+              <div className="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-4 border-b border-zinc-200 pb-2">
                 Financial Snapshot
               </div>
 
               <div className="space-y-3 text-xs">
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Monthly SaaS MRR:</span>
-                  <span className="font-mono text-emerald-400 font-bold">${saasMrr.toLocaleString()}</span>
+                  <span className="text-zinc-600">Monthly SaaS MRR:</span>
+                  <span className="font-mono text-emerald-700 font-bold">${saasMrr.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Monthly Consulting Cash:</span>
-                  <span className="font-mono text-amber-400 font-bold">${consultingMonthly.toLocaleString()}</span>
+                  <span className="text-zinc-600">Monthly Consulting Cash:</span>
+                  <span className="font-mono text-amber-700 font-bold">${consultingMonthly.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Cohort Revenue (Amortized):</span>
-                  <span className="font-mono text-sky-400 font-bold">${Math.round(cohortRevenue / 3).toLocaleString()}/mo</span>
+                  <span className="text-zinc-600">Cohort Revenue (Amortized):</span>
+                  <span className="font-mono text-purple-700 font-bold">${Math.round(cohortRevenue / 3).toLocaleString()}/mo</span>
                 </div>
-                <div className="flex justify-between items-center pt-2 border-t border-slate-800">
-                  <span className="text-slate-400">Infra / API Expenses:</span>
-                  <span className="font-mono text-rose-400">-${estimatedHostingCosts.toLocaleString()}/mo</span>
+                <div className="flex justify-between items-center pt-2 border-t border-zinc-200">
+                  <span className="text-zinc-600">Infra / API Expenses:</span>
+                  <span className="font-mono text-rose-600">-${estimatedHostingCosts.toLocaleString()}/mo</span>
                 </div>
               </div>
             </div>
 
-            <div className="pt-4 border-t border-slate-800">
-              <div className="text-[11px] text-slate-500 uppercase tracking-wider mb-1">
+            <div className="pt-4 border-t border-zinc-200">
+              <div className="text-[11px] text-zinc-500 uppercase tracking-wider mb-1">
                 Estimated Net Cash Flow
               </div>
-              <div className="text-3xl font-extrabold text-white font-mono">
+              <div className="text-3xl font-extrabold text-zinc-950 font-mono">
                 ${Math.round(netMonthlyProfit).toLocaleString()}
-                <span className="text-xs font-normal text-slate-400"> / month</span>
+                <span className="text-xs font-normal text-zinc-500"> / month</span>
               </div>
-              <div className="text-[11px] text-emerald-400 mt-1 font-mono">
+              <div className="text-[11px] text-emerald-700 mt-1 font-mono font-semibold">
                 ${Math.round(netMonthlyProfit * 12).toLocaleString()} Annualized Run Rate
               </div>
             </div>
 
-            <div className="p-3 bg-slate-900 rounded-xl border border-slate-800 text-[11px] text-slate-400 leading-normal">
+            <div className="p-3 bg-white rounded-xl border border-zinc-200 text-[11px] text-zinc-700 leading-normal shadow-sm">
               💡 <strong>Flywheel Principle:</strong> 1 consulting audit per month generates more cash than 75 standard SaaS users, eliminating the need to give away equity early.
             </div>
           </div>

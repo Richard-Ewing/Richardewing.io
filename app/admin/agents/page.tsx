@@ -78,11 +78,11 @@ const AGENT_CONFIG: Record<string, { icon: any; label: string; description: stri
 
 function StatusBadge({ status }: { status: string }) {
     const config: Record<string, { bg: string; text: string; icon: any }> = {
-        'completed': { bg: 'bg-emerald-500/10 border-emerald-500/20', text: 'text-emerald-400', icon: CheckCircle },
-        'failed': { bg: 'bg-red-500/10 border-red-500/20', text: 'text-red-400', icon: XCircle },
-        'skipped': { bg: 'bg-amber-500/10 border-amber-500/20', text: 'text-amber-400', icon: Clock },
-        'started': { bg: 'bg-blue-500/10 border-blue-500/20', text: 'text-blue-400', icon: RefreshCw },
-        'never-run': { bg: 'bg-zinc-500/10 border-zinc-500/20', text: 'text-zinc-500', icon: Clock },
+        'completed': { bg: 'bg-emerald-50 border-emerald-300', text: 'text-emerald-800', icon: CheckCircle },
+        'failed': { bg: 'bg-red-50 border-red-300', text: 'text-red-800', icon: XCircle },
+        'skipped': { bg: 'bg-amber-50 border-amber-300', text: 'text-amber-800', icon: Clock },
+        'started': { bg: 'bg-blue-50 border-blue-300', text: 'text-blue-800', icon: RefreshCw },
+        'never-run': { bg: 'bg-zinc-100 border-zinc-300', text: 'text-zinc-600', icon: Clock },
     };
     const c = config[status] || config['never-run'];
     const Icon = c.icon;
@@ -138,31 +138,31 @@ export default function AgentDashboard() {
     const totalLeads = data ? data.pipeline.HOT + data.pipeline.WARM + data.pipeline.COLD + data.pipeline.NURTURE : 0;
 
     return (
-        <div className="min-h-screen bg-[#0a0a0f] text-white pt-24 pb-20">
+        <main className="min-h-screen bg-[#F5F0EB] text-zinc-950 pt-28 pb-20 selection:bg-purple-200 selection:text-purple-950">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Header */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
                     <div>
                         <div className="flex items-center gap-3 mb-2">
-                            <span className="p-2 bg-indigo-500/10 border border-indigo-500/20 rounded-lg">
-                                <Activity className="w-5 h-5 text-indigo-400" />
+                            <span className="p-2 bg-purple-100 border border-purple-300 rounded-lg">
+                                <Activity className="w-5 h-5 text-purple-700" />
                             </span>
-                            <span className="text-xs font-bold font-mono uppercase tracking-widest text-indigo-400">Agent Operations</span>
+                            <span className="text-xs font-bold font-mono uppercase tracking-widest text-purple-900">Agent Operations</span>
                         </div>
-                        <h1 className="text-3xl font-bold bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">
+                        <h1 className="text-3xl font-bold font-grotesk text-zinc-950">
                             Autonomous Agent Dashboard
                         </h1>
-                        <p className="text-zinc-500 mt-1 text-sm">Real-time monitoring of all autonomous operations</p>
+                        <p className="text-zinc-600 mt-1 text-sm">Real-time monitoring of all autonomous operations</p>
                     </div>
                     <div className="flex items-center gap-3">
-                        <span className="text-xs text-zinc-600">
+                        <span className="text-xs text-zinc-500 font-mono">
                             Last refresh: {lastRefresh.toLocaleTimeString()}
                         </span>
                         <button
                             onClick={fetchData}
                             disabled={loading}
-                            className="flex items-center gap-2 px-4 py-2 bg-indigo-500/10 border border-indigo-500/20 rounded-lg text-indigo-400 text-sm font-medium hover:bg-indigo-500/20 transition-colors disabled:opacity-50"
+                            className="flex items-center gap-2 px-4 py-2 bg-white border border-zinc-300 rounded-lg text-purple-900 text-sm font-semibold hover:bg-zinc-50 shadow-sm transition-colors disabled:opacity-50"
                         >
                             <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
                             Refresh
@@ -171,35 +171,35 @@ export default function AgentDashboard() {
                 </div>
 
                 {error && (
-                    <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-lg flex items-center gap-3">
-                        <AlertTriangle className="w-5 h-5 text-red-400" />
-                        <p className="text-red-300 text-sm">{error}</p>
+                    <div className="mb-6 p-4 bg-red-50 border border-red-300 rounded-lg flex items-center gap-3">
+                        <AlertTriangle className="w-5 h-5 text-red-600" />
+                        <p className="text-red-800 text-sm">{error}</p>
                     </div>
                 )}
 
                 {/* Pipeline Cards */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                    <div className="bg-[#12121f] border border-zinc-200/50 rounded-xl p-5">
+                    <div className="bg-white border border-zinc-300 rounded-xl p-5 shadow-sm">
                         <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">Hot Leads</p>
-                        <p className="text-4xl font-bold text-red-400">{data?.pipeline.HOT ?? ' - '}</p>
+                        <p className="text-4xl font-bold text-red-600 font-mono">{data?.pipeline.HOT ?? ' - '}</p>
                     </div>
-                    <div className="bg-[#12121f] border border-zinc-200/50 rounded-xl p-5">
+                    <div className="bg-white border border-zinc-300 rounded-xl p-5 shadow-sm">
                         <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">Warm Leads</p>
-                        <p className="text-4xl font-bold text-amber-400">{data?.pipeline.WARM ?? ' - '}</p>
+                        <p className="text-4xl font-bold text-amber-600 font-mono">{data?.pipeline.WARM ?? ' - '}</p>
                     </div>
-                    <div className="bg-[#12121f] border border-zinc-200/50 rounded-xl p-5">
+                    <div className="bg-white border border-zinc-300 rounded-xl p-5 shadow-sm">
                         <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">Total Pipeline</p>
-                        <p className="text-4xl font-bold text-indigo-400">{totalLeads || ' - '}</p>
+                        <p className="text-4xl font-bold text-purple-700 font-mono">{totalLeads || ' - '}</p>
                     </div>
-                    <div className="bg-[#12121f] border border-zinc-200/50 rounded-xl p-5">
+                    <div className="bg-white border border-zinc-300 rounded-xl p-5 shadow-sm">
                         <p className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-2">Nurture</p>
-                        <p className="text-4xl font-bold text-zinc-500">{data?.pipeline.NURTURE ?? ' - '}</p>
+                        <p className="text-4xl font-bold text-zinc-600 font-mono">{data?.pipeline.NURTURE ?? ' - '}</p>
                     </div>
                 </div>
 
                 {/* Agent Cards */}
-                <h2 className="text-lg font-bold text-zinc-700 mb-4 flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-indigo-400" />
+                <h2 className="text-lg font-bold font-grotesk text-zinc-950 mb-4 flex items-center gap-2">
+                    <Zap className="w-4 h-4 text-purple-700" />
                     Active Agents
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
@@ -209,42 +209,42 @@ export default function AgentDashboard() {
                         const lastRun = agentData?.last_runs?.[0];
 
                         return (
-                            <div key={key} className="bg-[#12121f] border border-zinc-200/50 rounded-xl p-5 hover:border-indigo-500/30 transition-colors">
+                            <div key={key} className="bg-white border border-zinc-300 rounded-xl p-5 hover:border-purple-300 shadow-sm transition-all">
                                 <div className="flex items-start justify-between mb-3">
                                     <div className="flex items-center gap-2.5">
-                                        <span className="p-1.5 bg-indigo-500/10 rounded-md">
-                                            <Icon className="w-4 h-4 text-indigo-400" />
+                                        <span className="p-1.5 bg-purple-100 rounded-md">
+                                            <Icon className="w-4 h-4 text-purple-700" />
                                         </span>
-                                        <h3 className="font-semibold text-zinc-200 text-sm">{config.label}</h3>
+                                        <h3 className="font-semibold text-zinc-950 text-sm">{config.label}</h3>
                                     </div>
                                     <StatusBadge status={agentData?.last_status || 'never-run'} />
                                 </div>
-                                <p className="text-xs text-zinc-500 mb-3">{config.description}</p>
+                                <p className="text-xs text-zinc-600 mb-3">{config.description}</p>
                                 <div className="space-y-1.5 text-xs">
                                     <div className="flex justify-between">
-                                        <span className="text-zinc-600">Schedule</span>
-                                        <span className="text-zinc-600 font-mono">{config.schedule}</span>
+                                        <span className="text-zinc-500">Schedule</span>
+                                        <span className="text-zinc-800 font-mono">{config.schedule}</span>
                                     </div>
                                     <div className="flex justify-between">
-                                        <span className="text-zinc-600">Last Run</span>
-                                        <span className="text-zinc-600">{timeAgo(agentData?.last_run_at || null)}</span>
+                                        <span className="text-zinc-500">Last Run</span>
+                                        <span className="text-zinc-800 font-mono">{timeAgo(agentData?.last_run_at || null)}</span>
                                     </div>
                                     {lastRun && (
                                         <>
                                             <div className="flex justify-between">
-                                                <span className="text-zinc-600">Duration</span>
-                                                <span className="text-zinc-600 font-mono">{lastRun.duration_ms}ms</span>
+                                                <span className="text-zinc-500">Duration</span>
+                                                <span className="text-zinc-800 font-mono">{lastRun.duration_ms}ms</span>
                                             </div>
                                             <div className="flex justify-between">
-                                                <span className="text-zinc-600">Items</span>
-                                                <span className="text-zinc-600 font-mono">{lastRun.items_processed}</span>
+                                                <span className="text-zinc-500">Items</span>
+                                                <span className="text-zinc-800 font-mono">{lastRun.items_processed}</span>
                                             </div>
                                         </>
                                     )}
                                 </div>
                                 {lastRun?.summary && (
-                                    <div className="mt-3 pt-3 border-t border-zinc-200/50">
-                                        <p className="text-xs text-zinc-500 line-clamp-2">{lastRun.summary}</p>
+                                    <div className="mt-3 pt-3 border-t border-zinc-200">
+                                        <p className="text-xs text-zinc-600 line-clamp-2">{lastRun.summary}</p>
                                     </div>
                                 )}
                             </div>
@@ -253,15 +253,15 @@ export default function AgentDashboard() {
                 </div>
 
                 {/* Run History */}
-                <h2 className="text-lg font-bold text-zinc-700 mb-4 flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-indigo-400" />
+                <h2 className="text-lg font-bold font-grotesk text-zinc-950 mb-4 flex items-center gap-2">
+                    <Clock className="w-4 h-4 text-purple-700" />
                     Recent Agent Runs
                 </h2>
-                <div className="bg-[#12121f] border border-zinc-200/50 rounded-xl overflow-hidden">
+                <div className="bg-white border border-zinc-300 rounded-xl overflow-hidden shadow-sm">
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm">
                             <thead>
-                                <tr className="border-b border-zinc-200/50 bg-white/30">
+                                <tr className="border-b border-zinc-200 bg-zinc-50">
                                     <th className="text-left p-3 text-xs font-mono uppercase tracking-widest text-zinc-600">Agent</th>
                                     <th className="text-left p-3 text-xs font-mono uppercase tracking-widest text-zinc-600">Status</th>
                                     <th className="text-left p-3 text-xs font-mono uppercase tracking-widest text-zinc-600">Time</th>
@@ -273,19 +273,19 @@ export default function AgentDashboard() {
                             <tbody>
                                 {data && Object.entries(data.agents).flatMap(([agent, info]) =>
                                     info.last_runs.map((run: AgentRun) => (
-                                        <tr key={run.id} className="border-b border-zinc-200/30 hover:bg-zinc-100/10 transition-colors">
-                                            <td className="p-3 font-medium text-zinc-700">{AGENT_CONFIG[agent]?.label || agent}</td>
+                                        <tr key={run.id} className="border-b border-zinc-200 hover:bg-zinc-50 transition-colors">
+                                            <td className="p-3 font-medium text-zinc-900">{AGENT_CONFIG[agent]?.label || agent}</td>
                                             <td className="p-3"><StatusBadge status={run.status} /></td>
-                                            <td className="p-3 text-zinc-500 font-mono text-xs">{timeAgo(run.created_at)}</td>
-                                            <td className="p-3 text-zinc-500 font-mono text-xs">{run.duration_ms}ms</td>
-                                            <td className="p-3 text-zinc-600 font-mono">{run.items_processed}</td>
-                                            <td className="p-3 text-zinc-500 text-xs max-w-xs truncate">{run.summary}</td>
+                                            <td className="p-3 text-zinc-600 font-mono text-xs">{timeAgo(run.created_at)}</td>
+                                            <td className="p-3 text-zinc-600 font-mono text-xs">{run.duration_ms}ms</td>
+                                            <td className="p-3 text-zinc-800 font-mono">{run.items_processed}</td>
+                                            <td className="p-3 text-zinc-600 text-xs max-w-xs truncate">{run.summary}</td>
                                         </tr>
                                     ))
                                 )}
                                 {(!data || Object.values(data.agents).every(a => a.last_runs.length === 0)) && (
                                     <tr>
-                                        <td colSpan={6} className="p-8 text-center text-zinc-600">
+                                        <td colSpan={6} className="p-8 text-center text-zinc-500">
                                             No agent runs recorded yet. Agents will begin executing on their cron schedules.
                                         </td>
                                     </tr>
@@ -296,6 +296,6 @@ export default function AgentDashboard() {
                 </div>
 
             </div>
-        </div>
+        </main>
     );
 }

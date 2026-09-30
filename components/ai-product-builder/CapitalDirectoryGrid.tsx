@@ -433,17 +433,17 @@ export default function CapitalDirectoryGrid() {
   };
 
   return (
-    <div className="w-full space-y-8 text-slate-100">
+    <div className="w-full space-y-8 text-zinc-900">
       {/* Top Controls & Switcher */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 bg-slate-900/90 border border-slate-800 p-4 rounded-2xl">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 bg-white border border-zinc-300 p-4 rounded-2xl shadow-sm">
         {/* Tab Switcher */}
-        <div className="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800">
+        <div className="flex items-center bg-zinc-100 p-1 rounded-xl border border-zinc-200">
           <button
             onClick={() => { setActiveTab('capital'); setCapitalCategory('All'); }}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all ${
               activeTab === 'capital'
-                ? "bg-sky-500 text-slate-950 shadow-md"
-                : "text-slate-400 hover:text-white"
+                ? "bg-purple-700 text-white shadow-sm"
+                : "text-zinc-600 hover:text-zinc-900"
             }`}
           >
             <DollarSign className="w-3.5 h-3.5" />
@@ -453,8 +453,8 @@ export default function CapitalDirectoryGrid() {
             onClick={() => setActiveTab('tools')}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all ${
               activeTab === 'tools'
-                ? "bg-sky-500 text-slate-950 shadow-md"
-                : "text-slate-400 hover:text-white"
+                ? "bg-purple-700 text-white shadow-sm"
+                : "text-zinc-600 hover:text-zinc-900"
             }`}
           >
             <GitBranch className="w-3.5 h-3.5" />
@@ -464,13 +464,13 @@ export default function CapitalDirectoryGrid() {
 
         {/* Search Bar */}
         <div className="relative flex-1 max-w-md">
-          <Search className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-zinc-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
             placeholder={activeTab === 'capital' ? "Search 60+ accelerators, grants, cloud credits..." : "Search open-source frameworks, DBs..."}
-            className="w-full pl-10 pr-4 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-sky-500 transition-colors"
+            className="w-full pl-10 pr-4 py-2 bg-white border border-zinc-300 rounded-xl text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-purple-600 focus:ring-1 focus:ring-purple-600 transition-colors"
           />
         </div>
       </div>
@@ -484,8 +484,8 @@ export default function CapitalDirectoryGrid() {
               onClick={() => setCapitalCategory(cat)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 capitalCategory === cat
-                  ? "bg-sky-500/20 border border-sky-500/50 text-sky-300"
-                  : "bg-slate-900 border border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200"
+                  ? "bg-purple-100 border border-purple-300 text-purple-900 font-semibold"
+                  : "bg-white border border-zinc-300 text-zinc-600 hover:border-zinc-400 hover:text-zinc-900 shadow-sm"
               }`}
             >
               {cat === 'All' ? 'All Capital Programs' : cat}
@@ -500,15 +500,15 @@ export default function CapitalDirectoryGrid() {
           {filteredCapital.map(item => (
             <div 
               key={item.id}
-              className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-slate-700 transition-all group"
+              className="bg-white border border-zinc-300 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-300 shadow-sm hover:shadow transition-all group"
             >
               <div>
                 <div className="flex items-start justify-between gap-4 mb-3">
                   <div>
-                    <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-slate-800 text-sky-400 mb-1.5 border border-slate-700">
+                    <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-purple-50 text-purple-800 mb-1.5 border border-purple-200">
                       {item.category}
                     </span>
-                    <h3 className="text-lg font-bold text-white group-hover:text-sky-300 transition-colors">
+                    <h3 className="text-lg font-bold text-zinc-950 group-hover:text-purple-700 transition-colors">
                       {item.name}
                     </h3>
                   </div>
@@ -516,46 +516,46 @@ export default function CapitalDirectoryGrid() {
                     href={item.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-lg bg-slate-800/80 hover:bg-sky-500 hover:text-slate-950 text-slate-400 transition-colors"
+                    className="p-2 rounded-lg bg-zinc-100 hover:bg-purple-100 text-zinc-600 hover:text-purple-700 transition-colors"
                   >
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2 my-3 p-3 bg-slate-950/60 rounded-xl border border-slate-800/60 text-xs">
+                <div className="grid grid-cols-2 gap-2 my-3 p-3 bg-[#F5F0EB]/60 rounded-xl border border-zinc-200 text-xs">
                   <div>
-                    <span className="text-slate-500 block text-[10px] uppercase font-semibold">Funding Size</span>
-                    <span className="text-emerald-400 font-semibold font-mono">{item.fundingAmount}</span>
+                    <span className="text-zinc-500 block text-[10px] uppercase font-semibold">Funding Size</span>
+                    <span className="text-emerald-700 font-semibold font-mono">{item.fundingAmount}</span>
                   </div>
                   <div>
-                    <span className="text-slate-500 block text-[10px] uppercase font-semibold">Equity Terms</span>
-                    <span className="text-slate-200 font-mono">{item.equityTerms}</span>
+                    <span className="text-zinc-500 block text-[10px] uppercase font-semibold">Equity Terms</span>
+                    <span className="text-zinc-800 font-mono">{item.equityTerms}</span>
                   </div>
                 </div>
 
-                <p className="text-xs text-slate-300 leading-relaxed mb-3">
+                <p className="text-xs text-zinc-600 leading-relaxed mb-3">
                   {item.summary}
                 </p>
 
-                <div className="p-2.5 bg-slate-950/40 rounded-lg border border-slate-800/40 text-[11px] text-slate-400 mb-4">
-                  <span className="font-semibold text-slate-300">Ideal For: </span>
+                <div className="p-2.5 bg-zinc-50 rounded-lg border border-zinc-200 text-[11px] text-zinc-600 mb-4">
+                  <span className="font-semibold text-zinc-900">Ideal For: </span>
                   {item.mappedPersona}
                 </div>
               </div>
 
-              <div className="flex items-center justify-between pt-4 border-t border-slate-800/80 text-xs">
+              <div className="flex items-center justify-between pt-4 border-t border-zinc-200 text-xs">
                 <div className="flex flex-wrap gap-1">
                   {item.tags.map(t => (
-                    <span key={t} className="px-2 py-0.5 rounded bg-slate-800/50 text-[10px] text-slate-400 font-mono">
+                    <span key={t} className="px-2 py-0.5 rounded bg-zinc-100 text-[10px] text-zinc-600 font-mono border border-zinc-200">
                       #{t}
                     </span>
                   ))}
                 </div>
                 <button
                   onClick={() => handleCopyLink(item.website, item.id)}
-                  className="inline-flex items-center gap-1 text-[11px] text-slate-400 hover:text-sky-400 transition-colors"
+                  className="inline-flex items-center gap-1 text-[11px] text-zinc-500 hover:text-purple-700 transition-colors"
                 >
-                  {copiedId === item.id ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                  {copiedId === item.id ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                   {copiedId === item.id ? "Copied" : "Copy URL"}
                 </button>
               </div>
@@ -568,15 +568,15 @@ export default function CapitalDirectoryGrid() {
           {filteredTools.map(tool => (
             <div 
               key={tool.id}
-              className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-slate-700 transition-all group"
+              className="bg-white border border-zinc-300 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-300 shadow-sm hover:shadow transition-all group"
             >
               <div>
                 <div className="flex items-start justify-between gap-4 mb-3">
                   <div>
-                    <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-slate-800 text-sky-400 mb-1.5 border border-slate-700">
+                    <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-purple-50 text-purple-800 mb-1.5 border border-purple-200">
                       {tool.category}
                     </span>
-                    <h3 className="text-base font-bold font-mono text-white group-hover:text-sky-300 transition-colors">
+                    <h3 className="text-base font-bold font-mono text-zinc-950 group-hover:text-purple-700 transition-colors">
                       {tool.name}
                     </h3>
                   </div>
@@ -584,26 +584,26 @@ export default function CapitalDirectoryGrid() {
                     href={tool.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-lg bg-slate-800/80 hover:bg-sky-500 hover:text-slate-950 text-slate-400 transition-colors"
+                    className="p-2 rounded-lg bg-zinc-100 hover:bg-purple-100 text-zinc-600 hover:text-purple-700 transition-colors"
                   >
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 </div>
 
-                <div className="flex items-center gap-4 my-2 text-xs font-mono text-slate-400">
+                <div className="flex items-center gap-4 my-2 text-xs font-mono text-zinc-500">
                   <span>★ {tool.stars} Stars</span>
                   <span>License: {tool.license}</span>
                 </div>
 
-                <p className="text-xs text-slate-300 leading-relaxed my-3">
+                <p className="text-xs text-zinc-600 leading-relaxed my-3">
                   {tool.description}
                 </p>
               </div>
 
-              <div className="flex items-center justify-between pt-4 border-t border-slate-800/80 text-xs">
+              <div className="flex items-center justify-between pt-4 border-t border-zinc-200 text-xs">
                 <div className="flex flex-wrap gap-1">
                   {tool.tags.map(t => (
-                    <span key={t} className="px-2 py-0.5 rounded bg-slate-800/50 text-[10px] text-slate-400 font-mono">
+                    <span key={t} className="px-2 py-0.5 rounded bg-zinc-100 text-[10px] text-zinc-600 font-mono border border-zinc-200">
                       #{t}
                     </span>
                   ))}
@@ -612,7 +612,7 @@ export default function CapitalDirectoryGrid() {
                   href={tool.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-[11px] text-sky-400 hover:text-sky-300 font-semibold"
+                  className="inline-flex items-center gap-1 text-[11px] text-purple-700 hover:text-purple-900 font-semibold"
                 >
                   View Repo <ExternalLink className="w-3 h-3" />
                 </a>

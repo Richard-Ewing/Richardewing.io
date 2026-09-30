@@ -53,16 +53,16 @@ export default function ProgramMediaPlayers() {
   };
 
   return (
-    <div className="w-full bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl text-slate-100 backdrop-blur-sm">
+    <div className="w-full bg-white border border-zinc-300 rounded-2xl p-6 sm:p-8 shadow-sm text-zinc-900">
       {/* Selector Tabs */}
-      <div className="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+      <div className="flex items-center justify-between border-b border-zinc-200 pb-4 mb-6">
         <div className="flex items-center gap-2">
           <button
             onClick={() => setActiveMedia('audio')}
-            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all ${
+            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
               activeMedia === 'audio'
-                ? "bg-sky-500 text-slate-950 shadow-md"
-                : "text-slate-400 hover:text-white bg-slate-950/60 border border-slate-800"
+                ? "bg-purple-700 text-white shadow-md shadow-purple-700/20"
+                : "text-zinc-600 hover:text-zinc-950 bg-zinc-100 border border-zinc-200"
             }`}
           >
             <Headphones className="w-3.5 h-3.5" />
@@ -70,10 +70,10 @@ export default function ProgramMediaPlayers() {
           </button>
           <button
             onClick={() => setActiveMedia('video')}
-            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all ${
+            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
               activeMedia === 'video'
-                ? "bg-sky-500 text-slate-950 shadow-md"
-                : "text-slate-400 hover:text-white bg-slate-950/60 border border-slate-800"
+                ? "bg-purple-700 text-white shadow-md shadow-purple-700/20"
+                : "text-zinc-600 hover:text-zinc-950 bg-zinc-100 border border-zinc-200"
             }`}
           >
             <Video className="w-3.5 h-3.5" />
@@ -81,8 +81,8 @@ export default function ProgramMediaPlayers() {
           </button>
         </div>
 
-        <div className="hidden sm:flex items-center gap-2 text-xs text-slate-400">
-          <Clock className="w-3.5 h-3.5 text-sky-400" />
+        <div className="hidden sm:flex items-center gap-2 text-xs text-zinc-500 font-mono">
+          <Clock className="w-3.5 h-3.5 text-purple-700" />
           <span>{activeMedia === 'audio' ? '24 Min 21 Sec' : '5 Min 11 Sec'}</span>
         </div>
       </div>
@@ -92,18 +92,18 @@ export default function ProgramMediaPlayers() {
         <div className="space-y-4">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <span className="text-[10px] font-semibold uppercase tracking-wider text-sky-400">Masterclass Audio Essay</span>
-              <h3 className="text-xl font-bold text-white">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-purple-700 font-mono">Masterclass Audio Essay</span>
+              <h3 className="text-xl font-bold text-zinc-950 font-grotesk">
                 Why Flawless Code Kills AI Startups
               </h3>
-              <p className="text-xs text-slate-300 mt-1 max-w-xl">
+              <p className="text-xs text-zinc-600 mt-1 max-w-xl font-medium leading-relaxed">
                 A rigorous exploration of why technical founders fall into the trap of over-architecting backends while completely neglecting distribution, pricing discovery, and customer conversations.
               </p>
             </div>
 
             <button
               onClick={handleAudioToggle}
-              className="flex items-center justify-center w-14 h-14 rounded-2xl bg-sky-400 hover:bg-sky-300 text-slate-950 transition-all shadow-lg shadow-sky-400/25 shrink-0"
+              className="flex items-center justify-center w-14 h-14 rounded-2xl bg-purple-700 hover:bg-purple-800 text-white transition-all shadow-md shadow-purple-700/25 shrink-0 cursor-pointer"
               aria-label={isPlayingAudio ? "Pause Audio" : "Play Audio"}
             >
               {isPlayingAudio ? <Pause className="w-6 h-6 fill-current" /> : <Play className="w-6 h-6 fill-current ml-0.5" />}
@@ -120,13 +120,13 @@ export default function ProgramMediaPlayers() {
 
           {/* Timeline Bar */}
           <div className="space-y-1.5 pt-2">
-            <div className="w-full h-2 bg-slate-950 rounded-full overflow-hidden border border-slate-800 cursor-pointer">
+            <div className="w-full h-2 bg-zinc-200 rounded-full overflow-hidden border border-zinc-300 cursor-pointer">
               <div 
-                className="h-full bg-sky-400 transition-all duration-150"
+                className="h-full bg-purple-700 transition-all duration-150"
                 style={{ width: `${audioProgress}%` }}
               />
             </div>
-            <div className="flex justify-between text-[11px] font-mono text-slate-400">
+            <div className="flex justify-between text-[11px] font-mono text-zinc-500">
               <span>{formatTime(audioCurrentTime)}</span>
               <span>24:21</span>
             </div>
@@ -136,25 +136,25 @@ export default function ProgramMediaPlayers() {
         /* Video Mode */
         <div className="space-y-4">
           <div>
-            <span className="text-[10px] font-semibold uppercase tracking-wider text-sky-400">Execution Sprint Video</span>
-            <h3 className="text-xl font-bold text-white">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-purple-700 font-mono">Execution Sprint Video</span>
+            <h3 className="text-xl font-bold text-zinc-950 font-grotesk">
               The 48-Hour AI Validation Sprint
             </h3>
-            <p className="text-xs text-slate-300 mt-1 max-w-xl">
+            <p className="text-xs text-zinc-600 mt-1 max-w-xl font-medium leading-relaxed">
               Watch how to mine Reddit forums for high-friction workflows, synthesize a 1-sentence value proposition in Claude, and draft a $5,000 forensic audit offer before opening VS Code.
             </p>
           </div>
 
-          <div className="relative w-full aspect-video bg-slate-950 rounded-xl border border-slate-800 flex items-center justify-center overflow-hidden group">
+          <div className="relative w-full aspect-video bg-zinc-950 rounded-xl border border-zinc-800 flex items-center justify-center overflow-hidden group">
             {/* Visual Thumbnail overlay */}
             <div className="text-center p-6 space-y-3">
-              <div className="w-16 h-16 rounded-full bg-sky-500/20 border border-sky-500/40 text-sky-400 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 rounded-full bg-purple-500/20 border border-purple-500/40 text-purple-400 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
                 <Play className="w-7 h-7 fill-current ml-1" />
               </div>
-              <div className="text-xs font-semibold text-slate-200">
+              <div className="text-xs font-semibold text-zinc-200">
                 Interactive Video Walkthrough (5m 11s)
               </div>
-              <p className="text-[11px] text-slate-400 max-w-md mx-auto">
+              <p className="text-[11px] text-zinc-400 max-w-md mx-auto">
                 Step-by-step breakdown of the Cognitive Division of Labor (Perplexity Pro + Claude 3.5 + Kimi) applied to real B2B workflows.
               </p>
             </div>
