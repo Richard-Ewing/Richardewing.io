@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Sparkles, ArrowRight, BookOpen, Layers, CheckCircle2 } from 'lucide-react';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import CurriculumMindmapViewer from '@/components/ai-product-builder/CurriculumMindmapViewer';
+import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
 export const metadata: Metadata = {
   title: 'The AI Product Builder: Complete Master Curriculum',
@@ -253,6 +254,7 @@ export default function CurriculumPage() {
 
       {/* Main Interactive Curriculum Viewer */}
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        <GooglePreferredBadge variant="card" />
         <CurriculumMindmapViewer />
       </main>
     </div>

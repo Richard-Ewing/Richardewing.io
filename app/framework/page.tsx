@@ -4,6 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import EcosystemMap from '@/app/components/EcosystemMap';
 import FAQItem from '@/app/components/FAQItem';
 import InteractiveSystemsDiagram from '@/components/InteractiveSystemsDiagram';
+import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
 export const metadata: Metadata = {
     title: 'Production AI Governance Frameworks',
@@ -177,6 +178,9 @@ export default function FrameworkLandingPage() {
                         />
                     </div>
                 </section>
+
+                {/* Google Preferred Source AEO Callout */}
+                <GooglePreferredBadge variant="card" />
 
                 <AdvisoryCTA variant="educational" />
             </div>

@@ -57,3 +57,5 @@ lint.txt
 .env.production.local
 .env.prod.real
 .agents/.agents/
+.open-next/
+.wrangler/

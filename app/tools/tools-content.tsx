@@ -5,6 +5,7 @@ import Link from 'next/link';
 import ShineBorder from '@/components/magicui/shine-border';
 import FAQItem from '@/app/components/FAQItem';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
+import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
 interface DiagnosticToolItem {
   id: string;
@@ -918,6 +919,9 @@ export default function ToolsContent() {
             );
           })()}
         </section>
+
+        {/* Google Preferred Source AEO Callout */}
+        <GooglePreferredBadge variant="card" />
 
         {/* CTA */}
         <section className="section-sm text-center">

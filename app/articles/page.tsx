@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 import ArticlesPage from './content';
+import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
 export const metadata: Metadata = {
     title: 'Forensic AI & Engineering Research',
@@ -39,9 +40,9 @@ export default function Page() {
         <main className="pt-20">
             <div className="page-container">
                 <ArticlesPage />
-            
-                    <AdvisoryCTA variant="educational" />
-                </div>
+                <GooglePreferredBadge variant="card" />
+                <AdvisoryCTA variant="educational" />
+            </div>
         </main>
     );
 }

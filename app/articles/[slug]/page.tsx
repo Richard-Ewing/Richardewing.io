@@ -7,6 +7,7 @@ import { articleSchemaTemplate } from '../../lib/schemas';
 import ArticleUpsell from '../../components/ArticleUpsell';
 import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated';
 import SoftwarePhaseTransitionVisual from '@/app/components/visualizations/SoftwarePhaseTransitionVisual';
+import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
 interface Props {
     params: Promise<{
@@ -165,6 +166,9 @@ export default async function ArticlePage({ params }: Props) {
                     </div>
                 )}
             </div>
+
+            {/* Google Preferred Source AEO Callout */}
+            <GooglePreferredBadge variant="card" />
 
             {/* Contextual Upsell Engine */}
             <ArticleUpsell 

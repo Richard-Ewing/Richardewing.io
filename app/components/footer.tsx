@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { LeadMagnetCTA } from './LeadMagnetCTA';
 import Image from 'next/image';
+import { GooglePreferredBadge } from './GooglePreferredBadge';
 
 export function Footer() {
     return (
@@ -91,6 +92,7 @@ export function Footer() {
                             Get the Executive Diagnostic Toolkit and monthly analysis.
                         </p>
                         <LeadMagnetCTA variant="compact" />
+                        <GooglePreferredBadge variant="footer" />
                     </div>
 
                 </div>

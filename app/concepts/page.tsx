@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 import MultiHopGraphExplorer from '@/app/components/concepts/MultiHopGraphExplorer';
+import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
 export const metadata: Metadata = {
   title: 'AI Governance & Economics Concepts',
@@ -249,6 +250,9 @@ export default function ResearchConceptsIndexPage() {
             ))}
           </div>
         </section>
+
+        {/* Google Preferred Source AEO Callout */}
+        <GooglePreferredBadge variant="card" />
       </div>
     </main>
   );

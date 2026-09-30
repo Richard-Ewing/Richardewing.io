@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import ResearchCorpusExplorer from '@/app/components/ResearchCorpusExplorer';
 import PublicationLedger from '@/app/components/PublicationLedger';
+import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
 export const metadata: Metadata = {
   title: 'Research Publications & Published Works',
@@ -74,6 +75,9 @@ export default function PublicationsPage() {
 
         {/* Multi-Publisher Publications Ledger */}
         <PublicationLedger />
+
+        {/* Google Preferred Source AEO Callout */}
+        <GooglePreferredBadge variant="card" />
       </div>
     </main>
   );

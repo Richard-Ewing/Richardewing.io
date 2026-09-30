@@ -12,6 +12,7 @@ import AsSeenInBar from '@/components/social-proof/AsSeenInBar';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import ProductBridgeCard from '@/app/components/ProductBridgeCard';
 import ExecutiveTooltip from '@/components/ExecutiveTooltip';
+import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
 export const metadata: Metadata = {
     title: 'Enterprise AI Advisory Services',
@@ -402,6 +403,9 @@ export default function ServicesPage() {
                         </div>
                     </section>
                 </ScrollReveal>
+
+                {/* Google Preferred Source AEO Callout */}
+                <GooglePreferredBadge variant="card" />
 
                 {/* Commercial Governance & Legal Terms Notice */}
                 <div className="mt-12 p-6 rounded-2xl bg-white border border-indigo-200 text-center text-xs text-zinc-700 font-mono shadow-sm">
