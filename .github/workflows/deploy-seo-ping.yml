@@ -20,11 +20,11 @@ jobs:
         with:
           node-version: '20'
 
-      # Vercel needs time to compile and deploy the production build.
+      # Cloudflare needs time to compile and deploy the edge production build.
       # Waiting ensures search engines crawl the fresh sitemap and updated pages.
-      - name: Delay for Vercel Synchronous Deployment
+      - name: Delay for Cloudflare Deployment
         run: |
-          echo "Waiting 3 minutes to ensure Vercel has fully published the production deployment..."
+          echo "Waiting 3 minutes to ensure Cloudflare has fully published the production deployment..."
           sleep 180
 
       - name: Execute Mass IndexNow Ping (Bing / Yandex)
