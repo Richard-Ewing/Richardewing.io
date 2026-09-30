@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, BookOpen, ShieldAlert } from 'lucide-react';
+import { GooglePreferredBadge } from './GooglePreferredBadge';
 
 interface DiagnosticBridgeProps {
     diagnosticName: string;
@@ -76,6 +77,9 @@ export function DiagnosticBridge({
                     </div>
                 </div>
             </div>
+
+            {/* Google Preferred Source Official Credential */}
+            <GooglePreferredBadge variant="card" className="mt-8" />
         </div>
     );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 import EcosystemMap from '@/app/components/EcosystemMap';
+import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
 export const metadata: Metadata = {
     title: 'Start Here: The AI Economics Blueprint',
@@ -256,6 +257,8 @@ export default function StartHerePage() {
                     </div>
                     <EcosystemMap />
                 </section>
+
+                <GooglePreferredBadge variant="card" className="my-12" />
 
                 <AdvisoryCTA variant="educational" />
             </div>

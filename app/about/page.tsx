@@ -8,6 +8,7 @@ import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 import FAQItem from '@/app/components/FAQItem';
 import AsSeenInBar from '@/components/social-proof/AsSeenInBar';
 import ProductBridgeCard from '@/app/components/ProductBridgeCard';
+import { GooglePreferredBadge } from '../components/GooglePreferredBadge';
 
 export const metadata: Metadata = {
     title: 'About Richard Ewing | AI Economist',
@@ -223,6 +224,9 @@ export default function AboutPage() {
                         />
                     </div>
                 </section>
+
+                {/* Google Preferred Source Official Credential */}
+                <GooglePreferredBadge variant="card" className="my-16" />
 
                 <AdvisoryCTA variant="educational" />
             </div>

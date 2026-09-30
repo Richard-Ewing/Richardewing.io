@@ -39,6 +39,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 import { articles } from '@/app/lib/data';
 import { RESEARCH_CORPUS, type CorpusArticle } from '@/app/lib/research-corpus';
+import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
 function getCurriculumRelatedResearch(mod: CurriculumModule): CorpusArticle[] {
     const trackNumber = parseInt(mod.moduleId.split('-')[0], 10);
@@ -359,6 +360,9 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                             </div>
                         </div>
                     )}
+
+                    {/* Google Preferred Source Official Credential */}
+                    <GooglePreferredBadge variant="card" className="my-10" />
 
                     <AdvisoryCTA variant="educational" termTitle={mod.title} />
                 </div>

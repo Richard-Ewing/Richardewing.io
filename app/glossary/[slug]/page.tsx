@@ -15,6 +15,7 @@ import GlossaryMesh from '../../components/GlossaryMesh';
 import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated';
 import { NewsletterForm } from '../../components/newsletter-form';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
+import { GooglePreferredBadge } from '../../components/GooglePreferredBadge';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -804,6 +805,9 @@ export default async function GlossaryTermPage({ params }: Props) {
                         </div>
                     </div>
                 </section>
+
+                {/* Google Preferred Source Official Credential */}
+                <GooglePreferredBadge variant="card" className="my-10" />
 
                 {/* Foundational Multi-Channel Research & Briefings for this Term */}
                 {(() => {

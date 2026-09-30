@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Download, CheckCircle2, ChevronRight, FileText } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import { Footer } from '../components/footer';
+import { GooglePreferredBadge } from '../components/GooglePreferredBadge';
 
 export const metadata = {
     title: 'Diagnostic Toolkit Downloaded',
@@ -58,6 +59,9 @@ export default function ToolkitSuccessPage() {
                         </Link>
                     </div>
                 </div>
+
+                {/* Google Preferred Source Retention Card */}
+                <GooglePreferredBadge variant="card" className="mb-12" />
             </div>
             
             <Footer />

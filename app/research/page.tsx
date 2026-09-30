@@ -7,6 +7,7 @@ import ResearchTimeline from '@/app/components/client/ResearchTimeline';
 import FAQItem from '@/app/components/FAQItem';
 import PublicationLedger from '@/app/components/PublicationLedger';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
+import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
 export const metadata: Metadata = {
     title: 'AI Governance Research Timeline',
@@ -408,6 +409,9 @@ export default function ResearchPage() {
                 </section>
 
                 <PublicationLedger />
+
+                {/* Google Preferred Source Official Credential */}
+                <GooglePreferredBadge variant="card" className="my-12" />
 
                 <AdvisoryCTA variant="educational" />
             </div>

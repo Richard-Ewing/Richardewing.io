@@ -6,6 +6,7 @@ import { tracks } from '@/app/lib/curriculum-tracks-ui';
 import ShineBorder from '@/app/components/magicui/shine-border';
 import BlurIn from '@/app/components/magicui/blur-in';
 import { BorderBeam } from '@/app/components/magicui/border-beam';
+import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
 export const metadata: Metadata = {
     title: 'Executive AI Engineering Curriculum',
@@ -298,6 +299,9 @@ export default function CurriculumTracksPage() {
                             </div>
                         </div>
                     </div>
+
+                    {/* Google Preferred Source Official Credential */}
+                    <GooglePreferredBadge variant="card" className="mt-12" />
 
                 </div>
             </div>
