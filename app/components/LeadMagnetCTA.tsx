@@ -12,22 +12,23 @@ export function LeadMagnetCTA({ variant = 'full' }: LeadMagnetCTAProps) {
 
     if (variant === 'compact') {
         return (
-            <div className="flex flex-col sm:flex-row items-center gap-4 bg-zinc-50 border border-zinc-200 rounded-xl p-4 shadow-sm">
-                <div className="flex-1">
-                    <span className="text-zinc-950 font-bold text-sm font-grotesk block">Stop Engineering Capital Bleed</span>
-                    <span className="text-zinc-600 text-xs font-medium">Download the Executive Diagnostic Toolkit (3 Frameworks)</span>
+            <div className="flex flex-col items-start gap-3 bg-zinc-50 border border-zinc-200 rounded-xl p-4 shadow-sm w-full">
+                <div className="space-y-1">
+                    <span className="text-zinc-950 font-bold text-sm font-grotesk block leading-snug">Stop Engineering Capital Bleed</span>
+                    <span className="text-zinc-600 text-xs font-medium block leading-tight">Download the Executive Diagnostic Toolkit (3 Frameworks)</span>
                 </div>
-                <form action={beehiivUrl} method="GET" target="_blank" className="flex items-center gap-2 w-full sm:w-auto">
-                    <button
-                        type="submit"
-                        className="w-full sm:w-auto px-5 py-2 rounded-lg bg-white border border-zinc-200 text-zinc-950 font-semibold font-semibold text-sm hover:bg-zinc-100 transition-colors font-grotesk flex items-center justify-center gap-2 whitespace-nowrap"
-                    >
-                        <Download className="w-4 h-4" /> Download Free
-                    </button>
-                </form>
+                <a
+                    href={beehiivUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full px-4 py-2 rounded-lg bg-white border border-zinc-200 text-zinc-950 font-semibold text-xs hover:bg-zinc-100 transition-colors font-grotesk flex items-center justify-center gap-2"
+                >
+                    <Download className="w-3.5 h-3.5" /> Download Free
+                </a>
             </div>
         );
     }
+
 
     return (
         <div className="relative overflow-hidden rounded-2xl border-2 border-violet-200 bg-white shadow-xl p-8 sm:p-10 my-8">
