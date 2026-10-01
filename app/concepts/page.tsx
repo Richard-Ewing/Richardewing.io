@@ -48,7 +48,7 @@ export default function ResearchConceptsIndexPage() {
               href="/research/publications"
               className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-cyan-900 text-white hover:bg-cyan-800 transition shadow-sm"
             >
-              160+ Publications Catalog →
+              167+ Publications Catalog →
             </Link>
             <a
               href="/api/csp/v1/export"

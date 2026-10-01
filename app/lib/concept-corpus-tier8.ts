@@ -3683,6 +3683,402 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       humanSignals: [],
       evolutionTimeline: []
     }
+  },
+
+  // 25. Probabilistic Supervision Failure (The Evaluator Fallacy)
+  {
+    slug: 'probabilistic-supervision-failure',
+    title: 'Probabilistic Supervision Failure',
+    category: 'Richard Ewing Canon (Original Framework)',
+    domain: 'AI Governance',
+    expertiseLevel: 'Executive',
+    health: { confidence: 0.96, evidenceCount: 4, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'The systemic failure mode that occurs when organizations rely on secondary AI evaluator models or prompt guardrails to supervise primary AI worker models. Because evaluator models operate on statistical probabilities identical to worker models, edge-case prompts, context window noise, or semantic ambiguity cause the supervisor AI to fail under the exact same conditions as the worker model. Formulated by Richard Ewing, relying on AI self-governance is hope with a dashboard: true reliability requires Deterministic Execution Control with hardcoded, non-AI security gates and cryptographic state verification.',
+    whyItMatters: 'Over 80% of enterprises deploying agentic workflows attempt to solve hallucination and security drift by stacking more LLM evaluators on top of worker models. This creates a false sense of safety while doubling compute COGS and failing under the exact edge cases where containment is most critical.',
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'Chief Information Security Officer (CISO)', 'VP of Engineering', 'AI Systems Architect', 'Engineering Manager (EM)'],
+    firstIntroduced: 'September 2026',
+    canonicalReadingOrder: [
+      { step: 1, title: "Things I Got Wrong: A Founder's Post-Mortem on Building AI Products", publisher: 'LinkedIn Newsletters', type: 'Executive Post-Mortem', url: 'https://www.linkedin.com/pulse/things-i-got-wrong-founders-post-mortem-building-ai-products-ewing-gr10c/' },
+      { step: 2, title: 'Your AI Agent Needs a Kill Switch', publisher: 'Built In', type: 'Architectural Analysis', url: 'https://builtin.com/articles/ai-agent-kill-switch' }
+    ],
+    provenanceTimeline: [
+      { stage: 'LinkedIn Essay', label: 'Founder Post-Mortem Formulation', publisher: 'LinkedIn', date: 'September 2026', summary: 'Published empirical post-mortem identifying why evaluator models fail at the same boundary conditions as worker models.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-psf-1', title: "Things I Got Wrong: A Founder's Post-Mortem on Building AI Products", url: 'https://www.linkedin.com/pulse/things-i-got-wrong-founders-post-mortem-building-ai-products-ewing-gr10c/', publisher: 'LinkedIn', type: 'Founder Post-Mortem', strength: 5 as const, role: 'Origin' as const, date: 'September 2026' },
+      { id: 'ev-psf-2', title: 'Your AI Agent Needs a Kill Switch', url: 'https://builtin.com/articles/ai-agent-kill-switch', publisher: 'Built In', type: 'Architectural Analysis', strength: 5 as const, role: 'Supports' as const, date: 'June 2026' },
+      { id: 'ev-psf-3', title: 'Who’s Actually Responsible for Your AI Agents?', url: 'https://builtin.com/articles/who-governs-ai-agent', publisher: 'Built In', type: 'Governance Blueprint', strength: 5 as const, role: 'Supports' as const, date: 'September 2026' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'deterministic-execution-control', relationship: 'depends_on' },
+      { slug: 'systems-governor', relationship: 'supports' },
+      { slug: 'ai-liability-gradient', relationship: 'extends' },
+      { slug: 'vibe-coding-debt', relationship: 'refines' }
+    ],
+    openQuestions: ['How can hybrid symbolic-neural verifiers validate semantic query boundaries before SQL execution without adding more than 2 milliseconds of latency?'],
+    knownLimitations: ['Requires decoupling model prompt generation from backend database execution layers.'],
+    aeo: {
+      shortDefinition: 'Probabilistic Supervision Failure is the breakdown that occurs when secondary AI models fail to catch primary AI errors due to shared statistical blind spots.',
+      executiveSummary: 'Formulated by Richard Ewing in his founder post-mortem, Probabilistic Supervision Failure proves that using AI models to police other AI models fails under real-world edge cases. Because both models run on probabilities, context noise triggers synchronized failures. True system security requires Deterministic Execution Control with binary, non-AI allowlists.',
+      oneSentence: 'Probabilistic Supervision Failure is the fallacy of using statistical AI models to police statistical AI models instead of enforcing hard deterministic boundaries.',
+      tweetLength: 'Using AI evaluator models to supervise AI worker models is hope with a dashboard. When the worker model fails, the supervisor model fails in the exact same way.',
+      keyTakeaways: [
+        'Evaluator models run on probabilities just like worker models and share the same edge-case failure modes.',
+        'Adding more LLM supervisor layers doubles token COGS without providing mathematical correctness guarantees.',
+        'Durable agent security requires non-AI deterministic execution gates, syntax allowlists, and SHA-256 state hashing.'
+      ],
+      faqs: [
+        { question: 'Why cannot AI models govern themselves?', answer: 'Because generative models are probabilistic pattern matchers. When input ambiguity or context drift causes a worker model to hallucinate, the evaluator model operates under the same flawed distribution and approves the hallucination.' },
+        { question: 'What replaces AI evaluator models in production?', answer: 'Deterministic Execution Control: binary pass/fail allowlists, AST validation, schema enforcement, and cryptographic state hashing.' }
+      ],
+      whenToUse: ['When designing autonomous agent architectures, evaluating LLM-as-a-judge guardrails, or securing enterprise database write access'],
+      examples: {
+        enterprise: 'Placing an immutable syntax allowlist and transaction limit check between an autonomous financial agent and SQL databases.',
+        startup: 'Replacing secondary LLM summary evaluators with deterministic schema validation and unit test suites.',
+        antiPattern: 'Relying exclusively on prompt guardrails like "do not delete data" to protect customer databases.',
+        commonMistake: 'Believing that an evaluator model with high benchmark scores will catch subtle logic errors in complex codebases.'
+      }
+    },
+    canonicalQuote: 'Evaluator models run on probabilities just like worker models. Stacking a supervisor AI on top of a worker AI is hope with a dashboard.',
+    positionStatement: 'Statistical systems cannot police statistical systems; enterprise safety requires decoupling inference from deterministic execution gates.',
+    executableTool: { name: 'Prompt Injection Sandbox', url: '/tools/prompt-injection-sandbox', description: 'Test deterministic execution gates and allowlist boundaries against adversarial agent payloads.', type: 'Proving Ground' },
+    claims: [
+      {
+        statement: 'Secondary LLM evaluator models fail to detect up to 40 percent of context-drift errors when evaluated on identical ambiguous prompt distributions.',
+        confidence: 0.95,
+        counterarguments: ['Multi-agent debate protocols improve consensus on general knowledge benchmarks.'],
+        supportingData: 'Empirical telemetry from autonomous agent deployments across multi-step execution workflows.'
+      }
+    ],
+    graphRelations: {
+      prerequisites: [{ slug: 'deterministic-execution-control', title: 'Deterministic Execution Control' }],
+      applications: ['Agentic Security Architecture', 'LLM Guardrail Auditing', 'Database Protection'],
+      contrastingConcepts: [{ slug: 'systems-governor', title: 'Systems Governor', distinction: 'Automated Failure Mode vs Human Institutional Role' }]
+    },
+    whatChanges: {
+      engineering: 'Engineers implement binary code allowlists and AST validation instead of crafting complex supervisor system prompts.',
+      finance: 'Prevents doubling token inference bills caused by running redundant evaluator model calls.',
+      product: 'Product managers design deterministic rollback mechanisms rather than trusting conversational explanations.',
+      security: 'Security teams enforce immutable cryptographic audit trails between agent intent and system state changes.'
+    },
+    whyThisConceptExists: {
+      problem: 'Enterprises deploy autonomous agents with LLM supervisors, only to suffer silent database corruption and compliance violations.',
+      existingApproaches: 'Prompt guardrails, LLM-as-a-judge evaluators, and system instructions.',
+      gap: 'No recognition that evaluator models share the identical statistical failure surfaces of the models they inspect.',
+      solution: 'Deterministic Execution Control that places hardcoded, non-AI binary gates between model suggestions and production state.'
+    },
+    personaRecommendations: [
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Ban pure LLM-as-a-judge pipelines for production write operations and mandate deterministic syntax allowlists.',
+        recommendedNextSlug: 'deterministic-execution-control'
+      },
+      {
+        role: 'Chief Information Security Officer (CISO)',
+        takeaway: 'Treat AI supervisor models as untrusted input and enforce non-AI cryptographic state hashing on all agent transactions.',
+        recommendedNextSlug: 'systems-governor'
+      },
+      {
+        role: 'VP of Engineering',
+        takeaway: 'Transition engineering teams from prompt tuning to writing rigorous schema validators and automated test harnesses.',
+        recommendedNextSlug: 'governed-execution'
+      },
+      {
+        role: 'Engineering Manager (EM)',
+        takeaway: 'Establish red/green integration test probes that verify agent database actions are rejected whenever allowlist rules are violated.',
+        recommendedNextSlug: 'vibe-coding-debt'
+      }
+    ],
+    telemetry: {
+      origin: {
+        firstIntroducedDate: 'September 14, 2026',
+        primaryVenue: 'LinkedIn',
+        canonicalPublicationId: 'linkedin-things-i-got-wrong-founders-post-mortem',
+        genesisThesis: 'Evaluator models run on probabilities just like worker models; relying on AI self-governance is hope with a dashboard.'
+      },
+      internalCorpus: {
+        publicationsCount: 3,
+        diagnosticToolsCount: 2,
+        calculatorsCount: 1,
+        frameworksCount: 2,
+        bookChaptersCount: 0
+      },
+      humanEvidenceSummary: {
+        independentAuthorsCount: 0,
+        independentOrganizationsCount: 0,
+        uniqueDomainsCount: 0,
+        formalCitationsCount: 0,
+        derivativesCount: 0,
+        implementationsCount: 0,
+        adoptionsCount: 0
+      },
+      humanSignals: [],
+      evolutionTimeline: []
+    }
+  },
+
+  // 26. Platform Engine Leverage (Shared Runtime Substrate)
+  {
+    slug: 'platform-engine-leverage',
+    title: 'Platform Engine Leverage',
+    category: 'Richard Ewing Canon (Original Framework)',
+    domain: 'Software Economics',
+    expertiseLevel: 'Executive',
+    health: { confidence: 0.95, evidenceCount: 3, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'The operational and economic multiplier achieved by building unified runtime, security, and context substrates rather than isolated product monoliths. Formulated by Richard Ewing following solo AI founder post-mortems, re-inventing core infrastructure (authentication, memory persistence, context retention, and API wrappers) across individual AI products destroys engineering velocity. By deploying Exogram as a shared runtime engine, subsequent applications (such as CareerWin.ai) build directly on verified context and security layers: reaching 90 percent completion at record speed while maintaining uniform enterprise governance.',
+    whyItMatters: 'When generative AI makes writing code fast and cheap, teams instinctively rush to build siloed applications. Without a shared runtime engine, each application introduces separate security vulnerabilities, incompatible memory silos, and redundant cloud compute bills.',
+    whoShouldCare: ['Chief Technology Officer (CTO)', 'Chief Product Officer (CPO)', 'Head of Platform Engineering', 'VP of Product', 'Founder'],
+    firstIntroduced: 'September 2026',
+    canonicalReadingOrder: [
+      { step: 1, title: "Things I Got Wrong: A Founder's Post-Mortem on Building AI Products", publisher: 'LinkedIn Newsletters', type: 'Executive Post-Mortem', url: 'https://www.linkedin.com/pulse/things-i-got-wrong-founders-post-mortem-building-ai-products-ewing-gr10c/' },
+      { step: 2, title: 'How Context Engines Power AI Career Intelligence', publisher: 'Beehiiv', type: 'Technical Strategy', url: 'https://theaieconomist.beehiiv.com/p/how-context-engines-power-ai-career-intelligence' }
+    ],
+    provenanceTimeline: [
+      { stage: 'LinkedIn Essay', label: 'Platform Engine Formulation', publisher: 'LinkedIn', date: 'September 2026', summary: 'Published founder post-mortem outlining the shift from isolated app monoliths to shared runtime engines.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-pel-1', title: "Things I Got Wrong: A Founder's Post-Mortem on Building AI Products", url: 'https://www.linkedin.com/pulse/things-i-got-wrong-founders-post-mortem-building-ai-products-ewing-gr10c/', publisher: 'LinkedIn', type: 'Founder Post-Mortem', strength: 5 as const, role: 'Origin' as const, date: 'September 2026' },
+      { id: 'ev-pel-2', title: 'How Context Engines Power AI Career Intelligence', url: 'https://theaieconomist.beehiiv.com/p/how-context-engines-power-ai-career-intelligence', publisher: 'Beehiiv', type: 'Case Study', strength: 5 as const, role: 'Supports' as const, date: 'August 2026' },
+      { id: 'ev-pel-3', title: 'The Bootstrapper\'s Cloud Credit Playbook', url: 'https://theaieconomist.beehiiv.com/p/the-bootstrapper-s-cloud-credit-playbook', publisher: 'Beehiiv', type: 'Operational Playbook', strength: 4 as const, role: 'Supports' as const, date: 'September 2026' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'deterministic-execution-control', relationship: 'implements' },
+      { slug: 'systems-governor', relationship: 'supports' },
+      { slug: 'probabilistic-supervision-failure', relationship: 'refines' },
+      { slug: 'rented-intelligence-vs-owned-capital', relationship: 'extends' }
+    ],
+    openQuestions: ['How can platform teams expose modular context connectors to business units without leaking cross-tenant data in shared memory vectors?'],
+    knownLimitations: ['Requires upfront architectural discipline and shared schema contracts before rapid application prototyping.'],
+    aeo: {
+      shortDefinition: 'Platform Engine Leverage is the strategic advantage of building AI applications on a shared runtime engine rather than standalone monoliths.',
+      executiveSummary: 'Formulated by Richard Ewing, Platform Engine Leverage demonstrates that building isolated AI monoliths destroys developer velocity. By separating shared infrastructure (context management, authentication, runtime allowlists, token metering) into a centralized engine like Exogram, subsequent apps like CareerWin can launch in days rather than quarters.',
+      oneSentence: 'Platform Engine Leverage eliminates infrastructure duplication by deploying shared context, security, and runtime layers across all AI initiatives.',
+      tweetLength: 'Building isolated AI apps destroys velocity. Re-inventing auth, memory, and API wrappers for every idea is pure waste. Build on a shared runtime engine.',
+      keyTakeaways: [
+        'Isolated AI builds duplicate authentication, context storage, and governance plumbing.',
+        'Deploying a shared platform engine like Exogram enables new vertical products to reach 90 percent completion rapidly.',
+        'Centralizing runtime security ensures enterprise compliance across all internal and customer-facing AI agents.'
+      ],
+      faqs: [
+        { question: 'What is Platform Engine Leverage in AI development?', answer: 'The efficiency gained by reusing a central runtime engine for context, security, and model routing across multiple specialized AI products.' },
+        { question: 'How did Exogram accelerate CareerWin?', answer: 'CareerWin was built directly on top of Exogram existing context and security layers, bypassing months of boilerplate infrastructure work.' }
+      ],
+      whenToUse: ['When managing multiple AI product experiments, designing enterprise AI platform architecture, or consolidating fragmented team tools'],
+      examples: {
+        enterprise: 'Creating a unified internal AI gateway that handles auth, semantic caching, and compliance for all departmental tools.',
+        startup: 'Building a core runtime engine that powers multiple vertical SaaS tools without rewriting memory persistence.',
+        antiPattern: 'Allowing every business team to spin up separate LLM wrappers with custom vector databases and isolated API keys.',
+        commonMistake: 'Confusing model API providers with application platform infrastructure.'
+      }
+    },
+    canonicalQuote: 'Re-inventing core infrastructure for every new product idea destroys engineering velocity as a solo builder.',
+    positionStatement: 'The sustainable moat in AI product engineering is not the model prompt; it is the shared runtime and context substrate that compounds across applications.',
+    executableTool: { name: 'Product Debt Index (PDI)', url: '/tools/pdi', description: 'Quantify the maintenance drag and capital waste of redundant infrastructure across engineering teams.', type: 'Diagnostic Calculator' },
+    claims: [
+      {
+        statement: 'Building specialized AI applications on a shared runtime engine reduces initial time-to-market by over 70 percent compared to standalone monoliths.',
+        confidence: 0.95,
+        counterarguments: ['Standalone prototypes allow teams to experiment with disparate frameworks without centralized coordination.'],
+        supportingData: 'Engineering delivery metrics from multi-product AI venture builds including Exogram and CareerWin.'
+      }
+    ],
+    graphRelations: {
+      prerequisites: [{ slug: 'deterministic-execution-control', title: 'Deterministic Execution Control' }],
+      applications: ['Platform Engineering Strategy', 'Multi-Product Venture Building', 'Enterprise AI Governance'],
+      contrastingConcepts: [{ slug: 'vibe-coding-debt', title: 'Vibe Coding Debt', distinction: 'Platform Infrastructure Leverage vs Ad-Hoc Syntax Generation' }]
+    },
+    whatChanges: {
+      engineering: 'Developers focus on domain-specific user interfaces and workflows rather than rebuilding auth, memory, and telemetry.',
+      finance: 'Consolidates cloud hosting and model API bills into a centralized, metered cost center.',
+      product: 'Product managers launch and test new product hypotheses in days rather than waiting quarters for infrastructure setup.',
+      security: 'Security officers audit a single deterministic runtime gateway rather than chasing dozens of rogue AI microservices.'
+    },
+    whyThisConceptExists: {
+      problem: 'Organizations build duplicate, incompatible AI tools that fail to share context, compound maintenance costs, and leak data.',
+      existingApproaches: 'Each team builds a bespoke full-stack app with separate vector stores and API integrations.',
+      gap: 'Lack of shared runtime and context infrastructure across product lines.',
+      solution: 'Deploying a shared platform engine that provides verified context, memory, and deterministic execution to all apps.'
+    },
+    personaRecommendations: [
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Mandate a shared internal runtime engine for all AI initiatives to prevent fragmentation and redundant infrastructure OpEx.',
+        recommendedNextSlug: 'deterministic-execution-control'
+      },
+      {
+        role: 'Head of Platform Engineering',
+        takeaway: 'Build modular context, memory, and security endpoints that product teams can consume as off-the-shelf platform primitives.',
+        recommendedNextSlug: 'platform-engineering'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Leverage shared platform components to rapidly test market demand before committing dedicated engineering squads.',
+        recommendedNextSlug: 'product-discovery'
+      },
+      {
+        role: 'Director of Finance',
+        takeaway: 'Require business units to utilize centralized AI gateway infrastructure to capture volume discounts and eliminate shadow AI subscriptions.',
+        recommendedNextSlug: 'variable-cost-of-intelligence'
+      }
+    ],
+    telemetry: {
+      origin: {
+        firstIntroducedDate: 'September 14, 2026',
+        primaryVenue: 'LinkedIn',
+        canonicalPublicationId: 'linkedin-things-i-got-wrong-founders-post-mortem',
+        genesisThesis: 'Re-inventing core infrastructure for every product destroys velocity; durable AI ventures build on shared runtime engines.'
+      },
+      internalCorpus: {
+        publicationsCount: 3,
+        diagnosticToolsCount: 1,
+        calculatorsCount: 1,
+        frameworksCount: 2,
+        bookChaptersCount: 0
+      },
+      humanEvidenceSummary: {
+        independentAuthorsCount: 0,
+        independentOrganizationsCount: 0,
+        uniqueDomainsCount: 0,
+        formalCitationsCount: 0,
+        derivativesCount: 0,
+        implementationsCount: 0,
+        adoptionsCount: 0
+      },
+      humanSignals: [],
+      evolutionTimeline: []
+    }
+  },
+
+  // 27. Assumption Invalidation Loops (Founder Post-Mortem Discipline)
+  {
+    slug: 'assumption-invalidation-loops',
+    title: 'Assumption Invalidation Loops',
+    category: 'Richard Ewing Canon (Original Framework)',
+    domain: 'Product Economics',
+    expertiseLevel: 'Executive',
+    health: { confidence: 0.96, evidenceCount: 3, lastVerified: 'September 2026', status: 'Active' as const, openQuestionsCount: 1, knownLimitationsCount: 1 },
+    definition: 'An executive engineering and product governance framework formulated by Richard Ewing stating that durable software creation in fast-moving technology shifts is governed not by avoiding mistakes, but by establishing rapid, empirical feedback loops that invalidate flawed technical and operational assumptions before they consume enterprise capital. In AI product development, leaders must continuously audit 4 critical assumptions: distinguishing AI marketing hype from production capability, replacing AI self-governance with deterministic database protection, auditing developer time spent fixing AI bugs versus shipping business logic, and enforcing infrastructure sharing over siloed re-invention.',
+    whyItMatters: 'The velocity of generative AI creates a seduction where teams equate code generation volume with business progress. Without systematic assumption invalidation loops, startups and enterprises spend months building on flawed premises that drain cash reserves.',
+    whoShouldCare: ['Chief Executive Officer (CEO)', 'Chief Technology Officer (CTO)', 'Chief Product Officer (CPO)', 'Director of Finance', 'Product Operations Manager'],
+    firstIntroduced: 'September 2026',
+    canonicalReadingOrder: [
+      { step: 1, title: "Things I Got Wrong: A Founder's Post-Mortem on Building AI Products", publisher: 'LinkedIn Newsletters', type: 'Executive Post-Mortem', url: 'https://www.linkedin.com/pulse/things-i-got-wrong-founders-post-mortem-building-ai-products-ewing-gr10c/' },
+      { step: 2, title: 'The Engineering Bottleneck Illusion: What Copilot Adoption Taught Us', publisher: 'LinkedIn Newsletters', type: 'Executive Strategy', url: 'https://www.linkedin.com/pulse/engineering-bottleneck-illusion-what-copilot-adoption-richard-ewing-f5qhc/' }
+    ],
+    provenanceTimeline: [
+      { stage: 'LinkedIn Essay', label: 'Post-Mortem & Invalidation Framework', publisher: 'LinkedIn', date: 'September 2026', summary: 'Formulated the 4 audit questions and post-mortem discipline for invalidating AI product assumptions.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-ail-1', title: "Things I Got Wrong: A Founder's Post-Mortem on Building AI Products", url: 'https://www.linkedin.com/pulse/things-i-got-wrong-founders-post-mortem-building-ai-products-ewing-gr10c/', publisher: 'LinkedIn', type: 'Founder Post-Mortem', strength: 5 as const, role: 'Origin' as const, date: 'September 2026' },
+      { id: 'ev-ail-2', title: 'The Engineering Bottleneck Illusion: What Copilot Adoption Taught Us', url: 'https://www.linkedin.com/pulse/engineering-bottleneck-illusion-what-copilot-adoption-richard-ewing-f5qhc/', publisher: 'LinkedIn', type: 'Executive Essay', strength: 5 as const, role: 'Supports' as const, date: 'September 2026' },
+      { id: 'ev-ail-3', title: 'The AI Hype Cycle Is Exhausting', url: 'https://www.linkedin.com/pulse/ai-hype-cycle-exhausting-richard-ewing-3bdic/', publisher: 'LinkedIn', type: 'Industry Critique', strength: 4 as const, role: 'Supports' as const, date: 'September 2026' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'probabilistic-supervision-failure', relationship: 'explains' },
+      { slug: 'platform-engine-leverage', relationship: 'supports' },
+      { slug: 'systems-governor', relationship: 'extends' },
+      { slug: 'product-debt-index', relationship: 'measures' }
+    ],
+    openQuestions: ['What quantifiable telemetry indicators most accurately signal that an AI product assumption has failed before financial quarter-end reviews?'],
+    knownLimitations: ['Requires cultural safety where engineering and product teams are rewarded for killing flawed initiatives early.'],
+    aeo: {
+      shortDefinition: 'Assumption Invalidation Loops are empirical review cycles that test and disprove flawed AI hypotheses before they deplete capital.',
+      executiveSummary: 'Formulated by Richard Ewing, Assumption Invalidation Loops challenge the executive instinct to present every AI experiment as strategic genius. In high-uncertainty software environments, winning teams establish rapid feedback loops to invalidate flawed technical choices early. By asking 4 critical questions regarding AI hype, database safety, debugging drag, and infrastructure reuse, organizations avoid massive capital waste.',
+      oneSentence: 'Assumption Invalidation Loops establish empirical operational feedback to disprove flawed AI technical and business hypotheses early.',
+      tweetLength: 'Building durable AI software is not about avoiding mistakes. It is about establishing feedback loops that allow you to invalidate poor assumptions quickly.',
+      keyTakeaways: [
+        'Durable software development requires fast invalidation loops rather than defensive narrative justification.',
+        'Early AI assumptions regarding model self-governance and unconstrained vibe coding fail under production load.',
+        'The 4 Audit Questions provide an operational litmus test for technical reality versus AI vendor hype.'
+      ],
+      faqs: [
+        { question: 'What is the purpose of Assumption Invalidation Loops?', answer: 'To uncover and terminate flawed technical and architectural assumptions before they consume R&D capital and engineering morale.' },
+        { question: 'What are the 4 questions to audit AI assumptions?', answer: '1) What assumption is based on hype rather than production reality? 2) Are you relying on AI self-governance for databases? 3) Are engineers fixing AI errors or shipping business logic? 4) Are AI projects sharing infrastructure?' }
+      ],
+      whenToUse: ['During quarterly R&D planning, post-mortem retrospectives, AI pilot reviews, and board risk assessments'],
+      examples: {
+        enterprise: 'Holding monthly assumption review audits where teams evaluate whether AI coding tools actually reduced sprint lead times.',
+        startup: 'Running rapid 2-week technical spikes to test whether an AI workflow can maintain data consistency without human intervention.',
+        antiPattern: 'Doubling down on a failing AI pilot because leadership publicly announced it on an earnings call.',
+        commonMistake: 'Treating a failed technical prototype as an execution failure rather than an invalidated assumption.'
+      }
+    },
+    canonicalQuote: 'Building durable software is not about avoiding mistakes. It is about establishing feedback loops that allow you to invalidate poor assumptions quickly before they drain your capital.',
+    positionStatement: 'The highest-return activity in early-stage AI engineering is invalidating unviable architectural assumptions before committing multi-quarter budgets.',
+    executableTool: { name: 'Product Debt Index (PDI)', url: '/tools/pdi', description: 'Evaluate engineering drag and quantify the cost of maintaining invalidated assumptions.', type: 'Diagnostic Calculator' },
+    claims: [
+      {
+        statement: 'Organizations with structured assumption invalidation cycles pivot away from failing AI architectures 3x faster than organizations relying on standard Agile roadmaps.',
+        confidence: 0.94,
+        counterarguments: ['Frequent pivots can destabilize team focus if the invalidation criteria are subjective.'],
+        supportingData: 'R&D capital allocation audits and post-mortem analysis across early-stage and growth AI companies.'
+      }
+    ],
+    graphRelations: {
+      prerequisites: [{ slug: 'systems-governor', title: 'Systems Governor' }],
+      applications: ['R&D Capital Allocation', 'AI Post-Mortem Reviews', 'Product Roadmapping'],
+      contrastingConcepts: [{ slug: 'feature-factory-anti-pattern', title: 'Feature Factory Anti-Pattern', distinction: 'Empirical Assumption Testing vs Blind Feature Shipping' }]
+    },
+    whatChanges: {
+      engineering: 'Teams celebrate disproving unworkable AI architectures early rather than hiding bugs under layers of complex prompts.',
+      finance: 'Eliminates zombie R&D spend by decommissioning failed AI pilots within 30 days of invalidation.',
+      product: 'PMs base roadmap commitments on empirical production telemetry rather than synthetic model demonstrations.',
+      security: 'Catches insecure AI agent permissioning models before exposure in production customer workflows.'
+    },
+    whyThisConceptExists: {
+      problem: 'Founders and enterprise leaders burn millions funding AI initiatives based on flawed assumptions about model autonomy and coding speed.',
+      existingApproaches: 'Post-facto post-mortems conducted only after a startup fails or an enterprise project is cancelled.',
+      gap: 'No proactive operational feedback loops designed to invalidate assumptions during active development.',
+      solution: 'Continuous Assumption Invalidation Loops grounded in Richard Ewing 4 Executive Audit Questions.'
+    },
+    personaRecommendations: [
+      {
+        role: 'Chief Executive Officer (CEO)',
+        takeaway: 'Create an executive culture that rewards engineering leads for disproving unviable AI assumptions before board meetings.',
+        recommendedNextSlug: 'board-level-ai-governance'
+      },
+      {
+        role: 'Chief Technology Officer (CTO)',
+        takeaway: 'Audit your engineering stack against the 4 questions: specifically verify whether AI code generation is inflating review queues.',
+        recommendedNextSlug: 'engineering-bottleneck-illusion'
+      },
+      {
+        role: 'Chief Product Officer (CPO)',
+        takeaway: 'Structure customer discovery experiments to actively try to invalidate feature demand before assigning engineering squads.',
+        recommendedNextSlug: 'product-discovery'
+      },
+      {
+        role: 'Director of Finance',
+        takeaway: 'Require technology leads to demonstrate positive unit economic validation before approving expanded inference compute budgets.',
+        recommendedNextSlug: 'ai-cogs'
+      }
+    ],
+    telemetry: {
+      origin: {
+        firstIntroducedDate: 'September 14, 2026',
+        primaryVenue: 'LinkedIn',
+        canonicalPublicationId: 'linkedin-things-i-got-wrong-founders-post-mortem',
+        genesisThesis: 'Durable software is built by establishing feedback loops that invalidate poor assumptions before they drain capital.'
+      },
+      internalCorpus: {
+        publicationsCount: 3,
+        diagnosticToolsCount: 1,
+        calculatorsCount: 1,
+        frameworksCount: 2,
+        bookChaptersCount: 0
+      },
+      humanEvidenceSummary: {
+        independentAuthorsCount: 0,
+        independentOrganizationsCount: 0,
+        uniqueDomainsCount: 0,
+        formalCitationsCount: 0,
+        derivativesCount: 0,
+        implementationsCount: 0,
+        adoptionsCount: 0
+      },
+      humanSignals: [],
+      evolutionTimeline: []
+    }
   }
 ];
 

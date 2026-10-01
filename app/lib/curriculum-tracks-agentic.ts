@@ -680,6 +680,56 @@ agenticGovernanceModules['agentic-governance/58-7'] = {
             'Draft an organizational SOP codifying the 4 Operational Laws for all employee-deployed agents, and establish an automated audit mechanism for newly created API tokens.'
         )
     ],
+    nextHref: '/vault/curriculum/tracks/agentic-governance/58-8'
+};
+
+// ---------------------------------------------------------
+// TRACK 58-8: THE FOUNDER POST-MORTEM & RUNTIME ENGINES
+// ---------------------------------------------------------
+
+agenticGovernanceModules['agentic-governance/58-8'] = {
+    moduleId: '58-8',
+    title: 'The Founder Post-Mortem: Rejecting AI Self-Governance and Monolithic Tooling',
+    description: 'Learn from early AI startup failures: dismantle the evaluator fallacy, replace vibe coding with architectural rules, and leverage shared platform engines like Exogram.',
+    trackName: t58,
+    productId: singleProduct,
+    takeaways: [
+        'Dismantle the Evaluator Fallacy: recognize why statistical models fail at the same boundary conditions as the models they inspect.',
+        'Enforce architecture-first boundaries: transition from chaotic vibe coding to deterministic Google Antigravity execution rules.',
+        'Deploy shared runtime engines like Exogram to eliminate infrastructure re-invention and launch vertical applications at record velocity.'
+    ],
+    lessons: [
+        l(
+            'Lesson 1: The Evaluator Fallacy & Probabilistic Supervision Failure',
+            'When early founders and technology leaders build agentic workflows, the instinct is to rely on prompt guardrails and secondary evaluator models to supervise primary worker models. The underlying assumption is that with clear instructions, an AI supervisor can keep an AI worker on track. In production, this assumption breaks: evaluator models run on probabilities just like worker models. When ambiguous prompts or context noise cause the worker AI to fail, the supervisor AI fails in the exact same way. Stacking an AI supervisor on top of an AI worker is hope with a dashboard. Durable reliability requires the Deterministic Execution Model: placing hardcoded, non-AI security gates (syntax allowlists and SHA-256 state hashing) between model ideas and production databases.',
+            [
+                d('The Evaluator Fallacy', 'Assuming statistical models can reliably police other statistical models without shared failure modes.', 'Reality: Supervisor models share identical edge-case blind spots.'),
+                d('Synchronized Failure', 'Context drift and noise cause worker and evaluator models to fail in lockstep.', 'Risk: False confidence leading to silent production corruption.'),
+                d('Deterministic Execution Model', 'Hardcoded non-AI allowlists and cryptographic hashing guarding databases.', 'Standard: Zero un-sandboxed write access for probabilistic agents.')
+            ],
+            'Audit your AI guardrail architecture. Are your production databases protected by hardcoded, non-AI schema allowlists, or are you relying on secondary LLM-as-a-judge evaluators?'
+        ),
+        l(
+            'Lesson 2: Vibe Coding Breakdown vs. Architecture-First Rules',
+            'Seduced by initial code generation speed in early 2025 tools like Cursor, builders assume they can prompt their way through complex systems without environmental boundaries. As codebases grow past simple scripts, agents lose context, hallucinate non-existent package methods, and overwrite working code in adjacent files. Developers spend more time debugging hallucinated syntax than shipping business logic. The correction is shifting to architecture-first engineering environments like Google Antigravity: enforcing strict system rules, schema files, and modular step execution to maintain complete architectural control.',
+            [
+                d('Vibe Coding Breakdown', 'The predictable collapse of unconstrained prompting as codebase complexity increases.', 'Symptom: Spending 4 hours debugging an agent 10-second code rewrite.'),
+                d('Architecture-First Discipline', 'Decoupling structural design from syntax generation using strict system boundaries.', 'Tooling: Enforcing schema contracts and type safety at every edit.'),
+                d('Modular Step Execution', 'Requiring agents to prove unit test pass criteria before touching adjacent files.', 'Standard: Diff sizes bounded to single cohesive components.')
+            ],
+            'Run a 1-week time audit on your engineering team: compare hours spent reviewing and debugging AI-generated code against hours spent writing validated business logic.'
+        ),
+        l(
+            'Lesson 3: Shared Platform Engines vs. Isolated Monoliths',
+            'Early product builds are frequently self-contained monoliths where each project invents its own authentication, memory persistence, and API wrappers. Re-inventing core infrastructure for every new product idea destroys engineering velocity. Building a shared runtime platform engine (such as Exogram.ai) provides centralized context, memory, and deterministic security gates. When subsequent applications (such as CareerWin.ai) are conceived, they build directly on top of the shared runtime substrate, reaching completion at record speed. Technology leaders must enforce the 4 Audit Questions to invalidate flawed assumptions before they consume enterprise capital.',
+            [
+                d('The Monolith Velocity Trap', 'Rebuilding auth, context, and storage for every separate AI experiment.', 'Impact: Fragmented security and stalled release velocity.'),
+                d('Shared Runtime Substrate', 'Centralizing context persistence, memory retention, and security allowlists in a platform engine.', 'Benchmark: 80% reduction in initial vertical app build time.'),
+                d('The 4 Audit Questions', 'A continuous operational feedback loop to test AI hype, database safety, debugging drag, and infrastructure sharing.', 'Cadence: Monthly executive review.')
+            ],
+            'Apply the 4 Audit Questions to your organization AI portfolio: identify any redundant infrastructure builds across teams and consolidate them into a shared platform engine.'
+        )
+    ],
     nextHref: '/vault/curriculum/tracks'
 };
 

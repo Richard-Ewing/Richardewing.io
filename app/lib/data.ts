@@ -14,6 +14,47 @@ export interface Article {
 
 export const articles: Article[] = [
     {
+        slug: "things-i-got-wrong-founders-post-mortem",
+        title: "Things I Got Wrong: A Founder's Post-Mortem on Building AI Products",
+        description: "In the fast-moving AI landscape, there is a temptation to present every product decision as strategic genius. The reality of early-stage software is much messier. Three big assumptions I got wrong, and how correcting them shaped my publishing and product ecosystem.",
+        date: "September 2026",
+        readTime: "5 min read",
+        source: "LinkedIn",
+        category: "AI Governance",
+        externalUrl: "https://www.linkedin.com/pulse/things-i-got-wrong-founders-post-mortem-building-ai-products-ewing-gr10c/",
+        content: `
+            <p>In the fast-moving AI landscape, there is a temptation for founders and technology leaders to present every product decision as a stroke of strategic genius. The reality of building early-stage software is much messier. Building real software involves trial, error, failed prototypes, and abandoned assumptions.</p>
+            <p>In early 2025, I attempted to launch several AI product concepts that failed to gain traction. The ideas were not entirely wrong, but my underlying technical and operational assumptions were flawed.</p>
+            <p>Here are the three big things I got wrong, and how correcting those mistakes shaped my current publishing and product ecosystem.</p>
+            
+            <h3>Confession 1: I Thought AI Models Could Govern Themselves</h3>
+            <p>When I first started building agentic workflows, I relied on prompt guardrails and secondary evaluator models to review primary model outputs. I assumed that with clear instructions, an AI supervisor could keep the primary worker AI on track.</p>
+            <p><strong>What Broke:</strong> Evaluator models run on probabilities just like worker models. When edge-case prompts or context noise caused the worker AI to fail, the supervisor AI failed in the exact same way. It was hope with a dashboard.</p>
+            <p><strong>The Correction:</strong> We built the Deterministic Execution Model, placing hardcoded, non-AI security gates (like syntax allowlists and SHA-256 state hashing) between model ideas and production databases.</p>
+            
+            <h3>Confession 2: I Thought Vibe Coding Would Replace Architecture</h3>
+            <p>When I started using AI coding tools like Cursor in early 2025, I was seduced by generation speed. I assumed I could prompt my way through complex software builds without worrying about strict environmental boundaries.</p>
+            <p><strong>What Broke:</strong> As project complexity grew, the agent started losing context, hallucinating non-existent package methods, and overwriting working code in adjacent files. I spent more time debugging than shipping.</p>
+            <p><strong>The Correction:</strong> I shifted my primary build stack to Google Antigravity, enforcing strict system rules, schema files, and modular step execution to maintain complete architectural control.</p>
+            
+            <h3>Confession 3: I Built Isolated Apps Instead of Platform Engines</h3>
+            <p>My early product builds were self-contained monoliths. Every project had its own custom authentication setup, memory storage logic, and API wrappers.</p>
+            <p><strong>What Broke:</strong> Re-inventing core infrastructure for every new product idea destroyed my engineering velocity as a solo builder.</p>
+            <p><strong>The Correction:</strong> We built <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer">Exogram.ai</a> as a shared runtime engine. When we conceived <a href="https://careerwin.ai" target="_blank" rel="noopener noreferrer">CareerWin.ai</a>, we built it directly on top of Exogram's existing context and security layers, reaching 90% completion at record speed.</p>
+            
+            <h3>The Lesson for Technology Leaders</h3>
+            <p>Building durable software is not about avoiding mistakes. It is about establishing feedback loops that allow you to invalidate poor assumptions quickly before they drain your capital.</p>
+            
+            <h3>Four Questions to Audit Your Own Assumptions</h3>
+            <ul>
+                <li><strong>1. AI Hype vs. Production Reality:</strong> What technical assumption is your engineering team making today that might be based on AI hype rather than production reality?</li>
+                <li><strong>2. Database Protection:</strong> Are you relying on AI self-governance to protect your production databases?</li>
+                <li><strong>3. Developer Time Allocation:</strong> Is your development team spending more time fixing AI code errors than shipping validated business logic?</li>
+                <li><strong>4. Infrastructure Sharing:</strong> Are your current AI projects sharing infrastructure, or is every team re-inventing the wheel?</li>
+            </ul>
+        `
+    },
+    {
         slug: "ai-agents-to-do-list",
         title: "I Put AI Agents in Charge of My To-Do List. Here's What They Actually Took Off My Plate.",
         description: "Testing AI agents across administrative, research, and technical tasks revealed they do not eliminate workloads but shift human labor to supervisory oversight. The hidden air traffic control tax of working with autonomous agents.",

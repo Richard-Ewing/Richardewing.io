@@ -231,6 +231,19 @@ export default function ResearchPage() {
                             <div className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-400">
                                 <span className="text-cyan-400 font-bold">The Universal Pattern:</span> Truth Ledger → Context Retention → Semantic Meaning → Inference Economics → Admissibility Hard Stop.
                             </div>
+                            <div className="mt-4 pt-4 border-t border-zinc-800/80 flex flex-wrap items-center justify-between gap-3 text-xs">
+                                <span className="text-zinc-400 italic">
+                                    &ldquo;Building durable software is about establishing feedback loops that invalidate poor assumptions quickly before they drain your capital.&rdquo;
+                                </span>
+                                <a 
+                                    href="https://www.linkedin.com/pulse/things-i-got-wrong-founders-post-mortem-building-ai-products-ewing-gr10c/" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="text-cyan-400 hover:text-cyan-300 font-bold font-mono transition"
+                                >
+                                    Read Founder Post-Mortem ↗
+                                </a>
+                            </div>
                         </div>
                     </div>
 

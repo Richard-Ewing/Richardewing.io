@@ -6,13 +6,13 @@ import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
 export const metadata: Metadata = {
   title: 'Research Publications & Published Works',
-  description: 'Over 160 published works on engineering economics, AI capital management, and runtime governance across CIO.com, HackerNoon, and Built In.',
+  description: 'Over 167 published works on engineering economics, AI capital management, and runtime governance across CIO.com, HackerNoon, Built In, and LinkedIn.',
   alternates: {
     canonical: 'https://www.richardewing.io/research/publications',
   },
   openGraph: {
     title: 'Research Publications & Published Works | Richard Ewing',
-    description: 'Over 160 published works on engineering economics, AI capital management, and runtime governance. Sourced from CIO.com, HackerNoon, and Built In.',
+    description: 'Over 167 published works on engineering economics, AI capital management, and runtime governance. Sourced from CIO.com, HackerNoon, Built In, and LinkedIn.',
     url: 'https://www.richardewing.io/research/publications',
     type: 'website',
     images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Research Publications & Published Works | Richard Ewing',
-    description: 'Over 160 published works on engineering economics, AI capital management, and runtime governance. Sourced from CIO.com, HackerNoon, and Built In.',
+    description: 'Over 167 published works on engineering economics, AI capital management, and runtime governance. Sourced from CIO.com, HackerNoon, Built In, and LinkedIn.',
     images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
   },
 };
@@ -41,7 +41,7 @@ export default function PublicationsPage() {
         {/* Header Section */}
         <div className="space-y-4 border-b border-zinc-400 pb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold bg-cyan-100 text-cyan-900 border border-cyan-300">
-            Research Corpus • 160+ Published Works
+            Research Corpus • 167+ Published Works
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-black text-zinc-950 tracking-tight font-grotesk">
@@ -49,7 +49,7 @@ export default function PublicationsPage() {
           </h1>
 
           <p className="text-xl text-zinc-900 leading-relaxed font-semibold max-w-3xl">
-            A comprehensive catalog of over 160 published works across CIO.com, Built In, Beehiiv, LinkedIn Newsletters, Mind the Product, and HackerNoon. Explore by knowledge domain, publisher, or research type.
+            A comprehensive catalog of over 167 published works across CIO.com, Built In, Beehiiv, LinkedIn Newsletters, Mind the Product, and HackerNoon. Explore by knowledge domain, publisher, or research type.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">

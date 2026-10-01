@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useState } from 'react';
+import React from 'react';
 import { Network, Activity, BarChart2, ShieldAlert, ArrowRight, Building } from 'lucide-react';
 import Link from 'next/link';
 

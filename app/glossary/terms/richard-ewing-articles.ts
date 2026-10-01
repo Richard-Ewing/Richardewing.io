@@ -38,8 +38,12 @@ export const richardEwingArticleTerms: GlossaryTerm[] = [
             { question: 'What is Deterministic Execution Control?', answer: 'A security design by Richard Ewing where probabilistic AI outputs pass through a binary, rule-based execution layer (enforcing allowlists and integrity checks) before execution.' },
             { question: 'How does it differ from traditional AI guardrails?', answer: 'Guardrails use statistical filters or LLM-as-a-judge evaluations to guess if an action is safe. Deterministic Execution Control uses binary pass/fail rules to guarantee it is authorized.' }
         ],
-        relatedTerms: ['admissibility-allowlist', 'state-integrity-check', 'cryptographic-audit-ledger', 'kill-switch-protocol'],
-        relatedArticles: [{ title: 'Your AI Agent Needs a Kill Switch', url: 'https://builtin.com/articles/ai-agent-kill-switch' }, { title: 'Who’s Actually Responsible for Your AI Agents?', url: 'https://builtin.com/articles/who-governs-ai-agent' }]
+        relatedTerms: ['admissibility-allowlist', 'state-integrity-check', 'cryptographic-audit-ledger', 'kill-switch-protocol', 'probabilistic-supervision-failure'],
+        relatedArticles: [
+            { title: 'Your AI Agent Needs a Kill Switch', url: 'https://builtin.com/articles/ai-agent-kill-switch' },
+            { title: 'Who’s Actually Responsible for Your AI Agents?', url: 'https://builtin.com/articles/who-governs-ai-agent' },
+            { title: "Things I Got Wrong: A Founder's Post-Mortem on Building AI Products", url: 'https://www.linkedin.com/pulse/things-i-got-wrong-founders-post-mortem-building-ai-products-ewing-gr10c/' }
+        ]
     },
     {
         slug: 'admissibility-allowlist',
@@ -446,6 +450,51 @@ export const richardEwingArticleTerms: GlossaryTerm[] = [
         relatedTerms: ['persistence-vs-authority', 'systems-governor', 'deterministic-execution-control', 'state-integrity-check'],
         relatedArticles: [
             { title: 'Claude Code vs. Gemini Spark: How Do They Compare?', url: 'https://builtin.com/articles/claude-code-vs-google-gemini-spark' }
+        ]
+    },
+    {
+        slug: 'probabilistic-supervision-failure',
+        title: 'Probabilistic Supervision Failure',
+        category: 'Richard Ewing Frameworks',
+        definition: `Probabilistic Supervision Failure (The Evaluator Fallacy) is a core AI governance breakdown analyzed by Richard Ewing in his LinkedIn post-mortem on building AI products. It occurs when engineering teams rely on secondary AI evaluator models or prompt-based guardrails to supervise primary AI worker models.\n\nBecause evaluator models run on statistical probabilities identical to worker models, edge-case prompts, context window noise, or semantic ambiguity cause the supervisor AI to fail under the exact same conditions as the worker model. Richard Ewing characterizes relying on model self-governance as "hope with a dashboard."\n\nThe architectural solution is the Deterministic Execution Model: placing non-AI binary security gates, syntax allowlists, schema validations, and SHA-256 state hashing between probabilistic model suggestions and production databases.`,
+        whyItMatters: `Attempting to fix AI errors by stacking more AI models on top creates compounding token overhead and an illusion of security that fails under production edge cases.`,
+        faqs: [
+            { question: 'What is Probabilistic Supervision Failure?', answer: 'The systemic failure mode where secondary evaluator models fail to catch primary model errors because both rely on statistical approximation rather than deterministic validation.' },
+            { question: 'How do you solve the Evaluator Fallacy?', answer: 'Replace probabilistic AI supervisors with Deterministic Execution Control: binary pass/fail allowlists, AST validation, and cryptographic state hashing.' }
+        ],
+        relatedTerms: ['deterministic-execution-control', 'systems-governor', 'four-laws-probabilistic-software', 'platform-engine-leverage'],
+        relatedArticles: [
+            { title: "Things I Got Wrong: A Founder's Post-Mortem on Building AI Products", url: 'https://www.linkedin.com/pulse/things-i-got-wrong-founders-post-mortem-building-ai-products-ewing-gr10c/' }
+        ]
+    },
+    {
+        slug: 'platform-engine-leverage',
+        title: 'Platform Engine Leverage',
+        category: 'Richard Ewing Frameworks',
+        definition: `Platform Engine Leverage is an architectural and economic principle coined by Richard Ewing in his founder post-mortem. It dictates that building individual, isolated AI applications destroys engineering velocity because each project needlessly reinvents authentication, memory persistence, context retention, and API gateway routing.\n\nInstead of building product monoliths, technology organizations must build or adopt a shared runtime platform engine (such as Exogram.ai). When subsequent specialized applications (such as CareerWin.ai) are conceived, they build directly on top of the existing context and security substrate, reaching completion at record speed with unified security and telemetry.`,
+        whyItMatters: `When generative AI makes writing syntax cheap, developers default to building isolated apps. Platform Engine Leverage prevents infrastructure fragmentation and cuts multi-product R&D cycle times by over 80%.`,
+        faqs: [
+            { question: 'What is Platform Engine Leverage?', answer: 'The operational advantage of building AI products on top of a shared deterministic runtime engine rather than developing isolated application monoliths.' },
+            { question: 'How does Exogram provide Platform Engine Leverage?', answer: 'Exogram acts as the shared context, memory, and deterministic execution layer, allowing apps like CareerWin to launch without rebuilding core AI plumbing.' }
+        ],
+        relatedTerms: ['runtime-substrate', 'deterministic-execution-control', 'systems-governor', 'assumption-invalidation-loops'],
+        relatedArticles: [
+            { title: "Things I Got Wrong: A Founder's Post-Mortem on Building AI Products", url: 'https://www.linkedin.com/pulse/things-i-got-wrong-founders-post-mortem-building-ai-products-ewing-gr10c/' }
+        ]
+    },
+    {
+        slug: 'assumption-invalidation-loops',
+        title: 'Assumption Invalidation Loops',
+        category: 'Richard Ewing Frameworks',
+        definition: `Assumption Invalidation Loops is an executive engineering governance framework formulated by Richard Ewing. It posits that durable software development in high-velocity AI environments is governed not by avoiding mistakes, but by establishing rapid, empirical feedback loops that invalidate flawed technical and operational assumptions before they consume enterprise capital.\n\nThe framework centers on 4 executive audit questions: 1) What technical assumption is based on AI hype rather than production reality? 2) Are you relying on AI self-governance to protect production databases? 3) Is engineering spending more time fixing AI code errors than shipping validated business logic? 4) Are current AI projects sharing infrastructure or reinventing the wheel?`,
+        whyItMatters: `Unexamined AI assumptions lead directly to technical debt inflation, runaway compute budgets, and stalled product rollouts. Fast invalidation preserves capital and developer morale.`,
+        faqs: [
+            { question: 'What are Assumption Invalidation Loops?', answer: 'Structured operational feedback loops designed to test and invalidate early technical and economic assumptions before investing heavy R&D resources.' },
+            { question: 'What are the four audit questions for AI assumptions?', answer: 'Auditing AI hype vs reality, testing database protection, measuring debugging vs shipping time, and auditing platform infrastructure sharing.' }
+        ],
+        relatedTerms: ['probabilistic-supervision-failure', 'platform-engine-leverage', 'systems-governor', 'product-debt-index'],
+        relatedArticles: [
+            { title: "Things I Got Wrong: A Founder's Post-Mortem on Building AI Products", url: 'https://www.linkedin.com/pulse/things-i-got-wrong-founders-post-mortem-building-ai-products-ewing-gr10c/' }
         ]
     }
 ];

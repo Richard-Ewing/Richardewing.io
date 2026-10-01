@@ -270,6 +270,7 @@ export default function AgentComparisonPage() {
                     <h2 className="text-sm font-mono font-bold text-zinc-500 uppercase tracking-widest mb-4">Deep-Dive Analyses</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                         {[
+                            { title: 'Things I Got Wrong: Founder Post-Mortem', href: 'https://www.linkedin.com/pulse/things-i-got-wrong-founders-post-mortem-building-ai-products-ewing-gr10c/' },
                             { title: 'Claude Code vs Google Gemini Spark', href: 'https://builtin.com/articles/claude-code-vs-google-gemini-spark' },
                             { title: 'The AI Agent To-Do List', href: 'https://builtin.com/articles/ai-agents-to-do-list' },
                             { title: 'Company Owns the Agent Risk (CIO.com)', href: 'https://www.cio.com/article/4223955/your-ai-agent-may-have-made-the-decision-but-your-company-owns-the-risk.html' },

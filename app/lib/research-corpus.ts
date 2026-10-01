@@ -81,6 +81,38 @@ export const RESEARCH_CORPUS: CorpusArticle[] = [
     relatedCaseStudyIds: ['cursor-to-antigravity-startup-governance', 'runtime-concurrency-failures'],
     relatedCurriculumTrackIds: ['agentic-governance', 'ai-product-economics', 'engineering-economics']
   },
+  // LinkedIn Newsletter - September 14, 2026
+  {
+    id: 'linkedin-things-i-got-wrong-founders-post-mortem',
+    title: "Things I Got Wrong: A Founder's Post-Mortem on Building AI Products",
+    url: 'https://www.linkedin.com/pulse/things-i-got-wrong-founders-post-mortem-building-ai-products-ewing-gr10c/',
+    publisher: 'LinkedIn',
+    domain: 'AI Governance',
+    type: 'Executable',
+    date: 'September 14, 2026',
+    thesis: 'Examining early AI product failures reveals three operational misconceptions: assuming evaluator models can govern worker models, believing vibe coding replaces software architecture, and building isolated application monoliths. Evaluator models fail identically to worker models under distribution shift because probabilistic systems cannot police probabilistic systems. Real architectural resilience requires non-AI deterministic execution gates, strict system rules, and shared runtime platforms like Exogram that amortize infrastructure overhead.',
+    editorsPick: false,
+    relatedConceptIds: [
+      'probabilistic-supervision-failure',
+      'platform-engine-leverage',
+      'assumption-invalidation-loops',
+      'deterministic-execution-control',
+      'systems-governor',
+      'vibe-coding'
+    ],
+    relatedGlossarySlugs: [
+      'probabilistic-supervision-failure',
+      'platform-engine-leverage',
+      'assumption-invalidation-loops',
+      'deterministic-execution-control',
+      'systems-governor',
+      'vibe-coding'
+    ],
+    relatedFrameworkSlugs: ['runtime-governance', 'agentic-control-plane'],
+    relatedToolIds: ['prompt-injection-sandbox', 'pdi', 'runtime-governance', 'aueb'],
+    relatedCaseStudyIds: ['cursor-to-antigravity-startup-governance', 'exogram-inference-dividend-optimization'],
+    relatedCurriculumTrackIds: ['agentic-governance', 'agentic-engineering', 'engineering-economics']
+  },
   // Built In Expert Contributor - September 9, 2026
   {
     id: 'builtin-what-is-a-frontier-model',
