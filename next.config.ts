@@ -105,13 +105,6 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // ═══════════════════ CANONICAL HOSTNAME ENFORCEMENT ═══════════════════
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'richardewing.io' }],
-        destination: 'https://www.richardewing.io/:path*',
-        permanent: true,
-      },
       // ═══════════════════ LEGAL & TOC URL ALIASES ═══════════════════
       { source: '/terms', destination: '/legal#terms', permanent: true },
       { source: '/terms-of-service', destination: '/legal#terms', permanent: true },
