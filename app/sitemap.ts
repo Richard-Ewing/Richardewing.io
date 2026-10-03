@@ -181,8 +181,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/articles/recap/hackernoon`, 'monthly', 0.7);
 
     // === VAULT CURRICULUM & MODULES ===
+    const DEPRECATED_TRACK_CATEGORIES = new Set([
+        'b2b-saas-economics', 'fintech-economics', 'logistics-ecommerce', 'healthtech-economics',
+        'traditional-pm', 'breaking-into-tech', 'junior-to-senior', 'erp-enterprise-integration',
+        'outsourcing-economics', 'corporate-it-cost-centers', 'mainframe-legacy-systems',
+        'career-mobility-technical-economics', 'classic-qa-quality', 'monolith-classic-database',
+        'executive-alignment-governance', 'fullstack-career', 'system-design', 'devops-economics',
+        'security-economics', 'data-economics', 'engineering-leadership', 'fractional-engineering',
+        'ai-agent-economics', 'synthetic-data', 'enterprise-architecture', 'agile-economics'
+    ]);
     add(`${baseUrl}/vault/curriculum/tracks`, 'monthly', 0.8);
-    getLiveModuleSlugs().forEach(slug => add(`${baseUrl}/vault/curriculum/tracks/${slug}`, 'monthly', 0.8));
+    getLiveModuleSlugs()
+        .filter(slug => !DEPRECATED_TRACK_CATEGORIES.has(slug.split('/')[0]))
+        .forEach(slug => add(`${baseUrl}/vault/curriculum/tracks/${slug}`, 'monthly', 0.8));
 
     // === CAREER PATHWAYS ===
     add(`${baseUrl}/careers`, 'monthly', 0.85);

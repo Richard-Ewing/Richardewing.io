@@ -15,6 +15,10 @@ export default function robots(): MetadataRoute.Robots {
         '/guides/',
         '/ai-integration/advisor',
         '/tools/*/vs/*',
+        '/sign-in',
+        '/sign-in/*',
+        '/sign-up',
+        '/sign-up/*',
     ];
 
     return {
