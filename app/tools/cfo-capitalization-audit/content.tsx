@@ -5,6 +5,7 @@ import { DollarSign, Landmark, TrendingDown, ArrowRight, PieChart } from 'lucide
 import ToolGate from '@/app/components/tool-gate';
 import { ExportToPDFButton } from '@/app/components/ExportToPDFButton';
 import DiagnosticCTA from '@/app/components/DiagnosticCTA';
+import SlackScorecardExport from '@/components/SlackScorecardExport';
 import Link from 'next/link';
 
 export default function CFOCapitalizationTool() {
@@ -140,14 +141,29 @@ export default function CFOCapitalizationTool() {
                                 </div>
                             </div>
 
-                            <div className="pt-2 border-t border-zinc-200 flex items-center justify-between">
+                            <div className="pt-2 border-t border-zinc-200 flex flex-wrap items-center justify-between gap-2">
                                 <Link
                                     href="/workspace/finance"
                                     className="text-xs font-bold text-emerald-700 hover:text-emerald-900 hover:underline"
                                 >
                                     Book CFO Capital Audit &rarr;
                                 </Link>
-                                <ExportToPDFButton targetId="cfo-calc" fileName="cfo-rd-capitalization-audit.pdf" />
+                                <div className="flex items-center gap-2">
+                                    <SlackScorecardExport
+                                        toolName="CFO AI R&D Capitalization & Section 174 Audit"
+                                        primaryMetricLabel="Innovation Tax (Disguised Maintenance)"
+                                        primaryMetricValue={`$${innovationTaxWastedSpend.toLocaleString()} / yr`}
+                                        statusLabel={innovationTaxWastedSpend > 1000000 ? "CRITICAL TAX DRAG" : "ELEVATED MAINTENANCE"}
+                                        metrics={[
+                                            { label: "Annual R&D Payroll", value: `$${annualRDPayroll.toLocaleString()}` },
+                                            { label: "Reported Innovation Spend", value: `$${reportedInnovationSpend.toLocaleString()} (${reportedInnovationPercent}%)` },
+                                            { label: "Actual Maintenance Load", value: `$${actualInnovationSpend.toLocaleString()} (${actualMaintenancePercent}%)` },
+                                            { label: "Section 174 Delayed Tax Drag", value: `$${phantomTaxableIncomeImpact.toLocaleString()}` }
+                                        ]}
+                                        canonicalUrl="https://www.richardewing.io/tools/cfo-capitalization-audit"
+                                    />
+                                    <ExportToPDFButton targetId="cfo-calc" fileName="cfo-rd-capitalization-audit.pdf" />
+                                </div>
                             </div>
                         </div>
 

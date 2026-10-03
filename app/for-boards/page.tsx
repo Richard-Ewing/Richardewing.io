@@ -54,11 +54,11 @@ export default function ForBoardsPage() {
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-8 text-center">Questions Boards Should Be Asking</h2>
                         <div className="space-y-4">
                             {boardQuestions.map((q, i) => (
-                                <div key={i} className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-6">
+                                <div key={i} className="rounded-2xl border border-amber-200 bg-white p-6 shadow-sm hover:border-amber-300 transition-colors">
                                     <h3 className="text-lg font-bold text-zinc-950 mb-2">&ldquo;{q.question}&rdquo;</h3>
-                                    <p className="text-zinc-900 mb-3">{q.answer}</p>
-                                    <Link href={q.link} className="text-xs font-bold font-mono text-amber-400 hover:text-amber-800 font-bold uppercase tracking-widest">
-                                        Measure with {q.metric} →
+                                    <p className="text-sm text-zinc-700 mb-3 font-medium leading-relaxed">{q.answer}</p>
+                                    <Link href={q.link} className="text-xs font-bold font-mono text-amber-700 hover:text-amber-900 uppercase tracking-widest inline-flex items-center gap-1">
+                                        Measure with {q.metric} &rarr;
                                     </Link>
                                 </div>
                             ))}
@@ -66,17 +66,17 @@ export default function ForBoardsPage() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
-                        <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-6 text-center">
-                            <div className="text-3xl font-bold text-amber-400 mb-2">$$$</div>
-                            <div className="text-sm font-semibold text-zinc-900 font-medium">Debt quantified in dollars, not story points</div>
+                        <div className="rounded-2xl border border-amber-200 bg-white p-6 text-center shadow-sm">
+                            <div className="text-3xl font-bold text-amber-600 mb-2 font-mono">$$$</div>
+                            <div className="text-sm font-semibold text-zinc-900">Debt quantified in dollars, not story points</div>
                         </div>
-                        <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-6 text-center">
-                            <div className="text-3xl font-bold text-amber-400 mb-2">Q1-Q4</div>
-                            <div className="text-sm font-semibold text-zinc-900 font-medium">Quarterly reporting cadence for fiduciary oversight</div>
+                        <div className="rounded-2xl border border-amber-200 bg-white p-6 text-center shadow-sm">
+                            <div className="text-3xl font-bold text-amber-600 mb-2 font-mono">Q1-Q4</div>
+                            <div className="text-sm font-semibold text-zinc-900">Quarterly reporting cadence for fiduciary oversight</div>
                         </div>
-                        <div className="rounded-2xl border border-zinc-400 bg-zinc-50 p-6 text-center">
-                            <div className="text-3xl font-bold text-amber-400 mb-2">1 Page</div>
-                            <div className="text-sm font-semibold text-zinc-900 font-medium">Executive summary, not 50-page engineering reports</div>
+                        <div className="rounded-2xl border border-amber-200 bg-white p-6 text-center shadow-sm">
+                            <div className="text-3xl font-bold text-amber-600 mb-2 font-mono">1 Page</div>
+                            <div className="text-sm font-semibold text-zinc-900">Executive summary, not 50-page engineering reports</div>
                         </div>
                     </div>
 
@@ -84,7 +84,7 @@ export default function ForBoardsPage() {
                     <div className="mb-16">
                         <div className="flex items-center justify-between mb-6 flex-wrap gap-2">
                             <div>
-                                <span className="text-xs font-mono font-bold text-amber-500 uppercase tracking-widest block mb-1">
+                                <span className="text-xs font-mono font-bold text-amber-600 uppercase tracking-widest block mb-1">
                                     Primary Source Intelligence &bull; Board Governance
                                 </span>
                                 <h2 className="text-2xl font-grotesk font-bold text-zinc-950">
@@ -93,7 +93,7 @@ export default function ForBoardsPage() {
                             </div>
                             <Link 
                                 href="/research/publications"
-                                className="text-xs font-mono font-bold text-amber-600 hover:text-amber-800 flex items-center gap-1 uppercase tracking-wider"
+                                className="text-xs font-mono font-bold text-amber-700 hover:text-amber-900 flex items-center gap-1 uppercase tracking-wider"
                             >
                                 Explore Full Corpus ({RESEARCH_CORPUS.length} Works) &rarr;
                             </Link>
@@ -111,7 +111,7 @@ export default function ForBoardsPage() {
                                     href={pub.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="p-5 rounded-2xl border border-amber-500/20 bg-amber-500/5 hover:border-amber-500/40 hover:bg-amber-500/10 transition flex flex-col justify-between group"
+                                    className="p-5 rounded-2xl border border-amber-200 bg-white hover:border-amber-400 hover:bg-amber-50/40 transition flex flex-col justify-between group shadow-sm"
                                 >
                                     <div>
                                         <div className="flex items-center justify-between text-[10px] font-mono font-bold mb-2">
@@ -121,11 +121,11 @@ export default function ForBoardsPage() {
                                         <h3 className="text-base font-bold text-zinc-950 group-hover:text-amber-900 transition-colors mb-2 leading-snug">
                                             {pub.title}
                                         </h3>
-                                        <p className="text-xs text-zinc-700 leading-relaxed line-clamp-2">
+                                        <p className="text-xs text-zinc-600 leading-relaxed line-clamp-2">
                                             {pub.thesis}
                                         </p>
                                     </div>
-                                    <div className="pt-3 mt-3 border-t border-amber-200/40 text-[11px] font-mono text-amber-700 font-bold flex items-center gap-1">
+                                    <div className="pt-3 mt-3 border-t border-zinc-200 text-[11px] font-mono text-amber-700 font-bold flex items-center gap-1">
                                         Read Fiduciary Paper &rarr;
                                     </div>
                                 </a>
@@ -133,10 +133,10 @@ export default function ForBoardsPage() {
                         </div>
                     </div>
 
-                    <div className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-10 text-center">
+                    <div className="rounded-3xl border border-amber-300 bg-gradient-to-br from-amber-50/90 via-white to-orange-50/90 p-10 text-center shadow-md">
                         <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Board-Ready in 2 Weeks</h2>
-                        <p className="text-zinc-900 mb-8 max-w-xl mx-auto">Full R&D Capital Audit with executive summary, risk assessment, and remediation roadmap. Delivered as a board presentation, not a technical document.</p>
-                        <Link href="/services" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-zinc-950 font-semibold text-lg font-bold hover:opacity-90 transition-opacity">Schedule Board Briefing →</Link>
+                        <p className="text-zinc-700 mb-8 max-w-xl mx-auto font-medium leading-relaxed">Full R&D Capital Audit with executive summary, risk assessment, and remediation roadmap. Delivered as a board presentation, not a technical document.</p>
+                        <Link href="/services" className="inline-block px-10 py-5 rounded-xl bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold text-base hover:opacity-95 transition-all shadow-md active:scale-95">Schedule Board Briefing &rarr;</Link>
                     </div>
                 </div>
             </div>

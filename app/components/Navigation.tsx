@@ -11,6 +11,7 @@ const Navigation = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
     const [toolsDropdownOpen, setToolsDropdownOpen] = useState(false);
+    const [rolesDropdownOpen, setRolesDropdownOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const { isSignedIn, isLoaded } = useUser();
 
@@ -236,6 +237,111 @@ const Navigation = () => {
                                 </AnimatePresence>
                             </div>
 
+                            {/* Executive Hubs By Role Dropdown */}
+                            <div 
+                                className="relative"
+                                onMouseEnter={() => setRolesDropdownOpen(true)}
+                                onMouseLeave={() => setRolesDropdownOpen(false)}
+                            >
+                                <button 
+                                    className="text-zinc-900 hover:text-purple-900 transition-colors font-semibold inline-flex items-center gap-1 py-1 cursor-pointer whitespace-nowrap"
+                                    onClick={() => setRolesDropdownOpen(!rolesDropdownOpen)}
+                                >
+                                    <span>By Role</span>
+                                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${rolesDropdownOpen ? 'rotate-180 text-purple-700' : 'text-zinc-500'}`} />
+                                </button>
+
+                                <AnimatePresence>
+                                    {rolesDropdownOpen && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                                            exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                                            transition={{ duration: 0.15 }}
+                                            className="absolute top-full left-0 w-80 mt-2 bg-white/95 backdrop-blur-xl border border-zinc-300 rounded-2xl p-3 shadow-2xl z-50 space-y-1"
+                                        >
+                                            <Link 
+                                                href="/for-boards" 
+                                                onClick={() => setRolesDropdownOpen(false)}
+                                                className="block p-2 rounded-xl hover:bg-amber-50/70 border border-transparent hover:border-amber-200 transition-all group"
+                                            >
+                                                <div className="font-grotesk font-bold text-xs text-zinc-950 group-hover:text-amber-900">
+                                                    Board Members &amp; Directors
+                                                </div>
+                                                <p className="text-[11px] text-zinc-600 font-medium leading-tight">
+                                                    Fiduciary technology oversight, technical debt, and risk.
+                                                </p>
+                                            </Link>
+
+                                            <Link 
+                                                href="/for-cfos" 
+                                                onClick={() => setRolesDropdownOpen(false)}
+                                                className="block p-2 rounded-xl hover:bg-emerald-50/70 border border-transparent hover:border-emerald-200 transition-all group"
+                                            >
+                                                <div className="font-grotesk font-bold text-xs text-zinc-950 group-hover:text-emerald-900">
+                                                    Chief Financial Officers (CFO)
+                                                </div>
+                                                <p className="text-[11px] text-zinc-600 font-medium leading-tight">
+                                                    Section 174 capitalization, token COGS, and margin defense.
+                                                </p>
+                                            </Link>
+
+                                            <Link 
+                                                href="/for-coos" 
+                                                onClick={() => setRolesDropdownOpen(false)}
+                                                className="block p-2 rounded-xl hover:bg-blue-50/70 border border-transparent hover:border-blue-200 transition-all group"
+                                            >
+                                                <div className="font-grotesk font-bold text-xs text-zinc-950 group-hover:text-blue-900">
+                                                    Chief Operating Officers (COO)
+                                                </div>
+                                                <p className="text-[11px] text-zinc-600 font-medium leading-tight">
+                                                    Workflow reliability, agent coordination, and queue stalls.
+                                                </p>
+                                            </Link>
+
+                                            <Link 
+                                                href="/for-ctos" 
+                                                onClick={() => setRolesDropdownOpen(false)}
+                                                className="block p-2 rounded-xl hover:bg-purple-50/70 border border-transparent hover:border-purple-200 transition-all group"
+                                            >
+                                                <div className="font-grotesk font-bold text-xs text-zinc-950 group-hover:text-purple-900">
+                                                    Chief Technology Officers (CTO)
+                                                </div>
+                                                <p className="text-[11px] text-zinc-600 font-medium leading-tight">
+                                                    R&amp;D yield, architectural governance, and developer tools.
+                                                </p>
+                                            </Link>
+
+                                            <Link 
+                                                href="/for-general-counsels" 
+                                                onClick={() => setRolesDropdownOpen(false)}
+                                                className="block p-2 rounded-xl hover:bg-slate-100 border border-transparent hover:border-slate-300 transition-all group"
+                                            >
+                                                <div className="font-grotesk font-bold text-xs text-zinc-950 group-hover:text-slate-900">
+                                                    General Counsels &amp; Legal (GC)
+                                                </div>
+                                                <p className="text-[11px] text-zinc-600 font-medium leading-tight">
+                                                    SOX 404 signing limits, AI liability, and safe harbors.
+                                                </p>
+                                            </Link>
+
+                                            <Link 
+                                                href="/for-investors" 
+                                                onClick={() => setRolesDropdownOpen(false)}
+                                                className="block p-2 rounded-xl hover:bg-cyan-50/70 border border-transparent hover:border-cyan-200 transition-all group"
+                                            >
+                                                <div className="font-grotesk font-bold text-xs text-zinc-950 group-hover:text-cyan-900">
+                                                    Private Equity &amp; Investors
+                                                </div>
+                                                <p className="text-[11px] text-zinc-600 font-medium leading-tight">
+                                                    Pre-close software forensic audits and margin engineering.
+                                                </p>
+                                            </Link>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+
                             <Link href="/case-studies" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
                                 Case Studies
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
@@ -354,6 +460,33 @@ const Navigation = () => {
                                     <Award className="w-4 h-4 text-indigo-600 shrink-0" />
                                     <span>CareerWin.ai (Career Intelligence)</span>
                                 </Link>
+                            </div>
+
+                            {/* Mobile Executive Hubs Group */}
+                            <div className="pt-2 pb-2 border-b border-zinc-200 space-y-2">
+                                <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest">
+                                    Executive Hubs (By Role)
+                                </div>
+                                <div className="grid grid-cols-2 gap-2 text-xs font-bold text-zinc-900">
+                                    <Link href="/for-boards" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg bg-amber-50/70 border border-amber-200 text-amber-950">
+                                        For Boards
+                                    </Link>
+                                    <Link href="/for-cfos" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg bg-emerald-50/70 border border-emerald-200 text-emerald-950">
+                                        For CFOs
+                                    </Link>
+                                    <Link href="/for-coos" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg bg-blue-50/70 border border-blue-200 text-blue-950">
+                                        For COOs
+                                    </Link>
+                                    <Link href="/for-ctos" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg bg-purple-50/70 border border-purple-200 text-purple-950">
+                                        For CTOs
+                                    </Link>
+                                    <Link href="/for-general-counsels" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg bg-slate-100 border border-slate-300 text-slate-950">
+                                        For Legal (GC)
+                                    </Link>
+                                    <Link href="/for-investors" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg bg-cyan-50/70 border border-cyan-200 text-cyan-950">
+                                        For Investors
+                                    </Link>
+                                </div>
                             </div>
 
                             {/* Core Navigation Links */}
