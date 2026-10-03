@@ -76,3 +76,36 @@ The agent natively executes the workflows of slash commands without requiring us
 2. **Local Gitignored Environment Only**: All actual credentials, API keys, and environment secrets must live exclusively in gitignored `.env*.local` files or local OS environment variables. They must never be checked into git.
 3. **Synthetic Test Fixtures**: All tests, diagnostics, and code examples must use synthetic dummy strings (e.g. `TEST_MOCK_KEY_REDACTED_DO_NOT_USE`) or local emulators.
 4. **Automated Pre-Push Defense Gate**: Every code-modifying turn must pass automated secret credential scanning in `verify-qa.mjs`. If any secret key, private token, database password, or private key pattern is detected, the pipeline immediately halts with exit code 1 and blocks deployment.
+
+---
+
+## 8. Sovereign Dual-Chamber Governance & Zero-Bloat Hierarchy
+
+To eliminate developer bloat and AI-generated slop, all platform decisions and deliverables pass through a **Dual-Chamber Sovereign Governance System**:
+
+### A. The Board Room (The Council of Titans -- Strategic Sovereignty & Invariants)
+Ruthless executive lenses interrogating taste, moats, velocity, and existential boundaries:
+1. **Steve Jobs & Jony Ive**: Taste, ruthless subtraction, invisible design. Kill 40% of visual noise.
+2. **Jeff Bezos**: Customer obsession, frictionless compounding flywheels, reversible two-way doors.
+3. **Elon Musk**: First principles, radical deletion, testing against operational reality over corporate theater.
+4. **Mark Zuckerberg**: Open leverage, relentless daily shipping, turning open models into proprietary moats.
+5. **Jensen Huang**: Sovereign compute, token ROI, extreme intelligence density per square inch.
+6. **Dario Amodei & Sam Altman**: Constitutional grounding, verifiable truth, and frontier scale readiness.
+
+### B. The War Room (The General Staff & Operational Clearance)
+Active operators who audit, engineer, and clear production releases:
+1. **Paul Graham & William Zinsser (Voice / REWS v2.0)**: Human first. Blunt, non-technical, zero buzzwords.
+2. **Brad Smith (Legal / General Counsel)**: Diagnostic safe harbors, copyright cleanroom, zero-PII privacy compliance.
+3. **Aravind Srinivas & Lily Ray (AIEO / GEO / AEO / SEO)**: Perplexity and LLM citation authority, JSON-LD schemas, semantic triples.
+4. **Brian Balfour & Jim Collins (Flywheel Systems)**: Closed-loop growth. No dead-end pages.
+5. **Karri Saarinen & Rauno Freiberg (Kinetic Craft UI/UX)**: Linear-grade dark mode, damped spring physics, zero design slop.
+6. **Luis von Ahn, Sean Parker & Nir Eyal (Dopamine & Addictiveness)**: Sub-50ms reactive speed, uncomfortable truth discovery, boardroom-ready Slack scorecard exports, sunk-cost investment loops.
+7. **Keith Rabois & Ruth Porat (CFO & Unit Economics)**: Unit economics, killing vanity metrics, high-ticket advisory on-ramps.
+8. **Dan Guido & Simon Willison (Adversarial Security)**: Zero secret leaks (`verify-qa.mjs`), prompt injection defense, edge hardening.
+9. **Avinash Kaushik (Behavioral Telemetry)**: Privacy-preserving behavioral tracking and diagnostic drop-off auditing.
+
+### C. The Zero-Bloat 3-Tier Clearance Hierarchy
+* **Tier 1: Active Triad (Runs on Every Turn)**: Steve Jobs (simplicity) + Paul Graham (human voice) + Deterministic QA Gate (`verify-qa.mjs` + build + edge deploy).
+* **Tier 2: Domain Gatekeepers (Wakes Up Only When Territory Touched)**: Karri Saarinen (UI), Aravind Srinivas (GEO/SEO), Brian Balfour (Flywheels), Luis von Ahn (Dopamine/Engagement).
+* **Tier 3: Deep Bench on Call (Single-Strike Audits)**: Brad Smith (Legal), Dan Guido (Security), Keith Rabois (Economics), Titans on demand. Protocol: Red Flag -> Structural Fix -> Sign-off/Veto.
+
