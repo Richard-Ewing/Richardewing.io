@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { AlertTriangle, Shield, DollarSign, ArrowRight } from 'lucide-react';
 import ExogramBridge from '@/components/ExogramBridge';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
+import StructuredData, { generateFaqSchema } from '@/app/components/seo/StructuredData';
 
 export const metadata: Metadata = {
     title: 'Windsurf Problems & Solutions in Production',
@@ -15,6 +16,13 @@ export const metadata: Metadata = {
     },
     alternates: { canonical: 'https://www.richardewing.io/compare/windsurf-problems' },
 };
+
+const windsurfFaqs = [
+    { question: 'Is Windsurf dead after the acquisition?', answer: 'Windsurf still operates, but the team split between Google and Cognition Labs in 2025 has created uncertainty about long-term support, feature development, and pricing stability. Governance infrastructure is platform-independent - it transfers to any replacement tool.' },
+    { question: 'Why did Windsurf raise prices?', answer: 'Windsurf shifted from flexible credit-based pricing to daily/weekly quotas and raised the Pro plan from $15 to $20/month. Power users who relied on the previous model described it as a "rug pull" - paying more for less predictable access.' },
+    { question: 'Why does Windsurf burn credits so fast?', answer: 'Windsurf\'s Cascade agent runs background tasks that consume credits silently. Combined with failed requests still charging credits and opaque credit accounting, users report spending 2-3x what they expected.' },
+    { question: 'What is the best Windsurf alternative?', answer: 'Cursor and Claude Code are the most common migration targets. But all AI coding agents share the same governance gaps. The fix is not switching tools - it\'s deploying runtime governance on top of whichever tool you choose.' },
+];
 
 const complaints = [
     {
@@ -173,17 +181,13 @@ export default function WindsurfProblemsPage() {
 
                 {/* FAQ */}
                 <div className="mt-12 mb-8">
+                    <StructuredData data={generateFaqSchema(windsurfFaqs)} />
                     <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-6">Frequently Asked Questions</h2>
                     <div className="space-y-3">
-                        {[
-                            { q: 'Is Windsurf dead after the acquisition?', a: 'Windsurf still operates, but the team split between Google and Cognition Labs in 2025 has created uncertainty about long-term support, feature development, and pricing stability. Governance infrastructure is platform-independent - it transfers to any replacement tool.' },
-                            { q: 'Why did Windsurf raise prices?', a: 'Windsurf shifted from flexible credit-based pricing to daily/weekly quotas and raised the Pro plan from $15 to $20/month. Power users who relied on the previous model described it as a "rug pull" - paying more for less predictable access.' },
-                            { q: 'Why does Windsurf burn credits so fast?', a: 'Windsurf\'s Cascade agent runs background tasks that consume credits silently. Combined with failed requests still charging credits and opaque credit accounting, users report spending 2-3x what they expected.' },
-                            { q: 'What is the best Windsurf alternative?', a: 'Cursor and Claude Code are the most common migration targets. But all AI coding agents share the same governance gaps. The fix is not switching tools - it\'s deploying runtime governance on top of whichever tool you choose.' },
-                        ].map((faq, i) => (
+                        {windsurfFaqs.map((faq, i) => (
                             <details key={i} className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] shadow-sm">
-                                <summary className="p-4 cursor-pointer text-sm font-bold text-[#1A1A1A] hover:text-violet-700">{faq.q}</summary>
-                                <div className="px-4 pb-4 text-sm text-[#4A4A4A]">{faq.a}</div>
+                                <summary className="p-4 cursor-pointer text-sm font-bold text-[#1A1A1A] hover:text-violet-700">{faq.question}</summary>
+                                <div className="px-4 pb-4 text-sm text-[#4A4A4A]">{faq.answer}</div>
                             </details>
                         ))}
                     </div>

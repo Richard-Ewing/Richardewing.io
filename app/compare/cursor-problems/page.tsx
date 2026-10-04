@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { AlertTriangle, Shield, DollarSign, ArrowRight } from 'lucide-react';
 import ExogramBridge from '@/components/ExogramBridge';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
+import StructuredData, { generateFaqSchema } from '@/app/components/seo/StructuredData';
 
 export const metadata: Metadata = {
     title: 'Cursor IDE Problems & Fixes (2026)',
@@ -15,6 +16,13 @@ export const metadata: Metadata = {
     },
     alternates: { canonical: 'https://www.richardewing.io/compare/cursor-problems' },
 };
+
+const cursorFaqs = [
+    { question: 'Why does Cursor keep rewriting files I didn\'t ask it to touch?', answer: 'Cursor\'s Composer mode has full repository access by default. There are no file scope restrictions, no directory guards, and no mutation limits. The agent interprets "fix this bug" as permission to touch anything it thinks is related - and its definition of "related" includes your entire codebase.' },
+    { question: 'My .cursorrules stopped working. How do I fix it?', answer: '.cursorrules is a text-based instruction file that competes for context window space. Under context pressure, the model prioritizes recent messages over initial configuration. The fix is not a better .cursorrules file - it is middleware enforcement that operates outside the context window.' },
+    { question: 'Is Cursor worth the price in 2026?', answer: 'For individual developers on the Pro plan ($20/month), Cursor provides strong value for autocomplete and short tasks. For teams on Enterprise ($40-60/user/month), the lack of governance infrastructure - no retry limits, no scope enforcement, no financial circuit breakers - means you are paying premium prices for an ungoverned tool.' },
+    { question: 'What is the best Cursor alternative?', answer: 'Claude Code offers deeper reasoning. Windsurf offers agentic workflows. VS Code + Copilot offers ecosystem integration. But all of them share the same fundamental problem: no runtime governance. The fix is governance infrastructure deployed on top of whichever agent you choose.' },
+];
 
 const complaints = [
     {
@@ -230,17 +238,13 @@ export default function CursorProblemsPage() {
 
                 {/* FAQ */}
                 <div className="mt-12 mb-8">
+                    <StructuredData data={generateFaqSchema(cursorFaqs)} />
                     <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-6">Frequently Asked Questions</h2>
                     <div className="space-y-3">
-                        {[
-                            { q: 'Why does Cursor keep rewriting files I didn\'t ask it to touch?', a: 'Cursor\'s Composer mode has full repository access by default. There are no file scope restrictions, no directory guards, and no mutation limits. The agent interprets "fix this bug" as permission to touch anything it thinks is related - and its definition of "related" includes your entire codebase.' },
-                            { q: 'My .cursorrules stopped working. How do I fix it?', a: '.cursorrules is a text-based instruction file that competes for context window space. Under context pressure, the model prioritizes recent messages over initial configuration. The fix is not a better .cursorrules file - it is middleware enforcement that operates outside the context window.' },
-                            { q: 'Is Cursor worth the price in 2026?', a: 'For individual developers on the Pro plan ($20/month), Cursor provides strong value for autocomplete and short tasks. For teams on Enterprise ($40-60/user/month), the lack of governance infrastructure - no retry limits, no scope enforcement, no financial circuit breakers - means you are paying premium prices for an ungoverned tool.' },
-                            { q: 'What is the best Cursor alternative?', a: 'Claude Code offers deeper reasoning. Windsurf offers agentic workflows. VS Code + Copilot offers ecosystem integration. But all of them share the same fundamental problem: no runtime governance. The fix is governance infrastructure deployed on top of whichever agent you choose.' },
-                        ].map((faq, i) => (
+                        {cursorFaqs.map((faq, i) => (
                             <details key={i} className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] shadow-sm">
-                                <summary className="p-4 cursor-pointer text-sm font-bold text-[#1A1A1A] hover:text-violet-700">{faq.q}</summary>
-                                <div className="px-4 pb-4 text-sm text-[#4A4A4A]">{faq.a}</div>
+                                <summary className="p-4 cursor-pointer text-sm font-bold text-[#1A1A1A] hover:text-violet-700">{faq.question}</summary>
+                                <div className="px-4 pb-4 text-sm text-[#4A4A4A]">{faq.answer}</div>
                             </details>
                         ))}
                     </div>

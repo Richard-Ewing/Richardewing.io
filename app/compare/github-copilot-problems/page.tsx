@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { AlertTriangle, Shield, DollarSign, Star, ArrowRight } from 'lucide-react';
 import ExogramBridge from '@/components/ExogramBridge';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
+import StructuredData, { generateFaqSchema } from '@/app/components/seo/StructuredData';
 
 export const metadata: Metadata = {
     title: 'GitHub Copilot Problems & ROI (2026)',
@@ -15,6 +16,13 @@ export const metadata: Metadata = {
     },
     alternates: { canonical: 'https://www.richardewing.io/compare/github-copilot-problems' },
 };
+
+const copilotFaqs = [
+    { question: 'Is GitHub Copilot worth it in 2026?', answer: 'For basic autocomplete, yes. For agentic workflows, no - Copilot has no retry loop detection, no context rot prevention, no financial circuit breakers, and no file scope enforcement. You are paying $60+/user/month for a tool that ships without governance infrastructure.' },
+    { question: 'Why are developers leaving GitHub Copilot?', answer: 'The top reasons from G2 and Reddit: model carousel regressions (quality drops from silent model swaps), the PR ads incident (promotional content injected into pull requests), surprise bills from usage-based pricing, aggressive rate limiting on Pro tiers, and speculative code that hallucinates imports and API calls.' },
+    { question: 'What is the best GitHub Copilot alternative?', answer: 'It depends on your needs. Claude Code offers deeper reasoning. Cursor offers better context awareness. But none of them ship with governance. The actual fix is to deploy runtime governance infrastructure on top of whichever agent you choose.' },
+    { question: 'How does governance compare to Copilot Enterprise?', answer: 'Copilot Enterprise ($60+/user/month) provides code generation without governance. Each governance module here ($99 one-time) provides the enforcement layer Copilot is missing: context rot prevention, retry inflation control, financial circuit breakers, and file scope restrictions.' },
+];
 
 const complaints = [
     {
@@ -173,17 +181,13 @@ export default function GitHubCopilotProblemsPage() {
 
                 {/* FAQ */}
                 <div className="mt-12 mb-8">
+                    <StructuredData data={generateFaqSchema(copilotFaqs)} />
                     <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-6">Frequently Asked Questions</h2>
                     <div className="space-y-3">
-                        {[
-                            { q: 'Is GitHub Copilot worth it in 2026?', a: 'For basic autocomplete, yes. For agentic workflows, no - Copilot has no retry loop detection, no context rot prevention, no financial circuit breakers, and no file scope enforcement. You are paying $60+/user/month for a tool that ships without governance infrastructure.' },
-                            { q: 'Why are developers leaving GitHub Copilot?', a: 'The top reasons from G2 and Reddit: model carousel regressions (quality drops from silent model swaps), the PR ads incident (promotional content injected into pull requests), surprise bills from usage-based pricing, aggressive rate limiting on Pro tiers, and speculative code that hallucinates imports and API calls.' },
-                            { q: 'What is the best GitHub Copilot alternative?', a: 'It depends on your needs. Claude Code offers deeper reasoning. Cursor offers better context awareness. But none of them ship with governance. The actual fix is to deploy runtime governance infrastructure on top of whichever agent you choose.' },
-                            { q: 'How does governance compare to Copilot Enterprise?', a: 'Copilot Enterprise ($60+/user/month) provides code generation without governance. Each governance module here ($99 one-time) provides the enforcement layer Copilot is missing: context rot prevention, retry inflation control, financial circuit breakers, and file scope restrictions.' },
-                        ].map((faq, i) => (
+                        {copilotFaqs.map((faq, i) => (
                             <details key={i} className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] shadow-sm">
-                                <summary className="p-4 cursor-pointer text-sm font-bold text-[#1A1A1A] hover:text-violet-700">{faq.q}</summary>
-                                <div className="px-4 pb-4 text-sm text-[#4A4A4A]">{faq.a}</div>
+                                <summary className="p-4 cursor-pointer text-sm font-bold text-[#1A1A1A] hover:text-violet-700">{faq.question}</summary>
+                                <div className="px-4 pb-4 text-sm text-[#4A4A4A]">{faq.answer}</div>
                             </details>
                         ))}
                     </div>

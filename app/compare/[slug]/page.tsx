@@ -159,17 +159,16 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
     const tA = comparison.toolA || 'Tool A';
     const tB = comparison.toolB || 'Tool B';
 
-    const faqs = [];
-    if (comparison.theirFocus && comparison.ourAdvantage) {
-        faqs.push({
+    const faqs = [
+        {
             question: `What is the primary operational difference between ${tA} and ${tB}?`,
-            answer: comparison.theirFocus
-        });
-        faqs.push({
+            answer: comparison.theirFocus || `${tA} focuses on local development velocity and developer ergonomics, while ${tB} introduces deterministic governance boundaries, runtime cost-caps, and capital efficiency controls.`
+        },
+        {
             question: `How does AI Economics evaluate ${tA} vs ${tB}?`,
-            answer: comparison.ourAdvantage
-        });
-    }
+            answer: comparison.ourAdvantage || `Evaluating ${tA} versus ${tB} requires moving beyond raw syntax speed to calculate ongoing maintenance carry cost, context drift rates, and revenue per engineer.`
+        }
+    ];
 
     return (
         <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
