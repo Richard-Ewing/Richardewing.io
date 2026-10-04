@@ -5,8 +5,8 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import ProductBridgeCard from '@/app/components/ProductBridgeCard';
 
 export const metadata: Metadata = {
-  title: 'Richard Ewing Advisory vs McKinsey Tech Due Diligence | R&D Audits',
-  description: 'Compare Richard Ewing R&D Capital Audits vs McKinsey & Company technical due diligence. Empirical codebase & cloud billing analysis vs management survey checklists.',
+  title: 'Advisory vs McKinsey Due Diligence | Richard Ewing',
+  description: 'Compare Richard Ewing R&D audits vs McKinsey technical due diligence. Empirical codebase analysis vs survey checklists.',
   alternates: { canonical: 'https://www.richardewing.io/compare/advisory-vs-mckinsey' },
   openGraph: {
     title: 'Richard Ewing Advisory vs McKinsey Tech Due Diligence',

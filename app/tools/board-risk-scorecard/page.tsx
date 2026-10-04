@@ -3,8 +3,8 @@ import CalculatorIntentProposal from '@/app/components/calculators/CalculatorInt
 import BoardRiskScorecardTool from './content';
 
 export const metadata: Metadata = {
-    title: 'Board of Directors AI Governance & Fiduciary Risk Scorecard | Tools',
-    description: 'An executive 10-vector diagnostic for Board Directors, CEOs, and Audit Committees to evaluate corporate AI risk exposure, shadow agent delegation, and capital efficiency.',
+    title: 'Board AI Governance Risk Scorecard | Richard Ewing',
+    description: 'A 10-vector diagnostic for Board Directors and CEOs to evaluate corporate AI risk, shadow delegation, and capital efficiency.',
     keywords: [
         'Board of Directors AI governance',
         'AI fiduciary risk scorecard',

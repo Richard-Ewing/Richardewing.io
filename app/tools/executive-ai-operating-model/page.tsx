@@ -3,8 +3,8 @@ import CalculatorIntentProposal from '@/app/components/calculators/CalculatorInt
 import CEOOperatingModelTool from './content';
 
 export const metadata: Metadata = {
-    title: 'CEO & Executive AI Operating Model Diagnostic | Leadership Tools',
-    description: 'An executive audit tool for CEOs, COOs, Managing Directors, and SVPs to evaluate organizational readiness for autonomous agent operations, cross-functional capital allocation, and sovereign moat durability.',
+    title: 'Executive AI Operating Model Audit | Richard Ewing',
+    description: 'Evaluate organizational readiness for autonomous agents, cross-functional capital allocation, and sovereign moats.',
     keywords: [
         'CEO AI operating model',
         'Executive AI strategy audit',

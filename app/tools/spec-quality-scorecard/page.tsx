@@ -3,7 +3,7 @@ import CalculatorIntentProposal from '@/app/components/calculators/CalculatorInt
 import SpecQualityScorecardTool from './content';
 
 export const metadata: Metadata = {
-    title: 'Spec-Driven Development (SDD) Quality Scorecard | Linter Tool',
+    title: 'Spec-Driven Development Scorecard | Richard Ewing',
     description: 'Audit PRDs and feature requirements for machine-readable executable constraints before passing instructions to autonomous coding agents.',
     keywords: [
         'Spec-Driven Development',

@@ -4,7 +4,7 @@ import AARITool from './content';
 
 export const metadata: Metadata = {
     title: 'Autonomous Agent Readiness Index (AARI) | Diagnostic Tool',
-    description: 'A 15-point multi-vector diagnostic evaluating codebase architecture, type strictness, and test harness completeness before turning on autonomous coding agents.',
+    description: 'A 15-point diagnostic evaluating codebase architecture and test harness completeness before enabling autonomous coding agents.',
     keywords: [
         'Autonomous Agent Readiness Index',
         'Claude Code readiness',

@@ -15,7 +15,7 @@ const COMPARISONS = [
     {
         slug: 'claude-code-vs-cursor-governance',
         title: 'Claude Code vs Cursor Governance',
-        description: 'Comparing the enterprise governance controls of leading AI coding environments. Discover why deterministic runtime gating outperforms probabilistic prompt boundaries.',
+        description: 'Compare enterprise governance controls of leading AI coding tools. Why deterministic runtime gating beats probabilistic prompt boundaries.',
         keywords: ['Claude Code vs Cursor governance', 'Claude Code governance', 'Cursor enterprise', 'AI editor safety']
     },
     {

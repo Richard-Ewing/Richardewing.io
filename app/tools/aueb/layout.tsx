@@ -12,7 +12,7 @@ export default function AUEBLayout({ children }: { children: React.ReactNode }) 
                         applicationCategory: 'BusinessApplication',
                         operatingSystem: 'Web',
                         url: 'https://www.richardewing.io/tools/aueb',
-                        description: 'Calculate your AI margin collapse point. Compare GPT-4, Claude, and open-source LLM costs. Prevent AI hallucination debt with the AUEB diagnostic by Richard Ewing.',
+                        description: 'Calculate your AI margin collapse point. Compare frontier model and local SLM costs to prevent negative-margin features.',
                         featureList: [
                             'LLM Cost Comparison (GPT-4, Claude, Llama)',
                             'AI Margin Collapse Point Calculator',

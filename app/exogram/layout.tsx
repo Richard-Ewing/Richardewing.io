@@ -3,7 +3,7 @@ import React from 'react';
 
 export const metadata: Metadata = {
     title: 'Exogram: AI That Remembers Context | Richard Ewing',
-    description: 'Exogram is a conversational AI that understands your context, remembers what matters, and helps you move work and life forward without starting over every time.',
+    description: 'Exogram is conversational AI that remembers context, tracks state, and moves projects forward without starting over each time.',
     alternates: { canonical: 'https://www.richardewing.io/exogram' },
     openGraph: {
         title: 'Exogram: AI That Remembers Reality',

@@ -10,7 +10,7 @@ const staticReports = [
     {
         id: 'ai-governance-maturity-index',
         title: 'AI Governance Maturity Index',
-        description: 'The definitive evaluation of enterprise AI operational readiness, bridging the gap between prototypical deployments and Admissibility-Native infrastructure.',
+        description: 'Empirical evaluation of enterprise AI readiness, bridging prototypical deployments with deterministic runtime governance.',
         date: 'Current Quarter',
         isGated: false
     },

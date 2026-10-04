@@ -5,6 +5,7 @@ import { Landmark } from 'lucide-react';
 import ToolGate from '@/app/components/tool-gate';
 import { ExportToPDFButton } from '@/app/components/ExportToPDFButton';
 import DiagnosticCTA from '@/app/components/DiagnosticCTA';
+import SlackScorecardExport from '@/components/SlackScorecardExport';
 import Link from 'next/link';
 
 export default function NegativeCarryCodeAuditorTool() {
@@ -179,6 +180,23 @@ export default function NegativeCarryCodeAuditorTool() {
                                 <p className="text-[10px] text-rose-800">
                                     Required capital adjustment to refactor negative-carry AI boilerplate post-acquisition.
                                 </p>
+                            </div>
+
+                            <div className="pt-2">
+                                <SlackScorecardExport
+                                    toolName="Negative-Carry Code Auditor"
+                                    primaryMetricLabel="Suggested M&A Debt Escrow"
+                                    primaryMetricValue={`$${valuationDiscount.toLocaleString()}`}
+                                    statusLabel={riskTier}
+                                    canonicalUrl="https://www.richardewing.io/tools/negative-carry-code-auditor"
+                                    buttonLabel="Copy Boardroom Slack Card"
+                                    metrics={[
+                                        { label: 'Negative-Carry Risk Score', value: `${negativeCarryRiskScore} / 100` },
+                                        { label: 'Sprint Maintenance Drag', value: `${maintenanceCapacityPercent}% of capacity` },
+                                        { label: 'Technical Insolvency Horizon', value: `${quartersToInsolvency} quarters` },
+                                        { label: 'Annual Wasted Payroll', value: `$${wastedPayrollAnnual.toLocaleString()}` }
+                                    ]}
+                                />
                             </div>
 
                             <div className="pt-2 border-t border-zinc-200 flex items-center justify-between">

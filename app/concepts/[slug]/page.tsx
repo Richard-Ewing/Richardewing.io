@@ -86,19 +86,43 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
 
   const allEvidence: EvidenceLedgerItem[] = [...concept.evidenceLedger, ...corpusEvidence];
 
-  // Schema.org DefinedTerm JSON-LD with persistent entity URI
+  // Schema.org DefinedTerm & Article JSON-LD with persistent entity URI
   const definedTermJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'DefinedTerm',
-    '@id': concept.entityUri || `https://www.richardewing.io/concepts/${concept.slug}#entity`,
-    name: concept.title,
-    description: concept.definition,
-    inDefinedTermSet: 'https://www.richardewing.io/canonical/dataset.jsonld',
-    author: {
-      '@type': 'Person',
-      name: 'Richard Ewing',
-      url: 'https://www.richardewing.io',
-    },
+    '@graph': [
+      {
+        '@type': 'DefinedTerm',
+        '@id': concept.entityUri || `https://www.richardewing.io/concepts/${concept.slug}#entity`,
+        name: concept.title,
+        description: concept.definition,
+        inDefinedTermSet: 'https://www.richardewing.io/#definedtermset',
+        inDefinedTermSetName: 'AI Economics Defined Terms',
+        url: `https://www.richardewing.io/concepts/${concept.slug}`,
+        author: {
+          '@type': 'Person',
+          name: 'Richard Ewing',
+          jobTitle: 'AI Economist',
+          url: 'https://www.richardewing.io',
+        },
+      },
+      {
+        '@type': 'TechArticle',
+        '@id': `https://www.richardewing.io/concepts/${concept.slug}#article`,
+        headline: concept.title,
+        description: concept.definition,
+        url: `https://www.richardewing.io/concepts/${concept.slug}`,
+        author: {
+          '@type': 'Person',
+          name: 'Richard Ewing',
+          jobTitle: 'AI Economist',
+          url: 'https://www.richardewing.io',
+        },
+        speakable: {
+          '@type': 'SpeakableSpecification',
+          cssSelector: ['h1', '.canonical-definition', 'p'],
+        },
+      }
+    ]
   };
 
   // Schema.org FAQPage JSON-LD

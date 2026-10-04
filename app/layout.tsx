@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     default: 'Richard Ewing | AI Economist & R&D Capital Audits',
     template: '%s | Richard Ewing'
   },
-  description: 'Richard Ewing helps organizations measure, govern, and improve the economics of enterprise AI. Advisory services, diagnostic assessments, and practical frameworks for CTOs, CFOs, and PE operating partners.',
+  description: 'Richard Ewing helps CFOs, CTOs, and PE leaders measure, govern, and audit enterprise AI economics. 25 diagnostics and advisory services.',
   keywords: homepageKeywords,
   authors: [{ name: 'Richard Ewing', url: 'https://www.richardewing.io' }],
   creator: 'Richard Ewing',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
   // Open Graph
   openGraph: {
-    title: 'Richard Ewing | AI Economist - Enterprise AI Audits & Cost Governance',
+    title: 'AI Economist & Enterprise Cost Audits | Richard Ewing',
     description: 'Richard Ewing helps organizations measure, govern, and improve the economics of enterprise AI. 19 frameworks, 25 diagnostic tools, and advisory services for CTOs, CFOs, and PE operating partners.',
     url: 'https://www.richardewing.io',
     siteName: 'Richard Ewing',

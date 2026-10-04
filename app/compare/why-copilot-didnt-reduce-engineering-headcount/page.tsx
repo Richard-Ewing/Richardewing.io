@@ -37,14 +37,14 @@ export default function WhyCopilotDidNotReduceHeadcountPage() {
                 {/* Emergency Triage Card */}
                 <EmergencyTriageCard 
                     headline="The Jevons Paradox of Software Engineering"
-                    symptom="When writing code becomes faster and cheaper, engineering teams do not write less code—they create significantly more code, build more complex systems, and generate larger test suites that all require ongoing maintenance."
+                    symptom="When writing code becomes faster and cheaper, engineering teams do not write less code - they create significantly more code, build more complex systems, and generate larger test suites that all require ongoing maintenance."
                     quickChecks={[
                         "Measure your total codebase line count growth over the last 12 months.",
                         "Check your monthly engineering payroll against total annual recurring revenue (Revenue Per Engineer).",
                         "Audit how many hours engineers spend on maintenance tickets versus new revenue features."
                     ]}
-                    whyItBroke="AI solves the mechanical act of typing code, which only represents 20% of a software engineer's job. The remaining 80%—system architecture, database design, debugging, security, and product alignment—still requires human engineering."
-                    directFix="Benchmark your team against true SaaS Revenue Per Engineer ($250k–$500k+) rather than lines of code."
+                    whyItBroke="AI solves the mechanical act of typing code, which only represents 20% of a software engineer's job. The remaining 80% - system architecture, database design, debugging, security, and product alignment - still requires human engineering."
+                    directFix="Benchmark your team against true SaaS Revenue Per Engineer ($250k to $500k+) rather than lines of code."
                     toolLink={{
                         label: "Benchmark Your Revenue Per Engineer",
                         href: "/tools/aper"
@@ -58,7 +58,7 @@ export default function WhyCopilotDidNotReduceHeadcountPage() {
                         The Real Cost of AI-Generated Code
                     </h2>
                     <p className="text-[#4A4A4A] leading-relaxed mb-4">
-                        Every line of code committed to your repository is not just an asset—it is a continuous liability. It requires security patches, library upgrades, database migrations, and debugging whenever external APIs change.
+                        Every line of code committed to your repository is not just an asset - it is a continuous liability. It requires security patches, library upgrades, database migrations, and debugging whenever external APIs change.
                     </p>
 
                     <div className="space-y-4 my-6">

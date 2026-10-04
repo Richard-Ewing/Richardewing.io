@@ -3,7 +3,7 @@ import CalculatorIntentProposal from '@/app/components/calculators/CalculatorInt
 import CFOCapitalizationTool from './content';
 
 export const metadata: Metadata = {
-    title: 'CFO AI R&D Capitalization & Section 174 Audit | Financial Tool',
+    title: 'CFO R&D Capitalization & Section 174 | Richard Ewing',
     description: 'Calculate the true financial breakdown of innovation R&D vs maintenance OpEx, quantifying tax impact, Section 174 amortization, and EBITDA adjustments.',
     keywords: [
         'CFO AI R&D capitalization',

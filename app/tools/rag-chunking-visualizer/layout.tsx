@@ -11,7 +11,7 @@ export default function RagChunkingLayout({ children }: { children: React.ReactN
                         applicationCategory: 'DeveloperApplication',
                         operatingSystem: 'Web',
                         url: 'https://www.richardewing.io/tools/rag-chunking-visualizer',
-                        description: 'A visual diagnostic utility for optimizing text splitting logic before embedding into Vector Databases (Pinecone, ChromaDB). Calculates total token loss, overlapping spans, and semantic destruction vectors.',
+                        description: 'Optimize text splitting logic before embedding into vector databases. Eliminate token loss and semantic retrieval errors.',
                         featureList: [
                             'Recursive Character Text Splitting Simulator',
                             'Visual Chunk Boundary Mapping',

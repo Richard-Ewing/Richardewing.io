@@ -3,7 +3,7 @@ import CalculatorIntentProposal from '@/app/components/calculators/CalculatorInt
 import AIFeatureMarginTool from './content';
 
 export const metadata: Metadata = {
-    title: 'AI Feature Unit Margin Matrix & Token Elasticity | Diagnostic Tool',
+    title: 'AI Feature Unit Margin Calculator | Richard Ewing',
     description: 'Calculate feature-level unit gross margins, token elasticity curves, and identify negative-carry AI features that destroy SaaS profitability.',
     keywords: [
         'AI feature margin calculator',

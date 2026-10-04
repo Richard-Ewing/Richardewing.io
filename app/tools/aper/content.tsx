@@ -10,6 +10,7 @@ import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
 import ToolPayGate from '../../components/ToolPayGate';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
+import SlackScorecardExport from '@/components/SlackScorecardExport';
 import ExecutiveBoardDeckModal from '@/app/components/ExecutiveBoardDeckModal';
 import EnterpriseSOWModal from '@/app/components/EnterpriseSOWModal';
 import { QPEPRemediation } from '../../components/QPEPRemediation';
@@ -404,6 +405,23 @@ function APERToolContent() {
                                             Formal SOW Proposal
                                         </button>
                                         <ExportToPDFButton targetId="aper-pdf-export-zone" fileName={`APER_Assessment_${persona}.pdf`} />
+                                    </div>
+                                    <div className="w-full pt-2">
+                                        <SlackScorecardExport
+                                            toolName="AI Payroll Efficiency Ratio (APER)"
+                                            primaryMetricLabel="Revenue Efficiency Multiplier"
+                                            primaryMetricValue={`${results.multiplier.toFixed(2)}x`}
+                                            statusLabel={results.multiplier < 2.5 ? 'PAYROLL EFFICIENCY DEFICIT' : 'OPTIMAL PAYROLL CONVERSION'}
+                                            canonicalUrl="https://www.richardewing.io/tools/aper"
+                                            buttonLabel="Copy Boardroom Slack Card"
+                                            metrics={[
+                                                { label: 'Revenue Multiplier', value: `${results.multiplier.toFixed(2)}x` },
+                                                { label: 'ARR Per Engineer', value: formatMoney(results.aper) },
+                                                { label: 'Coordination Tax Drag', value: `${results.coordinationTax.toFixed(1)}%` },
+                                                { label: 'Engineering Margin', value: `${results.engineeringMargin.toFixed(1)}%` },
+                                                { label: 'Calculated APER Score', value: `${Math.round(results.multiplier * 10)} / 100` }
+                                            ]}
+                                        />
                                     </div>
                                 </div>
 

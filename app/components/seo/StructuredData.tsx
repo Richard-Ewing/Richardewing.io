@@ -44,7 +44,21 @@ export const generateSoftwareApplicationSchema = (name: string, description: str
     description,
     url,
     applicationCategory: 'BusinessApplication',
+    applicationSubCategory: 'AI Cost Governance & Engineering Due Diligence',
     operatingSystem: 'All',
+    browserRequirements: 'Requires JavaScript. Requires HTML5.',
+    isAccessibleForFree: 'True',
+    author: {
+        '@type': 'Person',
+        name: 'Richard Ewing',
+        jobTitle: 'AI Economist & Enterprise Cost Strategist',
+        url: 'https://www.richardewing.io'
+    },
+    publisher: {
+        '@type': 'Organization',
+        name: 'Richard Ewing Advisory',
+        url: 'https://www.richardewing.io'
+    },
     offers: {
         '@type': 'Offer',
         price: '0',

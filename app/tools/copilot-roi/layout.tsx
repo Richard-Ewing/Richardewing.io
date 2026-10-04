@@ -11,7 +11,7 @@ export default function CopilotROILayout({ children }: { children: React.ReactNo
                         applicationCategory: 'BusinessApplication',
                         operatingSystem: 'Web',
                         url: 'https://www.richardewing.io/tools/copilot-roi',
-                        description: 'Model the true Return on Invested Capital (ROAI) of AI coding assistants like GitHub Copilot and Cursor. Calculate APER productivity lift vs Vibe Coding Debt drag.',
+                        description: 'Model the true ROI of AI coding assistants like GitHub Copilot and Cursor. Calculate productivity lift vs vibe coding debt drag.',
                         featureList: [
                             'AI Coding Assistant ROI Calculator',
                             'Vibe Coding Debt Drag Analysis',

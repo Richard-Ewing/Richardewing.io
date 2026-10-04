@@ -11,6 +11,7 @@ import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
 import ToolPayGate from '../../components/ToolPayGate';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
+import SlackScorecardExport from '@/components/SlackScorecardExport';
 import ExecutiveBoardDeckModal from '@/app/components/ExecutiveBoardDeckModal';
 import EnterpriseSOWModal from '@/app/components/EnterpriseSOWModal';
 import { QPEPRemediation } from '../../components/QPEPRemediation';
@@ -572,6 +573,23 @@ function AUEBToolContent() {
                                                 />
                                             </ToolGate>
                                         </div>
+                                    </div>
+                                    <div className="w-full pt-2">
+                                        <SlackScorecardExport
+                                            toolName="AI Unit Economics Benchmark (AUEB)"
+                                            primaryMetricLabel="Calculated Gross Margin"
+                                            primaryMetricValue={`${results.grossMargin.toFixed(1)}%`}
+                                            statusLabel={results.grossMargin < 50 ? 'SEVERE MARGIN COMPRESSION' : 'SUSTAINABLE UNIT ECONOMICS'}
+                                            canonicalUrl="https://www.richardewing.io/tools/aueb"
+                                            buttonLabel="Copy Boardroom Slack Card"
+                                            metrics={[
+                                                { label: 'Calculated Gross Margin', value: `${results.grossMargin.toFixed(1)}%` },
+                                                { label: 'Monthly AI Token Spend', value: formatMoney(results.monthlyCost) },
+                                                { label: 'Inference Cost Per User', value: formatMoney(results.costPerUser) },
+                                                { label: 'Margin Inversion Point', value: `${results.insolvencyPoint} queries/user/mo` },
+                                                { label: 'Monthly Net Profit', value: formatMoney(results.monthlyProfit) }
+                                            ]}
+                                        />
                                     </div>
                                 </div>
 

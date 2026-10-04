@@ -11,7 +11,7 @@ export default function ShadowLayout({ children }: { children: React.ReactNode }
                         applicationCategory: 'SecurityApplication',
                         operatingSystem: 'Web',
                         url: 'https://www.richardewing.io/tools/shadow-ai',
-                        description: 'Client-side zero-trust SOC2 liability scanner. Cross-reference employee expense and traffic logs against a dynamic index of 500+ unsanctioned AI tools to calculate explicit intellectual property egress risk.',
+                        description: 'Scan employee traffic logs against unsanctioned AI tools to calculate intellectual property egress and SOC2 compliance risk.',
                         featureList: [
                             'Zero-Trust Local CSV Log Parsing',
                             '500+ Shadow AI Tool Dictionary Heuristics',

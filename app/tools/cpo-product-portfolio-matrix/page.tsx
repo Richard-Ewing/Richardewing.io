@@ -3,8 +3,8 @@ import CalculatorIntentProposal from '@/app/components/calculators/CalculatorInt
 import CPOProductPortfolioTool from './content';
 
 export const metadata: Metadata = {
-    title: 'CPO AI Feature Margin & Portfolio Pruning Matrix | Product Tools',
-    description: 'An executive portfolio evaluation tool for CPOs, VPs of Product, and Product Directors to model feature gross margins, identify negative-carry features, and transition from seat-based to outcome-based pricing.',
+    title: 'CPO AI Feature Margin Matrix | Richard Ewing',
+    description: 'Model feature gross margins, identify negative-carry features, and eliminate margin-bleeding AI experiments.',
     keywords: [
         'CPO AI product strategy',
         'VP Product feature margin',

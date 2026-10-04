@@ -11,7 +11,7 @@ export default function AgentRouterLayout({ children }: { children: React.ReactN
                         applicationCategory: 'BusinessApplication',
                         operatingSystem: 'Web',
                         url: 'https://www.richardewing.io/tools/agent-router',
-                        description: 'Generative AI FinOps planning utility. Calculates compound token consumption across massive multi-agent enterprise workflows. Estimates cloud GPU scale costs to prove ROI on semantic router deployment.',
+                        description: 'Model compound token consumption across multi-agent enterprise workflows. Calculate ROI on semantic model routing.',
                         featureList: [
                             'Multi-Hop Agent Token Calculus',
                             'Router Triage Cost Mitigation',

@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'AI Discoverability Benchmark & GEO Methodology | August 2026 Baseline',
-  description: 'Formal methodology, model registry, and empirical baseline report measuring how frontier AI answer engines retrieve, cite, and attribute canonical research concepts.',
+  title: 'AI Discoverability Benchmark & GEO | Richard Ewing',
+  description: 'Empirical baseline report measuring how frontier AI answer engines retrieve, cite, and attribute canonical enterprise research concepts.',
   alternates: {
     canonical: 'https://www.richardewing.io/benchmark/ai-discoverability',
   },

@@ -5,7 +5,7 @@ import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 export const metadata: Metadata = {
     title: 'AI Economics & R&D Capital Audits for CFOs',
-    description: 'Forensic R&D capital audits, Section 174 software capitalization defense, and AI gross margin engineering for Chief Financial Officers and Directors of Finance.',
+    description: 'Forensic R&D capital audits, Section 174 defense, and AI gross margin engineering for Chief Financial Officers and Directors of Finance.',
     keywords: [
         'CFO AI economics',
         'Section 174 software capitalization',

@@ -20,7 +20,7 @@ import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
   title: 'The Pragmatic AI Builder Book',
-  description: 'How to turn what you already know into an AI business without venture capital theater. A field guide to domain validation, unit economics, and cash-flow-funded software.',
+  description: 'Turn expertise into a profitable AI business without VC theater. A field guide to domain validation, unit economics, and cash-flow software.',
   keywords: [
     'The Pragmatic AI Builder',
     'AI founder book',

@@ -3,7 +3,7 @@ import CalculatorIntentProposal from '@/app/components/calculators/CalculatorInt
 import CodeReviewBottleneckTool from './content';
 
 export const metadata: Metadata = {
-    title: 'AI Code Review Bottleneck & Payroll Drag Calculator | Engineering Diagnostic',
+    title: 'AI Code Review Bottleneck Calculator | Richard Ewing',
     description: 'Calculate the senior engineering hours, review queue latency, and payroll drag caused by un-gated AI-generated pull request floods.',
     keywords: [
         'AI code review bottleneck',

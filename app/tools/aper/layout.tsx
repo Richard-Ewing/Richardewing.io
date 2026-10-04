@@ -12,7 +12,7 @@ export default function APERLayout({ children }: { children: React.ReactNode }) 
                         applicationCategory: 'BusinessApplication',
                         operatingSystem: 'Web',
                         url: 'https://www.richardewing.io/tools/aper',
-                        description: 'Calculate your Revenue Per Engineer and benchmark against elite SaaS companies (Stripe, Figma, Linear). Diagnose organizational bloat and engineering efficiency. By Richard Ewing, AI Economist.',
+                        description: 'Calculate Revenue Per Engineer and benchmark against elite SaaS companies. Diagnose organizational bloat and engineering yield.',
                         featureList: [
                             'Revenue Per Engineer Calculation',
                             'Elite SaaS Benchmarking (Stripe, Figma, Linear)',

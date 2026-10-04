@@ -12,7 +12,7 @@ export default function EVSELayout({ children }: { children: React.ReactNode }) 
                         applicationCategory: 'BusinessApplication',
                         operatingSystem: 'Web',
                         url: 'https://www.richardewing.io/tools/ev-se',
-                        description: 'Calculate risk-adjusted enterprise value. SaaS valuation calculator with revenue multiple adjustments for churn risk, scope creep, and execution confidence. By Richard Ewing, AI Economist.',
+                        description: 'Calculate risk-adjusted enterprise value. SaaS valuation calculator with multiple adjustments for technical debt and churn.',
                         featureList: [
                             'Risk-Adjusted Revenue Multiple Calculator',
                             'Wealth Destruction Gap Analysis',

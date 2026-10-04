@@ -26,8 +26,42 @@ export default function EmergencyTriageCard({
   toolLink,
   citationSnippet,
 }: EmergencyTriageProps) {
+  const schemaPayload = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Question',
+        name: headline,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: citationSnippet || directFix,
+          author: {
+            '@type': 'Person',
+            name: 'Richard Ewing',
+            jobTitle: 'AI Economist & Enterprise Cost Strategist',
+            url: 'https://www.richardewing.io'
+          }
+        }
+      },
+      {
+        '@type': 'HowTo',
+        name: `Diagnostic Triage: ${headline}`,
+        description: symptom,
+        step: quickChecks.map((check, idx) => ({
+          '@type': 'HowToStep',
+          position: idx + 1,
+          text: check
+        }))
+      }
+    ]
+  };
+
   return (
     <section className="my-8 rounded-2xl border border-rose-200 bg-white p-6 md:p-8 shadow-sm">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaPayload) }}
+      />
       {/* Header */}
       <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-rose-700 mb-3">
         <AlertCircle size={16} className="text-rose-600" />

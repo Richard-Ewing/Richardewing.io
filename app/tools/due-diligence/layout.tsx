@@ -15,7 +15,7 @@ export default function DueDiligenceLayout({ children }: { children: React.React
                         applicationCategory: 'BusinessApplication',
                         operatingSystem: 'Web',
                         url: 'https://www.richardewing.io/tools/due-diligence',
-                        description: 'Calculate valuation impairment risk. Identify technical debt, cloud cost bloat, and security threats before finalizing a software acquisition. Built for VC and Private Equity by Richard Ewing.',
+                        description: 'Calculate valuation impairment risk. Identify technical debt and cloud bloat before finalizing software acquisitions.',
                         featureList: [
                             'Valuation Impairment Assessment',
                             'Technical Debt Recovery Calculator',

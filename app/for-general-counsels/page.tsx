@@ -4,7 +4,7 @@ import { Shield, Scale, FileCheck, ArrowRight, Lock, AlertTriangle } from 'lucid
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 export const metadata: Metadata = {
-    title: 'Enterprise AI Governance & Liability Defense for General Counsels',
+    title: 'AI Governance & Legal Liability Defense | Richard Ewing',
     description: 'Fiduciary AI risk mitigation, SOX 404 agent signing boundaries, and EU AI Act compliance frameworks for Chief Legal Officers and General Counsels.',
     keywords: [
         'General Counsel AI governance',

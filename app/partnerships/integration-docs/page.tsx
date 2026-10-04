@@ -4,7 +4,7 @@ import TechnologyIntegrationDocs from '@/components/partnerships/TechnologyInteg
 
 export const metadata: Metadata = {
   title: 'Technology Integration Docs | Richard Ewing Partnerships',
-  description: 'Technical integration docs explaining how developer tools, databases (Supabase, PostgreSQL), vector engines, and edge runtimes integrate with Richard Ewing diagnostics.',
+  description: 'Technical integration docs explaining how databases, vector engines, and edge runtimes integrate with Richard Ewing diagnostics.',
   keywords: [
     'Supabase integration docs',
     'Richard Ewing integration guide',
