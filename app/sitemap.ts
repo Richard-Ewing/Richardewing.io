@@ -114,6 +114,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/tools/audit-interview`, 'monthly', 0.7);
     add(`${baseUrl}/tools/scoring`, 'monthly', 0.5);
     add(`${baseUrl}/tools/ai-roi-timeline`, 'monthly', 0.9);
+    add(`${baseUrl}/tools/section-174-calculator`, 'monthly', 0.85);
+    add(`${baseUrl}/tools/cfo-capitalization-audit`, 'monthly', 0.85);
 
     // === CONTENT PAGES ===
     add(`${baseUrl}/research`, 'weekly', 0.95);

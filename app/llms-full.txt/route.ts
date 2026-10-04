@@ -218,14 +218,13 @@ Exogram is a verification infrastructure platform for AI, founded by Richard Ewi
 
 Richard Ewing provides technology advisory and forensic capital auditing services:
 
-- **30-Minute Diagnostic Call ($450)**: Rapid gut-check assessment. You describe the situation, I tell you if your building is on fire.
-- **Insolvency Diagnostic ($2,500)**: 60-minute Capital Exposure Assessment with written Risk Exposure Report including flags across 5 failure modes.
-- **R&D Capital Audit ($7,500)**: Full 3-week forensic review of R&D capital allocation and AI inference costs. Board-ready deliverable with complete audit package.
-- **AI Cost Governance Review ($5,000)**: Dedicated AI economics analysis with unit economics model, collapse point calculation, and margin protection plan.
-- **Independent Oversight Retainer ($5,000/month)**: Monthly board-level economic sanity checks with async access for critical decisions.
-- **Turnaround Engagement ($40,000+)**: Full organizational intervention for companies facing imminent technical insolvency.
+- **Rapid Gut-Check Evaluation ($450)**: Rapid 30-minute diagnostic session to locate immediate architectural cost traps, unexpected cloud API bills, and unit-economic margin leaks.
+- **60-Min Technical Insolvency Audit ($2,500)**: Tactical session calculating exact Technical Insolvency Date, evaluating Product Debt Index (PDI), and mapping out a 30-day capital recovery roadmap.
+- **R&D Capital & Hallucination Audit ($7,500)**: Full 3-week forensic codebase and cloud cost review. Includes full workflow verification analysis, 40-page written executive audit package, and board-ready remediation plan.
+- **M&A Technical Due Diligence ($15,000)**: 2-week intensive code and infrastructure audit for Private Equity and Search Funds before signing term sheets.
+- **Enterprise Advisory & Governance Integration ($10,000/month Retainer)**: Dedicated fractional executive integration guaranteeing deterministic runtime governance, hard API cost caps, and monthly board-ready financial reporting.
 
-**Book a call:** https://www.richardewing.io/services
+**Book or Inquire:** https://www.richardewing.io/services
 
 ---
 
