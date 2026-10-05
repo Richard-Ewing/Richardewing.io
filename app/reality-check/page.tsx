@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import LivingDecisionEngine from '../components/LivingDecisionEngine';
 import LivingRealityCheck from '../components/LivingRealityCheck';
 import ProofRail from '../components/ProofRail';
 
 export const metadata: Metadata = {
     title: 'The AI Reality Check | Richard Ewing',
-    description: 'Calculate your hidden AI babysitting tax and test real numbers against marketing hype in under 60 seconds.',
+    description: 'Interactive decision engine and hidden babysitting tax calculator. Test real numbers against marketing hype in under 60 seconds.',
     alternates: { canonical: 'https://www.richardewing.io/reality-check' },
     openGraph: {
         title: 'The AI Reality Check | Richard Ewing',
@@ -20,7 +21,7 @@ export default function RealityCheckPage() {
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
-        name: 'The AI Reality Check Instrument',
+        name: 'The AI Reality Check & Living Decision Engine',
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'All',
         browserRequirements: 'Requires JavaScript. Works on all modern browsers.',
@@ -31,7 +32,7 @@ export default function RealityCheckPage() {
             jobTitle: 'AI Economist & Systems Architect',
             url: 'https://www.richardewing.io',
         },
-        description: 'Interactive diagnostic tool calculating the hidden engineering babysitting tax and comparing vendor claims with operational reality.',
+        description: 'Interactive decision engine and diagnostic tool calculating the hidden engineering babysitting tax and comparing vendor claims with operational reality.',
     };
 
     return (
@@ -43,15 +44,15 @@ export default function RealityCheckPage() {
             />
 
             {/* Ambient Background Gradient Lights (Neon Cyan & Royal Purple brand flares) */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[360px] bg-gradient-to-b from-purple-500/10 via-cyan-500/10 to-transparent blur-3xl pointer-events-none" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[360px] bg-gradient-to-b from-purple-500/10 via-cyan-500/10 to-transparent blur-3xl pointer-events-none" />
 
             <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
 
                 {/* Hero Header in Richard's signature editorial typography */}
-                <div className="text-center max-w-3xl mx-auto mb-6">
+                <div className="text-center max-w-3xl mx-auto mb-4">
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-100/80 border border-purple-200 text-purple-950 text-xs font-mono font-bold uppercase tracking-wider mb-4">
                         <Sparkles className="w-3.5 h-3.5 text-purple-700" />
-                        <span>Zero Sales Fluff · 100% Operational Truth</span>
+                        <span>Interactive Decision Engine · 100% Operational Truth</span>
                     </div>
 
                     <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-zinc-950 font-grotesk tracking-tight leading-tight">
@@ -66,7 +67,23 @@ export default function RealityCheckPage() {
                     </p>
                 </div>
 
-                {/* The Flagship Living Interactive Component */}
+                {/* The Flagship Living Decision Engine (Mardyn-grade living card with constraint chips) */}
+                <LivingDecisionEngine />
+
+                {/* Section Break: Granular Babysitting Tax Calculator */}
+                <div className="mt-20 pt-12 border-t border-zinc-300/80 text-center max-w-2xl mx-auto mb-6">
+                    <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-500 block mb-2">
+                        Deep Diagnostic Calculator
+                    </span>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-zinc-950 font-grotesk">
+                        Calculate Your Team's Specific Babysitting Tax
+                    </h2>
+                    <p className="text-sm text-zinc-600 mt-2 font-medium">
+                        Input your actual team size, average engineer compensation, and monthly tool bills to compute your exact payroll cleanup liability.
+                    </p>
+                </div>
+
+                {/* The Babysitting Tax & Scrubber Component */}
                 <LivingRealityCheck />
 
                 {/* Lived Experience Editorial: The 3 Uncomfortable Realities */}

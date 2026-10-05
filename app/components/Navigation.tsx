@@ -2,17 +2,24 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown, ExternalLink, ShieldCheck, Award, Zap, TrendingUp, Sparkles, Calculator, Gauge, Cpu } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SignInButton, useUser } from '@clerk/nextjs';
 import Image from 'next/image';
 
 const Navigation = () => {
+    const pathname = usePathname();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
     const [toolsDropdownOpen, setToolsDropdownOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const { isSignedIn, isLoaded } = useUser();
+
+    // If on homepage, do not render this navigation (SiteNav is rendered in page.tsx)
+    if (pathname === '/') {
+        return null;
+    }
 
     // Handle scroll effect for navbar background
     useEffect(() => {

@@ -1,11 +1,17 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { LeadMagnetCTA } from './LeadMagnetCTA';
 import Image from 'next/image';
 import { GooglePreferredBadge } from './GooglePreferredBadge';
 
 export function Footer() {
+    const pathname = usePathname();
+    if (pathname === '/') {
+        return null;
+    }
+
     return (
         <footer className="border-t border-zinc-400 pt-16 pb-12 mt-20 bg-white/80">
             <div className="page-container">
