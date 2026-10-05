@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, ChevronDown, ExternalLink, ShieldCheck, Award, Zap, TrendingUp } from 'lucide-react';
+import { Menu, X, ChevronDown, ExternalLink, ShieldCheck, Award, Zap, TrendingUp, Sparkles, Calculator, Gauge, Cpu } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SignInButton, useUser } from '@clerk/nextjs';
 import Image from 'next/image';
@@ -11,7 +11,6 @@ const Navigation = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
     const [toolsDropdownOpen, setToolsDropdownOpen] = useState(false);
-    const [rolesDropdownOpen, setRolesDropdownOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const { isSignedIn, isLoaded } = useUser();
 
@@ -59,15 +58,27 @@ const Navigation = () => {
                         </Link>
 
                         {/* Desktop Nav - Active on xl (1280px+) */}
-                        <div className="hidden xl:flex items-center gap-4 2xl:gap-5 font-medium text-sm">
+                        <div className="hidden xl:flex items-center gap-3.5 2xl:gap-5 font-medium text-sm">
 
                             {/* Start Here / Member Dashboard */}
                             <Link 
                                 href={isSignedIn ? "/vault" : "/start-here"} 
-                                className="text-emerald-800 font-bold hover:text-emerald-600 transition-colors whitespace-nowrap relative group"
+                                className="text-emerald-800 font-bold hover:text-emerald-600 transition-colors whitespace-nowrap relative group text-xs uppercase tracking-wider"
                             >
-                                ✦ {isSignedIn ? "Member Dashboard" : "Start Here"}
+                                ✦ {isSignedIn ? "Dashboard" : "Start Here"}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all group-hover:w-full" />
+                            </Link>
+
+                            {/* Flagship: The AI Reality Check (Interactive Live Demo) */}
+                            <Link 
+                                href="/reality-check" 
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-100 hover:bg-violet-200 border border-violet-300 text-violet-950 font-bold text-xs transition-all shadow-sm group whitespace-nowrap"
+                            >
+                                <span className="w-2 h-2 rounded-full bg-violet-600 animate-pulse" />
+                                <span>Reality Check</span>
+                                <span className="text-[10px] font-mono uppercase tracking-wider text-violet-800 bg-white/90 px-1.5 py-0.2 rounded border border-violet-200">
+                                    Demo
+                                </span>
                             </Link>
 
                             {/* Platforms & Products Dropdown */}
@@ -80,7 +91,7 @@ const Navigation = () => {
                                     className="text-zinc-900 hover:text-purple-900 transition-colors font-semibold inline-flex items-center gap-1 py-1 cursor-pointer whitespace-nowrap"
                                     onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
                                 >
-                                    <span>Platforms & Products</span>
+                                    <span>Platforms</span>
                                     <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${productsDropdownOpen ? 'rotate-180 text-purple-700' : 'text-zinc-500'}`} />
                                 </button>
 
@@ -105,11 +116,11 @@ const Navigation = () => {
                                                         <span>Exogram</span>
                                                     </div>
                                                     <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-purple-100 text-purple-800 border border-purple-200">
-                                                        Enterprise B2B
+                                                        Governance Runtime
                                                     </span>
                                                 </div>
                                                 <p className="text-xs text-zinc-600 font-medium leading-normal">
-                                                    Deterministic AI governance runtime. Prevents billing shock & shadow AI exfiltration.
+                                                    Deterministic AI safety runtime. Stops runaway API billing and data leaks before they happen.
                                                 </p>
                                             </Link>
 
@@ -129,7 +140,7 @@ const Navigation = () => {
                                                     </span>
                                                 </div>
                                                 <p className="text-xs text-zinc-600 font-medium leading-normal">
-                                                    Role benchmarks, leveling intelligence, and compensation strategy for engineers & leaders.
+                                                    Role benchmarks, leveling data, and compensation strategy for technical operators and leaders.
                                                 </p>
                                             </Link>
                                         </motion.div>
@@ -137,18 +148,18 @@ const Navigation = () => {
                                 </AnimatePresence>
                             </div>
 
-                            {/* Free Tools & Calculators Dropdown */}
+                            {/* Free Tools & Diagnostics Dropdown */}
                             <div 
                                 className="relative"
                                 onMouseEnter={() => setToolsDropdownOpen(true)}
                                 onMouseLeave={() => setToolsDropdownOpen(false)}
                             >
                                 <button 
-                                    className="text-emerald-800 hover:text-emerald-950 transition-colors font-bold inline-flex items-center gap-1 py-1 cursor-pointer whitespace-nowrap"
+                                    className="text-zinc-900 hover:text-emerald-950 transition-colors font-semibold inline-flex items-center gap-1 py-1 cursor-pointer whitespace-nowrap"
                                     onClick={() => setToolsDropdownOpen(!toolsDropdownOpen)}
                                 >
-                                    <span>Free Tools</span>
-                                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${toolsDropdownOpen ? 'rotate-180 text-emerald-700' : 'text-emerald-600'}`} />
+                                    <span>Diagnostics</span>
+                                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${toolsDropdownOpen ? 'rotate-180 text-emerald-700' : 'text-zinc-500'}`} />
                                 </button>
 
                                 <AnimatePresence>
@@ -174,7 +185,7 @@ const Navigation = () => {
                                                     </span>
                                                 </div>
                                                 <p className="text-[11px] text-zinc-600 font-medium leading-tight">
-                                                    Revenue per engineer financial benchmark.
+                                                    Revenue per engineer financial benchmark for your industry.
                                                 </p>
                                             </Link>
 
@@ -189,7 +200,7 @@ const Navigation = () => {
                                                     </span>
                                                 </div>
                                                 <p className="text-[11px] text-zinc-600 font-medium leading-tight">
-                                                    Quantify legacy technical debt & valuation risk.
+                                                    Find your Technical Insolvency Date before maintenance eats all capacity.
                                                 </p>
                                             </Link>
 
@@ -204,7 +215,7 @@ const Navigation = () => {
                                                     </span>
                                                 </div>
                                                 <p className="text-[11px] text-zinc-600 font-medium leading-tight">
-                                                    Audit unmonitored LLM token leakage & risk.
+                                                    Audit unmonitored employee LLM accounts and data leaks.
                                                 </p>
                                             </Link>
 
@@ -219,124 +230,19 @@ const Navigation = () => {
                                                     </span>
                                                 </div>
                                                 <p className="text-[11px] text-zinc-600 font-medium leading-tight">
-                                                    Calculate COGS per inference & gross margin.
+                                                    Calculate your cost collapse point and gross margins per query.
                                                 </p>
                                             </Link>
 
                                             <div className="pt-2 mt-1 border-t border-zinc-200">
                                                 <Link 
-                                                    href="/tools" 
+                                                    href="/diagnose" 
                                                     onClick={() => setToolsDropdownOpen(false)}
                                                     className="block p-2 rounded-lg text-center font-mono font-bold text-xs text-zinc-900 hover:text-emerald-700 hover:bg-zinc-100 transition-all"
                                                 >
                                                     View All 25 Diagnostic Tools →
                                                 </Link>
                                             </div>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </div>
-
-                            {/* Executive Hubs By Role Dropdown */}
-                            <div 
-                                className="relative"
-                                onMouseEnter={() => setRolesDropdownOpen(true)}
-                                onMouseLeave={() => setRolesDropdownOpen(false)}
-                            >
-                                <button 
-                                    className="text-zinc-900 hover:text-purple-900 transition-colors font-semibold inline-flex items-center gap-1 py-1 cursor-pointer whitespace-nowrap"
-                                    onClick={() => setRolesDropdownOpen(!rolesDropdownOpen)}
-                                >
-                                    <span>By Role</span>
-                                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${rolesDropdownOpen ? 'rotate-180 text-purple-700' : 'text-zinc-500'}`} />
-                                </button>
-
-                                <AnimatePresence>
-                                    {rolesDropdownOpen && (
-                                        <motion.div
-                                            initial={{ opacity: 0, y: 10, scale: 0.98 }}
-                                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                                            exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                                            transition={{ duration: 0.15 }}
-                                            className="absolute top-full left-0 w-80 mt-2 bg-white/95 backdrop-blur-xl border border-zinc-300 rounded-2xl p-3 shadow-2xl z-50 space-y-1"
-                                        >
-                                            <Link 
-                                                href="/for-boards" 
-                                                onClick={() => setRolesDropdownOpen(false)}
-                                                className="block p-2 rounded-xl hover:bg-amber-50/70 border border-transparent hover:border-amber-200 transition-all group"
-                                            >
-                                                <div className="font-grotesk font-bold text-xs text-zinc-950 group-hover:text-amber-900">
-                                                    Board Members &amp; Directors
-                                                </div>
-                                                <p className="text-[11px] text-zinc-600 font-medium leading-tight">
-                                                    Fiduciary technology oversight, technical debt, and risk.
-                                                </p>
-                                            </Link>
-
-                                            <Link 
-                                                href="/for-cfos" 
-                                                onClick={() => setRolesDropdownOpen(false)}
-                                                className="block p-2 rounded-xl hover:bg-emerald-50/70 border border-transparent hover:border-emerald-200 transition-all group"
-                                            >
-                                                <div className="font-grotesk font-bold text-xs text-zinc-950 group-hover:text-emerald-900">
-                                                    Chief Financial Officers (CFO)
-                                                </div>
-                                                <p className="text-[11px] text-zinc-600 font-medium leading-tight">
-                                                    Section 174 capitalization, token COGS, and margin defense.
-                                                </p>
-                                            </Link>
-
-                                            <Link 
-                                                href="/for-coos" 
-                                                onClick={() => setRolesDropdownOpen(false)}
-                                                className="block p-2 rounded-xl hover:bg-blue-50/70 border border-transparent hover:border-blue-200 transition-all group"
-                                            >
-                                                <div className="font-grotesk font-bold text-xs text-zinc-950 group-hover:text-blue-900">
-                                                    Chief Operating Officers (COO)
-                                                </div>
-                                                <p className="text-[11px] text-zinc-600 font-medium leading-tight">
-                                                    Workflow reliability, agent coordination, and queue stalls.
-                                                </p>
-                                            </Link>
-
-                                            <Link 
-                                                href="/for-ctos" 
-                                                onClick={() => setRolesDropdownOpen(false)}
-                                                className="block p-2 rounded-xl hover:bg-purple-50/70 border border-transparent hover:border-purple-200 transition-all group"
-                                            >
-                                                <div className="font-grotesk font-bold text-xs text-zinc-950 group-hover:text-purple-900">
-                                                    Chief Technology Officers (CTO)
-                                                </div>
-                                                <p className="text-[11px] text-zinc-600 font-medium leading-tight">
-                                                    R&amp;D yield, architectural governance, and developer tools.
-                                                </p>
-                                            </Link>
-
-                                            <Link 
-                                                href="/for-general-counsels" 
-                                                onClick={() => setRolesDropdownOpen(false)}
-                                                className="block p-2 rounded-xl hover:bg-slate-100 border border-transparent hover:border-slate-300 transition-all group"
-                                            >
-                                                <div className="font-grotesk font-bold text-xs text-zinc-950 group-hover:text-slate-900">
-                                                    General Counsels &amp; Legal (GC)
-                                                </div>
-                                                <p className="text-[11px] text-zinc-600 font-medium leading-tight">
-                                                    SOX 404 signing limits, AI liability, and safe harbors.
-                                                </p>
-                                            </Link>
-
-                                            <Link 
-                                                href="/for-investors" 
-                                                onClick={() => setRolesDropdownOpen(false)}
-                                                className="block p-2 rounded-xl hover:bg-cyan-50/70 border border-transparent hover:border-cyan-200 transition-all group"
-                                            >
-                                                <div className="font-grotesk font-bold text-xs text-zinc-950 group-hover:text-cyan-900">
-                                                    Private Equity &amp; Investors
-                                                </div>
-                                                <p className="text-[11px] text-zinc-600 font-medium leading-tight">
-                                                    Pre-close software forensic audits and margin engineering.
-                                                </p>
-                                            </Link>
                                         </motion.div>
                                     )}
                                 </AnimatePresence>
@@ -352,18 +258,8 @@ const Navigation = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
                             </Link>
 
-                            <Link href="/concepts" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
-                                Concepts
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
-                            </Link>
-
-                            <Link href="/roi" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
-                                ROI
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
-                            </Link>
-
                             <Link href="/services" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
-                                Services
+                                Advisory
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
                             </Link>
 
@@ -375,7 +271,7 @@ const Navigation = () => {
                             {/* Book a Call CTA */}
                             <Link
                                 href="/services"
-                                className="bg-amber-500 text-zinc-950 px-4 py-2 rounded-lg font-bold hover:opacity-90 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-xs uppercase tracking-wider whitespace-nowrap shrink-0"
+                                className="bg-amber-500 text-zinc-950 px-3.5 py-2 rounded-lg font-bold hover:opacity-90 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-xs uppercase tracking-wider whitespace-nowrap shrink-0"
                             >
                                 Book a Call
                             </Link>
@@ -383,9 +279,9 @@ const Navigation = () => {
                             {/* Single Primary Assessment CTA */}
                             <Link
                                 href="/assessment"
-                                className="bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-2 rounded-lg font-bold text-white hover:opacity-90 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-xs uppercase tracking-wider whitespace-nowrap shrink-0"
+                                className="bg-gradient-to-r from-violet-600 to-purple-600 px-3.5 py-2 rounded-lg font-bold text-white hover:opacity-90 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-xs uppercase tracking-wider whitespace-nowrap shrink-0"
                             >
-                                Take Assessment →
+                                Assessment →
                             </Link>
 
                             <div className="h-5 w-px bg-zinc-300 mx-1 flex-shrink-0" />
@@ -446,6 +342,21 @@ const Navigation = () => {
                             >
                                 <span>✦ {isSignedIn ? "Member Dashboard" : "Start Here"}</span>
                             </Link>
+
+                            {/* Mobile Reality Check Flagship */}
+                            <Link
+                                href="/reality-check"
+                                onClick={() => setMobileMenuOpen(false)}
+                                className="p-3.5 rounded-xl bg-gradient-to-r from-violet-50 to-purple-50 border border-violet-200 text-violet-950 font-bold text-base flex items-center justify-between group shadow-sm"
+                            >
+                                <div className="flex items-center gap-2.5">
+                                    <Sparkles className="w-4 h-4 text-violet-600" />
+                                    <span>The AI Reality Check</span>
+                                </div>
+                                <span className="text-[10px] font-mono uppercase tracking-wider bg-violet-600 text-white px-2 py-0.5 rounded-full font-bold">
+                                    Live Demo
+                                </span>
+                            </Link>
                             
                             {/* Mobile Platforms & Products Group */}
                             <div className="pt-2 pb-2 border-y border-zinc-200 space-y-3">
@@ -454,7 +365,7 @@ const Navigation = () => {
                                 </div>
                                 <Link href="/exogram" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-purple-900 font-bold text-base">
                                     <ShieldCheck className="w-4 h-4 text-purple-600 shrink-0" />
-                                    <span>Exogram (Enterprise B2B)</span>
+                                    <span>Exogram (Runtime Governance)</span>
                                 </Link>
                                 <Link href="/careerwin" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-indigo-900 font-bold text-base">
                                     <Award className="w-4 h-4 text-indigo-600 shrink-0" />
@@ -462,31 +373,32 @@ const Navigation = () => {
                                 </Link>
                             </div>
 
-                            {/* Mobile Executive Hubs Group */}
+                            {/* Mobile Diagnostic Tools */}
                             <div className="pt-2 pb-2 border-b border-zinc-200 space-y-2">
                                 <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest">
-                                    Executive Hubs (By Role)
+                                    Free Diagnostics &amp; Tools
                                 </div>
                                 <div className="grid grid-cols-2 gap-2 text-xs font-bold text-zinc-900">
-                                    <Link href="/for-boards" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg bg-amber-50/70 border border-amber-200 text-amber-950">
-                                        For Boards
+                                    <Link href="/tools/aper" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg bg-emerald-50/70 border border-emerald-200 text-emerald-950">
+                                        APER Calculator
                                     </Link>
-                                    <Link href="/for-cfos" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg bg-emerald-50/70 border border-emerald-200 text-emerald-950">
-                                        For CFOs
+                                    <Link href="/tools/pdi" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg bg-cyan-50/70 border border-cyan-200 text-cyan-950">
+                                        Product Debt (PDI)
                                     </Link>
-                                    <Link href="/for-coos" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg bg-blue-50/70 border border-blue-200 text-blue-950">
-                                        For COOs
+                                    <Link href="/tools/shadow-ai" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg bg-purple-50/70 border border-purple-200 text-purple-950">
+                                        Shadow AI Auditor
                                     </Link>
-                                    <Link href="/for-ctos" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg bg-purple-50/70 border border-purple-200 text-purple-950">
-                                        For CTOs
-                                    </Link>
-                                    <Link href="/for-general-counsels" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg bg-slate-100 border border-slate-300 text-slate-950">
-                                        For Legal (GC)
-                                    </Link>
-                                    <Link href="/for-investors" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg bg-cyan-50/70 border border-cyan-200 text-cyan-950">
-                                        For Investors
+                                    <Link href="/tools/aueb" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg bg-indigo-50/70 border border-indigo-200 text-indigo-950">
+                                        AI Unit Economics
                                     </Link>
                                 </div>
+                                <Link 
+                                    href="/diagnose" 
+                                    onClick={() => setMobileMenuOpen(false)} 
+                                    className="block text-center text-xs font-mono font-bold text-emerald-800 hover:text-emerald-950 pt-1"
+                                >
+                                    Browse All 25 Free Tools →
+                                </Link>
                             </div>
 
                             {/* Core Navigation Links */}
@@ -503,11 +415,11 @@ const Navigation = () => {
                                 <Link href="/roi" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
                                     ROI Calculator
                                 </Link>
-                                <Link href="/tools" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
-                                    Free Tools (25)
-                                </Link>
                                 <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
                                     Advisory & Services
+                                </Link>
+                                <Link href="/pricing" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
+                                    Pricing ($450 / $7.5k)
                                 </Link>
                                 <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
                                     About Principal
@@ -531,7 +443,7 @@ const Navigation = () => {
                                     onClick={() => setMobileMenuOpen(false)}
                                     className="w-full py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-center rounded-xl text-xs uppercase tracking-wider shadow-md active:scale-95 transition-transform"
                                 >
-                                    Take 15-Q Assessment →
+                                    Take Assessment →
                                 </Link>
 
                                 {isLoaded && !isSignedIn ? (

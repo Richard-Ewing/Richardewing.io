@@ -1,16 +1,17 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, AlertTriangle, DollarSign, TrendingDown, Shield, Brain, Gauge, Clock, Calculator, Users } from 'lucide-react';
+import { ArrowRight, AlertTriangle, DollarSign, TrendingDown, Shield, Brain, Gauge, Clock, Calculator, Users, Sparkles } from 'lucide-react';
 import ProofRail from '../components/ProofRail';
 import RuntimeEscalationSimulator from '../components/RuntimeEscalationSimulator';
 import GovernanceMaturityAssessment from '../components/GovernanceMaturityAssessment';
+import LivingRealityCheck from '../components/LivingRealityCheck';
 
 export const metadata: Metadata = {
-    title: 'Free AI Diagnostic Tools Hub',
-    description: 'Access boardroom-ready diagnostic instruments to measure technical debt, AI unit costs, and headcount efficiency.',
+    title: 'Free AI Diagnostic Tools Hub | Richard Ewing',
+    description: 'Access interactive diagnostic instruments to measure technical debt, AI unit costs, and team babysitting overhead.',
     alternates: { canonical: 'https://www.richardewing.io/diagnose' },
     openGraph: {
-        title: 'Diagnose Your AI & Engineering Risk',
+        title: 'Diagnose Your AI & Engineering Reality',
         description: 'Same diagnostic instruments used in $7,500 engagements. Calculate your risk exposure in under 5 minutes.',
         url: 'https://www.richardewing.io/diagnose',
         type: 'website',
@@ -23,7 +24,7 @@ const painRoutes = [
         tool: 'AI Unit Economics Benchmark',
         slug: '/tools/aueb',
         time: '3 min',
-        output: 'Your exact cost collapse point  -  the usage volume where your AI feature starts destroying margin',
+        output: 'Your exact cost collapse point: the usage volume where your AI feature starts destroying margin',
         icon: DollarSign,
         color: 'rose',
         stat: 'POCs cost $100s. Production costs $1M+.',
@@ -33,7 +34,7 @@ const painRoutes = [
         tool: 'Product Debt Index',
         slug: '/tools/pdi',
         time: '4 min',
-        output: 'Your Technical Insolvency Date  -  the quarter when maintenance consumes 100% of engineering capacity',
+        output: 'Your Technical Insolvency Date: the quarter when maintenance consumes 100% of engineering capacity',
         icon: TrendingDown,
         color: 'violet',
         stat: 'Average: 47% of eng time is maintenance.',
@@ -43,7 +44,7 @@ const painRoutes = [
         tool: 'APER Calculator',
         slug: '/tools/aper',
         time: '2 min',
-        output: 'Revenue per engineer benchmarked against your industry  -  the metric your board should track',
+        output: 'Revenue per engineer benchmarked against your industry: the metric your board should track',
         icon: Calculator,
         color: 'blue',
         stat: 'Top quartile: $450K+ revenue/engineer.',
@@ -53,7 +54,7 @@ const painRoutes = [
         tool: 'Runtime Failure Index',
         slug: '/runtime-failure-index',
         time: '5 min read',
-        output: 'Root cause analysis of every enterprise AI failure mode  -  context rot, retry inflation, verification collapse',
+        output: 'Root cause analysis of every enterprise AI failure mode: context rot, retry inflation, verification collapse',
         icon: AlertTriangle,
         color: 'amber',
         stat: '78% of AI agents are over-privileged.',
@@ -63,7 +64,7 @@ const painRoutes = [
         tool: 'Enterprise Value × Eng Calculator',
         slug: '/tools/ev-se',
         time: '2 min',
-        output: 'Your EV/Software Engineer ratio vs. public benchmarks  -  reveals whether R&D creates or destroys value',
+        output: 'Your EV/Software Engineer ratio vs. public benchmarks: reveals whether R&D creates or destroys value',
         icon: Gauge,
         color: 'emerald',
         stat: 'Median EV/SE: $3.2M. Bottom decile: $400K.',
@@ -91,28 +92,47 @@ const colorMap: Record<string, { bg: string; border: string; text: string; pill:
 
 export default function DiagnosePage() {
     return (
-        <main className="pt-20">
+        <main className="pt-24 pb-20">
             <div className="page-container">
                 <div className="max-w-5xl mx-auto">
 
-                    {/* Hero */}
-                    <div className="text-center mb-16">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-50 border border-rose-200 mb-6">
-                            <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
-                            <span className="text-sm font-semibold text-zinc-950">Same instruments used in $7,500 R&D Capital Audits</span>
+                    {/* Hero Header */}
+                    <div className="text-center mb-10">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-50 border border-violet-200 mb-6">
+                            <span className="w-2 h-2 rounded-full bg-violet-600 animate-pulse"></span>
+                            <span className="text-xs font-semibold text-zinc-950 uppercase tracking-wider font-mono">
+                                Interactive Diagnostics &amp; Operational Audits
+                            </span>
                         </div>
 
-                        <h1 className="text-4xl sm:text-5xl font-bold text-zinc-900 mb-4">
+                        <h1 className="text-4xl sm:text-5xl font-extrabold text-zinc-900 tracking-tight mb-4">
                             What Is Breaking{' '}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-violet-500">Right Now?</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-violet-600 to-indigo-600">
+                                Right Now?
+                            </span>
                         </h1>
                         <p className="text-lg text-zinc-600 max-w-2xl mx-auto mb-2">
-                            Start with the pain. Each tool diagnoses a specific instability  -  and gives you a number your board can act on.
+                            Start with the operational friction. Test real numbers against the marketing claims and get answers your team can act on immediately.
                         </p>
                         <p className="text-sm text-zinc-500 font-medium">
-                            <Clock className="w-4 h-4 inline mr-1" />
-                            Each diagnosis takes 2-5 minutes. Results are immediate and downloadable.
+                            <Clock className="w-4 h-4 inline mr-1 text-zinc-400" />
+                            Each diagnosis takes 2 to 5 minutes. Results are immediate and completely private.
                         </p>
+                    </div>
+
+                    {/* Featured Living Reality Check Demo */}
+                    <div className="mb-20">
+                        <LivingRealityCheck />
+                    </div>
+
+                    {/* Section Break */}
+                    <div className="text-center mb-10">
+                        <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 block mb-2">
+                            Granular Instruments
+                        </span>
+                        <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900">
+                            Select A Specific Operational Breakdown
+                        </h2>
                     </div>
 
                     {/* Pain-First Route Grid */}
@@ -143,9 +163,9 @@ export default function DiagnosePage() {
                                                 {route.pain}
                                             </p>
 
-                                            <h2 className="text-xl font-bold text-zinc-900 mb-2 group-hover:text-violet-700 transition-colors">
+                                            <h3 className="text-xl font-bold text-zinc-900 mb-2 group-hover:text-violet-700 transition-colors">
                                                 → {route.tool}
-                                            </h2>
+                                            </h3>
 
                                             <p className="text-sm text-zinc-600 font-medium leading-relaxed">
                                                 {route.output}
@@ -174,46 +194,46 @@ export default function DiagnosePage() {
             {/* Proof bar */}
             <ProofRail />
 
-            {/* Escalation simulator  -  feel the operational danger */}
+            {/* Escalation simulator */}
             <RuntimeEscalationSimulator />
 
-            {/* Governance Maturity Assessment  -  intermediate trust artifact */}
+            {/* Governance Maturity Assessment */}
             <GovernanceMaturityAssessment />
 
             <div className="page-container">
                 <div className="max-w-5xl mx-auto">
 
                     {/* Escalation */}
-                    <div className="rounded-2xl bg-[#FCFAF7] p-8 md:p-12 text-center mb-16">
+                    <div className="rounded-2xl bg-[#FCFAF7] border border-zinc-200 p-8 md:p-12 text-center mb-16">
                         <div className="flex items-center justify-center gap-2 mb-4">
-                            <Shield className="w-5 h-5 text-violet-400" />
-                            <span className="text-xs font-mono uppercase tracking-[0.2em] text-violet-400">Want a Professional Interpretation?</span>
+                            <Shield className="w-5 h-5 text-violet-600" />
+                            <span className="text-xs font-mono uppercase tracking-[0.2em] text-violet-600 font-bold">Want an Objective Outside Review?</span>
                         </div>
                         <h2 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-4">
                             These tools give you the numbers.<br />
-                            <span className="text-violet-400">An R&D Capital Audit gives you the strategy.</span>
+                            <span className="text-violet-700">An outside audit gives you the clear action plan.</span>
                         </h2>
                         <p className="text-zinc-600 max-w-2xl mx-auto mb-8 text-sm leading-relaxed">
                             A $450 Gut-Check Session reviews your diagnostic results with Richard Ewing and delivers a prioritized action plan.
-                            For comprehensive analysis, the $7,500 R&D Capital Audit includes full financial modeling, board-ready deliverables, and 90-day implementation roadmap.
+                            For comprehensive analysis, the $7,500 R&D Capital Audit includes full financial modeling, team workflow inspection, and a 90-day implementation roadmap.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <Link href="/services" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-zinc-900 font-bold hover:opacity-90 transition-opacity">
+                            <Link href="/services" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold transition-all shadow-md">
                                 Book a $450 Gut-Check <ArrowRight className="w-5 h-5" />
                             </Link>
-                            <Link href="/pricing" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border border-zinc-600 text-zinc-700 font-bold hover:border-violet-400 hover:text-zinc-900 transition-all">
+                            <Link href="/pricing" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-zinc-400 text-zinc-800 font-bold hover:border-violet-500 hover:text-zinc-950 transition-all">
                                 See All Pricing
                             </Link>
                         </div>
                     </div>
 
                     {/* Credibility Footer */}
-                    <div className="text-center pb-20">
+                    <div className="text-center pb-12">
                         <p className="text-sm text-zinc-500 font-medium">
                             Published in <span className="font-bold text-zinc-700">Built In</span> · <span className="font-bold text-zinc-700">CIO.com</span> · <span className="font-bold text-zinc-700">HackerNoon</span> · <span className="font-bold text-zinc-700">Mind the Product</span>
                         </p>
                         <p className="text-xs text-zinc-600 mt-2">
-                            436+ governance terms defined · 6 free diagnostic tools · Used in enterprise R&D Capital Audits
+                            436+ governance terms defined · 25 diagnostic tools · Built for operators who value ground truth
                         </p>
                     </div>
 
