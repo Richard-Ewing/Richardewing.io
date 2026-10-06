@@ -1,12 +1,5 @@
 import type { Metadata } from 'next';
-import SiteNav from '@/components/SiteNav';
-import Hero from '@/components/Hero';
-import Thesis from '@/components/Thesis';
-import ExplorePrompt from '@/components/ExplorePrompt';
-import Research from '@/components/Research';
-import Knowledge from '@/components/Knowledge';
-import Products from '@/components/Products';
-import SiteFooter from '@/components/SiteFooter';
+import HomeShell from '@/components/home/HomeShell';
 
 export const metadata: Metadata = {
   title: 'Richard Ewing | AI Economist',
@@ -183,14 +176,7 @@ export default function Home() {
           }),
         }}
       />
-      <SiteNav />
-      <Hero />
-      <Thesis />
-      <ExplorePrompt />
-      <Research />
-      <Knowledge />
-      <Products />
-      <SiteFooter />
+      <HomeShell />
     </div>
   );
 }
