@@ -7,11 +7,6 @@ import Image from 'next/image';
 import { GooglePreferredBadge } from './GooglePreferredBadge';
 
 export function Footer() {
-    const pathname = usePathname();
-    if (pathname === '/') {
-        return null;
-    }
-
     return (
         <footer className="border-t border-zinc-400 pt-16 pb-12 mt-20 bg-white/80">
             <div className="page-container">
@@ -35,8 +30,14 @@ export function Footer() {
                     {/* Identity */}
                     <div className="col-span-2 md:col-span-1">
                         <div className="flex items-center gap-3 mb-4">
-                            <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center overflow-hidden">
-                                <span className="text-xl">RE</span>
+                            <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 border border-purple-300">
+                                <Image
+                                    src="/assets/headshot.jpg"
+                                    alt="Richard Ewing"
+                                    fill
+                                    className="object-cover"
+                                    sizes="40px"
+                                />
                             </div>
                             <div>
                                 <div className="font-semibold text-zinc-900 font-grotesk">Richard Ewing</div>

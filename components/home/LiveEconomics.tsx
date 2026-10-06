@@ -81,8 +81,8 @@ export default function LiveEconomics() {
             <svg viewBox="0 0 1000 280" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="area" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="0%" stopColor="#72e7ff" stopOpacity=".18" />
-                  <stop offset="100%" stopColor="#72e7ff" stopOpacity="0" />
+                  <stop offset="0%" stopColor="#7C3AED" stopOpacity=".18" />
+                  <stop offset="100%" stopColor="#7C3AED" stopOpacity="0" />
                 </linearGradient>
               </defs>
 
@@ -114,8 +114,8 @@ export default function LiveEconomics() {
                   C950 74 975 45 1000 50
                 "
                 fill="none"
-                stroke="#72e7ff"
-                strokeWidth="2"
+                stroke="#7C3AED"
+                strokeWidth="2.5"
               />
             </svg>
           </div>

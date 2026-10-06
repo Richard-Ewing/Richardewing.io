@@ -78,13 +78,14 @@ const Hero = () => {
 
                         {/* Social Proof & Authority Metrics */}
                         <div className="flex items-center gap-4 pt-2 border-t border-zinc-200/80">
-                            <div className="relative w-12 h-12 rounded-full overflow-hidden shrink-0 border-2 border-purple-300">
+                            <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden shrink-0 border-2 border-violet-500 shadow-md ring-2 ring-violet-200/60">
                                 <Image
                                     src="/assets/headshot.jpg"
                                     alt="Richard Ewing - AI Economist"
                                     fill
                                     className="object-cover"
-                                    sizes="48px"
+                                    sizes="64px"
+                                    priority
                                 />
                             </div>
                             <div className="text-xs text-zinc-600 font-medium">

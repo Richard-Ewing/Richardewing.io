@@ -28,7 +28,7 @@ const papers = [
   {
     number: "04",
     type: "STRATEGY",
-    title: "Why your CFO hates your agile transformation",
+    title: "Why executive teams question your agile transformation",
     date: "03.12.26",
     href: "/compare/vibe-coding-vs-agile",
   },

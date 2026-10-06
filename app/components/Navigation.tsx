@@ -16,11 +16,6 @@ const Navigation = () => {
     const [scrolled, setScrolled] = useState(false);
     const { isSignedIn, isLoaded } = useUser();
 
-    // If on homepage, do not render this navigation (SiteNav is rendered in page.tsx)
-    if (pathname === '/') {
-        return null;
-    }
-
     // Handle scroll effect for navbar background
     useEffect(() => {
         const handleScroll = () => {

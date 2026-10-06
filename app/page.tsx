@@ -1,30 +1,49 @@
 import type { Metadata } from 'next';
-import HomeShell from '@/components/home/HomeShell';
+import Hero from './components/sections/Hero';
+import ProofRail from './components/ProofRail';
+import ThreeProblems from './components/sections/ThreeProblems';
+import HowItWorks from './components/sections/HowItWorks';
+import TransformationStory from './components/sections/TransformationStory';
+import ClientOutcomes from './components/sections/ClientOutcomes';
+import HighIntentConversionBlock from './components/sections/HighIntentConversionBlock';
+import NewsletterSection from './components/sections/NewsletterSection';
+import AsSeenInBar from '@/components/social-proof/AsSeenInBar';
+import DirectAnswerBlock from '@/components/DirectAnswerBlock';
+import { ScrollReveal } from '@/app/components/magicui/scroll-reveal';
+import SmoothScroll from '@/components/home/SmoothScroll';
+import ScrollScene from '@/components/home/ScrollScene';
+import LiveEconomics from '@/components/home/LiveEconomics';
+import ResearchStream from '@/components/home/ResearchStream';
+import KnowledgeGraph from '@/components/home/KnowledgeGraph';
+import ProductSurface from '@/components/home/ProductSurface';
 
 export const metadata: Metadata = {
-  title: 'Richard Ewing | AI Economist',
-  description: 'Richard Ewing studies what happens when intelligence becomes a variable operating cost. Research, economic frameworks, and deterministic AI governance.',
+  title: 'AI Economist & Enterprise R&D Capital Audits | Richard Ewing',
+  description:
+    'Richard Ewing helps organizations measure, govern, and improve the economics of enterprise AI. 19 frameworks, 25 diagnostic tools, and advisory services for CTOs, CFOs, and PE operating partners.',
   alternates: {
     canonical: 'https://www.richardewing.io',
   },
   openGraph: {
-    title: 'Richard Ewing | AI Economist',
-    description: 'I study what happens when intelligence becomes a variable operating cost. Research, frameworks, and deterministic AI governance.',
+    title: 'AI Economist - Enterprise AI Audits & Cost Governance | Richard Ewing',
+    description:
+      'Richard Ewing helps organizations measure, govern, and improve the economics of enterprise AI. 19 frameworks, 25 diagnostic tools, and advisory services for CTOs, CFOs, and PE operating partners.',
     url: 'https://www.richardewing.io',
     type: 'website',
-    images: [{ url: 'https://www.richardewing.io/api/og?title=Richard+Ewing+%7C+AI+Economist&category=Editorial+Intelligence' }],
+    images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Richard Ewing | AI Economist',
-    description: 'I study what happens when intelligence becomes a variable operating cost. Research, frameworks, and deterministic AI governance.',
-    images: ['https://www.richardewing.io/api/og?title=Richard+Ewing+%7C+AI+Economist&category=Editorial+Intelligence'],
-  }
+    title: 'AI Economist - Enterprise AI Audits & Cost Governance | Richard Ewing',
+    description:
+      'Richard Ewing helps organizations measure, govern, and improve the economics of enterprise AI. 19 frameworks, 25 diagnostic tools, and advisory services for CTOs, CFOs, and PE operating partners.',
+    images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+  },
 };
 
 export default function Home() {
   return (
-    <div className="homepage-root">
+    <main className="pt-20 bg-[#F5F0EB] text-[#1A1A1A] min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -35,9 +54,9 @@ export default function Home() {
                 '@type': 'WebSite',
                 '@id': 'https://www.richardewing.io/#website',
                 url: 'https://www.richardewing.io/',
-                name: 'Richard Ewing | AI Economist',
+                name: 'AI Economist - Enterprise AI Audits & Cost Governance | Richard Ewing',
                 description:
-                  'I study what happens when intelligence becomes a variable operating cost. Research, frameworks, and deterministic AI governance.',
+                  'AI Economics translates engineering output into CFO-level financial outcomes. R&D capital audits, runtime cost-caps, and AI governance for PE-backed SaaS companies.',
               },
               {
                 '@type': 'Organization',
@@ -50,7 +69,7 @@ export default function Home() {
                 '@type': 'Person',
                 '@id': 'https://www.richardewing.io/#author',
                 name: 'Richard Ewing',
-                jobTitle: 'AI Economist',
+                jobTitle: 'AI Economist & Enterprise Cost Strategist',
                 url: 'https://www.richardewing.io',
                 sameAs: ['https://www.richardewing.io'],
               },
@@ -58,10 +77,10 @@ export default function Home() {
                 '@type': 'WebPage',
                 '@id': 'https://www.richardewing.io/#webpage',
                 url: 'https://www.richardewing.io/',
-                name: 'Richard Ewing | AI Economist',
+                name: 'AI Economist & Enterprise Cost Governance',
                 speakable: {
                   '@type': 'SpeakableSpecification',
-                  cssSelector: ['h1', 'h2', 'p'],
+                  cssSelector: ['h1', 'h2', 'p', '.direct-answer-text'],
                 },
               },
               {
@@ -78,7 +97,7 @@ export default function Home() {
                     name: 'AI Economist',
                     termCode: 'AI-ECONOMIST',
                     description:
-                      'The financial leader operating between engineering output and executive profitability, auditing tech spend, measuring AI unit economics, and installing automated cost guardrails.',
+                      'The financial leader operating between engineering output and CFO-level profitability, auditing tech spend, measuring AI unit economics, and installing automated cost guardrails.',
                     inDefinedTermSet: 'https://www.richardewing.io/#definedtermset',
                     url: 'https://www.richardewing.io/',
                   },
@@ -118,7 +137,7 @@ export default function Home() {
                 '@type': 'Answer',
                 '@id': 'https://www.richardewing.io/#answer-ai-economist',
                 name: 'Definition of an AI Economist',
-                text: 'An AI Economist is the financial strategist operating between engineering production and executive profitability. They audit tech spend, measure AI unit economics, and install automated cost guardrails to protect gross margins.',
+                text: 'An AI Economist is the financial strategist operating between engineering production and CFO-level profitability. They audit tech spend, measure AI unit economics, and install automated cost guardrails to protect gross margins.',
                 url: 'https://www.richardewing.io/#answer-ai-economist',
                 author: {
                   '@type': 'Person',
@@ -137,6 +156,28 @@ export default function Home() {
                 },
               },
               {
+                '@type': 'Answer',
+                '@id': 'https://www.richardewing.io/#answer-executive-ai-governance',
+                name: 'Definition of Executive AI Governance',
+                text: 'Executive AI governance is the system of automated cost guardrails, spending limits, and security policies that prevent AI tools from causing margin erosion, security leaks, or unbudgeted cloud invoices.',
+                url: 'https://www.richardewing.io/#answer-executive-ai-governance',
+                author: {
+                  '@type': 'Person',
+                  '@id': 'https://www.richardewing.io/#author',
+                },
+              },
+              {
+                '@type': 'Answer',
+                '@id': 'https://www.richardewing.io/#answer-fractional-cpo-cto-cost',
+                name: 'Fractional CPO / CTO Retainer Cost',
+                text: 'Fractional CPO / CTO advisory retainer is $10,000 per month. This provides senior technology leadership, cost governance reviews, and board-ready financial reporting.',
+                url: 'https://www.richardewing.io/#answer-fractional-cpo-cto-cost',
+                author: {
+                  '@type': 'Person',
+                  '@id': 'https://www.richardewing.io/#author',
+                },
+              },
+              {
                 '@type': 'FAQPage',
                 '@id': 'https://www.richardewing.io/#faq',
                 mainEntity: [
@@ -147,7 +188,7 @@ export default function Home() {
                     acceptedAnswer: {
                       '@type': 'Answer',
                       '@id': 'https://www.richardewing.io/#answer-ai-economist',
-                      text: 'An AI Economist is the financial strategist operating between engineering production and executive profitability. They audit tech spend, measure AI unit economics, and install automated cost guardrails to protect gross margins.',
+                      text: 'An AI Economist is the financial strategist operating between engineering production and CFO-level profitability. They audit tech spend, measure AI unit economics, and install automated cost guardrails to protect gross margins.',
                       url: 'https://www.richardewing.io/#answer-ai-economist',
                       author: {
                         '@type': 'Person',
@@ -170,13 +211,141 @@ export default function Home() {
                       },
                     },
                   },
+                  {
+                    '@type': 'Question',
+                    '@id': 'https://www.richardewing.io/#q-executive-ai-governance',
+                    name: 'What is executive AI governance?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      '@id': 'https://www.richardewing.io/#answer-executive-ai-governance',
+                      text: 'Executive AI governance is the system of automated cost guardrails, spending limits, and security policies that prevent AI tools from causing margin erosion, security leaks, or unbudgeted cloud invoices.',
+                      url: 'https://www.richardewing.io/#answer-executive-ai-governance',
+                      author: {
+                        '@type': 'Person',
+                        '@id': 'https://www.richardewing.io/#author',
+                      },
+                    },
+                  },
+                  {
+                    '@type': 'Question',
+                    '@id': 'https://www.richardewing.io/#q-fractional-cpo-cto-cost',
+                    name: 'How much does a fractional CPO / CTO cost?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      '@id': 'https://www.richardewing.io/#answer-fractional-cpo-cto-cost',
+                      text: 'Fractional CPO / CTO advisory retainer is $10,000 per month. This provides senior technology leadership, cost governance reviews, and board-ready financial reporting.',
+                      url: 'https://www.richardewing.io/#answer-fractional-cpo-cto-cost',
+                      author: {
+                        '@type': 'Person',
+                        '@id': 'https://www.richardewing.io/#author',
+                      },
+                    },
+                  },
                 ],
               },
             ],
           }),
         }}
       />
-      <HomeShell />
-    </div>
+
+      {/* 60fps Lenis Smooth Momentum Scrolling */}
+      <SmoothScroll />
+
+      {/* Layer 1: Identity-first hero with Richard Ewing headshot, budget leak calculator, and animated gradient mesh */}
+      <Hero />
+
+      {/* Layer 2: Persistent proof-of-authority bar */}
+      <ScrollReveal delay={50}>
+        <ProofRail />
+      </ScrollReveal>
+
+      <ScrollReveal delay={100}>
+        <AsSeenInBar />
+      </ScrollReveal>
+
+      {/* Layer 3: Bleeding-Edge Transforming 3D Orbital Inference Artifact */}
+      <ScrollReveal delay={100}>
+        <ScrollScene />
+      </ScrollReveal>
+
+      {/* Layer 4: Interactive 3D Cursor-Tilt Live Unit Economics Card */}
+      <ScrollReveal delay={100}>
+        <LiveEconomics />
+      </ScrollReveal>
+
+      {/* Layer 5: Three measurable business problems with exact dollar impacts */}
+      <ScrollReveal delay={100}>
+        <ThreeProblems />
+      </ScrollReveal>
+
+      {/* Layer 6: Kinetic Research Stream connecting to canonical papers */}
+      <ScrollReveal delay={100}>
+        <ResearchStream />
+      </ScrollReveal>
+
+      {/* Layer 7: Breathing Knowledge Field with real-time orbital nodes */}
+      <ScrollReveal delay={100}>
+        <KnowledgeGraph />
+      </ScrollReveal>
+
+      {/* Layer 8: 3-Step Methodology */}
+      <ScrollReveal delay={100}>
+        <HowItWorks />
+      </ScrollReveal>
+
+      {/* Layer 9: Exogram Live EAAP Runtime Simulator */}
+      <ScrollReveal delay={100}>
+        <ProductSurface />
+      </ScrollReveal>
+
+      {/* Layer 10: SGE & Perplexity Direct Answer Block */}
+      <ScrollReveal delay={100}>
+        <section className="max-w-4xl mx-auto px-4 sm:px-6 my-12">
+          <DirectAnswerBlock
+            question="What is an AI Economist?"
+            answer="An AI Economist is the financial strategist operating between engineering production and CFO-level profitability. They audit tech spend, measure AI unit economics, and install automated cost guardrails to protect gross margins."
+            category="AI ECONOMICS & GOVERNANCE"
+            keyTakeaways={[
+              'Audits LLM inference costs and cloud GPU utilization across engineering workflows.',
+              'Establishes unit-economic visibility connecting API consumption to customer gross margins.',
+              'Installs automated cost-caps and real-time runtime rate limits to prevent budget overruns.',
+            ]}
+            definedTerm={{
+              name: 'AI Economist',
+              termCode: 'AI-ECONOMIST',
+              description:
+                'A financial leader bridging software engineering output and CFO-level cost governance to maximize gross margins on artificial intelligence workloads.',
+              inDefinedTermSet: 'https://www.richardewing.io/#definedtermset',
+              inDefinedTermSetName: 'AI Economics Defined Terms',
+            }}
+            citationUrl="https://www.richardewing.io"
+            authorName="Richard Ewing"
+            authorTitle="AI Economist & Enterprise Cost Strategist"
+            authorUrl="https://www.richardewing.io"
+            renderJsonLd={false}
+          />
+        </section>
+      </ScrollReveal>
+
+      {/* Layer 11: Before vs After Transformation */}
+      <ScrollReveal delay={100}>
+        <TransformationStory />
+      </ScrollReveal>
+
+      {/* Layer 12: Client Outcomes & Stats */}
+      <ScrollReveal delay={100}>
+        <ClientOutcomes />
+      </ScrollReveal>
+
+      {/* Layer 13: High Intent Diagnostic & Advisory Conversion Ladder */}
+      <ScrollReveal delay={100}>
+        <HighIntentConversionBlock />
+      </ScrollReveal>
+
+      {/* Layer 14: Newsletter Capture */}
+      <ScrollReveal delay={100}>
+        <NewsletterSection />
+      </ScrollReveal>
+    </main>
   );
 }
