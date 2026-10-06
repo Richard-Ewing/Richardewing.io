@@ -21,7 +21,7 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run MOD v3.0 QA Verification Gate
         run: node .agents/scripts/verify-qa.mjs
