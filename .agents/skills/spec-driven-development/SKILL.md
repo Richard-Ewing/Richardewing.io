@@ -17,14 +17,15 @@ Autonomous agents frequently fail through "hallucination debt" -- writing optimi
 
 To prevent this drift, every code mutation turn must follow the **Spec-Driven Cycle**:
 
-$$\text{Specification \& ADR Audit} \longrightarrow \text{Constraint Definition} \longrightarrow \text{Red Probe} \longrightarrow \text{Implementation} \longrightarrow \text{Green Verification}$$
+$$\text{Research \& /plan Mode Plan} \longrightarrow \text{User Approval Gate} \longrightarrow \text{Constraint Definition \& ADR Audit} \longrightarrow \text{Red Probe} \longrightarrow \text{Implementation} \longrightarrow \text{Green Verification}$$
 
-### Rule 1: The Pre-Code Specification Contract
+### Rule 1: The Pre-Code Specification & /plan Mode Contract
 Never write production code until you have explicitly verified:
-1. The exact inputs, types, and return signatures.
-2. The runtime boundary (Server Component vs. Client Component in Next.js 16 App Router).
-3. The dependencies already installed in `package.json` vs. speculative external packages.
-4. **Architecture Decision Record (ADR) Check**: If the task restructures dependencies, alters state management, introduces external APIs, or modifies runtime hosting boundaries, draft or update an Architecture Decision Record in `docs/adr/` following the Chris Nevin standard (`# ADR-<4 Digit Number>: <Name>`).
+1. **Antigravity /plan Mode Plan**: Research codebases and dependencies deeply, structure implementation steps, and establish user and plan alignment before mutating files.
+2. The exact inputs, types, and return signatures.
+3. The runtime boundary (Server Component vs. Client Component in Next.js 16 App Router).
+4. The dependencies already installed in `package.json` vs. speculative external packages.
+5. **Architecture Decision Record (ADR) Check**: If the task restructures dependencies, alters state management, introduces external APIs, or modifies runtime hosting boundaries, draft or update an Architecture Decision Record in `docs/adr/` following the Chris Nevin standard (`# ADR-<4 Digit Number>: <Name>`).
 
 ### Rule 2: Constraint-Driven Boundaries
 Define what the implementation is **strictly forbidden** from doing:
@@ -54,3 +55,12 @@ Follow Addy Osmani's **Systematic Recovery Protocol**:
 2. **Read the Exact Stack Trace**: Trace the first failing file and line number. Do not make assumptions based on error summaries.
 3. **One Mutation at a Time**: Change one variable, interface, or component boundary. Test immediately.
 4. **Deterministic Re-verification**: Run the mechanical QA gate (`node .agents/scripts/verify-qa.mjs`) to prove no side-effects were introduced.
+
+---
+
+## 4. Antigravity 2.0 (v2.21.0) Modalities & Tooling Discipline
+
+1. **/plan Mode Execution**: When facing multi-file refactors or architectural migrations, formulate a clear plan document or scratch specification before executing writes. Never jump directly into invasive edits without establishing file targets and blast radii.
+2. **Git VCS Sidebar Controls**: Antigravity 2.0 provides integrated Git VCS controls directly inside the sidebar panel alongside the terminal tab. Continuously review staged diffs and unstaged working tree changes to guarantee zero unexpected mutations.
+3. **Hybrid Architecture Dispatch**: Exploit the hybrid cloud and local model continuum. Direct complex reasoning, multi-file code synthesis, and architectural decisions to frontier Gemini models, while using local models (LiteRT, Gemma) for on-device linting and low-latency deterministic tasks.
+

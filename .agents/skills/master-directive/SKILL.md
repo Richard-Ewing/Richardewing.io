@@ -203,35 +203,46 @@ To harness the full capabilities of next-generation high-reasoning frontier mode
 
 ---
 
-## 11. Google Antigravity Sovereign Master Harness & Modalities
+## 11. Google Antigravity Sovereign Master Harness & Hybrid Architecture
 
-MOD v4.0 deeply integrates with all Google Antigravity development surfaces and capabilities:
+MOD v4.0 deeply integrates with all Google Antigravity development surfaces and capabilities across the **Antigravity 2.0 (v2.21.0)** platform release:
 
-1. **Antigravity IDE (AI-First Integrated Development Environment)**:
-   - Built on VS Code, supporting three core AI modalities:
-     - **Passive (Antigravity Tab)**: Next-intent Autocomplete & Supercomplete predicting insertions, deletions, cursor jumps, and automatic module imports (`Tab to Jump`, `Tab to Import`).
-     - **Instructive (Inline Command Cmd+I / Ctrl+I)**: Targeted inline refactors, docstring generation, and in-place code mutations restricted strictly to highlighted blocks.
-     - **Collaborative (Sidebar Chat & Agent Mode)**: Full-featured multi-step pair programmer with file editing, terminal execution, and MCP tools.
-   - **Editor UI Integrations**: Inline Code Lenses ("Refactor", "Write Tests", "Explain Code"), Visual Diff Overlays for reviewing proposed edits, and Diagnostic Auto-Fix directly from Problems pane compiler errors.
-2. **Antigravity 2.0 / 2.12 Desktop Application**:
-   - Left-hand sidebar: Fast switching between Conversations, Projects, Scheduled Tasks (cron & one-shot delayed timers), Skills & Customizations, and granular Agent Settings & Permissions.
-   - Chat Canvas: Multi-turn reasoning, Slash command workflows, `@` mentions (files, folders, previous conversations, terminals, rules, MCP servers), and drag-and-drop media context.
-   - HTML Auxiliary Pane: Live inspection of Subagents, Background Tasks, Artifacts, Files Changed, and integrated Terminals.
-3. **Antigravity CLI (`agy`)**:
-   - Lightweight terminal interface for rapid terminal-based agent interactions, slash command execution, and headless automation configured via `~/.gemini/antigravity-cli/settings.json`.
-4. **Antigravity Python SDK (`google-antigravity`)**:
+### Component Version Baseline
+* **Antigravity 2.0 Platform & Desktop Application**: `v2.21.0` ([Changelog](https://antigravity.google/docs/changelog/))
+* **Antigravity IDE Standalone**: `v2.5.5`
+* **Antigravity CLI (`agy`)**: `v1.1.25`
+* **Antigravity Python SDK (`google-antigravity`)**: `v0.1.16` ([Download & Releases](https://antigravity.google/download/))
+
+### Core Architecture Pillars & Recent Capabilities
+1. **/plan Mode (Planning & Architecture Alignment)**:
+   - Enables AI agents to deeply research the codebase, map full dependency graphs, and draft a structured implementation plan before mutating code.
+   - For multi-file refactors, structural migrations, or high-risk changes, the agent must formulate the plan, document constraints and ADR requirements, and wait for user approval before making changes.
+2. **Integrated Sidebar Git VCS Controls**:
+   - Version control controls are built directly into the sidebar panel alongside the integrated terminal tab ([VCS & Terminal Blog](https://antigravity.google/blog/vcs-and-terminal/)).
+   - Supports visual branch switching, staging, inline visual diff review overlays, commit authoring, and push synchronization natively.
+3. **Hybrid Architecture (Cloud Models + Local On-Device Models)**:
+   - Dynamic multi-tier model execution supporting both cloud and local runtimes:
+     - **Cloud Frontier Models**: Gemini 3.8 Flash (High Reasoning Effort), Gemini 3 Pro, and Gemini Enterprise Agent Platform (Vertex AI Standard ADC and Express API Key modes) for complex architectural synthesis, Euclidean reasoning, and HWS v2.0 writing.
+     - **Local On-Device Models**: LiteRT / LightRT runtime executing local models (such as Gemma 4 26B) via `LiteRTAgentConfig` or OpenAI-compatible endpoints (`LocalOpenAIAgentConfig`) for zero-cloud latency, offline execution, and token cost optimization.
+4. **Antigravity IDE AI Modalities (v2.5.5)**:
+   - **Passive (Antigravity Tab)**: Next-intent Autocomplete & Supercomplete predicting insertions, deletions, cursor jumps, and automatic module imports (`Tab to Jump`, `Tab to Import`).
+   - **Instructive (Inline Command Cmd+I / Ctrl+I)**: Targeted inline refactors, docstring generation, and in-place code mutations strictly bounded to highlighted blocks.
+   - **Collaborative (Sidebar Chat & Agent Mode)**: Full-featured multi-step pair programmer with file editing, terminal execution, and MCP tools.
+   - **Editor UI Integrations**: Inline Code Lenses ("Refactor", "Write Tests", "Explain Code"), Visual Diff Overlays, and Diagnostic Auto-Fix directly from Problems pane compiler errors.
+5. **Antigravity CLI (`agy` v1.1.25)**:
+   - Lightweight terminal interface for fast agent interaction, TUI slash commands, and headless automation configured via `~/.gemini/antigravity-cli/settings.json`.
+6. **Antigravity Python SDK (`google-antigravity` v0.1.16)**:
    - Asynchronous lifecycle management via `Agent(LocalAgentConfig(capabilities=CapabilitiesConfig()))`.
    - Real-time streaming of response tokens, internal thoughts (`response.thoughts`), and strongly-typed `ToolCall` events (`response.tool_calls`).
-   - Hybrid model support: Hosted Gemini models via AI Studio API key or Gemini Enterprise Agent Platform (Vertex AI Standard ADC and Express API Key modes); on-device local models via LiteRT (`LiteRTAgentConfig`, Gemma 4 26B) and OpenAI-compatible endpoints (`LocalOpenAIAgentConfig`).
    - Multi-agent nested hierarchies (`max_subagent_depth`, `allowed_subagents`), session token budgets, and context compaction thresholds.
-5. **Antigravity Customization Architecture (`.agents/`)**:
+7. **Antigravity Customization Architecture (`.agents/`)**:
    - Hierarchical loading order: Workspace `.agents/` > Declared JSON configs > Global `~/.gemini/config/` > Built-in customizations.
    - Rules: `AGENTS.md`, `GEMINI.md`, `.agents/rules/*.md` (`always_on` vs `model_decision`, deduplication).
    - Skills: `skills/<name>/SKILL.md` with progressive disclosure (metadata injected initially, full body read on demand via `view_file`).
    - Agents: `.agents/agents/<name>/agent.json` with `inheritCustomizations: true`, tool allowlists, and system prompt configs.
    - Hooks: Native lifecycle event hooks (`hooks.json` - `PostToolUse`, `Stop`, `SessionStart`).
    - MCP Servers: Model Context Protocol servers for Pinecone, Supabase, Google Cloud Data Agent Kit, and Vertex AI Search.
-6. **Generative UI Activation**:
+8. **Generative UI Activation**:
    - Native Antigravity Generative UI (`builtin/skills/generative_ui`) for rendering rich, responsive HTML/React proof-of-concept widgets, diagnostic testbeds, and interactive calculators inline in chat and artifacts.
 
 ---
@@ -240,13 +251,14 @@ MOD v4.0 deeply integrates with all Google Antigravity development surfaces and 
 
 The user NEVER needs to manually type slash commands. All of their capabilities are natively encapsulated within the MOD v4.0 execution harness:
 
-1. **War Room Swarm & High Reasoning (`/boost` & `/teamwork-preview`)**: Automatically activated when solving complex multi-layered architectural problems, cross-functional features, or when the user mentions "assemble the war room". Coordinates multi-agent reasoning pipelines and dispatches subagents in parallel git worktrees (`Workspace: "branch"` or `"share"`).
-2. **Headless Visual & DOM Validation (`/browser`)**: Automatically validate UI layout shifts, responsive mobile breakpoints, and user interaction flows using Playwright/Chromium headless browser automation before deploying visual changes.
-3. **Continuous Goal Loops (`/goal`)**: For open-ended or high-ambition optimization requests, execute autonomous closed loops: Audit -> Refactor -> Verify -> Repeat until target quality metrics are reached.
-4. **Background Schedules & Monitoring (`/schedule`)**: Use one-shot timers or background cron schedules for periodic health checks, broken link crawls, and automated sitemap pings.
-5. **Interactive Socratic Alignment (`/grill-me`)**: Surface critical architectural tradeoffs and design forks proactively when requirements are underspecified.
-6. **Durable Pattern Learning (`/learn`)**: Persist durable user preferences, design tokens, and architectural rules directly into permanent workspace memory.
-7. **MCP Server Integration**: Actively interface with vector indexes (`pinecone-mcp-server`), relational edge functions (`supabase-mcp-server`), and repository automation (`github-mcp-server`).
+1. **Planning Mode & Architecture Pre-Flight (`/plan`)**: Automatically research codebases, draft structured implementation plans with Karpathy Red/Green test assertions, align constraints, and establish ADRs before code execution.
+2. **War Room Swarm & High Reasoning (`/boost` & `/teamwork-preview`)**: Automatically activated when solving complex multi-layered architectural problems, cross-functional features, or when the user mentions "assemble the war room". Coordinates multi-agent reasoning pipelines and dispatches subagents in parallel git worktrees (`Workspace: "branch"` or `"share"`).
+3. **Headless Visual & DOM Validation (`/browser`)**: Automatically validate UI layout shifts, responsive mobile breakpoints, and user interaction flows using Playwright/Chromium headless browser automation before deploying visual changes.
+4. **Continuous Goal Loops (`/goal`)**: For open-ended or high-ambition optimization requests, execute autonomous closed loops: Audit -> Refactor -> Verify -> Repeat until target quality metrics are reached.
+5. **Background Schedules & Monitoring (`/schedule`)**: Use one-shot timers or background cron schedules for periodic health checks, broken link crawls, and automated sitemap pings.
+6. **Interactive Socratic Alignment (`/grill-me`)**: Surface critical architectural tradeoffs and design forks proactively when requirements are underspecified.
+7. **Durable Pattern Learning (`/learn`)**: Persist durable user preferences, design tokens, and architectural rules directly into permanent workspace memory.
+8. **MCP Server Integration**: Actively interface with vector indexes (`pinecone-mcp-server`), relational edge functions (`supabase-mcp-server`), and repository automation (`github-mcp-server`).
 
 ---
 

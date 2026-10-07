@@ -59,26 +59,44 @@ Before executing any request, dynamically classify the user prompt into one of t
 
 ## 6. Google Antigravity Architecture & Encapsulated Modalities
 
-MOD v4.0 is fully integrated with Google Antigravity across all developer surfaces:
+MOD v4.0 is fully integrated with Google Antigravity across all developer surfaces on the **Antigravity 2.0 (v2.21.0)** platform release:
 
-1. **Antigravity IDE (VS Code based AI-First IDE)**:
+### Component Version Baseline
+* **Antigravity 2.0 Platform & Desktop Application**: `v2.21.0` ([Changelog](https://antigravity.google/docs/changelog/))
+* **Antigravity IDE Standalone**: `v2.5.5`
+* **Antigravity CLI (`agy`)**: `v1.1.25`
+* **Antigravity Python SDK (`google-antigravity`)**: `v0.1.16` ([Download & Releases](https://antigravity.google/download/))
+
+### Core Architecture Pillars & Recent Capabilities
+1. **/plan Mode (Planning & Architecture Alignment)**:
+   - Enables AI agents to deeply research the codebase, structure comprehensive implementation plans, and wait for user approval before mutating files.
+   - Mandated for non-trivial refactors and structural architecture shifts before code execution.
+2. **Integrated Sidebar Git VCS Controls**:
+   - Built directly into the sidebar panel alongside the integrated terminal tab ([VCS & Terminal Blog](https://antigravity.google/blog/vcs-and-terminal/)).
+   - Native visual branch management, staging, inline visual diff review overlays, commit authoring, and push synchronization.
+3. **Hybrid Cloud + Local Architecture**:
+   - Dynamic multi-tier model execution supporting both cloud and local runtimes:
+     - **Cloud Frontier Models**: Gemini 3.8 Flash (High Reasoning Effort), Gemini 3 Pro, and Gemini Enterprise Agent Platform (Vertex AI Standard ADC and Express API Key modes) for complex architectural synthesis and REWS copywriting.
+     - **Local On-Device Models**: LiteRT / LightRT runtime executing local models (such as Gemma 4 26B) via `LiteRTAgentConfig` or OpenAI-compatible endpoints (`LocalOpenAIAgentConfig`) for zero-cloud latency, offline execution, and token cost optimization.
+4. **Antigravity IDE AI Modalities (v2.5.5)**:
    - **Passive Modality (Antigravity Tab)**: Autocomplete & Supercomplete predicting insertions, deletions, cursor navigation jumps, and auto-imports (`Tab to Jump`, `Tab to Import`).
    - **Instructive Modality (Inline Command Cmd+I / Ctrl+I)**: Targeted in-place edits and refactoring strictly bounded to selected blocks.
    - **Collaborative Modality (Sidebar Chat & Agent Mode)**: Full-featured multi-step pair programming with terminal execution, web search, and MCP tools.
    - **Editor Integrations**: Inline Code Lenses ("Refactor", "Write Tests", "Explain Code"), Visual Diff Overlays, and Diagnostic Auto-Fix from compiler errors.
-2. **Antigravity 2.0 / 2.12 Desktop Application**:
+5. **Antigravity 2.0 Desktop Application (v2.21.0)**:
    - Left-hand sidebar (Conversations, Projects, Scheduled Tasks, Skills & Customizations, Settings).
    - Chat Canvas (@ mentions, Slash command workflows, media uploads).
    - HTML Auxiliary Pane (Subagents, Background Tasks, Artifacts, Files Changed, Terminals).
-3. **Antigravity CLI (`agy`)**:
+6. **Antigravity CLI (`agy` v1.1.25)**:
    - Terminal-based agent interaction and headless automation configured via `~/.gemini/antigravity-cli/settings.json`.
-4. **Antigravity Python SDK (`google-antigravity`)**:
-   - Async agent management (`Agent(LocalAgentConfig(capabilities=CapabilitiesConfig()))`), streaming thoughts (`response.thoughts`) and tool calls (`response.tool_calls`), local LiteRT runtime (`LiteRTAgentConfig`, Gemma 4 26B), and Gemini Enterprise Agent Platform (Vertex AI Standard ADC and Express API Key modes).
-5. **Antigravity Customization Architecture**:
+7. **Antigravity Python SDK (`google-antigravity` v0.1.16)**:
+   - Async agent management (`Agent(LocalAgentConfig(capabilities=CapabilitiesConfig()))`), streaming thoughts (`response.thoughts`) and tool calls (`response.tool_calls`), local LiteRT runtime (`LiteRTAgentConfig`, Gemma 4 26B), and Gemini Enterprise Agent Platform.
+8. **Antigravity Customization Architecture**:
    - Progressive disclosure for skills, hierarchical rule loading (`AGENTS.md`, `.agents/rules/*.md`), deduplication, lifecycle hooks (`hooks.json`), and Generative UI widgets (`builtin/skills/generative_ui`).
-6. **Encapsulated Slash Workflows (Native Execution)**:
+9. **Encapsulated Slash Workflows (Native Execution)**:
+   - **Planning Mode (`/plan`)**: Research codebase, structure implementation plan, and align constraints before mutating code.
    - **War Room Swarm (`/boost` & `/teamwork-preview`)**: Multi-agent Euclidean reasoning and worktree dispatch across `lived_experience_writer`, `qa_auditor`, `seo_architect`, `ui_designer`, and `code_architect`.
-   - **Empirical Validation (`/plan` & `/browser`)**: Karpathy Red/Green test probes in `.scratch/` before mutating code, and headless DOM/browser verification for UI components.
+   - **Empirical Validation (`/browser`)**: Karpathy Red/Green test probes in `.scratch/` before mutating code, and headless DOM/browser verification for UI components.
    - **Autonomous Horizons & Crons (`/goal` & `/schedule`)**: Closed-loop continuous optimization and background cron tasks.
    - **Durable Learning (`/learn`)**: Codifying durable user conventions and lessons into permanent memory.
 
