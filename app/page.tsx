@@ -10,11 +10,11 @@ import NewsletterSection from './components/sections/NewsletterSection';
 import AsSeenInBar from '@/components/social-proof/AsSeenInBar';
 import DirectAnswerBlock from '@/components/DirectAnswerBlock';
 import { ScrollReveal } from '@/app/components/magicui/scroll-reveal';
-import SmoothScroll from '@/components/home/SmoothScroll';
-import ScrollScene from '@/components/home/ScrollScene';
-import LiveEconomics from '@/components/home/LiveEconomics';
+import ClientSmoothScroll from '@/components/home/ClientSmoothScroll';
+import ClientScrollScene from '@/components/home/ClientScrollScene';
+import ClientLiveEconomics from '@/components/home/ClientLiveEconomics';
 import ResearchStream from '@/components/home/ResearchStream';
-import KnowledgeGraph from '@/components/home/KnowledgeGraph';
+import ClientKnowledgeGraph from '@/components/home/ClientKnowledgeGraph';
 import ProductSurface from '@/components/home/ProductSurface';
 
 export const metadata: Metadata = {
@@ -249,7 +249,7 @@ export default function Home() {
       />
 
       {/* 60fps Lenis Smooth Momentum Scrolling */}
-      <SmoothScroll />
+      <ClientSmoothScroll />
 
       {/* Layer 1: Identity-first hero with Richard Ewing headshot, budget leak calculator, and animated gradient mesh */}
       <Hero />
@@ -265,12 +265,12 @@ export default function Home() {
 
       {/* Layer 3: Bleeding-Edge Transforming 3D Orbital Inference Artifact */}
       <ScrollReveal delay={100}>
-        <ScrollScene />
+        <ClientScrollScene />
       </ScrollReveal>
 
       {/* Layer 4: Interactive 3D Cursor-Tilt Live Unit Economics Card */}
       <ScrollReveal delay={100}>
-        <LiveEconomics />
+        <ClientLiveEconomics />
       </ScrollReveal>
 
       {/* Layer 5: Three measurable business problems with exact dollar impacts */}
@@ -285,7 +285,7 @@ export default function Home() {
 
       {/* Layer 7: Breathing Knowledge Field with real-time orbital nodes */}
       <ScrollReveal delay={100}>
-        <KnowledgeGraph />
+        <ClientKnowledgeGraph />
       </ScrollReveal>
 
       {/* Layer 8: 3-Step Methodology */}

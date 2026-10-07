@@ -10,9 +10,18 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        source: '/assets/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=604800' },
+          { key: 'Cloudflare-CDN-Cache-Control', value: 'max-age=86400, stale-while-revalidate=604800' },
+        ],
+      },
+      {
         source: '/api/:path*',
         headers: [
           { key: 'X-Robots-Tag', value: 'noindex, follow' },
+          { key: 'Cache-Control', value: 'no-store, max-age=0' },
+          { key: 'Cloudflare-CDN-Cache-Control', value: 'no-store' },
         ],
       },
       {
@@ -25,54 +34,56 @@ const nextConfig: NextConfig = {
         source: '/sign-in',
         headers: [
           { key: 'X-Robots-Tag', value: 'noindex, follow' },
+          { key: 'Cache-Control', value: 'no-store, max-age=0' },
+          { key: 'Cloudflare-CDN-Cache-Control', value: 'no-store' },
         ],
       },
       {
         source: '/sign-in/:path*',
         headers: [
           { key: 'X-Robots-Tag', value: 'noindex, follow' },
+          { key: 'Cache-Control', value: 'no-store, max-age=0' },
+          { key: 'Cloudflare-CDN-Cache-Control', value: 'no-store' },
         ],
       },
       {
         source: '/sign-up',
         headers: [
           { key: 'X-Robots-Tag', value: 'noindex, follow' },
+          { key: 'Cache-Control', value: 'no-store, max-age=0' },
+          { key: 'Cloudflare-CDN-Cache-Control', value: 'no-store' },
         ],
       },
       {
         source: '/sign-up/:path*',
         headers: [
           { key: 'X-Robots-Tag', value: 'noindex, follow' },
+          { key: 'Cache-Control', value: 'no-store, max-age=0' },
+          { key: 'Cloudflare-CDN-Cache-Control', value: 'no-store' },
         ],
       },
       {
         source: '/vault',
         headers: [
           { key: 'X-Robots-Tag', value: 'noindex, follow' },
+          { key: 'Cache-Control', value: 'no-store, max-age=0' },
+          { key: 'Cloudflare-CDN-Cache-Control', value: 'no-store' },
         ],
       },
       {
-        source: '/vault/assets/:path*',
+        source: '/vault/:path*',
         headers: [
           { key: 'X-Robots-Tag', value: 'noindex, follow' },
-        ],
-      },
-      {
-        source: '/vault/team/:path*',
-        headers: [
-          { key: 'X-Robots-Tag', value: 'noindex, follow' },
-        ],
-      },
-      {
-        source: '/vault/join/:path*',
-        headers: [
-          { key: 'X-Robots-Tag', value: 'noindex, follow' },
+          { key: 'Cache-Control', value: 'no-store, max-age=0' },
+          { key: 'Cloudflare-CDN-Cache-Control', value: 'no-store' },
         ],
       },
       {
         source: '/feed.xml',
         headers: [
           { key: 'X-Robots-Tag', value: 'noindex, follow' },
+          { key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=604800' },
+          { key: 'Cloudflare-CDN-Cache-Control', value: 'max-age=86400, stale-while-revalidate=604800' },
         ],
       },
       {
@@ -91,6 +102,8 @@ const nextConfig: NextConfig = {
         source: '/ai-integration/advisor',
         headers: [
           { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+          { key: 'Cache-Control', value: 'no-store, max-age=0' },
+          { key: 'Cloudflare-CDN-Cache-Control', value: 'no-store' },
         ],
       },
       {
@@ -102,6 +115,7 @@ const nextConfig: NextConfig = {
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           { key: 'Referrer-Policy', value: 'origin-when-cross-origin' },
           { key: 'Permissions-Policy', value: 'camera=(), microphone=(self), geolocation=()' },
+          { key: 'Cloudflare-CDN-Cache-Control', value: 'max-age=604800, stale-while-revalidate=86400' },
         ],
       },
     ];
