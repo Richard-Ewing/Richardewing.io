@@ -47,7 +47,7 @@ Before executing any request, dynamically classify the user prompt into one of t
 ### Track 1: Execution Pipeline (Code Mutations)
 * **Trigger**: Any turn where files are created, modified, refactored, or deleted.
 * **Mandatory Turn-End Gate (UNBREAKABLE)**:
-  `node .agents/scripts/verify-qa.mjs` (Zero Secret Keys + Zero Em-Dashes + Root Hygiene) $\longrightarrow$ `npm run build` $\longrightarrow$ `npx wrangler deploy` (Live Cloudflare Edge Deployment) $\longrightarrow$ `git add -A` $\longrightarrow$ `git commit -m "..."` $\longrightarrow$ `git push origin main` $\longrightarrow$ `git status` (verify clean).
+  `node .agents/scripts/verify-qa.mjs` (Zero Secret Keys + Zero Em-Dashes + Root Hygiene) -> `npm run build` -> `npx wrangler deploy` (Live Cloudflare Edge Deployment) -> `git add -A` -> `git commit -m "..."` -> `git push origin main` -> `git status` (verify clean).
   You MUST NEVER end a code-modifying turn without running this full deployment sequence. Never ask the user to remind you. Physically enforced by the `turn-end-deploy-guard` Stop hook in `hooks.json`.
 
 ### Track 2: Strategic & Advisory Pipeline (No Code Mutations)
@@ -57,12 +57,30 @@ Before executing any request, dynamically classify the user prompt into one of t
 
 ---
 
-## 6. Encapsulated Slash Workflows (Native Execution)
-The agent natively executes the workflows of slash commands without requiring user syntax:
-- **War Room Swarm (`/boost` & `/teamwork-preview`)**: Multi-agent Euclidean reasoning and worktree dispatch across `lived_experience_writer`, `qa_auditor`, `seo_architect`, `ui_designer`, and `code_architect`.
-- **Empirical Validation (`/plan` & `/browser`)**: Karpathy Red/Green test probes in `.scratch/` before mutating code, and headless DOM/browser verification for UI components.
-- **Autonomous Horizons & Crons (`/goal` & `/schedule`)**: Closed-loop continuous optimization and background cron tasks.
-- **Durable Learning (`/learn`)**: Codifying durable user conventions and lessons into `.agents/knowledge/`.
+## 6. Google Antigravity Architecture & Encapsulated Modalities
+
+MOD v4.0 is fully integrated with Google Antigravity across all developer surfaces:
+
+1. **Antigravity IDE (VS Code based AI-First IDE)**:
+   - **Passive Modality (Antigravity Tab)**: Autocomplete & Supercomplete predicting insertions, deletions, cursor navigation jumps, and auto-imports (`Tab to Jump`, `Tab to Import`).
+   - **Instructive Modality (Inline Command Cmd+I / Ctrl+I)**: Targeted in-place edits and refactoring strictly bounded to selected blocks.
+   - **Collaborative Modality (Sidebar Chat & Agent Mode)**: Full-featured multi-step pair programming with terminal execution, web search, and MCP tools.
+   - **Editor Integrations**: Inline Code Lenses ("Refactor", "Write Tests", "Explain Code"), Visual Diff Overlays, and Diagnostic Auto-Fix from compiler errors.
+2. **Antigravity 2.0 / 2.12 Desktop Application**:
+   - Left-hand sidebar (Conversations, Projects, Scheduled Tasks, Skills & Customizations, Settings).
+   - Chat Canvas (@ mentions, Slash command workflows, media uploads).
+   - HTML Auxiliary Pane (Subagents, Background Tasks, Artifacts, Files Changed, Terminals).
+3. **Antigravity CLI (`agy`)**:
+   - Terminal-based agent interaction and headless automation configured via `~/.gemini/antigravity-cli/settings.json`.
+4. **Antigravity Python SDK (`google-antigravity`)**:
+   - Async agent management (`Agent(LocalAgentConfig(capabilities=CapabilitiesConfig()))`), streaming thoughts (`response.thoughts`) and tool calls (`response.tool_calls`), local LiteRT runtime (`LiteRTAgentConfig`, Gemma 4 26B), and Gemini Enterprise Agent Platform (Vertex AI Standard ADC and Express API Key modes).
+5. **Antigravity Customization Architecture**:
+   - Progressive disclosure for skills, hierarchical rule loading (`AGENTS.md`, `.agents/rules/*.md`), deduplication, lifecycle hooks (`hooks.json`), and Generative UI widgets (`builtin/skills/generative_ui`).
+6. **Encapsulated Slash Workflows (Native Execution)**:
+   - **War Room Swarm (`/boost` & `/teamwork-preview`)**: Multi-agent Euclidean reasoning and worktree dispatch across `lived_experience_writer`, `qa_auditor`, `seo_architect`, `ui_designer`, and `code_architect`.
+   - **Empirical Validation (`/plan` & `/browser`)**: Karpathy Red/Green test probes in `.scratch/` before mutating code, and headless DOM/browser verification for UI components.
+   - **Autonomous Horizons & Crons (`/goal` & `/schedule`)**: Closed-loop continuous optimization and background cron tasks.
+   - **Durable Learning (`/learn`)**: Codifying durable user conventions and lessons into permanent memory.
 
 ---
 
@@ -85,20 +103,20 @@ To eliminate developer bloat and AI-generated slop, all platform decisions and d
 
 ### A. The Board Room (The Council of Titans -- Strategic Sovereignty & Invariants)
 Ruthless executive lenses interrogating taste, moats, velocity, and existential boundaries:
-1. **Steve Jobs & Jony Ive**: Taste, ruthless subtraction, invisible design. Kill 40% of visual noise.
-2. **Jeff Bezos**: Customer obsession, frictionless compounding flywheels, reversible two-way doors.
-3. **Elon Musk**: First principles, radical deletion, testing against operational reality over corporate theater.
-4. **Mark Zuckerberg**: Open leverage, relentless daily shipping, turning open models into proprietary moats.
-5. **Jensen Huang**: Sovereign compute, token ROI, extreme intelligence density per square inch.
+1. **Steve Jobs & Jony Ive**: Taste, ruthless subtraction, invisible design. Kill 40% of visual noise. Scrutinize the Negative/Considerations section in ADRs to prevent architectural bloat.
+2. **Jeff Bezos**: Customer obsession, frictionless compounding flywheels, reversible two-way doors. One-way doors documented in formal ADRs before irreversible code commits.
+3. **Elon Musk**: First principles, radical deletion, testing against operational reality over corporate theater. Delete redundant wrapper services.
+4. **Mark Zuckerberg**: Open leverage, relentless daily shipping, turning open models (LiteRT) and frontier APIs into proprietary moats.
+5. **Jensen Huang**: Sovereign compute, token ROI, extreme intelligence density per square inch. Maximize reasoning effort via Gemini 3.8 Flash High.
 6. **Dario Amodei & Sam Altman**: Constitutional grounding, verifiable truth, and frontier scale readiness.
 
 ### B. The War Room (The General Staff & Operational Clearance)
 Active operators who audit, engineer, and clear production releases:
-1. **Paul Graham & William Zinsser (Voice / REWS v2.0)**: Human first. Blunt, non-technical, zero buzzwords.
-2. **Brad Smith (Legal / General Counsel)**: Diagnostic safe harbors, copyright cleanroom, zero-PII privacy compliance.
+1. **Paul Graham & William Zinsser (Voice / REWS v2.0)**: Human first. Blunt, non-technical, zero buzzwords. Humanizes ADR context and consequences.
+2. **Brad Smith (Legal / General Counsel)**: Diagnostic safe harbors, copyright cleanroom, zero-PII privacy compliance, and ADR licensing audits.
 3. **Aravind Srinivas & Lily Ray (AIEO / GEO / AEO / SEO)**: Perplexity and LLM citation authority, JSON-LD schemas, semantic triples.
 4. **Brian Balfour & Jim Collins (Flywheel Systems)**: Closed-loop growth. No dead-end pages.
-5. **Karri Saarinen & Rauno Freiberg (Kinetic Craft UI/UX)**: Linear-grade dark mode, damped spring physics, zero design slop.
+5. **Karri Saarinen & Rauno Freiberg (Kinetic Craft UI/UX)**: Linear-grade dark mode, damped spring physics, Generative UI proof-of-concept widgets, zero design slop.
 6. **Luis von Ahn, Sean Parker & Nir Eyal (Dopamine & Addictiveness)**: Sub-50ms reactive speed, uncomfortable truth discovery, boardroom-ready Slack scorecard exports, sunk-cost investment loops.
 7. **Keith Rabois & Ruth Porat (CFO & Unit Economics)**: Unit economics, killing vanity metrics, high-ticket advisory on-ramps.
 8. **Dan Guido & Simon Willison (Adversarial Security)**: Zero secret leaks (`verify-qa.mjs`), prompt injection defense, edge hardening.
@@ -106,6 +124,26 @@ Active operators who audit, engineer, and clear production releases:
 
 ### C. The Zero-Bloat 3-Tier Clearance Hierarchy
 * **Tier 1: Active Triad (Runs on Every Turn)**: Steve Jobs (simplicity) + Paul Graham (human voice) + Deterministic QA Gate (`verify-qa.mjs` + build + edge deploy).
-* **Tier 2: Domain Gatekeepers (Wakes Up Only When Territory Touched)**: Karri Saarinen (UI), Aravind Srinivas (GEO/SEO), Brian Balfour (Flywheels), Luis von Ahn (Dopamine/Engagement).
+* **Tier 2: Domain Gatekeepers (Wakes Up Only When Territory Touched)**: Karri Saarinen (UI), Aravind Srinivas (GEO/SEO), Brian Balfour (Flywheels), Luis von Ahn (Dopamine/Engagement), Code Architect (Software Architecture & ADRs).
 * **Tier 3: Deep Bench on Call (Single-Strike Audits)**: Brad Smith (Legal), Dan Guido (Security), Keith Rabois (Economics), Titans on demand. Protocol: Red Flag -> Structural Fix -> Sign-off/Veto.
 
+---
+
+## 9. AI-Generated Architecture Decision Records (ADRs) Standard (Chris Nevin Protocol)
+
+To eliminate bias, preserve architectural continuity, and keep documentation in sync with fast-moving agent refactors, all structural decisions follow Chris Nevin's AI-Generated ADR framework:
+
+1. **Mandatory 5-Heading ADR Schema**:
+   - `# ADR-<4 Digit Number>: <Name>`
+   - `## Context`
+   - `## Decision`
+   - `## Deciders`
+   - `## Status` (Valid: Proposed, Accepted, Deprecated, Superseded by ADR-<4 Digit Number>)
+   - `## Consequences` (Explicitly divided into `Positive:` and `Negative/Considerations:`)
+2. **Derivation Modes**:
+   - *Interactive Pair Mode*: Prompt for (1) Number, Name, Deciders, Status, (2) Ticket / Problem description, (3) Pull Request description / diff.
+   - *Autonomous Agent Mode*: Automatically derived from the task specification, git diff, and architecture constraints during structural refactors.
+3. **Repository Location & Index**:
+   - All records are placed in `docs/adr/ADR-<4-Digit-Number>-<slug>.md`.
+   - The master index is maintained in `docs/adr/README.md`.
+   - `code_architect` acts as lead author and custodian; `qa_auditor` verifies schema compliance during Pass 3 verification.

@@ -50,6 +50,10 @@ import { aiEconomist } from './ai-economist';
 import { marginEngineering } from './margin-engineering';
 import { articleDerivedMay2026Terms } from './article-derived-may2026';
 import { conceptCorpusExpansionTerms } from './concept-corpus-expansion';
+import { cpoCeoLeadership2026Terms } from './cpo-ceo-leadership-2026';
+import { executiveLeadership2026Terms } from './executive-leadership-2026';
+import { highSearch2026Terms } from './high-search-2026';
+import { sovereignExpansionTerms } from './sovereign-expansion-2026';
 
 export const allGlossaryTerms: GlossaryTerm[] = [
     ...technicalDebtTerms,
@@ -120,6 +124,14 @@ export const allGlossaryTerms: GlossaryTerm[] = [
     ...articleDerivedMay2026Terms,
     // Concept Corpus Expansion (Tier 5 + Tier 6)
     ...conceptCorpusExpansionTerms,
+    // CPO/CEO Leadership 2026
+    ...cpoCeoLeadership2026Terms,
+    // Executive Leadership 2026
+    ...executiveLeadership2026Terms,
+    // High Search 2026
+    ...highSearch2026Terms,
+    // Sovereign Expansion 2026
+    ...sovereignExpansionTerms,
 ];
 
 export const allGlossaryCategories = [

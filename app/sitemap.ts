@@ -63,7 +63,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/comparisons/nextjs-remix-astro', '/comparisons/claude-vs-gpt4',
         '/comparisons/pdi-vs-dora', '/comparisons/agile-vs-kanban',
         '/comparisons/monolith-vs-microservices', '/tools/cloud-finops-calculator',
-        '/tools/unit-economics'
+        '/tools/unit-economics',
+        '/vault/curriculum/tracks/agentic-governance/58-7',
+        '/vault/curriculum/tracks/dx-economics/17-3',
+        '/vault/curriculum/tracks/rd-capital-management/3-17',
+        '/vault/curriculum/tracks/rd-capital-management/3-18',
+        '/vault/curriculum/tracks/product-economics/5-3',
+        '/vault/curriculum/tracks/product-economics/5-14',
+        '/vault/curriculum/tracks/ai-pricing/8-5',
+        '/curriculum/tracks'
     ]);
 
     function add(url: string, changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'], priority: number) {

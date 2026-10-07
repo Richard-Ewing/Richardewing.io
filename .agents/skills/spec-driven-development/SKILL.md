@@ -1,12 +1,12 @@
 ---
 name: spec-driven-development
-description: Autonomous engineering discipline combining Addy Osmani's spec-driven development with Karpathy empirical red/green test probes. Enforces strict requirement contracts, constraint boundaries, and error recovery protocols before executing code mutations.
+description: Autonomous engineering discipline combining Addy Osmani's spec-driven development with Karpathy empirical red/green test probes and Chris Nevin AI-generated Architecture Decision Records (ADRs). Enforces strict requirement contracts, constraint boundaries, and error recovery protocols before executing code mutations.
 ---
 
 # Autonomous Engineering Discipline & Spec-Driven Development
 
-**Directive**: Sovereign Master Operating Directive (MOD v3.2)  
-**Origin Discipline**: Addy Osmani Agent Skills (`addyosmani/agent-skills`) & Karpathy Empirical Invariants  
+**Directive**: Sovereign Master Operating Directive (MOD v4.0)  
+**Origin Discipline**: Addy Osmani Agent Skills (`addyosmani/agent-skills`), Karpathy Empirical Invariants & Chris Nevin ADR Protocol  
 **Scope**: All autonomous coding workflows, structural refactors, and diagnostic tool development.
 
 ---
@@ -17,13 +17,14 @@ Autonomous agents frequently fail through "hallucination debt" -- writing optimi
 
 To prevent this drift, every code mutation turn must follow the **Spec-Driven Cycle**:
 
-$$\text{Specification} \longrightarrow \text{Constraint Definition} \longrightarrow \text{Red Probe} \longrightarrow \text{Implementation} \longrightarrow \text{Green Verification}$$
+$$\text{Specification \& ADR Audit} \longrightarrow \text{Constraint Definition} \longrightarrow \text{Red Probe} \longrightarrow \text{Implementation} \longrightarrow \text{Green Verification}$$
 
 ### Rule 1: The Pre-Code Specification Contract
 Never write production code until you have explicitly verified:
 1. The exact inputs, types, and return signatures.
 2. The runtime boundary (Server Component vs. Client Component in Next.js 16 App Router).
 3. The dependencies already installed in `package.json` vs. speculative external packages.
+4. **Architecture Decision Record (ADR) Check**: If the task restructures dependencies, alters state management, introduces external APIs, or modifies runtime hosting boundaries, draft or update an Architecture Decision Record in `docs/adr/` following the Chris Nevin standard (`# ADR-<4 Digit Number>: <Name>`).
 
 ### Rule 2: Constraint-Driven Boundaries
 Define what the implementation is **strictly forbidden** from doing:
@@ -49,7 +50,7 @@ Before performing complex refactors or debugging mysterious failures:
 When a build or test fails, autonomous agents often resort to "shotgun debugging" -- making arbitrary edits across unrelated files in hope that the error disappears.
 
 Follow Addy Osmani's **Systematic Recovery Protocol**:
-1. **Isolate the Failing Layer**: Determine whether the failure is a TypeScript compilation error, an SSR hydration mismatch, an un-handled promise rejection, or a linter violation.
+1. **Isolate the Failing Layer**: Determine whether the failure is a TypeScript compilation error, an SSR hydration mismatch, an unhandled promise rejection, or a linter violation.
 2. **Read the Exact Stack Trace**: Trace the first failing file and line number. Do not make assumptions based on error summaries.
 3. **One Mutation at a Time**: Change one variable, interface, or component boundary. Test immediately.
 4. **Deterministic Re-verification**: Run the mechanical QA gate (`node .agents/scripts/verify-qa.mjs`) to prove no side-effects were introduced.

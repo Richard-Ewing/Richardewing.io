@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  experimental: {
+    cpus: 1,
+  },
   async headers() {
     return [
       {
@@ -71,7 +74,23 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: '/vault/:path*',
+        source: '/vault/assets/:path*',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, follow' },
+          { key: 'Cache-Control', value: 'no-store, max-age=0' },
+          { key: 'Cloudflare-CDN-Cache-Control', value: 'no-store' },
+        ],
+      },
+      {
+        source: '/vault/team/:path*',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, follow' },
+          { key: 'Cache-Control', value: 'no-store, max-age=0' },
+          { key: 'Cloudflare-CDN-Cache-Control', value: 'no-store' },
+        ],
+      },
+      {
+        source: '/vault/join/:path*',
         headers: [
           { key: 'X-Robots-Tag', value: 'noindex, follow' },
           { key: 'Cache-Control', value: 'no-store, max-age=0' },

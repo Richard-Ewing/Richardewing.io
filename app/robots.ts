@@ -1,24 +1,22 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-    const commonAllows = ['/', '/curriculum'];
+    const commonAllows = ['/', '/_next/static/'];
     const commonDisallows = [
-        '/_next/',
         '/admin/',
         '/api/',
         '/sandbox/',
         '/experimental/',
-        '/brand/*.json',
-        '/feed.xml',
-        '/curriculum/',
-        '/comparisons/',
-        '/guides/',
-        '/ai-integration/advisor',
-        '/tools/*/vs/*',
         '/sign-in',
         '/sign-in/*',
         '/sign-up',
         '/sign-up/*',
+        '/vault/team/',
+        '/vault/team/*',
+        '/vault/assets/',
+        '/vault/assets/*',
+        '/vault/join/',
+        '/vault/join/*',
     ];
 
     return {
