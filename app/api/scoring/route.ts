@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { model } from '@/app/lib/gemini';
+import { client } from '@/app/lib/gemini';
 import { z } from 'zod';
 
 export const dynamic = 'force-dynamic';
@@ -64,14 +64,8 @@ Use terms like "Capital Risk," "Use," "Technical Insolvency," and "Judgment."
 Do not use HR fluff. Be ruthless and direct.
 `;
 
-        const result = await model.generateContent({
-            contents: [{ role: 'user', parts: [{ text: prompt }] }],
-            generationConfig: {
-                temperature: 0.7,
-            },
-        });
-
-        const memo = result.response.text();
+        const interaction = await client.interactions.create({ model: 'gemini-3.8-flash', input: prompt });
+        const memo = interaction.output_text || '';
 
         return NextResponse.json({ memo });
 

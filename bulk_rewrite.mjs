@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
-import fetch from 'node-fetch';
+import { GoogleGenAI } from '@google/genai';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -35,9 +35,7 @@ STARVING CROWDS (target these pain points):
 `;
 
 async function generateRewrite(page) {
-    const prompt = `${REWRITE_RULES}
-
-PAGE: ${page.url}
+    const prompt = `PAGE: ${page.url}
 CURRENT TITLE: ${page.currentTitle || 'N/A'}
 CURRENT DESCRIPTION: ${page.currentDescription || 'N/A'}
 IMPRESSIONS: ${page.impressions}
@@ -52,17 +50,14 @@ Respond in this exact JSON format:
 {"title": "new title here", "description": "new description here", "reasoning": "why this will improve CTR"}`;
 
     try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                contents: [{ parts: [{ text: prompt }] }],
-                generationConfig: { temperature: 0.3, maxOutputTokens: 1000 }
-            })
+        const client = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
+        const interaction = await client.interactions.create({
+            model: 'gemini-3.8-flash',
+            input: prompt,
+            system_instruction: REWRITE_RULES
         });
 
-        const data = await response.json();
-        const text = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+        const text = interaction.output_text || '';
         const jsonMatch = text.match(/\{[\s\S]*\}/);
         if (!jsonMatch) return null;
         return JSON.parse(jsonMatch[0]);

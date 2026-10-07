@@ -52,7 +52,7 @@ function addWavHeader(pcmBuffer: Buffer, sampleRate = 24000, numChannels = 1, bi
 let cachedGreetingAudio: string | null = null;
 
 async function getInitialGreetingAudio(apiKey: string, text: string): Promise<string | null> {
-  const models = ['gemini-3.1-flash-tts-preview', 'gemini-2.5-flash-preview-tts'];
+  const models = ['gemini-3.8-flash'];
   for (const ttsModel of models) {
     try {
       const url = `https://generativelanguage.googleapis.com/v1beta/models/${ttsModel}:generateContent?key=${apiKey}`;

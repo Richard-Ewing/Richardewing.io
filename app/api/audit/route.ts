@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { model } from '@/app/lib/gemini';
+import { client } from '@/app/lib/gemini';
 import { z } from 'zod';
 
 export const dynamic = 'force-dynamic';
@@ -83,20 +83,13 @@ export async function POST(req: Request) {
             );
         }
 
-        const result = await model.generateContent({
-            contents: [
-                { role: 'user', parts: [
-                    { text: SYSTEM_PROMPT },
-                    { text: `AUDIT THIS BACKLOG:\n${tickets.join('\n')}` },
-                ]},
-            ],
-            generationConfig: {
-                temperature: 0.1,
-                responseMimeType: 'application/json',
-            },
+        const interaction = await client.interactions.create({
+            model: 'gemini-3.8-flash',
+            input: `AUDIT THIS BACKLOG:\n${tickets.join('\n')}`,
+            system_instruction: SYSTEM_PROMPT
         });
 
-        const rawResponse = result.response.text();
+        const rawResponse = interaction.output_text || '';
 
         if (!rawResponse) {
             throw new Error('Empty response from Gemini');

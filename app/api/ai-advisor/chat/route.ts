@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
 import { auth } from '@clerk/nextjs/server';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import { supabaseAdmin } from '@/lib/supabase';
 import { storeBusinessFact, searchBusinessContext } from '@/lib/exogram';
 
 export const dynamic = 'force-dynamic';
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+const client = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
 
 // ---------------------------------------------------------------------------
 // Phase Definitions
@@ -194,32 +194,19 @@ Rules:
 - Do not repeat questions they've already answered
 - If they give short answers, gently probe deeper`;
 
-        let model;
-        try {
-            model = genAI.getGenerativeModel({
-                model: 'gemini-3.7-flash',
-            });
-        } catch {
-            model = genAI.getGenerativeModel({
-                model: 'gemini-2.5-flash',
-            });
-        }
+        const conversationText = conversationHistory.map(
+            (msg: { role: string; content: string }) => `${msg.role}: ${msg.content}`
+        ).join('\n');
 
-        // Build chat history for Gemini
-        const chatHistory = conversationHistory.map(
-            (msg: { role: string; content: string }) => ({
-                role: msg.role === 'assistant' ? 'model' : 'user',
-                parts: [{ text: msg.content }],
-            })
-        );
+        const input = conversationText ? `${conversationText}\nuser: ${message}` : message;
 
-        const chat = model.startChat({
-            history: chatHistory,
-            systemInstruction: systemPrompt,
+        const interaction = await client.interactions.create({
+            model: 'gemini-3.8-flash',
+            input,
+            system_instruction: systemPrompt
         });
 
-        const result = await chat.sendMessage(message);
-        const responseText = result.response.text();
+        const responseText = interaction.output_text || '';
 
         // Check for phase completion
         const phaseComplete = responseText.includes('[PHASE_COMPLETE]');

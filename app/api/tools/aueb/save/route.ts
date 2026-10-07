@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { currentUser } from '@clerk/nextjs/server';
-import { model } from '@/app/lib/gemini';
+import { client } from '@/app/lib/gemini';
 import { z } from 'zod';
 
 export const dynamic = 'force-dynamic';
@@ -84,20 +84,8 @@ Caching Enabled: ${run_data.cachingEnabled}
 Generate the 3-month optimization plan to fix these margins.
 `;
 
-            const result = await model.generateContent({
-                contents: [
-                    { role: 'user', parts: [
-                        { text: SYSTEM_PROMPT },
-                        { text: promptContext },
-                    ]},
-                ],
-                generationConfig: {
-                    temperature: 0.1,
-                    responseMimeType: 'application/json',
-                },
-            });
-
-            const rawResponse = result.response.text();
+            const interaction = await client.interactions.create({ model: 'gemini-3.8-flash', input: promptContext, system_instruction: SYSTEM_PROMPT });
+            const rawResponse = interaction.output_text || '';
             const cleanJson = rawResponse.replace(/\`\`\`json/gi, '').replace(/\`\`\`/gi, '').trim();
             const parsed = JSON.parse(cleanJson);
             const validated = ResponseSchema.parse(parsed);

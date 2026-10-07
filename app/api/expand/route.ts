@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { model } from '@/app/lib/gemini';
+import { client } from '@/app/lib/gemini';
 
 export const dynamic = 'force-dynamic';
 
@@ -37,18 +37,8 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: 'Topic required' }, { status: 400 });
         }
 
-        const result = await model.generateContent({
-            contents: [{ role: 'user', parts: [
-                { text: SYSTEM_PROMPT },
-                { text: `Expand on this expertise area with specific examples and insights: "${topic}". Context: ${context || "General inquiry about Richard Ewing's experience."}` },
-            ]}],
-            generationConfig: {
-                temperature: 0.7,
-                maxOutputTokens: 300,
-            },
-        });
-
-        const response = result.response.text();
+        const interaction = await client.interactions.create({ model: 'gemini-3.8-flash', input: `Expand on this expertise area with specific examples and insights: "${topic}". Context: ${context || "General inquiry about Richard Ewing's experience."}` , system_instruction: SYSTEM_PROMPT });
+        const response = interaction.output_text || '';
 
         return NextResponse.json({ response });
 

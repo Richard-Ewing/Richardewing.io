@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import { PAID_RESOURCES, REWS_VOICE_SYSTEM_PROMPT } from '@/app/lib/voice-knowledge';
 
 export const dynamic = 'force-dynamic';
@@ -31,7 +31,7 @@ function addWavHeader(pcmBuffer: Buffer, sampleRate = 24000, numChannels = 1, bi
 
 // Generate authentic Gemini neural voice audio (voice: Puck)
 async function generateNeuralAudio(text: string, apiKey: string): Promise<string | null> {
-  const models = ['gemini-3.1-flash-tts-preview', 'gemini-2.5-flash-preview-tts'];
+  const models = ['gemini-3.8-flash'];
   for (const ttsModel of models) {
     try {
       const url = `https://generativelanguage.googleapis.com/v1beta/models/${ttsModel}:generateContent?key=${apiKey}`;
@@ -87,7 +87,7 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    const genAI = new GoogleGenerativeAI(apiKey);
+    const client = new GoogleGenAI({ apiKey });
 
     const conversationHistory = messages
       .map((m: any) => `${m.role === 'user' ? 'Visitor' : 'Richard'}: ${m.content}`)
@@ -125,7 +125,7 @@ Respond ONLY with a valid JSON object matching this exact schema:
 }
 `;
 
-    const candidateModels = ['gemini-3.7-flash', 'gemini-3.6-flash', 'gemini-2.5-flash'];
+    const candidateModels = ['gemini-3.8-flash'];
     let text = '';
     let usedAudio = Boolean(audioBase64);
 
@@ -144,13 +144,11 @@ Respond ONLY with a valid JSON object matching this exact schema:
 
       for (const modelName of candidateModels) {
         try {
-          const model = genAI.getGenerativeModel({
-            model: modelName,
-            generationConfig: { responseMimeType: 'application/json' }
+          const interaction = await client.interactions.create({
+            model: 'gemini-3.8-flash',
+            input: audioParts
           });
-          const result = await model.generateContent(audioParts);
-          const candidate = result.response.candidates?.[0];
-          const candidateText = candidate?.content?.parts?.find((p: any) => p.text)?.text || '';
+          const candidateText = interaction.output_text || '';
           if (candidateText) {
             text = candidateText;
             break;
@@ -165,15 +163,14 @@ Respond ONLY with a valid JSON object matching this exact schema:
       if (!text) {
         usedAudio = false;
         try {
-          const fallbackModel = genAI.getGenerativeModel({
-            model: 'gemini-3.7-flash',
-            generationConfig: { responseMimeType: 'application/json' }
-          });
           const recoveryPrompt = `The visitor attempted an audio input, but the audio was silent, muffled, or inaudible.
 Acknowledge as Richard Ewing that you couldn't hear their microphone clearly, ask them to say it again or type it below, and tie back to where the conversation was.
 Keep it conversational, punchy, human, and no em-dashes.\n\n${promptInstructions}`;
-          const res = await fallbackModel.generateContent([{ text: recoveryPrompt }]);
-          text = res.response.text();
+          const interaction = await client.interactions.create({
+            model: 'gemini-3.8-flash',
+            input: recoveryPrompt
+          });
+          text = interaction.output_text || '';
         } catch {
           text = JSON.stringify({
             transcription: null,
@@ -186,13 +183,11 @@ Keep it conversational, punchy, human, and no em-dashes.\n\n${promptInstructions
       // Text-based turn
       for (const modelName of candidateModels) {
         try {
-          const model = genAI.getGenerativeModel({
-            model: modelName,
-            generationConfig: { responseMimeType: 'application/json' }
+          const interaction = await client.interactions.create({
+            model: 'gemini-3.8-flash',
+            input: promptInstructions
           });
-          const result = await model.generateContent([{ text: promptInstructions }]);
-          const candidate = result.response.candidates?.[0];
-          const candidateText = candidate?.content?.parts?.find((p: any) => p.text)?.text || '';
+          const candidateText = interaction.output_text || '';
           if (candidateText) {
             text = candidateText;
             break;

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { HiringStore } from '../../../lib/hiring-store';
 import { QUESTION_BANK, SCENARIOS, Role, Question, selectRandomQuestions } from '../../../lib/question-bank';
-import { model } from '@/app/lib/gemini';
+import { client } from '@/app/lib/gemini';
 
 export const dynamic = 'force-dynamic';
 
@@ -61,15 +61,8 @@ Return valid JSON only:
 }
         `;
 
-        const result = await model.generateContent({
-            contents: [{ role: 'user', parts: [{ text: prompt }] }],
-            generationConfig: {
-                responseMimeType: "application/json",
-            },
-        });
-
-        const response = result.response;
-        const text = response.text();
+        const interaction = await client.interactions.create({ model: 'gemini-3.8-flash', input: prompt });
+        const text = interaction.output_text || '';
         const json = JSON.parse(text);
 
         // Clamp score to valid L3-L8 range

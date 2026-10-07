@@ -1,6 +1,6 @@
 import * as dotenv from 'dotenv';
 dotenv.config({ path: '.env.local' });
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -14,8 +14,7 @@ if (!API_KEY) {
     process.exit(1);
 }
 
-const genAI = new GoogleGenerativeAI(API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" }); // Fast and cheap for 488 generations
+const client = new GoogleGenAI({ apiKey: API_KEY });
 
 async function generateModule(slug: string) {
     const mod = getModule(slug);
@@ -68,8 +67,11 @@ Do not include <html> or <body> tags. Just the interior content payload.
 
     try {
         console.log(`⏳ Generating content for ${mod.moduleId}...`);
-        const result = await model.generateContent(prompt);
-        let htmlPayload = result.response.text();
+        const interaction = await client.interactions.create({
+            model: 'gemini-3.8-flash',
+            input: prompt
+        });
+        let htmlPayload = interaction.output_text || '';
         
         // Strip markdown blocks if Gemini stubbornly includes them
         htmlPayload = htmlPayload.replace(/^```(html)?\s*/i, '').replace(/\s*```$/i, '');

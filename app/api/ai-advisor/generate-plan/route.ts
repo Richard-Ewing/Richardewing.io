@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
 import { auth } from '@clerk/nextjs/server';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import { supabaseAdmin } from '@/lib/supabase';
 import { storeBusinessFact } from '@/lib/exogram';
 
 export const dynamic = 'force-dynamic';
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+const client = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
 
 export async function POST(req: Request) {
     const { userId } = await auth();
@@ -20,15 +20,6 @@ export async function POST(req: Request) {
         if (!sessionId) {
             return NextResponse.json({ error: 'Session ID required' }, { status: 400 });
         }
-
-        const model = genAI.getGenerativeModel({
-            model: 'gemini-2.5-flash',
-            generationConfig: {
-                thinkingConfig: {
-                    thinkingBudget: 0
-                }
-            } as any
-        });
 
         const prompt = `You are Richard Ewing's AI Integration Advisor. Generate a comprehensive, actionable AI Integration Roadmap for this business.
 
@@ -97,8 +88,11 @@ IMPORTANT:
 
 Return ONLY the JSON object, no markdown code fences.`;
 
-        const result = await model.generateContent(prompt);
-        const responseText = result.response.text();
+        const interaction = await client.interactions.create({
+            model: 'gemini-3.8-flash',
+            input: prompt
+        });
+        const responseText = interaction.output_text || '';
 
         // Parse the roadmap JSON
         let roadmapData;

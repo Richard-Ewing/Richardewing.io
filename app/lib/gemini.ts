@@ -1,4 +1,4 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 
 // Support both env var names for compatibility across environments
 const apiKey = process.env.GOOGLE_API_KEY || process.env.GEMINI_API_KEY || '';
@@ -7,14 +7,6 @@ if (!apiKey) {
     console.warn('Missing GOOGLE_API_KEY / GEMINI_API_KEY environment variable. LLM features will fail.');
 }
 
-const genAI = new GoogleGenerativeAI(apiKey || 'dummy_key');
-
-// Export the model for use in API routes
-export const model = genAI.getGenerativeModel({
-    model: 'gemini-2.5-flash',
-    generationConfig: {
-        thinkingConfig: {
-            thinkingBudget: 0
-        }
-    } as any
-});
+// Export the client for use in API routes
+export const client = new GoogleGenAI({ apiKey: apiKey || 'dummy_key' });
+export const GEMINI_MODEL = 'gemini-3.8-flash';
