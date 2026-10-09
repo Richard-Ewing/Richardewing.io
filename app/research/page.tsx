@@ -176,6 +176,28 @@ export default function ResearchPage() {
                     </div>
                 </section>
 
+                {/* Dedicated Benchmark Research Callout */}
+                <section className="mb-16 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
+                    <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest mb-3">
+                        <span>Benchmark Research</span><span>•</span><span>Partner Laboratory</span>
+                    </div>
+                    <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-3">
+                        Enterprise Talent &amp; AI Screening Forensics
+                    </h3>
+                    <p className="text-zinc-800 leading-relaxed font-medium text-sm sm:text-base">
+                        Read our latest benchmark study on{' '}
+                        <a 
+                            href="https://careerwin.ai/research/2026-enterprise-ats-ai-resume-benchmark-study" 
+                            target="_blank" 
+                            rel="noopener"
+                            className="text-cyan-900 font-bold underline hover:text-cyan-700 decoration-cyan-500/40 underline-offset-4"
+                        >
+                            Enterprise ATS Parsing &amp; AI Resume Detection
+                        </a>{' '}
+                        at CareerWin.
+                    </p>
+                </section>
+
                 {/* Why This Exists Section (Worldview Compression Component) */}
                 <section className="mb-16 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
                     <h3 className="text-lg font-bold font-grotesk text-zinc-950 mb-4">Why This Exists</h3>

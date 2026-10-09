@@ -91,6 +91,15 @@ const resourceSections = [
             { name: 'Visit Exogram.ai', description: 'The product website', href: 'https://exogram.ai' },
         ],
     },
+    {
+        title: 'Industry Benchmarks & Talent Forensics',
+        description: 'Empirical studies on enterprise AI screening, resume detection, and hiring forensics.',
+        icon: '📊',
+        items: [
+            { name: 'Enterprise ATS & AI Resume Benchmark', description: 'Read our latest benchmark study on Enterprise ATS Parsing & AI Resume Detection at CareerWin.', href: 'https://careerwin.ai/research/2026-enterprise-ats-ai-resume-benchmark-study' },
+            { name: 'Audit Interview Protocol', description: 'Evaluating engineering candidate judgment and system architecture rather than syntax', href: '/tools/audit-interview' },
+        ],
+    },
 ];
 
 export default function ResourcesPage() {
