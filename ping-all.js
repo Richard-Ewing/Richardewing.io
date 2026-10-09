@@ -48,10 +48,15 @@ https.get("https://www.richardewing.io/sitemap.xml", (res) => {
           } else {
              console.log("Something went wrong!");
           }
+          res2.on('data', () => {});
+          res2.on('end', () => {
+            process.exit(0);
+          });
         });
         
         req.on('error', (e) => {
           console.error(`ERROR: ${e.message}`);
+          process.exit(1);
         });
 
         req.write(payload);
