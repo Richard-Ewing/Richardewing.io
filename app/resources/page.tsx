@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'AI Economics Resources & Tools Hub',
-    description: 'Complete library of diagnostic calculators, prompt architectures, execution blueprints, and research papers.',
+    description: 'Complete library of diagnostic calculators, prompt architectures, execution blueprints, and research papers. Practical tools for engineering leaders.',
     keywords: ['technology resources', 'CTO tools', 'engineering metrics', 'product management resources', 'Richard Ewing tools', 'free SaaS tools'],
     alternates: { canonical: 'https://www.richardewing.io/resources' },
     openGraph: { title: 'Resources Hub | Richard Ewing', description: 'Access free tools, a 2026 tech glossary, curriculum tracks, deep-dive articles, and strategic frameworks for engineering economics.', url: 'https://www.richardewing.io/resources', type: 'website' },

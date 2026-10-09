@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'GovTech Legacy Modernization & Cost Governance',
-    description: 'Remediate mainframe technical debt, procurement cycle drag, and security compliance overhead in public sector software.',
+    description: 'Remediate mainframe technical debt, procurement cycle drag, and security compliance overhead in public sector software with forensic R&D audits.',
     keywords: ['govtech technical debt', 'government technology modernization', 'fedramp compliance engineering', 'public sector AI governance', 'govtech cto advisor', 'legacy government systems'],
     alternates: { canonical: 'https://www.richardewing.io/industries/govtech' },
     openGraph: { title: 'AI Economics for GovTech', description: 'Legacy mainframes, FedRAMP compliance, and AI procurement  -  GovTech has unique engineering economics.', url: 'https://www.richardewing.io/industries/govtech', type: 'website' },

@@ -5,8 +5,8 @@ import { Code2, ShieldCheck, Sparkles, ArrowRight, FileText, Calculator } from '
 import CodeBlueprintViewer from '@/components/ai-product-builder/CodeBlueprintViewer';
 
 export const metadata: Metadata = {
-  title: 'AI Founder Blueprints: Code, Legal Contracts & Pro-Formas',
-  description: 'Production FastAPI scaffolds, Redis semantic caching, Stripe webhooks, consulting SOW contracts, and 12-month financial models.',
+  title: 'AI Founder Blueprints: Code & Legal Contracts',
+  description: 'Production FastAPI scaffolds, Redis semantic caching, Stripe webhooks, consulting SOW contracts, and 12-month financial models for AI founders.',
   alternates: {
     canonical: 'https://www.richardewing.io/vault/blueprints',
   },

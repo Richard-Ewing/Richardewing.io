@@ -6,8 +6,8 @@ import EmergencyTriageCard from '@/components/EmergencyTriageCard';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Why AI Costs Spike from Silent Retries',
-    description: 'Find out why your AI API bill spikes even when traffic stays flat, how silent retry loops burn tokens, and how to set hard cost caps.',
+    title: 'Why AI Costs Spike from Retries',
+    description: 'Find out why your AI API bill spikes even when traffic stays flat, how silent retry loops burn tokens, and how to configure deterministic cost caps.',
     keywords: [
         'ai retry loops token cost', 'inference retry spiral', 'why ai api bill spikes',
         'silent api retries', 'openai retry costs', 'ai timeout cost multiplier'

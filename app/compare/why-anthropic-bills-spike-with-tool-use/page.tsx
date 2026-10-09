@@ -6,8 +6,8 @@ import EmergencyTriageCard from '@/components/EmergencyTriageCard';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Why AI API Bills Spike With Tool Use',
-    description: 'Find out why adding web search, database tools, or MCP to your AI app multiplies token costs by 400% and how to stop the leak.',
+    title: 'Why Tool Use Spikes API Bills',
+    description: 'Find out why adding web search, database tools, or MCP to your AI app multiplies token costs by 400 percent and how to eliminate redundant payloads.',
     keywords: [
         'why ai api bill is high', 'anthropic token cost spike', 'openai tool use cost',
         'why mcp is expensive', 'ai token inflation', 'how to reduce ai api bill',

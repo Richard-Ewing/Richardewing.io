@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'AI-Native SaaS Economics & Token Margins',
-    description: 'Audit inference unit economics, human-in-the-loop overhead, and margin erosion in AI-first software companies.',
+    description: 'Audit inference unit economics, human-in-the-loop overhead, and margin erosion in AI-first software companies with forensic engineering diagnostics.',
     keywords: ['AI company technical debt', 'AI margin erosion', 'LLM cost optimization', 'AI-first AI economics', 'AI governance advisory', 'LLM unit economics', 'exogram integration'],
     alternates: { canonical: 'https://www.richardewing.io/industries/ai-first' },
     openGraph: { title: 'AI Economics for AI-First Companies', description: 'Margin defense, cost modelinng, and AI governance for companies building on LLMs.', url: 'https://www.richardewing.io/industries/ai-first', type: 'website' },

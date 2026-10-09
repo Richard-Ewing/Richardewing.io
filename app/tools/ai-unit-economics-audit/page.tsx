@@ -8,7 +8,7 @@ import { BorderBeam } from '@/components/magicui/border-beam';
 
 export const metadata: Metadata = {
     title: 'AI Unit Economics Audit Diagnostic',
-    description: 'Identify margin collapse risks and calculate true token-level profitability before shipping AI features.',
+    description: 'Identify margin collapse risks and calculate true token-level profitability before shipping AI features. Protect gross margins for your product line.',
     keywords: [
         'AI Unit Economics',
         'Technical Insolvency Date',

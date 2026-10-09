@@ -5,8 +5,8 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import ProductBridgeCard from '@/app/components/ProductBridgeCard';
 
 export const metadata: Metadata = {
-  title: 'Exogram vs Lakera Guard',
-  description: 'Compare deterministic runtime execution controls vs probabilistic prompt guardrails.',
+  title: 'Exogram vs Lakera Guardrails',
+  description: 'Compare deterministic runtime execution controls with Lakera prompt guardrails. Prevent unauthorized agent tool execution and sensitive data leaks.',
   alternates: { canonical: 'https://www.richardewing.io/compare/exogram-vs-lakera' },
   openGraph: {
     title: 'Exogram vs Lakera & Guardrails AI Comparison',

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'The AI Economics Operating System',
-    description: 'Integrated platform of diagnostic calculators, governance runtimes, and financial models for technology leadership.',
+    description: 'Integrated platform of diagnostic calculators, governance runtimes, and financial models for technology leadership. Build defensible software systems.',
     keywords: [
         'AI economist tools',
         'algorithmic solvency',

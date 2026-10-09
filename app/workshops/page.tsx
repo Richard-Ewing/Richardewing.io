@@ -3,7 +3,7 @@ import { Mic, Users, Lightbulb, Clock, ArrowRight, CheckCircle } from 'lucide-re
 
 export const metadata: Metadata = {
     title: 'Executive AI Economics Workshops',
-    description: 'Intensive board-level and executive workshops covering AI unit economics, PDI calculation, and technical solvency.',
+    description: 'Intensive board-level and executive workshops covering AI unit economics, PDI calculation, and technical solvency. Hands-on strategy sessions for teams.',
     keywords: [
         'technical debt keynote speaker', 'AI economics speaker', 'AI economics workshop',
         'engineering leadership speaker', 'CTO conference speaker', 'R&D audit workshop',

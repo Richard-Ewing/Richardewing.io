@@ -4,7 +4,7 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 
 export const metadata: Metadata = {
     title: 'FAQ  -  AI Advisory, Exogram & Frameworks',
-    description: 'Frequently asked questions about AI Economics, advisory services, diagnostic tools, and the Exogram platform.',
+    description: 'Frequently asked questions about AI Economics, advisory services, diagnostic tools, and the Exogram platform. Clear answers for engineering executives.',
     alternates: { canonical: 'https://www.richardewing.io/faq' },
     keywords: ['AI economist FAQ', 'richard ewing FAQ', 'advisory FAQ', 'exogram FAQ', 'technical debt FAQ'],
     openGraph: {

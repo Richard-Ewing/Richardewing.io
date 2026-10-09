@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Enterprise Research Reports',
-    description: 'Empirical research reports on AI governance maturity, R&D capital efficiency, and software margin durability.',
+    description: 'Empirical research reports on AI governance maturity, R&D capital efficiency, and software margin durability. Authoritative industry analysis for CTOs.',
     alternates: { canonical: 'https://www.richardewing.io/reports' },
     openGraph: {
         title: 'Reports  -  Engineering Economics Research',

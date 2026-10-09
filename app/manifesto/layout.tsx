@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'The AI Economist Manifesto',
-    description: 'Why enterprise AI requires financial engineering, unit economic governance, and sovereign deterministic execution.',
+    description: 'Why enterprise AI requires financial engineering, unit economic governance, and sovereign deterministic execution. The foundational vision by Richard Ewing.',
     keywords: [
         'AI economist manifesto',
         'innovation without solvency',

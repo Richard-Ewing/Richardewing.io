@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'HealthTech AI Economics & HIPAA Compliance Debt',
-    description: 'Audit clinical workflow AI inference costs, EHR integration complexity, and HIPAA-compliant data pipeline debt.',
+    description: 'Audit clinical workflow AI inference costs, EHR integration complexity, and HIPAA-compliant data pipeline debt for healthcare technology leaders.',
     keywords: ['healthtech technical debt', 'healthcare AI governance', 'HIPAA compliance engineering', 'clinical AI validation', 'healthtech CTO advisor', 'FDA SaMD compliance'],
     alternates: { canonical: 'https://www.richardewing.io/industries/healthtech' },
     openGraph: { title: 'AI Economics for HealthTech', description: 'R&D audit and clinical AI compliance for healthcare technology.', url: 'https://www.richardewing.io/industries/healthtech', type: 'website' },

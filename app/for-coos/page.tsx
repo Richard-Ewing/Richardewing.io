@@ -4,7 +4,7 @@ import { Activity, Clock, Users, ArrowRight, ShieldCheck, AlertCircle } from 'lu
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 export const metadata: Metadata = {
-    title: 'Operational AI Governance & Workflow Reliability for COOs',
+    title: 'Operational AI Governance for COOs',
     description: 'Operational risk frameworks, customer support agent reliability, and workflow coordination audits for Chief Operating Officers and VPs of Operations.',
     keywords: [
         'COO AI operations',

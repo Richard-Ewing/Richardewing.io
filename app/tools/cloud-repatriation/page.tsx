@@ -3,7 +3,7 @@ import CloudContent from './content';
 
 export const metadata: Metadata = {
     title: 'Cloud Repatriation Calculator',
-    description: 'Calculate bare-metal repatriation ROI, egress savings, and EBITDA margin recovery from cloud providers.',
+    description: 'Calculate bare-metal repatriation ROI, egress savings, and EBITDA margin recovery from cloud providers. Financial modeling for infrastructure directors.',
     keywords: [
         'Cloud repatriation calculator',
         'AWS vs Bare Metal',

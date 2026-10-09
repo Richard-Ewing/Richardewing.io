@@ -3,7 +3,7 @@ import PromptInjectionContent from './content';
 
 export const metadata: Metadata = {
     title: 'Prompt Injection Intrusion Sandbox',
-    description: 'Evaluate system prompt defensibility, test RAG security boundaries, and sandbox prompt injection attacks.',
+    description: 'Evaluate system prompt defensibility, test RAG security boundaries, and sandbox prompt injection attacks. Secure your generative AI applications now.',
     keywords: [
         'Prompt Injection Scanner',
         'LLM Red Teaming',

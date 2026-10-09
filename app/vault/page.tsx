@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic';
 
 export const metadata = {
     title: 'Executive Diagnostic Toolkit & Vault',
-    description: 'Secure client portal for enterprise diagnostic calculators, audit deliverables, and research frameworks.',
+    description: 'Secure client portal for enterprise diagnostic calculators, audit deliverables, and research frameworks. Access executive reporting and benchmarks.',
     robots: { index: false, follow: false },
     openGraph: {
         title: 'Vault - Executive Diagnostic Toolkit | Richard Ewing',

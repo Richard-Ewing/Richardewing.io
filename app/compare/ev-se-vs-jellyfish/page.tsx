@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'EV-SE Engine vs Jellyfish',
-    description: 'Compare risk-adjusted SaaS valuation modeling vs engineering resource allocation metrics.',
+    title: 'EV-SE vs Jellyfish Allocation',
+    description: 'Compare Enterprise Value-to-Software Equity with Jellyfish allocation data. Quantify engineering capitalization risk for boards and finance teams.',
     keywords: ['jellyfish alternative', 'engineering metrics tool', 'evergreen ratio', 'engineering sustainability', 'engineering economics vs metrics'],
     alternates: { canonical: 'https://www.richardewing.io/compare/ev-se-vs-jellyfish' },
     openGraph: { title: 'EV-SE vs Jellyfish  -  Economics vs Metrics', description: 'Jellyfish tracks what engineers did. EV-SE tells you if it matters economically.', url: 'https://www.richardewing.io/compare/ev-se-vs-jellyfish', type: 'article' },

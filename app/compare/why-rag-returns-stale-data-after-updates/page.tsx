@@ -6,8 +6,8 @@ import EmergencyTriageCard from '@/components/EmergencyTriageCard';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Why Search AI Gives Old Outdated Answers',
-    description: 'Learn why your company AI search or RAG system keeps citing deleted files, outdated prices, and old company policies after updates.',
+    title: 'Why RAG Returns Stale Data',
+    description: 'Learn why company AI search and RAG pipelines cite deleted files, outdated prices, and stale policies, and how to enforce cache invalidation rules.',
     keywords: [
         'why rag returns stale data', 'vector database sync problems', 'ai search giving old answers',
         'rag chunking context loss', 'vector embedding drift', 'how to update rag database'

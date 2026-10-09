@@ -30,14 +30,41 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const canonicalURL = article.canonicalUrl || `https://www.richardewing.io/blog/${slug}`;
     
     const cleanTitle = article.title.length > 38 ? article.title.slice(0, 37) + '…' : article.title;
+
+    const metaDescription = (() => {
+        let desc = article.excerpt.trim().replace(/\s+/g, ' ');
+        if (!desc.endsWith('.')) desc += '.';
+        if (desc.length >= 140 && desc.length <= 158) return desc;
+        if (desc.length > 158) return desc.slice(0, 155) + '...';
+
+        const candidateSuffixes = [
+            ` Forensic engineering economics and operational frameworks by Richard Ewing for CTOs, CFOs, and PE leaders.`,
+            ` Forensic engineering economics and operational frameworks for technology leaders.`,
+            ` Forensic engineering economics frameworks by Richard Ewing for executive leaders.`,
+            ` Forensic engineering economics and operational frameworks by Richard Ewing.`,
+            ` Forensic analysis, unit economics metrics, and operational governance frameworks.`,
+            ` Forensic analysis and operational frameworks by Richard Ewing.`,
+            ` Forensic analysis and frameworks by Richard Ewing.`,
+            ` Analysis and frameworks by Richard Ewing.`,
+            ` Frameworks by Richard Ewing.`
+        ];
+        for (const suffix of candidateSuffixes) {
+            const combined = desc + suffix;
+            if (combined.length >= 140 && combined.length <= 158) {
+                return combined;
+            }
+        }
+        const fallback = `${desc} Forensic analysis and frameworks by Richard Ewing.`;
+        return fallback.length > 158 ? fallback.slice(0, 155) + '...' : fallback;
+    })();
     
     return {
         title: cleanTitle,
-        description: article.excerpt,
+        description: metaDescription,
         alternates: { canonical: canonicalURL },
         openGraph: {
             title: article.title,
-            description: article.excerpt,
+            description: metaDescription,
             url: canonicalURL,
             type: 'article',
             images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
@@ -45,7 +72,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         twitter: {
             card: 'summary_large_image',
             title: article.title,
-            description: article.excerpt,
+            description: metaDescription,
             images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
         }
     };

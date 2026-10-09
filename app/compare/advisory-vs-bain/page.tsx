@@ -5,8 +5,8 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import ProductBridgeCard from '@/app/components/ProductBridgeCard';
 
 export const metadata: Metadata = {
-  title: 'Richard Ewing Advisory vs Bain R&D Audits',
-  description: 'Compare Richard Ewing R&D Capital Audits with traditional management consulting. Objective financial code analysis vs slides.',
+  title: 'Advisory vs Bain R&D Audits',
+  description: 'Compare Richard Ewing R&D capital audits with Bain consulting. Replace subjective slide decks with empirical codebase analysis and EBITDA metrics.',
   alternates: { canonical: 'https://www.richardewing.io/compare/advisory-vs-bain' },
   openGraph: {
     title: 'Richard Ewing Advisory vs Bain & Company R&D Audits',

@@ -4,7 +4,7 @@ import { Lock } from "lucide-react";
 
 export const metadata: Metadata = {
     title: 'Securing Your Diagnostic Session',
-    description: 'Confirming your diagnostic assessment engagement and scheduling pre-audit data collection.',
+    description: 'Confirming your diagnostic assessment engagement and scheduling pre-audit data collection. Our engineering team will review your codebase telemetry.',
     alternates: {
         canonical: 'https://www.richardewing.io/checkout-pending',
     },

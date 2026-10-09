@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'AUEB vs AWS Cost Explorer',
-    description: 'Compare unit economics feature-level attribution vs raw AWS infrastructure billing tags.',
+    description: 'Compare unit economics feature-level attribution with raw AWS Cost Explorer tags. Map cloud infrastructure spend directly to gross customer margins.',
     keywords: ['aws cost explorer alternative', 'ai cost calculator', 'aueb vs aws', 'ai unit economics', 'llm cost optimization', 'ai feature profitability'],
     alternates: { canonical: 'https://www.richardewing.io/compare/aueb-vs-aws-cost-explorer' },
     openGraph: { title: 'AUEB vs AWS Cost Explorer  -  AI Economics vs Cloud Billing', description: 'Cloud spend ≠ AI economics. AUEB tells you if your AI features will ever be profitable.', url: 'https://www.richardewing.io/compare/aueb-vs-aws-cost-explorer', type: 'article' },

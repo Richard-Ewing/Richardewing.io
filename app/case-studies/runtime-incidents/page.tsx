@@ -5,7 +5,7 @@ import { AlertTriangle, DollarSign, Clock, Shield, ArrowRight } from 'lucide-rea
 
 export const metadata: Metadata = {
     title: 'AI Runtime Incident Post-Mortems',
-    description: 'Detailed dollar-denominated case studies analyzing production AI failures and subsequent architectural remediation.',
+    description: 'Detailed dollar-denominated case studies analyzing production AI failures and subsequent remediation. Learn how engineering teams recovered lost margins.',
     keywords: ['Claude Code failures', 'agentic runtime incidents', 'AI coding agent failures', 'context rot incident', 'retry inflation cost', 'MCP security breach', 'Cursor file corruption', 'AI agent cost overrun'],
     openGraph: {
         title: 'Runtime Incident Reports - Real Agentic Failures',

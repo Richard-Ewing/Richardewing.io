@@ -8,7 +8,7 @@ import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 
 export const metadata: Metadata = {
     title: 'Technical Due Diligence for PE & VC',
-    description: 'Independent 3-week forensic R&D capital audit uncovering software liabilities and unit economic risks before closing.',
+    description: 'Independent 3-week forensic R&D capital audit uncovering software liabilities and unit economic risks before closing. Clear diligence reports for buyers.',
     alternates: {
         canonical: 'https://www.richardewing.io/services/technical-due-diligence',
     },

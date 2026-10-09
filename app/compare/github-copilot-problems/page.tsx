@@ -7,8 +7,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import StructuredData, { generateFaqSchema } from '@/app/components/seo/StructuredData';
 
 export const metadata: Metadata = {
-    title: 'GitHub Copilot Problems & ROI (2026)',
-    description: 'Forensic audit of GitHub Copilot code quality impact, review overhead, and true financial ROI.',
+    title: 'GitHub Copilot Code Quality Audit',
+    description: 'Forensic audit of GitHub Copilot code quality impact and review overhead. Measure true net developer productivity and hidden maintenance expenses.',
     keywords: ['GitHub Copilot problems', 'GitHub Copilot problems 2026', 'GitHub Copilot not worth it', 'GitHub Copilot complaints', 'GitHub Copilot alternative', 'Copilot waste of money', 'Copilot cancelled', 'Copilot downgraded', 'Copilot rate limiting', 'Copilot PR ads', 'Copilot model carousel', 'GitHub Copilot Enterprise review', 'GitHub Copilot vs governance'],
     openGraph: {
         title: 'GitHub Copilot Problems 2026 - Real User Complaints & Governance Solutions',

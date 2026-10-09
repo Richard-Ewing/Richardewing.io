@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Careers & Fellowships',
-    description: 'Join the research and advisory team building deterministic AI governance and economic diagnostics.',
+    description: 'Join the research and advisory team building deterministic AI governance and economic diagnostics. Help engineering executives protect gross margins.',
     alternates: { canonical: 'https://www.richardewing.io/careers' },
     openGraph: {
         title: 'Careers  -  Join the Engineering Economics Practice',

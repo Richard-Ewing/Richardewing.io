@@ -3,7 +3,7 @@ import AgentRouterContent from './content';
 
 export const metadata: Metadata = {
     title: 'Agentic Router FinOps Emulator',
-    description: 'Simulate multi-agent token costs, optimize model routing, and determine break-even points for SLM vs LLM routing.',
+    description: 'Simulate multi-agent token costs, optimize model routing, and determine break-even points for SLM vs LLM routing. Cut inference spend for your systems.',
     keywords: [
         'Agentic Workflow Simulator',
         'LLM Token Burn Rate Calculator',

@@ -3,7 +3,7 @@ import AuditInterview from './content';
 
 export const metadata: Metadata = {
     title: 'AI Engineering Audit Dashboard',
-    description: 'Score engineering candidate performance, evaluate architectural trade-offs, and generate hiring decision reports.',
+    description: 'Score engineering candidate performance, evaluate architectural trade-offs, and generate hiring decision reports. Streamline technical talent evaluation.',
     alternates: { canonical: 'https://www.richardewing.io/tools/scoring' },
 };
 

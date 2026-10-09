@@ -5,8 +5,8 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import ProductBridgeCard from '@/app/components/ProductBridgeCard';
 
 export const metadata: Metadata = {
-  title: 'Exogram vs LangChain Governance',
-  description: 'Compare enterprise runtime governance vs agentic orchestration frameworks.',
+  title: 'Exogram vs LangChain Orchestration',
+  description: 'Compare enterprise runtime governance with LangChain orchestration tools. Enforce deterministic policy gates across autonomous agent tool call workflows.',
   alternates: { canonical: 'https://www.richardewing.io/compare/exogram-vs-langchain' },
   openGraph: {
     title: 'Exogram vs LangChain Guardrails Comparison',

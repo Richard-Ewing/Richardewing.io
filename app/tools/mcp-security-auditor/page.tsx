@@ -3,7 +3,7 @@ import CalculatorIntentProposal from '@/app/components/calculators/CalculatorInt
 import MCPAuditorTool from './content';
 
 export const metadata: Metadata = {
-    title: 'MCP Security & Agent Vulnerability Audit | Richard Ewing',
+    title: 'MCP Security & Agent Vulnerability Audit',
     description: 'Audit your enterprise Model Context Protocol (MCP) servers, STDIO transport exposure, tool poisoning risks, and OWASP MCP Top 10 compliance.',
     keywords: [
         'Model Context Protocol security',

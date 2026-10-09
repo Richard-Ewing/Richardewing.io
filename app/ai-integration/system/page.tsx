@@ -5,7 +5,7 @@ import { Package, CheckCircle, ArrowRight, BookOpen, FileText, Brain, Target, Ca
 
 export const metadata: Metadata = {
     title: 'Enterprise AI Integration System Spec',
-    description: 'Technical specification of the 4-layer AI integration system for secure, deterministic enterprise deployment.',
+    description: 'Technical specification of the 4-layer AI integration system for secure, deterministic deployment. Enforce hard token limits and prevent agent drift.',
     keywords: ['AI integration system', 'AI playbook for business', 'AI implementation guide', 'how to implement AI step by step', 'AI for small business guide', 'AI strategy template', 'AI readiness template', 'AI roadmap template', 'AI prompts for business', 'AI ROI calculator', 'AI tool selection guide', 'AI adoption playbook', 'DIY AI strategy', 'AI integration toolkit'],
     openGraph: {
         title: 'The AI Integration System - Self-Serve AI Playbook for Business',

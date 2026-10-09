@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'B2B SaaS Margin Engineering & Maintenance Debt',
-    description: 'Quantify the true cost of legacy customer workarounds, multi-tenant database sprawl, and hidden maintenance burdens.',
+    description: 'Quantify the true cost of legacy customer workarounds, multi-tenant database sprawl, and hidden maintenance burdens in enterprise B2B SaaS platforms.',
     keywords: ['saas technical debt', 'b2b AI economics', 'saas gross margin', 'cogs optimization saas', 'technical debt arr impact', 'saas cto advisor'],
     alternates: { canonical: 'https://www.richardewing.io/industries/saas' },
     openGraph: { title: 'AI Economics for SaaS & B2B', description: 'Why your technical debt is destroying your ARR multiple.', url: 'https://www.richardewing.io/industries/saas', type: 'website' },

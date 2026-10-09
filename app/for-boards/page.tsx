@@ -5,7 +5,7 @@ import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 export const metadata: Metadata = {
     title: 'AI Governance for Board Members',
-    description: 'Board-level fiduciary guidance on governing enterprise AI investments, evaluating technical debt, and assessing risk.',
+    description: 'Board-level fiduciary guidance on governing enterprise AI investments, evaluating technical debt, and assessing risk. Protect capital allocation decisions.',
     keywords: ['board technology oversight', 'R&D capital board reporting', 'technical debt for boards', 'CTO board presentation', 'engineering metrics for directors'],
     alternates: { canonical: 'https://www.richardewing.io/for-boards' },
     openGraph: { title: 'For Board Members  -  R&D Capital Visibility', description: 'Board-ready engineering reports in financial language.', url: 'https://www.richardewing.io/for-boards', type: 'website' },

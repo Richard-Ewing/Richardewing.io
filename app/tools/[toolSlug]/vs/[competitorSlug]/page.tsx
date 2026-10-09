@@ -29,7 +29,9 @@ export async function generateMetadata(
     const { tool, competitor } = match;
 
     return {
-        title: `${tool.toolName} vs. ${competitor.name} (2026 Comparison)`,
+        title: {
+            absolute: `${tool.toolName.slice(0, 22)} vs ${competitor.name.slice(0, 16)} | Richard Ewing`,
+        },
         description: `Why enterprise leaders choose deterministic architecture over ${competitor.name}. Calculate literal Cost of Doing Nothing (CODN) and Board-Level Liability.`,
         keywords: [
             `${competitor.name} alternative`,

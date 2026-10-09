@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'FinTech R&D Capital Audit & Compliance Debt',
-    description: 'Audit core banking API legacy debt, payment reconciliation latency, and regulatory compliance infrastructure costs.',
+    description: 'Audit core banking API legacy debt, payment reconciliation latency, and regulatory compliance infrastructure costs with forensic AI diagnostics.',
     keywords: ['fintech technical debt', 'fintech CTO advisor', 'banking AI governance', 'financial services engineering audit', 'fintech AI economics', 'regulated software debt'],
     alternates: { canonical: 'https://www.richardewing.io/industries/fintech' },
     openGraph: { title: 'AI Economics for FinTech', description: 'R&D audit and AI governance for regulated financial services.', url: 'https://www.richardewing.io/industries/fintech', type: 'website' },

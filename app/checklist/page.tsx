@@ -5,7 +5,7 @@ import ChecklistPageContent from './checklist-content';
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/checklist' },
     title: '12-Point AI Governance Checklist',
-    description: 'Identify hidden AI cost traps, probabilistic retry loops, and context rot before deploying autonomous agents.',
+    description: 'Identify hidden AI cost traps, probabilistic retry loops, and context rot before deploying autonomous agents. Essential audit checklist for tech leaders.',
     openGraph: {
         title: 'AI Governance Checklist | 12 Questions from $7,500 Audits',
         description: 'The exact 12 questions asked in $7,500 R&D Capital Audits. Score your AI governance maturity.',

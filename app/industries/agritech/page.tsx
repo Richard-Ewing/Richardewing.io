@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Agritech AI Economics & IoT Data Debt',
-    description: 'Audit R&D capital, sensor telemetry pipelines, and agricultural IoT data debt across commercial precision farming systems.',
+    description: 'Audit R&D capital, sensor telemetry pipelines, and agricultural IoT data debt across commercial precision farming systems and agritech platforms.',
     keywords: ['agritech technical debt', 'agriculture technology', 'precision farming AI', 'IoT agriculture', 'agritech engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/agritech' },
     openGraph: { title: 'AgriTech AI Economics', description: 'R&D capital challenges in agriculture technology.', url: 'https://www.richardewing.io/industries/agritech', type: 'article' },

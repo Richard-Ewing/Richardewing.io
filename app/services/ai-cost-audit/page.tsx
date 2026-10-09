@@ -8,7 +8,7 @@ import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 
 export const metadata: Metadata = {
     title: 'AI Cost Attribution & Margin Audit',
-    description: 'Forensic audit of AI token expenditure, infrastructure overhead, and unit margin collapse risks.',
+    description: 'Forensic audit of AI token expenditure, infrastructure overhead, and unit margin collapse risks for enterprise engineering leaders and CFOs.',
     alternates: {
         canonical: 'https://www.richardewing.io/services/ai-cost-audit',
     },

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'PDI vs SonarQube Tech Debt Analysis',
-    description: 'Compare CFO-ready EBITDA debt valuation (PDI) vs SonarQube static linter issues.',
+    title: 'PDI vs SonarQube Tech Debt',
+    description: 'Compare CFO-ready EBITDA debt valuation with SonarQube static linter issues. Quantify technical debt liabilities directly in balance sheet dollars.',
     keywords: ['sonarqube alternative', 'technical debt calculator', 'product debt index vs sonarqube', 'code quality vs economic impact', 'technical debt cost', 'pdi calculator', 'sonarqube comparison'],
     alternates: { canonical: 'https://www.richardewing.io/compare/pdi-vs-sonarqube' },
     openGraph: { title: 'PDI vs SonarQube  -  Economic Debt vs Code Quality', description: 'Why measuring code quality isn\'t the same as measuring economic impact. Free PDI calculator.', url: 'https://www.richardewing.io/compare/pdi-vs-sonarqube', type: 'article' },

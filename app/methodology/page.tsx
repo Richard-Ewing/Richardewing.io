@@ -8,7 +8,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'AI Forensic Audit Methodology',
-    description: 'A 3-week forensic process inspecting R&D capital yield, technical debt liabilities, and AI unit economic stability.',
+    description: 'A 3-week forensic process inspecting R&D capital yield, technical debt liabilities, and AI unit economic stability. Objective codebase discovery for boards.',
     alternates: { canonical: 'https://www.richardewing.io/methodology' },
     openGraph: {
         title: 'Audit Methodology | Richard Ewing',

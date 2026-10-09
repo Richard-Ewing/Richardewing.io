@@ -7,8 +7,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import StructuredData, { generateFaqSchema } from '@/app/components/seo/StructuredData';
 
 export const metadata: Metadata = {
-    title: 'Windsurf Problems & Solutions in Production',
-    description: 'Common runtime challenges when deploying Windsurf Cascade and how deterministic control layers restore reliability.',
+    title: 'Windsurf Problems & Solutions',
+    description: 'Explore runtime challenges when deploying Windsurf Cascade and discover how deterministic control layers restore reliability and code integrity.',
     keywords: ['Windsurf problems', 'Windsurf problems 2026', 'Windsurf AI complaints', 'Windsurf pricing', 'Windsurf credit burn', 'Windsurf alternative', 'Windsurf rug pull', 'left Windsurf', 'switched from Windsurf', 'Windsurf credits expensive', 'Windsurf hallucinations', 'Windsurf Cascade problems'],
     openGraph: {
         title: 'Windsurf Problems 2026 - Real User Complaints & Governance Solutions',

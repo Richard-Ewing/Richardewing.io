@@ -3,7 +3,7 @@ import DueDiligenceTool from './content';
 
 export const metadata: Metadata = {
     title: 'AI Tech Due Diligence Engine',
-    description: 'Forensic technical due diligence engine for private equity, VCs, and acquirers evaluating software & AI targets.',
+    description: 'Forensic technical due diligence engine for private equity, VCs, and acquirers evaluating software targets. Identify balance sheet liabilities early.',
     keywords: [
         'engineering due diligence',
         'technical due diligence',

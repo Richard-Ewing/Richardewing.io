@@ -3,7 +3,7 @@ import CalculatorIntentProposal from '@/app/components/calculators/CalculatorInt
 import SLMBreakEvenTool from './content';
 
 export const metadata: Metadata = {
-    title: 'SLM Fine-Tuning vs Hosted API Break-Even Calculator | Tools',
+    title: 'SLM Fine-Tuning vs Hosted API Break-Even',
     description: 'Calculate the monthly query volume where self-hosting a fine-tuned Small Language Model (SLM) on AWS/GCP beats proprietary frontier model APIs.',
     keywords: [
         'SLM break-even calculator',

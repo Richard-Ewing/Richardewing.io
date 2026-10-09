@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Product Debt Index (PDI) FAQ',
-    description: 'Frequently asked questions about calculating dollar-denominated technical debt and Technical Insolvency Dates.',
+    description: 'Frequently asked questions about calculating dollar-denominated technical debt and Technical Insolvency Dates. Essential answers for engineering leads.',
     keywords: ['product debt index', 'PDI calculator', 'technical debt measurement', 'PDI vs DORA', 'PDI score meaning'],
     alternates: { canonical: 'https://www.richardewing.io/tools/pdi/faq' },
     openGraph: { title: 'Product Debt Index (PDI) FAQ', description: 'Everything you need to know about the PDI framework.', url: 'https://www.richardewing.io/tools/pdi/faq', type: 'article' },

@@ -4,7 +4,7 @@ import CommandCenter from './content';
 
 export const metadata: Metadata = {
     title: 'Executive Command Center',
-    description: 'Unified dashboard for tracking client diagnostic pipelines, research engagement milestones, and telemetry.',
+    description: 'Unified dashboard for tracking client diagnostic pipelines, research engagement milestones, and telemetry. Monitor deliverables for CFO and CTO audits.',
     robots: { index: false, follow: false },
 };
 

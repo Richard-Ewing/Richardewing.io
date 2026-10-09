@@ -5,8 +5,8 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import ProductBridgeCard from '@/app/components/ProductBridgeCard';
 
 export const metadata: Metadata = {
-  title: 'Advisory vs Big-4 Tech Due Diligence | Richard Ewing',
-  description: 'Compare Richard Ewing R&D Capital Audits vs traditional Big-4 accounting firm tech due diligence. Empirical code diagnostics vs survey checklists.',
+  title: 'Advisory vs Big-4 Tech Audits',
+  description: 'Compare forensic R&D capital audits with Big-4 tech due diligence. Replace generic checklists with deep codebase analysis and balance sheet clarity.',
   alternates: { canonical: 'https://www.richardewing.io/compare/advisory-vs-big4' },
   openGraph: {
     title: 'Richard Ewing Advisory vs Big-4 Tech Due Diligence',

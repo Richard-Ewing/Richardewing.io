@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Vibe Coding vs Agile Engineering',
-    description: 'Comparing the long-term maintenance economics of prompt-driven vibe coding against structured deterministic development.',
+    description: 'Compare the long-term maintenance economics of prompt-driven vibe coding against structured software engineering. Prevent silent technical insolvency.',
     keywords: ['vibe coding', 'agile development', 'generative ai debt', 'vibe coding vs agile', 'engineering velocity', 'shadow ai'],
     alternates: { canonical: 'https://www.richardewing.io/compare/vibe-coding-vs-agile' },
     openGraph: { title: 'Vibe Coding vs Agile: Debt Acceleration vs Iteration', description: 'Vibe Coding feels fast, but it generates hidden technical debt that breaks Agile sprint planning.', url: 'https://www.richardewing.io/compare/vibe-coding-vs-agile', type: 'article' },

@@ -17,11 +17,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const challenge = challenges.find(c => c.slug === slug);
     if (!challenge) return {};
 
-    const ogTitle = `Stop ${challenge.title} Wasting R&D Capital | Governance`;
+    const cleanTitle = challenge.title.length > 28 ? challenge.title.slice(0, 27) + '…' : challenge.title;
+    const titleStr = `Stop ${cleanTitle} Wasting Capital | Richard Ewing`;
+    const ogTitle = titleStr;
     
     return {
-        title: ogTitle,
-        description: `${challenge.description.slice(0, 110)} Spot margin leaks and engineering execution risks.`,
+        title: { absolute: titleStr },
+        description: (() => {
+            let desc = challenge.description.trim().replace(/\s+/g, ' ');
+            if (!desc.endsWith('.')) desc += '.';
+            if (desc.length < 120) {
+                const combined = `${desc} Spot margin leaks, governance failure, and engineering execution risks.`;
+                return combined.length <= 158 ? combined : desc;
+            }
+            return desc.length > 158 ? desc.slice(0, 155) + '...' : desc;
+        })(),
         alternates: { canonical: `https://www.richardewing.io/challenges/${slug}` },
         openGraph: {
             title: ogTitle,

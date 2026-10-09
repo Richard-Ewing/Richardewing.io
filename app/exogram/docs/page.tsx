@@ -6,7 +6,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/exogram/docs' },
     title: 'Exogram Docs & Quickstart',
-    description: 'Deploy deterministic runtime boundaries, token firewalls, and context filters in under 10 minutes.',
+    description: 'Deploy deterministic runtime boundaries, token firewalls, and context filters in under 10 minutes. Read technical docs and reference implementations.',
 };
 
 export default function ExogramDocsIndex() {

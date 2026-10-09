@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'Executive Client Testimonials & Outcomes',
-    description: 'Verified reviews and quantitative ROI case outcomes from CTOs, CFOs, and PE operating partners.',
+    description: 'Verified executive reviews, quantitative ROI case outcomes, and R&D capital savings reports from CTOs, CFOs, and private equity operating partners.',
     keywords: ['R&D audit testimonials', 'technical debt audit reviews', 'AI economist testimonials', 'Richard Ewing reviews'],
     alternates: { canonical: 'https://www.richardewing.io/testimonials' },
     openGraph: { title: 'Testimonials  -  What Clients Say', description: 'Client testimonials for R&D Capital Audits.', url: 'https://www.richardewing.io/testimonials', type: 'website' },

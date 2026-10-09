@@ -3,7 +3,7 @@ import HallucinationTaxTool from './content';
 
 export const metadata: Metadata = {
     title: 'AI Hallucination Tax Calculator',
-    description: 'Calculate the hidden manual verification costs, error remediation labor, and financial tax of AI model hallucinations.',
+    description: 'Calculate hidden manual verification costs, error remediation labor, and the financial tax of AI model hallucinations. Quantify hidden quality expenses.',
     keywords: [
         'AI hallucination cost',
         'hallucination tax calculator',

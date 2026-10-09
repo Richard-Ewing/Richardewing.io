@@ -6,8 +6,8 @@ import EmergencyTriageCard from '@/components/EmergencyTriageCard';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Why AI Features Lose Money on Customers',
-    description: 'Find out why bundling AI features into flat-rate SaaS subscriptions destroys profit margins and how to transition to outcome pricing.',
+    title: 'Why AI Features Lose Margins',
+    description: 'Find out why bundling AI features into flat-rate SaaS subscriptions destroys profit margins and how to transition toward profitable outcome pricing.',
     keywords: [
         'ai feature gross margin collapse', 'negative carry ai features', 'why ai features lose money',
         'saas pricing for ai features', 'token cost vs subscription price', 'ai unit economics margin'

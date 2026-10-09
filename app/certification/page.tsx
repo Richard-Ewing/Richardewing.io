@@ -6,7 +6,7 @@ import { Shield, CheckCircle, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'AI Economics Professional Certification',
-    description: 'Validate your expertise in calculating AI unit economics, technical debt valuation, and deterministic governance.',
+    description: 'Validate your expertise in calculating AI unit economics, technical debt valuation, and deterministic governance. Professional credential for architects.',
     keywords: ['AI governance certification', 'runtime governance maturity', 'AI governance assessment', 'agentic engineering certification', 'MCP governance certified', 'AI governance training', 'runtime maturity model'],
     openGraph: {
         title: 'Runtime Governance Maturity - Certification & Assessment',

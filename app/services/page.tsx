@@ -16,7 +16,7 @@ import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
 export const metadata: Metadata = {
     title: 'Enterprise AI Advisory Services',
-    description: 'Advisory services measuring, governing, and improving the economics of enterprise AI. From diagnostics to retainers.',
+    description: 'Advisory services measuring, governing, and improving the economics of enterprise AI. From diagnostics to retainers, build software that compounds value.',
     alternates: {
         canonical: 'https://www.richardewing.io/services',
     },

@@ -8,7 +8,7 @@ import LivingRealityCheck from '../components/LivingRealityCheck';
 
 export const metadata: Metadata = {
     title: 'Free AI Diagnostic Tools Hub | Richard Ewing',
-    description: 'Access interactive diagnostic instruments to measure technical debt, AI unit costs, and team babysitting overhead.',
+    description: 'Access interactive diagnostic instruments to measure technical debt, AI unit costs, and babysitting overhead. Uncover hidden R&D waste in your codebase.',
     alternates: { canonical: 'https://www.richardewing.io/diagnose' },
     openGraph: {
         title: 'Diagnose Your AI & Engineering Reality',

@@ -4,7 +4,7 @@ import FrameworksPage from './content';
 
 export const metadata: Metadata = {
     title: 'AI Economics Frameworks Directory',
-    description: 'Complete directory of 19 diagnostic frameworks covering technical debt valuation, unit economics, and R&D capital.',
+    description: 'Complete directory of 19 diagnostic frameworks covering technical debt valuation, unit economics, and R&D capital. Built for CTOs and software leaders.',
     keywords: [
         'AI governance frameworks',
         'technical debt frameworks',

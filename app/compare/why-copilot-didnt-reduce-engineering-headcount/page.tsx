@@ -6,8 +6,8 @@ import EmergencyTriageCard from '@/components/EmergencyTriageCard';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Why Copilot Did Not Lower Engineering Payroll',
-    description: 'Learn why purchasing GitHub Copilot or Cursor subscriptions did not reduce software engineering headcount and what metrics to track instead.',
+    title: 'Why Copilot Did Not Cut Headcount',
+    description: 'Learn why purchasing GitHub Copilot subscriptions did not reduce software engineering payroll and what operational metrics leaders should track instead.',
     keywords: [
         'why copilot did not reduce headcount', 'ai coding tools engineering productivity',
         'copilot real roi engineering', 'cursor developer headcount impact',

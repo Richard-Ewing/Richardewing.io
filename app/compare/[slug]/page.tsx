@@ -117,11 +117,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         permanentRedirect('/tools');
     }
 
-    let desc = comparison.description;
-    if (!desc || desc.length < 50) {
-        const tA = comparison.toolA || 'Tool A';
-        const tB = comparison.toolB || 'Tool B';
-        desc = `Compare execution risks, cost inefficiencies, and R&D capital leakage of ${tA} vs ${tB}. Audit your engineering margins.`;
+    let desc = comparison.description.trim().replace(/\s+/g, ' ');
+    if (!desc.endsWith('.')) desc += '.';
+    if (desc.length < 120) {
+        const tA = comparison.toolA || 'Option A';
+        const tB = comparison.toolB || 'Option B';
+        const suffix = ` Compare execution risks and R&D capital leakage of ${tA} vs ${tB}.`;
+        const combined = (desc + suffix).trim();
+        desc = combined.length <= 158 ? combined : (desc + ` Audit your engineering margins and unit economics.`);
+    }
+    if (desc.length > 158) {
+        desc = desc.slice(0, 155) + '...';
     }
 
     return {

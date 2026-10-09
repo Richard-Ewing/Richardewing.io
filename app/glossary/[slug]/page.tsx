@@ -36,9 +36,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const shortTermTitle = term.title.length > 25 ? term.title.slice(0, 24) + '…' : term.title;
     const titleStr = `${shortTermTitle}  -  Definition`;
 
+    const metaDescription = (() => {
+        let desc = term.definition.trim().replace(/\s+/g, ' ');
+        if (!desc.endsWith('.')) desc += '.';
+        if (desc.length < 120) {
+            const suffix = ` Definitive industry terminology and execution frameworks for technology leaders and AI economists.`;
+            const combined = (desc + suffix).trim();
+            if (combined.length <= 158) return combined;
+            return (desc + ` Industry definitions and frameworks by Richard Ewing.`).slice(0, 155);
+        }
+        return desc.length > 158 ? desc.slice(0, 155) + '...' : desc;
+    })();
+
     return {
         title: titleStr,
-        description: term.definition.slice(0, 150).replace(/\n/g, ' ') + '...',
+        description: metaDescription,
         robots: {
             index: true,
             follow: true

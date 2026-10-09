@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Cybersecurity Tech Debt & Alert Fatigue Costs',
-    description: 'Quantify SIEM integration debt, alert volume infrastructure costs, and security engineering efficiency metrics.',
+    description: 'Quantify SIEM integration debt, alert volume infrastructure costs, and security engineering efficiency metrics across enterprise technology operations.',
     keywords: ['cybersecurity technical debt', 'security debt', 'AI threat detection cost', 'cybersecurity CTO advisor', 'security engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/cybersecurity' },
     openGraph: { title: 'AI Economics for Cybersecurity', description: 'Security debt compounds faster than any other form of technical debt.', url: 'https://www.richardewing.io/industries/cybersecurity', type: 'website' },

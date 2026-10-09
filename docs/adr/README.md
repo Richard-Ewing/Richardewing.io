@@ -52,6 +52,7 @@ Negative/Considerations:
 | [ADR-0005](ADR-0005-ai-generated-architecture-decision-records.md) | AI-Generated Architecture Decision Records (ADRs) Integration | Accepted | @richardewing, @cjnevin, Code Architect | 2026-10-07 |
 | [ADR-0006](ADR-0006-gsc-indexing-and-sitemap-remediation.md) | Google Search Console Indexing, Sitemap Invariants, and Crawl Barrier Remediation | Accepted | @richardewing, Aravind Srinivas, SEO Architect | 2026-10-07 |
 | [ADR-0007](ADR-0007-antigravity-v2-21-hybrid-architecture.md) | Google Antigravity v2.21.0 Upgrade, Planning Mode, and Hybrid Architecture | Accepted | @richardewing, Jensen Huang, Code Architect | 2026-10-07 |
+| [ADR-0008](ADR-0008-bing-webmaster-seo-title-and-description-remediation.md) | Bing Webmaster SEO Title Length and Short Meta Description Remediation | Accepted | @richardewing, Aravind Srinivas, SEO Architect | 2026-10-09 |
 
 ---
 

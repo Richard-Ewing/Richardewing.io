@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'CleanTech AI Economics & Grid Data Debt',
-    description: 'Audit telemetry ingestion pipelines, predictive grid model decay, and hardware-software technical debt in clean energy tech.',
+    description: 'Audit telemetry ingestion pipelines, predictive grid model decay, and hardware-software technical debt in clean energy technology operations.',
     keywords: ['cleantech technical debt', 'clean energy technology', 'carbon accounting systems', 'climate tech engineering', 'cleantech AI economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/cleantech' },
     openGraph: { title: 'CleanTech AI Economics', description: 'R&D capital challenges in clean energy technology.', url: 'https://www.richardewing.io/industries/cleantech', type: 'article' },

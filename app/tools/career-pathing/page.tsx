@@ -4,7 +4,7 @@ import Content from './content';
 
 export const metadata: Metadata = {
     title: 'AI Career Capital Calculator',
-    description: 'Calculate your engineering career capital, evaluate compensation trajectories, and map senior IC vs management paths.',
+    description: 'Calculate your engineering career capital, evaluate compensation trajectories, and map senior IC vs management paths. Make data-driven career choices.',
     alternates: { canonical: 'https://www.richardewing.io/tools/career-pathing' }
 };
 

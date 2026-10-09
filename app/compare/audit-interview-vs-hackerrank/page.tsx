@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Audit Interview vs HackerRank',
-    description: 'Compare the Audit Interview protocol vs HackerRank syntax tests for evaluating AI-era senior engineers.',
+    description: 'Compare the Audit Interview protocol with HackerRank syntax tests. Evaluate senior software engineers on real architecture rather than trivia puzzles.',
     keywords: ['hackerrank alternative', 'technical assessment alternative', 'engineering judgment test', 'audit interview vs hackerrank', 'hiring for AI age', 'beyond hackerrank'],
     alternates: { canonical: 'https://www.richardewing.io/compare/audit-interview-vs-hackerrank' },
     openGraph: { title: 'Audit Interview vs HackerRank  -  Judgment vs Puzzles', description: 'When AI can pass HackerRank tests, what are you actually measuring?', url: 'https://www.richardewing.io/compare/audit-interview-vs-hackerrank', type: 'article' },

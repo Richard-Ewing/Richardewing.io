@@ -3,7 +3,7 @@ import SLMTool from './content';
 
 export const metadata: Metadata = {
     title: 'SLM vs API Tradeoff Calculator',
-    description: 'Calculate the hardware break-even point for self-hosting Small Language Models vs proprietary cloud APIs.',
+    description: 'Calculate the hardware break-even point for self-hosting Small Language Models vs proprietary cloud APIs. Optimize your annual inference infrastructure.',
     keywords: [
         'SLM vs LLM',
         'OpenAI API cost calculator',

@@ -12,7 +12,7 @@ import ExogramBridge from '@/components/skills/ExogramBridge';
 
 export const metadata: Metadata = {
   title: 'Deterministic Governance Skills',
-  description: 'Pre-built governance rules and runtime skills for Claude Code, Cursor, and enterprise coding agents.',
+  description: 'Pre-built governance rules and runtime skills for Claude Code, Cursor, and enterprise coding agents. Enforce deterministic quality gates in any repo.',
   openGraph: {
     title: 'Deterministic Runtime Infrastructure for Claude Code & Agentic Engineering',
     description: 'Deployable runtime governance modules across 4 architectural layers: Identity, Skill, Tool, and Environment governance for deterministic AI execution.',

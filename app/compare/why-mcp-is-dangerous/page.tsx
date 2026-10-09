@@ -6,8 +6,8 @@ import ExogramBridge from '@/components/ExogramBridge';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Why MCP Is a Security Risk Without Guardrails',
-    description: 'Detailed security analysis of Model Context Protocol tool execution risks and runtime containment requirements.',
+    title: 'Why MCP Is Dangerous',
+    description: 'Detailed security analysis of Model Context Protocol tool execution risks, credential exfiltration vulnerabilities, and runtime containment needs.',
     keywords: ['MCP dangerous', 'MCP security risk', 'Model Context Protocol security', 'MCP credential leak', 'MCP confused deputy', 'MCP tool poisoning', 'MCP over-permissioning', 'Claude Code MCP risk', 'MCP supply chain attack', 'AI agent security', 'MCP governance'],
     openGraph: {
         title: 'Why MCP Is Dangerous - Model Context Protocol Security',

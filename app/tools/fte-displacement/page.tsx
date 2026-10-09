@@ -3,7 +3,7 @@ import FTEContent from './content';
 
 export const metadata: Metadata = {
     title: 'AI FTE Displacement Simulator',
-    description: 'Calculate the cost-benefit, risk profile, and margin expansion of automating operational roles with AI agents.',
+    description: 'Calculate the cost-benefit, risk profile, and margin expansion of automating operational roles with AI agents. Reliable forecasting for the CFO office.',
     keywords: [
         'AI agent ROI calculator',
         'Customer support automation cost',

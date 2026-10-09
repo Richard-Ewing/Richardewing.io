@@ -4,7 +4,7 @@ import BriefingsPage from './content';
 
 export const metadata: Metadata = {
     title: 'Executive AI Research Briefings',
-    description: 'Curated monthly briefings on enterprise AI unit economics, R&D capital efficiency, and agentic governance.',
+    description: 'Curated monthly briefings on enterprise AI unit economics, R&D capital efficiency, and agentic governance. Strategic intelligence for executive leadership.',
     keywords: [
         'executive briefings',
         'war-time leadership',

@@ -4,7 +4,7 @@ import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 export const metadata: Metadata = {
     title: 'PE & VC AI Capital Due Diligence',
-    description: 'Pre-close software forensic audits and margin engineering for private equity firms and growth stage investors.',
+    description: 'Pre-close software forensic audits and margin engineering for private equity firms and growth stage investors. Quantify software liabilities accurately.',
     keywords: ['R&D due diligence', 'technical due diligence PE', 'VC technology assessment', 'portfolio company audit', 'technical debt valuation', 'Product Debt Index', 'Richard Ewing'],
     alternates: { canonical: 'https://www.richardewing.io/for-investors' },
     openGraph: { title: 'For Investors  -  R&D Capital Due Diligence', description: 'Quantify technical debt in dollars before you invest.', url: 'https://www.richardewing.io/for-investors', type: 'website' },

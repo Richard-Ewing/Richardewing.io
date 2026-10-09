@@ -3,7 +3,7 @@ import ShadowContent from './content';
 
 export const metadata: Metadata = {
     title: 'Shadow AI Risk Scanner',
-    description: 'Scan employee AI app usage, identify unauthorized LLM endpoints, and prevent IP data leakage.',
+    description: 'Scan employee AI application usage, identify unauthorized LLM endpoints, and prevent intellectual property data leakage across engineering teams.',
     keywords: [
         'Shadow AI risk calculator',
         'LLM data leakage tool',

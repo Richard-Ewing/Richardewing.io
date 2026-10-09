@@ -4,7 +4,7 @@ import { BarChart3, Download, TrendingDown, ArrowRight, CheckCircle } from 'luci
 
 export const metadata: Metadata = {
     title: 'AI Engineering Benchmarks',
-    description: 'Cross-industry benchmarks for engineering headcount efficiency, AI inference costs, and software capital yield.',
+    description: 'Cross-industry benchmarks for engineering headcount efficiency, AI inference costs, and software capital yield. Compare your metrics against peers.',
     keywords: [
         'technical debt benchmark', 'engineering productivity benchmark 2026', 'product debt report',
         'state of technical debt', 'R&D efficiency report', 'AI cost benchmark', 'engineering metrics report',

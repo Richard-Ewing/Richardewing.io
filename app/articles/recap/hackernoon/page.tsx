@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'HackerNoon Tech Economics Publications',
-    description: 'In-depth technical essays and systems architecture breakdowns published on HackerNoon.',
+    description: 'In-depth technical essays, token economics breakdowns, and systems architecture analyses published by Richard Ewing on HackerNoon for developers.',
     keywords: ['Richard Ewing HackerNoon', 'developer economics', 'open source sustainability', 'AI agent architecture', 'AI economist HackerNoon'],
     alternates: { canonical: 'https://www.richardewing.io/articles/recap/hackernoon' },
     openGraph: { title: 'Richard Ewing on HackerNoon', description: 'Published articles on developer economics, AI agents, and technical debt for startups.', url: 'https://www.richardewing.io/articles/recap/hackernoon', type: 'article' },

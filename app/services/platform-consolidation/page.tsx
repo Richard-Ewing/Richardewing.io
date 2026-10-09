@@ -8,7 +8,7 @@ import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 
 export const metadata: Metadata = {
     title: 'Platform Consolidation Advisory',
-    description: 'Eliminate redundant SaaS tools and developer infrastructure sprawl with an architectural consolidation plan.',
+    description: 'Eliminate redundant SaaS tools and developer infrastructure sprawl with an architectural consolidation plan. Recover wasted OpEx across engineering teams.',
     alternates: {
         canonical: 'https://www.richardewing.io/services/platform-consolidation',
     },

@@ -23,7 +23,33 @@ export async function generateMetadata({ params }: ConceptPageProps): Promise<Me
   const concept = CANONICAL_CONCEPTS.find((c) => c.slug === slug);
   if (!concept) return {};
 
-  const description = concept.aeo?.shortDefinition || concept.definition;
+  const rawDesc = concept.aeo?.shortDefinition || concept.definition;
+  const description = (() => {
+    let desc = rawDesc.trim().replace(/\s+/g, ' ');
+    if (!desc.endsWith('.')) desc += '.';
+    if (desc.length >= 140 && desc.length <= 158) return desc;
+    if (desc.length > 158) return desc.slice(0, 155) + '...';
+
+    const candidateSuffixes = [
+      ` Forensic systems architecture and engineering economics research by Richard Ewing for CTOs.`,
+      ` Forensic systems architecture and engineering economics research by Richard Ewing.`,
+      ` Systems architecture, engineering economics research, and executive frameworks.`,
+      ` Systems architecture and engineering economics research by Richard Ewing.`,
+      ` Systems architecture and engineering economics frameworks by Richard Ewing.`,
+      ` Engineering economics research and frameworks by Richard Ewing.`,
+      ` Forensic analysis and frameworks by Richard Ewing.`,
+      ` Research and frameworks by Richard Ewing.`,
+      ` Research by Richard Ewing.`
+    ];
+    for (const suffix of candidateSuffixes) {
+      const combined = desc + suffix;
+      if (combined.length >= 140 && combined.length <= 158) {
+        return combined;
+      }
+    }
+    const fallback = `${desc} Research and analysis by Richard Ewing.`;
+    return fallback.length > 158 ? fallback.slice(0, 155) + '...' : fallback;
+  })();
 
   const shortTitle = concept.title.length > 30 ? concept.title.slice(0, 29) + '…' : concept.title;
 

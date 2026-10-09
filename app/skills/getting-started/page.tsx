@@ -5,7 +5,7 @@ import { BookOpen, Terminal, FolderOpen, Settings, Wrench, Shield, Layers, Check
 
 export const metadata: Metadata = {
     title: 'Governance Skills Setup Guide',
-    description: 'Step-by-step setup instructions for installing deterministic AI governance rules in your local developer environment.',
+    description: 'Step-by-step setup instructions for installing deterministic AI governance rules in your local developer environment. Configure agent boundaries quickly.',
     keywords: ['how to use Claude skills', 'install Claude Code skills', 'CLAUDE.md tutorial', 'Cursor rules setup', 'AI coding agent governance', 'deploy runtime governance'],
     openGraph: {
         title: 'Getting Started - Deploy Governance Skills in 10 Minutes',

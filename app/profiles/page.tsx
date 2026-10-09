@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Media Profiles & Author Directory',
-    description: 'Directory of verified author profiles, publications, and external research citations for Richard Ewing.',
+    description: 'Directory of verified author profiles, publications, and external research citations for Richard Ewing. Connect across verified technical publications.',
     keywords: [
         'Richard Ewing publications',
         'CIO.com contributor',

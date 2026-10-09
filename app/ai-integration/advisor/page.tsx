@@ -8,7 +8,7 @@ import AdvisorChat from '@/components/AdvisorChat';
 
 export const metadata: Metadata = {
     title: 'AI Integration Advisor Tool',
-    description: 'Interactive advisory wizard to determine the optimal AI architecture, guardrails, and unit economic model.',
+    description: 'Interactive advisory wizard to determine optimal AI architecture, guardrails, and unit economic models. Select the right stack for your engineering team.',
     keywords: [
         'how to integrate AI into my business', 'AI for small business', 'AI for my business',
         'AI integration plan', 'AI readiness assessment', 'AI business consultant',

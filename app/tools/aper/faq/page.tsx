@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'APER Calculator FAQ & Methodology',
-    description: 'Frequently asked questions about calculating Revenue-Per-Engineer (APER) and engineering headcount efficiency.',
+    description: 'Frequently asked questions about calculating Revenue-Per-Engineer (APER) and engineering headcount efficiency. Financial clarity for VP of Engineering.',
     keywords: ['APER calculator', 'engineering efficiency', 'revenue per engineer', 'engineering productivity metrics'],
     alternates: { canonical: 'https://www.richardewing.io/tools/aper/faq' },
     openGraph: { title: 'APER Calculator FAQ', description: 'How to benchmark engineering efficiency with APER.', url: 'https://www.richardewing.io/tools/aper/faq', type: 'article' },

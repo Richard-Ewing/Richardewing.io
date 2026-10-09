@@ -10,7 +10,7 @@ import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
 export const metadata: Metadata = {
     title: 'Executive AI Engineering Curriculum',
-    description: 'Master AI economics, R&D capital management, FinOps, and deterministic control across 25 authority curriculum tracks.',
+    description: 'Master AI economics, R&D capital management, FinOps, and deterministic control across 25 authority curriculum tracks. Professional executive training.',
     keywords: ['AI economics academy', 'AI economics curriculum', 'AI economics training', 'R&D capital management', 'technical debt quantification', 'engineering leadership course', 'cloud finops', 'AI pricing strategy', 'career economics', 'CTO training', 'M&A integration', 'vendor economics', 'developer experience', 'remote team economics', 'ai agent economics', 'leadership training'],
     alternates: { canonical: 'https://www.richardewing.io/vault/curriculum/tracks' },
     openGraph: {

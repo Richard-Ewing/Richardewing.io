@@ -8,7 +8,7 @@ import CalEmbed from '@/app/components/client/CalEmbed';
 
 export const metadata: Metadata = {
     title: 'Contact & Advisory Requests',
-    description: 'Get in touch for forensic R&D capital audits, AI unit economics advisory, and board-level risk reviews.',
+    description: 'Get in touch for forensic R&D capital audits, AI unit economics advisory, and board-level risk reviews. Direct communication with executive advisors.',
     alternates: {
         canonical: 'https://www.richardewing.io/contact',
     },

@@ -4,7 +4,7 @@ import { ROICalculatorClient } from '../roi-calculator/ROICalculatorClient';
 
 export const metadata: Metadata = {
     title: 'R&D Capital Audit ROI Calculator',
-    description: 'Calculate your expected financial return from conducting an independent technical debt and AI spend audit.',
+    description: 'Calculate your expected financial return from conducting an independent technical debt and AI spend audit. Identify immediate savings for your budget.',
     keywords: ['R&D audit ROI', 'technical debt ROI', 'engineering efficiency ROI', 'DORA metrics improvement', 'engineering productivity savings'],
     alternates: { canonical: 'https://www.richardewing.io/roi' },
     openGraph: { title: 'ROI Calculator  -  R&D Capital Audit ROI | Richard Ewing', description: 'See the exact dollar value of enterprise engineering and AI optimization across your entire roadmap.', url: 'https://www.richardewing.io/roi', type: 'website' },

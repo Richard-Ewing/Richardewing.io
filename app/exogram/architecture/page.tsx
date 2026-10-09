@@ -5,7 +5,7 @@ import GovernanceDashboard from '../../components/GovernanceDashboard';
 
 export const metadata: Metadata = {
     title: 'Exogram Runtime Architecture',
-    description: 'Technical blueprint of the Exogram deterministic governance gateway, proxy routing layer, and audit logger.',
+    description: 'Technical blueprint of the Exogram deterministic governance gateway, proxy routing layer, and audit logger. Enforce strict boundaries on agent actions.',
     alternates: { canonical: 'https://www.richardewing.io/exogram/architecture' },
 };
 

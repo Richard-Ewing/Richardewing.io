@@ -5,7 +5,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'AI Governance Architecture Diagrams',
-    description: 'High-resolution visual architectures covering deterministic control layers, agent gateways, and cost attribution.',
+    description: 'High-resolution visual architectures covering deterministic control layers, agent gateways, and cost attribution. Blueprint diagrams for systems teams.',
     keywords: ['runtime architecture diagrams', 'AI agent governance diagrams', 'bounded cognition diagram', 'retry inflation flow', 'MCP containment architecture', 'orchestration collapse pattern'],
     openGraph: {
         title: 'Runtime Architecture Diagrams - Governance Visual Library',

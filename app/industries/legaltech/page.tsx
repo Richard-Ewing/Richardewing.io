@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'LegalTech AI Unit Economics & Document Ingestion',
-    description: 'Control vector database costs, document OCR processing overhead, and contract review inference margins.',
+    description: 'Control vector database costs, document OCR processing overhead, and contract review inference margins across legal AI software architectures.',
     keywords: ['legaltech technical debt', 'legal technology', 'contract AI economics', 'legal document processing', 'legaltech engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/legaltech' },
     openGraph: { title: 'LegalTech AI Economics', description: 'R&D capital challenges in legal technology.', url: 'https://www.richardewing.io/industries/legaltech', type: 'article' },

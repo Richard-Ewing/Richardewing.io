@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Supabase Integration Guide | Richard Ewing Platform Docs',
+  title: 'Supabase Architecture Integration Guide',
   description: 'Step-by-step guide explaining how to integrate Supabase PostgreSQL, pgvector, Row-Level Security (RLS), and Edge Functions with Richard Ewing diagnostics.',
   keywords: [
     'Supabase integration guide',

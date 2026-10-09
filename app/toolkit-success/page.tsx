@@ -6,7 +6,7 @@ import { GooglePreferredBadge } from '../components/GooglePreferredBadge';
 
 export const metadata = {
     title: 'Diagnostic Toolkit Downloaded',
-    description: 'Access instructions and documentation for your downloaded AI Economics diagnostic spreadsheets and templates.',
+    description: 'Access instructions and documentation for your downloaded AI Economics diagnostic spreadsheets and templates. Start calculating unit economics today.',
     robots: 'noindex, nofollow' // Keep this hidden from Google so only subscribers get it
 };
 

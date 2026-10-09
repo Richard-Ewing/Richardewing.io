@@ -5,7 +5,7 @@ import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 
 export const metadata: Metadata = {
     title: 'AI Economics Toolkit for CTOs',
-    description: 'Actionable frameworks for engineering executives to defend gross margins, audit R&D yield, and eliminate tech debt.',
+    description: 'Actionable frameworks for engineering executives to defend gross margins, audit R&D yield, and eliminate tech debt. Grounded in empirical code forensics.',
     keywords: ['CTO tools', 'engineering benchmarks', 'technical debt calculator CTO', 'CTO advisory', 'engineering productivity metrics', 'R&D capital efficiency CTO'],
     alternates: { canonical: 'https://www.richardewing.io/for-ctos' },
     openGraph: { title: 'For CTOs  -  Engineering Economics Toolkit', description: 'Free tools and benchmarks for engineering leaders.', url: 'https://www.richardewing.io/for-ctos', type: 'website' },

@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen, AlertTriangle, CheckCircle, Database } from 'luci
 
 export const metadata: Metadata = {
     title: 'Choosing AI Development Platforms Guide',
-    description: 'Objective architectural evaluation framework for selecting enterprise AI development platforms and model providers.',
+    description: 'Objective architectural evaluation framework for selecting enterprise AI development platforms. Avoid vendor lock-in and defend engineering gross margins.',
     alternates: {
         canonical: 'https://www.richardewing.io/decisions/choosing-ai-development-platforms',
     },

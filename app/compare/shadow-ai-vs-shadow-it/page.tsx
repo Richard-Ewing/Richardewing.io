@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Shadow AI vs Shadow IT: Risk Comparison',
-    description: 'Understand why unmonitored AI model usage creates severe IP exfiltration and compliance liabilities compared to shadow IT.',
+    title: 'Shadow AI vs Shadow IT Risks',
+    description: 'Understand why unmonitored AI model usage creates severe IP exfiltration liabilities compared to shadow IT. Protect corporate data and compliance.',
     keywords: ['shadow ai', 'shadow it', 'shadow ai vs shadow it', 'ai governance', 'enterprise ai security', 'generative ai risks'],
     alternates: { canonical: 'https://www.richardewing.io/compare/shadow-ai-vs-shadow-it' },
     openGraph: { title: 'Shadow AI vs Shadow IT: IP Liability vs Subscription Waste', description: 'Shadow IT costs money. Shadow AI costs you your intellectual property and legal defensibility. See the financial breakdown.', url: 'https://www.richardewing.io/compare/shadow-ai-vs-shadow-it', type: 'article' },

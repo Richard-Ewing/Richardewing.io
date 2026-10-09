@@ -3,7 +3,7 @@ import VTATool from './content';
 
 export const metadata: Metadata = {
     title: 'AI Volatility Tax (VTA) Calculator',
-    description: 'Quantify the hidden human-in-the-loop validation costs destroying your AI feature margins.',
+    description: 'Quantify the hidden human-in-the-loop validation costs, verification burdens, and labor drag destroying your enterprise AI feature gross margins.',
     keywords: [
         'AI Volatility Tax',
         'human-in-the-loop cost',

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Engineering Efficiency Benchmarks',
-    description: 'Evaluate whether your engineering organization is underperforming stage-adjusted headcount and revenue benchmarks.',
+    description: 'Evaluate whether your engineering organization is underperforming stage-adjusted headcount and revenue benchmarks. Actionable data for the board room.',
     alternates: { canonical: 'https://www.richardewing.io/benchmarks' },
     openGraph: {
         title: 'Engineering Benchmarks  -  Industry Comparison Data',

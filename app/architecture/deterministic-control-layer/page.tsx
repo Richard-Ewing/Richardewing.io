@@ -8,7 +8,7 @@ import { BorderBeam } from '@/components/magicui/border-beam';
 
 export const metadata: Metadata = {
     title: 'Deterministic Control Layer Architecture',
-    description: 'How to build a deterministic control layer that eliminates probabilistic agent drift and enforces strict cost caps.',
+    description: 'How to build a deterministic control layer that eliminates probabilistic agent drift and enforces cost caps. Protect production systems from runaway loops.',
     keywords: [
         'Deterministic Control Layer',
         'Synthetic COGS',

@@ -4,7 +4,7 @@ import CopilotROITool from './content';
 
 export const metadata: Metadata = {
     title: 'GitHub Copilot ROI Calculator',
-    description: 'Calculate the true financial ROI, code churn impact, and review overhead of AI coding tools.',
+    description: 'Calculate the true financial ROI, code churn impact, pull request review overhead, and R&D capital yield of enterprise AI coding assistants.',
     keywords: [
         'GitHub Copilot ROI',
         'Cursor ROI calculator',

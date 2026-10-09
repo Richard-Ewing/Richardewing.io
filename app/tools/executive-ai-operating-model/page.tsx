@@ -4,7 +4,7 @@ import CEOOperatingModelTool from './content';
 
 export const metadata: Metadata = {
     title: 'Executive AI Operating Model Audit | Richard Ewing',
-    description: 'Evaluate organizational readiness for autonomous agents, cross-functional capital allocation, and sovereign moats.',
+    description: 'Evaluate organizational readiness for autonomous agents, cross-functional capital allocation, and sovereign moats. Practical blueprint for modern COOs.',
     keywords: [
         'CEO AI operating model',
         'Executive AI strategy audit',

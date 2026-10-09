@@ -14,13 +14,38 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const doc = getExogramDoc(resolvedParams.slug);
     if (!doc) return { title: 'Not Found' };
 
+    const cleanTitle = doc.title.length > 28 ? doc.title.slice(0, 27) + '…' : doc.title;
+    const titleStr = `${cleanTitle} - Exogram Docs | Richard Ewing`;
+    const finalDesc = (() => {
+        let desc = doc.description.trim().replace(/\s+/g, ' ');
+        if (!desc.endsWith('.')) desc += '.';
+        if (desc.length < 120) {
+            const candidateSuffixes = [
+                ' Enforce deterministic runtime controls and protect production systems from agent drift.',
+                ' Enforce deterministic runtime controls and protect production system reliability.',
+                ' Enforce deterministic runtime controls and protect system reliability.',
+                ' Enforce deterministic runtime governance controls for enterprise systems.',
+                ' Enforce deterministic runtime governance controls.',
+                ' Enforce deterministic runtime controls.'
+            ];
+            for (const suffix of candidateSuffixes) {
+                const combined = desc + suffix;
+                if (combined.length >= 140 && combined.length <= 158) {
+                    return combined;
+                }
+            }
+            return (desc + ' Enforce deterministic runtime controls and protect system reliability.').slice(0, 155);
+        }
+        return desc.length > 158 ? desc.slice(0, 155) + '...' : desc;
+    })();
+
     return {
-        title: `${doc.title}  -  Exogram Docs`,
-        description: doc.description,
+        title: { absolute: titleStr },
+        description: finalDesc,
         alternates: { canonical: `https://www.richardewing.io/exogram/docs/${doc.slug}` },
         openGraph: {
-            title: `${doc.title}  -  Exogram Docs`,
-            description: doc.description,
+            title: titleStr,
+            description: finalDesc,
             url: `https://www.richardewing.io/exogram/docs/${doc.slug}`,
             siteName: 'Richard Ewing',
             type: 'article',
@@ -28,8 +53,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${doc.title}  -  Exogram Docs`,
-            description: doc.description,
+            title: titleStr,
+            description: finalDesc,
             images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
         }
     };

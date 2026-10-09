@@ -3,7 +3,7 @@ import RagChunkingContent from './content';
 
 export const metadata: Metadata = {
     title: 'RAG Architecture Chunking Engine',
-    description: 'Visualize vector embedding strategies, optimize text chunking parameters, and prevent semantic context loss.',
+    description: 'Visualize vector embedding strategies, optimize text chunking parameters, and prevent semantic context loss. Tune retrieval precision for your search.',
     keywords: [
         'RAG chunking strategy',
         'Semantic search visualizer',

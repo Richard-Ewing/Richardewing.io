@@ -3,8 +3,8 @@ import Link from 'next/link';
 import TechnologyIntegrationDocs from '@/components/partnerships/TechnologyIntegrationDocs';
 
 export const metadata: Metadata = {
-  title: 'Technology Integration Docs | Richard Ewing Partnerships',
-  description: 'Technical integration docs explaining how databases, vector engines, and edge runtimes integrate with Richard Ewing diagnostics.',
+  title: 'Technology Integration Docs',
+  description: 'Technical integration docs explaining how databases, vector engines, and edge runtimes integrate with Richard Ewing forensic diagnostics.',
   keywords: [
     'Supabase integration docs',
     'Richard Ewing integration guide',

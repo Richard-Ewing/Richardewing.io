@@ -5,7 +5,7 @@ import { ArrowRight, Server, Shield, Network, LayoutDashboard } from 'lucide-rea
 
 export const metadata: Metadata = {
     title: 'Choosing Enterprise AI Infrastructure Guide',
-    description: 'Compare hosted vs self-hosted AI infrastructure, inference hardware options, and cost optimization architectures.',
+    description: 'Compare hosted vs self-hosted AI infrastructure, inference hardware options, and cost architectures. Help your VP of Infrastructure make the right call.',
     alternates: {
         canonical: 'https://www.richardewing.io/decisions/choosing-enterprise-ai-infrastructure',
     },

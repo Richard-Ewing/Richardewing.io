@@ -5,7 +5,7 @@ import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
 export const metadata: Metadata = {
     title: 'Forensic AI & Engineering Research',
-    description: 'Published research, essays, and articles on AI unit economics, R&D capital efficiency, and technical debt.',
+    description: 'Published research, essays, and empirical articles on AI unit economics, R&D capital efficiency, and tech debt. Written for CTOs and engineering leaders.',
     keywords: [
         'AI economist articles',
         'R&D capital efficiency',

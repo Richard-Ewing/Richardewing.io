@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Manufacturing AI Economics & Edge Telemetry Debt',
-    description: 'Audit predictive maintenance model reliability, industrial IoT sensor debt, and shop-floor automation software yield.',
+    description: 'Audit predictive maintenance model reliability, industrial IoT sensor debt, and shop-floor automation software yield with forensic engineering audits.',
     keywords: ['manufacturing technical debt', 'robotics CTO advisor', 'industrial AI governance', 'edge AI economics', 'manufacturing software debt'],
     alternates: { canonical: 'https://www.richardewing.io/industries/manufacturing' },
     openGraph: { title: 'AI Economics for Manufacturing & Robotics', description: 'R&D audit and AI governance for industrial systems.', url: 'https://www.richardewing.io/industries/manufacturing', type: 'website' },

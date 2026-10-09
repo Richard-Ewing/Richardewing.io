@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Intelligence Dashboard & Analytics',
-    description: 'Diagnostic performance metrics, benchmark trends, and executive analytics across enterprise engineering portfolios.',
+    description: 'Diagnostic performance metrics, benchmark trends, and executive analytics across enterprise engineering portfolios. Quantify R&D waste and debt.',
     keywords: ['Longitudinal intelligence Dashboard', 'Historical Metric Repository', 'Product Debt tracking', 'Margin Erosion Tracker'],
     openGraph: {
         title: 'Intelligence Dashboard | Longitudinal Data',

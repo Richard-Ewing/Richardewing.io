@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'MediaTech AI Economics & Video Processing Debt',
-    description: 'Audit generative media rendering compute costs, digital asset management storage bloat, and CMS pipeline debt.',
+    description: 'Audit generative media rendering compute costs, digital asset management storage bloat, and CMS pipeline debt across digital media operations.',
     keywords: ['mediatech technical debt', 'streaming technology', 'content delivery infrastructure', 'media technology economics', 'CDN engineering debt'],
     alternates: { canonical: 'https://www.richardewing.io/industries/mediatech' },
     openGraph: { title: 'MediaTech AI Economics', description: 'R&D capital challenges in media and entertainment technology.', url: 'https://www.richardewing.io/industries/mediatech', type: 'article' },

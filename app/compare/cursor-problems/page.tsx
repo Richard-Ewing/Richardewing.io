@@ -7,8 +7,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import StructuredData, { generateFaqSchema } from '@/app/components/seo/StructuredData';
 
 export const metadata: Metadata = {
-    title: 'Cursor IDE Problems & Fixes (2026)',
-    description: 'Analysis of Cursor repository drift, file rewrites, and context loss issues - and how to fix them.',
+    title: 'Cursor Problems & Repository Drift',
+    description: 'Diagnose Cursor repository drift, file rewrites, and context loss issues. Discover practical architectural fixes to keep codebase changes deterministic.',
     keywords: ['Cursor problems', 'Cursor problems 2026', 'Cursor AI complaints', 'Cursor credits expensive', 'Cursor rewriting files', 'Cursor alternative', 'Cursor crashes', 'Cursor ignores rules', '.cursorrules not working Cursor', 'Cursor AI review', 'Cursor vs governance', 'left Cursor', 'switched from Cursor'],
     openGraph: {
         title: 'Cursor Problems 2026 - Real User Complaints & Governance Solutions',

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'Exogram Enterprise Use Cases',
-    description: 'How engineering organizations deploy Exogram to prevent API cost overruns, block data leaks, and stop agent loops.',
+    description: 'How engineering organizations deploy Exogram to prevent API cost overruns, block data leaks, and stop agent loops. Proven patterns for platform teams.',
     alternates: { canonical: 'https://www.richardewing.io/exogram/use-cases' },
 };
 

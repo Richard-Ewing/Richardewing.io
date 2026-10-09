@@ -9,7 +9,7 @@ import { COMMERCIAL_OFFERS } from '@/lib/platform/offers/offers';
 
 export const metadata: Metadata = {
     title: 'Advisory & Diagnostic Pricing',
-    description: 'Transparent fixed-fee pricing for AI Economics diagnostics, R&D capital audits, and fractional executive advisory.',
+    description: 'Transparent fixed-fee pricing for AI Economics diagnostics, R&D capital audits, and fractional executive advisory. Predictable investment with clear ROI.',
     alternates: {
         canonical: 'https://www.richardewing.io/pricing',
     },

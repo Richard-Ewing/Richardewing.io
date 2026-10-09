@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'Built In Research Publications',
-    description: 'Published architectural research and operational frameworks by Richard Ewing on Built In.',
+    description: 'Published architectural research, AI economics models, and engineering team productivity frameworks authored by Richard Ewing on Built In.',
     keywords: ['Richard Ewing Built In', 'engineering economics articles', 'scaling engineering teams', 'developer productivity', 'AI economist Built In'],
     alternates: { canonical: 'https://www.richardewing.io/articles/recap/built-in' },
     openGraph: { title: 'Richard Ewing on Built In', description: 'Published articles on engineering team economics and developer productivity.', url: 'https://www.richardewing.io/articles/recap/built-in', type: 'article' },

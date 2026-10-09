@@ -40,9 +40,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     const cleanTitle = article.title.length > 38 ? article.title.slice(0, 37) + '…' : article.title;
 
+    const metaDescription = (() => {
+        let desc = article.description.trim().replace(/\s+/g, ' ');
+        if (!desc.endsWith('.')) desc += '.';
+        if (desc.length >= 140 && desc.length <= 158) return desc;
+        if (desc.length > 158) return desc.slice(0, 155) + '...';
+
+        const candidateSuffixes = [
+            ` Published architectural research and engineering economics analysis by Richard Ewing for CTOs.`,
+            ` Published architectural research and engineering economics analysis by Richard Ewing.`,
+            ` Architectural research, engineering economics analysis, and executive frameworks.`,
+            ` Architectural research and engineering economics analysis by Richard Ewing.`,
+            ` Research, engineering economics analysis, and executive frameworks.`,
+            ` Engineering economics research and frameworks by Richard Ewing.`,
+            ` Research and frameworks by Richard Ewing for technology leaders.`,
+            ` Analysis and frameworks by Richard Ewing.`,
+            ` Research by Richard Ewing.`
+        ];
+        for (const suffix of candidateSuffixes) {
+            const combined = desc + suffix;
+            if (combined.length >= 140 && combined.length <= 158) {
+                return combined;
+            }
+        }
+        const fallback = `${desc} Research and analysis by Richard Ewing.`;
+        return fallback.length > 158 ? fallback.slice(0, 155) + '...' : fallback;
+    })();
+
     return {
         title: cleanTitle,
-        description: article.description,
+        description: metaDescription,
         keywords: [
             'Richard Ewing',
             'AI economist',

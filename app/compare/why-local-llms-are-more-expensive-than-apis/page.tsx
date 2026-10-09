@@ -6,8 +6,8 @@ import EmergencyTriageCard from '@/components/EmergencyTriageCard';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Why Self-Hosting AI Costs More Than Cloud APIs',
-    description: 'Learn why renting GPU cloud servers to run open source Llama models often costs 3x more than paying OpenAI or Anthropic API tokens.',
+    title: 'Why Self-Hosting AI Costs More',
+    description: 'Learn why renting GPU cloud instances to run self-hosted open source models often costs 3x more than paying commercial API tokens for actual workloads.',
     keywords: [
         'self hosting llama cost', 'gpu cloud bill vs openai api', 'slm vs api cost',
         'why hosting your own ai model is expensive', 'vllm cloud hosting cost',

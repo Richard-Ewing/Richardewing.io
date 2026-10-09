@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'AUEB Calculator FAQ & Metrics',
-    description: 'Everything you need to know about measuring AI unit economics, token costs, and feature gross margins.',
+    description: 'Everything you need to know about measuring AI unit economics, token costs, and feature gross margins. Practical financial modeling for product leaders.',
     keywords: ['AI unit economics', 'AUEB calculator', 'AI cost analysis', 'inference cost benchmark', 'AI ROI'],
     alternates: { canonical: 'https://www.richardewing.io/tools/aueb/faq' },
     openGraph: { title: 'AUEB FAQ', description: 'How to measure AI feature profitability with AUEB.', url: 'https://www.richardewing.io/tools/aueb/faq', type: 'article' },

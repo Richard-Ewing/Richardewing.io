@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'PDI vs Waydev Engineering Metrics',
-    description: 'Compare Product Debt Index valuation vs Waydev git activity analytics.',
+    title: 'PDI vs Waydev Git Analytics',
+    description: 'Compare Product Debt Index valuation with Waydev git activity analytics. Connect engineering work directly to balance sheet capitalization realities.',
     keywords: ['PDI vs Waydev', 'technical debt measurement comparison', 'engineering analytics tools', 'Waydev alternative', 'Product Debt Index'],
     alternates: { canonical: 'https://www.richardewing.io/compare/pdi-vs-waydev' },
     openGraph: { title: 'PDI vs Waydev  -  Engineering Intelligence Comparison', description: 'Economic debt measurement vs. git analytics.', url: 'https://www.richardewing.io/compare/pdi-vs-waydev', type: 'article' },

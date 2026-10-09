@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'APER vs Jellyfish Engineering Metrics',
-    description: 'Compare Revenue-Per-Engineer (APER) vs Jellyfish allocation metrics for board reporting and team efficiency.',
+    title: 'APER vs Jellyfish Allocation',
+    description: 'Compare Revenue-Per-Engineer (APER) with Jellyfish allocation data. Translate engineering team output into CFO-ready EBITDA and margin calculations.',
     keywords: ['APER vs Jellyfish', 'engineering metrics comparison', 'Jellyfish alternative', 'revenue per engineer', 'engineering productivity metrics'],
     alternates: { canonical: 'https://www.richardewing.io/compare/aper-vs-jellyfish' },
     openGraph: { title: 'APER vs Jellyfish  -  Engineering Metrics', description: 'Revenue-per-engineer economics vs. engineering management.', url: 'https://www.richardewing.io/compare/aper-vs-jellyfish', type: 'article' },

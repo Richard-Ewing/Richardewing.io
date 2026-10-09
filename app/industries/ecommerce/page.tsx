@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'E-Commerce AI Economics & Catalog Data Sprawl',
-    description: 'Audit recommendation engine inference costs, search index latency debt, and multi-channel inventory integration overhead.',
+    description: 'Audit recommendation engine inference costs, search index latency debt, and multi-channel inventory integration overhead in retail commerce systems.',
     keywords: ['ecommerce technical debt', 'ecommerce platform engineering', 'AI recommendation cost', 'checkout optimization', 'ecommerce CTO advisor', 'peak traffic scaling'],
     alternates: { canonical: 'https://www.richardewing.io/industries/ecommerce' },
     openGraph: { title: 'AI Economics for E-Commerce', description: 'Platform debt, AI personalization economics, and peak traffic scaling for e-commerce.', url: 'https://www.richardewing.io/industries/ecommerce', type: 'website' },

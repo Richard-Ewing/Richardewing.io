@@ -5,7 +5,7 @@ import ExecutiveSummaryBox from '../components/ExecutiveSummaryBox';
 
 export const metadata: Metadata = {
     title: 'Richard Ewing  -  Principal Profile',
-    description: 'Background, methodology, and published research of Richard Ewing, AI Economist and founder of Exogram.',
+    description: 'Background, methodology, and published research of Richard Ewing, AI Economist and founder of Exogram. Independent advisor to executive leadership teams.',
     keywords: principalKeywords,
     alternates: {
         canonical: 'https://www.richardewing.io/principal',

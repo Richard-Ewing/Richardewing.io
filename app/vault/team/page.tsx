@@ -6,7 +6,7 @@ import { CopyButton } from './CopyButton';
 
 export const metadata = {
     title: 'Enterprise Team Management Portal',
-    description: 'Manage seat allocations, team permissions, and diagnostic report access for your engineering organization.',
+    description: 'Manage seat allocations, team permissions, and diagnostic report access for your engineering organization. Control administrative roles and audits.',
 };
 
 export default async function TeamAdminPage() {

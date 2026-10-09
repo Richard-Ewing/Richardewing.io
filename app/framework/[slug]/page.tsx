@@ -35,8 +35,35 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         return { title: 'Framework Pillar Not Found' };
     }
     return {
-        title: `${fw.name} | Production AI Governance Framework`,
-        description: fw.overview,
+        title: {
+            absolute: `${fw.name} | Richard Ewing`,
+        },
+        description: (() => {
+            let desc = fw.overview.trim().replace(/\s+/g, ' ');
+            if (!desc.endsWith('.')) desc += '.';
+            if (desc.length >= 140 && desc.length <= 158) return desc;
+            if (desc.length > 158) return desc.slice(0, 155) + '...';
+
+            const candidateSuffixes = [
+                ` Enterprise AI governance and capital allocation framework for technology leaders and CTOs.`,
+                ` Enterprise AI governance and capital allocation framework for technology leaders.`,
+                ` Enterprise AI governance and capital allocation framework by Richard Ewing.`,
+                ` Enterprise AI governance, unit economics, and capital allocation frameworks.`,
+                ` Enterprise AI governance and capital allocation frameworks by Richard Ewing.`,
+                ` Enterprise AI governance and systems architecture frameworks.`,
+                ` Enterprise AI governance and operational frameworks.`,
+                ` Enterprise AI governance frameworks by Richard Ewing.`,
+                ` Frameworks and research by Richard Ewing.`
+            ];
+            for (const suffix of candidateSuffixes) {
+                const combined = desc + suffix;
+                if (combined.length >= 140 && combined.length <= 158) {
+                    return combined;
+                }
+            }
+            const fallback = `${desc} Enterprise AI governance frameworks by Richard Ewing.`;
+            return fallback.length > 158 ? fallback.slice(0, 155) + '...' : fallback;
+        })(),
         alternates: {
             canonical: `https://www.richardewing.io/framework/${slug}`,
         },

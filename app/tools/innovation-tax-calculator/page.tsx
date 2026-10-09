@@ -4,7 +4,7 @@ import PDITool from '../pdi/content';
 
 export const metadata: Metadata = {
     title: 'Innovation Tax Calculator',
-    description: 'Calculate how much of your R&D engineering budget is trapped in maintenance OpEx vs. genuine new product development.',
+    description: 'Calculate how much of your R&D engineering budget is trapped in maintenance OpEx vs genuine new product development. Reclaim trapped innovation budget.',
     keywords: [
         'innovation tax calculator',
         'innovation tax',

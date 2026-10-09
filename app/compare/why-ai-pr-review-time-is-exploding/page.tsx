@@ -6,8 +6,8 @@ import EmergencyTriageCard from '@/components/EmergencyTriageCard';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Why AI Code Review Time Is Exploding',
-    description: 'Learn why AI coding assistants cause pull requests to sit in review for days and how to eliminate the senior engineer review bottleneck.',
+    title: 'Why AI PR Review Time Explodes',
+    description: 'Discover why AI coding assistants cause pull requests to sit in review for days and how to eliminate the senior engineer verification bottleneck.',
     keywords: [
         'ai code review bottleneck', 'why ai pull requests take so long to review',
         'senior engineers reviewing ai code', 'vibe coding review drag',

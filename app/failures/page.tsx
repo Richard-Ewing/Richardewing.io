@@ -6,7 +6,7 @@ import { failures } from '@/lib/content/failures';
 export const metadata = {
     alternates: { canonical: 'https://www.richardewing.io/failures' },
   title: 'AI Failure Modes & Remediation Index',
-  description: 'Catalog of nine common enterprise AI failure modes, from billing shocks to governance drift, with remediation steps.',
+  description: 'Catalog of nine common enterprise AI failure modes, from billing shocks to governance drift, with remediation steps. Protect software reliability today.',
 };
 
 export default function FailuresIndexPage() {

@@ -5,8 +5,8 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import ProductBridgeCard from '@/app/components/ProductBridgeCard';
 
 export const metadata: Metadata = {
-  title: 'Richard Ewing vs Traditional Fractional CTOs',
-  description: 'Compare fixed-fee economic outcome retainers with hourly fractional CTOs. Financial engineering vs generalist consulting.',
+  title: 'Advisory vs Fractional CTOs',
+  description: 'Compare fixed-fee economic outcome retainers with hourly fractional CTOs. Align engineering roadmaps directly with EBITDA and board-level balance sheets.',
   alternates: { canonical: 'https://www.richardewing.io/compare/advisory-vs-traditional-fractional-cto' },
   openGraph: {
     title: 'Richard Ewing Advisory vs Traditional Fractional CTO Services',

@@ -12,10 +12,43 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const { slug } = await params;
     const mod = getModule(slug.join('/'));
     if (!mod) return { title: `Module Not Found: ${slug.join('/')}`, description: `Curriculum module ${slug.join('/')} not found.` };
+    const modId = mod.moduleId.length > 8 ? mod.moduleId.slice(0, 8) : mod.moduleId;
     const cleanModTitle = mod.title.length > 25 ? mod.title.slice(0, 24) + '…' : mod.title;
+    const titleStr = `${modId}: ${cleanModTitle}`;
+
+    const metaDescription = (() => {
+        let desc = mod.description.trim().replace(/\s+/g, ' ');
+        if (!desc.endsWith('.')) desc += '.';
+        if (desc.length >= 140 && desc.length <= 158) return desc;
+        if (desc.length > 158) return desc.slice(0, 155) + '...';
+
+        const trackName = mod.trackName || 'Enterprise AI';
+        const candidateSuffixes = [
+            ` Master ${trackName} and deterministic systems architecture with executive frameworks. Written for CTOs and CFOs.`,
+            ` Master ${trackName} and deterministic systems architecture with executive frameworks for engineering leaders.`,
+            ` Master ${trackName} and deterministic systems architecture with executive frameworks.`,
+            ` Master ${trackName} with executive diagnostics, benchmarks, and audit frameworks.`,
+            ` Master ${trackName} with practical executive frameworks for engineering leaders.`,
+            ` Master ${trackName} with executive frameworks for CTOs and CFOs.`,
+            ` Master ${trackName} with practical executive frameworks.`,
+            ` Forensic analysis and frameworks by Richard Ewing.`,
+            ` Master ${trackName} with executive frameworks.`,
+            ` Executive frameworks by Richard Ewing.`,
+            ` Frameworks by Richard Ewing.`
+        ];
+        for (const suffix of candidateSuffixes) {
+            const combined = desc + suffix;
+            if (combined.length >= 140 && combined.length <= 158) {
+                return combined;
+            }
+        }
+        const fallback = `${desc} Master ${trackName} with executive frameworks by Richard Ewing.`;
+        return fallback.length > 158 ? fallback.slice(0, 155) + '...' : fallback;
+    })();
+
     return {
-        title: `${mod.moduleId}: ${cleanModTitle}`,
-        description: mod.description,
+        title: titleStr,
+        description: metaDescription,
         robots: {
             index: true,
             follow: true
@@ -23,7 +56,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         alternates: { canonical: `https://www.richardewing.io/vault/curriculum/tracks/${slug.join('/')}` },
         openGraph: {
             title: `${mod.moduleId}: ${mod.title} | Curriculum | Richard Ewing`,
-            description: mod.description,
+            description: metaDescription,
             url: `https://www.richardewing.io/vault/curriculum/tracks/${slug.join('/')}`,
             type: 'article',
             images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
@@ -31,7 +64,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         twitter: {
             card: 'summary_large_image',
             title: `${mod.moduleId}: ${mod.title} | Curriculum | Richard Ewing`,
-            description: mod.description,
+            description: metaDescription,
             images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
         }
     };

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'Curated AI Engineering Courses',
-    description: 'Recommended educational resources and masterclasses for mastering AI unit economics and systems architecture.',
+    description: 'Recommended educational resources and masterclasses for mastering AI unit economics and systems architecture. Curated curriculum for software engineers.',
     keywords: [
         'free AI courses 2026', 'Anthropic courses', 'Claude courses', 'Anthropic Academy',
         'AI fluency course', 'MCP course', 'Claude API course', 'free AI training',

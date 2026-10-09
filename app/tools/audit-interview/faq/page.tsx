@@ -4,7 +4,7 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
     title: 'Audit Interview Protocol FAQ',
-    description: 'Answers to common questions regarding the hiring protocol that tests technical judgment over probabilistic syntax.',
+    description: 'Answers to common questions regarding the hiring protocol that tests technical judgment over probabilistic syntax. Evaluate senior developers fairly.',
     keywords: ['audit interview tool', 'AI technical interview', 'engineering assessment', 'judgment-based interview'],
     alternates: { canonical: 'https://www.richardewing.io/tools/audit-interview/faq' },
     openGraph: { title: 'Audit Interview FAQ', description: 'AI-powered engineering assessment that tests judgment.', url: 'https://www.richardewing.io/tools/audit-interview/faq', type: 'article' },

@@ -17,9 +17,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const pillar = PILLARS.find(p => p.slug === slug);
     if (!pillar) return {};
     
+    const cleanName = pillar.name.length > 35 ? pillar.name.slice(0, 34) + '…' : pillar.name;
     return {
-        title: `${pillar.name} Glossary & Terms | Richard Ewing`,
-        description: `Comprehensive glossary of ${pillar.name} terminology, definitions, and execution frameworks.`,
+        title: {
+            absolute: `${cleanName} Glossary | Richard Ewing`,
+        },
+        description: `Comprehensive glossary of ${pillar.name} terminology, definitions, and execution frameworks for engineering executives, CFOs, and board directors.`,
         alternates: { canonical: `https://www.richardewing.io/glossary/pillars/${slug}` }
     };
 }

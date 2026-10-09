@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'Exogram Product Roadmap 2026',
-    description: 'Upcoming release milestones for VPC deployment, multi-agent arbitration, and automated regulatory compliance.',
+    description: 'Upcoming release milestones for VPC deployment, multi-agent arbitration, and automated compliance. Track future capabilities for enterprise AI safety.',
     alternates: { canonical: 'https://www.richardewing.io/exogram/roadmap' },
 };
 

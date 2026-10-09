@@ -5,7 +5,7 @@ import { glossaryTerms } from './terms';
 
 export const metadata: Metadata = {
     title: 'AI & Engineering Economics Glossary',
-    description: 'Master the lexicon of AI unit economics, technical debt, and governance across 430+ executive definitions.',
+    description: 'Master the lexicon of AI unit economics, technical debt, and governance across 430+ executive definitions. Clear reference guide for technology leaders.',
     keywords: [
         'technology glossary', 'technical debt definition', 'AI glossary', 'SaaS metrics glossary',
         'engineering management terms', 'product management glossary', 'CTO glossary',

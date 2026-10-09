@@ -9,7 +9,7 @@ import ReportUnlocker from './unlocker';
 export const metadata = {
     alternates: { canonical: 'https://www.richardewing.io/reports/state-of-ai-engineering' },
     title: 'State of AI Engineering 2026 Report',
-    description: 'Annual industry study on enterprise AI adoption, inference cost structures, and agent runtime failure rates.',
+    description: 'Annual industry study on enterprise AI adoption, inference cost structures, and agent runtime failure rates. Benchmark your engineering roadmap today.',
 };
 
 export default function StateOfAIEngineering() {

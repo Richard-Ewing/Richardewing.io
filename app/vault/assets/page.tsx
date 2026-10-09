@@ -7,7 +7,7 @@ import { SKILLS } from '@/lib/content/skills';
 
 export const metadata = {
     title: 'Enterprise Governance Assets',
-    description: 'Downloadable financial pro-formas, legal contracts, policy-as-code manifests, and deployment templates.',
+    description: 'Downloadable financial pro-formas, legal contracts, policy-as-code manifests, and deployment templates. Proprietary toolkits for engineering leaders.',
 };
 
 export default async function AssetsPage() {

@@ -19,9 +19,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     const descriptionText = skill.description.slice(0, 155).replace(/\n/g, ' ');
 
+    const cleanTitle = skill.title.length > 38 ? skill.title.slice(0, 37) + '…' : skill.title;
+    const baseTitle = cleanTitle.endsWith('System') ? cleanTitle : `${cleanTitle} System`;
+    const titleStr = `${baseTitle} | Richard Ewing`;
+
     return {
-        title: `Deploy ${skill.title} | AI Governance Infrastructure`,
-        description: `Install deterministic controls to prevent AI failures: ` + skill.description.slice(0, 100).replace(/\n/g, ' ') + '... Learn more.',
+        title: {
+            absolute: titleStr,
+        },
+        description: (() => {
+            let desc = skill.description.trim().replace(/\s+/g, ' ');
+            if (!desc.endsWith('.')) desc += '.';
+            if (desc.length < 120) {
+                const combined = `${desc} Install deterministic runtime governance controls to prevent AI failures.`;
+                return combined.length <= 158 ? combined : desc;
+            }
+            return desc.length > 158 ? desc.slice(0, 155) + '...' : desc;
+        })(),
         alternates: { canonical: `https://www.richardewing.io/skills/${slug}` },
         openGraph: {
             title: `${skill.title} | Governance System`,

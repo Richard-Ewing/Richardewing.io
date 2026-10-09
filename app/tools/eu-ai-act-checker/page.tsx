@@ -3,7 +3,7 @@ import EUAIActChecker from './content';
 
 export const metadata: Metadata = {
     title: 'EU AI Act Compliance Assessment',
-    description: 'Determine your regulatory risk tier and technical documentation obligations under the EU AI Act.',
+    description: 'Determine your regulatory risk tier, technical documentation requirements, and statutory enforcement penalties under the 2026 EU AI Act mandate.',
     keywords: [
         'EU AI Act compliance',
         'AI governance audit',

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Boardroom Risk Matrix',
-    description: 'Aggregate software execution risk, technical debt, and AI valuation impact into an executive dashboard.',
+    description: 'Aggregate software execution risk, technical debt, and AI valuation impact into an executive dashboard. Boardroom-ready governance for directors.',
     keywords: ['Executive Board Room', 'Executive Dashboard', 'CTO Dashboard', 'CFO FinOps Dashboard', 'Enterprise Valuation Metrics'],
     openGraph: {
         title: 'Executive Board Room | Leadership Dashboards',

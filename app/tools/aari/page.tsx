@@ -3,8 +3,8 @@ import CalculatorIntentProposal from '@/app/components/calculators/CalculatorInt
 import AARITool from './content';
 
 export const metadata: Metadata = {
-    title: 'Autonomous Agent Readiness Index (AARI) | Diagnostic Tool',
-    description: 'A 15-point diagnostic evaluating codebase architecture and test harness completeness before enabling autonomous coding agents.',
+    title: 'Autonomous Agent Readiness Index (AARI)',
+    description: 'A 15-point forensic diagnostic evaluating codebase architecture and test harness completeness before deploying autonomous AI coding agents.',
     keywords: [
         'Autonomous Agent Readiness Index',
         'Claude Code readiness',

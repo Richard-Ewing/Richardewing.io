@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Executive R&D Dashboard',
-    description: 'Executive command center for visualizing technical debt valuation, APER scores, and AI unit economics.',
+    description: 'Executive command center for visualizing technical debt valuation, APER scores, and AI unit economics. Real-time telemetry for engineering leaders.',
     alternates: {
         canonical: 'https://www.richardewing.io/dashboard',
     },

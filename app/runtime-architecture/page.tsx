@@ -8,7 +8,7 @@ import InteractiveSystemsDiagram from '@/components/InteractiveSystemsDiagram';
 
 export const metadata: Metadata = {
     title: '4-Layer Agent Runtime Architecture',
-    description: 'Deterministic architecture patterns for enterprise AI agents: policy gateways, memory bounds, and cost firewalls.',
+    description: 'Deterministic architecture patterns for enterprise AI agents: policy gateways, memory bounds, and cost firewalls. Prevent runtime failures in production.',
     keywords: [
         'agent runtime architecture', 'Claude Code runtime', 'agentic runtime infrastructure',
         'runtime cognition architecture', 'constrained execution', 'bounded cognition',

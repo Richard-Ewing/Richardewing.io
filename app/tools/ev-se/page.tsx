@@ -3,7 +3,7 @@ import EVSETool from './content';
 
 export const metadata: Metadata = {
     title: 'SaaS Valuation Engine (EV-SE)',
-    description: 'Model how technical debt, execution risk, and unmanaged AI complexity impact SaaS enterprise valuation.',
+    description: 'Model how technical debt, execution risk, and unmanaged AI complexity impact SaaS enterprise valuation. Connect codebase reality to financial multiples.',
     keywords: [
         'enterprise value calculator',
         'SaaS valuation tool',

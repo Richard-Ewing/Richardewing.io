@@ -6,7 +6,7 @@ import { Shield, AlertTriangle, DollarSign, ArrowRight, Lock, Check, X } from 'l
 
 export const metadata: Metadata = {
     title: 'AI Guardrails Platform Comparison',
-    description: 'Compare Lakera, Guardrails AI, NeMo, and Exogram. Evaluate deterministic runtime controls vs probabilistic prompts.',
+    description: 'Compare Lakera, Guardrails AI, NeMo, and Exogram platforms. Evaluate deterministic runtime execution controls against probabilistic prompt wrappers.',
     keywords: ['AI guardrails comparison', 'Lakera Guard review', 'Galileo AI pricing', 'Invariant Labs review', 'AI governance platform', 'best AI guardrails 2026', 'Lakera vs Galileo', 'AI agent security platform', 'AI guardrails pricing', 'NeMo Guardrails alternative', 'Zenity AI review', 'Endor Labs AI review', 'AI coding governance', 'runtime governance vs guardrails'],
     openGraph: {
         title: 'AI Guardrails Platform Comparison 2026 - Enterprise vs Practitioner Governance',

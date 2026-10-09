@@ -8,7 +8,7 @@ import { BorderBeam } from '@/components/magicui/border-beam';
 
 export const metadata: Metadata = {
     title: 'Agentic Drift Risk Matrix',
-    description: 'Measure the exact turn-limit where AI agent state degrades, context rots, and hallucination rates increase.',
+    description: 'Measure the exact turn-limit where AI agent state degrades, context rots, and hallucination rates increase. Benchmark multi-turn agent reliability now.',
     keywords: [
         'Agentic Drift',
         'AI Reliability',

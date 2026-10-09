@@ -7,7 +7,7 @@ import { redirect } from 'next/navigation';
 
 export const metadata: Metadata = {
     title: 'Download AI Integration System Assets',
-    description: 'Download complete deployment manifests, policy schemas, and implementation guides for enterprise AI integration.',
+    description: 'Download deployment manifests, policy schemas, and implementation guides for enterprise AI integration. Deploy deterministic runtime controls in minutes.',
     robots: { index: false, follow: false },
 };
 

@@ -35,8 +35,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const titleStr = searchTitle[slug] || framework.name;
 
     return {
-        title: `${titleStr} | Richard Ewing Framework`,
-        description: framework.definition.replace(/\n/g, ' ').slice(0, 155).trim() + '...',
+        title: {
+            absolute: `${framework.name} Framework | Richard Ewing`,
+        },
+        description: (() => {
+            let desc = framework.definition.replace(/\n/g, ' ').trim();
+            if (!desc.endsWith('.')) desc += '.';
+            if (desc.length < 120) {
+                const combined = `${desc} Enterprise systems architecture and engineering economics framework by Richard Ewing.`;
+                return combined.length <= 158 ? combined : desc;
+            }
+            return desc.length > 158 ? desc.slice(0, 155) + '...' : desc;
+        })(),
         keywords: [
             framework.name.toLowerCase(), `${framework.name.toLowerCase()} framework`,
             `what is ${framework.name.toLowerCase()}`, 'Richard Ewing', 'AI Economist',
