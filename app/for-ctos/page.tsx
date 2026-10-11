@@ -112,7 +112,7 @@ export default function ForCTOsPage() {
                                 </h2>
                             </div>
                             <Link 
-                                href="/research/publications"
+                                href="/publications"
                                 className="text-xs font-mono font-bold text-cyan-800 hover:text-cyan-900 flex items-center gap-1 uppercase tracking-wider"
                             >
                                 Explore Full Corpus ({RESEARCH_CORPUS.length} Works) &rarr;

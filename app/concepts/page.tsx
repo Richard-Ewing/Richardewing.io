@@ -45,10 +45,16 @@ export default function ResearchConceptsIndexPage() {
 
           <div className="flex flex-wrap gap-3 pt-2">
             <Link
-              href="/research/publications"
+              href="/publications"
               className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-cyan-900 text-white hover:bg-cyan-800 transition shadow-sm"
             >
-              167+ Publications Catalog →
+              174+ Publications Catalog →
+            </Link>
+            <Link
+              href="/reality-check"
+              className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-purple-900 text-white hover:bg-purple-800 transition shadow-sm"
+            >
+              The Reality Check Demo →
             </Link>
             <a
               href="/api/csp/v1/export"

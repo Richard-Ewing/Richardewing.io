@@ -496,5 +496,95 @@ export const richardEwingArticleTerms: GlossaryTerm[] = [
         relatedArticles: [
             { title: "Things I Got Wrong: A Founder's Post-Mortem on Building AI Products", url: 'https://www.linkedin.com/pulse/things-i-got-wrong-founders-post-mortem-building-ai-products-ewing-gr10c/' }
         ]
+    },
+    {
+        slug: 'section-174-capitalization',
+        title: 'Section 174 AI Software Capitalization',
+        category: 'Richard Ewing Frameworks',
+        definition: `Section 174 AI Software Capitalization is a corporate software finance risk formulated by Richard Ewing. When engineering teams accelerate code output with autonomous agents, finance departments that treat engineering payroll as routine operational expenses face unexpected phantom taxable income and millions in deferred tax deductions.\n\nUnder IRS Section 174, software development expenses must be amortized over 5 years (domestic) or 15 years (foreign) rather than expensed in the year incurred. Multiplying code volume without auditing sprint tasks shifts developer salaries from immediately deductible maintenance into amortizable capital investments, triggering severe cash tax bills.`,
+        whyItMatters: `Faster code generation creates sudden balance sheet tax penalties unless sprint tasks are forensically separated between maintenance OpEx and capitalizable R&D.`,
+        faqs: [
+            { question: 'What is Section 174 AI Software Capitalization?', answer: 'The tax liability created when AI-accelerated code generation causes engineering payroll to be classified as amortizable software development rather than deductible operating expenses.' },
+            { question: 'How do CFOs defend against Section 174 tax drag?', answer: 'By auditing git commits and Jira tickets to document that bug remediation, platform maintenance, and site reliability operations remain immediate OpEx.' }
+        ],
+        relatedTerms: ['negative-carry-code-crisis', 'product-debt-index', 'synthetic-cogs', 'innovation-tax'],
+        relatedArticles: [
+            { title: 'The Section 174 AI Tax Trap: Software Capitalization in the Agentic Era', url: 'https://theaieconomist.beehiiv.com/p/section-174-ai-tax-trap' }
+        ]
+    },
+    {
+        slug: 'hybrid-cloud-local-runtime',
+        title: 'Hybrid Cloud-Local Agent Architecture',
+        category: 'Richard Ewing Frameworks',
+        definition: `Hybrid Cloud-Local Agent Architecture is a dual-tier systems architecture codified in Google Antigravity ADR-0007. It divides autonomous developer agent workloads between local on-device neural runtimes (LiteRT executing Gemma 4 26B) and remote cloud frontier models (Gemini 3.8 Flash High).\n\nHigh-frequency, latency-critical operations like terminal monitoring, syntax checking, and diff formatting execute on local developer hardware at zero token cost and sub-50ms latency. Multi-step Euclidean reasoning, strategic planning, and security audits are dispatched to cloud frontier models, slashing cloud token expenses by over 80% while keeping proprietary code off remote networks.`,
+        whyItMatters: `Relying purely on cloud APIs creates massive token bills and rate-limit latency; running purely locally lacks reasoning depth. A hybrid architecture combines zero-cost local agility with frontier intelligence.`,
+        faqs: [
+            { question: 'What is Hybrid Cloud-Local Agent Architecture?', answer: 'An architectural pattern where high-frequency agent coding loops run on local on-device models while complex reasoning runs on cloud frontier APIs.' },
+            { question: 'How does Google Antigravity implement hybrid execution?', answer: 'Antigravity 2.0 pairs local LiteRT Gemma runtimes with cloud Gemini 3.8 Flash High reasoning under unified prompt directives.' }
+        ],
+        relatedTerms: ['deterministic-execution-control', 'ai-tokenomics', 'supervisory-review-queue', 'systems-governor'],
+        relatedArticles: [
+            { title: 'Google Antigravity 2.0: Architecting the Hybrid Cloud-Local Agent Engine', url: 'https://www.richardewing.io/architecture' }
+        ]
+    },
+    {
+        slug: 'sovereign-dual-chamber-governance',
+        title: 'Dual-Chamber Sovereign AI Governance',
+        category: 'Richard Ewing Frameworks',
+        definition: `Dual-Chamber Sovereign AI Governance is an executive operating system formulated by Richard Ewing that splits AI oversight into two specialized bodies: Chamber 1 (The Council of Titans) sets strategic invariants, customer obsession mandates, and ruthless subtraction rules; Chamber 2 (The War Room General Staff) enforces automated, sub-50ms deterministic clearance across human voice, copyright legal safe harbors, SEO authority, unit economics, and security hardening.\n\nThis separation eliminates committee paralysis: strategic boundaries are set once at the board level, while production releases are cleared by automated pass/fail verification pipelines.`,
+        whyItMatters: `Traditional corporate AI committees mix high-level vision with technical compliance, creating bureaucratic gridlock. Dual-chamber governance allows companies to ship fast without blind spots.`,
+        faqs: [
+            { question: 'What is Dual-Chamber Sovereign AI Governance?', answer: 'An organizational framework separating high-level strategic invariants (Titans) from automated operational clearance gates (War Room).' },
+            { question: 'Why do single AI committees fail?', answer: 'They attempt to evaluate both business strategy and deep technical security simultaneously, leading to endless meetings and zero code controls.' }
+        ],
+        relatedTerms: ['board-level-ai-governance', 'deterministic-execution-control', 'ai-liability-gradient', 'systems-governor'],
+        relatedArticles: [
+            { title: 'Dual-Chamber Sovereign AI Governance: From Board Room Titans to Operational War Rooms', url: 'https://www.linkedin.com/pulse/dual-chamber-sovereign-governance-richard-ewing/' }
+        ]
+    },
+    {
+        slug: 'ai-architecture-decision-records',
+        title: 'AI-Generated Architecture Decision Records',
+        category: 'Richard Ewing Frameworks',
+        definition: `AI-Generated Architecture Decision Records is an autonomous engineering documentation standard based on the Chris Nevin protocol. Autonomous coding agents derive structured, 5-heading ADRs (Context, Decision, Deciders, Status, Consequences) directly from git diffs, ticket logs, and terminal outputs.\n\nConsequences are explicitly split into Positive and Negative/Considerations to force honest trade-off evaluation and eliminate confirmation bias. Keeping ADR derivation automated inside pre-commit hooks prevents architectural drift in high-velocity monorepos.`,
+        whyItMatters: `When AI agents produce dozens of pull requests a week, human documentation lag causes rapid codebase decay. Deriving ADRs directly from code diffs turns pull requests into permanent system memory.`,
+        faqs: [
+            { question: 'What is an AI-Generated Architecture Decision Record?', answer: 'A structured technical document created autonomously by an AI agent from code diffs to explain why an architectural decision was made and what trade-offs were accepted.' },
+            { question: 'What is the Chris Nevin 5-heading ADR schema?', answer: 'Context, Decision, Deciders, Status, and Consequences (divided into Positive and Negative/Considerations).' }
+        ],
+        relatedTerms: ['supervisory-review-queue', 'spec-driven-development', 'product-debt-index', 'induced-demand'],
+        relatedArticles: [
+            { title: 'AI-Generated Architecture Decision Records: Preventing Agentic Monorepo Drift', url: 'https://builtin.com/articles/ai-generated-architecture-decision-records' }
+        ]
+    },
+    {
+        slug: 'ai-resume-detection-forensics',
+        title: 'Enterprise ATS AI Detection Forensics',
+        category: 'Richard Ewing Frameworks',
+        definition: `Enterprise ATS AI Detection Forensics is the empirical analysis of candidate screening rejection dynamics within corporate Applicant Tracking Systems (Workday, Greenhouse, Taleo). Formulated in the CareerWin 2026 Benchmark Study of 12,000 resumes, it documents a 74% automated discard rate for static PDF resumes due to syntax parsing collisions and AI token detection.\n\nEvaluating candidate competence requires shifting from flat PDF resumes to dynamic, relational Career Operating Systems backed by verified code and system architecture specs.`,
+        whyItMatters: `Mass AI resume generation has broken traditional hiring funnels; automated ATS filters now discard qualified candidates who rely on static text documents.`,
+        faqs: [
+            { question: 'What is Enterprise ATS AI Detection Forensics?', answer: 'The empirical analysis of how corporate ATS software automatically discards resumes containing AI token patterns or flawed PDF schemas.' },
+            { question: 'Why are static PDF resumes failing?', answer: 'Because automated ATS parsers reject unverified text and cannot capture dynamic, verifiable technical problem-solving.' }
+        ],
+        relatedTerms: ['aper-metric', 'context-engine-architecture', 'platform-engine-leverage'],
+        relatedArticles: [
+            { title: '2026 Enterprise ATS & AI Resume Benchmark Study', url: 'https://careerwin.ai/research/2026-enterprise-ats-ai-resume-benchmark-study' }
+        ]
+    },
+    {
+        slug: 'living-reality-check',
+        title: 'The Interactive Reality Check',
+        category: 'Richard Ewing Frameworks',
+        definition: `The Interactive Reality Check is an executive diagnostic framework that compares speculative AI vendor promises and consulting hype directly against observed production telemetry. It measures the delta between sales demos and production reality across token cost collapse, PR review queue congestion, tool redundancy, and EBITDA margin leakage.\n\nField studies of 42 enterprise generative AI pilots show that 83% stall before enterprise deployment due to unbudgeted supervisory review queues and margin squeeze.`,
+        whyItMatters: `Evaluating AI tools based on sales demos leads to stranded capital and bloated SaaS subscriptions. The Reality Check grounds procurement in production telemetry.`,
+        faqs: [
+            { question: 'What is The Reality Check?', answer: 'An interactive diagnostic on richardewing.io that pits corporate AI marketing claims against verified production metrics and financial realities.' },
+            { question: 'Why do so many enterprise AI pilots fail?', answer: 'Because they are evaluated on superficial syntax speed rather than ongoing token costs, test verification, and review burden.' }
+        ],
+        relatedTerms: ['ai-hype-cycle-exhaustion', 'math-of-ruin', 'cpo-feature-margin-floor', 'product-debt-index'],
+        relatedArticles: [
+            { title: 'The Reality Check: Auditing the Gap Between AI Demos and Production Telemetry', url: 'https://www.cio.com/article/4228912/the-reality-check-ai-demos-vs-production-telemetry.html' }
+        ]
     }
 ];

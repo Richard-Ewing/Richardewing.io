@@ -40,6 +40,35 @@ const TIER_A_SLUGS = new Set([
 
 export default clerkMiddleware(async (auth, req) => {
   const pathname = req.nextUrl.pathname;
+  const userAgent = (req.headers.get('user-agent') || '').toLowerCase();
+
+  // 1. Instant Edge Shield against Rogue Scrapers & Vulnerability Probes (0.01ms CPU)
+  if (
+    userAgent.includes('nginx-ssl early hints') ||
+    pathname.endsWith('.php') ||
+    pathname.endsWith('.env') ||
+    pathname.endsWith('.bak') ||
+    pathname.endsWith('.config') ||
+    pathname.endsWith('.yml') ||
+    pathname.endsWith('.yaml') ||
+    pathname.endsWith('.sql') ||
+    pathname.includes('wp-admin') ||
+    pathname.includes('wp-json') ||
+    pathname.includes('wp-includes') ||
+    pathname.includes('wp-content') ||
+    pathname.includes('.env') ||
+    pathname.includes('setup-config') ||
+    pathname.includes('wlwmanifest') ||
+    pathname.includes('xmlrpc')
+  ) {
+    return new NextResponse('Not Found', {
+      status: 404,
+      headers: {
+        'Content-Type': 'text/plain',
+        'Cache-Control': 'public, max-age=86400, s-maxage=86400',
+      },
+    });
+  }
 
   // Edge-level 308 Permanent Redirect for Tier C and non-indexed compare pages -> /tools
   if (pathname.startsWith('/compare/')) {
@@ -63,13 +92,7 @@ export default clerkMiddleware(async (auth, req) => {
 
 export const config = {
   matcher: [
-    // Only run for API routes, authenticated areas, and compare redirects
-    '/(api|trpc)(.*)',
-    '/vault(.*)',
-    '/admin(.*)',
-    '/sign-in(.*)',
-    '/sign-up(.*)',
-    '/ai-integration(.*)',
-    '/compare(.*)',
+    // Skip Next.js static bundles, static images, and public asset directories
+    '/((?!_next/static|_next/image|assets/|favicon.ico|icon.png).*)',
   ],
 };

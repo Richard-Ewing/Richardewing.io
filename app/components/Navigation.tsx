@@ -429,6 +429,9 @@ const Navigation = () => {
                                 <Link href="/research" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
                                     Research Corpus
                                 </Link>
+                                <Link href="/publications" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors text-purple-900 font-bold">
+                                    Publications
+                                </Link>
                             </div>
 
                             {/* Mobile Actions & CTA Buttons */}

@@ -174,7 +174,7 @@ export default function ForGeneralCounselsPage() {
                                 </h2>
                             </div>
                             <Link 
-                                href="/research/publications"
+                                href="/publications"
                                 className="text-xs font-mono font-bold text-slate-800 hover:text-black flex items-center gap-1 uppercase tracking-wider"
                             >
                                 Explore Full Corpus ({RESEARCH_CORPUS.length} Works) &rarr;

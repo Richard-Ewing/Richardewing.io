@@ -60,6 +60,9 @@ const resourceSections = [
         description: 'Published insights on AI economics, AI, and engineering leadership.',
         icon: '📝',
         items: [
+            { name: 'Publications Catalog (174+ Works)', description: 'Full catalog across CIO.com, Built In, Beehiiv, LinkedIn', href: '/publications' },
+            { name: 'Canonical Concepts (140+ Frameworks)', description: 'The intellectual operating system of Richard Ewing research', href: '/concepts' },
+            { name: 'The AI Reality Check (Interactive Demo)', description: 'Audit the delta between AI sales demos and production telemetry', href: '/reality-check' },
             { name: 'All Articles', description: 'Published in Built In, Mind the Product, CIO.com', href: '/articles' },
             { name: 'AI Economist Doctrine', description: 'The 4-principle framework for engineering capital allocation', href: '/doctrine' },
             { name: 'Manifesto', description: 'Philosophy behind the AI Economist approach', href: '/manifesto' },

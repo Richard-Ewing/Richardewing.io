@@ -1203,5 +1203,69 @@ export const frameworks = [
             { title: 'Your AI agent may have made the decision, but your company owns the risk', publication: 'CIO.com', date: 'Sep 2026', url: 'https://www.cio.com/article/4223955/your-ai-agent-may-have-made-the-decision-but-your-company-owns-the-risk.html' }
         ],
         relatedTool: { name: 'Board AI Governance Scorecard', url: '/tools/board-risk-scorecard' }
+    },
+    {
+        slug: 'section-174-capitalization',
+        name: 'Section 174 AI Software Capitalization',
+        definition: `Section 174 AI Software Capitalization is a corporate software finance framework formulated by Richard Ewing. Accelerating code output with autonomous AI agents causes finance departments that treat engineering payroll as routine operational expenses to face unexpected phantom taxable income and delayed cash deductions.\n\nUnder IRS Section 174, software development expenses must be amortized over 5 years (domestic) or 15 years (foreign) rather than expensed in the year incurred. Multiplying code volume without auditing sprint tasks shifts developer salaries from immediately deductible maintenance into amortizable capital investments, triggering severe cash tax bills.`,
+        whyItMatters: `Faster code generation creates sudden balance sheet tax penalties unless sprint tasks are forensically separated between maintenance OpEx and capitalizable R&D.`,
+        howToCalculate: [
+            'Audit engineering pull requests to verify task classifications: maintenance OpEx vs capitalizable R&D',
+            'Model domestic 5-year vs foreign 15-year amortization schedules against projected revenue',
+            'Calculate phantom taxable income using the Section 174 AI Tax Calculator',
+            'Present an EBITDA preservation strategy to the Board Audit Committee'
+        ],
+        relatedArticles: [
+            { title: 'The Section 174 AI Tax Trap: Software Capitalization in the Agentic Era', publication: 'Beehiiv', date: 'Oct 2026', url: 'https://theaieconomist.beehiiv.com/p/section-174-ai-tax-trap' }
+        ],
+        relatedTool: { name: 'Section 174 AI Tax Calculator', url: '/tools/section-174' }
+    },
+    {
+        slug: 'hybrid-cloud-local-runtime',
+        name: 'Hybrid Cloud-Local Agent Architecture',
+        definition: `Hybrid Cloud-Local Agent Architecture is a dual-tier systems architecture codified in Google Antigravity ADR-0007. It divides autonomous developer agent workloads between local on-device neural runtimes (LiteRT executing Gemma 4 26B) and remote cloud frontier models (Gemini 3.8 Flash High).\n\nHigh-frequency, latency-critical operations like terminal monitoring, syntax checking, and diff formatting execute on local developer hardware at zero token cost and sub-50ms latency. Multi-step Euclidean reasoning, strategic planning, and security audits are dispatched to cloud frontier models, slashing cloud token expenses by over 80% while keeping proprietary code off remote networks.`,
+        whyItMatters: `Relying purely on cloud APIs creates massive token bills and rate-limit latency; running purely locally lacks reasoning depth. A hybrid architecture combines zero-cost local agility with frontier intelligence.`,
+        howToCalculate: [
+            'Route syntax validation, file diffing, and terminal monitoring to local LiteRT runtimes',
+            'Dispatch architectural synthesis and external multi-file planning to cloud frontier models',
+            'Enforce deterministic terminal pre-commit compiler checks before merging worktree changes',
+            'Benchmark developer iteration speed and monthly token consumption via Antigravity metrics'
+        ],
+        relatedArticles: [
+            { title: 'Google Antigravity 2.0: Architecting the Hybrid Cloud-Local Agent Engine', publication: 'CIO.com', date: 'Oct 2026', url: 'https://www.richardewing.io/architecture' }
+        ],
+        relatedTool: { name: 'SLM vs API Arbitrage Simulator', url: '/tools/slm-vs-api' }
+    },
+    {
+        slug: 'sovereign-dual-chamber-governance',
+        name: 'Dual-Chamber Sovereign AI Governance',
+        definition: `Dual-Chamber Sovereign AI Governance is an executive operating system formulated by Richard Ewing that splits AI oversight into two specialized bodies: Chamber 1 (The Council of Titans) sets strategic invariants, customer obsession mandates, and ruthless subtraction rules; Chamber 2 (The War Room General Staff) enforces automated, sub-50ms deterministic clearance across human voice, copyright legal safe harbors, SEO authority, unit economics, and security hardening.\n\nThis separation eliminates committee paralysis: strategic boundaries are set once at the board level, while production releases are cleared by automated pass/fail verification pipelines.`,
+        whyItMatters: `Traditional corporate AI committees mix high-level vision with technical compliance, creating bureaucratic gridlock. Dual-chamber governance allows companies to ship fast without blind spots.`,
+        howToCalculate: [
+            'Establish Chamber 1 (Titans) non-negotiable strategic invariants: radical subtraction, zero secret leaks, customer flywheel',
+            'Deploy Chamber 2 (War Room) deterministic automated verification gates prior to production deployment',
+            'Enforce the 3-Tier clearance hierarchy: Active Triad (every commit), Domain Gatekeepers, and Deep Bench',
+            'Audit corporate AI liability gradient using the Board AI Governance Scorecard'
+        ],
+        relatedArticles: [
+            { title: 'Dual-Chamber Sovereign AI Governance: From Board Room Titans to Operational War Rooms', publication: 'LinkedIn', date: 'Oct 2026', url: 'https://www.linkedin.com/pulse/dual-chamber-sovereign-governance-richard-ewing/' }
+        ],
+        relatedTool: { name: 'Enterprise SOW & Governance Generator', url: '/war-room' }
+    },
+    {
+        slug: 'ai-architecture-decision-records',
+        name: 'AI-Generated Architecture Decision Records',
+        definition: `AI-Generated Architecture Decision Records is an autonomous engineering documentation standard based on the Chris Nevin protocol. Autonomous coding agents derive structured, 5-heading ADRs (Context, Decision, Deciders, Status, Consequences) directly from git diffs, ticket logs, and terminal outputs.\n\nConsequences are explicitly split into Positive and Negative/Considerations to force honest trade-off evaluation and eliminate confirmation bias. Keeping ADR derivation automated inside pre-commit hooks prevents architectural drift in high-velocity monorepos.`,
+        whyItMatters: `When AI agents produce dozens of pull requests a week, human documentation lag causes rapid codebase decay. Deriving ADRs directly from code diffs turns pull requests into permanent system memory.`,
+        howToCalculate: [
+            'Derive 5-heading ADRs autonomously from git diffs using pre-commit agent hooks',
+            'Require explicit positive and negative trade-off scoring before code lands in main',
+            'Store all ADRs in docs/adr/ with standardized numbering and master README indexing',
+            'Audit monorepo architectural continuity during QA verification passes'
+        ],
+        relatedArticles: [
+            { title: 'AI-Generated Architecture Decision Records: Preventing Agentic Monorepo Drift', publication: 'Built In', date: 'Oct 2026', url: 'https://builtin.com/articles/ai-generated-architecture-decision-records' }
+        ],
+        relatedTool: { name: 'Product Debt Index (PDI)', url: '/tools/pdi' }
     }
 ];
