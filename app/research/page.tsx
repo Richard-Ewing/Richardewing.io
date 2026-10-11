@@ -124,7 +124,7 @@ export default function ResearchPage() {
                     </p>
 
                     <div className="mt-8 flex flex-wrap gap-4">
-                        <Link href="/publications" className="px-5 py-3 rounded-xl bg-cyan-900 text-white font-mono font-bold text-xs hover:bg-cyan-800 transition shadow-sm">
+                        <Link href="/research/publications" className="px-5 py-3 rounded-xl bg-cyan-900 text-white font-mono font-bold text-xs hover:bg-cyan-800 transition shadow-sm">
                             Browse Publications Catalog (174+ Works) →
                         </Link>
                         <Link href="/concepts" className="px-5 py-3 rounded-xl bg-zinc-900 text-white font-mono font-bold text-xs hover:bg-zinc-800 transition shadow-sm">

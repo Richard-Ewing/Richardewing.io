@@ -16,7 +16,7 @@ export default function SiteFooter() {
               <span>EXPLORE</span>
               <Link href="/research">Research</Link>
               <Link href="/concepts">Concepts</Link>
-              <Link href="/publications">Publications</Link>
+              <Link href="/research/publications">Publications</Link>
               <Link href="/framework">Frameworks</Link>
               <Link href="/reality-check">Reality Check</Link>
             </div>

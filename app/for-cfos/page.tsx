@@ -180,7 +180,7 @@ export default function ForCFOsPage() {
                                 </h2>
                             </div>
                             <Link 
-                                href="/publications"
+                                href="/research/publications"
                                 className="text-xs font-mono font-bold text-emerald-700 hover:text-emerald-900 flex items-center gap-1 uppercase tracking-wider"
                             >
                                 Explore Full Corpus ({RESEARCH_CORPUS.length} Works) &rarr;

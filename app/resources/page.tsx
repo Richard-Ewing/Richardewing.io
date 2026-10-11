@@ -60,7 +60,7 @@ const resourceSections = [
         description: 'Published insights on AI economics, AI, and engineering leadership.',
         icon: '📝',
         items: [
-            { name: 'Publications Catalog (174+ Works)', description: 'Full catalog across CIO.com, Built In, Beehiiv, LinkedIn', href: '/publications' },
+            { name: 'Publications Catalog (174+ Works)', description: 'Full catalog across CIO.com, Built In, Beehiiv, LinkedIn', href: '/research/publications' },
             { name: 'Canonical Concepts (140+ Frameworks)', description: 'The intellectual operating system of Richard Ewing research', href: '/concepts' },
             { name: 'The AI Reality Check (Interactive Demo)', description: 'Audit the delta between AI sales demos and production telemetry', href: '/reality-check' },
             { name: 'All Articles', description: 'Published in Built In, Mind the Product, CIO.com', href: '/articles' },

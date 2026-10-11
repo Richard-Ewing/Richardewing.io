@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: 'Research Publications & Published Works',
   description: 'Over 174 published works on engineering economics, AI capital management, and runtime governance across CIO.com, HackerNoon, Built In, Beehiiv, and LinkedIn.',
   alternates: {
-    canonical: 'https://www.richardewing.io/publications',
+    canonical: 'https://www.richardewing.io/research/publications',
   },
   openGraph: {
     title: 'Research Publications & Published Works | Richard Ewing',
     description: 'Over 174 published works on engineering economics, AI capital management, and runtime governance. Sourced from CIO.com, HackerNoon, Built In, Beehiiv, and LinkedIn.',
-    url: 'https://www.richardewing.io/publications',
+    url: 'https://www.richardewing.io/research/publications',
     type: 'website',
     images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
   },
@@ -58,6 +58,12 @@ export default function PublicationsPage() {
               className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-cyan-900 text-white hover:bg-cyan-800 transition shadow-sm"
             >
               Canonical Concepts Directory →
+            </Link>
+            <Link
+              href="/reality-check"
+              className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-purple-900 text-white hover:bg-purple-800 transition shadow-sm"
+            >
+              Live Reality Check Demo →
             </Link>
             <a
               href="/api/csp/v1/export"

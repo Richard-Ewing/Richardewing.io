@@ -313,7 +313,7 @@ export const TIER9_CONCEPTS: ConceptNode[] = [
         channel: 'ENGINEERING_RUNTIME',
         headline: 'Deploy Local LiteRT & Gemma 4 Runtimes',
         subtext: 'Codify ADR-0007 locally on developer machines to run high-frequency agent tool calls with zero cloud egress.',
-        actionUrl: '/publications',
+        actionUrl: '/research/publications',
         actionLabel: 'Inspect Architecture Spec',
         targetRole: 'Staff Systems Architect'
       }
@@ -632,7 +632,7 @@ export const TIER9_CONCEPTS: ConceptNode[] = [
         channel: 'CAREER_INTELLIGENCE',
         headline: 'Inspect 2026 ATS Benchmark Study',
         subtext: 'Review empirical data on 12,000 resumes and the 74% automated ATS rejection rate.',
-        actionUrl: '/publications',
+        actionUrl: '/research/publications',
         actionLabel: 'Read Research Report',
         targetRole: 'Technical Executives & Career Strategists'
       }
@@ -791,7 +791,7 @@ export const TIER9_CONCEPTS: ConceptNode[] = [
         channel: 'ENGINEERING_RUNTIME',
         headline: 'Install Chris Nevin ADR Protocol Hooks',
         subtext: 'Enforce mandatory 5-heading architectural decision logging on every pull request and agent refactor.',
-        actionUrl: '/publications',
+        actionUrl: '/research/publications',
         actionLabel: 'View Protocol Spec',
         targetRole: 'Lead Software Architect'
       }

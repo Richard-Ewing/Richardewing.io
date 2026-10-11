@@ -57,7 +57,7 @@ export function Footer() {
                             <li><Link href="/case-studies" className="text-amber-900 font-extrabold hover:text-zinc-900 transition-colors">Case Studies</Link></li>
                             <li><Link href="/framework" className="text-zinc-950 hover:text-zinc-900 transition-colors">Framework</Link></li>
                             <li><Link href="/concepts" className="text-zinc-950 hover:text-zinc-900 transition-colors">Canonical Concepts</Link></li>
-                            <li><Link href="/publications" className="text-cyan-950 font-bold hover:text-zinc-900 transition-colors">Publications Catalog</Link></li>
+                            <li><Link href="/research/publications" className="text-cyan-950 font-bold hover:text-zinc-900 transition-colors">Publications Catalog</Link></li>
                             <li><Link href="/reality-check" className="text-purple-900 font-extrabold hover:text-zinc-900 transition-colors">The Reality Check</Link></li>
                             <li><Link href="/compare" className="text-zinc-950 hover:text-zinc-900 transition-colors">Platform Comparisons</Link></li>
                             <li><Link href="/industries" className="text-zinc-950 hover:text-zinc-900 transition-colors">Industry Briefings</Link></li>

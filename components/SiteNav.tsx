@@ -15,7 +15,7 @@ export default function SiteNav() {
         <nav className="desktop-nav">
           <Link href="/research">Research</Link>
           <Link href="/concepts">Concepts</Link>
-          <Link href="/publications">Publications</Link>
+          <Link href="/research/publications">Publications</Link>
           <Link href="/framework">Frameworks</Link>
           <Link href="/about">About</Link>
         </nav>
@@ -34,7 +34,7 @@ export default function SiteNav() {
         <div className="mobile-panel">
           <Link href="/research" onClick={() => setOpen(false)}>Research</Link>
           <Link href="/concepts" onClick={() => setOpen(false)}>Concepts</Link>
-          <Link href="/publications" onClick={() => setOpen(false)}>Publications</Link>
+          <Link href="/research/publications" onClick={() => setOpen(false)}>Publications</Link>
           <Link href="/framework" onClick={() => setOpen(false)}>Frameworks</Link>
           <Link href="/about" onClick={() => setOpen(false)}>About</Link>
           <Link href="/start-here" onClick={() => setOpen(false)}>Start here ↗</Link>

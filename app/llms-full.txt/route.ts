@@ -218,7 +218,7 @@ Exogram is a verification infrastructure platform for AI, founded by Richard Ewi
 
 Richard Ewing's complete research corpus comprises over 174 published works and 140 canonical concepts spanning AI economics, runtime governance, software capital, and engineering leadership.
 
-- **Publications Catalog (174+ Works)**: https://www.richardewing.io/publications
+- **Publications Catalog (174+ Works)**: https://www.richardewing.io/research/publications
 - **Canonical Concepts Graph (140+ Concepts)**: https://www.richardewing.io/concepts
 - **The Living AI Reality Check**: https://www.richardewing.io/reality-check
 - **Google Antigravity 2.0 Hybrid Architecture**: https://www.richardewing.io/architecture

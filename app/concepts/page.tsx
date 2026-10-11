@@ -45,7 +45,7 @@ export default function ResearchConceptsIndexPage() {
 
           <div className="flex flex-wrap gap-3 pt-2">
             <Link
-              href="/publications"
+              href="/research/publications"
               className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-cyan-900 text-white hover:bg-cyan-800 transition shadow-sm"
             >
               174+ Publications Catalog →

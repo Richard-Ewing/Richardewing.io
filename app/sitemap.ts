@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/privacy', '/privacy-policy', '/disclaimer', '/disclaimers', '/refunds', '/refund-policy',
         '/frameworks', '/frameworks/innovation-tax', '/frameworks/product-debt-index',
         '/frameworks/technical-insolvency-date', '/frameworks/synthetic-cogs',
-        '/advisory', '/research/concepts', '/research/publications', '/principal', '/trust',
+        '/advisory', '/research/concepts', '/principal', '/trust',
         '/tools/technical-debt-calculator', '/tools/code-quality-calculator',
         '/tools/vibe-coding-debt-calculator', '/tools/synthetic-debt-calculator',
         '/tools/ai-cost-calculator', '/tools/llm-cost-calculator',
@@ -128,7 +128,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // === CONTENT PAGES ===
     add(`${baseUrl}/research`, 'weekly', 0.95);
-    add(`${baseUrl}/publications`, 'weekly', 0.95);
+    add(`${baseUrl}/research/publications`, 'weekly', 0.95);
     add(`${baseUrl}/articles`, 'weekly', 0.8);
     add(`${baseUrl}/briefings`, 'monthly', 0.7);
     add(`${baseUrl}/newsletter`, 'weekly', 0.8);
