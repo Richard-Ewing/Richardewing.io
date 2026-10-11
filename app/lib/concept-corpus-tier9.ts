@@ -139,12 +139,24 @@ export const TIER9_CONCEPTS: ConceptNode[] = [
       financialImpact: 'Millions of dollars in delayed cash tax relief and balance sheet tax liability.',
       operationalBottleneck: 'Finance and engineering lack automated reconciliation between git pull requests and tax schedules.',
       primaryPathway: {
-        destination: 'EXECUTIVE_ADVISORY',
+        destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'ADVISES_ON',
+        channel: 'EXECUTIVE_ADVISORY',
         headline: 'Forensic Section 174 Capitalization Audit',
         subtext: 'We inspect your pull requests, ticket logs, and accounting entries to separate deductible maintenance OpEx from amortizable R&D capital.',
-        actionUrl: '/services',
-        actionLabel: 'Schedule CFO Capital Audit',
+        actionUrl: '/for-cfos',
+        actionLabel: 'Explore CFO Advisory',
         targetRole: 'Chief Financial Officer'
+      },
+      secondaryPathway: {
+        destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'MEASURES',
+        channel: 'EXECUTIVE_ADVISORY',
+        headline: 'Run Section 174 Tax Liability Diagnostic',
+        subtext: 'Quantify balance sheet tax exposure and phantom income from AI-accelerated sprint velocity.',
+        actionUrl: '/tools/section-174',
+        actionLabel: 'Open Tax Calculator',
+        targetRole: 'Director of Finance'
       }
     }
   },
@@ -286,12 +298,24 @@ export const TIER9_CONCEPTS: ConceptNode[] = [
       financialImpact: 'Skyrocketing variable token OpEx exceeding developer hardware capitalization budgets.',
       operationalBottleneck: 'Agents stall waiting for remote API responses on basic terminal and formatting tasks.',
       primaryPathway: {
-        destination: 'EXECUTIVE_ADVISORY',
+        destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'ADVISES_ON',
+        channel: 'EXECUTIVE_ADVISORY',
         headline: 'Enterprise Hybrid AI Architecture Briefing',
         subtext: 'We design and deploy sovereign hybrid developer environments that cut cloud token spend while protecting codebase confidentiality.',
-        actionUrl: '/services',
-        actionLabel: 'Book Architecture Consultation',
+        actionUrl: '/for-ctos',
+        actionLabel: 'Explore CTO Architecture',
         targetRole: 'Chief Technology Officer'
+      },
+      secondaryPathway: {
+        destination: 'EXOGRAM_SOFTWARE',
+        relationshipType: 'OPERATIONALIZES',
+        channel: 'ENGINEERING_RUNTIME',
+        headline: 'Deploy Local LiteRT & Gemma 4 Runtimes',
+        subtext: 'Codify ADR-0007 locally on developer machines to run high-frequency agent tool calls with zero cloud egress.',
+        actionUrl: '/publications',
+        actionLabel: 'Inspect Architecture Spec',
+        targetRole: 'Staff Systems Architect'
       }
     }
   },
@@ -434,12 +458,24 @@ export const TIER9_CONCEPTS: ConceptNode[] = [
       financialImpact: 'Delayed revenue from blocked product launches combined with unmonitored legal liability from shadow AI deployments.',
       operationalBottleneck: 'Cross-functional steering committees create multi-month approval bottlenecks for trivial code improvements.',
       primaryPathway: {
-        destination: 'EXECUTIVE_ADVISORY',
+        destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'ADVISES_ON',
+        channel: 'EXECUTIVE_ADVISORY',
         headline: 'Dual-Chamber AI Governance Architecture',
         subtext: 'We help leadership teams implement sovereign governance frameworks that replace committee meetings with automated verification gates.',
-        actionUrl: '/services',
-        actionLabel: 'Schedule Governance Briefing',
-        targetRole: 'General Counsel / CEO'
+        actionUrl: '/for-boards',
+        actionLabel: 'Explore Board Governance',
+        targetRole: 'General Counsel & Board Members'
+      },
+      secondaryPathway: {
+        destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'OPERATIONALIZES',
+        channel: 'EXECUTIVE_ADVISORY',
+        headline: 'Deploy Automated Verification Gates',
+        subtext: 'Deploy deterministic code hygiene, credential zero-leak filters, and automated legal safe harbors.',
+        actionUrl: '/for-general-counsels',
+        actionLabel: 'Review Legal Safe Harbors',
+        targetRole: 'Chief Legal Officers & CISOs'
       }
     }
   },
@@ -582,11 +618,23 @@ export const TIER9_CONCEPTS: ConceptNode[] = [
       operationalBottleneck: 'Recruiters spend hours reviewing AI slop instead of engaging with verified technical leaders.',
       primaryPathway: {
         destination: 'CAREERWIN_PLATFORM',
+        relationshipType: 'ADDRESSES',
+        channel: 'CAREER_INTELLIGENCE',
         headline: 'Explore CareerWin Career Intelligence',
         subtext: 'Move beyond static PDF resumes to dynamic career operating systems backed by verified benchmarks.',
         actionUrl: 'https://careerwin.ai',
         actionLabel: 'Visit CareerWin.ai',
-        targetRole: 'VP of Engineering / People Leader'
+        targetRole: 'VP of Engineering & People Leaders'
+      },
+      secondaryPathway: {
+        destination: 'CAREERWIN_PLATFORM',
+        relationshipType: 'MEASURES',
+        channel: 'CAREER_INTELLIGENCE',
+        headline: 'Inspect 2026 ATS Benchmark Study',
+        subtext: 'Review empirical data on 12,000 resumes and the 74% automated ATS rejection rate.',
+        actionUrl: '/publications',
+        actionLabel: 'Read Research Report',
+        targetRole: 'Technical Executives & Career Strategists'
       }
     }
   },
@@ -728,12 +776,24 @@ export const TIER9_CONCEPTS: ConceptNode[] = [
       financialImpact: 'High refactoring costs and multi-quarter rewrite cycles caused by lost design intent.',
       operationalBottleneck: 'Senior architects spend all their time reverse-engineering agent-written code to understand why systems were altered.',
       primaryPathway: {
-        destination: 'EXECUTIVE_ADVISORY',
+        destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'ADVISES_ON',
+        channel: 'EXECUTIVE_ADVISORY',
         headline: 'Architectural Due Diligence & ADR Audit',
         subtext: 'We inspect your monorepo history and deploy automated ADR derivation hooks to lock in system design intent.',
-        actionUrl: '/services',
+        actionUrl: '/for-ctos',
         actionLabel: 'Schedule Architecture Audit',
         targetRole: 'Chief Technology Officer'
+      },
+      secondaryPathway: {
+        destination: 'EXOGRAM_SOFTWARE',
+        relationshipType: 'IMPLEMENTS',
+        channel: 'ENGINEERING_RUNTIME',
+        headline: 'Install Chris Nevin ADR Protocol Hooks',
+        subtext: 'Enforce mandatory 5-heading architectural decision logging on every pull request and agent refactor.',
+        actionUrl: '/publications',
+        actionLabel: 'View Protocol Spec',
+        targetRole: 'Lead Software Architect'
       }
     }
   },
@@ -875,12 +935,24 @@ export const TIER9_CONCEPTS: ConceptNode[] = [
       financialImpact: 'Diluted EBITDA margins, duplicate SaaS subscriptions, and stranded pilot capital.',
       operationalBottleneck: 'Engineering teams are overwhelmed by pilot tool churn without clear operational standards.',
       primaryPathway: {
-        destination: 'EXECUTIVE_ADVISORY',
+        destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'ADVISES_ON',
+        channel: 'EXECUTIVE_ADVISORY',
         headline: 'Executive AI Reality Check & Stack Audit',
         subtext: 'We audit your enterprise AI toolchain and pilot portfolio to eliminate redundancy and protect software margins.',
-        actionUrl: '/services',
-        actionLabel: 'Request Reality Check Audit',
-        targetRole: 'Chief Executive Officer / CFO'
+        actionUrl: '/for-coos',
+        actionLabel: 'Request Operations Audit',
+        targetRole: 'Chief Operating Officer & CEO'
+      },
+      secondaryPathway: {
+        destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'MEASURES',
+        channel: 'EXECUTIVE_ADVISORY',
+        headline: 'Run The Interactive Reality Check',
+        subtext: 'Compare your AI tools against verified production telemetry across cost, speed, review queue, and EBITDA.',
+        actionUrl: '/reality-check',
+        actionLabel: 'Launch Reality Check',
+        targetRole: 'Executive Leadership Team'
       }
     }
   }

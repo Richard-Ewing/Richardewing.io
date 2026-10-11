@@ -50,15 +50,15 @@ export default function ConceptDownstreamSolution({ concept }: ConceptDownstream
           <div className="space-y-3">
             <div className="flex flex-wrap items-center justify-between gap-1.5">
               <div className="flex items-center gap-1.5">
-                <span className={`px-2.5 py-0.5 rounded text-[10px] font-mono font-bold border ${getChannelBadge(primaryPathway.channel)}`}>
-                  [{primaryPathway.channel.replace(/_/g, ' ')}]
+                <span className={`px-2.5 py-0.5 rounded text-[10px] font-mono font-bold border ${getChannelBadge(primaryPathway.channel || 'EXECUTIVE_ADVISORY')}`}>
+                  [{(primaryPathway.channel || 'EXECUTIVE_ADVISORY').replace(/_/g, ' ')}]
                 </span>
                 <span className="px-2 py-0.5 rounded text-[9px] font-mono font-bold bg-zinc-100 text-zinc-800 border border-zinc-300">
-                  {primaryPathway.relationshipType.replace(/_/g, ' ')}
+                  {(primaryPathway.relationshipType || 'ADVISES_ON').replace(/_/g, ' ')}
                 </span>
               </div>
               <span className="text-[10px] font-mono text-zinc-500 font-bold">
-                For: {primaryPathway.targetRole}
+                For: {primaryPathway.targetRole || 'Leadership'}
               </span>
             </div>
             <h3 className="text-lg font-bold font-grotesk text-zinc-950 group-hover:text-cyan-900 transition-colors">
@@ -71,10 +71,10 @@ export default function ConceptDownstreamSolution({ concept }: ConceptDownstream
 
           <div className="pt-2">
             <Link
-              href={primaryPathway.actionUrl}
+              href={primaryPathway.actionUrl || '/services'}
               className="w-full inline-flex items-center justify-center px-4 py-2.5 bg-cyan-900 hover:bg-cyan-800 text-white text-xs font-mono font-bold rounded-xl transition shadow-sm"
             >
-              {primaryPathway.actionLabel}
+              {primaryPathway.actionLabel || 'Learn More'}
             </Link>
           </div>
         </div>
@@ -85,15 +85,15 @@ export default function ConceptDownstreamSolution({ concept }: ConceptDownstream
             <div className="space-y-3">
               <div className="flex flex-wrap items-center justify-between gap-1.5">
                 <div className="flex items-center gap-1.5">
-                  <span className={`px-2.5 py-0.5 rounded text-[10px] font-mono font-bold border ${getChannelBadge(secondaryPathway.channel)}`}>
-                    [{secondaryPathway.channel.replace(/_/g, ' ')}]
+                  <span className={`px-2.5 py-0.5 rounded text-[10px] font-mono font-bold border ${getChannelBadge(secondaryPathway.channel || 'EXECUTIVE_ADVISORY')}`}>
+                    [{(secondaryPathway.channel || 'EXECUTIVE_ADVISORY').replace(/_/g, ' ')}]
                   </span>
                   <span className="px-2 py-0.5 rounded text-[9px] font-mono font-bold bg-zinc-100 text-zinc-800 border border-zinc-300">
-                    {secondaryPathway.relationshipType.replace(/_/g, ' ')}
+                    {(secondaryPathway.relationshipType || 'ADVISES_ON').replace(/_/g, ' ')}
                   </span>
                 </div>
                 <span className="text-[10px] font-mono text-zinc-500 font-bold">
-                  For: {secondaryPathway.targetRole}
+                  For: {secondaryPathway.targetRole || 'Leadership'}
                 </span>
               </div>
               <h3 className="text-lg font-bold font-grotesk text-zinc-950 group-hover:text-cyan-900 transition-colors">
