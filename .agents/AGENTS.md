@@ -165,3 +165,20 @@ To eliminate bias, preserve architectural continuity, and keep documentation in 
    - All records are placed in `docs/adr/ADR-<4-Digit-Number>-<slug>.md`.
    - The master index is maintained in `docs/adr/README.md`.
    - `code_architect` acts as lead author and custodian; `qa_auditor` verifies schema compliance during Pass 3 verification.
+
+---
+
+## 10. Sovereign Behavioral Invariants (Lessons from Multi-Workspace Audit)
+
+1. **Zero-Mock Production Invariant**: Never inject hardcoded mock fallbacks, canned scores, or synthetic telemetry into production API routes (`route.js`/`route.ts`) or client catch blocks to mask latency or errors. If an LLM or network call fails, return an honest, structured error status. Let the model do its job.
+2. **Contextual Audience Separation**:
+   - `richardewing.io`: Executive advisory, specific C-suite/VP titles, non-technical operational reality, and grounded leadership.
+   - `careerwin.ai`: Consumer job applicants across all disciplines. Enforce mass-appeal 6th-grade language, active empowerment, and zero elitist/consulting jargon.
+   - `exogram.ai`: Spatial intelligence, living tiles, and bidirectional action loops. Tactile, precise, zero fluff.
+3. **Visual & Structural Preservation**:
+   - Core palettes (`#FAF9F6` warm cream on `richardewing.io`; warm paper and coral on `careerwin.ai`) and page layer structures are frozen invariants.
+   - Design inspirations inform interactive functional sandboxes, NEVER palette overhauls or abstract sci-fi visual maps.
+4. **Atomic Git Reverts**: Always revert regressions using `git checkout` or `git revert`. Never attempt manual string replacements on large files to undo changes.
+5. **Background Task Lifecycle**: Standalone scripts must include explicit `process.exit(0)`. Any background task spawned during execution must be terminated via `manage_task(Action='kill')` once finished to prevent zombie task accumulation in the user's desktop pane.
+6. **Live Edge Verification**: Verify deployments through `npx wrangler deploy` output and live HTTP verification, never by local build exit codes alone.
+
