@@ -45,6 +45,7 @@ export default clerkMiddleware(async (auth, req) => {
   // 1. Instant Edge Shield against Rogue Scrapers & Vulnerability Probes (0.01ms CPU)
   if (
     userAgent.includes('nginx-ssl early hints') ||
+    userAgent.includes('bytespider') ||
     pathname.endsWith('.php') ||
     pathname.endsWith('.env') ||
     pathname.endsWith('.bak') ||
@@ -52,6 +53,11 @@ export default clerkMiddleware(async (auth, req) => {
     pathname.endsWith('.yml') ||
     pathname.endsWith('.yaml') ||
     pathname.endsWith('.sql') ||
+    pathname.endsWith('.zip') ||
+    pathname.endsWith('.key') ||
+    pathname.includes('/@fs/') ||
+    pathname.includes('service_account') ||
+    pathname.includes('firebase') ||
     pathname.includes('wp-admin') ||
     pathname.includes('wp-json') ||
     pathname.includes('wp-includes') ||
@@ -59,7 +65,8 @@ export default clerkMiddleware(async (auth, req) => {
     pathname.includes('.env') ||
     pathname.includes('setup-config') ||
     pathname.includes('wlwmanifest') ||
-    pathname.includes('xmlrpc')
+    pathname.includes('xmlrpc') ||
+    pathname.includes('/api/aws/bedrock')
   ) {
     return new NextResponse('Not Found', {
       status: 404,

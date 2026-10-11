@@ -186,6 +186,30 @@ export default function ForCFOsPage() {
                                 Explore Full Corpus ({RESEARCH_CORPUS.length} Works) &rarr;
                             </Link>
                         </div>
+
+                        {/* Featured CIO.com Field Audit Callout */}
+                        <div className="mb-6 p-6 rounded-2xl bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-300 shadow-sm">
+                            <div className="flex items-center gap-2 mb-2">
+                                <span className="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-[10px] font-mono font-bold uppercase tracking-wider">
+                                    Featured Field Audit • CIO.com (October 2026)
+                                </span>
+                            </div>
+                            <h3 className="text-lg font-bold font-grotesk text-zinc-950 mb-1">
+                                I Audited an Award-Winning AI Project. The Case Study Left Out the Cloud Bill.
+                            </h3>
+                            <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed font-medium mb-3">
+                                A mid-sized enterprise automated vendor contract onboarding. The manual baseline cost <span className="font-bold text-zinc-950">$0.80 per document</span>. The automated pipeline was running between <span className="font-bold text-emerald-950">$12 and $14 per document</span>. A central innovation fund subsidized the pilot, hiding the consumption bill until production reality hit: a 40% exception failure rate where human specialists took 10 minutes to fix stalled transactions.
+                            </p>
+                            <a
+                                href="https://www.cio.com/article/4232005/i-audited-an-award-winning-ai-project-the-case-study-left-out-the-cloud-bill.html"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-900 hover:underline"
+                            >
+                                Read Full Operational Audit in CIO.com &rarr;
+                            </a>
+                        </div>
+
                         <div className="grid sm:grid-cols-2 gap-4">
                             {RESEARCH_CORPUS.filter(art => 
                                 art.domain === 'AI Economics' || 

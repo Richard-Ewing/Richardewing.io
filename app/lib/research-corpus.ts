@@ -29,6 +29,22 @@ export const RESEARCH_DOMAINS = [
 export const RESEARCH_CORPUS: CorpusArticle[] = [
   // October 2026 Frontier Publications & Empirical Benchmarks
   {
+    id: 'cio-audited-award-winning-ai-project-cloud-bill',
+    title: 'I Audited an Award-Winning AI Project. The Case Study Left Out the Cloud Bill',
+    url: 'https://www.cio.com/article/4232005/i-audited-an-award-winning-ai-project-the-case-study-left-out-the-cloud-bill.html',
+    publisher: 'CIO.com',
+    domain: 'AI Economics',
+    type: 'Executable',
+    date: 'October 2026',
+    thesis: 'An empirical operational audit of an industry award-winning automated contract onboarding pipeline that replaced an $0.80 clerical task with a $12 to $14 consumption-based automated workflow. While the pilot hid costs under a central innovation fund and celebrated 90% turnaround time reductions, live production revealed a 40% exception failure rate where human specialists took 10 minutes (twice as long as manual baseline) to resolve ambiguities, forcing the enterprise to pay both cloud infrastructure consumption and supervisory payroll.',
+    editorsPick: true,
+    relatedConceptIds: ['consumption-meter-trap', 'synthetic-cogs', 'ai-volatility-tax', 'supervisory-review-queue', 'the-transaction-that-succeeds'],
+    relatedGlossarySlugs: ['consumption-meter-trap', 'synthetic-cogs', 'exception-queue-penalty', 'supervisory-review-queue'],
+    relatedFrameworkSlugs: ['economics', 'product-economics'],
+    relatedToolIds: ['ai-feature-margin', 'ai-unit-economics-audit', 'aueb', 'pdi'],
+    relatedCaseStudyIds: ['runtime-concurrency-failures', 'spec-driven-enterprise-rewrite']
+  },
+  {
     id: 'careerwin-2026-enterprise-ats-ai-resume-benchmark-study',
     title: '2026 Enterprise ATS & AI Resume Benchmark Study',
     url: 'https://careerwin.ai/research/2026-enterprise-ats-ai-resume-benchmark-study',

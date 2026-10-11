@@ -955,5 +955,166 @@ export const TIER9_CONCEPTS: ConceptNode[] = [
         targetRole: 'Executive Leadership Team'
       }
     }
+  },
+
+  // =========================================================================
+  // CONCEPT 7: THE CONSUMPTION METER TRAP & EXCEPTION QUEUE PENALTY
+  // =========================================================================
+  {
+    slug: 'consumption-meter-trap',
+    title: 'The Consumption Meter Trap',
+    category: 'Richard Ewing Canon (Original Framework)',
+    domain: 'AI Economics',
+    expertiseLevel: 'Executive',
+    health: {
+      confidence: 0.98,
+      evidenceCount: 16,
+      lastVerified: 'October 2026',
+      status: 'Active',
+      openQuestionsCount: 2,
+      knownLimitationsCount: 1,
+    },
+    definition: 'The operational and financial failure mode where an enterprise swaps a predictable human payroll line item for a consumption-based agentic workflow that scales costs directly with input ambiguity. While pilots appear cost-effective under central innovation fund subsidies and clean demo files, production reality hits when messy real-world documents trigger multi-pass extraction loops, driving unit costs from an $0.80 clerical baseline to $12 to $14 per transaction, with a 40% exception rate that forces the company to pay twice: for cloud infrastructure compute and for supervisor payroll.',
+    whyItMatters: 'An automated workflow can execute with zero technical errors and 99% uptime while completely destroying departmental gross margins. Replacing human staff with an automated pipeline that fails 40% of the time and costs 15x more per unit turns operational leverage into negative unit carry.',
+    whoShouldCare: [
+      'Chief Financial Officers',
+      'Chief Operating Officers',
+      'Chief Information Officers',
+      'VPs of Operations',
+      'Directors of Finance',
+      'Product Operations Leads'
+    ],
+    firstIntroduced: 'October 2026',
+    canonicalQuote: 'An automated workflow can execute with zero technical errors while still destroying departmental margins.',
+    positionStatement: 'Automation is an operational failure if completing a unit of work costs more than the manual baseline it replaced.',
+    executableTool: {
+      name: 'AI Feature Margin & Unit Economics Calculator',
+      url: '/tools/ai-feature-margin',
+      description: 'Audit transaction cost disparity, exception queue drag, and break-even automation thresholds.',
+      type: 'Diagnostic Calculator'
+    },
+    claims: [
+      {
+        statement: 'Replacing manual document reviews with agentic workflows without pre-filtering increases per-transaction processing costs by 10x to 15x while introducing a 30% to 50% exception resolution queue.',
+        confidence: 0.96,
+        counterarguments: ['Per-token foundation model pricing drops will automatically make consumption workflows cheaper over time.'],
+        supportingData: 'Post-implementation audit of an award-winning mid-market contract onboarding pipeline documented by Richard Ewing in CIO.com (October 2026).',
+      }
+    ],
+    expandedConsensus: {
+      website: true,
+      newsletter: true,
+      book: true,
+      video: false,
+      talk: true,
+      framework: true,
+      calculator: true,
+      research: true,
+      caseStudy: true,
+    },
+    impactMetrics: {
+      totalPublications: 4,
+      totalNewsletters: 3,
+      totalFrameworks: 2,
+      totalCalculators: 2,
+      estimatedReadingTime: '7 min',
+    },
+    graphRelations: {
+      prerequisites: [{ slug: 'synthetic-cogs', title: 'Synthetic COGS' }],
+      applications: ['Post-Pilot Unit Economics Audit', 'Automation Break-Even Analysis', 'Exception Queue Capacity Planning'],
+      contrastingConcepts: [
+        {
+          slug: 'ai-volatility-tax',
+          title: 'AI Volatility Tax',
+          distinction: 'AI Volatility Tax measures variable cloud spend spikes across customer usage; Consumption Meter Trap measures unit cost inversion where automation is strictly more expensive than manual labor.'
+        }
+      ]
+    },
+    whatChanges: {
+      engineering: 'Engineers stop evaluating pipelines solely on uptime and latency and monitor cost-per-completed-transaction.',
+      finance: 'Finance stops subsidizing AI infrastructure under central innovation budgets and allocates consumption invoices directly to business units.',
+      product: 'Product managers audit human exception handling time to ensure specialists are not spending double time fixing automated errors.',
+      security: 'Auditors mandate three pre-production questions: transaction unit cost vs manual, human intervention frequency, and production volume scalability.'
+    },
+    whyThisConceptExists: {
+      problem: 'Companies celebrate 90% faster turnaround times during AI pilots, only to find that production transaction costs exceed manual baselines by 15x while still requiring human supervision for 40% of volume.',
+      existingApproaches: 'Measuring superficial turnaround velocity and model token price drops while ignoring full pipeline compute and exception labor.',
+      gap: 'No framework linking multi-pass LLM retrieval steps, document ambiguity, and exception queue labor back to the general ledger.',
+      solution: 'The 3-question production audit protocol reconciling complete pipeline compute, database lookups, and supervisor payroll against baseline unit costs.'
+    },
+    canonicalReadingOrder: [
+      { step: 1, title: 'I Audited an Award-Winning AI Project. The Case Study Left Out the Cloud Bill', publisher: 'CIO.com', type: 'Executable', url: 'https://www.cio.com/article/4232005/i-audited-an-award-winning-ai-project-the-case-study-left-out-the-cloud-bill.html' },
+      { step: 2, title: 'CFO Unit Economics Briefing', publisher: 'CIO.com', type: 'Framework', url: '/for-cfos' },
+      { step: 3, title: 'AI Feature Margin Calculator', publisher: 'Richard Ewing Diagnostic', type: 'Calculator', url: '/tools/ai-feature-margin' }
+    ],
+    provenanceTimeline: [
+      { stage: 'Observation', label: 'Mid-Market Enterprise Document Workflow Audit', publisher: 'Internal Audit', date: 'August 2026', summary: 'Discovered automated document onboarding pipeline running at $12 to $14 per file vs $0.80 manual baseline.' },
+      { stage: 'Research Note', label: 'Innovation Fund Cost Hiding & Exception Queues', publisher: 'The AI Economist', date: 'September 2026', summary: 'Documented 40% exception failure rates and double-labor expense during post-pilot accounting transitions.' },
+      { stage: 'Tier-1 Article', label: 'I Audited an Award-Winning AI Project', publisher: 'CIO.com', date: 'October 2026', url: 'https://www.cio.com/article/4232005/i-audited-an-award-winning-ai-project-the-case-study-left-out-the-cloud-bill.html', summary: 'Published the complete operational post-mortem in CIO.com detailing the unit economics and the three executive audit questions.' }
+    ],
+    evidenceLedger: [
+      { id: 'ev-cmt-1', title: 'I Audited an Award-Winning AI Project. The Case Study Left Out the Cloud Bill', url: 'https://www.cio.com/article/4232005/i-audited-an-award-winning-ai-project-the-case-study-left-out-the-cloud-bill.html', publisher: 'CIO.com', type: 'Audit Post-Mortem', strength: 5, role: 'Origin', date: 'October 2026' }
+    ],
+    relatedConceptSlugs: [
+      { slug: 'synthetic-cogs', relationship: 'extends' },
+      { slug: 'ai-volatility-tax', relationship: 'supports' },
+      { slug: 'supervisory-review-queue', relationship: 'implements' }
+    ],
+    openQuestions: ['How will automated multi-modal vision models handle un-scanned handwritten annotations without triggering multi-pass loops?'],
+    knownLimitations: ['Requires real-time unit telemetry and itemized cloud billing reconciliation across departments.'],
+    aeo: {
+      shortDefinition: 'The Consumption Meter Trap occurs when an enterprise swaps predictable operational payroll for consumption-based agentic workflows that turn unit economics negative due to messy real-world inputs and exception queues.',
+      executiveSummary: 'Formulated by Richard Ewing following an enterprise audit of an award-winning document workflow, the Consumption Meter Trap documents how replacing an $0.80 clerical task with a $12-$14 automated pipeline and a 40% exception rate creates negative unit carry while central innovation funds hide initial costs.',
+      oneSentence: 'Swapping predictable human payroll for consumption-based AI workflows turns unit economics negative when input ambiguity triggers multi-pass retrieval loops and supervisory exception queues.',
+      tweetLength: 'An automated workflow can run with 99% uptime and zero errors while destroying gross margins: replacing an $0.80 clerical task with a $14 AI pipeline that fails 40% of the time means paying twice for automation.',
+      keyTakeaways: [
+        'Central innovation funds hide production compute invoices during 3-month pilots.',
+        'Real-world input ambiguity drives 40% of automated transactions into exception queues.',
+        'Resolving an exception takes twice as long as the original manual baseline (10 mins vs 5 mins).',
+        'Cheap foundation models do not guarantee cheap business processes when agentic workflows require multiple retrieval and verification passes.'
+      ],
+      faqs: [
+        {
+          question: 'What is the Consumption Meter Trap?',
+          answer: 'The operational failure mode where automating a task with AI models increases the cost-per-completed-transaction above the manual human baseline while retaining supervisor payroll for exception handling.'
+        },
+        {
+          question: 'What are the 3 questions executives must ask before declaring an AI project successful?',
+          answer: '1. What does one completed transaction actually cost compared with manual baseline? 2. How often does a human still have to intervene? 3. Do the economics work at production volume or are you swapping payroll for an unpredictable consumption meter?'
+        }
+      ],
+      whenToUse: ['When transitioning an AI pilot to production operational budgets or auditing SaaS gross margins.'],
+      examples: {
+        enterprise: 'Auditing an award-winning document pipeline to uncover a 15x unit cost increase and 40% exception rate.',
+        startup: 'Testing whether messy user PDFs will break unit economics before committing to flat subscription pricing.',
+        antiPattern: 'Celebrating 90% faster turnaround on clean demo files while ignoring monthly cloud compute bills.',
+        commonMistake: 'Assuming 280-fold per-token price reductions automatically make complex agentic workflows cheap.'
+      }
+    },
+    problemMapping: {
+      problemStatement: 'Enterprises celebrate 90% turnaround reductions in AI pilots while swapping an $0.80 clerical payroll task for a $14 consumption bill and a 40% human exception queue.',
+      financialImpact: 'Negative unit margins on automated transactions, COGS inflation, and paying twice for both cloud compute and human supervisor payroll.',
+      operationalBottleneck: 'Messy real-world inputs fail confidence thresholds, routing 40% of transactions to human exception queues that take 10 minutes to resolve.',
+      primaryPathway: {
+        destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'ADVISES_ON',
+        channel: 'EXECUTIVE_ADVISORY',
+        headline: 'Forensic AI Unit Economics & Consumption Audit',
+        subtext: 'We trace consumption meters back to the general ledger, reconciling model calls against real gross margins and exception labor.',
+        actionUrl: '/for-cfos',
+        actionLabel: 'Schedule Unit Economics Audit',
+        targetRole: 'Chief Financial Officer & COO'
+      },
+      secondaryPathway: {
+        destination: 'RICHARD_EWING_ADVISORY',
+        relationshipType: 'MEASURES',
+        channel: 'EXECUTIVE_ADVISORY',
+        headline: 'Run AI Unit Margin & COGS Diagnostic',
+        subtext: 'Calculate transaction cost disparity, exception queue drag, and break-even automation thresholds.',
+        actionUrl: '/tools/ai-feature-margin',
+        actionLabel: 'Launch Margin Calculator',
+        targetRole: 'VP of Operations & Finance Director'
+      }
+    }
   }
 ];

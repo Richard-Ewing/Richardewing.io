@@ -180,6 +180,30 @@ export default function ForCOOsPage() {
                                 Explore Full Corpus ({RESEARCH_CORPUS.length} Works) &rarr;
                             </Link>
                         </div>
+
+                        {/* Featured CIO.com Field Audit Callout */}
+                        <div className="mb-6 p-6 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-300 shadow-sm">
+                            <div className="flex items-center gap-2 mb-2">
+                                <span className="px-2 py-0.5 rounded bg-blue-200 text-blue-900 text-[10px] font-mono font-bold uppercase tracking-wider">
+                                    Operational Post-Mortem • CIO.com (October 2026)
+                                </span>
+                            </div>
+                            <h3 className="text-lg font-bold font-grotesk text-zinc-950 mb-1">
+                                The Exception Queue Penalty: Why Automated Workflows Pay Twice
+                            </h3>
+                            <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed font-medium mb-3">
+                                In an audited award-winning AI pipeline, real-world document ambiguity triggered a <span className="font-bold text-zinc-950">40% exception failure rate</span>. When agreements stalled, operations specialists had to diagnose the partial extraction notes, taking <span className="font-bold text-blue-950">10 minutes to resolve (twice as long as the 5-minute manual baseline)</span>. The enterprise ended up paying both the monthly cloud consumption invoice and the supervisory payroll.
+                            </p>
+                            <a
+                                href="https://www.cio.com/article/4232005/i-audited-an-award-winning-ai-project-the-case-study-left-out-the-cloud-bill.html"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-blue-900 hover:underline"
+                            >
+                                Read Full Operational Audit in CIO.com &rarr;
+                            </a>
+                        </div>
+
                         <div className="grid sm:grid-cols-2 gap-4">
                             {RESEARCH_CORPUS.filter(art => 
                                 art.domain === 'AI Governance' || 

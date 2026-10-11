@@ -586,5 +586,20 @@ export const richardEwingArticleTerms: GlossaryTerm[] = [
         relatedArticles: [
             { title: 'The Reality Check: Auditing the Gap Between AI Demos and Production Telemetry', url: 'https://www.cio.com/article/4228912/the-reality-check-ai-demos-vs-production-telemetry.html' }
         ]
+    },
+    {
+        slug: 'consumption-meter-trap',
+        title: 'The Consumption Meter Trap',
+        category: 'Richard Ewing Frameworks',
+        definition: `The Consumption Meter Trap is an enterprise software economics failure mode formulated by Richard Ewing in CIO.com (October 2026). It describes what happens when an organization swaps a predictable human payroll expense for an automated agentic workflow that scales costs directly with input ambiguity.\n\nIn an audited enterprise document onboarding pipeline, an operations clerk previously reviewed incoming agreements in 4 to 5 minutes at an operational baseline of $0.80 per file. The automated AI pipeline ran between $12 and $14 per document. While the pilot hid infrastructure bills under a central innovation fund, production reality exposed a 40% exception failure rate where human specialists took 10 minutes (twice as long as manual baseline) to resolve ambiguities, forcing the business to pay both cloud consumption and supervisory payroll.`,
+        whyItMatters: `An automated pipeline can operate with 99% uptime and zero technical errors while destroying departmental gross margins. Replacing human staff with an automation system that costs 15x more per unit turns operational leverage into negative unit carry.`,
+        faqs: [
+            { question: 'What is the Consumption Meter Trap?', answer: 'The operational failure mode where automating a task with AI models increases the cost-per-completed-transaction above the manual human baseline while retaining supervisor payroll for exception handling.' },
+            { question: 'What are the 3 questions executives must ask before declaring an AI project successful?', answer: '1. What does one completed transaction actually cost compared with manual baseline? 2. How often does a human still have to intervene? 3. Do the economics work at production volume or are you swapping payroll for an unpredictable consumption meter?' }
+        ],
+        relatedTerms: ['synthetic-cogs', 'ai-volatility-tax', 'supervisory-review-queue', 'living-reality-check', 'product-debt-index'],
+        relatedArticles: [
+            { title: 'I Audited an Award-Winning AI Project. The Case Study Left Out the Cloud Bill', url: 'https://www.cio.com/article/4232005/i-audited-an-award-winning-ai-project-the-case-study-left-out-the-cloud-bill.html' }
+        ]
     }
 ];
