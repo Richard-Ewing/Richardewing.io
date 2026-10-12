@@ -942,7 +942,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
           phase: 'INTERNAL_EXPANSION',
           headline: '3-Tier Automated Delegation Boundary Framework',
           summary: 'Formulated runtime proxy architecture to enforce binary spending caps and human-in-the-loop triggers on SaaS agents.',
-          linkedArtifactUrl: '/frameworks/automated-delegation-boundary'
+          linkedArtifactUrl: '/framework/security'
         },
         {
           date: 'August 17, 2026',

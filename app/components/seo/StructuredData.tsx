@@ -29,10 +29,10 @@ export const generateCourseSchema = (name: string, description: string, provider
         sameAs: 'https://www.richardewing.io'
     },
     url,
-    isAccessibleForFree: 'False',
+    isAccessibleForFree: false,
     hasPart: {
         '@type': 'WebPageElement',
-        isAccessibleForFree: 'False',
+        isAccessibleForFree: false,
         cssSelector: '.paywalled-content'
     }
 });

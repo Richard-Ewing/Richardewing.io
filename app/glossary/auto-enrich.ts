@@ -394,47 +394,47 @@ export function autoIndustryBenchmarks(category: string, title: string): { indus
     ];
 }
 
-// NEW: Auto-generated Hub-and-Spoke SEO Article matrix
+// Auto-generated Hub-and-Spoke SEO Article matrix pointing to REAL canonical publications
 export function autoSpokes(category: string, title: string, slug: string): { title: string; url: string; description: string }[] {
     const spokes: Record<string, { title: string; url: string; description: string }[]> = {
         'Technical Debt & Code Quality': [
-            { title: `Calculating ${title} EBITDA Impact for Private Equity`, url: `/articles/calculating-${slug}-ebitda-impact-private-equity`, description: `How investors quantify the hidden liabilities of ${title} during M&A due diligence.` },
-            { title: `How to Translate DORA Metrics into Financial ${title}`, url: `/articles/how-to-translate-dora-metrics-into-financial-${slug}`, description: `A bridge for CTOs to explain engineering constraints to the CFO.` },
-            { title: `${title} Governance Frameworks for Scale-Ups`, url: `/articles/${slug}-governance-frameworks-for-scaleups`, description: `Board-ready policies to prevent technical insolvency at scale.` }
+            { title: 'The Negative-Carry Code Crisis', url: '/blog/negative-carry-code-crisis', description: `Why 40% of enterprise R&D budgets are consumed by subprime code maintenance and how to audit ${title}.` },
+            { title: 'The Innovation Tax Audit', url: '/blog/the-innovation-tax-audit-is-your-rd-actually-just-opex', description: `A bridge for CTOs to prove to the board whether ${title} maintenance is creating value or burning cash.` },
+            { title: 'Vibe Coding Debt Framework', url: '/articles/frameworks/vibe-coding-debt', description: `Architectural governance and risk controls to prevent undocumented technical liabilities from compounding.` }
         ],
         'AI & Machine Learning': [
-            { title: `${title} Unit Economics: The Ultimate CTO Guide`, url: `/articles/${slug}-unit-economics-cto-guide`, description: `Detailed breakdown of the fixed vs. variable cost structures limiting AI profitability.` },
-            { title: `Mitigating ${title} Risk in Enterprise Deployments`, url: `/articles/mitigating-${slug}-risk-enterprise`, description: `Ensuring compliance, data security, and margin preservation at 100x scale.` },
-            { title: `The Cost of Predictivity: Why ${title} Defies Software Economics`, url: `/articles/cost-of-predictivity-defies-${slug}`, description: `Understanding why AI scaling costs compound differently than traditional SaaS.` }
+            { title: 'Autonomous AI Agent Control Plane', url: '/blog/autonomous-ai-agent-deterministic-control-plane', description: `Why deterministic state machines beat probabilistic boundaries in enterprise agentic deployments.` },
+            { title: 'ROAI vs Vanity Metrics', url: '/blog/roai-is-the-new-roi-why-cfos-are-killing-your-ai-pilots-in-2026', description: `Why CFOs are scrutinizing AI pilots and how to protect enterprise gross margins under ${title}.` },
+            { title: 'Synthetic COGS Framework', url: '/articles/frameworks/synthetic-cogs', description: `Understanding how variable inference compute costs compound differently than traditional SaaS economics.` }
         ],
         'SaaS Metrics & Finance': [
-            { title: `Using ${title} to Drive Rule of 40 Valuations`, url: `/articles/using-${slug}-rule-of-40`, description: `How top-quartile companies engineer their metrics for venture funding.` },
-            { title: `${title} Benchmarks for Series B and Beyond`, url: `/articles/${slug}-benchmarks-series-b-beyond`, description: `The exact financial milestones required to access late-stage growth capital.` },
-            { title: `The Board's Guide to Interpreting ${title}`, url: `/articles/boards-guide-interpreting-${slug}`, description: `How sophisticated investors strip away vanity metrics to find truth.` }
+            { title: 'B2B SaaS Coordination Tax', url: '/blog/b2b-saas-coordination-tax-saas-engineering-margins', description: `How organizational bloat and handoffs erode engineering margins as team scale expands.` },
+            { title: 'The Product P&L Test', url: '/blog/the-product-p-l-test-why-your-ai-feature-is-bleeding-cash', description: `How to calculate true feature unit economics and eliminate negative-carry code.` },
+            { title: 'Feature Bloat Calculus', url: '/articles/frameworks/feature-bloat-calculus', description: `The mathematical threshold where ongoing feature maintenance exceeds customer value contribution.` }
         ],
     };
     return spokes[category] || [
-        { title: `The Enterprise Guide to Scaling ${title}`, url: `/articles/enterprise-guide-scaling-${slug}`, description: `Architectural constraints and organizational requirements for enterprise-wide adoption.` },
-        { title: `${title} ROI Models for Chief Financial Officers`, url: `/articles/${slug}-roi-models-cfo`, description: `Quantifying the CapEx vs. OpEx trade-offs of modern engineering practices.` },
-        { title: `Overcoming Implementation Friction with ${title}`, url: `/articles/overcoming-implementation-friction-${slug}`, description: `Change management strategies to drive adoption and compliance across 500+ engineer orgs.` }
+        { title: 'The Sovereign AI Substrate', url: '/blog/the-sovereign-substrate', description: `Architectural patterns for private on-premise execution and deterministic governance.` },
+        { title: 'Deterministic Control Layer', url: '/architecture/deterministic-control-layer', description: `Guarding execution pipelines against prompt drift, unauthorized mutations, and context degradation.` },
+        { title: 'Audit Interview Framework', url: '/articles/frameworks/audit-interview', description: `Evaluating engineering judgment and code verification in the era of autonomous generation.` }
     ];
 }
 
-// NEW: Auto-generated Curriculum pathways
+// Auto-generated Curriculum pathways pointing to REAL live curriculum tracks
 export function autoCurriculum(category: string, title: string, slug: string): { track: string; title: string; url: string; price: string }[] {
     const tracks: Record<string, { track: string; title: string; url: string; price: string }[]> = {
         'Technical Debt & Code Quality': [
-            { track: 'Engineering Economics', title: `Quantifying ${title} for the Boardroom`, url: `/curriculum/engineering-economics/${slug}-quantification`, price: '$199' }
+            { track: 'Technical Debt Liability', title: `Quantifying ${title} as a Financial Liability`, url: '/vault/curriculum/tracks/tech-debt-liability/9-1', price: '$149' }
         ],
         'AI & Machine Learning': [
-            { track: 'AI Unit Economics', title: `Architecting Profitable ${title} Systems`, url: `/curriculum/ai-economics/architecting-${slug}`, price: '$199' }
+            { track: 'AI Product Economics', title: `Architecting Profitable ${title} Infrastructure`, url: '/vault/curriculum/tracks/ai-product-economics/2-1', price: '$149' }
         ],
         'Leadership & Governance': [
-            { track: 'Technology Leadership', title: `Executive Governance of ${title}`, url: `/curriculum/technology-leadership/governance-${slug}`, price: '$199' }
+            { track: 'Strategic Leadership', title: `Executive Governance of ${title} for CTOs`, url: '/vault/curriculum/tracks/strategic-leadership/22-1', price: '$149' }
         ]
     };
     return tracks[category] || [
-        { track: 'Digital Transformation', title: `Operationalizing ${title} at Scale`, url: `/curriculum/digital-transformation/operationalizing-${slug}`, price: '$199' }
+        { track: 'Engineering Economics', title: `Engineering Economics & Capital Allocation for ${title}`, url: '/vault/curriculum/tracks/engineering-economics/1-1', price: '$149' }
     ];
 }
 

@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         title: titleStr,
         description: metaDescription,
         robots: {
-            index: true,
+            index: mod.status !== 'waitlist' && Array.isArray(mod.lessons) && mod.lessons.length > 0,
             follow: true
         },
         alternates: { canonical: `https://www.richardewing.io/vault/curriculum/tracks/${slug.join('/')}` },

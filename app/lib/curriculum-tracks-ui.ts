@@ -537,7 +537,7 @@ export const tracks = [
         color: 'rose',
         icon: '📋',
         glossaryTerms: ['capex-vs-opex', 'vendor-lock-in', 'total-cost-of-ownership', 'saas-cogs'],
-        tools: [{ name: 'Cloud FinOps Calculator', href: '/tools/cloud-finops-calculator' }],
+        tools: [{ name: 'Cloud Repatriation Calculator', href: '/tools/cloud-repatriation' }],
     },
     {
         title: 'AI Agent Architecture & Economics',

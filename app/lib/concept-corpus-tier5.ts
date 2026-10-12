@@ -283,7 +283,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
         commonMistake: 'Failing to include the QA team\'s time in the ROI calculation.'
       }
     },
-    executableTool: { name: 'Copilot ROI Calculator', url: '/tools/copilot-roi-calculator', description: 'Calculates the true ROI of AI coding assistants.', type: 'Diagnostic Calculator' },
+    executableTool: { name: 'Copilot ROI Calculator', url: '/tools/copilot-roi', description: 'Calculates the true ROI of AI coding assistants.', type: 'Diagnostic Calculator' },
     personaRecommendations: [
       {
         role: 'Chief Financial Officer (CFO)',
@@ -419,7 +419,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
     whoShouldCare: ['Chief Product Officer (CPO)', 'Director of Quality Assurance', 'Quality Engineering (QE) Manager', 'Product Operations Manager', 'Engineering Manager (EM)'],
     firstIntroduced: 'August 2026',
     canonicalReadingOrder: [
-      { step: 1, title: 'The Agent Development Lifecycle', publisher: 'Internal', type: 'Protocol Specification', url: '/frameworks/adlc' }
+      { step: 1, title: 'Agentic Control Plane Architecture', publisher: 'Internal', type: 'Protocol Specification', url: '/framework/agentic-control-plane' }
     ],
     canonicalQuote: 'If you are not evaluating your AI application against a golden dataset in your CI/CD pipeline, you are flying blind in a probabilistic storm.',
     positionStatement: 'Evaluation suites must be continuous, multi-dimensional, and treated as first-class citizens in the Agent Development Lifecycle.',
@@ -586,7 +586,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
         commonMistake: 'Only tracking the API cost and ignoring the senior developer review time.'
       }
     },
-    executableTool: { name: 'Copilot ROI Calculator', url: '/tools/copilot-roi-calculator', description: 'Calculates the true ROI of AI coding assistants.', type: 'Diagnostic Calculator' },
+    executableTool: { name: 'Copilot ROI Calculator', url: '/tools/copilot-roi', description: 'Calculates the true ROI of AI coding assistants.', type: 'Diagnostic Calculator' },
     personaRecommendations: [
       {
         role: 'Chief Financial Officer (CFO)',
