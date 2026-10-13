@@ -19,7 +19,7 @@ export default function NumberTicker({
     duration = 2000,
     decimalPlaces = 0
 }: NumberTickerProps) {
-    const [displayValue, setDisplayValue] = useState(0);
+    const [displayValue, setDisplayValue] = useState(value);
     const ref = useRef<HTMLSpanElement>(null);
     const [hasAnimated, setHasAnimated] = useState(false);
 

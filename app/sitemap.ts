@@ -83,6 +83,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // === CORE PAGES ===
     add(`${baseUrl}/`, 'weekly', 1.0);
+    add(`${baseUrl}/portfolio`, 'weekly', 1.0);
+    add(`${baseUrl}/toolkit`, 'weekly', 0.98);
     add(`${baseUrl}/reality-check`, 'weekly', 0.95);
     add(`${baseUrl}/doctrine`, 'monthly', 0.8);
     add(`${baseUrl}/runtime-architecture`, 'weekly', 0.95);

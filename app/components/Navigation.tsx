@@ -250,13 +250,13 @@ const Navigation = () => {
                                 </AnimatePresence>
                             </div>
 
-                            <Link href="/case-studies" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
-                                Case Studies
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
+                            <Link href="/portfolio" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-100/90 hover:bg-amber-200 border border-amber-300 text-amber-950 font-bold text-xs transition-all shadow-sm whitespace-nowrap">
+                                <Award className="w-3.5 h-3.5 text-amber-700" />
+                                <span>Portfolio</span>
                             </Link>
 
-                            <Link href="/framework" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
-                                Framework
+                            <Link href="/case-studies" className="text-zinc-900 hover:text-purple-700 transition-colors whitespace-nowrap relative group">
+                                Case Studies
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
                             </Link>
 
@@ -270,20 +270,20 @@ const Navigation = () => {
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all group-hover:w-full" />
                             </Link>
 
-                            {/* Book a Call CTA */}
+                            {/* Operating Kit ($29) Impulse CTA */}
                             <Link
-                                href="/services"
-                                className="bg-amber-500 text-zinc-950 px-3.5 py-2 rounded-lg font-bold hover:opacity-90 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-xs uppercase tracking-wider whitespace-nowrap shrink-0"
+                                href="/toolkit"
+                                className="bg-amber-500 text-zinc-950 px-3.5 py-2 rounded-lg font-bold hover:bg-amber-400 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-xs uppercase tracking-wider whitespace-nowrap shrink-0"
                             >
-                                Book a Call
+                                Operating Kit ($29)
                             </Link>
 
-                            {/* Single Primary Assessment CTA */}
+                            {/* Work With Me / Advisory CTA */}
                             <Link
-                                href="/assessment"
+                                href="/services"
                                 className="bg-gradient-to-r from-violet-600 to-purple-600 px-3.5 py-2 rounded-lg font-bold text-white hover:opacity-90 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-xs uppercase tracking-wider whitespace-nowrap shrink-0"
                             >
-                                Assessment →
+                                Work With Me →
                             </Link>
 
                             <div className="h-5 w-px bg-zinc-300 mx-1 flex-shrink-0" />
@@ -405,29 +405,26 @@ const Navigation = () => {
 
                             {/* Core Navigation Links */}
                             <div className="grid grid-cols-2 gap-2 text-sm font-semibold text-zinc-900">
+                                <Link href="/portfolio" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg bg-amber-50 border border-amber-200 text-amber-950 font-bold">
+                                    Executive Portfolio
+                                </Link>
+                                <Link href="/toolkit" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-950 font-bold">
+                                    Operating Kit ($29)
+                                </Link>
                                 <Link href="/case-studies" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
                                     Case Studies
                                 </Link>
                                 <Link href="/framework" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
                                     Framework
                                 </Link>
-                                <Link href="/concepts" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
-                                    Concepts
-                                </Link>
-                                <Link href="/roi" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
-                                    ROI Calculator
-                                </Link>
                                 <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
-                                    Advisory & Services
+                                    Advisory &amp; Services
                                 </Link>
                                 <Link href="/pricing" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
-                                    Pricing ($450 / $7.5k)
+                                    Pricing ($29 - $10k)
                                 </Link>
                                 <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
                                     About Principal
-                                </Link>
-                                <Link href="/research" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors">
-                                    Research Corpus
                                 </Link>
                                 <Link href="/research/publications" onClick={() => setMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-zinc-100 transition-colors text-purple-900 font-bold">
                                     Publications
@@ -437,18 +434,18 @@ const Navigation = () => {
                             {/* Mobile Actions & CTA Buttons */}
                             <div className="pt-4 border-t border-zinc-200 flex flex-col gap-3">
                                 <Link
-                                    href="/services"
+                                    href="/toolkit"
                                     onClick={() => setMobileMenuOpen(false)}
                                     className="w-full py-3 bg-amber-500 text-zinc-950 font-bold text-center rounded-xl text-xs uppercase tracking-wider shadow-md active:scale-95 transition-transform"
                                 >
-                                    Book a Call
+                                    Get $29 Operating Kit →
                                 </Link>
                                 <Link
-                                    href="/assessment"
+                                    href="/portfolio"
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="w-full py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-center rounded-xl text-xs uppercase tracking-wider shadow-md active:scale-95 transition-transform"
+                                    className="w-full py-3 bg-zinc-950 text-white font-bold text-center rounded-xl text-xs uppercase tracking-wider shadow-md active:scale-95 transition-transform"
                                 >
-                                    Take Assessment →
+                                    View Executive Portfolio →
                                 </Link>
 
                                 {isLoaded && !isSignedIn ? (

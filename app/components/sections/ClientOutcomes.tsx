@@ -42,15 +42,15 @@ const ClientOutcomes = () => {
                         <div className="pt-3">
                             <div className="text-xs font-bold text-violet-600 uppercase tracking-widest mb-3 font-mono">B2B SaaS</div>
                             <div className="text-3xl font-bold text-zinc-900 mb-3"><NumberTicker value={34} />%</div>
-                            <p className="text-zinc-900 text-sm font-semibold mb-4">AI cost reduction achieved</p>
+                            <p className="text-zinc-900 text-sm font-semibold mb-4">net AI inference cost reduction</p>
                             <div className="border-t border-zinc-200 pt-4 space-y-2">
                                 <div className="flex items-center gap-2 text-xs font-bold text-zinc-800">
                                     <ArrowDown className="w-3 h-3 text-rose-500" />
-                                    <span>Before: $14,200/mo retry & token waste</span>
+                                    <span>Before: $14,200/mo total AI inference bill</span>
                                 </div>
                                 <div className="flex items-center gap-2 text-xs font-bold text-emerald-700">
                                     <ArrowUp className="w-3 h-3 text-emerald-500" />
-                                    <span>After: $2,900/mo with deterministic routing</span>
+                                    <span>After: $9,370/mo ($4,830/mo retry waste cut)</span>
                                 </div>
                             </div>
                         </div>
@@ -81,12 +81,18 @@ const ClientOutcomes = () => {
                 {/* CTA after social proof */}
                 <div className="text-center mt-10">
                     <p className="text-zinc-600 text-sm mb-4 font-medium">
-                        Results from anonymized R&D Capital Audit engagements.
+                        Backed by operator experience scaling enterprise SaaS from $0 to $25M ARR and turning around a $20M P&amp;L (+200% YoY).
                     </p>
-                    <Link href="/services" className="inline-flex items-center gap-2 text-violet-700 font-bold hover:text-violet-500 transition-colors group">
-                        See how an audit works for your organization
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                    </Link>
+                    <div className="flex flex-wrap items-center justify-center gap-6">
+                        <Link href="/portfolio" className="inline-flex items-center gap-2 text-violet-700 font-bold hover:text-violet-500 transition-colors group">
+                            Inspect Executive &amp; Builder Portfolio
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                        </Link>
+                        <Link href="/services" className="inline-flex items-center gap-2 text-zinc-800 font-bold hover:text-purple-700 transition-colors group">
+                            Compare Advisory &amp; Turnaround Sprints
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                        </Link>
+                    </div>
                 </div>
 
             </div>

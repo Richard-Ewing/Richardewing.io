@@ -16,45 +16,45 @@ export interface PricingStep {
 
 const defaultSteps: PricingStep[] = [
     {
-        stage: '01. QUALIFY',
-        title: 'Free Assessment',
+        stage: '01. BENCHMARK',
+        title: 'Free Diagnostic Suite',
         price: '$0',
-        cadence: '5-min score',
-        description: '15 quantitative questions to score AI cost visibility & maturity.',
-        href: '/assessment',
+        cadence: '25 live tools',
+        description: 'Run interactive calculators for AI unit economics, APER, and Product Debt.',
+        href: '/diagnose',
     },
     {
-        stage: '02. DIAGNOSE',
-        title: 'Gut-Check Evaluation',
-        price: '$450',
-        cadence: 'one-time',
-        description: '30-minute rapid-fire sync to pinpoint immediate API & cloud leaks.',
-        href: '/services#gut_check',
+        stage: '02. OPERATING KIT',
+        title: 'AI Economist Toolkit',
+        price: '$29',
+        cadence: 'instant download',
+        description: '5 working Excel/CSV models, 12-slide CFO board deck, and 30-day P&L runbook.',
+        href: '/toolkit',
         highlight: true,
     },
     {
-        stage: '03. LOCATE',
-        title: 'Insolvency Audit',
+        stage: '03. TEAR-DOWN',
+        title: 'Product P&L & Pricing',
+        price: '$450',
+        cadence: '60-min 1-on-1',
+        description: 'Live working session to stress-test AI pricing and cut zombie roadmap waste.',
+        href: '/services#gut_check',
+    },
+    {
+        stage: '04. TURNAROUND',
+        title: 'P&L & Roadmap Sprint',
         price: '$2,500',
-        cadence: 'one-time',
-        description: '60-minute intensive code & PDI evaluation for technical debt.',
-        href: '/pricing',
+        cadence: '2-week sprint',
+        description: 'Full feature-level ROI audit, AI pricing redesign, and board defense deck.',
+        href: '/services#insolvency_diagnostic',
     },
     {
-        stage: '04. RECOVER',
-        title: 'R&D Capital Audit',
-        price: '$7,500',
-        cadence: 'one-time',
-        description: '3-week forensic codebase audit & 40-page written executive brief.',
-        href: '/services#hallucination_tax_audit',
-    },
-    {
-        stage: '05. GOVERN',
-        title: 'Fractional Retainer',
+        stage: '05. LEADERSHIP',
+        title: 'Fractional CPO / Exec',
         price: '$10,000',
-        cadence: '/month',
-        description: 'Ongoing CPO/CTO direction, architectural veto, and board defense.',
-        href: '/pricing',
+        cadence: '/mo or Full-Time',
+        description: 'Ongoing CPO/VP of Product leadership, 0-to-1 AI builds, or executive hire.',
+        href: '/portfolio',
     },
 ];
 
@@ -63,10 +63,10 @@ export const PricingLadderStepper = () => {
         <div className="w-full my-8">
             <div className="text-center mb-6">
                 <span className="text-xs font-mono font-bold text-violet-700 uppercase tracking-widest block mb-1">
-                    Commercial Progression Ladder
+                    How We Work Together
                 </span>
                 <h3 className="text-xl font-grotesk font-bold text-zinc-900">
-                    From Free Benchmark to Enterprise Governance
+                    From $0 Benchmarks &amp; $29 Operating Kit to Executive Product Leadership
                 </h3>
             </div>
 

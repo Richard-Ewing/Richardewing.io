@@ -125,7 +125,7 @@ export default function ResearchPage() {
 
                     <div className="mt-8 flex flex-wrap gap-4">
                         <Link href="/research/publications" className="px-5 py-3 rounded-xl bg-cyan-900 text-white font-mono font-bold text-xs hover:bg-cyan-800 transition shadow-sm">
-                            Browse Publications Catalog (174+ Works) →
+                            Browse Publications Catalog ({RESEARCH_CORPUS.length}+ Works) →
                         </Link>
                         <Link href="/concepts" className="px-5 py-3 rounded-xl bg-zinc-900 text-white font-mono font-bold text-xs hover:bg-zinc-800 transition shadow-sm">
                             Explore Canonical Concepts →
@@ -145,7 +145,7 @@ export default function ResearchPage() {
                             </h2>
                         </div>
                         <Link href="/research/publications" className="text-xs font-mono font-bold text-cyan-900 hover:underline">
-                            View All 160+ Works →
+                            View All {RESEARCH_CORPUS.length}+ Works →
                         </Link>
                     </div>
 
@@ -208,14 +208,14 @@ export default function ResearchPage() {
                     </p>
                     <div className="pt-4 border-t border-zinc-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                         <div>
-                            <div className="text-sm font-bold text-zinc-950">100+ Published Works Cataloged</div>
-                            <div className="text-xs text-zinc-600 font-medium">Across CIO.com, Built In, Beehiiv, LinkedIn, Mind the Product, & HackerNoon.</div>
+                            <div className="text-sm font-bold text-zinc-950">{RESEARCH_CORPUS.length}+ Published Works Cataloged</div>
+                            <div className="text-xs text-zinc-600 font-medium">Across CIO.com, Built In, Beehiiv, LinkedIn, Mind the Product, &amp; HackerNoon.</div>
                         </div>
                         <Link
                             href="/research/publications"
                             className="px-5 py-2.5 bg-cyan-900 hover:bg-cyan-950 text-white font-bold text-sm rounded-xl transition shadow-sm whitespace-nowrap"
                         >
-                            Browse 100+ Publications Catalog →
+                            Browse {RESEARCH_CORPUS.length}+ Publications Catalog →
                         </Link>
                     </div>
                 </section>

@@ -88,25 +88,33 @@ export default function BudgetLeakCalculator() {
                 </div>
 
                 {/* Calculation Result */}
-                <div className="bg-slate-950/80 border border-slate-800 rounded-2xl p-5 mb-6 text-center">
+                <div className="bg-slate-950/80 border border-slate-800 rounded-2xl p-5 mb-5 text-center">
                     <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400 block mb-1">Estimated Annual Budget Leak</span>
                     <div className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-violet-300 to-amber-300 font-mono">
-                        {formatCurrency(estimatedWasteMin)} – {formatCurrency(estimatedWasteMax)} / yr
+                        {formatCurrency(estimatedWasteMin)} - {formatCurrency(estimatedWasteMax)} / yr
                     </div>
                     <p className="text-[11px] text-slate-400 mt-2 flex items-center justify-center gap-1">
                         <TrendingDown className="w-3.5 h-3.5 text-rose-400" />
-                        Based on standard 18%–35% unmonitored inference & labor overhead metrics
+                        Based on standard 18%-35% unmonitored inference &amp; zombie feature overhead
                     </p>
                 </div>
 
-                {/* Action CTA */}
-                <Link
-                    href="/assessment"
-                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold text-xs hover:opacity-90 transition-all shadow-lg shadow-violet-600/30 uppercase tracking-wider"
-                >
-                    Get Free Detailed Financial Audit Report
-                    <ArrowRight className="w-4 h-4" />
-                </Link>
+                {/* Action CTAs */}
+                <div className="space-y-2.5">
+                    <Link
+                        href="/toolkit"
+                        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs transition-all shadow-lg shadow-amber-500/20 uppercase tracking-wider"
+                    >
+                        Get the $29 Operating Kit &amp; P&amp;L Models
+                        <ArrowRight className="w-4 h-4" />
+                    </Link>
+                    <Link
+                        href="/tools/aueb"
+                        className="w-full inline-flex items-center justify-center gap-1.5 py-2 text-[11px] font-mono font-bold text-slate-300 hover:text-white transition-colors"
+                    >
+                        Or run the free AI Unit Economics Benchmark →
+                    </Link>
+                </div>
             </div>
         </div>
     );

@@ -18,25 +18,25 @@ import ClientKnowledgeGraph from '@/components/home/ClientKnowledgeGraph';
 import ProductSurface from '@/components/home/ProductSurface';
 
 export const metadata: Metadata = {
-  title: 'AI Economist & Enterprise R&D Capital Audits | Richard Ewing',
+  title: 'Richard Ewing | AI Economist, Product P&L & Advisory',
   description:
-    'Richard Ewing helps organizations measure, govern, and improve the economics of enterprise AI. 19 frameworks, 25 diagnostic tools, and advisory services for CTOs, CFOs, and PE operating partners.',
+    'Scaled SaaS $0 to $25M ARR & $20M P&L turnaround (+200% YoY). Get the $29 AI Economist Operating Kit, Product P&L advisory, or view the Executive Portfolio.',
   alternates: {
     canonical: 'https://www.richardewing.io',
   },
   openGraph: {
-    title: 'AI Economist - Enterprise AI Audits & Cost Governance | Richard Ewing',
+    title: 'Richard Ewing | Product & AI Economist ($0 to $25M ARR)',
     description:
-      'Richard Ewing helps organizations measure, govern, and improve the economics of enterprise AI. 19 frameworks, 25 diagnostic tools, and advisory services for CTOs, CFOs, and PE operating partners.',
+      'Scaled SaaS $0 to $25M ARR & $20M P&L turnaround (+200% YoY). Get the $29 AI Economist Operating Kit, Product P&L advisory, or view the Executive Portfolio.',
     url: 'https://www.richardewing.io',
     type: 'website',
     images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Economist - Enterprise AI Audits & Cost Governance | Richard Ewing',
+    title: 'Richard Ewing | Product & AI Economist ($0 to $25M ARR)',
     description:
-      'Richard Ewing helps organizations measure, govern, and improve the economics of enterprise AI. 19 frameworks, 25 diagnostic tools, and advisory services for CTOs, CFOs, and PE operating partners.',
+      'Scaled SaaS $0 to $25M ARR & $20M P&L turnaround (+200% YoY). Get the $29 AI Economist Operating Kit, Product P&L advisory, or view the Executive Portfolio.',
     images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
   },
 };

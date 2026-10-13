@@ -15,31 +15,40 @@ import ExecutiveTooltip from '@/components/ExecutiveTooltip';
 import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
 export const metadata: Metadata = {
-    title: 'Enterprise AI Advisory Services',
-    description: 'Advisory services measuring, governing, and improving the economics of enterprise AI. From diagnostics to retainers, build software that compounds value.',
+    title: 'AI Product Advisory, Operating Kit & Fractional CPO',
+    description: 'Product P&L turnarounds, AI feature pricing, $29 Operating Kit, Sponsored Research, 0-to-1 AI Build Sprints, and Fractional CPO leadership by Richard Ewing.',
     alternates: {
         canonical: 'https://www.richardewing.io/services',
     },
     openGraph: {
-        title: 'AI Advisory Services & Packages | Richard Ewing',
-        description: 'Quantifiable, data-backed tech audits and Fractional CPO/CTO engagements with guaranteed cost ceilings.',
+        title: 'AI Product Advisory, Operating Kit & Fractional CPO | Richard Ewing',
+        description: 'Product P&L turnarounds, AI feature pricing, $29 Operating Kit, Sponsored Research, and Fractional CPO engagements.',
         url: 'https://www.richardewing.io/services',
         type: 'website',
         images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'AI Advisory Services & Packages | Richard Ewing',
-        description: 'Quantifiable, data-backed tech audits and Fractional CPO/CTO engagements with guaranteed cost ceilings.',
+        title: 'AI Product Advisory, Operating Kit & Fractional CPO | Richard Ewing',
+        description: 'Product P&L turnarounds, AI feature pricing, $29 Operating Kit, Sponsored Research, and Fractional CPO engagements.',
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     }
 };
 
-const servicePackageKeys = ['gut_check', 'insolvency_diagnostic', 'hallucination_tax_audit', 'advisory_retainer'];
+const servicePackageKeys = [
+    'operating_kit',
+    'gut_check',
+    'insolvency_diagnostic',
+    'sponsored_research',
+    'hallucination_tax_audit',
+    'advisory_retainer'
+];
 
 const colorMap: Record<string, { bg: string; border: string; text: string; pill: string; btn: string }> = {
+    operating_kit: { bg: 'bg-emerald-50/50', border: 'border-emerald-200', text: 'text-emerald-700', pill: 'bg-emerald-100 text-emerald-800', btn: 'bg-emerald-600 hover:bg-emerald-700 text-white font-bold' },
     gut_check: { bg: 'bg-amber-50/50', border: 'border-amber-200', text: 'text-amber-700', pill: 'bg-amber-100 text-amber-800', btn: 'bg-amber-600 hover:bg-amber-700 text-white font-bold' },
     insolvency_diagnostic: { bg: 'bg-cyan-50/50', border: 'border-cyan-200', text: 'text-cyan-700', pill: 'bg-cyan-100 text-cyan-800', btn: 'bg-cyan-600 hover:bg-cyan-700 text-white font-bold' },
+    sponsored_research: { bg: 'bg-violet-50/50', border: 'border-violet-200', text: 'text-violet-700', pill: 'bg-violet-100 text-violet-800', btn: 'bg-violet-600 hover:bg-violet-700 text-white font-bold' },
     hallucination_tax_audit: { bg: 'bg-rose-50/50', border: 'border-rose-200', text: 'text-rose-700', pill: 'bg-rose-100 text-rose-800', btn: 'bg-rose-600 hover:bg-rose-700 text-white font-bold' },
     advisory_retainer: { bg: 'bg-indigo-50/50', border: 'border-indigo-200', text: 'text-indigo-700', pill: 'bg-indigo-100 text-indigo-800', btn: 'bg-indigo-600 hover:bg-indigo-700 text-white font-bold' }
 };
@@ -54,7 +63,7 @@ export default function ServicesPage() {
                 
                 {/* Breadcrumb */}
                 <div className="mb-12 flex items-center gap-2 text-xs font-mono font-bold text-zinc-950 uppercase tracking-widest">
-                    <span>Advisory</span><span>/</span><span className="text-indigo-700 font-extrabold">Services & Packages</span>
+                    <span>Advisory &amp; Offers</span><span>/</span><span className="text-indigo-700 font-extrabold">4-Pillar Offer Architecture</span>
                 </div>
 
                 {/* Section 1: Hero Problem */}
@@ -62,31 +71,43 @@ export default function ServicesPage() {
                     <section className="mb-16 text-left">
                         <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-8 tracking-tight leading-[1.1]">
                             Your AI budget is growing. <br className="hidden sm:block" />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-indigo-700">Your AI returns are not.</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-indigo-700">Your gross margins are not.</span>
                         </h1>
                         <p className="text-xl text-zinc-800 leading-relaxed font-medium max-w-3xl mb-8">
-                            Companies are spending more on AI but cannot prove it produces financial returns. The CFO sees a growing line item. The CTO promises future value. Neither has the data to resolve the disagreement.
+                            I scaled SaaS products from <strong className="text-zinc-950">$0 to $25M ARR</strong>, turned around a stagnant <strong className="text-zinc-950">$20M P&amp;L (+200% YoY)</strong>, and built two live AI platforms from scratch. Whether you want the self-serve <strong className="text-zinc-950">$29 Operating Kit</strong>, a 1-on-1 Product P&amp;L Tear-Down, Sponsored Research, a 0-to-1 AI Build Sprint, or Fractional CPO leadership, every offer is fixed-scope and built on real P&amp;L math.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                        <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-12">
+                            <Link
+                                href="/toolkit"
+                                className="flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-xs uppercase tracking-widest font-extrabold transition-all bg-amber-500 text-zinc-950 hover:bg-amber-400 shadow-md"
+                            >
+                                Get the $29 Operating Kit →
+                            </Link>
                             <CheckoutButton 
                                 productId="gut_check" 
-                                label={`Book $${COMMERCIAL_OFFERS.gut_check.price} Gut-Check`} 
+                                label={`Book $${COMMERCIAL_OFFERS.gut_check.price} P&L Tear-Down`} 
                                 variant="primary"
                             />
-                            <Link href="/assessment" className="flex items-center justify-center px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-bold transition-all bg-white border border-zinc-300 text-zinc-950 hover:bg-zinc-50">
-                                Run Free Benchmark
-                            </Link>
+                            <a
+                                href="mailto:richardewing@exogram.ai?subject=Free%2015-Min%20Executive%20Intro%20Request"
+                                className="flex items-center justify-center px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-bold transition-all bg-white border border-zinc-300 text-zinc-950 hover:bg-zinc-50"
+                            >
+                                Free 15-Min Executive Intro
+                            </a>
                         </div>
 
                         {/* Executive Plain-English Summary Box */}
                         <div className="mb-12 bg-white border border-indigo-200 rounded-2xl p-6 shadow-sm">
                             <div className="flex items-center gap-2 text-indigo-700 font-mono font-bold text-xs uppercase tracking-widest mb-3">
                                 <ShieldCheck className="w-4 h-4" />
-                                <span>Executive Summary (CFO Plain-English Translation)</span>
+                                <span>Four Ways We Work Together (Zero Fluff)</span>
                             </div>
                             <p className="text-zinc-800 text-sm sm:text-base leading-relaxed font-medium">
-                                Unchecked AI infrastructure spend and unverified code creates technical debt that acts like a high-interest credit card. Our advisory engagements execute an <ExecutiveTooltip term="R&D Capital Audit">R&D Capital Audit</ExecutiveTooltip> to calculate your <ExecutiveTooltip term="Technical Insolvency Date">Technical Insolvency Date</ExecutiveTooltip> and reduce your <ExecutiveTooltip term="Product Debt Index (PDI)">Product Debt Index (PDI)</ExecutiveTooltip>. By converting <ExecutiveTooltip term="Vibe Coding Debt">Vibe Coding Debt</ExecutiveTooltip> into software assets under <ExecutiveTooltip term="Deterministic controls">Deterministic controls</ExecutiveTooltip>, we protect gross margins and restore predictable financial returns.
+                                <strong>1. Digital Operating Kit ($29 / $79):</strong> Download the 5 working Excel/CSV models, 12-slide CFO board deck, and 30-day CPO turnaround runbook immediately.<br />
+                                <strong>2. Product Strategy, Pricing &amp; P&amp;L Advisory ($450 - $10k/mo):</strong> 1-on-1 pricing tear-downs, 2-week roadmap turnarounds, and Fractional CPO leadership.<br />
+                                <strong>3. Sponsored Benchmark Research ($2,500+):</strong> Co-authored whitepapers and executive briefings distributed across 174+ publications and 12,500+ technology leaders.<br />
+                                <strong>4. 0-to-1 AI Product &amp; Authority Build Sprint ($7,500):</strong> Ship a production-grade AI diagnostic tool and authority engine in 21 days.
                             </p>
                         </div>
 
@@ -95,40 +116,40 @@ export default function ServicesPage() {
                             <div className="bg-white border border-zinc-300 p-5 rounded-2xl shadow-sm">
                                 <div className="flex items-center gap-2 text-purple-700 font-bold text-sm mb-2">
                                     <UserCheck className="w-4 h-4" />
-                                    <span>For CTOs & VPs of Eng</span>
+                                    <span>For CEOs, Founders &amp; Recruiters</span>
                                 </div>
                                 <p className="text-zinc-800 text-xs font-semibold leading-relaxed mb-3">
-                                    Prove engineering ROI to the board and install hard cost caps before API overruns wreck your roadmap.
+                                    Evaluating Richard Ewing for VP of Product, Chief Product Officer, Head of AI Product, or Fractional CPO?
                                 </p>
-                                <Link href="/for-ctos" className="text-[11px] font-mono font-bold text-purple-700 hover:text-purple-900 flex items-center gap-1">
-                                    CTO Diagnostic Guide →
+                                <Link href="/portfolio" className="text-[11px] font-mono font-bold text-purple-700 hover:text-purple-900 flex items-center gap-1">
+                                    Inspect Executive Portfolio →
                                 </Link>
                             </div>
 
                             <div className="bg-white border border-zinc-300 p-5 rounded-2xl shadow-sm">
                                 <div className="flex items-center gap-2 text-indigo-700 font-bold text-sm mb-2">
                                     <BarChart3 className="w-4 h-4" />
-                                    <span>For CFOs & Finance Leads</span>
+                                    <span>For CFOs &amp; Product Leaders</span>
                                 </div>
                                 <p className="text-zinc-800 text-xs font-semibold leading-relaxed mb-3">
-                                    Turn the black-box AI line item into a predictable P&L asset with unit economics clarity.
+                                    Stress-test AI feature margins, kill zombie features, and align engineering roadmaps with EBITDA.
                                 </p>
-                                <Link href="/for-boards" className="text-[11px] font-mono font-bold text-indigo-700 hover:text-indigo-900 flex items-center gap-1">
-                                    CFO Board Framework →
+                                <Link href="/toolkit" className="text-[11px] font-mono font-bold text-indigo-700 hover:text-indigo-900 flex items-center gap-1">
+                                    Preview $29 Operating Kit →
                                 </Link>
                             </div>
 
                             <div className="bg-white border border-zinc-300 p-5 rounded-2xl shadow-sm">
                                 <div className="flex items-center gap-2 text-rose-700 font-bold text-sm mb-2">
                                     <Briefcase className="w-4 h-4" />
-                                    <span>For PE Operating Partners</span>
+                                    <span>For B2B AI Vendors &amp; GTM</span>
                                 </div>
                                 <p className="text-zinc-800 text-xs font-semibold leading-relaxed mb-3">
-                                    Forensic technical due diligence to uncover hidden AI liabilities before term sheet execution.
+                                    Commission an independent economic benchmark or executive briefing for your enterprise buyers.
                                 </p>
-                                <Link href="/pricing" className="text-[11px] font-mono font-bold text-rose-700 hover:text-rose-900 flex items-center gap-1">
-                                    M&A Tech Diligence →
-                                </Link>
+                                <a href="#sponsored_research" className="text-[11px] font-mono font-bold text-rose-700 hover:text-rose-900 flex items-center gap-1">
+                                    Sponsored Research Specs →
+                                </a>
                             </div>
                         </div>
                     </section>
@@ -266,31 +287,17 @@ export default function ServicesPage() {
 
                                                 <h3 className="text-2xl font-bold text-zinc-950 mb-2 font-grotesk">{pkg.name}</h3>
                                                 <p className="text-sm text-zinc-600 font-semibold mb-4 max-w-xl">
-                                                    {key === 'insolvency_diagnostic' ? (
-                                                        <>Deep-dive session for teams with high <ExecutiveTooltip term="Product Debt Index (PDI)">Product Debt Index (PDI)</ExecutiveTooltip> or spiraling API costs. We analyze architecture bottlenecks and map out a 30-day capital recovery roadmap.</>
-                                                    ) : key === 'hallucination_tax_audit' ? (
-                                                        <>Engineers spend an average of 4.3 hrs/week manually validating AI outputs. Our <ExecutiveTooltip term="R&D Capital Audit">R&D Capital Audit</ExecutiveTooltip> measures total verification overhead and installs <ExecutiveTooltip term="Deterministic controls">Deterministic controls</ExecutiveTooltip>.</>
-                                                    ) : (
-                                                        pkg.description
-                                                    )}
+                                                    {pkg.description}
                                                 </p>
 
-                                                {/* Plain-English CFO Summary per package */}
-                                                <div className="mb-6 bg-zinc-50 border border-zinc-200 rounded-xl p-3 text-xs text-zinc-700">
-                                                    <span className="font-mono text-[10px] font-bold uppercase text-zinc-500 block mb-1">CFO Financial Takeaway:</span>
-                                                    {key === 'gut_check' && (
-                                                        <span>Identifies active cloud overspending and fixes initial <ExecutiveTooltip term="Vibe Coding Debt">Vibe Coding Debt</ExecutiveTooltip> exposure in 30 minutes.</span>
-                                                    )}
-                                                    {key === 'insolvency_diagnostic' && (
-                                                        <span>Pinpoints your exact <ExecutiveTooltip term="Technical Insolvency Date">Technical Insolvency Date</ExecutiveTooltip> and establishes hard dollar boundaries.</span>
-                                                    )}
-                                                    {key === 'hallucination_tax_audit' && (
-                                                        <span>Full <ExecutiveTooltip term="R&D Capital Audit">R&D Capital Audit</ExecutiveTooltip> replacing wasted engineer hours with <ExecutiveTooltip term="Deterministic controls">Deterministic controls</ExecutiveTooltip>.</span>
-                                                    )}
-                                                    {key === 'advisory_retainer' && (
-                                                        <span>Fractional CPO/CTO oversight guaranteeing zero billing surprises and a low <ExecutiveTooltip term="Product Debt Index (PDI)">Product Debt Index (PDI)</ExecutiveTooltip>.</span>
-                                                    )}
-                                                </div>
+                                                <ul className="space-y-1.5 mb-5 text-xs text-zinc-700 font-medium">
+                                                    {pkg.features.map((feat, fIdx) => (
+                                                        <li key={fIdx} className="flex items-start gap-2">
+                                                            <CheckCircle2 className="w-4 h-4 text-indigo-600 shrink-0 mt-0.5" />
+                                                            <span>{feat}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
 
                                                 <div className="mb-6 flex items-baseline gap-1">
                                                     <span className="text-4xl font-extrabold text-zinc-950 font-grotesk">${pkg.price.toLocaleString()}</span>
@@ -298,7 +305,7 @@ export default function ServicesPage() {
                                                 </div>
                                             </div>
 
-                                            <div className="w-full md:w-64 flex flex-col justify-end">
+                                            <div className="w-full md:w-64 flex flex-col justify-end gap-2.5">
                                                 {pkg.primaryCTA.action === 'checkout' && pkg.primaryCTA.productId ? (
                                                     <CheckoutButton 
                                                         productId={pkg.primaryCTA.productId} 
@@ -313,6 +320,14 @@ export default function ServicesPage() {
                                                     >
                                                         {pkg.primaryCTA.label}
                                                     </a>
+                                                )}
+                                                {key === 'operating_kit' && (
+                                                    <Link
+                                                        href="/toolkit"
+                                                        className="text-center text-xs font-mono font-bold text-emerald-800 hover:text-emerald-950 underline"
+                                                    >
+                                                        Interactive Live Preview →
+                                                    </Link>
                                                 )}
                                             </div>
                                         </div>

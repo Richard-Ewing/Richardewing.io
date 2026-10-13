@@ -45,6 +45,11 @@ export default function NumberTicker({
         });
     }, [springValue, decimalPlaces]);
 
+    const initialFormatted = Intl.NumberFormat("en-US", {
+        minimumFractionDigits: decimalPlaces,
+        maximumFractionDigits: decimalPlaces,
+    }).format(Number(value.toFixed(decimalPlaces)));
+
     return (
         <span
             className={cn(
@@ -52,6 +57,8 @@ export default function NumberTicker({
                 className,
             )}
             ref={ref}
-        />
+        >
+            {initialFormatted}
+        </span>
     );
 }
