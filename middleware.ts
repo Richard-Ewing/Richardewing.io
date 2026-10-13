@@ -53,7 +53,7 @@ export default clerkMiddleware(async (auth, req) => {
     pathname.endsWith('.yml') ||
     pathname.endsWith('.yaml') ||
     pathname.endsWith('.sql') ||
-    pathname.endsWith('.zip') ||
+    (pathname.endsWith('.zip') && !pathname.startsWith('/downloads/')) ||
     pathname.endsWith('.key') ||
     pathname.includes('/@fs/') ||
     pathname.includes('service_account') ||
