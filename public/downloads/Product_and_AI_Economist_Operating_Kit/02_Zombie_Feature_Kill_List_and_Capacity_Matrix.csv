@@ -1,0 +1,24 @@
+ZOMBIE FEATURE KILL-LIST & R&D CAPITAL REALLOCATION MATRIX,,,,,,,,,,,,,,,
+Author: Richard Ewing (VP of Product / AI Economist),,,,,,,,Scale Provenance: Tyler Technologies ($0-$25M ARR),,,,,,,
+Audit Principle: Every line of code not paying rent traps engineering velocity and destroys gross margin.,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+Feature ID,Feature Name,Module / Domain,Launch Year,Monthly Active Users (MAU),% of User Base,Attributed ARR ($),% of Total ARR,Contractual Churn Risk,Weekly Dev Hours (Maint/On-Call),Fully-Loaded Dev Cost ($/yr @ $185/hr),Cloud & Storage Carry ($/yr),Total Annual Carry Cost ($/yr),Net Profit Contribution ($),Zombie Score (1-100),Strategic Verdict,Reallocated Dev FTEs,Deprecation Timeline
+FEAT-101,Legacy XML/EDI Custom Exporter,Integrations,2019,14,0.3%,35000,0.2%,High (1 legacy client),18,173160,24000,197160,-162160,96,KILL / SUNSET,0.45,60 Days
+FEAT-102,Ad-hoc Flash/Silverlight Report Generator,Analytics,2018,3,0.1%,0,0.0%,Zero,12,115440,18000,133440,-133440,99,KILL / SUNSET,0.3,30 Days
+FEAT-103,Social Media Auto-Poster V1,Marketing,2021,48,1.1%,18000,0.1%,Low,10,96200,12000,108200,-90200,92,KILL / SUNSET,0.25,45 Days
+FEAT-104,Custom CSS White-Label Theming Engine,Core Platform,2020,29,0.7%,85000,0.6%,Med (Contract SOW),24,230880,8000,238880,-153880,88,ARCHIVE & FREEZE,0.6,Immediate Freeze
+FEAT-105,Automated Fax Gateway Relay,Compliance,2017,8,0.2%,42000,0.3%,High (Government RFP),8,76960,36000,112960,-70960,84,MONETIZE (Paid Add-On),0.2,Transition to $1.5K/mo Addon
+FEAT-106,Unused Real-Time Collaborative Canvas,Workspace,2023,72,1.6%,15000,0.1%,Low,35,336700,48000,384700,-369700,95,KILL / SUNSET,0.88,60 Days
+FEAT-107,Custom Webhook Relay V1 (Deprecated Auth),API,2019,110,2.5%,120000,0.8%,Med,16,153920,15000,168920,-48920,78,MERGE / REFACTOR INTO V2,0.4,90 Days
+FEAT-108,Interactive Gantt Chart Visualizer,Projects,2021,195,4.4%,210000,1.4%,Med,22,211640,14000,225640,-15640,62,MERGE / REFACTOR,0.55,Keep Core / Strip Edges
+FEAT-109,Legacy Elasticsearch On-Prem Cluster,Search,2020,450,10.2%,650000,4.3%,High,42,404040,185000,589040,60960,71,REFACTOR (Migrate to Managed),1.05,120 Days
+FEAT-110,AI Summarization Copilot (Uncapped),GenAI,2024,1840,41.8%,3200000,21.3%,Critical,50,481000,620000,1101000,2099000,45,PROTECT & OPTIMIZE (Apply Kit 1),1.25,Continuous Active Focus
+FEAT-111,Single Sign-On SAML/Okta Core,Security,2020,3400,77.3%,8500000,56.7%,Critical,14,134680,22000,156680,8343320,8,PROTECT & GROW,0.35,Core Asset
+FEAT-112,Automated PDF Invoice OCR Ingestor,Finance,2022,820,18.6%,1450000,9.7%,High,20,192400,45000,237400,1212600,28,PROTECT & GROW,0.5,Core Asset
+,,,,,,,,,,,,,,,,,
+AUDIT SUMMARY & CAPACITY RECOVERY SUMMARY,,,,,,,,,,,,,,,,,
+Metric,Current State,After Zombie Kill Plan,Net Financial Gain,,,,,,,,,,,,,,
+Total Engineering Hours on Maintenance / Week,281,168,-113 Hours / Week Freed,,,,,,,,,,,,,,
+Annual Carry Cost of Audited Features ($),3647120,2296720,"+$1,350,400 Cash Saved / Year",,,,,,,,,,,,,,
+Engineering FTEs Trapped in Negative Margin Debt,7.03,1.45,5.58 Full-Time Engineers Reallocated to High-Growth AI,,,,,,,,,,,,,,
+Immediate Net Margin Recovery ($),0,0,+$1.35M to EBITDA in Year 1,,,,,,,,,,,,,,

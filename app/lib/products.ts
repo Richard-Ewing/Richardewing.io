@@ -150,20 +150,20 @@ export const PRODUCTS: Record<string, Product> = {
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
 
-    // --- GUIDES (DYNAMIC TIERS) ---
+    // --- GUIDES (DYNAMIC TIERS) & TOOLKIT ---
     premium_guide_29: {
-        name: 'Premium Guide Access ($29 Tier)',
-        description: 'Access to one premium guide.',
+        name: 'The Product & AI Economist Operating Kit (Standard Edition)',
+        description: 'Instant download of all 5 battle-tested P&L spreadsheets, AI feature pricing stress-testers, Zombie Feature kill-list matrices, 12-slide CFO board decks, and executive career playbooks.',
         price: 2900,
         mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/5kQ3cogHs3jc5lz3FK2B20p', // Original Link
+        paymentLink: 'https://buy.stripe.com/fZudR2aj44ng8xLeko2B21c', // Official Live Stripe Link
     },
     premium_guide_79: {
-        name: 'Premium Guide Access ($79 Tier)',
-        description: 'Access to one premium guide.',
+        name: 'The Product & AI Economist Operating Kit (Complete Executive Bundle)',
+        description: 'Complete Executive Access: All 5 core operating models and playbooks PLUS 13 specialized executive playbooks (PE Due Diligence, Consumption Pricing, FinOps, Agentic AI Economics).',
         price: 7900,
         mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/28EbIUgHs5rkcO16RW2B20u', // Real Link
+        paymentLink: 'https://buy.stripe.com/6oUdR2ezk2f8aFT9042B21d', // Official Live Stripe Link
     },
     premium_guide_99: {
         name: 'Premium Guide Access ($99 Tier)',

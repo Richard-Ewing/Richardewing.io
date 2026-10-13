@@ -1,0 +1,68 @@
+THE AI FEATURE PRICING & MARGIN STRESS-TESTER,,,,,,,
+Author: Richard Ewing (VP of Product / AI Economist),,,,Version: 2026.1,,License: Single Executive User,
+"Purpose: Model token consumption, agentic multiplier, and gross margin collapse across P50, P90, and P99 customer tiers.",,,,,,,
+,,,,,,,
+SECTION A: MODEL & TOKEN BASELINE COSTS (Per 1 Million Tokens),,,,,,,
+Model Architecture,Provider,Input ($ / 1M),Output ($ / 1M),Cached Input ($ / 1M),Embedding ($ / 1M),Target Latency (s),Notes
+Claude 3.5 Sonnet,Anthropic,3,15,0.3,0.1,1.8,Standard frontier reasoning
+Claude 3.5 Haiku,Anthropic,0.8,4,0.08,0.1,0.6,High-velocity small model routing
+GPT-4o,OpenAI,2.5,10,1.25,0.02,1.4,Flagship multimodal
+GPT-4o mini,OpenAI,0.15,0.6,0.075,0.02,0.4,Commodity classification & extraction
+Gemini 1.5 Flash,Google,0.075,0.3,0.01875,0.02,0.3,Lowest cost bulk ingestion
+DeepSeek R1 (API),DeepSeek / Edge,0.55,2.19,0.14,0.02,3.2,Cost-arbitrage reasoning
+,,,,,,,
+SECTION B: FEATURE WORKLOAD ASSUMPTIONS (Active Feature: Enterprise AI Copilot),,,,,,,
+Parameter,Unit,Assumed Value,Formula / Rationale,,,,
+System Prompt + Instructions,Tokens / Request,1800,"Core agent instructions, tools schema, context",,,,
+User Message (Average),Tokens / Request,350,User input prompt length,,,,
+RAG Context Chunks Retrieved,Tokens / Request,3200,4 retrieved knowledge chunks @ 800 tokens each,,,,
+Agentic Tool-Calling Iterations,Rounds / Query,1.6,"Average tool calls per query (P50: 1.0, P90: 2.5, P99: 4.8)",,,,
+Total Input Tokens / Query,Tokens / Request,5350,"Sum of system, user, and retrieved RAG context",,,,
+Model Completion Output,Tokens / Query,650,Generated answer and formatted JSON citations,,,,
+Streaming & Network Overhead,% Multiplier,10%,Protocol serialization and websocket keep-alive,,,,
+Retry & Hallucination Fail Rate,% Multiplier,12%,Automated retries on parse failure or timeout,,,,
+Effective Input Tokens / Query,Tokens,6623,= (5350 * 1.10) * 1.12,,,,
+Effective Output Tokens / Query,Tokens,804,= (650 * 1.10) * 1.12,,,,
+,,,,,,,
+SECTION C: COGS PER QUERY BY MODEL (Effective Tokens),,,,,,,
+Model Evaluated,Input Cost / Query ($),Output Cost / Query ($),Total Cost / Query ($),Queries / $1.00 COGS,,,
+Claude 3.5 Sonnet,0.01987,0.01206,0.03193,31.3,,,
+Claude 3.5 Haiku,0.0053,0.00322,0.00852,117.4,,,
+GPT-4o,0.01656,0.00804,0.0246,40.7,,,
+GPT-4o mini,0.00099,0.00048,0.00148,677.2,,,
+Gemini 1.5 Flash,0.0005,0.00024,0.00074,1357.7,,,
+,,,,,,,
+SECTION D: USER USAGE ARCHETYPES (Monthly Query Volume),,,,,,,
+Cohort Archetype,Queries / Month,% of Customer Base,Behavior Description,,,,
+P50 (Median User),40,60.0%,Uses copilot 1-2 times per working day for basic summaries,,,,
+P90 (Active Power User),220,30.0%,"Daily workflow integration: analysis, drafting, research",,,,
+P99 (Extreme Whale / Script),1150,10.0%,"Continuous power usage, automated scripts, massive context",,,,
+,,,,,,,
+SECTION E: MONTHLY COGS PER ACTIVE SEAT (Evaluated on Claude 3.5 Sonnet @ $0.0319/query),,,,,,,
+Cohort,Queries / Mo,Base Token COGS,Vector / Infra ($),Total Monthly COGS,,,
+P50 (Median),40,1.28,0.25,1.53,,,
+P90 (Power),220,7.03,0.75,7.78,,,
+P99 (Whale),1150,36.72,2.5,39.22,,,
+Blended Average Seat COGS,179,5.72,0.63,6.35,,,
+,,,,,,,
+SECTION F: PRICING TIER STRESS-TEST & GROSS MARGIN SENSITIVITY,,,,,,,
+Pricing Tier Model,Monthly Price,P50 COGS,P50 Gross Margin %,P90 COGS,P90 Gross Margin %,P99 COGS,P99 Gross Margin %
+Flat Seat Tier 1,20,1.53,92.4%,7.78,61.1%,39.22,-96.1% (COLLAPSE)
+Flat Seat Tier 2,49,1.53,96.9%,7.78,84.1%,39.22,19.9% (MARGIN TRAP)
+Flat Seat Tier 3,99,1.53,98.5%,7.78,92.1%,39.22,60.4% (BELOW SAAS 80%)
+Hybrid: $29 Seat + 50 Credits + $0.05/extra,29,1.53,94.7%,7.78,79.3%,39.22,53.3% (PROTECTED)
+Outcome: $0.25 / Accepted Work Output,Variable,1.53,75.5%,7.78,78.2%,39.22,81.4% (SCALES SAFELY)
+,,,,,,,
+SECTION G: MARGIN COLLAPSE THRESHOLDS (Queries Before Margin Drops Below Target),,,,,,,
+Seat Price Point,70% Gross Margin Cap,50% Gross Margin Cap,0% Breakeven Cap (Cash Loss),,,,
+$20 / Month Seat,188,313,626,,,,
+$49 / Month Seat,460,767,1534,,,,
+$99 / Month Seat,930,1550,3101,,,,
+,,,,,,,
+SECTION H: ARCHITECTURAL REMEDIATION LEVERS (Margin Recovery),,,,,,,
+Remediation Tactic,Implementation Effort,COGS Reduction %,Expected Margin Recovery ($ / seat),,,,
+Prompt Caching (Static System & Tools),2 Days,42.0%,+$2.67 / seat / month,,,,
+Small-Model Semantic Router (Haiku / 4o-mini),1 Week,35.0%,+$2.22 / seat / month,,,,
+Semantic Response Cache (Redis / Embeddings),4 Days,22.0%,+$1.40 / seat / month,,,,
+Context Window Sliding Truncation,1 Day,15.0%,+$0.95 / seat / month,,,,
+Combined Optimization Stack,2 Weeks Total,68.5%,+$4.35 / seat / month (Transforms P99 from -96% to +48%),,,
