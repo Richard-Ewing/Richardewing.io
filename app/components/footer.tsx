@@ -41,17 +41,19 @@ export function Footer() {
                             </div>
                             <div>
                                 <div className="font-semibold text-zinc-900 font-grotesk">Richard Ewing</div>
-                                <div className="text-xs font-bold text-zinc-950 font-mono">AI Economist</div>
+                                <div className="text-xs font-bold text-zinc-950 font-mono">Product &amp; AI Economist</div>
                             </div>
                         </div>
                         <p className="text-zinc-950 text-sm leading-relaxed">
-                            Richard Ewing is the AI Economist. He founded <Link href="/exogram" className="underline font-bold hover:text-cyan-900">Exogram</Link> (AI governance) and <Link href="/careerwin" className="underline font-bold hover:text-indigo-900">CareerWin</Link> (career intelligence).
+                            Richard Ewing is a Product &amp; AI Economist ($0 to $25M ARR at Tyler Technologies, $20M P&amp;L turnaround +200% YoY, CS + Finance MBA). He founded <Link href="/exogram" className="underline font-bold hover:text-cyan-900">Exogram</Link> (AI governance) and <Link href="/careerwin" className="underline font-bold hover:text-indigo-900">CareerWin</Link> (career intelligence).
                         </p>
                     </div>
 
                     <div>
-                        <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Operations</h4>
+                        <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Operations &amp; Tools</h4>
                         <ul className="space-y-2 text-sm font-semibold font-grotesk">
+                            <li><Link href="/workspace" className="text-emerald-900 font-extrabold hover:text-zinc-900 transition-colors">Live P&amp;L Workspace</Link></li>
+                            <li><Link href="/toolkit" className="text-violet-900 font-extrabold hover:text-zinc-900 transition-colors">Operating Kit ($29)</Link></li>
                             <li><Link href="/tools" className="text-zinc-950 hover:text-zinc-900 transition-colors">Diagnostics</Link></li>
                             <li><Link href="/roi" className="text-zinc-950 hover:text-zinc-900 transition-colors">ROI Calculator</Link></li>
                             <li><Link href="/case-studies" className="text-amber-900 font-extrabold hover:text-zinc-900 transition-colors">Case Studies</Link></li>
@@ -61,12 +63,11 @@ export function Footer() {
                             <li><Link href="/reality-check" className="text-purple-900 font-extrabold hover:text-zinc-900 transition-colors">The Reality Check</Link></li>
                             <li><Link href="/compare" className="text-zinc-950 hover:text-zinc-900 transition-colors">Platform Comparisons</Link></li>
                             <li><Link href="/industries" className="text-zinc-950 hover:text-zinc-900 transition-colors">Industry Briefings</Link></li>
-                            <li><Link href="/benchmark" className="text-zinc-950 hover:text-zinc-900 transition-colors">Enterprise Benchmarks</Link></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Knowledge & Academy</h4>
+                        <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Knowledge &amp; Academy</h4>
                         <ul className="space-y-2 text-sm font-semibold font-grotesk">
                             <li><Link href="/articles" className="text-zinc-950 hover:text-zinc-900 transition-colors">Forensic Articles</Link></li>
                             <li><Link href="/articles/frameworks/return-on-ai-investment" className="text-cyan-950 font-bold hover:text-cyan-900 transition-colors">ROAI Framework</Link></li>
@@ -74,7 +75,7 @@ export function Footer() {
                             <li><Link href="/careers" className="text-emerald-900 font-extrabold hover:text-zinc-900 transition-colors">2026 Career Pathfinder</Link></li>
                             <li><Link href="/careers/post-qa-verification-engineer" className="text-emerald-950 font-bold hover:text-emerald-900 transition-colors">Post-QA Verification Career</Link></li>
                             <li><Link href="/blog" className="text-zinc-950 hover:text-zinc-900 transition-colors">Engineering Blog</Link></li>
-                            <li><Link href="/glossary" className="text-zinc-950 hover:text-zinc-900 transition-colors">Glossary & Pillars</Link></li>
+                            <li><Link href="/glossary" className="text-zinc-950 hover:text-zinc-900 transition-colors">Glossary &amp; Pillars</Link></li>
                             <li><Link href="/book" className="text-purple-900 font-extrabold hover:text-zinc-900 transition-colors">The AI Economist (Book)</Link></li>
                             <li><Link href="/curriculum" className="text-zinc-950 hover:text-zinc-900 transition-colors">Builder Curriculum</Link></li>
                             <li><Link href="/answers" className="text-zinc-950 hover:text-zinc-900 transition-colors">Executive Answers</Link></li>
@@ -82,15 +83,17 @@ export function Footer() {
                     </div>
 
                     <div>
-                        <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Advisory & Platforms</h4>
+                        <h4 className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4 font-mono">Advisory &amp; Hiring</h4>
                         <ul className="space-y-2 text-sm font-semibold font-grotesk">
+                            <li><Link href="/portfolio" className="text-amber-900 font-extrabold hover:text-zinc-900 transition-colors">Executive Portfolio (CPO / VP)</Link></li>
+                            <li><Link href="/services" className="text-[var(--accent-crimson)] font-bold hover:opacity-80 transition-colors">3 Engagement Paths</Link></li>
+                            <li><Link href="/pricing" className="text-zinc-950 hover:text-zinc-900 transition-colors">Pricing &amp; Sprints</Link></li>
                             <li><Link href="/start-here" className="text-cyan-900 font-extrabold hover:text-zinc-900 transition-colors">Start Here</Link></li>
                             <li><Link href="/exogram" className="text-purple-900 font-extrabold hover:text-zinc-900 transition-colors">Exogram Platform</Link></li>
                             <li><Link href="/about" className="text-zinc-950 hover:text-zinc-900 transition-colors">About Richard</Link></li>
                             <li><Link href="/doctrine" className="text-zinc-950 hover:text-zinc-900 transition-colors">Architectural Doctrine</Link></li>
-                            <li><Link href="/security" className="text-zinc-950 hover:text-zinc-900 transition-colors">Security & Trust</Link></li>
-                            <li><Link href="/speaking" className="text-amber-900 font-extrabold hover:text-zinc-900 transition-colors">Keynotes & Speaking</Link></li>
-                            <li><Link href="/services" className="text-[var(--accent-crimson)] font-bold hover:opacity-80 transition-colors">Book an Audit</Link></li>
+                            <li><Link href="/security" className="text-zinc-950 hover:text-zinc-900 transition-colors">Security &amp; Trust</Link></li>
+                            <li><Link href="/speaking" className="text-amber-900 font-extrabold hover:text-zinc-900 transition-colors">Keynotes &amp; Speaking</Link></li>
                         </ul>
                     </div>
 

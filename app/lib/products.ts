@@ -153,14 +153,14 @@ export const PRODUCTS: Record<string, Product> = {
     // --- GUIDES (DYNAMIC TIERS) & TOOLKIT ---
     premium_guide_29: {
         name: 'The Product & AI Economist Operating Kit (Standard Edition)',
-        description: 'Instant download of all 5 battle-tested P&L spreadsheets, AI feature pricing stress-testers, Zombie Feature kill-list matrices, 12-slide CFO board decks, and executive career playbooks.',
+        description: 'Instant download of all 5 battle-tested P&L spreadsheets, AI feature pricing stress-testers, Zombie Feature kill-list matrices, 12-slide CFO board decks, executive career playbooks, plus live interactive Product Economist Workspace (/workspace) access.',
         price: 2900,
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/fZudR2aj44ng8xLeko2B21c', // Official Live Stripe Link
     },
     premium_guide_79: {
         name: 'The Product & AI Economist Operating Kit (Complete Executive Bundle)',
-        description: 'Complete Executive Access: All 5 core operating models and playbooks PLUS 13 specialized executive playbooks (PE Due Diligence, Consumption Pricing, FinOps, Agentic AI Economics).',
+        description: 'Complete Executive Access: All 5 core operating models, live interactive Product Economist Workspace (/workspace), PLUS 13 specialized executive playbooks (PE Due Diligence, Consumption Pricing, FinOps, Agentic AI Economics).',
         price: 7900,
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/6oUdR2ezk2f8aFT9042B21d', // Official Live Stripe Link
@@ -196,15 +196,15 @@ export const PRODUCTS: Record<string, Product> = {
 
     // --- ADVISORY (CORE TIERS) ---
     gut_check: {
-        name: '30-Minute Gut-Check Call',
-        description: 'Rapid-fire diagnostic: you describe the situation, I tell you if it\'s on fire. 30-minute call.',
+        name: 'AI Product P&L, Pricing & Roadmap Tear-Down (60-Min 1-on-1)',
+        description: 'Live 60-minute 1-on-1 working session with Richard Ewing to stress-test your AI pricing tiers, pinpoint margin leaks, and cut zombie roadmap waste. Includes the full $79 Operating Kit & Workspace access.',
         price: 45000,
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204',
     },
     insolvency_diagnostic: {
-        name: 'Insolvency Diagnostic',
-        description: '60-minute Capital Exposure Assessment + Written Risk Exposure Report + 15-minute follow-up call.',
+        name: 'Product P&L & Roadmap Turnaround Sprint',
+        description: '2-week executive turnaround sprint: feature-by-feature backlog ROI & maintenance carry audit, AI tier packaging redesign, 90-day capacity reallocation plan, and board-ready P&L presentation deck.',
         price: 250000,
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203',
@@ -218,21 +218,21 @@ export const PRODUCTS: Record<string, Product> = {
     },
     strategy_session: {
         name: '1-on-1 Strategy Session',
-        description: '60-minute live strategy session with Richard Ewing, AI Economist.',
+        description: '60-minute live strategy session with Richard Ewing, Product & AI Economist.',
         price: 50000,
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/dRm6oAbn8bPIdS5gsw2B20j',
     },
     full_audit: {
-        name: 'Full R&D Capital Audit',
-        description: 'Complete 3-week forensic review of R&D capital allocation and AI inference costs. Board-ready deliverable with remediation roadmap.',
+        name: '0-to-1 AI Product & Authority Engine Sprint',
+        description: '21-day hands-on architecture and build sprint to ship a production-grade AI application, interactive buyer diagnostic calculator funnel, or AEO/GEO authority engine.',
         price: 750000,
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/7sY14g76ScTM7tH2BG2B202',
     },
     hallucination_tax_audit: {
-        name: 'R&D Capital & Hallucination Audit',
-        description: 'Quantify your organization\'s verification burden: hours spent checking AI outputs, incident costs from hallucinated content, and total hidden productivity drain. Board-ready report with remediation plan.',
+        name: '0-to-1 AI Product & Authority Engine Sprint',
+        description: '21-day hands-on architecture and build sprint to ship a production-grade AI application, interactive buyer diagnostic calculator funnel, or AEO/GEO authority engine.',
         price: 750000,
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/7sY14g76ScTM7tH2BG2B202',

@@ -7,25 +7,25 @@ interface AdvisoryCTAProps {
 
 const VARIANTS = {
   'tool-result': {
-    headline: 'Your diagnostic revealed a problem?',
-    body: "Book a 60-minute session. I'll locate the exact capital leak and formulate an immediate reduction strategy.",
-    primaryLabel: 'Book Insolvency Audit',
-    primaryHref: '/api/buy/insolvency_diagnostic',
-    primaryPrice: '$2,500',
-    secondaryLabel: 'Quick Gut-Check',
-    secondaryHref: '/api/buy/gut_check',
-    secondaryPrice: '$450',
+    headline: 'Your diagnostic revealed a P&L or AI margin leak?',
+    body: "Start with the $29 Operating Kit + Live Workspace, or book a 60-minute 1-on-1 P&L & AI Tear-Down to isolate the exact capital leak.",
+    primaryLabel: 'Book 60-Min P&L Tear-Down',
+    primaryHref: '/api/buy/gut_check',
+    primaryPrice: '$450',
+    secondaryLabel: 'Get Operating Kit + Workspace',
+    secondaryHref: '/toolkit',
+    secondaryPrice: '$29',
     accentFrom: 'from-cyan-500/10',
     accentBorder: 'border-cyan-500/30',
     btnGradient: 'from-cyan-500 to-blue-600',
   },
   'compare': {
-    headline: 'Need an expert verdict?',
-    body: "30-minute rapid-fire evaluation. You describe the problem, I tell you which approach wins  -  and why.",
-    primaryLabel: 'Schedule Evaluation',
+    headline: 'Need an independent Product Economist verdict?',
+    body: "60-minute live P&L & AI architecture tear-down. Bring your numbers or stack and get a 48-hour executive action memo.",
+    primaryLabel: 'Book 1-on-1 Tear-Down',
     primaryHref: '/api/buy/gut_check',
     primaryPrice: '$450',
-    secondaryLabel: 'View All Advisory Options',
+    secondaryLabel: 'View All 3 Buying Paths',
     secondaryHref: '/services',
     secondaryPrice: '',
     accentFrom: 'from-amber-500/10',
@@ -33,25 +33,25 @@ const VARIANTS = {
     btnGradient: 'from-amber-500 to-orange-500',
   },
   'educational': {
-    headline: 'Want to apply this to your organization?',
-    body: "Run a free diagnostic first. If the numbers concern you, book a session to build a remediation plan.",
+    headline: 'Want to apply Product Economics to your organization?',
+    body: "Run a free diagnostic or launch the Live Product Economist Workspace. If the numbers concern you, book a 1-on-1 Tear-Down.",
     primaryLabel: 'Run Free Diagnostic',
     primaryHref: '/tools/pdi',
     primaryPrice: 'Free',
-    secondaryLabel: 'View Advisory Options',
-    secondaryHref: '/services',
+    secondaryLabel: 'Get Operating Kit ($29)',
+    secondaryHref: '/toolkit',
     secondaryPrice: '',
     accentFrom: 'from-violet-500/10',
     accentBorder: 'border-violet-500/30',
     btnGradient: 'from-violet-500 to-purple-600',
   },
   'industry': {
-    headline: 'Need a sector-specific audit?',
-    body: "I run R&D capital audits tailored to your industry's cost structures, compliance requirements, and scaling patterns.",
-    primaryLabel: 'View Advisory',
+    headline: 'Need a sector-specific Product & AI P&L turnaround?',
+    body: "I run 7-day Product Economics Turnaround Sprints and PE M&A Due Diligence tailored to your industry's gross margin and scaling realities.",
+    primaryLabel: 'View Advisory & Sprints',
     primaryHref: '/services',
     primaryPrice: '',
-    secondaryLabel: 'Quick Gut-Check',
+    secondaryLabel: '1-on-1 P&L Tear-Down',
     secondaryHref: '/api/buy/gut_check',
     secondaryPrice: '$450',
     accentFrom: 'from-emerald-500/10',
@@ -120,65 +120,65 @@ export default function AdvisoryCTA({ variant, termTitle }: AdvisoryCTAProps) {
       {variant === 'compare' && (
         <div className="mt-8 pt-6 border-t border-amber-500/20">
           <div className="text-xs font-mono font-bold uppercase tracking-wider text-amber-900 mb-3">
-            Immediate Forensic Advisory Tiers
+            Product &amp; AI Economist Engagement Paths
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="p-4 rounded-xl bg-white border border-amber-200 shadow-sm flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between gap-2 mb-1">
-                  <h3 className="font-bold text-zinc-950 text-sm">The Gut-Check Evaluation</h3>
+                  <h3 className="font-bold text-zinc-950 text-sm">1-on-1 P&amp;L &amp; AI Tear-Down</h3>
                   <span className="text-xs font-mono font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">$450</span>
                 </div>
                 <p className="text-xs text-zinc-600 leading-relaxed mb-3">
-                  30-minute rapid triage for founders and executives who need to know if their architecture or cloud bill is on fire.
+                  60-minute live Zoom working session + 48-hour executive action memo for founders and product leaders.
                 </p>
               </div>
               <a href="/api/buy/gut_check" className="text-xs font-bold text-amber-900 hover:text-amber-950 uppercase tracking-wider inline-flex items-center gap-1">
-                Book Gut-Check &rarr;
+                Book 1-on-1 Tear-Down &rarr;
               </a>
             </div>
 
             <div className="p-4 rounded-xl bg-white border border-amber-200 shadow-sm flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between gap-2 mb-1">
-                  <h3 className="font-bold text-zinc-950 text-sm">60-Min Insolvency Audit</h3>
+                  <h3 className="font-bold text-zinc-950 text-sm">7-Day Product P&amp;L Turnaround Sprint</h3>
                   <span className="text-xs font-mono font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">$2,500</span>
                 </div>
                 <p className="text-xs text-zinc-600 leading-relaxed mb-3">
-                  Dedicated teardown of your exact token leakage, retry settings, and technical debt bottlenecks with an immediate remediation plan.
+                  Hands-on 7-day forensic audit of your feature profitability, Zombie Feature carry cost, and AI unit economics.
                 </p>
               </div>
               <a href="/api/buy/insolvency_diagnostic" className="text-xs font-bold text-amber-900 hover:text-amber-950 uppercase tracking-wider inline-flex items-center gap-1">
-                Book Insolvency Audit &rarr;
+                Book Turnaround Sprint &rarr;
               </a>
             </div>
 
             <div className="p-4 rounded-xl bg-white border border-amber-200 shadow-sm flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between gap-2 mb-1">
-                  <h3 className="font-bold text-zinc-950 text-sm">Full R&amp;D Capital Audit</h3>
+                  <h3 className="font-bold text-zinc-950 text-sm">0-to-1 AI Product Build Sprint</h3>
                   <span className="text-xs font-mono font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">$7,500</span>
                 </div>
                 <p className="text-xs text-zinc-600 leading-relaxed mb-3">
-                  Complete forensic examination across team payroll, codebase health, and cloud spend. Delivers a 40-page board-ready audit.
+                  21-day hands-on engineering sprint: I design, build, and deploy a live AI product or interactive diagnostic tool for your business.
                 </p>
               </div>
-              <Link href="/services" className="text-xs font-bold text-amber-900 hover:text-amber-950 uppercase tracking-wider inline-flex items-center gap-1">
-                View Audit Scope &rarr;
+              <Link href="/services#path-b" className="text-xs font-bold text-amber-900 hover:text-amber-950 uppercase tracking-wider inline-flex items-center gap-1">
+                View Build Sprint Scope &rarr;
               </Link>
             </div>
 
             <div className="p-4 rounded-xl bg-white border border-amber-200 shadow-sm flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between gap-2 mb-1">
-                  <h3 className="font-bold text-zinc-950 text-sm">AI Cost Governance Retainer</h3>
+                  <h3 className="font-bold text-zinc-950 text-sm">Fractional CPO / Product Economist</h3>
                   <span className="text-xs font-mono font-bold text-amber-900 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">$10,000/mo</span>
                 </div>
                 <p className="text-xs text-zinc-600 leading-relaxed mb-3">
-                  Ongoing fractional executive oversight, vendor contract negotiations, and runtime guardrails to stop margin decay permanently.
+                  Ongoing executive leadership: P&amp;L ownership, pricing architecture, board reporting, and PM/engineering coaching.
                 </p>
               </div>
-              <Link href="/services" className="text-xs font-bold text-amber-900 hover:text-amber-950 uppercase tracking-wider inline-flex items-center gap-1">
+              <Link href="/services#advisory_retainer" className="text-xs font-bold text-amber-900 hover:text-amber-950 uppercase tracking-wider inline-flex items-center gap-1">
                 Inquire for Retainer &rarr;
               </Link>
             </div>
@@ -187,8 +187,9 @@ export default function AdvisoryCTA({ variant, termTitle }: AdvisoryCTAProps) {
       )}
 
       <p className="mt-4 text-xs font-mono text-zinc-500 uppercase tracking-widest">
-        Richard Ewing: AI Economist &amp; Capital Auditor
+        Richard Ewing • Product &amp; AI Economist ($0 to $25M ARR • CS + Finance MBA)
       </p>
     </section>
   );
 }
+

@@ -55,7 +55,7 @@ const Navigation = () => {
                             </div>
                             <div className="whitespace-nowrap">
                                 <div className="font-semibold text-zinc-900 group-hover:text-[var(--accent-purple)] transition-colors text-sm">Richard Ewing</div>
-                                <div className="text-[11px] font-bold text-zinc-800">AI Economist</div>
+                                <div className="text-[11px] font-bold text-zinc-800">Product &amp; AI Economist</div>
                             </div>
                         </Link>
 
@@ -106,6 +106,26 @@ const Navigation = () => {
                                             transition={{ duration: 0.15 }}
                                             className="absolute top-full left-0 w-80 mt-2 bg-white/95 backdrop-blur-xl border border-zinc-300 rounded-2xl p-3 shadow-2xl z-50 space-y-1"
                                         >
+                                            {/* Live Product Economist Workspace */}
+                                            <Link 
+                                                href="/workspace" 
+                                                onClick={() => setProductsDropdownOpen(false)}
+                                                className="block p-3 rounded-xl hover:bg-emerald-50/70 border border-transparent hover:border-emerald-200 transition-all group"
+                                            >
+                                                <div className="flex items-center justify-between mb-1">
+                                                    <div className="flex items-center gap-2 font-grotesk font-bold text-zinc-950 group-hover:text-emerald-900">
+                                                        <Calculator className="w-4 h-4 text-emerald-600" />
+                                                        <span>Product Economist Studio</span>
+                                                    </div>
+                                                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-200">
+                                                        Live Workspace
+                                                    </span>
+                                                </div>
+                                                <p className="text-xs text-zinc-600 font-medium leading-normal">
+                                                    Interactive browser P&amp;L studio: model ARR, headcount, and AI spend, save scenarios locally, and export Board Reports.
+                                                </p>
+                                            </Link>
+
                                             {/* Exogram Product */}
                                             <Link 
                                                 href="/exogram" 

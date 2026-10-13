@@ -128,7 +128,7 @@ export default function ToolkitPage() {
                 {/* Hero */}
                 <section className="bg-white border-2 border-zinc-900 rounded-3xl p-8 sm:p-12 shadow-xl mb-12">
                     <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-mono font-bold uppercase tracking-wider mb-6">
-                        <span>Zero Fluff • 5 Working Models &amp; Templates • Instant Access</span>
+                        <span>Zero Fluff • 5 Spreadsheets &amp; Playbooks + Live Browser Workspace • Instant Access</span>
                     </div>
 
                     <h1 className="text-3xl sm:text-5xl lg:text-6xl font-grotesk font-extrabold text-zinc-950 tracking-tight leading-[1.1] mb-6">
@@ -139,7 +139,7 @@ export default function ToolkitPage() {
                     </h1>
 
                     <p className="text-lg sm:text-xl text-zinc-800 leading-relaxed font-medium max-w-3xl mb-8">
-                        Most guides give you 40 pages of theory you never use. This is the exact operating kit - spreadsheets, AI pricing stress-testers, Zombie Feature kill-lists, and 12-slide CFO board decks - I built while scaling enterprise SaaS from <strong>$0 to $25M ARR</strong> (Tyler Technologies), driving <strong>200% YoY growth to $20M</strong>, and cutting <strong>$5M in product waste</strong>.
+                        Most guides give you 40 pages of theory you never use. This is the exact operating kit - editable Excel/CSV spreadsheets, AI pricing stress-testers, Zombie Feature kill-lists, 12-slide CFO board decks, <strong>plus instant access to the Live Interactive Product Economist Workspace</strong> - built from scaling enterprise SaaS from <strong>$0 to $25M ARR</strong> (Tyler Technologies), driving <strong>200% YoY growth to $20M</strong>, and cutting <strong>$5M in product waste</strong>.
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 rounded-2xl bg-zinc-50 border border-zinc-200 mb-8">
@@ -155,7 +155,7 @@ export default function ToolkitPage() {
                                 </span>
                             </div>
                             <p className="text-xs text-zinc-600 font-medium mb-4">
-                                Includes all 5 core spreadsheets, CFO board deck templates, 30-day turnaround checklist, and executive career playbook.
+                                Includes all 5 core Excel/CSV spreadsheets, CFO board deck templates, 30-day turnaround checklist, executive career playbook, and <strong>Live Interactive Workspace (`/workspace`)</strong> access.
                             </p>
                             <CheckoutButton
                                 productId="premium_guide_29"
@@ -176,7 +176,7 @@ export default function ToolkitPage() {
                                 </span>
                             </div>
                             <p className="text-xs text-zinc-600 font-medium mb-4">
-                                Everything in the $29 Operating Kit PLUS all 13 specialized executive guides (PE Due Diligence, Consumption Pricing, Cloud FinOps, Agentic AI Costs &amp; more).
+                                Everything in the $29 Operating Kit + Live Workspace PLUS all 13 specialized executive guides (PE Due Diligence, Consumption Pricing, Cloud FinOps, Agentic AI Costs &amp; more).
                             </p>
                             <CheckoutButton
                                 productId="premium_guide_79"
@@ -187,9 +187,9 @@ export default function ToolkitPage() {
                     </div>
 
                     <div className="flex flex-wrap items-center justify-between gap-4 text-xs text-zinc-600 font-medium pt-4 border-t border-zinc-200">
-                        <span>✓ Instant Stripe Checkout (Expense-Ready Receipt Included)</span>
-                        <span>✓ Test the Interactive Models Below Before Buying</span>
-                        <span>✓ Built by Richard Ewing (CS + Finance MBA)</span>
+                        <span>✓ Instant Download (.XLSX, .CSV, .MD) + Live Browser Studio (<Link href="/workspace" className="text-violet-700 font-bold underline">Preview /workspace</Link>)</span>
+                        <span>✓ Expense-Ready Stripe Receipt Included</span>
+                        <span>✓ Built by Richard Ewing (Product Economist, CS + Finance MBA)</span>
                     </div>
                 </section>
 

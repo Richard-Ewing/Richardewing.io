@@ -72,12 +72,12 @@ export default function ToolkitSuccessPage() {
                     </p>
                 </div>
 
-                {/* Primary Master Download Card */}
-                <div className="bg-white rounded-3xl border-2 border-zinc-900 shadow-xl overflow-hidden mb-12 p-8 sm:p-10">
+                {/* Step 1: Primary Master Download Card */}
+                <div className="bg-white rounded-3xl border-2 border-zinc-900 shadow-xl overflow-hidden mb-8 p-8 sm:p-10">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-zinc-200">
                         <div>
                             <div className="text-xs font-mono font-bold uppercase tracking-wider text-violet-700 mb-1">
-                                Master Package (All-In-One Archive)
+                                Step 1 • Master Download Package (Offline Spreadsheets &amp; Playbooks)
                             </div>
                             <h2 className="text-2xl sm:text-3xl font-bold text-zinc-950 font-grotesk">
                                 The Product &amp; AI Economist Operating Kit (2026 Edition)
@@ -106,6 +106,75 @@ export default function ToolkitSuccessPage() {
                         <span>✓ Unzip on Windows, macOS, or Linux</span>
                         <span>✓ Compatible with Excel, Google Sheets, &amp; Notion</span>
                         <span>✓ Zero Expiration Date (Lifetime Access)</span>
+                    </div>
+                </div>
+
+                {/* Step 2: Live Interactive Product Economist Workspace Card */}
+                <div className="bg-zinc-950 text-white rounded-3xl border-2 border-violet-500 shadow-xl overflow-hidden mb-12 p-8 sm:p-10">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-zinc-800">
+                        <div>
+                            <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-emerald-400 mb-1">
+                                <Sparkles className="w-4 h-4" /> Step 2 • Live Browser Software (Included With Your Kit)
+                            </div>
+                            <h2 className="text-2xl sm:text-3xl font-bold text-white font-grotesk">
+                                Launch Your Interactive Product Economist Workspace
+                            </h2>
+                        </div>
+                        <div className="text-right shrink-0">
+                            <span className="inline-block px-3 py-1 bg-emerald-500/20 border border-emerald-500/40 rounded-full font-mono text-xs font-bold text-emerald-300">
+                                Browser Studio • Local Save
+                            </span>
+                        </div>
+                    </div>
+
+                    <p className="text-zinc-300 mb-6 font-medium leading-relaxed">
+                        Want to model your numbers right now in the browser alongside your Excel sheets? Open the <strong>Live Product Economist Workspace</strong> to plug in your company name, ARR, engineering headcount, and monthly AI spend, save multiple scenarios locally in your browser, run all 4 connected diagnostic calculators, and generate a customized Board &amp; CFO P&amp;L Report.
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+                        <Link
+                            href="/workspace"
+                            className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-violet-400 transition-colors block"
+                        >
+                            <div className="text-[10px] font-mono font-bold uppercase text-violet-400 mb-1">Command Center</div>
+                            <div className="font-bold text-sm text-white font-grotesk">P&amp;L Scenario Studio &rarr;</div>
+                        </Link>
+                        <Link
+                            href="/workspace/products"
+                            className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-violet-400 transition-colors block"
+                        >
+                            <div className="text-[10px] font-mono font-bold uppercase text-emerald-400 mb-1">Module 02 Live</div>
+                            <div className="font-bold text-sm text-white font-grotesk">Product Portfolio Matrix &rarr;</div>
+                        </Link>
+                        <Link
+                            href="/workspace/finance"
+                            className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-violet-400 transition-colors block"
+                        >
+                            <div className="text-[10px] font-mono font-bold uppercase text-amber-400 mb-1">Module 01 Live</div>
+                            <div className="font-bold text-sm text-white font-grotesk">CFO &amp; Margin Ledger &rarr;</div>
+                        </Link>
+                        <Link
+                            href="/workspace/board"
+                            className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-violet-400 transition-colors block"
+                        >
+                            <div className="text-[10px] font-mono font-bold uppercase text-cyan-400 mb-1">Module 03 Live</div>
+                            <div className="font-bold text-sm text-white font-grotesk">Board Packet Generator &rarr;</div>
+                        </Link>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row gap-3">
+                        <Link
+                            href="/workspace"
+                            className="flex-1 flex items-center justify-center gap-2 py-4 px-6 rounded-2xl bg-violet-600 hover:bg-violet-500 text-white font-bold text-base transition-all font-grotesk shadow-md"
+                        >
+                            Open Live Product Economist Workspace <ArrowRight className="w-5 h-5" />
+                        </Link>
+                        <Link
+                            href="/diagnose"
+                            className="flex items-center justify-center gap-2 py-4 px-6 rounded-2xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-200 font-bold text-sm transition-all font-grotesk"
+                        >
+                            Run Guided P&amp;L Diagnostic
+                        </Link>
                     </div>
                 </div>
 
@@ -208,21 +277,21 @@ export default function ToolkitSuccessPage() {
                 <div className="bg-gradient-to-r from-zinc-950 to-violet-950 text-white rounded-3xl p-8 sm:p-10 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
                     <div>
                         <span className="text-xs font-mono font-bold uppercase tracking-wider text-violet-300 block mb-2">
-                            Need Custom Help Executing?
+                            Need Richard to Review Your Actual Numbers?
                         </span>
                         <h3 className="text-2xl font-bold font-grotesk mb-2">
-                            Book a 48-Hour Rapid AI &amp; P&amp;L Gut-Check
+                            Book a $450 1-on-1 P&amp;L &amp; AI Tear-Down (or $2,500 Turnaround Sprint)
                         </h3>
                         <p className="text-zinc-300 text-sm font-medium max-w-xl">
-                            Send over your cloud invoices, model token logs, or backlog. In 48 hours, Richard personally conducts a forensic autopsy and delivers a 1-page executive memorandum detailing exactly where margin is leaking and how to fix it.
+                            Bring your completed spreadsheets or cloud/token invoices. In 60 minutes live on Zoom (or a 7-day forensic Turnaround Sprint), Richard personally audits your pricing tiers, Zombie Feature carry cost, and AI unit economics.
                         </p>
                     </div>
-                    <div className="shrink-0">
+                    <div className="shrink-0 flex flex-col sm:flex-row gap-3">
                         <Link
-                            href="/services"
-                            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-zinc-950 font-bold hover:bg-zinc-100 transition-colors font-grotesk"
+                            href="/services#gut_check"
+                            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-zinc-950 font-bold hover:bg-zinc-100 transition-colors font-grotesk"
                         >
-                            View Advisory Tiers <ArrowRight className="w-4 h-4" />
+                            Book $450 Tear-Down <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>
                 </div>

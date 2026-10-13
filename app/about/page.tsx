@@ -11,22 +11,22 @@ import ProductBridgeCard from '@/app/components/ProductBridgeCard';
 import { GooglePreferredBadge } from '../components/GooglePreferredBadge';
 
 export const metadata: Metadata = {
-    title: 'About Richard Ewing | AI Economist',
-    description: 'Richard Ewing is an enterprise AI Economist and the founder of Exogram. Audit production AI security and build PE-backed product economics.',
+    title: 'About Richard Ewing | Product & AI Economist',
+    description: 'Richard Ewing is a Product & AI Economist ($0 to $25M ARR at Tyler Technologies, +200% YoY P&L turnaround, CS + Finance MBA) and founder of Exogram & CareerWin.',
     alternates: {
         canonical: 'https://www.richardewing.io/about',
     },
     openGraph: {
-        title: 'Richard Ewing Biography Exogram Founder | Richard Ewing',
-        description: 'Richard Ewing is an enterprise AI Economist and the founder of Exogram. Audit production AI security and build PE-backed product economics.',
+        title: 'About Richard Ewing | Product & AI Economist ($0 to $25M ARR)',
+        description: 'Product & AI Economist and founder of Exogram and CareerWin. Scales enterprise SaaS P&Ls, cuts Zombie Feature waste, and governs production AI unit economics.',
         url: 'https://www.richardewing.io/about',
         type: 'profile',
         images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Richard Ewing Biography Exogram Founder | Richard Ewing',
-        description: 'Richard Ewing is an enterprise AI Economist and the founder of Exogram. Audit production AI security and build PE-backed product economics.',
+        title: 'About Richard Ewing | Product & AI Economist',
+        description: 'Product & AI Economist ($0 to $25M ARR, CS + Finance MBA) and founder of Exogram & CareerWin.',
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     }
 };
@@ -36,8 +36,8 @@ const personSchema = {
     '@type': 'Person',
     '@id': 'https://www.richardewing.io/#person',
     'name': 'Richard Ewing',
-    'jobTitle': 'AI Economist',
-    'description': 'Enterprise AI Economist and founder of Exogram and CareerWin. Architect of the five-layer intelligence substrate powering Exogram runtime governance and CareerWin human work intelligence. Advises CTOs, CFOs, and PE boards on AI capital allocation and unit economics.',
+    'jobTitle': 'Product & AI Economist',
+    'description': 'Enterprise Product & AI Economist ($0 to $25M ARR at Tyler Technologies, $20M P&L turnaround +200% YoY, CS + Finance MBA) and founder of Exogram and CareerWin. Advises CEOs, CFOs, CPOs, and PE boards on product P&L turnarounds, pricing architecture, and AI unit economics.',
     'url': 'https://www.richardewing.io',
     'image': 'https://www.richardewing.io/assets/images/headshot.jpg',
     'sameAs': [
@@ -46,6 +46,9 @@ const personSchema = {
         'https://www.mindtheproduct.com/profile/richard-ewing'
     ],
     'knowsAbout': [
+        'Product Economics',
+        'Product P&L Management',
+        'SaaS Pricing & Packaging',
         'AI Economics',
         'R&D Auditing',
         'Technical Debt Valuation',
@@ -75,7 +78,7 @@ const personSchema = {
     ],
     'brand': {
         '@type': 'Brand',
-        'name': 'The AI Economist',
+        'name': 'The Product & AI Economist',
         'url': 'https://www.richardewing.io'
     }
 };
@@ -91,17 +94,17 @@ export default function AboutPage() {
                 
                 {/* Breadcrumb */}
                 <div className="mb-10 flex items-center gap-2 text-xs font-mono font-bold text-zinc-950 uppercase tracking-widest">
-                    <span>Executive</span><span>/</span><span className="text-cyan-900 font-extrabold">About The Principal</span>
+                    <span>Executive</span><span>/</span><span className="text-cyan-900 font-extrabold">About The Principal • Product &amp; AI Economist</span>
                 </div>
 
                 {/* Section 1: The Problem */}
                 <section className="mb-16 border-b border-zinc-400 pb-16">
                     <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Organizations are deploying AI <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-indigo-700">faster than they can govern it.</span>
+                        Every product is a P&amp;L. <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-indigo-700">AI just made bad unit economics fatal.</span>
                     </h1>
                     <p className="text-xl text-zinc-900 leading-relaxed font-semibold max-w-3xl">
-                        For the past several years I&apos;ve been researching the economics, governance, security, and operational challenges that emerge after AI reaches production scale.
+                        I am a <strong>Product Economist</strong> (with a sharp specialty in <strong>AI Unit Economics</strong>). Over the past 15+ years, I have scaled enterprise B2B SaaS from <strong>$0 to $25M ARR</strong> at Tyler Technologies, turned around a <strong>$20M product P&amp;L (+200% YoY)</strong>, cut <strong>$5M in negative-margin feature waste</strong>, and built three live AI software platforms.
                     </p>
                 </section>
 
@@ -111,11 +114,9 @@ export default function AboutPage() {
 
                 {/* Why This Exists Section (Worldview Compression Component) */}
                 <section className="mb-16 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
-                    <h3 className="text-lg font-bold font-grotesk text-zinc-950 mb-4">Why This Exists</h3>
+                    <h3 className="text-lg font-bold font-grotesk text-zinc-950 mb-4">Why &ldquo;Product Economist&rdquo; Is the Master Discipline</h3>
                     <p className="text-zinc-900 leading-relaxed font-semibold text-sm sm:text-base">
-                        Most AI discussions focus on model capabilities. My work focuses on what happens after deployment. 
-                        As AI systems become embedded in products, organizations face a new class of problems involving economics, governance, security, reliability, and operational control. 
-                        The Production AI Governance Framework exists to help organizations understand, measure, and manage those challenges.
+                        Most product leaders are trained to manage Agile backlogs and story points while ignoring COGS, gross margin, and engineering payroll carry cost. And most AI discussions focus on model capabilities rather than what happens to your P&amp;L after deployment. With a B.S. in Computer Science and an MBA in Finance, my work unites both: treating every product roadmap, pricing tier, and AI workflow as a capital allocation system.
                     </p>
                 </section>
 

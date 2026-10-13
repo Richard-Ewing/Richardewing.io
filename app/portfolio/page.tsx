@@ -8,13 +8,13 @@ import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import PortfolioInteractiveShowcase from './PortfolioInteractiveShowcase';
 
 export const metadata: Metadata = {
-    title: 'Executive & AI Builder Portfolio | Richard Ewing (CPO / VP Product)',
-    description: 'Executive portfolio of Richard Ewing: 15+ years scaling B2B SaaS ($0 to $25M ARR at Tyler Technologies, +200% YoY turnaround), CS + Finance MBA, and founder of Exogram & CareerWin.',
+    title: 'Executive Product Economist & AI Builder Portfolio | Richard Ewing (CPO / VP)',
+    description: 'Executive portfolio of Richard Ewing, Product & AI Economist: 15+ years scaling B2B SaaS ($0 to $25M ARR at Tyler Technologies, +200% YoY turnaround), CS + Finance MBA, and founder of Exogram & CareerWin.',
     alternates: {
         canonical: 'https://www.richardewing.io/portfolio',
     },
     openGraph: {
-        title: 'Richard Ewing | Executive Product Leader, AI Economist & Systems Builder',
+        title: 'Richard Ewing | Product Economist, CPO/VP Product & AI Systems Builder',
         description: '$0 to $25M ARR enterprise product scale, +200% YoY P&L turnaround, $5M cost reduction, 174+ published works, and 3 live AI platforms.',
         url: 'https://www.richardewing.io/portfolio',
         type: 'profile',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Richard Ewing | Executive Product & AI Builder Portfolio',
+        title: 'Richard Ewing | Executive Product Economist & AI Builder Portfolio',
         description: '$0 to $25M ARR enterprise product scale, +200% YoY P&L turnaround, CS + Finance MBA, and founder of Exogram.ai & CareerWin.ai.',
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
 const targetRoles = [
     'Chief Product Officer (CPO)',
     'VP of Product',
+    'Product & AI Economist',
     'Head of AI Product',
-    'Principal AI Strategist',
     'Fractional CPO & Board Advisor',
 ];
 

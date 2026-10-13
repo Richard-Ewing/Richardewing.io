@@ -53,12 +53,12 @@ export default function GlossaryContent() {
             <ScrollReveal>
                 <div className="mb-12 border-b border-zinc-400 pb-12">
                     <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-900 mb-6">
-                        Technology & AI <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600">Glossary.</span>
+                        Product, AI &amp; Engineering Economics <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600">Glossary.</span>
                     </h1>
                     <p className="text-lg text-zinc-950 font-bold leading-relaxed max-w-2xl mb-8">
-                        {glossaryTerms.length}+ terms defined with rich explanations, practical FAQs, and links to free diagnostic tools.
+                        {glossaryTerms.length}+ terms defined with plain-English explanations, practical FAQs, and links to free diagnostic tools.
                         <br />
-                        <span className="text-zinc-950">Technical debt, AI economics, SaaS metrics, product management, and engineering leadership  -  explained.</span>
+                        <span className="text-zinc-950">Product economics, AI unit economics, technical debt, SaaS P&amp;L metrics, and engineering leadership - explained.</span>
                     </p>
 
                     {/* Search Input */}
@@ -68,7 +68,7 @@ export default function GlossaryContent() {
                             type="text"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            placeholder="Search 430+ terms (e.g. AI Cost Governance)..."
+                            placeholder={`Search ${glossaryTerms.length}+ terms (e.g. Product Economics, AI Unit Economics)...`}
                             className="w-full pl-12 pr-10 py-4 bg-white border border-zinc-400 rounded-2xl text-zinc-900 font-medium placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500 transition-all shadow-sm"
                         />
                         {searchQuery && (

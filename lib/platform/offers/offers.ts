@@ -13,6 +13,7 @@ export interface CommercialOffer {
   currency: string;
   billingPeriod?: 'one_time' | 'monthly' | 'annual';
   stage: 'entry' | 'diagnostic' | 'strategic_audit' | 'capital_audit' | 'retainer';
+  buyingPath: 'path_a_pnl_scale' | 'path_b_ai_build' | 'path_c_exec_research';
   audience: string[];
   objective: string;
   prerequisites?: string;
@@ -38,12 +39,13 @@ const baseOffers: Record<string, CommercialOffer> = {
     currency: 'USD',
     billingPeriod: 'one_time',
     stage: 'entry',
+    buyingPath: 'path_a_pnl_scale',
     audience: ['CPOs', 'VPs of Product', 'CTOs', 'CFOs', 'Directors of Product'],
     objective: 'Quantify AI margin leaks, pricing traps, and roadmap debt in 60 seconds.',
     deliverables: [
-      'Live AI Unit Economics & Gross Margin Stress-Test',
-      'Product Debt Index (PDI) & Zombie Feature Calculator',
-      'Revenue-Per-Engineer (APER) Industry Benchmark',
+      'Live AI Unit Economics & Gross Margin Stress-Test (/tools/aueb)',
+      'Product Debt Index (PDI) & Zombie Feature Calculator (/tools/pdi)',
+      'Revenue-Per-Engineer (APER) Industry Benchmark (/tools/aper)',
       'Instant Board-Ready PDF Scorecard Export'
     ],
     primaryCTA: {
@@ -56,21 +58,22 @@ const baseOffers: Record<string, CommercialOffer> = {
   operating_kit: {
     id: 'operating_kit',
     name: 'The Product & AI Economist Operating Kit',
-    badge: 'Best Seller • Instant Download',
-    tagline: '5 Working P&L Models, Pricing Calculators & Board Decks',
-    description: 'Zero fluff. The exact spreadsheet formulas, AI feature pricing stress-testers, Zombie Feature kill-lists, and 12-slide CFO board deck templates I used to scale $0 to $25M ARR, drive 200% YoY growth, and cut $5M in product waste.',
+    badge: 'Best Seller • Files + Live Workspace',
+    tagline: '5 Working P&L Models, Board Decks + Interactive Browser Workspace',
+    description: 'Zero fluff. Get instant download of the 5 Excel/CSV/Markdown models I used to scale $0 to $25M ARR at Tyler Technologies, turn around a $20M P&L (+200% YoY), and cut $5M in product waste PLUS instant access to the Live Interactive Product Economist Workspace (/workspace) to configure your company, save scenarios locally, and generate board reports.',
     price: 29,
     currency: 'USD',
     billingPeriod: 'one_time',
     stage: 'entry',
+    buyingPath: 'path_a_pnl_scale',
     audience: ['VPs of Product', 'Directors of Product', 'Senior PMs', 'CTOs', 'Engineering Managers', 'Founders'],
-    objective: 'Walk into your next CFO, CEO, or Board meeting with undeniable P&L math.',
+    objective: 'Walk into your next CFO, CEO, or Board meeting with undeniable P&L math and live interactive models.',
     deliverables: [
-      'AI Feature Pricing & Token Margin Stress-Tester (CSV/Excel + Interactive)',
-      'The "Zombie Feature" Kill-List & Backlog ROI Scoring Matrix',
-      '12-Slide CFO & Board Defense Deck Blueprint (Copy-Paste Templates)',
-      'First-30-Days Product P&L Turnaround Runbook (Day-by-Day Checklist)',
-      'The Product Economist Executive Interview & Comp Negotiation Guide'
+      'AI Feature Pricing & Token Margin Stress-Tester (.XLSX / .CSV + Interactive)',
+      'The "Zombie Feature" Kill-List & Backlog ROI Scoring Matrix (.XLSX / .CSV)',
+      '12-Slide CFO & Board Defense Deck Blueprint + First-30-Days Turnaround Runbook',
+      'The Product Economist Executive Interview & Comp Negotiation Guide ($250K-$450K+)',
+      'Instant One-Click Access to Live Interactive Product Economist Workspace (/workspace)'
     ],
     primaryCTA: {
       label: 'Get Instant Access ($29) →',
@@ -91,13 +94,14 @@ const baseOffers: Record<string, CommercialOffer> = {
     currency: 'USD',
     billingPeriod: 'one_time',
     stage: 'diagnostic',
+    buyingPath: 'path_a_pnl_scale',
     audience: ['Founders', 'CEOs', 'CPOs', 'VPs of Product', 'CTOs'],
     objective: 'Turn an unprofitable AI roadmap into a high-margin revenue engine.',
     deliverables: [
-      'Live 1-on-1 Product P&L & Pricing Tear-Down with Richard Ewing',
+      'Live 60-Min 1-on-1 Product P&L & Pricing Tear-Down with Richard Ewing',
       'Seat vs. Usage vs. Outcome AI Pricing Tier Restructure',
       'Immediate "Zombie Feature" Cut-List to Free Up Engineering Capacity',
-      'Actionable 30-Day Margin & Velocity Recovery Blueprint'
+      'Actionable 30-Day Margin & Velocity Recovery Blueprint (+ Full $79 Kit Included)'
     ],
     primaryCTA: {
       label: 'Book 1-on-1 Tear-Down ($450) →',
@@ -116,6 +120,7 @@ const baseOffers: Record<string, CommercialOffer> = {
     currency: 'USD',
     billingPeriod: 'one_time',
     stage: 'strategic_audit',
+    buyingPath: 'path_a_pnl_scale',
     audience: ['CEOs', 'CFOs', 'CPOs', 'VPs of Product', 'PE Operating Partners'],
     objective: 'Eliminate negative-margin roadmap work and align product shipping with EBITDA.',
     deliverables: [
@@ -129,20 +134,21 @@ const baseOffers: Record<string, CommercialOffer> = {
       productId: 'insolvency_diagnostic',
       action: 'checkout'
     },
-    followUpOfferId: 'hallucination_tax_audit'
+    followUpOfferId: 'advisory_retainer'
   },
   hallucination_tax_audit: {
     id: 'hallucination_tax_audit',
     name: '0-to-1 AI Product & Authority Engine Sprint',
     badge: 'Hands-On Architecture & Build',
     tagline: 'From Concept to Live Production AI System & Diagnostic Funnel',
-    description: 'Most agencies charge $50K and take 6 months to build a slide deck. As the founder and architect of Exogram.ai (AWS Startups Showcase), CareerWin.ai, and RichardEwing.io, I partner with you to architect and ship a live 0-to-1 AI product, interactive diagnostic calculator funnel, or AEO/GEO authority engine.',
+    description: 'Most agencies charge $50K and take 6 months to build a slide deck. As the founder and architect of Exogram.ai (AWS Startups Showcase), CareerWin.ai, and RichardEwing.io, I partner with you over 21 days to architect and ship a live 0-to-1 AI product, interactive diagnostic calculator funnel, or AEO/GEO authority engine.',
     price: 7500,
     currency: 'USD',
     billingPeriod: 'one_time',
     stage: 'capital_audit',
+    buyingPath: 'path_b_ai_build',
     audience: ['Founders', 'CEOs', 'VPs of Product', 'B2B Category Leaders'],
-    objective: 'Ship a production-grade AI application or interactive buyer diagnostic engine in weeks.',
+    objective: 'Ship a production-grade AI application or interactive buyer diagnostic engine in 21 days.',
     deliverables: [
       'Full 0-to-1 Product Architecture, Unit Economics & Monetization Spec',
       'Interactive Diagnostic Tool or AI Workflow Prototype (Next.js / Edge / LLM)',
@@ -150,7 +156,7 @@ const baseOffers: Record<string, CommercialOffer> = {
       'Direct Executive Hand-Off & Go-To-Market Launch Playbook'
     ],
     primaryCTA: {
-      label: 'Inquire About 0-to-1 Build Sprint →',
+      label: 'Start $7,500 AI Build Sprint →',
       href: 'mailto:richardewing@exogram.ai?subject=Inquiry:%200-to-1%20AI%20Product%20Sprint',
       productId: 'full_audit',
       action: 'checkout'
@@ -167,6 +173,7 @@ const baseOffers: Record<string, CommercialOffer> = {
     currency: 'USD',
     billingPeriod: 'one_time',
     stage: 'strategic_audit',
+    buyingPath: 'path_c_exec_research',
     audience: ['AI Infrastructure Vendors', 'FinOps & DevTools CMOs', 'B2B SaaS Founders', 'VC Platform Teams'],
     objective: 'Earn high-trust executive authority, third-party economist validation, and LLM citation visibility.',
     deliverables: [
@@ -191,6 +198,7 @@ const baseOffers: Record<string, CommercialOffer> = {
     currency: 'USD',
     billingPeriod: 'one_time',
     stage: 'capital_audit',
+    buyingPath: 'path_c_exec_research',
     audience: ['PE Operating Partners', 'M&A Deal Leads', 'Search Funds', 'Corporate Development'],
     objective: 'Validate post-acquisition pricing power, margin expansion levers, and 100-day product turnaround plan.',
     deliverables: [
@@ -207,14 +215,15 @@ const baseOffers: Record<string, CommercialOffer> = {
   },
   advisory_retainer: {
     id: 'advisory_retainer',
-    name: 'Fractional CPO / AI Product Strategist Retainer',
+    name: 'Fractional CPO / Product Economist Retainer',
     badge: 'Fractional Executive Leadership',
     tagline: 'Embedded Product P&L Ownership, AI Monetization & Board Strategy',
-    description: 'Strictly capped at 4 active companies per quarter. I embed directly with your CEO, CFO, and CTO as a Fractional CPO or Principal AI Product Strategist - owning product P&L translation, AI pricing architecture, roadmap prioritization, and board reporting.',
+    description: 'Strictly capped at 2 active companies per quarter. I embed directly with your CEO, CFO, and CTO as a Fractional CPO or Principal Product Economist - owning product P&L translation, AI pricing architecture, roadmap prioritization, and board reporting.',
     price: 10000,
     currency: 'USD',
     billingPeriod: 'monthly',
     stage: 'retainer',
+    buyingPath: 'path_c_exec_research',
     audience: ['CEOs', 'Founders', 'PE Portfolio Companies', 'Enterprise Product Orgs'],
     objective: 'Install proven $25M ARR product leadership without a 6-month executive search.',
     deliverables: [

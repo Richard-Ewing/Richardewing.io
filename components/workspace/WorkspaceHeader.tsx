@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import WorkspaceNav from './WorkspaceNav';
 import { CustomerWorkspaceStore, CustomerOrganizationWorkspace } from '../../lib/workspace/customerWorkspace';
-import { LayoutDashboard, ArrowRight, Sparkles } from 'lucide-react';
+import { LayoutDashboard, Sparkles, Download } from 'lucide-react';
 
 interface WorkspaceHeaderProps {
   title: string;
@@ -16,7 +16,10 @@ export default function WorkspaceHeader({ title, subtitle, badge }: WorkspaceHea
   const [workspace, setWorkspace] = useState<CustomerOrganizationWorkspace | null>(null);
 
   useEffect(() => {
-    setWorkspace(CustomerWorkspaceStore.getWorkspace());
+    const sync = () => setWorkspace({ ...CustomerWorkspaceStore.getWorkspace() });
+    sync();
+    window.addEventListener('re-workspace-updated', sync);
+    return () => window.removeEventListener('re-workspace-updated', sync);
   }, []);
 
   return (
@@ -31,7 +34,7 @@ export default function WorkspaceHeader({ title, subtitle, badge }: WorkspaceHea
               </span>
               {workspace && (
                 <span className="text-xs font-mono text-zinc-500">
-                  {workspace.organizationName} • {workspace.subscriptionTier}
+                  {workspace.organizationName} • ARR ${(workspace.annualArrUSD / 1000000).toFixed(1)}M • Local Browser Persistence Active
                 </span>
               )}
             </div>
@@ -39,12 +42,18 @@ export default function WorkspaceHeader({ title, subtitle, badge }: WorkspaceHea
             <p className="text-xs font-mono text-zinc-600 mt-1">{subtitle}</p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2.5">
             <Link
               href="/workspace"
               className="px-3.5 py-2 bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-bold rounded-lg text-xs font-mono transition-colors flex items-center gap-1.5"
             >
-              <LayoutDashboard className="w-3.5 h-3.5 text-zinc-600" /> Executive OS Dashboard
+              <LayoutDashboard className="w-3.5 h-3.5 text-zinc-600" /> P&amp;L Studio Home
+            </Link>
+            <Link
+              href="/toolkit"
+              className="px-3.5 py-2 bg-violet-50 hover:bg-violet-100 text-violet-800 border border-violet-200 font-bold rounded-lg text-xs font-mono transition-colors flex items-center gap-1.5"
+            >
+              <Download className="w-3.5 h-3.5 text-violet-700" /> Operating Kit Spreadsheets
             </Link>
             <Link
               href="/workspace/search"
@@ -58,3 +67,4 @@ export default function WorkspaceHeader({ title, subtitle, badge }: WorkspaceHea
     </div>
   );
 }
+

@@ -59,17 +59,19 @@ export default function AIIntegrationPage() {
                     <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none" />
                     <div className="relative z-10">
                         <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full border border-cyan-300 bg-white text-cyan-700 font-mono text-xs tracking-widest font-bold uppercase">
-                            <Zap size={10} /> New: AI-Powered Tool
+                            <Zap size={10} /> Interactive P&amp;L &amp; AI Studio
                         </div>
-                        <h2 className="text-2xl font-grotesk font-bold text-[#1A1A1A] mb-2">Try Our AI Integration Advisor</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-[#1A1A1A] mb-2">Launch the Live Product &amp; AI Economist Workspace</h2>
                         <p className="text-sm text-[#4A4A4A] max-w-lg mx-auto mb-6">
-                            Answer 5 questions about your business and get a personalized AI integration roadmap in minutes - complete with specific tool recommendations, ROI estimates, and a step-by-step implementation plan. Downloadable as a PDF.
+                            Model your ARR, engineering headcount, Zombie Feature load, and monthly AI spend in real time - or run our guided AI Integration Advisor to generate a custom roadmap.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                            <Link href="/ai-integration/advisor" rel="nofollow" className="px-8 py-3 bg-cyan-600 text-white font-bold rounded-xl text-sm hover:bg-cyan-500 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.2)]">
-                                Start Your AI Roadmap →
+                            <Link href="/workspace" className="px-8 py-3 bg-cyan-600 text-white font-bold rounded-xl text-sm hover:bg-cyan-500 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+                                Open Live P&amp;L Workspace →
                             </Link>
-                            <span className="text-xs text-zinc-500 font-mono">$249/month · Unlimited Consultations</span>
+                            <Link href="/toolkit" className="px-6 py-3 bg-white border border-cyan-300 text-zinc-900 font-bold rounded-xl text-sm hover:bg-cyan-50 transition-colors">
+                                Get Operating Kit ($29) →
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -91,7 +93,7 @@ export default function AIIntegrationPage() {
                 {/* The Process */}
                 <div className="mb-16">
                     <h2 className="text-2xl font-grotesk font-bold text-[#1A1A1A] text-center mb-2">The Process</h2>
-                    <p className="text-sm text-[#6A6A6A] text-center mb-8">From audit to action plan in under a week.</p>
+                    <p className="text-sm text-[#6A6A6A] text-center mb-8">From P&amp;L and AI audit to shipped execution in days, not quarters.</p>
                     <div className="space-y-4">
                         {processSteps.map((s, i) => (
                             <div key={i} className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-6 flex gap-5 shadow-sm">
@@ -108,114 +110,134 @@ export default function AIIntegrationPage() {
                     </div>
                 </div>
 
-                {/* Pricing Tiers */}
+                {/* Unified 3 Buying Paths */}
                 <div className="mb-16">
-                    <h2 className="text-2xl font-grotesk font-bold text-[#1A1A1A] text-center mb-2">Choose Your Path</h2>
-                    <p className="text-sm text-[#6A6A6A] text-center mb-8">Three tiers. Every business gets the same methodology. The difference is how much of my time you get.</p>
+                    <h2 className="text-2xl font-grotesk font-bold text-[#1A1A1A] text-center mb-2">Choose Your Buying Path</h2>
+                    <p className="text-sm text-[#6A6A6A] text-center mb-8">Unified Product &amp; AI Economist engagements - whether you want self-serve spreadsheets, a 7-day P&amp;L turnaround, or a 21-day 0-to-1 AI product build.</p>
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        {/* Tier 1: Quarterly Audit */}
+                        {/* Path 1: Operating Kit + 1-on-1 Tear-Down */}
                         <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-6 flex flex-col shadow-sm">
-                            <div className="text-xs font-mono font-bold text-blue-600 uppercase tracking-widest mb-3">Tier 1: Get the Plan</div>
-                            <h3 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-1">Quarterly AI Audit</h3>
-                            <div className="text-3xl font-bold text-[#1A1A1A] mb-1">$5,000<span className="text-sm font-normal text-zinc-500"> / quarter</span></div>
-                            <div className="text-xs text-emerald-700 font-bold mb-3 flex items-center gap-1"><Zap size={10} /> Delivered in 48 hours</div>
-                            <p className="text-sm text-[#4A4A4A] mb-5 leading-relaxed">On-site or virtual. I audit your business, feed everything into AI, and deliver a full strategic roadmap with a 30-day action plan in 48 hours. Repeated quarterly. Not a PowerPoint - an implementation-ready plan.</p>
+                            <div className="text-xs font-mono font-bold text-violet-600 uppercase tracking-widest mb-3">Path A: Self-Serve &amp; Rapid Triage</div>
+                            <h3 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-1">Operating Kit ($29) or 1-on-1 Tear-Down ($450)</h3>
+                            <div className="text-3xl font-bold text-[#1A1A1A] mb-1">$29 / $450<span className="text-sm font-normal text-zinc-500"> · instant / 60-min</span></div>
+                            <p className="text-sm text-[#4A4A4A] mb-5 leading-relaxed">Start with the 5 working Excel/CSV P&amp;L spreadsheets + Live Browser Workspace for $29, or book a 60-minute 1-on-1 P&amp;L &amp; AI Tear-Down on Zoom for $450.</p>
                             <ul className="space-y-2 mb-6 flex-1">
-                                {['1-2 hour business deep-dive (on-site or virtual)', 'Top 10 AI actions ranked by ROI', '30-day step-by-step kickstart plan', 'Quarterly re-assessment (what\'s changed)', 'AI tool recommendations with pricing', 'Compliance & security review', 'Delivered in 48 hours - not 4-8 weeks'].map((item, i) => (
-                                    <li key={i} className="flex items-start gap-2 text-sm text-[#3A3A3A]">
-                                        <CheckCircle size={14} className="text-emerald-500 mt-0.5 flex-shrink-0" /> {item}
-                                    </li>
-                                ))}
-                            </ul>
-                            <a href="/api/buy/full_audit" className="block text-center py-3 bg-[#1A1A1A] text-white font-bold rounded-lg text-sm hover:bg-zinc-800 transition-colors">Book Your Audit →</a>
-                        </div>
-
-                        {/* Tier 2: Monthly Advisor (Featured) */}
-                        <div className="bg-white rounded-2xl border-2 border-emerald-400 p-6 flex flex-col shadow-lg relative">
-                            <div className="absolute -top-3 right-4 px-3 py-1 bg-emerald-600 text-white text-[10px] font-bold font-mono uppercase tracking-widest rounded-full">Most Popular</div>
-                            <div className="text-xs font-mono font-bold text-emerald-600 uppercase tracking-widest mb-3">Tier 2: Stay Guided</div>
-                            <h3 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-1">Monthly AI Advisor</h3>
-                            <div className="text-3xl font-bold text-[#1A1A1A] mb-1">$5K–$15K<span className="text-sm font-normal text-zinc-500"> / month</span></div>
-                            <p className="text-sm text-[#4A4A4A] mb-4 leading-relaxed">Everything in the audit, plus I stay on as your ongoing AI advisor. I don't just deliver a plan - I execute it with you. No handoff. No "good luck."</p>
-                            <div className="bg-zinc-50 rounded-lg p-3 mb-4 text-xs text-[#4A4A4A]">
-                                <div className="flex justify-between mb-1"><span className="font-bold">Advisory (5-10 hrs/week)</span><span className="font-mono font-bold">$5,000/mo</span></div>
-                                <div className="flex justify-between mb-1"><span className="font-bold">Embedded (10-15 hrs/week)</span><span className="font-mono font-bold">$10,000/mo</span></div>
-                                <div className="flex justify-between"><span className="font-bold">Fractional AI Officer (20-25 hrs/week)</span><span className="font-mono font-bold">$15,000/mo</span></div>
-                            </div>
-                            <ul className="space-y-2 mb-6 flex-1">
-                                {['Everything in Quarterly Audit', 'Ongoing implementation - not just a report', 'Weekly strategy calls', 'AI tool evaluation & vetting', 'Team training & onboarding', 'Vendor negotiation support', 'Custom prompt & workflow design', 'Priority async access'].map((item, i) => (
-                                    <li key={i} className="flex items-start gap-2 text-sm text-[#3A3A3A]">
-                                        <CheckCircle size={14} className="text-emerald-500 mt-0.5 flex-shrink-0" /> {item}
-                                    </li>
-                                ))}
-                            </ul>
-                            <a href="mailto:richardewing@exogram.ai?subject=Inquiry: Monthly AI Advisor" className="block text-center py-3 bg-emerald-600 text-white font-bold rounded-lg text-sm hover:bg-emerald-500 transition-colors">Start the Conversation →</a>
-                        </div>
-
-                        {/* Tier 3: The System */}
-                        <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-6 flex flex-col shadow-sm">
-                            <div className="text-xs font-mono font-bold text-violet-600 uppercase tracking-widest mb-3">Tier 3: Do It Yourself</div>
-                            <h3 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-1">The AI Integration System</h3>
-                            <div className="text-3xl font-bold text-[#1A1A1A] mb-1">$997–$1,997<span className="text-sm font-normal text-zinc-500"> / one-time</span></div>
-                            <p className="text-sm text-[#4A4A4A] mb-5 leading-relaxed">The exact system I use in $5,000 audits - packaged as a self-serve toolkit. Step-by-step guides, prompt libraries, templates, and frameworks. For someone who doesn't know where to start.</p>
-                            <ul className="space-y-2 mb-6 flex-1">
-                                {['AI Readiness Audit Template', '50+ copy-paste AI prompts', 'Business Process Scoring Matrix', 'Strategic Roadmap Generator', '30-Day Kickstart Plan template', 'ROI Calculator spreadsheet', 'AI Tool Selection Guide', 'Quarterly Review Framework'].map((item, i) => (
+                                {[
+                                    'AI Feature Pricing & Margin Stress-Tester (.XLSX/.CSV)',
+                                    'Zombie Feature Kill-List Matrix ($5M Cost-Cut Model)',
+                                    '12-Slide CFO & Board Defense Deck Blueprint',
+                                    'Instant access to Live Browser Workspace (/workspace)',
+                                    '$450 option: 60-min live Zoom + 48-hour action memo',
+                                ].map((item, i) => (
                                     <li key={i} className="flex items-start gap-2 text-sm text-[#3A3A3A]">
                                         <CheckCircle size={14} className="text-violet-500 mt-0.5 flex-shrink-0" /> {item}
                                     </li>
                                 ))}
                             </ul>
-                            <Link href="/ai-integration/system" className="block text-center py-3 bg-violet-600 text-white font-bold rounded-lg text-sm hover:bg-violet-500 transition-colors">View Full System →</Link>
+                            <div className="space-y-2">
+                                <Link href="/toolkit" className="block text-center py-3 bg-violet-600 text-white font-bold rounded-lg text-sm hover:bg-violet-500 transition-colors">Get Operating Kit ($29) →</Link>
+                                <a href="/api/buy/gut_check" className="block text-center py-2.5 bg-zinc-100 text-zinc-900 font-bold rounded-lg text-xs hover:bg-zinc-200 transition-colors">Or Book 60-Min Tear-Down ($450) →</a>
+                            </div>
+                        </div>
+
+                        {/* Path 2: 7-Day Turnaround Sprint & Fractional CPO */}
+                        <div className="bg-white rounded-2xl border-2 border-emerald-400 p-6 flex flex-col shadow-lg relative">
+                            <div className="absolute -top-3 right-4 px-3 py-1 bg-emerald-600 text-white text-[10px] font-bold font-mono uppercase tracking-widest rounded-full">Most Popular</div>
+                            <div className="text-xs font-mono font-bold text-emerald-600 uppercase tracking-widest mb-3">Path A+: P&amp;L Turnaround &amp; Leadership</div>
+                            <h3 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-1">7-Day Turnaround Sprint</h3>
+                            <div className="text-3xl font-bold text-[#1A1A1A] mb-1">$2,500<span className="text-sm font-normal text-zinc-500"> / 7-day sprint</span></div>
+                            <p className="text-sm text-[#4A4A4A] mb-4 leading-relaxed">A 7-day hands-on forensic audit of your product backlog, pricing tiers, and AI/cloud bills - or ongoing Fractional CPO / Product Economist leadership ($10,000/mo).</p>
+                            <div className="bg-zinc-50 rounded-lg p-3 mb-4 text-xs text-[#4A4A4A]">
+                                <div className="flex justify-between mb-1"><span className="font-bold">7-Day Turnaround Sprint</span><span className="font-mono font-bold">$2,500</span></div>
+                                <div className="flex justify-between mb-1"><span className="font-bold">Fractional CPO / Product Economist</span><span className="font-mono font-bold">$10,000/mo</span></div>
+                                <div className="flex justify-between"><span className="font-bold">PE &amp; M&amp;A Product Due Diligence</span><span className="font-mono font-bold">$15,000</span></div>
+                            </div>
+                            <ul className="space-y-2 mb-6 flex-1">
+                                {[
+                                    'Feature-level profitability & Zombie Feature kill-list',
+                                    'AI token & cloud infrastructure margin recovery plan',
+                                    'Pricing & packaging tier redesign (seat vs usage)',
+                                    '12-slide CFO & Board Defense Deck built for your numbers',
+                                    'Live 90-minute readout with your leadership team',
+                                ].map((item, i) => (
+                                    <li key={i} className="flex items-start gap-2 text-sm text-[#3A3A3A]">
+                                        <CheckCircle size={14} className="text-emerald-500 mt-0.5 flex-shrink-0" /> {item}
+                                    </li>
+                                ))}
+                            </ul>
+                            <a href="/api/buy/insolvency_diagnostic" className="block text-center py-3 bg-emerald-600 text-white font-bold rounded-lg text-sm hover:bg-emerald-500 transition-colors">Book 7-Day Turnaround Sprint ($2,500) →</a>
+                        </div>
+
+                        {/* Path 3: 0-to-1 AI Product Build Sprint */}
+                        <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-6 flex flex-col shadow-sm">
+                            <div className="text-xs font-mono font-bold text-blue-600 uppercase tracking-widest mb-3">Path B: Shipped Software in 21 Days</div>
+                            <h3 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-1">0-to-1 AI Product Build Sprint</h3>
+                            <div className="text-3xl font-bold text-[#1A1A1A] mb-1">$7,500<span className="text-sm font-normal text-zinc-500"> / 21-day build</span></div>
+                            <div className="text-xs text-emerald-700 font-bold mb-3 flex items-center gap-1"><Zap size={10} /> Live Deployed Software · Not a Deck</div>
+                            <p className="text-sm text-[#4A4A4A] mb-5 leading-relaxed">Want an interactive diagnostic engine, AI customer tool, or authority platform like Exogram.ai, CareerWin.ai, or RichardEwing.io? I architect, code, and deploy it in 21 days.</p>
+                            <ul className="space-y-2 mb-6 flex-1">
+                                {[
+                                    'Production Next.js / TypeScript / Cloudflare Edge deployment',
+                                    '1-to-3 custom interactive diagnostic calculators or AI workflows',
+                                    'Hardened LLM routing with token cost caps & prompt guardrails',
+                                    'Lead capture, Stripe checkout, and CRM webhook wiring',
+                                    '100% IP & GitHub repository ownership handoff on Day 21',
+                                ].map((item, i) => (
+                                    <li key={i} className="flex items-start gap-2 text-sm text-[#3A3A3A]">
+                                        <CheckCircle size={14} className="text-blue-500 mt-0.5 flex-shrink-0" /> {item}
+                                    </li>
+                                ))}
+                            </ul>
+                            <a href="/api/buy/hallucination_tax_audit" className="block text-center py-3 bg-[#1A1A1A] text-white font-bold rounded-lg text-sm hover:bg-zinc-800 transition-colors">Commission 21-Day Build ($7,500) →</a>
                         </div>
                     </div>
                 </div>
 
                 {/* What You're Really Paying For */}
                 <div className="bg-[#1A1A1A] rounded-2xl p-8 mb-16 text-white border border-white/10 shadow-xl">
-                    <h2 className="text-xl font-grotesk font-bold text-white mb-4 text-center">What You're Really Paying For</h2>
+                    <h2 className="text-xl font-grotesk font-bold text-white mb-4 text-center">What You&apos;re Really Paying For</h2>
                     <p className="text-zinc-300 text-center max-w-2xl mx-auto mb-6">
-                        You're not paying for an AI plan. You're paying so you <strong className="text-white">stop being stressed</strong> about not having AI in your business. By the end of our first session, you'll know exactly what to do, in what order, and why.
+                        You&apos;re not paying for generic AI hype. You&apos;re paying for a <strong className="text-white">Product Economist</strong> who has scaled enterprise SaaS from $0 to $25M ARR, turned around a $20M P&amp;L (+200% YoY), cut $5M in product waste, and shipped 3 production AI platforms.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
                             <Zap className="w-6 h-6 text-emerald-400 mx-auto mb-2" />
                             <div className="text-sm font-bold text-white mb-1">Clarity</div>
-                            <div className="text-xs text-zinc-400">From "I don't know where to start" to "I know exactly what to do next"</div>
+                            <div className="text-xs text-zinc-400">From &ldquo;I don&apos;t know where to start&rdquo; to exact P&amp;L and margin math</div>
                         </div>
                         <div className="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
                             <Target className="w-6 h-6 text-blue-400 mx-auto mb-2" />
                             <div className="text-sm font-bold text-white mb-1">Focus</div>
-                            <div className="text-xs text-zinc-400">From 10,000 AI tools to the 3 that actually impact your bottom line</div>
+                            <div className="text-xs text-zinc-400">From 10,000 AI tools to the 3 moves that expand gross margin and ARR</div>
                         </div>
                         <div className="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
                             <Calendar className="w-6 h-6 text-violet-400 mx-auto mb-2" />
                             <div className="text-sm font-bold text-white mb-1">Momentum</div>
-                            <div className="text-xs text-zinc-400">From paralysis to a 30-day plan with daily actions and measurable outcomes</div>
+                            <div className="text-xs text-zinc-400">Working spreadsheets, live browser tools, and shipped production software</div>
                         </div>
                     </div>
                 </div>
 
                 {/* Competitor Comparison */}
                 <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-6 mb-8 shadow-sm overflow-x-auto">
-                    <h2 className="text-lg font-grotesk font-bold text-[#1A1A1A] mb-4">Why Most AI Consulting Fails (And Why This Is Different)</h2>
+                    <h2 className="text-lg font-grotesk font-bold text-[#1A1A1A] mb-4">Why Most AI Consulting Fails (And Why a Product Economist Is Different)</h2>
                     <table className="w-full text-sm">
                         <thead>
                             <tr className="border-b border-zinc-100">
                                 <th className="text-left p-3 text-xs uppercase font-bold text-zinc-700">What You Get</th>
                                 <th className="p-3 text-center text-xs uppercase font-bold text-rose-600">Typical AI Consultant</th>
-                                <th className="p-3 text-center text-xs uppercase font-bold text-emerald-700">This Advisory</th>
+                                <th className="p-3 text-center text-xs uppercase font-bold text-emerald-700">Richard Ewing (Product Economist)</th>
                             </tr>
                         </thead>
                         <tbody>
                             {[
-                                { feature: 'Time to deliverable', them: '4-8 weeks', us: '48 hours' },
-                                { feature: 'Readiness assessment cost', them: '$8,000-$25,000', us: '$5,000 (includes roadmap + plan)' },
-                                { feature: 'Monthly retainer', them: '$5,000-$50,000/mo', us: '$5,000-$15,000/mo' },
-                                { feature: 'What you get', them: 'PowerPoint deck', us: 'Prioritized roadmap + 30-day action plan' },
-                                { feature: 'Implementation support', them: 'Extra $15K-$50K', us: 'Included in monthly advisor' },
-                                { feature: 'Ongoing re-assessment', them: 'New engagement each time', us: 'Built into quarterly cycle' },
-                                { feature: 'Top complaint', them: '"Just a report that sits on a shelf"', us: 'Day-by-day action plan with accountability' },
+                                { feature: 'Time to value', them: '4-8 weeks', us: 'Instant ($29 Kit) to 7 Days ($2,500 Sprint)' },
+                                { feature: 'Diagnostic & P&L audit cost', them: '$15,000-$50,000', us: '$450 (60-Min Tear-Down) or $2,500 (7-Day Sprint)' },
+                                { feature: '0-to-1 AI software build', them: '$50,000-$150,000 agency', us: '$7,500 (21-Day Shipped Production Build)' },
+                                { feature: 'Fractional executive leadership', them: 'Junior account managers', us: '$10,000/mo Direct Principal Access' },
+                                { feature: 'What you receive', them: 'Static PowerPoint deck', us: 'Editable P&L models, Live Workspace & shipped code' },
+                                { feature: 'Operator track record', them: 'Career consultants', us: '$0 to $25M ARR (Tyler Tech) + 3 live AI platforms' },
                             ].map((row, i) => (
                                 <tr key={i} className="border-b border-zinc-50 hover:bg-zinc-50 transition-colors">
                                     <td className="p-3 font-bold text-[#1A1A1A]">{row.feature}</td>
@@ -225,7 +247,6 @@ export default function AIIntegrationPage() {
                             ))}
                         </tbody>
                     </table>
-                    <p className="text-xs text-zinc-500 mt-3">Industry pricing based on market research across 20+ AI consulting firms (2025-2026). Sources: AI Consulting Network, Groovyweb, Aries Consulting, LeanWare.</p>
                 </div>
 
                 {/* Pricing Anchor */}
@@ -234,15 +255,15 @@ export default function AIIntegrationPage() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="p-4 bg-rose-50 rounded-xl border border-rose-200 text-center">
                             <div className="text-2xl font-bold text-rose-700">$50K+</div>
-                            <div className="text-xs text-rose-600">Average wasted on failed AI projects</div>
+                            <div className="text-xs text-rose-600">Average wasted on negative-margin AI features</div>
                         </div>
                         <div className="p-4 bg-orange-50 rounded-xl border border-orange-200 text-center">
                             <div className="text-2xl font-bold text-orange-700">4-8 weeks</div>
-                            <div className="text-xs text-orange-600">Average time to get a strategy deck from a consultant</div>
+                            <div className="text-xs text-orange-600">Average time to get a strategy deck from an agency</div>
                         </div>
                         <div className="p-4 bg-emerald-50 rounded-xl border border-emerald-200 text-center">
-                            <div className="text-2xl font-bold text-emerald-700">48 hours</div>
-                            <div className="text-xs text-emerald-600">Our delivery - roadmap + action plan, ready to execute</div>
+                            <div className="text-2xl font-bold text-emerald-700">48hrs - 7 Days</div>
+                            <div className="text-xs text-emerald-600">Our delivery - P&amp;L models + action plan, ready to execute</div>
                         </div>
                     </div>
                 </div>
@@ -252,14 +273,10 @@ export default function AIIntegrationPage() {
                     <h2 className="text-2xl font-grotesk font-bold text-[#1A1A1A] mb-6">Frequently Asked Questions</h2>
                     <div className="space-y-3">
                         {[
-                            { q: 'I don\'t know anything about AI. Is this for me?', a: 'Yes - that\'s exactly who this is for. You don\'t need to know anything about AI. I audit your business, identify where AI can save you time and money, and give you a step-by-step plan to implement it. No jargon. No technical background required. Delivered in 48 hours.' },
-                            { q: 'How is this different from a typical AI consultant?', a: 'Three ways. First, speed: most consultants take 4-8 weeks to deliver a strategy deck. I deliver a prioritized roadmap with a 30-day action plan in 48 hours. Second, substance: the #1 complaint about AI consulting is "I paid $15K for a PowerPoint that sits on a shelf." Every deliverable here is implementation-ready with day-by-day actions. Third, continuity: the quarterly cycle means your strategy evolves with your business - not a one-and-done report.' },
-                            { q: 'Why is this more expensive than some AI consultants?', a: 'Because it\'s faster and more comprehensive. A typical AI readiness assessment costs $8,000-$25,000 and takes 4-8 weeks to deliver a strategy deck. This includes the assessment, a prioritized roadmap, AND a 30-day action plan - delivered in 48 hours. You\'re paying for speed, depth, and implementation-readiness, not just advice.' },
-                            { q: 'What if I\'ve already wasted money on AI tools that didn\'t work?', a: 'That\'s the most common starting point. 95% of AI projects fail because there was no strategy - just tool-chasing. The audit identifies what went wrong, salvages what\'s working, and redirects your investment toward initiatives that actually deliver ROI. Most clients recover their audit cost within 30 days.' },
-                            { q: 'Why 48 hours? How is that possible?', a: 'Because I use AI to accelerate the analysis. After the 2-hour business deep-dive, everything gets fed into advanced AI systems that generate strategic analysis at a speed no human-only team can match. The output is then reviewed, refined, and prioritized by an experienced AI strategist - not auto-generated and shipped. You get both speed AND expertise.' },
-                            { q: 'What\'s included in the 30-day action plan?', a: 'A day-by-day implementation plan. Each day has a specific task (e.g., "Set up Claude account and run customer email audit"), the tool you\'ll use, the expected time commitment (usually 30-60 minutes), and the measurable outcome. It\'s designed for someone who has never used AI before.' },
-                            { q: 'Can I just buy the system and do it myself?', a: 'Yes. The AI Integration System ($997-$1,997) contains every template, prompt, scoring matrix, and framework I use in the $5,000 audit. It\'s step-by-step, designed for someone who doesn\'t know what to do. Think of it as the DIY version of the advisory.' },
-                            { q: 'How do I know if I need the monthly advisor vs the quarterly audit?', a: 'The quarterly audit is for businesses that need direction. The monthly advisor is for businesses that need execution support - someone in the trenches with you, vetting tools, training your team, and making sure the plan actually gets implemented. Most clients start with the audit and upgrade to monthly after seeing the roadmap.' },
+                            { q: 'Where should I start if I want to test your models first?', a: 'Start with the $29 Product & AI Economist Operating Kit (/toolkit). You get instant download of all 5 Excel/CSV spreadsheets, the 12-slide CFO board deck blueprint, the 30-day turnaround runbook, plus instant browser access to the Live Product Economist Workspace (/workspace).' },
+                            { q: 'What is the difference between the $450 Tear-Down and the $2,500 Turnaround Sprint?', a: 'The $450 1-on-1 P&L & AI Tear-Down is a focused 60-minute live Zoom working session followed by a 1-page Executive Action Memo within 48 hours. The $2,500 7-Day Turnaround Sprint is a hands-on forensic engagement where I personally audit your feature profitability, Zombie Feature carry cost, cloud/token invoices, and pricing tiers, then deliver a custom 12-slide CFO & Board Defense Deck.' },
+                            { q: 'What is the $7,500 0-to-1 AI Product Build Sprint?', a: 'Instead of a consulting report, I spend 21 days designing, coding, and deploying a live, production-ready AI product, interactive diagnostic calculator, or authority platform for your company on Next.js, TypeScript, and Cloudflare Edge - using the same architecture behind Exogram.ai and CareerWin.ai.' },
+                            { q: 'How does the $10,000/mo Fractional CPO / Product Economist retainer work?', a: 'I embed directly with your CEO, CFO, and VP of Engineering on a monthly retainer to lead product P&L turnarounds, pricing transformations, AI margin governance, and quarterly board reporting without the $400K+ full-time executive overhead.' },
                         ].map((faq, i) => (
                             <details key={i} className="bg-white rounded-xl border border-[rgba(0,0,0,0.08)] shadow-sm">
                                 <summary className="p-4 cursor-pointer text-sm font-bold text-[#1A1A1A] hover:text-emerald-700">{faq.q}</summary>
@@ -271,11 +288,11 @@ export default function AIIntegrationPage() {
 
                 {/* CTA */}
                 <div className="bg-emerald-600 rounded-2xl p-8 text-white text-center shadow-lg">
-                    <h2 className="text-2xl font-grotesk font-bold text-white mb-3">Ready to Stop Guessing?</h2>
-                    <p className="text-emerald-100 mb-6 max-w-xl mx-auto">One conversation. Ten priorities. A 30-day plan. You'll know exactly what to do with AI by the end of the first session.</p>
+                    <h2 className="text-2xl font-grotesk font-bold text-white mb-3">Ready to Run Your Product &amp; AI Roadmap Like a P&amp;L?</h2>
+                    <p className="text-emerald-100 mb-6 max-w-xl mx-auto">Start with the $29 Operating Kit + Live Workspace, book a $450 1-on-1 Tear-Down, or explore all 3 Engagement Paths.</p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <a href="/api/buy/full_audit" className="px-8 py-4 bg-white text-emerald-800 font-bold rounded-lg hover:bg-emerald-50 transition-colors">Book Your First Audit →</a>
-                        <Link href="/ai-integration/system" className="px-8 py-4 text-white font-bold rounded-lg border border-white/30 hover:border-white/60 transition-colors">View the DIY System →</Link>
+                        <Link href="/services" className="px-8 py-4 bg-white text-emerald-800 font-bold rounded-lg hover:bg-emerald-50 transition-colors">Explore All 3 Buying Paths →</Link>
+                        <Link href="/toolkit" className="px-8 py-4 text-white font-bold rounded-lg border border-white/30 hover:border-white/60 transition-colors">Get $29 Operating Kit →</Link>
                     </div>
                 </div>
 
