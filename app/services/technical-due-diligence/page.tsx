@@ -7,22 +7,22 @@ import { professionalServiceSchema } from '@/app/lib/schemas';
 import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 
 export const metadata: Metadata = {
-    title: 'Technical Due Diligence for PE & VC',
-    description: 'Independent 3-week forensic R&D capital audit uncovering software liabilities and unit economic risks before closing. Clear diligence reports for buyers.',
+    title: 'PE & M&A Product P&L & Technical Due Diligence',
+    description: 'Independent 2-week forensic Product P&L, AI margin, and R&D capital due diligence uncovering software liabilities and unit economic risks before closing.',
     alternates: {
         canonical: 'https://www.richardewing.io/services/technical-due-diligence',
     },
     openGraph: {
-        title: 'Technical Due Diligence & R&D Cost Audit | Richard Ewing',
-        description: 'The R&D Capital Audit provides an independent 3-week forensic review of target architectures. Uncover hidden liabilities before term sheet execution.',
+        title: 'PE & M&A Product P&L & Technical Due Diligence | Richard Ewing',
+        description: 'Independent 2-week forensic review of target product P&Ls, Zombie Feature load, and AI unit economics. Uncover hidden liabilities before term sheet execution.',
         url: 'https://www.richardewing.io/services/technical-due-diligence',
         type: 'website',
         images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Technical Due Diligence & R&D Cost Audit | Richard Ewing',
-        description: 'The R&D Capital Audit provides an independent 3-week forensic review of target architectures. Uncover hidden liabilities before term sheet execution.',
+        title: 'PE & M&A Product P&L & Technical Due Diligence | Richard Ewing',
+        description: 'Independent 2-week forensic review of target product P&Ls, Zombie Feature load, and AI unit economics. Uncover hidden liabilities before term sheet execution.',
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     }
 };
@@ -56,15 +56,15 @@ export default function TechnicalDueDiligencePage() {
                         </h1>
                         <div className="text-xl text-zinc-800 leading-relaxed font-medium max-w-3xl mb-8 space-y-4">
                             <p>One thing surprised me when evaluating software acquisitions. Private equity firms and boards routinely accept technical debt metrics self reported by the target engineering team. The resulting architecture often hides massive maintenance costs that surface only after the deal closes.</p>
-                            <p>Technical due diligence requires an objective third party to calculate the true cost of code. The $7,500 R&D Capital Audit measures structural decay and capital allocation efficiency before you execute the term sheet.</p>
+                            <p>Product and technical due diligence requires an objective third party to calculate the true cost of code and Zombie Features. Our $15,000 PE &amp; M&amp;A Product P&amp;L Due Diligence (2-week deal audit) and $2,500 Turnaround Sprint measure structural decay and capital allocation efficiency before you execute the term sheet.</p>
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                            <Link href="/services#gut_check" className="flex items-center justify-center px-8 py-4 rounded-xl text-sm uppercase tracking-widest font-bold transition-all bg-cyan-600 hover:bg-cyan-700 text-white shadow-sm">
-                                Book a Gut-Check ($450)
+                            <Link href="/services#tech_due_diligence" className="flex items-center justify-center px-8 py-4 rounded-xl text-sm uppercase tracking-widest font-bold transition-all bg-cyan-600 hover:bg-cyan-700 text-white shadow-sm">
+                                Commission PE Diligence ($15,000)
                             </Link>
                             <Link href="/services" className="flex items-center justify-center px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-bold transition-all bg-white border border-zinc-300 text-zinc-950 hover:bg-zinc-50">
-                                View Full Services Menu
+                                View All 3 Buying Paths
                             </Link>
                         </div>
                     </section>
@@ -76,15 +76,15 @@ export default function TechnicalDueDiligencePage() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <div className="bg-white border border-zinc-300 rounded-2xl p-6 shadow-sm">
                                 <h3 className="font-bold text-lg mb-2 text-zinc-950">PE Sponsors</h3>
-                                <p className="text-zinc-700 text-sm">Validate the engineering claims of target companies to price integration risk.</p>
+                                <p className="text-zinc-700 text-sm">Validate the product and engineering claims of target companies to price integration risk.</p>
                             </div>
                             <div className="bg-white border border-zinc-300 rounded-2xl p-6 shadow-sm">
                                 <h3 className="font-bold text-lg mb-2 text-zinc-950">Board Members</h3>
-                                <p className="text-zinc-700 text-sm">Gain unvarnished visibility into the real capability of your engineering org.</p>
+                                <p className="text-zinc-700 text-sm">Gain unvarnished visibility into the real capability of your product and engineering org.</p>
                             </div>
                             <div className="bg-white border border-zinc-300 rounded-2xl p-6 shadow-sm">
-                                <h3 className="font-bold text-lg mb-2 text-zinc-950">Incoming CTOs</h3>
-                                <p className="text-zinc-700 text-sm">Audit legacy systems and identify remediation priorities upon inheriting a new codebase.</p>
+                                <h3 className="font-bold text-lg mb-2 text-zinc-950">Incoming CPOs &amp; CTOs</h3>
+                                <p className="text-zinc-700 text-sm">Audit legacy systems and identify remediation priorities upon inheriting a new P&amp;L.</p>
                             </div>
                         </div>
                     </section>
@@ -93,7 +93,7 @@ export default function TechnicalDueDiligencePage() {
                 <ScrollReveal>
                     <section className="mb-24 bg-zinc-950 text-zinc-50 rounded-3xl p-8 sm:p-12">
                         <h2 className="text-3xl font-grotesk font-bold text-white mb-8">What You Get</h2>
-                        <p className="text-zinc-400 mb-8 max-w-2xl">A 3 week forensic review that bypasses opinions and measures actual system execution.</p>
+                        <p className="text-zinc-400 mb-8 max-w-2xl">A 2-week forensic review that bypasses opinions and measures actual product P&amp;L and system execution.</p>
                         <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                             <li className="flex flex-col gap-3 border-t border-zinc-800 pt-6">
                                 <CheckCircle2 className="w-6 h-6 text-cyan-500 shrink-0" />

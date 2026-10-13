@@ -131,7 +131,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                                     Calculate Your Organization's TID →
                                 </a>
                                 <a href="/api/buy/insolvency_diagnostic" className="px-5 py-2.5 rounded-lg bg-red-700 text-white font-bold text-sm hover:bg-red-800 transition shadow">
-                                    Book 60-Min Insolvency Audit ($2,500) →
+                                    Book P&amp;L Turnaround Sprint ($2,500) →
                                 </a>
                             </div>
                         </div>

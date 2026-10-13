@@ -35,7 +35,7 @@ export class ArtifactCompiler {
             title: `Executive Deliverable: ${type} - ${pkg.executiveOwnerRole}`,
             executiveSummary: pkg.summary,
             contentMarkdown: content,
-            downloadRef: `https://www.richardewing.io/exports/${type.toLowerCase()}_${pkg.id}.pdf`,
+            downloadRef: '/downloads/Product_and_AI_Economist_Operating_Kit/03_12_Slide_CFO_and_Board_Defense_Blueprint.md',
             generatedAt: new Date().toISOString()
         };
     }

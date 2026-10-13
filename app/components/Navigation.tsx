@@ -383,7 +383,7 @@ const Navigation = () => {
                             {/* Mobile Platforms & Products Group */}
                             <div className="pt-2 pb-2 border-y border-zinc-200 space-y-3">
                                 <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest">
-                                    Platforms & Products
+                                    Platforms &amp; Products
                                 </div>
                                 <Link href="/exogram" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-purple-900 font-bold text-base">
                                     <ShieldCheck className="w-4 h-4 text-purple-600 shrink-0" />
@@ -392,6 +392,10 @@ const Navigation = () => {
                                 <Link href="/careerwin" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-indigo-900 font-bold text-base">
                                     <Award className="w-4 h-4 text-indigo-600 shrink-0" />
                                     <span>CareerWin.ai (Career Intelligence)</span>
+                                </Link>
+                                <Link href="/workspace" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-cyan-900 font-bold text-base">
+                                    <Calculator className="w-4 h-4 text-cyan-600 shrink-0" />
+                                    <span>Product Economist Studio (Live P&amp;L OS)</span>
                                 </Link>
                             </div>
 

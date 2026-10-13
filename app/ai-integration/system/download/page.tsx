@@ -159,9 +159,9 @@ export default async function DownloadPage() {
 
                         {/* Upgrade Path */}
                         <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 mb-8">
-                            <h3 className="font-grotesk font-bold text-[#1A1A1A] mb-2">Want Expert Help?</h3>
-                            <p className="text-sm text-[#4A4A4A] mb-3">If you&apos;d rather have someone run the process for you, the Quarterly AI Audit ($5,000) delivers a complete roadmap in 48 hours.</p>
-                            <Link href="/ai-integration" className="text-sm font-bold text-emerald-700 hover:text-emerald-900">View Advisory Options →</Link>
+                            <h3 className="font-grotesk font-bold text-[#1A1A1A] mb-2">Want Hands-On Execution?</h3>
+                            <p className="text-sm text-[#4A4A4A] mb-3">If you&apos;d rather have Richard audit your numbers and build your P&amp;L turnaround roadmap directly, book a 60-minute 1-on-1 Tear-Down ($450) or a 7-Day Turnaround Sprint ($2,500).</p>
+                            <Link href="/services" className="text-sm font-bold text-emerald-700 hover:text-emerald-900">View Advisory Options →</Link>
                         </div>
                     </>
                 ) : (

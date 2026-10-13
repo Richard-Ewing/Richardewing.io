@@ -56,15 +56,15 @@ export default function AICostAuditPage() {
                         </h1>
                         <div className="text-xl text-zinc-800 leading-relaxed font-medium max-w-3xl mb-8 space-y-4">
                             <p>I kept seeing the same pattern across scale up software companies. The CFO spots an inflating API line item. The engineering team claims they need it for product features. Neither side has the data to prove if those features actually generate more money than they consume.</p>
-                            <p>AI cost attribution fails because the architecture obscures it. We optimize for speed of deployment, but the resulting system lacks economic boundaries. The $5,000 AI Cost Governance Review fixes this structural defect.</p>
+                            <p>AI cost attribution fails because the architecture obscures it. We optimize for speed of deployment, but the resulting system lacks economic boundaries. Our $2,500 Product &amp; AI Turnaround Sprint (and $10,000/mo Fractional CPO / Product Economist retainer) fixes this structural defect.</p>
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 mb-12">
                             <Link href="/services#gut_check" className="flex items-center justify-center px-8 py-4 rounded-xl text-sm uppercase tracking-widest font-bold transition-all bg-amber-600 hover:bg-amber-700 text-white shadow-sm">
-                                Book a Gut-Check ($450)
+                                Book 60-Min Tear-Down ($450)
                             </Link>
                             <Link href="/services" className="flex items-center justify-center px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-bold transition-all bg-white border border-zinc-300 text-zinc-950 hover:bg-zinc-50">
-                                View Full Services Menu
+                                View All 3 Buying Paths
                             </Link>
                         </div>
                     </section>

@@ -1,21 +1,61 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import WorkspaceHeader from '../../../components/workspace/WorkspaceHeader';
-import { Code2, GitPullRequest, Users, Activity, CheckCircle2, TrendingUp, Cpu, Terminal } from 'lucide-react';
-
-const mockRepos = [
-  { name: 'richardewing-io-core', lang: 'TypeScript / Next.js', prs24h: 14, cycleTimeHours: 4.2, aiAssistedPct: 68, status: 'Healthy' },
-  { name: 'exogram-governance-engine', lang: 'Rust / WASM', prs24h: 8, cycleTimeHours: 2.8, aiAssistedPct: 82, status: 'High Efficiency' },
-  { name: 'enterprise-token-sidecar', lang: 'Go / Docker', prs24h: 5, cycleTimeHours: 3.5, aiAssistedPct: 74, status: 'Healthy' }
-];
+import { CustomerWorkspaceStore, CustomerOrganizationWorkspace } from '../../../lib/workspace/customerWorkspace';
+import { Terminal, ArrowRight } from 'lucide-react';
 
 export default function EngineeringWorkspacePage() {
+  const [workspace, setWorkspace] = useState<CustomerOrganizationWorkspace | null>(null);
+
+  useEffect(() => {
+    const sync = () => setWorkspace({ ...CustomerWorkspaceStore.getWorkspace() });
+    sync();
+    window.addEventListener('re-workspace-updated', sync);
+    return () => window.removeEventListener('re-workspace-updated', sync);
+  }, []);
+
+  if (!workspace) return null;
+
+  const aperUSD = workspace.engineeringHeadcount > 0
+    ? Math.round(workspace.annualArrUSD / workspace.engineeringHeadcount)
+    : 0;
+  const zombieFtes = Math.round(workspace.engineeringHeadcount * (workspace.zombieFeaturePct / 100) * 10) / 10;
+  const zombieCarryUSD = Math.round(workspace.engineeringHeadcount * 185000 * (workspace.zombieFeaturePct / 100));
+
+  const mockRepos = [
+    {
+      name: `${workspace.organizationName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-core`,
+      lang: 'TypeScript / Next.js',
+      fteAllocated: Math.max(1, Math.round(workspace.engineeringHeadcount * 0.5)),
+      cycleTimeHours: 4.2,
+      aiAssistedPct: 68,
+      status: 'Core Revenue Engine'
+    },
+    {
+      name: 'ai-inference-gateway',
+      lang: 'Python / Rust Sidecar',
+      fteAllocated: Math.max(1, Math.round(workspace.engineeringHeadcount * (1 - 0.5 - workspace.zombieFeaturePct / 100))),
+      cycleTimeHours: 2.8,
+      aiAssistedPct: 82,
+      status: 'High Efficiency'
+    },
+    {
+      name: 'legacy-zombie-modules',
+      lang: 'Legacy Monolith',
+      fteAllocated: zombieFtes,
+      cycleTimeHours: 14.6,
+      aiAssistedPct: 24,
+      status: `${workspace.zombieFeaturePct}% Capacity Drag`
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-zinc-50 pt-20 pb-16">
       <WorkspaceHeader
         title="Engineering Workspace"
-        subtitle="Developer productivity telemetry, repository operations, AI usage impact, and cycle time tracking."
+        subtitle="Developer productivity telemetry, APER revenue per engineer, AI usage impact, and Zombie Feature drag."
         badge="Product 4 • Engineering OS"
       />
 
@@ -24,15 +64,21 @@ export default function EngineeringWorkspacePage() {
         {/* Engineering KPI Overview */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm">
-            <span className="text-xs font-mono text-cyan-700 font-bold uppercase">Active Repositories</span>
-            <h3 className="text-3xl font-grotesk font-bold text-zinc-900 mt-2">18 Repos</h3>
-            <p className="text-xs font-mono text-zinc-500 mt-1">100% telemetry coverage</p>
+            <span className="text-xs font-mono text-cyan-700 font-bold uppercase">Engineering Headcount</span>
+            <h3 className="text-3xl font-grotesk font-bold text-zinc-900 mt-2">{workspace.engineeringHeadcount} FTEs</h3>
+            <p className="text-xs font-mono text-zinc-500 mt-1">${(workspace.engineeringHeadcount * 185000).toLocaleString()} loaded payroll</p>
           </div>
 
           <div className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm">
-            <span className="text-xs font-mono text-emerald-700 font-bold uppercase">Average PR Cycle Time</span>
-            <h3 className="text-3xl font-grotesk font-bold text-emerald-700 mt-2">3.5 Hours</h3>
-            <p className="text-xs font-mono text-zinc-500 mt-1">22% speedup vs Q2</p>
+            <span className="text-xs font-mono text-emerald-700 font-bold uppercase">Revenue / Engineer (APER)</span>
+            <h3 className="text-3xl font-grotesk font-bold text-emerald-700 mt-2">${aperUSD.toLocaleString()}</h3>
+            <p className="text-xs font-mono text-zinc-500 mt-1">{aperUSD >= 350000 ? 'Above $350K benchmark' : 'Below $350K benchmark'}</p>
+          </div>
+
+          <div className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm">
+            <span className="text-xs font-mono text-amber-700 font-bold uppercase">Zombie Maintenance FTEs</span>
+            <h3 className="text-3xl font-grotesk font-bold text-amber-700 mt-2">{zombieFtes} FTEs</h3>
+            <p className="text-xs font-mono text-zinc-500 mt-1">{workspace.zombieFeaturePct}% load (${zombieCarryUSD.toLocaleString()}/yr)</p>
           </div>
 
           <div className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm">
@@ -40,33 +86,33 @@ export default function EngineeringWorkspacePage() {
             <h3 className="text-3xl font-grotesk font-bold text-violet-700 mt-2">74.8%</h3>
             <p className="text-xs font-mono text-zinc-500 mt-1">Measured via commit diffs</p>
           </div>
-
-          <div className="bg-white p-6 rounded-2xl border border-zinc-200 shadow-sm">
-            <span className="text-xs font-mono text-amber-700 font-bold uppercase">Code Egress Violations</span>
-            <h3 className="text-3xl font-grotesk font-bold text-zinc-900 mt-2">0 Blocked</h3>
-            <p className="text-xs font-mono text-zinc-500 mt-1">Sidecars active</p>
-          </div>
         </div>
 
         {/* Repository Table */}
         <div className="bg-white rounded-2xl border border-zinc-200 p-8 shadow-sm">
-          <div className="flex items-center justify-between border-b border-zinc-200 pb-4 mb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-zinc-200 pb-4 mb-6">
             <div>
-              <span className="text-xs font-mono text-cyan-700 font-bold uppercase">Repository Operations</span>
+              <span className="text-xs font-mono text-cyan-700 font-bold uppercase">Repository &amp; Capacity Allocation ({workspace.organizationName})</span>
               <h2 className="text-xl font-grotesk font-bold text-zinc-900">Developer Workflow Telemetry</h2>
             </div>
+            <Link
+              href="/tools/aper"
+              className="px-4 py-2 rounded-xl bg-cyan-50 border border-cyan-200 hover:bg-cyan-100 text-cyan-900 text-xs font-mono font-bold inline-flex items-center gap-1.5 transition-colors"
+            >
+              Run APER Diagnostic <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
 
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="border-b border-zinc-200 text-xs font-mono text-zinc-500 uppercase">
-                  <th className="pb-3 font-bold">Repository</th>
+                  <th className="pb-3 font-bold">Workstream / Repository</th>
                   <th className="pb-3 font-bold">Language Stack</th>
-                  <th className="pb-3 font-bold">PRs (24h)</th>
+                  <th className="pb-3 font-bold">Allocated FTEs</th>
                   <th className="pb-3 font-bold">Cycle Time</th>
                   <th className="pb-3 font-bold">AI Assistance</th>
-                  <th className="pb-3 font-bold">Status</th>
+                  <th className="pb-3 font-bold">P&amp;L Status</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-zinc-100 font-mono text-xs">
@@ -77,7 +123,7 @@ export default function EngineeringWorkspacePage() {
                       {repo.name}
                     </td>
                     <td className="py-4 text-zinc-600">{repo.lang}</td>
-                    <td className="py-4 text-zinc-900 font-bold">{repo.prs24h} merged</td>
+                    <td className="py-4 text-zinc-900 font-bold">{repo.fteAllocated} FTEs</td>
                     <td className="py-4 text-emerald-700 font-bold">{repo.cycleTimeHours}h</td>
                     <td className="py-4 text-violet-700 font-bold">{repo.aiAssistedPct}%</td>
                     <td className="py-4">

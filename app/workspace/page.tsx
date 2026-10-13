@@ -412,33 +412,53 @@ export default function CustomerWorkspacePage() {
             <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200 flex flex-col justify-between">
               <div>
                 <span className="text-[10px] font-mono text-cyan-700 font-bold uppercase">BoardDeck</span>
-                <h4 className="font-bold text-zinc-900 text-sm mt-1">Q3 2026 Board Briefing Deck</h4>
-                <span className="text-[10px] font-mono text-zinc-500 block mt-1">11 Compiled Slides • Verified $319.5k ROI</span>
+                <h4 className="font-bold text-zinc-900 text-sm mt-1">12-Slide CFO &amp; Board Defense Blueprint</h4>
+                <span className="text-[10px] font-mono text-zinc-500 block mt-1">12 Compiled Slides &bull; ${workspace.cumulativeSavingsUSD.toLocaleString()} Projected Savings</span>
               </div>
-              <a href="https://www.richardewing.io/exports/boarddeck_dp_board_001.pdf" target="_blank" rel="noopener noreferrer" className="mt-4 pt-2 border-t border-zinc-200 text-xs font-mono text-cyan-700 font-bold flex items-center justify-between">
-                Download Board Deck <Download className="w-3.5 h-3.5" />
-              </a>
+              <div className="mt-4 pt-2 border-t border-zinc-200 flex items-center justify-between gap-2">
+                <a
+                  href="/downloads/Product_and_AI_Economist_Operating_Kit/03_12_Slide_CFO_and_Board_Defense_Blueprint.md"
+                  download
+                  className="text-xs font-mono text-cyan-700 hover:text-cyan-900 font-bold flex items-center gap-1"
+                >
+                  Blueprint (.MD) <Download className="w-3.5 h-3.5" />
+                </a>
+                <button
+                  onClick={handleDownloadBoardReport}
+                  className="text-xs font-mono text-emerald-700 hover:text-emerald-900 font-bold flex items-center gap-1 cursor-pointer"
+                >
+                  Live Report <Download className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
 
             <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200 flex flex-col justify-between">
               <div>
                 <span className="text-[10px] font-mono text-violet-700 font-bold uppercase">ExecutiveMemo</span>
-                <h4 className="font-bold text-zinc-900 text-sm mt-1">Token Saver Sidecar Architecture Review</h4>
-                <span className="text-[10px] font-mono text-zinc-500 block mt-1">CFO Briefing • Zero Code Egress Verified</span>
+                <h4 className="font-bold text-zinc-900 text-sm mt-1">First-30-Days Product P&amp;L Turnaround Runbook</h4>
+                <span className="text-[10px] font-mono text-zinc-500 block mt-1">CFO Briefing &bull; Day-by-Day Execution Protocol</span>
               </div>
-              <a href="https://www.richardewing.io/exports/executivememo_dp_board_001.pdf" target="_blank" rel="noopener noreferrer" className="mt-4 pt-2 border-t border-zinc-200 text-xs font-mono text-violet-700 font-bold flex items-center justify-between">
-                Download Executive Memo <Download className="w-3.5 h-3.5" />
+              <a
+                href="/downloads/Product_and_AI_Economist_Operating_Kit/04_First_30_Days_Product_PnL_Turnaround_Runbook.md"
+                download
+                className="mt-4 pt-2 border-t border-zinc-200 text-xs font-mono text-violet-700 hover:text-violet-900 font-bold flex items-center justify-between"
+              >
+                Download Turnaround Runbook (.MD) <Download className="w-3.5 h-3.5" />
               </a>
             </div>
 
             <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200 flex flex-col justify-between">
               <div>
-                <span className="text-[10px] font-mono text-emerald-700 font-bold uppercase">RiskRegister</span>
-                <h4 className="font-bold text-zinc-900 text-sm mt-1">Shadow AI &amp; Context Rot Audit</h4>
-                <span className="text-[10px] font-mono text-zinc-500 block mt-1">CISO Audit • 14 Repos Cleaned</span>
+                <span className="text-[10px] font-mono text-emerald-700 font-bold uppercase">RiskRegister &amp; Matrix</span>
+                <h4 className="font-bold text-zinc-900 text-sm mt-1">Zombie Feature Kill-List &amp; Capacity Matrix</h4>
+                <span className="text-[10px] font-mono text-zinc-500 block mt-1">P&amp;L Audit &bull; ${zombieCarryUSD.toLocaleString()}/yr Carry Identified</span>
               </div>
-              <a href="https://www.richardewing.io/exports/riskregister_dp_board_001.pdf" target="_blank" rel="noopener noreferrer" className="mt-4 pt-2 border-t border-zinc-200 text-xs font-mono text-emerald-700 font-bold flex items-center justify-between">
-                Download Risk Register <Download className="w-3.5 h-3.5" />
+              <a
+                href="/downloads/Product_and_AI_Economist_Operating_Kit/02_Zombie_Feature_Kill_List_and_Capacity_Matrix.xlsx"
+                download
+                className="mt-4 pt-2 border-t border-zinc-200 text-xs font-mono text-emerald-700 hover:text-emerald-900 font-bold flex items-center justify-between"
+              >
+                Download Matrix (.XLSX) <Download className="w-3.5 h-3.5" />
               </a>
             </div>
           </div>

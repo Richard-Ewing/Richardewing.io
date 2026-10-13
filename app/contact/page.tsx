@@ -178,10 +178,10 @@ export default function ContactPage() {
                             'mainEntity': [
                                 {
                                     '@type': 'Question',
-                                    'name': 'What advisory sessions can I book directly?',
+                                    'name': 'What advisory sessions and sprints can I book directly?',
                                     'acceptedAnswer': {
                                         '@type': 'Answer',
-                                        'text': 'You can book a 30-minute Rapid Gut-Check ($450) for immediate cost triage, a 60-minute 1-on-1 Hourly Advisory ($650) for direct architecture and vendor reviews, or a 60-minute Technical Insolvency Audit ($2,500) which includes a formal PDI report and 30-day recovery plan.'
+                                        'text': 'You can start with the self-serve Product & AI Economist Operating Kit ($29), book a 60-minute 1-on-1 P&L & AI Tear-Down ($450), commission a 2-Week Product & AI Turnaround Sprint ($2,500), commission a 21-Day 0-to-1 AI Product Build Sprint ($7,500), or retain Richard as Fractional CPO / Product Economist ($10,000/mo).'
                                     }
                                 },
                                 {
@@ -189,7 +189,7 @@ export default function ContactPage() {
                                     'name': 'How does payment work for advisory bookings?',
                                     'acceptedAnswer': {
                                         '@type': 'Answer',
-                                        'text': 'Payment is collected securely via Stripe at the moment of booking using credit card, Apple Pay, or Google Pay. The meeting is confirmed and added to your calendar immediately upon payment.'
+                                        'text': 'Payment is collected securely via Stripe at the moment of booking using credit card, Apple Pay, or Google Pay. Your working session or sprint kickoff is scheduled immediately upon payment.'
                                     }
                                 },
                                 {
@@ -197,7 +197,7 @@ export default function ContactPage() {
                                     'name': 'Do I need to share code access before our initial session?',
                                     'acceptedAnswer': {
                                         '@type': 'Answer',
-                                        'text': 'No. Code access is not required for advisory calls or initial discovery. If you proceed with a full R&D Capital Audit, a mutual NDA is executed prior to any repository or server log review.'
+                                        'text': 'No. Code access is not required for a $450 1-on-1 Tear-Down or initial discovery. If you proceed with a Turnaround Sprint, 0-to-1 Build Sprint, or PE Due Diligence, a mutual NDA is executed prior to any repository or financial review.'
                                     }
                                 },
                                 {
@@ -205,7 +205,7 @@ export default function ContactPage() {
                                     'name': 'Are all discussions protected under an NDA?',
                                     'acceptedAnswer': {
                                         '@type': 'Answer',
-                                        'text': 'Yes. All financial figures, cloud infrastructure bills, and architecture discussions are strictly confidential.'
+                                        'text': 'Yes. All P&L figures, cloud infrastructure bills, and product architecture discussions are strictly confidential.'
                                     }
                                 }
                             ]
@@ -214,20 +214,20 @@ export default function ContactPage() {
                     <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-6">Frequently Asked Questions</h2>
                     <div className="space-y-4">
                         <FAQItem 
-                            question="What advisory sessions can I book directly?" 
-                            answer="You can book a 30-minute Rapid Gut-Check ($450) for immediate cost triage, a 60-minute 1-on-1 Hourly Advisory ($650) for direct architecture and vendor reviews, or a 60-minute Technical Insolvency Audit ($2,500) which includes a formal PDI report and 30-day recovery plan."
+                            question="What advisory sessions and sprints can I book directly?" 
+                            answer="You can start with the self-serve Product & AI Economist Operating Kit ($29), book a 60-minute 1-on-1 P&L & AI Tear-Down ($450), commission a 2-Week Product & AI Turnaround Sprint ($2,500), commission a 21-Day 0-to-1 AI Product Build Sprint ($7,500), or retain Richard as Fractional CPO / Product Economist ($10,000/mo)."
                         />
                         <FAQItem 
                             question="How does payment work for advisory bookings?" 
-                            answer="Payment is collected securely via Stripe at the moment of booking using credit card, Apple Pay, or Google Pay. The meeting is confirmed and added to your calendar immediately upon payment."
+                            answer="Payment is collected securely via Stripe at the moment of booking using credit card, Apple Pay, or Google Pay. Your working session or sprint kickoff is scheduled immediately upon payment."
                         />
                         <FAQItem 
                             question="Do I need to share code access before our initial session?" 
-                            answer="No. Code access is not required for advisory calls or initial discovery. If you proceed with a full R&D Capital Audit, a mutual NDA is executed prior to any repository or server log review."
+                            answer="No. Code access is not required for a $450 1-on-1 Tear-Down or initial discovery. If you proceed with a Turnaround Sprint, 0-to-1 Build Sprint, or PE Due Diligence, a mutual NDA is executed prior to any repository or financial review."
                         />
                         <FAQItem 
                             question="Are all discussions protected under an NDA?" 
-                            answer="Yes. All financial figures, cloud infrastructure bills, and architecture discussions are strictly confidential."
+                            answer="Yes. All P&L figures, cloud infrastructure bills, and product architecture discussions are strictly confidential."
                         />
                     </div>
                 </section>

@@ -56,15 +56,15 @@ export default function PlatformConsolidationPage() {
                         </h1>
                         <div className="text-xl text-zinc-800 leading-relaxed font-medium max-w-3xl mb-8 space-y-4">
                             <p>While assessing scaling software companies, the pattern became difficult to ignore. Teams accumulate redundant tools to solve local problems. The architecture assumes unlimited budget, and the system optimizes for autonomy rather than financial discipline.</p>
-                            <p>Multi platform sprawl destroys gross margins. We structure a platform consolidation strategy via a $7,500 R&D Capital Audit or $10,000 monthly Advisory Retainer to eliminate overlapping infrastructure and centralize your technology footprint.</p>
+                            <p>Multi platform sprawl destroys gross margins. We structure a platform consolidation strategy via a $2,500 Product &amp; AI Turnaround Sprint or $10,000 monthly Fractional CPO / Product Economist Retainer to eliminate overlapping infrastructure and centralize your technology footprint.</p>
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 mb-12">
                             <Link href="/services#gut_check" className="flex items-center justify-center px-8 py-4 rounded-xl text-sm uppercase tracking-widest font-bold transition-all bg-violet-600 hover:bg-violet-700 text-white shadow-sm">
-                                Book a Gut-Check ($450)
+                                Book 60-Min Tear-Down ($450)
                             </Link>
                             <Link href="/services" className="flex items-center justify-center px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-bold transition-all bg-white border border-zinc-300 text-zinc-950 hover:bg-zinc-50">
-                                View Full Services Menu
+                                View All 3 Buying Paths
                             </Link>
                         </div>
                     </section>

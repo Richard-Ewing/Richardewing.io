@@ -131,7 +131,7 @@ export default function ToolkitSuccessPage() {
                         Want to model your numbers right now in the browser alongside your Excel sheets? Open the <strong>Live Product Economist Workspace</strong> to plug in your company name, ARR, engineering headcount, and monthly AI spend, save multiple scenarios locally in your browser, run all 4 connected diagnostic calculators, and generate a customized Board &amp; CFO P&amp;L Report.
                     </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-6">
                         <Link
                             href="/workspace"
                             className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-violet-400 transition-colors block"
@@ -152,6 +152,13 @@ export default function ToolkitSuccessPage() {
                         >
                             <div className="text-[10px] font-mono font-bold uppercase text-amber-400 mb-1">Module 01 Live</div>
                             <div className="font-bold text-sm text-white font-grotesk">CFO &amp; Margin Ledger &rarr;</div>
+                        </Link>
+                        <Link
+                            href="/workspace/engineering"
+                            className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-violet-400 transition-colors block"
+                        >
+                            <div className="text-[10px] font-mono font-bold uppercase text-purple-400 mb-1">APER &amp; Capacity</div>
+                            <div className="font-bold text-sm text-white font-grotesk">Engineering OS &rarr;</div>
                         </Link>
                         <Link
                             href="/workspace/board"

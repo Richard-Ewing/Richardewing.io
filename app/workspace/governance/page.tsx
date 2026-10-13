@@ -162,12 +162,11 @@ export default function GovernanceWorkspacePage() {
             </div>
 
             <a
-              href="https://www.richardewing.io/exports/riskregister_dp_board_001.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/downloads/Product_and_AI_Economist_Operating_Kit/04_First_30_Days_Product_PnL_Turnaround_Runbook.md"
+              download
               className="mt-8 py-3 px-4 bg-cyan-600 hover:bg-cyan-700 text-white font-mono font-bold text-xs rounded-xl flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-sm"
             >
-              <Download className="w-4 h-4" /> Download Certified Audit Package
+              <Download className="w-4 h-4" /> Download 30-Day Governance &amp; Turnaround Runbook (.MD)
             </a>
           </div>
 

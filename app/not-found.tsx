@@ -91,10 +91,10 @@ export default function NotFound() {
                 {/* Knowledge Base */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-12">
                     {[
-                        { label: 'Glossary', count: '430+ terms', href: '/glossary', icon: BookOpen },
+                        { label: 'Glossary', count: '656+ terms', href: '/glossary', icon: BookOpen },
                         { label: 'Blog', count: '130+ posts', href: '/blog', icon: BookOpen },
                         { label: 'Comparisons', count: '25+ pages', href: '/compare', icon: TrendingDown },
-                        { label: 'Advisory', count: 'From $450', href: '/services', icon: Shield },
+                        { label: 'Operating Kit & Advisory', count: 'From $29 / $450', href: '/services', icon: Shield },
                     ].map(item => (
                         <Link key={item.href} href={item.href} className="p-4 rounded-xl bg-white border border-zinc-200 hover:border-violet-300 transition-colors text-center group shadow-sm">
                             <p className="text-sm font-bold text-zinc-900 group-hover:text-violet-700 transition-colors">{item.label}</p>

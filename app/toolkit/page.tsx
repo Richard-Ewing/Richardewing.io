@@ -99,7 +99,7 @@ export default function ToolkitPage() {
         description: '5 actionable financial models, AI feature pricing stress-testers, Zombie Feature kill-lists, and 12-slide CFO board deck templates by Richard Ewing.',
         brand: {
             '@type': 'Brand',
-            name: 'Richard Ewing - AI Economist',
+            name: 'Richard Ewing - Product & AI Economist',
         },
         offers: {
             '@type': 'Offer',

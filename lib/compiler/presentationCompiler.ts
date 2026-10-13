@@ -61,7 +61,7 @@ export class PresentationCompiler {
             tier,
             slideCount,
             slides,
-            exportRefUrl: `https://www.richardewing.io/exports/slides_${tier.toLowerCase()}_${pkg.id}.pptx`
+            exportRefUrl: '/downloads/Product_and_AI_Economist_Operating_Kit/03_12_Slide_CFO_and_Board_Defense_Blueprint.md'
         };
     }
 }
