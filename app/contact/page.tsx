@@ -1,244 +1,137 @@
-import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Mail, Linkedin, Twitter, Github, ShieldAlert, ArrowRight, CheckCircle, ShieldCheck } from 'lucide-react';
-import ContactForm from '@/app/components/client/ContactForm';
-import FAQItem from '@/app/components/FAQItem';
-import CalEmbed from '@/app/components/client/CalEmbed';
+import { ContactForm } from '@/components/contact/contact-form';
 
 export const metadata: Metadata = {
-    title: 'Contact & Advisory Requests',
-    description: 'Get in touch for forensic R&D capital audits, AI unit economics advisory, and board-level risk reviews. Direct communication with executive advisors.',
-    alternates: {
-        canonical: 'https://www.richardewing.io/contact',
-    },
-    openGraph: {
-        title: 'Contact Richard Ewing | AI Economist & Capital Auditor',
-        description: 'Get in touch to eliminate AI billing shock, shadow AI risk, and install deterministic cost caps.',
-        url: 'https://www.richardewing.io/contact',
-        type: 'website',
-        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Contact Richard Ewing | AI Economist & Capital Auditor',
-        description: 'Get in touch to eliminate AI billing shock, shadow AI risk, and install deterministic cost caps.',
-        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
-    }
+  title: 'Contact Richard Ewing | Executive Advisory & Keynote Inquiries',
+  description:
+    'Start a conversation about executive advisory, pricing sprints, keynote speaking, or AI unit economics research.',
+  alternates: {
+    canonical: 'https://www.richardewing.io/contact',
+  },
+  openGraph: {
+    title: 'Contact Richard Ewing | Executive Advisory & Speaking',
+    description:
+      'Start a conversation about executive advisory, pricing sprints, or speaking engagements.',
+    url: 'https://www.richardewing.io/contact',
+    type: 'website',
+  },
 };
 
 export default function ContactPage() {
-    return (
-        <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
-            <div className="page-container max-w-4xl mx-auto">
-                
-                {/* Breadcrumb */}
-                <div className="mb-6 flex items-center gap-2 text-xs font-mono font-bold text-zinc-950 uppercase tracking-widest">
-                    <span>Executive</span><span>/</span><span className="text-cyan-900 font-extrabold">Contact The Principal</span>
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact Richard Ewing',
+    url: 'https://www.richardewing.io/contact',
+    mainEntity: {
+      '@type': 'Person',
+      name: 'Richard Ewing',
+      email: 'richardewing@exogram.ai',
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+
+      {/* Hero Section */}
+      <section className="inner-hero">
+        <div className="inner-art" />
+        <div className="inner-copy">
+          <p className="eyebrow">
+            <i /> Direct Inquiries · Executive Office
+          </p>
+          <h1>Let&apos;s talk about what&apos;s possible.</h1>
+          <p className="inner-lede">
+            Whether you are exploring a focused advisory sprint, booking a keynote, or
+            seeking independent fiduciary oversight on your AI roadmap, I would love to
+            hear from you.
+          </p>
+
+          <div className="actions">
+            <Link className="button button-gold" href="/reality-check">
+              Run the Reality Check first ↗
+            </Link>
+            <Link className="button button-outline" href="/advisory">
+              Explore advisory paths
+            </Link>
+          </div>
+        </div>
+
+        <aside className="inner-aside glass">
+          <span>RESPONSE COMMITMENT</span>
+          <strong>Direct Operator Reply</strong>
+          <p>
+            Inquiries are delivered directly to Richard. Expect a confidential response
+            within 24 business hours.
+          </p>
+        </aside>
+      </section>
+
+      {/* Main Contact Form & Context */}
+      <section className="section">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* Left Context */}
+          <div className="lg:col-span-5 space-y-6">
+            <p className="eyebrow">
+              <i /> Confidential Inquiry
+            </p>
+            <h2 className="font-serif text-3xl font-medium text-[var(--ink)]">
+              No sales reps. No consulting bureaucracy.
+            </h2>
+            <p className="text-xs text-[var(--muted)] leading-relaxed">
+              When you get in touch, you talk directly with Richard. Every engagement
+              starts with a frank examination of operational reality and unit economics.
+            </p>
+
+            <div className="p-6 bg-[#faf8f2] border border-[var(--line)] rounded-xl space-y-4 text-xs">
+              <div className="font-serif text-base font-medium text-[var(--ink)]">
+                Direct Channels:
+              </div>
+              <div className="space-y-2 text-zinc-700">
+                <div className="flex items-center justify-between">
+                  <span className="text-[var(--muted)]">Email:</span>
+                  <a
+                    href="mailto:richardewing@exogram.ai"
+                    className="font-mono text-[var(--forest)] font-bold hover:underline"
+                  >
+                    richardewing@exogram.ai
+                  </a>
                 </div>
-
-                <section className="mb-12 border-b border-zinc-400 pb-12">
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Let&apos;s Stop the <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-indigo-700">Capital Bleed.</span>
-                    </h1>
-                    <p className="text-lg text-zinc-900 leading-relaxed font-semibold max-w-2xl">
-                        Founders, CTOs, and Private Equity Operating Partners: If you suspect your AI R&D is bleeding cash or accumulating invisible debt, let&apos;s align on the numbers.
-                    </p>
-                </section>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-16">
-                    {/* Left: Cal.com Embed */}
-                    <div className="bg-white border border-zinc-300 rounded-3xl p-3 sm:p-5 shadow-sm min-h-[640px] flex flex-col relative overflow-hidden">
-                        <CalEmbed calLink="richard-ewing-2cevwb" />
-                    </div>
-
-                    {/* Right: Contact details and Secure NDA Seal */}
-                    <div className="flex flex-col gap-6">
-                        <div className="bg-white border border-zinc-300 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col">
-                            <div>
-                                <h3 className="text-lg font-bold font-grotesk text-zinc-950 mb-4">Direct Contact</h3>
-                                <p className="text-sm text-zinc-600 mb-6 leading-relaxed font-semibold">
-                                    Feel free to reach out directly through email or LinkedIn if you prefer to skip forms.
-                                </p>
-                                
-                                <div className="space-y-4">
-                                    <a 
-                                        href="mailto:richardewing@exogram.ai" 
-                                        className="flex items-center gap-3 p-4 bg-zinc-50 border border-zinc-200 rounded-2xl hover:border-indigo-500 hover:bg-indigo-50/10 transition-all group"
-                                    >
-                                        <Mail className="w-5 h-5 text-indigo-600 group-hover:scale-110 transition-transform" />
-                                        <div>
-                                            <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest">Email Address</div>
-                                            <div className="text-sm font-bold text-zinc-950">richardewing@exogram.ai</div>
-                                        </div>
-                                    </a>
-
-                                    <a 
-                                        href="https://linkedin.com/in/richard-ewing-mba" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer" 
-                                        className="flex items-center gap-3 p-4 bg-zinc-50 border border-zinc-200 rounded-2xl hover:border-indigo-500 hover:bg-indigo-50/10 transition-all group"
-                                    >
-                                        <Linkedin className="w-5 h-5 text-indigo-600 group-hover:scale-110 transition-transform" />
-                                        <div>
-                                            <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest">LinkedIn</div>
-                                            <div className="text-sm font-bold text-zinc-950">richard-ewing-mba</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div className="mt-8 border-t border-zinc-100 pt-6 flex justify-between items-center">
-                                <span className="text-xs font-bold text-zinc-800 uppercase tracking-widest font-mono">Other Channels</span>
-                                <div className="flex gap-3">
-                                    <a href="https://x.com/Richard85626233" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-zinc-50 border border-zinc-200 text-zinc-700 hover:text-indigo-600 hover:border-indigo-500 transition-colors">
-                                        <Twitter className="w-4 h-4" />
-                                    </a>
-                                    <a href="https://github.com/Richard-Ewing" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-zinc-50 border border-zinc-200 text-zinc-700 hover:text-indigo-600 hover:border-indigo-500 transition-colors">
-                                        <Github className="w-4 h-4" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* NDA Security Seal */}
-                        <div className="p-6 bg-white border border-zinc-300 rounded-3xl flex flex-col shadow-sm relative overflow-hidden group">
-                            {/* Accent line */}
-                            <div className="absolute top-0 inset-x-0 h-1 bg-emerald-500" />
-                            <div className="flex items-center gap-3 mb-2">
-                                <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center border border-emerald-200 shrink-0">
-                                    <ShieldCheck className="w-5 h-5 text-emerald-600" />
-                                </div>
-                                <div>
-                                    <span className="text-[10px] font-bold font-mono text-emerald-800 uppercase tracking-wider block">
-                                        CONFIDENTIALITY ASSURED
-                                    </span>
-                                    <h4 className="text-sm font-bold text-zinc-950 font-grotesk">Mutual NDA Protocol</h4>
-                                </div>
-                            </div>
-                            <p className="text-xs text-zinc-600 leading-relaxed font-semibold mt-1">
-                                All discovery discussions, cloud billing logs, and repository metrics are held under strict confidentiality. Mutual NDAs are executed prior to any technical review.
-                            </p>
-                        </div>
-                    </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-[var(--muted)]">LinkedIn:</span>
+                  <a
+                    href="https://www.linkedin.com/in/richard-ewing/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-[var(--forest)] font-bold hover:underline"
+                  >
+                    linkedin.com/in/richard-ewing ↗
+                  </a>
                 </div>
-
-                {/* Horizontal Engagement Protocol */}
-                <section className="mb-16 bg-white border border-zinc-300 rounded-3xl p-8 md:p-12 shadow-sm">
-                    <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-8 text-center flex items-center justify-center gap-2">
-                        <ShieldAlert className="w-5 h-5 text-indigo-600" />
-                        Engagement Timeline
-                    </h3>
-                    
-                    <div className="flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-4 relative">
-                        {/* Step 1 */}
-                        <div className="flex-1 text-center flex flex-col items-center bg-zinc-50 p-5 rounded-2xl border border-zinc-200 shadow-sm relative">
-                            <div className="w-9 h-9 bg-indigo-600 border border-indigo-400 rounded-full flex items-center justify-center mb-4 font-mono font-bold text-white text-sm shadow-sm">1</div>
-                            <h4 className="text-sm font-bold text-zinc-950 mb-1">Diagnostic Video Call</h4>
-                            <p className="text-[11px] text-zinc-600 leading-relaxed font-semibold max-w-xs">Brief diagnostic alignment. No code access required. We review symptoms and billing peaks.</p>
-                        </div>
-
-                        {/* Connection Arrow 1 */}
-                        <div className="hidden lg:flex items-center justify-center text-zinc-400">
-                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                        </div>
-
-                        {/* Step 2 */}
-                        <div className="flex-1 text-center flex flex-col items-center bg-zinc-50 p-5 rounded-2xl border border-zinc-200 shadow-sm relative">
-                            <div className="w-9 h-9 bg-indigo-600 border border-indigo-400 rounded-full flex items-center justify-center mb-4 font-mono font-bold text-white text-sm shadow-sm">2</div>
-                            <h4 className="text-sm font-bold text-zinc-950 mb-1">Free Diagnostic Report</h4>
-                            <p className="text-[11px] text-zinc-600 leading-relaxed font-semibold max-w-xs">We send a quantified risk review detailing your Product Debt Index (PDI) exposure and leaks.</p>
-                        </div>
-
-                        {/* Connection Arrow 2 */}
-                        <div className="hidden lg:flex items-center justify-center text-zinc-400">
-                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                        </div>
-
-                        {/* Step 3 */}
-                        <div className="flex-1 text-center flex flex-col items-center bg-zinc-50 p-5 rounded-2xl border border-zinc-200 shadow-sm relative">
-                            <div className="w-9 h-9 bg-indigo-600 border border-indigo-400 rounded-full flex items-center justify-center mb-4 font-mono font-bold text-white text-sm shadow-sm">3</div>
-                            <h4 className="text-sm font-bold text-zinc-950 mb-1">Remediation Roadmap</h4>
-                            <p className="text-[11px] text-zinc-600 leading-relaxed font-semibold max-w-xs">If structural improvements are needed, we scope a diagnostic sprint to install cost-caps and guardrails.</p>
-                        </div>
-                    </div>
-                </section>
-
-                {/* FAQ Section */}
-                <section className="border-t border-zinc-300 pt-12">
-                    <script
-                        type="application/ld+json"
-                        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-                            '@context': 'https://schema.org',
-                            '@type': 'FAQPage',
-                            'mainEntity': [
-                                {
-                                    '@type': 'Question',
-                                    'name': 'What advisory sessions and sprints can I book directly?',
-                                    'acceptedAnswer': {
-                                        '@type': 'Answer',
-                                        'text': 'You can start with the self-serve Product & AI Economist Operating Kit ($29), book a 60-minute 1-on-1 P&L & AI Tear-Down ($450), commission a 2-Week Product & AI Turnaround Sprint ($2,500), commission a 21-Day 0-to-1 AI Product Build Sprint ($7,500), or retain Richard as Fractional CPO / Product Economist ($10,000/mo).'
-                                    }
-                                },
-                                {
-                                    '@type': 'Question',
-                                    'name': 'How does payment work for advisory bookings?',
-                                    'acceptedAnswer': {
-                                        '@type': 'Answer',
-                                        'text': 'Payment is collected securely via Stripe at the moment of booking using credit card, Apple Pay, or Google Pay. Your working session or sprint kickoff is scheduled immediately upon payment.'
-                                    }
-                                },
-                                {
-                                    '@type': 'Question',
-                                    'name': 'Do I need to share code access before our initial session?',
-                                    'acceptedAnswer': {
-                                        '@type': 'Answer',
-                                        'text': 'No. Code access is not required for a $450 1-on-1 Tear-Down or initial discovery. If you proceed with a Turnaround Sprint, 0-to-1 Build Sprint, or PE Due Diligence, a mutual NDA is executed prior to any repository or financial review.'
-                                    }
-                                },
-                                {
-                                    '@type': 'Question',
-                                    'name': 'Are all discussions protected under an NDA?',
-                                    'acceptedAnswer': {
-                                        '@type': 'Answer',
-                                        'text': 'Yes. All P&L figures, cloud infrastructure bills, and product architecture discussions are strictly confidential.'
-                                    }
-                                }
-                            ]
-                        }) }}
-                    />
-                    <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-6">Frequently Asked Questions</h2>
-                    <div className="space-y-4">
-                        <FAQItem 
-                            question="What advisory sessions and sprints can I book directly?" 
-                            answer="You can start with the self-serve Product & AI Economist Operating Kit ($29), book a 60-minute 1-on-1 P&L & AI Tear-Down ($450), commission a 2-Week Product & AI Turnaround Sprint ($2,500), commission a 21-Day 0-to-1 AI Product Build Sprint ($7,500), or retain Richard as Fractional CPO / Product Economist ($10,000/mo)."
-                        />
-                        <FAQItem 
-                            question="How does payment work for advisory bookings?" 
-                            answer="Payment is collected securely via Stripe at the moment of booking using credit card, Apple Pay, or Google Pay. Your working session or sprint kickoff is scheduled immediately upon payment."
-                        />
-                        <FAQItem 
-                            question="Do I need to share code access before our initial session?" 
-                            answer="No. Code access is not required for a $450 1-on-1 Tear-Down or initial discovery. If you proceed with a Turnaround Sprint, 0-to-1 Build Sprint, or PE Due Diligence, a mutual NDA is executed prior to any repository or financial review."
-                        />
-                        <FAQItem 
-                            question="Are all discussions protected under an NDA?" 
-                            answer="Yes. All P&L figures, cloud infrastructure bills, and product architecture discussions are strictly confidential."
-                        />
-                    </div>
-                </section>
-
-                <div className="mt-16 text-center border-t border-zinc-300 pt-12">
-                    <Link href="/" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors flex items-center gap-2 text-sm font-semibold font-mono uppercase tracking-widest justify-center">
-                        ← Back to Homepage
-                    </Link>
+                <div className="flex items-center justify-between">
+                  <span className="text-[var(--muted)]">Newsletter:</span>
+                  <Link
+                    href="/newsletter"
+                    className="font-mono text-[var(--forest)] font-bold hover:underline"
+                  >
+                    The AI Economist (11K+) ↗
+                  </Link>
                 </div>
-
+              </div>
             </div>
-        </main>
-    );
+          </div>
+
+          {/* Right Form Card */}
+          <div className="lg:col-span-7 bg-[#faf8f2] border border-[var(--line)] rounded-xl p-8 shadow-sm">
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+    </>
+  );
 }

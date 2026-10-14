@@ -1,25 +1,30 @@
 "use client";
 
-import { useAnimationFrame } from "motion/react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 
 export default function KnowledgeGraph() {
   const ref = useRef<HTMLDivElement>(null);
 
-  useAnimationFrame((time) => {
-    if (!ref.current) return;
+  useEffect(() => {
+    let rafId: number;
+    const animate = (time: number) => {
+      if (ref.current) {
+        const nodes = ref.current.querySelectorAll("[data-node]");
+        nodes.forEach((node, index) => {
+          const amplitude = index === 0 ? 2 : 5;
+          const speed = index === 0 ? 0.0005 : 0.001;
+          const y = Math.sin(time * speed + index) * amplitude;
+          (node as HTMLElement).style.transform = `translate(-50%, calc(-50% + ${y}px))`;
+        });
+      }
+      rafId = requestAnimationFrame(animate);
+    };
 
-    const nodes = ref.current.querySelectorAll("[data-node]");
+    rafId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafId);
+  }, []);
 
-    nodes.forEach((node, index) => {
-      const amplitude = index === 0 ? 2 : 5;
-      const speed = index === 0 ? 0.0005 : 0.001;
-      const y = Math.sin(time * speed + index) * amplitude;
-
-      (node as HTMLElement).style.transform = `translate(-50%, calc(-50% + ${y}px))`;
-    });
-  });
 
   return (
     <section className="graph-section living-border">

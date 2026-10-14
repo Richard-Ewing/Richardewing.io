@@ -1,167 +1,184 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Image from 'next/image';
-import { SpeakingBookingForm } from './SpeakingBookingForm';
 
 export const metadata: Metadata = {
-    title: 'Keynotes & Executive Briefings',
-    description: 'Book Richard Ewing for board briefings, executive retreats, and keynotes on AI unit economics and R&D capital governance.',
-    alternates: { canonical: 'https://www.richardewing.io/speaking' },
-    openGraph: {
-        title: 'Executive Keynotes & Speaking | Richard Ewing',
-        description: 'Book Richard Ewing for keynote addresses, board briefings, and executive workshops on AI unit economics, R&D capital governance, and runtime cost control.',
-        url: 'https://www.richardewing.io/speaking',
-        siteName: 'Richard Ewing',
-        type: 'website',
-        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Executive Keynotes & Speaking | Richard Ewing',
-        description: 'Book Richard Ewing for keynote addresses, board briefings, and executive workshops on AI unit economics, R&D capital governance, and runtime cost control.',
-        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
-    },
+  title: 'Keynotes & Workshops | AI Economics & Engineering Leadership | Richard Ewing',
+  description:
+    'Keynotes, executive workshops, and masterclasses on AI economics, engineering productivity, and software governance. Book Richard Ewing for your next conference or leadership summit.',
+  alternates: {
+    canonical: 'https://www.richardewing.io/speaking',
+  },
+  openGraph: {
+    title: 'Keynotes & Executive Workshops | Richard Ewing',
+    description:
+      'Engaging, high-impact sessions on AI unit economics and engineering leadership.',
+    url: 'https://www.richardewing.io/speaking',
+    type: 'website',
+  },
 };
 
-const keynotes = [
-    {
-        title: 'The Innovation Tax: Why Your R&D Is Just OpEx',
-        target: 'CTOs, CFOs, PE Operating Partners',
-        description: 'An empirical exploration of how non-deterministic software and prompt bloat convert innovation budgets into recurring maintenance liabilities. Features framework mechanisms for calculating your Product Debt Index.',
-    },
-    {
-        title: 'Deterministic AI Governance Before European AI Act Fines Hit',
-        target: 'CISOs, General Counsel, Enterprise Architects',
-        description: 'Why probabilistic LLM firewalls fail at scale, and how VPC-level policy-as-code enforces hard context boundaries, prevents data exfiltration, and satisfies regulatory audit standards.',
-    },
-    {
-        title: 'The AI Economist: The New Role for Executive Strategy',
-        target: 'Board Directors, CEOs, Managing Directors',
-        description: 'Why traditional financial models misprice software development in the generative era, and how leading technology companies track Revenue Per Engineer and AI Provider Efficiency Ratios.',
-    },
+const topics = [
+  {
+    title: 'The AI Margin Illusion: Why Enterprise Token Bills Outpace Revenue',
+    category: 'EXECUTIVE KEYNOTE',
+    desc: 'An eye-opening breakdown of the hidden economics of generative AI. Explores retry cascades, user review drag, and how leading software firms structure AI feature pricing to maintain 75%+ gross margins.',
+    duration: '45-60 min keynote',
+  },
+  {
+    title: 'From Cost Center to Compound Capital: Engineering in the Age of Agents',
+    category: 'TECHNICAL LEADERSHIP',
+    desc: 'How engineering organizations must evolve as autonomous coding agents write an increasing share of PRs. Diagnosing review bottlenecks, technical debt accumulation, and capital efficiency.',
+    duration: '45-60 min keynote + Q&A',
+  },
+  {
+    title: 'AI Economics Masterclass: Unit Margins, Token Budgets & P&L Modeling',
+    category: 'HANDS-ON WORKSHOP',
+    desc: 'A half-day intensive workshop for product managers, finance directors, and engineering leads. Hands-on modeling of inference costs, latency tradeoffs, and pricing architectures.',
+    duration: 'Half-day or Full-day workshop',
+  },
 ];
 
 export default function SpeakingPage() {
-    return (
-        <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
-            <div className="page-container max-w-5xl mx-auto px-6">
-                
-                {/* Header Section */}
-                <div className="mb-16 text-center max-w-3xl mx-auto">
-                    <div className="text-xs font-mono font-bold text-amber-900 uppercase tracking-widest mb-3">
-                        Keynotes & Executive Briefings
-                    </div>
-                    <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Partner with Richard Ewing
-                    </h1>
-                    <p className="text-xl text-zinc-900 font-medium leading-relaxed">
-                        Delivering board-level insights on AI unit economics, engineering capital allocation, and runtime governance to executive leadership teams globally.
-                    </p>
-                </div>
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Keynotes & Executive Workshops by Richard Ewing',
+    provider: {
+      '@type': 'Person',
+      name: 'Richard Ewing',
+    },
+    description:
+      'Keynotes and interactive masterclasses on AI unit economics, product leadership, and engineering governance.',
+    url: 'https://www.richardewing.io/speaking',
+  };
 
-                {/* Keynote Topics Section */}
-                <div className="mb-20">
-                    <h2 className="text-xs font-mono font-bold text-zinc-900 uppercase tracking-widest mb-8 text-center">
-                        Featured Keynote Presentations
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {keynotes.map((kt, idx) => (
-                            <div key={idx} className="bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm flex flex-col justify-between">
-                                <div>
-                                    <span className="inline-block px-3 py-1 bg-amber-100 text-amber-900 text-xs font-mono font-bold rounded-md uppercase tracking-wider mb-4">
-                                        Topic #{idx + 1}
-                                    </span>
-                                    <h3 className="text-xl font-grotesk font-bold text-zinc-950 mb-3 leading-snug">
-                                        {kt.title}
-                                    </h3>
-                                    <p className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider mb-4">
-                                        Audience: {kt.target}
-                                    </p>
-                                    <p className="text-sm font-medium text-zinc-800 leading-relaxed mb-6">
-                                        {kt.description}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
 
-                {/* Media & Published Proof */}
-                <div className="bg-white border border-zinc-300 rounded-3xl p-8 sm:p-12 mb-20 shadow-sm">
-                    <div className="max-w-3xl">
-                        <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest mb-3 block">
-                            Published In & Speaking Experience
-                        </span>
-                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-6">
-                            Thought Leadership & Executive Authored Work
-                        </h2>
-                        <p className="text-zinc-800 text-base font-medium leading-relaxed mb-8">
-                            Richard Ewing writes on AI economics and engineering governance across leading publications including CIO.com, Built In, HackerNoon, and Mind the Product, reaching over 11,141 technology executives.
-                        </p>
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-4 border-t border-zinc-200">
-                            <div>
-                                <div className="text-2xl font-grotesk font-bold text-zinc-950">11,141+</div>
-                                <div className="text-xs font-mono font-semibold text-zinc-700">Executive Reach</div>
-                            </div>
-                            <div>
-                                <div className="text-2xl font-grotesk font-bold text-zinc-950">136+</div>
-                                <div className="text-xs font-mono font-semibold text-zinc-700">Published Frameworks</div>
-                            </div>
-                            <div>
-                                <div className="text-2xl font-grotesk font-bold text-zinc-950">$0 to $25M</div>
-                                <div className="text-xs font-mono font-semibold text-zinc-700">ARR Scaled</div>
-                            </div>
-                            <div>
-                                <div className="text-2xl font-grotesk font-bold text-zinc-950">MBA / CS</div>
-                                <div className="text-xs font-mono font-semibold text-zinc-700">Finance & CompSci</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      {/* Hero Section */}
+      <section className="inner-hero">
+        <div className="inner-art" />
+        <div className="inner-copy">
+          <p className="eyebrow">
+            <i /> Speaking & Events · Executive Masterclasses
+          </p>
+          <h1>Keynotes and workshops for real-world impact.</h1>
+          <p className="inner-lede">
+            Practical, engaging sessions for technology executives and product leaders who
+            want to turn generative AI from a speculative experiment into a durable
+            competitive advantage.
+          </p>
 
-                {/* Speaker Kit & Download */}
-                <div className="bg-zinc-900 text-white rounded-3xl p-8 sm:p-12 mb-20">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-                        <div className="space-y-4">
-                            <span className="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest block">
-                                Event Organizers
-                            </span>
-                            <h3 className="text-2xl font-grotesk font-bold">
-                                Download Executive Speaker Kit
-                            </h3>
-                            <p className="text-zinc-300 text-sm font-medium leading-relaxed max-w-xl">
-                                Access high-res headshots, official 150-word & 300-word executive bios, talk abstracts, and standard AV specifications for conference planning.
-                            </p>
-                        </div>
-                        <a 
-                            href="/assets/images/headshot.jpg"
-                            download="Richard_Ewing_Headshot.jpg"
-                            className="px-6 py-3 bg-white text-zinc-950 font-mono text-xs font-bold uppercase tracking-wider rounded-xl hover:bg-zinc-200 transition-colors whitespace-nowrap"
-                        >
-                            Download Speaker Assets ↓
-                        </a>
-                    </div>
-                </div>
+          <div className="space-y-2 py-4">
+            {[
+              'AI economics and unit margin protection',
+              'Product strategy, roadmap triage & pricing',
+              'Engineering velocity & review bottleneck remediation',
+              'Enterprise AI governance, risk & runtime safety',
+            ].map((topic) => (
+              <div key={topic} className="flex items-center gap-2 text-sm text-zinc-800">
+                <span className="text-[var(--gold)] font-bold">✓</span>
+                <span className="font-medium">{topic}</span>
+              </div>
+            ))}
+          </div>
 
-                {/* Booking Form Section */}
-                <div className="bg-white border border-zinc-300 rounded-3xl p-8 sm:p-12 shadow-sm">
-                    <div className="max-w-2xl mx-auto">
-                        <div className="text-center mb-10">
-                            <span className="text-xs font-mono font-bold text-amber-900 uppercase tracking-widest mb-2 block">
-                                Direct Scheduling
-                            </span>
-                            <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-3">
-                                Request Keynote or Briefing Availability
-                            </h2>
-                            <p className="text-zinc-700 text-sm font-medium">
-                                Submit your event details below. We confirm availability and custom abstract tailoring within 24 hours.
-                            </p>
-                        </div>
+          <div className="actions">
+            <Link className="button button-gold" href="/contact">
+              Check speaking availability ↗
+            </Link>
+            <a className="button button-outline" href="#topics">
+              Explore keynote topics
+            </a>
+          </div>
+        </div>
 
-                        <SpeakingBookingForm />
-                    </div>
-                </div>
-
+        <div className="inner-aside glass space-y-4">
+          <div className="w-full h-56 rounded-lg overflow-hidden relative">
+            <Image
+              src="/assets/images/richard-speaking.jpg"
+              alt="Richard Ewing speaking on stage"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="grid grid-cols-3 gap-2 pt-2 border-t border-[var(--line)] text-center">
+            <div>
+              <div className="font-serif text-xl font-bold text-[var(--forest)]">50+</div>
+              <div className="text-[10px] text-[var(--muted)]">Events</div>
             </div>
-        </main>
-    );
+            <div>
+              <div className="font-serif text-xl font-bold text-[var(--forest)]">5,000+</div>
+              <div className="text-[10px] text-[var(--muted)]">Leaders</div>
+            </div>
+            <div>
+              <div className="font-serif text-xl font-bold text-[var(--forest)]">4.9/5</div>
+              <div className="text-[10px] text-[var(--muted)]">Rating</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Keynote Topics */}
+      <section id="topics" className="section">
+        <div className="section-heading mb-12">
+          <p className="eyebrow">
+            <i /> Program Catalog
+          </p>
+          <h2>Signature Keynotes & Workshops.</h2>
+          <p>
+            Customized for corporate offsites, executive retreats, industry conferences,
+            and private equity portfolio company summits.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {topics.map((t) => (
+            <div
+              key={t.title}
+              className="bg-[#faf8f2] border border-[var(--line)] rounded-xl p-8 flex flex-col justify-between"
+            >
+              <div>
+                <span className="text-[10px] font-mono text-[var(--gold)] uppercase tracking-widest block mb-2">
+                  {t.category}
+                </span>
+                <h3 className="font-serif text-2xl font-medium text-[var(--ink)] mb-3">
+                  {t.title}
+                </h3>
+                <p className="text-xs text-[var(--muted)] leading-relaxed mb-6">
+                  {t.desc}
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-[var(--line)] flex items-center justify-between text-xs">
+                <span className="font-mono text-zinc-500">{t.duration}</span>
+                <Link className="font-bold text-[var(--forest)]" href="/contact">
+                  Inquire ↗
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Closing CTA */}
+      <section className="closing-cta">
+        <p className="eyebrow">Book an Event</p>
+        <h2>Bring the AI Economist to your stage.</h2>
+        <p>
+          Inquire about keynotes, executive summits, and private team workshops.
+        </p>
+        <div className="actions center">
+          <Link className="button button-gold" href="/contact">
+            Request Speaker Deck ↗
+          </Link>
+        </div>
+      </section>
+    </>
+  );
 }

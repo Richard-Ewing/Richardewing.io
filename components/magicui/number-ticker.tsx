@@ -35,7 +35,7 @@ export default function NumberTicker({
     }, [motionValue, isInView, delay, value, direction]);
 
     useEffect(() => {
-        springValue.on("change", (latest) => {
+        springValue.on("change", (latest: any) => {
             if (ref.current) {
                 ref.current.textContent = Intl.NumberFormat("en-US", {
                     minimumFractionDigits: decimalPlaces,

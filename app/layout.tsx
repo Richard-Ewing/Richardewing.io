@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
-import Navigation from './components/Navigation';
-import { Footer } from './components/footer';
+import { SiteShell } from '@/components/site-shell';
 import ExitIntentModal from './components/ExitIntentModal';
 import CookieConsent from './components/CookieConsent';
 import VoiceDock from './components/voice/VoiceDock';
@@ -198,16 +197,11 @@ export default function RootLayout({
               }
             }}
           >
-          <Navigation />
-
-          {/* Main content */}
-          <main className="flex-grow relative">
+          <SiteShell>
             <NuqsAdapter>
               {children}
             </NuqsAdapter>
-          </main>
-
-          <Footer />
+          </SiteShell>
           <ExitIntentModal />
           <CookieConsent />
           <VoiceDock />

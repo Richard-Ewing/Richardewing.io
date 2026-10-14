@@ -1,90 +1,110 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import ResearchCorpusExplorer from '@/app/components/ResearchCorpusExplorer';
-import PublicationLedger from '@/app/components/PublicationLedger';
-import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
+import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
+import { ResearchExplorer } from '@/components/research/research-explorer';
 
 export const metadata: Metadata = {
-  title: 'Research Publications & Published Works',
-  description: 'Over 174 published works on engineering economics, AI capital management, and runtime governance across CIO.com, HackerNoon, Built In, Beehiiv, and LinkedIn.',
+  title: 'Publications & Published Works (174+) | Richard Ewing',
+  description:
+    'Comprehensive catalog of 174+ published works across CIO.com, Built In, Mind the Product, HackerNoon, Beehiiv, and LinkedIn on AI economics, governance, and capital allocation.',
   alternates: {
     canonical: 'https://www.richardewing.io/research/publications',
   },
   openGraph: {
-    title: 'Research Publications & Published Works | Richard Ewing',
-    description: 'Over 174 published works on engineering economics, AI capital management, and runtime governance. Sourced from CIO.com, HackerNoon, Built In, Beehiiv, and LinkedIn.',
+    title: 'Publications & Published Works (174+) | Richard Ewing',
+    description:
+      'Comprehensive catalog of 174+ published works across CIO.com, Built In, Mind the Product, HackerNoon, Beehiiv, and LinkedIn.',
     url: 'https://www.richardewing.io/research/publications',
     type: 'website',
-    images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Research Publications & Published Works | Richard Ewing',
-    description: 'Over 174 published works on engineering economics, AI capital management, and runtime governance. Sourced from CIO.com, HackerNoon, Built In, Beehiiv, and LinkedIn.',
-    images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
   },
 };
 
+const outlets = [
+  'CIO.com',
+  'Built In',
+  'Mind the Product',
+  'HackerNoon',
+  'LinkedIn',
+  'Beehiiv',
+];
+
 export default function PublicationsPage() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Published Work for Builders and Leaders',
+    description:
+      'Articles, essays, and insights on AI economics, product strategy, engineering productivity, and governance.',
+    url: 'https://www.richardewing.io/research/publications',
+    author: {
+      '@type': 'Person',
+      name: 'Richard Ewing',
+    },
+  };
+
   return (
-    <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24 text-zinc-950">
-      <div className="page-container max-w-6xl mx-auto space-y-12 px-4 sm:px-6 lg:px-8">
-        {/* Navigation Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs font-mono font-bold text-zinc-950 uppercase tracking-widest">
-          <Link href="/" className="hover:underline">Home</Link>
-          <span>/</span>
-          <Link href="/research" className="hover:underline">Research</Link>
-          <span>/</span>
-          <span className="text-cyan-900 font-extrabold">Publications Catalog</span>
-        </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
 
-        {/* Header Section */}
-        <div className="space-y-4 border-b border-zinc-400 pb-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold bg-cyan-100 text-cyan-900 border border-cyan-300">
-            Research Corpus • 174+ Published Works
-          </div>
-
-          <h1 className="text-4xl sm:text-6xl font-black text-zinc-950 tracking-tight font-grotesk">
-            Research Publications Catalog
-          </h1>
-
-          <p className="text-xl text-zinc-900 leading-relaxed font-semibold max-w-3xl">
-            A comprehensive catalog of over 174 published works across CIO.com, Built In, Beehiiv, LinkedIn Newsletters, Mind the Product, and HackerNoon. Explore by knowledge domain, publisher, or research type.
+      {/* Hero Header */}
+      <section className="inner-hero">
+        <div className="inner-art" />
+        <div className="inner-copy">
+          <p className="eyebrow">
+            <i /> AI Economics · Published Works
+          </p>
+          <h1>Published work for builders and leaders.</h1>
+          <p className="inner-lede">
+            A definitive index of over 174 published works across premier technology
+            and executive publications. Articles, essays, and insights on AI unit
+            economics, software productivity, and engineering governance.
           </p>
 
-          <div className="flex flex-wrap gap-3 pt-2">
-            <Link
-              href="/concepts"
-              className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-cyan-900 text-white hover:bg-cyan-800 transition shadow-sm"
-            >
-              Canonical Concepts Directory →
+          <div className="actions">
+            <Link className="button button-gold" href="/reality-check">
+              Run the Reality Check ↗
             </Link>
-            <Link
-              href="/reality-check"
-              className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-purple-900 text-white hover:bg-purple-800 transition shadow-sm"
-            >
-              Live Reality Check Demo →
+            <Link className="button button-outline" href="/research">
+              Back to Research overview
             </Link>
-            <a
-              href="/api/csp/v1/export"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-emerald-900 text-white hover:bg-emerald-800 transition shadow-sm"
-            >
-              CSP Machine API ↗
-            </a>
           </div>
         </div>
 
-        {/* Interactive Filterable Corpus Explorer Component */}
-        <ResearchCorpusExplorer />
+        <aside className="inner-aside glass">
+          <span>CATALOG STATS</span>
+          <strong>174+ Verified Works</strong>
+          <p>
+            Indexed across CIO.com, Built In, Mind the Product, HackerNoon, Beehiiv, and
+            LinkedIn.
+          </p>
+        </aside>
+      </section>
 
-        {/* Multi-Publisher Publications Ledger */}
-        <PublicationLedger />
-
-        {/* Google Preferred Source AEO Callout */}
-        <GooglePreferredBadge variant="card" />
+      {/* Outlet Verification Strip */}
+      <div className="border-b border-[var(--line)] bg-[var(--paper2)] py-5 px-[5vw]">
+        <div className="max-w-[var(--max)] mx-auto flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-zinc-600">
+          <span className="uppercase tracking-widest text-[10px] text-[var(--gold)]">
+            Verified Publishers
+          </span>
+          <div className="flex flex-wrap items-center gap-6 font-serif text-sm font-semibold text-zinc-700">
+            {outlets.map((outlet) => (
+              <span key={outlet}>{outlet}</span>
+            ))}
+          </div>
+        </div>
       </div>
-    </main>
+
+      {/* Full Publication Explorer */}
+      <section className="section">
+        <ResearchExplorer
+          articles={RESEARCH_CORPUS}
+          limit={48}
+          showPublisherFilter={true}
+        />
+      </section>
+    </>
   );
 }

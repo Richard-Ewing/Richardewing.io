@@ -1,78 +1,206 @@
 import type { Metadata } from 'next';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
-import ToolsContent from './tools-content';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Free AI Cost & Diagnostic Calculators',
-    description: 'Free calculators to find why AI tools slow down teams, why token bills outpace revenue, and when self-hosting costs more than cloud APIs.',
-    keywords: [
-        'why ai slows down engineering', 'ai token cost calculator', 'ai unit economics',
-        'why cursor rewrites files', 'technical debt in dollar terms', 'slm break even',
-        'free engineering calculators', 'ai margin calculator', 'shadow ai scanner',
-        'copilot real roi calculator', 'why ai coding burns money'
-    ],
-    alternates: { canonical: 'https://www.richardewing.io/tools' },
-    openGraph: {
-        title: 'Free AI Cost & Diagnostic Calculators',
-        description: 'Free calculators to find why AI tools slow down teams, why token bills outpace revenue, and how to fix real engineering bottlenecks.',
-        url: 'https://www.richardewing.io/tools',
-        type: 'website',
-        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Free AI Cost & Diagnostic Calculators',
-        description: 'Free calculators to find why AI tools slow down teams and how to fix operational bottlenecks.',
-        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
-    },
+  title: 'Diagnostics & Tools | AI Spend Leaks & Unit Economics | Richard Ewing',
+  description:
+    'Interactive tools to quantify AI unit economics, identify engineering waste, and model ROI. Free diagnostics for technology and finance leaders.',
+  alternates: {
+    canonical: 'https://www.richardewing.io/tools',
+  },
+  openGraph: {
+    title: 'Diagnostics & Tools | AI Spend Leaks | Richard Ewing',
+    description:
+      'Turn AI activity into measurable outcomes. Free diagnostics to quantify token waste and margin drag.',
+    url: 'https://www.richardewing.io/tools',
+    type: 'website',
+  },
 };
 
-export default function ToolsPage() {
-    return (
-        <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify({
-                    '@context': 'https://schema.org',
-                    '@type': 'FAQPage',
-                    'mainEntity': [
-                        {
-                            '@type': 'Question',
-                            'name': 'Are these diagnostic tools free to use?',
-                            'acceptedAnswer': {
-                                '@type': 'Answer',
-                                'text': 'Yes, they are 100% free, self-service tools designed to help engineering and product leaders quickly identify operational leakage.'
-                            }
-                        },
-                        {
-                            '@type': 'Question',
-                            'name': 'Is my data safe when using these calculators?',
-                            'acceptedAnswer': {
-                                '@type': 'Answer',
-                                'text': 'Yes, all calculations are performed locally in your browser. No proprietary data, code details, or financial metrics are ever sent to our servers.'
-                            }
-                        },
-                        {
-                            '@type': 'Question',
-                            'name': 'What is the Product Debt Index (PDI)?',
-                            'acceptedAnswer': {
-                                '@type': 'Answer',
-                                'text': 'The PDI is a quantitative scale (0-100) evaluating the exit valuation risk of accumulated technical debt and unmanaged production AI complexity.'
-                            }
-                        },
-                        {
-                            '@type': 'Question',
-                            'name': 'How do I remediate a high risk score?',
-                            'acceptedAnswer': {
-                                '@type': 'Answer',
-                                'text': 'If your results show critical leakage or high debt, you can book a free diagnostic call to discuss remediation plans.'
-                            }
-                        }
-                    ]
-                }) }}
-            />
-            <ToolsContent />
-        </>
-    );
-}
+const diagnostics = [
+  {
+    title: 'Reality Check',
+    desc: 'Compare AI claims with production costs, engineering velocity, and gross margins.',
+    tag: 'FLAGSHIP',
+    href: '/reality-check',
+  },
+  {
+    title: 'AI ROI Calculator',
+    desc: 'Model the unit economics of AI features using transparent assumptions and latency bands.',
+    tag: 'MODELING',
+    href: '/roi-calculator',
+  },
+  {
+    title: 'Product Debt Index',
+    desc: 'Identify maintenance burden and negative-carry product work in engineering backlogs.',
+    tag: 'AUDIT',
+    href: '/product-debt-index',
+  },
+  {
+    title: 'AI Unit Economics Benchmark',
+    desc: 'Understand cost per task, inference spend, exception handling, and true gross margin.',
+    tag: 'BENCHMARK',
+    href: '/ai-unit-economics',
+  },
+];
 
+export default function ToolsPage() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'AI Economics Diagnostics & Tools',
+    description:
+      'Turn AI activity into measurable outcomes. Find waste, model scenarios, and prioritize what to fix.',
+    url: 'https://www.richardewing.io/tools',
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+
+      {/* Dark Executive Telemetry Banner */}
+      <section className="bg-[var(--forest2)] text-white py-20 px-[5vw] relative overflow-hidden">
+        <div className="max-w-[var(--max)] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-7 space-y-6">
+            <p className="eyebrow text-[#d8c7a8]">
+              <i /> Find the leaks · Quantify the opportunity
+            </p>
+            <h1 className="font-serif text-4xl sm:text-6xl font-medium tracking-tight text-white leading-tight">
+              See where your AI spend is leaking.
+            </h1>
+            <p className="text-sm sm:text-base text-zinc-300 max-w-xl leading-relaxed">
+              Turn raw AI activity into measurable outcomes. Find engineering waste, model
+              cost scenarios, and prioritize what to fix before your next board meeting.
+            </p>
+
+            <div className="flex flex-wrap gap-4 pt-4">
+              <Link className="button button-gold" href="/reality-check">
+                Run the Reality Check ↗
+              </Link>
+              <a className="button button-ghost-light" href="#how-it-works">
+                See how it works
+              </a>
+            </div>
+          </div>
+
+          {/* Telemetry Snapshot Card */}
+          <div className="lg:col-span-5 bg-white/5 border border-white/15 rounded-xl p-6 backdrop-blur-md">
+            <div className="flex items-center justify-between text-[10px] font-mono text-[#d8c7a8] uppercase tracking-wider mb-2">
+              <span>AI Economics Snapshot</span>
+              <span className="text-emerald-400">Live Telemetry</span>
+            </div>
+            <div className="text-xs text-zinc-400">Monthly AI spend</div>
+            <div className="text-3xl font-serif font-bold text-white mt-1">
+              $328,400 <span className="text-emerald-400 text-sm font-sans">↑ 32%</span>
+            </div>
+
+            {/* Simulated Upward Curve SVG */}
+            <div className="h-28 w-full my-4">
+              <svg
+                viewBox="0 0 300 80"
+                className="w-full h-full stroke-[var(--gold)] fill-none"
+              >
+                <path
+                  d="M 10,70 Q 80,68 150,45 T 290,15"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                />
+                <circle cx="290" cy="15" r="4" fill="var(--gold)" />
+              </svg>
+            </div>
+
+            {/* Metrics Triad */}
+            <div className="grid grid-cols-3 gap-3 pt-4 border-t border-white/10 text-center">
+              <div>
+                <div className="text-[10px] font-mono text-zinc-400">Eng Efficiency</div>
+                <div className="text-lg font-serif font-bold text-white mt-0.5">4.8x</div>
+              </div>
+              <div>
+                <div className="text-[10px] font-mono text-zinc-400">Margin Impact</div>
+                <div className="text-lg font-serif font-bold text-emerald-400 mt-0.5">+18%</div>
+              </div>
+              <div>
+                <div className="text-[10px] font-mono text-zinc-400">ROI (est.)</div>
+                <div className="text-lg font-serif font-bold text-white mt-0.5">2.1x</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3-Step Process */}
+      <section id="how-it-works" className="section border-b border-[var(--line)]">
+        <div className="section-heading mb-12">
+          <p className="eyebrow">
+            <i /> The Process
+          </p>
+          <h2>Three steps to clarity.</h2>
+          <p>
+            No complex installations or invasive permissions required to get immediate
+            visibility into unit margins.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-8 bg-[#faf8f2] border border-[var(--line)] rounded-lg">
+            <span className="text-xs font-mono text-[var(--gold)]">01 / INPUT</span>
+            <h3 className="font-serif text-xl font-medium my-3">Upload your data</h3>
+            <p className="text-xs text-[var(--muted)] leading-relaxed">
+              Connect model API usage, infrastructure spend, and team velocity metrics or
+              use our guided questionnaire.
+            </p>
+          </div>
+          <div className="p-8 bg-[#faf8f2] border border-[var(--line)] rounded-lg">
+            <span className="text-xs font-mono text-[var(--gold)]">02 / DIAGNOSIS</span>
+            <h3 className="font-serif text-xl font-medium my-3">Run the analysis</h3>
+            <p className="text-xs text-[var(--muted)] leading-relaxed">
+              Isolate retry cascades, unoptimized prompts, and low-margin features
+              eating into engineering time.
+            </p>
+          </div>
+          <div className="p-8 bg-[#faf8f2] border border-[var(--line)] rounded-lg">
+            <span className="text-xs font-mono text-[var(--gold)]">03 / ACTION</span>
+            <h3 className="font-serif text-xl font-medium my-3">Get a plan</h3>
+            <p className="text-xs text-[var(--muted)] leading-relaxed">
+              Receive a prioritized action plan with clear cost modeling, model routing
+              recommendations, and ROI projections.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Directory of Diagnostics */}
+      <section className="section">
+        <div className="section-heading mb-12">
+          <p className="eyebrow">
+            <i /> Diagnostic Suite
+          </p>
+          <h2>Explore all tools.</h2>
+        </div>
+
+        <div className="route-grid">
+          {diagnostics.map((tool) => (
+            <Link className="route-card reveal flex flex-col justify-between" href={tool.href} key={tool.title}>
+              <div>
+                <span className="route-tag">{tool.tag}</span>
+                <h3 className="font-serif text-2xl font-medium my-2 text-[var(--ink)]">
+                  {tool.title}
+                </h3>
+                <p className="text-xs text-[var(--muted)] leading-relaxed">
+                  {tool.desc}
+                </p>
+              </div>
+              <div className="pt-4 border-t border-[var(--line)] text-xs font-semibold text-[var(--forest)] flex justify-between items-center">
+                <span>Launch tool</span>
+                <span className="text-[var(--gold)]">↗</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}
