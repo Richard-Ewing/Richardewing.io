@@ -445,7 +445,7 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     expandedConsensus: { website: true, newsletter: true, book: false, video: true, talk: true, framework: true, calculator: true, research: true, caseStudy: true },
     citationGraph: { publicationsCount: 3, newslettersCount: 6, calculatorsCount: 1, bookChaptersCount: 0, keynoteTalksCount: 1, gitHubReposCount: 1 },
     reverseCitations: [
-      { targetType: 'Glossary Term', title: 'Cost of Predictivity', url: '/glossary/cost-of-predictivity', relationship: 'implements' },
+      { targetType: 'Glossary Term', title: 'Cost of Predictivity', url: '/glossary/pillars/ai-unit-economics#cost-of-predictivity', relationship: 'implements' },
       { targetType: 'Advisory Service', title: 'Exogram Validation Testing', url: 'https://exogram.ai', relationship: 'audits' }
     ],
     canonicalDiagram: {

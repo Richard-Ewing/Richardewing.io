@@ -172,7 +172,7 @@ export default function CPOProductPortfolioTool() {
                                 Sovereign Framework Connection
                             </div>
                             <p className="text-violet-900 leading-relaxed">
-                                Connects to <Link href="/framework/product" className="underline font-bold">Probabilistic Product Management</Link> and <Link href="/glossary/cost-of-predictivity" className="underline font-bold">Cost of Predictivity</Link>.
+                                Connects to <Link href="/framework/product" className="underline font-bold">Probabilistic Product Management</Link> and <Link href="/concepts/cost-of-predictivity" className="underline font-bold">Cost of Predictivity</Link>.
                             </p>
                         </div>
                     </div>

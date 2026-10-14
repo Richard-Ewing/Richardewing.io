@@ -55,6 +55,7 @@ Negative/Considerations:
 | [ADR-0008](ADR-0008-bing-webmaster-seo-title-and-description-remediation.md) | Bing Webmaster SEO Title Length and Short Meta Description Remediation | Accepted | @richardewing, Aravind Srinivas, SEO Architect | 2026-10-09 |
 | [ADR-0009](ADR-0009-product-economist-umbrella-and-three-path-commercial-architecture.md) | Product Economist Master Identity and Three-Path Commercial Architecture | Accepted | @richardewing, Keith Rabois, Brian Balfour, Code Architect | 2026-10-13 |
 | [ADR-0010](ADR-0010-edge-host-canonicalization-and-full-keyword-title-preservation.md) | Edge Host Canonicalization, Full Keyword Title Preservation, and GSC Crawl Recovery | Accepted | @richardewing, Aravind Srinivas, Steve Jobs, SEO Architect | 2026-10-13 |
+| [ADR-0011](ADR-0011-gsc-page-with-redirect-validation-and-internal-link-remediation.md) | Google Search Console Page With Redirect Remediation and Internal Link Consolidation | Accepted | @richardewing, Aravind Srinivas, Lily Ray, Dan Guido, SEO Architect | 2026-10-14 |
 
 
 ---

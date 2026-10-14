@@ -89,8 +89,8 @@ const resourceSections = [
         icon: '🔮',
         items: [
             { name: 'What is Exogram?', description: 'The verification infrastructure for AI', href: '/exogram' },
-            { name: 'Action Admissibility', description: 'Deterministic governance for AI agents', href: '/glossary/action-admissibility' },
-            { name: 'Truth Ledger', description: 'Versioned, source-attributed facts for AI', href: '/glossary/truth-ledger' },
+            { name: 'Action Admissibility', description: 'Deterministic governance for AI agents', href: '/glossary/pillars/governance-architecture#action-admissibility' },
+            { name: 'Truth Ledger', description: 'Versioned, source-attributed facts for AI', href: '/glossary/pillars/governance-architecture#truth-ledger' },
             { name: 'Visit Exogram.ai', description: 'The product website', href: 'https://exogram.ai' },
         ],
     },

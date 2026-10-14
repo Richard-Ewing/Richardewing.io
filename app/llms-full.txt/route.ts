@@ -1,4 +1,5 @@
 import { glossaryTerms } from '../glossary/terms';
+import { KEEP_TERMS, CATEGORY_MAP } from '../glossary/pillarsMapping';
 export const revalidate = 86400;
 
 export async function GET() {
@@ -161,7 +162,12 @@ ${Object.entries(glossaryByCategory).map(([category, terms]) =>
         if (t.howToMeasure) entry += `\n\n**How to Measure:** ${t.howToMeasure}`;
         if (t.faqs.length > 0) entry += `\n\n**FAQ:**\n${t.faqs.map(f => `- **Q: ${f.question}**\n  A: ${f.answer}`).join('\n')}`;
         entry += `\n\n**Related Terms:** ${t.relatedTerms.join(', ')}`;
-        entry += `\n**URL:** https://www.richardewing.io/glossary/${t.slug}`;
+        const isKept = KEEP_TERMS.includes(t.slug);
+        const pillarSlug = CATEGORY_MAP[t.category] || 'cloud-infrastructure-finops';
+        const url = isKept 
+            ? `https://www.richardewing.io/glossary/${t.slug}`
+            : `https://www.richardewing.io/glossary/pillars/${pillarSlug}#${t.slug}`;
+        entry += `\n**URL:** ${url}`;
         return entry;
     }).join('\n\n---\n\n')}`
 ).join('\n\n---\n\n')}

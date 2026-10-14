@@ -219,7 +219,7 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
     canonicalQuote: 'Model collapse is the digital equivalent of genetic inbreeding, where synthetic data recursive loops destroy model variance and degrade performance.',
     positionStatement: 'High quality human data is becoming a premium asset. Organizations must secure proprietary, verified human data pipelines to avoid the commoditization and degradation associated with synthetic training sets.',
     canonicalReadingOrder: [
-      { step: 1, title: 'The Hidden Inflation of AI', publisher: 'CIO.com', type: 'Article', url: '/glossary/model-collapse' }
+      { step: 1, title: 'The Hidden Inflation of AI', publisher: 'CIO.com', type: 'Article', url: '/glossary/synthetic-model-collapse' }
     ],
     provenanceTimeline: [
       { stage: 'Observation', label: 'Synthetic Data Degradation', publisher: 'Research Meta', date: '2023', summary: 'Academic papers identifying the collapse phenomena.' }

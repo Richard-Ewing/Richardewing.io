@@ -38,16 +38,35 @@ const TIER_A_SLUGS = new Set([
   'advisory-vs-traditional-fractional-cto'
 ]);
 
+const EDGE_REDIRECTS: Record<string, string> = {
+  '/advisory': '/services',
+  '/advisory.html': '/services',
+  '/principal': '/about',
+  '/the-operator.html': '/about',
+  '/trust': '/security',
+  '/studio.html': '/services',
+  '/manifesto.html': '/manifesto',
+  '/system.html': '/system',
+  '/briefings.html': '/briefings',
+  '/methodology.html': '/system',
+  '/working-papers.html': '/doctrine',
+  '/frameworks': '/framework',
+  '/research/concepts': '/concepts',
+  '/tools/cloud-finops-calculator': '/tools',
+  '/tools/copilot-roi-calculator': '/tools/copilot-roi',
+};
+
 export default clerkMiddleware(async (auth, req) => {
   const host = req.headers.get('host') || '';
+  const pathname = req.nextUrl.pathname;
 
-  // 0. Canonical Host Enforcement: 301 redirect non-www to www at Cloudflare Edge
-  if (host === 'richardewing.io' || host.startsWith('richardewing.io:')) {
-    const destination = new URL(req.nextUrl.pathname + req.nextUrl.search, 'https://www.richardewing.io');
+  // 0. Canonical Host & Alias Single-Hop Enforcement: 301 redirect at Cloudflare Edge
+  const targetPath = EDGE_REDIRECTS[pathname] || pathname;
+  if (host === 'richardewing.io' || host.startsWith('richardewing.io:') || (targetPath !== pathname && !host.startsWith('localhost'))) {
+    const destination = new URL(targetPath + req.nextUrl.search, 'https://www.richardewing.io');
     return NextResponse.redirect(destination, 301);
   }
 
-  const pathname = req.nextUrl.pathname;
   const userAgent = (req.headers.get('user-agent') || '').toLowerCase();
 
   // 1. Instant Edge Shield against Rogue Scrapers & Vulnerability Probes (0.01ms CPU)

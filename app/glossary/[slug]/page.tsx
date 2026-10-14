@@ -159,23 +159,44 @@ export default async function GlossaryTermPage({ params }: Props) {
         .map(r => glossaryTerms.find(t => t.slug === r))
         .filter(Boolean);
 
-    // Auto-link: convert glossary term mentions in text to clickable links
+    // Auto-link: convert glossary term mentions in text to clickable links safely outside HTML tags
     function autoLink(text: string, currentSlug: string): string {
-        let result = text;
         const sortedTerms = [...glossaryTerms]
             .filter(t => t.slug !== currentSlug && t.title.length > 3)
             .sort((a, b) => b.title.length - a.title.length);
+
+        const linkedSlugs = new Set<string>();
+        // Split text by existing HTML tags (e.g. <strong ...>...</strong>).
+        // Even indices (0, 2, 4...) are text outside tags. Odd indices (1, 3, 5...) are tags.
+        let segments = text.split(/(<[^>]+>)/g);
+
         for (const t of sortedTerms) {
+            if (linkedSlugs.has(t.slug)) continue;
             const escaped = t.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             const regex = new RegExp(`\\b(${escaped})\\b`, 'i');
-            if (regex.test(result)) {
-                const isKept = KEEP_TERMS.includes(t.slug);
-                const pillarSlug = CATEGORY_MAP[t.category] || 'cloud-infrastructure-finops';
-                const targetUrl = isKept ? `/glossary/${t.slug}` : `/glossary/pillars/${pillarSlug}#${t.slug}`;
-                result = result.replace(regex, `<a href="${targetUrl}" class="text-cyan-900 font-extrabold font-semibold hover:text-cyan-900 font-extrabold font-semibold underline underline-offset-2 decoration-cyan-500/30 transition-colors">$1</a>`);
+
+            let matched = false;
+            for (let i = 0; i < segments.length; i += 2) {
+                if (regex.test(segments[i])) {
+                    const isKept = KEEP_TERMS.includes(t.slug);
+                    const pillarSlug = CATEGORY_MAP[t.category] || 'cloud-infrastructure-finops';
+                    const targetUrl = isKept ? `/glossary/${t.slug}` : `/glossary/pillars/${pillarSlug}#${t.slug}`;
+                    const replacement = `<a href="${targetUrl}" class="text-cyan-900 font-extrabold font-semibold hover:text-cyan-900 font-extrabold font-semibold underline underline-offset-2 decoration-cyan-500/30 transition-colors">$1</a>`;
+
+                    segments[i] = segments[i].replace(regex, replacement);
+                    matched = true;
+                    linkedSlugs.add(t.slug);
+                    break; // Only link first occurrence
+                }
+            }
+
+            if (matched) {
+                // Re-split so any newly injected tags are protected from subsequent term replacements
+                segments = segments.join('').split(/(<[^>]+>)/g);
             }
         }
-        return result;
+
+        return segments.join('');
     }
 
     // Reading time estimate
