@@ -39,8 +39,7 @@ const TIER_A_SLUGS = new Set([
 ]);
 
 const EDGE_REDIRECTS: Record<string, string> = {
-  '/advisory': '/services',
-  '/advisory.html': '/services',
+  '/advisory.html': '/advisory',
   '/principal': '/about',
   '/the-operator.html': '/about',
   '/trust': '/security',

@@ -162,8 +162,6 @@ const nextConfig: NextConfig = {
       { source: '/frameworks/synthetic-cogs', destination: '/glossary/pillars/saas-metrics-due-diligence#synthetic-cogs', permanent: true },
       { source: '/frameworks/:slug*', destination: '/framework/:slug*', permanent: true },
       { source: '/curriculum/ai-economics/:slug*', destination: '/vault/curriculum/tracks', permanent: true },
-      { source: '/advisory', destination: '/services', permanent: true },
-      { source: '/advisory/:path*', destination: '/services', permanent: true },
       { source: '/research/concepts', destination: '/concepts', permanent: true },
       { source: '/research/concepts/:slug*', destination: '/concepts/:slug*', permanent: true },
       { source: '/principal', destination: '/about', permanent: true },
@@ -276,7 +274,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/advisory.html',
-        destination: '/services',
+        destination: '/advisory',
         permanent: true,
       },
       {
