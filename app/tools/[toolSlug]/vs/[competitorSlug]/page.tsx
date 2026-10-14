@@ -30,7 +30,7 @@ export async function generateMetadata(
 
     return {
         title: {
-            absolute: `${tool.toolName.slice(0, 22)} vs ${competitor.name.slice(0, 16)} | Richard Ewing`,
+            absolute: `${tool.toolName} vs ${competitor.name} | Richard Ewing`,
         },
         description: `Why enterprise leaders choose deterministic architecture over ${competitor.name}. Calculate literal Cost of Doing Nothing (CODN) and Board-Level Liability.`,
         keywords: [

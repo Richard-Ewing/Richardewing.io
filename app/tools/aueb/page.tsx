@@ -5,7 +5,7 @@ import CalculatorIntentProposal from '@/app/components/calculators/CalculatorInt
 import AUEBTool from './content';
 
 export const metadata: Metadata = {
-    title: 'AI Unit Economics Benchmark (AUEB)',
+    title: 'AI Cost & Unit Economics Calculator (AUEB)',
     description: 'Calculate AI feature profitability per interaction, audit inference token costs, and prevent SaaS gross margin collapse.',
     keywords: [
         'AI unit economics',

@@ -5,7 +5,7 @@ import CalculatorIntentProposal from '@/app/components/calculators/CalculatorInt
 import PDITool from './content';
 
 export const metadata: Metadata = {
-    title: 'Product Debt Index (PDI) Calculator',
+    title: 'Technical Debt Calculator & Cost Audit (PDI)',
     description: 'Quantify software technical debt in dollar terms, calculate your Technical Insolvency Date, and report EBITDA impact to the board.',
     keywords: [
         'product debt index',

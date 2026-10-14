@@ -33,8 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         return { robots: { index: false, follow: true } };
     }
 
-    const shortTermTitle = term.title.length > 25 ? term.title.slice(0, 24) + '…' : term.title;
-    const titleStr = `${shortTermTitle}  -  Definition`;
+    const titleStr = `${term.title} - Definition & Framework`;
 
     const metaDescription = (() => {
         let desc = term.definition.trim().replace(/\s+/g, ' ');

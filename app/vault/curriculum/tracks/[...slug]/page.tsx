@@ -12,9 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const { slug } = await params;
     const mod = getModule(slug.join('/'));
     if (!mod) return { title: `Module Not Found: ${slug.join('/')}`, description: `Curriculum module ${slug.join('/')} not found.` };
-    const modId = mod.moduleId.length > 8 ? mod.moduleId.slice(0, 8) : mod.moduleId;
-    const cleanModTitle = mod.title.length > 25 ? mod.title.slice(0, 24) + '…' : mod.title;
-    const titleStr = `${modId}: ${cleanModTitle}`;
+    const titleStr = `${mod.title} | Curriculum`;
 
     const metaDescription = (() => {
         let desc = mod.description.trim().replace(/\s+/g, ' ');
@@ -55,7 +53,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         },
         alternates: { canonical: `https://www.richardewing.io/vault/curriculum/tracks/${slug.join('/')}` },
         openGraph: {
-            title: `${mod.moduleId}: ${mod.title} | Curriculum | Richard Ewing`,
+            title: `${mod.title} | Curriculum | Richard Ewing`,
             description: metaDescription,
             url: `https://www.richardewing.io/vault/curriculum/tracks/${slug.join('/')}`,
             type: 'article',
@@ -63,7 +61,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${mod.moduleId}: ${mod.title} | Curriculum | Richard Ewing`,
+            title: `${mod.title} | Curriculum | Richard Ewing`,
             description: metaDescription,
             images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
         }

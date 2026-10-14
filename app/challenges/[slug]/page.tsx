@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const challenge = challenges.find(c => c.slug === slug);
     if (!challenge) return {};
 
-    const cleanTitle = challenge.title.length > 28 ? challenge.title.slice(0, 27) + '…' : challenge.title;
+    const cleanTitle = challenge.title;
     const titleStr = `Stop ${cleanTitle} Wasting Capital | Richard Ewing`;
     const ogTitle = titleStr;
     

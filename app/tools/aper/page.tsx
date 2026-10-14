@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import APERTool from './content';
 
 export const metadata: Metadata = {
-    title: 'AI Provider Efficiency Ratio (APER)',
+    title: 'Revenue Per Engineer Calculator (APER)',
     description: 'Calculate Revenue-Per-Engineer (APER) impact, evaluate team capacity, and benchmark engineering efficiency against stage benchmarks.',
     keywords: [
         'revenue per engineer',

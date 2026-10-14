@@ -39,6 +39,14 @@ const TIER_A_SLUGS = new Set([
 ]);
 
 export default clerkMiddleware(async (auth, req) => {
+  const host = req.headers.get('host') || '';
+
+  // 0. Canonical Host Enforcement: 301 redirect non-www to www at Cloudflare Edge
+  if (host === 'richardewing.io' || host.startsWith('richardewing.io:')) {
+    const destination = new URL(req.nextUrl.pathname + req.nextUrl.search, 'https://www.richardewing.io');
+    return NextResponse.redirect(destination, 301);
+  }
+
   const pathname = req.nextUrl.pathname;
   const userAgent = (req.headers.get('user-agent') || '').toLowerCase();
 

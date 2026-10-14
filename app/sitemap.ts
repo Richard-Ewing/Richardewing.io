@@ -74,11 +74,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/curriculum/tracks'
     ]);
 
+    const lastModified = new Date();
+
     function add(url: string, changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'], priority: number) {
         const path = url.replace(baseUrl, '');
         if (REDIRECT_DISALLOWED.has(path)) return;
         if (path.startsWith('/advisory') || path.startsWith('/research/concepts')) return;
-        entries.set(url, { url, changeFrequency, priority });
+        entries.set(url, { url, lastModified, changeFrequency, priority });
     }
 
     // === CORE PAGES ===

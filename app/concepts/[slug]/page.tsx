@@ -51,16 +51,14 @@ export async function generateMetadata({ params }: ConceptPageProps): Promise<Me
     return fallback.length > 158 ? fallback.slice(0, 155) + '...' : fallback;
   })();
 
-  const shortTitle = concept.title.length > 30 ? concept.title.slice(0, 29) + '…' : concept.title;
-
   return {
-    title: `${shortTitle}  -  Research Spec`,
+    title: `${concept.title} - Research Spec`,
     description,
     alternates: {
       canonical: `https://www.richardewing.io/concepts/${slug}`,
     },
     openGraph: {
-      title: `${shortTitle}  -  Research Spec | Richard Ewing`,
+      title: `${concept.title} - Research Spec | Richard Ewing`,
       description,
       url: `https://www.richardewing.io/concepts/${concept.slug}`,
       type: 'article',
@@ -68,7 +66,7 @@ export async function generateMetadata({ params }: ConceptPageProps): Promise<Me
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${shortTitle}  -  Research Spec | Richard Ewing`,
+      title: `${concept.title} - Research Spec | Richard Ewing`,
       description,
       images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },

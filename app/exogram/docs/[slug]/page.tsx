@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const doc = getExogramDoc(resolvedParams.slug);
     if (!doc) return { title: 'Not Found' };
 
-    const cleanTitle = doc.title.length > 28 ? doc.title.slice(0, 27) + '…' : doc.title;
+    const cleanTitle = doc.title;
     const titleStr = `${cleanTitle} - Exogram Docs | Richard Ewing`;
     const finalDesc = (() => {
         let desc = doc.description.trim().replace(/\s+/g, ' ');

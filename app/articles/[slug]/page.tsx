@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         };
     }
 
-    const cleanTitle = article.title.length > 38 ? article.title.slice(0, 37) + '…' : article.title;
+    const cleanTitle = article.title;
 
     const metaDescription = (() => {
         let desc = article.description.trim().replace(/\s+/g, ' ');

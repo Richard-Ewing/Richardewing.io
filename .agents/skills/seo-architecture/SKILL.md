@@ -38,3 +38,17 @@ description: Enforces strict formulas for Meta Titles (<60 chars), Meta Descript
 
 ## 5. Sitemaps
 - The `sitemap.xml` MUST be regenerated and resubmitted after every phase of URL changes.
+- Always include `lastModified` timestamp on every sitemap URL entry.
+
+## 6. Zero Title Mutilation Invariant
+- NEVER use `.slice()` or append literal ellipses (`…` or `...`) inside `<title>` tags.
+- Search engine crawlers index every word in a title even if it exceeds the visual snippet cutoff. Cutting titles off mid-word deletes primary keyword ranking tokens.
+- Strip internal catalog numbers (e.g. `6-1:`) from titles to maximize search query matching.
+
+## 7. Edge Host Canonicalization Invariant
+- The apex domain (`richardewing.io`) must ALWAYS return a 301 Permanent Redirect to the canonical `www.richardewing.io` origin at the edge in `middleware.ts`.
+- Never serve `200 OK` on both apex and `www` hosts simultaneously.
+
+## 8. Root Layout Canonical Prohibition
+- NEVER set `alternates.canonical` in root `app/layout.tsx`. In Next.js App Router, child routes that lack explicit canonical tags will inherit the root value and falsely declare themselves duplicates of the homepage.
+- Explicitly declare `alternates.canonical` in individual leaf page/layout metadata.

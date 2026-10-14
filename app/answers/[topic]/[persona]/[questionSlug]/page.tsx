@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const query = queries.find(q => q.questionSlug === p.questionSlug);
     if (!query) return {};
 
-    const headlineTrimmed = query.questionHeadline.length > 38 ? query.questionHeadline.slice(0, 37) + '…' : query.questionHeadline;
+    const headlineTrimmed = query.questionHeadline;
 
     return {
         title: headlineTrimmed,

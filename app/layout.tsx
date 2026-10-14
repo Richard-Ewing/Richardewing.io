@@ -36,10 +36,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Richard Ewing', url: 'https://www.richardewing.io' }],
   creator: 'Richard Ewing',
   publisher: 'Richard Ewing',
-  // Canonical
-  alternates: {
-    canonical: 'https://www.richardewing.io',
-  },
+
 
   // Open Graph
   openGraph: {

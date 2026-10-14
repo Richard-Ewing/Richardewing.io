@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const pillar = PILLARS.find(p => p.slug === slug);
     if (!pillar) return {};
     
-    const cleanName = pillar.name.length > 35 ? pillar.name.slice(0, 34) + '…' : pillar.name;
+    const cleanName = pillar.name;
     return {
         title: {
             absolute: `${cleanName} Glossary | Richard Ewing`,
