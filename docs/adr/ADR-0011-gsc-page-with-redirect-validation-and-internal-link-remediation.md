@@ -18,6 +18,7 @@ We executed an end-to-end, deterministic remediation across the edge routing, in
 4. **Single-Hop Edge Redirect Resolution**: Introduced `EDGE_REDIRECTS` in `middleware.ts` to intercept known legacy aliases (`/advisory`, `/principal`, `/trust`, `/studio.html`, etc.) at the Cloudflare Edge, routing both apex and www requests directly to their final canonical destination in a single HTTP 301 hop.
 5. **Remediated Hardcoded Internal Links**: Updated legacy references in `app/resources/page.tsx`, `app/lib/data.ts`, `app/tools/cpo-product-portfolio-matrix/content.tsx`, and `app/lib/concept-corpus-tier1.ts` / `tier2.ts` to link directly to their canonical pillar anchors or concept pages.
 6. **Sitemap Hygiene Assertion**: Programmatically verified that `app/sitemap.ts` contains exactly zero redirecting URLs, zero trailing slashes, zero non-keep glossary terms, and zero non-Tier A comparisons.
+7. **Purged Obsolete Static LLM Feed Artifacts**: Removed stale `public/llms.txt` and `public/llms-full.txt` files created in August 2026 that shadowed the dynamic `app/llms*.txt` route handlers at Cloudflare Edge and broadcast apex domain URLs and deprecated routes.
 
 ## Deciders
 - @richardewing (Author & Executive Sponsor)
