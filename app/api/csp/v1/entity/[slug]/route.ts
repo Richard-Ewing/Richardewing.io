@@ -38,7 +38,7 @@ export async function GET(request: Request, { params }: RouteProps) {
       jobTitle: 'AI Economist',
       url: 'https://www.richardewing.io',
     },
-    inDefinedTermSet: 'https://www.richardewing.io/canonical/dataset.jsonld',
+    inDefinedTermSet: 'https://www.richardewing.io/glossary#definedtermset',
     canonicalUrl: `https://www.richardewing.io/concepts/${concept.slug}`,
     origin: concept.telemetry?.origin,
     internalCorpus: concept.telemetry?.internalCorpus,

@@ -129,7 +129,7 @@
     "services": {
         "available": true,
         "pricing_visible": true,
-        "booking_url": "https://www.richardewing.io/advisory",
+        "booking_url": "https://www.richardewing.io/services",
         "offerings": [
             {
                 "name": "30-Minute Gut-Check",
@@ -220,7 +220,7 @@
     ],
     "contact": {
         "website": "https://www.richardewing.io",
-        "booking": "https://www.richardewing.io/advisory",
+        "booking": "https://www.richardewing.io/services",
         "newsletter": "https://theproducteconomist.beehiiv.com"
     },
     "discovery": {

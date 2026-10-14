@@ -46,7 +46,7 @@ export default function BuiltInRecapPage() {
     const articleSchema = {
         '@context': 'https://schema.org', '@type': 'Article',
         headline: 'Richard Ewing Built In Articles  -  Engineering Economics for Scaling Teams',
-        author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/principal' },
+        author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/about' },
         publisher: { '@type': 'Organization', name: 'Built In' },
         url: 'https://www.richardewing.io/articles/recap/built-in',
     };

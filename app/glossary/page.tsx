@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 import GlossaryContent from './glossary-content';
 import { glossaryTerms } from './terms';
+import { KEEP_TERMS, CATEGORY_MAP } from './pillarsMapping';
 
 export const metadata: Metadata = {
     title: `Product, AI & Engineering Economics Glossary (${glossaryTerms.length}+ Terms)`,
@@ -37,13 +38,20 @@ export default function GlossaryPage() {
         "@id": "https://www.richardewing.io/glossary",
         "name": "Product, AI & Engineering Economics Glossary",
         "description": `${glossaryTerms.length}+ definitions covering product economics, AI unit economics, technical debt, SaaS P&L metrics, and engineering management.`,
-        "hasDefinedTerm": glossaryTerms.map(term => ({
-            "@type": "DefinedTerm",
-            "termCode": term.slug,
-            "name": term.title,
-            "description": term.definition,
-            "url": `https://www.richardewing.io/glossary/${term.slug}`
-        }))
+        "hasDefinedTerm": glossaryTerms.map(term => {
+            const isKeep = KEEP_TERMS.includes(term.slug);
+            const pillarSlug = CATEGORY_MAP[term.category] || 'cloud-infrastructure-finops';
+            const termUrl = isKeep
+                ? `https://www.richardewing.io/glossary/${term.slug}`
+                : `https://www.richardewing.io/glossary/pillars/${pillarSlug}#${term.slug}`;
+            return {
+                "@type": "DefinedTerm",
+                "termCode": term.slug,
+                "name": term.title,
+                "description": term.definition,
+                "url": termUrl
+            };
+        })
     };
 
     return (

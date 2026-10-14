@@ -61,7 +61,23 @@ export default clerkMiddleware(async (auth, req) => {
   const pathname = req.nextUrl.pathname;
 
   // 0. Canonical Host & Alias Single-Hop Enforcement: 301 redirect at Cloudflare Edge
-  const targetPath = EDGE_REDIRECTS[pathname] || pathname;
+  let targetPath = EDGE_REDIRECTS[pathname] || pathname;
+
+  // Intercept non-Tier A compare routes directly to eliminate multi-hop apex/www chains
+  if (targetPath.startsWith('/compare/')) {
+    const slug = targetPath.replace('/compare/', '').split('/')[0];
+    if (slug && !TIER_A_SLUGS.has(slug)) {
+      targetPath = '/tools';
+    }
+  } else if (targetPath.startsWith('/comparisons/')) {
+    const slug = targetPath.replace('/comparisons/', '').split('/')[0];
+    if (slug && TIER_A_SLUGS.has(slug)) {
+      targetPath = `/compare/${slug}`;
+    } else {
+      targetPath = '/tools';
+    }
+  }
+
   if (host === 'richardewing.io' || host.startsWith('richardewing.io:') || (targetPath !== pathname && !host.startsWith('localhost'))) {
     const destination = new URL(targetPath + req.nextUrl.search, 'https://www.richardewing.io');
     return NextResponse.redirect(destination, 301);

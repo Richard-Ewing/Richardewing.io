@@ -161,32 +161,46 @@ export default async function GlossaryTermPage({ params }: Props) {
 
     // Auto-link: convert glossary term mentions in text to clickable links safely outside HTML tags
     function autoLink(text: string, currentSlug: string): string {
+        // 1. Convert any markdown links to HTML tags first so their anchor boundaries are preserved
+        let processed = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+
         const sortedTerms = [...glossaryTerms]
             .filter(t => t.slug !== currentSlug && t.title.length > 3)
             .sort((a, b) => b.title.length - a.title.length);
 
         const linkedSlugs = new Set<string>();
-        // Split text by existing HTML tags (e.g. <strong ...>...</strong>).
-        // Even indices (0, 2, 4...) are text outside tags. Odd indices (1, 3, 5...) are tags.
-        let segments = text.split(/(<[^>]+>)/g);
+        let segments = processed.split(/(<[^>]+>)/g);
 
         for (const t of sortedTerms) {
             if (linkedSlugs.has(t.slug)) continue;
             const escaped = t.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             const regex = new RegExp(`\\b(${escaped})\\b`, 'i');
 
+            let inAnchor = false;
+            let inCode = false;
             let matched = false;
-            for (let i = 0; i < segments.length; i += 2) {
-                if (regex.test(segments[i])) {
-                    const isKept = KEEP_TERMS.includes(t.slug);
-                    const pillarSlug = CATEGORY_MAP[t.category] || 'cloud-infrastructure-finops';
-                    const targetUrl = isKept ? `/glossary/${t.slug}` : `/glossary/pillars/${pillarSlug}#${t.slug}`;
-                    const replacement = `<a href="${targetUrl}" class="text-cyan-900 font-extrabold font-semibold hover:text-cyan-900 font-extrabold font-semibold underline underline-offset-2 decoration-cyan-500/30 transition-colors">$1</a>`;
 
-                    segments[i] = segments[i].replace(regex, replacement);
-                    matched = true;
-                    linkedSlugs.add(t.slug);
-                    break; // Only link first occurrence
+            for (let i = 0; i < segments.length; i++) {
+                if (i % 2 === 1) {
+                    // HTML tag
+                    const tag = segments[i].toLowerCase();
+                    if (/^<a\b/.test(tag)) inAnchor = true;
+                    else if (tag === '</a>') inAnchor = false;
+                    else if (/^<(code|pre)\b/.test(tag)) inCode = true;
+                    else if (tag === '</code>' || tag === '</pre>') inCode = false;
+                } else {
+                    // Plain text outside tags: strictly avoid replacing text inside <a> or <code>/<pre> blocks
+                    if (!inAnchor && !inCode && regex.test(segments[i])) {
+                        const isKept = KEEP_TERMS.includes(t.slug);
+                        const pillarSlug = CATEGORY_MAP[t.category] || 'cloud-infrastructure-finops';
+                        const targetUrl = isKept ? `/glossary/${t.slug}` : `/glossary/pillars/${pillarSlug}#${t.slug}`;
+                        const replacement = `<a href="${targetUrl}" class="text-cyan-900 font-extrabold font-semibold hover:text-cyan-900 font-extrabold font-semibold underline underline-offset-2 decoration-cyan-500/30 transition-colors">$1</a>`;
+
+                        segments[i] = segments[i].replace(regex, replacement);
+                        matched = true;
+                        linkedSlugs.add(t.slug);
+                        break; // Only link first occurrence
+                    }
                 }
             }
 

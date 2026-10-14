@@ -85,7 +85,7 @@ export default async function Page({ params }: Props) {
         '@type': 'Article',
         headline: framework.name,
         description: framework.definition.replace(/\n/g, ' ').slice(0, 155),
-        author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/principal' },
+        author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/about' },
         publisher: { '@type': 'Person', name: 'Richard Ewing' },
         url: `https://www.richardewing.io/articles/frameworks/${slug}`,
     };

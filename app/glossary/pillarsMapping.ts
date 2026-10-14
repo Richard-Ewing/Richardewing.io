@@ -80,7 +80,7 @@ export const KEEP_TERMS = [
     'hardware-deflation-illusion', 'human-compiler-syndrome', 'ic-vs-management-track',
     'inference-dividend-cascade', 'inference-economics', 'innovation-tax',
     'interview-protocol', 'macro-coding', 'margin-engineering',
-    'model-right-sizing', 'negative-carry-code-crisis', 'non-dilutive-infrastructure-use',
+    'model-right-sizing', 'negative-carry-code', 'negative-carry-code-crisis', 'non-dilutive-infrastructure-use',
     'orchestration-debt', 'persistence-vs-authority', 'persistence-vs-authority-framework',
     'pr-review-gridlock', 'product-debt-index', 'product-economist',
     'prompt-injection', 'r-and-d-ponzi', 'review-debt',

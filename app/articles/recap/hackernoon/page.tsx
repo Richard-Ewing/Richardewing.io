@@ -34,7 +34,7 @@ export default function HackerNoonRecapPage() {
     const articleSchema = {
         '@context': 'https://schema.org', '@type': 'Article',
         headline: 'Richard Ewing HackerNoon Articles  -  Developer-Focused Economics',
-        author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/principal' },
+        author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/about' },
         publisher: { '@type': 'Organization', name: 'HackerNoon' },
         url: 'https://www.richardewing.io/articles/recap/hackernoon',
     };

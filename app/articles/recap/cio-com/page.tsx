@@ -41,7 +41,7 @@ export default function CIORecapPage() {
         '@context': 'https://schema.org',
         '@type': 'Article',
         headline: 'Richard Ewing CIO.com Articles  -  Executive Technology Leadership',
-        author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/principal' },
+        author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/about' },
         publisher: { '@type': 'Organization', name: 'CIO.com' },
         url: 'https://www.richardewing.io/articles/recap/cio-com',
     };
