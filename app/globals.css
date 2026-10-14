@@ -139,6 +139,15 @@ button {
   z-index: 100;
 }
 
+.dropdown:before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
+}
+
 .dropdown a {
   display: flex;
   justify-content: space-between;
@@ -418,8 +427,8 @@ button {
 .floating-note {
   position: absolute;
   z-index: 3;
-  right: -2%;
-  top: 14%;
+  right: -25px;
+  top: 46%;
   max-width: 200px;
   padding: 16px;
   font: italic 16px / 1.45 var(--serif);
@@ -538,6 +547,22 @@ button {
   position: absolute;
   inset: 0;
   background: linear-gradient(0deg, rgba(26, 45, 37, 0.65), transparent);
+}
+
+.card-art-metric {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font: 10px var(--mono);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: rgba(18, 30, 23, 0.85);
+  color: #f7f5ed;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  z-index: 2;
 }
 
 .card-index {
@@ -841,6 +866,64 @@ button {
   transform: translateY(-5px);
   box-shadow: 0 20px 45px rgba(30, 41, 36, 0.14);
 }
+
+.route-tag {
+  display: inline-block;
+  font: 10px var(--mono);
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.route-visual {
+  height: 140px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #273b32, #d09a55);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.route-visual:before,
+.route-visual:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  width: 220px;
+  height: 220px;
+  right: -45px;
+  top: -100px;
+}
+
+.route-visual:after {
+  width: 300px;
+  height: 300px;
+  right: -90px;
+  top: -140px;
+}
+
+.route-visual span {
+  font: 11px var(--mono);
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.visual-1 { background: linear-gradient(135deg, #1e3327, #8d9f8d, #d09a55); }
+.visual-2 { background: linear-gradient(135deg, #19211d, #3e5246, #b88646); }
+.visual-3 { background: linear-gradient(135deg, #273b32, #c8b58e, #1e3327); }
+.visual-4 { background: linear-gradient(135deg, #152219, #526756, #dfc699); }
+.visual-5 { background: linear-gradient(135deg, #1e3327, #3b4d40, #d09a55); }
+.visual-6 { background: linear-gradient(135deg, #19211d, #728475, #273b32); }
 
 .route-card h3 {
   font: 500 23px var(--serif);

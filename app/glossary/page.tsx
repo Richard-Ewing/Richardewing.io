@@ -1,33 +1,19 @@
 import type { Metadata } from 'next';
-import AdvisoryCTA from '@/components/AdvisoryCTA';
+import Link from 'next/link';
 import GlossaryContent from './glossary-content';
 import { glossaryTerms } from './terms';
 import { KEEP_TERMS, CATEGORY_MAP } from './pillarsMapping';
 
 export const metadata: Metadata = {
-    title: `Product, AI & Engineering Economics Glossary (${glossaryTerms.length}+ Terms)`,
+    title: `Product, AI & Engineering Economics Glossary (${glossaryTerms.length}+ Terms) | Richard Ewing`,
     description: `Master the lexicon of product economics, AI unit economics, technical debt, and SaaS P&L governance across ${glossaryTerms.length}+ executive definitions.`,
-    keywords: [
-        'product economics glossary', 'product economist', 'technology glossary', 'technical debt definition',
-        'AI glossary', 'SaaS metrics glossary', 'engineering management terms', 'product management glossary',
-        'CTO glossary', 'AI economist glossary', 'AI unit economics', 'technical insolvency',
-        'DORA metrics', 'site reliability engineering', 'DevOps glossary',
-        'FinOps glossary', 'startup finance terms', 'engineering productivity metrics',
-        'Richard Ewing glossary', 'LLM glossary', 'AI governance definitions',
-    ],
     alternates: { canonical: 'https://www.richardewing.io/glossary' },
     openGraph: {
         title: `Product & AI Economics Glossary | ${glossaryTerms.length}+ Terms Defined`,
-        description: `Master the lexicon of product & AI economics. Clear executive definitions for zombie features, hallucination debt, technical insolvency, retry inflation, and ${glossaryTerms.length}+ terms.`,
+        description: `Master the lexicon of product and AI economics. Clear executive definitions for zombie features, hallucination debt, technical insolvency, retry inflation, and ${glossaryTerms.length}+ terms.`,
         url: 'https://www.richardewing.io/glossary',
         type: 'website',
-        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: `Product & AI Economics Glossary - ${glossaryTerms.length}+ Definitions`,
-        description: 'The definitive product, AI, and engineering economics glossary by Richard Ewing, Product Economist.',
-        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+        images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
     },
 };
 
@@ -60,10 +46,27 @@ export default function GlossaryPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <GlossaryContent />
-            <div className="page-container max-w-4xl mx-auto">
-                <AdvisoryCTA variant="educational" />
-            </div>
+            
+            <section className="section !pt-12">
+                <GlossaryContent />
+            </section>
+
+            {/* Closing CTA */}
+            <section className="closing-cta">
+                <p className="eyebrow">Next Step</p>
+                <h2>Put these definitions into direct financial execution.</h2>
+                <p>
+                    Evaluate your enterprise unit economics and cloud efficiency with our diagnostic tools.
+                </p>
+                <div className="actions center">
+                    <Link className="button button-gold" href="/reality-check">
+                        Run the free Reality Check ↗
+                    </Link>
+                    <Link className="button button-ghost-light" href="/pricing-sprints">
+                        View Sprints &amp; Pricing ↗
+                    </Link>
+                </div>
+            </section>
         </>
     );
 }

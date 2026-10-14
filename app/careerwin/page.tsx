@@ -1,380 +1,367 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Award, TrendingUp, ShieldCheck, Zap, ExternalLink, Users, BookOpen, Quote } from 'lucide-react';
-import { ScrollReveal } from '@/components/magicui/scroll-reveal';
+import { Award, TrendingUp, ShieldCheck, Zap, ExternalLink, Quote } from 'lucide-react';
 import CareerWinBenchmarkVisual from '@/app/components/CareerWinBenchmarkVisual';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
-
-export const metadata: Metadata = {
-    title: 'CareerWin Platform Career Intelligence',
-    description: 'Career intelligence platform for engineers and product leaders. Access role benchmarks and build a data-backed compensation strategy.',
-    alternates: { canonical: 'https://www.richardewing.io/careerwin' },
-    openGraph: {
-        title: 'CareerWin Platform Career Intelligence | Richard Ewing',
-        description: 'CareerWin is a career intelligence platform for engineers and product leaders. Access role benchmarks and build a data-backed compensation strategy.',
-        url: 'https://www.richardewing.io/careerwin',
-        type: 'website',
-        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'CareerWin Platform Career Intelligence | Richard Ewing',
-        description: 'CareerWin is a career intelligence platform for engineers and product leaders. Access role benchmarks and build a data-backed compensation strategy.',
-        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
-    }
-};
-
 import { careerwinSoftwareSchema } from '@/app/lib/schemas';
 
+export const metadata: Metadata = {
+  title: 'CareerWin Platform · Career Intelligence | Richard Ewing',
+  description:
+    'Career intelligence platform for engineers and product leaders. Access role benchmarks and build a data-backed compensation strategy.',
+  alternates: { canonical: 'https://www.richardewing.io/careerwin' },
+  openGraph: {
+    title: 'CareerWin Platform · Career Intelligence | Richard Ewing',
+    description:
+      'CareerWin is a career intelligence platform for engineers and product leaders. Access role benchmarks and build a data-backed compensation strategy.',
+    url: 'https://www.richardewing.io/careerwin',
+    type: 'website',
+  },
+};
+
 export default function CareerWinPage() {
-    return (
-        <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(careerwinSoftwareSchema) }}
-            />
-            <div className="page-container max-w-4xl mx-auto px-6">
-                
-                {/* Header / Hero */}
-                <ScrollReveal>
-                    <div className="mb-16 text-center border-b border-zinc-400 pb-12">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-500/10 border border-indigo-500/30 text-indigo-900 rounded-full font-mono text-xs uppercase tracking-widest mb-6">
-                            <Award className="w-3.5 h-3.5" />
-                            <span>Individual Career Intelligence Branch</span>
-                        </div>
-                        
-                        <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6 leading-tight">
-                            Career Intelligence for <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-purple-700">
-                                Engineers & Product Leaders
-                            </span>
-                        </h1>
-                        
-                        <p className="text-xl text-zinc-900 font-semibold max-w-2xl mx-auto leading-relaxed mb-8">
-                            Role benchmarks, leveling intelligence, and compensation strategy powered by the AI Economics Knowledge Engine.
-                        </p>
+  const careerResearch = RESEARCH_CORPUS.filter(
+    (art) => art.domain === 'Career Economics' || art.domain === 'Product Leadership'
+  ).slice(0, 6);
 
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a 
-                                href="https://careerwin.ai/" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase tracking-widest text-xs rounded-xl shadow-md transition-all gap-2"
-                            >
-                                Explore CareerWin.ai Platform <ExternalLink className="w-4 h-4" />
-                            </a>
-                            <Link 
-                                href="/vault/curriculum/tracks"
-                                className="inline-flex items-center justify-center px-8 py-4 bg-white border border-zinc-300 text-zinc-950 font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-zinc-50 transition-colors"
-                            >
-                                Browse Executive Curriculum &rarr;
-                            </Link>
-                        </div>
-                    </div>
-                </ScrollReveal>
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(careerwinSoftwareSchema) }}
+      />
 
-                {/* Live Interactive Benchmark Visual */}
-                <CareerWinBenchmarkVisual />
+      {/* Hero Section */}
+      <section className="inner-hero">
+        <div className="inner-art" />
+        <div className="inner-copy">
+          <p className="eyebrow">
+            <i /> Venture · Talent Intelligence
+          </p>
+          <h1>Career Intelligence for Engineers &amp; Product Leaders</h1>
+          <p className="inner-lede">
+            Role benchmarks, leveling intelligence, and compensation strategy powered by
+            the AI Economics Knowledge Engine. Replace flat resumes with verified talent
+            evidence.
+          </p>
+          <div className="actions">
+            <a
+              href="https://careerwin.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button button-gold"
+            >
+              Explore CareerWin.ai Platform ↗
+            </a>
+            <Link href="/case-studies" className="button button-outline">
+              Read verified case studies
+            </Link>
+          </div>
+        </div>
 
-                {/* Staff+ Verified Testimonial Quote */}
-                <ScrollReveal>
-                    <div className="my-12 bg-white border border-zinc-300 rounded-2xl p-8 shadow-sm relative overflow-hidden">
-                        <div className="flex items-start gap-4">
-                            <div className="p-3 bg-indigo-100 text-indigo-700 rounded-full shrink-0">
-                                <Quote className="w-6 h-6" />
-                            </div>
-                            <div>
-                                <blockquote className="text-zinc-900 font-semibold text-lg leading-relaxed mb-4">
-                                    &ldquo;Richard&apos;s leveling intelligence helped me negotiate a $40K compensation increase and a Staff Engineer title I didn&apos;t know I qualified for. CareerWin OS turns vague resume claims into recruiter-stopping evidence.&rdquo;
-                                </blockquote>
-                                <div className="text-xs font-mono font-bold text-zinc-700">
-                                     -  Senior Engineer → Staff Engineer, Series B SaaS (Verified Outcome)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <aside className="inner-aside glass">
+          <span>THE OPERATING PRINCIPLE</span>
+          <strong>Evidence beats claims. Every single time.</strong>
+          <p>
+            Static PDF resumes are dead. Dynamic career operating systems quantify your real
+            engineering and product impact.
+          </p>
+        </aside>
+      </section>
 
-                    {/* Built In Case Study Spotlight */}
-                    <div className="mb-8 bg-gradient-to-br from-indigo-50 via-white to-purple-50 border border-indigo-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-                        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                            <span className="px-3 py-1 bg-indigo-100 text-indigo-900 text-xs font-mono font-bold rounded-full border border-indigo-200">
-                                Featured in Built In • August 18, 2026
-                            </span>
-                            <span className="text-xs font-mono text-zinc-500 font-semibold">
-                                Architecture Case Study
-                            </span>
-                        </div>
-                        <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
-                            The Production Architecture Behind CareerWin.ai
-                        </h3>
-                        <p className="text-sm text-zinc-800 leading-relaxed font-medium italic mb-4">
-                            &quot;CareerWin.ai became the first production application I built on top of this system. On previous builds without this layer, setting up authentication, user state, database rules and API limits consumed weeks before I could even touch core product features. Using Google Antigravity alongside Exogram as the underlying runtime engine, the experience was completely different. Setting up security rules, state checks, and safety gates no longer resulted in broken routes or runaway token costs.&quot;
-                        </p>
-                        <div className="flex items-center justify-between flex-wrap gap-4 pt-2 border-t border-indigo-100">
-                            <span className="text-xs font-mono font-bold text-indigo-900">
-                                Built In: &quot;I Used AI to Build My Startup. Here’s What I Learned.&quot;
-                            </span>
-                            <a
-                                href="https://builtin.com/articles/ai-coding-tools-practical-evaluation"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-xs font-mono font-bold text-indigo-700 hover:text-indigo-900 hover:underline inline-flex items-center gap-1"
-                            >
-                                Read Article on Built In ↗
-                            </a>
-                        </div>
-                    </div>
+      {/* Benchmark Visual */}
+      <section className="section">
+        <div className="max-w-4xl mx-auto">
+          <CareerWinBenchmarkVisual />
+        </div>
+      </section>
 
-                    {/* LinkedIn Career OS Architecture Spotlight */}
-                    <div className="mb-8 bg-gradient-to-br from-purple-50 via-white to-indigo-50 border border-purple-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-                        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                            <span className="px-3 py-1 bg-purple-100 text-purple-900 text-xs font-mono font-bold rounded-full border border-purple-200">
-                                LinkedIn Newsletter • August 20, 2026
-                            </span>
-                            <span className="text-xs font-mono text-zinc-500 font-semibold">
-                                Executive Career Strategy
-                            </span>
-                        </div>
-                        <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
-                            Why Static Resumes Are Dead: The Shift to Career Operating Systems
-                        </h3>
-                        <p className="text-sm text-zinc-800 leading-relaxed font-medium italic mb-4">
-                            &quot;For decades, career management revolved around a single document: the PDF resume. In an era where AI screens candidates in milliseconds and work outputs evolve dynamically, static resumes fail to capture real-time competency, verifiable problem-solving, and continuous architectural skill evolution. The future belongs to dynamic Career Operating Systems that replace flat claims with verified talent intelligence.&quot;
-                        </p>
-                        <div className="flex items-center justify-between flex-wrap gap-4 pt-2 border-t border-purple-100">
-                            <span className="text-xs font-mono font-bold text-purple-900">
-                                By Richard Ewing: &quot;Why Static Resumes Are Dead: The Shift to Career Operating Systems&quot;
-                            </span>
-                            <a
-                                href="https://www.linkedin.com/pulse/why-static-resumes-dead-shift-career-operating-systems-richard-ewing-iui1c"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-xs font-mono font-bold text-purple-700 hover:text-purple-900 hover:underline inline-flex items-center gap-1"
-                            >
-                                Read Essay on LinkedIn ↗
-                            </a>
-                        </div>
-                    </div>
+      {/* Verified Testimonial Quote */}
+      <section className="section border-t border-[var(--line)]">
+        <div className="max-w-3xl mx-auto bg-white border border-[var(--line)] rounded-2xl p-8 shadow-sm">
+          <div className="flex items-start gap-4">
+            <div className="p-3 bg-[var(--paper2)] text-[var(--gold)] rounded-full shrink-0">
+              <Quote className="w-6 h-6" />
+            </div>
+            <div>
+              <blockquote className="text-[var(--ink)] font-serif text-lg leading-relaxed mb-4">
+                &ldquo;Richard&apos;s leveling intelligence helped me negotiate a $40K
+                compensation increase and a Staff Engineer title I didn&apos;t know I qualified
+                for. CareerWin OS turns vague resume claims into recruiter-stopping
+                evidence.&rdquo;
+              </blockquote>
+              <div className="text-xs font-mono font-bold text-[var(--muted)]">
+                - Senior Engineer to Staff Engineer, Series B SaaS (Verified Outcome)
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                    {/* Beehiiv Context Engines Architecture Spotlight */}
-                    <div className="mb-16 bg-gradient-to-br from-emerald-50 via-white to-cyan-50 border border-emerald-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-                        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                            <span className="px-3 py-1 bg-emerald-100 text-emerald-900 text-xs font-mono font-bold rounded-full border border-emerald-200">
-                                The AI Economist (Beehiiv) • August 21, 2026
-                            </span>
-                            <span className="text-xs font-mono text-zinc-500 font-semibold">
-                                Deep Architecture Note
-                            </span>
-                        </div>
-                        <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
-                            How Context Engines Power AI Career Intelligence
-                        </h3>
-                        <p className="text-sm text-zinc-800 leading-relaxed font-medium italic mb-4">
-                            &quot;When people hear about AI career tools, they usually picture a basic prompt wrapper that takes a job description and rewrites a resume bullet point. Those wrappers fail because they lack persistent memory. CareerWin.ai solves this by structuring career history into discrete, verified relational objects (Canonical Career Ledger, Target Role Matrix, Application State Tracker). Shifting from flat text prompts to structured context databases drops hallucination rates to near zero and generates tailored application sets in under 60 seconds.&quot;
-                        </p>
-                        <div className="flex items-center justify-between flex-wrap gap-4 pt-2 border-t border-emerald-100">
-                            <span className="text-xs font-mono font-bold text-emerald-900">
-                                By Richard Ewing: &quot;Schemas, Memory Retention, and Building CareerWin.ai&quot;
-                            </span>
-                            <a
-                                href="https://theaieconomist.beehiiv.com/p/how-context-engines-power-ai-career-intelligence"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-xs font-mono font-bold text-emerald-700 hover:text-emerald-900 hover:underline inline-flex items-center gap-1"
-                            >
-                                Read Research on Beehiiv ↗
-                            </a>
-                        </div>
-                    </div>
+      {/* Media & Research Spotlights */}
+      <section className="section border-t border-[var(--line)]">
+        <div className="max-w-4xl mx-auto space-y-6">
+          <p className="eyebrow center">Research &amp; Case Studies</p>
+          <h2 className="text-3xl font-serif text-[var(--ink)] text-center mb-8">
+            How CareerWin was built in public.
+          </h2>
 
-                    {/* Built In Multi-Agent Evaluation Spotlight */}
-                    <div className="mb-16 bg-gradient-to-br from-indigo-50 via-white to-purple-50 border border-indigo-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-                        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                            <span className="px-3 py-1 bg-indigo-100 text-indigo-900 text-xs font-mono font-bold rounded-full border border-indigo-200">
-                                Built In • August 24, 2026
-                            </span>
-                            <span className="text-xs font-mono text-zinc-500 font-semibold">
-                                Technical Leadership Scorecard
-                            </span>
-                        </div>
-                        <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
-                            Evaluating AI Tooling Use: Catching What Agents Get Wrong
-                        </h3>
-                        <p className="text-sm text-zinc-800 leading-relaxed font-medium italic mb-4">
-                            &quot;When evaluating engineers and technical leaders in the multi-agent era, the scarce skill is no longer typing syntax - it is understanding runtime failure modes, orchestrating concurrent agents across isolated worktrees, and enforcing autonomous verification loops. Staff and Principal engineers distinguish themselves by making failure cheap and building durable system boundaries.&quot;
-                        </p>
-                        <div className="flex items-center justify-between flex-wrap gap-4 pt-2 border-t border-indigo-100">
-                            <span className="text-xs font-mono font-bold text-indigo-900">
-                                By Richard Ewing: &quot;How Does Meta’s Muse Code Compare to Other AI Coding Tools?&quot;
-                            </span>
-                            <a
-                                href="https://builtin.com/articles/meta-muse-code-comparison"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-xs font-mono font-bold text-indigo-700 hover:text-indigo-900 hover:underline inline-flex items-center gap-1"
-                            >
-                                Read Comparison on Built In ↗
-                            </a>
-                        </div>
-                    </div>
+          {/* Built In Case Study Spotlight */}
+          <div className="bg-white border border-[var(--line)] rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <span className="px-3 py-1 bg-[var(--paper2)] text-[var(--ink)] text-xs font-mono font-bold rounded-full">
+                Featured in Built In · August 18, 2026
+              </span>
+              <span className="text-xs font-mono text-[var(--muted)]">
+                Architecture Case Study
+              </span>
+            </div>
+            <h3 className="text-xl font-serif font-bold text-[var(--ink)] mb-2">
+              The Production Architecture Behind CareerWin.ai
+            </h3>
+            <p className="text-sm text-[var(--muted)] leading-relaxed italic mb-4">
+              &quot;CareerWin.ai became the first production application I built on top of
+              this system. On previous builds without this layer, setting up authentication,
+              user state, database rules, and API limits consumed weeks before I could touch
+              core product features. Using Google Antigravity alongside Exogram as the
+              underlying runtime engine, setting up security rules, state checks, and safety
+              gates no longer resulted in broken routes or runaway token costs.&quot;
+            </p>
+            <div className="flex items-center justify-between flex-wrap gap-4 pt-3 border-t border-[var(--line)]">
+              <span className="text-xs font-mono font-bold text-[var(--ink)]">
+                Built In: &quot;I Used AI to Build My Startup. Here’s What I Learned.&quot;
+              </span>
+              <a
+                href="https://builtin.com/articles/ai-coding-tools-practical-evaluation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-mono font-bold text-[var(--gold)] hover:underline inline-flex items-center gap-1"
+              >
+                Read Article on Built In ↗
+              </a>
+            </div>
+          </div>
 
-                    {/* Beehiiv Solo Founder Velocity Spotlight */}
-                    <div className="mb-16 bg-gradient-to-br from-cyan-50 via-white to-indigo-50 border border-cyan-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-                        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                            <span className="px-3 py-1 bg-cyan-100 text-cyan-900 text-xs font-mono font-bold rounded-full border border-cyan-200">
-                                The AI Economist (Beehiiv) • August 28, 2026
-                            </span>
-                            <span className="text-xs font-mono text-zinc-500 font-semibold">
-                                Solo Founder Velocity &amp; Architecture
-                            </span>
-                        </div>
-                        <h3 className="text-xl font-bold font-grotesk text-zinc-950 mb-2">
-                            Building CareerWin.ai with Google Antigravity &amp; Structured System Boundaries
-                        </h3>
-                        <p className="text-sm text-zinc-800 leading-relaxed font-medium italic mb-4">
-                            &quot;By replacing unconstrained conversational coding with immutable root rule files, modular step execution, and terminal-level zero-trust type checks, context loss incidents dropped by over 90% and debugging overhead shrank from hours to minutes. CareerWin.ai advanced from initial concept to 90% production completion at record speed.&quot;
-                        </p>
-                        <div className="flex items-center justify-between flex-wrap gap-4 pt-2 border-t border-cyan-100">
-                            <span className="text-xs font-mono font-bold text-cyan-900">
-                                By Richard Ewing: &quot;Cursor vs Google Antigravity for Production AI Building&quot;
-                            </span>
-                            <a
-                                href="https://theaieconomist.beehiiv.com/p/cursor-vs-google-antigravity-for-production-ai-building-278a"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-xs font-mono font-bold text-cyan-700 hover:text-cyan-900 hover:underline inline-flex items-center gap-1"
-                            >
-                                Read Research on Beehiiv ↗
-                            </a>
-                        </div>
-                    </div>
-                </ScrollReveal>
+          {/* LinkedIn Career OS Architecture Spotlight */}
+          <div className="bg-white border border-[var(--line)] rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <span className="px-3 py-1 bg-[var(--paper2)] text-[var(--ink)] text-xs font-mono font-bold rounded-full">
+                LinkedIn Newsletter · August 20, 2026
+              </span>
+              <span className="text-xs font-mono text-[var(--muted)]">
+                Executive Career Strategy
+              </span>
+            </div>
+            <h3 className="text-xl font-serif font-bold text-[var(--ink)] mb-2">
+              Why Static Resumes Are Dead: The Shift to Career Operating Systems
+            </h3>
+            <p className="text-sm text-[var(--muted)] leading-relaxed italic mb-4">
+              &quot;For decades, career management revolved around a single document: the PDF
+              resume. In an era where AI screens candidates in milliseconds and work outputs
+              evolve dynamically, static resumes fail to capture real-time competency,
+              verifiable problem-solving, and continuous architectural skill evolution. The
+              future belongs to dynamic Career Operating Systems that replace flat claims with
+              verified talent intelligence.&quot;
+            </p>
+            <div className="flex items-center justify-between flex-wrap gap-4 pt-3 border-t border-[var(--line)]">
+              <span className="text-xs font-mono font-bold text-[var(--ink)]">
+                By Richard Ewing: &quot;Why Static Resumes Are Dead&quot;
+              </span>
+              <a
+                href="https://www.linkedin.com/pulse/why-static-resumes-dead-shift-career-operating-systems-richard-ewing-iui1c"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-mono font-bold text-[var(--gold)] hover:underline inline-flex items-center gap-1"
+              >
+                Read Essay on LinkedIn ↗
+              </a>
+            </div>
+          </div>
 
-                {/* Core Pillars */}
-                <ScrollReveal>
-                    <section className="mb-20">
-                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-8 text-center">
-                            Three Pillars of Career Intelligence
-                        </h2>
-                        
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <div className="bg-white border border-zinc-300 rounded-2xl p-8 shadow-sm">
-                                <div className="p-3 bg-indigo-100 text-indigo-800 rounded-xl w-fit mb-4">
-                                    <TrendingUp className="w-6 h-6" />
-                                </div>
-                                <h3 className="text-xl font-grotesk font-bold text-zinc-950 mb-3">1. Market Value Benchmarks</h3>
-                                <p className="text-zinc-900 font-semibold text-sm leading-relaxed">
-                                    Real-time compensation data and equity valuation models adjusted for AI use, remote tiering, and engineering specialization.
-                                </p>
-                            </div>
+          {/* Beehiiv Context Engines Architecture Spotlight */}
+          <div className="bg-white border border-[var(--line)] rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <span className="px-3 py-1 bg-[var(--paper2)] text-[var(--ink)] text-xs font-mono font-bold rounded-full">
+                The AI Economist (Beehiiv) · August 21, 2026
+              </span>
+              <span className="text-xs font-mono text-[var(--muted)]">
+                Deep Architecture Note
+              </span>
+            </div>
+            <h3 className="text-xl font-serif font-bold text-[var(--ink)] mb-2">
+              How Context Engines Power AI Career Intelligence
+            </h3>
+            <p className="text-sm text-[var(--muted)] leading-relaxed italic mb-4">
+              &quot;When people hear about AI career tools, they usually picture a basic
+              prompt wrapper that takes a job description and rewrites a resume bullet
+              point. Those wrappers fail because they lack persistent memory. CareerWin.ai
+              solves this by structuring career history into discrete, verified relational
+              objects. Shifting from flat text prompts to structured context databases drops
+              hallucination rates to near zero and generates tailored application sets in
+              under 60 seconds.&quot;
+            </p>
+            <div className="flex items-center justify-between flex-wrap gap-4 pt-3 border-t border-[var(--line)]">
+              <span className="text-xs font-mono font-bold text-[var(--ink)]">
+                By Richard Ewing: &quot;Schemas, Memory Retention, and Building CareerWin.ai&quot;
+              </span>
+              <a
+                href="https://theaieconomist.beehiiv.com/p/how-context-engines-power-ai-career-intelligence"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-mono font-bold text-[var(--gold)] hover:underline inline-flex items-center gap-1"
+              >
+                Read Research on Beehiiv ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                            <div className="bg-white border border-zinc-300 rounded-2xl p-8 shadow-sm">
-                                <div className="p-3 bg-purple-100 text-purple-800 rounded-xl w-fit mb-4">
-                                    <Zap className="w-6 h-6" />
-                                </div>
-                                <h3 className="text-xl font-grotesk font-bold text-zinc-950 mb-3">2. Leveling Intelligence</h3>
-                                <p className="text-zinc-900 font-semibold text-sm leading-relaxed">
-                                    Map your technical scope from Senior to Staff, Principal, and VP of Engineering based on architectural use, not just tenure.
-                                </p>
-                            </div>
+      {/* Core Pillars */}
+      <section className="section border-t border-[var(--line)]">
+        <div className="max-w-4xl mx-auto">
+          <p className="eyebrow center">Framework</p>
+          <h2 className="text-3xl font-serif text-[var(--ink)] mb-8 text-center">
+            Three Pillars of Career Intelligence
+          </h2>
 
-                            <div className="bg-white border border-zinc-300 rounded-2xl p-8 shadow-sm">
-                                <div className="p-3 bg-emerald-100 text-emerald-800 rounded-xl w-fit mb-4">
-                                    <ShieldCheck className="w-6 h-6" />
-                                </div>
-                                <h3 className="text-xl font-grotesk font-bold text-zinc-950 mb-3">3. Negotiation Strategy</h3>
-                                <p className="text-zinc-900 font-semibold text-sm leading-relaxed">
-                                    Data-backed playbooks to negotiate executive compensation packages, performance bonuses, and advisory equity allocations.
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-                </ScrollReveal>
-
-                {/* Integration with AI Economics Ecosystem */}
-                <ScrollReveal>
-                    <section className="mb-20 bg-zinc-950 text-white rounded-3xl p-8 sm:p-12">
-                        <div className="max-w-2xl">
-                            <span className="text-xs font-mono font-bold text-indigo-400 uppercase tracking-widest mb-3 block">
-                                Ecosystem Integration
-                            </span>
-                            <h2 className="text-3xl font-grotesk font-bold mb-6">
-                                How CareerWin Fits Into the Ecosystem
-                            </h2>
-                            <p className="text-zinc-300 font-semibold text-base leading-relaxed mb-6">
-                                While <strong>Exogram</strong> governs enterprise AI runtime architecture and <strong>Advisory Services</strong> audits R&D capital spend for CTOs and CFOs, <strong>CareerWin.ai</strong> weaponizes that same financial data for individual career growth.
-                            </p>
-                            <div className="flex flex-wrap gap-4 text-xs font-mono">
-                                <span className="px-3 py-1.5 bg-zinc-800 rounded-lg text-indigo-300">✓ Role Benchmarking</span>
-                                <span className="px-3 py-1.5 bg-zinc-800 rounded-lg text-indigo-300">✓ Leveling Playbooks</span>
-                                <span className="px-3 py-1.5 bg-zinc-800 rounded-lg text-indigo-300">✓ Executive Equity Analysis</span>
-                            </div>
-                        </div>
-                    </section>
-                </ScrollReveal>
-
-                {/* Final CTA */}
-                <ScrollReveal>
-                    <div className="bg-white border border-zinc-300 rounded-3xl p-8 sm:p-12 text-center shadow-sm">
-                        <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">
-                            Ready to baseline your career market value?
-                        </h2>
-                        <p className="text-zinc-900 font-semibold max-w-xl mx-auto text-base mb-8">
-                            Access CareerWin.ai's career intelligence suite or explore our executive curriculum.
-                        </p>
-                        <a 
-                            href="https://careerwin.ai/" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase tracking-widest text-xs rounded-xl shadow-md transition-all gap-2"
-                        >
-                            Launch CareerWin.ai Platform <ExternalLink className="w-4 h-4" />
-                        </a>
-                    </div>
-                </ScrollReveal>
-
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white border border-[var(--line)] rounded-2xl p-7 shadow-sm">
+              <div className="p-3 bg-[var(--paper2)] text-[var(--gold)] rounded-xl w-fit mb-4">
+                <TrendingUp className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-serif font-bold text-[var(--ink)] mb-2">
+                1. Market Value Benchmarks
+              </h3>
+              <p className="text-xs text-[var(--muted)] leading-relaxed">
+                Real-time compensation data and equity valuation models adjusted for AI use,
+                remote tiering, and engineering specialization.
+              </p>
             </div>
 
-            {/* Research Foundations */}
-            <section className="max-w-5xl mx-auto px-6 py-16">
-                <div className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
-                    <div className="space-y-1">
-                        <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
-                            Empirical Foundations
-                        </span>
-                        <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
-                            Career Economics Research
-                        </h2>
-                    </div>
+            <div className="bg-white border border-[var(--line)] rounded-2xl p-7 shadow-sm">
+              <div className="p-3 bg-[var(--paper2)] text-[var(--gold)] rounded-xl w-fit mb-4">
+                <Zap className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-serif font-bold text-[var(--ink)] mb-2">
+                2. Leveling Intelligence
+              </h3>
+              <p className="text-xs text-[var(--muted)] leading-relaxed">
+                Map your technical scope from Senior to Staff, Principal, and VP of
+                Engineering based on architectural leverage, not just tenure.
+              </p>
+            </div>
 
-                    <div className="space-y-3 pt-2">
-                        {RESEARCH_CORPUS.filter(
-                            (art) => art.domain === 'Career Economics' || art.domain === 'Product Leadership'
-                        ).slice(0, 6).map((art) => (
-                            <div key={art.id} className="bg-zinc-50 border border-zinc-200 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                                <div className="space-y-1">
-                                    <div className="flex items-center gap-2 text-[10px] font-mono font-bold">
-                                        <span className="text-cyan-900 uppercase">{art.publisher}</span>
-                                        {art.date && <span className="text-zinc-500">• {art.date}</span>}
-                                    </div>
-                                    <h3 className="text-sm font-bold text-zinc-950">
-                                        {art.title}
-                                    </h3>
-                                </div>
-                                <a
-                                    href={art.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="px-3 py-1.5 bg-cyan-900 text-white text-xs font-mono font-bold rounded-xl whitespace-nowrap self-start sm:self-center hover:bg-cyan-800"
-                                >
-                                    Read Work ↗
-                                </a>
-                            </div>
-                        ))}
-                    </div>
+            <div className="bg-white border border-[var(--line)] rounded-2xl p-7 shadow-sm">
+              <div className="p-3 bg-[var(--paper2)] text-[var(--gold)] rounded-xl w-fit mb-4">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-serif font-bold text-[var(--ink)] mb-2">
+                3. Negotiation Strategy
+              </h3>
+              <p className="text-xs text-[var(--muted)] leading-relaxed">
+                Data-backed playbooks to negotiate executive compensation packages,
+                performance bonuses, and advisory equity allocations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ecosystem Integration Banner */}
+      <section className="section border-t border-[var(--line)]">
+        <div className="max-w-4xl mx-auto bg-[var(--forest2)] text-white rounded-3xl p-8 sm:p-12 shadow-xl border border-white/10">
+          <div className="max-w-2xl">
+            <span className="text-xs font-mono font-bold text-[var(--gold)] uppercase tracking-widest mb-3 block">
+              Ecosystem Integration
+            </span>
+            <h2 className="text-3xl font-serif font-bold text-white mb-4">
+              How CareerWin Fits Into the Ecosystem
+            </h2>
+            <p className="text-zinc-300 text-sm leading-relaxed mb-6">
+              While <strong>Exogram</strong> governs enterprise AI runtime architecture and{' '}
+              <strong>Advisory Services</strong> audits R&amp;D capital spend for CTOs and
+              CFOs, <strong>CareerWin.ai</strong> applies that same financial data for
+              individual career growth.
+            </p>
+            <div className="flex flex-wrap gap-3 text-xs font-mono">
+              <span className="px-3 py-1.5 bg-white/10 rounded-lg text-white">
+                ✓ Role Benchmarking
+              </span>
+              <span className="px-3 py-1.5 bg-white/10 rounded-lg text-white">
+                ✓ Leveling Playbooks
+              </span>
+              <span className="px-3 py-1.5 bg-white/10 rounded-lg text-white">
+                ✓ Executive Equity Analysis
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Research Foundations */}
+      <section className="section border-t border-[var(--line)]">
+        <div className="max-w-4xl mx-auto bg-white border border-[var(--line)] rounded-3xl p-8 shadow-sm">
+          <div className="mb-6">
+            <span className="text-xs font-mono font-bold text-[var(--gold)] uppercase tracking-wider block mb-1">
+              Empirical Foundations
+            </span>
+            <h2 className="text-2xl font-serif font-bold text-[var(--ink)]">
+              Career Economics Research
+            </h2>
+          </div>
+
+          <div className="space-y-3">
+            {careerResearch.map((art) => (
+              <div
+                key={art.id}
+                className="bg-[var(--paper)] border border-[var(--line)] rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+              >
+                <div>
+                  <div className="flex items-center gap-2 text-[10px] font-mono font-bold text-[var(--muted)] mb-1">
+                    <span className="text-[var(--gold)] uppercase">{art.publisher}</span>
+                    {art.date && <span>· {art.date}</span>}
+                  </div>
+                  <h3 className="text-sm font-serif font-bold text-[var(--ink)]">
+                    {art.title}
+                  </h3>
                 </div>
-            </section>
+                <a
+                  href={art.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button button-outline text-xs whitespace-nowrap self-start sm:self-center"
+                >
+                  Read Work ↗
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-        </main>
-    );
+      {/* Closing CTA */}
+      <section className="closing-cta">
+        <p className="eyebrow">Career Strategy</p>
+        <h2>Ready to baseline your career market value?</h2>
+        <p>
+          Access CareerWin.ai&apos;s career intelligence suite or explore our executive
+          curriculum.
+        </p>
+        <div className="actions center">
+          <a
+            href="https://careerwin.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button button-gold"
+          >
+            Launch CareerWin.ai Platform ↗
+          </a>
+          <Link href="/portfolio" className="button button-ghost-light">
+            Back to Executive Portfolio ↗
+          </Link>
+        </div>
+      </section>
+    </>
+  );
 }

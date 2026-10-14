@@ -11,9 +11,23 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (label: string) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setOpenGroup(label);
+  };
+
+  const handleMouseLeave = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      setOpenGroup(null);
+    }, 180);
+  };
 
   // Close menus on route change
   useEffect(() => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setOpenGroup(null);
     setMobileMenuOpen(false);
   }, [pathname]);
@@ -65,8 +79,8 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             <div
               className="nav-group"
               key={item.label}
-              onMouseEnter={() => setOpenGroup(item.label)}
-              onMouseLeave={() => setOpenGroup(null)}
+              onMouseEnter={() => handleMouseEnter(item.label)}
+              onMouseLeave={handleMouseLeave}
             >
               <button
                 className="nav-trigger"

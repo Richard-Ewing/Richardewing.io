@@ -2,170 +2,166 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'AI Economics Resources & Tools Hub',
+    title: 'AI Economics Resources & Tools Hub | Richard Ewing',
     description: 'Complete library of diagnostic calculators, prompt architectures, execution blueprints, and research papers. Practical tools for engineering leaders.',
-    keywords: ['technology resources', 'CTO tools', 'engineering metrics', 'product management resources', 'Richard Ewing tools', 'free SaaS tools'],
     alternates: { canonical: 'https://www.richardewing.io/resources' },
-    openGraph: { title: 'Resources Hub | Richard Ewing', description: 'Access free tools, a 2026 tech glossary, curriculum tracks, deep-dive articles, and strategic frameworks for engineering economics.', url: 'https://www.richardewing.io/resources', type: 'website' },
+    openGraph: {
+        title: 'Resources Hub | Richard Ewing',
+        description: 'Access free tools, a technology glossary, curriculum tracks, deep-dive articles, and strategic frameworks for engineering economics.',
+        url: 'https://www.richardewing.io/resources',
+        type: 'website',
+    },
 };
 
 const resourceSections = [
     {
-        title: 'Free Diagnostic Tools',
-        description: 'Quantify engineering ROI, AI unit economics, and team productivity with proprietary calculators.',
-        icon: '🔧',
+        title: 'Diagnostic Tools & Calculators',
+        description: 'Quantify engineering ROI, AI unit economics, and team productivity with transparent calculators.',
         items: [
+            { name: 'The AI Reality Check (Interactive)', description: 'Audit the delta between AI sales claims and production telemetry', href: '/reality-check' },
             { name: 'Product Debt Index (PDI)', description: 'Calculate your technical debt in dollar terms', href: '/tools/pdi' },
-            { name: 'Enterprise Value Scenario Engine (EV-SE)', description: 'Model how metrics changes impact valuation', href: '/tools/ev-se' },
+            { name: 'Enterprise Value Scenario Engine (EV-SE)', description: 'Model how metrics changes impact enterprise valuation', href: '/tools/ev-se' },
             { name: 'AI Unit Economics Benchmark (AUEB)', description: 'Calculate the true cost of AI features', href: '/tools/aueb' },
             { name: 'Revenue Per Engineer (APER)', description: 'Benchmark your engineering productivity', href: '/tools/aper' },
-            { name: 'Audit Interview', description: 'Test verification skills, not code generation', href: '/tools/audit-interview' },
         ],
     },
     {
-        title: 'Glossary (400+ Terms)',
-        description: 'The most comprehensive technology leadership glossary  -  from technical debt to AI governance.',
-        icon: '📖',
+        title: 'Research & Publications',
+        description: 'Peer-reviewed articles, canonical concepts, and empirical field studies.',
         items: [
-            { name: 'Technical Debt & Code Quality', description: '16+ terms on debt measurement & management', href: '/glossary' },
-            { name: 'AI & Machine Learning', description: '20+ terms on LLMs, RAG, governance, and agent frameworks', href: '/glossary' },
-            { name: 'AI Governance & Verification', description: '14 Exogram-derived terms on AI trust infrastructure', href: '/glossary' },
-            { name: 'DevOps & Platform Engineering', description: 'CI/CD, K8s, IaC, SRE, observability, and more', href: '/glossary' },
-            { name: 'All 26+ Categories', description: 'Browse the complete glossary', href: '/glossary' },
-        ],
-    },
-    {
-        title: 'Learning Curriculum',
-        description: 'Structured learning tracks for CTOs, product managers, and investors.',
-        icon: '🎓',
-        items: [
-            { name: 'CTO / Engineering Leader Track', description: 'Architecture, team building, metrics, AI governance', href: '/curriculum' },
-            { name: 'Product Manager / CPO Track', description: 'Strategy, analytics, pricing, product-led growth', href: '/curriculum' },
-            { name: 'PE / VC / Investor Track', description: 'Due diligence, valuation, metrics, portfolio management', href: '/curriculum' },
-        ],
-    },
-    {
-        title: 'AI Training (Anthropic Academy)',
-        description: 'Free, self-paced AI courses from Anthropic  -  curated by Richard Ewing with editorial commentary.',
-        icon: '🤖',
-        items: [
-            { name: 'All 15 Curated Courses', description: 'Full catalog grouped by audience with Richard\'s editorial take', href: '/resources/ai-courses' },
-            { name: 'Claude 101', description: 'Learn how to use Claude for everyday work', href: 'https://anthropic.skilljar.com/claude-101' },
-            { name: 'Building with Claude API', description: 'Integrate Claude into your applications', href: 'https://anthropic.skilljar.com/claude-with-the-anthropic-api' },
-            { name: 'Intro to MCP', description: 'Build MCP servers and clients from scratch', href: 'https://anthropic.skilljar.com/introduction-to-model-context-protocol' },
-        ],
-    },
-    {
-        title: 'Articles & Publications',
-        description: 'Published insights on AI economics, AI, and engineering leadership.',
-        icon: '📝',
-        items: [
-            { name: 'Publications Catalog (174+ Works)', description: 'Full catalog across CIO.com, Built In, Beehiiv, LinkedIn', href: '/research/publications' },
+            { name: 'Publications Catalog (174+ Works)', description: 'Full catalog across CIO.com, Built In, Beehiiv, and LinkedIn', href: '/research/publications' },
             { name: 'Canonical Concepts (140+ Frameworks)', description: 'The intellectual operating system of Richard Ewing research', href: '/concepts' },
-            { name: 'The AI Reality Check (Interactive Demo)', description: 'Audit the delta between AI sales demos and production telemetry', href: '/reality-check' },
-            { name: 'All Articles', description: 'Published in Built In, Mind the Product, CIO.com', href: '/articles' },
-            { name: 'AI Economist Doctrine', description: 'The 4-principle framework for engineering capital allocation', href: '/doctrine' },
-            { name: 'Manifesto', description: 'Philosophy behind the AI Economist approach', href: '/manifesto' },
-            { name: 'Executive Briefings', description: 'Weekly intelligence for technology leaders', href: '/briefings' },
-            { name: 'R&D Audit Checklist', description: 'The 15 questions from every $7,500 engagement', href: '/checklist' },
-            { name: 'FAQ', description: 'Common questions about advisory, tools, and Exogram', href: '/faq' },
+            { name: 'The AI Economist Newsletter', description: 'Weekly executive briefings on AI unit economics and governance', href: '/newsletter' },
+            { name: 'Production AI Governance Framework', description: 'The 5-tier isometric stack for pricing and governing AI', href: '/framework' },
         ],
     },
     {
-        title: 'Frameworks & Methodologies',
-        description: 'Proprietary frameworks developed from 20+ years of technology leadership.',
-        icon: '🏗️',
+        title: 'Executive Lexicon & Glossaries',
+        description: 'Plain-English definitions for technology leaders and board members.',
         items: [
-            { name: 'Technical Insolvency Date', description: 'When maintenance consumes 100% of engineering', href: '/articles/frameworks/technical-insolvency-date' },
-            { name: 'Innovation Tax', description: 'Hidden maintenance masquerading as R&D', href: '/articles/frameworks/innovation-tax' },
-            { name: 'Cost of Predictivity', description: 'The exponential cost curve of AI accuracy', href: '/concepts/cost-of-predictivity' },
-            { name: 'Kill Switch Protocol', description: 'Framework for identifying and removing zombie features', href: '/concepts/agent-kill-switch' },
-            { name: 'AI Liability Gradient', description: 'How liability scales non-linearly with AI autonomy', href: '/glossary/ai-liability-gradient' },
+            { name: 'The Complete Glossary (400+ Terms)', description: 'Master the lexicon of product economics and AI governance', href: '/glossary' },
+            { name: 'Technical Insolvency Date', description: 'When maintenance consumes 100% of engineering capacity', href: '/technical-insolvency-date' },
+            { name: 'ROAI Framework', description: 'A practical approach to measuring return on AI investment', href: '/roai-framework' },
+            { name: 'Security & Trust Principles', description: 'Security principles, trust boundaries, and responsible AI', href: '/security-trust' },
         ],
     },
     {
-        title: 'Exogram: AI Verification Platform',
-        description: 'The execution control plane for autonomous AI agents. Built by Richard Ewing.',
-        icon: '🔮',
+        title: 'Commercial Kits & Advisory',
+        description: 'Practical worksheets, sprint scopes, and embedded leadership paths.',
         items: [
-            { name: 'What is Exogram?', description: 'The verification infrastructure for AI', href: '/exogram' },
-            { name: 'Action Admissibility', description: 'Deterministic governance for AI agents', href: '/glossary/pillars/governance-architecture#action-admissibility' },
-            { name: 'Truth Ledger', description: 'Versioned, source-attributed facts for AI', href: '/glossary/pillars/governance-architecture#truth-ledger' },
-            { name: 'Visit Exogram.ai', description: 'The product website', href: 'https://exogram.ai' },
-        ],
-    },
-    {
-        title: 'Industry Benchmarks & Talent Forensics',
-        description: 'Empirical studies on enterprise AI screening, resume detection, and hiring forensics.',
-        icon: '📊',
-        items: [
-            { name: 'Enterprise ATS & AI Resume Benchmark', description: 'Read our latest benchmark study on Enterprise ATS Parsing & AI Resume Detection at CareerWin.', href: 'https://careerwin.ai/research/2026-enterprise-ats-ai-resume-benchmark-study' },
-            { name: 'Audit Interview Protocol', description: 'Evaluating engineering candidate judgment and system architecture rather than syntax', href: '/tools/audit-interview' },
+            { name: 'The $29 Operating Kit', description: '5 working P&L spreadsheets, board deck templates, and workspace access', href: '/operating-kit' },
+            { name: 'Pricing & Sprints Directory', description: 'Transparent engagement options from 48-hour teardowns to 21-day builds', href: '/pricing-sprints' },
+            { name: 'Executive Advisory Tracks', description: 'Strategic advisory for CEOs, CFOs, and product leaders', href: '/advisory' },
+            { name: 'Speaking & Keynotes', description: 'Keynotes and workshops on AI economics and engineering productivity', href: '/speaking' },
         ],
     },
 ];
 
 export default function ResourcesPage() {
-    return (
-        <main className="pt-24 pb-20">
-            <div className="page-container">
-                <section className="text-center mb-16">
-                    <p className="text-xs font-bold font-mono text-cyan-500 uppercase tracking-widest mb-4">Resource Hub</p>
-                    <h1 className="text-4xl md:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Everything You Need.<br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">All Free.</span>
-                    </h1>
-                    <p className="text-lg text-zinc-950 font-bold max-w-2xl mx-auto">
-                        Tools, frameworks, and knowledge designed to help technology leaders make better capital allocation decisions.
-                    </p>
-                </section>
+    const schema = {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'AI Economics Resources & Tools Hub | Richard Ewing',
+        description: 'Complete library of diagnostic calculators, prompt architectures, and research papers.',
+        url: 'https://www.richardewing.io/resources',
+    };
 
-                <div className="space-y-12 max-w-5xl mx-auto">
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            />
+
+            {/* Hero Section */}
+            <section className="inner-hero">
+                <div className="inner-art" />
+                <div className="inner-copy">
+                    <p className="eyebrow">
+                        <i /> Operating Knowledge · Resources Hub
+                    </p>
+                    <h1>Everything you need to fix your AI economics.</h1>
+                    <p className="inner-lede">
+                        A curated directory of diagnostic tools, research papers, executive frameworks,
+                        and commercial playbooks designed to help leaders make disciplined technology decisions.
+                    </p>
+                    <div className="actions">
+                        <Link className="button button-gold" href="/reality-check">
+                            Run the Reality Check ↗
+                        </Link>
+                        <Link className="button button-outline" href="/research/publications">
+                            Browse Publications ↗
+                        </Link>
+                    </div>
+                </div>
+
+                <aside className="inner-aside glass">
+                    <span>RESOURCE PRINCIPLE</span>
+                    <strong>Tools over rhetoric. Math over hype.</strong>
+                    <p>
+                        Every resource in this library is designed for direct operational utility:
+                        tested in production software environments and verified against real P&amp;L outcomes.
+                    </p>
+                </aside>
+            </section>
+
+            {/* Resource Sections */}
+            <section className="section">
+                <div className="space-y-16 max-w-5xl mx-auto">
                     {resourceSections.map((section) => (
-                        <section key={section.title} className="card p-8">
-                            <div className="flex items-start gap-4 mb-6">
-                                <span className="text-3xl">{section.icon}</span>
-                                <div>
-                                    <h2 className="text-xl font-bold text-zinc-900">{section.title}</h2>
-                                    <p className="text-zinc-950 font-bold text-sm font-semibold mt-1">{section.description}</p>
-                                </div>
+                        <div key={section.title} className="space-y-6">
+                            <div className="border-b border-[var(--line)] pb-4">
+                                <h2 className="text-2xl sm:text-3xl font-serif font-medium text-[var(--ink)]">
+                                    {section.title}
+                                </h2>
+                                <p className="text-xs text-[var(--muted)] mt-1">
+                                    {section.description}
+                                </p>
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {section.items.map((item) => (
                                     <Link
                                         key={item.name}
                                         href={item.href}
                                         {...(item.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                                        className="flex items-center justify-between p-4 rounded-lg bg-white/5 border border-zinc-400 hover:border-cyan-500/30 hover:bg-cyan-500/5 transition-all group"
+                                        className="p-5 rounded-xl border border-[var(--line)] bg-[#FAF8F3] hover:border-[var(--forest)] hover:shadow-sm transition flex flex-col justify-between group"
                                     >
-                                        <div>
-                                            <div className="font-semibold text-zinc-950 group-hover:text-cyan-900 font-extrabold font-semibold transition-colors text-sm">{item.name}</div>
-                                            <div className="text-xs font-bold text-zinc-950 mt-0.5">{item.description}</div>
+                                        <div className="space-y-1.5">
+                                            <div className="font-serif font-semibold text-base text-[var(--ink)] group-hover:text-[var(--forest)] transition-colors">
+                                                {item.name}
+                                            </div>
+                                            <p className="text-xs text-[var(--muted)] leading-relaxed">
+                                                {item.description}
+                                            </p>
                                         </div>
-                                        <span className="text-zinc-950 font-bold group-hover:text-cyan-900 font-extrabold font-semibold transition-colors ml-2">→</span>
+                                        <span className="text-[11px] font-mono text-[var(--gold)] mt-3 block">
+                                            Explore ↗
+                                        </span>
                                     </Link>
                                 ))}
                             </div>
-                        </section>
+                        </div>
                     ))}
                 </div>
+            </section>
 
-                {/* CTA */}
-                <section className="text-center mt-16">
-                    <div className="card p-10 border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-transparent max-w-2xl mx-auto">
-                        <h2 className="text-2xl font-bold text-zinc-950 mb-4">Need personalized guidance?</h2>
-                        <p className="text-zinc-950 font-bold mb-6">Our advisory services provide hands-on support tailored to your organization.</p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/pricing" className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-cobalt text-zinc-950 font-semibold font-bold rounded-lg hover:opacity-90 transition-opacity text-sm">
-                                View Pricing →
-                            </Link>
-                            <Link href="/services" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
-                                Book Free Call →
-                            </Link>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </main>
+            {/* Closing CTA */}
+            <section className="closing-cta">
+                <p className="eyebrow">Next Step</p>
+                <h2>Need tailored guidance for your organization?</h2>
+                <p>
+                    Book a focused 1-on-1 P&amp;L teardown or explore an embedded advisory engagement.
+                </p>
+                <div className="actions center">
+                    <Link className="button button-gold" href="/reality-check">
+                        Run the free Reality Check ↗
+                    </Link>
+                    <Link className="button button-ghost-light" href="/pricing-sprints">
+                        View Sprints &amp; Pricing ↗
+                    </Link>
+                </div>
+            </section>
+        </>
     );
 }

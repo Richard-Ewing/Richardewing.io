@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { glossaryTerms } from './terms';
 import { PILLARS, CATEGORY_MAP, KEEP_TERMS } from './pillarsMapping';
-import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { ChevronDown, ChevronUp, Search, X } from 'lucide-react';
 
 export default function GlossaryContent() {
@@ -28,11 +27,10 @@ export default function GlossaryContent() {
         };
     }).filter(g => g.terms.length > 0);
 
-    // Initialize first category as open if we haven't touched it and search is empty
     const isCategoryOpen = (cat: string) => {
-        if (searchQuery !== '') return true; // Auto-expand all matching categories when searching
+        if (searchQuery !== '') return true;
         if (openCategories[cat] !== undefined) return openCategories[cat];
-        return cat === termsByCategory[0]?.category; // Open first by default
+        return cat === termsByCategory[0]?.category;
     };
 
     const toggleCategory = (cat: string) => {
@@ -43,245 +41,198 @@ export default function GlossaryContent() {
     };
 
     return (
-        <div className="max-w-6xl w-full relative z-10 mx-auto">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
-
-            <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
-                <span>Knowledge</span><span>/</span><span className="text-cyan-900 font-extrabold">Glossary</span>
-            </div>
-
-            <ScrollReveal>
-                <div className="mb-12 border-b border-zinc-400 pb-12">
-                    <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-900 mb-6">
-                        Product, AI &amp; Engineering Economics <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600">Glossary.</span>
+        <div className="max-w-6xl w-full mx-auto space-y-12">
+            {/* Header & Search */}
+            <div className="border-b border-[var(--line)] pb-10 space-y-6">
+                <div>
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--gold)] block mb-2">
+                        Executive Lexicon · {glossaryTerms.length}+ Terms Defined
+                    </span>
+                    <h1 className="text-4xl sm:text-6xl font-serif font-medium text-[var(--ink)] tracking-tight mb-4">
+                        Product, AI &amp; Engineering Economics Glossary.
                     </h1>
-                    <p className="text-lg text-zinc-950 font-bold leading-relaxed max-w-2xl mb-8">
-                        {glossaryTerms.length}+ terms defined with plain-English explanations, practical FAQs, and links to free diagnostic tools.
-                        <br />
-                        <span className="text-zinc-950">Product economics, AI unit economics, technical debt, SaaS P&amp;L metrics, and engineering leadership - explained.</span>
+                    <p className="text-base text-[var(--muted)] leading-relaxed max-w-3xl">
+                        Clear, non-technical definitions for software unit economics, technical insolvency,
+                        zombie features, retry inflation, and board-level engineering metrics.
                     </p>
-
-                    {/* Search Input */}
-                    <div className="relative max-w-md w-full mb-4">
-                        <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 w-5 h-5" />
-                        <input
-                            type="text"
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                            placeholder={`Search ${glossaryTerms.length}+ terms (e.g. Product Economics, AI Unit Economics)...`}
-                            className="w-full pl-12 pr-10 py-4 bg-white border border-zinc-400 rounded-2xl text-zinc-900 font-medium placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500 transition-all shadow-sm"
-                        />
-                        {searchQuery && (
-                            <button
-                                onClick={() => setSearchQuery('')}
-                                className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-800 transition-colors"
-                            >
-                                <X className="w-5 h-5" />
-                            </button>
-                        )}
-                    </div>
-
-                    {/* Quick Non-Technical Topic Filter Pills */}
-                    <div className="space-y-3">
-                        <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
-                            <span className="text-zinc-500 font-mono pr-1">Search by what is broken:</span>
-                            {[
-                                { label: "AI bill too high", query: "Retry Inflation" },
-                                { label: "Developers moving slower", query: "APER" },
-                                { label: "AI losing money on users", query: "AI Unit Economics" },
-                                { label: "Prompts breaking on updates", query: "Model Version" },
-                                { label: "Engineers babysitting prompts", query: "API Janitor" },
-                                { label: "Unapproved shadow AI tools", query: "Shadow AI" },
-                                { label: "Code debt in dollars", query: "Product Debt Index" },
-                            ].map((chip, idx) => (
-                                <button
-                                    key={idx}
-                                    onClick={() => setSearchQuery(searchQuery === chip.query ? '' : chip.query)}
-                                    className={`px-3 py-1.5 rounded-full border transition-all ${
-                                        searchQuery === chip.query
-                                            ? 'bg-rose-700 text-white border-rose-700 font-bold'
-                                            : 'bg-white text-zinc-800 border-rose-200 hover:border-rose-400 hover:bg-rose-50'
-                                    }`}
-                                >
-                                    {chip.label}
-                                </button>
-                            ))}
-                        </div>
-
-                        <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
-                            <span className="text-zinc-500 font-mono pr-1">Filter by category:</span>
-                            {[
-                                { label: "AI Overspend", query: "AI" },
-                                { label: "Technical Debt", query: "Debt" },
-                                { label: "Cloud & FinOps", query: "Cost" },
-                                { label: "Governance & Risk", query: "Governance" }
-                            ].map((chip, idx) => (
-                                <button
-                                    key={idx}
-                                    onClick={() => setSearchQuery(searchQuery === chip.query ? '' : chip.query)}
-                                    className={`px-3 py-1.5 rounded-full border transition-all ${
-                                        searchQuery === chip.query
-                                            ? 'bg-purple-700 text-white border-purple-700 font-bold'
-                                            : 'bg-white text-zinc-700 border-zinc-300 hover:border-purple-400 hover:bg-purple-50'
-                                    }`}
-                                >
-                                    {chip.label}
-                                </button>
-                            ))}
-                        </div>
-                    </div>
                 </div>
-            </ScrollReveal>
 
-            {/* Core Architectural Pillar Hubs */}
-            <ScrollReveal delay={150}>
-                <div className="mb-12">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 border-b border-zinc-300 pb-3 gap-2">
-                        <div>
-                            <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest block mb-1">
-                                Consolidated Knowledge Hubs
-                            </span>
-                            <h2 className="text-2xl font-bold text-zinc-950 font-grotesk">
-                                Strategic Pillar Hubs
-                            </h2>
-                        </div>
-                        <p className="text-xs font-mono font-bold text-zinc-600 uppercase tracking-wider">
-                            Domain Consolidation Engines
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {PILLARS.slice(0, 8).map((pillar) => (
-                            <Link
-                                key={pillar.slug}
-                                href={`/glossary/pillars/${pillar.slug}`}
-                                className="p-4 rounded-xl border border-zinc-300 bg-white hover:border-cyan-500 hover:shadow-sm transition-all flex flex-col justify-between group"
-                            >
-                                <div>
-                                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-900 px-2 py-0.5 rounded bg-cyan-50 border border-cyan-200 inline-block mb-2">
-                                        Pillar Hub
-                                    </span>
-                                    <h3 className="text-sm font-bold font-grotesk text-zinc-950 group-hover:text-cyan-900 transition-colors">
-                                        {pillar.name}
-                                    </h3>
-                                </div>
-                                <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-cyan-800 group-hover:text-cyan-950 mt-4 flex items-center justify-between">
-                                    <span>Explore Pillar</span>
-                                    <span>&rarr;</span>
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            </ScrollReveal>
-
-            <div className="space-y-6">
-                {termsByCategory.length === 0 && (
-                    <div className="text-center py-12 border border-dashed border-zinc-400 rounded-3xl bg-zinc-50/50">
-                        <p className="text-zinc-600 font-medium">No glossary terms match your search query.</p>
+                {/* Search Input */}
+                <div className="relative max-w-md w-full">
+                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--muted)] w-4 h-4" />
+                    <input
+                        type="text"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        placeholder={`Search ${glossaryTerms.length}+ terms (e.g. AI Unit Economics, PDI)...`}
+                        className="w-full pl-11 pr-10 py-3 bg-[#faf8f2] border border-[var(--line)] rounded-xl text-sm text-[var(--ink)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[var(--forest)] transition"
+                    />
+                    {searchQuery && (
                         <button
                             onClick={() => setSearchQuery('')}
-                            className="mt-3 text-cyan-600 hover:text-cyan-700 font-bold text-sm underline"
+                            className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[var(--muted)] hover:text-[var(--ink)]"
                         >
-                            Clear search
+                            <X className="w-4 h-4" />
+                        </button>
+                    )}
+                </div>
+
+                {/* Quick Topic Filter Chips */}
+                <div className="flex flex-wrap items-center gap-2 pt-1 text-xs">
+                    <span className="font-mono text-[var(--muted)] mr-1">Quick Filters:</span>
+                    {[
+                        { label: 'AI Overspend', query: 'Retry Inflation' },
+                        { label: 'Engineering Velocity', query: 'APER' },
+                        { label: 'Token Margins', query: 'AI Unit Economics' },
+                        { label: 'Code Debt in Dollars', query: 'Product Debt Index' },
+                        { label: 'Shadow AI', query: 'Shadow AI' },
+                        { label: 'Technical Insolvency', query: 'Technical Insolvency' },
+                    ].map((chip, idx) => (
+                        <button
+                            key={idx}
+                            onClick={() => setSearchQuery(searchQuery === chip.query ? '' : chip.query)}
+                            className={`px-3 py-1.5 rounded-full border transition-all text-xs font-medium ${
+                                searchQuery === chip.query
+                                    ? 'bg-[var(--forest)] text-[#f7f5ed] border-[var(--forest)]'
+                                    : 'bg-[#faf8f2] text-[#4a5850] border-[var(--line)] hover:border-[var(--forest)]'
+                            }`}
+                        >
+                            {chip.label}
+                        </button>
+                    ))}
+                </div>
+            </div>
+
+            {/* Strategic Pillar Hubs Grid */}
+            <div className="space-y-4">
+                <div className="flex items-center justify-between border-b border-[var(--line)] pb-3">
+                    <div>
+                        <span className="text-[10px] font-mono font-bold text-[var(--gold)] uppercase tracking-wider block mb-0.5">
+                            Core Knowledge Pillars
+                        </span>
+                        <h2 className="text-2xl font-serif font-medium text-[var(--ink)]">
+                            Strategic Topic Hubs
+                        </h2>
+                    </div>
+                    <span className="text-xs font-mono text-[var(--muted)]">
+                        Domain Directory
+                    </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    {PILLARS.slice(0, 8).map((pillar) => (
+                        <Link
+                            key={pillar.slug}
+                            href={`/glossary/pillars/${pillar.slug}`}
+                            className="p-5 rounded-xl border border-[var(--line)] bg-[#FAF8F3] hover:border-[var(--forest)] hover:shadow-sm transition-all flex flex-col justify-between group"
+                        >
+                            <div>
+                                <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-[var(--forest)] px-2 py-0.5 rounded bg-[rgba(30,51,39,0.06)] inline-block mb-3">
+                                    Knowledge Hub
+                                </span>
+                                <h3 className="text-sm font-serif font-semibold text-[var(--ink)] group-hover:text-[var(--forest)] transition-colors">
+                                    {pillar.name}
+                                </h3>
+                            </div>
+                            <div className="text-[11px] font-mono text-[var(--gold)] mt-4 flex items-center justify-between">
+                                <span>Explore Hub</span>
+                                <span>→</span>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+            </div>
+
+            {/* Accordion Terms by Category */}
+            <div className="space-y-6 pt-4">
+                {termsByCategory.length === 0 && (
+                    <div className="text-center py-12 border border-dashed border-[var(--line)] rounded-2xl bg-[#faf8f2]">
+                        <p className="text-[var(--muted)] text-sm">No glossary terms match your search query.</p>
+                        <button
+                            onClick={() => setSearchQuery('')}
+                            className="mt-3 text-[var(--forest)] hover:underline font-mono text-xs"
+                        >
+                            Clear search filter
                         </button>
                     </div>
                 )}
-                {termsByCategory.map((group, gi) => {
+                {termsByCategory.map((group) => {
                     const isOpen = isCategoryOpen(group.category);
                     return (
-                        <ScrollReveal key={group.category} delay={gi * 50}>
-                            <div className={`border ${isOpen ? 'border-cyan-300 bg-cyan-50/50' : 'border-zinc-400 bg-white'} rounded-2xl overflow-hidden transition-all duration-300`}>
-                                {/* Accordion Header */}
-                                <div className="w-full flex items-center justify-between p-6 sm:p-8 hover:bg-zinc-50 transition-colors">
-                                    <button 
-                                        onClick={() => toggleCategory(group.category)}
-                                        className="flex items-center gap-4 flex-1 text-left cursor-pointer"
+                        <div
+                            key={group.category}
+                            className="border border-[var(--line)] rounded-xl bg-[#FAF8F3] overflow-hidden transition-all"
+                        >
+                            {/* Accordion Header */}
+                            <div className="w-full flex items-center justify-between p-6 hover:bg-[#f5f2e8] transition-colors">
+                                <button 
+                                    onClick={() => toggleCategory(group.category)}
+                                    className="flex items-center gap-4 flex-1 text-left cursor-pointer"
+                                >
+                                    <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 bg-[rgba(30,51,39,0.08)] text-[var(--forest)]">
+                                        <span className="font-mono text-xs font-bold">{group.terms.length}</span>
+                                    </div>
+                                    <h2 className="text-xl font-serif font-medium text-[var(--ink)]">
+                                        {group.category}
+                                    </h2>
+                                </button>
+                                <div className="flex items-center gap-3">
+                                    <Link
+                                        href={`/glossary/pillars/${group.slug}`}
+                                        className="text-[11px] font-mono text-[var(--forest)] hover:underline uppercase tracking-wider px-2.5 py-1 rounded border border-[var(--line)] bg-white"
                                     >
-                                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${isOpen ? 'bg-cyan-100 text-cyan-900 font-extrabold' : 'bg-zinc-100 text-zinc-900'}`}>
-                                            <span className="font-bold font-mono">{group.terms.length}</span>
-                                        </div>
-                                        <h2 className={`text-2xl font-bold font-grotesk transition-colors ${isOpen ? 'text-zinc-900' : 'text-zinc-900'}`}>
-                                            {group.category}
-                                        </h2>
+                                        Pillar Hub ↗
+                                    </Link>
+                                    <button
+                                        onClick={() => toggleCategory(group.category)}
+                                        className="shrink-0 text-[var(--muted)] hover:text-[var(--ink)] cursor-pointer p-1"
+                                        aria-label="Toggle section"
+                                    >
+                                        {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                                     </button>
-                                    <div className="flex items-center gap-3">
-                                        <Link
-                                            href={`/glossary/pillars/${group.slug}`}
-                                            className="text-xs font-mono font-bold text-cyan-900 hover:text-cyan-950 uppercase tracking-widest px-3 py-1.5 rounded-lg bg-cyan-100 hover:bg-cyan-200 transition-colors"
-                                        >
-                                            Pillar Hub &rarr;
-                                        </Link>
-                                        <button
-                                            onClick={() => toggleCategory(group.category)}
-                                            className={`shrink-0 transition-transform duration-300 cursor-pointer ${isOpen ? 'text-cyan-900 font-extrabold' : 'text-zinc-950 font-bold'}`}
-                                            aria-label="Toggle section"
-                                        >
-                                            {isOpen ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
-                                        </button>
-                                    </div>
-                                </div>
-                                
-                                {/* Accordion Content */}
-                                <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
-                                    <div className="overflow-hidden">
-                                        <div className="p-6 sm:p-8 pt-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                            {group.terms.map(term => {
-                                                const isKeep = KEEP_TERMS.includes(term.slug);
-                                                const pillarSlug = CATEGORY_MAP[term.category] || 'cloud-infrastructure-finops';
-                                                const href = isKeep ? `/glossary/${term.slug}` : `/glossary/pillars/${pillarSlug}#${term.slug}`;
-                                                
-                                                return (
-                                                <Link
-                                                    key={term.slug}
-                                                    href={href}
-                                                    className="group block"
-                                                >
-                                                    <div className="card p-5 h-full bg-white border border-zinc-400 hover:border-cyan-400 hover:bg-cyan-50/30 transition-all rounded-xl">
-                                                        <h3 className="text-sm font-semibold font-bold text-zinc-900 mb-2 group-hover:text-cyan-900 font-extrabold transition-colors font-grotesk flex justify-between items-center">
-                                                            {term.title}
-                                                            {isKeep && <span className="text-[10px] bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded font-mono">Deep Dive</span>}
-                                                        </h3>
-                                                        <p className="text-xs font-bold text-zinc-950 line-clamp-2 leading-relaxed">
-                                                            {term.definition.slice(0, 160)}...
-                                                        </p>
-                                                        <div className="mt-3 text-xs font-bold font-medium font-bold uppercase tracking-widest text-zinc-950 group-hover:text-cyan-900 font-extrabold transition-colors">
-                                                            Read Definition →
-                                                        </div>
-                                                    </div>
-                                                </Link>
-                                                );
-                                            })}
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
-                        </ScrollReveal>
+
+                            {/* Accordion Content */}
+                            {isOpen && (
+                                <div className="p-6 pt-0 border-t border-[var(--line)] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
+                                    {group.terms.map((term) => {
+                                        const isKeep = KEEP_TERMS.includes(term.slug);
+                                        const pillarSlug = CATEGORY_MAP[term.category] || 'cloud-infrastructure-finops';
+                                        const href = isKeep ? `/glossary/${term.slug}` : `/glossary/pillars/${pillarSlug}#${term.slug}`;
+
+                                        return (
+                                            <Link
+                                                key={term.slug}
+                                                href={href}
+                                                className="group block p-4 rounded-lg bg-white border border-[var(--line)] hover:border-[var(--forest)] hover:shadow-sm transition"
+                                            >
+                                                <div className="space-y-2">
+                                                    <div className="flex items-center justify-between">
+                                                        <h3 className="text-sm font-serif font-semibold text-[var(--ink)] group-hover:text-[var(--forest)] transition-colors">
+                                                            {term.title}
+                                                        </h3>
+                                                        {isKeep && (
+                                                            <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-[rgba(208,154,85,0.12)] text-[#8c6023]">
+                                                                Deep Dive
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                    <p className="text-xs text-[var(--muted)] line-clamp-2 leading-relaxed">
+                                                        {term.definition}
+                                                    </p>
+                                                    <span className="text-[11px] font-mono text-[var(--gold)] block pt-1">
+                                                        Read Definition ↗
+                                                    </span>
+                                                </div>
+                                            </Link>
+                                        );
+                                    })}
+                                </div>
+                            )}
+                        </div>
                     );
                 })}
-            </div>
-
-            {/* Bottom CTA */}
-            <div className="text-center py-20 mt-12 mb-12 relative overflow-hidden rounded-3xl border border-zinc-400 bg-gradient-to-b from-white to-cyan-50">
-                <div className="absolute top-0 right-0 w-full h-full bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
-                <h2 className="text-3xl font-grotesk font-black text-zinc-900 mb-4">Master The Architecture</h2>
-                <p className="text-zinc-950 font-bold mb-8 max-w-lg mx-auto leading-relaxed">
-                    Our diagnostic tools put these definitions into direct, mathematically precise execution - evaluate your enterprise today.
-                </p>
-                <div className="flex flex-col sm:flex-row justify-center gap-4 px-6">
-                    <Link
-                        href="/tools/pdi"
-                        className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-xl text-zinc-950 font-semibold font-bold uppercase tracking-widest text-xs font-bold hover:opacity-90 transition-opacity shadow-md"
-                    >
-                        Run Free PDI Assessment
-                    </Link>
-                    <Link
-                        href="/services"
-                        className="px-8 py-4 bg-white border border-zinc-500 rounded-xl text-zinc-950 font-bold uppercase tracking-widest text-xs font-bold hover:bg-zinc-50 transition-colors"
-                    >
-                        Book Advisory Session →
-                    </Link>
-                </div>
             </div>
         </div>
     );

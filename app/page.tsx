@@ -169,20 +169,35 @@ export default function Home() {
               n: '01',
               title: 'AI usage up.',
               body: 'Inference costs, retries, and exception handling can rise faster than revenue.',
+              img: '/images/ai-usage.svg',
+              metric: '+312% API Invocations',
             },
             {
               n: '02',
               title: 'Output isn’t scaling.',
               body: 'Teams produce more code and activity without proportionate shipped value.',
+              img: '/images/abstract-output.svg',
+              metric: '1.0x Velocity Index',
             },
             {
               n: '03',
               title: 'Margins are at risk.',
               body: 'Without unit economics, AI initiatives can quietly turn growth into cost.',
+              img: '/images/margin-risk.svg',
+              metric: '-37% Margin Compression',
             },
           ].map((c) => (
             <article className="problem-card reveal" key={c.n}>
-              <div className="card-art" />
+              <div
+                className="card-art"
+                style={{
+                  backgroundImage: `url(${c.img})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              >
+                <span className="card-art-metric">{c.metric}</span>
+              </div>
               <span className="card-index">{c.n} / SIGNAL</span>
               <h3>{c.title}</h3>
               <p>{c.body}</p>

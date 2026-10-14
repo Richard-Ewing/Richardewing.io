@@ -1,130 +1,184 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ShieldCheck, Lock, FileCode, Handshake } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Enterprise Security & Trust Center',
-    description: 'Security architecture, VPC isolation, zero data retention (ZDR), policy-as-code enforcement, and NDA compliance protocols.',
-    alternates: { canonical: 'https://www.richardewing.io/security' },
-    openGraph: {
-        title: 'Enterprise Security & Trust Center | Richard Ewing',
-        description: 'Security architecture, VPC isolation, zero data retention (ZDR), policy-as-code enforcement, and NDA compliance protocols.',
-        url: 'https://www.richardewing.io/security',
-        siteName: 'Richard Ewing',
-        type: 'website',
-        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Enterprise Security & Trust Center | Richard Ewing',
-        description: 'Security architecture, VPC isolation, zero data retention (ZDR), policy-as-code enforcement, and NDA compliance protocols.',
-        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
-    },
+  title: 'Enterprise Security & Trust Center | Richard Ewing',
+  description:
+    'Security architecture, VPC isolation, zero data retention (ZDR), policy-as-code enforcement, and NDA compliance protocols.',
+  alternates: { canonical: 'https://www.richardewing.io/security' },
+  openGraph: {
+    title: 'Enterprise Security & Trust Center | Richard Ewing',
+    description:
+      'Security architecture, VPC isolation, zero data retention (ZDR), policy-as-code enforcement, and NDA compliance protocols.',
+    url: 'https://www.richardewing.io/security',
+    type: 'website',
+  },
 };
 
 const securityPillars = [
-    {
-        icon: '🛡️',
-        title: 'Private VPC Isolation',
-        description: 'Exogram operates inside your cloud infrastructure boundary (AWS Private VPC, GCP Service Connect, or Azure VNet). No inference traffic or context definitions ever leave your enterprise perimeter.',
-    },
-    {
-        icon: '⚡',
-        title: 'Zero Data Retention (ZDR)',
-        description: 'Prompts, evaluation trees, and model responses are validated purely in ephemeral memory at line rate. Ephemeral state is purged immediately following token emission.',
-    },
-    {
-        icon: '📄',
-        title: 'Policy-as-Code Architecture',
-        description: 'Governance definitions are declared as code in strict XML/Rego schemas. Changes undergo git-backed code reviews with cryptographically signed release commits.',
-    },
-    {
-        icon: '🤝',
-        title: 'Mutual NDA Protocol',
-        description: 'All advisory engagements and pre-acquisition technical audits execute under bilateral executive NDAs, protecting proprietary algorithms, source code, and financial cap tables.',
-    },
+  {
+    icon: ShieldCheck,
+    title: 'Private VPC Isolation',
+    description:
+      'Exogram operates inside your cloud infrastructure boundary (AWS Private VPC, GCP Service Connect, or Azure VNet). No inference traffic or context definitions ever leave your enterprise perimeter.',
+  },
+  {
+    icon: Lock,
+    title: 'Zero Data Retention (ZDR)',
+    description:
+      'Prompts, evaluation trees, and model responses are validated purely in ephemeral memory at line rate. Ephemeral state is purged immediately following token emission.',
+  },
+  {
+    icon: FileCode,
+    title: 'Policy-as-Code Architecture',
+    description:
+      'Governance definitions are declared as code in strict XML schemas. Changes undergo git-backed code reviews with cryptographically signed release commits.',
+  },
+  {
+    icon: Handshake,
+    title: 'Mutual NDA Protocol',
+    description:
+      'All advisory engagements and pre-acquisition technical audits execute under bilateral executive NDAs, protecting proprietary algorithms, source code, and financial cap tables.',
+  },
 ];
 
 export default function SecurityPage() {
-    return (
-        <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
-            <div className="page-container max-w-5xl mx-auto px-6">
-                
-                {/* Header */}
-                <div className="mb-16 text-center max-w-3xl mx-auto">
-                    <div className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest mb-3">
-                        Enterprise Architecture & Trust Protocol
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Enterprise Security & Trust Center',
+    description:
+      'Enterprise security architecture, VPC isolation, zero data retention, and bilateral NDA protocols.',
+    url: 'https://www.richardewing.io/security',
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+
+      {/* Hero Section */}
+      <section className="inner-hero">
+        <div className="inner-art" />
+        <div className="inner-copy">
+          <p className="eyebrow">
+            <i /> Architecture · Trust &amp; Governance
+          </p>
+          <h1>Enterprise Security &amp; Trust Center</h1>
+          <p className="inner-lede">
+            Exogram runtime enforcement and advisory diagnostics operate under strict
+            data isolation, zero data retention, and VPC-level execution standards.
+          </p>
+          <div className="actions">
+            <Link className="button button-gold" href="/reality-check">
+              Run the Reality Check ↗
+            </Link>
+            <Link className="button button-outline" href="/contact?subject=Security+Inquiry">
+              Initiate NDA Protocol
+            </Link>
+          </div>
+        </div>
+
+        <aside className="inner-aside glass">
+          <span>THE SECURITY INVARIANT</span>
+          <strong>Your data never leaves your perimeter.</strong>
+          <p>
+            Zero data retention, VPC isolation, and policy-as-code governance built for
+            regulated enterprise environments.
+          </p>
+        </aside>
+      </section>
+
+      {/* Security Pillars Grid */}
+      <section className="section">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="eyebrow center">Enterprise Safeguards</p>
+            <h2 className="text-3xl font-serif text-[var(--ink)]">
+              Four Pillars of Security Architecture
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {securityPillars.map((p, idx) => {
+              const Icon = p.icon;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white border border-[var(--line)] rounded-2xl p-8 shadow-sm flex flex-col justify-between hover:border-[var(--gold)] transition-all"
+                >
+                  <div>
+                    <div className="p-3 bg-[var(--paper2)] text-[var(--gold)] rounded-xl w-fit mb-4">
+                      <Icon className="w-6 h-6" />
                     </div>
-                    <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Security & Governance Controls
-                    </h1>
-                    <p className="text-xl text-zinc-900 font-medium leading-relaxed">
-                        Exogram runtime enforcement and advisory diagnostics operate under strict data isolation, zero data retention, and VPC-level execution standards.
+                    <h3 className="text-xl font-serif font-bold text-[var(--ink)] mb-3">
+                      {p.title}
+                    </h3>
+                    <p className="text-xs text-[var(--muted)] leading-relaxed">
+                      {p.description}
                     </p>
+                  </div>
                 </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
-                {/* Security Pillars Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-                    {securityPillars.map((p, idx) => (
-                        <div key={idx} className="bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm flex flex-col justify-between">
-                            <div>
-                                <div className="text-3xl mb-4">{p.icon}</div>
-                                <h3 className="text-2xl font-grotesk font-bold text-zinc-950 mb-3">
-                                    {p.title}
-                                </h3>
-                                <p className="text-sm font-medium text-zinc-800 leading-relaxed">
-                                    {p.description}
-                                </p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* NDA Protocol Detail Card */}
-                <div className="bg-zinc-950 text-white rounded-3xl p-8 sm:p-12 mb-16 shadow-xl">
-                    <div className="max-w-2xl">
-                        <span className="text-xs font-mono font-bold text-amber-400 uppercase tracking-widest mb-3 block">
-                            Advisory Confidentiality Protocol
-                        </span>
-                        <h2 className="text-3xl font-grotesk font-bold mb-4">
-                            Executive NDA & Due Diligence Safeguards
-                        </h2>
-                        <p className="text-zinc-300 text-sm font-medium leading-relaxed mb-6">
-                            Prior to accessing codebases, R&D financial ledgers, or telemetry logs for an R&D Capital Audit or PE Due Diligence engagement, a bilateral NDA is established. We store zero client source code outside your encrypted repository infrastructure.
-                        </p>
-                        <div className="flex flex-wrap gap-4 pt-4 border-t border-zinc-800">
-                            <Link 
-                                href="/contact"
-                                className="px-6 py-3 bg-white text-zinc-950 font-mono text-xs font-bold uppercase tracking-wider rounded-xl hover:bg-zinc-200 transition-colors"
-                            >
-                                Initiate NDA Protocol &rarr;
-                            </Link>
-                            <Link 
-                                href="/exogram/demo"
-                                className="px-6 py-3 bg-zinc-900 border border-zinc-700 text-zinc-200 font-mono text-xs font-bold uppercase tracking-wider rounded-xl hover:bg-zinc-800 transition-colors"
-                            >
-                                Request Sandbox Access &rarr;
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Bottom CTA */}
-                <div className="bg-white border border-zinc-300 rounded-3xl p-8 sm:p-12 text-center shadow-sm">
-                    <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">
-                        Have Custom Security or Compliance Questions?
-                    </h2>
-                    <p className="text-zinc-700 text-base max-w-xl mx-auto mb-8 font-medium">
-                        Speak directly with our technical security leads regarding VPC deployment topologies and policy schema definitions.
-                    </p>
-                    <Link 
-                        href="/contact"
-                        className="inline-flex items-center justify-center px-8 py-4 bg-zinc-950 text-white text-xs font-mono font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-800 transition-colors"
-                    >
-                        Contact Technical Security Team &rarr;
-                    </Link>
-                </div>
-
+      {/* NDA Protocol Detail Card */}
+      <section className="section border-t border-[var(--line)]">
+        <div className="max-w-4xl mx-auto bg-[var(--forest2)] text-white rounded-3xl p-8 sm:p-12 shadow-xl border border-white/10">
+          <div className="max-w-2xl">
+            <span className="text-xs font-mono font-bold text-[var(--gold)] uppercase tracking-widest mb-3 block">
+              Advisory Confidentiality Protocol
+            </span>
+            <h2 className="text-3xl font-serif font-bold mb-4">
+              Executive NDA &amp; Due Diligence Safeguards
+            </h2>
+            <p className="text-zinc-200 text-sm leading-relaxed mb-6">
+              Prior to accessing codebases, R&amp;D financial ledgers, or telemetry logs
+              for an R&amp;D Capital Audit or PE Due Diligence engagement, a bilateral NDA
+              is executed. We store zero client source code outside your encrypted
+              repository infrastructure.
+            </p>
+            <div className="flex flex-wrap gap-4 pt-4 border-t border-white/10">
+              <Link
+                href="/contact?subject=NDA+Protocol"
+                className="button button-gold text-xs"
+              >
+                Initiate NDA Protocol ↗
+              </Link>
+              <Link
+                href="/exogram"
+                className="button button-ghost-light text-xs"
+              >
+                Explore Exogram Runtime ↗
+              </Link>
             </div>
-        </main>
-    );
+          </div>
+        </div>
+      </section>
+
+      {/* Closing CTA */}
+      <section className="closing-cta">
+        <p className="eyebrow">Technical Compliance</p>
+        <h2>Have Custom Security or Compliance Requirements?</h2>
+        <p>
+          Speak directly with our technical security leads regarding VPC deployment
+          topologies and policy schema definitions.
+        </p>
+        <div className="actions center">
+          <Link className="button button-gold" href="/contact?subject=Security+Compliance">
+            Contact Technical Security Team ↗
+          </Link>
+          <Link className="button button-ghost-light" href="/framework">
+            Explore Governance Framework ↗
+          </Link>
+        </div>
+      </section>
+    </>
+  );
 }

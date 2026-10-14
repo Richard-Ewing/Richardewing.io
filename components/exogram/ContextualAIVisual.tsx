@@ -50,24 +50,20 @@ export default function ContextualAIVisual() {
     ];
 
     return (
-        <div className="w-full bg-white border border-zinc-300 rounded-2xl p-6 md:p-8 shadow-sm relative overflow-hidden text-left">
-            {/* Background subtle radial glow */}
-            <div className="absolute -top-24 -right-24 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
-
+        <div className="w-full bg-white border border-[var(--line)] rounded-2xl p-6 md:p-8 shadow-sm relative overflow-hidden text-left">
             {/* Header bar */}
-            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-zinc-200 pb-5 mb-6">
+            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--line)] pb-5 mb-6">
                 <div className="flex items-center gap-2.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-900">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[var(--forest)]" />
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--ink)]">
                         Exogram Continuous Context Pipeline
                     </span>
                 </div>
-                <div className="flex items-center gap-2 text-xs font-mono text-zinc-600">
+                <div className="flex items-center gap-2 text-xs font-mono text-[var(--muted)]">
                     <span>Evidence-Linked</span>
-                    <span className="text-zinc-400">•</span>
+                    <span>·</span>
                     <span>Persistent Context</span>
-                    <span className="text-zinc-400">•</span>
+                    <span>·</span>
                     <span>User-Controlled</span>
                 </div>
             </div>
@@ -84,20 +80,20 @@ export default function ContextualAIVisual() {
                             type="button"
                             className={`p-3 rounded-xl text-left border transition-all flex flex-col justify-between ${
                                 isActive
-                                    ? 'bg-purple-50/80 border-purple-500 shadow-sm ring-1 ring-purple-500/20'
-                                    : 'bg-zinc-50/70 border-zinc-200 hover:border-zinc-300 hover:bg-zinc-100/60'
+                                    ? 'bg-[var(--paper)] border-[var(--gold)] shadow-sm ring-1 ring-[var(--gold)]/20'
+                                    : 'bg-[var(--paper)]/40 border-[var(--line)] hover:border-[var(--gold)] hover:bg-[var(--paper)]'
                             }`}
                         >
                             <div className="flex items-center justify-between mb-2">
-                                <Icon className={`w-4 h-4 ${isActive ? 'text-purple-600' : 'text-zinc-600'}`} />
+                                <Icon className={`w-4 h-4 ${isActive ? 'text-[var(--gold)]' : 'text-[var(--muted)]'}`} />
                                 <span className={`text-[10px] font-mono font-bold uppercase px-1.5 py-0.5 rounded ${
-                                    isActive ? 'bg-purple-200/70 text-purple-900' : 'bg-zinc-200/60 text-zinc-600'
+                                    isActive ? 'bg-[var(--gold)] text-[var(--ink)]' : 'bg-[var(--paper2)] text-[var(--muted)]'
                                 }`}>
                                     {stage.tag}
                                 </span>
                             </div>
                             <div>
-                                <p className={`text-xs font-bold leading-snug ${isActive ? 'text-zinc-950' : 'text-zinc-800'}`}>
+                                <p className={`text-xs font-bold leading-snug ${isActive ? 'text-[var(--ink)]' : 'text-[var(--muted)]'}`}>
                                     {stage.title}
                                 </p>
                             </div>
@@ -107,67 +103,67 @@ export default function ContextualAIVisual() {
             </div>
 
             {/* Active Stage Simulation Inspector */}
-            <div className="bg-zinc-900 rounded-xl p-5 md:p-6 text-white border border-zinc-800 relative">
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-4 border-b border-zinc-800 pb-3">
-                    <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
-                        <span className="text-purple-400 font-bold">STATE INSPECTOR:</span>
-                        <span className="text-zinc-200">{stages[activeStage].title}</span>
+            <div className="bg-[var(--forest2)] rounded-xl p-5 md:p-6 text-white border border-white/10 relative">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-4 border-b border-white/10 pb-3">
+                    <div className="flex items-center gap-2 text-xs font-mono text-zinc-300">
+                        <span className="text-[var(--gold)] font-bold">STATE INSPECTOR:</span>
+                        <span className="text-white">{stages[activeStage].title}</span>
                     </div>
-                    <span className="text-xs font-mono text-emerald-400">
+                    <span className="text-xs font-mono text-[var(--gold)]">
                         Status: Active &amp; Verified
                     </span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-mono">
-                    <div className="bg-zinc-950/80 p-3.5 rounded-lg border border-zinc-800">
+                    <div className="bg-black/30 p-3.5 rounded-lg border border-white/10">
                         <div className="text-zinc-400 text-[11px] mb-1 uppercase tracking-wider">Subsystem Objective</div>
                         <div className="text-zinc-200 font-sans font-medium text-sm leading-snug">
                             {stages[activeStage].desc}
                         </div>
                     </div>
-                    <div className="bg-zinc-950/80 p-3.5 rounded-lg border border-zinc-800">
+                    <div className="bg-black/30 p-3.5 rounded-lg border border-white/10">
                         <div className="text-zinc-400 text-[11px] mb-1 uppercase tracking-wider">Runtime Guarantee</div>
                         <div className="text-zinc-200 font-sans font-medium text-sm leading-snug">
                             {stages[activeStage].preview}
                         </div>
                     </div>
-                    <div className="bg-zinc-950/80 p-3.5 rounded-lg border border-zinc-800 flex flex-col justify-between">
+                    <div className="bg-black/30 p-3.5 rounded-lg border border-white/10 flex flex-col justify-between">
                         <div>
                             <div className="text-zinc-400 text-[11px] mb-1 uppercase tracking-wider">Provenance &amp; Control</div>
-                            <div className="text-emerald-400 font-mono text-xs">
+                            <div className="text-[var(--gold)] font-mono text-xs">
                                 ✓ Fully auditable &amp; user-revocable
                             </div>
                         </div>
-                        <div className="text-[10px] text-zinc-500 mt-2">
+                        <div className="text-[10px] text-zinc-400 mt-2">
                             Private local reasoning or cloud reasoning options
                         </div>
                     </div>
                 </div>
 
                 {/* Cognitive Flow Ribbon */}
-                <div className="mt-4 pt-3 border-t border-zinc-800/80 flex items-center justify-between text-[11px] text-zinc-400 font-mono overflow-x-auto whitespace-nowrap gap-4">
-                    <span className="flex items-center gap-1.5 text-zinc-300">
-                        <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+                <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-zinc-300 font-mono overflow-x-auto whitespace-nowrap gap-4">
+                    <span className="flex items-center gap-1.5 text-zinc-200">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)]" />
                         What happened
                     </span>
                     <span>→</span>
-                    <span className="flex items-center gap-1.5 text-zinc-300">
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                    <span className="flex items-center gap-1.5 text-zinc-200">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)]" />
                         What it means
                     </span>
                     <span>→</span>
-                    <span className="flex items-center gap-1.5 text-zinc-300">
-                        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
+                    <span className="flex items-center gap-1.5 text-zinc-200">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)]" />
                         How it relates
                     </span>
                     <span>→</span>
-                    <span className="flex items-center gap-1.5 text-zinc-300">
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                    <span className="flex items-center gap-1.5 text-zinc-200">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)]" />
                         What changed
                     </span>
                     <span>→</span>
-                    <span className="flex items-center gap-1.5 text-emerald-300 font-bold">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    <span className="flex items-center gap-1.5 text-[var(--gold)] font-bold">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)]" />
                         What matters now
                     </span>
                 </div>

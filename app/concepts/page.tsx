@@ -1,265 +1,99 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
-import MultiHopGraphExplorer from '@/app/components/concepts/MultiHopGraphExplorer';
-import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
+import { ConceptExplorer } from '@/components/concepts/concept-explorer';
 
 export const metadata: Metadata = {
-  title: 'AI Governance & Economics Concepts',
-  description: 'Index of original frameworks and industry concepts in AI economics, governance, and software capital. Links field research to decision models.',
+  title: 'Canonical Concepts & Research Graph | Richard Ewing',
+  description:
+    'The intellectual operating system of Richard Ewing’s research corpus. Broad industry concepts serve as discovery entry points, bridging directly into original canonical frameworks and diagnostic tools.',
   alternates: {
     canonical: 'https://www.richardewing.io/concepts',
+  },
+  openGraph: {
+    title: 'Canonical Concepts & Research Graph | Richard Ewing',
+    description:
+      'Index of original frameworks, financial tax models, and governance concepts across AI economics and software capital.',
+    url: 'https://www.richardewing.io/concepts',
+    type: 'website',
   },
 };
 
 export default function ResearchConceptsIndexPage() {
-  const domains = Array.from(new Set(CANONICAL_CONCEPTS.map((c) => c.domain)));
-  const layer1Concepts = CANONICAL_CONCEPTS.filter((c) => c.category === 'Industry Concept (Discovery On-Ramp)');
-  const layer2Concepts = CANONICAL_CONCEPTS.filter((c) => c.category === 'Richard Ewing Canon (Original Framework)');
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Canonical Concepts & Research Graph',
+    description:
+      'The intellectual operating system of Richard Ewing’s research corpus.',
+    url: 'https://www.richardewing.io/concepts',
+    author: {
+      '@type': 'Person',
+      name: 'Richard Ewing',
+      url: 'https://www.richardewing.io',
+    },
+  };
 
   return (
-    <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24 text-zinc-950">
-      <div className="page-container max-w-6xl mx-auto space-y-16 px-4 sm:px-6 lg:px-8">
-        {/* Navigation Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs font-mono font-bold text-zinc-950 uppercase tracking-widest">
-          <Link href="/" className="hover:underline">Home</Link>
-          <span>/</span>
-          <Link href="/research" className="hover:underline">Research</Link>
-          <span>/</span>
-          <span className="text-cyan-900 font-extrabold">Canonical Concepts</span>
-        </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
 
-        {/* Header */}
-        <div className="space-y-4 border-b border-zinc-400 pb-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold bg-cyan-100 text-cyan-900 border border-cyan-300">
-            Knowledge Substrate • Layer 1 Industry Discovery &amp; Layer 2 Original Canon
-          </div>
-
-          <h1 className="text-4xl sm:text-6xl font-black text-zinc-950 tracking-tight font-grotesk">
-            Canonical Concepts &amp; Research Graph
-          </h1>
-
-          <p className="text-xl text-zinc-900 leading-relaxed font-semibold max-w-3xl">
-            The intellectual operating system of Richard Ewing’s research corpus. Broad industry concepts serve as discovery entry points, bridging directly into original canonical frameworks, evidence ledgers, and diagnostic tools.
+      {/* Hero Section */}
+      <section className="inner-hero">
+        <div className="inner-art" />
+        <div className="inner-copy">
+          <p className="eyebrow">
+            <i /> Richard Ewing · Canonical Research Concepts
           </p>
-
-          <div className="flex flex-wrap gap-3 pt-2">
-            <Link
-              href="/research/publications"
-              className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-cyan-900 text-white hover:bg-cyan-800 transition shadow-sm"
-            >
-              174+ Publications Catalog →
+          <h1>Canonical Concepts &amp; Research Graph.</h1>
+          <p className="inner-lede">
+            The intellectual operating system of Richard Ewing’s research corpus. Broad
+            industry concepts serve as discovery entry points, bridging directly into original
+            canonical frameworks, evidence ledgers, and diagnostic tools.
+          </p>
+          <div className="actions">
+            <Link className="button button-gold" href="/reality-check">
+              Run the Reality Check ↗
             </Link>
-            <Link
-              href="/reality-check"
-              className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-purple-900 text-white hover:bg-purple-800 transition shadow-sm"
-            >
-              The Reality Check Demo →
+            <Link className="button button-outline" href="/research/publications">
+              Browse 174+ Publications ↗
             </Link>
-            <a
-              href="/api/csp/v1/export"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-emerald-900 text-white hover:bg-emerald-800 transition shadow-sm"
-            >
-              CSP Machine API ↗
-            </a>
           </div>
         </div>
 
-        {/* Multi-Hop Causal Knowledge Graph Traversal Engine */}
-        <MultiHopGraphExplorer initialSlug="product-management" />
+        <aside className="inner-aside glass">
+          <span>THE OPERATING PRINCIPLE</span>
+          <strong>Concepts without economics are just theories.</strong>
+          <p>
+            Every concept in this canon is tied directly to production unit economics,
+            verifiable software P&amp;L impact, or runtime engineering governance.
+          </p>
+        </aside>
+      </section>
 
-        {/* Section 1: Layer 2 - The Richard Ewing Original Canon */}
-        <section className="space-y-6">
-          <div className="space-y-1">
-            <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
-              Layer 2 • High Differentiation &amp; Original Intellectual Property
-            </span>
-            <h2 className="text-3xl font-bold font-grotesk text-zinc-950">The Richard Ewing Canon</h2>
-            <p className="text-sm text-zinc-700 font-medium">
-              Original specifications, financial tax models, and governance frameworks created by Richard Ewing.
-            </p>
-          </div>
+      {/* Explorer Section */}
+      <section className="section">
+        <ConceptExplorer />
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {layer2Concepts.map((concept) => (
-              <div
-                key={concept.slug}
-                className="bg-white border border-zinc-300 hover:border-cyan-600 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-6 group"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-100 text-cyan-900 border border-cyan-200">
-                      {concept.domain}
-                    </span>
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-indigo-100 text-indigo-900 border border-indigo-200">
-                      Original Canon
-                    </span>
-                  </div>
-
-                  <div>
-                    <h3 className="text-xl font-bold font-grotesk text-zinc-950 group-hover:text-cyan-800 transition-colors leading-snug">
-                      <Link href={`/concepts/${concept.slug}`}>
-                        {concept.title}
-                      </Link>
-                    </h3>
-                    <p className="text-sm text-zinc-700 mt-2 line-clamp-3 leading-relaxed font-medium">
-                      {concept.definition}
-                    </p>
-                  </div>
-
-                  {concept.executableTool && (
-                    <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-3.5 flex items-center justify-between gap-3">
-                      <div>
-                        <div className="text-[10px] font-mono text-cyan-900 font-bold uppercase">
-                          [{concept.executableTool.type}]
-                        </div>
-                        <div className="text-xs font-bold text-zinc-950">
-                          {concept.executableTool.name}
-                        </div>
-                      </div>
-                      <Link
-                        href={concept.executableTool.url}
-                        className="px-3 py-1.5 bg-cyan-900 hover:bg-cyan-800 text-white font-bold font-mono text-[10px] rounded-xl transition whitespace-nowrap shadow-sm"
-                      >
-                        Launch ↗
-                      </Link>
-                    </div>
-                  )}
-
-                  <div className="pt-2 border-t border-zinc-100 flex flex-wrap items-center justify-between text-xs font-mono text-zinc-500 gap-2">
-                    <span>First: {concept.telemetry?.origin?.firstIntroducedDate || concept.firstIntroduced}</span>
-                    {concept.telemetry?.humanEvidenceSummary && concept.telemetry.humanEvidenceSummary.uniqueDomainsCount > 0 ? (
-                      <span className="text-cyan-900 font-bold bg-cyan-50 px-2 py-0.5 rounded border border-cyan-200">
-                        {concept.telemetry.humanEvidenceSummary.independentAuthorsCount} authors • {concept.telemetry.humanEvidenceSummary.uniqueDomainsCount} domains
-                      </span>
-                    ) : (
-                      <span className="text-emerald-800 font-bold">
-                        {concept.evidenceLedger.length} Evidence Items
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                <div className="pt-4 border-t border-zinc-100 flex items-center justify-between">
-                  <span className="text-xs font-mono text-zinc-500">
-                    {concept.canonicalReadingOrder?.length || 0} Reading Steps
-                  </span>
-                  <Link
-                    href={`/concepts/${concept.slug}`}
-                    className="text-xs font-mono font-bold text-cyan-800 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 hover:underline"
-                  >
-                    View Concept Specification →
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Section 2: Layer 1 - Industry Discovery On-Ramps */}
-        <section className="space-y-6 pt-6">
-          <div className="space-y-1">
-            <span className="text-xs font-mono font-bold text-emerald-900 uppercase tracking-wider">
-              Layer 1 • High-Volume Search &amp; Discovery Entry Points
-            </span>
-            <h2 className="text-3xl font-bold font-grotesk text-zinc-950">Industry Concepts &amp; On-Ramps</h2>
-            <p className="text-sm text-zinc-700 font-medium">
-              Broad industry terms that introduce readers and AI systems to Richard Ewing’s research and frameworks.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {layer1Concepts.map((concept) => (
-              <div
-                key={concept.slug}
-                className="bg-white border border-zinc-300 hover:border-emerald-600 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-6 group"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-100 text-emerald-900 border border-emerald-200">
-                      {concept.domain}
-                    </span>
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-zinc-100 text-zinc-700 border border-zinc-200">
-                      Industry On-Ramp
-                    </span>
-                  </div>
-
-                  <div>
-                    <h3 className="text-xl font-bold font-grotesk text-zinc-950 group-hover:text-emerald-800 transition-colors leading-snug">
-                      <Link href={`/concepts/${concept.slug}`}>
-                        {concept.title}
-                      </Link>
-                    </h3>
-                    <p className="text-sm text-zinc-700 mt-2 line-clamp-3 leading-relaxed font-medium">
-                      {concept.definition}
-                    </p>
-                  </div>
-
-                  {concept.executableTool && (
-                    <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-3.5 flex items-center justify-between gap-3">
-                      <div>
-                        <div className="text-[10px] font-mono text-emerald-900 font-bold uppercase">
-                          [{concept.executableTool.type}]
-                        </div>
-                        <div className="text-xs font-bold text-zinc-950">
-                          {concept.executableTool.name}
-                        </div>
-                      </div>
-                      <Link
-                        href={concept.executableTool.url}
-                        className="px-3 py-1.5 bg-emerald-900 hover:bg-emerald-800 text-white font-bold font-mono text-[10px] rounded-xl transition whitespace-nowrap shadow-sm"
-                      >
-                        Launch ↗
-                      </Link>
-                    </div>
-                  )}
-
-                  <div className="pt-2 border-t border-zinc-100 flex flex-wrap items-center justify-between text-xs font-mono text-zinc-500 gap-2">
-                    <span>Topic: {concept.firstIntroduced}</span>
-                    <span className="text-emerald-800 font-bold">
-                      {concept.evidenceLedger.length} Evidence Items
-                    </span>
-                  </div>
-                </div>
-
-                <div className="pt-4 border-t border-zinc-100 flex items-center justify-between">
-                  <span className="text-xs font-mono text-zinc-500">
-                    {concept.canonicalReadingOrder?.length || 0} Reading Steps
-                  </span>
-                  <Link
-                    href={`/concepts/${concept.slug}`}
-                    className="text-xs font-mono font-bold text-emerald-800 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 hover:underline"
-                  >
-                    View Concept Specification →
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Taxonomy */}
-        <section className="bg-white border border-zinc-300 rounded-3xl p-6 shadow-sm space-y-4">
-          <h3 className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
-            Knowledge Domains &amp; Taxonomy
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {domains.map((dom) => (
-              <span
-                key={dom}
-                className="px-3 py-1 bg-zinc-100 text-zinc-800 font-mono text-xs rounded-full border border-zinc-200 font-semibold"
-              >
-                {dom}
-              </span>
-            ))}
-          </div>
-        </section>
-
-        {/* Google Preferred Source AEO Callout */}
-        <GooglePreferredBadge variant="card" />
-      </div>
-    </main>
+      {/* Closing CTA */}
+      <section className="closing-cta">
+        <p className="eyebrow">Next Step</p>
+        <h2>Test the concepts against your production software economics.</h2>
+        <p>
+          Compare your actual cloud spend and engineering velocity against industry benchmarks.
+        </p>
+        <div className="actions center">
+          <Link className="button button-gold" href="/reality-check">
+            Run the free Reality Check ↗
+          </Link>
+          <Link className="button button-ghost-light" href="/advisory">
+            Explore Executive Advisory ↗
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }

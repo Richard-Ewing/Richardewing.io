@@ -1,377 +1,517 @@
-import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import ProofRail from '@/app/components/ProofRail';
-import PricingLadderStepper from '@/app/components/PricingLadderStepper';
-import DeliverablePreview from '@/app/components/DeliverablePreview';
-import CheckoutButton from '@/app/components/client/CheckoutButton';
-import { COMMERCIAL_OFFERS } from '@/lib/platform/offers/offers';
 
 export const metadata: Metadata = {
-    title: 'Pricing: $29 Operating Kit, P&L Advisory & Fractional CPO',
-    description: 'Transparent fixed-fee pricing across 3 paths: $29 Operating Kit + Live Workspace, $450 P&L Tear-Down, $2,500 Turnaround Sprint, $7,500 AI Build, & Fractional CPO.',
-    alternates: {
-        canonical: 'https://www.richardewing.io/pricing',
-    },
-    openGraph: {
-        title: 'Pricing: Operating Kit, Product P&L Advisory & Fractional CPO | Richard Ewing',
-        description: 'Transparent pricing from the $29 Product & AI Economist Operating Kit + Live Workspace to 1-on-1 P&L Tear-Downs, 0-to-1 AI Build Sprints, and Fractional CPO.',
-        url: 'https://www.richardewing.io/pricing',
-        type: 'website',
-        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Pricing: Operating Kit, Product P&L Advisory & Fractional CPO | Richard Ewing',
-        description: 'Transparent pricing from the $29 Product & AI Economist Operating Kit + Live Workspace to 1-on-1 P&L Tear-Downs and Fractional CPO leadership.',
-        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
-    }
+  title: 'Transparent Pricing & Advisory Sprints | Richard Ewing',
+  description:
+    'Fixed-scope product P&L turnarounds, AI feature pricing sprints, and embedded fractional product leadership with transparent pricing and deliverables.',
+  alternates: {
+    canonical: 'https://www.richardewing.io/pricing',
+  },
+  openGraph: {
+    title: 'Transparent Pricing & Advisory Sprints | Richard Ewing',
+    description:
+      'Transparent advisory pricing: $29 Operating Kit, $450 P&L Teardown, $2,500 Turnaround Sprint, $7,500 AI Build Sprint, and $10,000/mo Fractional CPO.',
+    url: 'https://www.richardewing.io/pricing',
+    type: 'website',
+  },
 };
 
+const sprintTiers = [
+  {
+    id: 'operating-kit',
+    badge: 'FILES + LIVE WORKSPACE',
+    name: 'Operating Kit & Live Workspace',
+    price: '$29',
+    period: 'one-time',
+    description:
+      'The complete operator toolkit: 5 working P&L spreadsheets, board deck templates, and lifetime access to the interactive browser workspace.',
+    timeline: 'Instant Access',
+    deliverables: [
+      'AI Feature Pricing & Token Margin Stress-Tester (Excel & CSV)',
+      'Zombie Feature Kill-List & Backlog ROI Scoring Matrix',
+      '12-Slide Board & CFO Defense Deck Template',
+      'First-30-Days P&L Turnaround Runbook',
+      'Interactive Browser Workspace (/workspace) access',
+    ],
+    ctaText: 'Get the Operating Kit ($29) ↗',
+    ctaHref: '/toolkit',
+    highlight: false,
+  },
+  {
+    id: 'pnl-teardown',
+    badge: '1-ON-1 WORKING SESSION',
+    name: 'AI P&L & Roadmap Teardown',
+    price: '$450',
+    period: 'one-time',
+    description:
+      'Live 60-minute executive session. We inspect your AI feature costs, API bills, and product roadmap to pinpoint margin compression and cut dead backlog.',
+    timeline: 'Completed in 48 Hours',
+    deliverables: [
+      '60-minute live 1-on-1 working session with Richard Ewing',
+      'Seat vs. usage vs. outcome pricing restructure for AI features',
+      'Immediate cut-list to free up 20% to 35% engineering capacity',
+      'Written 30-day margin recovery blueprint',
+      'Full $29 Operating Kit included at no extra charge',
+    ],
+    ctaText: 'Book 1-on-1 Teardown ($450) ↗',
+    ctaHref: '/contact?subject=P&L+Teardown',
+    highlight: false,
+  },
+  {
+    id: 'turnaround-sprint',
+    badge: 'MOST POPULAR · 2 WEEKS',
+    name: 'Product P&L Turnaround Sprint',
+    price: '$2,500',
+    period: 'fixed-fee',
+    description:
+      'Two-week forensic audit and operational overhaul of your product line. We analyze telemetry, cloud costs, and team velocity to fix margins before your next board meeting.',
+    timeline: '14 Calendar Days',
+    deliverables: [
+      'Full telemetry & API spend audit with model-routing cost cuts',
+      'Pricing & packaging restructuring with gross margin modeling',
+      'Feature-level unit economics model delivered to your CFO',
+      'Prioritized 90-day product roadmap scrubbed of negative carry',
+      'Executive readout with C-suite and board materials included',
+    ],
+    ctaText: 'Reserve Turnaround Sprint ($2,500) ↗',
+    ctaHref: '/contact?subject=Turnaround+Sprint',
+    highlight: true,
+  },
+  {
+    id: 'build-sprint',
+    badge: '0-TO-1 DEPLOYED SOFTWARE',
+    name: '21-Day AI Build Sprint',
+    price: '$7,500',
+    period: 'fixed-fee',
+    description:
+      'We architect, build, and deploy a live, production AI tool, diagnostic engine, or client portal with hardened guardrails and token metering in 21 days.',
+    timeline: '21 Calendar Days',
+    deliverables: [
+      'Complete production application deployed to Cloudflare Edge',
+      'Hardened LLM prompt architecture and semantic token routing',
+      'Telemetry instrumentation with real-time margin tracking',
+      'Full source code repository handoff with zero vendor lock-in',
+      '30-day post-launch warranty and operator runbook',
+    ],
+    ctaText: 'Commission AI Build ($7,500) ↗',
+    ctaHref: '/contact?subject=AI+Build+Sprint',
+    highlight: false,
+  },
+  {
+    id: 'fractional-cpo',
+    badge: 'EMBEDDED LEADERSHIP',
+    name: 'Fractional CPO / Product Economist',
+    price: '$10,000',
+    period: 'per month',
+    description:
+      'Hands-on executive product leadership for growth-stage tech companies. Direct ownership of product strategy, unit economics, engineering capital allocation, and board reporting.',
+    timeline: '3-Month Initial Retainer',
+    deliverables: [
+      'Direct ownership of product roadmap and margin governance',
+      'Weekly executive staff meetings and engineering syncs',
+      'Quarterly board deck authoring and investor briefings',
+      'M&A and technical due diligence audit representation',
+      'Mentorship and leveling for your product management team',
+    ],
+    ctaText: 'Inquire About Retainer ($10,000/mo) ↗',
+    ctaHref: '/contact?subject=Fractional+CPO',
+    highlight: false,
+  },
+];
+
+const comparisonRows = [
+  {
+    feature: 'Delivery Timeline',
+    kit: 'Instant',
+    teardown: '48 Hours',
+    turnaround: '14 Days',
+    build: '21 Days',
+    cpo: 'Ongoing Retainer',
+  },
+  {
+    feature: 'Format',
+    kit: 'Self-serve templates',
+    teardown: '60-min live Zoom',
+    turnaround: '2-week embedded audit',
+    build: 'Production code & deploy',
+    cpo: 'Embedded executive',
+  },
+  {
+    feature: 'Operating Kit Files Included',
+    kit: 'Yes',
+    teardown: 'Yes',
+    turnaround: 'Yes',
+    build: 'Yes',
+    cpo: 'Yes',
+  },
+  {
+    feature: 'Token Margin Restructuring',
+    kit: 'Template model',
+    teardown: 'High-level review',
+    turnaround: 'Forensic audit & plan',
+    build: 'Architected in code',
+    cpo: 'Continuous governance',
+  },
+  {
+    feature: 'Board & CFO Deck Authoring',
+    kit: 'Template only',
+    teardown: 'Written memo',
+    turnaround: 'Custom 12-slide deck',
+    build: 'Architecture specs',
+    cpo: 'Full board ownership',
+  },
+  {
+    feature: 'Direct Access to Richard Ewing',
+    kit: 'Self-serve',
+    teardown: '1 working session',
+    turnaround: 'Daily async + 3 calls',
+    build: 'Lead architect',
+    cpo: 'Unlimited executive access',
+  },
+];
+
 export default function PricingPage() {
-    return (
-        <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
-            <div className="page-container max-w-4xl mx-auto px-6">
-                
-                {/* Header */}
-                <div className="mb-12 border-b border-zinc-300 pb-8">
-                    <div className="text-xs font-mono font-bold text-violet-900 uppercase tracking-widest mb-3">
-                        Product Economist • 3 Distinct Buying Paths
-                    </div>
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Transparent Product &amp; AI Economics Pricing
-                    </h1>
-                    <p className="text-xl text-zinc-800 leading-relaxed font-semibold max-w-2xl">
-                        No open-ended hourly billing. No bloated consulting teams. Start with the self-serve <strong className="text-zinc-950">$29 Operating Kit + Live Browser Workspace</strong>, book a fixed-scope <strong className="text-zinc-950">Product P&amp;L Tear-Down</strong>, ship a <strong className="text-zinc-950">0-to-1 AI Product</strong>, or inquire about <strong className="text-zinc-950">Fractional CPO, PE Diligence &amp; Sponsored Research</strong>.
-                    </p>
-                </div>
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'PriceSpecification',
+    name: 'Richard Ewing Advisory Pricing & Sprints',
+    description:
+      'Transparent advisory pricing: $29 Operating Kit, $450 P&L Teardown, $2,500 Turnaround Sprint, $7,500 AI Build Sprint, and $10,000/mo Fractional CPO.',
+    url: 'https://www.richardewing.io/pricing',
+  };
 
-                {/* Proof Rail */}
-                <div className="mb-12">
-                    <ProofRail />
-                </div>
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
 
-                {/* Pricing Progression Ladder */}
-                <PricingLadderStepper />
+      {/* Hero Header */}
+      <section className="inner-hero">
+        <div className="inner-art" />
+        <div className="inner-copy">
+          <p className="eyebrow">
+            <i /> Transparent Engagements · Clear Deliverables
+          </p>
+          <h1>Pricing &amp; Sprints</h1>
+          <p className="inner-lede">
+            No open-ended consulting bills or vague hourly retainers. Choose fixed-scope
+            advisory, self-serve toolkits, or embedded executive leadership with defined
+            deliverables and guaranteed timelines.
+          </p>
+          <div className="actions">
+            <Link className="button button-gold" href="/reality-check">
+              Run the Reality Check first ↗
+            </Link>
+            <Link className="button button-outline" href="/case-studies">
+              View verified case studies
+            </Link>
+          </div>
+        </div>
 
-                {/* Deliverable Visual Preview */}
-                <DeliverablePreview />
+        <aside className="inner-aside glass">
+          <span>THE PRICING RULE</span>
+          <strong>Fixed scope. Measurable ROI. Zero surprise invoices.</strong>
+          <p>
+            Every tier has explicit deliverables, an agreed-upon calendar timeline, and
+            transparent flat-fee pricing.
+          </p>
+        </aside>
+      </section>
 
-                {/* Pricing Tiers Organized by 3 Buying Paths */}
-                <div className="space-y-14 my-12">
-
-                    {/* PATH A HEADER */}
-                    <div className="border-b-2 border-zinc-900 pb-3">
-                        <span className="text-xs font-mono font-bold uppercase tracking-widest text-indigo-700 block">
-                            Buying Path A • Fix &amp; Scale an Existing Product&apos;s P&amp;L
-                        </span>
-                        <h2 className="text-2xl sm:text-3xl font-grotesk font-extrabold text-zinc-950 mt-1">
-                            Self-Serve Operating Kit, 1-on-1 P&amp;L Tear-Down &amp; Turnaround Sprint
-                        </h2>
-                    </div>
-
-                    {/* Tier 0: $29 / $79 Operating Kit + Live Workspace */}
-                    <div className="bg-emerald-50/70 border-2 border-emerald-400 p-8 sm:p-10 shadow-md rounded-2xl relative overflow-hidden">
-                        <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                            <span className="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-emerald-600 text-white">
-                                Best Seller · Instant Download + Live Browser Workspace
-                            </span>
-                            <span className="text-xs font-mono font-bold text-emerald-900 uppercase tracking-wider">
-                                Path A · Step 1
-                            </span>
-                        </div>
-                        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-6 border-b border-emerald-200 pb-6">
-                            <div>
-                                <h3 className="text-3xl font-grotesk font-bold text-zinc-950 m-0">{COMMERCIAL_OFFERS.operating_kit.name}</h3>
-                                <p className="text-sm text-zinc-700 font-medium mt-1">{COMMERCIAL_OFFERS.operating_kit.subtitle}</p>
-                            </div>
-                            <div className="text-3xl font-mono font-bold text-zinc-950 mt-4 sm:mt-0 shrink-0">
-                                ${COMMERCIAL_OFFERS.operating_kit.price} <span className="text-sm text-zinc-600 font-medium">($79 Complete Bundle)</span>
-                            </div>
-                        </div>
-
-                        <p className="font-semibold text-zinc-800 mb-6">
-                            {COMMERCIAL_OFFERS.operating_kit.description}
-                        </p>
-
-                        <h4 className="text-base font-bold text-zinc-950 mb-3">What you unlock immediately:</h4>
-                        <ul className="list-disc pl-5 space-y-2 mb-8 text-sm text-zinc-800">
-                            {COMMERCIAL_OFFERS.operating_kit.features.map((feat, i) => (
-                                <li key={i}>{feat}</li>
-                            ))}
-                        </ul>
-
-                        <div className="flex flex-col sm:flex-row flex-wrap gap-4 items-center">
-                            <CheckoutButton
-                                productId="premium_guide_29"
-                                label="Buy Operating Kit ($29)"
-                                variant="primary"
-                            />
-                            <CheckoutButton
-                                productId="premium_guide_79"
-                                label="Get Complete Bundle ($79)"
-                                variant="secondary"
-                            />
-                            <Link href="/workspace" className="text-xs text-emerald-900 font-mono font-bold underline hover:text-zinc-950">
-                                Launch Live Interactive Workspace (/workspace) →
-                            </Link>
-                        </div>
-                    </div>
-
-                    {/* Tier 1: $450 Product P&L Tear-Down */}
-                    <div className="bg-amber-50/60 border border-amber-200 p-8 sm:p-10 shadow-sm rounded-2xl relative overflow-hidden">
-                        <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                            <span className="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-amber-100 text-amber-900 border border-amber-300">
-                                1-on-1 Executive Working Session
-                            </span>
-                            <span className="text-xs font-mono font-bold text-amber-800 uppercase tracking-wider">
-                                Path A · Step 2 (60-Min Live)
-                            </span>
-                        </div>
-                        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-6 border-b border-amber-200 pb-6">
-                            <div>
-                                <h3 className="text-3xl font-grotesk font-bold text-zinc-950 m-0">{COMMERCIAL_OFFERS.gut_check.name}</h3>
-                                <p className="text-sm text-zinc-700 font-medium mt-1">{COMMERCIAL_OFFERS.gut_check.subtitle}</p>
-                            </div>
-                            <div className="text-3xl font-mono font-bold text-zinc-950 mt-4 sm:mt-0 shrink-0">
-                                ${COMMERCIAL_OFFERS.gut_check.price.toLocaleString()} <span className="text-sm text-zinc-600 font-medium">one-time</span>
-                            </div>
-                        </div>
-
-                        <p className="font-semibold text-zinc-800 mb-6">
-                            {COMMERCIAL_OFFERS.gut_check.description}
-                        </p>
-
-                        <h4 className="text-base font-bold text-zinc-950 mb-3">What is included:</h4>
-                        <ul className="list-disc pl-5 space-y-2 mb-8 text-sm text-zinc-800">
-                            {COMMERCIAL_OFFERS.gut_check.features.map((feat, i) => (
-                                <li key={i}>{feat}</li>
-                            ))}
-                        </ul>
-
-                        <div className="flex flex-col sm:flex-row gap-4 items-center">
-                            <CheckoutButton
-                                productId="gut_check"
-                                label={`Book $${COMMERCIAL_OFFERS.gut_check.price} P&L Tear-Down`}
-                                variant="primary"
-                            />
-                            <span className="text-xs text-zinc-600 font-mono font-medium">
-                                Instant checkout via Stripe · Includes full $79 Operating Kit &amp; Workspace
-                            </span>
-                        </div>
-                    </div>
-
-                    {/* Tier 2: $2,500 Product P&L & Roadmap Turnaround Sprint */}
-                    <div className="bg-white border border-zinc-300 p-8 sm:p-10 shadow-sm rounded-2xl">
-                        <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                            <span className="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-cyan-100 text-cyan-900 border border-cyan-300">
-                                2-Week Executive Turnaround Sprint
-                            </span>
-                            <span className="text-xs font-mono font-bold text-cyan-800 uppercase tracking-wider">
-                                Path A · Step 3
-                            </span>
-                        </div>
-                        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-6 border-b border-zinc-200 pb-6">
-                            <div>
-                                <h3 className="text-3xl font-grotesk font-bold text-zinc-950 m-0">{COMMERCIAL_OFFERS.insolvency_diagnostic.name}</h3>
-                                <p className="text-sm text-zinc-600 font-medium mt-1">{COMMERCIAL_OFFERS.insolvency_diagnostic.subtitle}</p>
-                            </div>
-                            <div className="text-3xl font-mono font-bold text-zinc-950 mt-4 sm:mt-0 shrink-0">
-                                ${COMMERCIAL_OFFERS.insolvency_diagnostic.price.toLocaleString()} <span className="text-sm text-zinc-500 font-medium">one-time</span>
-                            </div>
-                        </div>
-                        
-                        <p className="font-semibold text-zinc-800 mb-6">
-                            {COMMERCIAL_OFFERS.insolvency_diagnostic.description}
-                        </p>
-                        
-                        <h4 className="text-base font-bold text-zinc-950 mb-3">What happens:</h4>
-                        <ul className="list-disc pl-5 space-y-2 mb-8 text-sm text-zinc-800">
-                            {COMMERCIAL_OFFERS.insolvency_diagnostic.features.map((feat, i) => (
-                                <li key={i}>{feat}</li>
-                            ))}
-                        </ul>
-
-                        <div className="mt-8 flex flex-col sm:flex-row gap-4 items-center">
-                            <CheckoutButton
-                                productId="insolvency_diagnostic"
-                                label={`Book $${COMMERCIAL_OFFERS.insolvency_diagnostic.price.toLocaleString()} Turnaround Sprint`}
-                                variant="primary"
-                            />
-                            <Link href="/services#path-a" className="text-xs text-zinc-700 font-mono font-bold underline hover:text-zinc-950">
-                                View Path A Details →
-                            </Link>
-                        </div>
-                    </div>
-
-                    {/* PATH B HEADER */}
-                    <div className="border-b-2 border-zinc-900 pb-3 pt-4">
-                        <span className="text-xs font-mono font-bold uppercase tracking-widest text-rose-700 block">
-                            Buying Path B • Build a New 0-to-1 AI Product / Authority Engine
-                        </span>
-                        <h2 className="text-2xl sm:text-3xl font-grotesk font-extrabold text-zinc-950 mt-1">
-                            21-Day Shipped Production AI Software (Not an Audit)
-                        </h2>
-                    </div>
-
-                    {/* Path B: $7,500 0-to-1 AI Build Sprint */}
-                    <div className="bg-white border-2 border-rose-400 p-8 sm:p-10 shadow-md rounded-2xl">
-                        <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                            <span className="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-rose-100 text-rose-900 border border-rose-300">
-                                Path B · Hands-On Architecture &amp; Build
-                            </span>
-                            <span className="text-xs font-mono font-bold text-rose-800 uppercase tracking-wider">
-                                21-Day Fixed-Scope Build Sprint
-                            </span>
-                        </div>
-                        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-6 border-b border-zinc-200 pb-6">
-                            <div>
-                                <h3 className="text-3xl font-grotesk font-bold text-zinc-950 m-0">{COMMERCIAL_OFFERS.hallucination_tax_audit.name}</h3>
-                                <p className="text-sm text-zinc-600 font-medium mt-1">{COMMERCIAL_OFFERS.hallucination_tax_audit.subtitle}</p>
-                            </div>
-                            <div className="text-3xl font-mono font-bold text-zinc-950 mt-4 sm:mt-0 shrink-0">
-                                ${COMMERCIAL_OFFERS.hallucination_tax_audit.price.toLocaleString()} <span className="text-sm text-zinc-500 font-medium">fixed sprint</span>
-                            </div>
-                        </div>
-
-                        <p className="font-semibold text-zinc-800 mb-6">
-                            {COMMERCIAL_OFFERS.hallucination_tax_audit.description}
-                        </p>
-
-                        <h4 className="text-base font-bold text-zinc-950 mb-3">What gets shipped in 21 days:</h4>
-                        <ul className="list-disc pl-5 space-y-2 mb-8 text-sm text-zinc-800">
-                            {COMMERCIAL_OFFERS.hallucination_tax_audit.features.map((feat, i) => (
-                                <li key={i}>{feat}</li>
-                            ))}
-                        </ul>
-
-                        <div className="flex flex-col sm:flex-row gap-4 items-center">
-                            <CheckoutButton
-                                productId="hallucination_tax_audit"
-                                label="Start $7,500 AI Build Sprint"
-                                variant="primary"
-                            />
-                            <Link href="/portfolio" className="text-xs text-rose-800 font-mono font-bold underline hover:text-zinc-950">
-                                Inspect 3 Live AI Platforms I Built →
-                            </Link>
-                        </div>
-                    </div>
-
-                    {/* PATH C HEADER */}
-                    <div className="border-b-2 border-zinc-900 pb-3 pt-4">
-                        <span className="text-xs font-mono font-bold uppercase tracking-widest text-purple-700 block">
-                            Buying Path C • Executive Leadership, PE Diligence &amp; Sponsored Research
-                        </span>
-                        <h2 className="text-2xl sm:text-3xl font-grotesk font-extrabold text-zinc-950 mt-1">
-                            Fractional CPO, Private Equity M&amp;A Diligence &amp; Benchmark Briefings
-                        </h2>
-                    </div>
-
-                    {/* Path C Grid: PE Diligence ($15k) & Sponsored Research ($2,500+) */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-white border border-zinc-300 p-7 rounded-2xl shadow-sm flex flex-col justify-between">
-                            <div>
-                                <span className="px-2.5 py-1 rounded text-[10px] font-mono font-bold uppercase bg-amber-100 text-amber-900">
-                                    Path C · PE &amp; M&amp;A Advisory
-                                </span>
-                                <h3 className="text-2xl font-grotesk font-bold text-zinc-950 mt-3 mb-1">
-                                    {COMMERCIAL_OFFERS.tech_due_diligence.name}
-                                </h3>
-                                <div className="text-2xl font-mono font-bold text-zinc-950 mb-4">
-                                    ${COMMERCIAL_OFFERS.tech_due_diligence.price.toLocaleString()} <span className="text-xs text-zinc-500">2-week diligence</span>
-                                </div>
-                                <p className="text-xs text-zinc-700 font-medium leading-relaxed mb-4">
-                                    {COMMERCIAL_OFFERS.tech_due_diligence.description}
-                                </p>
-                            </div>
-                            <a
-                                href={COMMERCIAL_OFFERS.tech_due_diligence.primaryCTA.href}
-                                className="inline-block w-full py-3.5 bg-zinc-950 hover:bg-zinc-800 text-white text-center font-bold font-mono text-xs uppercase tracking-widest rounded-xl transition-colors"
-                            >
-                                Inquire M&amp;A Availability →
-                            </a>
-                        </div>
-
-                        <div className="bg-white border border-zinc-300 p-7 rounded-2xl shadow-sm flex flex-col justify-between">
-                            <div>
-                                <span className="px-2.5 py-1 rounded text-[10px] font-mono font-bold uppercase bg-violet-100 text-violet-900">
-                                    Path C · B2B Media &amp; Analyst Authority
-                                </span>
-                                <h3 className="text-2xl font-grotesk font-bold text-zinc-950 mt-3 mb-1">
-                                    {COMMERCIAL_OFFERS.sponsored_research.name}
-                                </h3>
-                                <div className="text-2xl font-mono font-bold text-zinc-950 mb-4">
-                                    ${COMMERCIAL_OFFERS.sponsored_research.price.toLocaleString()}+ <span className="text-xs text-zinc-500">per briefing</span>
-                                </div>
-                                <p className="text-xs text-zinc-700 font-medium leading-relaxed mb-4">
-                                    {COMMERCIAL_OFFERS.sponsored_research.description}
-                                </p>
-                            </div>
-                            <a
-                                href={COMMERCIAL_OFFERS.sponsored_research.primaryCTA.href}
-                                className="inline-block w-full py-3.5 bg-violet-600 hover:bg-violet-700 text-white text-center font-bold font-mono text-xs uppercase tracking-widest rounded-xl transition-colors"
-                            >
-                                Request Media Kit &amp; Scope →
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Path C: $10,000/mo Fractional CPO Retainer */}
-                    <div className="bg-zinc-950 border border-zinc-800 p-8 sm:p-12 shadow-xl rounded-2xl text-zinc-300">
-                        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-8 border-b border-zinc-800 pb-6">
-                            <div>
-                                <span className="px-2.5 py-1 rounded text-[10px] font-mono font-bold uppercase bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 mb-2 inline-block">
-                                    Path C · Embedded Executive Leadership
-                                </span>
-                                <h3 className="text-3xl font-grotesk font-bold text-white m-0">{COMMERCIAL_OFFERS.advisory_retainer.name}</h3>
-                                <p className="text-sm text-zinc-400 font-medium mt-1">{COMMERCIAL_OFFERS.advisory_retainer.subtitle}</p>
-                            </div>
-                            <div className="text-3xl font-mono font-bold text-zinc-100 mt-4 sm:mt-0 shrink-0">
-                                ${COMMERCIAL_OFFERS.advisory_retainer.price.toLocaleString()} <span className="text-sm text-zinc-500 font-medium">/ month</span>
-                            </div>
-                        </div>
-                        
-                        <p className="font-semibold text-zinc-200 mb-6">
-                            {COMMERCIAL_OFFERS.advisory_retainer.description}
-                        </p>
-                        
-                        <h4 className="text-base font-bold text-white mb-3">What it includes:</h4>
-                        <ul className="list-disc pl-5 space-y-2 mb-8 text-sm text-zinc-400">
-                            {COMMERCIAL_OFFERS.advisory_retainer.features.map((feat, i) => (
-                                <li key={i}>{feat}</li>
-                            ))}
-                        </ul>
-
-                        <div className="bg-zinc-900 border border-zinc-800 p-4 rounded-xl text-xs text-zinc-400 mb-8">
-                            <strong>Constraint:</strong> Strictly capped to 2 active Fractional CPO / Product Economist clients per quarter. Also open to select full-time Chief Product Officer (CPO), VP of Product, and Head of AI Product roles.
-                        </div>
-
-                        <div className="flex flex-wrap gap-4">
-                            <a href="mailto:richardewing@exogram.ai?subject=Fractional%20CPO%20%2F%20Executive%20Inquiry" className="inline-block px-8 py-4 bg-amber-500 text-zinc-950 font-extrabold font-mono text-xs uppercase tracking-widest rounded-xl hover:bg-amber-400 transition-colors">
-                                Inquire About Availability
-                            </a>
-                            <Link href="/portfolio" className="inline-block px-8 py-4 bg-zinc-800 text-white font-bold font-mono text-xs uppercase tracking-widest rounded-xl hover:bg-zinc-700 transition-colors">
-                                View Executive Portfolio →
-                            </Link>
-                        </div>
-                    </div>
-
-                </div>
-
-                {/* Commercial Governance & Legal Terms Notice */}
-                <div className="mt-12 p-6 rounded-2xl bg-white border border-zinc-300 text-center text-xs text-zinc-700 font-mono shadow-sm">
-                    <span className="font-bold text-zinc-950">Commercial Governance Notice: </span>
-                    <span>All advisory bookings, audits, and digital vault licenses are governed by our </span>
-                    <Link href="/legal#terms" className="underline font-bold text-zinc-950 hover:text-cyan-900">Terms of Use (TOC)</Link>
-                    <span>, </span>
-                    <Link href="/legal#advisory" className="underline font-bold text-zinc-950 hover:text-cyan-900">Advisory Scope</Link>
-                    <span>, and </span>
-                    <Link href="/legal#refunds" className="underline font-bold text-zinc-950 hover:text-cyan-900">Digital Refund Policy</Link>
-                    <span>. Richard Ewing &bull; Registered Washington State LLC.</span>
-                </div>
-
+      {/* 3 Buying Paths Primer */}
+      <section className="section page-intro">
+        <div>
+          <p className="eyebrow">Three Buying Paths</p>
+          <h2>How executives engage.</h2>
+        </div>
+        <div>
+          <p>
+            Depending on your stage, budget, and urgency, you can start with a $29
+            self-serve operating kit, commission a $2,500 forensic turnaround sprint, or
+            bring on fractional leadership to own your product P&amp;L end-to-end.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+            <div className="p-4 rounded-xl border border-[var(--line)] bg-[var(--paper)]">
+              <span className="text-xs font-mono text-[var(--gold)] font-bold block mb-1">
+                PATH A · $29 to $2,500
+              </span>
+              <strong className="text-sm font-serif block text-[var(--ink)] mb-1">
+                Fix &amp; Protect Gross Margins
+              </strong>
+              <p className="text-xs text-[var(--muted)] leading-relaxed">
+                For established products suffering from token bill bloat, dead backlog, or
+                margin compression.
+              </p>
             </div>
-        </main>
-    );
-}
+            <div className="p-4 rounded-xl border border-[var(--line)] bg-[var(--paper)]">
+              <span className="text-xs font-mono text-[var(--gold)] font-bold block mb-1">
+                PATH B · $7,500
+              </span>
+              <strong className="text-sm font-serif block text-[var(--ink)] mb-1">
+                Ship a 0-to-1 AI Product
+              </strong>
+              <p className="text-xs text-[var(--muted)] leading-relaxed">
+                For founders and enterprises needing a hardened diagnostic engine or AI tool
+                deployed in 21 days.
+              </p>
+            </div>
+            <div className="p-4 rounded-xl border border-[var(--line)] bg-[var(--paper)]">
+              <span className="text-xs font-mono text-[var(--gold)] font-bold block mb-1">
+                PATH C · $10,000/mo
+              </span>
+              <strong className="text-sm font-serif block text-[var(--ink)] mb-1">
+                Fractional Executive Leadership
+              </strong>
+              <p className="text-xs text-[var(--muted)] leading-relaxed">
+                For growth-stage leadership teams needing direct executive ownership of
+                product, P&amp;L, and board reporting.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      {/* Pricing Cards Grid */}
+      <section className="section border-t border-[var(--line)]">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <p className="eyebrow center">Engagement Tiers</p>
+          <h2 className="text-3xl font-serif text-[var(--ink)] mb-3">
+            Transparent, flat-rate options.
+          </h2>
+          <p className="text-sm text-[var(--muted)]">
+            Select the tier that matches your current operating reality. All engagements are
+            led directly by Richard Ewing.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {sprintTiers.map((tier) => (
+            <div
+              key={tier.id}
+              className={`rounded-2xl p-7 flex flex-col justify-between transition-all ${
+                tier.highlight
+                  ? 'bg-[var(--forest2)] text-white shadow-xl border-2 border-[var(--gold)]'
+                  : 'bg-white border border-[var(--line)] shadow-sm'
+              }`}
+            >
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-4">
+                  <span
+                    className={`text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${
+                      tier.highlight
+                        ? 'bg-[var(--gold)] text-[var(--ink)]'
+                        : 'bg-[var(--paper2)] text-[var(--muted)]'
+                    }`}
+                  >
+                    {tier.badge}
+                  </span>
+                  <span
+                    className={`text-xs font-mono ${
+                      tier.highlight ? 'text-zinc-300' : 'text-[var(--muted)]'
+                    }`}
+                  >
+                    {tier.timeline}
+                  </span>
+                </div>
+
+                <h3
+                  className={`text-2xl font-serif mb-2 ${
+                    tier.highlight ? 'text-white' : 'text-[var(--ink)]'
+                  }`}
+                >
+                  {tier.name}
+                </h3>
+
+                <div className="flex items-baseline gap-2 mb-4">
+                  <span
+                    className={`text-4xl font-serif font-bold ${
+                      tier.highlight ? 'text-[var(--gold)]' : 'text-[var(--ink)]'
+                    }`}
+                  >
+                    {tier.price}
+                  </span>
+                  <span
+                    className={`text-xs font-mono uppercase ${
+                      tier.highlight ? 'text-zinc-300' : 'text-[var(--muted)]'
+                    }`}
+                  >
+                    / {tier.period}
+                  </span>
+                </div>
+
+                <p
+                  className={`text-xs leading-relaxed mb-6 ${
+                    tier.highlight ? 'text-zinc-200' : 'text-[var(--muted)]'
+                  }`}
+                >
+                  {tier.description}
+                </p>
+
+                <div
+                  className={`border-t pt-5 mb-6 ${
+                    tier.highlight ? 'border-white/10' : 'border-[var(--line)]'
+                  }`}
+                >
+                  <p
+                    className={`text-[11px] font-mono uppercase tracking-wider font-bold mb-3 ${
+                      tier.highlight ? 'text-[var(--gold)]' : 'text-[var(--ink)]'
+                    }`}
+                  >
+                    Key Deliverables:
+                  </p>
+                  <ul className="space-y-2.5">
+                    {tier.deliverables.map((item, idx) => (
+                      <li
+                        key={idx}
+                        className={`text-xs flex items-start gap-2 leading-snug ${
+                          tier.highlight ? 'text-zinc-200' : 'text-[var(--ink)]'
+                        }`}
+                      >
+                        <span className="text-[var(--gold)] font-bold mt-0.5">✓</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="pt-4">
+                <Link
+                  href={tier.ctaHref}
+                  className={`button w-full text-center block ${
+                    tier.highlight
+                      ? 'button-gold'
+                      : 'button-dark'
+                  }`}
+                >
+                  {tier.ctaText}
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Side-by-Side Comparison Table */}
+      <section className="section border-t border-[var(--line)]">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <p className="eyebrow center">Side-by-Side Comparison</p>
+          <h2 className="text-2xl font-serif text-[var(--ink)]">
+            Compare all tiers at a glance.
+          </h2>
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="w-full text-left text-xs border-collapse bg-white rounded-2xl overflow-hidden border border-[var(--line)] shadow-sm">
+            <thead>
+              <tr className="border-b border-[var(--line)] bg-[var(--paper2)]">
+                <th className="p-4 font-serif text-sm text-[var(--ink)]">Deliverable</th>
+                <th className="p-4 font-mono font-bold text-[var(--muted)]">Operating Kit ($29)</th>
+                <th className="p-4 font-mono font-bold text-[var(--muted)]">P&amp;L Teardown ($450)</th>
+                <th className="p-4 font-mono font-bold text-[var(--gold)] bg-[var(--forest2)] text-white">Turnaround ($2,500)</th>
+                <th className="p-4 font-mono font-bold text-[var(--muted)]">AI Build ($7,500)</th>
+                <th className="p-4 font-mono font-bold text-[var(--muted)]">Fractional CPO ($10k/mo)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisonRows.map((row, idx) => (
+                <tr
+                  key={idx}
+                  className={`border-b border-[var(--line)] hover:bg-[var(--paper)] transition-colors ${
+                    idx % 2 === 0 ? 'bg-white' : 'bg-[#FAFAF8]'
+                  }`}
+                >
+                  <td className="p-4 font-bold text-[var(--ink)]">{row.feature}</td>
+                  <td className="p-4 text-[var(--muted)]">{row.kit}</td>
+                  <td className="p-4 text-[var(--muted)]">{row.teardown}</td>
+                  <td className="p-4 font-bold text-[var(--ink)] bg-[var(--forest2)]/5">{row.turnaround}</td>
+                  <td className="p-4 text-[var(--muted)]">{row.build}</td>
+                  <td className="p-4 text-[var(--muted)]">{row.cpo}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section border-t border-[var(--line)]">
+        <div className="max-w-3xl mx-auto">
+          <p className="eyebrow center">Common Questions</p>
+          <h2 className="text-3xl font-serif text-[var(--ink)] text-center mb-8">
+            Frequently Asked Questions
+          </h2>
+
+          <div className="space-y-4">
+            <div className="p-6 rounded-2xl bg-white border border-[var(--line)] shadow-sm">
+              <h3 className="text-base font-serif font-bold text-[var(--ink)] mb-2">
+                What happens after I purchase the $29 Operating Kit?
+              </h3>
+              <p className="text-xs text-[var(--muted)] leading-relaxed">
+                You immediately receive an email with direct download links to the 5 Excel
+                and CSV models, plus an invitation link to the Live Browser Workspace at
+                richardewing.io/workspace. You own the files for life and receive future
+                updates at no additional charge.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white border border-[var(--line)] shadow-sm">
+              <h3 className="text-base font-serif font-bold text-[var(--ink)] mb-2">
+                How quickly can we begin a $2,500 Turnaround Sprint?
+              </h3>
+              <p className="text-xs text-[var(--muted)] leading-relaxed">
+                Turnaround sprints begin within 48 to 72 hours of contract execution. I take
+                on a maximum of two turnaround sprints per calendar month to guarantee deep,
+                focused attention on your telemetry data, code metrics, and gross margins.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white border border-[var(--line)] shadow-sm">
+              <h3 className="text-base font-serif font-bold text-[var(--ink)] mb-2">
+                Do you sign an NDA before inspecting our numbers?
+              </h3>
+              <p className="text-xs text-[var(--muted)] leading-relaxed">
+                Yes. A standard mutual non-disclosure agreement is executed before any
+                working session, telemetry export, or financial review begins. Your API
+                bills, customer data, and proprietary roadmap are kept strictly
+                confidential.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-white border border-[var(--line)] shadow-sm">
+              <h3 className="text-base font-serif font-bold text-[var(--ink)] mb-2">
+                What if we need a custom scope or M&amp;A due diligence?
+              </h3>
+              <p className="text-xs text-[var(--muted)] leading-relaxed">
+                For private equity sponsors, acquisition due diligence, or bespoke
+                enterprise advisory, contact me directly via the inquiry form below to
+                discuss specific timelines and terms.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Closing CTA */}
+      <section className="closing-cta">
+        <p className="eyebrow">Ready to Fix Your Product P&amp;L?</p>
+        <h2>Start with the data. Protect your margins.</h2>
+        <p>
+          Whether you need instant worksheets, a 48-hour teardown, or an embedded
+          turnaround partner, let&apos;s get to work.
+        </p>
+        <div className="actions center">
+          <Link className="button button-gold" href="/reality-check">
+            Run the Reality Check first ↗
+          </Link>
+          <Link className="button button-ghost-light" href="/contact?subject=Pricing+Inquiry">
+            Start a conversation ↗
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}

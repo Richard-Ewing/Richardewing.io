@@ -43,42 +43,42 @@ export default function MemoryComparisonTable() {
     ];
 
     return (
-        <div className="w-full overflow-hidden border border-zinc-300 rounded-2xl bg-white shadow-sm text-left">
+        <div className="w-full overflow-hidden border border-[var(--line)] rounded-2xl bg-white shadow-sm text-left">
             <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                     <thead>
-                        <tr className="border-b border-zinc-300 bg-zinc-50/80">
-                            <th className="py-4 px-5 text-xs font-mono font-bold uppercase tracking-wider text-zinc-600 w-1/4">
+                        <tr className="border-b border-[var(--line)] bg-[var(--paper2)]">
+                            <th className="py-4 px-5 text-xs font-mono font-bold uppercase tracking-wider text-[var(--muted)] w-1/4">
                                 Dimension
                             </th>
-                            <th className="py-4 px-5 text-xs font-mono font-bold uppercase tracking-wider text-zinc-500 w-[37.5%] border-l border-zinc-200">
+                            <th className="py-4 px-5 text-xs font-mono font-bold uppercase tracking-wider text-[var(--muted)] w-[37.5%] border-l border-[var(--line)]">
                                 Typical AI Chat
                             </th>
-                            <th className="py-4 px-5 text-xs font-mono font-bold uppercase tracking-wider text-purple-900 w-[37.5%] border-l border-zinc-200 bg-purple-50/60">
+                            <th className="py-4 px-5 text-xs font-mono font-bold uppercase tracking-wider text-[var(--gold)] w-[37.5%] border-l border-[var(--line)] bg-[var(--forest2)] text-white">
                                 Exogram
                             </th>
                         </tr>
                     </thead>
-                    <tbody className="divide-y divide-zinc-200 text-sm">
+                    <tbody className="divide-y divide-[var(--line)] text-sm">
                         {comparisonRows.map((row, idx) => (
                             <tr
                                 key={row.dimension}
                                 className={`transition-colors ${
-                                    idx % 2 === 0 ? 'bg-white' : 'bg-zinc-50/30'
-                                } hover:bg-purple-50/20`}
+                                    idx % 2 === 0 ? 'bg-white' : 'bg-[#FAFAF8]'
+                                } hover:bg-[var(--paper)]`}
                             >
-                                <td className="py-4 px-5 font-semibold text-zinc-950 align-top text-xs font-mono">
+                                <td className="py-4 px-5 font-semibold text-[var(--ink)] align-top text-xs font-mono">
                                     {row.dimension}
                                 </td>
-                                <td className="py-4 px-5 text-zinc-600 align-top border-l border-zinc-200 leading-relaxed text-xs sm:text-sm">
+                                <td className="py-4 px-5 text-[var(--muted)] align-top border-l border-[var(--line)] leading-relaxed text-xs sm:text-sm">
                                     <div className="flex items-start gap-2">
                                         <X className="w-4 h-4 text-zinc-400 shrink-0 mt-0.5" />
                                         <span>{row.ordinary}</span>
                                     </div>
                                 </td>
-                                <td className="py-4 px-5 text-zinc-900 font-medium align-top border-l border-zinc-200 bg-purple-50/30 leading-relaxed text-xs sm:text-sm">
+                                <td className="py-4 px-5 text-[var(--ink)] font-medium align-top border-l border-[var(--line)] bg-[var(--forest2)]/5 leading-relaxed text-xs sm:text-sm">
                                     <div className="flex items-start gap-2">
-                                        <Check className="w-4 h-4 text-purple-700 shrink-0 mt-0.5" />
+                                        <Check className="w-4 h-4 text-[var(--gold)] shrink-0 mt-0.5 font-bold" />
                                         <span>{row.exogram}</span>
                                     </div>
                                 </td>
@@ -87,9 +87,9 @@ export default function MemoryComparisonTable() {
                     </tbody>
                 </table>
             </div>
-            <div className="p-4 bg-zinc-50 border-t border-zinc-200 text-xs text-zinc-600 font-mono flex items-center justify-between">
+            <div className="p-4 bg-[var(--paper2)] border-t border-[var(--line)] text-xs text-[var(--muted)] font-mono flex items-center justify-between">
                 <span>The difference between answering a prompt and understanding the situation.</span>
-                <span className="text-purple-700 font-bold">Exogram</span>
+                <span className="text-[var(--gold)] font-bold">Exogram</span>
             </div>
         </div>
     );
