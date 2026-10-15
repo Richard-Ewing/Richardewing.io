@@ -7,7 +7,7 @@ import { professionalServiceSchema } from '@/app/lib/schemas';
 import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 
 export const metadata: Metadata = {
-    title: 'PE & M&A Product P&L & Technical Due Diligence',
+    title: 'PE & M&A Technical Due Diligence',
     description: 'Independent 2-week forensic Product P&L, AI margin, and R&D capital due diligence uncovering software liabilities and unit economic risks before closing.',
     alternates: {
         canonical: 'https://www.richardewing.io/services/technical-due-diligence',

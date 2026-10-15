@@ -179,6 +179,10 @@ const nextConfig: NextConfig = {
       { source: '/curriculum/tracks/startup-economics/10-:id', destination: '/vault/curriculum/tracks/startup-economics/26-:id', permanent: true },
       { source: '/vault/curriculum/tracks/startup-economics/10-:id', destination: '/vault/curriculum/tracks/startup-economics/26-:id', permanent: true },
       // ═══════════════════ PAIN-FORWARD URL ALIASES ═══════════════════
+      // Topical authority roadmap aliases
+      { source: '/ai-cost-audit', destination: '/services/ai-cost-audit', permanent: true },
+      { source: '/rd-capital-audit', destination: '/services/ai-cost-audit', permanent: true },
+      { source: '/ai-spend-calculator', destination: '/roi-calculator', permanent: true },
       // Research-validated searchable URLs → existing tool pages.
       // VALIDATED: competitors exist for these exact terms (TechDebtCalculator.com, Red Eagle, etc.)
       { source: '/tools/technical-debt-calculator', destination: '/tools/pdi', permanent: true },

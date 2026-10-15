@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/frameworks', '/frameworks/innovation-tax', '/frameworks/product-debt-index',
         '/frameworks/technical-insolvency-date', '/frameworks/synthetic-cogs',
         '/advisory', '/research/concepts', '/principal', '/trust',
+        '/ai-cost-audit', '/rd-capital-audit', '/ai-spend-calculator',
         '/tools/technical-debt-calculator', '/tools/code-quality-calculator',
         '/tools/vibe-coding-debt-calculator', '/tools/synthetic-debt-calculator',
         '/tools/ai-cost-calculator', '/tools/llm-cost-calculator',
