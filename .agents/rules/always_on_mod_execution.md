@@ -35,16 +35,26 @@ The academy is the operational consumption layer of our research and proving gro
 ---
 
 ## 3. Core Copywriting Directives (Human Writing Standard HWS v2.0 / REWS v2.0)
-All essays, landing page copy, explanations, curriculum modules, and documentation must adhere to the **Human Writing Standard (HWS v2.0 / REWS v2.0)**:
+All essays, landing page copy, explanations, curriculum modules, and documentation must adhere strictly to the **Human Writing Standard (HWS v2.0 / REWS v2.0)** and the 30-Point AI Smell Detection Checklist (`c:\Users\richa\Downloads\HUMAN_WRITING_STANDARD_AI_SMELL_DETECTION_CHECKLIST.md` and `.agents/skills/lived-experience/SKILL.md`):
 1. **The Prime Directive**: Human first. Always. Write like a person, not a content producer. Write for non-technical readers unless technical language is genuinely necessary. Always write non-technically. Be human, genuine, personable as fuck. Do not write to sound impressive. Write to communicate something worth saying.
-2. **Start With the 10th Thought**: Look for the less-obvious human observation, tension, irritation, admission, or contradiction underneath the obvious topic.
+2. **Start With the 10th Thought**: Look for the less-obvious human observation, tension, irritation, admission, or contradiction underneath the obvious topic. Never open with predictable corporate boilerplate.
 3. **Concrete Observed Evidence**: Prefer something that broke, worked, cost money, took longer, or changed the writer's mind over abstract generalities.
-4. **Controlled Surprise & Unevenness**: Break predictable structural symmetry and formulaic transitions. Allow paragraphs to breathe.
-5. **No AI Jargon or LinkedIn Voice**: Strictly eliminate consulting filler (*unlock, delve, seamless, robust, leverage, elevate*) and engagement bait (*Let that sink in*, *Read that again*).
+4. **Controlled Surprise & Unevenness**: Break predictable structural symmetry, artificial parallelism, and formulaic transitions. Allow paragraphs to breathe.
+5. **Zero Banned Phrases & AI Marketing Buzzwords**: Strictly eliminate synthetic jargon and consulting filler:
+   - *unlock / unlocking / unlocks* (use *access, get, download, open, qualify for, generate*)
+   - *delve / delve into* (use *examine, look at, break down, analyze*)
+   - *seamless / seamlessly* (use *direct, frictionless, simple, automated*)
+   - *robust / robustly* (use *resilient, proven, stable, reliable*)
+   - *leverage / leveraging* (use *use, apply, deploy, exploit*)
+   - *the bottom line* as formulaic summary/punchline (use *Executive Readout, Financial Readout, What It Costs, The Takeaway*)
+   - *missing layer / missing piece* (replace with concrete operational facts)
+   - *production-ready* (use *battle-tested, field-tested, production-tested, deployed*)
+   - *empower, foster, game-changer, revolutionary, transformative, navigate the landscape, at the end of the day, let that sink in, read that again, full stop, here is the thing*.
 6. **Sentence Rhythm**: Mix short and long sentences naturally. Preserve authentic conversational quirks and blunt opinions.
 7. **The Final Human Test**: *"Would Richard actually say this out loud?"* If not, rewrite it.
 8. **Audience Scope & Specific Job Titles Mandate**: The audience is the whole floor, not just the server room. Never use lazy umbrella labels like "middle managers" or "the C-suite." Always insert the actual job titles: CEO, CFO, COO, Customer Support Manager, Product Ops Lead, Engineering Manager, VP of Operations, Director of Finance, etc. Write non-technically by default. De-emphasize engineering plumbing (code, proxies, vector databases). Ground everything in operational reality: wasted software budgets, broken promises, team friction, bad data, and common-sense leadership.
-*Full Specification:* [.agents/skills/lived-experience/SKILL.md](file:///d:/Antigravity_RichardEwing.io/.agents/skills/lived-experience/SKILL.md)
+9. **Universal Scope**: Mandated unconditionally on EVERY new page, new content addition, or page modification across the entire repository.
+*Full Specification:* [Checklist Reference](file:///c:/Users/richa/Downloads/HUMAN_WRITING_STANDARD_AI_SMELL_DETECTION_CHECKLIST.md) and [.agents/skills/lived-experience/SKILL.md](file:///d:/Antigravity_RichardEwing.io/.agents/skills/lived-experience/SKILL.md)
 
 ---
 
@@ -177,6 +187,6 @@ To eliminate bias, preserve architectural continuity, and keep documentation in 
 4. **Atomic Git Reverts**: Always revert regressions using `git checkout` or `git revert`. Never attempt manual string replacements on large files to undo changes.
 5. **Background Task Lifecycle**: Standalone scripts must include explicit `process.exit(0)`. Any background task spawned during execution must be terminated via `manage_task(Action='kill')` once finished to prevent zombie task accumulation in the user's desktop pane.
 6. **Live Edge Verification**: Verify deployments through `npx wrangler deploy` output and live HTTP verification, never by local build exit codes alone.
-7. **Page Addition Invariant**: Every new or refactored page, tool, or route must strictly adhere to `.agents/rules/page_addition_invariants.md` (Concept B visual tokens, centralized editorial components, route inventory sync, zero content/calculation truncation, and live Cloudflare deployment).
+7. **Page Addition & Modification Invariant**: Every new or refactored page, tool, route, or content addition/modification must strictly adhere to `.agents/rules/page_addition_invariants.md` (Concept B visual tokens, centralized editorial components, route inventory sync, zero content/calculation truncation, strict enforcement of HWS v2.0 / AI Smell Detection checklist with zero banned buzzwords, and live Cloudflare deployment).
 
 

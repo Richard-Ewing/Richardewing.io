@@ -263,7 +263,7 @@ const quizQuestions: Question[] = [
     hint: "Look for the benefit related to the massive 'B2G' (Business to Government) revenue channel.",
     answerOptions: [
       {
-        text: "It unlocks access to $600B+ in federal contracts and non-dilutive SBIR/STTR grants.",
+        text: "It qualifies the company for $600B+ in federal contracts and non-dilutive SBIR/STTR grants.",
         isCorrect: true,
         rationale: "Registration on SAM.gov is free and mandatory to bid on government contracts or receive $150k to $2M+ in non-dilutive SBIR/STTR research grants."
       },

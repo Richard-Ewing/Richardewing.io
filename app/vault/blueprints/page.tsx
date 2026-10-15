@@ -27,7 +27,7 @@ export default function BlueprintsPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-100 border border-purple-300 text-purple-900 text-xs font-semibold uppercase tracking-wider mb-4">
             <Code2 className="w-3.5 h-3.5 text-purple-700" />
-            Production-Ready Architecture Assets
+            Battle-Tested Architecture Assets
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-950 max-w-4xl">

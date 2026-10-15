@@ -1,6 +1,6 @@
 # Page Addition & Route Modification Invariants (Concept B Protocol)
 
-Whenever ANY new page, subpage, tool, curriculum lesson, or comparison route is added or modified in `richardewing.io`, the following 6 invariants MUST be strictly enforced:
+Whenever ANY new page, subpage, tool, curriculum lesson, or comparison route is added or modified in `richardewing.io`, the following 7 invariants MUST be strictly enforced:
 
 ---
 
@@ -46,14 +46,34 @@ Whenever ANY new page, subpage, tool, curriculum lesson, or comparison route is 
 
 ---
 
-### 5. SEO, Schemas & Canonical Standard
+### 5. Mandatory Human Writing Standard (HWS v2.0 / AI Smell Detection)
+* Every new page, new content, or page modification MUST strictly enforce the **Human Writing Standard (HWS v2.0 / REWS v2.0)** and the 30-Point AI Smell Detection Checklist (`c:\Users\richa\Downloads\HUMAN_WRITING_STANDARD_AI_SMELL_DETECTION_CHECKLIST.md` & `.agents/skills/lived-experience/SKILL.md`):
+  - **Zero Banned AI Buzzwords & Marketing Clichés**: Strictly eliminate filler and synthetic jargon including:
+    - *unlock / unlocking / unlocks* (replace with *access, get, download, open, qualify for, generate*)
+    - *delve / delve into* (replace with *examine, look at, break down, analyze*)
+    - *seamless / seamlessly* (replace with *direct, frictionless, simple, automated*)
+    - *robust / robustly* (replace with *resilient, proven, stable, reliable*)
+    - *leverage / leveraging* (replace with *use, apply, deploy, exploit*)
+    - *the bottom line* as a formulaic summary/punchline (replace with *Executive Readout, Financial Readout, What It Costs, The Takeaway*)
+    - *missing layer / missing piece* (replace with concrete operational facts)
+    - *production-ready* (replace with *battle-tested, field-tested, production-tested, deployed*)
+    - *empower, foster, game-changer, revolutionary, transformative, navigate the landscape, at the end of the day, let that sink in, read that again, full stop, here is the thing*.
+  - **Start With the 10th Thought**: Avoid the obvious first predictable framing or corporate boilerplate. Look for the less-obvious human observation, tension, irritation, admission, or contradiction underneath the topic.
+  - **Concrete Observed Evidence Over Abstraction**: Prefer something that broke, worked, cost money, took longer, or changed the writer's mind over abstract generalities.
+  - **Specific Job Titles Mandate**: Write for the whole floor, not the server room. Never use lazy umbrella labels like "middle managers" or "the C-suite." Always use specific actual job titles: CEO, CFO, COO, Customer Support Manager, Product Ops Lead, Engineering Manager, VP of Operations, Director of Finance, etc.
+  - **Zero LinkedIn Voice & Formulaic Symmetry**: Eliminate formulaic bridge phrases, artificially balanced lists of three, and manufactured vulnerability.
+  - **The Final Human Test**: *"Would Richard actually say this out loud?"* If not, rewrite it.
+
+---
+
+### 6. SEO, Schemas & Canonical Standard
 * Define explicit page-level metadata (`title`, `description`, `canonical`).
 * Attach appropriate JSON-LD structured data matching the page entity (`Article`, `WebApplication`, `DefinedTerm`, `Course`, `FAQPage`, `AboutPage`).
 * Maintain clean internal links and breadcrumb structures.
 
 ---
 
-### 6. Mandatory Turn-End Verification Gate
+### 7. Mandatory Turn-End Verification Gate
 * No code-modifying turn introducing or altering a page may conclude without passing:
   1. `node .agents/scripts/verify-qa.mjs` (0 errors, 0 warnings, zero secrets, zero em-dashes).
   2. `npm run build` (Clean Next.js compilation across all routes).

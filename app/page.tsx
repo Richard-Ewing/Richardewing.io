@@ -135,7 +135,7 @@ export default function Home() {
 
             <div className="floating-note glass">
               <span className="note-dot" />
-              Turning AI from a cost center into compound capital.
+              Turning AI from a cloud bill leak into measurable operating profit.
             </div>
 
             <div className="visual-index">01 / ECONOMICS IN MOTION</div>
@@ -158,8 +158,8 @@ export default function Home() {
           </p>
           <h2>More AI activity doesn’t automatically create more value.</h2>
           <p>
-            AI usage can rise while output stalls and margins erode. The missing layer is
-            economic visibility.
+            AI usage can rise while output stalls and margins erode. Nobody is checking the unit
+            economics before pushing to production.
           </p>
         </div>
 

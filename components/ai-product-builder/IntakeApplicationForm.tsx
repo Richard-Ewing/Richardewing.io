@@ -560,7 +560,7 @@ export default function IntakeApplicationForm() {
             </div>
             <div className="flex items-start gap-2">
               <span className="w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-mono text-[10px] shrink-0 mt-0.5">3</span>
-              <span><strong>Enrollment &amp; Pre-Work:</strong> Upon acceptance, your pilot seat is locked for 48 hours, and Week 0 Pre-Work unlocks instantly.</span>
+              <span><strong>Enrollment &amp; Pre-Work:</strong> Upon acceptance, your pilot seat is locked for 48 hours, and Week 0 Pre-Work is delivered immediately.</span>
             </div>
           </div>
         </div>

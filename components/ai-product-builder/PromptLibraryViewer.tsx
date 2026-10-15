@@ -146,7 +146,7 @@ Transform this draft description:
 Generate 5 distinct variations adhering strictly to these rules:
 1. No buzzwords: Avoid 'delve', 'seamless', 'robust', 'elevate', 'game-changing', 'unleash', 'cutting-edge'.
 2. Format: [Product Name] helps [Specific Target Persona] [Achieve Concrete Economic/Time Outcome] by [Proprietary Mechanism] without [Common Painful Friction].
-3. Include the measurable impact (hours saved, error rates reduced, or revenue unlocked).
+3. Include the measurable impact (hours saved, error rates reduced, or revenue generated).
 4. Provide a 1-sentence 'Bar Test' version that an engineer can explain to a non-technical friend in 5 seconds.`
   },
   {

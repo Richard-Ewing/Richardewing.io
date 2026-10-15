@@ -167,7 +167,7 @@ export const articlesBatch9: Record<string, ArticleData> = {
 
 <hr/>
 
-<h2>The Bottom Line</h2>
+<h2>Where the Money Actually Goes</h2>
 
 <p>AI coding tools are not free. They were never free  -  even at $30/month. The subscription was always a rounding error compared to the hidden costs of maintenance, security, review, and verification.</p>
 

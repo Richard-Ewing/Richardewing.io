@@ -182,7 +182,7 @@ export default function ToolkitPage() {
             <div className="bg-white border border-[var(--line)] rounded-2xl p-7 flex flex-col justify-between shadow-sm">
               <div>
                 <span className="text-xs font-mono font-bold uppercase text-[var(--gold)] block mb-1">
-                  Standard Edition · Instant Unlock
+                  Standard Edition · Direct Digital Download
                 </span>
                 <div className="flex items-baseline gap-2 mb-3">
                   <span className="text-4xl font-serif font-bold text-[var(--ink)]">$29</span>
@@ -197,7 +197,7 @@ export default function ToolkitPage() {
               <div className="pt-4 border-t border-[var(--line)]">
                 <CheckoutButton
                   productId="premium_guide_29"
-                  label="Unlock Operating Kit Now ($29) →"
+                  label="Get the Operating Kit ($29) →"
                   variant="primary"
                 />
               </div>

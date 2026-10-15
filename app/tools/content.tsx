@@ -55,7 +55,7 @@ const tools = [
         name: 'Audit Interview',
         acronym: 'AUDIT',
         tagline: 'Quantify candidate judgment and risk.',
-        description: 'Production-ready logic for auditing candidates. Evaluate verification depth, architectural reasoning, and economic awareness.',
+        description: 'Structured scoring rubric for auditing candidates. Evaluate verification depth, architectural reasoning, and economic awareness.',
         color: 'emerald',
         icon: Brain,
         metrics: ['Hiring Verdict', 'Capital Risk', 'Executive Memo'],

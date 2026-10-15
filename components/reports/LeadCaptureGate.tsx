@@ -53,12 +53,12 @@ export function LeadCaptureGate({ toolName, extraData, children }: LeadCaptureGa
                 
                 <h3 className="text-xl font-bold text-zinc-900 mb-2">Executive Access Required</h3>
                 <p className="text-zinc-600 max-w-md mx-auto mb-6 text-sm leading-relaxed">
-                    Unlock the full operational report, category benchmark comparisons, and deterministic governance recommendations.
+                    Access the complete audit report, category benchmark comparisons, and deterministic governance recommendations.
                 </p>
 
                 <div className="max-w-sm mx-auto">
                     <NewsletterForm 
-                        buttonText="Unlock Executive Report" 
+                        buttonText="Access Executive Report" 
                         extraData={{ tool: toolName, ...extraData }}
                         redirectTo="" // Don't redirect, let them see it here
                         onSuccess={handleSuccess}

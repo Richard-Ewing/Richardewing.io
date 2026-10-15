@@ -44,7 +44,7 @@ export default function ProductsPage() {
           <h1>Tools for measurable outcomes.</h1>
           <p className="inner-lede">
             Turn AI insights into action with practical software built for operators, not
-            theorists. Production systems governing agent behavior and unlocking career
+            theorists. Production systems governing agent behavior and advancing career
             growth.
           </p>
           <div className="actions">

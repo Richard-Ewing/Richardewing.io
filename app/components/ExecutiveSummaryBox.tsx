@@ -25,7 +25,7 @@ const ExecutiveSummaryBox = ({
 
             <div className="flex items-center gap-2 mb-5">
                 <span className="text-lg">⚡</span>
-                <span className="text-xs font-bold text-rose-600 uppercase tracking-[0.2em] font-mono">The Bottom Line</span>
+                <span className="text-xs font-bold text-rose-600 uppercase tracking-[0.2em] font-mono">Executive Readout</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
