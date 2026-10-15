@@ -67,9 +67,29 @@ Whenever ANY new page, subpage, tool, curriculum lesson, or comparison route is 
 ---
 
 ### 6. SEO, Schemas & Canonical Standard
-* Define explicit page-level metadata (`title`, `description`, `canonical`).
-* Attach appropriate JSON-LD structured data matching the page entity (`Article`, `WebApplication`, `DefinedTerm`, `Course`, `FAQPage`, `AboutPage`).
-* Maintain clean internal links and breadcrumb structures.
+* **Title Template Suffix Invariant**:
+  - `app/layout.tsx` applies `template: '%s | Richard Ewing'`.
+  - Child pages MUST NEVER hardcode `| Richard Ewing` in `metadata.title`.
+  - Child titles must be concise (42 characters or less) so the rendered title remains strictly under or equal to 60 characters.
+* **Meta Descriptions**:
+  - Strictly under 155 characters (average 140 to 150 characters).
+  - Active voice, high click-through, communicating direct commercial or diagnostic utility.
+  - Zero marketing buzzwords (eliminate "unlock", "seamless", "delve", "robust").
+* **Mandatory Dual-Schema Architecture (application/ld+json)**:
+  - Every page or hub must embed BOTH:
+    1. **Primary Entity Schema**: `WebApplication` (calculators/diagnostics), `Article` (methodology/essays with author & publisher), `Service` (advisory offerings), or `CollectionPage` (case studies/archives).
+    2. **Hierarchical Breadcrumbs (`BreadcrumbList`)**: Connecting `Home` -> `[Section]` -> `[Page]` to guarantee proper topical hierarchy indexing in Perplexity and Google.
+* **Social & Twitter Card Invariant**:
+  - Every public route must declare both `openGraph` and `twitter`:
+    - `twitter.card`: `'summary_large_image'`
+    - `twitter.title`: matching page title
+    - `twitter.description`: active voice summary
+    - `twitter.images`: dynamic OpenGraph card endpoint (`/api/og?title=...&category=...`)
+* **Topical Authority URL Alias Protocol**:
+  - Any strategic search query or audit-recommended alias (such as `/ai-cost-audit`, `/rd-capital-audit`, `/ai-spend-calculator`) must be mapped via permanent 308 redirect in `next.config.ts`.
+  - Add all redirected aliases to `REDIRECT_DISALLOWED` in `app/sitemap.ts` to prevent duplicate or conflicting indexation.
+* **Sitemap Synchronization**:
+  - Register all new non-redirected canonical pages in `app/sitemap.ts` with explicit change frequency (`weekly` for hubs/diagnostics) and priority (`0.95`).
 
 ---
 
