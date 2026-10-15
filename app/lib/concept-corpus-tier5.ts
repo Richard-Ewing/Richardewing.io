@@ -698,7 +698,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       },
       {
         role: 'VP of Operations',
-        takeaway: 'Reduce vendor lock-in and cut downtime by building multi-model pipelines that seamlessly failover to alternative providers.',
+        takeaway: 'Reduce vendor lock-in and cut downtime by building multi-model pipelines that automatically failover to alternative providers.',
         recommendedNextSlug: 'inference-dividend-model'
       },
       {

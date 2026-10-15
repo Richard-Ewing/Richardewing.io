@@ -21,9 +21,9 @@ export function LeadCaptureGate({ toolName, extraData, children }: LeadCaptureGa
             // eslint-disable-next-line react-hooks/set-state-in-effect
             setHasAccess(true);
         } else {
-            // Check session storage to see if they unlocked this gate recently
-            const unlocked = sessionStorage.getItem(`lead_gate_${toolName}`);
-            if (unlocked === 'true') {
+            // Check session storage to see if they accessed this gate recently
+            const hasStoredAccess = sessionStorage.getItem(`lead_gate_${toolName}`);
+            if (hasStoredAccess === 'true') {
                 // eslint-disable-next-line react-hooks/set-state-in-effect
                 setHasAccess(true);
             }

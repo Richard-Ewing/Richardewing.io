@@ -31,7 +31,7 @@ export const aiToolsTerms: GlossaryTerm[] = [
         whyItMatters: 'LangChain is the most common framework teams use when building AI features. Understanding its architecture helps product leaders evaluate build complexity, maintenance burden, and the technical debt implications of LLM application development.',
         category: 'AI Tools & Frameworks',
         relatedTerms: ['large-language-model', 'rag-architecture', 'ai-agent', 'prompt-engineering'],
-        faqs: [{ question: 'Is LangChain production-ready?', answer: 'Yes, LangChain is used in production by thousands of companies. However, it moves fast  -  breaking changes between versions create maintenance debt. Teams should pin versions and test thoroughly before upgrading.' }],
+        faqs: [{ question: 'Is LangChain battle-tested for enterprise production?', answer: 'Yes, LangChain is used in production by thousands of companies. However, it moves fast  -  breaking changes between versions create maintenance debt. Teams should pin versions and test thoroughly before upgrading.' }],
     },
     {
         title: 'Retrieval-Augmented Generation (RAG)',

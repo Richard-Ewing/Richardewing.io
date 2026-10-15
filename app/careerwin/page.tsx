@@ -248,7 +248,7 @@ export default function CareerWinPage() {
               </h3>
               <p className="text-xs text-[var(--muted)] leading-relaxed">
                 Map your technical scope from Senior to Staff, Principal, and VP of
-                Engineering based on architectural leverage, not just tenure.
+                Engineering based on architectural impact and systems scope, not just tenure.
               </p>
             </div>
 

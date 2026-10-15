@@ -36,7 +36,7 @@ export const eighteenthPassTerms: GlossaryTerm[] = [
         title: 'AI Guardrails',
         slug: 'ai-guardrails',
         definition: `AI guardrails are safety mechanisms that constrain AI model behavior within acceptable bounds  -  preventing harmful, inaccurate, or policy-violating outputs. Guardrails are the practical implementation of AI alignment in production.\n\n**Types of guardrails:**\n- **Input guardrails:** Filter dangerous prompts before they reach the model (prompt injection detection, topic filtering)\n- **Output guardrails:** Validate model responses before returning to users (content moderation, factual verification, PII detection)\n- **Behavioral guardrails:** Constrain the model's action space (EAAP Protocol  -  what actions the AI is allowed to take)\n\n**Guardrail tools:** NVIDIA NeMo Guardrails, Guardrails AI, LangChain output parsers, custom validation layers.\n\n**The guardrail tax:** Every guardrail adds latency and cost. A typical production AI system has 3-5 guardrail layers. Each adds 50-200ms latency and requires its own model call (for ML-based guardrails).`,
-        whyItMatters: 'AI guardrails are the difference between a demo and a production-ready AI product. Insufficient guardrails create safety and liability risks. Excessive guardrails create latency and cost overhead.',
+        whyItMatters: 'AI guardrails are the difference between a demo and a battle-tested production product. Insufficient guardrails create safety and liability risks. Excessive guardrails create latency and cost overhead.',
         category: 'AI & Machine Learning',
         relatedTerms: ['ai-alignment', 'agentic-governance', 'eaap-protocol', 'ai-red-teaming'],
         faqs: [{ question: 'How many guardrails does a production AI system need?', answer: '3-5 is typical: input validation, output content filter, PII redaction, factual grounding check, and policy compliance. Each adds cost and latency. Design guardrails around your specific risk profile.' }],
@@ -66,7 +66,7 @@ export const eighteenthPassTerms: GlossaryTerm[] = [
         whyItMatters: 'NeMo Guardrails represents the shift from "hoping AI behaves" to "enforcing AI behavior." For product leaders, guardrails are a required investment  -  shipped without them, AI features become liability risks.',
         category: 'AI Tools & Frameworks',
         relatedTerms: ['ai-guardrails', 'ai-alignment', 'ai-red-teaming', 'eaap-protocol'],
-        faqs: [{ question: 'Is NeMo Guardrails production-ready?', answer: 'Yes  -  NVIDIA actively maintains it and uses it in production AI Enterprise deployments. It adds 50-200ms latency per guardrail check, which is acceptable for most conversational AI applications.' }],
+        faqs: [{ question: 'Is NeMo Guardrails reliable for production?', answer: 'Yes  -  NVIDIA actively maintains it and uses it in production AI Enterprise deployments. It adds 50-200ms latency per guardrail check, which is acceptable for most conversational AI applications.' }],
     },
     {
         title: 'AI Red Teaming',

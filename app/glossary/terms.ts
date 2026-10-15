@@ -921,7 +921,7 @@ Both diagnostics use the **Product Debt Index (PDI)** framework to quantify code
 The foundational concept underlying Model Right-Sizing is the Cost of Predictivity curve. This curve demonstrates that model size and inference costs grow exponentially relative to marginal gains in accuracy. For example, a frontier reasoning model may cost $15.00 per million tokens and achieve 92% accuracy on a specialized classification benchmark, while a distilled mini model costs $0.15 per million tokens (a 99% cost reduction) and achieves 89% accuracy on the same task. If the business outcome is relatively insensitive to that 3% difference, routing the query to the frontier model represents an extreme misallocation of capital. Model Right-Sizing quantifies these trade-offs, enabling organizations to define "acceptable accuracy thresholds" for every feature and systematically align compute expenditure with actual business value.
 
 **Dynamic Tiered Routing and Cost Calculations:**
-A production-ready Model Right-Sizing architecture implements a dynamic routing gateway (an Execution Control Plane) that classifies inbound queries by complexity and intent.
+A battle-tested Model Right-Sizing architecture implements a dynamic routing gateway (an Execution Control Plane) that classifies inbound queries by complexity and intent.
 Consider an enterprise AI customer support system handling 1,000,000 queries per month. Under a naive monolithic architecture using a frontier model for all requests, the monthly cost is calculated as follows:
 - Naive Cost: 1,000,000 queries * 1,500 tokens/query * $15.00/1M tokens = $22,500.
 

@@ -206,7 +206,7 @@ The routing decision can be rule-based (keyword matching), model-based (a lightw
 
 ---
 
-<h2>API Cost Governance: The Missing Layer</h2>
+<h2>API Cost Governance: The Operational Control Plane</h2>
 
 Beyond model routing, enterprises need <a href="/glossary/pillars/cloud-infrastructure-finops#api-cost-governance">API cost governance</a>, the organizational practice of monitoring, controlling, and optimizing AI API spend:
 

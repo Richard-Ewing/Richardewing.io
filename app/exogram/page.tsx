@@ -181,11 +181,11 @@ export default function ExogramFounderThesisPage() {
         </div>
       </section>
 
-      {/* The Missing Layer */}
+      {/* Durable Context */}
       <section className="section border-t border-[var(--line)]">
         <div className="max-w-3xl mx-auto">
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--gold)] mb-2 block">
-            The Missing Layer
+            Durable Context
           </span>
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[var(--ink)] tracking-tight mb-6">
             AI is impressive in the moment. Its continuity is still fragile.

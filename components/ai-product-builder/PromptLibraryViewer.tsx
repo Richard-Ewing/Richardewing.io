@@ -177,7 +177,7 @@ Define the exact operational mechanics for:
     category: 'Technical Architecture',
     summary: 'Architects Redis vector caching, token budgets, and 402 payment enforcement protocols.',
     variables: ['[APPLICATION USE CASE]', '[EXPECTED QUERY VOLUME]'],
-    systemPrompt: `You are a Principal AI Systems Architect. Design a production-ready cost-governance architecture for [APPLICATION USE CASE] handling [EXPECTED QUERY VOLUME] queries/day.
+    systemPrompt: `You are a Principal AI Systems Architect. Design a battle-tested cost-governance architecture for [APPLICATION USE CASE] handling [EXPECTED QUERY VOLUME] queries/day.
 
 Specify:
 1. Semantic Caching Pipeline:
@@ -236,7 +236,7 @@ Rules:
     category: 'Engineering & Code',
     summary: 'Generates clean, production-grade Python FastAPI service with structured logging and middleware.',
     variables: ['[SERVICE NAME]', '[ENDPOINTS LIST]'],
-    systemPrompt: `Generate a production-ready FastAPI application in Python for [SERVICE NAME] implementing [ENDPOINTS LIST].
+    systemPrompt: `Generate a production-tested FastAPI application in Python for [SERVICE NAME] implementing [ENDPOINTS LIST].
 Requirements:
 1. Correlation ID Middleware using uuid4 and ASGI request state.
 2. Structured JSON logging configured with python-json-logger.

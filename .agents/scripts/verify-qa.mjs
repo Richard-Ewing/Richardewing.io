@@ -120,9 +120,50 @@ filesToAudit.forEach(filePath => {
       errorCount++;
     }
   }
+
+  // Rule E: Banned AI Marketing Buzzwords & Synthetic Jargon (HWS v2.0)
+  if (/\.(tsx|jsx|ts)$/i.test(relativePath) && (relativePath.startsWith('app') || relativePath.startsWith('components'))) {
+    const bannedWordPatterns = [
+      { name: 'unlock', regex: /\bunlock(s|ed|ing)?\b/i },
+      { name: 'delve', regex: /\bdelve(s|d|ing)?\b/i },
+      { name: 'seamless', regex: /\bseamless(ly)?\b/i },
+      { name: 'production-ready', regex: /\bproduction-ready\b/i },
+      { name: 'missing layer', regex: /\bmissing layer\b/i },
+      { name: 'missing piece', regex: /\bmissing piece\b/i },
+    ];
+
+    const lines = content.split('\n');
+    lines.forEach((line, lineIdx) => {
+      const isAllowedCode = [
+        'tools_library_unlock',
+        'unlocked_items',
+        'unlocked_assets',
+        'isUnlocking',
+        'onUnlock',
+        'handleUnlock',
+        'has_unlocked_ai_report',
+        'lead_gate_',
+        'unlockedItems',
+        'unlockedAssets',
+        'UNLOCKED ASSETS',
+        'Avoid \'delve\'',
+        'No buzzwords',
+        'banned'
+      ].some(allow => line.includes(allow));
+
+      if (isAllowedCode) return;
+
+      for (const { name, regex } of bannedWordPatterns) {
+        if (regex.test(line)) {
+          console.error(`[HWS STYLE ERROR] Banned buzzword '${name}' detected in ${relativePath}:${lineIdx + 1} -> "${line.trim()}"`);
+          errorCount++;
+        }
+      }
+    });
+  }
 });
 
-// Rule E: Audit Git Status for Untracked/Staged .env or Credential Files
+// Rule F: Audit Git Status for Untracked/Staged .env or Credential Files
 try {
   const gitStatusOutput = execSync('git status --porcelain', { cwd: rootDir, encoding: 'utf8' });
   const gitLines = gitStatusOutput.split('\n').filter(Boolean);

@@ -66,7 +66,7 @@ export const cpoCeoLeadership2026Terms: GlossaryTerm[] = [
         title: 'Performative AI Pilot',
         category: 'Leadership & Governance',
         definition: 'An uncoordinated, superficial AI demonstration or departmental proof-of-concept launched for internal executive visibility without measurable unit economics, architectural bounding, or long-term moat durability.',
-        whyItMatters: 'Consumes millions in R&D budget without creating compounding shareholder value or production-ready enterprise capabilities.',
+        whyItMatters: 'Consumes millions in R&D budget without creating compounding shareholder value or production-tested enterprise capabilities.',
         howToMeasure: 'Ratio of enterprise AI experiments reaching live, gross-margin-positive production after 90 days.',
         faqs: [
             {

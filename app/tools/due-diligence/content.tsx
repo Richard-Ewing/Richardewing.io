@@ -908,7 +908,7 @@ export default function DueDiligenceTool() {
                                                 </div>
                                                 <div className="relative z-10 w-full">
                                                     <h4 className="text-zinc-950 font-bold mb-2">Immediate EBITDA Leakage Stoppage</h4>
-                                                    <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">You are acquiring ${formatMoney(results.annualInfraWaste)}/yr in structural cloud infrastructure waste that should be dropping to the bottom line.</p>
+                                                    <p className="text-zinc-900 text-sm font-semibold leading-relaxed mb-4">You are acquiring ${formatMoney(results.annualInfraWaste)}/yr in structural cloud infrastructure waste that should be dropping directly into net operating profit.</p>
                                                     <div className="bg-white/60 p-3 rounded border border-zinc-400 flex flex-col gap-2">
                                                         <div className="flex items-center gap-2 text-xs font-bold font-medium font-mono text-cyan-900 font-extrabold font-semibold uppercase tracking-widest font-bold">
                                                             <Zap size={10} /> Execution Directive

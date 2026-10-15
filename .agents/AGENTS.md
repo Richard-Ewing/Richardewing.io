@@ -57,7 +57,7 @@ Before executing any request, dynamically classify the user prompt into one of t
 ### Track 1: Execution Pipeline (Code Mutations)
 * **Trigger**: Any turn where files are created, modified, refactored, or deleted.
 * **Mandatory Turn-End Gate (UNBREAKABLE)**:
-  `node .agents/scripts/verify-qa.mjs` (Zero Secret Keys + Zero Em-Dashes + Root Hygiene) -> `npm run build` -> `npx wrangler deploy` (Live Cloudflare Edge Deployment) -> `git add -A` -> `git commit -m "..."` -> `git push origin main` -> `git status` (verify clean).
+  `node .agents/scripts/verify-qa.mjs` (Zero Secret Keys + Zero Em-Dashes + Zero Banned AI Buzzwords + Root Hygiene) -> `npm run build` -> `npx wrangler deploy` (Live Cloudflare Edge Deployment) -> `git add -A` -> `git commit -m "..."` -> `git push origin main` -> `git status` (verify clean).
   You MUST NEVER end a code-modifying turn without running this full deployment sequence. Never ask the user to remind you. Physically enforced by the `turn-end-deploy-guard` Stop hook in `hooks.json`.
 
 ### Track 2: Strategic & Advisory Pipeline (No Code Mutations)

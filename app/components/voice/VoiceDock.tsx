@@ -433,7 +433,7 @@ export default function VoiceDock() {
       } catch {
         // Ignore
       }
-      setOwnerToast('Owner Mode Activated: Unlimited test sessions unlocked.');
+      setOwnerToast('Owner Mode Activated: Unlimited test sessions available.');
       setTimeout(() => setOwnerToast(null), 3500);
     }
   };

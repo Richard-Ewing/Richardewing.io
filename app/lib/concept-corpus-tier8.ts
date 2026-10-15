@@ -2222,7 +2222,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       },
       {
         role: 'Chief Financial Officer (CFO)',
-        takeaway: 'Rationalize executive compensation spend by leveraging senior fractional talent for high-stakes capital transitions.',
+        takeaway: 'Rationalize executive compensation spend by deploying senior fractional talent for high-stakes capital transitions.',
         recommendedNextSlug: 'pl-ownership-for-pms'
       },
       {
@@ -3912,7 +3912,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       },
       {
         role: 'Chief Product Officer (CPO)',
-        takeaway: 'Leverage shared platform components to rapidly test market demand before committing dedicated engineering squads.',
+        takeaway: 'Use shared platform components to rapidly test market demand before committing dedicated engineering squads.',
         recommendedNextSlug: 'product-discovery'
       },
       {

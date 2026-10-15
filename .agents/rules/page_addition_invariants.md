@@ -75,7 +75,7 @@ Whenever ANY new page, subpage, tool, curriculum lesson, or comparison route is 
 
 ### 7. Mandatory Turn-End Verification Gate
 * No code-modifying turn introducing or altering a page may conclude without passing:
-  1. `node .agents/scripts/verify-qa.mjs` (0 errors, 0 warnings, zero secrets, zero em-dashes).
+  1. `node .agents/scripts/verify-qa.mjs` (0 errors, 0 warnings, zero secrets, zero em-dashes, zero banned AI buzzwords).
   2. `npm run build` (Clean Next.js compilation across all routes).
   3. `npm run deploy:worker` (Live Cloudflare Workers Edge deployment via Wrangler).
   4. `git add -A && git commit -m "..." && git push origin main && git status` (Clean working tree).

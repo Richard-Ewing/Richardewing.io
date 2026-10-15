@@ -513,7 +513,7 @@ agenticGovernanceModules['ai-product-economics/2-17'] = {
             [
                 d('Training Capital Floor', 'Extreme capital requirements ($78M to $191M+) restrict frontier foundation model training to hyper-scaled labs.', 'Takeaway: Build on rented utility intelligence while owning corporate context.'),
                 d('Inference Compounding', 'Multi-step agent loops multiply token consumption non-linearly across tool calls and retries.', 'Target: Max 5 reasoning turns per autonomous task.'),
-                d('Cost per Useful Output', 'Evaluating total inference spend divided by validated production-ready artifacts.', 'Benchmark: Maintain >70% gross margins on agent-delivered services.')
+                d('Cost per Useful Output', 'Evaluating total inference spend divided by validated production-tested artifacts.', 'Benchmark: Maintain >70% gross margins on agent-delivered services.')
             ],
             'Calculate the multi-turn inference compounding cost of an agent workflow that makes 4 reasoning passes, 3 database lookups, and 2 tool executions per user request.'
         ),
@@ -690,7 +690,7 @@ agenticGovernanceModules['agentic-governance/58-7'] = {
 agenticGovernanceModules['agentic-governance/58-8'] = {
     moduleId: '58-8',
     title: 'The Founder Post-Mortem: Rejecting AI Self-Governance and Monolithic Tooling',
-    description: 'Learn from early AI startup failures: dismantle the evaluator fallacy, replace vibe coding with architectural rules, and leverage shared platform engines like Exogram.',
+    description: 'Learn from early AI startup failures: dismantle the evaluator fallacy, replace vibe coding with architectural rules, and use shared platform engines like Exogram.',
     trackName: t58,
     productId: singleProduct,
     takeaways: [

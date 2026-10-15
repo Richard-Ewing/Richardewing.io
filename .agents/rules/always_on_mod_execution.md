@@ -17,7 +17,7 @@ Dynamically classify every user turn into one of two operational tracks:
 ### Track 1: Execution Pipeline (Code & Content Mutations)
 * **Trigger**: Any turn where workspace files are created, modified, refactored, or deleted.
 * **Mandatory Turn-End Gate (UNBREAKABLE)**:
-  `node .agents/scripts/verify-qa.mjs` (Zero Secret Keys + Zero Em-Dashes + Root Hygiene) -> `npm run build` -> `npx wrangler deploy` (Live Cloudflare Edge Deployment) -> `git add -A` -> `git commit -m "<type>(<scope>): <description>"` -> `git push origin main` -> `git status` (verify clean).
+  `node .agents/scripts/verify-qa.mjs` (Zero Secret Keys + Zero Em-Dashes + Zero Banned AI Buzzwords + Root Hygiene) -> `npm run build` -> `npx wrangler deploy` (Live Cloudflare Edge Deployment) -> `git add -A` -> `git commit -m "<type>(<scope>): <description>"` -> `git push origin main` -> `git status` (verify clean).
   You MUST NEVER end a code-modifying turn without running this full deployment sequence. Never ask the user to remind you. Physically enforced by the `Stop` lifecycle hook.
 
 ### Track 2: Strategic & Advisory Pipeline (No Code Mutations)

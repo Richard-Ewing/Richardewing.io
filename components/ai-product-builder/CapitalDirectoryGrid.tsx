@@ -296,7 +296,7 @@ const capitalPrograms: CapitalProgram[] = [
     equityTerms: '0% Equity (Developer Grants)',
     mappedPersona: 'Founders Implementing Claude 3.5 Sonnet / Haiku',
     deadline: 'Rolling via Partner Programs',
-    summary: 'API credits for teams leveraging Claude 3.5 Sonnet artifacts and advanced multi-turn reasoning workflows.',
+    summary: 'API credits for teams using Claude 3.5 Sonnet artifacts and advanced multi-turn reasoning workflows.',
     website: 'https://anthropic.com',
     tags: ['Claude 3.5', 'API Credits', 'Anthropic']
   },
@@ -321,7 +321,7 @@ const openSourceTools: OpenSourceTool[] = [
     category: 'Full-Stack Boilerplate',
     stars: '75k+',
     license: 'MIT',
-    description: 'High performance, easy to learn, fast to code, production-ready Python API framework with automatic OpenAPI docs.',
+    description: 'High performance, easy to learn, fast to code, battle-tested Python API framework with automatic OpenAPI docs.',
     githubUrl: 'https://github.com/tiangolo/fastapi',
     tags: ['Python', 'Async', 'Backend']
   },
