@@ -177,7 +177,7 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
     ];
 
     return (
-        <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
+        <main className="min-h-screen bg-[var(--paper,#f4f1e9)] pt-20 pb-24 text-[var(--ink,#1e2924)]">
             <div className="page-container max-w-4xl mx-auto px-6">
                 
                 {faqs.length > 0 && (
@@ -185,60 +185,60 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
                 )}
 
                 {/* Breadcrumbs */}
-                <div className="mb-8 flex items-center gap-2 text-xs font-bold font-mono text-zinc-950 uppercase tracking-widest">
-                    <Link href="/compare" className="hover:text-amber-900 transition-colors">Comparisons</Link>
-                    <span>/</span>
-                    <span className="text-amber-900">{tA} vs {tB}</span>
+                <div className="mb-8 flex items-center gap-2 text-xs font-bold font-mono text-[var(--gold,#b77a35)] uppercase tracking-widest">
+                    <Link href="/compare" className="text-zinc-600 hover:text-[var(--forest,#29473b)] transition-colors">Comparisons</Link>
+                    <span className="text-zinc-400">/</span>
+                    <span className="text-[var(--ink,#1e2924)]">{tA} vs {tB}</span>
                 </div>
 
                 {/* Hero Header */}
-                <div className="text-center mb-16 border-b border-zinc-400 pb-12">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/10 border border-amber-500/30 text-amber-900 rounded-full font-mono text-xs uppercase tracking-widest mb-6">
-                        <Activity className="w-3.5 h-3.5" />
+                <div className="text-center mb-16 border-b border-[var(--line,rgba(36,51,43,0.16))] pb-12">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--forest2,#172a22)] text-[#d8c7a8] border border-[var(--gold,#b77a35)]/30 rounded-full font-mono text-xs uppercase tracking-widest mb-6">
+                        <Activity className="w-3.5 h-3.5 text-[var(--gold,#b77a35)]" />
                         <span>AI Economics Architecture Comparison</span>
                     </div>
                     
-                    <h1 className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-950 mb-6 leading-tight">
+                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-[var(--ink,#1e2924)] mb-6 leading-tight">
                         {comparison.title}
                     </h1>
                     
-                    <p className="text-xl text-zinc-900 font-semibold max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-lg sm:text-xl font-serif italic text-zinc-700 max-w-3xl mx-auto leading-relaxed">
                         {comparison.description}
                     </p>
                 </div>
 
                 {/* Structural Comparison Matrix */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                    <div className="bg-white border border-zinc-300 rounded-2xl p-8 shadow-sm">
-                        <div className="text-xs font-mono font-bold text-zinc-900 uppercase tracking-widest mb-2">Category A Focus</div>
-                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">{tA}</h2>
-                        <p className="text-zinc-900 font-semibold leading-relaxed text-sm">
+                    <div className="bg-white border border-[var(--line,rgba(36,51,43,0.16))] rounded-2xl p-8 shadow-sm">
+                        <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest mb-2">Category A Focus</div>
+                        <h2 className="text-2xl font-serif font-bold text-[var(--ink,#1e2924)] mb-4">{tA}</h2>
+                        <p className="text-zinc-700 font-sans leading-relaxed text-sm">
                             {comparison.theirFocus || `${tA} focuses on traditional developer ergonomics and local execution velocity.`}
                         </p>
                     </div>
 
-                    <div className="bg-gradient-to-br from-zinc-900 to-zinc-950 text-white border border-zinc-800 rounded-2xl p-8 shadow-md">
-                        <div className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest mb-2">AI Economics Approach</div>
-                        <h2 className="text-2xl font-grotesk font-bold text-white mb-4">{tB}</h2>
-                        <p className="text-zinc-300 font-medium leading-relaxed text-sm">
+                    <div className="bg-[var(--forest2,#172a22)] text-white border border-[var(--gold,#b77a35)]/30 rounded-2xl p-8 shadow-md">
+                        <div className="text-xs font-mono font-bold text-[#d8c7a8] uppercase tracking-widest mb-2">AI Economics Approach</div>
+                        <h2 className="text-2xl font-serif font-bold text-white mb-4">{tB}</h2>
+                        <p className="text-zinc-200 font-sans font-medium leading-relaxed text-sm">
                             {comparison.ourAdvantage || `${tB} introduces deterministic governance boundaries, preventing uncontrolled API cost spikes.`}
                         </p>
                     </div>
                 </div>
 
                 {/* Deep Technical Analysis */}
-                <section className="bg-white border border-zinc-300 rounded-3xl p-8 sm:p-12 mb-16 shadow-sm">
-                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">Technical Architecture & Risk Evaluation</h2>
-                    <p className="text-zinc-900 font-semibold text-base leading-relaxed mb-6">
+                <section className="bg-white border border-[var(--line,rgba(36,51,43,0.16))] rounded-3xl p-8 sm:p-12 mb-16 shadow-sm">
+                    <h2 className="text-2xl font-serif font-bold text-[var(--ink,#1e2924)] mb-6">Technical Architecture &amp; Risk Evaluation</h2>
+                    <p className="text-zinc-800 font-sans text-base leading-relaxed mb-6">
                         {comparison.technicalDistinction || `Evaluating ${tA} vs ${tB} requires moving beyond superficial speed benchmarks to examine long-term engineering maintenance costs, context drift rates, and capital allocation efficiency.`}
                     </p>
                     
-                    <div className="p-6 bg-amber-50 border-l-4 border-amber-500 rounded-r-xl">
-                        <div className="flex items-center gap-2 text-amber-900 font-bold font-grotesk text-sm mb-1">
-                            <ShieldAlert className="w-4 h-4 text-amber-600" />
+                    <div className="p-6 bg-[var(--paper2,#ebe7dc)]/60 border-l-4 border-[var(--gold,#b77a35)] rounded-r-xl">
+                        <div className="flex items-center gap-2 text-[var(--ink,#1e2924)] font-bold font-serif text-sm mb-1">
+                            <ShieldAlert className="w-4 h-4 text-[var(--gold,#b77a35)]" />
                             <span>Governance Recommendation</span>
                         </div>
-                        <p className="text-zinc-900 text-xs font-semibold m-0">
+                        <p className="text-zinc-700 text-xs font-sans leading-relaxed m-0">
                             Unmanaged AI assistance without deterministic runtime cost caps introduces a 30-50% operational tax. Always measure unit economics before scaling across engineering organizations.
                         </p>
                     </div>
@@ -247,7 +247,7 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
                 {/* FAQ Section */}
                 {faqs.length > 0 && (
                     <section className="mb-16">
-                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">Frequently Asked Questions</h2>
+                        <h2 className="text-2xl font-serif font-bold text-[var(--ink,#1e2924)] mb-6">Frequently Asked Questions</h2>
                         <div className="space-y-4">
                             {faqs.map((f, idx) => (
                                 <FAQItem key={idx} question={f.question} answer={f.answer} />
@@ -269,23 +269,23 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
                     if (matchedArticles.length === 0) return null;
 
                     return (
-                        <section className="mb-16 bg-zinc-50 border border-zinc-300 rounded-3xl p-8 shadow-sm">
-                            <div className="flex items-center gap-2 text-xs font-mono font-bold text-zinc-900 uppercase tracking-widest mb-4">
-                                <BookOpen className="w-4 h-4 text-cyan-900" />
+                        <section className="mb-16 bg-white border border-[var(--line,rgba(36,51,43,0.16))] rounded-3xl p-8 shadow-sm">
+                            <div className="flex items-center gap-2 text-xs font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-widest mb-4">
+                                <BookOpen className="w-4 h-4 text-[var(--forest,#29473b)]" />
                                 <span>Related Research &amp; Peer-Reviewed Publications</span>
                             </div>
-                            <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">
+                            <h2 className="text-2xl font-serif font-bold text-[var(--ink,#1e2924)] mb-6">
                                 Evidence-Based Architecture Specifications
                             </h2>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 {matchedArticles.map((art) => (
-                                    <div key={art.id} className="bg-white border border-zinc-200 rounded-2xl p-5 flex flex-col justify-between hover:border-zinc-400 transition-colors">
+                                    <div key={art.id} className="bg-[var(--paper2,#ebe7dc)]/40 border border-[var(--line,rgba(36,51,43,0.16))] rounded-2xl p-5 flex flex-col justify-between hover:border-[var(--forest,#29473b)] transition-colors">
                                         <div>
                                             <div className="flex items-center justify-between text-[11px] font-mono font-bold text-zinc-500 mb-2">
                                                 <span>{art.publisher}</span>
-                                                <span className="text-cyan-900">{art.date}</span>
+                                                <span className="text-[var(--forest,#29473b)]">{art.date}</span>
                                             </div>
-                                            <h3 className="font-grotesk font-bold text-zinc-950 text-sm leading-snug mb-2">
+                                            <h3 className="font-serif font-bold text-[var(--ink,#1e2924)] text-sm leading-snug mb-2">
                                                 {art.title}
                                             </h3>
                                             <p className="text-zinc-600 text-xs line-clamp-3 leading-relaxed mb-4">
@@ -296,7 +296,7 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
                                             href={art.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-cyan-900 hover:text-cyan-700 transition-colors"
+                                            className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[var(--forest,#29473b)] hover:text-[var(--gold,#b77a35)] transition-colors"
                                         >
                                             <span>Read on {art.publisher}</span>
                                             <ExternalLink className="w-3 h-3" />
@@ -307,7 +307,7 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
                             <div className="mt-6 text-center">
                                 <Link 
                                     href="/research/publications"
-                                    className="inline-flex items-center gap-2 text-xs font-mono font-bold text-zinc-900 hover:text-cyan-900 uppercase tracking-widest transition-colors"
+                                    className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[var(--ink,#1e2924)] hover:text-[var(--gold,#b77a35)] uppercase tracking-widest transition-colors"
                                 >
                                     <span>Explore Full Research Corpus ({RESEARCH_CORPUS.length} Works) →</span>
                                 </Link>

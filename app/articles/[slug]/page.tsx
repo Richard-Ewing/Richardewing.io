@@ -127,7 +127,7 @@ export default async function ArticlePage({ params }: Props) {
     );
 
     return (
-        <div className="max-w-3xl mx-auto relative z-10 pt-12 pb-24">
+        <div className="max-w-4xl mx-auto relative z-10 pt-16 pb-24 px-6">
             {/* JSON-LD Injection */}
             <script
                 type="application/ld+json"
@@ -135,48 +135,60 @@ export default async function ArticlePage({ params }: Props) {
             />
 
             {/* Breadcrumb */}
-            <div className="mb-8 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
-                <Link href="/articles" className="hover:text-zinc-900 transition-colors">Canonical Hub</Link>
+            <div className="mb-8 flex items-center gap-2 text-xs font-mono font-bold text-[var(--muted,#66716a)] uppercase tracking-widest">
+                <Link href="/articles" className="hover:text-[var(--forest,#29473b)] transition-colors">Canonical Hub</Link>
                 <span>/</span>
-                <span className="text-cyan-900 font-extrabold font-semibold font-bold truncate">{article.title}</span>
+                <span className="text-[var(--forest,#29473b)] truncate">{article.title}</span>
             </div>
 
             {/* Header */}
-            <header className="mb-12 border-b border-zinc-400 pb-12">
+            <header className="mb-12 border-b border-[var(--line,rgba(36,51,43,0.16))] pb-10">
                 <div className="flex items-center gap-4 mb-6">
-                    <span className="px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-900 font-extrabold font-semibold text-xs font-bold font-mono uppercase tracking-widest">
+                    <span className="px-3 py-1 rounded-full border border-[var(--forest,#29473b)]/20 bg-[var(--forest,#29473b)]/10 text-[var(--forest,#29473b)] text-xs font-mono font-bold uppercase tracking-widest">
                         {article.source}
                     </span>
-                    <span className="text-zinc-950 font-bold text-xs font-bold font-mono uppercase tracking-widest">
+                    <span className="text-zinc-600 text-xs font-mono uppercase tracking-widest">
                         {article.readTime}
                     </span>
+                    {article.date && (
+                        <span className="text-zinc-500 text-xs font-mono">
+                            {article.date}
+                        </span>
+                    )}
                 </div>
-                <h1 className="text-3xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6 leading-tight">
+                <h1 className="text-3xl sm:text-5xl font-serif font-bold text-[var(--ink,#1e2924)] mb-6 leading-tight">
                     {article.title}
                 </h1>
-                <p className="text-xl text-zinc-950 font-bold leading-relaxed font-serif italic">
+                <p className="text-xl text-zinc-700 leading-relaxed font-serif italic">
                     {article.description}
                 </p>
             </header>
 
-            {/* Content Placeholder / Fallback */}
-            <div className="prose prose-zinc prose-lg max-w-none">
-                <div className="p-8 bg-white/5 border border-zinc-400 rounded-2xl mb-12">
-                    <h3 className="text-xl font-bold text-zinc-950 mb-4 font-grotesk">Full Text Available in Archive</h3>
-                    <p className="text-zinc-950 font-bold text-sm font-semibold mb-6">
+            {/* Content Container */}
+            <div className="space-y-8">
+                <div className="p-8 bg-white border border-[var(--line,rgba(36,51,43,0.16))] rounded-2xl shadow-sm mb-10">
+                    <div className="flex items-center gap-2 text-[11px] font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-wider mb-2">
+                        <span>Original Publication Archive</span>
+                    </div>
+                    <h3 className="text-2xl font-serif font-bold text-[var(--ink,#1e2924)] mb-3">
+                        Full Text Available in Archival Format
+                    </h3>
+                    <p className="text-zinc-700 text-sm leading-relaxed mb-6 font-sans">
                         This article was originally published on <strong>{article.source}</strong>.
-                        You can read the full text in its original format or view the local archival copy.
+                        You can read the full text in its original format or inspect the local archival copy.
                     </p>
-                    <div className="flex gap-4">
+                    <div className="flex flex-wrap gap-4">
                         {article.legacyUrl && (
                             <a
                                 href={article.legacyUrl}
-                                className="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-bold uppercase tracking-widest text-xs rounded-lg transition-colors"
+                                className="button button-gold"
+                                target="_blank"
+                                rel="noopener noreferrer"
                             >
-                                Read Archival Copy
+                                Read Archival Copy ↗
                             </a>
                         )}
-                        <Link href="/briefings" className="px-6 py-3 border border-white/20 hover:border-zinc-400 text-zinc-950 font-bold uppercase tracking-widest text-xs font-bold rounded-lg transition-colors">
+                        <Link href="/briefings" className="button button-outline">
                             View All Briefings
                         </Link>
                     </div>
@@ -184,7 +196,7 @@ export default async function ArticlePage({ params }: Props) {
 
                 {/* Simulated Content Snippet if available */}
                 {article.content && (
-                    <div className="opacity-90 space-y-4" dangerouslySetInnerHTML={{ __html: article.content }} />
+                    <div className="prose prose-zinc max-w-none font-sans text-zinc-800 leading-relaxed" dangerouslySetInnerHTML={{ __html: article.content }} />
                 )}
 
                 {resolvedParams.slug === 'software-cost-zero-product-economist' && (
@@ -195,7 +207,9 @@ export default async function ArticlePage({ params }: Props) {
             </div>
 
             {/* Google Preferred Source AEO Callout */}
-            <GooglePreferredBadge variant="card" />
+            <div className="my-10">
+                <GooglePreferredBadge variant="card" />
+            </div>
 
             {/* Contextual Upsell Engine */}
             <ArticleUpsell 
@@ -215,8 +229,8 @@ export default async function ArticlePage({ params }: Props) {
 
             <ProgrammaticAnswersRelated seed={resolvedParams.slug} />
 
-            <div className="mt-20 pt-12 border-t border-zinc-400">
-                <Link href="/articles" className="text-zinc-950 font-bold hover:text-zinc-900 transition-colors flex items-center gap-2 text-sm font-semibold font-mono uppercase tracking-widest">
+            <div className="mt-16 pt-8 border-t border-[var(--line,rgba(36,51,43,0.16))]">
+                <Link href="/articles" className="text-[var(--forest,#29473b)] font-bold hover:text-[var(--forest2,#162e26)] transition-colors flex items-center gap-2 text-xs font-mono uppercase tracking-widest">
                     ← Back to Canonical Hub
                 </Link>
             </div>

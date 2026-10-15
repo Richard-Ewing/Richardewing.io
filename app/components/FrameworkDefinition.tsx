@@ -1,3 +1,5 @@
+import React from 'react';
+import Link from 'next/link';
 import SocialShare from './SocialShare';
 
 interface Framework {
@@ -40,133 +42,133 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
     };
 
     return (
-        <main className="pt-20">
+        <main className="pt-16 pb-20">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
 
-            <div className="page-container">
+            <div className="max-w-4xl mx-auto px-6">
 
                 {/* Breadcrumb */}
-                <div className="py-8">
-                    <a href="/articles" className="text-zinc-950 font-bold hover:text-zinc-900 text-sm font-semibold font-mono transition-colors">
-                        ← Back to Canonical Hub
-                    </a>
+                <div className="mb-8 flex items-center gap-2 text-xs font-mono font-bold text-[var(--muted,#66716a)] uppercase tracking-widest">
+                    <Link href="/articles" className="hover:text-[var(--forest,#29473b)] transition-colors">Canonical Hub</Link>
+                    <span>/</span>
+                    <span className="text-[var(--forest,#29473b)] truncate">{framework.name}</span>
                 </div>
 
                 {/* Header */}
-                <section className="section-sm">
-                    <div className="max-w-3xl">
-                        <div className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">
-                            Framework Definition
-                        </div>
-                        <h1 className="text-4xl md:text-5xl font-bold text-zinc-950 mb-6 font-grotesk leading-tight">
-                            {framework.name}
-                        </h1>
-                        <p className="text-zinc-950 mb-6">
-                            Coined by <span className="text-zinc-900">Richard Ewing</span>, AI Economist
-                        </p>
-                        <SocialShare url={`https://www.richardewing.io/articles/frameworks/${framework.slug}`} title={framework.name} />
+                <header className="mb-10 pb-8 border-b border-[var(--line,rgba(36,51,43,0.16))]">
+                    <div className="text-[11px] font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-widest mb-3">
+                        Canonical Framework Specification
                     </div>
-                </section>
+                    <h1 className="text-3xl sm:text-5xl font-serif font-bold text-[var(--ink,#1e2924)] mb-4 leading-tight">
+                        {framework.name}
+                    </h1>
+                    <p className="text-sm font-mono text-[var(--muted,#66716a)] mb-6">
+                        Authored by <span className="font-semibold text-[var(--ink,#1e2924)]">Richard Ewing</span>, AI Economist &amp; Enterprise R&amp;D Auditor
+                    </p>
+                    <SocialShare url={`https://www.richardewing.io/articles/frameworks/${framework.slug}`} title={framework.name} />
+                </header>
 
-                {/* Definition */}
-                <section className="section-sm">
-                    <div className="max-w-3xl">
-                        <h2 className="text-xl font-bold text-cyan-950 mb-4 font-grotesk">Definition</h2>
-                        <div className="p-6 bg-white border-l-4 border-cyan-500 rounded-r-xl shadow-sm">
-                            <p className="text-xl text-zinc-950 leading-relaxed font-serif italic">
-                                {framework.definition}
-                            </p>
-                        </div>
+                {/* Definition Box */}
+                <section className="mb-12">
+                    <h2 className="text-xs font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-widest mb-3">
+                        Executive Definition
+                    </h2>
+                    <div className="p-6 sm:p-8 bg-white border-l-4 border-l-[var(--gold,#b77a35)] border-y border-r border-[var(--line,rgba(36,51,43,0.12))] rounded-r-2xl shadow-sm">
+                        <p className="text-xl sm:text-2xl text-[var(--ink,#1e2924)] leading-relaxed font-serif italic">
+                            {framework.definition}
+                        </p>
                     </div>
                 </section>
 
                 {/* Mathematical Axioms & Dedicated Formula Modules */}
                 {framework.slug === 'return-on-ai-investment' && (
-                    <section className="section-sm">
-                        <div className="max-w-3xl p-6 rounded-2xl border-2 border-cyan-500/40 bg-white shadow-lg">
+                    <section className="mb-12">
+                        <div className="p-6 sm:p-8 rounded-2xl border border-[var(--forest,#29473b)] bg-[var(--forest2,#162e26)] text-white shadow-md">
                             <div className="flex items-center justify-between mb-4">
-                                <span className="text-xs font-mono font-bold uppercase tracking-widest text-cyan-950 bg-cyan-100 px-3 py-1 rounded border border-cyan-300">
+                                <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#d8c7a8] bg-white/10 px-3 py-1 rounded border border-white/15">
                                     Mathematical Axiom
                                 </span>
-                                <span className="text-xs font-mono font-bold text-zinc-600">The ROAI Equation</span>
+                                <span className="text-xs font-mono text-zinc-300">The ROAI Equation</span>
                             </div>
-                            <div className="p-4 bg-zinc-950 text-cyan-300 font-mono text-sm sm:text-base rounded-xl overflow-x-auto my-3 text-center shadow-inner">
+                            <div className="p-4 bg-black/40 border border-white/10 text-[#d8c7a8] font-mono text-sm sm:text-base rounded-xl overflow-x-auto my-4 text-center">
                                 ROAI = (Δ Gross Profit Attributable to AI - Synthetic COGS) / Capital Invested
                             </div>
-                            <p className="text-sm text-zinc-800 leading-relaxed font-medium mt-3">
-                                <strong>The Margin Collapse Law:</strong> Moving AI accuracy from 85% to 95% triggers an exponential 10x compute cost increase. If incremental revenue lift does not outpace Synthetic COGS, every user interaction carries Negative Carry.
+                            <p className="text-sm text-zinc-300 leading-relaxed font-sans mt-3">
+                                <strong className="text-white">The Margin Collapse Law:</strong> Moving AI accuracy from 85% to 95% triggers an exponential 10x compute cost increase. If incremental revenue lift does not outpace Synthetic COGS, every user interaction carries Negative Carry.
                             </p>
-                            <div className="mt-6 pt-4 border-t border-zinc-200 flex flex-wrap gap-4">
-                                <a href="/tools/aueb" className="px-5 py-2.5 rounded-lg bg-cyan-600 text-white font-bold text-sm hover:bg-cyan-700 transition shadow">
-                                    Run AUEB Benchmark Calculator →
-                                </a>
-                                <a href="/services" className="px-5 py-2.5 rounded-lg bg-zinc-900 text-white font-bold text-sm hover:bg-zinc-800 transition shadow">
-                                    Boardroom R&amp;D Capital Audit →
-                                </a>
+                            <div className="mt-6 pt-4 border-t border-white/15 flex flex-wrap gap-4">
+                                <Link href="/tools/aueb" className="button button-gold">
+                                    Run AUEB Benchmark Calculator ↗
+                                </Link>
+                                <Link href="/services" className="button button-outline text-white border-white/30 hover:bg-white/10">
+                                    Boardroom R&amp;D Capital Audit ↗
+                                </Link>
                             </div>
                         </div>
                     </section>
                 )}
 
                 {framework.slug === 'technical-insolvency-date' && (
-                    <section className="section-sm">
-                        <div className="max-w-3xl p-6 rounded-2xl border-2 border-red-500/40 bg-white shadow-lg">
+                    <section className="mb-12">
+                        <div className="p-6 sm:p-8 rounded-2xl border border-rose-900/40 bg-[var(--forest2,#162e26)] text-white shadow-md">
                             <div className="flex items-center justify-between mb-4">
-                                <span className="text-xs font-mono font-bold uppercase tracking-widest text-red-950 bg-red-100 px-3 py-1 rounded border border-red-300">
+                                <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-rose-300 bg-rose-950/60 px-3 py-1 rounded border border-rose-700/40">
                                     Mathematical Axiom
                                 </span>
-                                <span className="text-xs font-mono font-bold text-zinc-600">The TID Projection</span>
+                                <span className="text-xs font-mono text-zinc-300">The TID Projection</span>
                             </div>
-                            <div className="p-4 bg-zinc-950 text-amber-300 font-mono text-sm sm:text-base rounded-xl overflow-x-auto my-3 text-center shadow-inner">
+                            <div className="p-4 bg-black/40 border border-white/10 text-rose-300 font-mono text-sm sm:text-base rounded-xl overflow-x-auto my-4 text-center">
                                 TID = Current Quarter + (100% - Current Maintenance %) / QoQ Maintenance Growth Rate
                             </div>
-                            <p className="text-sm text-zinc-800 leading-relaxed font-medium mt-3">
-                                <strong>The Stagnation Threshold:</strong> At the Technical Insolvency Date, maintenance burden consumes 100% of engineering bandwidth. New feature velocity mathematically stops. R&amp;D expenditure converts into pure operational maintenance.
+                            <p className="text-sm text-zinc-300 leading-relaxed font-sans mt-3">
+                                <strong className="text-white">The Stagnation Threshold:</strong> At the Technical Insolvency Date, maintenance burden consumes 100% of engineering bandwidth. New feature velocity mathematically stops. R&amp;D expenditure converts into pure operational maintenance.
                             </p>
-                            <div className="mt-6 pt-4 border-t border-zinc-200 flex flex-wrap gap-4">
-                                <a href="/tools/pdi" className="px-5 py-2.5 rounded-lg bg-purple-600 text-white font-bold text-sm hover:bg-purple-700 transition shadow">
-                                    Calculate Your Organization's TID →
-                                </a>
-                                <a href="/api/buy/insolvency_diagnostic" className="px-5 py-2.5 rounded-lg bg-red-700 text-white font-bold text-sm hover:bg-red-800 transition shadow">
-                                    Book P&amp;L Turnaround Sprint ($2,500) →
-                                </a>
+                            <div className="mt-6 pt-4 border-t border-white/15 flex flex-wrap gap-4">
+                                <Link href="/tools/pdi" className="button button-gold">
+                                    Calculate Your Organization&apos;s TID ↗
+                                </Link>
+                                <Link href="/services" className="button button-outline text-white border-white/30 hover:bg-white/10">
+                                    Retain Turnaround Advisory ↗
+                                </Link>
                             </div>
                         </div>
                     </section>
                 )}
 
                 {framework.slug === 'synthetic-cogs' && (
-                    <section className="section-sm">
-                        <div className="max-w-3xl p-6 rounded-2xl border-2 border-purple-500/40 bg-white shadow-lg">
+                    <section className="mb-12">
+                        <div className="p-6 sm:p-8 rounded-2xl border border-[var(--forest,#29473b)] bg-[var(--forest2,#162e26)] text-white shadow-md">
                             <div className="flex items-center justify-between mb-4">
-                                <span className="text-xs font-mono font-bold uppercase tracking-widest text-purple-950 bg-purple-100 px-3 py-1 rounded border border-purple-300">
+                                <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#d8c7a8] bg-white/10 px-3 py-1 rounded border border-white/15">
                                     Mathematical Axiom
                                 </span>
-                                <span className="text-xs font-mono font-bold text-zinc-600">Unit COGS Breakdown</span>
+                                <span className="text-xs font-mono text-zinc-300">Unit COGS Breakdown</span>
                             </div>
-                            <div className="p-4 bg-zinc-950 text-purple-300 font-mono text-sm sm:text-base rounded-xl overflow-x-auto my-3 text-center shadow-inner">
+                            <div className="p-4 bg-black/40 border border-white/10 text-[#d8c7a8] font-mono text-sm sm:text-base rounded-xl overflow-x-auto my-4 text-center">
                                 Synthetic COGS = Embedding Cost + Vector Search + Prompt Tokens + Completion Tokens + Dynamic Evals
                             </div>
-                            <p className="text-sm text-zinc-800 leading-relaxed font-medium mt-3">
-                                <strong>The Zero-Marginal-Cost Death:</strong> AI SaaS is an extraction business, not pure cloud hosting. Every user query consumes non-zero hardware cycles and API tokens.
+                            <p className="text-sm text-zinc-300 leading-relaxed font-sans mt-3">
+                                <strong className="text-white">The Zero-Marginal-Cost Death:</strong> AI SaaS is an extraction business, not pure cloud hosting. Every user query consumes non-zero hardware cycles and API tokens.
                             </p>
-                            <div className="mt-6 pt-4 border-t border-zinc-200 flex flex-wrap gap-4">
-                                <a href="/tools/aueb" className="px-5 py-2.5 rounded-lg bg-purple-600 text-white font-bold text-sm hover:bg-purple-700 transition shadow">
-                                    Benchmark Synthetic COGS →
-                                </a>
+                            <div className="mt-6 pt-4 border-t border-white/15 flex flex-wrap gap-4">
+                                <Link href="/tools/aueb" className="button button-gold">
+                                    Benchmark Synthetic COGS ↗
+                                </Link>
                             </div>
                         </div>
                     </section>
                 )}
 
                 {/* Why It Matters */}
-                <section className="section-sm">
-                    <div className="max-w-3xl">
-                        <h2 className="text-xl font-bold text-purple-950 mb-4 font-grotesk">Why It Matters</h2>
-                        <p className="text-zinc-950 font-medium leading-relaxed text-lg">
+                <section className="mb-12">
+                    <h2 className="text-xs font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-widest mb-3">
+                        Why It Matters
+                    </h2>
+                    <div className="p-6 sm:p-8 bg-white border border-[var(--line,rgba(36,51,43,0.12))] rounded-2xl shadow-sm">
+                        <p className="text-[var(--ink,#1e2924)] font-sans text-base sm:text-lg leading-relaxed">
                             {framework.whyItMatters}
                         </p>
                     </div>
@@ -174,14 +176,18 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
 
                 {/* How to Calculate (if applicable) */}
                 {framework.howToCalculate && (
-                    <section className="section-sm">
-                        <div className="max-w-3xl">
-                            <h2 className="text-xl font-bold text-emerald-950 mb-4 font-grotesk">How to Calculate</h2>
+                    <section className="mb-12">
+                        <h2 className="text-xs font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-widest mb-3">
+                            How to Calculate
+                        </h2>
+                        <div className="p-6 sm:p-8 bg-white border border-[var(--line,rgba(36,51,43,0.12))] rounded-2xl shadow-sm">
                             <ol className="space-y-4">
                                 {framework.howToCalculate.map((step, i) => (
-                                    <li key={i} className="flex gap-4 text-zinc-900 font-medium">
-                                        <span className="text-emerald-700 font-mono font-bold bg-emerald-100 px-2 py-0.5 rounded h-fit">{i + 1}</span>
-                                        <span>{step}</span>
+                                    <li key={i} className="flex gap-4 text-zinc-800 font-sans text-sm sm:text-base">
+                                        <span className="font-mono text-xs font-bold bg-[var(--paper2,#ebe7dc)] text-[var(--forest,#29473b)] px-2.5 py-1 rounded h-fit">
+                                            {i + 1}
+                                        </span>
+                                        <span className="leading-relaxed">{step}</span>
                                     </li>
                                 ))}
                             </ol>
@@ -190,60 +196,70 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                 )}
 
                 {/* Related Articles */}
-                <section className="section-sm">
-                    <div className="max-w-3xl">
-                        <h2 className="text-lg font-semibold text-zinc-950 mb-4 font-grotesk border-b border-zinc-400 pb-2">Related Articles</h2>
-                        <ul className="space-y-4">
-                            {framework.relatedArticles.map((article, i) => (
-                                <li key={i} className="group">
-                                    <a href={article.url} className="text-lg text-zinc-950 group-hover:text-purple-900 font-extrabold font-semibold transition-colors font-semibold block mb-1">
-                                        "{article.title}"
-                                    </a>
-                                    <span className="text-zinc-950 text-sm font-semibold font-mono"> - {article.publication}, {article.date}</span>
-                                </li>
+                {framework.relatedArticles && framework.relatedArticles.length > 0 && (
+                    <section className="mb-12">
+                        <h2 className="text-xs font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-widest mb-4">
+                            Foundational Articles &amp; Case Evidence
+                        </h2>
+                        <div className="grid gap-3">
+                            {framework.relatedArticles.map((art, i) => (
+                                <a
+                                    key={i}
+                                    href={art.url}
+                                    target={art.url.startsWith('http') ? '_blank' : undefined}
+                                    rel={art.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                    className="p-5 rounded-xl bg-white border border-[var(--line,rgba(36,51,43,0.12))] hover:border-[var(--forest,#29473b)] transition flex items-center justify-between gap-4 group"
+                                >
+                                    <div>
+                                        <div className="font-serif text-lg font-medium text-[var(--ink,#1e2924)] group-hover:text-[var(--forest,#29473b)] transition-colors mb-1">
+                                            &ldquo;{art.title}&rdquo;
+                                        </div>
+                                        <div className="text-xs font-mono text-zinc-500">
+                                            {art.publication} &bull; {art.date}
+                                        </div>
+                                    </div>
+                                    <span className="text-[var(--gold,#b77a35)] group-hover:translate-x-1 transition-transform">
+                                        ↗
+                                    </span>
+                                </a>
                             ))}
-                        </ul>
-                    </div>
-                </section>
-
-                {/* Deep Dive on the Blog */}
-                <section className="section-sm mt-8">
-                    <div className="max-w-3xl p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5">
-                        <h2 className="text-lg font-semibold text-cyan-900 font-extrabold font-semibold mb-2 font-grotesk">Deep Dive on the Blog</h2>
-                        <p className="text-zinc-950 font-bold mb-4">Explore the latest analysis and practical applications of this framework on the engineering economics blog.</p>
-                        <a href="/blog" className="inline-block px-6 py-2 rounded-lg bg-cyan-600 text-white font-bold hover:bg-cyan-500 transition-colors shadow-sm">
-                            Search the Blog Archive →
-                        </a>
-                    </div>
-                </section>
-
-                {/* Related Tool */}
-                {framework.relatedTool && (
-                    <section className="section my-8">
-                        <div className="max-w-3xl card-featured border-purple-500/50 p-8">
-                            <h2 className="text-lg font-semibold text-purple-900 font-extrabold font-semibold mb-2 font-grotesk">Calculate Yours</h2>
-                            <p className="text-zinc-950 font-bold mb-6">Use the interactive tool to calculate your {framework.name}.</p>
-                            <a
-                                href={framework.relatedTool.url}
-                                className="inline-block px-6 py-3 rounded-lg bg-purple-600 text-white font-bold hover:bg-purple-500 transition-colors shadow-sm"
-                            >
-                                Use the {framework.relatedTool.name} →
-                            </a>
                         </div>
                     </section>
                 )}
 
-                {/* Citation */}
-                <section className="section-sm pb-20">
-                    <div className="max-w-3xl">
-                        <h2 className="text-sm font-semibold text-zinc-950 mb-4 font-mono uppercase tracking-widest">Citation</h2>
-                        <div className="card bg-white/50 p-6 border-zinc-400">
-                            <p className="text-zinc-950 text-xs font-bold mb-4 uppercase">To cite this definition:</p>
-                            <p className="text-zinc-950 font-bold font-mono text-sm font-semibold break-all">
-                                Ewing, R. (2026). "{framework.name}." richardewing.io.<br />
-                                https://www.richardewing.io/articles/frameworks/{framework.slug}
-                            </p>
+                {/* Related Tool */}
+                {framework.relatedTool && (
+                    <section className="mb-12">
+                        <div className="p-8 rounded-2xl bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.16))] flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                            <div>
+                                <div className="text-[10px] font-mono font-bold uppercase tracking-widest text-[var(--gold,#b77a35)] mb-1">
+                                    Interactive Diagnostic
+                                </div>
+                                <h3 className="font-serif text-2xl font-bold text-[var(--ink,#1e2924)] mb-2">
+                                    Calculate Your {framework.name}
+                                </h3>
+                                <p className="text-sm text-[var(--muted,#66716a)] font-sans">
+                                    Use our interactive tool to quantify risk and model financial impact.
+                                </p>
+                            </div>
+                            <Link href={framework.relatedTool.url} className="button button-gold shrink-0">
+                                Open {framework.relatedTool.name} ↗
+                            </Link>
                         </div>
+                    </section>
+                )}
+
+                {/* Citation Block */}
+                <section className="pb-12">
+                    <h2 className="text-[11px] font-mono font-bold text-zinc-500 uppercase tracking-widest mb-3">
+                        Citation &amp; Attribution
+                    </h2>
+                    <div className="p-5 rounded-xl bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.12))]">
+                        <p className="text-zinc-600 text-[11px] font-mono mb-2 uppercase tracking-wider">Formal Attribution Standard:</p>
+                        <p className="text-[var(--ink,#1e2924)] font-mono text-xs break-all leading-relaxed">
+                            Ewing, R. (2026). &ldquo;{framework.name}.&rdquo; richardewing.io.<br />
+                            https://www.richardewing.io/articles/frameworks/{framework.slug}
+                        </p>
                     </div>
                 </section>
 

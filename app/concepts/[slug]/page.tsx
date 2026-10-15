@@ -164,7 +164,7 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
   } : null;
 
   return (
-    <main className="min-h-screen bg-[#F5F0EB] pt-28 pb-24 text-zinc-950">
+    <main className="min-h-screen bg-[var(--paper,#f4f1e9)] pt-20 pb-24 text-[var(--ink,#1e2924)]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermJsonLd) }}
@@ -178,26 +178,26 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
 
       <div className="max-w-4xl mx-auto space-y-10 px-4 sm:px-6 lg:px-8">
         {/* Navigation Breadcrumb */}
-        <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-zinc-950 uppercase tracking-widest">
-          <Link href="/" className="hover:underline">Home</Link>
+        <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold text-[var(--muted,#66716a)] uppercase tracking-widest">
+          <Link href="/" className="hover:text-[var(--forest,#29473b)]">Home</Link>
           <span>/</span>
-          <Link href="/research" className="hover:underline">Research</Link>
+          <Link href="/research" className="hover:text-[var(--forest,#29473b)]">Research</Link>
           <span>/</span>
-          <Link href="/concepts" className="hover:underline">Specifications</Link>
+          <Link href="/concepts" className="hover:text-[var(--forest,#29473b)]">Specifications</Link>
           <span>/</span>
-          <span className="text-cyan-900 font-extrabold">{concept.title}</span>
+          <span className="text-[var(--forest,#29473b)] truncate">{concept.title}</span>
         </div>
 
         {/* Quick Graph Connected Concepts Navigation Pills */}
-        <div className="bg-white border border-zinc-300 rounded-2xl p-4 flex flex-wrap items-center gap-2 text-xs shadow-sm">
-          <span className="font-mono font-bold text-zinc-600 uppercase tracking-wider text-[10px] mr-1">
+        <div className="bg-white border border-[var(--line,rgba(36,51,43,0.16))] rounded-2xl p-4 flex flex-wrap items-center gap-2 text-xs shadow-sm">
+          <span className="font-mono font-bold text-[var(--muted,#66716a)] uppercase tracking-wider text-[10px] mr-1">
             Connected Graph:
           </span>
           {relatedConcepts.map((rel) => (
             <Link
               key={rel.slug}
               href={`/concepts/${rel.slug}`}
-              className="px-3 py-1 bg-cyan-50 hover:bg-cyan-100 text-cyan-950 border border-cyan-200 rounded-lg font-mono font-bold transition"
+              className="px-3 py-1 bg-[var(--paper2,#ebe7dc)] hover:bg-[var(--forest,#29473b)] hover:text-white text-[var(--ink,#1e2924)] border border-[var(--line,rgba(36,51,43,0.12))] rounded-lg font-mono text-[11px] font-semibold transition"
             >
               {rel.targetTitle}
             </Link>
@@ -205,54 +205,54 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
         </div>
 
         {/* First Screen: 30-Second Executive Summary Hero */}
-        <div className="space-y-6 bg-white border-2 border-zinc-900 rounded-3xl p-8 shadow-md">
+        <div className="space-y-6 bg-white border border-[var(--line,rgba(36,51,43,0.16))] rounded-3xl p-8 sm:p-10 shadow-sm">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-900 text-white uppercase tracking-wider">
+              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[var(--forest,#29473b)] text-white uppercase tracking-wider">
                 Canonical Research Specification
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-indigo-100 text-indigo-900 border border-indigo-300">
+              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[var(--paper2,#ebe7dc)] text-zinc-700 border border-[var(--line,rgba(36,51,43,0.12))]">
                 Level: {concept.expertiseLevel || 'Executive'}
               </span>
             </div>
-            <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-100 text-emerald-900 border border-emerald-300">
+            <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
               Verified: {concept.health.lastVerified}
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-black text-zinc-950 tracking-tight font-grotesk">
+          <h1 className="text-3xl sm:text-5xl font-serif font-bold text-[var(--ink,#1e2924)] tracking-tight leading-tight">
             {concept.title}
           </h1>
 
           {/* 30-Second Immediate Answer Block */}
-          <div className="bg-zinc-50 border border-zinc-300 rounded-2xl p-6 space-y-4">
+          <div className="bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.16))] rounded-2xl p-6 sm:p-8 space-y-4">
             <div className="space-y-1">
-              <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase tracking-widest block">
+              <span className="text-[10px] font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-widest block">
                 30-Second Executive Definition
               </span>
-              <p className="text-lg font-bold text-zinc-950 leading-relaxed font-grotesk">
+              <p className="text-lg sm:text-xl font-serif text-[var(--ink,#1e2924)] leading-relaxed">
                 {concept.aeo?.shortDefinition || concept.definition}
               </p>
             </div>
 
             {concept.canonicalQuote && (
-              <p className="text-sm font-semibold text-cyan-950 italic border-l-4 border-cyan-800 pl-3 py-1">
+              <p className="text-sm font-serif italic text-zinc-800 border-l-4 border-l-[var(--gold,#b77a35)] pl-4 py-1">
                 &ldquo;{concept.canonicalQuote}&rdquo;
               </p>
             )}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-zinc-200 text-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-[var(--line,rgba(36,51,43,0.12))] text-xs font-sans">
               <div>
-                <strong className="font-mono font-bold text-zinc-900 uppercase block">Why It Matters:</strong>
-                <p className="text-zinc-800 font-medium leading-relaxed mt-0.5">{concept.whyItMatters}</p>
+                <strong className="font-mono font-bold text-[var(--forest,#29473b)] uppercase block mb-1">Why It Matters:</strong>
+                <p className="text-zinc-700 leading-relaxed">{concept.whyItMatters}</p>
               </div>
 
               {concept.whoShouldCare && (
                 <div>
-                  <strong className="font-mono font-bold text-zinc-900 uppercase block">Who Should Care:</strong>
-                  <div className="flex flex-wrap gap-1 mt-1">
+                  <strong className="font-mono font-bold text-[var(--forest,#29473b)] uppercase block mb-1">Target Roles:</strong>
+                  <div className="flex flex-wrap gap-1.5 mt-1">
                     {concept.whoShouldCare.map((role, rIdx) => (
-                      <span key={rIdx} className="px-2 py-0.5 rounded bg-zinc-200 text-zinc-900 font-bold text-[10px]">
+                      <span key={rIdx} className="px-2 py-0.5 rounded bg-white text-zinc-800 font-mono text-[10px] border border-[var(--line,rgba(36,51,43,0.12))]">
                         {role}
                       </span>
                     ))}
@@ -264,17 +264,17 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
 
           {/* Canonical Flow Diagram */}
           {concept.canonicalDiagram && (
-            <div className="bg-cyan-950 text-white border border-cyan-800 rounded-2xl p-6 space-y-3">
-              <span className="text-[10px] font-mono font-bold text-cyan-300 uppercase tracking-widest block">
+            <div className="bg-[var(--forest2,#162e26)] text-white border border-[var(--forest,#29473b)] rounded-2xl p-6 sm:p-8 space-y-3">
+              <span className="text-[10px] font-mono font-bold text-[#d8c7a8] uppercase tracking-widest block">
                 Canonical Architecture Flow
               </span>
-              <h3 className="text-base font-bold font-grotesk text-white">
+              <h3 className="text-base font-serif font-bold text-white">
                 {concept.canonicalDiagram.title}
               </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 font-mono text-xs text-center font-bold">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 font-mono text-xs text-center font-bold">
                 {concept.canonicalDiagram.flowSteps.map((step, sIdx) => (
-                  <div key={sIdx} className="p-3 rounded-xl bg-cyan-900/80 border border-cyan-700 space-y-1">
-                    <span className="text-[10px] text-cyan-300 block font-normal">Step 0{sIdx + 1}</span>
+                  <div key={sIdx} className="p-3 rounded-xl bg-white/10 border border-white/15 space-y-1">
+                    <span className="text-[10px] text-[#d8c7a8] block font-normal">Step 0{sIdx + 1}</span>
                     <span>{step}</span>
                   </div>
                 ))}
@@ -364,192 +364,113 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
 
         {/* Improved Canonical Research Position Stance */}
         {concept.positionStatement && (
-          <section className="bg-gradient-to-r from-zinc-950 via-cyan-950 to-zinc-950 text-white border-2 border-cyan-700 rounded-3xl p-8 space-y-4 shadow-md">
-            <div className="flex items-center gap-2 font-mono text-xs font-bold text-cyan-300 uppercase tracking-widest">
-              <span>★ Canonical Research Position</span>
+          <section className="bg-[var(--forest2,#162e26)] text-white border border-[var(--forest,#29473b)] rounded-3xl p-8 sm:p-10 space-y-4 shadow-md">
+            <div className="flex items-center gap-2 font-mono text-xs font-bold text-[#d8c7a8] uppercase tracking-widest">
+              <span>Canonical Research Position</span>
             </div>
-            <h2 className="text-2xl font-bold font-grotesk text-white">
-              Richard Ewing’s Research Thesis
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+              Richard Ewing&apos;s Research Thesis
             </h2>
-            <p className="text-lg text-zinc-100 leading-relaxed font-semibold">
-              {concept.positionStatement}
+            <p className="text-lg sm:text-xl text-[#d8c7a8] leading-relaxed font-serif italic">
+              &ldquo;{concept.positionStatement}&rdquo;
             </p>
           </section>
         )}
 
-        {/* "Why This Specification Exists" (Genesis Box) */}
+        {/* Genesis Box */}
         {concept.whyThisConceptExists && (
-          <section className="bg-white border border-zinc-300 rounded-3xl p-8 space-y-6 shadow-sm">
+          <section className="bg-white border border-[var(--line,rgba(36,51,43,0.16))] rounded-3xl p-8 space-y-6 shadow-sm">
             <div className="space-y-1">
-              <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
+              <span className="text-[11px] font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-wider">
                 Genesis &amp; Intellectual Positioning
               </span>
-              <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
+              <h2 className="text-2xl font-serif font-bold text-[var(--ink,#1e2924)]">
                 Why This Specification Exists
               </h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1 font-medium text-xs">
-              <div className="bg-zinc-50 border border-zinc-200 p-4 rounded-2xl space-y-1">
-                <strong className="font-mono font-bold text-red-900 uppercase block">1. The Problem</strong>
-                <p className="text-zinc-800 leading-relaxed">{concept.whyThisConceptExists.problem}</p>
+              <div className="bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.12))] p-5 rounded-2xl space-y-1">
+                <strong className="font-mono font-bold text-rose-800 uppercase block">1. The Problem</strong>
+                <p className="text-zinc-800 leading-relaxed font-sans">{concept.whyThisConceptExists.problem}</p>
               </div>
 
-              <div className="bg-zinc-50 border border-zinc-200 p-4 rounded-2xl space-y-1">
-                <strong className="font-mono font-bold text-amber-900 uppercase block">2. Existing Approaches</strong>
-                <p className="text-zinc-800 leading-relaxed">{concept.whyThisConceptExists.existingApproaches}</p>
+              <div className="bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.12))] p-5 rounded-2xl space-y-1">
+                <strong className="font-mono font-bold text-[var(--gold,#b77a35)] uppercase block">2. Existing Approaches</strong>
+                <p className="text-zinc-800 leading-relaxed font-sans">{concept.whyThisConceptExists.existingApproaches}</p>
               </div>
 
-              <div className="bg-zinc-50 border border-zinc-200 p-4 rounded-2xl space-y-1">
+              <div className="bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.12))] p-5 rounded-2xl space-y-1">
                 <strong className="font-mono font-bold text-indigo-900 uppercase block">3. The Structural Gap</strong>
-                <p className="text-zinc-800 leading-relaxed">{concept.whyThisConceptExists.gap}</p>
+                <p className="text-zinc-800 leading-relaxed font-sans">{concept.whyThisConceptExists.gap}</p>
               </div>
 
-              <div className="bg-cyan-50 border border-cyan-200 p-4 rounded-2xl space-y-1">
-                <strong className="font-mono font-bold text-cyan-950 uppercase block">4. This Specification</strong>
-                <p className="text-cyan-950 font-bold leading-relaxed">{concept.whyThisConceptExists.solution}</p>
+              <div className="bg-[var(--forest2,#162e26)] text-white border border-[var(--forest,#29473b)] p-5 rounded-2xl space-y-1">
+                <strong className="font-mono font-bold text-[#d8c7a8] uppercase block">4. This Specification</strong>
+                <p className="text-zinc-200 font-sans leading-relaxed">{concept.whyThisConceptExists.solution}</p>
               </div>
             </div>
           </section>
         )}
 
-        {/* "What Changes If You Believe This?" (Functional Impact Matrix) */}
+        {/* Operational Realignment Matrix */}
         {concept.whatChanges && (
-          <section className="bg-white border border-zinc-300 rounded-3xl p-8 space-y-6 shadow-sm">
+          <section className="bg-white border border-[var(--line,rgba(36,51,43,0.16))] rounded-3xl p-8 space-y-6 shadow-sm">
             <div className="space-y-1">
-              <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
+              <span className="text-[11px] font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-wider">
                 Operational Realignment
               </span>
-              <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
+              <h2 className="text-2xl font-serif font-bold text-[var(--ink,#1e2924)]">
                 What Changes If You Believe This?
               </h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1 font-medium text-xs">
-              <div className="bg-zinc-50 border border-zinc-200 p-4 rounded-2xl space-y-1">
-                <strong className="font-mono font-bold text-cyan-900 uppercase block">Engineering</strong>
-                <p className="text-zinc-800 leading-relaxed">{concept.whatChanges.engineering}</p>
+              <div className="bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.12))] p-5 rounded-2xl space-y-1">
+                <strong className="font-mono font-bold text-[var(--forest,#29473b)] uppercase block">Engineering</strong>
+                <p className="text-zinc-800 leading-relaxed font-sans">{concept.whatChanges.engineering}</p>
               </div>
 
-              <div className="bg-zinc-50 border border-zinc-200 p-4 rounded-2xl space-y-1">
-                <strong className="font-mono font-bold text-emerald-900 uppercase block">Finance &amp; COGS</strong>
-                <p className="text-zinc-800 leading-relaxed">{concept.whatChanges.finance}</p>
+              <div className="bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.12))] p-5 rounded-2xl space-y-1">
+                <strong className="font-mono font-bold text-emerald-800 uppercase block">Finance &amp; COGS</strong>
+                <p className="text-zinc-800 leading-relaxed font-sans">{concept.whatChanges.finance}</p>
               </div>
 
-              <div className="bg-zinc-50 border border-zinc-200 p-4 rounded-2xl space-y-1">
-                <strong className="font-mono font-bold text-indigo-900 uppercase block">Product Strategy</strong>
-                <p className="text-zinc-800 leading-relaxed">{concept.whatChanges.product}</p>
+              <div className="bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.12))] p-5 rounded-2xl space-y-1">
+                <strong className="font-mono font-bold text-[var(--gold,#b77a35)] uppercase block">Product Strategy</strong>
+                <p className="text-zinc-800 leading-relaxed font-sans">{concept.whatChanges.product}</p>
               </div>
 
-              <div className="bg-zinc-50 border border-zinc-200 p-4 rounded-2xl space-y-1">
-                <strong className="font-mono font-bold text-rose-900 uppercase block">Security &amp; Audit</strong>
-                <p className="text-zinc-800 leading-relaxed">{concept.whatChanges.security}</p>
+              <div className="bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.12))] p-5 rounded-2xl space-y-1">
+                <strong className="font-mono font-bold text-rose-800 uppercase block">Security &amp; Audit</strong>
+                <p className="text-zinc-800 leading-relaxed font-sans">{concept.whatChanges.security}</p>
               </div>
-            </div>
-          </section>
-        )}
-
-        {/* Expanded Consensus Maturity Index */}
-        {concept.expandedConsensus && (
-          <section className="bg-white border border-zinc-300 rounded-3xl p-6 shadow-sm space-y-4">
-            <div className="space-y-1">
-              <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
-                Consensus Propagation Index
-              </span>
-              <h2 className="text-xl font-bold font-grotesk text-zinc-950">
-                Specification Maturity &amp; Ecosystem Spread
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-3 sm:grid-cols-9 gap-2 pt-2 font-mono text-[11px] text-center font-bold">
-              <div className={`p-2.5 rounded-xl border ${concept.expandedConsensus.website ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
-                Website {concept.expandedConsensus.website ? '✓' : ' - '}
-              </div>
-              <div className={`p-2.5 rounded-xl border ${concept.expandedConsensus.newsletter ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
-                Newsletter {concept.expandedConsensus.newsletter ? '✓' : ' - '}
-              </div>
-              <div className={`p-2.5 rounded-xl border ${concept.expandedConsensus.book ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
-                Book {concept.expandedConsensus.book ? '✓' : ' - '}
-              </div>
-              <div className={`p-2.5 rounded-xl border ${concept.expandedConsensus.video ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
-                Video {concept.expandedConsensus.video ? '✓' : ' - '}
-              </div>
-              <div className={`p-2.5 rounded-xl border ${concept.expandedConsensus.talk ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
-                Talk {concept.expandedConsensus.talk ? '✓' : ' - '}
-              </div>
-              <div className={`p-2.5 rounded-xl border ${concept.expandedConsensus.framework ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
-                Framework {concept.expandedConsensus.framework ? '✓' : ' - '}
-              </div>
-              <div className={`p-2.5 rounded-xl border ${concept.expandedConsensus.calculator ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
-                Calculator {concept.expandedConsensus.calculator ? '✓' : ' - '}
-              </div>
-              <div className={`p-2.5 rounded-xl border ${concept.expandedConsensus.research ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
-                Research {concept.expandedConsensus.research ? '✓' : ' - '}
-              </div>
-              <div className={`p-2.5 rounded-xl border ${concept.expandedConsensus.caseStudy ? 'bg-emerald-100 text-emerald-950 border-emerald-300' : 'bg-zinc-100 text-zinc-400 border-zinc-200'}`}>
-                Case Study {concept.expandedConsensus.caseStudy ? '✓' : ' - '}
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Audience-Specific Executive Guidance */}
-        {concept.personaRecommendations && concept.personaRecommendations.length > 0 && (
-          <section className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
-            <div className="space-y-1">
-              <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
-                Audience-Specific Executive Guidance
-              </span>
-              <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
-                Recommended Action by Role
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              {concept.personaRecommendations.map((rec, idx) => (
-                <div key={idx} className="bg-zinc-50 border border-zinc-200 rounded-2xl p-5 space-y-3 flex flex-col justify-between">
-                  <div className="space-y-2">
-                    <span className="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold bg-cyan-100 text-cyan-900 border border-cyan-300">
-                      {rec.role}
-                    </span>
-                    <p className="text-xs text-zinc-900 font-medium leading-relaxed">
-                      {rec.takeaway}
-                    </p>
-                  </div>
-                  <Link
-                    href={`/concepts/${rec.recommendedNextSlug}`}
-                    className="text-xs font-mono font-bold text-cyan-900 hover:underline flex items-center gap-1 pt-2 border-t border-zinc-200"
-                  >
-                    Recommended Next Step →
-                  </Link>
-                </div>
-              ))}
             </div>
           </section>
         )}
 
         {/* Executable Diagnostic Tool Banner */}
         {concept.executableTool && (
-          <section className="bg-gradient-to-r from-cyan-900 via-zinc-900 to-indigo-900 text-white border border-cyan-700 rounded-3xl p-6 sm:p-8 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <section className="bg-[var(--forest2,#162e26)] text-white border border-[var(--forest,#29473b)] rounded-3xl p-8 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-cyan-400 text-zinc-950">
-                  Executable Tool
+                <span className="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold bg-[var(--gold,#b77a35)] text-white uppercase">
+                  Executable Diagnostic
                 </span>
-                <span className="text-xs font-mono text-cyan-200 font-bold">
+                <span className="text-xs font-mono text-[#d8c7a8]">
                   [{concept.executableTool.type}]
                 </span>
               </div>
-              <h3 className="text-xl font-bold font-grotesk text-white">
+              <h3 className="text-2xl font-serif font-bold text-white">
                 {concept.executableTool.name}
               </h3>
-              <p className="text-xs sm:text-sm text-zinc-200 max-w-xl font-medium">
+              <p className="text-sm text-zinc-300 max-w-xl font-sans leading-relaxed">
                 {concept.executableTool.description}
               </p>
             </div>
             <Link
               href={concept.executableTool.url}
-              className="px-6 py-3 bg-cyan-400 hover:bg-cyan-300 text-zinc-950 font-bold text-sm rounded-xl transition shadow-sm whitespace-nowrap self-start sm:self-center"
+              className="button button-gold shrink-0 self-start sm:self-center"
             >
               Launch Tool ↗
             </Link>
@@ -641,15 +562,15 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
         {/* Inspectable Evidence Ledger */}
         <section className="space-y-6">
           <div className="space-y-1">
-            <h2 className="text-2xl font-bold font-grotesk text-zinc-950">Inspectable Evidence Ledger</h2>
-            <p className="text-sm text-zinc-700 font-medium">
+            <h2 className="text-2xl font-serif font-bold text-[var(--ink,#1e2924)]">Inspectable Evidence Ledger</h2>
+            <p className="text-sm text-[var(--muted,#66716a)] font-sans">
               Classified evidence items supporting, extending, or refining this canonical research specification.
             </p>
           </div>
 
-          <div className="overflow-x-auto bg-white border border-zinc-300 rounded-3xl shadow-sm">
+          <div className="overflow-x-auto bg-white border border-[var(--line,rgba(36,51,43,0.16))] rounded-2xl shadow-sm">
             <table className="w-full text-left text-xs text-zinc-900">
-              <thead className="bg-zinc-100 text-zinc-700 font-mono text-[11px] uppercase tracking-wider border-b border-zinc-200">
+              <thead className="bg-[var(--paper2,#ebe7dc)] text-zinc-700 font-mono text-[11px] uppercase tracking-wider border-b border-[var(--line,rgba(36,51,43,0.12))]">
                 <tr>
                   <th className="p-4">Evidence Item</th>
                   <th className="p-4">Publisher</th>
@@ -659,17 +580,17 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
                   <th className="p-4">Action</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-zinc-200 font-mono">
+              <tbody className="divide-y divide-[var(--line,rgba(36,51,43,0.08))] font-mono">
                 {allEvidence.map((item) => (
-                  <tr key={item.id} className="hover:bg-zinc-50 transition">
-                    <td className="p-4 font-bold text-zinc-950 font-sans">{item.title}</td>
+                  <tr key={item.id} className="hover:bg-[var(--paper,#f4f1e9)] transition">
+                    <td className="p-4 font-bold text-[var(--ink,#1e2924)] font-sans">{item.title}</td>
                     <td className="p-4 text-zinc-600 font-bold">{item.publisher}</td>
-                    <td className="p-4 text-cyan-900 font-bold">{item.type}</td>
-                    <td className="p-4 text-amber-700 font-bold">
+                    <td className="p-4 text-[var(--forest,#29473b)] font-bold">{item.type}</td>
+                    <td className="p-4 text-[var(--gold,#b77a35)] font-bold">
                       {'★'.repeat(item.strength)}
                     </td>
                     <td className="p-4">
-                      <span className="px-2 py-0.5 rounded text-[10px] bg-zinc-200 text-zinc-800 font-bold">
+                      <span className="px-2 py-0.5 rounded text-[10px] bg-[var(--paper2,#ebe7dc)] text-zinc-800 font-bold">
                         {item.role}
                       </span>
                     </td>
@@ -678,7 +599,7 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
                         href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-cyan-800 hover:underline font-bold"
+                        className="text-[var(--forest,#29473b)] hover:text-[var(--gold,#b77a35)] font-bold transition-colors"
                       >
                         Inspect ↗
                       </a>
@@ -690,31 +611,31 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
           </div>
         </section>
 
-        {/* Downstream Operational Realization (Commercial Pathway Routing) */}
+        {/* Downstream Operational Realization */}
         <ConceptDownstreamSolution concept={concept} />
 
         {/* Recommended Citation & Attribution Matrix */}
-        <section className="space-y-4 bg-zinc-50 border border-zinc-300 rounded-3xl p-8 shadow-sm">
+        <section className="space-y-4 bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.16))] rounded-3xl p-8 shadow-sm">
           <div className="space-y-1">
-            <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider">
+            <span className="text-[11px] font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-wider">
               Academic &amp; Industry Attribution Standard
             </span>
-            <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
+            <h2 className="text-2xl font-serif font-bold text-[var(--ink,#1e2924)]">
               Recommended Citation
             </h2>
           </div>
 
           <div className="space-y-4 font-mono text-xs text-zinc-900">
-            <div className="bg-white border border-zinc-300 rounded-2xl p-4 space-y-2">
-              <span className="text-[11px] text-zinc-600 font-bold uppercase block">Canonical Reference String</span>
-              <p className="font-sans text-sm font-bold text-zinc-950 select-all">
-                Ewing, R. ({new Date().getFullYear()}). "{concept.title}." <em>Richard Ewing Research Canon</em>. Available at: https://www.richardewing.io/concepts/{concept.slug}
+            <div className="bg-white border border-[var(--line,rgba(36,51,43,0.12))] rounded-2xl p-5 space-y-2">
+              <span className="text-[11px] text-[var(--muted,#66716a)] font-bold uppercase block">Canonical Reference String</span>
+              <p className="font-serif text-sm font-semibold text-[var(--ink,#1e2924)] select-all leading-relaxed">
+                Ewing, R. ({new Date().getFullYear()}). &ldquo;{concept.title}.&rdquo; <em>Richard Ewing Research Canon</em>. Available at: https://www.richardewing.io/concepts/{concept.slug}
               </p>
             </div>
 
-            <div className="bg-zinc-900 text-zinc-100 border border-zinc-800 rounded-2xl p-4 space-y-2">
-              <span className="text-[11px] text-zinc-400 font-bold uppercase block">BibTeX Citation</span>
-              <pre className="text-[11px] leading-relaxed overflow-x-auto text-emerald-400 select-all">
+            <div className="bg-[var(--forest2,#162e26)] text-white border border-[var(--forest,#29473b)] rounded-2xl p-5 space-y-2">
+              <span className="text-[11px] text-[#d8c7a8] font-bold uppercase block">BibTeX Citation</span>
+              <pre className="text-[11px] leading-relaxed overflow-x-auto text-emerald-300 select-all">
 {`@article{ewing_${concept.slug.replace(/-/g, '_')},
   author = {Ewing, Richard},
   title = {${concept.title}},
@@ -726,25 +647,25 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[11px] pt-2">
-              <div className="p-3 bg-white border border-zinc-200 rounded-xl">
-                <span className="text-zinc-600 font-bold block">First Origin &amp; Provenance:</span>
-                <span className="font-bold text-zinc-950">
+              <div className="p-4 bg-white border border-[var(--line,rgba(36,51,43,0.12))] rounded-xl">
+                <span className="text-zinc-500 font-bold block mb-1">First Origin &amp; Provenance:</span>
+                <span className="font-bold text-[var(--ink,#1e2924)]">
                   {concept.provenanceTimeline[0]?.publisher || 'LinkedIn'} ({concept.provenanceTimeline[0]?.date || '2026'})
                 </span>
               </div>
-              <div className="p-3 bg-white border border-zinc-200 rounded-xl">
-                <span className="text-zinc-600 font-bold block">Current Specification Version:</span>
-                <span className="font-bold text-zinc-950">Version 1.0 (Q2 2026 Baseline)</span>
+              <div className="p-4 bg-white border border-[var(--line,rgba(36,51,43,0.12))] rounded-xl">
+                <span className="text-zinc-500 font-bold block mb-1">Current Specification Version:</span>
+                <span className="font-bold text-[var(--ink,#1e2924)]">Version 1.0 (Q2 2026 Baseline)</span>
               </div>
             </div>
           </div>
         </section>
 
         {/* Back Link */}
-        <div className="pt-8 border-t border-zinc-300 text-center">
+        <div className="pt-8 border-t border-[var(--line,rgba(36,51,43,0.16))] text-center">
           <Link
             href="/concepts"
-            className="text-xs font-mono font-bold text-cyan-900 hover:underline"
+            className="text-xs font-mono font-bold text-[var(--forest,#29473b)] hover:text-[var(--gold,#b77a35)] uppercase tracking-wider transition-colors"
           >
             ← Back to Canonical Specifications Directory
           </Link>

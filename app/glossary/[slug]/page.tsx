@@ -318,58 +318,58 @@ export default async function GlossaryTermPage({ params }: Props) {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
 
-            <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
-                <Link href="/glossary" className="hover:text-cyan-900 font-extrabold font-semibold">Glossary</Link>
+            <div className="mb-6 flex items-center gap-2 text-xs font-mono font-bold text-[var(--muted,#66716a)] uppercase tracking-widest">
+                <Link href="/glossary" className="hover:text-[var(--forest,#29473b)] transition-colors">Glossary</Link>
                 <span>/</span>
-                <span className="text-cyan-900 font-extrabold font-semibold font-bold">{term.title}</span>
+                <span className="text-[var(--forest,#29473b)] truncate">{term.title}</span>
             </div>
 
             <RetroTerminal title={term.title} category={term.category} definition={term.definition} whyItMatters={term.whyItMatters} />
 
             <article>
-                <header className="mb-10 border-b border-zinc-400 pb-10">
+                <header className="mb-10 border-b border-[var(--line,rgba(36,51,43,0.16))] pb-10">
                     <div className="flex items-center justify-between mb-3">
-                        <div className="text-xs font-bold font-mono text-cyan-500 uppercase tracking-widest">{term.category}</div>
+                        <div className="text-[11px] font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-widest">{term.category}</div>
                         <div className="flex items-center gap-3">
-                            <span className="text-xs font-bold text-zinc-900 font-bold font-mono">{readingTime} min read</span>
+                            <span className="text-xs font-mono text-zinc-600">{readingTime} min read</span>
                             <ShareButtons url={`/glossary/${slug}`} title={`What is ${term.title}?`} />
                         </div>
                     </div>
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-4">
+                    <h1 className="text-3xl sm:text-5xl font-serif font-bold text-[var(--ink,#1e2924)] mb-4 leading-tight">
                         What is {term.title}?
                     </h1>
                 </header>
 
-                {/* TL;DR Box  -  LLM-citation-friendly summary */}
-                <section className="tldr-box mb-10 p-6 rounded-xl bg-cyan-500/5 border border-cyan-500/20">
+                {/* TL;DR Box */}
+                <section className="tldr-box mb-10 p-6 sm:p-8 rounded-2xl bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.16))]">
                     <div className="flex items-center gap-2 mb-2">
-                        <span className="text-xs font-bold font-mono font-bold text-cyan-500 uppercase tracking-widest">TL;DR</span>
+                        <span className="text-[10px] font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-widest">30-Second Executive Summary</span>
                     </div>
-                    <p className="text-zinc-950 font-bold leading-relaxed text-lg">{tldr}</p>
+                    <p className="text-[var(--ink,#1e2924)] font-serif italic leading-relaxed text-lg sm:text-xl">&ldquo;{tldr}&rdquo;</p>
                 </section>
 
-                {/* At a Glance  -  Quick Reference Card */}
-                <section className="mb-12 rounded-2xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-violet-500/5 p-8">
-                    <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-4">⚡ {term.title} at a Glance</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-                        <div className="flex items-start gap-2"><span className="text-cyan-900 font-extrabold font-semibold font-bold">📂</span><div><span className="text-zinc-900">Category:</span> <span className="text-zinc-900">{term.category}</span></div></div>
-                        <div className="flex items-start gap-2"><span className="text-cyan-900 font-extrabold font-semibold font-bold">⏱️</span><div><span className="text-zinc-900">Read Time:</span> <span className="text-zinc-900">{readingTime} min</span></div></div>
-                        <div className="flex items-start gap-2"><span className="text-cyan-900 font-extrabold font-semibold font-bold">🔗</span><div><span className="text-zinc-900">Related Terms:</span> <span className="text-zinc-900">{term.relatedTerms.length}</span></div></div>
-                        <div className="flex items-start gap-2"><span className="text-cyan-900 font-extrabold font-semibold font-bold">❓</span><div><span className="text-zinc-900">FAQs Answered:</span> <span className="text-zinc-900">{term.faqs.length}</span></div></div>
-                        <div className="flex items-start gap-2"><span className="text-cyan-900 font-extrabold font-semibold font-bold">✅</span><div><span className="text-zinc-900">Checklist Items:</span> <span className="text-zinc-900">{checklist.length}</span></div></div>
-                        <div className="flex items-start gap-2"><span className="text-cyan-900 font-extrabold font-semibold font-bold">🧪</span><div><span className="text-zinc-900">Quiz Questions:</span> <span className="text-zinc-900">{quiz.length}</span></div></div>
+                {/* At a Glance */}
+                <section className="mb-12 rounded-2xl border border-[var(--line,rgba(36,51,43,0.16))] bg-white p-6 sm:p-8 shadow-sm">
+                    <h2 className="text-xl font-serif font-bold text-[var(--ink,#1e2924)] mb-4">{term.title} at a Glance</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm font-sans">
+                        <div className="flex items-start gap-2"><span className="text-[var(--forest,#29473b)] font-bold">&bull;</span><div><span className="text-zinc-600">Category:</span> <span className="text-[var(--ink,#1e2924)] font-semibold">{term.category}</span></div></div>
+                        <div className="flex items-start gap-2"><span className="text-[var(--forest,#29473b)] font-bold">&bull;</span><div><span className="text-zinc-600">Read Time:</span> <span className="text-[var(--ink,#1e2924)] font-semibold">{readingTime} min</span></div></div>
+                        <div className="flex items-start gap-2"><span className="text-[var(--forest,#29473b)] font-bold">&bull;</span><div><span className="text-zinc-600">Related Terms:</span> <span className="text-[var(--ink,#1e2924)] font-semibold">{term.relatedTerms.length}</span></div></div>
+                        <div className="flex items-start gap-2"><span className="text-[var(--forest,#29473b)] font-bold">&bull;</span><div><span className="text-zinc-600">FAQs Answered:</span> <span className="text-[var(--ink,#1e2924)] font-semibold">{term.faqs.length}</span></div></div>
+                        <div className="flex items-start gap-2"><span className="text-[var(--forest,#29473b)] font-bold">&bull;</span><div><span className="text-zinc-600">Checklist Items:</span> <span className="text-[var(--ink,#1e2924)] font-semibold">{checklist.length}</span></div></div>
+                        <div className="flex items-start gap-2"><span className="text-[var(--forest,#29473b)] font-bold">&bull;</span><div><span className="text-zinc-600">Quiz Questions:</span> <span className="text-[var(--ink,#1e2924)] font-semibold">{quiz.length}</span></div></div>
                     </div>
                 </section>
 
-                {/* Key Metrics Dashboard  -  always rendered */}
+                {/* Key Metrics Dashboard */}
                 <section className="mb-12">
-                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">📊 Key Metrics &amp; Benchmarks</h2>
+                    <h2 className="text-2xl font-serif font-bold text-[var(--ink,#1e2924)] mb-6">Key Metrics &amp; Benchmarks</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         {keyMetrics.map((m, i) => (
-                            <div key={i} className="rounded-xl border border-zinc-400 bg-zinc-50 p-5 text-center">
-                                <div className="text-3xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">{m.value}</div>
-                                <div className="text-sm font-semibold font-bold text-zinc-950 mt-2">{m.label}</div>
-                                <div className="text-xs font-bold text-zinc-900 font-bold mt-1">{m.description}</div>
+                            <div key={i} className="rounded-2xl border border-[var(--line,rgba(36,51,43,0.16))] bg-[var(--paper2,#ebe7dc)] p-5 text-center">
+                                <div className="text-2xl sm:text-3xl font-serif font-bold text-[var(--forest2,#162e26)]">{m.value}</div>
+                                <div className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--gold,#b77a35)] mt-2">{m.label}</div>
+                                <div className="text-xs text-zinc-600 mt-1 font-sans">{m.description}</div>
                             </div>
                         ))}
                     </div>

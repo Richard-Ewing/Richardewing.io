@@ -147,100 +147,101 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
     return (
         <main className="pt-20">
             <StructuredData data={generateCourseSchema(mod.title, mod.description, 'Richard Ewing', `https://www.richardewing.io/vault/curriculum/tracks/${fullSlug}`)} />
-            <div className="page-container">
-                <div className="max-w-4xl mx-auto">
-                    <div className="mb-6 flex items-center gap-2 text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest">
-                        <Link href="/vault/curriculum/tracks" className="hover:text-cyan-900 font-extrabold font-semibold">Tracks</Link>
-                        <span>/</span>
-                        <span className="hover:text-cyan-900 font-extrabold font-semibold">{mod.trackName}</span>
-                        <span>/</span>
-                        <span className="text-cyan-900 font-extrabold">{mod.moduleId}</span>
-                    </div>
+            <div className="max-w-4xl mx-auto px-6">
+                <div className="mb-6 flex items-center gap-2 text-xs font-mono font-bold text-[var(--muted,#66716a)] uppercase tracking-widest">
+                    <Link href="/vault/curriculum/tracks" className="hover:text-[var(--forest,#29473b)] transition-colors">Tracks</Link>
+                    <span>/</span>
+                    <span className="hover:text-[var(--forest,#29473b)] transition-colors">{mod.trackName}</span>
+                    <span>/</span>
+                    <span className="text-[var(--forest,#29473b)]">{mod.moduleId}</span>
+                </div>
 
-                    <div className="mb-10">
-                        {(() => {
-                            const trackNumber = parseInt(mod.moduleId.split('-')[0], 10);
-                            const supportsFramework = [2, 5, 6, 7, 8, 11, 24].includes(trackNumber)
-                                ? 'AI Unit Economics'
-                                : 'Production AI Governance';
-                            return (
-                                <>
-                                    <div className="text-xs font-bold font-mono text-cyan-500 uppercase tracking-widest mb-3">
-                                        {mod.trackName}
-                                    </div>
-                                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-900 mb-4">
-                                        {mod.moduleId}:{' '}
-                                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-purple-600">{mod.title}</span>
-                                    </h1>
-                                    <p className="text-lg text-zinc-950 font-bold max-w-2xl">{mod.description}</p>
-                                    <div className="flex flex-wrap items-center gap-3 mt-4">
-                                        <span className="px-3 py-1 rounded-full text-xs font-bold font-mono bg-cyan-50 text-cyan-900 font-extrabold border border-cyan-200">{mod.lessons.length} Lessons</span>
-                                        <span className="px-3 py-1 rounded-full text-xs font-bold font-mono bg-emerald-50 text-emerald-900 font-extrabold border border-emerald-200">~45 min</span>
-                                        <span className="px-3 py-1 rounded-full text-xs font-bold font-mono bg-purple-50 text-purple-900 font-extrabold border border-purple-200">Supports Framework: {supportsFramework}</span>
-                                    </div>
-                                </>
-                            );
-                        })()}
-                    </div>
+                <div className="mb-10 pb-8 border-b border-[var(--line,rgba(36,51,43,0.16))]">
+                    {(() => {
+                        const trackNumber = parseInt(mod.moduleId.split('-')[0], 10);
+                        const supportsFramework = [2, 5, 6, 7, 8, 11, 24].includes(trackNumber)
+                            ? 'AI Unit Economics'
+                            : 'Production AI Governance';
+                        return (
+                            <>
+                                <div className="text-[11px] font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-widest mb-3">
+                                    {mod.trackName}
+                                </div>
+                                <h1 className="text-3xl sm:text-5xl font-serif font-bold text-[var(--ink,#1e2924)] mb-4 leading-tight">
+                                    {mod.moduleId}: {mod.title}
+                                </h1>
+                                <p className="text-lg text-zinc-700 leading-relaxed font-sans max-w-2xl">{mod.description}</p>
+                                <div className="flex flex-wrap items-center gap-3 mt-5">
+                                    <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[var(--paper2,#ebe7dc)] text-[var(--ink,#1e2924)] border border-[var(--line,rgba(36,51,43,0.12))]">{mod.lessons.length} Lessons</span>
+                                    <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">~45 min</span>
+                                    <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-white text-zinc-700 border border-[var(--line,rgba(36,51,43,0.12))]">Framework: {supportsFramework}</span>
+                                </div>
+                            </>
+                        );
+                    })()}
+                </div>
 
-                    {/* 5-Step Sovereign Pipeline Trace */}
-                    <div className="rounded-2xl border border-indigo-200 bg-white p-6 mb-8 shadow-sm">
-                        <div className="flex items-center justify-between gap-2 mb-3">
-                            <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-indigo-900 bg-indigo-50 px-2.5 py-1 rounded-full border border-indigo-200">
-                                Sovereign Asset Pipeline Trace
-                            </span>
-                            <span className="text-[10px] font-mono text-zinc-500 font-semibold">
-                                Research &rarr; Implementation
-                            </span>
+                {/* 5-Step Sovereign Pipeline Trace */}
+                <div className="rounded-2xl border border-[var(--line,rgba(36,51,43,0.16))] bg-white p-6 sm:p-7 mb-8 shadow-sm">
+                    <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-[var(--line,rgba(36,51,43,0.1))]">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[var(--gold,#b77a35)] bg-[var(--paper2,#ebe7dc)] px-2.5 py-1 rounded border border-[var(--line,rgba(36,51,43,0.12))]">
+                            Sovereign Asset Pipeline Trace
+                        </span>
+                        <span className="text-[11px] font-mono text-zinc-500">
+                            Research &rarr; Implementation
+                        </span>
+                    </div>
+                    <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5 text-xs font-sans">
+                        <div className="p-3 rounded-xl bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.12))]">
+                            <div className="text-[9px] font-mono text-[var(--gold,#b77a35)] uppercase font-bold">1. Research</div>
+                            <div className="text-[var(--ink,#1e2924)] font-bold truncate text-[11px] mt-1">
+                                <a href="#foundational-research" className="hover:underline text-[var(--forest,#29473b)]">
+                                    {relatedResearch.length > 0 ? `${relatedResearch.length} Studies` : 'Corpus Backed'}
+                                </a>
+                            </div>
                         </div>
-                        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs">
-                            <div className="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200">
-                                <div className="text-[9px] font-mono text-cyan-800 uppercase font-bold">1. Research</div>
-                                <div className="text-zinc-900 font-bold truncate text-[11px] mt-0.5">
-                                    <a href="#foundational-research" className="hover:underline text-cyan-900">
-                                        {relatedResearch.length > 0 ? `${relatedResearch.length} Studies` : 'Corpus Backed'}
-                                    </a>
-                                </div>
+                        <div className="p-3 rounded-xl bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.12))]">
+                            <div className="text-[9px] font-mono text-[var(--gold,#b77a35)] uppercase font-bold">2. Concept</div>
+                            <div className="text-[var(--ink,#1e2924)] font-bold truncate text-[11px] mt-1">
+                                <Link href="/concepts" className="hover:underline text-[var(--forest,#29473b)]">132+ Ontology</Link>
                             </div>
-                            <div className="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200">
-                                <div className="text-[9px] font-mono text-violet-800 uppercase font-bold">2. Concept</div>
-                                <div className="text-zinc-900 font-bold truncate text-[11px] mt-0.5">
-                                    <Link href="/concepts" className="hover:underline text-violet-900">118+ Ontology</Link>
-                                </div>
+                        </div>
+                        <div className="p-3 rounded-xl bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.12))]">
+                            <div className="text-[9px] font-mono text-[var(--gold,#b77a35)] uppercase font-bold">3. Framework</div>
+                            <div className="text-[var(--ink,#1e2924)] font-bold truncate text-[11px] mt-1">
+                                {parseInt(mod.moduleId.split('-')[0], 10) <= 11 ? 'AI Unit Economics' : 'Systems Governor'}
                             </div>
-                            <div className="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200">
-                                <div className="text-[9px] font-mono text-amber-800 uppercase font-bold">3. Framework</div>
-                                <div className="text-zinc-900 font-bold truncate text-[11px] mt-0.5">
-                                    {parseInt(mod.moduleId.split('-')[0], 10) <= 11 ? 'AI Unit Economics' : 'Systems Governor'}
-                                </div>
+                        </div>
+                        <div className="p-3 rounded-xl bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.12))]">
+                            <div className="text-[9px] font-mono text-[var(--gold,#b77a35)] uppercase font-bold">4. Diagnostic</div>
+                            <div className="text-[var(--ink,#1e2924)] font-bold truncate text-[11px] mt-1">
+                                {mod.embeddedTool ? (
+                                    <Link href={`/tools/${mod.embeddedTool}`} className="hover:underline text-[var(--forest,#29473b)]">
+                                        {mod.embeddedTool.toUpperCase()} Proving Ground
+                                    </Link>
+                                ) : 'PDI / APER Engine'}
                             </div>
-                            <div className="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200">
-                                <div className="text-[9px] font-mono text-emerald-800 uppercase font-bold">4. Diagnostic</div>
-                                <div className="text-zinc-900 font-bold truncate text-[11px] mt-0.5">
-                                    {mod.embeddedTool ? (
-                                        <Link href={`/tools/${mod.embeddedTool}`} className="hover:underline text-emerald-900">
-                                            {mod.embeddedTool.toUpperCase()} Proving Ground
-                                        </Link>
-                                    ) : 'PDI / APER Engine'}
-                                </div>
-                            </div>
-                            <div className="p-2.5 rounded-xl bg-zinc-50 border border-zinc-200 col-span-2 sm:col-span-1">
-                                <div className="text-[9px] font-mono text-indigo-800 uppercase font-bold">5. Implementation</div>
-                                <div className="text-zinc-900 font-bold truncate text-[11px] mt-0.5">
-                                    <Link href="/services" className="hover:underline text-indigo-900">Exogram / Advisory</Link>
-                                </div>
+                        </div>
+                        <div className="p-3 rounded-xl bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.12))] col-span-2 sm:col-span-1">
+                            <div className="text-[9px] font-mono text-[var(--gold,#b77a35)] uppercase font-bold">5. Implementation</div>
+                            <div className="text-[var(--ink,#1e2924)] font-bold truncate text-[11px] mt-1">
+                                <Link href="/services" className="hover:underline text-[var(--forest,#29473b)]">Exogram / Advisory</Link>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div className="rounded-2xl border border-cyan-200 bg-cyan-50 p-8 mb-12">
-                        <h2 className="text-lg font-grotesk font-bold text-zinc-900 mb-4">🎯 What You&apos;ll Learn</h2>
-                        <ul className="space-y-2 text-zinc-900">
-                            {mod.takeaways.map((t, i) => (
-                                <li key={i} className="flex items-start gap-2"><span className="text-cyan-900 font-extrabold mt-1">✓</span> {t}</li>
-                            ))}
-                        </ul>
-                    </div>
+                <div className="rounded-2xl border border-[var(--line,rgba(36,51,43,0.16))] bg-[var(--paper2,#ebe7dc)] p-6 sm:p-8 mb-10">
+                    <h2 className="text-xl font-serif font-bold text-[var(--ink,#1e2924)] mb-4">What You&apos;ll Learn</h2>
+                    <ul className="space-y-2.5 text-zinc-800 font-sans text-sm sm:text-base">
+                        {mod.takeaways.map((t, i) => (
+                            <li key={i} className="flex items-start gap-2.5">
+                                <span className="text-[var(--forest,#29473b)] font-bold mt-0.5">&bull;</span>
+                                <span>{t}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
 
                     <PayGate 
                         moduleTitle={mod.title} 
@@ -397,7 +398,6 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
 
                     <AdvisoryCTA variant="educational" termTitle={mod.title} />
                 </div>
-            </div>
         </main>
     );
 }

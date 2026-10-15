@@ -122,22 +122,22 @@ export default async function Page({ params }: Props) {
 
             {/* Foundational Research & Publications (Step 1 of Sovereign Asset Engine) */}
             {relatedPublications.length > 0 && (
-                <div className="page-container max-w-4xl mx-auto mb-16">
-                    <div className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
-                        <div className="flex items-center justify-between flex-wrap gap-2">
+                <div className="max-w-4xl mx-auto px-6 mb-16">
+                    <div className="space-y-6 bg-white border border-[var(--line,rgba(36,51,43,0.16))] rounded-2xl p-8 shadow-sm">
+                        <div className="flex items-center justify-between flex-wrap gap-2 pb-4 border-b border-[var(--line,rgba(36,51,43,0.12))]">
                             <div>
-                                <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider block mb-1">
+                                <span className="text-[11px] font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-wider block mb-1">
                                     Step 1 &bull; Sovereign Asset Engine
                                 </span>
-                                <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
+                                <h2 className="text-2xl font-serif font-bold text-[var(--ink,#1e2924)]">
                                     Foundational Research &amp; Publications
                                 </h2>
                             </div>
                             <Link
                                 href="/research/publications"
-                                className="text-xs font-mono font-bold text-cyan-900 hover:text-cyan-700 flex items-center gap-1 uppercase tracking-wider"
+                                className="text-xs font-mono font-bold text-[var(--forest,#29473b)] hover:text-[var(--gold,#b77a35)] flex items-center gap-1 uppercase tracking-wider transition-colors"
                             >
-                                Full Corpus ({RESEARCH_CORPUS.length} Works) &rarr;
+                                Full Corpus ({RESEARCH_CORPUS.length} Works) ↗
                             </Link>
                         </div>
 
@@ -148,22 +148,25 @@ export default async function Page({ params }: Props) {
                                     href={art.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="bg-zinc-50 border border-zinc-200 rounded-2xl p-5 hover:border-cyan-400 hover:bg-cyan-50/50 transition flex flex-col justify-between group"
+                                    className="bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.12))] rounded-xl p-5 hover:border-[var(--forest,#29473b)] transition flex flex-col justify-between group"
                                 >
                                     <div>
                                         <div className="flex items-center justify-between text-[10px] font-mono font-bold mb-2">
-                                            <span className="px-2 py-0.5 rounded bg-cyan-100 text-cyan-950 uppercase">{art.publisher}</span>
+                                            <span className="px-2 py-0.5 rounded bg-[var(--paper,#f4f1e9)] text-[var(--forest,#29473b)] uppercase border border-[var(--line,rgba(36,51,43,0.1))]">
+                                                {art.publisher}
+                                            </span>
                                             <span className="text-zinc-500">{art.date}</span>
                                         </div>
-                                        <h3 className="text-sm font-bold text-zinc-950 group-hover:text-cyan-900 transition-colors mb-2 leading-snug">
+                                        <h3 className="font-serif text-lg font-medium text-[var(--ink,#1e2924)] group-hover:text-[var(--forest,#29473b)] transition-colors mb-2 leading-snug">
                                             {art.title}
                                         </h3>
-                                        <p className="text-xs text-zinc-700 leading-relaxed line-clamp-2">
+                                        <p className="text-xs text-[var(--muted,#66716a)] leading-relaxed line-clamp-2">
                                             {art.thesis}
                                         </p>
                                     </div>
-                                    <div className="pt-3 mt-3 border-t border-zinc-200 text-[11px] font-mono text-cyan-900 font-bold flex items-center gap-1">
-                                        Read Published Work &rarr;
+                                    <div className="pt-3 mt-3 border-t border-[var(--line,rgba(36,51,43,0.1))] text-[11px] font-mono text-[var(--forest,#29473b)] font-bold flex items-center justify-between">
+                                        <span>Read Published Work</span>
+                                        <span className="text-[var(--gold,#b77a35)] group-hover:translate-x-1 transition-transform">↗</span>
                                     </div>
                                 </a>
                             ))}

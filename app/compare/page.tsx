@@ -188,33 +188,43 @@ export default function CompareIndexPage() {
         .filter(item => tierASlugs.has(item.slug));
 
     return (
-        <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
-            <div className="page-container max-w-4xl mx-auto px-6">
+        <main className="min-h-screen bg-[var(--paper,#f4f1e9)] pt-20 pb-24 text-[var(--ink,#1e2924)]">
+            <div className="max-w-4xl mx-auto px-6">
                 
                 {/* Header */}
-                <div className="mb-12 border-b border-zinc-400 pb-8">
-                    <div className="text-xs font-mono font-bold text-amber-900 uppercase tracking-widest mb-3">
-                        Evaluations & Benchmarks
+                <div className="mb-12 border-b border-[var(--line,rgba(36,51,43,0.16))] pb-10">
+                    <div className="text-[11px] font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-widest mb-3">
+                        Evaluations &amp; Benchmarks
                     </div>
-                    <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
-                        Architectural & Platform Comparisons
+                    <h1 className="text-3xl sm:text-5xl font-serif font-bold text-[var(--ink,#1e2924)] mb-4 leading-tight">
+                        Architectural &amp; Platform Comparisons
                     </h1>
-                    <p className="text-xl text-zinc-900 leading-relaxed font-semibold max-w-2xl">
-                        Objective cost, risk, and ROI evaluations of AI coding assistants, guardrails, and engineering metrics platforms.
+                    <p className="text-lg sm:text-xl text-zinc-700 leading-relaxed font-serif italic max-w-2xl">
+                        Objective cost, risk, and ROI evaluations of AI coding assistants, runtime guardrails, and engineering metrics platforms.
                     </p>
                 </div>
 
                 {/* Featured Comparisons */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
                     {curattedComparisons.map((c) => {
-                        const theme = colorMap[c.color] || colorMap.amber;
                         return (
                             <Link key={c.href} href={c.href} className="group block">
-                                <div className={`rounded-2xl border ${theme.border} ${theme.hover} p-8 transition-all bg-white hover:bg-zinc-50 shadow-sm`}>
-                                    <div className={`text-xs font-bold font-mono uppercase tracking-widest mb-2 ${theme.text}`}>{c.subtitle}</div>
-                                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-3 group-hover:text-zinc-900">{c.title}</h2>
-                                    <p className="text-zinc-900 font-semibold mb-4 text-sm">{c.description}</p>
-                                    <span className={`text-xs font-bold uppercase tracking-widest ${theme.text}`}>Read Comparison &rarr;</span>
+                                <div className="rounded-2xl border border-[var(--line,rgba(36,51,43,0.16))] p-6 sm:p-8 transition-all bg-white hover:bg-[var(--paper2,#ebe7dc)]/60 hover:border-[var(--forest,#29473b)] shadow-sm hover:-translate-y-1 h-full flex flex-col justify-between">
+                                    <div>
+                                        <div className="text-[10px] font-mono font-bold uppercase tracking-wider mb-2 text-[var(--gold,#b77a35)]">
+                                            {c.subtitle}
+                                        </div>
+                                        <h2 className="text-xl sm:text-2xl font-serif font-semibold text-[var(--ink,#1e2924)] mb-3 group-hover:text-[var(--forest,#29473b)] transition-colors">
+                                            {c.title}
+                                        </h2>
+                                        <p className="text-zinc-600 mb-6 text-xs sm:text-sm font-sans leading-relaxed">
+                                            {c.description}
+                                        </p>
+                                    </div>
+                                    <div className="flex items-center justify-between pt-4 border-t border-[var(--line,rgba(36,51,43,0.1))] text-xs font-semibold text-[var(--forest,#29473b)]">
+                                        <span>Read Comparison</span>
+                                        <span className="text-[var(--gold,#b77a35)] group-hover:translate-x-1 transition-transform">↗</span>
+                                    </div>
                                 </div>
                             </Link>
                         );
@@ -223,8 +233,11 @@ export default function CompareIndexPage() {
 
                 {/* Tier A Comparison Directory */}
                 {filteredMatrix.length > 0 && (
-                    <div className="mt-16 pt-12 border-t border-zinc-400">
-                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-8">
+                    <div className="mt-16 pt-12 border-t border-[var(--line,rgba(36,51,43,0.16))]">
+                        <div className="text-[11px] font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-wider mb-2">
+                            Index Directory
+                        </div>
+                        <h2 className="text-2xl font-serif font-bold text-[var(--ink,#1e2924)] mb-8">
                             High-Intent Strategic Comparisons
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -232,20 +245,20 @@ export default function CompareIndexPage() {
                                 <Link 
                                     key={page.slug} 
                                     href={`/compare/${page.slug}`}
-                                    className="text-sm font-bold text-zinc-900 hover:text-cyan-900 transition-colors bg-white/70 border border-zinc-300 rounded-lg p-3 hover:bg-white truncate block"
+                                    className="text-xs font-mono font-bold text-[var(--ink,#1e2924)] hover:text-[var(--forest,#29473b)] hover:border-[var(--forest,#29473b)] transition-colors bg-white border border-[var(--line,rgba(36,51,43,0.12))] rounded-xl p-3.5 hover:bg-[var(--paper2,#ebe7dc)]/60 truncate block"
                                     title={page.title}
                                 >
-                                    {page.toolA} vs {page.toolB}
+                                    {page.toolA} vs {page.toolB} ↗
                                 </Link>
                             ))}
                         </div>
                     </div>
                 )}
 
-                <div className="text-center py-12 border-t border-zinc-400 mt-16">
-                    <p className="text-zinc-900 font-semibold mb-4 text-sm">Explore diagnostic calculators</p>
-                    <Link href="/tools" className="text-cyan-900 font-extrabold hover:text-cyan-900 uppercase tracking-widest text-xs">
-                        View All Diagnostic Tools &rarr;
+                <div className="text-center py-12 border-t border-[var(--line,rgba(36,51,43,0.16))] mt-16">
+                    <p className="text-zinc-600 mb-4 text-xs font-mono uppercase tracking-wider">Explore diagnostic calculators</p>
+                    <Link href="/tools" className="button button-gold">
+                        View All Diagnostic Tools ↗
                     </Link>
                 </div>
             </div>
