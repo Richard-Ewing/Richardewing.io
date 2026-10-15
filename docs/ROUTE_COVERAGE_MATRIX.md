@@ -27,16 +27,16 @@ All routes in RichardEwing.io adhere to the approved Concept B design specificat
 
 The following core components represent the unified editorial building blocks deployed across all page families:
 
-| Component Name | Source Location | Primary Usage & Behavior |
-| :--- | :--- | :--- |
-| **`EditorialCard`** | `components/editorial/EditorialCard.tsx` | Core editorial container with warm paper/forest header, metadata eyebrow, serif title, and interactive link arrow. |
-| **`PublicationCard`**| `components/editorial/PublicationCard.tsx` | Peer-reviewed publication entry displaying publisher badge (CIO.com, Built In, etc.), date, thesis summary, and archival link. |
-| **`ConceptCard`** | `components/editorial/ConceptCard.tsx` | Ontology card linking canonical concept to its mathematical axioms, research evidence, and connected knowledge graph. |
-| **`ToolCard`** | `components/editorial/ToolCard.tsx` | Diagnostic calculator summary card featuring live telemetry metric preview, risk badge, and direct audit action. |
-| **`MetricPanel`** | `components/editorial/MetricPanel.tsx` | High-contrast numerical callout highlighting dollar savings, efficiency multipliers, or insolvency dates. |
-| **`QuoteBlock`** | `components/editorial/QuoteBlock.tsx` | High-impact italicized executive axiom bordered with forest or gold accent and attributed to Richard Ewing. |
-| **`ChartPanel`** | `components/editorial/ChartPanel.tsx` | Visual SVG container displaying unit cost curves, latency bands, or phase transition diagrams. |
-| **`AccordionItem`** | `components/editorial/AccordionItem.tsx` | Accessible, animated disclosure element for FAQs, curriculum outlines, and complex calculation steps. |
+| Component Name | Source Location | Production Wiring & Routes | Primary Usage & Behavior |
+| :--- | :--- | :--- | :--- |
+| **`EditorialCard`** | `components/editorial/EditorialCard.tsx` | Global editorial templates | Core editorial container with warm paper/forest header, metadata eyebrow, serif title, and interactive link arrow. |
+| **`PublicationCard`**| `components/editorial/PublicationCard.tsx` | `/research`, `/research/publications` (`research-explorer.tsx`) | Peer-reviewed publication entry displaying publisher badge (CIO.com, Built In, etc.), date, thesis summary, and archival link. |
+| **`ConceptCard`** | `components/editorial/ConceptCard.tsx` | `/concepts` (`concept-explorer.tsx`) | Ontology card linking canonical concept to its mathematical axioms, research evidence, and connected knowledge graph. Dual-mode support. |
+| **`ToolCard`** | `components/editorial/ToolCard.tsx` | `/tools` (`tools-content.tsx`, `app/tools/page.tsx`) | Diagnostic calculator summary card featuring live telemetry metric preview, risk badge, executive role tags, and direct audit action. |
+| **`MetricPanel`** | `components/editorial/MetricPanel.tsx` | Diagnostic tools & audit reports | High-contrast numerical callout highlighting dollar savings, efficiency multipliers, or insolvency dates. |
+| **`QuoteBlock`** | `components/editorial/QuoteBlock.tsx` | Core essays & curriculum | High-impact italicized executive axiom bordered with forest or gold accent and attributed to Richard Ewing. |
+| **`ChartPanel`** | `components/editorial/ChartPanel.tsx` | Research briefs & benchmarks | Visual SVG container displaying unit cost curves, latency bands, or phase transition diagrams. |
+| **`AccordionItem`** | `components/editorial/AccordionItem.tsx` | Master Legal Hub (`/legal`), compare FAQs | Accessible, animated disclosure element for FAQs, curriculum outlines, and complex calculation steps. |
 
 ---
 

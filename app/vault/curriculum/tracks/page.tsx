@@ -27,175 +27,205 @@ export const metadata: Metadata = {
         images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
     },
 };
-const colorMap: Record<string, string> = { cyan: 'border-cyan-500/30 bg-cyan-500/5', violet: 'border-violet-500/30 bg-violet-500/5', emerald: 'border-emerald-500/30 bg-emerald-500/5', amber: 'border-amber-500/30 bg-amber-500/5', orange: 'border-orange-500/30 bg-orange-500/5', pink: 'border-pink-500/30 bg-pink-500/5', red: 'border-red-500/30 bg-red-500/5', sky: 'border-sky-500/30 bg-sky-500/5', indigo: 'border-indigo-500/30 bg-indigo-500/5', rose: 'border-rose-500/30 bg-rose-500/5', teal: 'border-teal-500/30 bg-teal-500/5', lime: 'border-lime-500/30 bg-lime-500/5', fuchsia: 'border-fuchsia-500/30 bg-fuchsia-500/5', blue: 'border-blue-500/30 bg-blue-500/5' };
-const textMap: Record<string, string> = { cyan: 'text-cyan-900 font-extrabold font-semibold', violet: 'text-violet-400', emerald: 'text-emerald-900 font-extrabold font-semibold', amber: 'text-amber-400', orange: 'text-orange-900 font-extrabold font-semibold', pink: 'text-pink-400', red: 'text-red-900 font-extrabold font-semibold', sky: 'text-sky-400', indigo: 'text-indigo-900 font-extrabold font-semibold', rose: 'text-rose-400', teal: 'text-teal-400', lime: 'text-lime-400', fuchsia: 'text-zinc-950 font-semibolduchsia-400', blue: 'text-blue-900 font-extrabold font-semibold' };
+const colorMap: Record<string, string> = {
+    cyan: 'border-[var(--line,rgba(36,51,43,0.16))] bg-white',
+    violet: 'border-[var(--line,rgba(36,51,43,0.16))] bg-white',
+    emerald: 'border-[var(--line,rgba(36,51,43,0.16))] bg-white',
+    amber: 'border-[var(--line,rgba(36,51,43,0.16))] bg-white',
+    orange: 'border-[var(--line,rgba(36,51,43,0.16))] bg-white',
+    pink: 'border-[var(--line,rgba(36,51,43,0.16))] bg-white',
+    red: 'border-[var(--line,rgba(36,51,43,0.16))] bg-white',
+    sky: 'border-[var(--line,rgba(36,51,43,0.16))] bg-white',
+    indigo: 'border-[var(--line,rgba(36,51,43,0.16))] bg-white',
+    rose: 'border-[var(--line,rgba(36,51,43,0.16))] bg-white',
+    teal: 'border-[var(--line,rgba(36,51,43,0.16))] bg-white',
+    lime: 'border-[var(--line,rgba(36,51,43,0.16))] bg-white',
+    fuchsia: 'border-[var(--line,rgba(36,51,43,0.16))] bg-white',
+    blue: 'border-[var(--line,rgba(36,51,43,0.16))] bg-white',
+};
+
+const textMap: Record<string, string> = {
+    cyan: 'text-[var(--forest,#29473b)] font-semibold',
+    violet: 'text-[var(--forest,#29473b)] font-semibold',
+    emerald: 'text-[var(--forest,#29473b)] font-semibold',
+    amber: 'text-[var(--gold,#b77a35)] font-semibold',
+    orange: 'text-[var(--gold,#b77a35)] font-semibold',
+    pink: 'text-[var(--rose,#c86d56)] font-semibold',
+    red: 'text-[var(--rose,#c86d56)] font-semibold',
+    sky: 'text-[var(--forest,#29473b)] font-semibold',
+    indigo: 'text-[var(--forest2,#162e26)] font-semibold',
+    rose: 'text-[var(--rose,#c86d56)] font-semibold',
+    teal: 'text-[var(--forest,#29473b)] font-semibold',
+    lime: 'text-[var(--forest,#29473b)] font-semibold',
+    fuchsia: 'text-[var(--gold,#b77a35)] font-semibold',
+    blue: 'text-[var(--forest2,#162e26)] font-semibold',
+};
 
 export default function CurriculumTracksPage() {
     const completedModuleIds: string[] = [];
 
     return (
-        <main className="pt-20">
-            <div className="page-container">
-                <div className="max-w-5xl mx-auto">
+        <main className="min-h-screen bg-[var(--paper,#f4f1e9)] pt-24 pb-24 text-[var(--ink,#1e2924)]">
+            <div className="page-container max-w-5xl mx-auto px-6">
+                <div>
                     
                     {/* Enterprise Executive HERO */}
-                    <div className="text-center mb-12 relative">
-                        <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-purple-500/5 to-transparent pointer-events-none -z-10" />
-                        <div className="text-xs font-bold font-mono text-purple-900 uppercase tracking-widest mb-4 flex items-center justify-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-purple-600 animate-pulse"></span>
-                            AI Economics Academy &bull; Sovereign Operating System
-                        </div>
-                        <BlurIn word="The AI Economics" className="text-4xl sm:text-6xl font-grotesk font-bold text-zinc-900 mb-1" />
-                        <BlurIn word="Academy." className="text-4xl sm:text-6xl font-grotesk font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mb-6" />
+                    <div className="text-center mb-16 relative">
+                        <p className="eyebrow center mb-3">
+                            <i /> AI Economics Academy · Sovereign Operating System
+                        </p>
+                        <h1 className="text-4xl sm:text-6xl font-serif font-medium text-[var(--ink)] tracking-tight mb-6">
+                            The AI Economics <em className="italic text-[var(--forest)] font-normal">Academy.</em>
+                        </h1>
                         
-                        <p className="text-lg text-zinc-900 font-semibold max-w-3xl mx-auto mb-8 leading-relaxed">
+                        <p className="text-base sm:text-lg text-[var(--muted)] font-sans max-w-3xl mx-auto mb-8 leading-relaxed">
                             This is not a generic course catalog or certificate mill. It is the operational consumption layer of our research and proving grounds: 25 deep curriculum tracks designed to turn empirical telemetry into balance-sheet outcomes.
                         </p>
                         
-                        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mt-6">
-                            <div className="text-center bg-white px-5 py-3 rounded-2xl border border-zinc-300 shadow-sm">
-                                <div className="text-2xl font-grotesk font-bold text-zinc-900">25</div>
-                                <div className="text-xs font-mono uppercase tracking-widest text-zinc-600 mt-0.5">Authority Tracks</div>
+                        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mt-6">
+                            <div className="text-center bg-white px-6 py-4 rounded-2xl border border-[var(--line)] shadow-sm">
+                                <div className="text-3xl font-serif font-bold text-[var(--ink)]">25</div>
+                                <div className="text-xs font-mono uppercase tracking-widest text-zinc-500 mt-1">Authority Tracks</div>
                             </div>
-                            <div className="text-center bg-white px-5 py-3 rounded-2xl border border-zinc-300 shadow-sm">
-                                <div className="text-2xl font-grotesk font-bold text-zinc-900">303</div>
-                                <div className="text-xs font-mono uppercase tracking-widest text-zinc-600 mt-0.5">Deep Modules</div>
+                            <div className="text-center bg-white px-6 py-4 rounded-2xl border border-[var(--line)] shadow-sm">
+                                <div className="text-3xl font-serif font-bold text-[var(--ink)]">303</div>
+                                <div className="text-xs font-mono uppercase tracking-widest text-zinc-500 mt-1">Deep Modules</div>
                             </div>
-                            <div className="text-center bg-purple-50 px-5 py-3 rounded-2xl border border-purple-200 shadow-sm">
-                                <div className="text-2xl font-mono font-bold text-purple-900">$149</div>
-                                <div className="text-xs font-mono uppercase tracking-widest text-purple-700 mt-0.5">Per Track</div>
+                            <div className="text-center bg-[var(--paper2)] px-6 py-4 rounded-2xl border border-[var(--line)] shadow-sm">
+                                <div className="text-3xl font-mono font-bold text-[var(--forest2)]">$149</div>
+                                <div className="text-xs font-mono uppercase tracking-widest text-[var(--gold)] mt-1 font-semibold">Per Track</div>
                             </div>
-                            <div className="text-center bg-indigo-50 px-5 py-3 rounded-2xl border border-indigo-200 shadow-sm">
-                                <div className="text-2xl font-mono font-bold text-indigo-900">$999</div>
-                                <div className="text-xs font-mono uppercase tracking-widest text-indigo-700 mt-0.5">All 25 Tracks</div>
+                            <div className="text-center bg-[var(--forest2)] text-white px-6 py-4 rounded-2xl border border-[var(--forest)] shadow-sm">
+                                <div className="text-3xl font-mono font-bold text-[#d8c7a8]">$999</div>
+                                <div className="text-xs font-mono uppercase tracking-widest text-emerald-300 mt-1 font-semibold">All 25 Tracks</div>
                             </div>
                         </div>
                     </div>
 
                     {/* THE 5-STEP SOVEREIGN ASSET ENGINE PIPELINE */}
-                    <div className="mb-16 bg-white border-2 border-indigo-500/20 rounded-3xl p-6 sm:p-10 shadow-sm relative overflow-hidden">
+                    <div className="mb-16 bg-white border border-[var(--line)] rounded-3xl p-6 sm:p-10 shadow-sm relative overflow-hidden">
                         <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
                             <div>
-                                <span className="px-3 py-1 bg-indigo-100 text-indigo-900 text-xs font-mono font-bold rounded-full border border-indigo-200 uppercase tracking-wider">
+                                <span className="px-3 py-1 bg-[var(--paper2)] text-[var(--forest)] text-xs font-mono font-bold rounded-full border border-[var(--line)] uppercase tracking-wider">
                                     The Academy Engine Moat
                                 </span>
-                                <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mt-2">
+                                <h2 className="text-2xl sm:text-3xl font-serif font-semibold text-[var(--ink)] mt-3">
                                     Why This Beats Generic Courseware
                                 </h2>
                             </div>
-                            <span className="text-xs font-mono text-zinc-500 font-semibold">
+                            <span className="text-xs font-mono text-[var(--gold)] font-semibold">
                                 Closed-Loop Sovereign System
                             </span>
                         </div>
 
-                        <p className="text-sm text-zinc-800 leading-relaxed font-medium mb-8">
-                            Most tech academies (Reforge, Product School, Lenny, AI academies) sell video courses with static frameworks that disconnect from actual production systems. Our curriculum operates as the direct consumption layer of our 5-step asset pipeline:
+                        <p className="text-sm text-[var(--muted)] leading-relaxed font-sans mb-8">
+                            Most tech academies sell video courses with static frameworks that disconnect from actual production systems. Our curriculum operates as the direct consumption layer of our 5-step asset pipeline:
                         </p>
 
                         {/* 5-Step Pipeline Grid */}
                         <div className="grid grid-cols-1 sm:grid-cols-5 gap-3 relative">
-                            <div className="p-4 rounded-2xl bg-cyan-50/70 border border-cyan-200 flex flex-col justify-between">
+                            <div className="p-5 rounded-2xl bg-[var(--paper2)] border border-[var(--line)] flex flex-col justify-between">
                                 <div>
-                                    <div className="text-[10px] font-mono font-bold text-cyan-800 uppercase tracking-widest mb-1">Step 1</div>
-                                    <h3 className="text-sm font-bold font-grotesk text-zinc-950 mb-1">Research</h3>
-                                    <p className="text-xs text-zinc-700 leading-relaxed">
+                                    <div className="text-[10px] font-mono font-bold text-[var(--gold)] uppercase tracking-widest mb-1">Step 1</div>
+                                    <h3 className="text-sm font-serif font-bold text-[var(--ink)] mb-1">Research</h3>
+                                    <p className="text-xs text-[var(--muted)] leading-relaxed">
                                         Empirical industry investigations &amp; live failure telemetry across CIO.com and Built In.
                                     </p>
                                 </div>
-                                <div className="mt-3 text-[10px] font-mono font-bold text-cyan-900">&rarr; 100+ Works</div>
+                                <div className="mt-3 text-[10px] font-mono font-bold text-[var(--forest)]">&rarr; 174+ Works</div>
                             </div>
 
-                            <div className="p-4 rounded-2xl bg-violet-50/70 border border-violet-200 flex flex-col justify-between">
+                            <div className="p-5 rounded-2xl bg-[var(--paper2)] border border-[var(--line)] flex flex-col justify-between">
                                 <div>
-                                    <div className="text-[10px] font-mono font-bold text-violet-800 uppercase tracking-widest mb-1">Step 2</div>
-                                    <h3 className="text-sm font-bold font-grotesk text-zinc-950 mb-1">Concept</h3>
-                                    <p className="text-xs text-zinc-700 leading-relaxed">
-                                        118+ atomic economic and architectural truths linked in an ontological knowledge graph.
+                                    <div className="text-[10px] font-mono font-bold text-[var(--gold)] uppercase tracking-widest mb-1">Step 2</div>
+                                    <h3 className="text-sm font-serif font-bold text-[var(--ink)] mb-1">Concept</h3>
+                                    <p className="text-xs text-[var(--muted)] leading-relaxed">
+                                        130+ atomic economic and architectural truths linked in an ontological knowledge graph.
                                     </p>
                                 </div>
-                                <div className="mt-3 text-[10px] font-mono font-bold text-violet-900">&rarr; Graph Mesh</div>
+                                <div className="mt-3 text-[10px] font-mono font-bold text-[var(--forest)]">&rarr; Graph Mesh</div>
                             </div>
 
-                            <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200 flex flex-col justify-between">
+                            <div className="p-5 rounded-2xl bg-[var(--paper2)] border border-[var(--line)] flex flex-col justify-between">
                                 <div>
-                                    <div className="text-[10px] font-mono font-bold text-amber-800 uppercase tracking-widest mb-1">Step 3</div>
-                                    <h3 className="text-sm font-bold font-grotesk text-zinc-950 mb-1">Framework</h3>
-                                    <p className="text-xs text-zinc-700 leading-relaxed">
+                                    <div className="text-[10px] font-mono font-bold text-[var(--gold)] uppercase tracking-widest mb-1">Step 3</div>
+                                    <h3 className="text-sm font-serif font-bold text-[var(--ink)] mb-1">Framework</h3>
+                                    <p className="text-xs text-[var(--muted)] leading-relaxed">
                                         Rigorous operating models: Inference Dividend, Systems Governor, and PDI Formulas.
                                     </p>
                                 </div>
-                                <div className="mt-3 text-[10px] font-mono font-bold text-amber-900">&rarr; Blueprints</div>
+                                <div className="mt-3 text-[10px] font-mono font-bold text-[var(--forest)]">&rarr; Blueprints</div>
                             </div>
 
-                            <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200 flex flex-col justify-between">
+                            <div className="p-5 rounded-2xl bg-[var(--paper2)] border border-[var(--line)] flex flex-col justify-between">
                                 <div>
-                                    <div className="text-[10px] font-mono font-bold text-emerald-800 uppercase tracking-widest mb-1">Step 4</div>
-                                    <h3 className="text-sm font-bold font-grotesk text-zinc-950 mb-1">Diagnostic</h3>
-                                    <p className="text-xs text-zinc-700 leading-relaxed">
+                                    <div className="text-[10px] font-mono font-bold text-[var(--gold)] uppercase tracking-widest mb-1">Step 4</div>
+                                    <h3 className="text-sm font-serif font-bold text-[var(--ink)] mb-1">Diagnostic</h3>
+                                    <p className="text-xs text-[var(--muted)] leading-relaxed">
                                         Interactive proving grounds and ROI calculators that stress-test architectures.
                                     </p>
                                 </div>
-                                <Link href="/tools" className="mt-3 text-[10px] font-mono font-bold text-emerald-900 hover:text-emerald-950 underline flex items-center gap-1">
-                                    &rarr; Proving Grounds &amp; Diagnostics
+                                <Link href="/tools" className="mt-3 text-[10px] font-mono font-bold text-[var(--forest)] hover:underline flex items-center gap-1">
+                                    &rarr; 25 Diagnostics
                                 </Link>
                             </div>
 
-                            <div className="p-4 rounded-2xl bg-indigo-50/70 border border-indigo-200 flex flex-col justify-between">
+                            <div className="p-5 rounded-2xl bg-[var(--paper2)] border border-[var(--line)] flex flex-col justify-between">
                                 <div>
-                                    <div className="text-[10px] font-mono font-bold text-indigo-800 uppercase tracking-widest mb-1">Step 5</div>
-                                    <h3 className="text-sm font-bold font-grotesk text-zinc-950 mb-1">Implementation</h3>
-                                    <p className="text-xs text-zinc-700 leading-relaxed">
+                                    <div className="text-[10px] font-mono font-bold text-[var(--gold)] uppercase tracking-widest mb-1">Step 5</div>
+                                    <h3 className="text-sm font-serif font-bold text-[var(--ink)] mb-1">Implementation</h3>
+                                    <p className="text-xs text-[var(--muted)] leading-relaxed">
                                         Live runtime execution (Exogram proxy layers) and executive advisory alignment.
                                     </p>
                                 </div>
-                                <Link href="/vault/blueprints" className="mt-3 text-[10px] font-mono font-bold text-indigo-900 hover:text-indigo-950 underline flex items-center gap-1">
+                                <Link href="/vault/blueprints" className="mt-3 text-[10px] font-mono font-bold text-[var(--forest)] hover:underline flex items-center gap-1">
                                     &rarr; Production Blueprints
                                 </Link>
                             </div>
                         </div>
 
-                        <div className="mt-6 pt-4 border-t border-zinc-200 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-zinc-600">
+                        <div className="mt-6 pt-4 border-t border-[var(--line)] flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-zinc-600">
                             <span>Every module in this academy connects directly back to this operational spine.</span>
-                            <Link href="/concepts" className="text-indigo-700 hover:text-indigo-900 font-bold hover:underline">
+                            <Link href="/concepts" className="text-[var(--gold)] font-bold hover:underline">
                                 Explore Concepts Directory &rarr;
                             </Link>
                         </div>
                     </div>
 
                     {/* ADVISORY UPSELL */}
-                    <div className="mb-16 relative group cursor-pointer">
-                        <Link href="/services">
-                            <ShineBorder className="bg-white p-0 overflow-hidden shadow-lg" color={["#7c3aed", "#8b5cf6"]}>
-                                <BorderBeam size={200} duration={12} delay={9} borderWidth={1.5} colorFrom="#7c3aed" colorTo="#ec4899" />
-                                <div className="p-8 relative z-10 flex flex-col md:flex-row items-center gap-8">
-                                    <div className="flex-1">
-                                        <div className="text-xs font-bold font-medium font-mono text-purple-900 font-extrabold uppercase tracking-widest mb-2 font-bold flex items-center gap-2">
-                                            Enterprise Advisory
-                                        </div>
-                                        <h3 className="text-2xl font-bold text-zinc-900 mb-3">Need organizational implementation?</h3>
-                                        <p className="text-sm font-semibold text-zinc-900 font-medium leading-relaxed mb-4">
-                                            The curriculum gives your team the frameworks. Advisory ensures they deploy them. I integrate these economic models directly into your SDLC through executive-level coaching and bi-weekly ops alignment.
-                                        </p>
-                                        <div className="text-xs font-bold font-mono font-bold text-purple-900 font-extrabold hover:text-purple-500 transition-colors">
-                                            EXPLORE ADVISORY →
-                                        </div>
-                                    </div>
-                                    <div className="md:w-64 w-full h-full flex flex-col items-center justify-center bg-purple-50 rounded-xl border border-purple-100 p-6">
-                                        <div className="text-3xl font-mono text-zinc-900 mb-1">Advisory</div>
-                                        <div className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold uppercase tracking-widest text-center">Strategic Partnership</div>
-                                    </div>
+                    <div className="mb-16 bg-[var(--forest2)] text-white rounded-3xl p-8 sm:p-10 border border-[var(--forest)] shadow-sm">
+                        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+                            <div className="flex-1 space-y-3">
+                                <p className="eyebrow text-[#d8c7a8]">
+                                    <i /> Enterprise Advisory Alignment
+                                </p>
+                                <h3 className="text-2xl sm:text-3xl font-serif font-medium text-white">
+                                    Need organizational implementation?
+                                </h3>
+                                <p className="text-sm text-zinc-300 leading-relaxed max-w-xl">
+                                    The curriculum gives your team the frameworks. Advisory ensures they deploy them. I integrate these economic models directly into your SDLC through executive coaching and bi-weekly operations alignment.
+                                </p>
+                                <div className="pt-2">
+                                    <Link href="/services" className="button button-gold">
+                                        Explore Executive Advisory ↗
+                                    </Link>
                                 </div>
-                            </ShineBorder>
-                        </Link>
+                            </div>
+                            <div className="md:w-64 w-full flex flex-col items-center justify-center bg-white/5 rounded-2xl border border-white/10 p-6 text-center">
+                                <div className="text-xs font-mono text-[#d8c7a8] uppercase tracking-wider mb-1">Strategic Retainer</div>
+                                <div className="text-2xl font-serif font-bold text-white mb-1">Advisory</div>
+                                <div className="text-[11px] font-mono text-zinc-400">Fixed-Fee · 3-Week Sprints</div>
+                            </div>
+                        </div>
                     </div>
 
                     <CurriculumDirectoryGrid>
                         {/* 1. Engineering Economics Foundations (Tracks 1-4) */}
                         <div>
                             <div className="flex items-center gap-4 mb-8">
-                                <div className="h-px bg-zinc-300 flex-grow"></div>
-                                <h2 className="text-sm font-semibold font-mono text-cyan-500 uppercase tracking-widest font-bold">Engineering Economics Foundations</h2>
-                                <div className="h-px bg-zinc-300 flex-grow"></div>
+                                <div className="h-px bg-[var(--line)] flex-grow"></div>
+                                <h2 className="text-xs font-semibold font-mono text-[var(--forest)] uppercase tracking-widest font-bold">Engineering Economics Foundations</h2>
+                                <div className="h-px bg-[var(--line)] flex-grow"></div>
                             </div>
                             <div className="space-y-6">
                                 {tracks.slice(0, 4).map((track, i) => (
@@ -207,9 +237,9 @@ export default function CurriculumTracksPage() {
                         {/* 2. AI, Cloud & Agent Economics (Tracks 5-11, 19-21) */}
                         <div>
                             <div className="flex items-center gap-4 mb-8">
-                                <div className="h-px bg-zinc-300 flex-grow"></div>
-                                <h2 className="text-sm font-semibold font-mono text-violet-500 uppercase tracking-widest font-bold">AI, Cloud & Agent Economics</h2>
-                                <div className="h-px bg-zinc-300 flex-grow"></div>
+                                <div className="h-px bg-[var(--line)] flex-grow"></div>
+                                <h2 className="text-xs font-semibold font-mono text-[var(--forest)] uppercase tracking-widest font-bold">AI, Cloud &amp; Agent Economics</h2>
+                                <div className="h-px bg-[var(--line)] flex-grow"></div>
                             </div>
                             <div className="space-y-6">
                                 {tracks.slice(4, 11).map((track, i) => (
@@ -228,9 +258,9 @@ export default function CurriculumTracksPage() {
                         {/* 3. Career Capital & Leadership (Tracks 12-15, 17, 22) */}
                         <div>
                             <div className="flex items-center gap-4 mb-8">
-                                <div className="h-px bg-zinc-300 flex-grow"></div>
-                                <h2 className="text-sm font-semibold font-mono text-amber-500 uppercase tracking-widest font-bold">Career Capital & Leadership</h2>
-                                <div className="h-px bg-zinc-300 flex-grow"></div>
+                                <div className="h-px bg-[var(--line)] flex-grow"></div>
+                                <h2 className="text-xs font-semibold font-mono text-[var(--gold)] uppercase tracking-widest font-bold">Career Capital &amp; Leadership</h2>
+                                <div className="h-px bg-[var(--line)] flex-grow"></div>
                             </div>
                             <div className="space-y-6">
                                 {tracks.slice(11, 14).map((track, i) => (
@@ -250,11 +280,11 @@ export default function CurriculumTracksPage() {
                         {/* 4. Executive & Board Economics (Selected executive tracks + 16, 18, 23) */}
                         <div>
                             <div className="flex items-center gap-4 mb-8">
-                                <div className="h-px bg-zinc-300 flex-grow"></div>
-                                <h2 className="text-sm font-semibold font-mono text-indigo-500 uppercase tracking-widest font-bold">Executive & Board Economics</h2>
-                                <div className="h-px bg-zinc-300 flex-grow"></div>
+                                <div className="h-px bg-[var(--line)] flex-grow"></div>
+                                <h2 className="text-xs font-semibold font-mono text-[var(--forest2)] uppercase tracking-widest font-bold">Executive &amp; Board Economics</h2>
+                                <div className="h-px bg-[var(--line)] flex-grow"></div>
                             </div>
-                            <p className="text-sm font-semibold text-zinc-900 font-medium mb-8 text-center italic">Board reporting, EBITDA translation, M&A leadership, and technical debt at the balance sheet level - curated for senior leaders, CTOs, and CFOs.</p>
+                            <p className="text-sm text-[var(--muted)] font-sans mb-8 text-center italic">Board reporting, EBITDA translation, M&amp;A leadership, and technical debt at the balance sheet level &mdash; curated for senior leaders, CTOs, and CFOs.</p>
                             <div className="space-y-6">
                                 {/* Track 4: Capstone & Applied Practice */}
                                 {tracks[3] && <TrackAccordion key="exec-capstone" track={tracks[3]} colorMap={colorMap} textMap={textMap} serverCompletedModuleIds={completedModuleIds} />}
@@ -277,24 +307,20 @@ export default function CurriculumTracksPage() {
                     </CurriculumDirectoryGrid>
 
                     {/* BOTTOM CTA */}
-                    <div className="mt-20 pt-16 border-t border-zinc-400">
-                        <div className="rounded-[2.5rem] bg-gradient-to-br from-purple-50 via-white to-indigo-50 p-10 sm:p-16 border border-purple-100 text-center relative overflow-hidden shadow-lg">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-purple-200/30 blur-[100px] pointer-events-none rounded-full" />
-                            <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-200/30 blur-[100px] pointer-events-none rounded-full" />
-                            
-                            <h2 className="text-3xl sm:text-5xl font-grotesk font-bold tracking-tighter text-zinc-900 mb-6 relative z-10">
-                                Stop Guessing at ROI.<br/>
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Start Proving It.</span>
+                    <div className="mt-20 pt-16 border-t border-[var(--line)]">
+                        <div className="rounded-3xl bg-[var(--paper2)] p-10 sm:p-16 border border-[var(--line)] text-center relative overflow-hidden shadow-sm">
+                            <h2 className="text-3xl sm:text-5xl font-serif font-medium text-[var(--ink)] mb-4">
+                                Stop Guessing at ROI. <em className="italic text-[var(--forest)] font-normal">Start Proving It.</em>
                             </h2>
-                            <p className="text-lg text-zinc-950 font-bold max-w-2xl mx-auto mb-10 leading-relaxed relative z-10">
-                                Every module teaches you to connect work to business outcomes. $149 per track. $999 for everything. Lifetime access.
+                            <p className="text-base text-[var(--muted)] max-w-2xl mx-auto mb-8 leading-relaxed font-sans">
+                                Every module teaches you to connect engineering velocity to verifiable business outcomes. $149 per track. $999 for complete curriculum access.
                             </p>
-                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
-                                <Link href="/services" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs bg-purple-700 text-white hover:bg-purple-600 transition-colors shadow-lg">
-                                    Explore Advisory
+                            <div className="flex flex-wrap items-center justify-center gap-4">
+                                <Link href="/services" className="button button-gold">
+                                    Explore Executive Advisory ↗
                                 </Link>
-                                <Link href="/vault" className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold uppercase tracking-widest text-xs font-bold bg-white border border-zinc-400 text-zinc-950 hover:text-zinc-900 hover:border-zinc-500 transition-colors shadow-sm">
-                                    Access $999 Full Curriculum
+                                <Link href="/vault" className="button button-outline">
+                                    Access Full Curriculum Vault ↗
                                 </Link>
                             </div>
                         </div>

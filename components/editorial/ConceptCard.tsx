@@ -10,6 +10,8 @@ export interface ConceptCardProps {
   canonicalQuote?: string;
   evidenceCount?: number;
   className?: string;
+  onClick?: (e: React.MouseEvent) => void;
+  isSelected?: boolean;
 }
 
 export function ConceptCard({
@@ -21,12 +23,11 @@ export function ConceptCard({
   canonicalQuote,
   evidenceCount,
   className = '',
+  onClick,
+  isSelected = false,
 }: ConceptCardProps) {
-  return (
-    <Link
-      href={`/concepts/${slug}`}
-      className={`group rounded-2xl border border-[var(--line,rgba(36,51,43,0.16))] bg-white p-6 sm:p-7 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-[var(--forest,#29473b)] ${className}`}
-    >
+  const cardBody = (
+    <>
       <div>
         <div className="flex items-center justify-between gap-2 text-[10px] font-mono mb-3">
           <span className="uppercase tracking-widest text-[var(--gold,#b77a35)] font-semibold">
@@ -56,10 +57,51 @@ export function ConceptCard({
         <span className="font-mono text-[11px] text-zinc-500">
           {evidenceCount !== undefined ? `${evidenceCount} Evidence Points` : 'Full Research Spec'}
         </span>
-        <span className="text-[var(--gold,#b77a35)] group-hover:translate-x-1 transition-transform">
-          Inspect Spec ↗
-        </span>
+        {onClick ? (
+          <Link
+            href={`/concepts/${slug}`}
+            onClick={(e) => e.stopPropagation()}
+            className="text-[var(--gold,#b77a35)] hover:underline inline-flex items-center gap-1"
+          >
+            Full Spec ↗
+          </Link>
+        ) : (
+          <span className="text-[var(--gold,#b77a35)] group-hover:translate-x-1 transition-transform">
+            Inspect Spec ↗
+          </span>
+        )}
       </div>
+    </>
+  );
+
+  const containerClasses = `group rounded-2xl border p-6 sm:p-7 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:shadow-md ${
+    isSelected
+      ? 'border-[var(--forest,#29473b)] bg-[var(--paper2,#ebe7dc)]/80 ring-1 ring-[var(--forest,#29473b)] shadow-md'
+      : 'border-[var(--line,rgba(36,51,43,0.16))] bg-white hover:border-[var(--forest,#29473b)]'
+  } ${className}`;
+
+  if (onClick) {
+    return (
+      <div
+        role="button"
+        tabIndex={0}
+        onClick={onClick}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            onClick(e as any);
+          }
+        }}
+        className={`cursor-pointer ${containerClasses}`}
+      >
+        {cardBody}
+      </div>
+    );
+  }
+
+  return (
+    <Link href={`/concepts/${slug}`} className={containerClasses}>
+      {cardBody}
     </Link>
   );
 }

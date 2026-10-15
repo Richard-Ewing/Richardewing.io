@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { CANONICAL_CONCEPTS, ConceptNode } from "@/app/lib/concept-corpus";
+import { ConceptCard } from "@/components/editorial/ConceptCard";
 
 export function ConceptExplorer() {
   const [activeSlug, setActiveSlug] = useState<string>("product-management");
@@ -169,49 +170,17 @@ export function ConceptExplorer() {
         {filteredConcepts.map((concept) => {
           const isSelected = concept.slug === activeSlug;
           return (
-            <div
+            <ConceptCard
               key={concept.slug}
+              slug={concept.slug}
+              title={concept.title}
+              definition={concept.definition}
+              domain={concept.domain}
+              canonicalQuote={(concept as any).quote}
+              evidenceCount={(concept as any).evidence?.length || (concept as any).health?.evidenceCount}
+              isSelected={isSelected}
               onClick={() => setActiveSlug(concept.slug)}
-              className={`cursor-pointer rounded-xl p-6 border transition-all flex flex-col justify-between ${
-                isSelected
-                  ? "border-[var(--forest)] bg-[#faf8f2] shadow-md ring-1 ring-[var(--forest)]"
-                  : "border-[var(--line)] bg-[#faf8f2] hover:border-[#8d9f8d] hover:shadow-sm"
-              }`}
-            >
-              <div className="space-y-3">
-                <div className="flex items-center justify-between text-xs font-mono">
-                  <span className="text-[var(--forest)] font-medium">
-                    {concept.domain}
-                  </span>
-                  <span className="text-[var(--muted)]">
-                    {concept.category === "Richard Ewing Canon (Original Framework)"
-                      ? "Canon"
-                      : "Industry"}
-                  </span>
-                </div>
-
-                <h3 className="text-xl font-serif font-medium text-[var(--ink)]">
-                  {concept.title}
-                </h3>
-
-                <p className="text-xs text-[var(--muted)] line-clamp-3 leading-relaxed">
-                  {concept.definition}
-                </p>
-              </div>
-
-              <div className="pt-4 mt-4 border-t border-[var(--line)] flex items-center justify-between text-xs">
-                <span className="font-mono text-[var(--gold)]">
-                  Inspect ↗
-                </span>
-                <Link
-                  href={`/concepts/${concept.slug}`}
-                  onClick={(e) => e.stopPropagation()}
-                  className="text-[var(--muted)] hover:text-[var(--forest)] underline"
-                >
-                  Full Spec
-                </Link>
-              </div>
-            </div>
+            />
           );
         })}
       </div>

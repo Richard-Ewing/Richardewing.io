@@ -6,6 +6,7 @@ import ShineBorder from '@/components/magicui/shine-border';
 import FAQItem from '@/app/components/FAQItem';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
+import { ToolCard } from '@/components/editorial/ToolCard';
 
 interface DiagnosticToolItem {
   id: string;
@@ -525,325 +526,286 @@ export default function ToolsContent() {
   const cat3Tools = DIAGNOSTIC_TOOLS.filter(t => t.category === 3 && isVisible(t.roles));
   const cat4Tools = DIAGNOSTIC_TOOLS.filter(t => t.category === 4 && isVisible(t.roles));
 
-  const renderToolCard = (tool: DiagnosticToolItem) => {
-    const cardContent = (
-      <ShineBorder className="h-full bg-white border border-zinc-300 p-6 rounded-xl hover:bg-zinc-50 transition-colors" color={tool.color} classNameOverlay="opacity-0 group-hover:opacity-100">
-        <div className="flex flex-col h-full">
-          <div className="flex flex-wrap items-center justify-between gap-1 mb-2">
-            <div className={`text-[10px] font-mono font-bold ${tool.tagColor} uppercase tracking-wider`}>
-              {tool.problem}
-            </div>
-            <div className="flex items-center gap-1">
-              {tool.roles.map(r => (
-                <span key={r} className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-zinc-100 text-zinc-700 border border-zinc-200">
-                  {r}
-                </span>
-              ))}
-            </div>
-          </div>
-          <h3 className={`text-lg font-bold text-zinc-950 mb-2 ${tool.hoverColor}`}>
-            {tool.title} {tool.isExternal && <span className="text-xs text-zinc-400 group-hover:text-emerald-950 transition-colors">↗</span>}
-          </h3>
-          <p className="text-zinc-950 text-sm font-semibold mb-4 flex-grow">
-            {tool.description}
+  const renderToolCard = (tool: DiagnosticToolItem) => (
+    <ToolCard
+      key={tool.id}
+      title={tool.title}
+      href={tool.href}
+      desc={tool.description}
+      problem={tool.problem}
+      roles={tool.roles}
+      actionText={tool.cta}
+      isExternal={tool.isExternal}
+      remediationTrack={tool.remediationTrack}
+      className={tool.isSpan2 ? 'md:col-span-2' : ''}
+    />
+  );
+
+  return (
+    <div className="w-full bg-[var(--paper,#f4f1e9)] text-[var(--ink,#1e2924)] pt-4 pb-20">
+      <div className="max-w-[var(--max)] mx-auto px-[5vw]">
+        {/* Section Heading */}
+        <div className="text-center mb-12">
+          <p className="eyebrow center">
+            <i /> Forensic Suite · 25 Executive Diagnostics
           </p>
-          <div className="flex items-center justify-between mt-auto pt-2">
-            <span className={`${tool.ctaColor} text-xs font-bold uppercase tracking-wider`}>
-              {tool.cta}
-            </span>
+          <h2 className="text-3xl sm:text-5xl font-serif font-medium text-[var(--ink)] mt-2">
+            Explore all 25 diagnostic instruments.
+          </h2>
+          <p className="text-sm sm:text-base text-[var(--muted)] max-w-2xl mx-auto mt-3">
+            Deterministic calculators and forensic instruments used in formal R&amp;D Capital Audits. Measure technical debt in dollar terms, stress-test AI unit economics, and eliminate rogue spend.
+          </p>
+        </div>
+
+        <div className="space-y-12">
+          {/* Emergency Symptom Guides Banner */}
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper2)] p-6 md:p-8 shadow-sm">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6 pb-4 border-b border-[var(--line)]">
+              <div>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--gold)] block mb-1">
+                  Live Incident Triage
+                </span>
+                <h3 className="text-xl md:text-2xl font-serif font-medium text-[var(--ink)]">
+                  Search by What is Broken in Production
+                </h3>
+              </div>
+              <Link
+                href="/compare"
+                className="text-xs font-mono font-semibold text-[var(--forest)] hover:text-[var(--gold)] uppercase tracking-wider"
+              >
+                View All 18 Incident Analyses &rarr;
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+              <Link href="/compare/why-ai-costs-spiral-from-silent-retries" className="p-3 bg-white rounded-xl border border-[var(--line)] hover:border-[var(--forest)] text-xs font-semibold text-[var(--ink)] transition-colors block">
+                Why AI Bills Spike from Silent Retries &rarr;
+              </Link>
+              <Link href="/compare/why-ai-prompts-break-after-model-updates" className="p-3 bg-white rounded-xl border border-[var(--line)] hover:border-[var(--forest)] text-xs font-semibold text-[var(--ink)] transition-colors block">
+                Why Prompts Break on Model Updates &rarr;
+              </Link>
+              <Link href="/compare/why-ai-feature-margins-turn-negative" className="p-3 bg-white rounded-xl border border-[var(--line)] hover:border-[var(--forest)] text-xs font-semibold text-[var(--ink)] transition-colors block">
+                Why AI Features Lose Money on Users &rarr;
+              </Link>
+              <Link href="/compare/why-ai-teams-become-api-janitors" className="p-3 bg-white rounded-xl border border-[var(--line)] hover:border-[var(--forest)] text-xs font-semibold text-[var(--ink)] transition-colors block">
+                Why Engineers Babysit Prompts All Day &rarr;
+              </Link>
+              <Link href="/compare/why-unused-ai-features-drain-cloud-budgets" className="p-3 bg-white rounded-xl border border-[var(--line)] hover:border-[var(--forest)] text-xs font-semibold text-[var(--ink)] transition-colors block">
+                Why Forgotten AI Features Drain Budgets &rarr;
+              </Link>
+              <Link href="/compare/why-companies-pay-shadow-ai-vendor-tax" className="p-3 bg-white rounded-xl border border-[var(--line)] hover:border-[var(--forest)] text-xs font-semibold text-[var(--ink)] transition-colors block">
+                How to Find Secret Shadow AI Tools &rarr;
+              </Link>
+              <Link href="/compare/why-ai-prds-and-specs-create-waste" className="p-3 bg-white rounded-xl border border-[var(--line)] hover:border-[var(--forest)] text-xs font-semibold text-[var(--ink)] transition-colors block">
+                Why 30-Page AI PRDs Waste Engineering &rarr;
+              </Link>
+              <Link href="/compare/why-ai-code-creates-more-bugs-than-it-fixes" className="p-3 bg-white rounded-xl border border-[var(--line)] hover:border-[var(--forest)] text-xs font-semibold text-[var(--ink)] transition-colors block">
+                Why AI Coding Causes More Outages &rarr;
+              </Link>
+            </div>
           </div>
-          {tool.remediationTrack && (
-            <div className="mt-3 pt-2.5 border-t border-zinc-200/90 flex flex-wrap items-center justify-between gap-1 text-[10px] font-mono">
-              <span className="text-zinc-600 font-semibold uppercase tracking-wider">Moat Remediation:</span>
-              <span className="text-indigo-900 font-bold">
-                Track {tool.remediationTrack.trackNumber}: {tool.remediationTrack.title}
+
+          {/* Executive Role Selector */}
+          <div className="bg-white border border-[var(--line)] rounded-2xl p-6 md:p-8 shadow-sm">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-6 border-b border-[var(--line)] pb-4">
+              <div>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--gold)] block mb-1">
+                  Leadership Diagnostic Routing
+                </span>
+                <h3 className="text-xl md:text-2xl font-serif font-medium text-[var(--ink)]">
+                  Select Your Leadership Seat
+                </h3>
+              </div>
+              <span className="text-xs font-mono text-[var(--muted)]">
+                Cross-Functional Diagnostic Lens
               </span>
+            </div>
+
+            {/* Persona Filter Tabs */}
+            <div className="flex flex-wrap gap-2 mb-4">
+              {ROLES.map((r) => {
+                const isActive = activeRole === r.id;
+                return (
+                  <button
+                    key={r.id}
+                    onClick={() => setActiveRole(r.id)}
+                    className={`px-3.5 py-2 rounded-xl text-xs font-semibold font-mono tracking-wider transition-all border ${
+                      isActive
+                        ? 'bg-[var(--forest)] text-white border-[var(--forest)] shadow-sm'
+                        : 'bg-[var(--paper2)] text-[var(--ink)] border-[var(--line)] hover:border-[var(--forest)]'
+                    }`}
+                  >
+                    {r.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Active Lens Briefing */}
+            {activeRole !== 'ALL' && (() => {
+              const currentRole = ROLES.find((r) => r.id === activeRole);
+              if (!currentRole) return null;
+              return (
+                <div className="mt-4 p-5 rounded-2xl bg-[var(--paper2)] border border-[var(--line)] text-xs shadow-sm">
+                  <div className="font-semibold text-[var(--forest2)] uppercase tracking-wider font-mono mb-1.5 flex items-center justify-between flex-wrap gap-2">
+                    <span>Executive Lens: {currentRole.roleTitle}</span>
+                    <span className="text-[10px] text-[var(--gold)] bg-white px-2.5 py-0.5 rounded-full border border-[var(--line)] font-semibold">
+                      Sovereign 5-Step Asset Engine Bridge
+                    </span>
+                  </div>
+                  <p className="text-[var(--muted)] leading-relaxed font-sans mb-4">
+                    {currentRole.desc}
+                  </p>
+
+                  <div className="pt-4 border-t border-[var(--line)] grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {currentRole.remediationTracks && currentRole.remediationTracks.length > 0 && (
+                      <div>
+                        <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--forest)] mb-2">
+                          Recommended Sovereign Curriculum Tracks:
+                        </div>
+                        <div className="space-y-1.5">
+                          {currentRole.remediationTracks.map((t) => (
+                            <Link
+                              key={t.trackNumber}
+                              href={t.href}
+                              className="flex items-center justify-between p-2 rounded-lg bg-white border border-[var(--line)] hover:border-[var(--forest)] transition text-[var(--ink)] hover:text-[var(--forest)] font-semibold"
+                            >
+                              <span>Track {t.trackNumber}: {t.title}</span>
+                              <span className="text-[var(--gold)] font-bold ml-1">&rarr;</span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {currentRole.recommendedBlueprints && currentRole.recommendedBlueprints.length > 0 && (
+                      <div>
+                        <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--forest)] mb-2">
+                          Deployable Implementation Blueprints:
+                        </div>
+                        <div className="space-y-1.5">
+                          {currentRole.recommendedBlueprints.map((bp, idx) => (
+                            <Link
+                              key={idx}
+                              href={bp.href}
+                              className="flex items-center justify-between p-2 rounded-lg bg-white border border-[var(--line)] hover:border-[var(--forest)] transition text-[var(--ink)] hover:text-[var(--forest)] font-semibold"
+                            >
+                              <span>{bp.title}</span>
+                              <span className="text-[var(--gold)] font-bold ml-1">&rarr;</span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })()}
+          </div>
+
+          {/* Category 1 */}
+          {cat1Tools.length > 0 && (
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-px bg-[var(--line)] flex-1"></div>
+                <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--forest)]">
+                  Cost Audits &amp; Financial Leaks
+                </h3>
+                <div className="h-px bg-[var(--line)] flex-1"></div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {cat1Tools.map(renderToolCard)}
+              </div>
+            </div>
+          )}
+
+          {/* Category 2 */}
+          {cat2Tools.length > 0 && (
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-px bg-[var(--line)] flex-1"></div>
+                <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--forest)]">
+                  Security Leaks &amp; Rogue AI
+                </h3>
+                <div className="h-px bg-[var(--line)] flex-1"></div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {cat2Tools.map(renderToolCard)}
+              </div>
+            </div>
+          )}
+
+          {/* Category 3 */}
+          {cat3Tools.length > 0 && (
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-px bg-[var(--line)] flex-1"></div>
+                <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--forest)]">
+                  Team Hiring &amp; Engineering Speed
+                </h3>
+                <div className="h-px bg-[var(--line)] flex-1"></div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {cat3Tools.map(renderToolCard)}
+              </div>
+            </div>
+          )}
+
+          {/* Category 4 */}
+          {cat4Tools.length > 0 && (
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-px bg-[var(--line)] flex-1"></div>
+                <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-[var(--forest)]">
+                  Executive &amp; Board Leadership (Directors On Up)
+                </h3>
+                <div className="h-px bg-[var(--line)] flex-1"></div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {cat4Tools.map(renderToolCard)}
+              </div>
             </div>
           )}
         </div>
-      </ShineBorder>
-    );
 
-    if (tool.isExternal) {
-      return (
-        <a
-          key={tool.id}
-          href={tool.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`group block ${tool.isSpan2 ? 'md:col-span-2' : ''}`}
-        >
-          {cardContent}
-        </a>
-      );
-    }
-
-    return (
-      <Link
-        key={tool.id}
-        href={tool.href}
-        className={`group block ${tool.isSpan2 ? 'md:col-span-2' : ''}`}
-      >
-        {cardContent}
-      </Link>
-    );
-  };
-
-  return (
-    <main className="pt-20 bg-[#F5F0EB]">
-      <div className="page-container">
-
-        {/* Hero */}
-        <section className="section-lg text-center">
-          <div className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-4">Diagnostics Hub</div>
-          <h1 className="text-4xl md:text-5xl font-bold text-zinc-950 mb-6">
-            Executive Diagnostics<br />
-            <span className="text-cyan-900 font-extrabold">in 60 Seconds</span>
-          </h1>
-          <p className="text-zinc-950 font-bold text-lg max-w-2xl mx-auto">
-            These are the same forensic instruments I use in R&D Capital Audits.
-            Try them free. If the results show critical leakage, we should talk.
-          </p>
-        </section>
-
-        {/* Tools grid */}
-        <section className="section">
-          <div className="space-y-12 max-w-5xl mx-auto">
-            
-            {/* Emergency Symptom Guides Banner */}
-            <div className="rounded-2xl border border-rose-300 bg-rose-50/70 p-6 md:p-8 shadow-sm">
-              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6 pb-4 border-b border-rose-200">
-                <div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-rose-800 block mb-1">Live Incident Triage</span>
-                  <h2 className="text-xl md:text-2xl font-bold text-zinc-950 font-grotesk">Search by What is Broken in Production</h2>
-                </div>
-                <Link href="/compare" className="text-xs font-bold font-mono text-rose-900 hover:text-rose-950 uppercase tracking-wider underline">
-                  View All 18 Incident Analyses &rarr;
-                </Link>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
-                <Link href="/compare/why-ai-costs-spiral-from-silent-retries" className="p-3 bg-white rounded-xl border border-rose-200 hover:border-rose-400 text-xs font-bold text-zinc-900 transition-colors block">
-                  Why AI Bills Spike from Silent Retries &rarr;
-                </Link>
-                <Link href="/compare/why-ai-prompts-break-after-model-updates" className="p-3 bg-white rounded-xl border border-rose-200 hover:border-rose-400 text-xs font-bold text-zinc-900 transition-colors block">
-                  Why Prompts Break on Model Updates &rarr;
-                </Link>
-                <Link href="/compare/why-ai-feature-margins-turn-negative" className="p-3 bg-white rounded-xl border border-rose-200 hover:border-rose-400 text-xs font-bold text-zinc-900 transition-colors block">
-                  Why AI Features Lose Money on Users &rarr;
-                </Link>
-                <Link href="/compare/why-ai-teams-become-api-janitors" className="p-3 bg-white rounded-xl border border-rose-200 hover:border-rose-400 text-xs font-bold text-zinc-900 transition-colors block">
-                  Why Engineers Babysit Prompts All Day &rarr;
-                </Link>
-                <Link href="/compare/why-unused-ai-features-drain-cloud-budgets" className="p-3 bg-white rounded-xl border border-rose-200 hover:border-rose-400 text-xs font-bold text-zinc-900 transition-colors block">
-                  Why Forgotten AI Features Drain Budgets &rarr;
-                </Link>
-                <Link href="/compare/why-companies-pay-shadow-ai-vendor-tax" className="p-3 bg-white rounded-xl border border-rose-200 hover:border-rose-400 text-xs font-bold text-zinc-900 transition-colors block">
-                  How to Find Secret Shadow AI Tools &rarr;
-                </Link>
-                <Link href="/compare/why-ai-prds-and-specs-create-waste" className="p-3 bg-white rounded-xl border border-rose-200 hover:border-rose-400 text-xs font-bold text-zinc-900 transition-colors block">
-                  Why 30-Page AI PRDs Waste Engineering &rarr;
-                </Link>
-                <Link href="/compare/why-ai-code-creates-more-bugs-than-it-fixes" className="p-3 bg-white rounded-xl border border-rose-200 hover:border-rose-400 text-xs font-bold text-zinc-900 transition-colors block">
-                  Why AI Coding Causes More Outages &rarr;
-                </Link>
-              </div>
-            </div>
-
-            {/* Executive Role Selector */}
-            <div className="bg-white border border-zinc-300 rounded-2xl p-6 md:p-8 shadow-sm">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-6 border-b border-zinc-200 pb-4">
-                <div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-900 block mb-1">
-                    Leadership Diagnostic Routing
-                  </span>
-                  <h2 className="text-xl md:text-2xl font-bold text-zinc-950 font-grotesk">
-                    Select Your Leadership Seat
-                  </h2>
-                </div>
-                <span className="text-xs font-mono text-zinc-500 font-semibold">
-                  September 2026 Executive Framework
-                </span>
-              </div>
-
-              {/* Persona Filter Tabs */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {ROLES.map((r) => {
-                  const isActive = activeRole === r.id;
-                  return (
-                    <button
-                      key={r.id}
-                      onClick={() => setActiveRole(r.id)}
-                      className={`px-3.5 py-2 rounded-xl text-xs font-bold font-mono tracking-wider transition-all border ${
-                        isActive
-                          ? 'bg-cyan-950 text-white border-cyan-950 shadow-sm'
-                          : 'bg-zinc-100 text-zinc-800 border-zinc-300 hover:bg-zinc-200'
-                      }`}
-                    >
-                      {r.label}
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Active Lens Executive Briefing & Closed-Loop Remediation Pathways */}
-              {activeRole !== 'ALL' && (() => {
-                const currentRole = ROLES.find(r => r.id === activeRole);
-                if (!currentRole) return null;
-                return (
-                  <div className="mt-4 p-5 rounded-2xl bg-gradient-to-br from-cyan-50/90 to-indigo-50/60 border border-cyan-200/90 text-xs shadow-sm">
-                    <div className="font-bold text-cyan-950 uppercase tracking-wider font-mono mb-1.5 flex items-center justify-between flex-wrap gap-2">
-                      <span>Executive Lens: {currentRole.roleTitle}</span>
-                      <span className="text-[10px] text-indigo-900 bg-white/80 px-2.5 py-0.5 rounded-full border border-indigo-200 font-semibold">
-                        Sovereign 5-Step Asset Engine Bridge
-                      </span>
-                    </div>
-                    <p className="text-zinc-800 leading-relaxed font-semibold mb-4">
-                      {currentRole.desc}
-                    </p>
-
-                    {/* Closed-Loop Remediation Bridge: Tracks & Blueprints */}
-                    <div className="pt-4 border-t border-cyan-200/70 grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {currentRole.remediationTracks && currentRole.remediationTracks.length > 0 && (
-                        <div>
-                          <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-950 mb-2">
-                            Recommended Sovereign Curriculum Tracks:
-                          </div>
-                          <div className="space-y-1.5">
-                            {currentRole.remediationTracks.map(t => (
-                              <Link
-                                key={t.trackNumber}
-                                href={t.href}
-                                className="flex items-center justify-between p-2 rounded-lg bg-white/90 border border-indigo-100 hover:border-indigo-300 transition text-zinc-900 hover:text-indigo-900 font-semibold"
-                              >
-                                <span>Track {t.trackNumber}: {t.title}</span>
-                                <span className="text-indigo-600 font-bold ml-1">&rarr;</span>
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {currentRole.recommendedBlueprints && currentRole.recommendedBlueprints.length > 0 && (
-                        <div>
-                          <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-950 mb-2">
-                            Deployable Implementation Blueprints:
-                          </div>
-                          <div className="space-y-1.5">
-                            {currentRole.recommendedBlueprints.map((bp, idx) => (
-                              <Link
-                                key={idx}
-                                href={bp.href}
-                                className="flex items-center justify-between p-2 rounded-lg bg-white/90 border border-cyan-100 hover:border-cyan-300 transition text-zinc-900 hover:text-cyan-900 font-semibold"
-                              >
-                                <span>{bp.title}</span>
-                                <span className="text-cyan-700 font-bold ml-1">&rarr;</span>
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                );
-              })()}
-            </div>
-
-            {/* Category 1 */}
-            {cat1Tools.length > 0 && (
-              <div>
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="h-px bg-zinc-300 flex-1"></div>
-                  <h2 className="text-sm font-bold text-zinc-950 tracking-widest uppercase text-cyan-900">Cost Audits &amp; Financial Leaks</h2>
-                  <div className="h-px bg-zinc-300 flex-1"></div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {cat1Tools.map(renderToolCard)}
-                </div>
-              </div>
-            )}
-
-            {/* Category 2 */}
-            {cat2Tools.length > 0 && (
-              <div>
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="h-px bg-zinc-300 flex-1"></div>
-                  <h2 className="text-sm font-bold text-zinc-950 tracking-widest uppercase text-emerald-900">Security Leaks &amp; Rogue AI</h2>
-                  <div className="h-px bg-zinc-300 flex-1"></div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {cat2Tools.map(renderToolCard)}
-                </div>
-              </div>
-            )}
-
-            {/* Category 3 */}
-            {cat3Tools.length > 0 && (
-              <div>
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="h-px bg-zinc-300 flex-1"></div>
-                  <h2 className="text-sm font-bold text-zinc-950 tracking-widest uppercase text-amber-600">Team Hiring &amp; Engineering Speed</h2>
-                  <div className="h-px bg-zinc-300 flex-1"></div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {cat3Tools.map(renderToolCard)}
-                </div>
-              </div>
-            )}
-
-            {/* Category 4 */}
-            {cat4Tools.length > 0 && (
-              <div>
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="h-px bg-zinc-300 flex-1"></div>
-                  <h2 className="text-sm font-bold text-zinc-950 tracking-widest uppercase text-indigo-700">Executive &amp; Board Leadership (Directors On Up)</h2>
-                  <div className="h-px bg-zinc-300 flex-1"></div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {cat4Tools.map(renderToolCard)}
-                </div>
-              </div>
-            )}
-
+        {/* Free Training */}
+        <div className="mt-16 pt-16 border-t border-[var(--line)] max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <p className="eyebrow center">Curated Training</p>
+            <h3 className="text-2xl md:text-3xl font-serif font-medium text-[var(--ink)] mt-2 mb-3">
+              Level Up Your AI Skills
+            </h3>
+            <p className="text-xs sm:text-sm text-[var(--muted)] max-w-lg mx-auto">
+              Anthropic Academy courses: free, self-paced, with certificates. Curated by Richard Ewing.
+            </p>
           </div>
-        </section>
-
-        {/* AI Courses Cross-link */}
-        <section className="section">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <div className="text-xs font-bold text-zinc-900 uppercase tracking-wide mb-2">Free Training</div>
-              <h2 className="text-2xl md:text-3xl font-bold text-zinc-950 mb-3">
-                Level Up Your <span className="text-purple-900 font-extrabold">AI Skills</span>
-              </h2>
-              <p className="text-zinc-950 font-bold text-sm font-semibold max-w-lg mx-auto">
-                Anthropic Academy courses: free, self-paced, with certificates. Curated by Richard Ewing.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {[
-                { name: 'AI Fluency', desc: 'For leaders making AI decisions', url: 'https://anthropic.skilljar.com/ai-flux-framework-foundations', color: 'cyan' },
-                { name: 'Building with Claude API', desc: 'For developers shipping AI features', url: 'https://anthropic.skilljar.com/claude-with-the-anthropic-api', color: 'purple' },
-                { name: 'Intro to MCP', desc: 'For architects connecting AI to tools', url: 'https://anthropic.skilljar.com/introduction-to-model-context-protocol', color: 'cyan' },
-              ].map((course) => (
-                <a
-                  key={course.name}
-                  href={course.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group block p-5 rounded-xl bg-white border border-zinc-300 hover:border-indigo-500 transition-all text-center shadow-sm"
-                >
-                  <h3 className="font-bold text-zinc-950 mb-1 group-hover:text-indigo-900 transition-colors">{course.name}</h3>
-                  <p className="text-xs text-zinc-950 font-semibold">{course.desc}</p>
-                  <span className="text-cyan-900 text-xs font-bold mt-2 inline-block">Free Course ↗</span>
-                </a>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              { name: 'AI Fluency', desc: 'For leaders making AI decisions', url: 'https://anthropic.skilljar.com/ai-flux-framework-foundations' },
+              { name: 'Building with Claude API', desc: 'For developers shipping AI features', url: 'https://anthropic.skilljar.com/claude-with-the-anthropic-api' },
+              { name: 'Intro to MCP', desc: 'For architects connecting AI to tools', url: 'https://anthropic.skilljar.com/introduction-to-model-context-protocol' },
+            ].map((course) => (
+              <a
+                key={course.name}
+                href={course.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block p-6 rounded-2xl bg-white border border-[var(--line)] hover:border-[var(--forest)] transition-all text-center shadow-sm"
+              >
+                <h4 className="font-serif text-lg font-semibold text-[var(--ink)] mb-1 group-hover:text-[var(--forest)] transition-colors">
+                  {course.name}
+                </h4>
+                <p className="text-xs text-[var(--muted)]">{course.desc}</p>
+                <span className="text-[var(--gold)] text-xs font-mono font-semibold mt-3 inline-block">Free Course ↗</span>
+              </a>
+            ))}
           </div>
-        </section>
+        </div>
 
         {/* FAQ Section */}
-        <section className="section max-w-3xl mx-auto border-t border-zinc-300 pt-16">
-          <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-8 text-center">Frequently Asked Questions</h2>
+        <div className="mt-16 pt-16 border-t border-[var(--line)] max-w-3xl mx-auto">
+          <h3 className="text-2xl font-serif font-medium text-[var(--ink)] mb-8 text-center">
+            Frequently Asked Questions
+          </h3>
           <div className="space-y-4">
             <FAQItem 
               question="Are these diagnostic tools free to use?" 
@@ -859,13 +821,13 @@ export default function ToolsContent() {
             />
             <FAQItem 
               question="How do I remediate a high risk score?" 
-              answer="If your results show critical leakage or high debt, you can book a free diagnostic call to discuss remediation plans."
+              answer="If your results show critical leakage or high debt, you can book an advisory sprint or diagnostic review to discuss remediation plans."
             />
           </div>
-        </section>
+        </div>
 
         {/* Empirical Research & Publication Foundations */}
-        <section className="section max-w-5xl mx-auto">
+        <div className="mt-16 pt-16 border-t border-[var(--line)] max-w-5xl mx-auto">
           {(() => {
             const domainArticles = RESEARCH_CORPUS.filter(
               (art) => art.domain === 'Product Leadership' || art.domain === 'Software Economics' || art.domain === 'AI Economics' || art.domain === 'AI Governance'
@@ -874,19 +836,19 @@ export default function ToolsContent() {
             if (domainArticles.length === 0) return null;
 
             return (
-              <div className="space-y-6 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm">
+              <div className="space-y-6 bg-white border border-[var(--line)] rounded-2xl p-6 sm:p-8 shadow-sm">
                 <div className="flex items-center justify-between flex-wrap gap-2">
                   <div className="space-y-1">
-                    <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider block">
-                      Empirical Foundations &bull; Step 1 to Diagnostic
+                    <span className="text-xs font-mono font-bold text-[var(--gold)] uppercase tracking-wider block">
+                      Empirical Foundations · Step 1 to Diagnostic
                     </span>
-                    <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
+                    <h3 className="text-2xl font-serif font-medium text-[var(--ink)]">
                       Research Foundations
-                    </h2>
+                    </h3>
                   </div>
                   <Link
                     href="/research/publications"
-                    className="text-xs font-mono font-bold text-cyan-900 hover:text-cyan-700 flex items-center gap-1 uppercase tracking-wider"
+                    className="text-xs font-mono font-semibold text-[var(--forest)] hover:text-[var(--gold)] flex items-center gap-1 uppercase tracking-wider"
                   >
                     Explore Full Corpus ({RESEARCH_CORPUS.length} Works) &rarr;
                   </Link>
@@ -894,21 +856,21 @@ export default function ToolsContent() {
 
                 <div className="space-y-3 pt-2">
                   {domainArticles.map((art) => (
-                    <div key={art.id} className="bg-zinc-50 border border-zinc-200 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div key={art.id} className="bg-[var(--paper2)] border border-[var(--line)] rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                       <div className="space-y-1">
-                        <div className="flex items-center gap-2 text-[10px] font-mono font-bold">
-                          <span className="text-cyan-900 uppercase">{art.publisher}</span>
-                          {art.date && <span className="text-zinc-500">• {art.date}</span>}
+                        <div className="flex items-center gap-2 text-[10px] font-mono">
+                          <span className="text-[var(--forest)] font-semibold uppercase">{art.publisher}</span>
+                          {art.date && <span className="text-[var(--muted)]">· {art.date}</span>}
                         </div>
-                        <h3 className="text-sm font-bold text-zinc-950">
+                        <h4 className="text-sm font-serif font-semibold text-[var(--ink)]">
                           {art.title}
-                        </h3>
+                        </h4>
                       </div>
                       <a
                         href={art.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-3 py-1.5 bg-cyan-900 text-white text-xs font-mono font-bold rounded-xl whitespace-nowrap self-start sm:self-center hover:bg-cyan-800"
+                        className="px-3 py-1.5 bg-[var(--forest)] text-white text-xs font-mono font-semibold rounded-lg whitespace-nowrap self-start sm:self-center hover:bg-[var(--forest2)] transition-colors"
                       >
                         Read Work ↗
                       </a>
@@ -918,27 +880,31 @@ export default function ToolsContent() {
               </div>
             );
           })()}
-        </section>
+        </div>
 
         {/* Google Preferred Source AEO Callout */}
-        <GooglePreferredBadge variant="card" />
+        <div className="mt-12">
+          <GooglePreferredBadge variant="card" />
+        </div>
 
-        {/* CTA */}
-        <section className="section-sm text-center">
-          <p className="text-zinc-950 font-bold mb-3 text-lg">
-            "Observability without enforcement is governance theater."
+        {/* Closing Action */}
+        <div className="mt-16 text-center">
+          <p className="text-lg font-serif italic text-[var(--ink)] mb-3">
+            &ldquo;Observability without enforcement is governance theater.&rdquo;
           </p>
-          <p className="text-zinc-950 text-sm font-semibold mb-8 max-w-xl mx-auto">
-            Diagnostic insights are irrelevant without a deterministic interception layer. To remediate the risks identified, you must implement Admissibility-Native architecture.
+          <p className="text-xs sm:text-sm text-[var(--muted)] mb-6 max-w-xl mx-auto">
+            Diagnostic insights are irrelevant without a deterministic interception layer. To remediate the risks identified, deploy Admissibility-Native architecture.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://exogram.ai/analyze" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 rounded-lg bg-red-600 text-white font-bold tracking-widest uppercase hover:bg-red-700 transition-colors shadow-sm">
-              Initialize Exogram Simulation →
-            </a>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Link href="/advisory" className="button button-gold">
+              Explore Executive Advisory ↗
+            </Link>
+            <Link href="/reality-check" className="button button-outline">
+              Run Flagship Reality Check ↗
+            </Link>
           </div>
-        </section>
-
+        </div>
       </div>
-    </main>
+    </div>
   );
 }

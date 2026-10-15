@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import ToolsContent from './tools-content';
 
 export const metadata: Metadata = {
   title: 'Diagnostics & Tools | AI Spend Leaks & Unit Economics | Richard Ewing',
@@ -16,33 +17,6 @@ export const metadata: Metadata = {
     type: 'website',
   },
 };
-
-const diagnostics = [
-  {
-    title: 'Reality Check',
-    desc: 'Compare AI claims with production costs, engineering velocity, and gross margins.',
-    tag: 'FLAGSHIP',
-    href: '/reality-check',
-  },
-  {
-    title: 'AI ROI Calculator',
-    desc: 'Model the unit economics of AI features using transparent assumptions and latency bands.',
-    tag: 'MODELING',
-    href: '/roi-calculator',
-  },
-  {
-    title: 'Product Debt Index',
-    desc: 'Identify maintenance burden and negative-carry product work in engineering backlogs.',
-    tag: 'AUDIT',
-    href: '/product-debt-index',
-  },
-  {
-    title: 'AI Unit Economics Benchmark',
-    desc: 'Understand cost per task, inference spend, exception handling, and true gross margin.',
-    tag: 'BENCHMARK',
-    href: '/ai-unit-economics',
-  },
-];
 
 export default function ToolsPage() {
   const schema = {
@@ -172,35 +146,8 @@ export default function ToolsPage() {
         </div>
       </section>
 
-      {/* Directory of Diagnostics */}
-      <section className="section">
-        <div className="section-heading mb-12">
-          <p className="eyebrow">
-            <i /> Diagnostic Suite
-          </p>
-          <h2>Explore all tools.</h2>
-        </div>
-
-        <div className="route-grid">
-          {diagnostics.map((tool) => (
-            <Link className="route-card reveal flex flex-col justify-between" href={tool.href} key={tool.title}>
-              <div>
-                <span className="route-tag">{tool.tag}</span>
-                <h3 className="font-serif text-2xl font-medium my-2 text-[var(--ink)]">
-                  {tool.title}
-                </h3>
-                <p className="text-xs text-[var(--muted)] leading-relaxed">
-                  {tool.desc}
-                </p>
-              </div>
-              <div className="pt-4 border-t border-[var(--line)] text-xs font-semibold text-[var(--forest)] flex justify-between items-center">
-                <span>Launch tool</span>
-                <span className="text-[var(--gold)]">↗</span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
+      {/* Full 25-Tool Forensic Diagnostic Suite & Role Routing */}
+      <ToolsContent />
     </>
   );
 }

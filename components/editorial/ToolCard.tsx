@@ -10,6 +10,14 @@ export interface ToolCardProps {
   metricValue?: string;
   actionText?: string;
   className?: string;
+  isExternal?: boolean;
+  roles?: string[];
+  problem?: string;
+  remediationTrack?: {
+    trackNumber: number;
+    title: string;
+    href: string;
+  };
 }
 
 export function ToolCard({
@@ -21,20 +29,34 @@ export function ToolCard({
   metricValue,
   actionText = 'Run Diagnostic ↗',
   className = '',
+  isExternal = false,
+  roles,
+  problem,
+  remediationTrack,
 }: ToolCardProps) {
-  return (
-    <Link
-      href={href}
-      className={`group rounded-2xl border border-[var(--line,rgba(36,51,43,0.16))] bg-white p-6 sm:p-7 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-[var(--forest,#29473b)] ${className}`}
-    >
+  const content = (
+    <>
       <div>
         <div className="flex items-center justify-between gap-2 text-[10px] font-mono mb-3">
           <span className="uppercase tracking-widest text-[var(--gold,#b77a35)] font-semibold">
-            {tag}
+            {problem || tag}
           </span>
-          <span className="px-2 py-0.5 rounded bg-[var(--paper2,#ebe7dc)] text-zinc-700 font-bold border border-[var(--line,rgba(36,51,43,0.1))]">
-            Interactive Tool
-          </span>
+          <div className="flex items-center gap-1">
+            {roles && roles.length > 0 ? (
+              roles.map((r) => (
+                <span
+                  key={r}
+                  className="px-1.5 py-0.5 rounded bg-[var(--paper2,#ebe7dc)] text-zinc-700 font-bold border border-[var(--line,rgba(36,51,43,0.1))]"
+                >
+                  {r}
+                </span>
+              ))
+            ) : (
+              <span className="px-2 py-0.5 rounded bg-[var(--paper2,#ebe7dc)] text-zinc-700 font-bold border border-[var(--line,rgba(36,51,43,0.1))]">
+                Interactive Tool
+              </span>
+            )}
+          </div>
         </div>
 
         <h3 className="font-serif text-2xl font-semibold leading-snug text-[var(--ink,#1e2924)] group-hover:text-[var(--forest,#29473b)] transition-colors mb-2">
@@ -59,12 +81,44 @@ export function ToolCard({
         )}
       </div>
 
-      <div className="flex items-center justify-between pt-4 mt-2 border-t border-[var(--line,rgba(36,51,43,0.12))] text-xs font-semibold text-[var(--forest,#29473b)]">
-        <span className="font-mono text-[11px] text-zinc-500">Free Diagnostic</span>
-        <span className="text-[var(--gold,#b77a35)] group-hover:translate-x-1 transition-transform">
-          {actionText}
-        </span>
+      <div>
+        <div className="flex items-center justify-between pt-4 mt-2 border-t border-[var(--line,rgba(36,51,43,0.12))] text-xs font-semibold text-[var(--forest,#29473b)]">
+          <span className="font-mono text-[11px] text-zinc-500">Free Diagnostic</span>
+          <span className="text-[var(--gold,#b77a35)] group-hover:translate-x-1 transition-transform">
+            {actionText}
+          </span>
+        </div>
+
+        {remediationTrack && (
+          <div className="mt-3 pt-2.5 border-t border-[var(--line,rgba(36,51,43,0.08))] flex flex-wrap items-center justify-between gap-1 text-[10px] font-mono">
+            <span className="text-zinc-500 uppercase tracking-wider">Moat Remediation:</span>
+            <span className="text-[var(--forest,#29473b)] font-bold">
+              Track {remediationTrack.trackNumber}: {remediationTrack.title}
+            </span>
+          </div>
+        )}
       </div>
+    </>
+  );
+
+  const containerClasses = `group rounded-2xl border border-[var(--line,rgba(36,51,43,0.16))] bg-white p-6 sm:p-7 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-[var(--forest,#29473b)] ${className}`;
+
+  if (isExternal) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={containerClasses}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={containerClasses}>
+      {content}
     </Link>
   );
 }

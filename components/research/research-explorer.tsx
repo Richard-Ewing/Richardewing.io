@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { CorpusArticle } from "@/app/lib/research-corpus";
+import { PublicationCard } from "@/components/editorial/PublicationCard";
 
 interface ResearchExplorerProps {
   articles: CorpusArticle[];
@@ -120,34 +121,17 @@ export function ResearchExplorer({
       </div>
 
       {/* Grid of Articles */}
-      <div className="route-grid">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {displayed.map((art, idx) => (
-          <a
+          <PublicationCard
             key={art.id || art.url || idx}
-            href={art.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="route-card reveal group flex flex-col justify-between"
-          >
-            <div>
-              <div className="flex items-center justify-between text-[10px] font-mono text-[var(--gold)] mb-3">
-                <span>{art.publisher}</span>
-                <span>{art.date || "Published"}</span>
-              </div>
-              <h3 className="font-serif text-xl font-medium leading-snug group-hover:text-[var(--forest)] transition-colors mb-2">
-                {art.title}
-              </h3>
-              <p className="text-xs text-[var(--muted)] line-clamp-3 leading-relaxed mb-4">
-                {art.thesis}
-              </p>
-            </div>
-            <div className="flex items-center justify-between pt-3 border-t border-[var(--line)] text-xs font-semibold text-[var(--forest)]">
-              <span>Read on {art.publisher}</span>
-              <span className="text-[var(--gold)] group-hover:translate-x-1 transition-transform">
-                ↗
-              </span>
-            </div>
-          </a>
+            title={art.title}
+            publisher={art.publisher}
+            date={art.date}
+            thesis={art.thesis}
+            url={art.url}
+            domain={art.domain}
+          />
         ))}
       </div>
 

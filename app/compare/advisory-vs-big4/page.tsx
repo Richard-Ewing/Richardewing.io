@@ -33,7 +33,7 @@ export default function AdvisoryVsBig4Page() {
   };
 
   return (
-    <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
+    <main className="min-h-screen bg-[var(--paper,#f4f1e9)] pt-32 pb-24 text-zinc-900">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <BreadcrumbSchema items={[
         { name: 'Compare', url: 'https://www.richardewing.io/compare' },
@@ -41,12 +41,18 @@ export default function AdvisoryVsBig4Page() {
       ]} />
 
       <div className="page-container max-w-4xl mx-auto px-6">
-        <div className="mb-6 flex items-center gap-2 text-xs font-mono font-bold text-zinc-950 uppercase tracking-widest">
-          <span>Compare</span><span>/</span><span className="text-indigo-900 font-extrabold">Richard Ewing Advisory vs Big-4</span>
+        <div className="mb-6 flex items-center gap-2 text-xs font-mono font-bold text-zinc-700 uppercase tracking-widest">
+          <Link href="/compare" className="hover:text-zinc-950 transition-colors">Compare</Link>
+          <span>/</span>
+          <span className="text-[var(--gold,#b77a35)] font-extrabold">Richard Ewing Advisory vs Big-4</span>
         </div>
 
-        <div className="mb-12 border-b border-zinc-400 pb-8">
-          <h1 className="text-4xl sm:text-5xl font-grotesk font-bold text-zinc-950 mb-6">
+        <div className="mb-12 border-b border-[var(--line,#e2ded4)] pb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--card,#ffffff)] border border-[var(--line,#e2ded4)] text-[var(--forest2,#162e26)] text-xs font-mono font-bold uppercase tracking-wider mb-4">
+            <ShieldCheck className="w-3.5 h-3.5 text-[var(--gold,#b77a35)]" />
+            <span>Forensic Code &bull; Balance Sheet Integrity</span>
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-serif font-bold text-[var(--forest2,#162e26)] mb-6 tracking-tight">
             Richard Ewing Advisory vs. Big-4 Tech Due Diligence
           </h1>
           <p className="text-xl text-zinc-800 leading-relaxed font-medium">
@@ -54,36 +60,36 @@ export default function AdvisoryVsBig4Page() {
           </p>
         </div>
 
-        <section className="mb-16 bg-white border border-zinc-300 rounded-3xl p-8 shadow-sm overflow-x-auto">
-          <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-6">Methodology Comparison</h2>
+        <section className="mb-16 bg-[var(--card,#ffffff)] border border-[var(--line,#e2ded4)] rounded-2xl p-6 sm:p-8 shadow-sm overflow-x-auto">
+          <h2 className="text-2xl font-bold font-serif text-[var(--forest2,#162e26)] mb-6">Methodology Comparison</h2>
           <table className="w-full text-left text-sm font-sans border-collapse">
             <thead>
-              <tr className="border-b border-zinc-300 font-mono text-xs text-zinc-500 uppercase tracking-wider">
+              <tr className="border-b border-[var(--line,#e2ded4)] font-mono text-xs text-zinc-600 uppercase tracking-wider">
                 <th className="py-4 px-4">Audit Criterion</th>
-                <th className="py-4 px-4 bg-indigo-50/50 text-indigo-950 font-bold">Richard Ewing Advisory</th>
+                <th className="py-4 px-4 bg-[var(--forest2,#162e26)]/10 text-[var(--forest2,#162e26)] font-bold border-x border-[var(--line,#e2ded4)]">Richard Ewing Advisory</th>
                 <th className="py-4 px-4 text-zinc-700">Big-4 Consulting Firm</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-zinc-200">
+            <tbody className="divide-y divide-[var(--line,#e2ded4)]">
               <tr>
                 <td className="py-4 px-4 font-bold text-zinc-950">Primary Metric</td>
-                <td className="py-4 px-4 bg-indigo-50/30 text-indigo-900 font-semibold">Technical Insolvency Date & PDI ($)</td>
+                <td className="py-4 px-4 bg-[var(--forest2,#162e26)]/[0.04] text-[var(--forest2,#162e26)] font-semibold border-x border-[var(--line,#e2ded4)]">Technical Insolvency Date &amp; PDI ($)</td>
                 <td className="py-4 px-4 text-zinc-700">Qualitative Risk Scorecard</td>
               </tr>
               <tr>
                 <td className="py-4 px-4 font-bold text-zinc-950">Data Extraction</td>
-                <td className="py-4 px-4 bg-indigo-50/30 text-indigo-900 font-semibold">Forensic Codebase & Cloud Billing Telemetry</td>
+                <td className="py-4 px-4 bg-[var(--forest2,#162e26)]/[0.04] text-[var(--forest2,#162e26)] font-semibold border-x border-[var(--line,#e2ded4)]">Forensic Codebase &amp; Cloud Billing Telemetry</td>
                 <td className="py-4 px-4 text-zinc-700">Management Questionnaires</td>
               </tr>
               <tr>
                 <td className="py-4 px-4 font-bold text-zinc-950">Turnaround Time</td>
-                <td className="py-4 px-4 bg-indigo-50/30 text-indigo-900 font-semibold">3-Week Fixed Engagement</td>
+                <td className="py-4 px-4 bg-[var(--forest2,#162e26)]/[0.04] text-[var(--forest2,#162e26)] font-semibold border-x border-[var(--line,#e2ded4)]">3-Week Fixed Engagement</td>
                 <td className="py-4 px-4 text-zinc-700">8–12 Week Advisory Program</td>
               </tr>
               <tr>
                 <td className="py-4 px-4 font-bold text-zinc-950">Cost Structure</td>
-                <td className="py-4 px-4 bg-indigo-50/30 text-indigo-900 font-semibold">Fixed-Fee Guarantee ($450–$7,500)</td>
-                <td className="py-4 px-4 text-zinc-700">$50,000–$150,000 Time & Materials</td>
+                <td className="py-4 px-4 bg-[var(--forest2,#162e26)]/[0.04] text-[var(--forest2,#162e26)] font-semibold border-x border-[var(--line,#e2ded4)]">Fixed-Fee Guarantee ($450–$7,500)</td>
+                <td className="py-4 px-4 text-zinc-700">$50,000–$150,000 Time &amp; Materials</td>
               </tr>
             </tbody>
           </table>
@@ -92,8 +98,8 @@ export default function AdvisoryVsBig4Page() {
         <ProductBridgeCard variant="both" />
 
         <div className="text-center pt-8">
-          <Link href="/services" className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold font-mono text-xs uppercase tracking-widest rounded-xl transition-all shadow-md">
-            View Advisory Packages <ArrowRight className="w-4 h-4" />
+          <Link href="/services" className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--forest2,#162e26)] hover:bg-[var(--forest,#224b3d)] text-[var(--paper,#f4f1e9)] font-bold font-mono text-xs uppercase tracking-widest rounded-xl transition-all shadow-md border border-[var(--gold,#b77a35)]/40">
+            View Advisory Packages &amp; Rates <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>
