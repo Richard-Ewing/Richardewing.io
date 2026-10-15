@@ -181,4 +181,6 @@ To eliminate bias, preserve architectural continuity, and keep documentation in 
 4. **Atomic Git Reverts**: Always revert regressions using `git checkout` or `git revert`. Never attempt manual string replacements on large files to undo changes.
 5. **Background Task Lifecycle**: Standalone scripts must include explicit `process.exit(0)`. Any background task spawned during execution must be terminated via `manage_task(Action='kill')` once finished to prevent zombie task accumulation in the user's desktop pane.
 6. **Live Edge Verification**: Verify deployments through `npx wrangler deploy` output and live HTTP verification, never by local build exit codes alone.
+7. **Page Addition Invariant**: Every new or refactored page, tool, or route must strictly adhere to `.agents/rules/page_addition_invariants.md` (Concept B visual tokens, centralized editorial components, route inventory sync, zero content/calculation truncation, and live Cloudflare deployment).
+
 
