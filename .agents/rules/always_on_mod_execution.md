@@ -188,5 +188,6 @@ To eliminate bias, preserve architectural continuity, and keep documentation in 
 5. **Background Task Lifecycle**: Standalone scripts must include explicit `process.exit(0)`. Any background task spawned during execution must be terminated via `manage_task(Action='kill')` once finished to prevent zombie task accumulation in the user's desktop pane.
 6. **Live Edge Verification**: Verify deployments through `npx wrangler deploy` output and live HTTP verification, never by local build exit codes alone.
 7. **Page Addition & Modification Invariant**: Every new or refactored page, tool, route, or content addition/modification must strictly adhere to `.agents/rules/page_addition_invariants.md` (Concept B visual tokens, centralized editorial components, route inventory sync, zero content/calculation truncation, strict enforcement of HWS v2.0 / AI Smell Detection checklist with zero banned buzzwords, and live Cloudflare deployment).
+8. **Universal Design Constitution Conformance**: Every UI, UX, frontend, visual, or content implementation task must strictly adhere to [DESIGN_CONSTITUTION.md](file:///d:/Antigravity_RichardEwing.io/DESIGN_CONSTITUTION.md) (Prime Directive, mandatory design system preservation, centralized components, purposeful graphics/charts, full interaction states, responsive layouts, accessibility, and definition of done).
 
 

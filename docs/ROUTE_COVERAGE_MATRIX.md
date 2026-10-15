@@ -44,7 +44,7 @@ The following core components represent the unified editorial building blocks de
 
 | Page Family | Route Count | Status | Concept B Conformance | SEO & Schema | Verification Status |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Core & Executive Hub** | 153 | Active | 100% | `WebSite`, `Person`, `Organization` | Passed |
+| **Core & Executive Hub** | 157 | Active | 100% | `WebSite`, `Person`, `Organization`, `Service`, `Article` | Passed |
 | **Research & Publications** | 48 | Indexed | 100% | `CollectionPage`, `Article`, `DefinedTermSet` | Passed |
 | **Editorial & Blog** | 152 | Indexed / Canonical | 100% | `BlogPosting`, `Author` | Passed |
 | **Interactive Diagnostics & Tools** | 46 | Active | 100% | `WebApplication`, `HowTo` | Passed |

@@ -11,8 +11,8 @@
 
 | Metric | Count | Description |
 | :--- | :--- | :--- |
-| **Total Discovered Routes** | **1579** | Unique route entries cataloged across the repository |
-| **Core & Executive Hub** | **153** | Anchor executive pages (Home, Services, Pricing, ROI, Reality Check) |
+| **Total Discovered Routes** | **1583** | Unique route entries cataloged across the repository |
+| **Core & Executive Hub** | **157** | Anchor executive pages (Home, Services, Pricing, ROI, Reality Check) |
 | **Diagnostics & Tools** | **46** | Interactive calculators and audit tools (PDI, APER, AUEB, EV/SE, Section 174) |
 | **Concepts & Ontology** | **132** | Canonical research specifications and concept graph |
 | **Glossary Terms & Pillars** | **568** | Terms (551 total, 98 indexed, remainder preserved redirects) + 17 Pillars |
@@ -29,7 +29,7 @@
 
 ## Route Inventory by Page Family
 
-### Core & Executive Hub (153 Routes)
+### Core & Executive Hub (157 Routes)
 
 | Route Path | Title / Entity | Status | Design Language | Primary CTA | Component Source |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -37,12 +37,16 @@
 | `/admin/agents` | Admin/Agents | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/admin/agents/page.tsx` |
 | `/admin/command-center` | Admin/Command Center | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/admin/command-center/page.tsx` |
 | `/advisory` | Advisory | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/advisory/page.tsx` |
+| `/ai-budget-leaks` | AI Budget Leaks - Forensic Telemetry Hub | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Reserve Turnaround Sprint ($2,500) ↗ | `app/ai-budget-leaks/page.tsx` |
+| `/ai-cost-governance` | AI Cost Governance - Runtime Caps & Board Reporting | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Inquire for Fractional CPO ($10,000/mo) ↗ | `app/ai-cost-governance/page.tsx` |
 | `/ai-economics-crisis` | Ai Economics Crisis | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/ai-economics-crisis/page.tsx` |
+| `/ai-economist` | The AI Economist - Capital Allocation & Unit Margins | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Retain Executive Advisory ↗ | `app/ai-economist/page.tsx` |
 | `/ai-economist-book` | Ai Economist Book | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/ai-economist-book/page.tsx` |
 | `/ai-integration/advisor` | Ai Integration/Advisor | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/ai-integration/advisor/page.tsx` |
 | `/ai-integration` | Ai Integration | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/ai-integration/page.tsx` |
 | `/ai-integration/system/download` | Ai Integration/System/Download | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/ai-integration/system/download/page.tsx` |
 | `/ai-integration/system` | Ai Integration/System | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/ai-integration/system/page.tsx` |
+| `/ai-unit-economics` | AI Unit Economics - Protect SaaS Gross Margins | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Book 1-on-1 Teardown ($450) ↗ | `app/ai-unit-economics/page.tsx` |
 | `/answers` | Answers | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/answers/page.tsx` |
 | `/apply` | Apply | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/apply/page.tsx` |
 | `/architecture/deterministic-control-layer` | Architecture/Deterministic Control Layer | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/architecture/deterministic-control-layer/page.tsx` |

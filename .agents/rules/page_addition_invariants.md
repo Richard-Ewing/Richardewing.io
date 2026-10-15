@@ -1,6 +1,6 @@
 # Page Addition & Route Modification Invariants (Concept B Protocol)
 
-Whenever ANY new page, subpage, tool, curriculum lesson, or comparison route is added or modified in `richardewing.io`, the following 7 invariants MUST be strictly enforced:
+Whenever ANY new page, subpage, tool, curriculum lesson, or comparison route is added or modified in `richardewing.io`, execution must strictly comply with the [Universal Design Constitution](file:///d:/Antigravity_RichardEwing.io/DESIGN_CONSTITUTION.md) and the following 7 invariants:
 
 ---
 
