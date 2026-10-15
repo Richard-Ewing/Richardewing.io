@@ -10,18 +10,25 @@ import {
 import { ArrowRight, CheckCircle2, AlertOctagon, TrendingDown, Layers, Activity } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'AI Budget Leaks: Where Model Spend Actually Disappears | Richard Ewing',
+  title: 'AI Budget Leaks: Stop Enterprise Model Waste',
   description:
     'Forensic breakdown of enterprise AI budget leaks: dormant seats, agent retry spirals, over-provisioned models, and low-utility internal copilots.',
   alternates: {
     canonical: 'https://www.richardewing.io/ai-budget-leaks',
   },
   openGraph: {
-    title: 'AI Budget Leaks: Where Model Spend Actually Disappears | Richard Ewing',
+    title: 'AI Budget Leaks: Stop Enterprise Model Waste | Richard Ewing',
     description:
       'Typical enterprise AI initiatives lose 28.5% of their spend to avoidable engineering leaks. Calculate your waste and stop the bleed.',
     url: 'https://www.richardewing.io/ai-budget-leaks',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Budget Leaks: Stop Enterprise Model Waste | Richard Ewing',
+    description:
+      'Typical enterprise AI initiatives lose 28.5% of their spend to avoidable engineering leaks. Calculate your waste and stop the bleed.',
+    images: ['https://www.richardewing.io/api/og?title=Enterprise+AI+Budget+Leaks&category=Forensic+Telemetry'],
   },
 };
 
@@ -41,11 +48,34 @@ export default function AIBudgetLeaksPage() {
       'Diagnostic assessment quantifying enterprise AI budget waste across developer licenses, model routing, and agent loops.',
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.richardewing.io',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'AI Budget Leaks',
+        item: 'https://www.richardewing.io/ai-budget-leaks',
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-[#FAF9F6] text-[#1e2924] pt-24 pb-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Header */}

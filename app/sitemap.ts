@@ -85,6 +85,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // === CORE PAGES ===
     add(`${baseUrl}/`, 'weekly', 1.0);
+    add(`${baseUrl}/ai-unit-economics`, 'weekly', 0.95);
+    add(`${baseUrl}/ai-budget-leaks`, 'weekly', 0.95);
+    add(`${baseUrl}/ai-economist`, 'weekly', 0.95);
+    add(`${baseUrl}/ai-cost-governance`, 'weekly', 0.95);
     add(`${baseUrl}/portfolio`, 'weekly', 1.0);
     add(`${baseUrl}/toolkit`, 'weekly', 0.98);
     add(`${baseUrl}/reality-check`, 'weekly', 0.95);

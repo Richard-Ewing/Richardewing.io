@@ -11,18 +11,25 @@ import {
 import { ArrowRight, BookOpen, FileText, CheckCircle2, Compass, Landmark, Scale, Network } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'The AI Economist: Capital Allocation & Unit Margins | Richard Ewing',
+  title: 'The AI Economist: Capital Allocation',
   description:
-    'Category-defining methodology bridging finance, software architecture, and product leadership to ensure enterprise AI investments generate durable cash flow.',
+    'Category-defining methodology bridging finance, architecture, and product leadership to ensure enterprise AI investments generate durable cash flow.',
   alternates: {
     canonical: 'https://www.richardewing.io/ai-economist',
   },
   openGraph: {
-    title: 'The AI Economist: Capital Allocation & Unit Margins | Richard Ewing',
+    title: 'The AI Economist: Capital Allocation | Richard Ewing',
     description:
       'Why the transition from deterministic code to probabilistic models requires an AI Economist to protect software margins and allocate R&D capital.',
     url: 'https://www.richardewing.io/ai-economist',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The AI Economist: Capital Allocation | Richard Ewing',
+    description:
+      'Category-defining methodology bridging finance, architecture, and product leadership to protect software margins.',
+    images: ['https://www.richardewing.io/api/og?title=The+AI+Economist+Methodology&category=Canonical+Definition'],
   },
 };
 
@@ -30,20 +37,52 @@ export default function AIEconomistPage() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': 'https://www.richardewing.io/ai-economist',
+    },
     headline: 'The AI Economist: Capital Allocation at the Model Inference Layer',
+    description:
+      'A canonical methodology defining the role of the AI Economist across financial modeling, system routing, and R&D capital allocation.',
+    image: 'https://www.richardewing.io/api/og?title=The+AI+Economist+Methodology&category=Canonical+Definition',
+    datePublished: '2026-04-01T00:00:00Z',
+    dateModified: '2026-10-15T00:00:00Z',
     author: {
       '@type': 'Person',
+      '@id': 'https://www.richardewing.io/#person',
       name: 'Richard Ewing',
       jobTitle: 'AI Economist & Enterprise R&D Auditor',
       url: 'https://www.richardewing.io',
     },
     publisher: {
       '@type': 'Organization',
+      '@id': 'https://www.richardewing.io/#organization',
       name: 'Richard Ewing Advisory',
       url: 'https://www.richardewing.io',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.richardewing.io/assets/headshot.jpg',
+      },
     },
-    description:
-      'A canonical methodology defining the role of the AI Economist across financial modeling, system routing, and R&D capital allocation.',
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.richardewing.io',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'The AI Economist',
+        item: 'https://www.richardewing.io/ai-economist',
+      },
+    ],
   };
 
   return (
@@ -51,6 +90,10 @@ export default function AIEconomistPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Header */}

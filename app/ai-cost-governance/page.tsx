@@ -10,18 +10,25 @@ import {
 import { ArrowRight, ShieldCheck, CheckCircle2, AlertTriangle, Lock, Eye, BarChart3, Sliders } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'AI Cost Governance: Runtime Caps & Board Reporting | Richard Ewing',
+  title: 'AI Cost Governance: Runtime Caps & Audit',
   description:
     'Establish deterministic runtime caps, circuit breakers, semantic guardrails, and audit-ready board reporting to stop runaway AI model spend.',
   alternates: {
     canonical: 'https://www.richardewing.io/ai-cost-governance',
   },
   openGraph: {
-    title: 'AI Cost Governance: Runtime Caps & Board Reporting | Richard Ewing',
+    title: 'AI Cost Governance: Runtime Caps & Audit | Richard Ewing',
     description:
       'Prevent $50K surprise model bills with hard circuit breakers, multi-tenant token attribution, and executive board reporting.',
     url: 'https://www.richardewing.io/ai-cost-governance',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Cost Governance: Runtime Caps & Audit | Richard Ewing',
+    description:
+      'Prevent $50K surprise model bills with hard circuit breakers, multi-tenant token attribution, and executive board reporting.',
+    images: ['https://www.richardewing.io/api/og?title=AI+Cost+Governance+%26+Runtime+Caps&category=Enterprise+Governance'],
   },
 };
 
@@ -30,8 +37,10 @@ export default function AICostGovernancePage() {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'AI Cost Governance & Executive Framework',
+    serviceType: 'Executive AI Advisory & Cost Governance',
     provider: {
       '@type': 'Person',
+      '@id': 'https://www.richardewing.io/#person',
       name: 'Richard Ewing',
       jobTitle: 'AI Economist & Enterprise R&D Auditor',
       url: 'https://www.richardewing.io',
@@ -41,11 +50,34 @@ export default function AICostGovernancePage() {
       'Operational governance framework delivering runtime token caps, deterministic circuit breakers, and board-ready AI spend auditing.',
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.richardewing.io',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'AI Cost Governance',
+        item: 'https://www.richardewing.io/ai-cost-governance',
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-[#FAF9F6] text-[#1e2924] pt-24 pb-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Header */}

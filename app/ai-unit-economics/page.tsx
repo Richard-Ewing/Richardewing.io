@@ -11,18 +11,25 @@ import {
 import { ArrowRight, CheckCircle2, ShieldAlert, Cpu, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'AI Unit Economics: Protect SaaS Gross Margins | Richard Ewing',
+  title: 'AI Unit Economics & SaaS Margin Defense',
   description:
     'Calculate AI feature profitability per query, audit inference token costs, and prevent SaaS gross margin collapse under generative workloads.',
   alternates: {
     canonical: 'https://www.richardewing.io/ai-unit-economics',
   },
   openGraph: {
-    title: 'AI Unit Economics: Protect SaaS Gross Margins | Richard Ewing',
+    title: 'AI Unit Economics & SaaS Margin Defense | Richard Ewing',
     description:
       'Model your AI feature costs per user, find your margin collapse point, and restructure pricing before your next board meeting.',
     url: 'https://www.richardewing.io/ai-unit-economics',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Unit Economics & SaaS Margin Defense | Richard Ewing',
+    description:
+      'Model your AI feature costs per user, find your margin collapse point, and restructure pricing before your next board meeting.',
+    images: ['https://www.richardewing.io/api/og?title=AI+Unit+Economics+%26+Margin+Defense&category=Topical+Authority+Hub'],
   },
 };
 
@@ -42,11 +49,34 @@ export default function AIUnitEconomicsPage() {
       'Diagnostic model to quantify inference token costs, calculate gross margin collapse thresholds, and establish sustainable pricing.',
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.richardewing.io',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'AI Unit Economics',
+        item: 'https://www.richardewing.io/ai-unit-economics',
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-[#FAF9F6] text-[#1e2924] pt-24 pb-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Header */}
@@ -273,7 +303,7 @@ export default function AIUnitEconomicsPage() {
             <p className="text-sm text-[#66716a] leading-relaxed">
               Pair a baseline platform seat fee with monthly credit allowances. When power users
               exceed their allotted token budget, automated billing kicks in or execution throttles,
-              protecting your bottom line from unexpected customer spikes.
+              protecting your gross margins from unexpected customer spikes.
             </p>
           </div>
         </div>
