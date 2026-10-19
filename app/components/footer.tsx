@@ -138,10 +138,10 @@ export function Footer() {
                         <Link href="/newsletter" className="hover:text-cyan-900 transition-colors">Newsletter</Link>
                         <Link href="/contact" className="hover:text-cyan-900 transition-colors">Contact</Link>
                         <Link href="/directory" className="hover:text-cyan-900 transition-colors">Platform Directory</Link>
-                        <Link href="/legal" className="hover:text-cyan-900 transition-colors">Legal Hub</Link>
-                        <Link href="/legal#terms" className="hover:text-cyan-900 transition-colors">Terms of Use (TOC)</Link>
-                        <Link href="/legal#privacy" className="hover:text-cyan-900 transition-colors">Privacy Policy</Link>
-                        <Link href="/legal#disclaimers" className="hover:text-cyan-900 transition-colors">Disclaimers</Link>
+                        <Link href="/legal" prefetch={false} className="hover:text-cyan-900 transition-colors">Legal Hub</Link>
+                        <Link href="/legal#terms" prefetch={false} className="hover:text-cyan-900 transition-colors">Terms of Use (TOC)</Link>
+                        <Link href="/legal#privacy" prefetch={false} className="hover:text-cyan-900 transition-colors">Privacy Policy</Link>
+                        <Link href="/legal#disclaimers" prefetch={false} className="hover:text-cyan-900 transition-colors">Disclaimers</Link>
                         <Link href="https://linkedin.com/in/richard-ewing-mba" target="_blank" className="hover:text-zinc-900 transition-colors">LinkedIn</Link>
                         <Link href="https://x.com/Richard85626233" target="_blank" className="hover:text-zinc-900 transition-colors">X (Twitter)</Link>
                         <Link href="https://github.com/Richard-Ewing" target="_blank" className="hover:text-zinc-900 transition-colors">GitHub</Link>

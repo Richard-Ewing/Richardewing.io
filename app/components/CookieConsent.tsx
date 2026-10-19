@@ -34,7 +34,7 @@ export default function CookieConsent() {
         </div>
         <p className="text-xs text-zinc-300 leading-relaxed font-medium">
           We use privacy-friendly telemetry (Plausible/PostHog) to measure research engagement and framework utility. No sensitive code data is stored. Read our{' '}
-          <Link href="/legal" className="text-cyan-400 underline hover:text-cyan-300">
+          <Link href="/legal" prefetch={false} className="text-cyan-400 underline hover:text-cyan-300">
             Privacy Policy
           </Link>.
         </p>

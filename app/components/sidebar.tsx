@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 const NavItem = ({ href, children, isActive = false, onClick }: { href: string; children: React.ReactNode; isActive?: boolean; onClick?: () => void }) => (
     <Link
         href={href}
+        prefetch={href === '/legal' ? false : undefined}
         onClick={onClick}
         className={`block text-sm font-semibold py-2 px-4 border-l-2 transition-all ${isActive
             ? 'text-zinc-900 border-purple-500 bg-purple-50'

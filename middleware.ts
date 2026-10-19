@@ -1,5 +1,5 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
-import { NextResponse } from "next/server";
+import { NextFetchEvent, NextRequest, NextResponse } from "next/server";
 
 const TIER_A_SLUGS = new Set([
   'claude-code-vs-cursor-governance', 'claude-code-retry-loop-prevention',
@@ -55,9 +55,77 @@ const EDGE_REDIRECTS: Record<string, string> = {
   '/tools/copilot-roi-calculator': '/tools/copilot-roi',
 };
 
-export default clerkMiddleware(async (auth, req) => {
+const POISONED_CACHE_URLS = [
+  'https://www.richardewing.io/legal',
+  'https://richardewing.io/legal',
+  'https://www.richardewing.io/legal?_rsc=Edh1o4O2g_TGZBR9',
+  'https://www.richardewing.io/legal?_rsc=FaxdFzspToQPQGgF',
+  'https://www.richardewing.io/glossary/pillars/engineering-leadership',
+  'https://www.richardewing.io/glossary/pillars/engineering-leadership?_rsc=mgLEKDLYu_HEislZ',
+];
+
+function isAuthOrDynamicPath(pathname: string): boolean {
+  return (
+    pathname.startsWith('/vault') ||
+    pathname.startsWith('/admin') ||
+    pathname.startsWith('/sign-in') ||
+    pathname.startsWith('/sign-up') ||
+    pathname.startsWith('/api') ||
+    pathname.startsWith('/ai-integration/advisor') ||
+    pathname.startsWith('/ai-integration/system/download') ||
+    pathname.startsWith('/tools/board-room') ||
+    pathname.startsWith('/tools/dashboard')
+  );
+}
+
+function applySecurityAndCacheHeaders(res: NextResponse, req: NextRequest): NextResponse {
+  res.headers.set('X-DNS-Prefetch-Control', 'on');
+  res.headers.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload');
+  res.headers.set('X-Frame-Options', 'SAMEORIGIN');
+  res.headers.set('X-Content-Type-Options', 'nosniff');
+  res.headers.set('Referrer-Policy', 'origin-when-cross-origin');
+  res.headers.set('Permissions-Policy', 'camera=(), microphone=(self), geolocation=()');
+
+  const isRsc =
+    req.nextUrl.searchParams.has('_rsc') ||
+    req.headers.get('rsc') === '1' ||
+    req.headers.has('next-router-prefetch') ||
+    req.nextUrl.searchParams.has('__clerk_db_jwt') ||
+    req.nextUrl.searchParams.has('__clerk_handshake');
+
+  const isRedirect = res.status >= 300 && res.status < 400 && res.status !== 301 && res.status !== 308;
+
+  if (isRsc || isRedirect || isAuthOrDynamicPath(req.nextUrl.pathname) || req.method !== 'GET') {
+    res.headers.set('Cache-Control', 'private, no-cache, no-store, max-age=0, must-revalidate');
+    res.headers.set('Cloudflare-CDN-Cache-Control', 'no-store');
+    res.headers.set('CDN-Cache-Control', 'no-store');
+  } else if (res.status === 200) {
+    res.headers.set('Cloudflare-CDN-Cache-Control', 'max-age=86400, stale-while-revalidate=604800');
+    res.headers.set('Vary', 'RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding');
+  }
+
+  return res;
+}
+
+const clerkHandler = clerkMiddleware(async () => {
+  return NextResponse.next();
+});
+
+export default async function middleware(req: NextRequest, event: NextFetchEvent) {
   const host = req.headers.get('host') || '';
   const pathname = req.nextUrl.pathname;
+
+  // Self-heal any poisoned 307 cache entries in the current Cloudflare POP
+  try {
+    const cfCaches = (globalThis as unknown as { caches?: { default?: Cache } }).caches;
+    if (cfCaches?.default) {
+      for (const u of POISONED_CACHE_URLS) {
+        event.waitUntil(cfCaches.default.delete(u).catch(() => false));
+      }
+    }
+  } catch {
+    // Ignore if caches API is unavailable in local dev
+  }
 
   // 0. Canonical Host & Alias Single-Hop Enforcement: 301 redirect at Cloudflare Edge
   let targetPath = EDGE_REDIRECTS[pathname] || pathname;
@@ -127,17 +195,21 @@ export default clerkMiddleware(async (auth, req) => {
     }
   }
 
-  // Enterprise Security & Performance Headers
-  const response = NextResponse.next();
-  response.headers.set('X-DNS-Prefetch-Control', 'on');
-  response.headers.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload');
-  response.headers.set('X-Frame-Options', 'SAMEORIGIN');
-  response.headers.set('X-Content-Type-Options', 'nosniff');
-  response.headers.set('Referrer-Policy', 'origin-when-cross-origin');
-  response.headers.set('Permissions-Policy', 'camera=(), microphone=(self), geolocation=()');
+  const clerkRes = await clerkHandler(req, event);
 
-  return response;
-});
+  // Never allow Clerk handshake 307 redirects to hijack public editorial routes
+  if (
+    clerkRes &&
+    (clerkRes.status === 307 || clerkRes.status === 302) &&
+    !isAuthOrDynamicPath(pathname)
+  ) {
+    const cleanNext = NextResponse.next();
+    return applySecurityAndCacheHeaders(cleanNext, req);
+  }
+
+  const finalRes = (clerkRes instanceof NextResponse) ? clerkRes : NextResponse.next();
+  return applySecurityAndCacheHeaders(finalRes, req);
+}
 
 export const config = {
   matcher: [
@@ -145,3 +217,4 @@ export const config = {
     '/((?!_next/static|_next/image|assets/|favicon.ico|icon.png).*)',
   ],
 };
+
