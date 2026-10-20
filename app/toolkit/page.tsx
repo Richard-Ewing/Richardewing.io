@@ -8,7 +8,7 @@ import AsSeenInBar from '@/components/social-proof/AsSeenInBar';
 import ToolkitInteractivePreview from './ToolkitInteractivePreview';
 
 export const metadata: Metadata = {
-  title: 'The Product & AI Economist Operating Kit ($29) | Richard Ewing',
+  title: 'Product & AI Economist Operating Kit ($29)',
   description:
     'Download 5 battle-tested P&L spreadsheets, AI feature pricing calculators, Zombie Feature kill-list matrices, and 12-slide CFO board deck templates.',
   alternates: {

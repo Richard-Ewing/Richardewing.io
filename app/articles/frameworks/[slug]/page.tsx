@@ -13,40 +13,75 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!framework) return { title: 'Framework Not Found' };
 
     const searchTitle: Record<string, string> = {
-        'software-phase-transition': 'The Software Phase Transition: Managing Product When Code Costs Near Zero',
-        'technical-insolvency-date': 'Technical Insolvency Date: When Technical Debt Kills Innovation',
-        'innovation-tax': 'Innovation Tax: Hidden Maintenance Disguised as R&D Investment',
-        'cost-of-predictivity': 'Cost of Predictivity: The True Cost of AI Accuracy',
-        'audit-interview': 'Audit Interview: AI-Age Engineering Hiring Assessment',
-        'kill-switch-protocol': 'Kill Switch Protocol: How to Deprecate Zombie Features',
-        'feature-bloat-calculus': 'Feature Bloat Calculus: When Features Cost More Than They Earn',
-        'return-on-ai-investment': 'Return on AI Investment (ROAI): Framework for AI Unit Economics',
-        'vibe-coding-debt': 'Vibe Coding Debt: Architectural Liabilities of AI Copilots',
-        'shadow-agents': 'Shadow Agents: Autonomous AI Governance & Security Framework',
-        'agentic-drift': 'Agentic Drift (Logic Drift): Mitigating Recursive Model Failure',
-        'dspm': 'Data Security Posture Management (DSPM): Protecting AI Context Layers',
-        'sovereign-ai': 'Sovereign AI: On-Premise Enterprise LLM Architecture',
-        'graph-rag': 'Graph RAG: Knowledge Graphs for Enterprise Retrieval',
-        'slm': 'Small Language Models (SLM): Unit Economic Right-Sizing',
-        'the-turing-tax': 'The Turing Tax: The Margin Cost of Frontier Models',
-        'synthetic-cogs': 'Synthetic COGS: AI Compute Unit Economics & Margin Engineering',
+        'software-phase-transition': 'The Software Phase Transition | Richard Ewing',
+        'technical-insolvency-date': 'Technical Insolvency Date (TID) | Richard Ewing',
+        'innovation-tax': 'The Innovation Tax Framework | Richard Ewing',
+        'cost-of-predictivity': 'Cost of Predictivity Framework | Richard Ewing',
+        'audit-interview': 'The Audit Interview Protocol | Richard Ewing',
+        'kill-switch-protocol': 'The Kill Switch Protocol | Richard Ewing',
+        'feature-bloat-calculus': 'Feature Bloat Calculus | Richard Ewing',
+        'vibe-coding-debt': 'Vibe Coding Debt Framework | Richard Ewing',
+        'shadow-agents': 'Shadow Agents Governance | Richard Ewing',
+        'agentic-drift': 'Agentic Drift & Logic Drift | Richard Ewing',
+        'return-on-ai-investment': 'Return on AI Investment (ROAI) | Richard Ewing',
+        'dspm': 'AI Data Security Posture (DSPM) | Richard Ewing',
+        'sovereign-ai': 'Sovereign AI Architecture | Richard Ewing',
+        'graph-rag': 'Enterprise Graph RAG Architecture | Richard Ewing',
+        'slm': 'Small Language Models (SLM) | Richard Ewing',
+        'the-turing-tax': 'The Turing Tax Framework | Richard Ewing',
+        'synthetic-cogs': 'Synthetic COGS Framework | Richard Ewing',
+        'power-user-liability': 'Power User Liability in AI SaaS | Richard Ewing',
+        'deterministic-control-layer': 'Deterministic Control Layer | Richard Ewing',
+        'compute-reseller-trap': 'The Compute Reseller Trap | Richard Ewing',
+        'frontier-model-economics': 'Frontier Model Economics | Richard Ewing',
+        'persistence-vs-authority': 'Persistence vs. Authority in AI | Richard Ewing',
+        'supervisory-review-queue': 'The Supervisory Review Queue | Richard Ewing',
+        'the-transaction-that-succeeds': 'The Transaction That Succeeds | Richard Ewing',
+        'section-174-capitalization': 'Section 174 AI Tax Capitalization | Richard Ewing',
+        'hybrid-cloud-local-runtime': 'Hybrid Cloud-Local AI Runtime | Richard Ewing',
+        'sovereign-dual-chamber-governance': 'Dual-Chamber AI Governance | Richard Ewing',
+        'ai-architecture-decision-records': 'AI Architecture Decision Records | Richard Ewing',
     };
 
-    const titleStr = searchTitle[slug] || framework.name;
+    const searchDescription: Record<string, string> = {
+        'software-phase-transition': 'Manage engineering and product capital as AI drives code creation costs near zero. Prevent feature sprawl and margin collapse with Richard Ewing.',
+        'technical-insolvency-date': 'Calculate the exact future quarter when technical debt maintenance consumes 100% of engineering capacity and halts new feature velocity.',
+        'innovation-tax': 'Audit the hidden maintenance expenses disguised as R&D feature investment. Expose how agile sprint bundling inflates engineering velocity.',
+        'cost-of-predictivity': 'Measure how AI compute expenses scale exponentially with accuracy requirements. Identify your AI margin collapse point before scaling users.',
+        'audit-interview': 'Assess engineering candidates on AI code verification, security bug prioritization, and ship judgment instead of whiteboard syntax recall.',
+        'kill-switch-protocol': 'Identify and deprecate zombie features that drain engineering maintenance hours while generating zero attributable revenue or user adoption.',
+        'feature-bloat-calculus': 'Quantify direct maintenance, opportunity cost, and quadratic complexity tax to expose software features operating at negative financial carry.',
+        'vibe-coding-debt': 'Measure the architectural liability and incident recovery drag created when engineers ship unverified AI copilot code into production systems.',
+        'shadow-agents': 'Detect and govern unsanctioned autonomous AI workflows operating across corporate APIs, vector databases, and financial systems without oversight.',
+        'agentic-drift': 'Contain compounding reasoning errors in multi-step autonomous AI agents using deterministic state machines and cryptographic schema checkpoints.',
+        'return-on-ai-investment': 'Evaluate AI deployments by net gross margin impact, token cost per transaction, and verified labor savings rather than pilot activity metrics.',
+        'dspm': 'Restrict autonomous AI agent context windows and prevent unstructured corporate data exfiltration across multi-cloud vector storage layers.',
+        'sovereign-ai': 'Evaluate private bare-metal LLM clusters against commercial cloud APIs to enforce strict data residency, regulatory compliance, and cost control.',
+        'graph-rag': 'Combine ontological knowledge graphs with vector embeddings to cut LLM hallucination rates and lower compute costs on complex enterprise queries.',
+        'slm': 'Route narrow classification and extraction tasks to distilled Small Language Models to cut AI inference spend and protect SaaS gross margins.',
+        'the-turing-tax': 'Eliminate gross margin compression caused by routing simple deterministic tasks through expensive frontier AI models instead of local routers.',
+        'synthetic-cogs': 'Account for embeddings, vector retrieval, and token inference as direct variable Cost of Goods Sold on every individual AI user transaction.',
+        'power-user-liability': 'Protect flat-rate AI SaaS subscriptions from margin collapse when heavy power users consume more monthly inference compute than they pay for.',
+        'deterministic-control-layer': 'Place semantic caching, intent routing, and policy allowlists ahead of probabilistic LLMs to cap token spend and block unauthorized actions.',
+        'compute-reseller-trap': 'Escape thin AI wrapper economics by building proprietary data pipelines, deterministic control layers, and multi-system workflow integrations.',
+        'frontier-model-economics': 'Balance closed frontier APIs against private open-weight clusters by modeling task ambiguity, multi-turn token compounding, and hosting floors.',
+        'persistence-vs-authority': 'Separate how long an unattended AI agent runs from what production records, ledgers, and external systems it has permission to modify.',
+        'supervisory-review-queue': 'Prevent senior engineers from drowning in AI code review fatigue by enforcing read-only triggers, narrow scopes, and compiler verification gates.',
+        'the-transaction-that-succeeds': 'Stop autonomous AI agents from executing technically clean transactions that violate corporate procurement policies and financial signing limits.',
+        'section-174-capitalization': 'Separate maintenance OpEx from amortizable R&D in AI-accelerated sprints to protect corporate cash flow from IRS Section 174 tax penalties.',
+        'hybrid-cloud-local-runtime': 'Split developer agent workloads between zero-cost local LiteRT models and cloud frontier reasoning to cut token bills by over eighty percent.',
+        'sovereign-dual-chamber-governance': 'Separate board-level strategic invariants from automated sub-50ms production release gates to ship enterprise AI systems without blind spots.',
+        'ai-architecture-decision-records': 'Generate structured five-heading Architecture Decision Records directly from git diffs and pre-commit hooks to prevent agentic monorepo drift.',
+    };
+
+    const titleStr = searchTitle[slug] || `${framework.name} | Richard Ewing`;
+    const descStr = searchDescription[slug] || `Examine the ${framework.name} framework by Richard Ewing for enterprise engineering economics, capital allocation, and AI systems governance.`;
 
     return {
         title: {
-            absolute: `${framework.name} Framework | Richard Ewing`,
+            absolute: titleStr,
         },
-        description: (() => {
-            let desc = framework.definition.replace(/\n/g, ' ').trim();
-            if (!desc.endsWith('.')) desc += '.';
-            if (desc.length < 120) {
-                const combined = `${desc} Enterprise systems architecture and engineering economics framework by Richard Ewing.`;
-                return combined.length <= 158 ? combined : desc;
-            }
-            return desc.length > 158 ? desc.slice(0, 155) + '...' : desc;
-        })(),
+        description: descStr,
         keywords: [
             framework.name.toLowerCase(), `${framework.name.toLowerCase()} framework`,
             `what is ${framework.name.toLowerCase()}`, 'Richard Ewing', 'AI Economist',
@@ -55,17 +90,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ],
         alternates: { canonical: `https://www.richardewing.io/articles/frameworks/${framework.slug}` },
         openGraph: {
-            title: `${framework.name} | Richard Ewing`,
-            description: framework.definition.replace(/\n/g, ' ').slice(0, 155),
+            title: titleStr,
+            description: descStr,
             url: `https://www.richardewing.io/articles/frameworks/${framework.slug}`,
             type: 'article',
-            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${framework.name} | Richard Ewing`,
-            description: framework.definition.replace(/\n/g, ' ').slice(0, 155),
-            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+            title: titleStr,
+            description: descStr,
+            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
         },
     };
 }
@@ -99,6 +134,17 @@ export default async function Page({ params }: Props) {
         ],
     };
 
+    const breadcrumbSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+            { '@type': 'ListItem', position: 2, name: 'Articles', item: 'https://www.richardewing.io/articles' },
+            { '@type': 'ListItem', position: 3, name: 'Frameworks', item: 'https://www.richardewing.io/doctrine' },
+            { '@type': 'ListItem', position: 4, name: framework.name, item: `https://www.richardewing.io/articles/frameworks/${slug}` },
+        ],
+    };
+
     const relatedPublications = RESEARCH_CORPUS.filter(art => {
         const slugNorm = slug.toLowerCase();
         if (art.relatedFrameworkSlugs?.includes(slugNorm)) return true;
@@ -118,6 +164,7 @@ export default async function Page({ params }: Props) {
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <FrameworkDefinition framework={framework} />
 
             {/* Foundational Research & Publications (Step 1 of Sovereign Asset Engine) */}

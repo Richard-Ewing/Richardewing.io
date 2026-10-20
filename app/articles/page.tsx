@@ -4,7 +4,7 @@ import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import { ResearchExplorer } from '@/components/research/research-explorer';
 
 export const metadata: Metadata = {
-  title: 'Forensic AI & Engineering Research | Richard Ewing',
+  title: 'Forensic AI & Engineering Research',
   description:
     'Published research, essays, and empirical articles on AI unit economics, R&D capital efficiency, and tech debt. Written for CTOs and engineering leaders.',
   alternates: {

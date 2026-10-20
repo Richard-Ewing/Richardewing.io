@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Enterprise AI Integration System | Richard Ewing',
+  title: 'Enterprise AI Integration System',
   description:
     'A complete enterprise governance operating system. Deploy diagnostic tools, unit margin models, and 48-hour strategic roadmaps.',
   alternates: { canonical: 'https://www.richardewing.io/ai-integration' },

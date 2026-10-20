@@ -8,6 +8,10 @@ export const metadata: Metadata = {
     alternates: {
         canonical: 'https://www.richardewing.io/checkout-pending',
     },
+    robots: {
+        index: false,
+        follow: false,
+    },
 };
 
 export default function CheckoutPending() {

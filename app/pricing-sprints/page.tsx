@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Pricing & Sprints | Richard Ewing',
+  title: 'Pricing & Sprints',
   description:
     'Fixed-scope product P&L turnarounds, AI feature pricing sprints, and embedded fractional product leadership with transparent pricing and deliverables.',
   alternates: {

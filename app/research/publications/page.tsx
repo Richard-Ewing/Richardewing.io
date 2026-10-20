@@ -4,7 +4,7 @@ import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import { ResearchExplorer } from '@/components/research/research-explorer';
 
 export const metadata: Metadata = {
-  title: 'Publications & Published Works (174+) | Richard Ewing',
+  title: 'Publications & Published Works (174+)',
   description:
     'Comprehensive catalog of 174+ published works across CIO.com, Built In, Mind the Product, HackerNoon, Beehiiv, and LinkedIn on AI economics, governance, and capital allocation.',
   alternates: {
@@ -16,6 +16,14 @@ export const metadata: Metadata = {
       'Comprehensive catalog of 174+ published works across CIO.com, Built In, Mind the Product, HackerNoon, Beehiiv, and LinkedIn.',
     url: 'https://www.richardewing.io/research/publications',
     type: 'website',
+    images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Publications & Published Works (174+) | Richard Ewing',
+    description:
+      'Comprehensive catalog of 174+ published works across CIO.com, Built In, Mind the Product, HackerNoon, Beehiiv, and LinkedIn.',
+    images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
 
@@ -42,11 +50,25 @@ export default function PublicationsPage() {
     },
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+      { '@type': 'ListItem', position: 2, name: 'Research', item: 'https://www.richardewing.io/research' },
+      { '@type': 'ListItem', position: 3, name: 'Publications', item: 'https://www.richardewing.io/research/publications' },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Header */}
@@ -101,7 +123,7 @@ export default function PublicationsPage() {
       <section className="section">
         <ResearchExplorer
           articles={RESEARCH_CORPUS}
-          limit={48}
+          limit={200}
           showPublisherFilter={true}
         />
       </section>

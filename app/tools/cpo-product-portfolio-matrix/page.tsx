@@ -3,7 +3,7 @@ import CalculatorIntentProposal from '@/app/components/calculators/CalculatorInt
 import CPOProductPortfolioTool from './content';
 
 export const metadata: Metadata = {
-    title: 'CPO AI Feature Margin Matrix | Richard Ewing',
+    title: 'CPO AI Feature Margin Matrix',
     description: 'Model feature gross margins, identify negative-carry features, and eliminate margin-bleeding AI experiments. Align product roadmaps with EBITDA yield.',
     keywords: [
         'CPO AI product strategy',

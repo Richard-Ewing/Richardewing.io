@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Keynotes & Workshops | AI Economics & Engineering Leadership | Richard Ewing',
+  title: 'Keynotes & Workshops: AI Economics',
   description:
     'Keynotes, executive workshops, and masterclasses on AI economics, engineering productivity, and software governance. Book Richard Ewing for your next conference or leadership summit.',
   alternates: {

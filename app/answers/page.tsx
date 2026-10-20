@@ -4,7 +4,7 @@ import { SPOKE_MATRIX, Persona } from '../lib/spoke-data';
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://www.richardewing.io/answers' },
-  title: 'Enterprise AI Cost & Governance Q&A | Richard Ewing',
+  title: 'Enterprise AI Cost & Governance Q&A',
   description:
     'Direct answers to critical enterprise AI questions across board members, CTOs, CFOs, and engineering leaders. Cut through vendor hype with real data.',
 };

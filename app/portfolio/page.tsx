@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Executive Portfolio | Systems, Ventures & Impact | Richard Ewing',
+  title: 'Executive Portfolio: Systems & Ventures',
   description:
     'From research to real-world impact. Explore software platforms, executive case studies, and enterprise AI governance systems built by Richard Ewing.',
   alternates: {

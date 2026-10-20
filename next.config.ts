@@ -558,10 +558,60 @@ const nextConfig: NextConfig = {
         destination: '/tools',
         permanent: true,
       },
-      // ═══════════════════ LEGACY TOOLS REDIRECTS ═══════════════════
+      // ═══════════════════ LEGACY TOOLS & DUPLICATE CATCH-ALL REDIRECTS ═══════════════════
       {
         source: '/tools/unit-economics',
         destination: '/tools/aueb',
+        permanent: true,
+      },
+      {
+        source: '/tools/CloudRepatriationCalculator',
+        destination: '/tools/cloud-repatriation',
+        permanent: true,
+      },
+      {
+        source: '/tools/PromptInjectionSandbox',
+        destination: '/tools/prompt-injection-sandbox',
+        permanent: true,
+      },
+      {
+        source: '/tools/RagChunkingVisualizer',
+        destination: '/tools/rag-chunking-visualizer',
+        permanent: true,
+      },
+      {
+        source: '/product-debt-index',
+        destination: '/tools/pdi',
+        permanent: true,
+      },
+      {
+        source: '/roai-framework',
+        destination: '/articles/frameworks/return-on-ai-investment',
+        permanent: true,
+      },
+      {
+        source: '/technical-insolvency-date',
+        destination: '/articles/frameworks/technical-insolvency-date',
+        permanent: true,
+      },
+      {
+        source: '/career-pathfinder',
+        destination: '/tools/career-pathing',
+        permanent: true,
+      },
+      {
+        source: '/security-trust',
+        destination: '/security',
+        permanent: true,
+      },
+      {
+        source: '/architectural-doctrine',
+        destination: '/exogram/architecture',
+        permanent: true,
+      },
+      {
+        source: '/legal-hub',
+        destination: '/legal',
         permanent: true,
       },
       // ═══════════════════ COMPARISONS 404 REMEDIATION ═══════════════════

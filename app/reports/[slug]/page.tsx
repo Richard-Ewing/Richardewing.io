@@ -17,7 +17,7 @@ const reportMeta: Record<string, { title: string; description: string }> = {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
     const meta = reportMeta[slug];
-    if (!meta) return { title: 'Report | Richard Ewing', description: 'Enterprise benchmark report from live AI telemetry.' };
+    if (!meta) return { title: 'Report', description: 'Enterprise benchmark report from live AI telemetry.' };
     return {
         title: meta.title,
         description: meta.description,

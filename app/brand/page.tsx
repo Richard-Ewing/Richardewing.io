@@ -3,7 +3,7 @@ import Link from 'next/link';
 import BrandAssetsKit from '@/components/partnerships/BrandAssetsKit';
 
 export const metadata: Metadata = {
-  title: 'Brand Assets & Media Resources | Richard Ewing',
+  title: 'Brand Assets & Media Resources',
   description: 'Download official vector SVG logos, PNG marks, executive portraits, and brand guidelines for Richard Ewing and Exogram partnerships.',
   keywords: [
     'Richard Ewing logo download',

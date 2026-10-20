@@ -1,5 +1,14 @@
+import type { Metadata } from 'next';
 import { auth, currentUser } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
+
+export const metadata: Metadata = {
+    title: 'Admin Command Center',
+    robots: {
+        index: false,
+        follow: false,
+    },
+};
 
 // Admin-only email allowlist
 const ADMIN_EMAILS = [

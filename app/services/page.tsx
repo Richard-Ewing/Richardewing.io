@@ -4,7 +4,7 @@ import Link from 'next/link';
 import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-  title: 'Product & AI Economist Advisory | Richard Ewing',
+  title: 'Product & AI Economist Advisory',
   description:
     'Three distinct paths: Fix and scale your Product P&L ($29 Operating Kit to $2,500 Turnaround), ship a 0-to-1 AI product ($7,500), or hire an Embedded Fractional CPO ($10,000/mo).',
   alternates: {

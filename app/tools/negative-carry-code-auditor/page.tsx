@@ -3,7 +3,7 @@ import CalculatorIntentProposal from '@/app/components/calculators/CalculatorInt
 import NegativeCarryCodeAuditorTool from './content';
 
 export const metadata: Metadata = {
-    title: 'Negative-Carry Code Auditor (NCCA) | Richard Ewing',
+    title: 'Negative-Carry Code Auditor (NCCA)',
     description: 'Calculate the technical debt discount factor, maintenance carrying cost, and refactor liability of unverified AI-generated code in software codebases.',
     keywords: [
         'Negative-Carry Code Auditor',

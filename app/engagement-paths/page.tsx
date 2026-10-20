@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Engagement Paths | Richard Ewing',
+  title: 'Engagement Paths',
   description:
     'Three structured engagement paths: self-service diagnostics, focused turnaround sprints, and embedded executive leadership for technology organizations.',
   alternates: {

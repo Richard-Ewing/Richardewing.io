@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ShieldCheck, Lock, FileCode, Handshake } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Enterprise Security & Trust Center | Richard Ewing',
+  title: 'Enterprise Security & Trust Center',
   description:
     'Security architecture, VPC isolation, zero data retention (ZDR), policy-as-code enforcement, and NDA compliance protocols.',
   alternates: { canonical: 'https://www.richardewing.io/security' },

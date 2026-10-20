@@ -145,7 +145,8 @@ export default async function middleware(req: NextRequest, event: NextFetchEvent
     }
   }
 
-  if (host === 'richardewing.io' || host.startsWith('richardewing.io:') || (targetPath !== pathname && !host.startsWith('localhost'))) {
+  const isLocalhost = host.includes('localhost') || host.includes('127.0.0.1');
+  if ((!isLocalhost && host !== 'www.richardewing.io') || (targetPath !== pathname && !isLocalhost)) {
     const destination = new URL(targetPath + req.nextUrl.search, 'https://www.richardewing.io');
     return NextResponse.redirect(destination, 301);
   }

@@ -139,6 +139,11 @@ button {
   z-index: 100;
 }
 
+.dropdown[hidden],
+.dropdown.hidden {
+  display: none !important;
+}
+
 .dropdown:before {
   content: "";
   position: absolute;

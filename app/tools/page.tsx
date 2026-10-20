@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ToolsContent from './tools-content';
 
 export const metadata: Metadata = {
-  title: 'Diagnostics & Tools | AI Spend Leaks & Unit Economics | Richard Ewing',
+  title: 'Diagnostics & Tools: AI Spend & Unit Economics',
   description:
     'Interactive tools to quantify AI unit economics, identify engineering waste, and model ROI. Free diagnostics for technology and finance leaders.',
   alternates: {
@@ -15,6 +15,14 @@ export const metadata: Metadata = {
       'Turn AI activity into measurable outcomes. Free diagnostics to quantify token waste and margin drag.',
     url: 'https://www.richardewing.io/tools',
     type: 'website',
+    images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Diagnostics & Tools | AI Spend Leaks | Richard Ewing',
+    description:
+      'Turn AI activity into measurable outcomes. Free diagnostics to quantify token waste and margin drag.',
+    images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
 
@@ -28,11 +36,24 @@ export default function ToolsPage() {
     url: 'https://www.richardewing.io/tools',
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+      { '@type': 'ListItem', position: 2, name: 'Diagnostics & Tools', item: 'https://www.richardewing.io/tools' },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Dark Executive Telemetry Banner */}

@@ -5,9 +5,12 @@ import { Footer } from '../components/footer';
 import { GooglePreferredBadge } from '../components/GooglePreferredBadge';
 
 export const metadata = {
-    title: 'Your Operating Kit Is Ready | Richard Ewing',
+    title: 'Your Operating Kit Is Ready',
     description: 'Instant download center for The Product & AI Economist Operating Kit: 5 financial spreadsheets, CFO board deck blueprints, and executive turnaround runbooks.',
-    robots: 'noindex, nofollow'
+    robots: {
+        index: false,
+        follow: false,
+    },
 };
 
 const individualFiles = [

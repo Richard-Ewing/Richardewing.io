@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { NewsletterForm } from '@/components/newsletter/newsletter-form';
 
 export const metadata: Metadata = {
-  title: 'The AI Economist Newsletter | Executive Briefings | Richard Ewing',
+  title: 'The AI Economist Newsletter & Briefings',
   description:
     'Weekly executive briefings on AI unit economics, R&D capital allocation, and software profitability. Read by over 11,000 technology and finance leaders.',
   alternates: {

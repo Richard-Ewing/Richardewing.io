@@ -5,7 +5,6 @@ import ExitIntentModal from './components/ExitIntentModal';
 import CookieConsent from './components/CookieConsent';
 import VoiceDock from './components/voice/VoiceDock';
 import { personSchema, professionalServiceSchema } from './lib/schemas';
-import { homepageKeywords } from './lib/keywords';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { ClerkProvider } from '@clerk/nextjs';
 import { PHProvider } from '@/lib/telemetry/posthog';
@@ -31,7 +30,6 @@ export const metadata: Metadata = {
     template: '%s | Richard Ewing'
   },
   description: 'Richard Ewing helps CFOs, CTOs, and PE leaders measure, govern, and audit enterprise AI economics. 25 diagnostics and advisory services.',
-  keywords: homepageKeywords,
   authors: [{ name: 'Richard Ewing', url: 'https://www.richardewing.io' }],
   creator: 'Richard Ewing',
   publisher: 'Richard Ewing',
@@ -91,7 +89,7 @@ export default function RootLayout({
       <head>
         <link rel="ai-agent-manifest" href="/.well-known/ai-agent-manifest.json" />
         <link rel="author" href="https://www.richardewing.io/about" />
-        <link rel="me" href="https://linkedin.com/in/richard-ewing-mba" />
+        <link rel="me" href="https://www.linkedin.com/in/richard-ewing-mba" />
         <link rel="alternate" type="text/plain" href="https://www.richardewing.io/llms.txt" title="LLM-readable site information" />
         <link rel="alternate" type="application/rss+xml" href="https://www.richardewing.io/feed.xml" title="Richard Ewing - Engineering Economics Blog" />
         {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (
@@ -148,7 +146,7 @@ export default function RootLayout({
             '@type': 'Organization',
             name: 'Richard Ewing Advisory',
             url: 'https://www.richardewing.io',
-            logo: 'https://www.richardewing.io/assets/headshot.jpg',
+            logo: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg',
             description: 'AI Economics advisory firm specializing in R&D capital audits, technical debt diagnostics, and AI unit economics.',
             founder: {
               '@type': 'Person',
@@ -158,7 +156,7 @@ export default function RootLayout({
               url: 'https://www.richardewing.io/about',
             },
             sameAs: [
-              'https://linkedin.com/in/richard-ewing-mba',
+              'https://www.linkedin.com/in/richard-ewing-mba',
               'https://www.cio.com/author/richard-ewing/',
               'https://builtin.com/authors/richard-ewing',
               'https://hackernoon.com/u/richardewing1',

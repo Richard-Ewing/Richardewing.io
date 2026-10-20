@@ -4,7 +4,7 @@ import Link from 'next/link';
 import FounderQuizEngine from '@/components/ai-product-builder/FounderQuizEngine';
 
 export const metadata: Metadata = {
-  title: 'AI Founder Readiness Diagnostic · 10-Question Benchmark | Richard Ewing',
+  title: 'AI Founder Readiness Diagnostic',
   description:
     'Benchmark your product validation, technical architecture, cost governance, and capital readiness in 5 minutes with immediate scoring.',
   alternates: {

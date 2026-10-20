@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Start Here | Richard Ewing',
+  title: 'Start Here',
   description:
     'A guided path through AI unit economics, research concepts, production frameworks, and executive advisory for technology leaders.',
   alternates: {

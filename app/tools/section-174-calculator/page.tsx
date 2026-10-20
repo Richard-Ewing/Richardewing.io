@@ -4,7 +4,7 @@ import CFOCapitalizationTool from '../cfo-capitalization-audit/content';
 import DirectAnswerBlock from '@/components/DirectAnswerBlock';
 
 export const metadata: Metadata = {
-  title: 'Section 174 AI Tax Calculator | Richard Ewing',
+  title: 'Section 174 AI Tax Calculator',
   description: 'Audit Section 174 software capitalization drag, calculate phantom tax liabilities from AI maintenance, and separate deductible OpEx in CFO language.',
   keywords: [
     'Section 174 calculator',

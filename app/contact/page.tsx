@@ -3,7 +3,9 @@ import Link from 'next/link';
 import { ContactForm } from '@/components/contact/contact-form';
 
 export const metadata: Metadata = {
-  title: 'Contact Richard Ewing | Executive Advisory & Keynote Inquiries',
+  title: {
+    absolute: 'Contact Richard Ewing | Executive Advisory',
+  },
   description:
     'Start a conversation about executive advisory, pricing sprints, keynote speaking, or AI unit economics research.',
   alternates: {
@@ -15,6 +17,14 @@ export const metadata: Metadata = {
       'Start a conversation about executive advisory, pricing sprints, or speaking engagements.',
     url: 'https://www.richardewing.io/contact',
     type: 'website',
+    images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Richard Ewing | Executive Advisory & Speaking',
+    description:
+      'Start a conversation about executive advisory, pricing sprints, or speaking engagements.',
+    images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
 
@@ -31,11 +41,24 @@ export default function ContactPage() {
     },
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+      { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://www.richardewing.io/contact' },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Section */}

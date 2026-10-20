@@ -5,7 +5,7 @@ import { NewsletterForm } from '@/components/newsletter/newsletter-form';
 import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-  title: 'The Pragmatic AI Builder Book | Richard Ewing',
+  title: 'The Pragmatic AI Builder Book',
   description:
     'Turn expertise into a profitable AI business without VC theater. A field guide to domain validation, unit economics, and cash-flow software.',
   alternates: { canonical: 'https://www.richardewing.io/book' },

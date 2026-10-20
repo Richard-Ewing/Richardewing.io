@@ -241,7 +241,122 @@ for (const cf of conceptFiles) {
   }
 }
 
-// 7. Agent Skills Security & Hygiene Gate
+// 7. SEO, Crawlability & Hosting Hygiene Gates
+// 7A. Zero Legacy Hosting Artifacts
+const legacyArtifacts = ['vercel.json', 'vercel_status.txt', '.vercel'];
+for (const artifact of legacyArtifacts) {
+  if (fs.existsSync(path.join(rootDir, artifact))) {
+    console.error(`[HOSTING ERROR] Legacy Vercel artifact '${artifact}' found in workspace root! Site is hosted exclusively on Cloudflare.`);
+    errorCount++;
+  }
+}
+
+// 7B. Primary Nav Sitemap Coverage
+const siteDataPath = path.join(rootDir, 'lib/site-data.ts');
+const sitemapPath = path.join(rootDir, 'app/sitemap.ts');
+if (fs.existsSync(siteDataPath) && fs.existsSync(sitemapPath)) {
+  const siteDataContent = fs.readFileSync(siteDataPath, 'utf8');
+  const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
+  const disallowedBlock = sitemapContent.match(/const\s+REDIRECT_DISALLOWED\s*=\s*new\s+Set\(\[([\s\S]*?)\]\)/);
+  const disallowedSet = new Set(
+    disallowedBlock
+      ? [...disallowedBlock[1].matchAll(/['"]([^'"]+)['"]/g)].map(m => m[1])
+      : []
+  );
+  const navBlock = siteDataContent.match(/export\s+const\s+PRIMARY_NAV[\s\S]*?\];/);
+  if (navBlock) {
+    const navHrefs = [...navBlock[0].matchAll(/href:\s*['"]([^'"]+)['"]/g)].map(m => m[1]);
+    for (const href of navHrefs) {
+      const cleanHref = href.split('#')[0];
+      if (disallowedSet.has(cleanHref)) {
+        console.error(`[SEO ERROR] Primary navigation route '${cleanHref}' is inside REDIRECT_DISALLOWED in app/sitemap.ts!`);
+        errorCount++;
+      }
+    }
+  }
+}
+
+// 7C. Glossary KEEP_TERMS Parity
+const execTermsPath = path.join(rootDir, 'app/glossary/terms/executive-leadership-2026.ts');
+const pillarsMappingPath = path.join(rootDir, 'app/glossary/pillarsMapping.ts');
+const termsDir = path.join(rootDir, 'app/glossary/terms');
+if (fs.existsSync(execTermsPath) && fs.existsSync(pillarsMappingPath) && fs.existsSync(termsDir)) {
+  const execTermsContent = fs.readFileSync(execTermsPath, 'utf8');
+  const pillarsContent = fs.readFileSync(pillarsMappingPath, 'utf8');
+  const keepBlock = pillarsContent.match(/export\s+const\s+KEEP_TERMS[\s\S]*?\];/);
+  const keepSlugs = new Set(
+    keepBlock ? [...keepBlock[0].matchAll(/['"]([^'"]+)['"]/g)].map(m => m[1]) : []
+  );
+  const execSlugs = [...execTermsContent.matchAll(/slug:\s*['"]([^'"]+)['"]/g)].map(m => m[1]);
+  for (const slug of execSlugs) {
+    if (!keepSlugs.has(slug)) {
+      console.error(`[SEO ERROR] Executive glossary term '${slug}' in executive-leadership-2026.ts is missing from KEEP_TERMS in pillarsMapping.ts!`);
+      errorCount++;
+    }
+  }
+  const allDefinedTermSlugs = new Set();
+  const rootTermsPath = path.join(rootDir, 'app/glossary/terms.ts');
+  if (fs.existsSync(rootTermsPath)) {
+    const rtc = fs.readFileSync(rootTermsPath, 'utf8');
+    for (const m of rtc.matchAll(/slug:\s*['"]([^'"]+)['"]/g)) {
+      allDefinedTermSlugs.add(m[1]);
+    }
+  }
+  for (const tf of fs.readdirSync(termsDir).filter(f => f.endsWith('.ts'))) {
+    const tc = fs.readFileSync(path.join(termsDir, tf), 'utf8');
+    for (const m of tc.matchAll(/slug:\s*['"]([^'"]+)['"]/g)) {
+      allDefinedTermSlugs.add(m[1]);
+    }
+  }
+  for (const ks of keepSlugs) {
+    if (!allDefinedTermSlugs.has(ks)) {
+      console.error(`[SEO ERROR] KEEP_TERMS slug '${ks}' in pillarsMapping.ts does not exist in any app/glossary/terms/*.ts file!`);
+      errorCount++;
+    }
+  }
+}
+
+// 7D. Zero Double-Branded <title> Tags
+function getAppRouteFiles(dir) {
+  let res = [];
+  for (const f of fs.readdirSync(dir)) {
+    const p = path.join(dir, f);
+    if (fs.statSync(p).isDirectory()) res = res.concat(getAppRouteFiles(p));
+    else if (f === 'page.tsx' || f === 'layout.tsx') res.push(p);
+  }
+  return res;
+}
+for (const rf of getAppRouteFiles(path.join(rootDir, 'app'))) {
+  const rel = path.relative(rootDir, rf).replace(/\\/g, '/');
+  if (rel === 'app/layout.tsx') continue;
+  const rc = fs.readFileSync(rf, 'utf8');
+  const stripped = rc
+    .replace(/openGraph\s*:\s*\{[\s\S]*?\n\s*\}/g, '')
+    .replace(/twitter\s*:\s*\{[\s\S]*?\n\s*\}/g, '');
+  const doubleBrandMatch = stripped.match(/(?<!absolute\s*:\s*)title\s*:\s*([`'"].*?\|\s*Richard Ewing.*?[`'"])/);
+  if (doubleBrandMatch) {
+    console.error(`[SEO ERROR] Double-branded plain-string title in ${rel}: ${doubleBrandMatch[1]}. Omit '| Richard Ewing' or use title: { absolute: '...' }.`);
+    errorCount++;
+  }
+}
+
+// 7E. JSON-LD Image Asset Existence
+for (const schemaFile of ['app/layout.tsx', 'app/lib/schemas.ts']) {
+  const sfPath = path.join(rootDir, schemaFile);
+  if (fs.existsSync(sfPath)) {
+    const sfc = fs.readFileSync(sfPath, 'utf8');
+    const assetRefs = [...sfc.matchAll(/https:\/\/www\.richardewing\.io(\/(?:assets|images)\/[^'"\s)]+)/g)].map(m => m[1]);
+    for (const ref of assetRefs) {
+      const diskPath = path.join(rootDir, 'public', ref);
+      if (!fs.existsSync(diskPath)) {
+        console.error(`[SEO ERROR] Broken local image asset '${ref}' referenced in ${schemaFile} (missing at public${ref})!`);
+        errorCount++;
+      }
+    }
+  }
+}
+
+// 8. Agent Skills Security & Hygiene Gate
 try {
   const auditOutput = execSync(`node "${path.join(__dirname, 'audit-agent-skills.mjs')}"`, { encoding: 'utf8' });
   console.log(auditOutput.trim());

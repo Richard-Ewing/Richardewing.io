@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Products & Platforms | Exogram AI & CareerWin | Richard Ewing',
+  title: 'Products & Platforms: Exogram & CareerWin',
   description:
     'Turn AI insights into action with practical software platforms built for operators, not theorists. Exogram AI governance and CareerWin career intelligence.',
   alternates: {

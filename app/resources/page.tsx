@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'AI Economics Resources & Tools Hub | Richard Ewing',
+    title: 'AI Economics Resources & Tools Hub',
     description: 'Complete library of diagnostic calculators, prompt architectures, execution blueprints, and research papers. Practical tools for engineering leaders.',
     alternates: { canonical: 'https://www.richardewing.io/resources' },
     openGraph: {

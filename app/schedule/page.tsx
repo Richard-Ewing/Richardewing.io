@@ -6,7 +6,7 @@ import CalEmbed from '@/app/components/client/CalEmbed';
 import FAQItem from '@/app/components/FAQItem';
 
 export const metadata: Metadata = {
-  title: 'Schedule Executive Advisory | Richard Ewing',
+  title: 'Schedule Executive Advisory',
   description:
     'Book a direct diagnostic session, technical insolvency audit, or executive advisory briefing with AI Economist Richard Ewing.',
   alternates: {

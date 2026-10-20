@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { IsometricStack } from '@/components/framework/isometric-stack';
 
 export const metadata: Metadata = {
-  title: 'Production AI Governance & Economics Framework | Richard Ewing',
+  title: 'AI Governance & Economics Framework',
   description:
     'A practical model for pricing, building, governing, and measuring AI in production. Turn AI from an uncontrolled cost center into compound capital.',
   alternates: {

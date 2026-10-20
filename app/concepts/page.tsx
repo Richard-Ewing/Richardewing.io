@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ConceptExplorer } from '@/components/concepts/concept-explorer';
 
 export const metadata: Metadata = {
-  title: 'Canonical Concepts & Research Graph | Richard Ewing',
+  title: 'Canonical Concepts & Research Graph',
   description:
     'The intellectual operating system of Richard Ewing’s research corpus. Broad industry concepts serve as discovery entry points, bridging directly into original canonical frameworks and diagnostic tools.',
   alternates: {

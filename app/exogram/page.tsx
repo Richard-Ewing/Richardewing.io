@@ -24,22 +24,39 @@ import MemoryComparisonTable from '@/components/exogram/MemoryComparisonTable';
 import CognitiveLoopVisual from '@/components/exogram/CognitiveLoopVisual';
 
 export const metadata: Metadata = {
-  title: 'Exogram: AI That Remembers Context | Richard Ewing',
+  title: 'Exogram: AI That Remembers Context',
   description:
     'Exogram is conversational AI that remembers context, tracks state, and moves projects forward without starting over each time.',
   alternates: {
     canonical: 'https://www.richardewing.io/exogram',
   },
   openGraph: {
-    title: 'Exogram: AI That Remembers Reality',
+    title: 'Exogram: AI That Remembers Reality | Richard Ewing',
     description:
       "Richard Ewing's founder thesis for Exogram: a conversational AI that carries context forward so you can ask naturally instead of briefing a new chatbot every time.",
     url: 'https://www.richardewing.io/exogram',
     type: 'website',
+    images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Exogram: AI That Remembers Reality | Richard Ewing',
+    description:
+      "Richard Ewing's founder thesis for Exogram: a conversational AI that carries context forward so you can ask naturally instead of briefing a new chatbot every time.",
+    images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
 
 export default function ExogramFounderThesisPage() {
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+      { '@type': 'ListItem', position: 2, name: 'Exogram', item: 'https://www.richardewing.io/exogram' },
+    ],
+  };
+
   const layers = [
     {
       layer: 'Event history',
@@ -116,6 +133,10 @@ export default function ExogramFounderThesisPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(exogramSoftwareSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Section */}

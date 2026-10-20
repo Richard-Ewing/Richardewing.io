@@ -93,5 +93,8 @@ export const KEEP_TERMS = [
     'the-transaction-that-succeeds', 'the-transaction-that-succeeds-framework', 'tool-poisoning-attack',
     'unreliability-tax', 'variable-compute-cost', 'variable-cost-of-intelligence',
     'vendor-neutral-control-gateway', 'vibe-coding', 'zero-trust-type-gate',
-    'zombie-code',
+    'zombie-code', 'cfo-management-pack', 'scream-test',
+    'integration-risk', 'software-entropy', 'board-fiduciary-duty-ai',
+    'section-174-rd-capitalization', 'ai-agent-signing-matrix', 'sox-404-agent-compliance',
+    'ai-capital-allocation-ratio', 'post-syntax-talent-ladder',
 ];

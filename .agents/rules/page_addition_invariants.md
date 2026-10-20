@@ -90,6 +90,12 @@ Whenever ANY new page, subpage, tool, curriculum lesson, or comparison route is 
   - Add all redirected aliases to `REDIRECT_DISALLOWED` in `app/sitemap.ts` to prevent duplicate or conflicting indexation.
 * **Sitemap Synchronization**:
   - Register all new non-redirected canonical pages in `app/sitemap.ts` with explicit change frequency (`weekly` for hubs/diagnostics) and priority (`0.95`).
+* **SSR Navigation `<Link>` Crawlability Invariant**:
+  - Global navigation components (`components/site-shell.tsx`) must NEVER conditionally unmount dropdown `<Link>` elements behind client React state (`{openGroup === item.label && ...}`), which hides links from initial SSR HTML and search crawlers. Always render dropdown links in the DOM using `hidden={openGroup !== item.label}` and CSS visibility toggling.
+* **Glossary `KEEP_TERMS` Registration Invariant**:
+  - Every executive glossary term added to `app/glossary/terms/*.ts` that is intended to resolve as a standalone 200 OK canonical page at `/glossary/[slug]` MUST be registered in `KEEP_TERMS` inside `app/glossary/pillarsMapping.ts`.
+* **Transactional & Internal Route `noindex` Mandate**:
+  - All internal, gated, session-specific, or post-checkout utility routes (`/admin`, `/workspace`, `/wizard`, `/tools/dashboard`, `/tools/audit-interview/[sessionId]`, `/checkout-pending`, `/toolkit-success`) MUST export `robots: { index: false, follow: false }` via their `page.tsx` or `layout.tsx`.
 
 ---
 

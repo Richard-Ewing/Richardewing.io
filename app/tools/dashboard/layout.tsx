@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Intelligence Dashboard & Analytics',
     description: 'Diagnostic performance metrics, benchmark trends, and executive analytics across enterprise engineering portfolios. Quantify R&D waste and debt.',
-    keywords: ['Longitudinal intelligence Dashboard', 'Historical Metric Repository', 'Product Debt tracking', 'Margin Erosion Tracker'],
     openGraph: {
         title: 'Intelligence Dashboard | Longitudinal Data',
         description: 'Track the evolution of your Product Debt, margins, and valuation gaps over time securely in the cloud.',
@@ -12,6 +11,10 @@ export const metadata: Metadata = {
     },
     alternates: {
         canonical: 'https://www.richardewing.io/tools/dashboard',
+    },
+    robots: {
+        index: false,
+        follow: false,
     },
 };
 

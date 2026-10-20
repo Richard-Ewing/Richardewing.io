@@ -66,4 +66,15 @@ description: Enforces strict formulas for Meta Titles (<60 chars), Meta Descript
 ## 11. Strategic URL Alias & Sitemap Hygiene Protocol
 - Search-intent aliases and external audit URLs must be mapped in `next.config.ts` via permanent redirects (`permanent: true`).
 - All redirected sources must be excluded in `app/sitemap.ts` via `REDIRECT_DISALLOWED` to prevent indexing redirect chains.
+- Never place active primary navigation routes (such as `/advisory`) inside `REDIRECT_DISALLOWED`.
+
+## 12. Zero Mid-Sentence Meta Description Truncation
+- NEVER use `.slice(0, 155)` or `.substring(0, 155)` on long article or framework definitions to generate `metadata.description`, `openGraph.description`, or `twitter.description`.
+- Every route must define a complete, active-voice sentence between 135 and 155 characters.
+
+## 13. JSON-LD Entity Graph (`sameAs`) & Asset Existence Invariant
+- All `Person` and `Organization` JSON-LD schemas across `app/layout.tsx`, `app/page.tsx`, `app/about/page.tsx`, and `app/lib/schemas.ts` must unify `sameAs` around canonical profiles (`https://www.linkedin.com/in/richard-ewing-mba`, `https://github.com/richardewing`, `https://x.com/richardewing`, `https://www.cio.com/author/richard-ewing/`, `https://builtin.com/authors/richard-ewing`).
+- Every local image path referenced in JSON-LD (`image`, `logo`) or OpenGraph/Twitter metadata (`https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg`) must exist on disk in `public/`.
+- Never inject a global static `keywords` array into `app/layout.tsx`; leaf routes must declare page-specific keywords.
+
 

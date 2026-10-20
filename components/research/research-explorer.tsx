@@ -131,6 +131,10 @@ export function ResearchExplorer({
             thesis={art.thesis}
             url={art.url}
             domain={art.domain}
+            relatedConceptIds={art.relatedConceptIds}
+            relatedFrameworkSlugs={art.relatedFrameworkSlugs}
+            relatedToolIds={art.relatedToolIds}
+            relatedGlossarySlugs={art.relatedGlossarySlugs}
           />
         ))}
       </div>

@@ -70,7 +70,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             type: 'article',
             images: [
                 {
-                    url: 'https://www.richardewing.io/assets/images/headshot.jpg',
+                    url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg',
                     width: 1200,
                     height: 630,
                     alt: titleStr,
@@ -81,7 +81,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             card: 'summary_large_image',
             title: titleStr,
             description: term.definition.slice(0, 155).replace(/\n/g, ' '),
-            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
         }
     };
 }

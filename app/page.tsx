@@ -4,7 +4,9 @@ import Image from 'next/image';
 import { StarlingField } from '@/components/starling-field';
 
 export const metadata: Metadata = {
-  title: 'Richard Ewing | Product & AI Economist',
+  title: {
+    absolute: 'Richard Ewing | Product & AI Economist',
+  },
   description:
     'Helping CEOs, CFOs, and product leaders price AI features profitably, find engineering waste, and protect gross margins before the next board meeting.',
   alternates: {
@@ -50,7 +52,13 @@ export default function Home() {
           'Helping CEOs, CFOs, and product leaders price AI features profitably, find engineering waste, and protect gross margins.',
         url: 'https://www.richardewing.io',
         image: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg',
-        sameAs: ['https://www.linkedin.com/in/richard-ewing/'],
+        sameAs: [
+          'https://www.linkedin.com/in/richard-ewing-mba',
+          'https://github.com/richardewing',
+          'https://x.com/richardewing',
+          'https://www.cio.com/author/richard-ewing/',
+          'https://builtin.com/authors/richard-ewing',
+        ],
       },
       {
         '@type': 'WebSite',

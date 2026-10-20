@@ -6,7 +6,7 @@ import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import { careerwinSoftwareSchema } from '@/app/lib/schemas';
 
 export const metadata: Metadata = {
-  title: 'CareerWin Platform · Career Intelligence | Richard Ewing',
+  title: 'CareerWin Platform: Career Intelligence',
   description:
     'Career intelligence platform for engineers and product leaders. Access role benchmarks and build a data-backed compensation strategy.',
   alternates: { canonical: 'https://www.richardewing.io/careerwin' },

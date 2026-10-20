@@ -13,19 +13,32 @@ export const metadata: Metadata = {
         description: 'Explore the immutable laws of software solvency: Capital Allocation > Agile Theater.',
         url: 'https://www.richardewing.io/doctrine',
         type: 'website',
-        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+        images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'The Doctrine of Sovereignty | Richard Ewing',
         description: 'Explore the immutable laws of software solvency: Capital Allocation > Agile Theater.',
-        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+        images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
     },
 };
 
 export default function DoctrinePage() {
+    const breadcrumbSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+            { '@type': 'ListItem', position: 2, name: 'Doctrine', item: 'https://www.richardewing.io/doctrine' },
+        ],
+    };
+
     return (
         <main className="pt-20">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify({

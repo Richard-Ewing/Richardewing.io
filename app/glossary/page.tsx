@@ -5,7 +5,7 @@ import { glossaryTerms } from './terms';
 import { KEEP_TERMS, CATEGORY_MAP } from './pillarsMapping';
 
 export const metadata: Metadata = {
-    title: `Product, AI & Engineering Economics Glossary (${glossaryTerms.length}+ Terms) | Richard Ewing`,
+    title: `Product & AI Economics Glossary (${glossaryTerms.length}+ Terms)`,
     description: `Master the lexicon of product economics, AI unit economics, technical debt, and SaaS P&L governance across ${glossaryTerms.length}+ executive definitions.`,
     alternates: { canonical: 'https://www.richardewing.io/glossary' },
     openGraph: {

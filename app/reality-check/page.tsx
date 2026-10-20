@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { RealityCheckDiagnostic } from '@/components/diagnostics/reality-check-diagnostic';
 
 export const metadata: Metadata = {
-  title: 'Reality Check | AI Economics Diagnostic | Richard Ewing',
+  title: 'Reality Check: AI Economics Diagnostic',
   description:
     'A practical diagnostic to quantify your enterprise AI economics, uncover engineering waste, and generate an actionable remediation plan.',
   alternates: {

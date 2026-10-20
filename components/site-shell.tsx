@@ -94,21 +94,23 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                 <span className="chevron">⌄</span>
               </button>
 
-              {openGroup === item.label && (
-                <div className="dropdown" role="menu">
-                  {item.children.map((child) => (
-                    <Link
-                      key={child.href}
-                      href={child.href}
-                      role="menuitem"
-                      className={pathname === child.href ? "active" : ""}
-                    >
-                      <span>{child.label}</span>
-                      <span className="arrow">↗</span>
-                    </Link>
-                  ))}
-                </div>
-              )}
+              <div
+                className={openGroup === item.label ? "dropdown" : "dropdown hidden"}
+                role="menu"
+                hidden={openGroup !== item.label}
+              >
+                {item.children.map((child) => (
+                  <Link
+                    key={child.href}
+                    href={child.href}
+                    role="menuitem"
+                    className={pathname === child.href ? "active" : ""}
+                  >
+                    <span>{child.label}</span>
+                    <span className="arrow">↗</span>
+                  </Link>
+                ))}
+              </div>
             </div>
           ))}
         </nav>
@@ -133,7 +135,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             {nav.map((group) => (
               <div key={group.label}>
                 <strong>{group.label}</strong>
-                {group.children.slice(0, 5).map((child) => (
+                {group.children.map((child) => (
                   <Link key={child.href} href={child.href}>
                     {child.label}
                   </Link>
@@ -146,9 +148,9 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Richard Ewing. All rights reserved.</span>
           <div>
-            <Link href="/privacy">Privacy</Link>
-            <Link href="/terms">Terms</Link>
-            <Link href="/disclaimers">Disclaimers</Link>
+            <Link href="/legal#privacy">Privacy</Link>
+            <Link href="/legal#terms">Terms</Link>
+            <Link href="/legal#disclaimers">Disclaimers</Link>
             <Link href="/site-map">Site map</Link>
           </div>
         </div>

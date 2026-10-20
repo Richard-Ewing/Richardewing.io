@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Executive Advisory & AI Economics Sprints | Richard Ewing',
+  title: 'Executive Advisory & AI Economics Sprints',
   description:
     'No-nonsense executive advisory for CEOs, CFOs, and product leaders. AI feature pricing, engineering efficiency, governance, and capital allocation.',
   alternates: {
@@ -15,6 +15,14 @@ export const metadata: Metadata = {
       'No-nonsense executive advisory for CEOs, CFOs, and product leaders. Pricing, governance, and capital allocation.',
     url: 'https://www.richardewing.io/advisory',
     type: 'website',
+    images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Executive Advisory & AI Economics Sprints | Richard Ewing',
+    description:
+      'No-nonsense executive advisory for CEOs, CFOs, and product leaders. Pricing, governance, and capital allocation.',
+    images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
 
@@ -68,11 +76,24 @@ export default function AdvisoryPage() {
     url: 'https://www.richardewing.io/advisory',
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+      { '@type': 'ListItem', position: 2, name: 'Advisory', item: 'https://www.richardewing.io/advisory' },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Section */}
@@ -127,7 +148,7 @@ export default function AdvisoryPage() {
             perspective to AI.&rdquo;
           </blockquote>
           <div className="text-[10px] font-mono text-[var(--gold)] uppercase tracking-wider">
-            — Executive Client, Enterprise B2B SaaS
+            Executive Client, Enterprise B2B SaaS
           </div>
         </div>
       </section>

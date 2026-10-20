@@ -4,7 +4,7 @@ import Link from 'next/link';
 import CurriculumMindmapViewer from '@/components/ai-product-builder/CurriculumMindmapViewer';
 
 export const metadata: Metadata = {
-  title: 'The AI Product Builder Master Curriculum | Richard Ewing',
+  title: 'The AI Product Builder Master Curriculum',
   description:
     'Exhaustive 4-week syllabus for technical founders. Day-by-day sprint guides covering product validation, FastAPI, semantic caching, and GTM.',
   alternates: {
