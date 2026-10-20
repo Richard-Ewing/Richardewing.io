@@ -27,12 +27,16 @@ export async function generateMetadata(
     if (!match) return { title: 'Comparison Not Found' };
 
     const { tool, competitor } = match;
+    const vsBase = `${tool.toolName} vs ${competitor.name}`;
+    const titleStr = vsBase.length > 44 ? vsBase : `${vsBase} | Richard Ewing`;
+    const rawDesc = `Why enterprise leaders choose deterministic architecture over ${competitor.name}. Calculate Cost of Doing Nothing (CODN) and Board-Level Liability.`;
+    const finalDesc = rawDesc.length > 155 ? rawDesc.slice(0, 152) + '...' : rawDesc;
 
     return {
         title: {
-            absolute: `${tool.toolName} vs ${competitor.name} | Richard Ewing`,
+            absolute: titleStr,
         },
-        description: `Why enterprise leaders choose deterministic architecture over ${competitor.name}. Calculate literal Cost of Doing Nothing (CODN) and Board-Level Liability.`,
+        description: finalDesc,
         keywords: [
             `${competitor.name} alternative`,
             `${tool.toolName} vs ${competitor.name}`,
@@ -45,16 +49,16 @@ export async function generateMetadata(
         },
         openGraph: {
             title: `${tool.toolName} vs. ${competitor.name} (2026 Comparison)`,
-            description: `Why enterprise leaders choose deterministic architecture over ${competitor.name}. Calculate literal Cost of Doing Nothing (CODN) and Board-Level Liability.`,
+            description: finalDesc,
             url: `https://www.richardewing.io/tools/${tool.toolSlug}/vs/${competitor.slug}`,
             type: 'article',
-            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
         },
         twitter: {
             card: 'summary_large_image',
             title: `${tool.toolName} vs. ${competitor.name} (2026 Comparison)`,
-            description: `Why enterprise leaders choose deterministic architecture over ${competitor.name}. Calculate literal Cost of Doing Nothing (CODN) and Board-Level Liability.`,
-            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+            description: finalDesc,
+            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
         }
     };
 }

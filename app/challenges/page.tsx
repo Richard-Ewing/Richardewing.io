@@ -12,13 +12,13 @@ export const metadata: Metadata = {
         description: 'Nine enterprise failure modes where AI creates measurable financial risk. Each challenge maps to a diagnostic and remediation path.',
         url: 'https://www.richardewing.io/challenges',
         type: 'website',
-        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+        images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Enterprise AI Challenges - Cost, Governance & Engineering Economics',
         description: 'Nine enterprise failure modes where AI creates measurable financial risk. Each challenge maps to a diagnostic and remediation path.',
-        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+        images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
     },
 };
 

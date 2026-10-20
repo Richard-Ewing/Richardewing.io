@@ -17,6 +17,36 @@ export interface PublicationCardProps {
   relatedGlossarySlugs?: string[];
 }
 
+const FRAMEWORK_ROUTE_MAP: Record<string, { href: string; label: string }> = {
+  'product-economics': { href: '/framework/product', label: 'product economics framework' },
+  'product-leadership': { href: '/framework/cpo-product-strategy', label: 'CPO strategy framework' },
+  'software-capital': { href: '/framework/cfo-capital-allocation', label: 'software capital framework' },
+  'board-governance': { href: '/framework/board-fiduciary-governance', label: 'board governance framework' },
+  'career-economics': { href: '/careers', label: 'career economics' },
+  'talent-intelligence': { href: '/careers', label: 'talent intelligence' },
+  'runtime-architecture': { href: '/runtime-architecture', label: 'runtime architecture' },
+};
+
+const TOOL_ROUTE_MAP: Record<string, { href: string; label: string }> = {
+  'reality-check': { href: '/reality-check', label: 'reality check diagnostic' },
+  'runtime-governance': { href: '/framework/runtime-governance', label: 'runtime governance' },
+  'war-room': { href: '/tools/board-room', label: 'board room tool' },
+  'agentic-token-simulator': { href: '/tools/agent-router', label: 'agent router tool' },
+};
+
+const NON_KEEP_GLOSSARY_MAP: Record<string, { href: string; label: string }> = {
+  'consumption-meter-trap': { href: '/concepts/consumption-meter-trap', label: 'consumption meter trap' },
+  'exception-queue-penalty': { href: '/glossary/supervisory-review-queue', label: 'supervisory review queue' },
+  'context-engine-architecture': { href: '/concepts/context-engine-architecture', label: 'context engine architecture' },
+  'ai-tokenomics': { href: '/concepts/ai-tokenomics', label: 'AI tokenomics' },
+  'board-level-ai-governance': { href: '/concepts/board-level-ai-governance', label: 'board AI governance' },
+  'ai-margin-squeeze': { href: '/glossary/ai-unit-economics', label: 'AI unit economics' },
+  'math-of-ruin': { href: '/concepts/math-of-ruin', label: 'math of ruin' },
+  'probabilistic-supervision-failure': { href: '/concepts/probabilistic-supervision-failure', label: 'probabilistic supervision' },
+  'platform-engine-leverage': { href: '/concepts/platform-engine-leverage', label: 'platform engine leverage' },
+  'assumption-invalidation-loops': { href: '/concepts/assumption-invalidation-loops', label: 'assumption invalidation' },
+};
+
 export function PublicationCard({
   title,
   publisher,
@@ -33,24 +63,40 @@ export function PublicationCard({
 }: PublicationCardProps) {
   const isExternal = url.startsWith('http');
 
-  const internalLinks = [
-    ...relatedConceptIds.slice(0, 1).map((slug) => ({
-      href: `/concepts/${slug}`,
-      label: slug.replace(/-/g, ' '),
-    })),
-    ...relatedFrameworkSlugs.slice(0, 1).map((slug) => ({
-      href: `/framework/${slug}`,
-      label: `${slug.replace(/-/g, ' ')} framework`,
-    })),
-    ...relatedToolIds.slice(0, 1).map((slug) => ({
-      href: `/tools/${slug}`,
-      label: `${slug.replace(/-/g, ' ')} tool`,
-    })),
-    ...relatedGlossarySlugs.slice(0, 1).map((slug) => ({
-      href: `/glossary/${slug}`,
-      label: slug.replace(/-/g, ' '),
-    })),
+  const rawInternalLinks = [
+    ...relatedConceptIds
+      .filter((slug) => slug !== 'induced-demand')
+      .slice(0, 1)
+      .map((slug) => ({
+        href: `/concepts/${slug}`,
+        label: slug.replace(/-/g, ' '),
+      })),
+    ...relatedFrameworkSlugs.slice(0, 1).map((slug) =>
+      FRAMEWORK_ROUTE_MAP[slug] || {
+        href: `/framework/${slug}`,
+        label: `${slug.replace(/-/g, ' ')} framework`,
+      }
+    ),
+    ...relatedToolIds.slice(0, 1).map((slug) =>
+      TOOL_ROUTE_MAP[slug] || {
+        href: `/tools/${slug}`,
+        label: `${slug.replace(/-/g, ' ')} tool`,
+      }
+    ),
+    ...relatedGlossarySlugs.slice(0, 1).map((slug) =>
+      NON_KEEP_GLOSSARY_MAP[slug] || {
+        href: `/glossary/${slug}`,
+        label: slug.replace(/-/g, ' '),
+      }
+    ),
   ];
+
+  const seenHrefs = new Set<string>();
+  const internalLinks = rawInternalLinks.filter((link) => {
+    if (seenHrefs.has(link.href)) return false;
+    seenHrefs.add(link.href);
+    return true;
+  });
 
   return (
     <article

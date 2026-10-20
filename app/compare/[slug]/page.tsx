@@ -143,13 +143,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             url: `https://www.richardewing.io/compare/${slug}`,
             siteName: 'Richard Ewing',
             type: 'article',
-            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
         },
         twitter: {
             card: 'summary_large_image',
             title: comparison.title,
             description: desc,
-            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
         }
     };
 }

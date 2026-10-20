@@ -307,7 +307,7 @@ export default async function DynamicSlugPage({
                 {PILLARS.map((p) => (
                   <li key={p.slug}>
                     <Link className="text-[var(--forest2)] hover:underline" href={`/glossary/pillars/${p.slug}`}>
-                      {p.title}
+                      {p.name}
                     </Link>
                   </li>
                 ))}
@@ -336,7 +336,7 @@ export default async function DynamicSlugPage({
                 {CANONICAL_CONCEPTS.slice(0, 24).map((c) => (
                   <li key={c.slug}>
                     <Link className="text-[var(--forest2)] hover:underline" href={`/concepts/${c.slug}`}>
-                      {c.name}
+                      {c.title}
                     </Link>
                   </li>
                 ))}

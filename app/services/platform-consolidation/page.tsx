@@ -17,13 +17,13 @@ export const metadata: Metadata = {
         description: 'Platform consolidation resolves tool sprawl and redundant infrastructure costs. Secure an architecture roadmap and cost savings model for your engineering org.',
         url: 'https://www.richardewing.io/services/platform-consolidation',
         type: 'website',
-        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+        images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Platform Consolidation Strategy & Cost ROI | Richard Ewing',
         description: 'Platform consolidation resolves tool sprawl and redundant infrastructure costs. Secure an architecture roadmap and cost savings model for your engineering org.',
-        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+        images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
     }
 };
 

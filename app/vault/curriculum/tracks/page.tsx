@@ -18,13 +18,13 @@ export const metadata: Metadata = {
         description: 'Master the business of building across eighteen authority tracks.',
         url: 'https://www.richardewing.io/vault/curriculum/tracks',
         type: 'website',
-        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+        images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'The AI Economics Academy',
         description: 'Master the business of building across eighteen authority tracks.',
-        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+        images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
     },
 };
 const colorMap: Record<string, string> = {

@@ -128,12 +128,12 @@ export default function ContactPage() {
                 <div className="flex items-center justify-between">
                   <span className="text-[var(--muted)]">LinkedIn:</span>
                   <a
-                    href="https://www.linkedin.com/in/richard-ewing/"
+                    href="https://www.linkedin.com/in/richard-ewing-mba"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-mono text-[var(--forest)] font-bold hover:underline"
                   >
-                    linkedin.com/in/richard-ewing ↗
+                    linkedin.com/in/richard-ewing-mba ↗
                   </a>
                 </div>
                 <div className="flex items-center justify-between">

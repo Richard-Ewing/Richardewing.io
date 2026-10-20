@@ -12,13 +12,13 @@ export const metadata: Metadata = {
         description: 'Forensic insights, case studies, and research breakdowns on AI unit economics, R&D capital allocation, and technical debt.',
         url: 'https://www.richardewing.io/blog',
         type: 'website',
-        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+        images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'AI & Engineering Economics Blog',
         description: 'Forensic insights, case studies, and research breakdowns on AI unit economics, R&D capital allocation, and technical debt.',
-        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+        images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
     }
 };
 

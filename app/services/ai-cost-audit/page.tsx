@@ -17,13 +17,13 @@ export const metadata: Metadata = {
         description: 'The AI Cost Governance Review calculates exact unit economics and collapse points. Enforce hard cost caps before API overruns wreck your R&D roadmap.',
         url: 'https://www.richardewing.io/services/ai-cost-audit',
         type: 'website',
-        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+        images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'AI Cost Attribution & Margin Protection Audit | Richard Ewing',
         description: 'The AI Cost Governance Review calculates exact unit economics and collapse points. Enforce hard cost caps before API overruns wreck your R&D roadmap.',
-        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+        images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
     }
 };
 

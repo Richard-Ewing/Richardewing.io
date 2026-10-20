@@ -87,13 +87,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             publishedTime: article.date,
             authors: ['Richard Ewing'],
             url: `https://www.richardewing.io/articles/${article.slug}`,
-            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
         },
         twitter: {
             card: 'summary_large_image',
             title: `${article.title} | Richard Ewing`,
             description: article.description,
-            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
         },
     };
 }

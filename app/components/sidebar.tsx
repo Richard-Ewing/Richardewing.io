@@ -71,7 +71,7 @@ export function Sidebar() {
             <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-zinc-400 px-4 py-3 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-zinc-200 overflow-hidden">
-                        <Image src="/assets/images/headshot.jpg" alt="RE" width={40} height={40} className="object-cover grayscale" />
+                        <Image src="/assets/images/richard-ewing-headshot.jpg" alt="RE" width={40} height={40} className="object-cover grayscale" />
                     </div>
                     <div>
                         <div className="text-zinc-900 font-bold text-sm">RICHARD EWING</div>
@@ -115,7 +115,7 @@ export function Sidebar() {
                 <div className="hidden lg:block mb-8">
                     <Link href="/" className="block">
                         <div className="w-20 h-20 rounded-full border-2 border-zinc-500 mb-4 overflow-hidden grayscale hover:grayscale-0 transition duration-500">
-                            <Image src="/assets/images/headshot.jpg" alt="Richard Ewing" width={80} height={80} className="object-cover" priority />
+                            <Image src="/assets/images/richard-ewing-headshot.jpg" alt="Richard Ewing" width={80} height={80} className="object-cover" priority />
                         </div>
                         <h3 className="text-zinc-900 font-bold tracking-tight text-lg">RICHARD EWING</h3>
                         <span className="font-mono text-xs font-bold text-zinc-950 tracking-widest block mt-1">PRODUCT ECONOMIST</span>

@@ -72,13 +72,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             description: fw.overview,
             url: `https://www.richardewing.io/framework/${slug}`,
             type: 'website',
-            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
         },
         twitter: {
             card: 'summary_large_image',
             title: `${fw.name} | Production AI Governance Framework`,
             description: fw.overview,
-            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
         }
     };
 }

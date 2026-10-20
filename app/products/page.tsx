@@ -14,6 +14,14 @@ export const metadata: Metadata = {
       'Turn AI insights into action with practical software platforms built for operators. Exogram AI & CareerWin.',
     url: 'https://www.richardewing.io/products',
     type: 'website',
+    images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Products & Platforms: Exogram & CareerWin | Richard Ewing',
+    description:
+      'Turn AI insights into action with practical software platforms built for operators. Exogram AI & CareerWin.',
+    images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
 
@@ -27,11 +35,24 @@ export default function ProductsPage() {
     url: 'https://www.richardewing.io/products',
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+      { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://www.richardewing.io/products' },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Section */}

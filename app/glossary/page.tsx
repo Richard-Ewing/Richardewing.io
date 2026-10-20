@@ -5,7 +5,7 @@ import { glossaryTerms } from './terms';
 import { KEEP_TERMS, CATEGORY_MAP } from './pillarsMapping';
 
 export const metadata: Metadata = {
-    title: `Product & AI Economics Glossary (${glossaryTerms.length}+ Terms)`,
+    title: `Product & AI Economics Glossary (${glossaryTerms.length}+)`,
     description: `Master the lexicon of product economics, AI unit economics, technical debt, and SaaS P&L governance across ${glossaryTerms.length}+ executive definitions.`,
     alternates: { canonical: 'https://www.richardewing.io/glossary' },
     openGraph: {
@@ -14,6 +14,12 @@ export const metadata: Metadata = {
         url: 'https://www.richardewing.io/glossary',
         type: 'website',
         images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: `Product & AI Economics Glossary | ${glossaryTerms.length}+ Terms Defined`,
+        description: `Master the lexicon of product and AI economics. Clear executive definitions for zombie features, hallucination debt, technical insolvency, retry inflation, and ${glossaryTerms.length}+ terms.`,
+        images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
     },
 };
 
@@ -40,11 +46,24 @@ export default function GlossaryPage() {
         })
     };
 
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.richardewing.io" },
+            { "@type": "ListItem", "position": 2, "name": "Glossary", "item": "https://www.richardewing.io/glossary" }
+        ]
+    };
+
     return (
         <>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
             
             <section className="section !pt-12">

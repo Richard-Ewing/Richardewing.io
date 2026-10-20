@@ -6,7 +6,7 @@ import { ResearchExplorer } from '@/components/research/research-explorer';
 export const metadata: Metadata = {
   title: 'Publications & Published Works (174+)',
   description:
-    'Comprehensive catalog of 174+ published works across CIO.com, Built In, Mind the Product, HackerNoon, Beehiiv, and LinkedIn on AI economics, governance, and capital allocation.',
+    'Catalog of 174+ published works across CIO.com, Built In, Mind the Product, HackerNoon, and Substack on AI unit economics, governance, and SaaS P&L.',
   alternates: {
     canonical: 'https://www.richardewing.io/research/publications',
   },

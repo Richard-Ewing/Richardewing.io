@@ -6,7 +6,7 @@ import FAQItem from '@/app/components/FAQItem';
 export const metadata: Metadata = {
   title: 'Product & AI Economist Advisory',
   description:
-    'Three distinct paths: Fix and scale your Product P&L ($29 Operating Kit to $2,500 Turnaround), ship a 0-to-1 AI product ($7,500), or hire an Embedded Fractional CPO ($10,000/mo).',
+    'Fix and scale your Product P&L ($29 Operating Kit to $2,500 Turnaround), ship a 0-to-1 AI product ($7,500), or hire an Embedded Fractional CPO ($10k/mo).',
   alternates: {
     canonical: 'https://www.richardewing.io/services',
   },
@@ -16,6 +16,14 @@ export const metadata: Metadata = {
       'Product P&L turnarounds, AI feature pricing, $29 Operating Kit + Live Workspace, 0-to-1 AI Build Sprints, PE Diligence, and Fractional CPO leadership.',
     url: 'https://www.richardewing.io/services',
     type: 'website',
+    images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Product & AI Economist Advisory | Richard Ewing',
+    description:
+      'Product P&L turnarounds, AI feature pricing, $29 Operating Kit + Live Workspace, 0-to-1 AI Build Sprints, PE Diligence, and Fractional CPO leadership.',
+    images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
 
@@ -137,11 +145,24 @@ export default function ServicesPage() {
     url: 'https://www.richardewing.io/services',
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+      { '@type': 'ListItem', position: 2, name: 'Advisory & Services', item: 'https://www.richardewing.io/services' },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Section */}

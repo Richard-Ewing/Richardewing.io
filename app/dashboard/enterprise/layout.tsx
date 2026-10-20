@@ -3,6 +3,10 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Enterprise Governance Dashboard',
     description: 'Team-level monitoring portal for tracking developer agent expenditures, context health, and policy adherence. Centralized governance for enterprise teams.',
+    robots: {
+        index: false,
+        follow: false,
+    },
 };
 
 export default function EnterpriseLayout({ children }: { children: React.ReactNode }) {

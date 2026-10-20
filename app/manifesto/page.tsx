@@ -62,7 +62,7 @@ export default function ManifestoPage() {
                                 <div className="relative group">
                                     <div className="absolute -inset-2 bg-gold/30 blur-xl opacity-30 group-hover:opacity-60 transition-opacity rounded-full" />
                                     <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-zinc-200 border-2 border-zinc-400 overflow-hidden relative">
-                                        <Image src="/assets/images/headshot.jpg" alt="Richard Ewing" fill className="object-cover grayscale group-hover:grayscale-0 transition duration-500" />
+                                        <Image src="/assets/images/richard-ewing-headshot.jpg" alt="Richard Ewing" fill className="object-cover grayscale group-hover:grayscale-0 transition duration-500" />
                                     </div>
                                 </div>
                                 <div className="text-center sm:text-left">

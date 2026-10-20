@@ -5,16 +5,24 @@ import Image from 'next/image';
 export const metadata: Metadata = {
   title: 'Keynotes & Workshops: AI Economics',
   description:
-    'Keynotes, executive workshops, and masterclasses on AI economics, engineering productivity, and software governance. Book Richard Ewing for your next conference or leadership summit.',
+    'Book Richard Ewing for executive keynotes and workshops on AI unit economics, engineering productivity, R&D capital allocation, and software governance.',
   alternates: {
     canonical: 'https://www.richardewing.io/speaking',
   },
   openGraph: {
     title: 'Keynotes & Executive Workshops | Richard Ewing',
     description:
-      'Engaging, high-impact sessions on AI unit economics and engineering leadership.',
+      'Book Richard Ewing for executive keynotes and workshops on AI unit economics, engineering productivity, and software governance.',
     url: 'https://www.richardewing.io/speaking',
     type: 'website',
+    images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Keynotes & Workshops: AI Economics | Richard Ewing',
+    description:
+      'Book Richard Ewing for executive keynotes and workshops on AI unit economics, engineering productivity, and software governance.',
+    images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
 
@@ -53,11 +61,24 @@ export default function SpeakingPage() {
     url: 'https://www.richardewing.io/speaking',
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+      { '@type': 'ListItem', position: 2, name: 'Speaking', item: 'https://www.richardewing.io/speaking' },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Section */}

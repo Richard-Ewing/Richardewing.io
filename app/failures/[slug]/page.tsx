@@ -16,18 +16,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const failure = getFailureBySlug(slug);
     if (!failure) return {};
 
+    const baseTitle = failure.title.length > 26
+        ? failure.title
+        : `${failure.title} Failure Signature`;
+
     return {
         title: {
-            absolute: `${failure.title} Failure Signature | Richard Ewing`,
+            absolute: `${baseTitle} | Richard Ewing`,
         },
         description: (() => {
             let desc = failure.definition.trim().replace(/\s+/g, ' ');
             if (!desc.endsWith('.')) desc += '.';
             if (desc.length < 120) {
                 const combined = `${desc} Neutralize ${failure.title} risks with deterministic runtime controls.`;
-                return combined.length <= 158 ? combined : desc;
+                return combined.length <= 155 ? combined : desc;
             }
-            return desc.length > 158 ? desc.slice(0, 155) + '...' : desc;
+            return desc.length > 155 ? desc.slice(0, 152) + '...' : desc;
         })(),
         alternates: { canonical: `https://www.richardewing.io/failures/${slug}` },
         openGraph: {
@@ -36,13 +40,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             url: `https://www.richardewing.io/failures/${slug}`,
             siteName: 'Richard Ewing',
             type: 'article',
-            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
         },
         twitter: {
             card: 'summary_large_image',
             title: `${failure.title} | Operational Failure Signature`,
             description: failure.definition.slice(0, 155).replace(/\n/g, ' '),
-            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
         }
     };
 }

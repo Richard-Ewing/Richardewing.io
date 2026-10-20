@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ToolsContent from './tools-content';
 
 export const metadata: Metadata = {
-  title: 'Diagnostics & Tools: AI Spend & Unit Economics',
+  title: 'AI Spend & Unit Economics Diagnostics',
   description:
     'Interactive tools to quantify AI unit economics, identify engineering waste, and model ROI. Free diagnostics for technology and finance leaders.',
   alternates: {

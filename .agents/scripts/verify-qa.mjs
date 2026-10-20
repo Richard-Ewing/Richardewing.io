@@ -263,8 +263,11 @@ if (fs.existsSync(siteDataPath) && fs.existsSync(sitemapPath)) {
       ? [...disallowedBlock[1].matchAll(/['"]([^'"]+)['"]/g)].map(m => m[1])
       : []
   );
-  const navBlock = siteDataContent.match(/export\s+const\s+PRIMARY_NAV[\s\S]*?\];/);
-  if (navBlock) {
+  const navBlock = siteDataContent.match(/export\s+const\s+nav\s*=\s*\[[\s\S]*?\];/);
+  if (!navBlock) {
+    console.error(`[SEO ERROR] Could not locate 'export const nav = [...]' in lib/site-data.ts!`);
+    errorCount++;
+  } else {
     const navHrefs = [...navBlock[0].matchAll(/href:\s*['"]([^'"]+)['"]/g)].map(m => m[1]);
     for (const href of navHrefs) {
       const cleanHref = href.split('#')[0];
@@ -316,7 +319,7 @@ if (fs.existsSync(execTermsPath) && fs.existsSync(pillarsMappingPath) && fs.exis
   }
 }
 
-// 7D. Zero Double-Branded <title> Tags
+// 7D. Zero Double-Branded <title> Tags & 7E. Local Image Asset Existence
 function getAppRouteFiles(dir) {
   let res = [];
   for (const f of fs.readdirSync(dir)) {
@@ -326,7 +329,8 @@ function getAppRouteFiles(dir) {
   }
   return res;
 }
-for (const rf of getAppRouteFiles(path.join(rootDir, 'app'))) {
+const allAppRouteFiles = getAppRouteFiles(path.join(rootDir, 'app'));
+for (const rf of allAppRouteFiles) {
   const rel = path.relative(rootDir, rf).replace(/\\/g, '/');
   if (rel === 'app/layout.tsx') continue;
   const rc = fs.readFileSync(rf, 'utf8');
@@ -340,18 +344,42 @@ for (const rf of getAppRouteFiles(path.join(rootDir, 'app'))) {
   }
 }
 
-// 7E. JSON-LD Image Asset Existence
-for (const schemaFile of ['app/layout.tsx', 'app/lib/schemas.ts']) {
-  const sfPath = path.join(rootDir, schemaFile);
+// 7E. Local Image Asset Existence across app/ routes and schemas
+for (const sfPath of [...allAppRouteFiles, path.join(rootDir, 'app/lib/schemas.ts')]) {
   if (fs.existsSync(sfPath)) {
+    const rel = path.relative(rootDir, sfPath).replace(/\\/g, '/');
     const sfc = fs.readFileSync(sfPath, 'utf8');
     const assetRefs = [...sfc.matchAll(/https:\/\/www\.richardewing\.io(\/(?:assets|images)\/[^'"\s)]+)/g)].map(m => m[1]);
     for (const ref of assetRefs) {
       const diskPath = path.join(rootDir, 'public', ref);
       if (!fs.existsSync(diskPath)) {
-        console.error(`[SEO ERROR] Broken local image asset '${ref}' referenced in ${schemaFile} (missing at public${ref})!`);
+        console.error(`[SEO ERROR] Broken local image asset '${ref}' referenced in ${rel} (missing at public${ref})!`);
         errorCount++;
       }
+    }
+  }
+}
+
+// 7F. Root Layout Keyword Isolation & Site-Shell SSR Crawlability
+const rootLayoutPath = path.join(rootDir, 'app/layout.tsx');
+if (fs.existsSync(rootLayoutPath)) {
+  const rlc = fs.readFileSync(rootLayoutPath, 'utf8');
+  if (rlc.includes('homepageKeywords')) {
+    console.error(`[SEO ERROR] app/layout.tsx must not inject homepageKeywords globally! Keep homepageKeywords scoped to app/page.tsx.`);
+    errorCount++;
+  }
+}
+const siteShellPath = path.join(rootDir, 'components/site-shell.tsx');
+if (fs.existsSync(siteShellPath)) {
+  const ssc = fs.readFileSync(siteShellPath, 'utf8');
+  if (/\{\s*openGroup\s*===\s*group\.label\s*\?/.test(ssc)) {
+    console.error(`[SEO ERROR] components/site-shell.tsx must not conditionally unmount dropdown links behind '{openGroup === group.label ?'! Render in SSR DOM for crawlability.`);
+    errorCount++;
+  }
+  for (const redirectLegal of ['/privacy', '/terms', '/disclaimers']) {
+    if (new RegExp(`href=['"]${redirectLegal}['"]`).test(ssc)) {
+      console.error(`[SEO ERROR] components/site-shell.tsx contains redirect link '${redirectLegal}'! Link directly to '/legal'.`);
+      errorCount++;
     }
   }
 }

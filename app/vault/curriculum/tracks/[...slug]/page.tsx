@@ -57,13 +57,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             description: metaDescription,
             url: `https://www.richardewing.io/vault/curriculum/tracks/${slug.join('/')}`,
             type: 'article',
-            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
         },
         twitter: {
             card: 'summary_large_image',
             title: `${mod.title} | Curriculum | Richard Ewing`,
             description: metaDescription,
-            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
         }
     };
 }

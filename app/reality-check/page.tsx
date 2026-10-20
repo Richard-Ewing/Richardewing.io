@@ -15,6 +15,14 @@ export const metadata: Metadata = {
       'Quantify your enterprise AI economics and uncover hidden engineering leaks in under 2 minutes.',
     url: 'https://www.richardewing.io/reality-check',
     type: 'website',
+    images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Reality Check: AI Economics Diagnostic | Richard Ewing',
+    description:
+      'Quantify your enterprise AI economics and uncover hidden engineering leaks in under 2 minutes.',
+    images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
 
@@ -34,11 +42,24 @@ export default function RealityCheckPage() {
       'Quantify your AI unit economics, identify engineering waste, and generate a prioritized action plan.',
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+      { '@type': 'ListItem', position: 2, name: 'Reality Check', item: 'https://www.richardewing.io/reality-check' },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Section */}

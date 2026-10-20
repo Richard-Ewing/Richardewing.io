@@ -11,13 +11,13 @@ export const metadata: Metadata = {
         description: 'System prompts and operational frameworks for CTOs to audit technical debt and R&D capital.',
         url: 'https://www.richardewing.io/system-prompts',
         type: 'website',
-        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+        images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Executive AI System Prompts | Richard Ewing',
         description: 'System prompts and operational frameworks for CTOs to audit technical debt and R&D capital.',
-        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+        images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
     },
 };
 

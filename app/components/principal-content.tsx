@@ -142,7 +142,7 @@ export default function PrincipalContent() {
                                 {/* Animated glow ring */}
                                 <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500 via-cobalt to-cyan-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition-opacity duration-500 animate-pulse" />
                                 <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl bg-zinc-200 border-2 border-zinc-500 overflow-hidden relative">
-                                    <Image src="/assets/images/headshot.jpg" alt="Richard Ewing" fill className="object-cover grayscale group-hover:grayscale-0 transition duration-500" />
+                                    <Image src="/assets/images/richard-ewing-headshot.jpg" alt="Richard Ewing" fill className="object-cover grayscale group-hover:grayscale-0 transition duration-500" />
                                 </div>
                             </div>
                             <div>

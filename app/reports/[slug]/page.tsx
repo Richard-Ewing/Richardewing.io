@@ -7,11 +7,11 @@ import { ExportToPDFButton } from '@/components/ExportToPDFButton';
 import type { Metadata } from 'next';
 
 const reportMeta: Record<string, { title: string; description: string }> = {
-    'ai-governance-maturity-index': { title: 'AI Governance Maturity Index | Enterprise Benchmark Report', description: 'Percentile distributions and operational risks for AI governance maturity across SaaS and Healthcare sectors. Board-ready data from live telemetry.' },
-    'product-debt-report': { title: 'Product Debt Report | R&D Capital Analysis', description: 'Aggregated product debt benchmarks from enterprise telemetry. Quantify your technical debt in dollar terms vs. industry percentiles.' },
-    'hallucination-debt-index': { title: 'Hallucination Debt Index | AI Output Liability Benchmark', description: 'Track accumulated liability from unverified AI outputs in production. Percentile data from live enterprise AI deployments.' },
-    'runtime-governance-benchmark': { title: 'Runtime Governance Benchmark | AI Agent Control Report', description: 'Operational risk benchmarks for AI agent governance. Deterministic control layer metrics across enterprise deployments.' },
-    'ai-margin-compression-report': { title: 'AI Margin Compression Report | COGS & Profitability Analysis', description: 'How AI inference costs compress gross margins. Enterprise benchmarks for AI feature economics and cost attribution.' },
+    'ai-governance-maturity-index': { title: 'AI Governance Maturity Index Benchmark', description: 'Percentile distributions and operational risks for AI governance maturity across SaaS and Healthcare sectors. Board-ready data from live telemetry.' },
+    'product-debt-report': { title: 'Product Debt Report & R&D Capital Index', description: 'Aggregated product debt benchmarks from enterprise telemetry. Quantify your technical debt in dollar terms vs. industry percentiles.' },
+    'hallucination-debt-index': { title: 'Hallucination Debt Index & Liability', description: 'Track accumulated liability from unverified AI outputs in production. Percentile data from live enterprise AI deployments.' },
+    'runtime-governance-benchmark': { title: 'Runtime Governance & AI Agent Benchmark', description: 'Operational risk benchmarks for AI agent governance. Deterministic control layer metrics across enterprise deployments.' },
+    'ai-margin-compression-report': { title: 'AI Margin Compression & COGS Benchmark', description: 'How AI inference costs compress gross margins. Enterprise benchmarks for AI feature economics and cost attribution.' },
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -27,13 +27,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             description: meta.description,
             url: `https://www.richardewing.io/reports/${slug}`,
             type: 'article',
-            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
         },
         twitter: {
             card: 'summary_large_image',
             title: meta.title,
             description: meta.description,
-            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
         }
     };
 }

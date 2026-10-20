@@ -1,0 +1,3 @@
+[submodule "synthetic-enterprise-cognition"]
+	path = synthetic-enterprise-cognition
+	url = https://github.com/Richard-Ewing/synthetic-enterprise-cognition.git

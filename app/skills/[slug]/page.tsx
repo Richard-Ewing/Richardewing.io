@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const descriptionText = skill.description.slice(0, 155).replace(/\n/g, ' ');
 
     const cleanTitle = skill.title;
-    const baseTitle = cleanTitle.endsWith('System') ? cleanTitle : `${cleanTitle} System`;
+    const baseTitle = cleanTitle.endsWith('System') || cleanTitle.length > 37 ? cleanTitle : `${cleanTitle} System`;
     const titleStr = `${baseTitle} | Richard Ewing`;
 
     return {
@@ -32,9 +32,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             if (!desc.endsWith('.')) desc += '.';
             if (desc.length < 120) {
                 const combined = `${desc} Install deterministic runtime governance controls to prevent AI failures.`;
-                return combined.length <= 158 ? combined : desc;
+                return combined.length <= 155 ? combined : desc;
             }
-            return desc.length > 158 ? desc.slice(0, 155) + '...' : desc;
+            return desc.length > 155 ? desc.slice(0, 152) + '...' : desc;
         })(),
         alternates: { canonical: `https://www.richardewing.io/skills/${slug}` },
         openGraph: {
@@ -43,13 +43,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             url: `https://www.richardewing.io/skills/${slug}`,
             siteName: 'Richard Ewing',
             type: 'article',
-            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
         },
         twitter: {
             card: 'summary_large_image',
             title: `${skill.title} | Governance System`,
             description: descriptionText,
-            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
         }
     };
 }

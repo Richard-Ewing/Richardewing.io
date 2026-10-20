@@ -12,13 +12,13 @@ export const metadata: Metadata = {
         url: 'https://www.richardewing.io/exogram/demo',
         siteName: 'Richard Ewing',
         type: 'website',
-        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+        images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Exogram Live Sandbox Demo | Richard Ewing',
         description: 'Schedule a live demonstration of Exogram runtime AI cost caps, policy-as-code gateway enforcement, and XML context boundaries.',
-        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+        images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
     },
 };
 

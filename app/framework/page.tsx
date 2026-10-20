@@ -15,6 +15,14 @@ export const metadata: Metadata = {
       'A practical model for pricing, building, and governing AI. Turn AI from an uncontrolled cost center into compound capital.',
     url: 'https://www.richardewing.io/framework',
     type: 'website',
+    images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Governance & Economics Framework | Richard Ewing',
+    description:
+      'A practical model for pricing, building, and governing AI. Turn AI from an uncontrolled cost center into compound capital.',
+    images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
 
@@ -31,11 +39,24 @@ export default function FrameworkPage() {
     url: 'https://www.richardewing.io/framework',
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+      { '@type': 'ListItem', position: 2, name: 'Framework', item: 'https://www.richardewing.io/framework' },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Section */}

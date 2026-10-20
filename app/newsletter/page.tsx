@@ -15,6 +15,14 @@ export const metadata: Metadata = {
       'Weekly briefings on AI unit economics, R&D capital, and software profitability.',
     url: 'https://www.richardewing.io/newsletter',
     type: 'website',
+    images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The AI Economist Newsletter & Briefings | Richard Ewing',
+    description:
+      'Weekly executive briefings on AI unit economics, R&D capital allocation, and software profitability.',
+    images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
 
@@ -51,11 +59,24 @@ export default function NewsletterPage() {
     url: 'https://www.richardewing.io/newsletter',
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+      { '@type': 'ListItem', position: 2, name: 'Newsletter', item: 'https://www.richardewing.io/newsletter' },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Section */}

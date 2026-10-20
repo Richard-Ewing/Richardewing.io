@@ -5,7 +5,7 @@ import { ConceptExplorer } from '@/components/concepts/concept-explorer';
 export const metadata: Metadata = {
   title: 'Canonical Concepts & Research Graph',
   description:
-    'The intellectual operating system of Richard Ewing’s research corpus. Broad industry concepts serve as discovery entry points, bridging directly into original canonical frameworks and diagnostic tools.',
+    'The intellectual operating system of Richard Ewing’s research corpus: canonical frameworks, financial tax models, and AI unit economics diagnostics.',
   alternates: {
     canonical: 'https://www.richardewing.io/concepts',
   },
@@ -15,6 +15,14 @@ export const metadata: Metadata = {
       'Index of original frameworks, financial tax models, and governance concepts across AI economics and software capital.',
     url: 'https://www.richardewing.io/concepts',
     type: 'website',
+    images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Canonical Concepts & Research Graph | Richard Ewing',
+    description:
+      'Index of original frameworks, financial tax models, and governance concepts across AI economics and software capital.',
+    images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
 
@@ -33,11 +41,24 @@ export default function ResearchConceptsIndexPage() {
     },
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+      { '@type': 'ListItem', position: 2, name: 'Concepts', item: 'https://www.richardewing.io/concepts' },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Section */}

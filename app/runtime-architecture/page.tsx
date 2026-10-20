@@ -22,13 +22,13 @@ export const metadata: Metadata = {
         title: 'The 4-Layer Agent Runtime Architecture',
         description: 'Identity × Skill × Tool × Environment - the canonical runtime model for deterministic agentic execution.',
         url: 'https://www.richardewing.io/runtime-architecture',
-        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+        images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'The 4-Layer Agent Runtime Architecture',
         description: 'Identity × Skill × Tool × Environment - the canonical runtime model for deterministic agentic execution.',
-        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+        images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
     },
     alternates: {
         canonical: 'https://www.richardewing.io/runtime-architecture',

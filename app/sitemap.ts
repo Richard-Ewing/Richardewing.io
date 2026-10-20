@@ -292,7 +292,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         .forEach(article => add(`${baseUrl}/articles/${article.slug}`, 'monthly', 0.8));
 
     // === COMPARE PAGES (Tier A Indexed Only) ===
-    const tierASlugs: string[] = (compareCategorized.tierA_indexed as string[]) || [];
+    const tierASlugs: string[] = [
+        ...((compareCategorized.tierA_indexed as string[]) || []),
+        'exogram-vs-lakera',
+        'exogram-vs-langchain',
+        'advisory-vs-mckinsey',
+        'advisory-vs-bain',
+        'advisory-vs-big4',
+        'advisory-vs-gartner',
+        'advisory-vs-traditional-fractional-cto',
+    ];
     tierASlugs.forEach(slug => add(`${baseUrl}/compare/${slug}`, 'monthly', 0.8));
 
     // === DYNAMICALLY GENERATED PAGES ===

@@ -15,7 +15,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     if (!doc) return { title: 'Not Found' };
 
     const cleanTitle = doc.title;
-    const titleStr = `${cleanTitle} - Exogram Docs | Richard Ewing`;
+    const titleStr = cleanTitle.length > 29
+        ? `${cleanTitle} | Richard Ewing`
+        : `${cleanTitle} - Exogram Docs | Richard Ewing`;
     const finalDesc = (() => {
         let desc = doc.description.trim().replace(/\s+/g, ' ');
         if (!desc.endsWith('.')) desc += '.';
@@ -30,13 +32,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             ];
             for (const suffix of candidateSuffixes) {
                 const combined = desc + suffix;
-                if (combined.length >= 140 && combined.length <= 158) {
+                if (combined.length >= 140 && combined.length <= 155) {
                     return combined;
                 }
             }
             return (desc + ' Enforce deterministic runtime controls and protect system reliability.').slice(0, 155);
         }
-        return desc.length > 158 ? desc.slice(0, 155) + '...' : desc;
+        return desc.length > 155 ? desc.slice(0, 152) + '...' : desc;
     })();
 
     return {
@@ -49,13 +51,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             url: `https://www.richardewing.io/exogram/docs/${doc.slug}`,
             siteName: 'Richard Ewing',
             type: 'article',
-            images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
         },
         twitter: {
             card: 'summary_large_image',
             title: titleStr,
             description: finalDesc,
-            images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
         }
     };
 }

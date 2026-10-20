@@ -14,6 +14,14 @@ export const metadata: Metadata = {
       'Explore software platforms, executive case studies, and enterprise AI governance systems built by Richard Ewing.',
     url: 'https://www.richardewing.io/portfolio',
     type: 'website',
+    images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Executive Portfolio: Systems & Ventures | Richard Ewing',
+    description:
+      'Explore software platforms, executive case studies, and enterprise AI governance systems built by Richard Ewing.',
+    images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
 
@@ -80,11 +88,24 @@ export default function PortfolioPage() {
     },
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+      { '@type': 'ListItem', position: 2, name: 'Portfolio', item: 'https://www.richardewing.io/portfolio' },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Header */}

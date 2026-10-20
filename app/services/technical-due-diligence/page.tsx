@@ -17,13 +17,13 @@ export const metadata: Metadata = {
         description: 'Independent 2-week forensic review of target product P&Ls, Zombie Feature load, and AI unit economics. Uncover hidden liabilities before term sheet execution.',
         url: 'https://www.richardewing.io/services/technical-due-diligence',
         type: 'website',
-        images: [{ url: 'https://www.richardewing.io/assets/images/headshot.jpg' }],
+        images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'PE & M&A Product P&L & Technical Due Diligence | Richard Ewing',
         description: 'Independent 2-week forensic review of target product P&Ls, Zombie Feature load, and AI unit economics. Uncover hidden liabilities before term sheet execution.',
-        images: ['https://www.richardewing.io/assets/images/headshot.jpg'],
+        images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
     }
 };
 
