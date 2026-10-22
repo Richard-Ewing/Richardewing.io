@@ -6,9 +6,14 @@ import { supabaseAdmin } from '@/lib/supabase';
 
 export const dynamic = 'force-dynamic';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_dummy_key_for_build_passing');
+function getStripe() {
+    return new Stripe(process.env.STRIPE_SECRET_KEY || '', {
+        httpClient: Stripe.createFetchHttpClient(),
+    });
+}
 
 export async function POST(req: Request) {
+    const stripe = getStripe();
     const body = await req.text();
     const signature = (await headers()).get('Stripe-Signature') as string;
 

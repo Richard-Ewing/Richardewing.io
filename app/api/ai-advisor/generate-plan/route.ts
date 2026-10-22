@@ -1,12 +1,10 @@
 import { NextResponse } from 'next/server';
 import { auth } from '@clerk/nextjs/server';
-import { GoogleGenAI } from '@google/genai';
+import { client } from '@/app/lib/gemini';
 import { supabaseAdmin } from '@/lib/supabase';
 import { storeBusinessFact } from '@/lib/exogram';
 
 export const dynamic = 'force-dynamic';
-
-const client = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
 
 export async function POST(req: Request) {
     const { userId } = await auth();

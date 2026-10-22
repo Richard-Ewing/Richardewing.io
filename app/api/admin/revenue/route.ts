@@ -4,7 +4,11 @@ import { auth } from '@clerk/nextjs/server';
 
 export const dynamic = 'force-dynamic';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_dummy_key_for_build_passing');
+function getStripe() {
+    return new Stripe(process.env.STRIPE_SECRET_KEY || '', {
+        httpClient: Stripe.createFetchHttpClient(),
+    });
+}
 
 // ─── Product categorisation helpers ───────────────────────────────────────────
 
@@ -66,6 +70,7 @@ function categorisePayment(
 
 export async function GET(req: Request) {
     try {
+        const stripe = getStripe();
         // ── Auth: CRON_SECRET bearer OR Clerk session ─────────────────────
         const authHeader = req.headers.get('authorization');
         const hasCronAuth = authHeader === `Bearer ${process.env.CRON_SECRET}`;
