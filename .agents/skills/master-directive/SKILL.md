@@ -270,3 +270,54 @@ To leverage Google Ultra and NotebookLM across all platform publications:
 2. **Audio Deep Dive Integration**: Flagship publications must embed `NotebookLMAudioPlayer` containers configured to stream generated 2-host audio overviews from `public/audio/` or external audio CDNs.
 3. **Executive Slide Viewer Scaffolding**: Transform key findings into `NotebookLMSlides` interactive carousel decks with metric callouts and speaker context notes.
 4. **Autonomous Media Synchronization**: When new audio or slide assets are generated, automatically wire component props without disrupting static pre-rendering.
+
+---
+
+## 14. The Sovereign Spec-Driven Development (SDD) & AI-SDLC Kernel (Zero Vibe Coding Protocol)
+
+All software development and code modifications across this workspace strictly follow the **AI-SDLC (AI Software Development Life Cycle)** and **Spec-Driven Development (SDD)** protocol based on the GitHub Spec Kit framework (`specify`, `plan`, `tasks`, `implement`, `converge`). Ad-hoc prompt-and-pray "vibe coding" is strictly prohibited.
+
+### A. The Founder-Agent Division of Responsibility
+1. **The User (Richard) Is the Founder, CEO, and Product Visionary**:
+   - The user provides high-level business intent, operational pain points, commercial priorities, and desired user outcomes.
+   - The user NEVER needs to write low-level technical specifications, component architectures, CSS flexbox rules, or debugging instructions.
+2. **The AI Agent Is the Staff Principal Architect & Lead Engineer**:
+   - The agent takes high-level user intent and autonomously translates it into a rigorous Spec-Driven contract before touching code.
+   - The agent is responsible for architecture, type safety, edge case handling, constraint validation, and deterministic execution.
+
+### B. The 5-Phase AI-SDLC Lifecycle
+Before making code mutations, the agent executes this lifecycle:
+1. **Constitution Check**: Enforce non-negotiable project laws:
+   - Absolute zero em-dashes (`\u2013`, `\u2014`).
+   - Cloudflare Workers V8 memory isolates (zero Node.js POSIX assumptions, prerender safety).
+   - Next.js 16 App Router Server Components by default with `"use client"` leaf isolation.
+   - Human Writing Standard (HWS v2.0 / REWS v2.0) and Warm Cream design tokens.
+   - Absolute zero secret key or credential leakage.
+2. **Specify (`specify`)**: Draft the feature contract defining:
+   - User Story and Business Intent.
+   - Acceptance Criteria (clear checkbox checklist).
+   - **Explicit Out-of-Scope Boundaries (Blast Radius Guard)**: Defining strictly what the agent is FORBIDDEN from touching, modifying, or refactoring.
+   - Edge Cases and Failure Modes (network drops, missing query parameters, mobile viewports).
+3. **Plan (`plan`)**: Detail the architectural execution:
+   - Data contracts, component interfaces, state flow, and URL parameters.
+   - Impacted file inventory.
+   - Architecture Decision Record (ADR) requirement check.
+4. **Tasks (`tasks`)**: Decompose the plan into granular, checkable, testable bite-sized units.
+5. **Implement & Converge (`implement` & `converge`)**:
+   - Execute task-by-task with atomic precision.
+   - Karpathy red/green probes in `.scratch/` where necessary.
+   - Run mechanical QA verification (`node .agents/scripts/verify-qa.mjs`).
+   - Full build (`npm run build`) and live Cloudflare deployment (`npx wrangler deploy`).
+   - Validate against the original Acceptance Criteria to ensure zero defect convergence.
+
+---
+
+## 15. The Executive Operator Instincts Mandate (Audit & Reporting Protocol)
+
+Every report, telemetry audit, or analytics inquiry prompt MUST lead with an **Operator Instincts** executive readout before presenting raw data tables:
+
+1. **Signal vs. Noise Filter**: Cut through crawler botnets, AI training scrapers (ElevenLabs, SiteList, ShapBot), and search spiders to isolate verified human visitors.
+2. **The Behavioral Read**: Interpret the psychological and operational intent of visitors (what CEOs, CFOs, VPs of Operations, and Engineering Leads are looking for when exploring diagnostics and essays).
+3. **The Revenue Bottleneck**: Diagnose conversion friction, checkout stalls (such as Stripe drop-offs), and missing scheduling links.
+4. **The Perimeter & Security Scan**: Audit hostile scanner probes, WAF threat mitigations, and zero-day containment.
+5. **The Recommended Next Move**: Deliver one or two concrete, high-leverage operational fixes to execute immediately.

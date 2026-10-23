@@ -282,11 +282,14 @@ export function RealityCheckDiagnostic() {
 
               <div className="pt-2">
                 <p className="text-xs text-[var(--muted)] mb-3">
-                  Send this scorecard to your team or discuss a tailored 2-week pricing sprint.
+                  Lock in a confidential 30-minute review with Richard to pinpoint your primary cost leaks.
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <Link className="button button-gold" href="/advisory">
-                    Discuss with Richard ↗
+                  <Link
+                    className="button button-gold"
+                    href={`/schedule?source=reality-check&leak=${savingsOpportunity}`}
+                  >
+                    Book a 30-Minute Triage on Cal.com ↗
                   </Link>
                   <button
                     className="button button-outline"

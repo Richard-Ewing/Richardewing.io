@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Mail, Linkedin, ShieldCheck, Clock, CheckCircle2 } from 'lucide-react';
 import CalEmbed from '@/app/components/client/CalEmbed';
 import FAQItem from '@/app/components/FAQItem';
+import { ScheduleDiagnosticBanner } from '@/components/schedule/schedule-diagnostic-banner';
 
 export const metadata: Metadata = {
   title: 'Schedule Executive Advisory',
@@ -111,6 +112,10 @@ export default function SchedulePage() {
       {/* Booking Container Grid */}
       <section className="section">
         <div className="max-w-5xl mx-auto">
+          <Suspense fallback={null}>
+            <ScheduleDiagnosticBanner />
+          </Suspense>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
             {/* Left: Cal.com Embed */}
             <div className="lg:col-span-8 bg-white border border-[var(--line)] rounded-2xl p-4 sm:p-6 shadow-sm min-h-[660px] flex flex-col relative overflow-hidden">

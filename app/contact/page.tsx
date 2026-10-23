@@ -111,6 +111,24 @@ export default function ContactPage() {
               starts with a frank examination of operational reality and unit economics.
             </p>
 
+            {/* Fast Track Cal.com Booking Card */}
+            <div className="p-6 bg-[var(--forest2)] text-white rounded-xl space-y-3 shadow-md">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-[#d8c7a8]">
+                Fast Track : Direct Calendar
+              </span>
+              <h3 className="font-serif text-xl font-medium text-white">
+                Book Directly on Richard&apos;s Calendar
+              </h3>
+              <p className="text-xs text-zinc-300 leading-relaxed">
+                Skip the email wait. Select an immediate 30-minute Rapid Gut-Check or advisory session on Cal.com.
+              </p>
+              <div className="pt-2">
+                <Link className="button button-gold w-full text-center justify-center block" href="/schedule">
+                  Open Cal.com Calendar ↗
+                </Link>
+              </div>
+            </div>
+
             <div className="p-6 bg-[#faf8f2] border border-[var(--line)] rounded-xl space-y-4 text-xs">
               <div className="font-serif text-base font-medium text-[var(--ink)]">
                 Direct Channels:

@@ -149,8 +149,11 @@ export default function RealityCheckPage() {
           P&L.
         </p>
         <div className="actions center">
-          <Link className="button button-gold" href="/advisory">
-            Explore Executive Advisory ↗
+          <Link className="button button-gold" href="/schedule?source=reality-check">
+            Book a 30-Minute Triage on Cal.com ↗
+          </Link>
+          <Link className="button button-outline" href="/advisory">
+            Explore Full Advisory Sprints
           </Link>
         </div>
       </section>
