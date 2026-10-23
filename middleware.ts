@@ -62,6 +62,10 @@ const POISONED_CACHE_URLS = [
   'https://www.richardewing.io/legal?_rsc=FaxdFzspToQPQGgF',
   'https://www.richardewing.io/glossary/pillars/engineering-leadership',
   'https://www.richardewing.io/glossary/pillars/engineering-leadership?_rsc=mgLEKDLYu_HEislZ',
+  'https://www.richardewing.io/reality-check',
+  'https://richardewing.io/reality-check',
+  'https://www.richardewing.io/contact',
+  'https://richardewing.io/contact',
 ];
 
 function isAuthOrDynamicPath(pathname: string): boolean {
@@ -148,7 +152,14 @@ export default async function middleware(req: NextRequest, event: NextFetchEvent
   const isLocalhost = host.includes('localhost') || host.includes('127.0.0.1');
   if ((!isLocalhost && host !== 'www.richardewing.io') || (targetPath !== pathname && !isLocalhost)) {
     const destination = new URL(targetPath + req.nextUrl.search, 'https://www.richardewing.io');
-    return NextResponse.redirect(destination, 301);
+    if (destination.href === req.nextUrl.href) {
+      // Physical guard: never redirect to the exact same URL
+      return NextResponse.next();
+    }
+    const redirectRes = NextResponse.redirect(destination, 301);
+    redirectRes.headers.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+    redirectRes.headers.set('Cloudflare-CDN-Cache-Control', 'no-store');
+    return redirectRes;
   }
 
   const userAgent = (req.headers.get('user-agent') || '').toLowerCase();

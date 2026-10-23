@@ -321,3 +321,27 @@ Every report, telemetry audit, or analytics inquiry prompt MUST lead with an **O
 3. **The Revenue Bottleneck**: Diagnose conversion friction, checkout stalls (such as Stripe drop-offs), and missing scheduling links.
 4. **The Perimeter & Security Scan**: Audit hostile scanner probes, WAF threat mitigations, and zero-day containment.
 5. **The Recommended Next Move**: Deliver one or two concrete, high-leverage operational fixes to execute immediately.
+
+---
+
+## 16. Cal.com Scheduling Authority & Diagnostic Context Preservation
+
+1. **Native Scheduling Authority**: `richardewing.io` uses **Cal.com** (`cal.com/richard-ewing-2cevwb`), embedded locally at `/schedule`. Never suggest generic contact forms or third-party meeting links when executive scheduling is requested.
+2. **Diagnostic Parameter Bridge**: Every diagnostic tool on the platform (such as `/reality-check`, `/tools/pdi`, `/tools/ev-se`, `/tools/cfo-capitalization-audit`) must deep-link directly to `/schedule` with calculated context passed as URL parameters (e.g. `?source=reality-check&leak=${savingsOpportunity}`).
+3. **Banner Continuity**: `/schedule` must always mount `<ScheduleDiagnosticBanner />` to display the specific detected savings opportunity or audit risk directly above the Cal.com embed.
+
+---
+
+## 17. Cloudflare Deployment Resilience & Machine Credential Invariant
+
+1. **API Token Over Browser OAuth**: For non-interactive agent execution, `CLOUDFLARE_API_TOKEN` in `.env.local` (or system environment variables) is the primary authentication mechanism for `npx wrangler deploy`.
+2. **OAuth Fallback Handling**: If Wrangler reports an expired OAuth token in a non-interactive shell, notify the user with the permanent API token setup instructions instead of assuming recurring browser logins.
+
+---
+
+## 18. Edge Redirect Immunity & CDN Cache Protection Invariant
+
+1. **Zero Redirect Loops**: Next.js edge middleware must physically verify that `destination.href !== req.nextUrl.href` before returning any 301 or 308 redirect response.
+2. **CDN Cache Shield**: Every redirect returned by edge middleware must explicitly set `Cloudflare-CDN-Cache-Control: no-store` and `Cache-Control: no-cache, no-store, must-revalidate` so that Cloudflare CDN POP caches never store intermediate redirects.
+3. **Automated Cache Self-Healing**: Maintain `POISONED_CACHE_URLS` in `middleware.ts` using `caches.default.delete(url)` to automatically evict stale or corrupted edge cache keys on incoming requests.
+
