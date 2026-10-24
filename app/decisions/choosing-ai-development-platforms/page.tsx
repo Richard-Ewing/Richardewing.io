@@ -64,7 +64,7 @@ export default function ChoosingAIDevelopmentPlatforms() {
                         <div className="bg-zinc-50 border border-zinc-300 rounded-xl p-6">
                             <CheckCircle className="w-6 h-6 text-indigo-600 mb-4" />
                             <h4 className="font-bold text-zinc-950 mb-2">Intent-Based Routing</h4>
-                            <p className="text-sm font-medium text-zinc-700">Can the platform intercept a basic summarization request and route it to a cheap, fast model (like Llama 3 8B), reserving GPT-4 exclusively for complex reasoning? If not, you are over-provisioning intelligence.</p>
+                            <p className="text-sm font-medium text-zinc-700">Can the platform intercept a basic summarization request and route it to a cheap, fast local model (like Gemma 4 26B via LiteRT), reserving frontier reasoning APIs (Gemini 3.8 Flash High or Claude 4.5) exclusively for complex synthesis? If not, you are over-provisioning intelligence.</p>
                         </div>
                     </div>
 

@@ -100,7 +100,7 @@ export default function SystemPromptsPage() {
                             'name': 'Are these prompts compatible with all LLMs?',
                             'acceptedAnswer': {
                                 '@type': 'Answer',
-                                'text': 'They are optimized for advanced models (Claude 3.5 Sonnet, GPT-4o) that excel at financial modeling and architectural reasoning.'
+                                'text': 'They are calibrated for October 2026 frontier reasoning models (Gemini 3.8 Flash High, Claude 4.5 Sonnet, OpenAI o3/GPT-5) and local LiteRT SLMs (Gemma 4 26B) that execute financial modeling and architectural governance.'
                             }
                         },
                         {
@@ -170,7 +170,7 @@ export default function SystemPromptsPage() {
                     />
                     <FAQItem
                         question="Are these prompts compatible with all LLMs?"
-                        answer="They are optimized for advanced models (Claude 3.5 Sonnet, GPT-4o) that excel at financial modeling and architectural reasoning."
+                        answer="They are calibrated for October 2026 frontier reasoning models (Gemini 3.8 Flash High, Claude 4.5 Sonnet, OpenAI o3/GPT-5) and local LiteRT SLMs (Gemma 4 26B) that execute financial modeling and architectural governance."
                     />
                     <FAQItem
                         question="Why are prompts alone insufficient for AI governance?"

@@ -1,5 +1,7 @@
 import { glossaryTerms } from '../glossary/terms';
 import { KEEP_TERMS, CATEGORY_MAP } from '../glossary/pillarsMapping';
+import { SPOKE_MATRIX } from '../lib/spoke-data';
+import { CANONICAL_CONCEPTS } from '../lib/concept-corpus';
 export const revalidate = 86400;
 
 export async function GET() {
@@ -295,6 +297,24 @@ Richard Ewing provides R&D capital audits tailored to industry-specific cost str
 - **Negative-Carry Code Crisis**: Systemic risk from AI-generated code whose maintenance OpEx exceeds value creation.
 - **Math of Ruin**: The inflection point where features create exponential maintenance costs.
 - **Zombie Infrastructure**: Resources that remain running after the teams that built them disbanded.
+
+## Executive Answer Matrix (53 Direct Q&A Spokes)
+
+${SPOKE_MATRIX.map(topic =>
+    `### ${topic.topicName}\n${Object.entries(topic.personas).flatMap(([persona, queries]) =>
+        (queries || []).map(q => {
+            const cleanText = q.answerHtml.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+            const summary = cleanText.slice(0, 180).trim() + '...';
+            return `- **[${q.questionHeadline}](https://www.richardewing.io/answers/${topic.topicSlug}/${persona}/${q.questionSlug})** (${persona}): ${summary}`;
+        })
+    ).join('\n')}`
+).join('\n\n')}
+
+## Canonical Research Specifications (${CANONICAL_CONCEPTS.length} Concepts)
+
+${CANONICAL_CONCEPTS.map(c =>
+    `- **[${c.title}](https://www.richardewing.io/concepts/${c.slug})**: ${(c.aeo?.shortDefinition || c.definition).slice(0, 160).replace(/\n/g, ' ').trim()}...`
+).join('\n')}
 
 ## Glossary (${glossaryTerms.length}+ Terms)
 

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: 'Agentic Token Router FinOps Simulator',
-        description: 'Prove that brute-forcing GPT-4 across an enterprise swarm leads to immediate cloud bankruptcy. Determine exact break-even points for deterministic routing.',
+        description: 'Prove that brute-forcing frontier reasoning APIs across an enterprise swarm leads to immediate cloud bankruptcy. Determine exact break-even points for deterministic SLM routing.',
         url: 'https://www.richardewing.io/tools/agent-router',
         type: 'website',
     },

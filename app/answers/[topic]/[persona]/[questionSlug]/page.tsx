@@ -35,15 +35,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     const headlineTrimmed = query.questionHeadline;
 
+    const cleanAnswerText = query.answerHtml
+        .replace(/<[^>]+>/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    const extractableSentence =
+        cleanAnswerText.split(/(?<=\.)\s+/)[0] || cleanAnswerText.slice(0, 140);
+    const metaDesc = (() => {
+        const base = extractableSentence.length <= 155
+            ? extractableSentence
+            : extractableSentence.slice(0, 152).trim() + '...';
+        if (base.length >= 120) return base;
+        const suffix = ` Forensic R&D and AI unit economics analysis by Richard Ewing.`;
+        const combined = (base + suffix).trim();
+        return combined.length <= 155 ? combined : combined.slice(0, 152).trim() + '...';
+    })();
+
     return {
         title: headlineTrimmed,
-        description: `Forensic R&D analysis on: ${query.questionHeadline.slice(0, 80)}. Spot margin leaks and engineering execution risks.`,
+        description: metaDesc,
         alternates: {
             canonical: `https://www.richardewing.io/answers/${p.topic}/${p.persona}/${p.questionSlug}`,
         },
         openGraph: {
             title: headlineTrimmed,
-            description: `Executive breakdown and financial execution models for: ${query.questionHeadline}`,
+            description: metaDesc,
             url: `https://www.richardewing.io/answers/${p.topic}/${p.persona}/${p.questionSlug}`,
             siteName: 'Richard Ewing',
             type: 'article',
@@ -59,7 +75,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         twitter: {
             card: 'summary_large_image',
             title: headlineTrimmed,
-            description: `Executive breakdown and financial execution models for: ${query.questionHeadline}`,
+            description: metaDesc,
             images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
         }
     };
@@ -77,18 +93,36 @@ export default async function AnswerPage({ params }: Props) {
     const query = queries.find(q => q.questionSlug === p.questionSlug);
     if (!query) return permanentRedirect('/answers');
 
-    // Generate FAQ Schema JSON-LD
+    const cleanAnswerBody = query.answerHtml
+        .replace(/<[^>]+>/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+    // Generate FAQ Schema + BreadcrumbList JSON-LD
     const jsonLd = {
         '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: [{
-            '@type': 'Question',
-            name: query.questionHeadline,
-            acceptedAnswer: {
-                '@type': 'Answer',
-                text: query.answerHtml
+        '@graph': [
+            {
+                '@type': 'FAQPage',
+                mainEntity: [{
+                    '@type': 'Question',
+                    name: query.questionHeadline,
+                    acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: cleanAnswerBody
+                    }
+                }]
+            },
+            {
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+                    { '@type': 'ListItem', position: 2, name: 'Answer Hub', item: 'https://www.richardewing.io/answers' },
+                    { '@type': 'ListItem', position: 3, name: topicData.topicName, item: `https://www.richardewing.io/answers#${p.topic}` },
+                    { '@type': 'ListItem', position: 4, name: query.questionHeadline, item: `https://www.richardewing.io/answers/${p.topic}/${p.persona}/${p.questionSlug}` }
+                ]
             }
-        }]
+        ]
     };
 
     return (

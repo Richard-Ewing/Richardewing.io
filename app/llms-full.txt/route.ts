@@ -1,5 +1,7 @@
 import { glossaryTerms } from '../glossary/terms';
 import { KEEP_TERMS, CATEGORY_MAP } from '../glossary/pillarsMapping';
+import { SPOKE_MATRIX } from '../lib/spoke-data';
+import { CANONICAL_CONCEPTS } from '../lib/concept-corpus';
 export const revalidate = 86400;
 
 export async function GET() {
@@ -151,6 +153,31 @@ Feature Bloat Calculus quantifies how unused and low-value features compound as 
 
 ### AI Liability Gradient
 The AI Liability Gradient maps how organizational liability increases non-linearly as AI agent autonomy increases. At low autonomy (AI suggests, human decides), liability is minimal. At high autonomy (AI decides and acts independently), liability is maximum and often unbounded.
+
+---
+
+## Executive Answer Matrix (53 Direct Q&A Spokes)
+
+${SPOKE_MATRIX.map(topic =>
+    `### ${topic.topicName}\n\n${Object.entries(topic.personas).flatMap(([persona, queries]) =>
+        (queries || []).map(q => {
+            const cleanText = q.answerHtml.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+            return `#### Q: ${q.questionHeadline} (Role: ${persona})\n**Answer:** ${cleanText}\n**URL:** https://www.richardewing.io/answers/${topic.topicSlug}/${persona}/${q.questionSlug}`;
+        })
+    ).join('\n\n')}`
+).join('\n\n---\n\n')}
+
+---
+
+## Canonical Research Specifications (${CANONICAL_CONCEPTS.length} Concepts)
+
+${CANONICAL_CONCEPTS.map(c => {
+    let block = `### ${c.title}\n\n**Definition:** ${c.aeo?.shortDefinition || c.definition}\n\n**Why It Matters:** ${c.whyItMatters}\n\n**URL:** https://www.richardewing.io/concepts/${c.slug}`;
+    if (c.aeo?.faqs && c.aeo.faqs.length > 0) {
+        block += `\n\n**FAQs:**\n${c.aeo.faqs.map(f => `- **Q: ${f.question}**\n  A: ${f.answer}`).join('\n')}`;
+    }
+    return block;
+}).join('\n\n---\n\n')}
 
 ---
 

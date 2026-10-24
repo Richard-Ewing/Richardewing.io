@@ -40,10 +40,10 @@ const lessons: EmailLesson[] = [
     subject: "Stop using one AI for everything (The Cognitive Division of Labor)",
     summary: "Assigning LLMs to their genuine cognitive superpowers: Thinking vs Searching vs Feeling vs Building.",
     takeaways: [
-      "Claude 3.5 Sonnet: Deep synthesis, strategy, and architecture reasoning.",
+      "Claude 4.5 & Gemini 3.8 Flash High: Deep synthesis, strategy, and architecture reasoning.",
       "Perplexity Pro: Real-time search, competitor complaints, and social mining.",
-      "Kimi: Emotional depth, customer persona diary entries, and sales roleplay.",
-      "GPT-4o: Code generation, schema design, and .cursorrules standards."
+      "Gemma 4 26B (LiteRT Local): Zero-cloud latency classification, triage, and high-frequency execution.",
+      "Antigravity 2.0 & Claude Code: Spec-driven code generation, schema design, and AGENTS.md standards."
     ]
   },
   {

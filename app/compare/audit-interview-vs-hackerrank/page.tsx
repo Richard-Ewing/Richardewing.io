@@ -14,7 +14,7 @@ const rows = [
     { dimension: 'What it tests', audit: 'Engineering judgment across 4 dimensions', hack: 'Algorithmic problem-solving speed' },
     { dimension: 'Core skill', audit: 'Catching what AI gets wrong', hack: 'Implementing what AI already does' },
     { dimension: 'Question format', audit: 'Scenario-based, multi-dimensional', hack: 'Algorithmic puzzles with edge cases' },
-    { dimension: 'AI can pass it?', audit: '❌ Requires contextual judgment AI can\'t replicate', hack: '✅ GPT-4 passes most problems' },
+    { dimension: 'AI can pass it?', audit: '❌ Requires contextual judgment AI can\'t replicate', hack: '✅ Frontier LLMs pass 95% of problems' },
     { dimension: 'Proctoring', audit: 'Judgment-based  -  no need for proctoring', hack: 'Requires proctoring to prevent AI cheating' },
     { dimension: 'Cost', audit: 'Free (richardewing.io/tools/audit-interview)', hack: '$100-$500/mo per company' },
     { dimension: 'What it predicts', audit: 'On-the-job decision-making quality', hack: 'Ability to solve puzzles under pressure' },
@@ -35,7 +35,7 @@ export default function AuditInterviewVsHackerRankPage() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">HackerRank</span>
                     </h1>
                     <p className="text-lg text-zinc-900 mb-12 max-w-2xl">
-                        HackerRank tests algorithmic puzzles. GPT-4 passes most HackerRank tests. The Audit Interview tests <span className="text-zinc-950 font-bold">engineering judgment</span>  -  the skill AI makes MORE important, not less.
+                        HackerRank tests algorithmic puzzles. Any off-the-shelf coding agent passes HackerRank in seconds. The Audit Interview tests <span className="text-zinc-950 font-bold">engineering judgment</span>  -  the skill AI makes MORE important, not less.
                     </p>
 
                     <div className="overflow-x-auto mb-16">

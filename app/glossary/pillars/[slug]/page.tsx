@@ -41,8 +41,41 @@ export default async function PillarPage({ params }: Props) {
     // Sort terms alphabetically
     pillarTerms.sort((a, b) => a.title.localeCompare(b.title));
 
+    const pillarSchema = {
+        '@context': 'https://schema.org',
+        '@graph': [
+            {
+                '@type': 'DefinedTermSet',
+                '@id': `https://www.richardewing.io/glossary/pillars/${slug}#termset`,
+                name: `${pillar.name} Glossary`,
+                description: `Canonical dictionary of ${pillar.name} terminology, definitions, and financial execution frameworks by Richard Ewing.`,
+                url: `https://www.richardewing.io/glossary/pillars/${slug}`,
+                hasDefinedTerm: pillarTerms.slice(0, 60).map((t) => ({
+                    '@type': 'DefinedTerm',
+                    name: t.title,
+                    description: t.definition.slice(0, 240).replace(/\n/g, ' ').trim(),
+                    url: KEEP_TERMS.includes(t.slug)
+                        ? `https://www.richardewing.io/glossary/${t.slug}`
+                        : `https://www.richardewing.io/glossary/pillars/${slug}#${t.slug}`,
+                })),
+            },
+            {
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+                    { '@type': 'ListItem', position: 2, name: 'Glossary', item: 'https://www.richardewing.io/glossary' },
+                    { '@type': 'ListItem', position: 3, name: pillar.name, item: `https://www.richardewing.io/glossary/pillars/${slug}` },
+                ],
+            },
+        ],
+    };
+
     return (
         <main className="min-h-screen bg-[#F5F0EB] pt-32 pb-24">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(pillarSchema) }}
+            />
             <div className="max-w-4xl w-full mx-auto px-4 sm:px-6">
                 <div className="mb-6 flex items-center gap-2 text-xs font-bold font-mono text-zinc-950 uppercase tracking-widest">
                     <Link href="/glossary" className="hover:text-cyan-900 transition-colors">Glossary Pillars</Link>
@@ -78,6 +111,17 @@ export default async function PillarPage({ params }: Props) {
                                 <div className="mt-8 pt-6 border-t border-zinc-200">
                                     <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-3">Why It Matters</h3>
                                     <p className="text-zinc-700">{term.whyItMatters}</p>
+                                </div>
+                            )}
+                            {term.faqs && term.faqs.length > 0 && (
+                                <div className="mt-6 pt-6 border-t border-zinc-200 space-y-4">
+                                    <h3 className="text-sm font-mono font-bold text-zinc-900 uppercase tracking-wider">Direct Q&amp;A</h3>
+                                    {term.faqs.map((f, fi) => (
+                                        <div key={fi} className="bg-zinc-50 border border-zinc-200 rounded-xl p-4">
+                                            <div className="text-sm font-bold text-zinc-950 mb-1">{f.question}</div>
+                                            <div className="text-sm text-zinc-700 leading-relaxed">{f.answer}</div>
+                                        </div>
+                                    ))}
                                 </div>
                             )}
                             {KEEP_TERMS.includes(term.slug) && (

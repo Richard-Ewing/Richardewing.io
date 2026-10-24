@@ -57,6 +57,7 @@ Negative/Considerations:
 | [ADR-0010](ADR-0010-edge-host-canonicalization-and-full-keyword-title-preservation.md) | Edge Host Canonicalization, Full Keyword Title Preservation, and GSC Crawl Recovery | Accepted | @richardewing, Aravind Srinivas, Steve Jobs, SEO Architect | 2026-10-13 |
 | [ADR-0011](ADR-0011-gsc-page-with-redirect-validation-and-internal-link-remediation.md) | Google Search Console Page With Redirect Remediation and Internal Link Consolidation | Accepted | @richardewing, Aravind Srinivas, Lily Ray, Dan Guido, SEO Architect | 2026-10-14 |
 | [ADR-0012](ADR-0012-concept-b-full-system-redesign.md) | Concept B Full Website System Redesign & Advisory Route Decoupling | Accepted | @richardewing, Steve Jobs, Paul Graham, Karri Saarinen, Code Architect, QA Auditor | 2026-10-14 |
+| [ADR-0013](ADR-0013-october-2026-aeo-geo-traffic-and-conversion-architecture.md) | October 2026 AEO/GEO Answer Graph & Edge Conversion Hardening | Accepted | @richardewing, Aravind Srinivas, Lily Ray, Keith Rabois, Code Architect | 2026-10-24 |
 
 
 ---

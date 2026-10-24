@@ -84,7 +84,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                                 </div>
                                 <div class="bg-emerald-500/10 p-4 rounded-xl border border-emerald-500/30">
                                     <div class="text-zinc-950 font-semibold text-lg font-bold mb-1">Model Agnostic</div>
-                                    <div class="text-xs text-zinc-900 font-bold">Switch from Claude to GPT-4 without rewriting tool definitions.</div>
+                                    <div class="text-xs text-zinc-900 font-bold">Switch between Claude 4.5, Gemini 3.8, and local Gemma 4 SLMs without rewriting tool definitions.</div>
                                 </div>
                             </div>
                         </div>

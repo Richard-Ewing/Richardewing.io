@@ -53,6 +53,13 @@ const EDGE_REDIRECTS: Record<string, string> = {
   '/research/concepts': '/concepts',
   '/tools/cloud-finops-calculator': '/tools',
   '/tools/copilot-roi-calculator': '/tools/copilot-roi',
+  '/architecture': '/runtime-architecture',
+  '/concepts/rented-intelligence-vs-owned-capital': '/glossary/ai-capital-allocation-ratio',
+  '/concepts/engineering-bottleneck-illusion': '/glossary/engineering-bottleneck-illusion',
+  '/concepts/ai-cogs': '/glossary/ai-cogs',
+  '/concepts/variable-cost-of-intelligence': '/glossary/variable-cost-of-intelligence',
+  '/concepts/vibe-coding-debt': '/articles/frameworks/vibe-coding-debt',
+  '/concepts/explainability-vs-recoverability': '/glossary/explainability-vs-recoverability',
 };
 
 const POISONED_CACHE_URLS = [

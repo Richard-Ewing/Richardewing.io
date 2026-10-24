@@ -10,23 +10,32 @@ export const metadata: Metadata = {
 };
 
 export default function AnswersHubPage() {
+  const stripHtml = (html: string) =>
+    html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: SPOKE_MATRIX.flatMap((topic) =>
       Object.values(topic.personas).flatMap((queries) =>
         queries
-          ? queries.map((q) => ({
-              '@type': 'Question',
-              name: q.questionHeadline,
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: `Detailed answer and analytical breakdown available on the Richard Ewing AI Economics Knowledge Base for ${q.questionHeadline}.`,
-              },
-            }))
+          ? queries.map((q) => {
+              const cleanAnswer = stripHtml(q.answerHtml);
+              return {
+                '@type': 'Question',
+                name: q.questionHeadline,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text:
+                    cleanAnswer.length > 520
+                      ? cleanAnswer.slice(0, 517).trim() + '...'
+                      : cleanAnswer,
+                },
+              };
+            })
           : []
       )
-    ).slice(0, 30),
+    ),
   };
 
   return (

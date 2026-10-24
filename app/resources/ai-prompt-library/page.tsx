@@ -5,14 +5,14 @@ import { Terminal, Sparkles, ArrowRight, Layers, Cpu } from 'lucide-react';
 import PromptLibraryViewer from '@/components/ai-product-builder/PromptLibraryViewer';
 
 export const metadata: Metadata = {
-  title: 'AI System Prompt Library: 50+ Production Prompts',
-  description: 'Production prompt catalog for AI founders. Cognitive division of labor system prompts for Perplexity Pro, Claude 3.5 Sonnet, Kimi, and GPT-4o.',
+  title: 'AI System Prompt Library: 50+ Executive Prompts',
+  description: 'Battle-tested prompt catalog for AI founders and CTOs. Cognitive division of labor prompts for Perplexity Pro, Claude 4.5, Gemini 3.8, and OpenAI o3.',
   alternates: {
     canonical: 'https://www.richardewing.io/resources/ai-prompt-library',
   },
   openGraph: {
-    title: 'AI Founder System Prompt Library: 50+ Production Prompts',
-    description: 'Production prompt catalog for AI builders. Cognitive division of labor prompts for Perplexity Pro, Claude 3.5 Sonnet, Kimi, and GPT-4o.',
+    title: 'AI Founder System Prompt Library: 50+ Executive Prompts',
+    description: 'Battle-tested prompt catalog for AI builders. Cognitive division of labor prompts for Perplexity Pro, Claude 4.5, Gemini 3.8, and OpenAI o3.',
     url: 'https://www.richardewing.io/resources/ai-prompt-library',
     siteName: 'Richard Ewing',
     type: 'website',
@@ -35,7 +35,7 @@ export default function PromptLibraryPage() {
           </h1>
 
           <p className="mt-4 text-base sm:text-lg text-zinc-700 max-w-3xl leading-relaxed">
-            Stop using generic one-line prompts. These battle-tested multi-turn system prompts are mapped strictly to the cognitive strengths of Perplexity, Claude 3.5, Kimi, and GPT-4o.
+            Stop using generic one-line prompts. These field-tested multi-turn system prompts are mapped strictly to the cognitive strengths of Perplexity Pro, Claude 4.5, Gemini 3.8 Flash High, and OpenAI o3.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-4 text-xs">
