@@ -194,20 +194,22 @@ To eliminate bias, preserve architectural continuity, and keep documentation in 
 
 ## 10. The Sovereign Spec-Driven Development (SDD) & AI-SDLC Kernel (Zero Vibe Coding Protocol)
 
-All software development and code modifications across this workspace strictly follow the **AI-SDLC (AI Software Development Life Cycle)** and **Spec-Driven Development (SDD)** protocol based on the GitHub Spec Kit framework (`specify`, `plan`, `tasks`, `implement`, `converge`). Ad-hoc prompt-and-pray "vibe coding" is strictly prohibited.
+All software development, diagnostic tooling, and code modifications across this workspace strictly follow the **AI-SDLC (AI Software Development Life Cycle)** and **Spec-Driven Development (SDD)** protocol based on the GitHub Spec Kit framework (`specify`, `plan`, `tasks`, `implement`, `converge`). Ad-hoc prompt-and-pray "vibe coding" is strictly prohibited.
 
-### A. The Founder-Agent Division of Responsibility
+### A. The Founder-Agent Division of Responsibility (The Vibe-to-Spec Mandate)
 1. **The User (Richard) Is the Founder, CEO, and Product Visionary**:
-   - The user provides high-level business intent, operational pain points, commercial priorities, and desired user outcomes.
-   - The user NEVER needs to write low-level technical specifications, component architectures, CSS flexbox rules, or debugging instructions.
+   - The user provides high-level business intent, operational pain points, commercial priorities, and desired user outcomes in natural, conversational language ("vibe prompts").
+   - The user NEVER needs to write low-level technical specifications, component architectures, CSS flexbox rules, SQL schemas, or debugging instructions.
 2. **The AI Agent Is the Staff Principal Architect & Lead Engineer**:
-   - The agent takes high-level user intent and autonomously translates it into a rigorous Spec-Driven contract before touching code.
-   - The agent is responsible for architecture, type safety, edge case handling, constraint validation, and deterministic execution.
+   - The agent takes high-level conversational intent and autonomously translates it into a rigorous Spec-Driven contract before touching code.
+   - The agent is responsible for deducing unspoken invariants (state shape, mobile responsiveness, error handling, rate limits, edge cases, and accessibility).
+   - The agent NEVER badgers the founder for engineering trivia (e.g. status codes, CSS paradigms, or typing details) and NEVER returns "vibecoded" results (half-baked mockups, fragile hacks, unhandled promise rejections, or unverified guesswork).
+   - The agent protects existing production code with explicit Blast Radius Guards before making any mutations.
 
 ### B. The 5-Phase AI-SDLC Lifecycle
 Before making code mutations, the agent executes this lifecycle:
 1. **Constitution Check**: Enforce non-negotiable project laws:
-   - Absolute zero em-dashes (`\u2013`, `\u2014`).
+   - Absolute zero em-dashes (`\u2013`, `\u2014`). Use colons, parentheses, double hyphens, or periods.
    - Cloudflare Workers V8 memory isolates (zero Node.js POSIX assumptions, prerender safety).
    - Next.js 16 App Router Server Components by default with `"use client"` leaf isolation.
    - Human Writing Standard (HWS v2.0 / REWS v2.0) and Warm Cream design tokens.
@@ -228,6 +230,13 @@ Before making code mutations, the agent executes this lifecycle:
    - Run mechanical QA verification (`node .agents/scripts/verify-qa.mjs`).
    - Full build (`npm run build`) and live Cloudflare deployment (`npx wrangler deploy`).
    - Validate against the original Acceptance Criteria to ensure zero defect convergence.
+
+### C. Empirical Binary Evidence & Reverse Engineering Subsystem (REA + Ghidra Engine)
+When a task involves legacy binaries, compiled DLLs, Windows/Linux executables, Electron ASARs, third-party packages, or undocumented binary protocols, vibe coding is prohibited:
+1. **Ground-Truth Evidence Extraction**: Connect directly to the native REA MCP server backed by **Ghidra 12.1.4 Public Headless** (`D:\Tools\ghidra-12.1.4\ghidra_12.1.4_PUBLIC`) and OpenJDK 25. Run `open_binary`, `inspect_artifact`, `list_procedures`, `procedure_pseudo_code`, and `build_call_path` to extract verified symbols, decompiled ASTs, and call hierarchies.
+2. **Clean-Room Specification**: Transform decompiled observations strictly into clean-room behavioral contracts (inputs, outputs, edge cases, error codes). Never copy-paste proprietary disassembly.
+3. **Reconstruction Obligation Ledger**: Run `build_reconstruction_obligation_ledger` to guarantee 100% of discovered behaviors are accounted for in the implementation task backlog without omission.
+4. **Parity Convergence**: Run `verify_reconstruction` and Karpathy test assertions to mathematically prove clean-room functional parity against the original artifact.
 
 ---
 

@@ -1,33 +1,60 @@
 ---
 name: spec-driven-development
-description: Autonomous engineering discipline combining Addy Osmani's spec-driven development, Diego Arias's AI-SDLC (GitHub Spec Kit standard), Karpathy empirical red/green test probes, and Chris Nevin AI-generated Architecture Decision Records (ADRs). Enforces strict requirement contracts, explicit out-of-scope boundaries (blast radius guards), and error recovery protocols before executing code mutations.
+description: Autonomous engineering discipline combining Addy Osmani's spec-driven development, Diego Arias's AI-SDLC (GitHub Spec Kit standard), Karpathy empirical red/green test probes, Chris Nevin AI-generated Architecture Decision Records (ADRs), and REA + Ghidra empirical reverse-engineering ground truth. Translates high-level founder vibe prompts into deterministic, production-grade specifications and implementations without vibe-coded debt.
 ---
 
 # Autonomous Engineering Discipline & Spec-Driven Development (AI-SDLC)
 
 **Directive**: Sovereign Master Operating Directive (MOD v4.0)  
-**Origin Discipline**: Addy Osmani Agent Skills (`addyosmani/agent-skills`), Diego Arias AI-SDLC (GitHub Spec Kit), Karpathy Empirical Invariants & Chris Nevin ADR Protocol  
-**Scope**: All autonomous coding workflows, structural refactors, and diagnostic tool development across the entire workspace.
+**Origin Discipline**: Addy Osmani Agent Skills (`addyosmani/agent-skills`), Diego Arias AI-SDLC (GitHub Spec Kit), Karpathy Empirical Invariants, Chris Nevin ADR Protocol & REA + Ghidra Empirical Evidence Subsystem  
+**Scope**: All autonomous coding workflows, structural refactors, diagnostic tool development, and binary/artifact reverse engineering across the entire workspace.
 
 ---
 
-## 1. The Core Philosophy: Death of Vibe Coding
+## 1. The Core Philosophy: Death of Vibe Coding & The Founder-Staff Contract
 
-Autonomous agents frequently fail through "hallucination debt": writing optimistic code without verifying initial conditions, assuming APIs exist, entering recursive retry loops when unexpected errors emerge, and forcing the human user to micromanage syntax.
+Autonomous agents frequently fail through "hallucination debt": writing optimistic code without verifying initial conditions, assuming APIs exist, producing superficial UI veneers that break on actual data, entering recursive retry loops when unexpected errors emerge, and forcing the human user to micromanage syntax.
 
 In this workspace, **vibe coding is strictly prohibited**. 
 
 ### The Founder-Agent Division of Labor
 1. **The User (Richard) Is the Founder, CEO, and Product Visionary**:
-   - The user provides high-level business goals, customer pain points, commercial priorities, and desired user outcomes.
-   - The user NEVER needs to write low-level technical specifications, component architectures, CSS flexbox rules, or debugging instructions.
+   - The user provides high-level business goals, customer pain points, commercial priorities, strategic instincts, and desired user outcomes in natural, conversational language ("vibe prompts").
+   - The user NEVER needs to write low-level technical specifications, component architectures, CSS flexbox rules, SQL schemas, or debugging instructions.
 2. **The AI Agent Is the Staff Principal Architect & Lead Engineer**:
    - The agent takes high-level user intent and autonomously translates it into a rigorous Spec-Driven contract before touching code.
    - The agent is responsible for architecture, type safety, edge case handling, constraint validation, and deterministic execution.
+   - The agent NEVER returns "vibecoded" results: half-baked mockups, fragile hacks, unhandled promise rejections, or unverified guesswork.
 
 ---
 
-## 2. The 5-Phase AI-SDLC Execution Lifecycle
+## 2. The Vibe-to-Spec Translation Engine (The Founder-to-Staff Translator)
+
+When Richard provides a conversational or high-level prompt, the agent must run the **Vibe-to-Spec Translation Engine** to bridge founder vision and production engineering:
+
+```
+[Founder Vibe Prompt] (Natural Language, Strategic Intent, Operational Frustration)
+          │
+          ▼
+[Vibe-to-Spec Translation Engine]
+ ├─ 1. Deduce Unspoken Invariants (State shape, mobile layout, auth, edge cases)
+ ├─ 2. Identify Missing Constraints (Rate limits, error responses, hydration)
+ ├─ 3. Set Blast Radius Guard (Strict out-of-scope boundaries)
+ └─ 4. Gather Empirical Ground Truth (REA + Ghidra if binary/legacy target)
+          │
+          ▼
+[Formal Spec-Driven Contract] (Specify -> Plan -> Tasks -> Implement -> Converge)
+```
+
+### The 4 Non-Negotiable Translation Rules:
+1. **Deduce the Unspoken Invariants**: When Richard asks for a feature (e.g., "add an audit tool for executives"), deduce the implied operational reality: mobile responsiveness, accessibility, loading skeletons, network drop handling, URL state sharing, and export capabilities.
+2. **Never Badger the Founder for Engineering Trivia**: Never ask the user questions like "Should this return HTTP 422 or 400?", "Should we use CSS grid or flexbox?", or "Which zod schema pattern do you prefer?". Make the optimal architectural decision, document it, and execute it.
+3. **Blast Radius & Blast Shield Isolation**: Every synthesized specification must explicitly declare what the agent is **forbidden** from modifying. Never allow a new feature request to accidentally refactor global styles, mutate existing navigation shells, or alter working calculation algorithms.
+4. **Empirical Ground Truth Over Guesswork**: Never assume how an external API, binary, library, or database works. Probe it empirically before writing code.
+
+---
+
+## 3. The 5-Phase AI-SDLC Execution Lifecycle
 
 Every feature creation, bug fix, or refactor turn must execute this sequence:
 
@@ -35,7 +62,7 @@ $$\text{1. Constitution Check} \longrightarrow \text{2. Specify} \longrightarrow
 
 ### Phase 1: Constitution Check (Inviolable Laws)
 Never write production code until verifying adherence to the workspace constitution:
-1. **Zero Em-Dashes**: Absolute prohibition of em-dash characters (`\u2013`, `\u2014`). Use colons, parentheses, or periods.
+1. **Zero Em-Dashes**: Absolute prohibition of em-dash characters (`\u2013`, `\u2014`). Use colons, parentheses, double hyphens, or periods.
 2. **Cloudflare Workers V8 Memory Isolates**: Zero Node.js POSIX assumptions, prerender safety (`typeof window !== 'undefined'`).
 3. **Next.js 16 App Router**: Server Components by default; `"use client"` leaf isolation.
 4. **Human Writing Standard (HWS v2.0 / REWS v2.0)**: Human first, grounded, non-technical, zero banned AI buzzwords.
@@ -66,7 +93,44 @@ Decompose the plan into granular, checkable, testable bite-sized units.
 
 ---
 
-## 3. Karpathy Empirical Test Probes (Red/Green Protocol)
+## 4. Empirical Binary Evidence & Reverse Engineering Subsystem (REA + Ghidra Engine)
+
+When a task involves legacy binaries, compiled DLLs, Windows/Linux executables, Electron ASARs, third-party packages, or undocumented binary protocols, vibe coding is especially lethal. 
+
+The agent connects to the native **REA (Reverse Engineer Anything)** MCP toolset backed by **Ghidra 12.1.4 Public Headless** (`D:\Tools\ghidra-12.1.4\ghidra_12.1.4_PUBLIC`) and OpenJDK 25 to establish empirical ground truth before drafting specifications:
+
+```
+[Compiled Binary / Package / Legacy DLL]
+                  │
+                  ▼
+[REA + Ghidra Headless Bridge]
+ ├─ `open_binary`: Import target into isolated analysis session
+ ├─ `inspect_artifact` / `binary_overview`: Map headers, sections, dependencies
+ ├─ `list_procedures` / `list_names`: Extract real symbols and exported entries
+ ├─ `procedure_pseudo_code` / `analyze_function`: Decompile C pseudocode and ASTs
+ └─ `build_call_path` / `procedure_references`: Map execution and call flows
+                  │
+                  ▼
+[Phase 1: Clean-Room Specification (`specify`)]
+ └─ Convert observations into clean-room TypeScript / Rust / Next.js contracts
+                  │
+                  ▼
+[Phase 2: Reconstruction Obligation Ledger (`plan` & `tasks`)]
+ └─ `build_reconstruction_obligation_ledger`: Ensure zero-omission task backlog
+                  │
+                  ▼
+[Phase 3: Parity Convergence (`converge`)]
+ └─ `verify_reconstruction`: Prove functional parity against observed evidence
+```
+
+### Clean-Room Reverse Engineering Rules:
+1. **Never Guess an Internal Signature**: If a routine is compiled, run `procedure_pseudo_code` or `read_function_instructions` to discover the exact inputs, memory structures, and return types.
+2. **Clean-Room Separation**: Decompiled pseudocode serves as evidentiary ground truth for behavioral contracts (inputs, outputs, edge cases, error codes). The reimplementation is written in clean, idiomatic modern code adhering to workspace conventions.
+3. **Session Lifecycle Discipline**: Always run `close_binary` when analysis is finished to release ephemeral Ghidra project locks and memory allocations.
+
+---
+
+## 5. Karpathy Empirical Test Probes (Red/Green Protocol)
 
 Before performing complex refactors or debugging mysterious failures:
 1. **The Red Probe**: Construct a minimal reproduction script in `.scratch/` (e.g. `.scratch/probe_reproduce.mjs`). Run it and confirm it fails for the expected reason (Red).
@@ -76,7 +140,7 @@ Before performing complex refactors or debugging mysterious failures:
 
 ---
 
-## 4. Systematic Debugging & Error Recovery Loop
+## 6. Systematic Debugging & Error Recovery Loop
 
 When a build or test fails, autonomous agents often resort to "shotgun debugging": making arbitrary edits across unrelated files in hope that the error disappears.
 

@@ -135,6 +135,18 @@ To ensure that architectural choices are documented with full context and unbias
    - *Autonomous Derivation Mode*: In autonomous refactors, derive the record directly from the task prompt, git diff, and system constraints.
 3. **Location & Indexing**: All records live in `docs/adr/ADR-<4-Digit-Number>-<slug>.md` and are registered in `docs/adr/README.md`.
 
+### G. Sovereign Spec-Driven Development (SDD), AI-SDLC & Vibe-to-Spec Engine
+To eliminate superficial "vibecoded" results, all software engineering and diagnostic development adheres to the Spec-Driven Development protocol:
+1. **The Founder-to-Staff Co-Founder Contract**:
+   - The user (Richard) speaks in high-level vision, operational frustration, and conversational prompts ("vibe prompts").
+   - The agent operates as the Principal Staff Engineer: autonomously deduces unspoken invariants (mobile layout, error boundaries, rate limits, data shapes), enforces Blast Radius Guards, and never returns half-baked mockups or asks the founder for engineering trivia.
+2. **The 5-Phase AI-SDLC Lifecycle**:
+   - Constitution Check -> Specify -> Plan -> Tasks -> Implement & Converge.
+3. **Empirical Binary Evidence & Reverse Engineering Subsystem (REA + Ghidra Engine)**:
+   - For legacy binaries, closed packages, DLLs, Electron ASARs, or binary protocols, the agent connects directly to REA MCP backed by **Ghidra 12.1.4 Public Headless** (`D:\Tools\ghidra-12.1.4\ghidra_12.1.4_PUBLIC`) and OpenJDK 25.
+   - Ground truth is gathered via `open_binary`, `inspect_artifact`, `list_procedures`, `procedure_pseudo_code`, and `build_call_path`.
+   - Clean-room specifications are authored without copying assembly, tracked via `build_reconstruction_obligation_ledger`, and mathematically converged via `verify_reconstruction`.
+
 ---
 
 ## 6. Zero-Drift Deterministic Verification & 4-Pass QA
