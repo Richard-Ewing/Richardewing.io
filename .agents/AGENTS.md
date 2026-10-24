@@ -284,6 +284,9 @@ Every report, telemetry audit, or analytics inquiry prompt MUST lead with an **O
 1. **Workstation Runtime Patching**: Local developer workstations running diagnostic scripts that interact with third-party APIs (such as Stripe, Cloudflare, Resend) must keep Node.js updated to the latest patched security releases (`>=24.22.1` or `>=22.23.4`) to prevent automated compliance triggers on client telemetry (`node_version`).
 2. **Cloudflare Worker Isolation**: Live production applications execute exclusively on Cloudflare Workers V8 isolates (`workerd`), maintaining physical separation from workstation Node.js runtimes. Workstation telemetry warnings must not be confused with edge infrastructure compromise.
 
+---
 
+## 17. Option C Dual-Engine Funnel ("Build, Unstick, Automate & Win" + Commercial Reality Moat)
 
-
+1. **HWS-AEO v3.0 (35-Word Citation Snap + 10th-Thought Human Reality)**: Every programmatic answer spoke (`/answers/*`), glossary definition (`/glossary/*`), and diagnostic readout must open with a 30-to-45-word standalone direct answer optimized for `Query Fan-Out` across ChatGPT Search, Perplexity, Claude, and Google AI Overviews, immediately followed by concrete lived operational reality.
+2. **Zero-Click In-Scorecard Conversion Drawer**: Every interactive diagnostic calculator (`/reality-check`, `/tools/*`) and programmatic answer spoke (`/answers/*`) must mount `<ScorecardCheckoutDrawer />`, pairing grounded P&L and AI economics with an immediate 1-click checkout ladder (`$29` Survival Kit / `$79` Complete 13-Playbook System -> `$450` Live 60-Min Session -> `$2,500` 14-Day Automation/Turnaround Sprint -> `$7,500` 21-Day 0-to-1 Build Sprint).

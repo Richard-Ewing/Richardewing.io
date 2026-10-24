@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import ScorecardCheckoutDrawer from "@/app/components/ScorecardCheckoutDrawer";
 
 interface DiagnosticState {
   monthlySpend: number;
@@ -282,7 +283,7 @@ export function RealityCheckDiagnostic() {
 
               <div className="pt-2">
                 <p className="text-xs text-[var(--muted)] mb-3">
-                  Lock in a confidential 30-minute review with Richard to pinpoint your primary cost leaks.
+                  Lock in a confidential 30-minute review with Richard to pinpoint your primary cost leaks, or start immediately below.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <Link
@@ -337,12 +338,26 @@ export function RealityCheckDiagnostic() {
               ))}
             </div>
 
+            <ScorecardCheckoutDrawer
+              metricLabel="Annual Savings Opportunity"
+              metricValue={`$${savingsOpportunity.toLocaleString()}/yr`}
+              source="reality-check"
+              compact={true}
+            />
+
             <div className="pt-4 border-t border-white/10 text-[11px] text-zinc-400 leading-relaxed font-sans">
               * Modeled using cross-industry AI unit economics benchmarks from published Fiduciary research across enterprise SaaS deployments.
             </div>
           </div>
         </div>
       </div>
+
+      {/* Full Zero-Click Conversion Drawer below the scorecard */}
+      <ScorecardCheckoutDrawer
+        metricLabel="Identified Annual Opportunity"
+        metricValue={`$${savingsOpportunity.toLocaleString()}/yr`}
+        source="reality-check"
+      />
     </div>
   );
 }

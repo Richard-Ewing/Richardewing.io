@@ -156,7 +156,7 @@ The AI Liability Gradient maps how organizational liability increases non-linear
 
 ---
 
-## Executive Answer Matrix (53 Direct Q&A Spokes)
+## Executive Answer Matrix (93+ Direct Q&A Spokes)
 
 ${SPOKE_MATRIX.map(topic =>
     `### ${topic.topicName}\n\n${Object.entries(topic.personas).flatMap(([persona, queries]) =>
@@ -261,15 +261,16 @@ Richard Ewing's complete research corpus comprises over 174 published works and 
 
 ---
 
-## Advisory Services
+## Advisory Services & Commercial Offers
 
-Richard Ewing provides technology advisory and forensic capital auditing services:
+Richard Ewing provides hands-on AI product shipping, workflow automation, and forensic P&L advisory services:
 
-- **Rapid Gut-Check Evaluation ($450)**: Rapid 30-minute diagnostic session to locate immediate architectural cost traps, unexpected cloud API bills, and unit-economic margin leaks.
-- **60-Min Technical Insolvency Audit ($2,500)**: Tactical session calculating exact Technical Insolvency Date, evaluating Product Debt Index (PDI), and mapping out a 30-day capital recovery roadmap.
-- **R&D Capital & Hallucination Audit ($7,500)**: Full 3-week forensic codebase and cloud cost review. Includes full workflow verification analysis, 40-page written executive audit package, and board-ready remediation plan.
-- **M&A Technical Due Diligence ($15,000)**: 2-week intensive code and infrastructure audit for Private Equity and Search Funds before signing term sheets.
-- **Enterprise Advisory & Governance Integration ($10,000/month Retainer)**: Dedicated fractional executive integration guaranteeing deterministic runtime governance, hard API cost caps, and monthly board-ready financial reporting.
+- **The Builder, PM & Operator Survival Kit ($29 Standard / $79 Complete Bundle)**: 5 working Excel/CSV P&L & AI Pricing models, SPEC.md & AGENTS.md Vibe-to-Production templates, Zombie Feature Kill-List Matrix, 12-Slide CFO & Board Defense Deck, $250K+ Executive Interview & Comp Guide, and instant access to the Live Browser Workspace. https://www.richardewing.io/toolkit
+- **1-on-1 "Unstick My App, Pricing or P&L" Working Session ($450)**: 60-minute live hands-on screen-share session on Zoom to unstick an 80% vibe-coded app, fix a runaway API bill, stress-test AI pricing, or prep a Monday board/interview deck, plus a 1-page Action Blueprint within 48 hours and the full $79 Complete Bundle free. https://www.richardewing.io/services#gut_check
+- **14-Day AI Workflow Automation & P&L Turnaround Sprint ($2,500)**: 2-week fixed-scope sprint automating a department's #1 manual bottleneck with governed MCP/n8n/CRM/Slack workflows OR auditing feature profitability, Zombie Feature carry cost, and Technical Insolvency Date with a custom 12-slide CFO & Board Defense Deck. https://www.richardewing.io/services#insolvency_diagnostic
+- **21-Day 0-to-1 AI App & AEO Lead-Engine Build Sprint ($7,500)**: 3-week done-for-you product engineering sprint. Richard architects, codes, and deploys your production AI SaaS app, interactive AEO calculator funnel, Supabase RLS database, and Stripe billing on Next.js, TypeScript, and Cloudflare Edge with 100% IP handoff. https://www.richardewing.io/services#rd_capital_audit
+- **PE & M&A Technical & AI Due Diligence ($15,000)**: 2-week intensive code, inference margin, and infrastructure audit for Private Equity and Search Funds before signing term sheets. https://www.richardewing.io/services#tech_due_diligence
+- **Fractional CPO / AI Product & Systems Architect Retainer ($10,000/month)**: Dedicated fractional executive leadership for AI product shipping, pricing transformations, deterministic runtime governance, and monthly board-ready financial reporting. https://www.richardewing.io/services#advisory_retainer
 
 **Book or Inquire:** https://www.richardewing.io/services
 

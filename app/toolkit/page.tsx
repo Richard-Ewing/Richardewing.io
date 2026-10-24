@@ -8,16 +8,16 @@ import AsSeenInBar from '@/components/social-proof/AsSeenInBar';
 import ToolkitInteractivePreview from './ToolkitInteractivePreview';
 
 export const metadata: Metadata = {
-  title: 'Product & AI Economist Operating Kit ($29)',
+  title: 'Builder, PM & Operator Survival Kit ($29)',
   description:
-    'Download 5 battle-tested P&L spreadsheets, AI feature pricing calculators, Zombie Feature kill-list matrices, and 12-slide CFO board deck templates.',
+    'Download 5 P&L spreadsheets, SPEC.md and AGENTS.md templates to ship AI apps without breaking code, pricing calculators, and 12-slide CFO board decks.',
   alternates: {
     canonical: 'https://www.richardewing.io/toolkit',
   },
   openGraph: {
-    title: 'The Product & AI Economist Operating Kit ($29) | Richard Ewing',
+    title: 'The Builder, PM & Operator Survival Kit ($29) | Richard Ewing',
     description:
-      'Zero fluff. The exact financial models, AI pricing stress-testers, and board deck templates used to scale $0 to $25M ARR and cut $5M in product waste.',
+      'Ship AI apps past the 80% trap, price features so power users do not bankrupt you, kill zombie busywork, and command $220K-$400K+ roles.',
     url: 'https://www.richardewing.io/toolkit',
     type: 'website',
   },
@@ -40,16 +40,16 @@ const kitModules = [
   },
   {
     number: '02',
-    badge: 'Backlog Audit Matrix ($5M Cost-Cut System)',
-    title: 'The "Zombie Feature" Kill-List & R&D Capital Matrix',
+    badge: 'Vibe-to-Production Spec System + Backlog Kill-List ($5M Cost-Cut)',
+    title: 'The SPEC.md / AGENTS.md Templates & Zombie Feature Kill-List Matrix',
     problemSolved:
-      'Your engineering team is working 60-hour weeks, yet your core roadmap barely moves because 70% of capacity is trapped maintaining old features.',
+      'Your AI coding agent breaks two old screens every time it fixes one bug, or 70% of your engineering week is trapped maintaining dead features.',
     description:
-      'The exact spreadsheet matrix used to cut $5M in negative-margin product bloat and scale $0 to $25M ARR. Score every feature in your product by Fully-Loaded Engineering Maintenance Hours + Cloud Carry Cost vs. Attributed ARR and Active Seat Adoption.',
+      'Cross the last 20% from browser prototype (Lovable, Bolt, Cursor, Claude Code, Antigravity) to production with our Blast Radius Guard SPEC.md and AGENTS.md contracts, paired with the exact spreadsheet matrix used to cut $5M in negative-margin product bloat and scale $0 to $25M ARR.',
     includedFiles: [
+      'Production_SPEC_and_AGENTS_md_Templates.md (Blast Radius + Supabase RLS + Stripe Checklist)',
       'Zombie_Feature_Kill_List_Matrix.xlsx / .csv',
-      'Customer Deprecation & Migration Communication Templates',
-      'Engineering Capacity Reallocation Calculator',
+      'Engineering Capacity Reallocation & Deprecation Templates',
     ],
   },
   {
@@ -57,9 +57,9 @@ const kitModules = [
     badge: 'Executive Presentation System',
     title: 'The 12-Slide CFO & Board Defense Deck Blueprint',
     problemSolved:
-      'Your CFO eyes glaze over when you show sprint velocity, story points, or DORA metrics in quarterly business reviews.',
+      'Your CEO and CFO eyes glaze over when you show sprint velocity, story points, or DORA metrics in quarterly reviews.',
     description:
-      'A board-ready presentation template that reframes your product roadmap in terms of Capital Efficiency, Gross Margin Defense, and Return on Invested Capital (ROIC).',
+      'A board-ready presentation template that reframes your product and engineering roadmap in terms of Capital Efficiency, Gross Margin Defense, and Return on Invested Capital (ROIC).',
     includedFiles: [
       '12-Slide CFO & Board Presentation (.pptx / .key)',
       'Product P&L Waterfall Slide Template',
@@ -68,30 +68,30 @@ const kitModules = [
   },
   {
     number: '04',
-    badge: 'Executive Runbook & Playbook',
-    title: 'First-30-Days Product P&L Turnaround Runbook',
+    badge: 'Department Automation & Turnaround Runbook',
+    title: 'First-30-Days Product P&L & Department Automation Runbook',
     problemSolved:
-      'Taking over a stagnant, loss-making, or margin-compressed product line with no clear starting point.',
+      'Taking over a stagnant, loss-making product line or drowning in 60 hours a week of manual support, ops, and status-update busywork.',
     description:
-      'The step-by-step 30-day operational protocol for new CPOs, VPs of Product, and PE turnaround operators to forensic-audit a product line, kill negative-carry features, and restructure pricing.',
+      'The step-by-step 30-day operational protocol for founders, CPOs, VPs of Product, Support/Ops Leads, and PE turnaround operators to forensic-audit a product line, wire Human-in-the-Loop MCP workflows, kill negative-carry features, and restructure pricing.',
     includedFiles: [
-      '30-Day Forensic Audit Action Checklist',
-      'Executive 1-on-1 Interview Question Bank',
-      'Quick-Win Margin Recovery Identification Guide',
+      '30-Day Forensic Audit & MCP Automation Checklist',
+      'Executive 1-on-1 Stakeholder Question Bank',
+      'Quick-Win Margin & SaaS Consolidation Guide',
     ],
   },
   {
     number: '05',
-    badge: 'Career & Executive Positioning Dossier',
-    title: 'The "Product Economist" Executive Interview & Comp Guide',
+    badge: 'Career & Executive Positioning Dossier ($220K-$450K+ Roles)',
+    title: 'The AI Builder & Product Economist Interview, Resume & Comp Guide',
     problemSolved:
-      'Competing against 800 other Product Managers or VPs who all sound like generic "Agile backlog managers."',
+      'Competing against 800 other Product Managers, Engineers, or Directors who all sound like generic Agile ticket routers.',
     description:
-      'How to reposition your resume, LinkedIn, and executive interview narrative around P&L ownership, ARR expansion, and unit economics so CEOs, Boards, and PE firms see you as a commercial leader worth $220K-$400K+ total compensation.',
+      'How to reposition your resume, LinkedIn, live prototype portfolio, and final-round interview narrative around P&L ownership, ARR expansion, and unit economics so CEOs, Boards, and hiring managers see you as a category-of-one commercial leader.',
     includedFiles: [
       'Executive P&L Resume Bullet Transformation Guide',
-      'Top 15 CEO / CFO Final-Round Interview Questions & Answers',
-      '90-Day CPO / VP of Product Case Study Presentation Template',
+      'Top 15 CEO / CFO / CTO Final-Round Interview Questions & Answers',
+      '90-Day CPO / VP / Senior PM Case Study Deck Template',
     ],
   },
 ];
@@ -100,9 +100,9 @@ export default function ToolkitPage() {
   const productSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: 'The Product & AI Economist Operating Kit (2026 Edition)',
+    name: 'The Builder, PM & Operator Survival Kit (2026 Edition)',
     description:
-      '5 actionable financial models, AI feature pricing stress-testers, Zombie Feature kill-lists, and 12-slide CFO board deck templates by Richard Ewing.',
+      '5 actionable financial models, SPEC.md and AGENTS.md production templates, AI feature pricing stress-testers, Zombie Feature kill-lists, and 12-slide CFO board deck templates by Richard Ewing.',
     brand: {
       '@type': 'Brand',
       name: 'Richard Ewing - Product & AI Economist',
@@ -128,17 +128,15 @@ export default function ToolkitPage() {
         <div className="inner-art" />
         <div className="inner-copy">
           <p className="eyebrow">
-            <i /> Instant Download · Live Browser Workspace
+            <i /> Instant Download · Live Browser Workspace (/workspace)
           </p>
-          <h1>The Product &amp; AI Economist Operating Kit</h1>
+          <h1>The Builder, PM &amp; Operator Survival Kit ($29)</h1>
           <p className="inner-lede">
-            Stop looking like a backlog manager. Run your product like a P&amp;L. 5
-            production spreadsheets, AI feature pricing stress-testers, Zombie Feature
-            kill-lists, and 12-slide CFO board deck templates.
+            Unstick your AI app past the 80% trap, price your features so power users do not bankrupt you, kill zombie busywork, and walk into your next CEO review or $250K+ interview with a real P&amp;L. Includes all 5 spreadsheets, <code className="font-mono text-xs">SPEC.md</code> / <code className="font-mono text-xs">AGENTS.md</code> templates, 12-slide board deck, and instant <Link href="/workspace" className="underline font-semibold">/workspace</Link> access.
           </p>
           <div className="actions">
             <a href="#buy" className="button button-gold">
-              Get the Operating Kit ($29) ↗
+              Get the Survival Kit ($29) ↗
             </a>
             <Link href="/operating-kit" className="button button-outline">
               View Detailed Specs
@@ -148,10 +146,9 @@ export default function ToolkitPage() {
 
         <aside className="inner-aside glass">
           <span>THE OPERATING INVARIANT</span>
-          <strong>Run your product like a P&amp;L.</strong>
+          <strong>Ship clean code. Run your product like a P&amp;L.</strong>
           <p>
-            Built from scaling enterprise SaaS from $0 to $25M ARR at Tyler Technologies
-            and cutting $5M in product waste.
+            Built from scaling enterprise SaaS from $0 to $25M ARR at Tyler Technologies, cutting $5M in product waste, and shipping 3 production AI platforms.
           </p>
         </aside>
       </section>
@@ -168,7 +165,7 @@ export default function ToolkitPage() {
       <section id="buy" className="section border-t border-[var(--line)] scroll-mt-24">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <p className="eyebrow center">Instant Access</p>
+            <p className="eyebrow center">Instant Access · Zero Calls Required</p>
             <h2 className="text-3xl font-serif text-[var(--ink)]">
               Choose your edition.
             </h2>
@@ -182,22 +179,21 @@ export default function ToolkitPage() {
             <div className="bg-white border border-[var(--line)] rounded-2xl p-7 flex flex-col justify-between shadow-sm">
               <div>
                 <span className="text-xs font-mono font-bold uppercase text-[var(--gold)] block mb-1">
-                  Standard Edition · Direct Digital Download
+                  Standard Edition · Builders, PMs &amp; Operators
                 </span>
                 <div className="flex items-baseline gap-2 mb-3">
                   <span className="text-4xl font-serif font-bold text-[var(--ink)]">$29</span>
                   <span className="text-sm text-[var(--muted)] line-through font-mono">$299 value</span>
                 </div>
                 <p className="text-xs text-[var(--muted)] leading-relaxed mb-6">
-                  Includes all 5 core Excel/CSV spreadsheets, CFO board deck templates,
-                  30-day turnaround checklist, executive career playbook, and{' '}
+                  Includes all 5 core Excel/CSV spreadsheets, <code className="font-mono text-[11px]">SPEC.md</code> &amp; <code className="font-mono text-[11px]">AGENTS.md</code> production templates, 12-slide CFO board deck, 30-day turnaround checklist, $250K+ career/interview playbook, and{' '}
                   <strong className="text-[var(--ink)]">Live Interactive Workspace (/workspace)</strong> access.
                 </p>
               </div>
               <div className="pt-4 border-t border-[var(--line)]">
                 <CheckoutButton
                   productId="premium_guide_29"
-                  label="Get the Operating Kit ($29) →"
+                  label="Get the Survival Kit ($29) →"
                   variant="primary"
                 />
               </div>
@@ -210,16 +206,16 @@ export default function ToolkitPage() {
               </div>
               <div>
                 <span className="text-xs font-mono font-bold uppercase text-[var(--gold)] block mb-1">
-                  Complete Executive Bundle (+13 Playbooks)
+                  Complete AI Builder &amp; Executive System (+13 Playbooks)
                 </span>
                 <div className="flex items-baseline gap-2 mb-3">
                   <span className="text-4xl font-serif font-bold text-[var(--gold)]">$79</span>
                   <span className="text-sm text-zinc-300 line-through font-mono">$649 value</span>
                 </div>
                 <p className="text-xs text-zinc-200 leading-relaxed mb-6">
-                  Everything in the $29 Operating Kit + Live Workspace PLUS all 13
-                  specialized executive guides (PE Due Diligence, Consumption Pricing,
-                  Cloud FinOps, Agentic AI Costs, and more).
+                  Everything in the $29 Survival Kit + Live Workspace PLUS all 13
+                  specialized playbooks (Agentic AI Costs &amp; MCP Governance, Hybrid Credit Pricing,
+                  Cloud FinOps, PE Due Diligence, Coding Tool ROI, and more).
                 </p>
               </div>
               <div className="pt-4 border-t border-white/10">
@@ -247,10 +243,10 @@ export default function ToolkitPage() {
           <div className="text-center mb-12">
             <p className="eyebrow center">What Is Inside</p>
             <h2 className="text-3xl font-serif text-[var(--ink)]">
-              5 Plug-and-Play Financial Instruments
+              5 Plug-and-Play Operating &amp; Financial Instruments
             </h2>
             <p className="text-sm text-[var(--muted)] mt-2">
-              Designed to make you the most financially grounded leader in the room.
+              Designed for indie builders, Product Managers, engineering leaders, and executives who want real numbers instead of hype.
             </p>
           </div>
 
@@ -307,17 +303,16 @@ export default function ToolkitPage() {
       {/* Closing CTA */}
       <section className="closing-cta">
         <p className="eyebrow">Zero Consulting Bloat</p>
-        <h2>Get the Complete Operating Kit Today</h2>
+        <h2>Get the Complete Survival &amp; Operating Kit Today</h2>
         <p>
-          Spend $29 once and walk into your next CFO review, board meeting, or VP of
-          Product interview with the exact math that built a $25M ARR product line.
+          Spend $29 once and get the exact templates, pricing models, and board decks that built a $25M ARR product line and 3 live AI platforms.
         </p>
         <div className="actions center">
           <a href="#buy" className="button button-gold">
-            Download Operating Kit ($29) ↗
+            Download Survival Kit ($29) ↗
           </a>
-          <Link href="/services" className="button button-ghost-light">
-            Explore 1-on-1 Turnaround Sprints ↗
+          <Link href="/services#gut_check" className="button button-ghost-light">
+            Or Book a Live 60-Min Unstick Session ($450) ↗
           </Link>
         </div>
       </section>

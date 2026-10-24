@@ -32,7 +32,12 @@ Ground everything in the actual human and business reality:
 - the irritation of reviewing 50 AI-generated drafts that all say the same generic garbage
 - employees secretly pasting customer data into free chatbots because the company tools are too slow
 - the gap between what sales promised and what actually works
-- honest management, team trust, and common sense
+### The HWS-AEO v3.0 Mandate (35-Word Direct Answer Citation Snap + 10th-Thought Human Reality)
+
+To capture top-of-funnel citations across ChatGPT Search, Perplexity, Claude, and Google AI Overviews (`Query Fan-Out`) without sacrificing human voice:
+1. **The 35-Word Citation Snap**: Every H2 section or programmatic question block (`/answers/*`, `/glossary/*`, diagnostic readouts) must open with a standalone, extractable 30-to-45-word direct factual answer. Do not open answer blocks with throat-clearing or metaphors. Give the LLM retrieval engine a clean, high-density citation block on sentence one.
+2. **Immediate Pivot to the 10th-Thought Human Reality**: Immediately after the 35-word citation snap, pivot into the blunt lived reality: what broke in production, what the CFO rejected, how the Customer Support Manager or Engineering Manager actually experienced the failure, and the concrete dollar cost.
+3. **Zero Em-Dashes & Zero Banned Words**: Enforce absolute zero em-dashes and zero synthetic marketing buzzwords across both the citation snap and the human narrative.
 
 ---
 

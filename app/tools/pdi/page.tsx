@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { Suspense } from 'react';
 import DiagnosticCTA from '@/app/components/DiagnosticCTA';
+import ScorecardCheckoutDrawer from '@/app/components/ScorecardCheckoutDrawer';
 import CalculatorIntentProposal from '@/app/components/calculators/CalculatorIntentProposal';
 import PDITool from './content';
 
@@ -55,6 +56,11 @@ export default function Page() {
                 <PDITool />
             </Suspense>
             <div className="page-container max-w-4xl mx-auto px-6 mb-16 space-y-12">
+                <ScorecardCheckoutDrawer
+                    metricLabel="Typical R&D Carrying Cost Drag"
+                    metricValue="25% to 55% of Capacity"
+                    source="pdi"
+                />
                 <CalculatorIntentProposal
                     toolName="Product Debt Index (PDI) Calculator"
                     problemDomain="Compounding Technical Debt &amp; Maintenance Insolvency"
@@ -87,6 +93,7 @@ export default function Page() {
                     title="Is your team drowning in AI-generated Technical Debt?"
                     subtitle="Vibe coding gets you to MVP fast, but creates a maintenance nightmare. Take the AI Economics Diagnostic to map your debt liability before velocity drops to zero."
                     metrics={["45% Vulnerable", "0% Velocity", "High Attrition"]}
+                    hideCheckoutDrawer={true}
                 />
             </div>
         </>

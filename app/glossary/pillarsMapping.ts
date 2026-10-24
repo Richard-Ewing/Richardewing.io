@@ -24,16 +24,19 @@ export const PILLARS = [
 
 export const CATEGORY_MAP: Record<string, string> = {
     'Technical Debt & Code Quality': 'technical-debt-platform-engineering',
+    'Technical Debt': 'technical-debt-platform-engineering',
     'Platform Engineering': 'technical-debt-platform-engineering',
     'DevOps & Infrastructure': 'technical-debt-platform-engineering',
     'Open Source': 'technical-debt-platform-engineering',
     
     'AI & Machine Learning': 'ai-unit-economics',
+    'AI Economics': 'ai-unit-economics',
     'AI Tools & Frameworks': 'ai-unit-economics',
     'Pricing & Packaging': 'ai-unit-economics',
     
     'SaaS Metrics & Finance': 'saas-metrics-due-diligence',
     'Finance & Accounting': 'saas-metrics-due-diligence',
+    'Finance & Strategy': 'saas-metrics-due-diligence',
     'Due Diligence & M&A': 'saas-metrics-due-diligence',
     'Startup & Venture Capital': 'saas-metrics-due-diligence',
     
@@ -97,4 +100,7 @@ export const KEEP_TERMS = [
     'integration-risk', 'software-entropy', 'board-fiduciary-duty-ai',
     'section-174-rd-capitalization', 'ai-agent-signing-matrix', 'sox-404-agent-compliance',
     'ai-capital-allocation-ratio', 'post-syntax-talent-ladder',
+    'stuck-at-80-percent-trap', 'regeneration-regress', 'mcp-tool-poisoning',
+    'query-fan-out-aeo', 'systems-of-action', 'one-person-department',
+    'hybrid-credit-packaging', 'human-in-the-loop-slack-gate',
 ];

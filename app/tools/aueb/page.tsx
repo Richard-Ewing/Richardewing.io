@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { Suspense } from 'react';
 import DiagnosticCTA from '@/app/components/DiagnosticCTA';
+import ScorecardCheckoutDrawer from '@/app/components/ScorecardCheckoutDrawer';
 import CalculatorIntentProposal from '@/app/components/calculators/CalculatorIntentProposal';
 import AUEBTool from './content';
 
@@ -59,6 +60,11 @@ export default function Page() {
                 <AUEBTool />
             </Suspense>
             <div className="page-container max-w-4xl mx-auto px-6 mb-16 space-y-12">
+                <ScorecardCheckoutDrawer
+                    metricLabel="Typical Recoverable Token Dividend"
+                    metricValue="$120K to $650K+ / yr"
+                    source="aueb"
+                />
                 <CalculatorIntentProposal
                     toolName="AI Unit Economics Benchmark (AUEB)"
                     problemDomain="Inference Token Squeeze &amp; Gross Margin Erosion"
@@ -91,6 +97,7 @@ export default function Page() {
                     title="Is your runway burning faster than your MRR?"
                     subtitle="Compute costs are the new cloud tax. Take the AI Economics Diagnostic Audit to find your hidden margin leaks before your next board meeting."
                     metrics={["$100K+ API Bills", "Token Sprawl", "Negative Margin"]}
+                    hideCheckoutDrawer={true}
                 />
                 
                 <div className="mt-12 bg-white border border-zinc-300 rounded-3xl p-8 text-center space-y-4 shadow-sm">

@@ -110,12 +110,12 @@ export function ConceptExplorer() {
               </span>
             </div>
 
-            {activeConcept.connectedTool && (
+            {activeConcept.executableTool && (
               <Link
-                href={activeConcept.connectedTool.url}
+                href={activeConcept.executableTool.url}
                 className="button button-gold text-xs !py-1.5 !min-h-0"
               >
-                Launch {activeConcept.connectedTool.name} ↗
+                Launch {activeConcept.executableTool.name} ↗
               </Link>
             )}
           </div>

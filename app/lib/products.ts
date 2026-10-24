@@ -152,15 +152,15 @@ export const PRODUCTS: Record<string, Product> = {
 
     // --- GUIDES (DYNAMIC TIERS) & TOOLKIT ---
     premium_guide_29: {
-        name: 'The Product & AI Economist Operating Kit (Standard Edition)',
-        description: 'Instant download of all 5 battle-tested P&L spreadsheets, AI feature pricing stress-testers, Zombie Feature kill-list matrices, 12-slide CFO board decks, executive career playbooks, plus live interactive Product Economist Workspace (/workspace) access.',
+        name: 'The Builder, PM & Operator Survival Kit (Standard Edition)',
+        description: 'Instant download of all 5 battle-tested P&L spreadsheets, SPEC.md / AGENTS.md vibe-to-production templates, AI feature pricing stress-testers, Zombie Feature kill-list matrices, 12-slide CFO board decks, $250K+ executive career playbooks, plus live interactive Workspace (/workspace) access.',
         price: 2900,
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/fZudR2aj44ng8xLeko2B21c', // Official Live Stripe Link
     },
     premium_guide_79: {
-        name: 'The Product & AI Economist Operating Kit (Complete Executive Bundle)',
-        description: 'Complete Executive Access: All 5 core operating models, live interactive Product Economist Workspace (/workspace), PLUS 13 specialized executive playbooks (PE Due Diligence, Consumption Pricing, FinOps, Agentic AI Economics).',
+        name: 'The Complete AI Builder & Executive Playbook System (Complete Bundle)',
+        description: 'Complete Access: Full $29 Survival Kit, live interactive Workspace (/workspace), PLUS all 13 specialized playbooks (Agentic AI Costs & MCP Governance, Hybrid Credit Pricing, Cloud FinOps, PE Due Diligence, Coding Tool ROI).',
         price: 7900,
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/6oUdR2ezk2f8aFT9042B21d', // Official Live Stripe Link
@@ -196,15 +196,15 @@ export const PRODUCTS: Record<string, Product> = {
 
     // --- ADVISORY (CORE TIERS) ---
     gut_check: {
-        name: 'AI Product P&L, Pricing & Roadmap Tear-Down (60-Min 1-on-1)',
-        description: 'Live 60-minute 1-on-1 working session with Richard Ewing to stress-test your AI pricing tiers, pinpoint margin leaks, and cut zombie roadmap waste. Includes the full $79 Operating Kit & Workspace access.',
+        name: 'Live 60-Minute "Unstick My Product, Agent, or Pricing" Working Session',
+        description: '48-hour turnaround screen-share session with Richard Ewing to unstick a vibe-coded app stuck at 80% (Supabase RLS, Stripe webhooks, auth), fix a 5x AI bill spike, wire an MCP workflow, or prep a high-stakes board/interview deck. Includes the $79 Complete Bundle free.',
         price: 45000,
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204',
     },
     insolvency_diagnostic: {
-        name: 'Product P&L & Roadmap Turnaround Sprint',
-        description: '2-week executive turnaround sprint: feature-by-feature backlog ROI & maintenance carry audit, AI tier packaging redesign, 90-day capacity reallocation plan, and board-ready P&L presentation deck.',
+        name: 'The 14-Day "Automate the Department & Turnaround P&L" Sprint',
+        description: '14-day fixed-scope sprint: replace $5,000/mo of bloated SaaS seats and manual support/ops busywork with governed MCP + n8n workflows, audit feature-level ROI, redesign AI tier packaging, and deliver a board-ready P&L deck.',
         price: 250000,
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203',
@@ -224,15 +224,15 @@ export const PRODUCTS: Record<string, Product> = {
         paymentLink: 'https://buy.stripe.com/dRm6oAbn8bPIdS5gsw2B20j',
     },
     full_audit: {
-        name: '0-to-1 AI Product & Authority Engine Sprint',
-        description: '21-day hands-on architecture and build sprint to ship a production-grade AI application, interactive buyer diagnostic calculator funnel, or AEO/GEO authority engine.',
+        name: 'The 21-Day "0-to-1 Production AI App & AEO Traffic Engine" Build Sprint',
+        description: '21-day hands-on architecture and build sprint to ship a live production AI application or interactive calculator funnel on Cloudflare Edge with Supabase, Stripe billing, /llms.txt, and FAQPage citation schemas built in.',
         price: 750000,
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/7sY14g76ScTM7tH2BG2B202',
     },
     hallucination_tax_audit: {
-        name: '0-to-1 AI Product & Authority Engine Sprint',
-        description: '21-day hands-on architecture and build sprint to ship a production-grade AI application, interactive buyer diagnostic calculator funnel, or AEO/GEO authority engine.',
+        name: 'The 21-Day "0-to-1 Production AI App & AEO Traffic Engine" Build Sprint',
+        description: '21-day hands-on architecture and build sprint to ship a live production AI application or interactive calculator funnel on Cloudflare Edge with Supabase, Stripe billing, /llms.txt, and FAQPage citation schemas built in.',
         price: 750000,
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/7sY14g76ScTM7tH2BG2B202',

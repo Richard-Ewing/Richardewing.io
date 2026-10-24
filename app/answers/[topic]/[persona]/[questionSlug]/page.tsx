@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { SPOKE_MATRIX, Persona, getAllSpokeRoutes } from '../../../../lib/spoke-data';
 import ArticleUpsell from '../../../../components/ArticleUpsell';
 import ProgrammaticAnswersRelated from '../../../../components/ProgrammaticAnswersRelated';
+import ScorecardCheckoutDrawer from '../../../../components/ScorecardCheckoutDrawer';
 
 interface Props {
     params: Promise<{
@@ -170,6 +171,14 @@ export default async function AnswerPage({ params }: Props) {
                 headline={query.upsellHeadline}
                 description="Download the exact execution models, deployment checklists, and financial breakdown frameworks associated with this architecture methodology."
             />
+
+            {/* Direct 1-Click Checkout Ladder */}
+            <div className="mt-10">
+                <ScorecardCheckoutDrawer
+                    sourceTool={`Answer Spoke (${p.questionSlug})`}
+                    headline="Fix This Bottleneck Today: Choose Your Execution Speed"
+                />
+            </div>
 
             {/* Hub & Spoke Matrix Routing Node */}
             <div className="mt-16 bg-white/50 border border-zinc-300 rounded-2xl p-6 md:p-8">

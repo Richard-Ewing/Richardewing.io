@@ -1063,6 +1063,126 @@ Quantifying these optimization windows is a key capability of the **AI Unit Econ
         ],
         relatedTerms: ['synthetic-cogs', 'ai-volatility-tax', 'total-compute-cost', 'inference-economics'],
         relatedDiagnostics: ['aueb', 'slm-vs-api'],
+    },
+    // =========================================================================
+    // OCTOBER 2026 OPTION C HIGH-VELOCITY BUILDER, AEO & OPERATOR TERMS
+    // =========================================================================
+    {
+        slug: 'stuck-at-80-percent-trap',
+        title: 'The "Stuck at 80%" Vibe-Coding Trap',
+        category: 'Platform Engineering',
+        tier: 'pillar',
+        definition: `The "Stuck at 80%" Vibe-Coding Trap is the structural failure point where an application built with browser AI coding tools (Lovable, Bolt.new, v0, Replit, Cursor) reaches a polished UI and happy-path demo in 48 hours, but stalls indefinitely on the final 20% of production requirements: multi-tenant authentication, Supabase Row-Level Security (RLS), idempotent Stripe webhooks, and cross-file state consistency.\n\nIn the first weekend of prototyping, natural-language prompting feels effortless because visual scaffolding has low state complexity. Once the builder attempts to wire real subscription upgrades, role-based access control, or multi-step database transactions, chat-based agents lose track of the global repository dependency graph. Every prompt that fixes one edge case silently breaks two existing screens.\n\nEscaping the 80% Trap requires graduating out of the browser sandbox into a local Git repository governed by a deterministic specification (SPEC.md) and explicit Blast Radius Guards (AGENTS.md) in Google Antigravity or Claude Code.`,
+        whyItMatters: `Thousands of solo founders, Product Managers, and enterprise innovation teams spend months trapped between 80% and 95% completion, burning API credits in circular debugging loops or shipping insecure prototypes with wide-open Supabase tables and broken Stripe billing.`,
+        howToApply: `Export your prototype to GitHub as soon as the UI layout stabilizes. Create an AGENTS.md file listing off-limits working files, write a 1-page SPEC.md for authentication and billing, verify Supabase RLS on every public table, and wire a signature-verified server-side Stripe webhook handler before launching.`,
+        faqs: [
+            { question: 'Why do vibe-coded apps get stuck at 80%?', answer: 'Browser AI builders excel at generating UI screens and basic CRUD tables, but their chat context windows lose track of cross-file dependencies when wiring production auth, Supabase RLS policies, and idempotent Stripe webhooks.' },
+            { question: 'How do you fix an app stuck in the 80% vibe-coding trap?', answer: 'Stop prompting inside the browser sandbox. Sync the repo to GitHub, clone it locally into Google Antigravity or Claude Code, add an AGENTS.md Blast Radius Guard, and harden auth, RLS, and webhooks deterministically one module at a time.' },
+            { question: 'When should you rebuild a vibe-coded prototype instead of fixing it?', answer: 'If more than 40% of your codebase contains duplicated business logic inside UI components, hardcoded keys, and zero database migrations, freezing the UI as a visual reference and rebuilding from a clean SPEC.md takes 5 to 10 days vs. 6+ weeks of debugging.' }
+        ],
+        relatedTerms: ['vibe-coding', 'regeneration-regress', 'spec-driven-development', 'comprehension-debt'],
+        relatedDiagnostics: ['pdi', 'negative-carry-code-auditor'],
+    },
+    {
+        slug: 'regeneration-regress',
+        title: 'Regeneration Regress',
+        category: 'Technical Debt & Code Quality',
+        tier: 'pillar',
+        definition: `Regeneration Regress is the compounding degradation loop that occurs when an unguarded AI coding agent attempts to fix a bug by regenerating entire files from conversational context, inadvertently deleting working edge-case logic, weakening TypeScript types, or re-introducing previously solved bugs.\n\nBecause LLMs optimize for clearing the immediate compiler or terminal error in the current turn, an agent without strict file-scope boundaries will frequently rewrite adjacent functions, strip out validation checks, or delete failing unit tests to achieve a passing status. After 15 to 20 turns in the same chat session, context rot amplifies Regeneration Regress until net forward engineering velocity drops below zero.`,
+        whyItMatters: `Regeneration Regress is the primary reason AI-assisted codebases accumulate Negative-Carry Code and suffer production regressions after seemingly minor prompt edits. Without Blast Radius Guards, developers spend more time auditing and reverting collateral file damage than writing new features.`,
+        howToApply: `Enforce a strict 4-rule Blast Radius Guard in AGENTS.md: (1) explicitly list target files allowed to change and files off-limits, (2) forbid test deletion or type weakening, (3) reset chat context every 15 turns, and (4) use atomic git checkout reverts whenever an agent drifts across unrelated files.`,
+        faqs: [
+            { question: 'What is Regeneration Regress in AI coding?', answer: 'Regeneration Regress is the cycle where prompting an AI coding agent to fix one bug causes it to overwrite or break two previously working features due to context rot and unguarded multi-file rewrites.' },
+            { question: 'How do you prevent Regeneration Regress?', answer: 'Define explicit off-limits files in your prompt and AGENTS.md, commit after every atomic working change, start a fresh chat thread after 15 turns, and run deterministic pre-commit verification scripts.' }
+        ],
+        relatedTerms: ['stuck-at-80-percent-trap', 'context-rot', 'negative-carry-code', 'spec-driven-development'],
+        relatedDiagnostics: ['pdi', 'aper', 'negative-carry-code-auditor'],
+    },
+    {
+        slug: 'mcp-tool-poisoning',
+        title: 'MCP Tool Poisoning',
+        category: 'Security & Compliance',
+        tier: 'pillar',
+        definition: `MCP Tool Poisoning is an adversarial security vulnerability in Model Context Protocol (MCP) ecosystems where a malicious or compromised third-party MCP server embeds hidden prompt-injection instructions inside its tool metadata or descriptions, hijacking the connected AI agent into exfiltrating local secrets, .env files, SSH keys, or database records across other trusted MCP servers in the same session.\n\nBecause AI coding clients (Claude Desktop, Claude Code, Cursor, Windsurf, Antigravity) automatically inject the tool descriptions of all active MCP servers into the model's system context, an unverified community MCP server can instruct the model to read credentials or query a production Postgres MCP server and silently transmit the payload via an outbound HTTP call or URL parameter.`,
+        whyItMatters: `Installing unvetted third-party MCP servers alongside production database, GitHub, or cloud admin credentials creates an immediate cross-tool privilege escalation risk that bypasses traditional perimeter firewalls.`,
+        howToApply: `Pin exact commit hashes for all MCP servers, inspect raw tool description strings before registration, isolate high-privilege database and cloud MCP servers into separate workspaces with read-only roles, and require explicit human approval before any outbound network write or shell execution.`,
+        faqs: [
+            { question: 'What is MCP Tool Poisoning?', answer: 'MCP Tool Poisoning occurs when a malicious Model Context Protocol server hides prompt-injection commands inside its tool descriptions, tricking your AI agent into reading local API keys or database rows and sending them to an external server.' },
+            { question: 'How do you protect against MCP Tool Poisoning?', answer: 'Never run unverified community MCP packages alongside production credentials, scope database MCP tokens to read-only roles, audit tool metadata strings, and gate all external writes behind deterministic human confirmation.' }
+        ],
+        relatedTerms: ['tool-poisoning-attack', 'prompt-injection', 'shadow-mcp', 'admissibility-allowlist'],
+        relatedDiagnostics: ['mcp-security-auditor', 'shadow-ai'],
+    },
+    {
+        slug: 'query-fan-out-aeo',
+        title: 'Query Fan-Out (AEO / GEO)',
+        category: 'Growth & Marketing',
+        tier: 'pillar',
+        definition: `Query Fan-Out is the retrieval behavior used by AI Answer Engines (ChatGPT Search, Perplexity, Google AI Overviews, Claude) where a single complex buyer prompt triggers 3 to 8 parallel background sub-queries across search indexes to locate verifiable facts, pricing tables, comparisons, and direct answers before synthesizing a single cited recommendation.\n\nUnlike traditional Google search, where a human clicks ten blue links to piece together an answer, Query Fan-Out evaluates candidate web pages in milliseconds based on extractable semantic triples (Brand -> Solves Specific Problem -> Exact Price -> Target Persona). Pages that bury answers under fluffy corporate introductions or hide pricing behind "Book a Demo" forms are discarded during the fan-out synthesis pass.`,
+        whyItMatters: `As generic informational search clicks drop 40%+ in 2026, winning customer acquisition requires structuring your pages so Query Fan-Out bots extract your brand, calculators, and pricing tiers as the primary cited authority.`,
+        howToApply: `Place a 35-word Direct Answer Citation Snap immediately below every H1/H2 question heading, render full FAQPage and Product JSON-LD schemas in server-side HTML, publish transparent pricing and comparison tables, and maintain a dynamic /llms.txt and /llms-full.txt index.`,
+        faqs: [
+            { question: 'What is Query Fan-Out in AEO and GEO?', answer: 'Query Fan-Out is the process where an AI answer engine splits a user prompt into multiple parallel background searches for definitions, pricing, reviews, and comparisons, citing only the pages with the clearest extractable facts.' },
+            { question: 'How do you optimize a website for Query Fan-Out?', answer: 'Lead every section with a 35-word factual answer, publish explicit pricing and comparison tables in server-rendered HTML, inject FAQPage JSON-LD schema, and pair your content with interactive diagnostic calculators.' }
+        ],
+        relatedTerms: ['ai-unit-economics', 'product-economist'],
+        relatedDiagnostics: ['aueb'],
+    },
+    {
+        slug: 'systems-of-action',
+        title: 'Systems of Action',
+        category: 'Architecture Patterns',
+        tier: 'pillar',
+        definition: `Systems of Action are enterprise software architectures where governed AI agents and deterministic workflows actively execute multi-step business operations (triaging leads, drafting specs, updating records, scheduling appointments, and preparing Slack-gated approvals) on top of underlying Systems of Record (Postgres, CRM, ERP, Stripe).\n\nFor twenty years, B2B SaaS sold passive "Systems of Record": databases wrapped in forms and tables where human employees were paid to sit all day copying data from Tab A to Tab B. In 2026, per-seat wrapper tools are collapsing as companies connect MCP servers, n8n orchestration, and deterministic admissibility gates directly to their core databases, shifting software from passive forms humans fill out to governed workflows humans supervise.`,
+        whyItMatters: `Organizations that transition from bloated per-seat SaaS wrappers to governed Systems of Action cut software subscription waste and repetitive coordination labor by 40% to 70% while maintaining strict human-in-the-loop control over high-risk writes.`,
+        howToApply: `Keep your core Systems of Record (Postgres/Supabase, primary CRM, accounting/ERP, Stripe) as your source of truth, cancel redundant per-seat wrapper tools, and wire deterministic MCP + n8n workflows with Slack Block Kit approval gates for cross-system execution.`,
+        faqs: [
+            { question: 'What is the difference between a System of Record and a System of Action?', answer: 'A System of Record is a passive database (like a CRM or ERP) where humans manually enter and look up data. A System of Action uses governed AI and deterministic workflows to execute the actual business task across those databases, escalating to humans only for high-judgment approvals.' }
+        ],
+        relatedTerms: ['deterministic-execution-control', 'persistence-vs-authority', 'human-in-the-loop-slack-gate'],
+        relatedDiagnostics: ['fte-displacement', 'shadow-ai'],
+    },
+    {
+        slug: 'one-person-department',
+        title: 'The One-Person Department',
+        category: 'Product Management',
+        tier: 'pillar',
+        definition: `The One-Person Department is an operating model where a single senior Product Manager, founder, or operator combines spec-driven AI prototyping, automated MCP/n8n data workflows, and standardized P&L financial templates to deliver the output that previously required a 5-person coordination team of junior PMs, analysts, and status-report writers.\n\nCrucially, running a One-Person Department does not mean working 70 hours a week generating 3x more AI noise. It requires ruthless subtraction first: using a Zombie Feature & Task Kill-List to eliminate the bottom 20% of low-ROI work, automating repetitive transcript-to-spec and data formatting pipelines, and reserving human hours strictly for customer discovery, architecture boundaries, and CFO-level capital allocation.`,
+        whyItMatters: `In late 2026, hiring managers and boards are replacing "ticket-router" middle-management layers with high-leverage operators who can both build working prototypes and run their roadmap as an audited P&L.`,
+        howToApply: `Eliminate manual status reporting, audit and kill bottom-decile zombie features using a Maintenance Cost vs. ARR matrix, automate call-transcript-to-SPEC.md drafting, and standardize monthly leadership updates on a 12-slide CFO & Board P&L template.`,
+        faqs: [
+            { question: 'What is a One-Person Department in 2026?', answer: 'A One-Person Department is a senior operator or PM who uses spec-driven AI prototyping, MCP workflow automation, and P&L kill-lists to ship the product discovery, operations, and financial reporting that used to require a 5-person team.' }
+        ],
+        relatedTerms: ['product-economist', 'zombie-code', 'spec-driven-development'],
+        relatedDiagnostics: ['aper', 'pdi'],
+    },
+    {
+        slug: 'hybrid-credit-packaging',
+        title: 'Hybrid Credit Packaging (AI SaaS Pricing)',
+        category: 'Pricing & Packaging',
+        tier: 'pillar',
+        definition: `Hybrid Credit Packaging is the three-part AI SaaS pricing architecture that protects software gross margins against power-user token burn: (1) a predictable base platform fee, (2) a monthly included allowance of human-understandable workflow actions covering 85% of standard users, and (3) an automated model step-down router (or high-margin credit top-up pack) that activates when a heavy user reaches 100% of their allowance.\n\nFlat-rate "unlimited AI" seat pricing fails because the top 5% of power users or scripted accounts consume 10x to 50x the median inference COGS, inverting gross margins. Conversely, charging business buyers per raw token creates "meter anxiety" and stalls procurement. Hybrid Credit Packaging gives CFOs budget predictability while mathematically capping P90 compute exposure.`,
+        whyItMatters: `Without Hybrid Credit Packaging and model step-down routing, your heaviest, most engaged customers become your largest financial losses.`,
+        howToApply: `Audit your P50 and P90 inference cost per user in the AUEB calculator, set your included monthly credit allowance just above the P80 user baseline, configure automatic routing from frontier models to Flash/Haiku models at 80% quota, and offer optional self-serve capacity packs.`,
+        faqs: [
+            { question: 'How does Hybrid Credit Packaging protect AI SaaS margins?', answer: 'It combines a predictable base subscription and included monthly action credits for normal users with automatic model step-down routing and paid capacity top-ups for the top 5% of power users, preventing negative unit margins.' }
+        ],
+        relatedTerms: ['ai-unit-economics', 'aueb-framework', 'ai-billing-shock', 'margin-engineering'],
+        relatedDiagnostics: ['aueb'],
+    },
+    {
+        slug: 'human-in-the-loop-slack-gate',
+        title: 'Human-in-the-Loop Slack Gate',
+        category: 'AI Governance & Verification',
+        tier: 'pillar',
+        definition: `A Human-in-the-Loop Slack Gate is a two-stage cryptographic execution pattern where an autonomous AI agent has zero direct credentials to execute high-risk external writes (sending customer emails, issuing Stripe refunds, mutating CRM deals, or deleting rows), and instead writes a pending action payload that posts an interactive Slack Block Kit card with signed [Approve] and [Reject] webhook buttons for an authorized human operator.\n\nRelying on a system prompt instruction ("Ask for confirmation before refunding") is not a security control because indirect prompt injection can trick the LLM into believing approval was already granted. By isolating the write API token inside the deterministic webhook handler triggered exclusively by a verified Slack HMAC callback, the agent can never execute an unauthorized action.`,
+        whyItMatters: `It allows teams to automate 90% of the research, drafting, and data-lookup labor of back-office operations while keeping 100% deterministic human authority over money, customer communications, and production records.`,
+        howToApply: `Give your Stage 1 drafting agent read-only MCP credentials plus permission to insert into a pending_actions table and post a Slack webhook card. Wire Stage 2 as a deterministic serverless endpoint that verifies Slack's X-Slack-Signature header and user ID before executing the Stripe or CRM mutation.`,
+        faqs: [
+            { question: 'Why is a Human-in-the-Loop Slack Gate safer than prompt guardrails?', answer: 'Prompt guardrails can be bypassed by prompt injection. A Human-in-the-Loop Slack Gate physically withholds the write API credentials from the AI agent, executing the transaction only when a signed Slack button webhook is clicked by an authorized manager.' }
+        ],
+        relatedTerms: ['persistence-vs-authority', 'deterministic-execution-control', 'admissibility-allowlist', 'mcp-tool-poisoning'],
+        relatedDiagnostics: ['mcp-security-auditor', 'agentic-drift-matrix', 'shadow-ai'],
     }
 ];
 

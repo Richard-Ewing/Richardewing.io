@@ -77,4 +77,7 @@ description: Enforces strict formulas for Meta Titles (<60 chars), Meta Descript
 - Every local image path referenced in JSON-LD (`image`, `logo`) or OpenGraph/Twitter metadata (`https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg`) must exist on disk in `public/`.
 - Never inject a global static `keywords` array into `app/layout.tsx`; leaf routes must declare page-specific keywords.
 
-
+## 14. Query Fan-Out AEO, `llms.txt` Parity & Option C Conversion Drawer Invariant
+- **35-Word Citation Snap (`HWS-AEO v3.0`)**: Every programmatic answer spoke (`/answers/[topic]/[persona]/[questionSlug]`) and glossary definition (`/glossary/[slug]`) must open with a standalone 30-to-45-word direct answer optimized for sub-query decomposition (`Query Fan-Out`) across ChatGPT Search, Perplexity, Claude, and Google AI Overviews, backed by server-rendered `FAQPage` or `DefinedTerm` JSON-LD.
+- **`llms.txt` & `llms-full.txt` Synchronization**: Whenever new question clusters are added to `app/lib/spoke-data.ts` or commercial offers change in `app/lib/products.ts`, `app/llms.txt/route.ts` and `app/llms-full.txt/route.ts` must remain synchronized.
+- **In-Scorecard Conversion Drawer**: Every diagnostic calculator (`/reality-check`, `/tools/*`) and programmatic answer spoke (`/answers/*`) must mount `<ScorecardCheckoutDrawer />` to provide a zero-click checkout path (`$29` Kit / `$79` Complete Bundle -> `$450` 60-Min Live Session -> `$2,500` 14-Day Sprint / `$7,500` 21-Day 0-to-1 Build Sprint).
