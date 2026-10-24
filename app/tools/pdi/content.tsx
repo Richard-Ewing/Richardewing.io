@@ -568,7 +568,12 @@ Migrate from Heroku to AWS"
                                     <BenchmarkComparison tool="pdi" userScore={results.score} />
                                     <LongitudinalHistory tool="pdi" scoreKey="score" />
                                     <ExogramRecommendations score={results.score} maintenance={results.metrics.maintenance} />
-                                    <AdvisoryCTA variant="tool-result" />
+                                    <AdvisoryCTA 
+                                        variant="tool-result" 
+                                        primaryHrefOverride={`/schedule?source=pdi&leak=${Math.round(results.financials.waste)}`}
+                                        primaryLabelOverride="Book 30-Min PDI Triage on Cal.com"
+                                        primaryPriceOverride="Free Triage"
+                                    />
                                 </div>
                             }
                         />
@@ -591,6 +596,31 @@ Migrate from Heroku to AWS"
                                 "Deploy Exogram deterministic runtime gatekeeper to block unverified AI code from entering production."
                             ]}
                         />
+                    </ScrollReveal>
+
+                    {/* Cal.com Executive Triage Action Card */}
+                    <ScrollReveal delay={85}>
+                        <div className="mb-6 p-6 rounded-2xl border border-blue-900/30 bg-blue-950/10 backdrop-blur-sm">
+                            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                                <div className="space-y-1">
+                                    <span className="text-[10px] font-mono uppercase tracking-widest text-blue-900 font-bold">
+                                        Executive Action Protocol
+                                    </span>
+                                    <h4 className="text-lg font-grotesk font-bold text-zinc-950">
+                                        Triage Your {formatMoney(results.financials.waste)} Maintenance Burden
+                                    </h4>
+                                    <p className="text-xs text-zinc-700 font-medium max-w-xl leading-relaxed">
+                                        Lock in a 30-minute technical debt triage call directly with Richard Ewing to review your PDI metrics and establish an immediate 90-day structural neutralization priority.
+                                    </p>
+                                </div>
+                                <Link
+                                    href={`/schedule?source=pdi&leak=${Math.round(results.financials.waste)}`}
+                                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-blue-900 text-white font-bold text-sm rounded-xl hover:bg-blue-800 transition-colors shadow-md shrink-0 text-center"
+                                >
+                                    Book Triage on Cal.com ↗
+                                </Link>
+                            </div>
+                        </div>
                     </ScrollReveal>
 
                     {/* Metrics Grid */}

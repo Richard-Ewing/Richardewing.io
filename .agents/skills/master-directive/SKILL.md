@@ -345,3 +345,11 @@ Every report, telemetry audit, or analytics inquiry prompt MUST lead with an **O
 2. **CDN Cache Shield**: Every redirect returned by edge middleware must explicitly set `Cloudflare-CDN-Cache-Control: no-store` and `Cache-Control: no-cache, no-store, must-revalidate` so that Cloudflare CDN POP caches never store intermediate redirects.
 3. **Automated Cache Self-Healing**: Maintain `POISONED_CACHE_URLS` in `middleware.ts` using `caches.default.delete(url)` to automatically evict stale or corrupted edge cache keys on incoming requests.
 
+---
+
+## 19. Runtime Security & Third-Party Telemetry Hygiene
+
+1. **Workstation Runtime Patching**: Local developer workstations running diagnostic scripts that interact with third-party APIs (such as Stripe, Cloudflare, Resend) must keep Node.js updated to the latest patched security releases (`>=24.22.1` or `>=22.23.4`) to prevent automated compliance triggers on client telemetry (`node_version`).
+2. **Cloudflare Worker Isolation**: Live production applications execute exclusively on Cloudflare Workers V8 isolates (`workerd`), maintaining physical separation from workstation Node.js runtimes. Workstation telemetry warnings must not be confused with edge infrastructure compromise.
+
+

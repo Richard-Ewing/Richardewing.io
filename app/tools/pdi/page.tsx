@@ -67,8 +67,8 @@ export default function Page() {
                         channel: 'EXECUTIVE_ADVISORY',
                         headline: 'Commission a Technical Due Diligence & PDI Audit',
                         subtext: 'Retain Richard Ewing to audit software capital allocation, quantify balance sheet technical debt, and present remediation roadmaps to the board.',
-                        actionUrl: '/services/technical-due-diligence',
-                        actionLabel: 'Book Technical Due Diligence ↗',
+                        actionUrl: '/schedule?source=pdi',
+                        actionLabel: 'Book 30-Min PDI Triage on Cal.com ↗',
                         targetRole: 'Private Equity Operating Partners & CPOs'
                     }}
                     secondaryPathway={{

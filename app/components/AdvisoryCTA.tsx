@@ -3,6 +3,9 @@ import Link from 'next/link';
 interface AdvisoryCTAProps {
   variant: 'tool-result' | 'compare' | 'educational' | 'industry';
   termTitle?: string;
+  primaryHrefOverride?: string;
+  primaryLabelOverride?: string;
+  primaryPriceOverride?: string;
 }
 
 const VARIANTS = {
@@ -60,9 +63,12 @@ const VARIANTS = {
   },
 };
 
-export default function AdvisoryCTA({ variant, termTitle }: AdvisoryCTAProps) {
+export default function AdvisoryCTA({ variant, termTitle, primaryHrefOverride, primaryLabelOverride, primaryPriceOverride }: AdvisoryCTAProps) {
   const v = VARIANTS[variant];
-  const isInternalPrimary = v.primaryHref.startsWith('/') && !v.primaryHref.startsWith('/api/');
+  const primaryHref = primaryHrefOverride || v.primaryHref;
+  const primaryLabel = primaryLabelOverride || v.primaryLabel;
+  const primaryPrice = primaryPriceOverride !== undefined ? primaryPriceOverride : v.primaryPrice;
+  const isInternalPrimary = primaryHref.startsWith('/') && !primaryHref.startsWith('/api/');
   const isInternalSecondary = v.secondaryHref.startsWith('/') && !v.secondaryHref.startsWith('/api/');
 
   return (
@@ -84,18 +90,18 @@ export default function AdvisoryCTA({ variant, termTitle }: AdvisoryCTAProps) {
       <div className="flex flex-wrap items-center gap-3 mt-6">
         {isInternalPrimary ? (
           <Link
-            href={v.primaryHref}
+            href={primaryHref}
             className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${v.btnGradient} text-zinc-900 font-bold text-sm rounded-lg hover:opacity-90 transition-opacity shadow-lg`}
           >
-            {v.primaryLabel} {v.primaryPrice && <span className="opacity-80 font-mono text-xs">({v.primaryPrice})</span>}
+            {primaryLabel} {primaryPrice && <span className="opacity-80 font-mono text-xs">({primaryPrice})</span>}
             <span aria-hidden="true">→</span>
           </Link>
         ) : (
           <a
-            href={v.primaryHref}
+            href={primaryHref}
             className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${v.btnGradient} text-zinc-900 font-bold text-sm rounded-lg hover:opacity-90 transition-opacity shadow-lg`}
           >
-            {v.primaryLabel} {v.primaryPrice && <span className="opacity-80 font-mono text-xs">({v.primaryPrice})</span>}
+            {primaryLabel} {primaryPrice && <span className="opacity-80 font-mono text-xs">({primaryPrice})</span>}
             <span aria-hidden="true">→</span>
           </a>
         )}
