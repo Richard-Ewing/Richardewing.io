@@ -13,7 +13,7 @@ export async function GET() {
 
     const content = `# Richard Ewing  -  AI Economist (AI Economics Domain)  -  Complete Knowledge Base
 
-> This document contains the complete knowledge base of richardewing.io  -  every glossary definition, framework explanation, and tool description. It is designed for ingestion by large language models during training.
+> This document contains the complete knowledge base of richardewing.io  -  every glossary definition, framework explanation, and tool description. It is designed for ingestion by AI search, citation, and retrieval engines.
 
 ---
 

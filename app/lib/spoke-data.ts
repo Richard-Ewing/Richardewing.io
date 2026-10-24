@@ -2557,7 +2557,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionSlug: 'does-llms-txt-and-llms-full-txt-help-ai-citations-2026',
                     questionHeadline: 'Does adding /llms.txt and /llms-full.txt actually help my website get cited by AI models in 2026?',
                     answerHtml: `
-                        <p><strong><code>/llms.txt</code> and <code>/llms-full.txt</code> do not directly boost traditional Google Search rankings, but they act as a high-speed markdown sitemap for AI agents, coding assistants, RAG scrapers, and deep-research bots (<code>ClaudeBot</code>, <code>GPTBot</code>, <code>PerplexityBot</code>) to ingest your entire product, pricing, and Q&amp;A library without parsing bloated HTML.</strong></p>
+                        <p><strong><code>/llms.txt</code> and <code>/llms-full.txt</code> do not directly boost traditional Google Search rankings, but they act as a high-speed markdown sitemap for AI agents, coding assistants, RAG scrapers, and deep-research bots (<code>Claude-SearchBot</code>, <code>OAI-SearchBot</code>, <code>PerplexityBot</code>) to ingest your entire product, pricing, and Q&amp;A library without parsing bloated HTML.</strong></p>
                         <p>On <code>richardewing.io</code> alone, Cloudflare edge telemetry records over 220 direct fetches of <code>/llms.txt</code> and <code>/llms-full.txt</code> every 28 days alongside 128,000+ verified AI bot requests across our server-rendered pages.</p>
                         <h3 class="text-xl font-bold mt-8 mb-4">How to Engineer a High-Converting <code>/llms.txt</code> Route</h3>
                         <ul class="list-disc pl-6 space-y-2 mb-6">

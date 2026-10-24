@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-    const commonAllows = ['/', '/_next/static/'];
+    const commonAllows = ['/', '/_next/static/', '/llms.txt', '/llms-full.txt'];
     const commonDisallows = [
         '/admin/',
         '/api/',
@@ -21,7 +21,7 @@ export default function robots(): MetadataRoute.Robots {
 
     return {
         rules: [
-            // Default: Allow all search engines
+            // Default: Allow all legitimate search engines
             {
                 userAgent: '*',
                 allow: commonAllows,
@@ -30,118 +30,72 @@ export default function robots(): MetadataRoute.Robots {
 
             // === SEARCH ENGINE CRAWLERS ===
             {
-                userAgent: 'Googlebot',
-                allow: commonAllows,
-                disallow: commonDisallows,
-            },
-            {
-                userAgent: 'GoogleOther',
-                allow: commonAllows,
-                disallow: commonDisallows,
-            },
-            {
-                userAgent: 'Bingbot',
-                allow: commonAllows,
-                disallow: commonDisallows,
-            },
-            {
-                userAgent: 'Applebot',
-                allow: commonAllows,
-                disallow: commonDisallows,
-            },
-            {
-                userAgent: 'YandexBot',
+                userAgent: [
+                    'Googlebot',
+                    'GoogleOther',
+                    'Bingbot',
+                    'Applebot',
+                    'YandexBot',
+                    'Bravebot',
+                    'DuckDuckBot',
+                ],
                 allow: commonAllows,
                 disallow: commonDisallows,
             },
 
-            // === AI SEARCH & RETRIEVAL BOTS (Critical for AI search visibility) ===
+            // === LIVE AI SEARCH, CITATION & ASSISTANT RETRIEVAL BOTS ===
             {
-                userAgent: 'OAI-SearchBot',
-                allow: commonAllows,
-                disallow: commonDisallows,
-            },
-            {
-                userAgent: 'ChatGPT-User',
-                allow: commonAllows,
-                disallow: commonDisallows,
-            },
-            {
-                userAgent: 'Claude-SearchBot',
-                allow: commonAllows,
-                disallow: commonDisallows,
-            },
-            {
-                userAgent: 'Claude-User',
-                allow: commonAllows,
-                disallow: commonDisallows,
-            },
-            {
-                userAgent: 'PerplexityBot',
-                allow: commonAllows,
-                disallow: commonDisallows,
-            },
-            {
-                userAgent: 'Perplexity-User',
+                userAgent: [
+                    'OAI-SearchBot',
+                    'ChatGPT-User',
+                    'Claude-SearchBot',
+                    'Claude-User',
+                    'PerplexityBot',
+                    'Perplexity-User',
+                    'Google-Agent',
+                    'Amzn-SearchBot',
+                    'DuckAssistBot',
+                    'ExaSearchBot',
+                    'YouBot',
+                ],
                 allow: commonAllows,
                 disallow: commonDisallows,
             },
 
-            // === AI TRAINING CRAWLERS (Allowed for retrieval presence) ===
+            // === SOCIAL LINK PREVIEW BOTS ===
             {
-                userAgent: 'GPTBot',
-                allow: commonAllows,
-                disallow: commonDisallows,
-            },
-            {
-                userAgent: 'ClaudeBot',
-                allow: commonAllows,
-                disallow: commonDisallows,
-            },
-            {
-                userAgent: 'Google-Extended',
-                allow: commonAllows,
-                disallow: commonDisallows,
-            },
-            {
-                userAgent: 'Google-CloudVertexBot',
-                allow: commonAllows,
-                disallow: commonDisallows,
-            },
-            {
-                userAgent: 'CCBot',
-                allow: commonAllows,
-                disallow: commonDisallows,
-            },
-            {
-                userAgent: 'cohere-ai',
-                allow: commonAllows,
-                disallow: commonDisallows,
-            },
-            {
-                userAgent: 'Amazonbot',
+                userAgent: [
+                    'facebookexternalhit',
+                    'LinkedInBot',
+                    'Twitterbot',
+                    'Slackbot',
+                ],
                 allow: commonAllows,
                 disallow: commonDisallows,
             },
 
-            // === SOCIAL & PLATFORM CRAWLERS ===
+            // === PURE FOUNDATION MODEL TRAINING & UNSOLICITED BULK SCRAPERS (BLOCKED AT CLOUDFLARE EDGE) ===
             {
-                userAgent: 'meta-externalagent',
-                allow: commonAllows,
-                disallow: commonDisallows,
-            },
-            {
-                userAgent: 'facebookexternalhit',
-                allow: commonAllows,
-                disallow: commonDisallows,
-            },
-            {
-                userAgent: 'Bytespider',
-                allow: commonAllows,
-                disallow: commonDisallows,
+                userAgent: [
+                    'GPTBot',
+                    'ClaudeBot',
+                    'Google-Extended',
+                    'Google-CloudVertexBot',
+                    'CCBot',
+                    'Amazonbot',
+                    'meta-externalagent',
+                    'cohere-ai',
+                    'Bytespider',
+                    'PetalBot',
+                    'Diffbot',
+                    'ImagesiftBot',
+                    'Omgilibot',
+                ],
+                disallow: '/',
             },
         ],
         sitemap: 'https://www.richardewing.io/sitemap.xml',
         host: 'https://www.richardewing.io',
     };
 }
+
