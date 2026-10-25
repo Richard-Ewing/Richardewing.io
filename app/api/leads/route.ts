@@ -5,10 +5,21 @@ export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
     try {
-        const body = await req.json();
-        const { email, score, answers, toolName = 'AI Economics Assessment' } = body;
+        let body: Record<string, any>;
+        try {
+            body = await req.json();
+        } catch {
+            return NextResponse.json({ error: 'Malformed JSON payload' }, { status: 400 });
+        }
 
-        if (!email || typeof email !== 'string' || !email.includes('@')) {
+        if (!body || typeof body !== 'object') {
+            return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
+        }
+
+        const { email, score, answers, toolName = 'AI Economics Assessment' } = body;
+        const trimmedEmail = typeof email === 'string' ? email.trim() : '';
+
+        if (!trimmedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
             return NextResponse.json({ error: 'Valid email is required' }, { status: 400 });
         }
 

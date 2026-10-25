@@ -10,25 +10,44 @@ export default function ReportUnlocker() {
     const [accessed, setUnlocked] = useState(false);
     const router = useRouter();
 
-    const handleUnlock = (e: React.FormEvent) => {
+    const handleUnlock = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!email || !email.includes('@')) return;
 
         setLoading(true);
-        // Simulate an auth/capture delay
-        setTimeout(() => {
+        try {
+            await Promise.allSettled([
+                fetch('/api/leads', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email,
+                        toolName: '2026 State of AI Engineering Report',
+                        answers: { asset: 'ai-report-2026' },
+                    }),
+                }),
+                fetch('/api/lead-capture', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email,
+                        source: '2026 State of AI Engineering Report',
+                        message: 'Accessed 2026 State of AI Engineering Report.',
+                    }),
+                }),
+            ]);
+        } catch {
+            // Fail-open for UX
+        } finally {
             setLoading(false);
             setUnlocked(true);
-            
-            // In a real app we would set a massive cookie or call Clerk here.
-            localStorage.setItem('has_unlocked_ai_report', 'true');
-            
-            // Redirect them to the dashboard/command center immediately to consume their accessed asset.
+            if (typeof window !== 'undefined') {
+                localStorage.setItem('has_unlocked_ai_report', 'true');
+            }
             setTimeout(() => {
                 router.push("/tools/dashboard?accessed=ai-report-2026");
-            }, 1500);
-            
-        }, 1200);
+            }, 1200);
+        }
     };
 
     if (accessed) {

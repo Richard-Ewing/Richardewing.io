@@ -32,12 +32,36 @@ export default function ExitIntentModal() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
+    if (!email || !email.includes('@')) return;
     setIsSubmitted(true);
     if (typeof window !== 'undefined') {
       localStorage.setItem('exit_intent_dismissed', 'true');
+    }
+    try {
+      await Promise.allSettled([
+        fetch('/api/leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            toolName: 'Executive AI Cost Control Checklist (Exit Intent)',
+            answers: { source: 'exit-intent-modal' },
+          }),
+        }),
+        fetch('/api/lead-capture', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            source: 'Executive AI Cost Control Checklist (Exit Intent)',
+            message: 'Requested Executive AI Cost Control Checklist via exit intent modal.',
+          }),
+        }),
+      ]);
+    } catch {
+      // Fail-open for UX
     }
     setTimeout(() => {
       setIsVisible(false);

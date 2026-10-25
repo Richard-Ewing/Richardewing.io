@@ -33,16 +33,37 @@ export default function ChecklistPageContent() {
 
     const handleUnlock = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (!email) return;
+        if (!email || !email.includes('@')) return;
         setSubmitting(true);
         
         try {
-            // Submit to Beehiiv
-            await fetch('https://api.beehiiv.com/v2/publications/pub_00000000-0000-0000-0000-000000000000/subscriptions', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, utm_source: 'checklist', reactivate_existing: true }),
-            }).catch(() => {});
+            const currentScore = Object.values(checked).filter(Boolean).length;
+            await Promise.allSettled([
+                fetch('/api/leads', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email,
+                        score: currentScore,
+                        toolName: '12-Point Enterprise AI Governance Checklist',
+                        answers: { checked },
+                    }),
+                }),
+                fetch('/api/lead-capture', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email,
+                        source: '12-Point Enterprise AI Governance Checklist',
+                        message: `Checklist gate completed (current score: ${currentScore}/12).`,
+                    }),
+                }),
+                fetch('/api/beehiiv', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, utm_source: 'checklist' }),
+                }),
+            ]);
             
             setUnlocked(true);
         } catch {

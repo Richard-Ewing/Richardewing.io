@@ -86,9 +86,37 @@ export default function StarterKitPage() {
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [expandedDay, setExpandedDay] = useState<string | null>('Day 1');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (!email || !email.includes('@')) return;
+    setIsSubmitting(true);
+    try {
+      await Promise.allSettled([
+        fetch('/api/leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            toolName: 'AI Product Builder 5-Day Starter Kit',
+            answers: { source: 'starter-kit' },
+          }),
+        }),
+        fetch('/api/lead-capture', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            source: 'AI Product Builder 5-Day Starter Kit',
+            message: 'Requested 5-Day AI Product Builder Starter Kit crash course.',
+          }),
+        }),
+      ]);
+    } catch {
+      // Fail-open for UX
+    } finally {
+      setIsSubmitting(false);
       setIsSubscribed(true);
     }
   };
@@ -125,15 +153,23 @@ export default function StarterKitPage() {
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3.5 rounded-xl bg-purple-700 hover:bg-purple-800 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm shrink-0"
+                  disabled={isSubmitting}
+                  className="px-6 py-3.5 rounded-xl bg-purple-700 hover:bg-purple-800 disabled:opacity-60 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-sm shrink-0 cursor-pointer"
                 >
-                  Get Starter Kit
+                  {isSubmitting ? 'Dispatching...' : 'Get Starter Kit'}
                 </button>
               </form>
             ) : (
-              <div className="p-4 bg-emerald-50 border border-emerald-300 rounded-2xl flex items-center justify-center gap-2 text-emerald-900 text-xs font-semibold animate-in fade-in">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                Lesson 1 has been dispatched to {email}!
+              <div className="p-4 bg-emerald-50 border border-emerald-300 rounded-2xl space-y-2 text-emerald-900 text-xs font-semibold animate-in fade-in">
+                <div className="flex items-center justify-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  <span>Lesson 1 has been dispatched to {email}!</span>
+                </div>
+                <div>
+                  <Link href="/schedule?source=ai-product-builder" className="underline text-purple-800 hover:text-purple-950 font-mono text-[11px]">
+                    Want to build live? Book a 15-minute Pilot Cohort screening call →
+                  </Link>
+                </div>
               </div>
             )}
             <span className="text-[11px] text-zinc-500 mt-2 block">

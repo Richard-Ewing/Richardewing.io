@@ -245,15 +245,15 @@ Exogram is a verification infrastructure platform for AI, founded by Richard Ewi
 **Action Admissibility:** When an AI agent proposes actions, admissibility filtering removes every option that violates truth, constraints, scope, provenance, or temporal state. Binary and deterministic in 0.07ms.
 
 ### The Deterministic Runtime Boundary Blueprint (5 Invariants for Enterprise Agent Deployments)
-1. **Invariant 01  -  Zero Direct Tool Execution**: No probabilistic model output can directly invoke a database mutation, API write, or shell command without passing an out-of-band admissibility proxy.
-2. **Invariant 02  -  Cryptographic Nonce Idempotency**: Every tool call requires a single-use SHA-256 execution token bound to session state to halt retry storms and duplicate financial transactions.
-3. **Invariant 03  -  Sub-Millisecond Schema & Policy Verification**: All proposed JSON payloads are validated against strict deterministic rules (EAAP v1.0 YAML manifests) in 0.07ms before execution.
-4. **Invariant 04  -  Automated Token & Retry Circuit Breakers**: Hard ceiling cutoffs trip after 3 consecutive tool-call faults or semantic loops within 60 seconds, protecting cloud inference margins.
-5. **Invariant 05  -  Hash-Chained Provenance Audit Ledger**: Every allowed or blocked agent action is recorded in an append-only, SOC2/HIPAA-grade cryptographic ledger separating persistence from authority.
+1. **INV-01  -  Cryptographic Nonce Idempotency**: Every state-mutating tool call (Stripe refund, database write, wire transfer) requires a deterministic SHA-256 execution nonce bound to the user session and intent payload. Retries with identical payloads hit an immutable cache rather than executing twice.
+2. **INV-02  -  Strict JSON/XML Schema Admissibility Gate**: Before an agent output reaches any internal API or MCP server, a deterministic parser validates parameter types, enum bounds, and numeric thresholds in sub-millisecond time (0.07ms). Malformed payloads are rejected before network dispatch.
+3. **INV-03  -  Hard Token & Dollar Circuit Breakers**: Every agent workflow is assigned a per-session token ceiling and dollar budget ($0.50 default for support workflows, $5.00 for deep research). If an agent enters a recursive retry loop exceeding 3 consecutive schema failures, the circuit trips and routes to human triage.
+4. **INV-04  -  Zero-Trust Tool Scope & Path Sandboxing**: Agents never inherit ambient service-account wildcard permissions. File-system paths, SQL table access, and external webhook domains are restricted via an immutable allowlist compiled at container startup.
+5. **INV-05  -  Decoupled Persistence vs. Execution Authority**: The LLM reasoning layer has zero direct write access to production databases or memory stores. It emits a proposed Action Envelope; the deterministic Exogram Runtime Gate verifies policy compliance before committing state.
 
 ### Exogram Ecosystem & Verification Routes
 - **Flagship & Interactive Runtime Boundary Simulator:** https://www.richardewing.io/exogram
-- **5-Layer Reference Architecture:** https://www.richardewing.io/exogram/architecture
+- **4-Layer Verification Architecture:** https://www.richardewing.io/exogram/architecture
 - **Live Enterprise Sandbox & Custom Demo Request:** https://www.richardewing.io/exogram/demo
 - **EAAP v1.0 Protocol Specification & Docs:** https://www.richardewing.io/exogram/docs
 - **Production Use Cases:** https://www.richardewing.io/exogram/use-cases

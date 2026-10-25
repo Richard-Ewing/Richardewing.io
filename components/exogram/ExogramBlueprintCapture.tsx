@@ -87,23 +87,35 @@ export default function ExogramBlueprintCapture() {
         setErrorMsg('');
 
         try {
-            const res = await fetch('/api/leads', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    email,
-                    toolName: 'Exogram Runtime Boundary Blueprint',
-                    score: 100,
-                    answers: {
-                        company: company || 'Not specified',
-                        role,
-                        asset: 'Deterministic Runtime Boundary Blueprint (5 Invariants)',
-                        sourcePage: '/exogram',
-                    },
+            const [leadsRes, captureRes] = await Promise.all([
+                fetch('/api/leads', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email,
+                        toolName: 'Exogram Runtime Boundary Blueprint',
+                        score: 100,
+                        answers: {
+                            company: company || 'Not specified',
+                            role,
+                            asset: 'Deterministic Runtime Boundary Blueprint (5 Invariants)',
+                            sourcePage: '/exogram',
+                        },
+                    }),
                 }),
-            });
+                fetch('/api/lead-capture', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email,
+                        company: company || 'Not specified',
+                        source: 'Exogram Runtime Boundary Blueprint (/exogram)',
+                        message: `Role: ${role} | Asset: Deterministic Runtime Boundary Blueprint (5 Invariants)`,
+                    }),
+                }),
+            ]);
 
-            if (!res.ok) {
+            if (!leadsRes.ok && !captureRes.ok) {
                 throw new Error('Failed to register blueprint access.');
             }
             setIsRevealed(true);

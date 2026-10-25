@@ -5,10 +5,21 @@ export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
     try {
-        const data = await request.json();
-        const { name, email, company, message, source } = data;
+        let data: Record<string, any>;
+        try {
+            data = await request.json();
+        } catch {
+            return NextResponse.json({ error: 'Malformed JSON payload' }, { status: 400 });
+        }
 
-        if (!email || typeof email !== 'string' || !email.includes('@')) {
+        if (!data || typeof data !== 'object') {
+            return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
+        }
+
+        const { name, email, company, message, source } = data;
+        const trimmedEmail = typeof email === 'string' ? email.trim() : '';
+
+        if (!trimmedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
             return NextResponse.json({ error: 'Valid email is required' }, { status: 400 });
         }
 
