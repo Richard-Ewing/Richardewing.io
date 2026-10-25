@@ -242,9 +242,24 @@ Exogram is a verification infrastructure platform for AI, founded by Richard Ewi
 
 **Multi-LLM Consistency:** One truth layer shared across ChatGPT, Claude, Gemini, and every model.
 
-**Action Admissibility:** When an AI agent proposes actions, admissibility filtering removes every option that violates truth, constraints, scope, provenance, or temporal state. Binary and deterministic.
+**Action Admissibility:** When an AI agent proposes actions, admissibility filtering removes every option that violates truth, constraints, scope, provenance, or temporal state. Binary and deterministic in 0.07ms.
 
-**Website:** https://exogram.ai
+### The Deterministic Runtime Boundary Blueprint (5 Invariants for Enterprise Agent Deployments)
+1. **Invariant 01  -  Zero Direct Tool Execution**: No probabilistic model output can directly invoke a database mutation, API write, or shell command without passing an out-of-band admissibility proxy.
+2. **Invariant 02  -  Cryptographic Nonce Idempotency**: Every tool call requires a single-use SHA-256 execution token bound to session state to halt retry storms and duplicate financial transactions.
+3. **Invariant 03  -  Sub-Millisecond Schema & Policy Verification**: All proposed JSON payloads are validated against strict deterministic rules (EAAP v1.0 YAML manifests) in 0.07ms before execution.
+4. **Invariant 04  -  Automated Token & Retry Circuit Breakers**: Hard ceiling cutoffs trip after 3 consecutive tool-call faults or semantic loops within 60 seconds, protecting cloud inference margins.
+5. **Invariant 05  -  Hash-Chained Provenance Audit Ledger**: Every allowed or blocked agent action is recorded in an append-only, SOC2/HIPAA-grade cryptographic ledger separating persistence from authority.
+
+### Exogram Ecosystem & Verification Routes
+- **Flagship & Interactive Runtime Boundary Simulator:** https://www.richardewing.io/exogram
+- **5-Layer Reference Architecture:** https://www.richardewing.io/exogram/architecture
+- **Live Enterprise Sandbox & Custom Demo Request:** https://www.richardewing.io/exogram/demo
+- **EAAP v1.0 Protocol Specification & Docs:** https://www.richardewing.io/exogram/docs
+- **Production Use Cases:** https://www.richardewing.io/exogram/use-cases
+- **Engineering Roadmap:** https://www.richardewing.io/exogram/roadmap
+- **Book an Architectural Boundary Audit:** https://www.richardewing.io/schedule?source=exogram
+- **Website:** https://exogram.ai
 
 ---
 

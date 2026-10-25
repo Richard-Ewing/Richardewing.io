@@ -1,9 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 export function ExogramDemoForm() {
     const [submitted, setSubmitted] = useState(false);
+    const [submitting, setSubmitting] = useState(false);
+    const [errorMsg, setErrorMsg] = useState('');
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -13,9 +16,56 @@ export function ExogramDemoForm() {
         notes: '',
     });
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setSubmitted(true);
+        setSubmitting(true);
+        setErrorMsg('');
+
+        const formattedMessage = [
+            `Primary Infrastructure: ${formData.cloudProvider}`,
+            `Estimated Monthly Token Volume: ${formData.monthlyTokenSpend}`,
+            `Security / Policy Requirements: ${formData.notes || 'None specified'}`,
+        ].join('\n');
+
+        try {
+            const [captureRes, leadsRes] = await Promise.allSettled([
+                fetch('/api/lead-capture', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: formData.name,
+                        email: formData.email,
+                        company: formData.company,
+                        source: 'Exogram Live Sandbox Demo',
+                        message: formattedMessage,
+                    }),
+                }),
+                fetch('/api/leads', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: formData.email,
+                        toolName: 'Exogram Live Sandbox Demo',
+                        score: 100,
+                        answers: formData,
+                    }),
+                }),
+            ]);
+
+            const captureOk = captureRes.status === 'fulfilled' && captureRes.value.ok;
+            const leadsOk = leadsRes.status === 'fulfilled' && leadsRes.value.ok;
+
+            if (!captureOk && !leadsOk) {
+                throw new Error('Failed to submit demo request');
+            }
+
+            setSubmitted(true);
+        } catch (err) {
+            console.error('Exogram demo submission error:', err);
+            setErrorMsg('Unable to submit your request right now. Please try again or schedule directly on Cal.com.');
+        } finally {
+            setSubmitting(false);
+        }
     };
 
     if (submitted) {
@@ -26,14 +76,23 @@ export function ExogramDemoForm() {
                 </div>
                 <h3 className="text-xl font-grotesk font-bold mb-2 text-cyan-950">Exogram Demo Request Received</h3>
                 <p className="text-sm font-medium text-cyan-800 max-w-md mx-auto mb-6">
-                    Our technical architecture team will contact you within 12 hours with sandbox deployment credentials and VPC policy-as-code documentation.
+                    Our technical architecture team has logged your VPC parameters and will contact you within 12 hours with sandbox deployment credentials. Want to skip the queue? Book your live architectural briefing directly below.
                 </p>
-                <button
-                    onClick={() => setSubmitted(false)}
-                    className="px-6 py-2.5 bg-cyan-700 text-white font-mono text-xs font-bold uppercase tracking-wider rounded-lg hover:bg-cyan-800 transition-colors shadow-sm"
-                >
-                    Submit Another Request
-                </button>
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                    <Link
+                        href="/schedule?source=exogram-demo"
+                        className="px-6 py-2.5 bg-cyan-900 text-white font-mono text-xs font-bold uppercase tracking-wider rounded-lg hover:bg-cyan-950 transition-colors shadow-sm"
+                    >
+                        Fast-Track: Book Live Briefing on Cal.com ↗
+                    </Link>
+                    <button
+                        type="button"
+                        onClick={() => setSubmitted(false)}
+                        className="px-5 py-2.5 bg-white border border-cyan-300 text-cyan-900 font-mono text-xs font-bold uppercase tracking-wider rounded-lg hover:bg-cyan-100 transition-colors"
+                    >
+                        Submit Another Request
+                    </button>
+                </div>
             </div>
         );
     }
@@ -131,11 +190,18 @@ export function ExogramDemoForm() {
                 />
             </div>
 
+            {errorMsg && (
+                <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-xs text-red-800 font-medium">
+                    {errorMsg}
+                </div>
+            )}
+
             <button
                 type="submit"
-                className="w-full py-4 bg-cyan-700 text-white font-mono text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-cyan-800 transition-colors shadow-sm"
+                disabled={submitting}
+                className="w-full py-4 bg-cyan-700 text-white font-mono text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-cyan-800 transition-colors shadow-sm disabled:opacity-50"
             >
-                Request Live Exogram Sandbox Demo &rarr;
+                {submitting ? 'Submitting Demo Request...' : 'Request Live Exogram Sandbox Demo →'}
             </button>
         </form>
     );

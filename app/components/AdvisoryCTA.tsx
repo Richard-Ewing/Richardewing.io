@@ -121,6 +121,13 @@ export default function AdvisoryCTA({ variant, termTitle, primaryHrefOverride, p
             {v.secondaryLabel} {v.secondaryPrice && <span className="text-zinc-500 font-mono text-xs">({v.secondaryPrice})</span>}
           </a>
         )}
+
+        <Link
+          href="/schedule?source=advisory-cta"
+          className="inline-flex items-center gap-1.5 px-4 py-3 text-zinc-800 hover:text-zinc-950 font-mono text-xs font-bold uppercase tracking-wider underline transition-colors"
+        >
+          Schedule on Cal.com ↗
+        </Link>
       </div>
 
       {variant === 'compare' && (

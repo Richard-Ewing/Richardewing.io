@@ -111,13 +111,16 @@ export default function ExogramUseCasesPage() {
                     <div className="card p-10 border-purple-500/20 bg-purple-900/10">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Your Industry Not Listed?</h2>
                         <p className="text-zinc-900 mb-6 max-w-lg mx-auto">Exogram&apos;s verification layers are industry-agnostic. If your AI system produces outputs that need to be trusted, Exogram can verify them.</p>
-                        <div className="flex justify-center gap-4">
-                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm shadow-sm">
-                                Visit Exogram.ai →
-                            </a>
-                            <Link href="/services" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
-                                Discuss Your Use Case →
+                        <div className="flex flex-wrap justify-center gap-4">
+                            <Link href="/schedule?source=exogram" className="px-6 py-3 bg-zinc-950 text-white font-bold rounded-lg hover:bg-zinc-800 transition-colors text-sm shadow-sm">
+                                Book an Architectural Boundary Audit ↗
                             </Link>
+                            <Link href="/exogram/demo" className="px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm shadow-sm">
+                                Request Live VPC Sandbox →
+                            </Link>
+                            <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
+                                Visit Exogram.ai ↗
+                            </a>
                         </div>
                     </div>
                 </section>

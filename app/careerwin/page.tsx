@@ -53,6 +53,9 @@ export default function CareerWinPage() {
             >
               Explore CareerWin.ai Platform ↗
             </a>
+            <Link href="/schedule?source=careerwin" className="button button-outline">
+              Book Executive Leveling Session ↗
+            </Link>
             <Link href="/case-studies" className="button button-outline">
               Read verified case studies
             </Link>
@@ -357,6 +360,9 @@ export default function CareerWinPage() {
           >
             Launch CareerWin.ai Platform ↗
           </a>
+          <Link href="/schedule?source=careerwin" className="button button-ghost-light">
+            Book Executive Leveling Session ↗
+          </Link>
           <Link href="/portfolio" className="button button-ghost-light">
             Back to Executive Portfolio ↗
           </Link>

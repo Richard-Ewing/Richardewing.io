@@ -22,6 +22,8 @@ import ContextualAIVisual from '@/components/exogram/ContextualAIVisual';
 import VacationContextExample from '@/components/exogram/VacationContextExample';
 import MemoryComparisonTable from '@/components/exogram/MemoryComparisonTable';
 import CognitiveLoopVisual from '@/components/exogram/CognitiveLoopVisual';
+import ExogramBlueprintCapture from '@/components/exogram/ExogramBlueprintCapture';
+import ScorecardCheckoutDrawer from '@/app/components/ScorecardCheckoutDrawer';
 
 export const metadata: Metadata = {
   title: 'Exogram: AI That Remembers Context',
@@ -161,6 +163,9 @@ export default function ExogramFounderThesisPage() {
             >
               Try Exogram ↗
             </a>
+            <Link href="/schedule?source=exogram" className="button button-outline">
+              Book an Architectural Boundary Audit ↗
+            </Link>
             <a href="#how-it-works" className="button button-outline">
               How Exogram works
             </a>
@@ -507,15 +512,155 @@ export default function ExogramFounderThesisPage() {
                 audits.
               </div>
             </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <Link
+                href="/schedule?source=exogram"
+                className="button button-gold text-xs whitespace-nowrap"
+              >
+                Book Boundary Audit ↗
+              </Link>
+              <Link
+                href="/security"
+                className="button button-outline text-xs whitespace-nowrap"
+              >
+                Enterprise Architecture ↗
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Exogram Technical Deep-Dive & Verification Hub */}
+      <section className="section border-t border-[var(--line)]">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--gold)] mb-2 block">
+              Technical Verification Hub
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[var(--ink)] tracking-tight mb-3">
+              Explore the Exogram Runtime Ecosystem
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--muted)] max-w-2xl mx-auto">
+              Inspect the 4-layer verification architecture, request a live VPC sandbox trial, or run a free MCP tool boundary scan.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <Link
-              href="/security"
-              className="button button-outline text-xs whitespace-nowrap"
+              href="/exogram/architecture"
+              className="p-5 rounded-2xl bg-white border border-[var(--line)] hover:border-[var(--forest)] transition-all shadow-sm flex flex-col justify-between group"
             >
-              Enterprise Architecture ↗
+              <div>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--gold)] block mb-1">
+                  4-Layer Gate
+                </span>
+                <h3 className="text-base font-serif font-bold text-[var(--ink)] group-hover:text-[var(--forest)] mb-1.5">
+                  Verification Architecture &rarr;
+                </h3>
+                <p className="text-xs text-[var(--muted)] leading-relaxed">
+                  Schema Integrity, Boundary Control (EAAP), Threat Prevention, and Memory Integrity specs.
+                </p>
+              </div>
+            </Link>
+
+            <Link
+              href="/exogram/demo"
+              className="p-5 rounded-2xl bg-white border border-[var(--line)] hover:border-[var(--forest)] transition-all shadow-sm flex flex-col justify-between group"
+            >
+              <div>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--gold)] block mb-1">
+                  VPC Sandbox Trial
+                </span>
+                <h3 className="text-base font-serif font-bold text-[var(--ink)] group-hover:text-[var(--forest)] mb-1.5">
+                  Request Live Demo &rarr;
+                </h3>
+                <p className="text-xs text-[var(--muted)] leading-relaxed">
+                  Deploy deterministic AI cost caps and policy-as-code enforcement inside your private cloud.
+                </p>
+              </div>
+            </Link>
+
+            <Link
+              href="/exogram/docs"
+              className="p-5 rounded-2xl bg-white border border-[var(--line)] hover:border-[var(--forest)] transition-all shadow-sm flex flex-col justify-between group"
+            >
+              <div>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--gold)] block mb-1">
+                  SDK &amp; Quickstart
+                </span>
+                <h3 className="text-base font-serif font-bold text-[var(--ink)] group-hover:text-[var(--forest)] mb-1.5">
+                  Developer Documentation &rarr;
+                </h3>
+                <p className="text-xs text-[var(--muted)] leading-relaxed">
+                  Reference implementations, EAAP v1.0 protocol schemas, and 10-minute proxy integration guides.
+                </p>
+              </div>
+            </Link>
+
+            <Link
+              href="/exogram/use-cases"
+              className="p-5 rounded-2xl bg-white border border-[var(--line)] hover:border-[var(--forest)] transition-all shadow-sm flex flex-col justify-between group"
+            >
+              <div>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--gold)] block mb-1">
+                  Regulated Industries
+                </span>
+                <h3 className="text-base font-serif font-bold text-[var(--ink)] group-hover:text-[var(--forest)] mb-1.5">
+                  Enterprise Use Cases &rarr;
+                </h3>
+                <p className="text-xs text-[var(--muted)] leading-relaxed">
+                  How HealthTech, FinTech, LegalTech, and platform teams block hallucinations and unauthorized actions.
+                </p>
+              </div>
+            </Link>
+
+            <Link
+              href="/exogram/roadmap"
+              className="p-5 rounded-2xl bg-white border border-[var(--line)] hover:border-[var(--forest)] transition-all shadow-sm flex flex-col justify-between group"
+            >
+              <div>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--gold)] block mb-1">
+                  Release Milestones
+                </span>
+                <h3 className="text-base font-serif font-bold text-[var(--ink)] group-hover:text-[var(--forest)] mb-1.5">
+                  2026 Product Roadmap &rarr;
+                </h3>
+                <p className="text-xs text-[var(--muted)] leading-relaxed">
+                  Upcoming milestones for multi-model arbitration, SOC 2 compliance, and streaming token verification.
+                </p>
+              </div>
+            </Link>
+
+            <Link
+              href="/tools/mcp-security-auditor"
+              className="p-5 rounded-2xl bg-white border border-[var(--line)] hover:border-[var(--forest)] transition-all shadow-sm flex flex-col justify-between group"
+            >
+              <div>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--gold)] block mb-1">
+                  Interactive Diagnostic
+                </span>
+                <h3 className="text-base font-serif font-bold text-[var(--ink)] group-hover:text-[var(--forest)] mb-1.5">
+                  MCP Security &amp; Runtime Audit &rarr;
+                </h3>
+                <p className="text-xs text-[var(--muted)] leading-relaxed">
+                  Scan your MCP tool permissions and inspect the canonical 4-Layer Agent Runtime Architecture.
+                </p>
+              </div>
+            </Link>
+          </div>
+          <div className="mt-6 text-center">
+            <Link
+              href="/runtime-architecture"
+              className="text-xs font-mono font-bold text-[var(--forest)] hover:text-[var(--gold)] underline uppercase tracking-wider"
+            >
+              Read the Canonical 4-Layer Agent Runtime Architecture Doctrine &rarr;
             </Link>
           </div>
         </div>
       </section>
+
+      {/* Lead Capture: Deterministic Runtime Boundary Blueprint */}
+      <ExogramBlueprintCapture />
 
       {/* Founder Note */}
       <section className="section border-t border-[var(--line)]">
@@ -572,6 +717,18 @@ export default function ExogramFounderThesisPage() {
         </div>
       </section>
 
+      {/* Instant Execution & Advisory Conversion Drawer */}
+      <section className="section border-t border-[var(--line)]">
+        <div className="max-w-5xl mx-auto">
+          <ScorecardCheckoutDrawer
+            source="exogram"
+            metricLabel="Runtime Verification Latency"
+            metricValue="0.07ms Policy Gate"
+            headline="Deploy Deterministic AI Boundaries: Choose Your Execution Speed"
+          />
+        </div>
+      </section>
+
       {/* Closing CTA Section */}
       <section className="closing-cta">
         <p className="eyebrow">The Context Foundation</p>
@@ -589,6 +746,9 @@ export default function ExogramFounderThesisPage() {
           >
             Try Exogram ↗
           </a>
+          <Link href="/schedule?source=exogram" className="button button-ghost-light">
+            Book an Architectural Boundary Audit ↗
+          </Link>
           <Link href="/about" className="button button-ghost-light">
             Read about Richard Ewing ↗
           </Link>

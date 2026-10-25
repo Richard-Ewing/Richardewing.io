@@ -1,9 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 export function SpeakingBookingForm() {
     const [submitted, setSubmitted] = useState(false);
+    const [submitting, setSubmitting] = useState(false);
+    const [errorMsg, setErrorMsg] = useState('');
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -13,9 +16,56 @@ export function SpeakingBookingForm() {
         notes: '',
     });
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setSubmitted(true);
+        setSubmitting(true);
+        setErrorMsg('');
+
+        const formattedMessage = [
+            `Organization / Event: ${formData.organization}`,
+            `Event Format: ${formData.eventType}`,
+            `Details & Dates: ${formData.notes || 'None provided'}`,
+        ].join('\n');
+
+        try {
+            const [captureRes, leadsRes] = await Promise.allSettled([
+                fetch('/api/lead-capture', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: formData.name,
+                        email: formData.email,
+                        company: formData.organization,
+                        source: `Speaking & Board Briefing (${formData.eventType})`,
+                        message: formattedMessage,
+                    }),
+                }),
+                fetch('/api/leads', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: formData.email,
+                        toolName: `Speaking Inquiry: ${formData.eventType}`,
+                        score: 100,
+                        answers: formData,
+                    }),
+                }),
+            ]);
+
+            const captureOk = captureRes.status === 'fulfilled' && captureRes.value.ok;
+            const leadsOk = leadsRes.status === 'fulfilled' && leadsRes.value.ok;
+
+            if (!captureOk && !leadsOk) {
+                throw new Error('Failed to submit speaking inquiry');
+            }
+
+            setSubmitted(true);
+        } catch (err) {
+            console.error('Speaking inquiry error:', err);
+            setErrorMsg('Could not submit your inquiry right now. Please try again or book directly on Cal.com.');
+        } finally {
+            setSubmitting(false);
+        }
     };
 
     if (submitted) {
@@ -26,14 +76,23 @@ export function SpeakingBookingForm() {
                 </div>
                 <h3 className="text-xl font-grotesk font-bold mb-2">Speaking Request Received</h3>
                 <p className="text-sm font-medium text-emerald-900 max-w-md mx-auto mb-6">
-                    Thank you. We will review your event details, availability, and speaker requirements within 24 hours.
+                    Thank you. Your event details have been dispatched to Richard&apos;s advisory desk for review within 24 hours. Need to lock dates immediately? Schedule a 15-minute alignment call below.
                 </p>
-                <button
-                    onClick={() => setSubmitted(false)}
-                    className="px-6 py-2.5 bg-emerald-800 text-white font-mono text-xs font-bold uppercase tracking-wider rounded-lg hover:bg-emerald-900 transition-colors"
-                >
-                    Submit Another Request
-                </button>
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                    <Link
+                        href="/schedule?source=speaking"
+                        className="px-6 py-2.5 bg-emerald-900 text-white font-mono text-xs font-bold uppercase tracking-wider rounded-lg hover:bg-emerald-950 transition-colors"
+                    >
+                        Schedule Event Alignment Call ↗
+                    </Link>
+                    <button
+                        type="button"
+                        onClick={() => setSubmitted(false)}
+                        className="px-5 py-2.5 bg-white border border-emerald-300 text-emerald-900 font-mono text-xs font-bold uppercase tracking-wider rounded-lg hover:bg-emerald-100 transition-colors"
+                    >
+                        Submit Another Request
+                    </button>
+                </div>
             </div>
         );
     }
@@ -104,7 +163,7 @@ export function SpeakingBookingForm() {
 
             <div>
                 <label className="block text-xs font-mono font-bold text-zinc-900 uppercase tracking-wider mb-2">
-                    Estimated Date & Location / Details
+                    Estimated Date &amp; Location / Details
                 </label>
                 <textarea
                     rows={3}
@@ -115,11 +174,18 @@ export function SpeakingBookingForm() {
                 />
             </div>
 
+            {errorMsg && (
+                <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-xs text-red-800 font-medium">
+                    {errorMsg}
+                </div>
+            )}
+
             <button
                 type="submit"
-                className="w-full py-4 bg-zinc-950 text-white font-mono text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-800 transition-colors shadow-sm"
+                disabled={submitting}
+                className="w-full py-4 bg-zinc-950 text-white font-mono text-xs font-bold uppercase tracking-widest rounded-xl hover:bg-zinc-800 transition-colors shadow-sm disabled:opacity-50"
             >
-                Submit Speaking Inquiry &rarr;
+                {submitting ? 'Submitting Speaking Inquiry...' : 'Submit Speaking Inquiry →'}
             </button>
         </form>
     );

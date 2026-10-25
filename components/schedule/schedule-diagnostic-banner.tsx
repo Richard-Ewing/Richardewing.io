@@ -31,6 +31,66 @@ const SOURCE_CONFIGS: Record<string, DiagnosticSourceConfig> = {
     badgeLabel: 'EBITDA Margin Leak',
     description: 'Select an Executive Advisory session below. Bring your capitalization schedules or balance sheet data to review your software asset valuation.',
   },
+  'exogram': {
+    title: 'Exogram Architectural Boundary Audit & Runtime Briefing',
+    badgeLabel: 'Runtime Policy Gate',
+    description: 'Select a 30-Minute Architectural Triage or 60-Minute Working Session below. Bring your agent topology, MCP server manifests, or VPC requirements to design deterministic execution boundaries and token circuit breakers.',
+  },
+  'exogram-demo': {
+    title: 'Exogram Live VPC Sandbox & Deployment Briefing',
+    badgeLabel: 'VPC Sandbox Provisioning',
+    description: 'Select a session below to fast-track your Exogram VPC sandbox credentials, review your cloud ingress topology, and configure EAAP v1.0 policy-as-code rules.',
+  },
+  'exogram-docs': {
+    title: 'Exogram SDK & Runtime Integration Architecture Review',
+    badgeLabel: 'EAAP v1.0 Integration',
+    description: 'Select a technical session below to walk through Exogram SDK integration, schema admissibility contracts, and sub-5ms proxy routing alongside your existing LLM pipelines.',
+  },
+  'runtime-architecture': {
+    title: '4-Layer Agent Runtime Architecture & Governance Audit',
+    badgeLabel: 'Bounded Cognition Gate',
+    description: 'Select a session below to audit your Identity, Skill, Tool, and Environment boundaries and eliminate unmonitored retry loops or excessive agent permissions.',
+  },
+  'security': {
+    title: 'Enterprise Security, VPC Isolation & Bilateral NDA Briefing',
+    badgeLabel: 'Zero Data Retention',
+    description: 'Select a confidential briefing slot below to review private VPC deployment topologies, policy-as-code verification, and bilateral NDA execution for R&D capital audits.',
+  },
+  'careerwin': {
+    title: 'Executive Career Architecture & Leveling Strategy Session',
+    badgeLabel: 'Compensation & Scope Audit',
+    description: 'Select a 1-on-1 working session below to review your Staff/Principal/VP leveling evidence, equity valuation, and compensation negotiation strategy.',
+  },
+  'speaking': {
+    title: 'Keynote, Board Briefing & Executive Workshop Alignment',
+    badgeLabel: 'Event & Board Briefing',
+    description: 'Select a 15-minute alignment call below to lock in event dates, customize boardroom briefing topics, and review audience requirements.',
+  },
+  'ai-product-builder': {
+    title: 'AI Product Builder Pilot Cohort Admissions Screening',
+    badgeLabel: 'Pilot Seat Screening',
+    description: 'Select a 15-minute diagnostic screening call below to review your 4-week product build scope, technical stack, and commercial milestones.',
+  },
+  'advisory-cta': {
+    title: 'Product & AI Economist 1-on-1 P&L & Architecture Tear-Down',
+    badgeLabel: 'P&L & Margin Turnaround',
+    description: 'Select your session below to audit feature profitability, eliminate Zombie Feature carry costs, or scope a 14-day/21-day build and turnaround sprint.',
+  },
+  'mcp-security-auditor': {
+    title: 'Reviewing Your MCP Security & Tool Permission Audit',
+    badgeLabel: 'Tool Boundary Exposure',
+    description: 'Select a session below to lock down exposed Model Context Protocol (MCP) servers, restrict file-system and database mutations, and enforce least-privilege sandboxes.',
+  },
+  'shadow-ai': {
+    title: 'Reviewing Your Enterprise Shadow AI & Data Exposure Audit',
+    badgeLabel: 'Unapproved AI Risk',
+    description: 'Select a session below to remediate unapproved employee AI tool usage, prevent proprietary code or PII leakage, and deploy governed enterprise alternatives.',
+  },
+  'cfo-capitalization-audit': {
+    title: 'Reviewing Your CFO Section 174 & AI Software Capitalization Audit',
+    badgeLabel: 'Section 174 Tax & OpEx Exposure',
+    description: 'Select an Executive Advisory session below. Bring your R&D sprint allocations and engineering payroll ledger to separate capitalizable innovation from maintenance waste.',
+  },
 };
 
 export function ScheduleDiagnosticBanner() {

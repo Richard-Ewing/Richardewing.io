@@ -63,9 +63,26 @@ export default function ExogramDocsIndex() {
 
             <div className="mt-16 pt-8 border-t border-zinc-300">
                 <h2 className="text-2xl font-bold font-grotesk text-zinc-950 mb-4">Runtime Integration Principle</h2>
-                <p className="text-zinc-900 mb-4 leading-relaxed font-medium">
+                <p className="text-zinc-900 mb-6 leading-relaxed font-medium">
                     Exogram operates adjacent to your existing LLM pipelines. You do not need to rewrite your agent execution loops: simply pass inputs and outputs through the verification boundary before final tool execution.
                 </p>
+                <div className="not-prose flex flex-wrap items-center gap-3 mb-10">
+                    <Link
+                        href="/schedule?source=exogram-docs"
+                        className="px-5 py-2.5 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white font-mono text-xs font-bold uppercase tracking-wider transition shadow-sm"
+                    >
+                        Book an Integration Architecture Briefing ↗
+                    </Link>
+                    <Link
+                        href="/exogram/demo"
+                        className="px-5 py-2.5 rounded-xl bg-white border border-zinc-300 hover:border-zinc-400 text-zinc-900 font-mono text-xs font-bold uppercase tracking-wider transition"
+                    >
+                        Request VPC Sandbox Trial →
+                    </Link>
+                </div>
+                <div className="not-prose">
+                    <AdvisoryCTA variant="educational" />
+                </div>
             </div>
         </div>
     );

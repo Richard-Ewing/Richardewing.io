@@ -149,3 +149,14 @@ Follow Addy Osmani's **Systematic Recovery Protocol**:
 2. **Read the Exact Stack Trace**: Trace the first failing file and line number. Do not make assumptions based on error summaries.
 3. **One Mutation at a Time**: Change one variable, interface, or component boundary. Test immediately.
 4. **Deterministic Re-verification**: Run the mechanical QA gate (`node .agents/scripts/verify-qa.mjs`) to prove no side-effects were introduced.
+
+---
+
+## 7. Holistic Ecosystem Interconnectivity & Big-Picture Flywheel Verification
+
+Every Spec-Driven implementation (`specify` -> `plan` -> `tasks` -> `implement` -> `converge`) must verify ecosystem-wide interconnectivity before completion:
+1. **Macro-to-Micro Zoom-Out**: Verify how every new or modified route links into the broader ecosystem (`RichardEwing.io` Advisory & Diagnostics <-> `Exogram.ai` Runtime Governance <-> `CareerWin.ai` Human Evidence <-> `/schedule` Cal.com Booking <-> Stripe Checkout Ladder).
+2. **Zero Unwired Client Forms**: Verify that every interactive form submits real `fetch` POST payloads to `/api/lead-capture` and/or `/api/leads` with proper error handling and a fast-track `/schedule?source=...` link.
+3. **Edge Redirect Query-String Safety**: Verify that all `EDGE_REDIRECTS` values in `middleware.ts` are clean pathnames without `?` or `#`.
+4. **Contextual Schedule Banner Sync**: Verify that any new `?source=` parameter is registered in `components/schedule/schedule-diagnostic-banner.tsx`.
+

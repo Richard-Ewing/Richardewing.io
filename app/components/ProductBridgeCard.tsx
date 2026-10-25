@@ -43,12 +43,18 @@ export default function ProductBridgeCard({ variant = 'all', className = '' }: P
                 The underlying technology engine. Hashes state, preserves verified context, manages probabilistic inference, and stops unauthorized agent actions in 0.07ms.
               </p>
             </div>
-            <div className="flex items-center gap-3 pt-4 border-t border-zinc-800">
+            <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-zinc-800">
               <Link
                 href="/exogram"
                 className="px-4 py-2 bg-cyan-600 hover:bg-cyan-500 text-white font-bold font-mono text-xs rounded-xl uppercase tracking-wider transition-all inline-flex items-center gap-1.5"
               >
                 Learn Exogram <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <Link
+                href="/schedule?source=exogram"
+                className="text-xs font-mono text-cyan-300 hover:text-white transition-colors font-semibold"
+              >
+                Book Boundary Audit ↗
               </Link>
               <a
                 href="https://exogram.ai"
@@ -78,12 +84,18 @@ export default function ProductBridgeCard({ variant = 'all', className = '' }: P
                 The first production application of Exogram. Applies the evidence verification engine to human work history, turning vague claims into verified skills, leveling data, and compensation benchmarks.
               </p>
             </div>
-            <div className="flex items-center gap-3 pt-4 border-t border-indigo-900/50">
+            <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-indigo-900/50">
               <Link
                 href="/careerwin"
                 className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-bold font-mono text-xs rounded-xl uppercase tracking-wider transition-all inline-flex items-center gap-1.5"
               >
                 Learn CareerWin <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <Link
+                href="/schedule?source=careerwin"
+                className="text-xs font-mono text-indigo-300 hover:text-white transition-colors font-semibold"
+              >
+                Leveling Call ↗
               </Link>
               <a
                 href="https://careerwin.ai"
@@ -113,7 +125,7 @@ export default function ProductBridgeCard({ variant = 'all', className = '' }: P
                 Applies the same governance rules to company balance sheets. We audit engineering R&amp;D budgets, eliminate runaway token leakage, and deliver board-ready ROI frameworks.
               </p>
             </div>
-            <div className="flex items-center gap-3 pt-4 border-t border-zinc-800">
+            <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-zinc-800">
               <Link
                 href="/services"
                 className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold font-mono text-xs rounded-xl uppercase tracking-wider transition-all inline-flex items-center gap-1.5"
@@ -121,10 +133,10 @@ export default function ProductBridgeCard({ variant = 'all', className = '' }: P
                 Explore Services <ArrowRight className="w-3.5 h-3.5" />
               </Link>
               <Link
-                href="/assessment"
-                className="text-xs font-mono text-zinc-400 hover:text-white transition-colors"
+                href="/schedule?source=advisory-cta"
+                className="text-xs font-mono text-emerald-300 hover:text-white transition-colors font-semibold"
               >
-                Free Benchmark →
+                Schedule Call ↗
               </Link>
             </div>
           </div>

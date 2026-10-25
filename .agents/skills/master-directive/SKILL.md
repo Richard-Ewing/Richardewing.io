@@ -373,3 +373,17 @@ Every report, telemetry audit, or analytics inquiry prompt MUST lead with an **O
    - **Self-Serve Kits (`$29` Survival Kit / `$79` Complete 13-Playbook System)**: Vibe-Coding Rescue, Department Automation, and AI Unit Economics templates.
    - **Live 60-Min Session (`$450`)**: 1-on-1 Build, Automation & Unstick Session with Richard Ewing.
    - **Fixed-Scope Sprints (`$2,500` 14-Day Automation/Turnaround Sprint & `$7,500` 21-Day 0-to-1 AI App & AEO Build Sprint)**: Hands-on architectural execution and boardroom defense.
+
+---
+
+## 21. The Holistic Ecosystem Interconnectivity & Big-Picture Flywheel Mandate ("Everything Feeds Everything")
+
+1. **Macro-to-Micro Zoom-Out Protocol**: Never implement a page, tool, or feature in isolation. Before and after any task, zoom out to audit how the surface connects to the broader ecosystem (`RichardEwing.io` Advisory & Diagnostics <-> `Exogram.ai` Runtime Governance <-> `CareerWin.ai` Human Evidence <-> `/schedule` Cal.com Booking <-> Stripe Checkout Ladder <-> `/api/leads` & `/api/lead-capture`).
+2. **Zero Passive Brochure or Orphan Pages**: Every product flagship (`/exogram`, `/careerwin`), architecture deep-dive (`/exogram/architecture`, `/exogram/docs`, `/runtime-architecture`, `/security`), and sub-route must include:
+   - Internal cross-links to its sub-routes and related diagnostic tools.
+   - An interactive lead-capture blueprint or diagnostic bridge (`ExogramBlueprintCapture`, `ScorecardCheckoutDrawer`, or `AdvisoryCTA`).
+   - A direct, source-tagged Cal.com booking CTA (`/schedule?source=<page-slug>`).
+3. **Zero Unwired Client Forms Invariant**: Every client form (`ExogramDemoForm`, `SpeakingBookingForm`, `IntakeApplicationForm`, blueprint captures, and newsletter/checklist gates) must execute real `fetch` POST requests to `/api/lead-capture` and/or `/api/leads` with structured payloads, error handling, high-contrast confirmation typography (never `text-white` on `bg-white`), and a post-submission fast-track `/schedule?source=...` link. Mock `setTimeout` form submissions are strictly prohibited.
+4. **Edge Redirect Query-String Safety**: In `middleware.ts`, `EDGE_REDIRECTS` map values must strictly be clean pathname strings (never containing `?` or `#`), because the middleware appends `req.nextUrl.search` dynamically when constructing the redirect `URL`.
+5. **Contextual Schedule Banner Continuity**: Whenever a new `?source=` parameter is introduced across the platform, `SOURCE_CONFIGS` in `components/schedule/schedule-diagnostic-banner.tsx` must be updated simultaneously so `/schedule` renders tailored pre-call framing above the Cal.com embed.
+

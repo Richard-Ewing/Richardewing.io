@@ -59,6 +59,7 @@ Negative/Considerations:
 | [ADR-0012](ADR-0012-concept-b-full-system-redesign.md) | Concept B Full Website System Redesign & Advisory Route Decoupling | Accepted | @richardewing, Steve Jobs, Paul Graham, Karri Saarinen, Code Architect, QA Auditor | 2026-10-14 |
 | [ADR-0013](ADR-0013-october-2026-aeo-geo-traffic-and-conversion-architecture.md) | October 2026 AEO/GEO Answer Graph & Edge Conversion Hardening | Accepted | @richardewing, Aravind Srinivas, Lily Ray, Keith Rabois, Code Architect | 2026-10-24 |
 | [ADR-0014](ADR-0014-option-c-post-economics-aeo-and-in-scorecard-conversion-engine.md) | Option C Post-Economics AEO & In-Scorecard Conversion Engine | Accepted | @richardewing, Paul Graham, Aravind Srinivas, Lily Ray, Keith Rabois, Code Architect | 2026-10-24 |
+| [ADR-0015](ADR-0015-holistic-ecosystem-flywheel-and-exogram-conversion-architecture.md) | Holistic Ecosystem Interconnectivity & Exogram Conversion Architecture | Accepted | @richardewing, Steve Jobs, Brian Balfour, Keith Rabois, Aravind Srinivas, Code Architect | 2026-10-24 |
 
 
 ---

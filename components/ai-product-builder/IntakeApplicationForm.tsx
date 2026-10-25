@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { 
   CheckCircle2, 
   ArrowRight, 
@@ -68,6 +69,7 @@ export default function IntakeApplicationForm() {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const totalSteps = 5;
 
@@ -93,13 +95,62 @@ export default function IntakeApplicationForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError('');
 
-    // Simulate clean submission handling or wire to API
+    const formattedMessage = [
+      `LinkedIn/GitHub: ${formData.linkedinUrl}`,
+      `Location/Timezone: ${formData.locationTimezone}`,
+      `Referral: ${formData.referralSource}`,
+      `Technical Background: ${formData.technicalBackground}`,
+      `Prior Deployments: ${formData.priorDeployments}`,
+      `Dev Environment: ${formData.devEnvironment}`,
+      `Product Idea: ${formData.productIdea}`,
+      `Validation Status: ${formData.validationStatus}`,
+      `Entity Status: ${formData.entityStatus}`,
+      `Time Commitment: ${formData.timeCommitment}`,
+      `Commercial Goal: ${formData.commercialGoal}`,
+      `Biggest Roadblock: ${formData.biggestRoadblock}`,
+      `Why Join: ${formData.whyJoin}`,
+      `Live Attendance: ${formData.liveAttendance}`,
+      `Custom Questions: ${formData.customQuestions || 'None'}`,
+    ].join('\n');
+
     try {
-      await new Promise(r => setTimeout(r, 1200));
+      const [captureRes, leadsRes] = await Promise.allSettled([
+        fetch('/api/lead-capture', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: formData.fullName,
+            email: formData.email,
+            company: formData.linkedinUrl,
+            source: 'AI Product Builder Pilot Application',
+            message: formattedMessage,
+          }),
+        }),
+        fetch('/api/leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: formData.email,
+            toolName: 'AI Product Builder Pilot Application',
+            score: 100,
+            answers: formData,
+          }),
+        }),
+      ]);
+
+      const captureOk = captureRes.status === 'fulfilled' && captureRes.value.ok;
+      const leadsOk = leadsRes.status === 'fulfilled' && leadsRes.value.ok;
+
+      if (!captureOk && !leadsOk) {
+        throw new Error('Failed to submit pilot application');
+      }
+
       setIsSubmitted(true);
     } catch (err) {
       console.error(err);
+      setSubmitError('Could not submit your application right now. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -492,9 +543,15 @@ export default function IntakeApplicationForm() {
                     How Applications Are Evaluated (Weighted Rubric)
                   </div>
                   <p className="text-zinc-500 leading-relaxed">
-                    Technical Ability (25%) • Customer Orientation (20%) • Commitment & Urgency (20%) • Coachability (20%) • Cohort Diversity & Fit (15%). Applications scoring in the top tier receive invitations to schedule a 15-minute diagnostic screening call.
+                    Technical Ability (25%) • Customer Orientation (20%) • Commitment &amp; Urgency (20%) • Coachability (20%) • Cohort Diversity &amp; Fit (15%). Applications scoring in the top tier receive invitations to schedule a 15-minute diagnostic screening call.
                   </p>
                 </div>
+
+                {submitError && (
+                  <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-xs text-red-800 font-medium">
+                    {submitError}
+                  </div>
+                )}
               </div>
             )}
 
@@ -536,18 +593,18 @@ export default function IntakeApplicationForm() {
       ) : (
         /* Submission Success Screen */
         <div className="text-center p-8 bg-white rounded-2xl border border-emerald-400 shadow-sm animate-in fade-in duration-500 space-y-4">
-          <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto text-emerald-400">
+          <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto text-emerald-600">
             <CheckCircle2 className="w-8 h-8" />
           </div>
           <h3 className="text-2xl font-bold text-zinc-950 font-grotesk">
             Application Received Successfully
           </h3>
           <p className="text-sm text-zinc-600 max-w-md mx-auto leading-relaxed">
-            Thank you, <span className="text-white font-semibold">{formData.fullName || "Builder"}</span>. Your submission has been securely logged into our admissions review portal.
+            Thank you, <span className="text-zinc-900 font-semibold">{formData.fullName || "Builder"}</span>. Your submission has been securely logged into our admissions review portal.
           </p>
 
           <div className="text-left p-4 bg-zinc-50 rounded-xl border border-zinc-200 text-xs text-zinc-700 max-w-md mx-auto space-y-2">
-            <div className="font-semibold text-sky-400 uppercase tracking-wider">
+            <div className="font-semibold text-purple-900 uppercase tracking-wider">
               What Happens Next:
             </div>
             <div className="flex items-start gap-2">
@@ -562,6 +619,15 @@ export default function IntakeApplicationForm() {
               <span className="w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-mono text-[10px] shrink-0 mt-0.5">3</span>
               <span><strong>Enrollment &amp; Pre-Work:</strong> Upon acceptance, your pilot seat is locked for 48 hours, and Week 0 Pre-Work is delivered immediately.</span>
             </div>
+          </div>
+
+          <div className="pt-4">
+            <Link
+              href="/schedule?source=ai-product-builder"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-purple-800 hover:bg-purple-900 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-sm"
+            >
+              Fast-Track: Book Your 15-Min Screening Call Now ↗
+            </Link>
           </div>
         </div>
       )}

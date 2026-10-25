@@ -176,9 +176,15 @@ export default function ExogramArchitecturePage() {
                     </div>
                 </section>
 
-                <div className="flex justify-center gap-4">
-                    <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm shadow-sm">
-                        Visit Exogram.ai →
+                <div className="flex flex-wrap justify-center gap-4">
+                    <Link href="/schedule?source=exogram" className="px-6 py-3 bg-zinc-950 text-white font-bold rounded-lg hover:bg-zinc-800 transition-colors text-sm shadow-sm">
+                        Book an Architectural Boundary Audit ↗
+                    </Link>
+                    <Link href="/exogram/demo" className="px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition-colors text-sm shadow-sm">
+                        Request Live VPC Sandbox →
+                    </Link>
+                    <a href="https://exogram.ai" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
+                        Visit Exogram.ai ↗
                     </a>
                     <Link href="/exogram/use-cases" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
                         View Use Cases →

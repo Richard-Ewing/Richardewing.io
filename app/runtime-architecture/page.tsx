@@ -321,10 +321,16 @@ export default function RuntimeArchitecturePage() {
                         Each contains deterministic TypeScript middleware, YAML policy manifests, Mermaid architecture diagrams, 
                         financial models, and operational playbooks.
                     </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4">
+                        <Link 
+                            href="/schedule?source=runtime-architecture" 
+                            className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded hover:bg-zinc-100 transition-colors shadow-sm"
+                        >
+                            Book a Runtime Boundary Audit ↗
+                        </Link>
                         <Link 
                             href="/skills" 
-                            className="px-8 py-4 bg-white text-[#1A1A1A] font-bold rounded hover:bg-zinc-100 transition-colors shadow-sm"
+                            className="px-8 py-4 bg-transparent text-white font-bold rounded border border-white/30 hover:border-white/60 transition-colors"
                         >
                             View All 15 Runtime Modules →
                         </Link>

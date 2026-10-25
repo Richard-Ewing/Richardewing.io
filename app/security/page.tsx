@@ -73,7 +73,10 @@ export default function SecurityPage() {
             data isolation, zero data retention, and VPC-level execution standards.
           </p>
           <div className="actions">
-            <Link className="button button-gold" href="/reality-check">
+            <Link className="button button-gold" href="/schedule?source=security">
+              Schedule a Runtime Security Briefing ↗
+            </Link>
+            <Link className="button button-outline" href="/reality-check">
               Run the Reality Check ↗
             </Link>
             <Link className="button button-outline" href="/contact?subject=Security+Inquiry">
@@ -171,7 +174,10 @@ export default function SecurityPage() {
           topologies and policy schema definitions.
         </p>
         <div className="actions center">
-          <Link className="button button-gold" href="/contact?subject=Security+Compliance">
+          <Link className="button button-gold" href="/schedule?source=security">
+            Schedule a Runtime Security Briefing ↗
+          </Link>
+          <Link className="button button-ghost-light" href="/contact?subject=Security+Compliance">
             Contact Technical Security Team ↗
           </Link>
           <Link className="button button-ghost-light" href="/framework">

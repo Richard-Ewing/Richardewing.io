@@ -2,6 +2,7 @@ import { getExogramDoc, exogramDocs } from '@/lib/exogram-docs';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { notFound, permanentRedirect } from 'next/navigation';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export async function generateStaticParams() {
     return exogramDocs.map((doc) => ({
@@ -112,9 +113,29 @@ export default async function ExogramDocPage({ params }: { params: Promise<{ slu
                 })}
             </div>
             
-            <div className="mt-20 pt-8 border-t border-zinc-400 flex justify-between items-center text-sm">
-                <span className="text-zinc-950 font-bold font-mono">EAAP Protocol v1.0</span>
-                <span className="text-purple-900 font-extrabold font-semibold bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">Verified Architecture</span>
+            <div className="mt-20 pt-8 border-t border-zinc-400 flex flex-wrap justify-between items-center gap-4 text-sm not-prose">
+                <div className="flex items-center gap-3">
+                    <span className="text-zinc-950 font-bold font-mono">EAAP Protocol v1.0</span>
+                    <span className="text-purple-900 font-extrabold font-semibold bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">Verified Architecture</span>
+                </div>
+                <div className="flex flex-wrap items-center gap-3">
+                    <Link
+                        href="/schedule?source=exogram-docs"
+                        className="px-4 py-2 rounded-lg bg-zinc-950 hover:bg-zinc-800 text-white font-mono text-xs font-bold uppercase tracking-wider transition"
+                    >
+                        Book Architecture Briefing ↗
+                    </Link>
+                    <Link
+                        href="/exogram/demo"
+                        className="px-4 py-2 rounded-lg bg-white border border-zinc-300 hover:border-zinc-400 text-zinc-900 font-mono text-xs font-bold uppercase tracking-wider transition"
+                    >
+                        Request VPC Sandbox →
+                    </Link>
+                </div>
+            </div>
+
+            <div className="not-prose mt-10">
+                <AdvisoryCTA variant="educational" termTitle={doc.title} />
             </div>
         </article>
     );

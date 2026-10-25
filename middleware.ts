@@ -60,6 +60,11 @@ const EDGE_REDIRECTS: Record<string, string> = {
   '/concepts/variable-cost-of-intelligence': '/glossary/variable-cost-of-intelligence',
   '/concepts/vibe-coding-debt': '/articles/frameworks/vibe-coding-debt',
   '/concepts/explainability-vs-recoverability': '/glossary/explainability-vs-recoverability',
+  '/exogram/proving-ground': '/exogram/demo',
+  '/exogram/analyze': '/exogram/architecture',
+  '/exogram/security': '/security',
+  '/exogram/pricing': '/schedule',
+  '/exogram/blueprint': '/exogram',
 };
 
 const POISONED_CACHE_URLS = [
