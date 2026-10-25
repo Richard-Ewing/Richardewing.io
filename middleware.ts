@@ -65,6 +65,7 @@ const EDGE_REDIRECTS: Record<string, string> = {
   '/exogram/security': '/security',
   '/exogram/pricing': '/schedule',
   '/exogram/blueprint': '/exogram',
+  '/exogram/docs/architecture-overview': '/exogram/docs/architecture',
 };
 
 const POISONED_CACHE_URLS = [
