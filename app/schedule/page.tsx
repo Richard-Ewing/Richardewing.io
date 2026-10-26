@@ -183,7 +183,7 @@ export default function SchedulePage() {
                 </p>
                 <div className="flex flex-col gap-2 pt-2 border-t border-[var(--line)]">
                   <a
-                    href={PRODUCTS.premium_guide_79.paymentLink}
+                    href={PRODUCTS.premium_guide_79?.paymentLink || 'https://buy.stripe.com/6oUdR2ezk2f8aFT9042B21d'}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="button button-gold !text-xs !py-2.5 text-center flex items-center justify-center gap-1.5"

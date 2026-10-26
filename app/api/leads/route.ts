@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
         }
 
-        const { email, score, answers, toolName = 'AI Economics Assessment' } = body;
+        const { email, score, answers, company, message, toolName = 'AI Economics Assessment' } = body;
         const trimmedEmail = typeof email === 'string' ? email.trim() : '';
 
         if (!trimmedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
@@ -24,8 +24,9 @@ export async function POST(req: NextRequest) {
         }
 
         console.log(`[Lead Capture API] Lead received from ${toolName}:`, {
-            email,
+            email: trimmedEmail,
             score,
+            company: company || 'N/A',
             timestamp: new Date().toISOString()
         });
 
@@ -35,11 +36,13 @@ export async function POST(req: NextRequest) {
                 await resend.emails.send({
                     from: 'AI Assessment <leads@updates.richardewing.io>',
                     to: ['richardewing@exogram.ai'],
-                    subject: `New Lead (${toolName}): ${email} [Score: ${score ?? 'N/A'}]`,
+                    subject: `New Lead (${toolName}): ${trimmedEmail}${company ? ` (${company})` : ''} [Score: ${score ?? 'N/A'}]`,
                     text: `
-Lead Email: ${email}
+Lead Email: ${trimmedEmail}
+Company: ${company || 'N/A'}
 Score: ${score ?? 'N/A'}/100
 Tool: ${toolName}
+${message ? `Message / Context:\n${message}\n` : ''}
 Answers: ${JSON.stringify(answers || {}, null, 2)}
 Timestamp: ${new Date().toISOString()}
                     `,
@@ -52,7 +55,7 @@ Timestamp: ${new Date().toISOString()}
         return NextResponse.json({
             success: true,
             message: 'Lead captured successfully',
-            lead: { email, score, toolName }
+            lead: { email: trimmedEmail, score, toolName, company: company || null }
         }, { status: 200 });
 
     } catch (error: any) {

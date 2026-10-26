@@ -3,6 +3,28 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle2, ShieldCheck, AlertCircle } from 'lucide-react';
 
+function extractCompanyFromEmail(emailStr: string): string {
+  const domain = emailStr.split('@')[1]?.toLowerCase().trim() || '';
+  if (!domain) return 'Not Specified';
+
+  const genericProviders = new Set([
+    'gmail.com', 'googlemail.com', 'yahoo.com', 'hotmail.com',
+    'outlook.com', 'live.com', 'icloud.com', 'me.com',
+    'proton.me', 'protonmail.com', 'aol.com', 'zoho.com', 'mail.com'
+  ]);
+
+  if (genericProviders.has(domain)) {
+    return 'Independent / Founder';
+  }
+
+  const parts = domain.split('.');
+  const candidate = parts.length > 2 && (parts[parts.length - 1] === 'uk' || parts[parts.length - 1] === 'au')
+    ? parts[parts.length - 3] || parts[0]
+    : parts[0];
+
+  return candidate ? candidate.toUpperCase() : 'Not Specified';
+}
+
 export default function AsyncDiagnosticCard() {
   const [email, setEmail] = useState('');
   const [provider, setProvider] = useState('');
@@ -12,6 +34,10 @@ export default function AsyncDiagnosticCard() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submittedEmail, setSubmittedEmail] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+
+  const clearError = () => {
+    if (errorMessage) setErrorMessage('');
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,8 +61,7 @@ export default function AsyncDiagnosticCard() {
     setIsSubmitting(true);
     setErrorMessage('');
 
-    const domain = trimmedEmail.split('@')[1] || '';
-    const company = domain ? domain.split('.')[0].toUpperCase() : 'Not Specified';
+    const company = extractCompanyFromEmail(trimmedEmail);
 
     const formattedMessage = [
       `Cloud / AI Provider: ${provider}`,
@@ -158,13 +183,13 @@ export default function AsyncDiagnosticCard() {
       </p>
 
       {errorMessage && (
-        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-3 text-red-900 text-xs">
+        <div id="async-error" role="alert" className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-3 text-red-900 text-xs">
           <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
           <span>{errorMessage}</span>
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4" aria-busy={isSubmitting}>
         {/* Field 1: Work Email */}
         <div>
           <label htmlFor="async-email" className="block text-xs font-bold text-[var(--ink)] uppercase tracking-wider mb-1.5">
@@ -172,11 +197,17 @@ export default function AsyncDiagnosticCard() {
           </label>
           <input
             id="async-email"
+            name="email"
             type="email"
+            autoComplete="email"
             required
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              clearError();
+            }}
             placeholder="cto@company.com"
+            aria-describedby={errorMessage ? 'async-error' : undefined}
             className="w-full bg-white text-zinc-950 border border-[var(--line)] rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent placeholder:text-zinc-400"
           />
         </div>
@@ -188,9 +219,13 @@ export default function AsyncDiagnosticCard() {
           </label>
           <select
             id="async-provider"
+            name="provider"
             required
             value={provider}
-            onChange={(e) => setProvider(e.target.value)}
+            onChange={(e) => {
+              setProvider(e.target.value);
+              clearError();
+            }}
             className="w-full bg-white text-zinc-950 border border-[var(--line)] rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent cursor-pointer"
           >
             <option value="" disabled>
@@ -203,6 +238,7 @@ export default function AsyncDiagnosticCard() {
             <option value="Anthropic">Anthropic</option>
             <option value="Multi-Cloud">Multi-Cloud</option>
             <option value="Private Cluster">Private Cluster</option>
+            <option value="Other / Multiple">Other / Multiple</option>
           </select>
         </div>
 
@@ -213,10 +249,14 @@ export default function AsyncDiagnosticCard() {
           </label>
           <input
             id="async-spend"
+            name="spendOrBottleneck"
             type="text"
             required
             value={spendOrBottleneck}
-            onChange={(e) => setSpendOrBottleneck(e.target.value)}
+            onChange={(e) => {
+              setSpendOrBottleneck(e.target.value);
+              clearError();
+            }}
             placeholder="e.g. $50k/mo on Anthropic API, negative gross margins"
             className="w-full bg-white text-zinc-950 border border-[var(--line)] rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent placeholder:text-zinc-400"
           />
@@ -229,9 +269,13 @@ export default function AsyncDiagnosticCard() {
           </label>
           <textarea
             id="async-notes"
+            name="notes"
             rows={3}
             value={notes}
-            onChange={(e) => setNotes(e.target.value)}
+            onChange={(e) => {
+              setNotes(e.target.value);
+              clearError();
+            }}
             placeholder="Key infrastructure bottlenecks, inference latency concerns, or questions for Richard..."
             className="w-full bg-white text-zinc-950 border border-[var(--line)] rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent placeholder:text-zinc-400 resize-none"
           />
