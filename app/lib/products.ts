@@ -465,13 +465,6 @@ export const PRODUCTS: Record<string, Product> = {
         price: 2900, mode: 'payment',
         paymentLink: 'https://buy.stripe.com/5kQ3cogHs3jc5lz3FK2B20p',
     },
-    premium_guide_79: {
-        name: 'AI Unit Economics Operating Kit ($79)',
-        description: 'Instant download of copyable P&L models, vendor audit checklists, and token margin spreadsheets.',
-        price: 7900,
-        mode: 'payment',
-        paymentLink: 'https://buy.stripe.com/6oUdR2ezk2f8aFT9042B21d',
-    },
 
     // --- B2B ENTERPRISE ---
     enterprise_curriculum_license: {
