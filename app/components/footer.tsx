@@ -24,6 +24,53 @@ export function Footer() {
                     </Link>
                 </div>
 
+                {/* Flagship Frameworks & Executive Diagnostics Feeder Section */}
+                <div className="mb-12 pb-8 border-b border-zinc-300">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-6">
+                        <div>
+                            <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-amber-900 block mb-1">
+                                Tier-1 Click-Depth Feeder · Authority Architecture
+                            </span>
+                            <h3 className="text-base sm:text-lg font-serif font-bold text-zinc-950">
+                                Flagship Frameworks &amp; Executive Diagnostics
+                            </h3>
+                        </div>
+                        <p className="text-xs text-zinc-700 max-w-md font-medium">
+                            Direct bridges to core economic doctrine, empirical calculators, and executive governance briefings.
+                        </p>
+                    </div>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 text-xs font-semibold">
+                        <div className="flex flex-col gap-1.5">
+                            <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-cyan-950">Flagship Doctrine</span>
+                            <Link href="/articles/frameworks/technical-insolvency-date" className="text-zinc-950 hover:text-cyan-900 transition-colors">Technical Insolvency Date</Link>
+                            <Link href="/articles/frameworks/vibe-coding-debt" className="text-zinc-950 hover:text-cyan-900 transition-colors">Vibe Coding Debt</Link>
+                            <Link href="/articles/frameworks/shadow-agents" className="text-zinc-950 hover:text-cyan-900 transition-colors">Shadow Agents</Link>
+                        </div>
+                        <div className="flex flex-col gap-1.5">
+                            <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-cyan-950">Primary Diagnostics</span>
+                            <Link href="/tools/pdi" className="text-zinc-950 hover:text-cyan-900 transition-colors">Product Debt Index (PDI)</Link>
+                            <Link href="/reality-check" className="text-zinc-950 hover:text-cyan-900 transition-colors">AI Reality Check</Link>
+                            <Link href="/tools/aueb" className="text-zinc-950 hover:text-cyan-900 transition-colors">AI Unit Economics (AUEB)</Link>
+                        </div>
+                        <div className="flex flex-col gap-1.5">
+                            <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-cyan-950">Financial Audits</span>
+                            <Link href="/roi-calculator" className="text-zinc-950 hover:text-cyan-900 transition-colors">Executive ROI Calculator</Link>
+                            <Link href="/pricing-sprints" className="text-zinc-950 hover:text-cyan-900 transition-colors">Fixed-Scope Sprints</Link>
+                            <Link href="/advisory" className="text-zinc-950 hover:text-cyan-900 transition-colors">Executive Advisory</Link>
+                        </div>
+                        <div className="flex flex-col gap-1.5">
+                            <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-cyan-950">Executive Briefings</span>
+                            <Link href="/for-cfos" className="text-zinc-950 hover:text-cyan-900 transition-colors">CFO Governance Briefing</Link>
+                            <Link href="/for-ctos" className="text-zinc-950 hover:text-cyan-900 transition-colors">CTO Governance Briefing</Link>
+                        </div>
+                        <div className="flex flex-col gap-1.5">
+                            <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-cyan-950">Platform Intelligence</span>
+                            <Link href="/compare/ai-guardrails-platforms" className="text-zinc-950 hover:text-cyan-900 transition-colors">AI Guardrails Comparison</Link>
+                            <Link href="/doctrine" className="text-zinc-950 hover:text-cyan-900 transition-colors">Architectural Doctrine</Link>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Main footer grid */}
                 <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
 

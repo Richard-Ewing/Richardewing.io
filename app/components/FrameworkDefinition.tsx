@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import SocialShare from './SocialShare';
+import { FrameworkDiagnosticBridge } from '@/components/seo/FrameworkDiagnosticBridge';
 
 interface Framework {
     slug: string;
@@ -71,15 +72,24 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                     <SocialShare url={`https://www.richardewing.io/articles/frameworks/${framework.slug}`} title={framework.name} />
                 </header>
 
-                {/* Definition Box */}
+                {/* Definition Box (AEO Featured Snippet Block) */}
                 <section className="mb-12">
                     <h2 className="text-xs font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-widest mb-3">
                         Executive Definition
                     </h2>
                     <div className="p-6 sm:p-8 bg-white border-l-4 border-l-[var(--gold,#b77a35)] border-y border-r border-[var(--line,rgba(36,51,43,0.12))] rounded-r-2xl shadow-sm">
-                        <p className="text-xl sm:text-2xl text-[var(--ink,#1e2924)] leading-relaxed font-serif italic">
-                            {framework.definition}
-                        </p>
+                        {framework.definition.split('\n\n').map((paragraph, idx) => (
+                            <p
+                                key={idx}
+                                className={idx === 0
+                                    ? "text-xl sm:text-2xl text-[var(--ink,#1e2924)] leading-relaxed font-serif italic"
+                                    : "mt-4 text-base sm:text-lg text-[var(--muted,#66716a)] leading-relaxed font-sans"
+                                }
+                                itemProp={idx === 0 ? "description" : undefined}
+                            >
+                                {paragraph}
+                            </p>
+                        ))}
                     </div>
                 </section>
 
@@ -103,7 +113,7 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                                 <Link href="/tools/aueb" className="button button-gold">
                                     Run AUEB Benchmark Calculator ↗
                                 </Link>
-                                <Link href="/services" className="button button-outline text-white border-white/30 hover:bg-white/10">
+                                <Link href="/schedule?source=return-on-ai-investment" className="button button-outline text-white border-white/30 hover:bg-white/10">
                                     Boardroom R&amp;D Capital Audit ↗
                                 </Link>
                             </div>
@@ -130,8 +140,62 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                                 <Link href="/tools/pdi" className="button button-gold">
                                     Calculate Your Organization&apos;s TID ↗
                                 </Link>
-                                <Link href="/services" className="button button-outline text-white border-white/30 hover:bg-white/10">
-                                    Retain Turnaround Advisory ↗
+                                <Link href="/schedule?source=technical-insolvency-date" className="button button-outline text-white border-white/30 hover:bg-white/10">
+                                    Schedule Insolvency Triage ↗
+                                </Link>
+                            </div>
+                        </div>
+                    </section>
+                )}
+
+                {framework.slug === 'vibe-coding-debt' && (
+                    <section className="mb-12">
+                        <div className="p-6 sm:p-8 rounded-2xl border border-amber-900/40 bg-[var(--forest2,#162e26)] text-white shadow-md">
+                            <div className="flex items-center justify-between mb-4">
+                                <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-amber-300 bg-amber-950/60 px-3 py-1 rounded border border-amber-700/40">
+                                    Mathematical Axiom
+                                </span>
+                                <span className="text-xs font-mono text-zinc-300">The Vibe Debt Liability Ratio</span>
+                            </div>
+                            <div className="p-4 bg-black/40 border border-white/10 text-amber-300 font-mono text-sm sm:text-base rounded-xl overflow-x-auto my-4 text-center">
+                                VCD = (Unverified AI Lines of Code × Mean Recovery Time) / Test Coverage %
+                            </div>
+                            <p className="text-sm text-zinc-300 leading-relaxed font-sans mt-3">
+                                <strong className="text-white">The Comprehension Asymmetry:</strong> Accelerating code generation without accelerating code comprehension creates an uninspected liability. When an unverified copilot abstraction fails, recovery duration balloons exponentially.
+                            </p>
+                            <div className="mt-6 pt-4 border-t border-white/15 flex flex-wrap gap-4">
+                                <Link href="/tools/pdi" className="button button-gold">
+                                    Benchmark Your Vibe Coding Debt (PDI) ↗
+                                </Link>
+                                <Link href="/schedule?source=vibe-coding-debt" className="button button-outline text-white border-white/30 hover:bg-white/10">
+                                    Book 30-Min Architecture Triage ↗
+                                </Link>
+                            </div>
+                        </div>
+                    </section>
+                )}
+
+                {framework.slug === 'shadow-agents' && (
+                    <section className="mb-12">
+                        <div className="p-6 sm:p-8 rounded-2xl border border-purple-900/40 bg-[var(--forest2,#162e26)] text-white shadow-md">
+                            <div className="flex items-center justify-between mb-4">
+                                <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-purple-300 bg-purple-950/60 px-3 py-1 rounded border border-purple-700/40">
+                                    Mathematical Axiom
+                                </span>
+                                <span className="text-xs font-mono text-zinc-300">The Autonomous Blast Radius</span>
+                            </div>
+                            <div className="p-4 bg-black/40 border border-white/10 text-purple-300 font-mono text-sm sm:text-base rounded-xl overflow-x-auto my-4 text-center">
+                                Blast Radius = Unsanctioned Agent Count × API Execution Permissions × Average Query Frequency
+                            </div>
+                            <p className="text-sm text-zinc-300 leading-relaxed font-sans mt-3">
+                                <strong className="text-white">The Non-Human Actor Risk:</strong> Unmonitored agents executing with elevated credentials trigger systemic cascading failures and unmonitored API inference loops across enterprise vector databases and production systems.
+                            </p>
+                            <div className="mt-6 pt-4 border-t border-white/15 flex flex-wrap gap-4">
+                                <Link href="/reality-check" className="button button-gold">
+                                    Run AI Reality Check Diagnostic ↗
+                                </Link>
+                                <Link href="/schedule?source=shadow-agents" className="button button-outline text-white border-white/30 hover:bg-white/10">
+                                    Book Shadow Agent Security Review ↗
                                 </Link>
                             </div>
                         </div>
@@ -168,9 +232,17 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                         Why It Matters
                     </h2>
                     <div className="p-6 sm:p-8 bg-white border border-[var(--line,rgba(36,51,43,0.12))] rounded-2xl shadow-sm">
-                        <p className="text-[var(--ink,#1e2924)] font-sans text-base sm:text-lg leading-relaxed">
-                            {framework.whyItMatters}
-                        </p>
+                        {framework.whyItMatters.split('\n\n').map((paragraph, idx) => (
+                            <p
+                                key={idx}
+                                className={idx === 0
+                                    ? "text-[var(--ink,#1e2924)] font-sans text-base sm:text-lg leading-relaxed"
+                                    : "mt-4 text-[var(--ink,#1e2924)] font-sans text-base sm:text-lg leading-relaxed"
+                                }
+                            >
+                                {paragraph}
+                            </p>
+                        ))}
                     </div>
                 </section>
 
@@ -227,27 +299,18 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                     </section>
                 )}
 
-                {/* Related Tool */}
-                {framework.relatedTool && (
-                    <section className="mb-12">
-                        <div className="p-8 rounded-2xl bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.16))] flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-                            <div>
-                                <div className="text-[10px] font-mono font-bold uppercase tracking-widest text-[var(--gold,#b77a35)] mb-1">
-                                    Interactive Diagnostic
-                                </div>
-                                <h3 className="font-serif text-2xl font-bold text-[var(--ink,#1e2924)] mb-2">
-                                    Calculate Your {framework.name}
-                                </h3>
-                                <p className="text-sm text-[var(--muted,#66716a)] font-sans">
-                                    Use our interactive tool to quantify risk and model financial impact.
-                                </p>
-                            </div>
-                            <Link href={framework.relatedTool.url} className="button button-gold shrink-0">
-                                Open {framework.relatedTool.name} ↗
-                            </Link>
-                        </div>
-                    </section>
-                )}
+                {/* Bidirectional Diagnostic Tool & Advisory Bridge */}
+                <FrameworkDiagnosticBridge
+                    variant="framework-to-diagnostic"
+                    slug={framework.slug}
+                    advisorySource={framework.slug}
+                    primaryTool={{
+                        name: framework.relatedTool?.name || 'Product Debt Index (PDI) Calculator',
+                        url: framework.relatedTool?.url || '/tools/pdi',
+                        badge: 'Interactive Diagnostic',
+                        description: `Quantify risk and model financial impact for ${framework.name}.`
+                    }}
+                />
 
                 {/* Citation Block */}
                 <section className="pb-12">

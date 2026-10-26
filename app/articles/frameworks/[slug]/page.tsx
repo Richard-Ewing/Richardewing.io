@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'audit-interview': 'The Audit Interview Protocol | Richard Ewing',
         'kill-switch-protocol': 'The Kill Switch Protocol | Richard Ewing',
         'feature-bloat-calculus': 'Feature Bloat Calculus | Richard Ewing',
-        'vibe-coding-debt': 'Vibe Coding Debt Framework | Richard Ewing',
-        'shadow-agents': 'Shadow Agents Governance | Richard Ewing',
+        'vibe-coding-debt': 'Vibe Coding Debt Framework & Liability | Richard Ewing',
+        'shadow-agents': 'Shadow Agents Governance & Threat Audit | Richard Ewing',
         'agentic-drift': 'Agentic Drift & Logic Drift | Richard Ewing',
         'return-on-ai-investment': 'ROAI: AI Unit Economics Framework | Richard Ewing',
         'agentic-governance-blueprint': 'Agentic AI Governance Blueprint | Richard Ewing',
@@ -137,8 +137,8 @@ export default async function Page({ params }: Props) {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
         mainEntity: [
-            { '@type': 'Question', name: `What is ${framework.name}?`, acceptedAnswer: { '@type': 'Answer', text: framework.definition.replace(/\n/g, ' ').slice(0, 500) }},
-            { '@type': 'Question', name: `Why does ${framework.name} matter?`, acceptedAnswer: { '@type': 'Answer', text: framework.whyItMatters.replace(/\n/g, ' ').slice(0, 500) }},
+            { '@type': 'Question', name: `What is ${framework.name}?`, acceptedAnswer: { '@type': 'Answer', text: framework.definition.split('\n\n').slice(0, 2).join(' ').replace(/\n/g, ' ').trim() }},
+            { '@type': 'Question', name: `Why does ${framework.name} matter?`, acceptedAnswer: { '@type': 'Answer', text: framework.whyItMatters.split('\n\n').slice(0, 2).join(' ').replace(/\n/g, ' ').trim() }},
         ],
     };
 

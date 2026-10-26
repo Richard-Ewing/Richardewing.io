@@ -87,3 +87,40 @@ description: Enforces strict formulas for Meta Titles (<60 chars), Meta Descript
 - **Disallowed Crawlers (`Disallow: '/'`)**: Explicitly disallow Pure Foundation Model Training & Unsolicited Bulk Scrapers (`GPTBot`, `ClaudeBot`, `Google-Extended`, `Google-CloudVertexBot`, `CCBot`, `Amazonbot`, `meta-externalagent`, `cohere-ai`, `Bytespider`, `PetalBot`, `Diffbot`, `ImagesiftBot`, `Omgilibot`).
 - **Edge Parity**: `app/robots.ts` must remain 100% synchronized with Cloudflare Bot Management / AI Audit (`HTTP 403 Forbidden` on training scrapers, `HTTP 200 OK` on citation/search bots) and `middleware.ts` edge blocks so disallowed bots do not waste crawl budget or pollute edge logs with avoidable 403/404 responses.
 
+## 16. GSC + Bing Snippet Intersection Rule (Cross-Engine Calibration)
+- **Rendered Title Length**: Strictly between 45 and 60 characters total rendered in search engine result pages. When using child routes in Next.js, either calibrate child title strings knowing the layout appends ` | Richard Ewing` (16 characters), or supply `title: { absolute: "..." }` to pin the exact character count. Front-load the exact search entity in the first 3 to 5 words.
+- **Meta Description Length**: Strictly between 130 and 155 characters. The first sentence must stand alone as an authoritative definition or direct answer. The second sentence provides differentiator, quantitative proof, and an active verb.
+- **Voice & Tone Standards**: Strict HWS v2.0 adherence: zero em-dashes, zero semicolons, zero marketing hyperbole, and zero banned consulting filler (unlock, delve, seamless, robust, leverage, production-ready, missing layer/piece).
+
+## 17. AEO First-100-Word Direct Answer Invariant
+- **Standalone Extractable Block**: Every diagnostic, framework, executive briefing, and comparison route must open with a direct, citable definition block within the first 100 words of page content.
+- **Four-Part Definition Structure**:
+  1. Primary Entity / Framework Name.
+  2. Category Classification.
+  3. Core Operational or Financial Mechanism (what breaks, what costs money, or how it operates).
+  4. Executive Readout / Business Consequence.
+- **Search Alignment**: The definition must be semantically linked with `itemProp="description"` and mirror page JSON-LD schema descriptions verbatim so search engine crawlers and LLM retrieval bots receive identical ground truth.
+
+## 18. Tier-1 Click-Depth Authority Feeder Invariant (Click Depth <= 2)
+- **Global & Hub Feeder Sections**: High-value commercial routes, executive frameworks, and diagnostic tools must maintain a click depth of 2 or fewer hops from the homepage and primary navigation hubs.
+- **Mandatory Surfaces**:
+  - Global site shell footer (`components/site-shell.tsx`).
+  - Standalone footer component (`app/components/Footer.tsx`).
+  - High-traffic listing and hub pages (`app/articles/page.tsx`, `app/tools/page.tsx`).
+- **Feeder Link Inventory**: Each feeder section must link directly to the 10 Tier-1 authority targets:
+  1. `/articles/frameworks/technical-insolvency-date`
+  2. `/articles/frameworks/vibe-coding-debt`
+  3. `/articles/frameworks/shadow-agents`
+  4. `/tools/pdi`
+  5. `/reality-check`
+  6. `/tools/aueb`
+  7. `/roi-calculator`
+  8. `/for-cfos` & `/for-ctos`
+  9. `/pricing-sprints` & `/advisory`
+  10. `/compare/ai-guardrails-platforms`
+
+## 19. Cloudflare Real HTML Document Load Telemetry Invariant
+- **Asset Isolation**: Cloudflare Edge analytics record every hit to static JavaScript chunks, CSS bundles, font assets, and client-side prefetch pings. Never conflate gross edge requests with unique human visitors or HTML document reads.
+- **Document Load Filtering**: Always isolate requests where `Content-Type` is `text/html` or filter on non-asset document paths (`/`, `/articles/*`, `/tools/*`, `/for-cfos`, etc.) when evaluating real user demand, search crawler crawl rates, and bot traffic.
+
+

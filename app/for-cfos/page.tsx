@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { DollarSign, TrendingDown, ShieldAlert, ArrowRight, PieChart, FileText } from 'lucide-react';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
+import { ExecutiveDefinitionBlock, FrameworkDiagnosticBridge } from '@/components/seo/FrameworkDiagnosticBridge';
 
 export const metadata: Metadata = {
-    title: 'AI Economics & R&D Capital Audits for CFOs',
+    title: 'AI Economics & Capital Audits for CFOs',
     description: 'Forensic R&D capital audits, Section 174 defense, and AI gross margin engineering for Chief Financial Officers and Directors of Finance.',
     keywords: [
         'CFO AI economics',
@@ -17,10 +18,16 @@ export const metadata: Metadata = {
     ],
     alternates: { canonical: 'https://www.richardewing.io/for-cfos' },
     openGraph: {
-        title: 'For CFOs & Finance Directors - AI Economics & Capital Audits',
+        title: 'For CFOs & Finance Directors: AI Economics & Capital Audits',
         description: 'Forensic software payroll audits and Section 174 capitalization defense in CFO language.',
         url: 'https://www.richardewing.io/for-cfos',
         type: 'website'
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'For CFOs & Finance Directors: AI Economics & Capital Audits',
+        description: 'Forensic software payroll audits and Section 174 capitalization defense in CFO language.',
+        images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
     },
 };
 
@@ -73,9 +80,19 @@ export default function ForCFOsPage() {
         url: 'https://www.richardewing.io/for-cfos'
     };
 
+    const breadcrumbSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+            { '@type': 'ListItem', position: 2, name: 'For CFOs', item: 'https://www.richardewing.io/for-cfos' },
+        ],
+    };
+
     return (
         <main className="pt-20">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <div className="page-container">
                 <div className="max-w-5xl mx-auto">
                     {/* Hero Section */}
@@ -104,10 +121,16 @@ export default function ForCFOsPage() {
                                 href="/tools/cfo-capitalization-audit" 
                                 className="px-8 py-4 rounded-xl border border-zinc-300 text-zinc-900 font-bold hover:bg-zinc-100 transition-colors"
                             >
-                                Run Free Section 174 Audit Free &rarr;
+                                Run Free Section 174 Audit &rarr;
                             </Link>
                         </div>
                     </div>
+
+                    {/* Executive Definition (AEO Featured Snippet Block) */}
+                    <ExecutiveDefinitionBlock
+                        kicker="Executive Definition: AI Economics for CFOs"
+                        definition="AI Economics for CFOs is the financial governance discipline that audits software R&D payroll, defends Section 174 tax categorization, models inference cost of goods sold (Synthetic COGS), and stops negative-carry AI features from compressing enterprise gross margins."
+                    />
 
                     {/* Three Core Financial Pain Points */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
@@ -244,6 +267,21 @@ export default function ForCFOsPage() {
                             ))}
                         </div>
                     </div>
+
+                    {/* Bidirectional Tool & Advisory Bridge */}
+                    <FrameworkDiagnosticBridge
+                        variant="framework-to-diagnostic"
+                        slug="for-cfos"
+                        advisorySource="for-cfos"
+                        title="Stress-Test Your Financial Exposure"
+                        subtitle="CFO Diagnostic Suite · Quantitative Remediation"
+                        primaryTool={{
+                            name: "AI Unit Economics Benchmark (AUEB)",
+                            url: "/tools/aueb",
+                            badge: "Unit Margin Audit",
+                            description: "Isolate token inference expenses per user transaction, benchmark against industry gross margins, and eliminate negative-carry feature losses."
+                        }}
+                    />
 
                     {/* Executive Advisory Callout */}
                     <div className="rounded-3xl border border-emerald-300 bg-gradient-to-br from-emerald-50/90 via-white to-teal-50/90 p-8 sm:p-12 text-center shadow-md">

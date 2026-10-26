@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ROICalculatorClient } from './ROICalculatorClient';
+import ScorecardCheckoutDrawer from '@/app/components/ScorecardCheckoutDrawer';
+import { FrameworkDiagnosticBridge } from '@/components/seo/FrameworkDiagnosticBridge';
 
 export const metadata: Metadata = {
-  title: 'AI Waste & ROI Calculator',
+  title: 'Executive AI Waste & ROI Calculator',
   description:
     'Calculate your monthly AI spend leakage, engineering R&D waste, and Product Debt Index (PDI) risk score. Clear metrics for CFOs and engineering leads.',
   alternates: { canonical: 'https://www.richardewing.io/roi-calculator' },
@@ -13,6 +15,13 @@ export const metadata: Metadata = {
       'Calculate your monthly AI spend leakage, engineering R&D waste, and Product Debt Index (PDI) risk score.',
     url: 'https://www.richardewing.io/roi-calculator',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Waste & ROI Calculator | Richard Ewing',
+    description:
+      'Calculate your monthly AI spend leakage, engineering R&D waste, and Product Debt Index (PDI) risk score.',
+    images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
 
@@ -32,11 +41,24 @@ export default function ROICalculatorPage() {
       'Quantify token explosion, context rot costs, and unmonitored retry leakage across your engineering team.',
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+      { '@type': 'ListItem', position: 2, name: 'ROI Calculator', item: 'https://www.richardewing.io/roi-calculator' },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Section */}
@@ -104,6 +126,16 @@ export default function ROICalculatorPage() {
           </div>
         </div>
       </section>
+
+      {/* Monetization & Checkout Drawer */}
+      <div className="max-w-4xl mx-auto px-6 mb-12">
+        <ScorecardCheckoutDrawer source="roi-calculator" />
+      </div>
+
+      {/* Recommended Flagship Frameworks Bridge */}
+      <div className="max-w-4xl mx-auto px-6">
+        <FrameworkDiagnosticBridge variant="diagnostic-to-framework" />
+      </div>
 
       {/* Closing CTA */}
       <section className="closing-cta">

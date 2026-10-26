@@ -3,11 +3,12 @@ import { Suspense } from 'react';
 import DiagnosticCTA from '@/app/components/DiagnosticCTA';
 import ScorecardCheckoutDrawer from '@/app/components/ScorecardCheckoutDrawer';
 import CalculatorIntentProposal from '@/app/components/calculators/CalculatorIntentProposal';
+import { FrameworkDiagnosticBridge } from '@/components/seo/FrameworkDiagnosticBridge';
 import AUEBTool from './content';
 
 export const metadata: Metadata = {
-    title: 'AI Cost & Unit Economics Calculator (AUEB)',
-    description: 'Calculate AI feature profitability per interaction, audit inference token costs, and prevent SaaS gross margin collapse.',
+    title: 'AI Unit Economics Benchmark (AUEB)',
+    description: 'Calculate AI feature profitability per interaction, audit inference token expenses, and prevent SaaS gross margin collapse across model tiers.',
     keywords: [
         'AI unit economics',
         'LLM cost calculator',
@@ -23,14 +24,14 @@ export const metadata: Metadata = {
         canonical: 'https://www.richardewing.io/tools/aueb',
     },
     openGraph: {
-        title: 'AI Unit Economics Benchmark | Protect Your Margins',
+        title: 'AI Unit Economics Benchmark (AUEB)',
         description: 'Don\'t let the API bills kill your company. Model your AI feature costs before you ship.',
         url: 'https://www.richardewing.io/tools/aueb',
         type: 'website',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'AI Unit Economics Benchmark | Richard Ewing',
+        title: 'AI Unit Economics Benchmark (AUEB)',
         description: 'Calculate your AI margin collapse point. Compare LLM costs. Free diagnostic tool.',
     },
 };
@@ -53,9 +54,20 @@ export default function Page() {
         ],
     };
 
+    const breadcrumbSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+            { '@type': 'ListItem', position: 2, name: 'Diagnostics & Tools', item: 'https://www.richardewing.io/tools' },
+            { '@type': 'ListItem', position: 3, name: 'AI Unit Economics Benchmark', item: 'https://www.richardewing.io/tools/aueb' },
+        ],
+    };
+
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <Suspense fallback={<div className="max-w-7xl mx-auto p-12 text-center text-zinc-500 font-mono text-xs">Loading AUEB Margin Audit...</div>}>
                 <AUEBTool />
             </Suspense>
@@ -92,6 +104,8 @@ export default function Page() {
                         targetRole: 'CFOs & VPs of Engineering'
                     }}
                 />
+
+                <FrameworkDiagnosticBridge variant="diagnostic-to-framework" />
 
                 <DiagnosticCTA 
                     title="Is your runway burning faster than your MRR?"

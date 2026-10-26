@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import FrameworkDiagnosticBridge, { ExecutiveDefinitionBlock } from '@/components/seo/FrameworkDiagnosticBridge';
 
 export const metadata: Metadata = {
   title: 'Executive Advisory & AI Economics Sprints',
@@ -110,6 +111,11 @@ export default function AdvisoryPage() {
             ownership.
           </p>
 
+          <ExecutiveDefinitionBlock
+            kicker="Executive Definition: AI Advisory & Economics Sprints"
+            definition="Executive AI Advisory is independent fiduciary oversight for software leadership teams that aligns generative AI roadmaps with financial reality, establishing deterministic unit margins, eliminating shadow engineering costs, and defending investor capital before quarterly reviews."
+          />
+
           <div className="space-y-2 py-4">
             {[
               'AI feature pricing & unit economics',
@@ -200,6 +206,25 @@ export default function AdvisoryPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Cross-Surface Diagnostic Bridge */}
+      <section className="section bg-white border-y border-[var(--line)] py-12">
+        <div className="max-w-4xl mx-auto px-4">
+          <FrameworkDiagnosticBridge
+            variant="framework-to-diagnostic"
+            slug="pricing-sprints"
+            advisorySource="advisory"
+            title="Audit Your AI P&L Before Booking Advisory Sprints"
+            subtitle="Pre-Advisory Diagnostic Evaluation"
+            primaryTool={{
+              name: "AI Unit Economics Benchmark (AUEB)",
+              url: "/tools/aueb",
+              badge: "Interactive Benchmark",
+              description: "Run the AI Unit Economics Benchmark (AUEB) or calculate your Technical Insolvency Date before engaging our advisory practice."
+            }}
+          />
         </div>
       </section>
 

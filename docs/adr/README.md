@@ -60,6 +60,8 @@ Negative/Considerations:
 | [ADR-0013](ADR-0013-october-2026-aeo-geo-traffic-and-conversion-architecture.md) | October 2026 AEO/GEO Answer Graph & Edge Conversion Hardening | Accepted | @richardewing, Aravind Srinivas, Lily Ray, Keith Rabois, Code Architect | 2026-10-24 |
 | [ADR-0014](ADR-0014-option-c-post-economics-aeo-and-in-scorecard-conversion-engine.md) | Option C Post-Economics AEO & In-Scorecard Conversion Engine | Accepted | @richardewing, Paul Graham, Aravind Srinivas, Lily Ray, Keith Rabois, Code Architect | 2026-10-24 |
 | [ADR-0015](ADR-0015-holistic-ecosystem-flywheel-and-exogram-conversion-architecture.md) | Holistic Ecosystem Interconnectivity & Exogram Conversion Architecture | Accepted | @richardewing, Steve Jobs, Brian Balfour, Keith Rabois, Aravind Srinivas, Code Architect | 2026-10-24 |
+| [ADR-0016](ADR-0016-search-opportunity-elevation-and-cross-engine-snippet-governance.md) | Search Opportunity Elevation and Cross-Engine Snippet Governance | Accepted | @richardewing, Aravind Srinivas, Steve Jobs, Brian Balfour, Code Architect | 2026-10-26 |
+
 
 
 ---

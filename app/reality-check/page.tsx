@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { RealityCheckDiagnostic } from '@/components/diagnostics/reality-check-diagnostic';
+import { FrameworkDiagnosticBridge } from '@/components/seo/FrameworkDiagnosticBridge';
 
 export const metadata: Metadata = {
   title: 'Reality Check: AI Economics Diagnostic',
@@ -139,6 +140,11 @@ export default function RealityCheckPage() {
           </div>
         </div>
       </section>
+
+      {/* Recommended Flagship Frameworks Bridge */}
+      <div className="max-w-[var(--max)] mx-auto px-[5vw]">
+        <FrameworkDiagnosticBridge variant="diagnostic-to-framework" />
+      </div>
 
       {/* Closing CTA */}
       <section className="closing-cta">

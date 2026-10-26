@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ExecutiveDefinitionBlock, FrameworkDiagnosticBridge } from '@/components/seo/FrameworkDiagnosticBridge';
 
 export const metadata: Metadata = {
-  title: 'Pricing & Sprints',
+  title: 'Fixed-Scope Advisory Pricing & Sprints',
   description:
     'Fixed-scope product P&L turnarounds, AI feature pricing sprints, and embedded fractional product leadership with transparent pricing and deliverables.',
   alternates: {
@@ -14,6 +15,13 @@ export const metadata: Metadata = {
       'Transparent advisory pricing: $29 Operating Kit, $450 P&L Teardown, $2,500 Turnaround Sprint, $7,500 AI Build Sprint, and $10,000/mo Fractional CPO.',
     url: 'https://www.richardewing.io/pricing-sprints',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pricing & Sprints | Richard Ewing',
+    description:
+      'Transparent advisory pricing: $29 Operating Kit, $450 P&L Teardown, $2,500 Turnaround Sprint, $7,500 AI Build Sprint, and $10,000/mo Fractional CPO.',
+    images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
 
@@ -130,11 +138,24 @@ export default function PricingSprintsPage() {
     url: 'https://www.richardewing.io/pricing-sprints',
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+      { '@type': 'ListItem', position: 2, name: 'Pricing & Sprints', item: 'https://www.richardewing.io/pricing-sprints' },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Section */}
@@ -168,6 +189,14 @@ export default function PricingSprintsPage() {
           </p>
         </aside>
       </section>
+
+      {/* Executive Definition (AEO Featured Snippet Block) */}
+      <div className="max-w-[var(--max)] mx-auto px-[5vw] pt-8">
+        <ExecutiveDefinitionBlock
+          kicker="Executive Definition: Fixed-Scope AI Advisory Sprints"
+          definition="Fixed-Scope AI Advisory Sprints are time-boxed, outcome-guaranteed engagements designed for CEOs, CFOs, and CTOs to audit production token burn, eliminate negative-carry feature liabilities, restructure AI SaaS monetization, and ship governed agent systems in 14 to 21 days without open-ended consulting retainers."
+        />
+      </div>
 
       {/* Sprint Tiers Grid */}
       <section className="section">
@@ -312,6 +341,23 @@ export default function PricingSprintsPage() {
           </table>
         </div>
       </section>
+
+      {/* Bidirectional Diagnostic Tool & Advisory Bridge */}
+      <div className="max-w-[var(--max)] mx-auto px-[5vw]">
+        <FrameworkDiagnosticBridge
+          variant="framework-to-diagnostic"
+          slug="pricing-sprints"
+          advisorySource="pricing-sprints"
+          title="Empirical Diagnostic Proving Grounds"
+          subtitle="Pre-Sprint Evaluation · Operational Telemetry"
+          primaryTool={{
+            name: "AI Reality Check Diagnostic",
+            url: "/reality-check",
+            badge: "Operational Stress-Test",
+            description: "Run a 60-second diagnostic to isolate hidden cloud spend leaks, unmonitored retry loops, and negative-carry features before scoping your sprint."
+          }}
+        />
+      </div>
 
       {/* Closing CTA */}
       <section className="closing-cta">

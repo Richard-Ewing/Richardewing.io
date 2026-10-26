@@ -60,7 +60,7 @@ Depending on the nature of the task, dynamically activate the corresponding doma
 * **Engine C: UI/UX & Visual Polish**
   * Rich dark mode aesthetics, curated color palettes, Google Fonts typography, fluid dynamic layout math, micro-interactions, responsive design.
 * **Engine D: SEO & Growth Architecture**
-  * Unique title/meta tags (<60 chars title, <155 chars description), single `<h1>`, strict canonical URL enforcement, automated sitemap sync, IndexNow pinging.
+  * Unique title/meta tags (45 to 60 chars rendered title, 130 to 155 chars description), single `<h1>`, strict canonical URL enforcement, automated sitemap sync, IndexNow pinging, Tier-1 click-depth authority feeders (depth <= 2), AEO first-100-word direct definitions, and cross-engine (GSC + Bing) snippet intersection governance.
 * **Engine E: Strategic & Operational Artifacts & ADRs**
   * Structured executive summaries, comparative tables, quantitative risk models, decision matrices, mermaid architecture diagrams, and AI-Generated Architecture Decision Records (ADRs).
 
@@ -386,4 +386,24 @@ Every report, telemetry audit, or analytics inquiry prompt MUST lead with an **O
 3. **Zero Unwired Client Forms Invariant**: Every client form (`ExogramDemoForm`, `SpeakingBookingForm`, `IntakeApplicationForm`, blueprint captures, and newsletter/checklist gates) must execute real `fetch` POST requests to `/api/lead-capture` and/or `/api/leads` with structured payloads, error handling, high-contrast confirmation typography (never `text-white` on `bg-white`), and a post-submission fast-track `/schedule?source=...` link. Mock `setTimeout` form submissions are strictly prohibited.
 4. **Edge Redirect Query-String Safety**: In `middleware.ts`, `EDGE_REDIRECTS` map values must strictly be clean pathname strings (never containing `?` or `#`), because the middleware appends `req.nextUrl.search` dynamically when constructing the redirect `URL`.
 5. **Contextual Schedule Banner Continuity**: Whenever a new `?source=` parameter is introduced across the platform, `SOURCE_CONFIGS` in `components/schedule/schedule-diagnostic-banner.tsx` must be updated simultaneously so `/schedule` renders tailored pre-call framing above the Cal.com embed.
+
+---
+
+## 22. Search Opportunity Elevation, Cross-Engine Snippet Calibration & Tier-1 Authority Feeders
+
+1. **Simultaneous GSC & Bing Snippet Calibration (Snippet Intersection Rule)**:
+   - Rendered Title: Strictly 45 to 60 characters total rendered in search engine result pages. When using child routes in Next.js, either calibrate child title strings knowing the layout appends ` | Richard Ewing` (16 characters), or supply `title: { absolute: "..." }` to pin the exact character count. Front-load the exact search entity in the first 3 to 5 words.
+   - Meta Description: Strictly 130 to 155 characters. Sentence 1 is the direct answer or definition; Sentence 2 provides differentiator/proof + active verb. Never truncate mid-sentence.
+   - Voice & Tone: Strict HWS v2.0 adherence: zero em-dashes, zero semicolons, zero marketing hyperbole, and zero banned consulting filler (unlock, delve, seamless, robust, leverage, production-ready, missing layer/piece).
+2. **AEO First-100-Word Direct Answer Invariant**:
+   - Every diagnostic, framework, executive briefing, and comparison route must open with a direct, citable definition block within the first 100 words of page content.
+   - Four-part definition structure: (1) Primary Entity / Framework Name, (2) Category Classification, (3) Core Operational or Financial Mechanism, (4) Executive Readout / Business Consequence.
+   - Mirrored semantically with `itemProp="description"` and JSON-LD schema descriptions verbatim.
+3. **Tier-1 Click-Depth Authority Feeder Invariant (Max Click Depth <= 2)**:
+   - High-value commercial routes, executive frameworks, and diagnostic tools must maintain a click depth of 2 or fewer hops from the homepage and primary navigation hubs.
+   - Mandatory surfaces: Global site shell footer (`components/site-shell.tsx`), standalone footer component (`app/components/Footer.tsx`), and high-traffic listing/hub pages (`app/articles/page.tsx`, `app/tools/page.tsx`).
+   - Feeder link inventory must link directly to the 10 Tier-1 authority targets: TID, Vibe Coding Debt, Shadow Agents, PDI, Reality Check, AUEB, ROI Calculator, For CFOs & CTOs, Pricing & Sprints & Advisory, and Enterprise AI Guardrails.
+4. **Cloudflare Real HTML Document Load Telemetry Invariant**:
+   - Never conflate raw Cloudflare Edge requests with unique human visitors or HTML document reads. Always isolate requests where `Content-Type` is `text/html` or filter on non-asset document paths (`/`, `/articles/*`, `/tools/*`, `/for-cfos`, etc.) when evaluating real user demand, search crawler crawl rates, and bot traffic.
+
 

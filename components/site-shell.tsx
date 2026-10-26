@@ -123,6 +123,53 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       <main id="main">{children}</main>
 
       <footer className="site-footer">
+        {/* Flagship Frameworks & Executive Diagnostics Feeder Section */}
+        <div className="mb-10 pb-8 border-b border-[var(--line,rgba(36,51,43,0.14))]">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-6">
+            <div>
+              <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[var(--gold,#b77a35)] block mb-1">
+                Tier-1 Click-Depth Feeder · Authority Architecture
+              </span>
+              <h4 className="text-base sm:text-lg font-serif font-bold text-[var(--ink,#1e2924)]">
+                Flagship Frameworks &amp; Executive Diagnostics
+              </h4>
+            </div>
+            <p className="text-xs text-[var(--muted,#66716a)] max-w-md">
+              Direct bridges to core economic doctrine, empirical calculators, and executive governance briefings.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 text-xs">
+            <div className="flex flex-col gap-1.5">
+              <strong className="font-mono text-[10px] font-bold uppercase tracking-wider text-[var(--forest,#29473b)]">Flagship Doctrine</strong>
+              <Link href="/articles/frameworks/technical-insolvency-date" className="hover:text-[var(--forest,#29473b)] transition-colors">Technical Insolvency Date</Link>
+              <Link href="/articles/frameworks/vibe-coding-debt" className="hover:text-[var(--forest,#29473b)] transition-colors">Vibe Coding Debt</Link>
+              <Link href="/articles/frameworks/shadow-agents" className="hover:text-[var(--forest,#29473b)] transition-colors">Shadow Agents</Link>
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <strong className="font-mono text-[10px] font-bold uppercase tracking-wider text-[var(--forest,#29473b)]">Primary Diagnostics</strong>
+              <Link href="/tools/pdi" className="hover:text-[var(--forest,#29473b)] transition-colors">Product Debt Index (PDI)</Link>
+              <Link href="/reality-check" className="hover:text-[var(--forest,#29473b)] transition-colors">AI Reality Check</Link>
+              <Link href="/tools/aueb" className="hover:text-[var(--forest,#29473b)] transition-colors">AI Unit Economics (AUEB)</Link>
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <strong className="font-mono text-[10px] font-bold uppercase tracking-wider text-[var(--forest,#29473b)]">Financial Audits</strong>
+              <Link href="/roi-calculator" className="hover:text-[var(--forest,#29473b)] transition-colors">Executive ROI Calculator</Link>
+              <Link href="/pricing-sprints" className="hover:text-[var(--forest,#29473b)] transition-colors">Fixed-Scope Sprints</Link>
+              <Link href="/advisory" className="hover:text-[var(--forest,#29473b)] transition-colors">Executive Advisory</Link>
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <strong className="font-mono text-[10px] font-bold uppercase tracking-wider text-[var(--forest,#29473b)]">Executive Briefings</strong>
+              <Link href="/for-cfos" className="hover:text-[var(--forest,#29473b)] transition-colors">CFO Governance Briefing</Link>
+              <Link href="/for-ctos" className="hover:text-[var(--forest,#29473b)] transition-colors">CTO Governance Briefing</Link>
+            </div>
+            <div className="flex flex-col gap-1.5">
+              <strong className="font-mono text-[10px] font-bold uppercase tracking-wider text-[var(--forest,#29473b)]">Platform Intelligence</strong>
+              <Link href="/compare/ai-guardrails-platforms" className="hover:text-[var(--forest,#29473b)] transition-colors">AI Guardrails Comparison</Link>
+              <Link href="/doctrine" className="hover:text-[var(--forest,#29473b)] transition-colors">Architectural Doctrine</Link>
+            </div>
+          </div>
+        </div>
+
         <div className="footer-top">
           <div className="footer-brand">
             <Link className="wordmark" href="/">

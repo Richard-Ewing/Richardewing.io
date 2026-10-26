@@ -2,13 +2,20 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import TechnicalInsolvencySimulator from '@/app/components/TechnicalInsolvencySimulator';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
+import { ExecutiveDefinitionBlock, FrameworkDiagnosticBridge } from '@/components/seo/FrameworkDiagnosticBridge';
 
 export const metadata: Metadata = {
-    title: 'AI Economics Toolkit for CTOs',
+    title: 'AI Economics & R&D Toolkit for CTOs',
     description: 'Actionable frameworks for engineering executives to defend gross margins, audit R&D yield, and eliminate tech debt. Grounded in empirical code forensics.',
     keywords: ['CTO tools', 'engineering benchmarks', 'technical debt calculator CTO', 'CTO advisory', 'engineering productivity metrics', 'R&D capital efficiency CTO'],
     alternates: { canonical: 'https://www.richardewing.io/for-ctos' },
-    openGraph: { title: 'For CTOs  -  Engineering Economics Toolkit', description: 'Free tools and benchmarks for engineering leaders.', url: 'https://www.richardewing.io/for-ctos', type: 'website' },
+    openGraph: { title: 'For CTOs: Engineering Economics Toolkit', description: 'Free tools and benchmarks for engineering leaders.', url: 'https://www.richardewing.io/for-ctos', type: 'website' },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'For CTOs: Engineering Economics Toolkit | Richard Ewing',
+        description: 'Free tools and benchmarks for engineering leaders.',
+        images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
+    },
 };
 
 const tools = [
@@ -43,19 +50,31 @@ const frameworks = [
     { name: 'Supervisory Review Queue', description: 'Quantifying the air traffic control tax and synthetic PR triage', href: '/articles/frameworks/supervisory-review-queue' },
     { name: 'Frontier Model Economics', description: 'Sizing tasks between commodity SLMs and $78M-$191M frontier models', href: '/articles/frameworks/frontier-model-economics' },
     { name: 'The Transaction That Succeeds', description: 'The 4 Pillars of Agent Governance for decoupled authorization', href: '/articles/frameworks/the-transaction-that-succeeds' },
+    { name: 'Vibe Coding Debt', description: 'Measure the architectural liability and recovery drag of unverified AI code', href: '/articles/frameworks/vibe-coding-debt' },
+    { name: 'Shadow Agents', description: 'Detect and govern unsanctioned autonomous AI workflows across enterprise systems', href: '/articles/frameworks/shadow-agents' },
 ];
 
 export default function ForCTOsPage() {
     const schema = {
         '@context': 'https://schema.org', '@type': 'WebPage',
-        name: 'For CTOs  -  Engineering Economics Toolkit',
+        name: 'For CTOs: Engineering Economics Toolkit',
         description: 'Free tools and benchmarks for engineering leaders.',
         url: 'https://www.richardewing.io/for-ctos',
+    };
+
+    const breadcrumbSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+            { '@type': 'ListItem', position: 2, name: 'For CTOs', item: 'https://www.richardewing.io/for-ctos' },
+        ],
     };
 
     return (
         <main className="pt-20">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <div className="page-container">
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
@@ -65,8 +84,14 @@ export default function ForCTOsPage() {
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-violet-400">Start Measuring.</span>
                         </h1>
                         <p className="text-xl text-zinc-900 max-w-2xl mx-auto mb-8">
-                            6 free tools + 400+ glossary definitions + proprietary frameworks. Everything a CTO needs to quantify engineering economics and communicate with boards in financial language.
+                            25 free tools + 400+ glossary definitions + proprietary frameworks. Everything a CTO needs to quantify engineering economics and communicate with boards in financial language.
                         </p>
+
+                        {/* Executive Definition (AEO Featured Snippet Block) */}
+                        <ExecutiveDefinitionBlock
+                            kicker="Executive Definition: AI Economics for CTOs"
+                            definition="AI Economics for CTOs is the engineering leadership framework that quantifies technical debt in balance-sheet currency, calculates the Technical Insolvency Date, caps synthetic PR review drag, and enforces deterministic verification gates ahead of probabilistic autonomous agents."
+                        />
 
                         {/* Interactive Insolvency Simulator */}
                         <TechnicalInsolvencySimulator />
@@ -153,6 +178,21 @@ export default function ForCTOsPage() {
                             ))}
                         </div>
                     </div>
+
+                    {/* Bidirectional Tool & Advisory Bridge */}
+                    <FrameworkDiagnosticBridge
+                        variant="framework-to-diagnostic"
+                        slug="for-ctos"
+                        advisorySource="for-ctos"
+                        title="Isolate Engineering Drag &amp; Solvency Limits"
+                        subtitle="CTO Diagnostic Suite · Empirical Architecture"
+                        primaryTool={{
+                            name: "Product Debt Index (PDI)",
+                            url: "/tools/pdi",
+                            badge: "Insolvency Simulator",
+                            description: "Calculate the exact quarter when technical debt maintenance consumes 100% of engineering bandwidth and turns R&D spend into maintenance."
+                        }}
+                    />
 
                     <div className="rounded-2xl border border-rose-500/30 bg-rose-500/5 p-10 text-center">
                         <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Need a Full R&D Audit?</h2>

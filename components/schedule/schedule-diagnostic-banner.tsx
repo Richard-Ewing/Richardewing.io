@@ -16,6 +16,51 @@ const SOURCE_CONFIGS: Record<string, DiagnosticSourceConfig> = {
     badgeLabel: 'Annual AI Spend Leak',
     description: 'Select a 30-Minute Rapid Gut-Check or 1-on-1 Advisory session below. Bring your cloud invoices, token logs, or vendor contracts. We will isolate your primary engineering bottleneck and map out an immediate 30-day remediation priority.',
   },
+  'vibe-coding-debt': {
+    title: 'Reviewing Your Vibe Coding Debt & Architectural Liability Audit',
+    badgeLabel: 'Unverified AI Code Drag',
+    description: 'Select a 30-Minute Triage or Executive Advisory session below. Bring your repository commit history, pull request metrics, or test coverage logs. We will quantify your opaque code liability and establish deterministic verification boundaries.',
+  },
+  'technical-insolvency-date': {
+    title: 'Reviewing Your Technical Insolvency Date (TID) Audit',
+    badgeLabel: 'Maintenance Capacity Drag',
+    description: 'Select a 30-Minute Triage or Executive Advisory session below. Bring your engineering sprint allocations and quarterly maintenance growth rates to model your exact insolvency horizon and secure board remediation budget.',
+  },
+  'shadow-agents': {
+    title: 'Reviewing Your Shadow Agents & Autonomous Workflow Exposure',
+    badgeLabel: 'Unmonitored Agent Actions',
+    description: 'Select a session below to map autonomous AI workflows, unvetted MCP servers, and unsanctioned corporate API tokens across your infrastructure.',
+  },
+  'for-cfos': {
+    title: 'CFO AI Economics & R&D Capital Audit Briefing',
+    badgeLabel: 'Section 174 & Gross Margin Defense',
+    description: 'Select a confidential 30-minute CFO briefing or working session below. Bring your engineering payroll data, cloud AI invoices, and capitalization schedules to protect EBITDA and defend Section 174 amortizations.',
+  },
+  'for-ctos': {
+    title: 'CTO Engineering Economics & Architecture Governance Briefing',
+    badgeLabel: 'R&D Yield & Tech Debt Defense',
+    description: 'Select a 30-minute CTO briefing or technical architecture session below. Bring your sprint throughput, review queue backlog, and team allocation data to build board-ready economic metrics.',
+  },
+  'pricing-sprints': {
+    title: 'Fixed-Scope Advisory Sprint Scoping & Alignment',
+    badgeLabel: '14-Day & 21-Day Fixed Scope',
+    description: 'Select a session below to lock in the scope, deliverables, and start date for your 14-day P&L Turnaround Sprint, 21-day AI Build Sprint, or 1-on-1 P&L Teardown.',
+  },
+  'ai-guardrails': {
+    title: 'AI Guardrails & Runtime Execution Architecture Briefing',
+    badgeLabel: 'Deterministic Runtime Boundary',
+    description: 'Select a technical briefing slot below to evaluate deterministic runtime execution controls against probabilistic prompt wrappers, and eliminate context rot, retry inflation, and file mutation risks.',
+  },
+  'ai-guardrails-platforms': {
+    title: 'AI Guardrails & Runtime Execution Architecture Briefing',
+    badgeLabel: 'Deterministic Runtime Boundary',
+    description: 'Select a technical briefing slot below to evaluate deterministic runtime execution controls against probabilistic prompt wrappers, and eliminate context rot, retry inflation, and file mutation risks.',
+  },
+  'advisory': {
+    title: 'Executive Advisory & AI Economics Working Session',
+    badgeLabel: 'Strategic Leadership Retainer',
+    description: 'Select an advisory session below. Bring your current AI initiatives, cloud token costs, or engineering roadmaps to evaluate margin targets, eliminate phantom costs, and align board expectations.',
+  },
   'pdi': {
     title: 'Reviewing Your Product Debt Index (PDI) Audit',
     badgeLabel: 'Annual Maintenance Waste',
