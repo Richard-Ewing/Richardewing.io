@@ -501,7 +501,7 @@ export const TIER5_CONCEPTS: ConceptNode[] = [
       {
         role: 'Product Operations Manager',
         takeaway: 'Capture production failure cases directly from user feedback tickets and convert them into automated test fixtures within 24 hours.',
-        recommendedNextSlug: 'adlc'
+        recommendedNextSlug: 'spec-driven-development'
       }
     ]
   },

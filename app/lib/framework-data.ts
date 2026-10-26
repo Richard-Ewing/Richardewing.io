@@ -484,7 +484,7 @@ export const subFrameworks: Record<string, SubFramework> = {
                     education: ['Track 1: Engineering Economics Foundations'],
                     enforcement: 'Exogram Compiler Interceptor'
                 },
-                conceptSlug: 'zero-trust-type-verification'
+                conceptSlug: 'deterministic-execution-control'
             },
             {
                 id: 'PAIG-ACP-004',
@@ -540,7 +540,7 @@ export const subFrameworks: Record<string, SubFramework> = {
                     education: ['Track 11: Economics of Build vs. Buy for AI'],
                     enforcement: 'Exogram Semantic Model Router'
                 },
-                conceptSlug: 'slm-vs-api-arbitrage'
+                conceptSlug: 'slm-repatriation'
             },
             {
                 id: 'PAIG-IDC-003',
@@ -555,7 +555,7 @@ export const subFrameworks: Record<string, SubFramework> = {
                     education: ['Track 24: AI Economics & Margin Engineering'],
                     enforcement: 'Exogram Dedicated SLM Cluster Proxy'
                 },
-                conceptSlug: 'model-right-sizing'
+                conceptSlug: 'inference-economics'
             }
         ]
     },
@@ -720,7 +720,7 @@ export const subFrameworks: Record<string, SubFramework> = {
                     education: ['Track 1: Engineering Economics Foundations'],
                     enforcement: 'Exogram Zero-Trust Compiler Gate'
                 },
-                conceptSlug: 'zero-trust-type-verification'
+                conceptSlug: 'deterministic-execution-control'
             },
             {
                 id: 'PAIG-MCG-003',
@@ -833,7 +833,7 @@ export const subFrameworks: Record<string, SubFramework> = {
                     education: ['Track 2: AI Economics & Margin Engineering'],
                     enforcement: 'Exogram Token Ledger Interceptor'
                 },
-                conceptSlug: 'ai-cogs'
+                conceptSlug: 'ai-tokenomics-cogs'
             }
         ]
     },
@@ -901,7 +901,7 @@ export const subFrameworks: Record<string, SubFramework> = {
                     education: ['Track 2: AI Economics & Margin Engineering'],
                     enforcement: 'Exogram Margin Interceptor'
                 },
-                conceptSlug: 'ai-cogs'
+                conceptSlug: 'ai-tokenomics-cogs'
             },
             {
                 id: 'PAIG-CPO-002',
@@ -916,7 +916,7 @@ export const subFrameworks: Record<string, SubFramework> = {
                     education: ['Track 19: AI Agent Architecture & Economics'],
                     enforcement: 'Exogram Usage Metering Proxy'
                 },
-                conceptSlug: 'probabilistic-product-management'
+                conceptSlug: 'ai-product-management'
             }
         ]
     },
@@ -983,7 +983,7 @@ export const subFrameworks: Record<string, SubFramework> = {
                     education: ['Track 2: AI Economics & Margin Engineering'],
                     enforcement: 'Exogram Metering Ledger'
                 },
-                conceptSlug: 'ai-cogs'
+                conceptSlug: 'ai-tokenomics-cogs'
             },
             {
                 id: 'PAIG-CRO-002',
@@ -998,7 +998,7 @@ export const subFrameworks: Record<string, SubFramework> = {
                     education: ['Track 10: AI Due Diligence for Investors & Acquirers'],
                     enforcement: 'Exogram Customer Quota Gate'
                 },
-                conceptSlug: 'probabilistic-product-management'
+                conceptSlug: 'ai-product-management'
             }
         ]
     }

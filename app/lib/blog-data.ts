@@ -26,9 +26,10 @@ export const allArticles: Record<string, ArticleData> = {
     ...articlesAuto,
 };
 
-// Get sorted article list (newest first)
+// Get sorted article list (newest first, canonical to richardewing.io for internal index & sitemap hygiene)
 export function getSortedArticles() {
     return Object.entries(allArticles)
+        .filter(([slug, article]) => !article.canonicalUrl || article.canonicalUrl === `https://www.richardewing.io/blog/${slug}`)
         .map(([slug, article]) => ({ slug, ...article }))
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
@@ -41,7 +42,7 @@ export function getArticlesByCategory(category: string) {
 // Get all unique categories with counts
 export function getCategories() {
     const cats: Record<string, number> = {};
-    Object.values(allArticles).forEach(a => {
+    getSortedArticles().forEach(a => {
         cats[a.category] = (cats[a.category] || 0) + 1;
     });
     return Object.entries(cats)

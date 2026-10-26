@@ -384,6 +384,34 @@ if (fs.existsSync(siteShellPath)) {
   }
 }
 
+// 7G. Concept Corpus & Middleware Host Vary Integrity Gate
+const mwHostPath = path.join(rootDir, 'middleware.ts');
+if (fs.existsSync(mwHostPath)) {
+  const mwc = fs.readFileSync(mwHostPath, 'utf8');
+  if (!mwc.includes('Host, RSC')) {
+    console.error(`[SEO ERROR] middleware.ts must include 'Host' in Vary header to prevent apex/www cache poisoning!`);
+    errorCount++;
+  }
+}
+const corpusFileNames = fs.readdirSync(path.join(rootDir, 'app/lib')).filter(f => f.startsWith('concept-corpus') && f.endsWith('.ts'));
+const definedConceptSlugs = new Set();
+for (const cf of corpusFileNames) {
+  const content = fs.readFileSync(path.join(rootDir, 'app/lib', cf), 'utf8');
+  for (const m of content.matchAll(/^\s{2,4}slug:\s*'([^']+)'/gm)) {
+    definedConceptSlugs.add(m[1]);
+  }
+}
+const fwPath = path.join(rootDir, 'app/lib/framework-data.ts');
+if (fs.existsSync(fwPath)) {
+  const fwc = fs.readFileSync(fwPath, 'utf8');
+  for (const m of fwc.matchAll(/conceptSlug:\s*'([^']+)'/g)) {
+    if (!definedConceptSlugs.has(m[1])) {
+      console.error(`[SEO ERROR] app/lib/framework-data.ts references non-existent conceptSlug '${m[1]}'!`);
+      errorCount++;
+    }
+  }
+}
+
 // 8. Agent Skills Security & Hygiene Gate
 try {
   const auditOutput = execSync(`node "${path.join(__dirname, 'audit-agent-skills.mjs')}"`, { encoding: 'utf8' });

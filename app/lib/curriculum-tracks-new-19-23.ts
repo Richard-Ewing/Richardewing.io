@@ -71,7 +71,7 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
             d('Automation Error Cost', 'Average cost of a significant agent error', '$10K-$500K depending on domain'),
             d('Platform Consolidation Savings', 'Cost reduction from centralized agent infrastructure', '30-50% of total agent operating costs'),
         ], 'Analyze one case study from your industry. Identify the key economic decisions that determined success or failure.'),
-    ], '/vault/curriculum/tracks/ai-agent-architecture/N19-2');
+    ], '/vault/curriculum/tracks/ai-agent-architecture/19-2');
 
     // Modules 19-2 through 19-15 (stubs with content structure)
     const track19Modules = [
@@ -131,7 +131,7 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
             d('Process Volume Threshold', 'Minimum monthly volume to justify agent automation', '500+ instances/month for positive ROI'),
             d('Error Recovery Cost', 'Average cost to fix an automation error', 'Must be <10% of automation value created'),
         ], 'Score 10 processes in your organization using the 4-dimension framework. Rank them and select your top 3 candidates for agent automation.'),
-    ], '/vault/curriculum/tracks/agentic-automation/N20-2');
+    ], '/vault/curriculum/tracks/agentic-automation/20-2');
 
     const track20Modules = [
         { id: '20-2', title: 'Process Discovery for Agent Automation' },
@@ -192,7 +192,7 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
             d('Runtime Verification Latency', 'Additional time added by output verification', '50-500ms per action, acceptable for most enterprise workflows'),
             d('Governance Cost as % of Agent Budget', 'Total governance spend relative to agent operating costs', '12-20% for mature governance programs'),
         ], 'Design a runtime verification architecture for one high-stakes agent workflow. Calculate the cost and latency impact.'),
-    ], '/vault/curriculum/tracks/agent-governance/N21-2');
+    ], '/vault/curriculum/tracks/agent-governance/21-2');
 
     const track21Modules = [
         { id: '21-2', title: 'Agent Permission & Access Control Economics' },
@@ -242,7 +242,7 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
                 d('Tier 3 Binary Proxy Interception', 'Time required for policy engine gate to validate or block high-risk action', '<5ms binary check')
             ], 'Draft a 3-Tier Delegation Boundary policy for vendor AI agents in your Salesforce or SAP ecosystem.')
         ],
-        '/vault/curriculum/tracks/agent-governance/N21-13',
+        '/vault/curriculum/tracks/agent-governance/21-13',
         undefined,
         'live',
         ['cio-salesforce-sap-workflow-agents']
@@ -443,7 +443,7 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
             d('Leadership Training Investment', 'Recommended annual investment per new manager', '$10K-$25K in the first year'),
             d('Leadership Training ROI', 'Return on leadership development investment', '2-5x within 12 months'),
         ], 'Audit your organization\'s leadership development spend. Calculate the cost of your last three "failed" manager promotions (attrition, productivity loss, team disruption).'),
-    ], '/vault/curriculum/tracks/strategic-leadership/N22-2');
+    ], '/vault/curriculum/tracks/strategic-leadership/22-2');
 
     const track22Modules = [
         { id: '22-2', title: 'From Technical Expert to Strategic Leader' },
@@ -504,7 +504,7 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
             d('Communication Efficiency Gain', 'Time saved by using structured presentation frameworks', '30-50% reduction in meeting time'),
             d('Decision Velocity', 'Speed improvement in board approvals with clear technical translation', '2-3x faster approval cycles'),
         ], 'Prepare a 4-Quadrant Board Slide for your current quarter. Have a non-technical peer review it and score it on clarity (1-10).'),
-    ], '/vault/curriculum/tracks/executive-presence/N23-2');
+    ], '/vault/curriculum/tracks/executive-presence/23-2');
 
     const track23Modules = [
         { id: '23-2', title: 'Board Communication Mastery' },

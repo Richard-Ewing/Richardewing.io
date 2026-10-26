@@ -1596,7 +1596,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       {
         role: 'Director of Engineering',
         takeaway: 'Establish shared economic metrics like feature margin contribution rather than relying on isolated uptime and story point metrics.',
-        recommendedNextSlug: 'engineering-bottleneck-illusion'
+        recommendedNextSlug: 'code-review-bottleneck'
       },
       {
         role: 'Group Product Manager (GPM)',
@@ -2411,7 +2411,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     ],
     relatedConceptSlugs: [
       { slug: 'inference-economics', relationship: 'supports' },
-      { slug: 'model-right-sizing', relationship: 'extends' },
+      { slug: 'inference-economics', relationship: 'extends' },
       { slug: 'ai-margin-squeeze', relationship: 'correlates_with' }
     ],
     openQuestions: ['How can parameter-efficient fine-tuning (LoRA, QLoRA) on SLMs match the broad general reasoning of frontier models for complex multi-hop tasks?'],
@@ -2445,7 +2445,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       { statement: 'Right-sizing workloads to fine-tuned SLMs reduces enterprise AI compute spend by over 80 percent.', confidence: 0.95, counterarguments: ['Frontier API prices are dropping fast, making self-hosting redundant.'], supportingData: 'Stanford HELM benchmarks and enterprise FinOps infrastructure case studies.' }
     ],
     graphRelations: {
-      prerequisites: [{ slug: 'model-right-sizing', title: 'Model Right-Sizing' }],
+      prerequisites: [{ slug: 'inference-economics', title: 'Model Right-Sizing' }],
       applications: ['Private cloud inference', 'Edge AI deployment'],
       contrastingConcepts: [{ slug: 'ai-margin-squeeze', title: 'AI Margin Squeeze', distinction: 'Cost Optimization vs Uncontrolled API Spend' }]
     },
@@ -2466,7 +2466,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       {
         role: 'Chief Technology Officer (CTO)',
         takeaway: 'Implement dynamic routing layers that prioritize fine-tuned SLMs for routine classification to reduce API dependency.',
-        recommendedNextSlug: 'model-right-sizing'
+        recommendedNextSlug: 'inference-economics'
       },
       {
         role: 'Cloud FinOps Manager',
@@ -2535,7 +2535,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       { id: 'ev-cpo-1', title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/', publisher: 'Mind the Product', type: 'Canonical Essay', strength: 5 as const, role: 'Origin' as const, date: 'August 2026' }
     ],
     relatedConceptSlugs: [
-      { slug: 'ai-cogs', relationship: 'supports' },
+      { slug: 'ai-tokenomics-cogs', relationship: 'supports' },
       { slug: 'cost-of-predictivity', relationship: 'extends' }
     ],
     openQuestions: ['How should product leaders dynamically adjust token credit pricing when upstream frontier model providers alter API rates?'],
@@ -2568,7 +2568,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       { statement: 'Enforcing a 70% gross margin floor recovers 20 to 35 points of gross margin across B2B SaaS portfolios.', confidence: 0.95, counterarguments: ['Customers resist usage metering.'], supportingData: 'Portfolio audits across high-growth B2B SaaS companies.' }
     ],
     graphRelations: {
-      prerequisites: [{ slug: 'ai-cogs', title: 'AI COGS' }],
+      prerequisites: [{ slug: 'ai-tokenomics-cogs', title: 'AI COGS' }],
       applications: ['Product Portfolio Pruning', 'SaaS Pricing Transition'],
       contrastingConcepts: [{ slug: 'cost-of-predictivity', title: 'Cost of Predictivity', distinction: 'Gross Margin Rule vs Variable Predictivity Cost' }]
     },
@@ -2583,7 +2583,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       {
         role: 'Chief Product Officer (CPO)',
         takeaway: 'Require affirmative gross margin modeling and token quotas before signing off on any generative AI feature specification.',
-        recommendedNextSlug: 'seat-based-pricing-compression'
+        recommendedNextSlug: 'ai-margin-squeeze'
       },
       {
         role: 'Chief Financial Officer (CFO)',
@@ -2769,7 +2769,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       { id: 'ev-ndic-2', title: 'Bedrock, Vertex or build it yourself: The AI infrastructure decision most CIOs get backwards', url: 'https://www.cio.com/article/4215347/bedrock-vertex-or-build-it-yourself-the-ai-infrastructure-decision-most-cios-get-backwards.html', publisher: 'CIO.com', type: 'Architectural Analysis', strength: 5 as const, role: 'Supports' as const, date: 'August 2026' }
     ],
     relatedConceptSlugs: [
-      { slug: 'rented-intelligence-vs-owned-capital', relationship: 'supports' },
+      { slug: 'ai-vendor-lock-in', relationship: 'supports' },
       { slug: 'ai-volatility-tax', relationship: 'refines' },
       { slug: 'product-economist', relationship: 'extends' },
       { slug: 'cloud-repatriation', relationship: 'depends_on' }
@@ -2820,7 +2820,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       {
         role: 'Startup Founder',
         takeaway: 'Eliminate first-year cloud and inference overhead by systematically applying to hyperscaler startup ecosystem programs before selling equity.',
-        recommendedNextSlug: 'rented-intelligence-vs-owned-capital'
+        recommendedNextSlug: 'ai-vendor-lock-in'
       },
       {
         role: 'Chief Financial Officer (CFO)',
@@ -2889,8 +2889,8 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       { id: 'ev-sfo-2', title: 'The Engineering Bottleneck Illusion: What Copilot Adoption Taught Us', url: 'https://www.linkedin.com/pulse/engineering-bottleneck-illusion-what-copilot-adoption-richard-ewing-f5qhc/', publisher: 'LinkedIn', type: 'Industry Benchmark', strength: 5 as const, role: 'Supports' as const, date: 'September 2026' }
     ],
     relatedConceptSlugs: [
-      { slug: 'engineering-bottleneck-illusion', relationship: 'supports' },
-      { slug: 'vibe-coding-debt', relationship: 'extends' },
+      { slug: 'code-review-bottleneck', relationship: 'supports' },
+      { slug: 'vibe-coding', relationship: 'extends' },
       { slug: 'failure-cost-asymmetry', relationship: 'predicts' },
       { slug: 'product-economist', relationship: 'requires' }
     ],
@@ -2937,9 +2937,9 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       }
     ],
     graphRelations: {
-      prerequisites: [{ slug: 'vibe-coding-debt', title: 'Vibe Coding Debt' }],
+      prerequisites: [{ slug: 'vibe-coding', title: 'Vibe Coding Debt' }],
       applications: ['AI agent governance', 'Engineering SDLC capacity planning', 'Product roadmap discovery'],
-      contrastingConcepts: [{ slug: 'engineering-bottleneck-illusion', title: 'Engineering Bottleneck Illusion', distinction: 'Overproduction Volume vs Downstream Bottleneck Shift' }]
+      contrastingConcepts: [{ slug: 'code-review-bottleneck', title: 'Engineering Bottleneck Illusion', distinction: 'Overproduction Volume vs Downstream Bottleneck Shift' }]
     },
     whatChanges: {
       engineering: 'Teams enforce mechanical compiler gates and strict PR rate limits rather than celebrating raw code generation volume.',
@@ -2958,7 +2958,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       {
         role: 'VP of Engineering',
         takeaway: 'Cap autonomous pull request generation with mechanical compiler gates and review quotas to prevent senior engineer burnout.',
-        recommendedNextSlug: 'engineering-bottleneck-illusion'
+        recommendedNextSlug: 'code-review-bottleneck'
       },
       {
         role: 'Chief Product Officer (CPO)',
@@ -3027,7 +3027,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       { id: 'ev-ahce-2', title: 'Bedrock, Vertex or build it yourself: The AI infrastructure decision most CIOs get backwards', url: 'https://www.cio.com/article/4215347/bedrock-vertex-or-build-it-yourself-the-ai-infrastructure-decision-most-cios-get-backwards.html', publisher: 'CIO.com', type: 'Architectural Analysis', strength: 5 as const, role: 'Supports' as const, date: 'August 2026' }
     ],
     relatedConceptSlugs: [
-      { slug: 'rented-intelligence-vs-owned-capital', relationship: 'supports' },
+      { slug: 'ai-vendor-lock-in', relationship: 'supports' },
       { slug: 'ai-volatility-tax', relationship: 'refines' },
       { slug: 'non-dilutive-infrastructure-capital', relationship: 'extends' },
       { slug: 'product-economist', relationship: 'depends_on' }
@@ -3075,7 +3075,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       }
     ],
     graphRelations: {
-      prerequisites: [{ slug: 'rented-intelligence-vs-owned-capital', title: 'Rented Intelligence vs. Owned Capital' }],
+      prerequisites: [{ slug: 'ai-vendor-lock-in', title: 'Rented Intelligence vs. Owned Capital' }],
       applications: ['SaaS cost reduction', 'AI search engine optimization (AEO)', 'Operator workflow design'],
       contrastingConcepts: [{ slug: 'ai-volatility-tax', title: 'AI Volatility Tax', distinction: 'Operational Fatigue vs Unpredictable Inference COGS' }]
     },
@@ -3096,7 +3096,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       {
         role: 'Chief Financial Officer (CFO)',
         takeaway: 'Mandate a freeze on specialized micro-SaaS subscriptions that can be natively handled by existing enterprise frontier model contracts.',
-        recommendedNextSlug: 'rented-intelligence-vs-owned-capital'
+        recommendedNextSlug: 'ai-vendor-lock-in'
       },
       {
         role: 'Chief Information Officer (CIO)',
@@ -3111,7 +3111,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       {
         role: 'VP of Operations',
         takeaway: 'Standardize core workflows on a single reliable model partner instead of thrashing operations with every weekly benchmark announcement.',
-        recommendedNextSlug: 'operational-drift'
+        recommendedNextSlug: 'agentic-fleet-drift'
       }
     ],
     telemetry: {
@@ -3165,10 +3165,10 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       { id: 'ev-fme-2', title: "Stanford AI Index 2024 Report (Training Compute Estimates: GPT-4 $78M, Gemini Ultra $191M)", url: 'https://hai.stanford.edu/ai-index/2024-ai-index-report', publisher: 'Stanford HAI', type: 'Industry Benchmark', strength: 5 as const, role: 'Supports' as const, date: 'April 2024' }
     ],
     relatedConceptSlugs: [
-      { slug: 'variable-cost-of-intelligence', relationship: 'supports' },
+      { slug: 'inference-economics', relationship: 'supports' },
       { slug: 'cost-of-predictivity', relationship: 'extends' },
       { slug: 'deterministic-execution-control', relationship: 'depends_on' },
-      { slug: 'rented-intelligence-vs-owned-capital', relationship: 'refines' }
+      { slug: 'ai-vendor-lock-in', relationship: 'refines' }
     ],
     openQuestions: ['At what inference call frequency does hosting an open-weight 70B+ model on private data center infrastructure break even against API-based frontier reasoning tokens?'],
     knownLimitations: ['Training cost estimates fluctuate based on energy tariffs, GPU cluster interconnect topologies, and proprietary synthetic dataset pipelines.'],
@@ -3213,7 +3213,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       }
     ],
     graphRelations: {
-      prerequisites: [{ slug: 'variable-cost-of-intelligence', title: 'Variable Cost of Intelligence' }],
+      prerequisites: [{ slug: 'inference-economics', title: 'Variable Cost of Intelligence' }],
       applications: ['AI Model Architecture Selection', 'Enterprise Compute FinOps', 'Agentic Workflow Cost Modeling'],
       contrastingConcepts: [{ slug: 'cost-of-predictivity', title: 'Cost of Predictivity', distinction: 'Threshold Capability vs Error Correction Unit Economics' }]
     },
@@ -3234,7 +3234,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       {
         role: 'Chief Technology Officer (CTO)',
         takeaway: 'Implement dynamic model routing to protect margins: use small models for bounded extraction and frontier models for multi-step exception resolution.',
-        recommendedNextSlug: 'variable-cost-of-intelligence'
+        recommendedNextSlug: 'inference-economics'
       },
       {
         role: 'Chief Information Officer (CIO)',
@@ -3244,7 +3244,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       {
         role: 'Chief Financial Officer (CFO)',
         takeaway: 'Model compounding inference costs across multi-agent workflows to ensure production usage does not outpace contract subscription revenue.',
-        recommendedNextSlug: 'ai-cogs'
+        recommendedNextSlug: 'ai-tokenomics-cogs'
       },
       {
         role: 'Cloud FinOps Manager',
@@ -3436,9 +3436,9 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     ],
     relatedConceptSlugs: [
       { slug: 'software-factory-overproduction', relationship: 'supports' },
-      { slug: 'engineering-bottleneck-illusion', relationship: 'extends' },
+      { slug: 'code-review-bottleneck', relationship: 'extends' },
       { slug: 'deterministic-execution-control', relationship: 'depends_on' },
-      { slug: 'vibe-coding-debt', relationship: 'refines' }
+      { slug: 'vibe-coding', relationship: 'refines' }
     ],
     openQuestions: ['What quantitative threshold of review time per line of AI code indicates that manual implementation would have been faster and cheaper?'],
     knownLimitations: ['Productivity shifts vary between high-context relational work (client communication) and deterministic verification loops (build diagnostics).'],
@@ -3477,7 +3477,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       }
     ],
     graphRelations: {
-      prerequisites: [{ slug: 'engineering-bottleneck-illusion', title: 'Engineering Bottleneck Illusion' }],
+      prerequisites: [{ slug: 'code-review-bottleneck', title: 'Engineering Bottleneck Illusion' }],
       applications: ['AI Workflow Delegation Sizing', 'PR Review Capacity Planning', 'CI/CD Automated Gate Design'],
       contrastingConcepts: [{ slug: 'software-factory-overproduction', title: 'Software Factory Overproduction', distinction: 'Individual Supervisory Burden vs Macro Factory Volume' }]
     },
@@ -3498,12 +3498,12 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       {
         role: 'Engineering Manager (EM)',
         takeaway: 'Restrict agentic pull requests to bounded tasks with mechanical pass-fail criteria; ban open-ended agentic architectural refactors.',
-        recommendedNextSlug: 'engineering-bottleneck-illusion'
+        recommendedNextSlug: 'code-review-bottleneck'
       },
       {
         role: 'Startup Founder',
         takeaway: 'Use agents as passive monitors and build verifiers; never delegate customer-facing writing or database schema design to automated tools.',
-        recommendedNextSlug: 'vibe-coding-debt'
+        recommendedNextSlug: 'vibe-coding'
       },
       {
         role: 'Quality Engineering (QE) Manager',
@@ -3713,7 +3713,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       { slug: 'deterministic-execution-control', relationship: 'depends_on' },
       { slug: 'systems-governor', relationship: 'supports' },
       { slug: 'ai-liability-gradient', relationship: 'extends' },
-      { slug: 'vibe-coding-debt', relationship: 'refines' }
+      { slug: 'vibe-coding', relationship: 'refines' }
     ],
     openQuestions: ['How can hybrid symbolic-neural verifiers validate semantic query boundaries before SQL execution without adding more than 2 milliseconds of latency?'],
     knownLimitations: ['Requires decoupling model prompt generation from backend database execution layers.'],
@@ -3786,7 +3786,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       {
         role: 'Engineering Manager (EM)',
         takeaway: 'Establish red/green integration test probes that verify agent database actions are rejected whenever allowlist rules are violated.',
-        recommendedNextSlug: 'vibe-coding-debt'
+        recommendedNextSlug: 'vibe-coding'
       }
     ],
     telemetry: {
@@ -3845,7 +3845,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       { slug: 'deterministic-execution-control', relationship: 'implements' },
       { slug: 'systems-governor', relationship: 'supports' },
       { slug: 'probabilistic-supervision-failure', relationship: 'refines' },
-      { slug: 'rented-intelligence-vs-owned-capital', relationship: 'extends' }
+      { slug: 'ai-vendor-lock-in', relationship: 'extends' }
     ],
     openQuestions: ['How can platform teams expose modular context connectors to business units without leaking cross-tenant data in shared memory vectors?'],
     knownLimitations: ['Requires upfront architectural discipline and shared schema contracts before rapid application prototyping.'],
@@ -3885,7 +3885,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
     graphRelations: {
       prerequisites: [{ slug: 'deterministic-execution-control', title: 'Deterministic Execution Control' }],
       applications: ['Platform Engineering Strategy', 'Multi-Product Venture Building', 'Enterprise AI Governance'],
-      contrastingConcepts: [{ slug: 'vibe-coding-debt', title: 'Vibe Coding Debt', distinction: 'Platform Infrastructure Leverage vs Ad-Hoc Syntax Generation' }]
+      contrastingConcepts: [{ slug: 'vibe-coding', title: 'Vibe Coding Debt', distinction: 'Platform Infrastructure Leverage vs Ad-Hoc Syntax Generation' }]
     },
     whatChanges: {
       engineering: 'Developers focus on domain-specific user interfaces and workflows rather than rebuilding auth, memory, and telemetry.',
@@ -3918,7 +3918,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       {
         role: 'Director of Finance',
         takeaway: 'Require business units to utilize centralized AI gateway infrastructure to capture volume discounts and eliminate shadow AI subscriptions.',
-        recommendedNextSlug: 'variable-cost-of-intelligence'
+        recommendedNextSlug: 'inference-economics'
       }
     ],
     telemetry: {
@@ -4040,7 +4040,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       {
         role: 'Chief Technology Officer (CTO)',
         takeaway: 'Audit your engineering stack against the 4 questions: specifically verify whether AI code generation is inflating review queues.',
-        recommendedNextSlug: 'engineering-bottleneck-illusion'
+        recommendedNextSlug: 'code-review-bottleneck'
       },
       {
         role: 'Chief Product Officer (CPO)',
@@ -4050,7 +4050,7 @@ export const TIER8_CONCEPTS: ConceptNode[] = [
       {
         role: 'Director of Finance',
         takeaway: 'Require technology leads to demonstrate positive unit economic validation before approving expanded inference compute budgets.',
-        recommendedNextSlug: 'ai-cogs'
+        recommendedNextSlug: 'ai-tokenomics-cogs'
       }
     ],
     telemetry: {

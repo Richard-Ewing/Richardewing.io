@@ -790,7 +790,7 @@ export const TIER4_CONCEPTS: ConceptNode[] = [
       { stage: 'Observation', label: 'Shift from DevOps to Platform', publisher: 'Industry Meta', date: '2022', summary: 'Observation of cognitive overload in traditional DevOps models.' }
     ],
     evidenceLedger: [
-      { id: 'ev-pe-1', title: 'The Coordination Tax', url: 'https://www.richardewing.io/blog/hiring-engineers-gross-margin', publisher: 'RichardEwing.io', type: 'Analysis', strength: 5, role: 'Origin', date: '2025' }
+      { id: 'ev-pe-1', title: 'The Coordination Tax', url: 'https://www.richardewing.io/blog/b2b-saas-coordination-tax-saas-engineering-margins', publisher: 'RichardEwing.io', type: 'Analysis', strength: 5, role: 'Origin', date: '2025' }
     ],
     relatedConceptSlugs: [
       { slug: 'coordination-tax', relationship: 'mitigates' as any },

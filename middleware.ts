@@ -66,6 +66,40 @@ const EDGE_REDIRECTS: Record<string, string> = {
   '/exogram/pricing': '/schedule',
   '/exogram/blueprint': '/exogram',
   '/exogram/docs/architecture-overview': '/exogram/docs/architecture',
+  '/$': '/',
+  '/&': '/',
+  '/blog/hiring-engineers-gross-margin': '/blog/b2b-saas-coordination-tax-saas-engineering-margins',
+  '/blog/feature-bloat-calculus': '/articles/feature-bloat-calculus',
+  '/blog/cost-of-predictivity': '/articles/cost-of-predictivity',
+  '/blog/ai-product-management-guide': '/vault/curriculum/tracks/ai-product-economics/2-1',
+  '/blog/the-subprime-code-crisis': '/blog/the-negative-carry-code-crisis',
+  '/blog/subprime-code-crisis': '/blog/negative-carry-code-crisis',
+  '/concepts/zero-trust-type-verification': '/glossary/zero-trust-type-gate',
+  '/concepts/probabilistic-product-management': '/glossary/pillars/probabilistic-product-management',
+  '/concepts/slm-vs-api-arbitrage': '/concepts/slm-repatriation',
+  '/concepts/model-right-sizing': '/glossary/model-right-sizing',
+  '/concepts/macro-regression-loops': '/concepts/context-rot',
+  '/concepts/subprime-code-crisis': '/concepts/negative-carry-code-crisis',
+  '/concepts/adlc': '/concepts/spec-driven-development',
+  '/concepts/seat-based-pricing-compression': '/concepts/ai-margin-squeeze',
+  '/concepts/operational-drift': '/concepts/agentic-fleet-drift',
+  '/concepts/governed-execution': '/concepts/deterministic-execution-control',
+  '/concepts/synthetic-cogs': '/concepts/ai-tokenomics-cogs',
+  '/vault/curriculum/tracks/cloud-finops/14-1': '/vault/curriculum/tracks/cloud-finops/7-1',
+  '/vault/curriculum/tracks/cloud-finops/14-2': '/vault/curriculum/tracks/cloud-finops/7-2',
+  '/vault/curriculum/tracks/cloud-finops/14-3': '/vault/curriculum/tracks/cloud-finops/7-3',
+  '/vault/curriculum/tracks/cloud-finops/14-4': '/vault/curriculum/tracks/cloud-finops/7-4',
+  '/vault/curriculum/tracks/cloud-finops/14-5': '/vault/curriculum/tracks/cloud-finops/7-5',
+  '/vault/curriculum/tracks/cloud-finops/14-6': '/vault/curriculum/tracks/cloud-finops/7-6',
+  '/vault/curriculum/tracks/cloud-finops/14-7': '/vault/curriculum/tracks/cloud-finops/7-7',
+  '/vault/curriculum/tracks/cloud-finops/14-8': '/vault/curriculum/tracks/cloud-finops/7-8',
+  '/vault/curriculum/tracks/cloud-finops/14-9': '/vault/curriculum/tracks/cloud-finops/7-9',
+  '/vault/curriculum/tracks/cloud-finops/14-10': '/vault/curriculum/tracks/cloud-finops/7-10',
+  '/vault/curriculum/tracks/cloud-finops/14-11': '/vault/curriculum/tracks/cloud-finops/7-11',
+  '/vault/curriculum/tracks/cloud-finops/14-12': '/vault/curriculum/tracks/cloud-finops/7-12',
+  '/vault/curriculum/tracks/cloud-finops/14-13': '/vault/curriculum/tracks/cloud-finops/7-13',
+  '/vault/curriculum/tracks/cloud-finops/14-14': '/vault/curriculum/tracks/cloud-finops/7-14',
+  '/vault/curriculum/tracks/cloud-finops/14-15': '/vault/curriculum/tracks/cloud-finops/7-15',
 };
 
 const POISONED_CACHE_URLS = [
@@ -79,6 +113,12 @@ const POISONED_CACHE_URLS = [
   'https://richardewing.io/reality-check',
   'https://www.richardewing.io/contact',
   'https://richardewing.io/contact',
+  'https://richardewing.io/',
+  'https://richardewing.io/sitemap.xml',
+  'https://richardewing.io/for-cfos',
+  'https://www.richardewing.io/for-cfos',
+  'https://richardewing.io/compare/postgresql-vs-gitlab-ci',
+  'https://www.richardewing.io/compare/postgresql-vs-gitlab-ci',
 ];
 
 function isAuthOrDynamicPath(pathname: string): boolean {
@@ -117,8 +157,9 @@ function applySecurityAndCacheHeaders(res: NextResponse, req: NextRequest): Next
     res.headers.set('Cloudflare-CDN-Cache-Control', 'no-store');
     res.headers.set('CDN-Cache-Control', 'no-store');
   } else if (res.status === 200) {
+    res.headers.set('Cache-Control', 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400');
     res.headers.set('Cloudflare-CDN-Cache-Control', 'max-age=86400, stale-while-revalidate=604800');
-    res.headers.set('Vary', 'RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding');
+    res.headers.set('Vary', 'Host, RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding');
   }
 
   return res;
@@ -132,12 +173,16 @@ export default async function middleware(req: NextRequest, event: NextFetchEvent
   const host = req.headers.get('host') || '';
   const pathname = req.nextUrl.pathname;
 
-  // Self-heal any poisoned 307 cache entries in the current Cloudflare POP
+  // Self-heal any poisoned 307/200 cache entries in the current Cloudflare POP
   try {
     const cfCaches = (globalThis as unknown as { caches?: { default?: Cache } }).caches;
     if (cfCaches?.default) {
       for (const u of POISONED_CACHE_URLS) {
         event.waitUntil(cfCaches.default.delete(u).catch(() => false));
+      }
+      event.waitUntil(cfCaches.default.delete(`https://richardewing.io${pathname}`).catch(() => false));
+      if (req.nextUrl.search) {
+        event.waitUntil(cfCaches.default.delete(`https://richardewing.io${pathname}${req.nextUrl.search}`).catch(() => false));
       }
     }
   } catch {
@@ -146,6 +191,18 @@ export default async function middleware(req: NextRequest, event: NextFetchEvent
 
   // 0. Canonical Host & Alias Single-Hop Enforcement: 301 redirect at Cloudflare Edge
   let targetPath = EDGE_REDIRECTS[pathname] || pathname;
+
+  // Collapse legacy /curriculum/tracks/* and N-prefixed module routes into single-hop 301s
+  if (targetPath.startsWith('/curriculum/tracks')) {
+    targetPath = `/vault${targetPath}`;
+  }
+  const nPrefixMatch = targetPath.match(/^\/vault\/curriculum\/tracks\/([^/]+)\/N(\d+-\d+)$/);
+  if (nPrefixMatch) {
+    targetPath = `/vault/curriculum/tracks/${nPrefixMatch[1]}/${nPrefixMatch[2]}`;
+  }
+  if (EDGE_REDIRECTS[targetPath]) {
+    targetPath = EDGE_REDIRECTS[targetPath];
+  }
 
   // Intercept non-Tier A compare routes directly to eliminate multi-hop apex/www chains
   if (targetPath.startsWith('/compare/')) {

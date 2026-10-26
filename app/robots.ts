@@ -17,6 +17,10 @@ export default function robots(): MetadataRoute.Robots {
         '/vault/assets/*',
         '/vault/join/',
         '/vault/join/*',
+        '/workspace/',
+        '/workspace/*',
+        '/dashboard',
+        '/dashboard/*',
     ];
 
     return {

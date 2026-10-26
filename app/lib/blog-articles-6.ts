@@ -26,31 +26,6 @@ export const articlesBatch6: Record<string, ArticleData> = {
 <p>We are rapidly moving from an era of software construction to an era of software curation. The highest-paid engineers of the next decade will not be the ones who write the most code. They will be the ones who possess the architectural wisdom to know exactly which code should be deleted, which code should be refactored, and which AI-generated pull requests should be outright rejected.</p>
 <p>To protect your balance sheet, you must institute rigorous, deterministic testing frameworks and enforce strict architectural boundaries. If you do not govern your AI output today, you will spend the next five years paying off the highest-interest technical debt the industry has ever seen.</p>`
   },
-  "the-subprime-code-crisis": {
-    title: "The Negative-Carry Code Crisis",
-    excerpt: "Because AI makes generating code free, we are seeing a massive inflation in the volume of code pushed to repositories. But negative-carry code carries hidden debt.",
-    date: "2026-05-01",
-    readTime: "8 min read",
-    category: "Technical Debt", relatedConcepts: ['vibe-coding', 'negative-carry-code-crisis', 'zombie-code', 'technical-insolvency', 'dora-financial-translation'], content: `<h2>The Negative-Carry Code Crisis: Why AI is Inflating Your Technical Debt</h2>
-<p>Because Artificial Intelligence makes generating code functionally free, the software industry is currently witnessing a massive, unchecked inflation in the volume of code being pushed to production repositories. In the short term, this looks like a miracle of productivity. Burn down charts look incredible. Story points are completed at record speeds. But underneath the surface, a toxic asset bubble is forming. We are entering the era of the <strong>Negative-Carry Code Crisis</strong>.</p>
-
-<h3>The Illusion of Velocity</h3>
-<p>In a zero-interest-rate environment, engineering teams were rewarded purely for velocity. The mandate was simple: ship features fast, acquire users, and figure out the architecture later. Generative AI tools like GitHub Copilot and ChatGPT were introduced into this environment as the ultimate accelerators. They allow junior engineers to produce the output volume of senior engineers.</p>
-<p>However, AI-generated code carries massive, hidden debt. Large Language Models (LLMs) do not possess architectural judgment. They do not understand the broader context of your monolithic application or your microservices lattice. They simply predict the next most statistically likely token based on their training data. As a result, they frequently hallucinate expensive third-party APIs, introduce subtle security vulnerabilities, or implement highly inefficient database queries.</p>
-
-<h3>Technical Insolvency and Synthetic COGS</h3>
-<p>When you hire engineers who are exceptional at prompting AI but terrible at auditing the resulting output, you are actively building a codebase that is technically insolvent. You are accumulating maintenance liabilities far faster than you are creating actual, monetizable asset value. Every line of code written is not an asset; it is inventory that carries a continuous carrying cost.</p>
-<p>We call this hidden carrying cost <strong>Synthetic COGS (Cost of Goods Sold)</strong>. If your cloud bill spikes because an AI-generated script is running a redundant loop across a massive database table, your gross margins shrink. The AI saved you $500 in engineering time upfront, but it costs you $5,000 a month in perpetual compute overhead.</p>
-
-<h3>The Audit Interview: Hiring for Curation, Not Construction</h3>
-<p>To survive the Negative-Carry Code Crisis, engineering leadership must fundamentally rewrite how they evaluate and hire technical talent. The era of the LeetCode whiteboard interview is dead. If an AI can solve the algorithmic challenge in three seconds, testing a human on it is irrelevant.</p>
-<p>We must immediately shift to the <strong>"Audit Interview."</strong></p>
-<p>Instead of asking a candidate to write a function from scratch, hand them 500 lines of deeply flawed, AI-generated code. Ask them to find the hidden memory bomb. Ask them to identify the race condition. Ask them to explain why the architectural pattern chosen by the AI will fail when the system attempts to scale to ten thousand concurrent users.</p>
-
-<h3>The Shift from Construction to Curation</h3>
-<p>We are rapidly moving from an era of software construction to an era of software curation. The highest-paid engineers of the next decade will not be the ones who write the most code. They will be the ones who possess the architectural wisdom to know exactly which code should be deleted, which code should be refactored, and which AI-generated pull requests should be outright rejected.</p>
-<p>To protect your balance sheet, you must institute rigorous, deterministic testing frameworks and enforce strict architectural boundaries. If you do not govern your AI output today, you will spend the next five years paying off the highest-interest technical debt the industry has ever seen.</p>`
-  },
   "the-innovation-tax-audit": {
     title: "Why Real Innovation Requires Deleting Code",
     excerpt: "Every feature you ship carries an invisible, perpetual tax. Learn why your most profitable move this quarter might be deleting 20 percent of your codebase.",

@@ -1020,7 +1020,7 @@ export const TIER9_CONCEPTS: ConceptNode[] = [
       estimatedReadingTime: '7 min',
     },
     graphRelations: {
-      prerequisites: [{ slug: 'synthetic-cogs', title: 'Synthetic COGS' }],
+      prerequisites: [{ slug: 'ai-tokenomics-cogs', title: 'Synthetic COGS' }],
       applications: ['Post-Pilot Unit Economics Audit', 'Automation Break-Even Analysis', 'Exception Queue Capacity Planning'],
       contrastingConcepts: [
         {
@@ -1056,7 +1056,7 @@ export const TIER9_CONCEPTS: ConceptNode[] = [
       { id: 'ev-cmt-1', title: 'I Audited an Award-Winning AI Project. The Case Study Left Out the Cloud Bill', url: 'https://www.cio.com/article/4232005/i-audited-an-award-winning-ai-project-the-case-study-left-out-the-cloud-bill.html', publisher: 'CIO.com', type: 'Audit Post-Mortem', strength: 5, role: 'Origin', date: 'October 2026' }
     ],
     relatedConceptSlugs: [
-      { slug: 'synthetic-cogs', relationship: 'extends' },
+      { slug: 'ai-tokenomics-cogs', relationship: 'extends' },
       { slug: 'ai-volatility-tax', relationship: 'supports' },
       { slug: 'supervisory-review-queue', relationship: 'implements' }
     ],

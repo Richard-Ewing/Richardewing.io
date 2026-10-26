@@ -401,7 +401,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     relatedConceptSlugs: [
       { slug: 'failure-cost-asymmetry', relationship: 'depends_on' },
       { slug: 'negative-carry-code-crisis', relationship: 'correlates_with' },
-      { slug: 'vibe-coding-debt', relationship: 'explains' }
+      { slug: 'vibe-coding', relationship: 'explains' }
     ],
     openQuestions: ['How can automated CI/CD pipelines automatically tag and quantify developer investigation time on AI-authored PRs?'],
     knownLimitations: ['Requires accurate PR rework time tracking and post-merge incident tagging.'],
@@ -1526,7 +1526,7 @@ export const TIER7_CONCEPTS: ConceptNode[] = [
     relatedConceptSlugs: [
       { slug: 'multi-agent-runtime-isolation', relationship: 'depends_on' },
       { slug: 'cleanup-time-metric', relationship: 'explains' },
-      { slug: 'macro-regression-loops', relationship: 'correlates_with' }
+      { slug: 'context-rot', relationship: 'correlates_with' }
     ],
     openQuestions: ['What centralized state synchronization protocol best detects conflicting database migrations between background agents before execution?'],
     knownLimitations: ['Requires centralized execution logging across all active agent daemon processes.'],
