@@ -1,10 +1,12 @@
 import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Mail, Linkedin, ShieldCheck, Clock, CheckCircle2 } from 'lucide-react';
+import { Mail, Linkedin, ShieldCheck, Clock, CheckCircle2, Sparkles } from 'lucide-react';
 import CalEmbed from '@/app/components/client/CalEmbed';
 import FAQItem from '@/app/components/FAQItem';
 import { ScheduleDiagnosticBanner } from '@/components/schedule/schedule-diagnostic-banner';
+import AsyncDiagnosticCard from '@/components/schedule/AsyncDiagnosticCard';
+import { PRODUCTS } from '@/app/lib/products';
 
 export const metadata: Metadata = {
   title: 'Schedule Executive Advisory',
@@ -106,6 +108,9 @@ export default function SchedulePage() {
             Slots are opened on a rolling 14-day basis to preserve deep focus for active
             turnaround clients.
           </p>
+          <p className="mt-3 pt-3 border-t border-[var(--line)] !text-xs leading-relaxed">
+            <span className="font-semibold text-[var(--ink)]">Global Timezones Covered:</span> Direct 1-on-1 slots cover Pacific Time (PT) and European/London business hours (4:00 PM - 7:00 PM CET / GMT). If you are in APAC or prefer asynchronous review, use the diagnostic intake below.
+          </p>
         </aside>
       </section>
 
@@ -117,13 +122,18 @@ export default function SchedulePage() {
           </Suspense>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
-            {/* Left: Cal.com Embed */}
-            <div className="lg:col-span-8 bg-white border border-[var(--line)] rounded-2xl p-4 sm:p-6 shadow-sm min-h-[660px] flex flex-col relative overflow-hidden">
-              <CalEmbed calLink="richard-ewing-2cevwb" />
+            {/* Left: Cal.com Embed & Async Fallback */}
+            <div className="lg:col-span-8 space-y-8 flex flex-col">
+              <div className="bg-white border border-[var(--line)] rounded-2xl p-4 sm:p-6 shadow-sm min-h-[660px] flex flex-col relative overflow-hidden">
+                <CalEmbed calLink="richard-ewing-2cevwb" />
+              </div>
+
+              {/* Idea 2: Async Diagnostic Review Fallback */}
+              <AsyncDiagnosticCard />
             </div>
 
             {/* Right: Context & Authority Rail */}
-            <div className="lg:col-span-4 space-y-6 flex flex-col justify-between">
+            <div className="lg:col-span-4 space-y-6 flex flex-col">
               <div className="bg-white border border-[var(--line)] rounded-2xl p-6 shadow-sm">
                 <h3 className="text-base font-serif font-bold text-[var(--ink)] mb-3 flex items-center gap-2">
                   <Clock className="w-4 h-4 text-[var(--gold)]" />
@@ -155,6 +165,39 @@ export default function SchedulePage() {
                     </span>
                   </li>
                 </ul>
+              </div>
+
+              {/* Idea 3: Self-Serve Alternative Card */}
+              <div className="bg-white border border-[var(--line)] rounded-2xl p-6 shadow-sm flex flex-col">
+                <div className="flex items-center gap-2 mb-2">
+                  <Sparkles className="w-3.5 h-3.5 text-[var(--gold)]" />
+                  <span className="text-[10px] font-bold font-mono text-[var(--gold)] uppercase tracking-wider">
+                    Self-Serve Alternative
+                  </span>
+                </div>
+                <h4 className="text-base font-serif font-bold text-[var(--ink)] mb-2">
+                  AI Unit Economics Operating Kit ($79)
+                </h4>
+                <p className="text-xs text-[var(--muted)] leading-relaxed mb-4">
+                  Need the frameworks right now? Get immediate access to copyable P&amp;L models, vendor audit checklists, and token margin spreadsheets without waiting for a scheduled call.
+                </p>
+                <div className="flex flex-col gap-2 pt-2 border-t border-[var(--line)]">
+                  <a
+                    href={PRODUCTS.premium_guide_79.paymentLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="button button-gold !text-xs !py-2.5 text-center flex items-center justify-center gap-1.5"
+                  >
+                    <span>Instant Checkout ($79)</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <Link
+                    href="/operating-kit"
+                    className="text-xs text-[var(--muted)] hover:text-[var(--ink)] text-center transition-colors py-1 font-medium"
+                  >
+                    View Operating Kit breakdown →
+                  </Link>
+                </div>
               </div>
 
               {/* Confidentiality Box */}
