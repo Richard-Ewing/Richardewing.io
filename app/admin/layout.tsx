@@ -3,7 +3,10 @@ import { auth, currentUser } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
 
 export const metadata: Metadata = {
-    title: 'Admin Command Center',
+    title: {
+        template: '%s | Richard Ewing',
+        default: 'Admin Command Center | Richard Ewing',
+    },
     robots: {
         index: false,
         follow: false,

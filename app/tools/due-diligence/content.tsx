@@ -536,7 +536,7 @@ export default function DueDiligenceTool() {
                             </div>
 
                             <div className="space-y-3">
-                                <a href="/api/buy/pe_intelligence_tier" className="flex items-center justify-center w-full py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-xs font-bold rounded-xl transition-all shadow-lg">
+                                <a href="/api/buy/pe_intelligence_tier" className="flex items-center justify-center w-full py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-semibold font-bold uppercase tracking-widest text-xs font-bold rounded-xl transition-all shadow-lg">
                                     Upgrade to PE Tier
                                 </a>
                                 <button 
@@ -571,10 +571,10 @@ export default function DueDiligenceTool() {
                         /* --- INPUT STATE --- */
                         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl mx-auto">
                             <div className="text-center mb-12">
-                                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-zinc-950 mb-6">
+                                <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-zinc-950 mb-6">
                                     Calculate Acquisition <br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500">Impairment Risk</span>
-                                </h1>
+                                </h2>
                                 <p className="text-xl text-zinc-900">Scan acquisition targets for critical technical debt, security vectors, and engineering bloat before you write the check.</p>
                             </div>
 
@@ -667,7 +667,7 @@ export default function DueDiligenceTool() {
                                         </div>
                                         
                                         <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                                            <button onClick={() => setStep(1)} className="px-6 py-4 bg-zinc-200 hover:bg-zinc-700 text-zinc-950 rounded-xl transition-all">← Back</button>
+                                            <button onClick={() => setStep(1)} className="px-6 py-4 bg-zinc-200 hover:bg-zinc-700 text-zinc-950 hover:text-white rounded-xl transition-all">← Back</button>
                                             <button onClick={() => calculate()} disabled={loading} className="flex-1 py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-bold uppercase tracking-widest rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-sm">
                                                 {loading ? <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Analyzing Target...</> : 'Generate Threat Matrix →'}
                                             </button>

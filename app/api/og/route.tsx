@@ -8,7 +8,15 @@ export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url);
     const title = searchParams.get('title') || 'Richard Ewing | AI Systems & Sovereign Governance';
     const category = searchParams.get('category') || 'Sovereign Architecture';
-    const readingTime = searchParams.get('readingTime') || '6 min read';
+    const readingTime = searchParams.get('readingTime') || 'Interactive Audit';
+    const metricLabel = searchParams.get('metricLabel') || searchParams.get('ml') || '';
+    const metricValue = searchParams.get('metricValue') || searchParams.get('mv') || '';
+    const status = searchParams.get('status') || searchParams.get('s') || '';
+
+    const isCritical = /critical|collapse|insolven|high|danger|negative/i.test(status);
+    const statusColor = isCritical ? '#f87171' : '#34d399';
+    const statusBorder = isCritical ? 'rgba(248, 113, 113, 0.35)' : 'rgba(52, 211, 153, 0.35)';
+    const statusBg = isCritical ? 'rgba(248, 113, 113, 0.12)' : 'rgba(16, 185, 129, 0.12)';
 
     return new ImageResponse(
       (
@@ -20,12 +28,11 @@ export async function GET(req: NextRequest) {
             flexDirection: 'column',
             justifyContent: 'space-between',
             backgroundColor: '#09090b',
-            padding: '70px 80px',
+            padding: '64px 76px',
             fontFamily: 'system-ui, -apple-system, sans-serif',
             position: 'relative',
           }}
         >
-          {/* Subtle Ambient Background Gradients */}
           <div
             style={{
               position: 'absolute',
@@ -34,7 +41,7 @@ export async function GET(req: NextRequest) {
               width: '450px',
               height: '450px',
               borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(16,185,129,0.15) 0%, rgba(0,0,0,0) 70%)',
+              background: 'radial-gradient(circle, rgba(16,185,129,0.16) 0%, rgba(0,0,0,0) 70%)',
             }}
           />
           <div
@@ -45,7 +52,7 @@ export async function GET(req: NextRequest) {
               width: '450px',
               height: '450px',
               borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(59,130,246,0.12) 0%, rgba(0,0,0,0) 70%)',
+              background: 'radial-gradient(circle, rgba(183,122,53,0.16) 0%, rgba(0,0,0,0) 70%)',
             }}
           />
 
@@ -68,8 +75,8 @@ export async function GET(req: NextRequest) {
             >
               <div
                 style={{
-                  width: '36px',
-                  height: '36px',
+                  width: '38px',
+                  height: '38px',
                   borderRadius: '10px',
                   backgroundColor: '#10b981',
                   display: 'flex',
@@ -98,34 +105,34 @@ export async function GET(req: NextRequest) {
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                border: '1px solid rgba(16, 185, 129, 0.3)',
+                backgroundColor: status ? statusBg : 'rgba(16, 185, 129, 0.1)',
+                border: `1px solid ${status ? statusBorder : 'rgba(16, 185, 129, 0.3)'}`,
                 padding: '8px 18px',
                 borderRadius: '9999px',
-                color: '#34d399',
-                fontSize: '16px',
-                fontWeight: 600,
+                color: status ? statusColor : '#34d399',
+                fontSize: '15px',
+                fontWeight: 700,
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
               }}
             >
-              {category}
+              {status || category}
             </div>
           </div>
 
-          {/* Center Main Title */}
+          {/* Center Main Title + Optional Live Scorecard Readout */}
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
-              gap: '16px',
+              gap: '24px',
               zIndex: 10,
-              maxWidth: '1000px',
+              maxWidth: '1040px',
             }}
           >
             <h1
               style={{
-                fontSize: title.length > 50 ? '48px' : '58px',
+                fontSize: metricValue ? '44px' : title.length > 50 ? '48px' : '58px',
                 fontWeight: 800,
                 color: '#fafafa',
                 lineHeight: 1.15,
@@ -135,6 +142,65 @@ export async function GET(req: NextRequest) {
             >
               {title}
             </h1>
+
+            {metricValue ? (
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  backgroundColor: '#18181b',
+                  border: '1px solid #27272a',
+                  borderRadius: '20px',
+                  padding: '22px 30px',
+                  width: '100%',
+                }}
+              >
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '6px',
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: '14px',
+                      fontWeight: 700,
+                      color: '#a1a1aa',
+                      textTransform: 'uppercase',
+                      letterSpacing: '1.5px',
+                    }}
+                  >
+                    {metricLabel || 'Primary Audit Readout'}
+                  </span>
+                  <span
+                    style={{
+                      fontSize: '42px',
+                      fontWeight: 900,
+                      color: statusColor,
+                      letterSpacing: '-1px',
+                    }}
+                  >
+                    {metricValue}
+                  </span>
+                </div>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    backgroundColor: '#10b981',
+                    color: '#09090b',
+                    padding: '12px 22px',
+                    borderRadius: '12px',
+                    fontSize: '16px',
+                    fontWeight: 800,
+                  }}
+                >
+                  Run Scenario on richardewing.io →
+                </div>
+              </div>
+            ) : null}
           </div>
 
           {/* Bottom Footer Info */}
@@ -144,7 +210,7 @@ export async function GET(req: NextRequest) {
               alignItems: 'center',
               justifyContent: 'space-between',
               borderTop: '1px solid #27272a',
-              paddingTop: '24px',
+              paddingTop: '22px',
               zIndex: 10,
             }}
           >
@@ -152,22 +218,22 @@ export async function GET(req: NextRequest) {
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '16px',
+                gap: '14px',
                 color: '#a1a1aa',
                 fontSize: '18px',
               }}
             >
-              <span style={{ fontWeight: 600, color: '#e4e4e7' }}>Richard Ewing</span>
+              <span style={{ fontWeight: 700, color: '#e4e4e7' }}>Richard Ewing</span>
               <span>•</span>
-              <span>Systems & AI Governance</span>
+              <span>Product &amp; AI Economist</span>
             </div>
 
             <div
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                color: '#71717a',
-                fontSize: '16px',
+                color: '#a1a1aa',
+                fontSize: '15px',
                 fontFamily: 'monospace',
               }}
             >
@@ -184,8 +250,8 @@ export async function GET(req: NextRequest) {
         },
       }
     );
-  } catch (e) {
-    return new Response(`Failed to generate the image`, {
+  } catch {
+    return new Response('Failed to generate the image', {
       status: 500,
     });
   }

@@ -5,6 +5,7 @@ import { ArrowLeft, Shield } from 'lucide-react';
 export const metadata: Metadata = {
     title: 'EU AI Act Compliance Checker FAQ',
     description: 'Common questions regarding EU AI Act classification rules, risk tier thresholds, and enforcement timelines. Compliance guidance for legal and tech teams.',
+    alternates: { canonical: 'https://www.richardewing.io/tools/eu-ai-act-checker/faq' },
 };
 
 const FAQS = [

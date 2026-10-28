@@ -1,63 +1,124 @@
 import { Metadata } from 'next';
 import CalculatorIntentProposal from '@/app/components/calculators/CalculatorIntentProposal';
+import ToolServerHeader from '@/app/components/calculators/ToolServerHeader';
+import ChainedDiagnosticNextStep from '@/app/components/calculators/ChainedDiagnosticNextStep';
 import NegativeCarryCodeAuditorTool from './content';
 
 export const metadata: Metadata = {
-    title: 'Negative-Carry Code Auditor (NCCA)',
-    description: 'Calculate the technical debt discount factor, maintenance carrying cost, and refactor liability of unverified AI-generated code in software codebases.',
-    keywords: [
-        'Negative-Carry Code Auditor',
-        'Negative-Carry Software',
-        'Vibe coding debt calculator',
-        'AI technical due diligence',
-        'PE software audit tool',
-        'Technical insolvency date',
-        'Codebase maintenance drag'
+  title: 'Vibe-Coded App Debt & Risk Auditor',
+  description:
+    'Quantify the annual maintenance drag, security remediation cost, and M&A valuation discount of unverified AI-generated code inside your production app.',
+  keywords: [
+    'vibe coding technical debt calculator',
+    'AI generated code audit',
+    'Cursor Lovable Bolt app audit',
+    'negative carry code auditor',
+    'PE AI codebase due diligence',
+  ],
+  alternates: {
+    canonical: 'https://www.richardewing.io/tools/negative-carry-code-auditor',
+  },
+  openGraph: {
+    title: 'Vibe-Coded App Debt & Risk Auditor | Richard Ewing',
+    description:
+      'Quantify the annual maintenance drag, security remediation cost, and M&A valuation discount of unverified AI-generated code inside your production app.',
+    url: 'https://www.richardewing.io/tools/negative-carry-code-auditor',
+    type: 'website',
+    images: [
+      {
+        url: 'https://www.richardewing.io/api/og?title=Vibe-Coded+App+Debt+%26+Risk+Auditor&category=Codebase+Forensics',
+        width: 1200,
+        height: 630,
+      },
     ],
-    alternates: {
-        canonical: 'https://www.richardewing.io/tools/negative-carry-code-auditor',
-    },
-    openGraph: {
-        title: 'Negative-Carry Code Auditor | Richard Ewing',
-        description: 'Quantify the financial liability and negative carrying cost of AI-generated boilerplate in target codebases.',
-        url: 'https://www.richardewing.io/tools/negative-carry-code-auditor',
-        type: 'website',
-    },
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Vibe-Coded App Debt & Risk Auditor | Richard Ewing',
+    description:
+      'Quantify the annual maintenance drag, security remediation cost, and M&A valuation discount of unverified AI-generated code inside your production app.',
+    images: [
+      'https://www.richardewing.io/api/og?title=Vibe-Coded+App+Debt+%26+Risk+Auditor&category=Codebase+Forensics',
+    ],
+  },
 };
 
 export default function Page() {
-    return (
-        <div className="space-y-8">
-            <NegativeCarryCodeAuditorTool />
-            <div className="page-container max-w-4xl mx-auto px-6 mb-16">
-                <CalculatorIntentProposal
-                    toolName="Negative-Carry Code Auditor (NCCA)"
-                    problemDomain="Vibe Coding Debt &amp; Synthetic Technical Insolvency"
-                    calculatedMetricLabel="Typical M&amp;A Technical Debt Discount"
-                    calculatedMetricValue="$600,000 to $2.4M Valuation Write-Down"
-                    severityLevel="CRITICAL"
-                    primaryPathway={{
-                        destination: 'RICHARD_EWING_ADVISORY',
-                        relationshipType: 'ADVISES_ON',
-                        channel: 'EXECUTIVE_ADVISORY',
-                        headline: 'PE Technical Due Diligence & Codebase Forensics',
-                        subtext: 'Retain Richard Ewing for pre-close technical due diligence to quantify AI code entropy, dependency debt, and maintenance carrying costs.',
-                        actionUrl: '/workspace/strategy',
-                        actionLabel: 'Inquire for PE Due Diligence ↗',
-                        targetRole: 'Private Equity Operating Partners & M&A Directors'
-                    }}
-                    secondaryPathway={{
-                        destination: 'EXOGRAM_SOFTWARE',
-                        relationshipType: 'OPERATIONALIZES',
-                        channel: 'ENGINEERING_RUNTIME',
-                        headline: 'Install Subtraction Gates with Exogram',
-                        subtext: 'Exogram systematically tracks code churn, deprecates negative-carry routes, and blocks un-tested AI boilerplate at commit gates.',
-                        actionUrl: '/exogram',
-                        actionLabel: 'Explore Exogram Subtraction Engine ↗',
-                        targetRole: 'VPs of Engineering & CTOs'
-                    }}
-                />
-            </div>
-        </div>
-    );
+  return (
+    <div className="min-h-screen bg-[#FAF9F6] space-y-8">
+      <ToolServerHeader
+        slug="negative-carry-code-auditor"
+        eyebrow="Codebase Forensics · Negative-Carry Liability"
+        h1="Vibe-Coded App Debt, Security & Refactor Cost Auditor"
+        executiveAnswer="The Vibe-Coded App Debt and Risk Auditor calculates the annual engineering payroll, senior PR review tax, and M&A valuation write-down caused by unverified AI-generated code from Cursor, Claude Code, Bolt, or Lovable inside commercial SaaS repositories."
+        appName="Vibe-Coded App Debt & Risk Auditor"
+        appDescription="Financial calculator pricing the ongoing maintenance burden, refactor cost, and enterprise valuation discount of unverified AI-generated software."
+        howToName="How to Price the Technical Debt of an AI-Generated Codebase"
+        howToDescription="Estimate the share of unverified AI commits, senior engineer review hours, and defect remediation drag."
+        steps={[
+          { name: 'Enter codebase and team size', text: 'Input total repository size or engineering headcount and fully burdened developer compensation.' },
+          { name: 'Estimate unverified AI code share', text: 'Set the percentage of commits generated by AI coding assistants without automated test coverage.' },
+          { name: 'Measure review and bug rework', text: 'Enter weekly hours spent untangling regressions, duplicated logic, or broken auth flows.' },
+          { name: 'Review refactor vs rebuild cost', text: 'Compare annual carrying cost drag against a clean-room 21-day architectural stabilization sprint.' },
+        ]}
+      />
+
+      <NegativeCarryCodeAuditorTool />
+
+      <div className="page-container max-w-4xl mx-auto px-6 pb-20 space-y-10">
+        <ChainedDiagnosticNextStep
+          chainName="Vibe-Coding Rescue & Spec Governance Chain"
+          stepLabel="Step 2 of 3 · Connected Diagnostic Chain"
+          currentToolSlug="negative-carry-code-auditor"
+          currentToolName="Vibe-Coded App Debt & Risk Auditor"
+          defaultScorecardMetricLabel="Estimated Valuation / Refactor Exposure"
+          defaultScorecardMetricValue="$600K to $2.4M"
+          defaultScorecardStatus="CRITICAL DEBT DRAG"
+          nextDiagnostic={{
+            slug: 'vibe-coding-checklist',
+            title: 'Vibe-Coded App Launch & Security Checklist',
+            reason: 'Run the 20-point pre-launch checklist across database RLS, webhook signature verification, secret exposure, and API rate caps.',
+          }}
+          secondaryDiagnostic={{
+            slug: 'spec-quality-scorecard',
+            title: 'AGENTS.md & SPEC.md Audit Scorecard',
+          }}
+          commercialStep={{
+            href: '/services',
+            label: 'Book $450 Unstick Call or $7,500 Production Build',
+            priceTag: '$450 / $7,500',
+            description: 'Founders and CTOs hire Richard Ewing to audit fragile AI-generated MVPs and harden auth, payments, data isolation, and unit economics in 21 days.',
+          }}
+        />
+
+        <CalculatorIntentProposal
+          toolName="Vibe-Coded App Debt &amp; Risk Auditor"
+          problemDomain="Vibe Coding Debt &amp; Synthetic Technical Insolvency"
+          calculatedMetricLabel="Typical M&amp;A Technical Debt Discount"
+          calculatedMetricValue="$600,000 to $2.4M Valuation Write-Down"
+          severityLevel="CRITICAL"
+          primaryPathway={{
+            destination: 'RICHARD_EWING_ADVISORY',
+            relationshipType: 'ADVISES_ON',
+            channel: 'EXECUTIVE_ADVISORY',
+            headline: 'PE Technical Due Diligence & Codebase Forensics',
+            subtext: 'Retain Richard Ewing for pre-close technical due diligence to quantify AI code entropy, dependency risk, and post-close remediation budgets.',
+            actionUrl: '/advisory',
+            actionLabel: 'Inquire for PE Due Diligence ↗',
+            targetRole: 'PE Operating Partners, CEOs & CTOs',
+          }}
+          secondaryPathway={{
+            destination: 'EXOGRAM_SOFTWARE',
+            relationshipType: 'OPERATIONALIZES',
+            channel: 'ENGINEERING_RUNTIME',
+            headline: 'Maintain Persistent Architectural Context with Exogram',
+            subtext: 'Keep architecture constraints, prior incidents, and verified specifications persistent across engineering sessions.',
+            actionUrl: '/exogram',
+            actionLabel: 'Explore Exogram Context Engine ↗',
+            targetRole: 'VPs of Engineering & Staff Architects',
+          }}
+        />
+      </div>
+    </div>
+  );
 }

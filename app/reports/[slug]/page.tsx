@@ -6,6 +6,8 @@ import { notFound, permanentRedirect } from 'next/navigation';
 import { ExportToPDFButton } from '@/components/ExportToPDFButton';
 import type { Metadata } from 'next';
 
+import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
+
 const reportMeta: Record<string, { title: string; description: string }> = {
     'ai-governance-maturity-index': { title: 'AI Governance Maturity Index Benchmark', description: 'Percentile distributions and operational risks for AI governance maturity across SaaS and Healthcare sectors. Board-ready data from live telemetry.' },
     'product-debt-report': { title: 'Product Debt Report & R&D Capital Index', description: 'Aggregated product debt benchmarks from enterprise telemetry. Quantify your technical debt in dollar terms vs. industry percentiles.' },
@@ -14,26 +16,33 @@ const reportMeta: Record<string, { title: string; description: string }> = {
     'ai-margin-compression-report': { title: 'AI Margin Compression & COGS Benchmark', description: 'How AI inference costs compress gross margins. Enterprise benchmarks for AI feature economics and cost attribution.' },
 };
 
+export async function generateStaticParams() {
+    return Object.keys(reportMeta).map((slug) => ({ slug }));
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
     const meta = reportMeta[slug];
-    if (!meta) return { title: 'Report', description: 'Enterprise benchmark report from live AI telemetry.' };
+    if (!meta) return { title: 'Benchmark Report', description: formatSeoDescription('Enterprise AI unit economics and R&D capital benchmark report from live production telemetry.') };
+    const baseTitle = clampSeoTitle(meta.title, 42);
+    const desc = formatSeoDescription(meta.description);
+    const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(meta.title)}&category=Benchmark%20Report`;
     return {
-        title: meta.title,
-        description: meta.description,
+        title: baseTitle,
+        description: desc,
         alternates: { canonical: `https://www.richardewing.io/reports/${slug}` },
         openGraph: {
-            title: meta.title,
-            description: meta.description,
+            title: `${baseTitle} | Richard Ewing`,
+            description: desc,
             url: `https://www.richardewing.io/reports/${slug}`,
             type: 'article',
-            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+            images: [{ url: ogUrl, width: 1200, height: 630 }],
         },
         twitter: {
             card: 'summary_large_image',
-            title: meta.title,
-            description: meta.description,
-            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
+            title: `${baseTitle} | Richard Ewing`,
+            description: desc,
+            images: [ogUrl],
         }
     };
 }

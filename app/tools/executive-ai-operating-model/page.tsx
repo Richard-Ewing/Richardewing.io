@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import CalculatorIntentProposal from '@/app/components/calculators/CalculatorIntentProposal';
+import ToolServerHeader from '@/app/components/calculators/ToolServerHeader';
 import CEOOperatingModelTool from './content';
 
 export const metadata: Metadata = {
@@ -27,6 +28,21 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <div className="space-y-8">
+            <ToolServerHeader
+                slug="executive-ai-operating-model"
+                eyebrow="Executive Strategy · Enterprise AI Operating Model"
+                h1="Executive AI Operating Model Diagnostic"
+                executiveAnswer="Most enterprise AI budgets fund disconnected department pilots that never reach P&L accountability. Built for CEOs, COOs, CFOs, and VPs of Operations to audit cross-functional ownership, vendor lock-in, headcount redeployment, and unit-economic governance before scaling spend."
+                appName="Executive AI Operating Model Audit"
+                appDescription="Organizational diagnostic for CEOs, COOs, and Managing Directors evaluating enterprise AI capital allocation, governance, and workflow ownership."
+                howToName="How to Audit Your Enterprise AI Operating Model"
+                howToDescription="Score ownership, data architecture, unit-cost telemetry, and human-in-the-loop accountability across departments."
+                steps={[
+                    { name: 'Audit Departmental Pilot Sprawl', text: 'Identify overlapping SaaS subscriptions, shadow AI tools, and unowned proof-of-concept spend.' },
+                    { name: 'Score P&L & Telemetry Ownership', text: 'Verify whether COOs, CFOs, and VPs track cost-per-completed-task and error remediation.' },
+                    { name: 'Generate Operating Realignment Plan', text: 'Receive an executive maturity score and concrete 90-day consolidation priorities.' },
+                ]}
+            />
             <CEOOperatingModelTool />
             <div className="page-container max-w-4xl mx-auto px-6 mb-16">
                 <CalculatorIntentProposal

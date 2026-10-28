@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Product & AI Economist Operating Kit ($29)',
+  title: 'Product & AI Economist Kit ($29)',
   description:
-    'Instant download of 5 production P&L spreadsheets, board deck templates, and lifetime access to the interactive browser workspace used to scale $0 to $25M ARR.',
+    'Download 5 working Excel P&L models, 12-slide CFO board defense templates, AGENTS.md checklists, and live browser workspace access for $29.',
   alternates: {
     canonical: 'https://www.richardewing.io/operating-kit',
   },

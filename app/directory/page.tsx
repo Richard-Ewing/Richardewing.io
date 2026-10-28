@@ -5,8 +5,8 @@ import { DollarSign, GitBranch, Sparkles, ArrowRight, ShieldCheck } from 'lucide
 import CapitalDirectoryGrid from '@/components/ai-product-builder/CapitalDirectoryGrid';
 
 export const metadata: Metadata = {
-  title: 'Startup Capital & Open-Source Directory: 60+ Programs',
-  description: 'Search 60+ accelerators, SBIR grants, and $500k in cloud credits, alongside 120 open-source AI boilerplates and vector caching repos.',
+  title: 'Startup Cloud Credits & Grants Directory',
+  description: 'Search 60+ startup accelerators, SBIR grants, and $500k in cloud credits alongside 120 open-source AI boilerplates and semantic caching repositories.',
   alternates: {
     canonical: 'https://www.richardewing.io/directory',
   },

@@ -103,4 +103,5 @@ export const KEEP_TERMS = [
     'stuck-at-80-percent-trap', 'regeneration-regress', 'mcp-tool-poisoning',
     'query-fan-out-aeo', 'systems-of-action', 'one-person-department',
     'hybrid-credit-packaging', 'human-in-the-loop-slack-gate',
+    'pl-ownership-for-pms', 'product-pl-ownership',
 ];

@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { BLOG_SLUG_REDIRECTS, ARTICLE_SLUG_REDIRECTS } from "./app/lib/article-redirects";
 
 const nextConfig: NextConfig = {
   output: 'standalone',
@@ -125,9 +126,9 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: '/:path*',
+        source: '/scorecard/:path*',
         headers: [
-          { key: 'Vary', value: 'RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding' },
+          { key: 'X-Robots-Tag', value: 'noindex, follow' },
         ],
       },
     ];
@@ -177,7 +178,18 @@ const nextConfig: NextConfig = {
       { source: '/ai-cost-audit', destination: '/services/ai-cost-audit', permanent: true },
       { source: '/rd-capital-audit', destination: '/services/ai-cost-audit', permanent: true },
       { source: '/ai-spend-calculator', destination: '/roi-calculator', permanent: true },
-      // Research-validated searchable URLs → existing tool pages.
+      // Framework & article de-cannibalization canonical consolidation redirects (ADR-0017 Wave 4)
+      ...Object.entries(BLOG_SLUG_REDIRECTS).map(([slug, destination]) => ({
+        source: `/blog/${slug}`,
+        destination,
+        permanent: true,
+      })),
+      ...Object.entries(ARTICLE_SLUG_REDIRECTS).map(([slug, destination]) => ({
+        source: `/articles/${slug}`,
+        destination,
+        permanent: true,
+      })),
+      // Research-validated searchable URLs -> existing tool pages.
       // VALIDATED: competitors exist for these exact terms (TechDebtCalculator.com, Red Eagle, etc.)
       { source: '/tools/technical-debt-calculator', destination: '/tools/pdi', permanent: true },
       { source: '/tools/code-quality-calculator', destination: '/tools/pdi', permanent: true },
@@ -189,6 +201,10 @@ const nextConfig: NextConfig = {
       { source: '/tools/ai-unit-economics-calculator', destination: '/tools/aueb', permanent: true },
       { source: '/tools/ai-cogs-calculator', destination: '/tools/aueb', permanent: true },
       { source: '/tools/token-cost-calculator', destination: '/tools/aueb', permanent: true },
+      { source: '/tools/ai-credit-pricing-calculator', destination: '/tools/aueb', permanent: true },
+      { source: '/tools/claude-api-cost-calculator', destination: '/tools/ai-feature-margin', permanent: true },
+      { source: '/tools/agents-md-validator', destination: '/tools/spec-quality-scorecard', permanent: true },
+      { source: '/tools/n8n-vs-zapier-calculator', destination: '/tools/automation-cost-calculator', permanent: true },
       // VALIDATED: "revenue per engineer" used for board-level benchmarking (DX, LinearB)
       { source: '/tools/revenue-per-engineer', destination: '/tools/aper', permanent: true },
       { source: '/tools/engineering-efficiency-calculator', destination: '/tools/aper', permanent: true },
@@ -200,12 +216,12 @@ const nextConfig: NextConfig = {
       { source: '/glossary/subprime-code-crisis', destination: '/glossary/negative-carry-code-crisis', permanent: true },
       { source: '/framework/subprime-code-governance', destination: '/framework/negative-carry-code-governance', permanent: true },
       // STRATEGIC: maps to pain language from advisory prospects
-      { source: '/tools/ai-hallucination-cost', destination: '/tools/vta', permanent: true },
+      { source: '/tools/ai-hallucination-cost', destination: '/tools/hallucination-tax', permanent: true },
       { source: '/tools/ai-job-displacement-calculator', destination: '/tools/fte-displacement', permanent: true },
       { source: '/tools/ai-workforce-impact', destination: '/tools/fte-displacement', permanent: true },
       { source: '/tools/self-host-vs-api', destination: '/tools/slm-vs-api', permanent: true },
       { source: '/tools/shadow-ai-risk-calculator', destination: '/tools/shadow-ai', permanent: true },
-      { source: '/tools/mcp-security-scanner', destination: '/tools/shadow-ai', permanent: true },
+      { source: '/tools/mcp-security-scanner', destination: '/tools/mcp-security-auditor', permanent: true },
       { source: '/tools/copilot-roi-calculator', destination: '/tools/copilot-roi', permanent: true },
       { source: '/tools/ai-pilot-roi-calculator', destination: '/tools/ai-roi-timeline', permanent: true },
       { source: '/tools/roai-calculator', destination: '/tools/ai-roi-timeline', permanent: true },

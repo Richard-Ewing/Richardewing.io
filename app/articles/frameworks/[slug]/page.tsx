@@ -5,6 +5,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { Metadata } from 'next';
 import FrameworkDefinition from '@/components/FrameworkDefinition';
 
+import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
+
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -13,52 +15,52 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!framework) return { title: 'Framework Not Found' };
 
     const searchTitle: Record<string, string> = {
-        'software-phase-transition': 'The Software Phase Transition | Richard Ewing',
-        'technical-insolvency-date': 'Technical Insolvency Date (TID) | Richard Ewing',
-        'innovation-tax': 'The Innovation Tax Framework | Richard Ewing',
-        'cost-of-predictivity': 'Cost of Predictivity Framework | Richard Ewing',
-        'audit-interview': 'The Audit Interview Protocol | Richard Ewing',
-        'kill-switch-protocol': 'The Kill Switch Protocol | Richard Ewing',
-        'feature-bloat-calculus': 'Feature Bloat Calculus | Richard Ewing',
-        'vibe-coding-debt': 'Vibe Coding Debt Framework & Liability | Richard Ewing',
-        'shadow-agents': 'Shadow Agents Governance & Threat Audit | Richard Ewing',
-        'agentic-drift': 'Agentic Drift & Logic Drift | Richard Ewing',
-        'return-on-ai-investment': 'ROAI: AI Unit Economics Framework | Richard Ewing',
-        'agentic-governance-blueprint': 'Agentic AI Governance Blueprint | Richard Ewing',
-        'deterministic-execution-harness': 'Deterministic Execution Harness | Richard Ewing',
-        'shadow-ai-remediation': 'Shadow AI Remediation Framework | Richard Ewing',
-        'unit-economics-of-ai': 'Unit Economics of AI Framework | Richard Ewing',
-        'dspm': 'AI Data Security Posture (DSPM) | Richard Ewing',
-        'sovereign-ai': 'Sovereign AI Architecture | Richard Ewing',
-        'graph-rag': 'Enterprise Graph RAG Architecture | Richard Ewing',
-        'slm': 'Small Language Models (SLM) | Richard Ewing',
-        'the-turing-tax': 'The Turing Tax Framework | Richard Ewing',
-        'synthetic-cogs': 'Synthetic COGS Framework | Richard Ewing',
-        'power-user-liability': 'Power User Liability in AI SaaS | Richard Ewing',
-        'deterministic-control-layer': 'Deterministic Control Layer | Richard Ewing',
-        'compute-reseller-trap': 'The Compute Reseller Trap | Richard Ewing',
-        'frontier-model-economics': 'Frontier Model Economics | Richard Ewing',
-        'persistence-vs-authority': 'Persistence vs. Authority in AI | Richard Ewing',
-        'supervisory-review-queue': 'The Supervisory Review Queue | Richard Ewing',
-        'the-transaction-that-succeeds': 'The Transaction That Succeeds | Richard Ewing',
-        'section-174-capitalization': 'Section 174 AI Tax Capitalization | Richard Ewing',
-        'hybrid-cloud-local-runtime': 'Hybrid Cloud-Local AI Runtime | Richard Ewing',
-        'sovereign-dual-chamber-governance': 'Dual-Chamber AI Governance | Richard Ewing',
-        'ai-architecture-decision-records': 'AI Architecture Decision Records | Richard Ewing',
+        'software-phase-transition': 'The Software Phase Transition',
+        'technical-insolvency-date': 'Technical Insolvency Date (TID) Formula',
+        'innovation-tax': 'The Innovation Tax Framework',
+        'cost-of-predictivity': 'Cost of Predictivity Framework',
+        'audit-interview': 'The Audit Interview Protocol',
+        'kill-switch-protocol': 'The Kill Switch Protocol',
+        'feature-bloat-calculus': 'Feature Bloat Calculus',
+        'vibe-coding-debt': 'Vibe Coding Debt: Risk & Audit Guide',
+        'shadow-agents': 'Shadow Agents Governance & Risk Audit',
+        'agentic-drift': 'Agentic Drift & Logic Drift',
+        'return-on-ai-investment': 'Return on AI Investment (ROAI) Formula',
+        'agentic-governance-blueprint': 'Agentic AI Governance Blueprint',
+        'deterministic-execution-harness': 'Deterministic Execution Harness',
+        'shadow-ai-remediation': 'Shadow AI Remediation Framework',
+        'unit-economics-of-ai': 'Unit Economics of AI Framework',
+        'dspm': 'AI Data Security Posture (DSPM)',
+        'sovereign-ai': 'Sovereign AI Architecture',
+        'graph-rag': 'Enterprise Graph RAG Architecture',
+        'slm': 'Small Language Models (SLM)',
+        'the-turing-tax': 'The Turing Tax Framework',
+        'synthetic-cogs': 'Synthetic COGS Framework',
+        'power-user-liability': 'Power User Liability in AI SaaS',
+        'deterministic-control-layer': 'Deterministic Control Layer',
+        'compute-reseller-trap': 'The Compute Reseller Trap',
+        'frontier-model-economics': 'Frontier Model Economics',
+        'persistence-vs-authority': 'Persistence vs. Authority in AI',
+        'supervisory-review-queue': 'The Supervisory Review Queue',
+        'the-transaction-that-succeeds': 'The Transaction That Succeeds',
+        'section-174-capitalization': 'Section 174 AI Tax Capitalization',
+        'hybrid-cloud-local-runtime': 'Hybrid Cloud-Local AI Runtime',
+        'sovereign-dual-chamber-governance': 'Dual-Chamber AI Governance',
+        'ai-architecture-decision-records': 'AI Architecture Decision Records',
     };
 
     const searchDescription: Record<string, string> = {
         'software-phase-transition': 'Manage engineering and product capital as AI drives code creation costs near zero. Prevent feature sprawl and margin collapse with Richard Ewing.',
-        'technical-insolvency-date': 'Calculate the exact future quarter when technical debt maintenance consumes 100% of engineering capacity and halts new feature velocity.',
+        'technical-insolvency-date': 'Calculate the exact future quarter when technical debt maintenance consumes 100% of engineering capacity and halts new feature delivery.',
         'innovation-tax': 'Audit the hidden maintenance expenses disguised as R&D feature investment. Expose how agile sprint bundling inflates engineering velocity.',
         'cost-of-predictivity': 'Measure how AI compute expenses scale exponentially with accuracy requirements. Identify your AI margin collapse point before scaling users.',
         'audit-interview': 'Assess engineering candidates on AI code verification, security bug prioritization, and ship judgment instead of whiteboard syntax recall.',
         'kill-switch-protocol': 'Identify and deprecate zombie features that drain engineering maintenance hours while generating zero attributable revenue or user adoption.',
         'feature-bloat-calculus': 'Quantify direct maintenance, opportunity cost, and quadratic complexity tax to expose software features operating at negative financial carry.',
-        'vibe-coding-debt': 'Measure the architectural liability and incident recovery drag created when engineers ship unverified AI copilot code into production systems.',
+        'vibe-coding-debt': 'Quantify the security exposure, incident drag, and maintenance carry created when teams ship unverified Cursor or Claude Code output to customers.',
         'shadow-agents': 'Detect and govern unsanctioned autonomous AI workflows operating across corporate APIs, vector databases, and financial systems without oversight.',
         'agentic-drift': 'Contain compounding reasoning errors in multi-step autonomous AI agents using deterministic state machines and cryptographic schema checkpoints.',
-        'return-on-ai-investment': 'Evaluate AI deployments by net gross margin impact, token cost per transaction, and verified labor savings rather than pilot activity metrics.',
+        'return-on-ai-investment': 'Calculate Return on AI Investment (ROAI) using net gross margin delta, token inference COGS, and verified labor savings instead of pilot hype.',
         'agentic-governance-blueprint': 'Enforce cryptographic signing limits, tool allowlists, and deterministic execution gates across autonomous enterprise AI agent workflows.',
         'deterministic-execution-harness': 'Wrap probabilistic LLM calls inside compiler verification gates, schema validators, and budget kill-switches before touching production.',
         'shadow-ai-remediation': 'Discover unauthorized employee LLM usage, quarantine unvetted MCP servers, and migrate shadow workflows into governed enterprise gateways.',
@@ -82,13 +84,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'ai-architecture-decision-records': 'Generate structured five-heading Architecture Decision Records directly from git diffs and pre-commit hooks to prevent agentic monorepo drift.',
     };
 
-    const titleStr = searchTitle[slug] || `${framework.name} | Richard Ewing`;
-    const descStr = searchDescription[slug] || `Examine the ${framework.name} framework by Richard Ewing for enterprise engineering economics, capital allocation, and AI systems governance.`;
+    const baseTitle = clampSeoTitle(searchTitle[slug] || framework.name, 42);
+    const descStr = formatSeoDescription(
+        searchDescription[slug] || `Examine the ${framework.name} framework by Richard Ewing for enterprise engineering economics, capital allocation, and AI systems governance.`
+    );
+    const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(framework.name)}&category=Proprietary%20Framework`;
 
     return {
-        title: {
-            absolute: titleStr,
-        },
+        title: baseTitle,
         description: descStr,
         keywords: [
             framework.name.toLowerCase(), `${framework.name.toLowerCase()} framework`,
@@ -98,17 +101,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ],
         alternates: { canonical: `https://www.richardewing.io/articles/frameworks/${framework.slug}` },
         openGraph: {
-            title: titleStr,
+            title: `${baseTitle} | Richard Ewing`,
             description: descStr,
             url: `https://www.richardewing.io/articles/frameworks/${framework.slug}`,
             type: 'article',
-            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+            images: [{ url: ogUrl, width: 1200, height: 630 }],
         },
         twitter: {
             card: 'summary_large_image',
-            title: titleStr,
+            title: `${baseTitle} | Richard Ewing`,
             description: descStr,
-            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
+            images: [ogUrl],
         },
     };
 }

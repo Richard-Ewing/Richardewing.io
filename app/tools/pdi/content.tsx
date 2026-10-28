@@ -296,10 +296,10 @@ function PDIToolContent() {
                             <span className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase tracking-widest">PDI 2.0 | AI Forensic Engine</span>
                         </div>
 
-                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
+                        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
                             Quantify the <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Hidden Debt.</span>
-                        </h1>
+                        </h2>
                         <p className="text-lg sm:text-xl text-zinc-900 mb-8">
                             AI-powered forensic audit for engineering insolvency. Paste your backlog and see where your capital is bleeding.
                         </p>

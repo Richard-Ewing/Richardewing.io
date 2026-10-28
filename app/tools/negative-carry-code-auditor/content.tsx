@@ -48,9 +48,9 @@ export default function NegativeCarryCodeAuditorTool() {
                         <Landmark className="w-3.5 h-3.5 text-rose-600" />
                         PE Due Diligence &bull; Step 4 Diagnostic
                     </div>
-                    <h1 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
+                    <h2 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
                         Negative-Carry Code <span className="text-rose-600">Auditor (NCCA)</span>
-                    </h1>
+                    </h2>
                     <p className="mt-3 text-base text-zinc-700 max-w-3xl mx-auto font-medium leading-relaxed">
                         When teams generate code 4x faster with unconstrained AI without writing unit tests, they create &ldquo;negative-carry code&rdquo; - fast to scaffold, but carrying an ongoing maintenance tax that exceeds its economic value. Calculate the balance-sheet refactor discount.
                     </p>

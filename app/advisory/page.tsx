@@ -4,25 +4,25 @@ import Image from 'next/image';
 import FrameworkDiagnosticBridge, { ExecutiveDefinitionBlock } from '@/components/seo/FrameworkDiagnosticBridge';
 
 export const metadata: Metadata = {
-  title: 'Executive Advisory & AI Economics Sprints',
+  title: 'AI Pricing & Executive Advisory Sprints',
   description:
-    'No-nonsense executive advisory for CEOs, CFOs, and product leaders. AI feature pricing, engineering efficiency, governance, and capital allocation.',
+    'Fixed-fee AI pricing audits, R&D capital diagnostics, and ongoing fiduciary advisory for CEOs, CFOs, and CPOs. View sprint scopes, deliverables, and fees.',
   alternates: {
     canonical: 'https://www.richardewing.io/advisory',
   },
   openGraph: {
-    title: 'Executive Advisory & AI Economics Sprints | Richard Ewing',
+    title: 'AI Pricing & Executive Advisory Sprints | Richard Ewing',
     description:
-      'No-nonsense executive advisory for CEOs, CFOs, and product leaders. Pricing, governance, and capital allocation.',
+      'Fixed-fee AI pricing audits, R&D capital diagnostics, and ongoing fiduciary advisory for CEOs, CFOs, and CPOs. View sprint scopes, deliverables, and fees.',
     url: 'https://www.richardewing.io/advisory',
     type: 'website',
     images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Executive Advisory & AI Economics Sprints | Richard Ewing',
+    title: 'AI Pricing & Executive Advisory Sprints | Richard Ewing',
     description:
-      'No-nonsense executive advisory for CEOs, CFOs, and product leaders. Pricing, governance, and capital allocation.',
+      'Fixed-fee AI pricing audits, R&D capital diagnostics, and ongoing fiduciary advisory for CEOs, CFOs, and CPOs. View sprint scopes, deliverables, and fees.',
     images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };

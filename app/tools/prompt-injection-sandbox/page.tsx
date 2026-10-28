@@ -22,6 +22,20 @@ export const metadata: Metadata = {
     },
 };
 
+import DiagnosticCTA from '@/app/components/DiagnosticCTA';
+
 export default function Page() {
-    return <PromptInjectionContent />;
+    return (
+        <>
+            <PromptInjectionContent />
+            <div className="max-w-5xl mx-auto px-6 pb-20">
+                <DiagnosticCTA
+                    variant="danger"
+                    title="Relying on system prompts alone to protect customer data and tools?"
+                    subtitle="Probabilistic system prompts cannot enforce security boundaries. Pair prompt hardening with deterministic runtime policy gates."
+                    metrics={['6 Attack Vectors', 'Tool Isolation', 'Runtime Gates']}
+                />
+            </div>
+        </>
+    );
 }

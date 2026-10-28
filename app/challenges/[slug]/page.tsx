@@ -6,6 +6,8 @@ import { challenges } from '../data';
 import { DiagnosticBridge } from '../../components/DiagnosticBridge';
 import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 
+import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
+
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
@@ -17,35 +19,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const challenge = challenges.find(c => c.slug === slug);
     if (!challenge) return {};
 
-    const cleanTitle = challenge.title;
-    const titleStr = `Stop ${cleanTitle} Wasting Capital | Richard Ewing`;
-    const ogTitle = titleStr;
-    
+    const baseTitle = clampSeoTitle(`Stop ${challenge.title} Wasting Capital`, 42);
+    const metaDesc = formatSeoDescription(challenge.description);
+    const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(challenge.title)}&category=Enterprise%20Challenge`;
+
     return {
-        title: { absolute: titleStr },
-        description: (() => {
-            let desc = challenge.description.trim().replace(/\s+/g, ' ');
-            if (!desc.endsWith('.')) desc += '.';
-            if (desc.length < 120) {
-                const combined = `${desc} Spot margin leaks, governance failure, and engineering execution risks.`;
-                return combined.length <= 158 ? combined : desc;
-            }
-            return desc.length > 158 ? desc.slice(0, 155) + '...' : desc;
-        })(),
+        title: baseTitle,
+        description: metaDesc,
         alternates: { canonical: `https://www.richardewing.io/challenges/${slug}` },
         openGraph: {
-            title: ogTitle,
-            description: challenge.description,
+            title: `${baseTitle} | Richard Ewing`,
+            description: metaDesc,
             url: `https://www.richardewing.io/challenges/${slug}`,
             siteName: 'Richard Ewing',
             type: 'website',
-            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+            images: [{ url: ogUrl, width: 1200, height: 630 }],
         },
         twitter: {
             card: 'summary_large_image',
-            title: ogTitle,
-            description: challenge.description,
-            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
+            title: `${baseTitle} | Richard Ewing`,
+            description: metaDesc,
+            images: [ogUrl],
         }
     };
 }

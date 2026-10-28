@@ -331,10 +331,10 @@ function AUEBToolContent() {
                         /* --- INPUT STATE --- */
                         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl mx-auto">
                             <div className="text-center mb-12">
-                                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-zinc-950 mb-6">
+                                <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-zinc-950 mb-6">
                                     Are You Scaling<br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500">Into Bankruptcy?</span>
-                                </h1>
+                                </h2>
                                 <p className="text-xl text-zinc-900">Calculate your AI margin collapse point before investors do.</p>
                             </div>
 
@@ -482,7 +482,7 @@ function AUEBToolContent() {
                                             </div>
                                         </div>
                                         <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                                            <button onClick={() => setStep(1)} className="px-6 py-4 bg-zinc-200 hover:bg-zinc-700 text-zinc-950 rounded-xl transition-all">← Back</button>
+                                            <button onClick={() => setStep(1)} className="px-6 py-4 bg-zinc-200 hover:bg-zinc-700 text-zinc-950 hover:text-white rounded-xl transition-all">← Back</button>
                                             <button onClick={() => setStep(3)} className="flex-1 py-4 bg-white hover:bg-zinc-200 text-black font-bold uppercase tracking-widest rounded-xl transition-all">Next: Infrastructure →</button>
                                         </div>
                                     </motion.div>
@@ -526,7 +526,7 @@ function AUEBToolContent() {
                                             </div>
                                         </div>
                                         <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                                            <button onClick={() => setStep(2)} className="px-6 py-4 bg-zinc-200 hover:bg-zinc-700 text-zinc-950 rounded-xl transition-all">← Back</button>
+                                            <button onClick={() => setStep(2)} className="px-6 py-4 bg-zinc-200 hover:bg-zinc-700 text-zinc-950 hover:text-white rounded-xl transition-all">← Back</button>
                                             <button onClick={() => calculate()} disabled={loading} className="flex-1 py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-bold uppercase tracking-widest rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-sm">
                                                 {loading ? <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Calculating Collapse Point...</> : 'Calculate My Collapse Point →'}
                                             </button>

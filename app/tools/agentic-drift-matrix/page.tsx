@@ -6,6 +6,8 @@ import { ScrollReveal } from '@/components/magicui/scroll-reveal';
 import ShineBorder from '@/components/magicui/shine-border';
 import { BorderBeam } from '@/components/magicui/border-beam';
 
+import DiagnosticCTA from '@/app/components/DiagnosticCTA';
+
 export const metadata: Metadata = {
     title: 'Agentic Drift Risk Matrix',
     description: 'Measure the exact turn-limit where AI agent state degrades, context rots, and hallucination rates increase. Benchmark multi-turn agent reliability now.',
@@ -173,7 +175,13 @@ export default function AgenticDriftMatrixPage() {
                 </ScrollReveal>
             </div>
         
-            <div className="page-container max-w-4xl mx-auto">
+            <div className="page-container max-w-4xl mx-auto px-6 space-y-8">
+                <DiagnosticCTA
+                    variant="primary"
+                    title="Are multi-turn agent loops forgetting system constraints in production?"
+                    subtitle="Replace bloated context windows with deterministic external state and runtime verification gates."
+                    metrics={['State Decay', 'Turn Limits', '3-Gate Control']}
+                />
                 <AdvisoryCTA variant="tool-result" />
             </div>
         </main>

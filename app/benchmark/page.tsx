@@ -1,121 +1,185 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { BarChart3, Download, TrendingDown, ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
+import { MetricPanel, EditorialCard } from '@/components/editorial';
 
 export const metadata: Metadata = {
-    title: 'AI Engineering Benchmarks',
-    description: 'Cross-industry benchmarks for engineering headcount efficiency, AI inference costs, and software capital yield. Compare your metrics against peers.',
-    keywords: [
-        'technical debt benchmark', 'engineering productivity benchmark 2026', 'product debt report',
-        'state of technical debt', 'R&D efficiency report', 'AI cost benchmark', 'engineering metrics report',
-        'technical debt statistics', 'software maintenance costs 2026', 'AI economist report',
-    ],
-    alternates: { canonical: 'https://www.richardewing.io/benchmark' },
-    openGraph: {
-        title: 'State of Product Debt 2026 | Free Benchmark Report',
-        description: 'Anonymized data from 500+ engineering orgs. Technical debt, AI costs, R&D efficiency.',
-        url: 'https://www.richardewing.io/benchmark',
-        type: 'website',
-    },
+  title: 'AI Cost & Engineering Benchmarks (2026)',
+  description:
+    'Open 2026 benchmarks for LLM API token pricing, $29/$49/$99 SaaS gross margins, technical debt drag, and revenue per engineer across 500+ orgs.',
+  keywords: [
+    'technical debt benchmark',
+    'LLM API cost benchmark 2026',
+    'AI SaaS gross margin benchmark',
+    'engineering productivity benchmark 2026',
+    'state of product debt',
+    'R&D efficiency report',
+    'software maintenance costs 2026',
+  ],
+  alternates: { canonical: 'https://www.richardewing.io/benchmark' },
+  openGraph: {
+    title: '2026 AI Cost & Engineering Benchmarks | Richard Ewing',
+    description:
+      'Monthly LLM token pricing, SaaS seat margin stress tests, and anonymized R&D capital telemetry from 500+ software teams.',
+    url: 'https://www.richardewing.io/benchmark',
+    type: 'website',
+  },
 };
 
 export default function BenchmarkPage() {
-    return (
-        <main className="pt-20">
-            <div className="page-container">
-                <section className="section-lg text-center">
-                    <div className="text-xs font-bold text-zinc-900 font-bold uppercase tracking-wide mb-4 font-mono">Free Download</div>
-                    <h1 className="text-4xl md:text-6xl font-bold text-zinc-950 mb-6 font-grotesk">
-                        State of Product Debt<br />
-                        <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">2026 Report.</span>
-                    </h1>
-                    <p className="text-zinc-950 font-bold text-lg max-w-2xl mx-auto mb-8">
-                        Anonymized, aggregated data from diagnostic tools used by engineering leaders.
-                        How does your organization compare?
-                    </p>
-                </section>
+  return (
+    <main className="min-h-screen bg-[#FAF9F6] text-[#1e2924] pt-24 pb-24">
+      <div className="max-w-5xl mx-auto px-6 space-y-16">
+        <header className="space-y-5 max-w-3xl">
+          <p className="text-xs font-mono font-bold uppercase tracking-widest text-[#b77a35]">
+            Open Empirical Telemetry · 2026 Living Reports
+          </p>
+          <h1 className="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-[#162e26] leading-[1.1]">
+            2026 AI Economics &amp; Product Debt Benchmarks
+          </h1>
+          <p
+            itemProp="description"
+            className="text-lg text-[#4a5850] leading-relaxed"
+          >
+            Ungated reference datasets built for CFOs, CPOs, CTOs, VPs of Engineering, and Private Equity Operating Partners. Compare your inference bills, SaaS gross margins, maintenance ratios, and revenue per engineer against real production cohorts.
+          </p>
+        </header>
 
-                <section className="section max-w-4xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-                        {[
-                            { stat: '67%', label: 'of engineering orgs spend more on maintenance than innovation', icon: TrendingDown },
-                            { stat: '$1.2M', label: 'average hidden debt discovered per diagnostic engagement', icon: BarChart3 },
-                            { stat: '18 mo', label: 'average time to Technical Insolvency Date when debt goes unmeasured', icon: TrendingDown },
-                        ].map((item, i) => (
-                            <div key={i} className="card p-6 text-center">
-                                <item.icon className="w-8 h-8 text-emerald-900 font-extrabold font-semibold mx-auto mb-3" />
-                                <div className="text-3xl font-bold text-zinc-950 mb-2">{item.stat}</div>
-                                <p className="text-zinc-900 text-sm">{item.label}</p>
-                            </div>
-                        ))}
-                    </div>
+        {/* Top Headline Metrics */}
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <MetricPanel
+            variant="forest"
+            label="Maintenance vs Net-New Build"
+            value="67%"
+            trend="R&D Capacity"
+            trendDirection="down"
+            subtext="Share of audited engineering organizations spending more payroll on maintenance OpEx than new product features."
+          />
+          <MetricPanel
+            variant="white"
+            label="Hidden Liability Discovered"
+            value="$1.2M"
+            trend="Median Audit"
+            trendDirection="neutral"
+            subtext="Average unrecorded technical debt and negative-carry AI spend surfaced per diagnostic engagement."
+          />
+          <MetricPanel
+            variant="paper"
+            label="Unmeasured Debt Runway"
+            value="18 mo"
+            trend="To Insolvency"
+            trendDirection="down"
+            subtext="Median runway to Technical Insolvency Date when sprint maintenance allocation goes untracked."
+          />
+        </section>
 
-                    <div className="card p-8 md:p-12 border-emerald-500/20 bg-gradient-to-br from-emerald-500/5 to-transparent">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                            <div>
-                                <h2 className="text-2xl font-bold text-zinc-950 mb-4 font-grotesk">What's Inside</h2>
-                                <ul className="space-y-3 mb-6">
-                                    {[
-                                        'Product Debt Index benchmarks by company stage',
-                                        'AI cost per useful output across industries',
-                                        'Engineering allocation: maintenance vs. innovation split',
-                                        'Revenue per engineer (APER) benchmarks',
-                                        'Technical Insolvency Date distribution',
-                                        'Recommendations for each debt severity level',
-                                    ].map((item, i) => (
-                                        <li key={i} className="flex items-start gap-2 text-zinc-950 text-sm">
-                                            <CheckCircle className="w-4 h-4 text-emerald-900 font-extrabold font-semibold mt-0.5 flex-shrink-0" />
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="bg-white/80 border border-zinc-400 rounded-2xl p-8 text-center">
-                                <Download className="w-12 h-12 text-emerald-900 font-extrabold font-semibold mx-auto mb-4" />
-                                <h3 className="text-xl font-bold text-zinc-950 mb-2">Download Free Report</h3>
-                                <p className="text-zinc-950 text-sm font-semibold mb-6">Enter your email to receive the full PDF report.</p>
-                                <a
-                                    href="https://theaieconomist.beehiiv.com/subscribe"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all"
-                                >
-                                    Get Free Report →
-                                </a>
-                                <p className="text-xs font-bold font-medium text-zinc-950 font-bold mt-4">Delivered via The AI Economist newsletter. Zero spam.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+        {/* Flagship Open Benchmark Hubs */}
+        <section className="space-y-6">
+          <div>
+            <p className="text-xs font-mono font-bold uppercase tracking-widest text-[#b77a35]">
+              Published Reference Indices
+            </p>
+            <h2 className="font-serif text-3xl font-bold text-[#162e26] mt-1">
+              Open Benchmark Datasets
+            </h2>
+          </div>
 
-                <section className="section max-w-4xl mx-auto text-center mt-12 mb-16 border-t border-zinc-400 pt-16">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-900 font-extrabold font-semibold text-xs font-bold font-mono uppercase tracking-widest mb-6">
-                        Open Data Report
-                    </div>
-                    <h2 className="text-3xl font-bold text-zinc-950 mb-4 font-grotesk">The 2026 AI Capital Engineering Index</h2>
-                    <p className="text-zinc-900 mb-8 max-w-2xl mx-auto">
-                        We open-sourced our proprietary M&A telemetry. View the raw, ungated mathematical timeline of FTE displacement, Vector DB collapse, and OpEx vs CapEx thresholds.
-                    </p>
-                    <Link href="/benchmark/ai-capital-2026" className="inline-flex px-8 py-4 bg-zinc-50 border border-cyan-500/30 text-zinc-950 font-bold text-sm font-semibold rounded-lg hover:bg-cyan-50/20 transition-all shadow-[0_0_20px_-5px_rgba(6,182,212,0.3)]">
-                        Read The Open Data Report →
-                    </Link>
-                </section>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <EditorialCard
+              variant="forest"
+              eyebrow="Monthly Living Index"
+              badge="Updated Oct 2026"
+              badgeVariant="gold"
+              title="2026 LLM API Cost & SaaS Gross Margin Index"
+              description="Side-by-side input, cached prefix, and output token pricing across Claude 4.5, GPT-5, Gemini 3, and reserved H100s stress-tested against $29, $49, and $99 SaaS seats at P50, P90, and P99 usage."
+              href="/benchmark/llm-cost-and-margin-index"
+              actionText="Open LLM Margin Index →"
+            />
+            <EditorialCard
+              variant="white"
+              eyebrow="Annual Capital Report"
+              badge="Open Data"
+              badgeVariant="forest"
+              title="The 2026 AI Capital Engineering Index"
+              description="Empirical M&A telemetry covering the 4.2M token/day SLM crossover threshold, engineering role autonomy rates, latency-driven ACV churn, and PostgreSQL pgvector consolidation."
+              href="/benchmark/ai-capital-2026"
+              actionText="Read Capital Engineering Index →"
+            />
+          </div>
+        </section>
 
-                <section className="section max-w-4xl mx-auto text-center">
-                    <h2 className="text-2xl font-bold text-zinc-950 mb-4 font-grotesk">Want Personalized Analysis?</h2>
-                    <p className="text-zinc-900 mb-6 max-w-xl mx-auto">
-                        The benchmark tells you where the industry stands. A diagnostic tells you where <span className="text-zinc-950 font-semibold">you</span> stand.
-                    </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/tools/pdi" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-bold text-sm font-semibold rounded-lg hover:bg-white/10 transition-all">
-                            Run Free PDI Calculator
-                        </Link>
-                        <Link href="/services" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 text-zinc-950 font-semibold font-bold text-sm font-semibold rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2">
-                            Book Diagnostic Call <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </div>
-                </section>
+        {/* State of Product Debt Executive Summary & Newsletter */}
+        <section className="rounded-3xl border border-[#24332b]/15 bg-white p-8 sm:p-10 shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-4">
+              <p className="text-xs font-mono font-bold uppercase tracking-widest text-[#b77a35]">
+                Executive Readout · PDF &amp; Briefing
+              </p>
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#162e26]">
+                What Is Inside the State of Product Debt Report
+              </h2>
+              <ul className="space-y-2.5">
+                {[
+                  'Product Debt Index (PDI) quartile benchmarks by ARR stage',
+                  'AI inference cost per useful output across B2B SaaS verticals',
+                  'Engineering sprint split: net-new build vs maintenance OpEx',
+                  'Revenue per engineer (APER) bands from Seed through PE buyout',
+                  'Technical Insolvency Date distributions and CFO remediation levers',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-[#1e2924] text-sm">
+                    <CheckCircle className="w-4 h-4 text-[#162e26] mt-0.5 shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-        </main>
-    );
+
+            <div className="rounded-2xl bg-[#FAF9F6] border border-[#24332b]/15 p-7 text-center space-y-4">
+              <h3 className="font-serif text-2xl font-bold text-[#162e26]">
+                Get Monthly Benchmark Updates
+              </h3>
+              <p className="text-sm text-[#4a5850]">
+                Receive monthly token pricing shifts, SaaS margin benchmarks, and teardown memos via The AI Economist briefing.
+              </p>
+              <a
+                href="https://theaieconomist.beehiiv.com/subscribe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full py-3.5 px-6 bg-[#162e26] hover:bg-[#29473b] text-white font-bold text-sm rounded-xl transition-all"
+              >
+                Subscribe for Free Updates →
+              </a>
+              <p className="text-xs font-mono text-[#66716a]">
+                Read by 8,000+ CTOs, CFOs, CPOs, and Founders. Zero spam.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Personalized Diagnostic Callout */}
+        <section className="rounded-3xl border border-[#24332b]/15 bg-[#ebe7dc] p-8 sm:p-10 text-center space-y-5">
+          <h2 className="font-serif text-3xl font-bold text-[#162e26]">
+            Benchmarks Show Industry Medians. Diagnostics Audit Your P&amp;L.
+          </h2>
+          <p className="text-[#4a5850] max-w-2xl mx-auto">
+            Run your own engineering payroll, maintenance ratio, or monthly token volume through our deterministic calculators, or book a hands-on diagnostic session.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            <Link
+              href="/tools/pdi"
+              className="px-6 py-3.5 bg-white border border-[#24332b]/20 hover:border-[#162e26] text-[#162e26] font-bold text-sm rounded-xl transition-all"
+            >
+              Run Technical Debt Calculator (PDI)
+            </Link>
+            <Link
+              href="/services"
+              className="px-6 py-3.5 bg-[#162e26] hover:bg-[#29473b] text-white font-bold text-sm rounded-xl transition-all inline-flex items-center gap-2"
+            >
+              View Advisory &amp; Build Sprints <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </section>
+      </div>
+    </main>
+  );
 }

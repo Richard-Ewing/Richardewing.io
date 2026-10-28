@@ -23,6 +23,20 @@ export const metadata: Metadata = {
     },
 };
 
+import DiagnosticCTA from '@/app/components/DiagnosticCTA';
+
 export default function Page() {
-    return <EUAIActChecker />;
+    return (
+        <>
+            <EUAIActChecker />
+            <div className="max-w-5xl mx-auto px-6 pb-20">
+                <DiagnosticCTA
+                    variant="warning"
+                    title="Shipping AI features into European enterprise accounts?"
+                    subtitle="Audit your risk classification, human-oversight controls, and statutory penalty exposure before procurement security review."
+                    metrics={['EU AI Act', '7% Revenue Cap', 'Audit Trail']}
+                />
+            </div>
+        </>
+    );
 }

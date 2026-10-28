@@ -10,6 +10,8 @@ description: Enforces strict formulas for Meta Titles (<60 chars), Meta Descript
 **Formula:** `[Entity or exact question phrase] + [specific outcome/differentiator]` (The root layout template automatically appends `| Richard Ewing`).
 **Rules:**
 - In Next.js App Router, NEVER append `| Richard Ewing` in leaf `metadata.title` - `app/layout.tsx` template applies it automatically. Hardcoding it causes double-branding (`Title | Richard Ewing | Richard Ewing`).
+- NEVER set a plain string `metadata.title = "..."` inside intermediate child `layout.tsx` files (`app/glossary/layout.tsx`, `app/careers/layout.tsx`, etc.), because Next.js resets the root `title.template` for all child routes beneath that layout. Child `layout.tsx` files must either omit `title` or explicitly declare `title: { template: '%s | Richard Ewing', default: '...' }`.
+- When dynamically generating titles (e.g., `/glossary/[slug]`), clamp suffixes adaptively so the final rendered string including ` | Richard Ewing` (`16` chars) never exceeds `60` characters.
 - Keep child titles 42 characters or less.
 - Front-load the noun people actually search or ask assistants.
 - Include one specific (a number, a named tech, a deliverable).
@@ -50,9 +52,10 @@ description: Enforces strict formulas for Meta Titles (<60 chars), Meta Descript
 - The apex domain (`richardewing.io`) must ALWAYS return a 301 Permanent Redirect to the canonical `www.richardewing.io` origin at the edge in `middleware.ts`.
 - Never serve `200 OK` on both apex and `www` hosts simultaneously.
 
-## 8. Root Layout Canonical Prohibition
-- NEVER set `alternates.canonical` in root `app/layout.tsx`. In Next.js App Router, child routes that lack explicit canonical tags will inherit the root value and falsely declare themselves duplicates of the homepage.
-- Explicitly declare `alternates.canonical` in individual leaf page/layout metadata.
+## 8. Layout Canonical Prohibition, CSR H1 Guard & Prose-Gated Reclamation
+- NEVER set `alternates.canonical` in root `app/layout.tsx` OR any intermediate section `layout.tsx` (`app/glossary/layout.tsx`, `app/dashboard/layout.tsx`, `app/exogram/layout.tsx`, etc.). Declare self-referencing `alternates.canonical` strictly in leaf `page.tsx` metadata.
+- **Server `<h1>` Above `<Suspense>` Invariant**: Whenever a client component uses `useSearchParams()` or `nuqs` (`useQueryState`), render the semantic `<h1>` and 45-word executive definition block in the parent Server Component `page.tsx` OUTSIDE `<Suspense>` so Next.js never bails out Pass-1 static HTML (`BAILOUT_TO_CLIENT_SIDE_RENDERING`) with zero `<h1>`.
+- **Prose-Gated Canonical Reclamation (`>= 800` Words)**: Never flip an external syndication canonical (`beehiiv.com`, `linkedin.com`) to self-canonical on `richardewing.io` until the on-domain route renders the complete essay (`>= 800` words) and any duplicate `/articles/[slug]` vs `/blog/[slug]` twin is `301`-consolidated.
 
 ## 9. Dual-Schema Indexing Protocol (Entity + BreadcrumbList)
 - Every page, diagnostic hub, and article must render:
@@ -73,7 +76,7 @@ description: Enforces strict formulas for Meta Titles (<60 chars), Meta Descript
 - Every route must define a complete, active-voice sentence between 135 and 155 characters.
 
 ## 13. JSON-LD Entity Graph (`sameAs`) & Asset Existence Invariant
-- All `Person` and `Organization` JSON-LD schemas across `app/layout.tsx`, `app/page.tsx`, `app/about/page.tsx`, and `app/lib/schemas.ts` must unify `sameAs` around canonical profiles (`https://www.linkedin.com/in/richard-ewing-mba`, `https://github.com/richardewing`, `https://x.com/richardewing`, `https://www.cio.com/author/richard-ewing/`, `https://builtin.com/authors/richard-ewing`).
+- All `Person` and `Organization` JSON-LD schemas across `app/layout.tsx`, `app/page.tsx`, `app/about/page.tsx`, and `app/lib/schemas.ts` must unify `sameAs` around canonical profiles (`https://www.linkedin.com/in/richard-ewing-mba`, `https://github.com/Richard-Ewing`, `https://x.com/richardewing`, `https://www.cio.com/author/richard-ewing/`, `https://builtin.com/authors/richard-ewing`).
 - Every local image path referenced in JSON-LD (`image`, `logo`) or OpenGraph/Twitter metadata (`https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg`) must exist on disk in `public/`.
 - Never inject a global static `keywords` array into `app/layout.tsx`; leaf routes must declare page-specific keywords.
 
@@ -85,7 +88,7 @@ description: Enforces strict formulas for Meta Titles (<60 chars), Meta Descript
 ## 15. `robots.ts` & Cloudflare Edge Synchronization ("Cite-Only / No Free Model Training" Invariant)
 - **Allowed Crawlers (`Allow: ['/', '/_next/static/', '/llms.txt', '/llms-full.txt']`)**: Explicitly allow Search Engine Crawlers (`Googlebot`, `GoogleOther`, `Bingbot`, `Applebot`, `YandexBot`, `Bravebot`, `DuckDuckBot`), Live AI Search, Citation & Assistant Retrieval Bots (`OAI-SearchBot`, `ChatGPT-User`, `Claude-SearchBot`, `Claude-User`, `PerplexityBot`, `Perplexity-User`, `Google-Agent`, `Amzn-SearchBot`, `DuckAssistBot`, `ExaSearchBot`, `YouBot`), and Social Link Preview Bots (`facebookexternalhit`, `LinkedInBot`, `Twitterbot`, `Slackbot`).
 - **Disallowed Crawlers (`Disallow: '/'`)**: Explicitly disallow Pure Foundation Model Training & Unsolicited Bulk Scrapers (`GPTBot`, `ClaudeBot`, `Google-Extended`, `Google-CloudVertexBot`, `CCBot`, `Amazonbot`, `meta-externalagent`, `cohere-ai`, `Bytespider`, `PetalBot`, `Diffbot`, `ImagesiftBot`, `Omgilibot`).
-- **Edge Parity**: `app/robots.ts` must remain 100% synchronized with Cloudflare Bot Management / AI Audit (`HTTP 403 Forbidden` on training scrapers, `HTTP 200 OK` on citation/search bots) and `middleware.ts` edge blocks so disallowed bots do not waste crawl budget or pollute edge logs with avoidable 403/404 responses.
+- **Cloudflare Free-Plan Edge Parity**: Because Cloudflare Free-plan Bot Fight Mode and "Block AI Bots" toggles issue un-skippable `403` challenges to `PerplexityBot` and `Claude-User`, keep those blunt toggles `OFF` in Cloudflare Dashboard, set `'ai-training-allowed': 'no'` in `app/layout.tsx`, and enforce deterministic `HTTP 403` blocking of disallowed training-only scrapers (`GPTBot`, `ClaudeBot`, `Google-Extended`, `Google-CloudVertexBot`, `CCBot`, `Amazonbot`, `meta-externalagent`, `Bytespider`, `PetalBot`, `Diffbot`, `cohere-ai`, `Omgilibot`, `ImagesiftBot`) directly in `middleware.ts` and scoped Custom WAF rules while guaranteeing `200 OK` to AI search/citation fetchers (`PerplexityBot`, `Perplexity-User`, `OAI-SearchBot`, `ChatGPT-User`, `Claude-SearchBot`, `Claude-User`, `Applebot`, `Bravebot`, `YouBot`).
 
 ## 16. GSC + Bing Snippet Intersection Rule (Cross-Engine Calibration)
 - **Rendered Title Length**: Strictly between 45 and 60 characters total rendered in search engine result pages. When using child routes in Next.js, either calibrate child title strings knowing the layout appends ` | Richard Ewing` (16 characters), or supply `title: { absolute: "..." }` to pin the exact character count. Front-load the exact search entity in the first 3 to 5 words.

@@ -5,8 +5,8 @@ import { glossaryTerms } from './terms';
 import { KEEP_TERMS, CATEGORY_MAP } from './pillarsMapping';
 
 export const metadata: Metadata = {
-    title: `Product & AI Economics Glossary (${glossaryTerms.length}+)`,
-    description: `Master the lexicon of product economics, AI unit economics, technical debt, and SaaS P&L governance across ${glossaryTerms.length}+ executive definitions.`,
+    title: 'Product & AI Unit Economics Glossary',
+    description: 'Clear executive definitions, formulas, and P&L benchmarks for ROAI, AI unit economics, technical debt, engineering levels, and SaaS margin metrics.',
     alternates: { canonical: 'https://www.richardewing.io/glossary' },
     openGraph: {
         title: `Product & AI Economics Glossary | ${glossaryTerms.length}+ Terms Defined`,

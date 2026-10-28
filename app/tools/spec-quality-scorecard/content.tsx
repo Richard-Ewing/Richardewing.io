@@ -87,9 +87,9 @@ export default function SpecQualityScorecardTool() {
                         <FileCode className="w-3.5 h-3.5 text-emerald-600" />
                         Product &bull; Step 4 Diagnostic
                     </div>
-                    <h1 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
+                    <h2 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
                         Spec-Driven Development <span className="text-emerald-600">Quality Scorecard</span>
-                    </h1>
+                    </h2>
                     <p className="mt-3 text-base text-zinc-700 max-w-3xl mx-auto font-medium leading-relaxed">
                         In the AI era, vague PRDs produce chaotic code. Grade your feature specifications for machine-readable completeness before handing tasks to Claude Code, Antigravity, or Devin.
                     </p>

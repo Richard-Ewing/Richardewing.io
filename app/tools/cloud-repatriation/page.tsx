@@ -22,6 +22,20 @@ export const metadata: Metadata = {
     },
 };
 
+import DiagnosticCTA from '@/app/components/DiagnosticCTA';
+
 export default function Page() {
-    return <CloudContent />;
+    return (
+        <>
+            <CloudContent />
+            <div className="max-w-5xl mx-auto px-6 pb-20">
+                <DiagnosticCTA
+                    variant="warning"
+                    title="Paying hyperscaler markups on predictable steady-state compute?"
+                    subtitle="Evaluate reserved capacity, egress elimination, and hybrid GPU/CPU repatriation payback with an independent FinOps teardown."
+                    metrics={['Egress Cut', 'EBITDA Lift', '12-Mo Payback']}
+                />
+            </div>
+        </>
+    );
 }

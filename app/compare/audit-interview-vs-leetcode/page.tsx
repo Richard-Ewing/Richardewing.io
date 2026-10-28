@@ -69,7 +69,7 @@ export default function AuditInterviewVsLeetCodePage() {
                         <p className="text-zinc-900 mb-8">
                             The Audit Interview tests the four dimensions that matter: <strong>Verification</strong> (catching AI errors), <strong>Architecture</strong> (system design judgment), <strong>Economics</strong> (cost awareness), and <strong>Leadership</strong> (decision-making under ambiguity).
                         </p>
-                        <Link href="/tools/audit-interview" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">
+                        <Link href="/tools/audit-interview" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold font-bold hover:opacity-90 transition-opacity">
                             Try the Free Audit Interview →
                         </Link>
                     </div>

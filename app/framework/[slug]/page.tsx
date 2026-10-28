@@ -28,57 +28,35 @@ export async function generateStaticParams() {
     ];
 }
 
+import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
     const fw = subFrameworks[slug];
     if (!fw) {
         return { title: 'Framework Pillar Not Found' };
     }
+    const baseTitle = clampSeoTitle(fw.name, 42);
+    const metaDesc = formatSeoDescription(fw.overview);
+    const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(fw.name)}&category=Operating%20Framework`;
     return {
-        title: {
-            absolute: `${fw.name} | Richard Ewing`,
-        },
-        description: (() => {
-            let desc = fw.overview.trim().replace(/\s+/g, ' ');
-            if (!desc.endsWith('.')) desc += '.';
-            if (desc.length >= 140 && desc.length <= 158) return desc;
-            if (desc.length > 158) return desc.slice(0, 155) + '...';
-
-            const candidateSuffixes = [
-                ` Enterprise AI governance and capital allocation framework for technology leaders and CTOs.`,
-                ` Enterprise AI governance and capital allocation framework for technology leaders.`,
-                ` Enterprise AI governance and capital allocation framework by Richard Ewing.`,
-                ` Enterprise AI governance, unit economics, and capital allocation frameworks.`,
-                ` Enterprise AI governance and capital allocation frameworks by Richard Ewing.`,
-                ` Enterprise AI governance and systems architecture frameworks.`,
-                ` Enterprise AI governance and operational frameworks.`,
-                ` Enterprise AI governance frameworks by Richard Ewing.`,
-                ` Frameworks and research by Richard Ewing.`
-            ];
-            for (const suffix of candidateSuffixes) {
-                const combined = desc + suffix;
-                if (combined.length >= 140 && combined.length <= 158) {
-                    return combined;
-                }
-            }
-            const fallback = `${desc} Enterprise AI governance frameworks by Richard Ewing.`;
-            return fallback.length > 158 ? fallback.slice(0, 155) + '...' : fallback;
-        })(),
+        title: baseTitle,
+        description: metaDesc,
         alternates: {
             canonical: `https://www.richardewing.io/framework/${slug}`,
         },
         openGraph: {
-            title: `${fw.name} | Production AI Governance Framework`,
-            description: fw.overview,
+            title: `${baseTitle} | Richard Ewing`,
+            description: metaDesc,
             url: `https://www.richardewing.io/framework/${slug}`,
             type: 'website',
-            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+            images: [{ url: ogUrl, width: 1200, height: 630 }],
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${fw.name} | Production AI Governance Framework`,
-            description: fw.overview,
-            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
+            title: `${baseTitle} | Richard Ewing`,
+            description: metaDesc,
+            images: [ogUrl],
         }
     };
 }

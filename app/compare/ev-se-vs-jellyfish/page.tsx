@@ -44,7 +44,7 @@ export default function EVSEvsJellyfishPage() {
                     <div className="rounded-2xl border border-teal-500/30 bg-teal-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
                         <p className="text-zinc-950 mb-6"><strong>Use both  -  for different purposes.</strong> Jellyfish shows engineering activity. EV-SE evaluates whether that activity creates lasting value. Tracking without economic analysis is measurement without meaning.</p>
-                        <Link href="/tools/ev-se" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-teal-500 to-cyan-600 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Try the Free EV-SE Calculator →</Link>
+                        <Link href="/tools/ev-se" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-semibold font-bold hover:opacity-90 transition-opacity">Try the Free EV-SE Calculator →</Link>
                     
                     <AdvisoryCTA variant="compare" />
 </div>

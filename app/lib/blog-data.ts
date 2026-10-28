@@ -10,6 +10,7 @@ import { articlesBatch8 } from './blog-articles-8';
 import { articlesBatch9 } from './blog-articles-9';
 import { articlesBatch10 } from './blog-articles-10';
 import { articlesAuto } from './blog-articles-auto';
+import { BLOG_SLUG_REDIRECTS } from './article-redirects';
 
 // Merge all article batches into a single lookup
 export const allArticles: Record<string, ArticleData> = {
@@ -29,7 +30,7 @@ export const allArticles: Record<string, ArticleData> = {
 // Get sorted article list (newest first, canonical to richardewing.io for internal index & sitemap hygiene)
 export function getSortedArticles() {
     return Object.entries(allArticles)
-        .filter(([slug, article]) => !article.canonicalUrl || article.canonicalUrl === `https://www.richardewing.io/blog/${slug}`)
+        .filter(([slug, article]) => !BLOG_SLUG_REDIRECTS[slug] && (!article.canonicalUrl || article.canonicalUrl === `https://www.richardewing.io/blog/${slug}`))
         .map(([slug, article]) => ({ slug, ...article }))
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }

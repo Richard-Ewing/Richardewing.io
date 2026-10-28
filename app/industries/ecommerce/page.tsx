@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'E-Commerce AI Economics & Catalog Data Sprawl',
+    title: 'E-Commerce AI Margin & Catalog Debt',
     description: 'Audit recommendation engine inference costs, search index latency debt, and multi-channel inventory integration overhead in retail commerce systems.',
     keywords: ['ecommerce technical debt', 'ecommerce platform engineering', 'AI recommendation cost', 'checkout optimization', 'ecommerce CTO advisor', 'peak traffic scaling'],
     alternates: { canonical: 'https://www.richardewing.io/industries/ecommerce' },

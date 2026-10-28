@@ -8,7 +8,7 @@ import DiagnosticCTA from '@/app/components/DiagnosticCTA';
 import SlackScorecardExport from '@/components/SlackScorecardExport';
 import Link from 'next/link';
 
-export default function CFOCapitalizationTool() {
+export default function CFOCapitalizationTool({ hideDiagnosticCTA = false }: { hideDiagnosticCTA?: boolean } = {}) {
     const [annualRDPayroll, setAnnualRDPayroll] = useState<number>(6500000);
     const [reportedInnovationPercent, setReportedInnovationPercent] = useState<number>(75);
     const [actualMaintenancePercent, setActualMaintenancePercent] = useState<number>(55);
@@ -32,9 +32,9 @@ export default function CFOCapitalizationTool() {
                         <DollarSign className="w-3.5 h-3.5 text-emerald-600" />
                         CFO &amp; Finance &bull; Step 4 Diagnostic
                     </div>
-                    <h1 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
+                    <h2 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
                         CFO AI R&amp;D Capitalization &amp; <span className="text-emerald-600">Section 174 Audit</span>
-                    </h1>
+                    </h2>
                     <p className="mt-3 text-base text-zinc-700 max-w-3xl mx-auto font-medium leading-relaxed">
                         Engineering reports 75% innovation, but audits reveal 55% maintenance. Calculate your true Innovation Tax, Section 174 amortization drag, and phantom tax liability.
                     </p>
@@ -179,9 +179,11 @@ export default function CFOCapitalizationTool() {
                     </div>
                 </div>
 
-                <div className="mt-12">
-                    <DiagnosticCTA />
-                </div>
+                {!hideDiagnosticCTA && (
+                    <div className="mt-12">
+                        <DiagnosticCTA />
+                    </div>
+                )}
             </div>
         </ToolGate>
     );

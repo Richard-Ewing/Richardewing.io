@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'InsurTech Actuarial AI & Claims Data Economics',
+    title: 'InsurTech Actuarial & Claims AI Costs',
     description: 'Audit automated claims processing unit economics, legacy policy database debt, and underwriting model drift with forensic engineering diagnostics.',
     keywords: ['insurtech technical debt', 'insurance technology economics', 'legacy insurance systems', 'AI underwriting cost', 'insurtech AI economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/insurtech' },

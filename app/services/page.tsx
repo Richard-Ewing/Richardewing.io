@@ -5,9 +5,9 @@ import FAQItem from '@/app/components/FAQItem';
 import { PRODUCTS } from '@/app/lib/products';
 
 export const metadata: Metadata = {
-  title: 'AI Build Sprints, Department Automation & P&L Advisory',
+  title: 'AI Build Sprints, Automation & Advisory',
   description:
-    'Unstick your AI app or pricing in 60 minutes ($450), automate a department in 14 days ($2,500), ship a 0-to-1 AI app in 21 days ($7,500), or hire a Fractional CPO.',
+    'Unstick your AI app or pricing in 60 min ($450), automate a department in 14 days ($2,500), ship an AI app in 21 days ($7,500), or hire a Fractional CPO.',
   alternates: {
     canonical: 'https://www.richardewing.io/services',
   },

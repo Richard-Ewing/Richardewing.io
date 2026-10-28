@@ -97,7 +97,7 @@ export default function ForCTOsPage() {
                         <TechnicalInsolvencySimulator />
                         
                         <div className="flex flex-wrap justify-center gap-4">
-                            <Link href="/tools" className="px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Explore All Tools →</Link>
+                            <Link href="/tools" className="px-8 py-4 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-white font-semibold font-bold hover:opacity-90 transition-opacity">Explore All Tools →</Link>
                             <Link href="/glossary" className="px-8 py-4 rounded-lg border border-zinc-500 text-zinc-950 font-bold hover:bg-white/5 transition-colors">Browse 400+ Definitions →</Link>
                         </div>
                     </div>
@@ -197,7 +197,7 @@ export default function ForCTOsPage() {
                     <div className="rounded-2xl border border-rose-500/30 bg-rose-500/5 p-10 text-center">
                         <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Need a Full R&D Audit?</h2>
                         <p className="text-zinc-900 mb-8 max-w-xl mx-auto">Free tools give you directional insight. An R&D Capital Audit gives you the full picture: dollar-denominated debt, insolvency timeline, and a prioritized remediation roadmap.</p>
-                        <Link href="/services" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-zinc-950 font-semibold text-lg font-bold hover:opacity-90 transition-opacity">Book R&D Capital Audit →</Link>
+                        <Link href="/services" className="inline-block px-10 py-5 rounded-lg bg-gradient-to-r from-rose-500 to-violet-500 text-white font-semibold text-lg font-bold hover:opacity-90 transition-opacity">Book R&D Capital Audit →</Link>
                     </div>
                 </div>
             </div>

@@ -44,7 +44,7 @@ export default function APERvsLinearBPage() {
                     <div className="rounded-2xl border border-violet-500/30 bg-violet-500/5 p-8 mb-16">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">The Verdict</h2>
                         <p className="text-zinc-950 mb-6"><strong>Metrics without judgment is measurement without meaning.</strong> LinearB tells you engineers are moving fast. APER tells you they are moving in a direction that creates economic value. Use both  -  but APER for the decisions that matter.</p>
-                        <Link href="/tools/aper" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-purple-600 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Try the Free APER Assessment →</Link>
+                        <Link href="/tools/aper" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-purple-600 text-white font-semibold font-bold hover:opacity-90 transition-opacity">Try the Free APER Assessment →</Link>
                     
                     <AdvisoryCTA variant="compare" />
 </div>

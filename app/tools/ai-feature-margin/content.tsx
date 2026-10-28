@@ -47,9 +47,9 @@ export default function AIFeatureMarginTool() {
                         <Percent className="w-3.5 h-3.5 text-emerald-600" />
                         Product Economics &bull; Step 4 Diagnostic
                     </div>
-                    <h1 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
+                    <h2 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
                         AI Feature <span className="text-emerald-600">Unit Margin Matrix</span>
-                    </h1>
+                    </h2>
                     <p className="mt-3 text-base text-zinc-700 max-w-3xl mx-auto font-medium leading-relaxed">
                         Flat SaaS pricing with variable generative AI inference creates &ldquo;negative-carry features&rdquo; where more user engagement leads to lower gross margin. Model your feature contribution margins.
                     </p>

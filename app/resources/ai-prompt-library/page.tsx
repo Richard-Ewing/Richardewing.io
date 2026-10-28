@@ -5,7 +5,7 @@ import { Terminal, Sparkles, ArrowRight, Layers, Cpu } from 'lucide-react';
 import PromptLibraryViewer from '@/components/ai-product-builder/PromptLibraryViewer';
 
 export const metadata: Metadata = {
-  title: 'AI System Prompt Library: 50+ Executive Prompts',
+  title: 'Executive AI Prompt Library (50+)',
   description: 'Battle-tested prompt catalog for AI founders and CTOs. Cognitive division of labor prompts for Perplexity Pro, Claude 4.5, Gemini 3.8, and OpenAI o3.',
   alternates: {
     canonical: 'https://www.richardewing.io/resources/ai-prompt-library',

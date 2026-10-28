@@ -149,7 +149,7 @@ export default function WorkshopsPage() {
                                 </div>
                                 <a
                                     href={`/api/buy/${w.productId}`}
-                                    className="block text-center py-3 rounded-lg bg-gradient-to-r from-rose-500 to-purple-500 text-zinc-950 font-semibold font-bold text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-opacity"
+                                    className="block text-center py-3 rounded-lg bg-gradient-to-r from-rose-500 to-purple-500 text-white font-semibold font-bold text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-opacity"
                                 >
                                     Book Workshop →
                                 </a>

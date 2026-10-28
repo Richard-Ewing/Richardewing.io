@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'HealthTech AI Economics & HIPAA Compliance Debt',
+    title: 'HealthTech AI Margin & HIPAA Tech Debt',
     description: 'Audit clinical workflow AI inference costs, EHR integration complexity, and HIPAA-compliant data pipeline debt for healthcare technology leaders.',
     keywords: ['healthtech technical debt', 'healthcare AI governance', 'HIPAA compliance engineering', 'clinical AI validation', 'healthtech CTO advisor', 'FDA SaMD compliance'],
     alternates: { canonical: 'https://www.richardewing.io/industries/healthtech' },
@@ -53,7 +53,7 @@ export default function HealthTechPage() {
                             <li className="flex items-start gap-3"><span className="text-blue-900 font-extrabold font-semibold mt-1">→</span> <span>Design validation-friendly architecture that minimizes rework</span></li>
                         </ul>
                         <div className="flex flex-wrap gap-4">
-                            <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 text-zinc-950 font-semibold font-bold hover:opacity-90">Free PDI Assessment →</Link>
+                            <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold font-bold hover:opacity-90">Free PDI Assessment →</Link>
                             <Link href="/services" className="px-6 py-3 rounded-lg border border-zinc-500 text-zinc-950 font-bold hover:bg-white/5">Book Advisory →</Link>
                         </div>
                     

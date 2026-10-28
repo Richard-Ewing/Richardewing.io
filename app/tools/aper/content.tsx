@@ -202,10 +202,10 @@ function APERToolContent() {
                         <ScrollReveal>
                             <div className="max-w-4xl mx-auto">
                                 <div className="text-center mb-12">
-                                    <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-zinc-950 mb-6">
+                                    <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-zinc-950 mb-6">
                                         Are You <br />
                                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Overstaffed?</span>
-                                    </h1>
+                                    </h2>
                                     <p className="text-xl text-zinc-900">Calculate your Revenue Per Engineer before your board does.</p>
                                 </div>
 

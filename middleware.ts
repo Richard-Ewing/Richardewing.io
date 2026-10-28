@@ -69,11 +69,22 @@ const EDGE_REDIRECTS: Record<string, string> = {
   '/$': '/',
   '/&': '/',
   '/blog/hiring-engineers-gross-margin': '/blog/b2b-saas-coordination-tax-saas-engineering-margins',
-  '/blog/feature-bloat-calculus': '/articles/feature-bloat-calculus',
-  '/blog/cost-of-predictivity': '/articles/cost-of-predictivity',
+  '/blog/feature-bloat-calculus': '/articles/frameworks/feature-bloat-calculus',
+  '/blog/cost-of-predictivity': '/articles/frameworks/cost-of-predictivity',
+  '/blog/technical-insolvency-date': '/articles/frameworks/technical-insolvency-date',
+  '/articles/feature-bloat-calculus': '/articles/frameworks/feature-bloat-calculus',
+  '/articles/cost-of-predictivity': '/articles/frameworks/cost-of-predictivity',
+  '/articles/innovation-tax': '/articles/frameworks/innovation-tax',
+  '/articles/technical-insolvency-date': '/articles/frameworks/technical-insolvency-date',
   '/blog/ai-product-management-guide': '/vault/curriculum/tracks/ai-product-economics/2-1',
   '/blog/the-subprime-code-crisis': '/blog/the-negative-carry-code-crisis',
   '/blog/subprime-code-crisis': '/blog/negative-carry-code-crisis',
+  '/tools/mcp-security-scanner': '/tools/mcp-security-auditor',
+  '/tools/ai-hallucination-cost': '/tools/hallucination-tax',
+  '/tools/ai-credit-pricing-calculator': '/tools/aueb',
+  '/tools/claude-api-cost-calculator': '/tools/ai-feature-margin',
+  '/tools/agents-md-validator': '/tools/spec-quality-scorecard',
+  '/tools/n8n-vs-zapier-calculator': '/tools/automation-cost-calculator',
   '/concepts/zero-trust-type-verification': '/glossary/zero-trust-type-gate',
   '/concepts/probabilistic-product-management': '/glossary/pillars/probabilistic-product-management',
   '/concepts/slm-vs-api-arbitrage': '/concepts/slm-repatriation',
@@ -102,28 +113,13 @@ const EDGE_REDIRECTS: Record<string, string> = {
   '/vault/curriculum/tracks/cloud-finops/14-15': '/vault/curriculum/tracks/cloud-finops/7-15',
 };
 
-const POISONED_CACHE_URLS = [
-  'https://www.richardewing.io/legal',
-  'https://richardewing.io/legal',
-  'https://www.richardewing.io/legal?_rsc=Edh1o4O2g_TGZBR9',
-  'https://www.richardewing.io/legal?_rsc=FaxdFzspToQPQGgF',
-  'https://www.richardewing.io/glossary/pillars/engineering-leadership',
-  'https://www.richardewing.io/glossary/pillars/engineering-leadership?_rsc=mgLEKDLYu_HEislZ',
-  'https://www.richardewing.io/reality-check',
-  'https://richardewing.io/reality-check',
-  'https://www.richardewing.io/contact',
-  'https://richardewing.io/contact',
-  'https://richardewing.io/',
-  'https://richardewing.io/sitemap.xml',
-  'https://richardewing.io/for-cfos',
-  'https://www.richardewing.io/for-cfos',
-  'https://richardewing.io/compare/postgresql-vs-gitlab-ci',
-  'https://www.richardewing.io/compare/postgresql-vs-gitlab-ci',
-];
+const TRAINING_SCRAPER_REGEX =
+  /\b(gptbot|claudebot|anthropic-ai|google-extended|google-cloudvertexbot|ccbot|amazonbot|meta-externalagent|cohere-ai|bytespider|petalbot|diffbot|imagesiftbot|omgilibot|chatglm-spider|deepseekbot)\b/i;
 
 function isAuthOrDynamicPath(pathname: string): boolean {
   return (
-    pathname.startsWith('/vault') ||
+    pathname === '/vault' ||
+    /^\/vault\/(assets|team|join)(\/|$)/.test(pathname) ||
     pathname.startsWith('/admin') ||
     pathname.startsWith('/sign-in') ||
     pathname.startsWith('/sign-up') ||
@@ -132,6 +128,15 @@ function isAuthOrDynamicPath(pathname: string): boolean {
     pathname.startsWith('/ai-integration/system/download') ||
     pathname.startsWith('/tools/board-room') ||
     pathname.startsWith('/tools/dashboard')
+  );
+}
+
+function isPrivateUncachedPage(pathname: string): boolean {
+  return (
+    pathname.startsWith('/dashboard') ||
+    pathname.startsWith('/workspace') ||
+    pathname.startsWith('/wizard') ||
+    pathname.startsWith('/toolkit-success')
   );
 }
 
@@ -151,13 +156,20 @@ function applySecurityAndCacheHeaders(res: NextResponse, req: NextRequest): Next
     req.nextUrl.searchParams.has('__clerk_handshake');
 
   const isRedirect = res.status >= 300 && res.status < 400 && res.status !== 301 && res.status !== 308;
+  const isCacheableMethod = req.method === 'GET' || req.method === 'HEAD';
 
-  if (isRsc || isRedirect || isAuthOrDynamicPath(req.nextUrl.pathname) || req.method !== 'GET') {
+  if (
+    isRsc ||
+    isRedirect ||
+    isAuthOrDynamicPath(req.nextUrl.pathname) ||
+    isPrivateUncachedPage(req.nextUrl.pathname) ||
+    !isCacheableMethod
+  ) {
     res.headers.set('Cache-Control', 'private, no-cache, no-store, max-age=0, must-revalidate');
     res.headers.set('Cloudflare-CDN-Cache-Control', 'no-store');
     res.headers.set('CDN-Cache-Control', 'no-store');
   } else if (res.status === 200) {
-    res.headers.set('Cache-Control', 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400');
+    res.headers.set('Cache-Control', 'public, max-age=0, s-maxage=86400, stale-while-revalidate=604800');
     res.headers.set('Cloudflare-CDN-Cache-Control', 'max-age=86400, stale-while-revalidate=604800');
     res.headers.set('Vary', 'Host, RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding');
   }
@@ -170,26 +182,34 @@ const clerkHandler = clerkMiddleware(async () => {
 });
 
 export default async function middleware(req: NextRequest, event: NextFetchEvent) {
+  const userAgent = (req.headers.get('user-agent') || '').toLowerCase();
+
+  // 0a. Short-circuit Cloudflare Early Hints subrequests immediately to prevent 103/504 timeouts
+  if (userAgent.includes('early hints')) {
+    return new NextResponse(null, {
+      status: 204,
+      headers: {
+        'Cache-Control': 'public, max-age=86400, s-maxage=86400',
+      },
+    });
+  }
+
+  // 0b. Deterministic 403 block on foundation-model training scrapers while preserving AI search/citation bots
+  if (TRAINING_SCRAPER_REGEX.test(userAgent)) {
+    return new NextResponse('Forbidden: AI training scraping disallowed. Live AI search and citation bots permitted.', {
+      status: 403,
+      headers: {
+        'Content-Type': 'text/plain; charset=utf-8',
+        'Cache-Control': 'public, max-age=86400, s-maxage=86400',
+        'X-Robots-Tag': 'noai, noimageai',
+      },
+    });
+  }
+
   const host = req.headers.get('host') || '';
   const pathname = req.nextUrl.pathname;
 
-  // Self-heal any poisoned 307/200 cache entries in the current Cloudflare POP
-  try {
-    const cfCaches = (globalThis as unknown as { caches?: { default?: Cache } }).caches;
-    if (cfCaches?.default) {
-      for (const u of POISONED_CACHE_URLS) {
-        event.waitUntil(cfCaches.default.delete(u).catch(() => false));
-      }
-      event.waitUntil(cfCaches.default.delete(`https://richardewing.io${pathname}`).catch(() => false));
-      if (req.nextUrl.search) {
-        event.waitUntil(cfCaches.default.delete(`https://richardewing.io${pathname}${req.nextUrl.search}`).catch(() => false));
-      }
-    }
-  } catch {
-    // Ignore if caches API is unavailable in local dev
-  }
-
-  // 0. Canonical Host & Alias Single-Hop Enforcement: 301 redirect at Cloudflare Edge
+  // 0c. Canonical Host & Alias Single-Hop Enforcement: 301 redirect at Cloudflare Edge
   let targetPath = EDGE_REDIRECTS[pathname] || pathname;
 
   // Collapse legacy /curriculum/tracks/* and N-prefixed module routes into single-hop 301s
@@ -233,12 +253,8 @@ export default async function middleware(req: NextRequest, event: NextFetchEvent
     return redirectRes;
   }
 
-  const userAgent = (req.headers.get('user-agent') || '').toLowerCase();
-
-  // 1. Instant Edge Shield against Rogue Scrapers & Vulnerability Probes (0.01ms CPU)
+  // 1. Instant Edge Shield against Vulnerability Probes (0.01ms CPU)
   if (
-    userAgent.includes('nginx-ssl early hints') ||
-    userAgent.includes('bytespider') ||
     pathname.endsWith('.php') ||
     pathname.endsWith('.env') ||
     pathname.endsWith('.bak') ||

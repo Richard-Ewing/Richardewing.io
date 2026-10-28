@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { ExogramDemoForm } from './ExogramDemoForm';
 
 export const metadata: Metadata = {
-    title: 'Exogram Live Sandbox Demo & VPC Trial Request',
-    description: 'Schedule a live demonstration of Exogram runtime AI cost caps, policy-as-code gateway enforcement, and XML context boundaries.',
+    title: 'Exogram Live Sandbox & VPC Trial Demo',
+    description: 'Schedule a live demonstration of Exogram runtime AI cost caps, deterministic 3-gate database protection, and policy-as-code MCP boundaries.',
     alternates: { canonical: 'https://www.richardewing.io/exogram/demo' },
     openGraph: {
         title: 'Exogram Live Sandbox Demo | Richard Ewing',

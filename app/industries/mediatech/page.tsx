@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'MediaTech AI Economics & Video Processing Debt',
+    title: 'MediaTech AI & Video Compute Margins',
     description: 'Audit generative media rendering compute costs, digital asset management storage bloat, and CMS pipeline debt across digital media operations.',
     keywords: ['mediatech technical debt', 'streaming technology', 'content delivery infrastructure', 'media technology economics', 'CDN engineering debt'],
     alternates: { canonical: 'https://www.richardewing.io/industries/mediatech' },
@@ -47,7 +47,7 @@ export default function MediaTechPage() {
                     <div className="rounded-2xl border border-violet-500/30 bg-violet-500/5 p-8 text-center">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">MediaTech R&D Audit</h2>
                         <p className="text-zinc-950 mb-6">Quantify your streaming infrastructure debt, recommendation AI costs, and content delivery economics.</p>
-                        <Link href="/services" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-pink-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Book MediaTech Audit →</Link>
+                        <Link href="/services" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-pink-500 text-white font-semibold font-bold hover:opacity-90 transition-opacity">Book MediaTech Audit →</Link>
                     
                     <AdvisoryCTA variant="industry" />
 </div>

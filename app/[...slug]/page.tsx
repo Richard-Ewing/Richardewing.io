@@ -9,6 +9,8 @@ import { PILLARS } from '@/app/glossary/pillarsMapping';
 import { SKILLS, FAILURES } from '@/lib/content/skills';
 import { CAREER_PATHS } from '@/app/lib/career-paths';
 
+import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
+
 export function generateStaticParams() {
   return pageData.map((p) => ({ slug: p.slug.split('/') }));
 }
@@ -23,20 +25,26 @@ export async function generateMetadata({
   const page = pageData.find((p) => p.slug === key);
   if (!page) return {};
 
+  const baseTitle = clampSeoTitle(page.title, 42);
+  const metaDesc = formatSeoDescription(page.description);
+  const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(page.title)}&category=${encodeURIComponent('Executive Advisory')}`;
+
   return {
-    title: page.title,
-    description: page.description,
+    title: baseTitle,
+    description: metaDesc,
     alternates: { canonical: `${siteUrl}/${page.slug}` },
     openGraph: {
-      title: `${page.title} | Richard Ewing`,
-      description: page.description,
+      title: `${baseTitle} | Richard Ewing`,
+      description: metaDesc,
       url: `${siteUrl}/${page.slug}`,
       type: 'website',
+      images: [{ url: ogUrl, width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${page.title} | Richard Ewing`,
-      description: page.description,
+      title: `${baseTitle} | Richard Ewing`,
+      description: metaDesc,
+      images: [ogUrl],
     },
   };
 }

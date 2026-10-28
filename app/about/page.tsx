@@ -2,20 +2,21 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ContactForm } from '@/components/contact/contact-form';
+import { personSchema } from '@/app/lib/schemas';
 
 export const metadata: Metadata = {
   title: {
     absolute: 'About Richard Ewing | Product & AI Economist',
   },
   description:
-    'Product & AI Economist with 15+ years of enterprise SaaS P&L leadership, CS foundation, and Finance MBA. Founder of Exogram and CareerWin.',
+    'Richard Ewing is a Product & AI Economist, Exogram and CareerWin founder, and CIO.com contributor. Explore his SaaS P&L track record and advisory work.',
   alternates: {
     canonical: 'https://www.richardewing.io/about',
   },
   openGraph: {
     title: 'About Richard Ewing | Product & AI Economist',
     description:
-      'Product & AI Economist with 15+ years of enterprise SaaS P&L leadership. Founder of Exogram and CareerWin.',
+      'Richard Ewing is a Product & AI Economist, Exogram and CareerWin founder, and CIO.com contributor. Explore his SaaS P&L track record and advisory work.',
     url: 'https://www.richardewing.io/about',
     type: 'profile',
     images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
@@ -24,28 +25,19 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About Richard Ewing | Product & AI Economist',
     description:
-      'Product & AI Economist with 15+ years of enterprise SaaS P&L leadership. Founder of Exogram and CareerWin.',
+      'Richard Ewing is a Product & AI Economist, Exogram and CareerWin founder, and CIO.com contributor. Explore his SaaS P&L track record and advisory work.',
     images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
 
 export default function AboutPage() {
-  const schema = {
+  const profilePageSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Richard Ewing',
-    jobTitle: 'Product & AI Economist',
+    '@type': 'ProfilePage',
+    '@id': 'https://www.richardewing.io/about#profilepage',
     url: 'https://www.richardewing.io/about',
-    image: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg',
-    sameAs: [
-      'https://www.linkedin.com/in/richard-ewing-mba',
-      'https://github.com/richardewing',
-      'https://x.com/richardewing',
-      'https://www.cio.com/author/richard-ewing/',
-      'https://builtin.com/authors/richard-ewing',
-    ],
-    description:
-      'Enterprise product leader and AI economist helping technology executives price AI features profitably and eliminate engineering waste.',
+    name: 'About Richard Ewing | Product & AI Economist',
+    mainEntity: personSchema,
   };
 
   const breadcrumbSchema = {
@@ -61,7 +53,7 @@ export default function AboutPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }}
       />
       <script
         type="application/ld+json"
@@ -75,11 +67,9 @@ export default function AboutPage() {
           <p className="eyebrow">
             <i /> About · Operator Provenance
           </p>
-          <h1>A product leader, AI economist, and practical operator.</h1>
+          <h1>Richard Ewing: Product Leader, AI Economist, and Operator.</h1>
           <p className="inner-lede">
-            I’ve spent 15+ years in product, operations, and technology, helping leaders
-            turn AI from a cost center into compound capital. No hype, no consulting
-            theater: just grounded enterprise reality.
+            Richard Ewing is a Product and AI Economist with 15+ years of enterprise SaaS P&amp;L ownership, a computer science foundation, and a Finance MBA. Founder of Exogram and CareerWin, and contributor at CIO.com and Built In, he helps CEOs, CFOs, and CPOs turn AI spend into compounding margin.
           </p>
 
           <div className="actions">
@@ -117,7 +107,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-7 space-y-6 text-sm text-zinc-800 leading-relaxed">
             <h2 className="font-serif text-3xl font-medium text-[var(--ink)]">
-              The missing link between engineering activity and enterprise value.
+              Connecting engineering spend directly to gross margin and enterprise value.
             </h2>
             <p>
               Over the last fifteen years, I have scaled software portfolios from early

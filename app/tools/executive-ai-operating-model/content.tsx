@@ -61,9 +61,9 @@ export default function CEOOperatingModelTool() {
                         <Crown className="w-3.5 h-3.5 text-indigo-600" />
                         CEO &amp; Executive Suite &bull; Step 4 Diagnostic
                     </div>
-                    <h1 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
+                    <h2 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
                         CEO &amp; Executive AI <span className="text-indigo-600">Operating Model Diagnostic</span>
-                    </h1>
+                    </h2>
                     <p className="mt-3 text-base text-zinc-700 max-w-3xl mx-auto font-medium leading-relaxed">
                         For CEOs, COOs, Managing Directors, and Cross-Functional Executives: Audit organizational maturity, capital allocation efficiency, and autonomous governance across all corporate functions.
                     </p>

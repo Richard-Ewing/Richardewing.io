@@ -52,9 +52,10 @@
 | `/architecture/deterministic-control-layer` | Architecture/Deterministic Control Layer | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/architecture/deterministic-control-layer/page.tsx` |
 | `/assessment` | Assessment | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/assessment/page.tsx` |
 | `/assessments` | Assessments | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/assessments/page.tsx` |
-| `/benchmark/ai-capital-2026` | Benchmark/Ai Capital 2026 | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/benchmark/ai-capital-2026/page.tsx` |
+| `/benchmark/ai-capital-2026` | 2026 AI Capital Allocation Benchmark | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Book a Strategic Audit ↗ | `app/benchmark/ai-capital-2026/page.tsx` |
 | `/benchmark/ai-discoverability` | Benchmark/Ai Discoverability | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/benchmark/ai-discoverability/page.tsx` |
-| `/benchmark` | Benchmark | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/benchmark/page.tsx` |
+| `/benchmark/llm-cost-and-margin-index` | 2026 LLM API Cost & SaaS Margin Index | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Stress-Test Feature Margin ↗ | `app/benchmark/llm-cost-and-margin-index/page.tsx` |
+| `/benchmark` | AI Cost & Engineering Benchmarks (2026) | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Open LLM Margin Index ↗ | `app/benchmark/page.tsx` |
 | `/benchmarks` | Benchmarks | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/benchmarks/page.tsx` |
 | `/blog` | Blog | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/blog/page.tsx` |
 | `/book` | Book | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/book/page.tsx` |
@@ -646,55 +647,58 @@
 
 ---
 
-### Diagnostics & Tools (46 Routes)
+### Diagnostics & Tools (49 Routes)
 
 | Route Path | Title / Entity | Status | Design Language | Primary CTA | Component Source |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `/tools/aari` | Tools/Aari | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/aari/page.tsx` |
+| `/scorecard/[toolSlug]` | Viral Executive Scorecard Readout | `NOINDEX` | Concept B (Warm Paper / Forest Green / Playfair) | Open Interactive Calculator ↗ | `app/scorecard/[toolSlug]/page.tsx` |
+| `/tools/aari` | Autonomous Agent Readiness Index (AARI) | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Explore Exogram Runtime Gate ↗ | `app/tools/aari/page.tsx` |
 | `/tools/agent-router` | Tools/Agent Router | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/agent-router/page.tsx` |
 | `/tools/agentic-drift-matrix` | Tools/Agentic Drift Matrix | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/agentic-drift-matrix/page.tsx` |
-| `/tools/ai-feature-margin` | Tools/Ai Feature Margin | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/ai-feature-margin/page.tsx` |
+| `/tools/ai-feature-margin` | Claude & OpenAI API Margin Calculator | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Pass Inputs to AUEB ↗ | `app/tools/ai-feature-margin/page.tsx` |
 | `/tools/ai-roi-timeline` | Tools/Ai Roi Timeline | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/ai-roi-timeline/page.tsx` |
 | `/tools/ai-unit-economics-audit` | Tools/Ai Unit Economics Audit | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/ai-unit-economics-audit/page.tsx` |
 | `/tools/aper/faq` | Tools/Aper/Faq | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/aper/faq/page.tsx` |
-| `/tools/aper` | Tools/Aper | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/aper/page.tsx` |
+| `/tools/aper` | Revenue Per Engineer Calculator (APER) | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Pass Inputs to Due Diligence ↗ | `app/tools/aper/page.tsx` |
 | `/tools/audit-interview/faq` | Tools/Audit Interview/Faq | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/audit-interview/faq/page.tsx` |
 | `/tools/audit-interview` | Tools/Audit Interview | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/audit-interview/page.tsx` |
 | `/tools/aueb/faq` | Tools/Aueb/Faq | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/aueb/faq/page.tsx` |
-| `/tools/aueb` | Tools/Aueb | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/aueb/page.tsx` |
-| `/tools/board-risk-scorecard` | Tools/Board Risk Scorecard | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/board-risk-scorecard/page.tsx` |
+| `/tools/aueb` | AI Credit vs Seat Calculator (AUEB) | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Get the $29 Survival Kit ↗ | `app/tools/aueb/page.tsx` |
+| `/tools/automation-cost-calculator` | Workflow Automation & SaaS Cost Model | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Book 14-Day Automation Sprint ($2,500) ↗ | `app/tools/automation-cost-calculator/page.tsx` |
+| `/tools/board-risk-scorecard` | Board AI Governance Risk Scorecard | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Inquire for Boardroom Briefing ↗ | `app/tools/board-risk-scorecard/page.tsx` |
 | `/tools/board-room` | Tools/Board Room | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/board-room/page.tsx` |
 | `/tools/career-pathing` | Tools/Career Pathing | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/career-pathing/page.tsx` |
-| `/tools/cfo-capitalization-audit` | Tools/Cfo Capitalization Audit | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/cfo-capitalization-audit/page.tsx` |
+| `/tools/cfo-capitalization-audit` | CFO R&D Capitalization & Section 174 | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Inquire for CFO R&D Capital Audit ↗ | `app/tools/cfo-capitalization-audit/page.tsx` |
 | `/tools/cloud-repatriation` | Tools/Cloud Repatriation | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/cloud-repatriation/page.tsx` |
-| `/tools/code-review-bottleneck-calc` | Tools/Code Review Bottleneck Calc | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/code-review-bottleneck-calc/page.tsx` |
+| `/tools/code-review-bottleneck-calc` | AI Code Review Bottleneck Calculator | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Explore Exogram Compiler Gate ↗ | `app/tools/code-review-bottleneck-calc/page.tsx` |
 | `/tools/copilot-roi` | Tools/Copilot Roi | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/copilot-roi/page.tsx` |
-| `/tools/cpo-product-portfolio-matrix` | Tools/Cpo Product Portfolio Matrix | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/cpo-product-portfolio-matrix/page.tsx` |
+| `/tools/cpo-product-portfolio-matrix` | CPO AI Feature Margin Matrix | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Book CPO Advisory Session ↗ | `app/tools/cpo-product-portfolio-matrix/page.tsx` |
 | `/tools/dashboard` | Tools/Dashboard | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/dashboard/page.tsx` |
 | `/tools/due-diligence/faq` | Tools/Due Diligence/Faq | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/due-diligence/faq/page.tsx` |
-| `/tools/due-diligence` | Tools/Due Diligence | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/due-diligence/page.tsx` |
+| `/tools/due-diligence` | PE Software & AI Due Diligence Audit | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Book $15,000 PE Diligence ↗ | `app/tools/due-diligence/page.tsx` |
 | `/tools/eu-ai-act-checker/faq` | Tools/Eu Ai Act Checker/Faq | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/eu-ai-act-checker/faq/page.tsx` |
 | `/tools/eu-ai-act-checker` | Tools/Eu Ai Act Checker | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/eu-ai-act-checker/page.tsx` |
 | `/tools/ev-se/faq` | Tools/Ev Se/Faq | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/ev-se/faq/page.tsx` |
 | `/tools/ev-se` | Tools/Ev Se | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/ev-se/page.tsx` |
-| `/tools/executive-ai-operating-model` | Tools/Executive Ai Operating Model | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/executive-ai-operating-model/page.tsx` |
-| `/tools/fte-displacement` | Tools/Fte Displacement | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/fte-displacement/page.tsx` |
-| `/tools/hallucination-tax` | Tools/Hallucination Tax | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/hallucination-tax/page.tsx` |
+| `/tools/executive-ai-operating-model` | Executive AI Operating Model Audit | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Schedule CEO Strategy Session ↗ | `app/tools/executive-ai-operating-model/page.tsx` |
+| `/tools/fte-displacement` | Department AI Automation ROI Model | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Book 14-Day Automation Sprint ↗ | `app/tools/fte-displacement/page.tsx` |
+| `/tools/hallucination-tax` | AI Hallucination Cost & QA Calculator | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Explore Exogram Gate ↗ | `app/tools/hallucination-tax/page.tsx` |
 | `/tools/innovation-tax-calculator` | Tools/Innovation Tax Calculator | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/innovation-tax-calculator/page.tsx` |
-| `/tools/mcp-security-auditor` | Tools/Mcp Security Auditor | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/mcp-security-auditor/page.tsx` |
-| `/tools/negative-carry-code-auditor` | Tools/Negative Carry Code Auditor | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/negative-carry-code-auditor/page.tsx` |
+| `/tools/mcp-security-auditor` | MCP Security Checklist & Risk Auditor | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Pass Inputs to Shadow AI ↗ | `app/tools/mcp-security-auditor/page.tsx` |
+| `/tools/negative-carry-code-auditor` | Vibe-Coded App Debt & Risk Auditor | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Book $450 Unstick Session ↗ | `app/tools/negative-carry-code-auditor/page.tsx` |
 | `/tools` | Tools | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/page.tsx` |
 | `/tools/pdi/faq` | Tools/Pdi/Faq | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/pdi/faq/page.tsx` |
-| `/tools/pdi` | Tools/Pdi | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/pdi/page.tsx` |
+| `/tools/pdi` | Technical Debt Dollar Calculator (PDI) | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Pass Inputs to Due Diligence ↗ | `app/tools/pdi/page.tsx` |
 | `/tools/prompt-injection-sandbox` | Tools/Prompt Injection Sandbox | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/prompt-injection-sandbox/page.tsx` |
 | `/tools/rag-chunking-visualizer` | Tools/Rag Chunking Visualizer | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/rag-chunking-visualizer/page.tsx` |
 | `/tools/scoring` | Tools/Scoring | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/scoring/page.tsx` |
-| `/tools/section-174-calculator` | Tools/Section 174 Calculator | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/section-174-calculator/page.tsx` |
-| `/tools/shadow-ai` | Tools/Shadow Ai | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/shadow-ai/page.tsx` |
-| `/tools/slm-break-even` | Tools/Slm Break Even | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/slm-break-even/page.tsx` |
-| `/tools/slm-vs-api` | Tools/Slm Vs Api | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/slm-vs-api/page.tsx` |
-| `/tools/spec-quality-scorecard` | Tools/Spec Quality Scorecard | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/spec-quality-scorecard/page.tsx` |
+| `/tools/section-174-calculator` | Section 174 R&D Tax Cost Calculator | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Book $15,000 PE & CFO Audit ↗ | `app/tools/section-174-calculator/page.tsx` |
+| `/tools/shadow-ai` | Enterprise Shadow AI Risk Calculator | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Explore Exogram Gateway ↗ | `app/tools/shadow-ai/page.tsx` |
+| `/tools/slm-break-even` | SLM Fine-Tuning vs Hosted API Break-Even | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Explore Exogram Model Routing ↗ | `app/tools/slm-break-even/page.tsx` |
+| `/tools/slm-vs-api` | Self-Host LLM vs API Cost Calculator | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Pass Inputs to AUEB ↗ | `app/tools/slm-vs-api/page.tsx` |
+| `/tools/spec-quality-scorecard` | AGENTS.md & SPEC.md Audit Scorecard | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Get $29 Survival Kit ↗ | `app/tools/spec-quality-scorecard/page.tsx` |
 | `/tools/subprime-code-auditor` | Tools/Subprime Code Auditor | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/subprime-code-auditor/page.tsx` |
+| `/tools/vibe-coding-checklist` | Vibe-Coded App Security & Launch Audit | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Pass Inputs to Spec Scorecard ↗ | `app/tools/vibe-coding-checklist/page.tsx` |
 | `/tools/vta` | Tools/Vta | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/vta/page.tsx` |
 
 ---
@@ -982,6 +986,7 @@
 | `/glossary/change-management` | Change Management - Definition & Framework | `REDIRECT` | Concept B (Editorial High-Contrast) | Audit AI Unit Economics ↗ | `app/glossary/[slug]/page.tsx` |
 | `/glossary/vendor-lock-in` | Vendor Lock-In - Definition & Framework | `REDIRECT` | Concept B (Editorial High-Contrast) | Audit AI Unit Economics ↗ | `app/glossary/[slug]/page.tsx` |
 | `/glossary/product-debt-index` | Product Debt Index (PDI) - Definition & Framework | `INDEXED` | Concept B (Editorial High-Contrast) | Audit AI Unit Economics ↗ | `app/glossary/[slug]/page.tsx` |
+| `/glossary/product-pl-ownership` | Product P&L Ownership - Definition & Framework | `INDEXED` | Concept B (Editorial High-Contrast) | Audit AI Unit Economics ↗ | `app/glossary/[slug]/page.tsx` |
 | `/glossary/ev-se-framework` | Enterprise Value Scenario Engine (EV-SE) - Definition & Framework | `REDIRECT` | Concept B (Editorial High-Contrast) | Audit AI Unit Economics ↗ | `app/glossary/[slug]/page.tsx` |
 | `/glossary/aueb-framework` | AI Unit Economics Benchmark (AUEB) - Definition & Framework | `INDEXED` | Concept B (Editorial High-Contrast) | Audit AI Unit Economics ↗ | `app/glossary/[slug]/page.tsx` |
 | `/glossary/aper-metric` | APER (Annualized Productivity to Engineering Ratio) - Definition & Framework | `INDEXED` | Concept B (Editorial High-Contrast) | Audit AI Unit Economics ↗ | `app/glossary/[slug]/page.tsx` |

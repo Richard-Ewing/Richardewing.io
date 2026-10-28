@@ -95,9 +95,9 @@ export default function BoardRiskScorecardTool() {
                         <Landmark className="w-3.5 h-3.5 text-amber-600" />
                         Boardroom &bull; Fiduciary Oversight Diagnostic
                     </div>
-                    <h1 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
+                    <h2 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
                         Board AI Governance &amp; <span className="text-amber-600">Fiduciary Risk Scorecard</span>
-                    </h1>
+                    </h2>
                     <p className="mt-3 text-base text-zinc-700 max-w-3xl mx-auto font-medium leading-relaxed">
                         For Board Directors, CEOs, and Audit Committees: Evaluate corporate AI capital efficiency, autonomous signing boundaries, and technical insolvency risk in boardroom financial language.
                     </p>

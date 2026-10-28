@@ -16,8 +16,45 @@ import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated'
 import { NewsletterForm } from '../../components/newsletter-form';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import { GooglePreferredBadge } from '../../components/GooglePreferredBadge';
+import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
+import { EXECUTIVE_MATRICES } from '../executive-matrices';
 
 type Props = { params: Promise<{ slug: string }> };
+
+const GLOSSARY_SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
+    'calculating-roai': {
+        title: 'Calculating ROAI: AI ROI Formula & Model',
+        description: 'Calculate Return on AI Investment (ROAI) with net margin gains, inference COGS, integration labor, and maintenance burn across SaaS features.',
+    },
+    'ic-vs-management-track': {
+        title: 'IC vs Management Track: Level & Pay Matrix',
+        description: 'Compare Principal IC vs Engineering Manager scope, compensation bands, promotion gates, and P&L accountability from L5 Senior to L8 Principal.',
+    },
+    'engineering-levels': {
+        title: 'Software Engineering Levels (L3-L8) Matrix',
+        description: 'Compare L3 to L8 software engineering levels, Staff vs Principal scope, compensation bands, and architecture ownership across tech teams.',
+    },
+    'ai-unit-economics': {
+        title: 'AI Unit Economics: Token Cost & Margin',
+        description: 'Model AI unit economics from token inference COGS and cache hit rates to gross margin thresholds for $29 to $99 SaaS seats and credit tiers.',
+    },
+    'model-right-sizing': {
+        title: 'Model Right-Sizing: Cut LLM Inference Cost',
+        description: 'Cut LLM API spend 60% to 85% by routing routine classification and extraction tasks from frontier models to right-sized small language models.',
+    },
+    'ai-cost-attribution': {
+        title: 'AI Cost Attribution: Token COGS Per Tenant',
+        description: 'Track LLM inference spend per customer, feature, and workflow so heavy P99 accounts stop subsidizing negative gross margins across SaaS tiers.',
+    },
+    'pl-ownership-for-pms': {
+        title: 'P&L Ownership for Product Managers Guide',
+        description: 'Transition from feature velocity to Product Manager P&L ownership across ARR contribution, AI inference COGS, R&D burn, and net gross margin.',
+    },
+    'product-pl-ownership': {
+        title: 'Product P&L Ownership: Margin & Burn Model',
+        description: 'Run a product P&L sheet tying ARR, churn, cloud hosting, LLM token COGS, and capitalized engineering payroll to contribution margin per line.',
+    },
+};
 
 export async function generateStaticParams() {
     return glossaryTerms.filter(t => KEEP_TERMS.includes(t.slug)).map(t => ({ slug: t.slug }));
@@ -33,22 +70,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         return { robots: { index: false, follow: true } };
     }
 
-    const titleStr = `${term.title} - Definition & Framework`;
-
-    const metaDescription = (() => {
-        let desc = term.definition.trim().replace(/\s+/g, ' ');
-        if (!desc.endsWith('.')) desc += '.';
-        if (desc.length < 120) {
-            const suffix = ` Definitive industry terminology and execution frameworks for technology leaders and AI economists.`;
-            const combined = (desc + suffix).trim();
-            if (combined.length <= 158) return combined;
-            return (desc + ` Industry definitions and frameworks by Richard Ewing.`).slice(0, 155);
-        }
-        return desc.length > 158 ? desc.slice(0, 155) + '...' : desc;
-    })();
+    const override = GLOSSARY_SEO_OVERRIDES[slug];
+    const baseTitle = override
+        ? clampSeoTitle(override.title, 42)
+        : clampSeoTitle(`${term.title}: Definition & Guide`, 42);
+    const metaDescription = override
+        ? formatSeoDescription(override.description)
+        : formatSeoDescription(term.definition);
+    const ogImageUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(term.title)}&category=${encodeURIComponent(term.category)}`;
 
     return {
-        title: titleStr,
+        title: baseTitle,
         description: metaDescription,
         robots: {
             index: true,
@@ -63,25 +95,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ],
         alternates: { canonical: `https://www.richardewing.io/glossary/${slug}` },
         openGraph: {
-            title: titleStr,
-            description: term.definition.slice(0, 155).replace(/\n/g, ' '),
+            title: `${baseTitle} | Richard Ewing`,
+            description: metaDescription,
             url: `https://www.richardewing.io/glossary/${slug}`,
             siteName: 'Richard Ewing',
             type: 'article',
             images: [
                 {
-                    url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg',
+                    url: ogImageUrl,
                     width: 1200,
                     height: 630,
-                    alt: titleStr,
+                    alt: term.title,
                 }
             ],
         },
         twitter: {
             card: 'summary_large_image',
-            title: titleStr,
-            description: term.definition.slice(0, 155).replace(/\n/g, ' '),
-            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
+            title: `${baseTitle} | Richard Ewing`,
+            description: metaDescription,
+            images: [ogImageUrl],
         }
     };
 }
@@ -253,9 +285,24 @@ export default async function GlossaryTermPage({ params }: Props) {
         '@context': 'https://schema.org',
         '@type': 'Article',
         headline: `What is ${term.title}?`,
-        description: term.definition.slice(0, 155).replace(/\n/g, ' '),
-        author: { '@type': 'Person', name: 'Richard Ewing', url: 'https://www.richardewing.io/about', jobTitle: 'AI Economist', sameAs: ['https://linkedin.com/in/richard-ewing-mba', 'https://www.cio.com/author/richard-ewing/'] },
-        publisher: { '@type': 'Person', name: 'Richard Ewing' },
+        description: formatSeoDescription(term.definition),
+        author: {
+            '@type': 'Person',
+            name: 'Richard Ewing',
+            url: 'https://www.richardewing.io/about',
+            jobTitle: 'Product Economist & AI Capital Auditor',
+            sameAs: [
+                'https://www.linkedin.com/in/richard-ewing-mba',
+                'https://github.com/Richard-Ewing',
+                'https://www.cio.com/author/richard-ewing/',
+                'https://builtin.com/authors/richard-ewing',
+                'https://hackernoon.com/u/richardewing',
+                'https://www.mindtheproduct.com/profile/richard-ewing',
+                'https://theaieconomist.beehiiv.com/',
+                'https://exogram.ai',
+            ],
+        },
+        publisher: { '@type': 'Organization', name: 'Richard Ewing', url: 'https://www.richardewing.io' },
         url: `https://www.richardewing.io/glossary/${slug}`,
         mainEntityOfPage: { '@type': 'WebPage', '@id': `https://www.richardewing.io/glossary/${slug}` },
         datePublished: '2025-01-01',
@@ -266,7 +313,7 @@ export default async function GlossaryTermPage({ params }: Props) {
         '@context': 'https://schema.org',
         '@type': 'DefinedTerm',
         name: term.title,
-        description: term.definition.slice(0, 300).replace(/\n/g, ' '),
+        description: term.definition.slice(0, 300).replace(/\s+/g, ' ').trim(),
         inDefinedTermSet: {
             '@type': 'DefinedTermSet',
             name: 'Richard Ewing Technology Leadership Glossary',
@@ -386,6 +433,45 @@ export default async function GlossaryTermPage({ params }: Props) {
                     </div>
                 </section>
 
+                {/* Executive Reference Matrix (SSR Semantic Table for Featured Snippets & AI Citation) */}
+                {EXECUTIVE_MATRICES[slug] && (
+                    <section className="mb-12 rounded-2xl border border-[var(--line,rgba(36,51,43,0.16))] bg-white p-6 sm:p-8 shadow-sm">
+                        <div className="text-[11px] font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-widest mb-2">
+                            Executive Reference Schedule
+                        </div>
+                        <h2 className="text-2xl font-serif font-bold text-[var(--ink,#1e2924)] mb-2">
+                            {EXECUTIVE_MATRICES[slug].heading}
+                        </h2>
+                        <p className="text-sm text-zinc-700 mb-6 leading-relaxed">
+                            {EXECUTIVE_MATRICES[slug].caption}
+                        </p>
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-sm border-collapse">
+                                <thead>
+                                    <tr className="border-b-2 border-[var(--forest2,#162e26)] bg-[var(--paper2,#ebe7dc)]">
+                                        {EXECUTIVE_MATRICES[slug].columns.map((col, idx) => (
+                                            <th key={idx} scope="col" className="text-left py-3 px-4 font-mono text-xs font-bold uppercase tracking-wider text-[var(--forest2,#162e26)]">
+                                                {col}
+                                            </th>
+                                        ))}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {EXECUTIVE_MATRICES[slug].rows.map((row, rIdx) => (
+                                        <tr key={rIdx} className="border-b border-zinc-200 hover:bg-[#FAF9F6] transition-colors">
+                                            {row.map((cell, cIdx) => (
+                                                <td key={cIdx} className={`py-3.5 px-4 align-top leading-relaxed ${cIdx === 0 ? 'font-bold text-zinc-950 whitespace-nowrap' : 'text-zinc-800'}`}>
+                                                    {cell}
+                                                </td>
+                                            ))}
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                )}
+
                 {/* Where Is It Used? */}
                 {whereIsItUsed && (
                     <section className="mb-12 card p-8 border-cyan-500/20 bg-gradient-to-br from-cyan-500/[0.02] to-transparent">
@@ -495,7 +581,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                 <tr className="border-b border-zinc-400">
                                     <th className="text-left py-3 px-4 text-zinc-950 font-bold font-mono uppercase tracking-widest text-xs">{term.title} vs.</th>
                                     <th className="text-left py-3 px-4 text-emerald-900 font-extrabold font-semibold font-mono uppercase tracking-widest text-xs">{term.title} Advantage</th>
-                                    <th className="text-left py-3 px-4 text-amber-400 font-mono uppercase tracking-widest text-xs">Other Approach</th>
+                                    <th className="text-left py-3 px-4 text-amber-900 font-semibold font-mono uppercase tracking-widest text-xs">Other Approach</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -503,7 +589,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                     <tr key={i} className="border-b border-zinc-400">
                                         <td className="py-3 px-4 text-zinc-950 font-medium">{c.vs}</td>
                                         <td className="py-3 px-4 text-emerald-900 font-extrabold font-semibold">{c.advantage}</td>
-                                        <td className="py-3 px-4 text-amber-400">{c.disadvantage}</td>
+                                        <td className="py-3 px-4 text-amber-900 font-semibold">{c.disadvantage}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -579,7 +665,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                     <th className="text-left py-3 px-4 text-zinc-950 font-bold font-mono uppercase tracking-widest text-xs">Industry</th>
                                     <th className="text-left py-3 px-4 text-zinc-950 font-bold font-mono uppercase tracking-widest text-xs">Metric</th>
                                     <th className="text-left py-3 px-4 text-red-900 font-extrabold font-semibold font-mono uppercase tracking-widest text-xs">Low</th>
-                                    <th className="text-left py-3 px-4 text-amber-400 font-mono uppercase tracking-widest text-xs">Median</th>
+                                    <th className="text-left py-3 px-4 text-amber-900 font-semibold font-mono uppercase tracking-widest text-xs">Median</th>
                                     <th className="text-left py-3 px-4 text-emerald-900 font-extrabold font-semibold font-mono uppercase tracking-widest text-xs">Elite</th>
                                 </tr>
                             </thead>
@@ -589,7 +675,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                         <td className="py-3 px-4 text-zinc-950 font-medium">{b.industry}</td>
                                         <td className="py-3 px-4 text-zinc-950 font-bold">{b.metric}</td>
                                         <td className="py-3 px-4 text-red-900 font-extrabold font-semibold">{b.low}</td>
-                                        <td className="py-3 px-4 text-amber-400">{b.median}</td>
+                                        <td className="py-3 px-4 text-amber-900 font-semibold">{b.median}</td>
                                         <td className="py-3 px-4 text-emerald-900 font-extrabold font-semibold">{b.elite}</td>
                                     </tr>
                                 ))}
@@ -841,7 +927,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                 Richard Ewing is the creator of the AI Economics framework and founder of Exogram. His research on R&D capital audits, technical insolvency, and software economics is featured across Tier 1 publications including <strong>CIO.com</strong>, <strong>Built In</strong> (Editor's Pick), and <strong>HackerNoon</strong>.
                             </p>
                             <div className="flex flex-wrap gap-4 items-center">
-                                <Link href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cyan-600 to-violet-600 text-zinc-950 font-semibold font-bold text-sm font-semibold rounded-lg hover:opacity-90 transition-opacity">
+                                <Link href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cyan-600 to-violet-600 text-white font-semibold font-bold text-sm rounded-lg hover:opacity-90 transition-opacity">
                                     Book Advisory Call →
                                 </Link>
                                 <Link href="/about" className="text-xs font-bold text-zinc-900 font-bold hover:underline font-mono uppercase tracking-wider">

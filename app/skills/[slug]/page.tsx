@@ -8,6 +8,8 @@ import GovernancePathways from '@/components/semantic/GovernancePathways';
 import { ontologyGraph } from '@/lib/ontology/relationships';
 import CommonFailureCascades from '@/components/skills/CommonFailureCascades';
 
+import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
+
 export async function generateStaticParams() {
     return SKILLS.map(s => ({ slug: s.slug }));
 }
@@ -17,39 +19,29 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const skill = getSkillBySlug(slug);
     if (!skill) return {};
 
-    const descriptionText = skill.description.slice(0, 155).replace(/\n/g, ' ');
-
     const cleanTitle = skill.title;
-    const baseTitle = cleanTitle.endsWith('System') || cleanTitle.length > 37 ? cleanTitle : `${cleanTitle} System`;
-    const titleStr = `${baseTitle} | Richard Ewing`;
+    const rawCore = cleanTitle.endsWith('System') || cleanTitle.length > 35 ? cleanTitle : `${cleanTitle} System`;
+    const baseTitle = clampSeoTitle(rawCore, 42);
+    const metaDesc = formatSeoDescription(skill.description);
+    const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(skill.title)}&category=Governance%20System`;
 
     return {
-        title: {
-            absolute: titleStr,
-        },
-        description: (() => {
-            let desc = skill.description.trim().replace(/\s+/g, ' ');
-            if (!desc.endsWith('.')) desc += '.';
-            if (desc.length < 120) {
-                const combined = `${desc} Install deterministic runtime governance controls to prevent AI failures.`;
-                return combined.length <= 155 ? combined : desc;
-            }
-            return desc.length > 155 ? desc.slice(0, 152) + '...' : desc;
-        })(),
+        title: baseTitle,
+        description: metaDesc,
         alternates: { canonical: `https://www.richardewing.io/skills/${slug}` },
         openGraph: {
-            title: `${skill.title} | Governance System`,
-            description: descriptionText,
+            title: `${baseTitle} | Richard Ewing`,
+            description: metaDesc,
             url: `https://www.richardewing.io/skills/${slug}`,
             siteName: 'Richard Ewing',
             type: 'article',
-            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+            images: [{ url: ogUrl, width: 1200, height: 630 }],
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${skill.title} | Governance System`,
-            description: descriptionText,
-            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
+            title: `${baseTitle} | Richard Ewing`,
+            description: metaDesc,
+            images: [ogUrl],
         }
     };
 }

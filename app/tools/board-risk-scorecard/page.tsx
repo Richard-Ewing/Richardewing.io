@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import CalculatorIntentProposal from '@/app/components/calculators/CalculatorIntentProposal';
+import ToolServerHeader from '@/app/components/calculators/ToolServerHeader';
 import BoardRiskScorecardTool from './content';
 
 export const metadata: Metadata = {
@@ -27,6 +28,21 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <div className="space-y-8">
+            <ToolServerHeader
+                slug="board-risk-scorecard"
+                eyebrow="Boardroom Oversight · Fiduciary AI Risk Diagnostic"
+                h1="Board AI Governance & Fiduciary Risk Scorecard"
+                executiveAnswer="Board Directors, CEOs, and Audit Committee Chairs face personal fiduciary exposure when management deploys autonomous AI without SOX 404 signing limits, vendor indemnification, or unit-economic margin floors. Score 10 governance vectors to surface unmonitored balance-sheet liabilities."
+                appName="Board AI Governance Risk Scorecard"
+                appDescription="10-vector fiduciary diagnostic for Board Directors, CEOs, and CFOs auditing enterprise AI governance, signing limits, and capital efficiency."
+                howToName="How to Audit Corporate AI Fiduciary Risk for the Board"
+                howToDescription="Evaluate AI signing authority, data leakage exposure, and gross margin controls across 10 board vectors."
+                steps={[
+                    { name: 'Assess Signing & Control Vectors', text: 'Grade management controls for autonomous financial actions, customer commitments, and SOX compliance.' },
+                    { name: 'Evaluate Capital & Margin Discipline', text: 'Verify whether AI initiatives report net gross margin impact rather than vanity adoption metrics.' },
+                    { name: 'Export Committee Readout', text: 'Generate a board-ready fiduciary risk rating and prioritized audit committee action plan.' },
+                ]}
+            />
             <BoardRiskScorecardTool />
             <div className="page-container max-w-4xl mx-auto px-6 mb-16">
                 <CalculatorIntentProposal

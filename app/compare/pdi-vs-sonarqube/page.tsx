@@ -104,7 +104,7 @@ export default function PDIvsSonarQubePage() {
                         <p className="text-zinc-900 mb-8">
                             SonarQube is a microscope. PDI is a financial statement. CTOs need both. Boards only care about the financial statement.
                         </p>
-                        <Link href="/tools/pdi" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">
+                        <Link href="/tools/pdi" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold font-bold hover:opacity-90 transition-opacity">
                             Try the Free PDI Calculator →
                         </Link>
                     </div>

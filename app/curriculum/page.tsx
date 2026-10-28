@@ -7,8 +7,8 @@ import CurriculumMindmapViewer from '@/components/ai-product-builder/CurriculumM
 import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
 export const metadata: Metadata = {
-  title: 'The AI Product Builder: Complete Master Curriculum',
-  description: 'Exhaustive 4-week syllabus for technical founders. Day-by-day sprint guides covering product validation, FastAPI, semantic caching, and GTM.',
+  title: 'AI Product Builder 4-Week Curriculum',
+  description: 'Complete 4-week syllabus for founders and Product Managers: day-by-day build sprints covering validation, semantic caching, unit margins, and launch.',
   alternates: {
     canonical: 'https://www.richardewing.io/curriculum',
   },

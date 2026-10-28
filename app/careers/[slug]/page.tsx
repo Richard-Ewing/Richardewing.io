@@ -10,6 +10,8 @@ import ShineBorder from '../../components/magicui/shine-border';
 import { GlowCard } from '../../components/magicui/glow-card';
 import { Metadata } from 'next';
 
+import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
+
 const iconMap: Record<string, any> = {
     Cpu, Target, Blocks, LockKeyhole, Database, LayoutTemplate: Cpu
 };
@@ -30,23 +32,27 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         };
     }
 
+    const baseTitle = clampSeoTitle(`${path.title} Career Roadmap`, 42);
+    const metaDesc = formatSeoDescription(path.seoMeta);
+    const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(path.title)}&category=Career%20Roadmap`;
+
     return {
-        title: `${path.title} | 2026 Executive Pathfinder`,
-        description: path.seoMeta,
+        title: baseTitle,
+        description: metaDesc,
         keywords: path.seoKeywords,
         alternates: { canonical: `https://www.richardewing.io/careers/${path.slug}` },
         openGraph: {
-            title: `${path.title} | 2026 Executive Pathfinder`,
-            description: path.seoMeta,
+            title: `${baseTitle} | Richard Ewing`,
+            description: metaDesc,
             url: `https://www.richardewing.io/careers/${path.slug}`,
             type: 'article',
-            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+            images: [{ url: ogUrl, width: 1200, height: 630 }],
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${path.title} | 2026 Executive Pathfinder`,
-            description: path.seoMeta,
-            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
+            title: `${baseTitle} | Richard Ewing`,
+            description: metaDesc,
+            images: [ogUrl],
         },
     };
 }

@@ -11,25 +11,26 @@ import {
 import { ArrowRight, CheckCircle2, ShieldAlert, Cpu, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'AI Unit Economics & SaaS Margin Defense',
+  title: 'AI Unit Economics & SaaS Margin Model',
   description:
-    'Calculate AI feature profitability per query, audit inference token costs, and prevent SaaS gross margin collapse under generative workloads.',
+    'Model AI inference costs per query, find your exact SaaS gross margin collapse point, and stress-test seat vs usage pricing in our interactive calculator.',
   alternates: {
     canonical: 'https://www.richardewing.io/ai-unit-economics',
   },
   openGraph: {
-    title: 'AI Unit Economics & SaaS Margin Defense | Richard Ewing',
+    title: 'AI Unit Economics & SaaS Margin Model | Richard Ewing',
     description:
-      'Model your AI feature costs per user, find your margin collapse point, and restructure pricing before your next board meeting.',
+      'Model AI inference costs per query, find your exact SaaS gross margin collapse point, and stress-test seat vs usage pricing in our interactive calculator.',
     url: 'https://www.richardewing.io/ai-unit-economics',
     type: 'website',
+    images: [{ url: 'https://www.richardewing.io/api/og?title=AI+Unit+Economics+%26+Margin+Model&category=Topical+Authority+Hub' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Unit Economics & SaaS Margin Defense | Richard Ewing',
+    title: 'AI Unit Economics & SaaS Margin Model | Richard Ewing',
     description:
-      'Model your AI feature costs per user, find your margin collapse point, and restructure pricing before your next board meeting.',
-    images: ['https://www.richardewing.io/api/og?title=AI+Unit+Economics+%26+Margin+Defense&category=Topical+Authority+Hub'],
+      'Model AI inference costs per query, find your exact SaaS gross margin collapse point, and stress-test seat vs usage pricing in our interactive calculator.',
+    images: ['https://www.richardewing.io/api/og?title=AI+Unit+Economics+%26+Margin+Model&category=Topical+Authority+Hub'],
   },
 };
 

@@ -6,6 +6,8 @@ import ArticleUpsell from '../../../../components/ArticleUpsell';
 import ProgrammaticAnswersRelated from '../../../../components/ProgrammaticAnswersRelated';
 import ScorecardCheckoutDrawer from '../../../../components/ScorecardCheckoutDrawer';
 
+import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
+
 interface Props {
     params: Promise<{
         topic: string;
@@ -34,50 +36,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const query = queries.find(q => q.questionSlug === p.questionSlug);
     if (!query) return {};
 
-    const headlineTrimmed = query.questionHeadline;
-
-    const cleanAnswerText = query.answerHtml
-        .replace(/<[^>]+>/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim();
-    const extractableSentence =
-        cleanAnswerText.split(/(?<=\.)\s+/)[0] || cleanAnswerText.slice(0, 140);
-    const metaDesc = (() => {
-        const base = extractableSentence.length <= 155
-            ? extractableSentence
-            : extractableSentence.slice(0, 152).trim() + '...';
-        if (base.length >= 120) return base;
-        const suffix = ` Forensic R&D and AI unit economics analysis by Richard Ewing.`;
-        const combined = (base + suffix).trim();
-        return combined.length <= 155 ? combined : combined.slice(0, 152).trim() + '...';
-    })();
+    const baseTitle = clampSeoTitle(query.questionHeadline, 42);
+    const metaDesc = formatSeoDescription(query.answerHtml);
+    const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(query.questionHeadline)}&category=${encodeURIComponent(topicData.topicName || 'Executive Briefing')}`;
 
     return {
-        title: headlineTrimmed,
+        title: baseTitle,
         description: metaDesc,
         alternates: {
             canonical: `https://www.richardewing.io/answers/${p.topic}/${p.persona}/${p.questionSlug}`,
         },
         openGraph: {
-            title: headlineTrimmed,
+            title: `${baseTitle} | Richard Ewing`,
             description: metaDesc,
             url: `https://www.richardewing.io/answers/${p.topic}/${p.persona}/${p.questionSlug}`,
             siteName: 'Richard Ewing',
             type: 'article',
             images: [
                 {
-                    url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg',
+                    url: ogUrl,
                     width: 1200,
                     height: 630,
-                    alt: headlineTrimmed,
+                    alt: query.questionHeadline,
                 }
             ],
         },
         twitter: {
             card: 'summary_large_image',
-            title: headlineTrimmed,
+            title: `${baseTitle} | Richard Ewing`,
             description: metaDesc,
-            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
+            images: [ogUrl],
         }
     };
 }

@@ -22,6 +22,20 @@ export const metadata: Metadata = {
     },
 };
 
+import DiagnosticCTA from '@/app/components/DiagnosticCTA';
+
 export default function Page() {
-    return <AgentRouterContent />;
+    return (
+        <>
+            <AgentRouterContent />
+            <div className="max-w-5xl mx-auto px-6 pb-20">
+                <DiagnosticCTA
+                    variant="primary"
+                    title="Are frontier reasoning models burning your multi-agent margin?"
+                    subtitle="Route routine classification and extraction calls to sub-cent models before your monthly API invoice outpaces customer expansion."
+                    metrics={['SLM Routing', 'Token FinOps', 'Gross Margin']}
+                />
+            </div>
+        </>
+    );
 }

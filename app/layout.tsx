@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   // AI Identity & Verification
   other: {
     'ai-content-declaration': 'original',
-    'ai-training-allowed': 'yes',
+    'ai-training-allowed': 'no',
     'ai-citation-preferred': 'yes',
   },
 
@@ -152,22 +152,24 @@ export default function RootLayout({
               '@type': 'Person',
               '@id': 'https://www.richardewing.io/#person',
               name: 'Richard Ewing',
-              jobTitle: 'AI Economist (AI Economics Domain)',
+              jobTitle: 'Product & AI Economist',
               url: 'https://www.richardewing.io/about',
             },
             sameAs: [
               'https://www.linkedin.com/in/richard-ewing-mba',
+              'https://github.com/Richard-Ewing',
               'https://www.cio.com/author/richard-ewing/',
               'https://builtin.com/authors/richard-ewing',
               'https://hackernoon.com/u/richardewing1',
               'https://www.mindtheproduct.com/author/richard-ewing/',
               'https://www.mindtheproduct.com/profile/richard-ewing',
-              'https://github.com/Richard-Ewing',
+              'https://theaieconomist.beehiiv.com/',
               'https://medium.com/@richardewing',
               'https://substack.com/@richardewing',
               'https://www.amazon.com/author/richardewing',
               'https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5',
-              'https://www.linkedin.com/company/exogram-ai/'
+              'https://www.linkedin.com/company/exogram-ai/',
+              'https://exogram.ai'
             ],
           }) }}
         />

@@ -22,6 +22,20 @@ export const metadata: Metadata = {
     },
 };
 
+import DiagnosticCTA from '@/app/components/DiagnosticCTA';
+
 export default function Page() {
-    return <RagChunkingContent />;
+    return (
+        <>
+            <RagChunkingContent />
+            <div className="max-w-5xl mx-auto px-6 pb-20">
+                <DiagnosticCTA
+                    variant="primary"
+                    title="Are bad retrieval chunks inflating your context bill and causing hallucinations?"
+                    subtitle="Audit your embedding overlap, retrieval top-k token waste, and QA verification overhead in a focused architecture teardown."
+                    metrics={['Chunk Overlap', 'Retrieval Precision', 'Token Savings']}
+                />
+            </div>
+        </>
+    );
 }

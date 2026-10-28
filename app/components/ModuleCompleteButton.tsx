@@ -53,7 +53,7 @@ export default function ModuleCompleteButton({ nextHref, moduleTitle }: ModuleCo
                         {!completed ? (
                             <button
                                 onClick={handleComplete}
-                                className="px-6 py-3 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-zinc-950 font-semibold font-bold text-sm font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-emerald-500/20"
+                                className="px-6 py-3 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold font-bold text-sm font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-emerald-500/20"
                             >
                                 ✓ Mark Complete
                             </button>
@@ -66,7 +66,7 @@ export default function ModuleCompleteButton({ nextHref, moduleTitle }: ModuleCo
                         {nextHref && (
                             <Link
                                 href={nextHref}
-                                className="px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-zinc-950 font-semibold font-bold text-sm font-semibold hover:opacity-90 transition-opacity"
+                                className="px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold font-bold text-sm font-semibold hover:opacity-90 transition-opacity"
                             >
                                 Next Module →
                             </Link>

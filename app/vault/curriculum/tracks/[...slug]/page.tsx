@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound, permanentRedirect } from 'next/navigation';
 import { getModule, getAllModuleSlugs, type CurriculumModule } from '@/lib/curriculum-data';
+import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
+
 export async function generateStaticParams() {
     return getAllModuleSlugs().map(slug => ({
         slug: slug.split('/')
@@ -12,40 +14,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const { slug } = await params;
     const mod = getModule(slug.join('/'));
     if (!mod) return { title: `Module Not Found: ${slug.join('/')}`, description: `Curriculum module ${slug.join('/')} not found.` };
-    const titleStr = `${mod.title} | Curriculum`;
-
-    const metaDescription = (() => {
-        let desc = mod.description.trim().replace(/\s+/g, ' ');
-        if (!desc.endsWith('.')) desc += '.';
-        if (desc.length >= 140 && desc.length <= 158) return desc;
-        if (desc.length > 158) return desc.slice(0, 155) + '...';
-
-        const trackName = mod.trackName || 'Enterprise AI';
-        const candidateSuffixes = [
-            ` Master ${trackName} and deterministic systems architecture with executive frameworks. Written for CTOs and CFOs.`,
-            ` Master ${trackName} and deterministic systems architecture with executive frameworks for engineering leaders.`,
-            ` Master ${trackName} and deterministic systems architecture with executive frameworks.`,
-            ` Master ${trackName} with executive diagnostics, benchmarks, and audit frameworks.`,
-            ` Master ${trackName} with practical executive frameworks for engineering leaders.`,
-            ` Master ${trackName} with executive frameworks for CTOs and CFOs.`,
-            ` Master ${trackName} with practical executive frameworks.`,
-            ` Forensic analysis and frameworks by Richard Ewing.`,
-            ` Master ${trackName} with executive frameworks.`,
-            ` Executive frameworks by Richard Ewing.`,
-            ` Frameworks by Richard Ewing.`
-        ];
-        for (const suffix of candidateSuffixes) {
-            const combined = desc + suffix;
-            if (combined.length >= 140 && combined.length <= 158) {
-                return combined;
-            }
-        }
-        const fallback = `${desc} Master ${trackName} with executive frameworks by Richard Ewing.`;
-        return fallback.length > 158 ? fallback.slice(0, 155) + '...' : fallback;
-    })();
+    const baseTitle = clampSeoTitle(mod.title, 42);
+    const metaDescription = formatSeoDescription(
+        mod.description,
+        `Study ${mod.trackName || 'AI economics'} playbooks and diagnostics with Richard Ewing.`
+    );
+    const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(mod.title)}&category=${encodeURIComponent(mod.trackName || 'Executive Curriculum')}`;
 
     return {
-        title: titleStr,
+        title: baseTitle,
         description: metaDescription,
         robots: {
             index: mod.status !== 'waitlist' && Array.isArray(mod.lessons) && mod.lessons.length > 0,
@@ -53,17 +30,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         },
         alternates: { canonical: `https://www.richardewing.io/vault/curriculum/tracks/${slug.join('/')}` },
         openGraph: {
-            title: `${mod.title} | Curriculum | Richard Ewing`,
+            title: `${baseTitle} | Richard Ewing`,
             description: metaDescription,
             url: `https://www.richardewing.io/vault/curriculum/tracks/${slug.join('/')}`,
             type: 'article',
-            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+            images: [{ url: ogUrl, width: 1200, height: 630 }],
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${mod.title} | Curriculum | Richard Ewing`,
+            title: `${baseTitle} | Richard Ewing`,
             description: metaDescription,
-            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
+            images: [ogUrl],
         }
     };
 }
@@ -421,21 +398,35 @@ export default async function DynamicModulePage({ params }: { params: Promise<{ 
     let aiContent = null;
     let mappedLessons = mod.lessons; // Default to static lessons
 
+    const demoteInnerH1 = (html: string) =>
+        typeof html === 'string'
+            ? html.replace(/<h1(\b[^>]*)>/gi, '<h2$1>').replace(/<\/h1>/gi, '</h2>')
+            : html;
+
     try {
         const jsonPath = path.join(process.cwd(), 'app', 'content', 'parsed', `${mod.moduleId}.json`);
         const htmlPath = path.join(process.cwd(), 'app', 'content', 'modules', `${mod.moduleId}.html`);
         
         if (fs.existsSync(jsonPath)) {
             aiContent = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-            if (aiContent && typeof aiContent === 'object' && Array.isArray(aiContent.lessons)) {
-                // Map the JSON AI generated structure to the expected `CurriculumModule` lesson structure for the PayGate
-                mappedLessons = aiContent.lessons.map((l: any) => ({
-                    title: l.title,
-                    content: 'Interactive Module Section.',
-                }));
+            if (aiContent && typeof aiContent === 'object') {
+                if (typeof aiContent.syllabus === 'string') {
+                    aiContent.syllabus = demoteInnerH1(aiContent.syllabus);
+                }
+                if (Array.isArray(aiContent.lessons)) {
+                    aiContent.lessons = aiContent.lessons.map((l: any) => ({
+                        ...l,
+                        html: demoteInnerH1(l.html),
+                    }));
+                    // Map the JSON AI generated structure to the expected `CurriculumModule` lesson structure for the PayGate
+                    mappedLessons = aiContent.lessons.map((l: any) => ({
+                        title: l.title,
+                        content: 'Interactive Module Section.',
+                    }));
+                }
             }
         } else if (fs.existsSync(htmlPath)) {
-            aiContent = fs.readFileSync(htmlPath, 'utf8');
+            aiContent = demoteInnerH1(fs.readFileSync(htmlPath, 'utf8'));
         }
     } catch (e) {
         // Silently fallback if content directory or file doesn't exist

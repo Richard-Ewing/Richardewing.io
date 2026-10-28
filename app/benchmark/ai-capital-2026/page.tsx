@@ -1,299 +1,354 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { BorderBeam } from '@/app/components/magicui/border-beam';
-import Meteors from '@/app/components/magicui/meteors';
-import { ArrowRight, BarChart3, TrendingDown, Cpu, ShieldAlert, Zap, Globe, Scale, Activity, ShieldCheck, Database } from 'lucide-react';
+import {
+  ArrowRight,
+  Cpu,
+  ShieldAlert,
+  TrendingDown,
+  Activity,
+  Scale,
+  ShieldCheck,
+  Database,
+} from 'lucide-react';
+import { MetricPanel, ChartPanel } from '@/components/editorial';
 
 export const metadata: Metadata = {
-    title: '2026 AI Capital Allocation Benchmark',
-    description: 'Comprehensive empirical benchmark evaluating enterprise AI returns, compute expenditure, and technical debt accumulation.',
-    keywords: [
-        'AI economics', 'LLM CapEx vs OpEx', 'tech debt benchmarks 2026',
-        'AI wrapper latency', 'FTE displacement timeline', 'capital engineering statistics',
-        'RAG latency impact', 'technical insolvency horizon'
-    ],
-    alternates: { canonical: 'https://www.richardewing.io/benchmark/ai-capital-2026' },
+  title: '2026 AI Capital Allocation Benchmark',
+  description:
+    'Empirical 2026 M&A telemetry covering the 4.2M token/day SLM crossover threshold, engineering autonomy rates, latency churn, and pgvector adoption.',
+  keywords: [
+    'AI economics',
+    'LLM CapEx vs OpEx',
+    'tech debt benchmarks 2026',
+    'AI wrapper latency',
+    'FTE displacement timeline',
+    'capital engineering statistics',
+    'RAG latency impact',
+    'technical insolvency horizon',
+  ],
+  alternates: { canonical: 'https://www.richardewing.io/benchmark/ai-capital-2026' },
 };
 
 export default function AICapitalBenchmark() {
-    return (
-        <div className="min-h-screen bg-white text-zinc-900 relative font-sans overflow-hidden">
-            {/* Architectural Background */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-            <div className="absolute top-0 left-0 right-0 h-[800px] bg-gradient-to-b from-cyan-50 via-white to-transparent pointer-events-none"></div>
-            
-            <Meteors count={40} />
-
-            <div className="relative z-10 max-w-5xl mx-auto px-6 py-24 sm:py-32">
-                <Link href="/benchmark" className="inline-flex items-center text-sm font-semibold font-mono text-zinc-950 font-bold hover:text-zinc-900 transition-colors mb-12 uppercase tracking-widest">
-                    {"<"} Back to Benchmarks
-                </Link>
-
-                {/* Hero Headers */}
-                <div className="space-y-6 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-900 font-extrabold font-semibold text-xs font-bold font-mono uppercase tracking-widest shadow-[0_0_15px_-3px_rgba(6,182,212,0.4)]">
-                        <Globe size={14} /> Open Data Benchmark
-                    </div>
-                    <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-zinc-900 leading-tight">
-                        The 2026 AI Capital<br /> 
-                        <span className="text-cyan-500">Engineering Index</span>
-                    </h1>
-                    <p className="text-xl text-zinc-900 max-w-3xl leading-relaxed">
-                        Structured as a reference benchmark for enterprise AI economics, analyzing LLM operating costs, architectural latency, workforce displacement mathematics, and the CapEx/OpEx threshold of generative AI infrastructure.
-                    </p>
-                    <div className="flex flex-wrap gap-4 items-center">
-                        <p className="text-sm font-semibold font-mono text-cyan-900 font-bold border border-cyan-500/20 px-3 py-1 bg-cyan-50/30 rounded-md">
-                            Computed: Q2 2026 Baseline
-                        </p>
-                        <p className="text-sm font-semibold font-mono text-zinc-950 border border-zinc-400 px-3 py-1 rounded-md">
-                            Scope: Diagnostic Telemetry & Open Data
-                        </p>
-                    </div>
-                </div>
-
-                {/* Hard Data Hub 1: LLM Economics */}
-                <div className="mt-20">
-                    <h2 className="text-3xl font-bold flex items-center gap-3 mb-8">
-                        <Cpu className="text-cyan-900 font-extrabold font-semibold" /> 01. The CapEx vs OpEx Threshold
-                    </h2>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                        <div className="p-6 bg-white border border-zinc-400 rounded-xl relative overflow-hidden group">
-                            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><Zap size={64}/></div>
-                            <p className="text-sm font-semibold text-zinc-950 font-mono mb-2 uppercase">Avg API OpEx / Mo</p>
-                            <p className="text-4xl font-bold text-zinc-900">$41,500</p>
-                            <p className="text-xs font-bold text-zinc-900 font-bold mt-2 flex items-center gap-1"><TrendingDown size={12}/> +14% QoQ Growth</p>
-                        </div>
-                        <div className="p-6 bg-white border border-zinc-400 rounded-xl relative overflow-hidden group">
-                            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><Scale size={64}/></div>
-                            <p className="text-sm font-semibold text-zinc-950 font-mono mb-2 uppercase">The Crossover Point</p>
-                            <p className="text-4xl font-bold text-zinc-900">4.2M</p>
-                            <p className="text-xs font-bold text-zinc-900 font-bold mt-2">Tokens/Day triggering SLM CapEx advantage.</p>
-                        </div>
-                        <div className="p-6 bg-white border border-zinc-400 rounded-xl relative overflow-hidden group">
-                            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"><BarChart3 size={64}/></div>
-                            <p className="text-sm font-semibold text-zinc-950 font-mono mb-2 uppercase">Acquisition Penalty</p>
-                            <p className="text-4xl font-bold text-zinc-900">-2.4x</p>
-                            <p className="text-xs font-bold text-zinc-900 font-bold mt-2 flex items-center gap-1">EBITDA multiple compression if wrapper-only.</p>
-                        </div>
-                    </div>
-
-                    <div className="prose prose-zinc max-w-none text-zinc-900">
-                        <p className="text-lg">
-                            The single greatest architectural failure of the last 24 months is the *"RAG Wrapper Trap"*. Engineering leaders rushed to connect their user interfaces directly to external foundation model APIs (OpenAI, Anthropic) without calculating the marginal cost of a query at scale. 
-                        </p>
-                        <p className="text-lg">
-                            While this granted extreme speed-to-market in 2024, the empirical metrics for 2026 are brutal: <strong>Organisations spending more than $15,000/month on external inference APIs suffer an immediate structural penalty during M&A technical due diligence.</strong> Private Equity firms view heavy API reliance not as R&D innovation, but as uncontrolled variable operational expenditure (OpEx) tied entirely to a third-party vendor's pricing whims. 
-                        </p>
-                        <p className="text-lg">
-                            Our data indicates that at the exact threshold of <strong>4.2 Million Tokens/Day</strong>, it becomes mathematically superior to absorb the CapEx of fine-tuning a 7B/14B parameter open-source model (Llama-3, Mistral) and hosting it internally.
-                        </p>
-                    </div>
-
-                    {/* The Conversion Spoke */}
-                    <div className="my-12 relative w-full rounded-2xl bg-gradient-to-r from-white to-cyan-950/20 border border-cyan-500/20 p-8 shadow-[0_0_50px_-12px_rgba(6,182,212,0.15)]">
-                        <BorderBeam duration={12} size={200} colorFrom="#06b6d4" colorTo="#3b82f6" />
-                        <div className="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-8 items-center">
-                            <div className="md:col-span-3">
-                                <h3 className="text-2xl font-bold text-zinc-900 flex items-center gap-2 mb-2">
-                                    <ShieldAlert className="text-cyan-900 font-extrabold font-semibold" /> Are You Bleeding CapEx?
-                                </h3>
-                                <p className="text-zinc-950 font-bold">
-                                    Stop guessing if your LLM infrastructure is financially toxic. Our Exogram Auditors plug directly into your GitHub / AWS stacks to map your true capability debt in 72 hours.
-                                </p>
-                            </div>
-                            <div className="flex justify-end">
-                                <Link href="/services" className="w-full text-center px-6 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all shadow-[0_0_20px_-5px_rgba(6,182,212,0.8)]">
-                                    Book The Audit →
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Hard Data Hub 2: FTE Displacement */}
-                <div className="mt-24">
-                    <h2 className="text-3xl font-bold flex items-center gap-3 mb-8">
-                        <TrendingDown className="text-cyan-900 font-extrabold font-semibold" /> 02. The FTE Displacement Index
-                    </h2>
-                    
-                    <div className="bg-white border border-zinc-400 rounded-xl p-8 mb-8 overflow-x-auto">
-                        <table className="w-full text-left border-collapse">
-                            <thead>
-                                <tr className="border-b border-zinc-400 text-sm font-semibold font-mono text-zinc-950 font-bold uppercase tracking-wider">
-                                    <th className="pb-4 pr-6">Engineering Role</th>
-                                    <th className="pb-4 pr-6">2024 Autonomy Rate</th>
-                                    <th className="pb-4 pr-6 text-cyan-900 font-extrabold">2026 Autonomy Rate</th>
-                                    <th className="pb-4 text-right">Replacement Vector</th>
-                                </tr>
-                            </thead>
-                            <tbody className="text-zinc-900">
-                                <tr className="border-b border-zinc-400/50">
-                                    <td className="py-4 pr-6 font-medium">L1/L2 Frontend Engineer</td>
-                                    <td className="py-4 pr-6 text-zinc-900">14%</td>
-                                    <td className="py-4 pr-6 text-cyan-900 font-extrabold font-semibold font-bold">78%</td>
-                                    <td className="py-4 text-right">Native v0 / Agentic UI Generation</td>
-                                </tr>
-                                <tr className="border-b border-zinc-400/50">
-                                    <td className="py-4 pr-6 font-medium">QA / SDET Analyst</td>
-                                    <td className="py-4 pr-6 text-zinc-900">22%</td>
-                                    <td className="py-4 pr-6 text-cyan-900 font-extrabold font-semibold font-bold">91%</td>
-                                    <td className="py-4 text-right">Agentic E2E Testing Pipelines</td>
-                                </tr>
-                                <tr className="border-b border-zinc-400/50">
-                                    <td className="py-4 pr-6 font-medium">Data Analyst (SQL)</td>
-                                    <td className="py-4 pr-6 text-zinc-900">18%</td>
-                                    <td className="py-4 pr-6 text-cyan-900 font-extrabold font-semibold font-bold">65%</td>
-                                    <td className="py-4 text-right">Text-to-SQL RAG Systems</td>
-                                </tr>
-                                <tr className="border-b border-zinc-400/50">
-                                    <td className="py-4 pr-6 font-medium">DevOps (K8s Maintenance)</td>
-                                    <td className="py-4 pr-6 text-zinc-900">8%</td>
-                                    <td className="py-4 pr-6 text-cyan-900 font-extrabold font-semibold font-bold">45%</td>
-                                    <td className="py-4 text-right">Terraform Drift Auto-Remediation</td>
-                                </tr>
-                                <tr>
-                                    <td className="py-4 pr-6 font-medium">Architect / Principal</td>
-                                    <td className="py-4 pr-6 text-zinc-900">2%</td>
-                                    <td className="py-4 pr-6 text-cyan-900 font-extrabold font-semibold font-bold">12%</td>
-                                    <td className="py-4 text-right text-zinc-900">Not Displaced (Augmented 3x)</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div className="prose prose-zinc max-w-none text-zinc-900">
-                        <p className="text-lg">
-                            The math is no longer speculative. The capability overhang has breached the enterprise execution layer. Engineering organizations clinging to the 2022 model of "hiring massive armies of Junior React developers" are mathematically defaulting. 
-                        </p>
-                        <p className="text-lg border-l-4 border-cyan-500 pl-6 italic my-8 text-zinc-900">
-                            "You do not scale an AI-native product by adding more software engineers. You scale it by adding more automated testing validation gates, and moving budget from payroll into compute."
-                        </p>
-                        <p className="text-lg">
-                            By Q2 2026, the data shows that a Senior Architect paired with an array of specialized autonomous QA and Frontend coding agents out-produces a traditional 8-person engineering pod by a factor of 3.4x, while costing 60% less in gross payroll overhead.
-                        </p>
-                    </div>
-                </div>
-
-                {/* Hard Data Hub 3: Architectural Latency */}
-                <div className="mt-24">
-                    <h2 className="text-3xl font-bold flex items-center gap-3 mb-8">
-                        <Activity className="text-cyan-900 font-extrabold font-semibold" /> 03. Architectural Latency vs ACV
-                    </h2>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        <div className="p-8 bg-zinc-50 border border-zinc-400 rounded-xl relative">
-                            <h4 className="text-xl font-bold mb-4">The Latency Death Zone</h4>
-                            <p className="text-zinc-900 mb-6">Average wait time for a complex multi-agent reasoning chain (using LangChain + External LLM APIs) hitting execution timeouts.</p>
-                            <p className="text-5xl font-black text-rose-500">4.8s <span className="text-lg text-rose-400 font-normal">ttfb</span></p>
-                        </div>
-                        <div className="p-8 bg-zinc-50 border border-zinc-400 rounded-xl relative">
-                            <h4 className="text-xl font-bold mb-4">ACV Churn Correlation</h4>
-                            <p className="text-zinc-900 mb-6">Percentage of Enterprise Contracts lost at renewal due to "sluggish AI functionality" in the UI.</p>
-                            <p className="text-5xl font-black text-rose-500">22% <span className="text-lg text-rose-400 font-normal">churn</span></p>
-                        </div>
-                    </div>
-
-                    <div className="prose prose-zinc max-w-none text-zinc-900">
-                        <p className="text-lg">
-                            Generative features are mathematically heavy. When a SaaS company tries to shove an async LLM chain directly into a synchronous user request flow, the UI locks up. Our telemetry across 500 implementations shows that any feature with a Time-To-First-Byte (TTFB) over <strong>2000 milliseconds</strong> experiences a 60% drop in user activation within the first week. 
-                        </p>
-                        <p className="text-lg">
-                            The bleeding edge of 2026 architecture isn't about building *better* AI. It's about hiding the latency of the AI. Companies utilizing background asynchronous queueing (Temporal, Kafka) and optimistic UI architectures are capturing 88% of the B2B SaaS adoption curve.
-                        </p>
-                    </div>
-                </div>
-
-                {/* Hard Data Hub 4: The Vector DB Consolidation */}
-                <div className="mt-24">
-                    <h2 className="text-3xl font-bold flex items-center gap-3 mb-8">
-                        <Database className="text-cyan-900 font-extrabold font-semibold" /> 04. The Vector Component Collapse
-                    </h2>
-                    
-                    <div className="bg-white border border-zinc-400 rounded-xl p-8 mb-8">
-                        <div className="w-full h-8 flex rounded-full overflow-hidden mb-4">
-                            <div className="bg-cyan-500 h-full flex items-center px-4 font-bold text-black" style={{ width: '68%' }}>PostgreSQL (pgvector) - 68%</div>
-                            <div className="bg-zinc-700 h-full flex items-center px-4 text-xs font-bold font-mono text-zinc-950" style={{ width: '18%' }}>Dedicated (Pinecone/Milvus) - 18%</div>
-                            <div className="bg-zinc-200 h-full flex items-center px-4 text-xs font-bold font-mono text-zinc-950" style={{ width: '14%' }}>Other - 14%</div>
-                        </div>
-                        <p className="text-sm font-semibold text-zinc-950 text-center font-mono">2026 Enterprise Vector Search Market Share (Series B+)</p>
-                    </div>
-
-                    <div className="prose prose-zinc max-w-none text-zinc-900">
-                        <p className="text-lg">
-                            The great unbundling of 2023 is officially over. The data overwhelmingly proves that spinning up highly specialized, segmented infrastructure for RAG applications (e.g., maintaining a separate Vector Database alongside your relational database) creates unsalvageable synchronization debt. 
-                        </p>
-                        <p className="text-lg">
-                            By Q2 2026, <strong>68% of enterprise engineering teams</strong> have completely collapsed their AI vector architectures back into PostgreSQL (`pgvector`). The technical overhead of keeping a segmented vector store in sync with a core relational database outstripped any marginal latency benefits provided by dedicated engines. 
-                        </p>
-                    </div>
-                </div>
-
-
-                {/* Formal Methodology & Limitations Section */}
-                <div className="mt-24 bg-zinc-50 border border-zinc-300 rounded-3xl p-8 space-y-6">
-                    <div className="space-y-2">
-                        <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-widest block">
-                            Benchmark Specification &amp; Governance
-                        </span>
-                        <h2 className="text-2xl font-bold font-grotesk text-zinc-950">
-                            Methodology, Scope &amp; Limitations
-                        </h2>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-zinc-900">
-                        <div className="space-y-3">
-                            <h3 className="font-bold text-zinc-950 flex items-center gap-2">
-                                <Activity size={16} className="text-cyan-900" /> 1. Data Collection &amp; Scope
-                            </h3>
-                            <p className="leading-relaxed">
-                                Benchmarks are computed using aggregated, anonymized telemetry derived from user-submitted diagnostic tools (including the AI Unit Economics Benchmark, Product Debt Index, and APER calculator) alongside open engineering dataset sampling.
-                            </p>
-                        </div>
-                        <div className="space-y-3">
-                            <h3 className="font-bold text-zinc-950 flex items-center gap-2">
-                                <Scale size={16} className="text-cyan-900" /> 2. Versioning &amp; Cadence
-                            </h3>
-                            <p className="leading-relaxed">
-                                Index metrics are re-calculated quarterly. Version 1.0 (Q2 2026 Baseline) reflects early enterprise adoption patterns and is updated continuously as new diagnostic audit logs are processed.
-                            </p>
-                        </div>
-                        <div className="space-y-3">
-                            <h3 className="font-bold text-zinc-950 flex items-center gap-2">
-                                <ShieldCheck size={16} className="text-cyan-900" /> 3. Inclusion Criteria
-                            </h3>
-                            <p className="leading-relaxed">
-                                Data entries are filtered to include software engineering organizations spending &gt;$2,500/month on cloud infrastructure or foundation model APIs, ensuring metrics reflect production enterprise conditions.
-                            </p>
-                        </div>
-                        <div className="space-y-3">
-                            <h3 className="font-bold text-zinc-950 flex items-center gap-2">
-                                <ShieldAlert size={16} className="text-cyan-900" /> 4. Known Limitations
-                            </h3>
-                            <p className="leading-relaxed">
-                                Model pricing, API latency, and vector database benchmarks fluctuate rapidly based on cloud provider updates. Figures represent baseline diagnostic models and should be evaluated alongside bespoke organizational audits.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Final Conversion Spoke */}
-                <div className="mt-24 pt-16 border-t border-zinc-400 text-center">
-                    <h2 className="text-4xl font-bold text-zinc-900 mb-6 font-grotesk">Deploy The Playbook To Your Board</h2>
-                    <p className="text-zinc-900 mb-10 max-w-2xl mx-auto text-lg">
-                        Don't let your CFO read this report before you do. Get a bespoke Exogram capability map generated specifically around your team's pull-request velocity, architectural latency, and AWS spend.
-                    </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                        <Link href="/services" className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-sm font-semibold rounded-lg hover:bg-zinc-200 transition-all flex items-center gap-2 shadow-[0_0_30px_-5px_rgba(255,255,255,0.4)]">
-                            Secure A Strategic Audit <ArrowRight size={16} />
-                        </Link>
-                        <Link href="/tools" className="px-8 py-4 bg-transparent border border-zinc-600 text-zinc-950 font-bold uppercase tracking-widest text-sm font-semibold rounded-lg hover:bg-zinc-50 transition-all">
-                            View Diagnostic Tools
-                        </Link>
-                    </div>
-                </div>
-            </div>
+  return (
+    <main className="min-h-screen bg-[#FAF9F6] text-[#1e2924] pt-24 pb-24">
+      <div className="max-w-5xl mx-auto px-6 space-y-20">
+        <div>
+          <Link
+            href="/benchmark"
+            className="inline-flex items-center text-xs font-mono font-bold text-[#66716a] hover:text-[#162e26] transition-colors uppercase tracking-widest"
+          >
+            &larr; Back to Benchmarks
+          </Link>
         </div>
-    );
+
+        {/* Hero Headers */}
+        <header className="space-y-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#b77a35]/30 bg-[#b77a35]/10 text-[#b77a35] text-xs font-bold font-mono uppercase tracking-widest">
+            Open Data Benchmark · Q2 2026 Baseline
+          </div>
+          <h1 className="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-[#162e26] leading-[1.1]">
+            The 2026 AI Capital Engineering Index
+          </h1>
+          <p
+            itemProp="description"
+            className="text-lg sm:text-xl text-[#4a5850] max-w-3xl leading-relaxed"
+          >
+            Reference telemetry for CFOs, CTOs, VPs of Engineering, and Private Equity Operating Partners analyzing LLM operating costs, architectural latency, workforce autonomy rates, and the CapEx vs OpEx crossover of AI infrastructure.
+          </p>
+          <div className="flex flex-wrap gap-3 items-center pt-1">
+            <Link
+              href="/benchmark/llm-cost-and-margin-index"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#162e26] hover:bg-[#29473b] text-white font-bold text-xs font-mono uppercase tracking-wider transition-all"
+            >
+              View Live Oct 2026 LLM Token &amp; Margin Index <ArrowRight size={14} />
+            </Link>
+            <span className="text-xs font-mono text-[#66716a] border border-[#24332b]/15 px-3 py-2 bg-white rounded-xl">
+              Scope: 500+ Audited Engineering Cohorts
+            </span>
+          </div>
+        </header>
+
+        {/* Hard Data Hub 1: LLM Economics */}
+        <section className="space-y-8">
+          <h2 className="font-serif text-3xl font-bold text-[#162e26] flex items-center gap-3">
+            <Cpu className="text-[#b77a35] w-7 h-7" /> 01. The CapEx vs OpEx Threshold
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <MetricPanel
+              variant="white"
+              label="Avg API OpEx / Mo"
+              value="$41,500"
+              trend="+14% QoQ"
+              trendDirection="down"
+              subtext="Median external LLM inference spend across Series B+ SaaS cohorts."
+            />
+            <MetricPanel
+              variant="forest"
+              label="The Crossover Point"
+              value="4.2M"
+              trend="Tokens / Day"
+              trendDirection="neutral"
+              subtext="Sustained daily volume triggering reserved SLM GPU cost advantage."
+            />
+            <MetricPanel
+              variant="paper"
+              label="Acquisition Penalty"
+              value="-2.4x"
+              trend="EBITDA Multiple"
+              trendDirection="down"
+              subtext="Valuation multiple compression during M&A diligence for un-gated API wrappers."
+            />
+          </div>
+
+          <div className="space-y-4 text-[#4a5850] text-base leading-relaxed">
+            <p>
+              The costliest architectural mistake of the past 24 months is the un-metered RAG wrapper trap. Engineering leaders connected user interfaces directly to commercial foundation model APIs without modeling marginal cost per power user at scale.
+            </p>
+            <p>
+              While external APIs buy rapid time-to-market at launch, 2026 M&amp;A diligence data is unforgiving: <strong className="text-[#162e26]">software companies spending over $15,000/month on un-cached external inference APIs without per-customer margin controls face immediate valuation discounts.</strong> Private Equity Operating Partners classify un-gated token spend as variable COGS tied to third-party pricing power rather than proprietary R&amp;D.
+            </p>
+            <p>
+              Across audited workloads, once sustained volume crosses <strong className="text-[#162e26]">4.2 Million Tokens/Day</strong> at steady utilization, fine-tuning and serving quantized 7B to 26B open-weight models or implementing an 80/20 Flash tier router beats raw frontier API calls.
+            </p>
+          </div>
+
+          <div className="rounded-2xl bg-[#162e26] text-white p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="space-y-2 max-w-2xl">
+              <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#d8c7a8]">
+                <ShieldAlert className="w-4 h-4" /> Capital Efficiency Check
+              </div>
+              <h3 className="font-serif text-2xl font-bold">
+                Are Power Users Turning Your SaaS Seats Gross-Margin Negative?
+              </h3>
+              <p className="text-sm text-zinc-300 leading-relaxed">
+                Test your exact prompt token volume against commercial API rates in 60 seconds, or book a forensic R&amp;D capital and pricing audit.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3 shrink-0">
+              <Link
+                href="/tools/slm-vs-api"
+                className="px-5 py-3 bg-[#b77a35] hover:opacity-95 text-white font-bold text-sm rounded-xl transition-all"
+              >
+                Run SLM vs API Calculator →
+              </Link>
+              <Link
+                href="/services"
+                className="px-5 py-3 bg-white/10 hover:bg-white/20 text-white font-bold text-sm rounded-xl transition-all"
+              >
+                Book Audit
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Hard Data Hub 2: FTE Displacement */}
+        <section className="space-y-8">
+          <h2 className="font-serif text-3xl font-bold text-[#162e26] flex items-center gap-3">
+            <TrendingDown className="text-[#b77a35] w-7 h-7" /> 02. The FTE Autonomy &amp; Redeployment Index
+          </h2>
+
+          <ChartPanel
+            variant="white"
+            title="Task Autonomy Progression by Engineering Function (2024 vs 2026)"
+            subtitle="Share of routine ticket backlog executed by deterministic agent pipelines under senior human review."
+          >
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse text-sm">
+                <thead>
+                  <tr className="border-b-2 border-[#24332b]/15 font-mono text-xs text-[#66716a] uppercase tracking-wider">
+                    <th className="pb-3 pr-6">Engineering Role</th>
+                    <th className="pb-3 pr-6">2024 Autonomy Rate</th>
+                    <th className="pb-3 pr-6 text-[#162e26]">2026 Autonomy Rate</th>
+                    <th className="pb-3 text-right">Primary Automation Mechanism</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#24332b]/10 text-[#1e2924]">
+                  <tr>
+                    <td className="py-3.5 pr-6 font-semibold">L1/L2 Frontend Engineer</td>
+                    <td className="py-3.5 pr-6 font-mono text-[#66716a]">14%</td>
+                    <td className="py-3.5 pr-6 font-mono font-bold text-[#162e26]">78%</td>
+                    <td className="py-3.5 text-right text-[#4a5850]">Component-bound agentic UI generation</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3.5 pr-6 font-semibold">QA / SDET Analyst</td>
+                    <td className="py-3.5 pr-6 font-mono text-[#66716a]">22%</td>
+                    <td className="py-3.5 pr-6 font-mono font-bold text-[#162e26]">91%</td>
+                    <td className="py-3.5 text-right text-[#4a5850]">Automated E2E regression &amp; compiler gates</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3.5 pr-6 font-semibold">Data Analyst (SQL)</td>
+                    <td className="py-3.5 pr-6 font-mono text-[#66716a]">18%</td>
+                    <td className="py-3.5 pr-6 font-mono font-bold text-[#162e26]">65%</td>
+                    <td className="py-3.5 text-right text-[#4a5850]">Schema-grounded Text-to-SQL pipelines</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3.5 pr-6 font-semibold">DevOps (Cluster Ops)</td>
+                    <td className="py-3.5 pr-6 font-mono text-[#66716a]">8%</td>
+                    <td className="py-3.5 pr-6 font-mono font-bold text-[#162e26]">45%</td>
+                    <td className="py-3.5 text-right text-[#4a5850]">Terraform drift detection &amp; auto-remediation</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3.5 pr-6 font-semibold">Staff Architect / Principal</td>
+                    <td className="py-3.5 pr-6 font-mono text-[#66716a]">2%</td>
+                    <td className="py-3.5 pr-6 font-mono font-bold text-[#162e26]">12%</td>
+                    <td className="py-3.5 text-right text-[#162e26] font-semibold">Not Displaced (3.4x Output Multiplier)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </ChartPanel>
+
+          <div className="space-y-4 text-[#4a5850] text-base leading-relaxed">
+            <p>
+              Engineering organizations still budgeting around the 2022 playbook of hiring large pods of junior syntax writers are losing margin to leaner peers. You do not scale an AI-native product by adding un-gated headcount; you scale by pairing Staff Architects and Engineering Managers with deterministic CI verification gates.
+            </p>
+            <p>
+              In Q2 2026 cohorts, a Senior or Staff Architect operating inside strict spec-driven boundaries (`AGENTS.md`, `SPEC.md`, automated schema tests) out-ships a traditional 8-person pod by 3.4x at 60% lower gross payroll cost.
+            </p>
+          </div>
+        </section>
+
+        {/* Hard Data Hub 3: Architectural Latency */}
+        <section className="space-y-8">
+          <h2 className="font-serif text-3xl font-bold text-[#162e26] flex items-center gap-3">
+            <Activity className="text-[#b77a35] w-7 h-7" /> 03. Architectural Latency vs Enterprise Renewal
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <MetricPanel
+              variant="white"
+              label="Synchronous Agent Timeout Zone"
+              value="4.8s TTFB"
+              trend="Activation Drop"
+              trendDirection="down"
+              subtext="Median wait time for synchronous multi-agent chains before users abandon the workflow."
+            />
+            <MetricPanel
+              variant="paper"
+              label="Sluggish UI Renewal Loss"
+              value="22% Churn"
+              trend="Enterprise ACV"
+              trendDirection="down"
+              subtext="Share of non-renewed B2B AI contracts citing slow, blocking UI response times at renewal."
+            />
+          </div>
+
+          <p className="text-base text-[#4a5850] leading-relaxed">
+            Across 500+ production deployments, synchronous AI features with Time-To-First-Byte exceeding <strong className="text-[#162e26]">2,000 milliseconds</strong> suffer a 60% drop in week-one seat activation. High-retention B2B teams move heavy reasoning off the blocking request thread into background queues while keeping inline interactions on sub-300ms Flash or edge models.
+          </p>
+        </section>
+
+        {/* Hard Data Hub 4: Vector DB Consolidation */}
+        <section className="space-y-8">
+          <h2 className="font-serif text-3xl font-bold text-[#162e26] flex items-center gap-3">
+            <Database className="text-[#b77a35] w-7 h-7" /> 04. Vector Store Consolidation Back to PostgreSQL
+          </h2>
+
+          <div className="bg-white border border-[#24332b]/15 rounded-2xl p-6 sm:p-8 shadow-sm space-y-4">
+            <div className="w-full h-9 flex rounded-xl overflow-hidden text-xs font-mono font-bold">
+              <div
+                className="bg-[#162e26] h-full flex items-center px-4 text-white"
+                style={{ width: '68%' }}
+              >
+                PostgreSQL (pgvector) · 68%
+              </div>
+              <div
+                className="bg-[#b77a35] h-full flex items-center px-3 text-white"
+                style={{ width: '18%' }}
+              >
+                Dedicated · 18%
+              </div>
+              <div
+                className="bg-[#ebe7dc] h-full flex items-center px-3 text-[#1e2924]"
+                style={{ width: '14%' }}
+              >
+                Other · 14%
+              </div>
+            </div>
+            <p className="text-xs font-mono text-[#66716a] text-center">
+              2026 Enterprise Vector Search Production Share (Series B+ Software Teams)
+            </p>
+          </div>
+
+          <p className="text-base text-[#4a5850] leading-relaxed">
+            Maintaining a separate standalone vector database beside a primary relational store created dual-write synchronization bugs, stale permissions, and redundant cloud bills. By Q2 2026, <strong className="text-[#162e26]">68% of audited enterprise teams</strong> consolidated RAG embeddings directly into PostgreSQL (`pgvector`) so row-level permissions and transactional state stay atomic.
+          </p>
+        </section>
+
+        {/* Methodology & Limitations */}
+        <section className="rounded-3xl bg-[#ebe7dc] border border-[#24332b]/15 p-8 space-y-6">
+          <div>
+            <span className="text-xs font-mono font-bold text-[#b77a35] uppercase tracking-widest block">
+              Benchmark Governance
+            </span>
+            <h2 className="font-serif text-2xl font-bold text-[#162e26] mt-1">
+              Methodology, Scope &amp; Limitations
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-[#4a5850]">
+            <div className="space-y-2">
+              <h3 className="font-bold text-[#162e26] flex items-center gap-2">
+                <Activity size={16} className="text-[#b77a35]" /> 1. Data Collection &amp; Scope
+              </h3>
+              <p className="leading-relaxed">
+                Computed from anonymized diagnostic submissions across the AI Unit Economics Benchmark (AUEB), Product Debt Index (PDI), and APER calculators paired with advisory audit baselines.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-bold text-[#162e26] flex items-center gap-2">
+                <Scale size={16} className="text-[#b77a35]" /> 2. Versioning &amp; Cadence
+              </h3>
+              <p className="leading-relaxed">
+                Capital allocation metrics update quarterly; live provider token rates and SaaS seat margins update monthly in the LLM Cost &amp; Margin Index.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-bold text-[#162e26] flex items-center gap-2">
+                <ShieldCheck size={16} className="text-[#b77a35]" /> 3. Inclusion Criteria
+              </h3>
+              <p className="leading-relaxed">
+                Filtered to B2B software organizations spending more than $2,500/month on cloud compute or commercial foundation model APIs.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-bold text-[#162e26] flex items-center gap-2">
+                <ShieldAlert size={16} className="text-[#b77a35]" /> 4. Known Limitations
+              </h3>
+              <p className="leading-relaxed">
+                API pricing and GPU spot availability shift rapidly; figures serve as directional baselines alongside company-specific P&amp;L diligence.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Final Conversion CTA */}
+        <section className="rounded-3xl bg-[#162e26] text-white p-8 sm:p-12 text-center space-y-6">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold">
+            Bring Audit-Ready Numbers to Your Next Board Meeting
+          </h2>
+          <p className="text-zinc-300 max-w-2xl mx-auto text-base sm:text-lg">
+            Do not wait for your CFO or PE sponsor to flag margin compression first. Run our free diagnostic calculators or book a fixed-scope turnaround sprint.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            <Link
+              href="/services"
+              className="px-8 py-4 bg-[#b77a35] hover:opacity-95 text-white font-bold text-sm rounded-xl transition-all inline-flex items-center gap-2"
+            >
+              Book a Strategic Audit <ArrowRight size={16} />
+            </Link>
+            <Link
+              href="/tools"
+              className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm rounded-xl transition-all"
+            >
+              Explore All Diagnostic Calculators
+            </Link>
+          </div>
+        </section>
+      </div>
+    </main>
+  );
 }

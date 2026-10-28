@@ -109,6 +109,8 @@ export async function generateStaticParams() {
     return COMPARISONS.map(c => ({ slug: c.slug }));
 }
 
+import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
     const comparison = getComparison(slug);
@@ -117,39 +119,28 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         permanentRedirect('/tools');
     }
 
-    let desc = comparison.description.trim().replace(/\s+/g, ' ');
-    if (!desc.endsWith('.')) desc += '.';
-    if (desc.length < 120) {
-        const tA = comparison.toolA || 'Option A';
-        const tB = comparison.toolB || 'Option B';
-        const suffix = ` Compare execution risks and R&D capital leakage of ${tA} vs ${tB}.`;
-        const combined = (desc + suffix).trim();
-        desc = combined.length <= 158 ? combined : (desc + ` Audit your engineering margins and unit economics.`);
-    }
-    if (desc.length > 158) {
-        desc = desc.slice(0, 155) + '...';
-    }
+    const baseTitle = clampSeoTitle(`${comparison.title} Cost Analysis`, 42);
+    const desc = formatSeoDescription(comparison.description);
+    const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(comparison.title)}&category=Cost%20Comparison`;
 
     return {
-        title: {
-            absolute: `${comparison.title} Cost Analysis | Richard Ewing`
-        },
+        title: baseTitle,
         description: desc,
         alternates: { canonical: `https://www.richardewing.io/compare/${slug}` },
         robots: { index: true, follow: true },
         openGraph: {
-            title: comparison.title,
+            title: `${baseTitle} | Richard Ewing`,
             description: desc,
             url: `https://www.richardewing.io/compare/${slug}`,
             siteName: 'Richard Ewing',
             type: 'article',
-            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+            images: [{ url: ogUrl, width: 1200, height: 630 }],
         },
         twitter: {
             card: 'summary_large_image',
-            title: comparison.title,
+            title: `${baseTitle} | Richard Ewing`,
             description: desc,
-            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
+            images: [ogUrl],
         }
     };
 }

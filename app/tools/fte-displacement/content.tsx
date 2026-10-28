@@ -110,9 +110,9 @@ export default function FTEContent() {
                             <span className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase tracking-widest">Autonomous Labor Deflection</span>
                         </div>
 
-                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
+                        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
                             Expand Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">Gross Margins.</span>
-                        </h1>
+                        </h2>
                         <p className="text-lg sm:text-xl text-zinc-900 mb-8 max-w-2xl">
                             Tier-1 human support is an outdated variable cost. Calculate exactly how much EBITDA you can recapture by displacing 30-60% of your BPO routing layer with Sovereign Agentic Workflows.
                         </p>

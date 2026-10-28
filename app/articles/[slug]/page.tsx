@@ -9,6 +9,9 @@ import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated'
 import SoftwarePhaseTransitionVisual from '@/app/components/visualizations/SoftwarePhaseTransitionVisual';
 import { GooglePreferredBadge } from '@/app/components/GooglePreferredBadge';
 
+import { clampSeoTitle, formatSeoDescription, resolveProseGatedCanonical } from '@/app/lib/seo-metadata';
+import { ARTICLE_SLUG_REDIRECTS } from '@/app/lib/article-redirects';
+
 interface Props {
     params: Promise<{
         slug: string;
@@ -19,13 +22,23 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const resolvedParams = await params;
 
-    // Consolidate framework canonical equity: if it's a framework slug, canonicalize to framework route
+    if (ARTICLE_SLUG_REDIRECTS[resolvedParams.slug]) {
+        return {
+            title: 'Redirecting',
+            robots: { index: false, follow: true },
+            alternates: {
+                canonical: `https://www.richardewing.io${ARTICLE_SLUG_REDIRECTS[resolvedParams.slug]}`,
+            },
+        };
+    }
+
     if (frameworks.some((f) => f.slug === resolvedParams.slug)) {
         return {
-            title: 'Redirecting to Framework...',
+            title: 'Redirecting',
+            robots: { index: false, follow: true },
             alternates: {
-                canonical: `https://www.richardewing.io/articles/frameworks/${resolvedParams.slug}`
-            }
+                canonical: `https://www.richardewing.io/articles/frameworks/${resolvedParams.slug}`,
+            },
         };
     }
 
@@ -33,42 +46,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     if (!article) {
         return {
-            title: `Article Not Found: ${resolvedParams.slug}`,
-            description: `The requested article ${resolvedParams.slug} could not be found.`,
+            title: 'Article Not Found',
+            description: formatSeoDescription(`The requested article could not be found in Richard Ewing's publication archive.`),
         };
     }
 
-    const cleanTitle = article.title;
-
-    const metaDescription = (() => {
-        let desc = article.description.trim().replace(/\s+/g, ' ');
-        if (!desc.endsWith('.')) desc += '.';
-        if (desc.length >= 140 && desc.length <= 158) return desc;
-        if (desc.length > 158) return desc.slice(0, 155) + '...';
-
-        const candidateSuffixes = [
-            ` Published architectural research and engineering economics analysis by Richard Ewing for CTOs.`,
-            ` Published architectural research and engineering economics analysis by Richard Ewing.`,
-            ` Architectural research, engineering economics analysis, and executive frameworks.`,
-            ` Architectural research and engineering economics analysis by Richard Ewing.`,
-            ` Research, engineering economics analysis, and executive frameworks.`,
-            ` Engineering economics research and frameworks by Richard Ewing.`,
-            ` Research and frameworks by Richard Ewing for technology leaders.`,
-            ` Analysis and frameworks by Richard Ewing.`,
-            ` Research by Richard Ewing.`
-        ];
-        for (const suffix of candidateSuffixes) {
-            const combined = desc + suffix;
-            if (combined.length >= 140 && combined.length <= 158) {
-                return combined;
-            }
-        }
-        const fallback = `${desc} Research and analysis by Richard Ewing.`;
-        return fallback.length > 158 ? fallback.slice(0, 155) + '...' : fallback;
-    })();
+    const selfUrl = `https://www.richardewing.io/articles/${article.slug}`;
+    const canonicalUrl = resolveProseGatedCanonical(article.externalUrl, selfUrl, article.content || '');
+    const baseTitle = clampSeoTitle(article.title, 42);
+    const metaDescription = formatSeoDescription(article.description);
+    const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(article.title)}&category=${encodeURIComponent(article.source || 'Published Work')}`;
 
     return {
-        title: cleanTitle,
+        title: baseTitle,
         description: metaDescription,
         keywords: [
             'Richard Ewing',
@@ -78,36 +68,48 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             'R&D capital',
         ],
         alternates: {
-            canonical: article.externalUrl || `https://www.richardewing.io/articles/${article.slug}`,
+            canonical: canonicalUrl,
         },
         openGraph: {
-            title: article.title,
-            description: article.description,
+            title: `${baseTitle} | Richard Ewing`,
+            description: metaDescription,
             type: 'article',
             publishedTime: article.date,
             authors: ['Richard Ewing'],
-            url: `https://www.richardewing.io/articles/${article.slug}`,
-            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+            url: canonicalUrl,
+            images: [{ url: ogUrl, width: 1200, height: 630 }],
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${article.title} | Richard Ewing`,
-            description: article.description,
-            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
+            title: `${baseTitle} | Richard Ewing`,
+            description: metaDescription,
+            images: [ogUrl],
         },
     };
 }
 
 export async function generateStaticParams() {
-    return articles.map((article) => ({
-        slug: article.slug,
-    }));
+    const seen = new Set<string>();
+    return articles
+        .filter((article) => {
+            if (ARTICLE_SLUG_REDIRECTS[article.slug]) return false;
+            if (frameworks.some((f) => f.slug === article.slug)) return false;
+            if (seen.has(article.slug)) return false;
+            seen.add(article.slug);
+            return true;
+        })
+        .map((article) => ({
+            slug: article.slug,
+        }));
 }
 
 export default async function ArticlePage({ params }: Props) {
     const resolvedParams = await params;
 
-    // If this URL is a framework, 308 Permanent Redirect to the canonical framework specification
+    if (ARTICLE_SLUG_REDIRECTS[resolvedParams.slug]) {
+        return permanentRedirect(ARTICLE_SLUG_REDIRECTS[resolvedParams.slug]);
+    }
+
     if (frameworks.some((f) => f.slug === resolvedParams.slug)) {
         return permanentRedirect(`/articles/frameworks/${resolvedParams.slug}`);
     }

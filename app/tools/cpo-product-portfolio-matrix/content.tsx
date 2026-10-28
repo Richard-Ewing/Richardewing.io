@@ -65,9 +65,9 @@ export default function CPOProductPortfolioTool() {
                         <Layers className="w-3.5 h-3.5 text-violet-600" />
                         CPO &amp; Product Leadership &bull; Step 4 Diagnostic
                     </div>
-                    <h1 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
+                    <h2 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
                         CPO AI Feature Margin &amp; <span className="text-violet-600">Portfolio Pruning Matrix</span>
-                    </h1>
+                    </h2>
                     <p className="mt-3 text-base text-zinc-700 max-w-3xl mx-auto font-medium leading-relaxed">
                         For Chief Product Officers, VPs of Product, and Product Directors: Identify negative-carry AI features, enforce a 70%+ gross margin floor, and transition from seat-based to outcome pricing.
                     </p>

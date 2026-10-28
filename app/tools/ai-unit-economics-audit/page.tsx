@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
+import DiagnosticCTA from '@/app/components/DiagnosticCTA';
 import { ArrowLeft, Download, Calculator, TrendingDown, DollarSign } from 'lucide-react';
 import { ScrollReveal } from '@/components/magicui/scroll-reveal';
 import ShineBorder from '@/components/magicui/shine-border';
@@ -131,7 +132,13 @@ export default function AIUnitEconomicsAuditPage() {
                 </ScrollReveal>
             </div>
         
-            <div className="page-container max-w-4xl mx-auto">
+            <div className="page-container max-w-4xl mx-auto px-6 space-y-8">
+                <DiagnosticCTA
+                    variant="danger"
+                    title="Is power-user inference spend quietly wiping out subscription margin?"
+                    subtitle="Run a live 60-minute P&L session to audit your token telemetry, credit tiers, and enterprise contract caps before renewal season."
+                    metrics={['Token COGS', 'Power-User Cap', '75%+ Target GM']}
+                />
                 <AdvisoryCTA variant="tool-result" />
             </div>
         </main>

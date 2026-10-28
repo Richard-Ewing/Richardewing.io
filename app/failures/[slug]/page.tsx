@@ -7,6 +7,8 @@ import { FAILURES, getFailureBySlug, SKILLS } from '@/lib/content/skills';
 import GovernancePathways from '@/components/semantic/GovernancePathways';
 import { ontologyGraph } from '@/lib/ontology/relationships';
 
+import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
+
 export async function generateStaticParams() {
     return FAILURES.map(f => ({ slug: f.slug }));
 }
@@ -16,37 +18,30 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const failure = getFailureBySlug(slug);
     if (!failure) return {};
 
-    const baseTitle = failure.title.length > 26
+    const rawTitle = failure.title.length > 26
         ? failure.title
         : `${failure.title} Failure Signature`;
+    const baseTitle = clampSeoTitle(rawTitle, 42);
+    const metaDesc = formatSeoDescription(failure.definition);
+    const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(failure.title)}&category=Failure%20Signature`;
 
     return {
-        title: {
-            absolute: `${baseTitle} | Richard Ewing`,
-        },
-        description: (() => {
-            let desc = failure.definition.trim().replace(/\s+/g, ' ');
-            if (!desc.endsWith('.')) desc += '.';
-            if (desc.length < 120) {
-                const combined = `${desc} Neutralize ${failure.title} risks with deterministic runtime controls.`;
-                return combined.length <= 155 ? combined : desc;
-            }
-            return desc.length > 155 ? desc.slice(0, 152) + '...' : desc;
-        })(),
+        title: baseTitle,
+        description: metaDesc,
         alternates: { canonical: `https://www.richardewing.io/failures/${slug}` },
         openGraph: {
-            title: `${failure.title} | Operational Failure Signature`,
-            description: failure.definition.slice(0, 155).replace(/\n/g, ' '),
+            title: `${baseTitle} | Richard Ewing`,
+            description: metaDesc,
             url: `https://www.richardewing.io/failures/${slug}`,
             siteName: 'Richard Ewing',
             type: 'article',
-            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+            images: [{ url: ogUrl, width: 1200, height: 630 }],
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${failure.title} | Operational Failure Signature`,
-            description: failure.definition.slice(0, 155).replace(/\n/g, ' '),
-            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
+            title: `${baseTitle} | Richard Ewing`,
+            description: metaDesc,
+            images: [ogUrl],
         }
     };
 }

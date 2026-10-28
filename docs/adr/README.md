@@ -61,6 +61,7 @@ Negative/Considerations:
 | [ADR-0014](ADR-0014-option-c-post-economics-aeo-and-in-scorecard-conversion-engine.md) | Option C Post-Economics AEO & In-Scorecard Conversion Engine | Accepted | @richardewing, Paul Graham, Aravind Srinivas, Lily Ray, Keith Rabois, Code Architect | 2026-10-24 |
 | [ADR-0015](ADR-0015-holistic-ecosystem-flywheel-and-exogram-conversion-architecture.md) | Holistic Ecosystem Interconnectivity & Exogram Conversion Architecture | Accepted | @richardewing, Steve Jobs, Brian Balfour, Keith Rabois, Aravind Srinivas, Code Architect | 2026-10-24 |
 | [ADR-0016](ADR-0016-search-opportunity-elevation-and-cross-engine-snippet-governance.md) | Search Opportunity Elevation and Cross-Engine Snippet Governance | Accepted | @richardewing, Aravind Srinivas, Steve Jobs, Brian Balfour, Code Architect | 2026-10-26 |
+| [ADR-0017](ADR-0017-edge-cache-ai-citation-and-search-consolidation.md) | Edge Cache Remediation, AI Citation Split, Snippet Governance, and Viral Diagnostic Chains | Accepted | @richardewing, Steve Jobs, Paul Graham, Aravind Srinivas, Lily Ray, Brian Balfour, Keith Rabois, Code Architect | 2026-10-28 |
 
 
 

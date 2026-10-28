@@ -14,6 +14,20 @@ export const metadata: Metadata = {
     },
 };
 
+import DiagnosticCTA from '@/app/components/DiagnosticCTA';
+
 export default function Page() {
-    return <AuditInterviewLanding />;
+    return (
+        <>
+            <AuditInterviewLanding />
+            <div className="max-w-5xl mx-auto px-6 pb-20">
+                <DiagnosticCTA
+                    variant="primary"
+                    title="Hiring senior engineers who rely on AI coding assistants?"
+                    subtitle="Standardize architectural verification, code review judgment, and AI blast-radius governance across your engineering hiring loop."
+                    metrics={['PR Judgment', 'Blast Radius', 'Hiring Rubric']}
+                />
+            </div>
+        </>
+    );
 }

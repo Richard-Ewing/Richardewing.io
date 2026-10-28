@@ -1,11 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Agent Operations Dashboard',
-    description: 'Administrative dashboard for monitoring autonomous agent operations and system prompt performance.',
-    robots: 'noindex, nofollow',
+  title: {
+    template: '%s | Richard Ewing',
+    default: 'Agent Operations Dashboard | Richard Ewing',
+  },
+  description: 'Administrative dashboard for monitoring autonomous agent operations, edge verification runs, and system prompt telemetry.',
+  robots: { index: false, follow: false },
 };
 
 export default function AdminAgentsLayout({ children }: { children: React.ReactNode }) {
-    return children;
+  return children;
 }

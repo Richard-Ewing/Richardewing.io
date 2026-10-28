@@ -100,9 +100,9 @@ export default function MCPAuditorTool() {
                         <ShieldAlert className="w-3.5 h-3.5 text-rose-600" />
                         OWASP MCP Top 10 &bull; Security Diagnostic
                     </div>
-                    <h1 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
+                    <h2 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
                         Model Context Protocol <span className="text-rose-600">Security Auditor</span>
-                    </h1>
+                    </h2>
                     <p className="mt-3 text-base text-zinc-700 max-w-3xl mx-auto font-medium leading-relaxed">
                         Over 40 CVEs have emerged from unsanitized STDIO transports, dynamic tool poisoning, and Shadow MCP connections. Audit your infrastructure against the 2026 Zero-Trust MCP Standard.
                     </p>

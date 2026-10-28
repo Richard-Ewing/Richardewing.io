@@ -4,6 +4,8 @@ import { notFound, permanentRedirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
+
 export async function generateStaticParams() {
     return exogramDocs.map((doc) => ({
         slug: doc.slug,
@@ -15,50 +17,28 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const doc = getExogramDoc(resolvedParams.slug);
     if (!doc) return { title: 'Not Found' };
 
-    const cleanTitle = doc.title;
-    const titleStr = cleanTitle.length > 29
-        ? `${cleanTitle} | Richard Ewing`
-        : `${cleanTitle} - Exogram Docs | Richard Ewing`;
-    const finalDesc = (() => {
-        let desc = doc.description.trim().replace(/\s+/g, ' ');
-        if (!desc.endsWith('.')) desc += '.';
-        if (desc.length < 120) {
-            const candidateSuffixes = [
-                ' Enforce deterministic runtime controls and protect production systems from agent drift.',
-                ' Enforce deterministic runtime controls and protect production system reliability.',
-                ' Enforce deterministic runtime controls and protect system reliability.',
-                ' Enforce deterministic runtime governance controls for enterprise systems.',
-                ' Enforce deterministic runtime governance controls.',
-                ' Enforce deterministic runtime controls.'
-            ];
-            for (const suffix of candidateSuffixes) {
-                const combined = desc + suffix;
-                if (combined.length >= 140 && combined.length <= 155) {
-                    return combined;
-                }
-            }
-            return (desc + ' Enforce deterministic runtime controls and protect system reliability.').slice(0, 155);
-        }
-        return desc.length > 155 ? desc.slice(0, 152) + '...' : desc;
-    })();
+    const rawTitle = doc.title.length > 27 ? doc.title : `${doc.title}: Exogram Docs`;
+    const baseTitle = clampSeoTitle(rawTitle, 42);
+    const finalDesc = formatSeoDescription(doc.description);
+    const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(doc.title)}&category=Exogram%20Docs`;
 
     return {
-        title: { absolute: titleStr },
+        title: baseTitle,
         description: finalDesc,
         alternates: { canonical: `https://www.richardewing.io/exogram/docs/${doc.slug}` },
         openGraph: {
-            title: titleStr,
+            title: `${baseTitle} | Richard Ewing`,
             description: finalDesc,
             url: `https://www.richardewing.io/exogram/docs/${doc.slug}`,
             siteName: 'Richard Ewing',
             type: 'article',
-            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+            images: [{ url: ogUrl, width: 1200, height: 630 }],
         },
         twitter: {
             card: 'summary_large_image',
-            title: titleStr,
+            title: `${baseTitle} | Richard Ewing`,
             description: finalDesc,
-            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
+            images: [ogUrl],
         }
     };
 }

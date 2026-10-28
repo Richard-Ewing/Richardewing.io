@@ -3,113 +3,150 @@ import { Suspense } from 'react';
 import DiagnosticCTA from '@/app/components/DiagnosticCTA';
 import ScorecardCheckoutDrawer from '@/app/components/ScorecardCheckoutDrawer';
 import CalculatorIntentProposal from '@/app/components/calculators/CalculatorIntentProposal';
+import ToolServerHeader from '@/app/components/calculators/ToolServerHeader';
+import ChainedDiagnosticNextStep from '@/app/components/calculators/ChainedDiagnosticNextStep';
 import { FrameworkDiagnosticBridge } from '@/components/seo/FrameworkDiagnosticBridge';
 import PDITool from './content';
 
 export const metadata: Metadata = {
-    title: 'Technical Debt & Cost Calculator (PDI)',
-    description: 'Quantify software technical debt in dollar terms, calculate your Technical Insolvency Date, and report engineering maintenance drag to the board.',
-    keywords: [
-        'product debt index',
-        'technical debt calculator',
-        'engineering debt cost',
-        'refactoring ROI',
-        'technical insolvency date',
-        'AI economist tool',
-        'free technical debt tool',
+  title: 'Technical Debt Dollar Calculator (PDI)',
+  description:
+    'Convert software technical debt and bug-fix drag into exact payroll dollars and project the quarter when maintenance consumes 100% of R&D capacity.',
+  keywords: [
+    'technical debt dollar calculator',
+    'product debt index',
+    'technical debt cost calculator',
+    'engineering maintenance cost',
+    'technical insolvency date',
+    'refactoring ROI calculator',
+  ],
+  alternates: {
+    canonical: 'https://www.richardewing.io/tools/pdi',
+  },
+  openGraph: {
+    title: 'Technical Debt Dollar Calculator (PDI) | Richard Ewing',
+    description:
+      'Convert software technical debt and bug-fix drag into exact payroll dollars and project the quarter when maintenance consumes 100% of R&D capacity.',
+    url: 'https://www.richardewing.io/tools/pdi',
+    type: 'website',
+    images: [
+      {
+        url: 'https://www.richardewing.io/api/og?title=Technical+Debt+Dollar+Calculator+%28PDI%29&category=R%26D+Capital+Audit',
+        width: 1200,
+        height: 630,
+      },
     ],
-    alternates: {
-        canonical: 'https://www.richardewing.io/tools/pdi',
-    },
-    openGraph: {
-        title: 'Technical Debt & Cost Calculator (PDI)',
-        description: 'Are you building assets or just servicing liabilities? Calculate your true engineering ROI.',
-        url: 'https://www.richardewing.io/tools/pdi',
-        type: 'website',
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Technical Debt & Cost Calculator (PDI)',
-        description: 'Quantify your hidden technical debt in dollar terms. Free diagnostic tool.',
-    },
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Technical Debt Dollar Calculator (PDI) | Richard Ewing',
+    description:
+      'Convert software technical debt and bug-fix drag into exact payroll dollars and project the quarter when maintenance consumes 100% of R&D capacity.',
+    images: [
+      'https://www.richardewing.io/api/og?title=Technical+Debt+Dollar+Calculator+%28PDI%29&category=R%26D+Capital+Audit',
+    ],
+  },
 };
 
 export default function Page() {
-    const howToSchema = {
-        '@context': 'https://schema.org',
-        '@type': 'HowTo',
-        name: 'How to Calculate Your Technical Insolvency Date',
-        description: 'Use the Product Debt Index (PDI) to determine when maintenance load will exceed engineering capacity.',
-        totalTime: 'PT4M',
-        tool: { '@type': 'HowToTool', name: 'PDI Calculator' },
-        step: [
-            { '@type': 'HowToStep', position: 1, name: 'Enter team size', text: 'Input your total engineering headcount and average fully-loaded cost per engineer.' },
-            { '@type': 'HowToStep', position: 2, name: 'Estimate maintenance allocation', text: 'Estimate the percentage of engineering time currently spent on maintenance vs. new features.' },
-            { '@type': 'HowToStep', position: 3, name: 'Set growth parameters', text: 'Define your expected maintenance growth rate and hiring capacity.' },
-            { '@type': 'HowToStep', position: 4, name: 'Calculate insolvency date', text: 'The calculator projects your Technical Insolvency Date: the quarter when maintenance consumes 100% of capacity.' },
-        ],
-    };
+  return (
+    <div className="min-h-screen bg-[#FAF9F6]">
+      <ToolServerHeader
+        slug="pdi"
+        eyebrow="R&D Capital Forensics · Product Debt Index"
+        h1="Technical Debt Dollar Calculator (Product Debt Index)"
+        executiveAnswer="The Technical Debt Dollar Calculator (PDI) translates abstract engineering backlog complaints into exact annual payroll waste and calculates your Technical Insolvency Date: the specific quarter when legacy maintenance and bug fixes consume 100% of engineering capacity and freeze roadmap delivery."
+        appName="Technical Debt Dollar Calculator (PDI)"
+        appDescription="Financial calculator converting engineering maintenance percentage and headcount compensation into annual technical debt dollars and Technical Insolvency Date."
+        howToName="How to Calculate Technical Debt in Dollars and Your Insolvency Date"
+        howToDescription="Quantify annual maintenance payroll drag and project when legacy upkeep overtakes net-new feature capacity."
+        steps={[
+          { name: 'Input engineering headcount and cost', text: 'Enter total developers and fully burdened annual compensation per engineer.' },
+          { name: 'Estimate maintenance vs roadmap split', text: 'Specify the real share of sprint hours spent on bug fixes, incidents, and legacy upkeep.' },
+          { name: 'Model debt compounding rate', text: 'Factor in quarterly complexity growth from rushed releases or unverified AI code.' },
+          { name: 'Export CFO remediation business case', text: 'Present exact dollar payback for refactoring sprints to your CEO, CFO, and board.' },
+        ]}
+      />
 
-    const breadcrumbSchema = {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
-            { '@type': 'ListItem', position: 2, name: 'Diagnostics & Tools', item: 'https://www.richardewing.io/tools' },
-            { '@type': 'ListItem', position: 3, name: 'Product Debt Index', item: 'https://www.richardewing.io/tools/pdi' },
-        ],
-    };
+      <Suspense
+        fallback={
+          <div className="max-w-5xl mx-auto p-8 text-center text-zinc-500 font-mono text-xs">
+            Loading PDI Diagnostic...
+          </div>
+        }
+      >
+        <PDITool />
+      </Suspense>
 
-    return (
-        <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-            <Suspense fallback={<div className="max-w-5xl mx-auto p-8 text-center text-zinc-500 font-mono text-xs">Loading PDI Diagnostic...</div>}>
-                <PDITool />
-            </Suspense>
-            <div className="page-container max-w-4xl mx-auto px-6 mb-16 space-y-12">
-                <ScorecardCheckoutDrawer
-                    metricLabel="Typical R&D Carrying Cost Drag"
-                    metricValue="25% to 55% of Capacity"
-                    source="pdi"
-                />
-                <CalculatorIntentProposal
-                    toolName="Product Debt Index (PDI) Calculator"
-                    problemDomain="Compounding Technical Debt &amp; Maintenance Insolvency"
-                    calculatedMetricLabel="Typical R&amp;D Carrying Cost Drag"
-                    calculatedMetricValue="25% to 55% of Engineering Capacity"
-                    severityLevel="CRITICAL"
-                    primaryPathway={{
-                        destination: 'RICHARD_EWING_ADVISORY',
-                        relationshipType: 'ADVISES_ON',
-                        channel: 'EXECUTIVE_ADVISORY',
-                        headline: 'Commission a Technical Due Diligence & PDI Audit',
-                        subtext: 'Retain Richard Ewing to audit software capital allocation, quantify balance sheet technical debt, and present remediation roadmaps to the board.',
-                        actionUrl: '/schedule?source=pdi',
-                        actionLabel: 'Book 30-Min PDI Triage on Cal.com ↗',
-                        targetRole: 'Private Equity Operating Partners & CPOs'
-                    }}
-                    secondaryPathway={{
-                        destination: 'EXOGRAM_SOFTWARE',
-                        relationshipType: 'OPERATIONALIZES',
-                        channel: 'ENGINEERING_RUNTIME',
-                        headline: 'Deploy Boundary Gates to Prevent Code Drift',
-                        subtext: 'Exogram enforces deterministic boundary controls and schema validation to stop vibe coding debt from polluting production repositories.',
-                        actionUrl: '/exogram',
-                        actionLabel: 'Inspect Boundary Gate Architecture ↗',
-                        targetRole: 'VPs of Engineering & Staff Architects'
-                    }}
-                />
+      <div className="page-container max-w-4xl mx-auto px-6 mb-16 space-y-12">
+        <ChainedDiagnosticNextStep
+          chainName="CFO & Private Equity R&D Capital Chain"
+          stepLabel="Step 1 of 3 · Connected Diagnostic Chain"
+          currentToolSlug="pdi"
+          currentToolName="Technical Debt Dollar Calculator (PDI)"
+          defaultScorecardMetricLabel="Annual R&D Maintenance Drag"
+          defaultScorecardMetricValue="35% to 55% of Payroll"
+          defaultScorecardStatus="INSOLVENCY HORIZON"
+          nextDiagnostic={{
+            slug: 'due-diligence',
+            title: 'PE Software & AI Due Diligence Audit',
+            reason: 'See how acquirers and Private Equity operating partners translate your technical debt dollar figure directly into an enterprise valuation multiple discount.',
+          }}
+          secondaryDiagnostic={{
+            slug: 'section-174-calculator',
+            title: 'Section 174 R&D Tax Cost Calculator',
+          }}
+          commercialStep={{
+            href: '/advisory',
+            label: 'Commission a 3-Week R&D Capital Audit',
+            priceTag: '$7,500',
+            description: 'Independent forensic review of engineering allocation, zombie infrastructure, and AI spend with a board-ready remediation package.',
+          }}
+        />
 
-                <FrameworkDiagnosticBridge variant="diagnostic-to-framework" />
+        <ScorecardCheckoutDrawer
+          metricLabel="Typical R&D Carrying Cost Drag"
+          metricValue="25% to 55% of Capacity"
+          source="pdi"
+        />
 
-                <DiagnosticCTA 
-                    title="Is your team drowning in AI-generated Technical Debt?"
-                    subtitle="Vibe coding gets you to MVP fast, but creates a maintenance nightmare. Take the AI Economics Diagnostic to map your debt liability before velocity drops to zero."
-                    metrics={["45% Vulnerable", "0% Velocity", "High Attrition"]}
-                    hideCheckoutDrawer={true}
-                />
-            </div>
-        </>
-    );
+        <CalculatorIntentProposal
+          toolName="Technical Debt Dollar Calculator (PDI)"
+          problemDomain="Compounding Technical Debt &amp; Maintenance Insolvency"
+          calculatedMetricLabel="Typical R&amp;D Carrying Cost Drag"
+          calculatedMetricValue="25% to 55% of Engineering Capacity"
+          severityLevel="CRITICAL"
+          primaryPathway={{
+            destination: 'RICHARD_EWING_ADVISORY',
+            relationshipType: 'ADVISES_ON',
+            channel: 'EXECUTIVE_ADVISORY',
+            headline: 'Commission a Technical Due Diligence & PDI Audit',
+            subtext: 'Retain Richard Ewing to audit software capital allocation, quantify balance sheet technical debt, and present remediation roadmaps to the board.',
+            actionUrl: '/schedule?source=pdi',
+            actionLabel: 'Book 30-Min PDI Triage ↗',
+            targetRole: 'PE Operating Partners, CFOs & CPOs',
+          }}
+          secondaryPathway={{
+            destination: 'EXOGRAM_SOFTWARE',
+            relationshipType: 'OPERATIONALIZES',
+            channel: 'ENGINEERING_RUNTIME',
+            headline: 'Preserve Architectural Context Across Sprints',
+            subtext: 'Exogram keeps architecture decisions, incident history, and active constraints intact so teams stop re-introducing solved bugs.',
+            actionUrl: '/exogram',
+            actionLabel: 'Inspect Exogram Architecture ↗',
+            targetRole: 'VPs of Engineering & Staff Architects',
+          }}
+        />
+
+        <FrameworkDiagnosticBridge variant="diagnostic-to-framework" />
+
+        <DiagnosticCTA
+          title="Is maintenance quietly eating half your engineering payroll?"
+          subtitle="Stop arguing about refactoring in technical jargon. Hand your CFO the exact dollar cost of inaction and fund the fix."
+          metrics={['45% Maintenance', 'Roadmap Freeze', 'Multiple Drag']}
+          hideCheckoutDrawer={true}
+        />
+      </div>
+    </div>
+  );
 }

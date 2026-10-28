@@ -6,7 +6,7 @@ import ScorecardCheckoutDrawer from '../components/ScorecardCheckoutDrawer';
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://www.richardewing.io/answers' },
-  title: 'AI Building, Automation, Pricing & P&L Answer Matrix',
+  title: 'AI Pricing, Automation & P&L Answers',
   description:
     'Direct, concrete answers on escaping the 80% vibe-coding trap, MCP agents, AEO/GEO citations, AI pricing, $250K+ PM interviews, and CFO board defense.',
 };

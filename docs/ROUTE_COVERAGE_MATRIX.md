@@ -36,7 +36,9 @@ The following core components represent the unified editorial building blocks de
 | **`MetricPanel`** | `components/editorial/MetricPanel.tsx` | Diagnostic tools & audit reports | High-contrast numerical callout highlighting dollar savings, efficiency multipliers, or insolvency dates. |
 | **`QuoteBlock`** | `components/editorial/QuoteBlock.tsx` | Core essays & curriculum | High-impact italicized executive axiom bordered with forest or gold accent and attributed to Richard Ewing. |
 | **`ChartPanel`** | `components/editorial/ChartPanel.tsx` | Research briefs & benchmarks | Visual SVG container displaying unit cost curves, latency bands, or phase transition diagrams. |
-| **`AccordionItem`** | `components/editorial/AccordionItem.tsx` | Master Legal Hub (`/legal`), compare FAQs | Accessible, animated disclosure element for FAQs, curriculum outlines, and complex calculation steps. |
+| **`AccordionItem`** | `components/editorial/AccordionItem.tsx` | Master Legal Hub (`/legal`), compare FAQs, `/benchmark/llm-cost-and-margin-index` | Accessible, animated disclosure element for FAQs, curriculum outlines, and complex calculation steps. |
+| **`ToolServerHeader`** | `app/components/calculators/ToolServerHeader.tsx` | Commercial `/tools/*` calculators | SSR header emitting static buyer-intent `<h1>`, 45-word answer block, and `WebApplication` + `HowTo` + `BreadcrumbList` JSON-LD. |
+| **`ChainedDiagnosticNextStep`** | `app/components/calculators/ChainedDiagnosticNextStep.tsx` | Top 15 `/tools/*` calculators | 3-step connected diagnostic handoff banner passing live query inputs + `SlackScorecardExport` viral readout links. |
 
 ---
 
@@ -44,12 +46,13 @@ The following core components represent the unified editorial building blocks de
 
 | Page Family | Route Count | Status | Concept B Conformance | SEO & Schema | Verification Status |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Core & Executive Hub** | 157 | Active | 100% | `WebSite`, `Person`, `Organization`, `Service`, `Article` | Passed |
+| **Core & Executive Hub** | 158 | Active | 100% | `WebSite`, `Person`, `ProfilePage`, `Organization`, `Dataset` | Passed |
 | **Research & Publications** | 48 | Indexed | 100% | `CollectionPage`, `Article`, `DefinedTermSet` | Passed |
 | **Editorial & Blog** | 152 | Indexed / Canonical | 100% | `BlogPosting`, `Author` | Passed |
-| **Interactive Diagnostics & Tools** | 46 | Active | 100% | `WebApplication`, `HowTo` | Passed |
+| **Interactive Diagnostics & Tools** | 48 | Active | 100% | `WebApplication`, `HowTo`, `BreadcrumbList` | Passed |
+| **Viral Scorecard Readouts (`/scorecard/[toolSlug]`)** | 15 | Noindex / Follow | 100% | Dynamic `/api/og` Slack/Teams Card -> Canonical `/tools/[slug]` | Passed |
 | **Concepts & Ontology** | 132 | Indexed | 100% | `DefinedTerm`, `FAQPage` | Passed |
-| **Glossary Terms (Indexed)** | 98 | Indexed | 100% | `DefinedTerm`, `DefinedTermSet` | Passed |
+| **Glossary Terms (Indexed)** | 99 | Indexed | 100% | `DefinedTerm`, `DefinedTermSet`, SSR `<table>` Matrices | Passed |
 | **Glossary Terms (Redirected)** | 453 | 301/308 | N/A | Clean Redirect Target | Passed |
 | **Glossary Pillars** | 17 | Indexed | 100% | `CollectionPage`, `BreadcrumbList` | Passed |
 | **Curriculum & Vault Tracks** | 348 | Indexed | 100% | `Course`, `EducationalOccupationalProgram` | Passed |
@@ -67,4 +70,4 @@ The following core components represent the unified editorial building blocks de
 2. **Zero Fake Numbers**: All diagnostics, ROI calculators, and statistics use validated formulas and explicit, transparent assumptions.
 3. **Cloudflare Edge Deployment**: Exclusively routed and deployed through `@opennextjs/cloudflare` and `wrangler.jsonc` to `richardewing.io`. Never Vercel.
 4. **Prerender & Window Safety**: All browser-dependent APIs and canvas hooks are guarded by `useEffect` or `typeof window !== 'undefined'`.
-5. **Zero Secret Key Leaks**: Strictly verified through automated pre-deployment AST inspection in `verify-qa.mjs`.
+5. **Zero Secret Key Leaks & Post-Build HTML SEO Gate (`ADR-0017`)**: Strictly verified through automated AST and `.next/server/app` compiled HTML inspection in `verify-qa.mjs` (`0` indexable `<title>` `>60c`, `0` `...` descriptions, `0` missing canonicals, `1` `<h1>` per indexable HTML route).

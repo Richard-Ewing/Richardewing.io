@@ -155,8 +155,8 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                     <p className="text-zinc-900 text-lg mb-8 max-w-md mx-auto">
                         You have exceeded the maximum number of free generic diagnostic scans. To continue evaluating systems via {toolName}, please join the Vault.
                     </p>
-                    <a href="/vault/join" className="block w-full py-4 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all shadow-[0_0_20px_rgba(225,29,72,0.4)] hover:shadow-[0_0_30px_rgba(225,29,72,0.6)]">
-                        Upgrade & Access Vault →
+                    <a href="/vault/join" className="block w-full py-4 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold uppercase tracking-widest text-sm rounded-xl transition-all shadow-[0_0_20px_rgba(225,29,72,0.4)] hover:shadow-[0_0_30px_rgba(225,29,72,0.6)]">
+                        Upgrade &amp; Access Vault →
                     </a>
                 </motion.div>
             </div>
@@ -179,9 +179,9 @@ export default function ToolGate({ children, toolName = "This Diagnostic", toolS
                     <Lock className="w-8 h-8 text-cyan-900 font-extrabold font-semibold" />
                 </div>
 
-                <h1 className="text-3xl md:text-5xl font-bold mb-4 tracking-tighter">
+                <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tighter">
                     Enter Email to Continue
-                </h1>
+                </h2>
 
                 <p className="text-zinc-900 text-lg mb-8 max-w-md mx-auto">
                     Enter your email to access {toolName} results.

@@ -205,9 +205,9 @@ export default function ShadowContent() {
                             </span>
                         </div>
 
-                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
+                        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
                             Quantify the <span className={`text-transparent bg-clip-text bg-gradient-to-r ${mode ==='AUDIT'? 'from-rose-400 to-red-600': 'from-amber-400 to-red-500'}`}>Blast Radius.</span>
-                        </h1>
+                        </h2>
                         <p className="text-lg sm:text-xl text-zinc-900 mb-8 max-w-2xl">
                             Paste proprietary database schemas and API keys into a public ChatGPT window and you lose data sovereignty forever. Calculate your organizational exposure to Shadow AI leakage.
                         </p>

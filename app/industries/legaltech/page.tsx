@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'LegalTech AI Unit Economics & Document Ingestion',
+    title: 'LegalTech AI Margin & Document COGS',
     description: 'Control vector database costs, document OCR processing overhead, and contract review inference margins across legal AI software architectures.',
     keywords: ['legaltech technical debt', 'legal technology', 'contract AI economics', 'legal document processing', 'legaltech engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/legaltech' },
@@ -47,7 +47,7 @@ export default function LegalTechPage() {
                     <div className="rounded-2xl border border-violet-500/30 bg-violet-500/5 p-8 text-center">
                         <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">LegalTech R&D Audit</h2>
                         <p className="text-zinc-950 mb-6">Quantify your document processing AI costs, compliance data debt, and security infrastructure burden.</p>
-                        <Link href="/services" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-purple-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Book LegalTech Audit →</Link>
+                        <Link href="/services" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-violet-500 to-purple-500 text-white font-semibold font-bold hover:opacity-90 transition-opacity">Book LegalTech Audit →</Link>
                     
                     <AdvisoryCTA variant="industry" />
 </div>

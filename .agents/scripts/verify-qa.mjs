@@ -412,6 +412,132 @@ if (fs.existsSync(fwPath)) {
   }
 }
 
+// 7H. Post-Build Compiled HTML SEO & Snippet Gate (ADR-0017)
+function decodeHtmlEntities(str) {
+  return str
+    .replace(/&amp;/g, '&')
+    .replace(/&#x27;|&#39;|&apos;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(Number(code)))
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)));
+}
+
+function collectCompiledHtmlFiles(dir) {
+  let out = [];
+  if (!fs.existsSync(dir)) return out;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      out = out.concat(collectCompiledHtmlFiles(full));
+    } else if (entry.isFile() && entry.name.endsWith('.html')) {
+      out.push(full);
+    }
+  }
+  return out;
+}
+
+const compiledAppDir = path.join(rootDir, '.next/server/app');
+if (fs.existsSync(compiledAppDir)) {
+  const htmlFiles = collectCompiledHtmlFiles(compiledAppDir);
+  let auditedHtmlCount = 0;
+  let htmlTitleErrors = 0;
+  let htmlDescErrors = 0;
+  let htmlCanonicalErrors = 0;
+  let htmlH1Errors = 0;
+
+  // Read REDIRECT_DISALLOWED routes from app/sitemap.ts so legacy redirected static files are skipped
+  const sitemapRaw = fs.existsSync(sitemapPath) ? fs.readFileSync(sitemapPath, 'utf8') : '';
+  const disallowedMatch = sitemapRaw.match(/const\s+REDIRECT_DISALLOWED\s*=\s*new\s+Set\(\[([\s\S]*?)\]\)/);
+  const redirectDisallowedRoutes = new Set(
+    disallowedMatch
+      ? [...disallowedMatch[1].matchAll(/['"]([^'"]+)['"]/g)].map(m => m[1])
+      : []
+  );
+
+  for (const hf of htmlFiles) {
+    const relHtml = path.relative(compiledAppDir, hf).replace(/\\/g, '/');
+    if (
+      relHtml === '_not-found.html' ||
+      relHtml.startsWith('_') ||
+      relHtml.includes('/_') ||
+      relHtml.startsWith('api/') ||
+      relHtml.startsWith('sign-in') ||
+      relHtml.startsWith('sign-up') ||
+      relHtml.startsWith('scorecard/') ||
+      relHtml.startsWith('checkout-pending') ||
+      relHtml.startsWith('toolkit-success')
+    ) {
+      continue;
+    }
+
+    const routePath = relHtml === 'index.html' ? '/' : '/' + relHtml.replace(/\.html$/, '');
+    if (redirectDisallowedRoutes.has(routePath)) continue;
+
+    const html = fs.readFileSync(hf, 'utf8');
+    // Skip Next.js permanentRedirect / redirect shells and explicit noindex routes
+    if (
+      html.includes('NEXT_REDIRECT') ||
+      /<meta[^>]+http-equiv=["']refresh["']/i.test(html) ||
+      /<meta[^>]+name=["']robots["'][^>]+content=["'][^"']*noindex/i.test(html) ||
+      /<meta[^>]+content=["'][^"']*noindex[^"']*["'][^>]+name=["']robots["']/i.test(html)
+    ) {
+      continue;
+    }
+
+    auditedHtmlCount++;
+
+    // 1. <title> <= 60 chars
+    const titleMatch = html.match(/<title>([\s\S]*?)<\/title>/i);
+    if (!titleMatch) {
+      console.error(`[HTML SEO ERROR] Missing <title> in compiled route ${routePath}`);
+      htmlTitleErrors++;
+      errorCount++;
+    } else {
+      const decodedTitle = decodeHtmlEntities(titleMatch[1]).trim();
+      if (decodedTitle.length > 60) {
+        console.error(`[HTML SEO ERROR] Compiled <title> > 60 chars (${decodedTitle.length}c) on ${routePath}: "${decodedTitle}"`);
+        htmlTitleErrors++;
+        errorCount++;
+      }
+    }
+
+    // 2. Meta description not ending with '...' or ellipsis
+    const descMatch =
+      html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)["']/i) ||
+      html.match(/<meta[^>]+content=["']([^"']*)["'][^>]+name=["']description["']/i);
+    if (descMatch) {
+      const decodedDesc = decodeHtmlEntities(descMatch[1]).trim();
+      if (decodedDesc.endsWith('...') || decodedDesc.includes('\u2026')) {
+        console.error(`[HTML SEO ERROR] Truncated meta description ending with ellipsis on ${routePath}: "${decodedDesc}"`);
+        htmlDescErrors++;
+        errorCount++;
+      }
+    }
+
+    // 3. Canonical link present
+    if (!/<link[^>]+rel=["']canonical["']/i.test(html)) {
+      console.error(`[HTML SEO ERROR] Missing <link rel="canonical"> on indexable compiled route ${routePath}`);
+      htmlCanonicalErrors++;
+      errorCount++;
+    }
+
+    // 4. Exactly 1 <h1> per indexable HTML page
+    const strippedScripts = html.replace(/<script[\s\S]*?<\/script>/gi, '');
+    const h1Matches = strippedScripts.match(/<h1(?:\s|>)/gi) || [];
+    if (h1Matches.length !== 1) {
+      console.error(`[HTML SEO ERROR] Expected 1 <h1>, found ${h1Matches.length} on compiled route ${routePath}`);
+      htmlH1Errors++;
+      errorCount++;
+    }
+  }
+
+  console.log(
+    `[HTML SEO GATE] Audited ${auditedHtmlCount} indexable prerendered HTML routes (TitleErr=${htmlTitleErrors}, DescErr=${htmlDescErrors}, CanonicalErr=${htmlCanonicalErrors}, H1Err=${htmlH1Errors}).`
+  );
+}
+
 // 8. Agent Skills Security & Hygiene Gate
 try {
   const auditOutput = execSync(`node "${path.join(__dirname, 'audit-agent-skills.mjs')}"`, { encoding: 'utf8' });

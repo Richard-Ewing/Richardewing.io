@@ -22,7 +22,7 @@ import {
 import ProgramMediaPlayers from '@/components/ai-product-builder/ProgramMediaPlayers';
 
 export const metadata: Metadata = {
-  title: 'The AI Product Builder: 4-Week Founder Cohort',
+  title: 'AI Product Builder: 4-Week Cohort',
   description: 'Go from domain expert to AI founder with paying customers. Cost governance, $500k capital rails, and live production SOW audits.',
   alternates: {
     canonical: 'https://www.richardewing.io/programs/ai-product-builder',

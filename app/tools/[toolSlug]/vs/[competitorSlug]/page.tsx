@@ -8,6 +8,8 @@ import ShineBorder from '../../../../components/magicui/shine-border';
 import { Footer } from '../../../../components/footer';
 import Navigation from '../../../../components/Navigation';
 
+import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
+
 // Helper to find data
 function getMatch(toolSlug: string, competitorSlug: string) {
     const tool = COMBAT_SEO_MATRIX.find(t => t.toolSlug === toolSlug);
@@ -27,15 +29,14 @@ export async function generateMetadata(
     if (!match) return { title: 'Comparison Not Found' };
 
     const { tool, competitor } = match;
-    const vsBase = `${tool.toolName} vs ${competitor.name}`;
-    const titleStr = vsBase.length > 44 ? vsBase : `${vsBase} | Richard Ewing`;
-    const rawDesc = `Why enterprise leaders choose deterministic architecture over ${competitor.name}. Calculate Cost of Doing Nothing (CODN) and Board-Level Liability.`;
-    const finalDesc = rawDesc.length > 155 ? rawDesc.slice(0, 152) + '...' : rawDesc;
+    const vsCore = clampSeoTitle(`${tool.toolName} vs ${competitor.name}`, 42);
+    const finalDesc = formatSeoDescription(
+        `Compare ${tool.toolName} vs. ${competitor.name} on unit cost, architectural risk, and payback so CFOs, CTOs, and VPs of Engineering avoid hidden vendor lock-in.`
+    );
+    const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(`${tool.toolName} vs ${competitor.name}`)}&category=Platform%20Comparison`;
 
     return {
-        title: {
-            absolute: titleStr,
-        },
+        title: vsCore,
         description: finalDesc,
         keywords: [
             `${competitor.name} alternative`,
@@ -48,17 +49,17 @@ export async function generateMetadata(
             canonical: `https://www.richardewing.io/tools/${tool.toolSlug}/vs/${competitor.slug}`,
         },
         openGraph: {
-            title: `${tool.toolName} vs. ${competitor.name} (2026 Comparison)`,
+            title: `${vsCore} | Richard Ewing`,
             description: finalDesc,
             url: `https://www.richardewing.io/tools/${tool.toolSlug}/vs/${competitor.slug}`,
             type: 'article',
-            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+            images: [{ url: ogUrl, width: 1200, height: 630 }],
         },
         twitter: {
             card: 'summary_large_image',
-            title: `${tool.toolName} vs. ${competitor.name} (2026 Comparison)`,
+            title: `${vsCore} | Richard Ewing`,
             description: finalDesc,
-            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
+            images: [ogUrl],
         }
     };
 }

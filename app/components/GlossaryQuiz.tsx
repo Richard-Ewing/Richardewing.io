@@ -87,7 +87,7 @@ export default function GlossaryQuiz({ quiz, title }: { quiz: QuizQuestion[]; ti
             )}
 
             {selected !== null && (
-                <button onClick={handleNext} className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-purple-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity text-sm">
+                <button onClick={handleNext} className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-purple-500 text-white font-semibold font-bold hover:opacity-90 transition-opacity text-sm">
                     {currentQ + 1 >= quiz.length ? 'See Results' : 'Next Question →'}
                 </button>
             )}

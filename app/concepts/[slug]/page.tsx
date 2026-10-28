@@ -8,6 +8,8 @@ import ConceptProvenanceSection from '@/app/components/concepts/ConceptProvenanc
 import ConceptDownstreamSolution from '@/app/components/concepts/ConceptDownstreamSolution';
 import MultiHopGraphExplorer from '@/app/components/concepts/MultiHopGraphExplorer';
 
+import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
+
 interface ConceptPageProps {
   params: Promise<{ slug: string }>;
 }
@@ -24,51 +26,28 @@ export async function generateMetadata({ params }: ConceptPageProps): Promise<Me
   if (!concept) return {};
 
   const rawDesc = concept.aeo?.shortDefinition || concept.definition;
-  const description = (() => {
-    let desc = rawDesc.trim().replace(/\s+/g, ' ');
-    if (!desc.endsWith('.')) desc += '.';
-    if (desc.length >= 140 && desc.length <= 158) return desc;
-    if (desc.length > 158) return desc.slice(0, 155) + '...';
-
-    const candidateSuffixes = [
-      ` Forensic systems architecture and engineering economics research by Richard Ewing for CTOs.`,
-      ` Forensic systems architecture and engineering economics research by Richard Ewing.`,
-      ` Systems architecture, engineering economics research, and executive frameworks.`,
-      ` Systems architecture and engineering economics research by Richard Ewing.`,
-      ` Systems architecture and engineering economics frameworks by Richard Ewing.`,
-      ` Engineering economics research and frameworks by Richard Ewing.`,
-      ` Forensic analysis and frameworks by Richard Ewing.`,
-      ` Research and frameworks by Richard Ewing.`,
-      ` Research by Richard Ewing.`
-    ];
-    for (const suffix of candidateSuffixes) {
-      const combined = desc + suffix;
-      if (combined.length >= 140 && combined.length <= 158) {
-        return combined;
-      }
-    }
-    const fallback = `${desc} Research and analysis by Richard Ewing.`;
-    return fallback.length > 158 ? fallback.slice(0, 155) + '...' : fallback;
-  })();
+  const baseTitle = clampSeoTitle(`${concept.title} Research Spec`, 42);
+  const description = formatSeoDescription(rawDesc);
+  const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(concept.title)}&category=Canonical%20Concept`;
 
   return {
-    title: `${concept.title} - Research Spec`,
+    title: baseTitle,
     description,
     alternates: {
       canonical: `https://www.richardewing.io/concepts/${slug}`,
     },
     openGraph: {
-      title: `${concept.title} - Research Spec | Richard Ewing`,
+      title: `${baseTitle} | Richard Ewing`,
       description,
       url: `https://www.richardewing.io/concepts/${concept.slug}`,
       type: 'article',
-      images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+      images: [{ url: ogUrl, width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${concept.title} - Research Spec | Richard Ewing`,
+      title: `${baseTitle} | Richard Ewing`,
       description,
-      images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
+      images: [ogUrl],
     },
   };
 }

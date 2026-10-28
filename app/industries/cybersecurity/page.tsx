@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Cybersecurity Tech Debt & Alert Fatigue Costs',
+    title: 'Cybersecurity AI & Alert Fatigue Costs',
     description: 'Quantify SIEM integration debt, alert volume infrastructure costs, and security engineering efficiency metrics across enterprise technology operations.',
     keywords: ['cybersecurity technical debt', 'security debt', 'AI threat detection cost', 'cybersecurity CTO advisor', 'security engineering economics'],
     alternates: { canonical: 'https://www.richardewing.io/industries/cybersecurity' },
@@ -49,7 +49,7 @@ export default function CybersecurityPage() {
                             <li className="flex items-start gap-3"><span className="text-red-900 font-extrabold font-semibold mt-1">→</span> <span>Calculate compliance engineering overhead across multiple framework certifications</span></li>
                         </ul>
                         <div className="flex flex-wrap gap-4">
-                            <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-red-500 to-orange-600 text-zinc-950 font-semibold font-bold hover:opacity-90">Free PDI Assessment →</Link>
+                            <Link href="/tools/pdi" className="px-6 py-3 rounded-lg bg-gradient-to-r from-red-500 to-orange-600 text-white font-semibold font-bold hover:opacity-90">Free PDI Assessment →</Link>
                             <Link href="/services" className="px-6 py-3 rounded-lg border border-zinc-500 text-zinc-950 font-bold hover:bg-white/5">Book Advisory →</Link>
                         </div>
                     

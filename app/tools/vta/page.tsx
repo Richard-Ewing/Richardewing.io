@@ -31,6 +31,20 @@ export const metadata: Metadata = {
     },
 };
 
+import DiagnosticCTA from '@/app/components/DiagnosticCTA';
+
 export default function Page() {
-    return <VTATool />;
+    return (
+        <>
+            <VTATool />
+            <div className="max-w-5xl mx-auto px-6 pb-20">
+                <DiagnosticCTA
+                    variant="danger"
+                    title="Is human-in-the-loop verification secretly eating your AI software margin?"
+                    subtitle="Quantify hidden QA review payroll and automate deterministic verification before scaling customer volume."
+                    metrics={['HITL Payroll', 'Volatility Tax', 'Margin Recovery']}
+                />
+            </div>
+        </>
+    );
 }

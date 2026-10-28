@@ -28,7 +28,7 @@ export default function PremiumGuideCTA({ guideSlug, guideName }: PremiumGuideCT
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                     <button
                         onClick={() => setShowBundle(true)}
-                        className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-sm font-semibold rounded-xl hover:opacity-90 transition-opacity"
+                        className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 text-white font-bold uppercase tracking-widest text-sm rounded-xl hover:opacity-90 transition-opacity"
                     >
                         Get access for ${guidePrice} <ArrowRight className="w-4 h-4" />
                     </button>

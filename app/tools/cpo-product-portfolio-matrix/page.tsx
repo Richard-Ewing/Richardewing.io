@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import CalculatorIntentProposal from '@/app/components/calculators/CalculatorIntentProposal';
+import ToolServerHeader from '@/app/components/calculators/ToolServerHeader';
 import CPOProductPortfolioTool from './content';
 
 export const metadata: Metadata = {
@@ -27,6 +28,21 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <div className="space-y-8">
+            <ToolServerHeader
+                slug="cpo-product-portfolio-matrix"
+                eyebrow="Product Economics · Portfolio Margin Pruning"
+                h1="CPO AI Feature Margin & Portfolio Matrix"
+                executiveAnswer="Shipping unmonetized AI features inside flat-rate SaaS plans quietly erodes gross margin by 15 to 35 points. Built for CPOs, VPs of Product, and Product Ops Leads to rank every roadmap feature by net contribution margin, adoption elasticity, and credit-pack monetization fit."
+                appName="CPO AI Feature Margin Matrix"
+                appDescription="Portfolio pruning diagnostic for CPOs and VPs of Product evaluating feature-level AI inference costs against retention and expansion revenue."
+                howToName="How to Audit Product Portfolio AI Gross Margins"
+                howToDescription="Score feature adoption, monthly inference burn, and willingness-to-pay to isolate negative-carry roadmap items."
+                steps={[
+                    { name: 'Map Active AI Features & Usage', text: 'Input monthly active users, prompt frequency, and inference cost per feature.' },
+                    { name: 'Compare Retention Lift vs Token Burn', text: 'Evaluate whether each feature drives net expansion or subsidizes power users at a loss.' },
+                    { name: 'Assign Kill, Gate, or Meter Actions', text: 'Classify features into usage-gated tiers, outcome add-ons, or immediate sunset candidates.' },
+                ]}
+            />
             <CPOProductPortfolioTool />
             <div className="page-container max-w-4xl mx-auto px-6 mb-16">
                 <CalculatorIntentProposal

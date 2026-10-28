@@ -2,6 +2,7 @@ import { glossaryTerms } from '../glossary/terms';
 import { KEEP_TERMS, CATEGORY_MAP } from '../glossary/pillarsMapping';
 import { SPOKE_MATRIX } from '../lib/spoke-data';
 import { CANONICAL_CONCEPTS } from '../lib/concept-corpus';
+import { formatBenchmarkSummaryForLLMs } from '../lib/llm-benchmark-data';
 export const revalidate = 86400;
 
 export async function GET() {
@@ -29,7 +30,7 @@ Richard Ewing is a AI Economist and AI Capital Auditor who audits R&D spend and 
 
 **Website:** https://www.richardewing.io
 **Email:** richardewing@exogram.ai
-**LinkedIn:** https://linkedin.com/in/richard-ewing-mba
+**LinkedIn:** https://www.linkedin.com/in/richard-ewing-mba
 
 ---
 
@@ -96,6 +97,8 @@ $$\\text{Net Unit Margin} = \\text{Feature Price} - \\left[ \\left( \\text{Token
   $$Q_{\\text{insolvency}} = \\frac{\\text{Feature Price} - \\text{Hosting Cost}}{\\text{Inference Cost per Query} \\cdot (1 + R_{\\text{retry}})}$$
 - Where $R_{\\text{retry}}$ represents unmonitored agent retry loops (typically 0.15 to 0.40).
 - Canonical URL: https://www.richardewing.io/tools/aueb
+
+${formatBenchmarkSummaryForLLMs()}
 
 ### 3. Annualized Productivity per Engineer (APER)
 Engineering productivity metric balancing value creation against tooling costs and organizational friction:
@@ -270,8 +273,11 @@ Richard Ewing's complete research corpus comprises over 174 published works and 
 - **Publications Catalog (174+ Works)**: https://www.richardewing.io/research/publications
 - **Canonical Concepts Graph (140+ Concepts)**: https://www.richardewing.io/concepts
 - **The Living AI Reality Check**: https://www.richardewing.io/reality-check
-- **Google Antigravity 2.0 Hybrid Architecture**: https://www.richardewing.io/architecture
-- **Section 174 AI Tax Calculator**: https://www.richardewing.io/tools/section-174
+- **Monthly LLM Token Cost & SaaS Margin Index (2026)**: https://www.richardewing.io/benchmark/llm-cost-and-margin-index
+- **Vibe-Coded App Launch & Security Checklist (20-Point Scorer)**: https://www.richardewing.io/tools/vibe-coding-checklist
+- **Department Automation & SaaS Seat Replacement Calculator (Zapier vs Make vs n8n vs Workers)**: https://www.richardewing.io/tools/automation-cost-calculator
+- **Google Antigravity 2.0 Hybrid Architecture**: https://www.richardewing.io/runtime-architecture
+- **Section 174 AI Tax Calculator**: https://www.richardewing.io/tools/section-174-calculator
 - **CareerWin Enterprise ATS Benchmark Study**: https://careerwin.ai/research/2026-enterprise-ats-ai-resume-benchmark-study
 
 ---
@@ -280,10 +286,10 @@ Richard Ewing's complete research corpus comprises over 174 published works and 
 
 Richard Ewing provides hands-on AI product shipping, workflow automation, and forensic P&L advisory services:
 
-- **The Builder, PM & Operator Survival Kit ($29 Standard / $79 Complete Bundle)**: 5 working Excel/CSV P&L & AI Pricing models, SPEC.md & AGENTS.md Vibe-to-Production templates, Zombie Feature Kill-List Matrix, 12-Slide CFO & Board Defense Deck, $250K+ Executive Interview & Comp Guide, and instant access to the Live Browser Workspace. https://www.richardewing.io/toolkit
+- **The Builder, PM & Operator Survival Kit ($29 Standard / $79 Complete Bundle)**: 5 working Excel/CSV P&L & AI Pricing models, SPEC.md & AGENTS.md Vibe-to-Production templates, Zombie Feature Kill-List Matrix, 12-Slide CFO & Board Defense Deck, $250K+ Executive Interview & Comp Guide, and instant access to the Live Browser Workspace. https://www.richardewing.io/operating-kit
 - **1-on-1 "Unstick My App, Pricing or P&L" Working Session ($450)**: 60-minute live hands-on screen-share session on Zoom to unstick an 80% vibe-coded app, fix a runaway API bill, stress-test AI pricing, or prep a Monday board/interview deck, plus a 1-page Action Blueprint within 48 hours and the full $79 Complete Bundle free. https://www.richardewing.io/services#gut_check
 - **14-Day AI Workflow Automation & P&L Turnaround Sprint ($2,500)**: 2-week fixed-scope sprint automating a department's #1 manual bottleneck with governed MCP/n8n/CRM/Slack workflows OR auditing feature profitability, Zombie Feature carry cost, and Technical Insolvency Date with a custom 12-slide CFO & Board Defense Deck. https://www.richardewing.io/services#insolvency_diagnostic
-- **21-Day 0-to-1 AI App & AEO Lead-Engine Build Sprint ($7,500)**: 3-week done-for-you product engineering sprint. Richard architects, codes, and deploys your production AI SaaS app, interactive AEO calculator funnel, Supabase RLS database, and Stripe billing on Next.js, TypeScript, and Cloudflare Edge with 100% IP handoff. https://www.richardewing.io/services#rd_capital_audit
+- **21-Day 0-to-1 AI App & AEO Lead-Engine Build Sprint ($7,500)**: 3-week done-for-you product engineering sprint. Richard architects, codes, and deploys your deployed AI SaaS app, interactive AEO calculator funnel, Supabase RLS database, and Stripe billing on Next.js, TypeScript, and Cloudflare Edge with 100% IP handoff. https://www.richardewing.io/services#rd_capital_audit
 - **PE & M&A Technical & AI Due Diligence ($15,000)**: 2-week intensive code, inference margin, and infrastructure audit for Private Equity and Search Funds before signing term sheets. https://www.richardewing.io/services#tech_due_diligence
 - **Fractional CPO / AI Product & Systems Architect Retainer ($10,000/month)**: Dedicated fractional executive leadership for AI product shipping, pricing transformations, deterministic runtime governance, and monthly board-ready financial reporting. https://www.richardewing.io/services#advisory_retainer
 
@@ -298,7 +304,8 @@ Richard Ewing provides hands-on AI product shipping, workflow automation, and fo
     return new Response(content, {
         headers: {
             'Content-Type': 'text/plain; charset=utf-8',
-            'Cache-Control': 'public, max-age=86400',
+            'Cache-Control': 'public, max-age=86400, s-maxage=86400',
+            'X-Robots-Tag': 'all, noai',
         },
     });
 }

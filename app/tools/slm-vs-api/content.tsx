@@ -133,9 +133,9 @@ export default function SLMTool() {
                             <span className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase tracking-widest">AI Unit Economics | Build vs Buy</span>
                         </div>
 
-                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
+                        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
                             Kill the <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">API Tax.</span>
-                        </h1>
+                        </h2>
                         <p className="text-lg sm:text-xl text-zinc-900 mb-8 max-w-2xl">
                             At a certain volume, renting OpenAI tokens becomes a massive capital leak. Calculate exactly when you should transition to hosting your own open-source models (Llama 3, Mistral) on bare metal or custom cloud clusters.
                         </p>

@@ -6,6 +6,8 @@ import { PILLARS, CATEGORY_MAP, KEEP_TERMS } from '../../pillarsMapping';
 import ShareButtons from '@/components/ShareButtons';
 import { DiagnosticBridge } from '@/components/DiagnosticBridge';
 
+import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
+
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
@@ -16,14 +18,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
     const pillar = PILLARS.find(p => p.slug === slug);
     if (!pillar) return {};
-    
-    const cleanName = pillar.name;
+
+    const baseTitle = clampSeoTitle(`${pillar.name} Glossary`, 42);
+    const metaDesc = formatSeoDescription(
+        `Explore the ${pillar.name} glossary with plain-English definitions, financial formulas, and operating playbooks for CEOs, CFOs, and VPs of Engineering.`
+    );
     return {
-        title: {
-            absolute: `${cleanName} Glossary | Richard Ewing`,
+        title: baseTitle,
+        description: metaDesc,
+        alternates: { canonical: `https://www.richardewing.io/glossary/pillars/${slug}` },
+        openGraph: {
+            title: `${baseTitle} | Richard Ewing`,
+            description: metaDesc,
+            url: `https://www.richardewing.io/glossary/pillars/${slug}`,
+            siteName: 'Richard Ewing',
+            type: 'website',
+            images: [{ url: `https://www.richardewing.io/api/og?title=${encodeURIComponent(pillar.name)}&category=Glossary%20Pillar`, width: 1200, height: 630 }],
         },
-        description: `Comprehensive glossary of ${pillar.name} terminology, definitions, and execution frameworks for engineering executives, CFOs, and board directors.`,
-        alternates: { canonical: `https://www.richardewing.io/glossary/pillars/${slug}` }
+        twitter: {
+            card: 'summary_large_image',
+            title: `${baseTitle} | Richard Ewing`,
+            description: metaDesc,
+            images: [`https://www.richardewing.io/api/og?title=${encodeURIComponent(pillar.name)}&category=Glossary%20Pillar`],
+        },
     };
 }
 

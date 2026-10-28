@@ -3,7 +3,7 @@ import Link from 'next/link';
 import PartnerContactForm from '@/app/components/client/PartnerContactForm';
 
 export const metadata: Metadata = {
-    title: 'Newsletter Sponsorship & Speaking Partnerships',
+    title: 'Newsletter Sponsorship & Speaking',
     description: 'Sponsor or collaborate with Richard Ewing on AI advisory, speaking, or newsletter placements. Connect directly with technology leaders.',
     alternates: {
         canonical: 'https://www.richardewing.io/partner',

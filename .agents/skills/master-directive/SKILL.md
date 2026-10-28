@@ -355,7 +355,7 @@ Every report, telemetry audit, or analytics inquiry prompt MUST lead with an **O
 
 1. **Zero Redirect Loops**: Next.js edge middleware must physically verify that `destination.href !== req.nextUrl.href` before returning any 301 or 308 redirect response.
 2. **CDN Cache Shield**: Every redirect returned by edge middleware must explicitly set `Cloudflare-CDN-Cache-Control: no-store` and `Cache-Control: no-cache, no-store, must-revalidate` so that Cloudflare CDN POP caches never store intermediate redirects.
-3. **Automated Cache Self-Healing**: Maintain `POISONED_CACHE_URLS` in `middleware.ts` using `caches.default.delete(url)` to automatically evict stale or corrupted edge cache keys on incoming requests.
+3. **Zero Hot-Path Cache Purging & Early Hints Guard**: NEVER run `caches.default.delete()` loops inside `middleware.ts` request handlers (which generate massive `PURGE 404` subrequest amplification and evict live pages). Execute cache invalidations strictly once at deploy time via the Cloudflare REST Purge API when required, keep Cloudflare Early Hints disabled (`off`) on Worker custom domains to prevent `103` edge `504` timeouts, and allow both `GET` and `HEAD` public HTML edge caching (`s-maxage=86400, stale-while-revalidate=604800`).
 
 ---
 

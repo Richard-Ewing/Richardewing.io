@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
 export const metadata: Metadata = {
-    title: 'Manufacturing AI Economics & Edge Telemetry Debt',
+    title: 'Manufacturing Edge AI & Telemetry Debt',
     description: 'Audit predictive maintenance model reliability, industrial IoT sensor debt, and shop-floor automation software yield with forensic engineering audits.',
     keywords: ['manufacturing technical debt', 'robotics CTO advisor', 'industrial AI governance', 'edge AI economics', 'manufacturing software debt'],
     alternates: { canonical: 'https://www.richardewing.io/industries/manufacturing' },

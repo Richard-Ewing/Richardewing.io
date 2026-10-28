@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import CalculatorIntentProposal from '@/app/components/calculators/CalculatorIntentProposal';
+import ToolServerHeader from '@/app/components/calculators/ToolServerHeader';
 import CodeReviewBottleneckTool from './content';
 
 export const metadata: Metadata = {
@@ -27,6 +28,21 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <div className="space-y-8">
+            <ToolServerHeader
+                slug="code-review-bottleneck-calc"
+                eyebrow="SDLC Throughput · Supervisory Review Queue Diagnostic"
+                h1="AI Code Review Bottleneck Calculator"
+                executiveAnswer="AI coding assistants triple pull-request volume while senior human reviewer bandwidth stays flat, turning Staff Engineers and Engineering Managers into full-time human compilers. Calculate your annual payroll drag, queue latency, and merge bottleneck cost in 60 seconds."
+                appName="AI Code Review Bottleneck Calculator"
+                appDescription="Engineering throughput calculator quantifying senior reviewer hours, PR queue latency, and annual payroll waste from un-gated AI pull requests."
+                howToName="How to Calculate AI Pull Request Review Drag"
+                howToDescription="Input team size, weekly AI-assisted PR volume, and senior engineer compensation to quantify review bottleneck cost."
+                steps={[
+                    { name: 'Enter Engineering Team & Compensation', text: 'Specify total developers, senior reviewers, and loaded Staff/Senior engineer hourly cost.' },
+                    { name: 'Input Weekly PR Volume & Rejection Rate', text: 'Enter average pull requests per week, review minutes per PR, and rework cycles.' },
+                    { name: 'Quantify Annual Reviewer Payroll Drag', text: 'Inspect lost senior build capacity and annual dollars spent reviewing un-gated AI output.' },
+                ]}
+            />
             <CodeReviewBottleneckTool />
             <div className="page-container max-w-4xl mx-auto px-6 mb-16">
                 <CalculatorIntentProposal

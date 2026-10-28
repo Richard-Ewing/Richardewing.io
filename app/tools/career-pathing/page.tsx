@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
-import Layout from '../layout';
 import Content from './content';
+import DiagnosticCTA from '@/app/components/DiagnosticCTA';
 
 export const metadata: Metadata = {
     title: 'AI Career Capital Calculator',
@@ -10,8 +10,16 @@ export const metadata: Metadata = {
 
 export default function CareerPathingPage() {
     return (
-        <Layout>
+        <>
             <Content />
-        </Layout>
+            <div className="max-w-5xl mx-auto px-6 pb-20">
+                <DiagnosticCTA
+                    variant="primary"
+                    title="Designing IC vs Management leveling or compensation bands?"
+                    subtitle="Align Staff/Principal IC progression and Engineering Manager spans of control with measurable R&D output and P&L accountability."
+                    metrics={['IC vs Mgmt', 'Comp Bands', 'Org Span']}
+                />
+            </div>
+        </>
     );
 }

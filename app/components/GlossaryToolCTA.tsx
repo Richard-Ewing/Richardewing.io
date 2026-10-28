@@ -170,7 +170,7 @@ export default function GlossaryToolCTA({ slug, category, termTitle }: GlossaryT
                     </p>
                     <Link
                         href={tool.url}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-cyan-500 text-zinc-950 font-semibold text-sm font-bold rounded-lg hover:opacity-90 transition-opacity"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-opacity"
                     >
                         Try {tool.name} Free →
                     </Link>

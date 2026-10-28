@@ -13,6 +13,7 @@ import compareCategorized from './lib/compare-categorized.json';
 import { COMBAT_SEO_MATRIX } from '@/app/lib/combat-seo';
 import { SKILLS, FAILURES } from '@/lib/content/skills';
 import { subFrameworks } from '@/app/lib/framework-data';
+import { BLOG_SLUG_REDIRECTS, ARTICLE_SLUG_REDIRECTS } from '@/app/lib/article-redirects';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.richardewing.io';
@@ -38,7 +39,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/tools/vibe-coding-debt-calculator', '/tools/synthetic-debt-calculator',
         '/tools/ai-cost-calculator', '/tools/llm-cost-calculator',
         '/tools/ai-unit-economics-calculator', '/tools/ai-cogs-calculator',
-        '/tools/token-cost-calculator', '/tools/revenue-per-engineer',
+        '/tools/token-cost-calculator', '/tools/ai-credit-pricing-calculator',
+        '/tools/claude-api-cost-calculator', '/tools/agents-md-validator',
+        '/tools/n8n-vs-zapier-calculator', '/tools/revenue-per-engineer',
         '/tools/engineering-efficiency-calculator', '/tools/saas-valuation-calculator',
         '/tools/enterprise-value-calculator', '/tools/subprime-code-auditor',
         '/glossary/subprime-code', '/glossary/subprime-code-crisis',
@@ -79,7 +82,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/vault/curriculum/tracks/product-economics/5-3',
         '/vault/curriculum/tracks/product-economics/5-14',
         '/vault/curriculum/tracks/ai-pricing/8-5',
-        '/curriculum/tracks'
+        '/curriculum/tracks',
+        ...Object.keys(BLOG_SLUG_REDIRECTS).map(s => `/blog/${s}`),
+        ...Object.keys(ARTICLE_SLUG_REDIRECTS).map(s => `/articles/${s}`),
     ]);
 
     const lastModified = new Date();
@@ -149,7 +154,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/starter-kit`, 'weekly', 0.9);
     add(`${baseUrl}/site-map`, 'weekly', 0.8);
 
-    // === TOOL PAGES (All 35+ Diagnostic Calculators & FAQs) ===
+    // === TOOL PAGES (All 37+ Diagnostic Calculators & FAQs) ===
     const toolSlugs = [
         'pdi', 'ev-se', 'aueb', 'aper', 'audit-interview', 'scoring',
         'ai-roi-timeline', 'section-174-calculator', 'cfo-capitalization-audit',
@@ -162,7 +167,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'career-pathing', 'code-review-bottleneck-calc',
         'cpo-product-portfolio-matrix', 'due-diligence', 'eu-ai-act-checker',
         'executive-ai-operating-model', 'hallucination-tax',
-        'innovation-tax-calculator',
+        'innovation-tax-calculator', 'vibe-coding-checklist',
+        'automation-cost-calculator',
         'pdi/faq', 'ev-se/faq', 'aueb/faq', 'aper/faq',
         'audit-interview/faq', 'due-diligence/faq', 'eu-ai-act-checker/faq'
     ];
@@ -202,6 +208,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/decisions/choosing-ai-development-platforms`, 'monthly', 0.85);
     add(`${baseUrl}/decisions/choosing-enterprise-ai-infrastructure`, 'monthly', 0.85);
     add(`${baseUrl}/benchmark/ai-discoverability`, 'monthly', 0.9);
+    add(`${baseUrl}/benchmark/llm-cost-and-margin-index`, 'monthly', 0.95);
     add(`${baseUrl}/benchmarks`, 'monthly', 0.8);
     add(`${baseUrl}/missions`, 'monthly', 0.8);
 
@@ -288,7 +295,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // === CANONICAL ARTICLES ===
     const frameworkSlugSet = new Set(frameworks.map(f => f.slug));
     articles
-        .filter(article => !article.externalUrl && !frameworkSlugSet.has(article.slug))
+        .filter(article => !article.externalUrl && !frameworkSlugSet.has(article.slug) && !ARTICLE_SLUG_REDIRECTS[article.slug])
         .forEach(article => add(`${baseUrl}/articles/${article.slug}`, 'monthly', 0.8));
 
     // === COMPARE PAGES (Tier A Indexed Only) ===

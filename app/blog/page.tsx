@@ -3,21 +3,21 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import BlogContent from './blog-content';
 
 export const metadata: Metadata = {
-    title: 'AI & Engineering Economics Blog',
-    description: 'Forensic insights, case studies, and research breakdowns on AI unit economics, R&D capital allocation, and technical debt.',
+    title: 'AI & Engineering Economics Essays',
+    description: 'Read forensic teardowns, real P&L case studies, and mathematical models on AI unit economics, R&D capital allocation, and technical debt for executives.',
     keywords: ['engineering economics blog', 'technical debt articles', 'AI cost analysis', 'R&D capital management', 'AI economics insights', 'CTO blog'],
     alternates: { canonical: 'https://www.richardewing.io/blog' },
     openGraph: {
-        title: 'AI & Engineering Economics Blog',
-        description: 'Forensic insights, case studies, and research breakdowns on AI unit economics, R&D capital allocation, and technical debt.',
+        title: 'AI & Engineering Economics Essays | Richard Ewing',
+        description: 'Read forensic teardowns, real P&L case studies, and mathematical models on AI unit economics, R&D capital allocation, and technical debt for executives.',
         url: 'https://www.richardewing.io/blog',
         type: 'website',
         images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'AI & Engineering Economics Blog',
-        description: 'Forensic insights, case studies, and research breakdowns on AI unit economics, R&D capital allocation, and technical debt.',
+        title: 'AI & Engineering Economics Essays | Richard Ewing',
+        description: 'Read forensic teardowns, real P&L case studies, and mathematical models on AI unit economics, R&D capital allocation, and technical debt for executives.',
         images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
     }
 };
@@ -29,8 +29,8 @@ export default function BlogPage() {
     const blogSchema = {
         '@context': 'https://schema.org',
         '@type': 'ItemList',
-        'name': 'AI & Engineering Economics Blog by Richard Ewing',
-        'description': 'Forensic insights, case studies, and research breakdowns on AI unit economics, R&D capital allocation, and technical debt.',
+        'name': 'AI & Engineering Economics Essays by Richard Ewing',
+        'description': 'Forensic teardowns, P&L case studies, and mathematical models on AI unit economics, R&D capital allocation, and technical debt.',
         'numberOfItems': articles.length,
         'itemListElement': articles.map((article, idx) => ({
             '@type': 'ListItem',
@@ -42,12 +42,30 @@ export default function BlogPage() {
     };
 
     return (
-        <>
+        <main className="min-h-screen bg-[#FAF9F6] pt-24 pb-20">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
             />
-            <BlogContent />
-        </>
+            <div className="max-w-6xl mx-auto px-6 space-y-12">
+                <header className="max-w-3xl space-y-4 border-b border-[var(--line)] pb-8">
+                    <p className="text-xs font-mono uppercase tracking-widest text-[var(--gold)]">
+                        Research Library · The AI Economist
+                    </p>
+                    <h1 className="font-serif text-4xl sm:text-5xl font-medium tracking-tight text-[var(--ink)] leading-tight">
+                        AI &amp; Engineering Economics Essays
+                    </h1>
+                    <p className="text-base text-[#4a5850] leading-relaxed">
+                        Forensic teardowns, enterprise SaaS P&amp;L case studies, and cost formulas written for CEOs, CFOs, CPOs, and Engineering Managers who have to turn generative AI experiments, developer tooling budgets, and legacy technical debt into defensible gross margin.
+                    </p>
+                </header>
+
+                <BlogContent />
+
+                <div className="pt-8 border-t border-[var(--line)]">
+                    <AdvisoryCTA variant="educational" />
+                </div>
+            </div>
+        </main>
     );
 }

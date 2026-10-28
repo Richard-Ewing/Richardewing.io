@@ -139,5 +139,54 @@ export const executiveLeadership2026Terms: GlossaryTerm[] = [
             { title: 'Advisory & Diagnostics for CFOs', url: '/for-cfos' },
             { title: 'Return on AI Investment (ROAI) Framework', url: '/articles/frameworks/return-on-ai-investment' }
         ]
+    },
+    {
+        slug: 'product-pl-ownership',
+        title: 'Product P&L Ownership',
+        category: 'Product Management',
+        tier: 'pillar',
+        definition: `Product P&L Ownership is the operating model where a Chief Product Officer (CPO), VP of Product, or Group Product Manager owns a monthly profit-and-loss statement for their product line rather than a disconnected list of shipped features.\n\nA product P&L tracks four numbers every month: net recurring revenue (ARR after churn and contraction), direct variable cost of goods sold (cloud hosting plus LLM token inference and third-party APIs), allocated engineering payroll split between new capability and bug maintenance, and the resulting contribution margin.\n\nIn classical SaaS, marginal hosting cost per user was pennies, so Product Ops Leads and Engineering Managers could ignore COGS and chase adoption alone. Once generative AI workflows enter the product, a single power user on a $49 seat can burn $95 of Anthropic or OpenAI tokens in two weeks. Product P&L Ownership forces product leaders to price, meter, sunset, and staff features against real cash contribution.`,
+        whyItMatters: `Most software roadmaps fail financially because the person deciding what to build never sees the cloud invoice or the engineering maintenance bill. When the CEO and CFO put a monthly Product P&L on the VP of Product and Engineering Manager scorecard, zombie features with <3% adoption get deprecated, unprofitable flat-rate AI tiers get hybrid usage guardrails, and R&D hiring aligns with net margin expansion instead of headcount politics.`,
+        howToApply: `**Step 1: Map Revenue & Churn to Product Lines**: Work with the CFO and Director of Finance to attribute ARR, expansion, and churn reason codes to specific product modules.\n\n**Step 2: Meter Direct Hosting & AI Inference COGS**: Tag cloud compute, vector storage, and LLM API calls by tenant and feature slug so variable COGS shows up per product line.\n\n**Step 3: Separate New Capability from Maintenance Burn**: Require Engineering Managers to track what share of sprint payroll keeps existing code alive vs ships net-new commercial value.\n\n**Step 4: Run Monthly Kill-or-Scale Reviews**: Audit contribution margin in the [AI Credit vs Seat Calculator](/tools/aueb) and [Technical Debt Dollar Calculator](/tools/pdi) before approving next quarter's roadmap.`,
+        whereIsItUsed: `Quarterly roadmap allocation reviews, SaaS pricing committee decisions, post-merger private equity value-creation plans, and CPO / CFO monthly operating reviews.`,
+        whoUsesIt: `Chief Product Officers (CPO), VPs of Product, Group Product Managers, Product Ops Leads, Chief Financial Officers (CFO), Directors of Finance, and Engineering Managers.`,
+        howToMeasure: `Product Contribution Margin % = (Product Line Net ARR - Direct Cloud & AI Inference COGS - Allocated Maintenance Engineering Payroll) / Product Line Net ARR. Benchmark yours in the [Claude & OpenAI API Margin Calculator](/tools/ai-feature-margin) and [AUEB Pricing Model](/tools/aueb).`,
+        checklist: [
+            'Attribute net ARR, expansion, and churn directly to each product line',
+            'Tag LLM token inference, embeddings, and third-party API bills per feature and tenant',
+            'Separate routine bug and maintenance payroll from net-new R&D investment',
+            'Enforce a 70%+ gross margin floor (or explicit credit overage pricing) on every AI workflow',
+            'Sunset features where annual maintenance payroll exceeds attributed retention revenue'
+        ],
+        keyMetrics: [
+            { label: 'Target Gross Margin', value: '72% - 82%', description: 'Healthy SaaS + AI product line gross margin after hosting and model inference COGS.' },
+            { label: 'Maintenance Cap', value: '< 25%', description: 'Share of product-line engineering payroll spent fixing regressions and legacy debt.' },
+            { label: 'Zombie Feature Threshold', value: '< 5% MAU', description: 'Features below 5% active usage whose carrying cost exceeds retention value.' }
+        ],
+        faqs: [
+            {
+                question: 'What is the difference between traditional product management and Product P&L Ownership?',
+                answer: 'Traditional product management measures output velocity, NPS, and feature adoption without accounting for cost of goods sold or engineering maintenance burn. Product P&L Ownership holds the VP of Product or Group PM accountable for net contribution margin after deducting cloud hosting, LLM token bills, and ongoing maintenance payroll.'
+            },
+            {
+                question: 'Which line items belong on a Product Manager P&L statement?',
+                answer: 'Four core line items: (1) Attributed ARR and net dollar retention, (2) Direct variable COGS including cloud compute and AI model API spend, (3) Engineering and support payroll split between new build and maintenance, and (4) Net Product Contribution Margin in dollars and percentage.'
+            },
+            {
+                question: 'Why did AI features make Product P&L Ownership mandatory?',
+                answer: 'Because LLM inference introduces uncapped variable cost per query. Without a Product P&L tracking P50 and P99 token spend against seat price, high engagement on an AI feature actively destroys company gross margin.'
+            }
+        ],
+        relatedTerms: ['pl-ownership-for-pms', 'ai-unit-economics', 'ai-cost-attribution', 'product-economist', 'cfo-management-pack'],
+        relatedTools: [
+            { name: 'Claude & OpenAI API Margin Calculator', url: '/tools/ai-feature-margin' },
+            { name: 'AI Credit vs Seat Calculator (AUEB)', url: '/tools/aueb' },
+            { name: 'Technical Debt Dollar Calculator (PDI)', url: '/tools/pdi' },
+            { name: 'The Product & AI Economist Operating Kit', url: '/operating-kit' }
+        ],
+        relatedArticles: [
+            { title: 'Return on AI Investment (ROAI) Framework', url: '/articles/frameworks/return-on-ai-investment' },
+            { title: 'Feature Bloat Calculus Framework', url: '/articles/frameworks/feature-bloat-calculus' }
+        ]
     }
 ];

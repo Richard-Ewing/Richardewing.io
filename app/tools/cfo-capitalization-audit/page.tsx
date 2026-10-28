@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import CalculatorIntentProposal from '@/app/components/calculators/CalculatorIntentProposal';
+import ToolServerHeader from '@/app/components/calculators/ToolServerHeader';
 import CFOCapitalizationTool from './content';
 
 export const metadata: Metadata = {
@@ -27,6 +28,21 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <div className="space-y-8">
+            <ToolServerHeader
+                slug="cfo-capitalization-audit"
+                eyebrow="CFO FinOps · R&D Capitalization & Tax Audit"
+                h1="CFO R&D Capitalization & Section 174 Audit"
+                executiveAnswer="Misclassifying routine bug fixes and AI refactoring as capitalizable R&D distorts EBITDA and creates severe Section 174 tax friction. Built for CFOs, Directors of Finance, and Corporate Controllers to separate net-new software innovation from maintenance OpEx in 90 seconds."
+                appName="CFO R&D Capitalization & Section 174 Audit"
+                appDescription="Financial calculator separating software innovation CapEx from maintenance OpEx and quantifying Section 174 amortization exposure."
+                howToName="How to Audit Engineering CapEx vs Maintenance OpEx"
+                howToDescription="Enter engineering payroll, sprint allocation, and tax rates to model true R&D capitalization and cash tax drag."
+                steps={[
+                    { name: 'Input Engineering Payroll Mix', text: 'Enter total domestic and offshore software engineering payroll and loaded benefits.' },
+                    { name: 'Separate Net-New Build vs Maintenance', text: 'Input actual sprint allocation across new product capabilities, technical debt, and bug remediation.' },
+                    { name: 'Quantify EBITDA & Cash Tax Impact', text: 'Review misclassified OpEx dollars, Section 174 amortization schedules, and audit-defensible adjustments.' },
+                ]}
+            />
             <CFOCapitalizationTool />
             <div className="page-container max-w-4xl mx-auto px-6 mb-16">
                 <CalculatorIntentProposal

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import CalculatorIntentProposal from '@/app/components/calculators/CalculatorIntentProposal';
+import ToolServerHeader from '@/app/components/calculators/ToolServerHeader';
 import AARITool from './content';
 
 export const metadata: Metadata = {
@@ -27,6 +28,21 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <div className="space-y-8">
+            <ToolServerHeader
+                slug="aari"
+                eyebrow="Engineering Governance · Autonomous Agent Readiness Index"
+                h1="Autonomous Agent Readiness Index (AARI)"
+                executiveAnswer="Autonomous coding agents multiply repository architecture: they accelerate clean test harnesses and wreck untyped, coupled codebases. Score your repository across 15 deterministic gates for CTOs, VPs of Engineering, and Engineering Managers before granting multi-file write permissions."
+                appName="Autonomous Agent Readiness Index (AARI)"
+                appDescription="15-point forensic diagnostic evaluating codebase architecture, test coverage, and sandbox readiness for autonomous AI coding agents."
+                howToName="How to Audit Repository Readiness for Autonomous Coding Agents"
+                howToDescription="Score type boundaries, test determinism, secret isolation, and CI gates in two minutes."
+                steps={[
+                    { name: 'Score Architecture & Type Gates', text: 'Grade strict typing, module isolation, and schema validation across your primary repository.' },
+                    { name: 'Audit Test & Sandbox Controls', text: 'Verify deterministic CI execution, blast-radius guards, and credential isolation.' },
+                    { name: 'Review Drift Liability Readout', text: 'Inspect your AARI readiness score and annual senior engineering review drag exposure.' },
+                ]}
+            />
             <AARITool />
             <div className="page-container max-w-4xl mx-auto px-6 mb-16">
                 <CalculatorIntentProposal

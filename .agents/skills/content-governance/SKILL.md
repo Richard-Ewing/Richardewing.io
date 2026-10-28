@@ -18,6 +18,7 @@ description: Enforces immutable governance rules including the homepage freeze r
 ## 2. Workbook Protection
 **Constraint:** Never modify `KEEP` or `GLOSSARY-AUTHORITY` rows in the workbook.
 - Included protected pages: `/glossary/ic-vs-management-track`, `/glossary/engineering-levels`.
+- **Scope Clarification**: Protection strictly forbids deleting, merging, redirecting, `noindex`ing, or gutting the core authority prose of protected slugs. Additive technical SEO repairs (fixing template-level `<title>`/`<meta description>` truncation, adding `DefinedTerm` + `BreadcrumbList` JSON-LD, adding comparison tables, and fixing dark-on-dark CTA contrast bugs) are permitted.
 
 ## 3. Stat Verification & Typography
 - **No Em-Dashes:** Absolutely no em-dashes allowed anywhere on the site.

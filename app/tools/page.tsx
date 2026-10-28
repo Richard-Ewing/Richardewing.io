@@ -3,37 +3,65 @@ import Link from 'next/link';
 import ToolsContent from './tools-content';
 
 export const metadata: Metadata = {
-  title: 'AI Spend & Unit Economics Diagnostics',
+  title: 'Free AI Cost & Engineering Calculators',
   description:
-    'Interactive tools to quantify AI unit economics, identify engineering waste, and model ROI. Free diagnostics for technology and finance leaders.',
+    'Run 35+ free interactive calculators to model Claude and OpenAI API margins, technical debt dollars, Section 174 taxes, and SaaS automation ROI in 60s.',
   alternates: {
     canonical: 'https://www.richardewing.io/tools',
   },
   openGraph: {
-    title: 'Diagnostics & Tools | AI Spend Leaks | Richard Ewing',
+    title: 'Free AI Cost & Engineering Calculators | Richard Ewing',
     description:
-      'Turn AI activity into measurable outcomes. Free diagnostics to quantify token waste and margin drag.',
+      'Run 35+ free interactive calculators to model Claude and OpenAI API margins, technical debt dollars, Section 174 taxes, and SaaS automation ROI in 60s.',
     url: 'https://www.richardewing.io/tools',
     type: 'website',
-    images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+    images: [{ url: 'https://www.richardewing.io/api/og?title=Free+AI+Cost+%26+Engineering+Calculators&category=Diagnostic+Suite' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Diagnostics & Tools | AI Spend Leaks | Richard Ewing',
+    title: 'Free AI Cost & Engineering Calculators | Richard Ewing',
     description:
-      'Turn AI activity into measurable outcomes. Free diagnostics to quantify token waste and margin drag.',
-    images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
+      'Run 35+ free interactive calculators to model Claude and OpenAI API margins, technical debt dollars, Section 174 taxes, and SaaS automation ROI in 60s.',
+    images: ['https://www.richardewing.io/api/og?title=Free+AI+Cost+%26+Engineering+Calculators&category=Diagnostic+Suite'],
   },
 };
+
+const FLAGSHIP_TOOLS_LIST = [
+  { name: 'AI Credit vs Seat Calculator (AUEB)', url: 'https://www.richardewing.io/tools/aueb' },
+  { name: 'Claude & OpenAI API Margin Calculator', url: 'https://www.richardewing.io/tools/ai-feature-margin' },
+  { name: 'Self-Host LLM vs API Cost Calculator', url: 'https://www.richardewing.io/tools/slm-vs-api' },
+  { name: 'Vibe-Coded App Launch & Security Checklist', url: 'https://www.richardewing.io/tools/vibe-coding-checklist' },
+  { name: 'Department Automation & SaaS Replacement Calculator', url: 'https://www.richardewing.io/tools/automation-cost-calculator' },
+  { name: 'AGENTS.md & SPEC.md Audit Scorecard', url: 'https://www.richardewing.io/tools/spec-quality-scorecard' },
+  { name: 'Vibe-Coded App Debt & Risk Auditor', url: 'https://www.richardewing.io/tools/negative-carry-code-auditor' },
+  { name: 'Department AI Automation ROI Model', url: 'https://www.richardewing.io/tools/fte-displacement' },
+  { name: 'AI Hallucination Cost & QA Calculator', url: 'https://www.richardewing.io/tools/hallucination-tax' },
+  { name: 'MCP Security Checklist & Risk Auditor', url: 'https://www.richardewing.io/tools/mcp-security-auditor' },
+  { name: 'Enterprise Shadow AI Risk Calculator', url: 'https://www.richardewing.io/tools/shadow-ai' },
+  { name: 'Technical Debt Dollar Calculator (PDI)', url: 'https://www.richardewing.io/tools/pdi' },
+  { name: 'PE Software & AI Due Diligence Audit', url: 'https://www.richardewing.io/tools/due-diligence' },
+  { name: 'Revenue Per Engineer Calculator (APER)', url: 'https://www.richardewing.io/tools/aper' },
+  { name: 'Section 174 R&D Tax Cost Calculator', url: 'https://www.richardewing.io/tools/section-174-calculator' },
+];
 
 export default function ToolsPage() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'AI Economics Diagnostics & Tools',
+    name: 'Free AI Cost & Engineering Calculators',
     description:
-      'Turn AI activity into measurable outcomes. Find waste, model scenarios, and prioritize what to fix.',
+      'Interactive financial diagnostics for CEOs, CFOs, CPOs, and Engineering Managers to quantify AI unit margins, technical debt dollars, and automation ROI.',
     url: 'https://www.richardewing.io/tools',
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: FLAGSHIP_TOOLS_LIST.length,
+      itemListElement: FLAGSHIP_TOOLS_LIST.map((tool, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: tool.name,
+        url: tool.url,
+      })),
+    },
   };
 
   const breadcrumbSchema = {

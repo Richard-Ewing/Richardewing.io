@@ -283,12 +283,12 @@ export default function HallucinationTaxTool() {
                         </div>
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-zinc-950 mb-6 tracking-tight leading-none">
+                    <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-zinc-950 mb-6 tracking-tight leading-none">
                         Hallucination{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-500 to-purple-400">
                             Tax Calculator
                         </span>
-                    </h1>
+                    </h2>
 
                     <p className="text-lg sm:text-xl text-zinc-900 max-w-3xl font-light leading-relaxed">
                         Your team spends{' '}

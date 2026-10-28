@@ -43,9 +43,9 @@ export default function CodeReviewBottleneckTool() {
                         <GitPullRequest className="w-3.5 h-3.5 text-cyan-600" />
                         Engineering SDLC &bull; Step 4 Diagnostic
                     </div>
-                    <h1 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
+                    <h2 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
                         AI Code Review <span className="text-cyan-600">Bottleneck Calculator</span>
-                    </h1>
+                    </h2>
                     <p className="mt-3 text-base text-zinc-700 max-w-3xl mx-auto font-medium leading-relaxed">
                         When AI tools generate code in seconds, the bottleneck shifts from writing syntax to reviewing synthetic PRs. Calculate the exact payroll drag of senior engineers acting as human compilers.
                     </p>

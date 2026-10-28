@@ -3,8 +3,8 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Media Profiles & Author Directory',
-    description: 'Directory of verified author profiles, publications, and external research citations for Richard Ewing. Connect across verified technical publications.',
+    title: 'Verified Author & Media Profiles',
+    description: 'Verified publication directory for Product & AI Economist Richard Ewing across CIO.com, Built In, Mind the Product, HackerNoon, Exogram, and CareerWin.',
     keywords: [
         'Richard Ewing publications',
         'CIO.com contributor',
@@ -19,26 +19,40 @@ export const metadata: Metadata = {
         canonical: 'https://www.richardewing.io/profiles',
     },
     openGraph: {
-        title: 'Published Profiles & Media | Richard Ewing',
-        description: 'Expert contributor at CIO.com, Built In, Mind the Product, and HackerNoon. Read Richard Ewing\'s published work on AI economics and AI strategy.',
+        title: 'Verified Author & Media Profiles | Richard Ewing',
+        description: 'Verified publication directory for Product & AI Economist Richard Ewing across CIO.com, Built In, Mind the Product, HackerNoon, Exogram, and CareerWin.',
         url: 'https://www.richardewing.io/profiles',
         type: 'website',
+        images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
     },
     twitter: {
-        card: 'summary',
-        title: 'Published Profiles | Richard Ewing',
-        description: 'Expert contributor at CIO.com, Built In, Mind the Product. AI Economist (AI Economics Domain).',
+        card: 'summary_large_image',
+        title: 'Verified Author & Media Profiles | Richard Ewing',
+        description: 'Verified publication directory for Product & AI Economist Richard Ewing across CIO.com, Built In, Mind the Product, HackerNoon, Exogram, and CareerWin.',
+        images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
     },
 };
 
 export default function ProfilesPage() {
     return (
-        <main className="pt-20">
-            <div className="page-container">
+        <main className="pt-24 pb-20 bg-[#FAF9F6] min-h-screen">
+            <div className="page-container space-y-8">
+                <header className="max-w-3xl space-y-3 border-b border-[var(--line)] pb-6">
+                    <p className="text-xs font-mono uppercase tracking-widest text-[var(--gold)]">
+                        Entity Verification · Syndicated Bylines
+                    </p>
+                    <h1 className="font-serif text-4xl sm:text-5xl font-medium tracking-tight text-[var(--ink)] leading-tight">
+                        Verified Author &amp; Media Profiles
+                    </h1>
+                    <p className="text-base text-[#4a5850] leading-relaxed">
+                        Official contributor columns, syndicated research series, and founder directories for Product and AI Economist Richard Ewing across CIO.com, Built In, Mind the Product, HackerNoon, Substack, and The AI Economist newsletter.
+                    </p>
+                </header>
+
                 <PublishedProfiles />
-            
-                    <AdvisoryCTA variant="educational" />
-                </div>
+
+                <AdvisoryCTA variant="educational" />
+            </div>
         </main>
     );
 }

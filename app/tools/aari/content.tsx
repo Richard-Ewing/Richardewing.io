@@ -103,9 +103,9 @@ export default function AARITool() {
                         <Terminal className="w-3.5 h-3.5 text-cyan-600" />
                         Diagnostic Proving Ground &bull; Step 4 of Sovereign Engine
                     </div>
-                    <h1 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
+                    <h2 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
                         Autonomous Agent Readiness Index <span className="text-cyan-600">(AARI)</span>
-                    </h1>
+                    </h2>
                     <p className="mt-3 text-base text-zinc-700 max-w-3xl mx-auto font-medium leading-relaxed">
                         Vendors claim you can &ldquo;just turn on autonomous agents.&rdquo; In practice, unconstrained agents trash messy repos in hours. Audit your codebase readiness across 14 deterministic vectors before deploying agent swarms.
                     </p>

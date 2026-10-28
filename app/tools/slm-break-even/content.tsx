@@ -74,9 +74,9 @@ export default function SLMBreakEvenTool() {
                         <Server className="w-3.5 h-3.5 text-violet-600" />
                         Inference Economics &bull; Step 4 Diagnostic
                     </div>
-                    <h1 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
+                    <h2 className="text-3xl sm:text-5xl font-extrabold font-grotesk text-zinc-950 tracking-tight">
                         SLM Fine-Tuning vs Hosted API <span className="text-violet-600">Break-Even Calculator</span>
-                    </h1>
+                    </h2>
                     <p className="mt-3 text-base text-zinc-700 max-w-3xl mx-auto font-medium leading-relaxed">
                         Defaulting every routine prompt to frontier APIs (Claude 3.7 / GPT-5) destroys software gross margins. Model your exact break-even volume for fine-tuning and hosting Small Language Models (SLMs).
                     </p>

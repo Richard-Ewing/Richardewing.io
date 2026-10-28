@@ -5,7 +5,7 @@ import { Package, CheckCircle, ArrowRight, BookOpen, FileText, Brain, Target, Ca
 
 export const metadata: Metadata = {
     title: 'Enterprise AI Integration System Spec',
-    description: 'Technical specification of the AI Integration System and Product & AI Economist Operating Kit. Deploy deterministic P&L models, prompts, and runtime controls.',
+    description: 'Technical specification of the AI Integration System and Operating Kit: 5 working P&L models, 50+ executive prompts, and deterministic runtime caps.',
     keywords: ['AI integration system', 'AI playbook for business', 'AI implementation guide', 'how to implement AI step by step', 'AI for small business guide', 'AI strategy template', 'AI readiness template', 'AI roadmap template', 'AI prompts for business', 'AI ROI calculator', 'AI tool selection guide', 'AI adoption playbook', 'DIY AI strategy', 'AI integration toolkit', 'Product Economist Operating Kit'],
     openGraph: {
         title: 'The AI Integration System & Operating Kit | Richard Ewing',

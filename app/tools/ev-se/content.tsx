@@ -460,7 +460,7 @@ export default function EVSETool() {
                                 </div>
                             </div>
                             <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                                <button onClick={() => setStep(1)} className="px-6 py-4 bg-zinc-200 hover:bg-zinc-700 text-zinc-950 rounded-xl transition-all">← Back</button>
+                                <button onClick={() => setStep(1)} className="px-6 py-4 bg-zinc-200 hover:bg-zinc-700 text-zinc-950 hover:text-white rounded-xl transition-all">← Back</button>
                                 <button onClick={() => setStep(3)} className="flex-1 py-4 bg-white hover:bg-zinc-200 text-black font-bold uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2">Next: Execution Risks <ArrowRight size={16} /></button>
                             </div>
                         </motion.div>
@@ -500,7 +500,7 @@ export default function EVSETool() {
                             </div>
 
                             <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                            <button onClick={() => setStep(2)} className="px-6 py-4 bg-zinc-200 hover:bg-zinc-700 text-zinc-950 rounded-xl transition-all">← Back</button>
+                            <button onClick={() => setStep(2)} className="px-6 py-4 bg-zinc-200 hover:bg-zinc-700 text-zinc-950 hover:text-white rounded-xl transition-all">← Back</button>
                             <div className="flex-1">
                             <ShineBorder borderColor="rgba(168, 85, 247, 0.6)" duration={2}>
                                 <button

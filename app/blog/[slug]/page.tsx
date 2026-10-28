@@ -13,81 +13,84 @@ import { articleSchemaTemplate } from '@/app/lib/schemas';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 import { CANONICAL_CONCEPTS } from '@/app/lib/concept-corpus';
 
+import { clampSeoTitle, formatSeoDescription, resolveProseGatedCanonical } from '@/app/lib/seo-metadata';
+import { BLOG_SLUG_REDIRECTS } from '@/app/lib/article-redirects';
+
+const BLOG_SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
+    'ai-economics-how-intelligent-systems-make-and-lose-money': {
+        title: 'AI Economics: How Systems Make & Lose Cash',
+        description: 'Audit how AI systems make and lose money across token inference COGS, cache hit rates, agent retries, and SaaS pricing tiers with Richard Ewing.',
+    },
+};
+
 export async function generateStaticParams() {
-    return Object.keys(allArticles).map(slug => ({ slug }));
+    return Object.keys(allArticles)
+        .filter((slug) => !BLOG_SLUG_REDIRECTS[slug])
+        .map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
+    if (BLOG_SLUG_REDIRECTS[slug]) {
+        return {
+            title: 'Redirecting',
+            robots: { index: false, follow: true },
+            alternates: { canonical: `https://www.richardewing.io${BLOG_SLUG_REDIRECTS[slug]}` },
+        };
+    }
+
     const article = allArticles[slug];
     if (!article) {
         return {
-            title: `Blog Post Not Found: ${slug}`,
-            description: `The requested blog post ${slug} could not be found.`,
+            title: 'Blog Post Not Found',
+            description: formatSeoDescription(`The requested executive briefing could not be found on Richard Ewing's research index.`),
         };
     }
-    
-    const canonicalURL = article.canonicalUrl || `https://www.richardewing.io/blog/${slug}`;
-    
-    const cleanTitle = article.title;
 
-    const metaDescription = (() => {
-        let desc = article.excerpt.trim().replace(/\s+/g, ' ');
-        if (!desc.endsWith('.')) desc += '.';
-        if (desc.length >= 140 && desc.length <= 158) return desc;
-        if (desc.length > 158) return desc.slice(0, 155) + '...';
+    const selfUrl = `https://www.richardewing.io/blog/${slug}`;
+    const canonicalURL = resolveProseGatedCanonical(article.canonicalUrl, selfUrl, article.content || '');
+    const override = BLOG_SEO_OVERRIDES[slug];
+    const baseTitle = override ? clampSeoTitle(override.title, 42) : clampSeoTitle(article.title, 42);
+    const metaDescription = override ? formatSeoDescription(override.description) : formatSeoDescription(article.excerpt);
+    const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(article.title)}&category=${encodeURIComponent(article.category || 'Executive Briefing')}`;
 
-        const candidateSuffixes = [
-            ` Forensic engineering economics and operational frameworks by Richard Ewing for CTOs, CFOs, and PE leaders.`,
-            ` Forensic engineering economics and operational frameworks for technology leaders.`,
-            ` Forensic engineering economics frameworks by Richard Ewing for executive leaders.`,
-            ` Forensic engineering economics and operational frameworks by Richard Ewing.`,
-            ` Forensic analysis, unit economics metrics, and operational governance frameworks.`,
-            ` Forensic analysis and operational frameworks by Richard Ewing.`,
-            ` Forensic analysis and frameworks by Richard Ewing.`,
-            ` Analysis and frameworks by Richard Ewing.`,
-            ` Frameworks by Richard Ewing.`
-        ];
-        for (const suffix of candidateSuffixes) {
-            const combined = desc + suffix;
-            if (combined.length >= 140 && combined.length <= 158) {
-                return combined;
-            }
-        }
-        const fallback = `${desc} Forensic analysis and frameworks by Richard Ewing.`;
-        return fallback.length > 158 ? fallback.slice(0, 155) + '...' : fallback;
-    })();
-    
     return {
-        title: cleanTitle,
+        title: baseTitle,
         description: metaDescription,
         alternates: { canonical: canonicalURL },
         openGraph: {
-            title: article.title,
+            title: `${baseTitle} | Richard Ewing`,
             description: metaDescription,
             url: canonicalURL,
             type: 'article',
-            images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
+            images: [{ url: ogUrl, width: 1200, height: 630 }],
         },
         twitter: {
             card: 'summary_large_image',
-            title: article.title,
+            title: `${baseTitle} | Richard Ewing`,
             description: metaDescription,
-            images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
+            images: [ogUrl],
         }
     };
 }
 
 function getRelatedArticles(currentSlug: string, category: string, count: number = 3) {
     return getSortedArticles()
-        .filter(a => a.slug !== currentSlug && a.category === category)
+        .filter(a => a.slug !== currentSlug && !BLOG_SLUG_REDIRECTS[a.slug] && a.category === category)
         .slice(0, count);
 }
 
 export default async function BlogArticlePage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
+    if (BLOG_SLUG_REDIRECTS[slug]) {
+        permanentRedirect(BLOG_SLUG_REDIRECTS[slug]);
+    }
     const article = allArticles[slug];
     if (!article) notFound();
+
+    const safeHtml = (article.content || '')
+        .replace(/<h1(\b[^>]*)>/gi, '<h2$1>')
+        .replace(/<\/h1>/gi, '</h2>');
 
     const catColor = categoryColors[article.category] || 'text-zinc-950 font-bold bg-zinc-500/10 border-zinc-500/20';
     const related = getRelatedArticles(slug, article.category);
@@ -129,10 +132,10 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                     </div>
                 </header>
 
-                <article className="prose prose-zinc prose-zinc max-w-none
+                <article className="prose prose-zinc max-w-none
                     prose-headings:font-grotesk prose-headings:text-zinc-900
                     prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
-                    prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+                    prose-h3:text-xl prose-h3:mt-8 prose-h3:mt-3
                     prose-p:text-zinc-950 font-bold prose-p:leading-relaxed prose-p:text-base
                     prose-strong:text-zinc-900
                     prose-a:text-cyan-900 font-extrabold font-semibold prose-a:no-underline hover:prose-a:underline
@@ -140,18 +143,18 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                     prose-table:text-sm
                     prose-th:text-zinc-950 font-bold prose-th:border-zinc-300 prose-th:px-4 prose-th:py-2
                     prose-td:text-zinc-950 font-bold prose-td:border-zinc-200 prose-td:px-4 prose-td:py-2
-                    prose-code:text-violet-400 prose-code:bg-violet-500/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+                    prose-code:text-violet-700 prose-code:bg-violet-500/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
                     prose-hr:border-zinc-200
                 ">
-                    <div dangerouslySetInnerHTML={{ __html: article.content }} />
+                    <div dangerouslySetInnerHTML={{ __html: safeHtml }} />
                 </article>
 
                 {/* Inline Newsletter CTA */}
                 <div className="my-12 p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5 text-center">
                     <p className="text-zinc-950 font-semibold mb-2">Like this analysis?</p>
-                    <p className="text-sm font-semibold text-zinc-900 font-medium mb-4">Get the weekly engineering economics briefing  -  one email, every Monday.</p>
+                    <p className="text-sm font-semibold text-zinc-900 font-medium mb-4">Get the weekly engineering economics briefing: one email, every Monday.</p>
                     <a href="https://theaieconomist.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer"
-                        className="inline-block px-6 py-2.5 rounded-lg bg-gradient-to-r from-cyan-600 to-violet-600 text-zinc-950 font-semibold font-bold text-sm font-semibold hover:opacity-90 transition-opacity">
+                        className="inline-block px-6 py-2.5 rounded-lg bg-gradient-to-r from-cyan-600 to-violet-600 text-white font-semibold font-bold text-sm hover:opacity-90 transition-opacity">
                         Subscribe Free →
                     </a>
                 </div>

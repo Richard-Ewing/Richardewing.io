@@ -26,25 +26,25 @@ import ExogramBlueprintCapture from '@/components/exogram/ExogramBlueprintCaptur
 import ScorecardCheckoutDrawer from '@/app/components/ScorecardCheckoutDrawer';
 
 export const metadata: Metadata = {
-  title: 'Exogram: AI That Remembers Context',
+  title: 'Exogram: Deterministic AI Memory Layer',
   description:
-    'Exogram is conversational AI that remembers context, tracks state, and moves projects forward without starting over each time.',
+    'Explore Exogram: persistent AI context, temporal state, and 3-gate runtime verification for product teams. View the 7-layer architecture and live sandbox.',
   alternates: {
     canonical: 'https://www.richardewing.io/exogram',
   },
   openGraph: {
-    title: 'Exogram: AI That Remembers Reality | Richard Ewing',
+    title: 'Exogram: Deterministic AI Memory Layer | Richard Ewing',
     description:
-      "Richard Ewing's founder thesis for Exogram: a conversational AI that carries context forward so you can ask naturally instead of briefing a new chatbot every time.",
+      'Explore Exogram: persistent AI context, temporal state, and 3-gate runtime verification for product teams. View the 7-layer architecture and live sandbox.',
     url: 'https://www.richardewing.io/exogram',
     type: 'website',
     images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Exogram: AI That Remembers Reality | Richard Ewing',
+    title: 'Exogram: Deterministic AI Memory Layer | Richard Ewing',
     description:
-      "Richard Ewing's founder thesis for Exogram: a conversational AI that carries context forward so you can ask naturally instead of briefing a new chatbot every time.",
+      'Explore Exogram: persistent AI context, temporal state, and 3-gate runtime verification for product teams. View the 7-layer architecture and live sandbox.',
     images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
