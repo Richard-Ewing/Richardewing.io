@@ -583,7 +583,7 @@ export default function FounderQuizEngine() {
               </button>
               <Link
                 href="/apply"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-purple-700 hover:bg-sky-300 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-sky-400/20"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-purple-700 hover:bg-purple-800 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-purple-700/20"
               >
                 Apply for Pilot ($1,500) <ArrowRight className="w-3.5 h-3.5" />
               </Link>

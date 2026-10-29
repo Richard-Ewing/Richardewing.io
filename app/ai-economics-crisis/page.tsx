@@ -5,11 +5,11 @@ import NotebookLMAudioPlayer from '@/components/NotebookLMAudioPlayer';
 
 export const metadata: Metadata = {
     title: 'The Enterprise AI Economics Crisis',
-    description: 'Why enterprise AI spend is expanding while gross margins shrink, and how deterministic governance restores profitability.',
+    description: 'Enterprise AI spend is surging while SaaS gross margins shrink. Quantify the $58K per-engineer rework tax and audit your AI unit margins.',
     alternates: { canonical: 'https://www.richardewing.io/ai-economics-crisis' },
     openGraph: {
-        title: 'The AI Economics Crisis: Your Coding Tools Cost More Than You Think',
-        description: 'GitHub Copilot just went usage-based. Hidden AI costs are $58K/engineer/year. Run a free audit.',
+        title: 'The Enterprise AI Economics Crisis | Richard Ewing',
+        description: 'Enterprise AI spend is surging while SaaS gross margins shrink. Quantify the $58K per-engineer rework tax and audit your AI unit margins.',
         url: 'https://www.richardewing.io/ai-economics-crisis',
         type: 'website',
     },
@@ -38,26 +38,26 @@ export default function AIEconomicsCrisis() {
         <main className="pt-20">
             {/* HERO */}
             <section className="relative bg-[#FCFAF7] py-24 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-red-950/20 via-zinc-950 to-purple-950/20" />
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 via-transparent to-purple-500/5" />
                 <div className="relative max-w-5xl mx-auto px-6 text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-red-500/10 border border-red-500/20 rounded-full text-red-400 text-xs font-mono uppercase tracking-widest mb-8">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-red-500/10 border border-red-500/20 rounded-full text-red-700 text-xs font-mono uppercase tracking-widest mb-8">
                         <AlertTriangle className="w-3.5 h-3.5" />
                         Market Alert  -  June 2026
                     </div>
                     <h1 className="text-4xl md:text-6xl font-grotesk font-bold text-zinc-900 leading-tight mb-6">
                         Your AI Tools Cost More
                         <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-amber-400">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-amber-600">
                             Than Your Engineers Think
                         </span>
                     </h1>
                     <p className="text-xl text-zinc-600 max-w-3xl mx-auto mb-10 leading-relaxed">
                         GitHub Copilot just went usage-based. METR proved experienced devs take <strong className="text-zinc-900">19% longer</strong> with AI.
-                        The hidden cost is <strong className="text-red-400">$58K per engineer per year</strong>.
+                        The hidden cost is <strong className="text-red-700">$58K per engineer per year</strong>.
                         Your CFO is about to ask you to prove ROI. Here&apos;s the math.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/tools/aueb" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-red-600 to-amber-600 text-zinc-900 font-bold rounded-xl hover:from-red-500 hover:to-amber-500 transition-all text-lg shadow-lg shadow-red-500/20">
+                        <Link href="/tools/aueb" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-red-600 to-amber-600 text-white font-bold rounded-xl hover:from-red-500 hover:to-amber-500 transition-all text-lg shadow-lg shadow-red-500/20">
                             Run Your Free AI Economics Audit
                             <ArrowRight className="w-5 h-5" />
                         </Link>

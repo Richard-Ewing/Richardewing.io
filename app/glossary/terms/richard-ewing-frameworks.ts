@@ -359,7 +359,7 @@ export const richardEwingFrameworksTerms: GlossaryTerm[] = [
         ],
         relatedTerms: ['product-debt-index', 'innovation-tax', 'sunset-protocol', 'technical-debt'],
         relatedTools: [{ name: 'Product Debt Index (PDI)', url: '/tools/pdi' }],
-        relatedArticles: [{ title: 'The Technical Insolvency Date', url: '/articles/technical-insolvency-date' }]
+        relatedArticles: [{ title: 'The Technical Insolvency Date', url: '/articles/frameworks/technical-insolvency-date' }]
     },
     {
         slug: 'air-traffic-control-tax',

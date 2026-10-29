@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import { motion, AnimatePresence } from 'framer-motion';
 import ToolCelebration from '../../components/ToolCelebration';
@@ -13,6 +13,7 @@ import { PersonaSwitcher, Persona } from '../../components/PersonaSwitcher';
 import { BorderBeam } from '../../components/magicui/border-beam';
 import { ShieldAlert, ArrowRight, ShieldOff, Lock, UserX, Target, UploadCloud, FileSpreadsheet, Eye, Zap } from 'lucide-react';
 import ToolGate from '../../components/tool-gate';
+import { saveDiagnosticSession } from '@/lib/storage/session';
 import Papa from 'papaparse';
 
 type Mode = 'SIMULATE' | 'AUDIT';
@@ -52,6 +53,17 @@ export default function ShadowContent() {
     const [results, setResults] = useState<any>(null);
     const [showGate, setShowGate] = useState(false);
 
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const sp = new URLSearchParams(window.location.search);
+        if (sp.get('from') === 'mcp-security-auditor' || sp.get('riskScore')) {
+            const riskScore = sp.get('riskScore') || '80';
+            setSimulatedLogs(
+                `[MCP Handoff Risk ${riskScore}/100] Developer workstation spawning unmanaged Cursor + Claude STDIO MCP servers -> const query = await db.customers.findMany(); // exported to external OpenAI/Anthropic chat`
+            );
+        }
+    }, []);
+
     // --- SIMULATOR EXECUTION ---
     const runSimulation = async () => {
         setLoading(true);
@@ -69,7 +81,7 @@ export default function ShadowContent() {
             if (financialLiability > 500000) riskTier = 'CRITICAL';
             else if (financialLiability > 100000) riskTier = 'HIGH';
 
-            setResults({
+            const simResults = {
                 type: 'SIMULATION',
                 totalMonthlyPrompts,
                 piiViolations,
@@ -77,6 +89,13 @@ export default function ShadowContent() {
                 riskTier,
                 hasCodeLeak: hasCode,
                 shadowSpend
+            };
+            setResults(simResults);
+            saveDiagnosticSession('shadow-ai', {
+                financialLiability,
+                riskTier,
+                primaryMetricValue: `$${Math.round(financialLiability / 1000)}K Exposure (${riskTier})`,
+                statusLabel: `${riskTier} SHADOW AI RISK`,
             });
         } catch (error: any) {
             console.error(error);
@@ -588,7 +607,7 @@ export default function ShadowContent() {
                                   <h4 className="text-lg font-bold text-zinc-950 mb-2">Get a full shadow AI remediation program</h4>
                                   <p className="text-sm text-zinc-600 mb-4">This scan found the risks. A $10,000 Shadow AI Remediation program handles discovery, policy creation, employee training, and ongoing governance.</p>
                                   <div className="flex flex-wrap gap-3">
-                                    <a href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-zinc-900 text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">Book Advisory Session →</a>
+                                    <a href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">Book Advisory Session →</a>
                                     <a href="/api/buy/gut_check" className="inline-flex items-center gap-2 px-5 py-2.5 border border-purple-500/30 text-purple-700 text-sm font-bold rounded-lg hover:bg-purple-50 transition-colors">$450 Gut-Check Call →</a>
                                   </div>
                                 </div>

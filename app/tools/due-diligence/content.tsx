@@ -117,6 +117,17 @@ export default function DueDiligenceTool() {
     const [heavyAiDependency, setHeavyAiDependency] = useState(false);
     const [monolith, setMonolith] = useState(true);
 
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const sp = new URLSearchParams(window.location.search);
+        const engParam = sp.get('engineers') || sp.get('teamSize');
+        const arrParam = sp.get('arr');
+        const cloudParam = sp.get('cloudSpend');
+        if (engParam && !Number.isNaN(Number(engParam))) setEngineers(engParam);
+        if (arrParam && !Number.isNaN(Number(arrParam))) setArr(arrParam);
+        if (cloudParam && !Number.isNaN(Number(cloudParam))) setCloudSpend(cloudParam);
+    }, []);
+
     const handleSaveAndExport = async () => {
         setIsSaving(true);
         try {

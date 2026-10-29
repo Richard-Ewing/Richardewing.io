@@ -49,8 +49,8 @@ export const PRODUCTS: Record<string, Product> = {
         paymentLink: 'https://buy.stripe.com/00wfZa1Myf1U3dra482B20x',
     },
     module_ai_economics: {
-        name: 'AI AI Economics  -  Track Access',
-        description: 'Lifetime access to the AI AI Economics track (Track 2). All 16 modules, lessons, and assessments.',
+        name: 'AI Economics  -  Track Access',
+        description: 'Lifetime access to the AI Economics track (Track 2). All 16 modules, lessons, and assessments.',
         price: 14900, // $149.00
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/14A9AMaj44ng01f5NS2B20q',
@@ -164,6 +164,20 @@ export const PRODUCTS: Record<string, Product> = {
         price: 7900,
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/6oUdR2ezk2f8aFT9042B21d', // Official Live Stripe Link
+    },
+    operating_kit_standard: {
+        name: 'The Builder, PM & Operator Survival Kit (Standard Edition)',
+        description: 'Instant download of all 5 battle-tested P&L spreadsheets, SPEC.md / AGENTS.md vibe-to-production templates, AI feature pricing stress-testers, Zombie Feature kill-list matrices, 12-slide CFO board decks, $250K+ executive career playbooks, plus live interactive Workspace (/workspace) access.',
+        price: 2900,
+        mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/fZudR2aj44ng8xLeko2B21c',
+    },
+    operating_kit_complete: {
+        name: 'The Complete AI Builder & Executive Playbook System (Complete Bundle)',
+        description: 'Complete Access: Full $29 Survival Kit, live interactive Workspace (/workspace), PLUS all 13 specialized playbooks (Agentic AI Costs & MCP Governance, Hybrid Credit Pricing, Cloud FinOps, PE Due Diligence, Coding Tool ROI).',
+        price: 7900,
+        mode: 'payment',
+        paymentLink: 'https://buy.stripe.com/6oUdR2ezk2f8aFT9042B21d',
     },
     premium_guide_99: {
         name: 'Premium Guide Access ($99 Tier)',

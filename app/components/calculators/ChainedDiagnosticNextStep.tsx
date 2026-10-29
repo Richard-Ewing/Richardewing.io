@@ -46,37 +46,71 @@ export default function ChainedDiagnosticNextStep({
 }: ChainedDiagnosticNextStepProps) {
   const [handoffQuery, setHandoffQuery] = useState<string>('');
   const [liveMetricValue, setLiveMetricValue] = useState<string>(defaultScorecardMetricValue);
+  const [liveStatus, setLiveStatus] = useState<string>(defaultScorecardStatus);
+  const [liveParamsRecord, setLiveParamsRecord] = useState<Record<string, string | number>>({});
 
   useEffect(() => {
-    const params = new URLSearchParams();
-    params.set('from', currentToolSlug);
+    const syncState = () => {
+      const params = new URLSearchParams();
+      const scorecardParams: Record<string, string | number> = {};
+      params.set('from', currentToolSlug);
 
-    if (nextDiagnostic.defaultParams) {
-      for (const [k, v] of Object.entries(nextDiagnostic.defaultParams)) {
-        params.set(k, String(v));
-      }
-    }
-
-    if (typeof window !== 'undefined') {
-      const currentSp = new URLSearchParams(window.location.search);
-      currentSp.forEach((v, k) => {
-        if (k !== 'from') params.set(k, v);
-      });
-
-      const saved = loadDiagnosticSession(currentToolSlug);
-      if (saved && typeof saved === 'object') {
-        if (saved.primaryMetricValue && typeof saved.primaryMetricValue === 'string') {
-          setLiveMetricValue(saved.primaryMetricValue);
+      if (nextDiagnostic.defaultParams) {
+        for (const [k, v] of Object.entries(nextDiagnostic.defaultParams)) {
+          params.set(k, String(v));
         }
-        for (const [k, v] of Object.entries(saved)) {
-          if (typeof v === 'string' || typeof v === 'number') {
-            params.set(k, String(v));
+      }
+
+      if (typeof window !== 'undefined') {
+        const currentSp = new URLSearchParams(window.location.search);
+        currentSp.forEach((v, k) => {
+          if (k !== 'from') {
+            params.set(k, v);
+            scorecardParams[k] = v;
+          }
+        });
+
+        const saved = loadDiagnosticSession(currentToolSlug);
+        if (saved && typeof saved === 'object') {
+          if (saved.primaryMetricValue && typeof saved.primaryMetricValue === 'string') {
+            setLiveMetricValue(saved.primaryMetricValue);
+          } else if (typeof saved.score === 'number') {
+            setLiveMetricValue(`${saved.score}/100`);
+          }
+          if (saved.statusLabel && typeof saved.statusLabel === 'string') {
+            setLiveStatus(saved.statusLabel);
+          }
+          for (const [k, v] of Object.entries(saved)) {
+            if (
+              k !== 'primaryMetricValue' &&
+              k !== 'statusLabel' &&
+              k !== 'chainedTo' &&
+              (typeof v === 'string' || typeof v === 'number')
+            ) {
+              params.set(k, String(v));
+              scorecardParams[k] = v;
+            }
           }
         }
       }
-    }
 
-    setHandoffQuery(params.toString());
+      setLiveParamsRecord(scorecardParams);
+      setHandoffQuery(params.toString());
+    };
+
+    syncState();
+
+    const onSessionUpdated = (evt: Event) => {
+      const custom = evt as CustomEvent<{ key?: string }>;
+      if (!custom.detail || custom.detail.key === currentToolSlug) {
+        syncState();
+      }
+    };
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('diagnostic-session-updated', onSessionUpdated);
+      return () => window.removeEventListener('diagnostic-session-updated', onSessionUpdated);
+    }
   }, [currentToolSlug, nextDiagnostic.defaultParams]);
 
   const nextHref = handoffQuery
@@ -84,7 +118,9 @@ export default function ChainedDiagnosticNextStep({
     : `/tools/${nextDiagnostic.slug}?from=${currentToolSlug}`;
 
   const handleChainClick = () => {
+    const existing = loadDiagnosticSession(currentToolSlug);
     saveDiagnosticSession(currentToolSlug, {
+      ...(existing && typeof existing === 'object' ? existing : {}),
       chainedTo: nextDiagnostic.slug,
       primaryMetricValue: liveMetricValue,
     });
@@ -111,12 +147,13 @@ export default function ChainedDiagnosticNextStep({
           toolSlug={currentToolSlug}
           primaryMetricLabel={defaultScorecardMetricLabel}
           primaryMetricValue={liveMetricValue}
-          statusLabel={defaultScorecardStatus}
+          statusLabel={liveStatus}
           metrics={[
             { label: 'Next Connected Model', value: nextDiagnostic.title },
             { label: 'Implementation Path', value: `${commercialStep.label} (${commercialStep.priceTag})` },
           ]}
           canonicalUrl={`https://www.richardewing.io/tools/${currentToolSlug}`}
+          queryParams={liveParamsRecord}
         />
       </div>
 

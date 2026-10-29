@@ -38,6 +38,13 @@ export function sanitizeHwsText(input: string): string {
     .trim();
 }
 
+function hasBalancedDelimiters(text: string): boolean {
+  const openParens = (text.match(/\(/g) || []).length;
+  const closeParens = (text.match(/\)/g) || []).length;
+  const quotes = (text.match(/"/g) || []).length;
+  return openParens === closeParens && quotes % 2 === 0;
+}
+
 function stripDanglingTail(phrase: string): string {
   let words = phrase
     .replace(/[\s,:;\-+/|&([{\u2013\u2014]+$/g, '')
@@ -54,12 +61,18 @@ function stripDanglingTail(phrase: string): string {
     }
   }
 
-  // Close unbalanced opening parenthesis if clipped before ')'
+  // Close unbalanced opening parenthesis or unmatched quote if clipped mid-span
   let result = words.join(' ').replace(/[\s,:;\-+/|&]+$/g, '').trim();
   const openParens = (result.match(/\(/g) || []).length;
   const closeParens = (result.match(/\)/g) || []).length;
   if (openParens > closeParens) {
     result = result.replace(/\s*\([^)]*$/, '').trim();
+  }
+  if (((result.match(/"/g) || []).length % 2) !== 0) {
+    const lastQuote = result.lastIndexOf('"');
+    result = (result.slice(0, lastQuote) + result.slice(lastQuote + 1))
+      .replace(/\s+/g, ' ')
+      .trim();
   }
   return result;
 }
@@ -68,7 +81,7 @@ function stripDanglingTail(phrase: string): string {
  * Clamps a leaf route base title so that when Next.js applies `%s | Richard Ewing` (+16 chars),
  * the final rendered <title> never exceeds 60 characters and never contains `...` or mid-word cuts.
  */
-export function clampSeoTitle(rawCore: string, maxCoreChars = 42): string {
+export function clampSeoTitle(rawCore: string, maxCoreChars = 44): string {
   let cleaned = sanitizeHwsText(rawCore)
     // Strip internal curriculum/module catalog prefixes like "6-1: " or "Module 14-2: "
     .replace(/^(?:module\s+|track\s+|lesson\s+)?\d+-\d+\s*:\s*/i, '')
@@ -80,25 +93,43 @@ export function clampSeoTitle(rawCore: string, maxCoreChars = 42): string {
   // Fix accidental doubled word typos such as "AI AI Economist"
   cleaned = cleaned.replace(/\b(\w+)\s+\1\b/gi, '$1');
 
-  if (cleaned.length <= maxCoreChars) {
+  const hardLimit = Math.min(maxCoreChars, 60 - BRAND_SUFFIX.length);
+
+  if (cleaned.length <= hardLimit && hasBalancedDelimiters(cleaned)) {
     return cleaned;
   }
 
-  // 1. Try clean delimiter split (`: `, ` - `, ` | `, ` (`) if primary clause fits [18, maxCoreChars]
-  const delimiters = [': ', ' - ', ' | ', ' ('];
+  // 1. Try clean delimiter split (`: `, ` - `, ` | `) if primary clause fits [18, hardLimit] and has balanced parens/quotes
+  const delimiters = [': ', ' - ', ' | '];
   for (const delim of delimiters) {
     const idx = cleaned.indexOf(delim);
-    if (idx >= 18 && idx <= maxCoreChars) {
+    if (idx >= 18 && idx <= hardLimit && hasBalancedDelimiters(cleaned.slice(0, idx))) {
       const candidate = stripDanglingTail(cleaned.slice(0, idx));
-      if (candidate.length >= 16 && candidate.length <= maxCoreChars) {
+      if (candidate.length >= 16 && candidate.length <= hardLimit) {
         return candidate;
       }
     }
   }
 
-  // 2. Word-boundary accumulation up to maxCoreChars (hard ceiling 44 so +16 <= 60)
-  const hardLimit = Math.min(maxCoreChars, 60 - BRAND_SUFFIX.length);
-  const words = cleaned.split(/\s+/);
+  // Only split on ` (` if the parenthetical closes at the end of the title (trailing qualifier, never mid-sentence)
+  const parenIdx = cleaned.indexOf(' (');
+  if (parenIdx >= 18 && parenIdx <= hardLimit && cleaned.endsWith(')')) {
+    const candidate = stripDanglingTail(cleaned.slice(0, parenIdx));
+    if (candidate.length >= 16 && candidate.length <= hardLimit) {
+      return candidate;
+    }
+  }
+
+  // If inline parenthetical glosses (e.g., `Can "Computer Use" (browser agents) automate...`) push a title over budget,
+  // remove the inline parenthetical so the full clause fits cleanly.
+  const withoutInlineParen = cleaned.replace(/\s*\([^)]+\)\s*/g, ' ').replace(/\s+/g, ' ').trim();
+  const workingText = withoutInlineParen.length >= 18 ? withoutInlineParen : cleaned;
+  if (workingText.length <= hardLimit && hasBalancedDelimiters(workingText)) {
+    return workingText;
+  }
+
+  // 2. Word-boundary accumulation up to hardLimit (so +16 <= 60)
+  const words = workingText.split(/\s+/);
   let acc = '';
   for (const w of words) {
     const next = acc ? `${acc} ${w}` : w;
@@ -109,12 +140,17 @@ export function clampSeoTitle(rawCore: string, maxCoreChars = 42): string {
     }
   }
 
+  // Guard against unclosed opening parenthesis at the cut boundary
+  if ((acc.match(/\(/g) || []).length > (acc.match(/\)/g) || []).length) {
+    acc = acc.slice(0, acc.lastIndexOf('(')).trim();
+  }
+
   const trimmed = stripDanglingTail(acc);
-  if (trimmed.length >= 12) {
+  if (trimmed.length >= 14) {
     return trimmed;
   }
 
-  return cleaned.slice(0, hardLimit).trim();
+  return stripDanglingTail(workingText.slice(0, hardLimit));
 }
 
 const ABBREV_TOKEN = '__DOT__';

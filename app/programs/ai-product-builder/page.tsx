@@ -23,13 +23,13 @@ import ProgramMediaPlayers from '@/components/ai-product-builder/ProgramMediaPla
 
 export const metadata: Metadata = {
   title: 'AI Product Builder: 4-Week Cohort',
-  description: 'Go from domain expert to AI founder with paying customers. Cost governance, $500k capital rails, and live production SOW audits.',
+  description: 'Go from domain expert to incorporated AI founder with paying customers in 4 weeks: unit margin controls, cloud credits, and live SOW audits.',
   alternates: {
     canonical: 'https://www.richardewing.io/programs/ai-product-builder',
   },
   openGraph: {
-    title: 'The AI Product Builder: 4-Week Founder Cohort | Richard Ewing',
-    description: 'Go from domain expert to incorporated AI founder with paying customers. For technical and non-technical builders. Cost governance, $500k capital rails, and live SOW audits.',
+    title: 'AI Product Builder: 4-Week Cohort | Richard Ewing',
+    description: 'Go from domain expert to incorporated AI founder with paying customers in 4 weeks: unit margin controls, cloud credits, and live SOW audits.',
     url: 'https://www.richardewing.io/programs/ai-product-builder',
     siteName: 'Richard Ewing',
     type: 'website',

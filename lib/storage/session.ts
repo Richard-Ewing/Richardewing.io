@@ -25,6 +25,11 @@ export function saveDiagnosticSession(key: string, data: any) {
             
             // Still save the single latest session for backward compatibility
             localStorage.setItem(`diag_session_${key}`, JSON.stringify(data));
+
+            // Notify reactive listeners (e.g., ChainedDiagnosticNextStep & SlackScorecardExport)
+            window.dispatchEvent(
+                new CustomEvent('diagnostic-session-updated', { detail: { key, data } })
+            );
         } catch (e) {
             console.error('Failed to save session state', e);
         }

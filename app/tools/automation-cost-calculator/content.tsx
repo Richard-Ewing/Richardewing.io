@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useEffect, useMemo, useState } from 'react';
-import { Calculator, Layers, DollarSign, ShieldCheck, AlertCircle } from 'lucide-react';
+import { ShieldCheck, AlertCircle } from 'lucide-react';
 import { saveDiagnosticSession } from '@/lib/storage/session';
 import SlackScorecardExport from '@/components/SlackScorecardExport';
+import { MetricPanel, ChartPanel, AccordionItem } from '@/components/editorial';
 
 interface EngineComparison {
   id: string;
@@ -24,6 +25,27 @@ export default function AutomationCostCalculatorContent() {
   const [retiredSaasSeats, setRetiredSaasSeats] = useState<number>(12);
   const [avgSeatCostUsd, setAvgSeatCostUsd] = useState<number>(65);
   const [opsHourlyCostUsd, setOpsHourlyCostUsd] = useState<number>(75);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    const runsParam = params.get('runs') ?? params.get('monthlyRuns');
+    const stepsParam = params.get('steps') ?? params.get('stepsPerRun');
+    const llmParam = params.get('llm') ?? params.get('llmCalls');
+    const seatsParam = params.get('seats') ?? params.get('retiredSaasSeats');
+    if (runsParam && Number.isFinite(Number(runsParam)) && Number(runsParam) >= 1000) {
+      setMonthlyRuns(Math.min(250000, Number(runsParam)));
+    }
+    if (stepsParam && Number.isFinite(Number(stepsParam)) && Number(stepsParam) >= 2) {
+      setStepsPerRun(Math.min(25, Number(stepsParam)));
+    }
+    if (llmParam && Number.isFinite(Number(llmParam)) && Number(llmParam) >= 0) {
+      setLlmCallsPerRun(Math.min(10, Number(llmParam)));
+    }
+    if (seatsParam && Number.isFinite(Number(seatsParam)) && Number(seatsParam) >= 0) {
+      setRetiredSaasSeats(Math.min(100, Number(seatsParam)));
+    }
+  }, []);
 
   const model = useMemo(() => {
     const totalBillableSteps = monthlyRuns * stepsPerRun;
@@ -142,12 +164,13 @@ export default function AutomationCostCalculatorContent() {
 
   useEffect(() => {
     saveDiagnosticSession('automation-cost-calculator', {
-      monthlyRuns,
-      stepsPerRun,
-      retiredSaasSeats,
+      runs: monthlyRuns,
+      steps: stepsPerRun,
+      seats: retiredSaasSeats,
       fte: Math.ceil(model.equivalentFteReclaimed),
       annualSavingsUsd: model.totalAnnualNetBenefit,
       primaryMetricValue: `$${model.totalAnnualNetBenefit.toLocaleString()}/yr Saved`,
+      statusLabel: 'CONSOLIDATION READY',
     });
   }, [monthlyRuns, stepsPerRun, retiredSaasSeats, model]);
 
@@ -189,6 +212,12 @@ export default function AutomationCostCalculatorContent() {
                 value: `$${model.annualSaasRetiredSavings.toLocaleString()}/yr`,
               },
             ]}
+            queryParams={{
+              runs: monthlyRuns,
+              steps: stepsPerRun,
+              llm: llmCallsPerRun,
+              seats: retiredSaasSeats,
+            }}
             canonicalUrl="https://www.richardewing.io/tools/automation-cost-calculator"
           />
         </div>
@@ -316,116 +345,116 @@ export default function AutomationCostCalculatorContent() {
         </div>
       </div>
 
-      {/* Executive Summary Cards */}
+      {/* Centralized Executive Summary MetricPanels */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-        <div className="rounded-2xl bg-[#162e26] text-white p-6">
-          <div className="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-[#d8c7a8]">
-            <DollarSign className="w-3.5 h-3.5" /> Total Annual Net Savings
-          </div>
-          <div className="font-serif text-4xl font-bold mt-2">
-            ${model.totalAnnualNetBenefit.toLocaleString()}
-          </div>
-          <p className="text-xs text-zinc-300 mt-2">
-            Switching off per-step task tax + retiring {retiredSaasSeats} overlapping SaaS seats.
-          </p>
-        </div>
-
-        <div className="rounded-2xl bg-white border border-[#24332b]/15 p-6 shadow-sm">
-          <div className="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-[#b77a35]">
-            <Layers className="w-3.5 h-3.5" /> Automation Platform Savings
-          </div>
-          <div className="font-serif text-4xl font-bold text-[#162e26] mt-2">
-            ${model.annualAutomationDelta.toLocaleString()}/yr
-          </div>
-          <p className="text-xs text-[#4a5850] mt-2">
-            Zapier TCO (${model.engines[0].annualTotalUsd.toLocaleString()}) vs Governed Workers ($
-            {model.engines[3].annualTotalUsd.toLocaleString()}).
-          </p>
-        </div>
-
-        <div className="rounded-2xl bg-[#ebe7dc] border border-[#24332b]/15 p-6">
-          <div className="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-[#162e26]">
-            <Calculator className="w-3.5 h-3.5" /> Reclaimed Team Capacity
-          </div>
-          <div className="font-serif text-4xl font-bold text-[#162e26] mt-2">
-            {model.equivalentFteReclaimed} FTE
-          </div>
-          <p className="text-xs text-[#4a5850] mt-2">
-            Equivalent manual copy-paste bandwidth freed across Support &amp; Ops.
-          </p>
-        </div>
+        <MetricPanel
+          variant="forest"
+          label="Total Annual Net Savings"
+          value={`$${model.totalAnnualNetBenefit.toLocaleString()}`}
+          trend="Per Year"
+          trendDirection="up"
+          subtext={`Switching off per-step task tax + retiring ${retiredSaasSeats} overlapping SaaS seats.`}
+        />
+        <MetricPanel
+          variant="white"
+          label="Automation Platform Savings"
+          value={`$${model.annualAutomationDelta.toLocaleString()}/yr`}
+          trend="Step-Tax Delta"
+          trendDirection="up"
+          subtext={`Zapier TCO ($${model.engines[0].annualTotalUsd.toLocaleString()}) vs Governed Workers ($${model.engines[3].annualTotalUsd.toLocaleString()}).`}
+        />
+        <MetricPanel
+          variant="paper"
+          label="Reclaimed Team Capacity"
+          value={`${model.equivalentFteReclaimed} FTE`}
+          trend="Ops & Support"
+          trendDirection="neutral"
+          subtext="Equivalent manual copy-paste bandwidth freed across Support & Ops."
+        />
       </div>
 
-      {/* 4-Way Comparison Table */}
-      <div className="rounded-3xl border border-[#24332b]/15 bg-white p-6 sm:p-8 shadow-sm space-y-5">
-        <div>
-          <h3 className="font-serif text-2xl font-bold text-[#162e26]">
-            Side-by-Side Total Cost of Ownership (Including Exception Rework)
-          </h3>
-          <p className="text-sm text-[#4a5850] mt-1">
-            Most comparison blogs ignore the payroll cost of a Product Ops Lead fixing silent webhook failures when an API field changes. Both platform bills and human remediation are included below.
-          </p>
-        </div>
-
-        <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse text-sm">
-            <thead>
-              <tr className="border-b-2 border-[#24332b]/15 font-mono text-[11px] uppercase tracking-wider text-[#66716a]">
-                <th className="py-3 pr-4">Architecture</th>
-                <th className="py-3 px-3 text-right">Infra + LLM / Mo</th>
-                <th className="py-3 px-3 text-right">Ops Upkeep / Mo</th>
-                <th className="py-3 px-3 text-right">Error Triage / Mo</th>
-                <th className="py-3 px-3 text-right">Total / Mo</th>
-                <th className="py-3 pl-3 text-right">Annual TCO</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-[#24332b]/10">
-              {model.engines.map((eng, idx) => (
-                <tr
-                  key={eng.id}
-                  className={idx === 3 ? 'bg-emerald-50/60' : 'hover:bg-[#FAF9F6]'}
-                >
-                  <td className="py-4 pr-4">
-                    <div className="font-bold text-[#162e26] flex items-center gap-2">
-                      {eng.name}
-                      {idx === 3 && (
-                        <span className="inline-flex items-center gap-1 text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-[#162e26] text-white">
-                          <ShieldCheck className="w-3 h-3" /> Lowest TCO
-                        </span>
-                      )}
-                    </div>
-                    <div className="text-xs font-mono text-[#66716a] mt-0.5">
-                      {eng.billingUnit}
-                    </div>
-                    <div className="text-xs text-[#4a5850] mt-1">{eng.notes}</div>
-                  </td>
-                  <td className="py-4 px-3 text-right font-mono text-[#1e2924]">
-                    ${eng.monthlyPlatformUsd.toLocaleString()}
-                  </td>
-                  <td className="py-4 px-3 text-right font-mono text-[#4a5850]">
-                    ${eng.monthlyOpsOverheadUsd.toLocaleString()}
-                  </td>
-                  <td className="py-4 px-3 text-right font-mono text-[#9f3a24]">
-                    ${eng.monthlyFailureReworkUsd.toLocaleString()}
-                  </td>
-                  <td className="py-4 px-3 text-right font-mono font-semibold text-[#162e26]">
-                    ${eng.monthlyTotalUsd.toLocaleString()}
-                  </td>
-                  <td className="py-4 pl-3 text-right font-mono font-bold text-[#162e26]">
-                    ${eng.annualTotalUsd.toLocaleString()}
-                  </td>
+      {/* 4-Way Comparison Table inside Centralized ChartPanel */}
+      <ChartPanel
+        variant="white"
+        title="Side-by-Side Total Cost of Ownership (Including Exception Rework)"
+        subtitle="Most comparison blogs ignore the payroll cost of a Product Ops Lead fixing silent webhook failures when an API field changes. Both platform bills and human remediation are included below."
+        sourceNote="Modeled across 2026 Zapier Team, Make Teams, self-hosted n8n Docker+Queue, and Cloudflare Workers rate cards."
+      >
+        <div className="space-y-5">
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr className="border-b-2 border-[#24332b]/15 font-mono text-[11px] uppercase tracking-wider text-[#66716a]">
+                  <th className="py-3 pr-4">Architecture</th>
+                  <th className="py-3 px-3 text-right">Infra + LLM / Mo</th>
+                  <th className="py-3 px-3 text-right">Ops Upkeep / Mo</th>
+                  <th className="py-3 px-3 text-right">Error Triage / Mo</th>
+                  <th className="py-3 px-3 text-right">Total / Mo</th>
+                  <th className="py-3 pl-3 text-right">Annual TCO</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody className="divide-y divide-[#24332b]/10">
+                {model.engines.map((eng, idx) => (
+                  <tr
+                    key={eng.id}
+                    className={idx === 3 ? 'bg-emerald-50/60' : 'hover:bg-[#FAF9F6]'}
+                  >
+                    <td className="py-4 pr-4">
+                      <div className="font-bold text-[#162e26] flex items-center gap-2">
+                        {eng.name}
+                        {idx === 3 && (
+                          <span className="inline-flex items-center gap-1 text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-[#162e26] text-white">
+                            <ShieldCheck className="w-3 h-3" /> Lowest TCO
+                          </span>
+                        )}
+                      </div>
+                      <div className="text-xs font-mono text-[#66716a] mt-0.5">
+                        {eng.billingUnit}
+                      </div>
+                      <div className="text-xs text-[#4a5850] mt-1">{eng.notes}</div>
+                    </td>
+                    <td className="py-4 px-3 text-right font-mono text-[#1e2924]">
+                      ${eng.monthlyPlatformUsd.toLocaleString()}
+                    </td>
+                    <td className="py-4 px-3 text-right font-mono text-[#4a5850]">
+                      ${eng.monthlyOpsOverheadUsd.toLocaleString()}
+                    </td>
+                    <td className="py-4 px-3 text-right font-mono text-[#9f3a24]">
+                      ${eng.monthlyFailureReworkUsd.toLocaleString()}
+                    </td>
+                    <td className="py-4 px-3 text-right font-mono font-semibold text-[#162e26]">
+                      ${eng.monthlyTotalUsd.toLocaleString()}
+                    </td>
+                    <td className="py-4 pl-3 text-right font-mono font-bold text-[#162e26]">
+                      ${eng.annualTotalUsd.toLocaleString()}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
 
-        <div className="rounded-2xl bg-[#FAF9F6] border border-[#24332b]/12 p-4 flex items-start gap-3 text-xs text-[#4a5850]">
-          <AlertCircle className="w-4 h-4 text-[#b77a35] shrink-0 mt-0.5" />
-          <p>
-            <strong className="text-[#162e26]">Operator Rule of Thumb:</strong> Keep low-volume prototypes (&lt;2,000 runs/mo) in Zapier or Make so non-technical managers can iterate fast. Once a workflow crosses 15,000 runs/mo or touches customer billing/PII, migrate it into self-hosted n8n or typed Cloudflare Workers with dead-letter queues.
-          </p>
+          <div className="rounded-2xl bg-[#FAF9F6] border border-[#24332b]/12 p-4 flex items-start gap-3 text-xs text-[#4a5850]">
+            <AlertCircle className="w-4 h-4 text-[#b77a35] shrink-0 mt-0.5" />
+            <p>
+              <strong className="text-[#162e26]">Operator Rule of Thumb:</strong> Keep low-volume prototypes (&lt;2,000 runs/mo) in Zapier or Make so non-technical managers can iterate fast. Once a workflow crosses 15,000 runs/mo or touches customer billing/PII, migrate it into self-hosted n8n or typed Cloudflare Workers with dead-letter queues.
+            </p>
+          </div>
         </div>
+      </ChartPanel>
+
+      {/* Centralized Operator FAQ */}
+      <div className="space-y-3 pt-2">
+        <AccordionItem
+          tag="FINOPS"
+          question="Why do Zapier and Make bills jump 10x when AI classification steps are added?"
+          answer="Step-metered platforms bill every internal filter, JSON parser, router branch, and loop item as a separate task. An 8-step CRM enrichment workflow running 25,000 times per month consumes 200,000 metered tasks before paying a cent for OpenAI or Anthropic tokens."
+        />
+        <AccordionItem
+          tag="OPS"
+          question="When does self-hosted n8n beat Cloudflare Workers, and vice versa?"
+          answer="Self-hosted n8n is ideal when Operations Leads and Revenue Ops Managers need visual node editing across 50+ SaaS connectors without per-step overages. Governed Cloudflare Workers with Queues win on mission-critical billing, webhook, and customer-onboarding pipelines where strict TypeScript schemas and zero server maintenance matter most."
+        />
       </div>
     </div>
   );

@@ -1303,7 +1303,7 @@ export const frameworks = [
         ],
         relatedArticles: [
             { title: 'Why Your CFO Hates Agile', publication: 'CIO.com', date: 'Mar 2026', url: 'https://www.cio.com/article/4143737/why-your-cfo-hates-your-agile-transformation.html' },
-            { title: 'The Technical Insolvency Date', publication: 'The Canon', date: 'Jan 2026', url: '/articles/technical-insolvency-date' }
+            { title: 'The Technical Insolvency Date', publication: 'The Canon', date: 'Jan 2026', url: '/articles/frameworks/technical-insolvency-date' }
         ],
         relatedTool: { name: 'Product Debt Index (PDI) Calculator', url: '/tools/pdi' }
     },
@@ -1320,7 +1320,7 @@ export const frameworks = [
             'Benchmark: <30% healthy, 30-50% concerning, 50-70% dangerous, >70% terminal'
         ],
         relatedArticles: [
-            { title: 'The Innovation Tax', publication: 'CIO.com / Foundry', date: 'Dec 2025', url: '/articles/innovation-tax' },
+            { title: 'The Innovation Tax', publication: 'CIO.com / Foundry', date: 'Dec 2025', url: '/articles/frameworks/innovation-tax' },
             { title: 'Why Your CFO Hates Your Agile Transformation', publication: 'CIO.com', date: 'Mar 2026', url: 'https://www.cio.com/article/4143737/why-your-cfo-hates-your-agile-transformation.html' }
         ],
         relatedTool: { name: 'Product Debt Index (PDI) Calculator', url: '/tools/pdi' }
@@ -1339,7 +1339,7 @@ export const frameworks = [
             'Use the AUEB calculator at richardewing.io/tools/aueb for automated benchmarking'
         ],
         relatedArticles: [
-            { title: 'The Cost of Predictivity', publication: 'Built In', date: 'Nov 2025', url: '/articles/cost-of-predictivity' },
+            { title: 'The Cost of Predictivity', publication: 'Built In', date: 'Nov 2025', url: '/articles/frameworks/cost-of-predictivity' },
             { title: 'The AI Product Business Test', publication: 'Built In (Editor\'s Pick)', date: 'Jan 2026', url: 'https://builtin.com/articles/ai-product-business-test' }
         ],
         relatedTool: { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }
@@ -1379,7 +1379,7 @@ export const frameworks = [
         ],
         relatedArticles: [
             { title: 'Real Innovation Requires Deleting Code, Not Writing It', publication: 'Built In', date: 'Feb 2026', url: 'https://builtin.com/articles/innovation-requires-deleting-code' },
-            { title: 'Feature Bloat Calculus', publication: 'Mind the Product', date: 'Oct 2025', url: '/articles/feature-bloat-calculus' }
+            { title: 'Feature Bloat Calculus', publication: 'Mind the Product', date: 'Oct 2025', url: '/articles/frameworks/feature-bloat-calculus' }
         ],
         relatedTool: { name: 'Product Debt Index (PDI) Calculator', url: '/tools/pdi' }
     },
@@ -1398,7 +1398,7 @@ export const frameworks = [
             'Use the PDI calculator at richardewing.io/tools/pdi to benchmark your overall feature portfolio'
         ],
         relatedArticles: [
-            { title: 'Feature Bloat Calculus', publication: 'Mind the Product', date: 'Oct 2025', url: '/articles/feature-bloat-calculus' },
+            { title: 'Feature Bloat Calculus', publication: 'Mind the Product', date: 'Oct 2025', url: '/articles/frameworks/feature-bloat-calculus' },
             { title: 'The 3 Financial Metrics Every PM Needs on Their Scorecard', publication: 'Mind the Product', date: 'Feb 2026', url: 'https://www.mindtheproduct.com/the-3-financial-metrics-every-pm-needs-on-their-scorecard/' }
         ],
         relatedTool: { name: 'Product Debt Index (PDI) Calculator', url: '/tools/pdi' }
@@ -1415,7 +1415,7 @@ export const frameworks = [
             'Index these factors through the Product Debt Index (PDI) calculator'
         ],
         relatedArticles: [
-            { title: 'Technical Debt Governance Frameworks for AI Startups', publication: 'The Canon', date: 'Apr 2026', url: '/articles/technical-debt-governance-frameworks-for-ai-startups' },
+            { title: 'Technical Debt Governance Frameworks for AI Startups', publication: 'The Canon', date: 'Apr 2026', url: '/blog/technical-debt-governance-frameworks-for-ai-startups' },
             { title: 'Vibe Coding Debt: The Silent Killer of AI-Native Startups', publication: 'The Canon', date: 'Apr 2026', url: '/blog/vibe-coding-debt-the-silent-killer-of-ai-native-startups' }
         ],
         relatedTool: { name: 'Product Debt Index (PDI) Calculator', url: '/tools/pdi' }

@@ -15,8 +15,21 @@ import {
   SAAS_MARGIN_STRESS_MATRIX,
 } from '@/app/lib/llm-benchmark-data';
 
-const OG_IMAGE =
-  'https://www.richardewing.io/api/og?title=2026%20LLM%20API%20Cost%20%26%20SaaS%20Margin%20Index&category=Living%20Benchmark&ml=P90%20%2429%20Seat%20Margin&mv=-71.9%25&s=MARGIN%20INVERSION';
+const SONNET_UNCACHED = SAAS_MARGIN_STRESS_MATRIX[0];
+const SONNET_CACHED = SAAS_MARGIN_STRESS_MATRIX[1];
+const FLASH_TIER_ROUTED = SAAS_MARGIN_STRESS_MATRIX[5];
+const P90_29_UNCACHED_STR = `${SONNET_UNCACHED.marginAt29SeatPct.p90.toFixed(1)}%`;
+const P90_29_CACHE_LIFT_STR = `+${(
+  SONNET_CACHED.marginAt29SeatPct.p90 - SONNET_UNCACHED.marginAt29SeatPct.p90
+).toFixed(1)} pts`;
+const P90_49_CACHE_LIFT_STR = `+${(
+  SONNET_CACHED.marginAt49SeatPct.p90 - SONNET_UNCACHED.marginAt49SeatPct.p90
+).toFixed(1)} pts`;
+const P90_49_ROUTER_FLOOR_STR = `${FLASH_TIER_ROUTED.marginAt49SeatPct.p90.toFixed(1)}%`;
+
+const OG_IMAGE = `https://www.richardewing.io/api/og?title=2026%20LLM%20API%20Cost%20%26%20SaaS%20Margin%20Index&category=Living%20Benchmark&ml=P90%20%2429%20Seat%20Margin&mv=${encodeURIComponent(
+  P90_29_UNCACHED_STR
+)}&s=MARGIN%20INVERSION`;
 
 export const metadata: Metadata = {
   title: '2026 LLM API Cost & SaaS Margin Index',
@@ -209,23 +222,23 @@ export default function LlmCostAndMarginIndexPage() {
           <MetricPanel
             variant="forest"
             label="P90 Uncached $29 Seat"
-            value="-71.9%"
+            value={P90_29_UNCACHED_STR}
             trend="Gross Margin"
             trendDirection="down"
-            subtext="650 monthly tool loops on Claude Sonnet 4.5 cost $46.80/seat before Stripe or hosting."
+            subtext={`650 monthly tool loops on Claude Sonnet 4.5 cost $${SONNET_UNCACHED.p90MonthlyCostUsd.toFixed(2)}/seat (+$2.94 seat/payment overhead).`}
           />
           <MetricPanel
             variant="white"
             label="75% Prompt Cache Lift"
-            value="+51.0 pts"
-            trend="Margin Recovery"
+            value={P90_29_CACHE_LIFT_STR}
+            trend="@ $29 Seat P90"
             trendDirection="up"
-            subtext="Deterministic prefix caching cuts P90 Sonnet 4.5 burn from $46.80 to $23.90/seat."
+            subtext={`Prefix caching cuts Sonnet 4.5 P90 burn from $${SONNET_UNCACHED.p90MonthlyCostUsd.toFixed(2)} to $${SONNET_CACHED.p90MonthlyCostUsd.toFixed(2)}/seat (${P90_49_CACHE_LIFT_STR} @ $49 seat).`}
           />
           <MetricPanel
             variant="white"
             label="80/20 Tier Router Floor"
-            value="81.6%"
+            value={P90_49_ROUTER_FLOOR_STR}
             trend="@ $49 Seat P90"
             trendDirection="up"
             subtext="Routing 80% of triage to Gemini 3.8 Flash + 20% frontier preserves SaaS-grade margins."

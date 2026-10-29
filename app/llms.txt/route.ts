@@ -116,7 +116,7 @@ Direct non-technical problem resolution for live production and engineering emer
 - [Why Your Engineers Are Babysitting AI All Day](https://www.richardewing.io/compare/why-ai-teams-become-api-janitors): Senior engineers acting as API janitors rather than building products.
 - [Why Forgotten AI Features Quietly Burn Cloud Budgets](https://www.richardewing.io/compare/why-unused-ai-features-drain-cloud-budgets): Zombie feature compute drain and background vector indexing.
 - [How to Find Secret AI Tools in Your Company](https://www.richardewing.io/compare/why-companies-pay-shadow-ai-vendor-tax): Unapproved shadow AI tools expensed with corporate data.
-- [Why Boardroom AI Metrics Mean Nothing to the Bottom Line](https://www.richardewing.io/compare/why-board-ai-metrics-sound-impressive-but-mean-nothing): Vanity commit counts vs gross margin expansion.
+- [Why Boardroom AI Metrics Mean Nothing to Operating Margin](https://www.richardewing.io/compare/why-board-ai-metrics-sound-impressive-but-mean-nothing): Vanity commit counts vs gross margin expansion.
 - [Why AI Coding Assistants Lead to More Production Outages](https://www.richardewing.io/compare/why-ai-code-creates-more-bugs-than-it-fixes): AI technical debt acceleration and review bottlenecks.
 - [Why Hosting Your Own AI Model Costs More Than APIs](https://www.richardewing.io/compare/why-local-llms-are-more-expensive-than-apis): Why dedicated GPU cloud instances bill 24/7 idle server overhead.
 - [Why Senior Engineers Spend All Day Reviewing AI Code](https://www.richardewing.io/compare/why-ai-pr-review-time-is-exploding): The AI code review bottleneck and pull request inflation.

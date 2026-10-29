@@ -36,7 +36,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     if (!fw) {
         return { title: 'Framework Pillar Not Found' };
     }
-    const baseTitle = clampSeoTitle(fw.name, 42);
+    const rawTitle = fw.name.length < 18 ? `${fw.name} AI Operating Framework` : fw.name;
+    const baseTitle = clampSeoTitle(rawTitle, 44);
     const metaDesc = formatSeoDescription(fw.overview);
     const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(fw.name)}&category=Operating%20Framework`;
     return {

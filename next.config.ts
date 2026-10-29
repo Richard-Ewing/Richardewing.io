@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-import { BLOG_SLUG_REDIRECTS, ARTICLE_SLUG_REDIRECTS } from "./app/lib/article-redirects";
 
 const nextConfig: NextConfig = {
   output: 'standalone',
@@ -178,17 +177,7 @@ const nextConfig: NextConfig = {
       { source: '/ai-cost-audit', destination: '/services/ai-cost-audit', permanent: true },
       { source: '/rd-capital-audit', destination: '/services/ai-cost-audit', permanent: true },
       { source: '/ai-spend-calculator', destination: '/roi-calculator', permanent: true },
-      // Framework & article de-cannibalization canonical consolidation redirects (ADR-0017 Wave 4)
-      ...Object.entries(BLOG_SLUG_REDIRECTS).map(([slug, destination]) => ({
-        source: `/blog/${slug}`,
-        destination,
-        permanent: true,
-      })),
-      ...Object.entries(ARTICLE_SLUG_REDIRECTS).map(([slug, destination]) => ({
-        source: `/articles/${slug}`,
-        destination,
-        permanent: true,
-      })),
+      // Note: BLOG_SLUG_REDIRECTS & ARTICLE_SLUG_REDIRECTS execute in middleware.ts EDGE_REDIRECTS for single-hop apex+www 301 resolution.
       // Research-validated searchable URLs -> existing tool pages.
       // VALIDATED: competitors exist for these exact terms (TechDebtCalculator.com, Red Eagle, etc.)
       { source: '/tools/technical-debt-calculator', destination: '/tools/pdi', permanent: true },

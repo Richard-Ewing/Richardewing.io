@@ -197,7 +197,7 @@ export default function EUAIActChecker() {
                         )}
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/tools/shadow-ai" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-zinc-900 font-bold rounded-xl hover:from-purple-500 hover:to-indigo-500 transition-all">
+                            <Link href="/tools/shadow-ai" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-xl hover:from-purple-500 hover:to-indigo-500 transition-all">
                                 <Shield className="w-4 h-4" />
                                 Run Shadow AI Scan
                             </Link>

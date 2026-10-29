@@ -27,8 +27,52 @@ export const metadata: Metadata = {
 };
 
 export default function BenchmarkPage() {
+  const collectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: '2026 AI Economics & Product Debt Benchmarks',
+    description:
+      'Open 2026 empirical datasets for LLM API token pricing, SaaS gross margins, technical debt drag, and revenue per engineer across 500+ engineering organizations.',
+    url: 'https://www.richardewing.io/benchmark',
+    author: {
+      '@type': 'Person',
+      '@id': 'https://www.richardewing.io/#person',
+      name: 'Richard Ewing',
+      url: 'https://www.richardewing.io',
+    },
+    hasPart: [
+      {
+        '@type': 'Dataset',
+        name: '2026 LLM API Cost & SaaS Gross Margin Index',
+        url: 'https://www.richardewing.io/benchmark/llm-cost-and-margin-index',
+      },
+      {
+        '@type': 'Dataset',
+        name: 'The 2026 AI Capital Engineering Index',
+        url: 'https://www.richardewing.io/benchmark/ai-capital-2026',
+      },
+    ],
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+      { '@type': 'ListItem', position: 2, name: 'Benchmarks', item: 'https://www.richardewing.io/benchmark' },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-[#FAF9F6] text-[#1e2924] pt-24 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="max-w-5xl mx-auto px-6 space-y-16">
         <header className="space-y-5 max-w-3xl">
           <p className="text-xs font-mono font-bold uppercase tracking-widest text-[#b77a35]">

@@ -143,7 +143,7 @@ const faqs = [
   },
   {
     q: 'What is the refund policy on digital products?',
-    a: 'The $29 Survival Kit and $79 Complete Bundle carry a 100% money-back guarantee within 14 days if they do not save you at least 10x their cost in engineering, cloud, or career leverage.',
+    a: 'The $29 Survival Kit and $79 Complete Bundle carry a 100% money-back guarantee within 14 days if they do not save you at least 10x their cost in engineering time, cloud spend, or career outcomes.',
   },
 ];
 

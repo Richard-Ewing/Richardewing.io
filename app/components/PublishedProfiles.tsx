@@ -1,4 +1,3 @@
-
 const profiles = [
     {
         publication: 'CIO.com',
@@ -43,7 +42,7 @@ const profiles = [
     {
         publication: 'Beehiiv',
         role: 'Publisher',
-        description: 'The AI Economist  Executive Briefings.',
+        description: 'The AI Economist: Executive Briefings.',
         url: 'https://theaieconomist.beehiiv.com',
         logo: '/logos/beehiiv-logo.svg',
         width: 80,
@@ -54,7 +53,7 @@ const profiles = [
         publication: 'LinkedIn',
         role: 'Thought Leadership',
         description: 'Professional network presence.',
-        url: 'https://linkedin.com/in/richard-ewing-mba',
+        url: 'https://www.linkedin.com/in/richard-ewing-mba',
         logo: '/logos/linkedin-logo.svg',
         width: 24,
         articleCount: null,

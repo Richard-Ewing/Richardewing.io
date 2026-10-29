@@ -157,9 +157,16 @@ function AUEBToolContent() {
 
     useEffect(() => {
         trackDiagnosticEvent('diagnostic_started', 'aueb');
+        if (typeof window !== 'undefined') {
+            const sp = new URLSearchParams(window.location.search);
+            const arpuParam = sp.get('arpu');
+            if (arpuParam && !sp.get('price')) {
+                setPrice(arpuParam);
+            }
+        }
         const saved = loadDiagnosticSession('aueb');
-        if (saved) setResults(saved);
-    }, []);
+        if (saved && typeof saved.grossMargin === 'number') setResults(saved);
+    }, [setPrice]);
 
 
 

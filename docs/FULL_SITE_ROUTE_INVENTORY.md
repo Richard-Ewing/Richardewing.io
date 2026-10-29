@@ -210,14 +210,14 @@
 | `/articles/redundant-ai-requests` | Redundant AI Requests - Richard Ewing | `INDEXED` | Concept B (Editorial High-Contrast) | Read Archival Copy ↗ | `app/articles/[slug]/page.tsx` |
 | `/articles/anatomy-of-ai-agent-breach` | Anatomy of an AI Agent Breach - Richard Ewing | `INDEXED` | Concept B (Editorial High-Contrast) | Read Archival Copy ↗ | `app/articles/[slug]/page.tsx` |
 | `/articles/three-gates` | Three Gates - Richard Ewing | `INDEXED` | Concept B (Editorial High-Contrast) | Read Archival Copy ↗ | `app/articles/[slug]/page.tsx` |
-| `/articles/model-collapse-financial-modeling` | The hidden inflation of AI: Why model collapse is a business risk - Richard Ewing | `INDEXED` | Concept B (Editorial High-Contrast) | Read Archival Copy ↗ | `app/articles/[slug]/page.tsx` |
-| `/articles/calculating-technical-debt-ebitda-impact-private-equity` | Calculating Technical Debt's EBITDA Impact in Private Equity Due Diligence - Richard Ewing | `INDEXED` | Concept B (Editorial High-Contrast) | Read Archival Copy ↗ | `app/articles/[slug]/page.tsx` |
-| `/articles/how-to-translate-dora-metrics-into-financial-technical-debt` | How to Translate DORA Metrics into Financial Technical Debt - Richard Ewing | `INDEXED` | Concept B (Editorial High-Contrast) | Read Archival Copy ↗ | `app/articles/[slug]/page.tsx` |
-| `/articles/technical-debt-governance-frameworks-for-ai-startups` | Technical Debt Governance Frameworks for AI Startups - Richard Ewing | `INDEXED` | Concept B (Editorial High-Contrast) | Read Archival Copy ↗ | `app/articles/[slug]/page.tsx` |
-| `/articles/technical-insolvency-date` | The Technical Insolvency Date - Richard Ewing | `INDEXED` | Concept B (Editorial High-Contrast) | Read Archival Copy ↗ | `app/articles/[slug]/page.tsx` |
-| `/articles/innovation-tax` | The Innovation Tax - Richard Ewing | `INDEXED` | Concept B (Editorial High-Contrast) | Read Archival Copy ↗ | `app/articles/[slug]/page.tsx` |
-| `/articles/cost-of-predictivity` | The Cost of Predictivity - Richard Ewing | `INDEXED` | Concept B (Editorial High-Contrast) | Read Archival Copy ↗ | `app/articles/[slug]/page.tsx` |
-| `/articles/feature-bloat-calculus` | Feature Bloat Calculus - Richard Ewing | `INDEXED` | Concept B (Editorial High-Contrast) | Read Archival Copy ↗ | `app/articles/[slug]/page.tsx` |
+| `/articles/model-collapse-financial-modeling` | The hidden inflation of AI: Why model collapse is a business risk - Richard Ewing | `301 -> /blog/model-collapse-financial-modeling` | Edge 301 Consolidation | Redirect ↗ | `middleware.ts` |
+| `/articles/calculating-technical-debt-ebitda-impact-private-equity` | Calculating Technical Debt's EBITDA Impact in Private Equity Due Diligence - Richard Ewing | `301 -> /blog/calculating-technical-debt-ebitda-impact-private-equity` | Edge 301 Consolidation | Redirect ↗ | `middleware.ts` |
+| `/articles/how-to-translate-dora-metrics-into-financial-technical-debt` | How to Translate DORA Metrics into Financial Technical Debt - Richard Ewing | `301 -> /blog/how-to-translate-dora-metrics-into-financial-technical-debt` | Edge 301 Consolidation | Redirect ↗ | `middleware.ts` |
+| `/articles/technical-debt-governance-frameworks-for-ai-startups` | Technical Debt Governance Frameworks for AI Startups - Richard Ewing | `301 -> /blog/technical-debt-governance-frameworks-for-ai-startups` | Edge 301 Consolidation | Redirect ↗ | `middleware.ts` |
+| `/articles/technical-insolvency-date` | The Technical Insolvency Date - Richard Ewing | `301 -> /articles/frameworks/technical-insolvency-date` | Edge 301 Consolidation | Redirect ↗ | `middleware.ts` |
+| `/articles/innovation-tax` | The Innovation Tax - Richard Ewing | `301 -> /articles/frameworks/innovation-tax` | Edge 301 Consolidation | Redirect ↗ | `middleware.ts` |
+| `/articles/cost-of-predictivity` | The Cost of Predictivity - Richard Ewing | `301 -> /articles/frameworks/cost-of-predictivity` | Edge 301 Consolidation | Redirect ↗ | `middleware.ts` |
+| `/articles/feature-bloat-calculus` | Feature Bloat Calculus - Richard Ewing | `301 -> /articles/frameworks/feature-bloat-calculus` | Edge 301 Consolidation | Redirect ↗ | `middleware.ts` |
 
 ---
 

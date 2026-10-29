@@ -160,8 +160,20 @@ function PDIToolContent() {
     useEffect(() => {
         trackDiagnosticEvent('diagnostic_started', 'pdi');
         const saved = loadDiagnosticSession('pdi');
-        if (saved) setResults(saved);
+        if (saved && typeof saved.score === 'number') setResults(saved);
     }, []);
+
+    useEffect(() => {
+        if (!results) {
+            saveDiagnosticSession('pdi', {
+                teamSize,
+                engineers: teamSize,
+                salary,
+                primaryMetricValue: `${teamSize} Eng · $${Math.round((teamSize * salary) / 1000000 * 10) / 10}M Payroll`,
+                statusLabel: 'PDI AUDIT READY',
+            });
+        }
+    }, [teamSize, salary, results]);
 
     const analyze = async () => {
         setLoading(true);
@@ -200,7 +212,13 @@ function PDIToolContent() {
             };
 
             setResults(newResults);
-            saveDiagnosticSession('pdi', newResults);
+            saveDiagnosticSession('pdi', {
+                ...newResults,
+                teamSize,
+                engineers: teamSize,
+                salary,
+                primaryMetricValue: `PDI ${scoreMetrics.score}/100 ($${Math.round(scoreMetrics.financials.waste / 1000)}K Waste)`,
+            });
             trackDiagnosticEvent('diagnostic_completed', 'pdi', { score: scoreMetrics.score, waste: scoreMetrics.financials.waste });
 
             // Silently persist to Supabase for longitudinal tracking (Data Moat telemetry)
@@ -927,7 +945,7 @@ Migrate from Heroku to AWS"
                           <h4 className="text-lg font-bold text-zinc-950 mb-2">Get a forensic capital leak analysis with remediation plan</h4>
                           <p className="text-sm text-zinc-600 mb-4">You found the PDI score. A $2,500 Insolvency Audit locates the exact line items bleeding your R&D budget and builds the 90-day fix.</p>
                           <div className="flex flex-wrap gap-3">
-                            <a href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-zinc-900 text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">Book Advisory Session →</a>
+                            <a href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">Book Advisory Session →</a>
                             <a href="/api/buy/gut_check" className="inline-flex items-center gap-2 px-5 py-2.5 border border-purple-500/30 text-purple-700 text-sm font-bold rounded-lg hover:bg-purple-50 transition-colors">$450 Gut-Check Call →</a>
                           </div>
                         </div>

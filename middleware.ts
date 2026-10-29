@@ -1,5 +1,6 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
 import { NextFetchEvent, NextRequest, NextResponse } from "next/server";
+import { ARTICLE_SLUG_REDIRECTS, BLOG_SLUG_REDIRECTS } from "./app/lib/article-redirects";
 
 const TIER_A_SLUGS = new Set([
   'claude-code-vs-cursor-governance', 'claude-code-retry-loop-prevention',
@@ -111,6 +112,12 @@ const EDGE_REDIRECTS: Record<string, string> = {
   '/vault/curriculum/tracks/cloud-finops/14-13': '/vault/curriculum/tracks/cloud-finops/7-13',
   '/vault/curriculum/tracks/cloud-finops/14-14': '/vault/curriculum/tracks/cloud-finops/7-14',
   '/vault/curriculum/tracks/cloud-finops/14-15': '/vault/curriculum/tracks/cloud-finops/7-15',
+  ...Object.fromEntries(
+    Object.entries(BLOG_SLUG_REDIRECTS).map(([slug, target]) => [`/blog/${slug}`, target])
+  ),
+  ...Object.fromEntries(
+    Object.entries(ARTICLE_SLUG_REDIRECTS).map(([slug, target]) => [`/articles/${slug}`, target])
+  ),
 };
 
 const TRAINING_SCRAPER_REGEX =
@@ -185,22 +192,28 @@ export default async function middleware(req: NextRequest, event: NextFetchEvent
   const userAgent = (req.headers.get('user-agent') || '').toLowerCase();
 
   // 0a. Short-circuit Cloudflare Early Hints subrequests immediately to prevent 103/504 timeouts
+  // CRITICAL: Must NEVER be public/s-maxage cached because Cloudflare's default cache key omits User-Agent!
   if (userAgent.includes('early hints')) {
     return new NextResponse(null, {
       status: 204,
       headers: {
-        'Cache-Control': 'public, max-age=86400, s-maxage=86400',
+        'Cache-Control': 'private, no-cache, no-store, max-age=0, must-revalidate',
+        'Cloudflare-CDN-Cache-Control': 'no-store',
+        'CDN-Cache-Control': 'no-store',
       },
     });
   }
 
   // 0b. Deterministic 403 block on foundation-model training scrapers while preserving AI search/citation bots
+  // CRITICAL: Must NEVER be public/s-maxage cached because Cloudflare's default cache key omits User-Agent!
   if (TRAINING_SCRAPER_REGEX.test(userAgent)) {
     return new NextResponse('Forbidden: AI training scraping disallowed. Live AI search and citation bots permitted.', {
       status: 403,
       headers: {
         'Content-Type': 'text/plain; charset=utf-8',
-        'Cache-Control': 'public, max-age=86400, s-maxage=86400',
+        'Cache-Control': 'private, no-cache, no-store, max-age=0, must-revalidate',
+        'Cloudflare-CDN-Cache-Control': 'no-store',
+        'CDN-Cache-Control': 'no-store',
         'X-Robots-Tag': 'noai, noimageai',
       },
     });
@@ -286,11 +299,11 @@ export default async function middleware(req: NextRequest, event: NextFetchEvent
     });
   }
 
-  // Edge-level 308 Permanent Redirect for Tier C and non-indexed compare pages -> /tools
+  // Edge-level 301 Permanent Redirect for Tier C and non-indexed compare pages -> /tools
   if (pathname.startsWith('/compare/')) {
     const slug = pathname.replace('/compare/', '').split('/')[0];
     if (slug && !TIER_A_SLUGS.has(slug)) {
-      return NextResponse.redirect(new URL('/tools', req.url), 308);
+      return NextResponse.redirect(new URL('/tools', req.url), 301);
     }
   }
 

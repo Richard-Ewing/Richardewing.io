@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Percent } from 'lucide-react';
 import ToolGate from '@/app/components/tool-gate';
 import { ExportToPDFButton } from '@/app/components/ExportToPDFButton';
 import DiagnosticCTA from '@/app/components/DiagnosticCTA';
+import { saveDiagnosticSession } from '@/lib/storage/session';
 import Link from 'next/link';
 
 export default function AIFeatureMarginTool() {
@@ -13,6 +14,19 @@ export default function AIFeatureMarginTool() {
     const [tokensPerQuery, setTokensPerQuery] = useState<number>(1200);
     const [modelCostPerM, setModelCostPerM] = useState<number>(8.00);
     const [baseHostingCostPerUser, setBaseHostingCostPerUser] = useState<number>(4.50);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const sp = new URLSearchParams(window.location.search);
+        const priceParam = Number(sp.get('price') || sp.get('arpu'));
+        const queriesParam = Number(sp.get('queries'));
+        const tokensParam = Number(sp.get('tokens'));
+        const modelCostParam = Number(sp.get('modelCost'));
+        if (priceParam >= 5 && priceParam <= 2000) setSubscriptionPrice(priceParam);
+        if (queriesParam >= 1 && queriesParam <= 10000) setQueriesPerUserMonth(queriesParam);
+        if (tokensParam >= 100 && tokensParam <= 200000) setTokensPerQuery(tokensParam);
+        if (modelCostParam > 0 && modelCostParam <= 100) setModelCostPerM(modelCostParam);
+    }, []);
 
     // Calculations
     const monthlyTokensPerUser = (queriesPerUserMonth * tokensPerQuery);
@@ -37,6 +51,21 @@ export default function AIFeatureMarginTool() {
         statusColor = 'bg-amber-50 text-amber-800 border-amber-200';
         statusDesc = 'Acceptable for top-tier enterprise tiers, but power users will easily push account unit economics into negative EBITDA.';
     }
+
+    useEffect(() => {
+        const computedCostPerQuery = Number(((tokensPerQuery / 1000000) * modelCostPerM).toFixed(4));
+        saveDiagnosticSession('ai-feature-margin', {
+            price: subscriptionPrice,
+            arpu: subscriptionPrice,
+            queries: queriesPerUserMonth,
+            tokens: tokensPerQuery,
+            modelCost: modelCostPerM,
+            costPerQuery: computedCostPerQuery,
+            grossMarginPercent,
+            primaryMetricValue: `${grossMarginPercent}% Gross Margin`,
+            statusLabel: statusTier,
+        });
+    }, [subscriptionPrice, queriesPerUserMonth, tokensPerQuery, modelCostPerM, grossMarginPercent, statusTier]);
 
     return (
         <ToolGate toolName="AI Feature Margin Matrix">

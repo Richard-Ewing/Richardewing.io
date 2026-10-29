@@ -5,7 +5,7 @@ import BoardRiskScorecardTool from './content';
 
 export const metadata: Metadata = {
     title: 'Board AI Governance Risk Scorecard',
-    description: 'A 10-vector diagnostic for Board Directors and CEOs to evaluate corporate AI risk, shadow delegation, and capital efficiency.',
+    description: 'Score 10 fiduciary oversight vectors for Board Directors, CEOs, and Audit Chairs: shadow AI exposure, SOX 404 controls, and unit margin risk.',
     keywords: [
         'Board of Directors AI governance',
         'AI fiduciary risk scorecard',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: 'Board AI Governance Risk Scorecard | Richard Ewing',
-        description: 'Benchmark boardroom AI oversight, fiduciary risk, and capital allocation.',
+        description: 'Score 10 fiduciary oversight vectors for Board Directors, CEOs, and Audit Chairs: shadow AI exposure, SOX 404 controls, and unit margin risk.',
         url: 'https://www.richardewing.io/tools/board-risk-scorecard',
         type: 'website',
     },

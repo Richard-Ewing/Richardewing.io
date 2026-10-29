@@ -5,12 +5,12 @@ import { ShieldCheck, Lock, FileCode, Handshake } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Enterprise Security & Trust Center',
   description:
-    'Security architecture, VPC isolation, zero data retention (ZDR), policy-as-code enforcement, and NDA compliance protocols.',
+    'Inspect our enterprise security posture: private VPC isolation, zero data retention, policy-as-code guardrails, and mutual NDA compliance.',
   alternates: { canonical: 'https://www.richardewing.io/security' },
   openGraph: {
     title: 'Enterprise Security & Trust Center | Richard Ewing',
     description:
-      'Security architecture, VPC isolation, zero data retention (ZDR), policy-as-code enforcement, and NDA compliance protocols.',
+      'Inspect our enterprise security posture: private VPC isolation, zero data retention, policy-as-code guardrails, and mutual NDA compliance.',
     url: 'https://www.richardewing.io/security',
     type: 'website',
   },

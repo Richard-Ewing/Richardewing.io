@@ -31,8 +31,54 @@ export const metadata: Metadata = {
 };
 
 export default function AICapitalBenchmark() {
+  const datasetSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: 'The 2026 AI Capital Engineering Index',
+    description:
+      'Empirical 2026 M&A telemetry covering the 4.2M token/day SLM crossover threshold, engineering autonomy rates, latency churn, and PostgreSQL pgvector adoption across 500+ software cohorts.',
+    url: 'https://www.richardewing.io/benchmark/ai-capital-2026',
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+    creator: {
+      '@type': 'Person',
+      '@id': 'https://www.richardewing.io/#person',
+      name: 'Richard Ewing',
+      jobTitle: 'Product & AI Economist',
+      url: 'https://www.richardewing.io',
+    },
+    variableMeasured: [
+      'Median External LLM API OpEx per Month (USD)',
+      'Self-Hosted SLM Token/Day Crossover Threshold',
+      'M&A Valuation Multiple Compression for Un-Gated AI Wrappers',
+      'Latency-Driven Enterprise ACV Churn Rate',
+    ],
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+      { '@type': 'ListItem', position: 2, name: 'Benchmarks', item: 'https://www.richardewing.io/benchmark' },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: '2026 AI Capital Engineering Index',
+        item: 'https://www.richardewing.io/benchmark/ai-capital-2026',
+      },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-[#FAF9F6] text-[#1e2924] pt-24 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="max-w-5xl mx-auto px-6 space-y-20">
         <div>
           <Link

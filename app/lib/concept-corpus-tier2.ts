@@ -399,13 +399,13 @@ export const TIER2_CONCEPTS: ConceptNode[] = [
     ],
     executableTool: { name: 'Product Debt Index (PDI)', url: '/tools/pdi', description: 'Quantify when maintenance cost exceeds feature value.', type: 'Diagnostic Calculator' },
     canonicalReadingOrder: [
-      { step: 1, title: 'Feature Bloat Calculus', publisher: 'RichardEwing.io', type: 'Canonical Essay', url: 'https://www.richardewing.io/articles/feature-bloat-calculus' }
+      { step: 1, title: 'Feature Bloat Calculus', publisher: 'RichardEwing.io', type: 'Canonical Essay', url: 'https://www.richardewing.io/articles/frameworks/feature-bloat-calculus' }
     ],
     provenanceTimeline: [
       { stage: 'Observation', label: 'Feature Bloat Calculus Introduced', publisher: 'RichardEwing.io Blog', date: 'December 2025', summary: 'Published the analytical framework for feature deprecation.' }
     ],
     evidenceLedger: [
-      { id: 'ev-fbc-1', title: 'Feature Bloat Calculus', url: 'https://www.richardewing.io/articles/feature-bloat-calculus', publisher: 'RichardEwing.io', type: 'Framework Specification', strength: 5, role: 'Origin', date: 'December 2025' },
+      { id: 'ev-fbc-1', title: 'Feature Bloat Calculus', url: 'https://www.richardewing.io/articles/frameworks/feature-bloat-calculus', publisher: 'RichardEwing.io', type: 'Framework Specification', strength: 5, role: 'Origin', date: 'December 2025' },
       { id: 'ev-fbc-2', title: 'The AI Economist: Leading Product Strategy When Build Costs Approach Zero', url: 'https://www.linkedin.com/pulse/ai-economist-leading-product-strategy-when-build-costs-richard-ewing-x5bic', publisher: 'LinkedIn', type: 'Executive Publication', strength: 5, role: 'Extends', date: 'August 20, 2026' }
     ],
     relatedConceptSlugs: [

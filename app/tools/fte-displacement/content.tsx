@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import { motion } from 'framer-motion';
 import ToolCelebration from '../../components/ToolCelebration';
@@ -13,6 +13,7 @@ import { BorderBeam } from '../../components/magicui/border-beam';
 import { Globe, Users, Headphones, DollarSign, ArrowRight, Zap, Building2, UserMinus, Lock } from 'lucide-react';
 import { VaultUpsell } from '../../components/VaultUpsell';
 import ToolGate from '../../components/tool-gate';
+import { saveDiagnosticSession } from '@/lib/storage/session';
 
 // --- PERSONA TYPES ---
 type Persona = 'COO' | 'CFO' | 'CXO' | 'Founder';
@@ -38,6 +39,30 @@ export default function FTEContent() {
     const [loading, setLoading] = useState(false);
     const [results, setResults] = useState<any>(null);
     const [showGate, setShowGate] = useState(false);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const sp = new URLSearchParams(window.location.search);
+        const fteParam = Number(sp.get('fte') || sp.get('headcount') || sp.get('seats'));
+        const runsParam = Number(sp.get('ticketsMonthly') || sp.get('runs'));
+        const salaryParam = Number(sp.get('salary'));
+        if (fteParam >= 5 && fteParam <= 500) setHeadcount(fteParam);
+        if (runsParam >= 1000 && runsParam <= 500000) setTicketsMonthly(runsParam);
+        if (salaryParam >= 15000 && salaryParam <= 200000) setFullyLoadedSalary(salaryParam);
+    }, []);
+
+    useEffect(() => {
+        const estDisplaced = Math.round(headcount * (automationTarget / 100));
+        const estNetSavings = Math.round(estDisplaced * fullyLoadedSalary - ticketsMonthly * (automationTarget / 100) * 12 * 0.15);
+        saveDiagnosticSession('fte-displacement', {
+            fte: headcount,
+            salary: fullyLoadedSalary,
+            ticketsMonthly,
+            automationTarget,
+            primaryMetricValue: `${estDisplaced} FTEs ($${Math.max(0, Math.round(estNetSavings / 1000))}K/yr)`,
+            statusLabel: 'WORKFORCE DEFLECTION MODEL',
+        });
+    }, [headcount, fullyLoadedSalary, ticketsMonthly, automationTarget]);
 
     const analyze = async () => {
         setLoading(true);
@@ -398,7 +423,7 @@ export default function FTEContent() {
                               <h4 className="text-lg font-bold text-zinc-950 mb-2">Get AI workforce economics that survive an HR review</h4>
                               <p className="text-sm text-zinc-600 mb-4">This calculator shows the displacement math. A $5,000 AI Cost Governance engagement models the real impact: retraining costs, transition timelines, and net savings after change management.</p>
                               <div className="flex flex-wrap gap-3">
-                                <a href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-zinc-900 text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">Book Advisory Session →</a>
+                                <a href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">Book Advisory Session →</a>
                                 <a href="/api/buy/gut_check" className="inline-flex items-center gap-2 px-5 py-2.5 border border-purple-500/30 text-purple-700 text-sm font-bold rounded-lg hover:bg-purple-50 transition-colors">$450 Gut-Check Call →</a>
                               </div>
                             </div>

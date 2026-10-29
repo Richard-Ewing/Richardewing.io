@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { saveDiagnosticSession } from '@/lib/storage/session';
 import SlackScorecardExport from '@/components/SlackScorecardExport';
+import { MetricPanel, ChartPanel, AccordionItem } from '@/components/editorial';
 
 interface ChecklistItem {
   id: string;
@@ -204,6 +205,25 @@ export default function VibeCodingChecklistContent() {
   const [checked, setChecked] = useState<Record<string, boolean>>(DEFAULT_CHECKED);
   const [activeCategory, setActiveCategory] = useState<string>('ALL');
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    const passedParam = params.get('passed');
+    const scoreParam = params.get('score');
+    const targetCount = passedParam
+      ? Number(passedParam)
+      : scoreParam
+      ? Math.round((Number(scoreParam) / 100) * CHECKLIST_ITEMS.length)
+      : null;
+    if (targetCount !== null && Number.isFinite(targetCount) && targetCount >= 0 && targetCount <= 20) {
+      const nextChecked: Record<string, boolean> = {};
+      CHECKLIST_ITEMS.slice(0, targetCount).forEach((item) => {
+        nextChecked[item.id] = true;
+      });
+      setChecked(nextChecked);
+    }
+  }, []);
+
   const summary = useMemo(() => {
     const passedCount = CHECKLIST_ITEMS.filter((item) => checked[item.id]).length;
     const score = Math.round((passedCount / CHECKLIST_ITEMS.length) * 100);
@@ -214,6 +234,17 @@ export default function VibeCodingChecklistContent() {
       (sum, item) => sum + item.exposureUsd,
       0
     );
+
+    const categoryBreakdown = (
+      ['Database & RLS', 'Auth & Secrets', 'Billing & Token Caps', 'Specs & Recovery'] as const
+    ).map((cat) => {
+      const catItems = CHECKLIST_ITEMS.filter((i) => i.category === cat);
+      const passed = catItems.filter((i) => checked[i.id]).length;
+      const openExposure = catItems
+        .filter((i) => !checked[i.id])
+        .reduce((s, i) => s + i.exposureUsd, 0);
+      return { category: cat, passed, total: catItems.length, openExposure };
+    });
 
     let verdict = 'DO NOT LAUNCH TO PAYING USERS';
     let verdictTone: 'danger' | 'warning' | 'safe' = 'danger';
@@ -233,6 +264,7 @@ export default function VibeCodingChecklistContent() {
       score,
       missingCritical,
       unmitigatedExposureUsd,
+      categoryBreakdown,
       verdict,
       verdictTone,
     };
@@ -241,9 +273,11 @@ export default function VibeCodingChecklistContent() {
   useEffect(() => {
     saveDiagnosticSession('vibe-coding-checklist', {
       score: summary.score,
+      passed: summary.passedCount,
       criticalGaps: summary.missingCritical.length,
       exposureUsd: summary.unmitigatedExposureUsd,
       primaryMetricValue: `${summary.score}/100 (${summary.missingCritical.length} Blockers)`,
+      statusLabel: summary.verdict,
     });
   }, [summary]);
 
@@ -300,57 +334,46 @@ export default function VibeCodingChecklistContent() {
                   value: `$${summary.unmitigatedExposureUsd.toLocaleString()}`,
                 },
               ]}
+              queryParams={{
+                score: summary.score,
+                passed: summary.passedCount,
+                blockers: summary.missingCritical.length,
+              }}
               canonicalUrl="https://www.richardewing.io/tools/vibe-coding-checklist"
             />
           </div>
         </div>
 
-        {/* 3 Score Tiles */}
+        {/* 3 Centralized MetricPanel Tiles */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="rounded-2xl bg-[#162e26] text-white p-5">
-            <div className="text-[11px] font-mono uppercase tracking-wider text-[#d8c7a8]">
-              Readiness Score
-            </div>
-            <div className="font-serif text-4xl font-bold mt-1">
-              {summary.score}
-              <span className="text-lg text-zinc-300 font-normal">/100</span>
-            </div>
-            <div className="text-xs text-zinc-300 mt-2">
-              {summary.passedCount} of 20 production controls verified
-            </div>
-          </div>
-
-          <div
-            className={`rounded-2xl border p-5 ${
-              summary.missingCritical.length > 0
-                ? 'bg-[#c86d56]/10 border-[#c86d56]/35 text-[#1e2924]'
-                : 'bg-emerald-50 border-emerald-300 text-[#1e2924]'
-            }`}
-          >
-            <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#9f3a24]">
-              Critical Showstoppers
-            </div>
-            <div className="font-serif text-4xl font-bold text-[#162e26] mt-1">
-              {summary.missingCritical.length}
-            </div>
-            <div className="text-xs text-[#4a5850] mt-2">
-              {summary.missingCritical.length === 0
-                ? 'All 8 critical RLS, secret & billing gates passed'
-                : 'Open RLS, key-leak, or billing holes that block launch'}
-            </div>
-          </div>
-
-          <div className="rounded-2xl bg-[#FAF9F6] border border-[#24332b]/15 p-5">
-            <div className="text-[11px] font-mono uppercase tracking-wider text-[#66716a]">
-              Estimated Incident / API Burn Exposure
-            </div>
-            <div className="font-serif text-4xl font-bold text-[#162e26] mt-1">
-              ${summary.unmitigatedExposureUsd.toLocaleString()}
-            </div>
-            <div className="text-xs text-[#4a5850] mt-2">
-              Modeled breach remediation + runaway token/webhook loss
-            </div>
-          </div>
+          <MetricPanel
+            variant="forest"
+            label="Readiness Score"
+            value={`${summary.score}/100`}
+            trend={`${summary.passedCount}/20 Gates`}
+            trendDirection={summary.score >= 85 ? 'up' : 'neutral'}
+            subtext="Verified across database RLS, secrets, Stripe billing, and spec guards."
+          />
+          <MetricPanel
+            variant="white"
+            label="Critical Showstoppers"
+            value={`${summary.missingCritical.length}`}
+            trend={summary.missingCritical.length === 0 ? 'All Clear' : 'Launch Blocked'}
+            trendDirection={summary.missingCritical.length === 0 ? 'up' : 'down'}
+            subtext={
+              summary.missingCritical.length === 0
+                ? 'All 8 critical RLS, secret & billing gates passed.'
+                : 'Open RLS, key-leak, or billing holes that block launch.'
+            }
+          />
+          <MetricPanel
+            variant="paper"
+            label="Unmitigated Exposure"
+            value={`$${summary.unmitigatedExposureUsd.toLocaleString()}`}
+            trend="Incident + Burn"
+            trendDirection={summary.unmitigatedExposureUsd === 0 ? 'up' : 'down'}
+            subtext="Modeled breach remediation + runaway token/webhook loss."
+          />
         </div>
 
         {/* Verdict Banner */}
@@ -388,6 +411,42 @@ export default function VibeCodingChecklistContent() {
           </Link>
         </div>
       </div>
+
+      {/* Category Exposure Bar Chart */}
+      <ChartPanel
+        variant="white"
+        title="Open Security & Billing Exposure by Control Layer"
+        subtitle="Real-time breakdown of verified gates and remaining dollar exposure across the 4 production surfaces."
+        sourceNote="Modeled from 2025-2026 Cursor, Lovable, Bolt, and Claude Code post-launch incident audits."
+      >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {summary.categoryBreakdown.map((row) => {
+            const pct = Math.round((row.passed / row.total) * 100);
+            return (
+              <div
+                key={row.category}
+                className="rounded-xl border border-[#24332b]/12 bg-[#FAF9F6] p-4 space-y-2"
+              >
+                <div className="flex items-center justify-between text-xs font-mono font-bold text-[#162e26]">
+                  <span>{row.category}</span>
+                  <span>
+                    {row.passed}/{row.total}
+                  </span>
+                </div>
+                <div className="w-full h-2 rounded-full bg-[#24332b]/10 overflow-hidden">
+                  <div
+                    className="h-full rounded-full bg-[#162e26] transition-all"
+                    style={{ width: `${pct}%` }}
+                  />
+                </div>
+                <div className="text-xs font-mono text-[#66716a]">
+                  Open risk: ${row.openExposure.toLocaleString()}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </ChartPanel>
 
       {/* Category Filter Tabs */}
       <div className="flex flex-wrap gap-2">
@@ -464,6 +523,20 @@ export default function VibeCodingChecklistContent() {
             </label>
           );
         })}
+      </div>
+
+      {/* Centralized Operator FAQ */}
+      <div className="space-y-3 pt-2">
+        <AccordionItem
+          tag="RLS"
+          question="Why do Supabase tables ship wide open in so many Cursor and Lovable apps?"
+          answer="Rapid prototyping prompts prioritize making data appear on screen immediately, so AI coding tools frequently create public tables without enabling Row-Level Security or write permissive USING (true) policies. Anyone inspecting network requests in Chrome DevTools can query every customer row with the public anon key until strict auth.uid() policies are enforced."
+        />
+        <AccordionItem
+          tag="BILLING"
+          question="What is the fastest way to stop a $29 user from burning $500 in OpenAI or Anthropic tokens?"
+          answer="Enforce a server-side daily and monthly token ledger keyed to the authenticated workspace ID before invoking any model SDK, cap automatic tool-call retries at 2 attempts, and route routine classification prompts to Flash or quantized models."
+        />
       </div>
     </div>
   );

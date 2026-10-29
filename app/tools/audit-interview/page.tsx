@@ -3,13 +3,13 @@ import AuditInterviewLanding from './content';
 
 export const metadata: Metadata = {
     title: 'Audit Interview Hiring Assessment',
-    description: 'Interactive hiring assessment for the AI age. Test engineering candidate judgment, trade-offs, and system architecture thinking.',
+    description: 'Run our interactive engineering hiring simulation for the AI era: score candidate code review judgment, blast-radius safety, and trade-offs.',
     alternates: {
         canonical: 'https://www.richardewing.io/tools/audit-interview',
     },
     openGraph: {
-        title: 'The Audit Interview | War-Time Leadership Assessment',
-        description: 'Are you a Peace-Time or War-Time leader? Prove it in the simulation.',
+        title: 'Audit Interview Hiring Assessment | Richard Ewing',
+        description: 'Run our interactive engineering hiring simulation for the AI era: score candidate code review judgment, blast-radius safety, and trade-offs.',
         url: 'https://www.richardewing.io/tools/audit-interview',
     },
 };

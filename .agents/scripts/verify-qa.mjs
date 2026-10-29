@@ -75,11 +75,11 @@ filesToAudit.forEach(filePath => {
 
   const content = fs.readFileSync(filePath, 'utf8');
 
-  // Rule A: Zero Em-Dashes
+  // Rule A: Zero Em-Dashes (\u2014) and En-Dashes (\u2013)
   if (/\.(md|mdx|tsx|ts|jsx|js|html|txt)$/i.test(relativePath)) {
-    const emDashMatch = content.match(/—/g);
-    if (emDashMatch) {
-      console.error(`[STYLE ERROR] Found ${emDashMatch.length} illegal em-dash(es) in ${relativePath}`);
+    const dashMatch = content.match(/[\u2013\u2014]/g);
+    if (dashMatch) {
+      console.error(`[STYLE ERROR] Found ${dashMatch.length} illegal em/en-dash(es) in ${relativePath}`);
       errorCount++;
     }
   }
@@ -183,12 +183,16 @@ try {
   // Ignore if git command fails
 }
 
-// 4. Validate Security Headers in middleware.ts
+// 4. Validate Security Headers & Cache-Poisoning Guards in middleware.ts
 const middlewarePath = path.join(rootDir, 'middleware.ts');
 if (fs.existsSync(middlewarePath)) {
   const mwContent = fs.readFileSync(middlewarePath, 'utf8');
   if (!mwContent.includes('Strict-Transport-Security') || !mwContent.includes('X-Frame-Options')) {
     console.error(`[SECURITY ERROR] middleware.ts is missing standard enterprise security headers`);
+    errorCount++;
+  }
+  if (/status:\s*(?:204|403)[\s\S]{0,250}s-maxage=/m.test(mwContent)) {
+    console.error(`[CACHE POISONING ERROR] middleware.ts must NEVER attach public s-maxage caching to User-Agent conditional 204 or 403 responses!`);
     errorCount++;
   }
 }
@@ -488,7 +492,7 @@ if (fs.existsSync(compiledAppDir)) {
 
     auditedHtmlCount++;
 
-    // 1. <title> <= 60 chars
+    // 1. <title> in [30, 60] chars and zero unclosed parens/quotes
     const titleMatch = html.match(/<title>([\s\S]*?)<\/title>/i);
     if (!titleMatch) {
       console.error(`[HTML SEO ERROR] Missing <title> in compiled route ${routePath}`);
@@ -496,29 +500,51 @@ if (fs.existsSync(compiledAppDir)) {
       errorCount++;
     } else {
       const decodedTitle = decodeHtmlEntities(titleMatch[1]).trim();
-      if (decodedTitle.length > 60) {
-        console.error(`[HTML SEO ERROR] Compiled <title> > 60 chars (${decodedTitle.length}c) on ${routePath}: "${decodedTitle}"`);
+      const openParens = (decodedTitle.match(/\(/g) || []).length;
+      const closeParens = (decodedTitle.match(/\)/g) || []).length;
+      const quoteCount = (decodedTitle.match(/"/g) || []).length;
+      if (decodedTitle.length > 60 || decodedTitle.length < 30) {
+        console.error(`[HTML SEO ERROR] Compiled <title> out of [30, 60] char bounds (${decodedTitle.length}c) on ${routePath}: "${decodedTitle}"`);
+        htmlTitleErrors++;
+        errorCount++;
+      } else if (openParens !== closeParens || quoteCount % 2 !== 0) {
+        console.error(`[HTML SEO ERROR] Mutilated <title> with unclosed '(' or '"' on ${routePath}: "${decodedTitle}"`);
         htmlTitleErrors++;
         errorCount++;
       }
     }
 
-    // 2. Meta description not ending with '...' or ellipsis
+    // 2. Meta description present, [120, 160] chars, and not ending with '...' or ellipsis
     const descMatch =
       html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)["']/i) ||
       html.match(/<meta[^>]+content=["']([^"']*)["'][^>]+name=["']description["']/i);
-    if (descMatch) {
+    if (!descMatch) {
+      console.error(`[HTML SEO ERROR] Missing <meta name="description"> on indexable compiled route ${routePath}`);
+      htmlDescErrors++;
+      errorCount++;
+    } else {
       const decodedDesc = decodeHtmlEntities(descMatch[1]).trim();
       if (decodedDesc.endsWith('...') || decodedDesc.includes('\u2026')) {
         console.error(`[HTML SEO ERROR] Truncated meta description ending with ellipsis on ${routePath}: "${decodedDesc}"`);
         htmlDescErrors++;
         errorCount++;
+      } else if (decodedDesc.length < 120 || decodedDesc.length > 160) {
+        console.error(`[HTML SEO ERROR] Meta description out of [120, 160] char bounds (${decodedDesc.length}c) on ${routePath}: "${decodedDesc}"`);
+        htmlDescErrors++;
+        errorCount++;
       }
     }
 
-    // 3. Canonical link present
-    if (!/<link[^>]+rel=["']canonical["']/i.test(html)) {
+    // 3. Absolute HTTPS Canonical link present
+    const canonicalMatch =
+      html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i) ||
+      html.match(/<link[^>]+href=["']([^"']+)["'][^>]+rel=["']canonical["']/i);
+    if (!canonicalMatch) {
       console.error(`[HTML SEO ERROR] Missing <link rel="canonical"> on indexable compiled route ${routePath}`);
+      htmlCanonicalErrors++;
+      errorCount++;
+    } else if (!canonicalMatch[1].startsWith('https://')) {
+      console.error(`[HTML SEO ERROR] Non-HTTPS or relative canonical href '${canonicalMatch[1]}' on ${routePath}`);
       htmlCanonicalErrors++;
       errorCount++;
     }

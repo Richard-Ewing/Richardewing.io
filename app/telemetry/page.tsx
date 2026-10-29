@@ -5,11 +5,11 @@ import { TrendingDown, TrendingUp, DollarSign, AlertTriangle, Clock, Shield } fr
 
 export const metadata: Metadata = {
     title: 'Live AI Governance Telemetry',
-    description: 'Real-time benchmark telemetry analyzing AI cost overruns, retry loop frequencies, and context drift across enterprise stacks.',
+    description: 'Inspect benchmark telemetry measuring LLM token burn rates, silent SDK retry loops, and context drift across enterprise AI coding stacks.',
     keywords: ['AI agent telemetry', 'Claude Code cost analysis', 'retry inflation metrics', 'context rot measurement', 'AI coding agent ROI', 'governance telemetry dashboard', 'token burn rate', 'agent cost containment'],
     openGraph: {
-        title: 'Runtime Telemetry - Agentic Governance Metrics',
-        description: 'Operational telemetry showing why AI coding agents fail and how runtime governance contains costs.',
+        title: 'Live AI Governance Telemetry | Richard Ewing',
+        description: 'Inspect benchmark telemetry measuring LLM token burn rates, silent SDK retry loops, and context drift across enterprise AI coding stacks.',
     },
     alternates: { canonical: 'https://www.richardewing.io/telemetry' },
 };

@@ -371,7 +371,7 @@ export const careerwinSoftwareSchema = {
         "sameAs": [
             "https://www.richardewing.io/careerwin",
             "https://www.richardewing.io/tools/audit-interview",
-            "https://linkedin.com/in/richard-ewing-mba"
+            "https://www.linkedin.com/in/richard-ewing-mba"
         ]
     },
     "creator": {
@@ -401,7 +401,7 @@ export const exogramSoftwareSchema = {
         "sameAs": [
             "https://www.richardewing.io/exogram",
             "https://www.richardewing.io/tools/shadow-ai",
-            "https://linkedin.com/in/richard-ewing-mba"
+            "https://www.linkedin.com/in/richard-ewing-mba"
         ]
     },
     "creator": {

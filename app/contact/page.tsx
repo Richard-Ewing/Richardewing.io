@@ -7,14 +7,14 @@ export const metadata: Metadata = {
     absolute: 'Contact Richard Ewing | Executive Advisory',
   },
   description:
-    'Start a conversation about executive advisory, pricing sprints, keynote speaking, or AI unit economics research.',
+    'Book an executive advisory briefing, 14-day P&L turnaround sprint, PE technical due diligence review, or keynote with Richard Ewing.',
   alternates: {
     canonical: 'https://www.richardewing.io/contact',
   },
   openGraph: {
     title: 'Contact Richard Ewing | Executive Advisory & Speaking',
     description:
-      'Start a conversation about executive advisory, pricing sprints, or speaking engagements.',
+      'Book an executive advisory briefing, 14-day P&L turnaround sprint, PE technical due diligence review, or keynote with Richard Ewing.',
     url: 'https://www.richardewing.io/contact',
     type: 'website',
     images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Contact Richard Ewing | Executive Advisory & Speaking',
     description:
-      'Start a conversation about executive advisory, pricing sprints, or speaking engagements.',
+      'Book an executive advisory briefing, 14-day P&L turnaround sprint, PE technical due diligence review, or keynote with Richard Ewing.',
     images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };

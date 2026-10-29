@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DollarSign, Landmark, TrendingDown, ArrowRight, PieChart } from 'lucide-react';
 import ToolGate from '@/app/components/tool-gate';
 import { ExportToPDFButton } from '@/app/components/ExportToPDFButton';
 import DiagnosticCTA from '@/app/components/DiagnosticCTA';
 import SlackScorecardExport from '@/components/SlackScorecardExport';
+import { saveDiagnosticSession } from '@/lib/storage/session';
 import Link from 'next/link';
 
 export default function CFOCapitalizationTool({ hideDiagnosticCTA = false }: { hideDiagnosticCTA?: boolean } = {}) {
@@ -13,6 +14,24 @@ export default function CFOCapitalizationTool({ hideDiagnosticCTA = false }: { h
     const [reportedInnovationPercent, setReportedInnovationPercent] = useState<number>(75);
     const [actualMaintenancePercent, setActualMaintenancePercent] = useState<number>(55);
     const [annualCloudGPUInference, setAnnualCloudGPUInference] = useState<number>(480000);
+
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const params = new URLSearchParams(window.location.search);
+        const payrollParam = params.get('payroll');
+        const teamParam = params.get('teamSize') ?? params.get('engineers');
+        const salaryParam = params.get('salary');
+        const maintParam = params.get('maintenance');
+        if (payrollParam && Number.isFinite(Number(payrollParam)) && Number(payrollParam) >= 100000) {
+            setAnnualRDPayroll(Math.min(50000000, Number(payrollParam)));
+        } else if (teamParam && Number.isFinite(Number(teamParam)) && Number(teamParam) > 0) {
+            const perEng = salaryParam && Number.isFinite(Number(salaryParam)) && Number(salaryParam) > 0 ? Number(salaryParam) : 165000;
+            setAnnualRDPayroll(Math.min(50000000, Math.max(500000, Math.round(Number(teamParam) * perEng))));
+        }
+        if (maintParam && Number.isFinite(Number(maintParam)) && Number(maintParam) >= 15 && Number(maintParam) <= 85) {
+            setActualMaintenancePercent(Number(maintParam));
+        }
+    }, []);
 
     // Calculations
     const reportedInnovationSpend = Math.round(annualRDPayroll * (reportedInnovationPercent / 100));
@@ -22,6 +41,21 @@ export default function CFOCapitalizationTool({ hideDiagnosticCTA = false }: { h
     // Section 174 5-year domestic amortization impact
     const section174FirstYearDeduction = reportedInnovationSpend * 0.10; // 10% first year half-year convention
     const phantomTaxableIncomeImpact = Math.round(reportedInnovationSpend * 0.90 * 0.21); // 21% corp tax on delayed deduction
+
+    useEffect(() => {
+        const estimatedEngineers = Math.max(5, Math.round(annualRDPayroll / 165000));
+        const sessionPayload = {
+            payroll: annualRDPayroll,
+            teamSize: estimatedEngineers,
+            engineers: estimatedEngineers,
+            salary: 165000,
+            maintenance: actualMaintenancePercent,
+            primaryMetricValue: `$${(innovationTaxWastedSpend / 1_000_000).toFixed(2)}M Disguised OpEx`,
+            statusLabel: innovationTaxWastedSpend > 1_000_000 ? 'PHANTOM TAX EXPOSURE' : 'MODERATE DRAG',
+        };
+        saveDiagnosticSession('section-174-calculator', sessionPayload);
+        saveDiagnosticSession('cfo-capitalization-audit', sessionPayload);
+    }, [annualRDPayroll, actualMaintenancePercent, innovationTaxWastedSpend]);
 
     return (
         <ToolGate toolName="CFO Capitalization Calculator">

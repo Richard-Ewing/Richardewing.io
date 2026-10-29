@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ShieldAlert, Server, Lock, AlertTriangle, ArrowRight, CheckCircle2, FileText, FileCheck } from 'lucide-react';
 import ToolGate from '@/app/components/tool-gate';
 import { ExportToPDFButton } from '@/app/components/ExportToPDFButton';
 import DiagnosticCTA from '@/app/components/DiagnosticCTA';
+import { saveDiagnosticSession } from '@/lib/storage/session';
 import Link from 'next/link';
 import MCPSecurityExploitLab from '@/app/components/MCPSecurityExploitLab';
 import ExecutiveBoardDeckModal from '@/app/components/ExecutiveBoardDeckModal';
@@ -67,6 +68,22 @@ export default function MCPAuditorTool() {
         'no-prompt-sanitization': true
     });
 
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const sp = new URLSearchParams(window.location.search);
+        const vectors = sp.get('vectors');
+        if (vectors !== null) {
+            const active = new Set(vectors.split(',').filter(Boolean));
+            setCheckedRisks({
+                'raw-stdio': active.has('raw-stdio'),
+                'unpinned-schemas': active.has('unpinned-schemas'),
+                'shadow-mcp': active.has('shadow-mcp'),
+                'missing-hitl': active.has('missing-hitl'),
+                'no-prompt-sanitization': active.has('no-prompt-sanitization'),
+            });
+        }
+    }, []);
+
     const toggleRisk = (id: string) => {
         setCheckedRisks(prev => ({ ...prev, [id]: !prev[id] }));
     };
@@ -90,6 +107,19 @@ export default function MCPAuditorTool() {
         tierColor = 'bg-amber-50 text-amber-800 border-amber-200';
         recommendation = 'Pin all tool schemas and restrict unmanaged community MCP servers to read-only environments.';
     }
+
+    useEffect(() => {
+        const activeVectors = Object.entries(checkedRisks)
+            .filter(([, v]) => v)
+            .map(([k]) => k)
+            .join(',');
+        saveDiagnosticSession('mcp-security-auditor', {
+            riskScore: totalRiskScore,
+            vectors: activeVectors,
+            primaryMetricValue: `${totalRiskScore}/100 Risk Score`,
+            statusLabel: vulnerabilityTier,
+        });
+    }, [checkedRisks, totalRiskScore, vulnerabilityTier]);
 
     return (
         <ToolGate toolName="MCP Security Auditor">

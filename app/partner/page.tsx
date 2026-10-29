@@ -238,7 +238,7 @@ export default function PartnerPage() {
                             <div className="bg-emerald-50/70 border border-emerald-100 p-4 rounded-2xl">
                                 <div className="text-xs font-mono font-bold text-emerald-900 uppercase tracking-wider mb-1">Enterprise & Mid-Market</div>
                                 <div className="text-2xl font-bold font-grotesk text-emerald-950">36%+</div>
-                                <p className="text-[11px] text-emerald-800 font-medium mt-1">10,001+ employees (25%), 1,001–5,000 employees (11%)</p>
+                                <p className="text-[11px] text-emerald-800 font-medium mt-1">10,001+ employees (25%), 1,001 to 5,000 employees (11%)</p>
                             </div>
                             <div className="bg-purple-50/70 border border-purple-100 p-4 rounded-2xl">
                                 <div className="text-xs font-mono font-bold text-purple-900 uppercase tracking-wider mb-1">Primary Tech Sectors</div>
@@ -339,7 +339,7 @@ export default function PartnerPage() {
                                         </div>
                                         <div>
                                             <div className="flex justify-between text-xs font-semibold text-zinc-900 mb-1">
-                                                <span>1,001–5,000 Employees</span>
+                                                <span>1,001 to 5,000 Employees</span>
                                                 <span className="font-mono text-emerald-700 font-bold">11%</span>
                                             </div>
                                             <div className="w-full h-2 bg-zinc-100 rounded-full overflow-hidden">
@@ -348,7 +348,7 @@ export default function PartnerPage() {
                                         </div>
                                         <div>
                                             <div className="flex justify-between text-xs font-semibold text-zinc-900 mb-1">
-                                                <span>51–200 Employees</span>
+                                                <span>51 to 200 Employees</span>
                                                 <span className="font-mono text-emerald-700 font-bold">9%</span>
                                             </div>
                                             <div className="w-full h-2 bg-zinc-100 rounded-full overflow-hidden">
@@ -357,7 +357,7 @@ export default function PartnerPage() {
                                         </div>
                                         <div>
                                             <div className="flex justify-between text-xs font-semibold text-zinc-900 mb-1">
-                                                <span>11–50 Employees</span>
+                                                <span>11 to 50 Employees</span>
                                                 <span className="font-mono text-emerald-700 font-bold">9%</span>
                                             </div>
                                             <div className="w-full h-2 bg-zinc-100 rounded-full overflow-hidden">

@@ -189,7 +189,7 @@ export function Footer() {
                         <Link href="/legal#terms" prefetch={false} className="hover:text-cyan-900 transition-colors">Terms of Use (TOC)</Link>
                         <Link href="/legal#privacy" prefetch={false} className="hover:text-cyan-900 transition-colors">Privacy Policy</Link>
                         <Link href="/legal#disclaimers" prefetch={false} className="hover:text-cyan-900 transition-colors">Disclaimers</Link>
-                        <Link href="https://linkedin.com/in/richard-ewing-mba" target="_blank" className="hover:text-zinc-900 transition-colors">LinkedIn</Link>
+                        <Link href="https://www.linkedin.com/in/richard-ewing-mba" target="_blank" className="hover:text-zinc-900 transition-colors">LinkedIn</Link>
                         <Link href="https://x.com/Richard85626233" target="_blank" className="hover:text-zinc-900 transition-colors">X (Twitter)</Link>
                         <Link href="https://github.com/Richard-Ewing" target="_blank" className="hover:text-zinc-900 transition-colors">GitHub</Link>
                     </div>

@@ -14,12 +14,12 @@ import {
 export const metadata: Metadata = {
   title: 'Enterprise AI Integration System',
   description:
-    'A complete enterprise governance operating system. Deploy diagnostic tools, unit margin models, and 48-hour strategic roadmaps.',
+    'Deploy our enterprise AI governance operating system: interactive P&L diagnostics, unit margin models, and 48-hour implementation roadmaps.',
   alternates: { canonical: 'https://www.richardewing.io/ai-integration' },
   openGraph: {
     title: 'Enterprise AI Integration System | Richard Ewing',
     description:
-      'A complete enterprise governance operating system. Deploy diagnostic tools, unit margin models, and 48-hour strategic roadmaps.',
+      'Deploy our enterprise AI governance operating system: interactive P&L diagnostics, unit margin models, and 48-hour implementation roadmaps.',
     url: 'https://www.richardewing.io/ai-integration',
     type: 'website',
   },
@@ -30,7 +30,7 @@ const painPoints = [
     icon: AlertTriangle,
     title: '"I do not know where to start"',
     detail:
-      'There are 10,000+ AI tools. You do not need 10,000. You need the 3 that will actually move your bottom line. We find them in 2 hours.',
+      'There are 10,000+ AI tools. You do not need 10,000. You need the 3 that will actually move your operating margin. We find them in 2 hours.',
   },
   {
     icon: Clock,

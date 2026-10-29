@@ -11,14 +11,14 @@ import { PRODUCTS } from '@/app/lib/products';
 export const metadata: Metadata = {
   title: 'Schedule Executive Advisory',
   description:
-    'Book a direct diagnostic session, technical insolvency audit, or executive advisory briefing with AI Economist Richard Ewing.',
+    'Book a 1-on-1 diagnostic session, $450 gut-check call, technical insolvency audit, or fractional CPO briefing with AI Economist Richard Ewing.',
   alternates: {
     canonical: 'https://www.richardewing.io/schedule',
   },
   openGraph: {
     title: 'Schedule Executive Advisory | Richard Ewing',
     description:
-      'Book a direct diagnostic session, technical insolvency audit, or executive advisory briefing with AI Economist Richard Ewing.',
+      'Book a 1-on-1 diagnostic session, $450 gut-check call, technical insolvency audit, or fractional CPO briefing with AI Economist Richard Ewing.',
     url: 'https://www.richardewing.io/schedule',
     type: 'website',
   },
@@ -235,7 +235,7 @@ export default function SchedulePage() {
                     <span>richardewing@exogram.ai</span>
                   </a>
                   <a
-                    href="https://linkedin.com/in/richard-ewing-mba"
+                    href="https://www.linkedin.com/in/richard-ewing-mba"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 p-3 bg-[var(--paper)] border border-[var(--line)] rounded-xl hover:border-[var(--gold)] transition-all text-xs font-bold text-[var(--ink)]"

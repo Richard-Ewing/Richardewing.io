@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FileCode, CheckCircle2, AlertCircle, ArrowRight, BookOpen } from 'lucide-react';
 import ToolGate from '@/app/components/tool-gate';
 import { ExportToPDFButton } from '@/app/components/ExportToPDFButton';
 import DiagnosticCTA from '@/app/components/DiagnosticCTA';
+import { saveDiagnosticSession } from '@/lib/storage/session';
 import Link from 'next/link';
 
 interface SpecCriterion {
@@ -54,6 +55,28 @@ export default function SpecQualityScorecardTool() {
         'token-cost-budget': false
     });
 
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const sp = new URLSearchParams(window.location.search);
+        const passed = sp.get('gates');
+        if (passed) {
+            const ids = new Set(passed.split(','));
+            setCriteriaState({
+                'json-schema': ids.has('json-schema'),
+                'file-boundaries': ids.has('file-boundaries'),
+                'executable-tests': ids.has('executable-tests'),
+                'token-cost-budget': ids.has('token-cost-budget'),
+            });
+        } else if (sp.get('criticalGaps') && Number(sp.get('criticalGaps')) > 3) {
+            setCriteriaState({
+                'json-schema': true,
+                'file-boundaries': false,
+                'executable-tests': false,
+                'token-cost-budget': false,
+            });
+        }
+    }, []);
+
     const toggleCriteria = (id: string) => {
         setCriteriaState(prev => ({ ...prev, [id]: !prev[id] }));
     };
@@ -77,6 +100,19 @@ export default function SpecQualityScorecardTool() {
         badgeColor = 'bg-amber-50 text-amber-800 border-amber-200';
         guidance = 'Add automated unit assertions and file boundary lists before running autonomous multi-file refactors.';
     }
+
+    useEffect(() => {
+        const passedGates = Object.entries(criteriaState)
+            .filter(([, v]) => v)
+            .map(([k]) => k)
+            .join(',');
+        saveDiagnosticSession('spec-quality-scorecard', {
+            specScore,
+            gates: passedGates,
+            primaryMetricValue: `${specScore}/100 Spec Score`,
+            statusLabel: readinessTier,
+        });
+    }, [criteriaState, specScore, readinessTier]);
 
     return (
         <ToolGate toolName="Spec-Driven Development Scorecard">
