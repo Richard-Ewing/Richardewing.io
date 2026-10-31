@@ -120,8 +120,47 @@ const EDGE_REDIRECTS: Record<string, string> = {
   ),
 };
 
+const CITATION_BOT_REGEX =
+  /\b(oai-searchbot|chatgpt-user|claude-searchbot|claude-user|perplexitybot|perplexity-user|amzn-searchbot|amzn-user|duckassistbot|youbot|exasearchbot|google-notebooklm|googlebot|bingbot)\b/i;
+
 const TRAINING_SCRAPER_REGEX =
-  /\b(gptbot|claudebot|anthropic-ai|google-extended|google-cloudvertexbot|ccbot|amazonbot|meta-externalagent|cohere-ai|bytespider|petalbot|diffbot|imagesiftbot|omgilibot|chatglm-spider|deepseekbot)\b/i;
+  /\b(gptbot|claudebot|anthropic-ai|google-extended|applebot-extended|google-cloudvertexbot|ccbot|amazonbot|meta-externalagent|facebookbot|cohere-ai|cohere-training-data-crawler|bytespider|tiktokspider|petalbot|sogou|baiduspider|diffbot|imagesiftbot|omgilibot|omgili|timpibot|ai2bot|chatglm-spider|deepseekbot|grokbot|kimibot|moonshotbot|semrushbot|ahrefsbot|mj12bot|dotbot)\b/i;
+
+function isBlockedTrainingOrBulkScraper(userAgent: string, pathname: string): boolean {
+  if (
+    pathname === '/robots.txt' ||
+    pathname === '/llms.txt' ||
+    pathname === '/llms-full.txt' ||
+    pathname === '/sitemap.xml' ||
+    pathname === '/feed.xml'
+  ) {
+    return false;
+  }
+  if (!userAgent.includes('applebot-extended') && (CITATION_BOT_REGEX.test(userAgent) || userAgent.includes('applebot'))) {
+    return false;
+  }
+  return TRAINING_SCRAPER_REGEX.test(userAgent);
+}
+
+function hasClerkAuthSignal(req: NextRequest): boolean {
+  if (req.headers.has('authorization')) return true;
+  const search = req.nextUrl.searchParams;
+  if (
+    search.has('__clerk_db_jwt') ||
+    search.has('__clerk_handshake') ||
+    search.has('__clerk_synced') ||
+    search.has('__clerk_ticket')
+  ) {
+    return true;
+  }
+  const cookie = req.headers.get('cookie') || '';
+  if (!cookie) return false;
+  return (
+    cookie.includes('__session') ||
+    cookie.includes('__clerk') ||
+    /(?:^|;\s*)__client_uat=(?!0(?:;|$))/.test(cookie)
+  );
+}
 
 function isAuthOrDynamicPath(pathname: string): boolean {
   return (
@@ -205,10 +244,10 @@ export default async function middleware(req: NextRequest, event: NextFetchEvent
     });
   }
 
-  // 0b. Deterministic 403 block on foundation-model training scrapers while preserving AI search/citation bots
+  // 0b. Deterministic 403 block on foundation-model training and bulk SEO scrapers while preserving AI search/citation bots
   // CRITICAL: Must NEVER be public/s-maxage cached because Cloudflare's default cache key omits User-Agent!
-  if (TRAINING_SCRAPER_REGEX.test(userAgent)) {
-    return new NextResponse('Forbidden: AI training scraping disallowed. Live AI search and citation bots permitted.', {
+  if (isBlockedTrainingOrBulkScraper(userAgent, req.nextUrl.pathname)) {
+    return new NextResponse('Forbidden: AI training and bulk scraping disallowed. Live AI search and citation bots permitted.', {
       status: 403,
       headers: {
         'Content-Type': 'text/plain; charset=utf-8',
@@ -310,6 +349,15 @@ export default async function middleware(req: NextRequest, event: NextFetchEvent
     if (slug && !TIER_A_SLUGS.has(slug)) {
       return NextResponse.redirect(new URL('/tools', req.url), 301);
     }
+  }
+
+  // Skip Clerk auth execution on anonymous public routes when zero Clerk session/handshake signals exist
+  if (
+    !isAuthOrDynamicPath(pathname) &&
+    !isPrivateUncachedPage(pathname) &&
+    !hasClerkAuthSignal(req)
+  ) {
+    return applySecurityAndCacheHeaders(NextResponse.next(), req);
   }
 
   const clerkRes = await clerkHandler(req, event);

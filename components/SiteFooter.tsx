@@ -14,24 +14,24 @@ export default function SiteFooter() {
           <div className="footer-nav">
             <div>
               <span>EXPLORE</span>
-              <Link href="/research">Research</Link>
-              <Link href="/concepts">Concepts</Link>
-              <Link href="/research/publications">Publications</Link>
-              <Link href="/framework">Frameworks</Link>
-              <Link href="/reality-check">Reality Check</Link>
+              <Link href="/research" prefetch={false}>Research</Link>
+              <Link href="/concepts" prefetch={false}>Concepts</Link>
+              <Link href="/research/publications" prefetch={false}>Publications</Link>
+              <Link href="/framework" prefetch={false}>Frameworks</Link>
+              <Link href="/reality-check" prefetch={false}>Reality Check</Link>
             </div>
             <div>
               <span>BUILT</span>
-              <Link href="/exogram">Exogram ↗</Link>
-              <Link href="/careerwin">CareerWin ↗</Link>
-              <Link href="/tools">Diagnostics ↗</Link>
+              <Link href="/exogram" prefetch={false}>Exogram ↗</Link>
+              <Link href="/careerwin" prefetch={false}>CareerWin ↗</Link>
+              <Link href="/tools" prefetch={false}>Diagnostics ↗</Link>
             </div>
             <div>
               <span>CONNECT</span>
-              <Link href="/about">About</Link>
-              <Link href="/newsletter">Newsletter</Link>
-              <Link href="/contact">Contact</Link>
-              <Link href="/services">Advisory</Link>
+              <Link href="/about" prefetch={false}>About</Link>
+              <Link href="/newsletter" prefetch={false}>Newsletter</Link>
+              <Link href="/contact" prefetch={false}>Contact</Link>
+              <Link href="/services" prefetch={false}>Advisory</Link>
             </div>
           </div>
         </div>

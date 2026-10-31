@@ -9,17 +9,17 @@ export default function SiteNav() {
   return (
     <header className="nav">
       <div className="nav-inner">
-        <Link href="/" className="brand" aria-label="Richard Ewing Home">
+        <Link href="/" prefetch={false} className="brand" aria-label="Richard Ewing Home">
           <span className="brand-mark">RE</span>
         </Link>
         <nav className="desktop-nav">
-          <Link href="/research">Research</Link>
-          <Link href="/concepts">Concepts</Link>
-          <Link href="/research/publications">Publications</Link>
-          <Link href="/framework">Frameworks</Link>
-          <Link href="/about">About</Link>
+          <Link href="/research" prefetch={false}>Research</Link>
+          <Link href="/concepts" prefetch={false}>Concepts</Link>
+          <Link href="/research/publications" prefetch={false}>Publications</Link>
+          <Link href="/framework" prefetch={false}>Frameworks</Link>
+          <Link href="/about" prefetch={false}>About</Link>
         </nav>
-        <Link href="/start-here" className="nav-cta">
+        <Link href="/start-here" prefetch={false} className="nav-cta">
           Start here <span>↗</span>
         </Link>
         <button
@@ -32,12 +32,12 @@ export default function SiteNav() {
       </div>
       {open && (
         <div className="mobile-panel">
-          <Link href="/research" onClick={() => setOpen(false)}>Research</Link>
-          <Link href="/concepts" onClick={() => setOpen(false)}>Concepts</Link>
-          <Link href="/research/publications" onClick={() => setOpen(false)}>Publications</Link>
-          <Link href="/framework" onClick={() => setOpen(false)}>Frameworks</Link>
-          <Link href="/about" onClick={() => setOpen(false)}>About</Link>
-          <Link href="/start-here" onClick={() => setOpen(false)}>Start here ↗</Link>
+          <Link href="/research" prefetch={false} onClick={() => setOpen(false)}>Research</Link>
+          <Link href="/concepts" prefetch={false} onClick={() => setOpen(false)}>Concepts</Link>
+          <Link href="/research/publications" prefetch={false} onClick={() => setOpen(false)}>Publications</Link>
+          <Link href="/framework" prefetch={false} onClick={() => setOpen(false)}>Frameworks</Link>
+          <Link href="/about" prefetch={false} onClick={() => setOpen(false)}>About</Link>
+          <Link href="/start-here" prefetch={false} onClick={() => setOpen(false)}>Start here ↗</Link>
         </div>
       )}
     </header>

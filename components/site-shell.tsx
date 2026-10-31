@@ -51,7 +51,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       </a>
 
       <header className="site-header" ref={navRef}>
-        <Link className="wordmark" href="/">
+        <Link className="wordmark" href="/" prefetch={false}>
           Richard Ewing<span>.</span>
         </Link>
 
@@ -71,6 +71,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           <Link
             className={pathname === "/" ? "nav-link active" : "nav-link"}
             href="/"
+            prefetch={false}
           >
             Home
           </Link>
@@ -103,6 +104,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
                   <Link
                     key={child.href}
                     href={child.href}
+                    prefetch={false}
                     role="menuitem"
                     className={pathname === child.href ? "active" : ""}
                   >
@@ -115,7 +117,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           ))}
         </nav>
 
-        <Link className="button button-dark header-cta" href="/reality-check">
+        <Link className="button button-dark header-cta" href="/reality-check" prefetch={false}>
           Run the Reality Check ↗
         </Link>
       </header>
@@ -141,38 +143,38 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 text-xs">
             <div className="flex flex-col gap-1.5">
               <strong className="font-mono text-[10px] font-bold uppercase tracking-wider text-[var(--forest,#29473b)]">Flagship Doctrine</strong>
-              <Link href="/articles/frameworks/technical-insolvency-date" className="hover:text-[var(--forest,#29473b)] transition-colors">Technical Insolvency Date</Link>
-              <Link href="/articles/frameworks/vibe-coding-debt" className="hover:text-[var(--forest,#29473b)] transition-colors">Vibe Coding Debt</Link>
-              <Link href="/articles/frameworks/shadow-agents" className="hover:text-[var(--forest,#29473b)] transition-colors">Shadow Agents</Link>
+              <Link href="/articles/frameworks/technical-insolvency-date" prefetch={false} className="hover:text-[var(--forest,#29473b)] transition-colors">Technical Insolvency Date</Link>
+              <Link href="/articles/frameworks/vibe-coding-debt" prefetch={false} className="hover:text-[var(--forest,#29473b)] transition-colors">Vibe Coding Debt</Link>
+              <Link href="/articles/frameworks/shadow-agents" prefetch={false} className="hover:text-[var(--forest,#29473b)] transition-colors">Shadow Agents</Link>
             </div>
             <div className="flex flex-col gap-1.5">
               <strong className="font-mono text-[10px] font-bold uppercase tracking-wider text-[var(--forest,#29473b)]">Primary Diagnostics</strong>
-              <Link href="/tools/pdi" className="hover:text-[var(--forest,#29473b)] transition-colors">Product Debt Index (PDI)</Link>
-              <Link href="/reality-check" className="hover:text-[var(--forest,#29473b)] transition-colors">AI Reality Check</Link>
-              <Link href="/tools/aueb" className="hover:text-[var(--forest,#29473b)] transition-colors">AI Unit Economics (AUEB)</Link>
+              <Link href="/tools/pdi" prefetch={false} className="hover:text-[var(--forest,#29473b)] transition-colors">Product Debt Index (PDI)</Link>
+              <Link href="/reality-check" prefetch={false} className="hover:text-[var(--forest,#29473b)] transition-colors">AI Reality Check</Link>
+              <Link href="/tools/aueb" prefetch={false} className="hover:text-[var(--forest,#29473b)] transition-colors">AI Unit Economics (AUEB)</Link>
             </div>
             <div className="flex flex-col gap-1.5">
               <strong className="font-mono text-[10px] font-bold uppercase tracking-wider text-[var(--forest,#29473b)]">Financial Audits</strong>
-              <Link href="/roi-calculator" className="hover:text-[var(--forest,#29473b)] transition-colors">Executive ROI Calculator</Link>
-              <Link href="/pricing-sprints" className="hover:text-[var(--forest,#29473b)] transition-colors">Fixed-Scope Sprints</Link>
-              <Link href="/advisory" className="hover:text-[var(--forest,#29473b)] transition-colors">Executive Advisory</Link>
+              <Link href="/roi-calculator" prefetch={false} className="hover:text-[var(--forest,#29473b)] transition-colors">Executive ROI Calculator</Link>
+              <Link href="/pricing-sprints" prefetch={false} className="hover:text-[var(--forest,#29473b)] transition-colors">Fixed-Scope Sprints</Link>
+              <Link href="/advisory" prefetch={false} className="hover:text-[var(--forest,#29473b)] transition-colors">Executive Advisory</Link>
             </div>
             <div className="flex flex-col gap-1.5">
               <strong className="font-mono text-[10px] font-bold uppercase tracking-wider text-[var(--forest,#29473b)]">Executive Briefings</strong>
-              <Link href="/for-cfos" className="hover:text-[var(--forest,#29473b)] transition-colors">CFO Governance Briefing</Link>
-              <Link href="/for-ctos" className="hover:text-[var(--forest,#29473b)] transition-colors">CTO Governance Briefing</Link>
+              <Link href="/for-cfos" prefetch={false} className="hover:text-[var(--forest,#29473b)] transition-colors">CFO Governance Briefing</Link>
+              <Link href="/for-ctos" prefetch={false} className="hover:text-[var(--forest,#29473b)] transition-colors">CTO Governance Briefing</Link>
             </div>
             <div className="flex flex-col gap-1.5">
               <strong className="font-mono text-[10px] font-bold uppercase tracking-wider text-[var(--forest,#29473b)]">Platform Intelligence</strong>
-              <Link href="/compare/ai-guardrails-platforms" className="hover:text-[var(--forest,#29473b)] transition-colors">AI Guardrails Comparison</Link>
-              <Link href="/doctrine" className="hover:text-[var(--forest,#29473b)] transition-colors">Architectural Doctrine</Link>
+              <Link href="/compare/ai-guardrails-platforms" prefetch={false} className="hover:text-[var(--forest,#29473b)] transition-colors">AI Guardrails Comparison</Link>
+              <Link href="/doctrine" prefetch={false} className="hover:text-[var(--forest,#29473b)] transition-colors">Architectural Doctrine</Link>
             </div>
           </div>
         </div>
 
         <div className="footer-top">
           <div className="footer-brand">
-            <Link className="wordmark" href="/">
+            <Link className="wordmark" href="/" prefetch={false}>
               Richard Ewing<span>.</span>
             </Link>
             <p>Product & AI economics for measurable outcomes.</p>
@@ -183,7 +185,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               <div key={group.label}>
                 <strong>{group.label}</strong>
                 {group.children.map((child) => (
-                  <Link key={child.href} href={child.href}>
+                  <Link key={child.href} href={child.href} prefetch={false}>
                     {child.label}
                   </Link>
                 ))}
@@ -195,10 +197,10 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Richard Ewing. All rights reserved.</span>
           <div>
-            <Link href="/legal#privacy">Privacy</Link>
-            <Link href="/legal#terms">Terms</Link>
-            <Link href="/legal#disclaimers">Disclaimers</Link>
-            <Link href="/site-map">Site map</Link>
+            <Link href="/legal#privacy" prefetch={false}>Privacy</Link>
+            <Link href="/legal#terms" prefetch={false}>Terms</Link>
+            <Link href="/legal#disclaimers" prefetch={false}>Disclaimers</Link>
+            <Link href="/site-map" prefetch={false}>Site map</Link>
           </div>
         </div>
       </footer>
