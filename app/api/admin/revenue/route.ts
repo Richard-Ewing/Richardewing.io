@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
-import { auth } from '@clerk/nextjs/server';
+import { auth, currentUser } from '@clerk/nextjs/server';
+
+const ADMIN_EMAILS = ['richardewing1@gmail.com', 'richardewing@exogram.ai'];
 
 export const dynamic = 'force-dynamic';
 
@@ -73,7 +75,8 @@ export async function GET(req: Request) {
         const stripe = getStripe();
         // ── Auth: CRON_SECRET bearer OR Clerk session ─────────────────────
         const authHeader = req.headers.get('authorization');
-        const hasCronAuth = authHeader === `Bearer ${process.env.CRON_SECRET}`;
+        const cronSecret = process.env.CRON_SECRET;
+        const hasCronAuth = Boolean(cronSecret && cronSecret.length >= 16 && authHeader === `Bearer ${cronSecret}`);
 
         if (!hasCronAuth) {
             const { userId } = await auth();
@@ -82,6 +85,11 @@ export async function GET(req: Request) {
                     { error: 'Unauthorized. Provide Bearer CRON_SECRET or sign in.' },
                     { status: 401 }
                 );
+            }
+            const user = await currentUser();
+            const email = user?.emailAddresses?.[0]?.emailAddress?.toLowerCase();
+            if (!email || !ADMIN_EMAILS.includes(email)) {
+                return NextResponse.json({ error: 'Forbidden.' }, { status: 403 });
             }
         }
 
@@ -214,7 +222,6 @@ export async function GET(req: Request) {
         return NextResponse.json(
             {
                 error: 'Failed to fetch revenue data.',
-                details: error instanceof Error ? error.message : String(error),
             },
             { status: 500 }
         );

@@ -406,4 +406,13 @@ Every report, telemetry audit, or analytics inquiry prompt MUST lead with an **O
 4. **Cloudflare Real HTML Document Load Telemetry Invariant**:
    - Never conflate raw Cloudflare Edge requests with unique human visitors or HTML document reads. Always isolate requests where `Content-Type` is `text/html` or filter on non-asset document paths (`/`, `/articles/*`, `/tools/*`, `/for-cfos`, etc.) when evaluating real user demand, search crawler crawl rates, and bot traffic.
 
+---
+
+## 23. Clean-Room Skill Assimilation, Live Demand Telemetry, Stateful Security Ledgers & Executive Deal Desk (ADR-0018)
+
+1. **Clean-Room Supply-Chain Quarantine**: Never install community GitHub skills verbatim via `npx skills add`. Adapt audited mechanics into Sovereign `SKILL.md` files verified by `node .agents/scripts/audit-agent-skills.mjs`.
+2. **Closed-Loop Demand & Search Intelligence (`demand-and-search-intelligence` + `pull-demand-telemetry.mjs`)**: Combine `seo-architecture` on-page rules with Google Search Console (`googleapis`), `semrush_mcp` (with API-unit cost guardrails), 30-day Hacker News/Reddit practitioner pain harvesting, Cloudflare GraphQL HTML/AI-bot crawl analytics, internal link-graph orphan detection, and `stripe_stripe` MCP (`acct_1TxBWCGl91vB8itR`) attribution.
+3. **Stateful Hunter/Disprover Security Ledger (`cloudflare-edge-security-audit` + `run-security-ledger-audit.mjs`)**: Maintain SHA-256 route coverage in `.scratch/security-audit/coverage-ledger.json` with strict Hunter vs. Skeptic Disprover verification, fail-closed `Bearer` secret checks, zero client-bundle `supabaseAdmin` imports, and V8 isolate state safety.
+4. **3-Strike Debugging, Two-Stage Review & Executive Deal Desk (`executive-deal-desk`)**: Enforce the 3-Strike Debugging Circuit Breaker, 4-Layer Defense-in-Depth, Two-Stage Subagent Review, `/schedule` pre-call operator dossiers, and dynamic formula-only `.xlsx`/`.pdf` boardroom kit standards.
+
 

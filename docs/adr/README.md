@@ -62,6 +62,7 @@ Negative/Considerations:
 | [ADR-0015](ADR-0015-holistic-ecosystem-flywheel-and-exogram-conversion-architecture.md) | Holistic Ecosystem Interconnectivity & Exogram Conversion Architecture | Accepted | @richardewing, Steve Jobs, Brian Balfour, Keith Rabois, Aravind Srinivas, Code Architect | 2026-10-24 |
 | [ADR-0016](ADR-0016-search-opportunity-elevation-and-cross-engine-snippet-governance.md) | Search Opportunity Elevation and Cross-Engine Snippet Governance | Accepted | @richardewing, Aravind Srinivas, Steve Jobs, Brian Balfour, Code Architect | 2026-10-26 |
 | [ADR-0017](ADR-0017-edge-cache-ai-citation-and-search-consolidation.md) | Edge Cache Remediation, AI Citation Split, Snippet Governance, and Viral Diagnostic Chains | Accepted | @richardewing, Steve Jobs, Paul Graham, Aravind Srinivas, Lily Ray, Brian Balfour, Keith Rabois, Code Architect | 2026-10-28 |
+| [ADR-0018](ADR-0018-sovereign-github-skill-assimilation-and-live-demand-engine.md) | Sovereign GitHub Skill Assimilation, Stateful Security Ledgers, and Live Demand Telemetry Engine | Accepted | @richardewing, Steve Jobs, Paul Graham, Dan Guido, Aravind Srinivas, Keith Rabois, Code Architect, QA Auditor | 2026-10-30 |
 
 
 

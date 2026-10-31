@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
-import { auth as clerkAuth } from '@clerk/nextjs/server';
+import { auth as clerkAuth, currentUser } from '@clerk/nextjs/server';
 import { supabaseAdmin } from '@/lib/supabase';
+
+const ADMIN_EMAILS = ['richardewing1@gmail.com', 'richardewing@exogram.ai'];
 
 export const dynamic = 'force-dynamic';
 
@@ -18,27 +20,37 @@ const SITE_URL_CANDIDATES = [
     'https://richardewing.io',
 ];
 
+function parseServiceAccountJson(rawCreds: string) {
+    let text = rawCreds.trim();
+    if ((text.startsWith('"') && text.endsWith('"')) || (text.startsWith("'") && text.endsWith("'"))) {
+        text = text.slice(1, -1);
+    }
+    if (!text.startsWith('{') && /^[A-Za-z0-9+/=]+$/.test(text)) {
+        text = Buffer.from(text, 'base64').toString('utf8');
+    }
+    if (text.includes('\\"')) {
+        text = text.replace(/\\"/g, '"');
+    }
+    text = text.replace(/("private_key"\s*:\s*")([\s\S]*?)(")/, (_, p1, p2, p3) => {
+        return p1 + p2.replace(/\r?\n/g, '\\n') + p3;
+    });
+    return JSON.parse(text);
+}
+
 function getGoogleAuth() {
-    let credentials = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
+    const credentials = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
     if (!credentials) {
         throw new Error('GOOGLE_SERVICE_ACCOUNT_JSON environment variable not set');
     }
 
-    // Clean up raw newlines in the private key if present (common when dotenv loads multiline strings from .env files)
-    if (credentials.includes('-----BEGIN PRIVATE KEY-----')) {
-        credentials = credentials.replace(/("private_key"\s*:\s*")([\s\S]*?)(")/, (match, p1, p2, p3) => {
-            return p1 + p2.replace(/\r?\n/g, '\\n') + p3;
-        });
-    }
-
     try {
-        const parsed = JSON.parse(credentials);
+        const parsed = parseServiceAccountJson(credentials);
         return new google.auth.GoogleAuth({
             credentials: parsed,
             scopes: ['https://www.googleapis.com/auth/webmasters.readonly'],
         });
-    } catch (err) {
-        throw new Error(`GOOGLE_SERVICE_ACCOUNT_JSON parsing failed: ${err instanceof Error ? err.message : 'Invalid JSON'}`);
+    } catch {
+        throw new Error('GOOGLE_SERVICE_ACCOUNT_JSON parsing failed');
     }
 }
 
@@ -48,12 +60,17 @@ export async function GET(request: Request) {
     const cronSecret = process.env.CRON_SECRET;
     const { searchParams } = new URL(request.url);
 
-    const hasCronAuth = authHeader === `Bearer ${cronSecret}`;
+    const hasCronAuth = Boolean(cronSecret && cronSecret.length >= 16 && authHeader === `Bearer ${cronSecret}`);
 
     if (!hasCronAuth) {
         const { userId } = await clerkAuth();
         if (!userId) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+        }
+        const user = await currentUser();
+        const email = user?.emailAddresses?.[0]?.emailAddress?.toLowerCase();
+        if (!email || !ADMIN_EMAILS.includes(email)) {
+            return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
         }
     }
 
@@ -117,7 +134,8 @@ export async function GET(request: Request) {
         const googleAuth = getGoogleAuth();
         const searchconsole = google.searchconsole({ version: 'v1', auth: googleAuth });
 
-        const days = parseInt(searchParams.get('days') || '28');
+        const rawDays = parseInt(searchParams.get('days') || '28', 10);
+        const days = Math.min(Math.max(Number.isFinite(rawDays) ? rawDays : 28, 1), 90);
         const endDate = new Date();
         const startDate = new Date();
         startDate.setDate(startDate.getDate() - days);
@@ -303,15 +321,16 @@ export async function GET(request: Request) {
                     step2: 'Enable the Search Console API',
                     step3: 'Create a Service Account and download the JSON key',
                     step4: 'Add the service account email as a user in Search Console',
-                    step5: 'Set GOOGLE_SERVICE_ACCOUNT_JSON as the full JSON key in Vercel env vars',
+                    step5: 'Set GOOGLE_SERVICE_ACCOUNT_JSON via npx wrangler secret put GOOGLE_SERVICE_ACCOUNT_JSON',
                 },
                 indexNow: indexNowStats,
             }, { status: 503 });
         }
 
+        console.error('[API:GSC-PERFORMANCE] Query failed:', error);
         return NextResponse.json({
             success: false,
-            error: message,
+            error: 'Failed to retrieve Search Console performance data',
             indexNow: indexNowStats,
         }, { status: 500 });
     }

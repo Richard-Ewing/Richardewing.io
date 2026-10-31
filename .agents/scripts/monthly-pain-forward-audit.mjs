@@ -105,16 +105,35 @@ console.log('══════════════════════�
 let totalScore = 0;
 const totalPossible = MONTHLY_PAIN_CLUSTERS.length * 20;
 
-// 1. Evaluate Flagship Pain Clusters
+// 1. Evaluate Flagship Pain Clusters (+ Live Demand Telemetry Enrichment when available)
+const liveTelemetryPath = path.join(rootDir, '.scratch/demand-telemetry-latest.json');
+let liveTelemetry = null;
+if (fs.existsSync(liveTelemetryPath)) {
+  try {
+    liveTelemetry = JSON.parse(fs.readFileSync(liveTelemetryPath, 'utf8'));
+  } catch {
+    liveTelemetry = null;
+  }
+}
+
 console.log('--- 1. Evaluating Flagship Pain Clusters ---');
-for (const pc of MONTHLY_PAIN_CLUSTERS) {
+if (liveTelemetry) {
+  console.log(`[LIVE TELEMETRY LINKED] Snapshot: ${liveTelemetry.generatedAt}\n`);
+}
+for (let i = 0; i < MONTHLY_PAIN_CLUSTERS.length; i++) {
+  const pc = MONTHLY_PAIN_CLUSTERS[i];
   const assetsPresent = pc.canonicalAssets.length >= pc.minExpectedTools;
   const score = assetsPresent ? 20 : 10;
   totalScore += score;
+  const liveCluster = liveTelemetry?.practitionerPain?.clusterSignals?.[i];
   
   console.log(`[PASS] ${pc.cluster}`);
   console.log(`       Keywords: ${pc.targetKeywords.join(', ')}`);
   console.log(`       Assets:   ${pc.canonicalAssets.join(', ')}`);
+  if (liveCluster) {
+    const topDiscussion = liveCluster.topDiscussions?.[0]?.title || 'None in 30d window';
+    console.log(`       Live 30d HN Threads: ${liveCluster.trailing30dSignalCount} (Lead signal: "${topDiscussion}")`);
+  }
   console.log(`       Score:    ${score}/20\n`);
 }
 
@@ -191,4 +210,8 @@ if (hwsViolations === 0) {
 console.log('\n════════════════════════════════════════════════════════════════════');
 console.log(`   OVERALL PAIN-FORWARD COVERAGE INDEX: ${totalScore}/${totalPossible} (100% HEALTHY)`);
 console.log(`   HUMAN WRITING STANDARD HEALTH: ${hwsViolations === 0 ? '100% COMPLIANT' : 'REVISION REQUIRED'}`);
+if (liveTelemetry?.linkGraph) {
+  console.log(`   INTERNAL LINK GRAPH: ${liveTelemetry.linkGraph.totalStaticPublicRoutes} static routes (${liveTelemetry.linkGraph.orphanStaticRouteCount} zero-ref candidates)`);
+}
 console.log('════════════════════════════════════════════════════════════════════\n');
+process.exit(0);

@@ -1,22 +1,47 @@
 import { NextResponse } from 'next/server';
-import { auth } from '@clerk/nextjs/server';
+import { currentUser } from '@clerk/nextjs/server';
 import { client } from '@/app/lib/gemini';
 import { supabaseAdmin } from '@/lib/supabase';
 import { storeBusinessFact } from '@/lib/exogram';
 
 export const dynamic = 'force-dynamic';
 
+const ADMIN_EMAILS = new Set(['richardewing1@gmail.com', 'richardewing@exogram.ai']);
+const SESSION_ID_RE = /^[a-z0-9_-]{8,64}$/i;
+
 export async function POST(req: Request) {
-    const { userId } = await auth();
-    if (!userId) {
+    const user = await currentUser();
+    if (!user) {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
+
+    const primaryEmail = user.emailAddresses?.[0]?.emailAddress?.toLowerCase() || '';
+    const hasAdvisorAccess =
+        user.publicMetadata?.has_ai_advisor_access === true ||
+        user.publicMetadata?.has_yearly_subscription === true ||
+        ADMIN_EMAILS.has(primaryEmail);
+
+    if (!hasAdvisorAccess) {
+        return NextResponse.json({ error: 'Active AI Integration Advisor subscription required' }, { status: 403 });
+    }
+
+    const userId = user.id;
 
     try {
         const { sessionId, businessProfile, painPoints, techStack, goals } = await req.json();
 
-        if (!sessionId) {
-            return NextResponse.json({ error: 'Session ID required' }, { status: 400 });
+        if (!sessionId || typeof sessionId !== 'string' || !SESSION_ID_RE.test(sessionId)) {
+            return NextResponse.json({ error: 'Valid Session ID required' }, { status: 400 });
+        }
+
+        const { data: existingSession } = await supabaseAdmin
+            .from('ai_advisor_sessions')
+            .select('user_id')
+            .eq('id', sessionId)
+            .maybeSingle();
+
+        if (existingSession && existingSession.user_id !== userId) {
+            return NextResponse.json({ error: 'Forbidden session reference' }, { status: 403 });
         }
 
         const prompt = `You are Richard Ewing's AI Integration Advisor. Generate a comprehensive, actionable AI Integration Roadmap for this business.
@@ -107,7 +132,7 @@ Return ONLY the JSON object, no markdown code fences.`;
             }
         }
 
-        // Save the completed plan to Supabase
+        // Save the completed plan to Supabase (scoped to owning user)
         await supabaseAdmin
             .from('ai_advisor_sessions')
             .update({
@@ -115,14 +140,16 @@ Return ONLY the JSON object, no markdown code fences.`;
                 generated_plan: roadmapData,
                 updated_at: new Date().toISOString(),
             })
-            .eq('id', sessionId);
+            .eq('id', sessionId)
+            .eq('user_id', userId);
 
-        // Store key facts to Exogram Vault
+        // Store anonymized benchmark facts to Exogram Vault (scrubbed of client name PII)
         try {
+            const anonymizedIndustry = String(businessProfile?.industry || 'general enterprise').slice(0, 80);
             await storeBusinessFact(
                 sessionId,
                 'completed_roadmap',
-                `AI Integration Roadmap completed for ${businessProfile?.name || 'business'} in ${businessProfile?.industry || 'unknown'} industry. Estimated ${roadmapData.estimated_weekly_hours_saved || 0} hours/week saved, ${roadmapData.phases?.length || 0} phases, ${roadmapData.phases?.reduce((acc: number, p: { actions: unknown[] }) => acc + (p.actions?.length || 0), 0) || 0} action items.`,
+                `AI Integration Roadmap completed in ${anonymizedIndustry} industry. Estimated ${roadmapData.estimated_weekly_hours_saved || 0} hours/week saved, ${roadmapData.phases?.length || 0} phases, ${roadmapData.phases?.reduce((acc: number, p: { actions: unknown[] }) => acc + (p.actions?.length || 0), 0) || 0} action items.`,
                 0.95
             );
         } catch {

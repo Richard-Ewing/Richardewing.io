@@ -3,6 +3,8 @@ import { supabaseAdmin } from '../../../../lib/supabase';
 
 export const dynamic = 'force-dynamic';
 
+const MAX_TELEMETRY_BYTES = 16_384;
+
 // Helper to map external signals to internal governance risks
 function mapSignalToGovernanceRisk(signalType: string) {
     const signalMap: Record<string, string> = {
@@ -17,22 +19,47 @@ function mapSignalToGovernanceRisk(signalType: string) {
 
 export async function POST(req: Request) {
     try {
-        const payload = await req.json();
-        const { organizationId, signalType = 'mcp_token_saver_telemetry', severity = 1, source = 'token_saver_mcp', rawData = {}, raw_payload } = payload;
+        const contentLength = Number(req.headers.get('content-length') || '0');
+        if (contentLength > MAX_TELEMETRY_BYTES) {
+            return NextResponse.json({ error: 'Telemetry payload exceeds 16KB limit.' }, { status: 413 });
+        }
 
-        const effectivePayload = raw_payload || rawData;
+        const rawBody = await req.text();
+        if (rawBody.length > MAX_TELEMETRY_BYTES) {
+            return NextResponse.json({ error: 'Telemetry payload exceeds 16KB limit.' }, { status: 413 });
+        }
+
+        const payload = JSON.parse(rawBody || '{}');
+        const {
+            organizationId,
+            signalType = 'mcp_token_saver_telemetry',
+            severity = 1,
+            source = 'token_saver_mcp',
+            rawData = {},
+            raw_payload
+        } = payload;
+
+        const safeOrgId = typeof organizationId === 'string' && organizationId.trim()
+            ? organizationId.trim().slice(0, 128)
+            : 'ANONYMOUS_MCP_COMMUNITY';
+        const safeSignalType = typeof signalType === 'string' ? signalType.slice(0, 64) : 'mcp_token_saver_telemetry';
+        const safeSource = typeof source === 'string' ? source.slice(0, 64) : 'token_saver_mcp';
+        const safeSeverity = typeof severity === 'number' ? Math.min(Math.max(severity, 1), 10) : 1;
+        const effectivePayload = (raw_payload && typeof raw_payload === 'object')
+            ? raw_payload
+            : (rawData && typeof rawData === 'object' ? rawData : {});
 
         // Map to internal governance risk
-        const governanceRisk = mapSignalToGovernanceRisk(signalType);
+        const governanceRisk = mapSignalToGovernanceRisk(safeSignalType);
 
-        // Ingest into Supabase if secret is provided or if it is anonymized open-source MCP telemetry
+        // Ingest bounded payload into Supabase
         const { error: insertError } = await supabaseAdmin
             .from('external_telemetry_events')
             .insert({
-                org_id: organizationId || 'ANONYMOUS_MCP_COMMUNITY',
-                signal_type: signalType,
-                severity: severity,
-                source: source,
+                org_id: safeOrgId,
+                signal_type: safeSignalType,
+                severity: safeSeverity,
+                source: safeSource,
                 raw_payload: { ...effectivePayload, mapped_risk: governanceRisk }
             });
 
@@ -47,4 +74,3 @@ export async function POST(req: Request) {
         return NextResponse.json({ error: 'Internal server error during telemetry ingestion.' }, { status: 500 });
     }
 }
-

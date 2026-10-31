@@ -300,3 +300,12 @@ Every report, telemetry audit, or analytics inquiry prompt MUST lead with an **O
 4. **Edge Redirect Query-String Safety**: In `middleware.ts`, `EDGE_REDIRECTS` map values must strictly be clean pathname strings (never containing `?` or `#`), because the middleware appends `req.nextUrl.search` dynamically when constructing the redirect `URL`.
 5. **Contextual Schedule Banner Continuity**: Whenever a new `?source=` parameter is introduced across the platform, `SOURCE_CONFIGS` in `components/schedule/schedule-diagnostic-banner.tsx` must be updated simultaneously so `/schedule` renders tailored pre-call framing above the Cal.com embed.
 
+---
+
+## 18. Clean-Room Skill Assimilation, Live Demand Telemetry, Stateful Security Ledgers & Executive Deal Desk (ADR-0018)
+
+1. **Clean-Room Supply-Chain Quarantine**: Never install third-party community skills verbatim into `.agents/skills/` via `npx skills add`. Strip Vercel assumptions, em-dashes, Socratic trivia prompts, and generic AI copy templates; enforce supply-chain checks via `node .agents/scripts/audit-agent-skills.mjs`.
+2. **Closed-Loop Demand & Search Intelligence (`.agents/skills/demand-and-search-intelligence/SKILL.md` + `pull-demand-telemetry.mjs`)**: Pair `seo-architecture` with live demand pipes: Google Search Console (`googleapis`), `semrush_mcp` (respecting API-unit guardrails), 30-day Hacker News/Reddit practitioner pain harvesting, Cloudflare GraphQL HTML/AI-bot crawl analytics, internal link-graph orphan checks, and `stripe_stripe` MCP (`Exogram AI LLC` `acct_1TxBWCGl91vB8itR`) attribution.
+3. **Stateful Hunter/Disprover Edge Security Audit (`.agents/skills/cloudflare-edge-security-audit/SKILL.md` + `run-security-ledger-audit.mjs`)**: Track SHA-256 route coverage in `.scratch/security-audit/coverage-ledger.json`. Enforce Hunter/Disprover separation, fail-closed `Bearer` secret checks, zero client-bundle `supabaseAdmin` imports, and Cloudflare V8 isolate request isolation.
+4. **3-Strike Debugging, Two-Stage Review & Executive Deal Desk (`.agents/skills/executive-deal-desk/SKILL.md`)**: Enforce the 3-Strike Debugging Circuit Breaker, 4-Layer Defense-in-Depth, Two-Stage Subagent Review (`qa_auditor` Gate A Spec/Blast-Radius before Gate B Craft), `/schedule` pre-call operator dossiers, and dynamic formula-only `.xlsx`/`.pdf` boardroom deliverable standards.
+

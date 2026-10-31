@@ -21,8 +21,8 @@ export async function GET(req: NextRequest) {
       return new NextResponse('Missing asset slug', { status: 400 });
     }
 
-    // Security: prevent directory traversal
-    if (slug.includes('..') || slug.includes('/') || slug.includes('\\')) {
+    // Security: strictly allow alphanumeric/hyphen asset slugs (blocks '.', '..', slashes, and header injection)
+    if (!/^[a-z0-9-]+$/i.test(slug)) {
       return new NextResponse('Invalid asset slug', { status: 400 });
     }
 
@@ -31,8 +31,9 @@ export async function GET(req: NextRequest) {
     const user = await client.users.getUser(userId);
     const metadata = user.publicMetadata as any;
 
-    const hasAllAccess = metadata?.has_yearly_subscription === true || metadata?.is_team_admin === true;
-    const unlockedAssets = metadata?.unlocked_assets || [];
+    const isActiveTeamAdmin = metadata?.is_team_admin === true && metadata?.subscription_status !== 'canceled';
+    const hasAllAccess = metadata?.has_yearly_subscription === true || isActiveTeamAdmin;
+    const unlockedAssets = Array.isArray(metadata?.unlocked_assets) ? metadata.unlocked_assets : [];
     
     if (!hasAllAccess && !unlockedAssets.includes(slug)) {
       console.warn(`[SECURITY] User ${userId} attempted to download unowned asset: ${slug}`);

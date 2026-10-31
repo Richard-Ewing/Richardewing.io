@@ -4,7 +4,6 @@ import { PAID_RESOURCES, CORE_TOPICS, REWS_VOICE_SYSTEM_PROMPT } from '@/app/lib
 export const dynamic = 'force-dynamic';
 
 // In-memory sliding window IP rate limiter for anonymous voice sessions
-// Max 5 sessions per 24 hours per IP
 const ipSessionTracker = new Map<string, { count: number; expiresAt: number }>();
 
 function isRateLimited(ip: string): boolean {
@@ -12,6 +11,10 @@ function isRateLimited(ip: string): boolean {
   const record = ipSessionTracker.get(ip);
 
   if (!record || now > record.expiresAt) {
+    if (ipSessionTracker.size >= 2000) {
+      const oldestKey = ipSessionTracker.keys().next().value;
+      if (oldestKey) ipSessionTracker.delete(oldestKey);
+    }
     ipSessionTracker.set(ip, { count: 1, expiresAt: now + 24 * 60 * 60 * 1000 });
     return false;
   }
@@ -48,10 +51,14 @@ function addWavHeader(pcmBuffer: Buffer, sampleRate = 24000, numChannels = 1, bi
   return Buffer.concat([header, pcmBuffer]);
 }
 
-// Cached initial greeting audio so it only generates once per server instance
+// Cached default greeting audio so anonymous sessions only synthesize once per isolate
 let cachedGreetingAudio: string | null = null;
 
-async function getInitialGreetingAudio(apiKey: string, text: string): Promise<string | null> {
+async function getInitialGreetingAudio(apiKey: string, text: string, useDefaultCache: boolean): Promise<string | null> {
+  if (useDefaultCache && cachedGreetingAudio) {
+    return cachedGreetingAudio;
+  }
+
   const models = ['gemini-3.8-flash'];
   for (const ttsModel of models) {
     try {
@@ -82,7 +89,11 @@ async function getInitialGreetingAudio(apiKey: string, text: string): Promise<st
 
       const pcmBuffer = Buffer.from(rawPcmBase64, 'base64');
       const wavBuffer = addWavHeader(pcmBuffer);
-      return `data:audio/wav;base64,${wavBuffer.toString('base64')}`;
+      const audioUrl = `data:audio/wav;base64,${wavBuffer.toString('base64')}`;
+      if (useDefaultCache) {
+        cachedGreetingAudio = audioUrl;
+      }
+      return audioUrl;
     } catch {
       // try next model
     }
@@ -92,16 +103,9 @@ async function getInitialGreetingAudio(apiKey: string, text: string): Promise<st
 
 export async function POST(req: NextRequest) {
   try {
+    const cfIp = req.headers.get('cf-connecting-ip')?.trim();
     const forwardedFor = req.headers.get('x-forwarded-for');
-    const ip = forwardedFor ? forwardedFor.split(',')[0].trim() : '127.0.0.1';
-
-    let userName = '';
-    try {
-      const body = await req.json();
-      userName = typeof body?.userName === 'string' ? body.userName.trim() : '';
-    } catch {
-      // Body is optional
-    }
+    const ip = cfIp || (forwardedFor ? forwardedFor.split(',')[0].trim() : '127.0.0.1');
 
     if (isRateLimited(ip)) {
       return NextResponse.json(
@@ -114,22 +118,39 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    let userName = '';
+    try {
+      const rawText = await req.text();
+      if (rawText && rawText.length <= 2048) {
+        const body = JSON.parse(rawText);
+        userName = typeof body?.userName === 'string'
+          ? body.userName.replace(/[\r\n<>]/g, '').trim().slice(0, 60)
+          : '';
+      }
+    } catch {
+      // Body is optional
+    }
+
     const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || '';
     const hasKey = Boolean(apiKey);
 
-    const firstName = userName ? userName.split(' ')[0] : '';
+    const firstName = userName ? userName.split(' ')[0].slice(0, 30) : '';
     const initialGreeting = firstName
       ? `Good to meet you, ${firstName}. Richard here. What are you wrestling with right now in your team, architecture, or career?`
       : "Richard here. What are you wrestling with right now in your team, architecture, or career?";
 
     let initialAudioDataUrl: string | null = null;
     if (hasKey) {
-      initialAudioDataUrl = await getInitialGreetingAudio(apiKey, initialGreeting);
+      initialAudioDataUrl = await getInitialGreetingAudio(apiKey, initialGreeting, !firstName);
     }
+
+    const randomBytes = new Uint8Array(6);
+    globalThis.crypto.getRandomValues(randomBytes);
+    const sessionHex = Array.from(randomBytes, (b) => b.toString(16).padStart(2, '0')).join('');
 
     return NextResponse.json({
       success: true,
-      sessionId: `voice_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`,
+      sessionId: `voice_${Date.now()}_${sessionHex}`,
       hasKey,
       maxDurationSeconds: 90,
       initialGreeting,

@@ -7,11 +7,20 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+import { GoogleGenAI } from '@google/genai';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '../../');
 const SCRATCH_DIR = path.resolve(ROOT_DIR, '.scratch');
+
+for (const envName of ['.env.local', '.env.production.local', '.env']) {
+  const envPath = path.join(ROOT_DIR, envName);
+  if (fs.existsSync(envPath)) {
+    dotenv.config({ path: envPath, override: false, quiet: true });
+  }
+}
 
 if (!fs.existsSync(SCRATCH_DIR)) {
   fs.mkdirSync(SCRATCH_DIR, { recursive: true });
@@ -276,4 +285,57 @@ console.log(`\nOverall Macro Baseline Rates across n = ${totalEvaluations} Engin
 console.log(`• Canonical AI Retrieval:       ${totalRetrievals}/${totalEvaluations} (${overallRetrievalRate}%) [95% CI: ${retCI.lower}% - ${retCI.upper}%]`);
 console.log(`• Explicit Domain Citation:     ${totalCitations}/${totalEvaluations} (${overallCitationRate}%) [95% CI: ${citCI.lower}% - ${citCI.upper}%]`);
 console.log(`• Direct Coiner Attribution:    ${totalAttributions}/${totalEvaluations} (${overallAttributionRate}%) [95% CI: ${attCI.lower}% - ${attCI.upper}%]\n`);
-console.log(`✅ Observational baseline telemetry written to: .scratch/ai-discoverability-report.json\n`);
+
+async function runOptionalLiveGroundingProbe() {
+  if (!process.argv.includes('--live')) {
+    console.log('✅ Observational baseline telemetry written to: .scratch/ai-discoverability-report.json\n');
+    process.exit(0);
+  }
+
+  const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
+  if (!apiKey) {
+    console.log('[LIVE PROBE SKIPPED] GEMINI_API_KEY not found in environment; preserved baseline report.\n');
+    process.exit(0);
+  }
+
+  console.log('--- Running Live Gemini Search Grounding Citation Probe (--live) ---');
+  const ai = new GoogleGenAI({ apiKey });
+  const liveProbes = [];
+
+  for (const concept of CONCEPT_BENCHMARK_SUITE.slice(0, 3)) {
+    const q = concept.testQueries[0].query;
+    try {
+      const response = await ai.models.generateContent({
+        model: 'gemini-2.5-flash',
+        contents: q,
+        config: { tools: [{ googleSearch: {} }] }
+      });
+      const text = (response.text || '').toLowerCase();
+      const chunks = response.candidates?.[0]?.groundingMetadata?.groundingChunks || [];
+      const uris = chunks.map((c) => c.web?.uri || '').filter(Boolean);
+      const citedDomain = uris.some((u) => u.includes('richardewing.io') || u.includes('exogram.ai') || u.includes('builtin.com') || u.includes('cio.com'));
+      const attributed = text.includes('richard ewing') || text.includes('exogram');
+
+      liveProbes.push({
+        concept: concept.slug,
+        query: q,
+        citedAuthorityDomain: citedDomain,
+        attributedRichardEwing: attributed,
+        groundedSourceCount: uris.length
+      });
+      console.log(`  [LIVE] ${concept.slug}: Cited=${citedDomain} | Attributed=${attributed} | Sources=${uris.length}`);
+    } catch (err) {
+      console.log(`  [LIVE WARN] ${concept.slug}: ${err instanceof Error ? err.message : 'Query failed'}`);
+    }
+  }
+
+  studyReport.liveGroundedProbe = {
+    executedAt: new Date().toISOString(),
+    results: liveProbes
+  };
+  fs.writeFileSync(outputPath, JSON.stringify(studyReport, null, 2), 'utf-8');
+  console.log('\n✅ Live grounded discoverability telemetry appended to: .scratch/ai-discoverability-report.json\n');
+  process.exit(0);
+}
+
+runOptionalLiveGroundingProbe();

@@ -3,11 +3,48 @@ import { Resend } from 'resend';
 
 export const dynamic = 'force-dynamic';
 
+const ipCaptureTracker = new Map<string, { count: number; expiresAt: number }>();
+
+function isCaptureRateLimited(ip: string): boolean {
+    const now = Date.now();
+    const record = ipCaptureTracker.get(ip);
+
+    if (!record || now > record.expiresAt) {
+        if (ipCaptureTracker.size >= 2000) {
+            const oldestKey = ipCaptureTracker.keys().next().value;
+            if (oldestKey) ipCaptureTracker.delete(oldestKey);
+        }
+        ipCaptureTracker.set(ip, { count: 1, expiresAt: now + 60 * 60 * 1000 });
+        return false;
+    }
+
+    if (record.count >= 10) {
+        return true;
+    }
+
+    record.count += 1;
+    return false;
+}
+
 export async function POST(request: Request) {
     try {
+        const ip =
+            request.headers.get('cf-connecting-ip')?.trim() ||
+            request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+            '127.0.0.1';
+
+        if (isCaptureRateLimited(ip)) {
+            return NextResponse.json({ error: 'Too many submissions. Please try again later.' }, { status: 429 });
+        }
+
+        const rawBody = await request.text();
+        if (rawBody.length > 16384) {
+            return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
+        }
+
         let data: Record<string, any>;
         try {
-            data = await request.json();
+            data = JSON.parse(rawBody);
         } catch {
             return NextResponse.json({ error: 'Malformed JSON payload' }, { status: 400 });
         }
@@ -17,17 +54,21 @@ export async function POST(request: Request) {
         }
 
         const { name, email, company, message, source } = data;
-        const trimmedEmail = typeof email === 'string' ? email.trim() : '';
+        const trimmedEmail = typeof email === 'string' ? email.replace(/[\r\n]/g, '').trim().slice(0, 254) : '';
+        const safeName = typeof name === 'string' ? name.replace(/[\r\n]/g, ' ').trim().slice(0, 120) : '';
+        const safeCompany = typeof company === 'string' ? company.replace(/[\r\n]/g, ' ').trim().slice(0, 120) : '';
+        const safeSource = typeof source === 'string' ? source.replace(/[\r\n]/g, ' ').trim().slice(0, 120) : '';
+        const safeMessage = typeof message === 'string' ? message.trim().slice(0, 4000) : '';
 
         if (!trimmedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
             return NextResponse.json({ error: 'Valid email is required' }, { status: 400 });
         }
 
         console.log('[Lead Capture API] Submission received:', {
-            name: name || 'N/A',
-            email,
-            company: company || 'N/A',
-            source: source || 'Direct Form',
+            name: safeName || 'N/A',
+            email: trimmedEmail,
+            company: safeCompany || 'N/A',
+            source: safeSource || 'Direct Form',
             timestamp: new Date().toISOString(),
         });
 
@@ -37,15 +78,15 @@ export async function POST(request: Request) {
                 const emailResponse = await resend.emails.send({
                     from: 'Lead Capture <leads@updates.richardewing.io>',
                     to: ['richardewing@exogram.ai'],
-                    subject: `New Lead${source ? ` (${source})` : ''}: ${name || email} ${company ? `from ${company}` : ''}`,
+                    subject: `New Lead${safeSource ? ` (${safeSource})` : ''}: ${safeName || trimmedEmail} ${safeCompany ? `from ${safeCompany}` : ''}`,
                     text: `
-Name: ${name || 'N/A'}
-Email: ${email}
-Company: ${company || 'N/A'}
-Source: ${source || 'Direct Inquiry'}
+Name: ${safeName || 'N/A'}
+Email: ${trimmedEmail}
+Company: ${safeCompany || 'N/A'}
+Source: ${safeSource || 'Direct Inquiry'}
 
 Message:
-${message || 'N/A'}
+${safeMessage || 'N/A'}
                     `,
                 });
 

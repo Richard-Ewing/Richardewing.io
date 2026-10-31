@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server';
-import { auth } from '@clerk/nextjs/server';
+import { auth, currentUser } from '@clerk/nextjs/server';
 
 export const dynamic = 'force-dynamic';
+
+const ADMIN_EMAILS = ['richardewing1@gmail.com', 'richardewing@exogram.ai'];
 
 /**
  * Agent Status API - Powers the /admin/agents and command-center dashboard.
@@ -14,6 +16,11 @@ export async function GET() {
         const { userId } = await auth();
         if (!userId) {
             return NextResponse.json({ error: 'Unauthorized. Please sign in.' }, { status: 401 });
+        }
+        const user = await currentUser();
+        const email = user?.emailAddresses?.[0]?.emailAddress?.toLowerCase();
+        if (!email || !ADMIN_EMAILS.includes(email)) {
+            return NextResponse.json({ error: 'Forbidden.' }, { status: 403 });
         }
 
         const agents = [

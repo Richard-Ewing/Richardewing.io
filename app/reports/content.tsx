@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { FileText, Download, Lock } from 'lucide-react';
-import { supabaseAdmin } from '../../lib/supabase';
 
 // Static base for flagship reports
 const staticReports = [

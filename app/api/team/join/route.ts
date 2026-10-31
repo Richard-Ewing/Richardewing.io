@@ -41,14 +41,19 @@ export async function POST(req: Request) {
                 client.users.getUser(adminId),
                 client.users.getUser(userId)
             ]);
-        } catch (e) {
-            return new NextResponse('Team Administrator not found.', { status: 404 });
+        } catch {
+            return new NextResponse('Invalid or expired team invite code.', { status: 403 });
         }
 
         const adminMetadata = adminUser.publicMetadata as any;
         
-        // 1. Verify Code Matches Admin's Actual Code
-        if (adminMetadata.team_invite_code !== inviteCode) {
+        // 1. Verify Code Matches Admin's Actual Code & Subscription Is Active
+        if (
+            adminMetadata.team_invite_code !== inviteCode ||
+            adminMetadata.is_team_admin !== true ||
+            adminMetadata.has_yearly_subscription !== true ||
+            adminMetadata.subscription_status === 'canceled'
+        ) {
             return new NextResponse('Invalid or expired team invite code.', { status: 403 });
         }
 
@@ -87,13 +92,22 @@ export async function POST(req: Request) {
         const updatedMembersList = [...claimedMembers, newMemberRecord];
 
         // 6. Execute Metadata Updates
-        // A) Update Admin's ledger
+        // A) Update Admin's ledger and verify seat index post-write to guard against concurrent TOCTOU claims
         await client.users.updateUserMetadata(adminId, {
             publicMetadata: {
                 ...adminMetadata,
                 team_members_claimed: updatedMembersList
             }
         });
+
+        const refreshedAdmin = await client.users.getUser(adminId);
+        const refreshedClaimed = Array.isArray((refreshedAdmin.publicMetadata as any)?.team_members_claimed)
+            ? (refreshedAdmin.publicMetadata as any).team_members_claimed
+            : [];
+        const assignedIndex = refreshedClaimed.findIndex((m: any) => m.user_id === userId);
+        if (assignedIndex === -1 || assignedIndex >= availableChildSeats) {
+            return new NextResponse('This team has reached its maximum seat capacity.', { status: 403 });
+        }
 
         // B) Grant Subscription to Child User
         const currentUserMetadata = currentUser.publicMetadata as any;

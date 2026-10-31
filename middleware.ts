@@ -168,6 +168,7 @@ function applySecurityAndCacheHeaders(res: NextResponse, req: NextRequest): Next
   if (
     isRsc ||
     isRedirect ||
+    res.headers.has('set-cookie') ||
     isAuthOrDynamicPath(req.nextUrl.pathname) ||
     isPrivateUncachedPage(req.nextUrl.pathname) ||
     !isCacheableMethod
@@ -252,10 +253,14 @@ export default async function middleware(req: NextRequest, event: NextFetchEvent
     }
   }
 
-  const isLocalhost = host.includes('localhost') || host.includes('127.0.0.1');
+  const isLocalhost = /^(localhost|127\.0\.0\.1)(:\d+)?$/i.test(host);
   if ((!isLocalhost && host !== 'www.richardewing.io') || targetPath !== pathname) {
     const baseOrigin = isLocalhost ? req.nextUrl.origin : 'https://www.richardewing.io';
-    const destination = new URL(targetPath + req.nextUrl.search, baseOrigin);
+    const safePath = '/' + targetPath.replace(/^[/\\]+/, '');
+    const destination = new URL(safePath + req.nextUrl.search, baseOrigin);
+    if (destination.origin !== baseOrigin) {
+      return new NextResponse('Bad Request', { status: 400 });
+    }
     if (destination.href === req.nextUrl.href) {
       // Physical guard: never redirect to the exact same URL
       return NextResponse.next();

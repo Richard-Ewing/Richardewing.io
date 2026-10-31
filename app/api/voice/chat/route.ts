@@ -5,6 +5,29 @@ import { PAID_RESOURCES, REWS_VOICE_SYSTEM_PROMPT } from '@/app/lib/voice-knowle
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60;
 
+const ipVoiceTurnTracker = new Map<string, { count: number; expiresAt: number }>();
+
+function isVoiceTurnRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const record = ipVoiceTurnTracker.get(ip);
+
+  if (!record || now > record.expiresAt) {
+    if (ipVoiceTurnTracker.size >= 2000) {
+      const oldestKey = ipVoiceTurnTracker.keys().next().value;
+      if (oldestKey) ipVoiceTurnTracker.delete(oldestKey);
+    }
+    ipVoiceTurnTracker.set(ip, { count: 1, expiresAt: now + 60 * 60 * 1000 });
+    return false;
+  }
+
+  if (record.count >= 25) {
+    return true;
+  }
+
+  record.count += 1;
+  return false;
+}
+
 // Prepend standard 44-byte WAV header to 24kHz 16-bit mono PCM
 function addWavHeader(pcmBuffer: Buffer, sampleRate = 24000, numChannels = 1, bitsPerSample = 16): Buffer {
   const byteRate = sampleRate * numChannels * (bitsPerSample / 8);
@@ -73,8 +96,27 @@ async function generateNeuralAudio(text: string, apiKey: string): Promise<string
 
 export async function POST(req: NextRequest) {
   try {
+    const cfIp = req.headers.get('cf-connecting-ip')?.trim();
+    const forwardedFor = req.headers.get('x-forwarded-for');
+    const ip = cfIp || (forwardedFor ? forwardedFor.split(',')[0].trim() : '127.0.0.1');
+
+    if (isVoiceTurnRateLimited(ip)) {
+      return NextResponse.json(
+        {
+          reply: "We have hit the hourly limit for live voice turns here. Feel free to book a 1:1 working session on my calendar so we can go deep on your architecture or P&L.",
+          card: PAID_RESOURCES.cal_advisory_booking,
+          audioDataUrl: null
+        },
+        { status: 429 }
+      );
+    }
+
     const body = await req.json();
     const { messages = [], audioBase64, mimeType = 'audio/wav', userName } = body;
+
+    if (typeof audioBase64 === 'string' && audioBase64.length > 2_000_000) {
+      return NextResponse.json({ error: 'Audio recording exceeds size limit' }, { status: 413 });
+    }
 
     const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
 
@@ -89,16 +131,20 @@ export async function POST(req: NextRequest) {
 
     const client = new GoogleGenAI({ apiKey });
 
-    const conversationHistory = messages
-      .map((m: any) => `${m.role === 'user' ? 'Visitor' : 'Richard'}: ${m.content}`)
+    const boundedMessages = Array.isArray(messages) ? messages.slice(-14) : [];
+    const conversationHistory = boundedMessages
+      .map((m: any) => `${m?.role === 'user' ? 'Visitor' : 'Richard'}: ${String(m?.content || '').slice(0, 1200)}`)
       .join('\n');
 
     const availableCardsList = Object.entries(PAID_RESOURCES)
       .map(([id, item]) => `- ${id}: ${item.title} (${item.price || 'Direct Booking'}) - ${item.description}`)
       .join('\n');
 
-    const visitorPersonalization = userName && typeof userName === 'string' && userName.trim()
-      ? `You are speaking directly with ${userName.trim()}. Address them by their first name (${userName.trim().split(' ')[0]}) naturally when it fits, but never overuse it or sound like an artificial salesperson.`
+    const safeUserName = typeof userName === 'string'
+      ? userName.replace(/[\r\n<>]/g, '').trim().slice(0, 60)
+      : '';
+    const visitorPersonalization = safeUserName
+      ? `You are speaking directly with ${safeUserName}. Address them by their first name (${safeUserName.split(' ')[0]}) naturally when it fits, but never overuse it or sound like an artificial salesperson.`
       : 'You are speaking directly with an executive visitor.';
 
     const promptInstructions = `
@@ -217,8 +263,8 @@ Keep it conversational, punchy, human, and no em-dashes.\n\n${promptInstructions
       .replace(/\u2014/g, ' - ')
       .replace(/\u2013/g, ' - ');
 
-    // Generate real neural AI audio
-    const audioDataUrl = await generateNeuralAudio(cleanReply, apiKey);
+    // Generate real neural AI audio (bounded to spoken reply length)
+    const audioDataUrl = await generateNeuralAudio(cleanReply.slice(0, 600), apiKey);
 
     return NextResponse.json({
       reply: cleanReply,

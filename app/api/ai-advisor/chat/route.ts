@@ -1,10 +1,15 @@
 import { NextResponse } from 'next/server';
-import { auth } from '@clerk/nextjs/server';
+import { currentUser } from '@clerk/nextjs/server';
 import { client } from '@/app/lib/gemini';
 import { supabaseAdmin } from '@/lib/supabase';
 import { storeBusinessFact, searchBusinessContext } from '@/lib/exogram';
 
 export const dynamic = 'force-dynamic';
+
+const ADMIN_EMAILS = new Set(['richardewing1@gmail.com', 'richardewing@exogram.ai']);
+const SESSION_ID_RE = /^[a-z0-9_-]{8,64}$/i;
+const MAX_MESSAGE_CHARS = 4000;
+const MAX_HISTORY_TURNS = 30;
 
 // ---------------------------------------------------------------------------
 // Phase Definitions
@@ -143,30 +148,77 @@ Include [ROADMAP_COMPLETE] at the very end.`,
 // ---------------------------------------------------------------------------
 
 export async function POST(req: Request) {
-    const { userId } = await auth();
-    if (!userId) {
+    const user = await currentUser();
+    if (!user) {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
+    const primaryEmail = user.emailAddresses?.[0]?.emailAddress?.toLowerCase() || '';
+    const hasAdvisorAccess =
+        user.publicMetadata?.has_ai_advisor_access === true ||
+        user.publicMetadata?.has_yearly_subscription === true ||
+        ADMIN_EMAILS.has(primaryEmail);
+
+    if (!hasAdvisorAccess) {
+        return NextResponse.json({ error: 'Active AI Integration Advisor subscription required' }, { status: 403 });
+    }
+
+    const userId = user.id;
+
     try {
-        const body = await req.json();
+        const rawBody = await req.text();
+        if (rawBody.length > 65536) {
+            return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
+        }
+
+        const body = JSON.parse(rawBody);
         const {
             sessionId,
-            message,
+            message: rawMessage,
             currentPhase = 1,
-            conversationHistory = [],
+            conversationHistory: rawHistory = [],
             businessProfile = {},
         } = body;
 
+        const message = String(rawMessage || '').trim().slice(0, MAX_MESSAGE_CHARS);
+        if (!message) {
+            return NextResponse.json({ error: 'Message required' }, { status: 400 });
+        }
+
+        const validSessionId =
+            typeof sessionId === 'string' && SESSION_ID_RE.test(sessionId)
+                ? sessionId
+                : null;
+
+        if (validSessionId) {
+            const { data: existingSession } = await supabaseAdmin
+                .from('ai_advisor_sessions')
+                .select('user_id')
+                .eq('id', validSessionId)
+                .maybeSingle();
+
+            if (existingSession && existingSession.user_id !== userId) {
+                return NextResponse.json({ error: 'Forbidden session reference' }, { status: 403 });
+            }
+        }
+
+        const conversationHistory = Array.isArray(rawHistory)
+            ? rawHistory.slice(-MAX_HISTORY_TURNS).map((m: { role?: unknown; content?: unknown }) => ({
+                  role: m?.role === 'assistant' ? 'assistant' : 'user',
+                  content: String(m?.content || '').slice(0, MAX_MESSAGE_CHARS),
+              }))
+            : [];
+
         // Build the system prompt for the current phase
-        const phase = PHASES.find((p) => p.id === currentPhase) || PHASES[0];
+        const safePhaseId = Math.min(Math.max(Number(currentPhase) || 1, 1), 5);
+        const phase = PHASES.find((p) => p.id === safePhaseId) || PHASES[0];
 
         // Search Exogram vault for relevant business context (non-blocking)
         let vaultContext = '';
         try {
-            if (message && currentPhase <= 4) {
+            if (message && safePhaseId <= 4) {
                 const searchResults = await searchBusinessContext(
-                    `${businessProfile.industry || ''} ${message}`.trim(),
+                    `${String(businessProfile?.industry || '').slice(0, 80)} ${message.slice(0, 200)}`.trim(),
                     3
                 );
                 if (searchResults.length > 0) {
@@ -181,7 +233,7 @@ export async function POST(req: Request) {
         const systemPrompt = `${phase.systemContext}
 
 Current business profile gathered so far:
-${JSON.stringify(businessProfile, null, 2)}
+${JSON.stringify(businessProfile, null, 2).slice(0, 4000)}
 ${vaultContext}
 
 Rules:
@@ -216,7 +268,7 @@ Rules:
 
         // Extract roadmap JSON if present
         let roadmapData = null;
-        if (roadmapComplete || currentPhase === 5) {
+        if (roadmapComplete || safePhaseId === 5) {
             const jsonMatch = cleanResponse.match(/```json\s*([\s\S]*?)\s*```/);
             if (jsonMatch) {
                 try {
@@ -227,13 +279,15 @@ Rules:
             }
         }
 
-        // Store key facts to Exogram Vault (async, non-blocking)
-        if (phaseComplete && sessionId) {
+        // Store anonymized industry benchmark facts to Exogram Vault (scrubbed of client names and raw chat PII)
+        if (phaseComplete && validSessionId) {
             try {
-                const summary = `Phase ${currentPhase} (${phase.name}) completed for ${businessProfile.name || 'unknown business'} in ${businessProfile.industry || 'unknown industry'}. Key info: ${message.slice(0, 200)}`;
+                const anonymizedIndustry = String(businessProfile?.industry || 'general enterprise').slice(0, 80);
+                const anonymizedSize = String(businessProfile?.size || 'unspecified size').slice(0, 40);
+                const summary = `Phase ${safePhaseId} (${phase.name}) completed for an organization in ${anonymizedIndustry} (${anonymizedSize}).`;
                 await storeBusinessFact(
-                    sessionId,
-                    `phase_${currentPhase}_summary`,
+                    validSessionId,
+                    `phase_${safePhaseId}_summary`,
                     summary,
                     0.9
                 );
@@ -243,23 +297,23 @@ Rules:
         }
 
         // Save to Supabase
-        if (sessionId) {
+        if (validSessionId) {
             const updatedHistory = [
                 ...conversationHistory,
                 { role: 'user', content: message },
                 { role: 'assistant', content: cleanResponse },
             ];
 
-            const nextPhase = phaseComplete ? Math.min(currentPhase + 1, 5) : currentPhase;
+            const nextPhase = phaseComplete ? Math.min(safePhaseId + 1, 5) : safePhaseId;
             const status = roadmapComplete ? 'completed' : 'in_progress';
 
             await supabaseAdmin.from('ai_advisor_sessions').upsert(
                 {
-                    id: sessionId,
+                    id: validSessionId,
                     user_id: userId,
                     status,
                     current_phase: nextPhase,
-                    business_profile: businessProfile,
+                    business_profile: businessProfile && typeof businessProfile === 'object' ? businessProfile : {},
                     conversation_history: updatedHistory,
                     generated_plan: roadmapData,
                     updated_at: new Date().toISOString(),
@@ -274,8 +328,8 @@ Rules:
             roadmapComplete,
             roadmapData,
             nextPhase: phaseComplete
-                ? Math.min(currentPhase + 1, 5)
-                : currentPhase,
+                ? Math.min(safePhaseId + 1, 5)
+                : safePhaseId,
         });
     } catch (error) {
         console.error('[AI Advisor] Chat error:', error);

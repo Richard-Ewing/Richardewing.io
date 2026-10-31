@@ -564,12 +564,20 @@ if (fs.existsSync(compiledAppDir)) {
   );
 }
 
-// 8. Agent Skills Security & Hygiene Gate
+// 8. Agent Skills Supply-Chain & Stateful Security Ledger Gate
 try {
   const auditOutput = execSync(`node "${path.join(__dirname, 'audit-agent-skills.mjs')}"`, { encoding: 'utf8' });
   console.log(auditOutput.trim());
 } catch (err) {
   console.error(`[SECURITY ERROR] audit-agent-skills.mjs failed:\n${err.stdout || err.message}`);
+  errorCount++;
+}
+
+try {
+  const ledgerOutput = execSync(`node "${path.join(__dirname, 'run-security-ledger-audit.mjs')}" --strict`, { encoding: 'utf8' });
+  console.log(ledgerOutput.trim());
+} catch (err) {
+  console.error(`[SECURITY ERROR] run-security-ledger-audit.mjs failed:\n${err.stdout || err.message}`);
   errorCount++;
 }
 

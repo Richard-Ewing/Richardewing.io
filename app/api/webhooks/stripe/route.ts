@@ -3,13 +3,42 @@ import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { clerkClient } from '@clerk/nextjs/server';
 import { supabaseAdmin } from '@/lib/supabase';
+import { PRODUCTS } from '@/lib/products';
 
 export const dynamic = 'force-dynamic';
+
+const AI_ADVISOR_PRICE_IDS = new Set([
+    'price_1Tb4CF5swlCTzLiTNiK2Tsoh',
+    'price_1Tb4CF5swlCTzLiTwEzkPBTO',
+]);
 
 function getStripe() {
     return new Stripe(process.env.STRIPE_SECRET_KEY || '', {
         httpClient: Stripe.createFetchHttpClient(),
     });
+}
+
+function generateSecureHex(byteLength = 6): string {
+    const bytes = new Uint8Array(byteLength);
+    globalThis.crypto.getRandomValues(bytes);
+    return Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join('').toUpperCase();
+}
+
+function getMinimumExpectedCents(specificItemId: string): number {
+    if (PRODUCTS[specificItemId]) {
+        return Math.floor(PRODUCTS[specificItemId].price * 0.5);
+    }
+    if (specificItemId.startsWith('enterprise_')) {
+        const baseId = specificItemId.replace(/^enterprise_/, '');
+        return Math.floor((PRODUCTS[baseId]?.price || 150000) * 0.5);
+    }
+    if (specificItemId.startsWith('module_')) {
+        return Math.floor(PRODUCTS.single_track.price * 0.5);
+    }
+    if (specificItemId.startsWith('skill_')) {
+        return 1900;
+    }
+    return 2900;
 }
 
 export async function POST(req: Request) {
@@ -25,36 +54,50 @@ export async function POST(req: Request) {
             signature,
             process.env.STRIPE_WEBHOOK_SECRET || ''
         );
-    } catch (error: any) {
-        console.error('Webhook signature verification failed.', error.message);
-        return new NextResponse(`Webhook Error: ${error.message}`, { status: 400 });
+    } catch {
+        console.error('Webhook signature verification failed.');
+        return new NextResponse('Webhook signature verification failed', { status: 400 });
     }
 
     const session = event.data.object as Stripe.Checkout.Session;
 
     // Handle successful checkouts
     if (event.type === 'checkout.session.completed') {
+        const hasValidCouponZero =
+            session.payment_status === 'no_payment_required' &&
+            (session.total_details?.amount_discount ?? 0) > 0;
+
+        if (session.payment_status !== 'paid' && !hasValidCouponZero) {
+            console.warn(`Checkout session ${session.id} completed with status ${session.payment_status}; skipping entitlement grant.`);
+            return new NextResponse('Awaiting payment settlement', { status: 200 });
+        }
+
         // We pass the Clerk UserID via standard Stripe client_reference_id, optionally with a specific item ID
         const rawReferenceId = session.client_reference_id;
 
         if (rawReferenceId) {
             const parts = rawReferenceId.split('::');
-            const userId = parts[0];
-            const specificItemId = parts.length > 1 ? parts[1] : null;
+            const userId = parts[0]?.trim();
+            const rawSpecificItemId = parts.length > 1 ? parts[1]?.trim() : null;
+            const specificItemId =
+                rawSpecificItemId && /^[a-zA-Z0-9_-]{1,80}$/.test(rawSpecificItemId)
+                    ? rawSpecificItemId
+                    : null;
+
+            if (!userId || !/^user_[a-zA-Z0-9]+$/.test(userId)) {
+                console.warn('Invalid Clerk userId format in client_reference_id.');
+                return new NextResponse('Webhook processed', { status: 200 });
+            }
 
             try {
-                // Determine what was purchased to set the right metadata grants
-                // If it's a subscription mode checkout, grant universal access
                 const isSubscription = session.mode === 'subscription';
-
                 const client = await clerkClient();
-                
+
                 if (isSubscription) {
-                    // Fetch the line items to determine the precise quantity purchased for B2B Team Licensing
                     const lineItems = await stripe.checkout.sessions.listLineItems(session.id);
                     const quantity = lineItems.data.reduce((total, item) => total + (item.quantity || 1), 0);
                     const isTeamPurchase = quantity > 1;
-                    // Update Stripe Subscription to persistently store the Clerk User ID for downstream revocation hooks
+
                     if (session.subscription) {
                         try {
                             await stripe.subscriptions.update(session.subscription as string, {
@@ -65,37 +108,45 @@ export async function POST(req: Request) {
                         }
                     }
 
-                    // Base metadata grant
-                    const metadataPayload: any = {
-                        has_yearly_subscription: true,
-                        subscription_status: 'active'
+                    let hasAiAdvisorItem =
+                        specificItemId === 'ai_advisor_monthly' ||
+                        specificItemId === 'ai_advisor_yearly';
+                    let hasVaultOrRetainerItem = false;
+
+                    for (const item of lineItems.data) {
+                        const isAdvisorLine =
+                            (item.price?.id && AI_ADVISOR_PRICE_IDS.has(item.price.id)) ||
+                            Boolean(item.description?.toLowerCase().includes('ai integration advisor'));
+                        if (isAdvisorLine) {
+                            hasAiAdvisorItem = true;
+                        } else {
+                            hasVaultOrRetainerItem = true;
+                        }
+                    }
+
+                    const metadataPayload: Record<string, unknown> = {
+                        subscription_status: 'active',
                     };
 
-                    // Enterprise B2B Team Licensing injection
-                    if (isTeamPurchase) {
-                        // We embed the Clerk user ID into the code itself for instant O(1) backend lookups
-                        const uniqueSuffix = Math.random().toString(36).substring(2, 8).toUpperCase();
+                    if (hasVaultOrRetainerItem || !hasAiAdvisorItem) {
+                        metadataPayload.has_yearly_subscription = true;
+                    }
+
+                    if (hasAiAdvisorItem) {
+                        metadataPayload.has_ai_advisor_access = true;
+                        console.log(`AI Advisor access granted to ${userId}`);
+                    }
+
+                    if (isTeamPurchase && (hasVaultOrRetainerItem || !hasAiAdvisorItem)) {
+                        const uniqueSuffix = generateSecureHex(6);
                         const inviteCode = `REQ-${userId}-${uniqueSuffix}`;
-                        
+
                         metadataPayload.is_team_admin = true;
                         metadataPayload.team_seats_total = quantity;
                         metadataPayload.team_invite_code = inviteCode;
                         metadataPayload.team_members_claimed = [];
-                        
-                        console.log(`Enterprise B2B License activated: ${quantity} seats granted to ${userId}`);
-                    }
 
-                    // AI Integration Advisor subscription detection
-                    // Check line items for the AI Advisor product
-                    try {
-                        for (const item of lineItems.data) {
-                            if (item.price?.id === 'price_1Tb4CF5swlCTzLiTNiK2Tsoh' || item.price?.id === 'price_1Tb4CF5swlCTzLiTwEzkPBTO' || item.description?.toLowerCase().includes('ai integration advisor')) {
-                                metadataPayload.has_ai_advisor_access = true;
-                                console.log(`AI Advisor access granted to ${userId}`);
-                            }
-                        }
-                    } catch (e) {
-                        console.error('Failed to check AI Advisor line items', e);
+                        console.log(`Enterprise B2B License activated: ${quantity} seats granted to ${userId}`);
                     }
 
                     await client.users.updateUserMetadata(userId, {
@@ -104,47 +155,97 @@ export async function POST(req: Request) {
                 } else {
                     // One-off purchase handling (Guides/Diagnostics/Modules/Skills)
                     const userObj = await client.users.getUser(userId);
-                    const existingUnlockedItems = (userObj.publicMetadata.unlocked_items as string[]) || [];
-                    const existingUnlockedAssets = (userObj.publicMetadata.unlocked_assets as string[]) || [];
-                    
+                    const existingUnlockedItems = Array.isArray(userObj.publicMetadata.unlocked_items)
+                        ? (userObj.publicMetadata.unlocked_items as string[])
+                        : [];
+                    const existingUnlockedAssets = Array.isArray(userObj.publicMetadata.unlocked_assets)
+                        ? (userObj.publicMetadata.unlocked_assets as string[])
+                        : [];
+
                     const updatedUnlockedItems = [...existingUnlockedItems];
                     const updatedUnlockedAssets = [...existingUnlockedAssets];
 
+                    // Compare pre-discount Stripe subtotal/total against product catalog price to block client_reference_id tier spoofing
+                    const effectivePaidCents = Math.max(
+                        session.amount_total ?? 0,
+                        session.amount_subtotal ?? 0
+                    );
+
+                    let verifiedSpecificItemId: string | null = null;
                     if (specificItemId) {
-                        if (specificItemId.startsWith('skill_')) {
-                            const assetSlug = specificItemId.replace('skill_', '');
-                            if (!existingUnlockedAssets.includes(assetSlug)) {
-                                updatedUnlockedAssets.push(assetSlug);
-                            }
+                        const minRequiredCents = getMinimumExpectedCents(specificItemId);
+                        if (effectivePaidCents >= minRequiredCents) {
+                            verifiedSpecificItemId = specificItemId;
                         } else {
-                            if (!existingUnlockedItems.includes(specificItemId)) {
-                                updatedUnlockedItems.push(specificItemId);
-                            }
+                            console.warn(
+                                `Blocked client_reference_id price mismatch for ${userId}: claimed ${specificItemId} (min ${minRequiredCents}c) on ${effectivePaidCents}c checkout.`
+                            );
                         }
                     }
 
-                    await client.users.updateUserMetadata(userId, {
-                        publicMetadata: {
-                            has_premium_guide_access: true,
-                            unlocked_items: updatedUnlockedItems,
-                            unlocked_assets: updatedUnlockedAssets
+                    if (verifiedSpecificItemId) {
+                        if (verifiedSpecificItemId.startsWith('skill_')) {
+                            const assetSlug = verifiedSpecificItemId.replace('skill_', '');
+                            if (assetSlug && !existingUnlockedAssets.includes(assetSlug)) {
+                                updatedUnlockedAssets.push(assetSlug);
+                            }
+                        } else if (!existingUnlockedItems.includes(verifiedSpecificItemId)) {
+                            updatedUnlockedItems.push(verifiedSpecificItemId);
                         }
+                    }
+
+                    const oneOffMetadata: Record<string, unknown> = {
+                        unlocked_items: updatedUnlockedItems,
+                        unlocked_assets: updatedUnlockedAssets,
+                    };
+
+                    if (effectivePaidCents >= 2900) {
+                        oneOffMetadata.has_premium_guide_access = true;
+                    }
+
+                    if (
+                        verifiedSpecificItemId === 'all_access_pass' ||
+                        verifiedSpecificItemId === 'full_curriculum'
+                    ) {
+                        oneOffMetadata.has_yearly_subscription = true;
+                        oneOffMetadata.subscription_status = 'active';
+                    }
+
+                    if (
+                        verifiedSpecificItemId === 'team_license_pass' ||
+                        verifiedSpecificItemId === 'enterprise_team_license_pass' ||
+                        verifiedSpecificItemId === 'enterprise_curriculum_license' ||
+                        verifiedSpecificItemId === 'enterprise_enterprise_curriculum_license'
+                    ) {
+                        const uniqueSuffix = generateSecureHex(6);
+                        oneOffMetadata.has_yearly_subscription = true;
+                        oneOffMetadata.subscription_status = 'active';
+                        oneOffMetadata.is_team_admin = true;
+                        oneOffMetadata.team_seats_total = 10;
+                        oneOffMetadata.team_invite_code = `REQ-${userId}-${uniqueSuffix}`;
+                        oneOffMetadata.team_members_claimed = Array.isArray(userObj.publicMetadata.team_members_claimed)
+                            ? userObj.publicMetadata.team_members_claimed
+                            : [];
+                    }
+
+                    await client.users.updateUserMetadata(userId, {
+                        publicMetadata: oneOffMetadata
                     });
 
                     // Auto-Queue Curriculum in Vault
-                    if (specificItemId) {
+                    if (verifiedSpecificItemId) {
                         let startModule = null;
-                        
-                        if (specificItemId === 'module_engineering') startModule = '1-1';
-                        else if (specificItemId === 'module_ai_economics') startModule = '2-1';
-                        else if (specificItemId === 'module_rd_capital') startModule = '3-1';
-                        else if (specificItemId === 'full_curriculum') startModule = '1-1';
-                        else if (specificItemId.startsWith('module_track_')) {
-                            const trackNum = specificItemId.replace('module_track_', '');
-                            startModule = `${trackNum}-1`;
-                        } else if (specificItemId.startsWith('module_')) {
-                            const trackNum = specificItemId.replace('module_', '');
-                            if (!isNaN(Number(trackNum))) startModule = `${trackNum}-1`;
+
+                        if (verifiedSpecificItemId === 'module_engineering') startModule = '1-1';
+                        else if (verifiedSpecificItemId === 'module_ai_economics') startModule = '2-1';
+                        else if (verifiedSpecificItemId === 'module_rd_capital') startModule = '3-1';
+                        else if (verifiedSpecificItemId === 'full_curriculum' || verifiedSpecificItemId === 'all_access_pass') startModule = '1-1';
+                        else if (verifiedSpecificItemId.startsWith('module_track_')) {
+                            const trackNum = verifiedSpecificItemId.replace('module_track_', '');
+                            if (/^\d+$/.test(trackNum)) startModule = `${trackNum}-1`;
+                        } else if (verifiedSpecificItemId.startsWith('module_')) {
+                            const trackNum = verifiedSpecificItemId.replace('module_', '');
+                            if (/^\d+$/.test(trackNum)) startModule = `${trackNum}-1`;
                         }
 
                         if (startModule) {
@@ -175,22 +276,46 @@ export async function POST(req: Request) {
             console.warn('Checkout completed but no client_reference_id (Clerk User ID) was provided.');
         }
     }
-    
+
     // Handle subscription cancellations unconditionally
     if (event.type === 'customer.subscription.deleted') {
         const subscription = event.data.object as Stripe.Subscription;
         const clerkUserId = subscription.metadata?.clerkUserId;
-        
+
         if (clerkUserId) {
             try {
                 const client = await clerkClient();
+                const adminUser = await client.users.getUser(clerkUserId);
+                const claimedMembers = Array.isArray(adminUser.publicMetadata?.team_members_claimed)
+                    ? (adminUser.publicMetadata.team_members_claimed as string[])
+                    : [];
+
                 await client.users.updateUserMetadata(clerkUserId, {
                     publicMetadata: {
                         has_yearly_subscription: false,
                         has_ai_advisor_access: false,
+                        is_team_admin: false,
+                        team_invite_code: null,
                         subscription_status: 'canceled'
                     }
                 });
+
+                for (const memberId of claimedMembers) {
+                    try {
+                        const member = await client.users.getUser(memberId);
+                        if (member.publicMetadata?.claimed_via_team_admin === clerkUserId) {
+                            await client.users.updateUserMetadata(memberId, {
+                                publicMetadata: {
+                                    has_yearly_subscription: false,
+                                    subscription_status: 'canceled'
+                                }
+                            });
+                        }
+                    } catch (memberErr) {
+                        console.error(`Failed to revoke seat for team member ${memberId}`, memberErr);
+                    }
+                }
+
                 console.log(`Access definitively revoked for Clerk User: ${clerkUserId}`);
             } catch (error) {
                 console.error('Failed to enforce subscription revocation on Clerk metadata', error);

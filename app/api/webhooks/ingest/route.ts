@@ -13,8 +13,9 @@ export async function POST(req: Request) {
   try {
     const authHeader = req.headers.get('authorization');
     const secret = process.env.INGEST_WEBHOOK_SECRET || process.env.CRON_SECRET;
+    const hasValidSecret = Boolean(secret && secret.length >= 16 && authHeader === `Bearer ${secret}`);
 
-    if (secret && authHeader !== `Bearer ${secret}`) {
+    if (!hasValidSecret) {
       return NextResponse.json({ error: 'Unauthorized webhook invocation' }, { status: 401 });
     }
 

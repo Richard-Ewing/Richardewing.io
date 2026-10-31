@@ -140,19 +140,36 @@ Before performing complex refactors or debugging mysterious failures:
 
 ---
 
-## 6. Systematic Debugging & Error Recovery Loop
+## 6. Systematic Debugging, 3-Strike Circuit Breaker & Defense-in-Depth (`obra/superpowers` Graft)
 
-When a build or test fails, autonomous agents often resort to "shotgun debugging": making arbitrary edits across unrelated files in hope that the error disappears.
+When a build, hydration check, or edge route fails, autonomous agents frequently fall into "shotgun debugging": making arbitrary edits across unrelated files hoping the symptom disappears.
 
-Follow Addy Osmani's **Systematic Recovery Protocol**:
-1. **Isolate the Failing Layer**: Determine whether the failure is a TypeScript compilation error, an SSR hydration mismatch, an unhandled promise rejection, or a linter violation.
-2. **Read the Exact Stack Trace**: Trace the first failing file and line number. Do not make assumptions based on error summaries.
-3. **One Mutation at a Time**: Change one variable, interface, or component boundary. Test immediately.
-4. **Deterministic Re-verification**: Run the mechanical QA gate (`node .agents/scripts/verify-qa.mjs`) to prove no side-effects were introduced.
+Enforce this strict 4-part recovery and hardening discipline:
+1. **Isolate the Failing Layer & Read Full Stack Traces**: Determine whether the failure is a TypeScript compilation error, an SSR hydration mismatch, a Cloudflare Workers V8 isolate constraint, or a schema violation. Trace the exact first failing file and line number before proposing any edit.
+2. **One Mutation at a Time**: Change a single variable, interface, or component boundary per test run.
+3. **The 3-Strike Architecture Circuit Breaker**: If **2 consecutive fix attempts** fail to resolve the issue, **STOP PATCHING IMMEDIATELY**. Attempt #3 is forbidden until you trace backward from the symptom to its original upstream data trigger (`root-cause-tracing`) and evaluate whether the component or route architecture itself is flawed.
+4. **4-Layer Defense-in-Depth Validation**: Whenever fixing a data, auth, URL state, or payload bug, validate across all four boundaries so the entire bug class becomes structurally impossible:
+   - *Layer 1 (Entry Gate)*: Client form / URL parameter (`nuqs`) normalization.
+   - *Layer 2 (API Contract)*: Zod / strict type & byte-size validation at the Route Handler boundary (`<= 16KB` on public ingestion).
+   - *Layer 3 (Runtime / Isolate Guard)*: Prerender safety (`typeof window !== 'undefined'`), fail-closed secret verification (`Boolean(secret && secret.length >= 16)`), and zero module-scope mutable request state.
+   - *Layer 4 (Verification Probe)*: Mechanical regression check in `verify-qa.mjs` or `run-security-ledger-audit.mjs`.
 
 ---
 
-## 7. Holistic Ecosystem Interconnectivity & Big-Picture Flywheel Verification
+## 7. Two-Stage Subagent Review & Diff-Aware Browser QA (`superpowers` + `gstack` Graft)
+
+Whenever subagents complete implementation tasks or before claiming any UI/code task is complete (`verification-before-completion`):
+1. **Gate A: Spec & Blast-Radius Compliance Review (Runs First)**:
+   - Compare `git diff` directly against the `specify` Acceptance Criteria and Blast Radius Guard.
+   - Confirm zero omitted requirements, zero gold-plated unrequested features, and zero mutations to out-of-scope files.
+2. **Gate B: Code Craft, Security Ledger & HWS v2.0 Review (Runs Second)**:
+   - Execute `node .agents/scripts/verify-qa.mjs`, `node .agents/scripts/audit-agent-skills.mjs` (when `.agents/` is touched), and `node .agents/scripts/run-security-ledger-audit.mjs --strict` (when `app/api/` or `middleware.ts` is touched).
+3. **Diff-Aware Interactive Route Verification**:
+   - Inspect `git diff --name-only` to identify touched calculators (`/reality-check`, `/tools/*`), forms, or `<ScorecardCheckoutDrawer />` mounts, verifying zero hydration errors, real `fetch` POST wiring, and clean `npm run build` output before deploying via `npx wrangler deploy`.
+
+---
+
+## 8. Holistic Ecosystem Interconnectivity & Big-Picture Flywheel Verification
 
 Every Spec-Driven implementation (`specify` -> `plan` -> `tasks` -> `implement` -> `converge`) must verify ecosystem-wide interconnectivity before completion:
 1. **Macro-to-Micro Zoom-Out**: Verify how every new or modified route links into the broader ecosystem (`RichardEwing.io` Advisory & Diagnostics <-> `Exogram.ai` Runtime Governance <-> `CareerWin.ai` Human Evidence <-> `/schedule` Cal.com Booking <-> Stripe Checkout Ladder).

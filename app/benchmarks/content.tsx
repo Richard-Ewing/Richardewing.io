@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
-import { supabaseAdmin } from '../../lib/supabase';
 import { Activity, BarChart2, ShieldAlert } from 'lucide-react';
 
 // For this static generation, we are mocking the fetch from Supabase benchmark_distributions
