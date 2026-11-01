@@ -50,7 +50,7 @@ const BANNED_PHRASE_PATTERNS = [
   { label: 'let that sink in', re: /\blet that sink in\b/i },
   { label: 'read that again', re: /\bread that again\b/i },
   { label: 'full stop', re: /\bfull stop\b/i },
-  { label: 'here is the thing', re: /\bhere(?:'s| is) the thing\b/i },
+  { label: 'here is the thing', re: /\bhere(?:['\u2019]s| is) the thing\b/i },
   { label: 'middle managers', re: /\bmiddle managers\b/i },
   { label: 'the C-suite', re: /\bthe c-suite\b/i },
 ];
@@ -58,9 +58,9 @@ const BANNED_PHRASE_PATTERNS = [
 const NAMED_ROLE_RE =
   /\b(?:CEO|CFO|COO|CPO|Chief Product Officer|VP of Operations|VP of Engineering|Director of Finance|Customer Support Manager|Engineering Manager|Product Ops Lead|FinOps Manager)\b/;
 
-function sanitizeExtractedText(raw) {
+export function sanitizeExtractedText(raw) {
   let text = String(raw || '')
-    .replace(/[\u2013\u2014]/g, ': ')
+    .replace(/\s*[\u2013\u2014]\s*/g, ': ')
     .replace(/\s+/g, ' ')
     .trim();
 
@@ -74,11 +74,18 @@ function sanitizeExtractedText(raw) {
     [/\bthe bottom line\b/gi, 'The Financial Readout'],
     [/\bmissing (?:layer|piece)\b/gi, 'operational control'],
     [/\bproduction-ready\b/gi, 'battle-tested'],
-    [/\bempower(?:s|ed|ing)?\b/gi, 'equip'],
+    [/\bempowerment\b/gi, 'operational ownership'],
+    [/\bempower(?:s|ed|ing|ment)?\b/gi, 'equip'],
     [/\bfoster(?:s|ed|ing)?\b/gi, 'build'],
     [/\bgame[- ]changer\b/gi, 'structural advantage'],
     [/\brevolutionary\b/gi, 'practical'],
     [/\btransformative\b/gi, 'measurable'],
+    [/\bnavigate the landscape\b/gi, 'audit the market'],
+    [/\bat the end of the day\b/gi, 'in practice'],
+    [/\blet that sink in\b/gi, 'verify the math'],
+    [/\bread that again\b/gi, 'check that number twice'],
+    [/\bfull stop\b/gi, 'period'],
+    [/\bhere(?:['\u2019]s| is) the thing\b/gi, 'the operational reality'],
     [/\bmiddle managers\b/gi, 'Engineering Managers and Operations Leads'],
     [/\bthe c-suite\b/gi, 'the CEO, CFO, and COO'],
   ];

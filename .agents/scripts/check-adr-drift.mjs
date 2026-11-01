@@ -41,7 +41,7 @@ const HISTORICAL_PATH_REMAPS = new Map([
   ['components/SiteFooter.tsx', 'Optional sibling marketing shell reference in ADR-0019'],
 ]);
 
-const PATH_TOKEN_RE = /`((?:app|lib|components|scripts|\.agents|docs|public)\/[a-zA-Z0-9_./[\]*<>-]+|middleware\.ts|wrangler\.jsonc|next\.config\.ts|package\.json)`/g;
+const PATH_TOKEN_RE = /`((?:app|lib|components|scripts|\.agents|docs|public)\/[a-zA-Z0-9_./[\]*<>-]+|middleware\.ts|wrangler\.jsonc|next\.config\.ts|open-next\.config\.ts|package\.json)`/g;
 
 function extractStatus(markdown) {
   const match = markdown.match(/##\s+Status\s*\r?\n\s*([^\r\n]+)/i);

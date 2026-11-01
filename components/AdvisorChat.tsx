@@ -318,7 +318,11 @@ export default function AdvisorChat() {
                                 typeof evt.error === 'string' && evt.error.trim()
                                     ? evt.error
                                     : 'Upstream advisor stream interrupted. Please retry.';
-                            applyStreamUpdate(streamedProse || errMsg, streamedWidgets, false);
+                            applyStreamUpdate(
+                                streamedProse ? `${streamedProse}\n\n[${errMsg}]` : errMsg,
+                                streamedWidgets,
+                                false
+                            );
                         }
                     } catch {
                         // Ignore malformed SSE comment/keepalive frame
@@ -347,8 +351,9 @@ export default function AdvisorChat() {
                 }
 
                 if (!receivedTerminalEvent) {
+                    const eofMsg = 'Connection interrupted before the readout completed. Please retry.';
                     applyStreamUpdate(
-                        streamedProse || 'Connection interrupted before the readout completed. Please retry.',
+                        streamedProse ? `${streamedProse}\n\n[${eofMsg}]` : eofMsg,
                         streamedWidgets,
                         false
                     );

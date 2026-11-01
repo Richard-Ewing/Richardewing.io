@@ -123,21 +123,18 @@ function normalizeKey(raw) {
 // Main Curriculum Health & Dependency Drift Audit
 // ---------------------------------------------------------------------------
 
-function main() {
-  const args = new Set(process.argv.slice(2));
-  const updateBaseline = args.has('--update-baseline');
-  const isStrict = args.has('--strict');
-  const isStrictMoat = args.has('--strict-moat');
-
-  const { modules, getModule } = loadTsFile(path.join(ROOT_DIR, 'app/lib/curriculum-data.ts'));
-  const { tracks } = loadTsFile(path.join(ROOT_DIR, 'app/lib/curriculum-tracks-ui.ts'));
-  const { CANONICAL_CONCEPTS } = loadTsFile(path.join(ROOT_DIR, 'app/lib/concept-corpus.ts'));
-  const { RESEARCH_CORPUS } = loadTsFile(path.join(ROOT_DIR, 'app/lib/research-corpus.ts'));
-
+export function auditCurriculumHealth({
+  modules,
+  getModule,
+  tracks,
+  canonicalConcepts,
+  researchCorpus,
+  previousFingerprints = null,
+}) {
   // Index concepts by slug and normalized title
   const conceptBySlug = new Map();
   const conceptByNorm = new Map();
-  for (const c of CANONICAL_CONCEPTS || []) {
+  for (const c of canonicalConcepts || []) {
     const digest = sha256({
       slug: c.slug,
       title: c.title,
@@ -155,7 +152,7 @@ function main() {
   const researchByConcept = new Map();
   const researchByDomain = new Map();
   const researchById = new Map();
-  for (const r of RESEARCH_CORPUS || []) {
+  for (const r of researchCorpus || []) {
     const digest = sha256({
       id: r.id,
       title: r.title,
@@ -194,16 +191,6 @@ function main() {
       if (m.id) {
         trackByModuleSlug.set(m.id, tr);
       }
-    }
-  }
-
-  // Load previous fingerprints if present
-  let previousFingerprints = null;
-  if (fs.existsSync(FINGERPRINT_PATH)) {
-    try {
-      previousFingerprints = JSON.parse(fs.readFileSync(FINGERPRINT_PATH, 'utf8'));
-    } catch {
-      previousFingerprints = null;
     }
   }
 
@@ -352,7 +339,7 @@ function main() {
       researchDepCount: sortedResearch.length,
       moduleHash,
       upstreamHash,
-      assetEngineComplete: missingSteps.length === 0,
+      assetEngineComplete: missingSteps.length === 0 && lessonCount > 0,
     };
 
     const prev = previousFingerprints?.modules?.[slug];
@@ -373,6 +360,59 @@ function main() {
       }
     }
   }
+
+  return {
+    moduleSlugs,
+    liveCount,
+    waitlistModules,
+    nextModuleFingerprints,
+    staleUpstreamModules,
+    updatedModules,
+    addedModules,
+    incompleteMoatModules,
+    zeroLessonModules,
+  };
+}
+
+function main() {
+  const args = new Set(process.argv.slice(2));
+  const updateBaseline = args.has('--update-baseline');
+  const isStrict = args.has('--strict');
+  const isStrictMoat = args.has('--strict-moat');
+
+  const { modules, getModule } = loadTsFile(path.join(ROOT_DIR, 'app/lib/curriculum-data.ts'));
+  const { tracks } = loadTsFile(path.join(ROOT_DIR, 'app/lib/curriculum-tracks-ui.ts'));
+  const { CANONICAL_CONCEPTS } = loadTsFile(path.join(ROOT_DIR, 'app/lib/concept-corpus.ts'));
+  const { RESEARCH_CORPUS } = loadTsFile(path.join(ROOT_DIR, 'app/lib/research-corpus.ts'));
+
+  // Load previous fingerprints if present
+  let previousFingerprints = null;
+  if (fs.existsSync(FINGERPRINT_PATH)) {
+    try {
+      previousFingerprints = JSON.parse(fs.readFileSync(FINGERPRINT_PATH, 'utf8'));
+    } catch {
+      previousFingerprints = null;
+    }
+  }
+
+  const {
+    moduleSlugs,
+    liveCount,
+    waitlistModules,
+    nextModuleFingerprints,
+    staleUpstreamModules,
+    updatedModules,
+    addedModules,
+    incompleteMoatModules,
+    zeroLessonModules,
+  } = auditCurriculumHealth({
+    modules,
+    getModule,
+    tracks,
+    canonicalConcepts: CANONICAL_CONCEPTS,
+    researchCorpus: RESEARCH_CORPUS,
+    previousFingerprints,
+  });
 
   fs.mkdirSync(SCRATCH_DIR, { recursive: true });
 
@@ -437,10 +477,12 @@ function main() {
   }
 }
 
-try {
-  main();
-  process.exit(0);
-} catch (err) {
-  console.error(`[CURRICULUM HEALTH FATAL] ${err instanceof Error ? err.message : String(err)}`);
-  process.exit(1);
+if (path.resolve(process.argv[1] || '') === __filename) {
+  try {
+    main();
+    process.exit(0);
+  } catch (err) {
+    console.error(`[CURRICULUM HEALTH FATAL] ${err instanceof Error ? err.message : String(err)}`);
+    process.exit(1);
+  }
 }

@@ -47,8 +47,26 @@ CREATE TABLE IF NOT EXISTS public.sovereign_distribution_queue (
         CHECK (status <> 'dispatched' OR dispatched_at IS NOT NULL),
 
     CONSTRAINT human_approval_required_before_claim
-        CHECK (status NOT IN ('approved', 'claiming') OR approved_by_human_at IS NOT NULL)
+        CHECK (status NOT IN ('approved', 'claiming') OR approved_by_human_at IS NOT NULL),
+
+    CONSTRAINT claiming_timestamp_required
+        CHECK (status <> 'claiming' OR claimed_at IS NOT NULL)
 );
+
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1
+        FROM pg_constraint
+        WHERE conname = 'claiming_timestamp_required'
+          AND conrelid = 'public.sovereign_distribution_queue'::regclass
+    ) THEN
+        ALTER TABLE public.sovereign_distribution_queue
+            ADD CONSTRAINT claiming_timestamp_required
+            CHECK (status <> 'claiming' OR claimed_at IS NOT NULL);
+    END IF;
+END
+$$;
 
 CREATE INDEX IF NOT EXISTS idx_sovereign_distribution_due
     ON public.sovereign_distribution_queue (scheduled_for ASC, created_at ASC)
@@ -75,19 +93,33 @@ CREATE POLICY sovereign_distribution_service_role_only
     WITH CHECK (true);
 
 -- Atomic job claimer preventing concurrent OAuth refresh races or double posts
--- Also reclaims stale 'claiming' leases older than 10 minutes after a Worker crash
+-- Dead-letters exhausted stale leases and reclaims retryable stale 'claiming' leases older than 10 minutes
 CREATE OR REPLACE FUNCTION public.claim_due_distribution_jobs(
     batch_size INT DEFAULT 5,
     worker_id TEXT DEFAULT 'cloudflare-edge-dispatcher'
 )
 RETURNS SETOF public.sovereign_distribution_queue
 LANGUAGE plpgsql
-SECURITY DEFINER
+SECURITY INVOKER
 SET search_path = public
 AS $$
 DECLARE
     safe_limit INT := GREATEST(1, LEAST(COALESCE(batch_size, 5), 50));
 BEGIN
+    UPDATE public.sovereign_distribution_queue
+    SET status = 'failed',
+        last_error = COALESCE(last_error, 'Lease expired after reaching max_attempts'),
+        updated_at = now()
+    WHERE id IN (
+        SELECT q.id
+        FROM public.sovereign_distribution_queue AS q
+        WHERE q.status = 'claiming'
+          AND q.claimed_at IS NOT NULL
+          AND q.claimed_at <= now() - interval '10 minutes'
+          AND q.attempt_count >= q.max_attempts
+        FOR UPDATE SKIP LOCKED
+    );
+
     RETURN QUERY
     WITH due_jobs AS (
         SELECT q.id

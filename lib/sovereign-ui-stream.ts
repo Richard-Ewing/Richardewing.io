@@ -48,35 +48,53 @@ export interface IncrementalParseSnapshot {
 // Security Sanitization: Strict URI & Script Protocol Blocker
 // ---------------------------------------------------------------------------
 
+const FORBIDDEN_OBJECT_KEYS = new Set(['__proto__', 'constructor', 'prototype']);
 const DANGEROUS_SCHEME_RE = /^(?:javascript|data|vbscript|file|blob)\s*:/i;
-const INLINE_DANGEROUS_URI_RE = /(?:javascript|vbscript)\s*:|data\s*:\s*text\/html/i;
 
 function decodeNumericHtmlEntities(input: string): string {
   return input
     .replace(/&#x([0-9a-f]+);?/gi, (_, hex) => {
       const cp = parseInt(hex, 16);
-      return Number.isFinite(cp) && cp > 0 && cp <= 0x10ffff ? String.fromCodePoint(cp) : '';
+      return Number.isFinite(cp) && cp >= 0 && cp <= 0x10ffff ? String.fromCodePoint(cp) : '\u0000';
     })
     .replace(/&#(\d+);?/g, (_, dec) => {
       const cp = parseInt(dec, 10);
-      return Number.isFinite(cp) && cp > 0 && cp <= 0x10ffff ? String.fromCodePoint(cp) : '';
+      return Number.isFinite(cp) && cp >= 0 && cp <= 0x10ffff ? String.fromCodePoint(cp) : '\u0000';
     });
 }
 
 export function sanitizeSafeUrl(raw: string): string | null {
   const trimmed = String(raw || '').trim();
   if (!trimmed) return '';
-  const normalized = decodeNumericHtmlEntities(trimmed).replace(/[\u0000-\u0020\u007f]+/g, '');
-  if (DANGEROUS_SCHEME_RE.test(normalized)) {
+  const decoded = decodeNumericHtmlEntities(trimmed);
+  if (/[\u0000-\u001f\u007f\\]/.test(trimmed) || /[\u0000-\u001f\u007f\\]/.test(decoded)) {
     return null;
   }
-  if (
-    trimmed.startsWith('/') ||
-    trimmed.startsWith('https://') ||
-    trimmed.startsWith('http://') ||
-    trimmed.startsWith('mailto:')
-  ) {
-    if (trimmed.startsWith('//')) return null;
+  if (DANGEROUS_SCHEME_RE.test(decoded.replace(/\s+/g, ''))) {
+    return null;
+  }
+  if (trimmed.startsWith('/')) {
+    if (
+      trimmed.startsWith('//') ||
+      trimmed.startsWith('/\\') ||
+      decoded.startsWith('//') ||
+      decoded.startsWith('/\\')
+    ) {
+      return null;
+    }
+    return trimmed;
+  }
+  if (trimmed.startsWith('https://') || trimmed.startsWith('http://')) {
+    try {
+      const u = new URL(trimmed);
+      if (u.protocol !== 'https:' && u.protocol !== 'http:') return null;
+      if (!u.hostname) return null;
+      return trimmed;
+    } catch {
+      return null;
+    }
+  }
+  if (trimmed.startsWith('mailto:')) {
     return trimmed;
   }
   return null;
@@ -99,7 +117,13 @@ function containsDangerousUrlProp(val: unknown, keyHint = ''): boolean {
     return val.some((item) => containsDangerousUrlProp(item, keyHint));
   }
   if (val && typeof val === 'object') {
-    return Object.entries(val as Record<string, unknown>).some(([k, v]) =>
+    const record = val as Record<string, unknown>;
+    for (const k of Object.getOwnPropertyNames(record)) {
+      if (FORBIDDEN_OBJECT_KEYS.has(k)) {
+        return true;
+      }
+    }
+    return Object.entries(record).some(([k, v]) =>
       containsDangerousUrlProp(v, k)
     );
   }
@@ -108,6 +132,7 @@ function containsDangerousUrlProp(val: unknown, keyHint = ''): boolean {
 
 const SafeOptionalUrlSchema = z
   .string()
+  .trim()
   .default('')
   .refine((val) => val === '' || sanitizeSafeUrl(val) !== null, {
     message: 'Blocked unsafe script/data URI or disallowed URL protocol',
@@ -115,8 +140,9 @@ const SafeOptionalUrlSchema = z
 
 const SafeRequiredHrefSchema = z
   .string()
+  .trim()
   .min(1)
-  .refine((val) => sanitizeSafeUrl(val) !== null, {
+  .refine((val) => Boolean(sanitizeSafeUrl(val)), {
     message: 'Blocked unsafe script/data URI or disallowed CTA href protocol',
   });
 
@@ -355,6 +381,9 @@ function parseStatementLine(rawStatement: string): { id: string | null; expr: Ra
 
   const assignMatch = trimmed.match(/^([A-Za-z_$][A-Za-z0-9_$-]*)\s*=\s*([\s\S]+)$/);
   const id = assignMatch ? assignMatch[1] : null;
+  if (id && FORBIDDEN_OBJECT_KEYS.has(id)) {
+    throw new Error(`Blocked forbidden key: '${id}'`);
+  }
   const rhs = assignMatch ? assignMatch[2].trim() : trimmed;
 
   const cursor = new ExprCursor(rhs);
@@ -431,6 +460,7 @@ export function createIncrementalUiParser<Entries extends Record<string, WidgetS
   let inUiFence = false;
   let inOtherFence = false;
   let autoSeq = 0;
+  let evalForbiddenCounter = 0;
 
   function looksLikeBareUiLine(trimmed: string): boolean {
     const assignMatch = trimmed.match(/^([A-Za-z_$][A-Za-z0-9_$-]*)\s*=\s*([A-Za-z_$][A-Za-z0-9_$-]*)\s*\(/);
@@ -538,14 +568,32 @@ export function createIncrementalUiParser<Entries extends Record<string, WidgetS
       return resolvedItems;
     }
     if (node.kind === 'object') {
-      const obj: Record<string, unknown> = {};
+      const target: Record<string, unknown> = {};
       for (const entry of node.entries) {
-        const val = evaluateNode(entry.value, visiting, pendingRefs, evalErrors, `${nodeIdHint}_${entry.key}`);
-        if (val !== undefined) obj[entry.key] = val;
+        const key = entry.key;
+        if (FORBIDDEN_OBJECT_KEYS.has(key)) {
+          evalForbiddenCounter++;
+          evalErrors.add(`Blocked forbidden key: '${key}'`);
+          return undefined;
+        }
+        const val = evaluateNode(entry.value, visiting, pendingRefs, evalErrors, `${nodeIdHint}_${key}`);
+        if (val !== undefined) {
+          Object.defineProperty(target, key, {
+            value: val,
+            enumerable: true,
+            writable: true,
+            configurable: true,
+          });
+        }
       }
-      return obj;
+      return target;
     }
     if (node.kind === 'ref') {
+      if (FORBIDDEN_OBJECT_KEYS.has(node.name)) {
+        evalForbiddenCounter++;
+        evalErrors.add(`Blocked forbidden key: '${node.name}'`);
+        return undefined;
+      }
       if (visiting.has(node.name)) {
         evalErrors.add(`Cyclic UI reference blocked: '${node.name}'`);
         return undefined;
@@ -561,44 +609,96 @@ export function createIncrementalUiParser<Entries extends Record<string, WidgetS
     }
 
     // node.kind === 'call'
+    if (FORBIDDEN_OBJECT_KEYS.has(node.callee)) {
+      evalForbiddenCounter++;
+      evalErrors.add(`Blocked forbidden key: '${node.callee}'`);
+      return undefined;
+    }
     const spec = catalog.byName.get(node.callee);
     if (!spec) {
       evalErrors.add(`Unregistered UI constructor rejected: '${node.callee}'`);
       return undefined;
     }
 
+    const forbiddenBeforeArgs = evalForbiddenCounter;
     const evaluatedArgs = node.args.map((arg, idx) =>
       evaluateNode(arg, visiting, pendingRefs, evalErrors, `${nodeIdHint}_arg${idx}`)
     );
+    if (evalForbiddenCounter > forbiddenBeforeArgs) {
+      return undefined;
+    }
 
-    let candidateProps: Record<string, unknown> = {};
+    const candidateProps: Record<string, unknown> = {};
     if (
       evaluatedArgs.length === 1 &&
       (!node.namedArgs || node.namedArgs.length === 0) &&
       evaluatedArgs[0] !== null &&
       typeof evaluatedArgs[0] === 'object' &&
       !Array.isArray(evaluatedArgs[0]) &&
-      !('__sovereignWidget' in (evaluatedArgs[0] as Record<string, unknown>)) &&
+      !Object.prototype.hasOwnProperty.call(evaluatedArgs[0], '__sovereignWidget') &&
       spec.argNames.length > 1
     ) {
-      candidateProps = evaluatedArgs[0] as Record<string, unknown>;
-    } else {
-      spec.argNames.forEach((argName, idx) => {
-        if (idx < evaluatedArgs.length && evaluatedArgs[idx] !== undefined) {
-          candidateProps[argName] = evaluatedArgs[idx];
+      const unpacked = evaluatedArgs[0] as Record<string, unknown>;
+      for (const key of Object.getOwnPropertyNames(unpacked)) {
+        if (FORBIDDEN_OBJECT_KEYS.has(key)) {
+          evalForbiddenCounter++;
+          evalErrors.add(`Blocked forbidden key: '${key}'`);
+          return undefined;
         }
-      });
+        const val = unpacked[key];
+        if (val !== undefined) {
+          Object.defineProperty(candidateProps, key, {
+            value: val,
+            enumerable: true,
+            writable: true,
+            configurable: true,
+          });
+        }
+      }
+    } else {
+      for (let idx = 0; idx < spec.argNames.length; idx++) {
+        const key = spec.argNames[idx];
+        if (FORBIDDEN_OBJECT_KEYS.has(key)) {
+          evalForbiddenCounter++;
+          evalErrors.add(`Blocked forbidden key: '${key}'`);
+          return undefined;
+        }
+        const val = idx < evaluatedArgs.length ? evaluatedArgs[idx] : undefined;
+        if (val !== undefined) {
+          Object.defineProperty(candidateProps, key, {
+            value: val,
+            enumerable: true,
+            writable: true,
+            configurable: true,
+          });
+        }
+      }
       if (node.namedArgs && node.namedArgs.length > 0) {
         for (const na of node.namedArgs) {
+          const key = na.key;
+          if (FORBIDDEN_OBJECT_KEYS.has(key)) {
+            evalForbiddenCounter++;
+            evalErrors.add(`Blocked forbidden key: '${key}'`);
+            return undefined;
+          }
+          const forbiddenBeforeKw = evalForbiddenCounter;
           const val = evaluateNode(
             na.value,
             visiting,
             pendingRefs,
             evalErrors,
-            `${nodeIdHint}_kw_${na.key}`
+            `${nodeIdHint}_kw_${key}`
           );
+          if (evalForbiddenCounter > forbiddenBeforeKw) {
+            return undefined;
+          }
           if (val !== undefined) {
-            candidateProps[na.key] = val;
+            Object.defineProperty(candidateProps, key, {
+              value: val,
+              enumerable: true,
+              writable: true,
+              configurable: true,
+            });
           }
         }
       }
@@ -1053,12 +1153,12 @@ function parseSingleMagnitudeToken(numPart: string, suffix?: string): number {
 }
 
 export function parseCurrencyNumber(raw: string): number {
-  const text = String(raw || '').trim();
+  const text = String(raw || '').trim().slice(0, 128);
   if (!text) return 0;
 
   // Handle explicit numeric ranges like "$99-$149/mo" or "$1,000 to $2,000" by averaging endpoints
   const rangeMatch = text.match(
-    /(\d[\d,]*(?:\.\d+)?)([kKmMbB])?(?![a-zA-Z])\s*(?:-|to)\s*[$€£]?\s*(\d[\d,]*(?:\.\d+)?)([kKmMbB])?(?![a-zA-Z])/i
+    /(?<![\d,])(\d[\d,]*(?:\.\d+)?)(?:([kKmMbB])(?![a-zA-Z]))?\s*(?:-|to)\s*[$€£]?\s*(\d[\d,]*(?:\.\d+)?)(?:([kKmMbB])(?![a-zA-Z]))?/i
   );
   if (rangeMatch) {
     const low = parseSingleMagnitudeToken(rangeMatch[1], rangeMatch[2]);
@@ -1067,7 +1167,7 @@ export function parseCurrencyNumber(raw: string): number {
   }
 
   // Extract first numeric token with optional commas, decimal, and standalone k/m/b suffix
-  const singleMatch = text.match(/(-?\d[\d,]*(?:\.\d+)?)([kKmMbB])?(?![a-zA-Z])/);
+  const singleMatch = text.match(/(?<![\d,])(-?\d[\d,]*(?:\.\d+)?)(?:([kKmMbB])(?![a-zA-Z]))?/);
   if (!singleMatch) return 0;
   return parseSingleMagnitudeToken(singleMatch[1], singleMatch[2]);
 }
