@@ -17,11 +17,21 @@ import path from 'node:path';
  *      allowing crawler directive files (`/robots.txt`, `/llms.txt`, `/llms-full.txt`, `/sitemap.xml`).
  */
 
-const workerPath = path.resolve(process.cwd(), '.open-next', 'worker.js');
+const openNextDir = path.resolve(process.cwd(), '.open-next');
+const workerPath = path.join(openNextDir, 'worker.js');
 
 if (!fs.existsSync(workerPath)) {
   console.error(`[patch-worker] Missing ${workerPath}. Run opennextjs-cloudflare build first.`);
   process.exit(1);
+}
+
+// Populate StaticAssetsIncrementalCache into Workers Static Assets (`cdn-cgi/_next_cache`)
+const openNextCacheSrc = path.join(openNextDir, 'cache');
+const openNextAssetsCacheDest = path.join(openNextDir, 'assets', 'cdn-cgi', '_next_cache');
+if (fs.existsSync(openNextCacheSrc)) {
+  fs.rmSync(openNextAssetsCacheDest, { recursive: true, force: true });
+  fs.cpSync(openNextCacheSrc, openNextAssetsCacheDest, { recursive: true });
+  console.log('[patch-worker] Populated StaticAssetsIncrementalCache into .open-next/assets/cdn-cgi/_next_cache.');
 }
 
 let content = fs.readFileSync(workerPath, 'utf8');

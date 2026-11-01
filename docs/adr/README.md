@@ -64,6 +64,7 @@ Negative/Considerations:
 | [ADR-0017](ADR-0017-edge-cache-ai-citation-and-search-consolidation.md) | Edge Cache Remediation, AI Citation Split, Snippet Governance, and Viral Diagnostic Chains | Accepted | @richardewing, Steve Jobs, Paul Graham, Aravind Srinivas, Lily Ray, Brian Balfour, Keith Rabois, Code Architect | 2026-10-28 |
 | [ADR-0018](ADR-0018-sovereign-github-skill-assimilation-and-live-demand-engine.md) | Sovereign GitHub Skill Assimilation, Stateful Security Ledgers, and Live Demand Telemetry Engine | Accepted | @richardewing, Steve Jobs, Paul Graham, Dan Guido, Aravind Srinivas, Keith Rabois, Code Architect, QA Auditor | 2026-10-30 |
 | [ADR-0019](ADR-0019-worker-cpu-budget-governance-and-rsc-prefetch-containment.md) | Worker CPU Budget Governance and RSC Prefetch Containment | Accepted | @richardewing, Steve Jobs, Jensen Huang, Keith Rabois, Aravind Srinivas, Dan Guido, Code Architect, QA Auditor | 2026-10-31 |
+| [ADR-0020](ADR-0020-clean-room-9system-assimilation-streaming-ui-and-provenance-ledger.md) | Clean-Room 9-System Assimilation, Streaming Generative UI, and Provenance Ledger | Accepted | @richardewing, Steve Jobs, Elon Musk, Jeff Bezos, Jensen Huang, Dan Guido, Brad Smith, Code Architect, QA Auditor | 2026-11-01 |
 
 
 

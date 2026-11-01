@@ -211,6 +211,16 @@ const SOURCE_CONFIGS: Record<string, DiagnosticSourceConfig> = {
     badgeLabel: 'Autonomous Execution Exposure',
     description: 'Select a session below to implement deterministic runtime boundaries, schema gates, and circuit breakers before production agent deployment.',
   },
+  'ai-advisor': {
+    title: 'Reviewing Your AI Integration Advisor Consultation & Unit Economics',
+    badgeLabel: '90-Day AI Rollout Plan',
+    description: 'Select a 30-Minute Triage or 60-Minute Working Session below. Bring your AI Integration Advisor roadmap and current software stack to validate vendor contracts, data boundaries, and 90-day ROI milestones.',
+  },
+  'advisor-roadmap': {
+    title: 'Reviewing Your AI Integration Roadmap & Implementation Scope',
+    badgeLabel: 'Boardroom Rollout Audit',
+    description: 'Select a working session below to stress-test your generated AI Integration Roadmap, sequence Phase 1 quick wins, or scope a fixed-price 21-day build sprint.',
+  },
 };
 
 function formatLeakDisplay(rawLeak: string | null): string | null {

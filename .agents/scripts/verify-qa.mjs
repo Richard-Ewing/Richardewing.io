@@ -581,6 +581,14 @@ try {
   errorCount++;
 }
 
+try {
+  const uiIntegrityOutput = execSync(`node "${path.join(__dirname, 'verify-ui-integrity.mjs')}" --floor`, { encoding: 'utf8' });
+  console.log(uiIntegrityOutput.trim());
+} catch (err) {
+  console.error(`[UI INTEGRITY ERROR] verify-ui-integrity.mjs failed:\n${err.stdout || err.message}`);
+  errorCount++;
+}
+
 console.log('\n--- Verification Summary ---');
 console.log(`Files audited: ${filesToAudit.length}`);
 console.log(`Errors: ${errorCount}`);

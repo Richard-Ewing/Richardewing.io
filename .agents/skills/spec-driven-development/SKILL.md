@@ -177,3 +177,23 @@ Every Spec-Driven implementation (`specify` -> `plan` -> `tasks` -> `implement` 
 3. **Edge Redirect Query-String Safety**: Verify that all `EDGE_REDIRECTS` values in `middleware.ts` are clean pathnames without `?` or `#`.
 4. **Contextual Schedule Banner Sync**: Verify that any new `?source=` parameter is registered in `components/schedule/schedule-diagnostic-banner.tsx`.
 
+---
+
+## 9. Cold-Context Spec Kernel & Mechanical ADR Drift Gate (`google/elephant-goldfish-model` Graft - ADR-0020)
+
+Long-context authoring sessions suffer from "Elephant context blindness": an agent writes a specification with unstated assumptions and autocompletes missing constraints from its own 150k-token chat history when reviewing its work. To eliminate shared-context blind spots without slowing shipping velocity, enforce these four rules:
+
+1. **Semantic Spec Split (`FeatureRange` vs. `DetailedRange`)**:
+   - **`FeatureRange` (Executive & Commercial Contract)**: Captures business intent, target buyer outcome, acceptance criteria, and explicit Out-of-Scope Blast-Radius boundaries with zero low-level implementation clutter.
+   - **`DetailedRange` (Principal Engineering Contract)**: Captures exact repository file paths, TypeScript/Zod schemas, state transitions, edge cases, and failure modes.
+2. **Silent Cold-Context Comprehension Paraphrase (Preset 1 Uninterrupted Flow)**:
+   - On Mode 3 multi-file architectural builds, spawn a read-only `research` subagent (`invoke_subagent`) with **zero shared conversation history** ("Goldfish") given only the written spec artifact and linked repository files.
+   - The cold-context subagent must **paraphrase the system mechanics back** and surface unstated assumptions or cross-file collisions before code mutation begins.
+   - **Zero Founder Pestering**: Run this comprehension paraphrase silently inside the autonomous engineering loop. Never interrupt Richard with multi-stage trivial confirmation modals unless a genuine business one-way door requires executive sign-off.
+3. **Scoped `1`-Audit Convergence Cap**:
+   - Subjective cold-context subagent critique passes are strictly capped at **`1` re-audit cycle** (critique-first ordering, zero sycophantic filler) to prevent multi-agent review-loop paralysis.
+   - **Deterministic Gate Exemption**: Mechanical gates (`node .agents/scripts/verify-qa.mjs`, `node .agents/scripts/verify-ui-integrity.mjs`, `npx tsc --noEmit`, `npm run build`, and `npm run build:worker`) are **exempt** from the `1`-audit cap and must always execute until exit code `0`.
+4. **Mechanical ADR-to-Code Drift Detection (`check-adr-drift.mjs`)**:
+   - Run `node .agents/scripts/check-adr-drift.mjs` to audit `Accepted` records in `docs/adr/ADR-*.md` against live repository paths, `ts-morph` TypeScript exports, `scripts/patch-worker.mjs` edge shield invariants (`__RW_ADR_0019_EDGE_SHIELD__`), fail-closed API guards, and logic shortcuts (`TODO` / mock stubs), writing delta-only output to `.scratch/adr-drift-report.md`.
+
+

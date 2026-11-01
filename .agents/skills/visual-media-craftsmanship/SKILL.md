@@ -109,3 +109,21 @@ For video, presentation trailers, and executive demos:
      * Code the layout, typography, kinetic text, and SVG telemetry in React.
      * Insert AI-generated B-roll clips (from Higgsfield, Kling, or Gemini Omni Flash) as background texture layers.
      * Result: 100% deterministic text and timing with cinematic visual depth.
+
+---
+
+## 6. Spatial Runtime Boundaries, Mobbin Flow Lock & 5 Objective DOM Assertions (ADR-0020)
+
+1. **Zero Duplicate 3D Engines (`@splinetool/*` Ban on `richardewing.io` & `careerwin.ai`)**:
+   * `richardewing.io` already ships `three` + `@react-three/fiber` + `@react-three/drei` on frozen hero canvases (`HeadsetScene.tsx`, `NeuralSubstrate.tsx`). Never install `@splinetool/react-spline` or `@splinetool/runtime` (`~970 KB` extra client bundle + `'wasm-unsafe-eval'` CSP tax).
+   * On `exogram.ai` ONLY, Spline 3D and Spline Hana may be used strictly as **upstream authoring studios** exporting `.glb` assets or `@react-three/fiber` JSX gated behind `next/dynamic(..., { ssr: false })`, `IntersectionObserver`, and a static `.webp` poster fallback when `prefers-reduced-motion: reduce` is enabled.
+2. **Mobbin MCP UX Flow Sequencing + Sovereign Token Lock**:
+   * Query `mobbin_mobbin` (`search_flows`, `search_screens`, `search_sections`) following Mobbin's `best-practices` / `search` / `redesign-screen` workflow strictly for **interaction state sequencing, drawer transitions, loading/empty/error states, and mobile table ergonomics**.
+   * Render all surfaces strictly inside [`.agents/skills/ui-ux-polish/references/DESIGN_TOKENS_LOCK.md`](../ui-ux-polish/references/DESIGN_TOKENS_LOCK.md) without averaging conflicting layouts or importing external agency gimmicks.
+3. **5 Objective Headless DOM Assertions (3-Frame Verification in `.scratch/shots/`)**:
+   * Assert `horizontalOverflow === false` at `390px` and `1440px` viewports.
+   * Assert `0` runtime console errors and `0` failed network asset requests.
+   * Assert `document.fonts.check()` readiness prior to capturing `desktop-early` (`100ms` FOUC check), `desktop` (`1440x900`), and `mobile` (`390x844`).
+   * Assert `>= 4.5:1` WCAG contrast on body text (replace `text-zinc-400` body labels on dark `#111827` or cream `#FAF9F6` cards with high-contrast tokens).
+   * Assert `>= 44px` mobile interactive tap targets and zero above-the-fold CTA bounding-box collisions.
+

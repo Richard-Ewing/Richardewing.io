@@ -1,5 +1,5 @@
 import { getSortedArticles } from '@/lib/blog-data';
-export const revalidate = 86400;
+export const dynamic = 'force-static';
 
 export async function GET() {
     const articles = getSortedArticles();

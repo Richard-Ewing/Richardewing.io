@@ -4,6 +4,8 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Brain, User, Sparkles, ChevronRight, Loader2, CheckCircle, MessageSquare, Target, Cpu, DollarSign, Map } from 'lucide-react';
 import AdvisorRoadmap from './AdvisorRoadmap';
+import AdvisorStreamWidgets from './ai-advisor/AdvisorStreamWidgets';
+import type { ParsedWidgetNode } from '@/lib/sovereign-ui-stream';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -12,6 +14,8 @@ import AdvisorRoadmap from './AdvisorRoadmap';
 interface Message {
     role: 'user' | 'assistant';
     content: string;
+    widgets?: ParsedWidgetNode[];
+    isStreaming?: boolean;
 }
 
 interface BusinessProfile {
@@ -62,6 +66,78 @@ const PHASES = [
 ];
 
 // ---------------------------------------------------------------------------
+// Safe Pure-React Markdown Text Renderer (Zero Raw HTML Injection)
+// ---------------------------------------------------------------------------
+
+function renderInlineBold(text: string): React.ReactNode[] {
+    const parts = text.split(/(\*\*[^*]+\*\*)/g);
+    return parts.map((part, idx) => {
+        if (part.startsWith('**') && part.endsWith('**') && part.length > 4) {
+            return (
+                <strong key={idx} className="font-bold text-inherit">
+                    {part.slice(2, -2)}
+                </strong>
+            );
+        }
+        return <React.Fragment key={idx}>{part}</React.Fragment>;
+    });
+}
+
+function renderFormattedMessage(content: string): React.ReactNode {
+    if (!content) return null;
+    const paragraphs = content.split(/\n{2,}/);
+    return (
+        <div className="space-y-2">
+            {paragraphs.map((block, pIdx) => {
+                const lines = block.split('\n').filter((line) => line.length > 0);
+                if (lines.length === 0) return null;
+
+                return (
+                    <div key={pIdx} className="space-y-1">
+                        {lines.map((line, lIdx) => {
+                            const headingMatch = line.match(/^#{1,4}\s+(.*)$/);
+                            if (headingMatch) {
+                                return (
+                                    <p key={lIdx} className="font-bold text-[#1A1A1A] pt-1">
+                                        {renderInlineBold(headingMatch[1])}
+                                    </p>
+                                );
+                            }
+
+                            const numberedMatch = line.match(/^(\d+\.)\s+(.*)$/);
+                            if (numberedMatch) {
+                                return (
+                                    <div key={lIdx} className="flex items-baseline gap-2">
+                                        <span className="font-mono text-xs font-bold flex-shrink-0">
+                                            {numberedMatch[1]}
+                                        </span>
+                                        <span>{renderInlineBold(numberedMatch[2])}</span>
+                                    </div>
+                                );
+                            }
+
+                            const bulletMatch = line.match(/^[-*]\s+(.*)$/);
+                            if (bulletMatch) {
+                                return (
+                                    <div key={lIdx} className="flex items-baseline gap-2">
+                                        <span className="flex-shrink-0" aria-hidden="true">
+                                            •
+                                        </span>
+                                        <span>{renderInlineBold(bulletMatch[1])}</span>
+                                    </div>
+                                );
+                            }
+
+                            return <p key={lIdx}>{renderInlineBold(line)}</p>;
+                        })}
+                    </div>
+                );
+            })}
+        </div>
+    );
+}
+
+// ---------------------------------------------------------------------------
 // Component
 // ---------------------------------------------------------------------------
 
@@ -76,6 +152,15 @@ export default function AdvisorChat() {
     const [showRoadmap, setShowRoadmap] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLTextAreaElement>(null);
+    const sendingRef = useRef(false);
+    const abortControllerRef = useRef<AbortController | null>(null);
+
+    // Abort in-flight stream cleanly on component unmount
+    useEffect(() => {
+        return () => {
+            abortControllerRef.current?.abort();
+        };
+    }, []);
 
     // Auto-scroll to bottom
     useEffect(() => {
@@ -86,7 +171,7 @@ export default function AdvisorChat() {
     useEffect(() => {
         const greeting: Message = {
             role: 'assistant',
-            content: `Welcome! I'm your AI Integration Advisor — here to help you figure out exactly how AI can benefit your business.\n\nWe'll walk through 5 quick phases together:\n\n1. **Discovery** — I'll learn about your business\n2. **Pain Points** — We'll identify where you're losing time and money\n3. **Tech Stack** — I'll map your current tools\n4. **Goals & Budget** — We'll define what success looks like\n5. **Roadmap** — I'll generate your personalized AI integration plan\n\nLet's start! **What's your business called, and what do you do?**`,
+            content: `Welcome! I'm your AI Integration Advisor: here to help you figure out where AI actually saves time and money in your business.\n\nWe'll walk through 5 quick phases together:\n\n1. **Discovery**: I'll learn about your business\n2. **Pain Points**: We'll pinpoint where your team loses hours and margin\n3. **Tech Stack**: I'll map your current tools\n4. **Goals & Budget**: We'll define concrete 90-day targets\n5. **Roadmap**: I'll build your custom AI integration plan\n\nLet's start! **What's your business called, and what do you do?**`,
         };
         setMessages([greeting]);
     }, []);
@@ -116,54 +201,204 @@ export default function AdvisorChat() {
         setBusinessProfile(updated);
     }, [businessProfile, messages.length]);
 
-    // Send message
+    // Send message with progressive SSE stream support + JSON fallback
     const handleSend = async () => {
-        if (!input.trim() || isLoading) return;
+        if (!input.trim() || isLoading || sendingRef.current) return;
 
+        sendingRef.current = true;
         const userMessage = input.trim();
         setInput('');
         setIsLoading(true);
 
+        const priorHistory = messages.map(({ role, content }) => ({ role, content }));
         const newMessages: Message[] = [...messages, { role: 'user', content: userMessage }];
         setMessages(newMessages);
+
+        abortControllerRef.current?.abort();
+        const controller = new AbortController();
+        abortControllerRef.current = controller;
 
         try {
             const response = await fetch('/api/ai-advisor/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
+                signal: controller.signal,
                 body: JSON.stringify({
                     sessionId,
                     message: userMessage,
                     currentPhase,
-                    conversationHistory: newMessages,
+                    conversationHistory: priorHistory,
                     businessProfile,
+                    stream: true,
                 }),
             });
 
-            const data = await response.json();
+            if (!response.ok) {
+                let errCopy = 'I encountered an issue processing that request. Please try sending your message again.';
+                try {
+                    const errJson = await response.json();
+                    if (typeof errJson?.error === 'string' && errJson.error.trim()) {
+                        errCopy = errJson.error;
+                    }
+                } catch {
+                    // Use default honest error message
+                }
+                setMessages([...newMessages, { role: 'assistant', content: errCopy }]);
+                return;
+            }
 
-            if (data.error) {
-                setMessages([...newMessages, { role: 'assistant', content: 'I apologize, but I encountered an issue. Could you try sending that again?' }]);
+            const contentType = response.headers.get('content-type') || '';
+
+            if (contentType.includes('text/event-stream') && response.body) {
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder('utf-8');
+                let sseBuffer = '';
+                let streamedProse = '';
+                let streamedWidgets: ParsedWidgetNode[] = [];
+                let receivedTerminalEvent = false;
+
+                setMessages([
+                    ...newMessages,
+                    { role: 'assistant', content: '', widgets: [], isStreaming: true },
+                ]);
+
+                const applyStreamUpdate = (prose: string, widgets: ParsedWidgetNode[], streaming: boolean) => {
+                    setMessages([
+                        ...newMessages,
+                        {
+                            role: 'assistant',
+                            content: prose,
+                            widgets,
+                            isStreaming: streaming,
+                        },
+                    ]);
+                };
+
+                const processSseFrame = (frame: string) => {
+                    const dataLines = frame
+                        .split(/\r?\n/)
+                        .filter((l) => l.startsWith('data:'))
+                        .map((l) => l.slice(5).trim());
+                    if (dataLines.length === 0) return;
+
+                    try {
+                        const evt = JSON.parse(dataLines.join('\n'));
+                        if (evt.type === 'delta') {
+                            if (typeof evt.proseText === 'string') {
+                                streamedProse = evt.proseText;
+                            } else if (typeof evt.text === 'string') {
+                                streamedProse += evt.text;
+                            }
+                            applyStreamUpdate(streamedProse, streamedWidgets, true);
+                        } else if (evt.type === 'ui' && Array.isArray(evt.widgets)) {
+                            streamedWidgets = evt.widgets;
+                            applyStreamUpdate(streamedProse, streamedWidgets, true);
+                        } else if (evt.type === 'done') {
+                            receivedTerminalEvent = true;
+                            const finalProse =
+                                typeof evt.response === 'string' ? evt.response : streamedProse;
+                            const finalWidgets = Array.isArray(evt.widgets)
+                                ? evt.widgets
+                                : streamedWidgets;
+                            applyStreamUpdate(finalProse, finalWidgets, false);
+                            extractBusinessInfo(userMessage, finalProse);
+
+                            if (evt.phaseComplete && typeof evt.nextPhase === 'number') {
+                                setCurrentPhase(evt.nextPhase);
+                            }
+                            if (evt.roadmapData) {
+                                setRoadmapData(evt.roadmapData);
+                                setShowRoadmap(true);
+                            } else if (evt.roadmapComplete && roadmapData) {
+                                setShowRoadmap(true);
+                            }
+                        } else if (evt.type === 'error') {
+                            receivedTerminalEvent = true;
+                            const errMsg =
+                                typeof evt.error === 'string' && evt.error.trim()
+                                    ? evt.error
+                                    : 'Upstream advisor stream interrupted. Please retry.';
+                            applyStreamUpdate(streamedProse || errMsg, streamedWidgets, false);
+                        }
+                    } catch {
+                        // Ignore malformed SSE comment/keepalive frame
+                    }
+                };
+
+                while (true) {
+                    const { value, done } = await reader.read();
+                    if (done) {
+                        sseBuffer += decoder.decode();
+                        if (sseBuffer.trim()) {
+                            for (const trailingFrame of sseBuffer.split(/\r?\n\r?\n/)) {
+                                if (trailingFrame.trim()) processSseFrame(trailingFrame);
+                            }
+                        }
+                        break;
+                    }
+
+                    sseBuffer += decoder.decode(value, { stream: true });
+                    const frames = sseBuffer.split(/\r?\n\r?\n/);
+                    sseBuffer = frames.pop() || '';
+
+                    for (const frame of frames) {
+                        processSseFrame(frame);
+                    }
+                }
+
+                if (!receivedTerminalEvent) {
+                    applyStreamUpdate(
+                        streamedProse || 'Connection interrupted before the readout completed. Please retry.',
+                        streamedWidgets,
+                        false
+                    );
+                }
             } else {
-                setMessages([...newMessages, { role: 'assistant', content: data.response }]);
-                extractBusinessInfo(userMessage, data.response);
+                const data = await response.json();
 
-                if (data.phaseComplete) {
-                    setCurrentPhase(data.nextPhase);
-                }
+                if (data.error) {
+                    setMessages([
+                        ...newMessages,
+                        {
+                            role: 'assistant',
+                            content: 'I apologize, but I encountered an issue. Could you try sending that again?',
+                        },
+                    ]);
+                } else {
+                    setMessages([
+                        ...newMessages,
+                        {
+                            role: 'assistant',
+                            content: data.response,
+                            widgets: Array.isArray(data.widgets) ? data.widgets : undefined,
+                        },
+                    ]);
+                    extractBusinessInfo(userMessage, data.response);
 
-                if (data.roadmapData) {
-                    setRoadmapData(data.roadmapData);
-                    setShowRoadmap(true);
-                }
+                    if (data.phaseComplete) {
+                        setCurrentPhase(data.nextPhase);
+                    }
 
-                if (data.roadmapComplete) {
-                    setShowRoadmap(true);
+                    if (data.roadmapData) {
+                        setRoadmapData(data.roadmapData);
+                        setShowRoadmap(true);
+                    }
+
+                    if (data.roadmapComplete) {
+                        setShowRoadmap(true);
+                    }
                 }
             }
-        } catch {
-            setMessages([...newMessages, { role: 'assistant', content: 'Connection issue — please try again in a moment.' }]);
+        } catch (err) {
+            if (err instanceof DOMException && err.name === 'AbortError') {
+                return;
+            }
+            setMessages([
+                ...newMessages,
+                { role: 'assistant', content: 'Connection issue. Please try again in a moment.' },
+            ]);
         } finally {
+            sendingRef.current = false;
             setIsLoading(false);
             inputRef.current?.focus();
         }
@@ -176,15 +411,44 @@ export default function AdvisorChat() {
         }
     };
 
-    // Render the roadmap view
+    // Render the roadmap view with bidirectional return to chat
     if (showRoadmap && roadmapData) {
-        return <AdvisorRoadmap roadmap={roadmapData} businessProfile={businessProfile} sessionId={sessionId} />;
+        return (
+            <AdvisorRoadmap
+                roadmap={roadmapData}
+                businessProfile={businessProfile}
+                sessionId={sessionId}
+                onBackToChat={() => setShowRoadmap(false)}
+            />
+        );
     }
+
+    const lastMessage = messages[messages.length - 1];
+    const showStandaloneSpinner =
+        isLoading &&
+        (!lastMessage ||
+            lastMessage.role !== 'assistant' ||
+            (!lastMessage.content && (!lastMessage.widgets || lastMessage.widgets.length === 0)));
 
     return (
         <div className="flex flex-col h-[calc(100vh-12rem)] max-w-4xl mx-auto">
             {/* Phase Progress Bar */}
             <div className="mb-6 px-2">
+                {roadmapData ? (
+                    <div className="mb-3 flex items-center justify-between gap-2 rounded-xl border border-emerald-200 bg-emerald-50 px-3.5 py-2">
+                        <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-emerald-800">
+                            Roadmap Ready
+                        </span>
+                        <button
+                            type="button"
+                            onClick={() => setShowRoadmap(true)}
+                            className="min-h-[36px] inline-flex items-center gap-1.5 rounded-lg bg-[#111827] px-3 py-1.5 font-mono text-xs font-bold text-white hover:bg-zinc-800 transition-colors"
+                        >
+                            <Map className="w-3.5 h-3.5" />
+                            Open PDF Boardroom View
+                        </button>
+                    </div>
+                ) : null}
                 <div className="flex items-center justify-between gap-1 sm:gap-2">
                     {PHASES.map((phase, i) => {
                         const Icon = phase.icon;
@@ -197,7 +461,7 @@ export default function AdvisorChat() {
                                     initial={{ opacity: 0, y: -10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: i * 0.1 }}
-                                    className={`flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl text-xs font-bold transition-all ${
+                                    className={`flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl text-xs font-bold transition-colors ${
                                         isActive
                                             ? 'bg-cyan-500/15 border border-cyan-500/40 text-cyan-900 shadow-[0_0_15px_rgba(6,182,212,0.15)]'
                                             : isComplete
@@ -232,55 +496,74 @@ export default function AdvisorChat() {
             {/* Chat Messages */}
             <div className="flex-1 overflow-y-auto space-y-4 px-2 pb-4 scrollbar-thin">
                 <AnimatePresence mode="popLayout">
-                    {messages.map((msg, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, y: 12 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className={`flex gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}
-                        >
-                            {/* Avatar */}
-                            <div
-                                className={`w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                                    msg.role === 'assistant'
-                                        ? 'bg-gradient-to-br from-cyan-500/20 to-emerald-500/20 border border-cyan-500/30'
-                                        : 'bg-zinc-900'
-                                }`}
-                            >
-                                {msg.role === 'assistant' ? (
-                                    <Brain className="w-4 h-4 text-cyan-700" />
-                                ) : (
-                                    <User className="w-4 h-4 text-white" />
-                                )}
-                            </div>
+                    {messages.map((msg, i) => {
+                        if (
+                            msg.role === 'assistant' &&
+                            msg.isStreaming &&
+                            !msg.content &&
+                            (!msg.widgets || msg.widgets.length === 0)
+                        ) {
+                            return null;
+                        }
 
-                            {/* Message Bubble */}
-                            <div
-                                className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
-                                    msg.role === 'assistant'
-                                        ? 'bg-white border border-zinc-200 text-zinc-800 shadow-sm'
-                                        : 'bg-zinc-900 text-white'
-                                }`}
+                        return (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 12 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className={`flex gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}
                             >
+                                {/* Avatar */}
                                 <div
-                                    className="prose prose-sm max-w-none prose-p:my-1 prose-ul:my-1 prose-li:my-0.5 prose-strong:text-inherit"
-                                    dangerouslySetInnerHTML={{
-                                        __html: msg.content
-                                            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                                            .replace(/\n\n/g, '</p><p>')
-                                            .replace(/\n(\d+\.)/g, '<br/>$1')
-                                            .replace(/\n- /g, '<br/>• ')
-                                            .replace(/\n/g, '<br/>')
-                                    }}
-                                />
-                            </div>
-                        </motion.div>
-                    ))}
+                                    className={`w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 ${
+                                        msg.role === 'assistant'
+                                            ? 'bg-gradient-to-br from-cyan-500/20 to-emerald-500/20 border border-cyan-500/30'
+                                            : 'bg-zinc-900'
+                                    }`}
+                                >
+                                    {msg.role === 'assistant' ? (
+                                        <Brain className="w-4 h-4 text-cyan-700" />
+                                    ) : (
+                                        <User className="w-4 h-4 text-white" />
+                                    )}
+                                </div>
+
+                                {/* Message Bubble */}
+                                <div
+                                    className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
+                                        msg.role === 'assistant'
+                                            ? 'bg-white border border-zinc-200 text-zinc-800 shadow-sm'
+                                            : 'bg-zinc-900 text-white'
+                                    }`}
+                                >
+                                    {msg.content ? (
+                                        <div className="max-w-none">{renderFormattedMessage(msg.content)}</div>
+                                    ) : null}
+
+                                    {msg.role === 'assistant' && msg.widgets && msg.widgets.length > 0 ? (
+                                        <AdvisorStreamWidgets
+                                            widgets={msg.widgets}
+                                            onOpenRoadmap={
+                                                roadmapData ? () => setShowRoadmap(true) : undefined
+                                            }
+                                        />
+                                    ) : null}
+
+                                    {msg.isStreaming ? (
+                                        <div className="mt-2 inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-cyan-700">
+                                            <Loader2 className="w-3 h-3 animate-spin" />
+                                            <span>Streaming live readout</span>
+                                        </div>
+                                    ) : null}
+                                </div>
+                            </motion.div>
+                        );
+                    })}
                 </AnimatePresence>
 
                 {/* Typing indicator */}
-                {isLoading && (
+                {showStandaloneSpinner && (
                     <motion.div
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -303,7 +586,7 @@ export default function AdvisorChat() {
 
             {/* Input Area */}
             <div className="border-t border-zinc-200 pt-4 px-2">
-                <div className="relative flex items-end bg-white border border-zinc-300 rounded-2xl shadow-sm focus-within:border-cyan-400 focus-within:shadow-[0_0_0_3px_rgba(6,182,212,0.1)] transition-all">
+                <div className="relative flex items-end bg-white border border-zinc-300 rounded-2xl shadow-sm focus-within:border-cyan-400 focus-within:shadow-[0_0_0_3px_rgba(6,182,212,0.1)] transition-colors">
                     <textarea
                         ref={inputRef}
                         value={input}
@@ -327,9 +610,11 @@ export default function AdvisorChat() {
                         }}
                     />
                     <button
+                        type="button"
+                        aria-label="Send message"
                         onClick={handleSend}
                         disabled={!input.trim() || isLoading}
-                        className="m-1.5 p-2 rounded-xl bg-cyan-500 text-white hover:bg-cyan-600 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                        className="m-1.5 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl bg-cyan-500 text-white hover:bg-cyan-600 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
                     >
                         <Send className="w-4 h-4" />
                     </button>

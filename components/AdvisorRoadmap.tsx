@@ -18,8 +18,11 @@ import {
     ExternalLink,
     FileText,
     Loader2,
+    Calendar,
+    MessageSquare,
 } from 'lucide-react';
 import jsPDF from 'jspdf';
+import { sanitizeSafeUrl } from '@/lib/sovereign-ui-stream';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -63,6 +66,7 @@ interface Props {
     roadmap: RoadmapData;
     businessProfile: BusinessProfile;
     sessionId: string;
+    onBackToChat?: () => void;
 }
 
 // ---------------------------------------------------------------------------
@@ -86,7 +90,7 @@ const phaseColors = [
 // Component
 // ---------------------------------------------------------------------------
 
-export default function AdvisorRoadmap({ roadmap, businessProfile, sessionId }: Props) {
+export default function AdvisorRoadmap({ roadmap, businessProfile, sessionId, onBackToChat }: Props) {
     const [expandedPhase, setExpandedPhase] = useState<number | null>(0);
     const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
     const roadmapRef = useRef<HTMLDivElement>(null);
@@ -345,6 +349,7 @@ export default function AdvisorRoadmap({ roadmap, businessProfile, sessionId }: 
                                 <div className="px-5 pb-5 space-y-3">
                                     {(phase.actions || []).map((action, actionIndex) => {
                                         const diffConfig = difficultyConfig[action.difficulty] || difficultyConfig.Medium;
+                                        const safeToolHref = action.tool_url ? sanitizeSafeUrl(action.tool_url) : null;
 
                                         return (
                                             <div key={actionIndex} className="bg-white/80 rounded-xl border border-zinc-200 p-4">
@@ -361,8 +366,13 @@ export default function AdvisorRoadmap({ roadmap, businessProfile, sessionId }: 
                                                 <div className="ml-6 grid grid-cols-2 sm:grid-cols-4 gap-2">
                                                     <div className="text-xs">
                                                         <span className="text-zinc-400 font-mono uppercase text-[9px] block">Tool</span>
-                                                        {action.tool_url ? (
-                                                            <a href={action.tool_url} target="_blank" rel="noopener noreferrer" className="font-bold text-cyan-700 hover:underline flex items-center gap-1">
+                                                        {safeToolHref ? (
+                                                            <a
+                                                                href={safeToolHref}
+                                                                target={safeToolHref.startsWith('http') ? '_blank' : undefined}
+                                                                rel={safeToolHref.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                                                className="font-bold text-cyan-700 hover:underline flex items-center gap-1"
+                                                            >
                                                                 {action.tool} <ExternalLink className="w-2.5 h-2.5" />
                                                             </a>
                                                         ) : (
@@ -440,12 +450,13 @@ export default function AdvisorRoadmap({ roadmap, businessProfile, sessionId }: 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
-                className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4"
+                className="flex flex-wrap items-center justify-center gap-3 pt-4"
             >
                 <button
+                    type="button"
                     onClick={generatePDF}
                     disabled={isGeneratingPdf}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#1A1A1A] text-white font-bold rounded-xl text-sm hover:bg-zinc-800 transition-colors disabled:opacity-60"
+                    className="min-h-[44px] inline-flex items-center gap-2 px-6 py-3 bg-[#1A1A1A] text-white font-bold rounded-xl text-sm hover:bg-zinc-800 transition-colors disabled:opacity-60"
                 >
                     {isGeneratingPdf ? (
                         <><Loader2 className="w-4 h-4 animate-spin" /> Generating PDF...</>
@@ -454,9 +465,24 @@ export default function AdvisorRoadmap({ roadmap, businessProfile, sessionId }: 
                     )}
                 </button>
                 <a
+                    href="/schedule?source=advisor-roadmap"
+                    className="min-h-[44px] inline-flex items-center gap-2 px-6 py-3 bg-cyan-600 text-white font-bold rounded-xl text-sm hover:bg-cyan-700 transition-colors"
+                >
+                    <Calendar className="w-4 h-4" /> Book Executive Review
+                </a>
+                {onBackToChat ? (
+                    <button
+                        type="button"
+                        onClick={onBackToChat}
+                        className="min-h-[44px] inline-flex items-center gap-2 px-6 py-3 border border-zinc-300 text-zinc-800 font-bold rounded-xl text-sm hover:bg-zinc-50 transition-colors"
+                    >
+                        <MessageSquare className="w-4 h-4" /> Back to Consultation Chat
+                    </button>
+                ) : null}
+                <a
                     href="/ai-integration/advisor"
                     rel="nofollow"
-                    className="inline-flex items-center gap-2 px-6 py-3 border border-zinc-300 text-zinc-700 font-bold rounded-xl text-sm hover:bg-zinc-50 transition-colors"
+                    className="min-h-[44px] inline-flex items-center gap-2 px-6 py-3 border border-zinc-300 text-zinc-700 font-bold rounded-xl text-sm hover:bg-zinc-50 transition-colors"
                 >
                     <FileText className="w-4 h-4" /> Start New Consultation
                 </a>

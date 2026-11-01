@@ -2,7 +2,7 @@ import { glossaryTerms } from '../glossary/terms';
 import { KEEP_TERMS, CATEGORY_MAP } from '../glossary/pillarsMapping';
 import { SPOKE_MATRIX } from '../lib/spoke-data';
 import { CANONICAL_CONCEPTS } from '../lib/concept-corpus';
-export const revalidate = 86400;
+export const dynamic = 'force-static';
 
 export async function GET() {
     const glossaryByCategory: Record<string, typeof glossaryTerms> = {};
