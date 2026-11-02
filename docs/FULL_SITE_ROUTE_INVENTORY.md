@@ -11,9 +11,9 @@
 
 | Metric | Count | Description |
 | :--- | :--- | :--- |
-| **Total Discovered Routes** | **1583** | Unique route entries cataloged across the repository |
+| **Total Discovered Routes** | **1587** | Unique route entries cataloged across the repository |
 | **Core & Executive Hub** | **157** | Anchor executive pages (Home, Services, Pricing, ROI, Reality Check) |
-| **Diagnostics & Tools** | **46** | Interactive calculators and audit tools (PDI, APER, AUEB, EV/SE, Section 174) |
+| **Diagnostics & Tools** | **53** | Interactive calculators, standalone Pay-to-Reveal products, and audit tools |
 | **Concepts & Ontology** | **132** | Canonical research specifications and concept graph |
 | **Glossary Terms & Pillars** | **568** | Terms (551 total, 98 indexed, remainder preserved redirects) + 17 Pillars |
 | **Research & Publications** | **200** | 174+ peer-reviewed works, canonical frameworks, and editorial essays |
@@ -647,7 +647,7 @@
 
 ---
 
-### Diagnostics & Tools (49 Routes)
+### Diagnostics & Tools (53 Routes)
 
 | Route Path | Title / Entity | Status | Design Language | Primary CTA | Component Source |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -699,6 +699,10 @@
 | `/tools/spec-quality-scorecard` | AGENTS.md & SPEC.md Audit Scorecard | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Get $29 Survival Kit ↗ | `app/tools/spec-quality-scorecard/page.tsx` |
 | `/tools/subprime-code-auditor` | Tools/Subprime Code Auditor | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/subprime-code-auditor/page.tsx` |
 | `/tools/vibe-coding-checklist` | Vibe-Coded App Security & Launch Audit | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Pass Inputs to Spec Scorecard ↗ | `app/tools/vibe-coding-checklist/page.tsx` |
+| `/tools/vibe-security-scanner` | Vibe-Coded App & AI Agent Security Scanner | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Open Full Scan ($29 / $49) ↗ | `app/tools/vibe-security-scanner/page.tsx` |
+| `/tools/supabase-rls-checker` | Supabase RLS & PostgREST Security Checker | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Open Full RLS Scan ($29 / $49) ↗ | `app/tools/supabase-rls-checker/page.tsx` |
+| `/tools/department-ai-playbook` | Department AI Risk & SOP Playbook Builder | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Download SOPs + Excel ($39 / $79) ↗ | `app/tools/department-ai-playbook/page.tsx` |
+| `/tools/verify` | Security Clearance Badge Verification | `NOINDEX` | Concept B (Warm Paper / Forest Green / Playfair) | Verify HMAC Signature ↗ | `app/tools/verify/page.tsx` |
 | `/tools/vta` | Tools/Vta | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/tools/vta/page.tsx` |
 
 ---

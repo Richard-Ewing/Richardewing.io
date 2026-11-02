@@ -31,6 +31,21 @@ const SOURCE_CONFIGS: Record<string, DiagnosticSourceConfig> = {
     badgeLabel: 'Unmonitored Agent Actions',
     description: 'Select a session below to map autonomous AI workflows, unvetted MCP servers, and unsanctioned corporate API tokens across your infrastructure.',
   },
+  'vibe-security-scanner': {
+    title: 'Reviewing Your Application & AI Agent Security Scan',
+    badgeLabel: 'Taint & RLS Clearance',
+    description: 'Select a 30-Minute Triage or Technical Due Diligence session below. Bring your scan findings, Supabase migrations, or .mcp.json manifests to lock down production boundaries before enterprise buyer review.',
+  },
+  'supabase-rls-checker': {
+    title: 'Reviewing Your Supabase Row Level Security & PostgREST Audit',
+    badgeLabel: 'Database Tenant Boundary',
+    description: 'Select a working session below to review your Postgres RLS policies, service_role isolation, and SOC2 data boundary controls.',
+  },
+  'department-ai-playbook': {
+    title: 'Reviewing Your Department AI Risk & Governed SOP Playbook',
+    badgeLabel: 'SOX & EU AI Act Controls',
+    description: 'Select an executive working session below to review your department busywork OpEx model, human sign-off RACI thresholds, and 90-day rollout plan.',
+  },
   'for-cfos': {
     title: 'CFO AI Economics & R&D Capital Audit Briefing',
     badgeLabel: 'Section 174 & Gross Margin Defense',

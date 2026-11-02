@@ -130,6 +130,14 @@ const nextConfig: NextConfig = {
           { key: 'X-Robots-Tag', value: 'noindex, follow' },
         ],
       },
+      {
+        source: '/tools/verify',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+          { key: 'Cache-Control', value: 'no-store, max-age=0' },
+          { key: 'Cloudflare-CDN-Cache-Control', value: 'no-store' },
+        ],
+      },
     ];
   },
   async redirects() {
@@ -211,6 +219,10 @@ const nextConfig: NextConfig = {
       { source: '/tools/self-host-vs-api', destination: '/tools/slm-vs-api', permanent: true },
       { source: '/tools/shadow-ai-risk-calculator', destination: '/tools/shadow-ai', permanent: true },
       { source: '/tools/mcp-security-scanner', destination: '/tools/mcp-security-auditor', permanent: true },
+      { source: '/vibe-coding-security-scanner', destination: '/tools/vibe-security-scanner', permanent: true },
+      { source: '/supabase-rls-checker', destination: '/tools/supabase-rls-checker', permanent: true },
+      { source: '/ai-sop-generator', destination: '/tools/department-ai-playbook', permanent: true },
+      { source: '/tools/ai-sop-generator', destination: '/tools/department-ai-playbook', permanent: true },
       { source: '/tools/copilot-roi-calculator', destination: '/tools/copilot-roi', permanent: true },
       { source: '/tools/ai-pilot-roi-calculator', destination: '/tools/ai-roi-timeline', permanent: true },
       { source: '/tools/roai-calculator', destination: '/tools/ai-roi-timeline', permanent: true },

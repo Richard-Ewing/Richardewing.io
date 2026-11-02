@@ -83,6 +83,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/vault/curriculum/tracks/product-economics/5-14',
         '/vault/curriculum/tracks/ai-pricing/8-5',
         '/curriculum/tracks',
+        '/tools/verify',
+        '/vibe-coding-security-scanner',
+        '/supabase-rls-checker',
+        '/ai-sop-generator',
+        '/tools/ai-sop-generator',
         ...Object.keys(BLOG_SLUG_REDIRECTS).map(s => `/blog/${s}`),
         ...Object.keys(ARTICLE_SLUG_REDIRECTS).map(s => `/articles/${s}`),
     ]);
@@ -173,6 +178,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'audit-interview/faq', 'due-diligence/faq', 'eu-ai-act-checker/faq'
     ];
     toolSlugs.forEach(slug => add(`${baseUrl}/tools/${slug}`, 'monthly', 0.85));
+    add(`${baseUrl}/tools/vibe-security-scanner`, 'weekly', 0.95);
+    add(`${baseUrl}/tools/supabase-rls-checker`, 'weekly', 0.95);
+    add(`${baseUrl}/tools/department-ai-playbook`, 'weekly', 0.95);
 
     // === TOOL VS COMPETITOR PAGES (25 routes) ===
     COMBAT_SEO_MATRIX.forEach(tool => {

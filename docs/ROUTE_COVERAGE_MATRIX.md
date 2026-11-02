@@ -49,7 +49,7 @@ The following core components represent the unified editorial building blocks de
 | **Core & Executive Hub** | 158 | Active | 100% | `WebSite`, `Person`, `ProfilePage`, `Organization`, `Dataset` | Passed |
 | **Research & Publications** | 48 | Indexed | 100% | `CollectionPage`, `Article`, `DefinedTermSet` | Passed |
 | **Editorial & Blog** | 152 | Indexed / Canonical | 100% | `BlogPosting`, `Author` | Passed |
-| **Interactive Diagnostics & Tools** | 48 | Active | 100% | `WebApplication`, `HowTo`, `BreadcrumbList` | Passed |
+| **Interactive Diagnostics & Tools** | 52 | Active | 100% | `WebApplication`, `HowTo`, `FAQPage`, `BreadcrumbList` | Passed |
 | **Viral Scorecard Readouts (`/scorecard/[toolSlug]`)** | 15 | Noindex / Follow | 100% | Dynamic `/api/og` Slack/Teams Card -> Canonical `/tools/[slug]` | Passed |
 | **Concepts & Ontology** | 132 | Indexed | 100% | `DefinedTerm`, `FAQPage` | Passed |
 | **Glossary Terms (Indexed)** | 99 | Indexed | 100% | `DefinedTerm`, `DefinedTermSet`, SSR `<table>` Matrices | Passed |

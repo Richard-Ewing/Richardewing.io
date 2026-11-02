@@ -63,8 +63,16 @@ export default function ChainedDiagnosticNextStep({
 
       if (typeof window !== 'undefined') {
         const currentSp = new URLSearchParams(window.location.search);
+        const sensitiveKeys = new Set([
+          'from',
+          'session_id',
+          'run_id',
+          'paid_sku',
+          'token',
+          'badge',
+        ]);
         currentSp.forEach((v, k) => {
-          if (k !== 'from') {
+          if (!sensitiveKeys.has(k)) {
             params.set(k, v);
             scorecardParams[k] = v;
           }

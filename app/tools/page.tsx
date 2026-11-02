@@ -27,6 +27,9 @@ export const metadata: Metadata = {
 };
 
 const FLAGSHIP_TOOLS_LIST = [
+  { name: 'Vibe-Coded App & AI Agent Security Scanner', url: 'https://www.richardewing.io/tools/vibe-security-scanner' },
+  { name: 'Department AI Risk & SOP Playbook Generator', url: 'https://www.richardewing.io/tools/department-ai-playbook' },
+  { name: 'Supabase RLS & PostgREST Security Checker', url: 'https://www.richardewing.io/tools/supabase-rls-checker' },
   { name: 'AI Credit vs Seat Calculator (AUEB)', url: 'https://www.richardewing.io/tools/aueb' },
   { name: 'Claude & OpenAI API Margin Calculator', url: 'https://www.richardewing.io/tools/ai-feature-margin' },
   { name: 'Self-Host LLM vs API Cost Calculator', url: 'https://www.richardewing.io/tools/slm-vs-api' },

@@ -136,6 +136,23 @@ export default function MCPAuditorTool() {
                     <p className="mt-3 text-base text-zinc-700 max-w-3xl mx-auto font-medium leading-relaxed">
                         Over 40 CVEs have emerged from unsanitized STDIO transports, dynamic tool poisoning, and Shadow MCP connections. Audit your infrastructure against the 2026 Zero-Trust MCP Standard.
                     </p>
+                    <div className="mt-6 max-w-3xl mx-auto rounded-2xl bg-[#162e26] border border-[#b77a35]/50 px-5 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-left">
+                        <div>
+                            <p className="font-mono text-[11px] uppercase tracking-widest text-[#b77a35] font-bold">
+                                Automated Code &amp; Manifest Scanner Available
+                            </p>
+                            <p className="font-sans text-xs sm:text-sm text-[#f4f1e9] mt-0.5">
+                                Want to scan a real <code className="font-mono text-xs text-[#b77a35]">.mcp.json</code>, public GitHub repo, or live HTTPS app automatically with zero email gate?
+                            </p>
+                        </div>
+                        <Link
+                            href="/tools/vibe-security-scanner?mode=config"
+                            className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#b77a35] hover:bg-[#9f682b] text-white font-sans text-xs font-bold shrink-0 transition-colors"
+                        >
+                            Scan .mcp.json / Repo Live
+                            <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">

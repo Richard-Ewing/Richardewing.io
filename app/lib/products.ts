@@ -531,4 +531,34 @@ export const PRODUCTS: Record<string, Product> = {
         mode: 'payment',
         paymentLink: 'https://buy.stripe.com/5kQfZabn87zs5lz0ty2B20Z',
     },
+
+    // --- STANDALONE PAY-TO-REVEAL SOFTWARE TOOLS (ADR-0021) ---
+    vibe_scan_29: {
+        name: 'Vibe-Coded App & AI Agent Security Scanner (Single Scan Pass)',
+        description: 'Opens every full entrypoint-to-sink vulnerability trace, SQL/TypeScript remediation patches, 1-click Cursor and Claude Code fix prompts, and 24-hour verification re-scans.',
+        price: 2900,
+        mode: 'payment',
+        paymentLink: '/tools/vibe-security-scanner',
+    },
+    vibe_scan_49: {
+        name: 'Vibe-Coded App & AI Agent Security Scanner (Founder & CTO Clearance Pack)',
+        description: 'Everything in Single Scan Pass plus Signed Buyer Security Clearance Certificate PDF, 30-day unlimited verification re-scans, and HMAC-signed public verification badge.',
+        price: 4900,
+        mode: 'payment',
+        paymentLink: '/tools/vibe-security-scanner',
+    },
+    dept_playbook_39: {
+        name: 'Department AI Risk & SOP Playbook (Single Department Pack)',
+        description: 'Opens all 8 stack-customized governed AI SOPs, SOX / EU AI Act human approval matrix, sanitized prompts, and 5-tab live-formula Excel (.xlsx) financial reconciliation model.',
+        price: 3900,
+        mode: 'payment',
+        paymentLink: '/tools/department-ai-playbook',
+    },
+    dept_playbook_79: {
+        name: 'Department AI Risk & SOP Playbook (Complete 5-Department Bundle)',
+        description: 'All 40 governed AI SOPs across Finance, Operations, Customer Support, HR, and Small Business, 6-tab master Excel (.xlsx) model, and Board-Ready Company AI Acceptable Use Policy PDF.',
+        price: 7900,
+        mode: 'payment',
+        paymentLink: '/tools/department-ai-playbook',
+    },
 };

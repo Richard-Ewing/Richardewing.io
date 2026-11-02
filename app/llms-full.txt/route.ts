@@ -221,6 +221,12 @@ The APER diagnostic benchmarks engineering productivity by calculating revenue g
 ### Audit Interview
 The Audit Interview tests verification skills, not code generation. Candidates evaluate AI-generated code with hidden flaws, focusing on bug detection, severity ranking, and ship/no-ship judgment. Free to use at https://www.richardewing.io/tools/audit-interview
 
+### Vibe-Coded App & AI Agent Security Scanner (Standalone Pay-to-Reveal Product)
+Scans live HTTPS URLs, public GitHub repositories, Next.js API routes, Supabase SQL migrations, and .mcp.json manifests to trace entrypoint-to-sink flaws (missing Supabase RLS, unauthenticated OpenAI/Anthropic wallet drains, unpinned npx -y MCP RCE, and forged Stripe webhooks). Zero-gate free 25% reveal with full Finding #1 trace; $29 Single Scan Pass and $49 Founder & CTO Clearance Pack with Signed Buyer Security Clearance PDF and HMAC badge. URL: https://www.richardewing.io/tools/vibe-security-scanner (Supabase focus: https://www.richardewing.io/tools/supabase-rls-checker)
+
+### Department AI Risk & SOP Playbook Generator (Standalone Pay-to-Reveal Product)
+Calculates monthly recoverable busywork payroll across Finance, Operations, Customer Support, HR, and Small Business teams, flags the #1 unsupervised agent red-line under SOX 404 and EU AI Act Annex III, and generates stack-customized SOPs (NetSuite, QuickBooks, Ramp, Stripe, Zendesk, Salesforce, Workday) plus live-formula 5-tab ECMA-376 Excel (.xlsx) financial workbooks ($39 single department / $79 all 5 departments). URL: https://www.richardewing.io/tools/department-ai-playbook
+
 ---
 
 ## Exogram  -  The Execution Control Plane for AI

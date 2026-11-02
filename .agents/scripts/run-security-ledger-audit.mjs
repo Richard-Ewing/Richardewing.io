@@ -75,7 +75,16 @@ function scanClientServiceRoleLeaks() {
       } else if (/\.(tsx|ts)$/i.test(entry.name)) {
         const content = fs.readFileSync(full, 'utf8');
         const isClient = /^\s*['"]use client['"]/.test(content);
-        if (isClient && (/supabaseAdmin/.test(content) || /SUPABASE_SERVICE_ROLE_KEY/.test(content))) {
+        const importsServerPayEngine =
+          /from\s+['"][^'"]*pay-to-reveal\/(?:vibe-security-engine|department-playbook-engine|sealed-envelope|xlsx-compiler)['"]/.test(
+            content
+          );
+        if (
+          isClient &&
+          (/supabaseAdmin/.test(content) ||
+            /SUPABASE_SERVICE_ROLE_KEY/.test(content) ||
+            importsServerPayEngine)
+        ) {
           leaks.push(path.relative(ROOT_DIR, full).replace(/\\/g, '/'));
         }
       }
@@ -175,17 +184,22 @@ function runDeterministicHunters(unit, content) {
     }
   }
 
-  // Class 4: Stripe Webhook Payment Status & Product Price Entitlement Verification
+  // Class 4: Stripe Webhook Payment Status, Fail-Closed Secret & Product Price Entitlement Verification
   if (unit.relPath === 'app/api/webhooks/stripe/route.ts') {
-    if (!/payment_status/.test(content) || !/getMinimumExpectedCents|amount_subtotal/.test(content)) {
+    const hasEmptyWebhookSecretFallback = /constructEvent\([\s\S]{0,160}\|\|\s*['"]['"]/.test(content);
+    if (
+      hasEmptyWebhookSecretFallback ||
+      !/payment_status/.test(content) ||
+      !/getMinimumExpectedCents|amount_subtotal/.test(content)
+    ) {
       candidates.push({
         id: `SEC-STRIPE-ENTITLEMENT-${unit.relPath}`,
         unit: unit.relPath,
         attackClass: 'CLASS_4_STRIPE_ENTITLEMENT_BYPASS',
         severity: 'CRITICAL',
         verdict: 'confirmed',
-        summary: 'Stripe webhook grants Clerk entitlements without verifying session.payment_status === "paid" and catalog price thresholds.',
-        remediation: 'Verify `session.payment_status === "paid"` and compare `amount_total`/`amount_subtotal` against `PRODUCTS` catalog prices.'
+        summary: 'Stripe webhook allows empty secret fallback or grants Clerk entitlements without verifying session.payment_status === "paid" and catalog price thresholds.',
+        remediation: 'Fail closed when STRIPE_WEBHOOK_SECRET is missing, verify `session.payment_status === "paid"`, and compare `amount_total`/`amount_subtotal` against `PRODUCTS` catalog prices.'
       });
     }
   }
@@ -216,6 +230,42 @@ function runDeterministicHunters(unit, content) {
         verdict: 'confirmed',
         summary: 'Anonymous Gemini text/audio generation route lacks `cf-connecting-ip` rate limiting.',
         remediation: 'Enforce bounded sliding-window rate limiting keyed by `cf-connecting-ip` returning HTTP 429.'
+      });
+    }
+  }
+
+  // Class 6 (ADR-0021): Pay-to-Reveal Sealed-Envelope & Checkout Boundary Enforcement
+  if (unit.relPath === 'app/api/tools/open-run/route.ts') {
+    const checksPaidStatus = /payment_status\s*===\s*['"]paid['"]/.test(content);
+    const checksRunIdMatch = /metadata\?\.runId\s*===\s*runId/.test(content);
+    const checksMinPrice = /priceCents\s*\*\s*0\.5/.test(content);
+    if (!checksPaidStatus || !checksRunIdMatch || !checksMinPrice) {
+      candidates.push({
+        id: `SEC-PAY-TO-REVEAL-${unit.relPath}`,
+        unit: unit.relPath,
+        attackClass: 'CLASS_6_PAY_TO_REVEAL_BOUNDARY',
+        severity: 'CRITICAL',
+        verdict: 'confirmed',
+        summary: 'Pay-to-Reveal open-run route lacks fail-closed Stripe payment_status, runId metadata binding, or catalog price verification.',
+        remediation: 'Verify session.payment_status === "paid", session.metadata?.runId === runId, and effectivePaidCents >= priceCents * 0.5.'
+      });
+    }
+  }
+
+  if (
+    unit.relPath === 'app/api/tools/vibe-scan/route.ts' ||
+    unit.relPath === 'app/api/tools/playbook-compile/route.ts' ||
+    unit.relPath === 'app/api/tools/pay-checkout/route.ts'
+  ) {
+    if (!/cf-connecting-ip/.test(content) || !/status:\s*429/.test(content) || !/MAX_PAYLOAD_BYTES/.test(content)) {
+      candidates.push({
+        id: `SEC-TOOLS-PERIMETER-${unit.relPath}`,
+        unit: unit.relPath,
+        attackClass: 'CLASS_6_PAY_TO_REVEAL_BOUNDARY',
+        severity: 'HIGH',
+        verdict: 'confirmed',
+        summary: 'Standalone tool API route lacks cf-connecting-ip rate limiting (429) or MAX_PAYLOAD_BYTES cap.',
+        remediation: 'Enforce cf-connecting-ip sliding-window rate limiting and raw request byte caps.'
       });
     }
   }
@@ -286,7 +336,7 @@ for (const leak of clientLeaks) {
     attackClass: 'CLASS_3_SUPABASE_RLS_BYPASS',
     severity: 'CRITICAL',
     verdict: 'confirmed',
-    summary: 'Client component imports supabaseAdmin or references SUPABASE_SERVICE_ROLE_KEY.',
+    summary: 'Client component imports supabaseAdmin, SUPABASE_SERVICE_ROLE_KEY, or server-only pay-to-reveal engines.',
     remediation: 'Move privileged database logic into an authenticated Server Route Handler.'
   });
 }

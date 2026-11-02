@@ -198,6 +198,47 @@ const contractExpectations = [
     relPath: 'app/api/ai-advisor/chat/route.ts',
     requiredExports: ['POST'],
   },
+  {
+    adr: 'ADR-0021',
+    relPath: 'lib/pay-to-reveal/sealed-envelope.ts',
+    requiredExports: [
+      'PAY_TO_REVEAL_CATALOG',
+      'sealServerPayload',
+      'openServerPayload',
+      'signRescanToken',
+      'verifyRescanToken',
+      'signBadgeToken',
+      'verifyBadgeToken',
+    ],
+  },
+  {
+    adr: 'ADR-0021',
+    relPath: 'lib/pay-to-reveal/xlsx-compiler.ts',
+    requiredExports: ['compileXlsxWorkbook', 'uint8ArrayToBase64'],
+  },
+  {
+    adr: 'ADR-0021',
+    relPath: 'lib/pay-to-reveal/vibe-security-engine.ts',
+    requiredExports: [
+      'validateSafePublicHttpsUrl',
+      'runVibeSecurityScan',
+      'buildPublicVibeScanResponse',
+    ],
+  },
+  {
+    adr: 'ADR-0021',
+    relPath: 'lib/pay-to-reveal/department-playbook-engine.ts',
+    requiredExports: [
+      'compileDepartmentPlaybook',
+      'buildPublicPlaybookResponse',
+      'buildDepartmentXlsxSheets',
+    ],
+  },
+  {
+    adr: 'ADR-0021',
+    relPath: 'app/api/tools/open-run/route.ts',
+    requiredExports: ['POST'],
+  },
 ];
 
 for (const contract of contractExpectations) {

@@ -12,12 +12,6 @@ const AI_ADVISOR_PRICE_IDS = new Set([
     'price_1Tb4CF5swlCTzLiTwEzkPBTO',
 ]);
 
-function getStripe() {
-    return new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-        httpClient: Stripe.createFetchHttpClient(),
-    });
-}
-
 function generateSecureHex(byteLength = 6): string {
     const bytes = new Uint8Array(byteLength);
     globalThis.crypto.getRandomValues(bytes);
@@ -42,18 +36,26 @@ function getMinimumExpectedCents(specificItemId: string): number {
 }
 
 export async function POST(req: Request) {
-    const stripe = getStripe();
+    const stripeKey = process.env.STRIPE_SECRET_KEY?.trim();
+    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET?.trim();
+    if (!stripeKey || !webhookSecret || webhookSecret.length < 16) {
+        console.error('Webhook fail-closed: missing Stripe secret configuration.');
+        return new NextResponse('Server configuration error', { status: 503 });
+    }
+
+    const stripe = new Stripe(stripeKey, {
+        httpClient: Stripe.createFetchHttpClient(),
+    });
     const body = await req.text();
-    const signature = (await headers()).get('Stripe-Signature') as string;
+    const signature = (await headers()).get('Stripe-Signature');
+    if (!signature) {
+        return new NextResponse('Missing Stripe-Signature header', { status: 400 });
+    }
 
     let event: Stripe.Event;
 
     try {
-        event = stripe.webhooks.constructEvent(
-            body,
-            signature,
-            process.env.STRIPE_WEBHOOK_SECRET || ''
-        );
+        event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
     } catch {
         console.error('Webhook signature verification failed.');
         return new NextResponse('Webhook signature verification failed', { status: 400 });
@@ -70,6 +72,26 @@ export async function POST(req: Request) {
         if (session.payment_status !== 'paid' && !hasValidCouponZero) {
             console.warn(`Checkout session ${session.id} completed with status ${session.payment_status}; skipping entitlement grant.`);
             return new NextResponse('Awaiting payment settlement', { status: 200 });
+        }
+
+        // ADR-0021: Record anonymous or authenticated Pay-to-Reveal tool run settlement
+        const payToRevealRunId = session.metadata?.runId?.trim();
+        const payToRevealSku = session.metadata?.payToRevealSku?.trim();
+        if (payToRevealRunId && payToRevealSku) {
+            try {
+                await supabaseAdmin
+                    .from('paid_tool_runs')
+                    .update({
+                        paid_sku: payToRevealSku,
+                        stripe_session_id: session.id,
+                        customer_email: session.customer_details?.email || null,
+                        amount_cents: session.amount_total ?? session.amount_subtotal ?? null,
+                        paid_at: new Date().toISOString(),
+                    })
+                    .eq('run_id', payToRevealRunId);
+            } catch {
+                // Non-blocking if paid_tool_runs migration is pending
+            }
         }
 
         // We pass the Clerk UserID via standard Stripe client_reference_id, optionally with a specific item ID
@@ -199,7 +221,15 @@ export async function POST(req: Request) {
                         unlocked_assets: updatedUnlockedAssets,
                     };
 
-                    if (effectivePaidCents >= 2900) {
+                    const isPayToRevealSku = Boolean(
+                        payToRevealSku ||
+                        (verifiedSpecificItemId &&
+                            ['vibe_scan_29', 'vibe_scan_49', 'dept_playbook_39', 'dept_playbook_79'].includes(
+                                verifiedSpecificItemId
+                            ))
+                    );
+
+                    if (effectivePaidCents >= 2900 && !isPayToRevealSku) {
                         oneOffMetadata.has_premium_guide_access = true;
                     }
 
