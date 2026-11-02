@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { auth, clerkClient } from '@clerk/nextjs/server';
 import { z } from 'zod';
-import { supabaseAdmin } from '@/lib/supabase';
 import {
   openServerPayload,
   PAY_TO_REVEAL_CATALOG,
@@ -186,25 +185,10 @@ export async function POST(req: Request) {
       );
     }
 
-    // Triple-Layered Sealed Payload Recovery:
+    // Zero-Database Stateless Sealed Payload Recovery:
     // Layer 1: Client-supplied AES-256-GCM envelope (bound to runId + toolId AAD)
-    // Layer 2: Supabase paid_tool_runs.sealed_envelope lookup
-    // Layer 3: Deterministic re-execution from verified Stripe session.metadata
-    let candidateEnvelope = sealedEnvelope || '';
-    if (!candidateEnvelope) {
-      try {
-        const { data: row } = await supabaseAdmin
-          .from('paid_tool_runs')
-          .select('sealed_envelope')
-          .eq('run_id', runId)
-          .maybeSingle();
-        if (row && typeof row.sealed_envelope === 'string') {
-          candidateEnvelope = row.sealed_envelope;
-        }
-      } catch {
-        candidateEnvelope = '';
-      }
-    }
+    // Layer 2: Deterministic re-execution from verified Stripe session.metadata
+    const candidateEnvelope = sealedEnvelope || '';
 
     if (toolId === 'vibe-security-scanner') {
       let openedScan: VibeScanSealedPayload | null = null;

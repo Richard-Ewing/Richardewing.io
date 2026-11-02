@@ -255,6 +255,26 @@ function runDeterministicHunters(unit, content) {
   if (
     unit.relPath === 'app/api/tools/vibe-scan/route.ts' ||
     unit.relPath === 'app/api/tools/playbook-compile/route.ts' ||
+    unit.relPath === 'app/api/tools/pay-checkout/route.ts' ||
+    unit.relPath === 'app/api/tools/open-run/route.ts' ||
+    unit.relPath === 'app/api/tools/verify-badge/route.ts'
+  ) {
+    if (/supabaseAdmin|@\/lib\/supabase/.test(content)) {
+      candidates.push({
+        id: `SEC-TOOLS-ZERO-SUPABASE-${unit.relPath}`,
+        unit: unit.relPath,
+        attackClass: 'CLASS_6_PAY_TO_REVEAL_BOUNDARY',
+        severity: 'HIGH',
+        verdict: 'confirmed',
+        summary: 'Pay-to-Reveal standalone tool route imports Supabase, violating the ADR-0021 Zero-Supabase stateless invariant.',
+        remediation: 'Use stateless AES-256-GCM sealed envelopes and verified Stripe session.metadata without Supabase persistence.'
+      });
+    }
+  }
+
+  if (
+    unit.relPath === 'app/api/tools/vibe-scan/route.ts' ||
+    unit.relPath === 'app/api/tools/playbook-compile/route.ts' ||
     unit.relPath === 'app/api/tools/pay-checkout/route.ts'
   ) {
     if (!/cf-connecting-ip/.test(content) || !/status:\s*429/.test(content) || !/MAX_PAYLOAD_BYTES/.test(content)) {

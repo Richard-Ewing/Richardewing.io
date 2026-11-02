@@ -21,8 +21,9 @@ We introduce two standalone zero-gate Pay-to-Reveal software products on `richar
    - **Free 25% Reveal**: Monthly and annual recoverable busywork OpEx, the #1 Unsupervised Agent Red-Line, Governed SOP #1 in full stack-customized detail, and redacted stubs for SOPs `#2` through `#8` plus the 5-tab `.xlsx` workbook.
    - **Paid Reveal (`$39` Single Department Pack / `$79` Complete 5-Department Bundle)**: Opens all 8 stack-customized SOPs (or all 40 across all 5 departments), RACI human approval thresholds, sanitized copyable prompts, a pure TypeScript ECMA-376 5-tab `.xlsx` financial model with live `<f>` Excel formulas (`lib/pay-to-reveal/xlsx-compiler.ts`), and a Board-Ready Company AI Acceptable Use Policy PDF.
 
-3. **Unbypassable Server-Side Redaction & Fail-Closed Checkout Verification**:
-   - Scan and compile endpoints (`app/api/tools/vibe-scan/route.ts` and `app/api/tools/playbook-compile/route.ts`) strip locked traces and SOP bodies before serialization and encrypt the complete server payload using Web Crypto `AES-256-GCM` with `additionalData` bound to `runId` and `toolId` (`lib/pay-to-reveal/sealed-envelope.ts`), paired with best-effort logging to `docs/sql/paid_tool_runs.sql`.
+3. **Unbypassable Zero-Supabase Stateless Redaction & Fail-Closed Checkout Verification**:
+   - All client UI leaves import strictly from `lib/pay-to-reveal/client-catalog.ts` so zero server-only blueprints or remediation payloads ever enter public client bundles.
+   - Scan and compile endpoints (`app/api/tools/vibe-scan/route.ts` and `app/api/tools/playbook-compile/route.ts`) operate with zero Supabase or database dependencies, stripping locked traces and SOP bodies before serialization and encrypting the complete server payload using Web Crypto `AES-256-GCM` with `additionalData` bound to `runId` and `toolId` (`lib/pay-to-reveal/sealed-envelope.ts`).
    - `app/api/tools/pay-checkout/route.ts` creates dynamic Stripe Checkout Sessions via `Stripe.createFetchHttpClient()` for SKUs registered in `app/lib/products.ts` and `app/api/webhooks/stripe/route.ts` (`vibe_scan_29`, `vibe_scan_49`, `dept_playbook_39`, `dept_playbook_79`), enforcing strict `https://www.richardewing.io/tools/...` return URLs.
    - `app/api/tools/open-run/route.ts` fails closed (`HTTP 402` / `403`) unless Stripe confirms `session.payment_status === 'paid'`, matching `metadata.runId`, and `amount_subtotal >= expectedMinCents` (or a valid HMAC `rescanToken` or verified Clerk Vault/Tools entitlement is presented).
 
@@ -34,9 +35,9 @@ Accepted
 
 ## Consequences
 Positive:
-- Establishes two 24/7 zero-gate impulse-priced (`$29`, `$39`, `$49`, `$79`) standalone software products directly inside the Concept B editorial system on `richardewing.io` with zero added npm dependencies.
-- Eliminates browser DevTools (`F12`) network inspection bypasses by sealing unpaid findings and SOPs inside `AES-256-GCM` authenticated ciphertext with `runId` AAD binding.
-- Guarantees zero dead screens after Stripe Checkout redirects through triple-layered state recovery (client `localStorage` sealed envelope + `paid_tool_runs` database lookup + deterministic re-execution from verified Stripe `session.metadata`).
+- Establishes two 24/7 zero-gate impulse-priced (`$29`, `$39`, `$49`, `$79`) standalone software products directly inside the Concept B editorial system on `richardewing.io` with zero added npm dependencies and zero Supabase database dependencies.
+- Eliminates browser DevTools (`F12`) network and bundle inspection bypasses by sealing unpaid findings and SOPs inside `AES-256-GCM` authenticated ciphertext with `runId` AAD binding and isolating client catalogs in `lib/pay-to-reveal/client-catalog.ts`.
+- Guarantees zero dead screens after Stripe Checkout redirects through pure stateless dual-layer recovery (client `localStorage` sealed envelope + deterministic re-execution from verified Stripe `session.metadata`) without storing customer code or rows in Supabase.
 - Captures high-intent commercial search and AI citation demand across `/tools/vibe-security-scanner`, `/tools/supabase-rls-checker`, and `/tools/department-ai-playbook`, reinforced in `app/sitemap.ts`, `next.config.ts`, `app/llms.txt/route.ts`, `app/llms-full.txt/route.ts`, and `.agents/scripts/run-security-ledger-audit.mjs`.
 
 Negative/Considerations:

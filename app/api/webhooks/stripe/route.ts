@@ -74,26 +74,6 @@ export async function POST(req: Request) {
             return new NextResponse('Awaiting payment settlement', { status: 200 });
         }
 
-        // ADR-0021: Record anonymous or authenticated Pay-to-Reveal tool run settlement
-        const payToRevealRunId = session.metadata?.runId?.trim();
-        const payToRevealSku = session.metadata?.payToRevealSku?.trim();
-        if (payToRevealRunId && payToRevealSku) {
-            try {
-                await supabaseAdmin
-                    .from('paid_tool_runs')
-                    .update({
-                        paid_sku: payToRevealSku,
-                        stripe_session_id: session.id,
-                        customer_email: session.customer_details?.email || null,
-                        amount_cents: session.amount_total ?? session.amount_subtotal ?? null,
-                        paid_at: new Date().toISOString(),
-                    })
-                    .eq('run_id', payToRevealRunId);
-            } catch {
-                // Non-blocking if paid_tool_runs migration is pending
-            }
-        }
-
         // We pass the Clerk UserID via standard Stripe client_reference_id, optionally with a specific item ID
         const rawReferenceId = session.client_reference_id;
 

@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
-import { supabaseAdmin } from '@/lib/supabase';
 import {
   generateRunId,
   sealServerPayload,
@@ -101,23 +100,6 @@ export async function POST(req: Request) {
 
     const sealedEnvelope = await sealServerPayload(runId, 'vibe-security-scanner', fullPayload);
     const publicResponse = buildPublicVibeScanResponse(runId, fullPayload, sealedEnvelope);
-
-    // Best-effort persistence in paid_tool_runs for cross-browser Stripe redirect durability
-    try {
-      await supabaseAdmin.from('paid_tool_runs').upsert({
-        run_id: runId,
-        tool_id: 'vibe-security-scanner',
-        target_summary: fullPayload.targetLabel.slice(0, 240),
-        public_preview: {
-          score: fullPayload.score,
-          grade: fullPayload.grade,
-          severityCounts: publicResponse.severityCounts,
-        },
-        sealed_envelope: sealedEnvelope,
-      });
-    } catch {
-      // Non-fatal when paid_tool_runs migration is not yet applied
-    }
 
     // If caller holds a valid paid HMAC rescanToken, include full verified findings immediately
     if (input.rescanToken) {

@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
-import { supabaseAdmin } from '@/lib/supabase';
 import { generateRunId, sealServerPayload } from '@/lib/pay-to-reveal/sealed-envelope';
 import {
   buildPublicPlaybookResponse,
@@ -94,25 +93,6 @@ export async function POST(req: Request) {
       fullPayload
     );
     const publicResponse = buildPublicPlaybookResponse(runId, fullPayload, sealedEnvelope);
-
-    try {
-      await supabaseAdmin.from('paid_tool_runs').upsert({
-        run_id: runId,
-        tool_id: 'department-ai-playbook',
-        target_summary: `${fullPayload.departmentLabel} (${fullPayload.headcount} HC)`.slice(
-          0,
-          240
-        ),
-        public_preview: {
-          department: fullPayload.department,
-          monthlyRecoverableUsd: fullPayload.monthlyRecoverableUsd,
-          annualRecoverableUsd: fullPayload.annualRecoverableUsd,
-        },
-        sealed_envelope: sealedEnvelope,
-      });
-    } catch {
-      // Non-fatal if paid_tool_runs migration is pending
-    }
 
     return NextResponse.json(publicResponse);
   } catch (err) {
