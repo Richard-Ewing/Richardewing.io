@@ -11,6 +11,8 @@ import { CAREER_PATHS } from '@/app/lib/career-paths';
 
 import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return pageData.map((p) => ({ slug: p.slug.split('/') }));
 }

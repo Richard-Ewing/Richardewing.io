@@ -64,6 +64,8 @@ export async function generateMetadata(
     };
 }
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
     return COMBAT_SEO_MATRIX.flatMap((tool) =>
         tool.competitors.map((competitor) => ({

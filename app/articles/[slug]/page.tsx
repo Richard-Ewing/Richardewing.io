@@ -89,6 +89,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
     const seen = new Set<string>();
     return articles

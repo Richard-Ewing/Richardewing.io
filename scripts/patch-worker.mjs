@@ -38,13 +38,11 @@ let content = fs.readFileSync(workerPath, 'utf8');
 
 if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
   console.log('[patch-worker] ADR-0019 pre-OpenNext edge shield already present in .open-next/worker.js.');
-  process.exit(0);
-}
-
-const targetSignature = `    async fetch(request, env, ctx) {
+} else {
+  const targetSignature = `    async fetch(request, env, ctx) {
         return runWithCloudflareRequestContext(request, env, ctx, async () => {`;
 
-const replacement = `    async fetch(request, env, ctx) {
+  const replacement = `    async fetch(request, env, ctx) {
         // __RW_ADR_0019_EDGE_SHIELD__
         const __rwUa = (request.headers.get("user-agent") || "").toLowerCase();
         if (__rwUa.includes("early hints")) {
@@ -190,12 +188,80 @@ const replacement = `    async fetch(request, env, ctx) {
         }
         return runWithCloudflareRequestContext(request, env, ctx, async () => {`;
 
-if (!content.includes(targetSignature)) {
-  console.error('[patch-worker] ERROR: Target fetch signature not found in .open-next/worker.js!');
-  process.exit(1);
+  if (!content.includes(targetSignature)) {
+    console.error('[patch-worker] ERROR: Target fetch signature not found in .open-next/worker.js!');
+    process.exit(1);
+  }
+
+  content = content.replace(targetSignature, replacement);
+  fs.writeFileSync(workerPath, content, 'utf8');
+  console.log('[patch-worker] Injected ADR-0019 pre-OpenNext edge shield into .open-next/worker.js.');
 }
 
-content = content.replace(targetSignature, replacement);
-fs.writeFileSync(workerPath, content, 'utf8');
-console.log('[patch-worker] Injected ADR-0019 pre-OpenNext edge shield into .open-next/worker.js.');
+// Patch OpenNext middleware cacheInterceptor so unmatched /404 routes serve pre-rendered /_not-found.cache from env.ASSETS without booting handler.mjs
+const mwPath = path.join(openNextDir, 'middleware', 'handler.mjs');
+if (!fs.existsSync(mwPath)) {
+  console.error(`[patch-worker] ERROR: Missing ${mwPath}`);
+  process.exit(1);
+}
+let mw = fs.readFileSync(mwPath, 'utf8');
+if (mw.includes('__OPENNEXT_404_CACHE_INTERCEPT__')) {
+  console.log('[patch-worker] 404 cache interception already present in .open-next/middleware/handler.mjs.');
+} else {
+  const nextActionGuard = 'if (Boolean(event.headers["next-action"]) || Boolean(event.headers[PRERENDER_REVALIDATE_HEADER]))\n    return event;';
+  const nextActionReplacement = `${nextActionGuard}\n  /* __OPENNEXT_404_CACHE_INTERCEPT__ */\n  if (event.rawPath === "/404" && event.method !== "GET" && event.method !== "HEAD") {\n    return {\n      type: "core",\n      statusCode: 404,\n      body: emptyReadableStream(),\n      headers: {\n        "content-type": "text/plain; charset=utf-8",\n        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",\n        "x-opennext-cache": "HIT"\n      },\n      isBase64Encoded: false\n    };\n  }`;
+
+  if (!mw.includes(nextActionGuard)) {
+    console.error('[patch-worker] ERROR: nextActionGuard not found in .open-next/middleware/handler.mjs!');
+    process.exit(1);
+  }
+  mw = mw.replace(nextActionGuard, nextActionReplacement);
+
+  const v419Target = 'const cacheKey = getCacheKey(event, localizedPath, resolvedRoutes);';
+  const v418TargetA = 'const cacheKey = localizedPath === "/" ? "/index" : localizedPath;';
+  const v418TargetB = 'const isISR = Object.keys(PrerenderManifest?.routes ?? {}).includes(localizedPath) ||';
+
+  if (mw.includes(v419Target)) {
+    mw = mw.replace(
+      v419Target,
+      'const cacheKey = localizedPath === "/404" ? "/_not-found" : getCacheKey(event, localizedPath, resolvedRoutes);'
+    );
+  } else if (mw.includes(v418TargetA) && mw.includes(v418TargetB)) {
+    mw = mw
+      .replace(
+        v418TargetA,
+        'const cacheKey = localizedPath === "/" ? "/index" : localizedPath === "/404" ? "/_not-found" : localizedPath;'
+      )
+      .replace(
+        v418TargetB,
+        'const isISR = localizedPath === "/404" || Object.keys(PrerenderManifest?.routes ?? {}).includes(localizedPath) ||'
+      );
+  } else {
+    console.error('[patch-worker] ERROR: cacheKey signature not found in .open-next/middleware/handler.mjs!');
+    process.exit(1);
+  }
+
+  const statusTarget = 'const statusCode = computeStatusCode(event.rewriteStatusCode, cachedValue.meta?.status);';
+  if (!mw.includes(statusTarget)) {
+    console.error('[patch-worker] ERROR: computeStatusCode signature not found in .open-next/middleware/handler.mjs!');
+    process.exit(1);
+  }
+  mw = mw.replace(
+    statusTarget,
+    'const statusCode = computeStatusCode(event.rewriteStatusCode, localizedPath === "/404" ? 404 : cachedValue.meta?.status);'
+  );
+
+  const postInterceptTarget = 'applyMiddlewareHeaders(eventOrResult, headers);\n        return eventOrResult;';
+  if (!mw.includes(postInterceptTarget)) {
+    console.error('[patch-worker] ERROR: applyMiddlewareHeaders signature not found in .open-next/middleware/handler.mjs!');
+    process.exit(1);
+  }
+  mw = mw.replace(
+    postInterceptTarget,
+    'applyMiddlewareHeaders(eventOrResult, headers);\n        if (eventOrResult.statusCode === 404 || eventOrResult.statusCode >= 500) {\n          delete eventOrResult.headers["Cache-Control"];\n          eventOrResult.headers["cache-control"] = NO_STORE_CACHE_CONTROL;\n        }\n        return eventOrResult;'
+  );
+
+  fs.writeFileSync(mwPath, mw, 'utf8');
+  console.log('[patch-worker] Injected /404 -> /_not-found StaticAssetsIncrementalCache interception into .open-next/middleware/handler.mjs.');
+}
 process.exit(0);

@@ -16,6 +16,8 @@ interface Props {
     }>;
 }
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
     const routes = getAllSpokeRoutes();
     return routes.map((r) => ({

@@ -9,6 +9,8 @@ import { ontologyGraph } from '@/lib/ontology/relationships';
 
 import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
     return FAILURES.map(f => ({ slug: f.slug }));
 }

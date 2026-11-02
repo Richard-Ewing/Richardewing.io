@@ -10,6 +10,8 @@ import CommonFailureCascades from '@/components/skills/CommonFailureCascades';
 
 import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
     return SKILLS.map(s => ({ slug: s.slug }));
 }

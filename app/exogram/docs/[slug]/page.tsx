@@ -6,6 +6,8 @@ import Link from 'next/link';
 
 import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
     return exogramDocs.map((doc) => ({
         slug: doc.slug,

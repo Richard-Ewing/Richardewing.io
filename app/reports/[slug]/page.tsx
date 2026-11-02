@@ -16,6 +16,8 @@ const reportMeta: Record<string, { title: string; description: string }> = {
     'ai-margin-compression-report': { title: 'AI Margin Compression & COGS Benchmark', description: 'How AI inference costs compress gross margins. Enterprise benchmarks for AI feature economics and cost attribution.' },
 };
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
     return Object.keys(reportMeta).map((slug) => ({ slug }));
 }

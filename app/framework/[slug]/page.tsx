@@ -5,6 +5,8 @@ import { subFrameworks, type SubFramework } from '@/app/lib/framework-data';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
     return [
         { slug: 'economics' },

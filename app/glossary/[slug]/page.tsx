@@ -56,6 +56,8 @@ const GLOSSARY_SEO_OVERRIDES: Record<string, { title: string; description: strin
     },
 };
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
     return glossaryTerms.filter(t => KEEP_TERMS.includes(t.slug)).map(t => ({ slug: t.slug }));
 }

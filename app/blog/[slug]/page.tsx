@@ -23,6 +23,8 @@ const BLOG_SEO_OVERRIDES: Record<string, { title: string; description: string }>
     },
 };
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
     return Object.keys(allArticles)
         .filter((slug) => !BLOG_SLUG_REDIRECTS[slug])

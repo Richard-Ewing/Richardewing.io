@@ -10,6 +10,8 @@ import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
 
 type Props = { params: Promise<{ slug: string }> };
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
     return PILLARS.map(p => ({ slug: p.slug }));
 }

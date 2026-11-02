@@ -103,6 +103,8 @@ function getComparison(slug: string): Comparison | undefined {
     return undefined;
 }
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
     // Only prerender the 4 curated comparisons that lack dedicated subdirectory pages.
     // All other Tier A pages have their own app/compare/{slug}/page.tsx files.

@@ -16,6 +16,8 @@ const iconMap: Record<string, any> = {
     Cpu, Target, Blocks, LockKeyhole, Database, LayoutTemplate: Cpu
 };
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
     return CAREER_PATHS.map((path) => ({
         slug: path.slug,

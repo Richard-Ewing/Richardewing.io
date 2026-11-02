@@ -4,6 +4,8 @@ import { notFound, permanentRedirect } from 'next/navigation';
 import { getModule, getAllModuleSlugs, type CurriculumModule } from '@/lib/curriculum-data';
 import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
     return getAllModuleSlugs().map(slug => ({
         slug: slug.split('/')
