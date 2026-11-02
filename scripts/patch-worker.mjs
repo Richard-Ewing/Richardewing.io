@@ -41,6 +41,9 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
 } else {
   const targetSignature = `    async fetch(request, env, ctx) {
         return runWithCloudflareRequestContext(request, env, ctx, async () => {`;
+  const tailSignature = `            return handler(reqOrResp, env, ctx, request.signal);
+        });
+    },`;
 
   const replacement = `    async fetch(request, env, ctx) {
         // __RW_ADR_0019_EDGE_SHIELD__
@@ -58,6 +61,15 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
         const __rwUrl = new URL(request.url);
         const __rwPath = __rwUrl.pathname;
         const __rwLowerPath = __rwPath.toLowerCase();
+        if (__rwLowerPath.startsWith("/__rw_edge_cache/")) {
+            return new Response("Not Found", {
+                status: 404,
+                headers: {
+                    "Content-Type": "text/plain; charset=utf-8",
+                    "Cache-Control": "private, no-store"
+                }
+            });
+        }
         if (__rwUrl.hostname === "richardewing.io" && __rwPath === "/") {
             return new Response(null, {
                 status: 301,
@@ -186,14 +198,114 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 );
             }
         }
-        return runWithCloudflareRequestContext(request, env, ctx, async () => {`;
+        const __rwMethod = request.method.toUpperCase();
+        const __rwCookieLower = (request.headers.get("cookie") || "").toLowerCase();
+        const __rwHasClerkSignal =
+            __rwCookieLower.includes("__session") ||
+            __rwCookieLower.includes("__client_uat") ||
+            __rwCookieLower.includes("__clerk") ||
+            request.headers.has("Authorization");
+        const __rwReqCc = (request.headers.get("cache-control") || "").toLowerCase();
+        const __rwReqBypass = __rwReqCc.includes("no-cache") || __rwReqCc.includes("no-store");
+        const __rwExcludedPrefixes = ["/api/", "/vault", "/admin", "/scorecard", "/sign-in", "/sign-up", "/sso-callback", "/_next/", "/cdn-cgi/"];
+        const __rwIsExcluded =
+            __rwIsDirectiveFile ||
+            __rwExcludedPrefixes.some((p) => p.endsWith("/") ? __rwLowerPath.startsWith(p) : (__rwLowerPath === p || __rwLowerPath.startsWith(p + "/")));
+        let __rwHasNonMarketingQuery = false;
+        if (__rwUrl.search !== "") {
+            const __rwMarketingExact = new Set(["gclid","dclid","wbraid","gbraid","fbclid","msclkid","twclid","ttclid","li_fat_id","mc_cid","mc_eid","igshid","yclid","_hsenc","_hsmi","mkt_tok","s_kwcid","vero_id","oly_enc_id","oly_anon_id","rb_clickid","wickedid","ref"]);
+            for (const [__k] of __rwUrl.searchParams) {
+                const __lk = __k.toLowerCase();
+                if (!__lk.startsWith("utm_") && !__rwMarketingExact.has(__lk)) {
+                    __rwHasNonMarketingQuery = true;
+                    break;
+                }
+            }
+        }
+        const __rwCanEdgeCache =
+            typeof caches !== "undefined" &&
+            Boolean(caches.default) &&
+            (__rwMethod === "GET" || __rwMethod === "HEAD") &&
+            __rwUrl.hostname === "www.richardewing.io" &&
+            (__rwPath === "/" || !__rwPath.endsWith("/")) &&
+            !__rwIsExcluded &&
+            !__rwHasClerkSignal &&
+            !__rwHasNonMarketingQuery &&
+            !__rwReqBypass &&
+            !request.headers.has("RSC") &&
+            !request.headers.has("Next-Router-Prefetch") &&
+            !request.headers.has("Next-Router-Segment-Prefetch") &&
+            !request.headers.has("Next-Router-State-Tree") &&
+            !request.headers.has("Next-Action");
+        let __rwCacheKey = null;
+        if (__rwCanEdgeCache) {
+            const __rwVer = String((env && env.CF_VERSION_METADATA && env.CF_VERSION_METADATA.id) || "v1").replace(/[^a-zA-Z0-9_-]/g, "").slice(0, 12);
+            const __rwNormPath = __rwPath === "/" ? "/index" : __rwPath.replace(/[/]+$/, "");
+            __rwCacheKey = new Request("https://www.richardewing.io/__rw_edge_cache/" + __rwVer + __rwNormPath + ".woff2", { method: "GET" });
+            const __rwCached = await caches.default.match(__rwCacheKey);
+            if (__rwCached) {
+                const __rwHitHeaders = new Headers(__rwCached.headers);
+                const __rwOrigCt = __rwHitHeaders.get("x-rw-orig-ct") || "text/html; charset=utf-8";
+                __rwHitHeaders.delete("x-rw-orig-ct");
+                __rwHitHeaders.delete("cf-cache-status");
+                __rwHitHeaders.set("Content-Type", __rwOrigCt);
+                __rwHitHeaders.set("Cache-Control", "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800");
+                __rwHitHeaders.set("Vary", "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept-Encoding");
+                __rwHitHeaders.set("X-RW-Edge-Cache", "HIT");
+                return new Response(__rwMethod === "HEAD" ? null : __rwCached.body, {
+                    status: __rwCached.status,
+                    statusText: __rwCached.statusText,
+                    headers: __rwHitHeaders
+                });
+            }
+        }
+        const __rwOriginRes = await runWithCloudflareRequestContext(request, env, ctx, async () => {`;
 
-  if (!content.includes(targetSignature)) {
+  const tailReplacement = `            return handler(reqOrResp, env, ctx, request.signal);
+        });
+        if (__rwCanEdgeCache && __rwCacheKey && __rwMethod === "GET" && __rwOriginRes && __rwOriginRes.status === 200 && !__rwOriginRes.headers.has("set-cookie")) {
+            const __rwOriginCc = (__rwOriginRes.headers.get("cache-control") || "").toLowerCase();
+            const __rwOriginCt = (__rwOriginRes.headers.get("content-type") || "").toLowerCase();
+            if (__rwOriginCt.includes("text/html") && !__rwOriginCc.includes("no-store") && !__rwOriginCc.includes("private")) {
+                const __rwBodyBuf = await __rwOriginRes.arrayBuffer();
+                const __rwStoreHeaders = new Headers(__rwOriginRes.headers);
+                __rwStoreHeaders.delete("vary");
+                __rwStoreHeaders.delete("set-cookie");
+                __rwStoreHeaders.delete("cf-cache-status");
+                __rwStoreHeaders.delete("pragma");
+                __rwStoreHeaders.delete("expires");
+                __rwStoreHeaders.delete("x-nextjs-cache");
+                __rwStoreHeaders.delete("cloudflare-cdn-cache-control");
+                __rwStoreHeaders.delete("cdn-cache-control");
+                __rwStoreHeaders.set("X-RW-Orig-CT", __rwOriginRes.headers.get("content-type") || "text/html; charset=utf-8");
+                __rwStoreHeaders.set("Content-Type", "font/woff2");
+                __rwStoreHeaders.set("Cache-Control", "public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800");
+                __rwStoreHeaders.set("Content-Length", String(__rwBodyBuf.byteLength));
+                const __rwStoreRes = new Response(__rwBodyBuf.slice(0), {
+                    status: 200,
+                    headers: __rwStoreHeaders
+                });
+                if (ctx && typeof ctx.waitUntil === "function") {
+                    ctx.waitUntil(caches.default.put(__rwCacheKey, __rwStoreRes).catch(() => {}));
+                }
+                const __rwMissHeaders = new Headers(__rwOriginRes.headers);
+                __rwMissHeaders.set("X-RW-Edge-Cache", "MISS");
+                return new Response(__rwBodyBuf, {
+                    status: __rwOriginRes.status,
+                    statusText: __rwOriginRes.statusText,
+                    headers: __rwMissHeaders
+                });
+            }
+        }
+        return __rwOriginRes;
+    },`;
+
+  if (!content.includes(targetSignature) || !content.includes(tailSignature)) {
     console.error('[patch-worker] ERROR: Target fetch signature not found in .open-next/worker.js!');
     process.exit(1);
   }
 
-  content = content.replace(targetSignature, replacement);
+  content = content.replace(targetSignature, replacement).replace(tailSignature, tailReplacement);
   fs.writeFileSync(workerPath, content, 'utf8');
   console.log('[patch-worker] Injected ADR-0019 pre-OpenNext edge shield into .open-next/worker.js.');
 }
