@@ -39,6 +39,29 @@ let content = fs.readFileSync(workerPath, 'utf8');
 if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
   console.log('[patch-worker] ADR-0019 pre-OpenNext edge shield already present in .open-next/worker.js.');
 } else {
+  // Defer heavy top-level OpenNext middleware and image imports until an actual cache miss occurs
+  content = content
+    .replace(
+      'import { handleCdnCgiImageRequest, handleImageRequest } from "./cloudflare/images.js";\n',
+      ''
+    )
+    .replace(
+      'import { handler as middlewareHandler } from "./middleware/handler.mjs";\n',
+      ''
+    )
+    .replace(
+      'return handleCdnCgiImageRequest(url, env);',
+      'const { handleCdnCgiImageRequest } = await import("./cloudflare/images.js"); return handleCdnCgiImageRequest(url, env);'
+    )
+    .replace(
+      'return await handleImageRequest(url, request.headers, env);',
+      'const { handleImageRequest } = await import("./cloudflare/images.js"); return await handleImageRequest(url, request.headers, env);'
+    )
+    .replace(
+      'const reqOrResp = await middlewareHandler(request, env, ctx);',
+      'const { handler: middlewareHandler } = await import("./middleware/handler.mjs"); const reqOrResp = await middlewareHandler(request, env, ctx);'
+    );
+
   const targetSignature = `    async fetch(request, env, ctx) {
         return runWithCloudflareRequestContext(request, env, ctx, async () => {`;
   const tailSignature = `            return handler(reqOrResp, env, ctx, request.signal);
@@ -204,18 +227,47 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
             __rwCookieLower.includes("__session") ||
             __rwCookieLower.includes("__client_uat") ||
             __rwCookieLower.includes("__clerk") ||
-            request.headers.has("Authorization");
+            request.headers.has("Authorization") ||
+            __rwUrl.searchParams.has("__clerk_db_jwt") ||
+            __rwUrl.searchParams.has("__clerk_handshake") ||
+            __rwUrl.searchParams.has("__clerk_synced") ||
+            __rwUrl.searchParams.has("__clerk_ticket");
         const __rwReqCc = (request.headers.get("cache-control") || "").toLowerCase();
         const __rwReqBypass = __rwReqCc.includes("no-cache") || __rwReqCc.includes("no-store");
-        const __rwExcludedPrefixes = ["/api/", "/vault", "/admin", "/scorecard", "/sign-in", "/sign-up", "/sso-callback", "/_next/", "/cdn-cgi/"];
+        const __rwExcludedPrefixes = [
+            "/api/",
+            "/vault",
+            "/admin",
+            "/scorecard",
+            "/sign-in",
+            "/sign-up",
+            "/sso-callback",
+            "/_next/",
+            "/cdn-cgi/",
+            "/ai-integration/advisor",
+            "/ai-integration/system/download",
+            "/tools/board-room",
+            "/tools/dashboard",
+            "/dashboard",
+            "/workspace",
+            "/wizard",
+            "/toolkit-success"
+        ];
         const __rwIsExcluded =
             __rwIsDirectiveFile ||
             __rwExcludedPrefixes.some((p) => p.endsWith("/") ? __rwLowerPath.startsWith(p) : (__rwLowerPath === p || __rwLowerPath.startsWith(p + "/")));
+        const __rwIsRsc =
+            request.headers.get("RSC") === "1" ||
+            request.headers.has("Next-Router-Prefetch") ||
+            request.headers.has("Next-Router-Segment-Prefetch") ||
+            request.headers.has("Next-Router-State-Tree") ||
+            __rwUrl.searchParams.has("_rsc");
         let __rwHasNonMarketingQuery = false;
         if (__rwUrl.search !== "") {
             const __rwMarketingExact = new Set(["gclid","dclid","wbraid","gbraid","fbclid","msclkid","twclid","ttclid","li_fat_id","mc_cid","mc_eid","igshid","yclid","_hsenc","_hsmi","mkt_tok","s_kwcid","vero_id","oly_enc_id","oly_anon_id","rb_clickid","wickedid","ref"]);
             for (const [__k] of __rwUrl.searchParams) {
                 const __lk = __k.toLowerCase();
+                if (__lk === "_rsc" && __rwIsRsc) continue;
                 if (!__lk.startsWith("utm_") && !__rwMarketingExact.has(__lk)) {
                     __rwHasNonMarketingQuery = true;
                     break;
@@ -232,25 +284,43 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
             !__rwHasClerkSignal &&
             !__rwHasNonMarketingQuery &&
             !__rwReqBypass &&
-            !request.headers.has("RSC") &&
-            !request.headers.has("Next-Router-Prefetch") &&
-            !request.headers.has("Next-Router-Segment-Prefetch") &&
-            !request.headers.has("Next-Router-State-Tree") &&
             !request.headers.has("Next-Action");
         let __rwCacheKey = null;
         if (__rwCanEdgeCache) {
             const __rwVer = String((env && env.CF_VERSION_METADATA && env.CF_VERSION_METADATA.id) || "v1").replace(/[^a-zA-Z0-9_-]/g, "").slice(0, 12);
             const __rwNormPath = __rwPath === "/" ? "/index" : __rwPath.replace(/[/]+$/, "");
-            __rwCacheKey = new Request("https://www.richardewing.io/__rw_edge_cache/" + __rwVer + __rwNormPath + ".woff2", { method: "GET" });
+            let __rwVariant = "html";
+            if (__rwIsRsc) {
+                const __rwRscDisc = [
+                    request.headers.get("RSC") || "",
+                    request.headers.get("Next-Router-Prefetch") || "",
+                    request.headers.get("Next-Router-Segment-Prefetch") || "",
+                    request.headers.get("Next-Router-State-Tree") || "",
+                    request.headers.get("Next-Url") || ""
+                ].join("|");
+                let __h = 0x811c9dc5;
+                for (let __i = 0; __i < __rwRscDisc.length; __i++) {
+                    __h ^= __rwRscDisc.charCodeAt(__i);
+                    __h = Math.imul(__h, 0x01000193);
+                }
+                __rwVariant = "rsc_" + (__h >>> 0).toString(16).padStart(8, "0");
+            }
+            __rwCacheKey = new Request("https://www.richardewing.io/__rw_edge_cache/" + __rwVer + "/" + __rwVariant + __rwNormPath + ".woff2", { method: "GET" });
             const __rwCached = await caches.default.match(__rwCacheKey);
             if (__rwCached) {
                 const __rwHitHeaders = new Headers(__rwCached.headers);
-                const __rwOrigCt = __rwHitHeaders.get("x-rw-orig-ct") || "text/html; charset=utf-8";
+                const __rwOrigCt = __rwHitHeaders.get("x-rw-orig-ct") || (__rwIsRsc ? "text/x-component" : "text/html; charset=utf-8");
                 __rwHitHeaders.delete("x-rw-orig-ct");
                 __rwHitHeaders.delete("cf-cache-status");
                 __rwHitHeaders.set("Content-Type", __rwOrigCt);
-                __rwHitHeaders.set("Cache-Control", "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800");
-                __rwHitHeaders.set("Vary", "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept-Encoding");
+                if (__rwIsRsc) {
+                    __rwHitHeaders.set("Cache-Control", "private, no-cache, no-store, max-age=0, must-revalidate");
+                    __rwHitHeaders.set("Cloudflare-CDN-Cache-Control", "no-store");
+                    __rwHitHeaders.set("CDN-Cache-Control", "no-store");
+                } else {
+                    __rwHitHeaders.set("Cache-Control", "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800");
+                    __rwHitHeaders.set("Vary", "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept-Encoding");
+                }
                 __rwHitHeaders.set("X-RW-Edge-Cache", "HIT");
                 return new Response(__rwMethod === "HEAD" ? null : __rwCached.body, {
                     status: __rwCached.status,
@@ -263,10 +333,23 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
 
   const tailReplacement = `            return handler(reqOrResp, env, ctx, request.signal);
         });
-        if (__rwCanEdgeCache && __rwCacheKey && __rwMethod === "GET" && __rwOriginRes && __rwOriginRes.status === 200 && !__rwOriginRes.headers.has("set-cookie")) {
+        if (
+            __rwCanEdgeCache &&
+            __rwCacheKey &&
+            __rwMethod === "GET" &&
+            __rwOriginRes &&
+            __rwOriginRes.status === 200 &&
+            !__rwOriginRes.headers.has("set-cookie") &&
+            !__rwOriginRes.headers.has("x-nextjs-redirect") &&
+            !__rwOriginRes.headers.has("x-action-redirect") &&
+            !__rwOriginRes.headers.has("location")
+        ) {
             const __rwOriginCc = (__rwOriginRes.headers.get("cache-control") || "").toLowerCase();
             const __rwOriginCt = (__rwOriginRes.headers.get("content-type") || "").toLowerCase();
-            if (__rwOriginCt.includes("text/html") && !__rwOriginCc.includes("no-store") && !__rwOriginCc.includes("private")) {
+            const __rwEligibleOrigin = __rwIsRsc
+                ? __rwOriginCt.includes("text/x-component")
+                : (__rwOriginCt.includes("text/html") && !__rwOriginCc.includes("no-store") && !__rwOriginCc.includes("private"));
+            if (__rwEligibleOrigin) {
                 const __rwBodyBuf = await __rwOriginRes.arrayBuffer();
                 const __rwStoreHeaders = new Headers(__rwOriginRes.headers);
                 __rwStoreHeaders.delete("vary");
@@ -277,7 +360,7 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 __rwStoreHeaders.delete("x-nextjs-cache");
                 __rwStoreHeaders.delete("cloudflare-cdn-cache-control");
                 __rwStoreHeaders.delete("cdn-cache-control");
-                __rwStoreHeaders.set("X-RW-Orig-CT", __rwOriginRes.headers.get("content-type") || "text/html; charset=utf-8");
+                __rwStoreHeaders.set("X-RW-Orig-CT", __rwOriginRes.headers.get("content-type") || (__rwIsRsc ? "text/x-component" : "text/html; charset=utf-8"));
                 __rwStoreHeaders.set("Content-Type", "font/woff2");
                 __rwStoreHeaders.set("Cache-Control", "public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800");
                 __rwStoreHeaders.set("Content-Length", String(__rwBodyBuf.byteLength));
@@ -289,6 +372,11 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                     ctx.waitUntil(caches.default.put(__rwCacheKey, __rwStoreRes).catch(() => {}));
                 }
                 const __rwMissHeaders = new Headers(__rwOriginRes.headers);
+                if (__rwIsRsc) {
+                    __rwMissHeaders.set("Cache-Control", "private, no-cache, no-store, max-age=0, must-revalidate");
+                    __rwMissHeaders.set("Cloudflare-CDN-Cache-Control", "no-store");
+                    __rwMissHeaders.set("CDN-Cache-Control", "no-store");
+                }
                 __rwMissHeaders.set("X-RW-Edge-Cache", "MISS");
                 return new Response(__rwBodyBuf, {
                     status: __rwOriginRes.status,
