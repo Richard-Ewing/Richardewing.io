@@ -121,6 +121,26 @@ filesToAudit.forEach(filePath => {
     }
   }
 
+  // Rule D2: GitGuardian Generic High-Entropy Secret & False-Positive Guard
+  if (/\.(ts|tsx|js|jsx|mjs)$/i.test(relativePath)) {
+    const fileLines = content.split('\n');
+    for (let i = 0; i < fileLines.length; i++) {
+      const windowText = fileLines.slice(Math.max(0, i - 2), Math.min(fileLines.length, i + 3)).join('\n');
+      if (!/(?:token|secret|apikey|api_key|password|credential)/i.test(windowText)) continue;
+      const litRegex = /['"`]([A-Za-z0-9_-]{18,})['"`]/g;
+      let litMatch;
+      while ((litMatch = litRegex.exec(fileLines[i])) !== null) {
+        const candidate = litMatch[1];
+        if (/^(?:price_|prod_|MOCK_|TEST_)/.test(candidate)) continue;
+        if (/^[0-9a-f]{32,}$/i.test(candidate)) continue;
+        if (/\d/.test(candidate) && /[A-Z]/.test(candidate) && /[a-z]/.test(candidate)) {
+          console.error(`[SECURITY ERROR] High-entropy token-like string '${candidate}' near credential keyword in ${relativePath}:${i + 1} (triggers GitGuardian Generic High Entropy Secret). Use spaced labels or env vars.`);
+          errorCount++;
+        }
+      }
+    }
+  }
+
   // Rule E: Banned AI Marketing Buzzwords & Synthetic Jargon (HWS v2.0)
   if (/\.(tsx|jsx|ts)$/i.test(relativePath) && (relativePath.startsWith('app') || relativePath.startsWith('components'))) {
     const bannedWordPatterns = [

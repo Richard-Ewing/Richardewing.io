@@ -1138,11 +1138,11 @@ export function buildPublicPlaybookResponse(
     freeSop,
     lockedSopStubs,
     workbookTabPreview: [
-      '01_Busywork_OpEx_Model (Live Formulas)',
-      '02_SOX_RACI_Thresholds',
-      '03_Variance_Exception_Log',
-      '04_Token_Spend_Caps',
-      '05_90Day_Rollout_Plan',
+      'Busywork OpEx Model (Live Formulas)',
+      'SOX RACI Thresholds',
+      'Variance Exception Log',
+      'Inference Spend Caps',
+      '90-Day Rollout Plan',
     ],
     sealedEnvelope,
   };
@@ -1243,7 +1243,7 @@ export function buildDepartmentXlsxSheets(
   ]);
 
   const sheet2: XlsxWorksheetSpec = {
-    name: '02_SOX_RACI_Thresholds',
+    name: 'SOX RACI Thresholds',
     columnWidths: [14, 34, 16, 22, 22, 42, 38],
     rows: [
       [
@@ -1268,7 +1268,7 @@ export function buildDepartmentXlsxSheets(
   };
 
   const sheet3: XlsxWorksheetSpec = {
-    name: '03_Variance_Exception_Log',
+    name: 'Variance Exception Log',
     columnWidths: [14, 16, 22, 18, 18, 18, 24, 34],
     rows: [
       [
@@ -1305,7 +1305,7 @@ export function buildDepartmentXlsxSheets(
   };
 
   const sheet4: XlsxWorksheetSpec = {
-    name: '04_Token_Spend_Caps',
+    name: 'Inference Spend Caps',
     columnWidths: [14, 32, 18, 18, 18, 22, 20],
     rows: [
       [
@@ -1335,7 +1335,7 @@ export function buildDepartmentXlsxSheets(
   };
 
   const sheet5: XlsxWorksheetSpec = {
-    name: '05_90Day_Rollout_Plan',
+    name: '90-Day Rollout Plan',
     columnWidths: [18, 26, 24, 44, 30],
     rows: [
       [
@@ -1371,7 +1371,7 @@ export function buildDepartmentXlsxSheets(
 
   const sheets: XlsxWorksheetSpec[] = [
     {
-      name: '01_Busywork_OpEx_Model',
+      name: 'Busywork OpEx Model',
       columnWidths: [14, 38, 20, 20, 22, 22, 22, 24],
       rows: sheet1Rows,
     },
@@ -1408,7 +1408,7 @@ export function buildDepartmentXlsxSheets(
       }
     }
     sheets.push({
-      name: '06_All_5_Depts_40_SOPs',
+      name: 'All 5 Depts Master',
       columnWidths: [26, 14, 38, 22, 22, 16, 22],
       rows: masterRows,
     });
