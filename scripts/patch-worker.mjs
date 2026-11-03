@@ -222,6 +222,17 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
             }
         }
         const __rwMethod = request.method.toUpperCase();
+        if (__rwMethod === "POST" && !__rwLowerPath.startsWith("/api/") && !request.headers.has("Next-Action")) {
+            return new Response("Method Not Allowed", {
+                status: 405,
+                headers: {
+                    "Allow": "GET, HEAD",
+                    "Content-Type": "text/plain; charset=utf-8",
+                    "Cache-Control": "private, no-cache, no-store, max-age=0, must-revalidate",
+                    "Cloudflare-CDN-Cache-Control": "no-store"
+                }
+            });
+        }
         const __rwCookieLower = (request.headers.get("cookie") || "").toLowerCase();
         const __rwHasClerkSignal =
             __rwCookieLower.includes("__session") ||
@@ -236,7 +247,9 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
         const __rwReqBypass = __rwReqCc.includes("no-cache") || __rwReqCc.includes("no-store");
         const __rwExcludedPrefixes = [
             "/api/",
-            "/vault",
+            "/vault/assets",
+            "/vault/team",
+            "/vault/join",
             "/admin",
             "/scorecard",
             "/sign-in",
@@ -248,13 +261,14 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
             "/ai-integration/system/download",
             "/tools/board-room",
             "/tools/dashboard",
+            "/tools/verify",
             "/dashboard",
             "/workspace",
             "/wizard",
             "/toolkit-success"
         ];
         const __rwIsExcluded =
-            __rwIsDirectiveFile ||
+            __rwLowerPath === "/vault" ||
             __rwExcludedPrefixes.some((p) => p.endsWith("/") ? __rwLowerPath.startsWith(p) : (__rwLowerPath === p || __rwLowerPath.startsWith(p + "/")));
         const __rwIsRsc =
             request.headers.get("RSC") === "1" ||
@@ -319,6 +333,7 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                     __rwHitHeaders.set("CDN-Cache-Control", "no-store");
                 } else {
                     __rwHitHeaders.set("Cache-Control", "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800");
+                    __rwHitHeaders.set("Cloudflare-CDN-Cache-Control", "public, max-age=86400, stale-while-revalidate=604800");
                     __rwHitHeaders.set("Vary", "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept-Encoding");
                 }
                 __rwHitHeaders.set("X-RW-Edge-Cache", "HIT");
@@ -348,7 +363,7 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
             const __rwOriginCt = (__rwOriginRes.headers.get("content-type") || "").toLowerCase();
             const __rwEligibleOrigin = __rwIsRsc
                 ? __rwOriginCt.includes("text/x-component")
-                : (__rwOriginCt.includes("text/html") && !__rwOriginCc.includes("no-store") && !__rwOriginCc.includes("private"));
+                : ((__rwOriginCt.includes("text/html") || (__rwIsDirectiveFile && (__rwOriginCt.includes("text/plain") || __rwOriginCt.includes("xml")))) && !__rwOriginCc.includes("no-store") && !__rwOriginCc.includes("private"));
             if (__rwEligibleOrigin) {
                 const __rwBodyBuf = await __rwOriginRes.arrayBuffer();
                 const __rwStoreHeaders = new Headers(__rwOriginRes.headers);
@@ -376,6 +391,10 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                     __rwMissHeaders.set("Cache-Control", "private, no-cache, no-store, max-age=0, must-revalidate");
                     __rwMissHeaders.set("Cloudflare-CDN-Cache-Control", "no-store");
                     __rwMissHeaders.set("CDN-Cache-Control", "no-store");
+                } else {
+                    __rwMissHeaders.set("Cache-Control", "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800");
+                    __rwMissHeaders.set("Cloudflare-CDN-Cache-Control", "public, max-age=86400, stale-while-revalidate=604800");
+                    __rwMissHeaders.set("Vary", "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept-Encoding");
                 }
                 __rwMissHeaders.set("X-RW-Edge-Cache", "MISS");
                 return new Response(__rwBodyBuf, {
