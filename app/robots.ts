@@ -21,6 +21,8 @@ export default function robots(): MetadataRoute.Robots {
         '/workspace/*',
         '/dashboard',
         '/dashboard/*',
+        '/tools/dashboard',
+        '/tools/dashboard/*',
     ];
 
     return {

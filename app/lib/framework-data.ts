@@ -249,6 +249,21 @@ export const subFrameworks: Record<string, SubFramework> = {
                     enforcement: 'Exogram 3-Level Edge Inference Dividend Interceptor'
                 },
                 conceptSlug: 'inference-dividend-model'
+            },
+            {
+                id: 'PAIG-ENG-004',
+                name: 'Spec-Driven Development (SDD)',
+                definition: 'An engineering governance discipline requiring typed schemas, out-of-scope blast-radius guards, and deterministic compiler gates in SPEC.md and AGENTS.md before AI coding agents edit code.',
+                problem: 'Conversational vibe coding across 60+ files causes coding assistants to invent duplicate helpers, loosen TypeScript types, and silently break authentication or billing logic.',
+                whyItMatters: 'Eliminates senior engineer pull-request babysitting and cuts 30-day agent rework churn before code reaches production.',
+                provenance: ['LinkedIn Newsletters', 'Built In publications', 'Spec-Driven Development Scorecard', 'Google Antigravity Architecture'],
+                implementation: {
+                    research: ['Things I Got Wrong: A Founder\'s Post-Mortem on Building AI Products', 'AI-Generated Architecture Decision Records: Preventing Agentic Monorepo Drift'],
+                    diagnostics: ['Spec-Driven Development Audit Scorecard', 'Product Debt Index (PDI)'],
+                    education: ['Track 1: Engineering Economics Foundations', 'Track 17: Developer Experience (DX) Economics'],
+                    enforcement: 'Exogram Specification & Blast-Radius Verification Gate'
+                },
+                conceptSlug: 'spec-driven-development'
             }
         ]
     },

@@ -47,7 +47,7 @@ The following core components represent the unified editorial building blocks de
 | Page Family | Route Count | Status | Concept B Conformance | SEO & Schema | Verification Status |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Core & Executive Hub** | 158 | Active | 100% | `WebSite`, `Person`, `ProfilePage`, `Organization`, `Dataset` | Passed |
-| **Research & Publications** | 48 | Indexed | 100% | `CollectionPage`, `Article`, `DefinedTermSet` | Passed |
+| **Research & Publications** | 49 | Indexed | 100% | `CollectionPage`, `Article`, `DefinedTermSet` | Passed |
 | **Editorial & Blog** | 152 | Indexed / Canonical | 100% | `BlogPosting`, `Author` | Passed |
 | **Interactive Diagnostics & Tools** | 52 | Active | 100% | `WebApplication`, `HowTo`, `FAQPage`, `BreadcrumbList` | Passed |
 | **Viral Scorecard Readouts (`/scorecard/[toolSlug]`)** | 15 | Noindex / Follow | 100% | Dynamic `/api/og` Slack/Teams Card -> Canonical `/tools/[slug]` | Passed |

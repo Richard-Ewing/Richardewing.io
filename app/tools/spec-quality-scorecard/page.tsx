@@ -1,18 +1,20 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import CalculatorIntentProposal from '@/app/components/calculators/CalculatorIntentProposal';
 import ToolServerHeader from '@/app/components/calculators/ToolServerHeader';
 import ChainedDiagnosticNextStep from '@/app/components/calculators/ChainedDiagnosticNextStep';
 import SpecQualityScorecardTool from './content';
 
 export const metadata: Metadata = {
-  title: 'AGENTS.md & SPEC.md Audit Scorecard',
+  title: 'Spec-Driven Development Audit Scorecard',
   description:
-    'Score your AGENTS.md, SPEC.md, and PRDs across executable acceptance criteria, blast-radius guards, and test gates before running AI coding agents.',
+    'Practice Spec-Driven Development by auditing AGENTS.md, CLAUDE.md, and SPEC.md contracts across data schemas, blast-radius guards, and CI test gates.',
   keywords: [
+    'spec driven development',
+    'what is spec driven development',
     'AGENTS.md template',
     'SPEC.md checklist',
     'CLAUDE.md audit scorecard',
-    'spec driven development',
     'AI coding agent rules',
     'executable PRD linter',
   ],
@@ -20,14 +22,14 @@ export const metadata: Metadata = {
     canonical: 'https://www.richardewing.io/tools/spec-quality-scorecard',
   },
   openGraph: {
-    title: 'AGENTS.md & SPEC.md Audit Scorecard | Richard Ewing',
+    title: 'Spec-Driven Development Audit Scorecard | Richard Ewing',
     description:
-      'Score your AGENTS.md, SPEC.md, and PRDs across executable acceptance criteria, blast-radius guards, and test gates before running AI coding agents.',
+      'Practice Spec-Driven Development by auditing AGENTS.md, CLAUDE.md, and SPEC.md contracts across data schemas, blast-radius guards, and CI test gates.',
     url: 'https://www.richardewing.io/tools/spec-quality-scorecard',
     type: 'website',
     images: [
       {
-        url: 'https://www.richardewing.io/api/og?title=AGENTS.md+%26+SPEC.md+Audit+Scorecard&category=Spec-Driven+SDLC',
+        url: 'https://www.richardewing.io/api/og?title=Spec-Driven+Development+Audit+Scorecard&category=Spec-Driven+SDLC',
         width: 1200,
         height: 630,
       },
@@ -35,24 +37,51 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AGENTS.md & SPEC.md Audit Scorecard | Richard Ewing',
+    title: 'Spec-Driven Development Audit Scorecard | Richard Ewing',
     description:
-      'Score your AGENTS.md, SPEC.md, and PRDs across executable acceptance criteria, blast-radius guards, and test gates before running AI coding agents.',
+      'Practice Spec-Driven Development by auditing AGENTS.md, CLAUDE.md, and SPEC.md contracts across data schemas, blast-radius guards, and CI test gates.',
     images: [
-      'https://www.richardewing.io/api/og?title=AGENTS.md+%26+SPEC.md+Audit+Scorecard&category=Spec-Driven+SDLC',
+      'https://www.richardewing.io/api/og?title=Spec-Driven+Development+Audit+Scorecard&category=Spec-Driven+SDLC',
     ],
   },
 };
 
 export default function Page() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is Spec-Driven Development (SDD)?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Spec-Driven Development (SDD) is a software engineering discipline where teams write explicit data schemas, out-of-scope blast-radius boundaries, and deterministic verification gates in SPEC.md and AGENTS.md before allowing AI coding agents to touch production code.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How do you score an AGENTS.md or SPEC.md specification?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Grade the specification across four pillars: typed input/output data contracts, explicit out-of-scope file boundaries, edge-case failure handling, and automated build and test pass criteria required prior to commit.',
+        },
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-[#FAF9F6] space-y-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <ToolServerHeader
         slug="spec-quality-scorecard"
-        eyebrow="Spec-Driven SDLC · Repository Governance"
-        h1="AGENTS.md, CLAUDE.md & SPEC.md Quality Scorecard"
-        executiveAnswer="The AGENTS.md and SPEC.md Audit Scorecard grades your repository rule files and product specifications across data schemas, out-of-scope blast-radius guards, and deterministic test gates so CPOs, Engineering Managers, and technical founders stop autonomous coding agents from breaking production."
-        appName="AGENTS.md & SPEC.md Audit Scorecard"
+        eyebrow="Spec-Driven Development · Repository Governance"
+        h1="Spec-Driven Development (AGENTS.md & SPEC.md) Audit Scorecard"
+        executiveAnswer="Spec-Driven Development replaces ad-hoc chat prompting with locked data schemas, explicit blast-radius guards, and automated compiler test gates before an AI coding agent edits a single file. CTOs, CPOs, VPs of Engineering, and Engineering Managers use this scorecard to grade repository rule files and prevent multi-file regressions."
+        appName="Spec-Driven Development & AGENTS.md Audit Scorecard"
         appDescription="Interactive specification audit grading AGENTS.md, CLAUDE.md, and SPEC.md contracts before dispatching Claude Code, Cursor, or Google Antigravity agents."
         howToName="How to Audit Your AGENTS.md and Feature Specification Before Coding"
         howToDescription="Score your feature specification across schema clarity, forbidden file boundaries, edge cases, and automated verification gates."
@@ -67,6 +96,31 @@ export default function Page() {
       <SpecQualityScorecardTool />
 
       <div className="page-container max-w-4xl mx-auto px-6 pb-20 space-y-10">
+        <div className="bg-white border border-[#24332b]/15 rounded-2xl p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <p className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#b77a35]">
+              Canonical Methodology &amp; Verification Pair
+            </p>
+            <p className="text-sm font-sans text-[#1e2924]">
+              Read the full{' '}
+              <Link href="/articles/frameworks/spec-driven-development" className="font-semibold text-[#162e26] underline hover:text-[#b77a35]">
+                Spec-Driven Development (SDD) Framework
+              </Link>{' '}
+              and pair upfront repository contracts with{' '}
+              <Link href="/concepts/eval-driven-development" className="font-semibold text-[#162e26] underline hover:text-[#b77a35]">
+                Eval-Driven Development (EDD)
+              </Link>{' '}
+              in your CI pipeline.
+            </p>
+          </div>
+          <Link
+            href="/articles/frameworks/spec-driven-development"
+            className="shrink-0 px-4 py-2.5 rounded-lg bg-[#162e26] text-white font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#29473b] transition-colors"
+          >
+            Read SDD Guide ↗
+          </Link>
+        </div>
+
         <ChainedDiagnosticNextStep
           chainName="Vibe-Coding Rescue & Spec Governance Chain"
           stepLabel="Step 2 of 3 · Connected Diagnostic Chain"

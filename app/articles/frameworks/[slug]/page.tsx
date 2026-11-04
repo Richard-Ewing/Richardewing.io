@@ -47,6 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'hybrid-cloud-local-runtime': 'Hybrid Cloud-Local AI Runtime',
         'sovereign-dual-chamber-governance': 'Dual-Chamber AI Governance',
         'ai-architecture-decision-records': 'AI Architecture Decision Records',
+        'spec-driven-development': 'Spec-Driven Development (SDD) Guide',
     };
 
     const searchDescription: Record<string, string> = {
@@ -82,6 +83,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'hybrid-cloud-local-runtime': 'Split developer agent workloads between zero-cost local LiteRT models and cloud frontier reasoning to cut token bills by over eighty percent.',
         'sovereign-dual-chamber-governance': 'Separate board-level strategic invariants from automated sub-50ms production release gates to ship enterprise AI systems without blind spots.',
         'ai-architecture-decision-records': 'Generate structured five-heading Architecture Decision Records directly from git diffs and pre-commit hooks to prevent agentic monorepo drift.',
+        'spec-driven-development': 'Replace fragile vibe coding with Spec-Driven Development (SDD). Govern AI coding agents using executable schemas, blast-radius guards, and test gates.',
     };
 
     const baseTitle = clampSeoTitle(searchTitle[slug] || framework.name, 42);

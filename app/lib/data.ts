@@ -1735,5 +1735,24 @@ export const frameworks = [
             { title: 'AI-Generated Architecture Decision Records: Preventing Agentic Monorepo Drift', publication: 'Built In', date: 'Oct 2026', url: 'https://builtin.com/articles/ai-generated-architecture-decision-records' }
         ],
         relatedTool: { name: 'Product Debt Index (PDI)', url: '/tools/pdi' }
+    },
+    {
+        slug: 'spec-driven-development',
+        name: 'Spec-Driven Development (SDD)',
+        definition: `Spec-Driven Development (SDD) is a software engineering methodology where teams author machine-readable contracts, data schemas, explicit blast-radius guards, and deterministic test gates before an AI coding agent touches a repository.\n\nFor the first two weeks of a greenfield build, conversational vibe coding feels effortless. You type two sentences into Cursor, Claude Code, or Google Antigravity, and twenty files of working UI appear in minutes. Around file sixty, the invoice arrives. Without a locked root specification, every small feature request causes the coding agent to invent duplicate database helpers, loosen TypeScript types to silence compiler errors, hallucinate deprecated SDK calls, and quietly break authentication middleware three folders away.\n\nSpec-Driven Development flips where human engineering hours get spent. Instead of writing boilerplate syntax by hand or playing forensic detective on 1,500-line AI pull requests at midnight, Staff Engineers, Product Managers, and Engineering Managers write a formal five-part specification first: exact input/output schemas, acceptance checkboxes, explicit out-of-scope file boundaries (the Blast-Radius Guard), failure states, and automated build-and-test pass gates.\n\nWhere Spec-Driven Development governs deterministic boundaries before code generation, its companion discipline, Eval-Driven Development (EDD), governs probabilistic model outputs inside CI/CD pipelines. Together, SDD and EDD turn autonomous coding agents from unmonitored technical debt generators into predictable engineering multipliers.`,
+        whyItMatters: `Most CTOs, CPOs, and VPs of Engineering adopt AI coding tools expecting sprint throughput to double, only to watch senior engineers drown in pull-request review queues while production bug rates climb. Generating syntax was never the real bottleneck in enterprise software; maintaining system coherence across payment webhooks, permissions, and legacy schemas was.\n\nFor CFOs and Directors of Finance, unguided AI code generation accelerates the Technical Insolvency Date and inflates Negative-Carry Code: code whose ongoing maintenance payroll exceeds the revenue it brings in. Enforcing Spec-Driven Development through locked AGENTS.md, CLAUDE.md, and SPEC.md files stops multi-file agent drift before a commit ever reaches human code review.`,
+        howToCalculate: [
+            'Audit repository root contracts (AGENTS.md, CLAUDE.md, SPEC.md) using the Spec-Driven Development Audit Scorecard.',
+            'Verify every feature spec defines typed data contracts, error states, and mobile viewport rules before dispatching an agent.',
+            'Enforce an explicit Blast-Radius Guard listing frozen routes, auth middleware, and billing files the agent is forbidden to touch.',
+            'Write deterministic red/green test assertions and compiler verification checks that block commits automatically on failure.',
+            'Track senior engineer pull-request review hours and 30-day code churn rate before and after mandating SDD.'
+        ],
+        relatedArticles: [
+            { title: 'Things I Got Wrong: A Founder\'s Post-Mortem on Building AI Products', publication: 'LinkedIn', date: 'Sep 2026', url: '/articles/things-i-got-wrong-founders-post-mortem' },
+            { title: 'AI-Generated Architecture Decision Records: Preventing Agentic Monorepo Drift', publication: 'Built In', date: 'Oct 2026', url: 'https://builtin.com/articles/ai-generated-architecture-decision-records' },
+            { title: 'Eval-Driven Development (EDD) Research Specification', publication: 'RichardEwing.io', date: 'Aug 2026', url: '/concepts/eval-driven-development' }
+        ],
+        relatedTool: { name: 'Spec-Driven Development Audit Scorecard', url: '/tools/spec-quality-scorecard' }
     }
 ];

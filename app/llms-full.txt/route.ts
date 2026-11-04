@@ -71,6 +71,10 @@ Richard Ewing's technology and advisory portfolio is anchored in a single, five-
 - **Why Your New AI Feature Is Losing Money on Every User**: https://www.richardewing.io/compare/why-ai-feature-margins-turn-negative - Negative-carry AI features and usage-based pricing.
 - **Why Claude Loses Context During Multi-Step Tasks**: https://www.richardewing.io/compare/why-claude-loses-context - Context window degradation and attention drift.
 - **Why Model Context Protocol (MCP) Is Dangerous Without Sandboxes**: https://www.richardewing.io/compare/why-mcp-is-dangerous - Prompt injection risks through unsanitized local MCP tools.
+- **Spec-Driven Development (SDD) Framework & AGENTS.md Scorecard**: https://www.richardewing.io/articles/frameworks/spec-driven-development and https://www.richardewing.io/tools/spec-quality-scorecard - Enforcing schemas, blast-radius guards, and deterministic CI gates over conversational vibe coding.
+- **LLM Content Chunking Tools & RAG Boundary Visualizer**: https://www.richardewing.io/tools/rag-chunking-visualizer - Evaluating the five essential features of LLM content chunking tools (boundary guards, overlap windows, table header pinning, ACL metadata, and token-cost caps).
+- **Shadow AI Risk & Breach Exposure Calculator**: https://www.richardewing.io/tools/shadow-ai - Quantifying unsanctioned employee chatbot, personal API key, and local agent data egress across SOC2 and PII boundaries.
+- **MCP AI (Model Context Protocol) Security Checklist & Auditor**: https://www.richardewing.io/tools/mcp-security-auditor - Auditing MCP servers against unpinned tool schemas, STDIO secret leaks, and indirect prompt injection.
 
 ---
 

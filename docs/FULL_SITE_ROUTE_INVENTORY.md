@@ -11,12 +11,12 @@
 
 | Metric | Count | Description |
 | :--- | :--- | :--- |
-| **Total Discovered Routes** | **1587** | Unique route entries cataloged across the repository |
+| **Total Discovered Routes** | **1588** | Unique route entries cataloged across the repository |
 | **Core & Executive Hub** | **157** | Anchor executive pages (Home, Services, Pricing, ROI, Reality Check) |
 | **Diagnostics & Tools** | **53** | Interactive calculators, standalone Pay-to-Reveal products, and audit tools |
 | **Concepts & Ontology** | **132** | Canonical research specifications and concept graph |
 | **Glossary Terms & Pillars** | **568** | Terms (551 total, 98 indexed, remainder preserved redirects) + 17 Pillars |
-| **Research & Publications** | **200** | 174+ peer-reviewed works, canonical frameworks, and editorial essays |
+| **Research & Publications** | **201** | 174+ peer-reviewed works, canonical frameworks, and editorial essays |
 | **Curriculum & Vault Tracks** | **348** | Live training modules and executive implementation tracks |
 | **Compare & Teardowns** | **0** | Strategic architectural teardowns and platform evaluations |
 | **Programmatic Q&A Answers** | **51** | Targeted hub-and-spoke direct answers for CTOs, CFOs, and Boards |
@@ -1461,6 +1461,7 @@
 | `/articles/frameworks/hybrid-cloud-local-runtime` | Hybrid Cloud-Local Agent Architecture Framework - Richard Ewing | `INDEXED` | Concept B (Editorial High-Contrast) | Commission Framework Audit ↗ | `app/articles/frameworks/[slug]/page.tsx` |
 | `/articles/frameworks/sovereign-dual-chamber-governance` | Dual-Chamber Sovereign AI Governance Framework - Richard Ewing | `INDEXED` | Concept B (Editorial High-Contrast) | Commission Framework Audit ↗ | `app/articles/frameworks/[slug]/page.tsx` |
 | `/articles/frameworks/ai-architecture-decision-records` | AI-Generated Architecture Decision Records Framework - Richard Ewing | `INDEXED` | Concept B (Editorial High-Contrast) | Commission Framework Audit ↗ | `app/articles/frameworks/[slug]/page.tsx` |
+| `/articles/frameworks/spec-driven-development` | Spec-Driven Development (SDD) Framework - Richard Ewing | `INDEXED` | Concept B (Editorial High-Contrast) | Score Your AGENTS.md & SPEC.md ↗ | `app/articles/frameworks/[slug]/page.tsx` |
 
 ---
 

@@ -175,6 +175,33 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                     </section>
                 )}
 
+                {framework.slug === 'spec-driven-development' && (
+                    <section className="mb-12">
+                        <div className="p-6 sm:p-8 rounded-2xl border border-[var(--forest,#29473b)] bg-[var(--forest2,#162e26)] text-white shadow-md">
+                            <div className="flex items-center justify-between mb-4">
+                                <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#d8c7a8] bg-white/10 px-3 py-1 rounded border border-white/15">
+                                    Mathematical Axiom
+                                </span>
+                                <span className="text-xs font-mono text-zinc-300">The Specification Readiness Equation</span>
+                            </div>
+                            <div className="p-4 bg-black/40 border border-white/10 text-[#d8c7a8] font-mono text-sm sm:text-base rounded-xl overflow-x-auto my-4 text-center">
+                                Agent Rework Cost = Unbounded Files Touched × (1 - Schema Coverage %) × (1 - Deterministic Gate Rate)
+                            </div>
+                            <p className="text-sm text-zinc-300 leading-relaxed font-sans mt-3">
+                                <strong className="text-white">The Blast-Radius Law:</strong> Conversational prompts leave file scope unconstrained. Locking typed schemas, explicit out-of-scope boundaries in AGENTS.md and SPEC.md, and compiler test gates drives multi-file agent drift toward zero before human PR review begins.
+                            </p>
+                            <div className="mt-6 pt-4 border-t border-white/15 flex flex-wrap gap-4">
+                                <Link href="/tools/spec-quality-scorecard" className="button button-gold">
+                                    Score Your AGENTS.md &amp; SPEC.md ↗
+                                </Link>
+                                <Link href="/concepts/eval-driven-development" className="button button-outline text-white border-white/30 hover:bg-white/10">
+                                    Pair with Eval-Driven Development (EDD) ↗
+                                </Link>
+                            </div>
+                        </div>
+                    </section>
+                )}
+
                 {framework.slug === 'shadow-agents' && (
                     <section className="mb-12">
                         <div className="p-6 sm:p-8 rounded-2xl border border-purple-900/40 bg-[var(--forest2,#162e26)] text-white shadow-md">

@@ -126,9 +126,9 @@ export default function RagChunkingContent() {
                             <span className="font-mono text-xs font-bold text-zinc-900 font-bold uppercase tracking-widest">Semantic Splitting Simulator</span>
                         </div>
 
-                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-zinc-950 tracking-tighter mb-4">
-                             See where the <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-500">Meaning Breaks.</span>
-                        </h1>
+                        <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#162e26] tracking-tight mb-4">
+                             See where the <span className="text-[#b77a35]">Meaning Breaks.</span>
+                        </h2>
                         <p className="text-lg sm:text-xl text-zinc-900 mb-8 max-w-2xl leading-relaxed">
                             Vector embedding pipelines fail because blind text-chunking destroys semantic context mid-sentence. Visualize exactly how your Pinecone or Chroma splits behave before committing them to the database.
                         </p>
@@ -142,7 +142,7 @@ export default function RagChunkingContent() {
                                     <textarea
                                         value={rawText}
                                         onChange={e => setRawText(e.target.value)}
-                                        className="w-full h-48 bg-white border border-zinc-400 rounded-xl p-6 font-mono text-xs font-bold text-zinc-950 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500/50 transition-all placeholder:text-zinc-950 resize-none shadow-inner"
+                                        className="w-full h-48 bg-white border border-zinc-400 rounded-xl p-6 font-mono text-xs font-bold text-zinc-950 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500/50 transition-colors placeholder:text-zinc-950 resize-none shadow-inner"
                                         placeholder="Paste paragraphs, code blocks, or unstructured legal text here to observe how the sliding window tears it apart..."
                                     />
                                     <div className="text-right mt-2 text-xs font-bold font-medium text-zinc-950 font-mono">Payload: {rawText.length} Characters</div>
@@ -186,7 +186,7 @@ export default function RagChunkingContent() {
                             <button
                                 onClick={() => setShowGate(true)}
                                 disabled={loading || rawText.trim().length <= chunkSize}
-                                className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-indigo-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                                className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-indigo-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
                             >
                                 {loading ? ( <><div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" /> RUNNING VECTOR SPLIT...</> ) : ( <><Database size={18}/> MAP BOUNDARIES</> )}
                             </button>
@@ -332,7 +332,7 @@ export default function RagChunkingContent() {
                             
                             <div className="space-y-4">
                                 {results.chunks.map((chunk, index) => (
-                                    <div key={chunk.id} className="relative group transition-all duration-300">
+                                    <div key={chunk.id} className="relative group transition-opacity duration-300">
                                          <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-indigo-500 to-cyan-500 rounded-l-xl opacity-50 group-hover:opacity-100 z-10 transition-opacity"></div>
                                          <div className="bg-white border border-zinc-400 hover:border-zinc-500 rounded-xl p-6 pl-8 transition-colors">
                                               <div className="flex justify-between items-center mb-3">

@@ -334,6 +334,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Frameworks
     frameworks.forEach(f => add(`${baseUrl}/articles/frameworks/${f.slug}`, 'monthly', 0.7));
+    add(`${baseUrl}/articles/frameworks/return-on-ai-investment`, 'weekly', 0.95);
+    add(`${baseUrl}/articles/frameworks/spec-driven-development`, 'weekly', 0.95);
+    add(`${baseUrl}/articles/frameworks/technical-insolvency-date`, 'weekly', 0.95);
+    add(`${baseUrl}/articles/frameworks/vibe-coding-debt`, 'weekly', 0.95);
 
     // Blog (excluding syndicated content with external canonicals)
     getSortedArticles()

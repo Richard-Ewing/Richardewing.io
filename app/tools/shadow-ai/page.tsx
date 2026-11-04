@@ -5,10 +5,12 @@ import ChainedDiagnosticNextStep from '@/app/components/calculators/ChainedDiagn
 import ShadowContent from './content';
 
 export const metadata: Metadata = {
-  title: 'Enterprise Shadow AI Risk Calculator',
+  title: 'Shadow AI Risk & Breach Calculator',
   description:
-    'Estimate unauthorized employee LLM usage, intellectual property egress exposure, and SOC2 audit liability across engineering, legal, and finance teams.',
+    'Shadow AI is unsanctioned employee use of chatbots, coding assistants, and personal API keys. Calculate PII egress risk and SOC2 breach exposure.',
   keywords: [
+    'shadow AI',
+    'what is shadow AI',
     'enterprise shadow AI risk calculator',
     'shadow AI scanner',
     'LLM data leakage risk',
@@ -19,14 +21,14 @@ export const metadata: Metadata = {
     canonical: 'https://www.richardewing.io/tools/shadow-ai',
   },
   openGraph: {
-    title: 'Enterprise Shadow AI Risk Calculator | Richard Ewing',
+    title: 'Shadow AI Risk & Breach Calculator | Richard Ewing',
     description:
-      'Estimate unauthorized employee LLM usage, intellectual property egress exposure, and SOC2 audit liability across engineering, legal, and finance teams.',
+      'Shadow AI is unsanctioned employee use of chatbots, coding assistants, and personal API keys. Calculate PII egress risk and SOC2 breach exposure.',
     url: 'https://www.richardewing.io/tools/shadow-ai',
     type: 'website',
     images: [
       {
-        url: 'https://www.richardewing.io/api/og?title=Enterprise+Shadow+AI+Risk+Calculator&category=SOC2+%26+IP+Security',
+        url: 'https://www.richardewing.io/api/og?title=Shadow+AI+Risk+%26+Breach+Calculator&category=SOC2+%26+IP+Security',
         width: 1200,
         height: 630,
       },
@@ -34,23 +36,50 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Enterprise Shadow AI Risk Calculator | Richard Ewing',
+    title: 'Shadow AI Risk & Breach Calculator | Richard Ewing',
     description:
-      'Estimate unauthorized employee LLM usage, intellectual property egress exposure, and SOC2 audit liability across engineering, legal, and finance teams.',
+      'Shadow AI is unsanctioned employee use of chatbots, coding assistants, and personal API keys. Calculate PII egress risk and SOC2 breach exposure.',
     images: [
-      'https://www.richardewing.io/api/og?title=Enterprise+Shadow+AI+Risk+Calculator&category=SOC2+%26+IP+Security',
+      'https://www.richardewing.io/api/og?title=Shadow+AI+Risk+%26+Breach+Calculator&category=SOC2+%26+IP+Security',
     ],
   },
 };
 
 export default function Page() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is Shadow AI in the enterprise?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Shadow AI is the unsanctioned use of public chatbots, browser extensions, personal API keys, and local coding agents by employees outside IT and security governance, exposing proprietary source code, financial records, and customer PII.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How do CISOs and General Counsel reduce Shadow AI risk without slowing teams down?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Blanket firewall blocks push employees onto personal phones and laptops. Effective remediation pairs endpoint discovery with a sanctioned zero-data-retention workspace and scoped non-human credentials for approved tools.',
+        },
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-[#FAF9F6] space-y-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <ToolServerHeader
         slug="shadow-ai"
         eyebrow="SOC2 & IP Egress · Zero-Trust Audit"
-        h1="Enterprise Shadow AI & Data Leakage Risk Calculator"
-        executiveAnswer="The Enterprise Shadow AI Risk Calculator models unsanctioned employee chatbot, browser extension, and personal API key usage across engineering, finance, support, and legal teams so CISOs, CIOs, and General Counsel can quantify source-code and customer PII exposure before a SOC2 or customer audit."
+        h1="Shadow AI Risk & Enterprise Data Leakage Calculator"
+        executiveAnswer="Shadow AI is unsanctioned employee use of public chatbots, browser extensions, personal API keys, and local coding agents outside IT security controls. CISOs, CIOs, CFOs, and General Counsel use this calculator to quantify source-code egress, customer PII exposure, and SOC2 audit liability across engineering, finance, support, and legal teams."
         appName="Enterprise Shadow AI Risk Calculator"
         appDescription="Client-side Shadow AI exposure calculator estimating unauthorized LLM endpoints, PII leakage probability, and regulatory breach cost."
         howToName="How to Quantify Enterprise Shadow AI Exposure"

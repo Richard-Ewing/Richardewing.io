@@ -5,10 +5,12 @@ import ChainedDiagnosticNextStep from '@/app/components/calculators/ChainedDiagn
 import MCPAuditorTool from './content';
 
 export const metadata: Metadata = {
-  title: 'MCP Security Checklist & Risk Auditor',
+  title: 'MCP AI Security Checklist & Risk Audit',
   description:
-    'Audit Model Context Protocol (MCP) servers against tool poisoning, STDIO credential leaks, and OWASP agentic risks. Generate a CISO remediation score.',
+    'MCP AI (Model Context Protocol) connects AI agents to databases and local tools. Audit MCP servers for tool poisoning and STDIO credential leaks.',
   keywords: [
+    'MCP AI',
+    'what is MCP AI',
     'MCP security checklist',
     'Model Context Protocol security auditor',
     'OWASP MCP Top 10',
@@ -19,14 +21,14 @@ export const metadata: Metadata = {
     canonical: 'https://www.richardewing.io/tools/mcp-security-auditor',
   },
   openGraph: {
-    title: 'MCP Security Checklist & Risk Auditor | Richard Ewing',
+    title: 'MCP AI Security Checklist & Risk Audit | Richard Ewing',
     description:
-      'Audit Model Context Protocol (MCP) servers against tool poisoning, STDIO credential leaks, and OWASP agentic risks. Generate a CISO remediation score.',
+      'MCP AI (Model Context Protocol) connects AI agents to databases and local tools. Audit MCP servers for tool poisoning and STDIO credential leaks.',
     url: 'https://www.richardewing.io/tools/mcp-security-auditor',
     type: 'website',
     images: [
       {
-        url: 'https://www.richardewing.io/api/og?title=MCP+Security+Checklist+%26+Risk+Auditor&category=Agentic+Security',
+        url: 'https://www.richardewing.io/api/og?title=MCP+AI+Security+Checklist+%26+Risk+Audit&category=Agentic+Security',
         width: 1200,
         height: 630,
       },
@@ -34,24 +36,51 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MCP Security Checklist & Risk Auditor | Richard Ewing',
+    title: 'MCP AI Security Checklist & Risk Audit | Richard Ewing',
     description:
-      'Audit Model Context Protocol (MCP) servers against tool poisoning, STDIO credential leaks, and OWASP agentic risks. Generate a CISO remediation score.',
+      'MCP AI (Model Context Protocol) connects AI agents to databases and local tools. Audit MCP servers for tool poisoning and STDIO credential leaks.',
     images: [
-      'https://www.richardewing.io/api/og?title=MCP+Security+Checklist+%26+Risk+Auditor&category=Agentic+Security',
+      'https://www.richardewing.io/api/og?title=MCP+AI+Security+Checklist+%26+Risk+Audit&category=Agentic+Security',
     ],
   },
 };
 
 export default function Page() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is MCP AI (Model Context Protocol)?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'MCP AI refers to the Model Context Protocol, an open standard connecting AI coding assistants and enterprise agents directly to databases, source repositories, local filesystems, and SaaS APIs without custom wrapper code.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Why is MCP AI risky without security governance?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Unvetted MCP servers run locally with developer environment secrets and broad filesystem permissions, creating exposure to tool-description poisoning, confused-deputy privilege escalation, and silent credential exfiltration.',
+        },
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-[#FAF9F6] space-y-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <ToolServerHeader
         slug="mcp-security-auditor"
         eyebrow="Agentic Security · CISO Audit Matrix"
-        h1="Model Context Protocol (MCP) Security Checklist & Risk Auditor"
-        executiveAnswer="The MCP Security Checklist and Risk Auditor evaluates enterprise Model Context Protocol servers across unpinned tool schemas, local STDIO credential exposure, indirect prompt-injection poisoning, and missing OAuth scopes so CISOs and Security Engineering Managers can lock down agentic tool access."
-        appName="MCP Security Checklist & Risk Auditor"
+        h1="MCP AI (Model Context Protocol) Security Checklist & Auditor"
+        executiveAnswer="MCP AI (Model Context Protocol) connects autonomous AI agents directly to production databases, local developer terminals, and internal SaaS tools. CISOs, CTOs, and Security Engineering Managers use this auditor to score MCP servers against unpinned tool schemas, STDIO secret exposure, and indirect prompt-injection poisoning."
+        appName="MCP AI Security Checklist & Risk Auditor"
         appDescription="Interactive CISO security checklist scoring Model Context Protocol (MCP) deployments against tool poisoning, STDIO secret exposure, and lateral exfiltration."
         howToName="How to Audit Enterprise Model Context Protocol (MCP) Servers"
         howToDescription="Evaluate MCP server manifests, transport isolation, credential scoping, and runtime approval gates."
