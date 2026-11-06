@@ -1686,7 +1686,7 @@ export const frameworks = [
         relatedArticles: [
             { title: 'The Section 174 AI Tax Trap: Software Capitalization in the Agentic Era', publication: 'Beehiiv', date: 'Oct 2026', url: 'https://theaieconomist.beehiiv.com/p/section-174-ai-tax-trap' }
         ],
-        relatedTool: { name: 'Section 174 AI Tax Calculator', url: '/tools/section-174' }
+        relatedTool: { name: 'Section 174 AI Tax Calculator', url: '/tools/section-174-calculator' }
     },
     {
         slug: 'hybrid-cloud-local-runtime',

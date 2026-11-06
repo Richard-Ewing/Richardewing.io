@@ -34,11 +34,27 @@ if (fs.existsSync(openNextCacheSrc)) {
   console.log('[patch-worker] Populated StaticAssetsIncrementalCache into .open-next/assets/cdn-cgi/_next_cache.');
 }
 
+// Emit pure ESM edge redirect manifest into .open-next/cloudflare/edge-redirects-manifest.js (ADR-0022)
+const manifestTsPath = path.resolve(process.cwd(), 'app/lib/edge-redirects-manifest.ts');
+const manifestJsDest = path.join(openNextDir, 'cloudflare', 'edge-redirects-manifest.js');
+if (!fs.existsSync(manifestTsPath)) {
+  console.error(`[patch-worker] Missing ${manifestTsPath}. Run npx tsx scripts/generate-edge-redirects.ts first.`);
+  process.exit(1);
+}
+const manifestJsSource = fs
+  .readFileSync(manifestTsPath, 'utf8')
+  .replace(/new Set<string>/g, 'new Set')
+  .replace(/:\s*Record<string,\s*string>/g, '')
+  .replace(/\(rawPathname:\s*string\):\s*string\s*\|\s*null/g, '(rawPathname)');
+fs.mkdirSync(path.dirname(manifestJsDest), { recursive: true });
+fs.writeFileSync(manifestJsDest, manifestJsSource, 'utf8');
+
 let content = fs.readFileSync(workerPath, 'utf8');
 
 if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
   console.log('[patch-worker] ADR-0019 pre-OpenNext edge shield already present in .open-next/worker.js.');
 } else {
+  content = `import { resolveEdgeRedirect } from "./cloudflare/edge-redirects-manifest.js";\n` + content;
   // Defer heavy top-level OpenNext middleware and image imports until an actual cache miss occurs
   content = content
     .replace(
@@ -90,16 +106,6 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 headers: {
                     "Content-Type": "text/plain; charset=utf-8",
                     "Cache-Control": "private, no-store"
-                }
-            });
-        }
-        if (__rwUrl.hostname === "richardewing.io" && __rwPath === "/") {
-            return new Response(null, {
-                status: 301,
-                headers: {
-                    "Location": "https://www.richardewing.io/" + __rwUrl.search,
-                    "Cache-Control": "no-cache, no-store, must-revalidate",
-                    "Cloudflare-CDN-Cache-Control": "no-store"
                 }
             });
         }
@@ -221,6 +227,47 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 );
             }
         }
+        if (__rwPath === "/git" || __rwPath === "/github") {
+            return new Response(null, {
+                status: 301,
+                headers: {
+                    "Location": "https://github.com/Richard-Ewing",
+                    "Cache-Control": "no-cache, no-store, must-revalidate",
+                    "Cloudflare-CDN-Cache-Control": "no-store",
+                    "CDN-Cache-Control": "no-store"
+                }
+            });
+        }
+        const __rwIsLocal = /^(localhost|127\\.0\\.0\\.1)(:\\d+)?$/i.test(__rwUrl.host);
+        const __rwIsWorkersPreview = __rwUrl.hostname.endsWith(".workers.dev");
+        const __rwNeedsHostRedirect =
+            !__rwIsLocal &&
+            !__rwIsWorkersPreview &&
+            (__rwUrl.hostname !== "www.richardewing.io" || __rwUrl.protocol !== "https:");
+        const __rwMappedTarget =
+            (!__rwLowerPath.startsWith("/_next/") && !__rwLowerPath.startsWith("/assets/") && !__rwLowerPath.startsWith("/api/"))
+                ? resolveEdgeRedirect(__rwPath)
+                : null;
+        if (__rwNeedsHostRedirect || __rwMappedTarget !== null) {
+            const __rwFinalTarget = __rwMappedTarget !== null ? __rwMappedTarget : __rwPath;
+            const __rwHashIdx = __rwFinalTarget.indexOf("#");
+            const __rwDestPath = __rwHashIdx >= 0 ? __rwFinalTarget.slice(0, __rwHashIdx) : __rwFinalTarget;
+            const __rwDestHash = __rwHashIdx >= 0 ? __rwFinalTarget.slice(__rwHashIdx) : "";
+            const __rwSafeDestPath = "/" + __rwDestPath.replace(/^[/\\\\]+/, "");
+            const __rwBaseOrigin = (__rwIsLocal || __rwIsWorkersPreview) ? __rwUrl.origin : "https://www.richardewing.io";
+            const __rwFullLocation = __rwBaseOrigin + __rwSafeDestPath + __rwUrl.search + __rwDestHash;
+            if (__rwFullLocation !== __rwUrl.href) {
+                return new Response(null, {
+                    status: 301,
+                    headers: {
+                        "Location": __rwFullLocation,
+                        "Cache-Control": "no-cache, no-store, must-revalidate",
+                        "Cloudflare-CDN-Cache-Control": "no-store",
+                        "CDN-Cache-Control": "no-store"
+                    }
+                });
+            }
+        }
         const __rwMethod = request.method.toUpperCase();
         if (__rwMethod === "POST" && !__rwLowerPath.startsWith("/api/") && !request.headers.has("Next-Action")) {
             return new Response("Method Not Allowed", {
@@ -332,9 +379,10 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                     __rwHitHeaders.set("Cloudflare-CDN-Cache-Control", "no-store");
                     __rwHitHeaders.set("CDN-Cache-Control", "no-store");
                 } else {
-                    __rwHitHeaders.set("Cache-Control", "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800");
-                    __rwHitHeaders.set("Cloudflare-CDN-Cache-Control", "public, max-age=86400, stale-while-revalidate=604800");
-                    __rwHitHeaders.set("Vary", "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept-Encoding");
+                    __rwHitHeaders.set("Cache-Control", "public, max-age=0, must-revalidate");
+                    __rwHitHeaders.set("Cloudflare-CDN-Cache-Control", "no-store");
+                    __rwHitHeaders.set("CDN-Cache-Control", "no-store");
+                    __rwHitHeaders.set("Vary", "Host, RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept-Encoding");
                 }
                 __rwHitHeaders.set("X-RW-Edge-Cache", "HIT");
                 return new Response(__rwMethod === "HEAD" ? null : __rwCached.body, {
@@ -392,9 +440,10 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                     __rwMissHeaders.set("Cloudflare-CDN-Cache-Control", "no-store");
                     __rwMissHeaders.set("CDN-Cache-Control", "no-store");
                 } else {
-                    __rwMissHeaders.set("Cache-Control", "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800");
-                    __rwMissHeaders.set("Cloudflare-CDN-Cache-Control", "public, max-age=86400, stale-while-revalidate=604800");
-                    __rwMissHeaders.set("Vary", "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept-Encoding");
+                    __rwMissHeaders.set("Cache-Control", "public, max-age=0, must-revalidate");
+                    __rwMissHeaders.set("Cloudflare-CDN-Cache-Control", "no-store");
+                    __rwMissHeaders.set("CDN-Cache-Control", "no-store");
+                    __rwMissHeaders.set("Vary", "Host, RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept-Encoding");
                 }
                 __rwMissHeaders.set("X-RW-Edge-Cache", "MISS");
                 return new Response(__rwBodyBuf, {

@@ -149,6 +149,7 @@ export default function WorkshopsPage() {
                                 </div>
                                 <a
                                     href={`/api/buy/${w.productId}`}
+                                    rel="nofollow noopener"
                                     className="block text-center py-3 rounded-lg bg-gradient-to-r from-rose-500 to-purple-500 text-white font-semibold font-bold text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-opacity"
                                 >
                                     Book Workshop →
@@ -169,6 +170,7 @@ export default function WorkshopsPage() {
                         <div className="flex flex-col sm:flex-row gap-3 justify-center">
                             <a
                                 href="/api/buy/keynote_speaking"
+                                rel="nofollow noopener"
                                 className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-rose-500 hover:bg-rose-400 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all"
                             >
                                 Book Keynote  -  $5,000 <ArrowRight className="w-4 h-4" />

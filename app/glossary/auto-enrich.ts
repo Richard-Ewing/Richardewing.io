@@ -510,7 +510,7 @@ export function autoBridge(category: string, title: string): { diagnosticName: s
     if (category.includes('Technical Debt') || category.includes('Code Quality') || category.includes('Engineering Management') || category.includes('Architecture')) {
         return {
             diagnosticName: 'Product Debt Index',
-            frameworkSlug: 'technical-insolvency',
+            frameworkSlug: 'technical-insolvency-date',
             frameworkName: 'Technical Insolvency',
             frameworkDescription: `${title} directly impacts your Technical Insolvency Date. When technical debt maintenance consumes 100% of your engineering capacity, your ability to ship new features drops to zero.`,
             exogramRisk: 'Governance Drift',

@@ -104,7 +104,7 @@ export default function AIBudgetLeaksPage() {
             Start Leak Diagnostic ↓
           </a>
           <Link
-            href="/contact?subject=Turnaround+Sprint"
+            href="/contact#subject=Turnaround+Sprint"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white border border-[#24332b]/20 text-[#162e26] font-medium hover:bg-[#ebe7dc] transition-all text-sm"
           >
             Reserve $2,500 Turnaround Sprint ↗
@@ -383,7 +383,7 @@ export default function AIBudgetLeaksPage() {
 
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <Link
-                href="/contact?subject=Turnaround+Sprint"
+                href="/contact#subject=Turnaround+Sprint"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#b77a35] text-white font-bold hover:bg-[#a36b2d] transition-all text-base shadow-md"
               >
                 Reserve Turnaround Sprint ($2,500)

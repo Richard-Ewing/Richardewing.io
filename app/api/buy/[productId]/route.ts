@@ -4,15 +4,35 @@ import { auth } from '@clerk/nextjs/server';
 
 export const dynamic = 'force-dynamic';
 
+const SEARCH_CRAWLER_RE = /\b(googlebot|googleother|bingbot|applebot|duckduckbot|yandexbot|bravebot|slurp)\b/i;
+
 export async function GET(
     request: Request,
     { params }: { params: Promise<{ productId: string }> }
 ) {
+    const ua = request.headers.get('user-agent') || '';
+    if (SEARCH_CRAWLER_RE.test(ua)) {
+        return new NextResponse(
+            '<!doctype html><html><head><meta name="robots" content="noindex, follow"><title>Checkout Endpoint</title></head><body></body></html>',
+            {
+                status: 200,
+                headers: {
+                    'Content-Type': 'text/html; charset=utf-8',
+                    'X-Robots-Tag': 'noindex, follow',
+                    'Cache-Control': 'private, no-cache, no-store, max-age=0',
+                    'Cloudflare-CDN-Cache-Control': 'no-store',
+                },
+            }
+        );
+    }
+
     const { productId } = await params;
     const product = PRODUCTS[productId];
 
     if (!product || !product.paymentLink) {
-        return NextResponse.redirect(new URL('/checkout-pending', request.url));
+        const pendingRes = NextResponse.redirect(new URL('/checkout-pending', request.url));
+        pendingRes.headers.set('X-Robots-Tag', 'noindex, follow');
+        return pendingRes;
     }
 
     const stripeUrl = new URL(product.paymentLink);
@@ -41,5 +61,7 @@ export async function GET(
         }
     }
 
-    return NextResponse.redirect(stripeUrl);
+    const redirectRes = NextResponse.redirect(stripeUrl);
+    redirectRes.headers.set('X-Robots-Tag', 'noindex, follow');
+    return redirectRes;
 }

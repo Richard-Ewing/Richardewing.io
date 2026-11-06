@@ -111,7 +111,7 @@ The era of the "Happy Builder" is over. We are entering the era of the AI Econom
 
 You can either learn to engineer the margins, or you can watch your product collapse under the weight of its own compute bill. The choice is yours.
 
-[Explore The AI Economist Masterclass Curriculum Here](/vault/curriculum)
+[Explore The AI Economist Masterclass Curriculum Here](/vault/curriculum/tracks)
         `
     }
 };

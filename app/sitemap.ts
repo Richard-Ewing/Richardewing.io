@@ -102,7 +102,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
 
     // === CORE PAGES ===
-    add(`${baseUrl}/`, 'weekly', 1.0);
+    add(baseUrl, 'weekly', 1.0);
     add(`${baseUrl}/advisory`, 'weekly', 0.95);
     add(`${baseUrl}/engagement-paths`, 'weekly', 0.9);
     add(`${baseUrl}/pricing-sprints`, 'weekly', 0.9);

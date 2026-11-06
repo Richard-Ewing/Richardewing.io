@@ -34,14 +34,27 @@ const TOOL_ROUTE_MAP: Record<string, { href: string; label: string }> = {
   'agentic-token-simulator': { href: '/tools/agent-router', label: 'agent router tool' },
 };
 
+const CONCEPT_ROUTE_MAP: Record<string, { href: string; label: string }> = {
+  'synthetic-cogs': { href: '/concepts/ai-tokenomics-cogs', label: 'AI tokenomics COGS' },
+  'ai-tokenomics': { href: '/concepts/ai-tokenomics-cogs', label: 'AI tokenomics' },
+  'math-of-ruin': { href: '/concepts/ai-margin-squeeze', label: 'AI margin squeeze' },
+  'engineering-bottleneck-illusion': { href: '/glossary/engineering-bottleneck-illusion', label: 'engineering bottleneck illusion' },
+  'explainability-vs-recoverability': { href: '/glossary/explainability-vs-recoverability', label: 'explainability vs recoverability' },
+  'variable-cost-of-intelligence': { href: '/glossary/variable-cost-of-intelligence', label: 'variable cost of intelligence' },
+  'rented-intelligence-vs-owned-capital': { href: '/glossary/ai-capital-allocation-ratio', label: 'AI capital allocation ratio' },
+  'vibe-coding-debt': { href: '/articles/frameworks/vibe-coding-debt', label: 'vibe coding debt' },
+  'ai-cogs': { href: '/glossary/ai-cogs', label: 'AI COGS' },
+  'model-right-sizing': { href: '/glossary/model-right-sizing', label: 'model right-sizing' },
+};
+
 const NON_KEEP_GLOSSARY_MAP: Record<string, { href: string; label: string }> = {
   'consumption-meter-trap': { href: '/concepts/consumption-meter-trap', label: 'consumption meter trap' },
   'exception-queue-penalty': { href: '/glossary/supervisory-review-queue', label: 'supervisory review queue' },
   'context-engine-architecture': { href: '/concepts/context-engine-architecture', label: 'context engine architecture' },
-  'ai-tokenomics': { href: '/concepts/ai-tokenomics', label: 'AI tokenomics' },
+  'ai-tokenomics': { href: '/concepts/ai-tokenomics-cogs', label: 'AI tokenomics' },
   'board-level-ai-governance': { href: '/concepts/board-level-ai-governance', label: 'board AI governance' },
   'ai-margin-squeeze': { href: '/glossary/ai-unit-economics', label: 'AI unit economics' },
-  'math-of-ruin': { href: '/concepts/math-of-ruin', label: 'math of ruin' },
+  'math-of-ruin': { href: '/concepts/ai-margin-squeeze', label: 'AI margin squeeze' },
   'probabilistic-supervision-failure': { href: '/concepts/probabilistic-supervision-failure', label: 'probabilistic supervision' },
   'platform-engine-leverage': { href: '/concepts/platform-engine-leverage', label: 'platform engine leverage' },
   'assumption-invalidation-loops': { href: '/concepts/assumption-invalidation-loops', label: 'assumption invalidation' },
@@ -67,10 +80,12 @@ export function PublicationCard({
     ...relatedConceptIds
       .filter((slug) => slug !== 'induced-demand')
       .slice(0, 1)
-      .map((slug) => ({
-        href: `/concepts/${slug}`,
-        label: slug.replace(/-/g, ' '),
-      })),
+      .map((slug) =>
+        CONCEPT_ROUTE_MAP[slug] || {
+          href: `/concepts/${slug}`,
+          label: slug.replace(/-/g, ' '),
+        }
+      ),
     ...relatedFrameworkSlugs.slice(0, 1).map((slug) =>
       FRAMEWORK_ROUTE_MAP[slug] || {
         href: `/framework/${slug}`,

@@ -40,9 +40,9 @@ const resourceSections = [
         description: 'Plain-English definitions for technology leaders and board members.',
         items: [
             { name: 'The Complete Glossary (400+ Terms)', description: 'Master the lexicon of product economics and AI governance', href: '/glossary' },
-            { name: 'Technical Insolvency Date', description: 'When maintenance consumes 100% of engineering capacity', href: '/technical-insolvency-date' },
-            { name: 'ROAI Framework', description: 'A practical approach to measuring return on AI investment', href: '/roai-framework' },
-            { name: 'Security & Trust Principles', description: 'Security principles, trust boundaries, and responsible AI', href: '/security-trust' },
+            { name: 'Technical Insolvency Date', description: 'When maintenance consumes 100% of engineering capacity', href: '/articles/frameworks/technical-insolvency-date' },
+            { name: 'ROAI Framework', description: 'A practical approach to measuring return on AI investment', href: '/articles/frameworks/return-on-ai-investment' },
+            { name: 'Security & Trust Principles', description: 'Security principles, trust boundaries, and responsible AI', href: '/security' },
         ],
     },
     {

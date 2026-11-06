@@ -28,7 +28,7 @@ export default function CurriculumTracksLayout({ children }: { children: React.R
                         <a
                             href="/api/buy/full_curriculum"
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel="nofollow noopener noreferrer"
                             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-bold text-xs hover:opacity-90 transition-opacity shadow-md"
                         >
                             <Sparkles className="w-3 h-3" />

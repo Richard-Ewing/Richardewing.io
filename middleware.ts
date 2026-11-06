@@ -1,124 +1,6 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
 import { NextFetchEvent, NextRequest, NextResponse } from "next/server";
-import { ARTICLE_SLUG_REDIRECTS, BLOG_SLUG_REDIRECTS } from "./app/lib/article-redirects";
-
-const TIER_A_SLUGS = new Set([
-  'claude-code-vs-cursor-governance', 'claude-code-retry-loop-prevention',
-  'claude-context-rot-mitigation', 'cursor-repository-drift-prevention',
-  'ai-coding-agents', 'ai-guardrails-platforms', 'github-copilot-problems',
-  'cursor-problems', 'windsurf-problems', 'why-claude-loses-context',
-  'why-retry-loops-happen', 'why-cursor-rewrites-files', 'why-ai-coding-burns-money',
-  'why-mcp-is-dangerous', 'claude-md-is-not-governance', 'pdi-vs-sonarqube',
-  'pdi-vs-codeclimate', 'pdi-vs-waydev', 'audit-interview-vs-leetcode',
-  'audit-interview-vs-hackerrank', 'audit-interview-vs-traditional',
-  'aueb-vs-aws-cost-explorer', 'ev-se-vs-jellyfish', 'aper-vs-jellyfish',
-  'aper-vs-linearb', 'copilot-roi-vs-gitclear', 'dora-metrics-vs-aper',
-  'shadow-ai-vs-shadow-it', 'technical-debt-vs-technical-insolvency',
-  'vibe-coding-vs-agile',
-  'why-anthropic-bills-spike-with-tool-use',
-  'why-local-llms-are-more-expensive-than-apis',
-  'why-ai-pr-review-time-is-exploding',
-  'why-cfos-are-shutting-down-ai-pilots',
-  'why-rag-returns-stale-data-after-updates',
-  'why-copilot-didnt-reduce-engineering-headcount',
-  'why-ai-feature-margins-turn-negative',
-  'why-ai-costs-spiral-from-silent-retries',
-  'why-ai-prompts-break-after-model-updates',
-  'why-ai-prds-and-specs-create-waste',
-  'why-ai-teams-become-api-janitors',
-  'why-unused-ai-features-drain-cloud-budgets',
-  'why-companies-pay-shadow-ai-vendor-tax',
-  'why-board-ai-metrics-sound-impressive-but-mean-nothing',
-  'why-ai-code-creates-more-bugs-than-it-fixes',
-  'exogram-vs-lakera',
-  'exogram-vs-langchain',
-  'advisory-vs-mckinsey',
-  'advisory-vs-bain',
-  'advisory-vs-big4',
-  'advisory-vs-gartner',
-  'advisory-vs-traditional-fractional-cto'
-]);
-
-const EDGE_REDIRECTS: Record<string, string> = {
-  '/advisory.html': '/advisory',
-  '/principal': '/about',
-  '/the-operator.html': '/about',
-  '/trust': '/security',
-  '/studio.html': '/services',
-  '/manifesto.html': '/manifesto',
-  '/system.html': '/system',
-  '/briefings.html': '/briefings',
-  '/methodology.html': '/system',
-  '/working-papers.html': '/doctrine',
-  '/frameworks': '/framework',
-  '/research/concepts': '/concepts',
-  '/tools/cloud-finops-calculator': '/tools',
-  '/tools/copilot-roi-calculator': '/tools/copilot-roi',
-  '/architecture': '/runtime-architecture',
-  '/concepts/rented-intelligence-vs-owned-capital': '/glossary/ai-capital-allocation-ratio',
-  '/concepts/engineering-bottleneck-illusion': '/glossary/engineering-bottleneck-illusion',
-  '/concepts/ai-cogs': '/glossary/ai-cogs',
-  '/concepts/variable-cost-of-intelligence': '/glossary/variable-cost-of-intelligence',
-  '/concepts/vibe-coding-debt': '/articles/frameworks/vibe-coding-debt',
-  '/concepts/explainability-vs-recoverability': '/glossary/explainability-vs-recoverability',
-  '/exogram/proving-ground': '/exogram/demo',
-  '/exogram/analyze': '/exogram/architecture',
-  '/exogram/security': '/security',
-  '/exogram/pricing': '/schedule',
-  '/exogram/blueprint': '/exogram',
-  '/exogram/docs/architecture-overview': '/exogram/docs/architecture',
-  '/$': '/',
-  '/&': '/',
-  '/blog/hiring-engineers-gross-margin': '/blog/b2b-saas-coordination-tax-saas-engineering-margins',
-  '/blog/feature-bloat-calculus': '/articles/frameworks/feature-bloat-calculus',
-  '/blog/cost-of-predictivity': '/articles/frameworks/cost-of-predictivity',
-  '/blog/technical-insolvency-date': '/articles/frameworks/technical-insolvency-date',
-  '/articles/feature-bloat-calculus': '/articles/frameworks/feature-bloat-calculus',
-  '/articles/cost-of-predictivity': '/articles/frameworks/cost-of-predictivity',
-  '/articles/innovation-tax': '/articles/frameworks/innovation-tax',
-  '/articles/technical-insolvency-date': '/articles/frameworks/technical-insolvency-date',
-  '/blog/ai-product-management-guide': '/vault/curriculum/tracks/ai-product-economics/2-1',
-  '/blog/the-subprime-code-crisis': '/blog/the-negative-carry-code-crisis',
-  '/blog/subprime-code-crisis': '/blog/negative-carry-code-crisis',
-  '/tools/mcp-security-scanner': '/tools/mcp-security-auditor',
-  '/tools/ai-hallucination-cost': '/tools/hallucination-tax',
-  '/tools/ai-credit-pricing-calculator': '/tools/aueb',
-  '/tools/claude-api-cost-calculator': '/tools/ai-feature-margin',
-  '/tools/agents-md-validator': '/tools/spec-quality-scorecard',
-  '/tools/n8n-vs-zapier-calculator': '/tools/automation-cost-calculator',
-  '/concepts/zero-trust-type-verification': '/glossary/zero-trust-type-gate',
-  '/concepts/probabilistic-product-management': '/glossary/pillars/probabilistic-product-management',
-  '/concepts/slm-vs-api-arbitrage': '/concepts/slm-repatriation',
-  '/concepts/model-right-sizing': '/glossary/model-right-sizing',
-  '/concepts/macro-regression-loops': '/concepts/context-rot',
-  '/concepts/subprime-code-crisis': '/concepts/negative-carry-code-crisis',
-  '/concepts/adlc': '/concepts/spec-driven-development',
-  '/concepts/seat-based-pricing-compression': '/concepts/ai-margin-squeeze',
-  '/concepts/operational-drift': '/concepts/agentic-fleet-drift',
-  '/concepts/governed-execution': '/concepts/deterministic-execution-control',
-  '/concepts/synthetic-cogs': '/concepts/ai-tokenomics-cogs',
-  '/vault/curriculum/tracks/cloud-finops/14-1': '/vault/curriculum/tracks/cloud-finops/7-1',
-  '/vault/curriculum/tracks/cloud-finops/14-2': '/vault/curriculum/tracks/cloud-finops/7-2',
-  '/vault/curriculum/tracks/cloud-finops/14-3': '/vault/curriculum/tracks/cloud-finops/7-3',
-  '/vault/curriculum/tracks/cloud-finops/14-4': '/vault/curriculum/tracks/cloud-finops/7-4',
-  '/vault/curriculum/tracks/cloud-finops/14-5': '/vault/curriculum/tracks/cloud-finops/7-5',
-  '/vault/curriculum/tracks/cloud-finops/14-6': '/vault/curriculum/tracks/cloud-finops/7-6',
-  '/vault/curriculum/tracks/cloud-finops/14-7': '/vault/curriculum/tracks/cloud-finops/7-7',
-  '/vault/curriculum/tracks/cloud-finops/14-8': '/vault/curriculum/tracks/cloud-finops/7-8',
-  '/vault/curriculum/tracks/cloud-finops/14-9': '/vault/curriculum/tracks/cloud-finops/7-9',
-  '/vault/curriculum/tracks/cloud-finops/14-10': '/vault/curriculum/tracks/cloud-finops/7-10',
-  '/vault/curriculum/tracks/cloud-finops/14-11': '/vault/curriculum/tracks/cloud-finops/7-11',
-  '/vault/curriculum/tracks/cloud-finops/14-12': '/vault/curriculum/tracks/cloud-finops/7-12',
-  '/vault/curriculum/tracks/cloud-finops/14-13': '/vault/curriculum/tracks/cloud-finops/7-13',
-  '/vault/curriculum/tracks/cloud-finops/14-14': '/vault/curriculum/tracks/cloud-finops/7-14',
-  '/vault/curriculum/tracks/cloud-finops/14-15': '/vault/curriculum/tracks/cloud-finops/7-15',
-  ...Object.fromEntries(
-    Object.entries(BLOG_SLUG_REDIRECTS).map(([slug, target]) => [`/blog/${slug}`, target])
-  ),
-  ...Object.fromEntries(
-    Object.entries(ARTICLE_SLUG_REDIRECTS).map(([slug, target]) => [`/articles/${slug}`, target])
-  ),
-};
+import { resolveEdgeRedirect, VALID_COMPARE_TIER_A_SLUGS } from "./app/lib/edge-redirects-manifest";
 
 const CITATION_BOT_REGEX =
   /\b(oai-searchbot|chatgpt-user|claude-searchbot|claude-user|perplexitybot|perplexity-user|amzn-searchbot|amzn-user|duckassistbot|youbot|exasearchbot|google-notebooklm|googlebot|bingbot)\b/i;
@@ -216,9 +98,10 @@ function applySecurityAndCacheHeaders(res: NextResponse, req: NextRequest): Next
     res.headers.set('Cloudflare-CDN-Cache-Control', 'no-store');
     res.headers.set('CDN-Cache-Control', 'no-store');
   } else if (res.status === 200) {
-    res.headers.set('Cache-Control', 'public, max-age=0, s-maxage=86400, stale-while-revalidate=604800');
-    res.headers.set('Cloudflare-CDN-Cache-Control', 'max-age=86400, stale-while-revalidate=604800');
-    res.headers.set('Vary', 'Host, RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding');
+    res.headers.set('Cache-Control', 'public, max-age=0, must-revalidate');
+    res.headers.set('Cloudflare-CDN-Cache-Control', 'no-store');
+    res.headers.set('CDN-Cache-Control', 'no-store');
+    res.headers.set('Vary', 'Host, RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept-Encoding');
   }
 
   return res;
@@ -262,51 +145,31 @@ export default async function middleware(req: NextRequest, event: NextFetchEvent
   const host = req.headers.get('host') || '';
   const pathname = req.nextUrl.pathname;
 
-  // 0c. Canonical Host & Alias Single-Hop Enforcement: 301 redirect at Cloudflare Edge
-  let targetPath = EDGE_REDIRECTS[pathname] || pathname;
-
-  // Collapse legacy /curriculum/tracks/* and N-prefixed module routes into single-hop 301s
-  if (targetPath.startsWith('/curriculum/tracks')) {
-    targetPath = `/vault${targetPath}`;
-  }
-  const nPrefixMatch = targetPath.match(/^\/vault\/curriculum\/tracks\/([^/]+)\/N(\d+-\d+)$/);
-  if (nPrefixMatch) {
-    targetPath = `/vault/curriculum/tracks/${nPrefixMatch[1]}/${nPrefixMatch[2]}`;
-  }
-  if (EDGE_REDIRECTS[targetPath]) {
-    targetPath = EDGE_REDIRECTS[targetPath];
-  }
-
-  // Intercept non-Tier A compare routes directly to eliminate multi-hop apex/www chains
-  if (targetPath.startsWith('/compare/')) {
-    const slug = targetPath.replace('/compare/', '').split('/')[0];
-    if (slug && !TIER_A_SLUGS.has(slug)) {
-      targetPath = '/tools';
-    }
-  } else if (targetPath.startsWith('/comparisons/')) {
-    const slug = targetPath.replace('/comparisons/', '').split('/')[0];
-    if (slug && TIER_A_SLUGS.has(slug)) {
-      targetPath = `/compare/${slug}`;
-    } else {
-      targetPath = '/tools';
-    }
-  }
+  // 0c. Canonical Host & Alias Single-Hop Enforcement: 301 redirect at Cloudflare Edge (ADR-0022)
+  const mappedTarget = (!pathname.startsWith('/api/') && !pathname.startsWith('/_next/') && !pathname.startsWith('/assets/'))
+    ? resolveEdgeRedirect(pathname)
+    : null;
 
   const isLocalhost = /^(localhost|127\.0\.0\.1)(:\d+)?$/i.test(host);
-  if ((!isLocalhost && host !== 'www.richardewing.io') || targetPath !== pathname) {
-    const baseOrigin = isLocalhost ? req.nextUrl.origin : 'https://www.richardewing.io';
-    const safePath = '/' + targetPath.replace(/^[/\\]+/, '');
-    const destination = new URL(safePath + req.nextUrl.search, baseOrigin);
+  const isWorkersPreview = host.endsWith('.workers.dev');
+  if ((!isLocalhost && !isWorkersPreview && host !== 'www.richardewing.io') || mappedTarget !== null) {
+    const baseOrigin = (isLocalhost || isWorkersPreview) ? req.nextUrl.origin : 'https://www.richardewing.io';
+    const finalTarget = mappedTarget !== null ? mappedTarget : pathname;
+    const hashIdx = finalTarget.indexOf('#');
+    const pathPart = hashIdx >= 0 ? finalTarget.slice(0, hashIdx) : finalTarget;
+    const hashPart = hashIdx >= 0 ? finalTarget.slice(hashIdx) : '';
+    const safePath = '/' + pathPart.replace(/^[/\\]+/, '');
+    const destination = new URL(safePath + req.nextUrl.search + hashPart, baseOrigin);
     if (destination.origin !== baseOrigin) {
       return new NextResponse('Bad Request', { status: 400 });
     }
     if (destination.href === req.nextUrl.href) {
-      // Physical guard: never redirect to the exact same URL
       return NextResponse.next();
     }
     const redirectRes = NextResponse.redirect(destination, 301);
     redirectRes.headers.set('Cache-Control', 'no-cache, no-store, must-revalidate');
     redirectRes.headers.set('Cloudflare-CDN-Cache-Control', 'no-store');
+    redirectRes.headers.set('CDN-Cache-Control', 'no-store');
     return redirectRes;
   }
 
@@ -346,7 +209,7 @@ export default async function middleware(req: NextRequest, event: NextFetchEvent
   // Edge-level 301 Permanent Redirect for Tier C and non-indexed compare pages -> /tools
   if (pathname.startsWith('/compare/')) {
     const slug = pathname.replace('/compare/', '').split('/')[0];
-    if (slug && !TIER_A_SLUGS.has(slug)) {
+    if (slug && !VALID_COMPARE_TIER_A_SLUGS.has(slug)) {
       return NextResponse.redirect(new URL('/tools', req.url), 301);
     }
   }

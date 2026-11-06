@@ -191,7 +191,7 @@ export default function BoardRiskScorecardTool() {
                                 Sovereign Framework Connection
                             </div>
                             <p className="text-amber-900 leading-relaxed">
-                                Directly connects to <Link href="/for-boards" className="underline font-bold">For Board Members</Link>, <Link href="/framework/governance" className="underline font-bold">Executive AI Fiduciary Framework</Link>, and the published CIO.com research on <a href="https://www.cio.com/article/4223955/your-ai-agent-may-have-made-the-decision-but-your-company-owns-the-risk.html" target="_blank" rel="noopener noreferrer" className="underline font-bold">Corporate Agent Liability</a>.
+                                Directly connects to <Link href="/for-boards" className="underline font-bold">For Board Members</Link>, <Link href="/framework/runtime-governance" className="underline font-bold">Executive AI Fiduciary Framework</Link>, and the published CIO.com research on <a href="https://www.cio.com/article/4223955/your-ai-agent-may-have-made-the-decision-but-your-company-owns-the-risk.html" target="_blank" rel="noopener noreferrer" className="underline font-bold">Corporate Agent Liability</a>.
                             </p>
                         </div>
                     </div>

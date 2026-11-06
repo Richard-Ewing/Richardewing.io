@@ -946,7 +946,7 @@ Migrate from Heroku to AWS"
                           <p className="text-sm text-zinc-600 mb-4">You found the PDI score. A $2,500 Insolvency Audit locates the exact line items bleeding your R&D budget and builds the 90-day fix.</p>
                           <div className="flex flex-wrap gap-3">
                             <a href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">Book Advisory Session →</a>
-                            <a href="/api/buy/gut_check" className="inline-flex items-center gap-2 px-5 py-2.5 border border-purple-500/30 text-purple-700 text-sm font-bold rounded-lg hover:bg-purple-50 transition-colors">$450 Gut-Check Call →</a>
+                            <a href="/api/buy/gut_check" rel="nofollow noopener" className="inline-flex items-center gap-2 px-5 py-2.5 border border-purple-500/30 text-purple-700 text-sm font-bold rounded-lg hover:bg-purple-50 transition-colors">$450 Gut-Check Call →</a>
                           </div>
                         </div>
                       </div>
@@ -1110,7 +1110,7 @@ Migrate from Heroku to AWS"
                             
                             <div className="space-y-3">
                                 <a 
-                                    href="/api/buy/tools_library_unlock" 
+                                    href="/api/buy/tools_library_unlock" rel="nofollow noopener" 
                                     onClick={() => setShowPaywall(false)}
                                     className="flex items-center justify-center w-full py-4 bg-cyan-500 text-black font-bold uppercase tracking-widest text-xs font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(6,182,212,0.2)] hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] hover:scale-[1.02]"
                                 >

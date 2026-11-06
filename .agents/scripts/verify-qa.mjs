@@ -408,7 +408,7 @@ if (fs.existsSync(siteShellPath)) {
   }
 }
 
-// 7G. Concept Corpus & Middleware Host Vary Integrity Gate
+// 7G. Concept Corpus, Edge Redirect Manifest & Host Cache Isolation Gate (ADR-0022)
 const mwHostPath = path.join(rootDir, 'middleware.ts');
 if (fs.existsSync(mwHostPath)) {
   const mwc = fs.readFileSync(mwHostPath, 'utf8');
@@ -416,6 +416,19 @@ if (fs.existsSync(mwHostPath)) {
     console.error(`[SEO ERROR] middleware.ts must include 'Host' in Vary header to prevent apex/www cache poisoning!`);
     errorCount++;
   }
+}
+const patchWorkerPath = path.join(rootDir, 'scripts/patch-worker.mjs');
+if (fs.existsSync(patchWorkerPath)) {
+  const pwc = fs.readFileSync(patchWorkerPath, 'utf8');
+  if (!pwc.includes('Host, RSC') || !pwc.includes('__rwMissHeaders.set("Cloudflare-CDN-Cache-Control", "no-store")')) {
+    console.error(`[SEO ERROR] scripts/patch-worker.mjs must enforce 'Host, RSC' Vary and outer 'Cloudflare-CDN-Cache-Control: no-store' (ADR-0022)!`);
+    errorCount++;
+  }
+}
+const edgeManifestPath = path.join(rootDir, 'app/lib/edge-redirects-manifest.ts');
+if (!fs.existsSync(edgeManifestPath)) {
+  console.error(`[SEO ERROR] Missing app/lib/edge-redirects-manifest.ts! Run 'npx tsx scripts/generate-edge-redirects.ts'.`);
+  errorCount++;
 }
 const corpusFileNames = fs.readdirSync(path.join(rootDir, 'app/lib')).filter(f => f.startsWith('concept-corpus') && f.endsWith('.ts'));
 const definedConceptSlugs = new Set();

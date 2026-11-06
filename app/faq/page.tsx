@@ -138,7 +138,7 @@ export default function FAQPage() {
           Kit + Live Browser Workspace.
         </p>
         <div className="actions center">
-          <Link className="button button-gold" href="/contact?subject=P&L+Teardown">
+          <Link className="button button-gold" href="/contact#subject=P%26L+Teardown">
             Book 60-Min Teardown ($450) ↗
           </Link>
           <Link className="button button-ghost-light" href="/toolkit">

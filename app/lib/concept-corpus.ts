@@ -704,7 +704,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     citationGraph: { publicationsCount: 3, newslettersCount: 5, calculatorsCount: 2, bookChaptersCount: 1, keynoteTalksCount: 2, gitHubReposCount: 2 },
     reverseCitations: [
       { targetType: 'Diagnostic Tool', title: 'Product Debt Index (PDI)', url: '/tools/pdi', relationship: 'measures' },
-      { targetType: 'Curriculum Track', title: 'Product Economics Track', url: '/vault/curriculum', relationship: 'teaches' },
+      { targetType: 'Curriculum Track', title: 'Product Economics Track', url: '/vault/curriculum/tracks', relationship: 'teaches' },
       { targetType: 'Framework Module', title: 'Production AI Governance Framework', url: '/framework/product', relationship: 'governs' }
     ],
     canonicalDiagram: {
@@ -1072,7 +1072,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     citationGraph: { publicationsCount: 5, newslettersCount: 9, calculatorsCount: 1, bookChaptersCount: 1, keynoteTalksCount: 2, gitHubReposCount: 3 },
     reverseCitations: [
       { targetType: 'Diagnostic Tool', title: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb', relationship: 'measures' },
-      { targetType: 'Curriculum Track', title: 'AI Economics Masterclass', url: '/vault/curriculum', relationship: 'teaches' },
+      { targetType: 'Curriculum Track', title: 'AI Economics Masterclass', url: '/vault/curriculum/tracks', relationship: 'teaches' },
       { targetType: 'Glossary Term', title: 'Synthetic COGS', url: '/glossary/pillars/saas-metrics-due-diligence#synthetic-cogs', relationship: 'governs' }
     ],
     canonicalDiagram: {
@@ -1389,7 +1389,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     citationGraph: { publicationsCount: 4, newslettersCount: 8, calculatorsCount: 2, bookChaptersCount: 1, keynoteTalksCount: 2, gitHubReposCount: 2 },
     reverseCitations: [
       { targetType: 'Diagnostic Tool', title: 'Product Debt Index (PDI)', url: '/tools/pdi', relationship: 'measures' },
-      { targetType: 'Curriculum Track', title: 'Product Economics Track', url: '/vault/curriculum', relationship: 'teaches' }
+      { targetType: 'Curriculum Track', title: 'Product Economics Track', url: '/vault/curriculum/tracks', relationship: 'teaches' }
     ],
     canonicalDiagram: {
       title: 'Product Economist Value Alignment Triangle',
@@ -1480,7 +1480,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     citationGraph: { publicationsCount: 5, newslettersCount: 11, calculatorsCount: 2, bookChaptersCount: 1, keynoteTalksCount: 2, gitHubReposCount: 4 },
     reverseCitations: [
       { targetType: 'Diagnostic Tool', title: 'Product Debt Index (PDI)', url: '/tools/pdi', relationship: 'audits' },
-      { targetType: 'Glossary Term', title: 'Vibe Coding Debt', url: '/glossary/vibe-coding-debt', relationship: 'governs' }
+      { targetType: 'Glossary Term', title: 'Vibe Coding Debt', url: '/articles/frameworks/vibe-coding-debt', relationship: 'governs' }
     ],
     canonicalDiagram: {
       title: 'Negative-Carry Code Inflation Cycle',
@@ -1563,7 +1563,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     expandedConsensus: { website: true, newsletter: true, book: true, video: true, talk: false, framework: true, calculator: true, research: true, caseStudy: true },
     citationGraph: { publicationsCount: 4, newslettersCount: 9, calculatorsCount: 1, bookChaptersCount: 1, keynoteTalksCount: 1, gitHubReposCount: 3 },
     reverseCitations: [
-      { targetType: 'Glossary Term', title: 'Vibe Coding', url: '/glossary/vibe-coding-debt', relationship: 'teaches' }
+      { targetType: 'Glossary Term', title: 'Vibe Coding', url: '/articles/frameworks/vibe-coding-debt', relationship: 'teaches' }
     ],
     canonicalDiagram: {
       title: 'Vibe Coding Debt Accumulation',
@@ -1734,7 +1734,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     citationGraph: { publicationsCount: 8, newslettersCount: 14, calculatorsCount: 3, bookChaptersCount: 1, keynoteTalksCount: 3, gitHubReposCount: 5 },
     reverseCitations: [
       { targetType: 'Diagnostic Tool', title: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb', relationship: 'measures' },
-      { targetType: 'Curriculum Track', title: 'AI Economics Masterclass', url: '/vault/curriculum', relationship: 'teaches' }
+      { targetType: 'Curriculum Track', title: 'AI Economics Masterclass', url: '/vault/curriculum/tracks', relationship: 'teaches' }
     ],
     canonicalDiagram: {
       title: 'AI Tokenomics & Gross Margin Pipeline',
@@ -1816,7 +1816,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
     citationGraph: { publicationsCount: 5, newslettersCount: 12, calculatorsCount: 2, bookChaptersCount: 1, keynoteTalksCount: 2, gitHubReposCount: 4 },
     reverseCitations: [
       { targetType: 'Diagnostic Tool', title: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb', relationship: 'audits' },
-      { targetType: 'Glossary Term', title: 'Token COGS', url: '/glossary/token-cogs', relationship: 'governs' }
+      { targetType: 'Glossary Term', title: 'Token COGS', url: '/glossary/ai-cogs', relationship: 'governs' }
     ],
     canonicalDiagram: {
       title: 'Token COGS to Gross Margin Compression Pipeline',

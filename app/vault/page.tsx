@@ -12,7 +12,7 @@ export const dynamic = 'force-dynamic';
 export const metadata = {
     title: 'Executive Diagnostic Toolkit & Vault',
     description: 'Secure client portal for enterprise diagnostic calculators, audit deliverables, and research frameworks. Access executive reporting and benchmarks.',
-    robots: { index: false, follow: false },
+    robots: { index: false, follow: true },
     openGraph: {
         title: 'Vault - Executive Diagnostic Toolkit | Richard Ewing',
         description: 'Client Vault provides deterministic data for enterprise teams. Audit your R&D capital and block shadow AI exfiltration.',
@@ -282,7 +282,7 @@ export default async function VaultPage() {
                                         <div className="text-2xl mb-3">📘</div>
                                         <h3 className="text-lg font-bold text-zinc-950 mb-2 group-hover:text-cyan-900 font-extrabold font-semibold transition-colors">Premium Curriculum</h3>
                                         <p className="text-sm font-semibold text-zinc-900 font-medium mb-4">Full access to engineering economics playbooks and teardowns.</p>
-                                        <Link href="/vault/curriculum" className="inline-flex items-center text-xs font-bold text-cyan-900 font-extrabold font-semibold uppercase tracking-widest">
+                                        <Link href="/vault/curriculum/tracks" className="inline-flex items-center text-xs font-bold text-cyan-900 font-extrabold font-semibold uppercase tracking-widest">
                                             Access Curriculum <ChevronRight className="w-3 h-3 ml-1" />
                                         </Link>
                                     </div>
@@ -484,7 +484,7 @@ export default async function VaultPage() {
                                             <p className="text-xs font-bold text-zinc-900 font-bold mb-4">{3 - toolRuns.length} board-ready reports remaining this month.</p>
                                         )}
                                         
-                                        <a href="/api/buy/full_curriculum" className={`block text-center w-full py-2 text-xs font-bold font-medium font-bold uppercase tracking-widest rounded transition-all ${toolRuns.length >= 3 ? 'bg-cyan-500 text-black shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:bg-cyan-400' : 'bg-zinc-50 border border-zinc-400 hover:border-cyan-500/50 text-zinc-900'}`}>
+                                        <a href="/api/buy/full_curriculum" rel="nofollow noopener" className={`block text-center w-full py-2 text-xs font-bold font-medium font-bold uppercase tracking-widest rounded transition-all ${toolRuns.length >= 3 ? 'bg-cyan-500 text-black shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:bg-cyan-400' : 'bg-zinc-50 border border-zinc-400 hover:border-cyan-500/50 text-zinc-900'}`}>
                                             Access Unlimited
                                         </a>
                                     </div>
@@ -500,7 +500,7 @@ export default async function VaultPage() {
                                         <Lock className="w-3 h-3 text-zinc-950 font-bold group-hover:text-violet-400" />
                                     </div>
                                     <p className="text-xs font-bold text-zinc-900 font-bold mb-4">Access all 218 modules across 18 curriculum tracks. Lifetime access.</p>
-                                    <a href="/api/buy/full_curriculum" className="block text-center w-full py-2 bg-zinc-50 hover:bg-violet-600 text-zinc-950 hover:text-white text-xs font-bold uppercase tracking-widest rounded transition-colors">
+                                    <a href="/api/buy/full_curriculum" rel="nofollow noopener" className="block text-center w-full py-2 bg-zinc-50 hover:bg-violet-600 text-zinc-950 hover:text-white text-xs font-bold uppercase tracking-widest rounded transition-colors">
                                         Access for $999
                                     </a>
                                 </div>

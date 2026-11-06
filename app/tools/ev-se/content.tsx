@@ -826,7 +826,7 @@ export default function EVSETool() {
                                   <p className="text-sm text-zinc-600 mb-4">This engine models the range. A full R&D Capital Audit produces forensic analysis of your capital allocation with board-ready recommendations that impact your next round or exit.</p>
                                   <div className="flex flex-wrap gap-3">
                                     <a href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-opacity shadow-sm">Book Advisory Session →</a>
-                                    <a href="/api/buy/gut_check" className="inline-flex items-center gap-2 px-5 py-2.5 border border-purple-500/30 text-purple-700 text-sm font-bold rounded-lg hover:bg-purple-50 transition-colors">$450 Gut-Check Call →</a>
+                                    <a href="/api/buy/gut_check" rel="nofollow noopener" className="inline-flex items-center gap-2 px-5 py-2.5 border border-purple-500/30 text-purple-700 text-sm font-bold rounded-lg hover:bg-purple-50 transition-colors">$450 Gut-Check Call →</a>
                                   </div>
                                 </div>
                               </div>

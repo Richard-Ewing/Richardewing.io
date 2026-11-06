@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -11,6 +11,24 @@ export function ContactForm() {
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    let rawSubject = "";
+    const hash = window.location.hash ? window.location.hash.slice(1) : "";
+    if (hash.startsWith("subject=")) {
+      rawSubject = decodeURIComponent(hash.slice("subject=".length).replace(/\+/g, " "));
+    } else if (window.location.search) {
+      const sp = new URLSearchParams(window.location.search);
+      rawSubject = sp.get("subject") || "";
+    }
+    const cleanSubject = rawSubject.trim();
+    if (cleanSubject) {
+      setFormData((prev) =>
+        prev.message ? prev : { ...prev, message: `Inquiry Topic: ${cleanSubject}\n\n` }
+      );
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

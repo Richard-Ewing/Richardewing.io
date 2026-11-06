@@ -267,7 +267,7 @@ export default function AiCoursesPage() {
                                             key={course.name}
                                             href={course.url}
                                             target={isInternal ? undefined : '_blank'}
-                                            rel={isInternal ? undefined : 'noopener noreferrer'}
+                                            rel={course.url.startsWith('/api/') ? 'nofollow noopener' : isInternal ? undefined : 'noopener noreferrer'}
                                             className={`group block p-6 rounded-xl bg-white/[0.03] border ${track.borderColor} hover:bg-white/[0.06] transition-all hover:shadow-lg`}
                                         >
                                             <div className="flex items-start justify-between gap-2 mb-3">
@@ -365,7 +365,7 @@ export default function AiCoursesPage() {
                             Knowing how to build with AI is necessary. Knowing whether you <em>should</em> build - and at what cost - is what separates winners from margin casualties.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="/api/buy/practitioner_certification" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-lg hover:opacity-90 transition-opacity text-sm shadow-sm">
+                            <a href="/api/buy/practitioner_certification" rel="nofollow noopener" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-lg hover:opacity-90 transition-opacity text-sm shadow-sm">
                                 Access AI Practitioner Pass ($249) →
                             </a>
                             <Link href="/tools/aueb" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">

@@ -93,7 +93,7 @@ export default function AIIntegrationSystemPage() {
                                 ))}
                             </ul>
                         </div>
-                        <a href="/api/buy/operating_kit_complete" className="block text-center py-3 bg-emerald-600 text-white font-bold rounded-lg text-sm hover:bg-emerald-500 transition-colors">Get Complete Bundle ($79) →</a>
+                        <a href="/api/buy/operating_kit_complete" rel="nofollow noopener" className="block text-center py-3 bg-emerald-600 text-white font-bold rounded-lg text-sm hover:bg-emerald-500 transition-colors">Get Complete Bundle ($79) →</a>
                     </div>
 
                     <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-6 shadow-sm flex flex-col justify-between">
@@ -208,7 +208,7 @@ export default function AIIntegrationSystemPage() {
                     <p className="text-violet-100 mb-6">5 working spreadsheets + Live Browser Workspace. Immediate access.</p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link href="/toolkit" className="px-8 py-4 bg-white text-violet-800 font-bold rounded-lg hover:bg-violet-50 transition-colors">Get Operating Kit ($29) →</Link>
-                        <a href="/api/buy/operating_kit_complete" className="px-8 py-4 text-white font-bold rounded-lg border border-white/30 hover:border-white/60 transition-colors">Get Complete Bundle ($79) →</a>
+                        <a href="/api/buy/operating_kit_complete" rel="nofollow noopener" className="px-8 py-4 text-white font-bold rounded-lg border border-white/30 hover:border-white/60 transition-colors">Get Complete Bundle ($79) →</a>
                         <Link href="/workspace" className="px-8 py-4 bg-violet-900/50 text-white font-bold rounded-lg border border-white/20 hover:bg-violet-900 transition-colors">Open Live Workspace →</Link>
                     </div>
                 </div>

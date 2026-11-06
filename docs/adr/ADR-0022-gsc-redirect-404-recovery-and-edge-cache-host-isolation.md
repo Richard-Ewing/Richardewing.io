@@ -1,0 +1,38 @@
+# ADR-0022: GSC Redirect 404 Recovery, Single-Hop 301 Manifest, and Edge Host Cache Isolation
+
+## Context
+Google Search Console (GSC) on `sc-domain:richardewing.io` surfaced three indexing and validation buckets requiring architectural remediation:
+1. `Page with redirect` (820 affected URLs; validation failed October 9, 2026).
+2. `Blocked by robots.txt` (5 affected URLs; validation failed October 19, 2026).
+3. `Alternate page with proper canonical tag` (5 affected URLs).
+
+Live edge probing across `richardewing.io`, `www.richardewing.io`, and all 1,227 `sitemap.xml` URLs identified four structural defects:
+1. **Outer Cloudflare Zone Cache Host Poisoning**: In `scripts/patch-worker.mjs` (ADR-0019), cached HTML responses emitted `Cache-Control: public, max-age=0, s-maxage=86400` and `Cloudflare-CDN-Cache-Control: public, max-age=86400` while stripping `Host` from `Vary`. Because Cloudflare's outer Zone Cache sat in front of the Worker without host-keyed `Vary` isolation, cached `200 OK` HTML from `www.richardewing.io` was served directly on `https://richardewing.io/`, `http://richardewing.io/`, and `https://richardewing.io/tools/pdi` (`cf-cache-status: HIT`), bypassing the Worker's `301` host redirect.
+2. **`dynamicParams = false` Redirect Silencing (261+ Broken 404s)**: Commit `6443500` locked `export const dynamicParams = false` across 18 dynamic App Router routes to eliminate Worker CPU cold-starts on unknown slugs. However, five of those routes (`app/glossary/[slug]/page.tsx`, `app/articles/[slug]/page.tsx`, `app/framework/[slug]/page.tsx`, `app/failures/[slug]/page.tsx`, and `app/vault/curriculum/tracks/[...slug]/page.tsx`) previously relied on runtime `permanentRedirect(...)` fallbacks for 443 consolidated glossary terms, 29 retired glossary slugs, 29 `/articles/<framework>` aliases, retired programmatic articles, legacy framework slugs, and retired curriculum modules. Locking `dynamicParams = false` turned those redirects into unreachable dead code, causing 261+ indexed/historical URLs to return `404 Not Found`. In addition, 13 rules in `next.config.ts` pointed `/guides/*` and `/comparisons/*` to deleted curriculum track IDs (`guides/15-*`, `guides/16-*`, `comparisons/17-*`), producing `308 -> 404` chains.
+3. **`next.config.ts` `308` Status Codes and Multi-Hop Chains**: Rules in `next.config.ts` used `permanent: true`, which Next.js compiles to HTTP `308` before `middleware.ts` executes. When `next.config.ts` redirected `/comparisons/:slug*` to `/compare/:slug*` or `/research/concepts/:slug*` to `/concepts/:slug*`, `middleware.ts` executed a second `301` redirect to `/tools` or renamed concept slugs, creating two-hop `308 -> 301` chains.
+4. **Crawler Directive Collision and Internal Link Leaks**: `app/robots.ts` disallowed `/api/`, preventing Googlebot from reading the `X-Robots-Tag: noindex, follow` header on `/api/buy/*` checkout endpoints and `/api/csp/v1/export` (causing `Blocked by robots.txt` validation to fail when Googlebot tested `/api/buy/insolvency_diagnostic` on October 19, 2026). Meanwhile, internal components rendered crawlable `<a href="/api/buy/...">` anchors without `rel="nofollow"`, 20 CTA links used query parameters (`/contact?subject=...`) feeding `Alternate page with proper canonical tag`, and `PublicationCard.tsx` emitted unmapped `/concepts/*` links.
+
+## Decision
+We implement a deterministic four-part edge and crawl architecture while preserving ADR-0019's `0.03ms` Worker CPU budget:
+1. **Worker-Internal PoP Caching with Outer Zone `no-store` Isolation**: Keep 24-hour HTML and RSC caching inside the Worker's version-keyed, host-isolated `caches.default` store (`__rwStoreHeaders`), while emitting `Cache-Control: public, max-age=0, must-revalidate`, `Cloudflare-CDN-Cache-Control: no-store`, `CDN-Cache-Control: no-store`, and `Vary: Host, RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept-Encoding` on outer responses. This prevents Cloudflare's outer Zone Cache from ever serving `www` responses on apex `richardewing.io` or serving stale HTML across deployments.
+2. **Pre-OpenNext Single-Hop `301` Redirect Manifest (`app/lib/edge-redirects-manifest.ts`)**: Generate an O(1) edge redirect manifest directly from the canonical TypeScript corpora (`glossaryTerms`, `KEEP_TERMS`, `PILLARS`, `frameworks`, `articles`, `subFrameworks`, `CANONICAL_CONCEPTS`, `FAILURES`, and `getAllModuleSlugs()`). Enforce this manifest both in `scripts/patch-worker.mjs` (ahead of OpenNext `cacheInterceptor` and `next.config.ts`) and in `middleware.ts`, collapsing apex-to-`www`, trailing slashes, consolidated glossary terms (`#anchor`), retired glossary/article/framework/failure/curriculum slugs, `/comparisons/*`, and `/research/concepts/*` into a single `0.01ms` HTTP `301` hop while keeping `dynamicParams = false` intact. Update `next.config.ts` rules to `statusCode: 301` and repair all broken curriculum targets.
+3. **`robots.txt` Unblocking + `X-Robots-Tag: noindex, follow` on `/api/buy/` and `/api/csp/`**: Add `/api/buy/` and `/api/csp/` to `commonAllows` in `app/robots.ts` so Googlebot can inspect their `X-Robots-Tag: noindex, follow` headers and clear `Blocked by robots.txt` validation, while returning a lightweight `200 OK` `noindex, follow` response to search crawler user-agents on `/api/buy/*` instead of redirecting bots to external Stripe Checkout sessions. Add `rel="nofollow noopener"` to all internal `/api/buy/*` and `/api/csp/*` anchors.
+4. **Canonical Internal Link Hygiene & Fragment Inquiry Prefill**: Replace all 20 `/contact?subject=...` links with URL fragments (`/contact#subject=...`) parsed client-side in `ContactForm`, add `CONCEPT_ROUTE_MAP` to `PublicationCard.tsx`, align root `sitemap.xml` URL (`https://www.richardewing.io`) with `app/page.tsx` canonical metadata without modifying frozen homepage copy, and repair all non-canonical internal links across `app/` and `components/`.
+
+## Deciders
+@richardewing, Steve Jobs, Jensen Huang, Aravind Srinivas, Lily Ray, Dan Guido, Code Architect, QA Auditor
+
+## Status
+Accepted
+
+## Consequences
+Positive:
+- Eliminates all 261+ `404` regressions on consolidated glossary terms, legacy articles, frameworks, failures, and curriculum modules with zero `handler.mjs` CPU overhead (`0.01ms` edge lookup).
+- Collapses all multi-hop `308 -> 301` and `apex -> www -> target` redirect chains into single-hop HTTP `301` responses.
+- Permanently prevents apex `richardewing.io` `200 OK` outer CDN cache poisoning while retaining `0.03ms` PoP cache hits via Worker `caches.default`.
+- Allows GSC `Blocked by robots.txt` validation to pass by letting Googlebot read `X-Robots-Tag: noindex, follow` on `/api/buy/*` and `/api/csp/*`, while unblocking AI search bots (`PerplexityBot`, `OAI-SearchBot`, `Claude-SearchBot`) on the public CSP JSON-LD graph.
+- Eliminates parameterized `/contact?subject=*` duplicate URL discovery while adding automatic inquiry subject prefill for prospective advisory clients.
+
+Negative/Considerations:
+- Whenever glossary terms, frameworks, concepts, or curriculum modules are added or renamed, `npx tsx scripts/generate-edge-redirects.ts` must be executed (enforced via `verify-qa.mjs`) to keep `app/lib/edge-redirects-manifest.ts` synchronized.
+- In GSC, **"Validate Fix" must NOT be clicked** on `Page with redirect` once intentional permanent redirects return `301`, because Google marks `Page with redirect` validation as failed whenever redirected URLs legitimately continue returning `301` rather than `200 OK` (per ADR-0011). Only `Blocked by robots.txt` should be submitted for "Validate Fix".

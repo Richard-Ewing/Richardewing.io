@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         description: 'Answer 5 questions. Get a custom AI integration plan with specific tools, ROI estimates, and a 30-day action plan. No consultants required.',
     },
     alternates: { canonical: 'https://www.richardewing.io/ai-integration/advisor' },
-    robots: { index: false, follow: false },
+    robots: { index: false, follow: true },
 };
 
 export const dynamic = 'force-dynamic';
@@ -99,6 +99,7 @@ export default async function AdvisorPage() {
                                 <p className="text-[10px] text-zinc-600 mb-4">Cancel anytime</p>
                                 <a
                                     href="/api/buy/ai_advisor_monthly"
+                                    rel="nofollow noopener"
                                     className="block w-full text-center py-3 border-2 border-cyan-600 text-cyan-700 font-bold rounded-xl text-sm hover:bg-cyan-50 transition-colors"
                                 >
                                     Start Monthly →
@@ -113,6 +114,7 @@ export default async function AdvisorPage() {
                                 <p className="text-[10px] text-zinc-600 mb-4">$166/mo · Billed annually</p>
                                 <a
                                     href="/api/buy/ai_advisor_yearly"
+                                    rel="nofollow noopener"
                                     className="block w-full text-center py-3 bg-cyan-600 text-white font-bold rounded-xl text-sm hover:bg-cyan-500 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.15)]"
                                 >
                                     Start Annual →
@@ -123,7 +125,7 @@ export default async function AdvisorPage() {
 
                     <p className="text-xs text-zinc-500">
                         Already have access?{' '}
-                        <Link href="/vault" className="text-cyan-700 hover:underline">Check your vault</Link>
+                        <Link href="/vault" rel="nofollow" className="text-cyan-700 hover:underline">Check your vault</Link>
                     </p>
                 </div>
             </main>

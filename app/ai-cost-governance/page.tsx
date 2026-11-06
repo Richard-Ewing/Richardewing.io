@@ -100,7 +100,7 @@ export default function AICostGovernancePage() {
 
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
-            href="/contact?subject=Fractional+CPO"
+            href="/contact#subject=Fractional+CPO"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#162e26] text-white font-medium hover:bg-[#29473b] transition-all text-sm shadow-sm"
           >
             Inquire for Fractional CPO ($10,000/mo) ↗
@@ -413,7 +413,7 @@ export default function AICostGovernancePage() {
 
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <Link
-                href="/contact?subject=Fractional+CPO"
+                href="/contact#subject=Fractional+CPO"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#b77a35] text-white font-bold hover:bg-[#a36b2d] transition-all text-base shadow-md"
               >
                 Inquire for Fractional CPO ($10,000/mo)

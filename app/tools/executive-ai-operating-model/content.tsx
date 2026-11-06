@@ -145,7 +145,7 @@ export default function CEOOperatingModelTool() {
                                 Sovereign Framework Connection
                             </div>
                             <p className="text-indigo-900 leading-relaxed">
-                                Maps to <Link href="/doctrine" className="underline font-bold">Executive Operating Doctrine</Link> and <Link href="/framework/governance" className="underline font-bold">Sovereign Enterprise Architecture</Link>.
+                                Maps to <Link href="/doctrine" className="underline font-bold">Executive Operating Doctrine</Link> and <Link href="/framework/runtime-governance" className="underline font-bold">Sovereign Enterprise Architecture</Link>.
                             </p>
                         </div>
                     </div>

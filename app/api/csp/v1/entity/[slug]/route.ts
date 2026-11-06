@@ -57,6 +57,7 @@ export async function GET(request: Request, { params }: RouteProps) {
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Cache-Control': 'public, max-age=3600, s-maxage=86400',
+      'X-Robots-Tag': 'noindex, follow',
     },
   });
 }

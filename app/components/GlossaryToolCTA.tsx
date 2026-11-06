@@ -177,12 +177,13 @@ export default function GlossaryToolCTA({ slug, category, termTitle }: GlossaryT
                     {/* Advisory Upsell */}
                     <p className="mt-3 text-xs text-zinc-600">
                         Want an expert to run this for you?{' '}
-                        <Link
+                        <a
                             href="/api/buy/gut_check"
+                            rel="nofollow noopener"
                             className="text-purple-600 hover:text-purple-500 font-semibold underline underline-offset-2 transition-colors"
                         >
                             Book a $450 Gut-Check Call →
-                        </Link>
+                        </a>
                     </p>
                 </div>
             </div>

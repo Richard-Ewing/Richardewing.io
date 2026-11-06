@@ -79,7 +79,7 @@ export default function SecurityPage() {
             <Link className="button button-outline" href="/reality-check">
               Run the Reality Check ↗
             </Link>
-            <Link className="button button-outline" href="/contact?subject=Security+Inquiry">
+            <Link className="button button-outline" href="/contact#subject=Security+Inquiry">
               Initiate NDA Protocol
             </Link>
           </div>
@@ -149,7 +149,7 @@ export default function SecurityPage() {
             </p>
             <div className="flex flex-wrap gap-4 pt-4 border-t border-white/10">
               <Link
-                href="/contact?subject=NDA+Protocol"
+                href="/contact#subject=NDA+Protocol"
                 className="button button-gold text-xs"
               >
                 Initiate NDA Protocol ↗
@@ -177,7 +177,7 @@ export default function SecurityPage() {
           <Link className="button button-gold" href="/schedule?source=security">
             Schedule a Runtime Security Briefing ↗
           </Link>
-          <Link className="button button-ghost-light" href="/contact?subject=Security+Compliance">
+          <Link className="button button-ghost-light" href="/contact#subject=Security+Compliance">
             Contact Technical Security Team ↗
           </Link>
           <Link className="button button-ghost-light" href="/framework">

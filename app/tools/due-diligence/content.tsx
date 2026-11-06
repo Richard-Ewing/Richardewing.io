@@ -547,7 +547,7 @@ export default function DueDiligenceTool() {
                             </div>
 
                             <div className="space-y-3">
-                                <a href="/api/buy/pe_intelligence_tier" className="flex items-center justify-center w-full py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-semibold font-bold uppercase tracking-widest text-xs font-bold rounded-xl transition-all shadow-lg">
+                                <a href="/api/buy/pe_intelligence_tier" rel="nofollow noopener" className="flex items-center justify-center w-full py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-semibold font-bold uppercase tracking-widest text-xs font-bold rounded-xl transition-all shadow-lg">
                                     Upgrade to PE Tier
                                 </a>
                                 <button 

@@ -234,6 +234,7 @@ export default async function SharedScorecardPage({
           </div>
           <a
             href="/api/buy/gut_check"
+            rel="nofollow noopener"
             className="shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#b77a35] hover:opacity-95 text-white font-bold text-xs uppercase tracking-wider transition-all"
           >
             Book $450 Session →

@@ -225,7 +225,7 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                                     <Link href="/services" className="px-6 py-3 rounded-lg bg-emerald-600 text-white font-bold text-sm text-center hover:bg-emerald-500 transition-colors whitespace-nowrap shadow-md">
                                         Claim Advisory Audit →
                                     </Link>
-                                    <a href="/api/buy/enterprise/enterprise_curriculum_license" className="px-6 py-3 rounded-lg bg-white border border-zinc-400 text-zinc-950 font-bold text-sm font-semibold text-center hover:bg-zinc-50 transition-colors whitespace-nowrap">
+                                    <a href="/api/buy/enterprise/enterprise_curriculum_license" rel="nofollow noopener" className="px-6 py-3 rounded-lg bg-white border border-zinc-400 text-zinc-950 font-bold text-sm font-semibold text-center hover:bg-zinc-50 transition-colors whitespace-nowrap">
                                         Add Enterprise Team License
                                     </a>
                                 </div>

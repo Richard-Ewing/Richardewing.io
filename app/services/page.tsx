@@ -98,7 +98,7 @@ const paths = [
         period: 'editorial study',
         description: 'Co-branded industry benchmark study or interactive buyer ROI calculator distributed across 174+ publications and executive channels.',
         actionLabel: 'Inquire About Research ↗',
-        actionHref: '/contact?subject=Sponsored+Research',
+        actionHref: '/contact#subject=Sponsored+Research',
         external: false,
       },
     ],

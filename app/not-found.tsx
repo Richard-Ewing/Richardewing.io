@@ -75,7 +75,7 @@ export default function NotFound() {
                             { q: 'Why does Cursor rewrite files?', href: '/compare/why-cursor-rewrites-files' },
                             { q: 'Why do AI agents burn budget overnight?', href: '/compare/why-retry-loops-happen' },
                             { q: 'Why is MCP dangerous?', href: '/compare/why-mcp-is-dangerous' },
-                            { q: 'What is Technical Insolvency?', href: '/glossary/technical-insolvency' },
+                            { q: 'What is Technical Insolvency?', href: '/glossary/technical-insolvency-date' },
                             { q: 'What is Hallucination Debt?', href: '/glossary/hallucination-debt' },
                             { q: 'What is the Innovation Tax?', href: '/glossary/innovation-tax' },
                             { q: 'What is Runtime Governance?', href: '/runtime-architecture' },

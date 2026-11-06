@@ -301,7 +301,7 @@ export default function AIIntegrationPage() {
                 <Link href="/toolkit" className="button button-gold w-full text-center block text-xs">
                   Get Operating Kit ($29) ↗
                 </Link>
-                <Link href="/contact?subject=P&L+Teardown" className="button button-outline w-full text-center block text-xs">
+                <Link href="/contact#subject=P%26L+Teardown" className="button button-outline w-full text-center block text-xs">
                   Book 60-Min Teardown ($450) ↗
                 </Link>
               </div>
@@ -343,7 +343,7 @@ export default function AIIntegrationPage() {
               </div>
               <div className="pt-4 border-t border-white/10">
                 <Link
-                  href="/contact?subject=Turnaround+Sprint"
+                  href="/contact#subject=Turnaround+Sprint"
                   className="button button-gold w-full text-center block text-xs"
                 >
                   Book Turnaround Sprint ($2,500) ↗
@@ -385,7 +385,7 @@ export default function AIIntegrationPage() {
               </div>
               <div className="pt-4 border-t border-[var(--line)]">
                 <Link
-                  href="/contact?subject=AI+Build+Sprint"
+                  href="/contact#subject=AI+Build+Sprint"
                   className="button button-dark w-full text-center block text-xs"
                 >
                   Commission 21-Day Build ($7,500) ↗

@@ -484,6 +484,8 @@ const Navigation = () => {
                                 ) : isSignedIn ? (
                                     <Link
                                         href="/vault"
+                                        rel="nofollow"
+                                        prefetch={false}
                                         onClick={() => setMobileMenuOpen(false)}
                                         className="w-full py-2.5 bg-emerald-100 border border-emerald-300 text-emerald-950 font-bold text-center rounded-xl text-xs uppercase tracking-wider hover:bg-emerald-200 transition-colors"
                                     >

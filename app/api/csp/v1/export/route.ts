@@ -39,6 +39,7 @@ export async function GET() {
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Cache-Control': 'public, max-age=3600, s-maxage=86400',
+      'X-Robots-Tag': 'noindex, follow',
     },
   });
 }

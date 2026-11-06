@@ -33,7 +33,7 @@ export const TIER9_CONCEPTS: ConceptNode[] = [
     positionStatement: 'Engineering velocity in the AI era is an IRS Section 174 risk unless sprint tasks are forensically separated between maintenance OpEx and capitalizable R&D.',
     executableTool: {
       name: 'Section 174 AI Tax Calculator',
-      url: '/tools/section-174',
+      url: '/tools/section-174-calculator',
       description: 'Quantify phantom tax liability from AI code generation and R&D salary capitalization rules.',
       type: 'Diagnostic Calculator'
     },
@@ -89,7 +89,7 @@ export const TIER9_CONCEPTS: ConceptNode[] = [
     canonicalReadingOrder: [
       { step: 1, title: 'The Section 174 AI Tax Trap', publisher: 'The AI Economist (Beehiiv)', type: 'Executable', url: 'https://theaieconomist.beehiiv.com/p/section-174-ai-tax-trap' },
       { step: 2, title: 'CFO Capitalization Audit Protocol', publisher: 'CIO.com', type: 'Framework', url: '/for-cfos' },
-      { step: 3, title: 'Section 174 AI Tax Calculator', publisher: 'Richard Ewing Diagnostic', type: 'Calculator', url: '/tools/section-174' }
+      { step: 3, title: 'Section 174 AI Tax Calculator', publisher: 'Richard Ewing Diagnostic', type: 'Calculator', url: '/tools/section-174-calculator' }
     ],
     provenanceTimeline: [
       { stage: 'Observation', label: 'Phantom Tax Invoicing in Mid-Market SaaS', publisher: 'Internal Audit', date: 'August 2026', summary: 'Observed engineering teams struggling with sudden cash tax bills following AI coding tool rollouts.' },
@@ -154,7 +154,7 @@ export const TIER9_CONCEPTS: ConceptNode[] = [
         channel: 'EXECUTIVE_ADVISORY',
         headline: 'Run Section 174 Tax Liability Diagnostic',
         subtext: 'Quantify balance sheet tax exposure and phantom income from AI-accelerated sprint velocity.',
-        actionUrl: '/tools/section-174',
+        actionUrl: '/tools/section-174-calculator',
         actionLabel: 'Open Tax Calculator',
         targetRole: 'Director of Finance'
       }

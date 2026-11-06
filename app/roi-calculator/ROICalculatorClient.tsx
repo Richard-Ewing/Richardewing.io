@@ -197,7 +197,7 @@ export function ROICalculatorClient() {
             buttonLabel="Download Boardroom PDF Audit Report"
           />
           <Link
-            href="/contact?subject=P&L+Teardown"
+            href="/contact#subject=P%26L+Teardown"
             className="button button-gold w-full text-center block text-xs"
           >
             Schedule $450 Rapid Audit to Recover Spend ↗

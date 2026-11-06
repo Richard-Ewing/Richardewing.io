@@ -63,7 +63,7 @@ const sprintTiers = [
       'Full $29 Operating Kit included at no extra charge',
     ],
     ctaText: 'Book 1-on-1 Teardown ($450) ↗',
-    ctaHref: '/contact?subject=P&L+Teardown',
+    ctaHref: '/contact#subject=P%26L+Teardown',
     highlight: false,
   },
   {
@@ -83,7 +83,7 @@ const sprintTiers = [
       'Two executive presentation sessions with leadership team',
     ],
     ctaText: 'Request Turnaround Sprint ↗',
-    ctaHref: '/contact?subject=Turnaround+Sprint',
+    ctaHref: '/contact#subject=Turnaround+Sprint',
     highlight: true,
   },
   {
@@ -103,7 +103,7 @@ const sprintTiers = [
       'Documentation, developer handoff, and 30 days support',
     ],
     ctaText: 'Discuss 21-Day Build Sprint ↗',
-    ctaHref: '/contact?subject=AI+Build+Sprint',
+    ctaHref: '/contact#subject=AI+Build+Sprint',
     highlight: false,
   },
   {
@@ -123,7 +123,7 @@ const sprintTiers = [
       'Direct Slack/email access for CEO, CFO, and leadership team',
     ],
     ctaText: 'Inquire About Retainer ↗',
-    ctaHref: '/contact?subject=Fractional+CPO+Inquiry',
+    ctaHref: '/contact#subject=Fractional+CPO+Inquiry',
     highlight: false,
   },
 ];

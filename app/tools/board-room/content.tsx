@@ -156,7 +156,7 @@ export default function BoardRoom() {
                                 : 'Displaying benchmark enterprise portfolio baseline. Complete diagnostics (PDI, AUEB, APER) to calibrate to your exact numbers.'}
                         </span>
                     </div>
-                    <Link href="/sign-in" className="font-bold text-zinc-900 hover:text-blue-600 uppercase font-mono tracking-wider">
+                    <Link href="/sign-in" rel="nofollow" prefetch={false} className="font-bold text-zinc-900 hover:text-blue-600 uppercase font-mono tracking-wider">
                         Sign In to Persist &rarr;
                     </Link>
                 </div>

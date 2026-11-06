@@ -55,7 +55,7 @@ const sprintTiers = [
       'Full $29 Operating Kit included at no extra charge',
     ],
     ctaText: 'Book 1-on-1 Teardown ($450) ↗',
-    ctaHref: '/contact?subject=P&L+Teardown',
+    ctaHref: '/contact#subject=P%26L+Teardown',
     highlight: false,
   },
   {
@@ -75,7 +75,7 @@ const sprintTiers = [
       'Executive readout with C-suite and board materials included',
     ],
     ctaText: 'Reserve Turnaround Sprint ($2,500) ↗',
-    ctaHref: '/contact?subject=Turnaround+Sprint',
+    ctaHref: '/contact#subject=Turnaround+Sprint',
     highlight: true,
   },
   {
@@ -95,7 +95,7 @@ const sprintTiers = [
       '30-day post-launch warranty and operator runbook',
     ],
     ctaText: 'Commission AI Build ($7,500) ↗',
-    ctaHref: '/contact?subject=AI+Build+Sprint',
+    ctaHref: '/contact#subject=AI+Build+Sprint',
     highlight: false,
   },
   {
@@ -115,7 +115,7 @@ const sprintTiers = [
       'Mentorship and leveling for your product management team',
     ],
     ctaText: 'Inquire About Retainer ($10,000/mo) ↗',
-    ctaHref: '/contact?subject=Fractional+CPO',
+    ctaHref: '/contact#subject=Fractional+CPO',
     highlight: false,
   },
 ];
@@ -507,7 +507,7 @@ export default function PricingPage() {
           <Link className="button button-gold" href="/reality-check">
             Run the Reality Check first ↗
           </Link>
-          <Link className="button button-ghost-light" href="/contact?subject=Pricing+Inquiry">
+          <Link className="button button-ghost-light" href="/contact#subject=Pricing+Inquiry">
             Start a conversation ↗
           </Link>
         </div>

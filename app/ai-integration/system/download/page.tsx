@@ -109,7 +109,7 @@ export default async function DownloadPage() {
                                             <div className="text-xs text-[#6A6A6A]">ROI Calculator, AI Tool Selection Guide, Quarterly Review Framework, 100-Point Checklist</div>
                                         </div>
                                     </div>
-                                    <a href="/api/buy/ai_integration_complete" className="mt-3 inline-block text-sm font-bold text-violet-600 hover:text-violet-800">
+                                    <a href="/api/buy/ai_integration_complete" rel="nofollow noopener" className="mt-3 inline-block text-sm font-bold text-violet-600 hover:text-violet-800">
                                         Upgrade to Complete ($1,997) →
                                     </a>
                                 </div>

@@ -46,7 +46,7 @@ export default function IntelligenceDashboard() {
             <div className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-center">
                 <h1 className="text-3xl font-bold text-zinc-950 mb-4">Authentication Required</h1>
                 <p className="text-zinc-900 mb-8 max-w-md">You must be signed in to access the Executive Portfolio Command Center and historical execution data.</p>
-                <Link href="/sign-in" className="px-6 py-3 bg-white text-black font-bold rounded-lg hover:bg-zinc-200 transition-colors">Authenticate</Link>
+                <Link href="/sign-in" rel="nofollow" prefetch={false} className="px-6 py-3 bg-white text-black font-bold rounded-lg hover:bg-zinc-200 transition-colors">Authenticate</Link>
             </div>
         );
     }

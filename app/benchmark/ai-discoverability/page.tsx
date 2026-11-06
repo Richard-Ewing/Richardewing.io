@@ -121,7 +121,7 @@ export default function AIDiscoverabilityBenchmarkPage() {
             <a
               href="/api/csp/v1/export"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               className="px-4 py-2 rounded-xl text-xs font-mono font-bold bg-zinc-900 text-white hover:bg-zinc-800 transition shadow-sm"
             >
               Export JSON-LD Data Catalog ↗

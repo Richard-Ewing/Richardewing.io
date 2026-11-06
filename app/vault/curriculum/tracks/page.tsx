@@ -319,7 +319,7 @@ export default function CurriculumTracksPage() {
                                 <Link href="/services" className="button button-gold">
                                     Explore Executive Advisory ↗
                                 </Link>
-                                <Link href="/vault" className="button button-outline">
+                                <Link href="/vault" rel="nofollow" prefetch={false} className="button button-outline">
                                     Access Full Curriculum Vault ↗
                                 </Link>
                             </div>
