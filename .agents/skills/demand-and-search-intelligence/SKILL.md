@@ -39,9 +39,16 @@ Always prioritize empirical demand signals in this exact order before proposing 
 - **Category Coining Rule**: When multiple high-upvote threads describe the same unnamed operational failure (e.g. an AI support agent issuing unauthorized customer refunds or a vibe-coded MVP failing SOC2 review), coin a sharp non-technical concept, publish the 35-word Citation Snap, and wire an interactive diagnostic calculator before competitors notice the keyword.
 
 ### Pipe 4: Real Edge HTML & AI Citation Crawler Telemetry (Cloudflare + Live Grounding)
-- **Cloudflare GraphQL Analytics (`CLOUDFLARE_API_TOKEN`, Zone `26b036cd0321b744617c0cc041c0f225`)**:
+- **Cloudflare GraphQL Analytics (`CLOUDFLARE_WAF_API_TOKEN` or `CLOUDFLARE_API_TOKEN`, Zone `26b036cd0321b744617c0cc041c0f225`)**:
+  - Store Zone-scoped WAF/Analytics tokens in `.env.local` as `CLOUDFLARE_WAF_API_TOKEN` (never `CLOUDFLARE_API_TOKEN`) so Wrangler CLI continues using its Workers OAuth session during `npx wrangler deploy`.
   - Filter strictly to `edgeResponseContentTypeName: "html"` (`text/html`) to avoid inflating counts with JS/CSS chunks.
   - Segment crawls by AI Retrieval User-Agents (`PerplexityBot`, `Perplexity-User`, `OAI-SearchBot`, `ChatGPT-User`, `Claude-SearchBot`, `Claude-User`) vs. Search Crawlers (`Googlebot`, `Bingbot`).
+- **Cloudflare Free-Tier WAF Architecture ("Citations YES, Scraping NO")**:
+  - Free `Bot Fight Mode` (`fight_mode: true`) runs after Custom WAF rules and cannot be skipped on Free plans. Keep `fight_mode: false` only when paired with the 3-rule Custom WAF chain + Edge Rate Limiting (`80 req / 10s` on `/api/*` and auth routes) + `min_tls_version: "1.2"`:
+    1. **Rule 1 (`Block Scrapers`, `Block`)**: Hard-block `.env`, `/.git`, `/.aws`, `wrangler.toml`, `.php`, `.sql`, `.key`, `../` traversal, and scanner UAs (`sqlmap`, `nikto`, `nuclei`, `l9scan`). Always audit `public/` file extensions first so downloadable `.zip` kits in `/downloads/` and `/assets/` are exempted.
+    2. **Rule 2 (`AI Crawl Control`, `Block`)**: Block all foundation-model training UAs (`GPTBot`, `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, `meta-externalagent`, `Bytespider`, `CCBot`, `Amazonbot`, `cohere-ai`, `Diffbot`) and spoofed `PerplexityBot` requests outside Perplexity's official CIDR ranges.
+    3. **Rule 3 (`Smart Bot Fight`, `Managed Challenge`)**: Challenge cloud/VPS scraper ASNs, `HTTP/1.0`, empty UAs, and headless/CLI libraries (`HeadlessChrome`, `Playwright`, `python-requests`, `curl/`), exempting `cf.client.bot`, verified Perplexity CIDRs, read-only (`GET`/`HEAD`) live citation bots (`OAI-SearchBot`, `Claude-SearchBot`, `DuckAssistBot`), and API/MCP subdomains (`api.exogram.ai`, `/mcp`, `/api/`).
+  - **Anti-Bypass Invariant**: Never place a User-Agent `Skip` rule above Rule 1 (`Block Scrapers`), or attackers spoofing `Googlebot`/`Claude-SearchBot` can bypass `.env` blocks.
 - **Live Answer-Engine Citation Verification**:
   - Run `node .agents/scripts/run-ai-discoverability-study.mjs --live` to execute live grounded search queries via Gemini Search Grounding (`@google/genai` `googleSearch` tool) and measure Retrieval Rate, Explicit Domain Citation Rate, and Coiner Attribution Rate with 95% Wilson score confidence intervals.
 
