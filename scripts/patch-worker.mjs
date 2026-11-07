@@ -86,6 +86,9 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
 
   const replacement = `    async fetch(request, env, ctx) {
         // __RW_ADR_0019_EDGE_SHIELD__
+        if (request.signal && request.signal.aborted) {
+            return new Response(null, { status: 499 });
+        }
         const __rwUa = (request.headers.get("user-agent") || "").toLowerCase();
         if (__rwUa.includes("early hints")) {
             return new Response(null, {
@@ -151,12 +154,15 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 }
             });
         }
+        const __rwIsOg = __rwLowerPath === "/api/og" || __rwLowerPath.startsWith("/api/og/");
         const __rwIsDirectiveFile =
             __rwLowerPath === "/robots.txt" ||
             __rwLowerPath === "/llms.txt" ||
             __rwLowerPath === "/llms-full.txt" ||
             __rwLowerPath === "/sitemap.xml" ||
-            __rwLowerPath === "/feed.xml";
+            __rwLowerPath === "/feed.xml" ||
+            __rwLowerPath === "/manifest.webmanifest" ||
+            __rwLowerPath === "/site.webmanifest";
         if (!__rwIsDirectiveFile && __rwUa) {
             const __rwCitationBots = [
                 "oai-searchbot",
@@ -315,26 +321,32 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
             "/toolkit-success"
         ];
         const __rwIsExcluded =
-            __rwLowerPath === "/vault" ||
-            __rwExcludedPrefixes.some((p) => p.endsWith("/") ? __rwLowerPath.startsWith(p) : (__rwLowerPath === p || __rwLowerPath.startsWith(p + "/")));
+            !__rwIsOg &&
+            (__rwLowerPath === "/vault" ||
+            __rwExcludedPrefixes.some((p) => p.endsWith("/") ? __rwLowerPath.startsWith(p) : (__rwLowerPath === p || __rwLowerPath.startsWith(p + "/"))));
         const __rwIsRsc =
-            request.headers.get("RSC") === "1" ||
-            request.headers.has("Next-Router-Prefetch") ||
-            request.headers.has("Next-Router-Segment-Prefetch") ||
-            request.headers.has("Next-Router-State-Tree") ||
-            __rwUrl.searchParams.has("_rsc");
-        let __rwHasNonMarketingQuery = false;
+            !__rwIsOg &&
+            (
+                request.headers.get("RSC") === "1" ||
+                request.headers.has("Next-Router-Prefetch") ||
+                request.headers.has("Next-Router-Segment-Prefetch") ||
+                request.headers.has("Next-Router-State-Tree") ||
+                __rwUrl.searchParams.has("_rsc")
+            );
+        const __rwCleanParams = new URLSearchParams();
         if (__rwUrl.search !== "") {
             const __rwMarketingExact = new Set(["gclid","dclid","wbraid","gbraid","fbclid","msclkid","twclid","ttclid","li_fat_id","mc_cid","mc_eid","igshid","yclid","_hsenc","_hsmi","mkt_tok","s_kwcid","vero_id","oly_enc_id","oly_anon_id","rb_clickid","wickedid","ref"]);
-            for (const [__k] of __rwUrl.searchParams) {
+            for (const [__k, __v] of __rwUrl.searchParams) {
                 const __lk = __k.toLowerCase();
                 if (__lk === "_rsc" && __rwIsRsc) continue;
                 if (!__lk.startsWith("utm_") && !__rwMarketingExact.has(__lk)) {
-                    __rwHasNonMarketingQuery = true;
-                    break;
+                    __rwCleanParams.append(__k, __v);
                 }
             }
         }
+        __rwCleanParams.sort();
+        const __rwCleanSearchStr = __rwCleanParams.toString();
+        const __rwHasNonMarketingQuery = __rwCleanSearchStr !== "" && !__rwIsOg;
         const __rwCanEdgeCache =
             typeof caches !== "undefined" &&
             Boolean(caches.default) &&
@@ -350,31 +362,49 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
         if (__rwCanEdgeCache) {
             const __rwVer = String((env && env.CF_VERSION_METADATA && env.CF_VERSION_METADATA.id) || "v1").replace(/[^a-zA-Z0-9_-]/g, "").slice(0, 12);
             const __rwNormPath = __rwPath === "/" ? "/index" : __rwPath.replace(/[/]+$/, "");
-            let __rwVariant = "html";
-            if (__rwIsRsc) {
-                const __rwRscDisc = [
-                    request.headers.get("RSC") || "",
-                    request.headers.get("Next-Router-Prefetch") || "",
-                    request.headers.get("Next-Router-Segment-Prefetch") || "",
-                    request.headers.get("Next-Router-State-Tree") || "",
-                    request.headers.get("Next-Url") || ""
-                ].join("|");
-                let __h = 0x811c9dc5;
-                for (let __i = 0; __i < __rwRscDisc.length; __i++) {
-                    __h ^= __rwRscDisc.charCodeAt(__i);
-                    __h = Math.imul(__h, 0x01000193);
+            if (__rwIsOg) {
+                const __rwOgSeed = __rwNormPath + "?" + __rwCleanSearchStr;
+                let __h1 = 0x811c9dc5;
+                let __h2 = 0x01000193;
+                for (let __i = 0; __i < __rwOgSeed.length; __i++) {
+                    const __c = __rwOgSeed.charCodeAt(__i);
+                    __h1 ^= __c;
+                    __h1 = Math.imul(__h1, 0x01000193);
+                    __h2 ^= __c;
+                    __h2 = Math.imul(__h2, 0x85ebca6b);
                 }
-                __rwVariant = "rsc_" + (__h >>> 0).toString(16).padStart(8, "0");
+                const __rwOgHex = (__h1 >>> 0).toString(16).padStart(8, "0") + (__h2 >>> 0).toString(16).padStart(8, "0");
+                __rwCacheKey = new Request("https://www.richardewing.io/__rw_edge_cache/og_v1/" + __rwOgHex + ".woff2", { method: "GET" });
+            } else {
+                let __rwVariant = "html";
+                if (__rwIsRsc) {
+                    const __rwRscDisc = [
+                        request.headers.get("RSC") || "",
+                        request.headers.get("Next-Router-Prefetch") || "",
+                        request.headers.get("Next-Router-Segment-Prefetch") || "",
+                        request.headers.get("Next-Router-State-Tree") || "",
+                        request.headers.get("Next-Url") || ""
+                    ].join("|");
+                    let __h = 0x811c9dc5;
+                    for (let __i = 0; __i < __rwRscDisc.length; __i++) {
+                        __h ^= __rwRscDisc.charCodeAt(__i);
+                        __h = Math.imul(__h, 0x01000193);
+                    }
+                    __rwVariant = "rsc_" + (__h >>> 0).toString(16).padStart(8, "0");
+                }
+                __rwCacheKey = new Request("https://www.richardewing.io/__rw_edge_cache/" + __rwVer + "/" + __rwVariant + __rwNormPath + ".woff2", { method: "GET" });
             }
-            __rwCacheKey = new Request("https://www.richardewing.io/__rw_edge_cache/" + __rwVer + "/" + __rwVariant + __rwNormPath + ".woff2", { method: "GET" });
             const __rwCached = await caches.default.match(__rwCacheKey);
             if (__rwCached) {
                 const __rwHitHeaders = new Headers(__rwCached.headers);
-                const __rwOrigCt = __rwHitHeaders.get("x-rw-orig-ct") || (__rwIsRsc ? "text/x-component" : "text/html; charset=utf-8");
+                const __rwOrigCt = __rwHitHeaders.get("x-rw-orig-ct") || (__rwIsOg ? "image/png" : (__rwIsRsc ? "text/x-component" : "text/html; charset=utf-8"));
                 __rwHitHeaders.delete("x-rw-orig-ct");
                 __rwHitHeaders.delete("cf-cache-status");
                 __rwHitHeaders.set("Content-Type", __rwOrigCt);
-                if (__rwIsRsc) {
+                if (__rwIsOg) {
+                    __rwHitHeaders.set("Cache-Control", "public, max-age=86400, s-maxage=2592000, stale-while-revalidate=2592000");
+                    __rwHitHeaders.set("Cloudflare-CDN-Cache-Control", "public, max-age=2592000, stale-while-revalidate=2592000");
+                } else if (__rwIsRsc) {
                     __rwHitHeaders.set("Cache-Control", "private, no-cache, no-store, max-age=0, must-revalidate");
                     __rwHitHeaders.set("Cloudflare-CDN-Cache-Control", "no-store");
                     __rwHitHeaders.set("CDN-Cache-Control", "no-store");
@@ -409,9 +439,11 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
         ) {
             const __rwOriginCc = (__rwOriginRes.headers.get("cache-control") || "").toLowerCase();
             const __rwOriginCt = (__rwOriginRes.headers.get("content-type") || "").toLowerCase();
-            const __rwEligibleOrigin = __rwIsRsc
-                ? __rwOriginCt.includes("text/x-component")
-                : ((__rwOriginCt.includes("text/html") || (__rwIsDirectiveFile && (__rwOriginCt.includes("text/plain") || __rwOriginCt.includes("xml")))) && !__rwOriginCc.includes("no-store") && !__rwOriginCc.includes("private"));
+            const __rwEligibleOrigin = __rwIsOg
+                ? __rwOriginCt.includes("image/png")
+                : (__rwIsRsc
+                    ? __rwOriginCt.includes("text/x-component")
+                    : ((__rwOriginCt.includes("text/html") || (__rwIsDirectiveFile && (__rwOriginCt.includes("text/plain") || __rwOriginCt.includes("xml") || __rwOriginCt.includes("json") || __rwOriginCt.includes("manifest")))) && !__rwOriginCc.includes("no-store") && !__rwOriginCc.includes("private")));
             if (__rwEligibleOrigin) {
                 const __rwBodyBuf = await __rwOriginRes.arrayBuffer();
                 const __rwStoreHeaders = new Headers(__rwOriginRes.headers);
@@ -423,9 +455,9 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 __rwStoreHeaders.delete("x-nextjs-cache");
                 __rwStoreHeaders.delete("cloudflare-cdn-cache-control");
                 __rwStoreHeaders.delete("cdn-cache-control");
-                __rwStoreHeaders.set("X-RW-Orig-CT", __rwOriginRes.headers.get("content-type") || (__rwIsRsc ? "text/x-component" : "text/html; charset=utf-8"));
+                __rwStoreHeaders.set("X-RW-Orig-CT", __rwOriginRes.headers.get("content-type") || (__rwIsOg ? "image/png" : (__rwIsRsc ? "text/x-component" : "text/html; charset=utf-8")));
                 __rwStoreHeaders.set("Content-Type", "font/woff2");
-                __rwStoreHeaders.set("Cache-Control", "public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800");
+                __rwStoreHeaders.set("Cache-Control", __rwIsOg ? "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=2592000" : "public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800");
                 __rwStoreHeaders.set("Content-Length", String(__rwBodyBuf.byteLength));
                 const __rwStoreRes = new Response(__rwBodyBuf.slice(0), {
                     status: 200,
@@ -435,7 +467,10 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                     ctx.waitUntil(caches.default.put(__rwCacheKey, __rwStoreRes).catch(() => {}));
                 }
                 const __rwMissHeaders = new Headers(__rwOriginRes.headers);
-                if (__rwIsRsc) {
+                if (__rwIsOg) {
+                    __rwMissHeaders.set("Cache-Control", "public, max-age=86400, s-maxage=2592000, stale-while-revalidate=2592000");
+                    __rwMissHeaders.set("Cloudflare-CDN-Cache-Control", "public, max-age=2592000, stale-while-revalidate=2592000");
+                } else if (__rwIsRsc) {
                     __rwMissHeaders.set("Cache-Control", "private, no-cache, no-store, max-age=0, must-revalidate");
                     __rwMissHeaders.set("Cloudflare-CDN-Cache-Control", "no-store");
                     __rwMissHeaders.set("CDN-Cache-Control", "no-store");
