@@ -4,24 +4,24 @@ import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import { ResearchExplorer } from '@/components/research/research-explorer';
 
 export const metadata: Metadata = {
-  title: 'Forensic AI & Engineering Research',
+  title: 'AI Unit Economics & R&D Research Library',
   description:
-    'Published research, essays, and empirical articles on AI unit economics, R&D capital efficiency, and tech debt. Written for CTOs and engineering leaders.',
+    'Browse 174+ published essays from CIO.com and Built In on AI unit economics, SaaS P&L margin, and technical debt for CEOs, CFOs, and VPs of Engineering.',
   alternates: {
     canonical: 'https://www.richardewing.io/articles',
   },
   openGraph: {
-    title: 'Forensic Engineering Research & Articles | Richard Ewing',
+    title: 'AI Unit Economics & R&D Research Library | Richard Ewing',
     description:
-      'Deep essays on R&D capital efficiency, AI unit economics, and technical debt valuation. Published in CIO.com, Built In, and Mind the Product.',
+      'Browse 174+ published essays from CIO.com and Built In on AI unit economics, SaaS P&L margin, and technical debt for CEOs, CFOs, and VPs of Engineering.',
     url: 'https://www.richardewing.io/articles',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Forensic Engineering Research & Articles | Richard Ewing',
+    title: 'AI Unit Economics & R&D Research Library | Richard Ewing',
     description:
-      'Deep essays on R&D capital efficiency, AI unit economics, and technical debt valuation. Published in CIO.com, Built In, and Mind the Product.',
+      'Browse 174+ published essays from CIO.com and Built In on AI unit economics, SaaS P&L margin, and technical debt for CEOs, CFOs, and VPs of Engineering.',
     images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };

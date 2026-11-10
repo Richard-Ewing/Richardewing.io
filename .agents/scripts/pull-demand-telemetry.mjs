@@ -85,59 +85,125 @@ function parseServiceAccountJson(rawCreds) {
   if (!text.startsWith('{') && /^[A-Za-z0-9+/=]+$/.test(text)) {
     text = Buffer.from(text, 'base64').toString('utf8');
   }
-  if (text.includes('\\"')) {
-    text = text.replace(/\\"/g, '"');
+  try {
+    const quick = text.includes('\\"') ? text.replace(/\\"/g, '"') : text;
+    const fixed = quick.replace(/("private_key"\s*:\s*")([\s\S]*?)(")/, (_, p1, p2, p3) => {
+      return p1 + p2.replace(/\r?\n/g, '\\n') + p3;
+    });
+    const parsed = JSON.parse(fixed);
+    if (parsed.private_key) {
+      parsed.private_key = parsed.private_key.replace(/\\+n/g, '\n');
+    }
+    if (parsed.client_email && parsed.private_key) return parsed;
+  } catch {
+    // Fall back to line-by-line multiline JSON recovery
   }
-  text = text.replace(/("private_key"\s*:\s*")([\s\S]*?)(")/, (_, p1, p2, p3) => {
-    return p1 + p2.replace(/\r?\n/g, '\\n') + p3;
-  });
-  return JSON.parse(text);
+
+  const result = {};
+  let currentKey = null;
+  let currentValueLines = [];
+  for (let line of rawCreds.split(/\r?\n/)) {
+    line = line.trim();
+    if (line === '{' || line === '}') continue;
+    const keyMatch = line.match(/^\\?"([a-zA-Z0-9_-]+)\\?"\s*:\s*(.*)$/);
+    if (keyMatch) {
+      if (currentKey) result[currentKey] = currentValueLines.join('\n');
+      currentKey = keyMatch[1];
+      let valPart = keyMatch[2].trim();
+      if (valPart.endsWith(',')) valPart = valPart.slice(0, -1).trim();
+      valPart = valPart.replace(/^\\?"/, '').replace(/\\?"$/, '');
+      currentValueLines = [valPart];
+    } else if (currentKey) {
+      let cleanedLine = line;
+      if (cleanedLine.endsWith(',')) cleanedLine = cleanedLine.slice(0, -1).trim();
+      cleanedLine = cleanedLine.replace(/^\\?"/, '').replace(/\\?"$/, '');
+      currentValueLines.push(cleanedLine);
+    }
+  }
+  if (currentKey) result[currentKey] = currentValueLines.join('\n');
+  if (result.private_key) {
+    result.private_key = result.private_key.replace(/\\+n/g, '\n').replace(/\\+/g, '');
+  }
+  if (!result.client_email || !result.private_key) {
+    throw new Error('Unable to parse service account credentials.');
+  }
+  return result;
+}
+
+function collectServiceAccountCandidates() {
+  const candidates = [];
+  if (process.env.GOOGLE_SERVICE_ACCOUNT_JSON) {
+    candidates.push(process.env.GOOGLE_SERVICE_ACCOUNT_JSON);
+  }
+  for (const envName of ['.env.production.local', '.env.local', '.env']) {
+    const envPath = path.join(ROOT_DIR, envName);
+    if (!fs.existsSync(envPath)) continue;
+    try {
+      const parsed = dotenv.parse(fs.readFileSync(envPath, 'utf8'));
+      if (parsed.GOOGLE_SERVICE_ACCOUNT_JSON && !candidates.includes(parsed.GOOGLE_SERVICE_ACCOUNT_JSON)) {
+        candidates.push(parsed.GOOGLE_SERVICE_ACCOUNT_JSON);
+      }
+    } catch {
+      // Ignore malformed env file
+    }
+  }
+  return candidates;
 }
 
 // 1. Pipe 1: Google Search Console Live Telemetry
 async function fetchGscTelemetry() {
-  const rawCreds = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
-  if (!rawCreds) {
+  const credCandidates = collectServiceAccountCandidates();
+  if (credCandidates.length === 0) {
     return { status: 'unavailable', reason: 'GOOGLE_SERVICE_ACCOUNT_JSON not set in local environment.' };
   }
 
-  try {
-    const credentials = parseServiceAccountJson(rawCreds);
-    const auth = new google.auth.GoogleAuth({
-      credentials,
-      scopes: ['https://www.googleapis.com/auth/webmasters.readonly']
-    });
-    const searchconsole = google.searchconsole({ version: 'v1', auth });
+  const endDate = new Date();
+  const startDate = new Date();
+  startDate.setDate(startDate.getDate() - 28);
+  const fmt = (d) => d.toISOString().split('T')[0];
 
-    const endDate = new Date();
-    const startDate = new Date();
-    startDate.setDate(startDate.getDate() - 28);
-    const fmt = (d) => d.toISOString().split('T')[0];
+  const siteCandidates = [
+    'sc-domain:richardewing.io',
+    'https://www.richardewing.io/',
+    'https://richardewing.io/'
+  ];
 
-    const siteCandidates = [
-      'sc-domain:richardewing.io',
-      'https://www.richardewing.io/',
-      'https://richardewing.io/'
-    ];
+  let searchconsole = null;
+  let activeSite = '';
+  let lastError = '';
 
-    let activeSite = '';
-    for (const candidate of siteCandidates) {
-      try {
-        await searchconsole.searchanalytics.query({
-          siteUrl: candidate,
-          requestBody: { startDate: fmt(startDate), endDate: fmt(endDate), dimensions: ['page'], rowLimit: 1 }
-        });
-        activeSite = candidate;
-        break;
-      } catch {
-        continue;
+  for (const rawCreds of credCandidates) {
+    try {
+      const credentials = parseServiceAccountJson(rawCreds);
+      const auth = new google.auth.GoogleAuth({
+        credentials,
+        scopes: ['https://www.googleapis.com/auth/webmasters.readonly']
+      });
+      const client = google.searchconsole({ version: 'v1', auth });
+      for (const candidate of siteCandidates) {
+        try {
+          await client.searchanalytics.query({
+            siteUrl: candidate,
+            requestBody: { startDate: fmt(startDate), endDate: fmt(endDate), dimensions: ['page'], rowLimit: 1 }
+          });
+          searchconsole = client;
+          activeSite = candidate;
+          break;
+        } catch {
+          continue;
+        }
       }
+      if (activeSite) break;
+    } catch (err) {
+      lastError = err.message;
     }
+  }
 
-    if (!activeSite) {
+  try {
+    if (!activeSite || !searchconsole) {
       return {
         status: 'unauthorized_property',
-        reason: 'Service account authenticated, but lacks access to richardewing.io in Search Console.'
+        reason: lastError || 'Service account authenticated, but lacks access to richardewing.io in Search Console.'
       };
     }
 
@@ -451,7 +517,11 @@ function auditInternalLinkGraph() {
 
   const incomingCounts = {};
   for (const r of staticRoutes) incomingCounts[r] = 0;
+  for (const t of TIER_1_AUTHORITY_TARGETS) {
+    if (incomingCounts[t] === undefined) incomingCounts[t] = 0;
+  }
 
+  const staticRouteSet = new Set(staticRoutes);
   const linkRegex = /(?:href|url|canonical|path|slug)\s*[:=]\s*['"`](\/[a-zA-Z0-9/_-]*)['"`]/g;
 
   for (const file of sourceFiles) {
@@ -466,7 +536,7 @@ function auditInternalLinkGraph() {
   }
 
   const orphanRoutes = Object.entries(incomingCounts)
-    .filter(([route, count]) => route !== '/' && count === 0)
+    .filter(([route, count]) => staticRouteSet.has(route) && route !== '/' && count === 0)
     .map(([route]) => route)
     .sort();
 

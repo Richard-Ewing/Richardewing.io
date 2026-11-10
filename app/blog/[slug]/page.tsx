@@ -18,8 +18,8 @@ import { BLOG_SLUG_REDIRECTS } from '@/app/lib/article-redirects';
 
 const BLOG_SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
     'ai-economics-how-intelligent-systems-make-and-lose-money': {
-        title: 'AI Economics: How Systems Make & Lose Cash',
-        description: 'Audit how AI systems make and lose money across token inference COGS, cache hit rates, agent retries, and SaaS pricing tiers with Richard Ewing.',
+        title: 'AI Economics: SaaS Profit vs Token Losses',
+        description: 'Break down why $29 SaaS AI features lose money on heavy users, how retry loops inflate API bills, and how CFOs and CTOs protect gross margin.',
     },
 };
 

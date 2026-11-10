@@ -4,14 +4,19 @@ import ChecklistPageContent from './checklist-content';
 
 export const metadata: Metadata = {
     alternates: { canonical: 'https://www.richardewing.io/checklist' },
-    title: '12-Point AI Governance Checklist',
-    description: 'Identify hidden AI cost traps, probabilistic retry loops, and context rot before deploying autonomous agents. Essential audit checklist for tech leaders.',
+    title: '12-Point AI Audit Checklist ($7.5K Spec)',
+    description: 'Run the exact 12-question R&D audit checklist CEOs, CFOs, and CTOs use to catch runaway LLM bills, agent retry loops, and technical debt early.',
     openGraph: {
-        title: 'AI Governance Checklist | 12 Questions from $7,500 Audits',
-        description: 'The exact 12 questions asked in $7,500 R&D Capital Audits. Score your AI governance maturity.',
+        title: '12-Point AI Audit Checklist ($7.5K Spec) | Richard Ewing',
+        description: 'Run the exact 12-question R&D audit checklist CEOs, CFOs, and CTOs use to catch runaway LLM bills, agent retry loops, and technical debt early.',
         url: 'https://www.richardewing.io/checklist',
         siteName: 'Richard Ewing',
         type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: '12-Point AI Audit Checklist ($7.5K Spec) | Richard Ewing',
+        description: 'Run the exact 12-question R&D audit checklist CEOs, CFOs, and CTOs use to catch runaway LLM bills, agent retry loops, and technical debt early.',
     },
 };
 

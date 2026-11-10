@@ -67,6 +67,8 @@ export function Footer() {
                             <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-cyan-950">Platform Intelligence</span>
                             <Link href="/compare/ai-guardrails-platforms" className="text-zinc-950 hover:text-cyan-900 transition-colors">AI Guardrails Comparison</Link>
                             <Link href="/doctrine" className="text-zinc-950 hover:text-cyan-900 transition-colors">Architectural Doctrine</Link>
+                            <a href="https://careerwin.ai" target="_blank" rel="noopener" className="text-zinc-950 hover:text-cyan-900 transition-colors">CareerWin.ai Platform ↗</a>
+                            <a href="https://exogram.ai" target="_blank" rel="noopener" className="text-zinc-950 hover:text-cyan-900 transition-colors">Exogram.ai Platform ↗</a>
                         </div>
                     </div>
                 </div>

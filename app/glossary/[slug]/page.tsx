@@ -23,20 +23,20 @@ type Props = { params: Promise<{ slug: string }> };
 
 const GLOSSARY_SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
     'calculating-roai': {
-        title: 'Calculating ROAI: AI ROI Formula & Model',
-        description: 'Calculate Return on AI Investment (ROAI) with net margin gains, inference COGS, integration labor, and maintenance burn across SaaS features.',
+        title: 'ROAI Formula: Return on AI Investment',
+        description: 'Calculate ROAI (Return on AI Investment) using net gross margin gains, LLM inference COGS, integration labor, and ongoing maintenance burn.',
     },
     'ic-vs-management-track': {
-        title: 'IC vs Management Track: Level & Pay Matrix',
-        description: 'Compare Principal IC vs Engineering Manager scope, compensation bands, promotion gates, and P&L accountability from L5 Senior to L8 Principal.',
+        title: 'IC vs Management Track: Pay & Levels',
+        description: 'Compare Staff & Principal IC vs Engineering Manager pay bands, L5 to L8 scope, promotion gates, and P&L accountability across tech teams.',
     },
     'engineering-levels': {
-        title: 'Software Engineering Levels (L3-L8) Matrix',
-        description: 'Compare L3 to L8 software engineering levels, Staff vs Principal scope, compensation bands, and architecture ownership across tech teams.',
+        title: 'Software Engineer Levels (L1-L8 Ranks)',
+        description: 'Compare software engineer levels 1 to 4 and L3 to L8 Staff/Principal ranks: scope, compensation bands, promotion gates, and architecture ownership.',
     },
     'ai-unit-economics': {
-        title: 'AI Unit Economics: Token Cost & Margin',
-        description: 'Model AI unit economics from token inference COGS and cache hit rates to gross margin thresholds for $29 to $99 SaaS seats and credit tiers.',
+        title: 'AI Unit Economics: SaaS Cost & Margin',
+        description: 'Model AI unit economics for SaaS software: token inference COGS, cache hit rates, and gross margin floors across $29 to $99 seats and credit tiers.',
     },
     'model-right-sizing': {
         title: 'Model Right-Sizing: Cut LLM Inference Cost',

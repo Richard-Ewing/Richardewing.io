@@ -10,10 +10,11 @@ import { FrameworkDiagnosticBridge } from '@/components/seo/FrameworkDiagnosticB
 import AUEBTool from './content';
 
 export const metadata: Metadata = {
-  title: 'AI Credit vs Seat Calculator (AUEB)',
+  title: 'AI Unit Economics: Seat vs Credit Pricing',
   description:
-    'Compare flat SaaS seat pricing against AI credit tiers, model inference cost per user, and pinpoint the exact query volume where gross margin collapses.',
+    'Model SaaS AI unit economics: compare flat seat pricing against credit tiers, calculate LLM cost per user, and spot where gross margin turns negative.',
   keywords: [
+    'AI unit economics software',
     'AI credit vs seat calculator',
     'AI unit economics',
     'LLM cost calculator',
@@ -25,9 +26,9 @@ export const metadata: Metadata = {
     canonical: 'https://www.richardewing.io/tools/aueb',
   },
   openGraph: {
-    title: 'AI Credit vs Seat Calculator (AUEB) | Richard Ewing',
+    title: 'AI Unit Economics: Seat vs Credit Pricing | Richard Ewing',
     description:
-      'Compare flat SaaS seat pricing against AI credit tiers, model inference cost per user, and pinpoint the exact query volume where gross margin collapses.',
+      'Model SaaS AI unit economics: compare flat seat pricing against credit tiers, calculate LLM cost per user, and spot where gross margin turns negative.',
     url: 'https://www.richardewing.io/tools/aueb',
     type: 'website',
     images: [
@@ -40,9 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Credit vs Seat Calculator (AUEB) | Richard Ewing',
+    title: 'AI Unit Economics: Seat vs Credit Pricing | Richard Ewing',
     description:
-      'Compare flat SaaS seat pricing against AI credit tiers, model inference cost per user, and pinpoint the exact query volume where gross margin collapses.',
+      'Model SaaS AI unit economics: compare flat seat pricing against credit tiers, calculate LLM cost per user, and spot where gross margin turns negative.',
     images: [
       'https://www.richardewing.io/api/og?title=AI+Credit+vs+Seat+Calculator+%28AUEB%29&category=AI+Pricing+Audit',
     ],

@@ -168,6 +168,8 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               <strong className="font-mono text-[10px] font-bold uppercase tracking-wider text-[var(--forest,#29473b)]">Platform Intelligence</strong>
               <Link href="/compare/ai-guardrails-platforms" prefetch={false} className="hover:text-[var(--forest,#29473b)] transition-colors">AI Guardrails Comparison</Link>
               <Link href="/doctrine" prefetch={false} className="hover:text-[var(--forest,#29473b)] transition-colors">Architectural Doctrine</Link>
+              <a href="https://careerwin.ai" target="_blank" rel="noopener" className="hover:text-[var(--forest,#29473b)] transition-colors">CareerWin.ai Platform ↗</a>
+              <a href="https://exogram.ai" target="_blank" rel="noopener" className="hover:text-[var(--forest,#29473b)] transition-colors">Exogram.ai Platform ↗</a>
             </div>
           </div>
         </div>

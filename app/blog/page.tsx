@@ -3,21 +3,21 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import BlogContent from './blog-content';
 
 export const metadata: Metadata = {
-    title: 'AI & Engineering Economics Essays',
-    description: 'Read forensic teardowns, real P&L case studies, and mathematical models on AI unit economics, R&D capital allocation, and technical debt for executives.',
+    title: 'AI Unit Economics & SaaS Margin Teardowns',
+    description: 'Read real SaaS P&L teardowns on LLM API bills, vibe coding debt, and R&D capital audits written for CEOs, CFOs, CPOs, and Engineering Managers.',
     keywords: ['engineering economics blog', 'technical debt articles', 'AI cost analysis', 'R&D capital management', 'AI economics insights', 'CTO blog'],
     alternates: { canonical: 'https://www.richardewing.io/blog' },
     openGraph: {
-        title: 'AI & Engineering Economics Essays | Richard Ewing',
-        description: 'Read forensic teardowns, real P&L case studies, and mathematical models on AI unit economics, R&D capital allocation, and technical debt for executives.',
+        title: 'AI Unit Economics & SaaS Margin Teardowns | Richard Ewing',
+        description: 'Read real SaaS P&L teardowns on LLM API bills, vibe coding debt, and R&D capital audits written for CEOs, CFOs, CPOs, and Engineering Managers.',
         url: 'https://www.richardewing.io/blog',
         type: 'website',
         images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'AI & Engineering Economics Essays | Richard Ewing',
-        description: 'Read forensic teardowns, real P&L case studies, and mathematical models on AI unit economics, R&D capital allocation, and technical debt for executives.',
+        title: 'AI Unit Economics & SaaS Margin Teardowns | Richard Ewing',
+        description: 'Read real SaaS P&L teardowns on LLM API bills, vibe coding debt, and R&D capital audits written for CEOs, CFOs, CPOs, and Engineering Managers.',
         images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
     }
 };

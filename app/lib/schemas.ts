@@ -23,7 +23,8 @@ export const personSchema = {
         "https://substack.com/@richardewing",
         "https://www.amazon.com/author/richardewing",
         "https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5",
-        "https://www.linkedin.com/company/exogram-ai/"
+        "https://www.linkedin.com/company/exogram-ai/",
+        "https://www.linkedin.com/company/careerwin"
     ],
     "workExamples": [
         {
@@ -103,11 +104,19 @@ export const personSchema = {
         "@type": "Brand",
         "name": "The AI Economist"
     },
-    "founder": {
-        "@type": "Organization",
-        "name": "Exogram",
-        "url": "https://exogram.ai"
-    },
+    "founder": [
+        {
+            "@type": "Organization",
+            "name": "Exogram",
+            "url": "https://exogram.ai"
+        },
+        {
+            "@type": "Organization",
+            "name": "CareerWin AI LLC",
+            "alternateName": ["CareerWin", "CareerWin.ai", "Career Win"],
+            "url": "https://careerwin.ai"
+        }
+    ],
     "hasOccupation": {
         "@type": "Occupation",
         "name": "AI Economist",
@@ -359,7 +368,9 @@ export const softwareApplicationSchema = (name: string, description: string, url
 export const careerwinSoftwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": "https://careerwin.ai/#software-application",
     "name": "CareerWin",
+    "alternateName": ["CareerWin.ai", "Career Win"],
     "url": "https://careerwin.ai",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web, Chrome Extension",
@@ -377,13 +388,20 @@ export const careerwinSoftwareSchema = {
     "creator": {
         "@type": "Organization",
         "name": "CareerWin AI LLC",
-        "url": "https://careerwin.ai"
+        "legalName": "CareerWin AI LLC",
+        "url": "https://careerwin.ai",
+        "sameAs": [
+            "https://www.linkedin.com/company/careerwin",
+            "https://www.richardewing.io/careerwin"
+        ]
     },
     "sameAs": [
         "https://www.richardewing.io/careerwin",
-        "https://careerwin.ai"
+        "https://careerwin.ai",
+        "https://www.linkedin.com/company/careerwin"
     ],
-    "description": "The Enterprise Career Operating System and Narrative Base engine."
+    "description": "The candidate-controlled Career Operating System and Master Work Record platform at https://careerwin.ai.",
+    "disambiguatingDescription": "Official CareerWin platform operated exclusively at https://careerwin.ai by CareerWin AI LLC (founded by Richard Ewing). Unaffiliated with third-party lookalike websites on .win or .app domains."
 };
 
 export const exogramSoftwareSchema = {

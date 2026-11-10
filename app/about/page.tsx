@@ -6,26 +6,26 @@ import { personSchema } from '@/app/lib/schemas';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'About Richard Ewing | Product & AI Economist',
+    absolute: 'Richard Ewing | Product & AI Economist & Founder',
   },
   description:
-    'Richard Ewing is a Product & AI Economist, Exogram and CareerWin founder, and CIO.com contributor. Explore his SaaS P&L track record and advisory work.',
+    'Richard Ewing is a Product & AI Economist ($25M ARR SaaS P&L), founder of Exogram.ai and CareerWin.ai, and CIO.com & Built In author advising CEOs and CFOs.',
   alternates: {
     canonical: 'https://www.richardewing.io/about',
   },
   openGraph: {
-    title: 'About Richard Ewing | Product & AI Economist',
+    title: 'Richard Ewing | Product & AI Economist & Founder',
     description:
-      'Richard Ewing is a Product & AI Economist, Exogram and CareerWin founder, and CIO.com contributor. Explore his SaaS P&L track record and advisory work.',
+      'Richard Ewing is a Product & AI Economist ($25M ARR SaaS P&L), founder of Exogram.ai and CareerWin.ai, and CIO.com & Built In author advising CEOs and CFOs.',
     url: 'https://www.richardewing.io/about',
     type: 'profile',
     images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Richard Ewing | Product & AI Economist',
+    title: 'Richard Ewing | Product & AI Economist & Founder',
     description:
-      'Richard Ewing is a Product & AI Economist, Exogram and CareerWin founder, and CIO.com contributor. Explore his SaaS P&L track record and advisory work.',
+      'Richard Ewing is a Product & AI Economist ($25M ARR SaaS P&L), founder of Exogram.ai and CareerWin.ai, and CIO.com & Built In author advising CEOs and CFOs.',
     images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
@@ -121,10 +121,7 @@ export default function AboutPage() {
               PR review times doubled, and unit margins compressed.
             </p>
             <p>
-              I founded <strong>Exogram AI</strong> and authored the 174+ piece <strong>AI
-              Economist</strong> research corpus to give leaders the mathematical and
-              governance frameworks needed to turn speculative AI experiments into
-              profitable enterprise compounding capital.
+              I founded <a href="https://exogram.ai" target="_blank" rel="noopener" className="underline font-semibold text-[var(--forest)]">Exogram (exogram.ai)</a> for contextual AI memory and runtime governance, founded <a href="https://careerwin.ai" target="_blank" rel="noopener" className="underline font-semibold text-[var(--forest)]">CareerWin (careerwin.ai)</a> to replace AI resume fluff with verified career records, and authored the 174+ piece <strong>AI Economist</strong> research corpus to help CEOs, CFOs, CPOs, and VPs of Engineering turn speculative AI spend into compounding gross margin.
             </p>
 
             <div className="pt-4 grid grid-cols-2 sm:grid-cols-3 gap-4">
