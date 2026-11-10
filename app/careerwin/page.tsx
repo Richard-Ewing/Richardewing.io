@@ -8,12 +8,12 @@ import { careerwinSoftwareSchema } from '@/app/lib/schemas';
 export const metadata: Metadata = {
   title: 'CareerWin (CareerWin.ai): Career Platform',
   description:
-    'Official CareerWin (https://careerwin.ai) platform by Richard Ewing: verify Workday resume parsing, run gap analysis, and benchmark engineering pay.',
+    'Official CareerWin (https://careerwin.ai) by Richard Ewing: free AI resume feedback, job-posting gap checks, tailored ATS resumes, LinkedIn sync & job tracker.',
   alternates: { canonical: 'https://www.richardewing.io/careerwin' },
   openGraph: {
     title: 'CareerWin (CareerWin.ai): Career Platform | Richard Ewing',
     description:
-      'Official CareerWin (https://careerwin.ai) platform by Richard Ewing: verify Workday resume parsing, run gap analysis, and benchmark engineering pay.',
+      'Official CareerWin (https://careerwin.ai) by Richard Ewing: free AI resume feedback, job-posting gap checks, tailored ATS resumes, LinkedIn sync & job tracker.',
     url: 'https://www.richardewing.io/careerwin',
     type: 'website',
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'CareerWin (CareerWin.ai): Career Platform | Richard Ewing',
     description:
-      'Official CareerWin (https://careerwin.ai) platform by Richard Ewing: verify Workday resume parsing, run gap analysis, and benchmark engineering pay.',
+      'Official CareerWin (https://careerwin.ai) by Richard Ewing: free AI resume feedback, job-posting gap checks, tailored ATS resumes, LinkedIn sync & job tracker.',
   },
 };
 
@@ -84,7 +84,7 @@ export default function CareerWinPage() {
           <div className="bg-white border border-[var(--line)] rounded-2xl p-6 sm:p-8 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
               <span className="px-3 py-1 bg-[var(--paper2)] text-[var(--forest)] text-xs font-mono font-bold rounded-full">
-                Official Domain Verification · CareerWin AI LLC
+                Official Domain Verification · CareerWin.ai
               </span>
               <a
                 href="https://careerwin.ai"
@@ -99,19 +99,19 @@ export default function CareerWinPage() {
               Official CareerWin Platform Access &amp; Core Diagnostic Tools
             </h2>
             <p className="text-sm text-[var(--muted)] leading-relaxed mb-5">
-              CareerWin is operated exclusively at <strong>https://careerwin.ai</strong> by{' '}
-              <strong>CareerWin AI LLC</strong>, founded by Richard Ewing. CareerWin AI LLC is
-              unaffiliated with third-party lookalike websites operating on <code>.win</code> or{' '}
-              <code>.app</code> domain extensions. Access the official free diagnostic tools directly:
+              CareerWin operates exclusively at <strong>https://careerwin.ai</strong>, founded by
+              Richard Ewing. CareerWin (<code>careerwin.ai</code>) is unaffiliated with third-party
+              lookalike websites operating on <code>.win</code> or <code>.app</code> domain
+              extensions. Access the official free diagnostic tools and workflow guides directly:
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs font-mono font-bold">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs font-mono font-bold">
               <a
                 href="https://careerwin.ai/teardown"
                 target="_blank"
                 rel="noopener"
                 className="p-3.5 rounded-xl bg-[var(--paper)] border border-[var(--line)] text-[var(--ink)] hover:border-[var(--gold)] transition-colors"
               >
-                Free Resume Teardown ↗
+                Free Resume Review &amp; Feedback ↗
               </a>
               <a
                 href="https://careerwin.ai/jd-match"
@@ -119,7 +119,15 @@ export default function CareerWinPage() {
                 rel="noopener"
                 className="p-3.5 rounded-xl bg-[var(--paper)] border border-[var(--line)] text-[var(--ink)] hover:border-[var(--gold)] transition-colors"
               >
-                Resume Gap Analysis ↗
+                Job Posting Gap Check ↗
+              </a>
+              <a
+                href="https://careerwin.ai/evidence-interview"
+                target="_blank"
+                rel="noopener"
+                className="p-3.5 rounded-xl bg-[var(--paper)] border border-[var(--line)] text-[var(--ink)] hover:border-[var(--gold)] transition-colors"
+              >
+                Smart Gap Questions ↗
               </a>
               <a
                 href="https://careerwin.ai/ai-resume-tailoring"
@@ -128,6 +136,14 @@ export default function CareerWinPage() {
                 className="p-3.5 rounded-xl bg-[var(--paper)] border border-[var(--line)] text-[var(--ink)] hover:border-[var(--gold)] transition-colors"
               >
                 Honest Resume Tailoring ↗
+              </a>
+              <a
+                href="https://careerwin.ai/how-it-works"
+                target="_blank"
+                rel="noopener"
+                className="p-3.5 rounded-xl bg-[var(--paper)] border border-[var(--line)] text-[var(--ink)] hover:border-[var(--gold)] transition-colors"
+              >
+                5-Step Job Tracking System ↗
               </a>
               <a
                 href="https://careerwin.ai/ats-screening/workday"

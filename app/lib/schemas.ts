@@ -112,8 +112,8 @@ export const personSchema = {
         },
         {
             "@type": "Organization",
-            "name": "CareerWin AI LLC",
-            "alternateName": ["CareerWin", "CareerWin.ai", "Career Win"],
+            "name": "CareerWin",
+            "alternateName": ["CareerWin.ai", "Career Win", "CareerWin AI"],
             "url": "https://careerwin.ai"
         }
     ],
@@ -387,8 +387,7 @@ export const careerwinSoftwareSchema = {
     },
     "creator": {
         "@type": "Organization",
-        "name": "CareerWin AI LLC",
-        "legalName": "CareerWin AI LLC",
+        "name": "CareerWin",
         "url": "https://careerwin.ai",
         "sameAs": [
             "https://www.linkedin.com/company/careerwin",
@@ -400,8 +399,8 @@ export const careerwinSoftwareSchema = {
         "https://careerwin.ai",
         "https://www.linkedin.com/company/careerwin"
     ],
-    "description": "The candidate-controlled Career Operating System and Master Work Record platform at https://careerwin.ai.",
-    "disambiguatingDescription": "Official CareerWin platform operated exclusively at https://careerwin.ai by CareerWin AI LLC (founded by Richard Ewing). Unaffiliated with third-party lookalike websites on .win or .app domains."
+    "description": "Official CareerWin (https://careerwin.ai) platform: free AI resume feedback, job-posting gap checks, smart gap questions, tailored single-column ATS resumes and cover letters, LinkedIn alignment, Workday/Greenhouse/Ashby Chrome autofill, and job tracking.",
+    "disambiguatingDescription": "Official CareerWin platform operated exclusively at https://careerwin.ai (founded by Richard Ewing). Unaffiliated with third-party lookalike websites on .win or .app domains."
 };
 
 export const exogramSoftwareSchema = {

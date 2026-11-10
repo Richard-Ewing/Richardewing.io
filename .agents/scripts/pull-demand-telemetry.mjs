@@ -252,6 +252,81 @@ async function fetchGscTelemetry() {
       .sort((a, b) => b.impressions - a.impressions)
       .slice(0, 15);
 
+    // Query sibling sovereign properties (careerwin.ai & exogram.ai) when connected
+    const portfolioProperties = [
+      { id: 'careerwin.ai', candidates: ['https://careerwin.ai/', 'sc-domain:careerwin.ai'], baseOrigin: 'https://careerwin.ai' },
+      { id: 'exogram.ai', candidates: ['sc-domain:exogram.ai', 'https://exogram.ai/'], baseOrigin: 'https://exogram.ai' }
+    ];
+    const siblingProperties = {};
+    for (const prop of portfolioProperties) {
+      let matchedPropUrl = '';
+      for (const cand of prop.candidates) {
+        try {
+          await searchconsole.searchanalytics.query({
+            siteUrl: cand,
+            requestBody: { startDate: fmt(startDate), endDate: fmt(endDate), dimensions: ['page'], rowLimit: 1 }
+          });
+          matchedPropUrl = cand;
+          break;
+        } catch {
+          continue;
+        }
+      }
+      if (!matchedPropUrl) {
+        siblingProperties[prop.id] = { status: 'unavailable' };
+        continue;
+      }
+      try {
+        const [pQueryRes, pPageRes] = await Promise.all([
+          searchconsole.searchanalytics.query({
+            siteUrl: matchedPropUrl,
+            requestBody: { startDate: fmt(startDate), endDate: fmt(endDate), dimensions: ['query'], rowLimit: 100 }
+          }),
+          searchconsole.searchanalytics.query({
+            siteUrl: matchedPropUrl,
+            requestBody: { startDate: fmt(startDate), endDate: fmt(endDate), dimensions: ['page'], rowLimit: 100 }
+          })
+        ]);
+        const pQueries = (pQueryRes.data.rows || []).map((r) => ({
+          query: r.keys?.[0] || '',
+          clicks: r.clicks || 0,
+          impressions: r.impressions || 0,
+          ctrPct: Number(((r.ctr || 0) * 100).toFixed(2)),
+          position: Number((r.position || 0).toFixed(1))
+        }));
+        const pPages = (pPageRes.data.rows || []).map((r) => {
+          let pathname = r.keys?.[0] || '/';
+          try {
+            pathname = new URL(pathname, prop.baseOrigin).pathname;
+          } catch {
+            // Keep raw path
+          }
+          return {
+            path: pathname,
+            clicks: r.clicks || 0,
+            impressions: r.impressions || 0,
+            ctrPct: Number(((r.ctr || 0) * 100).toFixed(2)),
+            position: Number((r.position || 0).toFixed(1))
+          };
+        });
+        siblingProperties[prop.id] = {
+          status: 'connected',
+          siteProperty: matchedPropUrl,
+          windowDays: 28,
+          totals: {
+            clicks: pPages.reduce((s, p) => s + p.clicks, 0),
+            impressions: pPages.reduce((s, p) => s + p.impressions, 0),
+            indexedActivePages: pPages.length,
+            activeQueries: pQueries.length
+          },
+          topQueries: pQueries.sort((a, b) => b.impressions - a.impressions).slice(0, 15),
+          topPages: pPages.sort((a, b) => b.impressions - a.impressions).slice(0, 10)
+        };
+      } catch {
+        siblingProperties[prop.id] = { status: 'error' };
+      }
+    }
+
     return {
       status: 'connected',
       siteProperty: activeSite,
@@ -264,7 +339,8 @@ async function fetchGscTelemetry() {
       },
       topQueries: queries.sort((a, b) => b.impressions - a.impressions).slice(0, 20),
       strikingDistanceQueries,
-      snippetSurgeryPages
+      snippetSurgeryPages,
+      siblingProperties
     };
   } catch (err) {
     return {
@@ -581,6 +657,15 @@ async function main() {
     console.log(`    Property: ${gsc.siteProperty} | 28d Impressions: ${gsc.totals.impressions} | Clicks: ${gsc.totals.clicks}`);
     console.log(`    Striking-Distance Queries (Pos 4-15): ${gsc.strikingDistanceQueries.length}`);
     console.log(`    Snippet Surgery Targets (CTR < 2%):   ${gsc.snippetSurgeryPages.length}`);
+    if (gsc.siblingProperties) {
+      for (const [propName, pData] of Object.entries(gsc.siblingProperties)) {
+        if (pData.status === 'connected') {
+          console.log(`    Sibling Property (${propName} -> ${pData.siteProperty}): 28d Impressions: ${pData.totals.impressions} | Clicks: ${pData.totals.clicks} | Queries: ${pData.totals.activeQueries}`);
+        } else {
+          console.log(`    Sibling Property (${propName}): ${pData.status}`);
+        }
+      }
+    }
   } else {
     console.log(`    Note: ${gsc.reason}`);
   }
