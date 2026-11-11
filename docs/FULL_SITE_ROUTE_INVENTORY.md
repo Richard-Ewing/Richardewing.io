@@ -36,7 +36,7 @@
 | `/about` | About | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/about/page.tsx` |
 | `/admin/agents` | Admin/Agents | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/admin/agents/page.tsx` |
 | `/admin/command-center` | Admin/Command Center | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/admin/command-center/page.tsx` |
-| `/advisory` | Advisory | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/advisory/page.tsx` |
+| `/advisory` | Executive Advisory & AI Economics Sprints | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Schedule Executive Consult ↗ | `app/advisory/page.tsx` |
 | `/ai-budget-leaks` | AI Budget Leaks - Forensic Telemetry Hub | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Reserve Turnaround Sprint ($2,500) ↗ | `app/ai-budget-leaks/page.tsx` |
 | `/ai-cost-governance` | AI Cost Governance - Runtime Caps & Board Reporting | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Inquire for Fractional CPO ($10,000/mo) ↗ | `app/ai-cost-governance/page.tsx` |
 | `/ai-economics-crisis` | Ai Economics Crisis | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/ai-economics-crisis/page.tsx` |
@@ -62,7 +62,7 @@
 | `/brand` | Brand | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/brand/page.tsx` |
 | `/builder-curriculum` | Builder Curriculum | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/builder-curriculum/page.tsx` |
 | `/careers` | Careers | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/careers/page.tsx` |
-| `/case-studies` | Case Studies | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/case-studies/page.tsx` |
+| `/case-studies` | Verified Case Studies & P&L Outcomes | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/case-studies/page.tsx` |
 | `/case-studies/runtime-incidents` | Case Studies/Runtime Incidents | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/case-studies/runtime-incidents/page.tsx` |
 | `/certification` | Certification | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/certification/page.tsx` |
 | `/challenges` | Challenges | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/challenges/page.tsx` |
@@ -150,7 +150,7 @@
 | `/partnerships/brand-assets` | Partnerships/Brand Assets | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/partnerships/brand-assets/page.tsx` |
 | `/partnerships/integration-docs` | Partnerships/Integration Docs | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/partnerships/integration-docs/page.tsx` |
 | `/partnerships` | Partnerships | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/partnerships/page.tsx` |
-| `/portfolio` | Portfolio | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/portfolio/page.tsx` |
+| `/portfolio` | Executive Portfolio & AI Systems Built | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Explore Executive Advisory ↗ | `app/portfolio/page.tsx` |
 | `/products` | Products | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/products/page.tsx` |
 | `/profiles` | Profiles | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/profiles/page.tsx` |
 | `/programs/ai-product-builder` | Programs/Ai Product Builder | `ACTIVE` | Concept B (Warm Paper / Forest Green / Playfair) | Run the Reality Check ↗ | `app/programs/ai-product-builder/page.tsx` |
