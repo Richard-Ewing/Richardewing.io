@@ -442,7 +442,7 @@ export default function AdvisoryPage() {
                     </span>
                     {m.featured && (
                       <span className="font-mono text-[9.5px] tracking-[0.12em] uppercase text-[var(--gold)] font-semibold">
-                        MOST CHOSEN
+                        ONGOING
                       </span>
                     )}
                   </div>
@@ -488,7 +488,7 @@ export default function AdvisoryPage() {
 
           <aside
             aria-label="Single-session entry option"
-            className="mt-5 border border-[var(--line)] rounded-lg bg-[#faf8f2] p-6 sm:p-7 flex flex-col md:flex-row md:items-center md:justify-between gap-5"
+            className="mt-5 border border-[var(--line)] rounded-lg bg-[#faf8f2] p-6 sm:p-7 flex flex-col items-start gap-4"
           >
             <div className="max-w-2xl space-y-1.5">
               <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-[var(--gold)] block font-medium">
@@ -502,7 +502,7 @@ export default function AdvisoryPage() {
               </p>
             </div>
             <Link
-              className="button button-outline w-full md:w-auto justify-center shrink-0"
+              className="button button-outline w-full sm:w-auto justify-center"
               href={entryOffer.href}
             >
               {entryOffer.cta}

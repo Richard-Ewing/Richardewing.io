@@ -288,14 +288,17 @@ export default function PortfolioPage() {
             Operations (remote-first or Seattle). Also taking a small number of advisory
             clients. BS Computer Science · MBA · Lean Six Sigma Yellow Belt.
           </p>
-          <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
-            <Link href="/contact#subject=Product+Leadership+Role" className="text-[var(--forest)] font-semibold underline underline-offset-4">
+          <div className="mt-4 flex flex-wrap gap-2.5">
+            <Link
+              href="/contact#subject=Product+Leadership+Role"
+              className="button button-outline !px-4 !py-2 text-[12px]"
+            >
               Discuss a role
             </Link>
-            <Link href="/advisory" className="text-[var(--forest)] font-semibold underline underline-offset-4">
+            <Link href="/advisory" className="button button-outline !px-4 !py-2 text-[12px]">
               See advisory
             </Link>
-          </p>
+          </div>
         </aside>
       </section>
 

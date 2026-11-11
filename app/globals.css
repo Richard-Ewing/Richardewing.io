@@ -362,6 +362,14 @@ button {
   margin-top: 4px;
 }
 
+@media (max-width: 480px) {
+  .inner-hero .proof-mini {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 20px;
+  }
+}
+
 .hero-visual {
   position: relative;
   min-height: 480px;
@@ -1031,7 +1039,7 @@ button {
   background: #faf8f2;
   color: #4b5850;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
 .pill-btn:hover,
