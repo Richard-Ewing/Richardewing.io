@@ -88,7 +88,7 @@ export default function PortfolioInteractiveShowcase() {
             The AI Economist Engine
           </div>
           <div className="text-[12px] text-[var(--muted)] mt-1">
-            Interactive P&amp;L simulator &amp; 133-node ontology
+            Interactive P&amp;L simulator &amp; executive benchmarks
           </div>
         </button>
       </div>
@@ -429,7 +429,7 @@ export default function PortfolioInteractiveShowcase() {
                 </span>
                 <p className="text-[12.5px] leading-[1.7] text-[var(--muted)] m-0">
                   Built on Next.js and Cloudflare Workers: 45 interactive financial and AI
-                  governance calculators (PDI, AUEB, EV-SE, MCP Auditor) wired into a 133-node
+                  governance calculators (PDI, AUEB, EV-SE, MCP Auditor) wired into a
                   TypeScript knowledge graph, JSON-LD provenance schemas, and{' '}
                   <Link href="/tools" className="font-semibold text-[var(--forest)] underline">
                     self-serve executive benchmarks ↗

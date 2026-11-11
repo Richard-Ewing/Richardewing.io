@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import PortfolioInteractiveShowcase from './PortfolioInteractiveShowcase';
 
 export const metadata: Metadata = {
@@ -210,7 +211,10 @@ export default function PortfolioPage() {
           <p className="eyebrow">
             <i /> Portfolio · Product Executive, P&amp;L Leader &amp; AI Builder
           </p>
-          <h1>Product organizations led at scale. AI platforms built from zero.</h1>
+          <h1>
+            Product organizations led at scale.{' '}
+            <em className="italic text-[var(--forest)]">AI products built from zero.</em>
+          </h1>
           <p className="inner-lede">
             I have spent 15+ years building product functions, owning multi-million-dollar
             budgets and P&amp;L, and launching 0-to-1 enterprise software across SaaS, ERP,
@@ -241,19 +245,56 @@ export default function PortfolioPage() {
               <small>delivery velocity</small>
             </span>
             <span>
-              3 live
-              <small>AI platforms shipped</small>
+              2 live
+              <small>AI products shipped solo</small>
             </span>
           </div>
+
+          <p className="text-[12.5px] text-[var(--muted)] mt-5">
+            Live now:{' '}
+            <a
+              href="https://exogram.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--forest)] font-semibold underline underline-offset-4"
+            >
+              Exogram.ai
+            </a>{' '}
+            ·{' '}
+            <a
+              href="https://careerwin.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--forest)] font-semibold underline underline-offset-4"
+            >
+              CareerWin.ai
+            </a>
+          </p>
         </div>
 
         <aside className="inner-aside glass">
-          <span>CREDENTIALS &amp; MANDATE FIT</span>
-          <strong>Product leadership paired with hands-on AI execution.</strong>
+          <div className="w-full h-48 rounded-md overflow-hidden relative mb-4">
+            <Image
+              src="/assets/images/richard-ewing-headshot.jpg"
+              alt="Richard Ewing, product executive and AI builder"
+              fill
+              className="object-cover object-top"
+            />
+          </div>
+          <span>TWO WAYS TO WORK TOGETHER</span>
+          <strong>Hiring a product leader, or need an advisor?</strong>
           <p>
-            BS in Computer Science · MBA · Lean Six Sigma Yellow Belt. Available for
-            executive advisory and VP of Product, Head of Product, Director of Product, Group
-            PM, and Product Operations roles (remote-first or Seattle).
+            Open to VP, Head, and Director of Product roles, plus Group PM and Product
+            Operations (remote-first or Seattle). Also taking a small number of advisory
+            clients. BS Computer Science · MBA · Lean Six Sigma Yellow Belt.
+          </p>
+          <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
+            <Link href="/contact#subject=Product+Leadership+Role" className="text-[var(--forest)] font-semibold underline underline-offset-4">
+              Discuss a role
+            </Link>
+            <Link href="/advisory" className="text-[var(--forest)] font-semibold underline underline-offset-4">
+              See advisory
+            </Link>
           </p>
         </aside>
       </section>
