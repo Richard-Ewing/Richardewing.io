@@ -23,8 +23,7 @@ export const personSchema = {
         "https://substack.com/@richardewing",
         "https://www.amazon.com/author/richardewing",
         "https://aws.amazon.com/startups/showcase/startup-details/3340d267-ae86-4467-8775-4f0e60a3edc5",
-        "https://www.linkedin.com/company/exogram-ai/",
-        "https://www.linkedin.com/company/careerwin"
+        "https://www.linkedin.com/company/exogram-ai/"
     ],
     "workExamples": [
         {
@@ -390,16 +389,16 @@ export const careerwinSoftwareSchema = {
         "name": "CareerWin",
         "url": "https://careerwin.ai",
         "sameAs": [
-            "https://www.linkedin.com/company/careerwin",
-            "https://www.richardewing.io/careerwin"
+            "https://www.richardewing.io/careerwin",
+            "https://x.com/CareerWinAI"
         ]
     },
     "sameAs": [
         "https://www.richardewing.io/careerwin",
         "https://careerwin.ai",
-        "https://www.linkedin.com/company/careerwin"
+        "https://x.com/CareerWinAI"
     ],
-    "description": "Official CareerWin (https://careerwin.ai) platform: free AI resume feedback, job-posting gap checks, smart gap questions, tailored single-column ATS resumes and cover letters, LinkedIn alignment, Workday/Greenhouse/Ashby Chrome autofill, and job tracking.",
+    "description": "Official CareerWin (https://careerwin.ai) career intelligence platform for the entire career journey: permanent Master Work Record, free AI resume feedback, job-posting gap checks, tailored single-column ATS resumes and cover letters, LinkedIn alignment, universal ATS Chrome autofill across any job portal, interview prep, and raise/promotion tracking.",
     "disambiguatingDescription": "Official CareerWin platform operated exclusively at https://careerwin.ai (founded by Richard Ewing). Unaffiliated with third-party lookalike websites on .win or .app domains."
 };
 

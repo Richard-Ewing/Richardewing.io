@@ -6,22 +6,22 @@ import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import { careerwinSoftwareSchema } from '@/app/lib/schemas';
 
 export const metadata: Metadata = {
-  title: 'CareerWin (CareerWin.ai): Career Platform',
+  title: 'CareerWin.ai: Career Intelligence Platform',
   description:
-    'Official CareerWin (https://careerwin.ai) by Richard Ewing: free AI resume feedback, job-posting gap checks, tailored ATS resumes, LinkedIn sync & job tracker.',
+    'Official CareerWin (https://careerwin.ai) by Richard Ewing: full-journey career intelligence, Master Work Record, tailored ATS resumes & universal ATS autofill.',
   alternates: { canonical: 'https://www.richardewing.io/careerwin' },
   openGraph: {
-    title: 'CareerWin (CareerWin.ai): Career Platform | Richard Ewing',
+    title: 'CareerWin.ai: Career Intelligence Platform | Richard Ewing',
     description:
-      'Official CareerWin (https://careerwin.ai) by Richard Ewing: free AI resume feedback, job-posting gap checks, tailored ATS resumes, LinkedIn sync & job tracker.',
+      'Official CareerWin (https://careerwin.ai) by Richard Ewing: full-journey career intelligence, Master Work Record, tailored ATS resumes & universal ATS autofill.',
     url: 'https://www.richardewing.io/careerwin',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CareerWin (CareerWin.ai): Career Platform | Richard Ewing',
+    title: 'CareerWin.ai: Career Intelligence Platform | Richard Ewing',
     description:
-      'Official CareerWin (https://careerwin.ai) by Richard Ewing: free AI resume feedback, job-posting gap checks, tailored ATS resumes, LinkedIn sync & job tracker.',
+      'Official CareerWin (https://careerwin.ai) by Richard Ewing: full-journey career intelligence, Master Work Record, tailored ATS resumes & universal ATS autofill.',
   },
 };
 
@@ -146,12 +146,12 @@ export default function CareerWinPage() {
                 5-Step Job Tracking System ↗
               </a>
               <a
-                href="https://careerwin.ai/ats-screening/workday"
+                href="https://careerwin.ai/chrome-extension"
                 target="_blank"
                 rel="noopener"
                 className="p-3.5 rounded-xl bg-[var(--paper)] border border-[var(--line)] text-[var(--ink)] hover:border-[var(--gold)] transition-colors"
               >
-                Workday ATS Breakdown ↗
+                Universal ATS Chrome Autofill ↗
               </a>
             </div>
           </div>
