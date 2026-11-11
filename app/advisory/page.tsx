@@ -104,26 +104,13 @@ const disciplines = [
   },
 ];
 
-const buyingModels = [
+const engagementModels = [
   {
-    tag: '01 / 48-HOUR TURNAROUND',
-    title: 'Executive Teardown Session',
-    price: '$450',
-    unit: '60-minute 1-on-1 working session',
-    desc: 'Direct working session for a CEO, CFO, or VP of Product who needs fast clarity on a spiking AI bill, a stalled roadmap, or an upcoming QBR deck.',
-    items: [
-      'Live review of your AI feature costs, pricing, or backlog',
-      'Immediate cut-list for margin leaks and low-value work',
-      'Written 30-day action memo + $79 Playbook Bundle included',
-    ],
-    cta: 'Book Teardown Session ↗',
-    href: '/contact#subject=Executive+Teardown',
-  },
-  {
-    tag: '02 / TIME-BOUND DIAGNOSTICS',
+    tag: '01 / TIME-BOUND DIAGNOSTICS',
     title: 'Pricing & Turnaround Sprints',
     price: '$2,500 - $7,500',
     unit: '14-day diagnostic or 21-day build',
+    featured: false,
     desc: 'Fixed-scope engagements built to diagnose AI unit economics, rationalize a bloated backlog, or ship a governed 0-to-1 AI workflow with zero hourly billing.',
     items: [
       '$2,500 · 14-Day AI Economics & Backlog Turnaround Sprint',
@@ -134,10 +121,11 @@ const buyingModels = [
     href: '/pricing-sprints',
   },
   {
-    tag: '03 / LEADERSHIP ALIGNMENT',
+    tag: '02 / LEADERSHIP ALIGNMENT',
     title: 'Executive Strategy Workshops',
     price: '$5,000 - $8,000',
     unit: '2-hour session or half-day intensive',
+    featured: false,
     desc: 'Focused working sessions that get product, engineering, finance, and operations leaders aligned on the same unit math and investment priorities.',
     items: [
       '$5,000 · Board-Ready Technical & QBR Reporting (2 hours)',
@@ -148,11 +136,12 @@ const buyingModels = [
     href: '/workshops',
   },
   {
-    tag: '04 / ONGOING ADVISORY',
+    tag: '03 / ONGOING PARTNERSHIP',
     title: 'Executive Retainer & PE Diligence',
     price: '$10,000/mo',
     unit: 'Biweekly advisory or $15K M&A audit',
-    desc: 'Ongoing independent counsel for CEOs, CFOs, CTOs, and CPOs navigating portfolio consolidation, PM org design, vendor renewals, or acquisitions.',
+    featured: true,
+    desc: 'Ongoing independent counsel for CEOs, CFOs, CTOs, and CPOs steering portfolio consolidation, PM org design, vendor renewals, or acquisitions.',
     items: [
       'Biweekly strategic decision, roadmap, and pricing reviews',
       'Coaching for Directors of Product and Group Product Managers',
@@ -162,6 +151,14 @@ const buyingModels = [
     href: '/contact#subject=Executive+Advisory+Retainer',
   },
 ];
+
+const entryOffer = {
+  kicker: 'NOT READY FOR A SPRINT? · 48-HOUR TURNAROUND',
+  title: 'Start with one working session, $450',
+  desc: 'One hour 1-on-1 for a CEO, CFO, or VP of Product on a spiking AI bill, a stalled roadmap, or an upcoming QBR deck. You leave with an immediate cut-list, a written 30-day action memo, and the $79 Playbook Bundle included.',
+  cta: 'Book a 60-minute teardown ↗',
+  href: '/contact#subject=Executive+Teardown',
+};
 
 const approachSteps = [
   {
@@ -213,6 +210,48 @@ export default function AdvisoryPage() {
     description:
       'Executive product, P&L, portfolio, and AI governance advisory for CEOs, CFOs, CTOs, and product leaders.',
     url: 'https://www.richardewing.io/advisory',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Executive Advisory Engagements',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          name: 'Pricing & Turnaround Sprints',
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            minPrice: '2500',
+            maxPrice: '7500',
+            priceCurrency: 'USD',
+          },
+          url: 'https://www.richardewing.io/pricing-sprints',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Executive Strategy Workshops',
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            minPrice: '5000',
+            maxPrice: '8000',
+            priceCurrency: 'USD',
+          },
+          url: 'https://www.richardewing.io/workshops',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Executive Retainer & PE Diligence',
+          price: '10000',
+          priceCurrency: 'USD',
+          url: 'https://www.richardewing.io/contact#subject=Executive+Advisory+Retainer',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Executive Teardown Session',
+          price: '450',
+          priceCurrency: 'USD',
+          url: 'https://www.richardewing.io/contact#subject=Executive+Teardown',
+        },
+      ],
+    },
   };
 
   const breadcrumbSchema = {
@@ -373,42 +412,51 @@ export default function AdvisoryPage() {
         </div>
       </section>
 
-      {/* 03. ENGAGEMENT MODELS - Full-Bleed Warm Paper Band Matching Homepage .offer-card */}
+      {/* 03. ENGAGEMENT MODELS - Full-Bleed Warm Paper Band Leading With Sprints */}
       <div id="offerings" className="bg-[var(--paper2)] border-y border-[var(--line)]">
-        <section className="section">
+        <section id="pricing" className="section">
           <div className="section-heading">
             <p className="eyebrow">
               <i /> Engagement models &amp; fees
             </p>
             <h2>How leadership teams buy that expertise.</h2>
             <p>
-              The four disciplines above are what we solve. Workshops, fixed-scope sprints,
-              and ongoing advisory are the clear, predictable ways clients engage me.
+              The four disciplines above are what we solve. Fixed-scope sprints, leadership
+              workshops, and ongoing executive advisory are the clear, predictable ways clients
+              engage me.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
-            {buyingModels.map((m) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
+            {engagementModels.map((m) => (
               <div
                 key={m.title}
-                className="border border-[var(--line)] rounded-lg p-7 sm:p-8 bg-[#faf8f2] flex flex-col justify-between transition-shadow hover:shadow-md"
+                className={`border rounded-lg p-6 lg:p-7 bg-[#faf8f2] flex flex-col justify-between transition-shadow hover:shadow-md ${
+                  m.featured ? 'border-[var(--forest)]' : 'border-[var(--line)]'
+                }`}
               >
                 <div>
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                    <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-[var(--gold)]">
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-[var(--gold)] font-medium">
                       {m.tag}
+                    </span>
+                    {m.featured && (
+                      <span className="font-mono text-[9.5px] tracking-[0.12em] uppercase text-[var(--gold)] font-semibold">
+                        MOST CHOSEN
+                      </span>
+                    )}
+                  </div>
+
+                  <h3 className="font-serif text-[24px] leading-[1.18] font-medium text-[var(--ink)] m-0">
+                    {m.title}
+                  </h3>
+
+                  <div className="mt-2 mb-4 flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
+                    <span className="font-serif text-[25px] font-semibold text-[var(--forest)]">
+                      {m.price}
                     </span>
                     <span className="font-mono text-[11px] text-[var(--muted)]">
                       {m.unit}
-                    </span>
-                  </div>
-
-                  <div className="flex flex-wrap items-baseline justify-between gap-3 mb-3">
-                    <h3 className="font-serif text-[25px] font-medium text-[var(--ink)] m-0">
-                      {m.title}
-                    </h3>
-                    <span className="font-serif text-[24px] font-semibold text-[var(--forest)]">
-                      {m.price}
                     </span>
                   </div>
 
@@ -420,7 +468,7 @@ export default function AdvisoryPage() {
                     {m.items.map((item) => (
                       <div
                         key={item}
-                        className="flex items-start gap-2.5 text-[12.5px] text-[var(--ink)]"
+                        className="flex items-start gap-2.5 text-[12.5px] text-[var(--ink)] leading-relaxed"
                       >
                         <span className="text-[var(--gold)] font-bold">✓</span>
                         <span>{item}</span>
@@ -430,13 +478,36 @@ export default function AdvisoryPage() {
                 </div>
 
                 <div className="flex items-center justify-between pt-2">
-                  <Link className="button button-dark" href={m.href}>
+                  <Link className="button button-dark w-full justify-center" href={m.href}>
                     {m.cta}
                   </Link>
                 </div>
               </div>
             ))}
           </div>
+
+          <aside
+            aria-label="Single-session entry option"
+            className="mt-5 border border-[var(--line)] rounded-lg bg-[#faf8f2] p-6 sm:p-7 flex flex-col md:flex-row md:items-center md:justify-between gap-5"
+          >
+            <div className="max-w-2xl space-y-1.5">
+              <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-[var(--gold)] block font-medium">
+                {entryOffer.kicker}
+              </span>
+              <h3 className="font-serif text-[22px] leading-[1.2] font-medium text-[var(--ink)] m-0">
+                {entryOffer.title}
+              </h3>
+              <p className="text-[12.5px] leading-[1.7] text-[var(--muted)] m-0">
+                {entryOffer.desc}
+              </p>
+            </div>
+            <Link
+              className="button button-outline w-full md:w-auto justify-center shrink-0"
+              href={entryOffer.href}
+            >
+              {entryOffer.cta}
+            </Link>
+          </aside>
 
           <div className="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-5 border-t border-[var(--line)] text-[12.5px] text-[var(--muted)]">
             <span>
