@@ -42,135 +42,128 @@ interface CaseStudy {
 
 const caseStudies: CaseStudy[] = [
   {
-    tag: '01 · ENTERPRISE 0-TO-1 COMMERCIALIZATION',
+    tag: '01 / ENTERPRISE 0-TO-1 COMMERCIALIZATION',
     roleMeta: 'Tyler Technologies · Principal Product Manager (May 2008 - Oct 2014)',
     title:
-      'Tyler Technologies: Commercializing a 0-to-1 Municipal ERP to $25M and Cutting Churn 20%',
+      'Tyler Technologies: Commercializing a 0-to-1 Municipal ERP Module to $25M in New Revenue',
     context:
-      'Public-sector municipalities needed a modern Enterprise Resource Planning (ERP) platform capable of handling complex fund accounting, regulatory reporting, and mission-critical uptime without multi-year implementation failures.',
+      'Municipal clients relied on error-prone manual spreadsheets with no dedicated enterprise ERP alternative on the market.',
     intervention:
-      'Led 0-to-1 product discovery and commercialization working backward from municipal finance and operations buyers. Directed alpha and beta customer validation, commercial packaging, pricing tiers, field sales enablement, and strict enterprise SLA and high-availability standards.',
+      'Owned the 0-to-1 concept, requirements, alpha/beta municipal customer validation, pricing, sales enablement, user conference workshops, and SLA governance from idea through launch.',
     outcomes: [
-      '$25M in new product revenue generated from the 0-to-1 municipal ERP line',
-      '20% reduction in enterprise customer churn after enforcing high-availability SLAs',
-      'Repeatable alpha-to-general-availability launch playbook across engineering, sales, and support',
-      'Long-term public-sector contract retention anchored in measurable reliability',
+      '$25M in new product revenue generated from the net-new municipal ERP module',
+      '20% reduction in enterprise churn after establishing SLAs and high-availability standards',
+      'Direct contribution to closed municipal contracts through sales support and enablement webinars',
     ],
     metricHighlight: '$25M',
     metricLabel: '0-to-1 ERP Revenue',
   },
   {
-    tag: '02 · ENTERPRISE PORTFOLIO RATIONALIZATION',
+    tag: '02 / PORTFOLIO CONSOLIDATION & PRODUCT OPS',
     roleMeta: 'Moss Adams · Group Product Manager, Enterprise Portfolio (Jun 2022 - Aug 2024)',
     title:
       'Moss Adams: Cutting $5M in Portfolio Spend and Lifting Delivery Velocity 40% Across 12 Products',
     context:
-      'A 12-product enterprise portfolio spanning in-house software and third-party vendor platforms faced competing stakeholder demands, 200+ stale backlog initiatives, cross-regional delivery friction, and rising licensing and cloud maintenance costs.',
+      'A 12-product portfolio of in-house and third-party enterprise applications faced overlapping vendor spend, 200+ stale backlog items, and inconsistent product methodologies across US and overseas teams.',
     intervention:
-      'Directed two cross-regional product and delivery teams (US, nearshore, and offshore), forecast and defended a $1M to $3M annual budget, negotiated $1M+ vendor contracts, led C-suite QBRs and Azure modernization governance, and served as Change Review Board approver for client billing and reporting systems.',
+      'Created standardized PM methodologies and SOPs, directed two PM-led squads (6 to 8 members each), forecast a $1M to $3M budget, negotiated $1M+ vendor contracts, led C-suite QBRs and Azure post-acquisition integration, and served as Change Review Board approver.',
     outcomes: [
-      '$5M in reduced spend achieved via disciplined product sunset, consolidation, and vendor contract decisions',
-      '+40% increase in delivery velocity after auditing and retiring 200+ stale backlog items',
-      'Defensible C-suite QBR capital governance across all 12 enterprise applications',
-      'Zero billing disruption across sensitive client reporting changes under CRB oversight',
+      '$5M in spend reduced by sunsetting and consolidating overlapping products',
+      '+40% increase in delivery velocity after retiring and reprioritizing 200+ stale initiatives',
+      'Layered C-suite and business-partner roadmaps tied directly to OKRs and billing safety',
     ],
     metricHighlight: '$5M Cut',
-    metricLabel: '+40% Delivery Velocity',
+    metricLabel: '+40% Velocity',
   },
   {
-    tag: '03 · COMPANY-WIDE P&L & OPERATING TRANSFORMATION',
+    tag: '03 / COMPANY-WIDE P&L & OPERATING MODEL',
     roleMeta: 'Sechrist Design · Director of Operations (Oct 2014 - May 2017)',
     title:
-      'Sechrist Design: Owning Company-Wide P&L Across 5 Departments Behind 200% YoY Growth to $20M',
+      'Sechrist Design: Owning Five-Department P&L Behind 200% YoY Growth to $20M',
     context:
-      'Rapidly expanding organization needed tighter financial controls, unified departmental execution, supplier cost discipline, and scalable operating procedures across fragmented business units.',
+      'Rapid growth outpaced departmental coordination, requiring tighter budget ownership, procurement discipline, and standardized operating procedures.',
     intervention:
-      'Reported directly to the CEO overseeing 5 departments (finance, project management, IT, and operations). Owned company-wide P&L and multi-million-dollar departmental budgets, redesigned org structure and hiring, standardized SOPs, renegotiated supplier terms, and consolidated 4 departments into a unified operating model.',
+      'Reported directly to the CEO overseeing five departments (finance, project management, IT, and operations). Owned the P&L and annual departmental budgets, authored SOPs, negotiated supplier terms, and consolidated four departments into one unified operating model.',
     outcomes: [
-      'Company reporting attributed 200% year-over-year growth to $20M in revenue to the broader transformation',
-      '4 separate departments consolidated into one accountable operating structure',
-      'Full company-wide P&L visibility, departmental budget ownership, and supplier margin discipline',
-      'Standardized project delivery and financial reporting directly to the CEO',
+      'Company reporting attributed 200% year-over-year growth to $20M in revenue to the broader business transformation',
+      'Four departments consolidated into a single operating structure with margin tracking',
+      'Defended ROI-driven CapEx and headcount business cases directly to the CEO',
     ],
     metricHighlight: '$20M',
     metricLabel: '200% YoY Transformation',
   },
   {
-    tag: '04 · PUBLIC-SECTOR CLOUD MODERNIZATION',
+    tag: '04 / PUBLIC-SECTOR CLOUD MODERNIZATION',
     roleMeta: 'State of Washington · Product Manager (Mar 2021 - Jun 2022)',
     title:
-      'State of Washington: Delivering Cloud Modernization for 7.7M Residents With Zero Audit Findings',
+      'State of Washington: Modernizing Citizen Workflows for 7.7M Residents With Zero Audit Findings',
     context:
-      'Public digital services serving 7.7 million residents required cloud-native modernization across multiple state agencies under unforgiving legislative deadlines, accessibility laws, and data-privacy constraints.',
+      'Public services reaching 7.7 million residents needed to transition manual, paper-based state processes into a unified cloud-native citizen portal on fixed legislative deadlines.',
     intervention:
-      'Represented resident needs across multi-agency product roadmaps, translating statutory privacy and compliance requirements into actionable engineering milestones with transparent public accountability.',
+      'Served as voice of the customer across multi-agency stakeholder groups, aligning competing agency roadmaps within strict data privacy, identity verification, and state cybersecurity standards.',
     outcomes: [
-      '98% on-time delivery reported across multi-agency modernization milestones',
+      '98% on-time delivery against legislatively mandated timelines as cited in program reporting',
       'Zero legislative audit findings across regulated public-service releases',
-      'Modernized cloud workflows serving a statewide population of 7.7 million residents',
-      'Aligned interagency policy, security, and engineering stakeholders without scope drift',
+      'Accessible digital workflows deployed for Washington residents',
     ],
     metricHighlight: '98%',
     metricLabel: 'On-Time · 0 Audit Findings',
   },
   {
-    tag: '05 · 0-TO-1 PRODUCT OPERATING MODEL',
+    tag: '05 / 0-TO-1 PRODUCT DEPARTMENT BUILD',
     roleMeta:
       'Entrepreneurs of Tomorrow · Interim Director of PM & Advisory Board (Jun 2025 - Present)',
     title:
-      'Entrepreneurs of Tomorrow: Standing Up Roadmap Governance and KPIs Across 4 Product Pods',
+      'Entrepreneurs of Tomorrow: Building the Product Operating Model Across Four PM Teams',
     context:
-      'A growing 20+ person organization needed an experienced product executive to formalize product management standards, coach emerging Product Managers, and connect squad execution to Founder & CEO priorities.',
+      'A 20+ person organization needed to transition from ad-hoc project delivery to a disciplined product management function with executive visibility.',
     intervention:
-      'Partnered directly with the Founder & CEO, leading up to 4 Product Managers (each leading 3 to 6 member teams). Built the product operating model, team charters, discovery and delivery SOPs, roadmap governance, and executive KPI/OKR cadence from scratch.',
+      'Partnered directly with the Founder & CEO, leading up to four Product Managers (each running a 3 to 6 member engineering team) while authoring the product charter, sprint cadences, roadmap governance, and KPI/OKR reporting.',
     outcomes: [
-      'Complete 0-to-1 product management operating model deployed across 4 cross-functional squads',
-      'Executive KPI and OKR reporting established for Founder & CEO visibility',
-      'Standardized product charters, intake prioritization, and release accountability',
-      'Ongoing strategic oversight as Product Management Advisory Board Member',
+      'Product management department, hiring plans, and org structure established with CEO buy-in',
+      'Portfolio KPIs tracked across predictability, milestone attainment, capacity, and compliance',
+      'Ongoing methodological governance as Product Management Advisory Board Member',
     ],
-    metricHighlight: '4 Pods',
-    metricLabel: '0-to-1 PM Operating Model',
+    metricHighlight: '4 PMs',
+    metricLabel: '0-to-1 Product Org',
   },
   {
-    tag: '06 · CONVERSATIONAL AI & DETERMINISTIC AGENT CONTROL PLANE',
-    roleMeta: 'Exogram AI · Sole Founder, CEO & Chief Architect (Aug 2024 - Present)',
+    tag: '06 / CONVERSATIONAL & AGENTIC AI PLATFORM',
+    roleMeta: 'Exogram AI LLC · Founder & CEO (Aug 2024 - Present)',
     title:
-      'Exogram AI & EAAP RFC-0001: Persistent Cross-Session Context Paired With Pre-Execution Agent Gates',
+      'Exogram.ai: Persistent Context, Deliverable Canvas & Dependable Autonomous Agents',
     context:
-      'Conversational AI platforms lose context between sessions while autonomous agents wired into external APIs lack hard pre-execution safety and cost controls, leaving enterprises exposed to unauthorized mutations.',
+      'Users waste hours re-explaining context every AI session, while autonomous agents lack source grounding, privacy boundaries, and human approval controls.',
     intervention:
-      'Architected a Python + TypeScript conversational platform featuring a 7-layer context and temporal entity graph, Pinecone vector retrieval, encrypted Supabase/PostgreSQL tenant memory, multi-LLM routing (Claude, Gemini, OpenAI), and the open 4-layer Exogram Action Admissibility Protocol (EAAP RFC-0001).',
+      'Pivoted from developer middleware to a live public conversational AI platform built solo end to end: pairing frontier LLMs with an encrypted memory vault, self-wiring knowledge graph, deliverable canvas, and EAAP RFC-0001 admissibility gates.',
     outcomes: [
-      'Recognized in the official AWS Startups Showcase directory',
-      '7-layer persistent context loop with explicit user correction and hard revocation',
-      'Open-source EAAP RFC-0001 enforcing 14 runtime invariants (ALLOW / BLOCK / ESCALATE) with zero model inference inside L3 judgment gates',
-      'Cryptographic HMAC meaning verification and SHA-256 TOCTOU state hash admissibility checks',
+      'Live public web platform staging memos, decks, decision matrices, and checklists from shorthand input',
+      'Dependable agent execution with source grounding, memory correction, and human approval points',
+      'Recognized in the AWS Startups Showcase directory',
     ],
-    metricHighlight: 'RFC-0001',
-    metricLabel: '14 Runtime Invariants',
+    metricHighlight: 'Live AI',
+    metricLabel: 'Memory + Agent Canvas',
     deepLinkHref: '/exogram',
-    deepLinkLabel: 'Inspect Exogram Architecture ↗',
+    deepLinkLabel: 'Explore Exogram platform ↗',
   },
   {
-    tag: '07 · FULL-STACK EVIDENCE-BOUND AI SAAS',
-    roleMeta: 'CareerWin.ai · Founder & Product Architect (Production v0.2.422)',
+    tag: '07 / EVIDENCE-BOUND AI SAAS',
+    roleMeta: 'CareerWin.ai · Founder & Product Architect (Live v0.2.422)',
     title:
-      'CareerWin.ai: Building a Zero-Fabrication Career OS, Supabase RLS Vault & Universal ATS Extension',
+      'CareerWin.ai: Zero-Fabrication Master Work Record, Supabase RLS & ATS Extension',
     context:
-      'Job seekers using generic LLM wrappers end up with hallucinated resume metrics that fail background and interview scrutiny, while manually re-entering career history across fragmented ATS portals.',
+      'Generic AI resume tools fabricate metrics that fail interviews while forcing candidates to re-type job history across dozens of enterprise ATS portals.',
     intervention:
-      'Engineered a Next.js + TypeScript SaaS on Cloudflare Workers (@opennextjs/cloudflare) backed by Supabase Auth and Row-Level Security. Built a 5-step Master Work Record & Cut Vault onboarding flow, a 10-layer Gemini/Claude compiler bound strictly to verified user evidence, DOCX/PDF export engines, and a companion Chrome extension.',
+      'Engineered an edge-deployed Next.js SaaS with Supabase PostgreSQL Row-Level Security, a 5-step Master Work Record & Cut Vault, a 10-layer Gemini/Claude compiler bound to verified evidence, and a Universal ATS Chrome Extension.',
     outcomes: [
-      'Live multi-tenant SaaS (v0.2.422) with verified Supabase PostgreSQL Row-Level Security',
-      '10-layer zero-fabrication compiler eliminating invented employers, dates, and fake metrics',
+      'Zero-fabrication resume and interview compiler backed by verified user work records',
       'Published the 2026 Enterprise ATS & AI Resume Benchmark Study',
-      'Universal ATS Chrome Extension automating portal autofill from verified work records',
+      'Companion Chrome extension automating Workday, Greenhouse, and Lever portal autofill',
     ],
     metricHighlight: '10-Layer',
-    metricLabel: 'Evidence-Bound Compiler',
+    metricLabel: 'Zero-Fabrication SaaS',
     deepLinkHref: '/careerwin',
-    deepLinkLabel: 'Read CareerWin Case Study ↗',
+    deepLinkLabel: 'Read CareerWin case study ↗',
   },
 ];
 
@@ -180,7 +173,7 @@ export default function CaseStudiesPage() {
     '@type': 'CollectionPage',
     name: 'Verified Case Studies & P&L Outcomes | Richard Ewing',
     description:
-      'Employer-verified enterprise turnarounds and production AI system architectures across Tyler Technologies, Moss Adams, Sechrist Design, State of Washington, Exogram AI, and CareerWin.',
+      'Employer-verified enterprise turnarounds and production AI platforms across Tyler Technologies, Moss Adams, Sechrist Design, State of Washington, Exogram AI, and CareerWin.',
     url: 'https://www.richardewing.io/case-studies',
   };
 
@@ -214,119 +207,119 @@ export default function CaseStudiesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      {/* Hero Section */}
+      {/* 01. INNER HERO */}
       <section className="inner-hero">
         <div className="inner-art" />
         <div className="inner-copy">
           <p className="eyebrow">
-            <i /> Proven Outcomes · Employer &amp; Repo Verified
+            <i /> Proven Outcomes · Named Employers &amp; Live Platforms
           </p>
           <h1>Seven verified turnarounds and production AI builds.</h1>
           <p className="inner-lede">
-            No anonymized composites or invented consulting folklore. Every case study on
-            this page maps directly to a named employer, a real P&amp;L or public-sector
-            mandate, or a live AI software platform I architected and shipped.
+            Every case study below maps directly to a named company, an accountable P&amp;L
+            or public-sector seat, or a live AI software platform built from zero.
           </p>
           <div className="actions">
             <Link className="button button-gold" href="/reality-check">
               Run the Reality Check ↗
             </Link>
             <Link className="button button-outline" href="/pricing-sprints">
-              Review Sprint Options ↗
-            </Link>
-            <Link className="button button-outline" href="/portfolio">
-              Interactive AI Showcase ↗
+              Review sprint options ↗
             </Link>
           </div>
         </div>
 
-        <aside className="inner-aside glass space-y-3">
-          <span>THE VERIFICATION STANDARD</span>
-          <strong>Named companies. Real seats. Auditable systems.</strong>
+        <aside className="inner-aside glass">
+          <span>EVIDENCE OVER CLAIMS</span>
+          <strong>No anonymized composites. Real seats and outcomes.</strong>
           <p>
-            Five enterprise and public-sector operating mandates ($25M 0-to-1 ERP, $5M
-            portfolio cut, $20M transformation, 7.7M residents) plus two production AI
-            ventures built from zero.
-          </p>
-          <div className="pt-1">
-            <Link
-              href="/case-studies/runtime-incidents"
-              className="text-xs font-mono font-bold text-[var(--forest)] underline"
-            >
-              Also inspect: AI Runtime Incident Postmortems ↗
+            Five enterprise and public-sector leadership mandates plus two live AI ventures.{' '}
+            <Link href="/case-studies/runtime-incidents" className="underline text-[var(--forest)] font-semibold">
+              Inspect AI runtime incident analyses ↗
             </Link>
-          </div>
+          </p>
         </aside>
       </section>
 
-      {/* Case Studies List */}
+      {/* 02. CASE STUDIES LEDGER (Proper h2 in .section-heading, h3 on cards) */}
       <section className="section">
-        <div className="space-y-10">
+        <div className="section-heading">
+          <p className="eyebrow">
+            <i /> Documented record
+          </p>
+          <h2>Enterprise P&amp;L results and shipped AI systems.</h2>
+          <p>
+            Separated cleanly by organization, role, operational problem, and measurable
+            business outcome.
+          </p>
+        </div>
+
+        <div className="space-y-5 mt-10">
           {caseStudies.map((cs) => (
             <article
               key={cs.title}
-              className="border border-[var(--line)] bg-[#FAF8F3] rounded-2xl p-7 sm:p-10 hover:border-[var(--forest)] hover:shadow-md transition-shadow space-y-6"
+              className="border border-[var(--line)] bg-[#faf8f2] rounded-lg p-7 sm:p-9 transition-shadow hover:shadow-md space-y-6"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[var(--line)] pb-5">
-                <div className="space-y-1">
-                  <span className="text-[10px] font-mono font-bold text-[var(--gold)] tracking-wider uppercase block">
+                <div>
+                  <span className="font-mono text-[10px] tracking-[0.13em] uppercase text-[var(--gold)] block mb-1">
                     {cs.tag}
                   </span>
-                  <div className="text-xs font-mono text-[var(--muted)]">{cs.roleMeta}</div>
-                  <h2 className="text-2xl sm:text-3xl font-serif font-medium text-[var(--ink)] pt-1">
+                  <div className="font-mono text-[11px] text-[var(--muted)] mb-1.5">
+                    {cs.roleMeta}
+                  </div>
+                  <h3 className="font-serif text-[24px] sm:text-[27px] leading-[1.2] font-medium text-[var(--ink)] m-0">
                     {cs.title}
-                  </h2>
+                  </h3>
                 </div>
-                <div className="sm:text-right flex-none bg-white border border-[var(--line)] rounded-xl px-4 py-3 self-start sm:self-center">
-                  <div className="text-2xl sm:text-3xl font-serif font-bold text-[var(--forest)]">
+                <div className="sm:text-right flex-none bg-white border border-[var(--line)] rounded-md px-4 py-2.5 self-start sm:self-center">
+                  <div className="font-serif text-[26px] font-semibold text-[var(--forest)] leading-none">
                     {cs.metricHighlight}
                   </div>
-                  <div className="text-[10px] font-mono text-[var(--muted)] uppercase">
+                  <div className="font-mono text-[10px] text-[var(--muted)] uppercase mt-1">
                     {cs.metricLabel}
                   </div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 text-xs sm:text-sm leading-relaxed text-[#3e4a42]">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-7 items-start">
                 <div className="md:col-span-7 space-y-4">
                   <div>
-                    <strong className="font-serif text-base text-[var(--ink)] block mb-1">
-                      The Operational Problem
+                    <strong className="font-serif text-[17px] font-medium text-[var(--ink)] block mb-1">
+                      The Operational Challenge
                     </strong>
-                    <p className="text-[var(--muted)] m-0">{cs.context}</p>
+                    <p className="text-[13px] leading-[1.7] text-[var(--muted)] m-0">
+                      {cs.context}
+                    </p>
                   </div>
                   <div>
-                    <strong className="font-serif text-base text-[var(--ink)] block mb-1">
-                      What We Changed &amp; Built
+                    <strong className="font-serif text-[17px] font-medium text-[var(--ink)] block mb-1">
+                      What Changed
                     </strong>
-                    <p className="text-[var(--muted)] m-0">{cs.intervention}</p>
+                    <p className="text-[13px] leading-[1.7] text-[var(--muted)] m-0">
+                      {cs.intervention}
+                    </p>
                   </div>
                 </div>
 
-                <div className="md:col-span-5 bg-white border border-[var(--line)] rounded-xl p-6 flex flex-col justify-between space-y-4">
-                  <div className="space-y-3">
-                    <span className="text-xs font-mono font-bold text-[var(--forest)] uppercase tracking-wider block">
-                      Documented Outcomes:
-                    </span>
-                    <ul className="space-y-2">
-                      {cs.outcomes.map((o) => (
-                        <li
-                          key={o}
-                          className="flex items-start gap-2 text-xs text-[#2e3a32] leading-relaxed"
-                        >
-                          <span className="text-[var(--gold)] font-bold mt-0.5">✓</span>
-                          <span>{o}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {cs.deepLinkHref && cs.deepLinkLabel && (
-                    <div className="pt-3 border-t border-[var(--line)]">
-                      <Link
-                        href={cs.deepLinkHref}
-                        className="text-xs font-semibold text-[var(--forest)] hover:text-[var(--gold)] transition-colors"
+                <div className="md:col-span-5 bg-white border border-[var(--line)] rounded-lg p-5 space-y-3">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-[var(--forest)] font-semibold block">
+                    Verified Outcomes
+                  </span>
+                  <ul className="space-y-2 m-0 p-0 list-none">
+                    {cs.outcomes.map((o) => (
+                      <li
+                        key={o}
+                        className="flex items-start gap-2.5 text-[12.5px] leading-[1.6] text-[var(--ink)]"
                       >
+                        <span className="text-[var(--gold)] font-bold">✓</span>
+                        <span>{o}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  {cs.deepLinkHref && cs.deepLinkLabel && (
+                    <div className="pt-2 border-t border-[var(--line)]">
+                      <Link href={cs.deepLinkHref} className="text-link mt-0">
                         {cs.deepLinkLabel}
                       </Link>
                     </div>
@@ -338,23 +331,20 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Closing CTA */}
+      {/* 03. CLOSING CTA */}
       <section className="closing-cta">
-        <p className="eyebrow">Next Step</p>
-        <h2>Apply this operating discipline to your roadmap or AI stack.</h2>
+        <p className="eyebrow">A clear next step</p>
+        <h2>Apply this operating rigor to your product roadmap.</h2>
         <p>
-          Run the free 60-second Reality Check diagnostic, compare fixed-scope sprint options,
-          or reach out directly about an advisory or executive product mandate.
+          Run the free 60-second Reality Check or reach out directly to discuss an advisory
+          engagement or product leadership mandate.
         </p>
         <div className="actions center">
           <Link className="button button-gold" href="/reality-check">
-            Run the Free Reality Check ↗
-          </Link>
-          <Link className="button button-ghost-light" href="/advisory">
-            Explore Advisory Disciplines ↗
+            Run the free Reality Check ↗
           </Link>
           <Link className="button button-ghost-light" href="/contact">
-            Discuss an Engagement ↗
+            Discuss an engagement ↗
           </Link>
         </div>
       </section>
