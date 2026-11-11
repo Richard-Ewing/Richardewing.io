@@ -770,22 +770,24 @@ export default function VoiceDock() {
   if (!mounted) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 font-sans">
-      {/* Minimized Floating Button */}
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 font-sans">
+      {/* Minimized Floating Button - Compact circular icon on mobile, full pill on sm+ */}
       {!isOpen && (
         <button
           onClick={handleOpen}
-          className="group relative flex items-center gap-3 px-5 py-3.5 bg-zinc-950 border border-cyan-500/40 hover:border-cyan-400 text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-cyan-500/20"
-          aria-label="Open Voice Companion"
+          className="group relative flex items-center gap-3 p-3 sm:px-5 sm:py-3.5 bg-zinc-950 border border-cyan-500/40 hover:border-cyan-400 text-white rounded-full shadow-2xl transition-transform duration-300 hover:scale-105 hover:shadow-cyan-500/20 cursor-pointer"
+          aria-label="Talk with Richard (Open Voice Companion)"
+          title="Talk with Richard"
         >
           <div className="relative flex items-center justify-center">
             <span className="absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-30 animate-ping" />
-            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-cyan-600 to-emerald-500 flex items-center justify-center shadow-inner">
+            <div className="w-9 h-9 sm:w-8 sm:h-8 rounded-full bg-gradient-to-tr from-cyan-600 to-emerald-500 flex items-center justify-center shadow-inner">
               <Mic className="w-4 h-4 text-white" />
             </div>
+            <span className="sm:hidden absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-400 ring-2 ring-zinc-950" />
           </div>
 
-          <div className="text-left">
+          <div className="hidden sm:block text-left">
             <div className="flex items-center gap-1.5">
               <span className="text-sm font-semibold tracking-wide text-zinc-100">Talk with Richard</span>
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" />
@@ -966,7 +968,7 @@ export default function VoiceDock() {
                   <button
                     type="submit"
                     disabled={isIntakeSubmitting}
-                    className="w-full mt-2 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-600 to-teal-500 hover:from-cyan-500 hover:to-teal-400 disabled:opacity-50 text-white text-xs sm:text-sm font-semibold shadow-lg shadow-cyan-600/20 transition-all cursor-pointer"
+                    className="w-full mt-2 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-600 to-teal-500 hover:from-cyan-500 hover:to-teal-400 disabled:opacity-50 text-white text-xs sm:text-sm font-semibold shadow-lg shadow-cyan-600/20 transition-opacity cursor-pointer"
                   >
                     {isIntakeSubmitting ? (
                       <>
@@ -993,7 +995,7 @@ export default function VoiceDock() {
           {/* Real-time 90s Countdown Bar */}
           <div className="w-full h-1 bg-zinc-900 overflow-hidden">
             <div
-              className={`h-full transition-all duration-300 ease-linear ${
+              className={`h-full transition-[width,background-color] duration-300 ease-linear ${
                 secondsRemaining <= 15
                   ? 'bg-rose-500'
                   : secondsRemaining <= 30
@@ -1074,7 +1076,7 @@ export default function VoiceDock() {
                   {/* 1. Book Working Session */}
                   <a
                     href="/contact"
-                    className="group flex items-start gap-3 p-2.5 rounded-xl bg-zinc-900 border border-zinc-700/80 hover:border-cyan-500/60 hover:bg-zinc-800 transition-all text-left shadow-sm"
+                    className="group flex items-start gap-3 p-2.5 rounded-xl bg-zinc-900 border border-zinc-700/80 hover:border-cyan-500/60 hover:bg-zinc-800 transition-colors text-left shadow-sm"
                   >
                     <div className="p-2 rounded-lg bg-cyan-950 text-cyan-400 border border-cyan-800/60 group-hover:scale-105 transition-transform shrink-0">
                       <Calendar className="w-4 h-4" />
@@ -1095,7 +1097,7 @@ export default function VoiceDock() {
                   {/* 2. Diagnostic Tools */}
                   <a
                     href="/tools"
-                    className="group flex items-start gap-3 p-2.5 rounded-xl bg-zinc-900 border border-zinc-700/80 hover:border-emerald-500/60 hover:bg-zinc-850 transition-all text-left shadow-sm"
+                    className="group flex items-start gap-3 p-2.5 rounded-xl bg-zinc-900 border border-zinc-700/80 hover:border-emerald-500/60 hover:bg-zinc-850 transition-colors text-left shadow-sm"
                   >
                     <div className="p-2 rounded-lg bg-emerald-950 text-emerald-400 border border-emerald-800/60 group-hover:scale-105 transition-transform shrink-0">
                       <Wrench className="w-4 h-4" />
@@ -1116,7 +1118,7 @@ export default function VoiceDock() {
                   {/* 3. Curriculum Tracks */}
                   <a
                     href="/curriculum"
-                    className="group flex items-start gap-3 p-2.5 rounded-xl bg-zinc-900 border border-zinc-700/80 hover:border-indigo-500/60 hover:bg-zinc-850 transition-all text-left shadow-sm"
+                    className="group flex items-start gap-3 p-2.5 rounded-xl bg-zinc-900 border border-zinc-700/80 hover:border-indigo-500/60 hover:bg-zinc-850 transition-colors text-left shadow-sm"
                   >
                     <div className="p-2 rounded-lg bg-indigo-950 text-indigo-400 border border-indigo-800/60 group-hover:scale-105 transition-transform shrink-0">
                       <BookOpen className="w-4 h-4" />
@@ -1137,7 +1139,7 @@ export default function VoiceDock() {
                   {/* 4. Digital Products & Vault */}
                   <a
                     href="/pricing"
-                    className="group flex items-start gap-3 p-2.5 rounded-xl bg-zinc-900 border border-zinc-700/80 hover:border-amber-500/60 hover:bg-zinc-850 transition-all text-left shadow-sm"
+                    className="group flex items-start gap-3 p-2.5 rounded-xl bg-zinc-900 border border-zinc-700/80 hover:border-amber-500/60 hover:bg-zinc-850 transition-colors text-left shadow-sm"
                   >
                     <div className="p-2 rounded-lg bg-amber-950 text-amber-400 border border-amber-800/60 group-hover:scale-105 transition-transform shrink-0">
                       <Layers className="w-4 h-4" />
@@ -1195,7 +1197,7 @@ export default function VoiceDock() {
                   href={activeCard.link}
                   target={activeCard.link.startsWith('/') ? undefined : '_blank'}
                   rel={activeCard.link.startsWith('/') ? undefined : 'noopener noreferrer'}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-cyan-600 to-teal-500 hover:from-cyan-500 hover:to-teal-400 text-white text-xs font-medium transition-all shadow-md"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-cyan-600 to-teal-500 hover:from-cyan-500 hover:to-teal-400 text-white text-xs font-medium transition-opacity shadow-md"
                 >
                   <span>{activeCard.ctaText}</span>
                   <ExternalLink className="w-3 h-3" />
@@ -1252,7 +1254,7 @@ export default function VoiceDock() {
               <div className="flex flex-col gap-2.5 animate-in fade-in duration-200">
                 <a
                   href="/contact"
-                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-600 to-teal-500 hover:from-cyan-500 hover:to-teal-400 text-white text-xs font-semibold shadow-lg shadow-cyan-600/20 hover:scale-[1.01] active:scale-[0.99] transition-all"
+                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-600 to-teal-500 hover:from-cyan-500 hover:to-teal-400 text-white text-xs font-semibold shadow-lg shadow-cyan-600/20 hover:scale-[1.01] active:scale-[0.99] transition-transform"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>Book 1:1 Working Session</span>
@@ -1302,7 +1304,7 @@ export default function VoiceDock() {
                     {visualizerBars.map((height, idx) => (
                       <div
                         key={idx}
-                        className="w-1 bg-cyan-400/70 rounded-full transition-all duration-100"
+                        className="w-1 bg-cyan-400/70 rounded-full transition-[height] duration-100"
                         style={{ height: `${height}px` }}
                       />
                     ))}
@@ -1311,7 +1313,7 @@ export default function VoiceDock() {
                   {/* Main Record/Talk Button */}
                   <button
                     onClick={status === 'listening' ? stopRecording : startRecording}
-                    className={`relative p-4 rounded-full transition-all duration-300 shadow-xl ${
+                    className={`relative p-4 rounded-full transition-transform duration-300 shadow-xl ${
                       status === 'listening'
                         ? 'bg-rose-600 hover:bg-rose-500 ring-4 ring-rose-500/30 scale-110'
                         : 'bg-cyan-600 hover:bg-cyan-500 text-white hover:scale-105 shadow-cyan-600/30'
@@ -1330,7 +1332,7 @@ export default function VoiceDock() {
                     {visualizerBars.slice().reverse().map((height, idx) => (
                       <div
                         key={idx}
-                        className="w-1 bg-cyan-400/70 rounded-full transition-all duration-100"
+                        className="w-1 bg-cyan-400/70 rounded-full transition-[height] duration-100"
                         style={{ height: `${height}px` }}
                       />
                     ))}

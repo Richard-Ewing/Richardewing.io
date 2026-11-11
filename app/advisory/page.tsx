@@ -440,11 +440,6 @@ export default function AdvisoryPage() {
                     <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-[var(--gold)] font-medium">
                       {m.tag}
                     </span>
-                    {m.featured && (
-                      <span className="font-mono text-[9.5px] tracking-[0.12em] uppercase text-[var(--gold)] font-semibold">
-                        ONGOING
-                      </span>
-                    )}
                   </div>
 
                   <h3 className="font-serif text-[24px] leading-[1.18] font-medium text-[var(--ink)] m-0">
