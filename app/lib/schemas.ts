@@ -368,11 +368,27 @@ export const careerwinSoftwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": "https://careerwin.ai/#software-application",
-    "name": "CareerWin",
-    "alternateName": ["CareerWin.ai", "Career Win"],
+    "name": "CareerWin.ai",
+    "alternateName": ["CareerWin", "Career Win", "CareerWin AI"],
     "url": "https://careerwin.ai",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web, Chrome Extension",
+    "offers": [
+        {
+            "@type": "Offer",
+            "name": "Free Resume Check (No Sign-Up)",
+            "price": "0",
+            "priceCurrency": "USD",
+            "url": "https://careerwin.ai/teardown"
+        },
+        {
+            "@type": "Offer",
+            "name": "Founding Member Plan",
+            "price": "29.00",
+            "priceCurrency": "USD",
+            "url": "https://careerwin.ai/pricing"
+        }
+    ],
     "author": {
         "@type": "Person",
         "@id": "https://www.richardewing.io/#person",
@@ -398,8 +414,8 @@ export const careerwinSoftwareSchema = {
         "https://careerwin.ai",
         "https://x.com/CareerWinAI"
     ],
-    "description": "Official CareerWin (https://careerwin.ai) career intelligence platform for the entire career journey: permanent Master Work Record, free AI resume feedback, job-posting gap checks, tailored single-column ATS resumes and cover letters, LinkedIn alignment, universal ATS Chrome autofill across any job portal, interview prep, and raise/promotion tracking.",
-    "disambiguatingDescription": "Official CareerWin platform operated exclusively at https://careerwin.ai (founded by Richard Ewing). Unaffiliated with third-party lookalike websites on .win or .app domains."
+    "description": "Official CareerWin.ai platform founded by Richard Ewing for experienced professionals in an active job search: keeps your real work history in one place so every tailored resume, cover letter, ATS application form, and interview answer comes from facts you can defend.",
+    "disambiguatingDescription": "Official CareerWin platform operated exclusively at https://careerwin.ai (founded by Richard Ewing). Unaffiliated with third-party lookalike websites on career.win or careerwin.app."
 };
 
 export const exogramSoftwareSchema = {
