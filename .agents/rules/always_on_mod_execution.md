@@ -326,6 +326,7 @@ Every report, telemetry audit, or analytics inquiry prompt MUST lead with an **O
 1. **Canonical Report Trigger**: Any user request for a "report", "Cloudflare report", "daily report", or "telemetry report" MUST execute `node .agents/scripts/run-cloudflare-report.mjs` and present all 9 pillars in Vertical 2-to-3 Column Executive Tables (with Operator Instincts readout and zero inline code pills on numbers/currencies/units).
 2. **Account-Wide CPU Ceiling**: Combined Worker CPU across `richardewing-io`, `careerwin-app`, and `exogram-www` MUST stay `<= 1.00M ms/day` (`30.00M ms/cycle` on the `$5.00` monthly plan).
 3. **3-Domain GSC Coverage**: Always query all 3 properties using candidate fallback (`sc-domain:richardewing.io`, `https://careerwin.ai/`, `sc-domain:exogram.ai`) via `ai-agents-sheets@ai-agents-495417.iam.gserviceaccount.com`.
+4. **Unprompted Shield Probes & 4-Part Strategic Synthesis**: Every report MUST automatically conclude with the `CPU Shield Verification` probe table plus 4 stacked 2-column vertical tables (`a) Needs Attention`, `b) Needs Action`, `c) Really Pay Close Attention To`, `d) Intuitions, Ideas & What You Missed`) without waiting for the user to ask.
 
 
 

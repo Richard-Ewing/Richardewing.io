@@ -331,6 +331,9 @@ Every report, telemetry audit, or analytics inquiry prompt MUST lead with an **O
 2. **Required 9-Pillar Scope & Layout**: Present all 9 pillars (Executive Readout, Worker CPU & Billing Quota Curves, 15-Day Edge Traffic & Threats, Human Pageviews & Uniques, Top 15 HTML Routes per Domain, `/schedule` & Geographies, WAF & AI/Search Crawlers, Google Search Console across all 3 domains including `https://careerwin.ai/`, Stripe Live Ledger, and 20-Endpoint Edge Cache Health) using clean Vertical 2-to-3 Column Executive Tables with zero inline backticks around numbers, currencies, or units.
 3. **Hard CPU Budget Ceiling (`<= 1.00M ms/day`)**: Enforce a strict combined Cloudflare Worker CPU budget of `<= 1.00M ms/day` (`30.00M ms/cycle` included in the `$5.00` monthly Workers Paid plan) across `richardewing-io`, `careerwin-app`, and `exogram-www`. Any trailing 12h/24h pace above `1.00M ms/day` triggers immediate edge caching and isolate optimization.
 4. **3-Domain GSC Property Resolution**: Resolve `richardewing.io` (`sc-domain:richardewing.io`), `careerwin.ai` (`https://careerwin.ai/`), and `exogram.ai` (`sc-domain:exogram.ai`) via service account `ai-agents-sheets@ai-agents-495417.iam.gserviceaccount.com` without exposing credentials.
+5. **Mandatory Unprompted Additions (Never Wait to Be Asked)**: Every report response MUST automatically include:
+   - The `CPU Shield Verification` probe table (`careerwin.ai/api/profile` `FAST-401`, `exogram.ai/mcp` HTML and JSON, `richardewing.io/api/og`, `careerwin.ai/api/og`, `/.env`, and `GPTBot` `403` WAF blocks) alongside the Endpoint Health Matrix.
+   - The **4-Part Strategic Operator Readout** stacked as 2-column vertical tables at the bottom of the report: `a) Needs Attention`, `b) Needs Action`, `c) Really Pay Close Attention To`, and `d) Intuitions, Ideas & What You Missed`.
 
 
 

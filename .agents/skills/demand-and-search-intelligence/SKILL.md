@@ -78,3 +78,5 @@ Every demand, SEO, or analytics report presented to Richard must open with the 5
 3. **The Revenue Bottleneck**: Where visitors stall between reading, running a diagnostic, opening `<ScorecardCheckoutDrawer />`, or booking on `/schedule`.
 4. **Striking-Distance & Category Moves**: Top 2 snippet-surgery wins (Pos 4 to 15) and 1 emerging 30-day pain topic to capture.
 5. **Recommended Next Move**: The single highest-return engineering or editorial action to ship next.
+
+Whenever running the canonical Cloudflare report (`node .agents/scripts/run-cloudflare-report.mjs`), always conclude with the live `CPU Shield Verification` probe table and the 4-part unprompted Operator Readout (`a) Needs Attention`, `b) Needs Action`, `c) Really Pay Close Attention To`, and `d) Intuitions, Ideas & What You Missed`) formatted as vertical 2-column tables without waiting to be asked.

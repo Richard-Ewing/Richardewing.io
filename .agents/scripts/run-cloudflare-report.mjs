@@ -187,30 +187,63 @@ async function runAudit() {
   const cycleStartDate = new Date(Date.UTC(cycleYear, cycleMonth, 2, 0, 0, 0));
   const nextCycleDate = new Date(Date.UTC(cycleMonth === 11 ? cycleYear + 1 : cycleYear, (cycleMonth + 1) % 12, 2, 0, 0, 0));
   const cycleStartIso = cycleStartDate.toISOString();
+  const cycleStartDateOnly = cycleStartIso.slice(0, 10);
+  const todayDateOnly = nowUtc.toISOString().slice(0, 10);
+  const todayStartIso = todayDateOnly + 'T00:00:00Z';
+  const todayElapsedHours = Math.max(0.05, (Date.now() - Date.parse(todayStartIso)) / 3600000);
   const past24hForCpu = new Date(Date.now() - 24 * 3600 * 1000).toISOString();
   const past12hForCpu = new Date(Date.now() - 12 * 3600 * 1000).toISOString();
-  const remainingCycleDays = Math.max(0, (nextCycleDate.getTime() - Date.now()) / (24 * 3600 * 1000));
+  const past6hForCpu = new Date(Date.now() - 6 * 3600 * 1000).toISOString();
+  const remainingCycleDays = Math.max(0.01, (nextCycleDate.getTime() - Date.now()) / (24 * 3600 * 1000));
 
   const scripts = ['richardewing-io', 'careerwin-app', 'exogram-www'];
   let totalCycleReqs = 0;
   let totalCycleCpuMs = 0;
   let total24hCpuMs = 0;
   let total12hCpuMs = 0;
+  let total6hCpuMs = 0;
   let total1hCpuMs = 0;
+  let totalTodayCpuMs = 0;
+
+  const deployTimestamps = {};
+  await Promise.all(scripts.map(async s => {
+    try {
+      const dRes = await fetch(`https://api.cloudflare.com/client/v4/accounts/${accountId}/workers/scripts/${s}/deployments`, {
+        headers,
+        signal: AbortSignal.timeout(8000),
+      }).then(r => r.json());
+      deployTimestamps[s] = dRes.result?.deployments?.[0]?.created_on || 'unknown';
+    } catch {
+      deployTimestamps[s] = 'unknown';
+    }
+  }));
 
   const qAllScripts = `
-    query GetAllScriptsUsage($accountId: String!, $cycleStart: String!, $since24h: String!, $since12h: String!, $postIso: String!, $past1h: String!, $nowIso: String!) {
+    query GetAllScriptsUsage($accountId: String!, $cycleStart: String!, $dStart: Date!, $dEnd: Date!, $todayStart: String!, $since24h: String!, $since12h: String!, $since6h: String!, $postIso: String!, $past1h: String!, $nowIso: String!) {
       viewer {
         accounts(filter: { accountTag: $accountId }) {
           cycle: workersInvocationsAdaptive(filter: { datetime_geq: $cycleStart, datetime_leq: $nowIso }, limit: 25) {
             dimensions { scriptName }
             sum { requests subrequests cpuTimeUs errors }
           }
+          daily: workersInvocationsAdaptive(filter: { date_geq: $dStart, date_leq: $dEnd }, limit: 150) {
+            dimensions { date scriptName }
+            sum { requests cpuTimeUs errors }
+          }
+          today: workersInvocationsAdaptive(filter: { datetime_geq: $todayStart, datetime_leq: $nowIso }, limit: 25) {
+            dimensions { scriptName }
+            sum { requests cpuTimeUs errors }
+            quantiles { cpuTimeP50 }
+          }
           last24h: workersInvocationsAdaptive(filter: { datetime_geq: $since24h, datetime_leq: $nowIso }, limit: 25) {
             dimensions { scriptName }
             sum { requests cpuTimeUs errors }
           }
           last12h: workersInvocationsAdaptive(filter: { datetime_geq: $since12h, datetime_leq: $nowIso }, limit: 25) {
+            dimensions { scriptName }
+            sum { requests cpuTimeUs errors }
+          }
+          last6h: workersInvocationsAdaptive(filter: { datetime_geq: $since6h, datetime_leq: $nowIso }, limit: 25) {
             dimensions { scriptName }
             sum { requests cpuTimeUs errors }
           }
@@ -240,8 +273,12 @@ async function runAudit() {
       variables: {
         accountId,
         cycleStart: cycleStartIso,
+        dStart: cycleStartDateOnly,
+        dEnd: todayDateOnly,
+        todayStart: todayStartIso,
         since24h: past24hForCpu,
         since12h: past12hForCpu,
+        since6h: past6hForCpu,
         postIso: postDeployIso,
         past1h,
         nowIso: cpuNowIso,
@@ -264,25 +301,35 @@ async function runAudit() {
 
   for (const s of scripts) {
     const sum = sumByScript(acctWorkers.cycle, s);
+    const tRow = (acctWorkers.today || []).find(r => r.dimensions?.scriptName === s);
     const s24 = sumByScript(acctWorkers.last24h, s);
     const s12 = sumByScript(acctWorkers.last12h, s);
+    const s6 = sumByScript(acctWorkers.last6h, s);
     const hSum = sumByScript(acctWorkers.h1, s);
     const cpuMs = sum.cpuTimeUs / 1000;
+    const tCpuMs = (tRow?.sum?.cpuTimeUs || 0) / 1000;
+    const p50Ms = (tRow?.quantiles?.cpuTimeP50 || 0) / 1000;
     const cpu24Ms = s24.cpuTimeUs / 1000;
     const cpu12Ms = s12.cpuTimeUs / 1000;
+    const cpu6Ms = s6.cpuTimeUs / 1000;
     const cpu1hMs = hSum.cpuTimeUs / 1000;
     totalCycleReqs += sum.requests;
     totalCycleCpuMs += cpuMs;
+    totalTodayCpuMs += tCpuMs;
     total24hCpuMs += cpu24Ms;
     total12hCpuMs += cpu12Ms;
+    total6hCpuMs += cpu6Ms;
     total1hCpuMs += cpu1hMs;
+    const todayPaceM = (((tCpuMs / todayElapsedHours) * 24) / 1e6).toFixed(3);
     const avgCpuMs = sum.requests > 0 ? (cpuMs / sum.requests).toFixed(1) : '0.0';
     const avg24Ms = s24.requests > 0 ? (cpu24Ms / s24.requests).toFixed(1) : '0.0';
     console.log(
-      `  ${s.padEnd(18)}: ${sum.requests.toLocaleString().padStart(8)} cycle reqs | ${(cpuMs / 1e6).toFixed(2).padStart(6)}M cycle CPU ms (${avgCpuMs} ms/req) | 24h: ${(cpu24Ms / 1e6).toFixed(2)}M ms (${avg24Ms} ms/req) | ${s24.errors} 24h errs (${sum.errors} cycle errs)`
+      `  ${s.padEnd(18)}: ${sum.requests.toLocaleString().padStart(8)} cycle reqs | ${(cpuMs / 1e6).toFixed(3).padStart(6)}M cycle CPU ms (${avgCpuMs} ms/req) | Today pace: ${todayPaceM}M/day (P50: ${p50Ms.toFixed(1)}ms) | 24h: ${(cpu24Ms / 1e6).toFixed(2)}M ms (${avg24Ms} ms/req) | ${hSum.errors} 60m errs / ${s24.errors} 24h errs / ${sum.errors} cycle errs | Deploy: ${deployTimestamps[s]}`
     );
   }
 
+  const remainingFreeMs = Math.max(0, 30_000_000 - totalCycleCpuMs);
+  const zeroOverageCapMs = remainingFreeMs / remainingCycleDays;
   const cpuOverageMs = Math.max(0, totalCycleCpuMs - 30_000_000);
   const reqOverage = Math.max(0, totalCycleReqs - 10_000_000);
   const cpuOverageUsd = (cpuOverageMs / 1_000_000) * 0.02;
@@ -296,22 +343,42 @@ async function runAudit() {
     totalCycleCpuMs >= 30_000_000
       ? (total24hCpuMs / 1_000_000) * 0.02
       : Math.max(0, ((total24hCpuMs - 1_000_000) / 1_000_000) * 0.02);
+  const paceTodayDaily = (totalTodayCpuMs / todayElapsedHours) * 24;
   const pace12hDaily = total12hCpuMs * 2;
+  const pace6hDaily = total6hCpuMs * 4;
   const pace1hDaily = total1hCpuMs * 24;
   const paceFlag =
     total24hCpuMs > 1_000_000
-      ? `[BUDGET PACE ALERT: ${(total24hCpuMs / 1e6).toFixed(2)}M ms/day > 1.00M ms/day cap]`
-      : `[ON BUDGET: ${(total24hCpuMs / 1e6).toFixed(2)}M ms/day <= 1.00M ms/day cap]`;
+      ? `[BUDGET PACE ALERT: ${(total24hCpuMs / 1e6).toFixed(3)}M ms/day > 1.000M ms/day cap]`
+      : `[ON BUDGET: ${(total24hCpuMs / 1e6).toFixed(3)}M ms/day <= 1.000M ms/day cap]`;
 
   console.log('---------------------------------------------------------------------------------');
-  console.log(`  Billing Cycle Window      : ${cycleStartIso.slice(0, 10)} to ${nextCycleDate.toISOString().slice(0, 10)} (${remainingCycleDays.toFixed(1)} days remaining)`);
+  console.log(`  Billing Cycle Window      : ${cycleStartDateOnly} to ${nextCycleDate.toISOString().slice(0, 10)} (${remainingCycleDays.toFixed(2)} days remaining)`);
   console.log(`  Cycle Requests Used       : ${totalCycleReqs.toLocaleString()} of 10,000,000 (${((totalCycleReqs / 10_000_000) * 100).toFixed(2)}%)`);
   console.log(`  Cycle CPU Time Used       : ${(totalCycleCpuMs / 1e6).toFixed(2)}M ms of 30.00M ms (${((totalCycleCpuMs / 30_000_000) * 100).toFixed(1)}%)`);
+  console.log(`  Remaining Free CPU        : ${(remainingFreeMs / 1e6).toFixed(2)}M ms (${(zeroOverageCapMs / 1e6).toFixed(3)}M/day zero-overage cap)`);
   console.log(`  Unbilled Usage Overage    : $${(cpuOverageUsd + reqOverageUsd).toFixed(2)} ($${cpuOverageUsd.toFixed(2)} CPU + $${reqOverageUsd.toFixed(2)} reqs; $5.00 base prepaid on 2nd)`);
-  console.log(`  Trailing 60m CPU Pace     : ${(pace1hDaily / 1e6).toFixed(2)}M ms/day`);
-  console.log(`  Trailing 12h CPU Pace     : ${(pace12hDaily / 1e6).toFixed(2)}M ms/day`);
-  console.log(`  Trailing 24h CPU Pace     : ${(total24hCpuMs / 1e6).toFixed(2)}M ms/day ($${marginal24hBurnUsd.toFixed(2)}/day marginal) ${paceFlag}`);
+  console.log(`  Trailing 60m CPU Pace     : ${(pace1hDaily / 1e6).toFixed(3)}M ms/day`);
+  console.log(`  Trailing 6h CPU Pace      : ${(pace6hDaily / 1e6).toFixed(3)}M ms/day`);
+  console.log(`  Trailing 12h CPU Pace     : ${(pace12hDaily / 1e6).toFixed(3)}M ms/day`);
+  console.log(`  Today UTC (${todayElapsedHours.toFixed(1)}h) Pace    : ${(paceTodayDaily / 1e6).toFixed(3)}M ms/day`);
+  console.log(`  Trailing 24h CPU Pace     : ${(total24hCpuMs / 1e6).toFixed(3)}M ms/day ($${marginal24hBurnUsd.toFixed(2)}/day marginal) ${paceFlag}`);
   console.log(`  End-of-Cycle Overage Est. : $${Math.max(0, projectedCycleBill - 5.0).toFixed(2)} overage (+ $5.00 next month base = $${projectedCycleBill.toFixed(2)})`);
+
+  console.log('\n  [Daily Cycle CPU Totals (UTC)]');
+  const dailyCpuTotals = {};
+  for (const r of acctWorkers.daily || []) {
+    if (!scripts.includes(r.dimensions?.scriptName)) continue;
+    const dt = r.dimensions.date;
+    if (!dailyCpuTotals[dt]) dailyCpuTotals[dt] = { cpuMs: 0, reqs: 0 };
+    dailyCpuTotals[dt].cpuMs += (r.sum?.cpuTimeUs || 0) / 1000;
+    dailyCpuTotals[dt].reqs += r.sum?.requests || 0;
+  }
+  for (const dt of Object.keys(dailyCpuTotals).sort()) {
+    const row = dailyCpuTotals[dt];
+    const tag = dt === todayDateOnly ? ` (${todayElapsedHours.toFixed(1)}h)` : ' (Closed)';
+    console.log(`    ${dt}${tag.padEnd(9)} | ${(row.cpuMs / 1e6).toFixed(3)}M ms | ${row.reqs.toLocaleString()} reqs`);
+  }
 
   console.log(`\n  [Post-Shield Telemetry since ${postDeployIso} (${postDeployHours.toFixed(2)}h elapsed)]`);
   let postTotalCpuMs = 0;
@@ -328,7 +395,7 @@ async function runAudit() {
     );
   }
   const postDailyRunRateMs = (postTotalCpuMs / postDeployHours) * 24;
-  console.log(`    Post-Shield Combined Run Rate: ${(postDailyRunRateMs / 1e6).toFixed(2)}M CPU ms/day ($${((postDailyRunRateMs / 1e6) * 0.02).toFixed(3)}/day marginal)`);
+  console.log(`    Post-Shield Combined Run Rate: ${(postDailyRunRateMs / 1e6).toFixed(3)}M CPU ms/day ($${((postDailyRunRateMs / 1e6) * 0.02).toFixed(3)}/day marginal)`);
 
   await sleep(700);
 
@@ -435,6 +502,133 @@ async function runAudit() {
     console.log(`  ${String(sg.count).padStart(4)} pageviews : /schedule [${sg.dimensions.clientCountryName} - ${sg.dimensions.clientDeviceType}]`);
   }
   console.log(`  Total Exact /schedule Views (24h): ${totalSchedPvs}`);
+
+  console.log('\n--- PILLAR 6B: WAF 403 BLOCKS & VERIFIED SEARCH/AI CRAWLERS (24H) ---');
+  try {
+    const botNowIso = new Date().toISOString();
+    const qWafBots = `
+      query GetWafAndCrawlers($z1: String!, $z2: String!, $z3: String!, $since: String!, $nowIso: String!) {
+        viewer {
+          z1: zones(filter: { zoneTag: $z1 }) {
+            status: httpRequestsAdaptiveGroups(filter: { datetime_geq: $since, datetime_leq: $nowIso }, limit: 50) {
+              count dimensions { edgeResponseStatus }
+            }
+            verified: httpRequestsAdaptiveGroups(filter: { datetime_geq: $since, datetime_leq: $nowIso, verifiedBotCategory_neq: "" }, limit: 2000) {
+              count dimensions { userAgent verifiedBotCategory edgeResponseStatus edgeResponseContentTypeName }
+            }
+            extraBots: httpRequestsAdaptiveGroups(
+              filter: {
+                datetime_geq: $since, datetime_leq: $nowIso,
+                clientRequestHTTPHost_in: ["richardewing.io", "www.richardewing.io"],
+                OR: [{ userAgent_like: "%PerplexityBot%" }, { userAgent_like: "%Claude-SearchBot%" }]
+              },
+              limit: 500
+            ) {
+              count dimensions { userAgent clientRequestPath edgeResponseStatus edgeResponseContentTypeName }
+            }
+          }
+          z2: zones(filter: { zoneTag: $z2 }) {
+            status: httpRequestsAdaptiveGroups(filter: { datetime_geq: $since, datetime_leq: $nowIso }, limit: 50) {
+              count dimensions { edgeResponseStatus }
+            }
+            verified: httpRequestsAdaptiveGroups(filter: { datetime_geq: $since, datetime_leq: $nowIso, verifiedBotCategory_neq: "" }, limit: 2000) {
+              count dimensions { userAgent verifiedBotCategory edgeResponseStatus edgeResponseContentTypeName }
+            }
+            extraBots: httpRequestsAdaptiveGroups(
+              filter: {
+                datetime_geq: $since, datetime_leq: $nowIso,
+                clientRequestHTTPHost_in: ["careerwin.ai", "www.careerwin.ai"],
+                OR: [{ userAgent_like: "%PerplexityBot%" }, { userAgent_like: "%Claude-SearchBot%" }]
+              },
+              limit: 500
+            ) {
+              count dimensions { userAgent clientRequestPath edgeResponseStatus edgeResponseContentTypeName }
+            }
+          }
+          z3: zones(filter: { zoneTag: $z3 }) {
+            status: httpRequestsAdaptiveGroups(filter: { datetime_geq: $since, datetime_leq: $nowIso }, limit: 50) {
+              count dimensions { edgeResponseStatus }
+            }
+            verified: httpRequestsAdaptiveGroups(filter: { datetime_geq: $since, datetime_leq: $nowIso, verifiedBotCategory_neq: "" }, limit: 2000) {
+              count dimensions { userAgent verifiedBotCategory edgeResponseStatus edgeResponseContentTypeName }
+            }
+            extraBots: httpRequestsAdaptiveGroups(
+              filter: {
+                datetime_geq: $since, datetime_leq: $nowIso,
+                clientRequestHTTPHost_in: ["exogram.ai", "www.exogram.ai", "docs.exogram.ai"],
+                OR: [{ userAgent_like: "%PerplexityBot%" }, { userAgent_like: "%Claude-SearchBot%" }]
+              },
+              limit: 500
+            ) {
+              count dimensions { userAgent clientRequestPath edgeResponseStatus edgeResponseContentTypeName }
+            }
+          }
+        }
+      }
+    `;
+    const resWaf = await fetch('https://api.cloudflare.com/client/v4/graphql', {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        query: qWafBots,
+        variables: { z1: zones[0].id, z2: zones[1].id, z3: zones[2].id, since: past24h, nowIso: botNowIso },
+      }),
+    }).then(r => r.json());
+
+    const trackedBots = ['bingbot', 'OAI-SearchBot', 'Applebot', 'Googlebot', 'ChatGPT-User', 'PerplexityBot', 'Claude-SearchBot'];
+    let totalWafReqs = 0;
+    let totalWaf403 = 0;
+
+    for (const [alias, z] of [['z1', zones[0]], ['z2', zones[1]], ['z3', zones[2]]]) {
+      const zNode = resWaf.data?.viewer?.[alias]?.[0] || {};
+      let zTotal = 0;
+      let z403 = 0;
+      for (const st of zNode.status || []) {
+        zTotal += st.count || 0;
+        if (st.dimensions?.edgeResponseStatus === 403) z403 += st.count || 0;
+      }
+      totalWafReqs += zTotal;
+      totalWaf403 += z403;
+      const pct = zTotal > 0 ? ((z403 / zTotal) * 100).toFixed(1) : '0.0';
+      console.log(`  WAF ${z.name.padEnd(16)}: ${String(zTotal.toLocaleString()).padStart(7)} edge reqs | ${String(z403.toLocaleString()).padStart(6)} blocked 403 (${pct}%)`);
+
+      const botMap = {};
+      for (const row of zNode.verified || []) {
+        const ua = (row.dimensions?.userAgent || '').toLowerCase();
+        const name = trackedBots.find(b => ua.includes(b.toLowerCase()));
+        if (!name) continue;
+        if (!botMap[name]) botMap[name] = { ok200: 0, html200: 0, err403: 0 };
+        if (row.dimensions.edgeResponseStatus === 200) {
+          botMap[name].ok200 += row.count;
+          if (row.dimensions.edgeResponseContentTypeName === 'html') botMap[name].html200 += row.count;
+        } else if (row.dimensions.edgeResponseStatus === 403) {
+          botMap[name].err403 += row.count;
+        }
+      }
+      for (const row of zNode.extraBots || []) {
+        const p = row.dimensions?.clientRequestPath || '';
+        if (/(\.env|wp-config|\.git|actuator|phpinfo)/i.test(p)) continue;
+        const ua = (row.dimensions?.userAgent || '').toLowerCase();
+        const name = ['PerplexityBot', 'Claude-SearchBot'].find(b => ua.includes(b.toLowerCase()));
+        if (!name) continue;
+        if (!botMap[name]) botMap[name] = { ok200: 0, html200: 0, err403: 0 };
+        if (row.dimensions.edgeResponseStatus === 200) {
+          botMap[name].ok200 += row.count;
+          if (row.dimensions.edgeResponseContentTypeName === 'html') botMap[name].html200 += row.count;
+        } else if (row.dimensions.edgeResponseStatus === 403) {
+          botMap[name].err403 += row.count;
+        }
+      }
+      const botLine = Object.entries(botMap)
+        .sort((a, b) => b[1].ok200 - a[1].ok200)
+        .map(([n, v]) => `${n}: ${v.ok200} (${v.html200} HTML, ${v.err403} 403s)`)
+        .join(' | ');
+      if (botLine) console.log(`    Crawlers: ${botLine}`);
+    }
+    console.log(`  WAF Ecosystem Total: ${totalWafReqs.toLocaleString()} edge reqs | ${totalWaf403.toLocaleString()} blocked 403`);
+  } catch (e) {
+    console.log('  WAF/Crawler query error:', e.message);
+  }
 
   await sleep(400);
 
@@ -570,7 +764,29 @@ async function runAudit() {
     console.log('  Stripe read error:', e.message);
   }
 
-  console.log('\n--- PILLAR 9: LIVE ENDPOINT HEALTH & LATENCY TEST ---');
+  console.log('\n--- PILLAR 9A: CPU SHIELD VERIFICATION (7 PROBES) ---');
+  const shieldProbes = [
+    { label: 'careerwin.ai/api/profile', url: 'https://careerwin.ai/api/profile', headers: { 'User-Agent': 'RE-Audit/1.0' } },
+    { label: 'exogram.ai/mcp [HTML]', url: 'https://exogram.ai/mcp', headers: { Accept: 'text/html', 'User-Agent': 'Mozilla/5.0' } },
+    { label: 'exogram.ai/mcp [JSON]', url: 'https://exogram.ai/mcp', headers: { Accept: 'application/json', 'User-Agent': 'RE-Audit/1.0' } },
+    { label: 'richardewing.io/api/og', url: 'https://www.richardewing.io/api/og?title=Audit', headers: { 'User-Agent': 'RE-Audit/1.0' } },
+    { label: 'careerwin.ai/api/og', url: 'https://careerwin.ai/api/og?title=Audit', headers: { 'User-Agent': 'RE-Audit/1.0' } },
+    { label: 'richardewing.io/.env', url: 'https://www.richardewing.io/.env', headers: { 'User-Agent': 'RE-Audit/1.0' } },
+    { label: 'GPTBot WAF Block', url: 'https://www.richardewing.io/', headers: { 'User-Agent': 'Mozilla/5.0 (compatible; GPTBot/1.0; +https://openai.com/gptbot)' } },
+  ];
+  await Promise.all(shieldProbes.map(async p => {
+    const t0 = Date.now();
+    try {
+      const r = await fetch(p.url, { redirect: 'manual', headers: p.headers, signal: AbortSignal.timeout(10000) });
+      const ms = Date.now() - t0;
+      const wk = r.headers.get('x-rw-edge-cache') || r.headers.get('x-cw-edge-cache') || r.headers.get('x-exogram-edge-cache') || r.headers.get('cf-cache-status') || '-';
+      console.log(`  ${p.label.padEnd(28)} -> Status: ${r.status} | Time: ${ms}ms | Result: ${wk}`);
+    } catch (e) {
+      console.log(`  ${p.label.padEnd(28)} -> Error: ${e.message}`);
+    }
+  }));
+
+  console.log('\n--- PILLAR 9B: LIVE ENDPOINT HEALTH & LATENCY TEST (21 ROUTES, BATCHED) ---');
   const endpoints = [
     { url: 'https://www.richardewing.io/', accept: 'text/html,application/xhtml+xml' },
     { url: 'https://www.richardewing.io/reality-check', accept: 'text/html,application/xhtml+xml' },
@@ -595,24 +811,28 @@ async function runAudit() {
     { url: 'https://exogram.ai/mcp', accept: 'application/json', label: 'https://exogram.ai/mcp [JSON]' },
   ];
 
-  await Promise.all(endpoints.map(async ep => {
-    const start = Date.now();
-    const label = ep.label || ep.url;
-    try {
-      const res = await fetch(ep.url, {
-        redirect: 'manual',
-        headers: { Accept: ep.accept },
-        signal: AbortSignal.timeout(8000),
-      });
-      const duration = Date.now() - start;
-      const cfCache = res.headers.get('cf-cache-status') || '-';
-      const wkCache = res.headers.get('x-rw-edge-cache') || res.headers.get('x-cw-edge-cache') || res.headers.get('x-exogram-edge-cache') || '-';
-      console.log(`  ${label.padEnd(68)} -> Status: ${res.status} | Time: ${duration}ms | CF: ${cfCache} | WK: ${wkCache}`);
-    } catch (e) {
-      console.log(`  ${label.padEnd(68)} -> Error: ${e.message}`);
-    }
-  }));
+  for (let i = 0; i < endpoints.length; i += 7) {
+    const batch = endpoints.slice(i, i + 7);
+    await Promise.all(batch.map(async ep => {
+      const start = Date.now();
+      const label = ep.label || ep.url;
+      try {
+        const res = await fetch(ep.url, {
+          redirect: 'manual',
+          headers: { Accept: ep.accept },
+          signal: AbortSignal.timeout(10000),
+        });
+        const duration = Date.now() - start;
+        const cfCache = res.headers.get('cf-cache-status') || '-';
+        const wkCache = res.headers.get('x-rw-edge-cache') || res.headers.get('x-cw-edge-cache') || res.headers.get('x-exogram-edge-cache') || '-';
+        console.log(`  ${label.padEnd(68)} -> Status: ${res.status} | Time: ${duration}ms | CF: ${cfCache} | WK: ${wkCache}`);
+      } catch (e) {
+        console.log(`  ${label.padEnd(68)} -> Error: ${e.message}`);
+      }
+    }));
+  }
 
+  console.log('\n--- PILLAR 10 (MANDATORY IN EVERY REPORT RESPONSE WITHOUT ASKING): APPEND 4-PART STRATEGIC SYNTHESIS: a) Needs Attention | b) Needs Action | c) Really Pay Close Attention To | d) Intuitions, Ideas & What You Missed ---');
   process.exit(0);
 }
 
