@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-    const commonAllows = ['/', '/_next/static/', '/api/buy/', '/api/csp/', '/llms.txt', '/llms-full.txt'];
+    const commonAllows = ['/', '/ads.txt', '/_next/static/', '/api/buy/', '/api/csp/', '/llms.txt', '/llms-full.txt'];
     const commonDisallows = [
         '/admin/',
         '/api/',
@@ -46,6 +46,13 @@ export default function robots(): MetadataRoute.Robots {
                     'DuckDuckBot',
                 ],
                 allow: commonAllows,
+                disallow: commonDisallows,
+            },
+
+            // === GOOGLE ADSENSE & PUBLISHER VERIFICATION CRAWLERS ===
+            {
+                userAgent: ['Mediapartners-Google', 'AdsBot-Google', 'AdsBot-Google-Mobile'],
+                allow: ['/', '/ads.txt', '/_next/static/'],
                 disallow: commonDisallows,
             },
 

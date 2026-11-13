@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import TechnologyIntegrationDocs from '@/components/partnerships/TechnologyIntegrationDocs';
 import BrandAssetsKit from '@/components/partnerships/BrandAssetsKit';
+import SponsorshipMediaKit from '@/components/partnerships/SponsorshipMediaKit';
 
 export const metadata: Metadata = {
     title: 'Advisory & Technology Partnerships',
@@ -173,6 +174,12 @@ export default function PartnershipsPage() {
                             >
                                 ↓ Licensing Tiers
                             </a>
+                            <a
+                                href="#sponsor"
+                                className="px-3.5 py-1.5 rounded-lg bg-cyan-50 hover:bg-cyan-100 text-cyan-900 text-xs font-mono font-bold transition-colors border border-cyan-300"
+                            >
+                                ↓ Direct Ad Sponsorships
+                            </a>
                             <Link
                                 href="/partnerships/integration-docs"
                                 className="px-3.5 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-mono font-bold transition-colors border border-emerald-300 shadow-2xs"
@@ -307,7 +314,10 @@ export default function PartnershipsPage() {
                         </div>
                     </section>
 
-                    {/* Section 3: Technology Integration Documentation */}
+                    {/* Section 3: Direct Paid B2B Sponsorship Media Kit */}
+                    <SponsorshipMediaKit />
+
+                    {/* Section 4: Technology Integration Documentation */}
                     <TechnologyIntegrationDocs />
 
                     {/* Section 4: Brand & Media Kit */}

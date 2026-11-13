@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import AdvisoryCTA from '@/components/AdvisoryCTA';
+import EditorialAdSlot from '@/components/monetization/EditorialAdSlot';
 import BlogContent from './blog-content';
 
 export const metadata: Metadata = {
@@ -61,6 +62,8 @@ export default function BlogPage() {
                 </header>
 
                 <BlogContent />
+
+                <EditorialAdSlot pillar="blog" contextLabel="AI & Engineering Economics Essays" />
 
                 <div className="pt-8 border-t border-[var(--line)]">
                     <AdvisoryCTA variant="educational" />

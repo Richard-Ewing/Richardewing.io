@@ -6,6 +6,7 @@ import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import SoftwarePhaseTransitionVisual from '@/app/components/visualizations/SoftwarePhaseTransitionVisual';
 import ConceptProvenanceSection from '@/app/components/concepts/ConceptProvenanceSection';
 import ConceptDownstreamSolution from '@/app/components/concepts/ConceptDownstreamSolution';
+import EditorialAdSlot from '@/components/monetization/EditorialAdSlot';
 import MultiHopGraphExplorer from '@/app/components/concepts/MultiHopGraphExplorer';
 
 import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
@@ -594,6 +595,8 @@ export default async function ConceptDetailPage({ params }: ConceptPageProps) {
 
         {/* Downstream Operational Realization */}
         <ConceptDownstreamSolution concept={concept} />
+
+        <EditorialAdSlot pillar="concepts" contextLabel={concept.domain} />
 
         {/* Recommended Citation & Attribution Matrix */}
         <section className="space-y-4 bg-[var(--paper2,#ebe7dc)] border border-[var(--line,rgba(36,51,43,0.16))] rounded-3xl p-8 shadow-sm">

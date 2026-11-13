@@ -3,7 +3,7 @@ import { NextFetchEvent, NextRequest, NextResponse } from "next/server";
 import { resolveEdgeRedirect, VALID_COMPARE_TIER_A_SLUGS } from "./app/lib/edge-redirects-manifest";
 
 const CITATION_BOT_REGEX =
-  /\b(oai-searchbot|chatgpt-user|claude-searchbot|claude-user|perplexitybot|perplexity-user|amzn-searchbot|amzn-user|duckassistbot|youbot|exasearchbot|google-notebooklm|googlebot|bingbot)\b/i;
+  /\b(oai-searchbot|chatgpt-user|claude-searchbot|claude-user|perplexitybot|perplexity-user|amzn-searchbot|amzn-user|duckassistbot|youbot|exasearchbot|google-notebooklm|googlebot|bingbot|mediapartners-google|adsbot-google)\b/i;
 
 const TRAINING_SCRAPER_REGEX =
   /\b(gptbot|claudebot|anthropic-ai|google-extended|applebot-extended|google-cloudvertexbot|ccbot|amazonbot|meta-externalagent|facebookbot|cohere-ai|cohere-training-data-crawler|bytespider|tiktokspider|petalbot|sogou|baiduspider|diffbot|imagesiftbot|omgilibot|omgili|timpibot|ai2bot|chatglm-spider|deepseekbot|grokbot|kimibot|moonshotbot|semrushbot|ahrefsbot|mj12bot|dotbot)\b/i;
@@ -11,6 +11,7 @@ const TRAINING_SCRAPER_REGEX =
 function isBlockedTrainingOrBulkScraper(userAgent: string, pathname: string): boolean {
   if (
     pathname === '/robots.txt' ||
+    pathname === '/ads.txt' ||
     pathname === '/llms.txt' ||
     pathname === '/llms-full.txt' ||
     pathname === '/sitemap.xml' ||

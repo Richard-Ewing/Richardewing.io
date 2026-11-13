@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ConceptExplorer } from '@/components/concepts/concept-explorer';
+import EditorialAdSlot from '@/components/monetization/EditorialAdSlot';
 
 export const metadata: Metadata = {
   title: 'Canonical Concepts & Research Graph',
@@ -98,6 +99,10 @@ export default function ResearchConceptsIndexPage() {
       <section className="section">
         <ConceptExplorer />
       </section>
+
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 my-10">
+        <EditorialAdSlot pillar="concepts" contextLabel="Canonical Research Graph" />
+      </div>
 
       {/* Closing CTA */}
       <section className="closing-cta">

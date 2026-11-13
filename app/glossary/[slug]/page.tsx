@@ -16,6 +16,7 @@ import ProgrammaticAnswersRelated from '@/components/ProgrammaticAnswersRelated'
 import { NewsletterForm } from '../../components/newsletter-form';
 import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import { GooglePreferredBadge } from '../../components/GooglePreferredBadge';
+import EditorialAdSlot from '@/components/monetization/EditorialAdSlot';
 import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
 import { EXECUTIVE_MATRICES } from '../executive-matrices';
 
@@ -939,6 +940,10 @@ export default async function GlossaryTermPage({ params }: Props) {
                         </div>
                     </div>
                 </section>
+
+                <div className="my-10">
+                    <EditorialAdSlot pillar="glossary" contextLabel={term.title} />
+                </div>
 
                 {/* Google Preferred Source Official Credential */}
                 <GooglePreferredBadge variant="card" className="my-10" />

@@ -661,6 +661,9 @@ export default function LegalPage() {
                                     <div className="p-3 bg-[var(--paper,#f4f1e9)]/60 border border-[var(--line,#e2ded4)] rounded-lg">
                                         <strong>Cloudflare &amp; Supabase:</strong> Cloud edge hosting, database operations, and server infrastructure.
                                     </div>
+                                    <div className="p-3 bg-[var(--paper,#f4f1e9)]/60 border border-[var(--line,#e2ded4)] rounded-lg sm:col-span-2">
+                                        <strong>Google AdSense (Scoped Editorial Directories Only):</strong> Contextual and personalized advertising delivery on /glossary, /blog, and /concepts when advertising cookies are accepted.
+                                    </div>
                                 </div>
                             </div>
 
@@ -683,6 +686,53 @@ export default function LegalPage() {
                                 <p>
                                     To submit a verified data subject request for access, correction, or deletion, please email <code>richardewing@exogram.ai</code> with the subject line &ldquo;Privacy Rights Request&rdquo;. We will respond within thirty (30) calendar days as required by law.
                                 </p>
+                            </div>
+
+                            <div>
+                                <h3 className="text-base font-bold text-[var(--forest2,#162e26)] mb-2">9.7 Advertising Cookies &amp; Google AdSense Opt-Out</h3>
+                                <p className="mb-2">
+                                    Third-party vendors, including Google, use cookies to serve ads based on a user&rsquo;s prior visits to <code>richardewing.io</code> or other websites when optional advertising cookies are accepted on our public research directories (<code>/glossary</code>, <code>/blog</code>, and <code>/concepts</code>). Core executive advisory, pricing, diagnostic calculators, and Vault pages never load third-party advertising tags.
+                                </p>
+                                <p className="mb-2">
+                                    Google&rsquo;s use of advertising cookies enables Google and its partners to serve ads to visitors based on their visits to these directories and/or other sites across the Internet.
+                                </p>
+                                <p className="mb-3">
+                                    You may opt out of personalized advertising at any time by choosing <strong>Essential Only</strong> in our privacy notice, adjusting your preferences in{' '}
+                                    <a
+                                        href="https://adssettings.google.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-[var(--forest2,#162e26)] font-bold underline hover:text-[var(--gold,#b77a35)]"
+                                    >
+                                        Google Ads Settings
+                                    </a>
+                                    , or opting out of third-party vendor advertising cookies at{' '}
+                                    <a
+                                        href="https://www.aboutads.info/choices/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-[var(--forest2,#162e26)] font-bold underline hover:text-[var(--gold,#b77a35)]"
+                                    >
+                                        aboutads.info/choices
+                                    </a>
+                                    .
+                                </p>
+                                <div className="flex flex-wrap items-center gap-3 pt-1">
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            if (typeof window !== 'undefined') {
+                                                window.localStorage.setItem('cookie_consent_accepted', 'true');
+                                                window.localStorage.setItem('cookie_consent_mode', 'essential');
+                                                window.dispatchEvent(new Event('rw-cookie-consent-change'));
+                                                window.dispatchEvent(new Event('rw-open-cookie-settings'));
+                                            }
+                                        }}
+                                        className="min-h-[44px] px-4 py-2 rounded-xl border border-zinc-400 bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-mono font-bold uppercase tracking-wider transition-colors"
+                                    >
+                                        Switch to Essential Only &amp; Open Preferences
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </section>

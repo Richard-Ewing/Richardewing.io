@@ -5,6 +5,7 @@ import { glossaryTerms } from '../../terms';
 import { PILLARS, CATEGORY_MAP, KEEP_TERMS } from '../../pillarsMapping';
 import ShareButtons from '@/components/ShareButtons';
 import { DiagnosticBridge } from '@/components/DiagnosticBridge';
+import EditorialAdSlot from '@/components/monetization/EditorialAdSlot';
 
 import { clampSeoTitle, formatSeoDescription } from '@/app/lib/seo-metadata';
 
@@ -152,6 +153,10 @@ export default async function PillarPage({ params }: Props) {
                             )}
                         </div>
                     ))}
+                </div>
+
+                <div className="my-12">
+                    <EditorialAdSlot pillar="glossary" contextLabel={pillar.name} />
                 </div>
 
                 <div className="mt-24">

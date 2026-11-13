@@ -157,6 +157,7 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
         const __rwIsOg = __rwLowerPath === "/api/og" || __rwLowerPath.startsWith("/api/og/");
         const __rwIsDirectiveFile =
             __rwLowerPath === "/robots.txt" ||
+            __rwLowerPath === "/ads.txt" ||
             __rwLowerPath === "/llms.txt" ||
             __rwLowerPath === "/llms-full.txt" ||
             __rwLowerPath === "/sitemap.xml" ||
@@ -179,7 +180,9 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 "google-notebooklm",
                 "googlebot",
                 "bingbot",
-                "applebot"
+                "applebot",
+                "mediapartners-google",
+                "adsbot-google"
             ];
             const __rwBlockedBots = [
                 "gptbot",

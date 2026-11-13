@@ -236,6 +236,11 @@ const SOURCE_CONFIGS: Record<string, DiagnosticSourceConfig> = {
     badgeLabel: 'Boardroom Rollout Audit',
     description: 'Select a working session below to stress-test your generated AI Integration Roadmap, sequence Phase 1 quick wins, or scope a fixed-price 21-day build sprint.',
   },
+  'sponsorship': {
+    title: 'Direct Editorial Sponsorship & Media Kit Onboarding',
+    badgeLabel: '375 Scoped Technical Pages',
+    description: 'Select a short onboarding slot below to confirm category exclusivity, creative copy, and launch dates across /glossary, /blog, and /concepts.',
+  },
 };
 
 function formatLeakDisplay(rawLeak: string | null): string | null {

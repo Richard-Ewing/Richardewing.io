@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import GlossaryContent from './glossary-content';
+import EditorialAdSlot from '@/components/monetization/EditorialAdSlot';
 import { glossaryTerms } from './terms';
 import { KEEP_TERMS, CATEGORY_MAP } from './pillarsMapping';
 
@@ -69,6 +70,10 @@ export default function GlossaryPage() {
             <section className="section !pt-12">
                 <GlossaryContent />
             </section>
+
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 my-10">
+                <EditorialAdSlot pillar="glossary" contextLabel="AI & Product Economics Glossary Hub" />
+            </div>
 
             {/* Closing CTA */}
             <section className="closing-cta">

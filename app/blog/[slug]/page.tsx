@@ -8,6 +8,7 @@ import { categoryColors } from '@/lib/blog-types';
 import { frameworks } from '@/app/lib/data';
 import GovernancePathways from '@/components/semantic/GovernancePathways';
 import RelatedContent from '@/components/RelatedContent';
+import EditorialAdSlot from '@/components/monetization/EditorialAdSlot';
 import CiteThisPage from '@/components/seo/CiteThisPage';
 import { articleSchemaTemplate } from '@/app/lib/schemas';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
@@ -150,6 +151,10 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                 ">
                     <div dangerouslySetInnerHTML={{ __html: safeHtml }} />
                 </article>
+
+                <div className="my-10">
+                    <EditorialAdSlot pillar="blog" contextLabel={article.category} />
+                </div>
 
                 {/* Inline Newsletter CTA */}
                 <div className="my-12 p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5 text-center">
