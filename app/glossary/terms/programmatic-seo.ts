@@ -5,13 +5,18 @@ export const programmaticSeoTerms: GlossaryTerm[] = [
         slug: 'calculating-roai',
         title: 'ROAI (Return on AI Investment)',
         category: 'AI & Machine Learning',
-        definition: `ROAI (Return on AI Investment) is the financial metric for evaluating generative models, autonomous agents, and RAG pipelines. Unlike traditional software ROI, which is deterministic, ROAI must account for probabilistic outcomes, hallucination costs, and variable inference burn rates.\n\nROAI = (Human Wage Savings + Net New Revenue) - (Inference Cost + Human Remediation Cost + Model Fine-Tuning CapEx). A positive ROAI requires the value of the automated workflow to strictly exceed the CapEx of model training plus the ongoing OpEx of token inference and hallucination remediation.`,
-        whyItMatters: `Deploying AI for AI's sake is financial negligence. If a deterministic Python script or SQL query can solve the problem with 100% accuracy for $0 in inference costs, building an LLM agent to do it destroys value. Reserving heavy AI models strictly for high-variance problems ensures the human wage offset justifies the inference burn.`,
+        definition: `ROAI (Return on AI Investment) is the net financial return of an AI system, calculated by dividing verified payroll savings and net new revenue minus model API, cloud, and human review costs by total investment.\n\n**The CFO ROAI Formula:**\nROAI = (Verified Labor Savings + Net Retained or Expanded ARR) - (Model Token Inference Cost + Human QA Rework + Ongoing Maintenance Burn)\n\nOn paper, a Customer Support Manager automates 40% of Tier-1 tickets and projects an instant payback. Then the finance audit arrives: two senior specialists spend 25 hours a week fixing hallucinated refund promises, and frontier model bills climb $14,000 a month. Test your actual numbers in the [Enterprise AI ROI & ROAI Calculator](/roi-calculator) or inspect your seat margins inside the [AI Unit Economics Calculator](/ai-unit-economics).`,
+        whyItMatters: `Deploying AI because competitors announced an agent destroys operating cash if unit costs rise faster than realized payroll savings. When a straightforward database rule handles the workflow with 100% accuracy for zero variable token fees, sending every request through a reasoning model burns margin on every ticket.`,
         faqs: [
-            { question: 'What is ROAI?', answer: 'Return on AI Investment. It measures the financial return of AI deployments by subtracting inference costs and human remediation costs from wage savings and new revenue.' },
-            { question: 'Why is ROAI different from traditional ROI?', answer: 'Traditional software has fixed hosting costs and deterministic outputs. AI has variable token inference costs and probabilistic outputs (hallucinations) that require expensive human remediation.' }
+            { question: 'What does ROAI stand for?', answer: 'ROAI stands for Return on AI Investment. It measures realized financial yield after subtracting ongoing model token fees, cloud retrieval, integration engineering, and human error-correction payroll.' },
+            { question: 'How is ROAI different from traditional software ROI?', answer: 'Traditional software scales on fixed server budgets with predictable behavior. AI carries variable per-query model token charges and probabilistic mistakes that require human review payroll before value reaches the P&L.' },
+            { question: 'What is a healthy ROAI payback window for CFOs?', answer: 'Boards and CFOs generally expect verified net savings or margin expansion to recover initial implementation and integration costs within 6 to 9 months, with gross margins remaining above 70%.' }
         ],
-        relatedTerms: ['agent-drift-taxonomy', 'technical-debt', 'inference-cost']
+        relatedTerms: ['ai-unit-economics', 'agent-drift-taxonomy', 'technical-debt', 'inference-cost'],
+        relatedTools: [
+            { name: 'Enterprise AI ROI & ROAI Calculator', url: '/roi-calculator' },
+            { name: 'AI Unit Economics Calculator', url: '/ai-unit-economics' }
+        ]
     },
     {
         slug: 'incident-management-cost',

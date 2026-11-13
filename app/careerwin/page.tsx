@@ -6,7 +6,7 @@ import { RESEARCH_CORPUS } from '@/app/lib/research-corpus';
 import { careerwinSoftwareSchema } from '@/app/lib/schemas';
 
 export const metadata: Metadata = {
-  title: 'CareerWin.ai (Official) | Honest Resume Tailoring',
+  title: 'CareerWin.ai | Honest Resume Tailoring',
   description:
     'Official CareerWin.ai by Richard Ewing: check your resume free with no sign-up, tailor 1-page resumes from real facts, autofill ATS forms, and track jobs.',
   alternates: { canonical: 'https://www.richardewing.io/careerwin' },

@@ -52,14 +52,19 @@ export const orphanFixTerms: GlossaryTerm[] = [
         title: 'AI Unit Economics',
         slug: 'ai-unit-economics',
         tier: 'pillar',
-        definition: `While reviewing SaaS margins for portfolio companies, I observed a repeating vulnerability: impressive generative AI features that demoed perfectly but quietly destroyed unit economics. Unlike traditional software with near-zero marginal costs, AI unit economics requires measuring the per-interaction profitability where every token processed, API call made, and vector query run costs real cents.\n\n**The AI Unit Economics Formula:**\nRevenue per AI interaction − Cost per AI interaction = Margin per interaction\n\nCosts include: LLM API fees, embedding generation, vector database queries, retrieval pipeline compute, post-processing, monitoring, and error handling. Many AI features are margin-negative  -  they cost more to serve than the revenue they generate. Read more at [How to Calculate Your AI Unit Economics in 30 Minutes](/blog/ai-unit-economics-30-minutes).`,
-        whyItMatters: 'Most AI product failures are economic, not technical. Teams build impressive AI capabilities without modeling whether the feature can be profitable at scale. The AUEB tool prevents the most expensive mistake in AI product development.',
-        howToMeasure: 'Calculate fully loaded cost per AI interaction (API + compute + retrieval + monitoring). Compare to revenue per interaction. Track margin trend over time.',
+        definition: `AI unit economics measures gross profit per customer and per AI interaction by subtracting variable model token, embedding, retrieval, and human review costs from the subscription or usage revenue collected.\n\nWhile auditing SaaS P&L sheets for portfolio companies, I kept seeing the same blind spot: flagship AI assistants that closed new enterprise logos while quietly turning top accounts cash-negative. Traditional software carries near-zero marginal serving cost, so heavy users improve gross margin. Generative AI flips that math because every prompt, vector lookup, and retry costs real money.\n\n**The AI Unit Economics Formula:**\nGross Margin per AI Interaction = Revenue per Interaction - (Model Token API Fees + Retrieval Compute + Human QA & Support Cost)\n\nPlug your own seat price, cache rate, and model mix into the live [AI Unit Economics Calculator & P&L Model](/ai-unit-economics), or review our step-by-step audit guide in [How to Calculate Your AI Unit Economics in 30 Minutes](/blog/ai-unit-economics-30-minutes).`,
+        whyItMatters: 'Most AI feature rollouts fail in the CFO quarterly review rather than in QA. Engineering teams ship helpful assistants without capping per-tenant token spend, forcing low-usage subscribers to subsidize power accounts until overall product gross margin slips below 50%.',
+        howToMeasure: 'Track request-level token spend by customer tier and feature ID, add retrieval and error-handling overhead, and compare fully burdened COGS against realized ARR per seat.',
         category: 'AI & Machine Learning',
-        relatedTerms: ['cost-of-predictivity', 'gross-margin-preservation', 'evergreen-ratio', 'model-right-sizing'],
-        relatedTools: [{ name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }],
+        relatedTerms: ['calculating-roai', 'cost-of-predictivity', 'gross-margin-preservation', 'model-right-sizing'],
+        relatedTools: [
+            { name: 'AI Unit Economics Calculator & P&L Model', url: '/ai-unit-economics' },
+            { name: 'AI Unit Economics Benchmark (AUEB)', url: '/tools/aueb' }
+        ],
         faqs: [
-            { question: 'What percentage of AI features are margin-negative?', answer: 'Industry estimates suggest 60-80% of AI features in production are margin-negative when fully loaded costs are included.' },
+            { question: 'How do you calculate AI unit economics?', answer: 'Subtract variable model token fees, vector retrieval compute, caching overhead, and human support remediation from subscription or credit revenue per interaction and per customer.' },
+            { question: 'What percentage of AI features run margin-negative?', answer: 'Industry audits show 60% to 80% of unmonitored flat-rate AI features turn margin-negative on top decile power users once variable token and support costs are included.' },
+            { question: 'What is a healthy gross margin for an AI SaaS company?', answer: 'Venture and private equity benchmarks expect AI-enabled B2B software to protect at least 65% to 75% gross margin through semantic caching, tiered model routing, and usage caps.' }
         ],
     },
     {

@@ -567,4 +567,34 @@ if (mw.includes('__OPENNEXT_404_CACHE_INTERCEPT__')) {
   fs.writeFileSync(mwPath, mw, 'utf8');
   console.log('[patch-worker] Injected /404 -> /_not-found StaticAssetsIncrementalCache interception into .open-next/middleware/handler.mjs.');
 }
+
+// Minify OpenNext server & middleware handlers via esbuild to cut cold-isolate V8 parse CPU
+try {
+  const { createRequire } = await import('node:module');
+  const require = createRequire(import.meta.url);
+  const esbuild = require('esbuild');
+  const handlerTargets = [
+    path.join(openNextDir, 'server-functions', 'default', 'handler.mjs'),
+    path.join(openNextDir, 'middleware', 'handler.mjs'),
+  ];
+  for (const hFile of handlerTargets) {
+    if (fs.existsSync(hFile)) {
+      const origSize = fs.statSync(hFile).size;
+      const rawCode = fs.readFileSync(hFile, 'utf8');
+      const minified = esbuild.transformSync(rawCode, {
+        minifyWhitespace: true,
+        minifySyntax: true,
+        minifyIdentifiers: false,
+      });
+      fs.writeFileSync(hFile, minified.code, 'utf8');
+      const newSize = fs.statSync(hFile).size;
+      console.log(
+        `[patch-worker] Minified ${path.basename(path.dirname(hFile))}/${path.basename(hFile)}: ${(origSize / 1024 / 1024).toFixed(2)} MB -> ${(newSize / 1024 / 1024).toFixed(2)} MB`
+      );
+    }
+  }
+} catch (minErr) {
+  console.warn('[patch-worker] Warning minifying OpenNext handlers:', minErr.message);
+}
+
 process.exit(0);

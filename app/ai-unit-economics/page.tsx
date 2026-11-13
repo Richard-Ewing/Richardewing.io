@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import AUEBTool from '@/app/tools/aueb/content';
+import ScorecardCheckoutDrawer from '@/app/components/ScorecardCheckoutDrawer';
 import {
   EditorialCard,
   MetricPanel,
@@ -11,26 +12,26 @@ import {
 import { ArrowRight, CheckCircle2, ShieldAlert, Cpu, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'AI Unit Economics & SaaS Margin Model',
+  title: 'AI Unit Economics Calculator & P&L Model',
   description:
-    'Model AI inference costs per query, find your exact SaaS gross margin collapse point, and stress-test seat vs usage pricing in our interactive calculator.',
+    'Calculate cost per AI query, find where power users turn $30 SaaS seats unprofitable, and test seat vs credit pricing in our free live P&L calculator.',
   alternates: {
     canonical: 'https://www.richardewing.io/ai-unit-economics',
   },
   openGraph: {
-    title: 'AI Unit Economics & SaaS Margin Model | Richard Ewing',
+    title: 'AI Unit Economics Calculator & P&L Model | Richard Ewing',
     description:
-      'Model AI inference costs per query, find your exact SaaS gross margin collapse point, and stress-test seat vs usage pricing in our interactive calculator.',
+      'Calculate cost per AI query, find where power users turn $30 SaaS seats unprofitable, and test seat vs credit pricing in our free live P&L calculator.',
     url: 'https://www.richardewing.io/ai-unit-economics',
     type: 'website',
-    images: [{ url: 'https://www.richardewing.io/api/og?title=AI+Unit+Economics+%26+Margin+Model&category=Topical+Authority+Hub' }],
+    images: [{ url: 'https://www.richardewing.io/api/og?title=AI+Unit+Economics+Calculator+%26+P%26L+Model&category=Topical+Authority+Hub' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Unit Economics & SaaS Margin Model | Richard Ewing',
+    title: 'AI Unit Economics Calculator & P&L Model | Richard Ewing',
     description:
-      'Model AI inference costs per query, find your exact SaaS gross margin collapse point, and stress-test seat vs usage pricing in our interactive calculator.',
-    images: ['https://www.richardewing.io/api/og?title=AI+Unit+Economics+%26+Margin+Model&category=Topical+Authority+Hub'],
+      'Calculate cost per AI query, find where power users turn $30 SaaS seats unprofitable, and test seat vs credit pricing in our free live P&L calculator.',
+    images: ['https://www.richardewing.io/api/og?title=AI+Unit+Economics+Calculator+%26+P%26L+Model&category=Topical+Authority+Hub'],
   },
 };
 
@@ -47,7 +48,46 @@ export default function AIUnitEconomicsPage() {
       name: 'Richard Ewing',
     },
     description:
-      'Diagnostic model to quantify inference token costs, calculate gross margin collapse thresholds, and establish sustainable pricing.',
+      'Interactive P&L calculator to measure cost per AI query, detect where heavy users turn SaaS seats unprofitable, and model seat vs credit pricing.',
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How does AI inference cost differ from traditional cloud hosting COGS?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Traditional SaaS cloud costs scale sub-linearly with user count: serving an extra dashboard view costs fractions of a cent. Generative AI creates direct variable compute cost on every prompt, cutting into gross margin whenever power users run heavy daily workflows.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'When should a software company move from flat-rate pricing to usage-based pricing?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Transition the moment customer token variance exceeds 40% of average customer cost, or when the top 5% of accounts drive over 60% of monthly model spending and push seat-level gross margins negative.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How much can semantic caching save on monthly AI API bills?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Across support, search, and document workflows, 35% to 55% of queries share identical intent. Serving repeat answers from edge cache cuts monthly provider bills by 30% to 50% and drops response latency under 25 milliseconds.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How do we audit our token costs without slowing down engineering sprints?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Tag existing request logs by customer tier and feature ID for 14 days to expose routing waste, oversized prompts, and negative-margin accounts without rewriting application logic.',
+        },
+      },
+    ],
   };
 
   const breadcrumbSchema = {
@@ -77,6 +117,10 @@ export default function AIUnitEconomicsPage() {
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
@@ -101,16 +145,30 @@ export default function AIUnitEconomicsPage() {
         <div className="flex flex-wrap items-center justify-center gap-4">
           <a
             href="#calculator"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#162e26] text-white font-medium hover:bg-[#29473b] transition-all text-sm shadow-sm"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#162e26] text-white font-medium hover:bg-[#29473b] transition-colors text-sm shadow-sm"
           >
             Launch Interactive Benchmark ↓
           </a>
           <Link
             href="/contact#subject=P%26L+Teardown"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white border border-[#24332b]/20 text-[#162e26] font-medium hover:bg-[#ebe7dc] transition-all text-sm"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white border border-[#24332b]/20 text-[#162e26] font-medium hover:bg-[#ebe7dc] transition-colors text-sm"
           >
             Book $450 Executive Teardown ↗
           </Link>
+        </div>
+
+        <div className="mt-8 max-w-3xl mx-auto rounded-2xl bg-white border border-[#24332b]/15 p-5 text-left shadow-xs">
+          <p itemProp="description" className="font-sans text-sm text-[#3d4942] leading-relaxed mb-3">
+            <strong>Executive Definition:</strong> AI unit economics measures gross profit per customer and per AI query after subtracting model API fees, retrieval compute, and human error-correction payroll from recurring subscription or credit revenue.
+          </p>
+          <div className="flex flex-wrap gap-4 text-xs font-mono">
+            <Link href="/glossary/ai-unit-economics" className="text-[#162e26] font-bold underline underline-offset-4 hover:text-[#b77a35]">
+              Read the AI Unit Economics Definition &amp; Formula →
+            </Link>
+            <Link href="/glossary/calculating-roai" className="text-[#162e26] font-bold underline underline-offset-4 hover:text-[#b77a35]">
+              Compare with Return on AI Investment (ROAI) →
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -227,6 +285,14 @@ export default function AIUnitEconomicsPage() {
           </Suspense>
         </div>
       </section>
+
+      <div className="max-w-6xl mx-auto px-6 mb-20">
+        <ScorecardCheckoutDrawer
+          source="ai-unit-economics-hub"
+          metricLabel="Recoverable Margin Dividend"
+          metricValue="$180K/yr (+28% Gross)"
+        />
+      </div>
 
       {/* Operational Playbook */}
       <section className="max-w-5xl mx-auto px-6 mb-20">
@@ -385,14 +451,14 @@ export default function AIUnitEconomicsPage() {
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <Link
                 href="/contact#subject=P%26L+Teardown"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#b77a35] text-white font-bold hover:bg-[#a36b2d] transition-all text-base shadow-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#b77a35] text-white font-bold hover:bg-[#a36b2d] transition-colors text-base shadow-md"
               >
                 Book 1-on-1 Teardown ($450)
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/pricing"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-medium border border-white/20 transition-all text-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-medium border border-white/20 transition-colors text-sm"
               >
                 Inspect All Advisory Tiers ↗
               </Link>

@@ -323,4 +323,14 @@ Every report, telemetry audit, or analytics inquiry prompt MUST lead with an **O
 4. **Fail-Closed Exogram Governance, `L1 -> L2 -> L3` Provenance & Retrieval/Curriculum Health (`lib/exogram.ts`, `run-retrieval-eval.mjs`, `check-curriculum-health.mjs`)**: `evaluateAction()` fails closed (`decision: 'BLOCKED'`) on missing credentials, timeouts, or upstream errors. Track `L1 -> L2 -> L3` provenance chains, benchmark retrieval via `run-retrieval-eval.mjs` (`Recall@k`, `Precision@k`, `nDCG@k`, `MRR`, `Hit@k`), and fingerprint Academy Moat modules via `check-curriculum-health.mjs`.
 5. **Air-Gapped Step 6 Distribution Queue (`compile-distribution-pack.mjs` + `docs/sql/20261101_sovereign_distribution_queue.sql`)**: Generate HWS v2.0-linted LinkedIn, X, and Scorecard drafts (`status: "pending_human_approval"`) backed by Postgres RLS (`service_role` only), `human_approval_required_before_dispatch`, and `FOR UPDATE SKIP LOCKED` atomic job claiming.
 
+---
+
+## 21. Canonical 9-Pillar Cloudflare Report & 1.00M CPU/Day Budget Protocol
+
+1. **Canonical Report Trigger**: Whenever `@richardewing` asks for a "report", "Cloudflare report", "daily report", or "telemetry report", ALWAYS execute `node .agents/scripts/run-cloudflare-report.mjs` (or `.scratch/run-full-audit-live.mjs`, which forwards to it). Never substitute partial or generic telemetry scripts.
+2. **Required 9-Pillar Scope & Layout**: Present all 9 pillars (Executive Readout, Worker CPU & Billing Quota Curves, 15-Day Edge Traffic & Threats, Human Pageviews & Uniques, Top 15 HTML Routes per Domain, `/schedule` & Geographies, WAF & AI/Search Crawlers, Google Search Console across all 3 domains including `https://careerwin.ai/`, Stripe Live Ledger, and 20-Endpoint Edge Cache Health) using clean Vertical 2-to-3 Column Executive Tables with zero inline backticks around numbers, currencies, or units.
+3. **Hard CPU Budget Ceiling (`<= 1.00M ms/day`)**: Enforce a strict combined Cloudflare Worker CPU budget of `<= 1.00M ms/day` (`30.00M ms/cycle` included in the `$5.00` monthly Workers Paid plan) across `richardewing-io`, `careerwin-app`, and `exogram-www`. Any trailing 12h/24h pace above `1.00M ms/day` triggers immediate edge caching and isolate optimization.
+4. **3-Domain GSC Property Resolution**: Resolve `richardewing.io` (`sc-domain:richardewing.io`), `careerwin.ai` (`https://careerwin.ai/`), and `exogram.ai` (`sc-domain:exogram.ai`) via service account `ai-agents-sheets@ai-agents-495417.iam.gserviceaccount.com` without exposing credentials.
+
+
 

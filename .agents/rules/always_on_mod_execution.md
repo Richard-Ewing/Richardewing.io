@@ -319,4 +319,13 @@ Every report, telemetry audit, or analytics inquiry prompt MUST lead with an **O
 4. **Fail-Closed Exogram Governance, `L1 -> L2 -> L3` Provenance & Retrieval/Curriculum Health (`lib/exogram.ts`, `run-retrieval-eval.mjs`, `check-curriculum-health.mjs`)**: `evaluateAction()` fails closed (`decision: 'BLOCKED'`) on missing credentials, timeouts, or upstream errors. Track `L1 -> L2 -> L3` provenance chains, benchmark retrieval via `run-retrieval-eval.mjs` (`Recall@k`, `Precision@k`, `nDCG@k`, `MRR`, `Hit@k`), and fingerprint Academy Moat modules via `check-curriculum-health.mjs`.
 5. **Air-Gapped Step 6 Distribution Queue (`compile-distribution-pack.mjs` + `docs/sql/20261101_sovereign_distribution_queue.sql`)**: Generate HWS v2.0-linted LinkedIn, X, and Scorecard drafts (`status: "pending_human_approval"`) backed by Postgres RLS (`service_role` only), `human_approval_required_before_dispatch`, and `FOR UPDATE SKIP LOCKED` atomic job claiming.
 
+---
+
+## 20. Canonical 9-Pillar Cloudflare Report & 1.00M CPU/Day Budget Protocol
+
+1. **Canonical Report Trigger**: Any user request for a "report", "Cloudflare report", "daily report", or "telemetry report" MUST execute `node .agents/scripts/run-cloudflare-report.mjs` and present all 9 pillars in Vertical 2-to-3 Column Executive Tables (with Operator Instincts readout and zero inline code pills on numbers/currencies/units).
+2. **Account-Wide CPU Ceiling**: Combined Worker CPU across `richardewing-io`, `careerwin-app`, and `exogram-www` MUST stay `<= 1.00M ms/day` (`30.00M ms/cycle` on the `$5.00` monthly plan).
+3. **3-Domain GSC Coverage**: Always query all 3 properties using candidate fallback (`sc-domain:richardewing.io`, `https://careerwin.ai/`, `sc-domain:exogram.ai`) via `ai-agents-sheets@ai-agents-495417.iam.gserviceaccount.com`.
+
+
 

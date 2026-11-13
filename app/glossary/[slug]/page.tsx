@@ -23,8 +23,8 @@ type Props = { params: Promise<{ slug: string }> };
 
 const GLOSSARY_SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
     'calculating-roai': {
-        title: 'ROAI Formula: Return on AI Investment',
-        description: 'Calculate ROAI (Return on AI Investment) using net gross margin gains, LLM inference COGS, integration labor, and ongoing maintenance burn.',
+        title: 'ROAI Meaning, Formula & AI ROI Guide',
+        description: 'What is ROAI? Return on AI Investment equals verified wage and revenue gains minus model API, cloud, and QA costs. Run the CFO formula and calculator.',
     },
     'ic-vs-management-track': {
         title: 'IC vs Management Track: Pay & Levels',
@@ -35,8 +35,8 @@ const GLOSSARY_SEO_OVERRIDES: Record<string, { title: string; description: strin
         description: 'Compare software engineer levels 1 to 4 and L3 to L8 Staff/Principal ranks: scope, compensation bands, promotion gates, and architecture ownership.',
     },
     'ai-unit-economics': {
-        title: 'AI Unit Economics: SaaS Cost & Margin',
-        description: 'Model AI unit economics for SaaS software: token inference COGS, cache hit rates, and gross margin floors across $29 to $99 seats and credit tiers.',
+        title: 'What Is AI Unit Economics? SaaS Formula',
+        description: 'AI unit economics measures profit per AI query after subtracting model token, retrieval, and support costs. See 2026 SaaS gross margin benchmarks.',
     },
     'model-right-sizing': {
         title: 'Model Right-Sizing: Cut LLM Inference Cost',

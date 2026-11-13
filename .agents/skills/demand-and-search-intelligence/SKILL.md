@@ -7,6 +7,7 @@ description: Closed-loop buyer demand, search analytics, AI crawler citation tra
 
 **Companion Skill**: [`seo-architecture`](file:///d:/Antigravity_RichardEwing.io/.agents/skills/seo-architecture/SKILL.md) (On-Page SEO/GEO/AEO Formatting Rules)  
 **Telemetry Script**: [`pull-demand-telemetry.mjs`](file:///d:/Antigravity_RichardEwing.io/.agents/scripts/pull-demand-telemetry.mjs)  
+**Canonical 9-Pillar Cloudflare Report**: [`run-cloudflare-report.mjs`](file:///d:/Antigravity_RichardEwing.io/.agents/scripts/run-cloudflare-report.mjs)  
 **Discoverability Probe**: [`run-ai-discoverability-study.mjs`](file:///d:/Antigravity_RichardEwing.io/.agents/scripts/run-ai-discoverability-study.mjs)  
 
 On-page SEO checklists only govern formatting. This skill governs **the other half of the system**: discovering what Chief Financial Officers (CFOs), Chief Operating Officers (COOs), VPs of Operations, Directors of Finance, Customer Support Managers, and Engineering Managers are actually searching for, complaining about after hours, clicking on, and paying to fix.

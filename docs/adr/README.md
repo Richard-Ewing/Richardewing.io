@@ -67,6 +67,7 @@ Negative/Considerations:
 | [ADR-0020](ADR-0020-clean-room-9system-assimilation-streaming-ui-and-provenance-ledger.md) | Clean-Room 9-System Assimilation, Streaming Generative UI, and Provenance Ledger | Accepted | @richardewing, Steve Jobs, Elon Musk, Jeff Bezos, Jensen Huang, Dan Guido, Brad Smith, Code Architect, QA Auditor | 2026-11-01 |
 | [ADR-0021](ADR-0021-standalone-pay-to-reveal-products-and-sealed-envelope-checkout.md) | Standalone Zero-Gate Pay-to-Reveal Products and Sealed-Envelope Checkout | Accepted | @richardewing, Steve Jobs, Paul Graham, Keith Rabois, Dan Guido, Brad Smith, Aravind Srinivas, Karri Saarinen, Code Architect, QA Auditor | 2026-11-02 |
 | [ADR-0022](ADR-0022-gsc-redirect-404-recovery-and-edge-cache-host-isolation.md) | GSC Redirect 404 Recovery, Single-Hop 301 Manifest, and Edge Host Cache Isolation | Accepted | @richardewing, Steve Jobs, Jensen Huang, Aravind Srinivas, Lily Ray, Dan Guido, Code Architect, QA Auditor | 2026-11-06 |
+| [ADR-0023](ADR-0023-cross-domain-cpu-budget-mcp-hub-and-ctr-surgery.md) | Cross-Domain 1.00M CPU Budget Governance, Exogram MCP Hub, and ROAI/AUEB CTR Surgery | Accepted | @richardewing, Steve Jobs, Paul Graham, Jensen Huang, Aravind Srinivas, Keith Rabois, Code Architect, QA Auditor | 2026-11-13 |
 
 
 

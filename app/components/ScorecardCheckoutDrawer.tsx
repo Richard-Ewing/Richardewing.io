@@ -49,7 +49,7 @@ export default function ScorecardCheckoutDrawer({
                     <a
                         href={kit29Url}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener noreferrer nofollow"
                         className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg bg-[var(--gold)] text-zinc-950 font-sans font-bold text-xs hover:opacity-95 transition"
                     >
                         <span>1. DIY Survival Kit + Workspace</span>
@@ -58,7 +58,7 @@ export default function ScorecardCheckoutDrawer({
                     <a
                         href={gutCheckUrl}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener noreferrer nofollow"
                         className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-white font-sans font-bold text-xs transition"
                     >
                         <span>2. Live 60-Min Unstick Session</span>
@@ -67,7 +67,7 @@ export default function ScorecardCheckoutDrawer({
                     <a
                         href={sprint2500Url}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener noreferrer nofollow"
                         className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg bg-white/5 hover:bg-white/15 border border-white/15 text-zinc-200 font-sans font-semibold text-xs transition"
                     >
                         <span>3. 14-Day Automation / P&amp;L Sprint</span>
@@ -154,7 +154,7 @@ export default function ScorecardCheckoutDrawer({
                         <a
                             href={selectedKit === '29' ? kit29Url : kit79Url}
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel="noopener noreferrer nofollow"
                             className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-wider transition shadow-sm"
                         >
                             {selectedKit === '29'
@@ -194,11 +194,14 @@ export default function ScorecardCheckoutDrawer({
                         <a
                             href={gutCheckUrl}
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel="noopener noreferrer nofollow"
                             className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#b89249] hover:bg-[#c9a35a] text-zinc-950 font-bold text-xs uppercase tracking-wider transition shadow-sm"
                         >
                             Book 60-Min 1-on-1 Session ($450) ↗
                         </a>
+                        <p className="text-center text-[10px] font-mono text-zinc-300">
+                            Automatic PDF tax invoice included for CFO and corporate card expensing.
+                        </p>
                         <Link
                             href="/services#gut_check"
                             className="block text-center text-[11px] font-mono text-zinc-300 hover:text-white underline"
@@ -232,7 +235,7 @@ export default function ScorecardCheckoutDrawer({
                             <a
                                 href={sprint2500Url}
                                 target="_blank"
-                                rel="noopener noreferrer"
+                                rel="noopener noreferrer nofollow"
                                 className="inline-flex items-center justify-center px-3 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white font-bold text-[11px] uppercase tracking-wider transition text-center"
                             >
                                 14-Day Sprint ($2.5K) ↗
@@ -240,12 +243,15 @@ export default function ScorecardCheckoutDrawer({
                             <a
                                 href={sprint7500Url}
                                 target="_blank"
-                                rel="noopener noreferrer"
+                                rel="noopener noreferrer nofollow"
                                 className="inline-flex items-center justify-center px-3 py-2.5 rounded-xl bg-[#1f3b2c] hover:opacity-95 text-white font-bold text-[11px] uppercase tracking-wider transition text-center"
                             >
                                 21-Day Build ($7.5K) ↗
                             </a>
                         </div>
+                        <p className="text-center text-[10px] font-mono text-zinc-600">
+                            Automatic PDF tax invoice included for CFO and corporate card expensing.
+                        </p>
                         <Link
                             href={`/schedule?source=${encodeURIComponent(resolvedSource)}${metricValue ? `&leak=${encodeURIComponent(metricValue)}` : ''}`}
                             className="block text-center text-[11px] font-mono text-zinc-700 hover:text-zinc-950 underline pt-1"
