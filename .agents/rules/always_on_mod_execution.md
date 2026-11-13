@@ -321,12 +321,12 @@ Every report, telemetry audit, or analytics inquiry prompt MUST lead with an **O
 
 ---
 
-## 20. Canonical 9-Pillar Cloudflare Report & 1.00M CPU/Day Budget Protocol
+## 20. Canonical 10-Pillar Cloudflare Report & 1.00M CPU/Day Budget Protocol
 
-1. **Canonical Report Trigger**: Any user request for a "report", "Cloudflare report", "daily report", or "telemetry report" MUST execute `node .agents/scripts/run-cloudflare-report.mjs` and present all 9 pillars in Vertical 2-to-3 Column Executive Tables (with Operator Instincts readout and zero inline code pills on numbers/currencies/units).
-2. **Account-Wide CPU Ceiling**: Combined Worker CPU across `richardewing-io`, `careerwin-app`, and `exogram-www` MUST stay `<= 1.00M ms/day` (`30.00M ms/cycle` on the `$5.00` monthly plan).
+1. **Canonical Report Trigger**: Any user request for a "report", "Cloudflare report", "daily report", or "telemetry report" MUST execute `node .agents/scripts/run-cloudflare-report.mjs` and present all 10 pillars (including 21-Endpoint Edge Cache Health and window-separated 60-minute, 24-hour, and billing-cycle Worker error attribution) in Vertical 2-to-3 Column Executive Tables with zero inline code pills on numbers, currencies, or units.
+2. **Account-Wide CPU Ceiling**: Combined Worker CPU across `richardewing-io`, `careerwin-app`, and `exogram-www` MUST stay at or below **1.00M ms/day** (**30.00M ms/cycle** on the **\$5.00** monthly plan), surfacing the exact zero-overage daily cap from remaining free CPU.
 3. **3-Domain GSC Coverage**: Always query all 3 properties using candidate fallback (`sc-domain:richardewing.io`, `https://careerwin.ai/`, `sc-domain:exogram.ai`) via `ai-agents-sheets@ai-agents-495417.iam.gserviceaccount.com`.
-4. **Unprompted Shield Probes & 4-Part Strategic Synthesis**: Every report MUST automatically conclude with the `CPU Shield Verification` probe table plus 4 stacked 2-column vertical tables (`a) Needs Attention`, `b) Needs Action`, `c) Really Pay Close Attention To`, `d) Intuitions, Ideas & What You Missed`) without waiting for the user to ask.
+4. **Unprompted Shield Probes & 4-Part Strategic Synthesis**: Every report MUST automatically conclude with the 7-probe `CPU Shield Verification` table plus 4 stacked 2-column vertical tables (`a) Needs Attention`, `b) Needs Action`, `c) Really Pay Close Attention To`, and `d) Intuitions, Ideas & What You Missed`) without waiting to be asked.
 
 
 

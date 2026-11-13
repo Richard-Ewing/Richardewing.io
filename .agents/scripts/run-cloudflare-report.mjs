@@ -781,7 +781,7 @@ async function runAudit() {
       const ms = Date.now() - t0;
       const cf = (r.headers.get('cf-cache-status') || '').toUpperCase();
       const rawWk = r.headers.get('x-rw-edge-cache') || r.headers.get('x-cw-edge-cache') || r.headers.get('x-exogram-edge-cache') || '';
-      const wk = cf === 'HIT' && (!rawWk || rawWk.toUpperCase() === 'MISS') ? 'CF-HIT' : (rawWk || cf || '-');
+      const wk = ['HIT', 'STALE', 'REVALIDATED'].includes(cf) && (!rawWk || rawWk.toUpperCase() === 'MISS') ? 'CF-HIT' : (rawWk || cf || '-');
       console.log(`  ${p.label.padEnd(28)} -> Status: ${r.status} | Time: ${ms}ms | Result: ${wk}`);
     } catch (e) {
       console.log(`  ${p.label.padEnd(28)} -> Error: ${e.message}`);

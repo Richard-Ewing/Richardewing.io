@@ -7,7 +7,7 @@ description: Closed-loop buyer demand, search analytics, AI crawler citation tra
 
 **Companion Skill**: [`seo-architecture`](file:///d:/Antigravity_RichardEwing.io/.agents/skills/seo-architecture/SKILL.md) (On-Page SEO/GEO/AEO Formatting Rules)  
 **Telemetry Script**: [`pull-demand-telemetry.mjs`](file:///d:/Antigravity_RichardEwing.io/.agents/scripts/pull-demand-telemetry.mjs)  
-**Canonical 9-Pillar Cloudflare Report**: [`run-cloudflare-report.mjs`](file:///d:/Antigravity_RichardEwing.io/.agents/scripts/run-cloudflare-report.mjs)  
+**Canonical 10-Pillar Cloudflare Report**: [`run-cloudflare-report.mjs`](file:///d:/Antigravity_RichardEwing.io/.agents/scripts/run-cloudflare-report.mjs)  
 **Discoverability Probe**: [`run-ai-discoverability-study.mjs`](file:///d:/Antigravity_RichardEwing.io/.agents/scripts/run-ai-discoverability-study.mjs)  
 
 On-page SEO checklists only govern formatting. This skill governs **the other half of the system**: discovering what Chief Financial Officers (CFOs), Chief Operating Officers (COOs), VPs of Operations, Directors of Finance, Customer Support Managers, and Engineering Managers are actually searching for, complaining about after hours, clicking on, and paying to fix.
@@ -79,4 +79,4 @@ Every demand, SEO, or analytics report presented to Richard must open with the 5
 4. **Striking-Distance & Category Moves**: Top 2 snippet-surgery wins (Pos 4 to 15) and 1 emerging 30-day pain topic to capture.
 5. **Recommended Next Move**: The single highest-return engineering or editorial action to ship next.
 
-Whenever running the canonical Cloudflare report (`node .agents/scripts/run-cloudflare-report.mjs`), always conclude with the live `CPU Shield Verification` probe table and the 4-part unprompted Operator Readout (`a) Needs Attention`, `b) Needs Action`, `c) Really Pay Close Attention To`, and `d) Intuitions, Ideas & What You Missed`) formatted as vertical 2-column tables without waiting to be asked.
+Whenever running the canonical 10-pillar Cloudflare report (`node .agents/scripts/run-cloudflare-report.mjs`), include all 21-endpoint edge cache health checks, separate 60-minute, 24-hour, and billing-cycle Worker errors, and always conclude with the live 7-probe `CPU Shield Verification` table plus the 4-part unprompted Operator Readout (`a) Needs Attention`, `b) Needs Action`, `c) Really Pay Close Attention To`, and `d) Intuitions, Ideas & What You Missed`) formatted as vertical 2-column tables without waiting to be asked.
