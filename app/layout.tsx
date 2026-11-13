@@ -72,6 +72,7 @@ export const metadata: Metadata = {
     'ai-content-declaration': 'original',
     'ai-training-allowed': 'no',
     'ai-citation-preferred': 'yes',
+    'google-adsense-account': 'ca-pub-9421469136745918',
   },
 
   verification: {

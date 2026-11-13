@@ -17,15 +17,16 @@ Implement a scoped, route-guarded monetization and direct sponsorship subsystem 
 1. **Pure Routing Allowlist & Sponsorship Registry (`lib/monetization/sponsorship-config.ts`)**:
    - Define `isAdAllowedPathname(rawPathname)` strictly allowing exact index paths and nested article paths under Glossary, Blog, and Canonical Concepts while normalizing trailing slashes and excluding query parameters.
    - Store verified pillar traffic figures (`PILLAR_TELEMETRY`), fixed monthly packages (`SPONSORSHIP_PACKAGES`: Glossary Pillar Exclusive at \$1,500/mo, Essays & Canonical Concepts at \$1,500/mo, Category Exclusive Bundle at \$2,500/mo), and `ACTIVE_DIRECT_SPONSORS` for zero-auction direct house takeovers.
-   - Normalize publisher IDs (`normalizePublisherId`, `toAdsTxtSellerId`) and resolve environment slot IDs (`getAdSenseSlotId`) without crashing when `NEXT_PUBLIC_ADSENSE_CLIENT_ID` is unset.
+   - Export verified public publisher constants (`DEFAULT_ADSENSE_PUBLISHER_ID = 'ca-pub-9421469136745918'`), `resolvePublisherId`, `resolveAdsTxtSellerId`, `normalizePublisherId`, `toAdsTxtSellerId`, and `getAdSenseSlotId` cleanly so `/ads.txt` and ownership meta emit `ca-pub-9421469136745918` immediately while allowing environment overrides (`NEXT_PUBLIC_ADSENSE_CLIENT_ID`).
 
 2. **3-Tier Fail-Closed Client Ad Component (`components/monetization/EditorialAdSlot.tsx`)**:
    - Enforce runtime pathname verification via `usePathname()` and `isAdAllowedPathname` as a fail-closed second guard.
    - Render in strict priority order: Tier 1 active direct sponsor card (zero external script calls), Tier 2 lazy intersection-observed Google AdSense unit (`<ins className="adsbygoogle">`) loaded dynamically ONLY after explicit `all` cookie consent and public `NEXT_PUBLIC_ADSENSE_CLIENT_ID` configuration with a 2.5-second `MutationObserver` and height fallback, and Tier 3 self-serve Sponsor This Research Directory card linking to `/partnerships?pillar=<pillar>#sponsor`.
    - Mount `<EditorialAdSlot />` exclusively in `app/glossary/page.tsx`, `app/glossary/pillars/[slug]/page.tsx`, `app/glossary/[slug]/page.tsx`, `app/blog/page.tsx`, `app/blog/[slug]/page.tsx`, `app/concepts/page.tsx`, and `app/concepts/[slug]/page.tsx`, strictly additive and preserving all prose, metadata, schemas, and canonical structure on protected glossary routes. Never add global ad scripts to `app/layout.tsx`.
 
-3. **4-Layer Edge & Privacy Clearance (`app/ads.txt/route.ts`, `app/robots.ts`, `middleware.ts`, `scripts/patch-worker.mjs`, Cloudflare WAF Rule #3, `app/components/CookieConsent.tsx`, `app/legal/content.tsx`)**:
-   - Serve dynamic IAB `ads.txt` v1.1 (`text/plain`) from `app/ads.txt/route.ts`.
+3. **4-Layer Edge & Privacy Clearance (`app/ads.txt/route.ts`, `app/robots.ts`, `middleware.ts`, `scripts/patch-worker.mjs`, Cloudflare WAF Rule #3, `app/components/CookieConsent.tsx`, `app/legal/content.tsx`, `app/layout.tsx`)**:
+   - Serve dynamic IAB `ads.txt` v1.1 (`text/plain`) from `app/ads.txt/route.ts` emitting `google.com, pub-9421469136745918, DIRECT, f08c47fec0942fa0`.
+   - Emit passive site-ownership meta tag `<meta name="google-adsense-account" content="ca-pub-9421469136745918">` via `metadata.other` in `app/layout.tsx` without loading any ad script or Auto Ads globally.
    - Allow `Mediapartners-Google`, `AdsBot-Google`, `AdsBot-Google-Mobile`, and `/ads.txt` across `app/robots.ts`, `middleware.ts`, `scripts/patch-worker.mjs` (both `__rwIsDirectiveFile` and `__rwCitationBots`), and live Cloudflare WAF Rule #3 while preserving WAF Rules #1 (`Block Scrapers`) and #2 (`AI Crawl Control`).
    - Upgrade `app/components/CookieConsent.tsx` to a 2-button bar (`Essential Only` vs `Accept All`) broadcasting `rw-cookie-consent-change`, and add Google AdSense cookie disclosures and opt-out links (`https://adssettings.google.com`, `https://www.aboutads.info/choices/`) to `app/legal/content.tsx`.
 
@@ -49,6 +50,6 @@ Positive:
 - Establishes full GDPR/CCPA consent signaling (`cookie_consent_mode`) and transparent Privacy Policy disclosures in `app/legal/content.tsx` prior to loading any advertising third-party script.
 
 Negative/Considerations:
-- Activation of live Google AdSense auctions still requires the human publisher to complete personal Google login, W-9 tax submission, identity verification, and bank payout setup inside AdSense, then set `NEXT_PUBLIC_ADSENSE_CLIENT_ID` (and optional per-pillar slot IDs) and keep Google Auto Ads switched OFF in the AdSense console.
+- Activation of live Google AdSense auctions still requires the human publisher inside Google AdSense (`adsense.google.com`) to add `richardewing.io` under Sites, click Verify and Request review, keep Auto Ads switched OFF, and provide created manual Display Ad unit IDs (`NEXT_PUBLIC_ADSENSE_SLOT_GLOSSARY`, `NEXT_PUBLIC_ADSENSE_SLOT_BLOG`, `NEXT_PUBLIC_ADSENSE_SLOT_CONCEPTS`). Until slot IDs are configured, `EditorialAdSlot` renders Tier 3 house sponsorship cards with zero external ad network calls.
 - Because `EditorialAdSlot` dynamically injects `pagead2.googlesyndication.com/pagead/js/adsbygoogle.js` only on whitelisted editorial routes after `Accept All` consent and viewport intersection, first-impression fill timing depends on intersection trigger plus consent state.
 - Any future update to OpenNext worker generation or Cloudflare Custom WAF rulesets must preserve `__rwIsDirectiveFile` (`/ads.txt`) and `Mediapartners-Google` / `AdsBot-Google` allowances so ad crawler verification does not regress.

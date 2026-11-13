@@ -9,7 +9,7 @@ import {
   getActiveDirectSponsor,
   getAdSenseSlotId,
   isAdAllowedPathname,
-  normalizePublisherId,
+  resolvePublisherId,
 } from '@/lib/monetization/sponsorship-config';
 
 declare global {
@@ -51,7 +51,7 @@ export default function EditorialAdSlot({
 
   const allowed = isAdAllowedPathname(pathname);
   const directSponsor = getActiveDirectSponsor(pillar);
-  const clientId = normalizePublisherId(process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID);
+  const clientId = resolvePublisherId(process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID);
   const resolvedSlotId = getAdSenseSlotId(pillar, slotId);
 
   const shouldUseAdSense = Boolean(

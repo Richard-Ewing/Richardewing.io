@@ -17,6 +17,9 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  "vars": {
+    "NEXT_PUBLIC_ADSENSE_CLIENT_ID": "ca-pub-9421469136745918"
+  },
   "routes": [
     { "pattern": "richardewing.io/*", "zone_name": "richardewing.io" },
     { "pattern": "www.richardewing.io/*", "zone_name": "richardewing.io" }

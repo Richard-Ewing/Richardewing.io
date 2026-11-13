@@ -101,6 +101,8 @@ export const PILLAR_TELEMETRY: Record<
   },
 };
 
+export const DEFAULT_ADSENSE_PUBLISHER_ID = 'ca-pub-9421469136745918';
+
 const PUBLISHER_ID_REGEX = /^(?:ca-)?pub-(\d{10,20})$/;
 
 export function isAdAllowedPathname(rawPathname: string | null | undefined): boolean {
@@ -131,6 +133,21 @@ export function toAdsTxtSellerId(raw?: string | null): string | null {
   const match = trimmed.match(PUBLISHER_ID_REGEX);
   if (!match) return null;
   return `pub-${match[1]}`;
+}
+
+export function resolvePublisherId(raw?: string | null): string {
+  return (
+    normalizePublisherId(raw ?? process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID) ||
+    DEFAULT_ADSENSE_PUBLISHER_ID
+  );
+}
+
+export function resolveAdsTxtSellerId(raw?: string | null): string {
+  return (
+    toAdsTxtSellerId(raw ?? process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID) ||
+    toAdsTxtSellerId(DEFAULT_ADSENSE_PUBLISHER_ID) ||
+    'pub-9421469136745918'
+  );
 }
 
 export function getAdSenseSlotId(pillar: AdPillar, overrideSlotId?: string): string | null {

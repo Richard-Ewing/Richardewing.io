@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { toAdsTxtSellerId } from '@/lib/monetization/sponsorship-config';
+import { resolveAdsTxtSellerId } from '@/lib/monetization/sponsorship-config';
 
 export const dynamic = 'force-dynamic';
 
@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic';
 const GOOGLE_CERT_ID = 'f08c47fec0942fa0';
 
 export async function GET() {
-  const sellerId = toAdsTxtSellerId(process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID);
+  const sellerId = resolveAdsTxtSellerId(process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID);
   const extraLinesRaw = process.env.ADS_TXT_EXTRA_LINES || '';
 
   const lines: string[] = [
@@ -15,13 +15,8 @@ export async function GET() {
     '# Scoped strictly to /glossary/*, /blog/*, and /concepts/* editorial directories.',
     '# Direct Sponsorship Inquiries: https://www.richardewing.io/partnerships#sponsor',
     '',
+    `google.com, ${sellerId}, DIRECT, ${GOOGLE_CERT_ID}`,
   ];
-
-  if (sellerId) {
-    lines.push(`google.com, ${sellerId}, DIRECT, ${GOOGLE_CERT_ID}`);
-  } else {
-    lines.push('# Google AdSense publisher account registration pending activation.');
-  }
 
   if (extraLinesRaw.trim()) {
     const extraEntries = extraLinesRaw
