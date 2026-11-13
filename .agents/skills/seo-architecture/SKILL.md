@@ -73,6 +73,7 @@ description: Enforces strict formulas for Meta Titles (<60 chars), Meta Descript
 
 ## 12. Zero Mid-Sentence Meta Description Truncation
 - NEVER use `.slice(0, 155)` or `.substring(0, 155)` on long article or framework definitions to generate `metadata.description`, `openGraph.description`, or `twitter.description`.
+- NEVER append trailing parenthetical keyword snippets (`(${kwSnippet})`) before length-clamping a meta description, and NEVER split sentences using naive `/[.!?]\s/` regexes that break `vs.`, `e.g.`, `i.e.`, or `U.S.` abbreviations.
 - Every route must define a complete, active-voice sentence between 135 and 155 characters.
 
 ## 13. JSON-LD Entity Graph (`sameAs`) & Asset Existence Invariant
@@ -125,5 +126,14 @@ description: Enforces strict formulas for Meta Titles (<60 chars), Meta Descript
 ## 19. Cloudflare Real HTML Document Load Telemetry Invariant
 - **Asset Isolation**: Cloudflare Edge analytics record every hit to static JavaScript chunks, CSS bundles, font assets, and client-side prefetch pings. Never conflate gross edge requests with unique human visitors or HTML document reads.
 - **Document Load Filtering**: Always isolate requests where `Content-Type` is `text/html` or filter on non-asset document paths (`/`, `/articles/*`, `/tools/*`, `/for-cfos`, etc.) when evaluating real user demand, search crawler crawl rates, and bot traffic.
+
+## 20. Public HTML `X-Robots-Tag` Hygiene & Native Bing Ownership
+- **Public Route Header Rule**: NEVER emit `X-Robots-Tag: noai, noimageai` on indexable public `200 OK` HTML routes or `/sitemap.xml` across any owned domain when Bing Copilot, ChatGPT Search, or Perplexity citations are desired. Enforce AI training restrictions via `Content-Signal: ai-train=no, search=yes, ai-input=yes` plus deterministic `403` blocking of foundation-model training UAs (`GPTBot`, `ClaudeBot`, `Google-Extended`, `CCBot`, `Bytespider`).
+- **Single IndexNow Key Invariant**: Keep exactly one active IndexNow `.txt` verification file in `public/` matching the deployment ping script.
+- **Native Verification Redundancy**: Every domain MUST carry `<meta name="msvalidate.01">` directly in root layout metadata alongside a verified DNS `sc-domain:` property in GSC (never rely solely on URL-prefix GSC imports).
+
+## 21. OpenAI ChatGPT Business Hub 9-Field Product Feed Parity
+- **Public 200 OK Crawlability**: Every SKU `url` in an OpenAI Product Feed must return `HTTP 200 OK` with `index, follow` to unauthenticated bots (`OAI-SearchBot`, `ChatGPT-User`). Never point a Product Feed SKU at auth-gated routes (`/vault`) that issue `307` redirects to `/sign-in`.
+- **Schema Parity**: On-page `Schema.org/Product` or `Offer` JSON-LD `price` (`XX.XX USD`) and `availability` (`in_stock` <-> `InStock`, `pre_order` <-> `PreOrder`) must match the uploaded 9-field TSV row verbatim.
 
 

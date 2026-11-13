@@ -8,6 +8,7 @@ export type Persona =
 export interface SpokeQuery {
     questionSlug: string;
     questionHeadline: string;
+  seoTitle?: string;
     answerHtml: string;
     recommendedProductId: string;
     upsellHeadline: string;
@@ -30,6 +31,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'multi-agent-orchestration-coordination',
                     questionHeadline: 'We\'re hitting the limits of "one agent + tools." The next problem is coordination?',
+                    seoTitle: 'Multi-Agent Orchestration & Coordination',
                     answerHtml: `
                         <p>When engineers first build AI agents, they typically rely on a single LLM running a ReAct (Reasoning and Acting) loop with access to multiple tools. This "God Agent" architecture collapses in production. As you add more tools, the context window bloats, reasoning degrades, and the single agent inevitably suffers from tool-selection paralysis or infinite loops.</p>
                         
@@ -63,6 +65,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'mcp-model-context-protocol-importance',
                     questionHeadline: 'Why MCP (Model Context Protocol) matters if you want to build real AI Agents?',
+                    seoTitle: 'Why Model Context Protocol (MCP) Matters',
                     answerHtml: `
                         <p>Before MCP, connecting an AI agent to an enterprise data source (like Snowflake, Jira, or a local filesystem) required writing custom integration code, managing proprietary API keys, and manually formatting the context window. This resulted in brittle, unscalable spaghetti code that broke every time an API endpoint changed.</p>
                         
@@ -98,6 +101,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'dependency-hell',
                     questionHeadline: 'How do you define and escape dependency hell in enterprise architecture?',
+                    seoTitle: 'Escaping Enterprise Dependency Hell',
                     answerHtml: `<p>Dependency hell occurs when software packages rely on specific, mutually exclusive, or deeply nested versions of other software packages, creating an unresolvable gridlock that prevents updates or deployments.</p>
         <h3 class="text-xl font-bold mt-8 mb-4">The Architectural Root Cause</h3>
         <p>Dependency hell is almost always a symptom of <strong>tight coupling</strong> and a lack of boundary enforcement. When microservices share common libraries instead of communicating via versioned APIs, or when monoliths import hundreds of external un-pinned packages, you create a fragile dependency graph where one upgrade breaks ten other things.</p>
@@ -133,6 +137,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'roi-of-monolith-to-microservices',
                     questionHeadline: 'How to calculate the financial ROI of migrating from a monolith to microservices?',
+                    seoTitle: 'Monolith to Microservices Financial ROI',
                     answerHtml: `
                         <p>Most Platform Engineers fail to secure budget for massive microservice migrations because they present technical arguments to financial executives. Pitching "massive scalability" or "domain decoupling" to a CFO will not secure Capital Expenditure (CapEx). The true financial ROI of a microservices migration is derived entirely from the reduction of the <strong>Coordination Tax</strong>.</p>
                         
@@ -190,6 +195,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'serverless-vs-containers-cost',
                     questionHeadline: 'Serverless vs Containers: Which architecture has better cost scaling economics?',
+                    seoTitle: 'Serverless vs Containers Cost Economics',
                     answerHtml: `
                         <p>The Serverless vs Containers debate is heavily misunderstood. It is not an infrastructure decision; it is a fundamental unit economics calculation pitting Operational Scaling against Capital Expenditure.</p>
                         
@@ -243,6 +249,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'dependency-hell',
                     questionHeadline: 'What is Dependency Hell and how much does it cost in enterprise software?',
+                    seoTitle: 'What Dependency Hell Costs Enterprises',
                     answerHtml: `
                         <p><strong>Dependency Hell</strong> occurs when an application's required libraries, microservices, or external packages form a brittle, deeply nested web of conflicting versions. In enterprise environments, this isn't just an annoyance for developers - it's a critical bottleneck that actively drains capitalized engineering hours (CapEx) and brings product velocity to a violent halt.</p>
                         
@@ -284,6 +291,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'incident-management-cost',
                     questionHeadline: 'How do you accurately measure the true financial cost of a Sev-1 incident?',
+                    seoTitle: 'True Financial Cost of Sev-1 Incidents',
                     answerHtml: `<p>Incident Management is often viewed purely as an operational function (PagerDuty alerts, war rooms, post-mortems). However, to the CEO, CFO, and Board of Directors, incidents are unbudgeted financial liabilities that actively destroy enterprise valuation through SLA penalties, churn, and diverted R&D capital.</p>
         <h3 class="text-xl font-bold mt-8 mb-4">The Hidden OpEx Drain</h3>
         <p>The cost of downtime isn't just lost transactions during the outage window. It is the cost of context switching. When a Sev-1 incident occurs, you are pulling 10 highly paid engineers off feature development. After the incident, the subsequent post-mortem and remediation sprint completely derails the roadmap.</p>
@@ -326,6 +334,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'why-replacing-developers-with-ai-agents-fails',
                     questionHeadline: 'Why does replacing entire dev teams with autonomous AI agents fail?',
+                    seoTitle: 'Why Replacing Dev Teams With AI Fails',
                     answerHtml: `
                         <p>The "CTO Agent Delusion" is a dangerous new executive belief that probabilistic AI agents (like Devin or AutoDev) can completely replace deterministic QA and engineering teams. This is driven by hype, fundamentally misunderstanding the difference between generating code and architecting reliable systems.</p>
                         
@@ -359,6 +368,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'how-to-manage-ai-generated-tech-debt',
                     questionHeadline: 'How do you manage the massive influx of AI-generated technical debt?',
+                    seoTitle: 'Managing AI-Generated Technical Debt',
                     answerHtml: `
                         <p>The introduction of coding copilots (Cursor, GitHub Copilot) has created a localized velocity spike at the cost of global system stability. Junior developers can now generate 2,000-line functions in seconds. This phenomenon, often referred to as "AI Slop," results in massive, un-architected pull requests that burn out senior engineers trying to review them.</p>
                         
@@ -392,6 +402,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'evaluating-junior-developers-in-the-ai-era',
                     questionHeadline: 'How do we evaluate and hire junior developers when AI can write all the code?',
+                    seoTitle: 'Hiring Junior Developers in the AI Era',
                     answerHtml: `
                         <p>The traditional coding interview (e.g., LeetCode, reversing a binary tree on a whiteboard) is officially dead. AI can generate perfect solutions to these algorithms instantly. If you are hiring developers based on their ability to write raw syntax, you are hiring for a depreciating asset.</p>
                         
@@ -425,6 +436,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'cost-of-tech-debt-vs-technical-spec',
                     questionHeadline: 'Cost of tech debt vs professional technical spec: is there a framework for this?',
+                    seoTitle: 'Tech Debt Cost vs Technical Spec ROI',
                     answerHtml: `
                         <p>When engineering teams skip the Technical Specification phase to "move fast," they are executing a high-interest payday loan against their future enterprise valuation. The cost of technical debt accrued from rushing to code is consistently and mathematically disproportionate to the time saved by skipping the architecture design phase.</p>
                         
@@ -470,6 +482,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'software-entropy',
                     questionHeadline: 'What is software entropy and how do you calculate its financial drag on an engineering team?',
+                    seoTitle: 'Software Entropy Financial Drag Formula',
                     answerHtml: `<p>Software entropy, derived from the second law of thermodynamics, dictates that any software system will naturally degrade in quality, become more complex, and harder to maintain over time unless active energy (refactoring) is injected to stabilize it.</p>
         <h3 class="text-xl font-bold mt-8 mb-4">The Mechanics of Degradation</h3>
         <p>Entropy accelerates through <strong>feature stacking</strong>. When sales demands new features, engineering often bolts them onto the side of the existing architecture without taking the time to redesign the core abstractions. Over years, this creates a "Big Ball of Mud" architecture where no single engineer understands the entire system.</p>
@@ -507,6 +520,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'cost-of-legacy-code-vs-rewrite',
                     questionHeadline: 'What is the true cost of maintaining legacy code vs rewriting from scratch?',
+                    seoTitle: 'Legacy Code Maintenance vs Rewrite Cost',
                     answerHtml: `
                         <p>The "Second System Effect" is the silent killer of enterprise software companies. While engineering teams almost universally advocate for greenfield rewrites - citing brittle legacy code and developer misery - the true financial devastation of a rewrite is the <strong>Opportunity Cost of Stalled Features</strong>.</p>
                         
@@ -552,6 +566,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'roi-blast-radius-containment',
                     questionHeadline: 'How to calculate the financial ROI of blast radius containment in distributed systems?',
+                    seoTitle: 'Blast Radius Containment Financial ROI',
                     answerHtml: `
                         <p>When a CTO asks for budget to build systemic resiliency, the CFO hears an insurance pitch. You must reframe infrastructure resiliency as explicitly protecting the company's Daily Active Revenue.</p>
                         
@@ -596,6 +611,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'what-is-entropy-in-software-engineering',
                     questionHeadline: 'What is software entropy and how do CTOs prevent codebase decay?',
+                    seoTitle: 'Software Entropy: Preventing Code Decay',
                     answerHtml: `
                         <p><strong>Software Entropy</strong> is the natural law of decay applied to code. As a codebase is continuously modified to support new business capabilities, it inherently becomes more complex, disorganized, and fragile unless active energy (refactoring) is continuously applied to counteract it.</p>
                         
@@ -649,6 +665,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'ai-production-gap',
                     questionHeadline: 'Why do AI pilots succeed but production deployments fail?',
+                    seoTitle: 'Why AI Pilots Succeed & Production Fails',
                     answerHtml: `
                         <p>The tech industry is suffering from the <strong>AI Production Gap</strong>. A proof-of-concept AI agent built on a weekend hackathon looks breakthrough. But migrating that agent into an enterprise production environment introduces non-deterministic latency, hallucination liabilities, and explosive inference costs.</p>
                         
@@ -663,6 +680,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'how-to-calculate-ai-feature-profitability',
                     questionHeadline: 'How do you calculate if an AI feature is actually profitable (or just burning cash)?',
+                    seoTitle: 'How to Calculate AI Feature Margins',
                     answerHtml: `
                         <p>Most SaaS founders are currently trapped in the "AI Feature Factory." They integrate LLMs to chase investor hype and parity, completely ignoring that probabilistic features fundamentally break traditional SaaS gross margins. If you don't calculate the <strong>AI Volatility Tax</strong>, you are paying your customers to use your software.</p>
                         
@@ -696,6 +714,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'build-vs-rent-ai-infrastructure',
                     questionHeadline: 'How much AI infra do large companies need to own instead of consuming from the big players?',
+                    seoTitle: 'Build vs Rent Enterprise AI Infra Cost',
                     answerHtml: `
                         <p>The "Build vs. Rent" decision for AI infrastructure is the single most consequential financial lever an enterprise CEO will pull this decade. The default strategy of infinitely renting foundational intelligence (via OpenAI or Anthropic APIs) fundamentally breaks traditional SaaS economics, replacing high fixed-margin software with a variable-cost commodity tollbooth.</p>
                         
@@ -742,6 +761,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'calculating-roai',
                     questionHeadline: 'How do you calculate the financial Return on AI Investment (ROAI)?',
+                    seoTitle: 'How to Calculate Financial Return on AI',
                     answerHtml: `<p>ROAI (Return on AI Investment) is the critical financial metric for evaluating generative models, autonomous agents, and RAG pipelines. Unlike traditional software ROI, which is deterministic, ROAI must account for probabilistic outcomes, hallucination costs, and inference burn rates.</p>
         <h3 class="text-xl font-bold mt-8 mb-4">The Token Economics Trap</h3>
         <p>Many enterprises build a prototype using GPT-4 that works brilliantly in a demo. They fail to realize that running that model on 10,000 customer tickets a day will cost $80,000/month in API inference fees. Even worse, if the model hallucinates on 5% of those tickets, the manual human remediation cost (or brand damage) often vastly exceeds the cost savings of the automation itself.</p>
@@ -783,6 +803,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'fine-tune-open-source-vs-openai-api',
                     questionHeadline: 'Build vs Buy: Should we fine-tune an open-source LLM or use OpenAI APIs?',
+                    seoTitle: 'Fine-Tune Open-Source LLM vs OpenAI API',
                     answerHtml: `
                         <p>For early-stage founders and enterprise innovation labs, the "Build vs Buy" debate regarding foundational Large Language Models (LLMs) is less about engineering capability and entirely about <strong>Unit Margin Degradation vs Capital Expenditure</strong>.</p>
                         
@@ -837,6 +858,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'agent-drift-taxonomy',
                     questionHeadline: 'What is the taxonomy of Agent Drift in LLM orchestration?',
+                    seoTitle: 'Agent Drift Taxonomy in LLM Workflows',
                     answerHtml: `
                         <p>As enterprise engineering teams deploy autonomous AI Agents (systems capable of executing multi-step workflows across external tools), a new systemic failure state has emerged: <strong>Agent Drift</strong>. Agent Drift occurs when an LLM slowly deviates from its initial directive during an extended multi-step orchestration loop, resulting in mathematically unpredictable, often catastrophic, end-states.</p>
                         
@@ -881,6 +903,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'agentic-ai-vs-rule-based-automation',
                     questionHeadline: 'In the era of Agentic AI, is rule-based automation extinct?',
+                    seoTitle: 'Agentic AI vs Rule-Based Automation ROI',
                     answerHtml: `
                         <p>A common mistake Product Managers make is assuming Agentic AI (LLMs autonomously planning and executing actions) completely replaces deterministic rule-based automation (like Zapier, Make, or standard CI/CD scripts). They do not replace each other; they serve entirely opposite ends of the latency and reliability spectrum.</p>
                         
@@ -915,6 +938,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'retrieval-vs-behavioral-synthesis',
                     questionHeadline: 'Why does a RAG model that retrieves perfectly still fail to replicate human voice and behavior?',
+                    seoTitle: 'RAG Retrieval vs Behavioral Synthesis',
                     answerHtml: `
                         <p>A foundational error Product Managers make is conflating <strong>Semantic Retrieval</strong> with <strong>Behavioral Synthesis</strong>. When you dump 100 pages of a user's past writing into an LLM's context window, the model successfully retrieves the <em>facts</em>, but it inherently averages out the <em>tone</em> to match its RLHF (Reinforcement Learning from Human Feedback) training base - defaulting to a generic, corporate "AI voice."</p>
                         
@@ -960,6 +984,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'unit-economics-for-rag-architecture',
                     questionHeadline: 'How to measure unit economics for a RAG (Retrieval-Augmented Generation) application?',
+                    seoTitle: 'Unit Economics for RAG Applications',
                     answerHtml: `
                         <p>Product Managers building Generative AI features face a unique economic reality: predictable SaaS pricing models clash catastrophically with unpredictable AI infrastructure costs. Most PMs attempt to track the API <em>Token Cost</em> as their primary metric. This is deeply flawed. The true metric for determining profitability is the <strong>Total Cost Per RAG Query</strong>.</p>
                         
@@ -1022,6 +1047,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'rag-vs-massive-context-window',
                     questionHeadline: 'With 1M+ token context windows, is RAG actually worth it when I can just load whole books?',
+                    seoTitle: 'RAG vs 1M+ Token Context Window Costs',
                     answerHtml: `
                         <p>With models like Gemini 1.5 Pro handling 2 million tokens and Claude 3.5 Sonnet handling 200k, the instinct to abandon complex vector databases (RAG) and simply dump the entire corporate hard drive into the prompt is strong. However, this brute-force approach ignores the fundamental <strong>Unit Economics of Inference</strong>, replacing architectural complexity with sheer financial brute force.</p>
                         
@@ -1065,6 +1091,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'anthropic-ai-architect-path',
                     questionHeadline: 'What is the Anthropic AI Architect Path and is it free?',
+                    seoTitle: 'Anthropic AI Architect Path & Pricing',
                     answerHtml: `
                         <p>The role of an "AI Architect" is rapidly superseding the traditional "Cloud Architect." The <strong>Anthropic AI Architect Path</strong> refers to the emerging operational frameworks necessary to natively orchestrate Claude's suite of models (Sonnet, Opus, Haiku) inside enterprise software environments without creating systemic architectural debt. The base intelligence and APIs are strictly pay-per-use, but the <em>architectural methodology</em> itself is an open, free architectural shift.</p>
                         
@@ -1103,6 +1130,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'what-is-mlops-infrastructure-cost',
                     questionHeadline: 'What is MLOps and how do you calculate the infrastructure cost of Machine Learning Operations?',
+                    seoTitle: 'MLOps Infrastructure Cost Calculation',
                     answerHtml: `
                         <p>Machine Learning Operations (MLOps) is the discipline of treating AI models like engineered software - establishing CI/CD pipelines, version control, and regression testing specifically for neural weights and prompts. Without MLOps, an AI prototype will immediately unravel in production due to model drift.</p>
                         
@@ -1155,6 +1183,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'synthetic-data-economics-llm',
                     questionHeadline: 'The financial economics of generating synthetic data for LLM fine-tuning vs purchasing datasets.',
+                    seoTitle: 'Synthetic Data vs Purchased Dataset Cost',
                     answerHtml: `
                         <p>When engineering teams attempt to fine-tune an open-source model to bypass the OpenAI API tax, they immediately slam into the Data Wall. Acquiring high-fidelity instruction-tuning datasets is exorbitantly expensive. The economic debate shifts to generating Synthetic Data via GPT-4 vs paying Data Vendors.</p>
                         
@@ -1202,6 +1231,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'code-smell-engineering-manager',
                     questionHeadline: 'How should an engineering manager translate code smells into organizational risk metrics?',
+                    seoTitle: 'Code Smells to Org Risk Metrics Guide',
                     answerHtml: `<p>A "Code Smell" is a surface indication that usually corresponds to a deeper problem in the system. For an Engineering Manager, these aren't just technical issues - they are organizational symptoms indicating process failures, misaligned incentives, or severe skill gaps.</p>
         <h3 class="text-xl font-bold mt-8 mb-4">The Cultural Translation of Code Smells</h3>
         <p>When an engineer writes a 5,000-line "God Class," it doesn't just mean they don't understand object-oriented programming. It usually means the team lacks architectural oversight, code reviews are being rubber-stamped to meet artificial deadlines, or the feature requirements were changed 10 times during the sprint.</p>
@@ -1237,6 +1267,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'where-does-the-term-staff-engineer-come-from',
                     questionHeadline: 'Where does the term Staff Engineer come from and what do they actually do?',
+                    seoTitle: 'Staff Engineer Origin, Scope & Role',
                     answerHtml: `
                         <p>The term <strong>"Staff Engineer"</strong> originates from mid-20th century corporate and military organizational structures, distinguishing between "Line" roles (those directly executing the primary mission) and "Staff" roles (highly specialized advisors who architect the systems and strategy for the Line to execute). In modern software engineering, it represents the critical juncture where a Senior Engineer transitions from solving discrete technical problems to solving massive, ambiguous organizational problems.</p>
                         
@@ -1275,6 +1306,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'measuring-developer-productivity-space-dora',
                     questionHeadline: 'How to measure developer productivity without using lines of code (SPACE vs DORA)?',
+                    seoTitle: 'Developer Productivity: SPACE vs DORA',
                     answerHtml: `
                         <p>Attempting to measure software engineering productivity using traditional industrial metrics - like tracking Lines of Code (LOC) or raw ticket volume - is the fastest way to destroy engineering culture and incentivize toxic coding practices. Modern engineering leaders must build telemetry that balances quantitative pipeline velocity with qualitative human friction.</p>
                         
@@ -1328,6 +1360,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'ic-vs-management-engineering-job-levels',
                     questionHeadline: 'IC Track vs Management Track: How to structure engineering job levels for retention?',
+                    seoTitle: 'IC vs Management Engineering Job Levels',
                     answerHtml: `
                         <p>One of the most profound mistakes a VP of Engineering makes is promoting their most brilliant, highest-performing Senior Engineer into an Engineering Manager role as a "reward." This instantly destroys enterprise value: you lose your best architectural problem-solver, and you acquire a terrible, frustrated manager.</p>
                         
@@ -1389,6 +1422,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'code-smell-engineering-manager',
                     questionHeadline: 'What is a code smell, and why should an Engineering Manager care?',
+                    seoTitle: 'What Is a Code Smell for Eng Managers?',
                     answerHtml: `
                         <p>A "code smell" is not a crash or an outright bug; it is a surface-level symptom indicating a deeper architectural rot within the codebase. While junior developers view code smells as aesthetic annoyances, elite Engineering Managers view them as <strong>Leading Indicators of Margin Decay</strong>.</p>
                         
@@ -1430,6 +1464,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'team-topologies-framework',
                     questionHeadline: 'What is the Team Topologies framework, and how does it optimize delivery?',
+                    seoTitle: 'Team Topologies Framework & Delivery ROI',
                     answerHtml: `
                         <p>Conway's Law states that organizations design systems that mirror their communication structures. The <strong>Team Topologies</strong> framework directly weaponizes Conway’s Law by architecting human teams to ensure the resulting software architecture is flawlessly decoupled.</p>
                         
@@ -1475,6 +1510,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'dx-engineering-metrics',
                     questionHeadline: 'What are DX (Developer Experience) metrics and how do they tie to revenue?',
+                    seoTitle: 'Developer Experience (DX) Revenue Impact',
                     answerHtml: `
                         <p>Developer Experience (DX) metrics are frequently dismissed by CFOs as "HR happiness surveys." This is a profound misunderstanding. DX metrics are the hardest leading indicators of impending systemic architectural collapse and developer churn.</p>
                         
@@ -1525,6 +1561,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'hire-vp-engineering-vs-cto',
                     questionHeadline: 'When should a startup hire a VP of Engineering vs a CTO?',
+                    seoTitle: 'When to Hire VP of Engineering vs CTO',
                     answerHtml: `
                         <p>Founders operating post-Seed round frequently conflate the roles of Chief Technology Officer (CTO) and VP of Engineering. Misunderstanding this dichotomy leads to catastrophic capital misallocation, massive technical debt accumulation, and stalled product roadmaps during the critical scale-up phase.</p>
                         
@@ -1577,6 +1614,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'ai-hallucination-remediation-cost',
                     questionHeadline: 'How do we quantify the true financial liability of AI hallucinations in production?',
+                    seoTitle: 'Financial Cost of AI Hallucinations',
                     answerHtml: `
                         <p>Most organizations treat AI hallucinations as a technical bug. CFOs must treat them as a continuous, compounding financial liability. Every time an LLM hallucinates in a production environment, it triggers a chain reaction of deterministic remediation costs.</p>
                         
@@ -1592,6 +1630,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'hard-vs-soft-ai-roi',
                     questionHeadline: 'Hard vs Soft AI ROI: Why Developer Productivity is a Trap',
+                    seoTitle: 'Hard vs Soft AI ROI: Productivity Trap',
                     answerHtml: `
                         <p>When engineering leaders pitch AI initiatives to the Board, they typically rely on "Soft ROI" metrics - claiming that AI tools will "save developers 30% of their time." However, if headcount doesn't decrease and product velocity doesn't increase, that 30% time savings does not translate into <strong>Hard ROI</strong> (P&L impact).</p>
                         
@@ -1604,6 +1643,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'total-compute-cost-tcc-illusion',
                     questionHeadline: 'The Total Compute Cost (TCC) Illusion in AI',
+                    seoTitle: 'Total Compute Cost (TCC) Illusion in AI',
                     answerHtml: `
                         <p>Most AI prototypes are funded based on vendor API estimates (e.g., "$0.01 per 1K tokens"). But this ignores the <strong>Total Compute Cost (TCC)</strong> of running AI in production. TCC includes the hidden architectural costs: scaling vector databases, maintaining data pipelines, prompt execution redundancy, and model fine-tuning.</p>
                         
@@ -1616,6 +1656,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'cloud-finops-vs-ai-optimization',
                     questionHeadline: 'Why Cloud Resource Optimization Alone Doesn\'t Fix AI Cloud Costs?',
+                    seoTitle: 'Why Cloud FinOps Misses AI Token Costs',
                     answerHtml: `
                         <p>Traditional Cloud FinOps focuses on right-sizing EC2 instances, purchasing Reserved Instances (RIs), and deleting unused S3 buckets. When CFOs attempt to apply these exact same strategies to Generative AI infrastructure, they fail completely. Generative AI costs are not driven by idle infrastructure; they are driven by <strong>Token Economics</strong> and <strong>Model Utilization Rates</strong>.</p>
                         
@@ -1659,6 +1700,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'incident-management-cost',
                     questionHeadline: 'How do you calculate the true financial cost of incident management?',
+                    seoTitle: 'Incident Management Cost Breakdown (CFO)',
                     answerHtml: `<p>Most CFOs dramatically underestimate the cost of software incidents (outages or sev-1 bugs) because they only calculate the direct lost revenue during the downtime. The true cost of incident management is a compound equation involving lost wages, opportunity cost, and brand degradation.</p>
         <h3 class="text-xl font-bold mt-8 mb-4">The True Cost Formula</h3>
         <p>A severe incident triggers a massive, hidden organizational response. You must calculate:</p>
@@ -1675,6 +1717,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'data-debt-formal-definition',
                     questionHeadline: 'What is the formal definition of Data Debt and how does it drain EBITDA?',
+                    seoTitle: 'Data Debt Definition & EBITDA Drain',
                     answerHtml: `
                         <p><strong>Data Debt</strong> is the accumulated financial liability that occurs when an enterprise acquires, stores, and pipelines data without rigid ontological governance or immediate monetization pathways. For CFOs, Data Debt is far more insidious than Software Technical Debt because cloud storage costs (S3, Snowflake, BigQuery) compound perpetually, attacking EBITDA every single month.</p>
                         
@@ -1713,6 +1756,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'value-software-technical-debt-m-a',
                     questionHeadline: 'How to value software technical debt during M&A due diligence?',
+                    seoTitle: 'Valuing Software Tech Debt in M&A Deals',
                     answerHtml: `
                         <p>Technical debt does not appear on a GAAP balance sheet, but it will rapidly and violently consume post-acquisition EBITDA via massive CapEx remediation requirements and stalled integration roadmaps. Private Equity firms frequently miss this invisible liability because traditional financial diligence cannot effectively audit monolithic codebases.</p>
                         
@@ -1753,6 +1797,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'capitalizing-software-rd-gaap',
                     questionHeadline: 'How to capitalize software R&D engineering salaries under GAAP?',
+                    seoTitle: 'Capitalizing Software R&D Under GAAP',
                     answerHtml: `
                         <p>Software capitalization under ASC 350-40 (Internal-Use Software) is one of the most powerful, yet poorly executed, levers available to a CFO. It dictates precisely when engineering wages can be capitalized (boosting immediate EBITDA and asset value) versus expensed (creating aggressive OpEx drag on the P&L).</p>
                         
@@ -1804,6 +1849,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'data-residency-compliance-capex',
                     questionHeadline: 'How does data residency and compliance impact cloud capital expenditure (CapEx)?',
+                    seoTitle: 'Data Residency & Compliance Cloud CapEx',
                     answerHtml: `
                         <p>When software providers target multi-national enterprise fleets or pivot towards the EU market, compliance is often framed as a minor legal formality. Consequently, CFOs are completely blindsided by the devastating Capital Expenditure (CapEx) required to architect Data Residency boundaries.</p>
                         
@@ -1847,6 +1893,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'integration-risk',
                     questionHeadline: 'How do you mitigate external integration risk before launching a new product?',
+                    seoTitle: 'Mitigating External Integration Risk',
                     answerHtml: `<p>Integration Risk is the probability that a product feature or entire application will fail - not because its internal logic is flawed, but because it cannot successfully communicate with external systems, legacy databases, or third-party APIs.</p>
         <h3 class="text-xl font-bold mt-8 mb-4">The Late-Stage Discovery Tax</h3>
         <p>Most product managers scope the UI and internal business logic extensively, but leave "API integration" as a black box for the final sprint. This is catastrophic. Finding out in week 11 of a 12-week project that a critical third-party API rate-limits you, or doesn't return the necessary payload, means the entire feature is scrapped and the CapEx is wasted.</p>
@@ -1896,6 +1943,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'burn-rate-runway',
                     questionHeadline: 'Burn Rate & Runway: How do founders miscalculate engineering cash burn?',
+                    seoTitle: 'Engineering Burn Rate & Runway Math',
                     answerHtml: `
                         <p>Founders frequently obsess over top-line Annual Recurring Revenue (ARR) growth while completely mismanaging the single fastest vector of capital hemorrhaging: <strong>Engineering Burn Rate</strong>.</p>
                         
@@ -1946,6 +1994,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'integration-risk',
                     questionHeadline: 'How do you quantify integration risk in product delivery?',
+                    seoTitle: 'Quantifying Delivery Integration Risk',
                     answerHtml: `<p>Integration risk is the probability that independent software components, third-party APIs, or cross-functional team deliverables will fail to work together when combined, causing catastrophic timeline delays and budget overruns.</p>
         <h3 class="text-xl font-bold mt-8 mb-4">Why Integration is the Silent Killer</h3>
         <p>Most Product Managers track the progress of individual features (Component A is 90% done, Component B is 80% done). But the most complex, unpredictable work happens when Component A tries to talk to Component B. If you leave integration to the very end of the project (the "Big Bang" integration), you are guaranteeing failure.</p>
@@ -1961,6 +2010,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'prioritize-tech-debt-vs-features',
                     questionHeadline: 'How to prioritize technical debt vs new product features on the roadmap?',
+                    seoTitle: 'Prioritizing Tech Debt vs New Features',
                     answerHtml: `
                         <p>The eternal battle between Engineering (who want to refactor everything) and Product Management (who want to ship infinite features) only ends when the Product Team learns to translate technical debt into executive-tier <strong>Opportunity Cost</strong>. The boardroom understands missed revenue; they do not care about "brittle database schemas" or "legacy monoliths."</p>
                         
@@ -2003,6 +2053,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'product-economics',
                     questionHeadline: 'What is AI Economics and how does it drive SaaS valuation?',
+                    seoTitle: 'AI Product Economics & SaaS Valuation',
                     answerHtml: `
                         <p><strong>AI Economics</strong> is the strict mathematical discipline of treating every feature, sprint, and engineering initiative as an independent Profit & Loss (P&L) center. Software companies fail when they view "The Product" purely as user-experience architecture while ignoring the infrastructural extraction cost underlying it.</p>
                         
@@ -2036,6 +2087,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'plg-flywheel',
                     questionHeadline: 'How to scale a Product-Led Growth (PLG) Flywheel without burning through CAC?',
+                    seoTitle: 'Scaling a PLG Flywheel Without CAC Burn',
                     answerHtml: `
                         <p>The <strong>Product-Led Growth (PLG) Flywheel</strong> is the SaaS holy grail: designing a product so inherently viral and frictionless that the software sells itself without a bloated enterprise sales team. However, misunderstanding the unit economics of a "freemium" user acquisition loop leads directly to massive cash burn.</p>
                         
@@ -2079,6 +2131,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'product-debt-destroys-nrr',
                     questionHeadline: 'What is Product Debt and how does it destroy Net Revenue Retention (NRR)?',
+                    seoTitle: 'How Product Debt Destroys SaaS NRR',
                     answerHtml: `
                         <p>While Technical Debt occurs when the code is bad, <strong>Product Debt</strong> occurs when the code is absolutely perfect, but the feature shouldn't exist in the first place. This is a far more insidious threat to SaaS valuations because it directly attacks the user experience and customer lifecycle.</p>
                         
@@ -2132,6 +2185,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'pm-pl-ownership-accountability',
                     questionHeadline: 'How to establish P&L (Profit & Loss) ownership and financial accountability for Product Managers?',
+                    seoTitle: 'Product Manager P&L Ownership Model',
                     answerHtml: `
                         <p>SaaS companies frequently misalign Product Management compensation and accountability. PMs are historically measured by their ability to ship features on time. This leads to massive "feature factory" bloat. If you want an elite, financially viable product organization, you must enforce <strong>P&L (Profit & Loss) Ownership</strong> at the feature level.</p>
                         
@@ -2193,6 +2247,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'stuck-at-80-percent-vibe-coding-trap',
                     questionHeadline: 'Why do I get 80% of my app built in a weekend with Lovable, Bolt, or Cursor, and then get completely stuck on the last 20%?',
+                    seoTitle: 'Why Vibe-Coded Apps Stall at 80% Built',
                     answerHtml: `
                         <p><strong>Browser AI builders generate UI screens and happy-path database tables in minutes, but they fail on the last 20% (production authentication, Supabase Row-Level Security, idempotent Stripe webhooks, and multi-file state bugs) because chat prompts lose track of your global architecture after 15 iterations.</strong></p>
                         <p>The first 48 hours of vibe coding feel like a superpower. You type three sentences and watch a working dashboard appear on your screen. Then you try to connect real Stripe subscription upgrades, handle failed credit card retries, or stop User A from seeing User B's rows, and every prompt you send fixes one bug while breaking two old screens.</p>
@@ -2211,6 +2266,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'graduate-lovable-bolt-to-cursor-claude-code-antigravity',
                     questionHeadline: 'How do I graduate an app from Lovable or Bolt.new into Cursor, Claude Code, or Google Antigravity without breaking it?',
+                    seoTitle: 'Move Lovable & Bolt Apps to Cursor/AGY',
                     answerHtml: `
                         <p><strong>Connect Lovable or Bolt to a two-way GitHub repository, clone the repo locally, run <code>npm install</code> and verify environment variables in <code>.env.local</code>, and immediately create an <code>AGENTS.md</code> rule file before letting Cursor, Claude Code, or Antigravity touch a single file.</strong></p>
                         <p>Most solo founders and PMs break their application during the handoff because their local environment is missing the hidden Supabase anon keys, edge function secrets, or Vite and Next.js build flags that the browser sandbox injected behind the scenes.</p>
@@ -2229,6 +2285,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'when-to-rebuild-vibe-coded-prototype-vs-refactor',
                     questionHeadline: 'When is it faster to throw away a vibe-coded prototype and rebuild from a clean spec vs hiring a developer to fix it?',
+                    seoTitle: 'Rebuild vs Refactor Vibe-Coded Apps',
                     answerHtml: `
                         <p><strong>If more than 40% of your codebase has duplicated business logic inside UI components, zero database migration files, hardcoded secrets, and broken auth state, rebuilding from a clean specification takes 5 to 10 days, whereas debugging the spaghetti takes 6+ weeks.</strong></p>
                         <p>Founders fall in love with their vibe-coded prototype because the buttons look polished and the animations work. A senior engineer does not care about the buttons; they care that your subscription billing logic is copy-pasted across nine different React files with three conflicting state hooks.</p>
@@ -2245,6 +2302,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'cheapest-fastest-production-stack-ai-saas-2026',
                     questionHeadline: 'What is the cheapest, fastest production stack for launching an AI SaaS app in late 2026?',
+                    seoTitle: 'Cheapest Fast AI SaaS Stack for 2026',
                     answerHtml: `
                         <p><strong>Next.js App Router deployed on Cloudflare Workers (<code>@opennextjs/cloudflare</code>), Supabase (Postgres + Auth + RLS), Stripe Checkout and Billing, and a tiered model router (Gemini 3.8 Flash + Claude 4.5 Sonnet) lets you serve 10,000+ users for under $50/month in base infrastructure.</strong></p>
                         <p>First-time builders waste months and thousands of dollars spinning up complex AWS ECS clusters, Kubernetes pods, or dedicated $70/month vector databases before they have a single paying customer. Your infrastructure on day one should cost less than a restaurant dinner while remaining battle-tested for enterprise traffic.</p>
@@ -2263,6 +2321,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'stop-free-trial-bots-bankrupting-ai-api-key',
                     questionHeadline: 'How do I stop a free-trial user or bot from scripting 50,000 requests against my AI app and bankrupting my API key?',
+                    seoTitle: 'Stop Bots Bankrupting Your AI API Key',
                     answerHtml: `
                         <p><strong>Never allow anonymous unauthenticated requests to trigger an LLM call, enforce strict per-user and per-IP rate limits at the Cloudflare edge or Redis layer, cap <code>max_tokens</code> on every API call, and set a hard monthly spend limit inside your OpenAI, Anthropic, and Google Cloud billing consoles.</strong></p>
                         <p>If your landing page has a "Try our AI free without signing up" input box backed by an unprotected <code>/api/generate</code> route, someone on the internet will eventually point a Python script at your endpoint to run their own workloads on your credit card.</p>
@@ -2283,6 +2342,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'vibe-coded-supabase-rls-security-leaks',
                     questionHeadline: 'Why are vibe-coded Supabase apps getting hacked (and how do I check if my Row-Level Security is leaking data)?',
+                    seoTitle: 'Fix Vibe-Coded Supabase RLS Data Leaks',
                     answerHtml: `
                         <p><strong>AI coding tools frequently disable Supabase Row-Level Security (RLS) or write <code>USING (true)</code> policies just to make "permission denied" errors disappear during prototyping, which lets anyone with your public <code>anon</code> key read or delete your entire database from Chrome DevTools.</strong></p>
                         <p>Your <code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code> is intentionally shipped to the browser so client components can talk to Supabase. It is only safe when Postgres Row-Level Security is active on every single table. When an AI coding assistant hits a 403 error while trying to make a dashboard render, its favorite shortcut is turning RLS off or adding an unrestricted policy.</p>
@@ -2300,6 +2360,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'stripe-webhooks-test-vs-production-failures',
                     questionHeadline: 'Why do Stripe checkouts work in test mode on my AI-built app, but fail to update user subscriptions in production?',
+                    seoTitle: 'Fix Stripe Webhook Failures in AI Apps',
                     answerHtml: `
                         <p><strong>AI agents almost always wire the easy frontend Stripe redirect and skip building a signature-verified, idempotent backend webhook handler for <code>checkout.session.completed</code>, <code>invoice.payment_succeeded</code>, and <code>customer.subscription.deleted</code>.</strong></p>
                         <p>Relying on a user's browser redirecting to <code>/success?session_id=123</code> to upgrade their database role works when you test it yourself on fast Wi-Fi. In production, it fails the moment a customer closes their mobile browser tab early, their bank triggers a 3D Secure verification delay, or their subscription renews automatically on day 30.</p>
@@ -2317,6 +2378,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'stop-ai-coding-agents-deleting-working-code-blast-radius',
                     questionHeadline: 'How do I stop Claude Code, Cursor, or Antigravity from deleting working code or deleting tests to make errors pass?',
+                    seoTitle: 'Stop AI Agents Deleting Working Code',
                     answerHtml: `
                         <p><strong>Add an explicit "Blast Radius Guard" to your prompt and <code>AGENTS.md</code> file listing the exact files the agent is forbidden from modifying, forbid <code>--no-verify</code> or test deletion, and force the agent to run a deterministic verification script before finishing.</strong></p>
                         <p>Left unguarded, an AI coding agent behaves like a panicked contractor: if a TypeScript check or unit test fails, the shortest mathematical path to a green terminal is deleting the failing test or slapping <code>any</code> across your interfaces.</p>
@@ -2335,6 +2397,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'cursor-vs-claude-code-vs-google-antigravity-2026',
                     questionHeadline: 'Cursor vs Claude Code vs Google Antigravity 2.0 in October 2026: which one should I use for which job?',
+                    seoTitle: 'Cursor vs Claude Code vs Antigravity',
                     answerHtml: `
                         <p><strong>Use Google Antigravity 2.0 or Claude Code for multi-file architectural planning, background subagent swarms, and full-repo refactoring; use Cursor for fast visual inline edits (<code>Cmd+K</code> and Tab Supercomplete) when you are actively editing UI files by hand.</strong></p>
                         <p>Paying for five overlapping AI coding subscriptions without a division of labor burns cash and causes repository drift when two tools fight over the same configuration files. The highest-velocity engineering setup in late 2026 is a two-gear workflow.</p>
@@ -2351,6 +2414,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'why-ai-coding-agent-gets-dumber-after-20-messages-context-rot',
                     questionHeadline: 'Why does my AI coding agent get dumber and start hallucinating after 20 messages in the same chat thread?',
+                    seoTitle: 'Stop AI Coding Agent Context Rot Fast',
                     answerHtml: `
                         <p><strong>Long chat threads suffer from "context rot": every old error log, rejected code snippet, and dead-end file read stays in the context window, confusing the model's attention mechanism and multiplying your token cost on every turn.</strong></p>
                         <p>Once a single coding session passes 15 to 20 back-and-forth turns, the model spends 80% of its attention reading its own failed attempts from 30 minutes ago. That is why it suddenly re-introduces a bug you already fixed on turn 4 while charging you for 120,000 input tokens on every message.</p>
@@ -2376,6 +2440,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'connect-claude-cursor-to-n8n-slack-postgres-hubspot-mcp',
                     questionHeadline: 'How do I connect Claude Code, Claude Desktop, or Cursor to n8n, Slack, Postgres, and HubSpot using MCP (Model Context Protocol)?',
+                    seoTitle: 'Connect Claude & Cursor via MCP Tools',
                     answerHtml: `
                         <p><strong>Enable the native MCP server endpoint in n8n (or run lightweight official MCP servers for Postgres, Slack, and HubSpot), scope a read/write OAuth or API token to only the specific workflows you want exposed, and add the server URL to your client's <code>mcp_config.json</code>.</strong></p>
                         <p>Before Model Context Protocol (MCP), giving an AI agent access to five company tools meant writing 2,000 lines of brittle API glue code. Today, MCP acts as a universal adapter: your AI client can inspect live database schemas, trigger n8n workflows, read error logs, and post formatted Slack summaries directly from natural language.</p>
@@ -2393,6 +2458,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'n8n-make-zapier-vs-claude-code-custom-typescript-python',
                     questionHeadline: 'Should I build business automations in n8n / Make / Zapier or code them directly with Claude Code and Python/TypeScript?',
+                    seoTitle: 'n8n & Zapier vs Custom AI Agent Code',
                     answerHtml: `
                         <p><strong>Use n8n (self-hosted or cloud) when you need visual webhook orchestration across 10+ SaaS apps (CRM, email, Slack, sheets) that non-engineers can inspect; write TypeScript or Python code when you need sub-second latency, complex custom state, version-controlled unit tests, or high-volume customer-facing product features.</strong></p>
                         <p>Teams waste thousands of dollars when they use the wrong tool for the job: paying Zapier $800/month in per-task fees for a high-volume data sync that a 40-line Cloudflare Worker could run for free, or conversely asking an engineer to hand-code 15 OAuth token refreshers for internal HubSpot-to-Slack alerts.</p>
@@ -2409,6 +2475,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'which-5000-month-b2b-saas-subscriptions-to-cancel-replace-with-ai',
                     questionHeadline: 'Which $5,000/month B2B SaaS subscriptions are companies canceling in 2026 and replacing with internal AI workflows built in a weekend?',
+                    seoTitle: 'Which $5k/Mo SaaS Tools AI Replaces',
                     answerHtml: `
                         <p><strong>Companies are aggressively canceling overpriced per-seat "wrapper" tools (basic AI copywriting seats, simple meeting transcription add-ons, rigid internal form/survey tools, tier-1 FAQ chatbots, and basic BI dashboard translators) while keeping core systems of record (ERP, payroll, primary CRM, and security infrastructure).</strong></p>
                         <p>You should never try to vibe-code your own payroll tax engine or SOC 2 compliance ledger over a weekend. You should absolutely stop paying $45/seat/month across 50 employees for five separate "AI assistant" browser extensions when a single central workspace plus three automated MCP workflows does the job better for 10% of the cost.</p>
@@ -2426,6 +2493,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'ai-voice-agents-local-service-businesses-clinics-law-firms',
                     questionHeadline: 'How do local service businesses, clinics, law firms, and agencies use AI Voice Agents in 2026 without sounding like a frustrating robo-call?',
+                    seoTitle: 'AI Voice Agents for Clinics & Law Firms',
                     answerHtml: `
                         <p><strong>Modern real-time native audio models (under 350ms latency with natural interruption handling) succeed when they immediately identify themselves, handle one specific job (answering FAQs, qualifying urgency, and booking a live calendar slot via API), and transfer to a human in one second the moment a caller asks.</strong></p>
                         <p>Customers hate old phone trees ("Press 1 for billing") and they hate waiting on hold for 12 minutes while a receptionist, intake coordinator, or dispatcher is on another line. Even worse, 60% of high-intent service calls after 5:30 PM go straight to voicemail, and callers simply dial the next business on Google Maps.</p>
@@ -2443,6 +2511,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'computer-use-browser-agents-automate-legacy-software-without-api',
                     questionHeadline: 'Can "Computer Use" (AI browser agents that click buttons and fill forms) reliably automate legacy software that doesn\'t have an API?',
+                    seoTitle: 'Can Browser Agents Automate Legacy Apps?',
                     answerHtml: `
                         <p><strong>Yes, for asynchronous back-office batch jobs (like copying insurance claims, logistics manifests, or vendor invoices into legacy portals), provided every run records a full screenshot audit trail and pauses for human review whenever a page layout changes or confidence drops below 95%.</strong></p>
                         <p>Browser-clicking agents are 10x slower and 10x more expensive per run than a direct REST API or MCP call, so never use Computer Use if an API exists. However, when your operations team is stuck dealing with a 2008 healthcare, government, or ERP portal that refuses to provide API access, a sandboxed headless browser agent in a background queue beats paying humans to copy-paste 400 rows every Friday.</p>
@@ -2462,6 +2531,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'why-autonomous-ai-agents-work-in-demo-fail-40-percent-production',
                     questionHeadline: 'Why do autonomous AI agents work 100% of the time in a 5-minute demo and fail 40% of the time in real daily company operations?',
+                    seoTitle: 'Why AI Agents Fail 40% After the Demo',
                     answerHtml: `
                         <p><strong>Demos use clean, pre-selected inputs over 2 or 3 steps. Real business data is full of missing fields, malformed PDFs, API timeouts, and contradictory customer requests; because reliability compounds across steps (0.95<sup>10</sup> = 59.8%), a 10-step unconstrained agent fails 4 out of 10 times.</strong></p>
                         <p>Even if an LLM achieves 95% accuracy on a single step, chaining 10 unconstrained steps together in a ReAct loop drops your end-to-end completion accuracy below 60%. In enterprise operations, a system that fails 40% of the time creates more cleanup work for your staff than doing the job manually.</p>
@@ -2479,6 +2549,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'what-is-mcp-tool-poisoning-leak-database-api-keys',
                     questionHeadline: 'What is "MCP Tool Poisoning" and how can installing a third-party MCP server leak our company database or API keys?',
+                    seoTitle: 'MCP Tool Poisoning & API Key Leaks',
                     answerHtml: `
                         <p><strong>MCP Tool Poisoning happens when a malicious or compromised MCP server hides invisible prompt-injection instructions inside its tool descriptions, tricking your AI agent into reading local <code>.env</code> files, SSH keys, or database records and silently sending them to an external URL.</strong></p>
                         <p>Because AI coding assistants and desktop agents automatically load the tool descriptions of every connected MCP server into their system prompt, a single unverified community MCP package can hijack your agent and command it to exfiltrate data from your trusted Postgres, GitHub, or Slack MCP servers during the same session.</p>
@@ -2497,6 +2568,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'build-human-in-the-loop-slack-approval-button-ai-agent',
                     questionHeadline: 'How do I build a "Human-in-the-Loop" Slack or Teams approval button before an AI agent sends a customer email, refunds money, or edits a CRM deal?',
+                    seoTitle: 'Slack Human Approval Gate for AI Agents',
                     answerHtml: `
                         <p><strong>Split your agent workflow into two separate state stages: Stage 1 drafts the proposed action and posts a structured interactive Slack Block Kit payload with <code>[Approve]</code> and <code>[Reject]</code> webhook buttons; Stage 2 only executes the Stripe or CRM write call after verifying the signed Slack button callback from an authorized user ID.</strong></p>
                         <p>Never trust a prompt instruction that says "Ask the user for permission before issuing a refund." A prompt injection in a customer support ticket can easily trick the LLM into believing permission was already granted. Real governance happens at the credential boundary, not inside the prompt.</p>
@@ -2521,6 +2593,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'why-google-organic-traffic-dropped-40-percent-2026-aeo-geo',
                     questionHeadline: 'Why did our Google organic traffic drop 40% in 2026 even though we still rank on Page 1 (and how do we get buyers back)?',
+                    seoTitle: 'Why Page-1 Google Traffic Dropped 40%',
                     answerHtml: `
                         <p><strong>Google AI Overviews, ChatGPT Search, Perplexity, and Claude now answer generic "What is X?" and "How to do Y" questions directly inside the chat interface, eliminating clicks to informational blog posts while concentrating high-intent clicks on interactive calculators, original benchmarks, and direct comparison pages.</strong></p>
                         <p>If your marketing strategy is still paying writers (or prompting AI) to publish 1,500-word introductory blog posts, you are doing unpaid research for OpenAI and Google. Buyers do not need to click your blog to read a textbook definition anymore.</p>
@@ -2538,6 +2611,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'how-to-get-chatgpt-search-perplexity-claude-google-ai-to-recommend-business',
                     questionHeadline: 'How do I get ChatGPT Search, Perplexity, Claude, and Google AI Overviews to recommend my business or product first?',
+                    seoTitle: 'Get Recommended by ChatGPT & Perplexity',
                     answerHtml: `
                         <p><strong>Structure every key page with a 35-word direct answer immediately under the H1/H2, embed clean <code>FAQPage</code> and <code>Product</code> JSON-LD schemas in server-rendered HTML, publish explicit "Brand A vs Brand B" comparison tables with real pricing, and earn third-party mentions on Reddit, GitHub, and industry publications.</strong></p>
                         <p>LLMs use <strong>query fan-out</strong>: when a buyer asks ChatGPT or Perplexity, <em>"What is the best tool or advisor for X?"</em>, the model fires 3 to 5 background web searches looking for pages that state verifiable semantic triples (<code>Brand -> Solves Specific Problem -> Exact Price -> For Target Role</code>).</p>
@@ -2556,6 +2630,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'does-llms-txt-and-llms-full-txt-help-ai-citations-2026',
                     questionHeadline: 'Does adding /llms.txt and /llms-full.txt actually help my website get cited by AI models in 2026?',
+                    seoTitle: 'Does llms.txt Help AI Citations in 2026?',
                     answerHtml: `
                         <p><strong><code>/llms.txt</code> and <code>/llms-full.txt</code> do not directly boost traditional Google Search rankings, but they act as a high-speed markdown sitemap for AI agents, coding assistants, RAG scrapers, and deep-research bots (<code>Claude-SearchBot</code>, <code>OAI-SearchBot</code>, <code>PerplexityBot</code>) to ingest your entire product, pricing, and Q&amp;A library without parsing bloated HTML.</strong></p>
                         <p>On <code>richardewing.io</code> alone, Cloudflare edge telemetry records over 220 direct fetches of <code>/llms.txt</code> and <code>/llms-full.txt</code> every 28 days alongside 128,000+ verified AI bot requests across our server-rendered pages.</p>
@@ -2573,6 +2648,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'why-interactive-calculators-convert-10x-better-than-pdf-lead-magnets',
                     questionHeadline: 'Why do interactive calculators and free diagnostic tools convert 5x to 10x better than PDF lead magnets in 2026?',
+                    seoTitle: 'Calculators vs PDF Lead Magnets (2026)',
                     answerHtml: `
                         <p><strong>Nobody wants to hand over their work email just to download a 20-page AI-generated PDF ebook they will never read. An interactive calculator gives the buyer an instant, personalized dollar or risk score in 60 seconds, creating immediate psychological ownership and making a $29 kit or $450 session a natural next step.</strong></p>
                         <p>Look at our own live Cloudflare telemetry: <code>/reality-check</code> and <code>/tools/*</code> generate over 6,100 high-intent diagnostic sessions every 28 days, outperforming static brochure pages by more than 40x. When a founder, PM, or VP of Engineering slides three bars and sees on their own screen that they are leaking $180,000 a year in zombie maintenance or token waste, you do not have to hard-sell them; their own math just sold them.</p>
@@ -2590,6 +2666,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'why-ai-written-seo-blog-posts-spike-then-crash-to-zero-impressions',
                     questionHeadline: 'Why do AI-written SEO blog posts spike for 10 days on Google and then crash to zero impressions?',
+                    seoTitle: 'Why AI SEO Blog Posts Spike Then Crash',
                     answerHtml: `
                         <p><strong>Search engines and answer engines measure "information gain" and user engagement signals. If your AI-generated article repeats the exact same top-5 consensus points already found on 400 other websites (with zero original data, zero lived experience, and predictable AI sentence rhythm), ranking algorithms demote it as duplicate commodity slop.</strong></p>
                         <p>When you publish 50 unedited AI blog posts, Google's crawler initially tests them in the index for a week. As soon as user click-through and dwell signals show that your page adds zero new facts beyond what the AI Overview already summarized at the top of the page, impressions cliff-dive to zero.</p>
@@ -2615,6 +2692,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'how-to-price-ai-feature-saas-top-5-percent-power-users-margins',
                     questionHeadline: 'How do I price an AI feature in my SaaS app so the top 5% of power users don\'t wipe out my profit margins?',
+                    seoTitle: 'Price SaaS AI Features for Power Users',
                     answerHtml: `
                         <p><strong>Replace flat "unlimited AI" seat pricing with a 3-part hybrid model: a base platform subscription, a generous monthly included credit allowance that covers 85% of normal users, and an automated model step-down router (or self-serve credit top-up pack) that triggers when a power user hits 100% of their allowance.</strong></p>
                         <p>Traditional SaaS has near-zero marginal cost when a user clicks a button 1,000 times. Generative AI has real Cost of Goods Sold (COGS) on every single click. If you charge a flat $29/month for "Unlimited AI Workflows," your top 5% of heavy users (or teams sharing a single login) will easily burn $180/month in Anthropic or OpenAI tokens, turning your best customers into your biggest financial losses.</p>
@@ -2632,8 +2710,9 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'why-openai-anthropic-cursor-api-bill-spiked-5x-cut-50-percent',
                     questionHeadline: 'Why did our OpenAI, Anthropic, or Cursor API bill spike 5x this month (and how do we cut it by 50% this week)?',
+                    seoTitle: 'Why OpenAI & Cursor Bills Spiked 5x',
                     answerHtml: `
-                        <p><strong>Five-fold API bill spikes are almost never caused by 5x customer growth; they come from three architectural leaks: silent agent retry loops, resending massive un-cached system prompts and tool definitions on every turn, and using a frontier reasoning model for simple classification tasks.</strong></p>
+                        <p>An OpenAI, Anthropic, and Cursor API bill rarely spikes 5x from headcount alone; it spikes from token retry loops, unpruned system prompts, and agent context bloat that replay full conversation histories on every turn. Audit three telemetry layers today to cut inference spend by 50% this week without slowing delivery.</p>
                         <p>You can cut a runaway LLM bill by 50% to 75% in 72 hours without degrading user quality if you fix those three plumbing leaks in order.</p>
                         <h3 class="text-xl font-bold mt-8 mb-4">The 72-Hour AI Bill Triage Protocol</h3>
                         <ul class="list-disc pl-6 space-y-2 mb-6">
@@ -2649,6 +2728,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'how-much-does-multi-step-ai-agent-task-cost-production-vs-chatbot',
                     questionHeadline: 'How much does a multi-step AI agent task actually cost in production ($0.08 to $1.40/task) vs a single chatbot prompt?',
+                    seoTitle: 'Multi-Step AI Agent Cost vs Chatbot',
                     answerHtml: `
                         <p><strong>A single chatbot question-and-answer turn costs $0.001 to $0.015, whereas an autonomous multi-step agent workflow that reads files, calls 6 tools, self-corrects an error, and synthesizes a report costs $0.08 to $1.40+ per completed task because input context accumulates quadratically across steps.</strong></p>
                         <p>Founders routinely price their agent product by looking at the token price of a single prompt ($3 per million input tokens) and assuming each task costs half a penny. They forget that on Step 8 of an agent loop, the model is re-reading Steps 1 through 7 plus six full JSON tool responses on every single call.</p>
@@ -2667,6 +2747,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'charge-per-seat-per-credit-per-token-or-per-outcome-2026',
                     questionHeadline: 'Should we charge per seat, per credit, per token, or per resolved outcome in 2026?',
+                    seoTitle: 'AI Pricing: Seat vs Credit vs Outcome',
                     answerHtml: `
                         <p><strong>Never charge business buyers per raw token (it creates "meter anxiety" and punishes usage). Charge a hybrid base platform fee + included workflow credits for copilot/productivity tools, and charge per verified outcome (or base fee + per-resolution tier) when your AI replaces full human labor tickets.</strong></p>
                         <p>Enterprise CFOs and small-business owners alike hate unpredictable utility bills. If a customer cannot predict within 15% what your software will cost them next quarter, procurement will stall your deal.</p>
@@ -2684,6 +2765,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'when-to-self-host-open-weight-models-llama-gemma-deepseek-vs-api',
                     questionHeadline: 'When does it actually make financial sense to self-host open-weight models (Llama 4, Gemma 4, DeepSeek, Qwen) on dedicated GPUs vs paying API providers?',
+                    seoTitle: 'Self-Host Llama/Gemma/DeepSeek vs API',
                     answerHtml: `
                         <p><strong>Self-hosting dedicated cloud GPUs only beats commercial API pricing when your sustained 24/7 token volume keeps GPU utilization above 60% (typically $15,000 to $25,000+/month in steady API spend), OR when you run quantized local models (via LiteRT/Ollama) on existing edge/client hardware for zero-cloud cost.</strong></p>
                         <p>The biggest financial trap in AI infrastructure is renting $4,000/month dedicated GPU instances for spiky daytime SaaS traffic. When you pay per token via an API, you pay $0 at 3:00 AM when nobody is using your app. When you rent dedicated GPUs, you pay 100% of the bill 24 hours a day even while your servers sit 85% idle overnight and on weekends.</p>
@@ -2701,6 +2783,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'how-agencies-freelancers-price-ai-automation-builds-retainers',
                     questionHeadline: 'How do agencies and freelancers price AI automation builds and monthly retainers without eating their clients\' token bills?',
+                    seoTitle: 'Pricing Agency AI Builds & Retainers',
                     answerHtml: `
                         <p><strong>Price the initial build as a fixed-scope 14-day or 21-day sprint ($2,500 to $7,500) tied to a specific operational bottleneck, put all OpenAI, Anthropic, n8n, and Supabase API keys directly on the client's own credit card from day one, and charge a separate monthly governance retainer for monitoring, evals, and prompt maintenance.</strong></p>
                         <p>Beginner AI agencies bankrupt themselves in two ways: they sell open-ended hourly custom development that drags on for 4 months of scope creep, and they host the client's LLM usage on the agency's own API key for a flat $500/month retainer, only to watch the client's team run $1,800 worth of tokens in month two.</p>
@@ -2718,6 +2801,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'stop-legacy-saas-vendors-forcing-25-percent-ai-addon-price-hike',
                     questionHeadline: 'How do I stop legacy SaaS vendors (Salesforce, HubSpot, Zendesk, Notion, Jira) from forcing a 25% "AI Add-On" price hike at renewal?',
+                    seoTitle: 'Block 25% SaaS AI Add-On Renewal Hikes',
                     answerHtml: `
                         <p><strong>Pull seat-level usage telemetry 60 days before renewal, demand that the vendor unbundle AI seats from core platform licenses so you only pay for the 10% to 15% of power users who actually trigger AI actions, and show a credible walk-away alternative using direct API/MCP workflows.</strong></p>
                         <p>In 2026, every legacy SaaS vendor is trying to boost Net Dollar Retention by stuffing a generic "AI Copilot" into their enterprise tier and demanding a 20% to 30% across-the-board price increase across all 200 of your employee seats.</p>
@@ -2743,6 +2827,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'stand-out-product-manager-vp-product-interviews-2026-800-applicants',
                     questionHeadline: 'How do I stand out in Product Manager, Senior PM, or VP of Product interviews in late 2026 when 800+ people apply for every role?',
+                    seoTitle: 'Stand Out in 2026 PM & VP Interviews',
                     answerHtml: `
                         <p><strong>Stop sending static PDF slide decks about Agile ceremonies and user personas. Show up with two artifacts 99% of candidates lack: (1) a live clickable prototype you built yourself in an afternoon using AI coding tools, and (2) a 1-page P&amp;L unit-economics model showing how that feature makes money, what its token/infra COGS cost at P90 usage, and which zombie features you would kill to fund it.</strong></p>
                         <p>Hiring managers in late 2026 are aggressively cutting "coordination PMs" who just write Jira tickets and wait two weeks for a designer and four engineers to build a mockup. When you prove in the first 10 minutes of an interview that you can validate a working prototype over a weekend <em>and</em> defend its gross margin like a CFO, you put yourself in a category of one.</p>
@@ -2759,6 +2844,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'answer-pm-interview-question-time-you-used-vibe-coding-what-broke',
                     questionHeadline: 'How do I answer the 2026 PM interview question: "Walk me through a time you used vibe coding or AI to bypass a bottleneck - and what broke?"',
+                    seoTitle: 'PM Interview: Vibe Coding & What Broke',
                     answerHtml: `
                         <p><strong>Hiring managers ask this to test if you are a reckless hobbyist or a pragmatic builder. Answer by showing how you built a working prototype in 48 hours to test real customer willingness to pay before burning engineering sprint capacity, and then explicitly name the production boundaries (Supabase RLS, Stripe webhook idempotency, rate limits, golden evals) where you partnered with engineering to harden it.</strong></p>
                         <p>Never brag in a PM or VP interview that "we don't even need engineers anymore because I vibe-coded it myself." Every CTO and VP of Engineering on your interview panel has been burned by a fragile prototype that leaked data or spiked an API bill in production.</p>
@@ -2776,6 +2862,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'how-to-write-llm-eval-suite-ai-product-manager-without-ml-phd',
                     questionHeadline: 'How do you write an "Eval" (LLM evaluation suite) as an AI Product Manager without a PhD in Machine Learning?',
+                    seoTitle: 'Write LLM Evals as an AI PM (No PhD)',
                     answerHtml: `
                         <p><strong>Start with a simple spreadsheet of 50 real, messy user inputs (including angry customers, typos, prompt-injection attempts, and edge cases) paired with the exact expected output criteria, and score every prompt or model change against those 50 rows before shipping.</strong></p>
                         <p>Most product teams ship prompt changes based on "vibes": they type three easy questions into a chat box, say "looks good!", and push to production, silently breaking 20% of existing customer workflows. You do not need a PhD in statistics to run production-grade evals.</p>
@@ -2794,6 +2881,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'run-one-person-product-marketing-ops-department-ai-agents',
                     questionHeadline: 'How do I run a "One-Person Product / Marketing / Ops Department" using AI agents without working 70 hours a week?',
+                    seoTitle: 'Run a 1-Person Product/Ops Team With AI',
                     answerHtml: `
                         <p><strong>Eliminate the three biggest time sinks on your calendar (manual status updates, repetitive data formatting, and starting documents from a blank page) by wiring three recurring workflows: automated transcript-to-spec drafting, a zombie-work kill matrix that drops the bottom 20% of low-ROI tasks, and pre-built financial/board templates.</strong></p>
                         <p>Working 70 hours a week with AI just means you are generating 3x more low-value noise for yourself to read and edit. True "One-Person Department" leverage comes from ruthless subtraction first and constrained automation second.</p>
@@ -2811,6 +2899,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'convince-ceo-sales-to-kill-zombie-features-eating-engineering-hours',
                     questionHeadline: 'How do I convince my CEO and Sales team to kill "Zombie Features" that are eating 60% of our engineering maintenance hours?',
+                    seoTitle: 'Convince CEO & Sales to Kill Zombie Code',
                     answerHtml: `
                         <p><strong>Never argue that a legacy feature should be killed because the code is "old" or "hard to maintain." Show the CEO and VP of Sales a 1-page table comparing each feature's Fully-Loaded Annual Maintenance Cost (engineering hours + cloud/token overhead) against its Direct Attributed ARR, proving that a feature used by 0.8% of customers is costing $180,000/year and blocking two high-revenue roadmap items.</strong></p>
                         <p>Sales executives fight feature deprecation because they fear losing even a single $15,000 account. When you make the invisible $180,000 engineering carry cost visible in dollars, and offer a 60-day migration bridge for the two affected accounts, the CFO and CEO will back your kill list immediately.</p>
@@ -2830,6 +2919,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'what-to-show-on-12-slide-cfo-board-deck-2026-instead-of-story-points',
                     questionHeadline: 'What should a CTO or VP of Product show on a 12-slide Board & CFO deck in 2026 instead of Story Points and DORA velocity?',
+                    seoTitle: '2026 CTO & CFO Board Deck Metrics Guide',
                     answerHtml: `
                         <p><strong>Boards and CFOs do not care about Jira story points, commit volume, or deployment frequency unless those metrics translate into cash flow. Replace agile activity charts with four financial views: (1) R&amp;D Capital Allocation (New ARR Innovation vs. Keep-the-Lights-On Maintenance), (2) Feature-Level Net Margin Waterfall, (3) Technical Insolvency Date (PDI), and (4) P90 AI Inference COGS as a percentage of Gross Margin.</strong></p>
                         <p>Walking into a 2026 board meeting bragging that "AI coding tools increased our pull request volume by 40%" is a trap if product revenue grew 0% and cloud bills jumped 35%. Translate every engineering metric into balance-sheet language.</p>
@@ -2848,6 +2938,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'why-developers-write-2x-more-code-with-ai-but-roadmap-ships-slower',
                     questionHeadline: 'Why are my developers writing 2x more code with AI, but our product roadmap is shipping slower than last year?',
+                    seoTitle: '2x More AI Code, Slower Product Roadmap',
                     answerHtml: `
                         <p><strong>AI coding assistants reduced the cost of generating syntax to near zero, which moved the bottleneck directly downstream into Senior Engineer Code Review, QA regression testing, and production debugging, creating a Pull Request gridlock where teams spend more hours reviewing and fixing verbose AI-generated diffs than they saved writing them.</strong></p>
                         <p>In software economics, local optimization of a non-bottleneck degrades the entire system. When 20 junior and mid-level developers use Cursor or Copilot to open 3x more 1,500-line pull requests every week without a specification, your 3 staff engineers become full-time code janitors.</p>
@@ -2865,6 +2956,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'private-equity-due-diligence-48-hours-ai-moat-vs-negative-margin-wrapper',
                     questionHeadline: 'How do Private Equity due diligence teams tell in 48 hours whether an AI acquisition target has a real moat or is a fragile, negative-margin wrapper?',
+                    seoTitle: '48-Hour PE AI Due Diligence: Real Moat?',
                     answerHtml: `
                         <p><strong>Request four raw artifacts in the first 48 hours of diligence: (1) the last 90 days of OpenAI/Anthropic/Cloud invoices mapped against customer-level revenue at P90 usage, (2) the codebase's Product Debt Index and test/eval coverage, (3) proof of proprietary workflow state or data lock-in beyond system prompts, and (4) Section 174 R&amp;D capitalization exposure.</strong></p>
                         <p>Many "AI-native" SaaS targets pitching 100% YoY ARR growth in 2026 are actually buying revenue with negative unit margins: their top 20% of enterprise customers consume more in inference and human-in-the-loop cleanup labor than they pay in subscription fees, and their codebase is 70% unverified vibe-coded debt.</p>
@@ -2882,6 +2974,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'calculate-technical-insolvency-date-business-case-refactoring-sprint',
                     questionHeadline: 'How do we calculate our company\'s "Technical Insolvency Date" and make the financial business case for a 2-week refactoring sprint?',
+                    seoTitle: 'Calculate Technical Insolvency Date',
                     answerHtml: `
                         <p><strong>Divide your remaining innovation capacity (<code>100% - Current Maintenance %</code>) by the quarterly rate at which maintenance drag is growing (<code>Quarterly Maintenance % Growth</code>). The resulting number is the exact calendar quarter when unplanned bugs, outages, and tech debt will consume 100% of engineering payroll, freezing all new product delivery.</strong></p>
                         <p>When an Engineering Manager asks a CFO for "two sprints to clean up technical debt," the CFO hears "we want to stop building customer features for a month so developers can reorganize their code." When you instead show that Maintenance Drag grew from 42% in Q1 to 54% in Q3, putting your <strong>Technical Insolvency Date</strong> 3.8 quarters away and burning $1.1M in trapped payroll, paying down debt becomes an urgent financial survival decision.</p>
@@ -2899,6 +2992,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'mandatory-eu-ai-act-shadow-ai-governance-controls-enterprise-deals-2026',
                     questionHeadline: 'What are the mandatory EU AI Act and Shadow AI governance controls every company needs in place in late 2026 to avoid enterprise deal blockers?',
+                    seoTitle: '2026 EU AI Act & Shadow AI Controls',
                     answerHtml: `
                         <p><strong>To pass Fortune 500 procurement and EU AI Act enforcement in late 2026, you need four verifiable controls: (1) a complete inventory of all third-party and employee Shadow AI tools touching customer data, (2) zero-data-retention (ZDR) enterprise API agreements with PII scrubbing before inference, (3) deterministic human-in-the-loop gates on high-risk automated decisions, and (4) an immutable audit log of model inputs, versions, and outputs.</strong></p>
                         <p>Enterprise security questionnaires no longer just ask if you have SOC 2. They ask which sub-processors receive customer prompts, whether employee coding assistants train on proprietary code, and how you prevent cross-tenant RAG data leakage.</p>

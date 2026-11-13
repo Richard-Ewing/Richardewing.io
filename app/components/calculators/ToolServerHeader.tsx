@@ -40,8 +40,10 @@ export default function ToolServerHeader({
     operatingSystem: 'All',
     offers: {
       '@type': 'Offer',
-      price: '0',
+      sku: slug === 'aueb' ? 'RW-AUEB-00' : slug === 'pdi' ? 'RW-PDI-00' : undefined,
+      price: '0.00',
       priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
     },
     author: {
       '@type': 'Person',

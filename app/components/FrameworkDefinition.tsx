@@ -66,9 +66,9 @@ export default function FrameworkDefinition({ framework }: { framework: Framewor
                     <h1 className="text-3xl sm:text-5xl font-serif font-bold text-[var(--ink,#1e2924)] mb-4 leading-tight">
                         {framework.name}
                     </h1>
-                    <p className="text-sm font-mono text-[var(--muted,#66716a)] mb-6">
+                    <div className="text-sm font-mono text-[var(--muted,#66716a)] mb-6">
                         Authored by <span className="font-semibold text-[var(--ink,#1e2924)]">Richard Ewing</span>, AI Economist &amp; Enterprise R&amp;D Auditor
-                    </p>
+                    </div>
                     <SocialShare url={`https://www.richardewing.io/articles/frameworks/${framework.slug}`} title={framework.name} />
                 </header>
 

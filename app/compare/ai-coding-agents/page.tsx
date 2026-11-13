@@ -4,14 +4,29 @@ import AdvisoryCTA from '@/components/AdvisoryCTA';
 import { ShieldCheck, AlertTriangle, Check, X, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Claude Code vs Cursor vs Windsurf',
-    description: 'Compare Claude Code, Cursor, and Windsurf on real pricing and failure modes. Audit token churn, context loss, and deterministic runtime guardrails.',
+    title: 'AI Coding Agents: Cursor vs Claude Code',
+    description: 'Compare Cursor, Claude Code, Windsurf, Stagewise, and Zencoder on real costs, context rot, and production drift controls for engineering teams.',
     keywords: ['Claude Code vs Cursor', 'Cursor vs Windsurf', 'Claude Code vs Windsurf', 'GitHub Copilot vs Cursor', 'AI coding agent comparison', 'AI coding agent pricing 2026', 'best AI coding agent 2026', 'Cursor problems', 'Copilot problems', 'Windsurf problems', 'AI coding agent complaints', 'Claude Code governance', 'Cursor governance', 'Windsurf safety', 'Cline vs Roo Code', 'deterministic vs probabilistic coding', 'AI agent runtime governance comparison', 'Tabnine vs Copilot'],
-    openGraph: {
-        title: 'Claude Code vs Cursor vs Windsurf 2026 - Pricing, Problems & Governance',
-        description: 'Real pricing, user complaints, and governance gap analysis for every major AI coding agent.',
-    },
     alternates: { canonical: 'https://www.richardewing.io/compare/ai-coding-agents' },
+    openGraph: {
+        title: 'AI Coding Agents: Cursor vs Claude Code | Richard Ewing',
+        description: 'Compare Cursor, Claude Code, Windsurf, Stagewise, and Zencoder on real costs, context rot, and production drift controls for engineering teams.',
+        url: 'https://www.richardewing.io/compare/ai-coding-agents',
+        type: 'website',
+        images: [
+            {
+                url: 'https://www.richardewing.io/api/og?title=AI+Coding+Agents%3A+Cursor+vs+Claude+Code&category=AI+Governance',
+                width: 1200,
+                height: 630,
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'AI Coding Agents: Cursor vs Claude Code | Richard Ewing',
+        description: 'Compare Cursor, Claude Code, Windsurf, Stagewise, and Zencoder on real costs, context rot, and production drift controls for engineering teams.',
+        images: ['https://www.richardewing.io/api/og?title=AI+Coding+Agents%3A+Cursor+vs+Claude+Code&category=AI+Governance'],
+    },
 };
 
 const agents = [
@@ -77,7 +92,7 @@ export default function AgentComparisonPage() {
                     </h1>
                     <p className="text-lg text-zinc-800 max-w-2xl mx-auto font-medium">
                         Every major AI coding agent ships without runtime governance infrastructure.
-                        This comparison shows exactly what's missing &ndash; and what you need to deploy.
+                        This comparison shows what fails in production and which controls to deploy.
                     </p>
                 </div>
 
@@ -139,6 +154,61 @@ export default function AgentComparisonPage() {
                             </p>
                         </div>
                     </div>
+                </div>
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            '@context': 'https://schema.org',
+                            '@type': 'BreadcrumbList',
+                            itemListElement: [
+                                { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+                                { '@type': 'ListItem', position: 2, name: 'Compare AI Tools', item: 'https://www.richardewing.io/compare' },
+                                { '@type': 'ListItem', position: 3, name: 'AI Coding Agents: Cursor vs Claude Code', item: 'https://www.richardewing.io/compare/ai-coding-agents' },
+                            ],
+                        }),
+                    }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            '@context': 'https://schema.org',
+                            '@type': 'FAQPage',
+                            mainEntity: [
+                                {
+                                    '@type': 'Question',
+                                    name: 'How does $99 one-time governance compare to $60/user/month AI seats?',
+                                    acceptedAnswer: {
+                                        '@type': 'Answer',
+                                        text: 'A single governance module at $99 costs less than one month of Copilot Enterprise or Windsurf Enterprise, and it deploys permanently without recurring per-seat license renewals.',
+                                    },
+                                },
+                                {
+                                    '@type': 'Question',
+                                    name: 'Why do Cursor, Claude Code, Stagewise, and Zencoder all fail without runtime controls?',
+                                    acceptedAnswer: {
+                                        '@type': 'Answer',
+                                        text: 'Every AI coding assistant optimizes local code generation, not production repository boundaries. Without context pruning, file-ownership locks, and token circuit breakers, teams experience retry loops, quiet overages, and unplanned architecture drift.',
+                                    },
+                                },
+                            ],
+                        }),
+                    }}
+                />
+
+                {/* Parallel Multi-Agent Execution: Stagewise & Zencoder */}
+                <div className="mb-12 p-8 bg-[var(--card,#ffffff)] rounded-2xl border border-[var(--line,#e2ded4)] shadow-sm">
+                    <h2 className="text-2xl font-serif font-bold text-[var(--forest2,#162e26)] mb-4">
+                        Parallel Multi-Agent Execution: Stagewise &amp; Zencoder Patterns
+                    </h2>
+                    <p className="text-sm text-zinc-800 leading-relaxed mb-4">
+                        Beyond IDE autocompletion and terminal agents, engineering teams increasingly run visual browser-to-code tools such as <strong>Stagewise</strong> and multi-agent background runners such as <strong>Zencoder</strong>. Faster parallel diff generation increases pull-request throughput, but without clear ownership rules it multiplies duplicate helpers, inconsistent API contracts, and unreviewed retry loops.
+                    </p>
+                    <p className="text-sm text-zinc-800 leading-relaxed">
+                        Before expanding parallel agent licenses across Stagewise, Zencoder, Cursor, or Claude Code, enforce directory ownership rules, automated schema verification, and per-task token ceilings so extra agent concurrency does not turn into maintenance debt.
+                    </p>
                 </div>
 
                 {/* Pricing Comparison */}
@@ -212,7 +282,7 @@ export default function AgentComparisonPage() {
                         {[
                             { q: 'Which AI coding agent is safest?', a: 'None of them ship with runtime governance infrastructure by default. Claude Code has the most mature permission model (command approval prompts), but it lacks context rot prevention, retry inflation control, and financial circuit breakers. All agents require external governance deployment.' },
                             { q: 'Can I use governance skills with any agent?', a: 'Yes. The 15 governance modules on this site are designed for Claude Code, Cursor, Windsurf, Cline, Roo Code, Codex, Copilot, Gemini Code Assist, Amazon Q Developer, Devin, OpenHands, and SWE-Agent. Each includes a CLAUDE.md manifest, YAML policies, TypeScript middleware, and reusable bash tools.' },
-                            { q: 'How does $99 one-time compare to $60/user/month?', a: 'A single governance module at $99 costs less than one month of Copilot Enterprise or Windsurf Enterprise &ndash; and it is a permanent deployment, not a recurring subscription. For a 10-person team on Copilot Enterprise, you would spend $7,200/year on the tool alone with zero governance. The full 15-module governance suite costs $1,485 total, one-time.' },
+                            { q: 'How does $99 one-time compare to $60/user/month?', a: 'A single governance module at $99 costs less than one month of Copilot Enterprise or Windsurf Enterprise, and it is a permanent deployment, not a recurring subscription. For a 10-person team on Copilot Enterprise, you would spend $7,200/year on the tool alone with zero governance. The full 15-module governance suite costs $1,485 total, one-time.' },
                             { q: 'What is runtime governance?', a: 'Runtime governance is the enforcement layer between the AI agent and your codebase. It intercepts agent actions, validates them against policy manifests, and halts execution when governance boundaries are violated. It prevents context rot, retry inflation, repository drift, and financial overruns.' },
                             { q: 'Why does Claude Code get worse after an hour?', a: 'Context rot. As the context window fills with stale assumptions, failed attempts, and correction history, the signal-to-noise ratio degrades until the agent is reasoning against its own historical errors. The Context Rot Prevention System deploys bounded cognition middleware to enforce checkpoint rotation before degradation occurs.' },
                         ].map(faq => (
@@ -300,7 +370,7 @@ export default function AgentComparisonPage() {
 
                 {/* CTA */}
                 <div className="p-8 sm:p-12 bg-[var(--forest2,#162e26)] rounded-2xl text-[var(--paper,#f4f1e9)] text-center border border-[var(--gold,#b77a35)]/30 shadow-xl">
-                    <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-4">Deploy the governance layer these tools are missing.</h2>
+                    <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-4">Deploy the governance layer these tools leave unguarded.</h2>
                     <p className="text-zinc-300 mb-6 max-w-xl mx-auto">15 runtime infrastructure modules. Works with every agent. $99 each, one-time.</p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
                         <Link href="/skills" className="px-8 py-4 bg-[var(--gold,#b77a35)] text-white font-mono text-xs uppercase tracking-widest font-bold rounded-xl hover:bg-[var(--gold,#b77a35)]/90 transition-colors shadow-sm">

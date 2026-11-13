@@ -22,7 +22,7 @@ import { EXECUTIVE_MATRICES } from '../executive-matrices';
 
 type Props = { params: Promise<{ slug: string }> };
 
-const GLOSSARY_SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
+const GLOSSARY_SEO_OVERRIDES: Record<string, { title: string; description: string; h1Override?: string }> = {
     'calculating-roai': {
         title: 'ROAI Meaning, Formula & AI ROI Guide',
         description: 'What is ROAI? Return on AI Investment equals verified wage and revenue gains minus model API, cloud, and QA costs. Run the CFO formula and calculator.',
@@ -30,10 +30,12 @@ const GLOSSARY_SEO_OVERRIDES: Record<string, { title: string; description: strin
     'ic-vs-management-track': {
         title: 'IC vs Management Track: Pay & Levels',
         description: 'Compare Staff & Principal IC vs Engineering Manager pay bands, L5 to L8 scope, promotion gates, and P&L accountability across tech teams.',
+        h1Override: 'IC Track vs. Engineering Management Track: Pay & Levels',
     },
     'engineering-levels': {
         title: 'Software Engineer Levels (L1-L8 Ranks)',
         description: 'Compare software engineer levels 1 to 4 and L3 to L8 Staff/Principal ranks: scope, compensation bands, promotion gates, and architecture ownership.',
+        h1Override: 'Software Engineering Levels & Ranks (Level 1-4 and L3-L8)',
     },
     'ai-unit-economics': {
         title: 'What Is AI Unit Economics? SaaS Formula',
@@ -252,8 +254,12 @@ export default async function GlossaryTermPage({ params }: Props) {
     const wordCount = (term.definition + ' ' + term.whyItMatters + ' ' + (term.howToMeasure || '') + ' ' + (term.howToApply || '')).split(/\s+/).length;
     const readingTime = Math.max(2, Math.ceil(wordCount / 200));
 
-    // TL;DR  -  first sentence of definition
-    const tldr = term.definition.split(/[.!?]\s/)[0] + '.';
+    // TL;DR: first complete sentence (abbreviation-safe)
+    const firstSentence = term.definition
+        .split(/(?<!\b(?:vs|e\.g|i\.e|Mr|Dr|Inc|Ltd|U\.S))[.!?]\s+/)[0]
+        .replace(/\.$/, '')
+        .trim();
+    const tldr = `${firstSentence}.`;
 
     // Get checklist and how-to-apply (explicit or auto-generated)
     const checklist = term.checklist || autoChecklist(term.category, term.title);
@@ -386,7 +392,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                         </div>
                     </div>
                     <h1 className="text-3xl sm:text-5xl font-serif font-bold text-[var(--ink,#1e2924)] mb-4 leading-tight">
-                        What is {term.title}?
+                        {GLOSSARY_SEO_OVERRIDES[slug]?.h1Override ?? `What is ${term.title}?`}
                     </h1>
                 </header>
 
@@ -478,7 +484,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 {/* Where Is It Used? */}
                 {whereIsItUsed && (
                     <section className="mb-12 card p-8 border-cyan-500/20 bg-gradient-to-br from-cyan-500/[0.02] to-transparent">
-                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">🌍 Where Is It Used?</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Where {term.title} Applies in Enterprise Operations</h2>
                         <div className="prose prose-zinc max-w-none">
                             {whereIsItUsed.split('\n\n').map((p, i) => (
                                 <p key={i} className="text-zinc-950 font-bold leading-relaxed mb-4">{p}</p>
@@ -490,7 +496,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 {/* Who Uses It? */}
                 {whoUsesIt && (
                     <section className="mb-12 card p-8 border-violet-500/20 bg-gradient-to-br from-violet-500/[0.02] to-transparent">
-                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">👤 Who Uses It?</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Who Uses {term.title}</h2>
                         <div className="prose prose-zinc max-w-none">
                             {whoUsesIt.split('\n\n').map((p, i) => (
                                 <p key={i} className="text-zinc-950 font-bold leading-relaxed mb-4">{p}</p>
@@ -501,7 +507,7 @@ export default async function GlossaryTermPage({ params }: Props) {
 
                 {/* Why It Matters */}
                 <section className="mb-12 card p-8 border-cyan-500/20">
-                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">💡 Why It Matters</h2>
+                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Why {term.title} Matters to P&amp;L Leaders</h2>
                     <div className="prose prose-zinc max-w-none">
                         {term.whyItMatters.split('\n\n').map((p, i) => (
                             <p key={i} className="text-zinc-950 font-bold leading-relaxed mb-4">{p}</p>
@@ -512,7 +518,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 {/* How to Measure (if explicit) */}
                 {term.howToMeasure && (
                     <section className="mb-12 card p-8 border-emerald-500/20">
-                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">📏 How to Measure</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">How to Measure {term.title}</h2>
                         <div className="prose prose-zinc max-w-none">
                             {term.howToMeasure.split('\n').map((line, i) => (
                                 <p key={i} className="text-zinc-950 font-bold leading-relaxed mb-2">{line}</p>
@@ -523,7 +529,7 @@ export default async function GlossaryTermPage({ params }: Props) {
 
                 {/* How to Apply  -  always rendered */}
                 <section className="mb-12 card p-8 border-violet-500/20">
-                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">🛠️ How to Apply {term.title}</h2>
+                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">How to Apply {term.title}</h2>
                     <div className="prose prose-zinc max-w-none">
                         {howToApply.split('\n\n').map((p, i) => (
                             <p key={i} className="text-zinc-950 font-bold leading-relaxed mb-4"
@@ -535,7 +541,7 @@ export default async function GlossaryTermPage({ params }: Props) {
 
                 {/* Actionable Checklist  -  always rendered */}
                 <section className="mb-12 card p-8 border-emerald-500/20">
-                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">✅ {term.title} Checklist</h2>
+                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">{term.title} Checklist</h2>
                     <div className="space-y-3">
                         {checklist.map((item, i) => (
                             <label key={i} className="flex items-start gap-3 p-3 rounded-lg bg-zinc-50 border border-zinc-400 hover:border-emerald-500/20 transition-colors cursor-pointer group">
@@ -548,7 +554,7 @@ export default async function GlossaryTermPage({ params }: Props) {
 
                 {/* Maturity Model  -  always rendered */}
                 <section className="mb-12">
-                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">📈 {term.title} Maturity Model</h2>
+                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">{term.title} Maturity Model</h2>
                     <p className="text-zinc-950 font-bold text-sm font-semibold mb-4">Where does your organization stand? Use this model to assess your current level and identify the next milestone.</p>
                     <div className="space-y-3">
                         {maturityLevels.map((level, i) => {
@@ -577,7 +583,7 @@ export default async function GlossaryTermPage({ params }: Props) {
 
                 {/* Comparison Table  -  always rendered */}
                 <section className="mb-12">
-                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">⚔️ Comparisons</h2>
+                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">{term.title} Comparisons</h2>
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm">
                             <thead>
@@ -604,7 +610,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 <section className="mb-12 rounded-2xl border border-violet-500/20 bg-gradient-to-br from-violet-500/[0.03] to-cyan-500/[0.03] overflow-hidden">
                     <div className="px-8 pt-6 pb-4 border-b border-zinc-400 flex items-center gap-3">
                         <div className="w-8 h-8 rounded-lg bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
-                            <span className="text-sm">🔄</span>
+                            <span className="text-xs font-mono font-bold">Flow</span>
                         </div>
                         <div>
                             <h2 className="text-lg font-grotesk font-bold text-zinc-900">How It Works</h2>
@@ -620,7 +626,7 @@ export default async function GlossaryTermPage({ params }: Props) {
 
                 {/* Common Mistakes  -  always rendered */}
                 <section className="mb-12">
-                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">🚫 Common Mistakes to Avoid</h2>
+                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">Common {term.title} Mistakes to Avoid</h2>
                     <div className="space-y-4">
                         {commonMistakes.map((m, i) => (
                             <div key={i} className="rounded-xl border border-red-500/10 bg-red-500/[0.02] p-5">
@@ -630,8 +636,8 @@ export default async function GlossaryTermPage({ params }: Props) {
                                     </div>
                                     <div className="flex-1">
                                         <div className="text-sm font-semibold font-bold text-zinc-950 mb-1">{m.mistake}</div>
-                                        <div className="text-xs font-bold text-zinc-900 font-bold/80 mb-2">⚠️ Consequence: {m.consequence}</div>
-                                        <div className="text-xs font-bold text-zinc-900 font-bold/80">✅ Fix: {m.fix}</div>
+                                        <div className="text-xs font-bold text-zinc-900 font-bold/80 mb-2">Consequence: {m.consequence}</div>
+                                        <div className="text-xs font-bold text-zinc-900 font-bold/80">Fix: {m.fix}</div>
                                     </div>
                                 </div>
                             </div>
@@ -641,7 +647,7 @@ export default async function GlossaryTermPage({ params }: Props) {
 
                 {/* Best Practices  -  always rendered */}
                 <section className="mb-12">
-                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">🏆 Best Practices</h2>
+                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">{term.title} Best Practices</h2>
                     <div className="space-y-3">
                         {bestPractices.map((bp, i) => (
                             <div key={i} className="flex items-start gap-4 p-4 rounded-xl border border-emerald-500/10 bg-emerald-500/[0.02]">
@@ -659,7 +665,7 @@ export default async function GlossaryTermPage({ params }: Props) {
 
                 {/* Industry Benchmarks  -  always rendered */}
                 <section className="mb-12">
-                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">📊 Industry Benchmarks</h2>
+                    <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">{term.title} Industry Benchmarks</h2>
                     <p className="text-zinc-950 font-bold text-sm font-semibold mb-4">How does your organization compare? Use these benchmarks to identify where you stand and where to invest.</p>
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm">
@@ -692,7 +698,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     <section className="mb-12 mt-16 pt-12 border-t border-zinc-400">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
-                                <span className="text-xl">🌐</span>
+                                <span className="text-xs font-mono font-bold uppercase">Web</span>
                             </div>
                             <div>
                                 <h2 className="text-3xl font-grotesk font-bold text-zinc-900">Explore the {term.title} Ecosystem</h2>
@@ -705,7 +711,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                             {/* Spoke Articles Column */}
                             <div className="card p-6 border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-transparent flex flex-col h-full">
                                 <h3 className="text-lg font-grotesk font-bold text-zinc-950 flex items-center gap-2 mb-4">
-                                    <span className="text-cyan-900 font-extrabold font-semibold">📝</span> Deep-Dive Articles
+                                    <span className="text-cyan-900 font-extrabold font-semibold">Briefings:</span> Deep-Dive Articles
                                 </h3>
                                 <div className="space-y-4 flex-1">
                                     {spokes.map((s, i) => (
@@ -720,7 +726,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                             {/* Curriculum Column */}
                             <div className="card p-6 border-violet-500/20 bg-gradient-to-br from-violet-500/5 to-transparent flex flex-col h-full">
                                 <h3 className="text-lg font-grotesk font-bold text-zinc-950 flex items-center gap-2 mb-4">
-                                    <span className="text-violet-400">🎓</span> Curriculum Tracks
+                                    <span className="text-violet-400">Academy:</span> Curriculum Tracks
                                 </h3>
                                 <div className="space-y-4 flex-1">
                                     {curriculumTracks.map((c, i) => (
@@ -736,7 +742,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                             {/* Executive Guides Column */}
                             <div className="card p-6 border-emerald-500/20 bg-gradient-to-br from-emerald-500/5 to-transparent flex flex-col h-full">
                                 <h3 className="text-lg font-grotesk font-bold text-zinc-950 flex items-center gap-2 mb-4">
-                                    <span className="text-emerald-900 font-extrabold font-semibold">📄</span> Executive Guides
+                                    <span className="text-emerald-900 font-extrabold font-semibold">Playbooks:</span> Executive Guides
                                 </h3>
                                 <div className="space-y-4 flex-1">
                                     {executiveGuides.map((g, i) => (
@@ -779,7 +785,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     <section className="mb-12 mt-16 pt-12 border-t border-zinc-400">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
-                                <span className="text-xl">📚</span>
+                                <span className="text-xs font-mono font-bold uppercase">Ref</span>
                             </div>
                             <div>
                                 <h2 className="text-2xl font-grotesk font-bold text-zinc-900">Related Reading</h2>
@@ -799,7 +805,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                                 </div>
                             </div>
                             <div className="card p-6 border-zinc-400 flex flex-col items-center justify-center text-center bg-zinc-50">
-                                <div className="text-3xl mb-3">🎓</div>
+                                <div className="text-xs font-mono font-bold uppercase tracking-widest mb-3 text-[var(--gold,#b77a35)]">Executive Curriculum</div>
                                 <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-2">Master Technical Execution</h3>
                                 <p className="text-sm font-semibold text-zinc-900 font-medium mb-6">Learn how top-quartile engineering organizations systematically manage {term.title.toLowerCase()}.</p>
                                 <Link href="/vault/curriculum/tracks" className="w-full max-w-[200px] text-center py-2.5 px-4 bg-white/5 hover:bg-white/10 border border-zinc-400 text-zinc-950 font-bold text-sm font-semibold rounded-lg transition-colors">
@@ -813,7 +819,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 {/* FAQs */}
                 {term.faqs.length > 0 && (
                     <section className="mb-12">
-                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">❓ Frequently Asked Questions</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-6">{term.title} Frequently Asked Questions</h2>
                         <div className="space-y-6">
                             {term.faqs.map((faq, i) => (
                                 <div key={i} className="card p-6">
@@ -831,7 +837,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 {/* External Resources */}
                 {term.resources && term.resources.length > 0 && (
                     <section className="mb-12">
-                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">📚 Resources</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">{term.title} Resources</h2>
                         <div className="space-y-2">
                             {term.resources.map((r, i) => (
                                 <a key={i} href={r.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl bg-zinc-50 border border-zinc-400 hover:border-cyan-500/30 transition-colors group">
@@ -849,7 +855,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 {/* Related Tools */}
                 {term.relatedTools && term.relatedTools.length > 0 && (
                     <section className="mb-12">
-                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">🔧 Free Tools</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Free Executive Calculators &amp; Tools</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {term.relatedTools.map(tool => (
                                 <Link key={tool.url} href={tool.url} className="card p-5 hover:border-cyan-500/50 transition-all group">
@@ -873,7 +879,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 {/* Related Terms */}
                 {relatedTermObjects.length > 0 && (
                     <section className="mb-12">
-                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">🔗 Related Terms</h2>
+                        <h2 className="text-2xl font-grotesk font-bold text-zinc-950 mb-4">Related Executive Terms</h2>
                         <div className="flex flex-wrap gap-3">
                             {relatedTermObjects.map(rt => {
                                 if (!rt) return null;
@@ -901,7 +907,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 <section className="my-12 p-8 rounded-2xl border-2 border-violet-200 bg-[#F5F0EB]/60 backdrop-blur-sm shadow-md">
                     <div className="flex flex-col md:flex-row gap-6 items-center">
                         <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500/10 to-rose-500/10 border border-violet-200 flex items-center justify-center shrink-0">
-                            <span className="text-2xl">📋</span>
+                            <span className="text-xs font-mono font-bold uppercase">Note</span>
                         </div>
                         <div className="flex-1 w-full">
                             <h3 className="text-xl font-grotesk font-bold text-zinc-950 mb-1">Get the 12-Point Enterprise AI Governance Checklist</h3>
@@ -921,7 +927,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                 <section className="card p-8 border-cyan-500/20 bg-gradient-to-br from-cyan-500/[0.03] to-violet-500/[0.03] rounded-2xl">
                     <div className="flex flex-col sm:flex-row gap-6 items-start">
                         <div className="w-14 h-14 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 border border-zinc-400 flex items-center justify-center shrink-0">
-                            <span className="text-xl">📊</span>
+                            <span className="text-xs font-mono font-bold uppercase">Audit</span>
                         </div>
                         <div className="flex-1">
                             <h2 className="text-xl font-grotesk font-bold text-zinc-950 mb-1">Expert Definition by Richard Ewing</h2>

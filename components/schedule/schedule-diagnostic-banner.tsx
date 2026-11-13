@@ -241,6 +241,11 @@ const SOURCE_CONFIGS: Record<string, DiagnosticSourceConfig> = {
     badgeLabel: '375 Scoped Technical Pages',
     description: 'Select a short onboarding slot below to confirm category exclusivity, creative copy, and launch dates across /glossary, /blog, and /concepts.',
   },
+  'chatgpt-business': {
+    title: 'Direct Executive Session from ChatGPT Business Profile',
+    badgeLabel: '60-Min Working Session',
+    description: 'Bring your live OpenAI or Anthropic bills, AI feature unit economics, or board deck numbers for a 60-minute screen-share teardown.',
+  },
 };
 
 function formatLeakDisplay(rawLeak: string | null): string | null {

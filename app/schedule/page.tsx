@@ -34,7 +34,7 @@ export default function SchedulePage() {
         name: 'What advisory sessions are available to book?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'We offer three primary sessions: (1) Rapid Gut-Check ($450, 30 min) for urgent cloud/API cost triage, (2) 1-on-1 Hourly Advisory ($650, 60 min) for hands-on architecture reviews and vendor vetting, and (3) Technical Insolvency Audit ($2,500, 60 min) which includes a formal Product Debt Index (PDI) calculation and a 30-day capital recovery roadmap. For ongoing support, fractional retainers are available at $10,000/month.',
+          text: 'We offer three primary sessions: (1) Rapid Gut-Check ($450, 60 min) for urgent cloud/API cost triage, (2) 1-on-1 Hourly Advisory ($650, 60 min) for hands-on architecture reviews and vendor vetting, and (3) Technical Insolvency Audit ($2,500, 60 min) which includes a formal Product Debt Index (PDI) calculation and a 30-day capital recovery roadmap. For ongoing support, fractional retainers are available at $10,000/month.',
         },
       },
       {
@@ -72,8 +72,45 @@ export default function SchedulePage() {
     ],
   };
 
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Live 60-Minute Executive AI & Pricing Working Session',
+    provider: {
+      '@type': 'Person',
+      name: 'Richard Ewing',
+      url: 'https://www.richardewing.io/about',
+    },
+    url: 'https://www.richardewing.io/schedule',
+    offers: {
+      '@type': 'Offer',
+      sku: 'RW-CALL-450',
+      price: '450.00',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: 'https://www.richardewing.io/schedule',
+    },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.richardewing.io' },
+      { '@type': 'ListItem', position: 2, name: 'Schedule Executive Advisory', item: 'https://www.richardewing.io/schedule' },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -143,7 +180,7 @@ export default function SchedulePage() {
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[var(--forest)] shrink-0 mt-0.5" />
                     <span>
-                      <strong className="text-[var(--ink)]">Rapid Gut-Check (30 Min):</strong> Immediate sanity check on runaway API spend and unit economics traps.
+                      <strong className="text-[var(--ink)]">Rapid Gut-Check (60 Min):</strong> Immediate sanity check on runaway API spend and unit economics traps.
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
@@ -256,7 +293,7 @@ export default function SchedulePage() {
             <div className="space-y-4 max-w-3xl mx-auto">
               <FAQItem
                 question="What advisory sessions are available to book?"
-                answer="We offer three primary sessions: (1) Rapid Gut-Check ($450, 30 min) for urgent cloud/API cost triage, (2) 1-on-1 Hourly Advisory ($650, 60 min) for hands-on architecture reviews and vendor vetting, and (3) Technical Insolvency Audit ($2,500, 60 min) which includes a formal Product Debt Index (PDI) calculation and a 30-day capital recovery roadmap. For ongoing support, fractional retainers are available at $10,000/month."
+                answer="We offer three primary sessions: (1) Rapid Gut-Check ($450, 60 min) for urgent cloud/API cost triage, (2) 1-on-1 Hourly Advisory ($650, 60 min) for hands-on architecture reviews and vendor vetting, and (3) Technical Insolvency Audit ($2,500, 60 min) which includes a formal Product Debt Index (PDI) calculation and a 30-day capital recovery roadmap. For ongoing support, fractional retainers are available at $10,000/month."
               />
               <FAQItem
                 question="How does payment and confirmation work?"

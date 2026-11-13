@@ -144,10 +144,10 @@ function ModuleCard({ mod, hasAccess, showPreview, aiContent, fullSlug }: { mod:
                         return (
                             <>
                                 <div className="text-[11px] font-mono font-bold text-[var(--gold,#b77a35)] uppercase tracking-widest mb-3">
-                                    {mod.trackName}
+                                    <span className="mr-2">{mod.moduleId}</span><span>{mod.trackName}</span>
                                 </div>
                                 <h1 className="text-3xl sm:text-5xl font-serif font-bold text-[var(--ink,#1e2924)] mb-4 leading-tight">
-                                    {mod.moduleId}: {mod.title}
+                                    {mod.title}
                                 </h1>
                                 <p className="text-lg text-zinc-700 leading-relaxed font-sans max-w-2xl">{mod.description}</p>
                                 <div className="flex flex-wrap items-center gap-3 mt-5">

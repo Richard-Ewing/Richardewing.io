@@ -4,16 +4,16 @@ import Image from 'next/image';
 import FrameworkDiagnosticBridge from '@/components/seo/FrameworkDiagnosticBridge';
 
 export const metadata: Metadata = {
-  title: 'Executive Advisory & AI Economics Sprints',
+  title: 'AI Advisory Sprints & CFO Cost Audits',
   description:
-    'Executive advisory, AI feature pricing sprints, portfolio surgery, and runtime governance controls for CEOs, CFOs, CTOs, and CPOs. View fees and scopes.',
+    'Fixed-scope CFO cost audit sprints and AI feature pricing turnarounds for CEOs, CFOs, and CTOs. Audit LLM spend, R&D waste, and vendor contracts.',
   alternates: {
     canonical: 'https://www.richardewing.io/advisory',
   },
   openGraph: {
-    title: 'Executive Advisory & AI Economics Sprints | Richard Ewing',
+    title: 'AI Advisory Sprints & CFO Cost Audits | Richard Ewing',
     description:
-      'Executive advisory, AI feature pricing sprints, portfolio surgery, and runtime governance controls for CEOs, CFOs, CTOs, and CPOs. View fees and scopes.',
+      'Fixed-scope CFO cost audit sprints and AI feature pricing turnarounds for CEOs, CFOs, and CTOs. Audit LLM spend, R&D waste, and vendor contracts.',
     url: 'https://www.richardewing.io/advisory',
     type: 'website',
     images: [
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Executive Advisory & AI Economics Sprints | Richard Ewing',
+    title: 'AI Advisory Sprints & CFO Cost Audits | Richard Ewing',
     description:
-      'Executive advisory, AI feature pricing sprints, portfolio surgery, and runtime governance controls for CEOs, CFOs, CTOs, and CPOs. View fees and scopes.',
+      'Fixed-scope CFO cost audit sprints and AI feature pricing turnarounds for CEOs, CFOs, and CTOs. Audit LLM spend, R&D waste, and vendor contracts.',
     images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };
@@ -214,6 +214,15 @@ export default function AdvisoryPage() {
       '@type': 'OfferCatalog',
       name: 'Executive Advisory Engagements',
       itemListElement: [
+        {
+          '@type': 'Offer',
+          name: '14-Day AI Economics & Backlog Turnaround Sprint',
+          sku: 'RW-SPRINT-2500',
+          price: '2500.00',
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock',
+          url: 'https://www.richardewing.io/advisory',
+        },
         {
           '@type': 'Offer',
           name: 'Pricing & Turnaround Sprints',
@@ -419,11 +428,12 @@ export default function AdvisoryPage() {
             <p className="eyebrow">
               <i /> Engagement models &amp; fees
             </p>
-            <h2>How leadership teams buy that expertise.</h2>
+            <h2>Fixed-Scope CFO Cost Audit Sprints vs Ongoing Retainers</h2>
             <p>
-              The four disciplines above are what we solve. Fixed-scope sprints, leadership
-              workshops, and ongoing executive advisory are the clear, predictable ways clients
-              engage me.
+              The four disciplines above are what we solve. Fixed-scope sprints carry a locked fee,
+              clear deliverable dates, and zero billing creep compared with open-ended monthly
+              retainers, so CFOs and CEOs can approve measurable payback before committing longer
+              capital.
             </p>
           </div>
 

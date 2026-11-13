@@ -157,6 +157,17 @@ export default async function middleware(req: NextRequest, event: NextFetchEvent
     ? resolveEdgeRedirect(pathname)
     : null;
 
+  if (mappedTarget === '__EDGE_410_GONE__') {
+    return new NextResponse('410 Gone: Page Retired', {
+      status: 410,
+      headers: {
+        'Content-Type': 'text/plain; charset=utf-8',
+        'X-Robots-Tag': 'noindex, follow',
+        'Cache-Control': 'public, max-age=86400, s-maxage=86400',
+      },
+    });
+  }
+
   const isLocalhost = /^(localhost|127\.0\.0\.1)(:\d+)?$/i.test(host);
   const isWorkersPreview = host.endsWith('.workers.dev');
   if ((!isLocalhost && !isWorkersPreview && host !== 'www.richardewing.io') || mappedTarget !== null) {
@@ -213,11 +224,18 @@ export default async function middleware(req: NextRequest, event: NextFetchEvent
     });
   }
 
-  // Edge-level 301 Permanent Redirect for Tier C and non-indexed compare pages -> /tools
+  // Edge-level 410 Gone for retired Tier C and non-indexed compare pages
   if (pathname.startsWith('/compare/')) {
     const slug = pathname.replace('/compare/', '').split('/')[0];
     if (slug && !VALID_COMPARE_TIER_A_SLUGS.has(slug)) {
-      return NextResponse.redirect(new URL('/tools', req.url), 301);
+      return new NextResponse('410 Gone: Page Retired', {
+        status: 410,
+        headers: {
+          'Content-Type': 'text/plain; charset=utf-8',
+          'X-Robots-Tag': 'noindex, follow',
+          'Cache-Control': 'public, max-age=86400, s-maxage=86400',
+        },
+      });
     }
   }
 

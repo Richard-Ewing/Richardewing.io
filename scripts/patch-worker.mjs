@@ -257,6 +257,16 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
             (!__rwLowerPath.startsWith("/_next/") && !__rwLowerPath.startsWith("/assets/") && !__rwLowerPath.startsWith("/api/"))
                 ? resolveEdgeRedirect(__rwPath)
                 : null;
+        if (__rwMappedTarget === "__EDGE_410_GONE__") {
+          return new Response("410 Gone: Page Retired", {
+            status: 410,
+            headers: {
+              "content-type": "text/plain; charset=utf-8",
+              "x-robots-tag": "noindex, follow",
+              "cache-control": "public, max-age=86400, s-maxage=86400",
+            },
+          });
+        }
         if (__rwNeedsHostRedirect || __rwMappedTarget !== null) {
             const __rwFinalTarget = __rwMappedTarget !== null ? __rwMappedTarget : __rwPath;
             const __rwHashIdx = __rwFinalTarget.indexOf("#");

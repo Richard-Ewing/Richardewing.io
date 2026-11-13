@@ -1419,7 +1419,7 @@ export function resolveEdgeRedirect(rawPathname: string): string | null {
     if (VALID_COMPARE_TIER_A_SLUGS.has(slug) && pathname === `/compare/${slug}`) {
       return hasTrailingSlash ? pathname : null;
     }
-    return '/tools';
+    return '__EDGE_410_GONE__';
   }
   if (pathname.startsWith('/comparisons/')) {
     const slug = pathname.slice('/comparisons/'.length).split('/')[0];
@@ -1427,7 +1427,7 @@ export function resolveEdgeRedirect(rawPathname: string): string | null {
     const mapped = EXACT_EDGE_REDIRECTS[`/comparisons/${slug}`] || EXACT_EDGE_REDIRECTS[`/compare/${slug}`];
     if (mapped) return mapped;
     if (VALID_COMPARE_TIER_A_SLUGS.has(slug)) return `/compare/${slug}`;
-    return '/tools';
+    return '__EDGE_410_GONE__';
   }
 
   // 6. Curriculum & Legacy /curriculum/* and /vault/curriculum/tracks/*

@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const query = queries.find(q => q.questionSlug === p.questionSlug);
     if (!query) return {};
 
-    const baseTitle = clampSeoTitle(query.questionHeadline, 42);
+    const baseTitle = clampSeoTitle(query.seoTitle ?? query.questionHeadline, 42);
     const metaDesc = formatSeoDescription(query.answerHtml);
     const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(query.questionHeadline)}&category=${encodeURIComponent(topicData.topicName || 'Executive Briefing')}`;
 
@@ -151,7 +151,7 @@ export default async function AnswerPage({ params }: Props) {
             <div className="prose prose-zinc prose-lg max-w-none pb-12">
                 <div 
                     className="p-8 bg-white/40 border border-zinc-400 rounded-2xl mb-12 shadow-inner prose-p:text-zinc-950 prose-p:font-bold prose-strong:text-cyan-900"
-                    dangerouslySetInnerHTML={{ __html: query.answerHtml }} 
+                    dangerouslySetInnerHTML={{ __html: query.answerHtml.replace(/<h3\b/gi, '<h2').replace(/<\/h3>/gi, '</h2>') }} 
                 />
             </div>
 
