@@ -405,6 +405,8 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 __rwHitHeaders.delete("cf-cache-status");
                 __rwHitHeaders.set("Content-Type", __rwOrigCt);
                 if (__rwIsOg) {
+                    __rwHitHeaders.delete("vary");
+                    __rwHitHeaders.delete("cdn-cache-control");
                     __rwHitHeaders.set("Cache-Control", "public, max-age=86400, s-maxage=2592000, stale-while-revalidate=2592000");
                     __rwHitHeaders.set("Cloudflare-CDN-Cache-Control", "public, max-age=2592000, stale-while-revalidate=2592000");
                 } else if (__rwIsRsc) {
@@ -471,6 +473,8 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 }
                 const __rwMissHeaders = new Headers(__rwOriginRes.headers);
                 if (__rwIsOg) {
+                    __rwMissHeaders.delete("vary");
+                    __rwMissHeaders.delete("cdn-cache-control");
                     __rwMissHeaders.set("Cache-Control", "public, max-age=86400, s-maxage=2592000, stale-while-revalidate=2592000");
                     __rwMissHeaders.set("Cloudflare-CDN-Cache-Control", "public, max-age=2592000, stale-while-revalidate=2592000");
                 } else if (__rwIsRsc) {

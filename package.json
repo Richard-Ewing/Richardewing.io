@@ -9,7 +9,7 @@
     "lint": "eslint",
     "build:worker": "opennextjs-cloudflare build && node scripts/patch-worker.mjs",
     "build:worker:fast": "opennextjs-cloudflare build --skipNextBuild && node scripts/patch-worker.mjs",
-    "deploy:worker": "npm run build:worker && wrangler deploy"
+    "deploy:worker": "npm run build:worker && wrangler deploy && node scripts/warm-tier1-edge-cache.mjs"
   },
   "dependencies": {
     "@clerk/nextjs": "^7.0.6",

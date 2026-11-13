@@ -52,7 +52,7 @@ function isAuthOrDynamicPath(pathname: string): boolean {
     pathname.startsWith('/admin') ||
     pathname.startsWith('/sign-in') ||
     pathname.startsWith('/sign-up') ||
-    pathname.startsWith('/api') ||
+    (pathname.startsWith('/api') && pathname !== '/api/og' && !pathname.startsWith('/api/og/')) ||
     pathname.startsWith('/ai-integration/advisor') ||
     pathname.startsWith('/ai-integration/system/download') ||
     pathname.startsWith('/tools/board-room') ||
@@ -86,8 +86,14 @@ function applySecurityAndCacheHeaders(res: NextResponse, req: NextRequest): Next
 
   const isRedirect = res.status >= 300 && res.status < 400 && res.status !== 301 && res.status !== 308;
   const isCacheableMethod = req.method === 'GET' || req.method === 'HEAD';
+  const isPublicOg = req.nextUrl.pathname === '/api/og' || req.nextUrl.pathname.startsWith('/api/og/');
 
-  if (
+  if (isPublicOg && isCacheableMethod && res.status === 200 && !res.headers.has('set-cookie') && !isRedirect) {
+    res.headers.set('Cache-Control', 'public, max-age=86400, s-maxage=2592000, stale-while-revalidate=2592000');
+    res.headers.set('Cloudflare-CDN-Cache-Control', 'public, max-age=2592000, stale-while-revalidate=2592000');
+    res.headers.delete('CDN-Cache-Control');
+    res.headers.delete('Vary');
+  } else if (
     isRsc ||
     isRedirect ||
     res.headers.has('set-cookie') ||

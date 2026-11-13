@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Post-Deploy Tier-1 Edge Cache Warmer (`scripts/warm-tier1-edge-cache.mjs`)
- * Warms 22 high-intent commercial, diagnostic, and SEO routes on www.richardewing.io
+ * Warms 30 high-intent commercial, diagnostic, and SEO routes on www.richardewing.io
  * so Pillar-9 endpoints serve X-RW-Edge-Cache: HIT immediately after deployment.
  */
 
@@ -31,6 +31,14 @@ const TIER1_ROUTES = [
   '/robots.txt',
   '/llms.txt',
   '/sitemap.xml',
+  '/for-cfos',
+  '/for-ctos',
+  '/tools',
+  '/contact',
+  '/blog',
+  '/articles/frameworks/technical-insolvency-date',
+  '/articles/frameworks/vibe-coding-debt',
+  '/api/og?title=Audit',
 ];
 
 async function hitRoute(pathname) {
@@ -40,17 +48,22 @@ async function hitRoute(pathname) {
     method: 'GET',
     redirect: 'manual',
     headers: {
-      Accept: 'text/html,application/xhtml+xml',
+      Accept: pathname.startsWith('/api/og') ? 'image/png,image/*;q=0.9,*/*;q=0.8' : 'text/html,application/xhtml+xml',
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) RW-Edge-Warmer/1.0',
     },
     signal: AbortSignal.timeout(10000),
   });
   await res.arrayBuffer();
+  const cf = (res.headers.get('cf-cache-status') || '').toUpperCase();
+  const rawWk = (res.headers.get('x-rw-edge-cache') || '').toUpperCase();
+  const edgeCache = ['HIT', 'STALE', 'REVALIDATED'].includes(cf) && (!rawWk || rawWk === 'MISS')
+    ? 'CF-HIT'
+    : (rawWk || cf || 'NONE');
   return {
     pathname,
     status: res.status,
     elapsedMs: Date.now() - start,
-    edgeCache: (res.headers.get('x-rw-edge-cache') || res.headers.get('cf-cache-status') || 'NONE').toUpperCase(),
+    edgeCache,
   };
 }
 
@@ -80,6 +93,7 @@ async function main() {
   const ok200 = pass2.filter((r) => r.status === 200).length;
   const wkHits = pass2.filter((r) => r.edgeCache.includes('HIT')).length;
   const non200 = pass2.filter((r) => r.status !== 200);
+  const missRoutes = pass2.filter((r) => r.status === 200 && !r.edgeCache.includes('HIT'));
 
   console.log(
     JSON.stringify(
@@ -90,13 +104,14 @@ async function main() {
         pass2Http200: `${ok200}/${TIER1_ROUTES.length}`,
         pass2EdgeHits: `${wkHits}/${TIER1_ROUTES.length}`,
         non200,
+        missRoutes,
       },
       null,
       2
     )
   );
 
-  if (non200.length > 0) {
+  if (non200.length > 0 || missRoutes.length > 0) {
     process.exit(1);
   }
   process.exit(0);
