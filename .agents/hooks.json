@@ -2,12 +2,12 @@
   "qa-verifier": {
     "PostToolUse": [
       {
-        "matcher": "replace_file_content|write_to_file",
+        "matcher": "edit_file|write_file|replace_file_content|write_to_file",
         "hooks": [
           {
             "type": "command",
-            "command": "node .agents/scripts/verify-qa.mjs",
-            "timeout": 30
+            "command": "node scripts/post-edit-qa-hook.mjs",
+            "timeout": 15
           }
         ]
       }
@@ -17,7 +17,7 @@
     "Stop": [
       {
         "type": "command",
-        "command": "node .agents/scripts/stop-hook.mjs",
+        "command": "node scripts/stop-hook.mjs",
         "timeout": 15
       }
     ]

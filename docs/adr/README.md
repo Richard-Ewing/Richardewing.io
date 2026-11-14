@@ -69,6 +69,7 @@ Negative/Considerations:
 | [ADR-0022](ADR-0022-gsc-redirect-404-recovery-and-edge-cache-host-isolation.md) | GSC Redirect 404 Recovery, Single-Hop 301 Manifest, and Edge Host Cache Isolation | Accepted | @richardewing, Steve Jobs, Jensen Huang, Aravind Srinivas, Lily Ray, Dan Guido, Code Architect, QA Auditor | 2026-11-06 |
 | [ADR-0023](ADR-0023-cross-domain-cpu-budget-mcp-hub-and-ctr-surgery.md) | Cross-Domain 1.00M CPU Budget Governance, Exogram MCP Hub, and ROAI/AUEB CTR Surgery | Accepted | @richardewing, Steve Jobs, Paul Graham, Jensen Huang, Aravind Srinivas, Keith Rabois, Code Architect, QA Auditor | 2026-11-13 |
 | [ADR-0024](ADR-0024-scoped-adsense-and-direct-sponsorship-engine.md) | Scoped Google AdSense and Direct B2B Sponsorship Engine | Accepted | @richardewing, Steve Jobs, Paul Graham, Aravind Srinivas, Keith Rabois, Dan Guido, Brad Smith, Karri Saarinen, Code Architect, QA Auditor | 2026-11-13 |
+| [ADR-0025](ADR-0025-antigravity-customization-budget-and-hook-hardening.md) | Antigravity 2.0 Rule Budget Consolidation & Hook CWD Hardening | Accepted | @richardewing, Code Architect, QA Auditor, Dan Guido | 2026-11-13 |
 
 
 

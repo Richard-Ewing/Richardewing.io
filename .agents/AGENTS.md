@@ -1,339 +1,151 @@
 # Project Rules & Sovereign Execution System (MOD v4.0)
 
-All task execution in this workspace MUST strictly follow the **Sovereign Master Operating Directive (MOD v4.0)** and its associated modular skill definitions.
-
-Refer to the official skill definition at [.agents/skills/master-directive/SKILL.md](file:///d:/Antigravity_RichardEwing.io/.agents/skills/master-directive/SKILL.md) for complete details.
+All task execution in this workspace MUST strictly follow the **Sovereign Master Operating Directive (MOD v4.0)** and [.agents/skills/master-directive/SKILL.md](file:///d:/Antigravity_RichardEwing.io/.agents/skills/master-directive/SKILL.md) (plus deep reference [platform-invariants-adr0018-0024.md](file:///d:/Antigravity_RichardEwing.io/.agents/skills/master-directive/references/platform-invariants-adr0018-0024.md)). Keep this file strictly under 18,000 bytes so Antigravity loads every invariant on every turn without truncation.
 
 ---
 
 ## 1. Ambient Universal Baseline (Zero Triggers Needed)
-MOD v4.0 is **ambient and unconditional**. The user NEVER needs to trigger slash commands (`/boost`, `/goal`, `/schedule`, `/browser`, `/plan`, `/grill-me`, `/teamwork-preview`, `/learn`) or explicitly prompt "use the master directives" or "assemble the war room". All high-caliber workflows, multi-agent reasoning swarms, empirical probes, and verification gates are natively encapsulated and active by default.
+MOD v4.0 is **ambient and unconditional**. The user NEVER needs to paste boilerplate tails, manually type slash commands (`/boost`, `/goal`, `/schedule`, `/browser`, `/plan`, `/grill-me`, `/teamwork-preview`, `/learn`), or prompt "use the master directives" or "assemble the war room". Multi-agent reasoning, empirical probes, SDD contracts, and verification gates are active by default.
 
 ---
 
-## 2. The Sovereign 5-Step Asset Engine Hierarchy (Academy Moat Protocol)
+## 2. Sovereign 5-Step Asset Engine Hierarchy (Academy Moat Protocol)
 A large curriculum is NOT a moat on its own. To defeat commoditized courseware (Reforge, Product School, Lenny, Farnam Street, generic AI academies), every curriculum track and module MUST consume the 5-step closed-loop asset engine:
-$$\text{Research} \longrightarrow \text{Concept} \longrightarrow \text{Framework} \longrightarrow \text{Diagnostic} \longrightarrow \text{Implementation}$$
+`Research -> Concept -> Framework -> Diagnostic -> Implementation`
 The academy is the operational consumption layer of our research and proving grounds, NEVER a standalone content factory.
 
 ---
 
 ## 3. Core Copywriting Directives (Human Writing Standard HWS v2.0 / REWS v2.0)
-All essays, landing page copy, explanations, curriculum modules, and documentation must adhere strictly to the **Human Writing Standard (HWS v2.0 / REWS v2.0)** and the 30-Point AI Smell Detection Checklist (`c:\Users\richa\Downloads\HUMAN_WRITING_STANDARD_AI_SMELL_DETECTION_CHECKLIST.md` and `.agents/skills/lived-experience/SKILL.md`):
-1. **The Prime Directive**: Human first. Always. Write like a person, not a content producer. Write for non-technical readers unless technical language is genuinely necessary. Always write non-technically. Be human, genuine, personable as fuck. Do not write to sound impressive. Write to communicate something worth saying.
-2. **Start With the 10th Thought**: Look for the less-obvious human observation, tension, irritation, admission, or contradiction underneath the obvious topic. Never open with predictable corporate boilerplate.
-3. **Concrete Observed Evidence**: Prefer something that broke, worked, cost money, took longer, or changed the writer's mind over abstract generalities.
-4. **Controlled Surprise & Unevenness**: Break predictable structural symmetry, artificial parallelism, and formulaic transitions. Allow paragraphs to breathe.
-5. **Zero Banned Phrases & AI Marketing Buzzwords**: Strictly eliminate synthetic jargon and consulting filler:
-   - *unlock / unlocking / unlocks* (use *access, get, download, open, qualify for, generate*)
-   - *delve / delve into* (use *examine, look at, break down, analyze*)
-   - *seamless / seamlessly* (use *direct, frictionless, simple, automated*)
-   - *robust / robustly* (use *resilient, proven, stable, reliable*)
-   - *leverage / leveraging* (use *use, apply, deploy, exploit*)
-   - *the bottom line* as formulaic summary/punchline (use *Executive Readout, Financial Readout, What It Costs, The Takeaway*)
-   - *missing layer / missing piece* (replace with concrete operational facts)
-   - *production-ready* (use *battle-tested, field-tested, production-tested, deployed*)
-   - *empower, foster, game-changer, revolutionary, transformative, navigate the landscape, at the end of the day, let that sink in, read that again, full stop, here is the thing*.
-6. **Sentence Rhythm**: Mix short and long sentences naturally. Preserve authentic conversational quirks and blunt opinions.
-7. **The Final Human Test**: *"Would Richard actually say this out loud?"* If not, rewrite it.
-8. **Audience Scope & Specific Job Titles Mandate**: The audience is the whole floor, not just the server room. Never use lazy umbrella labels like "middle managers" or "the C-suite." Always insert the actual job titles: CEO, CFO, COO, Customer Support Manager, Product Ops Lead, Engineering Manager, VP of Operations, Director of Finance, etc. Write non-technically by default. De-emphasize engineering plumbing (code, proxies, vector databases). Ground everything in operational reality: wasted software budgets, broken promises, team friction, bad data, and common-sense leadership.
-9. **Universal Scope**: Mandated unconditionally on EVERY new page, new content addition, or page modification across the entire repository.
-*Full Specification:* [Checklist Reference](file:///c:/Users/richa/Downloads/HUMAN_WRITING_STANDARD_AI_SMELL_DETECTION_CHECKLIST.md) and [.agents/skills/lived-experience/SKILL.md](file:///d:/Antigravity_RichardEwing.io/.agents/skills/lived-experience/SKILL.md)
+All essays, landing page copy, explanations, curriculum modules, and documentation MUST follow HWS v2.0 and [.agents/skills/lived-experience/SKILL.md](file:///d:/Antigravity_RichardEwing.io/.agents/skills/lived-experience/SKILL.md):
+1. **Prime Directive**: Human first. Always. Write for non-technical readers unless technical language is genuinely required. Be blunt, genuine, and direct.
+2. **Start With the 10th Thought**: Open with the less-obvious observation, tension, irritation, or contradiction underneath the obvious topic. Zero corporate throat-clearing.
+3. **Concrete Observed Evidence**: Anchor claims in something that actually broke, worked, cost money, took longer, or changed a mind.
+4. **Controlled Surprise & Unevenness**: Break artificial parallelism, forced 3-item symmetry, and formulaic transitions.
+5. **Zero En/Em-Dashes & Zero Banned Phrases**: Ban literal `\u2013` and `\u2014` characters everywhere (use `:`, `--`, parentheses, or periods). Strictly eliminate synthetic filler: *unlock, delve, seamless, robust, leverage, the bottom line, missing layer, missing piece, production-ready, empower, foster, game-changer, revolutionary, transformative, navigate the landscape, at the end of the day, let that sink in, read that again, full stop, here is the thing*.
+6. **Audience Scope & Named Titles**: Never write vague umbrellas ("middle managers", "the C-suite"). Name exact roles: CEO, CFO, COO, VP of Operations, Director of Finance, Customer Support Manager, Product Ops Lead, Engineering Manager.
+7. **The Final Human Test**: *"Would Richard actually say this out loud?"* Applied universally across all new and edited pages.
 
 ---
 
 ## 4. Cloudflare Hosting & Next.js App Router Invariants
-1. **Cloudflare Edge Hosting (MANDATORY)**: `richardewing.io` is hosted exclusively on **Cloudflare** via `@opennextjs/cloudflare` and `wrangler.jsonc` (Cloudflare Workers with Static Assets routed to `richardewing.io/*` and `www.richardewing.io/*`). NEVER assume Vercel hosting. NEVER execute Vercel CLI commands (`vercel`, `npx vercel`).
-2. **Server Components by Default**: Keep page routes as Server Components; define page-level metadata.
-3. **Client Component Isolation**: Isolate interactive hooks, Framer Motion, and state in leaf components with `"use client"`.
-4. **Prerender Safety**: Guard all browser APIs and `localStorage` with `useEffect` or `typeof window !== 'undefined'`.
+1. **Cloudflare Edge Exclusive**: `richardewing.io` and `www.richardewing.io` run on Cloudflare Workers + Static Assets via `@opennextjs/cloudflare` and `wrangler.jsonc`. NEVER assume Vercel or run Vercel CLI commands (`vercel`, `npx vercel`).
+2. **Server Components by Default**: Keep page routes as Server Components with page-level metadata; isolate client hooks and Framer Motion in `"use client"` leaf files.
+3. **Prerender Safety**: Guard browser globals (`window`, `localStorage`) with `useEffect` or `typeof window !== 'undefined'`.
 
 ---
 
 ## 5. Two-Track Operational Router & Turn-End Execution Gates
-
-Before executing any request, dynamically classify the user prompt into one of two tracks:
-
-### Track 1: Execution Pipeline (Code Mutations)
-* **Trigger**: Any turn where files are created, modified, refactored, or deleted.
-* **Mandatory Turn-End Gate (UNBREAKABLE)**:
-  `node .agents/scripts/verify-qa.mjs` (Zero Secret Keys + Zero Em-Dashes + Zero Banned AI Buzzwords + Root Hygiene) -> `npm run build` -> `npx wrangler deploy` (Live Cloudflare Edge Deployment) -> `git add -A` -> `git commit -m "..."` -> `git push origin main` -> `git status` (verify clean).
-  You MUST NEVER end a code-modifying turn without running this full deployment sequence. Never ask the user to remind you. Physically enforced by the `turn-end-deploy-guard` Stop hook in `hooks.json`.
-
-### Track 2: Strategic & Advisory Pipeline (No Code Mutations)
-* **Trigger**: Pure research, architectural critiques, conceptual models, plan reviews, or exploratory Q&A where no workspace code is touched.
-* **Protocol**: Deliver deep 360-degree synthesis, Euclidean chain-of-thought analysis, and structured artifacts (`RequestFeedback: false`).
-* **Gate Exemption**: Do NOT create empty git commits, dummy files, or trigger redundant deployment builds on pure advisory turns.
+Classify every turn before acting:
+* **Track 1 (Execution Pipeline -- Code/Content Mutations)**: Any turn creating, editing, refactoring, or deleting workspace files MUST finish with the full Turn-End Gate (`turn-end-deploy-guard` Stop hook enforces this):
+  `node .agents/scripts/verify-qa.mjs` -> `npm run build` / `npm run deploy:worker` (`npx wrangler deploy`) -> `git add -A` -> `git commit -m "..."` -> `git push origin main` -> `git status` clean.
+* **Track 2 (Strategic & Advisory Pipeline -- Zero Code Mutations)**: Research, critiques, audits, or Q&A touching zero repo files. Never create empty commits, dummy files, or redundant builds on Track 2 turns.
 
 ---
 
-## 6. Google Antigravity Architecture & Encapsulated Modalities
-
-MOD v4.0 is fully integrated with Google Antigravity across all developer surfaces on the **Antigravity 2.0 (v2.21.0)** platform release:
-
-### Component Version Baseline
-* **Antigravity 2.0 Platform & Desktop Application**: `v2.21.0` ([Changelog](https://antigravity.google/docs/changelog/))
-* **Antigravity IDE Standalone**: `v2.5.5`
-* **Antigravity CLI (`agy`)**: `v1.1.25`
-* **Antigravity Python SDK (`google-antigravity`)**: `v0.1.16` ([Download & Releases](https://antigravity.google/download/))
-
-### Core Architecture Pillars & Recent Capabilities
-1. **/plan Mode (Planning & Architecture Alignment)**:
-   - Enables AI agents to deeply research the codebase, structure comprehensive implementation plans, and wait for user approval before mutating files.
-   - Mandated for non-trivial refactors and structural architecture shifts before code execution.
-2. **Integrated Sidebar Git VCS Controls**:
-   - Built directly into the sidebar panel alongside the integrated terminal tab ([VCS & Terminal Blog](https://antigravity.google/blog/vcs-and-terminal/)).
-   - Native visual branch management, staging, inline visual diff review overlays, commit authoring, and push synchronization.
-3. **Hybrid Cloud + Local Architecture**:
-   - Dynamic multi-tier model execution supporting both cloud and local runtimes:
-     - **Cloud Frontier Models**: Gemini 3.8 Flash (High Reasoning Effort), Gemini 3 Pro, and Gemini Enterprise Agent Platform (Vertex AI Standard ADC and Express API Key modes) for complex architectural synthesis and REWS copywriting.
-     - **Local On-Device Models**: LiteRT / LightRT runtime executing local models (such as Gemma 4 26B) via `LiteRTAgentConfig` or OpenAI-compatible endpoints (`LocalOpenAIAgentConfig`) for zero-cloud latency, offline execution, and token cost optimization.
-4. **Antigravity IDE AI Modalities (v2.5.5)**:
-   - **Passive Modality (Antigravity Tab)**: Autocomplete & Supercomplete predicting insertions, deletions, cursor navigation jumps, and auto-imports (`Tab to Jump`, `Tab to Import`).
-   - **Instructive Modality (Inline Command Cmd+I / Ctrl+I)**: Targeted in-place edits and refactoring strictly bounded to selected blocks.
-   - **Collaborative Modality (Sidebar Chat & Agent Mode)**: Full-featured multi-step pair programming with terminal execution, web search, and MCP tools.
-   - **Editor Integrations**: Inline Code Lenses ("Refactor", "Write Tests", "Explain Code"), Visual Diff Overlays, and Diagnostic Auto-Fix from compiler errors.
-5. **Antigravity 2.0 Desktop Application (v2.21.0)**:
-   - Left-hand sidebar (Conversations, Projects, Scheduled Tasks, Skills & Customizations, Settings).
-   - Chat Canvas (@ mentions, Slash command workflows, media uploads).
-   - HTML Auxiliary Pane (Subagents, Background Tasks, Artifacts, Files Changed, Terminals).
-6. **Antigravity CLI (`agy` v1.1.25)**:
-   - Terminal-based agent interaction and headless automation configured via `~/.gemini/antigravity-cli/settings.json`.
-7. **Antigravity Python SDK (`google-antigravity` v0.1.16)**:
-   - Async agent management (`Agent(LocalAgentConfig(capabilities=CapabilitiesConfig()))`), streaming thoughts (`response.thoughts`) and tool calls (`response.tool_calls`), local LiteRT runtime (`LiteRTAgentConfig`, Gemma 4 26B), and Gemini Enterprise Agent Platform.
-8. **Antigravity Customization Architecture**:
-   - Progressive disclosure for skills, hierarchical rule loading (`AGENTS.md`, `.agents/rules/*.md`), deduplication, lifecycle hooks (`hooks.json`), and Generative UI widgets (`builtin/skills/generative_ui`).
-9. **Encapsulated Slash Workflows (Native Execution)**:
-   - **Planning Mode (`/plan`)**: Research codebase, structure implementation plan, and align constraints before mutating code.
-   - **War Room Swarm (`/boost` & `/teamwork-preview`)**: Multi-agent Euclidean reasoning and worktree dispatch across `lived_experience_writer`, `qa_auditor`, `seo_architect`, `ui_designer`, and `code_architect`.
-   - **Empirical Validation (`/browser`)**: Karpathy Red/Green test probes in `.scratch/` before mutating code, and headless DOM/browser verification for UI components.
-   - **Autonomous Horizons & Crons (`/goal` & `/schedule`)**: Closed-loop continuous optimization and background cron tasks.
-   - **Durable Learning (`/learn`)**: Codifying durable user conventions and lessons into permanent memory.
+## 6. Google Antigravity 2.0 Architecture & Modalities
+* **Platform Baseline**: Antigravity 2.0 (`v2.21.0`), IDE Standalone (`v2.5.5`), CLI (`agy` `v1.1.25`), Python SDK (`google-antigravity` `v0.1.16`).
+* **Hybrid Model Dispatch**: Cloud reasoning (Gemini 3.8 Flash High, Gemini 3 Pro, Vertex AI ADC) paired with local on-device models (LiteRT / Gemma 4 26B) when appropriate.
+* **Customizations & Hooks**: Rules obey a 24,000-byte per-file ceiling and 20,000-token aggregate `defaultRulesBudget`. Hooks in `.agents/hooks.json` run with `cwd = .agents/` (`scripts/post-edit-qa-hook.mjs` for `PostToolUse`, `scripts/stop-hook.mjs` for `Stop`). Skills live in `.agents/skills/<name>/SKILL.md` with progressive disclosure (`references/` for deep docs).
 
 ---
 
-## 7. Sovereign Security Invariant: Absolute Prohibition of Secret Key & Credential Leakage
-
-> [!CAUTION]
-> **CRITICAL SECURITY INVARIANT (NON-NEGOTIABLE):**
-> NEVER PUBLISH, PUSH, COMMIT, OR EXPOSE TO THE PUBLIC ANY SECRET KEYS, API TOKENS, OR KEYS THAT ARE NOT MEANT TO BE SHARED.
-
-1. **Testing Never Excuses Secret Exposure**: The requirement to test, prototype, debug, benchmark, or validate code NEVER justifies placing real secret keys, API tokens, service account credentials, or private keys into committable files, test probes, documentation, or public git history.
-2. **Local Gitignored Environment Only**: All actual credentials, API keys, and environment secrets must live exclusively in gitignored `.env*.local` files or local OS environment variables. They must never be checked into git.
-3. **Synthetic Test Fixtures**: All tests, diagnostics, and code examples must use synthetic dummy strings (e.g. `TEST_MOCK_KEY_REDACTED_DO_NOT_USE`) or local emulators.
-4. **Automated Pre-Push Defense Gate**: Every code-modifying turn must pass automated secret credential scanning in `verify-qa.mjs`. If any secret key, private token, database password, or private key pattern is detected, the pipeline immediately halts with exit code 1 and blocks deployment.
+## 7. Sovereign Security Invariant (Zero Credential Leakage)
+1. **Unbreakable Rule**: NEVER commit, push, print, or expose real API keys, tokens, DB URLs, service account JSONs, or private keys -- even inside tests or scratch probes.
+2. **Storage**: Live credentials reside strictly in gitignored `.env*.local` or OS env vars.
+3. **Tests**: Use clearly synthetic dummy values (`TEST_MOCK_KEY_REDACTED_DO_NOT_USE`) or mocked fixtures. `verify-qa.mjs` and `audit-agent-skills.mjs` halt with exit code 1 on any secret pattern.
 
 ---
 
-## 8. Sovereign Dual-Chamber Governance & Zero-Bloat Hierarchy
-
-To eliminate developer bloat and AI-generated slop, all platform decisions and deliverables pass through a **Dual-Chamber Sovereign Governance System**:
-
-### A. The Board Room (The Council of Titans -- Strategic Sovereignty & Invariants)
-Ruthless executive lenses interrogating taste, moats, velocity, and existential boundaries:
-1. **Steve Jobs & Jony Ive**: Taste, ruthless subtraction, invisible design. Kill 40% of visual noise. Scrutinize the Negative/Considerations section in ADRs to prevent architectural bloat.
-2. **Jeff Bezos**: Customer obsession, frictionless compounding flywheels, reversible two-way doors. One-way doors documented in formal ADRs before irreversible code commits.
-3. **Elon Musk**: First principles, radical deletion, testing against operational reality over corporate theater. Delete redundant wrapper services.
-4. **Mark Zuckerberg**: Open leverage, relentless daily shipping, turning open models (LiteRT) and frontier APIs into proprietary moats.
-5. **Jensen Huang**: Sovereign compute, token ROI, extreme intelligence density per square inch. Maximize reasoning effort via Gemini 3.8 Flash High.
-6. **Dario Amodei & Sam Altman**: Constitutional grounding, verifiable truth, and frontier scale readiness.
-
-### B. The War Room (The General Staff & Operational Clearance)
-Active operators who audit, engineer, and clear production releases:
-1. **Paul Graham & William Zinsser (Voice / REWS v2.0)**: Human first. Blunt, non-technical, zero buzzwords. Humanizes ADR context and consequences.
-2. **Brad Smith (Legal / General Counsel)**: Diagnostic safe harbors, copyright cleanroom, zero-PII privacy compliance, and ADR licensing audits.
-3. **Aravind Srinivas & Lily Ray (AIEO / GEO / AEO / SEO)**: Perplexity and LLM citation authority, JSON-LD schemas, semantic triples.
-4. **Brian Balfour & Jim Collins (Flywheel Systems)**: Closed-loop growth. No dead-end pages.
-5. **Karri Saarinen & Rauno Freiberg (Kinetic Craft UI/UX)**: Linear-grade dark mode, damped spring physics, Generative UI proof-of-concept widgets, zero design slop.
-6. **Luis von Ahn, Sean Parker & Nir Eyal (Dopamine & Addictiveness)**: Sub-50ms reactive speed, uncomfortable truth discovery, boardroom-ready Slack scorecard exports, sunk-cost investment loops.
-7. **Keith Rabois & Ruth Porat (CFO & Unit Economics)**: Unit economics, killing vanity metrics, high-ticket advisory on-ramps.
-8. **Dan Guido & Simon Willison (Adversarial Security)**: Zero secret leaks (`verify-qa.mjs`), prompt injection defense, edge hardening.
-9. **Avinash Kaushik (Behavioral Telemetry)**: Privacy-preserving behavioral tracking and diagnostic drop-off auditing.
-
-### C. The Zero-Bloat 3-Tier Clearance Hierarchy
-* **Tier 1: Active Triad (Runs on Every Turn)**: Steve Jobs (simplicity) + Paul Graham (human voice) + Deterministic QA Gate (`verify-qa.mjs` + build + edge deploy).
-* **Tier 2: Domain Gatekeepers (Wakes Up Only When Territory Touched)**: Karri Saarinen (UI), Aravind Srinivas (GEO/SEO), Brian Balfour (Flywheels), Luis von Ahn (Dopamine/Engagement), Code Architect (Software Architecture & ADRs).
-* **Tier 3: Deep Bench on Call (Single-Strike Audits)**: Brad Smith (Legal), Dan Guido (Security), Keith Rabois (Economics), Titans on demand. Protocol: Red Flag -> Structural Fix -> Sign-off/Veto.
+## 8. Dual-Chamber Governance & Zero-Bloat Hierarchy
+* **Board Room (Titans)**: Steve Jobs & Jony Ive (ruthless subtraction, kill 40% clutter), Jeff Bezos (customer obsession, reversible vs. ADR-documented irreversible doors), Elon Musk (first principles, delete wrapper bloat), Mark Zuckerberg (open shipping velocity), Jensen Huang (token ROI), Dario Amodei & Sam Altman (grounded truth).
+* **War Room (Operators)**: Paul Graham & William Zinsser (human voice), Brad Smith (legal safe harbors & cleanroom), Aravind Srinivas & Lily Ray (AIEO/GEO/SEO), Brian Balfour & Jim Collins (flywheels), Karri Saarinen & Rauno Freiberg (kinetic UI), Luis von Ahn, Sean Parker & Nir Eyal (habit loops), Keith Rabois & Ruth Porat (unit economics), Dan Guido & Simon Willison (security), Avinash Kaushik (telemetry).
+* **3-Tier Clearance**: Tier 1 Active Triad (Jobs + Graham + QA Gate) runs on every turn; Tier 2 Gatekeepers wake when UI/SEO/Flywheel/ADR territory is touched; Tier 3 Deep Bench runs single-strike audits on legal/security/pricing.
 
 ---
 
-## 9. AI-Generated Architecture Decision Records (ADRs) Standard (Chris Nevin Protocol)
-
-To eliminate bias, preserve architectural continuity, and keep documentation in sync with fast-moving agent refactors, all structural decisions follow Chris Nevin's AI-Generated ADR framework:
-
-1. **Mandatory 5-Heading ADR Schema**:
-   - `# ADR-<4 Digit Number>: <Name>`
-   - `## Context`
-   - `## Decision`
-   - `## Deciders`
-   - `## Status` (Valid: Proposed, Accepted, Deprecated, Superseded by ADR-<4 Digit Number>)
-   - `## Consequences` (Explicitly divided into `Positive:` and `Negative/Considerations:`)
-2. **Derivation Modes**:
-   - *Interactive Pair Mode*: Prompt for (1) Number, Name, Deciders, Status, (2) Ticket / Problem description, (3) Pull Request description / diff.
-   - *Autonomous Agent Mode*: Automatically derived from the task specification, git diff, and architecture constraints during structural refactors.
-3. **Repository Location & Index**:
-   - All records are placed in `docs/adr/ADR-<4-Digit-Number>-<slug>.md`.
-   - The master index is maintained in `docs/adr/README.md`.
-   - `code_architect` acts as lead author and custodian; `qa_auditor` verifies schema compliance during Pass 3 verification.
+## 9. AI-Generated Architecture Decision Records (Chris Nevin Standard)
+Author `docs/adr/ADR-<4-Digit-Number>-<slug>.md` and update `docs/adr/README.md` for structural decisions using the exact 5-heading schema:
+`# ADR-XXXX: <Name>`, `## Context`, `## Decision`, `## Deciders`, `## Status` (`Proposed`, `Accepted`, `Deprecated`, `Superseded by ADR-XXXX`), `## Consequences` (split into `Positive:` and `Negative/Considerations:`). Audited via `node .agents/scripts/check-adr-drift.mjs --strict`.
 
 ---
 
-## 10. Sovereign Behavioral Invariants (Lessons from Multi-Workspace Audit)
-
-1. **Zero-Mock Production Invariant**: Never inject hardcoded mock fallbacks, canned scores, or synthetic telemetry into production API routes (`route.js`/`route.ts`) or client catch blocks to mask latency or errors. If an LLM or network call fails, return an honest, structured error status. Let the model do its job.
-2. **Contextual Audience Separation**:
-   - `richardewing.io`: Executive advisory, specific C-suite/VP titles, non-technical operational reality, and grounded leadership.
-   - `careerwin.ai`: Consumer job applicants across all disciplines. Enforce mass-appeal 6th-grade language, active empowerment, and zero elitist/consulting jargon.
-   - `exogram.ai`: Spatial intelligence, living tiles, and bidirectional action loops. Tactile, precise, zero fluff.
-3. **Visual & Structural Preservation**:
-   - Core palettes (`#FAF9F6` warm cream on `richardewing.io`; warm paper and coral on `careerwin.ai`) and page layer structures are frozen invariants.
-   - Design inspirations inform interactive functional sandboxes, NEVER palette overhauls or abstract sci-fi visual maps.
-4. **Atomic Git Reverts**: Always revert regressions using `git checkout` or `git revert`. Never attempt manual string replacements on large files to undo changes.
-5. **Background Task Lifecycle**: Standalone scripts must include explicit `process.exit(0)`. Any background task spawned during execution must be terminated via `manage_task(Action='kill')` once finished to prevent zombie task accumulation in the user's desktop pane.
-6. **Live Edge Verification**: Verify deployments through `npx wrangler deploy` output and live HTTP verification, never by local build exit codes alone.
-7. **Page Addition & Modification Invariant**: Every new or refactored page, tool, route, or content addition/modification must strictly adhere to `.agents/rules/page_addition_invariants.md` (Concept B visual tokens, centralized editorial components, route inventory sync, zero content/calculation truncation, strict enforcement of HWS v2.0 / AI Smell Detection checklist with zero banned buzzwords, and live Cloudflare deployment).
-8. **Universal Design Constitution Conformance**: Every UI, UX, frontend, visual, or content implementation task must strictly adhere to [DESIGN_CONSTITUTION.md](file:///d:/Antigravity_RichardEwing.io/DESIGN_CONSTITUTION.md) (Prime Directive, mandatory design system preservation, centralized components, purposeful graphics/charts, full interaction states, responsive layouts, accessibility, and definition of done).
+## 10. Sovereign Behavioral Invariants
+1. **Zero-Mock Production**: Never inject fake fallbacks, canned scores, or dummy telemetry into production `route.ts` handlers or client catch blocks. Fail cleanly with structured HTTP errors.
+2. **Contextual Audience Separation**: `richardewing.io` targets C-suite/VP/operator roles in grounded business reality; `careerwin.ai` targets consumer job seekers at a clear 6th-grade reading level; `exogram.ai` targets spatial intelligence and governed autonomy.
+3. **Visual Preservation**: Preserve the frozen `#FAF9F6` warm cream palette and page structures; design references inform interactive utility, never full-site theme swaps.
+4. **Atomic Git Reverts**: Use `git checkout` or `git revert` to undo regressions, never manual string surgery on large files.
+5. **Background Task Lifecycle**: End standalone Node scripts with `process.exit(0)` and clean up finished background tasks via `manage_task`.
+6. **Live Edge Verification**: Confirm live HTTP responses after `npx wrangler deploy`, never rely solely on local build exit codes.
+7. **Page Addition & Constitution**: Follow `.agents/rules/page_addition_invariants.md` and [DESIGN_CONSTITUTION.md](file:///d:/Antigravity_RichardEwing.io/DESIGN_CONSTITUTION.md) on every new or edited page.
 
 ---
 
-## 11. The Sovereign Spec-Driven Development (SDD) & AI-SDLC Kernel (Zero Vibe Coding Protocol)
-
-All software development, diagnostic tooling, and code modifications across this workspace strictly follow the **AI-SDLC (AI Software Development Life Cycle)** and **Spec-Driven Development (SDD)** protocol based on the GitHub Spec Kit framework (`specify`, `plan`, `tasks`, `implement`, `converge`). Ad-hoc prompt-and-pray "vibe coding" is strictly prohibited.
-
-### A. The Founder-Agent Division of Responsibility (The Vibe-to-Spec Mandate)
-1. **The User (Richard) Is the Founder, CEO, and Product Visionary**:
-   - The user provides high-level business intent, operational pain points, commercial priorities, and desired user outcomes in natural, conversational language ("vibe prompts").
-   - The user NEVER needs to write low-level technical specifications, component architectures, CSS flexbox rules, SQL schemas, or debugging instructions.
-2. **The AI Agent Is the Staff Principal Architect & Lead Engineer**:
-   - The agent takes high-level conversational intent and autonomously translates it into a rigorous Spec-Driven contract before touching code.
-   - The agent is responsible for deducing unspoken invariants (state shape, mobile responsiveness, error handling, rate limits, edge cases, and accessibility).
-   - The agent NEVER badgers the founder for engineering trivia (e.g. status codes, CSS paradigms, or typing details) and NEVER returns "vibecoded" results (half-baked mockups, fragile hacks, unhandled promise rejections, or unverified guesswork).
-   - The agent protects existing production code with explicit Blast Radius Guards before making any mutations.
-
-### B. The 5-Phase AI-SDLC Lifecycle
-Before making code mutations, the agent executes this lifecycle:
-1. **Constitution Check**: Enforce non-negotiable project laws:
-   - Absolute zero em-dashes (`\u2013`, `\u2014`). Use colons, parentheses, double hyphens, or periods.
-   - Cloudflare Workers V8 memory isolates (zero Node.js POSIX assumptions, prerender safety).
-   - Next.js 16 App Router Server Components by default with `"use client"` leaf isolation.
-   - Human Writing Standard (HWS v2.0 / REWS v2.0) and Warm Cream design tokens.
-   - Absolute zero secret key or credential leakage.
-2. **Specify (`specify`)**: Draft the feature contract defining:
-   - User Story and Business Intent.
-   - Acceptance Criteria (clear checkbox checklist).
-   - **Explicit Out-of-Scope Boundaries (Blast Radius Guard)**: Defining strictly what the agent is FORBIDDEN from touching, modifying, or refactoring.
-   - Edge Cases and Failure Modes (network drops, missing query parameters, mobile viewports).
-3. **Plan (`plan`)**: Detail the architectural execution:
-   - Data contracts, component interfaces, state flow, and URL parameters.
-   - Impacted file inventory.
-   - Architecture Decision Record (ADR) requirement check.
-4. **Tasks (`tasks`)**: Decompose the plan into granular, checkable, testable bite-sized units.
-5. **Implement & Converge (`implement` & `converge`)**:
-   - Execute task-by-task with atomic precision.
-   - Karpathy red/green probes in `.scratch/` where necessary.
-   - Run mechanical QA verification (`node .agents/scripts/verify-qa.mjs`).
-   - Full build (`npm run build`) and live Cloudflare deployment (`npx wrangler deploy`).
-   - Validate against the original Acceptance Criteria to ensure zero defect convergence.
-
-### C. Empirical Binary Evidence & Reverse Engineering Subsystem (REA + Ghidra Engine)
-When a task involves legacy binaries, compiled DLLs, Windows/Linux executables, Electron ASARs, third-party packages, or undocumented binary protocols, vibe coding is prohibited:
-1. **Ground-Truth Evidence Extraction**: Connect directly to the native REA MCP server backed by **Ghidra 12.1.4 Public Headless** (`D:\Tools\ghidra-12.1.4\ghidra_12.1.4_PUBLIC`) and OpenJDK 25. Run `open_binary`, `inspect_artifact`, `list_procedures`, `procedure_pseudo_code`, and `build_call_path` to extract verified symbols, decompiled ASTs, and call hierarchies.
-2. **Clean-Room Specification**: Transform decompiled observations strictly into clean-room behavioral contracts (inputs, outputs, edge cases, error codes). Never copy-paste proprietary disassembly.
-3. **Reconstruction Obligation Ledger**: Run `build_reconstruction_obligation_ledger` to guarantee 100% of discovered behaviors are accounted for in the implementation task backlog without omission.
-4. **Parity Convergence**: Run `verify_reconstruction` and Karpathy test assertions to mathematically prove clean-room functional parity against the original artifact.
+## 11. Spec-Driven Development (SDD), AI-SDLC & REA + Ghidra
+1. **Founder-Agent Contract**: Richard sets high-level intent and outcomes; the agent operates as Principal Staff Architect, deducing unspoken invariants (mobile, error bounds, Blast Radius Guards) without asking engineering trivia or shipping half-baked code.
+2. **5-Phase Lifecycle**: Constitution Check -> Specify (`specify`) -> Plan (`plan`) -> Tasks (`tasks`) -> Implement & Converge (`implement` & `converge`).
+3. **Binary Ground Truth (REA + Ghidra)**: For compiled binaries, DLLs, Electron ASARs, or closed protocols, extract verified behavior via REA MCP backed by **Ghidra 12.1.4 Public Headless** (`D:\Tools\ghidra-12.1.4\ghidra_12.1.4_PUBLIC`) + OpenJDK 25, convert to clean-room specs, track via `build_reconstruction_obligation_ledger`, and prove parity via `verify_reconstruction`.
 
 ---
 
-## 12. The Executive Operator Instincts Mandate (Audit & Reporting Protocol)
-
-Every report, telemetry audit, or analytics inquiry prompt MUST lead with an **Operator Instincts** executive readout before presenting raw data tables:
-
-1. **Signal vs. Noise Filter**: Cut through crawler botnets, AI training scrapers (ElevenLabs, SiteList, ShapBot), and search spiders to isolate verified human visitors.
-2. **The Behavioral Read**: Interpret the psychological and operational intent of visitors (what CEOs, CFOs, VPs of Operations, and Engineering Leads are looking for when exploring diagnostics and essays).
-3. **The Revenue Bottleneck**: Diagnose conversion friction, checkout stalls (such as Stripe drop-offs), and missing scheduling links.
-4. **The Perimeter & Security Scan**: Audit hostile scanner probes, WAF threat mitigations, and zero-day containment.
-5. **The Recommended Next Move**: Deliver one or two concrete, high-leverage operational fixes to execute immediately.
+## 12. Executive Operator Instincts Mandate (Audit Protocol)
+Every report or analytics audit MUST lead with **Operator Instincts** before raw tables: (1) Signal vs. Noise Filter (strip scrapers/bots), (2) Behavioral Read (CEO/CFO/VP intent), (3) Revenue Bottleneck (Stripe / `/schedule` friction), (4) Perimeter & Security Scan, (5) One or two immediate high-leverage fixes.
 
 ---
 
-## 13. Cal.com Scheduling Authority & Diagnostic Context Preservation
-
-1. **Native Scheduling Authority**: `richardewing.io` uses **Cal.com** (`cal.com/richard-ewing-2cevwb`), embedded locally at `/schedule`. Never suggest generic contact forms or third-party meeting links when executive scheduling is requested.
-2. **Diagnostic Parameter Bridge**: Every diagnostic tool on the platform (such as `/reality-check`, `/tools/pdi`, `/tools/ev-se`, `/tools/cfo-capitalization-audit`) must deep-link directly to `/schedule` with calculated context passed as URL parameters (e.g. `?source=reality-check&leak=${savingsOpportunity}`).
-3. **Banner Continuity**: `/schedule` must always mount `<ScheduleDiagnosticBanner />` to display the specific detected savings opportunity or audit risk directly above the Cal.com embed.
+## 13. Cal.com Scheduling Authority & Context Bridge
+`richardewing.io` embeds **Cal.com** (`cal.com/richard-ewing-2cevwb`) locally at `/schedule`. Every diagnostic (`/reality-check`, `/tools/pdi`, `/tools/ev-se`, `/tools/cfo-capitalization-audit`) must deep-link to `/schedule` with calculated context parameters (`?source=...&leak=...`), and `/schedule` must mount `<ScheduleDiagnosticBanner />`.
 
 ---
 
-## 14. Cloudflare Deployment Resilience & Machine Credential Invariant
-
-1. **API Token Over Browser OAuth**: For non-interactive agent execution, `CLOUDFLARE_API_TOKEN` in `.env.local` (or system environment variables) is the primary authentication mechanism for `npx wrangler deploy`.
-2. **OAuth Fallback Handling**: If Wrangler reports an expired OAuth token in a non-interactive shell, notify the user with the permanent API token setup instructions instead of assuming recurring browser logins.
+## 14. Cloudflare Deployment Auth Resilience
+Use `CLOUDFLARE_API_TOKEN` from gitignored `.env.local` or OS env vars for non-interactive `npx wrangler deploy` runs. Notify the user with token setup guidance if Wrangler reports expired OAuth instead of assuming interactive browser login.
 
 ---
 
-## 15. Edge Redirect Immunity & CDN Cache Protection Invariant
-
-1. **Zero Redirect Loops**: Next.js edge middleware must physically verify that `destination.href !== req.nextUrl.href` before returning any 301 or 308 redirect response.
-2. **CDN Cache Shield**: Every redirect returned by edge middleware must explicitly set `Cloudflare-CDN-Cache-Control: no-store` and `Cache-Control: no-cache, no-store, must-revalidate` so that Cloudflare CDN POP caches never store intermediate redirects.
-3. **Automated Cache Self-Healing**: Maintain `POISONED_CACHE_URLS` in `middleware.ts` using `caches.default.delete(url)` to automatically evict stale or corrupted edge cache keys on incoming requests.
-
----
-
-## 16. Runtime Security & Third-Party Telemetry Hygiene
-
-1. **Workstation Runtime Patching**: Local developer workstations running diagnostic scripts that interact with third-party APIs (such as Stripe, Cloudflare, Resend) must keep Node.js updated to the latest patched security releases (`>=24.22.1` or `>=22.23.4`) to prevent automated compliance triggers on client telemetry (`node_version`).
-2. **Cloudflare Worker Isolation**: Live production applications execute exclusively on Cloudflare Workers V8 isolates (`workerd`), maintaining physical separation from workstation Node.js runtimes. Workstation telemetry warnings must not be confused with edge infrastructure compromise.
+## 15. Edge Redirect Immunity & CDN Cache Protection
+1. Middleware must check `destination.href !== req.nextUrl.href` before 301/308 redirects.
+2. Every redirect sets `Cloudflare-CDN-Cache-Control: no-store` and `Cache-Control: no-cache, no-store, must-revalidate`.
+3. Enforce `Host, RSC` Vary headers, clean `EDGE_REDIRECTS` pathnames without `?`/`#`, `scripts/patch-worker.mjs` edge shield (`__RW_ADR_0019_EDGE_SHIELD__`), and never run hot-path `caches.default.delete` purge loops inside request handlers.
 
 ---
 
-## 17. Option C Dual-Engine Funnel ("Build, Unstick, Automate & Win" + Commercial Reality Moat)
-
-1. **HWS-AEO v3.0 (35-Word Citation Snap + 10th-Thought Human Reality)**: Every programmatic answer spoke (`/answers/*`), glossary definition (`/glossary/*`), and diagnostic readout must open with a 30-to-45-word standalone direct answer optimized for `Query Fan-Out` across ChatGPT Search, Perplexity, Claude, and Google AI Overviews, immediately followed by concrete lived operational reality.
-2. **Zero-Click In-Scorecard Conversion Drawer**: Every interactive diagnostic calculator (`/reality-check`, `/tools/*`) and programmatic answer spoke (`/answers/*`) must mount `<ScorecardCheckoutDrawer />`, pairing grounded P&L and AI economics with an immediate 1-click checkout ladder (`$29` Survival Kit / `$79` Complete 13-Playbook System -> `$450` Live 60-Min Session -> `$2,500` 14-Day Automation/Turnaround Sprint -> `$7,500` 21-Day 0-to-1 Build Sprint).
+## 16. Workstation Runtime Security vs. Edge Isolation
+Keep local workstation Node.js patched (`>=24.22.1` or `>=22.23.4`) to avoid third-party telemetry compliance flags on scripts hitting Stripe/Cloudflare/Resend. Live traffic runs isolated inside Cloudflare Workers (`workerd`).
 
 ---
 
-## 18. The Holistic Ecosystem Interconnectivity & Big-Picture Flywheel Mandate ("Everything Feeds Everything")
-
-1. **Macro-to-Micro Zoom-Out Protocol**: Never implement a page, tool, or feature in isolation. Before and after any task, zoom out to audit how the surface connects to the broader ecosystem (`RichardEwing.io` Advisory & Diagnostics <-> `Exogram.ai` Runtime Governance <-> `CareerWin.ai` Human Evidence <-> `/schedule` Cal.com Booking <-> Stripe Checkout Ladder <-> `/api/leads` & `/api/lead-capture`).
-2. **Zero Passive Brochure or Orphan Pages**: Every product flagship (`/exogram`, `/careerwin`), architecture deep-dive (`/exogram/architecture`, `/exogram/docs`, `/runtime-architecture`, `/security`), and sub-route must include:
-   - Internal cross-links to its sub-routes and related diagnostic tools.
-   - An interactive lead-capture blueprint or diagnostic bridge (`ExogramBlueprintCapture`, `ScorecardCheckoutDrawer`, or `AdvisoryCTA`).
-   - A direct, source-tagged Cal.com booking CTA (`/schedule?source=<page-slug>`).
-3. **Zero Unwired Client Forms Invariant**: Every client form (`ExogramDemoForm`, `SpeakingBookingForm`, `IntakeApplicationForm`, blueprint captures, and newsletter/checklist gates) must execute real `fetch` POST requests to `/api/lead-capture` and/or `/api/leads` with structured payloads, error handling, high-contrast confirmation typography (never `text-white` on `bg-white`), and a post-submission fast-track `/schedule?source=...` link. Mock `setTimeout` form submissions are strictly prohibited.
-4. **Edge Redirect Query-String Safety**: In `middleware.ts`, `EDGE_REDIRECTS` map values must strictly be clean pathname strings (never containing `?` or `#`), because the middleware appends `req.nextUrl.search` dynamically when constructing the redirect `URL`.
-5. **Contextual Schedule Banner Continuity**: Whenever a new `?source=` parameter is introduced across the platform, `SOURCE_CONFIGS` in `components/schedule/schedule-diagnostic-banner.tsx` must be updated simultaneously so `/schedule` renders tailored pre-call framing above the Cal.com embed.
+## 17. Option C Dual-Engine Funnel
+1. **HWS-AEO v3.0**: Every `/answers/*` spoke, `/glossary/*` page, and diagnostic readout opens with a 30-to-45-word standalone direct answer for AI citation (`Query Fan-Out`), followed by concrete lived operational reality.
+2. **In-Scorecard Conversion Drawer**: Mount `<ScorecardCheckoutDrawer />` pairing diagnosis with the 1-click checkout ladder: `$29` Survival Kit / `$79` Complete 13-Playbook System -> `$450` Live 60-Min Session -> `$2,500` 14-Day Sprint -> `$7,500` 21-Day Build Sprint.
 
 ---
 
-## 19. Clean-Room Skill Assimilation, Live Demand Telemetry, Stateful Security Ledgers & Executive Deal Desk (ADR-0018)
-
-1. **Clean-Room Supply-Chain Quarantine**: Never install third-party community skills verbatim into `.agents/skills/` via `npx skills add`. Strip Vercel assumptions, em-dashes, chatty Socratic trivia prompts, and generic AI copy templates; enforce schema and secret hygiene via `node .agents/scripts/audit-agent-skills.mjs`.
-2. **Closed-Loop Demand & Search Intelligence (`.agents/skills/demand-and-search-intelligence/SKILL.md` + `pull-demand-telemetry.mjs`)**: Pair `seo-architecture` formatting rules with live demand pipes: Google Search Console (`googleapis`), `semrush_mcp` (warn before `execute_report` unit consumption; stop cleanly on `no_api_units`), 30-day Hacker News/Reddit practitioner pain harvesting, Cloudflare GraphQL HTML/AI-bot crawl analytics, internal link-graph orphan checks, and `stripe_stripe` MCP (`Exogram AI LLC` `acct_1TxBWCGl91vB8itR`) revenue attribution.
-3. **Stateful Hunter/Disprover Edge Security Audit (`.agents/skills/cloudflare-edge-security-audit/SKILL.md` + `run-security-ledger-audit.mjs`)**: Track SHA-256 route coverage in `.scratch/security-audit/coverage-ledger.json`. Enforce adversarial separation (the Hunter subagent never verifies its own finding; a separate Skeptic Disprover verifies source-to-sink exploitability), fail-closed `Bearer` secret checks, zero client-bundle `supabaseAdmin` imports, and Cloudflare V8 isolate request isolation.
-4. **3-Strike Debugging, Two-Stage Review & Executive Deal Desk (`.agents/skills/executive-deal-desk/SKILL.md`)**: Enforce the 3-Strike Debugging Circuit Breaker, 4-Layer Defense-in-Depth, Two-Stage Subagent Review (`qa_auditor` Gate A Spec/Blast-Radius before Gate B Craft), `/schedule` pre-call operator dossiers, and dynamic formula-only `.xlsx`/`.pdf` boardroom kit standards.
+## 18. Holistic Ecosystem Interconnectivity ("Everything Feeds Everything")
+1. **Zero Orphan Surfaces**: Connect `RichardEwing.io` <-> `Exogram.ai` <-> `CareerWin.ai` <-> `/schedule` <-> Stripe Checkout Ladder <-> `/api/leads` and `/api/lead-capture`. Every flagship and architecture deep-dive needs internal cross-links, interactive capture (`ExogramBlueprintCapture`, `ScorecardCheckoutDrawer`, or `AdvisoryCTA`), and `/schedule?source=<page-slug>`.
+2. **Zero Unwired Client Forms**: Forms (`ExogramDemoForm`, `SpeakingBookingForm`, `IntakeApplicationForm`, blueprint/newsletter gates) must `fetch` POST to `/api/lead-capture` or `/api/leads` with real error handling, high-contrast confirmation UI, and a `/schedule?source=...` link.
+3. **Banner Continuity**: Update `SOURCE_CONFIGS` in `components/schedule/schedule-diagnostic-banner.tsx` whenever adding a new `?source=` tag.
 
 ---
 
-## 20. Streaming Generative UI, Fail-Closed Provenance, UI Integrity & Sovereign Distribution (ADR-0020)
+## 19. Clean-Room Skills, Demand Telemetry, Security Ledgers & Deal Desk (ADR-0018)
+1. **Quarantine**: Never copy community skills verbatim (`npx skills add`); validate with `node .agents/scripts/audit-agent-skills.mjs`.
+2. **Demand & Search Intelligence**: Use `.agents/skills/demand-and-search-intelligence/SKILL.md` + `pull-demand-telemetry.mjs` across GSC, `semrush_mcp` (budget-checked), 30-day HN/Reddit mining, Cloudflare HTML/bot crawl metrics, internal link-graph checks, and `stripe_stripe` (`Exogram AI LLC` `acct_1TxBWCGl91vB8itR`).
+3. **Stateful Security Ledger**: Track SHA-256 route coverage in `.scratch/security-audit/coverage-ledger.json` via `run-security-ledger-audit.mjs`; keep Hunter and Skeptic Disprover roles separate; fail closed on `Bearer` checks; zero client `supabaseAdmin` imports.
+4. **Deal Desk & Discipline**: Enforce 3-Strike Debugging Circuit Breaker, 4-Layer Defense-in-Depth, Two-Stage `qa_auditor` Review, `/schedule` pre-call dossiers, and dynamic formula `.xlsx`/`.pdf` kits via `.agents/skills/executive-deal-desk/SKILL.md`.
 
-1. **EGM Semantic Spec Split & ADR Drift Gate (`spec-driven-development` + `check-adr-drift.mjs`)**: Separate non-trivial specs into `01-problem-intent.md`, `02-semantic-contracts.md`, and `03-implementation-plan.md`, apply Silent Cold-Context Paraphrase (`1`-audit cap per refactor), and verify ADR alignment via `node .agents/scripts/check-adr-drift.mjs --strict`.
-2. **Design Tokens Lock, Mobbin Flow Reference & UI Wiring Ledger (`ui-ux-polish` + `verify-ui-integrity.mjs`)**: Enforce `.agents/skills/ui-ux-polish/references/DESIGN_TOKENS_LOCK.md` across `richardewing.io`, `exogram.ai`, and `careerwin.ai`. Use `mobbin_mobbin` MCP strictly for UX flow mechanics (never palette overrides), ban `@splinetool/runtime` inside `richardewing.io`, and run `verify-ui-integrity.mjs --before` / `--kept` around UI refactors (`--floor` runs automatically in `verify-qa.mjs`).
-3. **Zero-Dependency Streaming Generative UI (`lib/sovereign-ui-stream.ts` + `AdvisorStreamWidgets.tsx`)**: Stream positional Zod v4-validated boardroom widgets over SSE (`client.interactions.create({ model: 'gemini-3.8-flash', stream: true })`) with `getCloudflareContext().ctx.waitUntil(...)` post-stream persistence, zero `dangerouslySetInnerHTML`, and `100%` `hydrateLegacyRoadmapJson()` backward compatibility.
-4. **Fail-Closed Exogram Governance, `L1 -> L2 -> L3` Provenance & Retrieval/Curriculum Health (`lib/exogram.ts`, `run-retrieval-eval.mjs`, `check-curriculum-health.mjs`)**: `evaluateAction()` fails closed (`decision: 'BLOCKED'`) on missing credentials, timeouts, or upstream errors. Track `L1 -> L2 -> L3` provenance chains, benchmark retrieval via `run-retrieval-eval.mjs` (`Recall@k`, `Precision@k`, `nDCG@k`, `MRR`, `Hit@k`), and fingerprint Academy Moat modules via `check-curriculum-health.mjs`.
-5. **Air-Gapped Step 6 Distribution Queue (`compile-distribution-pack.mjs` + `docs/sql/20261101_sovereign_distribution_queue.sql`)**: Generate HWS v2.0-linted LinkedIn, X, and Scorecard drafts (`status: "pending_human_approval"`) backed by Postgres RLS (`service_role` only), `human_approval_required_before_dispatch`, and `FOR UPDATE SKIP LOCKED` atomic job claiming.
+---
+
+## 20. Streaming Generative UI, Fail-Closed Provenance & UI Integrity (ADR-0020)
+1. **Spec Split & Drift Gate**: Split complex specs into `01-problem-intent.md`, `02-semantic-contracts.md`, `03-implementation-plan.md`; run `node .agents/scripts/check-adr-drift.mjs --strict`.
+2. **Design Tokens Lock & UI Wiring**: Follow `ui-ux-polish/references/DESIGN_TOKENS_LOCK.md`; use `mobbin_mobbin` strictly for UX flow mechanics (no palette overrides); ban `@splinetool/runtime`; run `verify-ui-integrity.mjs`.
+3. **Streaming UI**: `lib/sovereign-ui-stream.ts` + `AdvisorStreamWidgets.tsx` use positional Zod v4 SSE streaming (`gemini-3.8-flash`), `ctx.waitUntil(...)` persistence, zero `dangerouslySetInnerHTML`, and `hydrateLegacyRoadmapJson()` parity.
+4. **Fail-Closed Exogram & Health Checks**: `evaluateAction()` in `lib/exogram.ts` fails closed (`decision: 'BLOCKED'`); verify retrieval with `run-retrieval-eval.mjs` and Academy modules with `check-curriculum-health.mjs`.
+5. **Step 6 Distribution Queue**: `compile-distribution-pack.mjs` + `docs/sql/20261101_sovereign_distribution_queue.sql` (`status: "pending_human_approval"`, `service_role` RLS, `FOR UPDATE SKIP LOCKED`).
 
 ---
 
 ## 21. Canonical 10-Pillar Cloudflare Report & 1.00M CPU/Day Budget Protocol
-
-1. **Canonical Report Trigger**: Whenever `@richardewing` asks for a "report", "Cloudflare report", "daily report", or "telemetry report", ALWAYS execute `node .agents/scripts/run-cloudflare-report.mjs` (or `.scratch/run-full-audit-live.mjs`, which forwards to it). Never substitute partial or generic telemetry scripts.
-2. **Required 10-Pillar Scope & Layout**: Present all 10 pillars (Executive Readout, Worker CPU & Billing Quota Curves, 15-Day Edge Traffic & Threats, Human Pageviews & Uniques, Top 15 HTML Routes per Domain, `/schedule` & Geographies, WAF & AI/Search Crawlers, Google Search Console across all 3 domains including `https://careerwin.ai/`, Stripe Live Ledger, and 21-Endpoint Edge Cache Health) using clean Vertical 2-to-3 Column Executive Tables with zero inline backticks around numbers, currencies, or units.
-3. **Hard CPU Budget Ceiling (1.00M ms/day)**: Enforce a strict combined Cloudflare Worker CPU budget at or below **1.00M ms/day** (**30.00M ms/cycle** included in the **\$5.00** monthly Workers Paid plan) across `richardewing-io`, `careerwin-app`, and `exogram-www`. Always report remaining free CPU as an exact zero-overage daily cap and separate **60-minute**, **24-hour**, and **billing-cycle** Worker errors so historical deploy errors never masquerade as live 60-minute incidents. Any trailing 12h/24h pace above **1.00M ms/day** triggers immediate edge caching and isolate optimization.
-4. **3-Domain GSC Property Resolution**: Resolve `richardewing.io` (`sc-domain:richardewing.io`), `careerwin.ai` (`https://careerwin.ai/`), and `exogram.ai` (`sc-domain:exogram.ai`) via service account `ai-agents-sheets@ai-agents-495417.iam.gserviceaccount.com` without exposing credentials.
-5. **Mandatory Unprompted Additions (Never Wait to Be Asked)**: Every report response MUST automatically include:
-   - The 7-probe `CPU Shield Verification` table (`careerwin.ai/api/profile` `FAST-401`, `exogram.ai/mcp` HTML and JSON, `richardewing.io/api/og`, `careerwin.ai/api/og`, `richardewing.io/.env`, and `GPTBot` 403 WAF blocks) alongside the Endpoint Health Matrix.
-   - The **4-Part Strategic Operator Readout** stacked as 2-column vertical tables at the bottom of the report: `a) Needs Attention`, `b) Needs Action`, `c) Really Pay Close Attention To`, and `d) Intuitions, Ideas & What You Missed`.
-
-
-
+1. **Trigger**: On any "report", "Cloudflare report", "daily report", or "telemetry report" request, ALWAYS execute `node .agents/scripts/run-cloudflare-report.mjs` (never partial scripts).
+2. **Scope & Budget**: Combined Cloudflare Worker CPU across `richardewing-io`, `careerwin-app`, and `exogram-www` MUST stay `<= 1.00M ms/day` (**30.00M ms/cycle** on **\$5.00** Workers Paid plan). Report exact zero-overage daily cap from remaining CPU; separate 60-minute, 24-hour, and billing-cycle Worker errors; query all 3 GSC properties (`sc-domain:richardewing.io`, `https://careerwin.ai/`, `sc-domain:exogram.ai`) without exposing credentials.
+3. **Unprompted Additions**: Always include the 7-probe `CPU Shield Verification` table (`careerwin.ai/api/profile` `FAST-401`, `exogram.ai/mcp` HTML and JSON, `richardewing.io/api/og`, `careerwin.ai/api/og`, `richardewing.io/.env`, `GPTBot` WAF blocks) and the 4-part Strategic Operator Readout (`a` Needs Attention, `b` Needs Action, `c` Really Pay Close Attention To, `d` Intuitions, Ideas & What You Missed) formatted per Vertical Executive Communication Standard.

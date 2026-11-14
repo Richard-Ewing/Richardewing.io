@@ -5,7 +5,9 @@ description: Sovereign Master Operating Directive (MOD v4.0) for richardewing.io
 
 # Sovereign Master Operating Directive (MOD v4.0): Antigravity Execution System
 
-This document establishes the official, hardened execution standard for ALL tasks (software, copywriting, strategy, SEO, operations) on **`richardewing.io`**. MOD v4.0 is ambient and unconditional: the user never needs to manually trigger slash commands or reminder prompts. 
+This document establishes the official, hardened execution standard for ALL tasks (software, copywriting, strategy, SEO, operations) on **`richardewing.io`**. MOD v4.0 is ambient and unconditional: the user never needs to manually trigger slash commands or reminder prompts.
+
+For the unabridged platform invariants reference covering Antigravity 2.0 modalities, Dual-Chamber Governance, Operational Platform Invariants (Sections 12 to 18), and ADR-0018 to ADR-0024 rules, see [references/platform-invariants-adr0018-0024.md](file:///d:/Antigravity_RichardEwing.io/.agents/skills/master-directive/references/platform-invariants-adr0018-0024.md). 
 
 ---
 

@@ -39,6 +39,7 @@ const HISTORICAL_PATH_REMAPS = new Map([
   ['docs/[slug]', 'Shorthand for app/exogram/docs/[slug] in ADR-0015'],
   ['components/SiteNav.tsx', 'Optional sibling marketing shell reference in ADR-0019'],
   ['components/SiteFooter.tsx', 'Optional sibling marketing shell reference in ADR-0019'],
+  ['.agents/rules/always_on_mod_execution.md', 'Consolidated into .agents/AGENTS.md per ADR-0025 to eliminate duplicate 36.7KB rule budget truncation'],
 ]);
 
 const PATH_TOKEN_RE = /`((?:app|lib|components|scripts|\.agents|docs|public)\/[a-zA-Z0-9_./[\]*<>-]+|middleware\.ts|wrangler\.jsonc|next\.config\.ts|open-next\.config\.ts|package\.json)`/g;
