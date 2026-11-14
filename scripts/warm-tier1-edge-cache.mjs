@@ -5,6 +5,9 @@
  * so Pillar-9 endpoints serve X-RW-Edge-Cache: HIT immediately after deployment.
  */
 
+import dns from 'node:dns';
+dns.setDefaultResultOrder('ipv4first');
+
 const BASE_ORIGIN = (process.env.RICHARD_ORIGIN || 'https://www.richardewing.io').replace(/\/+$/, '');
 const CONCURRENCY = 6;
 
@@ -87,8 +90,19 @@ async function runPool(items, fn) {
 
 async function main() {
   const pass1 = await runPool(TIER1_ROUTES, hitRoute);
-  await new Promise((r) => setTimeout(r, 500));
+  await new Promise((r) => setTimeout(r, 1000));
   const pass2 = await runPool(TIER1_ROUTES, hitRoute);
+
+  for (let retry = 0; retry < 2; retry++) {
+    const pendingIdx = pass2
+      .map((r, idx) => (r.status === 200 && !r.edgeCache.includes('HIT') ? idx : -1))
+      .filter((idx) => idx !== -1);
+    if (pendingIdx.length === 0) break;
+    await new Promise((r) => setTimeout(r, 1000));
+    for (const idx of pendingIdx) {
+      pass2[idx] = await hitRoute(TIER1_ROUTES[idx]);
+    }
+  }
 
   const ok200 = pass2.filter((r) => r.status === 200).length;
   const wkHits = pass2.filter((r) => r.edgeCache.includes('HIT')).length;
