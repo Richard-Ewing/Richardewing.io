@@ -26,11 +26,17 @@ export default function ScorecardCheckoutDrawer({
     const resolvedSource = source || sourceTool || 'diagnostic-scorecard';
     const [selectedKit, setSelectedKit] = useState<'29' | '79'>('29');
 
-    const kit29Url = PRODUCTS.premium_guide_29?.paymentLink || 'https://buy.stripe.com/fZudR2aj44ng8xLeko2B21c';
-    const kit79Url = PRODUCTS.premium_guide_79?.paymentLink || 'https://buy.stripe.com/6oUdR2ezk2f8aFT9042B21d';
-    const gutCheckUrl = PRODUCTS.gut_check?.paymentLink || 'https://buy.stripe.com/eVqbIU1My8Dw01f7W02B204';
-    const sprint2500Url = PRODUCTS.insolvency_diagnostic?.paymentLink || 'https://buy.stripe.com/8x25kw62O9HA6pDb8c2B203';
-    const sprint7500Url = PRODUCTS.full_audit?.paymentLink || 'https://buy.stripe.com/7sY14g76ScTM7tH2BG2B202';
+    const encodedSource = encodeURIComponent(resolvedSource);
+    const buildCheckoutRoute = (productId: keyof typeof PRODUCTS) =>
+        PRODUCTS[productId]?.paymentLink
+            ? `/api/buy/${String(productId)}?source=${encodedSource}`
+            : '/checkout-pending';
+
+    const kit29Url = buildCheckoutRoute('premium_guide_29');
+    const kit79Url = buildCheckoutRoute('premium_guide_79');
+    const gutCheckUrl = buildCheckoutRoute('gut_check');
+    const sprint2500Url = buildCheckoutRoute('insolvency_diagnostic');
+    const sprint7500Url = buildCheckoutRoute('full_audit');
 
     if (compact) {
         return (

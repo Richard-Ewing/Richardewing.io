@@ -4,7 +4,8 @@ import { auth } from '@clerk/nextjs/server';
 
 export const dynamic = 'force-dynamic';
 
-const SEARCH_CRAWLER_RE = /\b(googlebot|googleother|bingbot|applebot|duckduckbot|yandexbot|bravebot|slurp)\b/i;
+const SEARCH_CRAWLER_RE =
+    /\b(googlebot|googleother|google-extended|google-cloudvertexbot|google-notebooklm|adsbot-google|mediapartners-google|bingbot|adidxbot|applebot|applebot-extended|duckduckbot|duckassistbot|yandexbot|bravebot|slurp|oai-searchbot|chatgpt-user|gptbot|claude-searchbot|claude-user|claudebot|anthropic-ai|perplexitybot|perplexity-user|amzn-searchbot|amzn-user|amazonbot|youbot|exasearchbot|meta-externalagent|facebookexternalhit|facebookbot|facebot|linkedinbot|twitterbot|slackbot|discordbot|whatsapp|telegrambot|pinterestbot|bytespider|tiktokspider|ccbot|petalbot|semrushbot|ahrefsbot|mj12bot|dotbot|awariobot|barkrowler|dataforseobot|blexbot|serpstatbot|headlesschrome|phantomjs|playwright|puppeteer)\b/i;
 
 export async function GET(
     request: Request,
@@ -35,6 +36,12 @@ export async function GET(
         return fallbackRes;
     }
 
+    const reqUrl = new URL(request.url);
+    const rawSource =
+        (reqUrl.searchParams.get('source') || 'direct')
+            .replace(/[^a-zA-Z0-9_-]/g, '')
+            .slice(0, 40) || 'direct';
+
     const stripeUrl = new URL(product.paymentLink);
     const cookieHeader = request.headers.get('cookie') || '';
     const hasClerkCookie =
@@ -50,11 +57,18 @@ export async function GET(
             ]);
             if (authResult?.userId) {
                 const referenceId = `${authResult.userId}::enterprise_${productId}`;
-                stripeUrl.searchParams.append('client_reference_id', referenceId);
+                stripeUrl.searchParams.set('client_reference_id', referenceId);
             }
         } catch {
             // Proceed directly to Stripe guest checkout if Clerk lookup errors
         }
+    }
+
+    if (!stripeUrl.searchParams.has('client_reference_id')) {
+        stripeUrl.searchParams.set(
+            'client_reference_id',
+            `guest::${rawSource}::enterprise_${productId}`
+        );
     }
 
     const redirectRes = NextResponse.redirect(stripeUrl);

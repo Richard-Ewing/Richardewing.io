@@ -220,9 +220,9 @@ export default function SchedulePage() {
                 </p>
                 <div className="flex flex-col gap-2 pt-2 border-t border-[var(--line)]">
                   <a
-                    href={PRODUCTS.premium_guide_79?.paymentLink || 'https://buy.stripe.com/6oUdR2ezk2f8aFT9042B21d'}
+                    href={PRODUCTS.premium_guide_79?.paymentLink ? '/api/buy/premium_guide_79?source=schedule' : '/operating-kit'}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer nofollow"
                     className="button button-gold !text-xs !py-2.5 text-center flex items-center justify-center gap-1.5"
                   >
                     <span>Instant Checkout ($79)</span>

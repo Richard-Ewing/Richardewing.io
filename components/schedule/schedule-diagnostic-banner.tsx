@@ -246,6 +246,31 @@ const SOURCE_CONFIGS: Record<string, DiagnosticSourceConfig> = {
     badgeLabel: '60-Min Working Session',
     description: 'Bring your live OpenAI or Anthropic bills, AI feature unit economics, or board deck numbers for a 60-minute screen-share teardown.',
   },
+  'pricing-sprints-450': {
+    title: '60-Minute AI P&L & Roadmap Teardown ($450)',
+    badgeLabel: '48-Hour Margin Recovery',
+    description: 'Select your 60-minute working session slot below. Bring your AI API invoices, feature pricing sheet, or engineering backlog so we can isolate margin leaks and build a 30-day cut list live.',
+  },
+  'pricing-sprints-2500': {
+    title: '2-Week Product P&L Turnaround Sprint ($2,500)',
+    badgeLabel: '14-Day Fixed Scope',
+    description: 'Select an intake slot below to lock your 14-day sprint start date. We will align on cloud billing access, feature ROI audit targets, and CFO board deck deliverables.',
+  },
+  'pricing-sprints-7500': {
+    title: '21-Day AI Build & Launch Sprint ($7,500)',
+    badgeLabel: '21-Day 0-to-1 Production',
+    description: 'Select a kickoff slot below to confirm your technical architecture, model routing design, runtime guardrails, and edge deployment schedule.',
+  },
+  'pricing-sprints-retainer': {
+    title: 'Embedded Fractional CPO Retainer Briefing ($10,000/mo)',
+    badgeLabel: 'Quarterly Executive Retainer',
+    description: 'Select a confidential executive briefing slot below to align on product P&L governance, engineering org cadence, AI vendor negotiations, and quarterly board reporting.',
+  },
+  'glossary-pillar': {
+    title: 'Executive Economics & Governance Implementation Briefing',
+    badgeLabel: 'Glossary Pillar Execution',
+    description: 'Select a 30-minute triage or 60-minute working session below. Bring your P&L statements, LLM token bills, or R&D sprint allocations to turn these definitions into concrete margin recovery.',
+  },
 };
 
 function formatLeakDisplay(rawLeak: string | null): string | null {
@@ -277,11 +302,13 @@ export function ScheduleDiagnosticBanner() {
     return null;
   }
 
-  const config = SOURCE_CONFIGS[source] || {
-    title: 'Reviewing Your Diagnostic Scorecard',
-    badgeLabel: 'Annual Operational Drag',
-    description: 'Select a 30-Minute Triage or Executive Advisory session below. Bring your data and estimates to isolate your primary capital leak.',
-  };
+  const config =
+    SOURCE_CONFIGS[source] ||
+    (source.startsWith('glossary-pillar-') ? SOURCE_CONFIGS['glossary-pillar'] : undefined) || {
+      title: 'Reviewing Your Diagnostic Scorecard',
+      badgeLabel: 'Annual Operational Drag',
+      description: 'Select a 30-Minute Triage or Executive Advisory session below. Bring your data and estimates to isolate your primary capital leak.',
+    };
 
   const formattedLeak = formatLeakDisplay(leak);
 

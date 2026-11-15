@@ -128,9 +128,14 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 __rwLowerPath.endsWith(".sql") ||
                 (__rwLowerPath.endsWith(".zip") && !__rwLowerPath.startsWith("/downloads/")) ||
                 __rwLowerPath.endsWith(".key") ||
+                __rwLowerPath.endsWith(".sqlite") ||
+                __rwLowerPath.endsWith(".sqlite3") ||
+                __rwLowerPath.endsWith(".db") ||
                 __rwLowerPath.startsWith("/.git") ||
                 __rwLowerPath.startsWith("/.aws") ||
                 __rwLowerPath.startsWith("/.ssh") ||
+                __rwLowerPath.startsWith("/.config") ||
+                __rwLowerPath.startsWith("/.next/") ||
                 __rwLowerPath.includes("/@fs/") ||
                 __rwLowerPath.includes("service_account") ||
                 __rwLowerPath.includes("firebase") ||
@@ -142,6 +147,9 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 __rwLowerPath.includes("setup-config") ||
                 __rwLowerPath.includes("wlwmanifest") ||
                 __rwLowerPath.includes("xmlrpc") ||
+                __rwLowerPath.includes("msmtprc") ||
+                __rwLowerPath.includes("credentials.json") ||
+                __rwLowerPath.includes("docker-compose") ||
                 __rwLowerPath.includes("/api/aws/bedrock")
             )
         ) {
@@ -215,7 +223,12 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 "semrushbot",
                 "ahrefsbot",
                 "mj12bot",
-                "dotbot"
+                "dotbot",
+                "awariobot",
+                "barkrowler",
+                "dataforseobot",
+                "blexbot",
+                "serpstatbot"
             ];
             const __rwIsCitationBot =
                 !__rwUa.includes("applebot-extended") &&
@@ -472,7 +485,7 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 __rwStoreHeaders.delete("cdn-cache-control");
                 __rwStoreHeaders.set("X-RW-Orig-CT", __rwOriginRes.headers.get("content-type") || (__rwIsOg ? "image/png" : (__rwIsRsc ? "text/x-component" : "text/html; charset=utf-8")));
                 __rwStoreHeaders.set("Content-Type", "font/woff2");
-                __rwStoreHeaders.set("Cache-Control", __rwIsOg ? "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=2592000" : "public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800");
+                __rwStoreHeaders.set("Cache-Control", __rwIsOg ? "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=2592000" : "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=2592000");
                 __rwStoreHeaders.set("Content-Length", String(__rwBodyBuf.byteLength));
                 const __rwStoreRes = new Response(__rwBodyBuf.slice(0), {
                     status: 200,

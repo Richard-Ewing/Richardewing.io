@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ExecutiveDefinitionBlock, FrameworkDiagnosticBridge } from '@/components/seo/FrameworkDiagnosticBridge';
+import ScorecardCheckoutDrawer from '@/app/components/ScorecardCheckoutDrawer';
 
 export const metadata: Metadata = {
   title: 'Fixed-Scope Advisory Pricing & Sprints',
@@ -44,6 +45,8 @@ const sprintTiers = [
     ],
     ctaText: 'Get the Operating Kit ($29) ↗',
     ctaHref: '/toolkit',
+    instantBuyHref: '/api/buy/premium_guide_29?source=pricing-sprints-29',
+    instantBuyText: 'Instant Stripe Checkout ($29) ↗',
     highlight: false,
   },
   {
@@ -63,7 +66,9 @@ const sprintTiers = [
       'Full $29 Operating Kit included at no extra charge',
     ],
     ctaText: 'Book 1-on-1 Teardown ($450) ↗',
-    ctaHref: '/contact#subject=P%26L+Teardown',
+    ctaHref: '/schedule?source=pricing-sprints-450',
+    instantBuyHref: '/api/buy/gut_check?source=pricing-sprints-450',
+    instantBuyText: 'Instant Stripe Checkout ($450) ↗',
     highlight: false,
   },
   {
@@ -83,7 +88,9 @@ const sprintTiers = [
       'Two executive presentation sessions with leadership team',
     ],
     ctaText: 'Request Turnaround Sprint ↗',
-    ctaHref: '/contact#subject=Turnaround+Sprint',
+    ctaHref: '/schedule?source=pricing-sprints-2500',
+    instantBuyHref: '/api/buy/insolvency_diagnostic?source=pricing-sprints-2500',
+    instantBuyText: 'Instant Stripe Checkout ($2,500) ↗',
     highlight: true,
   },
   {
@@ -103,7 +110,9 @@ const sprintTiers = [
       'Documentation, developer handoff, and 30 days support',
     ],
     ctaText: 'Discuss 21-Day Build Sprint ↗',
-    ctaHref: '/contact#subject=AI+Build+Sprint',
+    ctaHref: '/schedule?source=pricing-sprints-7500',
+    instantBuyHref: '/api/buy/full_audit?source=pricing-sprints-7500',
+    instantBuyText: 'Instant Stripe Checkout ($7,500) ↗',
     highlight: false,
   },
   {
@@ -123,7 +132,7 @@ const sprintTiers = [
       'Direct Slack/email access for CEO, CFO, and leadership team',
     ],
     ctaText: 'Inquire About Retainer ↗',
-    ctaHref: '/contact#subject=Fractional+CPO+Inquiry',
+    ctaHref: '/schedule?source=pricing-sprints-retainer',
     highlight: false,
   },
 ];
@@ -266,7 +275,7 @@ export default function PricingSprintsPage() {
                 </div>
               </div>
 
-              <div className="pt-8 mt-8 border-t border-[var(--line)]">
+              <div className="pt-8 mt-8 border-t border-[var(--line)] space-y-2.5">
                 <Link
                   href={tier.ctaHref}
                   className={`w-full button ${
@@ -275,6 +284,16 @@ export default function PricingSprintsPage() {
                 >
                   {tier.ctaText}
                 </Link>
+                {tier.instantBuyHref && (
+                  <a
+                    href={tier.instantBuyHref}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="block text-center text-xs font-mono font-semibold text-[var(--forest)] hover:text-[var(--ink)] underline underline-offset-4 pt-1"
+                  >
+                    {tier.instantBuyText}
+                  </a>
+                )}
               </div>
             </div>
           ))}
@@ -357,6 +376,7 @@ export default function PricingSprintsPage() {
             description: "Run a 60-second diagnostic to isolate hidden cloud spend leaks, unmonitored retry loops, and negative-carry features before scoping your sprint."
           }}
         />
+        <ScorecardCheckoutDrawer source="pricing-sprints" />
       </div>
 
       {/* Closing CTA */}
