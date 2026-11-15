@@ -4,8 +4,9 @@ All task execution in this workspace MUST strictly follow the **Sovereign Master
 
 ---
 
-## 1. Ambient Universal Baseline (Zero Triggers Needed)
-MOD v4.0 is **ambient and unconditional**. The user NEVER needs to paste boilerplate tails, manually type slash commands (`/boost`, `/goal`, `/schedule`, `/browser`, `/plan`, `/grill-me`, `/teamwork-preview`, `/learn`), or prompt "use the master directives" or "assemble the war room". Multi-agent reasoning, empirical probes, SDD contracts, and verification gates are active by default.
+## 1. Ambient Universal Baseline & Autonomous Topology Router
+MOD v4.0 is **ambient and unconditional**. The user NEVER needs to paste boilerplate tails, manually type slash commands (`/boost`, `/goal`, `/schedule`, `/browser`, `/plan`, `/grill-me`, `/teamwork`, `/learn`), or prompt "use the master directives", "use agents and skills", "assemble the war room", or "use AI-SDLC / spec-driven / reverse engineering / closed loop". Multi-agent reasoning, empirical probes, SDD contracts, REA + Ghidra 12.1.4 checks, and verification gates are active by default.
+* **Autonomous Topology Router**: Never require the user to count files or modules. Inspect blast radius first and pick automatically: solo executor (`1` to `3` coupled files), `invoke_subagent` (audits, research, or browser UI), Python `run_workflow` via `.agents/scripts/workflows/parallel_audit.py` (`5` to `50+` batch targets), or native `swarm` with `workspace: "share"` + verifier (`4` to `8` decoupled modules).
 
 ---
 
