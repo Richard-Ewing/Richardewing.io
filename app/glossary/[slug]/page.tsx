@@ -24,8 +24,8 @@ type Props = { params: Promise<{ slug: string }> };
 
 const GLOSSARY_SEO_OVERRIDES: Record<string, { title: string; description: string; h1Override?: string }> = {
     'calculating-roai': {
-        title: 'ROAI Meaning, Formula & AI ROI Guide',
-        description: 'What is ROAI? Return on AI Investment equals verified wage and revenue gains minus model API, cloud, and QA costs. Run the CFO formula and calculator.',
+        title: 'What Is ROAI? AI ROI Formula & Calculator',
+        description: 'ROAI (Return on AI Investment) divides net payroll and revenue gains by LLM API, cloud, and cleanup costs. Run the live CFO calculator and 2026 benchmarks.',
     },
     'ic-vs-management-track': {
         title: 'IC vs Management Track: Pay & Levels',
@@ -33,8 +33,8 @@ const GLOSSARY_SEO_OVERRIDES: Record<string, { title: string; description: strin
         h1Override: 'IC Track vs. Engineering Management Track: Pay & Levels',
     },
     'engineering-levels': {
-        title: 'Software Engineer Levels (L1-L8 Ranks)',
-        description: 'Compare software engineer levels 1 to 4 and L3 to L8 Staff/Principal ranks: scope, compensation bands, promotion gates, and architecture ownership.',
+        title: 'Software Engineer Levels: L3-L8 Pay Guide',
+        description: 'Compare L3 to L8 Staff and Principal engineer levels, Level 1 to 4 titles, 2026 pay bands, promotion gates, and architecture scope across tech companies.',
         h1Override: 'Software Engineering Levels & Ranks (Level 1-4 and L3-L8)',
     },
     'ai-unit-economics': {
@@ -123,62 +123,102 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-// Auto-generate checklist based on category for terms without explicit checklist
-function autoChecklist(category: string, title: string): string[] {
-    const checklists: Record<string, string[]> = {
-        'Technical Debt & Code Quality': [
-            `Identify current ${title} instances in your codebase`,
-            `Quantify the monetary impact using PDI framework`,
-            `Create a prioritized remediation backlog`,
-            `Set measurable reduction targets per quarter`,
-            `Report results to leadership using financial language`,
-        ],
-        'AI & Machine Learning': [
-            `Calculate per-request ${title} cost at current volume`,
-            `Project costs at 10x and 100x scale`,
-            `Identify optimization opportunities (caching, batching, model selection)`,
-            `Add monitoring for ${title}-related metrics`,
-            `Establish cost alerting thresholds`,
-        ],
-        'Cloud & Infrastructure': [
-            `Audit current ${title} configuration and usage`,
-            `Document any technical debt in ${title} implementation`,
-            `Benchmark against industry best practices`,
-            `Create runbook for ${title}-related incidents`,
-            `Schedule quarterly review of ${title} setup`,
-        ],
-        'Security & Compliance': [
-            `Assess current ${title} posture against industry standards`,
-            `Identify gaps in ${title} coverage`,
-            `Create remediation plan with timelines`,
-            `Implement monitoring and alerting for ${title}`,
-            `Schedule annual ${title} audit`,
-        ],
-        'Product Management': [
-            `Define success metrics for ${title}`,
-            `Map ${title} impact to business outcomes`,
-            `Create framework for evaluating ${title} decisions`,
-            `Build team alignment around ${title} priorities`,
-            `Track and report ${title} metrics monthly`,
-        ],
-    };
-    return checklists[category] || [
-        `Assess your organization's current ${title} maturity`,
-        `Identify quick wins for ${title} improvement`,
-        `Create a 90-day ${title} action plan`,
-        `Assign ownership for ${title} initiatives`,
-        `Measure and report progress quarterly`,
-    ];
+function slugHash(slug: string): number {
+    let h = 0;
+    for (let i = 0; i < slug.length; i++) {
+        h = (h * 31 + slug.charCodeAt(i)) >>> 0;
+    }
+    return h;
 }
 
-// Auto-generate how-to-apply based on category
-function autoHowToApply(category: string, title: string): string {
-    const guides: Record<string, string> = {
-        'Technical Debt & Code Quality': `**Step 1: Audit**  -  Identify where ${title} exists in your systems using static analysis tools and code reviews.\n\n**Step 2: Quantify**  -  Use the Product Debt Index framework to attach dollar values to each instance of ${title}.\n\n**Step 3: Prioritize**  -  Rank remediation items by economic impact, not just technical severity.\n\n**Step 4: Execute**  -  Allocate 15-20% of sprint capacity to addressing ${title} issues.\n\n**Step 5: Measure**  -  Track improvement over time using the same metrics established in Step 2.`,
-        'AI & Machine Learning': `**Step 1: Understand**  -  Map how ${title} fits into your AI product architecture and cost structure.\n\n**Step 2: Measure**  -  Use the AUEB calculator to quantify ${title}-related costs per user, per request, and per feature.\n\n**Step 3: Optimize**  -  Apply common optimization patterns (caching, batching, model downsizing) to reduce ${title} costs.\n\n**Step 4: Monitor**  -  Set up dashboards tracking ${title} costs in real-time. Alert on anomalies.\n\n**Step 5: Scale**  -  Ensure your ${title} approach remains economically viable at 10x and 100x current volume.`,
-        'SaaS & Metrics': `**Step 1: Define**  -  Establish clear ${title} measurement methodology across your organization.\n\n**Step 2: Benchmark**  -  Compare your ${title} against industry standards and top-quartile performers.\n\n**Step 3: Analyze**  -  Identify the levers that most impact ${title} in your specific business.\n\n**Step 4: Improve**  -  Create initiatives targeting the highest-impact levers for ${title} improvement.\n\n**Step 5: Report**  -  Build ${title} into your monthly/quarterly reporting cadence for leadership and investors.`,
+// Auto-generate checklist based on category and slug for terms without explicit checklist
+function autoChecklist(category: string, title: string, slug = ''): string[] {
+    const checklists: Record<string, string[]> = {
+        'Technical Debt & Code Quality': [
+            `Pull the last 30 days of pull-request reverts tied to ${title} modules`,
+            `Convert developer waiting hours on ${title} into hard quarterly payroll dollars via PDI`,
+            `Freeze new feature tickets in files where ${title} drives repeat bug escapes`,
+            `Reserve 15% to 20% of sprint capacity strictly for isolating or deleting ${title}`,
+            `Present cost-to-serve deltas to your CFO and VP of Engineering in dollars rather than story points`,
+        ],
+        'AI & Machine Learning': [
+            `Measure p50 and p90 per-request API cost for ${title} across live production traffic`,
+            `Model your invoice exposure at 10x and 100x user load before signing enterprise contracts`,
+            `Split simple formatting or routing off frontier models onto fast cached paths for ${title}`,
+            `Alert your Engineering Manager whenever ${title} input tokens exceed 4x output tokens`,
+            `Put a hard daily spend cap in front of uncached ${title} agent loops`,
+        ],
+        'Cloud & Infrastructure': [
+            `Compare committed database and compute capacity for ${title} against peak 7-day utilization`,
+            `Tag every ${title} workload by owning product line so no spend lands in an unowned bucket`,
+            `Move predictable baseline load onto reservations before approving scale-up tickets`,
+            `Write a 1-page rollback runbook covering who kills runaway ${title} queues at 2am`,
+            `Have a Director of Finance review unused capacity charges alongside DevOps once a quarter`,
+        ],
+        'Security & Compliance': [
+            `Check which endpoints touching ${title} actually verify callers fail-closed on empty auth`,
+            `Strip sensitive tokens and customer payloads out of logs before any vendor processes ${title}`,
+            `Set deterministic CI build checks blocking merges that bypass ${title} boundaries`,
+            `Run a 15-minute live permission probe against staging every time ${title} routing changes`,
+            `Keep audit logs immutable outside the prompt context so compliance reviews finish cleanly`,
+        ],
+        'Product Management': [
+            `Tie ${title} to one verifiable cash line item: expansion ARR, churn reduction, or cost to serve`,
+            `Strip bottom-decile maintenance work costing more than customer revenue around ${title}`,
+            `Write acceptance boundaries for ${title} in a short spec before assigning build capacity`,
+            `Align Engineering Manager, Product Ops Lead, and Finance on one kill threshold for ${title}`,
+            `Audit live adoption after 30 days instead of counting shipped tickets`,
+        ],
     };
-    return guides[category] || `**Step 1: Assess**  -  Evaluate your organization's current relationship with ${title}. Where is it strong? Where are the gaps?\n\n**Step 2: Define Goals**  -  Set specific, measurable targets for ${title} improvement aligned with business outcomes.\n\n**Step 3: Build Plan**  -  Create a phased implementation plan with clear milestones and ownership.\n\n**Step 4: Execute**  -  Implement changes incrementally. Start with high-impact, low-risk improvements.\n\n**Step 5: Iterate**  -  Measure results, learn from outcomes, and continuously refine your approach to ${title}.`;
+    if (checklists[category]) return checklists[category];
+    const fallbacks: string[][] = [
+        [
+            `Pull 60 days of billing and incident logs touching ${title} before calling another planning meeting`,
+            `Ask your Director of Finance what dollar line item shifts if ${title} fails this quarter`,
+            `Name one single Engineering Manager or VP of Operations who owns the kill threshold for ${title}`,
+            `Cut duplicate wrappers or manual status sheets sitting around ${title} by half this Friday`,
+            `Recheck unit margins 30 days after deployment so vanity activity cannot hide operating loss`,
+        ],
+        [
+            `Check whether ${title} replaces real contractor spend or simply shifts work onto another spreadsheet`,
+            `Instrument per-user latency and marginal token or compute cost around ${title} on day one`,
+            `Cap blast radius on automated actions tied to ${title} with deterministic pre-execution gates`,
+            `Have your CFO sign off on the break-even payback window before hiring more staff around ${title}`,
+            `Delete legacy steps that ${title} made obsolete instead of stacking two parallel workflows`,
+        ],
+        [
+            `Read three raw customer support or team escalations involving ${title} rather than relying on summary slides`,
+            `Price the engineering maintenance hours burned keeping ${title} running over the last quarter`,
+            `Test a single constrained workflow slice for ${title} with measurable baseline numbers first`,
+            `Set one automatic alert telling the Product Ops Lead when ${title} slips past target latency or spend`,
+            `Verify in production billing logs that promised savings actually landed on the ledger`,
+        ],
+        [
+            `Audit every recurring vendor bill connected to ${title} and cancel unused seats immediately`,
+            `Write down the exact condition that proves ${title} is costing more than it earns`,
+            `Assign clear directory and database ownership before adding parallel automation around ${title}`,
+            `Run a weekly 15-minute check comparing planned payback on ${title} against real cash collected`,
+            `Document the plain-English failure mode so on-call engineers never guess during an outage`,
+        ],
+    ];
+    return fallbacks[slugHash(slug || title) % fallbacks.length];
+}
+
+// Auto-generate first-person operator how-to steps based on category and slug
+function autoHowToApply(category: string, title: string, slug = ''): string {
+    const guides: Record<string, string> = {
+        'Technical Debt & Code Quality': `**Step 1: Pull the Outage & Rework Receipt** - When I audit ${title} with a VP of Engineering, I skip static scorecards and open the last 90 days of bug escapes and reverted PRs.\n\n**Step 2: Price the Payroll Drag** - Convert engineering hours burned fighting ${title} into loaded payroll dollars via the Product Debt Index so the CFO can see the cash drag.\n\n**Step 3: Freeze High-Friction Modules** - I advise teams to stop shipping low-margin features into brittle ${title} directories until defect rates stabilize.\n\n**Step 4: Fund Bounded Cleanup** - Carve out 15% to 20% of active sprint capacity strictly for refactoring or retiring the highest-cost ${title} modules.\n\n**Step 5: Verify Margin Recovery** - Check two sprints later that change-failure rates and support escalations actually fell instead of merely renaming tickets.`,
+        'AI & Machine Learning': `**Step 1: Inspect Real Payload Logs** - First thing I check on any ${title} rollout is raw prompt sizes, tool schema bloat, and retry loops in staging traces.\n\n**Step 2: Build the Per-Request P&L** - Run p50 and p90 inference spend for ${title} through the AUEB calculator against actual subscription revenue.\n\n**Step 3: Strip Expensive Frontier Calls** - I route classification and formatting in ${title} onto lightweight models with prompt caching before scaling traffic.\n\n**Step 4: Wire Hard Spend Breakers** - Add per-tenant quota gates and max-turn limits outside the model prompt so runaway loops cannot drain monthly cash.\n\n**Step 5: Stress-Test 10x Power Users** - Confirm the heaviest 5% of accounts remain profitable on ${title} before letting sales launch unlimited tiers.`,
+        'SaaS & Metrics': `**Step 1: Audit Raw Cohort Exports** - Before trusting a slide on ${title}, I pull unsmoothed Stripe billing and churn exports directly from source tables.\n\n**Step 2: Isolate Fake Activity** - Split net cash retention and expansion revenue around ${title} from free trials or vanity click metrics.\n\n**Step 3: Find the Costiest Bottleneck** - Show the Director of Finance and Product Ops Lead which single segment leaks gross margin around ${title}.\n\n**Step 4: Kill Unprofitable Surface Area** - I tell leaders to delete or reprice tiers that consistently lose money on ${title} rather than subsidizing heavy users.\n\n**Step 5: Review Cash Weekly** - Track contribution margin weekly with Finance so ${title} never drifts into silent operating drag.`,
+    };
+    if (guides[category]) return guides[category];
+    const fallbackGuides: string[] = [
+        `**Step 1: Start With Raw Spend Logs** - When an executive asks me about ${title}, I never start with a workshop deck; I pull 60 days of vendor bills and escalation tickets.\n\n**Step 2: Tie to One P&L Line** - Ask your CFO or Director of Finance which exact cost or revenue line moves if ${title} works.\n\n**Step 3: Isolate One Owner** - I always assign one Engineering Manager or VP of Operations to hold the production kill switch for ${title}.\n\n**Step 4: Ship One Narrow Boundary** - Launch ${title} against a single team workflow with deterministic logging instead of an open company-wide pilot.\n\n**Step 5: Cut What Fails to Pay Back** - After 30 days, inspect live ledger impact and prune any wrapper tool around ${title} without hard ROI.`,
+        `**Step 1: Read Customer Friction First** - What I check first around ${title} is ten unedited support threads, not internal engineering status notes.\n\n**Step 2: Price Current Rework** - Total up contractor fees, support handle time, and wasted seats tied to ${title} this quarter.\n\n**Step 3: Pick a Small Test Slice** - I recommend testing ${title} on one noisy bottleneck where baseline defect rates are already recorded.\n\n**Step 4: Enforce Fail-Closed Checks** - Keep validation rules in deterministic code outside prompts so ${title} behaves reliably when volume spikes.\n\n**Step 5: Audit Net Margin Shift** - Re-open the spreadsheet at day 30 with your Product Ops Lead and double down only where margin expanded.`,
+        `**Step 1: Cut Duplicate Plumbing** - Before buying software for ${title}, I inventory every half-used tool already billing the corporate card.\n\n**Step 2: Define the Kill Metric** - Agree with the CEO and CFO on one unmistakable dollar threshold that cancels ${title} if missed.\n\n**Step 3: Wire Direct Ownership** - Give a Platform Engineer explicit file and permission scopes for ${title} instead of shared committees.\n\n**Step 4: Validate Under Real Load** - Replay representative edge cases against ${title} and cap automatic retries to avoid runaway bills.\n\n**Step 5: Lock Gains Into Process** - Once ${title} holds positive unit economics for two sprints, automate weekly reporting directly from billing data.`,
+        `**Step 1: Strip Out Busywork** - When I evaluate ${title}, I ask which manual status chore we can delete completely before automating anything.\n\n**Step 2: Verify Unit Cost** - Calculate marginal support, compute, and oversight minutes required every time ${title} runs once in production.\n\n**Step 3: Put Guardrails In Code** - I never leave safety limits for ${title} in a policy doc; put timeouts and permission checks in middleware.\n\n**Step 4: Run a Live Financial Check** - Pair your Engineering Manager with a Finance Lead to trace cash retained from ${title} at day 14 and day 45.\n\n**Step 5: Sunset Legacy Steps** - Turn off the old process as soon as ${title} clears target reliability so the team stops maintaining two paths.`,
+    ];
+    return fallbackGuides[slugHash(slug || title) % fallbackGuides.length];
 }
 
 export default async function GlossaryTermPage({ params }: Props) {
@@ -262,8 +302,8 @@ export default async function GlossaryTermPage({ params }: Props) {
     const tldr = `${firstSentence}.`;
 
     // Get checklist and how-to-apply (explicit or auto-generated)
-    const checklist = term.checklist || autoChecklist(term.category, term.title);
-    const howToApply = term.howToApply || autoHowToApply(term.category, term.title);
+    const checklist = term.checklist || autoChecklist(term.category, term.title, slug);
+    const howToApply = term.howToApply || autoHowToApply(term.category, term.title, slug);
     const whereIsItUsed = term.whereIsItUsed || autoWhereIsItUsed(term.category, term.title);
     const whoUsesIt = term.whoUsesIt || autoWhoUsesIt(term.category, term.title);
     const keyMetrics = term.keyMetrics && term.keyMetrics.length > 0 ? term.keyMetrics : autoKeyMetrics(term.category, term.title);

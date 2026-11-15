@@ -79,6 +79,25 @@ export default function WhyCFOsShuttingDownPilotsPage() {
                     </p>
                 </div>
 
+                {/* First-Person CFO Margin Check */}
+                <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-8 mb-8 shadow-sm">
+                    <h2 className="text-2xl font-grotesk font-bold text-[#1A1A1A] mb-4">
+                        Why I Tell Engineering Leaders to Burn the &quot;Hours Saved&quot; Survey
+                    </h2>
+                    <p className="text-sm text-[#4A4A4A] leading-relaxed mb-4">
+                        When a VP of Product walks into a budget review claiming staff saved 4 hours a week, every experienced CFO stops listening. If headcount stayed flat, contractor invoices stayed flat, and monthly cloud spend jumped $18,000, the ledger sees pure overhead with zero cash payback.
+                    </p>
+                    <p className="text-sm text-[#4A4A4A] leading-relaxed mb-4">
+                        Before any quarterly board meeting I advise on, I require one honest 3-line contribution check: <strong>Verified Hard Cost Replaced + New Paid Revenue - (Monthly Token Bill + Maintenance Engineering Hours)</strong>. If that total runs negative for two consecutive quarters, freeze new vendor licenses and fix routing waste before requesting another dollar.
+                    </p>
+                    <div className="p-4 bg-[#F5F0EB] rounded-xl border border-[rgba(0,0,0,0.08)]">
+                        <p className="text-xs font-bold text-[#1A1A1A] uppercase tracking-wider mb-1">Which Pilots Actually Pass Finance Review</p>
+                        <p className="text-sm text-[#4A4A4A]">
+                            I tell a CIO to double down only on narrow workflows backed by an existing cost ledger: tier-1 support ticket deflection with measured seat savings, or deterministic contract review where external legal fees drop on month-end statements.
+                        </p>
+                    </div>
+                </div>
+
                 <AdvisoryCTA variant="compare" />
             </div>
         </main>

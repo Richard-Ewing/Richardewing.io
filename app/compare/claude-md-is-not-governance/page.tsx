@@ -68,6 +68,22 @@ export default function ClaudeMdIsNotGovernancePage() {
                 </div>
 
                 <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-8 mb-8 shadow-sm">
+                    <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-4">Why I Stopped Trusting Prompt Rules on Client Repos</h2>
+                    <p className="text-sm text-[#4A4A4A] leading-relaxed mb-4">
+                        Every engineering shop starts with the same clean markdown file instructing coding agents never to touch production webhooks, billing pricing maps, or frozen landing pages. Around turn 12 of fighting a TypeScript error, context attention drifts toward the latest failing log, and the agent calmly rewrites the exact file your markdown forbade.
+                    </p>
+                    <p className="text-sm text-[#4A4A4A] leading-relaxed mb-4">
+                        How I draw the boundary across my own repositories: keep <code className="px-1.5 py-0.5 bg-zinc-100 rounded text-xs">CLAUDE.md</code> limited to naming style and preferred libraries, then enforce every off-limits path in a deterministic pre-execution script that checks <code className="px-1.5 py-0.5 bg-zinc-100 rounded text-xs">git diff</code> and fails the run with exit code 1.
+                    </p>
+                    <div className="p-4 bg-[#F5F0EB] rounded-xl border border-[rgba(0,0,0,0.08)]">
+                        <p className="text-xs font-bold text-[#1A1A1A] uppercase tracking-wider mb-1">Where Markdown Rules Are Still Enough</p>
+                        <p className="text-sm text-[#4A4A4A]">
+                            If you are a single engineer scaffolding an internal prototype where resetting git costs nothing, a 40-line prompt guide works fine. The day an autonomous workflow handles live customer records or edge worker routing, a Platform Engineer needs enforcement that lives outside the model prompt.
+                        </p>
+                    </div>
+                </div>
+
+                <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-8 mb-8 shadow-sm">
                     <h2 className="text-xl font-grotesk font-bold text-[#1A1A1A] mb-4">Why Text Instructions Get Bypassed</h2>
                     <div className="space-y-4">
                         {[

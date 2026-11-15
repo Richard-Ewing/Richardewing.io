@@ -211,6 +211,25 @@ export default function AgentComparisonPage() {
                     </p>
                 </div>
 
+                {/* First-Person Evaluation Filter */}
+                <div className="mb-12 p-8 bg-[var(--card,#ffffff)] rounded-2xl border border-[var(--line,#e2ded4)] shadow-sm">
+                    <h2 className="text-2xl font-serif font-bold text-[var(--forest2,#162e26)] mb-4">
+                        How I Actually Test &amp; Pair Coding Agents After Week One
+                    </h2>
+                    <p className="text-sm text-zinc-800 leading-relaxed mb-4">
+                        First-week demos lie because almost any tool looks sharp building a greenfield component. After week one on real client repositories, I look at three numbers only: how often <code className="px-1.5 py-0.5 bg-zinc-100 rounded text-xs">git checkout</code> rescues a broken patch, whether diff review takes longer than typing the fix myself, and how fast context quality drops past message 15 in one thread.
+                    </p>
+                    <p className="text-sm text-zinc-800 leading-relaxed mb-4">
+                        Here is how I split tools daily: for small 1-file UI styling inside an open editor, a flat $20 IDE seat stays fast and predictable. When a change touches database migrations, edge middleware, and build verification, I switch to a terminal agent running on a clean branch where automated checks reject bad edits before a human opens the pull request.
+                    </p>
+                    <div className="p-4 bg-zinc-50 rounded-xl border border-zinc-200">
+                        <p className="text-xs font-bold text-zinc-900 uppercase tracking-wider mb-1">When to Keep Your Budget</p>
+                        <p className="text-sm text-zinc-700 leading-relaxed">
+                            If finance rejects per-seat subscriptions or security blocks closed SaaS proxies, install free open-source extensions like <strong>Cline</strong> or <strong>Roo Code</strong> wired to your own metered API key with a hard daily spend ceiling. An Engineering Manager should audit 14 days of reverted PRs before doubling seats; if more than 15% of agent patches get rolled back, fix merge gates first.
+                        </p>
+                    </div>
+                </div>
+
                 {/* Pricing Comparison */}
                 <div className="mb-12">
                     <h2 className="text-2xl font-serif font-bold text-[var(--forest2,#162e26)] mb-6">Enterprise Pricing Comparison (2026)</h2>

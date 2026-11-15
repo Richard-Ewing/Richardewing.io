@@ -151,6 +151,25 @@ export default function CursorProblemsPage() {
                     </div>
                 </div>
 
+                {/* First-Person Field Note */}
+                <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-8 mb-8 shadow-sm">
+                    <h2 className="text-2xl font-grotesk font-bold text-[#1A1A1A] mb-4">
+                        What Happened When My Own Builds Crossed 5 Files
+                    </h2>
+                    <p className="text-sm text-[#4A4A4A] leading-relaxed mb-4">
+                        When you hand Cursor Composer a 1-file button fix, it feels almost magical. Once a task spans auth middleware, API routes, and page state at the same time, Composer regularly reaches into adjacent files you never asked it to touch just to quiet down a type error.
+                    </p>
+                    <p className="text-sm text-[#4A4A4A] leading-relaxed mb-4">
+                        My own workflow rule is simple: I still keep a $20 Cursor Pro seat for fast solo UI styling and scoped single-component edits where I read every line in the diff pane. Whenever a feature crosses 5 files or touches production billing, auth, or edge worker config, I move the work into an isolated git branch and require a passing build gate after every change before accepting the diff.
+                    </p>
+                    <div className="p-4 bg-[#F5F0EB] rounded-xl border border-[rgba(0,0,0,0.08)]">
+                        <p className="text-xs font-bold text-[#1A1A1A] uppercase tracking-wider mb-1">Honest Peer Advice</p>
+                        <p className="text-sm text-[#4A4A4A]">
+                            If you work solo on bounded UI components and commit frequently, Cursor Pro at $20 saves real typing time. If a VP of Engineering hands unguarded Composer access to a 20-person team on a shared monorepo, rework and silent regressions usually eat every hour saved.
+                        </p>
+                    </div>
+                </div>
+
                 {/* Pricing Context */}
                 <div className="bg-white rounded-2xl border border-[rgba(0,0,0,0.08)] p-6 mb-8 shadow-sm">
                     <div className="flex items-center gap-3 mb-3">

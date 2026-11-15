@@ -323,10 +323,10 @@ export function autoCommonMistakes(category: string, title: string): { mistake: 
         ],
     };
     return mistakes[category] || [
-        { mistake: `Implementing ${title} without executive sponsorship`, consequence: 'Initiatives stall when competing with feature work for resources.', fix: 'Secure VP+ sponsor who can protect budget and prioritize the initiative.' },
-        { mistake: `Treating ${title} as a one-time project instead of ongoing practice`, consequence: 'Initial improvements erode within 2-3 quarters without sustained effort.', fix: 'Embed into regular rituals: quarterly reviews, team OKRs, and reporting cadence.' },
-        { mistake: `Not measuring ${title} baseline before starting`, consequence: 'Cannot demonstrate improvement. ROI narrative impossible to build.', fix: 'Spend the first 2 weeks establishing baseline measurements before any changes.' },
-        { mistake: `Copying another company's ${title} approach without adaptation`, consequence: 'Context mismatch leads to poor results and wasted effort.', fix: 'Use frameworks as starting points. Adapt to your team size, stage, and culture.' },
+        { mistake: `Shipping ${title} without naming one budget owner`, consequence: 'When usage spikes or quality drops, nobody holds authority to pause spend and CFO trust vanishes.', fix: 'Assign one Engineering Manager or Director of Finance to review a weekly kill threshold.' },
+        { mistake: `Treating ${title} as a one-time rollout instead of an operating ledger`, consequence: 'Silent API price changes and feature creep quietly erase early savings within two quarters.', fix: 'Put marginal cost-to-serve for the workflow inside monthly board financial reviews.' },
+        { mistake: `Rolling out ${title} without recording baseline support and rework cost`, consequence: 'You cannot defend budget renewal later because nobody measured hard cash before launch.', fix: 'Log 30 days of ticket volume, cloud spend, and defect hours before flipping traffic on.' },
+        { mistake: `Copying a big-tech playbook for ${title} onto a 25-person team`, consequence: 'Coordination overhead doubles while customer-facing velocity stalls behind committee gates.', fix: 'Cut 60% of optional ceremony and enforce only automated test, auth, and spend checks.' },
     ];
 }
 
@@ -356,11 +356,11 @@ export function autoBestPractices(category: string, title: string): { practice: 
         ],
     };
     return practices[category] || [
-        { practice: `Start with a 90-day pilot of ${title} in one team before rolling out`, impact: 'Validates approach, builds evidence, and creates internal champions.' },
-        { practice: `Measure and report ${title} impact in financial terms to leadership`, impact: 'Ensures continued investment and executive support for the initiative.' },
-        { practice: `Create a ${title} playbook documenting processes, tools, and decision frameworks`, impact: 'Enables consistency across teams and reduces onboarding time for new team members.' },
-        { practice: `Schedule quarterly ${title} reviews with cross-functional stakeholders`, impact: 'Maintains momentum, surfaces issues early, and keeps the initiative visible.' },
-        { practice: `Invest in training and certification for ${title} across the organization`, impact: 'Builds internal capability and reduces dependency on external consultants.' },
+        { practice: `Run a bounded 14-day pilot of ${title} with one team and hard billing logs`, impact: 'Proves real dollar unit economics before committing annual budget.' },
+        { practice: `Report ${title} impact strictly in net margin and support hours eliminated`, impact: 'Gives your CFO and COO verifiable numbers they will defend in board meetings.' },
+        { practice: `Keep ${title} runbooks to one concrete page with exact rollback commands`, impact: 'On-call engineers resolve production hiccups in minutes instead of hunting wikis.' },
+        { practice: `Audit ${title} alongside Finance every 30 days for unowned spend`, impact: 'Catches runaway loops and idle seats before quarterly margins slip.' },
+        { practice: `Retire old manual steps once ${title} passes two sprints of clean output`, impact: 'Eliminates double maintenance burden across Engineering and Product Operations.' },
     ];
 }
 

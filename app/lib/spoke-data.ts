@@ -33,10 +33,12 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionHeadline: 'We\'re hitting the limits of "one agent + tools." The next problem is coordination?',
                     seoTitle: 'Multi-Agent Orchestration & Coordination',
                     answerHtml: `
-                        <p>When engineers first build AI agents, they typically rely on a single LLM running a ReAct (Reasoning and Acting) loop with access to multiple tools. This "God Agent" architecture collapses in production. As you add more tools, the context window bloats, reasoning degrades, and the single agent inevitably suffers from tool-selection paralysis or infinite loops.</p>
+                        <p><strong>A single prompt agent with tools breaks past five external connectors because oversized schemas bloat the context window, trigger retry loops, and spike token bills. Multi-agent orchestration fixes this by routing narrow tasks from a cheap supervisor model to single-purpose workers.</strong></p>
+
+                        <p>When I audit a stuck agent build with a Platform Engineer, it almost always starts the same way: one model wired to 14 tools inside an open loop. By turn four, that agent forgets schema rules, retries failed lookups endlessly, and runs up 4x the expected API invoice before timing out.</p>
                         
-                        <h3 class="text-xl font-bold mt-8 mb-4">The Shift to Multi-Agent Orchestration</h3>
-                        <p>To scale agentic automation, Platform Engineers must transition from monolithic agents to <strong>Multi-Agent Orchestration</strong>. Instead of one massive model doing everything, you deploy a swarm of specialized, heavily constrained micro-agents coordinated by a deterministic router.</p>
+                        <h3 class="text-xl font-bold mt-8 mb-4">When I Split Into Multiple Agents (and When I Do Not)</h3>
+                        <p>Before you install orchestration frameworks like LangGraph, apply one honest rule I use myself: if 3 server-side functions answer the user with deterministic SQL queries, skip agents completely and return plain JSON. Only add a <strong>Multi-Agent Supervisor</strong> when unstructured inputs genuinely split across distinct workflows.</p>
                         
                         <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
                             <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
@@ -336,10 +338,12 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionHeadline: 'Why does replacing entire dev teams with autonomous AI agents fail?',
                     seoTitle: 'Why Replacing Dev Teams With AI Fails',
                     answerHtml: `
-                        <p>The "CTO Agent Delusion" is a dangerous new executive belief that probabilistic AI agents (like Devin or AutoDev) can completely replace deterministic QA and engineering teams. This is driven by hype, fundamentally misunderstanding the difference between generating code and architecting reliable systems.</p>
+                        <p><strong>Replacing engineering teams with autonomous coding agents fails because probabilistic text generators lack system memory across billing, security boundaries, and legacy edge cases. Surviving teams promote senior engineers into strict spec authors and code auditors instead of cutting headcount.</strong></p>
+
+                        <p>Every time a CEO asks me why an autonomous dev pilot stalled, I check their pull-request revert log first. Without a human owning architectural boundaries, unreviewed agent patches silently rewrite authentication helpers or config files just to make one local test turn green.</p>
                         
-                        <h3 class="text-xl font-bold mt-8 mb-4">The Fragility of Probabilistic Code</h3>
-                        <p>AI agents are highly proficient at generating raw text (code) that passes localized tests. However, they lack "Codebase Intimacy" - the deep, contextual understanding of your system's edge cases, deployment pipelines, and business logic constraints. When you replace engineers with agents, you are replacing deterministic problem solvers with a probabilistic text generator.</p>
+                        <h3 class="text-xl font-bold mt-8 mb-4">What I Actually See in Real Engineering Teams</h3>
+                        <p>Coders fail silently when they chase isolated test greens without "Codebase Intimacy," the deeper map of deployment pipelines, payment webhooks, and compliance constraints. Once senior developers leave the room, nobody left understands the execution path when a Sev-1 outage hits at 2am.</p>
                         
                         <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
                             <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
@@ -682,10 +686,12 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionHeadline: 'How do you calculate if an AI feature is actually profitable (or just burning cash)?',
                     seoTitle: 'How to Calculate AI Feature Margins',
                     answerHtml: `
-                        <p>Most SaaS founders are currently trapped in the "AI Feature Factory." They integrate LLMs to chase investor hype and parity, completely ignoring that probabilistic features fundamentally break traditional SaaS gross margins. If you don't calculate the <strong>AI Volatility Tax</strong>, you are paying your customers to use your software.</p>
+                        <p><strong>Calculate true AI feature profitability by subtracting monthly p90 inference COGS, vector storage, and engineering maintenance cost from subscription cash collected per user. If a $20 flat-rate seat burns $30 in power-user token calls, scaling usage accelerates operating losses.</strong></p>
+
+                        <p>When a SaaS founder brings me an upside-down gross margin sheet, they usually check average user token spend instead of the top 5% heavy accounts. Those top accounts often run automated loops burning 20x median tokens on an unlimited $20 plan.</p>
                         
-                        <h3 class="text-xl font-bold mt-8 mb-4">The Gross Margin Collapse</h3>
-                        <p>Traditional SaaS features cost pennies to execute. AI features cost dollars. If you charge a user $20/month for a subscription, but they use an AI feature that burns $30/month in OpenAI API tokens, your gross margin is negative. The more successful your product is, the faster you go bankrupt.</p>
+                        <h3 class="text-xl font-bold mt-8 mb-4">How I Price and Gate AI Features</h3>
+                        <p>In classic software, 10,000 SQL reads cost pennies. With frontier models, inference spend scales linearly with activity. Check your per-tenant token bill against subscription price today: if p90 margin dips below 65%, switch unlimited workflows onto capped action allowances with automatic model step-down routing before your next renewal cycle.</p>
                         
                         <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
                             <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
@@ -905,11 +911,12 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionHeadline: 'In the era of Agentic AI, is rule-based automation extinct?',
                     seoTitle: 'Agentic AI vs Rule-Based Automation ROI',
                     answerHtml: `
-                        <p>A common mistake Product Managers make is assuming Agentic AI (LLMs autonomously planning and executing actions) completely replaces deterministic rule-based automation (like Zapier, Make, or standard CI/CD scripts). They do not replace each other; they serve entirely opposite ends of the latency and reliability spectrum.</p>
+                        <p><strong>Rule-based automation is not extinct because deterministic workflows run in milliseconds at near-zero cost with 99.99% reliability. Use AI agents strictly to classify messy unstructured text or PDFs, then pass validated JSON into deterministic webhooks or code for execution.</strong></p>
+
+                        <p>When a Product Operations Lead replaces working Zapier or server cron jobs with an LLM agent, two things happen fast: latency climbs from 80ms to 9 seconds, and monthly API invoices multiply for work a 10-line script already solved for free.</p>
                         
-                        <h3 class="text-xl font-bold mt-8 mb-4">The Deterministic vs. Probabilistic Divide</h3>
-                        <p>Rule-based automation is <strong>deterministic</strong>. If A happens, do B. It executes in milliseconds, costs fractions of a cent, and succeeds 99.999% of the time. However, it completely breaks if the input deviates even slightly from the expected format.</p>
-                        <p>Agentic AI is <strong>probabilistic</strong>. It can handle massive ambiguity, parse messy inputs, and dynamically alter its plan if an API fails. However, it takes seconds to execute, costs significantly more, and carries the inherent risk of hallucination.</p>
+                        <h3 class="text-xl font-bold mt-8 mb-4">My Rule Before Adding Probabilistic Reasoning</h3>
+                        <p><strong>Deterministic automation</strong> succeeds cleanly whenever inputs follow expected schemas. <strong>Agentic AI</strong> earns its higher compute cost only when customers upload ambiguous emails, invoices, or unstructured support transcripts that break rigid regex rules.</p>
                         
                         <div class="my-10 p-8 rounded-2xl bg-white border border-zinc-200 border border-zinc-200 shadow-xl relative overflow-hidden">
                             <h4 class="text-lg font-bold font-grotesk tracking-tight text-zinc-950 font-semibold mb-6 flex items-center gap-2">
@@ -1616,10 +1623,12 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     questionHeadline: 'How do we quantify the true financial liability of AI hallucinations in production?',
                     seoTitle: 'Financial Cost of AI Hallucinations',
                     answerHtml: `
-                        <p>Most organizations treat AI hallucinations as a technical bug. CFOs must treat them as a continuous, compounding financial liability. Every time an LLM hallucinates in a production environment, it triggers a chain reaction of deterministic remediation costs.</p>
+                        <p><strong>Quantify hallucination cost by adding failed token retry spend, downstream schema repair hours, and customer refund write-offs per 1,000 requests. One unvalidated error triggering 5 retries multiplies inference spend by 5x to 10x while inflating support headcount.</strong></p>
+
+                        <p>When I walk a CFO through their AI P&amp;L, I ignore theoretical accuracy benchmarks and pull support refund logs plus failed webhook retries. That is where hidden hallucination debt actually sits on the balance sheet.</p>
                         
                         <h3 class="text-xl font-bold mt-8 mb-4">The Remediation Cost Multiplier</h3>
-                        <p>When an LLM generates invalid code or data, the system must detect the error, run a retry loop, and execute additional compute. We call this the <strong>Remediation Cost Multiplier</strong>. If your base inference cost is $0.01 per query, but a hallucination requires 5 retries, database rollbacks, and secondary validation passes, the true cost of that query just spiked by 500% to 1,000%.</p>
+                        <p>When an LLM returns malformed JSON or invents a billing policy, engineering pays the <strong>Remediation Cost Multiplier</strong>: silent retries, manual human queue triage, and rollbacks. Even a $0.01 prompt jumps to $0.10 of loaded operational cost the second a retry loop and human review ticket fire together.</p>
                         
                         <h3 class="text-xl font-bold mt-8 mb-4">The Solution: Deterministic Boundaries</h3>
                         <p>Stop trying to make probabilistic models perfect. Instead, invest your R&D capital in building strict deterministic boundaries around the models. By calculating the Cost of Doing Nothing (CODN) for hallucination remediation, you can instantly justify the ROI of localized SLMs and Hardened Context XML over open-ended API calls.</p>
@@ -2821,7 +2830,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
     },
     {
         topicSlug: 'ai-pm-career-cfo-board-defense',
-        topicName: 'AI PM Career Leverage, $250K+ Interviews, CFO Board Defense & PE Diligence',
+        topicName: 'AI PM Career Output, $250K+ Interviews, CFO Board Defense & PE Diligence',
         personas: {
             'product-manager': [
                 {
@@ -2884,7 +2893,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                     seoTitle: 'Run a 1-Person Product/Ops Team With AI',
                     answerHtml: `
                         <p><strong>Eliminate the three biggest time sinks on your calendar (manual status updates, repetitive data formatting, and starting documents from a blank page) by wiring three recurring workflows: automated transcript-to-spec drafting, a zombie-work kill matrix that drops the bottom 20% of low-ROI tasks, and pre-built financial/board templates.</strong></p>
-                        <p>Working 70 hours a week with AI just means you are generating 3x more low-value noise for yourself to read and edit. True "One-Person Department" leverage comes from ruthless subtraction first and constrained automation second.</p>
+                        <p>Working 70 hours a week with AI just means you are generating 3x more low-value noise for yourself to read and edit. True "One-Person Department" output comes from ruthless subtraction first and constrained automation second.</p>
                         <h3 class="text-xl font-bold mt-8 mb-4">The 3-Workflow Solo Operator Stack</h3>
                         <ul class="list-disc pl-6 space-y-2 mb-6">
                             <li><strong>1. Kill Zombie Work First:</strong> Run every recurring meeting, report, and legacy feature through a Maintenance Cost vs. Revenue Attribution matrix and cut the bottom 20% immediately.</li>
