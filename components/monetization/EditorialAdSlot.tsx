@@ -36,16 +36,16 @@ export default function EditorialAdSlot({
   const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const insRef = useRef<HTMLModElement | null>(null);
+  const pushedRouteKeyRef = useRef<string | null>(null);
 
   const [consentMode, setConsentMode] = useState<ConsentMode>(null);
   const [isInViewportRange, setIsInViewportRange] = useState(false);
-  const [adPushed, setAdPushed] = useState(false);
   const [adFallbackActive, setAdFallbackActive] = useState(false);
 
   // Reset per-route ad slot lifecycle across sibling client-side Link navigations
   useEffect(() => {
+    pushedRouteKeyRef.current = null;
     setIsInViewportRange(false);
-    setAdPushed(false);
     setAdFallbackActive(false);
   }, [pathname, pillar]);
 
@@ -102,24 +102,35 @@ export default function EditorialAdSlot({
 
   // Inject AdSense SDK once and push manual slot with unfilled/adblock fallback
   useEffect(() => {
-    if (!shouldUseAdSense || !isInViewportRange || adPushed || !clientId) return;
+    if (!shouldUseAdSense || !isInViewportRange || !clientId || !resolvedSlotId) return;
     if (typeof window === 'undefined' || typeof document === 'undefined') return;
 
-    const existingScript = document.getElementById('rw-adsense-sdk');
+    const routeKey = `${pathname}::${pillar}::${resolvedSlotId}`;
+    if (pushedRouteKeyRef.current === routeKey) return;
+
+    const existingScript = document.getElementById('rw-adsense-sdk') as HTMLScriptElement | null;
+    if (existingScript?.dataset.loadFailed === '1') {
+      setAdFallbackActive(true);
+      return;
+    }
+
     if (!existingScript) {
       const script = document.createElement('script');
       script.id = 'rw-adsense-sdk';
       script.async = true;
       script.crossOrigin = 'anonymous';
       script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(clientId)}`;
-      script.onerror = () => setAdFallbackActive(true);
+      script.onerror = () => {
+        script.dataset.loadFailed = '1';
+        setAdFallbackActive(true);
+      };
       document.head.appendChild(script);
     }
 
     try {
       window.adsbygoogle = window.adsbygoogle || [];
       window.adsbygoogle.push({});
-      setAdPushed(true);
+      pushedRouteKeyRef.current = routeKey;
     } catch {
       setAdFallbackActive(true);
       return;
@@ -144,13 +155,13 @@ export default function EditorialAdSlot({
       if (status === 'unfilled' || (!hasRenderedFrame && status !== 'filled')) {
         setAdFallbackActive(true);
       }
-    }, 2500);
+    }, 6500);
 
     return () => {
       if (observer) observer.disconnect();
       window.clearTimeout(timer);
     };
-  }, [shouldUseAdSense, isInViewportRange, adPushed, clientId]);
+  }, [shouldUseAdSense, isInViewportRange, clientId, resolvedSlotId, pathname, pillar]);
 
   if (!allowed) {
     return null;

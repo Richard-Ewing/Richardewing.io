@@ -201,6 +201,7 @@ export async function POST(req: Request) {
                         unlocked_assets: updatedUnlockedAssets,
                     };
 
+                    const payToRevealSku = session.metadata?.payToRevealSku?.trim();
                     const isPayToRevealSku = Boolean(
                         payToRevealSku ||
                         (verifiedSpecificItemId &&

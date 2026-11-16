@@ -103,6 +103,12 @@ export const PILLAR_TELEMETRY: Record<
 
 export const DEFAULT_ADSENSE_PUBLISHER_ID = 'ca-pub-9421469136745918';
 
+export const DEFAULT_ADSENSE_SLOT_IDS: Record<AdPillar, string> = {
+  glossary: '7790857425',
+  blog: '1340340002',
+  concepts: '1340340002',
+};
+
 const PUBLISHER_ID_REGEX = /^(?:ca-)?pub-(\d{10,20})$/;
 
 export function isAdAllowedPathname(rawPathname: string | null | undefined): boolean {
@@ -161,7 +167,7 @@ export function getAdSenseSlotId(pillar: AdPillar, overrideSlotId?: string): str
   };
   const fromEnv = envMap[pillar]?.trim();
   if (fromEnv && /^\d{6,20}$/.test(fromEnv)) return fromEnv;
-  return null;
+  return DEFAULT_ADSENSE_SLOT_IDS[pillar] ?? null;
 }
 
 export function getActiveDirectSponsor(pillar: AdPillar): DirectSponsorCampaign | null {

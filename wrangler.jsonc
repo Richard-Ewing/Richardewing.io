@@ -18,7 +18,10 @@
     "binding": "ASSETS"
   },
   "vars": {
-    "NEXT_PUBLIC_ADSENSE_CLIENT_ID": "ca-pub-9421469136745918"
+    "NEXT_PUBLIC_ADSENSE_CLIENT_ID": "ca-pub-9421469136745918",
+    "NEXT_PUBLIC_ADSENSE_SLOT_GLOSSARY": "7790857425",
+    "NEXT_PUBLIC_ADSENSE_SLOT_BLOG": "1340340002",
+    "NEXT_PUBLIC_ADSENSE_SLOT_CONCEPTS": "1340340002"
   },
   "routes": [
     { "pattern": "richardewing.io/*", "zone_name": "richardewing.io" },
