@@ -442,6 +442,7 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                     __rwHitHeaders.set("CDN-Cache-Control", "no-store");
                     __rwHitHeaders.set("Vary", "Host, RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept-Encoding");
                 }
+                __rwHitHeaders.set("Content-Signal", "ai-train=no, search=yes, ai-input=yes");
                 __rwHitHeaders.set("X-RW-Edge-Cache", "HIT");
                 return new Response(__rwMethod === "HEAD" ? null : __rwCached.body, {
                     status: __rwCached.status,
@@ -486,6 +487,7 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 __rwStoreHeaders.set("X-RW-Orig-CT", __rwOriginRes.headers.get("content-type") || (__rwIsOg ? "image/png" : (__rwIsRsc ? "text/x-component" : "text/html; charset=utf-8")));
                 __rwStoreHeaders.set("Content-Type", "font/woff2");
                 __rwStoreHeaders.set("Cache-Control", __rwIsOg ? "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=2592000" : "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=2592000");
+                __rwStoreHeaders.set("Content-Signal", "ai-train=no, search=yes, ai-input=yes");
                 __rwStoreHeaders.set("Content-Length", String(__rwBodyBuf.byteLength));
                 const __rwStoreRes = new Response(__rwBodyBuf.slice(0), {
                     status: 200,
@@ -510,6 +512,7 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                     __rwMissHeaders.set("CDN-Cache-Control", "no-store");
                     __rwMissHeaders.set("Vary", "Host, RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept-Encoding");
                 }
+                __rwMissHeaders.set("Content-Signal", "ai-train=no, search=yes, ai-input=yes");
                 __rwMissHeaders.set("X-RW-Edge-Cache", "MISS");
                 return new Response(__rwBodyBuf, {
                     status: __rwOriginRes.status,

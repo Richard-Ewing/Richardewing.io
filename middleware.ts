@@ -76,6 +76,7 @@ function applySecurityAndCacheHeaders(res: NextResponse, req: NextRequest): Next
   res.headers.set('X-Content-Type-Options', 'nosniff');
   res.headers.set('Referrer-Policy', 'origin-when-cross-origin');
   res.headers.set('Permissions-Policy', 'camera=(), microphone=(self), geolocation=()');
+  res.headers.set('Content-Signal', 'ai-train=no, search=yes, ai-input=yes');
 
   const isRsc =
     req.nextUrl.searchParams.has('_rsc') ||
