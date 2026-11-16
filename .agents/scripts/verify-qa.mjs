@@ -622,6 +622,14 @@ try {
   errorCount++;
 }
 
+try {
+  const adviceOutput = execSync(`node "${path.join(__dirname, 'verify-first-person-advice.mjs')}"`, { encoding: 'utf8' });
+  console.log(adviceOutput.trim());
+} catch (err) {
+  console.error(`[ANTI-SLOP / CITE-ONLY ERROR] verify-first-person-advice.mjs failed:\n${err.stdout || err.message}`);
+  errorCount++;
+}
+
 console.log('\n--- Verification Summary ---');
 console.log(`Files audited: ${filesToAudit.length}`);
 console.log(`Errors: ${errorCount}`);

@@ -17,6 +17,26 @@ const SLOP_RE =
   /\b(seamless|seamlessly|robust|leverage|leveraging|unlock|unlocking|delve|foster|game-changer|revolutionary|transformative|navigate the landscape|at the end of the day|the bottom line|production-ready|missing layer|missing piece|empower|empowering|let that sink in|read that again|full stop|here is the thing|here's the thing)\b/gi;
 const DASH_RE = /[\u2013\u2014]|\\u201[34]|&mdash;|&ndash;|&#8212;|&#8211;/gi;
 const FIRST_PERSON_RE = /\b(I|I've|I'd|I'm|my)\b/;
+const BRIDGE_STARTER_RE = /(?:^|[.\n]\s+)(?:However|Moreover|Furthermore|That said),/;
+const SYMMETRY_CLICHE_RE = /\b(?:it's not|it is not)\s+[^,.]{2,35},\s*(?:it's|it is)\b/i;
+
+function checkNoBridgeOrSymmetry(label, items, getter) {
+  const hits = [];
+  for (const [key, val] of items) {
+    const text = String(getter(val) || '');
+    if (BRIDGE_STARTER_RE.test(text)) {
+      hits.push(`${key}: AI bridge starter`);
+    }
+    if (SYMMETRY_CLICHE_RE.test(text)) {
+      hits.push(`${key}: symmetry cliche`);
+    }
+  }
+  if (hits.length === 0) {
+    pass(`${label}: 0 AI bridge starters & 0 symmetry cliches across ${items.length} entries`);
+  } else {
+    fail(`${label}: ${hits.length} style violation(s) -> ${hits.slice(0, 5).join('; ')}`);
+  }
+}
 
 let errors = 0;
 let passed = 0;
@@ -199,6 +219,7 @@ async function verifyCareerWin() {
   } else {
     pass(`CW atsData has first-person insiderAdvice + twoMinuteFix across all ${atsEntries.length} systems`);
     checkUniqueOpeners('CW atsData insiderAdvice', atsEntries, (v) => v.insiderAdvice);
+    checkNoBridgeOrSymmetry('CW atsData advice blocks', atsEntries, (v) => `${v.insiderAdvice}\n${v.twoMinuteFix}`);
   }
 
   const atsPage = fs.readFileSync(path.join(CW_ROOT, 'app/ats-screening/[system]/page.js'), 'utf8');
@@ -222,6 +243,7 @@ async function verifyCareerWin() {
   } else {
     pass(`CW competitorData has myInsiderTake + whenCompetitorFits across all ${compEntries.length} competitors`);
     checkUniqueOpeners('CW competitorData myInsiderTake', compEntries, (v) => v.myInsiderTake);
+    checkNoBridgeOrSymmetry('CW competitorData advice blocks', compEntries, (v) => `${v.myInsiderTake}\n${v.whenCompetitorFits}`);
   }
 
   const cwComparePage = fs.readFileSync(path.join(CW_ROOT, 'app/compare/[slug]/page.js'), 'utf8');
@@ -246,11 +268,17 @@ function verifyExogram() {
   const flagshipMatch = exCompareData.match(/export const FLAGSHIP_COMPARISON_SLUGS = \[([\s\S]*?)\] as const;/);
   const flagshipSlugs = flagshipMatch ? [...flagshipMatch[1].matchAll(/"([^"]+)"/g)].map(m => m[1]) : [];
   const noticedMatches = [...exCompareData.matchAll(/whatINoticed:\s*(?:"((?:[^"\\]|\\.)*)"|`((?:[^`\\]|\\.)*)`)/g)];
+  const builderBlocks = [...exCompareData.matchAll(/builderFieldNote:\s*\{([\s\S]*?)\n\s*\}/g)];
   if (flagshipSlugs.length >= 50 && noticedMatches.length >= flagshipSlugs.length) {
     pass(`EX compare data has ${noticedMatches.length} builderFieldNote blocks covering ${flagshipSlugs.length} flagship slugs`);
     checkUniqueOpeners(
       'EX compare whatINoticed',
       noticedMatches.map((m, idx) => [`comp_${idx}`, m[1] || m[2]]),
+      (v) => v
+    );
+    checkNoBridgeOrSymmetry(
+      'EX compare builderFieldNote blocks',
+      builderBlocks.map((m, idx) => [`comp_${idx}`, m[1]]),
       (v) => v
     );
   } else {
@@ -265,12 +293,18 @@ function verifyExogram() {
   const exUseData = fs.readFileSync(path.join(EX_ROOT, 'src/app/use-cases/[slug]/data.ts'), 'utf8');
   const exUsePage = fs.readFileSync(path.join(EX_ROOT, 'src/app/use-cases/[slug]/page.tsx'), 'utf8');
   const brokeMatches = [...exUseData.matchAll(/whatBrokeFirst:\s*(?:"((?:[^"\\]|\\.)*)"|`((?:[^`\\]|\\.)*)`)/g)];
+  const adviceBlocks = [...exUseData.matchAll(/founderAdvice:\s*\{([\s\S]*?)\n\s*\}/g)];
   const diagTypeMatches = [...exUseData.matchAll(/diagramType:\s*['"](sentinel|dual-engine|portable-graph|living-graph)['"]/g)];
   if (brokeMatches.length >= 17 && diagTypeMatches.length >= 17) {
     pass(`EX use-cases data has ${brokeMatches.length} founderAdvice blocks and ${diagTypeMatches.length} diagramType entries`);
     checkUniqueOpeners(
       'EX use-cases whatBrokeFirst',
       brokeMatches.map((m, idx) => [`uc_${idx}`, m[1] || m[2]]),
+      (v) => v
+    );
+    checkNoBridgeOrSymmetry(
+      'EX use-cases founderAdvice blocks',
+      adviceBlocks.map((m, idx) => [`uc_${idx}`, m[1]]),
       (v) => v
     );
   } else {
@@ -297,8 +331,58 @@ function verifyExogram() {
   }
 }
 
+// 6. Cite-YES Train-NO Cross-Domain Parity Gate
+function verifyCiteYesTrainNoParity() {
+  const expectedSignal = 'ai-train=no, search=yes, ai-input=yes';
+
+  const rwRobots = fs.readFileSync(path.join(RW_ROOT, 'app/robots.ts'), 'utf8');
+  const rwMw = fs.readFileSync(path.join(RW_ROOT, 'middleware.ts'), 'utf8');
+  const rwPatch = fs.readFileSync(path.join(RW_ROOT, 'scripts/patch-worker.mjs'), 'utf8');
+  if (
+    ['GPTBot', 'ClaudeBot', 'Google-Extended', 'Applebot-Extended'].every((b) => rwRobots.includes(b)) &&
+    rwMw.includes(expectedSignal) &&
+    rwPatch.includes(expectedSignal)
+  ) {
+    pass('RW enforces Cite-YES Train-NO across robots.ts, middleware.ts, and patch-worker.mjs');
+  } else {
+    fail('RW missing Cite-YES Train-NO training bot disallows or Content-Signal parity');
+  }
+
+  const cwRobots = fs.readFileSync(path.join(CW_ROOT, 'app/robots.js'), 'utf8');
+  const cwMw = fs.readFileSync(path.join(CW_ROOT, 'middleware.js'), 'utf8');
+  const cwPatch = fs.readFileSync(path.join(CW_ROOT, 'scripts/patch-worker.cjs'), 'utf8');
+  const cwNext = fs.readFileSync(path.join(CW_ROOT, 'next.config.mjs'), 'utf8');
+  if (
+    ['GPTBot', 'ClaudeBot', 'Google-Extended', 'Applebot-Extended'].every((b) => cwRobots.includes(b)) &&
+    cwMw.includes(expectedSignal) &&
+    cwPatch.includes(expectedSignal) &&
+    !/noai/i.test(cwNext)
+  ) {
+    pass('CW enforces Cite-YES Train-NO across robots.js, middleware.js, patch-worker.cjs, and zero global noai');
+  } else {
+    fail('CW missing Cite-YES Train-NO training bot disallows, Content-Signal, or has noai header leak');
+  }
+
+  const exRobots = fs.readFileSync(path.join(EX_ROOT, 'public/robots.txt'), 'utf8');
+  const exDisallowSlice = exRobots.includes('DISALLOWED AI MODEL TRAINING')
+    ? exRobots.slice(exRobots.indexOf('DISALLOWED AI MODEL TRAINING'))
+    : '';
+  const exWorker = fs.readFileSync(path.join(EX_ROOT, 'worker-wrapper.ts'), 'utf8');
+  if (
+    ['GPTBot', 'ClaudeBot', 'Google-Extended', 'Applebot-Extended', 'GrokBot', 'DeepSeekBot'].every((b) =>
+      exDisallowSlice.includes(b)
+    ) &&
+    exWorker.includes(expectedSignal)
+  ) {
+    pass('EX enforces Cite-YES Train-NO across public/robots.txt and worker-wrapper.ts');
+  } else {
+    fail('EX missing Cite-YES Train-NO training bot disallows in robots.txt or Content-Signal in worker-wrapper.ts');
+  }
+}
+
 await verifyCareerWin();
 verifyExogram();
+verifyCiteYesTrainNoParity();
 
 console.log(`\nSUMMARY: ${passed} passed, ${errors} failed.`);
 process.exit(errors === 0 ? 0 : 1);

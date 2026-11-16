@@ -536,6 +536,6 @@ Optimize it to be **genuinely human, specific, independently reasoned, and recog
 
 A detector may still get it wrong. The writing standard should not depend on the detector being right.
 
-Reference catalog: [42 First-Person Educational Advice Angles](references/42-first-person-advice-angles.md) documents the pruned 42-angle matrix, 100% unique sibling-opening rules, and domain register boundaries across `richardewing.io`, `careerwin.ai`, and `exogram.ai`.
+Reference catalogs: [54 First-Person Educational Advice Angles](references/54-first-person-advice-angles.md) (superseding [42 First-Person Educational Advice Angles](references/42-first-person-advice-angles.md)) documents the full 54-angle matrix, 8 mechanical anti-slop gates, 9-page Golden-Sample calibration law, 100% unique sibling-opening rules, and domain register boundaries across `richardewing.io`, `careerwin.ai`, and `exogram.ai`.
 
 

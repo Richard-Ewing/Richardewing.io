@@ -62,6 +62,7 @@ Whenever ANY new page, subpage, tool, curriculum lesson, or comparison route is 
   - **Concrete Observed Evidence Over Abstraction**: Prefer something that broke, worked, cost money, took longer, or changed the writer's mind over abstract generalities.
   - **Specific Job Titles Mandate**: Write for the whole floor, not the server room. Never use lazy umbrella labels like "middle managers" or "the C-suite." Always use specific actual job titles: CEO, CFO, COO, Customer Support Manager, Product Ops Lead, Engineering Manager, VP of Operations, Director of Finance, etc.
   - **Zero LinkedIn Voice & Formulaic Symmetry**: Eliminate formulaic bridge phrases, artificially balanced lists of three, and manufactured vulnerability.
+  - **54-Angle Tenth-Thought Rotation & 9-Page Golden-Sample Gate (`tenth-thought-54-angles` Skill)**: Whenever adding or scaling `>= 10` pages, calibrate a **3-page per domain Golden Sample** first (`0` homepage edits, `\$0.00` Semrush spend, `0 ms` extra Worker CPU). Open with a **35-word citation snap**, rotate a unique **4-angle mix** from `.agents/skills/lived-experience/references/54-first-person-advice-angles.md`, keep **100%** unique **5-word** sibling openings, allow **0** `"In 2026,"` leads, **0** AI bridge starters (`However,`, `Moreover,`, `Furthermore,`, `That said,`), **0** `"It's not X, it's Y"` symmetry cliches, **1** free DIY check, **1** honest disqualifier, and end abruptly on the last hard fact.
   - **The Final Human Test**: *"Would Richard actually say this out loud?"* If not, rewrite it.
 
 ---
@@ -96,6 +97,8 @@ Whenever ANY new page, subpage, tool, curriculum lesson, or comparison route is 
   - Every executive glossary term added to `app/glossary/terms/*.ts` that is intended to resolve as a standalone 200 OK canonical page at `/glossary/[slug]` MUST be registered in `KEEP_TERMS` inside `app/glossary/pillarsMapping.ts`.
 * **Transactional & Internal Route `noindex` Mandate**:
   - All internal, gated, session-specific, or post-checkout utility routes (`/admin`, `/workspace`, `/wizard`, `/tools/dashboard`, `/tools/audit-interview/[sessionId]`, `/checkout-pending`, `/toolkit-success`) MUST export `robots: { index: false, follow: false }` via their `page.tsx` or `layout.tsx`.
+* **Cite-YES Train-NO Crawler & Header Parity**:
+  - Allow live search and citation crawlers (`OAI-SearchBot`, `ChatGPT-User`, `Claude-SearchBot`, `Claude-User`, `PerplexityBot`, `Perplexity-User`, `Googlebot`, `Bingbot`, `Applebot`) while blocking foundation-model training bots (`GPTBot`, `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, `Meta-ExternalAgent`, `GrokBot`, `DeepSeekBot`, `CCBot`, `Bytespider`) via `Disallow: /` in `app/robots.ts` and edge `403` guards. Emit `Content-Signal: ai-train=no, search=yes, ai-input=yes` on origin and cache HIT/MISS paths and never emit `X-Robots-Tag: noai` on indexable HTML.
 
 ---
 
