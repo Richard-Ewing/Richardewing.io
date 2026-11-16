@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import EditorialAdSlot from '@/components/monetization/EditorialAdSlot';
 
 export const metadata: Metadata = {
   title: {
@@ -36,6 +37,11 @@ export default function CompareLayout({ children }: { children: React.ReactNode 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {children}
+      <EditorialAdSlot
+        pillar="blog"
+        contextLabel="Software & AI Economics Comparison"
+        wrapperClassName="max-w-4xl mx-auto px-6 pb-16 pt-4"
+      />
     </>
   );
 }

@@ -25,6 +25,7 @@ export interface EditorialAdSlotProps {
   slotId?: string;
   contextLabel?: string;
   className?: string;
+  wrapperClassName?: string;
 }
 
 type ConsentMode = 'all' | 'essential' | 'unset';
@@ -34,6 +35,7 @@ export default function EditorialAdSlot({
   slotId,
   contextLabel,
   className = '',
+  wrapperClassName = '',
 }: EditorialAdSlotProps) {
   const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -179,10 +181,12 @@ export default function EditorialAdSlot({
   }
 
   const telemetry = PILLAR_TELEMETRY[pillar];
+  const wrap = (content: React.ReactNode) =>
+    wrapperClassName ? <div className={wrapperClassName}>{content}</div> : content;
 
   // Tier 1: Direct Paid B2B Sponsor Card
   if (directSponsor) {
-    return (
+    return wrap(
       <aside
         aria-label="Sponsored partner placement"
         className={`w-full rounded-2xl border border-zinc-200 bg-white p-6 shadow-xs ${className}`}
@@ -209,7 +213,7 @@ export default function EditorialAdSlot({
             href={directSponsor.destinationUrl}
             target="_blank"
             rel="sponsored noopener noreferrer"
-            className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white font-grotesk font-bold text-xs uppercase tracking-wider transition-colors"
+            className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 rounded-xl bg-zinc-950 hover:bg-zinc-800 !text-white font-grotesk font-bold text-xs uppercase tracking-wider transition-colors"
           >
             {directSponsor.ctaLabel} -&gt;
           </a>
@@ -223,7 +227,7 @@ export default function EditorialAdSlot({
 
   // Tier 2: Manual Google AdSense Slot (Strict Route & Consent Gated)
   if (shouldUseAdSense && clientId && resolvedSlotId) {
-    return (
+    return wrap(
       <aside
         ref={containerRef}
         aria-label="Advertisement"
@@ -256,7 +260,7 @@ export default function EditorialAdSlot({
   }
 
   // Tier 3: House Direct Sponsorship Acquisition Card (Default before AdSense activation & fallback)
-  return (
+  return wrap(
     <aside
       ref={containerRef}
       aria-label="Direct sponsorship placement"
@@ -282,7 +286,7 @@ export default function EditorialAdSlot({
       <div className="flex flex-wrap items-center gap-3">
         <Link
           href={`/partnerships?pillar=${pillar}#sponsor`}
-          className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white font-grotesk font-bold text-xs uppercase tracking-wider transition-colors"
+          className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 rounded-xl bg-zinc-950 hover:bg-zinc-800 !text-white font-grotesk font-bold text-xs uppercase tracking-wider transition-colors"
         >
           Reserve a Sponsor Slot -&gt;
         </Link>

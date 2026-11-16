@@ -111,17 +111,26 @@ export const DEFAULT_ADSENSE_SLOT_IDS: Record<AdPillar, string> = {
 
 const PUBLISHER_ID_REGEX = /^(?:ca-)?pub-(\d{10,20})$/;
 
+const ALLOWED_EDITORIAL_PREFIXES = [
+  '/glossary',
+  '/blog',
+  '/concepts',
+  '/articles',
+  '/compare',
+  '/answers',
+  '/framework',
+  '/failures',
+] as const;
+
 export function isAdAllowedPathname(rawPathname: string | null | undefined): boolean {
   if (!rawPathname) return false;
   const pathOnly = rawPathname.split('?')[0].split('#')[0];
   const clean = pathOnly.length > 1 ? pathOnly.replace(/\/+$/, '') : pathOnly;
-  return (
-    clean === '/glossary' ||
-    clean.startsWith('/glossary/') ||
-    clean === '/blog' ||
-    clean.startsWith('/blog/') ||
-    clean === '/concepts' ||
-    clean.startsWith('/concepts/')
+  if (clean.startsWith('/compare/advisory-vs-')) {
+    return false;
+  }
+  return ALLOWED_EDITORIAL_PREFIXES.some(
+    (prefix) => clean === prefix || clean.startsWith(`${prefix}/`)
   );
 }
 
