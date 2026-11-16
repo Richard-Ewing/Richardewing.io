@@ -15,7 +15,7 @@ const EX_ROOT = 'D:/Antigravity_MNEMOSYNE/mnemosyne-app';
 
 const SLOP_RE =
   /\b(seamless|seamlessly|robust|leverage|leveraging|unlock|unlocking|delve|foster|game-changer|revolutionary|transformative|navigate the landscape|at the end of the day|the bottom line|production-ready|missing layer|missing piece|empower|empowering|let that sink in|read that again|full stop|here is the thing|here's the thing)\b/gi;
-const DASH_RE = /[\u2013\u2014]|&mdash;|&ndash;|&#8212;|&#8211;/g;
+const DASH_RE = /[\u2013\u2014]|\\u201[34]|&mdash;|&ndash;|&#8212;|&#8211;/gi;
 const FIRST_PERSON_RE = /\b(I|I've|I'd|I'm|my)\b/;
 
 let errors = 0;
@@ -102,6 +102,7 @@ const scopedFiles = [
   [RW_ROOT, 'app/glossary/auto-enrich.ts'],
   [RW_ROOT, 'app/glossary/terms.ts'],
   [RW_ROOT, 'app/lib/spoke-data.ts'],
+  [RW_ROOT, 'app/lib/seo-links.ts'],
   [CW_ROOT, 'lib/atsData.js'],
   [CW_ROOT, 'app/ats-screening/[system]/page.js'],
   [CW_ROOT, 'app/lib/competitorData.js'],
@@ -113,6 +114,7 @@ const scopedFiles = [
   [EX_ROOT, 'src/app/use-cases/[slug]/data.ts'],
   [EX_ROOT, 'src/app/use-cases/[slug]/page.tsx'],
   [EX_ROOT, 'src/app/blog/claude-vs-chatgpt-vs-gemini-memory-comparison-2026/page.tsx'],
+  [EX_ROOT, 'src/components/diagrams/ExogramEditorialDiagrams.tsx'],
 ];
 
 for (const [root, rel] of scopedFiles) {
@@ -122,7 +124,8 @@ for (const [root, rel] of scopedFiles) {
     continue;
   }
   const src = fs.readFileSync(full, 'utf8');
-  const dashes = src.match(DASH_RE) || [];
+  const sanitizedForDash = src.replace(/\/\[[^\]]*\\u201[34][^\]]*\]\/[gi]*/g, '');
+  const dashes = sanitizedForDash.match(DASH_RE) || [];
   if (dashes.length > 0) {
     fail(`Found ${dashes.length} illegal en/em-dash(es) in ${rel}`);
   } else {
