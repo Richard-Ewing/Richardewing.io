@@ -12,9 +12,11 @@ import {
   resolvePublisherId,
 } from '@/lib/monetization/sponsorship-config';
 
+type AdsByGoogleQueue = unknown[] & { requestNonPersonalizedAds?: 0 | 1 };
+
 declare global {
   interface Window {
-    adsbygoogle?: unknown[];
+    adsbygoogle?: AdsByGoogleQueue;
   }
 }
 
@@ -25,7 +27,7 @@ export interface EditorialAdSlotProps {
   className?: string;
 }
 
-type ConsentMode = 'all' | 'essential' | null;
+type ConsentMode = 'all' | 'essential' | 'unset';
 
 export default function EditorialAdSlot({
   pillar,
@@ -38,7 +40,8 @@ export default function EditorialAdSlot({
   const insRef = useRef<HTMLModElement | null>(null);
   const pushedRouteKeyRef = useRef<string | null>(null);
 
-  const [consentMode, setConsentMode] = useState<ConsentMode>(null);
+  const [consentMode, setConsentMode] = useState<ConsentMode>('unset');
+  const [consentLoaded, setConsentLoaded] = useState(false);
   const [isInViewportRange, setIsInViewportRange] = useState(false);
   const [adFallbackActive, setAdFallbackActive] = useState(false);
 
@@ -55,7 +58,13 @@ export default function EditorialAdSlot({
   const resolvedSlotId = getAdSenseSlotId(pillar, slotId);
 
   const shouldUseAdSense = Boolean(
-    allowed && !directSponsor && clientId && resolvedSlotId && consentMode === 'all' && !adFallbackActive
+    allowed &&
+      !directSponsor &&
+      clientId &&
+      resolvedSlotId &&
+      consentLoaded &&
+      consentMode !== 'essential' &&
+      !adFallbackActive
   );
 
   // Sync consent preference safely on the client
@@ -66,8 +75,9 @@ export default function EditorialAdSlot({
       if (stored === 'all' || stored === 'essential') {
         setConsentMode(stored);
       } else {
-        setConsentMode(null);
+        setConsentMode('unset');
       }
+      setConsentLoaded(true);
     };
     syncConsent();
     window.addEventListener('rw-cookie-consent-change', syncConsent);
@@ -128,8 +138,9 @@ export default function EditorialAdSlot({
     }
 
     try {
-      window.adsbygoogle = window.adsbygoogle || [];
-      window.adsbygoogle.push({});
+      const queue = (window.adsbygoogle = (window.adsbygoogle || []) as AdsByGoogleQueue);
+      queue.requestNonPersonalizedAds = consentMode === 'all' ? 0 : 1;
+      queue.push({});
       pushedRouteKeyRef.current = routeKey;
     } catch {
       setAdFallbackActive(true);
@@ -161,7 +172,7 @@ export default function EditorialAdSlot({
       if (observer) observer.disconnect();
       window.clearTimeout(timer);
     };
-  }, [shouldUseAdSense, isInViewportRange, clientId, resolvedSlotId, pathname, pillar]);
+  }, [shouldUseAdSense, isInViewportRange, clientId, resolvedSlotId, pathname, pillar, consentMode]);
 
   if (!allowed) {
     return null;
@@ -229,11 +240,11 @@ export default function EditorialAdSlot({
             Sponsor this page -&gt;
           </Link>
         </div>
-        <div className="min-h-[120px] w-full flex items-center justify-center overflow-hidden">
+        <div className="min-h-[120px] w-full block">
           <ins
             ref={insRef}
             className="adsbygoogle block w-full"
-            style={{ display: 'block', minHeight: '120px' }}
+            style={{ display: 'block', width: '100%', minHeight: '120px' }}
             data-ad-client={clientId}
             data-ad-slot={resolvedSlotId}
             data-ad-format="auto"

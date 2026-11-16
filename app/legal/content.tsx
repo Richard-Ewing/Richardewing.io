@@ -662,7 +662,7 @@ export default function LegalPage() {
                                         <strong>Cloudflare &amp; Supabase:</strong> Cloud edge hosting, database operations, and server infrastructure.
                                     </div>
                                     <div className="p-3 bg-[var(--paper,#f4f1e9)]/60 border border-[var(--line,#e2ded4)] rounded-lg sm:col-span-2">
-                                        <strong>Google AdSense (Scoped Editorial Directories Only):</strong> Contextual and personalized advertising delivery on /glossary, /blog, and /concepts when advertising cookies are accepted.
+                                        <strong>Google AdSense (Scoped Editorial Directories Only):</strong> Contextual advertising delivery by default and personalized advertising when accepted on /glossary, /blog, and /concepts (disabled when Essential Only is selected).
                                     </div>
                                 </div>
                             </div>
@@ -691,7 +691,7 @@ export default function LegalPage() {
                             <div>
                                 <h3 className="text-base font-bold text-[var(--forest2,#162e26)] mb-2">9.7 Advertising Cookies &amp; Google AdSense Opt-Out</h3>
                                 <p className="mb-2">
-                                    Third-party vendors, including Google, use cookies to serve ads based on a user&rsquo;s prior visits to <code>richardewing.io</code> or other websites when optional advertising cookies are accepted on our public research directories (<code>/glossary</code>, <code>/blog</code>, and <code>/concepts</code>). Core executive advisory, pricing, diagnostic calculators, and Vault pages never load third-party advertising tags.
+                                    Third-party vendors, including Google, serve non-personalized contextual ads by default and use cookies to serve personalized ads when accepted on our public research directories (<code>/glossary</code>, <code>/blog</code>, and <code>/concepts</code>); selecting <strong>Essential Only</strong> disables third-party ad tags completely. Core executive advisory, pricing, diagnostic calculators, and Vault pages never load third-party advertising tags.
                                 </p>
                                 <p className="mb-2">
                                     Google&rsquo;s use of advertising cookies enables Google and its partners to serve ads to visitors based on their visits to these directories and/or other sites across the Internet.

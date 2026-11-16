@@ -9,7 +9,8 @@ export default function CookieConsent() {
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const consent = localStorage.getItem('cookie_consent_accepted');
-    if (!consent) {
+    const mode = localStorage.getItem('cookie_consent_mode');
+    if (!consent || (mode !== 'all' && mode !== 'essential')) {
       setIsVisible(true);
     }
     const handleOpenSettings = () => setIsVisible(true);
@@ -38,7 +39,7 @@ export default function CookieConsent() {
           <span className="text-[10px] font-mono text-zinc-300">EU AI Act &amp; GDPR</span>
         </div>
         <p className="text-xs text-zinc-100 leading-relaxed font-medium">
-          We use privacy-safe telemetry (Plausible and PostHog) across the site and optional advertising cookies on selected research directories (/glossary, /blog, and /concepts) only when accepted. Read our{' '}
+          We use privacy-safe telemetry (Plausible and PostHog) across the site and serve contextual Google AdSense ads on selected research directories (/glossary, /blog, and /concepts). Choose Accept All to allow personalized ad cookies, or Essential Only to disable third-party ads. Read our{' '}
           <Link href="/legal" prefetch={false} className="text-cyan-400 underline hover:text-cyan-300">
             Privacy Policy
           </Link>{' '}
