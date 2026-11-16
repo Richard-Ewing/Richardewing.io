@@ -7,11 +7,21 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execSync } from 'node:child_process';
-import { pathToFileURL } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
-const RW_ROOT = 'd:/Antigravity_RichardEwing.io';
-const CW_ROOT = 'D:/Antigravity_CareerWin/.wt-seo-bing-chatgpt';
-const EX_ROOT = 'D:/Antigravity_MNEMOSYNE/mnemosyne-app';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const RW_ROOT = process.env.RW_ROOT || path.resolve(__dirname, '../../');
+const DEFAULT_CW_WT = 'D:/Antigravity_CareerWin/.wt-seo-bing-chatgpt';
+const DEFAULT_CW_MAIN = 'D:/Antigravity_CareerWin';
+const CW_ROOT =
+  process.env.CW_ROOT ||
+  (fs.existsSync(path.join(DEFAULT_CW_WT, 'package.json')) ? DEFAULT_CW_WT : DEFAULT_CW_MAIN);
+const EX_ROOT = process.env.EX_ROOT || 'D:/Antigravity_MNEMOSYNE/mnemosyne-app';
+const IS_ISOLATED_CI = Boolean(process.env.GITHUB_ACTIONS || process.env.CI);
+const HAS_CW = Boolean(CW_ROOT && fs.existsSync(path.join(CW_ROOT, 'package.json')));
+const HAS_EX = Boolean(EX_ROOT && fs.existsSync(path.join(EX_ROOT, 'package.json')));
 
 const SLOP_RE =
   /\b(seamless|seamlessly|robust|leverage|leveraging|unlock|unlocking|delve|foster|game-changer|revolutionary|transformative|navigate the landscape|at the end of the day|the bottom line|production-ready|missing layer|missing piece|empower|empowering|let that sink in|read that again|full stop|here is the thing|here's the thing)\b/gi;
@@ -40,15 +50,34 @@ function checkNoBridgeOrSymmetry(label, items, getter) {
 
 let errors = 0;
 let passed = 0;
+let skipped = 0;
 
 function pass(msg) {
   passed++;
   console.log(`  PASS  ${msg}`);
 }
 
+function skip(msg) {
+  skipped++;
+  console.log(`  SKIP  ${msg}`);
+}
+
 function fail(msg) {
   errors++;
   console.error(`  FAIL  ${msg}`);
+}
+
+function isUnmountedSiblingRepo(repo) {
+  return (repo === CW_ROOT && !HAS_CW) || (repo === EX_ROOT && !HAS_EX);
+}
+
+function readTargetFile(root, rel) {
+  const full = path.join(root, rel);
+  if (!fs.existsSync(full)) {
+    fail(`Missing target file: ${full}`);
+    return null;
+  }
+  return fs.readFileSync(full, 'utf8');
 }
 
 function fiveWordOpener(text) {
@@ -95,6 +124,12 @@ const homepageChecks = [
 ];
 
 for (const [label, repo, rel] of homepageChecks) {
+  if (isUnmountedSiblingRepo(repo)) {
+    if (!IS_ISOLATED_CI) {
+      fail(`Missing repo directory for ${label}: ${repo}`);
+    }
+    continue;
+  }
   if (!fs.existsSync(repo)) {
     fail(`Missing repo directory for ${label}: ${repo}`);
     continue;
@@ -138,12 +173,13 @@ const scopedFiles = [
 ];
 
 for (const [root, rel] of scopedFiles) {
-  const full = path.join(root, rel);
-  if (!fs.existsSync(full)) {
-    fail(`Missing target file: ${full}`);
+  if (IS_ISOLATED_CI && isUnmountedSiblingRepo(root)) {
     continue;
   }
-  const src = fs.readFileSync(full, 'utf8');
+  const src = readTargetFile(root, rel);
+  if (src === null) {
+    continue;
+  }
   const sanitizedForDash = src.replace(/\/\[[^\]]*\\u201[34][^\]]*\]\/[gi]*/g, '');
   const dashes = sanitizedForDash.match(DASH_RE) || [];
   if (dashes.length > 0) {
@@ -163,19 +199,21 @@ for (const [root, rel] of scopedFiles) {
 
 // 3. RichardEwing.io checks
 {
-  const glossaryPage = fs.readFileSync(path.join(RW_ROOT, 'app/glossary/[slug]/page.tsx'), 'utf8');
-  const autoEnrich = fs.readFileSync(path.join(RW_ROOT, 'app/glossary/auto-enrich.ts'), 'utf8');
-  const mckinseyRe = /Assess your organization's current|Identify quick wins for|Create a 90-day/;
-  if (mckinseyRe.test(glossaryPage) || mckinseyRe.test(autoEnrich)) {
-    fail('RW glossary still contains generic McKinsey consulting template strings');
-  } else {
-    pass('RW glossary stripped generic consulting template boilerplate');
-  }
+  const glossaryPage = readTargetFile(RW_ROOT, 'app/glossary/[slug]/page.tsx');
+  const autoEnrich = readTargetFile(RW_ROOT, 'app/glossary/auto-enrich.ts');
+  if (glossaryPage !== null && autoEnrich !== null) {
+    const mckinseyRe = /Assess your organization's current|Identify quick wins for|Create a 90-day/;
+    if (mckinseyRe.test(glossaryPage) || mckinseyRe.test(autoEnrich)) {
+      fail('RW glossary still contains generic McKinsey consulting template strings');
+    } else {
+      pass('RW glossary stripped generic consulting template boilerplate');
+    }
 
-  if (!FIRST_PERSON_RE.test(glossaryPage) || !glossaryPage.includes('**Step 1:') || !glossaryPage.includes('**Step 5:')) {
-    fail('RW glossary/[slug]/page.tsx missing first-person operator steps or **Step 1..5 HowTo structure');
-  } else {
-    pass('RW glossary/[slug]/page.tsx has first-person operator steps + HowTo structure');
+    if (!FIRST_PERSON_RE.test(glossaryPage) || !glossaryPage.includes('**Step 1:') || !glossaryPage.includes('**Step 5:')) {
+      fail('RW glossary/[slug]/page.tsx missing first-person operator steps or **Step 1..5 HowTo structure');
+    } else {
+      pass('RW glossary/[slug]/page.tsx has first-person operator steps + HowTo structure');
+    }
   }
 
   const rwCompareFiles = [
@@ -186,7 +224,8 @@ for (const [root, rel] of scopedFiles) {
     'app/compare/why-cfos-are-shutting-down-ai-pilots/page.tsx',
   ];
   for (const rel of rwCompareFiles) {
-    const s = fs.readFileSync(path.join(RW_ROOT, rel), 'utf8');
+    const s = readTargetFile(RW_ROOT, rel);
+    if (s === null) continue;
     const bodyMarker = s.includes('export default function') ? s.slice(s.indexOf('export default function')) : s;
     if (/What I |How I |What Happened When My|Why I Tell|I Tell |I've |I'd /.test(s) && FIRST_PERSON_RE.test(bodyMarker)) {
       pass(`RW comparison ${rel} contains first-person educational advice`);
@@ -198,6 +237,14 @@ for (const [root, rel] of scopedFiles) {
 
 // 4. CareerWin.ai checks
 async function verifyCareerWin() {
+  if (!HAS_CW) {
+    if (IS_ISOLATED_CI) {
+      skip('CareerWin checks skipped in isolated single-repo CI');
+    } else {
+      fail(`Missing CareerWin repository at ${CW_ROOT}`);
+    }
+    return;
+  }
   const cwResume = fs.readFileSync(path.join(CW_ROOT, 'app/resume-examples/[role]/page.js'), 'utf8');
   const in2026Count = (cwResume.match(/"In 2026,/g) || []).length;
   if (in2026Count > 0) {
@@ -263,6 +310,14 @@ async function verifyCareerWin() {
 
 // 5. Exogram.ai checks
 function verifyExogram() {
+  if (!HAS_EX) {
+    if (IS_ISOLATED_CI) {
+      skip('Exogram checks skipped in isolated single-repo CI');
+    } else {
+      fail(`Missing Exogram repository at ${EX_ROOT}`);
+    }
+    return;
+  }
   const exCompareData = fs.readFileSync(path.join(EX_ROOT, 'src/app/compare/[slug]/data.ts'), 'utf8');
   const exComparePage = fs.readFileSync(path.join(EX_ROOT, 'src/app/compare/[slug]/page.tsx'), 'utf8');
   const flagshipMatch = exCompareData.match(/export const FLAGSHIP_COMPARISON_SLUGS = \[([\s\S]*?)\] as const;/);
@@ -348,35 +403,47 @@ function verifyCiteYesTrainNoParity() {
     fail('RW missing Cite-YES Train-NO training bot disallows or Content-Signal parity');
   }
 
-  const cwRobots = fs.readFileSync(path.join(CW_ROOT, 'app/robots.js'), 'utf8');
-  const cwMw = fs.readFileSync(path.join(CW_ROOT, 'middleware.js'), 'utf8');
-  const cwPatch = fs.readFileSync(path.join(CW_ROOT, 'scripts/patch-worker.cjs'), 'utf8');
-  const cwNext = fs.readFileSync(path.join(CW_ROOT, 'next.config.mjs'), 'utf8');
-  if (
-    ['GPTBot', 'ClaudeBot', 'Google-Extended', 'Applebot-Extended'].every((b) => cwRobots.includes(b)) &&
-    cwMw.includes(expectedSignal) &&
-    cwPatch.includes(expectedSignal) &&
-    !/noai/i.test(cwNext)
-  ) {
-    pass('CW enforces Cite-YES Train-NO across robots.js, middleware.js, patch-worker.cjs, and zero global noai');
+  if (!HAS_CW) {
+    if (!IS_ISOLATED_CI) {
+      fail(`CW parity check skipped: missing ${CW_ROOT}`);
+    }
   } else {
-    fail('CW missing Cite-YES Train-NO training bot disallows, Content-Signal, or has noai header leak');
+    const cwRobots = fs.readFileSync(path.join(CW_ROOT, 'app/robots.js'), 'utf8');
+    const cwMw = fs.readFileSync(path.join(CW_ROOT, 'middleware.js'), 'utf8');
+    const cwPatch = fs.readFileSync(path.join(CW_ROOT, 'scripts/patch-worker.cjs'), 'utf8');
+    const cwNext = fs.readFileSync(path.join(CW_ROOT, 'next.config.mjs'), 'utf8');
+    if (
+      ['GPTBot', 'ClaudeBot', 'Google-Extended', 'Applebot-Extended'].every((b) => cwRobots.includes(b)) &&
+      cwMw.includes(expectedSignal) &&
+      cwPatch.includes(expectedSignal) &&
+      !/noai/i.test(cwNext)
+    ) {
+      pass('CW enforces Cite-YES Train-NO across robots.js, middleware.js, patch-worker.cjs, and zero global noai');
+    } else {
+      fail('CW missing Cite-YES Train-NO training bot disallows, Content-Signal, or has noai header leak');
+    }
   }
 
-  const exRobots = fs.readFileSync(path.join(EX_ROOT, 'public/robots.txt'), 'utf8');
-  const exDisallowSlice = exRobots.includes('DISALLOWED AI MODEL TRAINING')
-    ? exRobots.slice(exRobots.indexOf('DISALLOWED AI MODEL TRAINING'))
-    : '';
-  const exWorker = fs.readFileSync(path.join(EX_ROOT, 'worker-wrapper.ts'), 'utf8');
-  if (
-    ['GPTBot', 'ClaudeBot', 'Google-Extended', 'Applebot-Extended', 'GrokBot', 'DeepSeekBot'].every((b) =>
-      exDisallowSlice.includes(b)
-    ) &&
-    exWorker.includes(expectedSignal)
-  ) {
-    pass('EX enforces Cite-YES Train-NO across public/robots.txt and worker-wrapper.ts');
+  if (!HAS_EX) {
+    if (!IS_ISOLATED_CI) {
+      fail(`EX parity check skipped: missing ${EX_ROOT}`);
+    }
   } else {
-    fail('EX missing Cite-YES Train-NO training bot disallows in robots.txt or Content-Signal in worker-wrapper.ts');
+    const exRobots = fs.readFileSync(path.join(EX_ROOT, 'public/robots.txt'), 'utf8');
+    const exDisallowSlice = exRobots.includes('DISALLOWED AI MODEL TRAINING')
+      ? exRobots.slice(exRobots.indexOf('DISALLOWED AI MODEL TRAINING'))
+      : '';
+    const exWorker = fs.readFileSync(path.join(EX_ROOT, 'worker-wrapper.ts'), 'utf8');
+    if (
+      ['GPTBot', 'ClaudeBot', 'Google-Extended', 'Applebot-Extended', 'GrokBot', 'DeepSeekBot'].every((b) =>
+        exDisallowSlice.includes(b)
+      ) &&
+      exWorker.includes(expectedSignal)
+    ) {
+      pass('EX enforces Cite-YES Train-NO across public/robots.txt and worker-wrapper.ts');
+    } else {
+      fail('EX missing Cite-YES Train-NO training bot disallows in robots.txt or Content-Signal in worker-wrapper.ts');
+    }
   }
 }
 
@@ -384,5 +451,5 @@ await verifyCareerWin();
 verifyExogram();
 verifyCiteYesTrainNoParity();
 
-console.log(`\nSUMMARY: ${passed} passed, ${errors} failed.`);
+console.log(`\nSUMMARY: ${passed} passed, ${skipped} skipped, ${errors} failed.`);
 process.exit(errors === 0 ? 0 : 1);
