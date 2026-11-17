@@ -96,57 +96,57 @@ export default function SponsorshipMediaKit() {
           </p>
         </div>
 
-        {/* Verified 30-Day Cloudflare Human Readout */}
+        {/* Verified First-Party Search, Device & Inventory Signals */}
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-6">
           <div className="rounded-2xl border border-zinc-200 bg-[#FAF9F6] p-4">
             <div className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-600 mb-1">
-              30-Day Verified Pool
+              Published Inventory
             </div>
-            <div className="font-grotesk text-2xl font-bold text-zinc-950">15,352</div>
+            <div className="font-grotesk text-2xl font-bold text-zinc-950">624</div>
             <div className="text-xs font-semibold text-zinc-700 mt-0.5">
-              Across 624 pages in 8 sections
+              Technical pages across 8 sections
             </div>
           </div>
           <div className="rounded-2xl border border-zinc-200 bg-[#FAF9F6] p-4">
             <div className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-600 mb-1">
-              /glossary + /answers
+              Google Avg Position
             </div>
-            <div className="font-grotesk text-2xl font-bold text-zinc-950">6,017</div>
+            <div className="font-grotesk text-2xl font-bold text-zinc-950">8.4</div>
             <div className="text-xs font-semibold text-zinc-700 mt-0.5">
-              228 pages monthly views
+              16,522 Page-1 search impressions
             </div>
           </div>
           <div className="rounded-2xl border border-zinc-200 bg-[#FAF9F6] p-4">
             <div className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-600 mb-1">
-              /blog + /articles + /compare
+              Workday Desktop Share
             </div>
-            <div className="font-grotesk text-2xl font-bold text-zinc-950">5,322</div>
+            <div className="font-grotesk text-2xl font-bold text-zinc-950">83.2%</div>
             <div className="text-xs font-semibold text-zinc-700 mt-0.5">
-              228 pages monthly views
+              Verified in Search Console
             </div>
           </div>
           <div className="rounded-2xl border border-zinc-200 bg-[#FAF9F6] p-4">
             <div className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-600 mb-1">
-              /concepts + /framework + /failures
+              AI Citation Rate
             </div>
-            <div className="font-grotesk text-2xl font-bold text-zinc-950">4,013</div>
+            <div className="font-grotesk text-2xl font-bold text-zinc-950">65.4%</div>
             <div className="text-xs font-semibold text-zinc-700 mt-0.5">
-              168 pages monthly views
+              Static HTML indexed by LLMs
             </div>
           </div>
         </div>
 
-        {/* 8-Section Granular Breakdown */}
+        {/* 8-Section Published Inventory Breakdown */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
           {[
-            { path: '/glossary', pages: 136, reads: '5,134' },
-            { path: '/concepts', pages: 133, reads: '3,132' },
-            { path: '/blog', pages: 134, reads: '2,748' },
-            { path: '/articles', pages: 46, reads: '1,577' },
-            { path: '/compare', pages: 48, reads: '997' },
-            { path: '/answers', pages: 92, reads: '883' },
-            { path: '/framework', pages: 19, reads: '593' },
-            { path: '/failures', pages: 16, reads: '288' },
+            { path: '/glossary', pages: 136, track: 'Glossary' },
+            { path: '/blog', pages: 134, track: 'Architecture' },
+            { path: '/concepts', pages: 133, track: 'Architecture' },
+            { path: '/answers', pages: 92, track: 'Glossary' },
+            { path: '/compare', pages: 48, track: 'Architecture' },
+            { path: '/articles', pages: 46, track: 'Architecture' },
+            { path: '/framework', pages: 19, track: 'Architecture' },
+            { path: '/failures', pages: 16, track: 'Architecture' },
           ].map((sec) => (
             <div
               key={sec.path}
@@ -154,11 +154,11 @@ export default function SponsorshipMediaKit() {
             >
               <div>
                 <div className="font-mono text-xs font-bold text-zinc-950">{sec.path}</div>
-                <div className="text-[11px] font-medium text-zinc-600">{sec.pages} pages</div>
+                <div className="text-[11px] font-medium text-zinc-600">{sec.track} track</div>
               </div>
               <div className="text-right">
-                <div className="font-grotesk text-sm font-bold text-zinc-950">{sec.reads}</div>
-                <div className="text-[10px] font-mono text-zinc-600">reads/30d</div>
+                <div className="font-grotesk text-sm font-bold text-zinc-950">{sec.pages}</div>
+                <div className="text-[10px] font-mono text-zinc-600">pages</div>
               </div>
             </div>
           ))}
@@ -180,9 +180,9 @@ export default function SponsorshipMediaKit() {
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
                     <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-cyan-800">
-                      {isSelected ? 'Selected Slot' : 'Flat Monthly Rate'}
+                      {isSelected ? 'Selected Track' : 'Founding Partner Pilot'}
                     </span>
-                    <span className="font-grotesk text-xl font-bold text-zinc-950">
+                    <span className="font-mono text-xs font-bold text-zinc-800">
                       {pkg.priceDisplay}
                     </span>
                   </div>
@@ -202,11 +202,11 @@ export default function SponsorshipMediaKit() {
                   onClick={() => setSelectedPkgId(pkg.id)}
                   className={`min-h-[44px] w-full px-4 py-2.5 rounded-xl font-grotesk font-bold text-xs uppercase tracking-wider transition-colors border ${
                     isSelected
-                      ? 'bg-zinc-950 text-white border-zinc-950'
+                      ? 'bg-zinc-950 !text-white border-zinc-950'
                       : 'bg-white hover:bg-zinc-100 text-zinc-900 border-zinc-300'
                   }`}
                 >
-                  {isSelected ? 'Selected for Inquiry' : `Select ${pkg.priceDisplay}`}
+                  {isSelected ? 'Selected for Inquiry' : 'Select This Track'}
                 </button>
               </div>
             );
@@ -218,7 +218,7 @@ export default function SponsorshipMediaKit() {
           <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
             <div>
               <h3 className="font-grotesk text-xl font-bold text-zinc-950">
-                Reserve Inventory: {activePackage.name} ({activePackage.priceDisplay})
+                Inquire for Founding Partner Pilot: {activePackage.name}
               </h3>
               <p className="text-xs sm:text-sm text-zinc-700 font-medium mt-1">
                 Audience: CEOs, CFOs, CTOs, VPs of Engineering, Directors of Finance, and FinOps Leads.

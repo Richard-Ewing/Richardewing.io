@@ -29,19 +29,19 @@ export const SPONSORSHIP_PACKAGES: SponsorshipPackage[] = [
   {
     id: 'glossary-pillar',
     name: 'Glossary & Role Answers',
-    priceDisplay: '$1,500/mo',
-    monthlyPriceUsd: 1500,
-    trafficSummary: '6,017 monthly human reads across 228 glossary definitions and role Q&A pages',
-    pageCoverage: '/glossary/* (136 pages, 5,134 reads) and /answers/* (92 pages, 883 reads)',
+    priceDisplay: 'By Inquiry',
+    monthlyPriceUsd: 0,
+    trafficSummary: '228 published glossary definitions and executive role Q&A pages',
+    pageCoverage: '/glossary (136 pages) and /answers (92 pages)',
     idealFor: 'FinOps platforms, Cloud Cost governance, and SaaS metrics software',
     pillars: ['glossary'],
   },
   {
     id: 'editorial-concepts',
     name: 'Architecture, Essays & Teardowns',
-    priceDisplay: '$1,500/mo',
-    monthlyPriceUsd: 1500,
-    trafficSummary: '9,335 monthly human reads across 396 architecture specs, essays, comparisons, and post-mortems',
+    priceDisplay: 'By Inquiry',
+    monthlyPriceUsd: 0,
+    trafficSummary: '396 published architecture specs, essays, comparisons, and post-mortems',
     pageCoverage: '/concepts, /blog, /articles, /compare, /framework, and /failures (396 pages)',
     idealFor: 'MCP auth, LLM observability, AI security guardrails, and developer infrastructure',
     pillars: ['blog', 'concepts'],
@@ -49,9 +49,9 @@ export const SPONSORSHIP_PACKAGES: SponsorshipPackage[] = [
   {
     id: 'all-three-exclusive',
     name: 'Category Exclusive (All 8 Sections)',
-    priceDisplay: '$2,500/mo',
-    monthlyPriceUsd: 2500,
-    trafficSummary: '15,352 monthly human reads across all 624 technical pages plus Monday briefing mention',
+    priceDisplay: 'By Inquiry',
+    monthlyPriceUsd: 0,
+    trafficSummary: 'All 624 technical pages across 8 sections plus Monday briefing mention',
     pageCoverage: 'Full category exclusivity across /glossary, /concepts, /blog, /articles, /compare, /answers, /framework, and /failures',
     idealFor: 'Series A to Enterprise B2B vendors locking out category competitors site-wide',
     pillars: ['glossary', 'blog', 'concepts'],
@@ -62,7 +62,6 @@ export const PILLAR_TELEMETRY: Record<
   AdPillar,
   {
     label: string;
-    monthlyReads: number;
     pageCount: number;
     houseHeadline: string;
     houseBody: string;
@@ -71,32 +70,29 @@ export const PILLAR_TELEMETRY: Record<
 > = {
   glossary: {
     label: 'Glossary & Role Answers',
-    monthlyReads: 6017,
     pageCount: 228,
     houseHeadline:
       'Put your FinOps, Cloud Cost, or AI Governance platform in front of CFOs, CTOs, and VPs of Engineering.',
     houseBody:
-      'Reserve a static partner card across 228 glossary definitions and role Q&As generating 6,017 verified human reads every 30 days. Zero tracking bloat.',
+      'Reserve a static HTML partner card across 228 glossary definitions and role Q&As (83.2% desktop search share, crawlable by ChatGPT and Perplexity). Zero tracking bloat.',
     audienceTitle: 'Finance & Platform Leadership',
   },
   blog: {
     label: 'Essays, Articles & Comparisons',
-    monthlyReads: 5322,
     pageCount: 228,
     houseHeadline:
       'Sponsor weekly SaaS margin and AI unit-economics teardowns read by engineering and finance leaders.',
     houseBody:
-      'Reach 5,322 monthly human readers across 228 P&L teardowns, field articles, and software comparisons with flat-rate category exclusivity.',
+      'Place a static partner card across 228 P&L teardowns, field articles, and software comparisons with category exclusivity and zero programmatic clutter.',
     audienceTitle: 'Engineering & Product Executives',
   },
   concepts: {
     label: 'Concepts, Frameworks & Failures',
-    monthlyReads: 4013,
     pageCount: 168,
     houseHeadline:
       'Put your MCP auth, AI security, or developer platform alongside canonical engineering specs.',
     houseBody:
-      'Reach 4,013 monthly technical buyers evaluating runtime governance, scoped permissions, and cost controls across 168 specs, frameworks, and failure post-mortems.',
+      'Place a static partner card across 168 canonical specs, security blueprints, and failure post-mortems indexed by search and AI citation engines.',
     audienceTitle: 'Principal Architects & Technical Founders',
   },
 };

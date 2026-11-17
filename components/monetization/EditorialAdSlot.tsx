@@ -271,7 +271,7 @@ export default function EditorialAdSlot({
           SPONSOR THIS RESEARCH DIRECTORY
         </span>
         <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-zinc-100 border border-zinc-200 font-mono text-[10px] font-bold text-zinc-700">
-          Verified Cloudflare Telemetry: 15,350+ Monthly Readers
+          83.2% Desktop Search · Avg Google Pos 8.4
         </span>
       </div>
 

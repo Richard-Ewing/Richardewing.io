@@ -254,7 +254,7 @@ async function runAudit() {
       );
     }
 
-    console.log('\n--- PILLAR 2: RECENT HUMAN PAGEVIEWS & UNIQUES (BY DOMAIN) ---');
+    console.log('\n--- PILLAR 2: RECENT CLOUDFLARE EDGE PAGEVIEWS & UNIQUES (INCLUDES UNFLAGGED BOTS) ---');
     const todayUtcStr = new Date().toISOString().slice(0, 10);
     const elapsedUtcHours = ((Date.now() - Date.parse(todayUtcStr + 'T00:00:00Z')) / 3600000).toFixed(1);
     const targetDays = sortedDates.slice(-7);
@@ -587,22 +587,22 @@ async function runAudit() {
     );
   }
 
-  console.log('\n--- PILLAR 4: TOP REAL HTML PAGEVIEW ROUTES ACROSS ALL DOMAINS (PAST 24 HOURS) ---');
+  console.log('\n--- PILLAR 4: TOP EDGE HTML LOAD ROUTES ACROSS ALL DOMAINS (PAST 24H EYEBALL, INCLUDES UNFLAGGED BOTS) ---');
   for (const [alias, z] of [['z1', zones[0]], ['z2', zones[1]], ['z3', zones[2]]]) {
-    console.log(`\n  [${z.name} - Top Real HTML Pageviews (24h)]`);
+    console.log(`\n  [${z.name} - Top Edge HTML Loads (24h Eyeball Source)]`);
     const raw = uViewer[alias]?.[0]?.top || [];
     const clean = raw.filter(item => {
       const p = item.dimensions.clientRequestPath;
       return !p.includes('.') && !p.startsWith('/_next') && !p.startsWith('/cdn-cgi') && !p.startsWith('/api/');
     });
     clean.slice(0, 15).forEach(item => {
-      console.log(`  ${String(item.count).padStart(5)} real pageviews : ${item.dimensions.clientRequestPath}`);
+      console.log(`  ${String(item.count).padStart(5)} edge HTML loads : ${item.dimensions.clientRequestPath}`);
     });
   }
 
-  console.log('\n--- PILLAR 5: TOP GEOGRAPHIC TRAFFIC (PAST 24 HOURS) ---');
+  console.log('\n--- PILLAR 5: TOP GEOGRAPHIC TRAFFIC (PAST 24H EYEBALL EDGE LOADS) ---');
   for (const [alias, z] of [['z1', zones[0]], ['z2', zones[1]], ['z3', zones[2]]]) {
-    console.log(`\n  [${z.name} - Top Countries (24h Human Pageviews)]`);
+    console.log(`\n  [${z.name} - Top Countries (24h Eyeball Edge Loads)]`);
     const geos = uViewer[alias]?.[0]?.geo || [];
     for (const g of geos) {
       console.log(`  ${String(g.count).padStart(5)} pageviews : ${g.dimensions.clientCountryName}`);
