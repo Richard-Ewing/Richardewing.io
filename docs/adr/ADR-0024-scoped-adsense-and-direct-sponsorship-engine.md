@@ -30,8 +30,8 @@ Implement a scoped, route-guarded monetization and direct sponsorship subsystem 
    - Allow `Mediapartners-Google`, `AdsBot-Google`, `AdsBot-Google-Mobile`, and `/ads.txt` across `app/robots.ts`, `middleware.ts`, `scripts/patch-worker.mjs` (both `__rwIsDirectiveFile` and `__rwCitationBots`), and live Cloudflare WAF Rule #3 while preserving WAF Rules #1 (`Block Scrapers`) and #2 (`AI Crawl Control`).
    - Upgrade `app/components/CookieConsent.tsx` to a 2-button bar (`Essential Only` vs `Accept All`) broadcasting `rw-cookie-consent-change`, and add Google AdSense cookie disclosures and opt-out links (`https://adssettings.google.com`, `https://www.aboutads.info/choices/`) to `app/legal/content.tsx`.
 
-4. **Self-Serve Sponsorship Intake & Deal-Desk Routing (`components/partnerships/SponsorshipMediaKit.tsx`, `app/partnerships/page.tsx`, `components/schedule/schedule-diagnostic-banner.tsx`)**:
-   - Mount `<SponsorshipMediaKit />` under `#sponsor` on `app/partnerships/page.tsx`, submitting real buyer requests to `/api/lead-capture` (`source: 'sponsorship_media_kit'`) and linking `/schedule?source=sponsorship` where `components/schedule/schedule-diagnostic-banner.tsx` displays package context.
+4. **Self-Serve Sponsorship Intake & Deal-Desk Routing (`components/partnerships/SponsorshipMediaKit.tsx`, `app/partnerships/page.tsx`, `components/schedule/schedule-diagnostic-banner.tsx`, `components/schedule/ScheduleBookingWorkspace.tsx`, `app/schedule/page.tsx`)**:
+   - Mount `<SponsorshipMediaKit />` under `#sponsor` on `app/partnerships/page.tsx`, submitting real buyer requests to `/api/lead-capture` (`source: 'sponsorship_media_kit'`) and linking `/schedule?source=sponsorship&type=15min` where `components/schedule/schedule-diagnostic-banner.tsx` displays package context and `components/schedule/ScheduleBookingWorkspace.tsx` provides zero-dollar `15min` (`richard-ewing-2cevwb/secret`) and `30min` (`richard-ewing-2cevwb/30min`) Cal.com booking tabs alongside paid advisory sessions.
 
 ## Deciders
 

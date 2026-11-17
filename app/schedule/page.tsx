@@ -5,6 +5,7 @@ import { Mail, Linkedin, ShieldCheck, Clock, CheckCircle2, Sparkles } from 'luci
 import CalEmbed from '@/app/components/client/CalEmbed';
 import FAQItem from '@/app/components/FAQItem';
 import { ScheduleDiagnosticBanner } from '@/components/schedule/schedule-diagnostic-banner';
+import ScheduleBookingWorkspace from '@/components/schedule/ScheduleBookingWorkspace';
 import AsyncDiagnosticCard from '@/components/schedule/AsyncDiagnosticCard';
 import { PRODUCTS } from '@/app/lib/products';
 
@@ -161,9 +162,15 @@ export default function SchedulePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
             {/* Left: Cal.com Embed & Async Fallback */}
             <div className="lg:col-span-8 space-y-8 flex flex-col">
-              <div className="bg-white border border-[var(--line)] rounded-2xl p-4 sm:p-6 shadow-sm min-h-[660px] flex flex-col relative overflow-hidden">
-                <CalEmbed calLink="richard-ewing-2cevwb" />
-              </div>
+              <Suspense
+                fallback={
+                  <div className="bg-white border border-[var(--line)] rounded-2xl p-4 sm:p-6 shadow-sm min-h-[660px] flex flex-col relative overflow-hidden">
+                    <CalEmbed calLink="richard-ewing-2cevwb" />
+                  </div>
+                }
+              >
+                <ScheduleBookingWorkspace />
+              </Suspense>
 
               {/* Idea 2: Async Diagnostic Review Fallback */}
               <AsyncDiagnosticCard />
@@ -199,6 +206,12 @@ export default function SchedulePage() {
                     <CheckCircle2 className="w-4 h-4 text-[var(--forest)] shrink-0 mt-0.5" />
                     <span>
                       <strong className="text-[var(--ink)]">Executive Retainers:</strong> Introductory briefing for enterprise teams and PE portfolio review.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[var(--forest)] shrink-0 mt-0.5" />
+                    <span>
+                      <strong className="text-[var(--ink)]">Complimentary Intro &amp; Partner Calls (15 or 30 Min):</strong> Zero-dollar booking tabs above for sponsorship inquiries, media, and open consulting scoping.
                     </span>
                   </li>
                 </ul>

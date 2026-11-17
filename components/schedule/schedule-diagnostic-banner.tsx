@@ -239,7 +239,12 @@ const SOURCE_CONFIGS: Record<string, DiagnosticSourceConfig> = {
   'sponsorship': {
     title: 'Direct Editorial Sponsorship & Media Kit Onboarding',
     badgeLabel: '624 Pages Across 8 Sections',
-    description: 'Select a 15-minute slot below to confirm category exclusivity, card copy, and launch dates across our 8 technical research sections.',
+    description: 'The Free 15-Min Quick Call tab is pre-selected below. Pick any open time slot to review traffic quality, card copy, and launch dates across our 8 research sections.',
+  },
+  'open-call': {
+    title: '30-Minute Open Consulting & Scoping Call',
+    badgeLabel: 'Complimentary 30-Min Slot',
+    description: 'The Free 30-Min Open Call tab is pre-selected below. Pick a time to discuss sprint fit, advisory scope, or enterprise requirements.',
   },
   'chatgpt-business': {
     title: 'Direct Executive Session from ChatGPT Business Profile',

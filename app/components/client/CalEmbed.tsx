@@ -14,6 +14,8 @@ export default function CalEmbed({
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
+  const embedId = `cal-booking-embed-${calLink.replace(/[^a-z0-9]/gi, '-').toLowerCase()}`;
+
   useEffect(() => {
     let isMounted = true;
 
@@ -24,7 +26,7 @@ export default function CalEmbed({
       if (Cal) {
         Cal('init', { origin: 'https://app.cal.com' });
         Cal('inline', {
-          elementOrSelector: '#cal-booking-embed',
+          elementOrSelector: `#${embedId}`,
           calLink: calLink,
           layout: 'month_view'
         });
@@ -59,12 +61,12 @@ export default function CalEmbed({
     return () => {
       isMounted = false;
     };
-  }, [calLink]);
+  }, [calLink, embedId]);
 
   return (
     <div className={`w-full min-h-[640px] flex flex-col relative ${className}`} ref={containerRef}>
       <div
-        id="cal-booking-embed"
+        id={embedId}
         className="w-full min-h-[640px] flex-1 rounded-2xl overflow-hidden"
       >
         {/* Interactive iframe fallback */}
@@ -74,7 +76,7 @@ export default function CalEmbed({
           height="100%"
           frameBorder="0"
           className="min-h-[640px] w-full border-0 rounded-2xl"
-          title="Schedule an Executive Advisory Session with Richard Ewing"
+          title={`Schedule a Session with Richard Ewing (${calLink})`}
         />
       </div>
     </div>
