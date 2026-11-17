@@ -271,7 +271,7 @@ export default function EditorialAdSlot({
           SPONSOR THIS RESEARCH DIRECTORY
         </span>
         <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-zinc-100 border border-zinc-200 font-mono text-[10px] font-bold text-zinc-700">
-          Verified Cloudflare Telemetry: 13,690+ Monthly Readers
+          Verified Cloudflare Telemetry: 15,350+ Monthly Readers
         </span>
       </div>
 
@@ -291,7 +291,7 @@ export default function EditorialAdSlot({
           Reserve a Sponsor Slot -&gt;
         </Link>
         <span className="inline-flex items-center min-h-[44px] px-3.5 py-2 rounded-xl bg-[#FAF9F6] border border-zinc-200 font-mono text-[11px] font-bold text-zinc-700">
-          375 Technical Pages · Zero Popups
+          624 Technical Pages · Zero Popups
         </span>
       </div>
     </aside>

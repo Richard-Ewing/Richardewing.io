@@ -89,51 +89,79 @@ export default function SponsorshipMediaKit() {
             Direct B2B Advertising &amp; Editorial Sponsorships
           </div>
           <h2 className="text-2xl sm:text-3xl font-grotesk font-bold text-zinc-950 mb-3">
-            Sponsor Our Scoped Technical Directories (375 Pages)
+            Sponsor Our 8 Technical Research Sections (624 Pages)
           </h2>
           <p className="text-sm sm:text-base text-zinc-700 leading-relaxed font-medium">
-            Place a native, zero-tracker sponsor card directly inside our highest-read search pages without competing against programmatic banner noise. Homepage, pricing, and diagnostic calculators stay strictly ad-free.
+            When you book a slot, I shut off programmatic Google ads across your chosen pages and place one static partner card at the bottom of each article. Homepage, pricing, and diagnostic calculators stay completely ad-free.
           </p>
         </div>
 
         {/* Verified 30-Day Cloudflare Human Readout */}
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-6">
           <div className="rounded-2xl border border-zinc-200 bg-[#FAF9F6] p-4">
             <div className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-600 mb-1">
-              30-Day Scoped Pool
+              30-Day Verified Pool
             </div>
-            <div className="font-grotesk text-2xl font-bold text-zinc-950">13,690</div>
+            <div className="font-grotesk text-2xl font-bold text-zinc-950">15,352</div>
             <div className="text-xs font-semibold text-zinc-700 mt-0.5">
-              Verified human reads
+              Across 624 pages in 8 sections
             </div>
           </div>
           <div className="rounded-2xl border border-zinc-200 bg-[#FAF9F6] p-4">
             <div className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-600 mb-1">
-              /glossary/* (122 pages)
+              /glossary + /answers
             </div>
-            <div className="font-grotesk text-2xl font-bold text-zinc-950">6,480</div>
+            <div className="font-grotesk text-2xl font-bold text-zinc-950">6,017</div>
             <div className="text-xs font-semibold text-zinc-700 mt-0.5">
-              Monthly human views
+              228 pages monthly views
             </div>
           </div>
           <div className="rounded-2xl border border-zinc-200 bg-[#FAF9F6] p-4">
             <div className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-600 mb-1">
-              /blog/* (131 pages)
+              /blog + /articles + /compare
             </div>
-            <div className="font-grotesk text-2xl font-bold text-zinc-950">3,620</div>
+            <div className="font-grotesk text-2xl font-bold text-zinc-950">5,322</div>
             <div className="text-xs font-semibold text-zinc-700 mt-0.5">
-              Monthly human views
+              228 pages monthly views
             </div>
           </div>
           <div className="rounded-2xl border border-zinc-200 bg-[#FAF9F6] p-4">
             <div className="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-600 mb-1">
-              /concepts/* (122 pages)
+              /concepts + /framework + /failures
             </div>
-            <div className="font-grotesk text-2xl font-bold text-zinc-950">3,590</div>
+            <div className="font-grotesk text-2xl font-bold text-zinc-950">4,013</div>
             <div className="text-xs font-semibold text-zinc-700 mt-0.5">
-              Monthly human views
+              168 pages monthly views
             </div>
           </div>
+        </div>
+
+        {/* 8-Section Granular Breakdown */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+          {[
+            { path: '/glossary', pages: 136, reads: '5,134' },
+            { path: '/concepts', pages: 133, reads: '3,132' },
+            { path: '/blog', pages: 134, reads: '2,748' },
+            { path: '/articles', pages: 46, reads: '1,577' },
+            { path: '/compare', pages: 48, reads: '997' },
+            { path: '/answers', pages: 92, reads: '883' },
+            { path: '/framework', pages: 19, reads: '593' },
+            { path: '/failures', pages: 16, reads: '288' },
+          ].map((sec) => (
+            <div
+              key={sec.path}
+              className="rounded-xl border border-zinc-200 bg-[#FAF9F6] px-3.5 py-2.5 flex items-center justify-between gap-2"
+            >
+              <div>
+                <div className="font-mono text-xs font-bold text-zinc-950">{sec.path}</div>
+                <div className="text-[11px] font-medium text-zinc-600">{sec.pages} pages</div>
+              </div>
+              <div className="text-right">
+                <div className="font-grotesk text-sm font-bold text-zinc-950">{sec.reads}</div>
+                <div className="text-[10px] font-mono text-zinc-600">reads/30d</div>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Sponsorship Package Selector */}

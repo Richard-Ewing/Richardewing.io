@@ -28,32 +28,32 @@ export const ACTIVE_DIRECT_SPONSORS: DirectSponsorCampaign[] = [];
 export const SPONSORSHIP_PACKAGES: SponsorshipPackage[] = [
   {
     id: 'glossary-pillar',
-    name: 'Glossary Pillar Exclusive',
+    name: 'Glossary & Role Answers',
     priceDisplay: '$1,500/mo',
     monthlyPriceUsd: 1500,
-    trafficSummary: '6,480 monthly human reads across 122 glossary and pillar pages',
-    pageCoverage: '/glossary, /glossary/pillars/*, and /glossary/[slug]',
+    trafficSummary: '6,017 monthly human reads across 228 glossary definitions and role Q&A pages',
+    pageCoverage: '/glossary/* (136 pages, 5,134 reads) and /answers/* (92 pages, 883 reads)',
     idealFor: 'FinOps platforms, Cloud Cost governance, and SaaS metrics software',
     pillars: ['glossary'],
   },
   {
     id: 'editorial-concepts',
-    name: 'Essays & Canonical Concepts',
+    name: 'Architecture, Essays & Teardowns',
     priceDisplay: '$1,500/mo',
     monthlyPriceUsd: 1500,
-    trafficSummary: '7,210 monthly human reads across 253 blog essays and canonical concept specs',
-    pageCoverage: '/blog/* (3,620 reads) and /concepts/* (3,590 reads)',
-    idealFor: 'LLM observability, AI guardrails, and engineering intelligence tools',
+    trafficSummary: '9,335 monthly human reads across 396 architecture specs, essays, comparisons, and post-mortems',
+    pageCoverage: '/concepts, /blog, /articles, /compare, /framework, and /failures (396 pages)',
+    idealFor: 'MCP auth, LLM observability, AI security guardrails, and developer infrastructure',
     pillars: ['blog', 'concepts'],
   },
   {
     id: 'all-three-exclusive',
-    name: 'Category Exclusive Bundle (All 3 Sections)',
+    name: 'Category Exclusive (All 8 Sections)',
     priceDisplay: '$2,500/mo',
     monthlyPriceUsd: 2500,
-    trafficSummary: '13,690 monthly human reads across all 375 technical pages plus Monday briefing mention',
-    pageCoverage: 'Full share-of-voice across /glossary/*, /blog/*, and /concepts/*',
-    idealFor: 'Series A to Enterprise B2B vendors replacing low-intent banner buys',
+    trafficSummary: '15,352 monthly human reads across all 624 technical pages plus Monday briefing mention',
+    pageCoverage: 'Full category exclusivity across /glossary, /concepts, /blog, /articles, /compare, /answers, /framework, and /failures',
+    idealFor: 'Series A to Enterprise B2B vendors locking out category competitors site-wide',
     pillars: ['glossary', 'blog', 'concepts'],
   },
 ];
@@ -70,33 +70,33 @@ export const PILLAR_TELEMETRY: Record<
   }
 > = {
   glossary: {
-    label: 'Glossary & Pillars',
-    monthlyReads: 6480,
-    pageCount: 122,
+    label: 'Glossary & Role Answers',
+    monthlyReads: 6017,
+    pageCount: 228,
     houseHeadline:
       'Put your FinOps, Cloud Cost, or AI Governance platform in front of CFOs, CTOs, and VPs of Engineering.',
     houseBody:
-      'Reserve a native editorial card across 122 glossary definitions and pillar guides reading 6,480 verified human sessions every 30 days. Zero tracking bloat.',
+      'Reserve a static partner card across 228 glossary definitions and role Q&As generating 6,017 verified human reads every 30 days. Zero tracking bloat.',
     audienceTitle: 'Finance & Platform Leadership',
   },
   blog: {
-    label: 'Research Blog & Teardowns',
-    monthlyReads: 3620,
-    pageCount: 131,
+    label: 'Essays, Articles & Comparisons',
+    monthlyReads: 5322,
+    pageCount: 228,
     houseHeadline:
       'Sponsor weekly SaaS margin and AI unit-economics teardowns read by engineering and finance leaders.',
     houseBody:
-      'Reach 3,620 monthly human readers across 131 long-form P&L teardowns and architectural audits with flat-rate category exclusivity.',
+      'Reach 5,322 monthly human readers across 228 P&L teardowns, field articles, and software comparisons with flat-rate category exclusivity.',
     audienceTitle: 'Engineering & Product Executives',
   },
   concepts: {
-    label: 'Canonical Research Specs',
-    monthlyReads: 3590,
-    pageCount: 122,
+    label: 'Concepts, Frameworks & Failures',
+    monthlyReads: 4013,
+    pageCount: 168,
     houseHeadline:
-      'Place your developer or AI infrastructure tool alongside canonical software economics specifications.',
+      'Put your MCP auth, AI security, or developer platform alongside canonical engineering specs.',
     houseBody:
-      'Connect with 3,590 monthly technical buyers evaluating runtime governance, cost attribution, and software capital controls across 122 concept pages.',
+      'Reach 4,013 monthly technical buyers evaluating runtime governance, scoped permissions, and cost controls across 168 specs, frameworks, and failure post-mortems.',
     audienceTitle: 'Principal Architects & Technical Founders',
   },
 };

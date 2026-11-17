@@ -504,6 +504,15 @@ If the answer is no, rewrite it.
 
 ---
 
+# 31. HWS-Email v1.0 (Founder & Deal-Desk Email Standard)
+
+1. **First-Person Only (`I`, `my`)**: Never write corporate `"We offer"` or third-person agency copy on `richardewing.io`. Write as Richard speaking person-to-person from his own desk.
+2. **Zero Code Globs or Ad-Tech Jargon**: Never put URL wildcards (`/compare/*`) or unexplained internal terms (`"8 directories"`, `"single pillar"`, `"editorial sponsor card"`) in outreach emails. Use plain English and 1-2 real, full URLs when helpful.
+3. **Lead With Buyer Reality (10th Thought)**: Open with the concrete operational failure bringing CTOs, CFOs, VPs of Engineering, or Platform Engineers to those pages (such as MCP servers sharing god-mode API keys in production, surprise token invoices, or PR review bottlenecks), never generic traffic chest-beating.
+4. **Short, Blunt, Peer-to-Peer**: Keep cold emails under 95 words across 3 uneven paragraphs. Allow natural contractions (`it's`, `I'm`, `don't`). Zero exclamation points, zero needy SDR closers (`"Worth locking in for Q4/Q1?"`), zero literal en/em-dashes (`\u2013` / `\u2014`), and zero HWS-banned buzzwords.
+
+---
+
 # FINAL PRE-PUBLISH AUDIT (16-Point Checklist)
 
 Before publishing any article, LinkedIn post, newsletter, publication description, curriculum module, or landing copy, run this audit in order:

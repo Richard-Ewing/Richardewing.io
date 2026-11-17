@@ -238,8 +238,8 @@ const SOURCE_CONFIGS: Record<string, DiagnosticSourceConfig> = {
   },
   'sponsorship': {
     title: 'Direct Editorial Sponsorship & Media Kit Onboarding',
-    badgeLabel: '375 Scoped Technical Pages',
-    description: 'Select a short onboarding slot below to confirm category exclusivity, creative copy, and launch dates across /glossary, /blog, and /concepts.',
+    badgeLabel: '624 Pages Across 8 Sections',
+    description: 'Select a 15-minute slot below to confirm category exclusivity, card copy, and launch dates across our 8 technical research sections.',
   },
   'chatgpt-business': {
     title: 'Direct Executive Session from ChatGPT Business Profile',
