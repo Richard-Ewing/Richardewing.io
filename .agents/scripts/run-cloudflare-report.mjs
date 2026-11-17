@@ -2,47 +2,128 @@ import dns from 'dns';
 dns.setDefaultResultOrder('ipv4first');
 
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
 import crypto from 'crypto';
+import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 
-const tomlPath = 'C:\\Users\\richa\\AppData\\Roaming\\xdg.config\\.wrangler\\config\\default.toml';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const rootDir = path.resolve(__dirname, '../../');
 
-async function getValidToken() {
+function stripQuotes(val) {
+  return String(val || '').trim().replace(/^['"]|['"]$/g, '').trim();
+}
+
+function loadRepoEnv() {
+  const merged = {};
+  for (const rel of ['.env.production.local', '.env.local']) {
+    const fullPath = path.join(rootDir, rel);
+    if (!fs.existsSync(fullPath)) continue;
+    try {
+      Object.assign(merged, dotenv.parse(fs.readFileSync(fullPath, 'utf8')));
+    } catch {
+      // Ignore unreadable optional env file
+    }
+  }
+  return merged;
+}
+
+function findWranglerToml() {
+  const candidates = [
+    path.join(os.homedir(), 'AppData', 'Roaming', 'xdg.config', '.wrangler', 'config', 'default.toml'),
+    path.join(os.homedir(), '.wrangler', 'config', 'default.toml'),
+  ];
+  return candidates.find(p => fs.existsSync(p)) || null;
+}
+
+async function resolveCloudflareAuth(repoEnv) {
+  const envToken = stripQuotes(
+    process.env.CLOUDFLARE_API_TOKEN ||
+    process.env.CLOUDFLARE_REPORT_API_TOKEN ||
+    repoEnv.CLOUDFLARE_API_TOKEN ||
+    repoEnv.CLOUDFLARE_REPORT_API_TOKEN
+  );
+  if (envToken) {
+    return { token: envToken, source: 'CLOUDFLARE_API_TOKEN', authError: null };
+  }
+
+  const tomlPath = findWranglerToml();
+  if (!tomlPath) {
+    return {
+      token: null,
+      source: 'none',
+      authError: 'No CLOUDFLARE_API_TOKEN in environment/.env.local and no Wrangler config found.',
+    };
+  }
+
   let content = fs.readFileSync(tomlPath, 'utf8');
+  const oauthMatch = content.match(/oauth_token\s*=\s*"([^"]+)"/);
   const expMatch = content.match(/expiration_time\s*=\s*"([^"]+)"/);
   const refreshMatch = content.match(/refresh_token\s*=\s*"([^"]+)"/);
 
-  if (expMatch && refreshMatch) {
-    const expTime = new Date(expMatch[1]).getTime();
-    if (Date.now() > expTime - 60000) {
-      console.log('Token nearing expiration or expired. Refreshing token...');
-      const body = new URLSearchParams({
-        grant_type: 'refresh_token',
-        refresh_token: refreshMatch[1],
-        client_id: '54d11594-84e4-41aa-b438-e81b8fa78ee7',
-      });
-      const res = await fetch('https://dash.cloudflare.com/oauth2/token', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString(),
-        signal: AbortSignal.timeout(5000),
-      }).then(r => r.json());
-
-      if (res.access_token) {
-        console.log('Token refresh successful!');
-        const newExp = new Date(Date.now() + (res.expires_in || 3600) * 1000).toISOString();
-        content = content
-          .replace(/oauth_token\s*=\s*"[^"]+"/, `oauth_token = "${res.access_token}"`)
-          .replace(/expiration_time\s*=\s*"[^"]+"/, `expiration_time = "${newExp}"`);
-        if (res.refresh_token) {
-          content = content.replace(/refresh_token\s*=\s*"[^"]+"/, `refresh_token = "${res.refresh_token}"`);
-        }
-        fs.writeFileSync(tomlPath, content, 'utf8');
-        return res.access_token;
-      }
-    }
+  if (!oauthMatch || !oauthMatch[1]) {
+    return { token: null, source: 'none', authError: `Missing oauth_token in ${tomlPath}.` };
   }
-  return content.match(/oauth_token\s*=\s*"([^"]+)"/)[1];
+
+  const expTime = expMatch ? new Date(expMatch[1]).getTime() : 0;
+  if (expTime > 0 && Date.now() <= expTime - 60000) {
+    return { token: oauthMatch[1], source: 'wrangler_oauth', authError: null };
+  }
+
+  if (!refreshMatch || !refreshMatch[1]) {
+    return { token: null, source: 'none', authError: 'Wrangler OAuth token expired and no refresh_token is available.' };
+  }
+
+  console.log('Wrangler OAuth token nearing expiration or expired. Attempting refresh...');
+  try {
+    const body = new URLSearchParams({
+      grant_type: 'refresh_token',
+      refresh_token: refreshMatch[1],
+      client_id: '54d11594-84e4-41aa-b438-e81b8fa78ee7',
+    });
+    const res = await fetch('https://dash.cloudflare.com/oauth2/token', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body.toString(),
+      signal: AbortSignal.timeout(15000),
+    });
+    const json = await res.json().catch(() => ({}));
+    if (res.ok && json.access_token) {
+      console.log('Token refresh successful!');
+      const newExp = new Date(Date.now() + (json.expires_in || 3600) * 1000).toISOString();
+      content = content
+        .replace(/oauth_token\s*=\s*"[^"]+"/, `oauth_token = "${json.access_token}"`)
+        .replace(/expiration_time\s*=\s*"[^"]+"/, `expiration_time = "${newExp}"`);
+      if (json.refresh_token) {
+        content = content.replace(/refresh_token\s*=\s*"[^"]+"/, `refresh_token = "${json.refresh_token}"`);
+      }
+      fs.writeFileSync(tomlPath, content, 'utf8');
+      return { token: json.access_token, source: 'wrangler_oauth_refreshed', authError: null };
+    }
+    const errCode = json.error || `HTTP_${res.status}`;
+    const errDesc = json.error_description || 'Refresh token invalid or expired.';
+    return {
+      token: null,
+      source: 'none',
+      authError: `Wrangler OAuth refresh failed (${errCode}): ${errDesc}`,
+    };
+  } catch (err) {
+    return {
+      token: null,
+      source: 'none',
+      authError: `Wrangler OAuth refresh error (${err.name || 'Error'}): ${err.message}`,
+    };
+  }
+}
+
+function formatGraphqlErrors(resJson) {
+  if (!resJson || typeof resJson !== 'object') return 'Empty GraphQL response';
+  if (Array.isArray(resJson.errors) && resJson.errors.length > 0) {
+    return resJson.errors.map(e => e.message || JSON.stringify(e)).join('; ');
+  }
+  return null;
 }
 
 const accountId = '5e9b0584ad0ce1d524a631f1bc650ba2';
@@ -56,12 +137,27 @@ const zones = [
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 async function runAudit() {
-  const token = await getValidToken();
-  const headers = { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' };
+  const repoEnv = loadRepoEnv();
+  const cfAuth = await resolveCloudflareAuth(repoEnv);
+  let hasDegradedCloudflareAuth = !cfAuth.token;
+  const headers = cfAuth.token
+    ? { Authorization: 'Bearer ' + cfAuth.token, 'Content-Type': 'application/json' }
+    : null;
 
   const nowIso = new Date().toISOString();
   const ptStr = new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles', dateStyle: 'full', timeStyle: 'short' });
-  console.log(`=== FULL EXECUTIVE AUDIT REPORT: ${ptStr.toUpperCase()} (${nowIso} UTC) ===\n`);
+  console.log(`=== FULL EXECUTIVE AUDIT REPORT: ${ptStr.toUpperCase()} (${nowIso} UTC) ===`);
+  console.log(`Auth Source: ${cfAuth.source}\n`);
+
+  if (!cfAuth.token) {
+    console.log('[CLOUDFLARE_AUTH_BLOCKED]');
+    console.log(`  Reason : ${cfAuth.authError}`);
+    console.log('  Action : Pillars 1 through 6B skipped (zero-mock guard: no fake 0s emitted).');
+    console.log('  Fix 1  : Add CLOUDFLARE_API_TOKEN=<token> to d:/Antigravity_RichardEwing.io/.env.local with:');
+    console.log('           Account -> Account Analytics -> Read, Account -> Workers Scripts -> Edit,');
+    console.log('           Zone -> Analytics -> Read (All zones), Zone -> Firewall Services -> Edit (All zones)');
+    console.log('  Fix 2  : Or run `npx wrangler login` in an interactive terminal.\n');
+  } else {
 
   const dateGeq = new Date(Date.now() - 15 * 24 * 3600 * 1000).toISOString().slice(0, 10);
   const qCombined = `
@@ -101,74 +197,82 @@ async function runAudit() {
     }),
   }).then(r => r.json());
 
+  const combinedErr = formatGraphqlErrors(resCombined);
   const dailyAccountTotals = {};
   const domainSummaries = {
     'richardewing.io': { days: {} },
     'careerwin.ai': { days: {} },
     'exogram.ai': { days: {} },
   };
+  let sortedDates = [];
 
-  const zoneResults = [
-    { name: 'richardewing.io', groups: resCombined.data?.viewer?.z1?.[0]?.httpRequests1dGroups || [] },
-    { name: 'careerwin.ai', groups: resCombined.data?.viewer?.z2?.[0]?.httpRequests1dGroups || [] },
-    { name: 'exogram.ai', groups: resCombined.data?.viewer?.z3?.[0]?.httpRequests1dGroups || [] },
-  ];
+  if (combinedErr) {
+    hasDegradedCloudflareAuth = true;
+    console.log('--- PILLAR 1 & 2: EDGE TRAFFIC & PAGEVIEWS (SKIPPED) ---');
+    console.log(`[CLOUDFLARE_GRAPHQL_PERMISSION_ERROR] ${combinedErr}\n`);
+  } else {
+    const zoneResults = [
+      { name: 'richardewing.io', groups: resCombined.data?.viewer?.z1?.[0]?.httpRequests1dGroups || [] },
+      { name: 'careerwin.ai', groups: resCombined.data?.viewer?.z2?.[0]?.httpRequests1dGroups || [] },
+      { name: 'exogram.ai', groups: resCombined.data?.viewer?.z3?.[0]?.httpRequests1dGroups || [] },
+    ];
 
-  for (const zr of zoneResults) {
-    for (const g of zr.groups) {
-      const d = g.dimensions.date;
-      if (!dailyAccountTotals[d]) {
-        dailyAccountTotals[d] = { requests: 0, cached: 0, threats: 0, bytes: 0, pageViews: 0, uniques: 0 };
+    for (const zr of zoneResults) {
+      for (const g of zr.groups) {
+        const d = g.dimensions.date;
+        if (!dailyAccountTotals[d]) {
+          dailyAccountTotals[d] = { requests: 0, cached: 0, threats: 0, bytes: 0, pageViews: 0, uniques: 0 };
+        }
+        dailyAccountTotals[d].requests += g.sum.requests;
+        dailyAccountTotals[d].cached += g.sum.cachedRequests;
+        dailyAccountTotals[d].threats += g.sum.threats;
+        dailyAccountTotals[d].bytes += g.sum.bytes;
+        dailyAccountTotals[d].pageViews += g.sum.pageViews;
+        dailyAccountTotals[d].uniques += g.uniq.uniques;
+
+        domainSummaries[zr.name].days[d] = {
+          requests: g.sum.requests,
+          cached: g.sum.cachedRequests,
+          threats: g.sum.threats,
+          bytes: g.sum.bytes,
+          pageViews: g.sum.pageViews,
+          uniques: g.uniq.uniques,
+        };
       }
-      dailyAccountTotals[d].requests += g.sum.requests;
-      dailyAccountTotals[d].cached += g.sum.cachedRequests;
-      dailyAccountTotals[d].threats += g.sum.threats;
-      dailyAccountTotals[d].bytes += g.sum.bytes;
-      dailyAccountTotals[d].pageViews += g.sum.pageViews;
-      dailyAccountTotals[d].uniques += g.uniq.uniques;
-
-      domainSummaries[zr.name].days[d] = {
-        requests: g.sum.requests,
-        cached: g.sum.cachedRequests,
-        threats: g.sum.threats,
-        bytes: g.sum.bytes,
-        pageViews: g.sum.pageViews,
-        uniques: g.uniq.uniques,
-      };
     }
-  }
 
-  console.log('--- PILLAR 1: DAILY EDGE TRAFFIC & CACHING (ACCOUNT-WIDE) ---');
-  console.log('Date       | Total Req  | Cached Req (%) | Threats Blocked | Bandwidth (MB) | Pageviews');
-  console.log('-----------+------------+----------------+-----------------+----------------+----------');
-  const sortedDates = Object.keys(dailyAccountTotals).sort();
-  for (const d of sortedDates) {
-    const day = dailyAccountTotals[d];
-    const cPct = day.requests > 0 ? ((day.cached / day.requests) * 100).toFixed(1) + '%' : '0.0%';
-    const mb = (day.bytes / (1024 * 1024)).toFixed(1);
-    console.log(
-      `${d} | ${String(day.requests).padStart(10)} | ${cPct.padStart(14)} | ${String(day.threats).padStart(15)} | ${mb.padStart(14)} | ${String(day.pageViews).padStart(9)}`
-    );
-  }
-
-  console.log('\n--- PILLAR 2: RECENT HUMAN PAGEVIEWS & UNIQUES (BY DOMAIN) ---');
-  const todayUtcStr = new Date().toISOString().slice(0, 10);
-  const elapsedUtcHours = ((Date.now() - Date.parse(todayUtcStr + 'T00:00:00Z')) / 3600000).toFixed(1);
-  const targetDays = sortedDates.slice(-7);
-  for (const td of targetDays) {
-    const label = td === todayUtcStr
-      ? ` (Live UTC Pacing: ${elapsedUtcHours}h elapsed)`
-      : ` (${td} Full UTC Day CLOSED)`;
-    console.log(`\nDate: ${td}${label}`);
-    let dayPvs = 0;
-    let dayUniques = 0;
-    for (const z of zones) {
-      const stats = domainSummaries[z.name]?.days[td] || { pageViews: 0, uniques: 0, requests: 0 };
-      dayPvs += stats.pageViews;
-      dayUniques += stats.uniques;
-      console.log(`  ${z.name.padEnd(16)}: ${String(stats.pageViews).padStart(5)} pageviews | ${String(stats.uniques).padStart(5)} unique visitors | (${stats.requests.toLocaleString()} total reqs)`);
+    console.log('--- PILLAR 1: DAILY EDGE TRAFFIC & CACHING (ACCOUNT-WIDE) ---');
+    console.log('Date       | Total Req  | Cached Req (%) | Threats Blocked | Bandwidth (MB) | Pageviews');
+    console.log('-----------+------------+----------------+-----------------+----------------+----------');
+    sortedDates = Object.keys(dailyAccountTotals).sort();
+    for (const d of sortedDates) {
+      const day = dailyAccountTotals[d];
+      const cPct = day.requests > 0 ? ((day.cached / day.requests) * 100).toFixed(1) + '%' : '0.0%';
+      const mb = (day.bytes / (1024 * 1024)).toFixed(1);
+      console.log(
+        `${d} | ${String(day.requests).padStart(10)} | ${cPct.padStart(14)} | ${String(day.threats).padStart(15)} | ${mb.padStart(14)} | ${String(day.pageViews).padStart(9)}`
+      );
     }
-    console.log(`  Ecosystem Total : ${dayPvs.toLocaleString()} pageviews | ${dayUniques.toLocaleString()} unique visitors`);
+
+    console.log('\n--- PILLAR 2: RECENT HUMAN PAGEVIEWS & UNIQUES (BY DOMAIN) ---');
+    const todayUtcStr = new Date().toISOString().slice(0, 10);
+    const elapsedUtcHours = ((Date.now() - Date.parse(todayUtcStr + 'T00:00:00Z')) / 3600000).toFixed(1);
+    const targetDays = sortedDates.slice(-7);
+    for (const td of targetDays) {
+      const label = td === todayUtcStr
+        ? ` (Live UTC Pacing: ${elapsedUtcHours}h elapsed)`
+        : ` (${td} Full UTC Day CLOSED)`;
+      console.log(`\nDate: ${td}${label}`);
+      let dayPvs = 0;
+      let dayUniques = 0;
+      for (const z of zones) {
+        const stats = domainSummaries[z.name]?.days[td] || { pageViews: 0, uniques: 0, requests: 0 };
+        dayPvs += stats.pageViews;
+        dayUniques += stats.uniques;
+        console.log(`  ${z.name.padEnd(16)}: ${String(stats.pageViews).padStart(5)} pageviews | ${String(stats.uniques).padStart(5)} unique visitors | (${stats.requests.toLocaleString()} total reqs)`);
+      }
+      console.log(`  Ecosystem Total : ${dayPvs.toLocaleString()} pageviews | ${dayUniques.toLocaleString()} unique visitors`);
+    }
   }
 
   await sleep(400);
@@ -286,6 +390,11 @@ async function runAudit() {
     }),
   }).then(r => r.json());
 
+  const scriptsErr = formatGraphqlErrors(resAllScripts);
+  if (scriptsErr) {
+    hasDegradedCloudflareAuth = true;
+    console.log(`  [CLOUDFLARE_GRAPHQL_PERMISSION_ERROR] ${scriptsErr}`);
+  } else {
   const acctWorkers = resAllScripts.data?.viewer?.accounts?.[0] || {};
   const sumByScript = (rows, name) => {
     const out = { requests: 0, cpuTimeUs: 0, errors: 0 };
@@ -396,6 +505,7 @@ async function runAudit() {
   }
   const postDailyRunRateMs = (postTotalCpuMs / postDeployHours) * 24;
   console.log(`    Post-Shield Combined Run Rate: ${(postDailyRunRateMs / 1e6).toFixed(3)}M CPU ms/day ($${((postDailyRunRateMs / 1e6) * 0.02).toFixed(3)}/day marginal)`);
+  }
 
   await sleep(700);
 
@@ -450,6 +560,11 @@ async function runAudit() {
     }),
   }).then(r => r.json());
 
+  const unifiedErr = formatGraphqlErrors(resUnified);
+  if (unifiedErr) {
+    hasDegradedCloudflareAuth = true;
+    console.log(`\n  [CLOUDFLARE_GRAPHQL_PERMISSION_ERROR] Unified 24h / Pillars 4-6 skipped: ${unifiedErr}`);
+  } else {
   const uViewer = resUnified.data?.viewer || {};
   console.log('\n  [Hourly Worker CPU Curve - Past 16h UTC]');
   const byHour = {};
@@ -502,6 +617,7 @@ async function runAudit() {
     console.log(`  ${String(sg.count).padStart(4)} pageviews : /schedule [${sg.dimensions.clientCountryName} - ${sg.dimensions.clientDeviceType}]`);
   }
   console.log(`  Total Exact /schedule Views (24h): ${totalSchedPvs}`);
+  }
 
   console.log('\n--- PILLAR 6B: WAF 403 BLOCKS & VERIFIED SEARCH/AI CRAWLERS (24H) ---');
   try {
@@ -575,6 +691,11 @@ async function runAudit() {
       }),
     }).then(r => r.json());
 
+    const wafErr = formatGraphqlErrors(resWaf);
+    if (wafErr) {
+      hasDegradedCloudflareAuth = true;
+      console.log(`  [CLOUDFLARE_GRAPHQL_PERMISSION_ERROR] ${wafErr}`);
+    } else {
     const trackedBots = ['bingbot', 'OAI-SearchBot', 'Applebot', 'Googlebot', 'ChatGPT-User', 'PerplexityBot', 'Claude-SearchBot'];
     let totalWafReqs = 0;
     let totalWaf403 = 0;
@@ -626,17 +747,19 @@ async function runAudit() {
       if (botLine) console.log(`    Crawlers: ${botLine}`);
     }
     console.log(`  WAF Ecosystem Total: ${totalWafReqs.toLocaleString()} edge reqs | ${totalWaf403.toLocaleString()} blocked 403`);
+    }
   } catch (e) {
     console.log('  WAF/Crawler query error:', e.message);
   }
+  } // End Cloudflare API Pillars 1-6B
 
   await sleep(400);
 
   console.log('\n--- PILLAR 7: GOOGLE SEARCH CONSOLE LIVE METRICS (ALL 3 DOMAINS) ---');
   try {
-    const env = dotenv.parse(fs.readFileSync('.env.production.local', 'utf8'));
-    if (env.GOOGLE_SERVICE_ACCOUNT_JSON) {
-      const raw = env.GOOGLE_SERVICE_ACCOUNT_JSON;
+    const gscJsonRaw = process.env.GOOGLE_SERVICE_ACCOUNT_JSON || repoEnv.GOOGLE_SERVICE_ACCOUNT_JSON;
+    if (gscJsonRaw) {
+      const raw = gscJsonRaw;
       const lines = raw.split('\n');
       const result = {};
       let currentKey = null;
@@ -747,9 +870,9 @@ async function runAudit() {
 
   console.log('\n--- PILLAR 8: STRIPE SALES & REVENUE (LIVE API) ---');
   try {
-    const env = dotenv.parse(fs.readFileSync('.env.production.local'));
-    if (env.STRIPE_SECRET_KEY) {
-      const sHeaders = { Authorization: `Bearer ${env.STRIPE_SECRET_KEY}` };
+    const stripeKey = process.env.STRIPE_SECRET_KEY || repoEnv.STRIPE_SECRET_KEY;
+    if (stripeKey) {
+      const sHeaders = { Authorization: `Bearer ${stripeKey}` };
       const balance = await fetch('https://api.stripe.com/v1/balance', { headers: sHeaders, signal: AbortSignal.timeout(8000) }).then(r => r.json());
       const sessions = await fetch('https://api.stripe.com/v1/checkout/sessions?limit=50', { headers: sHeaders, signal: AbortSignal.timeout(8000) }).then(r => r.json());
       const paid = (sessions.data || []).filter(s => s.payment_status === 'paid');
@@ -835,7 +958,7 @@ async function runAudit() {
   }
 
   console.log('\n--- PILLAR 10 (MANDATORY IN EVERY REPORT RESPONSE WITHOUT ASKING): APPEND 4-PART STRATEGIC SYNTHESIS: a) Needs Attention | b) Needs Action | c) Really Pay Close Attention To | d) Intuitions, Ideas & What You Missed ---');
-  process.exit(0);
+  process.exit(hasDegradedCloudflareAuth ? 2 : 0);
 }
 
 runAudit().catch(err => {
