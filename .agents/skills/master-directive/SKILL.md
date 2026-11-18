@@ -252,8 +252,8 @@ MOD v4.0 deeply integrates with all Google Antigravity development surfaces and 
 7. **Antigravity Customization Architecture (`.agents/`)**:
    - Hierarchical loading order: Workspace `.agents/` > Declared JSON configs > Global `~/.gemini/config/` > Built-in customizations.
    - Rules: `AGENTS.md`, `GEMINI.md`, `.agents/rules/*.md` (`always_on` vs `model_decision`, deduplication).
-   - Skills: `skills/<name>/SKILL.md` with progressive disclosure (metadata injected initially, full body read on demand via `view_file`).
-   - Agents: `.agents/agents/<name>/agent.json` with `inheritCustomizations: true`, tool allowlists, and system prompt configs.
+   - Skills: `skills/<name>/SKILL.md` with progressive disclosure (metadata injected initially, full body read on demand via `read_file`).
+   - Agents: `.agents/agents/<name>/agent.md` (workspace) and `~/.gemini/config/agents/<name>/agent.md` (global) with YAML frontmatter (`subagent: true`, `mainAgent: false`, `commandExecutionPolicy: sandbox`, verified native `tools` allowlists) and Markdown system prompts.
    - Hooks: Native lifecycle event hooks (`hooks.json` - `PostToolUse`, `Stop`, `SessionStart`).
    - MCP Servers: Model Context Protocol servers for Pinecone, Supabase, Google Cloud Data Agent Kit, and Vertex AI Search.
 8. **Generative UI Activation**:
