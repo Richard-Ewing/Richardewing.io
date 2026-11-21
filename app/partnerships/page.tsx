@@ -283,8 +283,8 @@ export default function PartnershipsPage() {
                                         </div>
                                     </div>
                                     <a
-                                        href="/api/buy/partner_licensed"
-                                        rel="nofollow noopener"
+                                        href="/api/buy/partner_licensed?source=partnerships"
+                                        rel="noopener noreferrer nofollow"
                                         className="block text-center py-3 rounded-xl bg-gradient-to-r from-cyan-700 to-emerald-700 hover:from-cyan-800 hover:to-emerald-800 text-white font-grotesk font-bold text-xs uppercase tracking-wider shadow-sm hover:opacity-95 transition-all"
                                     >
                                         Start Licensed Partnership →

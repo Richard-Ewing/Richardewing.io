@@ -2,7 +2,6 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FAQItem from '@/app/components/FAQItem';
-import { PRODUCTS } from '@/app/lib/products';
 
 export const metadata: Metadata = {
   title: 'AI Build Sprints, Automation & Advisory',
@@ -61,7 +60,7 @@ const paths = [
         period: '48-hour turnaround',
         description: 'Live screen-share session to unstick a vibe-coded app at 80% (Supabase RLS, Stripe webhooks, auth), fix a 5x AI bill spike, or prep a board/interview deck. Includes the $79 Bundle free.',
         actionLabel: 'Book 60-Min Session ($450) ↗',
-        actionHref: PRODUCTS.gut_check.paymentLink,
+        actionHref: '/api/buy/gut_check?source=services',
         external: true,
       },
       {
@@ -71,7 +70,7 @@ const paths = [
         period: 'fixed-scope (14 days)',
         description: 'Replace $5,000/mo of bloated SaaS seats and manual support/ops busywork with governed MCP + n8n workflows, kill zombie backlog, and deliver a board-ready P&L deck.',
         actionLabel: 'Reserve 14-Day Sprint ($2,500) ↗',
-        actionHref: PRODUCTS.insolvency_diagnostic.paymentLink,
+        actionHref: '/api/buy/insolvency_diagnostic?source=services',
         external: true,
       },
     ],
@@ -88,7 +87,7 @@ const paths = [
         period: 'fixed-scope (21 days)',
         description: 'We architect, code, and deploy your live production AI application or interactive calculator lead funnel on Cloudflare Edge with Supabase Auth/RLS, Stripe billing, /llms.txt, and FAQPage citation schemas built in.',
         actionLabel: 'Reserve 21-Day Build Sprint ($7,500) ↗',
-        actionHref: PRODUCTS.full_audit.paymentLink,
+        actionHref: '/api/buy/full_audit?source=services',
         external: true,
       },
       {
@@ -256,7 +255,7 @@ export default function ServicesPage() {
                         <a
                           href={offer.actionHref}
                           target="_blank"
-                          rel="noopener noreferrer"
+                          rel="noopener noreferrer nofollow"
                           className="w-full button button-gold !py-2.5 !min-h-0 text-xs !justify-center"
                         >
                           {offer.actionLabel}

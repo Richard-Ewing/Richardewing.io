@@ -103,8 +103,8 @@ export default function DiagnosticCTA({
                         {/* CTAs */}
                         <div className="flex flex-wrap items-center gap-4">
                             <a 
-                                href="/api/buy/gut_check" 
-                                rel="nofollow noopener"
+                                href="/api/buy/gut_check?source=diagnostic-cta" 
+                                rel="noopener noreferrer nofollow"
                                 className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-colors shadow-lg hover:shadow-xl ${colors.button}`}
                             >
                                 {buttonText}

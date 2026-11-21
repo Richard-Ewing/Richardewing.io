@@ -178,8 +178,8 @@ export default function GlossaryToolCTA({ slug, category, termTitle }: GlossaryT
                     <p className="mt-3 text-xs text-zinc-600">
                         Want an expert to run this for you?{' '}
                         <a
-                            href="/api/buy/gut_check"
-                            rel="nofollow noopener"
+                            href="/api/buy/gut_check?source=glossary-tool-cta"
+                            rel="noopener noreferrer nofollow"
                             className="text-purple-600 hover:text-purple-500 font-semibold underline underline-offset-2 transition-colors"
                         >
                             Book a $450 Gut-Check Call →

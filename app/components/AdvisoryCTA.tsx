@@ -13,7 +13,7 @@ const VARIANTS = {
     headline: 'Your diagnostic revealed a P&L or AI margin leak?',
     body: "Start with the $29 Operating Kit + Live Workspace, or book a 60-minute 1-on-1 P&L & AI Tear-Down to isolate the exact capital leak.",
     primaryLabel: 'Book 60-Min P&L Tear-Down',
-    primaryHref: '/api/buy/gut_check',
+    primaryHref: '/api/buy/gut_check?source=advisory-cta',
     primaryPrice: '$450',
     secondaryLabel: 'Get Operating Kit + Workspace',
     secondaryHref: '/toolkit',
@@ -26,7 +26,7 @@ const VARIANTS = {
     headline: 'Need an independent Product Economist verdict?',
     body: "60-minute live P&L & AI architecture tear-down. Bring your numbers or stack and get a 48-hour executive action memo.",
     primaryLabel: 'Book 1-on-1 Tear-Down',
-    primaryHref: '/api/buy/gut_check',
+    primaryHref: '/api/buy/gut_check?source=advisory-cta',
     primaryPrice: '$450',
     secondaryLabel: 'View All 3 Buying Paths',
     secondaryHref: '/services',
@@ -55,7 +55,7 @@ const VARIANTS = {
     primaryHref: '/services',
     primaryPrice: '',
     secondaryLabel: '1-on-1 P&L Tear-Down',
-    secondaryHref: '/api/buy/gut_check',
+    secondaryHref: '/api/buy/gut_check?source=advisory-cta',
     secondaryPrice: '$450',
     accentFrom: 'from-emerald-500/10',
     accentBorder: 'border-emerald-500/30',
@@ -99,7 +99,7 @@ export default function AdvisoryCTA({ variant, termTitle, primaryHrefOverride, p
         ) : (
           <a
             href={primaryHref}
-            rel="nofollow noopener"
+            rel="noopener noreferrer nofollow"
             className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${v.btnGradient} text-zinc-900 font-bold text-sm rounded-lg hover:opacity-90 transition-opacity shadow-lg`}
           >
             {primaryLabel} {primaryPrice && <span className="opacity-80 font-mono text-xs">({primaryPrice})</span>}
@@ -117,7 +117,7 @@ export default function AdvisoryCTA({ variant, termTitle, primaryHrefOverride, p
         ) : (
           <a
             href={v.secondaryHref}
-            rel="nofollow noopener"
+            rel="noopener noreferrer nofollow"
             className="inline-flex items-center gap-2 px-5 py-3 bg-white border border-zinc-300 text-zinc-800 font-semibold text-sm rounded-lg hover:border-zinc-400 hover:bg-zinc-50 transition-colors"
           >
             {v.secondaryLabel} {v.secondaryPrice && <span className="text-zinc-500 font-mono text-xs">({v.secondaryPrice})</span>}
@@ -148,7 +148,7 @@ export default function AdvisoryCTA({ variant, termTitle, primaryHrefOverride, p
                   60-minute live Zoom working session + 48-hour executive action memo for founders and product leaders.
                 </p>
               </div>
-              <a href="/api/buy/gut_check" rel="nofollow noopener" className="text-xs font-bold text-amber-900 hover:text-amber-950 uppercase tracking-wider inline-flex items-center gap-1">
+              <a href="/api/buy/gut_check?source=advisory-cta-compare" rel="noopener noreferrer nofollow" className="text-xs font-bold text-amber-900 hover:text-amber-950 uppercase tracking-wider inline-flex items-center gap-1">
                 Book 1-on-1 Tear-Down &rarr;
               </a>
             </div>
@@ -163,7 +163,7 @@ export default function AdvisoryCTA({ variant, termTitle, primaryHrefOverride, p
                   Hands-on 7-day forensic audit of your feature profitability, Zombie Feature carry cost, and AI unit economics.
                 </p>
               </div>
-              <a href="/api/buy/insolvency_diagnostic" rel="nofollow noopener" className="text-xs font-bold text-amber-900 hover:text-amber-950 uppercase tracking-wider inline-flex items-center gap-1">
+              <a href="/api/buy/insolvency_diagnostic?source=advisory-cta-compare" rel="noopener noreferrer nofollow" className="text-xs font-bold text-amber-900 hover:text-amber-950 uppercase tracking-wider inline-flex items-center gap-1">
                 Book Turnaround Sprint &rarr;
               </a>
             </div>

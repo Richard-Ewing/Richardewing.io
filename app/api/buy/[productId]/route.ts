@@ -5,22 +5,30 @@ import { auth } from '@clerk/nextjs/server';
 export const dynamic = 'force-dynamic';
 
 const SEARCH_CRAWLER_RE =
-    /\b(googlebot|googleother|google-extended|google-cloudvertexbot|google-notebooklm|adsbot-google|mediapartners-google|bingbot|adidxbot|applebot|applebot-extended|duckduckbot|duckassistbot|yandexbot|bravebot|slurp|oai-searchbot|chatgpt-user|gptbot|claude-searchbot|claude-user|claudebot|anthropic-ai|perplexitybot|perplexity-user|amzn-searchbot|amzn-user|amazonbot|youbot|exasearchbot|meta-externalagent|facebookexternalhit|facebookbot|facebot|linkedinbot|twitterbot|slackbot|discordbot|whatsapp|telegrambot|pinterestbot|bytespider|tiktokspider|ccbot|petalbot|semrushbot|ahrefsbot|mj12bot|dotbot|awariobot|barkrowler|dataforseobot|blexbot|serpstatbot|headlesschrome|phantomjs|playwright|puppeteer)\b/i;
+    /\b(googlebot|googleother|google-extended|google-cloudvertexbot|google-notebooklm|adsbot-google|mediapartners-google|bingbot|adidxbot|applebot|applebot-extended|duckduckbot|duckassistbot|yandexbot|bravebot|slurp|oai-searchbot|chatgpt-user|gptbot|claude-searchbot|claude-user|claudebot|anthropic-ai|perplexitybot|perplexity-user|amzn-searchbot|amzn-user|amazonbot|youbot|exasearchbot|meta-externalagent|facebookexternalhit|facebookbot|facebot|linkedinbot|twitterbot|slackbot|discordbot|whatsapp|telegrambot|pinterestbot|bytespider|tiktokspider|ccbot|petalbot|semrushbot|ahrefsbot|mj12bot|dotbot|awariobot|barkrowler|dataforseobot|blexbot|serpstatbot|headlesschrome|phantomjs|playwright|puppeteer|curl|python|go-http-client|axios|node-fetch|wget|scrapy|httpclient)\b/i;
 
 export async function GET(
     request: Request,
     { params }: { params: Promise<{ productId: string }> }
 ) {
     const ua = request.headers.get('user-agent') || '';
-    if (SEARCH_CRAWLER_RE.test(ua)) {
+    const purpose = (request.headers.get('purpose') || '').toLowerCase();
+    const secPurpose = (request.headers.get('sec-purpose') || '').toLowerCase();
+    const isPrefetchOrRsc =
+        purpose.includes('prefetch') ||
+        secPurpose.includes('prefetch') ||
+        request.headers.get('rsc') === '1' ||
+        request.headers.has('next-router-prefetch') ||
+        request.headers.has('next-router-segment-prefetch');
+    if (isPrefetchOrRsc || SEARCH_CRAWLER_RE.test(ua)) {
         return new NextResponse(
-            '<!doctype html><html><head><meta name="robots" content="noindex, follow"><title>Checkout Endpoint</title></head><body></body></html>',
+            '<!doctype html><html><head><meta name="robots" content="noindex, nofollow"><title>Checkout Endpoint</title></head><body></body></html>',
             {
                 status: 200,
                 headers: {
                     'Content-Type': 'text/html; charset=utf-8',
-                    'X-Robots-Tag': 'noindex, follow',
-                    'Cache-Control': 'private, no-cache, no-store, max-age=0',
+                    'X-Robots-Tag': 'noindex, nofollow',
+                    'Cache-Control': 'private, no-store',
                     'Cloudflare-CDN-Cache-Control': 'no-store',
                 },
             }

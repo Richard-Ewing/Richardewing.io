@@ -728,7 +728,7 @@ async function runAudit() {
       }
       for (const row of zNode.extraBots || []) {
         const p = row.dimensions?.clientRequestPath || '';
-        if (/(\.env|wp-config|\.git|actuator|phpinfo)/i.test(p)) continue;
+        if (/(\.env|wp-config|\.git|actuator|phpinfo|\.travis|\.gitlab-ci|docker-compose|terraform|database\.json|environment\.js|debug\/vars|token\.json|security\.txt)/i.test(p)) continue;
         const ua = (row.dimensions?.userAgent || '').toLowerCase();
         const name = ['PerplexityBot', 'Claude-SearchBot'].find(b => ua.includes(b.toLowerCase()));
         if (!name) continue;
