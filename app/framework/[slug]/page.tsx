@@ -38,9 +38,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     if (!fw) {
         return { title: 'Framework Pillar Not Found' };
     }
-    const rawTitle = fw.name.length < 18 ? `${fw.name} AI Operating Framework` : fw.name;
+    const rawTitle = fw.name.length < 22 ? `${fw.name} AI Framework` : fw.name;
     const baseTitle = clampSeoTitle(rawTitle, 44);
-    const metaDesc = formatSeoDescription(fw.overview);
+    const fwFallback = [
+        fw.livedExperience,
+        ...(fw.concepts || []).map((c) => c.whyItMatters || c.definition || ''),
+    ].filter(Boolean).join(' ');
+    const metaDesc = formatSeoDescription(fw.overview, fwFallback);
     const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(fw.name)}&category=Operating%20Framework`;
     return {
         title: baseTitle,

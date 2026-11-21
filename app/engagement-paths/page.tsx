@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Engagement Paths',
+  title: 'Advisory Engagement Paths & Sprints',
   description:
     'Three structured engagement paths: self-service diagnostics, focused turnaround sprints, and embedded executive leadership for technology organizations.',
   alternates: {
     canonical: 'https://www.richardewing.io/engagement-paths',
   },
   openGraph: {
-    title: 'Engagement Paths | Richard Ewing',
+    title: 'Advisory Engagement Paths & Sprints | Richard Ewing',
     description:
       'Explore the three ways to work with Product & AI Economist Richard Ewing: Diagnostics, Sprints, and Advisory.',
     url: 'https://www.richardewing.io/engagement-paths',

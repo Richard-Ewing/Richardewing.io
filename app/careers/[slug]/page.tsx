@@ -35,7 +35,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
 
     const baseTitle = clampSeoTitle(`${path.title} Career Roadmap`, 42);
-    const metaDesc = formatSeoDescription(path.seoMeta);
+    const careerFallback = [
+        path.description,
+        ...(path.manifesto || []),
+    ].filter(Boolean).join(' ');
+    const metaDesc = formatSeoDescription(path.seoMeta, careerFallback);
     const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(path.title)}&category=Career%20Roadmap`;
 
     return {

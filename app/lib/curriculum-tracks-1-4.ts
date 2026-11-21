@@ -228,7 +228,7 @@ export function populateTracks1To4(modules: Record<string, CurriculumModule>) {
                 ], 'Create a 100-day post-close plan to inject Agentic AI into a legacy B2B SaaS platform.')
             ]
         ],
-        ['3-16', 'The Innovation Tax Audit', 'Are your software assets still generating value, or are they just burning resources? A guide to auditing your portfolio and killing zombie features.', 
+        ['3-16', 'The Innovation Tax Audit', 'Audit your software portfolio to isolate zombie features burning R&D payroll and reallocate engineering capacity toward high-margin growth.', 
             ['Identify Zombie Assets', 'Apply the Rule of Two', 'Execute the Scream Test', 'Establish Sunset Committees'],
             [
                 l('Lesson 1: Diagnosing Zombie Assets', 'Every codebase harbors Zombie Assets - features that are technically alive but functionally dead. They consume compute resources, inflate test suites, and distract engineering attention, yet they deliver zero marginal value to the customer.', [

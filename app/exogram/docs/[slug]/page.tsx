@@ -21,7 +21,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     const rawTitle = doc.title.length > 27 ? doc.title : `${doc.title}: Exogram Docs`;
     const baseTitle = clampSeoTitle(rawTitle, 42);
-    const finalDesc = formatSeoDescription(doc.description);
+    const docFallback = Array.isArray(doc.content)
+        ? doc.content
+              .filter((b) => b.type === 'p' && b.text)
+              .map((b) => b.text)
+              .join(' ')
+        : '';
+    const finalDesc = formatSeoDescription(doc.description, docFallback);
     const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(doc.title)}&category=Exogram%20Docs`;
 
     return {

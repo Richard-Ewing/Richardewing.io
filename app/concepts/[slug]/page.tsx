@@ -28,9 +28,19 @@ export async function generateMetadata({ params }: ConceptPageProps): Promise<Me
   const concept = CANONICAL_CONCEPTS.find((c) => c.slug === slug);
   if (!concept) return {};
 
-  const rawDesc = concept.aeo?.shortDefinition || concept.definition;
-  const baseTitle = clampSeoTitle(`${concept.title} Research Spec`, 42);
-  const description = formatSeoDescription(rawDesc);
+  const rawDesc = concept.slug === 'ai-economist'
+    ? 'An executive operating discipline treating AI systems as variable-cost economic instruments to protect SaaS gross margins and R&D capital ROI.'
+    : (concept.aeo?.shortDefinition || concept.definition);
+  const conceptFallback = [
+    concept.definition,
+    concept.problemMapping?.problemStatement,
+    concept.problemMapping?.financialImpact,
+  ].filter(Boolean).join(' ');
+  const rawTitle = concept.slug === 'aper-metric'
+    ? 'APER: Revenue Per Engineer Formula'
+    : `${concept.title} Research Spec`;
+  const baseTitle = clampSeoTitle(rawTitle, 42);
+  const description = formatSeoDescription(rawDesc, conceptFallback);
   const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(concept.title)}&category=Canonical%20Concept`;
 
   return {

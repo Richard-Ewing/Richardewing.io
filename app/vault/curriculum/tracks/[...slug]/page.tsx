@@ -14,13 +14,32 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
     const { slug } = await params;
-    const mod = getModule(slug.join('/'));
-    if (!mod) return { title: `Module Not Found: ${slug.join('/')}`, description: `Curriculum module ${slug.join('/')} not found.` };
-    const baseTitle = clampSeoTitle(mod.title, 42);
-    const metaDescription = formatSeoDescription(
-        mod.description,
-        `Study ${mod.trackName || 'AI economics'} playbooks and diagnostics with Richard Ewing.`
-    );
+    const fullSlug = slug.join('/');
+    const mod = getModule(fullSlug);
+    if (!mod) return { title: `Module Not Found: ${fullSlug}`, description: `Curriculum module ${fullSlug} not found.` };
+    const strippedTitle = clampSeoTitle(mod.title, 42);
+    let rawCore = strippedTitle;
+    if (fullSlug === 'agentic-governance/58-5') rawCore = 'Persistence vs Authority: Agentic Track';
+    else if (fullSlug === 'agentic-governance/58-6') rawCore = 'The Transaction That Succeeds: Track 58';
+    else if (fullSlug === 'agentic-governance/58-7') rawCore = 'Supervisory Review Queue: Track 58';
+    else if (fullSlug === 'ai-product-economics/2-4') rawCore = 'RAG Architecture Economics: Product Track';
+    else if (fullSlug === 'dx-economics/17-4') rawCore = 'Platform Engineering Economics: DX Track';
+    else if (fullSlug === 'capstone/4-12') rawCore = 'AI Economics Diagnostic Tools Deep Dive';
+    else if (strippedTitle.length <= 34) rawCore = `${strippedTitle} Course`;
+    else if ([
+        'agent-governance/21-2','agent-governance/21-3','agent-governance/21-5',
+        'product-economics/5-2','ai-product-economics/2-17','tech-debt-liability/9-3',
+        'ai-operations/6-2','ai-operations/6-5','cloud-finops/7-4','agentic-governance/58-1',
+        'engineering-economics/1-7','engineering-economics/1-8','ai-product-economics/2-12','product-economics/5-7'
+    ].includes(fullSlug)) rawCore = `${clampSeoTitle(mod.title, 34)} Course`;
+    const baseTitle = clampSeoTitle(rawCore, 42);
+    const lessonProse = Array.isArray(mod.lessons)
+        ? mod.lessons.flatMap((ls: any) => (Array.isArray(ls?.content) ? ls.content : [ls?.content || ''])).join(' ')
+        : '';
+    const takeawaysProse = Array.isArray((mod as any).takeaways) ? (mod as any).takeaways.join('. ') : '';
+    const objectivesProse = Array.isArray((mod as any).objectives) ? (mod as any).objectives.join('. ') : '';
+    const fallbackProse = [lessonProse, takeawaysProse, objectivesProse].filter(Boolean).join(' ');
+    const metaDescription = formatSeoDescription(mod.description, fallbackProse);
     const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(mod.title)}&category=${encodeURIComponent(mod.trackName || 'Executive Curriculum')}`;
 
     return {

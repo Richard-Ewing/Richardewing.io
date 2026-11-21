@@ -20,8 +20,8 @@ const COMPARISONS = [
     },
     {
         slug: 'claude-code-retry-loop-prevention',
-        title: 'Claude Code retry loop prevention',
-        description: 'How to deploy retry burn engines and stop Claude Code from caught in recursive patch loops that burn API compute.',
+        title: 'Claude Code Retry Loop Prevention',
+        description: 'Deploy deterministic retry burn caps to stop Claude Code from getting caught in recursive patch loops that drain API compute and engineering budgets.',
         keywords: ['Claude Code retry loop prevention', 'Claude Code patch loop', 'recursive retry loops']
     },
     {

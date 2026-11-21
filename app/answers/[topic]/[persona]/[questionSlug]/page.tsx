@@ -39,7 +39,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!query) return {};
 
     const baseTitle = clampSeoTitle(query.seoTitle ?? query.questionHeadline, 42);
-    const metaDesc = formatSeoDescription(query.answerHtml);
+    const metaDesc = p.questionSlug === 'why-google-organic-traffic-dropped-40-percent-2026-aeo-geo'
+        ? 'Google AI Overviews, ChatGPT Search, and Perplexity answer generic definitions in chat, shifting buyer clicks to interactive tools and benchmarks.'
+        : formatSeoDescription(query.answerHtml);
     const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(query.questionHeadline)}&category=${encodeURIComponent(topicData.topicName || 'Executive Briefing')}`;
 
     return {

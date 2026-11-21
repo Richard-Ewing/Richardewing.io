@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const canonicalUrl = resolveProseGatedCanonical(article.externalUrl, selfUrl, article.content || '');
     const rawTitle = article.title.length < 18 ? `${article.title}: AI Governance Framework` : article.title;
     const baseTitle = clampSeoTitle(rawTitle, 44);
-    const metaDescription = formatSeoDescription(article.description);
+    const metaDescription = formatSeoDescription(article.description, article.content || '');
     const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(article.title)}&category=${encodeURIComponent(article.source || 'Published Work')}`;
 
     return {

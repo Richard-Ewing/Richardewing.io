@@ -56,7 +56,7 @@ export function populateTrack24(modules: Record<string, CurriculumModule>) {
     modules['ai-economics/24-3'] = m(
         '24-3',
         '24.3 Power User Liability and Monetization',
-        'Discover how highly engaged users actively destroy product margins under flat-rate subscription models, and how to restructure monetization for AI features.',
+        'Audit how power users erase SaaS gross margins under flat-rate pricing and restructure AI tiers around usage caps and cost attribution.',
         'AI Economics & Margin Engineering',
         [
             'The Power User Paradox: Why your most active and loyal customers are mathematically your biggest financial liabilities.',

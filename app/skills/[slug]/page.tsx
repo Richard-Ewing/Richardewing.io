@@ -24,7 +24,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const cleanTitle = skill.title;
     const rawCore = cleanTitle.endsWith('System') || cleanTitle.length > 35 ? cleanTitle : `${cleanTitle} System`;
     const baseTitle = clampSeoTitle(rawCore, 42);
-    const metaDesc = formatSeoDescription(skill.description);
+    const skillFallback = [
+        ...(skill.whatBreaks || []),
+        ...(skill.whatSystemInstalls || []),
+        ...(skill.economicDamage || []),
+    ].filter(Boolean).join('. ');
+    const metaDesc = formatSeoDescription(skill.description, skillFallback);
     const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(skill.title)}&category=Governance%20System`;
 
     return {

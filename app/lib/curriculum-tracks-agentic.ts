@@ -588,7 +588,7 @@ agenticGovernanceModules['agentic-governance/58-5'] = {
 agenticGovernanceModules['agentic-governance/58-6'] = {
     moduleId: '58-6',
     title: 'The Transaction That Succeeds: Enterprise Risk & The 4 Pillars of Agent Governance',
-    description: 'Deploy the CIO.com governance framework to detect silent policy failures, separate system monitoring from business authorization, and audit the 6 Executive Questions.',
+    description: 'Detect silent AI policy failures where infrastructure monitors stay green while agents breach corporate authorization and signing limits.',
     trackName: t58,
     productId: singleProduct,
     takeaways: [

@@ -21,8 +21,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const challenge = challenges.find(c => c.slug === slug);
     if (!challenge) return {};
 
-    const baseTitle = clampSeoTitle(`Stop ${challenge.title} Wasting Capital`, 42);
-    const metaDesc = formatSeoDescription(challenge.description);
+    const baseTitle = clampSeoTitle(`${challenge.title}: Audit & Fix`, 42);
+    const metaDesc = formatSeoDescription(challenge.description, challenge.painPoint);
     const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(challenge.title)}&category=Enterprise%20Challenge`;
 
     return {

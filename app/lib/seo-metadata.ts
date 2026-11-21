@@ -16,7 +16,9 @@ const TRAILING_DANGLING_WORDS = new Set([
   'do', 'does', 'did', 'has', 'have', 'had', 'how', 'why', 'what',
   'when', 'where', 'who', 'whom', 'whose', 'that', 'which', 'your',
   'our', 'their', 'its', 'my', 'his', 'her', 'this', 'these', 'those',
-  'not', 'no', 'than', 'then', 'if', 'whether', 'while'
+  'not', 'no', 'than', 'then', 'if', 'whether', 'while',
+  'rather', 'instead', 'such', 'both', 'each', 'all', 'every',
+  'some', 'any', 'many', 'most', 'other', 'another', 'wasting'
 ]);
 
 const BRAND_SUFFIX = ' | Richard Ewing';
@@ -46,9 +48,27 @@ function hasBalancedDelimiters(text: string): boolean {
 }
 
 function stripDanglingTail(phrase: string): string {
-  let words = phrase
+  // Close/remove unbalanced opening parenthesis or unmatched quote FIRST so post-paren dangling words are also stripped
+  let preCleaned = phrase
     .replace(/[\s,:;\-+/|&([{\u2013\u2014]+$/g, '')
-    .trim()
+    .trim();
+
+  if ((preCleaned.match(/\(/g) || []).length > (preCleaned.match(/\)/g) || []).length) {
+    preCleaned = preCleaned.replace(/\s*\([^)]*$/, '').trim();
+  }
+  if (((preCleaned.match(/"/g) || []).length % 2) !== 0) {
+    const lastQuote = preCleaned.lastIndexOf('"');
+    preCleaned = (preCleaned.slice(0, lastQuote) + preCleaned.slice(lastQuote + 1))
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  preCleaned = preCleaned
+    .replace(/[\s,:;\-+/|&([{\u2013\u2014]+$/g, '')
+    .replace(/\s+(?:the|a|an|all|top|these|those)\s+\d+$/i, '')
+    .trim();
+
+  let words = preCleaned
     .split(/\s+/)
     .filter(Boolean);
 
@@ -61,20 +81,10 @@ function stripDanglingTail(phrase: string): string {
     }
   }
 
-  // Close unbalanced opening parenthesis or unmatched quote if clipped mid-span
-  let result = words.join(' ').replace(/[\s,:;\-+/|&]+$/g, '').trim();
-  const openParens = (result.match(/\(/g) || []).length;
-  const closeParens = (result.match(/\)/g) || []).length;
-  if (openParens > closeParens) {
-    result = result.replace(/\s*\([^)]*$/, '').trim();
-  }
-  if (((result.match(/"/g) || []).length % 2) !== 0) {
-    const lastQuote = result.lastIndexOf('"');
-    result = (result.slice(0, lastQuote) + result.slice(lastQuote + 1))
-      .replace(/\s+/g, ' ')
-      .trim();
-  }
-  return result;
+  return words.join(' ')
+    .replace(/\s+(?:the|a|an|all|top|these|those)\s+\d+$/i, '')
+    .replace(/[\s,:;\-+/|&]+$/g, '')
+    .trim();
 }
 
 /**
@@ -83,8 +93,8 @@ function stripDanglingTail(phrase: string): string {
  */
 export function clampSeoTitle(rawCore: string, maxCoreChars = 44): string {
   let cleaned = sanitizeHwsText(rawCore)
-    // Strip internal curriculum/module catalog prefixes like "6-1: " or "Module 14-2: "
-    .replace(/^(?:module\s+|track\s+|lesson\s+)?\d+-\d+\s*:\s*/i, '')
+    // Strip internal curriculum/module catalog prefixes like "6-1: ", "24.1 ", "28.10 ", "Module 3: "
+    .replace(/^(?:(?:module|track|lesson)\s+\d+(?:[.-]\d+)?\s*:\s*|\d+[.-]\d+\s*:?\s*)/i, '')
     // Strip accidental duplicate brand suffixes
     .replace(/\s*\|\s*Richard Ewing.*$/i, '')
     .replace(/\s*-\s*Richard Ewing.*$/i, '')
@@ -99,13 +109,13 @@ export function clampSeoTitle(rawCore: string, maxCoreChars = 44): string {
     return cleaned;
   }
 
-  // 1. Try clean delimiter split (`: `, ` - `, ` | `) if primary clause fits [18, hardLimit] and has balanced parens/quotes
+  // 1. Try clean delimiter split (`: `, ` - `, ` | `) only when primary clause is substantive [24, hardLimit]
   const delimiters = [': ', ' - ', ' | '];
   for (const delim of delimiters) {
     const idx = cleaned.indexOf(delim);
-    if (idx >= 18 && idx <= hardLimit && hasBalancedDelimiters(cleaned.slice(0, idx))) {
+    if (idx >= 24 && idx <= hardLimit && hasBalancedDelimiters(cleaned.slice(0, idx))) {
       const candidate = stripDanglingTail(cleaned.slice(0, idx));
-      if (candidate.length >= 16 && candidate.length <= hardLimit) {
+      if (candidate.length >= 22 && candidate.length <= hardLimit) {
         return candidate;
       }
     }
@@ -167,41 +177,90 @@ function splitSentencesSafe(text: string): string[] {
     .filter(Boolean);
 }
 
-const CALIBRATED_SUFFIXES = [
-  ' Run interactive P&L models, benchmark unit margins, and stress-test board metrics with Richard Ewing.',
-  ' Model unit margins, audit technical debt, and stress-test R&D capital decisions with Richard Ewing.',
-  ' Quantify margin risk, audit R&D spend, and run interactive scenarios with Richard Ewing.',
-  ' Audit unit margins, R&D capital risk, and board metrics with Richard Ewing.',
-  ' Benchmark unit economics and R&D capital risk with Richard Ewing.',
-  ' Quantify unit margins and R&D risk with Richard Ewing.',
-  ' Run live financial models with Richard Ewing.',
-  ' Audit unit margins with Richard Ewing.',
-  ' Model P&L risk with Richard Ewing.',
-  ' Built by Richard Ewing.',
-  ' By Richard Ewing.',
-];
-
 function ensureTerminalPeriod(s: string): string {
   const trimmed = s.replace(/[\s,:;\-+/|&]+$/g, '').trim();
   if (!trimmed) return '';
   return /[.!?]$/.test(trimmed) ? trimmed : `${trimmed}.`;
 }
 
+function stripHtmlHeadings(input: string): string {
+  return (input || '')
+    .replace(/<h[1-6][^>]*>[\s\S]*?<\/h[1-6]>/gi, ' ')
+    .replace(/<table[\s\S]*?<\/table>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function clampSinglePass(text: string, minLen: number, maxLen: number): string {
+  const sliceWindow = text.slice(0, maxLen - 1);
+  const clauseMarkers = [', ', ': ', ' - ', ' while ', ' where ', ' including ', ' across ', ' without ', ' before '];
+  let bestClause = '';
+  for (const marker of clauseMarkers) {
+    const idx = sliceWindow.lastIndexOf(marker);
+    if (idx >= minLen - 1 && idx <= maxLen - 1) {
+      const candidate = ensureTerminalPeriod(stripDanglingTail(sliceWindow.slice(0, idx)));
+      if (candidate.length >= minLen && candidate.length <= maxLen && candidate.length > bestClause.length) {
+        bestClause = candidate;
+      }
+    }
+  }
+  if (bestClause) return bestClause;
+
+  const words = text.split(/\s+/);
+  let wordAcc = '';
+  for (const w of words) {
+    const next = wordAcc ? `${wordAcc} ${w}` : w;
+    if (next.length <= maxLen - 2) {
+      wordAcc = next;
+    } else {
+      break;
+    }
+  }
+  if (!wordAcc) {
+    wordAcc = text.slice(0, maxLen - 2).trim();
+  }
+  return ensureTerminalPeriod(stripDanglingTail(wordAcc));
+}
+
+function clampToRange(text: string, minLen: number, maxLen: number): string {
+  const direct = clampSinglePass(text, minLen, maxLen);
+  if (direct.length >= minLen && direct.length <= maxLen) {
+    return direct;
+  }
+  // If an inline parenthetical straddled the boundary and collapsed length below minLen, drop parenthetical glosses and retry
+  if (text.includes('(')) {
+    const noParens = text.replace(/\s*\([^)]*\)\s*/g, ' ').replace(/\s+/g, ' ').trim();
+    if (noParens.length >= minLen) {
+      const retried = noParens.length <= maxLen
+        ? ensureTerminalPeriod(noParens)
+        : clampSinglePass(noParens, minLen, maxLen);
+      if (retried.length >= minLen && retried.length <= maxLen) {
+        return retried;
+      }
+    }
+  }
+  return direct;
+}
+
 /**
- * Formats a meta description strictly inside [130, 155] characters:
- * - Zero `...` or `…` ellipses
+ * Formats a meta description strictly inside [120, 155] characters (Nov 2026 SERP + AEO standard):
+ * - Zero `...` or `…` ellipses, zero em-dashes, zero generic boilerplate padding tails
+ * - Draws real page-specific sentences from `fallbackProse` when `raw` is under 120 chars
  * - Abbreviation-safe (`vs.`, `e.g.`, decimals never split prematurely)
- * - Active voice, clean grammatical sentence ending
  */
-export function formatSeoDescription(raw: string, customContextSuffix?: string): string {
-  let cleaned = sanitizeHwsText(raw);
+export function formatSeoDescription(raw: string, fallbackProse?: string): string {
+  const MIN_LEN = 120;
+  const MAX_LEN = 155;
+
+  let cleaned = sanitizeHwsText(stripHtmlHeadings(raw));
   if (!cleaned) {
-    cleaned = 'Audit AI unit economics, software gross margins, and R&D capital efficiency across your organization.';
+    cleaned = 'Audit AI unit economics, software gross margins, and R&D capital efficiency across enterprise engineering teams.';
   }
 
-  // If already in ideal range [130, 155] and ends cleanly
+  // If already inside ideal [120, 155] range and ends cleanly
   const withPeriod = ensureTerminalPeriod(cleaned);
-  if (withPeriod.length >= 130 && withPeriod.length <= 155) {
+  if (withPeriod.length >= MIN_LEN && withPeriod.length <= MAX_LEN) {
     return withPeriod;
   }
 
@@ -210,86 +269,90 @@ export function formatSeoDescription(raw: string, customContextSuffix?: string):
   let accumulated = '';
   for (const s of sentences) {
     const candidate = ensureTerminalPeriod(accumulated ? `${accumulated} ${s}` : s);
-    if (candidate.length <= 155) {
+    if (candidate.length <= MAX_LEN) {
       accumulated = candidate;
     } else {
       break;
     }
   }
 
-  if (accumulated.length >= 130 && accumulated.length <= 155) {
+  if (accumulated.length >= MIN_LEN && accumulated.length <= MAX_LEN) {
     return accumulated;
   }
 
-  // If first sentence alone exceeded 155 chars, trim at clause or clean word boundary <= 154 chars
-  if (!accumulated && cleaned.length > 155) {
-    const sliceWindow = cleaned.slice(0, 154);
-    const clauseMarkers = [', ', ': ', ' - ', ' while ', ' where ', ' including ', ' across '];
-    let bestClause = '';
-    for (const marker of clauseMarkers) {
-      const idx = sliceWindow.lastIndexOf(marker);
-      if (idx >= 129 && idx <= 154) {
-        const candidate = ensureTerminalPeriod(stripDanglingTail(sliceWindow.slice(0, idx)));
-        if (candidate.length >= 130 && candidate.length <= 155 && candidate.length > bestClause.length) {
-          bestClause = candidate;
+  // If first sentence alone exceeded MAX_LEN, trim cleanly into [120, 155]
+  if (!accumulated && cleaned.length > MAX_LEN) {
+    const trimmed = clampToRange(cleaned, MIN_LEN, MAX_LEN);
+    if (trimmed.length >= MIN_LEN && trimmed.length <= MAX_LEN) {
+      return trimmed;
+    }
+    accumulated = trimmed;
+  }
+
+  // If primary text had more sentences after `accumulated`, try combining with a clean trimmed clause from the next sentence
+  if (accumulated && accumulated.length < MIN_LEN && cleaned.length > accumulated.length + 10) {
+    const trimmedCombined = clampToRange(cleaned, MIN_LEN, MAX_LEN);
+    if (trimmedCombined.length >= MIN_LEN && trimmedCombined.length <= MAX_LEN) {
+      return trimmedCombined;
+    }
+  }
+
+  let base = ensureTerminalPeriod(accumulated || cleaned);
+
+  // Pull real page-specific Sentence 2 from fallbackProse (never generic boilerplate)
+  if (base.length < MIN_LEN && fallbackProse) {
+    const extraClean = sanitizeHwsText(stripHtmlHeadings(fallbackProse));
+    if (extraClean) {
+      const baseLower = base.toLowerCase().slice(0, 40);
+      const extraSentences = splitSentencesSafe(extraClean).filter(
+        (s) => s.length >= 20 && !s.toLowerCase().startsWith(baseLower)
+      );
+      let combined = base;
+      for (const s of extraSentences) {
+        const next = ensureTerminalPeriod(`${combined} ${s}`);
+        if (next.length <= MAX_LEN) {
+          combined = next;
+          if (combined.length >= MIN_LEN) return combined;
+        } else {
+          // Try trimming `combined + s` cleanly into [MIN_LEN, MAX_LEN]; if too short, keep scanning
+          const trimmed = clampToRange(`${combined} ${s}`, MIN_LEN, MAX_LEN);
+          if (trimmed.length >= MIN_LEN && trimmed.length <= MAX_LEN) {
+            return trimmed;
+          }
+          continue;
         }
       }
-    }
-    if (bestClause) {
-      return bestClause;
-    }
-
-    // Word-boundary trim <= 154 chars
-    const words = cleaned.split(/\s+/);
-    let wordAcc = '';
-    for (const w of words) {
-      const next = wordAcc ? `${wordAcc} ${w}` : w;
-      if (next.length <= 153) {
-        wordAcc = next;
-      } else {
-        break;
+      if (combined.length > base.length) {
+        base = combined;
+      }
+      if (base.length >= MIN_LEN && base.length <= MAX_LEN) {
+        return base;
       }
     }
-    const cleanTrimmed = ensureTerminalPeriod(stripDanglingTail(wordAcc));
-    if (cleanTrimmed.length >= 130 && cleanTrimmed.length <= 155) {
-      return cleanTrimmed;
+  }
+
+  // Last-resort deterministic guard only when neither primary nor fallbackProse supplied enough text
+  if (base.length < MIN_LEN) {
+    const guardOptions = [
+      'Includes field-tested engineering benchmarks and board-ready financial diagnostics.',
+      'Includes concrete diagnostic thresholds and executive decision rules.',
+      'Includes field-tested engineering economics and governance benchmarks for enterprise technical leaders and finance teams.',
+    ];
+    for (const tail of guardOptions) {
+      const candidate = ensureTerminalPeriod(`${base} ${tail}`);
+      if (candidate.length >= MIN_LEN && candidate.length <= MAX_LEN) {
+        return candidate;
+      }
     }
-    accumulated = cleanTrimmed;
-  }
-
-  // Base string is currently < 130 chars; pad deterministically into [130, 155]
-  let base = ensureTerminalPeriod(accumulated || cleaned);
-  if (base.length < 35) {
-    base = ensureTerminalPeriod(`${base} Compare real unit costs and margin benchmarks across SaaS and AI workflows`);
-  }
-
-  const candidateSuffixes = customContextSuffix
-    ? [` ${ensureTerminalPeriod(sanitizeHwsText(customContextSuffix))}`, ...CALIBRATED_SUFFIXES]
-    : CALIBRATED_SUFFIXES;
-
-  for (const suffix of candidateSuffixes) {
-    const combined = `${base}${suffix}`.replace(/\s+/g, ' ').trim();
-    if (combined.length >= 130 && combined.length <= 155) {
-      return combined;
+    const longGuard = `${base} Includes field-tested engineering economics and governance benchmarks for enterprise technical leaders and finance teams.`;
+    const clamped = clampToRange(longGuard, MIN_LEN, MAX_LEN);
+    if (clamped.length >= MIN_LEN && clamped.length <= MAX_LEN) {
+      return clamped;
     }
+    return ensureTerminalPeriod(longGuard.slice(0, MAX_LEN - 1).trim());
   }
 
-  // Final deterministic guard if gap fell between suffixes
-  const padded = `${base} Audit unit margins, R&D capital risk, and live P&L scenarios with Richard Ewing.`;
-  if (padded.length >= 130 && padded.length <= 155) {
-    return padded;
-  }
-  const words = padded.split(/\s+/);
-  let finalAcc = '';
-  for (const w of words) {
-    const next = finalAcc ? `${finalAcc} ${w}` : w;
-    if (next.length <= 153) {
-      finalAcc = next;
-    } else {
-      break;
-    }
-  }
-  return ensureTerminalPeriod(stripDanglingTail(finalAcc));
+  return base.length <= MAX_LEN ? base : clampToRange(base, MIN_LEN, MAX_LEN);
 }
 
 export function countProseWords(htmlOrText = ''): number {

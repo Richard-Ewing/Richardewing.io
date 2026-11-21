@@ -24,8 +24,8 @@ type Props = { params: Promise<{ slug: string }> };
 
 const GLOSSARY_SEO_OVERRIDES: Record<string, { title: string; description: string; h1Override?: string }> = {
     'calculating-roai': {
-        title: 'What Is ROAI? AI ROI Formula & Calculator',
-        description: 'ROAI (Return on AI Investment) divides net payroll and revenue gains by LLM API, cloud, and cleanup costs. Run the live CFO calculator and 2026 benchmarks.',
+        title: 'ROAI Calculator: AI Payback & CFO Formula',
+        description: 'Test your AI payback threshold in 60 seconds. Compare token burn, engineering cleanup cost, and real SaaS margin benchmarks in the live CFO calculator.',
     },
     'ic-vs-management-track': {
         title: 'IC vs Management Track: Pay & Levels',
@@ -38,8 +38,8 @@ const GLOSSARY_SEO_OVERRIDES: Record<string, { title: string; description: strin
         h1Override: 'Software Engineering Levels & Ranks (Level 1-4 and L3-L8)',
     },
     'ai-unit-economics': {
-        title: 'What Is AI Unit Economics? SaaS Formula',
-        description: 'AI unit economics measures profit per AI query after subtracting model token, retrieval, and support costs. See 2026 SaaS gross margin benchmarks.',
+        title: 'AI Unit Economics: SaaS Margin Benchmarks',
+        description: 'See where AI SaaS gross margins break under heavy P99 token usage. Compare real failure thresholds and model your query profitability in the live tool.',
     },
     'model-right-sizing': {
         title: 'Model Right-Sizing: Cut LLM Inference Cost',
@@ -56,6 +56,46 @@ const GLOSSARY_SEO_OVERRIDES: Record<string, { title: string; description: strin
     'product-pl-ownership': {
         title: 'Product P&L Ownership: Margin & Burn Model',
         description: 'Run a product P&L sheet tying ARR, churn, cloud hosting, LLM token COGS, and capitalized engineering payroll to contribution margin per line.',
+    },
+    'autonomous-agent-readiness-index': {
+        title: 'AARI Definition: Agent Readiness Formula',
+        description: 'Measure whether your engineering controls, audit logs, and kill-switches can safely govern autonomous AI agents before production rollout.',
+    },
+    'inference-dividend-cascade': {
+        title: 'Inference Dividend Cascade Definition',
+        description: 'Compound AI unit-margin gains by routing routine tasks from frontier APIs to cached local SLMs, cutting token COGS by 60% to 85% at scale.',
+    },
+    'agentic-roi': {
+        title: 'Agentic ROI Definition & Task Economics',
+        description: 'Calculate net Agentic ROI per completed task after subtracting retry loops, tool-call latency, human review queues, and error remediation.',
+    },
+    'frontier-model-economics': {
+        title: 'Frontier Model Economics Definition',
+        description: 'Compare closed frontier API token pricing against open-weight clusters using task ambiguity, multi-turn token growth, and margin floors.',
+    },
+    'frontier-model-economics-framework': {
+        title: 'Frontier Model Economics Framework Guide',
+        description: 'Analyze frontier AI as a moving empirical cost threshold and allocate token budgets between reasoning models and distilled local routers.',
+    },
+    'technical-insolvency-date': {
+        title: 'Technical Insolvency Date Definition',
+        description: 'Identify the exact quarter when maintenance drag consumes 100% of engineering payroll capacity and halts net-new product feature delivery.',
+    },
+    'persistence-vs-authority': {
+        title: 'Persistence vs Authority Definition',
+        description: 'Separate how long an autonomous AI agent stays running from which production records, ledgers, and APIs it has permission to mutate.',
+    },
+    'the-transaction-that-succeeds': {
+        title: 'The Transaction That Succeeds Definition',
+        description: 'Audit silent enterprise AI policy failures where infrastructure monitors stay green while agents issue unapproved discounts or credits.',
+    },
+    'vibe-coding': {
+        title: 'Vibe Coding Definition & Debt Risk Guide',
+        description: 'Understand how prompt-generated code speeds up initial demos while compounding hidden review queues, security gaps, and maintenance carry.',
+    },
+    'section-174-rd-capitalization': {
+        title: 'Section 174 R&D Capitalization Guide',
+        description: 'Navigate Section 174 tax amortization rules requiring 5-year domestic and 15-year foreign R&D write-offs across software engineering payroll.',
     },
 };
 

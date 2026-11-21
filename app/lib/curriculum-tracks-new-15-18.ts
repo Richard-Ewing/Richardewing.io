@@ -394,7 +394,7 @@ export function populateTracks15to18(modules: Record<string, CurriculumModule>) 
                 ], 'Measure your historical integration velocity. Set a target for the next acquisition. Design improvements to hit the target.')
             ]
         ],
-        ['16-10', 'Integration Post-Mortem & ROI Report', 'The honest assessment: did the acquisition create or destroy value?',
+        ['16-10', 'Integration Post-Mortem & ROI Report', 'Run a post-merger technical integration audit to verify whether an acquisition expanded EBITDA or compounded hidden maintenance liability.',
             ['Build honest post-mortems', 'Calculate actual ROI', 'Compare to projections', 'Present to the board'],
             [
                 l('Lesson 1: The Honest Value Assessment', 'At the 18-month mark, calculate: Total acquisition cost (purchase price + integration costs + retention bonuses + opportunity cost) vs Total value created (revenue gains + cost savings + strategic value). Most acquirers never do this calculation because the answer is uncomfortable. But not knowing is worse.', [

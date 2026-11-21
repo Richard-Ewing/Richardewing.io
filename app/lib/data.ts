@@ -16,7 +16,7 @@ export const articles: Article[] = [
     {
         slug: "things-i-got-wrong-founders-post-mortem",
         title: "Things I Got Wrong: A Founder's Post-Mortem on Building AI Products",
-        description: "Three expensive technical and commercial mistakes from failed early-2025 AI builds: LLM self-governance, unconstrained vibe coding, and isolated app monoliths.",
+        description: "Three expensive engineering mistakes from early production AI builds: LLM self-governance, unconstrained vibe coding, and isolated app monoliths.",
         date: "September 2026",
         readTime: "8 min read",
         source: "LinkedIn",

@@ -29,9 +29,25 @@ export async function generateMetadata(
     if (!match) return { title: 'Comparison Not Found' };
 
     const { tool, competitor } = match;
-    const vsCore = clampSeoTitle(`${tool.toolName} vs ${competitor.name}`, 42);
+    let rawVsTitle = `${tool.toolName} vs ${competitor.name}`;
+    if (rawVsTitle.length > 42) {
+        const shortTool = tool.toolName
+            .replace(/Intrusion Sandbox/i, 'Sandbox')
+            .replace(/Benchmark/i, '')
+            .replace(/Calculator/i, '')
+            .replace(/Simulator/i, '')
+            .replace(/\s+/g, ' ')
+            .trim();
+        rawVsTitle = `${shortTool} vs ${competitor.name}`;
+        if (rawVsTitle.length > 42) {
+            const ultraShortTool = shortTool.split(' ').slice(0, 2).join(' ');
+            rawVsTitle = `${ultraShortTool} vs ${competitor.name}`;
+        }
+    }
+    const vsCore = clampSeoTitle(rawVsTitle, 42);
     const finalDesc = formatSeoDescription(
-        `Compare ${tool.toolName} vs. ${competitor.name} on unit cost, architectural risk, and payback so CFOs, CTOs, and VPs of Engineering avoid hidden vendor lock-in.`
+        competitor.ourAdvantage,
+        `${tool.toolName} vs ${competitor.name}: ${competitor.theirFocus}`
     );
     const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(`${tool.toolName} vs ${competitor.name}`)}&category=Platform%20Comparison`;
 

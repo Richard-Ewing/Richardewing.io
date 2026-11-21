@@ -22,6 +22,34 @@ const BLOG_SEO_OVERRIDES: Record<string, { title: string; description: string }>
         title: 'AI Economics: SaaS Profit vs Token Losses',
         description: 'Break down why $29 SaaS AI features lose money on heavy users, how retry loops inflate API bills, and how CFOs and CTOs protect gross margin.',
     },
+    'claude-search-tool-zero-adoption': {
+        title: 'Why Enterprise Claude Search Gets Zero Use',
+        description: 'See why enterprise Claude search rollouts stall at zero adoption and how workflow-embedded triggers beat standalone chat portals.',
+    },
+    'ai-team-composition-economics': {
+        title: 'AI Team Composition: Ratio & Payroll Math',
+        description: 'Balance senior architects, ML engineers, and product operators so AI headcount expands gross margin instead of creating coordination drag.',
+    },
+    'sre-team-economics': {
+        title: 'SRE Team Economics: Optimal Ratio & Cost',
+        description: 'Benchmark SRE-to-service ratios (1:10 to 1:20), spot 40% to 60% over-hiring traps, and tie reliability budgets directly to downtime cost.',
+    },
+    'the-transaction-that-succeeds': {
+        title: 'The Transaction That Succeeds: AI Risk',
+        description: 'In agentic software, failure looks like HTTP 200 OK on an unauthorized refund. See why 98% eval scores hide silent enterprise policy breaches.',
+    },
+    'security-breach-economics': {
+        title: 'The Economics of a Security Breach',
+        description: 'Compare average $4.45M breach remediation losses against $400K proactive runtime controls so CFOs and CISOs fund security by expected loss.',
+    },
+    'board-technology-oversight': {
+        title: 'Board Technology Oversight Framework',
+        description: 'Replace blind CTO delegation with quarterly board metrics covering R&D capital yield, technical insolvency risk, and AI unit-margin floors.',
+    },
+    'board-cyber-risk-oversight': {
+        title: 'Board Cyber Risk & SEC Disclosure Guide',
+        description: 'Structure board-level cybersecurity and AI incident oversight to satisfy SEC disclosure mandates with verifiable runtime audit trails.',
+    },
 };
 
 export const dynamicParams = false;
@@ -54,7 +82,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const canonicalURL = resolveProseGatedCanonical(article.canonicalUrl, selfUrl, article.content || '');
     const override = BLOG_SEO_OVERRIDES[slug];
     const baseTitle = override ? clampSeoTitle(override.title, 42) : clampSeoTitle(article.title, 42);
-    const metaDescription = override ? formatSeoDescription(override.description) : formatSeoDescription(article.excerpt);
+    const metaDescription = override
+        ? formatSeoDescription(override.description)
+        : formatSeoDescription(article.excerpt, article.content || '');
     const ogUrl = `https://www.richardewing.io/api/og?title=${encodeURIComponent(article.title)}&category=${encodeURIComponent(article.category || 'Executive Briefing')}`;
 
     return {

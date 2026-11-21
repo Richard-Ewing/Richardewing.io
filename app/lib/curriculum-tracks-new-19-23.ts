@@ -299,7 +299,7 @@ export function populateTracks19to23(modules: Record<string, CurriculumModule>) 
     modules['agent-governance/21-3'] = m(
         '21-3',
         'The Transaction That Succeeds: The 4 Pillars of Agent Governance',
-        'Deploy the CIO.com governance framework to detect silent policy failures, separate system monitoring from business authorization, and audit the 6 Executive Questions.',
+        'Separate IT uptime monitoring from executive business authorization to stop autonomous AI agents from violating signing and discount rules.',
         'AI Agent Governance & Trust Infrastructure',
         [
             'Identify and prevent the transaction that succeeds where operations monitors show green but business rules are violated',

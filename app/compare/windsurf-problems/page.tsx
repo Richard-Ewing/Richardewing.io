@@ -8,7 +8,7 @@ import StructuredData, { generateFaqSchema } from '@/app/components/seo/Structur
 
 export const metadata: Metadata = {
     title: 'Windsurf Problems & Solutions',
-    description: 'Explore runtime challenges when deploying Windsurf Cascade and discover how deterministic control layers restore reliability and code integrity.',
+    description: 'Fix Windsurf Cascade credit burn, silent background tasks, and broken edits with deterministic runtime governance gates and cost caps.',
     keywords: ['Windsurf problems', 'Windsurf problems 2026', 'Windsurf AI complaints', 'Windsurf pricing', 'Windsurf credit burn', 'Windsurf alternative', 'Windsurf rug pull', 'left Windsurf', 'switched from Windsurf', 'Windsurf credits expensive', 'Windsurf hallucinations', 'Windsurf Cascade problems'],
     openGraph: {
         title: 'Windsurf Problems 2026 - Real User Complaints & Governance Solutions',

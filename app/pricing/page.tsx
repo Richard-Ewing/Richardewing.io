@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Transparent Pricing & Advisory Sprints',
   description:
-    'Fixed-scope product P&L turnarounds, AI feature pricing sprints, and embedded fractional product leadership with transparent pricing and deliverables.',
+    'Compare transparent advisory pricing: $29 Operating Kit, $450 P&L Teardown, $2,500 Sprint, $7,500 AI Build, $10K/mo Fractional CPO, and $15K PE Audit.',
   alternates: {
     canonical: 'https://www.richardewing.io/pricing',
   },
