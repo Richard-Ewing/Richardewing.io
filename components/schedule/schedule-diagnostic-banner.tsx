@@ -56,6 +56,11 @@ const SOURCE_CONFIGS: Record<string, DiagnosticSourceConfig> = {
     badgeLabel: 'R&D Yield & Tech Debt Defense',
     description: 'Select a 30-minute CTO briefing or technical architecture session below. Bring your sprint throughput, review queue backlog, and team allocation data to build board-ready economic metrics.',
   },
+  'board-risk-scorecard': {
+    title: 'Board AI Governance & Fiduciary Risk Briefing',
+    badgeLabel: 'SOX 404 & Board Oversight',
+    description: 'Select a confidential executive briefing below. Bring your AI governance posture, shadow delegation findings, or board disclosure slides to establish deterministic signing limits and audit-ready controls.',
+  },
   'pricing-sprints': {
     title: 'Fixed-Scope Advisory Sprint Scoping & Alignment',
     badgeLabel: '14-Day & 21-Day Fixed Scope',

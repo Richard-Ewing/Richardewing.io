@@ -125,7 +125,7 @@ export function Footer() {
                             <li><Link href="/careers/post-qa-verification-engineer" className="text-emerald-950 font-bold hover:text-emerald-900 transition-colors">Post-QA Verification Career</Link></li>
                             <li><Link href="/blog" className="text-zinc-950 hover:text-zinc-900 transition-colors">Engineering Blog</Link></li>
                             <li><Link href="/glossary" className="text-zinc-950 hover:text-zinc-900 transition-colors">Glossary &amp; Pillars</Link></li>
-                            <li><Link href="/book" className="text-purple-900 font-extrabold hover:text-zinc-900 transition-colors">The AI Economist (Book)</Link></li>
+                            <li><Link href="/ai-economist-book" className="text-purple-900 font-extrabold hover:text-zinc-900 transition-colors">The AI Economist (Book)</Link></li>
                             <li><Link href="/curriculum" className="text-zinc-950 hover:text-zinc-900 transition-colors">Builder Curriculum</Link></li>
                             <li><Link href="/answers" className="text-zinc-950 hover:text-zinc-900 transition-colors">Executive Answers</Link></li>
                         </ul>

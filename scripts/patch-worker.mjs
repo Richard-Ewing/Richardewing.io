@@ -112,6 +112,33 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 }
             });
         }
+        if (__rwLowerPath.startsWith("/api/buy/")) {
+            const __rwPurpose = (request.headers.get("purpose") || "").toLowerCase();
+            const __rwSecPurpose = (request.headers.get("sec-purpose") || "").toLowerCase();
+            const __rwBuyPrefetch =
+                __rwPurpose.includes("prefetch") ||
+                __rwSecPurpose.includes("prefetch") ||
+                request.headers.get("RSC") === "1" ||
+                request.headers.has("Next-Router-Prefetch") ||
+                request.headers.has("Next-Router-Segment-Prefetch");
+            const __rwBuyBotRe = /(curl|python|go-http-client|axios|node-fetch|wget|scrapy|httpclient|undici|headlesschrome|phantomjs|playwright|puppeteer|googlebot|googleother|google-extended|google-cloudvertexbot|google-notebooklm|adsbot-google|mediapartners-google|bingbot|adidxbot|applebot|duckduckbot|duckassistbot|yandexbot|bravebot|slurp|oai-searchbot|chatgpt-user|gptbot|claude-searchbot|claude-user|claudebot|anthropic-ai|perplexitybot|perplexity-user|amzn-searchbot|amzn-user|amazonbot|youbot|exasearchbot|meta-externalagent|facebookexternalhit|facebookbot|facebot|linkedinbot|twitterbot|slackbot|discordbot|whatsapp|telegrambot|pinterestbot|bytespider|tiktokspider|ccbot|petalbot|semrushbot|ahrefsbot|mj12bot|dotbot|awariobot|barkrowler|dataforseobot|blexbot|serpstatbot|sogou|baiduspider|deepseekbot|grokbot|cohere-ai|diffbot|ai2bot|timpibot|omgili)/i;
+            if (__rwBuyPrefetch || __rwBuyBotRe.test(__rwUa)) {
+                return new Response(
+                    '<!doctype html><html><head><meta name="robots" content="noindex, nofollow"><title>Checkout</title></head><body></body></html>',
+                    {
+                        status: 200,
+                        headers: {
+                            "Content-Type": "text/html; charset=utf-8",
+                            "X-Robots-Tag": "noindex, nofollow",
+                            "Cache-Control": "private, no-store",
+                            "Cloudflare-CDN-Cache-Control": "no-store",
+                            "CDN-Cache-Control": "no-store",
+                            "X-RW-Buy-Shield": "STUB-200"
+                        }
+                    }
+                );
+            }
+        }
         if (
             !__rwLowerPath.startsWith("/.well-known/") &&
             (
@@ -138,7 +165,7 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 __rwLowerPath.startsWith("/.next/") ||
                 __rwLowerPath.includes("/@fs/") ||
                 __rwLowerPath.includes("service_account") ||
-                __rwLowerPath.includes("firebase") ||
+                (!/^\\/compar(?:e|isons)\\/[a-z0-9-]+\\/?$/.test(__rwPath) && __rwLowerPath.includes("firebase")) ||
                 __rwLowerPath.includes("wp-admin") ||
                 __rwLowerPath.includes("wp-json") ||
                 __rwLowerPath.includes("wp-includes") ||
@@ -407,9 +434,7 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                     const __rwRscDisc = [
                         request.headers.get("RSC") || "",
                         request.headers.get("Next-Router-Prefetch") || "",
-                        request.headers.get("Next-Router-Segment-Prefetch") || "",
-                        request.headers.get("Next-Router-State-Tree") || "",
-                        request.headers.get("Next-Url") || ""
+                        request.headers.get("Next-Router-Segment-Prefetch") || ""
                     ].join("|");
                     let __h = 0x811c9dc5;
                     for (let __i = 0; __i < __rwRscDisc.length; __i++) {
@@ -420,7 +445,10 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 }
                 __rwCacheKey = new Request("https://www.richardewing.io/__rw_edge_cache/" + __rwVer + "/" + __rwVariant + __rwNormPath + ".woff2", { method: "GET" });
             }
-            const __rwCached = await caches.default.match(__rwCacheKey);
+            let __rwCached = null;
+            try {
+                __rwCached = await caches.default.match(__rwCacheKey);
+            } catch {}
             if (__rwCached) {
                 const __rwHitHeaders = new Headers(__rwCached.headers);
                 const __rwOrigCt = __rwHitHeaders.get("x-rw-orig-ct") || (__rwIsOg ? "image/png" : (__rwIsRsc ? "text/x-component" : "text/html; charset=utf-8"));

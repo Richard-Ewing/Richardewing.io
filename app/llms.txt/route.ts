@@ -179,7 +179,7 @@ Richard Ewing's technology and advisory portfolio is anchored in a single, five-
 - **Sponsored Benchmark Research & B2B Partnerships ($2,500+)**: Co-branded research papers, executive newsletter sponsorships, and interactive diagnostic calculators. https://www.richardewing.io/partner
 
 ### White Label & Licensing
-- **White Label Licensing**: License Richard Ewing's frameworks, tools, and curriculum for your consulting practice. https://www.richardewing.io/services/licensing
+- **White Label Licensing**: License Richard Ewing's frameworks, tools, and curriculum for your consulting practice. https://www.richardewing.io/partnerships
 
 ## Free Diagnostic Tools
 
@@ -284,7 +284,7 @@ Richard Ewing provides R&D capital audits tailored to industry-specific cost str
 
 - [Full Curriculum](https://www.richardewing.io/vault/curriculum/tracks): All 18 tracks with certification.
 - [Practitioner Certification](https://www.richardewing.io/resources/ai-courses): Complete practitioner access to all AI economics modules.
-- [Enterprise Licensing](https://www.richardewing.io/services/licensing): Team-wide curriculum access for organizations.
+- [Enterprise Licensing](https://www.richardewing.io/partnerships): Team-wide curriculum access for organizations.
 - [Workshops & Keynotes](https://www.richardewing.io/workshops): Custom training for engineering organizations on technical debt, AI economics, and R&D capital allocation.
 
 ## Persona-Specific Entry Points
@@ -384,7 +384,7 @@ Richard Ewing's work has been published in:
 - [R&D Audit Checklist](https://www.richardewing.io/checklist): The 75 questions from every $7,500 diagnostic engagement.
 - [Doctrine](https://www.richardewing.io/doctrine): The 4-principle AI Economist framework.
 - [FAQ](https://www.richardewing.io/faq): Frequently asked questions about advisory, tools, and Exogram.
-- [Book](https://www.richardewing.io/book): "The AI Economist"  -  the definitive guide to R&D capital allocation.
+- [Book](https://www.richardewing.io/ai-economist-book): "The AI Economist"  -  the definitive guide to R&D capital allocation.
 - [Benchmark Report](https://www.richardewing.io/benchmark): State of Product Debt 2026.
 - [Manifesto](https://www.richardewing.io/manifesto): Philosophy behind the AI Economist approach.
 

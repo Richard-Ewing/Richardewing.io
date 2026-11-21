@@ -176,7 +176,7 @@ export default function BoardRiskScorecardTool() {
 
                             <div className="pt-2 border-t border-zinc-200 flex items-center justify-between">
                                 <Link
-                                    href="/workspace/board"
+                                    href="/schedule?source=board-risk-scorecard"
                                     className="text-xs font-bold text-amber-700 hover:text-amber-900 hover:underline"
                                 >
                                     Schedule Board Executive Briefing &rarr;

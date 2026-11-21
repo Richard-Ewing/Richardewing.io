@@ -112,7 +112,7 @@ export default function AIProductBuilderPage() {
               Apply for Pilot Cohort ($1,500) <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
-              href="/book"
+              href="/ai-economist-book"
               className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white hover:bg-zinc-100 border border-zinc-300 text-zinc-900 text-sm font-semibold transition-all shadow-sm"
             >
               Read the Book Blueprint <BookOpen className="w-4 h-4 text-purple-700" />

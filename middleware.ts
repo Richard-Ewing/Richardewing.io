@@ -205,7 +205,7 @@ export default async function middleware(req: NextRequest, event: NextFetchEvent
     pathname.endsWith('.key') ||
     pathname.includes('/@fs/') ||
     pathname.includes('service_account') ||
-    pathname.includes('firebase') ||
+    (!/^\/compar(?:e|isons)\/[a-z0-9-]+\/?$/.test(pathname) && pathname.toLowerCase().includes('firebase')) ||
     pathname.includes('wp-admin') ||
     pathname.includes('wp-json') ||
     pathname.includes('wp-includes') ||

@@ -963,7 +963,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
         channel: 'EXECUTIVE_ADVISORY',
         headline: 'Execute an Enterprise AI Governance & Delegation Audit',
         subtext: 'Retain Richard Ewing to audit enterprise SaaS vendor agent permissions and establish automated delegation matrices.',
-        actionUrl: '/workspace/governance',
+        actionUrl: '/advisory',
         actionLabel: 'Inquire for Governance Audit ↗',
         targetRole: 'CIOs, CISOs & Audit Committee Chairs'
       },
@@ -1364,7 +1364,7 @@ export const CANONICAL_CONCEPTS: ConceptNode[] = [
         channel: 'EXECUTIVE_ADVISORY',
         headline: 'Enterprise AI Governance & Audit Architecture',
         subtext: 'Retain Richard Ewing to establish board-level AI governance frameworks and deterministic compliance boundaries.',
-        actionUrl: '/workspace/governance',
+        actionUrl: '/advisory',
         actionLabel: 'Explore Governance Advisory ↗',
         targetRole: 'CISOs, General Counsel & CTOs'
       }

@@ -15,12 +15,14 @@ export const VALID_CONCEPT_SLUGS = new Set<string>(["agent-kill-switch","agentic
 export const VALID_FAILURE_SLUGS = new Set<string>(["autonomous-execution-risk","change-management-failure","context-rot","context-window-overflow","cost-overrun","engineering-economics-collapse","governance-theater","hallucination-debt","identity-drift","mcp-exposure","orchestration-entropy","repository-drift","retry-inflation","tool-permission-leak","verification-burden"]);
 export const VALID_CURRICULUM_MODULE_SLUGS = new Set<string>(["agent-governance/21-1","agent-governance/21-10","agent-governance/21-11","agent-governance/21-12","agent-governance/21-13","agent-governance/21-14","agent-governance/21-15","agent-governance/21-2","agent-governance/21-3","agent-governance/21-4","agent-governance/21-5","agent-governance/21-6","agent-governance/21-7","agent-governance/21-8","agent-governance/21-9","agentic-automation/20-1","agentic-automation/20-10","agentic-automation/20-11","agentic-automation/20-12","agentic-automation/20-13","agentic-automation/20-14","agentic-automation/20-15","agentic-automation/20-2","agentic-automation/20-3","agentic-automation/20-4","agentic-automation/20-5","agentic-automation/20-6","agentic-automation/20-7","agentic-automation/20-8","agentic-automation/20-9","agentic-governance/58-1","agentic-governance/58-2","agentic-governance/58-3","agentic-governance/58-4","agentic-governance/58-5","agentic-governance/58-6","agentic-governance/58-7","agentic-governance/58-8","ai-agent-architecture/19-1","ai-agent-architecture/19-10","ai-agent-architecture/19-11","ai-agent-architecture/19-12","ai-agent-architecture/19-13","ai-agent-architecture/19-14","ai-agent-architecture/19-15","ai-agent-architecture/19-2","ai-agent-architecture/19-3","ai-agent-architecture/19-4","ai-agent-architecture/19-5","ai-agent-architecture/19-6","ai-agent-architecture/19-7","ai-agent-architecture/19-8","ai-agent-architecture/19-9","ai-build-vs-buy/11-1","ai-build-vs-buy/11-10","ai-build-vs-buy/11-2","ai-build-vs-buy/11-3","ai-build-vs-buy/11-4","ai-build-vs-buy/11-5","ai-build-vs-buy/11-6","ai-build-vs-buy/11-7","ai-build-vs-buy/11-8","ai-build-vs-buy/11-9","ai-due-diligence/10-1","ai-due-diligence/10-10","ai-due-diligence/10-2","ai-due-diligence/10-3","ai-due-diligence/10-4","ai-due-diligence/10-5","ai-due-diligence/10-6","ai-due-diligence/10-7","ai-due-diligence/10-8","ai-due-diligence/10-9","ai-economics/24-1","ai-economics/24-10","ai-economics/24-2","ai-economics/24-3","ai-economics/24-4","ai-economics/24-5","ai-economics/24-6","ai-economics/24-7","ai-economics/24-8","ai-economics/24-9","ai-economist/28-1","ai-economist/28-2","ai-economist/28-3","ai-economist/28-4","ai-economist/28-5","ai-operations/6-1","ai-operations/6-10","ai-operations/6-11","ai-operations/6-12","ai-operations/6-13","ai-operations/6-14","ai-operations/6-15","ai-operations/6-16","ai-operations/6-2","ai-operations/6-3","ai-operations/6-4","ai-operations/6-5","ai-operations/6-6","ai-operations/6-7","ai-operations/6-8","ai-operations/6-9","ai-pricing/8-1","ai-pricing/8-10","ai-pricing/8-2","ai-pricing/8-3","ai-pricing/8-4","ai-pricing/8-5","ai-pricing/8-6","ai-pricing/8-7","ai-pricing/8-8","ai-pricing/8-9","ai-product-economics/2-1","ai-product-economics/2-10","ai-product-economics/2-11","ai-product-economics/2-12","ai-product-economics/2-13","ai-product-economics/2-14","ai-product-economics/2-15","ai-product-economics/2-16","ai-product-economics/2-17","ai-product-economics/2-2","ai-product-economics/2-3","ai-product-economics/2-4","ai-product-economics/2-5","ai-product-economics/2-6","ai-product-economics/2-7","ai-product-economics/2-8","ai-product-economics/2-9","boardroom-ai/27-1","boardroom-ai/27-2","boardroom-ai/27-3","boardroom-ai/27-4","boardroom-ai/27-5","capstone/4-1","capstone/4-10","capstone/4-11","capstone/4-12","capstone/4-13","capstone/4-14","capstone/4-15","capstone/4-2","capstone/4-3","capstone/4-4","capstone/4-5","capstone/4-6","capstone/4-7","capstone/4-8","capstone/4-9","career-capital/12-1","career-capital/12-10","career-capital/12-2","career-capital/12-3","career-capital/12-4","career-capital/12-5","career-capital/12-6","career-capital/12-7","career-capital/12-8","career-capital/12-9","cloud-finops/7-1","cloud-finops/7-10","cloud-finops/7-11","cloud-finops/7-12","cloud-finops/7-13","cloud-finops/7-14","cloud-finops/7-15","cloud-finops/7-2","cloud-finops/7-3","cloud-finops/7-4","cloud-finops/7-5","cloud-finops/7-6","cloud-finops/7-7","cloud-finops/7-8","cloud-finops/7-9","dx-economics/17-1","dx-economics/17-10","dx-economics/17-2","dx-economics/17-3","dx-economics/17-4","dx-economics/17-5","dx-economics/17-6","dx-economics/17-7","dx-economics/17-8","dx-economics/17-9","engineering-economics/1-1","engineering-economics/1-10","engineering-economics/1-11","engineering-economics/1-12","engineering-economics/1-13","engineering-economics/1-14","engineering-economics/1-15","engineering-economics/1-16","engineering-economics/1-17","engineering-economics/1-2","engineering-economics/1-3","engineering-economics/1-4","engineering-economics/1-5","engineering-economics/1-6","engineering-economics/1-7","engineering-economics/1-8","engineering-economics/1-9","exec-economics/13-1","exec-economics/13-10","exec-economics/13-2","exec-economics/13-3","exec-economics/13-4","exec-economics/13-5","exec-economics/13-6","exec-economics/13-7","exec-economics/13-8","exec-economics/13-9","executive-presence/23-1","executive-presence/23-10","executive-presence/23-11","executive-presence/23-12","executive-presence/23-13","executive-presence/23-14","executive-presence/23-15","executive-presence/23-2","executive-presence/23-3","executive-presence/23-4","executive-presence/23-5","executive-presence/23-6","executive-presence/23-7","executive-presence/23-8","executive-presence/23-9","leadership-autonomy-escalation","leadership-double-diamond","leadership-economics/14-1","leadership-economics/14-10","leadership-economics/14-2","leadership-economics/14-3","leadership-economics/14-4","leadership-economics/14-5","leadership-economics/14-6","leadership-economics/14-7","leadership-economics/14-8","leadership-economics/14-9","leadership-problem-continuum","ma-integration/16-1","ma-integration/16-10","ma-integration/16-2","ma-integration/16-3","ma-integration/16-4","ma-integration/16-5","ma-integration/16-6","ma-integration/16-7","ma-integration/16-8","ma-integration/16-9","probabilistic-engineering/25-1","probabilistic-engineering/25-2","probabilistic-engineering/25-3","probabilistic-engineering/25-4","probabilistic-engineering/25-5","product-economics/5-1","product-economics/5-10","product-economics/5-11","product-economics/5-12","product-economics/5-13","product-economics/5-14","product-economics/5-15","product-economics/5-2","product-economics/5-3","product-economics/5-4","product-economics/5-5","product-economics/5-6","product-economics/5-7","product-economics/5-8","product-economics/5-9","rd-capital-management/3-1","rd-capital-management/3-10","rd-capital-management/3-11","rd-capital-management/3-12","rd-capital-management/3-13","rd-capital-management/3-14","rd-capital-management/3-15","rd-capital-management/3-16","rd-capital-management/3-17","rd-capital-management/3-18","rd-capital-management/3-19","rd-capital-management/3-2","rd-capital-management/3-3","rd-capital-management/3-4","rd-capital-management/3-5","rd-capital-management/3-6","rd-capital-management/3-7","rd-capital-management/3-8","rd-capital-management/3-9","remote-economics/15-1","remote-economics/15-10","remote-economics/15-2","remote-economics/15-3","remote-economics/15-4","remote-economics/15-5","remote-economics/15-6","remote-economics/15-7","remote-economics/15-8","remote-economics/15-9","startup-economics/26-1","startup-economics/26-2","startup-economics/26-3","startup-economics/26-4","startup-economics/26-5","strategic-leadership/22-1","strategic-leadership/22-10","strategic-leadership/22-11","strategic-leadership/22-12","strategic-leadership/22-13","strategic-leadership/22-14","strategic-leadership/22-15","strategic-leadership/22-2","strategic-leadership/22-3","strategic-leadership/22-4","strategic-leadership/22-5","strategic-leadership/22-6","strategic-leadership/22-7","strategic-leadership/22-8","strategic-leadership/22-9","tech-debt-liability/9-1","tech-debt-liability/9-10","tech-debt-liability/9-2","tech-debt-liability/9-3","tech-debt-liability/9-4","tech-debt-liability/9-5","tech-debt-liability/9-6","tech-debt-liability/9-7","tech-debt-liability/9-8","tech-debt-liability/9-9","vendor-economics/18-1","vendor-economics/18-10","vendor-economics/18-2","vendor-economics/18-3","vendor-economics/18-4","vendor-economics/18-5","vendor-economics/18-6","vendor-economics/18-7","vendor-economics/18-8","vendor-economics/18-9"]);
 export const VALID_COMPARE_TIER_A_SLUGS = new Set<string>(["advisory-vs-bain","advisory-vs-big4","advisory-vs-gartner","advisory-vs-mckinsey","advisory-vs-traditional-fractional-cto","ai-coding-agents","ai-guardrails-platforms","aper-vs-jellyfish","aper-vs-linearb","audit-interview-vs-hackerrank","audit-interview-vs-leetcode","audit-interview-vs-traditional","aueb-vs-aws-cost-explorer","claude-code-retry-loop-prevention","claude-code-vs-cursor-governance","claude-context-rot-mitigation","claude-md-is-not-governance","copilot-roi-vs-gitclear","cursor-problems","cursor-repository-drift-prevention","dora-metrics-vs-aper","ev-se-vs-jellyfish","exogram-vs-lakera","exogram-vs-langchain","github-copilot-problems","pdi-vs-codeclimate","pdi-vs-sonarqube","pdi-vs-waydev","shadow-ai-vs-shadow-it","technical-debt-vs-technical-insolvency","vibe-coding-vs-agile","why-ai-code-creates-more-bugs-than-it-fixes","why-ai-coding-burns-money","why-ai-costs-spiral-from-silent-retries","why-ai-feature-margins-turn-negative","why-ai-pr-review-time-is-exploding","why-ai-prds-and-specs-create-waste","why-ai-prompts-break-after-model-updates","why-ai-teams-become-api-janitors","why-anthropic-bills-spike-with-tool-use","why-board-ai-metrics-sound-impressive-but-mean-nothing","why-cfos-are-shutting-down-ai-pilots","why-claude-loses-context","why-companies-pay-shadow-ai-vendor-tax","why-copilot-didnt-reduce-engineering-headcount","why-cursor-rewrites-files","why-local-llms-are-more-expensive-than-apis","why-mcp-is-dangerous","why-rag-returns-stale-data-after-updates","why-retry-loops-happen","why-unused-ai-features-drain-cloud-budgets","windsurf-problems"]);
+export const VALID_EXECUTIVE_FINANCIALS_SPOKES = new Set<string>(["cfo-investor/ai-hallucination-remediation-cost","cfo-investor/capitalizing-software-rd-gaap","cfo-investor/cloud-finops-vs-ai-optimization","cfo-investor/data-debt-formal-definition","cfo-investor/data-residency-compliance-capex","cfo-investor/hard-vs-soft-ai-roi","cfo-investor/incident-management-cost","cfo-investor/integration-risk","cfo-investor/total-compute-cost-tcc-illusion","cfo-investor/value-software-technical-debt-m-a","founder-ceo/burn-rate-runway"]);
 
 export const EXACT_EDGE_REDIRECTS: Record<string, string> = {
   "/&": "/",
   "/$": "/",
   "/10": "/",
   "/advisory.html": "/advisory",
+  "/advisory/licensing": "/advisory",
   "/ai-cost-audit": "/services/ai-cost-audit",
   "/ai-sop-generator": "/tools/department-ai-playbook",
   "/ai-spend-calculator": "/roi-calculator",
@@ -56,6 +58,14 @@ export const EXACT_EDGE_REDIRECTS: Record<string, string> = {
   "/articles/feature-bloat-calculus": "/articles/frameworks/feature-bloat-calculus",
   "/articles/financial-metrics-scorecard": "/blog/financial-metrics-scorecard",
   "/articles/frameworks": "/framework",
+  "/articles/frameworks/ai-governance": "/articles/frameworks/shadow-agents",
+  "/articles/frameworks/ai-unit-economics": "/articles/frameworks/synthetic-cogs",
+  "/articles/frameworks/deterministic-control-plane": "/articles/frameworks/deterministic-control-layer",
+  "/articles/frameworks/engineering-use": "/articles/frameworks/innovation-tax",
+  "/articles/frameworks/hallucination-entropy": "/articles/frameworks/agentic-drift",
+  "/articles/frameworks/probabilistic-tech-debt": "/articles/frameworks/vibe-coding-debt",
+  "/articles/frameworks/product-debt-index": "/glossary/product-debt-index",
+  "/articles/frameworks/technical-insolvency": "/articles/frameworks/technical-insolvency-date",
   "/articles/frontier-model-economics": "/articles/frameworks/frontier-model-economics",
   "/articles/graph-rag": "/articles/frameworks/graph-rag",
   "/articles/graph-rag-roi-models-cfo": "/articles/frameworks/graph-rag",
@@ -112,7 +122,9 @@ export const EXACT_EDGE_REDIRECTS: Record<string, string> = {
   "/blog/hiring-engineers-gross-margin": "/blog/b2b-saas-coordination-tax-saas-engineering-margins",
   "/blog/subprime-code-crisis": "/blog/negative-carry-code-crisis",
   "/blog/technical-insolvency-date": "/articles/frameworks/technical-insolvency-date",
-  "/blog/the-subprime-code-crisis": "/blog/the-negative-carry-code-crisis",
+  "/blog/the-negative-carry-code-crisis": "/blog/negative-carry-code-crisis",
+  "/blog/the-subprime-code-crisis": "/blog/negative-carry-code-crisis",
+  "/book": "/ai-economist-book",
   "/briefings.html": "/briefings",
   "/career-pathfinder": "/tools/career-pathing",
   "/compare/ai-cost-calculator-vs-aws": "/compare/aueb-vs-aws-cost-explorer",
@@ -172,6 +184,9 @@ export const EXACT_EDGE_REDIRECTS: Record<string, string> = {
   "/concepts/vibe-coding-debt": "/articles/frameworks/vibe-coding-debt",
   "/concepts/zero-trust-type-verification": "/glossary/zero-trust-type-gate",
   "/curriculum": "/vault/curriculum/tracks",
+  "/curriculum/leadership-autonomy-escalation": "/vault/curriculum/tracks/leadership-autonomy-escalation",
+  "/curriculum/leadership-double-diamond": "/vault/curriculum/tracks/leadership-double-diamond",
+  "/curriculum/leadership-problem-continuum": "/vault/curriculum/tracks/leadership-problem-continuum",
   "/curriculum/tracks": "/vault/curriculum/tracks",
   "/disclaimer": "/legal#disclaimers",
   "/disclaimers": "/legal#disclaimers",
@@ -1301,6 +1316,7 @@ export const EXACT_EDGE_REDIRECTS: Record<string, string> = {
   "/manifesto.html": "/manifesto",
   "/media-kit": "/brand",
   "/methodology.html": "/system",
+  "/partnerships/brand-assets": "/brand",
   "/partnerships/integrations": "/partnerships/integration-docs",
   "/partnerships/supabase": "/integrations/supabase",
   "/press": "/brand",
@@ -1316,6 +1332,7 @@ export const EXACT_EDGE_REDIRECTS: Record<string, string> = {
   "/roai-framework": "/articles/frameworks/return-on-ai-investment",
   "/robots": "/robots.txt",
   "/security-trust": "/security",
+  "/services/licensing": "/partnerships",
   "/studio.html": "/services",
   "/supabase-rls-checker": "/tools/supabase-rls-checker",
   "/system.html": "/system",
@@ -1532,6 +1549,18 @@ export function resolveEdgeRedirect(rawPathname: string): string | null {
       }
       return '/failures';
     }
+  }
+
+  // 10b. Legacy /answers/c-suite-financials/* -> /answers/executive-financials/* (validated 1-hop 301)
+  if (pathname === '/answers/c-suite-financials') {
+    return '/answers';
+  }
+  if (pathname.startsWith('/answers/c-suite-financials/')) {
+    const rest = pathname.slice('/answers/c-suite-financials/'.length);
+    if (/^[a-z0-9-]+\/[a-z0-9-]+$/i.test(rest) && VALID_EXECUTIVE_FINANCIALS_SPOKES.has(rest)) {
+      return `/answers/executive-financials/${rest}`;
+    }
+    return '/answers';
   }
 
   // 11. Generic trailing-slash canonicalization for valid non-root routes

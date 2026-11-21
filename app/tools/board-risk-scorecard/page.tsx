@@ -57,7 +57,7 @@ export default function Page() {
                         channel: 'EXECUTIVE_ADVISORY',
                         headline: 'Boardroom AI Governance Briefing & Fiduciary Audit',
                         subtext: 'Retain Richard Ewing to deliver board-ready briefings, evaluate management AI R&D disclosures, and structure sovereign fiduciary oversight frameworks.',
-                        actionUrl: '/workspace/board',
+                        actionUrl: '/for-boards',
                         actionLabel: 'Inquire for Boardroom Briefing ↗',
                         targetRole: 'Board Directors, CEOs & Audit Committee Chairs'
                     }}

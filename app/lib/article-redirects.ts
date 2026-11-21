@@ -8,6 +8,7 @@ export const BLOG_SLUG_REDIRECTS: Record<string, string> = {
   'cost-of-predictivity': '/articles/frameworks/cost-of-predictivity',
   'technical-insolvency-date': '/articles/frameworks/technical-insolvency-date',
   'anthropic-academy-ai-courses-curated': '/resources/ai-courses',
+  'the-negative-carry-code-crisis': '/blog/negative-carry-code-crisis',
 };
 
 export const ARTICLE_SLUG_REDIRECTS: Record<string, string> = {

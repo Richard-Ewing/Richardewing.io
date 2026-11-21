@@ -122,7 +122,7 @@ export default function AIEconomistPage() {
             Explore Research Corpus (174+) ↗
           </Link>
           <Link
-            href="/book"
+            href="/ai-economist-book"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white border border-[#24332b]/20 text-[#162e26] font-medium hover:bg-[#ebe7dc] transition-all text-sm"
           >
             Inspect The Book ↗
@@ -386,7 +386,7 @@ export default function AIEconomistPage() {
             </p>
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
-                href="/book"
+                href="/ai-economist-book"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#162e26] text-white font-medium hover:bg-[#29473b] transition-all text-sm"
               >
                 Inspect Chapter Outlines ↗

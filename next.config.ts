@@ -408,6 +408,91 @@ const nextConfig: NextConfig = {
         destination: '/brand',
         statusCode: 301,
       },
+      {
+        source: '/partnerships/brand-assets',
+        destination: '/brand',
+        statusCode: 301,
+      },
+      {
+        source: '/book',
+        destination: '/ai-economist-book',
+        statusCode: 301,
+      },
+      {
+        source: '/services/licensing',
+        destination: '/partnerships',
+        statusCode: 301,
+      },
+      {
+        source: '/advisory/licensing',
+        destination: '/advisory',
+        statusCode: 301,
+      },
+      {
+        source: '/articles/frameworks/product-debt-index',
+        destination: '/glossary/product-debt-index',
+        statusCode: 301,
+      },
+      {
+        source: '/articles/frameworks/engineering-use',
+        destination: '/articles/frameworks/innovation-tax',
+        statusCode: 301,
+      },
+      {
+        source: '/articles/frameworks/probabilistic-tech-debt',
+        destination: '/articles/frameworks/vibe-coding-debt',
+        statusCode: 301,
+      },
+      {
+        source: '/articles/frameworks/hallucination-entropy',
+        destination: '/articles/frameworks/agentic-drift',
+        statusCode: 301,
+      },
+      {
+        source: '/articles/frameworks/technical-insolvency',
+        destination: '/articles/frameworks/technical-insolvency-date',
+        statusCode: 301,
+      },
+      {
+        source: '/articles/frameworks/deterministic-control-plane',
+        destination: '/articles/frameworks/deterministic-control-layer',
+        statusCode: 301,
+      },
+      {
+        source: '/articles/frameworks/ai-unit-economics',
+        destination: '/articles/frameworks/synthetic-cogs',
+        statusCode: 301,
+      },
+      {
+        source: '/articles/frameworks/ai-governance',
+        destination: '/articles/frameworks/shadow-agents',
+        statusCode: 301,
+      },
+      {
+        source: '/curriculum/leadership-double-diamond',
+        destination: '/vault/curriculum/tracks/leadership-double-diamond',
+        statusCode: 301,
+      },
+      {
+        source: '/curriculum/leadership-problem-continuum',
+        destination: '/vault/curriculum/tracks/leadership-problem-continuum',
+        statusCode: 301,
+      },
+      {
+        source: '/curriculum/leadership-autonomy-escalation',
+        destination: '/vault/curriculum/tracks/leadership-autonomy-escalation',
+        statusCode: 301,
+      },
+      {
+        source: '/answers/c-suite-financials',
+        destination: '/answers',
+        statusCode: 301,
+      },
+      {
+        source: '/answers/c-suite-financials/:persona([a-z0-9-]+)/:questionSlug([a-z0-9-]+)',
+        destination: '/answers/executive-financials/:persona/:questionSlug',
+        statusCode: 301,
+      },
       // ═══════════════════ GSC 404 REMEDIATION ═══════════════════
       // Redirect all old numeric tracks and modules directly to the vault curriculum in a single hop
       {

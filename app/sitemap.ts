@@ -66,7 +66,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/working-papers.html', '/robots/', '/git', '/github',
         '/partnerships/integrations', '/partnerships/supabase',
         '/docs/integrations/supabase', '/docs/integrations', '/integrations',
-        '/media-kit', '/press', '/guides', '/vault/curriculum',
+        '/media-kit', '/press', '/partnerships/brand-assets', '/book', '/guides', '/vault/curriculum',
         '/guides/cto-first-90-days', '/guides/technical-debt',
         '/guides/build-vs-buy', '/guides/engineering-efficiency',
         '/guides/product-economics', '/guides/how-to-deploy-small-language-models',
@@ -134,7 +134,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/security`, 'monthly', 0.8);
     add(`${baseUrl}/faq`, 'monthly', 0.8);
     add(`${baseUrl}/manifesto`, 'yearly', 0.6);
-    add(`${baseUrl}/book`, 'monthly', 0.5);
     add(`${baseUrl}/profiles`, 'monthly', 0.5);
     add(`${baseUrl}/system`, 'monthly', 0.5);
     add(`${baseUrl}/pricing`, 'monthly', 0.8);
@@ -259,7 +258,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/testimonials`, 'monthly', 0.7);
     add(`${baseUrl}/partnerships`, 'monthly', 0.8);
     add(`${baseUrl}/partnerships/integration-docs`, 'weekly', 0.9);
-    add(`${baseUrl}/partnerships/brand-assets`, 'monthly', 0.8);
     add(`${baseUrl}/brand`, 'monthly', 0.85);
     add(`${baseUrl}/integrations/supabase`, 'weekly', 0.9);
     add(`${baseUrl}/partner`, 'monthly', 0.7);

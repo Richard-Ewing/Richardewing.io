@@ -10,6 +10,7 @@ import { ARTICLE_SLUG_REDIRECTS, BLOG_SLUG_REDIRECTS } from '../app/lib/article-
 import { getAllModuleSlugs } from '../app/lib/curriculum-data';
 import { FAILURES, SKILLS } from '../lib/content/skills';
 import { exogramDocs } from '../app/lib/exogram-docs';
+import { getAllSpokeRoutes } from '../app/lib/spoke-data';
 
 const rootDir = path.resolve(__dirname, '..');
 
@@ -48,6 +49,11 @@ const failureSlugsSet = new Set(FAILURES.map((f) => f.slug));
 const skillSlugsSet = new Set(SKILLS.map((s) => s.slug));
 const exogramDocSlugsSet = new Set(exogramDocs.map((d) => d.slug));
 const curriculumModuleSlugsSet = new Set(getAllModuleSlugs());
+const executiveFinancialsSpokesSet = new Set(
+  getAllSpokeRoutes()
+    .filter((r) => r.topic === 'executive-financials')
+    .map((r) => `${r.persona}/${r.questionSlug}`)
+);
 
 const TIER_A_COMPARE_SLUGS = new Set([
   'claude-code-vs-cursor-governance', 'claude-code-retry-loop-prevention',
@@ -159,6 +165,21 @@ const exactRedirects: Record<string, string> = {
   '/integrations': '/partnerships/integration-docs',
   '/media-kit': '/brand',
   '/press': '/brand',
+  '/partnerships/brand-assets': '/brand',
+  '/book': '/ai-economist-book',
+  '/services/licensing': '/partnerships',
+  '/advisory/licensing': '/advisory',
+  '/articles/frameworks/product-debt-index': '/glossary/product-debt-index',
+  '/articles/frameworks/engineering-use': '/articles/frameworks/innovation-tax',
+  '/articles/frameworks/probabilistic-tech-debt': '/articles/frameworks/vibe-coding-debt',
+  '/articles/frameworks/hallucination-entropy': '/articles/frameworks/agentic-drift',
+  '/articles/frameworks/technical-insolvency': '/articles/frameworks/technical-insolvency-date',
+  '/articles/frameworks/deterministic-control-plane': '/articles/frameworks/deterministic-control-layer',
+  '/articles/frameworks/ai-unit-economics': '/articles/frameworks/synthetic-cogs',
+  '/articles/frameworks/ai-governance': '/articles/frameworks/shadow-agents',
+  '/curriculum/leadership-double-diamond': '/vault/curriculum/tracks/leadership-double-diamond',
+  '/curriculum/leadership-problem-continuum': '/vault/curriculum/tracks/leadership-problem-continuum',
+  '/curriculum/leadership-autonomy-escalation': '/vault/curriculum/tracks/leadership-autonomy-escalation',
   '/ai-cost-audit': '/services/ai-cost-audit',
   '/rd-capital-audit': '/services/ai-cost-audit',
   '/ai-spend-calculator': '/roi-calculator',
@@ -298,8 +319,8 @@ const blogAliasCandidates: Record<string, string> = {
   ...Object.fromEntries(Object.entries(BLOG_SLUG_REDIRECTS).map(([s, t]) => [`/blog/${s}`, t])),
   '/blog/hiring-engineers-gross-margin': '/blog/b2b-saas-coordination-tax-saas-engineering-margins',
   '/blog/ai-product-management-guide': '/vault/curriculum/tracks/ai-product-economics/2-1',
-  '/blog/the-subprime-code-crisis': blogSlugsSet.has('the-negative-carry-code-crisis')
-    ? '/blog/the-negative-carry-code-crisis'
+  '/blog/the-subprime-code-crisis': blogSlugsSet.has('negative-carry-code-crisis')
+    ? '/blog/negative-carry-code-crisis'
     : '/concepts/negative-carry-code-crisis',
   '/blog/subprime-code-crisis': blogSlugsSet.has('negative-carry-code-crisis')
     ? '/blog/negative-carry-code-crisis'
@@ -455,6 +476,7 @@ export const VALID_CONCEPT_SLUGS = new Set<string>(${JSON.stringify([...conceptS
 export const VALID_FAILURE_SLUGS = new Set<string>(${JSON.stringify([...failureSlugsSet].sort())});
 export const VALID_CURRICULUM_MODULE_SLUGS = new Set<string>(${JSON.stringify([...curriculumModuleSlugsSet].sort())});
 export const VALID_COMPARE_TIER_A_SLUGS = new Set<string>(${JSON.stringify([...TIER_A_COMPARE_SLUGS].sort())});
+export const VALID_EXECUTIVE_FINANCIALS_SPOKES = new Set<string>(${JSON.stringify([...executiveFinancialsSpokesSet].sort())});
 
 export const EXACT_EDGE_REDIRECTS: Record<string, string> = ${JSON.stringify(
   Object.fromEntries(Object.entries(exactRedirects).sort(([a], [b]) => a.localeCompare(b))),
@@ -626,6 +648,18 @@ export function resolveEdgeRedirect(rawPathname: string): string | null {
       }
       return '/failures';
     }
+  }
+
+  // 10b. Legacy /answers/c-suite-financials/* -> /answers/executive-financials/* (validated 1-hop 301)
+  if (pathname === '/answers/c-suite-financials') {
+    return '/answers';
+  }
+  if (pathname.startsWith('/answers/c-suite-financials/')) {
+    const rest = pathname.slice('/answers/c-suite-financials/'.length);
+    if (/^[a-z0-9-]+\\/[a-z0-9-]+$/i.test(rest) && VALID_EXECUTIVE_FINANCIALS_SPOKES.has(rest)) {
+      return \`/answers/executive-financials/\${rest}\`;
+    }
+    return '/answers';
   }
 
   // 11. Generic trailing-slash canonicalization for valid non-root routes

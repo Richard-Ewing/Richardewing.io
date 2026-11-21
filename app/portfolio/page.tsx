@@ -464,7 +464,7 @@ export default function PortfolioPage() {
             <Link className="button button-dark" href="/research/publications">
               Browse all 174+ works ↗
             </Link>
-            <Link className="button button-outline" href="/book">
+            <Link className="button button-outline" href="/ai-economist-book">
               The Pragmatic AI Builder ↗
             </Link>
           </div>

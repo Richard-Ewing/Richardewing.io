@@ -59,7 +59,7 @@ export function Sidebar() {
         {
             label: 'Signal', items: [
                 { href: '/briefings', label: '08. Briefs' },
-                { href: '/book', label: '09. Book' },
+                { href: '/ai-economist-book', label: '09. Book' },
                 { href: '/legal', label: '10. Legal' },
             ]
         },

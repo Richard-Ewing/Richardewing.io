@@ -28,7 +28,7 @@ leadershipModules['leadership-autonomy-escalation'] = m(
             { question: 'What distinguishes a Tier 4 (Apex) employee from a Tier 3 employee?', options: ['They fix the problem faster.', 'They escalate to the CEO.', 'They collaborate cross-functionally to design a systemic prevention.', 'They write the incident report.'], correctIndex: 2, explanation: 'A Tier 4 employee does not just fix the symptom and communicate; they design a permanent, systemic prevention mechanism to eliminate that class of error entirely.' }
         )
     ],
-    '/curriculum/leadership-double-diamond',
+    '/vault/curriculum/tracks/leadership-double-diamond',
     undefined,
     'live',
     ['four-tiers-of-autonomy']
@@ -61,7 +61,7 @@ leadershipModules['leadership-double-diamond'] = m(
             { question: 'According to the Double Diamond framework, what happens immediately after a promotion to management?', options: ['You reach the peak of Diamond 1.', 'Your functional skills instantly transfer to your new role.', 'You reset to the narrow bottom of Diamond 2 with zero leadership skills.', 'You widen your existing skill base automatically.'], correctIndex: 2, explanation: 'The promotion to leadership is a reset. You leave the peak of your IC diamond and start at the narrow bottom of the leadership diamond, requiring an entirely new set of skills.' }
         )
     ],
-    '/curriculum/leadership-problem-continuum',
+    '/vault/curriculum/tracks/leadership-problem-continuum',
     undefined,
     'live',
     ['double-diamond-career-trajectory']
