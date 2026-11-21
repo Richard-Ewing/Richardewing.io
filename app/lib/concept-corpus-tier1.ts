@@ -47,7 +47,7 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
     ],
     reverseCitations: [
       { targetType: 'Diagnostic Tool', title: 'Exogram Agent Registry', url: 'https://exogram.ai/registry', relationship: 'governs' },
-      { targetType: 'Curriculum Track', title: 'CareerWin Security Track', url: 'https://careerwin.ai/paths/security', relationship: 'teaches' }
+      { targetType: 'Curriculum Track', title: 'CareerWin Security Track', url: 'https://careerwin.ai/role/security-engineer', relationship: 'teaches' }
     ],
     relatedConceptSlugs: [
       { slug: 'deterministic-governance', relationship: 'requires' },
@@ -291,7 +291,7 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
     ],
     reverseCitations: [
       { targetType: 'Diagnostic Tool', title: 'AI Unit Economics Benchmark', url: 'https://www.richardewing.io/tools/aueb', relationship: 'measures' },
-      { targetType: 'Framework Module', title: 'CareerWin AI ROI Model', url: 'https://careerwin.ai/roi', relationship: 'implements' }
+      { targetType: 'Framework Module', title: 'CareerWin AI ROI Model', url: 'https://careerwin.ai/tools/career-leakage-calculator', relationship: 'implements' }
     ],
     relatedConceptSlugs: [
       { slug: 'ai-volatility-tax', relationship: 'requires' },
@@ -357,7 +357,7 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
     ],
     reverseCitations: [
       { targetType: 'Diagnostic Tool', title: 'Product Debt Index', url: 'https://www.richardewing.io/tools/pdi', relationship: 'measures' },
-      { targetType: 'Advisory Service', title: 'CareerWin Tech Debt Rescue', url: 'https://careerwin.ai/services', relationship: 'governs' }
+      { targetType: 'Advisory Service', title: 'CareerWin Tech Debt Rescue', url: 'https://careerwin.ai/pricing', relationship: 'governs' }
     ],
     relatedConceptSlugs: [
       { slug: 'negative-carry-code-crisis', relationship: 'correlates_with' }
@@ -421,7 +421,7 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
     ],
     reverseCitations: [
       { targetType: 'Framework Module', title: 'Exogram Agent Architecture', url: 'https://exogram.ai/architecture', relationship: 'implements' },
-      { targetType: 'Curriculum Track', title: 'CareerWin Agentic Path', url: 'https://careerwin.ai/paths/agentic', relationship: 'teaches' }
+      { targetType: 'Curriculum Track', title: 'CareerWin Agentic Path', url: 'https://careerwin.ai/role/machine-learning-engineer', relationship: 'teaches' }
     ],
     relatedConceptSlugs: [
       { slug: 'deterministic-governance', relationship: 'requires' },
@@ -490,7 +490,7 @@ export const TIER1_CONCEPTS: ConceptNode[] = [
     ],
     reverseCitations: [
       { targetType: 'Diagnostic Tool', title: 'Exogram State Monitor', url: 'https://exogram.ai/monitor', relationship: 'measures' },
-      { targetType: 'Glossary Term', title: 'CareerWin Prompt Engineering Guide', url: 'https://careerwin.ai/guides/prompt-engineering', relationship: 'explains' as any }
+      { targetType: 'Glossary Term', title: 'CareerWin Prompt Engineering Guide', url: 'https://careerwin.ai/why-not-chatgpt', relationship: 'explains' as any }
     ],
     relatedConceptSlugs: [
       { slug: 'deterministic-governance', relationship: 'requires' },
