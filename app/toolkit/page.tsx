@@ -190,12 +190,16 @@ export default function ToolkitPage() {
                   <strong className="text-[var(--ink)]">Live Interactive Workspace (/workspace)</strong> access.
                 </p>
               </div>
-              <div className="pt-4 border-t border-[var(--line)]">
+              <div className="pt-4 border-t border-[var(--line)] space-y-2.5">
                 <CheckoutButton
                   productId="premium_guide_29"
+                  source="toolkit"
                   label="Get the Survival Kit ($29) →"
                   variant="primary"
                 />
+                <p className="text-[11px] text-[var(--muted)] text-center leading-snug">
+                  14-day full refund if these models do not catch 10x their price in waste. Instant download plus expense receipt.
+                </p>
               </div>
             </div>
 
@@ -218,12 +222,16 @@ export default function ToolkitPage() {
                   Cloud FinOps, PE Due Diligence, Coding Tool ROI, and more).
                 </p>
               </div>
-              <div className="pt-4 border-t border-white/10">
+              <div className="pt-4 border-t border-white/10 space-y-2.5">
                 <CheckoutButton
                   productId="premium_guide_79"
+                  source="toolkit"
                   label="Get Complete Kit + All 13 Playbooks ($79) →"
                   variant="secondary"
                 />
+                <p className="text-[11px] text-zinc-300 text-center leading-snug">
+                  14-day full refund guarantee. Lifetime file ownership, company expense receipt, and instant /workspace access.
+                </p>
               </div>
             </div>
           </div>
@@ -254,7 +262,7 @@ export default function ToolkitPage() {
             {kitModules.map((mod) => (
               <div
                 key={mod.number}
-                className="bg-white border border-[var(--line)] rounded-2xl p-6 sm:p-8 shadow-sm hover:border-[var(--gold)] transition-all"
+                className="bg-white border border-[var(--line)] rounded-2xl p-6 sm:p-8 shadow-sm hover:border-[var(--gold)] transition-colors"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <span className="w-10 h-10 rounded-xl bg-[var(--paper2)] text-[var(--gold)] font-mono font-bold text-sm flex items-center justify-center shrink-0 border border-[var(--line)]">

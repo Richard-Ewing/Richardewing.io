@@ -44,18 +44,24 @@ export async function GET(
         return pendingRes;
     }
 
-    const reqUrl = new URL(request.url);
-    const rawSource =
-        (reqUrl.searchParams.get('source') || 'direct')
+    const sanitizeSeg = (val: string, fallback: string, maxLen: number) =>
+        val
+            .replace(/--+/g, '-')
             .replace(/[^a-zA-Z0-9_-]/g, '')
-            .slice(0, 40) || 'direct';
+            .replace(/^-+|-+$/g, '')
+            .slice(0, maxLen) || fallback;
 
-    const stripeUrl = new URL(product.paymentLink);
+    const reqUrl = new URL(request.url);
+    const rawSource = sanitizeSeg(reqUrl.searchParams.get('source') || 'direct', 'direct', 40);
+    const safeProductId = sanitizeSeg(productId, 'item', 60);
+
+    const stripeUrl = new URL(product.paymentLink, request.url);
+    const isStripeTarget = stripeUrl.hostname.endsWith('stripe.com');
     const cookieHeader = request.headers.get('cookie') || '';
     const hasClerkCookie =
         cookieHeader.includes('__session') || cookieHeader.includes('__clerk');
 
-    if (hasClerkCookie) {
+    if (isStripeTarget && hasClerkCookie) {
         try {
             const authResult = await Promise.race([
                 auth(),
@@ -65,18 +71,22 @@ export async function GET(
             ]);
             if (authResult?.userId) {
                 const moduleId = reqUrl.searchParams.get('moduleId');
-                const referenceId = moduleId
-                    ? `${authResult.userId}::module_${moduleId}`
-                    : `${authResult.userId}::${productId}`;
-                stripeUrl.searchParams.set('client_reference_id', referenceId);
+                const safeModuleId = moduleId ? sanitizeSeg(moduleId, 'mod', 40) : '';
+                const referenceId = safeModuleId
+                    ? `${authResult.userId}--module_${safeModuleId}`
+                    : `${authResult.userId}--${safeProductId}`;
+                stripeUrl.searchParams.set('client_reference_id', referenceId.slice(0, 200));
             }
         } catch {
             // Proceed directly to Stripe guest checkout if Clerk lookup errors
         }
     }
 
-    if (!stripeUrl.searchParams.has('client_reference_id')) {
-        stripeUrl.searchParams.set('client_reference_id', `guest::${rawSource}::${productId}`);
+    if (isStripeTarget && !stripeUrl.searchParams.has('client_reference_id')) {
+        stripeUrl.searchParams.set(
+            'client_reference_id',
+            `guest--${rawSource}--${safeProductId}`.slice(0, 200)
+        );
     }
 
     const redirectRes = NextResponse.redirect(stripeUrl);

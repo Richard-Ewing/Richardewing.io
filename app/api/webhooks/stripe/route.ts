@@ -78,7 +78,7 @@ export async function POST(req: Request) {
         const rawReferenceId = session.client_reference_id;
 
         if (rawReferenceId) {
-            const parts = rawReferenceId.split('::');
+            const parts = rawReferenceId.split(/::|--/);
             const userId = parts[0]?.trim();
             const rawSpecificItemId = parts.length > 1 ? parts[1]?.trim() : null;
             const specificItemId =

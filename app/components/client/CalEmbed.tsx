@@ -1,84 +1,124 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 interface CalEmbedProps {
   calLink?: string;
   className?: string;
 }
 
-export default function CalEmbed({
-  calLink = 'richard-ewing-2cevwb',
-  className = ''
-}: CalEmbedProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+type CalNamespaceFn = {
+  (...args: unknown[]): void;
+  q?: unknown[];
+};
 
-  const embedId = `cal-booking-embed-${calLink.replace(/[^a-z0-9]/gi, '-').toLowerCase()}`;
+type CalGlobalFn = {
+  (...args: unknown[]): void;
+  loaded?: boolean;
+  ns?: Record<string, CalNamespaceFn>;
+  q?: unknown[];
+};
 
-  useEffect(() => {
-    let isMounted = true;
+function ensureCalBootstrap(): CalGlobalFn {
+  const win = window as unknown as { Cal?: CalGlobalFn };
+  if (win.Cal) return win.Cal;
 
-    if (typeof window === 'undefined') return;
+  const pushArg = (target: { q?: unknown[] }, ar: IArguments | unknown[]) => {
+    target.q = target.q || [];
+    target.q.push(ar);
+  };
 
-    const initCal = () => {
-      const Cal = (window as any).Cal;
-      if (Cal) {
-        Cal('init', { origin: 'https://app.cal.com' });
-        Cal('inline', {
-          elementOrSelector: `#${embedId}`,
-          calLink: calLink,
-          layout: 'month_view'
-        });
-        Cal('ui', {
-          styles: { branding: { brandColor: '#4f46e5' } },
-          hideEventTypeDetails: false,
-          layout: 'month_view'
-        });
-        if (isMounted) {
-          setIsLoaded(true);
-        }
-      }
-    };
-
-    if ((window as any).Cal) {
-      initCal();
-    } else {
-      const existingScript = document.querySelector('script[src="https://app.cal.com/embed/embed.js"]');
-      if (!existingScript) {
+  const cal: CalGlobalFn = function (...args: unknown[]) {
+    if (!cal.loaded) {
+      cal.ns = {};
+      cal.q = cal.q || [];
+      const existing = document.querySelector('script[src="https://app.cal.com/embed/embed.js"]');
+      if (!existing) {
         const script = document.createElement('script');
         script.src = 'https://app.cal.com/embed/embed.js';
         script.async = true;
-        script.onload = () => {
-          initCal();
-        };
         document.head.appendChild(script);
-      } else {
-        existingScript.addEventListener('load', initCal);
       }
+      cal.loaded = true;
     }
+    if (args[0] === 'init') {
+      const api: CalNamespaceFn = function (...nsArgs: unknown[]) {
+        pushArg(api, nsArgs);
+      };
+      const namespace = args[1];
+      api.q = [];
+      if (typeof namespace === 'string') {
+        cal.ns = cal.ns || {};
+        cal.ns[namespace] = cal.ns[namespace] || api;
+        pushArg(cal.ns[namespace], args);
+        pushArg(cal, ['initNamespace', namespace]);
+      } else {
+        pushArg(cal, args);
+      }
+      return;
+    }
+    pushArg(cal, args);
+  };
+
+  win.Cal = cal;
+  return cal;
+}
+
+export default function CalEmbed({
+  calLink = 'richard-ewing-2cevwb',
+  className = '',
+}: CalEmbedProps) {
+  const mountRef = useRef<HTMLDivElement>(null);
+  const safeKey = calLink.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+  const embedId = `cal-booking-embed-${safeKey}`;
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const targetEl = mountRef.current;
+    if (!targetEl) return;
+
+    targetEl.innerHTML = '';
+
+    const Cal = ensureCalBootstrap();
+    const ns = `rw_${safeKey}`;
+
+    Cal('init', ns, { origin: 'https://cal.com' });
+    const nsApi = Cal.ns?.[ns] || Cal;
+
+    nsApi('inline', {
+      elementOrSelector: targetEl,
+      calLink,
+      layout: 'month_view',
+      config: {
+        layout: 'month_view',
+        theme: 'light',
+      },
+    });
+
+    nsApi('ui', {
+      theme: 'light',
+      cssVarsPerTheme: {
+        light: { 'cal-brand': '#1f3b2c' },
+      },
+      hideEventTypeDetails: false,
+      layout: 'month_view',
+    });
 
     return () => {
-      isMounted = false;
+      if (targetEl) {
+        targetEl.innerHTML = '';
+      }
     };
-  }, [calLink, embedId]);
+  }, [calLink, safeKey]);
 
   return (
-    <div className={`w-full min-h-[640px] flex flex-col relative ${className}`} ref={containerRef}>
+    <div className={`w-full min-h-[640px] flex flex-col relative ${className}`}>
       <div
         id={embedId}
-        className="w-full min-h-[640px] flex-1 rounded-2xl overflow-hidden"
-      >
-        {/* Interactive iframe fallback */}
-        <iframe
-          src={`https://cal.com/${calLink}?embed=true`}
-          width="100%"
-          height="100%"
-          frameBorder="0"
-          className="min-h-[640px] w-full border-0 rounded-2xl"
-          title={`Schedule a Session with Richard Ewing (${calLink})`}
-        />
-      </div>
+        ref={mountRef}
+        className="w-full min-h-[640px] flex-1 rounded-2xl overflow-auto bg-white"
+        aria-label={`Schedule a Session with Richard Ewing (${calLink})`}
+      />
     </div>
   );
 }

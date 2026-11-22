@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { FileText, Key, Lock } from 'lucide-react';
-import { useUser, useClerk } from '@clerk/nextjs';
+import { useUser } from '@clerk/nextjs';
 import { PRODUCTS } from '@/lib/products';
 
 interface CheckoutButtonProps {
@@ -11,29 +11,53 @@ interface CheckoutButtonProps {
     icon?: 'file' | 'key' | 'lock' | 'none';
     variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
     moduleId?: string; // used for single_module routing
+    source?: string; // optional attribution slug for client_reference_id
 }
 
-export default function CheckoutButton({ productId, label, icon = 'file', variant = 'primary', moduleId }: CheckoutButtonProps) {
+export default function CheckoutButton({ productId, label, icon = 'file', variant = 'primary', moduleId, source }: CheckoutButtonProps) {
     const [loading, setLoading] = useState<boolean>(false);
-    const { user, isSignedIn } = useUser();
-    const { openSignIn } = useClerk();
+    const { user } = useUser();
 
     const handleCheckout = () => {
-
         setLoading(true);
-        const product = PRODUCTS[productId];
-        if (product?.paymentLink) {
-            const url = new URL(product.paymentLink);
-            if (user?.id) {
-                const referenceId = productId === 'single_module' && moduleId ? `${user.id}::module_${moduleId}` : `${user.id}::${productId}`;
-                url.searchParams.append('client_reference_id', referenceId);
+        try {
+            const product = PRODUCTS[productId];
+            if (product?.paymentLink && typeof window !== 'undefined') {
+                const url = new URL(product.paymentLink, window.location.origin);
+                if (url.hostname.endsWith('stripe.com')) {
+                    const sanitizeSeg = (val: string, fallback: string, maxLen: number) =>
+                        val
+                            .replace(/--+/g, '-')
+                            .replace(/[^a-zA-Z0-9_-]/g, '')
+                            .replace(/^-+|-+$/g, '')
+                            .slice(0, maxLen) || fallback;
+                    const safeProductId = sanitizeSeg(productId, 'item', 60);
+                    if (user?.id) {
+                        const safeModuleId = moduleId ? sanitizeSeg(moduleId, 'mod', 40) : '';
+                        const referenceId =
+                            productId === 'single_module' && safeModuleId
+                                ? `${user.id}--module_${safeModuleId}`
+                                : `${user.id}--${safeProductId}`;
+                        url.searchParams.set('client_reference_id', referenceId.slice(0, 200));
+                    } else {
+                        const rawPath = window.location.pathname
+                            .replace(/^\/+|\/+$/g, '')
+                            .replace(/\//g, '_');
+                        const safeSource = sanitizeSeg(source || rawPath || 'button', 'button', 40);
+                        url.searchParams.set(
+                            'client_reference_id',
+                            `guest--${safeSource}--${safeProductId}`.slice(0, 200)
+                        );
+                    }
+                    if (user?.primaryEmailAddress?.emailAddress) {
+                        url.searchParams.set('prefilled_email', user.primaryEmailAddress.emailAddress);
+                    }
+                }
+                window.open(url.toString(), '_blank', 'noopener,noreferrer');
             }
-            if (user?.primaryEmailAddress?.emailAddress) {
-                url.searchParams.append('prefilled_email', user.primaryEmailAddress.emailAddress);
-            }
-            window.open(url.toString(), '_blank');
+        } finally {
+            setTimeout(() => setLoading(false), 1000);
         }
-        setTimeout(() => setLoading(false), 1000);
     };
 
     const IconComponent = icon === 'key' ? Key : icon === 'lock' ? Lock : FileText;
