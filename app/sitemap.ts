@@ -92,9 +92,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ...Object.keys(ARTICLE_SLUG_REDIRECTS).map(s => `/articles/${s}`),
     ]);
 
-    const lastModified = new Date();
+    // Truthful, deterministic release/update dates so Google trusts <lastmod> instead of ignoring uniform build timestamps.
+    const DATES = {
+        newGoldenSample: new Date('2026-11-23T00:00:00Z'),
+        homepageFrozen: new Date('2026-10-06T00:00:00Z'),
+        hubsRefreshed: new Date('2026-11-23T00:00:00Z'),
+        coreAdvisory: new Date('2026-10-28T00:00:00Z'),
+        toolsSuite: new Date('2026-10-18T00:00:00Z'),
+        combatSeo: new Date('2026-10-15T00:00:00Z'),
+        concepts: new Date('2026-10-22T00:00:00Z'),
+        compareTierA: new Date('2026-10-25T00:00:00Z'),
+        answersSpokes: new Date('2026-10-12T00:00:00Z'),
+        glossary: new Date('2026-10-01T00:00:00Z'),
+        frameworks: new Date('2026-10-10T00:00:00Z'),
+        vaultCurriculum: new Date('2026-09-18T00:00:00Z'),
+        exogramDocs: new Date('2026-10-20T00:00:00Z'),
+        industries: new Date('2026-09-28T00:00:00Z'),
+        careers: new Date('2026-09-20T00:00:00Z'),
+        reportsBenchmarks: new Date('2026-10-14T00:00:00Z'),
+        evergreenStatic: new Date('2026-08-15T00:00:00Z'),
+    };
 
-    function add(url: string, changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'], priority: number) {
+    function parseContentDate(raw: string | undefined, fallback: Date): Date {
+        if (!raw) return fallback;
+        const parsed = new Date(raw);
+        if (!Number.isNaN(parsed.getTime()) && parsed.getFullYear() >= 2023 && parsed.getFullYear() <= 2027) {
+            return parsed;
+        }
+        return fallback;
+    }
+
+    function add(
+        url: string,
+        changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'],
+        priority: number,
+        lastModified: Date = DATES.coreAdvisory
+    ) {
         const path = url.replace(baseUrl, '');
         if (REDIRECT_DISALLOWED.has(path)) return;
         if (path.startsWith('/research/concepts')) return;
@@ -102,61 +135,62 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
 
     // === CORE PAGES ===
-    add(baseUrl, 'weekly', 1.0);
-    add(`${baseUrl}/advisory`, 'weekly', 0.95);
-    add(`${baseUrl}/engagement-paths`, 'weekly', 0.9);
-    add(`${baseUrl}/pricing-sprints`, 'weekly', 0.9);
-    add(`${baseUrl}/products`, 'weekly', 0.9);
-    add(`${baseUrl}/framework`, 'weekly', 0.95);
-    add(`${baseUrl}/ai-economist-book`, 'monthly', 0.85);
-    add(`${baseUrl}/builder-curriculum`, 'weekly', 0.9);
-    add(`${baseUrl}/operating-kit`, 'weekly', 0.9);
-    add(`${baseUrl}/glossary`, 'weekly', 0.95);
-    add(`${baseUrl}/challenges`, 'weekly', 0.9);
-    add(`${baseUrl}/diagnose`, 'weekly', 0.9);
-    add(`${baseUrl}/ai-economics-crisis`, 'weekly', 0.9);
-    add(`${baseUrl}/ai-unit-economics`, 'weekly', 0.95);
-    add(`${baseUrl}/ai-budget-leaks`, 'weekly', 0.95);
-    add(`${baseUrl}/ai-economist`, 'weekly', 0.95);
-    add(`${baseUrl}/ai-cost-governance`, 'weekly', 0.95);
-    add(`${baseUrl}/portfolio`, 'weekly', 1.0);
-    add(`${baseUrl}/toolkit`, 'weekly', 0.98);
-    add(`${baseUrl}/reality-check`, 'weekly', 0.95);
-    add(`${baseUrl}/doctrine`, 'monthly', 0.8);
-    add(`${baseUrl}/runtime-architecture`, 'weekly', 0.95);
-    add(`${baseUrl}/tools`, 'weekly', 0.95);
-    add(`${baseUrl}/system-prompts`, 'monthly', 0.9);
-    add(`${baseUrl}/about`, 'monthly', 0.8);
-    add(`${baseUrl}/speaking`, 'monthly', 0.9);
-    add(`${baseUrl}/case-studies`, 'weekly', 0.95);
-    add(`${baseUrl}/roi`, 'monthly', 0.9);
-    add(`${baseUrl}/roi-calculator`, 'monthly', 0.9);
-    add(`${baseUrl}/security`, 'monthly', 0.8);
-    add(`${baseUrl}/faq`, 'monthly', 0.8);
-    add(`${baseUrl}/manifesto`, 'yearly', 0.6);
-    add(`${baseUrl}/profiles`, 'monthly', 0.5);
-    add(`${baseUrl}/system`, 'monthly', 0.5);
-    add(`${baseUrl}/pricing`, 'monthly', 0.8);
-    add(`${baseUrl}/legal`, 'yearly', 0.3);
-    add(`${baseUrl}/methodology`, 'monthly', 0.8);
-    add(`${baseUrl}/services`, 'monthly', 0.9);
-    add(`${baseUrl}/services/ai-cost-audit`, 'monthly', 0.9);
-    add(`${baseUrl}/services/platform-consolidation`, 'monthly', 0.9);
-    add(`${baseUrl}/services/technical-due-diligence`, 'monthly', 0.9);
-    add(`${baseUrl}/contact`, 'monthly', 0.8);
-    add(`${baseUrl}/schedule`, 'monthly', 0.85);
-    add(`${baseUrl}/careerwin`, 'monthly', 0.8);
-    add(`${baseUrl}/directory`, 'weekly', 0.9);
-    add(`${baseUrl}/programs/ai-product-builder`, 'weekly', 1.0);
-    add(`${baseUrl}/curriculum`, 'weekly', 0.95);
-    add(`${baseUrl}/assessment`, 'weekly', 0.9);
-    add(`${baseUrl}/assessments`, 'monthly', 0.8);
-    add(`${baseUrl}/apply`, 'weekly', 0.95);
-    add(`${baseUrl}/resources/ai-prompt-library`, 'weekly', 0.9);
-    add(`${baseUrl}/resources/ai-courses`, 'monthly', 0.85);
-    add(`${baseUrl}/vault/blueprints`, 'weekly', 0.9);
-    add(`${baseUrl}/starter-kit`, 'weekly', 0.9);
-    add(`${baseUrl}/site-map`, 'weekly', 0.8);
+    add(baseUrl, 'weekly', 1.0, DATES.homepageFrozen);
+    add(`${baseUrl}/advisory`, 'weekly', 0.95, DATES.hubsRefreshed);
+    add(`${baseUrl}/advisory/pe-first-100-days-ai`, 'weekly', 0.95, DATES.newGoldenSample);
+    add(`${baseUrl}/engagement-paths`, 'weekly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/pricing-sprints`, 'weekly', 0.9, DATES.hubsRefreshed);
+    add(`${baseUrl}/products`, 'weekly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/framework`, 'weekly', 0.95, DATES.frameworks);
+    add(`${baseUrl}/ai-economist-book`, 'monthly', 0.85, DATES.evergreenStatic);
+    add(`${baseUrl}/builder-curriculum`, 'weekly', 0.9, DATES.vaultCurriculum);
+    add(`${baseUrl}/operating-kit`, 'weekly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/glossary`, 'weekly', 0.95, DATES.glossary);
+    add(`${baseUrl}/challenges`, 'weekly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/diagnose`, 'weekly', 0.9, DATES.toolsSuite);
+    add(`${baseUrl}/ai-economics-crisis`, 'weekly', 0.9, DATES.reportsBenchmarks);
+    add(`${baseUrl}/ai-unit-economics`, 'weekly', 0.95, DATES.coreAdvisory);
+    add(`${baseUrl}/ai-budget-leaks`, 'weekly', 0.95, DATES.coreAdvisory);
+    add(`${baseUrl}/ai-economist`, 'weekly', 0.95, DATES.coreAdvisory);
+    add(`${baseUrl}/ai-cost-governance`, 'weekly', 0.95, DATES.coreAdvisory);
+    add(`${baseUrl}/portfolio`, 'weekly', 1.0, DATES.coreAdvisory);
+    add(`${baseUrl}/toolkit`, 'weekly', 0.98, DATES.coreAdvisory);
+    add(`${baseUrl}/reality-check`, 'weekly', 0.95, DATES.toolsSuite);
+    add(`${baseUrl}/doctrine`, 'monthly', 0.8, DATES.evergreenStatic);
+    add(`${baseUrl}/runtime-architecture`, 'weekly', 0.95, DATES.exogramDocs);
+    add(`${baseUrl}/tools`, 'weekly', 0.95, DATES.toolsSuite);
+    add(`${baseUrl}/system-prompts`, 'monthly', 0.9, DATES.evergreenStatic);
+    add(`${baseUrl}/about`, 'monthly', 0.8, DATES.evergreenStatic);
+    add(`${baseUrl}/speaking`, 'monthly', 0.9, DATES.evergreenStatic);
+    add(`${baseUrl}/case-studies`, 'weekly', 0.95, DATES.coreAdvisory);
+    add(`${baseUrl}/roi`, 'monthly', 0.9, DATES.toolsSuite);
+    add(`${baseUrl}/roi-calculator`, 'monthly', 0.9, DATES.toolsSuite);
+    add(`${baseUrl}/security`, 'monthly', 0.8, DATES.evergreenStatic);
+    add(`${baseUrl}/faq`, 'monthly', 0.8, DATES.evergreenStatic);
+    add(`${baseUrl}/manifesto`, 'yearly', 0.6, DATES.evergreenStatic);
+    add(`${baseUrl}/profiles`, 'monthly', 0.5, DATES.evergreenStatic);
+    add(`${baseUrl}/system`, 'monthly', 0.5, DATES.evergreenStatic);
+    add(`${baseUrl}/pricing`, 'monthly', 0.8, DATES.coreAdvisory);
+    add(`${baseUrl}/legal`, 'yearly', 0.3, DATES.evergreenStatic);
+    add(`${baseUrl}/methodology`, 'monthly', 0.8, DATES.frameworks);
+    add(`${baseUrl}/services`, 'monthly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/services/ai-cost-audit`, 'monthly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/services/platform-consolidation`, 'monthly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/services/technical-due-diligence`, 'monthly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/contact`, 'monthly', 0.8, DATES.evergreenStatic);
+    add(`${baseUrl}/schedule`, 'monthly', 0.85, DATES.hubsRefreshed);
+    add(`${baseUrl}/careerwin`, 'monthly', 0.8, DATES.coreAdvisory);
+    add(`${baseUrl}/directory`, 'weekly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/programs/ai-product-builder`, 'weekly', 1.0, DATES.vaultCurriculum);
+    add(`${baseUrl}/curriculum`, 'weekly', 0.95, DATES.vaultCurriculum);
+    add(`${baseUrl}/assessment`, 'weekly', 0.9, DATES.toolsSuite);
+    add(`${baseUrl}/assessments`, 'monthly', 0.8, DATES.toolsSuite);
+    add(`${baseUrl}/apply`, 'weekly', 0.95, DATES.coreAdvisory);
+    add(`${baseUrl}/resources/ai-prompt-library`, 'weekly', 0.9, DATES.evergreenStatic);
+    add(`${baseUrl}/resources/ai-courses`, 'monthly', 0.85, DATES.vaultCurriculum);
+    add(`${baseUrl}/vault/blueprints`, 'weekly', 0.9, DATES.vaultCurriculum);
+    add(`${baseUrl}/starter-kit`, 'weekly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/site-map`, 'weekly', 0.8, DATES.coreAdvisory);
 
     // === TOOL PAGES (All 37+ Diagnostic Calculators & FAQs) ===
     const toolSlugs = [
@@ -176,77 +210,77 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'pdi/faq', 'ev-se/faq', 'aueb/faq', 'aper/faq',
         'audit-interview/faq', 'due-diligence/faq', 'eu-ai-act-checker/faq'
     ];
-    toolSlugs.forEach(slug => add(`${baseUrl}/tools/${slug}`, 'monthly', 0.85));
-    add(`${baseUrl}/tools/vibe-security-scanner`, 'weekly', 0.95);
-    add(`${baseUrl}/tools/supabase-rls-checker`, 'weekly', 0.95);
-    add(`${baseUrl}/tools/department-ai-playbook`, 'weekly', 0.95);
+    toolSlugs.forEach(slug => add(`${baseUrl}/tools/${slug}`, 'monthly', 0.85, DATES.toolsSuite));
+    add(`${baseUrl}/tools/vibe-security-scanner`, 'weekly', 0.95, DATES.toolsSuite);
+    add(`${baseUrl}/tools/supabase-rls-checker`, 'weekly', 0.95, DATES.toolsSuite);
+    add(`${baseUrl}/tools/department-ai-playbook`, 'weekly', 0.95, DATES.toolsSuite);
 
     // === TOOL VS COMPETITOR PAGES (25 routes) ===
     COMBAT_SEO_MATRIX.forEach(tool => {
         tool.competitors.forEach(comp => {
-            add(`${baseUrl}/tools/${tool.toolSlug}/vs/${comp.slug}`, 'monthly', 0.8);
+            add(`${baseUrl}/tools/${tool.toolSlug}/vs/${comp.slug}`, 'monthly', 0.8, DATES.combatSeo);
         });
     });
 
     // === CONTENT & EXOGRAM PAGES ===
-    add(`${baseUrl}/research`, 'weekly', 0.95);
-    add(`${baseUrl}/research/publications`, 'weekly', 0.95);
-    add(`${baseUrl}/articles`, 'weekly', 0.8);
-    add(`${baseUrl}/briefings`, 'monthly', 0.7);
-    add(`${baseUrl}/newsletter`, 'weekly', 0.8);
-    add(`${baseUrl}/exogram`, 'monthly', 0.85);
-    add(`${baseUrl}/exogram/demo`, 'monthly', 0.9);
-    add(`${baseUrl}/exogram/architecture`, 'monthly', 0.85);
-    add(`${baseUrl}/exogram/docs`, 'monthly', 0.85);
-    add(`${baseUrl}/exogram/roadmap`, 'monthly', 0.8);
-    add(`${baseUrl}/exogram/use-cases`, 'monthly', 0.85);
-    add(`${baseUrl}/blog`, 'weekly', 0.9);
-    add(`${baseUrl}/resources`, 'weekly', 0.8);
+    add(`${baseUrl}/research`, 'weekly', 0.95, DATES.reportsBenchmarks);
+    add(`${baseUrl}/research/publications`, 'weekly', 0.95, DATES.reportsBenchmarks);
+    add(`${baseUrl}/articles`, 'weekly', 0.8, DATES.coreAdvisory);
+    add(`${baseUrl}/briefings`, 'monthly', 0.7, DATES.reportsBenchmarks);
+    add(`${baseUrl}/newsletter`, 'weekly', 0.8, DATES.coreAdvisory);
+    add(`${baseUrl}/exogram`, 'monthly', 0.85, DATES.exogramDocs);
+    add(`${baseUrl}/exogram/demo`, 'monthly', 0.9, DATES.exogramDocs);
+    add(`${baseUrl}/exogram/architecture`, 'monthly', 0.85, DATES.exogramDocs);
+    add(`${baseUrl}/exogram/docs`, 'monthly', 0.85, DATES.exogramDocs);
+    add(`${baseUrl}/exogram/roadmap`, 'monthly', 0.8, DATES.exogramDocs);
+    add(`${baseUrl}/exogram/use-cases`, 'monthly', 0.85, DATES.exogramDocs);
+    add(`${baseUrl}/blog`, 'weekly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/resources`, 'weekly', 0.8, DATES.coreAdvisory);
 
     // === AUDIENCE FUNNEL ===
-    add(`${baseUrl}/for-investors`, 'monthly', 0.9);
-    add(`${baseUrl}/for-boards`, 'monthly', 0.9);
-    add(`${baseUrl}/for-ctos`, 'monthly', 0.9);
-    add(`${baseUrl}/for-cfos`, 'monthly', 0.9);
-    add(`${baseUrl}/for-coos`, 'monthly', 0.9);
-    add(`${baseUrl}/for-general-counsels`, 'monthly', 0.9);
+    add(`${baseUrl}/for-investors`, 'monthly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/for-boards`, 'monthly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/for-ctos`, 'monthly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/for-cfos`, 'monthly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/for-coos`, 'monthly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/for-general-counsels`, 'monthly', 0.9, DATES.coreAdvisory);
 
     // === DECISIONS & BENCHMARKS ===
-    add(`${baseUrl}/decisions/choosing-ai-development-platforms`, 'monthly', 0.85);
-    add(`${baseUrl}/decisions/choosing-enterprise-ai-infrastructure`, 'monthly', 0.85);
-    add(`${baseUrl}/benchmark/ai-discoverability`, 'monthly', 0.9);
-    add(`${baseUrl}/benchmark/llm-cost-and-margin-index`, 'monthly', 0.95);
-    add(`${baseUrl}/benchmarks`, 'monthly', 0.8);
-    add(`${baseUrl}/missions`, 'monthly', 0.8);
+    add(`${baseUrl}/decisions/choosing-ai-development-platforms`, 'monthly', 0.85, DATES.reportsBenchmarks);
+    add(`${baseUrl}/decisions/choosing-enterprise-ai-infrastructure`, 'monthly', 0.85, DATES.reportsBenchmarks);
+    add(`${baseUrl}/benchmark/ai-discoverability`, 'monthly', 0.9, DATES.reportsBenchmarks);
+    add(`${baseUrl}/benchmark/llm-cost-and-margin-index`, 'monthly', 0.95, DATES.reportsBenchmarks);
+    add(`${baseUrl}/benchmarks`, 'monthly', 0.8, DATES.reportsBenchmarks);
+    add(`${baseUrl}/missions`, 'monthly', 0.8, DATES.evergreenStatic);
 
     // === HUB PAGES ===
-    add(`${baseUrl}/skills`, 'weekly', 0.95);
-    add(`${baseUrl}/diagrams`, 'monthly', 0.9);
-    add(`${baseUrl}/industries`, 'monthly', 0.8);
-    add(`${baseUrl}/compare`, 'monthly', 0.7);
-    add(`${baseUrl}/answers`, 'monthly', 0.8);
-    add(`${baseUrl}/failures`, 'monthly', 0.9);
+    add(`${baseUrl}/skills`, 'weekly', 0.95, DATES.frameworks);
+    add(`${baseUrl}/diagrams`, 'monthly', 0.9, DATES.frameworks);
+    add(`${baseUrl}/industries`, 'monthly', 0.8, DATES.industries);
+    add(`${baseUrl}/compare`, 'monthly', 0.7, DATES.hubsRefreshed);
+    add(`${baseUrl}/answers`, 'monthly', 0.8, DATES.answersSpokes);
+    add(`${baseUrl}/failures`, 'monthly', 0.9, DATES.frameworks);
 
     // === SKILLS & FAILURES DETAIL PAGES (36 routes) ===
-    SKILLS.forEach(skill => add(`${baseUrl}/skills/${skill.slug}`, 'monthly', 0.85));
-    FAILURES.forEach(failure => add(`${baseUrl}/failures/${failure.slug}`, 'monthly', 0.85));
+    SKILLS.forEach(skill => add(`${baseUrl}/skills/${skill.slug}`, 'monthly', 0.85, DATES.frameworks));
+    FAILURES.forEach(failure => add(`${baseUrl}/failures/${failure.slug}`, 'monthly', 0.85, DATES.frameworks));
 
     // === SUB-FRAMEWORK PILLAR PAGES (18 routes) ===
-    Object.keys(subFrameworks).forEach(slug => add(`${baseUrl}/framework/${slug}`, 'monthly', 0.85));
+    Object.keys(subFrameworks).forEach(slug => add(`${baseUrl}/framework/${slug}`, 'monthly', 0.85, DATES.frameworks));
 
     // === INSTITUTIONAL ===
-    add(`${baseUrl}/telemetry`, 'weekly', 0.9);
-    add(`${baseUrl}/executive-briefing`, 'monthly', 0.9);
-    add(`${baseUrl}/runtime-failure-index`, 'weekly', 0.95);
-    add(`${baseUrl}/certification`, 'monthly', 0.7);
-    add(`${baseUrl}/benchmark`, 'monthly', 0.7);
-    add(`${baseUrl}/workshops`, 'monthly', 0.7);
+    add(`${baseUrl}/telemetry`, 'weekly', 0.9, DATES.reportsBenchmarks);
+    add(`${baseUrl}/executive-briefing`, 'monthly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/runtime-failure-index`, 'weekly', 0.95, DATES.reportsBenchmarks);
+    add(`${baseUrl}/certification`, 'monthly', 0.7, DATES.vaultCurriculum);
+    add(`${baseUrl}/benchmark`, 'monthly', 0.7, DATES.reportsBenchmarks);
+    add(`${baseUrl}/workshops`, 'monthly', 0.7, DATES.coreAdvisory);
 
     // === LEAD MAGNETS, REPORTS & PARTNERSHIPS ===
-    add(`${baseUrl}/checklist`, 'monthly', 0.8);
-    add(`${baseUrl}/start-here`, 'monthly', 0.9);
-    add(`${baseUrl}/reports`, 'monthly', 0.85);
-    add(`${baseUrl}/reports/state-of-ai-engineering`, 'monthly', 0.9);
+    add(`${baseUrl}/checklist`, 'monthly', 0.8, DATES.evergreenStatic);
+    add(`${baseUrl}/start-here`, 'monthly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/reports`, 'monthly', 0.85, DATES.reportsBenchmarks);
+    add(`${baseUrl}/reports/state-of-ai-engineering`, 'monthly', 0.9, DATES.reportsBenchmarks);
     const reportSlugs = [
         'ai-governance-maturity-index',
         'product-debt-report',
@@ -254,30 +288,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'runtime-governance-benchmark',
         'ai-margin-compression-report'
     ];
-    reportSlugs.forEach(slug => add(`${baseUrl}/reports/${slug}`, 'monthly', 0.85));
-    add(`${baseUrl}/testimonials`, 'monthly', 0.7);
-    add(`${baseUrl}/partnerships`, 'monthly', 0.8);
-    add(`${baseUrl}/partnerships/integration-docs`, 'weekly', 0.9);
-    add(`${baseUrl}/brand`, 'monthly', 0.85);
-    add(`${baseUrl}/integrations/supabase`, 'weekly', 0.9);
-    add(`${baseUrl}/partner`, 'monthly', 0.7);
+    reportSlugs.forEach(slug => add(`${baseUrl}/reports/${slug}`, 'monthly', 0.85, DATES.reportsBenchmarks));
+    add(`${baseUrl}/testimonials`, 'monthly', 0.7, DATES.evergreenStatic);
+    add(`${baseUrl}/partnerships`, 'monthly', 0.8, DATES.evergreenStatic);
+    add(`${baseUrl}/partnerships/integration-docs`, 'weekly', 0.9, DATES.exogramDocs);
+    add(`${baseUrl}/brand`, 'monthly', 0.85, DATES.evergreenStatic);
+    add(`${baseUrl}/integrations/supabase`, 'weekly', 0.9, DATES.exogramDocs);
+    add(`${baseUrl}/partner`, 'monthly', 0.7, DATES.evergreenStatic);
 
     // === AI INTEGRATION & CANONICAL CONCEPTS ===
-    add(`${baseUrl}/ai-integration`, 'weekly', 0.95);
-    add(`${baseUrl}/ai-integration/system`, 'monthly', 0.9);
-    add(`${baseUrl}/case-studies/runtime-incidents`, 'weekly', 0.9);
-    add(`${baseUrl}/skills/getting-started`, 'monthly', 0.85);
-    add(`${baseUrl}/architecture/deterministic-control-layer`, 'monthly', 0.8);
-    add(`${baseUrl}/benchmark/ai-capital-2026`, 'monthly', 0.9);
-    add(`${baseUrl}/concepts`, 'weekly', 0.95);
+    add(`${baseUrl}/ai-integration`, 'weekly', 0.95, DATES.exogramDocs);
+    add(`${baseUrl}/ai-integration/system`, 'monthly', 0.9, DATES.exogramDocs);
+    add(`${baseUrl}/case-studies/runtime-incidents`, 'weekly', 0.9, DATES.reportsBenchmarks);
+    add(`${baseUrl}/skills/getting-started`, 'monthly', 0.85, DATES.frameworks);
+    add(`${baseUrl}/architecture/deterministic-control-layer`, 'monthly', 0.8, DATES.exogramDocs);
+    add(`${baseUrl}/benchmark/ai-capital-2026`, 'monthly', 0.9, DATES.reportsBenchmarks);
+    add(`${baseUrl}/concepts`, 'weekly', 0.95, DATES.concepts);
 
     // === CANONICAL CONCEPTS SPECIFICATIONS ===
-    CANONICAL_CONCEPTS.forEach(concept => add(`${baseUrl}/concepts/${concept.slug}`, 'weekly', 0.95));
+    CANONICAL_CONCEPTS.forEach(concept => add(`${baseUrl}/concepts/${concept.slug}`, 'weekly', 0.95, DATES.concepts));
 
     // === ARTICLE RECAPS ===
-    add(`${baseUrl}/articles/recap/cio-com`, 'monthly', 0.7);
-    add(`${baseUrl}/articles/recap/built-in`, 'monthly', 0.7);
-    add(`${baseUrl}/articles/recap/hackernoon`, 'monthly', 0.7);
+    add(`${baseUrl}/articles/recap/cio-com`, 'monthly', 0.7, DATES.evergreenStatic);
+    add(`${baseUrl}/articles/recap/built-in`, 'monthly', 0.7, DATES.evergreenStatic);
+    add(`${baseUrl}/articles/recap/hackernoon`, 'monthly', 0.7, DATES.evergreenStatic);
 
     // === VAULT CURRICULUM & MODULES ===
     const DEPRECATED_TRACK_CATEGORIES = new Set([
@@ -289,20 +323,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'security-economics', 'data-economics', 'engineering-leadership', 'fractional-engineering',
         'ai-agent-economics', 'synthetic-data', 'enterprise-architecture', 'agile-economics'
     ]);
-    add(`${baseUrl}/vault/curriculum/tracks`, 'monthly', 0.8);
+    add(`${baseUrl}/vault/curriculum/tracks`, 'monthly', 0.8, DATES.vaultCurriculum);
     getLiveModuleSlugs()
         .filter(slug => !DEPRECATED_TRACK_CATEGORIES.has(slug.split('/')[0]))
-        .forEach(slug => add(`${baseUrl}/vault/curriculum/tracks/${slug}`, 'monthly', 0.8));
+        .forEach(slug => add(`${baseUrl}/vault/curriculum/tracks/${slug}`, 'monthly', 0.8, DATES.vaultCurriculum));
 
     // === CAREER PATHWAYS ===
-    add(`${baseUrl}/careers`, 'monthly', 0.85);
-    CAREER_PATHS.forEach(path => add(`${baseUrl}/careers/${path.slug}`, 'monthly', 0.85));
+    add(`${baseUrl}/careers`, 'monthly', 0.85, DATES.careers);
+    CAREER_PATHS.forEach(path => add(`${baseUrl}/careers/${path.slug}`, 'monthly', 0.85, DATES.careers));
 
     // === CANONICAL ARTICLES ===
     const frameworkSlugSet = new Set(frameworks.map(f => f.slug));
     articles
         .filter(article => !article.externalUrl && !frameworkSlugSet.has(article.slug) && !ARTICLE_SLUG_REDIRECTS[article.slug])
-        .forEach(article => add(`${baseUrl}/articles/${article.slug}`, 'monthly', 0.8));
+        .forEach(article => add(`${baseUrl}/articles/${article.slug}`, 'monthly', 0.8, parseContentDate(article.date, DATES.evergreenStatic)));
 
     // === COMPARE PAGES (Tier A Indexed Only) ===
     const tierASlugs: string[] = [
@@ -315,36 +349,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'advisory-vs-gartner',
         'advisory-vs-traditional-fractional-cto',
     ];
-    tierASlugs.forEach(slug => add(`${baseUrl}/compare/${slug}`, 'monthly', 0.8));
+    tierASlugs.forEach(slug => add(`${baseUrl}/compare/${slug}`, 'monthly', 0.8, DATES.compareTierA));
+
+    // Golden-Sample Advisory Counter-Strike Pages (Nov 2026)
+    add(`${baseUrl}/compare/pass-through-vs-credit-ai-pricing`, 'weekly', 0.95, DATES.newGoldenSample);
+    add(`${baseUrl}/compare/fractional-cpo-vs-advisory-sprint`, 'weekly', 0.95, DATES.newGoldenSample);
 
     // === DYNAMICALLY GENERATED PAGES ===
 
     // Challenges
-    challenges.forEach(c => add(`${baseUrl}/challenges/${c.slug}`, 'monthly', 0.8));
+    challenges.forEach(c => add(`${baseUrl}/challenges/${c.slug}`, 'monthly', 0.8, DATES.coreAdvisory));
 
     // Glossary
-    PILLARS.forEach(pillar => add(`${baseUrl}/glossary/pillars/${pillar.slug}`, 'weekly', 0.6));
+    PILLARS.forEach(pillar => add(`${baseUrl}/glossary/pillars/${pillar.slug}`, 'weekly', 0.6, DATES.glossary));
 
     // Only index KEEP_TERMS to avoid thin content drag
     glossaryTerms
         .filter(term => KEEP_TERMS.includes(term.slug))
-        .forEach(term => add(`${baseUrl}/glossary/${term.slug}`, 'monthly', 0.5));
+        .forEach(term => add(`${baseUrl}/glossary/${term.slug}`, 'monthly', 0.5, DATES.glossary));
 
     // Frameworks
-    frameworks.forEach(f => add(`${baseUrl}/articles/frameworks/${f.slug}`, 'monthly', 0.7));
-    add(`${baseUrl}/articles/frameworks/return-on-ai-investment`, 'weekly', 0.95);
-    add(`${baseUrl}/articles/frameworks/spec-driven-development`, 'weekly', 0.95);
-    add(`${baseUrl}/articles/frameworks/technical-insolvency-date`, 'weekly', 0.95);
-    add(`${baseUrl}/articles/frameworks/vibe-coding-debt`, 'weekly', 0.95);
+    frameworks.forEach(f => add(`${baseUrl}/articles/frameworks/${f.slug}`, 'monthly', 0.7, DATES.frameworks));
+    add(`${baseUrl}/articles/frameworks/return-on-ai-investment`, 'weekly', 0.95, DATES.frameworks);
+    add(`${baseUrl}/articles/frameworks/spec-driven-development`, 'weekly', 0.95, DATES.frameworks);
+    add(`${baseUrl}/articles/frameworks/technical-insolvency-date`, 'weekly', 0.95, DATES.frameworks);
+    add(`${baseUrl}/articles/frameworks/vibe-coding-debt`, 'weekly', 0.95, DATES.frameworks);
 
     // Blog (excluding syndicated content with external canonicals)
     getSortedArticles()
         .filter(article => !article.canonicalUrl || article.canonicalUrl === `${baseUrl}/blog/${article.slug}`)
-        .forEach(article => add(`${baseUrl}/blog/${article.slug}`, 'monthly', 0.8));
+        .forEach(article => add(`${baseUrl}/blog/${article.slug}`, 'monthly', 0.8, parseContentDate(article.date, DATES.coreAdvisory)));
 
     // Answers (hub & spoke)
     getAllSpokeRoutes().forEach(r =>
-        add(`${baseUrl}/answers/${r.topic}/${r.persona}/${r.questionSlug}`, 'monthly', 0.6)
+        add(`${baseUrl}/answers/${r.topic}/${r.persona}/${r.questionSlug}`, 'monthly', 0.6, DATES.answersSpokes)
     );
 
     // Industries
@@ -353,10 +391,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'ecommerce', 'cybersecurity', 'logistics', 'insurtech', 'proptech',
         'legaltech', 'agritech', 'cleantech', 'mediatech', 'manufacturing'
     ];
-    industrySlugs.forEach(slug => add(`${baseUrl}/industries/${slug}`, 'monthly', 0.7));
+    industrySlugs.forEach(slug => add(`${baseUrl}/industries/${slug}`, 'monthly', 0.7, DATES.industries));
 
     // Exogram Docs
-    exogramDocs.forEach(doc => add(`${baseUrl}/exogram/docs/${doc.slug}`, 'monthly', 0.8));
+    exogramDocs.forEach(doc => add(`${baseUrl}/exogram/docs/${doc.slug}`, 'monthly', 0.8, DATES.exogramDocs));
 
     return Array.from(entries.values());
 }

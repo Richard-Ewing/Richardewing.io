@@ -590,6 +590,85 @@ export default function AdvisoryPage() {
         </div>
       </section>
 
+      {/* 05B. FLAGSHIP EXECUTIVE PLAYBOOKS (Zero-Orphan Golden Sample Bridge) */}
+      <section className="section">
+        <div className="section-heading">
+          <p className="eyebrow">
+            <i /> Plain-English Field Playbooks
+          </p>
+          <h2>Read my blunt take before booking a single call.</h2>
+          <p>
+            Interactive calculators and candid first-person breakdowns on AI pricing, Private
+            Equity value creation, and choosing between a fractional retainer and a fixed sprint.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
+          <Link
+            href="/compare/pass-through-vs-credit-ai-pricing"
+            className="bg-[#faf8f2] border border-[var(--line)] rounded-xl p-6 hover:shadow-md transition flex flex-col justify-between"
+          >
+            <div>
+              <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-[var(--gold)] block mb-2">
+                PILLAR 01 · PRICING ADVICE
+              </span>
+              <h3 className="font-serif text-xl text-[var(--ink)] mb-2">
+                Pass-Through vs. Credit AI Pricing
+              </h3>
+              <p className="text-[13px] text-[var(--muted)] leading-relaxed mb-4">
+                Test your own monthly price tag in 60 seconds and see if heavy users are quietly
+                wiping out your profit.
+              </p>
+            </div>
+            <span className="text-xs font-semibold text-[var(--forest)]">
+              Open Interactive Guide ↗
+            </span>
+          </Link>
+
+          <Link
+            href="/advisory/pe-first-100-days-ai"
+            className="bg-[var(--forest2)] text-white border border-[var(--forest2)] rounded-xl p-6 hover:shadow-md transition flex flex-col justify-between"
+          >
+            <div>
+              <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-[#e7d7bc] block mb-2">
+                PILLAR 04 · PRIVATE EQUITY
+              </span>
+              <h3 className="font-serif text-xl text-white mb-2">
+                First 100 Days of PE AI Value Creation
+              </h3>
+              <p className="text-[13px] text-zinc-100 leading-relaxed mb-4">
+                The 4-question portfolio proof check to cut software shelfware first and deliver
+                clean boardroom cash results.
+              </p>
+            </div>
+            <span className="text-xs font-semibold text-[#e7d7bc]">
+              Open Boardroom Playbook ↗
+            </span>
+          </Link>
+
+          <Link
+            href="/compare/fractional-cpo-vs-advisory-sprint"
+            className="bg-[#faf8f2] border border-[var(--line)] rounded-xl p-6 hover:shadow-md transition flex flex-col justify-between"
+          >
+            <div>
+              <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-[var(--gold)] block mb-2">
+                PILLAR 02 · LEADERSHIP FIT
+              </span>
+              <h3 className="font-serif text-xl text-[var(--ink)] mb-2">
+                Fractional CPO vs. 14-Day Fixed Sprint
+              </h3>
+              <p className="text-[13px] text-[var(--muted)] leading-relaxed mb-4">
+                Compare 12-week cash outlay vs. decisions shipped, including honest advice on when
+                to hire someone else.
+              </p>
+            </div>
+            <span className="text-xs font-semibold text-[var(--forest)]">
+              Run Hiring Fit Check ↗
+            </span>
+          </Link>
+        </div>
+      </section>
+
       {/* 06. PRE-ADVISORY DIAGNOSTIC BRIDGE (Outside .section to preserve h2 scale) */}
       <div className="max-w-[1320px] mx-auto px-[5vw] py-6">
         <FrameworkDiagnosticBridge

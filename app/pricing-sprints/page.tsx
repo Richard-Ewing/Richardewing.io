@@ -361,6 +361,54 @@ export default function PricingSprintsPage() {
         </div>
       </section>
 
+      {/* Candid Pre-Sprint Comparison Guides */}
+      <div className="max-w-[var(--max)] mx-auto px-[5vw] mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Link
+            href="/compare/pass-through-vs-credit-ai-pricing"
+            className="bg-[#faf8f2] border border-[var(--line)] rounded-xl p-5 hover:border-[var(--forest)] transition"
+          >
+            <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--gold)] block mb-1">
+              PRICING STRESS CHECK
+            </span>
+            <strong className="font-serif text-lg text-[var(--ink)] block mb-1">
+              Pass-Through vs. Credit AI Pricing ↗
+            </strong>
+            <span className="text-xs text-[var(--muted)]">
+              Check if heavy users are draining your monthly profit before repricing.
+            </span>
+          </Link>
+          <Link
+            href="/compare/fractional-cpo-vs-advisory-sprint"
+            className="bg-[#faf8f2] border border-[var(--line)] rounded-xl p-5 hover:border-[var(--forest)] transition"
+          >
+            <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--gold)] block mb-1">
+              HIRING FIT CHECK
+            </span>
+            <strong className="font-serif text-lg text-[var(--ink)] block mb-1">
+              Fractional CPO vs. 14-Day Sprint ↗
+            </strong>
+            <span className="text-xs text-[var(--muted)]">
+              Honest 12-week cost vs. speed breakdown before signing a retainer.
+            </span>
+          </Link>
+          <Link
+            href="/advisory/pe-first-100-days-ai"
+            className="bg-[#faf8f2] border border-[var(--line)] rounded-xl p-5 hover:border-[var(--forest)] transition"
+          >
+            <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--gold)] block mb-1">
+              PE &amp; BOARD PLAYBOOK
+            </span>
+            <strong className="font-serif text-lg text-[var(--ink)] block mb-1">
+              First 100 Days of PE AI Value ↗
+            </strong>
+            <span className="text-xs text-[var(--muted)]">
+              4-question portfolio proof check for Operating Partners and Boards.
+            </span>
+          </Link>
+        </div>
+      </div>
+
       {/* Bidirectional Diagnostic Tool & Advisory Bridge */}
       <div className="max-w-[var(--max)] mx-auto px-[5vw]">
         <FrameworkDiagnosticBridge

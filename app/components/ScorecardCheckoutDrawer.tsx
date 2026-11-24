@@ -161,7 +161,8 @@ export default function ScorecardCheckoutDrawer({
                             href={selectedKit === '29' ? kit29Url : kit79Url}
                             target="_blank"
                             rel="noopener noreferrer nofollow"
-                            className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white font-bold text-xs uppercase tracking-wider transition shadow-sm"
+                            style={{ color: '#ffffff' }}
+                            className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-zinc-950 hover:bg-zinc-800 !text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-sm min-h-[44px]"
                         >
                             {selectedKit === '29'
                                 ? 'Download Survival Kit + Workspace ($29) ↗'
@@ -179,11 +180,11 @@ export default function ScorecardCheckoutDrawer({
                 {/* CARD 2: $450 LIVE 60-MIN WORKING SESSION */}
                 <div className="bg-[#1f3b2c] text-white border-2 border-[#b89249] rounded-xl p-6 flex flex-col justify-between shadow-md relative">
                     <div className="space-y-3">
-                        <div className="flex items-center justify-between">
+                        <div className="flex flex-wrap items-center justify-between gap-2">
                             <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-950 bg-[#d8c7a8] px-2.5 py-0.5 rounded">
                                 Option 2 · Fix It Live in 60 Mins
                             </span>
-                            <span className="font-mono text-xs font-bold text-[#d8c7a8]">48-Hr Turnaround</span>
+                            <span className="font-mono text-xs font-bold text-[#d8c7a8] whitespace-nowrap">48-Hr Turnaround</span>
                         </div>
                         <h4 className="font-serif text-lg font-bold text-white">
                             Live 60-Minute &quot;Unstick My Product, Agent, or Pricing&quot; Session ($450)
@@ -201,7 +202,8 @@ export default function ScorecardCheckoutDrawer({
                             href={gutCheckUrl}
                             target="_blank"
                             rel="noopener noreferrer nofollow"
-                            className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#b89249] hover:bg-[#c9a35a] text-zinc-950 font-bold text-xs uppercase tracking-wider transition shadow-sm"
+                            style={{ color: '#09090b' }}
+                            className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#d8c7a8] hover:bg-[#e5d7bd] !text-zinc-950 font-bold text-xs uppercase tracking-wider transition-colors shadow-sm min-h-[44px]"
                         >
                             Book 60-Min 1-on-1 Session ($450) ↗
                         </a>
@@ -210,7 +212,8 @@ export default function ScorecardCheckoutDrawer({
                         </p>
                         <Link
                             href="/services#gut_check"
-                            className="block text-center text-[11px] font-mono text-zinc-300 hover:text-white underline"
+                            style={{ color: '#e4e4e7' }}
+                            className="block text-center text-[11px] font-mono !text-zinc-200 hover:!text-white underline"
                         >
                             See 48-hour session deliverable scope →
                         </Link>
@@ -220,7 +223,7 @@ export default function ScorecardCheckoutDrawer({
                 {/* CARD 3: $2,500 SPRINT / $7,500 BUILD */}
                 <div className="bg-white border border-zinc-300 rounded-xl p-6 flex flex-col justify-between shadow-xs">
                     <div className="space-y-3">
-                        <div className="flex items-center justify-between">
+                        <div className="flex flex-wrap items-center justify-between gap-2">
                             <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded">
                                 Option 3 · Done-For-You Sprints
                             </span>
@@ -242,7 +245,8 @@ export default function ScorecardCheckoutDrawer({
                                 href={sprint2500Url}
                                 target="_blank"
                                 rel="noopener noreferrer nofollow"
-                                className="inline-flex items-center justify-center px-3 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white font-bold text-[11px] uppercase tracking-wider transition text-center"
+                                style={{ color: '#ffffff' }}
+                                className="inline-flex items-center justify-center px-3 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 !text-white font-bold text-[11px] uppercase tracking-wider transition-colors text-center min-h-[44px]"
                             >
                                 14-Day Sprint ($2.5K) ↗
                             </a>
@@ -250,7 +254,8 @@ export default function ScorecardCheckoutDrawer({
                                 href={sprint7500Url}
                                 target="_blank"
                                 rel="noopener noreferrer nofollow"
-                                className="inline-flex items-center justify-center px-3 py-2.5 rounded-xl bg-[#1f3b2c] hover:opacity-95 text-white font-bold text-[11px] uppercase tracking-wider transition text-center"
+                                style={{ color: '#ffffff' }}
+                                className="inline-flex items-center justify-center px-3 py-2.5 rounded-xl bg-[#1f3b2c] hover:opacity-95 !text-white font-bold text-[11px] uppercase tracking-wider transition-opacity text-center min-h-[44px]"
                             >
                                 21-Day Build ($7.5K) ↗
                             </a>

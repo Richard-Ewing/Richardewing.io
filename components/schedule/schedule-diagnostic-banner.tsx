@@ -66,6 +66,21 @@ const SOURCE_CONFIGS: Record<string, DiagnosticSourceConfig> = {
     badgeLabel: '14-Day & 21-Day Fixed Scope',
     description: 'Select a session below to lock in the scope, deliverables, and start date for your 14-day P&L Turnaround Sprint, 21-day AI Build Sprint, or 1-on-1 P&L Teardown.',
   },
+  'ai-pricing-models': {
+    title: 'AI Feature Pricing & Heavy-User Margin Review',
+    badgeLabel: 'Pricing Stress-Check Follow-Up',
+    description: 'Select a 60-minute teardown or advisory call below. Bring your current price sheet and your ten heaviest customer bills so we can build a clean base-plus-cap plan that protects profit.',
+  },
+  'pe-first-100-days-ai': {
+    title: 'Private Equity First 100 Days AI Value Creation Briefing',
+    badgeLabel: 'Operating Partner & Board Call',
+    description: 'Select a confidential executive slot below. We will review your portfolio spend, shelfware cut list, and 100-day cash proof plan for pre-close diligence or post-close execution.',
+  },
+  'fractional-cpo-vs-sprint': {
+    title: 'Fractional CPO vs. 14-Day Fixed Sprint Scoping',
+    badgeLabel: 'Honest Fit & Scope Check',
+    description: 'Select a working session below. We will look at your current roadmap drag, budget, and timeline so you know in thirty minutes whether you need a fixed sprint, an embedded leader, or nothing at all.',
+  },
   'ai-guardrails': {
     title: 'AI Guardrails & Runtime Execution Architecture Briefing',
     badgeLabel: 'Deterministic Runtime Boundary',

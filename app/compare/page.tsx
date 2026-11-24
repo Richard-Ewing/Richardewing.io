@@ -17,6 +17,20 @@ export const metadata: Metadata = {
 
 const curattedComparisons = [
     {
+        title: 'Pass-Through vs. Credit AI Pricing (Interactive Profit Check)',
+        subtitle: 'AI Monetization & Heavy-User Margin Defense',
+        description: 'Plain-English CFO advice comparing flat seats, prepaid credits, and pass-through billing with a live 60-second margin check.',
+        href: '/compare/pass-through-vs-credit-ai-pricing',
+        color: 'emerald'
+    },
+    {
+        title: 'Fractional CPO vs. 14-Day Fixed Advisory Sprint',
+        subtitle: '12-Week Cost vs. Decisions Shipped',
+        description: 'Honest side-by-side comparison of full-time VP searches, $10K+/mo fractional retainers, and $2,500 fixed sprints.',
+        href: '/compare/fractional-cpo-vs-advisory-sprint',
+        color: 'amber'
+    },
+    {
         title: 'Why AI API Bills Jump 4x After Adding Tools',
         subtitle: 'Token Inflation & Schema Re-Transmission',
         description: 'Why adding web search or database tools multiplies token bills by 400% and how prompt caching solves it.',
