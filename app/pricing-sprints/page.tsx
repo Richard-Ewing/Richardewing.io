@@ -405,6 +405,48 @@ export default function PricingSprintsPage() {
               4-question portfolio proof check for Operating Partners and Boards.
             </span>
           </Link>
+          <Link
+            href="/compare/output-vs-outcome-ai-pricing"
+            className="bg-[#faf8f2] border border-[var(--line)] rounded-xl p-5 hover:border-[var(--forest)] transition-colors"
+          >
+            <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--gold)] block mb-1">
+              OUTCOME PRICING CHECK
+            </span>
+            <strong className="font-serif text-lg text-[var(--ink)] block mb-1">
+              Output vs. Outcome AI Pricing ↗
+            </strong>
+            <span className="text-xs text-[var(--muted)]">
+              See when charging per finished job wins renewals and when flat fees protect you.
+            </span>
+          </Link>
+          <Link
+            href="/advisory/deal-desk-qbr-defense"
+            className="bg-[#faf8f2] border border-[var(--line)] rounded-xl p-5 hover:border-[var(--forest)] transition-colors"
+          >
+            <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--gold)] block mb-1">
+              DEAL DESK &amp; QBR DEFENSE
+            </span>
+            <strong className="font-serif text-lg text-[var(--ink)] block mb-1">
+              Deal Desk &amp; Executive QBR Defense ↗
+            </strong>
+            <span className="text-xs text-[var(--muted)]">
+              Set hard discount floors and written usage ceilings before sales signs uncapped deals.
+            </span>
+          </Link>
+          <Link
+            href="/advisory/ai-red-teaming-ma-dealbreakers"
+            className="bg-[#faf8f2] border border-[var(--line)] rounded-xl p-5 hover:border-[var(--forest)] transition-colors"
+          >
+            <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--gold)] block mb-1">
+              PRE-CLOSE DILIGENCE
+            </span>
+            <strong className="font-serif text-lg text-[var(--ink)] block mb-1">
+              AI Red-Team Tests &amp; M&amp;A Dealbreakers ↗
+            </strong>
+            <span className="text-xs text-[var(--muted)]">
+              Test a target company&apos;s automated tools for hidden leaks and runaway bills before closing.
+            </span>
+          </Link>
         </div>
       </div>
 

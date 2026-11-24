@@ -31,6 +31,13 @@ const curattedComparisons = [
         color: 'amber'
     },
     {
+        title: 'Output vs. Outcome AI Pricing (60-Sec Viability Scorer)',
+        subtitle: 'AI Monetization & Renewal Proof',
+        description: 'Plain-English guide comparing billing per raw AI draft against billing for verified finished work, with an interactive viability check.',
+        href: '/compare/output-vs-outcome-ai-pricing',
+        color: 'emerald'
+    },
+    {
         title: 'Why AI API Bills Jump 4x After Adding Tools',
         subtitle: 'Token Inflation & Schema Re-Transmission',
         description: 'Why adding web search or database tools multiplies token bills by 400% and how prompt caching solves it.',
@@ -223,7 +230,7 @@ export default function CompareIndexPage() {
                     {curattedComparisons.map((c) => {
                         return (
                             <Link key={c.href} href={c.href} className="group block">
-                                <div className="rounded-2xl border border-[var(--line,rgba(36,51,43,0.16))] p-6 sm:p-8 transition-all bg-white hover:bg-[var(--paper2,#ebe7dc)]/60 hover:border-[var(--forest,#29473b)] shadow-sm hover:-translate-y-1 h-full flex flex-col justify-between">
+                                <div className="rounded-2xl border border-[var(--line,rgba(36,51,43,0.16))] p-6 sm:p-8 transition-[transform,border-color,background-color,box-shadow] bg-white hover:bg-[var(--paper2,#ebe7dc)]/60 hover:border-[var(--forest,#29473b)] shadow-sm hover:-translate-y-1 h-full flex flex-col justify-between">
                                     <div>
                                         <div className="text-[10px] font-mono font-bold uppercase tracking-wider mb-2 text-[var(--gold,#b77a35)]">
                                             {c.subtitle}

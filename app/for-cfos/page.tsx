@@ -113,7 +113,8 @@ export default function ForCFOsPage() {
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link 
                                 href="/services" 
-                                className="px-8 py-4 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition-all shadow-md active:scale-95"
+                                style={{ color: '#ffffff' }}
+                                className="px-8 py-4 rounded-xl bg-emerald-600 !text-white font-bold hover:bg-emerald-700 transition-colors shadow-md active:scale-95"
                             >
                                 Schedule CFO Capital Briefing &rarr;
                             </Link>
@@ -188,6 +189,79 @@ export default function ForCFOsPage() {
                                     </Link>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+
+                    {/* CFO Pricing, Deal Desk & Diligence Playbooks */}
+                    <div className="mb-16">
+                        <div className="text-center mb-10">
+                            <span className="text-xs font-mono font-bold text-emerald-600 uppercase tracking-widest block mb-2">
+                                Field Playbooks &amp; Interactive Checks
+                            </span>
+                            <h2 className="text-2xl sm:text-3xl font-grotesk font-bold text-zinc-950">
+                                CFO Pricing, Deal Desk &amp; Diligence Playbooks
+                            </h2>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <Link
+                                href="/advisory/deal-desk-qbr-defense"
+                                className="rounded-2xl border border-emerald-200 bg-white p-6 shadow-sm hover:border-emerald-400 transition-colors flex flex-col justify-between group"
+                            >
+                                <div>
+                                    <span className="text-[10px] font-mono font-bold text-emerald-700 uppercase tracking-widest block mb-2">
+                                        Deal Desk &amp; QBR Proof
+                                    </span>
+                                    <h3 className="text-lg font-bold font-grotesk text-zinc-950 group-hover:text-emerald-800 mb-2">
+                                        Deal Desk &amp; Executive QBR Defense
+                                    </h3>
+                                    <p className="text-sm text-zinc-600 leading-relaxed mb-4">
+                                        Lock discount floors, written usage ceilings, and a two-sentence CFO QBR proof script before sales signs custom contracts.
+                                    </p>
+                                </div>
+                                <span className="text-xs font-mono font-bold text-emerald-700 uppercase tracking-wider inline-flex items-center gap-1">
+                                    Check Deal Margin Floor &rarr;
+                                </span>
+                            </Link>
+
+                            <Link
+                                href="/compare/output-vs-outcome-ai-pricing"
+                                className="rounded-2xl border border-emerald-200 bg-white p-6 shadow-sm hover:border-emerald-400 transition-colors flex flex-col justify-between group"
+                            >
+                                <div>
+                                    <span className="text-[10px] font-mono font-bold text-emerald-700 uppercase tracking-widest block mb-2">
+                                        Pricing &amp; Renewal Margin
+                                    </span>
+                                    <h3 className="text-lg font-bold font-grotesk text-zinc-950 group-hover:text-emerald-800 mb-2">
+                                        Output vs. Outcome AI Pricing Guide
+                                    </h3>
+                                    <p className="text-sm text-zinc-600 leading-relaxed mb-4">
+                                        Compare billing per raw AI draft against verified business outcomes with a 60-second check showing when outcome billing protects renewals.
+                                    </p>
+                                </div>
+                                <span className="text-xs font-mono font-bold text-emerald-700 uppercase tracking-wider inline-flex items-center gap-1">
+                                    Score Outcome Viability &rarr;
+                                </span>
+                            </Link>
+
+                            <Link
+                                href="/advisory/ai-red-teaming-ma-dealbreakers"
+                                className="rounded-2xl border border-emerald-200 bg-white p-6 shadow-sm hover:border-emerald-400 transition-colors flex flex-col justify-between group"
+                            >
+                                <div>
+                                    <span className="text-[10px] font-mono font-bold text-emerald-700 uppercase tracking-widest block mb-2">
+                                        Pre-Close Stress Test
+                                    </span>
+                                    <h3 className="text-lg font-bold font-grotesk text-zinc-950 group-hover:text-emerald-800 mb-2">
+                                        AI Red-Team Tests &amp; M&amp;A Dealbreakers
+                                    </h3>
+                                    <p className="text-sm text-zinc-600 leading-relaxed mb-4">
+                                        Catch unapproved refund authority, quiet data leaks, and worst-weekend vendor bills before wire day.
+                                    </p>
+                                </div>
+                                <span className="text-xs font-mono font-bold text-emerald-700 uppercase tracking-wider inline-flex items-center gap-1">
+                                    Run 5-Point Dealbreaker Test &rarr;
+                                </span>
+                            </Link>
                         </div>
                     </div>
 
@@ -294,7 +368,8 @@ export default function ForCFOsPage() {
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link 
                                 href="/services" 
-                                className="px-10 py-5 rounded-xl bg-emerald-600 text-white font-bold text-base hover:bg-emerald-700 transition-all shadow-md active:scale-95"
+                                style={{ color: '#ffffff' }}
+                                className="px-10 py-5 rounded-xl bg-emerald-600 !text-white font-bold text-base hover:bg-emerald-700 transition-colors shadow-md active:scale-95"
                             >
                                 Schedule Executive Briefing &rarr;
                             </Link>

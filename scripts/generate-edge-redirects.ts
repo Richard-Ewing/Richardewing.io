@@ -92,6 +92,7 @@ const TIER_A_COMPARE_SLUGS = new Set([
   'advisory-vs-traditional-fractional-cto',
   'pass-through-vs-credit-ai-pricing',
   'fractional-cpo-vs-advisory-sprint',
+  'output-vs-outcome-ai-pricing',
 ]);
 
 function isValid200Route(routeWithOptionalHash: string): boolean {

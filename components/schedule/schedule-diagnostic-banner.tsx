@@ -81,6 +81,21 @@ const SOURCE_CONFIGS: Record<string, DiagnosticSourceConfig> = {
     badgeLabel: 'Honest Fit & Scope Check',
     description: 'Select a working session below. We will look at your current roadmap drag, budget, and timeline so you know in thirty minutes whether you need a fixed sprint, an embedded leader, or nothing at all.',
   },
+  'output-vs-outcome-ai-pricing': {
+    title: 'Output vs. Outcome AI Pricing & Renewal Margin Review',
+    badgeLabel: 'Pricing & Proof Stress-Check',
+    description: 'Select a 60-minute teardown or working session below. Bring your current price sheet, your twenty largest customer accounts, and any disputed renewals so we can design a clear base-plus-outcome plan finance approves.',
+  },
+  'ai-red-teaming-ma-dealbreakers': {
+    title: 'Confidential Pre-Close AI Stress-Test & M&A Review',
+    badgeLabel: 'Pre-Close Dealbreaker Audit',
+    description: 'Select a private executive briefing below. Bring your target company data-room summary, automated customer tools, and worst single-day vendor bills so we can flag legal, privacy, or pricing dealbreakers before wire day.',
+  },
+  'deal-desk-qbr-defense': {
+    title: 'Deal Desk Margin Floor & Executive QBR Defense',
+    badgeLabel: 'Discount Floor & Renewal Cash',
+    description: 'Select a 15-minute or 60-minute working session below. Bring a live enterprise quote, your requested discount tiers, and your upcoming QBR deck so we can lock in usage ceilings and net margin proof finance signs off on.',
+  },
   'ai-guardrails': {
     title: 'AI Guardrails & Runtime Execution Architecture Briefing',
     badgeLabel: 'Deterministic Runtime Boundary',

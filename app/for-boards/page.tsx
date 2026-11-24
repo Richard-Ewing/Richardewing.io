@@ -45,7 +45,7 @@ export default function ForBoardsPage() {
                         <p className="text-xl text-zinc-900 max-w-2xl mx-auto mb-8">
                             R&D Capital Audits translate technical complexity into board-ready financial metrics. Know the real cost of your technology investment  -  not the optimistic narrative.
                         </p>
-                        <Link href="/services" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Request Board Briefing →</Link>
+                        <Link href="/services" style={{ color: '#09090b' }} className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 !text-zinc-950 font-semibold font-bold hover:opacity-90 transition-opacity">Request Board Briefing →</Link>
                     </div>
 
                     <TechnicalInsolvencySimulator />
@@ -77,6 +77,59 @@ export default function ForBoardsPage() {
                         <div className="rounded-2xl border border-amber-200 bg-white p-6 text-center shadow-sm">
                             <div className="text-3xl font-bold text-amber-600 mb-2 font-mono">1 Page</div>
                             <div className="text-sm font-semibold text-zinc-900">Executive summary, not 50-page engineering reports</div>
+                        </div>
+                    </div>
+
+                    {/* Boardroom & Pre-Close Field Playbooks */}
+                    <div className="mb-16">
+                        <div className="text-center mb-8">
+                            <span className="text-xs font-mono font-bold text-amber-600 uppercase tracking-widest block mb-2">
+                                Fiduciary Field Playbooks
+                            </span>
+                            <h2 className="text-2xl font-grotesk font-bold text-zinc-950">
+                                Boardroom &amp; Pre-Close Field Playbooks
+                            </h2>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <Link
+                                href="/advisory/deal-desk-qbr-defense"
+                                className="rounded-2xl border border-amber-200 bg-white p-6 shadow-sm hover:border-amber-400 transition-colors flex flex-col justify-between group"
+                            >
+                                <div>
+                                    <span className="text-[10px] font-mono font-bold text-amber-700 uppercase tracking-widest block mb-2">
+                                        Quarterly Margin Proof
+                                    </span>
+                                    <h3 className="text-lg font-bold text-zinc-950 group-hover:text-amber-900 mb-2">
+                                        Deal Desk &amp; Executive QBR Defense
+                                    </h3>
+                                    <p className="text-sm text-zinc-700 leading-relaxed mb-4 font-medium">
+                                        Replace vague adoption slides with net margin proof, written discount limits, and renewal cash accountability.
+                                    </p>
+                                </div>
+                                <span className="text-xs font-bold font-mono text-amber-700 hover:text-amber-900 uppercase tracking-widest inline-flex items-center gap-1">
+                                    Inspect QBR Defense Guide &rarr;
+                                </span>
+                            </Link>
+
+                            <Link
+                                href="/advisory/ai-red-teaming-ma-dealbreakers"
+                                className="rounded-2xl border border-amber-200 bg-white p-6 shadow-sm hover:border-amber-400 transition-colors flex flex-col justify-between group"
+                            >
+                                <div>
+                                    <span className="text-[10px] font-mono font-bold text-amber-700 uppercase tracking-widest block mb-2">
+                                        Pre-Close Oversight
+                                    </span>
+                                    <h3 className="text-lg font-bold text-zinc-950 group-hover:text-amber-900 mb-2">
+                                        AI Red-Team Tests &amp; M&amp;A Dealbreakers
+                                    </h3>
+                                    <p className="text-sm text-zinc-700 leading-relaxed mb-4 font-medium">
+                                        Stress-test target company tools for unapproved money actions and hidden privacy leaks before signing.
+                                    </p>
+                                </div>
+                                <span className="text-xs font-bold font-mono text-amber-700 hover:text-amber-900 uppercase tracking-widest inline-flex items-center gap-1">
+                                    Run 5-Point Dealbreaker Test &rarr;
+                                </span>
+                            </Link>
                         </div>
                     </div>
 
@@ -136,7 +189,7 @@ export default function ForBoardsPage() {
                     <div className="rounded-3xl border border-amber-300 bg-gradient-to-br from-amber-50/90 via-white to-orange-50/90 p-10 text-center shadow-md">
                         <h2 className="text-3xl font-grotesk font-bold text-zinc-950 mb-4">Board-Ready in 2 Weeks</h2>
                         <p className="text-zinc-700 mb-8 max-w-xl mx-auto font-medium leading-relaxed">Full R&D Capital Audit with executive summary, risk assessment, and remediation roadmap. Delivered as a board presentation, not a technical document.</p>
-                        <Link href="/services" className="inline-block px-10 py-5 rounded-xl bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold text-base hover:opacity-95 transition-all shadow-md active:scale-95">Schedule Board Briefing &rarr;</Link>
+                        <Link href="/services" style={{ color: '#09090b' }} className="inline-block px-10 py-5 rounded-xl bg-amber-500 hover:bg-amber-600 !text-zinc-950 font-bold text-base hover:opacity-95 transition-colors shadow-md active:scale-95">Schedule Board Briefing &rarr;</Link>
                     </div>
                 </div>
             </div>

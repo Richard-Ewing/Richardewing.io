@@ -94,9 +94,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Truthful, deterministic release/update dates so Google trusts <lastmod> instead of ignoring uniform build timestamps.
     const DATES = {
+        nov24Release: new Date('2026-11-24T00:00:00Z'),
         newGoldenSample: new Date('2026-11-23T00:00:00Z'),
         homepageFrozen: new Date('2026-10-06T00:00:00Z'),
-        hubsRefreshed: new Date('2026-11-23T00:00:00Z'),
+        hubsRefreshed: new Date('2026-11-24T00:00:00Z'),
         coreAdvisory: new Date('2026-10-28T00:00:00Z'),
         toolsSuite: new Date('2026-10-18T00:00:00Z'),
         combatSeo: new Date('2026-10-15T00:00:00Z'),
@@ -138,6 +139,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(baseUrl, 'weekly', 1.0, DATES.homepageFrozen);
     add(`${baseUrl}/advisory`, 'weekly', 0.95, DATES.hubsRefreshed);
     add(`${baseUrl}/advisory/pe-first-100-days-ai`, 'weekly', 0.95, DATES.newGoldenSample);
+    add(`${baseUrl}/advisory/ai-red-teaming-ma-dealbreakers`, 'weekly', 0.95, DATES.nov24Release);
+    add(`${baseUrl}/advisory/deal-desk-qbr-defense`, 'weekly', 0.95, DATES.nov24Release);
     add(`${baseUrl}/engagement-paths`, 'weekly', 0.9, DATES.coreAdvisory);
     add(`${baseUrl}/pricing-sprints`, 'weekly', 0.9, DATES.hubsRefreshed);
     add(`${baseUrl}/products`, 'weekly', 0.9, DATES.coreAdvisory);
@@ -238,10 +241,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/resources`, 'weekly', 0.8, DATES.coreAdvisory);
 
     // === AUDIENCE FUNNEL ===
-    add(`${baseUrl}/for-investors`, 'monthly', 0.9, DATES.coreAdvisory);
-    add(`${baseUrl}/for-boards`, 'monthly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/for-investors`, 'monthly', 0.9, DATES.hubsRefreshed);
+    add(`${baseUrl}/for-boards`, 'monthly', 0.9, DATES.hubsRefreshed);
     add(`${baseUrl}/for-ctos`, 'monthly', 0.9, DATES.coreAdvisory);
-    add(`${baseUrl}/for-cfos`, 'monthly', 0.9, DATES.coreAdvisory);
+    add(`${baseUrl}/for-cfos`, 'monthly', 0.9, DATES.hubsRefreshed);
     add(`${baseUrl}/for-coos`, 'monthly', 0.9, DATES.coreAdvisory);
     add(`${baseUrl}/for-general-counsels`, 'monthly', 0.9, DATES.coreAdvisory);
 
@@ -354,6 +357,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Golden-Sample Advisory Counter-Strike Pages (Nov 2026)
     add(`${baseUrl}/compare/pass-through-vs-credit-ai-pricing`, 'weekly', 0.95, DATES.newGoldenSample);
     add(`${baseUrl}/compare/fractional-cpo-vs-advisory-sprint`, 'weekly', 0.95, DATES.newGoldenSample);
+
+    // Nov 24 Gap-Coverage Releases (Nov 2026)
+    add(`${baseUrl}/compare/output-vs-outcome-ai-pricing`, 'weekly', 0.95, DATES.nov24Release);
 
     // === DYNAMICALLY GENERATED PAGES ===
 

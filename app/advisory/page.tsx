@@ -666,6 +666,79 @@ export default function AdvisoryPage() {
               Run Hiring Fit Check ↗
             </span>
           </Link>
+
+          <Link
+            href="/compare/output-vs-outcome-ai-pricing"
+            className="bg-[#faf8f2] border border-[var(--line)] rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col justify-between"
+          >
+            <div>
+              <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-[var(--gold)] block mb-2">
+                PILLAR 01 · PRICING MODEL
+              </span>
+              <h3 className="font-serif text-xl text-[var(--ink)] mb-2">
+                Output vs. Outcome AI Pricing
+              </h3>
+              <p className="text-[13px] text-[var(--muted)] leading-relaxed mb-4">
+                Compare charging per raw AI draft against billing per verified finished result with
+                a 60-second viability scorer.
+              </p>
+            </div>
+            <span className="text-xs font-semibold text-[var(--forest)]">
+              Score Outcome Viability ↗
+            </span>
+          </Link>
+
+          <Link
+            href="/advisory/ai-red-teaming-ma-dealbreakers"
+            className="bg-[#faf8f2] border border-[var(--line)] rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col justify-between"
+          >
+            <div>
+              <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-[var(--gold)] block mb-2">
+                PILLAR 04 · M&amp;A STRESS-TEST
+              </span>
+              <h3 className="font-serif text-xl text-[var(--ink)] mb-2">
+                AI Red-Team Tests &amp; M&amp;A Dealbreakers
+              </h3>
+              <p className="text-[13px] text-[var(--muted)] leading-relaxed mb-4">
+                Try to break a target company&apos;s automated software before closing to catch
+                hidden leaks, bypasses, and runaway bills.
+              </p>
+            </div>
+            <span className="text-xs font-semibold text-[var(--forest)]">
+              Run 5-Point Dealbreaker Test ↗
+            </span>
+          </Link>
+
+          <Link
+            href="/advisory/deal-desk-qbr-defense"
+            style={{ color: '#ffffff' }}
+            className="bg-[var(--forest2)] !text-white border border-[var(--forest2)] rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col justify-between"
+          >
+            <div>
+              <span
+                style={{ color: '#e7d7bc' }}
+                className="font-mono text-[10px] tracking-[0.14em] uppercase text-[#e7d7bc] block mb-2"
+              >
+                PILLAR 03 · DEAL DESK &amp; QBRS
+              </span>
+              <h3
+                style={{ color: '#ffffff' }}
+                className="font-serif text-xl !text-white mb-2"
+              >
+                Deal Desk &amp; Executive QBR Defense
+              </h3>
+              <p className="text-[13px] text-zinc-100 leading-relaxed mb-4">
+                Stop losing renewals over vague activity slides. Lock discount floors, usage
+                ceilings, and unit cash proof finance signs.
+              </p>
+            </div>
+            <span
+              style={{ color: '#e7d7bc' }}
+              className="text-xs font-semibold text-[#e7d7bc]"
+            >
+              Check Deal Margin Floor ↗
+            </span>
+          </Link>
         </div>
       </section>
 

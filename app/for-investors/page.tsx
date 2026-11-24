@@ -81,6 +81,79 @@ export default function ForInvestorsPage() {
                         </div>
                     </div>
 
+                    {/* Pre-Close & Portfolio Field Playbooks */}
+                    <div className="mb-16">
+                        <div className="text-center mb-8">
+                            <span className="text-xs font-mono font-bold text-cyan-800 uppercase tracking-widest block mb-2">
+                                Pre-Close &amp; Portfolio Field Playbooks
+                            </span>
+                            <h2 className="text-2xl font-grotesk font-bold text-zinc-950">
+                                Pre-Close &amp; Portfolio Field Playbooks
+                            </h2>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <Link
+                                href="/advisory/ai-red-teaming-ma-dealbreakers"
+                                className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 hover:border-cyan-500/40 hover:bg-cyan-500/10 transition-colors p-6 flex flex-col justify-between group"
+                            >
+                                <div>
+                                    <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase tracking-widest block mb-2">
+                                        Pre-Close Stress Test
+                                    </span>
+                                    <h3 className="text-lg font-grotesk font-bold text-zinc-950 group-hover:text-cyan-900 mb-2">
+                                        AI Red-Team Tests &amp; M&amp;A Dealbreakers
+                                    </h3>
+                                    <p className="text-sm text-zinc-900 leading-relaxed mb-4">
+                                        Five-point pre-close stress test for buyers and General Counsel to size escrow holdbacks before wire day.
+                                    </p>
+                                </div>
+                                <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider inline-flex items-center gap-1">
+                                    Run 5-Point Dealbreaker Test &rarr;
+                                </span>
+                            </Link>
+
+                            <Link
+                                href="/advisory/deal-desk-qbr-defense"
+                                className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 hover:border-cyan-500/40 hover:bg-cyan-500/10 transition-colors p-6 flex flex-col justify-between group"
+                            >
+                                <div>
+                                    <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase tracking-widest block mb-2">
+                                        Portfolio Margin Defense
+                                    </span>
+                                    <h3 className="text-lg font-grotesk font-bold text-zinc-950 group-hover:text-cyan-900 mb-2">
+                                        Deal Desk &amp; Executive QBR Defense
+                                    </h3>
+                                    <p className="text-sm text-zinc-900 leading-relaxed mb-4">
+                                        Protect portfolio company gross margins by enforcing discount floors and written usage caps on custom deals.
+                                    </p>
+                                </div>
+                                <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider inline-flex items-center gap-1">
+                                    Check Deal Margin Floor &rarr;
+                                </span>
+                            </Link>
+
+                            <Link
+                                href="/compare/output-vs-outcome-ai-pricing"
+                                className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 hover:border-cyan-500/40 hover:bg-cyan-500/10 transition-colors p-6 flex flex-col justify-between group"
+                            >
+                                <div>
+                                    <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase tracking-widest block mb-2">
+                                        Pricing Durability
+                                    </span>
+                                    <h3 className="text-lg font-grotesk font-bold text-zinc-950 group-hover:text-cyan-900 mb-2">
+                                        Output vs. Outcome AI Pricing Guide
+                                    </h3>
+                                    <p className="text-sm text-zinc-900 leading-relaxed mb-4">
+                                        Check whether a target company&apos;s pricing grows with verified customer results or gets drained by heavy users.
+                                    </p>
+                                </div>
+                                <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider inline-flex items-center gap-1">
+                                    Score Outcome Viability &rarr;
+                                </span>
+                            </Link>
+                        </div>
+                    </div>
+
                     {/* PE & VC Due Diligence Research & Publications */}
                     <div className="mb-16">
                         <div className="flex items-center justify-between mb-6 flex-wrap gap-2">
