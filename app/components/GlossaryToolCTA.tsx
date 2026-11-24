@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import BuyRedirectButton from './client/BuyRedirectButton';
 
 // Maps glossary term categories/slugs to relevant tools
 const toolMapping: Record<string, { name: string; url: string; cta: string; emoji: string }> = {
@@ -177,13 +178,12 @@ export default function GlossaryToolCTA({ slug, category, termTitle }: GlossaryT
                     {/* Advisory Upsell */}
                     <p className="mt-3 text-xs text-zinc-600">
                         Want an expert to run this for you?{' '}
-                        <a
+                        <BuyRedirectButton
                             href="/api/buy/gut_check?source=glossary-tool-cta"
-                            rel="noopener noreferrer nofollow"
                             className="text-purple-600 hover:text-purple-500 font-semibold underline underline-offset-2 transition-colors"
                         >
                             Book a $450 Gut-Check Call →
-                        </a>
+                        </BuyRedirectButton>
                     </p>
                 </div>
             </div>

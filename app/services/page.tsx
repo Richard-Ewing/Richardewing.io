@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import FAQItem from '@/app/components/FAQItem';
+import BuyRedirectButton from '@/app/components/client/BuyRedirectButton';
 
 export const metadata: Metadata = {
   title: 'AI Build Sprints, Automation & Advisory',
@@ -252,14 +253,12 @@ export default function ServicesPage() {
 
                     <div className="pt-6 mt-6 border-t border-[var(--line)]">
                       {offer.external ? (
-                        <a
+                        <BuyRedirectButton
                           href={offer.actionHref}
-                          target="_blank"
-                          rel="noopener noreferrer nofollow"
                           className="w-full button button-gold !py-2.5 !min-h-0 text-xs !justify-center"
                         >
                           {offer.actionLabel}
-                        </a>
+                        </BuyRedirectButton>
                       ) : (
                         <Link
                           href={offer.actionHref}

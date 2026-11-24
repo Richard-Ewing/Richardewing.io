@@ -1,20 +1,25 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import vm from 'node:vm';
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
 
 /**
- * Post-OpenNext Worker Patch (`scripts/patch-worker.mjs` - ADR-0019)
+ * Post-OpenNext Worker Patch (`scripts/patch-worker.mjs` - ADR-0019 / ADR-0029)
  *
- * Injects a <0.05 ms pre-OpenNext Edge Shield directly at the top of `.open-next/worker.js`
- * before `runWithCloudflareRequestContext`, `middlewareHandler`, or the 44 MB `handler.mjs`
- * server bundle is imported or executed:
- *   1. Short-circuits Cloudflare Early Hints (`204 No Content`, `no-store`).
- *   2. Redirects exact apex root (`https://richardewing.io/`) to `https://www.richardewing.io/` (`301`).
- *   3. Blocks exploit/vulnerability scanner probes (`.php`, `.env`, `wp-*`, `/.git`, etc.) with `404`.
- *   4. Blocks AI training and bulk SEO scrapers (`Sogou`, `GPTBot`, `ClaudeBot`, `Bytespider`,
- *      `SemrushBot`, `AhrefsBot`, etc.) with `403` (`no-store`), while explicitly preserving
- *      search and citation crawlers (`Googlebot`, `Bingbot`, `OAI-SearchBot`, `ChatGPT-User`,
- *      `Claude-SearchBot`, `Claude-User`, `PerplexityBot`, `Perplexity-User`, `Applebot`) and
- *      allowing crawler directive files (`/robots.txt`, `/llms.txt`, `/llms-full.txt`, `/sitemap.xml`).
+ * 1. Build-time Static Assets & Manifests:
+ *    - Populates `.open-next/assets/cdn-cgi/_next_cache` for OpenNext incremental cache.
+ *    - Extracts prerendered public static HTML routes into `.open-next/assets/cdn-cgi/_edge_html/`.
+ *    - Extracts prerendered directive `.body` files into `.open-next/assets/cdn-cgi/_edge_directives/`.
+ *    - Compiles `app/lib/products.ts` into `.open-next/cloudflare/edge-products-manifest.js`.
+ *    - Emits `.open-next/cloudflare/edge-redirects-manifest.js`.
+ * 2. Runtime Pre-OpenNext Edge Shield (0.05ms CPU):
+ *    - Short-circuits Early Hints and `prefetch;prerender` (`204 No Content`).
+ *    - Shields `/api/buy/*` bots/prefetches (`STUB-200`), non-human GETs (`GATE-200`),
+ *      and human-confirmed guest checkouts (`EDGE-307`) without booting Next.js.
+ *    - Serves directives (`STATIC-DIRECTIVE`) and prerendered HTML (`STATIC-ASSETS-HIT`)
+ *      from `env.ASSETS` on `caches.default` miss and backfills POP cache via `ctx.waitUntil`.
  */
 
 const openNextDir = path.resolve(process.cwd(), '.open-next');
@@ -33,6 +38,173 @@ if (fs.existsSync(openNextCacheSrc)) {
   fs.cpSync(openNextCacheSrc, openNextAssetsCacheDest, { recursive: true });
   console.log('[patch-worker] Populated StaticAssetsIncrementalCache into .open-next/assets/cdn-cgi/_next_cache.');
 }
+
+// Extract prerendered public static HTML & directives into Workers Static Assets (ADR-0029)
+const nextServerAppDir = path.resolve(process.cwd(), '.next', 'server', 'app');
+if (!fs.existsSync(nextServerAppDir)) {
+  console.error(`[patch-worker] Missing ${nextServerAppDir}. Run next build first.`);
+  process.exit(1);
+}
+
+const edgeHtmlDestDir = path.join(openNextDir, 'assets', 'cdn-cgi', '_edge_html');
+fs.rmSync(edgeHtmlDestDir, { recursive: true, force: true });
+fs.mkdirSync(edgeHtmlDestDir, { recursive: true });
+
+const EDGE_HTML_EXCLUDED_EXACT = new Set(['/vault']);
+const EDGE_HTML_EXCLUDED_PREFIXES = [
+  '/vault/assets',
+  '/vault/team',
+  '/vault/join',
+  '/admin',
+  '/scorecard',
+  '/sign-in',
+  '/sign-up',
+  '/sso-callback',
+  '/ai-integration/advisor',
+  '/ai-integration/system/download',
+  '/tools/board-room',
+  '/tools/dashboard',
+  '/tools/verify',
+  '/dashboard',
+  '/workspace',
+  '/wizard',
+  '/toolkit-success',
+];
+
+let edgeHtmlCount = 0;
+function extractStaticHtml(dir) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      extractStaticHtml(fullPath);
+      continue;
+    }
+    if (!entry.isFile() || !entry.name.endsWith('.html')) continue;
+
+    const relFromApp = path.relative(nextServerAppDir, fullPath).replace(/\\/g, '/');
+    if (
+      relFromApp === '_not-found.html' ||
+      relFromApp.startsWith('_') ||
+      relFromApp.includes('/_') ||
+      relFromApp.startsWith('api/')
+    ) {
+      continue;
+    }
+
+    const strippedSegments = relFromApp.split('/').filter((seg) => !/^\(.*\)$/.test(seg));
+    const normalizedRel = strippedSegments.join('/');
+    if (
+      !normalizedRel ||
+      normalizedRel.startsWith('_') ||
+      normalizedRel.includes('/_') ||
+      normalizedRel.startsWith('api/')
+    ) {
+      continue;
+    }
+
+    const routePath = normalizedRel === 'index.html' ? '/' : '/' + normalizedRel.replace(/\.html$/, '');
+    const lowerRoute = routePath.toLowerCase();
+    if (
+      EDGE_HTML_EXCLUDED_EXACT.has(lowerRoute) ||
+      EDGE_HTML_EXCLUDED_PREFIXES.some((p) => lowerRoute === p || lowerRoute.startsWith(p + '/'))
+    ) {
+      continue;
+    }
+
+    const metaPath = fullPath.replace(/\.html$/, '.meta');
+    if (fs.existsSync(metaPath)) {
+      try {
+        const metaJson = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+        if (metaJson && typeof metaJson.status === 'number' && metaJson.status !== 200) {
+          continue;
+        }
+      } catch {}
+    }
+
+    const htmlBody = fs.readFileSync(fullPath, 'utf8');
+    if (htmlBody.includes('NEXT_REDIRECT')) {
+      continue;
+    }
+
+    const destHtmlPath = path.join(edgeHtmlDestDir, normalizedRel);
+    fs.mkdirSync(path.dirname(destHtmlPath), { recursive: true });
+    fs.copyFileSync(fullPath, destHtmlPath);
+    edgeHtmlCount++;
+  }
+}
+extractStaticHtml(nextServerAppDir);
+console.log(`[patch-worker] Extracted ${edgeHtmlCount} prerendered HTML files into .open-next/assets/cdn-cgi/_edge_html.`);
+
+const edgeDirectivesDestDir = path.join(openNextDir, 'assets', 'cdn-cgi', '_edge_directives');
+fs.rmSync(edgeDirectivesDestDir, { recursive: true, force: true });
+fs.mkdirSync(edgeDirectivesDestDir, { recursive: true });
+const directiveBodies = [
+  'robots.txt.body',
+  'llms.txt.body',
+  'llms-full.txt.body',
+  'sitemap.xml.body',
+  'feed.xml.body',
+  'manifest.webmanifest.body',
+  'site.webmanifest.body',
+];
+let edgeDirectivesCount = 0;
+for (const bodyFile of directiveBodies) {
+  const srcBody = path.join(nextServerAppDir, bodyFile);
+  if (fs.existsSync(srcBody)) {
+    const targetName = bodyFile.replace(/\.body$/, '');
+    fs.copyFileSync(srcBody, path.join(edgeDirectivesDestDir, targetName));
+    edgeDirectivesCount++;
+  }
+}
+console.log(`[patch-worker] Extracted ${edgeDirectivesCount} directive files into .open-next/assets/cdn-cgi/_edge_directives.`);
+
+// Parse app/lib/products.ts PRODUCTS map into .open-next/cloudflare/edge-products-manifest.js (ADR-0029)
+const productsTsPath = path.resolve(process.cwd(), 'app/lib/products.ts');
+const productsManifestDest = path.join(openNextDir, 'cloudflare', 'edge-products-manifest.js');
+if (!fs.existsSync(productsTsPath)) {
+  console.error(`[patch-worker] Missing ${productsTsPath}. Cannot emit edge-products-manifest.js.`);
+  process.exit(1);
+}
+const esbuild = require('esbuild');
+const productsTsRaw = fs.readFileSync(productsTsPath, 'utf8');
+const productsCjs = esbuild.transformSync(productsTsRaw, { loader: 'ts', format: 'cjs' }).code;
+const productsSandbox = { module: { exports: {} }, exports: {} };
+vm.runInNewContext(productsCjs, productsSandbox);
+const parsedProducts = productsSandbox.module.exports?.PRODUCTS || productsSandbox.exports?.PRODUCTS;
+if (!parsedProducts || typeof parsedProducts !== 'object') {
+  console.error('[patch-worker] ERROR: Failed to extract PRODUCTS map from app/lib/products.ts!');
+  process.exit(1);
+}
+const edgeProductLinks = {};
+for (const [prodId, prodObj] of Object.entries(parsedProducts)) {
+  if (prodObj && typeof prodObj.paymentLink === 'string' && prodObj.paymentLink.trim()) {
+    edgeProductLinks[prodId] = prodObj.paymentLink.trim();
+  }
+}
+const extractedProdCount = Object.keys(edgeProductLinks).length;
+const REQUIRED_EDGE_PRODUCTS = [
+  'premium_guide_29',
+  'premium_guide_79',
+  'gut_check',
+  'insolvency_diagnostic',
+  'full_audit',
+  'partner_licensed',
+  'enterprise_curriculum_license',
+];
+const missingRequiredProducts = REQUIRED_EDGE_PRODUCTS.filter((id) => !edgeProductLinks[id]);
+if (extractedProdCount < 30 || missingRequiredProducts.length > 0) {
+  console.error(
+    `[patch-worker] ERROR: Product manifest assertion failed! Count=${extractedProdCount} (min 30), Missing=[${missingRequiredProducts.join(', ')}]`
+  );
+  process.exit(1);
+}
+fs.mkdirSync(path.dirname(productsManifestDest), { recursive: true });
+fs.writeFileSync(
+  productsManifestDest,
+  `// Auto-generated by scripts/patch-worker.mjs from app/lib/products.ts (ADR-0029)\nexport const EDGE_PRODUCT_LINKS = ${JSON.stringify(edgeProductLinks, null, 2)};\n`,
+  'utf8'
+);
+console.log(`[patch-worker] Emitted ${extractedProdCount} product links into .open-next/cloudflare/edge-products-manifest.js.`);
 
 // Emit pure ESM edge redirect manifest into .open-next/cloudflare/edge-redirects-manifest.js (ADR-0022)
 const manifestTsPath = path.resolve(process.cwd(), 'app/lib/edge-redirects-manifest.ts');
@@ -54,7 +226,10 @@ let content = fs.readFileSync(workerPath, 'utf8');
 if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
   console.log('[patch-worker] ADR-0019 pre-OpenNext edge shield already present in .open-next/worker.js.');
 } else {
-  content = `import { resolveEdgeRedirect } from "./cloudflare/edge-redirects-manifest.js";\n` + content;
+  content =
+    `import { resolveEdgeRedirect } from "./cloudflare/edge-redirects-manifest.js";\n` +
+    `import { EDGE_PRODUCT_LINKS } from "./cloudflare/edge-products-manifest.js";\n` +
+    content;
   // Defer heavy top-level OpenNext middleware and image imports until an actual cache miss occurs
   content = content
     .replace(
@@ -90,7 +265,8 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
             return new Response(null, { status: 499 });
         }
         const __rwUa = (request.headers.get("user-agent") || "").toLowerCase();
-        if (__rwUa.includes("early hints")) {
+        const __rwSecPurposeEarly = (request.headers.get("sec-purpose") || "").toLowerCase();
+        if (__rwUa.includes("early hints") || __rwSecPurposeEarly.includes("prefetch;prerender")) {
             return new Response(null, {
                 status: 204,
                 headers: {
@@ -103,18 +279,23 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
         const __rwUrl = new URL(request.url);
         const __rwPath = __rwUrl.pathname;
         const __rwLowerPath = __rwPath.toLowerCase();
-        if (__rwLowerPath.startsWith("/__rw_edge_cache/")) {
+        if (__rwLowerPath.startsWith("/__rw_edge_cache/") || __rwLowerPath.startsWith("/cdn-cgi/_edge_")) {
             return new Response("Not Found", {
                 status: 404,
                 headers: {
                     "Content-Type": "text/plain; charset=utf-8",
-                    "Cache-Control": "private, no-store"
+                    "Cache-Control": "private, no-store",
+                    "Cloudflare-CDN-Cache-Control": "no-store",
+                    "CDN-Cache-Control": "no-store"
                 }
             });
         }
+        const __rwIsLocal = /^(localhost|127\\.0\\.0\\.1)(:\\d+)?$/i.test(__rwUrl.host);
+        const __rwIsWorkersPreview = __rwUrl.hostname.endsWith(".workers.dev");
+        const __rwCanonicalOrigin = (__rwIsLocal || __rwIsWorkersPreview) ? __rwUrl.origin : "https://www.richardewing.io";
         if (__rwLowerPath.startsWith("/api/buy/")) {
             const __rwPurpose = (request.headers.get("purpose") || "").toLowerCase();
-            const __rwSecPurpose = (request.headers.get("sec-purpose") || "").toLowerCase();
+            const __rwSecPurpose = __rwSecPurposeEarly;
             const __rwBuyPrefetch =
                 __rwPurpose.includes("prefetch") ||
                 __rwSecPurpose.includes("prefetch") ||
@@ -137,6 +318,81 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                         }
                     }
                 );
+            }
+            const __rwBuyMethod = request.method.toUpperCase();
+            const __rwBuyCookie = (request.headers.get("cookie") || "").toLowerCase();
+            const __rwBuyHasClerk = __rwBuyCookie.includes("__session") || __rwBuyCookie.includes("__clerk");
+            if ((__rwBuyMethod === "GET" || __rwBuyMethod === "HEAD") && !__rwBuyHasClerk) {
+                const __rwIsEnterprise = __rwLowerPath.startsWith("/api/buy/enterprise/");
+                const __rwPrefixLen = __rwIsEnterprise ? "/api/buy/enterprise/".length : "/api/buy/".length;
+                const __rwTail = __rwPath.slice(__rwPrefixLen).replace(/\\/+$/, "");
+                const __rwRawProductId = __rwTail.includes("/") ? "" : __rwTail;
+                const __rwPaymentLink =
+                    __rwRawProductId && Object.prototype.hasOwnProperty.call(EDGE_PRODUCT_LINKS, __rwRawProductId)
+                        ? EDGE_PRODUCT_LINKS[__rwRawProductId]
+                        : "";
+                if (!__rwPaymentLink) {
+                    const __rwMissingDest = new URL(__rwIsEnterprise ? "/vault/curriculum/tracks" : "/checkout-pending", __rwCanonicalOrigin).toString();
+                    return new Response(null, {
+                        status: 307,
+                        headers: {
+                            "Location": __rwMissingDest,
+                            "Cache-Control": "private, no-store",
+                            "Cloudflare-CDN-Cache-Control": "no-store",
+                            "CDN-Cache-Control": "no-store",
+                            "X-Robots-Tag": "noindex, follow",
+                            "X-RW-Buy-Shield": "MISSING-307"
+                        }
+                    });
+                }
+                const __rwSanitizeSeg = (val, fallback, maxLen) =>
+                    String(val || "")
+                        .replace(/--+/g, "-")
+                        .replace(/[^a-zA-Z0-9_-]/g, "")
+                        .replace(/^-+|-+$/g, "")
+                        .slice(0, maxLen) || fallback;
+                const __rwSafeSource = __rwSanitizeSeg(__rwUrl.searchParams.get("source") || "direct", "direct", 40);
+                const __rwSafeProd = __rwSanitizeSeg(__rwRawProductId, "item", 60);
+                const __rwIsHumanClick =
+                    __rwUrl.searchParams.get("u") === "1" ||
+                    request.headers.get("sec-fetch-user") === "?1";
+                if (!__rwIsHumanClick) {
+                    const __rwSafePath = (__rwIsEnterprise ? "/api/buy/enterprise/" : "/api/buy/") + encodeURIComponent(__rwRawProductId);
+                    const __rwContinueUrl = \`\${__rwSafePath}?source=\${encodeURIComponent(__rwSafeSource)}&u=1\`;
+                    const __rwGateHtml = \`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Secure Checkout Verification</title><style>body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#FAF9F6;color:#1a1a1a;font-family:system-ui,-apple-system,sans-serif;padding:24px}.card{max-width:460px;width:100%;background:#ffffff;border:1px solid #d4d0c5;border-radius:16px;padding:32px;box-shadow:0 8px 30px rgba(30,41,36,0.08)}.eyebrow{font-family:ui-monospace,monospace;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#1f3b2c;margin-bottom:10px}h1{font-size:22px;margin:0 0 10px;line-height:1.25}p{font-size:14px;line-height:1.6;color:#526058;margin:0 0 22px}.btn{display:inline-block;width:100%;box-sizing:border-box;text-align:center;padding:14px 20px;border-radius:10px;background:#1f3b2c;color:#ffffff;font-weight:700;font-size:14px;text-decoration:none}.btn:hover{background:#162e26}.back{display:block;text-align:center;margin-top:14px;font-size:12px;color:#526058;text-decoration:underline}</style></head><body><main class="card"><div class="eyebrow">Richard Ewing Advisory Checkout</div><h1>Continue to Secure Stripe Checkout</h1><p>Confirm below to open your secure Stripe checkout session.</p><a class="btn" rel="noopener noreferrer nofollow" href="\${__rwContinueUrl}">Continue to Secure Stripe Checkout -&gt;</a><a class="back" href="/services">Return to Services</a></main></body></html>\`;
+                    return new Response(__rwBuyMethod === "HEAD" ? null : __rwGateHtml, {
+                        status: 200,
+                        headers: {
+                            "Content-Type": "text/html; charset=utf-8",
+                            "X-Robots-Tag": "noindex, nofollow",
+                            "Cache-Control": "private, no-store",
+                            "Cloudflare-CDN-Cache-Control": "no-store",
+                            "CDN-Cache-Control": "no-store",
+                            "X-Frame-Options": "SAMEORIGIN",
+                            "X-Content-Type-Options": "nosniff",
+                            "X-RW-Buy-Shield": "GATE-200"
+                        }
+                    });
+                }
+                const __rwStripeUrl = new URL(__rwPaymentLink, __rwCanonicalOrigin);
+                if (__rwStripeUrl.hostname.endsWith("stripe.com") && !__rwStripeUrl.searchParams.has("client_reference_id")) {
+                    const __rwRef = (__rwIsEnterprise
+                        ? \`guest--\${__rwSafeSource}--enterprise_\${__rwSafeProd}\`
+                        : \`guest--\${__rwSafeSource}--\${__rwSafeProd}\`
+                    ).slice(0, 200);
+                    __rwStripeUrl.searchParams.set("client_reference_id", __rwRef);
+                }
+                return new Response(null, {
+                    status: 307,
+                    headers: {
+                        "Location": __rwStripeUrl.toString(),
+                        "Cache-Control": "private, no-store",
+                        "Cloudflare-CDN-Cache-Control": "no-store",
+                        "CDN-Cache-Control": "no-store",
+                        "X-Robots-Tag": "noindex, follow",
+                        "X-RW-Buy-Shield": "EDGE-307"
+                    }
+                });
             }
         }
         if (
@@ -287,8 +543,6 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 }
             });
         }
-        const __rwIsLocal = /^(localhost|127\\.0\\.0\\.1)(:\\d+)?$/i.test(__rwUrl.host);
-        const __rwIsWorkersPreview = __rwUrl.hostname.endsWith(".workers.dev");
         const __rwNeedsHostRedirect =
             !__rwIsLocal &&
             !__rwIsWorkersPreview &&
@@ -313,8 +567,7 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
             const __rwDestPath = __rwHashIdx >= 0 ? __rwFinalTarget.slice(0, __rwHashIdx) : __rwFinalTarget;
             const __rwDestHash = __rwHashIdx >= 0 ? __rwFinalTarget.slice(__rwHashIdx) : "";
             const __rwSafeDestPath = "/" + __rwDestPath.replace(/^[/\\\\]+/, "");
-            const __rwBaseOrigin = (__rwIsLocal || __rwIsWorkersPreview) ? __rwUrl.origin : "https://www.richardewing.io";
-            const __rwFullLocation = __rwBaseOrigin + __rwSafeDestPath + __rwUrl.search + __rwDestHash;
+            const __rwFullLocation = __rwCanonicalOrigin + __rwSafeDestPath + __rwUrl.search + __rwDestHash;
             if (__rwFullLocation !== __rwUrl.href) {
                 return new Response(null, {
                     status: 301,
@@ -464,6 +717,11 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                     __rwHitHeaders.set("Cache-Control", "private, no-cache, no-store, max-age=0, must-revalidate");
                     __rwHitHeaders.set("Cloudflare-CDN-Cache-Control", "no-store");
                     __rwHitHeaders.set("CDN-Cache-Control", "no-store");
+                } else if (__rwIsDirectiveFile) {
+                    __rwHitHeaders.delete("vary");
+                    __rwHitHeaders.delete("cdn-cache-control");
+                    __rwHitHeaders.set("Cache-Control", "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800");
+                    __rwHitHeaders.set("Cloudflare-CDN-Cache-Control", "public, max-age=86400, stale-while-revalidate=604800");
                 } else {
                     __rwHitHeaders.set("Cache-Control", "public, max-age=0, must-revalidate");
                     __rwHitHeaders.set("Cloudflare-CDN-Cache-Control", "no-store");
@@ -477,6 +735,93 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                     statusText: __rwCached.statusText,
                     headers: __rwHitHeaders
                 });
+            }
+            if (__rwIsDirectiveFile && !__rwIsRsc && env && env.ASSETS && typeof env.ASSETS.fetch === "function") {
+                try {
+                    const __rwDirRes = await env.ASSETS.fetch("https://assets.local/cdn-cgi/_edge_directives" + __rwLowerPath);
+                    if (__rwDirRes && __rwDirRes.status === 200) {
+                        const __rwDirBuf = await __rwDirRes.arrayBuffer();
+                        const __rwDirCtMap = {
+                            "/robots.txt": "text/plain; charset=utf-8",
+                            "/ads.txt": "text/plain; charset=utf-8",
+                            "/llms.txt": "text/plain; charset=utf-8",
+                            "/llms-full.txt": "text/plain; charset=utf-8",
+                            "/sitemap.xml": "application/xml; charset=utf-8",
+                            "/feed.xml": "application/xml; charset=utf-8",
+                            "/manifest.webmanifest": "application/manifest+json; charset=utf-8",
+                            "/site.webmanifest": "application/manifest+json; charset=utf-8"
+                        };
+                        const __rwDirCt = __rwDirCtMap[__rwLowerPath] || "text/plain; charset=utf-8";
+                        const __rwDirStoreHeaders = new Headers({
+                            "X-RW-Orig-CT": __rwDirCt,
+                            "Content-Type": "font/woff2",
+                            "Cache-Control": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=2592000",
+                            "Content-Signal": "ai-train=no, search=yes, ai-input=yes",
+                            "Content-Length": String(__rwDirBuf.byteLength)
+                        });
+                        if (ctx && typeof ctx.waitUntil === "function") {
+                            ctx.waitUntil(
+                                caches.default.put(
+                                    __rwCacheKey,
+                                    new Response(__rwDirBuf.slice(0), { status: 200, headers: __rwDirStoreHeaders })
+                                ).catch(() => {})
+                            );
+                        }
+                        return new Response(__rwMethod === "HEAD" ? null : __rwDirBuf, {
+                            status: 200,
+                            headers: {
+                                "Content-Type": __rwDirCt,
+                                "Cache-Control": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800",
+                                "Cloudflare-CDN-Cache-Control": "public, max-age=86400, stale-while-revalidate=604800",
+                                "Content-Signal": "ai-train=no, search=yes, ai-input=yes",
+                                "X-RW-Edge-Cache": "STATIC-DIRECTIVE"
+                            }
+                        });
+                    }
+                } catch {}
+            }
+            if (!__rwIsOg && !__rwIsRsc && !__rwIsDirectiveFile && env && env.ASSETS && typeof env.ASSETS.fetch === "function") {
+                try {
+                    const __rwAssetRes = await env.ASSETS.fetch("https://assets.local/cdn-cgi/_edge_html" + __rwNormPath + ".html");
+                    if (__rwAssetRes && __rwAssetRes.status === 200) {
+                        const __rwAssetBuf = await __rwAssetRes.arrayBuffer();
+                        const __rwAssetStoreHeaders = new Headers({
+                            "X-RW-Orig-CT": "text/html; charset=utf-8",
+                            "Content-Type": "font/woff2",
+                            "Cache-Control": "public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=2592000",
+                            "Content-Signal": "ai-train=no, search=yes, ai-input=yes",
+                            "X-Frame-Options": "SAMEORIGIN",
+                            "X-Content-Type-Options": "nosniff",
+                            "Referrer-Policy": "strict-origin-when-cross-origin",
+                            "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+                            "Content-Length": String(__rwAssetBuf.byteLength)
+                        });
+                        if (ctx && typeof ctx.waitUntil === "function") {
+                            ctx.waitUntil(
+                                caches.default.put(
+                                    __rwCacheKey,
+                                    new Response(__rwAssetBuf.slice(0), { status: 200, headers: __rwAssetStoreHeaders })
+                                ).catch(() => {})
+                            );
+                        }
+                        return new Response(__rwMethod === "HEAD" ? null : __rwAssetBuf, {
+                            status: 200,
+                            headers: {
+                                "Content-Type": "text/html; charset=utf-8",
+                                "X-RW-Edge-Cache": "STATIC-ASSETS-HIT",
+                                "Content-Signal": "ai-train=no, search=yes, ai-input=yes",
+                                "Cache-Control": "public, max-age=0, must-revalidate",
+                                "Cloudflare-CDN-Cache-Control": "no-store",
+                                "CDN-Cache-Control": "no-store",
+                                "Vary": "Host, RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept-Encoding",
+                                "X-Frame-Options": "SAMEORIGIN",
+                                "X-Content-Type-Options": "nosniff",
+                                "Referrer-Policy": "strict-origin-when-cross-origin",
+                                "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload"
+                            }
+                        });
+                    }
+                } catch {}
             }
         }
         const __rwOriginRes = await runWithCloudflareRequestContext(request, env, ctx, async () => {`;
@@ -631,9 +976,6 @@ if (mw.includes('__OPENNEXT_404_CACHE_INTERCEPT__')) {
 
 // Minify OpenNext server & middleware handlers via esbuild to cut cold-isolate V8 parse CPU
 try {
-  const { createRequire } = await import('node:module');
-  const require = createRequire(import.meta.url);
-  const esbuild = require('esbuild');
   const handlerTargets = [
     path.join(openNextDir, 'server-functions', 'default', 'handler.mjs'),
     path.join(openNextDir, 'middleware', 'handler.mjs'),
@@ -656,6 +998,24 @@ try {
   }
 } catch (minErr) {
   console.warn('[patch-worker] Warning minifying OpenNext handlers:', minErr.message);
+}
+
+// Verify total Workers Static Assets file count stays safely under Cloudflare 20,000 cap (< 18,000 guard)
+const assetsRootDir = path.join(openNextDir, 'assets');
+let totalAssetsCount = 0;
+function countAssetsFiles(dir) {
+  if (!fs.existsSync(dir)) return;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) countAssetsFiles(full);
+    else if (entry.isFile()) totalAssetsCount++;
+  }
+}
+countAssetsFiles(assetsRootDir);
+console.log(`[patch-worker] Total .open-next/assets file count: ${totalAssetsCount} (limit < 18,000).`);
+if (totalAssetsCount >= 18000) {
+  console.error(`[patch-worker] ERROR: Asset count ${totalAssetsCount} reached 18,000 safety ceiling!`);
+  process.exit(1);
 }
 
 process.exit(0);

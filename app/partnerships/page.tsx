@@ -3,6 +3,7 @@ import Link from 'next/link';
 import TechnologyIntegrationDocs from '@/components/partnerships/TechnologyIntegrationDocs';
 import BrandAssetsKit from '@/components/partnerships/BrandAssetsKit';
 import SponsorshipMediaKit from '@/components/partnerships/SponsorshipMediaKit';
+import BuyRedirectButton from '@/app/components/client/BuyRedirectButton';
 
 export const metadata: Metadata = {
     title: 'Advisory & Technology Partnerships',
@@ -259,7 +260,7 @@ export default function PartnershipsPage() {
                                     </div>
                                     <a
                                         href="mailto:richardewing@exogram.ai?subject=Referral%20Partner%20Application"
-                                        className="block text-center py-3 rounded-xl border border-zinc-300 hover:border-zinc-500 text-zinc-900 font-grotesk font-bold text-xs uppercase tracking-wider hover:bg-zinc-50 transition-all"
+                                        className="block text-center py-3 rounded-xl border border-zinc-300 hover:border-zinc-500 text-zinc-900 font-grotesk font-bold text-xs uppercase tracking-wider hover:bg-zinc-50 transition-colors"
                                     >
                                         Apply for Referral Track →
                                     </a>
@@ -282,13 +283,12 @@ export default function PartnershipsPage() {
                                             Annual license + quarterly training
                                         </div>
                                     </div>
-                                    <a
+                                    <BuyRedirectButton
                                         href="/api/buy/partner_licensed?source=partnerships"
-                                        rel="noopener noreferrer nofollow"
-                                        className="block text-center py-3 rounded-xl bg-gradient-to-r from-cyan-700 to-emerald-700 hover:from-cyan-800 hover:to-emerald-800 text-white font-grotesk font-bold text-xs uppercase tracking-wider shadow-sm hover:opacity-95 transition-all"
+                                        className="block w-full text-center py-3 rounded-xl bg-gradient-to-r from-cyan-700 to-emerald-700 hover:from-cyan-800 hover:to-emerald-800 text-white font-grotesk font-bold text-xs uppercase tracking-wider shadow-sm hover:opacity-95 transition-colors"
                                     >
                                         Start Licensed Partnership →
-                                    </a>
+                                    </BuyRedirectButton>
                                 </div>
 
                                 {/* Strategic Partner */}
@@ -305,7 +305,7 @@ export default function PartnershipsPage() {
                                     </div>
                                     <a
                                         href="mailto:richardewing@exogram.ai?subject=Strategic%20Partnership%20Inquiry"
-                                        className="block text-center py-3 rounded-xl border border-emerald-600/40 hover:border-emerald-600 text-emerald-900 font-grotesk font-bold text-xs uppercase tracking-wider hover:bg-emerald-50 transition-all"
+                                        className="block text-center py-3 rounded-xl border border-emerald-600/40 hover:border-emerald-600 text-emerald-900 font-grotesk font-bold text-xs uppercase tracking-wider hover:bg-emerald-50 transition-colors"
                                     >
                                         Schedule Strategic Discussion →
                                     </a>
@@ -338,13 +338,13 @@ export default function PartnershipsPage() {
                         <div className="flex flex-wrap items-center justify-center gap-4">
                             <a
                                 href="mailto:richardewing@exogram.ai?subject=Technology%20Partnership%20Inquiry"
-                                className="inline-block px-8 py-4 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white font-grotesk font-bold text-sm shadow-md transition-all"
+                                className="inline-block px-8 py-4 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white font-grotesk font-bold text-sm shadow-md transition-colors"
                             >
                                 Contact Engineering Team →
                             </a>
                             <Link
                                 href="/services"
-                                className="inline-block px-8 py-4 rounded-xl bg-white hover:bg-zinc-50 text-zinc-900 border border-zinc-300 font-grotesk font-bold text-sm shadow-xs transition-all"
+                                className="inline-block px-8 py-4 rounded-xl bg-white hover:bg-zinc-50 text-zinc-900 border border-zinc-300 font-grotesk font-bold text-sm shadow-xs transition-colors"
                             >
                                 Explore Advisory Services
                             </Link>

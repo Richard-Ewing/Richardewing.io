@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { PRODUCTS } from '@/app/lib/products';
+import BuyRedirectButton from './client/BuyRedirectButton';
 
 interface ScorecardCheckoutDrawerProps {
     metricLabel?: string;
@@ -52,33 +53,27 @@ export default function ScorecardCheckoutDrawer({
                     )}
                 </div>
                 <div className="grid grid-cols-1 gap-2">
-                    <a
+                    <BuyRedirectButton
                         href={kit29Url}
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
                         className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg bg-[var(--gold)] text-zinc-950 font-sans font-bold text-xs hover:opacity-95 transition"
                     >
                         <span>1. DIY Survival Kit + Workspace</span>
                         <span className="font-mono">$29 ↗</span>
-                    </a>
-                    <a
+                    </BuyRedirectButton>
+                    <BuyRedirectButton
                         href={gutCheckUrl}
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
                         className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-white font-sans font-bold text-xs transition"
                     >
                         <span>2. Live 60-Min Unstick Session</span>
                         <span className="font-mono text-[#d8c7a8]">$450 ↗</span>
-                    </a>
-                    <a
+                    </BuyRedirectButton>
+                    <BuyRedirectButton
                         href={sprint2500Url}
-                        target="_blank"
-                        rel="noopener noreferrer nofollow"
                         className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg bg-white/5 hover:bg-white/15 border border-white/15 text-zinc-200 font-sans font-semibold text-xs transition"
                     >
                         <span>3. 14-Day Automation / P&amp;L Sprint</span>
                         <span className="font-mono text-zinc-300">$2,500 ↗</span>
-                    </a>
+                    </BuyRedirectButton>
                 </div>
             </div>
         );
@@ -157,17 +152,15 @@ export default function ScorecardCheckoutDrawer({
                     </div>
 
                     <div className="pt-5 mt-5 border-t border-zinc-200 space-y-2">
-                        <a
+                        <BuyRedirectButton
                             href={selectedKit === '29' ? kit29Url : kit79Url}
-                            target="_blank"
-                            rel="noopener noreferrer nofollow"
                             style={{ color: '#ffffff' }}
                             className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-zinc-950 hover:bg-zinc-800 !text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-sm min-h-[44px]"
                         >
                             {selectedKit === '29'
                                 ? 'Download Survival Kit + Workspace ($29) ↗'
                                 : 'Get Complete Kit + 13 Playbooks ($79) ↗'}
-                        </a>
+                        </BuyRedirectButton>
                         <Link
                             href="/toolkit"
                             className="block text-center text-[11px] font-mono text-zinc-600 hover:text-zinc-950 underline"
@@ -198,15 +191,13 @@ export default function ScorecardCheckoutDrawer({
                     </div>
 
                     <div className="pt-5 mt-5 border-t border-white/15 space-y-2">
-                        <a
+                        <BuyRedirectButton
                             href={gutCheckUrl}
-                            target="_blank"
-                            rel="noopener noreferrer nofollow"
                             style={{ color: '#09090b' }}
                             className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#d8c7a8] hover:bg-[#e5d7bd] !text-zinc-950 font-bold text-xs uppercase tracking-wider transition-colors shadow-sm min-h-[44px]"
                         >
                             Book 60-Min 1-on-1 Session ($450) ↗
-                        </a>
+                        </BuyRedirectButton>
                         <p className="text-center text-[10px] font-mono text-zinc-300">
                             Automatic PDF tax invoice included for CFO and corporate card expensing.
                         </p>
@@ -241,24 +232,20 @@ export default function ScorecardCheckoutDrawer({
 
                     <div className="pt-5 mt-5 border-t border-zinc-200 space-y-2">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                            <a
+                            <BuyRedirectButton
                                 href={sprint2500Url}
-                                target="_blank"
-                                rel="noopener noreferrer nofollow"
                                 style={{ color: '#ffffff' }}
                                 className="inline-flex items-center justify-center px-3 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 !text-white font-bold text-[11px] uppercase tracking-wider transition-colors text-center min-h-[44px]"
                             >
                                 14-Day Sprint ($2.5K) ↗
-                            </a>
-                            <a
+                            </BuyRedirectButton>
+                            <BuyRedirectButton
                                 href={sprint7500Url}
-                                target="_blank"
-                                rel="noopener noreferrer nofollow"
                                 style={{ color: '#ffffff' }}
                                 className="inline-flex items-center justify-center px-3 py-2.5 rounded-xl bg-[#1f3b2c] hover:opacity-95 !text-white font-bold text-[11px] uppercase tracking-wider transition-opacity text-center min-h-[44px]"
                             >
                                 21-Day Build ($7.5K) ↗
-                            </a>
+                            </BuyRedirectButton>
                         </div>
                         <p className="text-center text-[10px] font-mono text-zinc-600">
                             Automatic PDF tax invoice included for CFO and corporate card expensing.

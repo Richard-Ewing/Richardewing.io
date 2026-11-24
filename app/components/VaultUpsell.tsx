@@ -3,6 +3,7 @@
 import React from 'react';
 import { Lock } from 'lucide-react';
 import Link from 'next/link';
+import BuyRedirectButton from './client/BuyRedirectButton';
 
 export interface RecommendedTrack {
     id: string;
@@ -67,9 +68,8 @@ export function VaultUpsell({ recommendedTracks, urgencyLevel = 'critical' }: Va
             </div>
 
             <div className="relative z-10 flex flex-col items-center">
-                <a 
-                    href="/api/buy/enterprise/enterprise_curriculum_license?source=vault-upsell" 
-                    rel="noopener noreferrer nofollow"
+                <BuyRedirectButton
+                    href="/api/buy/enterprise/enterprise_curriculum_license?source=vault-upsell"
                     className={`w-full sm:w-2/3 py-5 bg-gradient-to-r font-bold uppercase tracking-widest rounded-xl transition-colors flex items-center justify-center gap-3 hover:text-black ${
                         isCritical 
                         ? 'from-red-600 to-orange-600 hover:from-white hover:to-white shadow-[0_0_30px_rgba(220,38,38,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.5)]' 
@@ -77,7 +77,7 @@ export function VaultUpsell({ recommendedTracks, urgencyLevel = 'critical' }: Va
                     }`}
                 >
                     <Lock className="w-5 h-5" /> Get Full Enterprise Framework Now
-                </a>
+                </BuyRedirectButton>
                 <p className="text-xs font-bold font-medium font-mono text-zinc-950 font-bold mt-4 uppercase tracking-widest">Instant access to all 29 tracks • 290+ technical modules</p>
             </div>
         </div>

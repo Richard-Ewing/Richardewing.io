@@ -1,59 +1,46 @@
 import { NextResponse } from 'next/server';
 import { PRODUCTS } from '@/lib/products';
 import { auth } from '@clerk/nextjs/server';
+import {
+    buildBuyGateResponse,
+    buildBuyStubResponse,
+    isBuyPrefetchOrCrawler,
+    isHumanBuyClick,
+    sanitizeBuySeg,
+} from '@/app/lib/buy-shield';
 
 export const dynamic = 'force-dynamic';
-
-const SEARCH_CRAWLER_RE =
-    /\b(googlebot|googleother|google-extended|google-cloudvertexbot|google-notebooklm|adsbot-google|mediapartners-google|bingbot|adidxbot|applebot|applebot-extended|duckduckbot|duckassistbot|yandexbot|bravebot|slurp|oai-searchbot|chatgpt-user|gptbot|claude-searchbot|claude-user|claudebot|anthropic-ai|perplexitybot|perplexity-user|amzn-searchbot|amzn-user|amazonbot|youbot|exasearchbot|meta-externalagent|facebookexternalhit|facebookbot|facebot|linkedinbot|twitterbot|slackbot|discordbot|whatsapp|telegrambot|pinterestbot|bytespider|tiktokspider|ccbot|petalbot|semrushbot|ahrefsbot|mj12bot|dotbot|awariobot|barkrowler|dataforseobot|blexbot|serpstatbot|headlesschrome|phantomjs|playwright|puppeteer|curl|python|go-http-client|axios|node-fetch|wget|scrapy|httpclient)\b/i;
 
 export async function GET(
     request: Request,
     { params }: { params: Promise<{ productId: string }> }
 ) {
-    const ua = request.headers.get('user-agent') || '';
-    const purpose = (request.headers.get('purpose') || '').toLowerCase();
-    const secPurpose = (request.headers.get('sec-purpose') || '').toLowerCase();
-    const isPrefetchOrRsc =
-        purpose.includes('prefetch') ||
-        secPurpose.includes('prefetch') ||
-        request.headers.get('rsc') === '1' ||
-        request.headers.has('next-router-prefetch') ||
-        request.headers.has('next-router-segment-prefetch');
-    if (isPrefetchOrRsc || SEARCH_CRAWLER_RE.test(ua)) {
-        return new NextResponse(
-            '<!doctype html><html><head><meta name="robots" content="noindex, nofollow"><title>Enterprise Checkout Endpoint</title></head><body></body></html>',
-            {
-                status: 200,
-                headers: {
-                    'Content-Type': 'text/html; charset=utf-8',
-                    'X-Robots-Tag': 'noindex, nofollow',
-                    'Cache-Control': 'private, no-store',
-                    'Cloudflare-CDN-Cache-Control': 'no-store',
-                },
-            }
-        );
+    if (isBuyPrefetchOrCrawler(request)) {
+        return buildBuyStubResponse('Enterprise Checkout Endpoint');
     }
 
     const { productId } = await params;
-    const product = PRODUCTS[productId];
+    const product = Object.prototype.hasOwnProperty.call(PRODUCTS, productId)
+        ? PRODUCTS[productId]
+        : undefined;
 
     if (!product || !product.paymentLink) {
-        const fallbackRes = NextResponse.redirect(new URL('/vault/curriculum/tracks', request.url));
+        const fallbackRes = NextResponse.redirect(new URL('/vault/curriculum/tracks', request.url), 307);
+        fallbackRes.headers.set('Cache-Control', 'private, no-store');
+        fallbackRes.headers.set('Cloudflare-CDN-Cache-Control', 'no-store');
+        fallbackRes.headers.set('CDN-Cache-Control', 'no-store');
         fallbackRes.headers.set('X-Robots-Tag', 'noindex, follow');
         return fallbackRes;
     }
 
-    const sanitizeSeg = (val: string, fallback: string, maxLen: number) =>
-        val
-            .replace(/--+/g, '-')
-            .replace(/[^a-zA-Z0-9_-]/g, '')
-            .replace(/^-+|-+$/g, '')
-            .slice(0, maxLen) || fallback;
-
     const reqUrl = new URL(request.url);
-    const rawSource = sanitizeSeg(reqUrl.searchParams.get('source') || 'direct', 'direct', 40);
-    const safeProductId = sanitizeSeg(productId, 'item', 60);
+    const rawSource = sanitizeBuySeg(reqUrl.searchParams.get('source') || 'direct', 'direct', 40);
+    const safeProductId = sanitizeBuySeg(productId, 'item', 60);
+
+    if (!isHumanBuyClick(request, reqUrl)) {
+        const continueUrl = `/api/buy/enterprise/${encodeURIComponent(productId)}?source=${encodeURIComponent(rawSource)}&u=1`;
+        return buildBuyGateResponse(continueUrl);
+    }
 
     const stripeUrl = new URL(product.paymentLink, request.url);
     const isStripeTarget = stripeUrl.hostname.endsWith('stripe.com');
@@ -85,7 +72,11 @@ export async function GET(
         );
     }
 
-    const redirectRes = NextResponse.redirect(stripeUrl);
+    const redirectRes = NextResponse.redirect(stripeUrl, 307);
+    redirectRes.headers.set('Cache-Control', 'private, no-store');
+    redirectRes.headers.set('Cloudflare-CDN-Cache-Control', 'no-store');
+    redirectRes.headers.set('CDN-Cache-Control', 'no-store');
     redirectRes.headers.set('X-Robots-Tag', 'noindex, follow');
+    redirectRes.headers.set('X-RW-Buy-Shield', 'NEXT-307');
     return redirectRes;
 }

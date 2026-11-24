@@ -8,6 +8,7 @@ import { ScheduleDiagnosticBanner } from '@/components/schedule/schedule-diagnos
 import ScheduleBookingWorkspace from '@/components/schedule/ScheduleBookingWorkspace';
 import AsyncDiagnosticCard from '@/components/schedule/AsyncDiagnosticCard';
 import { PRODUCTS } from '@/app/lib/products';
+import BuyRedirectButton from '@/app/components/client/BuyRedirectButton';
 
 export const metadata: Metadata = {
   title: 'Schedule Executive Advisory',
@@ -232,15 +233,23 @@ export default function SchedulePage() {
                   Need the frameworks right now? Get immediate access to copyable P&amp;L models, vendor audit checklists, and token margin spreadsheets without waiting for a scheduled call.
                 </p>
                 <div className="flex flex-col gap-2 pt-2 border-t border-[var(--line)]">
-                  <a
-                    href={PRODUCTS.premium_guide_79?.paymentLink ? '/api/buy/premium_guide_79?source=schedule' : '/operating-kit'}
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="button button-gold !text-xs !py-2.5 text-center flex items-center justify-center gap-1.5"
-                  >
-                    <span>Instant Checkout ($79)</span>
-                    <span aria-hidden="true">↗</span>
-                  </a>
+                  {PRODUCTS.premium_guide_79?.paymentLink ? (
+                    <BuyRedirectButton
+                      href="/api/buy/premium_guide_79?source=schedule"
+                      className="button button-gold !text-xs !py-2.5 text-center flex items-center justify-center gap-1.5"
+                    >
+                      <span>Instant Checkout ($79)</span>
+                      <span aria-hidden="true">↗</span>
+                    </BuyRedirectButton>
+                  ) : (
+                    <Link
+                      href="/operating-kit"
+                      className="button button-gold !text-xs !py-2.5 text-center flex items-center justify-center gap-1.5"
+                    >
+                      <span>Instant Checkout ($79)</span>
+                      <span aria-hidden="true">↗</span>
+                    </Link>
+                  )}
                   <Link
                     href="/operating-kit"
                     className="text-xs text-[var(--muted)] hover:text-[var(--ink)] text-center transition-colors py-1 font-medium"
@@ -279,7 +288,7 @@ export default function SchedulePage() {
                 <div className="space-y-2.5">
                   <a
                     href="mailto:richardewing@exogram.ai"
-                    className="flex items-center gap-3 p-3 bg-[var(--paper)] border border-[var(--line)] rounded-xl hover:border-[var(--gold)] transition-all text-xs font-bold text-[var(--ink)]"
+                    className="flex items-center gap-3 p-3 bg-[var(--paper)] border border-[var(--line)] rounded-xl hover:border-[var(--gold)] transition-colors text-xs font-bold text-[var(--ink)]"
                   >
                     <Mail className="w-4 h-4 text-[var(--gold)]" />
                     <span>richardewing@exogram.ai</span>
@@ -288,7 +297,7 @@ export default function SchedulePage() {
                     href="https://www.linkedin.com/in/richard-ewing-mba"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-3 bg-[var(--paper)] border border-[var(--line)] rounded-xl hover:border-[var(--gold)] transition-all text-xs font-bold text-[var(--ink)]"
+                    className="flex items-center gap-3 p-3 bg-[var(--paper)] border border-[var(--line)] rounded-xl hover:border-[var(--gold)] transition-colors text-xs font-bold text-[var(--ink)]"
                   >
                     <Linkedin className="w-4 h-4 text-[var(--gold)]" />
                     <span>Connect on LinkedIn</span>

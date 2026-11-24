@@ -73,6 +73,7 @@ Negative/Considerations:
 | [ADR-0026](ADR-0026-cross-domain-snippet-calibration-bing-recovery-and-chatgpt-skus.md) | Cross-Domain Snippet Calibration, Bing Webmaster Recovery & ChatGPT Business SKUs | Accepted | @richardewing, Code Architect, SEO Architect, Lived Experience Writer, QA Auditor | 2026-11-13 |
 | [ADR-0027](ADR-0027-first-person-educational-advice-and-anti-slop-gate.md) | First-Person Educational Advice & Cross-Domain Anti-Slop Gate | Accepted | @richardewing, Code Architect, Lived Experience Writer, SEO Architect, QA Auditor | 2026-11-15 |
 | [ADR-0028](ADR-0028-versioned-pop-cache-ttl-and-checkout-bot-shield.md) | Versioned 30-Day POP Cache TTL, Checkout Bot Shield, and Commercial Funnel Alignment | Accepted | @richardewing, Code Architect, SEO Architect, Lived Experience Writer, QA Auditor | 2026-11-15 |
+| [ADR-0029](ADR-0029-zero-boot-static-assets-edge-html-and-buy-shield.md) | Zero-Boot Static Assets Edge HTML, Directives Serving, and Human-Gated Buy Shield | Accepted | @richardewing, Code Architect, Security Auditor, QA Auditor | 2026-11-24 |
 
 
 

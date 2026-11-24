@@ -4,6 +4,7 @@ import React from 'react';
 import { ShieldAlert, ArrowRight, Activity } from 'lucide-react';
 import { motion } from 'framer-motion';
 import ScorecardCheckoutDrawer from './ScorecardCheckoutDrawer';
+import BuyRedirectButton from './client/BuyRedirectButton';
 
 interface DiagnosticCTAProps {
     title?: string;
@@ -102,13 +103,12 @@ export default function DiagnosticCTA({
                         
                         {/* CTAs */}
                         <div className="flex flex-wrap items-center gap-4">
-                            <a 
-                                href="/api/buy/gut_check?source=diagnostic-cta" 
-                                rel="noopener noreferrer nofollow"
+                            <BuyRedirectButton
+                                href="/api/buy/gut_check?source=diagnostic-cta"
                                 className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-colors shadow-lg hover:shadow-xl ${colors.button}`}
                             >
                                 {buttonText}
-                            </a>
+                            </BuyRedirectButton>
                             <a 
                                 href="/toolkit" 
                                 className={`text-sm font-semibold hover:underline ${colors.buttonSubtext}`}

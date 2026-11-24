@@ -5,6 +5,7 @@ import React, { useEffect, useRef } from 'react';
 interface CalEmbedProps {
   calLink?: string;
   className?: string;
+  hideEventTypeDetails?: boolean;
 }
 
 type CalNamespaceFn = {
@@ -67,6 +68,7 @@ function ensureCalBootstrap(): CalGlobalFn {
 export default function CalEmbed({
   calLink = 'richard-ewing-2cevwb',
   className = '',
+  hideEventTypeDetails = false,
 }: CalEmbedProps) {
   const mountRef = useRef<HTMLDivElement>(null);
   const safeKey = calLink.replace(/[^a-z0-9]/gi, '_').toLowerCase();
@@ -92,6 +94,7 @@ export default function CalEmbed({
       config: {
         layout: 'month_view',
         theme: 'light',
+        hideEventTypeDetails,
       },
     });
 
@@ -100,7 +103,7 @@ export default function CalEmbed({
       cssVarsPerTheme: {
         light: { 'cal-brand': '#1f3b2c' },
       },
-      hideEventTypeDetails: false,
+      hideEventTypeDetails,
       layout: 'month_view',
     });
 
@@ -109,7 +112,7 @@ export default function CalEmbed({
         targetEl.innerHTML = '';
       }
     };
-  }, [calLink, safeKey]);
+  }, [calLink, safeKey, hideEventTypeDetails]);
 
   return (
     <div className={`w-full min-h-[640px] flex flex-col relative ${className}`}>

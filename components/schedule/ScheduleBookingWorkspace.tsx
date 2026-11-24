@@ -32,7 +32,7 @@ const BOOKING_MODES: BookingMode[] = [
   },
   {
     id: 'intro15',
-    label: '15-Min Quick Call (Free)',
+    label: '15-Min Intro & Partner Call (Free)',
     sublabel: 'Partnerships, Sponsors & Quick Intro',
     calLink: 'richard-ewing-2cevwb/secret',
     shareUrl: 'https://www.richardewing.io/schedule?type=15min',
@@ -156,19 +156,34 @@ export default function ScheduleBookingWorkspace() {
               </>
             )}
           </button>
-          <a
-            href={`https://cal.com/${active.calLink}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 min-h-[34px] px-3 py-1 rounded-lg border border-zinc-300 bg-white hover:bg-zinc-100 text-cyan-900 font-mono text-[11px] font-bold transition-colors"
-          >
-            <span>Open directly on Cal.com</span>
-            <ExternalLink className="w-3 h-3" />
-          </a>
+          {!active.calLink.endsWith('/secret') && (
+            <a
+              href={`https://cal.com/${active.calLink}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 min-h-[34px] px-3 py-1 rounded-lg border border-zinc-300 bg-white hover:bg-zinc-100 text-cyan-900 font-mono text-[11px] font-bold transition-colors"
+            >
+              <span>Open directly on Cal.com</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          )}
         </div>
       </div>
 
-      <CalEmbed key={active.calLink} calLink={active.calLink} />
+      {active.id === 'intro15' && (
+        <div className="mb-3 px-3.5 py-2 rounded-xl bg-[#1f3b2c]/5 border border-[#1f3b2c]/20 flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-[#1f3b2c]" aria-hidden="true" />
+          <span className="font-mono text-xs font-bold text-[#1f3b2c]">
+            15-Min Intro &amp; Partner Call · Complimentary · Google Meet
+          </span>
+        </div>
+      )}
+
+      <CalEmbed
+        key={active.calLink}
+        calLink={active.calLink}
+        hideEventTypeDetails={active.id === 'intro15'}
+      />
     </div>
   );
 }

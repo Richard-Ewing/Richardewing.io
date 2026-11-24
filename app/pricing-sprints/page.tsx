@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ExecutiveDefinitionBlock, FrameworkDiagnosticBridge } from '@/components/seo/FrameworkDiagnosticBridge';
 import ScorecardCheckoutDrawer from '@/app/components/ScorecardCheckoutDrawer';
+import BuyRedirectButton from '@/app/components/client/BuyRedirectButton';
 
 export const metadata: Metadata = {
   title: 'Fixed-Scope Advisory Pricing & Sprints',
@@ -224,7 +225,7 @@ export default function PricingSprintsPage() {
           {sprintTiers.map((tier) => (
             <div
               key={tier.id}
-              className={`rounded-2xl p-8 border flex flex-col justify-between transition-all duration-300 ${
+              className={`rounded-2xl p-8 border flex flex-col justify-between transition-[border-color,box-shadow] duration-300 ${
                 tier.highlight
                   ? 'border-[var(--forest)] bg-[#FAF8F3] shadow-lg ring-1 ring-[var(--forest)]'
                   : 'border-[var(--line)] bg-[#FAF8F3] hover:border-[#8d9f8d] hover:shadow-md'
@@ -285,14 +286,12 @@ export default function PricingSprintsPage() {
                   {tier.ctaText}
                 </Link>
                 {tier.instantBuyHref && (
-                  <a
+                  <BuyRedirectButton
                     href={tier.instantBuyHref}
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="block text-center text-xs font-mono font-semibold text-[var(--forest)] hover:text-[var(--ink)] underline underline-offset-4 pt-1"
+                    className="block w-full text-center text-xs font-mono font-semibold text-[var(--forest)] hover:text-[var(--ink)] underline underline-offset-4 pt-1"
                   >
                     {tier.instantBuyText}
-                  </a>
+                  </BuyRedirectButton>
                 )}
               </div>
             </div>

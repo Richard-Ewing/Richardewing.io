@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import BuyRedirectButton from './client/BuyRedirectButton';
 
 interface AdvisoryCTAProps {
   variant: 'tool-result' | 'compare' | 'educational' | 'industry';
@@ -96,6 +97,14 @@ export default function AdvisoryCTA({ variant, termTitle, primaryHrefOverride, p
             {primaryLabel} {primaryPrice && <span className="opacity-80 font-mono text-xs">({primaryPrice})</span>}
             <span aria-hidden="true">→</span>
           </Link>
+        ) : primaryHref.startsWith('/api/buy/') ? (
+          <BuyRedirectButton
+            href={primaryHref}
+            className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${v.btnGradient} text-zinc-900 font-bold text-sm rounded-lg hover:opacity-90 transition-opacity shadow-lg`}
+          >
+            {primaryLabel} {primaryPrice && <span className="opacity-80 font-mono text-xs">({primaryPrice})</span>}
+            <span aria-hidden="true">→</span>
+          </BuyRedirectButton>
         ) : (
           <a
             href={primaryHref}
@@ -114,6 +123,13 @@ export default function AdvisoryCTA({ variant, termTitle, primaryHrefOverride, p
           >
             {v.secondaryLabel} {v.secondaryPrice && <span className="text-zinc-500 font-mono text-xs">({v.secondaryPrice})</span>}
           </Link>
+        ) : v.secondaryHref.startsWith('/api/buy/') ? (
+          <BuyRedirectButton
+            href={v.secondaryHref}
+            className="inline-flex items-center gap-2 px-5 py-3 bg-white border border-zinc-300 text-zinc-800 font-semibold text-sm rounded-lg hover:border-zinc-400 hover:bg-zinc-50 transition-colors"
+          >
+            {v.secondaryLabel} {v.secondaryPrice && <span className="text-zinc-500 font-mono text-xs">({v.secondaryPrice})</span>}
+          </BuyRedirectButton>
         ) : (
           <a
             href={v.secondaryHref}
@@ -148,9 +164,9 @@ export default function AdvisoryCTA({ variant, termTitle, primaryHrefOverride, p
                   60-minute live Zoom working session + 48-hour executive action memo for founders and product leaders.
                 </p>
               </div>
-              <a href="/api/buy/gut_check?source=advisory-cta-compare" rel="noopener noreferrer nofollow" className="text-xs font-bold text-amber-900 hover:text-amber-950 uppercase tracking-wider inline-flex items-center gap-1">
+              <BuyRedirectButton href="/api/buy/gut_check?source=advisory-cta-compare" className="text-xs font-bold text-amber-900 hover:text-amber-950 uppercase tracking-wider inline-flex items-center gap-1 self-start text-left">
                 Book 1-on-1 Tear-Down &rarr;
-              </a>
+              </BuyRedirectButton>
             </div>
 
             <div className="p-4 rounded-xl bg-white border border-amber-200 shadow-sm flex flex-col justify-between">
@@ -163,9 +179,9 @@ export default function AdvisoryCTA({ variant, termTitle, primaryHrefOverride, p
                   Hands-on 7-day forensic audit of your feature profitability, Zombie Feature carry cost, and AI unit economics.
                 </p>
               </div>
-              <a href="/api/buy/insolvency_diagnostic?source=advisory-cta-compare" rel="noopener noreferrer nofollow" className="text-xs font-bold text-amber-900 hover:text-amber-950 uppercase tracking-wider inline-flex items-center gap-1">
+              <BuyRedirectButton href="/api/buy/insolvency_diagnostic?source=advisory-cta-compare" className="text-xs font-bold text-amber-900 hover:text-amber-950 uppercase tracking-wider inline-flex items-center gap-1 self-start text-left">
                 Book Turnaround Sprint &rarr;
-              </a>
+              </BuyRedirectButton>
             </div>
 
             <div className="p-4 rounded-xl bg-white border border-amber-200 shadow-sm flex flex-col justify-between">
