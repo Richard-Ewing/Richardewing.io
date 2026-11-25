@@ -323,9 +323,11 @@ function verifyExogram() {
   const flagshipMatch = exCompareData.match(/export const FLAGSHIP_COMPARISON_SLUGS = \[([\s\S]*?)\] as const;/);
   const flagshipSlugs = flagshipMatch ? [...flagshipMatch[1].matchAll(/"([^"]+)"/g)].map(m => m[1]) : [];
   const noticedMatches = [...exCompareData.matchAll(/whatINoticed:\s*(?:"((?:[^"\\]|\\.)*)"|`((?:[^`\\]|\\.)*)`)/g)];
+  const honestAdviceMatches = [...exCompareData.matchAll(/"?honestAdvice"?\s*:\s*\{/g)];
+  const totalCovered = noticedMatches.length + honestAdviceMatches.length;
   const builderBlocks = [...exCompareData.matchAll(/builderFieldNote:\s*\{([\s\S]*?)\n\s*\}/g)];
-  if (flagshipSlugs.length >= 50 && noticedMatches.length >= flagshipSlugs.length) {
-    pass(`EX compare data has ${noticedMatches.length} builderFieldNote blocks covering ${flagshipSlugs.length} flagship slugs`);
+  if (flagshipSlugs.length >= 50 && totalCovered >= flagshipSlugs.length) {
+    pass(`EX compare data has ${noticedMatches.length} builderFieldNote + ${honestAdviceMatches.length} conversationalExperience blocks covering ${flagshipSlugs.length} flagship slugs`);
     checkUniqueOpeners(
       'EX compare whatINoticed',
       noticedMatches.map((m, idx) => [`comp_${idx}`, m[1] || m[2]]),
@@ -337,7 +339,7 @@ function verifyExogram() {
       (v) => v
     );
   } else {
-    fail(`EX compare data missing builderFieldNote across flagship slugs (flagship=${flagshipSlugs.length}, whatINoticed=${noticedMatches.length})`);
+    fail(`EX compare data missing builderFieldNote/conversationalExperience across flagship slugs (flagship=${flagshipSlugs.length}, covered=${totalCovered})`);
   }
   if (!exComparePage.includes('builderFieldNote') || !exComparePage.includes('Builder Field Note')) {
     fail('EX compare/[slug]/page.tsx does not render builderFieldNote');

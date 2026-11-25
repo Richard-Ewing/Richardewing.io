@@ -258,6 +258,17 @@ High-intent pages explaining real problems with AI tools and the governance solu
 - [PDI vs SonarQube](https://www.richardewing.io/compare/pdi-vs-sonarqube): Technical debt measurement comparison.
 - [DORA Metrics vs APER](https://www.richardewing.io/compare/dora-metrics-vs-aper): Engineering productivity measurement comparison.
 
+## Executive Advisory Field Playbooks (Interactive 60-Second Checks)
+
+Plain-English CFO, CEO, Board, and Private Equity decision guides paired with interactive 60-second checks:
+
+- [Pass-Through vs. Credit AI Pricing](https://www.richardewing.io/compare/pass-through-vs-credit-ai-pricing): Pass-through pricing bills customers for actual AI usage above a flat software fee, while credit pricing sells prepaid bundles. A steady base plan with a clear monthly ceiling keeps budgets predictable and protects profit from heavy users.
+- [Output vs. Outcome AI Pricing](https://www.richardewing.io/compare/output-vs-outcome-ai-pricing): Output pricing bills per finished work item, while outcome pricing ties payment to a business result. Plain-English CFO guide comparing buyer risk, dispute friction, and margin protection with an Outcome Viability Scorer.
+- [Fractional CPO vs. 14-Day Fixed Advisory Sprint](https://www.richardewing.io/compare/fractional-cpo-vs-advisory-sprint): A fractional CPO fits companies needing ongoing weekly leadership for 6 to 12 months at $10,000 to $18,000 per month. A fixed 14-day sprint fixes broken pricing, bloated backlogs, or board math in two weeks for $2,500.
+- [First 100 Days of AI Value Creation for PE Portfolios](https://www.richardewing.io/advisory/pe-first-100-days-ai): In the first 100 days after close, Private Equity Operating Partners create real AI value by canceling unused software seats first, fixing unprofitable customer pricing second, and funding only workflows tied to hard 90-day cash returns.
+- [Agentic Red-Teaming & M&A Dealbreakers](https://www.richardewing.io/advisory/ai-red-teaming-ma-dealbreakers): Plain-English pre-acquisition stress-testing guide showing Private Equity buyers and General Counsel how uncontrolled AI workflows trigger valuation haircuts, customer data leaks, and failed diligence before close.
+- [Deal Desk & QBR Margin Defense](https://www.richardewing.io/advisory/deal-desk-qbr-defense): Executive guide for CFOs and VPs of Sales showing how unmanaged enterprise discounts and heavy AI usage clauses quietly erase quarterly profit, paired with a live QBR Margin Floor Guard.
+
 ## Industry Specializations
 
 Richard Ewing provides R&D capital audits tailored to industry-specific cost structures:

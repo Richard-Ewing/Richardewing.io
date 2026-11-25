@@ -2719,7 +2719,7 @@ export const SPOKE_MATRIX: SpokeTopic[] = [
                 {
                     questionSlug: 'why-openai-anthropic-cursor-api-bill-spiked-5x-cut-50-percent',
                     questionHeadline: 'Why did our OpenAI, Anthropic, or Cursor API bill spike 5x this month (and how do we cut it by 50% this week)?',
-                    seoTitle: 'Why OpenAI & Cursor Bills Spiked 5x',
+                    seoTitle: 'Why OpenAI API Bills Spike 5x (+ 50% Fix)',
                     answerHtml: `
                         <p>An OpenAI, Anthropic, and Cursor API bill rarely spikes 5x from headcount alone; it spikes from token retry loops, unpruned system prompts, and agent context bloat that replay full conversation histories on every turn. Audit three telemetry layers today to cut inference spend by 50% this week without slowing delivery.</p>
                         <p>You can cut a runaway LLM bill by 50% to 75% in 72 hours without degrading user quality if you fix those three plumbing leaks in order.</p>

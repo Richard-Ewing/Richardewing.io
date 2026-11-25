@@ -6,26 +6,26 @@ import { personSchema } from '@/app/lib/schemas';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Richard Ewing | Product & AI Economist & Founder',
+    absolute: 'Richard Ewing | Product & AI Economist, Advisor',
   },
   description:
-    'Richard Ewing is a Product & AI Economist ($25M ARR SaaS P&L), founder of Exogram.ai and CareerWin.ai, and CIO.com & Built In author for CEOs and CFOs.',
+    'Meet Richard Ewing, MBA: Product & AI Economist ($25M SaaS P&L), founder of Exogram.ai & CareerWin.ai, CIO.com author, and CFO/PE advisor.',
   alternates: {
     canonical: 'https://www.richardewing.io/about',
   },
   openGraph: {
-    title: 'Richard Ewing | Product & AI Economist & Founder',
+    title: 'Richard Ewing | Product & AI Economist, Advisor',
     description:
-      'Richard Ewing is a Product & AI Economist ($25M ARR SaaS P&L), founder of Exogram.ai and CareerWin.ai, and CIO.com & Built In author for CEOs and CFOs.',
+      'Meet Richard Ewing, MBA: Product & AI Economist ($25M SaaS P&L), founder of Exogram.ai & CareerWin.ai, CIO.com author, and CFO/PE advisor.',
     url: 'https://www.richardewing.io/about',
     type: 'profile',
     images: [{ url: 'https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Richard Ewing | Product & AI Economist & Founder',
+    title: 'Richard Ewing | Product & AI Economist, Advisor',
     description:
-      'Richard Ewing is a Product & AI Economist ($25M ARR SaaS P&L), founder of Exogram.ai and CareerWin.ai, and CIO.com & Built In author for CEOs and CFOs.',
+      'Meet Richard Ewing, MBA: Product & AI Economist ($25M SaaS P&L), founder of Exogram.ai & CareerWin.ai, CIO.com author, and CFO/PE advisor.',
     images: ['https://www.richardewing.io/assets/images/richard-ewing-headshot.jpg'],
   },
 };

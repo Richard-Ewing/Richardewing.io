@@ -42,6 +42,9 @@ const TIER1_ROUTES = [
   '/articles/frameworks/technical-insolvency-date',
   '/articles/frameworks/vibe-coding-debt',
   '/api/og?title=Audit',
+  '/compare/pass-through-vs-credit-ai-pricing',
+  '/advisory/pe-first-100-days-ai',
+  '/compare/fractional-cpo-vs-advisory-sprint',
   '/compare/output-vs-outcome-ai-pricing',
   '/advisory/ai-red-teaming-ma-dealbreakers',
   '/advisory/deal-desk-qbr-defense',
@@ -62,9 +65,12 @@ async function hitRoute(pathname) {
   await res.arrayBuffer();
   const cf = (res.headers.get('cf-cache-status') || '').toUpperCase();
   const rawWk = (res.headers.get('x-rw-edge-cache') || '').toUpperCase();
-  const edgeCache = ['HIT', 'STALE', 'REVALIDATED'].includes(cf) && (!rawWk || rawWk === 'MISS')
-    ? 'CF-HIT'
-    : (rawWk || cf || 'NONE');
+  const edgeCache =
+    rawWk === 'STATIC-DIRECTIVE'
+      ? (['HIT', 'STALE', 'REVALIDATED'].includes(cf) ? 'STATIC-DIRECTIVE-CF-HIT' : 'STATIC-DIRECTIVE-HIT')
+      : ['HIT', 'STALE', 'REVALIDATED'].includes(cf) && (!rawWk || rawWk === 'MISS')
+        ? 'CF-HIT'
+        : (rawWk || cf || 'NONE');
   return {
     pathname,
     status: res.status,

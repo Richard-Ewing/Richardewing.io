@@ -465,9 +465,9 @@ export const articlesBatch10: Record<string, ArticleData> = {
 <p>Consider what happens when a VP of Operations applies to two radically different openings in the same week: a PE-backed logistics turnaround focused on warehouse gross-margin recovery, and a high-growth B2B SaaS COO search focused on Customer Support Manager onboarding and Net Dollar Retention. A flat PDF forces that candidate to split the difference and look mediocre for both boards. A relational Career Context Engine selects the exact six warehouse cost-reduction projects for the PE operating partner and the exact six SaaS support-automation projects for the SaaS CEO, without ever inventing a single fake number. Every line on the page holds up under a forty-five-minute CFO whiteboard grill. Benchmark your current compensation trajectory with our <a href="/tools/career-pathing">Engineering &amp; Product Career Pathing Calculator</a> and explore live ATS diagnostics at <a href="/careerwin">CareerWin.ai</a>.</p>`,
   },
   'meta-muse-code-comparison': {
-    title: 'How Does Meta’s Muse Code Compare to Other AI Coding Tools?',
+    title: 'Meta Muse Code vs. Antigravity & Cursor',
     excerpt:
-      'A technical evaluation of Meta Muse Code against Cursor, Claude Code, and Google Antigravity across multi-agent concurrency, worktrees, and runtime isolation.',
+      'Hands-on comparison of Meta Muse Code vs. Google Antigravity, Cursor, and Claude Code across multi-agent concurrency, worktrees, and cost.',
     date: '2026-08-24',
     category: 'Software Economics',
     readTime: '8 min read',

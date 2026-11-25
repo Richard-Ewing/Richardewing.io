@@ -400,9 +400,9 @@ export const articlesAuto: Record<string, ArticleData> = {
 <p>Do not build automations to feel sophisticated. Compare your per-task automation bills first using our <a href="/tools/automation-cost-calculator">Department Automation &amp; SaaS Seat Calculator</a> so you do not trade administrative drudgery for runaway Zapier overages. Pick one repetitive chore that wasted an hour of your week, put a deterministic rule in front of it, keep final client sign-off human, and reclaim your calendar one workflow at a time.</p>`,
   },
   'how-to-reduce-llm-api-token-costs-in-production': {
-    title: 'How to Reduce LLM API Token Costs in Production',
+    title: 'Cut LLM Token Costs 50% via Pre-Filtering',
     excerpt:
-      'Cut production OpenAI and Claude API bills by 50%+ using edge pre-filtering, semantic caching (0.94 cosine threshold), tiered routing, and strict TTL rules.',
+      'See how pre-filtered data access, semantic caching, and model routing cut production OpenAI and Claude token consumption by 50% or more.',
     date: '2026-08-14',
     category: 'AI Economics',
     readTime: '8 min read',
