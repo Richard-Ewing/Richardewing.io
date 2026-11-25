@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import BuyRedirectButton from '@/app/components/client/BuyRedirectButton';
 import { ArrowRight, Sparkles, Code2, Network, ShieldAlert, Cpu, Activity, Zap, CheckCircle, TrendingUp, Target, Database, Blocks, Diamond, Lock, LockKeyhole, Shield, TestTube, TerminalSquare, ServerCrash, LayoutTemplate, LineChart, Milestone, HardDrive, Search, Library } from 'lucide-react';
 import { ScrollReveal } from '../components/magicui/scroll-reveal';
 import { GlowCard } from '../components/magicui/glow-card';
@@ -208,9 +209,9 @@ export default function DeepCareersHub() {
                                 </ul>
                                 
                                 <div className="mt-auto pt-4 relative z-20 text-center">
-                                    <a href="/api/buy/all_access_pass" rel="nofollow noopener" className="inline-block w-full py-3 px-6 bg-white text-black font-bold text-sm font-semibold tracking-widest uppercase rounded-lg hover:bg-gray-200 transition-colors shadow-lg shadow-white/10 hover:shadow-white/20">
+                                    <BuyRedirectButton href="/api/buy/all_access_pass?source=careers" className="inline-block w-full py-3 px-6 bg-white text-black font-bold text-sm font-semibold tracking-widest uppercase rounded-lg hover:bg-gray-200 transition-colors shadow-lg shadow-white/10 hover:shadow-white/20">
                                         Access The Vault
-                                    </a>
+                                    </BuyRedirectButton>
                                 </div>
                             </ShineBorder>
                         </div>

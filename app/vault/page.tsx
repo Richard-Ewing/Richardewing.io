@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation';
 import { currentUser } from '@clerk/nextjs/server';
 import Link from 'next/link';
 import Image from 'next/image';
+import BuyRedirectButton from '@/app/components/client/BuyRedirectButton';
 import { BookOpen, ShieldCheck, ChevronRight, Lock, Download, Zap, Database, TrendingUp, Presentation, Clock, Activity } from 'lucide-react';
 import { supabaseAdmin } from '@/lib/supabase';
 import VaultProgressFlywheel from '@/components/VaultProgressFlywheel';
@@ -484,9 +485,9 @@ export default async function VaultPage() {
                                             <p className="text-xs font-bold text-zinc-900 font-bold mb-4">{3 - toolRuns.length} board-ready reports remaining this month.</p>
                                         )}
                                         
-                                        <a href="/api/buy/full_curriculum" rel="nofollow noopener" className={`block text-center w-full py-2 text-xs font-bold font-medium font-bold uppercase tracking-widest rounded transition-all ${toolRuns.length >= 3 ? 'bg-cyan-500 text-black shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:bg-cyan-400' : 'bg-zinc-50 border border-zinc-400 hover:border-cyan-500/50 text-zinc-900'}`}>
+                                        <BuyRedirectButton href="/api/buy/full_curriculum?source=vault" className={`block text-center w-full py-2 text-xs font-bold font-medium font-bold uppercase tracking-widest rounded transition-all ${toolRuns.length >= 3 ? 'bg-cyan-500 text-black shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:bg-cyan-400' : 'bg-zinc-50 border border-zinc-400 hover:border-cyan-500/50 text-zinc-900'}`}>
                                             Access Unlimited
-                                        </a>
+                                        </BuyRedirectButton>
                                     </div>
                                 </div>
                             )}
@@ -500,9 +501,9 @@ export default async function VaultPage() {
                                         <Lock className="w-3 h-3 text-zinc-950 font-bold group-hover:text-violet-400" />
                                     </div>
                                     <p className="text-xs font-bold text-zinc-900 font-bold mb-4">Access all 218 modules across 18 curriculum tracks. Lifetime access.</p>
-                                    <a href="/api/buy/full_curriculum" rel="nofollow noopener" className="block text-center w-full py-2 bg-zinc-50 hover:bg-violet-600 text-zinc-950 hover:text-white text-xs font-bold uppercase tracking-widest rounded transition-colors">
+                                    <BuyRedirectButton href="/api/buy/full_curriculum?source=vault" className="block text-center w-full py-2 bg-zinc-50 hover:bg-violet-600 text-zinc-950 hover:text-white text-xs font-bold uppercase tracking-widest rounded transition-colors">
                                         Access for $999
-                                    </a>
+                                    </BuyRedirectButton>
                                 </div>
                             )}
 

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { Mic, Users, Lightbulb, Clock, ArrowRight, CheckCircle } from 'lucide-react';
+import BuyRedirectButton from '@/app/components/client/BuyRedirectButton';
 
 export const metadata: Metadata = {
     title: 'Executive AI Economics Workshops',
@@ -147,13 +148,12 @@ export default function WorkshopsPage() {
                                     <span className="text-xl font-bold text-zinc-900">{w.price}</span>
                                     <span className="text-xs font-bold text-zinc-900 font-bold">+ travel</span>
                                 </div>
-                                <a
-                                    href={`/api/buy/${w.productId}`}
-                                    rel="nofollow noopener"
-                                    className="block text-center py-3 rounded-lg bg-gradient-to-r from-rose-500 to-purple-500 text-white font-semibold font-bold text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-opacity"
+                                <BuyRedirectButton
+                                    href={`/api/buy/${w.productId}?source=workshops`}
+                                    className="block w-full text-center py-3 rounded-lg bg-gradient-to-r from-rose-500 to-purple-500 text-white font-semibold font-bold text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-opacity"
                                 >
                                     Book Workshop →
-                                </a>
+                                </BuyRedirectButton>
                             </div>
                         ))}
                     </div>
@@ -168,13 +168,12 @@ export default function WorkshopsPage() {
                             Travel and accommodations are additional.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                            <a
-                                href="/api/buy/keynote_speaking"
-                                rel="nofollow noopener"
+                            <BuyRedirectButton
+                                href="/api/buy/keynote_speaking?source=workshops"
                                 className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-rose-500 hover:bg-rose-400 text-zinc-950 font-semibold font-bold uppercase tracking-widest text-sm font-semibold rounded-xl transition-all"
                             >
-                                Book Keynote  -  $5,000 <ArrowRight className="w-4 h-4" />
-                            </a>
+                                Book Keynote - $5,000 <ArrowRight className="w-4 h-4" />
+                            </BuyRedirectButton>
                             <a
                                 href="mailto:richardewing@exogram.ai?subject=Speaking%20Engagement%20Inquiry"
                                 className="inline-flex items-center justify-center gap-2 px-8 py-3 border border-zinc-500 text-zinc-950 font-bold uppercase tracking-widest text-sm font-semibold rounded-xl hover:bg-white/5 transition-all"

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Sparkles, BookOpen, Award } from 'lucide-react';
+import BuyRedirectButton from '@/app/components/client/BuyRedirectButton';
 
 export default function CurriculumTracksLayout({ children }: { children: React.ReactNode }) {
     return (
@@ -25,15 +26,13 @@ export default function CurriculumTracksLayout({ children }: { children: React.R
                         <Link href="/glossary" className="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold text-zinc-900 font-bold hover:text-purple-900 font-extrabold transition-colors px-3 py-1.5 rounded-lg border border-zinc-400 hover:border-purple-200">
                             📚 Glossary
                         </Link>
-                        <a
-                            href="/api/buy/full_curriculum"
-                            target="_blank"
-                            rel="nofollow noopener noreferrer"
+                        <BuyRedirectButton
+                            href="/api/buy/full_curriculum?source=curriculum-tracks"
                             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-bold text-xs hover:opacity-90 transition-opacity shadow-md"
                         >
                             <Sparkles className="w-3 h-3" />
                             Access All 23 Tracks - $999
-                        </a>
+                        </BuyRedirectButton>
                     </div>
                 </div>
             </div>

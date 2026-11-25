@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { TrendingUp, TrendingDown, AlertTriangle, DollarSign, Lock, Zap, Users, Target, Mail, ArrowRight, Cpu, Clock, Building, Building2, Skull, Share2, Check, Activity, FileText, FileCheck } from 'lucide-react';
 import Link from 'next/link';
+import BuyRedirectButton from '@/app/components/client/BuyRedirectButton';
 import ToolGate from '../../components/tool-gate';
 import ToolCelebration from '../../components/ToolCelebration';
 import ToolPayGate from '../../components/ToolPayGate';
@@ -740,7 +741,7 @@ function APERToolContent() {
                                       <p className="text-sm text-zinc-600 mb-4">The APER gives you the ratio. A $500 Strategy Session with Richard Ewing identifies the exact bottlenecks, re-org options, and team structure changes to move the number.</p>
                                       <div className="flex flex-wrap gap-3">
                                         <a href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-opacity">Book Advisory Session →</a>
-                                        <a href="/api/buy/gut_check" rel="nofollow noopener" className="inline-flex items-center gap-2 px-5 py-2.5 border border-purple-500/30 text-purple-700 text-sm font-bold rounded-lg hover:bg-purple-50 transition-colors">$450 Gut-Check Call →</a>
+                                        <BuyRedirectButton href="/api/buy/gut_check?source=tool-aper" className="inline-flex items-center gap-2 px-5 py-2.5 border border-purple-500/30 text-purple-700 text-sm font-bold rounded-lg hover:bg-purple-50 transition-colors">$450 Gut-Check Call →</BuyRedirectButton>
                                       </div>
                                     </div>
                                   </div>

@@ -4,6 +4,7 @@ import { CAREER_PATHS } from '../../lib/career-paths';
 import { tracks } from '../../lib/curriculum-tracks-ui';
 import { glossaryTerms } from '../../glossary/terms';
 import Link from 'next/link';
+import BuyRedirectButton from '@/app/components/client/BuyRedirectButton';
 import { ArrowRight, Cpu, Target, Blocks, LockKeyhole, Database, CheckCircle, Diamond, XCircle, TrendingUp, CalendarDays, DollarSign, HelpCircle, PhoneCall } from 'lucide-react';
 import { ScrollReveal } from '../../components/magicui/scroll-reveal';
 import ShineBorder from '../../components/magicui/shine-border';
@@ -380,9 +381,9 @@ export default async function CareerPathPage({ params }: { params: Promise<{ slu
                         Are you ready to transition architectures? You require access to all execution playbooks, diagnostics, and ROI calculators to prove your fiduciary capabilities to the board. 
                     </p>
                     <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
-                        <a href="/api/buy/all_access_pass" rel="nofollow noopener" className="w-full sm:w-auto py-5 px-12 bg-white text-black font-black text-sm font-semibold tracking-widest uppercase rounded-xl hover:bg-gray-200 transition-colors shadow-lg shadow-white/10 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]">
+                        <BuyRedirectButton href="/api/buy/all_access_pass?source=careers-role" className="w-full sm:w-auto py-5 px-12 bg-white text-black font-black text-sm font-semibold tracking-widest uppercase rounded-xl hover:bg-gray-200 transition-colors shadow-lg shadow-white/10 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]">
                             Access Full Execution Architecture
-                        </a>
+                        </BuyRedirectButton>
                     </div>
                     <p className="mt-6 text-xs font-bold font-medium text-zinc-950 font-bold font-mono tracking-widest uppercase border border-zinc-400 bg-zinc-50 px-4 py-2 rounded-full inline-block">
                         Lifetime Access to 57 Curriculum Tracks

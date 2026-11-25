@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShieldAlert, DollarSign, Lock, Activity, Users, Target, Code, Database, BrainCircuit, ShieldOff, Zap } from 'lucide-react';
 import Link from 'next/link';
+import BuyRedirectButton from '@/app/components/client/BuyRedirectButton';
 import ToolCelebration from '../../components/ToolCelebration';
 import { ExportToPDFButton } from '../../components/ExportToPDFButton';
 import { VaultUpsell } from '../../components/VaultUpsell';
@@ -547,9 +548,9 @@ export default function DueDiligenceTool() {
                             </div>
 
                             <div className="space-y-3">
-                                <a href="/api/buy/pe_intelligence_tier" rel="nofollow noopener" className="flex items-center justify-center w-full py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-semibold font-bold uppercase tracking-widest text-xs font-bold rounded-xl transition-all shadow-lg">
+                                <BuyRedirectButton href="/api/buy/pe_intelligence_tier?source=tool-due-diligence" className="flex items-center justify-center w-full py-4 bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 text-white font-semibold font-bold uppercase tracking-widest text-xs font-bold rounded-xl transition-all shadow-lg">
                                     Upgrade to PE Tier
-                                </a>
+                                </BuyRedirectButton>
                                 <button 
                                     onClick={() => setShowPaywall(false)} 
                                     className="flex items-center justify-center w-full py-3 bg-transparent hover:bg-white/5 text-zinc-900 font-bold uppercase tracking-widest text-xs font-bold rounded-xl transition-all"

@@ -290,10 +290,27 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 }
             });
         }
+        if (__rwLowerPath === "/og-default.png" && (request.method === "GET" || request.method === "HEAD") && env && env.ASSETS && typeof env.ASSETS.fetch === "function") {
+            try {
+                const __rwOgDefaultRes = await env.ASSETS.fetch("https://assets.local/og-default.png");
+                if (__rwOgDefaultRes && __rwOgDefaultRes.status === 200) {
+                    return new Response(request.method === "HEAD" ? null : __rwOgDefaultRes.body, {
+                        status: 200,
+                        headers: {
+                            "Content-Type": "image/png",
+                            "Cache-Control": "public, max-age=86400, s-maxage=2592000, stale-while-revalidate=2592000",
+                            "Cloudflare-CDN-Cache-Control": "public, max-age=2592000, stale-while-revalidate=2592000",
+                            "Content-Signal": "ai-train=no, search=yes, ai-input=yes",
+                            "X-RW-Edge-Cache": "STATIC-OG-DEFAULT"
+                        }
+                    });
+                }
+            } catch {}
+        }
         const __rwIsLocal = /^(localhost|127\\.0\\.0\\.1)(:\\d+)?$/i.test(__rwUrl.host);
         const __rwIsWorkersPreview = __rwUrl.hostname.endsWith(".workers.dev");
         const __rwCanonicalOrigin = (__rwIsLocal || __rwIsWorkersPreview) ? __rwUrl.origin : "https://www.richardewing.io";
-        if (__rwLowerPath.startsWith("/api/buy/")) {
+        if (__rwLowerPath === "/api/buy" || __rwLowerPath.startsWith("/api/buy/")) {
             const __rwPurpose = (request.headers.get("purpose") || "").toLowerCase();
             const __rwSecPurpose = __rwSecPurposeEarly;
             const __rwBuyPrefetch =
@@ -320,6 +337,19 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                 );
             }
             const __rwBuyMethod = request.method.toUpperCase();
+            if ((__rwBuyMethod === "GET" || __rwBuyMethod === "HEAD") && (__rwLowerPath === "/api/buy" || __rwLowerPath === "/api/buy/")) {
+                return new Response(null, {
+                    status: 307,
+                    headers: {
+                        "Location": new URL("/pricing-sprints", __rwCanonicalOrigin).toString(),
+                        "Cache-Control": "private, no-store",
+                        "Cloudflare-CDN-Cache-Control": "no-store",
+                        "CDN-Cache-Control": "no-store",
+                        "X-Robots-Tag": "noindex, follow",
+                        "X-RW-Buy-Shield": "ROOT-307"
+                    }
+                });
+            }
             const __rwBuyCookie = (request.headers.get("cookie") || "").toLowerCase();
             const __rwBuyHasClerk = __rwBuyCookie.includes("__session") || __rwBuyCookie.includes("__clerk");
             if ((__rwBuyMethod === "GET" || __rwBuyMethod === "HEAD") && !__rwBuyHasClerk) {
@@ -735,6 +765,22 @@ if (content.includes('__RW_ADR_0019_EDGE_SHIELD__')) {
                     statusText: __rwCached.statusText,
                     headers: __rwHitHeaders
                 });
+            }
+            if (__rwIsOg) {
+                const __rwOgCrawlerRe = /(amzn-searchbot|amzn-user|amazonbot|bingbot|adidxbot|googlebot|googleother|google-inspectiontool|exasearchbot|applebot|duckduckbot|duckassistbot|yandexbot|baiduspider|sogou|seznambot|petalbot|perplexitybot|perplexity-user|oai-searchbot|chatgpt-user|claude-searchbot|claude-user|meta-webindexer|bytespider|tiktokspider|ccbot|semrushbot|ahrefsbot|mj12bot|dotbot|awariobot|barkrowler|dataforseobot|blexbot|serpstatbot|python-requests|python-urllib|go-http-client|curl|wget|scrapy|axios|undici|node-fetch|headlesschrome|playwright|puppeteer|phantomjs)/i;
+                if (__rwOgCrawlerRe.test(__rwUa)) {
+                    return new Response(null, {
+                        status: 302,
+                        headers: {
+                            "Location": __rwCanonicalOrigin + "/og-default.png",
+                            "Cache-Control": "private, no-cache, no-store, max-age=0, must-revalidate",
+                            "Cloudflare-CDN-Cache-Control": "no-store",
+                            "CDN-Cache-Control": "no-store",
+                            "Content-Signal": "ai-train=no, search=yes, ai-input=yes",
+                            "X-RW-Edge-Cache": "OG-CRAWLER-FALLBACK"
+                        }
+                    });
+                }
             }
             if (__rwIsDirectiveFile && !__rwIsRsc && env && env.ASSETS && typeof env.ASSETS.fetch === "function") {
                 try {

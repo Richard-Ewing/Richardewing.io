@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, ShieldAlert, CheckCircle2, Calculator } from 'lucide-react';
+import BuyRedirectButton from '@/app/components/client/BuyRedirectButton';
 
 const TOOL_CATALOG: Record<string, { name: string; summary: string }> = {
   'aueb': {
@@ -232,13 +233,12 @@ export default async function SharedScorecardPage({
               Book a 60-minute Unstick &amp; P&amp;L Teardown Session directly with Richard Ewing.
             </p>
           </div>
-          <a
-            href="/api/buy/gut_check"
-            rel="nofollow noopener"
+          <BuyRedirectButton
+            href="/api/buy/gut_check?source=scorecard"
             className="shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#b77a35] hover:opacity-95 text-white font-bold text-xs uppercase tracking-wider transition-all"
           >
             Book $450 Session →
-          </a>
+          </BuyRedirectButton>
         </div>
       </div>
     </main>

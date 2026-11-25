@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import BuyRedirectButton from '@/app/components/client/BuyRedirectButton';
 import progressStyles from '../styles/progress.module.css';
 
 interface TrackAccordionProps {
@@ -225,9 +226,9 @@ export default function TrackAccordion({ track, colorMap, textMap, serverComplet
                                     <Link href="/services" className="px-6 py-3 rounded-lg bg-emerald-600 text-white font-bold text-sm text-center hover:bg-emerald-500 transition-colors whitespace-nowrap shadow-md">
                                         Claim Advisory Audit →
                                     </Link>
-                                    <a href="/api/buy/enterprise/enterprise_curriculum_license" rel="nofollow noopener" className="px-6 py-3 rounded-lg bg-white border border-zinc-400 text-zinc-950 font-bold text-sm font-semibold text-center hover:bg-zinc-50 transition-colors whitespace-nowrap">
+                                    <BuyRedirectButton href="/api/buy/enterprise/enterprise_curriculum_license?source=track-accordion" className="px-6 py-3 rounded-lg bg-white border border-zinc-400 text-zinc-950 font-bold text-sm font-semibold text-center hover:bg-zinc-50 transition-colors whitespace-nowrap">
                                         Add Enterprise Team License
-                                    </a>
+                                    </BuyRedirectButton>
                                 </div>
                             </div>
                         </div>

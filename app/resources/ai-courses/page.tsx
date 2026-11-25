@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import BuyRedirectButton from '@/app/components/client/BuyRedirectButton';
 
 export const metadata: Metadata = {
     title: 'Curated AI Engineering Courses',
@@ -262,14 +263,9 @@ export default function AiCoursesPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 {track.courses.map((course) => {
                                     const isInternal = course.url.startsWith('/');
-                                    return (
-                                        <a
-                                            key={course.name}
-                                            href={course.url}
-                                            target={isInternal ? undefined : '_blank'}
-                                            rel={course.url.startsWith('/api/') ? 'nofollow noopener' : isInternal ? undefined : 'noopener noreferrer'}
-                                            className={`group block p-6 rounded-xl bg-white/[0.03] border ${track.borderColor} hover:bg-white/[0.06] transition-all hover:shadow-lg`}
-                                        >
+                                    const isBuyLink = course.url.startsWith('/api/buy/');
+                                    const cardBody = (
+                                        <>
                                             <div className="flex items-start justify-between gap-2 mb-3">
                                                 <h3 className={`text-lg font-bold text-zinc-950 group-hover:${track.textColor} transition-colors font-grotesk`}>
                                                     {course.name}
@@ -284,6 +280,28 @@ export default function AiCoursesPage() {
                                                 <span className="font-bold uppercase tracking-widest">Richard&apos;s Take:</span>{' '}
                                                 <span className="text-zinc-950 font-bold">{course.editorial}</span>
                                             </div>
+                                        </>
+                                    );
+                                    if (isBuyLink) {
+                                        return (
+                                            <BuyRedirectButton
+                                                key={`${track.id}-${course.name}`}
+                                                href={`${course.url}?source=ai-courses`}
+                                                className={`group block text-left w-full p-6 rounded-xl bg-white/[0.03] border ${track.borderColor} hover:bg-white/[0.06] transition-all hover:shadow-lg`}
+                                            >
+                                                {cardBody}
+                                            </BuyRedirectButton>
+                                        );
+                                    }
+                                    return (
+                                        <a
+                                            key={`${track.id}-${course.name}`}
+                                            href={course.url}
+                                            target={isInternal ? undefined : '_blank'}
+                                            rel={isInternal ? undefined : 'noopener noreferrer'}
+                                            className={`group block p-6 rounded-xl bg-white/[0.03] border ${track.borderColor} hover:bg-white/[0.06] transition-all hover:shadow-lg`}
+                                        >
+                                            {cardBody}
                                         </a>
                                     );
                                 })}
@@ -365,9 +383,9 @@ export default function AiCoursesPage() {
                             Knowing how to build with AI is necessary. Knowing whether you <em>should</em> build - and at what cost - is what separates winners from margin casualties.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="/api/buy/practitioner_certification" rel="nofollow noopener" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-lg hover:opacity-90 transition-opacity text-sm shadow-sm">
+                            <BuyRedirectButton href="/api/buy/practitioner_certification?source=ai-courses" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-lg hover:opacity-90 transition-opacity text-sm shadow-sm">
                                 Access AI Practitioner Pass ($249) →
-                            </a>
+                            </BuyRedirectButton>
                             <Link href="/tools/aueb" className="px-6 py-3 bg-white/5 border border-zinc-400 text-zinc-950 font-semibold rounded-lg hover:bg-white/10 transition-colors text-sm">
                                 Run AUEB Profitability Audit →
                             </Link>
