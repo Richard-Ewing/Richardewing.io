@@ -59,3 +59,4 @@ lint.txt
 .agents/.agents/
 .open-next/
 .wrangler/
+.wt-*/
