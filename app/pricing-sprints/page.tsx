@@ -447,6 +447,48 @@ export default function PricingSprintsPage() {
               Test a target company&apos;s automated tools for hidden leaks and runaway bills before closing.
             </span>
           </Link>
+          <Link
+            href="/compare/pricing-when-ai-agents-buy"
+            className="bg-[#faf8f2] border border-[var(--line)] rounded-xl p-5 hover:border-[var(--forest)] transition-colors"
+          >
+            <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--gold)] block mb-1">
+              SEAT SHRINKAGE DEFENSE
+            </span>
+            <strong className="font-serif text-lg text-[var(--ink)] block mb-1">
+              Pricing When AI Agents Buy Software ↗
+            </strong>
+            <span className="text-xs text-[var(--muted)]">
+              Protect recurring revenue when customers cut paid human logins down by seventy percent.
+            </span>
+          </Link>
+          <Link
+            href="/compare/advisory-vs-simon-kucher"
+            className="bg-[#faf8f2] border border-[var(--line)] rounded-xl p-5 hover:border-[var(--forest)] transition-colors"
+          >
+            <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--gold)] block mb-1">
+              ENTERPRISE COMPARISON
+            </span>
+            <strong className="font-serif text-lg text-[var(--ink)] block mb-1">
+              Richard Ewing vs. Simon-Kucher ↗
+            </strong>
+            <span className="text-xs text-[var(--muted)]">
+              Compare $2,500 14-day operator pricing sprints against six-figure global consulting studies.
+            </span>
+          </Link>
+          <Link
+            href="/compare/advisory-vs-monetizely-pricingio"
+            className="bg-[#faf8f2] border border-[var(--line)] rounded-xl p-5 hover:border-[var(--forest)] transition-colors"
+          >
+            <span className="font-mono text-[10px] uppercase tracking-wider text-[var(--gold)] block mb-1">
+              BOUTIQUE COMPARISON
+            </span>
+            <strong className="font-serif text-lg text-[var(--ink)] block mb-1">
+              vs. Monetizely &amp; Pricing I/O ↗
+            </strong>
+            <span className="text-xs text-[var(--muted)]">
+              Compare packaging survey boutiques against full product profit and AI cost sprints.
+            </span>
+          </Link>
         </div>
       </div>
 

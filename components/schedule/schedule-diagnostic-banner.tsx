@@ -96,6 +96,46 @@ const SOURCE_CONFIGS: Record<string, DiagnosticSourceConfig> = {
     badgeLabel: 'Discount Floor & Renewal Cash',
     description: 'Select a 15-minute or 60-minute working session below. Bring a live enterprise quote, your requested discount tiers, and your upcoming QBR deck so we can lock in usage ceilings and net margin proof finance signs off on.',
   },
+  'sell-side-dd': {
+    title: 'Sell-Side Technical Due Diligence Dry Run',
+    badgeLabel: 'Pre-Sale Valuation Defense',
+    description: 'Select a confidential working session below. Bring your current cloud bills, top customer accounts, and product roadmap so we can fix buyer red flags before opening your data room.',
+  },
+  'agent-buyers-pricing': {
+    title: 'Software Pricing Defense Against Seat Shrinkage',
+    badgeLabel: 'Platform Fee + Volume Check',
+    description: 'Select a 60-minute teardown below. Bring your seat price sheet and top automated customer renewals so we can design a base-plus-volume floor before renewals reset.',
+  },
+  'platform-migration': {
+    title: 'Zero-Freeze Platform Migration & Cutover Planning',
+    badgeLabel: 'Parallel Cutover Scoping',
+    description: 'Select a session below. Bring your current legacy rewrite timeline and budget so we can slice the migration into quarterly launches without halting customer releases.',
+  },
+  'fractional-vs-vp': {
+    title: 'Executive Hiring & Fractional CPO Scope Check',
+    badgeLabel: 'Year-1 Payroll & Fit Review',
+    description: 'Select a 15-minute or 60-minute session below. We will compare a $350K+ VP search, a $10K/mo fractional bridge, and a $2,500 backlog reset against your actual timeline.',
+  },
+  'vs-simon-kucher': {
+    title: '14-Day Operator Sprint vs. Enterprise Pricing Study',
+    badgeLabel: 'Mid-Market Pricing Review',
+    description: 'Select a session below to review your current AI feature margins and customer tiers directly with Richard Ewing in a two-week $2,500 sprint.',
+  },
+  'vs-crosslake': {
+    title: '14-Day Fixed PE Diligence Scoping ($15,000)',
+    badgeLabel: 'IC & Exclusivity Clock Check',
+    description: 'Select a confidential deal-team slot below. We will scope your two-week margin, AI vendor, and product backlog readout before exclusivity expires.',
+  },
+  'vs-monetizely': {
+    title: 'Full Product P&L & AI Cost Floor Repricing',
+    badgeLabel: 'Pricing + Delivery Cost Check',
+    description: 'Select a session below. Bring your current package tiers and heavy-user delivery bills so we fix both customer packaging and gross margin.',
+  },
+  'vs-svpg': {
+    title: '14-Day Portfolio & Backlog Turnaround Scoping',
+    badgeLabel: 'P&L & Backlog Surgery',
+    description: 'Select a session below. Bring your active initiative list and maintenance payroll numbers so we can cut dead weight within two weeks.',
+  },
   'ai-guardrails': {
     title: 'AI Guardrails & Runtime Execution Architecture Briefing',
     badgeLabel: 'Deterministic Runtime Boundary',

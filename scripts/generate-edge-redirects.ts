@@ -93,6 +93,12 @@ const TIER_A_COMPARE_SLUGS = new Set([
   'pass-through-vs-credit-ai-pricing',
   'fractional-cpo-vs-advisory-sprint',
   'output-vs-outcome-ai-pricing',
+  'pricing-when-ai-agents-buy',
+  'fractional-cpo-vs-vp-product',
+  'advisory-vs-simon-kucher',
+  'advisory-vs-crosslake',
+  'advisory-vs-monetizely-pricingio',
+  'advisory-vs-svpg',
 ]);
 
 function isValid200Route(routeWithOptionalHash: string): boolean {

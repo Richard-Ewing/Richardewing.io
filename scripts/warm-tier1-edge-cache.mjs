@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Post-Deploy Tier-1 Edge Cache Warmer (`scripts/warm-tier1-edge-cache.mjs`)
- * Warms 33 high-intent commercial, diagnostic, and SEO routes on www.richardewing.io
+ * Warms 44 high-intent commercial, diagnostic, and SEO routes on www.richardewing.io
  * so Pillar-9 endpoints serve X-RW-Edge-Cache: HIT immediately after deployment.
  */
 
@@ -48,6 +48,14 @@ const TIER1_ROUTES = [
   '/compare/output-vs-outcome-ai-pricing',
   '/advisory/ai-red-teaming-ma-dealbreakers',
   '/advisory/deal-desk-qbr-defense',
+  '/advisory/sell-side-technical-due-diligence',
+  '/advisory/platform-migration-without-freezing-roadmap',
+  '/compare/pricing-when-ai-agents-buy',
+  '/compare/fractional-cpo-vs-vp-product',
+  '/compare/advisory-vs-simon-kucher',
+  '/compare/advisory-vs-crosslake',
+  '/compare/advisory-vs-monetizely-pricingio',
+  '/compare/advisory-vs-svpg',
 ];
 
 async function hitRoute(pathname) {

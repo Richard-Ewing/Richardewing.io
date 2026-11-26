@@ -38,6 +38,48 @@ const curattedComparisons = [
         color: 'emerald'
     },
     {
+        title: 'Pricing When AI Agents Buy Software (Seat Shrinkage Check)',
+        subtitle: 'Protecting Revenue as Human Logins Consolidate',
+        description: 'Plain-English pricing rules and live shrinkage calculator for software vendors watching seat counts drop while automated usage grows.',
+        href: '/compare/pricing-when-ai-agents-buy',
+        color: 'emerald'
+    },
+    {
+        title: 'Fractional CPO vs. Full-Time VP of Product',
+        subtitle: 'True Year-1 Cash & Recruiting Delay Math',
+        description: 'Compare a $350K+ full-time VP search against a $10K/mo fractional bridge and a $2,500 backlog reset.',
+        href: '/compare/fractional-cpo-vs-vp-product',
+        color: 'amber'
+    },
+    {
+        title: 'Richard Ewing vs. Simon-Kucher (Enterprise Pricing)',
+        subtitle: '$2,500 14-Day Sprint vs. Six-Figure Global Studies',
+        description: 'Honest guide showing when to hire a global Fortune 500 consultancy and when a 2-week operator sprint wins.',
+        href: '/compare/advisory-vs-simon-kucher',
+        color: 'cyan'
+    },
+    {
+        title: 'Richard Ewing vs. Crosslake (PE Tech Diligence)',
+        subtitle: '$15,000 Fixed 14-Day Audit vs. Multi-Squad Diligence',
+        description: 'Match diligence scope to deal size across $5M-$100M buyouts and large multi-country carve-outs.',
+        href: '/compare/advisory-vs-crosslake',
+        color: 'cyan'
+    },
+    {
+        title: 'Richard Ewing vs. Monetizely & Pricing I/O',
+        subtitle: 'Packaging Surveys vs. Full P&L & AI Cost Defense',
+        description: 'Compare willingness-to-pay survey boutiques against fixed sprints that inspect delivery bills and dead backlog.',
+        href: '/compare/advisory-vs-monetizely-pricingio',
+        color: 'emerald'
+    },
+    {
+        title: 'Richard Ewing vs. SVPG (Product Coaching)',
+        subtitle: '14-Day P&L Turnaround vs. Multi-Quarter Culture Coaching',
+        description: 'When to bring in long-term product craft coaches and when to cut dead projects and fix margins first.',
+        href: '/compare/advisory-vs-svpg',
+        color: 'amber'
+    },
+    {
         title: 'Why AI API Bills Jump 4x After Adding Tools',
         subtitle: 'Token Inflation & Schema Re-Transmission',
         description: 'Why adding web search or database tools multiplies token bills by 400% and how prompt caching solves it.',

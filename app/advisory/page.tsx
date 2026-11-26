@@ -732,13 +732,81 @@ export default function AdvisoryPage() {
                 ceilings, and unit cash proof finance signs.
               </p>
             </div>
-            <span
-              style={{ color: '#e7d7bc' }}
-              className="text-xs font-semibold text-[#e7d7bc]"
+              <span
+                style={{ color: '#e7d7bc' }}
+                className="text-xs font-semibold text-[#e7d7bc]"
+              >
+                Check Deal Margin Floor ↗
+              </span>
+            </Link>
+
+            <Link
+              href="/advisory/sell-side-technical-due-diligence"
+              className="bg-[#faf8f2] border border-[var(--line)] rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col justify-between"
             >
-              Check Deal Margin Floor ↗
-            </span>
-          </Link>
+              <div>
+                <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-[var(--gold)] block mb-2">
+                  PILLAR 04 · EXIT READINESS
+                </span>
+                <h3 className="font-serif text-xl text-[var(--ink)] mb-2">
+                  Sell-Side Tech Due Diligence
+                </h3>
+                <p className="text-[13px] text-[var(--muted)] leading-relaxed mb-4">
+                  Fix hidden customer margin leaks and dead backlog 60 days before buyers open your
+                  data room.
+                </p>
+              </div>
+              <span className="text-xs font-semibold text-[var(--forest)]">
+                Estimate Exit Haircut ↗
+              </span>
+            </Link>
+
+            <Link
+              href="/advisory/platform-migration-without-freezing-roadmap"
+              className="bg-[#faf8f2] border border-[var(--line)] rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col justify-between"
+            >
+              <div>
+                <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-[var(--gold)] block mb-2">
+                  PILLAR 02 · ZERO-FREEZE REBUILD
+                </span>
+                <h3 className="font-serif text-xl text-[var(--ink)] mb-2">
+                  Platform Migration Without Freeze
+                </h3>
+                <p className="text-[13px] text-[var(--muted)] leading-relaxed mb-4">
+                  Retire aging systems one quarterly slice at a time while sales still ships new
+                  customer work.
+                </p>
+              </div>
+              <span className="text-xs font-semibold text-[var(--forest)]">
+                Price Freeze Risk ↗
+              </span>
+            </Link>
+        </div>
+
+        <div className="mt-6 bg-[var(--paper2)] border border-[var(--line)] rounded-xl p-5 flex flex-wrap items-center justify-between gap-4">
+          <span className="font-mono text-[11px] uppercase tracking-wider text-[var(--ink)] font-semibold">
+            Boutique &amp; Firm Comparisons:
+          </span>
+          <div className="flex flex-wrap gap-4 text-xs font-semibold text-[var(--forest)]">
+            <Link href="/compare/advisory-vs-simon-kucher" className="hover:underline">
+              vs. Simon-Kucher ↗
+            </Link>
+            <Link href="/compare/advisory-vs-crosslake" className="hover:underline">
+              vs. Crosslake ↗
+            </Link>
+            <Link href="/compare/advisory-vs-monetizely-pricingio" className="hover:underline">
+              vs. Monetizely &amp; Pricing I/O ↗
+            </Link>
+            <Link href="/compare/advisory-vs-svpg" className="hover:underline">
+              vs. SVPG ↗
+            </Link>
+            <Link href="/compare/pricing-when-ai-agents-buy" className="hover:underline">
+              Agent Buyers Pricing ↗
+            </Link>
+            <Link href="/compare/fractional-cpo-vs-vp-product" className="hover:underline">
+              Fractional CPO vs. VP ↗
+            </Link>
+          </div>
         </div>
       </section>
 

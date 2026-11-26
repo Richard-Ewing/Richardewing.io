@@ -151,6 +151,46 @@ export default function ForInvestorsPage() {
                                     Score Outcome Viability &rarr;
                                 </span>
                             </Link>
+
+                            <Link
+                                href="/advisory/sell-side-technical-due-diligence"
+                                className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 hover:border-cyan-500/40 hover:bg-cyan-500/10 transition-colors p-6 flex flex-col justify-between group"
+                            >
+                                <div>
+                                    <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase tracking-widest block mb-2">
+                                        Exit Readiness
+                                    </span>
+                                    <h3 className="text-lg font-grotesk font-bold text-zinc-950 group-hover:text-cyan-900 mb-2">
+                                        Sell-Side Tech Due Diligence Guide
+                                    </h3>
+                                    <p className="text-sm text-zinc-900 leading-relaxed mb-4">
+                                        Fix hidden customer margin leaks and dead backlog 60 days before opening your data room to buyers.
+                                    </p>
+                                </div>
+                                <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider inline-flex items-center gap-1">
+                                    Estimate Exit Haircut &rarr;
+                                </span>
+                            </Link>
+
+                            <Link
+                                href="/compare/advisory-vs-crosslake"
+                                className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 hover:border-cyan-500/40 hover:bg-cyan-500/10 transition-colors p-6 flex flex-col justify-between group"
+                            >
+                                <div>
+                                    <span className="text-[10px] font-mono font-bold text-cyan-900 uppercase tracking-widest block mb-2">
+                                        PE Diligence Scope
+                                    </span>
+                                    <h3 className="text-lg font-grotesk font-bold text-zinc-950 group-hover:text-cyan-900 mb-2">
+                                        Richard Ewing vs. Crosslake PE Audit
+                                    </h3>
+                                    <p className="text-sm text-zinc-900 leading-relaxed mb-4">
+                                        Compare our $15,000 14-day fixed audit against $50K+ multi-squad diligence for lower-middle-market deals.
+                                    </p>
+                                </div>
+                                <span className="text-xs font-mono font-bold text-cyan-900 uppercase tracking-wider inline-flex items-center gap-1">
+                                    Compare Diligence Fit &rarr;
+                                </span>
+                            </Link>
                         </div>
                     </div>
 

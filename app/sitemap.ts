@@ -94,10 +94,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Truthful, deterministic release/update dates so Google trusts <lastmod> instead of ignoring uniform build timestamps.
     const DATES = {
+        wave34: new Date('2026-11-25T00:00:00Z'),
         nov24Release: new Date('2026-11-24T00:00:00Z'),
         newGoldenSample: new Date('2026-11-23T00:00:00Z'),
         homepageFrozen: new Date('2026-10-06T00:00:00Z'),
-        hubsRefreshed: new Date('2026-11-24T00:00:00Z'),
+        hubsRefreshed: new Date('2026-11-25T00:00:00Z'),
         coreAdvisory: new Date('2026-10-28T00:00:00Z'),
         toolsSuite: new Date('2026-10-18T00:00:00Z'),
         combatSeo: new Date('2026-10-15T00:00:00Z'),
@@ -141,6 +142,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`${baseUrl}/advisory/pe-first-100-days-ai`, 'weekly', 0.95, DATES.newGoldenSample);
     add(`${baseUrl}/advisory/ai-red-teaming-ma-dealbreakers`, 'weekly', 0.95, DATES.nov24Release);
     add(`${baseUrl}/advisory/deal-desk-qbr-defense`, 'weekly', 0.95, DATES.nov24Release);
+    add(`${baseUrl}/advisory/sell-side-technical-due-diligence`, 'weekly', 0.95, DATES.wave34);
+    add(`${baseUrl}/advisory/platform-migration-without-freezing-roadmap`, 'weekly', 0.95, DATES.wave34);
     add(`${baseUrl}/engagement-paths`, 'weekly', 0.9, DATES.coreAdvisory);
     add(`${baseUrl}/pricing-sprints`, 'weekly', 0.9, DATES.hubsRefreshed);
     add(`${baseUrl}/products`, 'weekly', 0.9, DATES.coreAdvisory);
@@ -360,6 +363,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Nov 24 Gap-Coverage Releases (Nov 2026)
     add(`${baseUrl}/compare/output-vs-outcome-ai-pricing`, 'weekly', 0.95, DATES.nov24Release);
+
+    // Nov 25 Wave 3 Topic Gaps & Wave 4 Boutique Comparisons (Nov 2026)
+    add(`${baseUrl}/compare/pricing-when-ai-agents-buy`, 'weekly', 0.95, DATES.wave34);
+    add(`${baseUrl}/compare/fractional-cpo-vs-vp-product`, 'weekly', 0.95, DATES.wave34);
+    add(`${baseUrl}/compare/advisory-vs-simon-kucher`, 'weekly', 0.95, DATES.wave34);
+    add(`${baseUrl}/compare/advisory-vs-crosslake`, 'weekly', 0.95, DATES.wave34);
+    add(`${baseUrl}/compare/advisory-vs-monetizely-pricingio`, 'weekly', 0.95, DATES.wave34);
+    add(`${baseUrl}/compare/advisory-vs-svpg`, 'weekly', 0.95, DATES.wave34);
 
     // === DYNAMICALLY GENERATED PAGES ===
 
