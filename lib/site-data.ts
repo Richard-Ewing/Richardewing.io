@@ -32,7 +32,7 @@ export const pageData: PageData[] = [
   }
 ];
 export const nav = [
- {label:"Research",href:"/research",children:[{label:"Research Library",href:"/research"},{label:"Publications",href:"/research/publications"},{label:"The AI Economist",href:"/blog"},{label:"Newsletter",href:"/newsletter"},{label:"Canonical Concepts",href:"/concepts"},{label:"Glossary",href:"/glossary"}]},
+ {label:"Research",href:"/research",children:[{label:"AI Workplace & Leadership",href:"/ai-workplace-leadership"},{label:"Research Library",href:"/research"},{label:"Publications",href:"/research/publications"},{label:"The AI Economist",href:"/blog"},{label:"Newsletter",href:"/newsletter"},{label:"Canonical Concepts",href:"/concepts"},{label:"Glossary",href:"/glossary"}]},
  {label:"Portfolio",href:"/portfolio",children:[{label:"Executive Portfolio",href:"/portfolio"},{label:"Case Studies",href:"/case-studies"},{label:"Exogram",href:"/exogram"},{label:"CareerWin",href:"/careerwin"}]},
  {label:"Diagnostics",href:"/tools",children:[{label:"Reality Check",href:"/reality-check"},{label:"All Diagnostics",href:"/tools"},{label:"AI ROI Calculator",href:"/roi-calculator"},{label:"Product Debt Index",href:"/tools/pdi"},{label:"AI Unit Economics",href:"/ai-unit-economics"}]},
  {label:"Advisory",href:"/advisory",children:[{label:"Executive Advisory",href:"/advisory"},{label:"Engagement Paths",href:"/engagement-paths"},{label:"Pricing & Sprints",href:"/pricing-sprints"},{label:"Speaking",href:"/speaking"}]},

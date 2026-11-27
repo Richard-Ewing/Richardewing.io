@@ -50,6 +50,18 @@ const BLOG_SEO_OVERRIDES: Record<string, { title: string; description: string }>
         title: 'Board Cyber Risk & SEC Disclosure Guide',
         description: 'Structure board-level cybersecurity and AI incident oversight to satisfy SEC disclosure mandates with verifiable runtime audit trails.',
     },
+    'stop-being-a-meat-proxy-leader': {
+        title: 'Stop Being a Meat-Proxy Leader',
+        description: 'I advise CEOs and VPs on why forwarding unedited AI memos kills candor overnight, and how my Human Holdback Rule restores leadership trust.',
+    },
+    'absorbing-ai-twice-eight-report-cliff': {
+        title: 'Absorbing AI Twice & The 8-Report Cliff',
+        description: 'We cut management layers assuming AI would coordinate teams. Instead, surviving managers absorb AI twice and snap past eight direct reports.',
+    },
+    'workslop-tax-botsitting-burnout': {
+        title: 'The Workslop Tax & Botsitting Burnout',
+        description: 'Why your team loses 6.4 hours a week babysitting AI tools, ships unchecked workslop out of exhaustion, and how one free team rule stops the bleed.',
+    },
 };
 
 export const dynamicParams = false;
@@ -151,31 +163,44 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                 <header className="mb-12">
                     <div className="flex items-center gap-3 mb-4">
                         <span className={`text-xs font-bold font-mono uppercase tracking-widest px-2 py-1 rounded-full border ${catColor}`}>{article.category}</span>
-                        <span className="text-xs font-bold text-zinc-950">{article.readTime} read</span>
+                        <span className="text-xs font-bold text-zinc-950">
+                            {article.readTime.includes('read') ? article.readTime : `${article.readTime} read`}
+                        </span>
                     </div>
                     <h1 className="text-3xl md:text-4xl font-grotesk font-bold text-zinc-950 mb-4 leading-tight">{article.title}</h1>
-                    <p className="text-lg text-zinc-950 font-bold leading-relaxed mb-6">{article.excerpt}</p>
-                    <div className="flex items-center gap-4 text-xs font-bold text-zinc-900 font-bold">
+                    <p className="text-lg text-zinc-700 font-normal leading-relaxed mb-6">{article.excerpt}</p>
+                    <div className="flex items-center gap-4 text-xs font-medium text-zinc-700">
                         <span>By Richard Ewing</span>
                         <span>·</span>
-                        <time>{new Date(article.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
+                        <time>{new Date(article.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}</time>
                     </div>
                     <div className="mt-6">
                         <SocialShare url={`https://www.richardewing.io/blog/${slug}`} title={article.title} />
                     </div>
                 </header>
 
+                {article.directAnswer && (
+                    <aside className="mb-10 rounded-xl border border-[var(--line)] bg-[#faf8f2] p-6 shadow-sm">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#8a571c] block mb-2">
+                            Direct Answer
+                        </span>
+                        <p className="text-base text-[var(--ink)] leading-relaxed font-normal m-0">
+                            {article.directAnswer}
+                        </p>
+                    </aside>
+                )}
+
                 <article className="prose prose-zinc max-w-none
-                    prose-headings:font-grotesk prose-headings:text-zinc-900
+                    prose-headings:font-grotesk prose-headings:text-zinc-950
                     prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
-                    prose-h3:text-xl prose-h3:mt-8 prose-h3:mt-3
-                    prose-p:text-zinc-950 font-bold prose-p:leading-relaxed prose-p:text-base
-                    prose-strong:text-zinc-900
-                    prose-a:text-cyan-900 font-extrabold font-semibold prose-a:no-underline hover:prose-a:underline
-                    prose-li:text-zinc-950 font-bold
+                    prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+                    prose-p:text-zinc-900 prose-p:font-normal prose-p:leading-relaxed prose-p:text-base
+                    prose-strong:text-zinc-950 prose-strong:font-semibold
+                    prose-a:text-[var(--forest)] prose-a:font-semibold prose-a:underline hover:prose-a:text-[var(--gold)]
+                    prose-li:text-zinc-900 prose-li:font-normal
                     prose-table:text-sm
-                    prose-th:text-zinc-950 font-bold prose-th:border-zinc-300 prose-th:px-4 prose-th:py-2
-                    prose-td:text-zinc-950 font-bold prose-td:border-zinc-200 prose-td:px-4 prose-td:py-2
+                    prose-th:text-zinc-950 prose-th:font-semibold prose-th:border-zinc-300 prose-th:px-4 prose-th:py-2
+                    prose-td:text-zinc-900 prose-td:font-normal prose-td:border-zinc-200 prose-td:px-4 prose-td:py-2
                     prose-code:text-violet-700 prose-code:bg-violet-500/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
                     prose-hr:border-zinc-200
                 ">
@@ -203,7 +228,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             {related.map(r => (
                                 <Link key={r.slug} href={`/blog/${r.slug}`}
-                                    className="group p-5 rounded-xl border border-zinc-400 bg-zinc-50 hover:border-white/15 transition-all">
+                                    className="group p-5 rounded-xl border border-zinc-400 bg-zinc-50 hover:border-white/15 transition-colors">
                                     <h3 className="text-sm font-semibold font-bold text-zinc-950 group-hover:text-cyan-900 font-extrabold font-semibold transition-colors mb-2">{r.title}</h3>
                                     <p className="text-xs font-bold text-zinc-900 font-bold line-clamp-2">{r.excerpt}</p>
                                     <span className="text-xs font-bold font-medium text-zinc-950 font-bold mt-2 block">{r.readTime}</span>
@@ -270,9 +295,10 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
                             <h3 className="text-lg font-grotesk font-bold text-zinc-950 mb-1">Richard Ewing</h3>
                             <p className="text-sm font-semibold text-zinc-900 font-medium mb-3">The AI Economist  -  Quantifying engineering economics for technology leaders, PE firms, and boards.</p>
                             <div className="flex flex-wrap gap-3">
-                                <Link href="/services" className="text-xs font-bold text-zinc-900 font-bold hover:underline">Book Advisory →</Link>
-                                <Link href="/vault/curriculum/tracks" className="text-xs font-bold text-zinc-900 font-bold hover:underline">Curriculum →</Link>
-                                <Link href="/tools/pdi" className="text-xs font-bold text-zinc-900 font-bold hover:underline">Free Tools →</Link>
+                                <Link href={`/schedule?source=${slug}`} className="text-xs font-bold text-[var(--forest)] hover:underline">Book Advisory →</Link>
+                                <Link href="/ai-workplace-leadership" className="text-xs font-bold text-zinc-900 hover:underline">AI Workplace &amp; Leadership Hub →</Link>
+                                <Link href="/vault/curriculum/tracks" className="text-xs font-bold text-zinc-900 hover:underline">Curriculum →</Link>
+                                <Link href="/tools/pdi" className="text-xs font-bold text-zinc-900 hover:underline">Free Tools →</Link>
                             </div>
                         </div>
                     </div>

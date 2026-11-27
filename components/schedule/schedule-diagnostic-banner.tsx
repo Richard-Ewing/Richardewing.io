@@ -11,6 +11,26 @@ interface DiagnosticSourceConfig {
 }
 
 const SOURCE_CONFIGS: Record<string, DiagnosticSourceConfig> = {
+  'ai-workplace-leadership': {
+    title: 'AI Workplace & Leadership Floor Review',
+    badgeLabel: 'Workslop, Spans & Trust Reset',
+    description: 'Select a 30-minute working session with me below. Bring your current team charter, manager span counts, or leadership memos. We will isolate where trust is slipping and map one clear reset you can run on Monday.',
+  },
+  'stop-being-a-meat-proxy-leader': {
+    title: 'Leadership Voice & Human Holdback Review',
+    badgeLabel: 'Executive Candor Audit',
+    description: 'Select a 30-minute session with me below. Bring recent leadership memos or town-hall notes so we can separate private AI prep from rooms where only your real voice builds trust.',
+  },
+  'absorbing-ai-twice-eight-report-cliff': {
+    title: 'Manager Span & Overload Reset Session',
+    badgeLabel: '8-Report Ceiling Review',
+    description: 'Select a working session with me below. Bring your current engineering or product org chart and review queue drag so we can rebalance spans without rebuilding layers of bureaucracy.',
+  },
+  'workslop-tax-botsitting-burnout': {
+    title: 'Team AI Slop Charter & Review Load Reset',
+    badgeLabel: 'Botsitting Cleanup Audit',
+    description: 'Select a session with me below. Bring three recent team specs or pull requests so we can cut cleanup drag and put a plain human-ownership charter in place.',
+  },
   'reality-check': {
     title: 'Reviewing Your AI Reality Check Scorecard',
     badgeLabel: 'Annual AI Spend Leak',

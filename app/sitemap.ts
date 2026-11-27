@@ -94,6 +94,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Truthful, deterministic release/update dates so Google trusts <lastmod> instead of ignoring uniform build timestamps.
     const DATES = {
+        nov27Leadership: new Date('2026-11-27T00:00:00Z'),
         wave34: new Date('2026-11-25T00:00:00Z'),
         nov24Release: new Date('2026-11-24T00:00:00Z'),
         newGoldenSample: new Date('2026-11-23T00:00:00Z'),
@@ -138,6 +139,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // === CORE PAGES ===
     add(baseUrl, 'weekly', 1.0, DATES.homepageFrozen);
+    add(`${baseUrl}/ai-workplace-leadership`, 'weekly', 0.95, DATES.nov27Leadership);
     add(`${baseUrl}/advisory`, 'weekly', 0.95, DATES.hubsRefreshed);
     add(`${baseUrl}/advisory/pe-first-100-days-ai`, 'weekly', 0.95, DATES.newGoldenSample);
     add(`${baseUrl}/advisory/ai-red-teaming-ma-dealbreakers`, 'weekly', 0.95, DATES.nov24Release);

@@ -9,6 +9,7 @@ import { articlesBatch7 } from './blog-articles-7';
 import { articlesBatch8 } from './blog-articles-8';
 import { articlesBatch9 } from './blog-articles-9';
 import { articlesBatch10 } from './blog-articles-10';
+import { articlesBatch11 } from './blog-articles-11';
 import { articlesAuto } from './blog-articles-auto';
 import { BLOG_SLUG_REDIRECTS } from './article-redirects';
 
@@ -24,6 +25,7 @@ export const allArticles: Record<string, ArticleData> = {
     ...articlesBatch8,
     ...articlesBatch9,
     ...articlesBatch10,
+    ...articlesBatch11,
     ...articlesAuto,
 };
 
