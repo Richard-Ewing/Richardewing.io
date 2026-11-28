@@ -31,6 +31,41 @@ const SOURCE_CONFIGS: Record<string, DiagnosticSourceConfig> = {
     badgeLabel: 'Botsitting Cleanup Audit',
     description: 'Select a session with me below. Bring three recent team specs or pull requests so we can cut cleanup drag and put a plain human-ownership charter in place.',
   },
+  'you-have-ai-14-day-deadline-trap': {
+    title: '14-Day AI Deadline & Delivery Scoping Reset',
+    badgeLabel: 'Board FOMO & VP Trust Audit',
+    description: 'Select a 30-minute working session with me below. Bring your current aggressive AI roadmap commitments so we can separate fast prototypes from real production integration and reset board expectations.',
+  },
+  'rebuilding-internal-social-permission': {
+    title: 'Internal Social Permission & Town-Hall Reset',
+    badgeLabel: 'Layoff Theater & Fear Audit',
+    description: 'Select a confidential session with me below. We will audit where layoff panic is driving fake AI adoption metrics and script an unscripted Q&A that gets honest feedback back on the floor.',
+  },
+  'death-of-headcount-empire-building': {
+    title: 'Player-Coach Scorecard & Incentive Redesign',
+    badgeLabel: 'Anti-Empire Leadership Audit',
+    description: 'Select a working session with me below. Bring your engineering and product career ladders so we can decouple executive pay from direct-report headcount and promote real technical judgment.',
+  },
+  'stop-putting-ai-agents-on-org-chart': {
+    title: 'Agent Ownership & Accountability Gate Review',
+    badgeLabel: 'Human Owner & Circuit Breaker Audit',
+    description: 'Select a 30-minute session with me below. Bring your active autonomous agent workflows so we can pull agents off your org chart, assign single human owners, and enforce deterministic caps.',
+  },
+  'mission-is-the-boss-flatter-orgs': {
+    title: 'Outcome-First Pod & Escalation Design',
+    badgeLabel: 'Flatter Org Backtracking Review',
+    description: 'Select a working session with me below. Bring one slow cross-functional project so we can replace multi-VP sign-off chains with small mission pods and 24-hour tiebreaker rules.',
+  },
+  'ai-brain-fry-and-the-unblinking-ear': {
+    title: 'AI-Quiet Hours & Meeting Bot Policy Review',
+    badgeLabel: 'Brain Fry & Discovery Risk Audit',
+    description: 'Select a 30-minute session with me below. We will audit auto-joining transcription bots creating HR discovery exposure and set up protected deep-work blocks across your calendar.',
+  },
+  'eating-your-seed-corn-junior-rungs': {
+    title: 'Junior Career Rung & Reverse-Mentoring Design',
+    badgeLabel: 'Pipeline & Seed Corn Audit',
+    description: 'Select a working session with me below. Bring your hiring mix and senior review bandwidth so we can launch structured Reverse-Mentoring Sprints without burning out your Staff Engineers.',
+  },
   'reality-check': {
     title: 'Reviewing Your AI Reality Check Scorecard',
     badgeLabel: 'Annual AI Spend Leak',

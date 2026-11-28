@@ -62,6 +62,34 @@ const BLOG_SEO_OVERRIDES: Record<string, { title: string; description: string }>
         title: 'The Workslop Tax & Botsitting Burnout',
         description: 'Why your team loses 6.4 hours a week babysitting AI tools, ships unchecked workslop out of exhaustion, and how one free team rule stops the bleed.',
     },
+    'you-have-ai-14-day-deadline-trap': {
+        title: 'The "You Have AI" 14-Day Deadline Trap',
+        description: 'Boards confuse fast five-file AI demos with production shipping. Here is my delivery scoping brief to stop 14-day deadlines and protect VP trust.',
+    },
+    'rebuilding-internal-social-permission': {
+        title: 'Rebuilding Internal Social Permission',
+        description: 'Nearly half of workers fake AI fluency out of layoff fear. Use my unscripted town-hall Q&A script to kill AI theater and get honest answers.',
+    },
+    'death-of-headcount-empire-building': {
+        title: 'The Death of Empire Building',
+        description: 'Decoupling pay and status from headcount breaks old manager incentives. Use this player-coach scorecard to shift leaders from status chasing.',
+    },
+    'stop-putting-ai-agents-on-org-chart': {
+        title: 'Keep AI Agents Off Your Org Chart',
+        description: 'Putting AI agents beside people creates blame deflection when workflows break. Use this human accountability matrix to assign one real owner.',
+    },
+    'mission-is-the-boss-flatter-orgs': {
+        title: '"Mission Is the Boss" in Flatter Orgs',
+        description: 'Traditional 1893 pyramid org charts stall modern delivery speed. Backtrack from customer outcomes using small pods and clear escalation rules.',
+    },
+    'ai-brain-fry-and-the-unblinking-ear': {
+        title: 'AI Brain Fry and the Unblinking Ear',
+        description: 'Constant agent review causes AI brain fry while lingering meeting bots create legal discovery risk. Adopt my AI-Quiet Hours and consent rules.',
+    },
+    'eating-your-seed-corn-junior-rungs': {
+        title: 'Fixing the Broken Junior Career Rung',
+        description: 'Automating entry-level boilerplate destroys your future senior talent pipeline. Pair junior builders with staff leads using reverse mentoring.',
+    },
 };
 
 export const dynamicParams = false;

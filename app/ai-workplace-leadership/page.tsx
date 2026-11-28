@@ -114,6 +114,30 @@ export default function AIWorkplaceLeadershipPage() {
           text: 'Ban raw copy-pasted AI replies in internal Slack channels and design docs, require a human owner to verify every claim before shipping, and stop evaluating employees on raw token consumption.',
         },
       },
+      {
+        '@type': 'Question',
+        name: 'Why do 14-day AI software deadlines fail in production?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Coding assistants speed up five-file prototypes on mock data, yet security reviews, permission boundaries, data migrations, and legacy integration still require human verification.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Should companies put AI agents on their org chart?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'No. Putting software agents inside org chart boxes diffuses accountability during silent failures. Track automated workflows inside an infrastructure registry with one named human owner and hard spend caps.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How do leaders prevent AI brain fry and meeting bot legal risk?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Protect daily two-hour AI-Quiet deep-work blocks without agent review pings, disable global auto-join on meeting bots, and keep automated transcription out of 1-on-1s and HR discussions.',
+        },
+      },
     ],
   };
 
@@ -155,11 +179,11 @@ export default function AIWorkplaceLeadershipPage() {
             </p>
 
             <div className="actions">
-              <a className="button button-gold" href="#golden-sample">
-                Read My 3 Golden Essays ↗
+              <a className="button button-gold" href="#playbooks">
+                Browse All 10 Playbooks ↗
               </a>
               <a className="button button-outline" href="#charters">
-                Grab the Charters I Use
+                Grab the 7 Charters I Use
               </a>
             </div>
 
@@ -246,45 +270,45 @@ export default function AIWorkplaceLeadershipPage() {
         </div>
 
         <div className="path-list">
-          <Link href="/blog/stop-being-a-meat-proxy-leader" className="path-row reveal">
+          <a href="#track-a" className="path-row reveal">
             <span>01</span>
             <div>
               <h3>Track A: How You Lead From the Top</h3>
               <p>
-                I advise you on dropping meat-proxy memos, killing 14-day deadlines, and earning back real permission.
+                Essays 1, 4 &amp; 5: dropping meat-proxy memos, killing 14-day deadlines, and rebuilding social permission.
               </p>
             </div>
             <b>↗</b>
-          </Link>
+          </a>
 
-          <Link href="/blog/absorbing-ai-twice-eight-report-cliff" className="path-row reveal">
+          <a href="#track-b" className="path-row reveal">
             <span>02</span>
             <div>
               <h3>Track B: How We Rewire Management</h3>
               <p>
-                We reset eight-report cliffs, stop headcount empire building, and pull AI agents off your org chart.
+                Essays 2, 6, 7 &amp; 8: fixing eight-report cliffs, stopping empire building, keeping agents off org charts, and mission pods.
               </p>
             </div>
             <b>↗</b>
-          </Link>
+          </a>
 
-          <Link href="/blog/workslop-tax-botsitting-burnout" className="path-row reveal">
+          <a href="#track-c" className="path-row reveal">
             <span>03</span>
             <div>
               <h3>Track C: How We Clean Up Floor Culture</h3>
               <p>
-                I show you how we curb workslop, cool down AI brain fry, set bot consent rules, and save junior rungs.
+                Essays 3, 9 &amp; 10: curbing workslop, cooling AI brain fry, setting bot consent rules, and saving junior rungs.
               </p>
             </div>
             <b>↗</b>
-          </Link>
+          </a>
 
           <a href="#charters" className="path-row reveal">
             <span>04</span>
             <div>
               <h3>Charters You Can Paste Monday</h3>
               <p>
-                Take what I hand clients: my Team AI Slop Charter, Human Holdback Rule, and Span Reset scorecard.
+                Take all 7 templates I hand clients: Holdback Rule, Span Reset, Slop Charter, 14-Day Brief, Agent Matrix, Bot Consent, and Reverse Mentoring.
               </p>
             </div>
             <b>↗</b>
@@ -301,53 +325,165 @@ export default function AIWorkplaceLeadershipPage() {
             You will not read vendor fluff from me. I open each guide with a 35-word answer, tell
             you what broke on real teams, and hand you a 5-minute check we can run before Tuesday.
           </p>
-          <a className="button button-dark" href="#golden-sample">
-            Read My Golden Sample ↗
+          <a className="button button-dark" href="#playbooks">
+            Read All 10 Playbooks ↗
           </a>
         </div>
 
         <InteractiveVocabGrid />
       </section>
 
-      {/* 05. WAVE 1 GOLDEN SAMPLE + COPYABLE CHARTERS */}
-      <section id="golden-sample" className="section offer-section">
-        <div className="section-heading reveal">
+      {/* 05. ALL 10 PLAYBOOKS BY TRACK + COPYABLE CHARTERS */}
+      <section id="playbooks" className="section offer-section">
+        <div id="golden-sample" className="section-heading reveal">
           <p className="eyebrow">
-            <i /> Wave 1 · My 3 Golden Sample Playbooks
+            <i /> Complete Series · All 10 Workplace &amp; Leadership Playbooks
           </p>
-          <h2>Test my first three with me before we scale to ten.</h2>
+          <h2>Every field guide in the series, organized by where your floor hurts most.</h2>
         </div>
 
-        <div className="offer-grid">
-          <Link className="offer-card reveal" href="/blog/stop-being-a-meat-proxy-leader">
-            <span>TRACK A · FOR YOU (CEO &amp; VP)</span>
-            <h3>Stop Sending Meat-Proxy Memos</h3>
-            <p>
-              I have watched one pasted AI Slack note cost a VP six months of candor. Use my Human Holdback Rule.
-            </p>
-            <b>Read With Me ↗</b>
-          </Link>
+        {/* TRACK A: LEADING FROM THE TOP */}
+        <div id="track-a" className="mt-10 scroll-mt-24">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-[var(--line)] pb-3">
+            <div>
+              <span className="font-mono text-[11px] font-semibold uppercase tracking-widest text-[#8a571c] block">
+                Track A · Leading From the Top (3 Playbooks)
+              </span>
+              <h3 className="font-serif text-2xl text-[var(--ink)] mt-1 mb-0">
+                For CEOs, CFOs &amp; VPs setting expectations and candor norms
+              </h3>
+            </div>
+            <span className="font-mono text-xs text-[#3e4a42]">Essays 1, 4 &amp; 5</span>
+          </div>
 
-          <Link className="offer-card reveal" href="/blog/absorbing-ai-twice-eight-report-cliff">
-            <span>TRACK B · FOR YOUR MANAGERS</span>
-            <h3>We Have to Fix Your 8-Report Cliff</h3>
-            <p>
-              You flattened the chart and left managers absorbing AI twice. Run my Span Reset Scorecard with me.
-            </p>
-            <b>Read With Me ↗</b>
-          </Link>
+          <div className="offer-grid !mt-6">
+            <Link className="offer-card reveal" href="/blog/stop-being-a-meat-proxy-leader">
+              <span className="!text-[#8a571c] font-semibold">ESSAY 01 · EXECUTIVE VOICE</span>
+              <h3>Stop Sending Meat-Proxy Memos</h3>
+              <p className="!text-[#3e4a42]">
+                I have watched one pasted AI Slack note cost a VP six months of candor. Use my Human Holdback Rule.
+              </p>
+              <b>Read With Me ↗</b>
+            </Link>
 
-          <Link className="offer-card reveal" href="/blog/workslop-tax-botsitting-burnout">
-            <span>TRACK C · FOR YOUR FLOOR</span>
-            <h3>How We Kill Workslop &amp; Botsitting</h3>
-            <p>
-              Your people lose 6.4 hours a week babysitting bots for you. Paste my Team AI Slop Charter Monday.
-            </p>
-            <b>Read With Me ↗</b>
-          </Link>
+            <Link className="offer-card reveal" href="/blog/you-have-ai-14-day-deadline-trap">
+              <span className="!text-[#8a571c] font-semibold">ESSAY 04 · BOARD EXPECTATIONS</span>
+              <h3>The &quot;You Have AI&quot; 14-Day Deadline Trap</h3>
+              <p className="!text-[#3e4a42]">
+                Boards confuse five-file prototypes with production shipping. Hand them my Realistic Delivery Scoping Brief.
+              </p>
+              <b>Read With Me ↗</b>
+            </Link>
+
+            <Link className="offer-card reveal" href="/blog/rebuilding-internal-social-permission">
+              <span className="!text-[#8a571c] font-semibold">ESSAY 05 · TRUST RESET</span>
+              <h3>Rebuilding Internal Social Permission</h3>
+              <p className="!text-[#3e4a42]">
+                Nearly half of workers fake AI fluency out of layoff panic. Use my Unscripted Town-Hall Q&amp;A Script.
+              </p>
+              <b>Read With Me ↗</b>
+            </Link>
+          </div>
         </div>
 
-        <div id="charters">
+        {/* TRACK B: REWIRING MANAGEMENT */}
+        <div id="track-b" className="mt-14 scroll-mt-24">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-[var(--line)] pb-3">
+            <div>
+              <span className="font-mono text-[11px] font-semibold uppercase tracking-widest text-[#8a571c] block">
+                Track B · Rewiring Management (4 Playbooks)
+              </span>
+              <h3 className="font-serif text-2xl text-[var(--ink)] mt-1 mb-0">
+                For VPs of Engineering, Directors &amp; Operations Leads fixing org design
+              </h3>
+            </div>
+            <span className="font-mono text-xs text-[#3e4a42]">Essays 2, 6, 7 &amp; 8</span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+            <Link className="offer-card reveal" href="/blog/absorbing-ai-twice-eight-report-cliff">
+              <span className="!text-[#8a571c] font-semibold">ESSAY 02 · SPAN OF CONTROL</span>
+              <h3>Absorbing AI Twice &amp; The 8-Report Cliff</h3>
+              <p className="!text-[#3e4a42]">
+                You flattened the chart and left managers absorbing AI twice. Run my Span Reset Scorecard with me.
+              </p>
+              <b>Read With Me ↗</b>
+            </Link>
+
+            <Link className="offer-card reveal" href="/blog/death-of-headcount-empire-building">
+              <span className="!text-[#8a571c] font-semibold">ESSAY 06 · INCENTIVE REDESIGN</span>
+              <h3>The Death of Empire Building</h3>
+              <p className="!text-[#3e4a42]">
+                Decouple pay and status from direct-report counts using our Player-Coach vs. Coordinator Scorecard.
+              </p>
+              <b>Read With Me ↗</b>
+            </Link>
+
+            <Link className="offer-card reveal" href="/blog/stop-putting-ai-agents-on-org-chart">
+              <span className="!text-[#8a571c] font-semibold">ESSAY 07 · ACCOUNTABILITY GATES</span>
+              <h3>Stop Putting AI Agents on Your Org Chart</h3>
+              <p className="!text-[#3e4a42]">
+                Software boxes create blame deflection when workflows fail silently. Enforce our Human Accountability Matrix.
+              </p>
+              <b>Read With Me ↗</b>
+            </Link>
+
+            <Link className="offer-card reveal" href="/blog/mission-is-the-boss-flatter-orgs">
+              <span className="!text-[#8a571c] font-semibold">ESSAY 08 · OUTCOME PODS</span>
+              <h3>&quot;Mission Is the Boss&quot; in Flatter Orgs</h3>
+              <p className="!text-[#3e4a42]">
+                Replace 1893 pyramid sign-offs with outcome-first backtracking, Flash Teams, and 24-hour escalation rules.
+              </p>
+              <b>Read With Me ↗</b>
+            </Link>
+          </div>
+        </div>
+
+        {/* TRACK C: FIXING FLOOR CULTURE */}
+        <div id="track-c" className="mt-14 scroll-mt-24">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-[var(--line)] pb-3">
+            <div>
+              <span className="font-mono text-[11px] font-semibold uppercase tracking-widest text-[#8a571c] block">
+                Track C · Fixing Floor Culture (3 Playbooks)
+              </span>
+              <h3 className="font-serif text-2xl text-[var(--ink)] mt-1 mb-0">
+                For Engineering Managers, Staff Engineers &amp; People Leaders protecting flow
+              </h3>
+            </div>
+            <span className="font-mono text-xs text-[#3e4a42]">Essays 3, 9 &amp; 10</span>
+          </div>
+
+          <div className="offer-grid !mt-6">
+            <Link className="offer-card reveal" href="/blog/workslop-tax-botsitting-burnout">
+              <span className="!text-[#8a571c] font-semibold">ESSAY 03 · CLEANUP TAX</span>
+              <h3>The Workslop Tax &amp; Botsitting Burnout</h3>
+              <p className="!text-[#3e4a42]">
+                Your people lose 6.4 hours a week babysitting bots for you. Paste my Team AI Slop Charter Monday.
+              </p>
+              <b>Read With Me ↗</b>
+            </Link>
+
+            <Link className="offer-card reveal" href="/blog/ai-brain-fry-and-the-unblinking-ear">
+              <span className="!text-[#8a571c] font-semibold">ESSAY 09 · COGNITIVE &amp; LEGAL RISK</span>
+              <h3>AI Brain Fry &amp; The Unblinking Ear</h3>
+              <p className="!text-[#3e4a42]">
+                Constant agent review kills flow state while lingering meeting bots create discovery risk. Set AI-Quiet Hours.
+              </p>
+              <b>Read With Me ↗</b>
+            </Link>
+
+            <Link className="offer-card reveal" href="/blog/eating-your-seed-corn-junior-rungs">
+              <span className="!text-[#8a571c] font-semibold">ESSAY 10 · TALENT PIPELINE</span>
+              <h3>Eating Your Seed Corn: Junior Rungs</h3>
+              <p className="!text-[#3e4a42]">
+                Automating entry-level work destroys your future senior bench. Run my 4-Week Reverse-Mentoring Sprint.
+              </p>
+              <b>Read With Me ↗</b>
+            </Link>
+          </div>
+        </div>
+
+        <div id="charters" className="scroll-mt-24">
           <CopyableCharterKit />
         </div>
       </section>

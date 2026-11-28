@@ -392,6 +392,46 @@ const CHARTERS = [
 3. Turn off AI meeting bots during candid brainstorming, performance chats, and sensitive customer calls.
 4. Reward clean deletions and bug catches over token volume or lines generated.`,
   },
+  {
+    id: 'scoping-brief',
+    label: '14-Day Scoping Brief',
+    audience: 'For CEOs, CFOs & VPs of Engineering',
+    text: `REALISTIC DELIVERY SCOPING BRIEF (BEFORE YOU COMMIT A DATE)
+1. Prototype Window (Days 1 to 3): Isolate what AI builds fast on mock data so stakeholders test UX early.
+2. Integration Surface (Days 4 to 14): List every auth check, data migration, billing write, and legacy API touched.
+3. Verification Owner: Name one Staff Engineer or Engineering Manager signing off before customer traffic arrives.
+4. Cut Line: State plainly what ships in phase two if the board holds the 14-day calendar date.`,
+  },
+  {
+    id: 'agent-matrix',
+    label: 'Agent Ownership Matrix',
+    audience: 'For CTOs, COOs & Operations Leads',
+    text: `HUMAN ACCOUNTABILITY MATRIX (NO AGENTS ON THE ORG CHART)
+1. Pull all AI agents off Lattice, Workday, and org slides. Track them strictly in your infrastructure spend registry.
+2. Tool Default: Human sender signs their name and verifies every claim before pasting outputs.
+3. Bounded Teammate: Named Team Lead audits sample triage or PR comments weekly against a clear rubric.
+4. Autonomous Write Gate: Never rely on polite prompts. Enforce hard spend caps and one named human owner per workflow.`,
+  },
+  {
+    id: 'bot-consent',
+    label: 'AI-Quiet & Bot Consent',
+    audience: 'For Whole Org, HR & General Counsel',
+    text: `AI-QUIET HOURS & BOT CONSENT POLICY (REDUCE BRAIN FRY & LEGAL RISK)
+1. Protect one daily 2-hour AI-Quiet deep-work block with zero Slack review pings or parallel agent status checks.
+2. Disable global auto-join on Fireflies, Otter, and Read AI. Host must click admit and announce active recording.
+3. Ban automated meeting bots inside 1-on-1s, performance reviews, HR disputes, and layoff discussions.
+4. Auto-kick bots when the host exits and purge casual internal transcripts every 14 to 30 days.`,
+  },
+  {
+    id: 'reverse-mentoring',
+    label: 'Reverse-Mentoring Sprint',
+    audience: 'For Engineering Managers & Staff ICs',
+    text: `4-WEEK REVERSE-MENTORING SPRINT (PROTECT THE JUNIOR RUNG)
+1. Week 1: Junior shadows Staff Engineer during live incident triage to see how real systems fail under load.
+2. Week 2: Junior tests modern AI tooling and builds one automation removing manual team toil for the senior lead.
+3. Week 3: Junior ships one scoped production change and explains every line and rollback path without prompt notes.
+4. Week 4: Grade on concrete shipped ownership and debugging skill, not meeting hours attended.`,
+  },
 ];
 
 export function CopyableCharterKit() {
